@@ -1,0 +1,51 @@
+---
+title: Novidades no Windows Server, versão 1809
+description: Novos recursos no Windows Server, versão 1809
+ms.prod: windows-server-threshold
+ms.technology: server-general
+ms.topic: article
+author: coreyp-at-msft
+ms.author: coreyp
+ms.localizationpriority: high
+ms.openlocfilehash: 32868a4a5044360bf596e26d497138bccf6692bc
+ms.sourcegitcommit: c78690f36e486c2080fa73dcef857a202973c2be
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5636531"
+---
+# Novidades no Windows Server versão 1809
+
+>Aplicável a: Windows Server (canal semestral)
+
+Este tópico descreve alguns dos novos recursos no Windows Server, versão 1809. Para conhecer as novidades no Windows Server 2019, consulte [o que há de novo no Windows Server 2019](../get-started-19/whats-new-19.md).
+
+## Contêiner de rede com Kubernetes
+
+[Rede de contêiner com Kubernetes](https://docs.microsoft.com/windows-server/networking/sdn/technologies/containers/container-networking-overview) no Windows Server 2019 melhora significativamente a usabilidade do Kubernetes no Windows ao aprimorar a resiliência de rede de plataforma e oferecer suporte a plug-ins de rede de contêineres. Além disso, os clientes que implantam cargas de trabalho em segurança de rede Kubernetes para proteger serviços Linux e Windows usando ferramentas incorporada.
+
+## Contas de serviço gerenciado do grupo para contêineres
+
+Windows Server, versão 1809 tem melhorias na escalabilidade e confiabilidade dos contêineres que usam o grupo gerenciada contas de serviço (gMSA) para acessar os recursos de rede. 
+
+## Acesso ao dispositivo host para contêineres
+
+Barramentos simples podem ser atribuídos a processo isolado contêineres do Windows Server. Aplicativos em execução nos contêineres que precisam falar sobre SPI, I2C, GPIO e UART/COM agora são capazes de fazer isso.
+
+## Recursos adicionais
+Além dos recursos que são novos no Windows Server versão 1809, os seguintes novos recursos e funcionalidades para [Windows Server 2019](../get-started-19/get-started-19.md) também se aplicam ao Windows Server versão 1809:
+
+* Melhorias de contêiner
+* HTTP/2
+* Suporte de Kubernetes
+* Contêineres do Linux no Windows
+* [LEDBAT (Low Extra Delay Background Transport)](https://blogs.technet.microsoft.com/networking/2018/07/25/ledbat/)
+* Melhorias de desempenho de rede para cargas de trabalho virtuais
+* [Recurso de compatibilidade de aplicativo principal do servidor sob demanda (FOD) ](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19)
+* [Serviço de Migração de Armazenamento (SMS)](../storage/whats-new-in-storage.md#storage-spaces-direct)
+* Réplica de Armazenamento
+* Insights do Sistema 
+* Proteção Avançada contra Ameaças do Windows Defender (ATP)
+* O Windows Defender ATP Exploit Guard
+* [Serviço Horário do Windows](https://docs.microsoft.com/windows-server/networking/windows-time-service/insider-preview)
+

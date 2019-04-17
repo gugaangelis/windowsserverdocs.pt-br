@@ -1,0 +1,167 @@
+---
+ms.assetid: c91c7196-ee0d-4856-8cfb-4c38494ccf1f
+title: "Visão geral de Pastas de Trabalho"
+ms.prod: windows-server-threshold
+ms.technology: storage-work-folders
+ms.topic: article
+author: JasonGerend
+manager: dongill
+ms.author: jgerend
+ms.date: 4/5/2017
+description: "Uma visão geral de Pastas de Trabalho - uma função de servidor no Windows Server que fornece uma maneira consistente para os usuários acessarem arquivos de trabalho de computadores e dispositivos."
+ms.openlocfilehash: bb3b8733e6154956c753741b5bc06e979f54ee6f
+ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 10/17/2017
+---
+# <a name="work-folders-overview"></a>Visão geral de Pastas de Trabalho
+
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows 10, Windows 8.1, Windows 7
+
+Este tópico aborda as Pastas de Trabalho, um serviço de função para servidores de arquivos que executa o Windows Server e fornece uma maneira consistente para os usuários acessarem seus arquivos de trabalho nos computadores e nos dispositivos.  
+  
+Se você pretende baixar ou usar Pastas de Trabalho no Windows Server 2012 R2, no Windows 10 ou no Windows 7, consulte o seguinte:
+
+-   [Pastas de Trabalho para Windows Server 2012 R2](https://technet.microsoft.com/library/dn265974(v=ws.11).aspx)
+-   [Pastas de Trabalho para Windows 10](http://support.microsoft.com/help/12370/windows-10-work-folders)
+-   [Pastas de Trabalho para Windows 7 (download de 64 bits)](http://www.microsoft.com/download/details.aspx?id=42558)
+-   [Pastas de Trabalho para Windows 7 (download de 32 bits)](http://www.microsoft.com/download/details.aspx?id=42559)
+
+##  <a name="BKMK_OVER"></a> Descrição da função  
+ Com Pastas de Trabalho, os usuários podem armazenar e acessar arquivos de trabalho em PCs e dispositivos, também conhecidos como BYOD (traga seu próprio dispositivo), além de computadores corporativos. Os usuários obtêm um local conveniente para armazenar arquivos de trabalho e acessá-los em qualquer lugar. As organizações mantêm controle sobre dados corporativos armazenando os arquivos em servidores de arquivos gerenciados centralmente e, opcionalmente, especificando políticas de dispositivo de usuário como criptografia e senhas de bloqueio de tela.  
+  
+ Pastas de Trabalho pode ser implantado com implantações existentes de Redirecionamento de Pasta, Arquivos Offline e pastas base. Pastas de Trabalho armazena arquivos do usuário em uma pasta no servidor chamada *compartilhamento de sincronização*. Você pode especificar uma pasta que já contém dados do usuário, o que permite a você adotar Pastas de Trabalho sem a migração de dados e servidores ou a finalização imediata da solução existente.  
+  
+##  <a name="BKMK_APP"></a> Aplicações práticas  
+ Os administradores podem usar Pastas de Trabalho para fornecer aos usuários acesso aos seus arquivos de trabalho, mantendo o armazenamento centralizado e o controle sobre os dados da organização. Estes são algumas aplicações específicas para Pastas de Trabalho:  
+  
+-   Fornecer um único ponto de acesso a arquivos de trabalho nos computadores e dispositivos pessoais e de trabalho de um usuário  
+  
+-   Acessar arquivos de trabalho enquanto estiver offline e, em seguida, sincronizar com o servidor de arquivos central quando o computador ou o dispositivo seguinte tiver conectividade de Internet ou de intranet  
+  
+-   Implantar com implantações existentes de Redirecionamento de Pasta, Arquivos Offline e pastas base  
+  
+-   Usar as tecnologias de gerenciamento de servidor de arquivos existentes, como classificação de arquivo e cotas de pasta, para gerenciar os dados do usuário  
+  
+-   Especificar políticas de segurança para instruir os computadores e os dispositivos do usuário a criptografar Pastas de Trabalho e usar uma senha de tela de bloqueio  
+  
+-   Usar o Clustering de Failover com Pastas de Trabalho para fornecer uma solução de alta disponibilidade  
+  
+##  <a name="BKMK_NEW"></a> Funcionalidade importante  
+ O serviço Pastas de Trabalho oferece a funcionalidade a seguir.  
+  
+|Funcionalidade|Disponibilidade|Descrição|  
+|-------------------|------------------|-----------------|  
+|Serviço de função Pastas de Trabalho no Gerenciador do Servidor|Windows Server 2012 R2 ou Windows Server 2016|Os Serviços de Arquivo e Armazenamento oferece uma maneira de configurar compartilhamentos de sincronização (pastas que armazenam arquivos de trabalho do usuário), monitora Pastas de Trabalho e gerencia compartilhamentos de sincronização e o acesso de usuários|  
+|Cmdlets de Pastas de Trabalho|Windows Server 2012 R2 ou Windows Server 2016|Um módulo do Windows PowerShell que contém cmdlets abrangentes para gerenciar servidores de Pastas de Trabalho|  
+|Integração de Pastas de Trabalho ao Windows|Windows 10<br /><br /> Windows 8.1<br /><br /> Windows RT 8.1<br /><br /> Windows 7 (é necessário download)|O serviço Pastas de Trabalho fornece a seguinte funcionalidade em computadores Windows:<br /><br /> -   Um item do Painel de Controle que configura e monitora Pastas de Trabalho<br />-   Integração ao Explorador de Arquivos que permite fácil acesso aos arquivos em Pastas de Trabalho<br />-   Um mecanismo de sincronização que transfere os arquivos de/para um servidor de arquivos central, maximizando, ao mesmo tempo, o desempenho do sistema e a duração da bateria|  
+|Aplicativo Pastas de Trabalho para dispositivos|Android<br /><br /> Apple iPhone e iPad®|Um aplicativo que permite que dispositivos populares acessem arquivos em Pastas de Trabalho|  
+  
+##  <a name="BKMK_New"></a> Funcionalidade nova e alterada  
+ A tabela a seguir descreve algumas das principais mudanças em Pastas de Trabalho.  
+  
+|Recurso/funcionalidade|Novo ou atualizado?|Descrição|  
+|----------------------------|---------------------|-----------------|  
+|Suporte do Proxy para aplicativo do Azure AD|Adicionado ao Windows 10 versão 1703, Android, iOS|Os usuários remotos com segurança podem acessar seus arquivos no servidor de pastas de trabalho usando o Proxy de aplicativo do Azure AD.|
+|Replicação de alteração mais rápida|Atualizado no Windows 10 e no Windows Server 2016.|Para o Windows Server 2012 R2, quando as alterações do arquivo são sincronizadas com o servidor de Pastas de Trabalho, os clientes não são notificados sobre a alteração e aguardam até 10 minutos para receber a atualização. Ao usar o Windows Server 2016, o servidor de Pastas de Trabalho notifica imediatamente os clientes do Windows 10, e as alterações do arquivo são sincronizadas imediatamente. Essa funcionalidade é nova no Windows Server 2016 e requer um cliente do Windows 10. Se você estiver usando um cliente mais antigo ou o servidor de Pastas de Trabalho for o Windows Server 2012 R2, o cliente continuará sondando alterações a cada 10 minutos.|  
+|Integrado a Proteção de Informações do Windows (WIP)|Adicionado ao Windows 10, versão 1607|Se um administrador implantar a WIP, Pastas de Trabalho pode impor a proteção de dados criptografando os dados no computador. A criptografia está usando uma chave associada à ID da Empresa, que pode ser apagada remotamente por meio de um pacote de gerenciamento de dispositivos móveis com suporte, como o Microsoft Intune.|  
+|Integração do Microsoft Office|Adicionado ao Windows 10, versão 1511|No Windows 8.1, você pode navegar até Pastas de Trabalho nos aplicativos do Office, clicando ou tocando em Este PC e, em seguida, navegando até o local de Pastas de Trabalho no computador. No Windows 10, pode ser ainda mais fácil acessar Pastas de Trabalho; para isso, adicione o serviço à lista de locais exibida pelo Office ao salvar ou abrir arquivos. Para obter mais informações, consulte [Pastas de Trabalho no Windows 10](http://windows.microsoft.com/windows-10/work-folders-in-windows-10) e  [Solução de problemas sobre o uso de Pastas de Trabalho como um local no Microsoft Office](http://social.technet.microsoft.com/wiki/contents/articles/32881.troubleshooting-using-work-folders-as-a-place-in-microsoft-office.aspx).|  
+  
+##  <a name="BKMK_SOFT"></a> Requisitos de software  
+
+O serviço Pastas de Trabalho tem os seguintes requisitos de software para os servidores de arquivos e sua infraestrutura de rede:  
+  
+-   Um servidor que executa o Windows Server 2012 R2 ou o Windows Server 2016 para hospedar compartilhamentos de sincronização com arquivos de usuário  
+  
+-   Um volume formatado com o sistema de arquivos NTFS para armazenar arquivos de usuário  
+  
+-   Para forçar políticas de senha nos computadores Windows 7, você deve usar políticas de senha de Política de Grupo. Também é necessário excluir os computadores Windows 7 das políticas de senha de Pastas de Trabalho (caso você as utilize).
+
+-   Um certificado de servidor para cada servidor de arquivo que hospedará Pastas de Trabalho. Esses certificados devem ser de uma autoridade de certificação (CA) confiável por seus usuários; o ideal é uma CA pública.
+
+-   (Opcional) Uma floresta de Serviços de Domínio do Active Directory com extensões de esquema no Windows Server 2012 R2 para dar suporte à referência automática de computadores e dispositivos no servidor de arquivos correto ao usar vários servidores de arquivos.  
+  
+Para habilitar os usuários a realizar a sincronização na Internet, existem requisitos adicionais:  
+  
+-   A capacidade de tornar um servidor acessível pela Internet, criando regras de publicação no proxy reverso ou gateway de rede de sua organização  
+  
+-   (Opcional) Um nome de domínio registrado publicamente e a capacidade de criar registros DNS públicos adicionais para o domínio  
+  
+-   (Opcional) Infraestrutura AD FS (Serviços de Federação do Active Directory) ao usar a autenticação ADFS  
+  
+O serviço Pastas de Trabalho tem os seguintes requisitos de software para computadores clientes:  
+  
+-   Os computadores e dispositivos devem estar executando um dos seguintes sistemas operacionais:  
+  
+    -   Windows 10  
+  
+    -   Windows 8.1  
+  
+    -   Windows RT 8.1  
+  
+    -   Windows 7  
+  
+    -   Android 4.4 KitKat e posterior  
+  
+    -   iOS 10.2 e posterior  
+  
+-   Os computadores Windows 7 devem estar executando uma das seguintes edições do Windows:  
+  
+    -   Windows 7 Professional  
+  
+    -   Windows 7 Ultimate  
+  
+    -   Windows 7 Enterprise  
+  
+-   Os computadores Windows 7 devem ser ingressados no domínio da sua organização (eles não podem ser ingressados em um grupo de trabalho).  
+  
+-   Espaço livre suficiente em uma unidade local formatada para NTFS para armazenar todos os arquivos de usuário em Pastas de Trabalho, mais 6 GB adicionais de espaço livre se o serviço Pastas de Trabalho estiver localizado na unidade de sistema, como acontece por padrão. Pastas de Trabalho usa o seguinte local por padrão: **%USERPROFILE%\Work Folders**  
+  
+     No entanto, os usuários podem alterar o local durante a configuração (cartões microSD e unidades USB formatadas com o sistema de arquivos NTFS são locais com suporte, mas a sincronização será interrompida se as unidades forem removidas).  
+  
+     O tamanho máximo para arquivos individuais é 10GB, por padrão. Não há limite de armazenamento por usuário, embora os administradores possam usar a funcionalidade de cotas do Gerenciador de Recursos de Servidor de Arquivos para implementar cotas.  
+  
+-   O serviço Pastas de Trabalho não oferece suporte à reversão do estado das máquinas virtuais clientes. Em vez disso, execute operações de backup e restauração de dentro da máquina virtual cliente usando o Backup de Imagem de Sistema ou outro aplicativo de backup.  
+  
+##  <a name="BKMK_Comparison"></a> Comparação de Pastas de Trabalho com outras tecnologias  
+
+A tabela a seguir aborda como diversas tecnologias de sincronização da Microsoft são posicionadas e quando usar cada uma delas.  
+  
+||Pastas de Trabalho|Arquivos Offline|OneDrive for Business|OneDrive|  
+|-|------------------|-------------------|---------------------------|--------------|  
+|**Resumo da tecnologia**|Sincroniza arquivos armazenados em um servidor de arquivos com computadores e dispositivos|Sincroniza arquivos armazenados em um servidor de arquivos com computadores que têm acesso à rede corporativa (pode ser substituído por Pastas de Trabalho)|Sincroniza arquivos armazenados no Office 365 ou no SharePoint com computadores e dispositivos dentro ou fora de uma rede corporativa e fornece funcionalidade de colaboração de documentos|Sincroniza arquivos pessoais armazenados no OneDrive com PCs, computadores Mac e dispositivos|  
+|**Projetado para fornecer acesso de usuário a arquivos de trabalho**|Sim|Sim|Sim|Não|  
+|**Serviço de nuvem**|Nenhum(a)|Nenhum(a)|Office 365|Microsoft OneDrive|  
+|**Servidores de rede interna**|Servidores de arquivos que executam o Windows Server 2012 R2 ou o Windows Server 2016|Servidores de arquivos|SharePoint Server (opcional)|Nenhum(a)|  
+|**Clientes com suporte**|PCs, iOS, Android|PCs em uma rede corporativa ou conectado por meio do DirectAccess, VPNs ou outras tecnologias de acesso remoto|PCs, iOS, Android, Windows Phone|PCs, computadores Mac, Windows Phone, iOS, Android|  
+  
+> [!NOTE]
+>  Além das tecnologias de sincronização listadas na tabela anterior, a Microsoft oferece outras tecnologias de replicação, incluindo Replicação do DFS, que é projetada para replicação de servidor a servidor, e BranchCache, que é projetado como uma tecnologia de aceleração WAN em filial. Para obter mais informações, consulte [Visão geral de namespaces do DFS e Replicação do DFS](https://technet.microsoft.com/library/jj127250(v=ws.11).aspx) e [Visão geral do BranchCache](https://technet.microsoft.com/library/hh831696(v=ws.11).aspx)  
+  
+##  <a name="BKMK_INSTALL"></a> Informações sobre o Gerenciador do Servidor  
+
+O serviço Pastas de trabalho faz parte da função Serviços de Arquivo e Armazenamento. Você pode instalar Pastas de Trabalho usando o Assistente de Adição de Funções e Recursos ou o cmdlet `Install-WindowsFeature`. Os dois métodos têm a seguinte função:  
+  
+-   Adiciona a página **Pastas de Trabalho** a **Serviços de Arquivo e Armazenamento** no Gerenciador do Servidor.  
+  
+-   Instala o serviço Compartilhamentos de Sincronização do Windows, que é usado pelo Windows Server para hospedar compartilhamentos de sincronização  
+  
+-   Instala o módulo SyncShare do Windows PowerShell para gerenciar Pastas de Trabalho no servidor  
+  
+##  <a name="BKMK_Azure"></a> Interoperabilidade com máquinas virtuais do Windows Azure  
+ Você pode executar esse serviço de função do Windows Server em uma máquina virtual no Windows Azure. Esse cenário foi testado com o Windows Server 2012 R2 e o Windows Server 2016.  
+  
+Para saber mais sobre como começar a usar máquinas virtuais do Windows Azure, acesse o [site do Windows Azure](http://www.windowsazure.com/documentation/services/virtual-machines).  
+  
+##  <a name="BKMK_LINKS"></a> Consulte também  
+ Para obter informações adicionais relacionadas, consulte os recursos a seguir.  
+  
+|Tipo de conteúdo|Referências|  
+|------------------|----------------|  
+|**Avaliação do produto**|-   [Pastas de Trabalho para Android – Lançado](http://blogs.technet.com/b/filecab/archive/2015/01/16/work-folders-for-ios-ipad-app-release.aspx) (postagem de blog)<br />-   [Pastas de Trabalho para iOS – Versão de aplicativo para iPad](http://blogs.technet.microsoft.com/filecab/2016/03/16/work-folders-for-android-released) (postagem de blog)<br />-   [Introdução a Pastas de Trabalho no Windows Server 2012 R2](http://blogs.technet.com/b/filecab/archive/2013/07/09/introducing-work-folders-on-windows-server-2012-r2.aspx) (postagem de blog)<br />-   [Introdução a Pastas de Trabalho](http://channel9.msdn.com/posts/Introduction-to-Work-Folders) (vídeo do Channel 9)<br />-   [Implantação do laboratório de teste de Pastas de Trabalho](http://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx) (postagem de blog)<br />-   [Pastas de Trabalho para Windows 7](http://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx) (postagem de blog)|  
+|**Implantação**|-   [Projetando uma implementação de Pastas de Trabalho](plan-work-folders.md)<br />-   [Implantando Pastas de Trabalho](deploy-work-folders.md)<br />-   [[Implantando Pastas de Trabalho com AD FS e Proxy de Aplicativo Web (WAP)](deploy-work-folders-adfs-overview.md)<br />-   [Implantando Pastas de Trabalho com proxy de aplicativo do Azure AD](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)<br />- [Guia de Migração de Arquivos Offline (CSC) para Pastas de Trabalho](http://blogs.technet.microsoft.com/filecab/2016/08/12/offline-files-csc-to-work-folders-migration-guide/)<br />-   [Considerações sobre desempenho para implantações de Pastas de Trabalho](http://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />-   [Pastas de Trabalho para Windows 7 (download de 64 bits)](http://www.microsoft.com/download/details.aspx?id=42558)<br />-   [Pastas de Trabalho para Windows 7 (download de 32 bits)](http://www.microsoft.com/download/details.aspx?id=42559)|  
+|**Operações**|-   [Aplicativo do iPad de Pastas de Trabalho: perguntas frequentes](http://windows.microsoft.com/windows/work-folders-ipad-faq) (para usuários)<br />-   [Gerenciamento de certificado de Pastas de Trabalho](http://blogs.technet.com/b/filecab/archive/2013/08/09/work-folders-certificate-management.aspx) (postagem de blog)<br />-   [Monitorando implantações de Pastas de Trabalho do Windows Server 2012 R2](http://blogs.technet.com/b/filecab/archive/2013/10/15/monitoring-windows-server-2012-r2-work-folders-deployments.aspx) (postagem de blog)<br />-   [Cmdlets SyncShare (Pastas de Trabalho) no Windows PowerShell](http://technet.microsoft.com/library/dn296644.aspx)<br />-   [Cartão de Referência Rápida dos cmdlets de armazenamento e serviços de arquivo do PowerShell para Windows Server 2012 R2 Preview Edition](http://blogs.technet.com/b/filecab/archive/2013/07/30/storage-and-file-services-powershell-cmdlets-quick-reference-card-for-windows-server-2012-r2-preview-edition.aspx)|  
+|**Solução de problemas**|-   [Windows Server 2012 R2 – Resolvendo conflitos de portas com sites do IIS e Pastas de Trabalho](http://blogs.technet.com/b/filecab/archive/2013/10/15/windows-server-2012-r2-resolving-port-conflict-with-iis-websites-and-work-folders.aspx) (postagem de blog)<br />-   [Erros comuns em Pastas de Trabalho](http://social.technet.microsoft.com/wiki/contents/articles/30578.common-errors-in-work-folders.aspx)|  
+|**Recursos da comunidade**|-   [Fórum de Armazenamento e Serviços de Arquivo](http://social.technet.microsoft.com/Forums/windowsserver/home?forum=winserverfiles)<br />-   [Equipe de Armazenamento da Microsoft: Blog File Cabinet](http://blogs.technet.com/b/filecab/)<br />-   [Pergunte ao Blog da Equipe dos Serviços de Diretório](http://blogs.technet.com/b/askds/)|  
+|**Tecnologias relacionadas**|-   [Armazenamento no Windows Server 2016](../storage.md)<br>-   [Serviços de Arquivo e Armazenamento](https://technet.microsoft.com/library/hh831487(v=ws.11).aspx)<br />-   [Gerenciador de Recursos de Servidor de Arquivos](https://technet.microsoft.com/library/hh831701(v=ws.11).aspx)<br />-   [Visão geral de Redirecionamento de Pasta, Arquivos Offline e perfis de usuários móveis](https://technet.microsoft.com/library/hh848267(v=ws.11).aspx)<br />-   [BranchCache](https://technet.microsoft.com/library/hh831696(v=ws.11).aspx)<br />-   [Namespaces do DFS e Replicação do DFS](https://technet.microsoft.com/library/jj127250(v=ws.11).aspx)|
