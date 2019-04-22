@@ -1,6 +1,6 @@
 ---
-title: "Referência de provedor de suporte técnico segurança Schannel"
-description: "Segurança do Windows Server"
+title: Referência técnica do provedor de suporte de segurança Schannel
+description: Segurança do Windows Server
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,28 +12,27 @@ ms.assetid: 5bf9c4a5-cdc1-49eb-bf9a-8bf987410b63
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
-ms.date: 10/12/2016
-ms.openlocfilehash: 4ee48ad350663bdedb8ee960fec65ac5198d17b8
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
+ms.date: 08/08/2018
+ms.openlocfilehash: 9e38a3960bb3e00dd5ce55690fecab22e680c678
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59826277"
 ---
-# <a name="schannel-security-support-provider-technical-reference"></a>Referência de provedor de suporte técnico segurança Schannel
+# <a name="schannel-security-support-provider-technical-reference"></a>Referência técnica do provedor de suporte de segurança Schannel
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10
 
-Esta referência para profissionais de TI contém informações sobre o protocolo Transport Layer Security (TLS), o protocolo Secure Sockets Layer (SSL) e o protocolo de datagrama Transport Layer Security (DTLS), conforme implementada pelo Schannel Security Support Provider (SSP).
+Essa referência para profissionais de TI contém informações sobre o protocolo de segurança de camada de transporte (TLS), o protocolo Secure Sockets Layer (SSL) e o protocolo DTLS Datagram Transport Layer Security (), conforme implementado pelo suporte de segurança Schannel SSP (provedor).
 
-Esses protocolos fornecem meios para proteger os dados que estão sendo enviados entre aplicativos em uma rede não confiável usando autenticação baseada em certificado e chaves de criptografia simétrica.
+Esses protocolos fornecem meios para proteger os dados que estão sendo enviados entre os aplicativos em uma rede não confiável, usando a autenticação baseada em certificados e chaves de criptografia simétrica.
 
-## <a name="w2k3tr_schan_intro"></a>Neste documento
-Esta referência explica quais DTLS, TLS e SSL são; como TLS e SSL usam a Interface de provedor de suporte de segurança (SSPI) e Schannel SSP para proteger a transferência de dados em uma rede não confiável; e quais ferramentas e configurações estão disponíveis para configuração TLS e SSL.
-
-
-    -   [Protocolo de segurança de camada de transporte](transport-layer-security-protocol.md)
+- [Protocolo TLS](transport-layer-security-protocol.md)
+- [Protocolo Datagram Transport Layer Security](datagram-transport-layer-security-protocol.md)
 
 ## <a name="see-also"></a>Consulte também
-[Autenticação do Windows](https://technet.microsoft.com/library/cc755284.aspx)
+[Autenticação do Windows](../windows-authentication/windows-authentication-overview.md)
+[a autenticação Kerberos](../kerberos/kerberos-authentication-overview.md)
 
 

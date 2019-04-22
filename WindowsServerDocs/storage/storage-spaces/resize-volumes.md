@@ -10,24 +10,24 @@ author: cosmosdarwin
 ms.date: 01/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51f58ec23c55a6cb1664d800d6f4a75dae545899
-ms.sourcegitcommit: dfd25348ea3587e09ea8c2224237a3e8078422ae
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4678645"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59824967"
 ---
-# Estendendo volumes em Espaços de Armazenamento Diretos
+# <a name="extending-volumes-in-storage-spaces-direct"></a>Estendendo volumes em Espaços de Armazenamento Diretos
 > Aplica-se a: Windows Server 2019, Windows Server 2016
 
 Este tópico fornece instruções para redimensionamento de volumes em [Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md).
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 
-### Capacidade no pool de armazenamento
+### <a name="capacity-in-the-storage-pool"></a>Capacidade no pool de armazenamento
 
 Antes de redimensionar um volume, veja se você tem capacidade suficiente no pool de armazenamento para acomodar a superfície nova e maior. Por exemplo, ao redimensionar um volume de espelhamento de três vias de 1 TB para 2 TB, a superfície dele aumentará de 3 TB para 6 TB. Para que o redimensionamento tenha êxito, você precisaria de pelo menos (6 - 3) = 3 TB de capacidade disponível no pool de armazenamento.
 
-### Familiaridade com volumes em Espaços de Armazenamento
+### <a name="familiarity-with-volumes-in-storage-spaces"></a>Familiaridade com volumes em Espaços de Armazenamento
 
 Em Espaços de Armazenamento Diretos, cada volume é composto por vários objetos empilhados: o volume compartilhado clusterizado (CSV), que é um volume; a partição; o disco, que é um disco virtual; e uma ou mais camadas de armazenamento (se aplicável). Para redimensionar um volume, você precisará redimensionar vários desses objetos.
 
@@ -35,7 +35,7 @@ Em Espaços de Armazenamento Diretos, cada volume é composto por vários objeto
 
 Para se familiarizar com eles, tente executar **Get -** com o substantivo correspondente no PowerShell.
 
-Por exemplo:
+Por exemplo: 
 
 ```PowerShell
 Get-VirtualDisk
@@ -49,7 +49,7 @@ Por exemplo, veja aqui como ir de um disco virtual para seu volume:
 Get-VirtualDisk <FriendlyName> | Get-Disk | Get-Partition | Get-Volume 
 ```
 
-## Etapa 1 –Redimensionar o disco virtual
+## <a name="step-1--resize-the-virtual-disk"></a>Etapa 1 –Redimensionar o disco virtual
 
 O disco virtual pode usar camadas de armazenamento, ou não, dependendo de como ele foi criado.
 
@@ -61,7 +61,7 @@ Get-VirtualDisk <FriendlyName> | Get-StorageTier
 
 Se o cmdlet retornar nada, o disco virtual não usa camadas de armazenamento.
 
-### Sem camadas de armazenamento
+### <a name="no-storage-tiers"></a>Sem camadas de armazenamento
 
 Se o disco virtual não tiver nenhuma camada de armazenamento, você pode redimensioná-lo diretamente usando o cmdlet **Resize-VirtualDisk** cmdlet.
 
@@ -75,7 +75,7 @@ Quando você redimensionar o **VirtualDisk**, o **disco** segue automaticamente 
 
 ![Redimensionar VirtualDisk](media/resize-volumes/Resize-VirtualDisk.gif)
 
-### Com camadas de armazenamento
+### <a name="with-storage-tiers"></a>Com camadas de armazenamento
 
 Se o disco virtual usar camadas de armazenamento, você poderá redimensionar cada camada separadamente usando o cmdlet **Resize-StorageTier** cmdlet.
 
@@ -96,9 +96,9 @@ Get-StorageTier <FriendlyName> | Resize-StorageTier -Size <Size>
 
 Quando você redimensiona as **StorageTier**(s), o **VirtualDisk** e **disco** seguem automaticamente e também são redimensionados.
 
-![Redimensionar StorageTier](media/resize-volumes/Resize-StorageTier.gif)
+![Resize-StorageTier](media/resize-volumes/Resize-StorageTier.gif)
 
-## Etapa 2 - Redimensionar a partição
+## <a name="step-2--resize-the-partition"></a>Etapa 2 - Redimensionar a partição
 
 Em seguida, redimensione a partição usando o cmdlet **Resize-Partition**. O disco virtual deve ter duas partições: a primeira é reservada e não deve ser modificada; a que você precisa redimensionar é **PartitionNumber = 2** e **Type = Basic**.
 
@@ -119,13 +119,13 @@ Quando você redimensiona a **Partição**, o **Volume** e o **Volume Compartilh
 
 ![Redimensionar partição](media/resize-volumes/Resize-Partition.gif)
 
-Pronto!
+É só isso!
 
 > [!TIP]
 > Você pode verificar se o volume tem o novo tamanho executando **Get-Volume**.
 
-## Veja também
+## <a name="see-also"></a>Consulte também
 
-- [Espaços de Armazenamento Diretos no Windows Server 2016](storage-spaces-direct-overview.md)
-- [Planejamento de volumes nos Espaços de Armazenamento Diretos](plan-volumes.md)
-- [Criando volumes em Espaços de Armazenamento Diretos](create-volumes.md)
+- [Espaços de armazenamento diretos no Windows Server 2016](storage-spaces-direct-overview.md)
+- [Planejando volumes em espaços de armazenamento diretos](plan-volumes.md)
+- [Criação de volumes em espaços de armazenamento diretos](create-volumes.md)

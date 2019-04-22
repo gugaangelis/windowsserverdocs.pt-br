@@ -1,6 +1,6 @@
 ---
-title: "Definir prioridade alvo para sobrepor ordem de referência"
-description: "Este artigo descreve como definir a prioridade de destino para substituir a ordenação de referência"
+title: Definir prioridade alvo para sobrepor ordem de referência
+description: Este artigo descreve como definir a prioridade de destino para substituir a ordenação de referência
 ms.date: 6/5/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,15 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 10f5e8979ae2f6390da76276dfa193226019e5d3
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 59db08d5ef46b696f550a5fa0738c5c1f9375fda
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59826357"
 ---
 # <a name="set-target-priority-to-override-referral-ordering"></a>Definir a prioridade de destino para sobrepor a ordem de referência
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
+> Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
 
 Uma referência é uma lista ordenada de destinos que um computador cliente recebe de um controlador de domínio ou servidor de namespace quando o usuário acessa uma raiz de namespace ou pasta com destinos no namespace. Cada destino em uma referência é classificado de acordo com o método de ordenação da pasta ou raiz do namespace. 
 
@@ -54,7 +55,7 @@ Para definir a prioridade no destino de uma pasta, use o seguinte procedimento:
 > [!NOTE]
 > Para definir prioridades de alvo usando Windows PowerShell, use o [Set-DfsnRootTarget](https://technet.microsoft.com/library/jj884266.aspx) and [Set-DfsnFolderTarget](https://technet.microsoft.com/library/jj884264.aspx) cmdlets com os parâmetros **ReferralPriorityClass** e **ReferralPriorityRank**. Esses cmdlets foram introduzidos no Windows Server 2012.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
--   [Ajustando namespaces de DFS](tuning-dfs-namespaces.md)
--   [Delegar permissões de gerenciamento para Namespaces DFS](delegate-management-permissions-for-dfs-namespaces.md)
+-   [Ajuste os Namespaces do DFS](tuning-dfs-namespaces.md)
+-   [Delegar permissões de gerenciamento para Namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)

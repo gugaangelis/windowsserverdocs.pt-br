@@ -1,0 +1,56 @@
+---
+title: Usando o comando add-DriverGroup
+description: 'Tópico de comandos do Windows para * * *- '
+ms.custom: na
+ms.prod: windows-server-threshold
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: 2a92fe8f-03f9-462a-b99e-f23275259807
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 10/16/2017
+ms.openlocfilehash: 322a9a671f90bf56f6357289f7727c142a0145cc
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59825087"
+---
+# <a name="using-the-add-drivergroup-command"></a>Usando o comando add-DriverGroup
+
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+
+Adiciona um grupo de drivers para o servidor.
+Para obter exemplos de como você pode usar esse comando, consulte [exemplos](#BKMK_examples).
+## <a name="syntax"></a>Sintaxe
+```
+wdsutil /add-DriverGroup /DriverGroup:<Group Name>\n\
+[/Server:<Server name>] [/Enabled:{Yes | No}] [/Applicability:{Matched | All}] [/Filtertype:<Filter type> /Policy:{Include | Exclude} /Value:<Value> [/Value:<Value> ...]]
+```
+## <a name="parameters"></a>Parâmetros
+|Parâmetro|Descrição|
+|-------|--------|
+|/DriverGroup:<Group Name>|Especifica o nome do novo grupo de driver.|
+|/Server:<Server name>|Especifica o nome do servidor. Isso pode ser o nome NetBIOS ou FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado.|
+|/ Habilitado: {Sim &#124; não}|Habilita ou desabilita o pacote.|
+|/Applicability:{Matched &#124; All}|Especifica quais pacotes a serem instalados se os critérios de filtro forem atendidos. **Correspondido** significa instalar apenas os pacotes de driver que correspondem a um hardware cliente s. **Todos os** significa instalar todos os pacotes aos clientes, independentemente de seu hardware.|
+|/Filtertype:<Filtertype>|Especifica o tipo de filtro a ser adicionado ao grupo. Você pode especificar vários tipos de filtro em um único comando. Cada tipo de filtro deve ser seguido por **/Policy** e pelo menos um **/valor**. <Filtertype> Pode ser uma das seguintes opções:<br /><br />**BiosVendor**<br /><br />**BIOSVersion**<br /><br />**Chassistype**<br /><br />**Fabricante**<br /><br />**UUID**<br /><br />**Osversion**<br /><br />**Osedition**<br /><br />**OsLanguage**<br /><br />Para obter informações sobre como obter valores para todos os outros tipos de filtro, consulte [filtros de grupo de Driver](https://go.microsoft.com/fwlink/?LinkID=155158) (https://go.microsoft.com/fwlink/?LinkID=155158).|
+|[/Policy:{Include &#124; Exclude}]|Especifica a política a ser definido no filtro. Se **/Policy** é definido como **Include**, computadores cliente que correspondem ao filtro são permitidas para instalar os drivers nesse grupo. Se **/Policy** é definido como **excluir**, em seguida, os computadores cliente que correspondem ao filtro não tem permissão para instalar os drivers nesse grupo.|
+|[/Value:<Value>]|Especifica o valor do cliente que corresponde ao **/Filtertype**. Você pode especificar vários valores para um único tipo. Consulte a lista a seguir para obter valores válidos para determinados tipos de filtro. Os atributos a seguir são para **Chassistype**. Para obter informações sobre como obter os valores para todos os outros tipos de filtro, consulte [filtros de grupo de Driver](https://go.microsoft.com/fwlink/?LinkID=155158) (https://go.microsoft.com/fwlink/?LinkID=155158).<br /><br />**Outros**<br /><br />**UnknownChassis**<br /><br />**Área de Trabalho**<br /><br />**LowProfileDesktop**<br /><br />**PizzaBox**<br /><br />**MiniTower**<br /><br />**Tower**<br /><br />**portátil**<br /><br />**Laptop**<br /><br />**Notebook**<br /><br />**Handheld**<br /><br />**DockingStation**<br /><br />**AllInOne**<br /><br />**SubNotebook**<br /><br />**SpaceSaving**<br /><br />**LunchBox**<br /><br />**MainSystemChassis**<br /><br />**ExpansionChassis**<br /><br />**SubChassis**<br /><br />**BusExpansionChassis**<br /><br />**PeripheralChassis**<br /><br />**StoraeChassis**<br /><br />**RackmountChassis**<br /><br />**SealedCasecomputer**<br /><br />**MultiSystemChassis**<br /><br />**compactPci**<br /><br />**AdvancedTca**|
+## <a name="BKMK_examples"></a>Exemplos
+Para adicionar um grupo de drivers, digite um dos seguintes:
+```
+wdsutil /add-DriverGroup /DriverGroup:printerdrivers /Enabled:Yes
+```
+```
+wdsutil /add-DriverGroup /DriverGroup:printerdrivers /Applicability:All /Filtertype:Manufacturer /Policy:Include /Value:Name1 /Filtertype:Chassistype /Policy:Exclude /Value:Tower /Value:MiniTower
+```
+#### <a name="additional-references"></a>Referências adicionais
+[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[usando o comando add-DriverGroupPackage](using-the-add-drivergrouppackage-command.md)
+[usando o comando add-DriverGroupPackages](using-the-add-drivergrouppackages-command.md) 
+ [ Usando o comando add-DriverGroupFilter](using-the-add-drivergroupfilter-command.md)

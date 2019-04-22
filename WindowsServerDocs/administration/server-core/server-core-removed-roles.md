@@ -1,6 +1,6 @@
 ---
-title: Funções, serviços de função e recursos não no Windows Server - núcleo do servidor
-description: Saiba mais sobre as funções e recursos não são incluídos na opção de instalação Server Core do Windows Server.
+title: Funções, serviços de função e recursos não no Windows Server - Server Core
+description: Saiba mais sobre as funções e recursos não incluídos na opção de instalação Server Core do Windows Server.
 ms.prod: windows-server-threshold
 ms.mktglfcycl: manage
 ms.sitesec: library
@@ -8,85 +8,85 @@ author: lizap
 ms.localizationpriority: medium
 ms.date: 02/23/2018
 ms.openlocfilehash: 308bc8a5d25e2ec67438f0ee03cbfce6f7411ca2
-ms.sourcegitcommit: 4b9b21ca1f366388a78ead7413cb581f2b23d4c6
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "2604784"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59825527"
 ---
-# Funções, serviços de função e recursos não no Windows Server - núcleo do servidor
+# <a name="roles-role-services-and-features-not-in-windows-server---server-core"></a>Funções, serviços de função e recursos não no Windows Server - Server Core
 
-> Aplica-se a: Windows Server (canal delimitadas anual) e Windows Server 2016
+> Aplica-se a: Windows Server (canal semestral) e Windows Server 2016
 
-As seguintes funções, serviços de função e recursos foram removidos da opção de instalação Server Core do Windows Server. Use essas informações para ajudar a descobrir se a opção Server Core funciona para seu ambiente.
+Funções, serviços de função e recursos a seguir foram retirados a opção de instalação Server Core do Windows Server. Use essas informações para ajudar a descobrir se a opção Server Core funciona para o seu ambiente.
 
 > [!NOTE]
-> Você também pode ver uma lista das funções, serviços de função e recursos que [estão incluídos no núcleo do servidor](server-core-roles-and-services.md). É uma lista muito grande, portanto para obter melhores resultados, procure essa lista para a função específica ou recurso que você está interessado em.
+> Você também pode ver uma lista de funções, serviços de função e recursos que [estão incluídos no Server Core](server-core-roles-and-services.md). É uma lista muito grande, então, para obter melhores resultados, pesquise essa lista para a função ou recurso específico que está interessado.
 
-## Funções não no núcleo do servidor
+## <a name="roles-not-in-server-core"></a>Funções não estão no núcleo do servidor
 
 - Fax
 - MultiPointServerRole
 - NPAS
 - WDS
 
-## Serviços de função não no núcleo do servidor
-Observe que alguns serviços de função de área de trabalho remota estão incluídos na Server Core (Conexão Broker, licenciamento, Host de virtualização), mas outros não são (Gateway, o Host de sessão RD, Web Access).
+## <a name="role-services-not-in-server-core"></a>Serviços de função não está no núcleo do servidor
+Observe que alguns serviços de função da área de trabalho remota estão incluídos no Server Core (Conexão Broker, licenciamento, Host de virtualização), mas outros não são (Gateway, o Host de sessão de área de trabalho remota, acesso via Web).
 
-- Servidor de verificação de impressão
-- Imprimir à Internet
-- Gateway do RDS
-- Servidor de RD RDS
-- Acesso de Web ao RDS
-- Console de gerenciamento da Web
-- Console da Web-Lgcy-Mgmt
-- Implantação do WDS
-- WDS-Transport *(antes do Windows Server versão 1803)*
+- Servidor de digitalização de impressão
+- Internet de impressão
+- RDS-Gateway
+- RDS-RD-Server
+- RDS-Web-Access
+- Web-Mgmt-Console
+- Web-Lgcy-Mgmt-Console
+- WDS-Deployment
+- Transporte do WDS *(antes da versão 1803 do Windows Server)*
 
-## Recursos que não núcleo do servidor
+## <a name="features-not-in-server-core"></a>Recursos não estão no núcleo do servidor
 
 - BITS-IIS-Ext
-- O BitLocker-NetworkUnlock
-- Direto-Play
+- BitLocker-NetworkUnlock
+- Direct-Play
 - Cliente de impressão via Internet
 - Monitor de porta LPR
-- MSMQ-multicast
+- Multicast do MSMQ
 - CMAK
 - Assistência remota
 - RSAT-SMTP
 - RSAT-Feature-Tools-BitLocker-RemoteAdminTool
-- Servidor RSAT-Bits
+- RSAT-Bits-Server
 - RSAT-NLB
 - RSAT-SNMP
 - RSAT-WINS
-- Ferramentas Hyper-V
-- Ferramentas do RSAT RDS
+- Hyper-V-Tools
+- RSAT-RDS-Tools
 - RSAT-RDS-Gateway
-- RSAT-RDS-licenciamento-diagnóstico-UI
-- UI de licenciamento RDS
-- UI de UpdateServices
-- RSAT-DACS
-- RSAT-DACS-Mgmt
-- RSAT--Respondente Online
+- RSAT-RDS-Licensing-Diagnosis-UI
+- RDS-Licensing-UI
+- UpdateServices-UI
+- RSAT-ADCS
+- RSAT-ADCS-Mgmt
+- RSAT-Online-Responder
 - RSAT-ADRMS
 - RSAT-Fax
-- Serviços de arquivo RSAT
+- RSAT-File-Services
 - RSAT-DFS-Mgmt-Con
 - RSAT-FSRM-Mgmt
 - RSAT-NFS-Admin
 - RSAT-NPAS
-- Serviços de impressão RSAT
-- Ferramentas de VA RSAT
+- RSAT-Print-Services
+- RSAT-VA-Tools
 - WDS-AdminPack
-- Servidor SMTP
+- SMTP-Server
 - Cliente TFTP
-- Redirecionador de WebDAV
-- Biométrica-Framework
-- Gui do Windows Defender
-- Windows Identity-Foundation
-- PowerShell ISE
-- Serviço de pesquisa
-- IFilter de TIFF do Windows
-- Rede de telefonia móvel
-- Visualizador XPS
+- WebDAV-Redirector
+- Biometric Framework
+- Windows-Defender-Gui
+- Windows-Identity-Foundation
+- PowerShell-ISE
+- Search-Service
+- Windows-TIFF-IFilter
+- Wireless-Networking
+- XPS-Viewer
 

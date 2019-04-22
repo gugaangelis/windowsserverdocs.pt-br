@@ -11,13 +11,13 @@ ms.topic: landing-page
 ms.author: billmath
 ms.localizationpriority: high
 ms.openlocfilehash: 161840d86cae6b688e3e7a877c7c44b17aefd432
-ms.sourcegitcommit: c6ac2f70f8fb5f27f6bbe5c9cfc9f76b02f557b5
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4286168"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59824237"
 ---
-# Identidade | Acesso
+# <a name="identity--access"></a>Identidade | Acesso
 
 >[!TIP]
 > Procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obter informações específicas.
@@ -80,7 +80,7 @@ Tecnologias de acesso e identidade habilitam segura do Active Directory ambiente
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Windows 10 para a empresa: maneiras de usar dispositivos para trabalhar</h3><hr />
+                        <h3>Windows 10 para a empresa: Maneiras de usar dispositivos para trabalho</h3><hr />
                         <p>O Windows 10 oferece a capacidade de aproveitar o Azure Active Directory. Os dispositivos Windows 10 podem ser conectados ao Azure AD e os usuários podem fazer logon no Windows com contas do Azure AD ou adicionar sua ID do Azure para obter acesso aos recursos e aplicativos de negócios.</p>
                     </div>
                 </div>
@@ -130,8 +130,8 @@ Tecnologias de acesso e identidade habilitam segura do Active Directory ambiente
 
 ---
 
-## Guias de Soluções e de Cenário  
-* [Proteger o acesso aos recursos da empresa de qualquer local, em qualquer dispositivo](https://technet.microsoft.com/library/dn550982.aspx)  
-*  [ingresso no Local de Trabalho em qualquer dispositivo de SSO e autenticação de dois fatores contínua em aplicativos da empresa](https://technet.microsoft.com/library/dn280945.aspx)  
-* [Gerenciar riscos com Multi-Factor Authentication adicional para aplicativos confidenciais](https://technet.microsoft.com/library/dn280949.aspx)  
-* [Gerenciar riscos com o Controle de Acesso Condicional](https://technet.microsoft.com/library/dn280937.aspx)
+## <a name="solutions-and-scenario-guides"></a>Guias de soluções e cenário  
+* [Proteger o acesso aos recursos da empresa de qualquer local em qualquer dispositivo](https://technet.microsoft.com/library/dn550982.aspx)  
+*  [Ingresse no local de trabalho de qualquer dispositivo de SSO contínuo e fatores de autenticação em aplicativos da empresa](https://technet.microsoft.com/library/dn280945.aspx)  
+* [Gerencie riscos com autenticação multifator adicional para aplicativos confidenciais](https://technet.microsoft.com/library/dn280949.aspx)  
+* [Gerencie riscos com controle de acesso condicional](https://technet.microsoft.com/library/dn280937.aspx)
