@@ -1,7 +1,7 @@
 ---
 title: Gerenciar cargas de trabalho de locatário
-description: Este tópico faz parte do Software de rede definidos guia sobre como gerenciar as cargas de trabalho de locatário e redes virtuais no Windows Server 2016.
-manager: brianlic
+description: Este tópico faz parte do guia rede definida pelo Software sobre como gerenciar as cargas de trabalho de locatário e redes virtuais no Windows Server 2016.
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,23 +12,25 @@ ms.topic: article
 ms.assetid: 16359b15-a0e4-4f42-9d70-6ef0d851d219
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 95c4112c515ee3f2f6ec49129c11a57c2d24e45e
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/26/2018
+ms.openlocfilehash: 8db9e15a349dfe2b378d2fcbde6756209b79d664
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59823807"
 ---
 # <a name="manage-tenant-workloads"></a>Gerenciar cargas de trabalho de locatário
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Este tópico contém links para documentação que permite que você gerencie cargas de trabalho de locatário, adicionando locatário VMs (máquinas virtuais), usando rede dispositivos virtuais, configurando balanceamento de carga de software e muito mais.
+Este tópico contém links para documentação que permite que você gerencie as cargas de trabalho de locatário com a adição de máquinas virtuais de locatário (VMs), usando rede dispositivos virtuais, configurar balanceamento de carga de software e muito mais.
 
-Esta seção inclui os tópicos a seguir.
+Esta seção inclui os seguintes tópicos.
 
-- [Criar uma VM e se conectar a um locatário Virtual, rede ou VLAN](Create-a-Tenant-VM.md)
-- [Configurar a qualidade de serviço (QoS) para um adaptador de rede do locatário VM](Configure-QoS-for-Tenant-VM-Network-Adapter.md)
-- [Configurar o Firewall de Datacenter listas de controle de acesso (ACLs)](Configure-Datacenter-Firewall-ACLs.md)
-- [Configurar o Software balanceador balanceamento de carga e de rede NAT (Address Translation)](Configure-SLB-and-NAT.md)
-- [Use dispositivos virtuais de rede em uma rede Virtual](Use-Network-Virtual-Appliances-on-a-VN.md)
-- [Convidado Clustering em uma rede Virtual](guest-clustering.md)
+- [Criar uma VM e conectar a um locatário Virtual, rede ou VLAN](Create-a-Tenant-VM.md)
+- [Configurar qualidade de serviço (QoS) para um adaptador de rede VM de locatário](Configure-QoS-for-Tenant-VM-Network-Adapter.md)
+- [Configurar listas de controle de acesso (ACLs) do Firewall do Datacenter](Configure-Datacenter-Firewall-ACLs.md)
+- [Configurar o balanceador de carga de Software para balanceamento de carga e conversão de endereço (NAT) de rede](Configure-SLB-and-NAT.md)
+- [Usar dispositivos de rede Virtual em uma rede Virtual](Use-Network-Virtual-Appliances-on-a-VN.md)
+- [Clustering convidado em uma rede Virtual](guest-clustering.md)

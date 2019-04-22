@@ -1,5 +1,5 @@
 ---
-title: "Defina a pontuação WinSAT no servidor"
+title: Definir a Pontuação do WinSAT no Servidor
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -13,35 +13,36 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 77866acccac13ac48da8779700c8654f2c7f3277
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59819947"
 ---
-# <a name="set-the-winsat-score-on-the-server"></a>Defina a pontuação WinSAT no servidor
+# <a name="set-the-winsat-score-on-the-server"></a>Definir a Pontuação do WinSAT no Servidor
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Você deve definir a pontuação WinSAT CPU para um servidor que está executando o sistema operacional Windows Server Essentials para otimizar a resolução de vídeo de streaming. Você pode fazer isso criando e instalando o arquivo. XML que contém as informações de pontuações do WinSAT.  
+Você deve definir a pontuação da CPU do WinSAT para um servidor que está executando o sistema de operacional Windows Server Essentials para otimizar a resolução do vídeo de streaming. Faça isso criando e instalando o arquivo .xml que contém as informações sobre a pontuação do WinSAT.  
   
-## <a name="obtain-the-winsat-cpu-score"></a>Obter a pontuação WinSAT CPU  
- Você terá um programa no OPK chamado WinServerSAT.exe que detecta a pontuação WinSAT CPU e coloca essas informações no arquivo WinServerSAT.xml que lê o sistema operacional.  
+## <a name="obtain-the-winsat-cpu-score"></a>Obtenha a pontuação da CPU do WinSAT  
+ O programa chamado WinServerSAT.exe, fornecido com o OPK, detecta a pontuação da CPU do WinSAT e a coloca no arquivo WinServerSAT.xml que pode ser lido pelo sistema operacional.  
   
-#### <a name="to-obtain-the-winsat-cpu-score"></a>Para obter a pontuação WinSAT CPU  
+#### <a name="to-obtain-the-winsat-cpu-score"></a>Para obter a pontuação da CPU do WinSAT  
   
-1.  Copie o Resources\WinServerSAT\\ * na mídia do ADK no computador de referência.  
+1.  Copie o Resources\WinServerSAT\\* na mídia ADK para o computador de referência.  
   
-2.  No computador de referência, abra uma janela de Prompt de comando com privilégios elevados.  
+2.  Neste computador, abra uma janela do Prompt de Comando elevada.  
   
-3.  Se a pasta %ProgramFiles%\Windows server\bin\oem. não existir, digite o seguinte comando e pressione Enter.  
+3.  Se a pasta %ProgramFiles%\Windows Server\Bin\OEM não existir, digite o seguinte comando e pressione Enter.  
   
-     **mkdir "%ProgramFiles%\Windows server\bin\oem."**  
+     **mkdir "%ProgramFiles%\Windows Server\Bin\OEM"**  
   
 4.  Digite o seguinte comando e pressione Enter.  
   
      **WinServerSAT.exe "%ProgramFiles%\Windows Server\Bin\OEM\WinServerSAT.xml"**  
   
- O exemplo a seguir mostra o conteúdo XML do arquivo WinServerSAT.xml que é criado.  
+ O exemplo a seguir mostra o conteúdo XML do arquivo WinServerSAT.xml que foi criado.  
   
 ```  
   
@@ -51,7 +52,7 @@ Você deve definir a pontuação WinSAT CPU para um servidor que está executand
 </WinSAT>  
 ```  
   
- Onde *WinSAT_Score* é substituído com o valor que é descoberto no servidor.  
+ O *WinSAT_Score* foi substituído pelo valor detectado no servidor.  
   
 > [!IMPORTANT]
->  Você deve remover WinServerSAT.exe, winsat.prx, WinSAT e WinSATEncode.wmv arquivos do computador de referência antes de capturar a imagem.
+>  É necessário remover os arquivos WinServerSAT.exe, winsat.prx, winsat.wmv e WinSATEncode.wmv do computador de referência antes de capturar a imagem.

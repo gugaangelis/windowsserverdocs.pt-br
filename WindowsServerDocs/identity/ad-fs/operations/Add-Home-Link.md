@@ -1,7 +1,7 @@
 ---
 ms.assetid: da035189-e87f-4597-9933-49bf391a8d5d
-title: "Adicionar o Link início"
-description: 
+title: Adicione o link da página inicial
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,26 +10,27 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: fb903c62e717e36099934e64e1c939a502f691a3
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59823007"
 ---
-# <a name="add-home-link"></a>Adicionar o Link início 
+# <a name="add-home-link"></a>Adicione o link da página inicial 
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
-Para adicionar o link inicial que é exibido na página de sign\, use a sintaxe e o seguinte cmdlet do Windows PowerShell. 
+Para adicionar o link da página inicial que é exibido no sinal de\-na página, use o seguinte cmdlet do Windows PowerShell e a sintaxe. 
 
 
-![Adicionar o link Início](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png) 
+![Adicionar o link da página inicial](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png) 
   
 
 `Set-AdfsGlobalWebContent -HomeLink https://fs1.contoso.com/home/ -HomeLinkText Home ` 
  
   
 > [!IMPORTANT]  
-> O `linkText`parâmetro neste cmdlet não é necessário, a menos que você usa outro valor que o padrão, que é *Home*. A vantagem de usar o padrão é que eles estão localizados em todas as localidades de cliente. Depois que a página de sign\ é personalizada, a personalização tem precedência; Portanto, você deve personalizar para todos os idiomas que você deseja dar suporte.
+> O parâmetro `linkText` nesse cmdlet não é necessário, a menos que você use outro valor diferente do padrão, que é *Página Inicial*. A vantagem de usar o padrão é que ele é localizado para todas as localidades de cliente. Após o sinal\-na página é personalizado, a personalização terá prioridade; portanto, você deve personalizar para todos os idiomas que você deseja dar suporte.
 
 ## <a name="additional-references"></a>Referências adicionais 
-[AD FS usuário entrar personalização](AD-FS-user-sign-in-customization.md)  
+[AD FS Sign-personalização de usuário](AD-FS-user-sign-in-customization.md)  

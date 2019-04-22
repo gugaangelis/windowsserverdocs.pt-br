@@ -6,88 +6,88 @@ ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/0s/2018
-Keywords: Storage Spaces Direct
+Keywords: Espaços de Armazenamento Diretos
 ms.localizationpriority: medium
 ms.openlocfilehash: 33fd62376e9769c23fc6b00eefde9a9b95eb4650
-ms.sourcegitcommit: 1533d994a6ddea54ac189ceb316b7d3c074307db
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1894245"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59820587"
 ---
 # <a name="performance-history-for-servers"></a>Histórico de desempenho para servidores
 
-> Aplicável à: Demonstração de Insider Windows Server
+> Aplica-se a: Windows Server Insider Preview
 
-Este tópico sub-recursos do [histórico de desempenho para espaços de armazenamento direto](performance-history.md) descreve em detalhes o histórico de desempenho coletado para servidores. Histórico de desempenho está disponível para cada servidor do cluster.
+Este tópico subpropriedades de [histórico de desempenho para espaços de armazenamento diretos](performance-history.md) descreve detalhadamente o histórico de desempenho coletado para servidores. Histórico de desempenho está disponível para todos os servidores no cluster.
 
    > [!NOTE]
-   > Histórico de desempenho não pode ser coletado para um servidor que está inoperante. Coleção voltarão automaticamente quando o servidor vem back up.
+   > Histórico de desempenho não pode ser coletado para um servidor que está inativo. Coleção será retomada automaticamente quando o servidor de volta a funcionar.
 
-## <a name="series-names-and-units"></a>Unidades e nomes de série
+## <a name="series-names-and-units"></a>Unidades e nomes de séries
 
-Essas séries são coletadas para cada servidor elegível:
+Essas séries são coletadas para todos os servidores qualificados:
 
-| Série                           | Unidade    |
+| série                           | Unidade    |
 |----------------------------------|---------|
-| `clusternode.cpu.usage`          | % |
-| `clusternode.cpu.usage.guest`    | % |
-| `clusternode.cpu.usage.host`     | % |
-| `clusternode.memory.total`       |  bytes   |
-| `clusternode.memory.available`   |  bytes   |
-| `clusternode.memory.usage`       |  bytes   |
-| `clusternode.memory.usage.guest` |  bytes   |
-| `clusternode.memory.usage.host`  |  bytes   |
+| `clusternode.cpu.usage`          | Por cento |
+| `clusternode.cpu.usage.guest`    | Por cento |
+| `clusternode.cpu.usage.host`     | Por cento |
+| `clusternode.memory.total`       | bytes   |
+| `clusternode.memory.available`   | bytes   |
+| `clusternode.memory.usage`       | bytes   |
+| `clusternode.memory.usage.guest` | bytes   |
+| `clusternode.memory.usage.host`  | bytes   |
 
-Além disso, unidade série como `physicaldisk.size.total` são agregadas para todas as unidades elegíveis anexadas ao servidor e série de adaptador de rede como `networkadapter.bytes.total` são agregadas para todos os adaptadores de rede elegíveis conectados ao servidor.
+Além disso, unidade, como a série `physicaldisk.size.total` são agregados para todas as unidades qualificadas anexadas para o servidor e a série de adaptador de rede, como `networkadapter.bytes.total` são agregados para todos os adaptadores de rede elegíveis anexados ao servidor.
 
 ## <a name="how-to-interpret"></a>Como interpretar
 
-| Série                           | Como interpretar                                                      |
+| série                           | Como interpretar                                                      |
 |----------------------------------|-----------------------------------------------------------------------|
-| `clusternode.cpu.usage`          | Porcentagem de tempo do processador que não está ocioso.                        |
-| `clusternode.cpu.usage.guest`    | Porcentagem de tempo do processador usado para propostas de convidado (máquina virtual). |
-| `clusternode.cpu.usage.host`     | Porcentagem de tempo do processador usado para propostas de host.                    |
+| `clusternode.cpu.usage`          | Porcentagem de tempo do processador não ocioso.                        |
+| `clusternode.cpu.usage.guest`    | Porcentagem de tempo de processador usado para a demanda de convidado (máquina virtual). |
+| `clusternode.cpu.usage.host`     | Porcentagem de tempo de processador usado para as demandas de host.                    |
 | `clusternode.memory.total`       | A memória física total do servidor.                              |
 | `clusternode.memory.available`   | A memória disponível do servidor.                                   |
 | `clusternode.memory.usage`       | A memória alocada (não disponível) do servidor.                   |
-| `clusternode.memory.usage.guest` | A memória alocada para propostas de convidado (máquina virtual).               |
-| `clusternode.memory.usage.host`  | A memória alocada para propostas de host.                                  |
+| `clusternode.memory.usage.guest` | A memória alocada à demanda de convidado (máquina virtual).               |
+| `clusternode.memory.usage.host`  | A memória alocada à demanda de host.                                  |
 
 ## <a name="where-they-come-from"></a>Onde eles vêm
 
-O `cpu.*` série coletada dos contadores de desempenho diferentes dependendo se é ou não o Hyper-V está habilitado.
+O `cpu.*` série é coletada de contadores de desempenho diferentes, dependendo de se ou não Hyper-V está habilitado.
 
 Se o Hyper-V está habilitado:
 
-| Série                           | Contador de origem |
+| série                           | Contador de origem |
 |----------------------------------|----------------|
 | `clusternode.cpu.usage`          | `Hyper-V Hypervisor Logical Processor` > `_Total` > `% Total Run Time`      |
 | `clusternode.cpu.usage.guest`    | `Hyper-V Hypervisor Virtual Processor` > `_Total` > `% Total Run Time`      |
 | `clusternode.cpu.usage.host`     | `Hyper-V Hypervisor Root Virtual Processor` > `_Total` > `% Total Run Time` |
 
-Usando o `% Total Run Time` contadores garante que o histórico de desempenho atributos de uso de todos os.
+Usando o `% Total Run Time` contadores garante que todo o uso de atributos histórico de desempenho.
 
-Se não estiver habilitado o Hyper-V:
+Se o Hyper-V não está habilitado:
 
-| Série                           | Contador de origem |
+| série                           | Contador de origem |
 |----------------------------------|----------------|
 | `clusternode.cpu.usage`          | `Processor` > `_Total` > `% Processor Time` |
 | `clusternode.cpu.usage.guest`    | *zero* |
 | `clusternode.cpu.usage.host`     | *mesmo que o uso total* |
 
-Despeito sincronização imperfeita, `clusternode.cpu.usage` é sempre `clusternode.cpu.usage.host` plus `clusternode.cpu.usage.guest`.
+Não obstante sincronização imperfeita, `clusternode.cpu.usage` é sempre `clusternode.cpu.usage.host` plus `clusternode.cpu.usage.guest`.
 
-Com o mesmo senão, `clusternode.cpu.usage.guest` sempre é a soma de `vm.cpu.usage` para todas as máquinas virtuais no servidor host.
+Com a mesma limitação, `clusternode.cpu.usage.guest` sempre é a soma de `vm.cpu.usage` todas as máquinas virtuais no servidor host.
 
-O `memory.*` série é (LANÇADO em breve).
+O `memory.*` séries são (em breve).
 
   > [!NOTE]
-  > Contadores são medidos durante o intervalo inteiro, não de amostra. Por exemplo, se o servidor está ocioso por 9 segundos, mas picos de até 100% da CPU no segundo 10º, seu `clusternode.cpu.usage` serão registradas como 10% em média durante esse intervalo de 10 segundos. Isso garante que seu histórico de desempenho captura todas as atividades e é robusto para ruído.
+  > Contadores são medidos ao longo de todo o intervalo, não amostrado. Por exemplo, se o servidor está ocioso para 9 segundos, mas picos de até 100% da CPU na segunda, 10 de seus `clusternode.cpu.usage` serão registradas como 10% em média durante esse intervalo de 10 segundos. Isso garante que seu histórico de desempenho captura todas as atividades e é robusto para o ruído.
 
 ## <a name="usage-in-powershell"></a>Uso no PowerShell
 
-Use o cmdlet [Get-ClusterNode](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternode) :
+Use o [Get-ClusterNode](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternode) cmdlet:
 
 ```PowerShell
 Get-ClusterNode <Name> | Get-ClusterPerf
@@ -95,4 +95,4 @@ Get-ClusterNode <Name> | Get-ClusterPerf
 
 ## <a name="see-also"></a>Consulte também
 
-- [Histórico de desempenho para espaços de armazenamento direto](performance-history.md)
+- [Histórico de desempenho para espaços de armazenamento diretos](performance-history.md)

@@ -1,6 +1,6 @@
 ---
 ms.assetid: 56fc7f80-9558-467e-a6e9-a04c9abbee33
-title: "Reconhecimento de domínio falha"
+title: Reconhecimento de domínio de falha
 ms.prod: windows-server-threshold
 ms.author: cosdar
 ms.manager: eldenc
@@ -9,43 +9,44 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 09/16/2016
 ms.openlocfilehash: f5c64bb8f8b7d4b8d13c76c4e94cfcf52ee32c30
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59821467"
 ---
-# <a name="fault-domain-awareness-in-windows-server-2016"></a>Reconhecimento de domínio falha em Windows Server 2016
+# <a name="fault-domain-awareness-in-windows-server-2016"></a>Reconhecimento de domínio de falha no Windows Server 2016
 
 > Aplica-se a: Windows Server 2016
 
-Cluster de failover permite que vários servidores trabalham juntos para fornecer alta disponibilidade – ou em outras palavras, para fornecer a tolerância do nó. Mas as empresas de hoje exigem disponibilidade cada vez maior de sua infraestrutura. Para obter a atividade semelhantes a nuvem, até mesmo bastante improvável ocorrências como falhas de chassi, rack interrupções ou desastres naturais devem ser protegidas contra. É por isso que cluster de Failover no Windows Server 2016 apresenta chassi, rack e tolerância site também.
+Clustering de failover permite que vários servidores funcionem juntos para fornecer alta disponibilidade ou, em outras palavras, para fornecer tolerância a falhas de nó. Mas as empresas de hoje exigem disponibilidade cada vez maior de suas infraestrutura. Para conseguir um tempo de atividade parecido com o da nuvem, é necessário se proteger até mesmo de ocorrências altamente improváveis como desastres naturais, interrupções de rack ou falhas de chassi. É por isso que o Clustering de Failover no Windows Server 2016 apresenta o chassi, rack e site a tolerância a falhas também.
 
-Domínios de falha e tolerância são conceitos estreitamente relacionados. Um domínio de falha é um conjunto de componentes de hardware que compartilham um único ponto de falha. Para ser tolerantes para um determinado nível, você precisa de vários domínios de falha nesse nível. Por exemplo, para ser rack tolerantes, seus servidores e os dados devem ser distribuídos em vários racks.
+Domínios de falha e tolerância a falhas são conceitos bem próximos. Um domínio de falha é um conjunto de componentes de hardware que compartilham um único ponto de falha. Para ser tolerante a falhas em um determinado nível, você precisa de vários domínios de falha nesse nível. Por exemplo, para ser rack tolerante a falhas do rack, seus servidores e seus dados devem ser distribuídos entre vários racks.
 
-Este breve vídeo apresenta uma visão geral dos domínios de falha no Windows Server 2016:  
-[![Clique nessa imagem para assistir a uma visão geral dos domínios de falha no Windows Server 2016](media/Fault-Domains-in-Windows-Server-2016/Part-1-Fault-Domains-Overview.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-1-Overview)
+Este breve vídeo apresenta uma visão geral de domínios de falha no Windows Server 2016:  
+[![Clique nessa imagem para assistir a uma visão geral de domínios de falha no Windows Server 2016](media/Fault-Domains-in-Windows-Server-2016/Part-1-Fault-Domains-Overview.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-1-Overview)
 
 ## <a name="benefits"></a>Benefícios
-- **Espaços de armazenamento, incluindo direta de espaços de armazenamento, usa domínios de falha para maximizar a segurança de dados.**  
-    Resiliência em espaços de armazenamento é conceitualmente semelhante a RAID distribuído, definido pelo software. Várias cópias de todos os dados são mantidas em sincronia, e se a falha de hardware e uma cópia é perdida, outros são copiados novamente para restaurar resiliência. Para obter a melhor resiliência possível, cópias devem ser mantidas em domínios de falha separado.
+- **Espaços de armazenamento, incluindo espaços de armazenamento diretos, usam domínios de falha para maximizar a segurança dos dados.**  
+    A resiliência nos Espaços de armazenamento é, conceitualmente, parecida com RAID distribuída e definida pelo software. Várias cópias de todos os dados são mantidas em sincronia, e se o hardware falhar e uma cópia for perdida, outros são copiados novamente para restaurar a resiliência. Para obter a máxima resiliência possível, as cópias devem ser mantidas em domínios de falha separados.
 
-- **O [serviço de integridade](health-service-overview.md) usa falha domínios para fornecer alertas mais útil.**  
-    Cada domínio falha pode ser associado com metadados de localização, que serão incluídos automaticamente em qualquer alertas subsequentes. Esses descritores podem ajudar a equipe de manutenção ou de operações e reduzir erros por disambiguating hardware.  
+- **O [serviço de integridade](health-service-overview.md) usa domínios para fornecer alertas mais úteis de falha.**  
+    Cada domínio de falha pode ser associado aos metadados de local, que serão incluído automaticamente em todos os alertas subsequentes. Esses descritores podem ajudar a equipe de manutenção ou de operações e reduzir os erros por desambiguação de hardware.  
 
-- **Ampliação clustering usa domínios de falha para afinidade de armazenamento.** Stretch clustering permite que os servidores longínqua ingressar em um cluster comuns. O melhor desempenho, aplicativos ou máquinas virtuais deve ser executadas em servidores que estão próximos aos fornecendo seu armazenamento. Reconhecimento de domínio falha permite esse afinidade de armazenamento.   
+- **O cluster estendido usa domínios de falha para afinidade de armazenamento.** O cluster estendido permite que servidores distantes ingressem em um cluster comum. Para obter o melhor desempenho, os aplicativos ou máquinas virtuais devem ser executadas em servidores que estão próximos àqueles que fornecem seu armazenamento. Reconhecimento de domínio de falha permite que a afinidade de armazenamento.   
 
 ## <a name="levels-of-fault-domains"></a>Níveis de domínios de falha  
-Há quatro níveis canônicos de domínios de falha - site, rack, chassis e nó. Nós são detectados automaticamente. cada nível adicional é opcional. Por exemplo, se sua implantação não usar servidores blade, o nível de chassi talvez não faça sentido para você.  
+Há quatro níveis canônicos de domínios de falha - site, rack, chassi e nó. Os nós são descobertos automaticamente; cada nível adicional é opcional. Por exemplo, se sua implantação não usar servidores blade, talvez o nível de chassi não faça sentido para você.  
 
-![Diagrama de diferentes níveis de domínios de falha](media/Fault-Domains-in-Windows-Server-2016/levels-of-fault-domains.png)
+![Diagrama dos diferentes níveis de domínios de falha](media/Fault-Domains-in-Windows-Server-2016/levels-of-fault-domains.png)
 
 ## <a name="usage"></a>Uso  
-Você pode usar a marcação do PowerShell ou XML para especificar os domínios de falha. As duas abordagens são equivalentes e fornecem funcionalidade completa.
+Você pode usar a marcação XML ou do PowerShell para especificar os domínios de falha. Ambas as abordagens são equivalentes e fornecem a funcionalidade completa.
 
 >[!IMPORTANT]
-> Especifique os domínios de falha antes de habilitar direta de espaços de armazenamento, se possível. Isso permite que a configuração automática preparar o pool, faixas e configurações como resiliência e contagem de colunas para tolerância chassi ou rack. Depois que o pool e volumes tiverem sido criados, dados não forma retroativa moverá em resposta às alterações para a topologia de domínio falha. Para mover nós entre chassi ou racks após a habilitação da direta de espaços de armazenamento, você deve remover primeiro o nó e suas unidades do pool usando `Remove-ClusterNode -CleanUpDisks`.
+> Especifique os domínios de falha antes de habilitar Espaços de Armazenamento Diretos, se for possível. Isso permite que a configuração automática prepare o pool, as camadas e as configurações para resiliência e número de colunas, para tolerância a falhas de chassi ou rack. Após a criação do pool e dos volumes, os dados não se movimentarão de retroativa em resposta às alterações na topologia do domínio de falha. Para mover nós entre chassis ou racks depois de habilitar os Espaços de Armazenamento Diretos, você deve remover primeiro o nó e suas unidades do pool usando `Remove-ClusterNode -CleanUpDisks`.
 
-### <a name="defining-fault-domains-with-powershell"></a>Definindo domínios de falha com o PowerShell
+### <a name="defining-fault-domains-with-powershell"></a>Definir domínios de falha com o PowerShell
 Windows Server 2016 apresenta os seguintes cmdlets para trabalhar com domínios de falha:
 * `Get-ClusterFaultDomain`
 * `Set-ClusterFaultDomain`
@@ -53,9 +54,9 @@ Windows Server 2016 apresenta os seguintes cmdlets para trabalhar com domínios 
 * `Remove-ClusterFaultDomain`
 
 Este breve vídeo demonstra o uso desses cmdlets.
-[![Clique nessa imagem para assistir a um breve vídeo sobre o uso dos cmdlets do domínio de falha de Cluster](media/Fault-Domains-in-Windows-Server-2016/Part-2-Using-PowerShell.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-2-Using-PowerShell)
+[![Clique nessa imagem para assistir a um vídeo curto sobre o uso dos cmdlets do domínio de falha do Cluster](media/Fault-Domains-in-Windows-Server-2016/Part-2-Using-PowerShell.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-2-Using-PowerShell)
 
-Use `Get-ClusterFaultDomain`para ver a topologia de domínio falha atual. Isso irá listar todos os nós de cluster, além de qualquer chassi, racks ou sites que você criou. Você pode filtrar usando parâmetros como **-tipo** ou **-nome**, mas eles não são necessários.
+Use `Get-ClusterFaultDomain` para ver a topologia de domínio de falha atual. Isso listará todos os nós no cluster, além de qualquer chassi, rack ou site que você criou. Você pode filtrar usando parâmetros como **-Type** ou **-Name**, mas isso não é obrigatório.
 
 ```PowerShell
 Get-ClusterFaultDomain
@@ -63,7 +64,7 @@ Get-ClusterFaultDomain -Type Rack
 Get-ClusterFaultDomain -Name "server01.contoso.com"
 ```
 
-Use `New-ClusterFaultDomain`para criar novo chassi, racks ou sites. O `-Type`e `-Name`parâmetros são necessários. Os valores possíveis para `-Type`são `Chassis`, `Rack`, e `Site`. O `-Name`pode ser qualquer cadeia de caracteres. (Para `Node`domínios de falha de tipo, o nome devem ser o nome do nó real, como conjunto automaticamente).
+Use `New-ClusterFaultDomain` para criar novos chassis, racks ou sites. O `-Type` e `-Name` parâmetros são obrigatórios. Os valores possíveis para `-Type` estão `Chassis`, `Rack`, e `Site`. O `-Name` pode ser qualquer cadeia de caracteres. (Para `Node` domínios de falha de tipo, o nome devem ser o nome real do nó, conforme definido automaticamente).
 
 ```PowerShell
 New-ClusterFaultDomain -Type Chassis -Name "Chassis 007"
@@ -72,9 +73,9 @@ New-ClusterFaultDomain -Type Site -Name "Shanghai"
 ```
 
 > [!IMPORTANT]  
-> Windows Server não pode e não verifica que qualquer domínios de falha que criar correspondem aos nada no mundo real, físico. (Isso pode parecer óbvio, mas é importante entender). Se, no mundo físico, os nós estão todos em um rack, em seguida, criar dois `-Type Rack`domínios de falha no software não fornece tolerância rack magicamente. Você é responsável por garantir a topologia que você cria com esses cmdlets corresponde a disposição real de seu hardware.
+> Windows Server não pode e não verifica que os domínios de falha, que você cria correspondem a qualquer coisa do mundo real, físico. (Isso pode parecer óbvio, mas é importante entender). Se, no mundo físico, seus nós estão todos em um rack, a criação de dois domínios de falha `-Type Rack` no software não fornece tolerância a falhas de rack como por mágica. Você é responsável por garantir a topologia criada por você usando esses cmdlets corresponda à organização real de seu hardware.
 
-Use `Set-ClusterFaultDomain`para mover um domínio falha em outro. Os termos "pai" e "filho" são usadas para descrever essa relação de aninhamento. O `-Name`e `-Parent`parâmetros são necessários. Em `-Name`, forneça o nome do domínio falha que será movido; em `-Parent`, forneça o nome do destino. Para mover vários domínios de falha ao mesmo tempo, liste seus nomes.
+Use `Set-ClusterFaultDomain` para mover um domínio de falha para outro. Os termos "parent" (pai) e "child" (filho) são usados normalmente para descrever essa relação de aninhamento. O `-Name` e `-Parent` parâmetros são obrigatórios. Na `-Name`, forneça o nome do domínio de falha que está sendo movimentado; em `-Parent`, forneça o nome do destino. Para mover vários domínios de falha ao mesmo tempo, liste seus nomes.
 
 ```PowerShell
 Set-ClusterFaultDomain -Name "server01.contoso.com" -Parent "Rack A"
@@ -82,11 +83,11 @@ Set-ClusterFaultDomain -Name "Rack A", "Rack B", "Rack C", "Rack D" -Parent "Sha
 ```
 
 > [!IMPORTANT]  
-> Ao mover domínios de falha, seus filhos movem com eles. No exemplo acima, se um Rack é o pai de server01.contoso.com, o último não separadamente precisa ser movido para o site de Xangai – ele já estiver lá devido ao seu pai, sendo exatamente como no mundo físico.
+> Ao mover domínios de falha, seus filhos os acompanham. No exemplo acima, se um Rack A é o pai do server01.contoso.com, o último não precisa ser movido separadamente para o site Xangai – ele já existirá em virtude de seu pai, assim como no mundo físico.
 
-Você pode ver as relações pai-filho na saída do `Get-ClusterFaultDomain`, além do `ParentName`e `ChildrenNames`colunas.
+Você pode ver as relações pai-filho na saída do `Get-ClusterFaultDomain`, no `ParentName` e `ChildrenNames` colunas.
 
-Você também pode usar `Set-ClusterFaultDomain`modificar determinadas outras propriedades de domínios de falha. Por exemplo, você pode fornecer opcional `-Location`ou `-Description`metadados para qualquer domínio de falha. Se fornecido, essas informações serão incluídas no hardware alertas do serviço de integridade. Você também pode renomear domínios de falha usando o `-NewName`parâmetro. Não renomeie `Node`digite domínios de falha.
+Você também pode usar `Set-ClusterFaultDomain` para modificar outras propriedades de domínios de falha. Por exemplo, você pode fornecer opcional `-Location` ou `-Description` metadados para qualquer domínio de falha. Se forem fornecidas, essas informações serão incluídas no alerta de hardware do Serviço de Integridade. Você também pode renomear domínios de falha usando o `-NewName` parâmetro. Não renomeie `Node` digite domínios de falha.
 
 ```PowerShell
 Set-ClusterFaultDomain -Name "Rack A" -Location "Building 34, Room 4010"
@@ -94,35 +95,35 @@ Set-ClusterFaultDomain -Type Node -Description "Contoso XYZ Server"
 Set-ClusterFaultDomain -Name "Shanghai" -NewName "China Region"
 ```
 
-Use `Remove-ClusterFaultDomain`para remover o chassi, racks ou sites que você criou. O `-Name`parâmetro será obrigatório. Você não pode remover um domínio de falhas que contém filhos – primeiro, remova os filhos ou movê-los fora usando `Set-ClusterFaultDomain`. Para mover um domínio de falha fora de todos os outros domínios de falha, defina sua `-Parent`na cadeia de caracteres vazia (""). Você não pode remover `Node`digite domínios de falha. Para remover vários domínios de falha ao mesmo tempo, liste seus nomes.
+Use `Remove-ClusterFaultDomain` para remover o chassi, rack ou site que você criou. O parâmetro `-Name` é necessário. Você não pode remover um domínio de falha que contém filhos – primeiro, remova os filhos ou mova-os para fora usando `Set-ClusterFaultDomain`. Para mover um domínio de falha fora de todos os outros domínios de falha, defina seu `-Parent` na cadeia de caracteres vazia (""). Não é possível remover `Node` digite domínios de falha. Para remover vários domínios de falha ao mesmo tempo, liste seus nomes.
 
 ```PowerShell
 Set-ClusterFaultDomain -Name "server01.contoso.com" -Parent ""
 Remove-ClusterFaultDomain -Name "Rack A"
 ```
 
-### <a name="defining-fault-domains-with-xml-markup"></a>Definindo domínios de falha com marcação XML
-Domínios de falha podem ser especificados usando uma sintaxe XML e inspirados. Recomendamos usar o editor de texto favorito, como o código do Visual Studio (disponível gratuitamente *[aqui](https://code.visualstudio.com/)*) ou bloco de notas, crie um documento XML que você pode salvar e reutilizar.  
+### <a name="defining-fault-domains-with-xml-markup"></a>Definir domínios de falha com marcação XML
+Os domínios de falha podem ser especificados usando uma sintaxe inspirada em XML. Recomendamos o uso de seu editor de texto favorito, como o Visual Studio Code (disponível gratuitamente *[aqui](https://code.visualstudio.com/)*) ou o Bloco de Notas, para criar um documento XML que você pode salvar e reutilizar.  
 
-Este breve vídeo demonstra o uso da marcação XML para especificar os domínios de falha.
+Este breve vídeo demonstra o uso de Marcação XML para especificar os domínios de falha.
 
-[![CClique essa imagem para assistir a um breve vídeo sobre como usar XML para especificar os domínios de falha](media/Fault-Domains-in-Windows-Server-2016/Part-3-Using-XML-Markup.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-3-Using-XML)
+[![Clique nessa imagem para assistir a um breve vídeo sobre como usar XML para especificar os domínios de falha](media/Fault-Domains-in-Windows-Server-2016/Part-3-Using-XML-Markup.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-3-Using-XML)
 
-No PowerShell, execute o seguinte cmdlet:`Get-ClusterFaultDomainXML`. Isso retorna a especificação de domínio falha atual para o cluster, como XML. Isso reflete a cada descobertos `<Node>`encapsulada na abertura e fechamento `<Topology>`marcas.  
+No PowerShell, execute o seguinte cmdlet: `Get-ClusterFaultDomainXML`. Isso retorna a especificação de domínio de falha atual para o cluster, como XML. Isso reflete todo descoberto `<Node>`encapsulada de abertura e fechamento `<Topology>` marcas.  
 
-Execute o seguinte para salvar essa saída para um arquivo.  
+Execute o seguinte para salvar essa saída em um arquivo.  
 
 ```PowerShell
 Get-ClusterFaultDomainXML | Out-File <Path>  
 ```
 
-Abra o arquivo e adicione `<Site>`, `<Rack>`, e `<Chassis>`marcas para especificar como esses nós são distribuídos em sites, racks e chassi. Cada marca deve ser identificada por um único **nome **. Para nós, você deve manter o nome do nó conforme preenchidos por padrão.  
+Abra o arquivo e adicione `<Site>`, `<Rack>`, e `<Chassis>` marcas para especificar como esses nós são distribuídos entre sites, racks e chassi. Cada marca deve ser identificada por um único **Nome**. Para os nós, você deve manter o nome padrão do nó.  
 
 > [!IMPORTANT]  
-> Embora todas as marcas adicionais são opcionais, eles devem cumprir o Site transitivo &gt;Rack &gt;chassi &gt;hierarquia de nós e deve ser fechado corretamente.  
-Além do nome, de forma livre `Location="..."`e `Description="..."`descritores podem ser adicionados a qualquer marca.  
+> Embora todas as marcas adicionais sejam opcionais, elas devem aderir à hierarquia temporária de Site &gt; Rack &gt; Chassi &gt; Nó, e devem ser fechadas corretamente.  
+Além do nome, de forma livre `Location="..."` e `Description="..."` descritores podem ser adicionados a qualquer marca.  
 
-#### <a name="example-two-sites-one-rack-each"></a>Exemplo: Dois locais, um coletar cada  
+#### <a name="example-two-sites-one-rack-each"></a>Exemplo: Dois sites, um rack  
 
 ```XML
 <Topology>  
@@ -159,21 +160,21 @@ Além do nome, de forma livre `Location="..."`e `Description="..."`descritores p
 </Topology>  
 ```
 
-Para definir a nova especificação de domínio falha, salve seu XML e execute o seguinte no PowerShell.  
+Para definir a nova especificação de domínio de falha, salve o XML e execute o seguinte no PowerShell.  
 
 ```PowerShell
 $xml = Get-Content <Path> | Out-String  
 Set-ClusterFaultDomainXML -XML $xml
 ```
 
-Este guia apresenta apenas dois exemplos, mas o `<Site>`, `<Rack>`, `<Chassis>`, e `<Node>`marcas podem ser misturadas e combinadas em muitas outras maneiras para refletir a topologia física da implantação, tudo o que pode estar. Esperamos que estes exemplos ilustram a flexibilidade dessas marcas e o valor de descritores de localização de forma livre para desambiguá-los.  
+Este guia apresenta apenas dois exemplos, mas o `<Site>`, `<Rack>`, `<Chassis>`, e `<Node>` marcas podem ser misturadas e combinadas de várias maneiras para refletir a topologia física de sua implantação, seja ele qual for. Esperamos que esses exemplos ilustrem a flexibilidade dessas marcas e o valor de descritores de local de forma livre para resolver a ambiguidade entre elas.  
 
-### <a name="optional-location-and-description-metadata"></a>Opcional: Metadados de local e descrição
+### <a name="optional-location-and-description-metadata"></a>Opcional: Local e uma descrição de metadados
 
-Você pode fornecer opcional **local** ou **descrição** metadados para qualquer domínio de falha. Se fornecido, essas informações serão incluídas no hardware alertas do serviço de integridade. Este breve vídeo demonstra o valor da adição de tais descritores.
+Você pode fornecer opcional **local** ou **descrição** metadados para qualquer domínio de falha. Se forem fornecidas, essas informações serão incluídas no alerta de hardware do Serviço de Integridade. Este breve vídeo demonstra a importância de adicionar esses descritores.
 
-[![CClique para ver um breve vídeo demonstrando o valor da adição de descritores de localização para domínios de falha](media/Fault-Domains-in-Windows-Server-2016/part-4-location-description.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-4-Location-Description)
+[![Clique para ver um breve vídeo que demonstra a importância de adicionar descritores de local em domínios de falha](media/Fault-Domains-in-Windows-Server-2016/part-4-location-description.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-4-Location-Description)
 
 ## <a name="see-also"></a>Consulte também  
 -   [Windows Server 2016](../get-started/windows-server-2016.md)  
--   [Espaços de armazenamento direcionam no Windows Server 2016](../storage/storage-spaces/storage-spaces-direct-overview.md) 
+-   [Espaços de armazenamento diretos no Windows Server 2016](../storage/storage-spaces/storage-spaces-direct-overview.md) 

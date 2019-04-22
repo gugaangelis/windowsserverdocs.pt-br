@@ -1,5 +1,5 @@
 ---
-title: "Substituir a lista de provedores de nome de domínio"
+title: Substituir a Lista de Provedores de Nomes de Domínio
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -13,112 +13,113 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: ebaef0f88456f61fa229c9a18ee8014987fe7fa7
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59820017"
 ---
-# <a name="replace-the-list-of-domain-name-providers"></a>Substituir a lista de provedores de nome de domínio
+# <a name="replace-the-list-of-domain-name-providers"></a>Substituir a Lista de Provedores de Nomes de Domínio
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Você pode substituir a lista de provedores de nome de domínio que é exibida no Assistente de configuração de nome de domínio, concluindo as seguintes tarefas:  
+É possível substituir a lista de provedores de nomes de domínio exibida no Assistente de Configuração de Nomes de Domínio executando as seguintes tarefas:  
   
 
 -   [Criar arquivos de serviço de referência](Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)  
   
--   [Adicione uma entrada ao registro no computador de referência](Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)  
+-   [Adicionar uma entrada ao registro no computador de referência](Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)  
 
 -   [Criar arquivos de serviço de referência](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)  
   
--   [Adicione uma entrada ao registro no computador de referência](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)  
+-   [Adicionar uma entrada ao registro no computador de referência](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)  
 
   
-###  <a name="BKMK_ReferralFiles"></a>Criar arquivos de serviço de referência  
- A ferramenta de administração de serviço de referência cria um conjunto de arquivos que são usados para definir a lista de provedores de nome de domínio que são exibidos no Assistente de configuração de nome de domínio. Um arquivo em formato XML é criado para cada região do mundo e contém informações para os provedores de nome de domínio que você especifica na ferramenta. Os arquivos que são criados pela ferramenta devem estar localizados em uma pasta que pode ser acessada por meio de um link seguro (HTTPS) que você gerencia na Internet.  
+###  <a name="BKMK_ReferralFiles"></a> Criar arquivos de serviço de referência  
+ A Ferramenta de Administração de Serviços de Referência cria um conjunto de arquivos usados para definir a lista de provedores de nomes de domínio exibidos no Assistente de Configuração de Nomes de Domínio. Um arquivo XML formatado é criado para cada região do mundo e contém informações sobre os provedores de nomes de domínio que você especificou na ferramenta. Os arquivos criados pela ferramenta devem estar localizados em uma pasta que possa ser acessada por meio de um link seguro (HTTPS) que você gerencia pela Internet.  
   
 ##### <a name="to-create-the-referral-files"></a>Para criar os arquivos de referência  
   
-1.  Abra a ferramenta de administração de serviço de referência.  
+1.  Abra a Ferramenta de Administração de Serviços de Referência.  
   
-2.  Clique em **adicionar**.  
+2.  Clique em **Adicionar**.  
   
-3.  Em Adicionar uma caixa de diálogo do provedor de nomes de domínio, digite o nome do provedor de nomes de domínio.  
+3.  Na caixa de diálogo Adicionar Provedor de Nomes de Domínio, digite o nome do provedor de nomes de domínio.  
   
-4.  Adicione domínios de nível superior que são compatíveis com o provedor de nomes de domínio. Você pode fazer isso, clicando em **adicionar**, inserir o identificador de domínio de nível superior e selecione as regiões com suporte. Você pode selecionar **todas as regiões**.  
+4.  Adicione os domínios de nível superior que são suportados pelo provedor de nomes de domínio. Isso é possível clicando em **Adicionar**, digitando o identificador do domínio de nível superior e selecionando as regiões compatíveis. Você pode selecionar **Todas as Regiões**.  
   
-5.  Insira a descrição do provedor de nomes de domínio.  
+5.  Digite a descrição do provedor de nomes de domínio.  
   
-6.  Adicione as URLs para todos os sites que estão associados com o provedor de nomes de domínio.  
+6.  Adicione as URLs de todos os sites associados ao provedor de nomes de domínio.  
   
-7.  Se um logotipo estiver disponível para o provedor de nomes de domínio, adicione o logotipo clicando **alterar logotipo**.  
+7.  Se um logotipo estiver disponível para o provedor de nomes de domínio, adicione-o clicando em **Alterar Logotipo**.  
   
-8.  Clique em **salvar**.  
+8.  Clique em **Salvar**.  
   
-9. Repita as etapas 2 a 8 para cada provedor de nomes de domínio que você deseja listar no assistente.  
+9. Repita as etapas 2 a 8 para cada provedor de nomes de domínio que desejar listar no assistente.  
   
-10. Depois de adicionar todos os provedores de nome de domínio, escolha a pasta onde os arquivos de referência estarão localizados. Tenha em mente ao escolher uma pasta que os arquivos de referência devem ser acessados por meio de um link HTTPS.  
+10. Depois de adicionar todos os provedores de nome de domínio, escolha a pasta onde os arquivos de referência estará localizados. Ao escolher uma pasta, lembre-se de que os arquivos de referência devem ser acessados por meio de um link HTTPS.  
   
-11. Clique em **gerar arquivos para sistema de arquivos**.  
+11. Clique em **Gerar Arquivos para o Sistema de Arquivos**.  
   
-###  <a name="BKMK_AddRegistry"></a>Adicione uma entrada ao registro no computador de referência  
- Uma entrada do registro deve ser adicionada para especificar onde o sistema operacional pode encontrar a referência arquivos do serviço.  
+###  <a name="BKMK_AddRegistry"></a> Adicionar uma entrada ao registro no computador de referência  
+ Uma entrada de Registro deve ser adicionada para que se especifique onde o sistema operacional pode achar os arquivos de serviços de referência.  
   
-##### <a name="to-add-a-key-to-the-registry"></a>Para adicionar uma chave do registro  
+##### <a name="to-add-a-key-to-the-registry"></a>Para adicionar uma chave ao Registro  
   
-1.  No computador de referência, clique em **iniciar**, insira **regedit**e pressione **Enter**.  
+1.  No computador de referência, clique em **Iniciar**, insira **regedit**e pressione **Enter**.  
   
-2.  No painel esquerdo, expanda **HKEY_LOCAL_MACHINE**, expanda **SOFTWARE**, expanda **Microsoft**, expanda **Windows Server**, expanda **gerenciadores de domínio**e, em seguida, expanda **provedores**.  
+2.  No painel esquerdo, expanda **HKEY_LOCAL_MACHINE**, expanda **SOFTWARE**, expanda **Microsoft**, expanda **Windows Server**, expanda **Gerenciadores de Domínio** e, finalmente, expanda **Provedores**.  
   
-3.  Clique com botão direito do **E423C85D-6B1F-4583-95E0-449D8263BAC4** chave e clique em **valor de cadeia de caracteres**.  
+3.  Clique com o botão direito do mouse na chave **E423C85D-6B1F-4583-95E0-449D8263BAC4** e, em seguida, clique em **Valor da Cadeia de Caracteres**.  
   
-4.  Tipo **ReferralServerHttpsUri** para o nome da cadeia de caracteres e pressione **Enter**.  
+4.  Digite **ReferralServerHttpsUri** para o nome da cadeia de caracteres e pressione **Enter**.  
   
-5.  Clique com botão direito do novo **ReferralServerHttpsUri** cadeia de caracteres no painel direito e clique em **modificar**.  
+5.  Clique com o botão direito na nova cadeia de caracteres **ReferralServerHttpsUri** no painel à direita e, em seguida, clique em **Modificar**.  
   
 
-6.  Digite a URL HTTPS que é usado para acessar os arquivos de referência que você criou na [criar arquivos de serviço de referência](Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)e clique em **Okey**.  
+6.  Digite a URL HTTPS usada para acessar os arquivos de referência criados em [Create the referral service files](Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles), e clique em **OK**.  
 
-6.  Digite a URL HTTPS que é usado para acessar os arquivos de referência que você criou na [criar arquivos de serviço de referência](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)e clique em **Okey**.  
+6.  Digite a URL HTTPS usada para acessar os arquivos de referência criados em [Create the referral service files](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles), e clique em **OK**.  
 
   
     > [!IMPORTANT]
-    >  Uma barra (/) é necessária ao final da URL.  
+    >  Uma barra (/) é necessária no final da URL.  
   
-###  <a name="BKMK_ReplaceDomainNameProviders"></a>Problemas de status de nome de domínio  
- Se um parceiro adiciona provedores de nome de domínio e usa uma interface de programação de aplicativo (API) no SDK do Windows Server Essentials para definir os status Unknown, Failed e CertificateRequestNotSubmitted para o certificado, o cliente recebe uma mensagem incorreta e um resultado de configuração. Isso ocorre porque os casos são tratados por exceções em vez de retornar um status.  
+###  <a name="BKMK_ReplaceDomainNameProviders"></a> Problemas de status do nome de domínio  
+ Se um parceiro adiciona provedores de nome de domínio e usa uma interface de programação de aplicativo (API) no SDK do Windows Server Essentials para definir os status desconhecido, falha e CertificateRequestNotSubmitted para o certificado, o cliente recebe um incorreto resultado da mensagem e a configuração. Isso ocorre porque os casos são tratados por exceções, em vez de retornarem um status.  
   
- Os seguintes status de domínio são falhas e devem ser relatados como erros:  
+ Os seguintes status de domínio são falhas e devem ser relatados como erro:  
   
--   Falhou  
+-   Failed (Falha)  
   
--   PendingCustomerInterventionRequired  
+-   PendingCustomerInterventionRequired (Intervenção de cliente pendente requerida)  
   
--   PurchaseFailed  
+-   PurchaseFailed (Falha na compra)  
   
--   DomainNotFound  
+-   DomainNotFound (Domínio não encontrado)  
   
--   InRenewalCustomerInterventionRequired  
+-   InRenewalCustomerInterventionRequired (Intervenção de cliente requerida na renovação)  
   
--   RenewalFailed  
+-   RenewalFailed (Falha na renovação)  
   
- Os seguintes status de domínio são bem-sucedidos e devem ser relatados como êxito:  
+ Os seguintes status de domínio são bem-sucedidos e devem ser relatados como sucesso:  
   
 -   Pronto  
   
--   Pendente  
+-   Pending (Pendente)  
   
--   InRenewal  
+-   InRenewal (Em renovação)  
   
 ## <a name="see-also"></a>Consulte também  
 
- [Criar e personalizar a imagem](Creating-and-Customizing-the-Image.md)   
+ [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do cliente](Testing-the-Customer-Experience.md)
+ [Testando a experiência do usuário](Testing-the-Customer-Experience.md)
 
- [Criar e personalizar a imagem](../install/Creating-and-Customizing-the-Image.md)   
+ [Criando e personalizando a imagem](../install/Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](../install/Additional-Customizations.md)   
  [Preparando a imagem para implantação](../install/Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do cliente](../install/Testing-the-Customer-Experience.md)
+ [Testando a experiência do usuário](../install/Testing-the-Customer-Experience.md)
 

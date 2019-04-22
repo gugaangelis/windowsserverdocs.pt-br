@@ -1,290 +1,252 @@
 ---
 ms.assetid: 4d21d27d-5523-4993-ad4f-fbaa43df7576
-title: "Avançadas do AD DS gerenciamento usando o Centro Administrativo do Active Directory (nível 200)"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 05/31/2017
+title: Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
+description: ''
+ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: mtillman
+ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 19e83ce0123bd484c61d5a4522ebdd90cd40241e
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: fc2aaa9f7c7c42b6e94995ff473a580ce560ed93
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59819997"
 ---
-# <a name="advanced-ad-ds-management-using-active-directory-administrative-center-level-200"></a>Avançadas do AD DS gerenciamento usando o Centro Administrativo do Active Directory (nível 200)
+# <a name="advanced-ad-ds-management-using-active-directory-administrative-center-level-200"></a>Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este tópico aborda o Centro Administrativo do diretório Active atualizada com sua nova a Lixeira do Active Directory, política de senha refinadas e Visualizador de histórico do Windows PowerShell com mais detalhes, inclusive a arquitetura, exemplos para tarefas comuns e informações de solução de problemas. Para obter uma introdução, consulte [Introdução ao Active Directory administrativas centro aprimoramentos & #40; Nível de 100 & #41; ](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md).  
+Este tópico abrange o Centro Administrativo do Active Directory atualizado, com a nova lixeira do Active Directory, política de Senha Refinada e Visualizador de Histórico do Windows PowerShell com mais detalhes, incluindo arquitetura, exemplos de tarefas comuns e informações sobre solução de problemas. Para obter uma introdução, consulte [Introdução ao Active Directory Administrative Center Enhancements &#40;nível 100&#41;](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md).  
   
--   [Arquitetura de centro administrativo do Active Directory](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_Arch)  
+- [Arquitetura do Centro Administrativo do Active Directory](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_Arch)  
+- [Habilitando e gerenciando o Active Directory reciclagem Bin usando o Centro Administrativo do Active Directory](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_EnableRecycleBin)  
+- [Configurando e gerenciando políticas de senha refinada usando o Centro Administrativo do Active Directory](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_FGPP)  
+- [Usando o Visualizador de histórico do PowerShell do Windows de centro administrativo do Active Directory](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_HistoryViewer)  
+- [Solucionando problemas de gerenciamento do AD DS](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_Tshoot)  
   
--   [Habilitando e gerenciando o Active Directory Lixeira usando o Centro Administrativo do Active Directory](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_EnableRecycleBin)  
+## <a name="BKMK_Arch"></a>Arquitetura do Centro Administrativo do Active Directory  
   
--   [Configurar e gerenciar políticas de senha refinadas usando o Centro Administrativo do Active Directory](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_FGPP)  
+### <a name="active-directory-administrative-center-executables-dlls"></a>Active Directory Administrative Center executáveis, DLLs  
+
+O módulo e a arquitetura subjacentes do Centro Administrativo do Active Directory não mudaram com os recursos da nova lixeira, FGPP e visualizador de histórico.  
   
--   [Usando o Visualizador de histórico do PowerShell do Windows de centro administrativo do Active Directory](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_HistoryViewer)  
+- Microsoft.ActiveDirectory.Management.UI.dll  
+- Microsoft.ActiveDirectory.Management.UI.resources.dll  
+- Microsoft.ActiveDirectory.Management.dll  
+- Microsoft.ActiveDirectory.Management.resources.dll  
+- ActiveDirectoryPowerShellResources.dll  
   
--   [Solucionando problemas de gerenciamento do AD DS](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_Tshoot)  
+O Windows PowerShell e camada de operações subjacentes para a nova funcionalidade Lixeira são ilustrados abaixo:  
   
-## <a name="BKMK_Arch"></a>Arquitetura de centro administrativo do Active Directory  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/adds_adrestore.png)  
   
-### <a name="adprep-executables-dlls"></a>ADPrep arquivos executáveis, DLLs  
-O módulo e a arquitetura subjacente do Centro Administrativo do Active Directory não mudou com o novo Lixeira, FGPP e recursos de Visualizador de histórico.  
+## <a name="BKMK_EnableRecycleBin"></a>Habilitando e gerenciando o Active Directory reciclagem Bin usando o Centro Administrativo do Active Directory  
   
--   Microsoft.ActiveDirectory.Management.UI.dll  
+### <a name="capabilities"></a>Funcionalidades  
   
--   Microsoft.ActiveDirectory.Management.UI.resources.dll  
-  
--   Microsoft.ActiveDirectory.Management.dll  
-  
--   Microsoft.ActiveDirectory.Management.resources.dll  
-  
--   ActiveDirectoryPowerShellResources.dll  
-  
-O Windows PowerShell subjacente e a camada de operações para a nova funcionalidade da Lixeira são ilustradas abaixo:  
-  
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/adds_adrestore.png)  
-  
-## <a name="BKMK_EnableRecycleBin"></a>Habilitando e gerenciando o Active Directory Lixeira usando o Centro Administrativo do Active Directory  
-  
-### <a name="capabilities"></a>Recursos  
-  
--   O Windows Server 2012 Active Directory centro administrativo permite que você a configurar e gerenciar o Active Directory Lixeira para qualquer partição de domínio em uma floresta. Não é um requisito para usar o Windows PowerShell ou Ldp.exe para habilitar o Active Directory Lixeira ou restaurar objetos em partições de domínio.  
-  
--   O Centro Administrativo do Active Directory avançou critérios de filtragem, facilitando a restauração direcionada em ambientes de grandes com muitos objetos intencionalmente excluídos.  
+- O Windows Server 2012 ou mais recente centro administrativo permite configurar e gerenciar a Lixeira do Active Directory para qualquer partição de domínio em uma floresta. Não há mais um requisito para usar o Windows PowerShell ou Ldp.exe para habilitar a Lixeira do Active Directory ou restaurar objetos em partições de domínio.
+- O Centro Administrativo do Active Directory tem critérios de filtragem avançados, facilitando a restauração de destino em grandes ambientes, com muitos objetos excluídos intencionalmente.
   
 ### <a name="limitations"></a>Limitações  
   
--   Porque o Centro Administrativo do Active Directory somente pode gerenciar partições de domínio, ele não poderá restaurar objetos excluídos das partições de configuração, DNS do domínio ou floresta DNS (você não pode excluir objetos da partição de esquema). Para restaurar os objetos de partições não do domínio, use [restauração ADObject](https://technet.microsoft.com/library/ee617262.aspx).  
-  
--   O Centro Administrativo do Active Directory não é possível restaurar subárvores de objetos em uma única ação. Por exemplo, se você excluir uma UO com aninhados UOs, os usuários, grupos e computadores, restaurando a UO base não restaurar os objetos filho.  
+- Como o Centro Administrativo do Active Directory só pode gerenciar partições de domínio, ele não consegue restaurar objetos excluídos de partições de Configuração, DNS de Domínio ou DNS de Floresta (não é possível excluir objetos da partição Esquema). Para restaurar objetos de partições não domínio, use [Restore-ADObject](https://technet.microsoft.com/library/ee617262.aspx).  
+
+- O Centro Administrativo do Active Directory não pode restaurar subárvores de objetos em uma única ação. Por exemplo, se você excluir uma UO com UOs, usuários, grupos e computadores aninhados, a restauração da UO de base não restaurará os objetos filhos.  
   
     > [!NOTE]  
-    > A operação de restauração do lote de centro administrativo do Active Directory faz um "melhor esforço" tipo dos objetos excluídos *dentro da seleção somente* para que os pais são ordenados antes das crianças para a lista de restauração. Em casos de teste simples, subárvores de objetos podem ser restaurados em uma única ação. Mas casos de canto, como uma seleção que contenha árvores parciais - árvores com alguns de nós pai excluído ausentes - ou casos de erro, como ignorar os objetos filho quando restaurar pai falhar, talvez não funcionem conforme o esperado. Por esse motivo, você sempre deve restaurar subárvores de objetos como uma ação separada depois de restaurar os objetos pai.  
+    > A operação de restauração de lote da Central Administrativa do Active Directory faz um "melhor esforço" classificação de objetos excluídos *dentro da seleção apenas* assim, os pais são ordenados antes dos filhos para a lista de restauração. Em casos de teste simples, subárvores de objetos podem ser restauradas em uma única ação. Mas casos de canto, como uma seleção que contém árvores parciais - árvores com alguns de nós pais excluídos ausentes - ou casos de erro, como ignorar objetos filhos quando a restauração pai falha, podem não funcionar conforme o esperado. Por isso, você deve sempre restaurar subárvores de objetos como uma ação separada depois de restaurar os objetos pais.  
   
-A Lixeira do Active Directory requer um Windows Server 2008 R2 nível funcional da floresta, e você deve ser um membro do grupo Administradores corporativos. Uma vez habilitado, você não pode desabilitar a Lixeira do Active Directory. A Lixeira do Active Directory aumenta o tamanho do banco de dados do Active Directory (NTDS. DIT) em todos os controladores de domínio na floresta. Espaço em disco usado pela Lixeira continua aumentando ao longo do tempo à medida que ele preserva objetos e todos os seus dados de atributo.  
+A Lixeira do Active Directory requer um Windows Server 2008 R2 nível funcional de floresta e você deve ser um membro do grupo Administradores corporativos. Uma vez habilitada, não é possível desabilitar a Lixeira do Active Directory. A Lixeira do Active Directory aumenta o tamanho do banco de dados do Active Directory (NTDS.DIT​​) em cada controlador de domínio na floresta. O espaço em disco usado pela lixeira continua a aumentar ao longo do tempo, uma vez que preserva objetos e todos os seus dados de atributos.  
   
-Para obter mais informações, consulte [Active Directory reciclar Bin guia passo a passo](https://technet.microsoft.com/library/dd392261(v=WS.10).aspx) e [avaliar os requisitos de Hardware (do Active Directory Lixeira)](https://technet.microsoft.com/library/cc753439(WS.10).aspx).  
+### <a name="enabling-active-directory-recycle-bin-using-active-directory-administrative-center"></a>Habilitando a Lixeira do Active Directory usando o Centro Administrativo do Active Directory
+
+Para habilitar a Lixeira do Active Directory, abra o **Centro Administrativo do Active Directory** e clique no nome da floresta no painel de navegação. No painel **Tarefas**, clique em **Habilitar Lixeira**.  
   
-Você pode *inferior* as floresta e domínio níveis funcionais do Windows Server 2012 para Windows Server 2008 R2, mesmo depois de habilitar o Active Directory Lixeira. Isso requer o uso do **conjunto ADForestMode** e **conjunto ADDomainMode** cmdlets do Active Directory.  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_EnableRecycleBin.png)  
   
-Por exemplo:  
-  
-```  
-Set-AdForestMode -identity corp.contoso.com -server dc1.corp.contoso.com -forestmode Windows2008R2Forest  
-Set-AdDomainMode -identity research.corp.contoso.com -server dc3.research.corp.contoso.com -domainmode Windows2008R2Domain  
-  
-```  
-  
-Você não pode usar o Centro Administrativo do Active Directory para fazer essa alteração - ela só gera níveis funcionais.  
-  
-### <a name="enabling-active-directory-recycle-bin-using-active-directory-administrative-center"></a>Habilitando o Active Directory Lixeira usando o Centro Administrativo do Active Directory  
-Para ativar o Active Directory Lixeira, abra o **Centro Administrativo do Active Directory** e clique no nome da floresta no painel de navegação. Do **tarefas** painel, clique em **habilitar Lixeira**.  
-  
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_EnableRecycleBin.png)  
-  
-O Centro Administrativo do Active Directory mostra o **habilitar confirmação de Bin reciclar** caixa de diálogo. Essa caixa de diálogo avisa que é irreversível habilitando a Lixeira. Clique em **Okey** para permitir que o Active Directory Lixeira. O Centro Administrativo do Active Directory mostra outra caixa de diálogo para lembrá-lo que o Active Directory Lixeira não é totalmente funcional até que todos os controladores de domínio duplicam a alteração de configuração.  
+O Centro Administrativo do Active Directory mostra a caixa de diálogo **Habilitar Confirmação de Lixeira** . Essa caixa de diálogo avisa que a habilitação da lixeira é irreversível. Clique em **OK** para habilitar a Lixeira do Active Directory. O Centro Administrativo do Active Directory mostra outra caixa de diálogo para lembrá-lo que a Lixeira do Active Directory não estará totalmente funcional até que todos os controladores de domínio repliquem a alteração de configuração.  
   
 > [!IMPORTANT]  
-> A opção para habilitar o Active Directory Lixeira estará disponível se:  
->   
-> -   O nível funcional da floresta for menor que o Windows Server 2008 R2  
-> -   Ele já está habilitado  
-  
-Ainda é o equivalente cmdlet do Active Directory Windows PowerShell:  
-  
-```  
+> A opção para habilitar a Lixeira do Active Directory não estará disponível se:  
+>
+> - O nível funcional da floresta for mais baixo do que o do Windows Server 2008 R2  
+> - Já estiver habilitada  
+
+O cmdlet do Active Directory do Windows PowerShell equivalente é:  
+
+```powershell
 Enable-ADOptionalFeature  
-```  
+```
+
+Para obter mais informações sobre como usar o Windows PowerShell para habilitar o a Lixeira do Active Directory, consulte o [Guia passo a passo da Lixeira do Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-#active-directory-recycle-bin-step-by-step).  
   
-Para obter mais informações sobre como usar o Windows PowerShell para permitir que o Active Directory Lixeira, consulte o [Active Directory reciclar Bin guia passo a passo](https://technet.microsoft.com/library/dd392261(v=WS.10).aspx).  
+### <a name="managing-active-directory-recycle-bin-using-active-directory-administrative-center"></a>Gerenciando a Lixeira do Active Directory usando o Centro Administrativo do Active Directory
+
+Esta seção usa o exemplo de um domínio existente chamado **corp.contoso.com**. Este domínio organiza os usuários em uma UO pai chamada **UserAccounts**. A UO **UserAccounts** contém três UOs nomeadas por departamento, cada qual com mais UOs, usuários e grupos.  
   
-### <a name="managing-active-directory-recycle-bin-using-active-directory-administrative-center"></a>Gerenciando o Active Directory Lixeira usando o Centro Administrativo do Active Directory  
-Esta seção usa o exemplo de um domínio existente chamado **corp.contoso.com**. Neste domínio organiza os usuários em um pai OU chamada **UserAccounts**. O **UserAccounts** OU contém três OUs filho nomeadas pelo departamento, que cada contêm ainda mais unidades organizacionais, usuários e grupos.  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_EnableRecycleBinExampleOU.png)  
   
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_EnableRecycleBinExampleOU.png)  
+#### <a name="storage-and-filtering"></a>Armazenamento e filtragem
+
+A Lixeira do Active Directory preserva todos os objetos excluídos na floresta. Ela salva esses objetos de acordo com o atributo **msDS-deletedObjectLifetime** que, por padrão, é definido para corresponder ao atributo **tombstoneLifetime** da floresta. Em qualquer floresta criada usando o Windows Server 2003 SP1 ou mais recente, o valor de **tombstoneLifetime** é definido para 180 dias por padrão. Em qualquer floresta atualizada do Windows 2000 ou instalada com o Windows Server 2003 (sem service pack), o atributo padrão tombstoneLifetime NÃO É DEFINIDO e, portanto, o Windows usa o padrão interno de 60 dias. Tudo isso é configurável. Você pode usar o Centro Administrativo do Active Directory para restaurar quaisquer objetos excluídos das partições de domínio da floresta. Você deve continuar a usar o cmdlet **Restore-ADObject** para restaurar objetos excluídos de outras partições, como Configuração. A habilitação da Lixeira do Active Directory faz com que o contêiner **Objetos Excluídos** fique visível em cada partição de domínio no Centro Administrativo do Active Directory.  
   
-#### <a name="storage-and-filtering"></a>Armazenamento e filtragem  
-O Active Directory Lixeira preserva todos os objetos excluídos na floresta. Ele salva esses objetos de acordo com o **msDS-deletedObjectLifetime** atributo, que, por padrão, é definido para corresponder a **vida útil para desativação** atributo da floresta. Em qualquer floresta criada com o Windows Server 2003 SP1 ou posterior, o valor de **vida útil para desativação** é definido como 180 dias por padrão. Em qualquer floresta atualizado do Windows 2000 ou instalado com o Windows Server 2003 (sem service pack), o atributo de vida útil para desativação padrão não é definido e, portanto, o Windows usa o padrão interno de 60 dias. Tudo isso é configurável. Você pode usar o Centro Administrativo do Active Directory para restaurar todos os objetos excluídos das partições de domínio da floresta. Você deve continuar a usar o cmdlet **restauração ADObject** restaurar objetos excluídos de outras partições, como Configuration.Enabling faz com que o Active Directory Lixeira o **Deleted Objects** contêiner visível em todas as partições de domínio em que o Centro Administrativo do Active Directory.  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_DeletedObjectsContainer.png)  
   
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_DeletedObjectsContainer.png)  
+O contêiner **Objetos Excluídos** mostra todos os objetos restauráveis ​​naquela partição de domínio. Objetos excluídos mais antigos que **msDS-deletedObjectLifetime** são conhecidos como objetos reciclados. O Centro Administrativo do Active Directory não mostra objetos reciclados e não é possível restaurar esses objetos usando o Centro Administrativo do Active Directory.  
   
-O **Deleted Objects** contêiner mostra todos os objetos serão recuperáveis nessa partição domínio. Excluído objetos mais antigos que **msDS-deletedObjectLifetime** são conhecidos como objetos reciclados. O Centro Administrativo do Active Directory não mostra os objetos reciclados e você não poderá restaurar esses objetos usando o Centro Administrativo do Active Directory.  
+Para obter uma explicação mais profunda da arquitetura e as regras de processamento da Lixeira, consulte [a Lixeira do AD: Compreendendo, Implementando, práticas recomendadas e solução de problemas](http://blogs.technet.com/b/askds/archive/2009/08/27/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting.aspx).  
   
-Para obter uma explicação mais profunda de arquitetura a Lixeira e regras de processamento, consulte [a Lixeira AD: Noções básicas sobre, implementação, práticas recomendadas e solução de problemas](http://blogs.technet.com/b/askds/archive/2009/08/27/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting.aspx).  
+O Centro Administrativo do Active Directory limita artificialmente o número padrão de objetos retornados de um contêiner a 20.000 objetos. Você pode aumentar esse limite até 100.000 objetos, clicando no menu **Gerenciar** e depois em **Opções da Lista de Gerenciamento**.  
   
-O Centro Administrativo do Active Directory artificialmente limita o número padrão de objetos retornados de um contêiner de 20.000 objetos. Você pode disparar esse limite tão alto quanto 100.000 objetos clicando o **gerenciar** menu, em seguida, **opções de gerenciamento de lista**.  
-  
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_MgmtList.png)  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_MgmtList.png)  
   
 #### <a name="restoration"></a>Restauração  
   
-##### <a name="filtering"></a>Filtragem  
-Centro Administrativo do Active Directory oferece critérios potentes e opções de filtragem que você deve se familiarizar com antes que você precise usá-los em uma restauração vida real. Domínios intencionalmente excluir muitos objetos através de seu tempo de vida. Com um tempo de vida do objeto provavelmente excluído de 180 dias, você simplesmente não poderá restaurar todos os objetos quando ocorre um acidente.  
+##### <a name="filtering"></a>Filtragem
+
+O Centro Administrativo do Active Directory oferece critérios poderosos e opções de filtragem com os quais você deve se familiarizar antes de precisar usá-los em uma restauração real. Os domínios excluem intencionalmente muitos objetos ao longo de sua vida útil. Sendo que a vida útil do objeto excluído provavelmente é de 180 dias, não é possível simplesmente restaurar todos os objetos quando ocorre um acidente.  
   
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_AddCriteria.png)  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_AddCriteria.png)  
   
-Em vez de escrever filtros LDAP complexos e converter valores UTC em datas e horas, use o básico e avançado **filtro** menu para listar apenas os objetos relevantes. Se você souber o dia de exclusão, os nomes dos objetos ou quaisquer outros dados da chave, use isso para sua vantagem quando a filtragem. Mude as opções de filtro avançado, clique na divisa à direita da caixa de pesquisa.  
+Em vez de escrever filtros LDAP complexos e converter valores UTC em datas e horas, use o menu básico e avançado **Filtrar** para listar somente os objetos relevantes. Se você souber o dia da exclusão, os nomes dos objetos ou quaisquer outros dados importantes, use isso a seu favor durante a filtragem. Alterne as opções de filtro avançadas, clicando na divisa à direita da caixa de pesquisa.  
   
-A operação de restauração dá suporte a todas as opções de critérios filtro padrão, o mesmo como qualquer outra pesquisa. Os filtros internos, os importantes para restaurar objetos normalmente são:  
+A operação de restauração dá suporte a todas as opções de critérios de filtro padrão, como em qualquer outra pesquisa. Dos filtros embutidos, os mais importantes para a restauração de objetos são tipicamente:  
   
--   *ANR (resolução de nomes ambíguos - não listada no menu, mas o que é usado quando você digitar o * * * filtro * * * caixa)*  
+- *ANR (resolução de nomes ambíguos – não listada no menu, mas o que é usado quando você digita no * * * filtro * * * caixa)*  
+- Última modificação entre datas determinadas  
+- O objeto é user/inetorgperson/computer/group/organization unit  
+- Nome  
+- Quando excluído  
+- Último pai conhecido  
+- Tipo  
+- Descrição  
+- Cidade  
+- País/região  
+- Departamento  
+- ID do funcionário  
+- Nome  
+- Cargo  
+- Sobrenome  
+- SAMaccountname  
+- Estado/Província  
+- Número de telefone  
+- UPN  
+- CEP/Código postal  
+
+Você pode adicionar vários critérios. Por exemplo, você pode encontrar todos os objetos de usuário excluídos em 24 de setembro de 2012 em Chicago, Illinois, EUA, com um cargo de gerente.
   
--   Última modificada entre fornecido datas  
+Você também pode adicionar, modificar ou reorganizar os cabeçalhos da coluna para fornecer mais detalhes ao avaliar os objetos a serem recuperados.  
   
--   Objeto é a unidade do usuário/inetorgperson/computador/grupo/organização  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_ColumnHeaders.png)  
   
--   Nome  
+Para obter mais informações sobre resolução de nomes ambíguos, consulte [Atributos de ANR](https://msdn.microsoft.com/library/ms675092(VS.85).aspx).  
   
--   Quando excluído  
+##### <a name="single-object"></a>Objeto único
+
+A restauração de objetos excluídos sempre foi uma operação única.  O Centro Administrativo do Active Directory facilita esta operação. Para restaurar um objeto excluído, como um único usuário:  
   
--   Último pai conhecido  
+1. Clique no nome de domínio no painel de navegação do Centro Administrativo do Active Directory.  
+2. Clique duas vezes em **Objetos excluídos** na lista de gerenciamento.  
+3. Clique com o botão direito do mouse no objeto e, em seguida, em **Restaurar**, ou clique em **Restaurar** no painel **Tarefas** .  
   
--   Tipo  
+O objeto é restaurado ao seu local original.  
   
--   Descrição  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestoreSingle.gif)  
   
--   Cidade  
+Clique em **restaurar para...**  para alterar o local de restauração. Isso é útil se o contêiner pai do objeto excluído também tiver sido excluído, mas você não deseja restaurar o pai.  
   
--   País /region  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestoreToSingle.gif)  
   
--   Departamento  
+##### <a name="multiple-peer-objects"></a>Vários objetos pares
+
+É possível restaurar vários objetos pares, assim como todos os usuários em uma UO. Mantenha pressionada a tecla CTRL e clique em um ou mais objetos excluídos que você deseja restaurar. Clique em **Restaurar** no painel Tarefas. Você também pode selecionar todos os objetos exibidos, mantendo pressionadas as teclas CTRL e A, ou um intervalo de objetos usando SHIFT e clique.  
   
--   ID do funcionário  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestorePeers.png)  
   
--   Sobrenome  
+##### <a name="multiple-parent-and-child-objects"></a>Vários objetos pais e filhos
+
+É fundamental entender o processo de restauração de uma restauração multi-pai-filho, porque o Centro Administrativo do Active Directory não pode restaurar uma árvore aninhada de objetos excluídos com uma única ação.  
   
--   Cargo  
+1. Restaure o objeto mais excluído em uma árvore.  
+2. Restaure os filhos imediatos desse objeto pai.  
+3. Restaure os filhos imediatos desses objetos pai.  
+4. Repita conforme necessário até que todos os objetos sejam restaurados.  
   
--   Sobrenome  
+Não é possível restaurar um objeto filho antes de restaurar seu pai. A tentativa dessa restauração retorna o seguinte erro:  
   
--   SAMaccountname  
+**A operação não pôde ser executada porque o pai do objeto está não instanciado ou foi excluído.**  
   
--   Estado/província  
+O atributo **Último Pai Conhecido** mostra a relação de pai de cada objeto. O atributo **Último Pai Conhecido** muda do local excluído para o local restaurado quando você atualiza o Centro Administrativo do Active Directory após a restauração de um pai. Portanto, você pode restaurar esse objeto filho quando o local de um objeto pai não mostra o nome diferenciado do contêiner objetos excluídos.  
   
--   Número de telefone  
+Considere o cenário em que um administrador exclui acidentalmente a UO de Vendas, que contém UOs filhas e usuários.  
   
--   UPN  
+Primeiro, observe o valor da **último pai conhecido** atributo para todos os usuários excluídos e como ele lê **UO = Sales\0ADEL:*< guid + contêiner objetos excluídos o nome distinto > * * *:  
   
--   CEP  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParent.gif)  
   
-Você pode adicionar vários critérios. Por exemplo, você pode encontrar todos os objetos de usuário excluídos em 24 de setembro<sup>th</sup> 2012 pela Chicago, Illinois com um título de trabalho do Gerenciador.  
+Filtre o nome ambíguo de Vendas para retornar a UO excluída que pode, então, ser restaurada:  
   
-Você também pode adicionar, modificar ou reordenar os cabeçalhos de coluna para fornecer mais detalhes ao avaliar quais objetos para recuperar.  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParentSales.png)  
   
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_ColumnHeaders.png)  
+Atualize o Centro Administrativo do Active Directory para ver o atributo de último pai conhecido do objeto de usuário excluído altere para o nome diferenciado de UO de vendas restaurado:  
   
-Para obter mais informações sobre a resolução de nomes ambíguos, consulte [atributos ANR](https://msdn.microsoft.com/library/ms675092(VS.85).aspx).  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParentSalesRestored.gif)  
   
-##### <a name="single-object"></a>Objeto único  
-Restauração de objetos excluídos sempre tem sido uma única operação.  O Centro Administrativo do Active Directory facilita a operação. Para restaurar um objeto excluído, como um único usuário:  
+Filtre todos os usuários de Vendas. Mantenha pressionadas as teclas CTRL e A para selecionar todos os usuários de Vendas excluídos. Clique em **Restaurar** para mover os objetos do contêiner **Objetos Excluídos** para a UO de Vendas com suas associações de grupo e atributos intactos.  
   
-1.  Clique no nome de domínio no painel de navegação do Centro Administrativo do Active Directory.  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParentSalesUndelete.png)  
   
-2.  Clique duas vezes em **Deleted Objects** na lista de gerenciamento.  
+Se a UO de **Vendas** contivesse UOs filhas próprias, então, você restauraria a UO filha primeiro antes de restaurar seus filhos, e assim por diante.  
   
-3.  Clique com botão direito do objeto e, em seguida, clique em **restaurar**, ou clique em **restaurar** do **tarefas** painel.  
+Para restaurar objetos excluídos aninhados tudo, especificando um contêiner pai excluído, consulte [apêndice b: Restaurar vários objetos do Active Directory (Script de exemplo) excluídos](https://technet.microsoft.com/library/dd379504(WS.10).aspx).  
   
-Restaura o objeto para seu local original.  
-  
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestoreSingle.gif)  
-  
-Clique em **restaurar para... ** para alterar o local de restauração. Isso é útil se o contêiner do pai do objeto excluído também foi excluída, mas você não quer restaurar o pai.  
-  
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestoreToSingle.gif)  
-  
-##### <a name="multiple-peer-objects"></a>Vários objetos de par  
-Você pode restaurar vários objetos de nível de ponto a ponto, como todos os usuários em uma unidade Organizacional. Mantenha pressionada a tecla CTRL e clique em um ou mais objetos excluídos, que você quer restaurar. Clique em **restaurar** do painel de tarefas. Você também pode selecionar objetos exibidos todos pressionando a teclas CTRL e um, ou um intervalo de objetos usando SHIFT e clicar.  
-  
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestorePeers.png)  
-  
-##### <a name="multiple-parent-and-child-objects"></a>Vários objetos filho e pai  
-É fundamental para entender o processo de restauração para uma restauração vários parent filho, porque o Centro Administrativo do Active Directory não é possível restaurar uma árvore de objetos excluídos com uma única ação aninhada.  
-  
-1.  Restaure o objeto excluído mais alto em uma árvore.  
-  
-2.  Restaure os filhos imediatos do objeto pai.  
-  
-3.  Restaure os filhos imediatos desses objetos pai.  
-  
-4.  Repita conforme necessário até que todos os objetos restaurar.  
-  
-Você não poderá restaurar um objeto filho antes de restaurar seu pai. A restauração a tentativa retorna o seguinte erro:  
-  
-**A operação não pôde ser executada porque o pai do objeto é ocorrência ou excluído.**  
-  
-O **último pai conhecido** atributo mostra a relação de pai de cada objeto. O **último pai conhecido** atributo mudanças do local excluído do local restaurado quando você atualiza o Centro Administrativo do Active Directory depois de restaurar um pai. Portanto, você poderá restaurar esse objeto filho ao local do objeto de um pai não mostra o nome do contêiner de objetos excluídos distinto.  
-  
-Considere o cenário em que um administrador acidentalmente exclui a UO de vendas, que contém a UOs de filho e os usuários.  
-  
-Primeiro, observe o valor da **último pai conhecido** atributo para todos os usuários excluídos e como ele lê * *UO = Sales\0ADEL:*< guid + contêiner de objetos excluídos diferenciadas nome >** *:  
-  
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParent.gif)  
-  
-Filtrar o nome ambíguos vendas para retornar a OU excluída, em seguida, restaurar:  
-  
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParentSales.png)  
-  
-Atualize o Centro Administrativo do Active Directory para ver o atributo de último conhecido pai do objeto de usuário excluída mudar para o nome diferenciado de vendas OU restaurado:  
-  
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParentSalesRestored.gif)  
-  
-Filtrar todos os usuários de vendas. Pressione a teclas CTRL e um para selecionar todos os usuários de vendas excluídos. Clique em **restaurar** para mover os objetos do **Deleted Objects** contêiner à UO de vendas com seus membros do grupo e atributos intactos.  
-  
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParentSalesUndelete.png)  
-  
-Se o **vendas** UO contidos UOs filho de sua própria e deseja restaurar as UOs filho primeiro antes de restaurar seus filhos e assim por diante.  
-  
-Para restaurar aninhados todos os objetos excluídos, especificando um contêiner pai excluídos, consulte [apêndice b: restaurar vários, excluídos objetos do Active Directory (Script de exemplo)](https://technet.microsoft.com/library/dd379504(WS.10).aspx).  
-  
-O cmdlet do Active Directory do Windows PowerShell para restaurar objetos excluídos é:  
-  
-```  
+O cmdlet do Windows PowerShell para Active Directory para a restauração de objetos excluídos é:  
+
+```powershell
 Restore-adobject  
+```
+
+A funcionalidade do cmdlet **Restore-ADObject** não foi alterada entre o Windows Server 2008 R2 e o Windows Server 2012.  
   
-```  
+##### <a name="server-side-filtering"></a>Filtragem de servidor
+
+É possível que, com o tempo, o contêiner Objetos Excluídos acumule mais de 20.000 (ou até mesmo 100.000) objetos em médias e grandes empresas e tenha dificuldades em mostrar todos os objetos. Como o mecanismo de filtro no Centro Administrativo do Active Directory baseia-se na filtragem de cliente, ele não pode mostrar estes objetos adicionais. Para contornar essa limitação, use as seguintes etapas para realizar uma busca no servidor:  
   
-O **restauração ADObject** funcionalidade cmdlet não foram alterados entre o Windows Server 2008 R2 e Windows Server 2012.  
+1. Clique com o botão direito do mouse no contêiner **Objetos Excluídos** e depois em **Pesquisar neste nó**.  
+2. Clique na divisa para expor o menu **+Adicionar critérios**, selecione e adicione **Última modificação entre determinadas datas**. A hora da última modificação (o atributo **whenChanged**) é uma aproximação da hora de exclusão; na maioria dos ambientes, elas são idênticas. Esta consulta realiza uma pesquisa de servidor.  
+3. Localize os objetos excluídos para restaurar usando outra filtragem de exibição, classificação e assim por diante nos resultados e, em seguida, restaure-os normalmente.  
   
-##### <a name="server-side-filtering"></a>Filtragem de servidor  
-É possível que, ao longo do tempo, o contêiner de objetos excluídos será acumular mais de 20.000 (ou até mesmo 100.000) objetos em empresas de médio e grandes e ter dificuldade para mostrar todos os objetos. Desde que o mecanismo de filtro no Centro Administrativo do Active Directory depende filtrando do lado do cliente, ele não pode mostrar esses objetos adicionais. Para contornar essa limitação, use as seguintes etapas para realizar uma pesquisa de servidor:  
+## <a name="BKMK_FGPP"></a>Configurando e gerenciando políticas de senha refinada usando o Centro Administrativo do Active Directory  
   
-1.  Clique com botão direito do **Deleted Objects** contêiner e clique em **pesquisa sob esse nó**.  
+### <a name="configuring-fine-grained-password-policies"></a>Configurando políticas de senha refinada
+
+O Centro Administrativo do Active Directory permite que você crie e gerencie objetos de FGPP (Política de Senha Refinada). O Windows Server 2008 introduziu o recurso FGPP, mas o Windows Server 2012 tem a primeira interface gráfica de gerenciamento para ele. Você aplica as Políticas de Senha Refinada em um nível de domínio e ele permite substituir a senha de domínio único exigida pelo Windows Server 2003. Ao criar uma FGPP diferente, com diferentes configurações, usuários individuais ou grupos obtêm diferentes políticas de senha em um domínio.  
   
-2.  Clique na divisa para expor o **+ adicionar critérios de** menu, selecione e adicione **última modificação entre fornecido datas**. A hora da última modificação (o **whenChanged** atributo) é uma aproximação fechar o tempo de exclusão; Na maioria dos ambientes, eles são idênticos. Essa consulta executa uma pesquisa de servidor.  
+Para obter informações sobre Políticas de Senha Refinada, consulte o [Guia passo a passo da política de bloqueio de senhas e contas refinadas do AD DS (Windows Server 2008 R2)](https://technet.microsoft.com/library/cc770842(WS.10).aspx).  
   
-3.  Localize os objetos excluídos restaurar usando outra exibição filtragem, classificação e assim por diante nos resultados e restaurá-los normalmente.  
+No painel de navegação, clique no modo de exibição de árvore, depois no domínio, em seguida, em **Sistema**, clique em **Contêiner de Configuração de Senha**e depois, no painel Tarefas, clique em **Novo** e **Configurações de Senha**.  
   
-## <a name="BKMK_FGPP"></a>Configurar e gerenciar políticas de senha refinadas usando o Centro Administrativo do Active Directory  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_PasswordSettings.png)  
   
-### <a name="configuring-fine-grained-password-policies"></a>Configurar políticas de senha refinadas  
-O Centro Administrativo do Active Directory permite que você criar e gerenciar objetos de política de senha refinadas (FGPP). Windows Server 2008 introduziu o recurso FGPP mas Windows Server 2012 tem a primeira interface gráfica de gerenciamento para ele. Aplique políticas de senha refinadas em um nível de domínio e permite substituir a senha de domínio único exigida pelo Windows Server 2003. Criando FGPP diferente com configurações diferentes, usuários individuais ou grupos obtém diferentes políticas de senha em um domínio.  
+### <a name="managing-fine-grained-password-policies"></a>Gerenciando políticas de senha refinada
+
+A criação de uma nova FGPP ou edição de uma existente traz o editor de **Configurações de Senha**. A partir daqui, você pode configurar todas as políticas de senha desejadas, como no Windows Server 2008 ou Windows Server 2008 R2, só que agora com um editor construído para esse fim.  
   
-Para obter informações sobre a política de senha refinadas, consulte [AD DS refinadas senha e política de bloqueio de conta Step-by-Step guia (Windows Server 2008 R2)](https://technet.microsoft.com/library/cc770842(WS.10).aspx).  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_CreatePasswordSettings.png)  
   
-No painel de navegação, clique em modo de exibição de árvore, clique em seu domínio **sistema**, clique em **contêiner de configurações de senha**e, em seguida, no painel de tarefas, clique em **nova** e **configurações de senha**.  
+Preencha todos os campos obrigatórios (com asterisco vermelho) e quaisquer campos opcionais, e clique em **Adicionar** para definir os usuários ou grupos que recebem esta política. A FGPP substitui as configurações de política de domínio padrão para as entidades de segurança especificadas. Na figura acima, uma política extremamente restritiva se aplica apenas à conta de Administrador interno, para evitar comprometimento. A política é muito complexa para que os usuários padrão estejam em conformidade, mas é perfeita para uma conta de alto risco usada apenas por profissionais de TI.  
   
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_PasswordSettings.png)  
+Você também define prioridade e a quais usuários e grupos a política se aplica, dentro de determinado domínio.  
   
-### <a name="managing-fine-grained-password-policies"></a>Gerenciamento de políticas de senha refinadas  
-Criando um novo FGPP ou editando uma existente abre o **configurações de senha** editor. A partir daqui, você configurar todas as políticas de senha desejada, como você teria no Windows Server 2008 ou Windows Server 2008 R2, só agora com um editor de uso específico.  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_Precedence.png)  
   
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_CreatePasswordSettings.png)  
+Os cmdlet do Windows PowerShell para o Active Directory para a Política de Senha Refinada são:  
   
-Preencher os campos necessários do (asterisco vermelho) e qualquer opcionais e clique em **adicionar** para definir os usuários ou grupos que recebe essa política. FGPP substitui as configurações de política de domínio padrão para essas entidades de segurança especificado. Na figura acima, uma política extremamente restritiva se aplica somente a conta de administrador interno, para evitar o comprometimento. A política é muito complexa para usuários padrão em conformidade com, mas é perfeita para uma conta de alto risco usada somente por profissionais de TI.  
-  
-Você também definir precedência e para quais usuários e grupos a política se aplica dentro de um determinado domínio.  
-  
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_Precedence.png)  
-  
-Os cmdlets do Active Directory do Windows PowerShell para política de senha refinadas são:  
-  
-```  
+```powershell
 Add-ADFineGrainedPasswordPolicySubject  
 Get-ADFineGrainedPasswordPolicy  
 Get-ADFineGrainedPasswordPolicySubject  
@@ -292,265 +254,236 @@ New-ADFineGrainedPasswordPolicy
 Remove-ADFineGrainedPasswordPolicy  
 Remove-ADFineGrainedPasswordPolicySubject  
 Set-ADFineGrainedPasswordPolicy  
+```
+
+A funcionalidade de cmdlet da Política de Senha Refinada não foi alterada entre o Windows Server 2008 R2 e o Windows Server 2012. Por conveniência, o diagrama a seguir ilustra os argumentos associados aos cmdlets:  
   
-```  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_FGPP.gif)  
   
-A funcionalidade do cmdlet de política de senha refinada não foram alterados entre o Windows Server 2008 R2 e Windows Server 2012. Como uma conveniência, o diagrama a seguir ilustra os argumentos associados para cmdlets:  
+O Centro Administrativo do Active Directory também permite localizar o conjunto resultante da FGPP aplicada a um usuário específico. Com o botão direito em qualquer usuário e clique em **exibir configurações de senha resultantes...**  para abrir o *configurações de senha* página se aplica ao usuário por meio de atribuição implícita ou explícita:  
   
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_FGPP.gif)  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RSOP.png)  
   
-O Centro Administrativo do Active Directory também permite que você encontrar o conjunto de FGPP aplicada para um determinado usuário resultante. Qualquer usuário clique com botão direito e clique em **exibir configurações de senha resultante... ** para abrir o *configurações de senha* página que se aplica ao usuário por meio de atribuição implícito ou explícito:  
+A análise das **Propriedades** de qualquer usuário ou grupo mostra as **Configurações de Senha Diretamente Associadas**, que são as FGPPs explicitamente atribuídas:  
   
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RSOP.png)  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_FGPPSettings.gif)  
   
-Examinando a **propriedades** de qualquer usuário ou grupo mostra o **associados diretamente configurações de senha**, quais são as FGPPs explicitamente atribuídos:  
+Atribuição FGPP implícita não é exibida aqui; Para fazer isso, você deve usar o **exibir configurações de senha resultantes...**  opção.  
   
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_FGPPSettings.gif)  
+## <a name="BKMK_HistoryViewer"></a>Usando o Visualizador de histórico do PowerShell do Windows de centro administrativo do Active Directory
+
+O futuro do gerenciamento do Windows é o Windows PowerShell. Ao sobrepor ferramentas gráficas sobre uma estrutura de automação de tarefas, o gerenciamento dos sistemas distribuídos mais complexos torna-se consistente e eficiente. Você precisa entender como funciona o Windows PowerShell para atingir seu pleno potencial e maximizar seus investimentos em computação.  
   
-Atribuição de FGPP implícita não for exibida aqui; Para isso, você deve usar o **exibir configurações de senha resultante... ** opção.  
+O Centro Administrativo do Active Directory agora fornece um histórico completo de todos os cmdlets do Windows PowerShell que ele executa e seus argumentos e valores. Você pode copiar o histórico do cmdlet em outro lugar para estudo ou modificação e reutilização. Você pode criar notas de Tarefas para ajudar a isolar os resultados dos comandos do Centro Administrativo do Active Directory no Windows PowerShell. Você também pode filtrar o histórico para encontrar pontos de interesse.  
   
-## <a name="BKMK_HistoryViewer"></a>Usando o Visualizador de histórico do PowerShell do Windows de centro administrativo do Active Directory  
-O futuro do gerenciamento do Windows é o Windows PowerShell. Por ferramentas gráficas de divisão em camadas na parte superior de uma estrutura de automação da tarefa, o gerenciamento dos mais complexos sistemas distribuídos torna-se consistente e eficiente. Você precisa compreender o funcionamento do Windows PowerShell para acessar todo o seu potencial e maximizar seus investimentos de computação.  
+O objetivo do Visualizador de Histórico do Windows PowerShell no Centro Administrativo do Active Directory é você aprender através da experiência prática.  
   
-Agora, o Centro Administrativo do Active Directory fornece um histórico completo de todos os cmdlets do Windows PowerShell que ele é executado e seus valores e argumentos. Você pode copiar o histórico do cmdlet em outro lugar para estudo ou modificação e reutilização. Você pode criar anotações de tarefa para ajudar a isolar quais seu centro de administrativo do Active Directory comandos resultaram em Windows PowerShell. Você também pode filtrar o histórico para encontrar pontos de interesse.  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_HistoryViewer.gif)  
   
-Objetivo do Active Directory administrativas centro Visualizador do Windows PowerShell histórico é para você aprender com a experiência prática.  
+Clique na divisa (seta) para mostrar o Visualizador de Histórico do Windows PowerShell.  
   
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_HistoryViewer.gif)  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RaiseViewer.png)  
   
-Clique na divisa (seta) para mostrar o Visualizador de histórico do Windows PowerShell.  
+Em seguida, crie um usuário ou modifique a associação de um grupo. O visualizador de histórico é atualizado continuamente com uma exibição recolhida de cada cmdlet que o Centro Administrativo do Active Directory executou com os argumentos especificados.  
   
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RaiseViewer.png)  
+Expanda qualquer item de linha de interesse para ver todos os valores fornecidos aos argumentos do cmdlet:  
   
-Em seguida, crie um usuário ou modificar os membros do grupo. O Visualizador de histórico continuamente atualiza com um modo de exibição recolhido de cada cmdlet que executou o Centro Administrativo do Active Directory com os argumentos especificados.  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_ViewArgs.png)  
   
-Expanda qualquer item de linha de interesse para ver todos os valores fornecidos para os argumentos do cmdlet:  
+Clique no menu **Iniciar Tarefa** para criar uma notação manual antes de usar o Centro Administrativo do Active Directory para criar, modificar ou excluir um objeto. Digite o que você estava fazendo.  Ao terminar a alteração, selecione **Finalizar Tarefa**. A nota da tarefa agrupa todas as ações realizadas em uma nota recolhível que você pode usar para melhor compreensão.  
   
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_ViewArgs.png)  
+Por exemplo, para ver os comandos do Windows PowerShell usados ​​para alterar a senha de um usuário e removê-lo de um grupo:  
   
-Clique no **Iniciar tarefa** menu para criar uma notação manual antes de usar o Centro Administrativo do Active Directory para criar, modificar ou excluir um objeto. Digite o que estava fazendo.  Quando terminar com a alteração, selecione **Finalizar tarefa**. Os grupos de observação de tarefa todas essas ações executadas em uma anotação recolhível, que você pode usar para uma melhor compreensão.  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RemoveUser.gif)  
   
-Por exemplo, para ver os comandos do Windows PowerShell usados para alterar a senha do usuário e removê-lo de um grupo:  
+Se você marcar a caixa de seleção Mostrar Tudo, os cmdlets do Windows PowerShell verbo Get-* que apenas recuperam dados também serão mostrados.  
   
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RemoveUser.gif)  
+![Advanced AD DS Management](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_ShowAll.png)  
   
-Marcar a caixa de seleção Mostrar tudo também mostra o Get-* verbo cmdlets do Windows PowerShell que recuperar somente os dados.  
-  
-![Gerenciamento do avançadas do AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_ShowAll.png)  
-  
-O Visualizador de histórico mostra o literal comandos são executados pelo Centro Administrativo do Active Directory e você pode observar que alguns cmdlets parecer que a execução desnecessariamente. Por exemplo, você pode criar um novo usuário com:  
-  
-```  
-new-aduser   
-```  
-  
+O visualizador de histórico mostra os comandos literais executados pelo Centro Administrativo do Active Directory e você pode notar que alguns cmdlets parecem sem executados desnecessariamente. Por exemplo, você pode criar um novo usuário com:  
+
+```powershell
+new-aduser
+```
+
 e não precisa usar:  
-  
-```  
+
+```powershell
 set-adaccountpassword  
 enable-adaccount  
 set-aduser  
-  
-```  
-  
-Design do centro do Active Directory administrativa necessária modularidade e uso de um mínimo de código. Portanto, em vez de um conjunto de funções que criar novos usuários e outro conjunto que modificam usuários existentes, ele faz minimamente cada função e, em seguida, é aprovado-las junto com os cmdlets. Tenha isso em mente quando você estiver aprendendo o Active Directory do Windows PowerShell. Você também pode usar que como uma técnica de aprendizagem, onde você ver simplesmente como você pode usar o Windows PowerShell para concluir uma única tarefa.  
+```
+
+O design do Centro Administrativo do Active Directory exige o uso mínimo de código e modularidade. Portanto, em vez de um conjunto de funções que cria novos usuários e outro conjunto que modifica usuários existentes, ele executa minimamente cada função e, em seguida, as encadeia com os cmdlets. Lembre-se disso quando estiver aprendendo o Active Directory para o Windows PowerShell. Você também pode usar isso como uma técnica de aprendizagem, em que verá como é simples usar o Windows PowerShell para completar uma única tarefa.  
   
 ## <a name="BKMK_Tshoot"></a>Solucionando problemas de gerenciamento do AD DS  
   
-### <a name="introduction-to-troubleshooting"></a>Introdução à solução de problemas  
-Devido à sua renovação relativa e ausência de uso em ambientes de clientes existentes, o Centro Administrativo do Active Directory tem limitado opções de solução de problemas.  
+### <a name="introduction-to-troubleshooting"></a>Introdução à solução de problemas
+
+Por ser relativamente novo e pela falta de uso em ambientes existentes do cliente, o Centro Administrativo do Active Directory tem opções limitadas para solução de problemas.  
   
-### <a name="troubleshooting-options"></a>Opções de solução de problemas  
+### <a name="troubleshooting-options"></a>Opções para solução de problemas  
   
-#### <a name="logging-options"></a>Opções de registro em log  
-O Centro Administrativo do Active Directory agora contém o registro em log integrados no Windows Server 2012, como parte de um arquivo de configuração de rastreamento. Criar/modificar o arquivo na mesma pasta como dsac.exe a seguir:  
+#### <a name="logging-options"></a>Opções de registro em log
+
+O Centro Administrativo do Active Directory agora contém o registro em log interno, como parte de um arquivo de configuração de rastreamento. Crie/modifique o seguinte arquivo na mesma pasta que dsac.exe:  
   
-**Dsac.exe.config**  
+**dsac.exe.config**
   
 Crie o seguinte conteúdo:  
   
-```  
+```xml
 <appSettings>  
   <add key="DsacLogLevel" value="Verbose" />  
 </appSettings>  
-<system.diagnostics>   
- <trace autoflush="false" indentsize="4">   
-  <listeners>   
-   <add name="myListener"   
-    type="System.Diagnostics.TextWriterTraceListener"   
-    initializeData="dsac.trace.log" />   
-   <remove name="Default" />   
-  </listeners>   
- </trace>   
-</system.diagnostics>  
-  
-```  
-  
-O detalhamento níveis para **DsacLogLevel** são **None**, **erro**, **aviso**, **informações**, e **Verbose**. O nome do arquivo de saída é configurável e grava na mesma pasta que dsac.exe. A saída saberá mais sobre como ADAC está funcionando, quais controladores de domínio-contatado, quais comandos do Windows PowerShell executados, as respostas e ainda mais detalhes.  
-  
-Por exemplo, ao usar o nível de informações, que retorna todos os resultados, exceto o detalhamento do nível de rastreamento:  
-  
--   DSAC.exe é iniciado  
-  
--   Log inicia  
-  
--   Controlador de domínio solicitado para retornar informações de domínio inicial  
-  
-    ```  
-    [12:42:49][TID 3][Info] Command Id, Action, Command, Time, Elapsed Time ms (output), Number objects (output)  
-    [12:42:49][TID 3][Info] 1, Invoke, Get-ADDomainController, 2012-04-16T12:42:49  
-    [12:42:49][TID 3][Info] Get-ADDomainController-Discover:$null-DomainName:"CORP"-ForceDiscover:$null-Service:ADWS-Writable:$null  
-    ```  
-  
--   Controlador de domínio DC1 retornado do domínio Corp  
-  
--   PS Unidade virtual AD carregado  
-  
-    ```  
-    [12:42:49][TID 3][Info] 1, Output, Get-ADDomainController, 2012-04-16T12:42:49, 1  
-    [12:42:49][TID 3][Info] Found the domain controller 'DC1' in the domain 'CORP'.  
-    [12:42:49][TID 3][Info] 2, Invoke, New-PSDrive, 2012-04-16T12:42:49  
-    [12:42:49][TID 3][Info] New-PSDrive-Name:"ADDrive0"-PSProvider:"ActiveDirectory"-Root:""-Server:"dc1.corp.contoso.com"  
-    [12:42:49][TID 3][Info] 2, Output, New-PSDrive, 2012-04-16T12:42:49, 1  
-    [12:42:49][TID 3][Info] 3, Invoke, Get-ADRootDSE, 2012-04-16T12:42:49  
-  
-    ```  
-  
--   Obtenha o domínio raiz DSE informações  
-  
-    ```  
-    [12:42:49][TID 3][Info] Get-ADRootDSE  
-    -Server:"dc1.corp.contoso.com"  
-    [12:42:49][TID 3][Info] 3, Output, Get-ADRootDSE, 2012-04-16T12:42:49, 1  
-    [12:42:49][TID 3][Info] 4, Invoke, Get-ADOptionalFeature, 2012-04-16T12:42:49  
-  
-    ```  
-  
--   Obtenha informações do domínio AD reciclagem bin  
-  
-    ```  
-    [12:42:49][TID 3][Info] Get-ADOptionalFeature  
-    -LDAPFilter:"(msDS-OptionalFeatureFlags=1)"  
-    -Server:"dc1.corp.contoso.com"  
-    [12:42:49][TID 3][Info] 4, Output, Get-ADOptionalFeature, 2012-04-16T12:42:49, 1  
-    [12:42:49][TID 3][Info] 5, Invoke, Get-ADRootDSE, 2012-04-16T12:42:49  
-    [12:42:49][TID 3][Info] Get-ADRootDSE  
-    -Server:"dc1.corp.contoso.com"  
-    [12:42:49][TID 3][Info] 5, Output, Get-ADRootDSE, 2012-04-16T12:42:49, 1  
-    [12:42:49][TID 3][Info] 6, Invoke, Get-ADRootDSE, 2012-04-16T12:42:49  
-    [12:42:49][TID 3][Info] Get-ADRootDSE  
-    -Server:"dc1.corp.contoso.com"  
-    [12:42:49][TID 3][Info] 6, Output, Get-ADRootDSE, 2012-04-16T12:42:49, 1  
-    [12:42:49][TID 3][Info] 7, Invoke, Get-ADOptionalFeature, 2012-04-16T12:42:49  
-    [12:42:49][TID 3][Info] Get-ADOptionalFeature  
-    -LDAPFilter:"(msDS-OptionalFeatureFlags=1)"  
-    -Server:"dc1.corp.contoso.com"  
-    [12:42:50][TID 3][Info] 7, Output, Get-ADOptionalFeature, 2012-04-16T12:42:50, 1  
-    [12:42:50][TID 3][Info] 8, Invoke, Get-ADForest, 2012-04-16T12:42:50  
-  
-    ```  
-  
--   Obter floresta do AD  
-  
-    ```  
-    [12:42:50][TID 3][Info] Get-ADForest  
-    -Identity:"corp.contoso.com"  
-    -Server:"dc1.corp.contoso.com"  
-    [12:42:50][TID 3][Info] 8, Output, Get-ADForest, 2012-04-16T12:42:50, 1  
-    [12:42:50][TID 3][Info] 9, Invoke, Get-ADObject, 2012-04-16T12:42:50  
-  
-    ```  
-  
--   Obtenha informações sobre o esquema para tipos de criptografia permitidos, FGPP, determinadas informações do usuário  
-  
-    ```  
-    [12:42:50][TID 3][Info] Get-ADObject  
-    -LDAPFilter:"(|(ldapdisplayname=msDS-PhoneticDisplayName)(ldapdisplayname=msDS-PhoneticCompanyName)(ldapdisplayname=msDS-PhoneticDepartment)(ldapdisplayname=msDS-PhoneticFirstName)(ldapdisplayname=msDS-PhoneticLastName)(ldapdisplayname=msDS-SupportedEncryptionTypes)(ldapdisplayname=msDS-PasswordSettingsPrecedence))"  
-    -Properties:lDAPDisplayName  
-    -ResultPageSize:"100"  
-    -ResultSetSize:$null  
-    -SearchBase:"CN=Schema,CN=Configuration,DC=corp,DC=contoso,DC=com"  
-    -SearchScope:"OneLevel"  
-    -Server:"dc1.corp.contoso.com"  
-    [12:42:50][TID 3][Info] 9, Output, Get-ADObject, 2012-04-16T12:42:50, 7  
-    [12:42:50][TID 3][Info] 10, Invoke, Get-ADObject, 2012-04-16T12:42:50  
-  
-    ```  
-  
--   Obter todas as informações sobre o objeto de domínio para exibir para o administrador que clicou no head do domínio.  
-  
-    ```  
-    [12:42:50][TID 3][Info] Get-ADObject  
-    -IncludeDeletedObjects:$false  
-    -LDAPFilter:"(objectClass=*)"  
-    -Properties:allowedChildClassesEffective,allowedChildClasses,lastKnownParent,sAMAccountType,systemFlags,userAccountControl,displayName,description,whenChanged,location,managedBy,memberOf,primaryGroupID,objectSid,msDS-User-Account-Control-Computed,sAMAccountName,lastLogonTimestamp,lastLogoff,mail,accountExpires,msDS-PhoneticCompanyName,msDS-PhoneticDepartment,msDS-PhoneticDisplayName,msDS-PhoneticFirstName,msDS-PhoneticLastName,pwdLastSet,operatingSystem,operatingSystemServicePack,operatingSystemVersion,telephoneNumber,physicalDeliveryOfficeName,department,company,manager,dNSHostName,groupType,c,l,employeeID,givenName,sn,title,st,postalCode,managedBy,userPrincipalName,isDeleted,msDS-PasswordSettingsPrecedence  
-    -ResultPageSize:"100"  
-    -ResultSetSize:"20201"  
-    -SearchBase:"DC=corp,DC=contoso,DC=com"  
-    -SearchScope:"Base"  
-    -Server:"dc1.corp.contoso.com"  
-  
-    ```  
-  
-Definindo o Verbose nível também mostra as pilhas de .NET para cada função, mas isso não inclui dados suficientes para ser particularmente útil, exceto quando o Dsac.exe sofrer uma violação de acesso ou a falha de solução de problemas.  
-  
-> [!IMPORTANT]  
-> Também há uma versão fora de banda do serviço chamado o [Active Directory Management Gateway](https://www.microsoft.com/download/en/details.aspx?displaylang=en&id=2852), que é executado no Windows Server 2008 SP2 e Windows Server 2003 SP2.  
-  
-As duas causas prováveis desse problema são:  
-  
--   O serviço ADWS não está executando em controladores de domínio acessíveis.  
-  
--   Comunicações de rede são bloqueadas para o serviço ADWS no computador que executa o Centro Administrativo do Active Directory  
-  
-Os erros mostrados quando não há instâncias de serviços do Active Directory da Web estão disponíveis são:  
-  
-|||  
-|-|-|  
-|Erro|Operação|  
-|"Não consegue se conectar em qualquer domínio. Atualizar ou tente novamente quando a conexão está disponível"|Mostrado na tela inicial do aplicativo Centro Administrativo do Active Directory|  
-|"Não é possível localizar um servidor disponível no * <NetBIOS domain name> * domínio que esteja executando o Active Directory Web serviço ADWS ()"|Mostrado quando tentando selecionar um nó de domínio no aplicativo Centro Administrativo do Active Directory|  
-  
-Para solucionar esse problema, use estas etapas:  
-  
-1.  Valide a serviços Web do Active Directory serviço é iniciado pelo menos um controlador de domínio no domínio (e preferencialmente todos os controladores de domínio na floresta). Certifique-se de que está definido para ser iniciado automaticamente em todos os controladores de domínio.  
-  
-2.  No computador que executa o Centro Administrativo do Active Directory, valide que você pode localizar um servidor que executa ADWS executando estes comandos NLTest.exe:  
-  
-    ```  
-    nltest /dsgetdc:<domain NetBIOS name> /ws /force   
-    nltest /dsgetdc:<domain fully qualified DNS name> /ws /force  
-  
-    ```  
-  
-    Se esses testes falham mesmo que o serviço ADWS está em execução, o problema está com resolução de nomes LDAP e não ADWS ou centro administrativo do Active Directory. Esse teste falhar com o erro "1355 0x54B ERROR_NO_SUCH_DOMAIN" se ADWS não é executado em controladores de domínio porém, então verifique novamente antes de atingir qualquer conclusões.  
-  
-3.  No controlador de domínio retornado por NLTest despeje na lista porta escuta com o comando:  
-  
-    ```  
-    Netstat -anob > ports.txt  
-  
-    ```  
-  
-    Examine o arquivo ports.txt e validar que o serviço ADWS está ouvindo na porta 9389. Exemplo:  
-  
-    ```  
-    TCP    0.0.0.0:9389    0.0.0.0:0    LISTENING    1828  
-    [Microsoft.ActiveDirectory.WebServices.exe]  
-  
-    TCP    [::]:9389       [::]:0       LISTENING    1828  
-    [Microsoft.ActiveDirectory.WebServices.exe]  
-  
-    ```  
-  
-    Se ouvindo, validar as regras do Firewall do Windows e certifique-se de que eles permitem 9389 TCP entrada. Por padrão, controladores de domínio habilitam a regra de firewall "Active Directory serviços Web (TCP-in)". Se não estiver ouvindo, validar novamente se o serviço está em execução nesse servidor e reiniciá-lo. Valide que nenhum outro processo já está ouvindo na porta 9389.  
-  
-4.  Instale NetMon ou outro utilitário de captura de rede no computador que executa o Centro Administrativo do Active Directory e no controlador de domínio retornado por NLTEST. Colete captura simultânea rede nos dois computadores, onde você inicia o Centro Administrativo do Active Directory e veja o erro antes de parar a captura. Confirme se o cliente é capaz de enviar e receber do controlador de domínio na porta TCP 9389. Se os pacotes são enviados, mas nunca chegarão ou chegarem e as respostas de controlador de domínio, mas eles nunca alcançar o cliente, é provavelmente há um firewall entre os computadores na rede removendo pacotes nessa porta. Esse firewall pode ser hardware ou software e pode fazer parte do software (antivírus) de proteção de ponto de extremidade de terceiros.  
-  
-#### <a name="knownlikely-issues-and-support-scenarios"></a>Problemas conhecidos/provavelmente e cenários de suporte  
-O problema provavelmente somente com o Centro Administrativo do Active Directory é a incapacidade de conectar-se para o Active Directory Web serviço ADWS () em execução em um controlador de domínio do Windows Server 2012 ou Windows Server 2008 R2.  
-  
-## <a name="see-also"></a>Consulte também  
-[Introdução aos aprimoramentos de centro administrativo do Active Directory & #40; Nível de 100 & #41;](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)  
-  
+<system.diagnostics>
+ <trace autoflush="false" indentsize="4">
+  <listeners>
+   <add name="myListener"
+    type="System.Diagnostics.TextWriterTraceListener"
+    initializeData="dsac.trace.log" />
+   <remove name="Default" />
+  </listeners>
+ </trace>
+</system.diagnostics>
+```
 
+Os níveis de detalhamento para **DsacLogLevel** são **Nenhum**, **Erro**, **Aviso**, **Informações** e **Detalhado**. O nome do arquivo de saída é configurável e grava na mesma pasta que dsac.exe. A saída pode dizer mais sobre como o ADAC está funcionando, quais controladores de domínio são contatados, quais comandos do Windows PowerShell foram executados, quais foram as respostas e outros detalhes.  
+
+Por exemplo, ao usar o nível INFORMAÇÕES, que retorna todos os resultados, exceto o detalhamento do rastreamento:  
+  
+- O DSAC.exe é iniciado  
+- O registro em log é iniciado  
+- O controlador de domínio solicitou o retorno de informações de domínio iniciais  
+
+   ```
+   [12:42:49][TID 3][Info] Command Id, Action, Command, Time, Elapsed Time ms (output), Number objects (output)  
+   [12:42:49][TID 3][Info] 1, Invoke, Get-ADDomainController, 2012-04-16T12:42:49  
+   [12:42:49][TID 3][Info] Get-ADDomainController-Discover:$null-DomainName:"CORP"-ForceDiscover:$null-Service:ADWS-Writable:$null  
+   ```
+
+- O controlador de domínio DC1 retornou do domínio Corp.  
+- Unidade virtual PS AD carregada  
+
+   ```
+   [12:42:49][TID 3][Info] 1, Output, Get-ADDomainController, 2012-04-16T12:42:49, 1  
+   [12:42:49][TID 3][Info] Found the domain controller 'DC1' in the domain 'CORP'.  
+   [12:42:49][TID 3][Info] 2, Invoke, New-PSDrive, 2012-04-16T12:42:49  
+   [12:42:49][TID 3][Info] New-PSDrive-Name:"ADDrive0"-PSProvider:"ActiveDirectory"-Root:""-Server:"dc1.corp.contoso.com"  
+   [12:42:49][TID 3][Info] 2, Output, New-PSDrive, 2012-04-16T12:42:49, 1  
+   [12:42:49][TID 3][Info] 3, Invoke, Get-ADRootDSE, 2012-04-16T12:42:49  
+   ```
+  
+- Obter informações de DSE de raiz de domínio  
+
+   ```
+   [12:42:49][TID 3][Info] Get-ADRootDSE -Server:"dc1.corp.contoso.com"  
+   [12:42:49][TID 3][Info] 3, Output, Get-ADRootDSE, 2012-04-16T12:42:49, 1  
+   [12:42:49][TID 3][Info] 4, Invoke, Get-ADOptionalFeature, 2012-04-16T12:42:49  
+   ```
+
+- Obter informações da lixeira do AD de domínio  
+
+   ```
+   [12:42:49][TID 3][Info] Get-ADOptionalFeature -LDAPFilter:"(msDS-OptionalFeatureFlags=1)" -Server:"dc1.corp.contoso.com"
+   [12:42:49][TID 3][Info] 4, Output, Get-ADOptionalFeature, 2012-04-16T12:42:49, 1
+   [12:42:49][TID 3][Info] 5, Invoke, Get-ADRootDSE, 2012-04-16T12:42:49
+   [12:42:49][TID 3][Info] Get-ADRootDSE -Server:"dc1.corp.contoso.com"
+   [12:42:49][TID 3][Info] 5, Output, Get-ADRootDSE, 2012-04-16T12:42:49, 1
+   [12:42:49][TID 3][Info] 6, Invoke, Get-ADRootDSE, 2012-04-16T12:42:49
+   [12:42:49][TID 3][Info] Get-ADRootDSE -Server:"dc1.corp.contoso.com"
+   [12:42:49][TID 3][Info] 6, Output, Get-ADRootDSE, 2012-04-16T12:42:49, 1
+   [12:42:49][TID 3][Info] 7, Invoke, Get-ADOptionalFeature, 2012-04-16T12:42:49
+   [12:42:49][TID 3][Info] Get-ADOptionalFeature -LDAPFilter:"(msDS-OptionalFeatureFlags=1)" -Server:"dc1.corp.contoso.com"
+   [12:42:50][TID 3][Info] 7, Output, Get-ADOptionalFeature, 2012-04-16T12:42:50, 1
+   [12:42:50][TID 3][Info] 8, Invoke, Get-ADForest, 2012-04-16T12:42:50
+   ```
+
+- Obter floresta AD  
+
+   ```  
+   [12:42:50][TID 3][Info] Get-ADForest -Identity:"corp.contoso.com" -Server:"dc1.corp.contoso.com"
+   [12:42:50][TID 3][Info] 8, Output, Get-ADForest, 2012-04-16T12:42:50, 1  
+   [12:42:50][TID 3][Info] 9, Invoke, Get-ADObject, 2012-04-16T12:42:50  
+   ```
+
+- Obter informações de esquema para tipos de criptografia com suporte, FGPP, algumas informações do usuário  
+
+   ```
+   [12:42:50][TID 3][Info] Get-ADObject  
+   -LDAPFilter:"(|(ldapdisplayname=msDS-PhoneticDisplayName)(ldapdisplayname=msDS-PhoneticCompanyName)(ldapdisplayname=msDS-PhoneticDepartment)(ldapdisplayname=msDS-PhoneticFirstName)(ldapdisplayname=msDS-PhoneticLastName)(ldapdisplayname=msDS-SupportedEncryptionTypes)(ldapdisplayname=msDS-PasswordSettingsPrecedence))"  
+   -Properties:lDAPDisplayName  
+   -ResultPageSize:"100"  
+   -ResultSetSize:$null  
+   -SearchBase:"CN=Schema,CN=Configuration,DC=corp,DC=contoso,DC=com"  
+   -SearchScope:"OneLevel"  
+   -Server:"dc1.corp.contoso.com"  
+   [12:42:50][TID 3][Info] 9, Output, Get-ADObject, 2012-04-16T12:42:50, 7  
+   [12:42:50][TID 3][Info] 10, Invoke, Get-ADObject, 2012-04-16T12:42:50  
+   ```
+
+- Obter todas as informações sobre o objeto de domínio para exibir ao administrador que clicou no cabeçalho do domínio.  
+
+   ```
+   [12:42:50][TID 3][Info] Get-ADObject  
+   -IncludeDeletedObjects:$false  
+   -LDAPFilter:"(objectClass=*)"  
+   -Properties:allowedChildClassesEffective,allowedChildClasses,lastKnownParent,sAMAccountType,systemFlags,userAccountControl,displayName,description,whenChanged,location,managedBy,memberOf,primaryGroupID,objectSid,msDS-User-Account-Control-Computed,sAMAccountName,lastLogonTimestamp,lastLogoff,mail,accountExpires,msDS-PhoneticCompanyName,msDS-PhoneticDepartment,msDS-PhoneticDisplayName,msDS-PhoneticFirstName,msDS-PhoneticLastName,pwdLastSet,operatingSystem,operatingSystemServicePack,operatingSystemVersion,telephoneNumber,physicalDeliveryOfficeName,department,company,manager,dNSHostName,groupType,c,l,employeeID,givenName,sn,title,st,postalCode,managedBy,userPrincipalName,isDeleted,msDS-PasswordSettingsPrecedence  
+   -ResultPageSize:"100"  
+   -ResultSetSize:"20201"  
+   -SearchBase:"DC=corp,DC=contoso,DC=com"  
+   -SearchScope:"Base"  
+   -Server:"dc1.corp.contoso.com"  
+   ```
+
+A definição do nível de detalhe também mostra as pilhas .NET de cada função, mas não inclui dados suficientes para serem particularmente úteis, exceto ao solucionar o Dsac.exe que passa por uma violação de acesso ou pane. As duas causas prováveis ​​desse problema são:
+  
+- O serviço ADWS não está em execução em todos os controladores de domínio acessíveis.
+- Comunicações de rede estão bloqueadas para o serviço ADWS do computador que executa o Centro Administrativo do Active Directory.
+
+> [!IMPORTANT]  
+> Há também uma versão fora de banda do serviço chamada [Gateway de Gerenciamento do Active Directory](https://www.microsoft.com/download/en/details.aspx?displaylang=en&id=2852), que é executada no Windows Server 2008 SP2 e no Windows Server 2003 SP2.
+>
+
+Os erros mostrados quando nenhuma instância dos Serviços Web do Active Directory está disponível são:  
+  
+|Erro|Operação|
+| --- | --- |  
+|"Não é possível se conectar a nenhum domínio. Atualize ou tente novamente quando a conexão estiver disponível"|Mostrado no início do aplicativo do Centro Administrativo do Active Directory|
+|"Não é possível localizar um servidor disponível na *<NetBIOS domain name>* domínio que está executando o ADWS do Active Directory Web Service ()"|Mostrado ao tentar selecionar um nó do domínio no aplicativo do Centro Administrativo do Active Directory|
+  
+Para solucionar esse problema, execute estas etapas:  
+  
+1. Verifique se o Serviço Web do Active Directory é iniciado em pelo menos um controlador de domínio no domínio (e, de preferência, todos os controladores de domínio na floresta). Verifique se ele está definido para iniciar automaticamente em todos os controladores de domínio também.
+2. A partir do computador em execução no Centro Administrativo do Active Directory, confirme se você pode localizar um servidor que executa ADWS executando estes comandos NLTest.exe:  
+
+   ```
+   nltest /dsgetdc:<domain NetBIOS name> /ws /force
+   nltest /dsgetdc:<domain fully qualified DNS name> /ws /force
+   ```
+
+   Se esses testes falharem mesmo que o serviço ADWS estiver funcionando, o problema será com a resolução de nome ou LDAP e não com o ADWS ou o Centro Administrativo do Active Directory. Este teste falha com o erro "1355 0x54B ERROR_NO_SUCH_DOMAIN" se o ADWS não estiver em execução em quaisquer controladores de domínio, assim, verifique novamente antes de chegar a qualquer conclusão.  
+  
+3. No controlador de domínio retornado por NLTest, despeje a lista da porta de escuta com o comando:  
+
+   ```
+   Netstat -anob > ports.txt  
+   ```
+
+   Examine o arquivo ports.txt e verifique se o serviço ADWS está escutando na porta 9389. Exemplo:  
+
+   ```
+   TCP    0.0.0.0:9389    0.0.0.0:0    LISTENING    1828  
+   [Microsoft.ActiveDirectory.WebServices.exe]  
+
+   TCP    [::]:9389       [::]:0       LISTENING    1828  
+   [Microsoft.ActiveDirectory.WebServices.exe]  
+   ```
+
+   Se estiver escutando, valide as regras de Firewall do Windows e certifique-se de que permitem a entrada de TCO 9389. Por padrão, os controladores de domínio permitem a regra de firewall "Serviços Web do Active Directory (TCP-in)". Se não estiver escutando, confirme novamente se o serviço está sendo executado neste servidor e reinicie-o. Confirme se nenhum outro processo já está sendo executado na porta 9389.  
+  
+4. Instale o NetMon ou outro utilitário de captura de rede no computador que executa o Centro Administrativo do Active Directory e no controlador de domínio retornado por NLTEST. Reúna capturas de rede simultâneas de ambos os computadores onde você inicia o Centro Administrativo do Active Directory e veja o erro antes de parar as capturas. Verifique se o cliente é capaz de enviar e receber do controlador de domínio na porta TCP 9389. Se os pacotes são enviados, mas nunca chegam, ou chegam e o controlador de domínio responde, mas nunca chegam ao cliente, é provável que haja um firewall entre os computadores da rede deixando pacotes nessa porta. Esse firewall pode ser um software ou hardware, e pode ser parte de software (antivírus) de proteção de terminal de terceiros.  
+  
+## <a name="see-also"></a>Consulte também
+
+[AD Recycle Bin, política de senha refinada e histórico do PowerShell](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)  

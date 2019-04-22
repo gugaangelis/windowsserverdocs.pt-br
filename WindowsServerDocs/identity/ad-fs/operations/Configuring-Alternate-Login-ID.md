@@ -1,150 +1,222 @@
 ---
 ms.assetid: f0cbdd78-f5ae-47ff-b5d3-96faf4940f4a
-title: Configurando o ID de logon alternativo
-description: 
+title: Configurar a ID de logon alternativa
+description: ''
 author: billmath
 ms.author: billmath
-manager: femila
-ms.date: 12/04/2017
+manager: mtillman
+ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: fb4c98ff1090a9d3c35654614a43e12db99d691d
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
-ms.translationtype: MT
+ms.openlocfilehash: 615faf4153949aa4ad989f017068d1809fca26b1
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59820867"
 ---
-# <a name="configuring-alternate-login-id"></a>Configurando o ID de logon alternativo
+# <a name="configuring-alternate-login-id"></a>Configurar a ID de logon alternativa
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
+>Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
 
-Os usuários podem fazer logon aplicativos habilitados serviços do Active Directory federação (AD FS) usando qualquer forma de identificador do usuário que é aceito pelos serviços de domínio do Active Directory (AD DS). Isso inclui os nomes de entidade de segurança do usuário (UPNs) (johndoe@contoso.com) ou domínio qualificado nomes de conta sam (contoso\johndoe ou contoso.com\johndoe #).
+## <a name="what-is-alternate-login-id"></a>O que é a ID de logon alternativo?
+Na maioria dos cenários, os usuários usar seus UPNS (nomes da entidade de usuário) para fazer logon em suas contas. No entanto, em alguns ambientes devido a políticas corporativas ou de dependências do aplicativo de linha de negócios no local, os usuários podem estar usando alguma outra forma de entrar. 
 
-Em alguns ambientes, devido a política corporativa ou dependências de aplicativos de linha de negócios no local, os usuários finais podem apenas Lembre-se dos seus nomes de endereço e não o nome UPN ou conta sam de email. Em alguns casos, o UPN também é não pode ser roteado (jdoe@contoso.local) e só é usada para autenticação em aplicativos na rede corporativa.
+>[!NOTE]
+>Recomendada pela Microsoft são de práticas recomendadas corresponder ao UPN para o endereço SMTP primário. Este artigo aborda o percentual pequeno de clientes que não é possível corrigir o UPN do corresponder.
 
-Desde não pode ser roteado domínios (ex.: Propriedade contoso. local) não pode ser verificada, Office 365 exige que todos os IDs para ser totalmente internet pode ser roteado de logon do usuário. Se o UPN local usa um domínio não pode ser roteado (ex.: Contoso. local), ou o UPN existente não pode ser modificado devido a dependências do aplicativo local, recomendamos que configurar a ID de logon alternativo. ID de logon alternativo permite que você configure um log na experiência onde os usuários podem fazer logon com um atributo que não seja seu UPN, como mail.
+Por exemplo, eles podem estar usando sua id de email para entrar e que pode ser diferente do seu UPN. Isso é particularmente uma ocorrência comum em cenários em que seu UPN não for roteável. Considere um usuário Jane Doe com o UPN jdoe@contoso.local e o endereço de email jdoe@contoso.com. Jane pode não estar até mesmo ciente do UPN conforme ela sempre tenha usado sua id de email para entrar. Uso de qualquer outro método de entrada, em vez de UPN representa a ID alternativa. Para obter mais informações sobre como o UPN é cria, consulte [população UserPrincipalName do Azure AD](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-userprincipalname).
 
-Um dos benefícios desse recurso é que ele permite que você adotar SaaS provedores, como o Office 365 sem modificar seu UPNs local. Também permite que você dê suporte a aplicativos de serviço de linha de negócios com identidades provisionados consumidor.
+ID do Active Directory Federation Services (AD FS) permite que aplicativos federados usando o AD FS para entrar usando alternativo. Isso permite que os administradores especifiquem uma alternativa para o padrão UPN a ser usado para entrar. O AD FS já oferece suporte ao uso de qualquer forma de identificador de usuário que é aceito pelos serviços de domínio Active Directory (AD DS). Quando configurado para a ID alternativa, o AD FS permite aos usuários entrar usando o valor de ID alternativo configurado, digamos, id de email. Usando a ID alternativa permite que você adote os provedores de SaaS, como o Office 365 sem modificar seu UPNs locais. Ele também permite que você oferecer suporte a aplicativos de serviço de linha de negócios com identidades de consumidor provisionado.
 
-> [!IMPORTANT]
-> Usando o ID alternativo em ambientes híbridos com Exchange e/ou Skype for Business é aceito, mas não é recomendado. Usando o mesmo conjunto de credenciais (por exemplo, o UPN) local e online fornece a melhor experiência de usuário em um ambiente híbrido.  A Microsoft recomenda que os clientes alterar seus UPNs se possível para evitar a necessidade de ID alternativo Usando o ID alternativo com o Lync ou Skype for business requer o Lync Server 2013 ou posterior. Os clientes que usam a ID alternativo devem considerar a ativação [autenticação modernos](https://support.office.com/article/using-office-365-modern-authentication-with-office-clients-776c0036-66fd-41cb-8928-5495c0f9168a) Exchange no Office 365 para uma melhor experiência de usuário. Além disso, os clientes que usam o Skype para empresas com clientes móveis devem garantir que o endereço SIP é idêntico ao endereço de email do usuário (e ID alternativo). 
+## <a name="alternate-id-in-azure-ad"></a>Id alternativa no Azure AD
+Uma organização pode ter que usar a ID alternativa nos seguintes cenários:
+1.  O nome de domínio local não for roteável, ex. Contoso. local e, consequentemente o nome principal de usuário padrão não for roteável (jdoe@contoso.local). UPN existente não pode ser alterado devido a dependências do aplicativo local ou as políticas da empresa. Azure AD e Office 365 exige todos os sufixos de domínio associados com o diretório do AD do Azure para ser totalmente roteável da internet. 
+2.  O UPN local não é o mesmo que o endereço de email do usuário e usam o endereço de email para entrar no Office 365, os usuários e UPN não pode ser usado devido a restrições de organizacionais.
+Nos cenários mencionados acima, a ID alternativa com AD FS permite aos usuários entrar no Azure AD sem modificar seu UPNs locais. 
 
-Consulte a tabela abaixo para a experiência do usuário com ID alternativo usando vários clientes do Office 365 com autenticação normal, autenticação modernos e autenticação baseada em certificado (requer a habilitação da autenticação moderno).
+## <a name="end-user-experience-with-alternate-login-id"></a>Experiência do usuário final com a ID de logon alternativo
+A experiência do usuário final varia dependendo do método de autenticação usado com a id de logon alternativo.  Atualmente, há três maneiras diferentes nos quais usando a id de logon alternativo pode ser obtido.  São eles:
 
-|**Tipos de cliente**|**Informações adicionais**|**Suporte à declaração - autenticação normal e moderno**|**Descrição**|
-|--------------------|------------------------------|------------------------------|------------------------------|
-|Outlook|Autenticação normal: Você deve estar em uma máquina de domínio associado e conectado à rede corporativa<br /><br />Autenticação moderna: compatíveis|Você só pode usar o ID alternativo em ambientes que não permitir acesso externo para usuários de caixa de correio. Isso significa que os usuários podem apenas autenticar a caixa de correio há uma maneira com suporte quando forem conectados e associados à rede corporativa, em uma VPN ou conectados via acesso direto. Se você aderir para configurar a autenticação modernos (conhecida como ADAL) você pode usar o Outlook de máquinas de ingressar/conectados sem domínio, mas você receberá algumas solicitações extras ao configurar seu perfil do Outlook.<br /><br />Veja a primeira imagem abaixo da tabela para demonstração de experiência do usuário.|[Autenticação moderna no Office 2013](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/)|
-|Pastas públicas híbrida|Autenticação normal: Não suporte<br /><br />Autenticação moderna: compatíveis|Pastas públicas híbrido não poderá expandir se IDs alternativas são usados e, portanto, não deve ser usado hoje com métodos de autenticação normal. Se você quiser ser capaz de usar uma pasta pública no híbrido, você precisará configurar a autenticação modernos (conhecida como ADAL).<br /><br />Veja a primeira imagem abaixo da tabela para demonstração de experiência do usuário.|[Autenticação moderna no Office 2013](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/)|
-|Transpor local delegação|Sem suporte|Transpor atualmente local permissões não têm suporte em uma configuração híbrida, mas eles também não funcionará se você usar AltID.||
-|Acesso de caixa de correio de arquivo morto (caixa de correio local - arquivo morto na nuvem)|Com suporte|Os usuários receberão um prompt para credenciais extra ao acessar o arquivo morto, ele terá que fornecer lá alternativo ID quando solicitado.<br /><br />Veja a primeira imagem abaixo da tabela para demonstração de experiência do usuário.||
-|Página do Office 365 Pro Plus ativação|Suporte - chave de registro do lado cliente recomendado|Com ID alternativo configurado, você verá que o UPN local é previamente preenchido no campo de verificação. Isso precisa ser alterado para a identidade alternativa que está sendo usada. É recomendável usar a chave do registro lado cliente observada na coluna do link.<br /><br />Veja a segunda imagem abaixo da tabela para demonstração de experiência do usuário.|[Office 2013 e o Lync 2013 periodicamente solicitar credenciais SharePoint Online, OneDrive e Lync Online](https://support.microsoft.com/en-us/kb/2913639)|
-|Equipes da Microsoft|Com suporte|Microsoft Teams compatível com o AD FS (SAML P, WS-alimentadas, WS-Trust e OAuth) e autenticação modernos.<br/><br/> Core Teams da Microsoft, como as funcionalidades de canais, bate-papos e arquivos funciona com o ID de logon Altnernate. </br></br>Aplicativos de terceiros 1º e 3º precisam ser investigada separadamente pelo cliente. Isso ocorre porque cada aplicativo tem suas própria protocolos de autenticação de suporte.| 
-|Skype para empresas / Lync|Com suporte (exceto conforme observado), mas há a possibilidade de confusão do usuário.  No clientes móveis, Id alternativa é compatível somente se o endereço SIP = endereço de email = ID alternativo|Os usuários talvez seja necessário entrar duas vezes para o Skype para o cliente de desktop de negócios, pela primeira vez usando o UPN no local e, em seguida, usando a ID alternativo. (Observe que o "endereço Sign-in" é, na verdade, o endereço SIP que pode não ser o mesmo que o "nome de usuário", mas muitas vezes é).  Quando solicitado pela primeira vez para um nome de usuário, o usuário deve inserir o UPN, mesmo se ele incorretamente é previamente preenchido com o endereço SIP ou ID alternativo. Depois que o usuário clicar em entrar com o UPN, o usuário prompt nome reaparecerá, desta vez previamente populado com o UPN. Neste momento, o usuário deve substituir isso com a ID alternativo e clique em login para concluir o processo de login. Nos clientes móveis, os usuários devem inserir a ID de usuário local na página avançados, usando o formato de estilo SAM (domínio \ usuário), não o formato UPN.<br /><br />Depois de entrar com êxito, se o Skype for Business ou Lync disser "Exchange precisa de suas credenciais", você precisa fornecer as credenciais que são válidas para onde a caixa de correio está localizada. Se a caixa de correio está na nuvem que você precisa fornecer a ID alternativo. Se a caixa de correio for local, você precisa fornecer o UPN no local.|[Autenticação moderna no Office 2013](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/)|
-|O Outlook Web Access|Com suporte|||
-|Aplicativos móveis do Outlook para Android, IOS e Windows Phone|Com suporte|||
-|OneDrive para empresas|Suporte - chave de registro do lado cliente recomendado|Com ID alternativo configurado, você verá que o UPN local é previamente preenchido no campo de verificação. Isso precisa ser alterado para a identidade alternativa que está sendo usada. É recomendável usar a chave do registro lado cliente observada na coluna do link.<br /><br />Veja a segunda imagem abaixo da tabela para demonstração de experiência do usuário.|[Office 2013 e o Lync 2013 periodicamente solicitar credenciais SharePoint Online, OneDrive e Lync Online](https://support.microsoft.com/en-us/kb/2913639)|
-|OneDrive para o cliente de negócios móvel|Com suporte|||
+- **(Herdado) de autenticação regular**-usa o protocolo de autenticação básica.
+- **Autenticação moderna** -traz baseada no Active Directory Authentication Library ADAL entrar aos aplicativos. Isso permite que os recursos de entrada, como a MFA (autenticação multifator), provedores de identidade de terceiros com base em SAML com aplicativos cliente do Office, cartão inteligente e autenticação baseada em certificado.
+- **Autenticação moderna híbrida** - fornece todos os benefícios da autenticação moderna e fornece aos usuários a capacidade de acessar a aplicativos locais usando os tokens de autorização obtidos da nuvem.
 
-![Logon alternativo](media/Configure-Alternate-Login-ID/ADFS_Alt_ID1.png)
-
-![Logon alternativo](media/Configure-Alternate-Login-ID/ADFS_Alt_ID2.png)
-
-![Logon alternativo](media/Configure-Alternate-Login-ID/ADFS_Alt_ID3.png)
-
-Abaixo, as capturas de tela a seguir são um exemplo adicional usando o Skype for Business.  No exemplo, as informações a seguir são usadas
+>[!NOTE]
+> Para a melhor experiência possível, a Microsoft recomenda autenticação moderna híbrida.
 
 
-- SIP:userA@contoso.com 
-- UPN:userA@contoso.local
-- Email:userA@contoso.com
-- AltId:userA@contoso.com 
 
-Insira o endereço SIP no campo de entrada.
+## <a name="configure-alternate-logon-id"></a>Defina a ID de logon alternativo
+Usando o Azure AD Connect, é recomendável usar o Azure AD conectar-se para configurar a ID de logon alternativo para o seu ambiente.
 
-![Skype](media/Configure-Alternate-Login-ID/SkypeA.png)
+- Para a nova configuração do Azure AD Connect, consulte conectar-se ao AD do Azure para obter instruções detalhadas sobre como configurar o farm alternativo do ID e o AD FS.
+- Para as instalações existentes do Azure AD Connect, consulte Alterando o método de entrada do usuário para obter instruções sobre como alterar o método de entrada para o AD FS
 
-![Skype](media/Configure-Alternate-Login-ID/SkypeB.png)
+Quando o Azure AD Connect é fornecido detalhes sobre o ambiente do AD FS, ele automaticamente verifica a presença do KB direito no seu AD FS e configura o AD FS para a ID alternativa, incluindo todas as regras de declaração de direito necessário para confiança de Federação do AD do Azure. Não há nenhuma etapa adicional necessária externa assistente configure ID alternativa.
 
-![Skype](media/Configure-Alternate-Login-ID/SkypeC.png)
+>[!NOTE]
+> A Microsoft recomenda usar o Azure AD Connect para configurar ID de logon alternativo.
 
-## <a name="to-configure-alternate-login-id"></a>Para configurar a ID de logon alternativo
-Para definir a ID de logon alternativo, você deve executar as seguintes tarefas:
+### <a name="manually-configure-alternate-id"></a>Configurar manualmente a ID alternativa
+Para configurar a ID de logon alternativo, você deve executar as seguintes tarefas: Configurar seu objetos de confiança do provedor de declarações do AD FS para habilitar a ID de logon alternativo
 
-Configurar seu relações de confiança do AD FS requerimentos judiciais ou Extrajudiciais provedor para habilitar o ID de logon alternativo
+1.  Se você tiver o Server 2012 R2, verifique se que você tiver o KB2919355 instalado em todos os servidores do AD FS. Você pode obtê-lo por meio do Windows Update Services ou baixá-lo diretamente. 
 
-1.  Instalar [KB2919355](https://go.microsoft.com/fwlink/?LinkID=396590).  Você pode obtê-lo por meio de serviços de atualização do Windows ou baixá-lo diretamente.
+2.  Atualizar a configuração do AD FS, executando o seguinte cmdlet do PowerShell em qualquer um dos servidores de federação no seu farm (se você tiver um farm de WID, você deve executar esse comando no servidor primário do AD FS no farm):
 
-2.  Atualize a configuração do AD FS executando o seguinte cmdlet do PowerShell em qualquer um dos servidores de federação no farm (se você tiver um farm de trabalho, você deve executar esse comando no servidor do AD FS principal no seu farm):
+``` powershell
+Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID <attribute> -LookupForests <forest domain>
+```
 
-    ```
-    Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID <attribute> -LookupForests <forest domain>
+**AlternateLoginID** é o nome LDAP do atributo que você deseja usar para o logon.
 
-    ```
+**LookupForests** é a lista de floresta DNS que seus usuários pertencerem a.
 
-    **AlternateLoginID** é o nome LDAP do atributo que você deseja usar para logon.
+Para habilitar o recurso de ID de logon alternativo, você deve configurar os parâmetros de AlternateLoginID - e - LookupForests com um valor não nulo, válido.
 
-    **LookupForests** é a lista de floresta DNS que seus usuários pertencem a.
+No exemplo a seguir, você estiver habilitando a funcionalidade de ID de logon alternativo, de modo que os usuários com contas em florestas contoso.com e fabrikam.com podem fazer logon em aplicativos do AD FS habilitados com o atributo "email".
 
-    Para habilitar o recurso de ID de logon alternativo, configure parâmetros AlternateLoginID - e - LookupForests com um valor diferente de nulo, válido.
+``` powershell
+Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID mail -LookupForests contoso.com,fabrikam.com
+```
 
-    No exemplo a seguir, você está ativando a funcionalidade de ID de logon alternativo forma que os usuários com contas em florestas contoso.com e fabrikam.com podem fazer logon aplicativos do AD FS habilitado com o atributo "email".
+3.  Para desabilitar esse recurso, defina o valor para ambos os parâmetros ser nulo.
 
-    ```
-    Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID mail -LookupForests contoso.com,fabrikam.com
-    ```
+``` powershell
+Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID $NULL -LookupForests $NULL
+```
 
-3.  Para desabilitar esse recurso, defina o valor para ambos os parâmetros ser null.
+## <a name="hybrid-modern-authentication-with-alternate-id"></a>Autenticação moderna híbrida com a ID alternativa
 
-    ```
-    Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID $NULL -LookupForests $NULL
-    ```
+>[!IMPORTANT]
+>A seguir só foi testado com o AD FS e não 3ª provedores de identidade de terceiros.
 
-4.  Para habilitar o ID de logon alternativo com o Azure AD, não há etapas de configurações adicionais são necessárias ao usar o Azure AD Connect.   ID alternativa pode ser configurado diretamente do assistente.  Consulte identifica os usuários na seção [conectar-se ao Azure AD](https://azure.microsoft.com/en-us/documentation/articles/active-directory-aadconnect-get-started-custom/#connect-to-azure-ad).
+### <a name="exchange-and-skype-for-business"></a>Exchange e Skype for Business
+Se você estiver usando a id de logon alternativo com o Exchange e Skype for Business, a experiência do usuário varia dependendo se você estiver usando HMA.
 
-## <a name="additional-details--considerations"></a>Considerações e detalhes adicionais
+>[!NOTE]
+>Para uma melhor experiência do usuário final, a Microsoft recomenda o uso de autenticação moderna híbrida.
 
--   O recurso de ID de logon alternativo só está disponível para ambientes agrupados com o AD FS implantado.  Não há suporte nos seguintes cenários:
-    -   Domínios não pode ser roteado (por exemplo, contoso. local) que não podem ser verificados pelo Azure AD.
+ou obter mais informações, consulte [visão geral de autenticação moderna híbrida](https://support.office.com/en-us/article/Hybrid-Modern-Authentication-overview-and-prerequisites-for-using-it-with-on-premises-Skype-for-Business-and-Exchange-servers-ef753b32-7251-4c9e-b442-1a5aec14e58d)
+
+### <a name="pre-requisites-for-exchange-and-skype-for-business"></a>Pré-requisitos para o Exchange e Skype for Business
+A seguir estão os pré-requisitos para a obtenção de SSO com a ID alternativa.
+
+- O Exchange Online devem ter a autenticação moderna ativadas.
+- Skype para Online de negócios (SFB) deve ter a autenticação moderna ativadas.
+- Exchange local deve ter autenticação moderna ativadas.  Exchange 2013 CU19 ou Exchange 2016 CU18 e backup é necessário em todos os servidores do Exchange. Nenhum Exchange 2010 no ambiente.
+- Skype for Business local deve ter autenticação moderna ativadas.
+- Você deve usar os clientes Exchange e Skype que têm autenticação moderna habilitada. Todos os servidores devem estar executando SFB Server 2015 CU5.
+- Skype para clientes de negócios que são compatíveis com a autenticação moderna
+   - iOS, Android, Windows Phone
+   - SFB 2016 (MA está ativado por padrão, mas verifique se ele não tiver sido desabilitado).
+   - SFB 2013 (MA está desativado por padrão, portanto, certifique-se MA foi ativada.)
+   - Área de trabalho Mac SFB
+- Clientes do Exchange que são compatíveis com a autenticação moderna e dar suporte a AltID regkeys
+    - Office Pro Plus 2016 apenas
+
+
+
+
+
+#### <a name="supported-office-version"></a>Versão com suporte do Office
+
+Configurar seu diretório para que o SSO com id alternativa usando id alternativa pode causar prompts extras para autenticação, se essas configurações adicionais não forem concluídas. Consulte o artigo para o possível impacto na experiência do usuário com a id alternativa.
+
+Com a seguinte configuração adicional, a experiência do usuário foi aprimorada significativamente e você pode conseguir quase zero prompts de autenticação para usuários de id alternativa em sua organização.
+
+##### <a name="step-1-update-to-required-office-version"></a>Etapa 1. Atualizar para a versão do office necessária
+Versão 1712 do Office (compilar sem 8827.2148) e acima atualizou a lógica de autenticação para lidar com o cenário de id alternativa. Para aproveitar a nova lógica, os computadores cliente precisam ser atualizados para a versão 1712 do office (compilar sem 8827.2148) e superior.
+
+##### <a name="step-2-configure-registry-for-impacted-users-using-group-policy"></a>Etapa 2. Configurar o registro para os usuários afetados usando a diretiva de grupo
+Os aplicativos do office se baseiam nas informações enviadas por push pelo administrador do diretório para identificar o ambiente de id alternativa. As seguintes chaves do registro precisam ser configurados para ajudar a autenticar o usuário com a id alternativa sem mostrar avisos adicionais de aplicativos do office
+
+|RegKey para adicionar|Nome de dados de Regkey, tipo e valor|Windows 7/8|Windows 10|Descrição|
+|-----|-----|-----|-----|-----|
+|HKEY_CURRENT_USER\Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|Obrigatório|Obrigatório|O valor desse regkey é um nome de domínio personalizado verificado no locatário da organização. Por exemplo, a Contoso corp pode fornecer um valor de Contoso.com nesse regkey se Contoso.com é um dos nomes de domínio personalizado verificado no locatário Contoso.onmicrosoft.com.|
+HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\Identity|EnableAlternateIdSupport</br>REG_DWORD</br>1|Necessário para o Outlook 2016 ProPlus|Necessário para o Outlook 2016 ProPlus|O valor desse regkey pode ser de 1 / 0 para indicar ao aplicativo Outlook se deverá contar com a lógica de autenticação de id alternativa aprimorada.|
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Common\Identity|DisableADALatopWAMOverride</br>REG_DWORD</br>1|Não Aplicável|Obrigatório.|Isso garante que o Office não usa o WAM como alt-id não é suportado pelo WAM.|
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Common\Identity|DisableAADWAM</br>REG_DWORD</br>1|Não Aplicável|Obrigatório.|Isso garante que o Office não usa o WAM como alt-id não é suportado pelo WAM.|
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\contoso.com\sts|&#42;</br>REG_DWORD</br>1|Obrigatório|Obrigatório|Este regkey pode ser usado para definir o STS como uma zona confiável nas configurações de internet. Implantação do AD FS padrão recomenda adicionar o namespace do ADFS a zona da Intranet Local para o Internet Explorer|
+
+## <a name="new-authentication-flow-after-additional-configuration"></a>Novo fluxo de autenticação após a configuração adicional
+
+![Fluxo de autenticação](media/Configure-Alternate-Login-ID/alt1a.png)
+
+1. a: Usuário está provisionado no AD do Azure usando a id alternativa
+   </br>b: Administrador do diretório envia por push configurações regkey necessária para computadores cliente afetados
+2. Usuário é autenticado no computador local e abre um aplicativo do office
+3. Aplicativo do Office utilizará as credenciais de sessão local
+4. Aplicativo do Office se autentica no Azure AD usando a dica de domínio enviada pelo administrador e as credenciais locais
+5. Com êxito o Azure AD autentica o usuário por meio do direcionamento para corrigir o realm de Federação e emitir um token
+
+## <a name="applications-and-user-experience-after-the-additional-configuration"></a>Aplicativos e experiência do usuário após a configuração adicional
+
+### <a name="non-exchange-and-skype-for-business-clients"></a>Não sejam do Exchange e Skype para clientes de negócios
+|Remota|Instrução de suporte|Comentários|
+| ----- | -----|-----|
+|Microsoft Teams|Com suporte|<li>Microsoft Teams dá suporte ao AD FS (SAML-P, WS-Fed, WS-Trust e OAuth) e autenticação moderna.</li><li> Core Microsoft Teams, como as funcionalidades de canais, bate-papos e arquivos de trabalhar com a ID de logon alternativo.</li><li>aplicativos de terceiros 1º e o 3º devem ser investigados separadamente pelo cliente. Isso ocorre porque cada aplicativo tem seus próprios protocolos de autenticação de capacidade de suporte.</li>|     
+|OneDrive for Business|Suporte - chave do registro do lado do cliente recomendado |Com a ID alternativa configurada, você vê que o UPN local é previamente preenchido no campo de verificação. Isso precisa ser alterado para a identidade alternativa que está sendo usada. Recomendamos usar a chave do registro do lado cliente observada neste artigo: Office 2013 e Lync 2013 periodicamente solicitam credenciais para o SharePoint Online, OneDrive e o Lync Online.|
+|OneDrive for Business de cliente móvel|Com suporte|| 
+|Página de ativação Pro Plus do Office 365|Suporte - chave do registro do lado do cliente recomendado|Com a ID alternativa configurada, você vê que o UPN local é previamente preenchido no campo de verificação. Isso precisa ser alterado para a identidade alternativa que está sendo usada. Recomendamos usar a chave do registro de cliente observada neste artigo: Office 2013 e Lync 2013 periodicamente solicitam credenciais para o SharePoint Online, OneDrive e o Lync Online.|
+
+### <a name="exchange-and-skype-for-business-clients"></a>Exchange e Skype para clientes de negócios
+
+|Remota|Instrução de suporte - com HMA|Instrução de suporte - sem HMA|
+| ----- |----- | ----- |
+|Outlook|Prompts não extras, com suporte|Com suporte</br></br>Com o **autenticação moderna** para o Exchange Online: Com suporte</br></br>Com o **autenticação regular** para o Exchange Online: Suporte com as seguintes condições:</br><li>Você deve estar em um computador de ingressado no domínio e conectados à rede corporativa </li><li>Você só pode usar a ID alternativa em ambientes que não permitem acesso externo para usuários de caixa de correio. Isso significa que os usuários podem apenas autenticar sua caixa de correio de uma forma com suporte quando eles estão conectados e associados à rede corporativa, em uma VPN ou conectados por meio de máquinas de acesso direto, mas você obtém alguns prompts extras ao configurar seu perfil do Outlook.| 
+|Pastas públicas do híbrido|Prompts com suporte, não extras.|Com o **autenticação moderna** para o Exchange Online: Com suporte</br></br>Com o **autenticação regular** para o Exchange Online: Sem suporte</br></br><li>Híbrido de pastas públicas não são capazes de expandir se IDs alternativos são usados e, portanto, não deve ser usado hoje em dia com métodos de autenticação regular.|
+|Entre instalações a delegação|Consulte [configurar o Exchange para dar suporte a permissões delegadas de caixa de correio em uma implantação híbrida](https://technet.microsoft.com/library/mt784505.aspx)|Consulte [configurar o Exchange para dar suporte a permissões delegadas de caixa de correio em uma implantação híbrida](https://technet.microsoft.com/library/mt784505.aspx)|
+|Arquivar o acesso de caixa de correio (caixa de correio local - arquivo-morto na nuvem)|Prompts não extras, com suporte|Com suporte, os usuários obtêm um extra pedir credenciais ao acessar o arquivo morto, eles precisarão fornecer sua ID alternativa quando solicitado.| 
+|Outlook Web Access|Com suporte|Com suporte|
+|Aplicativos móveis de Outlook para IOS, Android e Windows Phone|Com suporte|Com suporte|
+|Skype for Business / Lync|Com suporte, sem prompts extras|Com suporte (exceto como observado), mas há um potencial de confusão do usuário.</br></br>Em clientes móveis, Id alternativa é suportada somente se o endereço SIP = endereço de email = ID alternativa.</br></br> Os usuários podem precisar entrar duas vezes para o Skype para cliente da área de trabalho de negócios, pela primeira vez usando o UPN local e, em seguida, usando a ID alternativa. (Observe que o "endereço de entrada" é, na verdade, o que pode não ser o mesmo que o "nome de usuário", porém muitas vezes é endereço SIP). Quando solicitado pela primeira vez para um nome de usuário, o usuário deve inserir o UPN, mesmo se ele incorretamente é previamente preenchido com o endereço SIP ou de ID alternativa. Depois que o usuário clica em entrar com o UPN, o usuário nome prompt será exibido novamente, desta vez preenchida previamente com o UPN. Neste momento, o usuário deve substituir isso com a ID alternativa e clique em entrar para concluir o processo de entrada. Em clientes móveis, os usuários devem inserir a ID de usuário local na página Avançado, usando o formato de estilo do SAM (domínio \ nomedeusuário), não o formato UPN.</br></br>Depois de entrar com êxito, se o Skype for Business ou Lync diz "Exchange precisa das suas credenciais", você precisa fornecer as credenciais que são válidas para onde a caixa de correio está localizada. Se a caixa de correio está na nuvem que você precisa fornecer a ID alternativa. Se a caixa de correio for local, você precisará fornecer o UPN local.| 
+ 
+## <a name="additional-details--considerations"></a>Detalhes adicionais e considerações sobre
+
+-   O recurso de ID de logon alternativa está disponível para ambientes agrupados com o AD FS implantado.  Não há suporte nos seguintes cenários:
+    -   Domínios não roteáveis (por exemplo, contoso. local) que não podem ser verificados pelo Azure AD.
     -   Ambientes que não têm o AD FS implantado gerenciados.
 
 
--   Quando habilitada, o recurso de ID de logon alternativo só está disponível para autenticação de nome de usuário/senha em todos os usuário nome/senha protocolos de autenticação com suporte pelo AD FS (SAML P, WS-alimentadas, WS-Trust e OAuth).
+-   Quando habilitado, o recurso de ID de logon alternativo só está disponível para autenticação de nome de usuário e senha em todos os usuário nome/senha protocolos de autenticação suportados pelo AD FS (SAML-P, WS-Fed, WS-Trust e OAuth).
 
 
--   Quando a autenticação integrada do Windows (WIA) é executada (por exemplo, quando os usuários tentam acessar um aplicativo corporativo em um computador ingressado no domínio da intranet e do AD FS administrador tiver configurado a política de autenticação para usar WIA para intranet), UPN será usada para autenticação. Se você tiver configurado qualquer reivindicação regras para os participantes terceira para recurso de ID de logon alternativo, você deve verificar se que essas regras ainda são válidas no caso de WIA.
+-   Quando a autenticação integrada do Windows (WIA) é executada (por exemplo, quando os usuários tentam acessar um aplicativo corporativo em um computador ingressado no domínio da intranet e o administrador do AD FS tiver configurado a política de autenticação para usar WIA para intranet), usado UPN para autenticação. Se você tiver configurado todas as regras de declaração para as partes de terceira parte confiável para o recurso de ID de logon alternativo, certifique-se de que essas regras ainda são válidas no caso de WIA.
 
--   Quando habilitada, o recurso de ID de logon alternativo requer pelo menos um servidor de catálogo global pode ser alcançado de servidor do AD FS para cada floresta de conta de usuário compatíveis com o AD FS. Falha para alcançar um servidor de catálogo global na floresta de conta do usuário resultará no AD FS voltavam a usar o nome UPN. Por padrão, todos os controladores de domínio são servidores de catálogo global.
+-   Quando habilitada, o recurso de ID de logon alternativo requer pelo menos um servidor de catálogo global para ser acessível a partir do servidor do AD FS para cada floresta de conta de usuário que dá suporte ao AD FS. Falha ao acessar um servidor de catálogo global na floresta de conta de usuário resulta em fazer fallback para usar o UPN do AD FS. Por padrão, todos os controladores de domínio são servidores de catálogo global.
 
--   Quando habilitada, se o servidor do AD FS localizar mais de um objeto de usuário com o mesmo valor de ID de logon alternativo especificado em todas as florestas de conta de usuário configurado, ele irá falhar o logon.
+-   Quando habilitada, se o servidor do AD FS localizar mais de um objeto de usuário com o mesmo valor de ID de logon alternativo especificado em todas as florestas de conta de usuário configurado, ele falha de logon.
 
--   Quando o recurso de ID de logon alternativo é habilitado, o AD FS tentará autenticar o usuário final com ID de logon alternativo primeiro e depois retornar para usar o UPN se não encontrar uma conta que pode ser identificada pelo ID de logon alternativo. Você deve verificar se que há sem conflitos entre a ID de logon alternativo e o UPN se quiser ainda oferece suporte a logon UPN. Por exemplo, o atributo de email de configuração de um com UPN da outra bloqueará o outro usuário de logon com seu UPN.
+-   Quando o recurso de ID de logon alternativo é habilitado, o AD FS tenta autenticar o usuário final com a ID de logon alternativo primeiro e, em seguida, fazer fallback para usar o UPN se ele não é possível localizar uma conta que pode ser identificada pela ID de logon alternativo. Você deve verificar se que há não há conflitos entre a ID de logon alternativo e o UPN, se você quiser ainda oferece suporte o logon UPN. Por exemplo, configuração de um atributo de email com o outro UPN bloqueia o outro usuário de entrar com seu UPN.
 
--   Se uma das florestas que esteja configurado pelo administrador for pressionada, o AD FS continuará procurar a conta de usuário com ID de logon alternativo em outras florestas que estão configurados. Se o servidor do AD FS encontrar um único usuário objetos florestas que ele pesquisou, um usuário fará logon com êxito.
+-   Se uma das florestas que é configurada pelo administrador estiver inativo, o AD FS continua a pesquisar a conta de usuário com ID de logon alternativo em outras florestas configuradas. Se o servidor do AD FS localiza um único usuário objetos entre as florestas que ele pesquisou, um usuário fizer logon com êxito.
 
--   Além disso convém personalizar a página de entrada do AD FS para dar aos usuários finais alguns dica sobre a ID de logon alternativo. Você pode fazer isso adicionando a descrição da página de entrada personalizada (para obter mais informações, consulte [Personalizando as páginas do AD FS Sign-in](https://technet.microsoft.com/library/dn280950.aspx) ou personalizando a cadeia de caracteres "faça logon com contas da organização" acima do campo de nome de usuário (para obter mais informações, consulte [personalização avançada do AD FS Sign-in páginas](https://technet.microsoft.com/library/dn636121.aspx).
+-   Além disso você queira personalizar a página de entrada do AD FS para dar aos usuários finais alguma dica sobre a ID de logon alternativo. Você pode fazer isso adicionando a descrição de página de entrada personalizado (para obter mais informações, consulte [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx) ou personalizar a cadeia de caracteres "Entrar com conta organizacional" acima do campo de nome de usuário (para obter mais informações obter informações, consulte [Advanced Customization of AD FS Sign-in Pages](https://technet.microsoft.com/library/dn636121.aspx).
 
 -   O novo tipo de declaração que contém o valor de ID de logon alternativo é **http:schemas.microsoft.com/ws/2013/11/alternateloginid**
 
 ## <a name="events-and-performance-counters"></a>Eventos e contadores de desempenho
-Os seguintes contadores de desempenho foram adicionados para medir o desempenho dos servidores do AD FS quando o ID de logon alternativo é ativado:
+Os contadores de desempenho a seguir foram adicionados para medir o desempenho dos servidores do AD FS quando o ID de logon alternativo está habilitado:
 
--   Alternativas autenticações de Id de logon: número de autenticações realizada por meio da ID de logon alternativo
+-   Autenticações de Id de logon alternativos: número de autenticações executadas usando a ID de logon alternativo
 
--   Alternativo autenticações/s de Id de logon: o número de autenticações realizada por meio da ID de logon alternativo por segundo
+-   Alternativo autenticações de Id de logon/s: o número de autenticações executadas usando a ID de logon alternativo por segundo
 
--   Média de latência de pesquisa para o ID de logon alternativo: média de latência de pesquisa florestas que um administrador tiver configurado para o ID de logon alternativo
+-   Média de latência de pesquisa para a ID de logon alternativo: média de latência de pesquisa nas florestas que um administrador tiver configurado para a ID de logon alternativo
 
-A seguir estão diversos casos de erro e correspondente impacto sobre a experiência do usuário entrar com eventos registrados pelo AD FS:
+Seguem diversos casos de erro e o impacto correspondente no experiência de entrada do usuário uma com eventos registrados em log pelo AD FS:
 
 
 
-**Casos de erro**|**Impacto na experiência de entrada**|**Evento**|
+**Casos de erro**|**Impacto na experiência de entrada**|**Event**|
 ---------|---------|---------
-Não é possível obter um valor SAMAccountName para o objeto de usuário|Falha de logon|ID de evento 364 com mensagem de exceção MSIS8012: não é possível localizar o samAccountName para o usuário: '{0}'.|
-O atributo CanonicalName não é acessível|Falha de logon|ID de evento 364 com mensagem de exceção MSIS8013: CanonicalName: '{0}' do usuário: '{1}' está no formato incorreto.|
-Vários objetos de usuário são encontrados no one florestas|Falha de logon|ID de evento 364 com mensagem de exceção MSIS8015: encontradas várias contas de usuário com identidade '{0}' na floresta '{1}' com identidades: {2}|
-Vários objetos de usuário são encontrados em várias florestas|Falha de logon|ID de evento 364 com mensagem de exceção MSIS8014: encontradas várias contas de usuário com identidade '{0}' em florestas: {1}|
+Não é possível obter um valor para o SAMAccountName para o objeto de usuário|Falha no logon|ID do evento 364 com a mensagem de exceção MSIS8012: Não é possível localizar o samAccountName do usuário: '{0}'.|
+O atributo CanonicalName não está acessível|Falha no logon|ID do evento 364 com a mensagem de exceção MSIS8013: CanonicalName: '{0}' do usuário:'{1}' está no formato incorreto.|
+Vários objetos de usuário são encontrados em uma floresta|Falha no logon|ID do evento 364 com a mensagem de exceção MSIS8015: Encontradas várias contas de usuário com identidade '{0}'na floresta'{1}' com identidades: {2}|
+Vários objetos de usuário são encontrados em várias florestas|Falha no logon|ID do evento 364 com a mensagem de exceção MSIS8014: Encontradas várias contas de usuário com identidade '{0}' em florestas: {1}|
 
 ## <a name="see-also"></a>Consulte também
 [Operações do AD FS](../../ad-fs/AD-FS-2016-Operations.md)

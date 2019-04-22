@@ -1,6 +1,6 @@
 ---
 title: Novidades no Windows Server, versão 1803
-description: Quais são os novos recursos de computação, identidade, gerenciamento, automação, rede, segurança e armazenamento.
+description: Quais são os novos recursos de computação, identidade, gerenciamento, automação, rede, segurança, armazenamento.
 ms.prod: windows-server-threshold
 ms.technology: server-general
 ms.topic: article
@@ -9,19 +9,19 @@ ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
 ms.openlocfilehash: c4f80b668b91e65b6c8bc528e14f52a1d117a3c9
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2061466"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59823087"
 ---
 # <a name="whats-new-in-windows-server-version-1803"></a>Novidades no Windows Server versão 1803
 
->Aplicável a: Windows Server (canal semestral)
+>Aplica-se a: Windows Server (canal semestral)
 
 <img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;O conteúdo desta seção descreve as novidades e as alterações no Windows Server, versão 1803. Os novos recursos e alterações listados aqui são os que têm maior probabilidade de ter um impacto maior ao trabalhar com esta versão. Consulte também a [atualização do Canal semestral do Windows Server](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/).
 
-## <a name="windows-admin-center"></a>WindowsAdmin Center
+## <a name="windows-admin-center"></a>Windows Admin Center
 
 O Project Honolulu agora é o **Windows Admin Center**.
 <br>&nbsp;
@@ -45,7 +45,7 @@ Os cenários específicos para o canal semestral e o canal de serviço de longo 
 | Lançamentos  | A cada 2 a 3 anos  | Cada 6 meses |
 | Suporte  | Suporte de 5 anos + 5 anos de suporte estendido  | 18 meses |
 | Edições  | Todas as edições disponíveis do Windows Server  | Edições Standard e Datacenter |
-| Quem pode usar  | Todos os clientes por meio de todos os canais | Software Assurance e nuvem somente para clientes |
+| Quem pode usar  | Todos os clientes por meio de todos os canais | somente para clientes do Software Assurance e de nuvem |
 | Opções de instalação  | Server Core e Server com Experiência Desktop  | Server Core para o host do contêiner, imagem de contêiner e imagem de contêiner do Nano Server |
 
 ## <a name="application-platform-and-containers"></a>Plataforma de aplicativo e contêineres
@@ -54,8 +54,8 @@ Os cenários específicos para o canal semestral e o canal de serviço de longo 
     - A imagem de contêiner base do Server Core é reduzida em 30% do Windows Server, versão 1709. 
     - A compatibilidade de aplicativos também é aprimorada para ajudar você com os contêineres de aplicativos tradicionais.
     - O desempenho de inicialização do contêiner e o desempenho de tempo de execução foram aprimorados também devido a várias correções e otimizações.
-- Rede do contêiner: adicionado o suporte de proxy Localhost e http, além de melhorar o tempo de escalabilidade e inicialização de contêiner.
-- Ferramentas: suporte para Curl.exe, Tar.exe e SSH aprimorado a fim de complementar o PowerShell para cenários de criação e depuração.
+- Rede de contêiner: Foi adicionado suporte de proxy do localhost e http e tempo de inicialização e a escalabilidade do contêiner é aprimorado.
+- Ferramentas: Suporte para Curl.exe, Tar.exe e SSH foi aprimorado para complementar o PowerShell para compilar e cenários de depuração.
 
 ### <a name="server-core-container-image"></a>Imagem de contêiner do Server Core
 
@@ -75,9 +75,9 @@ O WSL permite que os administradores do servidor usem as ferramentas existentes 
 Kubernetes (geralmente conhecido como K8s) é um sistema de fonte aberta para automatizar a implantação, o dimensionamento e o gerenciamento de aplicativos em contêineres, desenvolvido sob a administração da [Cloud Native Computing Foundation](https://www.cncf.io). 
 
 No Windows Server, os usuários da versão 1709 puderam aproveitar Kubernetes em recursos de rede do Windows, incluindo:
-- Compartimentos de pod compartilhados: pods de infraestrutura e trabalho agora compartilham um compartimento de rede (semelhante a um namespace do Linux).
-- Otimização do ponto de extremidade: devido ao compartimento de compartilhamento, os serviços de contêiner precisam controlar apenas metade dos pontos de extremidade.
-- Otimização do caminho de dados: melhorias para a Plataforma de filtragem virtual e o Serviço de rede do host permitem o balanceamento de carga com base em kernel.
+- Compartilhado compartimentos de pod: Os pods de infraestrutura e de trabalho agora compartilham um compartimento de rede (análogo a um namespace do Linux).
+- Otimização de ponto de extremidade: Graças ao compartilhamento de compartimento, serviços de contêiner precisam controlar quantos pontos de extremidade pelo menos metade.
+- Otimização de caminho de dados: Melhorias para a plataforma de filtragem Virtual e o serviço de rede do Host permitem baseada em kernel balanceamento de carga.
 
 Com o lançamento do Windows Server, versão 1803, mais recursos estarão disponíveis na versões futuras de Kubernetes: 
 - [Plug-ins de armazenamento](https://github.com/Microsoft/K8s-Storage-Plugins) para contêineres Windows coordenados por Kubernetes.
@@ -108,7 +108,7 @@ Você pode usar o seguinte comando do Windows PowerShell para habilitar o servi�
 Install-WindowsFeature -Name WDS
 ```
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
-[Informações sobre versões do Windows Server](https://docs.microsoft.com/windows-server/get-started/windows-server-release-info)<br>
-[Novidades no conteúdo para profissionais de TI do Windows 10, versão 1803](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1803)
+[Informações de versão do Windows Server](https://docs.microsoft.com/windows-server/get-started/windows-server-release-info)<br>
+[O que há de novo no Windows 10, o conteúdo para profissionais de TI da versão 1803](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1803)

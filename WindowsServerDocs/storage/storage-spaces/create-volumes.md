@@ -10,11 +10,11 @@ author: cosmosdarwin
 ms.date: 01/11/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 277a676d8e53a7847d54039aab6607be8e5a78c5
-ms.sourcegitcommit: 1533d994a6ddea54ac189ceb316b7d3c074307db
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1833428"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59823607"
 ---
 # <a name="creating-volumes-in-storage-spaces-direct"></a>Criando volumes em Espaços de Armazenamento Diretos
 
@@ -31,15 +31,15 @@ Recomendamos usar o cmdlet **New-Volume** para criar volumes para Espaços de Ar
 
 O cmdlet **New-Volume** tem quatro parâmetros que você sempre precisará fornecer:
 
-- **FriendlyName:** qualquer cadeia de caracteres que deseje, por exemplo *"Volume1"*
-- **FileSystem:** ou **CSVFS_ReFS** (recomendado) ou **CSVFS_NTFS**
-- **StoragePoolFriendlyName:** o nome do seu pool de armazenamento, por exemplo *"S2D em ClusterName"*
-- **Tamanho:** o tamanho do volume, por exemplo *"10TB"*
+- **FriendlyName:** Qualquer cadeia de caracteres que você queira, por exemplo *"Volume1"*
+- **FileSystem:** Qualquer um dos **CSVFS_ReFS** (recomendado) ou **CSVFS_NTFS**
+- **StoragePoolFriendlyName:** O nome do seu armazenamento em pool, por exemplo *"S2D no ClusterName"*
+- **Tamanho:** O tamanho do volume, por exemplo *"10 TB"*
 
    >[!NOTE]
    >  O Windows, inclusive o PowerShell, conta usando números binários (base-2), embora as unidades geralmente sejam rotuladas usando números decimais de (base-10). Isso explica por que uma unidade de "um terabyte", definida como 1.000.000.000.000 bytes, aparece no Windows como de "909 GB". Isso é esperado. Ao criar volumes usando **New-Volume**, você deve especificar o parâmetro **Tamanho** em números binários (base-2). Por exemplo, especificar "909GB" ou "0,909495 TB" criará um volume de aproximadamente 1.000.000.000.000 bytes.
 
-### <a name="example-with-2-or-3-servers"></a>Exemplo: com 2 ou 3 servidores
+### <a name="example-with-2-or-3-servers"></a>Exemplo: Com os servidores de 2 ou 3
 
 Para facilitar as coisas, se sua implantação tem apenas dois servidores, Espaços de Armazenamento Diretos usará automaticamente o espelhamento de duas vias para resiliência. Se sua implantação tiver apenas três servidores, o espelhamento de três vias será usado automaticamente.
 
@@ -47,11 +47,11 @@ Para facilitar as coisas, se sua implantação tem apenas dois servidores, Espa�
 New-Volume -FriendlyName "Volume1" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB
 ```
 
-### <a name="example-with-4-servers"></a>Exemplo: com 4 ou mais servidores
+### <a name="example-with-4-servers"></a>Exemplo: Com 4 + servidores
 
 Se tiver quatro ou mais servidores, você pode usar o parâmetro opcional **ResiliencySettingName** para escolher o tipo de resiliência.
 
--   **ResiliencySettingName:** ou **Espelho** ou **Paridade**.
+-   **ResiliencySettingName:** Qualquer um dos **espelho** ou **paridade**.
 
 No exemplo a seguir, o *"Volume2"* usa espelhamento de três vias e o *"Volume3"* usa paridade dupla (geralmente chamada de "codificação de eliminação").
 
@@ -60,7 +60,7 @@ New-Volume -FriendlyName "Volume2" -FileSystem CSVFS_ReFS -StoragePoolFriendlyNa
 New-Volume -FriendlyName "Volume3" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB -ResiliencySettingName Parity
 ```
 
-### <a name="example-using-storage-tiers"></a>Exemplo: usando camadas de armazenamento
+### <a name="example-using-storage-tiers"></a>Exemplo: Usando as camadas de armazenamento
 
 Em implantações com três tipos de unidades, um volume pode abranger as camadas SSD e HDD para residir parcialmente em cada uma delas. Da mesma forma, em implantações com quatro ou mais servidores, um volume pode misturar espelhamento e paridade dual para residir parcialmente em cada um.
 
@@ -86,7 +86,7 @@ Você também pode criar volumes usando o *Assistente de Novo Disco Virtual (Esp
 
 Há três etapas principais:
 
-### <a name="step-1-create-virtual-disk"></a>Etapa 1: criar um disco virtual
+### <a name="step-1-create-virtual-disk"></a>Etapa 1: Criar disco virtual
 
 ![Novo disco virtual](media/creating-volumes/GUI-Step-1.png)
 
@@ -107,16 +107,16 @@ O *Assistente de Novo Volume* é aberto.
 10. Especifique o filesystem a ser usado, deixe o tamanho da unidade de alocação como *Padrão*, nomeie o volume e clique em **Próximo**.
 11. Revise suas seleções e clique em **Criar** e, em seguida, em **Fechar**.
 
-### <a name="step-3-add-to-cluster-shared-volumes"></a>Etapa 3: Adicionar a Volumes Compartilhados do Cluster
+### <a name="step-3-add-to-cluster-shared-volumes"></a>Etapa 3: Adicionar aos volumes compartilhados do cluster
 
-![Adicionar a Volumes Compartilhados do Cluster](media/creating-volumes/GUI-Step-2.png)
+![Adicionar a Volumes Compartilhados Clusterizados](media/creating-volumes/GUI-Step-2.png)
 
 12. No Gerenciador de Cluster de Failover, navegue até **Armazenamento** -> **Discos**.
 13. Selecione o disco virtual que você acabou de criar e selecione **Adicionar a Volumes Compartilhados do Cluster** no painel Ações à direita, ou clique com o botão direito do mouse no disco virtual e selecione **Adicionar a Volumes Compartilhados do Cluster**.
 
-Pronto! Repita conforme necessário para criar mais de um volume.
+Concluído! Repita conforme necessário para criar mais de um volume.
 
 ## <a name="see-also"></a>Consulte também
 
-- [Visão geral de Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md)
-- [Planejamento de volumes nos Espaços de Armazenamento Diretos](plan-volumes.md)
+- [Visão geral direta de espaços de armazenamento](storage-spaces-direct-overview.md)
+- [Planejando volumes em espaços de armazenamento diretos](plan-volumes.md)

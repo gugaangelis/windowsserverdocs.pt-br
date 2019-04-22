@@ -12,51 +12,52 @@ ms.assetid: 47bc4986-14eb-4a29-9930-83a25704a3a0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bcdd43183512bb225dd4afa916f2782c6eb79d7e
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.openlocfilehash: 552a76ba9c2ff385f1ff09d4869eaeb6613027a7
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59823467"
 ---
 # <a name="customize-shared-folders"></a>Personalizar pastas compartilhadas
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Por padrão, as pastas de servidor são criadas na maior partição de dados no disco 0. Os parceiros podem personalizar o local e especificar pastas de servidor adicionais usando as seguintes etapas:  
+Por padrão, as pastas do servidor são criadas na maior partição de dados no Disco 0. Os parceiros podem personalizar o local e especificar pastas adicionais do servidor usando as seguintes etapas:  
   
-1.  Usando uma configuração de partição personalizado, crie a imagem de fábrica e, em seguida, crie uma nova chave de registro de armazenamento antes de você usar o sysprep. Durante a configuração inicial (IC), a tarefa de IC armazenamento verificará essa chave do registro. Se ele existir, as pastas de servidor padrão são criadas no diretório C:\ServerFolders.  
+1.  Usando uma configuração de partição personalizada, crie a imagem de fábrica e, em seguida, uma nova chave do Registro de armazenamento antes de usar o sysprep. Durante a IC (Configuração Inicial), a tarefa da IC de armazenamento verifica essa chave do Registro. Se existir, as pastas do servidor padrão são criadas no diretório C:\ServerFolders.  
   
-    #### <a name="to-create-a-new-storage-registry-key"></a>Para criar uma nova chave de registro de armazenamento  
+    #### <a name="to-create-a-new-storage-registry-key"></a>Para criar uma nova chave do Registro de armazenamento  
   
-    1.  No servidor, mova o mouse para o canto superior direito da tela e clique em **pesquisa **.  
+    1.  No servidor, mova o mouse para o canto superior direito da tela e clique em **Pesquisar**.  
   
-    2.  Na caixa de pesquisa, digite **regedit**e, em seguida, clique no **Regedit** aplicativo.  
+    2.  Na caixa de Pesquisa, digite **regedit**e, em seguida, clique no aplicativo **Regedit** .  
   
-    3.  No painel de navegação, expanda **HKEY_LOCAL_MACHINE**, expanda **SOFTWARE**e, em seguida, expanda **Microsoft **.  
+    3.  No painel de navegação, expanda **HKEY_LOCAL_MACHINE**, expanda **SOFTWARE** e **Microsoft**.  
   
-    4.  Clique com botão direito **Windows Server**, clique em **nova**e clique em **chave **.  
+    4.  Clique com o botão direito do mouse em **Windows Server**, clique em **Novo**e em **Chave**.  
   
-    5.  Nomeie a chave **armazenamento **.  
+    5.  Dê à chave o nome **Armazenamento**.  
   
-    6.  No painel de navegação, clique com botão direito do novo armazenamento do registro chave, clique em **nova**e clique em **valor DWORD (32 bits)**.  
+    6.  No painel de navegação, clique com o botão direito do mouse na chave do Registro de armazenamento, clique em **Novo** e no **Valor DWORD (32 bits)**.  
   
-    7.  Nomeie a cadeia de caracteres **Icreatefoldersonsystem **.  
+    7.  Atribua o nome **CreateFoldersOnSystem**à cadeia de caracteres.  
   
-    8.  Clique com botão direito **Icreatefoldersonsystem**e clique em **modificar **. O **Editar cadeia de caracteres** caixa de diálogo aparece.  
+    8.  Clique com o botão direito do mouse em **CreateFoldersOnSystem**e clique em **Modificar**. A caixa de diálogo **Editar Cadeia de Caracteres** é exibida.  
   
-    9. Defina o valor dessa nova chave para **1**e clique em **Okey **.  
+    9. Defina o valor desta chave nova como **1**e clique em **OK**.  
   
-2.  Use o script PostIC.cmd para mover as pastas para um local diferente ou criar pastas adicionais. Veja o exemplo a seguir: [exemplo 1: criar uma pasta personalizada e mover as pastas padrão para um novo local de PostIC.cmd usando o Windows PowerShell ](Customize-Shared-Folders.md#BKMK_Example1).  
+2.  Use o script PostIC.cmd para mover as pastas para um local diferente ou para criar pastas adicionais. Veja o exemplo a seguir: [Exemplo 1: Crie uma pasta personalizada e mover as pastas padrão para um novo local de postic. cmd usando o Windows PowerShell](Customize-Shared-Folders.md#BKMK_Example1).  
   
-3.  Use o SDK do Windows Server Solutions para mover as pastas para um local diferente ou para criar pastas adicionais. Veja o exemplo a seguir: [exemplo 2: criar uma pasta personalizada e mover uma pasta existente usando o SDK do Windows Server Solutions ](Customize-Shared-Folders.md#BKMK_Example2).  
+3.  Use o SDK do Windows Server Solutions para mover as pastas para um local diferente ou para criar pastas adicionais. Veja o exemplo a seguir: [Exemplo 2: Criar uma pasta personalizada e mover uma pasta existente usando o SDK do Windows Server Solutions](Customize-Shared-Folders.md#BKMK_Example2).  
   
- Opcionalmente, os parceiros podem deixar as pastas de dados na unidade C. Isso permite que o usuário final ou o revendedor Determine o layout das pastas de dados nas unidades de dados.  
+ Opcionalmente, os parceiros podem deixar as pastas de dados na unidade C. Isso permite ao usuário final ou revendedor determinar o layout das pastas de dados nas unidades de dados.  
   
-###  <a name="BKMK_Example1"></a>Exemplo 1: Criar uma pasta personalizada e mover as pastas padrão para um novo local de PostIC.cmd usando o Windows PowerShell  
+###  <a name="BKMK_Example1"></a> Exemplo 1: Crie uma pasta personalizada e mova as pastas padrão para um novo local de PostIC.cmd usando o Windows PowerShell.  
   
-1.  Crie um arquivo PostIC.cmd para executar tarefas pós-configuração inicial conforme detalhado no [criar o arquivo PostIC.cmd para executar a postar das tarefas de configuração inicial](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md) seção.  
+1.  crie um arquivo PostIC.cmd para executar tarefas após a configuração inicial, como detalhado na seção [Criar o Arquivo PostIC.cmd para Execução de Tarefas após a Configuração Inicial](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md).  
   
-2.  Usando o bloco de notas, crie um arquivo chamado **customizefolders.ps1** na pasta C:\Windows\Setup\Scripts e cole o seguinte Windows PowerShell® comandos no arquivo (desmarque as linhas apropriadas dependendo do comportamento desejado).  
+2.  Usando o Bloco de Notas, crie um arquivo chamado **customizefolders.ps1** na pasta C:\Windows\Setup\Scripts e cole os seguintes comandos do Windows PowerShell® no arquivo (desmarque as linhas adequadas dependendo do comportamento desejado).  
   
     ```  
     # Move the Documents folder to D:\ServerFolders  
@@ -83,7 +84,7 @@ Por padrão, as pastas de servidor são criadas na maior partição de dados no 
     exit 0  
     ```  
   
-3.  Adicione a seguinte linha no arquivo PostIC.cmd para executar esse script.  
+3.  Adicione a seguinte linha ao arquivo PostIC.cmd para executar o script.  
   
     ```  
     REM Lower the execution policy  
@@ -93,13 +94,13 @@ Por padrão, as pastas de servidor são criadas na maior partição de dados no 
     "%programfiles%\Windows Server\bin\WssPowershell.exe" -NoProfile -Noninteractive -command ". %windir%\setup\scripts\customizefolders.ps1;exit $LASTEXITCODE"  
     Set error_level=%ERRORLEVEL%  
   
-    REM Restore the execution policy to deafult  
+    REM Restore the execution policy to default  
     "%programfiles%\Windows Server\bin\WssPowershell.exe" "Set-ExecutionPolicy Restricted"  
     Set ERRORLEVEL=%error_level%  
     ```  
   
-###  <a name="BKMK_Example2"></a>Exemplo 2: Criar uma pasta personalizada e mover uma pasta existente usando o SDK do Windows Server Solutions  
- O código que você cria pode ser compilado como um executável e chamado do arquivo PostIC.cmd ou chamado diretamente de um suplemento instalado.  
+###  <a name="BKMK_Example2"></a> Exemplo 2: Crie uma pasta padrão e mova uma pasta existente usando o SDK do Windows Server Solutions.  
+ O código criado pode ser compilado como um executável e chamado pelo arquivo PostIC.cmd ou diretamente de um suplemento instalado.  
   
 ```  
 static void Main(string[] args)  
@@ -143,7 +144,7 @@ static void Main(string[] args)
 ```  
   
 ## <a name="see-also"></a>Consulte também  
- [Criar e personalizar a imagem](Creating-and-Customizing-the-Image.md)   
+ [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do cliente](Testing-the-Customer-Experience.md)
+ [Testando a experiência do usuário](Testing-the-Customer-Experience.md)

@@ -1,5 +1,5 @@
 ---
-title: Gerenciar dispositivos no Windows Server Essentials
+title: Gerenciar Dispositivos no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -13,43 +13,44 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 288d62a3fe4d9073ba2c0e3fdff385d8317f20d4
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59815107"
 ---
-# <a name="manage-devices-in-windows-server-essentials"></a>Gerenciar dispositivos no Windows Server Essentials
+# <a name="manage-devices-in-windows-server-essentials"></a>Gerenciar Dispositivos no Windows Server Essentials
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
  
- As seções a seguir abordam os recursos de gerenciamento de dispositivo de um servidor e explicam como configurar e usar dispositivos em sua rede:  
+ As seções a seguir abordam os recursos de gerenciamento de dispositivo de um servidor e explicam como configurar e usar dispositivos na sua rede:  
   
 -   [Gerenciar dispositivos usando o painel](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_1)  
   
--   [Atribuir contas de usuário permissão para fazer logon em computadores de rede específicos](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_2)  
+-   [Atribuir contas de usuário permissão para fazer logon nos computadores de rede específicos](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_2)  
   
 -   [Remover um computador do servidor](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_3)  
   
--   [Definir configurações de política de grupo para segurança e redirecionamento de pasta](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_5)  
+-   [Configurar configurações de diretiva de grupo para redirecionamento de pasta e segurança](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_5)  
   
--   [Conectar a um computador de rede usando uma sessão de área de trabalho remota](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_7)  
+-   [Conectar a um computador da rede por meio de uma sessão de área de trabalho remota](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_7)  
   
--   [Exibir propriedades de computador](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_8)  
+-   [Exibir propriedades do computador](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_8)  
   
-##  <a name="BKMK_1"></a>Gerenciar dispositivos usando o painel  
- Windows Server Essentials torna possível realizar tarefas administrativas comuns usando o painel do Windows Server Essentials. O **dispositivos** página do painel fornece os seguintes:  
+##  <a name="BKMK_1"></a> Gerenciar dispositivos usando o painel  
+ O Windows Server Essentials torna possível executar tarefas administrativas comuns usando o Painel do Windows Server Essentials. A página **Dispositivos** do Painel fornece o seguinte:  
   
--   Uma lista de computadores em rede, que exibe:  
+-   Uma lista de computadores da rede, que exibe:  
   
     -   O nome do computador  
   
-    -   O status do computador, qualquer **on-line** ou **off-line**  
+    -   O status do computador, **Online** ou **Offline**  
   
     -   A descrição do computador  
   
     -   O status do backup do computador  
   
-    -   O status de atualização do computador  
+    -   O status de atualização do complemento  
   
     -   O status de segurança do computador  
   
@@ -59,132 +60,132 @@ ms.lasthandoff: 07/03/2017
   
 -   Um painel de detalhes com informações adicionais sobre um computador selecionado  
   
--   Um painel de tarefas que inclui um conjunto de tarefas administrativas do dispositivo, como exibir alertas e propriedades do computador, configurando o backup do computador e restaurar arquivos e pastas de um backup  
+-   Um painel de tarefas que inclui um conjunto de tarefas administrativas do dispositivo, como exibir alertas e propriedades do computador, configurar o backup do computador e restaurar arquivos e pastas de um backup  
   
 #### <a name="to-view-the-status-of-network-computers"></a>Para exibir o status dos computadores da rede  
   
-1.  Abra o painel do Windows Server Essentials.  
+1.  Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação, clique em **dispositivos**.  
+2.  Na barra de navegação, clique em **Dispositivos**.  
   
-3.  Exiba o status de todos os computadores na rede no painel de lista.  
+3.  Exiba o status de todos os computadores na rede, no painel de lista.  
   
- A tabela a seguir descreve os vários computador e as tarefas de backup que estão disponíveis no painel Windows Server Essentials. Algumas das tarefas são específicas do computador, e eles só ficam visíveis quando você seleciona um computador na lista.  
+ A tabela a seguir descreve os vários computador e as tarefas de backup que estão disponíveis no Painel do Windows Server Essentials. Algumas tarefas são específicas do computador e são visíveis apenas quando você seleciona um computador na lista.  
   
-### <a name="computer-tasks-in-the-dashboard"></a>No painel de tarefas do computador  
+### <a name="computer-tasks-in-the-dashboard"></a>Tarefas do computador no Painel  
   
 |Nome da tarefa|Descrição|  
 |---------------|-----------------|  
-|Exibir as propriedades de computador|Exibe informações gerais para um computador selecionado e permite que você exiba detalhes para os backups do computador.|  
-|Configurar o backup para este computador|Executa a configurar o Assistente de Backup.|  
-|Personalizar o backup do computador|Abre as propriedades de backup, do qual você pode fazer alterações para as configurações de backup do computador selecionado.|  
-|Inicie um backup do computador|Inicia um backup de um computador selecionado.|  
-|Parar de backup do computador|Interrompe o backup de um computador selecionado.|  
-|Restaurar arquivos ou pastas para o computador|Executa a restaurar arquivos e pastas assistente, que permite que você restaure unidades, pastas ou arquivos específicos.|  
-|Exibir alertas para o computador|Exibe críticas e outras alertas informativos e permite que você execute uma ação corretiva sempre que possível.|  
-|Área de trabalho remota no computador|Abre a Conexão de área de trabalho remota no computador selecionado.|  
-|Remover o computador|Executa a remover um Assistente de computador, que desliga o computador a partir do Windows Server Essentials Dashboard.|  
-|Personalizar o backup do computador e as configurações do histórico de arquivos|Abre a página de configurações de backup, do qual você pode fazer alterações para o agendamento de backup e configurações do histórico de arquivos para o cliente de computadores.|  
-|Como eu conecto computadores ao servidor?|Abre um tópico da Ajuda que descreve as etapas para executar para ingressar um computador à rede.|  
-|Política de grupo de implementar|Aplica as configurações de política para computadores Windows 8 e Windows 7 que ingressam no domínio.|  
+|Exibir as propriedades do computador|Exibe informações gerais sobre um computador selecionado e permite exibir detalhes para os backups de computador.|  
+|Configurar o backup do computador|Executa o Assistente de backup de configuração.|  
+|Personalizar o backup do computador|Abre as propriedades de backup, das quais você pode fazer alterações nas configurações de backup para o computador selecionado.|  
+|Iniciar um backup do computador|Inicia um backup de um computador selecionado.|  
+|Interromper o backup do computador|Interrompe o backup de um computador selecionado.|  
+|Restaurar arquivos ou pastas para o computador.|Executa o assistente de restauração de arquivos e pastas, permitindo que você restaure unidades, pastas ou arquivos específicos.|  
+|Exibir alertas para o computador|Exibe críticas e outras alertas informativos e permite que você execute ações corretivas sempre que possível.|  
+|Área de trabalho remota no computador|Abre a conexão de área de trabalho remota no computador selecionado.|  
+|Remover o computador|Executa o assistente de remoção de computador, que desliga o computador a partir do Painel do Windows Server Essentials.|  
+|Personalizar as configurações de backup do computador e histórico de arquivos|Abre a página de configurações de backup, da qual você pode fazer alterações nas configurações de histórico de arquivos e no agendamento de backup para computadores cliente.|  
+|Como conecto computadores ao servidor?|Abre um tópico da Ajuda que descreve as etapas para executar o ingresso de um computador à rede.|  
+|Implementar Política de Grupo|Aplica as configurações de política para os computadores Windows 8 e Windows 7 que ingressaram no domínio.|  
   
-##  <a name="BKMK_2"></a>Atribuir contas de usuário permissão para fazer logon em computadores de rede específicos  
- Você pode atribuir permissões a contas de usuário para que os usuários podem fazer logon somente determinados computadores de rede quando o acesso à rede do Windows Server Essentials de um local remoto.  
+##  <a name="BKMK_2"></a> Atribuir contas de usuário permissão para fazer logon nos computadores de rede específicos  
+ Você pode atribuir permissões a contas de usuário para que os usuários possam fazer logon somente em determinados computadores da rede ao acessar a rede do Windows Server Essentials em um local remoto.  
   
-#### <a name="to-change-the-computer-access-for-a-user-account"></a>Para alterar o acesso ao computador para uma conta de usuário  
+#### <a name="to-change-the-computer-access-for-a-user-account"></a>Para alterar o acesso do computador para uma conta de usuário  
   
-1.  Abra o painel do Windows Server Essentials.  
+1.  Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação, clique em **usuários**.  
+2.  Na barra de navegação, clique em **Usuários**.  
   
 3.  Na lista de contas de usuário, selecione a conta de usuário que você deseja alterar.  
   
-4.  No **< usuário Account\ > tarefas** painel, clique em **exibir as propriedades da conta**. O **propriedades** página para a conta de usuário é exibido.  
+4.  No **< conta de usuário\> tarefas** painel, clique em **exibir propriedades da conta**. A página **Propriedades** da conta de usuário é exibida.  
   
-5.  Sobre o **acesso ao computador**, selecione o computador que esse usuário pode acessar remotamente e, em seguida, clique em **Okey**.  
+5.  Na guia **Acesso ao computador**, selecione o computador que o usuário pode acessar remotamente e clique em **OK**.  
   
-##  <a name="BKMK_3"></a>Remover um computador do servidor  
- Quando você remove um computador de um servidor que está executando o Windows Server Essentials usando o Dashboard, ele não é gerenciado pelo servidor. Como resultado, o servidor vai parar de criar backups de computador ou monitorar sua integridade após a remoção da rede.  
+##  <a name="BKMK_3"></a> Remover um computador do servidor  
+ Quando você remove um computador de um servidor que esteja executando o Windows Server Essentials usando o Painel, ele não é gerenciado pelo servidor. Como resultado, o servidor irá parar de criar backups de computador ou monitorar sua integridade após sua remoção da rede.  
   
 > [!NOTE]
->  Remoção de um computador do servidor não desconecte o computador da rede. O computador ainda pode acessar recursos da rede da mesma forma que ele poderia antes de estar conectado ao servidor. Para impedir que o computador acessando recursos do servidor e desconecte-o do servidor, você deve remover o computador do domínio. Além disso, a remoção do computador do servidor não automaticamente desinstalar o software Connector ou barra inicial do computador que está sendo removido. Você deve remover manualmente o software do conector do computador. Para obter mais informações, consulte a seção desinstalar o software do conector em [conectado](../use/Get-Connected-in-Windows-Server-Essentials.md).  
+>  A remoção de um computador do servidor não desconecte o computador da rede. O computador ainda pode acessar recursos na rede da mesma forma que era possível antes de ser conectado ao servidor. Para impedir que o computador acesse recursos do servidor e para desconectá-lo do servidor, você deve remover o computador do domínio. Além disso, a remoção do computador do servidor não desinstala automaticamente o software Connector ou a barra inicial do computador que está sendo removido. Remova manualmente o software Connector do computador. Para obter mais informações, consulte a seção de desinstalar o software Connector no [conecte-se](../use/Get-Connected-in-Windows-Server-Essentials.md).  
   
-#### <a name="to-remove-a-computer-from-the-network-by-using-the-dashboard"></a>Para remover um computador da rede usando o Dashboard  
+#### <a name="to-remove-a-computer-from-the-network-by-using-the-dashboard"></a>Para remover um computador da rede usando o Painel  
   
-1.  Abra o painel do Windows Server Essentials.  
+1.  Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação, clique no **dispositivos** guia.  
+2.  Na barra de navegação, clique na guia **Dispositivos** .  
   
-3.  Na lista de computadores, clique com botão direito do computador que você deseja remover da rede e, em seguida, clique em **remover o computador**.  
+3.  Na lista de computadores, clique com o botão direito do mouse no computador que você deseja remover da rede e, em seguida, clique em **Remover o computador**.  
   
-##  <a name="BKMK_5"></a>Definir configurações de política de grupo para segurança e redirecionamento de pasta  
- Você pode configurar a política de grupo e implantá-la nos computadores da rede do Windows Server Essentials usando o painel do Windows Server Essentials. Política de grupo no Windows Server Essentials inclui as configurações de segurança e redirecionamento de pasta que impactam Windows Update, o Windows Defender e o firewall de rede.  
+##  <a name="BKMK_5"></a> Configurar configurações de diretiva de grupo para redirecionamento de pasta e segurança  
+ Você pode configurar a política de grupo e implantá-la em computadores na rede do Windows Server Essentials usando o Painel do Windows Server Essentials. A política de grupo no Windows Server Essentials inclui configurações de redirecionamento de pasta e segurança que influenciam o Windows Update, o Windows Defender e o firewall de rede.  
   
 #### <a name="to-configure-group-policy-in-windows-server-essentials"></a>Para configurar a política de grupo no Windows Server Essentials  
   
-1.  Abra o painel do Windows Server Essentials.  
+1.  Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação, clique em **dispositivos**.  
+2.  Na barra de navegação, clique em **DISPOSITIVOS**.  
   
-3.  Para o Windows Server Essentials: No elemento global **usuários tarefas** painel, clique em **política de grupo de implementar**.  
+3.  Para o Windows Server Essentials: No painel global **Tarefas de Usuários**, clique em **Implementar Política de Grupo**.  
   
-     Para o Windows Server Essentials: No elemento global **dispositivos tarefas** painel, clique em **política de grupo de implementar**.  
+     Para o Windows Server Essentials: No painel global **Tarefas de Dispositivos**, clique em **Implementar Política de Grupo**.  
   
-4.  Abre o Assistente de política de grupo de implementar.  
+4.  O Assistente de Implementação de Política de Grupo é aberto.  
   
-5.  Sobre o **permitir política de grupo de redirecionamento de pasta** página do assistente, você pode escolher as pastas do usuário que você quer redirecionar.  
+5.  Sobre a página **Habilitar a política de grupo de redirecionamento de pasta** do assistente, você pode escolher as pastas de usuário que deseja redirecionar.  
   
-6.  Sobre o **ativar configurações de política de segurança** página do assistente, você pode optar por ativar configurações de política de grupo para **Windows Update**, **Windows Defender**e o **Firewall de rede**.  
+6.  Sobre a página **Habilitar configurações de política de segurança** do assistente, você pode optar por habilitar as configurações de política de grupo para o **Windows Update**, o **Windows Defender**e o **Firewall de rede**.  
   
-7.  Clique em **concluir** para implementar as configurações de política de grupo.  
+7.  Clique em **Concluir** para implementar as configurações de política de grupo.  
   
-##  <a name="BKMK_7"></a>Conectar a um computador de rede usando uma sessão de área de trabalho remota  
- Para acessar remotamente seu computador de rede do Windows Server Essentials quando você estiver fora do escritório, use seu navegador da Web para seu site de acesso via Web remoto s organização fazer logon e, no **computadores** guia, clique no nome do computador.  
+##  <a name="BKMK_7"></a> Conectar a um computador da rede por meio de uma sessão de área de trabalho remota  
+ Para acessar remotamente o computador de rede do Windows Server Essentials quando estiver fora do escritório, use seu navegador da Web para fazer logon no seu site de acesso via Web remoto de s da organização e na **computadores** guia, clique no nome das computador.  
   
- O **Status** coluna mostra se você pode se conectar a um computador em sua rede e pode conter os seguintes valores:  
+ A coluna **Status** mostra se você pode se conectar a um computador na sua rede e se pode incluir os seguintes valores:  
   
 -   **Disponível**  
   
-     O computador está ativado e está disponível para uma conexão remota. Mesmo se você vir esse status, você ainda pode não ser capaz de se conectar a este computador, se um firewall de terceiros bloqueia a conexão.  
+     O computador está ligado e está disponível para uma conexão remota. Mesmo se status aparecer, você ainda pode não será capaz de se conectar a esse computador se um firewall de terceiros bloquear a conexão.  
   
--   **Offline ou dormindo**  
+-   **Offline ou em espera**  
   
-     O computador é desligado ou está em modo de suspensão ou hibernação. Se um computador está offline ou no modo de suspensão, o status é atualizado em tempo real para que você saiba quando o computador estiver disponível.  
+     O computador está desligado ou no modo de suspensão ou de hibernação. Se um computador estiver offline ou em espera, o status é atualizado em tempo real para que você possa saber quando o computador estará disponível.  
   
 -   **Sistema operacional sem suporte**  
   
-     O sistema operacional no computador não oferece suporte a área de trabalho remota. Ele pode levar até 6 horas para esse status ser atualizado no servidor, se houver uma alteração.  
+     O sistema operacional no computador não oferece suporte a área de trabalho remota. Pode levar até 6 horas para esse status ser atualizado no servidor, se houver uma alteração.  
   
 -   **Conexão está desabilitado**  
   
-     A conexão do computador está bloqueado por um firewall ou a área de trabalho remota está desabilitada no computador ou pela política de grupo. Ele pode levar até 6 horas para esse status ser atualizado no servidor, se houver uma alteração.  
+     A conexão de computador está bloqueada por um firewall ou a área de trabalho remota está desabilitada no computador ou pela política de grupo. Pode levar até 6 horas para esse status ser atualizado no servidor, se houver uma alteração.  
   
-##  <a name="BKMK_8"></a>Exibir propriedades de computador  
- O **dispositivos** seção do Windows Server Essentials painel exibe uma lista dos computadores da rede. A lista também fornece informações adicionais sobre cada computador.  
+##  <a name="BKMK_8"></a> Exibir propriedades do computador  
+ A seção **Dispositivos** do Painel do Windows Server Essentials exibe uma lista de computadores da rede. A lista também fornece informações adicionais sobre cada computador.  
   
 #### <a name="to-view-a-list-of-computers"></a>Para exibir uma lista de computadores  
   
-1.  Abra o painel do Windows Server Essentials.  
+1.  Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação principal, clique em **dispositivos**.  
+2.  Na barra de navegação principal, clique em **Dispositivos**.  
   
-3.  O painel exibe uma lista atual de computadores.  
+3.  O Painel exibe uma lista de contas de usuário atual.  
   
 #### <a name="to-view-or-change-properties-for-a-computer"></a>Para exibir ou alterar as propriedades de um computador  
   
-1.  Na lista de computadores, selecione a conta para o qual você deseja exibir ou alterar propriedades.  
+1.  Na lista de computadores, selecione a conta na qual você deseja exibir ou alterar as propriedades.  
   
-2.  No **< Computername\ > tarefas** painel, clique em **exibir as propriedades de computador**. O **propriedades** aparecerá para os computadores.  
+2.  No **< NomeDoComputador\> tarefas** painel, clique em **exibir as propriedades do computador**. A página **Propriedades** aparecerá para os computadores.  
   
-3.  Clique em uma guia para exibir as propriedades para aquele computador.  
+3.  Clique na guia para exibir as propriedades para esse computador.  
   
-4.  Para salvar as alterações feitas às propriedades do computador, clique em **aplicar**.  
+4.  Para salvar as alterações feitas nas propriedades do computador, clique em **Aplicar**.  
   
 ## <a name="see-also"></a>Consulte também  
   
 -   [Gerenciar o acesso via Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
--   [Use o acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Usar o acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
 -   [Gerenciar contas de usuário usando o painel](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage8)  
   

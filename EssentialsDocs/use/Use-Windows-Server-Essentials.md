@@ -1,5 +1,5 @@
 ---
-title: Usar o Windows Server Essentials
+title: Utilizar o Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -13,20 +13,21 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 7b440215d7ddf2c9119ee4adb8f1c98c7ea1bb34
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59822597"
 ---
-# <a name="use-windows-server-essentials"></a>Usar o Windows Server Essentials
+# <a name="use-windows-server-essentials"></a>Utilizar o Windows Server Essentials
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
 Os tópicos a seguir fornecem informações para ajudar você a começar a usar o Windows Server Essentials:  
   
--   [Se conectar](Get-Connected-in-Windows-Server-Essentials.md)  
+-   [Conecte-se](Get-Connected-in-Windows-Server-Essentials.md)  
   
--   [Use pastas compartilhadas](Use-Shared-Folders-in-Windows-Server-Essentials.md)  
+-   [Usar pastas compartilhadas](Use-Shared-Folders-in-Windows-Server-Essentials.md)  
   
 -   [Trabalhar remotamente](Work-Remotely-in-Windows-Server-Essentials.md)  
   
@@ -36,7 +37,7 @@ Os tópicos a seguir fornecem informações para ajudar você a começar a usar 
   
 -   [Instalar o Windows Server Essentials](../install/Install-Windows-Server-Essentials.md)  
   
--   [Migrar dados do servidor para Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)  
+-   [Migrar dados do servidor para o Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)  
   
 -   [Gerenciar o Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)  
   

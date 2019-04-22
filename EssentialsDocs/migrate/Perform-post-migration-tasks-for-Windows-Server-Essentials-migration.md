@@ -1,5 +1,5 @@
 ---
-title: "Executar tarefas posteriores à migração para o Windows Server Essentials migration1"
+title: Realizar tarefas pós-migração para migration1 do Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -13,16 +13,17 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 535a547ded55cb4afc0942259eadf5222a815274
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59821017"
 ---
-# <a name="perform-post-migration-tasks-for-windows-server-essentials-migration1"></a>Executar tarefas posteriores à migração para o Windows Server Essentials migration1
+# <a name="perform-post-migration-tasks-for-windows-server-essentials-migration1"></a>Realizar tarefas pós-migração para migration1 do Windows Server Essentials
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-As tarefas a seguir o ajudarão a concluir a configuração o servidor de destino com algumas das configurações do mesmo que estavam no servidor de origem. Talvez você tenha desativado algumas dessas configurações no seu servidor de origem durante o processo de migração, portanto, eles não foram migrados para o servidor de destino. Ou eles são as etapas de configuração opcional que você pode querer executar.  
+As tarefas a seguir ajudaram a concluir a configuração do servidor de destino com algumas das mesmas configurações que estavam no servidor de origem. Você pode ter desabilitado algumas dessas configurações no servidor de origem durante o processo de migração para que elas não fossem migradas para o servidor de destino. Ou são etapas de configuração opcionais que você pode executar.  
   
 
 -   [Excluir entradas DNS do servidor de origem](Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md#BKMK_DeleteDNSEntries)  
@@ -31,7 +32,7 @@ As tarefas a seguir o ajudarão a concluir a configuração o servidor de destin
   
 -   [Corrigir problemas do computador do cliente após a migração](Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md#BKMK_FixClientComputerIssuesAfterMigrating)  
   
--   [Conceder o direito de fazer logon como um trabalho em lotes de grupo Administradores interno](Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md#BKMK_AdminGroup)  
+-   [Dar ao grupo Administradores interno o direito de fazer logon como um trabalho em lotes](Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md#BKMK_AdminGroup)  
 
 -   [Excluir entradas DNS do servidor de origem](../migrate/Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md#BKMK_DeleteDNSEntries)  
   
@@ -39,101 +40,101 @@ As tarefas a seguir o ajudarão a concluir a configuração o servidor de destin
   
 -   [Corrigir problemas do computador do cliente após a migração](../migrate/Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md#BKMK_FixClientComputerIssuesAfterMigrating)  
   
--   [Conceder o direito de fazer logon como um trabalho em lotes de grupo Administradores interno](../migrate/Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md#BKMK_AdminGroup)  
+-   [Dar ao grupo Administradores interno o direito de fazer logon como um trabalho em lotes](../migrate/Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md#BKMK_AdminGroup)  
 
   
-##  <a name="BKMK_DeleteDNSEntries"></a>Excluir entradas DNS do servidor de origem  
- Depois de desativar o servidor de origem, o servidor do serviço de nome de domínio (DNS) ainda pode conter entradas que apontam para o servidor de origem. Exclua essas entradas DNS.  
+##  <a name="BKMK_DeleteDNSEntries"></a> Excluir entradas DNS do servidor de origem  
+ Depois de desativar o servidor de origem, o servidor do serviço de nomes de domínio (DNS) ainda pode conter entradas que apontem para o servidor de origem. Exclua essas entradas DNS.  
   
-#### <a name="to-delete-dns-entries-that-point-to-the-source-server"></a>Para excluir entradas DNS que apontam para o servidor de origem  
+#### <a name="to-delete-dns-entries-that-point-to-the-source-server"></a>Para excluir as entradas DNS que apontam para o Servidor de Origem  
   
-1.  No servidor de destino, abra **Gerenciador DNS**.  
+1.  No servidor de destino, abra o **Gerenciador de DNS**.  
   
-2.  No Gerenciador DNS, clique com botão direito no nome do servidor, clique em **propriedades**e, em seguida, clique no **encaminhadores** guia.  
+2.  No Gerenciador DNS, clique com o botão direito no nome do servidor, clique em **Propriedades**e clique na guia **Encaminhadores** .  
   
-3.  Determine se existe uma entrada na lista encaminhador que aponta para o servidor de origem. Se houver, clique em **editar**e depois excluir essa entrada no **Editar encaminhadores** janela.  
+3.  Determine se há uma entrada na lista de encaminhadores que aponte para o servidor de origem. Se houver, clique em **Editar** e exclua essa entrada na janela **Editar Encaminhadores**.  
   
-4.  Em **Gerenciador DNS**, expanda o nome do servidor e, em seguida, **zonas de pesquisa direta**.  
+4.  No **Gerenciador DNS**, expanda o nome do servidor e expanda **Zonas de Pesquisa Direta**.  
   
-5.  Para cada zona de pesquisa direta, clique com botão direito a zona, clique em **propriedades**e, em seguida, clique no **servidores de nomes** guia.  
+5.  Para cada zona de pesquisa direta, clique com o botão direito na zona, clique em **Propriedades** e clique na guia **Servidores de Nome**.  
   
-6.  Clique em uma entrada do **servidores de nomes** caixa que aponta para o servidor de origem, clique em **remover**e clique em **Okey**.  
+6.  Clique em uma entrada na caixa **Servidores de nomes** que aponte para o servidor de origem, clique em **Remover** e clique em **OK**.  
   
-7.  Repita as etapas 5 e 6 até que todos os ponteiros para o servidor de origem são removidos.  
+7.  Repita as etapas 5 e 6 até que todos os ponteiros para o servidor de origem sejam removidos.  
   
-8.  Clique em **Okey** para fechar o **propriedades** janela.  
+8.  Clique em **OK** para fechar a janela **Propriedades**.  
   
-9. No **Gerenciador DNS** do console, expanda **zonas de pesquisa inversa**.  
+9. No console **Gerenciador DNS**, expanda **Zonas de Pesquisa Inversa**.  
   
-10. Repita as etapas 6 a 9 para remover todas as zonas de pesquisa inversa que apontam para o servidor de origem.  
+10. Repita as etapas de 6 a 9 para remover todas as Zonas de pesquisa inversa que apontam para o Servidor de origem.  
   
-##  <a name="BKMK_ShareLineOfBusinessAndOtherApplications"></a>Compartilhar a linha de negócios e outras pastas de dados de aplicativo  
- Você deve definir as permissões de pasta compartilhada e as permissões NTFS para a linha de negócios e outras pastas de dados de aplicativo que você copiou para o servidor de destino. Depois de definir as permissões, as pastas compartilhadas são exibidas no painel Windows Server Essentials no **armazenamento** seção.  
+##  <a name="BKMK_ShareLineOfBusinessAndOtherApplications"></a> Compartilhar a linha de negócios e outras pastas de dados de aplicativo  
+ Você deve definir as permissões da pasta compartilhada e as permissões NTFS para as pastas de dados de linha de negócios e de outros aplicativos que você copiou para o Servidor de Destino. Depois de definir as permissões, as pastas compartilhadas são exibidas no painel do Windows Server Essentials na **armazenamento** seção.  
   
- Se você estiver usando um script de logon para mapear unidades às pastas compartilhadas, você deve atualizar o script para mapear para as unidades no servidor de destino.  
+ Se você estiver usando um script de logon para mapear unidades para as pastas compartilhadas, deverá atualizar o script para mapear para as unidades no Servidor de Destino.  
   
-##  <a name="BKMK_FixClientComputerIssuesAfterMigrating"></a>Corrigir problemas do computador do cliente após a migração  
- Se você migrar para o Windows Server Essentials do Windows Small Business Server 2003 Premium Edition com o Microsoft Internet Security and Acceleration (ISA) Server instalado, computadores cliente na rede ainda tem o cliente de Firewall da Microsoft e Internet Explorer configurado para usar um servidor proxy.  
+##  <a name="BKMK_FixClientComputerIssuesAfterMigrating"></a> Corrigir problemas do computador do cliente após a migração  
+ Se você migrar para o Windows Server Essentials do Windows Small Business Server 2003 Premium Edition com o Microsoft Internet Security e Acceleration (ISA) Server instalado, computadores cliente na rede ainda terá o Microsoft Firewall Client e a Internet Explorer configurado para usar um servidor proxy.  
   
- Isso causa problemas de conectividade no cliente computadores, porque o servidor proxy não existe mais. Se houver um servidor proxy diferentes configurado, os computadores cliente continuam a usar o servidor que executa o Windows SBS 2003 para o servidor proxy. Para corrigir esse problema, será necessário reconfigurar o Internet Explorer para não usar um servidor proxy ou usar o novo servidor proxy.  
+ Isso causa problemas de conectividade nos computadores cliente, pois o servidor proxy não existe mais. Se houver um servidor proxy diferente configurado, os computadores cliente continuarão a usar o servidor executando o Windows SBS 2003 para o servidor proxy. Para corrigir esse problema, reconfigure o Internet Explorer para não usar um servidor proxy ou para usar o novo servidor proxy.  
   
-#### <a name="to-reconfigure-internet-explorer"></a>Reconfigurar o Internet Explorer  
+#### <a name="to-reconfigure-internet-explorer"></a>Para reconfigurar o Internet Explorer  
   
-1.  No Internet Explorer, clique em **ferramentas**e clique em **opções da Internet**.  
+1.  No Internet Explorer, clique em **Ferramentas**e clique em **Opções da Internet**.  
   
-2.  Clique no **conexões**, clique em **configurações da LAN**, e siga um destes procedimentos:  
+2.  Clique na guia **Conexões**, clique em **Configurações da LAN** e siga um destes procedimentos:  
   
-    -   Se você não estiver usando um servidor proxy na rede, desmarque todas as caixas de seleção no **configurações da rede Local (LAN)** caixa de diálogo.  
+    -   Se você não estiver usando um servidor proxy na rede, desmarque todas as caixas de seleção na caixa de diálogo **Configurações de Rede Local (LAN)**.  
   
-    -   Se você quiser usar um servidor proxy novas em sua rede:  
+    -   Se você deseja usar um novo servidor proxy na rede:  
   
-        1.  No **configurações da rede Local (LAN)** caixa de diálogo, desmarque as caixas de seleção no **configuração automática** seção.  
+        1.  Na caixa de diálogo **Configurações da Rede Local (LAN)**, desmarque as caixas de seleção na seção **Configuração Automática**.  
   
-        2.  No **servidor Proxy** seção, verifique se ambas as caixas de seleção estão marcadas.  
+        2.  Na seção **Servidor Proxy**, verifique se ambas as caixas de seleção estão marcadas.  
   
-        3.  No **endereço**, digite o nome de domínio totalmente qualificado (FQDN) do servidor proxy.  
+        3.  Na caixa **Endereço**, digite o FQDN (nome de domínio totalmente qualificado) do servidor proxy.  
   
-        4.  No **porta**, digite **80**.  
+        4.  Na caixa **Porta**, digite **80**.  
   
-3.  Clique em **Okey** duas vezes.  
+3.  Clique em **OK** duas vezes.  
   
-4.  Navegue até um site para garantir que as configurações de conexão estão corretas.  
+4.  Navegue até um site para garantir que as configurações de conexão estejam corretas.  
   
-##  <a name="BKMK_AdminGroup"></a>Conceder o direito de fazer logon como um trabalho em lotes de grupo Administradores interno  
- Depois de migrar um domínio existente do Windows Small Business Server 2003 para o Windows Server Essentials, você deve dar o grupo Administradores interno o direito de fazer logon como um trabalho em lotes. Verifique se o grupo Administradores interno ainda tem o direito de fazer logon como um trabalho em lotes para o servidor de destino. Os administradores precisam deste direito para executar um alerta no servidor de destino sem fazer logon.  
+##  <a name="BKMK_AdminGroup"></a> Dar ao grupo Administradores interno o direito de fazer logon como um trabalho em lotes  
+ Depois de migrar um domínio existente do Windows Small Business Server 2003 para o Windows Server Essentials, você deve fornecer o grupo Administradores interno o direito de fazer logon como um trabalho em lotes. Verifique se o grupo Administradores interno ainda tem o direito de logon como um trabalho em lotes para o servidor de destino. Os administradores precisam desse direito para executar um alerta no servidor de destino sem fazer logon.  
   
-#### <a name="to-give-the-built-in-administrators-group-the-right-to-log-on-as-a-batch-job"></a>Para dar integrados administradores grupo o direito de fazer logon como um trabalho em lotes  
+#### <a name="to-give-the-built-in-administrators-group-the-right-to-log-on-as-a-batch-job"></a>Para dar ao grupo de Administradores interno o direito de fazer logon como um trabalho em lotes  
   
-1.  No servidor de destino, abra o **Group Policy Management** ferramenta administrativa.  
+1.  No servidor de destino, abra a ferramenta administrativa **Gerenciamento de Política de Grupo**.  
   
-2.  No **Group Policy Management** árvore do Console, expanda **floresta:***< ServerName\ >*, expanda domínios e, em seguida, seu servidor.  
+2.  No **gerenciamento de política de grupo** árvore de Console, expanda **floresta:** *< ServerName\>*, expanda domínios e, em seguida, expanda seu servidor.  
   
-3.  Expanda **controladores de domínio**, clique com botão direito **política de controladores de domínio padrão**e clique em **editar**.  
+3.  Expanda **Controladores de Domínio**, clique com botão direito na **Política de Controladores de Domínio Padrão** e clique em **Editar**.  
   
-4.  Em **Editor de gerenciamento de política de grupo**, clique em **política de controladores de domínio padrão***< ServerName\ >***política**e, em seguida, expanda **configuração do computador**.  
+4.  Na **Editor de gerenciamento de diretiva de grupo**, clique em **política de controladores de domínio padrão ***< ServerName\>*** política**e, em seguida, expanda  **Configuração do computador**.  
   
-5.  Expanda **políticas**, expanda **configurações do Windows**e, em seguida, expanda **configurações de segurança**.  
+5.  Expanda **Políticas**, expanda **Configurações do Windows** e então expanda **Configurações de Segurança**.  
   
-6.  No **configurações de segurança** árvore, expanda **políticas locais**e clique em **atribuição de direitos de usuário**.  
+6.  Na árvore **Configurações de Segurança**, expanda **Políticas Locais** e clique em **Atribuição de Direitos de Usuário**.  
   
-7.  No painel de resultados, clique com botão direito **faça logon como um trabalho em lotes**e, em seguida, clique em Propriedades.  
+7.  No painel de resultados, clique com botão direito em **Fazer logon como um trabalho em lotes** e clique em Propriedades.  
   
-8.  No **faça logon como um trabalho em lotes propriedades** página, clique em **adicionar usuário ou grupo**.  
+8.  Na página **Propriedades de Fazer logon como um trabalho em lotes**, clique em **Adicionar Usuário ou Grupo**.  
   
-9. No **adicionar usuário ou grupo** caixa de diálogo, clique em **procurar**.  
+9. Na caixa de diálogo **Adicionar Usuário ou Grupo**, clique em **Procurar**.  
   
-10. No **selecionar usuários, computadores ou grupos** caixa de diálogo, digite **administradores**.  
+10. Na caixa de diálogo **Selecionar Usuários, Computadores ou Grupos**, digite **Administrators**.  
   
-11. Clique em **verificar nomes** para verificar se o grupo Administradores interno é exibida e, em seguida, clique em **Okey** três vezes para salvar a configuração.  
+11. Clique em **Verificar Nomes** para verificar se o grupo de administradores interno é exibido e, em seguida, clique em **OK** três vezes para salvar a configuração.  
   
 ## <a name="see-also"></a>Consulte também  
   
 
 -   [Migrar do Windows SBS 2003](Migrate-Windows-Small-Business-Server-2003-to-Windows-Server-Essentials.md)  
   
--   [Migrar dados do servidor para Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
+-   [Migrar dados do servidor para o Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
 
 -   [Migrar do Windows SBS 2003](../migrate/Migrate-Windows-Small-Business-Server-2003-to-Windows-Server-Essentials.md)  
   
--   [Migrar dados do servidor para Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
+-   [Migrar dados do servidor para o Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

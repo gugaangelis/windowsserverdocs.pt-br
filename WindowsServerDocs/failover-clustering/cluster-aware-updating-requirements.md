@@ -1,82 +1,83 @@
 ---
 ms.assetid: 75cc1d24-fa2f-45bd-8f3b-1bbd4a1aead0
-title: "Suporte a cluster atualizando requisitos e as práticas recomendadas"
+title: Cluster-Aware Updating requisitos e práticas recomendadas
 ms.prod: windows-server-threshold
 ms.topic: article
 ms.manager: dongill
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage-failover-clustering
-ms.date: 4/28/2017
-description: "Requisitos para usar o suporte a Cluster atualizando para instalar atualizações no clusters executando o Windows Server."
-ms.openlocfilehash: 8517466d58345077af446c1b2c1e2aeb3b17aaa1
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
+ms.date: 08/06/2018
+description: Requisitos para usar a atualização com suporte a Cluster para instalar atualizações em clusters que executam o Windows Server.
+ms.openlocfilehash: 379c3caa39b09e8a912150f2423190e143991c05
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59819727"
 ---
-# <a name="cluster-aware-updating-requirements-and-best-practices"></a>Suporte a cluster atualizando requisitos e as práticas recomendadas
+# <a name="cluster-aware-updating-requirements-and-best-practices"></a>Cluster-Aware Updating requisitos e práticas recomendadas
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Esta seção descreve os requisitos e as dependências que são necessárias para usar [atualizando suporte a Cluster](cluster-aware-updating.md) (CAU) para aplicar atualizações a um cluster de failover executando o Windows Server.
+Esta seção descreve os requisitos e as dependências necessárias para usar [Cluster-Aware Updating](cluster-aware-updating.md) (CAU) para aplicar atualizações a um cluster de failover executando o Windows Server.
   
 > [!NOTE]  
-> Talvez você precise validar independente que seu ambiente de cluster está pronto para aplicar atualizações, se você usar um plug\-in diferente **Microsoft.WindowsUpdatePlugin**. Se você estiver usando um Microsoft non\ plug\-in, contate o fornecedor para obter mais informações. Para saber mais sobre plug\-ins, consulte [funcionamento Plug\-ins](cluster-aware-updating-plug-ins.md).   
+> Talvez você precise verificar independentemente se o seu ambiente de cluster está preparado para aplicar atualizações se você usar um plug\-em que **windowsupdateplugin**. Se você estiver usando um não\-plug Microsoft\-, entre em contato com o publicador para obter mais informações. Para obter mais informações sobre a plug\-ins, consulte [como conecte\-ins funcionam](cluster-aware-updating-plug-ins.md).   
   
-## <a name="BKMK_REQ_CLUS"></a>Instalar o recurso de cluster de Failover e as ferramentas de cluster de Failover  
-CAU requer uma instalação do recurso cluster de Failover e as ferramentas de cluster de Failover. As ferramentas de cluster de Failover incluem o CAU ferramentas \(clusterawareupdating.dll\), os cmdlets de cluster de Failover e outros componentes necessários para operações de CAU. Para obter etapas instalar o recurso de cluster de Failover, consulte [instalar as ferramentas e o recurso de cluster de Failover](http://go.microsoft.com/fwlink/p/?LinkId=253342).  
+## <a name="BKMK_REQ_CLUS"></a>Instale o recurso de Clustering de Failover e as ferramentas de Clustering de Failover  
+O CAU requer uma instalação do recurso de Cluster de failover e as Ferramentas de cluster de failover. As ferramentas de Clustering de Failover incluem ferramentas do CAU \(clusterawareupdating\), os cmdlets de Clustering de Failover e outros componentes necessários para operações de CAU. Para saber as etapas de instalação do recurso de Cluster de failover, consulte [Installing the Failover Clustering Feature and Tools (Instalando o recurso e as ferramentas de cluster de failover)](create-failover-cluster.md#install-the-failover-clustering-feature).  
   
-Os requisitos de instalação exato para as ferramentas de cluster de Failover dependem se CAU organize atualizações como uma função clusterizada no cluster de failover \ (usando modo \ atualizando self\) ou de um computador remoto. Além disso, o modo de atualização self\ de CAU requer a instalação da função clusterizada CAU no cluster de failover usando as ferramentas CAU.    
+Os requisitos exatos de instalação para as ferramentas de Clustering de Failover dependem se o CAU coordena atualizações como uma função clusterizada no cluster de failover \(por meio de self\-modo de atualização\) ou de um computador remoto. O self\-adicionalmente o modo da CAU de atualização requer a instalação da função clusterizada de CAU no cluster de failover usando as ferramentas CAU.    
   
-A tabela a seguir resume os requisitos de instalação do recurso CAU para os dois modos de atualização CAU.  
+A tabela a seguir resume os requisitos de instalação do recurso CAU para dois modos de atualização do CAU.  
   
-|Componente instalado|Modo de atualização Self\|Modo de atualização Remote\|  
+|Componente instalado|Self\-modo de atualização|Remoto\-modo de atualização|  
 |-----------------------|-----------------------|-------------------------|  
 |Recurso de cluster de failover|Necessário em todos os nós de cluster|Necessário em todos os nós de cluster|  
-|Ferramentas de cluster de failover|Necessário em todos os nós de cluster|-Necessários no computador atualizando remote\<br />-Necessários em todos os nós de cluster para executar o [salvar CauDebugTrace](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/save-caudebugtrace) cmdlet|  
-|Função clusterizada CAU|Necessário|Não é necessária|  
+|Ferramentas de cluster de failover|Necessário em todos os nós de cluster|-Required remoto\-atualizar computador<br />-Necessário em todos os nós de cluster para executar o [Save-CauDebugTrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps) cmdlet|  
+|Função clusterizada do CAU|Obrigatório|Não necessário|  
   
 ## <a name="obtain-an-administrator-account"></a>Obter uma conta de administrador  
-Os seguintes requisitos de administrador são necessários para usar recursos CAU.  
+Os requisitos de administrador a seguir são necessários para usar recursos de CAU.  
   
--   Para visualizar ou aplicar ações de atualização usando a interface do usuário CAU \(UI\) ou os cmdlets atualizando suporte a Cluster, você deve usar uma conta de domínio que tenha direitos de administrador local e as permissões em todos os nós de cluster. Se a conta não tiver privilégios suficientes em cada nó, você precisará na janela do suporte a Cluster atualizando fornecer as credenciais necessárias quando você executar essas ações. Para usar o [atualizando suporte a Cluster](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating) cmdlets, você pode fornecer as credenciais necessárias como um parâmetro de cmdlet.  
+-   Para visualizar ou aplicar ações atualizadas usando a interface de usuário da CAU \(interface do usuário\) ou os cmdlets de Cluster-Aware Updating, você deve usar uma conta de domínio que tenha permissões e direitos de administrador local em todos os nós de cluster. Se a conta não tem privilégios suficientes em cada nó, você precisará na janela do Cluster-Aware Updating fornecer as credenciais necessárias quando você executar essas ações. Para usar o [Cluster-Aware Updating](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps) cmdlets, você pode fornecer as credenciais necessárias como um parâmetro de cmdlet.  
   
--   Se você usar CAU no modo de atualização remote\ quando você estiver conectado com uma conta que não tem direitos de administrador local e permissões em nós de cluster, você deve executar as ferramentas CAU como administrador usando uma conta de administrador local no computador de coordenador de atualização ou usando uma conta que tenha o **representar um cliente após autenticação** direito de usuário. 
+-   Se você utiliza CAU no remoto\-atualizar modo quando você está conectado com uma conta que não tenha permissões e direitos de administrador local em nós de cluster, você deve executar as ferramentas do CAU como um administrador usando uma conta de administrador local no Computador coordenador de atualização ou usando uma conta que tenha o **representar um cliente após autenticação** direito de usuário. 
   
--   Para executar o analisador de práticas recomendadas CAU, você deve usar uma conta que tenha privilégios administrativos em nós de cluster e privilégios administrativos locais no computador em que é usada para executar o [teste CauSetup](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/test-causetup) cmdlet ou para analisar o cluster usando a janela atualizar suporte a Cluster preparação para a atualização. Para obter mais informações, consulte [preparação para a atualização de cluster de teste](#BKMK_BPA).  
+-   Para executar o analisador de práticas recomendadas do CAU, você deve usar uma conta que tenha privilégios administrativos em nós de cluster e privilégios administrativos locais no computador que é usado para executar o [Test-CauSetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) cmdlet ou para analisar usando a janela de Cluster-Aware Updating a prontidão de atualização do cluster. Para mais informações, consulte [Testar preparação de atualização do cluster](#BKMK_BPA).  
   
-## <a name="verify-the-cluster-configuration"></a>Verifique se a configuração de cluster  
-A seguir estão os requisitos gerais para um cluster de failover dar suporte a atualizações usando CAU. Requisitos de configuração adicionais para o gerenciamento remoto em nós estão listados em [configurar os nós de gerenciamento remoto](#BKMK_NODE_CONFIG) posteriormente neste tópico.  
+## <a name="verify-the-cluster-configuration"></a>Verificar a configuração do cluster  
+A seguir estão os requisitos gerais de um cluster de failover para suporte de atualizações usando CAU. Os requisitos de configuração adicional para gerenciamento remoto nos nós estão listados em [Configurar os nós para gerenciamento remoto](#BKMK_NODE_CONFIG) mais adiante neste tópico.  
   
--   Nós de cluster suficientes devem estar online para que ele tiver quorum.  
+-   Deve haver nós de cluster suficientes online para que o cluster tenha quorum.  
   
 -   Todos os nós de cluster devem estar no mesmo domínio do Active Directory.  
   
 -   O nome do cluster deve ser resolvido na rede usando DNS.  
   
--   Se CAU é usado no modo de atualização remote\, o computador de coordenador de atualização deve ter conectividade de rede para os nós de cluster de failover, e ele deve estar no mesmo domínio do Active Directory do cluster de failover.  
+-   Se for usado CAU no remoto\-modo de atualização, o computador de coordenador de atualização deve ter conectividade de rede para os nós de cluster de failover e ela deve estar no mesmo domínio do Active Directory que o cluster de failover.  
   
--   O serviço de Cluster deve ser executado em todos os nós de cluster. Por padrão, esse serviço é instalado em todos os nós de cluster e está configurado para iniciar automaticamente.  
+-   O serviço de cluster deve estar executando em todos os nós de cluster. Por padrão, esse serviço é instalado em todos os nós de cluster e está configurado para iniciar automaticamente.  
   
--   Para usar scripts do PowerShell pre\ atualização ou atualização post\ durante uma CAU atualizando executar, certifique-se de que os scripts estão instalados em todos os nós de cluster ou que estão acessíveis a todos os nós, por exemplo, em um compartilhamento de arquivo altamente disponíveis na rede. Se scripts são salvos em um compartilhamento de arquivos de rede, configure a pasta de permissão de leitura para todos grupo.  
+-   Para usar o PowerShell pré\-atualizar ou postar\-scripts durante uma execução de atualização CAU, assegure que os scripts são instalados em todos os nós de cluster ou que são acessíveis a todos os nós, por exemplo, em um compartilhamento de arquivos de rede altamente disponível. Se os scripts forem salvos em um compartilhamento de arquivos de rede, configure a pasta para permissão de Leitura para o grupo Todos.  
   
-## <a name="BKMK_NODE_CONFIG"></a>Configurar os nós para o gerenciamento remoto  
-Para usar o suporte a Cluster atualizando, todos os nós de cluster devem ser configurados para o gerenciamento remoto. Por padrão, a única tarefa que você deve executar para configurar os nós para gerenciamento remoto é [habilitar uma regra de firewall para permitir reinicializações automáticas](#BKMK_FW). 
+## <a name="BKMK_NODE_CONFIG"></a>Configurar os nós para gerenciamento remoto  
+Para usar o Cluster-Aware Updating, todos os nós do cluster devem ser configurados para gerenciamento remoto. Por padrão, a única tarefa você deve executar para configurar os nós para gerenciamento remoto é [habilitar uma regra de firewall permitir reinícios automáticos](#BKMK_FW). 
 
-A tabela a seguir lista os requisitos de gerenciamento remoto completo, no caso de seu ambiente é divergente dos padrões.
+A tabela a seguir lista os requisitos de gerenciamento remoto completa, no caso de seu ambiente divergirá dos padrões.
 
-Esses requisitos são além dos requisitos de instalação para o [instalar o recurso de cluster de Failover e as ferramentas de cluster de Failover](#BKMK_REQ_CLUS) e geral clustering requisitos descritos nas seções anteriores neste tópico.  
+Esses requisitos são adicionais aos requisitos de instalação para a [Instalação do recurso de Cluster de failover e Ferramentas de cluster de failover](#BKMK_REQ_CLUS) e os requisitos de cluster gerais descritos nas seções anteriores neste tópico.  
   
-|Requisito|Estado padrão|Modo de atualização Self\|Modo de atualização Remote\|  
+|Requisito|Estado padrão|Self\-modo de atualização|Remoto\-modo de atualização|  
 |---------------|---|-----------------------|-------------------------|  
-|[Habilitar uma regra de firewall para permitir reinicializações automáticas](#BKMK_FW)|Desabilitado|Necessário em todos os nós de cluster se um firewall está em uso|Necessário em todos os nós de cluster se um firewall está em uso|  
-|[Habilitar a instrumentação de gerenciamento do Windows](#BKMK_WMI)|Habilitado|Necessário em todos os nós de cluster|Necessário em todos os nós de cluster|  
-|[Permitir que o Windows PowerShell 3.0 ou 4.0 e Windows PowerShell remoto](#BKMK_PS)|Habilitado|Necessário em todos os nós de cluster|Necessário em todos os nós de cluster para executar o seguinte:<br /><br />-Os [salvar CauDebugTrace](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/save-caudebugtrace) cmdlet<br />-Scripts de PowerShell pre\ update e update post\ durante uma atualização executar<br />-Testes de cluster usando a janela atualizar suporte a Cluster preparação para a atualização ou o [Test\ CauSetup](http://go.microsoft.com/fwlink/p/?LinkId=242384) cmdlet do Windows PowerShell|  
-|[Instalar o .NET Framework 4.6 ou 4.5](#BKMK_NET)|Habilitado|Necessário em todos os nós de cluster|Necessário em todos os nós de cluster para executar o seguinte:<br /><br />-Os [salvar CauDebugTrace](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/save-caudebugtrace) cmdlet<br />-Scripts de PowerShell pre\ update e update post\ durante uma atualização executar<br />-Testes de cluster usando a janela atualizar suporte a Cluster preparação para a atualização ou o [Test\ CauSetup](http://go.microsoft.com/fwlink/p/?LinkId=242384) cmdlet do Windows PowerShell|  
+|[Habilitar uma regra de firewall permitir reinícios automáticos](#BKMK_FW)|Desabilitada|Necessário em todos os nós de cluster se um firewall estiver em uso|Necessário em todos os nós de cluster se um firewall estiver em uso|  
+|[Habilitar a instrumentação de gerenciamento do Windows](#BKMK_WMI)|Enabled|Necessário em todos os nós de cluster|Necessário em todos os nós de cluster|  
+|[Habilitar o Windows PowerShell 3.0 ou 4.0 e comunicação remota do Windows PowerShell](#BKMK_PS)|Enabled|Necessário em todos os nós de cluster|Necessário em todos os nós de cluster para executar o seguinte:<br /><br />-A [Save-CauDebugTrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps) cmdlet<br />-Pré PowerShell\-atualizar e lançar\-durante uma execução de atualização<br />-Testes de preparação de atualização usando a janela de atualização com suporte a Cluster do cluster ou o [teste\-CauSetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) cmdlet do Windows PowerShell|  
+|[Instalar o .NET Framework 4.6 ou 4.5](#BKMK_NET)|Enabled|Necessário em todos os nós de cluster|Necessário em todos os nós de cluster para executar o seguinte:<br /><br />-A [Save-CauDebugTrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps) cmdlet<br />-Pré PowerShell\-atualizar e lançar\-durante uma execução de atualização<br />-Testes de preparação de atualização usando a janela de atualização com suporte a Cluster do cluster ou o [teste\-CauSetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) cmdlet do Windows PowerShell|  
 
-### <a name="BKMK_FW"></a>Habilitar uma regra de firewall para permitir reinicializações automáticas  
-Para permitir reinicializações automáticas após as atualizações são aplicadas \ (se a instalação de uma atualização requer um restart\), se o Firewall do Windows ou um firewall non\ da Microsoft está em uso em nós de cluster, uma regra de firewall deve ser habilitada em cada nó que permite que o tráfego a seguir:  
+### <a name="BKMK_FW"></a>Habilitar uma regra de firewall permitir reinícios automáticos  
+Para permitir reinícios automáticos após as atualizações são aplicadas \(se a instalação de uma atualização requer uma reinicialização\), se o Firewall do Windows ou um não\-Microsoft firewall está em uso em nós de cluster, uma regra de firewall deve ser habilitada no cada nó que permite o tráfego a seguir:  
   
 -   Protocolo: TCP  
   
@@ -84,51 +85,51 @@ Para permitir reinicializações automáticas após as atualizações são aplic
   
 -   Programa: wininit.exe  
   
--   Portas: Portas de dinâmicas de RPC  
+-   Portas: Portas Dinâmicas RPC  
   
--   Perfil: domínio  
+-   Perfil: Domínio  
   
-Se o Firewall do Windows é usado em nós de cluster, você pode fazer isso habilitando o **desligamento remoto** grupo de regra de Firewall do Windows em cada nó de cluster. Quando você usa a janela atualizar suporte a Cluster para aplicar atualizações e para configurar as opções de atualização self\, o **desligamento remoto** grupo de regra de Firewall do Windows é habilitado automaticamente em cada nó de cluster.  
+Se o Firewall do Windows for usado nos nós de cluster, você pode fazer isso habilitando o grupo de regras do Firewall do Windows **Desligamento Remoto** em cada nó de cluster. Quando você usa a janela de atualização com suporte a Cluster para aplicar atualizações e configurar a autoatendimento\-atualizando opções, o **desligamento remoto** grupo de regras de Firewall do Windows é habilitado automaticamente em cada nó do cluster.  
   
 > [!NOTE]  
-> O **desligamento remoto** grupo de regra de Firewall do Windows não pode ser habilitado quando ele entra em conflito com as configurações de política de grupo que estão configuradas para o Firewall do Windows.    
+> O grupo de regras do Firewall do Windows **Remote Shutdown** não pode ser habilitado quando ele está em conflito com as definições de Política de Grupo configuradas para o Firewall do Windows.    
   
-O **desligamento remoto** grupo de regra de firewall também estiver habilitado, especificando o **– EnableFirewallRules** parâmetro quando executando os seguintes cmdlets CAU: [adicionar CauClusterRole](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/add-cauclusterrole), [Invoke CauRun](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/invoke-causcan), e [SetCauClusterRole](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/set-cauclusterrole).  
+O **Remote Shutdown** grupo de regras de firewall também é habilitado especificando as **– EnableFirewallRules** parâmetro ao executar os seguintes cmdlets do CAU: [Add-CauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Add-CauClusterRole?view=win10-ps), [Invoke-CauRun](https://docs.microsoft.com/powershell/module/clusterawareupdating/Invoke-CauRun?view=win10-ps), e [SetCauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Set-CauClusterRole?view=win10-ps).  
   
-O exemplo de PowerShell a seguir mostra um método adicional para habilitar reinicializações automáticas em um nó de cluster.  
+O exemplo de PowerShell a seguir mostra um método adicional para permitir reinícios automáticos em um nó de cluster.  
   
 ```PowerShell  
 Set-NetFirewallRule -Group "@firewallapi.dll,-36751" -Profile Domain -Enabled true  
 ```  
 
-### <a name="BKMK_WMI"></a>Habilitar o Windows Management Instrumentation (WMI) 
+### <a name="BKMK_WMI"></a>Habilitar a instrumentação de gerenciamento do Windows (WMI) 
 Todos os nós de cluster devem ser configurados para o gerenciamento remoto usando o Windows Management Instrumentation \(WMI\). Isso é habilitado por padrão.  
   
-Para ativar manualmente o gerenciamento remoto, faça o seguinte:  
+Para habilitar manualmente o gerenciamento remoto, execute o seguinte:  
   
-1.  No console Serviços, inicie o **gerenciamento remoto do Windows** serviço e defina o tipo de inicialização como **automática**.  
+1.  No console de Serviços, inicie o serviço **Gerenciamento remoto do Windows** e defina o tipo de inicialização **Automática**.  
   
-2.  Execute o [conjunto WSManQuickConfig](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.wsman.management/set-wsmanquickconfig) solicitar cmdlet ou executar o comando a seguir de um comando com privilégios elevados:  
+2.  Execute o [Set-WSManQuickConfig](https://docs.microsoft.com/powershell/module/Microsoft.WsMan.Management/Set-WSManQuickConfig?view=powershell-6) prompt cmdlet, ou execute o seguinte comando em um comando com privilégios elevados:  
   
     ```PowerShell  
     winrm quickconfig -q  
     ```  
   
-Para suportar remoting WMI, se o Firewall do Windows está em uso em nós de cluster, o firewall de entrada de regras para **gerenciamento remoto do Windows \(HTTP\-In\)** deve estar habilitado em cada nó.  Por padrão, essa regra está ativada.  
+Para dar suporte à comunicação remota do WMI, se o Firewall do Windows está em uso em nós de cluster, regra de firewall de entrada para **gerenciamento remoto do Windows \(HTTP\-na\)**  deve estar habilitado em cada nó.  Por padrão, essa regra está habilitada.  
   
-### <a name="BKMK_PS"></a>Habilitar o Windows PowerShell e o Windows PowerShell remoto  
-Para habilitar o modo de atualização self\ e determinados recursos CAU no modo de atualização remote\, PowerShell deve ser instalado e habilitado a executar comandos remotos em todos os nós de cluster. Por padrão, o PowerShell é instalado e habilitado para remoto.  
+### <a name="BKMK_PS"></a>Habilitar o Windows PowerShell e a comunicação remota do Windows PowerShell  
+Para habilitar o self\-atualização de modo e certos recursos do CAU no remoto\-modo de atualização, PowerShell deve ser instalado e habilitado para executar comandos remotos em todos os nós de cluster. Por padrão, o PowerShell é instalado e habilitado remotamente.  
   
-Para habilitar a conexão remota do PowerShell, use um dos seguintes métodos:  
+Para habilitar a comunicação remota do PowerShell, use um dos seguintes métodos:  
   
--   Execute o [habilitar PSRemoting](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/enable-psremoting) cmdlet.  
+-   Execute o [Enable-PSRemoting](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Enable-PSRemoting) cmdlet.  
   
--   Defina uma configuração de política de grupo do nível de domain\ para \(WinRM\) gerenciamento remoto do Windows.  
+-   Configurar um domínio\-configuração de diretiva de grupo para o gerenciamento remoto do Windows no nível \(WinRM\).  
   
-Para obter mais informações sobre como habilitar a conexão remota do PowerShell, consulte [about\_Remote\_Requirements](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_remote_requirements).  
+Para obter mais informações sobre como habilitar a comunicação remota do PowerShell, consulte [sobre requisitos remotos](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements?view=powershell-6).  
   
 ### <a name="BKMK_NET"></a>Instalar o .NET Framework 4.6 ou 4.5  
-Para habilitar o modo de atualização self\ e determinados recursos CAU no modo de atualização remote\, .NET Framework 4.6 ou .NET Framework 4.5 (no Windows Server 2012 R2) deve ser instalado em todos os nós de cluster. Por padrão, o .NET Framework é instalado.  
+Para habilitar o self\-atualização de modo e certos recursos do CAU no remoto\-atualizar modo, .NET Framework 4.6 ou .NET Framework 4.5 (no Windows Server 2012 R2) deve ser instalado em todos os nós de cluster. Por padrão, o .NET Framework está instalado.  
 
 Para instalar o .NET Framework 4.6 (ou 4.5) usando o PowerShell se ele ainda não estiver instalado, use o seguinte comando:
 
@@ -136,122 +137,121 @@ Para instalar o .NET Framework 4.6 (ou 4.5) usando o PowerShell se ele ainda nã
 Install-WindowsFeature -Name NET-Framework-45-Core
 ```
 
-## <a name="BKMK_BEST_PRAC"></a>Recomendações para usar o suporte a Cluster atualizando de práticas recomendadas 
+## <a name="BKMK_BEST_PRAC"></a>Práticas recomendadas para usar a atualização com suporte a Cluster 
   
 ### <a name="BKMK_BP_WUA"></a>Recomendações para aplicar atualizações da Microsoft
 
-Nós recomendamos que, quando você começar a usar CAU para aplicar atualizações com o padrão **Microsoft.WindowsUpdatePlugin** plug\-in em um cluster, você parar de usar outros métodos para instalar as atualizações de software da Microsoft em nós de cluster.  
+É recomendável que, quando você começar a usar o CAU para aplicar atualizações com o padrão **windowsupdateplugin** conecte\-em um cluster, você parar de usar outros métodos para instalar as atualizações de software da Microsoft no cluster nós.  
   
 > [!CAUTION]  
-> Combinando CAU com os métodos que atualizam automaticamente nós individuais \ (em um schedule\ de tempo fixo) podem causar resultados imprevisíveis, inclusive interrupções no serviço e tempo de inatividade planejado.  
+> Combinar o CAU com métodos que atualizam nós individuais automaticamente \(em um horário fixo\) pode causar resultados imprevisíveis, incluindo interrupções no serviço e o tempo de inatividade não planejado.  
   
-Nós recomendamos que você siga estas diretrizes:  
+Convém seguir estas diretrizes:  
   
--   Para obter melhores resultados, recomendamos que você desative configurações em nós de cluster de atualização automática, por exemplo, por meio das configurações de atualizações automáticas no painel de controle ou nas configurações que estão configuradas usando a política de grupo.  
+-   Para melhores resultados, recomendamos desabilitar as configurações nos nós do cluster para atualização automática, por exemplo, por meio das configurações de Atualizações automáticas no Painel de controle, ou nas configurações definidas usando a Política de Grupo.  
   
     > [!CAUTION]  
-    > Instalação automática de atualizações em nós de cluster pode interferir com a instalação das atualizações por CAU e pode causar falhas CAU.  
+    > A instalação automática de atualizações nos nós de cluster pode interferir na instalação de atualizações pelo CAU e causar falhas no CAU.  
   
-    Se eles forem necessárias, as seguintes configurações de atualizações automáticas são compatíveis com CAU, porque o administrador pode controlar o tempo de instalação da atualização:  
+    Se elas forem necessárias, as seguintes Atualizações automáticas são compatíveis com CAU, porque o administrador pode controlar o sincronismo da instalação da atualização:  
   
-    -   Configurações para notificá-lo antes de baixar atualizações e notificar antes da instalação  
+    -   Configurações para notificar antes do download das atualizações e para notificar antes da instalação  
   
-    -   Configurações para baixar atualizações automaticamente e notificar antes da instalação  
+    -   Configurações para baixar as atualizações automaticamente e notificar antes da instalação  
   
-    No entanto, se as atualizações automáticas estiver baixando atualizações ao mesmo tempo como um CAU atualizando executar, execute a atualização pode levar mais tempo para concluir.  
+    No entanto, se as Atualizações Automáticas estiverem baixando atualizações ao mesmo tempo em que é executada uma atualização do CAU, a execução da atualização poderá levar mais tempo para ser concluída.  
   
--   Não definir um sistema de atualização, como Windows Server Update Services \(WSUS\) para aplicar atualizações automaticamente \ (em um schedule\ de tempo fixo) para nós de cluster.  
+-   Não configure um sistema de atualização, como o Windows Server Update Services \(WSUS\) para aplicar atualizações automaticamente \(em um horário fixo\) a nós do cluster.  
   
--   Todos os nós de cluster devem ser configurados de maneira uniforme para usar a mesma fonte de atualização, por exemplo, um WSUS server, Windows Update ou o Microsoft Update.  
+-   Todos os nós de cluster devem ser configurados uniformemente para usar a mesma fonte de atualização, por exemplo, um servidor WSUS, Windows Update ou Microsoft Update.  
   
--   Se você usar um sistema de gerenciamento de configuração para aplicar atualizações de software para computadores na rede, exclua nós de cluster de todas as atualizações necessárias ou automáticas. Exemplos de sistemas de gerenciamento de configuração incluem o Microsoft System Center Configuration Manager 2007 e Microsoft System Center Virtual Machine Manager 2008.  
+-   Se você usar um sistema de gerenciamento de configurações para aplicar atualizações de software a computadores na rede, exclua os nós do cluster de todas as atualizações necessárias ou automáticas. Exemplos de sistemas de gerenciamento de configurações incluem o Microsoft System Center Configuration Manager 2007 e o Microsoft System Center Virtual Machine Manager 2008.  
   
--   Se os servidores de distribuição de software internos \ (por exemplo, o WSUS servers\) são usados para conter e implantar as atualizações, certifique-se de que os servidores corretamente identificam as atualizações aprovadas para os nós de cluster.  
+-   Se os servidores de distribuição de software interno \(por exemplo, servidores do WSUS\) são usados para conter e implantar as atualizações, certifique-se de que esses servidores identificam corretamente as atualizações aprovadas para os nós de cluster.  
   
-#### <a name="BKMK_PROXY"></a>Aplicar atualizações da Microsoft em cenários de filial  
-Para baixar atualizações do Microsoft pelo Microsoft Update ou o Windows Update para nós de cluster em determinados cenários de filial, talvez seja necessário definir as configurações de proxy para a conta Sistema Local em cada nó. Por exemplo, talvez seja necessário fazer isso se seu clusters de office ramificação acessem o Microsoft Update ou o Windows Update para baixar atualizações usando um servidor proxy local.  
+#### <a name="BKMK_PROXY"></a>Aplicar atualizações da Microsoft em cenários de filiais  
+Para baixar atualizações da Microsoft do Microsoft Update ou Windows Update para nós de cluster em determinados cenários de filiais, pode ser necessário configurar definições de proxy para a conta de Sistema Local em cada nó. Por exemplo, isso pode ser necessário se os clusters da filial acessarem o Microsoft Update ou o Windows Update para baixar atualizações usando um servidor de proxy local.  
   
-Se necessário, definir as configurações de proxy de WinHTTP em cada nó para especificar um servidor proxy local e configurar exceções de endereço local \ (ou seja, uma lista de proxies para addresses\ local). Para fazer isso, você pode executar o comando a seguir em cada nó de cluster em um prompt de comando com privilégios elevados:  
+Se necessário, configure as configurações de proxy do WinHTTP em cada nó para especificar um servidor proxy local e configurar exceções de endereço local \(ou seja, uma lista de bypass para endereços locais\). Para isso, você pode executar o seguinte comando em cada nó de cluster em um prompt de comandos com privilégios elevados:  
   
 ```  
 netsh winhttp set proxy <ProxyServerFQDN >:<port> "<local>"  
 ```  
   
-Onde <*ProxyServerFQDN*> é o nome de domínio totalmente qualificado para o servidor proxy e <*porta*> é a porta por meio da qual se comunique (geralmente, a porta 443).  
+onde <*ProxyServerFQDN*> é o nome de domínio totalmente qualificado para o servidor proxy e <*porta*> é a porta pela qual se comunicar (geralmente a porta 443).  
   
-Por exemplo, para definir as configurações de proxy WinHTTP para a conta Sistema Local especificando o servidor proxy *MyProxy.CONTOSO.com*, com a porta 443 e exceções de endereço local, digite o seguinte comando:  
+Por exemplo, para definir configurações de proxy WinHTTP para a conta Sistema Local especificando o servidor proxy *MyProxy.CONTOSO.com*, com a porta 443 e exceções de endereço local, digite o seguinte comando:  
   
 ```  
 netsh winhttp set proxy MyProxy.CONTOSO.com:443 "<local>"  
 ```  
   
-### <a name="BKMK_BP_HF"></a>Recomendações para usar o Microsoft.HotfixPlugin  
+### <a name="BKMK_BP_HF"></a>Recomendações para usar o Microsoft. hotfixplugin  
   
--   Recomendamos que você configure as permissões na pasta raiz de hotfix e arquivo de configuração de hotfix para restringir o acesso de gravação aos administradores locais somente nos computadores que são usados para armazenar esses arquivos. Isso ajuda a evitar a violação com esses arquivos por usuários não autorizados que poderiam comprometer a funcionalidade de cluster de failover quando hotfixes são aplicados.  
+-   Recomendamos configurar permissões na pasta raiz de hotfix e o arquivo de configuração de hotfix para restringir o acesso de Gravação aos administradores locais somente nos computadores que são usados para armazenar esses arquivos. Isso ajuda a evitar possíveis violações desses arquivos por usuários não autorizados que poderiam comprometer a funcionalidade do cluster de failover quando os hotfixes forem aplicados.  
   
--   Para ajudar a garantir a integridade de dados para as conexões de \(SMB\) de bloco de mensagem do servidor que são usados para acessar a pasta raiz de hotfix, você deve configurar a criptografia SMB na pasta compartilhada SMB, se é possível configurá-lo. O **Microsoft.HotfixPlugin** exige que SMB criptografia ou assinatura SMB esteja configurada para ajudar a garantir a integridade de dados para as conexões de SMB. 
+-   Para ajudar a garantir a integridade dos dados para o bloco de mensagens do servidor \(SMB\) conexões que são usadas para acessar a pasta raiz de hotfix, você deve configurar a criptografia SMB na pasta compartilhada de SMB, se for possível configurá-lo. O **Microsoft.HotfixPlugin** requer que a assinatura SMB ou Criptografia SMB seja configurada para ajudar a garantir a integridade dos dados para as conexões SMB. 
   
-    Para obter mais informações, consulte [restringir o acesso à pasta raiz de hotfix e arquivo de configuração de hotfix](cluster-aware-updating-plug-ins.md#BKMK_ACL).
+    Para obter mais informações, consulte [restringir o acesso para a pasta raiz de hotfix e o arquivo de configuração de hotfix](cluster-aware-updating-plug-ins.md#BKMK_ACL).
   
 ### <a name="additional-recommendations"></a>Recomendações adicionais  
   
--   Para evitar interferir em um CAU atualizando executar que podem ser agendados ao mesmo tempo, não agende alterações de senha para objetos de nome do cluster e computador virtual durante a janelas de manutenção agendadas.  
+-   Para evitar interferir em uma Execução de atualização CAU que pode estar agendada ao mesmo tempo, não agende alterações de senha para objetos de nome de cluster durante as janelas de manutenção agendadas.  
   
--   Você deve definir permissões apropriadas no pre\ update e update post\ scripts que são salvos em pastas compartilhadas na rede para evitar possíveis adulterações com esses arquivos por usuários não autorizados.  
+-   Você deve definir as permissões apropriadas no pré\-atualizar e lançar\-scripts de atualização que são salvos na rede compartilhada pastas para evitar possíveis violações desses arquivos por usuários não autorizados.  
   
--   Para configurar CAU no modo de atualização self\, um objeto de computador virtual \(VCO\) para a função clusterizada CAU deve ser criada no Active Directory. CAU pode criar esse objeto automaticamente no momento em que a função clusterizada CAU é adicionada, se o cluster de failover tiver permissões suficientes. No entanto, devido as políticas de segurança em determinados organizações, pode ser necessário inserir o objeto no Active Directory. Para obter um procedimento para fazer isso, consulte [etapas para inserir uma conta para uma função clusterizada](http://go.microsoft.com/fwlink/p/?LinkId=237624).  
+-   Para configurar o CAU no self\-atualizando modo, um objeto de computador virtual \(VCO\) para CAU função clusterizada deve ser criada no Active Directory. O CAU pode criar esse objeto automaticamente no momento em que a função clusterizada do CAU for adicionada e o cluster de failover tiver permissões suficientes. Entretanto, por causa das políticas de segurança em certas organizações, pode ser necessário pré-configurar o objeto no Active Directory. Para obter um procedimento para isso, consulte [Etapas para pré-preparar a conta para uma função em cluster](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731002\(v=ws.10\)#steps-for-prestaging-the-cluster-name-account).  
   
--   Para salvar e reutilizar configurações atualizando executar em clusters de failover com semelhante atualizando necessidades na organização de TI, você pode criar perfis de executar a atualização. Além disso, dependendo do modo de atualização, você pode salvar e gerenciar os perfis de executar a atualização em um compartilhamento de arquivo que seja acessível para todos os computadores remotos de coordenador de atualização ou clusters de failover. Para obter mais informações, consulte [opções avançadas e atualizar perfis executar para CAU](cluster-aware-updating-options.md).  
+-   Para salvar e reutilizar as configurações de Executar atualização nos clusters de failover com necessidades de atualização similar na organização de TI, você pode criar Perfis de Execução de Atualização. Além disso, dependendo do modo de atualização, você pode salvar e gerenciar os Perfis de Execução de Atualização em um compartilhamento de arquivo que está acessível a todos os computadores do Coordenador de Atualização remoto ou clusters de failover. Para obter mais informações, consulte [opções avançadas e perfis de executar atualização da CAU](cluster-aware-updating-options.md).  
   
-## <a name="BKMK_BPA"></a>Preparação para a atualização de cluster de teste  
-Você pode executar o modelo \(BPA\) CAU analisador de práticas recomendadas para testar se um cluster de failover e o ambiente de rede conhecer muitos dos requisitos de software as atualizações aplicadas pelo CAU. Muitos dos testes verificar o ambiente para preparação para aplicar atualizações da Microsoft usando o padrão plug\-in, **Microsoft.WindowsUpdatePlugin**.  
-  
-> [!NOTE]  
-> Talvez você precise validar independente que seu ambiente de cluster está pronto para aplicar atualizações de software usando um plug\-in diferente **Microsoft.WindowsUpdatePlugin**. Se você estiver usando um Microsoft non\ plug\-in, como um fornecido pelo fabricante do hardware, contate o fornecedor para obter mais informações.  
-  
-Você pode executar a ferramenta BPA nas duas formas a seguir:  
-  
-1.  Selecione **preparação para a atualização de cluster de analisar** no console CAU. Após o BPA conclusão dos testes de preparação, aparece um relatório de teste. Se forem detectados problemas em nós de cluster, os problemas específicos e os nós onde aparecem os problemas são identificados para que você pode executar uma ação corretiva. Os testes podem levar vários minutos para ser concluída.  
-  
-2.  Execute o [teste CauSetup](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/test-causetup) cmdlet. Você pode executar o cmdlet em um computador local ou remoto em que o Failover Clustering módulo para Windows PowerShell (parte das ferramentas de cluster de Failover) está instalado. Você também pode executar o cmdlet em um nó de cluster de failover.  
+## <a name="BKMK_BPA"></a>Preparação de atualização de cluster de teste  
+Você pode executar o analisador de práticas recomendadas do CAU \(BPA\) modelo para testar se um cluster de failover e o ambiente de rede atenderam aos diversos requisitos para que as atualizações de software aplicadas pelo CAU. Vários testes verificam a preparação aplicar as atualizações da Microsoft, usando o plugue padrão do ambiente\-no, **windowsupdateplugin**.  
   
 > [!NOTE]  
-> -   Você deve usar uma conta que tenha privilégios administrativos em nós de cluster e privilégios administrativos locais no computador em que é usada para executar o **Test\ CauSetup** cmdlet ou para analisar o cluster usando a janela atualizar suporte a Cluster preparação para a atualização. Para executar os testes usando a janela atualizar suporte a Cluster, você deve estar conectado ao computador com as credenciais necessárias.  
-> -   Os testes suponha que as ferramentas CAU que são usadas para visualizar e aplicar as atualizações de software executadas no mesmo computador e com as mesmas credenciais de usuário que são usados para testar a preparação para a atualização de cluster.  
+> Talvez você precise verificar independentemente se o seu ambiente de cluster está pronto para aplicar atualizações de software usando um plug\-em que **windowsupdateplugin**. Se você estiver usando um não\-plug Microsoft\-, por exemplo, um fornecido pelo fabricante do hardware, entre em contato com o publicador para obter mais informações.  
+  
+É possível executar o BPA nas duas seguintes maneiras:  
+  
+1.  Selecione **Analisar preparação da atualização do cluster** no console de CAU. Depois que o BPA ter concluído os testes de preparação, um relatório de teste é exibido. Se forem detectados problemas nos nós de cluster, os problemas específicos e os nós nos quais os problemas aparecem são identificados, para que você possa executar a ação corretiva. Os testes podem levar vários minutos para serem concluídos.  
+  
+2.  Execute o [Test-CauSetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup) cmdlet. Você pode executar o cmdlet em um computador local ou remoto no qual o Failover Clustering de módulo para Windows PowerShell (parte das ferramentas de Clustering de Failover) está instalado. Também é possível executar o cmdlet em um nó do cluster de failover.  
+  
+> [!NOTE]  
+> -   Você deve usar uma conta que tenha privilégios administrativos em nós de cluster e privilégios administrativos locais no computador que é usado para executar o **teste\-CauSetup** cmdlet ou ao analisar a preparação de atualização do cluster usando a janela de atualização com suporte a Cluster. Para executar os testes usando a janela de atualização com suporte a Cluster, você deve estar conectado ao computador com as credenciais necessárias.  
+> -   Os testes assumem que as ferramentas do CAU usadas para visualizar e aplicar as atualizações de software são executadas a partir do mesmo computador e com as mesmas credenciais de usuário que as usadas para testar a preparação de atualização do cluster.  
   
 > [!IMPORTANT]  
-> É altamente recomendável que você teste o cluster para atualizar preparação nas seguintes situações:  
+> É altamente recomendável que você teste o cluster quanto à preparação para atualização nas seguintes situações:  
 >   
-> -   Antes de usar CAU pela primeira vez para aplicar atualizações de software.  
-> -   Depois que você adicione um nó de cluster ou fazer outras alterações de hardware no cluster que exigem a execução validar um Assistente de Cluster.  
-> -   Depois que você alterar uma fonte de atualização ou alterar configurações de atualização ou configurações \(other than CAU\) que podem afetar a aplicação das atualizações em nós.  
+> -   Antes de usar o CAU pela primeira vez para aplicar atualizações de software.  
+> -   Após adicionar um nó ao cluster ou executar outras alterações de hardware no cluster, que requerem a execução do Assistente de Validação de Cluster.  
+> -   Depois que você alterar uma origem de atualização, ou alterar configurações ou configurações de atualização \(diferentes de CAU\) que podem afetar a aplicação das atualizações em nós.  
   
-### <a name="tests-for-cluster-updating-readiness"></a>Testes para preparação de atualização de cluster  
-A tabela a seguir lista o cluster etapas de resolução, alguns problemas comuns e testes de preparação para a atualização.  
+### <a name="tests-for-cluster-updating-readiness"></a>Testes para preparação de atualização do cluster  
+A tabela a seguir lista os testes de preparação de atualização do cluster, alguns problemas comuns e etapas de resolução.  
   
-|Teste|Impactos e possíveis problemas|Etapas de resolução|  
+|Testar|Possíveis problemas e impactos|Etapas de resolução|  
 |--------|-------------------------------|--------------------|  
-|O cluster de failover deve estar disponível|Não é possível resolver que o nome de cluster de failover, ou um ou mais nós de cluster não podem ser acessado. O BPA não pode executar os testes de preparação do cluster.|-Verifica a ortografia do nome do cluster especificado durante o BPA executar.<br />-Verifique se todos os nós de cluster estão online e em execução.<br />-Verifique se a validar um Assistente de configuração podem executar com êxito no cluster de failover.|  
-|Os nós de cluster de failover devem estar habilitados para o gerenciamento remoto por meio de WMI|Um ou mais nós de cluster de failover não estão habilitados para o gerenciamento remoto usando o Windows Management Instrumentation \(WMI\). CAU não pode atualizar os nós de cluster se os nós não estão configurados para o gerenciamento remoto.|Certifique-se de que todos os nós de cluster de failover estão habilitados para o gerenciamento remoto por meio de WMI. Para obter mais informações, consulte [configurar os nós de gerenciamento remoto](#BKMK_NODE_CONFIG) neste tópico.|  
-|Conexão remota do PowerShell deve ser habilitada em cada nó de cluster de failover|PowerShell não está instalado ou não está habilitado para acesso remoto em um ou mais nós de cluster de failover. CAU não pode ser configurado para o modo de atualização self\ ou usar determinados recursos no modo de atualização remote\.|Certifique-se de que o PowerShell está instalado em todos os nós de cluster e está habilitado para remoto.<br /><br />Para obter mais informações, consulte [configurar os nós de gerenciamento remoto](#BKMK_NODE_CONFIG) neste tópico.|  
-|Versão de cluster de failover|Um ou mais nós no cluster de failover não execute o Windows Server 2012, Windows Server 2012 R2 ou Windows Server 2016. CAU não poderá atualizar o cluster de failover.|Verificar se o cluster de failover especificado durante o BPA executar está funcionando Windows Server 2012, Windows Server 2012 R2 ou Windows Server 2016.<br /><br />Para obter mais informações, consulte [verificar a configuração de cluster](#BKMK_REQ_CLUS) neste tópico.|  
-|As versões necessárias do .NET Framework e do Windows PowerShell devem ser instaladas em todos os nós de cluster de failover|.NET framework 4.6, 4.5 ou o Windows PowerShell não estiver instalado em um ou mais nós de cluster. Alguns recursos CAU talvez não funcionem.|Certifique-se de que o .NET Framework 4.6 ou 4.5 e do Windows PowerShell são instalados em todos os nós de cluster, se eles forem necessários.<br /><br />Para obter mais informações, consulte [configurar os nós de gerenciamento remoto](#BKMK_NODE_CONFIG) neste tópico.|  
-|O serviço de Cluster deve ser executado em todos os nós de cluster|O serviço de Cluster não está executando em um ou mais nós. CAU não poderá atualizar o cluster de failover.|-Verifique se o Cluster serviço \(clussvc\) é iniciado em todos os nós do cluster, e ele está configurado para iniciar automaticamente.<br />-Verifique se a validar um Assistente de configuração podem executar com êxito no cluster de failover.<br /><br />Para obter mais informações, consulte [verificar a configuração de cluster](#BKMK_REQ_CLUS) neste tópico.|  
-|As atualizações automáticas não devem ser configuradas para instalar atualizações automaticamente em qualquer nó de cluster de failover|Em pelo menos um nó de cluster de failover, as atualizações automáticas está configurada para instalar automaticamente as atualizações da Microsoft no nó. Combinando CAU com outros métodos de atualização pode resultar em tempo de inatividade não planejado ou resultados imprevisíveis.|Se a funcionalidade do Windows Update está configurada para atualizações automáticas em um ou mais nós de cluster, certifique-se de que as atualizações automáticas não está configurada para instalar atualizações automaticamente.<br /><br />Para obter mais informações, consulte [recomendações para aplicar atualizações do Microsoft](#BKMK_BP_WUA).|  
-|Os nós de cluster de failover devem usar a mesma fonte de atualização|Um ou mais nós de cluster de failover são configurados para usar uma fonte de atualização para atualizações da Microsoft que é diferente do resto de nós. Atualizações não podem ser aplicadas uniformemente em nós de cluster pelo CAU.|Certifique-se de que todos os nós de cluster está configurado para usar a mesma fonte de atualização, por exemplo, um servidor WSUS, Windows Update ou o Microsoft Update.<br /><br />Para obter mais informações, consulte [recomendações para aplicar atualizações do Microsoft](#BKMK_BP_WUA).|  
-|Uma regra de firewall que permite o desligamento remoto deve ser habilitada em cada nó no cluster de failover|Um ou mais nós de cluster de failover não tenha habilitada uma regra de firewall que permite o desligamento remoto ou uma configuração de política de grupo impede que esta regra sendo ativado. Uma atualização executar que se aplica atualizações que exigem reiniciar automaticamente os nós poderá não ser concluída corretamente.|Se o Firewall do Windows ou um firewall non\ da Microsoft está em uso em nós de cluster, configure uma regra de firewall que permite o desligamento remoto.<br /><br />Para obter mais informações, consulte [habilitar uma regra de firewall para permitir reinicializações automáticas](#BKMK_FW) neste tópico.|  
-|A configuração do servidor proxy em cada nó de cluster de failover deve ser definida como um servidor proxy local|Um ou mais nós de cluster de failover tem uma configuração do servidor proxy incorreto.<br /><br />Se um servidor proxy local estiver em uso, a configuração do servidor proxy em cada nó deve ser configurada corretamente para o cluster acessar o Microsoft Update ou o Windows Update.|Certifique-se de que as configurações de proxy WinHTTP em cada nó de cluster são definidas como um servidor proxy local se ele é necessário. Se um servidor proxy não está em uso em seu ambiente, esse aviso pode ser ignorado.<br /><br />Para obter mais informações, consulte [aplicar atualizações em cenários de filial](#BKMK_PROXY) neste tópico.|  
-|A função clusterizada CAU deve ser instalada no cluster de failover para habilitar o modo de atualização self\|A função clusterizada CAU não está instalada neste cluster de failover. Essa função é necessária para atualizar self\ de cluster.|Para usar CAU no modo de atualização self\, adicione a função clusterizada CAU no cluster de failover em uma das seguintes maneiras:<br /><br />-Executar o [CauClusterRole adicionar](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/add-cauclusterrole) cmdlet do PowerShell.<br />-Selecione o **configurar as opções de atualização self\ cluster** ação na janela atualizar suporte a Cluster.|  
-|A função clusterizada CAU deve ser habilitada no cluster de failover para habilitar o modo de atualização self\|A função clusterizada CAU está desabilitada. Por exemplo, a função clusterizada CAU não está instalada, ou ele foi desativado, usando o [Disable\ CauClusterRole](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/disable-cauclusterrole) cmdlet do PowerShell. Essa função é necessária para atualizar self\ de cluster.|Para usar CAU no modo de atualização self\, habilite a função de cluster CAU neste cluster de failover em uma das seguintes maneiras:<br /><br />-Executar o [habilitar CauClusterRole](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/enable-cauclusterrole) cmdlet do PowerShell.<br />-Selecione o **configurar as opções de atualização self\ cluster** ação na janela atualizar suporte a Cluster.|  
-|O CAU configurado plug\-in para o modo de atualização self\ deve ser registrado em todos os nós de cluster de failover|A função clusterizada CAU em um ou mais nós desse cluster de failover não pode acessar o CAU plug\ no módulo configurado nas opções de atualização self\. Um self\-atualizando executar poderá falhar.|-Verifique se o CAU configurado plug\-in é instalado em todos os nós de cluster seguindo o procedimento de instalação do produto que fornece o CAU plug\-in.<br />-Executar o [Register\ CauPlugin](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/register-cauplugin) cmdlet do PowerShell para registrar o plug\-in em nós de cluster necessários.|  
-|Todos os nós de cluster de failover devem ter o mesmo conjunto de marcas CAU plug\-ins|Um self\-atualizando executar poderá falhar se o plug\-in que está configurado para ser usado em executar uma atualização for alterado para uma que não está disponível em todos os nós de cluster.|-Verifique se o CAU configurado plug\-in é instalado em todos os nós de cluster seguindo o procedimento de instalação do produto que fornece o CAU plug\-in.<br />-Executar o [Register\ CauPlugin](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/register-cauplugin) cmdlet do PowerShell para registrar o plug\-in em nós de cluster necessários.|  
-|As opções de atualização executar configuradas devem ser válidas|O agendamento de atualização self\ e atualizando executar opções que estão configuradas para esse cluster de failover incompletas ou não são válidas. Um self\-atualizando executar poderá falhar.|Configure um agendamento de atualização self\ válido e conjunto de opções de executar a atualização. Por exemplo, você pode usar o [Set \ CauClusterRole](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/set-cauclusterrole) cmdlet do PowerShell para configurar o CAU clusterizado função.|  
-|Pelo menos dois nós de cluster de failover deve ser proprietários da função clusterizado CAU|Uma atualização executar iniciado no modo de atualização self\ falhará porque a função clusterizada CAU não tem um nó de proprietário possíveis para mover para.|Use as ferramentas de cluster de Failover para garantir que todos os nós de cluster são configurados como possíveis proprietários do CAU agrupado função. Essa é a configuração padrão.||  
-|Todos os nós de cluster de failover devem ser capazes de acessar scripts do Windows PowerShell|Nem todos os nós de proprietário possíveis da função clusterizado CAU podem acessar scripts configurados do Windows PowerShell pre\ update e update post\. Um self\-atualizando executar falhará.|Certifique-se de que todos os nós de proprietário possíveis da função clusterizado CAU tem permissões para acessar os scripts de pre\ update e update post\ de PowerShell configurados.|  
-|Todos os nós de cluster de failover devem usar idênticos scripts do Windows PowerShell|Nem todos os nós de proprietário possíveis da função clusterizado CAU usarem a mesma cópia dos scripts especificados do Windows PowerShell pre\ update e update post\. Executar uma atualização self\ pode falhar ou mostrar um comportamento inesperado.|Certifique-se de que todos os nós de proprietário possíveis da função clusterizado CAU usam os mesmos PowerShell pre\ update e update post\ scripts.|  
-|A configuração de WarnAfter especificada para executar a atualização deve ser menor que a configuração de StopAfter|Os valores de tempo limite especificados CAU atualizando executar Verifique o tempo limite de aviso ineficaz. Execute uma atualização pode ser cancelada antes de um log de eventos de aviso podem ser gerado.|Em Opções de atualização executar, configurar um **WarnAfter** opção valor que seja menor do que o **StopAfter** valor de opção.|  
+|O cluster de failover deve estar disponível|Não é possível resolver o nome do cluster de failover, ou um ou mais nós de cluster não podem ser acessados. O BPA não pode executar testes de preparação do cluster.|-Verifique a ortografia do nome do cluster especificado durante a execução de BPA.<br />-Certifique-se de que todos os nós do cluster estão online e em execução.<br />-Verifique se o validar um Assistente de configuração podem executar com êxito no cluster de failover.|  
+|Os nós de cluster de failover devem estar habilitados para gerenciamento remoto via WMI|Um ou mais nós de cluster de failover não estão habilitados para o gerenciamento remoto usando o Windows Management Instrumentation \(WMI\). O CAU não pode atualizar os nós de cluster, se os nós não estiverem configurados para o gerenciamento remoto.|Certifique-se de que todos os nós de cluster de failover estejam habilitados para o gerenciamento remoto por meio de WMI. Para mais informações, consulte [Configurar os nós para o gerenciamento remoto](#BKMK_NODE_CONFIG) neste tópico.|  
+|Comunicação remota do PowerShell deve ser habilitada em cada nó de cluster de failover|PowerShell não está instalado ou não está habilitada para uso remoto em um ou mais nós de cluster de failover. A CAU não pode ser configurado para self\-modo de atualização ou usar determinados recursos no remoto\-modo de atualização.|Certifique-se de que o PowerShell é instalado em todos os nós de cluster e habilitado remotamente.<br /><br />Para mais informações, consulte [Configurar os nós para o gerenciamento remoto](#BKMK_NODE_CONFIG) neste tópico.|  
+|Versão de cluster de failover|Um ou mais nós no cluster de failover não executam o Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012. O CAU não pode atualizar o cluster de failover.|Verifique se o cluster de failover que é especificado durante a execução de BPA está executando o Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012.<br /><br />Para obter mais informações, consulte [Verificar a configuração do cluster](#BKMK_REQ_CLUS) neste tópico.|  
+|As versões necessárias do .NET Framework e do Windows PowerShell devem ser instaladas em todos os nós de cluster de failover|.NET framework 4.6, 4.5 ou Windows PowerShell não está instalado em um ou mais nós do cluster. Alguns recursos de CAU podem não funcionar.|Certifique-se de que o .NET Framework 4.6 ou 4.5 e Windows PowerShell são instalados em todos os nós de cluster, se forem necessários.<br /><br />Para mais informações, consulte [Configurar os nós para o gerenciamento remoto](#BKMK_NODE_CONFIG) neste tópico.|  
+|O serviço de cluster deve estar em execução em todos os nós de cluster|O serviço de cluster não está sendo executado em um ou mais nós. O CAU não pode atualizar o cluster de failover.|-Certifique-se de que o serviço de Cluster \(clussvc\) é iniciado em todos os nós no cluster, e ele está configurado para iniciar automaticamente.<br />-Verifique se o validar um Assistente de configuração podem executar com êxito no cluster de failover.<br /><br />Para obter mais informações, consulte [Verificar a configuração do cluster](#BKMK_REQ_CLUS) neste tópico.|  
+|As atualizações automáticas não devem estar configuradas para instalar automaticamente as atualizações em nenhum nó de cluster de failover|As atualizações automáticas devem estar configuradas em, no mínimo, um nó de cluster de failover para instalar automaticamente as atualizações da Microsoft nesse nó. Combinar o CAU com outros métodos de atualização pode resultar em tempo de inatividade não planejado ou resultados imprevisíveis.|Se a funcionalidade do Windows Update estiver configurada para atualizações automáticas em um ou mais nós de cluster, certifique-se de que as atualizações automáticas não estejam configuradas para instalar as atualizações automaticamente.<br /><br />Para obter mais informações, consulte [Recomendações para aplicar atualizações da Microsoft](#BKMK_BP_WUA).|  
+|Os nós de cluster de failover devem usar a mesma origem de atualização|Um ou mais nós de cluster de failover estão configurados para usar uma origem de atualização para as atualizações da Microsoft que é diferente do restante dos nós. As atualizações podem não ser aplicadas de maneira uniforme nos nós de cluster pelo CAU.|Certifique-se de que todos os nós de cluster estejam configurados para usar a mesma origem de atualização, por exemplo, um servidor WSUS, Windows Update ou Microsoft Update.<br /><br />Para obter mais informações, consulte [Recomendações para aplicar atualizações da Microsoft](#BKMK_BP_WUA).|  
+|Uma regra de firewall que permite o encerramento remoto deve ser habilitada em todos os nós no cluster de failover|Um ou mais nós de cluster de failover não possui uma regra de firewall habilitada que permita o encerramento remoto ou uma configuração de Política de Grupo que previna que essa regra seja habilitada. Uma Execução de Atualização que aplica atualizações que requerem a reinicialização automática dos nós pode não ser concluída de maneira adequada.|Se o Firewall do Windows ou um não\-Microsoft firewall está em uso em nós de cluster, configure uma regra de firewall que permita o desligamento remoto.<br /><br />Para obter mais informações, consulte [Habilitar uma função de firewall para permitir reinícios automáticos](#BKMK_FW) neste tópico.|  
+|A configuração de servidor de proxy em cada nó de cluster de failover deve ser definida em um servidor proxy local|Um ou mais nós de cluster de failover têm uma configuração incorreta de servidor proxy.<br /><br />Se um servidor proxy local estiver em uso, a configuração de servidor proxy em cada nó deve ser configurada corretamente para o cluster acessar o Microsoft Update ou o Windows Update.|Certifique-se de que as configurações de proxy do WinHTTP em cada nó de cluster estejam definidas em um servidor proxy local, caso necessário. Se um servidor proxy não estiver em uso em seu ambiente, esse aviso pode ser ignorado.<br /><br />Para mais informações, consulte [Aplicar atualizações em cenários de filiais](#BKMK_PROXY) neste tópico.|  
+|A função clusterizada de CAU deve ser instalada no cluster de failover para habilitar o self\-modo de atualização|A função clusterizada de CAU não está instalada nesse cluster de failover. Essa função é necessária para o cluster self\-atualizando.|Para usar o CAU no próprio\-atualizando modo, adicione a função clusterizada CAU no cluster de failover em uma das seguintes maneiras:<br /><br />-Execute o [Add-CauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Add-CauClusterRole) cmdlet do PowerShell.<br />-Selecione a **configurar cluster self\-opções de atualização** ação na janela de atualização com suporte a Cluster.|  
+|A função clusterizada de CAU deve ser habilitada no cluster de failover para habilitar o self\-modo de atualização|A função clusterizada de CAU é desabilitada. Por exemplo, a função clusterizada de CAU não está instalada ou foi desabilitada usando o [desabilite\-CauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Disable-CauClusterRole) cmdlet do PowerShell. Essa função é necessária para o cluster self\-atualizando.|Para usar o CAU no próprio\-atualizando modo, habilitar a função clusterizada de CAU nesse cluster de failover de uma das seguintes maneiras:<br /><br />-Execute o [Enable-CauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Enable-CauClusterRole) cmdlet do PowerShell.<br />-Selecione a **configurar cluster self\-opções de atualização** ação na janela de atualização com suporte a Cluster.|  
+|O plugue CAU configurado\-para si mesmo\-modo de atualização deve ser registrado em todos os nós de cluster de failover|A função clusterizada de CAU em um ou mais nós desse cluster de failover não é possível acessar o plugue CAU\-no módulo que está configurado no self\-opções de atualização. Um self\-executar a atualização poderá falhar.|-Certifique-se de que o plugue CAU configurado\-in estiver instalado em todos os nós de cluster, seguindo o procedimento de instalação para o produto que fornece o plugue CAU\-no.<br />-Execute o [registre\-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/Register-CauPlugin) cmdlet do PowerShell para registrar o plug\-em nós de cluster necessários.|  
+|Todos os nós de cluster de failover devem ter o mesmo conjunto de plugue CAU registrado\-ins|Um self\-executar a atualização poderá falhar se o plugue\-no que é configurado para ser usado em uma execução de atualização é alterado para um que não está disponível em todos os nós de cluster.|-Certifique-se de que o plugue CAU configurado\-in estiver instalado em todos os nós de cluster, seguindo o procedimento de instalação para o produto que fornece o plugue CAU\-no.<br />-Execute o [registre\-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/Register-CauPlugin) cmdlet do PowerShell para registrar o plug\-em nós de cluster necessários.|  
+|As opções configuradas de Execução de Atualização devem ser válidas|O self\-atualização de agendamento e execução de atualização opções que estão configuradas para esse cluster de failover estão incompletas ou não são válidas. Um self\-executar a atualização poderá falhar.|Configurar um válido\-atualizando a agenda e o conjunto de opções de execução de atualização. Por exemplo, você pode usar o [definir\-CauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Set-CauClusterRole) função clusterizada do cmdlet do PowerShell para configurar o CAU.|  
+|Pelo menos dois nós de cluster de failover devem ser proprietários da função clusterizada de CAU|Uma execução de atualização iniciado no autoatendimento\-modo de atualização falhará porque a função clusterizada de CAU não tem um nó de possível proprietário para mover para.|Use as Ferramentas de cluster de failover para garantir que todos os nós de cluster sejam configurados como possíveis proprietários da função clusterizada de CAU. Essa é a configuração padrão.||  
+|Todos os nós de cluster de failover devem poder acessar os scripts do Windows PowerShell|Nem todos os possíveis nós do proprietário da função clusterizada CAU podem acessar o pre do Windows PowerShell configurado\-atualizar e lançar\-scripts de atualização. Um self\-executar a atualização falhará.|Certifique-se de que todos os possíveis nós do proprietário da função clusterizada CAU tem permissões para acessar o pré PowerShell configurado\-atualizar e lançar\-scripts de atualização.|  
+|Todos os nós de cluster de failover devem usar scripts de Windows PowerShell idênticos|Nem todos os possíveis nós do proprietário da função clusterizada CAU usam a mesma cópia do pré especificado do Windows PowerShell\-atualizar e lançar\-scripts de atualização. Um self\-executar a atualização pode falhar ou apresentar um comportamento inesperado.|Certifique-se de que todos os possíveis nós do proprietário da função clusterizada CAU usam a mesma pré PowerShell\-atualizar e lançar\-scripts de atualização.|  
+|A configuração de WarnAfter especificada para a Execução de Atualização deve ser inferior à configuração de StopAfter|Os valores de tempo limite Execução de Atualização de CAU fazem com que o aviso de tempo limite não seja efetivo. Uma Execução de Atualização pode ser cancelada antes que um log de evento de avisos possa ser gerado.|Nas opções de Execução de Atualização, configure um valor de opção **WarnAfter** que seja inferior ao valor de opção **StopAfter** .|  
   
 ## <a name="see-also"></a>Consulte também  
   
--   [Visão geral do suporte a cluster atualizando](cluster-aware-updating.md)
-  
+-   [Visão geral da atualização com suporte a cluster](cluster-aware-updating.md)

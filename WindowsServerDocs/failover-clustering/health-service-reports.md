@@ -1,41 +1,42 @@
 ---
-title: "Relatórios de serviço de integridade"
+title: Relatórios de integridade do serviço
 ms.prod: windows-server-threshold
 manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
 ms.topic: article
-ms.assetid: 
+ms.assetid: ''
 author: cosmosdarwin
 ms.date: 10/05/2017
 ms.openlocfilehash: bc21b9fdec5700fec23dc6af7ca15873ded34bea
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59821957"
 ---
-# <a name="health-service-reports"></a>Relatórios de serviço de integridade
-> Aplica-se para o Windows Server 2016
+# <a name="health-service-reports"></a>Relatórios de integridade do serviço
+> Aplica-se ao Windows Server 2016
 
-## <a name="what-are-reports"></a>Quais são relatórios?  
+## <a name="what-are-reports"></a>Quais são os relatórios  
 
-O serviço de integridade reduz o trabalho necessário para obter desempenho ao vivo e informações de capacidade de cluster direta de espaços de armazenamento. Um novo cmdlet fornece uma lista administrada métricas essenciais, que são coletados com eficiência e agregados dinamicamente em todos os nós, com lógica interna para detectar a associação ao grupo de cluster. Todos os valores são apenas no momento e em tempo real.  
+O serviço de integridade reduz o trabalho necessário para obter informações de capacidade e desempenho em tempo real do seu cluster de espaços de armazenamento diretos. Um novo cmdlet fornece uma lista estruturada de métricas essenciais, que são coletadas com eficiência e agregadas dinamicamente em nós, com lógica interna para detectar a associação do cluster. Todos os valores são apenas pontuais e em tempo real.  
 
-## <a name="usage-in-powershell"></a>Uso do PowerShell
+## <a name="usage-in-powershell"></a>Uso no PowerShell
 
-Use este cmdlet para obter métricas de todo o cluster de espaços de armazenamento direto:
+Use este cmdlet para obter métricas de todo o cluster de espaços de armazenamento diretos:
 
 ```PowerShell
 Get-StorageSubSystem Cluster* | Get-StorageHealthReport
 ```
 
-Opcional **contagem** parâmetro indica quantos conjuntos de valores para retornar, intervalos de um segundo.  
+Opcional **contagem** parâmetro indica quantos conjuntos de valores devem ser retornados em intervalos de um segundo.  
 
 ```PowerShell
 Get-StorageSubSystem Cluster* | Get-StorageHealthReport -Count <Count>  
 ```
 
-Você também pode obter métricas para um volume específico ou servidor:  
+Você também pode obter as métricas para um volume específico ou servidor:  
 
 ```PowerShell
 Get-Volume -FileSystemLabel <Label> | Get-StorageHealthReport -Count <Count>  
@@ -43,11 +44,11 @@ Get-Volume -FileSystemLabel <Label> | Get-StorageHealthReport -Count <Count>
 Get-StorageNode -Name <Name> | Get-StorageHealthReport -Count <Count>
 ```
 
-## <a name="usage-in-net-and-c"></a>Uso em .NET e c#
+## <a name="usage-in-net-and-c"></a>Uso no .NET eC#
 
-### <a name="connect"></a>Conectar-se
+### <a name="connect"></a>Conectar
 
-Para consultar o serviço de integridade, você precisará estabelecer uma **CimSession** com o cluster. Para fazer isso, você precisará de algumas coisas que só estão disponíveis no .NET completo, ou seja, você não pode prontamente fazer isso diretamente de um web ou aplicativo móvel. Esses exemplos de código usará c \ #, a opção mais simples para essa camada de acesso de dados.
+Para consultar o serviço de integridade, você precisa estabelecer um **CimSession** com o cluster. Para fazer isso, você precisará de algumas coisas que só estão disponíveis no .NET completo, isso significa que você não pode prontamente fazer isso diretamente de um aplicativo web ou móvel. Esses exemplos de código usará C\#, mais simples choice para esta camada de acesso de dados.
 
 ``` 
 ...
@@ -71,15 +72,15 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 }
 ```
 
-O nome do usuário fornecido deve ser um administrador local do computador de destino.
+O nome de usuário fornecido deve ser um administrador local do computador de destino.
 
-É recomendável que você constrói a senha **SecureString** diretamente da entrada do usuário em tempo real, então suas senhas jamais seja armazenada na memória em texto sem formatação. Isso ajuda a minimizar uma variedade de questões de segurança. Mas, na prática, é comum para fins de criação de protótipos construí-la como explicado acima.
+É recomendável que você construa a senha **SecureString** diretamente da entrada do usuário em tempo real, portanto, sua senha nunca seja armazenada na memória em texto não criptografado. Isso ajuda a atenuar uma variedade de questões de segurança. Mas, na prática, é comum para fins de criação de protótipos de construí-la como acima.
 
 ### <a name="discover-objects"></a>Descobrir objetos
 
 Com o **CimSession** estabelecida, você pode consultar Windows Management Instrumentation (WMI) no cluster.
 
-Antes de poder falhas ou métricas, você precisará obter instâncias de vários objetos relevantes. Primeiro, o **MSFT\_StorageSubSystem** que representa direta de espaços de armazenamento no cluster. Fazer isso, você pode obter cada **MSFT\_StorageNode** no cluster e cada **MSFT\_Volume**, os volumes de dados. Por fim, você precisará do **MSFT\_StorageHealth**, a integridade do serviço em si, também.
+Antes de poder obter falhas ou métricas, você precisará obter instâncias de vários objetos relevantes. Primeiro, o **MSFT\_StorageSubSystem** que representa espaços de armazenamento diretos no cluster. Usando essa, você pode obter cada **MSFT\_StorageNode** no cluster e cada **MSFT\_Volume**, os volumes de dados. Por fim, você precisará de **MSFT\_StorageHealth**, o serviço de integridade em si, muito.
 
 ```
 CimInstance Cluster;
@@ -107,9 +108,9 @@ public void DiscoverObjects(CimSession Session)
 }
 ```
 
-Estes são os mesmos objetos que você obtenha no PowerShell usando os cmdlets como **Get-StorageSubSystem**, **Get-StorageNode**, e **Volume Get**.
+Esses são os mesmos objetos de obter no PowerShell usando os cmdlets como **Get-StorageSubSystem**, **Get-StorageNode**, e **Get-Volume**.
 
-Você pode acessar todos os mesmos propriedades, documentadas em [Classes de API de gerenciamento de armazenamento](https://msdn.microsoft.com/en-us/library/windows/desktop/hh830612(v=vs.85).aspx).
+Você pode acessar as mesmas propriedades, documentadas em [Classes de API de gerenciamento de armazenamento](https://msdn.microsoft.com/en-us/library/windows/desktop/hh830612(v=vs.85).aspx).
 
 ```
 ...
@@ -122,15 +123,15 @@ foreach (CimInstance Node in Nodes)
 }
 ```
 
-Invocar **GetReport** começar o streaming amostras de uma lista de comissionada especialista métricas essenciais, que são coletados com eficiência e agregados dinamicamente em todos os nós, com lógica interna para detectar a associação ao grupo de cluster. Amostras chegarão a cada segundo daí em diante. Todos os valores são apenas no momento e em tempo real.
+Invocar **GetReport** para iniciar o streaming de exemplos de uma lista de curadoria de especialista de métricas essenciais, que são coletadas com eficiência e agregadas dinamicamente em nós, com lógica interna para detectar a associação do cluster. Exemplos de chegará a cada segundo depois disso. Todos os valores são apenas pontuais e em tempo real.
 
-Métricas podem ser transmitidas para três escopos: cluster, qualquer nó ou qualquer volume.
+As métricas podem ser transmitidas para os três escopos: o cluster, qualquer nó ou qualquer volume.
 
-A lista completa de métricas disponíveis em cada escopo no Windows Server 2016 é documentada abaixo.
+A lista completa de métricas disponíveis em cada escopo no Windows Server 2016 está documentada abaixo.
 
 ### <a name="iobserveronnext"></a>IObserver.OnNext()
 
-Este código de exemplo usa o [padrão de Design do observador](https://msdn.microsoft.com/en-us/library/ee850490(v=vs.110).aspx) implementar um observador cujo **OnNext()** método será invocado quando chega de cada novo exemplo de métricas. Sua **OnCompleted()** método será chamado se/quando terminar de streaming. Por exemplo, você pode usá-lo para reiniciar o streaming, portanto, ele continua indefinidamente.
+Esse código de exemplo usa o [padrão de Design do observador](https://msdn.microsoft.com/en-us/library/ee850490(v=vs.110).aspx) para implementar um observador cujo **OnNext()** método será invocado quando cada novo exemplo de métricas é recebido. Sua **OnCompleted()** método será chamado se/quando termina de streaming. Por exemplo, você pode usá-lo para reiniciar a transmissão, portanto, ele continua indefinidamente.
 
 ```
 class MetricsObserver<T> : IObserver<T>
@@ -171,13 +172,13 @@ class MetricsObserver<T> : IObserver<T>
 }
 ```
 
-### <a name="begin-streaming"></a>Comece a transmissão
+### <a name="begin-streaming"></a>Iniciar o streaming
 
-Com o observador definido, você pode começar streaming.
+Com o observador definido, você pode iniciar o streaming.
 
-Especificar o destino **CimInstance** a serem as métricas no escopo. Ele pode ser o cluster, qualquer nó ou qualquer volume.
+Especifique o destino **CimInstance** ao qual você deseja que as métricas no escopo. Ele pode ser qualquer volume, qualquer nó ou o cluster.
 
-O parâmetro count é o número de amostras antes de streaming fim.
+O parâmetro de contagem é o número de amostras antes de extremidades de streaming.
 
 ```
 CimInstance Target = Cluster; // From among the objects discovered in DiscoverObjects()
@@ -202,15 +203,15 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 }
 ```
 
-Obviamente, essas métricas podem ser visualizadas, armazenada em um banco de dados, ou usados da forma como desejar.
+Obviamente, essas métricas podem ser visualizadas, armazenado em um banco de dados ou que foi usado na maneira que desejar.
 
 ### <a name="properties-of-reports"></a>Propriedades de relatórios
 
-Cada amostra de métricas é um "relatório" que contém muitos "registros" correspondente às métricas individuais.
+Cada exemplo de métricas é um "relatório" que contém muitos "registros" correspondente ao métricas individuais.
 
-Para o esquema completo, inspecionar o **MSFT\_StorageHealthReport** e **MSFT\_HealthRecord** as classes no *storagewmi.mof*.
+Para o esquema completo, inspecione a **MSFT\_StorageHealthReport** e **MSFT\_HealthRecord** as classes *storagewmi.mof*.
 
-Cada métrica tem apenas três propriedades, por esta tabela.
+Cada métrica tem apenas três propriedades, por essa tabela.
 
 | **Propriedade** | **Exemplo**       |
 | -------------|-------------------|
@@ -218,7 +219,7 @@ Cada métrica tem apenas três propriedades, por esta tabela.
 | Valor        | 0.00021           |
 | Unidades        | 3                 |
 
-Unidades = {0, 1, 2, 3 e 4}, onde 0 = "Bytes", 1 = "BytesPerSecond", 2 = "CountPerSecond", 3 = "Segundos" ou 4 = "Porcentagem".
+Unidades = {0, 1, 2, 3, 4}, onde 0 = "Bytes", 1 = "BytesPerSecond", 2 = "CountPerSecond", 3 = "Segundos", ou 4 = "Porcentagem".
 
 ## <a name="coverage"></a>Cobertura
 
