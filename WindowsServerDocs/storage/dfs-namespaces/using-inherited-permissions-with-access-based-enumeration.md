@@ -1,6 +1,6 @@
 ---
-title: "Usando permissões herdadas com enumeração baseada em acesso"
-description: "Este artigo descreve como usar as permissões herdadas com enumeração baseada em acesso"
+title: Como usar permissões herdadas com enumeração baseada em acesso
+description: Este artigo descreve como usar as permissões herdadas com enumeração baseada em acesso
 ms.date: 6/5/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,17 +8,18 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e8210a6abede3a8ee5317e5b6b2a90bd17013fc4
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: e6bd7a018a7f3a245581b5a9c63494048c7187a2
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812127"
 ---
 # <a name="using-inherited-permissions-with-access-based-enumeration"></a>Usando permissões herdadas com Enumeração baseada em acesso
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
+> Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
 
-Por padrão, as permissões utilizadas para uma pasta DFS são herdadas do sistema de arquivos local do servidor do namespace. As permissões são herdadas do diretório raiz da unidade do sistema e conceder permissões de leitura DOMAIN\\Users grupo. Como resultado, mesmo após a habilitação da enumeração baseada em acesso, todas as pastas no namespace permanecem visíveis para todos os usuários de domínio.
+Por padrão, as permissões utilizadas para uma pasta DFS são herdadas do sistema de arquivos local do servidor do namespace. As permissões são herdadas da pasta raiz da unidade do sistema e conceda o domínio\\permissões de leitura do grupo de usuários. Como resultado, mesmo após a habilitação da enumeração baseada em acesso, todas as pastas no namespace permanecem visíveis para todos os usuários de domínio.
 
 ## <a name="advantages-and-limitations-of-inherited-permissions"></a>Vantagens e limitações das permissões herdadas
 
@@ -41,7 +42,7 @@ Apesar dos benefícios, permissões herdadas nos Namespaces DFS têm muitas limi
 
 Para limitar quais usuários podem exibir uma pasta DFS, você deve executar uma das seguintes tarefas:
 
--   **Definir permissões explícitas para a pasta, desabilitando a herança.** Para definir permissões explícitas em uma pasta com destinos (um link) usando o Gerenciamento DFS ou o **Dfsutil** de comando, consulte [Enable Access-Based enumeração em um Namespace](enable-access-based-enumeration-on-a-namespace.md).
+-   **Defina as permissões explícitas para a pasta, desabilitando a herança.** Para definir permissões explícitas em uma pasta com destinos (um link) usando o Gerenciamento DFS ou o **Dfsutil** de comando, consulte [Enable Access-Based enumeração em um Namespace](enable-access-based-enumeration-on-a-namespace.md).
 -   **Modificar permissões herdadas no pai no sistema de arquivos local**. Para modificar as permissões herdadas por uma pasta com destinos, se você já tiver definido permissões explícitas na pasta, alterne para as permissões herdadas de permissões explícitas, conforme discutido no procedimento a seguir. Use o Windows Explorer ou o **Icacls** comando para modificar as permissões da pasta da qual a pasta com destinos herda suas permissões.
 
 > [!NOTE]
@@ -57,6 +58,6 @@ Para limitar quais usuários podem exibir uma pasta DFS, você deve executar uma
 
 4.  Para alterar as permissões herdadas para raízes de namespace em um namespace DFS ou pastas, use o Windows Explorer ou o **ICacls** comando.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
--   [Crie um namespace DFS](create-a-dfs-namespace.md)
+-   [Criar um Namespace do DFS](create-a-dfs-namespace.md)

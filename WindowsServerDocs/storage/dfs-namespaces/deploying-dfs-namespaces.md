@@ -8,23 +8,24 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: ca056f5ce5caac8bbe43568d90a6b9cab8466133
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 9e9c9c1a43365f9815ab812cbb5536261ada76f7
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59817627"
 ---
 # <a name="deploying-dfs-namespaces"></a>Implantando namespaces DFS
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
+> Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
 
 Para implantar Namespaces DFS, consulte os tópicos a seguir:
 
--   [Escolha um tipo de namespace](choose-a-namespace-type.md)
--   [Crie um namespace DFS](create-a-dfs-namespace.md)
--   [Migre um namespace baseado em domínio para modo Windows 2008 Server](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)
--   [Adicionar servidores de namespace para um namespace DFS baseado em domínio](add-namespace-servers-to-a-domain-based-dfs-namespace.md)
--   [Criar uma pasta em um namespace DFS](create-a-folder-in-a-dfs-namespace.md)
--   [Adicionar pasta de destino](add-folder-targets.md)
--   [Replicar destinos de pasta usando replicação DFS](replicate-folder-targets-using-dfs-replication.md)
--   [Delegar permissões de gerenciamento para Namespaces DFS](delegate-management-permissions-for-dfs-namespaces.md)
+-   [Escolha um tipo de Namespaces](choose-a-namespace-type.md)
+-   [Criar um Namespace do DFS](create-a-dfs-namespace.md)
+-   [Migrar um Namespace baseado em domínio para o modo do Windows Server 2008](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)
+-   [Adicionar servidores de Namespace para um Namespace do DFS baseado em domínio](add-namespace-servers-to-a-domain-based-dfs-namespace.md)
+-   [Crie uma pasta em um Namespace do DFS](create-a-folder-in-a-dfs-namespace.md)
+-   [Adicionar destinos de pasta](add-folder-targets.md)
+-   [Replicar destinos de pasta usando a replicação do DFS](replicate-folder-targets-using-dfs-replication.md)
+-   [Delegar permissões de gerenciamento para Namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)

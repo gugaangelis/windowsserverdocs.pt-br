@@ -1,10 +1,11 @@
 ---
 redirect_url: /windows-server/windows-server
-ms.openlocfilehash: aa1bc1d94f91a2b9584f72398385575d22db33a9
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 6f6e0d21fdf43ce3cf9f713d5731cfea5bb069de
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812267"
 ---
 # <a name="windows-server-2016"></a>Windows Server 2016
 
@@ -13,7 +14,7 @@ Esta biblioteca fornece informações para os profissionais de TI avaliarem, pla
 > [!Note] 
 > A próxima versão do Windows Server está mudando! É possível encontrar detalhes sobre as novidades No Horizonte visitando [Visão geral do Canal Semi-anual do Windows Server](./get-started/semi-annual-channel-overview.md). 
 
-[![WVídeo de visão geral do Windows Server 2016(media/front-page-video.png)](https://www.youtube.com/embed/V8oF0JpDzaM)
+[![Vídeo de visão geral do Windows Server 2016](media/front-page-video.png)](https://www.youtube-nocookie.com/embed/V8oF0JpDzaM)
 
 <table border="0" width="100%" align='center'>
   <tr style="text-align:center;">
@@ -39,7 +40,7 @@ Esta biblioteca fornece informações para os profissionais de TI avaliarem, pla
     <td align='center' style="width:25%; border:0;"><br/>
       <a href="/windows-server/identity/identity-and-access">
         <img height=145 src="media/4-identity.png" alt="Identity and access icon" title="Acesso e identidade do Windows Server" /></a>
-      <br>Identidade e Acesso </td>
+      <br>Identidade e acesso </td>
     <td align='center' style="width:25%; border:0;"><br/>
       <a href="/windows-server/networking/networking">
         <img height=145 src="media/6-networking.png" alt="Networking icon" title="Rede do Windows Server" />
@@ -74,12 +75,12 @@ Esta biblioteca fornece informações para os profissionais de TI avaliarem, pla
 <br/>
 
 > [!Note] 
-> Para conhecer os novos recursos e as funcionalidades disponíveis no Windows Server 2016 em primeira mão, baixe uma versão de avaliação em [Avaliações do Windows Server](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016). 
+> Para conhecer os novos recursos e funcionalidades disponíveis no Windows Server 2016 em primeira mão, baixe uma versão de avaliação em [Avaliações do Windows Server](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016). 
 
 
 ## <a name="windows-server-2016-editions"></a>Edições do Windows Server 2016
 
-O Windows Server 2016 está disponível nas edições Standard, Datacenter e Essentials. O Windows Server 2016 Datacenter inclui direitos de virtualização ilimitados, além de novos recursos para criar um data center definido por software. O Windows Server 2016 Standard oferece recursos de classe corporativa com direitos de virtualização limitados. O Windows Server Essentials é um servidor ideal para a primeira conexão com a nuvem. Ele tem sua própria [documentação abrangente](http://go.microsoft.com/fwlink/?LinkID=827171): o conteúdo aqui se concentra nas edições Standard e Datacenter. A tabela a seguir resume brevemente as principais diferenças entre as edições Standard e Datacenter:
+O Windows Server 2016 está disponível nas edições Standard, Datacenter e Essentials. O Windows Server 2016 Datacenter inclui direitos de virtualização ilimitados, além de novos recursos para criar um data center definido por software. O Windows Server 2016 Standard oferece recursos de classe corporativa com direitos de virtualização limitados. O Windows Server Essentials é um servidor ideal para a primeira conexão com a nuvem. Ele tem sua própria [documentação abrangente](https://go.microsoft.com/fwlink/?LinkID=827171): o conteúdo aqui se concentra nas edições Standard e Datacenter. A tabela a seguir resume brevemente as principais diferenças entre as edições Standard e Datacenter:
 
 |Recurso|Datacenter|Standard|  
 |-------------------|----------|-----------------------|  
@@ -113,9 +114,9 @@ Agora que você sabe qual opção de edição e instalação é a certa para voc
 <table border="0" width="100%" align='center'>
   <tr style="text-align:center;">
     <td align='center' style="width:33%; border:0;">
-      <a  href="/windows-server/get-started/getting-started-with-nano-server"> <img width="175" src="media/nano.png" alt="Icon representing Nano server" title="Nano Server - Peso mais leve" /><br/>Nano Server - <br/>Peso mais leve</a>
+      <a  href="/windows-server/get-started/getting-started-with-nano-server"> <img width="175" src="media/nano.png" alt="Icon representing Nano server" title="Nano Server - Peso mais leve" /><br/>Nano Server - <br/>Nível de importância</a>
     </td>
-    <td align='center' style="width:33%; border:0;"><a href="/windows-server/get-started/getting-started-with-server-core"> <img width="175" src="media/servercore.png" alt="Icon representing the Server Core installation" title="Server Core - Recomendado" /><br/>Server Core - <br/>Recomendações</a></td>
+    <td align='center' style="width:33%; border:0;"><a href="/windows-server/get-started/getting-started-with-server-core"> <img width="175" src="media/servercore.png" alt="Icon representing the Server Core installation" title="Server Core - Recomendado" /><br/>Server Core - <br/>Recomendado</a></td>
    <td align='center' style="width:33%; border:0;"><a href="/windows-server/get-started/getting-started-with-server-with-desktop-experience"><img width="175" src="media/desktop.png" alt="Icon representing the full desktop experience installation option for Windows Server" title="Experiência da área de trabalho - Experiência completa" /><br/>Experiência Desktop - <br/>Interface completa</a></td>
   </tr>
 </table>
@@ -129,9 +130,7 @@ As tecnologias de armazenamento virtualizado, rede, segurança e gerenciamento s
 <table border="0" width="100%" align='center'>
   <tr style="text-align:center;">
     <td align='center' style="width:10%; border:0;"></td>
-    <td align='center' style="width:50%; border:0;"><a href="/windows-server/sddc"><img width="400" src="media/sddc/WS16-heading.png" alt="Icon representing SDDC" title="Datacenter Definido por Software (SDDC) do Windows Server" /><br/>Datacenter Definido por Software (SDDC) do Windows Server</a></td>
+    <td align='center' style="width:50%; border:0;"><a href="/windows-server/sddc"><img width="400" src="media/sddc/WS16-heading.png" alt="Icon representing SDDC" title="Datacenter Definido por Software (SDDC) do Windows Server" /><br/>Windows Server definida pelo Software SDDC (Datacenter)</a></td>
     <td align='center' style="width:10%; border:0;"></td>
   </tr>
 </table>
-
-Não consegue encontrar o conteúdo que você precisa? Usuários do Windows 10, nos digam o que vocês desejam em [Hub de Feedback](feedback-hub://?referrer=techDocsUcPage&tabid=2&contextid=898&newFeedback=true&topic=Windows-Server-2016.md). 

@@ -1,5 +1,5 @@
 ---
-title: Aplicando o patch de núcleo do servidor
+title: Aplicação de patch do Server Core
 description: Saiba como atualizar uma instalação Server Core do Windows Server
 ms.prod: windows-server-threshold
 ms.mktglfcycl: manage
@@ -8,41 +8,41 @@ author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
 ms.openlocfilehash: f51ffae5ed8f91cca386eb209e7a1d8cc664ceeb
-ms.sourcegitcommit: 1533d994a6ddea54ac189ceb316b7d3c074307db
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1447942"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59817347"
 ---
-# <a name="patch-a-server-core-installation"></a>Uma instalação Server Core do patch
+# <a name="patch-a-server-core-installation"></a>Corrigir uma instalação Server Core
 
-> Aplica-se a: Windows Server (canal delimitadas anual) e Windows Server 2016
+> Aplica-se a: Windows Server (canal semestral) e Windows Server 2016
 
-Você pode corrigir um servidor que executa a instalação Server Core das seguintes maneiras:
+Você pode aplicar o patch de um servidor que executa a instalação do Server Core das seguintes maneiras:
 
-- **Usando o Windows Update automaticamente ou com o Windows Server Update Services (WSUS)**. Usando o Windows Update, tanto automaticamente ou com ferramentas de linha de comando ou Windows Server Update Services (WSUS), você pode atender a servidores que estejam executando uma instalação Server Core.
+- **Usando o Windows Update automaticamente ou com o Windows Server Update Services (WSUS)**. Usando o Windows Update, automaticamente ou com ferramentas de linha de comando ou o Windows Server Update Services (WSUS), você pode atender a servidores que executam uma instalação Server Core.
 
-- **Manualmente**. Mesmo em organizações que não usam o Windows update ou o WSUS, você pode aplicar atualizações manualmente.
+- **Manualmente**. Até mesmo em organizações que não usam a atualização do Windows ou o WSUS, você pode aplicar atualizações manualmente.
 
-## <a name="view-the-updates-installed-on-your-server-core-server"></a>Exibir as atualizações instaladas no seu servidor de núcleo do servidor
-Antes de adicionar uma nova atualização de núcleo do servidor, ele é uma boa ideia para ver quais atualizações já tiverem sido instaladas.
+## <a name="view-the-updates-installed-on-your-server-core-server"></a>Exibir as atualizações instaladas no seu servidor server Core
+Antes de adicionar uma nova atualização para o Server Core, é uma boa ideia para ver quais atualizações já foram instaladas.
 
-Para exibir atualizações usando o Windows PowerShell, execute **Get-Hotfix**.
+Para exibir as atualizações usando o Windows PowerShell, execute **Get-Hotfix**.
 
-Para exibir atualizações executando um comando, execute **systeminfo.exe**. Pode haver um pequeno atraso enquanto a ferramenta inspeciona seu sistema.
+Para exibir as atualizações ao executar um comando, execute **systeminfo.exe**. Pode haver um pequeno atraso enquanto a ferramenta inspeciona seu sistema.
 
-Também é possível executar **wmic qfe lista** da linha de comando. 
+Você também pode executar **wmic qfe lista** da linha de comando. 
 
-## <a name="patch-server-core-automatically-with-windows-update"></a>Núcleo do servidor do patch automaticamente com o Windows Update
+## <a name="patch-server-core-automatically-with-windows-update"></a>Patch do Server Core automaticamente com o Windows Update
 
-Use as etapas a seguir para o servidor automaticamente com o Windows Update de patch:
+Use as seguintes etapas para corrigir o servidor automaticamente com o Windows Update:
 
 1. Verifique se a configuração atual do Windows Update:
    ```
    %systemroot%\system32\Cscript scregedit.wsf /AU /v 
    ```
 
-2. Para habilitar atualizações automáticas.
+2. Para habilitar atualizações automáticas:
 
    ```
    Net stop wuauserv 
@@ -50,7 +50,7 @@ Use as etapas a seguir para o servidor automaticamente com o Windows Update de p
    Net start wuauserv
    ```  
 
-3. Para desabilitar as atualizações automáticas, execute:
+3. Para desabilitar atualizações automáticas, execute:
 
    ```
    Net stop wuauserv 
@@ -58,30 +58,30 @@ Use as etapas a seguir para o servidor automaticamente com o Windows Update de p
    Net start wuauserv 
    ```
 
-Se o servidor for um membro de um domínio, você também pode configurar o Windows Update usando a diretiva de grupo. Para obter mais informações, consulte https://go.microsoft.com/fwlink/?LinkId=192470. No entanto, quando você usa esse método, única opção 4 ("fazer o download automático e agendar a instalar") é relevante para instalações de núcleo do servidor devido à falta de uma interface gráfica. Para ter mais controle sobre quais atualizações são instaladas e quando, você pode usar um script que fornece um linha de comando equivalente da maioria da interface gráfica do Windows Update. Para obter informações sobre o script, consulte https://go.microsoft.com/fwlink/?LinkId=192471.
+Se o servidor for membro de um domínio, você também pode configurar o Windows Update usando a Política de Grupo. Para obter mais informações, consulte https://go.microsoft.com/fwlink/?LinkId=192470. No entanto, quando você usa esse método, apenas a opção 4 ("baixar automaticamente e agendar a instalação") é relevante para as instalações Server Core devido à falta de uma interface gráfica. Para obter mais controle sobre quais atualizações são instaladas e quando, você pode usar um script que fornece uma linha de comando equivalente da maioria da interface gráfica do Windows Update. Para obter informações sobre o script, consulte https://go.microsoft.com/fwlink/?LinkId=192471.
 
-Para forçar o Windows Update para detectar imediatamente e instale as atualizações disponíveis, execute o seguinte comando:
+Para forçar o Windows Update a detectar imediatamente e instalar todas as atualizações disponíveis, execute o seguinte comando:
 
 ```
 Wuauclt /detectnow 
 ```
 
-Dependendo das atualizações que estão instaladas, você pode precisar reiniciar o computador, embora o sistema não notificará você disso. Para determinar se o processo de instalação for concluído, use o Gerenciador de tarefas para verificar se os processos de **Wuauclt** ou **Trusted Installer** ativamente não estão funcionando. Você também pode usar os métodos no [modo de exibição as atualizações instaladas no seu servidor de núcleo do servidor](#view-the-updates-installed-on-your-Server-Core-server) para verificar a lista de atualizações instaladas.
+Dependendo das atualizações que são instaladas, pode ser necessário reiniciar o computador, embora o sistema não o notifique sobre isso. Para determinar se o processo de instalação foi concluído, use o Gerenciador de tarefas para verificar se o **Wuauclt** ou **Trusted Installer** processos não estão funcionando ativamente. Você também pode usar os métodos [exibir as atualizações instaladas no seu servidor server Core](#view-the-updates-installed-on-your-Server-Core-server) para verificar a lista de atualizações instaladas.
 
 ## <a name="patch-the-server-with-wsus"></a>Patch do servidor com o WSUS 
 
-Se o servidor de núcleo do servidor é um membro de um domínio, você poderá configurá-lo para usar um servidor do WSUS com a diretiva de grupo. Para obter mais informações, baixe as [informações de referência de diretiva de grupo](https://www.microsoft.com/download/details.aspx?id=25250). Você também pode revisar as [Configurações de diretiva de grupo Configurar atualizações automáticas](../windows-server-update-services/deploy/4-configure-group-policy-settings-for-automatic-updates.md)
+Se o servidor Server Core é membro de um domínio, você pode configurá-lo para usar um servidor WSUS com a Política de Grupo. Para obter mais informações, baixe o [informações de referência de política de grupo](https://www.microsoft.com/download/details.aspx?id=25250). Você também pode examinar [configurar configurações de diretiva de grupo para atualizações automáticas](../windows-server-update-services/deploy/4-configure-group-policy-settings-for-automatic-updates.md)
 
-## <a name="patch-the-server-manually"></a>O servidor de patch manualmente
+## <a name="patch-the-server-manually"></a>Patch do servidor manualmente
 
-Baixe a atualização e disponibilizá-lo para a instalação do núcleo do servidor.
+Baixe a atualização e disponibilizá-lo para a instalação Server Core.
 Em um prompt de comando, execute o seguinte comando:
 
 ```
 Wusa <update>.msu /quiet 
 ```
 
-Dependendo das atualizações que estão instaladas, você pode precisar reiniciar o computador, embora o sistema não notificará você disso.
+Dependendo das atualizações que são instaladas, pode ser necessário reiniciar o computador, embora o sistema não o notifique sobre isso.
 
 Para desinstalar uma atualização manualmente, execute o seguinte comando:
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 696a29b2-d627-4c9a-a384-9c8aaf50bd23
-title: "Determinar o tipo de modelo de regra de declaração para usar"
-description: 
+title: Determinar o tipo de modelo de regra de declaração a ser usado
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,48 +10,49 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 129cd83be4cd8302bd170ba87aad58c50f636006
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59815847"
 ---
-# <a name="determine-the-type-of-claim-rule-template-to-use"></a>Determinar o tipo de modelo de regra de declaração para usar
+# <a name="determine-the-type-of-claim-rule-template-to-use"></a>Determinar o tipo de modelo de regra de declaração a ser usado
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
-Uma parte importante da criação de uma infraestrutura de \(AD FS\) de serviços de Federação do Active Directory é determinar o conjunto completo de regras de declaração — e quais correspondente reivindicar modelos de regra, você deve usar para criá-los — para cada parceiro participarão federação com sua organização. Você pode criar regras usando modelos de regra de declaração no AD FS gerenciamento snap\-in.  
+Uma parte importante da criação de um serviços de Federação do Active Directory \(do AD FS\) infraestrutura é determinar o conjunto completo de regras de declaração — e você deve usar para criá-los de modelos de regras de declaração de quais correspondentes — para cada parceiro que participa da federação com a sua organização. Criar regras usando modelos de regra de declaração no snap do gerenciamento do AD FS\-no.  
   
-Cada conjunto de regras de declaração que você configurar somente pode ser associado uma relação de confiança federada. Isso significa que você não pode criar um conjunto de regras em uma relação de confiança e usá-los para outras relações de confiança em seu serviço de Federação. Em vez disso, você pode facilmente criar regras de declaração modelos de regra para ajudar mais rapidamente a produzir um conjunto desejado de declarações que são acordados entre cada parceiro federado e sua organização.  
+Cada conjunto de regras de declaração que você configura só pode ser associado uma relação federada de confiança. Isso significa que você não pode criar um conjunto de regras em uma relação de confiança e usá-las em outras relações de confiança no Serviço de Federação. Em vez disso, você pode facilmente criar regras dos modelos de regra de declaração para ajudar a produzir um conjunto desejado de declarações, com a concordância dos parceiros federados e de sua organização.  
   
-Para obter mais informações sobre as regras e modelos de regra, consulte [a função de declaração regras](The-Role-of-Claim-Rules.md).  
+Para obter mais informações sobre regras e modelos de regras, consulte [The Role of Claim Rules](The-Role-of-Claim-Rules.md).  
   
-Antes de começar a determinar os tipos de modelos de regra de declaração, que você deve usar, considere as seguintes perguntas:  
+Antes de começar a determinar os tipos de modelos de regras de declaração que você deve usar, considere as seguintes perguntas:  
   
--   O que diz será fornecido por seus provedores de declarações confiável?  
+-   Quais declarações serão fornecidas por seus provedores de declarações confiáveis?  
   
--   Declarações do qual você confia de cada provedor de declarações?  
+-   Quais declarações de cada provedor de declarações você confia?  
   
--   Quais declarações são necessárias para as partes confiantes que confia esse serviço de Federação?  
+-   Quais declarações são exigidas pelas partes confiantes que confiam neste Serviço de Federação?  
   
--   Requerimentos judiciais ou Extrajudiciais você estão disposto a divulgar para cada terceiro?  
+-   Que declarações você está disposto a divulgar a cada terceira parte confiável?  
   
--   Quais usuários devem ter acesso a cada terceiro?  
+-   Quais usuários terão acesso a cada terceira parte confiável?  
   
-Responder a essas perguntas ajudarão a planejar um sólido solicitará a criação de regra. Ele também será ajudá-lo a criar uma autorização suave e estratégia de controle de acesso e tornar sua equipe de implantação mais eficiente durante a distribuição.  
+A resposta a essas perguntas ajudará a planejar um design sólido de regra de declaração. Também ajudará criar uma autorização suave e estratégia de controle de acesso e tornará sua equipe de implantação mais eficiente durante a distribuição.  
   
-A próxima seção, que você pode aprender sobre o tipo dos modelos de regra para selecionar para seu ambiente com base em sua empresa precisa.  
+Na próxima seção você pode aprender sobre o tipo de modelos de regras a selecionar para o seu ambiente com base no que a empresa precisa.  
   
 ## <a name="claim-rule-template-types"></a>Tipos de modelo de regra de declaração  
-A tabela a seguir descreve todos os tipos de modelos de regra reivindicação que você pode usar para criar regras usando o AD FS snap\-in Gerenciamento e as vantagens de usar um modelo digite sobre outro.  
+A tabela a seguir descreve todos os tipos de modelos de regra de declaração que você pode usar para criar regras usando o snap-gerenciamento do AD FS\-no e os benefícios do uso de um tipo de modelo em detrimento de outro.  
   
-|Tipo de modelo de regra|Descrição|Vantagens|Desvantagens|  
+|Tipos de modelo de regra|Descrição|Vantagens|Desvantagens|  
 |----------------------|---------------|--------------|-----------------|  
-|Passagem ou filtrar uma declaração de entrada|Usado para criar uma regra que irá passar por todos os valores de declaração para um tipo de declaração selecionado ou filtrar com base nos valores de declaração para que apenas determinados valores de declaração para um tipo de declaração selecionado passará por meio de declarações.<br /><br />Para obter mais informações, consulte [quando usar uma passagem ou uma regra de declaração de filtro](When-to-Use-a-Pass-Through-or-Filter-Claim-Rule.md).|-Pode ser usado para selecionar requerimentos judiciais ou Extrajudiciais específicos para ser aceito ou emitidos inalterada|-Declaração de tipo e o valor não podem ser alterados|  
-|Transformar uma declaração de entrada|Usado para criar uma regra que pode marcar uma declaração de entrada e mapeá-lo para um tipo de declaração diferente ou seu valor de declaração são mapeadas para um novo valor de declaração.<br /><br />Para obter mais informações, consulte [quando usar uma regra de declaração de transformação](When-to-Use-a-Transform-Claim-Rule.md).|-Pode ser usado para normalizar os tipos de declaração ou valores<br />-Pode substituir um sufixo e\ email de uma declaração de entrada|-Substituições de cadeia de caracteres mais complexas exigem uma regra personalizada|  
-|Enviar atributos LDAP como requerimentos judiciais ou Extrajudiciais|Usado para criar uma regra que selecionará os atributos de um repositório de atributo LDAP enviar como declarações para a parte confiante.<br /><br />Para obter mais informações, consulte [quando usar um atributos de LDAP enviar como requerimentos judiciais ou Extrajudiciais regra](When-to-Use-a-Send-LDAP-Attributes-as-Claims-Rule.md).|-Possa ser fonte declarações de qualquer loja de atributo DS\ AD/AD LDS<br />-Várias declarações podem ser emitidas uma única regra|-Lento desempenho – como resultado de pesquisa da conta<br />-Um filtro personalizado do LDAP não podem ser usados para consultar|  
-|Enviar a associação ao grupo como uma reivindicação|Usado para criar uma regra que pode enviar um tipo de declaração especificado e um valor quando um usuário é um membro de um grupo de segurança do Active Directory. Somente uma única declaração será enviada usando essa regra, com base no grupo que você selecionar.<br /><br />Para obter mais informações, consulte [quando usar uma associação de grupo Enviar como uma regra de declaração](When-to-Use-a-Send-Group-Membership-as-a-Claim-Rule.md).|-Rápido desempenho para a emissão de declarações de grupo – nenhuma pesquisa da conta|-O usuário deve ser um membro de um grupo local do Active Directory|  
-|Enviar requerimentos judiciais ou Extrajudiciais usando uma regra personalizada|Usado para criar uma regra personalizada que fornecerá opções mais avançadas de um modelo de regra padrão. Você escreve regras personalizadas com o AD FS reivindicar idioma de regra.<br /><br />Para obter mais informações, consulte [quando usar uma regra de declaração personalizada](When-to-Use-a-Custom-Claim-Rule.md).|-Pode ser usado para declarações de um repositório de atributo do SQL de origem<br />-Pode ser usado para especificar um filtro personalizado do LDAP<br />-Pode ser usado para emitir um PPID<br />-Pode ser usado com um repositório de atributo personalizado<br />-Pode ser usado para adicionar declarações somente para o conjunto de declarações de entrada<br />-Pode ser usado para enviar solicitações com base em mais de uma declaração de entrada|-Mais difícil configurar \-alguns rampa o tempo pode ser necessário para inicialmente obter informações importantes sobre a linguagem de regra de declaração|  
-|Permitir ou negar aos usuários com base em uma declaração de entrada|Usado para criar uma regra que irá permitir ou negar o acesso por usuários para a parte confiante, com base no tipo de valor de uma declaração de entrada.<br /><br />Para obter mais informações, consulte [quando usar uma regra de declaração de autorização](When-to-Use-an-Authorization-Claim-Rule.md).|-Simplifica o processo de autorização|-Exige que somente uma declaração tipo e um valor de solicitação de ser especificados<br />-Não oferece suporte a padrões correspondentes para valores de declaração|  
-|Permitir que todos os usuários|Usado para criar uma regra que permitirá que todos os usuários acessem o terceiro.<br /><br />Para obter mais informações, consulte [quando usar uma regra de declaração de autorização](When-to-Use-an-Authorization-Claim-Rule.md).|-Simples de configurar|-Menos segura do que usar a permitir ou negar a usuários com base em um modelo de declaração de entrada|  
+|Passar ou filtrar uma declaração de entrada|Usado para criar uma regra que passará todos os valores de declaração para um tipo selecionado ou filtrará declarações com base nos valores da declaração para que somente determinados valores de um tipo de declaração selecionado sejam passados.<br /><br />Para obter mais informações, consulte [When to Use a Pass Through or Filter Claim Rule](When-to-Use-a-Pass-Through-or-Filter-Claim-Rule.md).|-Pode ser usado para selecionar declarações específicas a serem aceitas ou emitidas inalteradas|-Declaração tipo e o valor não podem ser alterados|  
+|Transformar uma declaração de entrada|Usado para criar uma regra que pode selecionar uma declaração de entrada e mapeá-la para um tipo de declaração diferente ou mapear seu valor para um novo valor.<br /><br />Para obter mais informações, consulte [When to Use a Transform Claim Rule](When-to-Use-a-Transform-Claim-Rule.md).|-Pode ser usado para normalizar valores ou tipos de declaração<br />-Pode substituir uma e\-sufixo de email de uma declaração de entrada|-Substituições de cadeia de caracteres mais complexas requerem uma regra personalizada|  
+|Enviar atributos LDAP como declarações|Usado para criar uma regra que selecionará os atributos de um repositório de atributos LDAP para enviar como declarações à terceira parte confiável.<br /><br />Para obter mais informações, consulte [When to Use a Send LDAP Attributes as Claims Rule](When-to-Use-a-Send-LDAP-Attributes-as-Claims-Rule.md).|-Pode extrair declarações de qualquer AD DS\/repositório de atributos do AD LDS<br />-Várias declarações podem ser emitidas usando uma única regra|-Desempenho – lento como resultado da pesquisa de conta<br />-Não é possível usar um filtro LDAP personalizado para a consulta|  
+|Enviar associação de grupo como uma declaração|Usado para criar uma regra que pode enviar um tipo de declaração especificado e um valor quando um usuário é membro de um grupo de segurança do Active Directory. Apenas uma única declaração será enviada usando essa regra, com base no grupo selecionado.<br /><br />Para obter mais informações, consulte [When to Use a Send Group Membership as a Claim Rule](When-to-Use-a-Send-Group-Membership-as-a-Claim-Rule.md).|-Desempenho rápido para emitir declarações de grupo – nenhuma pesquisa de conta|-O usuário deve ser um membro de um grupo do Active Directory local|  
+|Enviar declarações usando uma regra personalizada|Usado para criar uma regra personalizada que forneça mais opções avançadas de um modelo de regra padrão. Você escreve regras personalizadas com o AD FS de linguagem da regra de declaração.<br /><br />Para obter mais informações, consulte [When to Use a Custom Claim Rule](When-to-Use-a-Custom-Claim-Rule.md).|-Pode ser usado para extrair declarações de um repositório de atributos SQL<br />-Pode ser usado para especificar um filtro LDAP personalizado<br />-Pode ser usado para emitir um PPID<br />-Pode ser usado com um repositório de atributos personalizados<br />-Pode ser usado para adicionar declarações somente ao conjunto de declarações de entrada<br />-Pode ser usado para enviar declarações com base em mais de uma declaração de entrada|-Mais difícil de configurar \- algum tempo de aprendizado pode ser necessário para obter inicialmente o conhecimento da linguagem de regra de declaração|  
+|Permitir ou negar usuários com base em uma declaração de entrada|Usado para criar uma regra que vai permitir ou negar o acesso de usuários à terceira parte confiável, com base no tipo e valor de uma declaração de entrada.<br /><br />Para obter mais informações, consulte [When to Use an Authorization Claim Rule](When-to-Use-an-Authorization-Claim-Rule.md).|-Simplifica o processo de autorização|-Exige que apenas um tipo de declaração e um valor de declaração de ser especificado<br />-Não oferece suporte a correspondência de padrões para valores de declaração|  
+|Permitir todos os usuários|Usado para criar uma regra que permitirá que todos os usuários acessem a terceira parte confiável.<br /><br />Para obter mais informações, consulte [When to Use an Authorization Claim Rule](When-to-Use-an-Authorization-Claim-Rule.md).|-Simples de configurar|-Menos seguro do que usar permitir ou negar usuários com base em um modelo de declaração de entrada|  
   
 

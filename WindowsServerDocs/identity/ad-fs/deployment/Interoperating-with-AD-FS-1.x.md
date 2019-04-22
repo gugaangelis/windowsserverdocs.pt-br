@@ -1,7 +1,7 @@
 ---
 ms.assetid: 97999892-29c6-4076-be19-5e5259d8ada6
-title: "Implantando servidores de Federação"
-description: 
+title: Implantando servidores de federação
+description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -10,39 +10,40 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
 ms.openlocfilehash: f80425b6f062040c51357353038fd07ff0a79ae6
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812167"
 ---
-# <a name="interoperating-with-ad-fs-1x"></a>Interoperando com o AD FS 1. x
+# <a name="interoperating-with-ad-fs-1x"></a>Interoperando com o AD FS 1.x
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Para fins de interoperabilidade entre \(AD FS\) serviços de Federação do Active Directory no Windows Server® 2012 e do AD FS 1. *x*, execute uma ou mais das seguintes tarefas, dependendo das necessidades da sua organização:  
+Para interoperabilidade entre serviços de Federação do Active Directory \(do AD FS\) no Windows Server® 2012 e do AD FS 1. *x*, execute uma ou mais das tarefas a seguir, dependendo das necessidades da sua organização:  
   
--   Planejar a interoperabilidade entre o AD FS no Windows Server 2012 e versões anteriores do AD FS e saiba que mais sobre a ID do nome do tipo de declaração. Para obter mais informações, consulte [planejamento para interoperabilidade com o AD FS 1. x](https://technet.microsoft.com/library/ff678040.aspx).  
+-   Planejar a interoperabilidade entre o AD FS no Windows Server 2012 e versões anteriores do AD FS e saiba que mais sobre a ID de nome de tipo de declaração. Para obter mais informações, consulte [planejamento para interoperabilidade com o AD FS 1.x](https://technet.microsoft.com/library/ff678040.aspx).  
   
--   Se você está enviando requerimentos judiciais ou Extrajudiciais de um serviço de Federação do AD FS no Windows Server 2012 pode ser consumido por um AD FS 1. *x* serviço de federação, consulte [lista de verificação: configurar o AD FS declarações enviar para um AD FS 1. x serviço de Federação](Checklist--Configuring-AD-FS-to-Send-Claims-to-an-AD-FS-1.x-Federation-Service.md).  
+-   Se você estiver enviando declarações de um serviço de Federação do AD FS no Windows Server 2012 que podem ser consumidos por um AD FS 1. *x* serviço de federação, consulte [lista de verificação: Configurar o AD FS para enviar as declarações para um serviço de Federação do AD FS 1.x](Checklist--Configuring-AD-FS-to-Send-Claims-to-an-AD-FS-1.x-Federation-Service.md).  
   
--   Se você está enviando requerimentos judiciais ou Extrajudiciais de um serviço de Federação do AD FS no Windows Server 2012, o que pode ser consumido por um aplicativo que está hospedado por um servidor Web executando o AD FS 1. *x* claims\ reconhecimento agente de Web, consulte [lista de verificação: configurar o AD FS declarações enviar para um AD FS 1. x agente da Web compatível com declarações](Checklist--Configuring-AD-FS-to-Send-Claims-to-an-AD-FS-1.x-Claims-Aware-Web-Agent.md).  
+-   Se você estiver enviando declarações de um serviço de Federação do AD FS no Windows Server 2012 que podem ser consumidos por um aplicativo que é hospedado por um servidor Web executando o AD FS 1. *x* declarações\-Agente Web com reconhecimento, consulte [lista de verificação: Configurar o AD FS para enviar as declarações para um agente Web com reconhecimento de declarações do AD FS 1.x](Checklist--Configuring-AD-FS-to-Send-Claims-to-an-AD-FS-1.x-Claims-Aware-Web-Agent.md).  
   
--   Se você está enviando requerimentos judiciais ou Extrajudiciais de um AD FS 1. *x* serviço de federação para ser consumido por um serviço de Federação do AD FS no Windows Server 2012, consulte [lista de verificação: configurar o AD FS para consumir declarações do AD FS 1. x](Checklist--Configuring-AD-FS--to-Consume-Claims-from-AD-FS-1.x.md).  
+-   Se você estiver enviando declarações de um AD FS 1. *x* serviço de Federação a ser consumido por um serviço de Federação do AD FS no Windows Server 2012, consulte [lista de verificação: Configurar o AD FS para consumir as declarações do AD FS 1.x](Checklist--Configuring-AD-FS--to-Consume-Claims-from-AD-FS-1.x.md).  
   
-## <a name="differences-between-federation-service-settings"></a>Diferenças entre as configurações de serviço de Federação  
-Embora a maioria do AD FS 1. *x* trabalho de configurações de serviço de federação de maneira semelhante do serviço de Federação do AD FS nas configurações do Windows Server 2012, alguns nomes de configuração mudaram. A tabela a seguir lista os nomes de configurações para um AD FS 1. *x* seus nomes equivalente para um serviço de Federação do AD FS no Windows Server 2012 e do serviço de Federação.  
+## <a name="differences-between-federation-service-settings"></a>Diferenças entre as configurações do serviço de Federação  
+Embora a maioria dos AD FS 1. *x* trabalho de configurações do serviço de federação de maneira semelhante, como o serviço de Federação do AD FS nas configurações do Windows Server 2012, alguns nomes de configuração foram alterados. A tabela a seguir lista os nomes das configurações de um AD FS 1. *x* serviço de Federação e seus nomes equivalentes para um serviço de Federação do AD FS no Windows Server 2012.  
   
-|Configuração de serviço de Federação do AD FS 1. x|Serviço de Federação equivalente do AD FS na configuração do Windows Server 2012  
+|Configuração de serviço de Federação do AD FS 1.x|Serviço de Federação equivalente do AD FS na configuração do Windows Server 2012  
 |----------------------------------------|---------------------------------------------------------------------------------------------------------- 
-|Parceiro de conta|Requerimentos judiciais ou Extrajudiciais provedor confiança  
-|Parceiro de recurso|Dependência de confiança de terceiros 
-|Aplicativo|Dependência de confiança de terceiros  
-|Propriedades do aplicativo|Dependência de propriedades de confiança de terceiros  
-|URL do aplicativo|Terceira identificador de terceiros e a URL de ponto de extremidade passivo WS\ federação  
-|Serviço de Federação URI|Identificador de serviço de Federação  
-|URL de ponto de extremidade de serviço de Federação|URL de ponto de extremidade passivo WS\ federação  
+|Parceiro de conta|Relação de confiança do provedor de declarações  
+|Parceiro de recurso|Objeto de confiança de terceira parte confiável 
+|Aplicativo|Objeto de confiança de terceira parte confiável  
+|Propriedades do Aplicativo|As propriedades da entidade de confiança de terceira parte confiável  
+|URL do aplicativo|Identificador de terceira parte confiável e WS\-URL de ponto de extremidade passivo da federação  
+|URI do serviço de Federação|Identificador do Serviço de Federação  
+|URL do ponto de extremidade de serviço de Federação|WS\-URL de ponto de extremidade passivo da federação  
   
 ## <a name="see-also"></a>Consulte também  
-[AD FS e interoperabilidade do AD FS 1. x](https://go.microsoft.com/fwlink/?LinkId=200776)  
+[O AD FS e interoperabilidade do AD FS 1.x](https://go.microsoft.com/fwlink/?LinkId=200776)  
   
 

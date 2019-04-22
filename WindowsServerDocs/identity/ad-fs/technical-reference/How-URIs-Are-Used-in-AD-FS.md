@@ -1,7 +1,7 @@
 ---
 ms.assetid: 53ee93e2-09ea-4f8b-adb7-c24c59f055ea
-title: "Como os URIs são usados no AD FS"
-description: 
+title: Como URIs são usados no AD FS
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,72 +10,73 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 305bf0cece742c961604dacda7e27b8eac8065e5
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812217"
 ---
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
-# <a name="how-uris-are-used-in-ad-fs"></a>Como os URIs são usados no AD FS
-Um Uniform Resource Identifier \(URI\) é uma cadeia de caracteres que é usada como um identificador exclusivo.  No AD FS, os URIs são usados para identificar os endereços de rede de parceiros e objetos de configuração.  Quando usado para identificar os endereços de rede de parceiros, o URI é sempre uma URL.  Quando usado para identificar os objetos de configuração, o URI pode ser um URN ou uma URL.  Para obter informações mais gerais sobre URIs, consulte [RFC 2396](https://go.microsoft.com/fwlink/?LinkId=48289) e [RFC 3986](https://go.microsoft.com/fwlink/?LinkId=90453).  
+# <a name="how-uris-are-used-in-ad-fs"></a>Como URIs são usados no AD FS
+Um Uniform Resource Identifier \(URI\) é uma cadeia de caracteres que é usada como um identificador exclusivo.  No AD FS, os URIs são usados para identificar os endereços de rede do parceiro e objetos de configuração.  Quando usado para identificar os endereços de rede do parceiro, o URI é sempre uma URL.  Quando usado para identificar objetos de configuração, o URI pode ser uma URL ou um URN.  Para obter mais informações sobre URIs, consulte [RFC 2396](https://go.microsoft.com/fwlink/?LinkId=48289) e [RFC 3986](https://go.microsoft.com/fwlink/?LinkId=90453).  
   
-## <a name="uris-as-partner-network-addresses"></a>URIs como endereços de rede de parceiros  
-A seguir estão as URLs de endereço de rede geralmente são manipuladas por administradores do AD FS.  
+## <a name="uris-as-partner-network-addresses"></a>URIs como endereços de rede do parceiro  
+A seguir estão as URLs de endereço de rede mais manipuladas pelos administradores do AD FS.  
   
--   As URLs do serviço de federação, incluindo WS\ federação, SAML, WS\ confiança, metadados de federação, WS\-MetadataExchange, privacidade e as URLs de organização  
+-   As URLs do serviço de federação, incluindo WS\-Federation, SAML, WS\-confiar, metadados de federação, WS\-MetadataExchange, privacidade e as URLs da organização  
   
--   As URLs de uma terceira confiança de terceiros, incluindo federação WS\, SAML e URLs de metadados de Federação  
+-   As URLs de uma terceira parte confiável, incluindo WS\-Federation, SAML e URLs de metadados de Federação  
   
--   As URLs de uma relação de confiança de provedor de declarações, incluindo federação WS\, SAML e URLs de metadados de Federação  
+-   As URLs de uma relação de confiança de provedor de declarações, incluindo WS\-Federation, SAML e URLs de metadados de Federação  
   
 ## <a name="uris-as-object-identifiers"></a>URIs como identificadores de objeto  
-A tabela a seguir descreve os identificadores que geralmente são manipulados por administradores do AD FS.  
+A tabela a seguir descreve os identificadores mais manipulados pelos administradores do AD FS.  
   
-|Nome de identificador|Descrição|Comparações|  
+|Nome do identificador|Descrição|Comparações|  
 |-------------------|---------------|---------------|  
-|Identificador de serviço de Federação|Esse identificador é usado para identificar o serviço de Federação.  Ele é usado pelas partes confiantes que usam declarações desse serviço de federação, bem como provedores de declarações que o problema diz ao serviço de Federação.|Quando um usuário solicita requerimentos judiciais ou Extrajudiciais de um provedor de requerimentos judiciais ou Extrajudiciais por este serviço de federação, o identificador de serviço de Federação será usado para identificar o destino para que as declarações.<br /><br />Quando esse serviço de Federação recebe as declarações de um provedor de declarações, ele verificará para garantir que as declarações passam para ele, procurando por seu identificador de serviço de Federação.<br /><br />Quando um terceiro estiver recebendo requerimentos judiciais ou Extrajudiciais desse serviço de federação, o terceiro verificará se o emissor das declarações coincide com o identificador de serviço de Federação.|  
-|Terceira identificador de terceiros|Esse identificador é usado para identificar o terceiro para esse serviço de Federação.  Ele é usado quando emitir declarações para a parte confiante.|Quando um usuário solicita requerimentos judiciais ou Extrajudiciais desse serviço de federação para o terceiro, o identificador de terceiros terceira será usado para identificar o terceiro para o qual as declarações devem ser direcionadas.  Essa comparação é feita usando o prefixo \(see below\) correspondente.<br /><br />Quando o terceiro recebe as declarações, ele verificará seu identificador no token de segurança para garantir que as declarações são direcionadas para ele.|  
-|Identificador do provedor de declarações|Esse identificador é usado para identificar o provedor de declarações para esse serviço de Federação.  Ele é usado quando o recebimento de declarações do provedor de declarações.|Quando esse serviço de Federação está recebendo requerimentos judiciais ou Extrajudiciais do provedor de declarações, esse serviço de Federação verificará se o emissor das declarações coincide com o identificador do provedor de declarações.|  
-|Tipo de declaração|Esse identificador é usado para definir o tipo de declaração.  Ele é usado por esse serviço de federação, provedores de declarações e partes confiantes ao enviar e receber solicitações.|Quando o serviço de Federação recebe declarações de um provedor de declarações, as regras de declaração associadas a relação de confiança de provedor correspondente declarações permitem que o administrador comparar os tipos de declaração e processar solicitações.  As regras de declaração associadas a uma relação de confiança terceira parte também permitem que o administrador comparar os tipos de declaração de requerimentos judiciais ou Extrajudiciais oriundo das regras de confiança do provedor de declarações e decidir quais alega dar emitir.|  
+|Identificador do Serviço de Federação|Esse identificador é usado para identificar o Serviço de Federação.  Ele é usado pelas partes confiáveis que usam declarações deste Serviço de Federação, bem como provedores de declarações que emitem declarações para esse Serviço de Federação.|Quando um usuário solicita declarações de um provedor de declarações para esse serviço de federação, o identificador do serviço de Federação será usado para identificar o destino para as declarações.<br /><br />Quando esse Serviço de Federação receber as declarações de um provedor de declarações, ele verificará para garantir que as declarações tenham o escopo relevante procurando pelo seu identificador de Serviço de Federação.<br /><br />Quando uma terceira parte confiável estiver recebendo declarações desse serviço de federação, a terceira parte confiável verificará se o emissor das declarações corresponde ao identificador do Serviço de Federação.|  
+|Identificador terceira parte confiável|Esse identificador é usado para identificar a terceira parte confiável para esse Serviço de Federação.  Ele é usado ao emitir declarações à terceira parte confiável.|Quando um usuário solicitar declarações desse serviço de federação à terceira parte confiável, o identificador da terceira parte será usado para identificar a terceira parte confiável para a qual as declarações devem ser direcionadas.  Essa comparação é feita usando a correspondência de prefixo \(veja abaixo\).<br /><br />Ao receber as declarações, a terceira parte confiável verifica seu identificador no token de segurança para garantir que as declarações sejam direcionadas a ela.|  
+|Identificador do provedor de declarações|Esse identificador é usado para identificar o provedor de declarações para esse Serviço de Federação.  Ele é usado ao receber declarações do provedor de declarações.|Quando esse Serviço de Federação está recebendo declarações do provedor de declarações, esse Serviço de Federação verificará se o emissor das declarações corresponde ao identificador do provedor de declarações.|  
+|Tipo de declaração|Esse identificador é usado para definir o tipo de declaração.  Ele é usado por esse Serviço de Federação, provedores de declarações e terceiras partes confiáveis ao enviar e receber declarações.|Quando o Serviço de Federação recebe declarações de um provedor de declarações, as regras de declaração associadas à confiança do provedor de declarações correspondente permitem que o administrador compare os tipos de declaração e processe as declarações.  As regras de declaração associadas a um objeto de confiança de terceira parte confiável também permitem que o administrador compare os tipos de declaração das declarações que vem das regras de confiança do provedor de declarações e decida quais declarações emitir.|  
   
-## <a name="uri-prefix-matching-for-relying-party-identifiers"></a>Prefixo URI correspondência para terceira identificadores de terceiros  
-A sintaxe de caminho de um URI é organizada hierarquicamente e é delimitada por todos os "\ /"caracteres ou todas as":" caracteres.  Portanto, o caminho pode ser dividido em seções de caminho com base no caractere de delimitação.  Quando prefixo correspondência, cada seção deve ser uma correspondência completa de acordo com as regras correspondentes \ (essas regras regem o uso de maiusculas de matches\). Para saber mais sobre as regras de correspondência, veja a RFC mencionado acima.  
+## <a name="uri-prefix-matching-for-relying-party-identifiers"></a>Correspondência de prefixo do URI para identificadores de terceira parte confiável  
+A sintaxe do caminho de um URI é organizada hierarquicamente e é delimitada por todos os "\/"caracteres ou tudo":" caracteres.  Portanto, o caminho pode ser dividido em seções de caminho com base no caractere de delimitação.  Ao realizar correspondência de prefixo, cada seção deve ser uma correspondência completa de acordo com as regras de correspondência \(essas regras regem o uso de maiusculas e minúsculas de correspondências\). Para obter mais informações sobre regras de correspondência, consulte os RFCs mencionados acima.  
   
-Quando um terceiro é identificado em uma solicitação ao serviço de federação, o AD FS usa o prefixo lógica de correspondência para determinar se há uma correspondência terceira parte relação de confiança no banco de dados de configuração do AD FS.  
+Quando uma terceira parte confiável é identificada em uma solicitação ao serviço de federação, o AD FS usa a lógica de correspondência de prefixo para determinar se há um objeto de confiança de terceira parte confiável correspondentes no banco de dados de configuração do AD FS.  
   
-Por exemplo, se o identificador de terceiros terceira no banco de dados de configuração do AD FS \(URI1\) é um prefixo para o identificador de terceiros confiante na entrada solicitar \(URI2\), em seguida, a seguir deve ser verdadeira:  
+Por exemplo, se o identificador de terceira parte confiável no banco de dados de configuração do AD FS \(URI1\) é um prefixo para o identificador de terceira parte confiável na solicitação de entrada \(URI2\), em seguida, o seguinte deve ser verdadeiro:  
   
--   À direita delimitadores \(slashes and colons\) de caminho devem ser ignoradas seções ou autoridades  
+-   Delimitadores de espaçamento \(barras e dois-pontos\) do caminho de seções ou autoridades devem ser ignoradas  
   
--   As partes de esquema e a autoridade de URI1 e URI2 devem ser uma correspondência exata de diferenciação de maiusculas e minúsculas  
+-   As partes do esquema e da autoridade de URI1 e URI2 devem ser uma correspondência exata sem diferenciação entre maiúsculas e minúsculas  
   
--   Cada seção caminho da URI1 deve ser uma correspondência exata \ (com base em chosen\ a diferenciação de maiusculas e minúsculas) para a seção correspondente do caminho de URI2  
+-   Cada seção do caminho de URI1 deve ser uma correspondência exata \(com base em maiusculas e minúsculas escolhida\) para a seção correspondente do caminho de URI2  
   
--   URI2 pode ter mais seções de caminho que URI1, mas URI1 não deve ter mais seções de caminho que URI2  
+-   URI2 pode ter mais seções de caminho que URI1, mas URI1 não pode ter mais seções de caminho que URI2  
   
 -   URI1 não pode ter mais seções de caminho que URI2  
   
--   Se URI1 tem uma cadeia de caracteres de consulta, ele deve corresponder exatamente a uma cadeia de caracteres de consulta URI2  
+-   Se URI1 tiver uma cadeia de caracteres de consulta, ela deve corresponder exatamente a uma cadeia de caracteres de consulta de URI2  
   
--   Se URI1 tiver um fragmento, ele deve corresponder exatamente a um fragmento URI2  
+-   Se URI1 tiver um fragmento, ele deve corresponder exatamente a um fragmento de URI2  
   
 A tabela a seguir fornece exemplos adicionais.  
   
-|Dependendo do identificador de terceiros no banco de dados de configuração do AD FS|Identificador de terceiros na mensagem de solicitação de dependência|Identificador correspondências solicitar o identificador de configuração?|Motivo|  
+|Identificador de terceira parte confiável no banco de dados de configuração do AD FS|Identificador de terceira parte confiável na mensagem de solicitação|O identificador de solicitação corresponde ao identificador de configuração?|Motivo|  
 |------------------------------------------------------------|-----------------------------------------------|------------------------------------------------------------|----------|  
-|http:///\/contoso.com|http:///\/contoso.com|TRUE|Correspondência exata|  
-|http:///\/contoso.com\/|http:///\/contoso.com|TRUE|Barras à direita são ignoradas|  
-|http:///\/contoso.com|http:///\/contoso.com\/|TRUE|Barras à direita são ignoradas|  
-|http:///\/contoso.com|http:///\/contoso.com\/hr|TRUE|URI1 não tem nenhum caminho e correspondências esquema e autoridade para URI2|  
-|http:///\/contoso.com\/hr|http:///\/contoso.com\/hr\/Web|TRUE|Seções do primeiro caminho correspondem, URI1 não tem nenhuma segunda seção caminho|  
-|http:///\/contoso.com\/hr|http:///\/contoso.com\/hr\/web\/?m\=t|TRUE|Mesmos motivos acima, cadeia de caracteres de consulta não altera qualquer coisa|  
-|http:///\/contoso.com\/hr\/|http:///\/contoso.com\/hrw\/Main|FALSE|Caminho URI1 seção 1 não coincide com a seção de caminho URI2 1|  
-|http:///\/contoso.com\/hr|http:///\/contoso.com|FALSE|URI1 tem mais seções de caminho que URI2|  
-|http:///\/contoso.com\/hr|http:///\/contoso.com\/hrweb|FALSE|Seções do primeiro caminho não coincidem|  
-|http:///\/contoso.com\/?m\=t|http:///\/contoso.com\/?m\=f|FALSE|Partes de cadeia de caracteres de consulta não coincidem|  
-|https:\/\/contoso.com|http:///\/contoso.com|FALSE|Partes do esquema não coincidem|  
-|http:///\/STS.contoso.com|http:///\/contoso.com|FALSE|Partes de autoridade não coincidem|  
-|http:///\/contoso.com|http:///\/STS.contoso.com|FALSE|Partes de autoridade não coincidem|  
+|http:\/\/contoso.com|http:\/\/contoso.com|TRUE|Correspondência exata|  
+|http:\/\/contoso.com\/|http:\/\/contoso.com|TRUE|Barras à direita são ignoradas|  
+|http:\/\/contoso.com|http:\/\/contoso.com\/|TRUE|Barras à direita são ignoradas|  
+|http:\/\/contoso.com|http:\/\/contoso.com\/hr|TRUE|O URI1 não tem caminho e combina esquema e autoridade com URI2|  
+|http:\/\/contoso.com\/hr|http:\/\/contoso.com\/hr\/web|TRUE|As primeiras seções do caminho são correspondentes, URI1 não tem nenhuma segunda seção do caminho|  
+|http:\/\/contoso.com\/hr|http:\/\/contoso.com\/hr\/web\/? m\=t|TRUE|Mesmos motivos que os acima, a cadeia de caracteres de consulta não altera nada|  
+|http:\/\/contoso.com\/hr\/|http:\/\/contoso.com\/hrw\/main|FALSE|A seção 1 do caminho do URI1 não coincide com a seção do caminho de URI2 1|  
+|http:\/\/contoso.com\/hr|http:\/\/contoso.com|FALSE|URI1 tem mais seções de caminho que URI2|  
+|http:\/\/contoso.com\/hr|http:\/\/contoso.com\/hrweb|FALSE|As primeiras seções do caminho não coincidem|  
+|http:\/\/contoso.com\/?m\=t|http:\/\/contoso.com\/?m\=f|FALSE|As partes da cadeia de caracteres de consulta não coincidem|  
+|https:\/\/contoso.com|http:\/\/contoso.com|FALSE|Partes do esquema não coincidem|  
+|http:\/\/sts.contoso.com|http:\/\/contoso.com|FALSE|As partes de autoridade não coincidem|  
+|http:\/\/contoso.com|http:\/\/sts.contoso.com|FALSE|As partes de autoridade não coincidem|  
   
 

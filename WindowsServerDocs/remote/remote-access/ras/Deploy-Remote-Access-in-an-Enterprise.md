@@ -1,0 +1,78 @@
+---
+title: Implantar o Acesso Remoto em uma Empresa
+description: Este tópico fornece uma introdução ao cenário do DirectAccess no Windows Server 2016 para a empresa.
+manager: brianlic
+ms.custom: na
+ms.prod: windows-server-threshold
+ms.reviewer: na
+ms.suite: na
+ms.technology:
+- networking-ras
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: 4781df0a-158b-4562-b8f5-32b27615a4f8
+ms.author: pashort
+author: shortpatti
+ms.openlocfilehash: f110ad945139da3b07b33bbb0adb3e8084743fdb
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812237"
+---
+# <a name="deploy-remote-access-in-an-enterprise"></a>Implantar o Acesso Remoto em uma Empresa
+
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+
+Este tópico fornece uma introdução ao cenário do DirectAccess para a Empresa.  
+  
+  
+> [!IMPORTANT]  
+> Para implantar o DirectAccess usando este guia, você deve usar um servidor DirectAccess que está executando o Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012.  
+  
+## <a name="before-you-begin-deploying-see-the-list-of-unsupported-configurations-known-issues-and-prerequisites"></a>Antes de iniciar a implantação, consulte a lista de configurações sem suporte, de problemas conhecidos e de pré-requisitos  
+  
+-   [Configurações sem suporte do DirectAccess](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/directaccess-unsupported-configurations)  
+  
+-   [Questões conhecidas do DirectAccess](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/directaccess-known-issues)  
+  
+-   [Pré-requisitos de pré-requisitos para implantação do DirectAccess)](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/prerequisites-for-deploying-directaccess)  
+  
+## <a name="BKMK_OVER"></a>Descrição do cenário  
+O acesso remoto inclui uma série de recursos corporativos, incluindo diversos servidores de acesso remoto em uma carga de cluster balanceada com o NLB (Balanceamento de Carga da Rede) do Windows ou com um balanceador externo de carga, além de instalação de uma implantação multissite com servidores de acesso remoto situados em locais geograficamente dispersos e implantação do DirectAccess com autenticação de cliente de dois fatores usando OTP (senha de uso único).  
+  
+## <a name="in-this-scenario"></a>Neste cenário  
+Cada cenário corporativo é descrito em um documento que inclui instruções de planejamento e implantação. Para obter mais informações, consulte:  
+  
+-   [Implantar o acesso remoto em um cluster](cluster/Deploy-Remote-Access-In-Cluster.md)  
+  
+-   [Implantar vários servidores de acesso remoto em uma implantação multissite](multisite/Deploy-Multiple-Remote-Access-Servers-in-a-Multisite-Deployment.md)  
+  
+-   [Implantar acesso remoto com autenticação OTP](otp/Deploy-RA-OTP.md)  
+  
+-   [Implantar o acesso remoto em um ambiente de várias florestas](multi-forest/Deploy-Remote-Access-in-a-Multi-Forest-Environment.md)  
+  
+## <a name="BKMK_APP"></a>Aplicativos práticos  
+Os cenários corporativos do acesso remoto fornecem:  
+  
+-   **Maior disponibilidade**. Implantação de vários servidores de acesso remoto em um cluster fornece a escalabilidade e aumenta a capacidade para taxa de transferência e o número de usuários. O balanceamento de carga do cluster fornece alta disponibilidade. Se um servidor no cluster falhar, os usuários remotos podem continuar acessando a rede corporativa interna por meio de um servidor diferente no cluster. O failover é transparente quando os clientes se conectam ao cluster utilizando um endereço IP virtual (VIP).  
+  
+-   **Ease-of-management**. Um cluster ou implantação multissite pode ser configurada e gerenciada como uma única entidade usando o console de gerenciamento de acesso remoto em execução em um dos servidores de cluster. Além disso, uma implantação multissite permite que os administradores alinhem a implantação de Acesso Remoto a sites do Active Directory fornecendo a arquitetura simplificada. As configurações compartilhadas podem ser facilmente definidas entre servidores de cluster ou em todos os servidores de ponto de entrada multissite. As configurações de Acesso Remoto podem ser gerenciadas a partir de qualquer um dos servidores no cluster ou na implantação, ou remotamente utilizando as RSAT (Ferramentas de Administração do Servidor Remoto). Além disso, todo o cluster ou implantação multissite podem ser monitorados a partir de um único console de Gerenciamento de Acesso Remoto.  
+  
+-   **Eficiência de custo**. Uma implantação multissite do acesso remoto permite que as empresas implantem servidores de acesso remoto em diversos sites correspondentes a locais de clientes. Isso fornece uma experiência de acesso previsível para clientes remotos independentemente de local e reduz os custos e largura de banda da intranet ao rotear o tráfego do cliente na Internet para o servidor de Acesso Remoto mais próximo.  
+  
+-   **Segurança**. Implantação de autenticação de cliente forte com uma senha única (OTP) em vez de senha padrão do Active Directory aumenta a segurança.  
+  
+## <a name="BKMK_NEW"></a>Funções e recursos incluídos neste cenário  
+A tabela a seguir lista funções e recursos utilizados no cenário corporativo:  
+  
+|Função/recurso|Como este cenário tem suporte|  
+|---------|-----------------|  
+|Função servidor de Acesso Remoto:|A função é instalada e desinstalada pelo console Gerenciador do Servidor. Essa função engloba o DirectAccess, que era anteriormente um recurso no Windows Server 2008 R2 e Serviços de Roteamento e Acesso Remoto que eram anteriormente um serviço de função sob a função de servidor de Serviços de Acesso e Política de Rede (NPAS). A função Acesso Remoto consiste em dois componentes:<br /><br />1.  DirectAccess e o roteamento e os serviços de acesso remoto (RRAS) VPN do DirectAccess e VPN são gerenciados juntos no console de gerenciamento de acesso remoto.<br />2.  Recursos de roteamento de RRAS-roteamento de RRAS são gerenciados no console de roteamento e acesso remoto legado.<br /><br />A Função Servidor de Acesso Remoto depende dos seguintes recursos de servidor:<br /><br />-O Internet Information Services (IIS) - esse recurso é necessário para configurar a rede local padrão e o servidor de investigação da web.<br />-Recurso de Console de gerenciamento de política grupo - o recurso é necessário pelo DirectAccess para criar e gerenciar os objetos de diretiva de grupo (GPOs) no Active Directory e deve ser instalado como um recurso necessário para a função de servidor.|  
+|Recurso Ferramentas de Gerenciamento de Acesso Remoto|Este recurso é instalado da seguinte maneira:<br /><br />– Ele é instalado por padrão em um servidor de acesso remoto quando a função acesso remoto está instalada e oferece suporte a interface de usuário do console de gerenciamento remoto.<br />-Ele pode ser instalado opcionalmente em um servidor que não executa a função de servidor de acesso remoto. Neste caso, ele é usado para gerenciamento remoto de um computador de Acesso Remoto que executa o DirectAccess e VPN.<br /><br />O recurso de Ferramentas de Gerenciamento de Acesso Remoto consiste em:<br /><br />1.  GUI de Acesso Remoto e Ferramentas de Linha de Comando<br />2.  Módulo de Acesso Remoto para o Windows PowerShell<br /><br />As dependências incluem:<br /><br />1.  Console de gerenciamento de política de grupo<br />2.  Kit de Administração do Gerenciador de Conexões RAS (CMAK)<br />3.  Windows PowerShell 3.0<br />4.  Ferramentas e Infraestrutura de Gerenciamento Gráfico|  
+|NLB do Windows|Este recurso permite o balanceamento de carga de diversos servidores de Acesso Remoto.|  
+  
+
+  
+
+

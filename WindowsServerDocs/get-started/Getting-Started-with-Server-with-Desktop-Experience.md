@@ -1,5 +1,5 @@
 ---
-title: Instalar o Servidor com Experiência Desktop
+title: Instalar o Server com a Experiência Desktop
 description: 'Explica como obter e instalar uma instalação de Servidor com Experiência Desktop '
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -15,17 +15,17 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: eb2e5be2ed19fe7cd64f6c6bd64ca9afafd93bff
-ms.sourcegitcommit: 4b9b21ca1f366388a78ead7413cb581f2b23d4c6
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "2711801"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812307"
 ---
-# Instalar o Servidor com Experiência Desktop
+# <a name="install-server-with-desktop-experience"></a>Instalar o Server com a Experiência Desktop
 > Aplica-se a: Windows Server 2016
   
 
-Ao instalar o Windows Server 2016 usando o Assistente de Instalação, é possível escolher entre o **Windows Server 2016** e o **Windows Server (Servidor com Experiência Desktop)**. A opção Servidor com Experiência Desktop é o equivalente do Windows Server 2016 à opção Instalação completa disponível no Windows Server 2012 R2 com o recurso Experiência Desktop instalado. Se você não fizer uma escolha no Assistente de instalação, o **Windows Server 2016** será instalado. Essa é a opção de instalação do **Server Core**.
+Ao instalar o Windows Server 2016 usando o Assistente de Instalação, é possível escolher entre o **Windows Server 2016** e o **Windows Server (Servidor com Experiência Desktop)**. A opção Servidor com Experiência Desktop é o equivalente do Windows Server 2016 à opção Instalação completa disponível no Windows Server 2012 R2 com o recurso Experiência Desktop instalado. Se você não fizer uma escolha no Assistente de instalação, o **Windows Server 2016**será instalado. Essa é a opção de instalação do **Server Core**.
 
 A opção Servidor com Experiência Desktop instala a interface de usuário padrão e todas as ferramentas, incluindo recursos de experiência do cliente que exigiam uma instalação separada no Windows Server 2012 R2. As funções e recursos do servidor são instalados com o Gerenciador de Servidores ou por outros métodos. Comparando com a opção Server Core, requer maior espaço em disco e tem mais requisitos de manutenção, portanto recomendamos que você escolha a instalação Server Core, a menos que tenha uma necessidade específica dos elementos adicionais da interface do usuário e das ferramentas gráficas de gerenciamento que estão incluídas na opção Servidor com Experiência Desktop. Se você achar que pode trabalhar sem os elementos adicionais, consulte [Install Server Core](Getting-Started-with-Server-Core.md) (Instalar o Server Core). Para uma opção ainda mais leve, consulte [Install Nano Server](Getting-Started-with-Nano-Server.md) (Instalar o Nano Server).
 
@@ -39,22 +39,22 @@ A opção Servidor com Experiência Desktop instala a interface de usuário padr
 
 **Instale, configure, desinstale funções de servidor remotamente:** com o Gerenciador do Servidor, com o Servidor Remoto, com as RSAT ou com o Windows PowerShell.
 
-**Console de Gerenciamento Microsoft: instalado**
+**Microsoft Management Console: instalado**
 
-## Cenários de instalação
+## <a name="installation-scenarios"></a>Cenários de instalação
 
-### Avaliação
+### <a name="evaluation"></a>Avaliação
 Você pode obter uma cópia de avaliação de 180 dias licenciada do Windows Server em [Avaliações do Windows Server](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016). Escolha **Windows Server 2016 | Opção ISO de 64 bits** para download, ou visite **Windows Server 2016 | Laboratório virtual**.
 
 > [!IMPORTANT]  
 > Para versões do Windows Server 2016 anteriores a 14393.0.161119-1705.RS1_REFRESH, você só pode executar essa conversão de avaliação para Retail com o Windows Server 2016 que foi instalado usando a opção de Experiência Desktop (não a opção Server Core). A partir da versão 14393.0.161119-1705. RS1_REFRESH e versões posteriores, você pode converter edições de avaliação em Retail, independentemente da opção de instalação usada.
 
 
-### Instalação limpa
+### <a name="clean-installation"></a>Instalação limpa
 
 Para instalar a opção Servidor com Experiência Desktop a partir da mídia, insira a mídia em uma unidade, reinicie o computador e execute Setup.exe. No assistente exibido, selecione **Windows Server (Servidor com Experiência Desktop)** e, em seguida, conclua o assistente.
 
-### Atualizar, Atualização (Upgrade)
+### <a name="upgrade"></a>Atualizar, Atualização (Upgrade)
 **Atualizar** significa mudar do seu sistema operacional existente para uma versão mais recente, mantendo o mesmo hardware.
 
 Se você já tiver uma instalação completa do produto Windows Server apropriado, é possível atualizá-la para uma instalação Servidor com Experiência Desktop na edição apropriada do Windows Server 2016, conforme indicado abaixo.
@@ -86,7 +86,7 @@ Se aparecer mais de uma edição na coluna à direita, a atualização para **qu
 
 Para muitas opções adicionais para mover para o Windows Server 2016, como a conversão da licença entre edições licenciadas por volume, edições de avaliação e outras, confira os detalhes em [Opções de atualização](Supported-Upgrade-Paths.md).
 
-### Migração
+### <a name="migration"></a>Migração
 **Migração** significa mudar do seu sistema operacional existente para o Windows Server 2016 executando uma instalação limpa em um conjunto diferente de hardware ou máquina virtual e, em seguida, transferir as cargas de trabalho do servidor mais antigo para o novo servidor. A migração, que pode variar consideravelmente dependendo das funções de servidor instaladas, é discutida em detalhes em [Instalação, atualização e migração do Windows Server](https://technet.microsoft.com/windowsserver/dn458795).
 
 A capacidade de migrar varia entre as diferentes funções de servidor. A grade a seguir explica suas opções de migração e atualização de funções de servidor, especificamente ao mover para o Windows Server 2016. Para obter guias de migração sobre funções específicas, visite [Migrar funções e recursos no Windows Server](https://technet.microsoft.com/windowsserver/jj554790.aspx). Para saber mais sobre instalação e atualização, confira [Instalação, atualização e migração do Windows Server](https://technet.microsoft.com/windowsserver/dn458795).
@@ -95,13 +95,13 @@ A capacidade de migrar varia entre as diferentes funções de servidor. A grade 
 |-------------------|----------|--------------|--------------|----------|  
 |Serviços de Certificados do Active Directory| Sim|    Sim|    Sim|    Não|
 |Active Directory Domain Services|  Sim|    Sim|    Sim|    Sim|
-|Serviços de Federação do Active Directory|  Não| Não| Sim|    Não (os novos nós precisam ser adicionados ao farm)|
+|Serviços de Federação do Active Directory (AD FS)|  Não| Não| Sim|    Não (os novos nós precisam ser adicionados ao farm)|
 |Active Directory Lightweight Directory Services|   Sim|    Sim|    Sim|    Sim|
 |Active Directory Rights Management Services|   Sim|    Sim|    Sim|    Não|
-|Cluster de failover|Sim com o processo [Atualização sem interrupção do sistema operacional do cluster](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade) contém o nó Pause-Drain, Evict, atualização para o Windows Server 2016 e o reingresso no cluster original. Sim, quando o servidor é removido pelo cluster para atualização e adicionado a um cluster diferente.|Não enquanto o servidor fizer parte de um cluster. Sim, quando o servidor é removido pelo cluster para atualização e adicionado a um cluster diferente.  |Sim|Não para Clusters de Failover no Windows Server 2012. Sim para Clusters de Failover do Windows Server 2012 R2 com máquinas virtuais do Hyper-V ou Clusters de Failover do Windows Server 2012 R2 executando a função Servidor de Arquivos de Escalabilidade Horizontal. confira [Atualização sem interrupção do sistema operacional do cluster](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade).|
+|Cluster de failover|Sim com o processo [Atualização sem interrupção do sistema operacional do cluster](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)contém o nó Pause-Drain, Evict, atualização para o Windows Server 2016 e o reingresso no cluster original. Sim, quando o servidor é removido pelo cluster para atualização e adicionado a um cluster diferente.|Não enquanto o servidor fizer parte de um cluster. Sim, quando o servidor é removido pelo cluster para atualização e adicionado a um cluster diferente.  |Sim|Não para Clusters de Failover no Windows Server 2012. Sim para Clusters de Failover do Windows Server 2012 R2 com máquinas virtuais do Hyper-V ou Clusters de Failover do Windows Server 2012 R2 executando a função Servidor de Arquivos de Escalabilidade Horizontal. confira [Atualização sem interrupção do sistema operacional do cluster](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade).|
 |Serviços de Arquivo e Armazenamento| Sim|    Sim|    Varia de acordo com o sub-recurso|  Não|
 |Serviços de impressão e fax|    Não| Não| Sim (Printbrm.exe)| Não|
-|Serviços da área de trabalho Remota|   Sim, para todas as subfunções, mas o modo de farm misto não é compatível|   Sim, para todas as subfunções, mas o modo de farm misto não é compatível|   Sim|    Não|
+|Serviços da Área de Trabalho Remota|   Sim, para todas as subfunções, mas o modo de farm misto não é compatível|   Sim, para todas as subfunções, mas o modo de farm misto não é compatível|   Sim|    Não|
 |Servidor Web (IIS)|  Sim|    Sim|    Sim|    Não|
 |Experiência do Windows Server Essentials|  Sim|    N/D, novo recurso|  Sim|    Não|
 |Windows Server Update Services|    Sim|    Sim|    Sim|    Não|

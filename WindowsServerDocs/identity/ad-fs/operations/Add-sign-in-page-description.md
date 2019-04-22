@@ -1,7 +1,7 @@
 ---
 ms.assetid: 330c7b61-dde0-432f-9b74-d250ad9cc808
-title: "Adicionar sign\\ na página de descrição"
-description: 
+title: Adicionar inscrição\-na descrição de página
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,28 +9,29 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 128a4ffd8d4b9dfcfe5f0e8e2df8a0e1505cbb24
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.openlocfilehash: 553cdcf2ac98b23d06cc43a64220cf8433117fc8
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59814007"
 ---
-# <a name="add-sign-in-page-description"></a>Adicionar sign\ na página de descrição
+# <a name="add-sign-in-page-description"></a>Adicionar inscrição\-na descrição de página
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
-## <a name="to-add-sign-in-page-description"></a>Para adicionar sign\ na página de descrição  
-Para adicionar uma descrição sign\ na página para a página de sign\, use a sintaxe e o seguinte cmdlet do PowerShell do Windows PowerShell.  
+## <a name="to-add-sign-in-page-description"></a>Para adicionar entrada\-na descrição de página  
+Para adicionar um sinal\-na descrição de página para a entrada\-na página, use o seguinte cmdlet do Windows PowerShell e a sintaxe.  
 
-![Adicionar log na descrição](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
+![Adicionar entrada na descrição](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
 
     Set-AdfsGlobalWebContent -SignInPageDescriptionText "<p>Sign-in to Contoso requires device registration. Click <A href='http://fs1.contoso.com/deviceregistration/'>here</A> for more information.</p>" 
  
   
 > [!IMPORTANT]  
-> A cadeia de caracteres para o `SignInPageDescriptionText`parâmetro dá suporte a ambas as HTML puro com as marcas e sem. Portanto, você também pode executar o seguinte cmdlet sem usar o &lt;p&gt; marca.  `Set-AdfsGlobalWebContent -SignInPageDescriptionText "Sign-in to Contoso requires device registration. Click <A href='http://fs1.contoso.com/deviceregistration/'>here</A> for more information." ` 
+> A cadeia de caracteres para o parâmetro `SignInPageDescriptionText` dá suporte a HTML puro com e sem tags. Portanto, você também pode executar o seguinte cmdlet sem usar o &lt;p&gt; marca.  `Set-AdfsGlobalWebContent -SignInPageDescriptionText "Sign-in to Contoso requires device registration. Click <A href='http://fs1.contoso.com/deviceregistration/'>here</A> for more information." ` 
 
-Depois que a página de sign\ é personalizada, a personalização tem precedência; Portanto, você deve personalizar para todos os idiomas que você deseja dar suporte. Todo o conteúdo personalizado leva um parâmetro de localidade. Quando você configura o conteúdo localizado, ele deverá ser configurado com uma localidade country\ menos pela primeira vez, por exemplo, "en", antes de você configurar país e da localidade region\ específicas, como "en\-us".  
+Após o sinal\-na página é personalizado, a personalização terá prioridade; portanto, você deve personalizar para todos os idiomas que você deseja dar suporte. Todo conteúdo personalizado possui um parâmetro de localidade. Quando você configura o conteúdo localizado, ele deve ser configurado com um país\-menos localidade primeiro, por exemplo, "en", antes de configurar o país e região\-localidade específica, como "en\-us".  
 
 ## <a name="additional-references"></a>Referências adicionais 
-[AD FS usuário entrar personalização](AD-FS-user-sign-in-customization.md)  
+[AD FS Sign-personalização de usuário](AD-FS-user-sign-in-customization.md)  

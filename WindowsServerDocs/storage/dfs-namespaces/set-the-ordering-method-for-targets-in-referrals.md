@@ -1,6 +1,6 @@
 ---
-title: "Defina o método de ordenação dos destinos nas referências"
-description: "Este artigo descreve como definir o método de ordenação para alvos em referências."
+title: Defina o método de ordenação dos destinos nas referências
+description: Este artigo descreve como definir o método de ordenação para alvos em referências.
 ms.date: 6/5/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,15 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6c67be4b35dd986f14bf7d588d0f3baa88e19171
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 06e7aa1309b453da649537d5ae9b22acce830530
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59816857"
 ---
 # <a name="set-the-ordering-method-for-targets-in-referrals"></a>Defina o método de ordenação dos destinos nas referências
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
+> Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
 
 Uma referência é uma lista ordenada de destinos que um computador cliente recebe de um controlador de domínio ou servidor de namespace quando o usuário acessa uma raiz de namespace ou pasta com destinos. Depois de receber o cliente, o cliente tenta acessar o primeiro alvo na lista. Se o alvo não estiver disponível, o cliente tenta acessar o próximo alvo.
 Os destinos no site do cliente sempre são listados primeiro em uma referência. Os destinos fora do site do cliente são listados acordo com o método de ordenação.
@@ -39,7 +40,7 @@ Use o procedimento a seguir para definir o método de ordenação na raiz do nam
    -   **EnableInsiteReferrals** especifica o método de ordenação **Excluir destinos fora do site do cliente**
    -   Omitir o parâmetro especifica o **ordem aleatória** ordenação de método de referência. 
 
-O módulo do Windows PowerShell de DFSN foi apresentado no Windows Server 2012.
+O módulo do PowerShell do Windows DFSN foi introduzido no Windows Server 2012.
    
 ## <a name="to-set-the-ordering-method-for-targets-in-folder-referrals"></a>Para definir o método de ordenação para alvos nas referências de pasta
 
@@ -66,7 +67,7 @@ Os três métodos de ordenação são:
 
 Nesse método, os destinos são ordenados da seguinte maneira:
 
-1.  Os destinos no mesmo site de serviços de diretório do Active Directory (AD DS) como o cliente são listados em ordem aleatória na parte superior da referência.
+1.  Os destinos no mesmo site do Active Directory Directory Services (AD DS) que o cliente são listados em ordem aleatória na parte superior da referência.
 2.  Os destinos fora do site do cliente são listados em ordem aleatória.
 
 Se não houver servidores de destino mesmo site disponíveis, o computador cliente é chamado em um servidor de destino aleatório, independentemente de quanto a conexão custa ou distante como o destino.
@@ -88,7 +89,7 @@ Nesse método, a referência contém apenas os alvos que estão no mesmo site qu
 > [!NOTE]
 > Os destinos que têm prioridade de destino definida como "primeiro entre todos os destinos" ou "última entre todos os destinos" ainda são listados na referência, mesmo que o método de ordenação é definido como **excluir destinos fora do site do cliente**.
 
-## <a name="see-also"></a>Veja também 
+## <a name="see-also"></a>Consulte também 
 
--   [Ajustando namespaces de DFS](tuning-dfs-namespaces.md)
--   [Delegar permissões de gerenciamento para Namespaces DFS](delegate-management-permissions-for-dfs-namespaces.md)
+-   [Ajuste os Namespaces do DFS](tuning-dfs-namespaces.md)
+-   [Delegar permissões de gerenciamento para Namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)

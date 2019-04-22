@@ -1,6 +1,6 @@
 ---
-title: "Gerenciamento de classificação"
-description: "Este artigo descreve como categorizar arquivos com base nas propriedades de classificação"
+title: Gerenciamento de classificação
+description: Este artigo descreve como categorizar arquivos com base nas propriedades de classificação
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,15 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: bf983fe693af7e5ba3f922b14fd1865a72a88296
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 13323cd380c9df5185a7989721ec2574ea880d4f
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59814787"
 ---
 # <a name="classification-management"></a>Gerenciamento de classificação
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Propriedades de classificação são usadas para categorizar arquivos e podem ser usadas para selecionar arquivos para as tarefas agendadas de gerenciamento de arquivos.
 
@@ -32,6 +33,6 @@ Esta seção inclui os seguintes tópicos:
 > Para definir notificações por email e determinados recursos de relatório, você deve configurar primeiro as opções gerais do Gerenciador de recursos do servidor de arquivos.
 
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
-[Definindo Opções do Gerenciador de Recursos de Servidor de Arquivos](setting-file-server-resource-manager-options.md)
+[Opções do Gerenciador de recursos de servidor de arquivos de configuração](setting-file-server-resource-manager-options.md)

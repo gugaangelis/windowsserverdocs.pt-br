@@ -9,61 +9,62 @@ ms.date: ''
 ms.assetid: 6de4232d-b0b3-4e43-8735-ebae35ae4f9f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 70198f97c4ec39de4b78de28ab196dc3e86a684c
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 85f73f1f7caf833d23d3d693c0d754f52c4aa27d
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812227"
 ---
 # <a name="windows-server-supported-networking-scenarios"></a>Cenários de rede com suporte do Windows Server
 
->Aplica-se a: Windows Server \(Semi-Annual Channel\), Windows Server 2016
+>Aplica-se a: Windows Server \(canal semestral\), Windows Server 2016
 
-Este tópico fornece informações sobre cenários com suporte e não suportados que você pode ou não é possível executar com esta versão do Windows Server 2016.  
+Este tópico fornece informações sobre cenários compatíveis e sem suportados que você pode ou não é possível executar com esta versão do Windows Server 2016.  
 >[!IMPORTANT]
->Para todos os cenários de produção, use os drivers mais recentes assinado hardware do seu fabricante de equipamento original fornecedor de hardware independente ou \(OEM\) \(IHV\).
+>Para todos os cenários de produção, use os drivers mais recentes de hardware assinado do fabricante do equipamento original \(OEM\) ou fornecedor independente de hardware \(IHV\).
   
-## <a name="bkmk_supp"></a>Suporte a cenários de rede
+## <a name="bkmk_supp"></a>Suporte para cenários de rede
 
-Esta seção inclui informações sobre os cenários de redes com suporte para Windows Server 2016 e inclui as seguintes categorias de cenário.  
+Esta seção inclui informações sobre os cenários de rede com suporte para o Windows Server 2016 e inclui as seguintes categorias de cenário.  
   
--   [Cenários de definido de rede (SDN) de software](#bkmk_sdn)  
+-   [Cenários do software Defined de Networking (SDN)](#bkmk_sdn)  
   
 -   [Cenários de plataforma de rede](#bkmk_netp)  
   
 -   [Cenários de servidor DNS](#bkmk_dns)  
   
--   [Cenários IPAM com DHCP e DNS](#bkmk_ipam)  
+-   [Cenários do IPAM com o DHCP e DNS](#bkmk_ipam)  
   
--   [Cenários de agrupamento de NIC](#bkmk_nicteam)
+-   [Cenários de agrupamento NIC](#bkmk_nicteam)
 
-- [Cenários de agrupamento Embedded \(SET\) switch](#bkmk_set)
+- [Agrupamento incorporado do comutador \(definir\) cenários](#bkmk_set)
   
-### <a name="bkmk_sdn"></a>Cenários de definido de rede (SDN) de software
+### <a name="bkmk_sdn"></a>Cenários do software Defined de Networking (SDN)
  
 Você pode usar a documentação a seguir para implantar cenários SDN com o Windows Server 2016.  
   
   
--   [Implante uma infraestrutura de rede definidos do Software usando scripts](sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)  
+-   [Implantar uma infraestrutura de rede definida por Software usando scripts](sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)  
   
-Para obter mais informações, consulte [Software de rede definidos & #40; SDN & #41;](sdn/software-defined-networking.md).  
+Para obter mais informações, consulte [rede definida pelo Software &#40;SDN&#41;](sdn/software-defined-networking.md).  
   
 #### <a name="bkmk_netc"></a>Cenários de controlador de rede
 
 Os cenários de controlador de rede permitem que você:  
   
--   Implantar e gerenciar uma instância de vários nós do controlador de rede. Para obter mais informações, consulte [implantar o controlador de rede usando o Windows PowerShell](sdn/deploy/Deploy-Network-Controller-using-Windows-PowerShell.md).  
+-   Implantar e gerenciar uma instância de vários nós de controlador de rede. Para obter mais informações, consulte [implantar o controlador de rede usando o Windows PowerShell](sdn/deploy/Deploy-Network-Controller-using-Windows-PowerShell.md).  
   
--   Use o controlador de rede para definir a política de rede de forma programática usando a API de REST em sentido norte.  
+-   Use o controlador de rede para definir programaticamente a diretiva de rede usando a API Northbound do REST.  
   
--   Use o controlador de rede para criar e gerenciar redes virtuais com a virtualização de rede do Hyper-V - usando o encapsulamento NVGRE ou VXLAN.  
+-   Use o controlador de rede para criar e gerenciar redes virtuais com virtualização de rede do Hyper-V – encapsulamento NVGRE ou VXLAN.  
   
-Para obter mais informações, consulte [rede controlador](sdn/technologies/network-controller/Network-Controller.md).  
+Para obter mais informações, consulte [Controlador de Rede](sdn/technologies/network-controller/Network-Controller.md).  
   
-#### <a name="bkmk_netf"></a>Cenários de virtualização de função (NFV) de rede  
-Os cenários NFV Network permitem que você:  
+#### <a name="bkmk_netf"></a>Cenários de função NFV (virtualização) da rede  
+Os cenários NFV permitem que você:  
   
--   Implantar e usar um balanceador de carga de software para distribuir o tráfego em sentido Norte e southbound.  
+-   Implantar e usar um balanceador de carga de software para distribuir o tráfego northbound e southbound.  
   
 -   Implantar e usar um balanceador de carga de software para distribuir o tráfego eastbound e westbound para redes virtuais criadas com a virtualização de rede do Hyper-V.  
   
@@ -71,117 +72,117 @@ Os cenários NFV Network permitem que você:
   
 -   Implantar e usar um gateway de encaminhamento de camada 3  
   
--   Implantar e usar um gateway de rede virtual privada (VPN) para túneis de IPsec (IKEv2)-to-site  
+-   Implantar e usar um gateway de rede virtual privada (VPN) para os túneis de IPsec (IKEv2) site a site  
   
 -   Implantar e usar um gateway de encapsulamento de roteamento genérico (GRE).  
   
--   Implante e configure o roteamento dinâmico e trânsito roteamento entre sites que usam o protocolo de Gateway de borda (BGP).  
+-   Implantar e configurar o roteamento dinâmico e roteamento de tráfego entre sites usando o Border Gateway Protocol (BGP).  
   
--   Configure a redundância M + N para Layer 3 e gateways to-site e para roteamento de BGP.  
+-   Configure redundância M + N para gateways site a site e de camada 3 e para roteamento de BGP.  
   
--   Use o controlador de rede para especificar ACLs nas redes virtuais e interfaces de rede.  
+-   Use o controlador de rede para especificar as ACLs em redes virtuais e adaptadores de rede.  
   
-Para obter mais informações, consulte [rede função virtualização](sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md).  
+Para obter mais informações, consulte [a virtualização de rede função](sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md).  
   
 ### <a name="bkmk_netp"></a>Cenários de plataforma de rede
 
-Para os cenários nesta seção de rede do Windows Server equipe permite o uso de qualquer driver certificado do Windows Server 2016. Entre em contato com o fabricante da placa \(NIC\) rede interface para garantir que você tenha as atualizações mais recentes do driver.
+Para os cenários nesta seção, a rede do Windows Server equipe suporta o uso de qualquer driver certificados do Windows Server 2016. Entre em contato com sua placa de interface de rede \(NIC\) fabricante para garantir que você tenha as atualizações mais recentes do driver.
   
 Os cenários de plataforma de rede permitem que você:  
   
--   Use uma NIC convergida para combinar tráfego RDMA e Ethernet usando um único adaptador de rede.  
+-   Use uma NIC convergida para combinar o tráfego RDMA e Ethernet, usando um único adaptador de rede.  
   
--   Crie um caminho de dados de baixa latência, usando o pacote Direta, habilitada no Switch Virtual Hyper-V e um adaptador de rede.  
+-   Crie um caminho de dados de baixa latência usando o pacote direto, ativada no comutador Virtual do Hyper-V e um único adaptador de rede.  
   
--   Configure conjunto a disseminação de fluxos de tráfego SMB direto e RDMA entre até dois adaptadores de rede.  
+-   Configure conjunto para distribuir fluxos de tráfego SMB Direct e o RDMA entre até dois adaptadores de rede.  
   
-Para obter mais informações, consulte [remoto acesso direto à memória & #40; RDMA & #41; e alternar agrupamento Embedded & #40; Definir & #41;](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).  
+Para obter mais informações, consulte [remotos acesso direto à memória &#40;RDMA&#41; e agrupamento incorporado do comutador &#40;definir&#41;](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).  
   
 #### <a name="bkmk_switch"></a>Cenários de comutador Virtual Hyper-V
 
-Os cenários do Hyper-V Virtual Switch permitem que você:  
+Os cenários de comutador Virtual Hyper-V permite que você:  
   
--   Criar um comutador Virtual Hyper-V com um vNIC remota direta memória acesso RDMA)  
+-   Criar um comutador Virtual do Hyper-V com uma vNIC direto memória RDMA (acesso remoto)  
   
--   Criar um comutador Virtual Hyper-V com agrupamento Embedded Switch (conjunto) e RDMA vNICs  
+-   Criar um comutador Virtual do Hyper-V com vNICs RDMA e Switch Embedded Teaming (SET)  
   
--   Criar uma conjunto de equipe em Hyper-V Virtual Switch  
+-   Criar um conjunto de agrupamento no comutador Virtual Hyper-V  
   
--   Gerenciar um time de conjunto usando comandos do Windows PowerShell  
+-   Gerenciar uma equipe de conjunto, usando comandos do Windows PowerShell  
   
-Para obter mais informações, consulte [remoto acesso direto à memória & #40; RDMA & #41; e alternar agrupamento Embedded & #40; Definir & #41;](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)  
+Para obter mais informações, consulte [remotos acesso direto à memória &#40;RDMA&#41; e agrupamento incorporado do comutador &#40;definir&#41;](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)  
   
 ### <a name="bkmk_dns"></a>Cenários de servidor DNS
 
 Cenários de servidor DNS permitem que você:  
   
--   Especificar a localização geográfica com base em gerenciamento de tráfego usando políticas de DNS  
+-   Especifique a localização geográfica com base em gerenciamento de tráfego usando políticas de DNS  
   
--   Configurar uma DNS usando políticas de DNS  
+-   Configurar o DNS com partição de rede usando políticas de DNS  
   
--   Aplicar filtros nas consultas do DNS usando políticas de DNS  
+-   Aplicar filtros em consultas DNS usando as políticas de DNS  
   
 -   Configurar balanceamento de carga do aplicativo usando políticas de DNS  
   
--   Especifique inteligente DNS respostas com base na hora do dia  
+-   Especificar que respostas de DNS inteligente com base na hora do dia  
   
--   Configurar as políticas de transferência de zona de DNS  
+-   Configurar políticas de transferência de zona DNS  
   
--   Configurar zonas de políticas nos serviços de domínio do Active Directory (AD DS) integradas do servidor DNS  
+-   Configurar zonas do DNS server políticas em serviços de domínio Active Directory (AD DS) integradas  
   
--   Configurar resposta taxa limitando  
+-   Configurar a taxa de resposta de limitação  
   
--   Especificar a autenticação baseada em DNS de entidades nomeadas (DANE)  
+-   Especificar a autenticação com base em DNS de entidades nomeadas (painel)  
   
--   Configurar o suporte para registros desconhecido no DNS  
+-   Configurar o suporte para registros desconhecidos no DNS  
   
-Para obter mais informações, consulte os tópicos [What's New no cliente DNS no Windows Server 2016](dns/What-s-New-in-DNS-Client.md) e [What's New no servidor DNS no Windows Server 2016](dns/What-s-New-in-DNS-Server.md).  
+Para obter mais informações, consulte os tópicos [o que há de novo no cliente DNS no Windows Server 2016](dns/What-s-New-in-DNS-Client.md) e [o que há de novo no servidor DNS no Windows Server 2016](dns/What-s-New-in-DNS-Server.md).  
   
-### <a name="bkmk_ipam"></a>Cenários IPAM com DHCP e DNS
+### <a name="bkmk_ipam"></a>Cenários do IPAM com o DHCP e DNS
 
-Os cenários IPAM permitem que você:  
+Os cenários do IPAM permite que você:  
   
--   Descobrir e administrar servidores DNS e DHCP e endereçamento IP em várias florestas do Active Directory federadas  
+-   Descobrir e administrar servidores DNS e DHCP e endereçamento IP através de várias florestas do Active Directory federadas  
   
--   Use IPAM para o gerenciamento centralizado de propriedades DNS, incluindo zonas e registros de recurso.  
+-   Use o IPAM para gerenciamento centralizado de propriedades DNS, incluindo zonas e registros de recursos.  
   
--   Definir políticas de controle de acesso baseado em função granular e delegar IPAM ou grupos de usuários para gerenciar o conjunto de propriedades DNS que você especificar.  
+-   Definir políticas de controle de acesso baseado em função granular e delegar usuários do IPAM ou grupos de usuários para gerenciar o conjunto de propriedades DNS que você especificar.  
   
--   Use os comandos do Windows PowerShell para IPAM para automatizar a configuração de controle de acesso para DHCP e DNS.  
+-   Use os comandos do Windows PowerShell para IPAM para automatizar a configuração de controle de acesso para o DHCP e DNS.  
   
-    Para obter mais informações, consulte [gerenciar IPAM](technologies/ipam/Manage-IPAM.md).  
+    Para obter mais informações, consulte [Manage IPAM](technologies/ipam/Manage-IPAM.md).  
   
-### <a name="bkmk_nicteam"></a>Cenários de agrupamento de NIC
+### <a name="bkmk_nicteam"></a>Cenários de agrupamento NIC
 
-Os cenários de agrupamento de NIC permitem que você:  
+Os cenários de agrupamento NIC permite que você:  
   
--   Criar uma equipe de placa de rede em uma configuração com suporte  
+-   Criar um agrupamento NIC em uma configuração com suporte  
   
--   Excluir uma equipe NIC  
+-   Excluir um agrupamento NIC  
   
--   Adicione os adaptadores de rede para a equipe de placa de rede em uma configuração com suporte  
+-   Adicionar adaptadores de rede para o agrupamento NIC em uma configuração com suporte  
   
--   Remover adaptadores de rede da equipe do NIC  
+-   Remover adaptadores de rede da equipe NIC  
   
 > [!NOTE]  
-> No Windows Server 2016, você pode usar o agrupamento de NIC no Hyper-V, mas em alguns casos filas de máquina Virtual (VMQ) talvez não habilitam automaticamente nos adaptadores de rede subjacente quando você cria uma equipe de NIC. Se isso ocorrer, você pode usar o seguinte comando do Windows PowerShell para garantir que VMQ está habilitado nos adaptadores de membro da equipe de NIC: `Set-NetAdapterVmq -Name <NetworkAdapterName> -Enable`  
+> No Windows Server 2016, você pode usar o agrupamento NIC no Hyper-V, no entanto, em alguns casos as filas de máquina Virtual (VMQ) talvez não habilita automaticamente nos adaptadores de rede subjacente quando você cria uma equipe NIC. Se isso ocorrer, você pode usar o seguinte comando do Windows PowerShell para garantir que a VMQ está habilitado nos adaptadores de membro da equipe de NIC: `Set-NetAdapterVmq -Name <NetworkAdapterName> -Enable`  
 
-Para obter mais informações, consulte [NIC agrupamento](technologies/nic-teaming/NIC-Teaming.md). 
+Para obter mais informações, consulte [agrupamento NIC](technologies/nic-teaming/NIC-Teaming.md). 
 
-### <a name="bkmk_set"></a>Cenários de agrupamento Embedded \(SET\) switch
+### <a name="bkmk_set"></a>Agrupamento incorporado do comutador \(definir\) cenários
 
-CONJUNTO é uma solução alternativa NIC agrupamento que você pode usar em ambientes que incluem o Hyper-V e a pilha de rede definidos Software (SDN) no Windows Server 2016. CONJUNTO integra algumas funcionalidades de agrupamento de NIC o Hyper-V Virtual Switch. 
+CONJUNTO é uma solução alternativa do agrupamento NIC que você pode usar em ambientes que incluem o Hyper-V e a pilha de Software Defined Networking (SDN) no Windows Server 2016. CONJUNTO integra algumas funcionalidades de agrupamento NIC no comutador Virtual do Hyper-V. 
 
-Para obter mais informações, consulte [acesso direto de memória remoto (RDMA) e agrupamento Embedded Switch (conjunto)](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming)
+Para obter mais informações, consulte [acesso direto à memória remoto (RDMA) e Switch Embedded Teaming (SET)](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming)
   
  
   
 ## <a name="bkmk_unsupp"></a>Não há suporte para cenários de rede  
-Não há suporte para os seguintes cenários de redes no Windows Server 2016.  
+Não há suporte para os seguintes cenários de rede no Windows Server 2016.  
   
--   Redes virtuais com base em VLAN locatário.  
+-   Redes virtuais de locatário com base em VLAN.  
   
--   Não há suporte para o IPv6 na base ou sobreposição.  
+-   Não há suporte para IPv6 na base ou sobreposição.  
   
 
 

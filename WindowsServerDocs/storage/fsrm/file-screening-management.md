@@ -1,6 +1,6 @@
 ---
 title: Gerenciamento de triagem de arquivos
-description: "Este artigo descreve como criar triagens de arquivo, gerar notificações, definir modelos de triagem e criar exceções de triagem de arquivo"
+description: Este artigo descreve como criar triagens de arquivo, gerar notificações, definir modelos de triagem e criar exceções de triagem de arquivo
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 52a08ae7eaee81c00985d5334f9abeaa84e30879
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59814157"
 ---
 # <a name="file-screening-management"></a>Gerenciamento de triagem de arquivos
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 No nó **Gerenciamento de triagem de arquivo** do snap-in do MMC do Gerenciador de recursos do servidor de arquivos, você pode executar as seguintes tarefas:
 
@@ -32,16 +33,16 @@ Por exemplo, você pode:
 Esta seção inclui os seguintes tópicos:
 
 -   [Definir grupos de arquivos para triagem](define-file-groups-for-screening.md)
--   [Criar uma triagem de arquivo](create-file-screen.md)
+-   [Criar uma tela de arquivo](create-file-screen.md)
 -   [Criar uma exceção de triagem de arquivo](create-file-screen-exception.md)
--   [Criar um modelo de triagem de arquivo](create-file-screen-template.md)
--   [Editar propriedades de modelo de triagem de arquivo](edit-file-screen-template-properties.md)
+-   [Criar um modelo de tela de arquivo](create-file-screen-template.md)
+-   [Editar propriedades do modelo de triagem de arquivo](edit-file-screen-template-properties.md)
 
 > [!Note]
 > Para definir notificações por email e determinados recursos de relatório, você deve configurar primeiro as opções gerais do Gerenciador de recursos do servidor de arquivos.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
--   [Definindo Opções do Gerenciador de Recursos de Servidor de Arquivos](setting-file-server-resource-manager-options.md)
+-   [Opções do Gerenciador de recursos de servidor de arquivos de configuração](setting-file-server-resource-manager-options.md)
 
 

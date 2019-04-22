@@ -1,6 +1,6 @@
 ---
 ms.assetid: 07d6b251-c492-4d9f-bcc4-031023695b24
-title: "Instalando e habilitando a Eliminação de Duplicação de Dados"
+title: Instalar e habilitar a Eliminação de Duplicação de Dados
 ms.technology: storage-deduplication
 ms.prod: windows-server-threshold
 ms.topic: article
@@ -8,12 +8,13 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 05/09/2017
-description: "Como instalar a eliminação de duplicação de dados no Windows Server, determinar se uma carga de trabalho é forte candidata à eliminação de duplicação e habilitar a eliminação de duplicação em volumes."
+description: Como instalar a eliminação de duplicação de dados no Windows Server, determinar se uma carga de trabalho é forte candidata à eliminação de duplicação e habilitar a eliminação de duplicação em volumes.
 ms.openlocfilehash: 153b064b158028c696bad4eeb00764d3e10822e1
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59814897"
 ---
 # <a name="install-and-enable-data-deduplication"></a>Instalar e habilitar a Eliminação de Duplicação de Dados
 > Aplicável a: Windows Server (canal semestral), Windows Server 2016
@@ -23,17 +24,17 @@ Este tópico explica como instalar a [Eliminação de Duplicação de Dados](ove
 > [!Note]  
 > Se você estiver planejando executar a Eliminação de Duplicação de Dados em um Cluster de Failover, cada nó no cluster deve ter a função de servidor Eliminação de Duplicação de Dados instalada.
 
-## <a id="install-dedup"></a>Instalar a Eliminação de Duplicação de Dados
+## <a id="install-dedup"></a>Instalar a eliminação de duplicação de dados
 > [!Important]  
 > [O KB4025334](https://support.microsoft.com/kb/4025334) contém um pacote cumulativo de correções para Eliminação de Duplicação de Dados, incluindo correções de confiabilidade importantes; é altamente recomendável a instalação desse pacote durante o uso da Eliminação de Duplicação de Dados com o Windows Server 2016.
 
-### <a id="install-dedup-via-server-manager"></a>Instalar a Eliminação de Duplicação de Dados usando o Gerenciador do Servidor
+### <a id="install-dedup-via-server-manager"></a>Instalar a eliminação de duplicação de dados usando o Gerenciador do servidor
 1. No assistente Adicionar Funções e Recursos, selecione **Funções de Servidor** e **Eliminação de Duplicação de Dados**.  
-![Instale a Eliminação de Duplicação de Dados por meio do Gerenciador do Servidor: selecione Eliminação de Duplicação de Dados em Funções de Servidor](media/install-dedup-via-server-manager-1.png)
+![Instalar a eliminação de duplicação de dados por meio do Gerenciador do servidor: selecione eliminação de duplicação de dados de funções de servidor](media/install-dedup-via-server-manager-1.png)
 2. Clique em **Avançar** até o botão **Instalar** ficar ativo e, em seguida, clique em **Instalar**.  
-![Instalar a Eliminação de Duplicação de Dados por meio do Gerenciador do Servidor: clique em Instalar](media/install-dedup-via-server-manager-2.png)
+![Instalar a eliminação de duplicação de dados por meio do Gerenciador do servidor: clique em instalar](media/install-dedup-via-server-manager-2.png)
 
-### <a id="install-dedup-via-powershell"></a>Instalar a Eliminação de Duplicação de Dados usando o PowerShell
+### <a id="install-dedup-via-powershell"></a>Instalar a eliminação de duplicação de dados usando o PowerShell
 Para instalar a Eliminação de Duplicação de Dados, execute o seguinte comando do PowerShell como administrador:  
 `Install-WindowsFeature -Name FS-Data-Deduplication`
 
@@ -45,7 +46,7 @@ Para instalar a Eliminação de Duplicação de Dados em uma instalação do Nan
     Install-WindowsFeature -ComputerName <MyNanoServer> -Name FS-Data-Deduplication
     ```  
     <br />
-    **-- OU --**
+    **-- OR --**
     <br />
     Conecte-se remotamente à instância do Nano Server com o PowerShell remoto e instale a Eliminação de Duplicação de Dados usando o DISM:  
     
@@ -54,8 +55,8 @@ Para instalar a Eliminação de Duplicação de Dados em uma instalação do Nan
     dism /online /enable-feature /featurename:dedup-core /all
     ```
 
-## <a id="enable-dedup"></a>Habilite a Eliminação de Duplicação de Dados
-### <a id="enable-dedup-candidate-workloads"></a>Determine quais cargas de trabalho são candidatas à Eliminação de Duplicação de Dados
+## <a id="enable-dedup"></a>Habilitar a eliminação de duplicação de dados
+### <a id="enable-dedup-candidate-workloads"></a>Determinar quais cargas de trabalho são candidatas para eliminação de duplicação de dados
 A Eliminação de Duplicação de Dados pode minimizar de maneira eficaz os custos de consumo de dados de um aplicativo para servidores, reduzindo a quantidade de espaço em disco consumida por dados redundantes. Antes de habilitar a eliminação de duplicação, é importante entender as características da sua carga de trabalho para garantir que você obtenha o máximo desempenho de seu armazenamento. Há duas classes de cargas de trabalho a considerar:
 
 * *Cargas de trabalho recomendadas*, que comprovadamente têm ambos os conjuntos de dados que se beneficiam altamente da eliminação de duplicação e têm padrões de consumo de recursos que são compatíveis com o modelo de pós-processamento da Eliminação de Duplicação de Dados. Recomendamos que você sempre [habilite a Eliminação de Duplicação de Dados](install-enable.md#enable-dedup-lights-on) nessas cargas de trabalho:
@@ -67,7 +68,7 @@ A Eliminação de Duplicação de Dados pode minimizar de maneira eficaz os cust
     * Servidores SQL
     * Servidores de linha de negócios (LOB)
 
-### <a id="enable-dedup-evaluating-sometimes-workloads"></a>Avaliar cargas de trabalho para a Eliminação de Duplicação de Dados
+### <a id="enable-dedup-evaluating-sometimes-workloads"></a>Avaliar cargas de trabalho para eliminação de duplicação de dados
 > [!Important]  
 > Se você estiver executando uma carga de trabalho recomendada, poderá ignorar esta seção e ir para [Habilitar a Eliminação de Duplicação de Dados](install-enable.md#enable-dedup-lights-on) para sua carga de trabalho.
 
@@ -94,7 +95,7 @@ Para determinar se uma carga de trabalho funciona bem com eliminação de duplic
     `Files excluded by policy: 20`  
     `Files excluded by error: 0`  
 
-2. **Qual é a aparência dos padrões de E/S da minha carga de trabalho para seus conjunto de dados? Qual o desempenho para minha carga de trabalho?**  
+2. **O que fazer padrões de e/s da minha carga de trabalho para seu conjunto de dados semelhantes? O desempenho é necessário para minha carga de trabalho?**  
      A Eliminação de Duplicação de Dados otimiza os arquivos como um trabalho periódico em vez de quando o arquivo é gravado em disco. Em decorrência disso, é importante examinar os padrões de leitura esperados da carga de trabalho para o volume com eliminação de duplicação. Como a Eliminação de Duplicação de Dados move o conteúdo do arquivo para o repositório de partes e tenta organizá-lo por arquivo o máximo possível, as operações de leitura apresentam o melhor desempenho quando são aplicadas em intervalos sequenciais de um arquivo.  
 
     As cargas de trabalho semelhantes a banco de dados normalmente têm padrões de leitura mais aleatórios do que padrões de leitura sequenciais, porque os bancos de dados geralmente não asseguram que o layout de banco de dados seja ideal para todas as consultas possíveis que podem ser executadas. Como as seções do repositório de partes podem existir em todo o volume, acessar os intervalos de dados no repositório de partes para as consultas de banco de dados pode introduzir latência adicional. As cargas de trabalho de alto desempenho são especialmente sensíveis à latência adicional, mas outras cargas de trabalho semelhantes a banco de dados podem não ser.
@@ -105,28 +106,28 @@ Para determinar se uma carga de trabalho funciona bem com eliminação de duplic
 3. **Quais são os requisitos de recursos da minha carga de trabalho no servidor?**  
     Como a Eliminação de Duplicação de Dados usa um modelo de pós-processamento, a Eliminação de Duplicação de Dados precisa periodicamente ter recursos de sistema suficientes para concluir sua [otimização e outros trabalhos](understand.md#job-info). Isso significa que as cargas de trabalho que têm tempo ocioso, como à noite ou nos fins de semana, são excelentes candidatas à eliminação de duplicação e as cargas de trabalho executadas o dia todo, todos os dias podem não ser. As cargas de trabalho que não têm tempo ocioso poderão ainda ser boas candidatas para eliminação de duplicação se a carga de trabalho não tiver requisitos altos de recursos no servidor.
 
-### <a id="enable-dedup-lights-on"></a>Habilite a Eliminação de Duplicação de Dados
+### <a id="enable-dedup-lights-on"></a>Habilitar a eliminação de duplicação de dados
 Antes de habilitar a Eliminação de Duplicação de Dados, você deverá escolher o [Tipo de Uso](understand.md#usage-type) que mais se assemelha a sua carga de trabalho. Há três tipos de uso na Eliminação de Duplicação de Dados.
 
 * [Padrão](understand.md#usage-type-default) – ajustado especificamente para o servidor de arquivos de finalidade geral
 * [Hyper-V](understand.md#usage-type-hyperv) – ajustado especificamente para servidores VDI
 * [Backup](understand.md#usage-type-backup) – ajustado especificamente para aplicativos de backup virtualizado, como [Microsoft DPM](https://technet.microsoft.com/library/hh758173.aspx)
 
-#### <a id="enable-dedup-via-server-manager"></a>Habilitar a Eliminação de Duplicação de Dados usando o Gerenciador do Servidor
+#### <a id="enable-dedup-via-server-manager"></a>Habilitar a eliminação de duplicação de dados usando o Gerenciador do servidor
 1. Selecione **Serviços de Arquivo e Armazenamento** no Gerenciador do Servidor.  
-![Clique em Serviços de Arquivo e Armazenamento](media/enable-dedup-via-server-manager-1.PNG)
+![Clique em serviços de arquivo e armazenamento](media/enable-dedup-via-server-manager-1.PNG)
 2. Selecione **Volumes** em **Serviços de Arquivo e Armazenamento**.  
 ![Clique em Volumes](media/enable-dedup-via-server-manager-2.png)
 3. Clique com o botão direito do mouse no volume desejado e selecione **Configurar Eliminação de Duplicação de Dados**.  
-![Clique em Configurar Eliminação de Duplicação de Dados](media/enable-dedup-via-server-manager-3.png)
+![Clique em Configurar eliminação de duplicação de dados](media/enable-dedup-via-server-manager-3.png)
 4. Selecione o **Tipo de Uso** desejado na caixa suspensa e selecione **OK**.  
-![Selecione o Tipo de Uso desejado na caixa suspensa](media/enable-dedup-via-server-manager-4.png)
+![Selecione o tipo de uso desejado na lista suspensa](media/enable-dedup-via-server-manager-4.png)
 5. Se estiver executando uma carga de trabalho recomendada, você já terminou. Para outras cargas de trabalho, consulte [Outras considerações](#enable-dedup-sometimes-considerations).
 
 > [!Note]  
 > Você pode encontrar mais informações sobre a exclusão de extensões de arquivos ou pastas e a seleção do plano de eliminação de duplicação, incluindo o motivo pelo qual você desejaria fazer isso, em [Configuring Data Deduplication (Configurando a Eliminação de Duplicação de Dados)](advanced-settings.md).
 
-#### <a id="enable-dedup-via-powershell"></a>Habilitar a Eliminação de Duplicação de Dados usando o PowerShell
+#### <a id="enable-dedup-via-powershell"></a>Habilitar a eliminação de duplicação de dados usando o PowerShell
 1. Com um contexto de administrador, execute o seguinte comando do PowerShell:  
     ```PowerShell
     Enable-DedupVolume -Volume <Volume-Path> -UsageType <Selected-Usage-Type>
@@ -146,19 +147,19 @@ Antes de habilitar a Eliminação de Duplicação de Dados, você deverá escolh
 * Se sua carga de trabalho não tiver requisitos altos de recursos, ou se for mais importante que os trabalhos de otimização sejam concluídos do que as solicitações de carga de trabalho sejam atendidas, [a memória, a CPU e a prioridade dos trabalhos de Eliminação de Duplicação de Dados poderão ser ajustadas](advanced-settings.md#modifying-job-schedules).
 
 ## <a id="faq"></a>Perguntas frequentes (FAQ)
-**Quero executar a Eliminação de Duplicação de Dados no conjunto de dados para a carga de trabalho X. Há suporte para isso?**  
+**Quero executar a eliminação de duplicação de dados no conjunto de dados para carga de trabalho. Há suporte para isso?**  
 Além das cargas de trabalho [conhecidas por não terem interoperabilidade com a Eliminação de Duplicação de Dados](interop.md), damos suporte total para a integridade dos dados da Eliminação de Duplicação de Dados com qualquer carga de trabalho. Também há suporte da Microsoft para o desempenho das cargas de trabalho recomendadas. O desempenho de outras cargas de trabalho depende muito do que elas estão fazendo no seu servidor. Você deve determinar quais impactos no desempenho a Eliminação de Duplicação de Dados tem na sua carga de trabalho e se isso é aceitável para essa carga de trabalho.
 
-**Quais são os requisitos de dimensionamento do volume para volumes com eliminação de duplicação?**  
+**Quais são os requisitos de dimensionamento de volume para volumes com eliminação de duplicação?**  
 No Windows Server 2012 e no Windows Server 2012 R2, os volumes tinham que ser dimensionados com cuidado para assegurar que a Eliminação de Duplicação de Dados pudesse acompanhar a variação no volume. Normalmente, isso significava que o tamanho máximo médio de um volume com eliminação de duplicação para uma carga de trabalho de variação alta era 1 a 2 TB e o tamanho recomendado máximo absoluto era 10 TB. No Windows Server 2016, essas limitações foram removidas. Para obter mais informações, consulte [Novidades na Eliminação de Duplicação de Dados](whats-new.md#large-volume-support).
 
-**É necessário modificar o agendamento ou outras configurações da Eliminação de Duplicação de Dados para cargas de trabalho recomendadas?**  
+**É necessário modificar o agendamento ou outras configurações de eliminação de duplicação de dados para cargas de trabalho recomendadas?**  
 Não, os [Tipos de Uso](understand.md#usage-type) fornecidos foram criados para fornecer padrões razoáveis para cargas de trabalho recomendadas.
 
-**Quais são os requisitos de memória para a Eliminação de Duplicação de Dados?**  
+**Quais são os requisitos de memória para eliminação de duplicação de dados?**  
 No mínimo, a Eliminação de Duplicação de Dados deve ter 300 MB + 50 MB para cada TB de dados lógicos. Por exemplo, se você estiver otimizando um volume de 10 TB, seria necessário um mínimo de 800 MB de memória alocada para a eliminação de duplicação (`300 MB + 50 MB * 10 = 300 MB + 500 MB = 800 MB`). Embora a Eliminação de Duplicação de Dados possa otimizar um volume com essa quantidade insuficiente de memória, esses recursos restritos retardarão os trabalhos da Eliminação de Duplicação de Dados.
 
 O ideal seria que a Eliminação de Duplicação de Dados tivesse 1 GB de memória para cada 1 TB de dados lógicos. Por exemplo, se você estiver otimizando um volume de 10 TB, seria necessário 10 GB de memória alocada para a eliminação de duplicação (`1 GB * 10`). Essa proporção garantirá o desempenho máximo de trabalhos de Eliminação de Duplicação de Dados.
 
-**Quais são os requisitos de armazenamento para a Eliminação de Duplicação de Dados?**  
+**Quais são os requisitos de armazenamento para eliminação de duplicação de dados?**  
 No Windows Server 2016, a Eliminação de Duplicação de Dados pode dar suporte a tamanhos de volume de até 64 TB. Para saber mais, confira [Novidades na Eliminação de Duplicação de Dados](whats-new.md#large-volume-support).

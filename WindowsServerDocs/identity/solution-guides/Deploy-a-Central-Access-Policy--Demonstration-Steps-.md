@@ -1,7 +1,7 @@
 ---
 ms.assetid: 8738c03d-6ae8-49a7-8b0c-bef7eab81057
-title: "Implantar uma política de acesso Central (etapas de demonstração)"
-description: 
+title: Implantar uma política de acesso central (passo a passo)
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,83 +10,84 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: 16973b32407985ffc3f66bf5ac579384a756b5d0
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59817137"
 ---
-# <a name="deploy-a-central-access-policy-demonstration-steps"></a>Implantar uma política de acesso Central (etapas de demonstração)
+# <a name="deploy-a-central-access-policy-demonstration-steps"></a>Implantar uma política de acesso central (passo a passo)
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Nesse cenário, as operações de segurança do departamento de finanças está trabalhando com a segurança das informações central para especificar a necessidade de uma política de acesso central para que eles podem proteger as informações de finanças arquivado armazenadas em servidores de arquivos. As informações de finanças arquivado de cada país podem ser acessadas como somente leitura por funcionários de finanças do mesmo país. Um grupo de administração de finanças central pode acessar as informações de Finanças de todos os países.  
+Neste cenário, as operações de segurança do departamento financeiro estão trabalhando em conjunto com a segurança das informações para especificar a necessidade de uma política de acesso central que permita proteger as informações financeiras arquivadas que são armazenadas nos servidores de arquivos. As informações financeiras arquivadas de cada país podem ser acessadas em modo somente leitura pelos funcionários da área financeira do mesmo país. Um grupo de administração financeira central pode acessar as informações financeiras de todos os países.  
   
-Implantar uma política de acesso central inclui as seguintes fases:  
+A implantação de uma política de acesso central abrange as seguintes fases:  
   
 |Fase|Descrição  
 |---------|---------------  
-|[Planejamento: Identificar a necessidade de política e a configuração necessária para implantação](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.2)|Identifique a necessidade de uma política e a configuração necessária para implantação. 
-|[Implemente: Configurar os componentes e política](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.3)|Configure os componentes e a política.  
+|[Plano: Identificar a necessidade de política e a configuração necessária para implantação](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.2)|Identificar a necessidade de uma política e a configuração necessária para a implantação. 
+|[Implementar: Configurar os componentes e a política](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.3)|Configurar os componentes e a política.  
 |[Implantar a política de acesso central](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.4)|Implante a política.  
-|[Manter: Alterar e testar a política](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.5)|Alterações de política e teste. 
+|[Manter: Alterar e preparar a política](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.5)|Alterações de política e de preparo. 
   
 ## <a name="BKMK_1.1"></a>Configurar um ambiente de teste  
-Antes de começar, você precisa configurar o laboratório para testar esse cenário. As etapas para configurar o laboratório são explicadas mais detalhadamente em [apêndice b: configuração de backup o ambiente de teste ](Appendix-B--Setting-Up-the-Test-Environment.md).  
+Antes de começar, você precisa configurar um laboratório para testar esse cenário. As etapas para configurar o laboratório são explicadas em detalhes no [apêndice b: Configurando o ambiente de teste](Appendix-B--Setting-Up-the-Test-Environment.md).  
   
-## <a name="BKMK_1.2"></a>Planejamento: Identificar a necessidade de política e a configuração necessária para implantação  
-Esta seção fornece a série de alto nível das etapas que auxiliam na fase de planejamento da implantação.  
+## <a name="BKMK_1.2"></a>Plano: Identificar a necessidade da política e a configuração necessária para a implantação.  
+Esta seção apresenta a série de etapas de alto nível que auxiliam na fase de planejamento da sua implantação.  
   
 ||Etapa|Exemplo|  
 |-|--------|-----------|  
-|1.1|Negócios determina que é necessária uma política de acesso central|Para proteger as informações de finanças são armazenadas nos servidores de arquivos, as operações de segurança do departamento de finanças está trabalhando com segurança das informações central para especificar a necessidade de uma política de acesso central.|  
-|1.2|Expressar a política de acesso|Documentos de finanças só devem ser lido por membros do departamento de finanças. Membros do departamento de finanças só devem acessar documentos em seu próprio país. Somente os administradores de finanças devem ter acesso de gravação. Uma exceção será permitida para os membros do grupo FinanceException. Esse grupo terá acesso de leitura.|  
-|1.3|Express constrói a política de acesso no Windows Server 2012|Direcionamento:<br /><br />-Resource.Department contém Finanças<br /><br />Regras de acesso:<br /><br />-Permitir lidos User.Country=Resource.Country e User.department = Resource.Department<br />-Permitir controle total User.MemberOf(FinanceAdmin)<br /><br />Exceção:<br /><br />Permitir memberOf(FinanceException) leitura|  
-|1.4|Determinar as propriedades de arquivo necessárias para a política|Arquivos de marca com:<br /><br />-Departamento<br />-País|  
-|1.5|Determinar os tipos de declaração e os grupos necessários para a política|Tipos de declaração:<br /><br />-País<br />-Departamento<br /><br />Grupos de usuários:<br /><br />-FinanceAdmin<br />-FinanceException|  
-|1.6|Determinar os servidores nos quais aplicar essa política|Aplica a política em todos os servidores de arquivos de finanças.|  
+|1.1|A empresa determina que uma política de acesso central é necessária.|Para proteger as informações financeiras armazenadas nos servidores de arquivos, as operações de segurança do departamento financeiro trabalham com a segurança das informações para especificar a necessidade de uma política de acesso central.|  
+|1.2|Expressar a política de acesso|Os documentos financeiros só devem ser lidos pelos membros do departamento financeiro. Os membros do departamento financeiro só devem acessar documentos do próprio país. Apenas os administradores financeiros devem ter acesso de gravação. Uma exceção será permitida para os membros do grupo FinanceException. Esse grupo terá acesso de leitura.|  
+|1.3|Expressar a política de acesso em construções do Windows Server 2012|Direcionamento:<br /><br />-Resource.Department contém Finanças<br /><br />Regras de acesso:<br /><br />-Permitir leitura User.Country=Resource.Country e User. Department = Resource.Department<br />-Permitir controle total User.MemberOf(FinanceAdmin)<br /><br />Exceção:<br /><br />Allow read memberOf(FinanceException)|  
+|1.4|Determinar as propriedades de arquivo necessárias para a política|Marque os arquivos com:<br /><br />-Departamento<br />-País|  
+|1.5|Determinar os tipos de declarações e os grupos necessários para a política|Tipos de declarações:<br /><br />-País<br />-Departamento<br /><br />Grupos de usuários:<br /><br />-FinanceAdmin<br />-   FinanceException|  
+|1.6|Determinar os servidores aos quais essa política será aplicada|Aplique a política a todos os servidores de arquivos financeiros.|  
   
-## <a name="BKMK_1.3"></a>Implemente: Configurar os componentes e política  
-Esta seção apresenta um exemplo que implanta uma política de acesso central para documentos de finanças.  
+## <a name="BKMK_1.3"></a>Implementar: Configurar os componentes e a política  
+Esta seção apresenta um exemplo de implantação de uma política de acesso central para documentos financeiros.  
   
 |Não|Etapa|Exemplo|  
 |------|--------|-----------|  
-|2.1|Criar tipos de declaração|Crie os seguintes tipos de declaração:<br /><br />-Departamento<br />-País|  
-|2.2|Criar propriedades do recurso|Criar e habilitar as seguintes propriedades do recurso:<br /><br />-Departamento<br />-País|  
-|2.3|Configurar uma regra de acesso central|Crie uma regra de finanças documentos que inclui a política de determinado na seção anterior.|  
-|2.4|Configurar uma política de acesso central (CAP)|Crie um limite chamado política finanças e adicione a regra de finanças documentos para esse limite.|  
-|2.5|Política de acesso central de destino aos servidores de arquivos|Publica o limite de utilização de política de finanças aos servidores de arquivos.|  
-|2.6|Habilite o suporte KDC para declarações, autenticação composta e proteção Kerberos.|Habilite o suporte KDC para declarações, autenticação composta e proteção Kerberos para contoso.com.|  
+|2.1|Criar tipos de declarações|Crie os seguintes tipos de declarações:<br /><br />-Departamento<br />-País|  
+|2.2|Criar propriedades de recurso|Crie e habilite as seguintes propriedades de recurso:<br /><br />-Departamento<br />-País|  
+|2.3|Configurar uma regra de acesso central|Crie a regra Documentos Financeiros incluindo a política determinada na seção anterior.|  
+|2.4|Configurar uma CAP (política de acesso central)|Crie uma CAP chamada Política Financeira e adicione a ela a regra Documentos Financeiros.|  
+|2.5|Direcionar a política de acesso central aos servidores de arquivos|Publique a CAP Política Financeira nos servidores de arquivos.|  
+|2.6|Habilitar o Suporte KDC (centro de distribuição de chaves) para declarações, autenticação composta e proteção Kerberos.|Habilite o Suporte KDC para declarações, autenticação composta e proteção Kerberos para contoso.com.|  
   
-O procedimento a seguir, você cria dois tipos de declaração: país e departamento.  
+No procedimento a seguir, você criará dois tipos de declarações: País e Departamento.  
   
-#### <a name="to-create-claim-types"></a>Para criar os tipos de declaração  
+#### <a name="to-create-claim-types"></a>Para criar tipos de declarações  
   
-1.  Abra DC1 do servidor no Gerenciador do Hyper-V e o log em como Contoso\administrador, com a senha **pass@word1**.  
+1.  Abra o servidor DC1 no Gerenciador do Hyper-V e faça logon como Contoso\administrador, com a senha **pass@word1**.  
   
 2.  Abra o Centro Administrativo do Active Directory.  
   
-3.  Clique no **ícone modo de exibição de árvore**, expanda **controle de acesso dinâmico**e, em seguida, selecione **tipos de declaração **.  
+3.  Clique no **ícone Modo de Exibição de Árvore**, expanda **Controle de Acesso Dinâmico** e selecione **Tipos de Declarações**.  
   
-    Clique com botão direito **tipos de declaração**, clique em **nova**e clique em **tipo de declaração **.  
+    Clique com o botão direito do mouse em **Tipos de Declarações**, clique em **Novo** e, depois, clique em **Tipo de Declaração**.  
   
     > [!TIP]  
-    > Você também pode abrir um **criar o tipo de declaração:** janela a partir do **tarefas** painel. Sobre o **tarefas** painel, clique em **nova**e clique em **tipo de declaração **.  
+    > Você também pode abrir a janela **Criar Tipo de Declaração:** a partir do painel **Tarefas**. No painel **Tarefas**, clique em **Novo** e, então, em **Tipo de Declaração**.  
   
-4.  No **atributo Source** listar, role para baixo a lista de atributos e clique em **departamento**. Isso deve preencher o **nome de exibição** campo com **departamento**. Clique em **Okey**.  
+4.  Na lista **Atributo de Origem**, role a lista de atributos para baixo e clique em **departamento**. Isso deve preencher o campo **Nome de exibição** com o valor **departamento**. Clique em **OK**.  
   
-5.  Em **tarefas** painel, clique em **nova**e clique em **tipo de declaração**.  
+5.  No painel **Tarefas**, clique em **Novo** e, depois, em **Tipo de Declaração**.  
   
-6.  No **atributo Source** listar, role para baixo a lista de atributos e, em seguida, clique no **c** atributo (país-Name). No **nome de exibição**, digite **país**.  
+6.  Na lista **Atributo de Origem**, role a lista de atributos para baixo e clique no atributo **c** (Country-Name). No campo **Nome de exibição**, digite **país**.  
   
-7.  No **valores sugeridos** seção, selecione **sugerimos os seguintes valores:**e clique em **adicionar**.  
+7.  Na seção **Valores Sugeridos**, selecione **Os seguintes valores são sugeridos:** e clique em **Adicionar**.  
   
-8.  No **valor** e **nome de exibição** campos, digite **EUA**e clique em **Okey**.  
+8.  Nos campos **Valor** e **Nome de exibição**, digite **US** e clique em **OK**.  
   
-9. Repita a etapa acima. No **adicione um valor de sugerir** caixa de diálogo, digite **JP** no **valor** e **nome de exibição** campos e clique em **Okey**.  
+9. Repita a etapa acima. Na caixa de diálogo **Adicionar um valor sugerido**, digite**JP** nos campos **Valor** e **Nome de exibição** e clique em **OK**.  
   
 ![guias de soluções](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
   
-O cmdlet do Windows PowerShell ou os cmdlets a seguir realizam as mesmas funções que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que eles possam aparecer com quebras automáticas em várias linhas devido a restrições de formatação.  
+O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
  
     New-ADClaimType country -SourceAttribute c -SuggestedValues:@((New-Object Microsoft.ActiveDirectory.Management.ADSuggestedValueEntry("US","US","")), (New-Object Microsoft.ActiveDirectory.Management.ADSuggestedValueEntry("JP","JP","")))  
@@ -95,26 +96,26 @@ O cmdlet do Windows PowerShell ou os cmdlets a seguir realizam as mesmas funçõ
  
   
 > [!TIP]  
-> Você pode usar o Visualizador de histórico do Windows PowerShell no Centro Administrativo do Active Directory para procurar os cmdlets do Windows PowerShell para cada procedimento que executar no Centro Administrativo do Active Directory. Para obter mais informações, consulte [Visualizador de histórico do Windows PowerShell](https://technet.microsoft.com/library/hh831702)  
+> Você pode usar o Visualizador do Windows PowerShell History no Centro Administrativo do Active Directory para pesquisar os cmdlets do Windows PowerShell para cada procedimento realizado no Centro Administrativo do Active Directory. Para obter mais informações, consulte [Visualizador de histórico do Windows PowerShell](https://technet.microsoft.com/library/hh831702)  
   
-A próxima etapa é criar propriedades do recurso. O procedimento a seguir você cria uma propriedade de recurso que é automaticamente adicionada à lista de propriedades do recurso Global no controlador de domínio, para que ele fique disponível para o servidor de arquivos.  
+A próxima etapa consiste em criar as propriedades de recurso. No procedimento a seguir, você criará uma propriedade de recurso que será adicionada automaticamente à lista Propriedades de Recursos Globais no controlador de domínio para que seja disponibilizada ao servidor de arquivos.  
   
-#### <a name="to-create-and-enable-pre-created-resource-properties"></a>Para criar e habilitar as propriedades do recurso pré-criados  
+#### <a name="to-create-and-enable-pre-created-resource-properties"></a>Para criar e habilitar propriedades de recurso criadas previamente  
   
-1.  No painel à esquerda do Centro Administrativo do Active Directory, clique em **modo de exibição de árvore**. Expanda **controle de acesso dinâmico**e, em seguida, selecione **propriedades do recurso**.  
+1.  No painel esquerdo do Centro Administrativo do Active Directory, clique em **Modo de Exibição de Árvore**. Expanda **Controle de Acesso Dinâmico** e selecione **Propriedades de Recurso**.  
   
-2.  Clique com botão direito **propriedades do recurso**, clique em **nova**e clique em **referência de recurso propriedade**.  
+2.  Clique com o botão direito do mouse em **Propriedades de Recurso**, clique em **Novo** e, então, em **Propriedade de Recurso de Referência**.  
   
     > [!TIP]  
-    > Você também pode escolher uma propriedade de recurso da **tarefas** painel. Clique em **nova** e, em seguida, clique em **referência de recurso propriedade**.  
+    > Você também pode escolher uma propriedade de recurso no painel **Tarefas**. Clique em **Novo** e, depois, em **Propriedade de Recurso de Referência**.  
   
-3.  Em **lista de valores de selecionar um tipo de declaração para compartilhá-los é sugerido**, clique em **país**.  
+3.  Em **Selecionar um tipo de declaração para compartilhar sua lista de valores sugeridos**, clique em **país**.  
   
-4.  No **nome de exibição**, digite **país**e clique em **Okey**.  
+4.  No campo **Nome de exibição**, digite **país** e clique em **OK**.  
   
-5.  Clique duas vezes o **propriedades do recurso** listar, role para baixo até o **departamento** propriedade resource. Clique com botão direito e clique em **habilitar**. Isso permitirá que integrados **departamento** propriedade resource.  
+5.  Clique duas vezes na lista **Propriedades de Recurso** e role a lista para baixo até a propriedade de recurso **Departamento**. Clique com o botão direito do mouse e clique em **Habilitar**. Isso habilitará a propriedade de recurso interna **Departamento**.  
   
-6.  No **propriedades do recurso** lista no painel de navegação o Centro Administrativo do Active Directory, agora você terá duas propriedades do recurso habilitado:  
+6.  Na lista **Propriedades de Recurso** do painel de navegação do Centro Administrativo do Active Directory, você terá agora duas propriedades de recurso habilitadas:  
   
     -   País  
   
@@ -122,7 +123,7 @@ A próxima etapa é criar propriedades do recurso. O procedimento a seguir você
   
 ![guias de soluções](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
   
-O cmdlet do Windows PowerShell ou os cmdlets a seguir realizam as mesmas funções que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que eles possam aparecer com quebras automáticas em várias linhas devido a restrições de formatação.  
+O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
 ```  
 New-ADResourceProperty Country -IsSecured $true -ResourcePropertyValueType MS-DS-MultivaluedChoice -SharesValuesWith country  
@@ -132,98 +133,98 @@ Add-ADResourcePropertyListMember "Global Resource Property List" -Members Depart
   
 ```  
   
-A próxima etapa é criar regras de acesso central que definem quem podem acessar os recursos. Neste cenário as regras de negócios são:  
+A próxima etapa consiste em criar regras de acesso que definam quem pode acessar os recursos. Neste cenário, as regras de negócio são:  
   
--   Documentos de finanças podem ser lidas apenas por membros do departamento de finanças.  
+-   Os documentos financeiros podem ser lidos apenas por membros do departamento financeiro.  
   
--   Membros do departamento de finanças podem acessar somente os documentos em seu próprio país.  
+-   Os membros do departamento financeiro podem acessar apenas os documentos do próprio país.  
   
--   Apenas os administradores de Finanças pode ter acesso de gravação.  
+-   Apenas os administradores financeiros podem ter acesso de gravação.  
   
--   Nós permitirá que uma exceção para membros do grupo FinanceException. Esse grupo terá acesso de leitura.  
+-   Permitiremos uma exceção aos membros do grupo FinanceException. Esse grupo terá acesso de leitura.  
   
--   O administrador e o proprietário do documento ainda terão acesso completo.  
+-   O administrador e o proprietário do documento ainda terão acesso total.  
   
-Ou para expressar as regras com construções do Windows Server 2012:  
+Ou para expressar as regras com constructos do Windows Server 2012:  
   
-Direcionamento: Resource.Department contém Finanças  
+Direcionamento: Resource.Department Contains Finance  
   
 Regras de acesso:  
   
--   Permitir User.Country=Resource.Country de leitura e User.department = Resource.Department  
+-   Allow Read User.Country=Resource.Country AND User.department = Resource.Department  
   
--   Permitir controle total User.MemberOf(FinanceAdmin)  
+-   Allow Full control User.MemberOf(FinanceAdmin)  
   
--   Permitir User.MemberOf(FinanceException) de leitura  
+-   Allow Read User.MemberOf(FinanceException)  
   
 #### <a name="to-create-a-central-access-rule"></a>Para criar uma regra de acesso central  
   
-1.  No painel esquerdo do Centro Administrativo do Active Directory, clique em **modo de exibição de árvore**, selecione **controle de acesso dinâmico**e clique em **regras de acesso Central**.  
+1.  No painel esquerdo do Centro Administrativo do Active Directory, clique em **Modo de Exibição de Árvore**, selecione **Controle de Acesso Dinâmico** e clique em **Regras de Acesso Central**.  
   
-2.  Clique com botão direito **regras de acesso Central**, clique em **nova**e clique em **regras de acesso Central**.  
+2.  Clique com o botão direito do mouse em **Regras de Acesso Central**, clique em **Novo** e, então, em **Regra de Acesso Central**.  
   
-3.  No **nome**, digite **Finanças documentos regra**.  
+3.  No campo **Nome**, digite **Regra de Documentos Financeiros**.  
   
-4.  No **recursos de destino** seção, clique em **editar**e no **regras de acesso Central** caixa de diálogo, clique em **adicionar uma condição**. Adicione as seguintes condições:   
-    [**Recurso**] [**Departamento**] [**é igual a**] [**Value**] [**Finanças**] e, em seguida, clique em **Okey**.  
+4.  Na seção **Recursos de Destino**, clique em **Editar** e, na caixa de diálogo **Regra de Acesso Central**, clique em **Adicionar uma condição**. Adicione a seguinte condição:   
+    [**Recurso**] [**Departamento**] [**Igual**] [**Valor**] [**Financeiro**] e clique em **OK**.  
   
-5.  No **permissões** seção, selecione **execute os seguintes permissões como permissões atuais**, clique em **editar**e no **configurações de segurança avançadas para permissões** click da caixa de diálogo **adicionar**.  
+5.  Na seção **Permissões**, selecione **Usar as seguintes permissões como atuais**, clique em **Editar** e, na caixa de diálogo **Configurações de Segurança Avançadas para Permissões**, clique em **Adicionar**.  
   
     > [!NOTE]  
-    > **Use as seguintes permissões como permissões propostas** opção permite que você crie a política no teste. Para obter mais informações sobre como fazer isso consultem o manter: mudança e estágio a seção política neste tópico.  
+    > A opção **Usar as seguintes permissões como propostas** permite criar a política em preparo. Para obter mais informações sobre como fazer isso, consulte a seção Manter: Alterar e preparar a política deste tópico.  
   
-6.  No **entrada de permissão para permissões** caixa de diálogo, clique em **selecionar uma entidade de segurança**, tipo **usuários autenticados**e clique em **Okey**.  
+6.  Na caixa de diálogo **Entrada de Permissão para Permissões**, clique em **Selecionar uma entidade de segurança**, digite **Usuários Autenticados** e clique em **OK**.  
   
-7.  No **entrada de permissão para permissões** caixa de diálogo, clique em **adicionar uma condição**e adicione as seguintes condições:   
-    [**User**] [**país**] [**Any of**] [**Recurso**] [**país**]   
-     Clique em **adicionar uma condição**.   
+7.  Na caixa de diálogo **Entrada de Permissão para Permissões**, clique em **Adicionar uma condição** e adicione as seguintes condições:   
+    [**Usuário**] [**país**] [**qualquer um dos**] [**recurso**] [**país**]   
+     Clique em **Adicionar uma condição**.   
      [**And**]   
-    Clique em [**usuário**] [**departamento**] [**qualquer uma das**] [**recurso**] [**departamento**]. Defina o **permissões** para **leitura**.  
+    Clique em [**usuário**] [**departamento**] [**qualquer um dos**] [**recurso**] [**departamento**]. Defina as **Permissões** como **Leitura**.  
   
-8.  Clique em **Okey**e clique em **adicionar**. Clique em **selecionar uma entidade de segurança**, tipo **FinanceAdmin**e clique em **Okey**.  
+8.  Clique em **OK** e, depois, em **Adicionar**. Clique em **Selecionar uma entidade de segurança**, digite **FinanceAdmin** e clique em **OK**.  
   
-9. Selecione o **modificar, ler e executar, ler, gravar** permissões e clique em **Okey**.  
+9. Selecione as permissões **Modificar, Ler e Executar, Ler, Gravar** e clique em **OK**.  
   
-10. Clique em **adicionar**, clique em **selecionar uma entidade de segurança**, tipo **FinanceException**e clique em **Okey**. Selecione as permissões para ser **leitura** e **ler e executar**.  
+10. Clique em **Adicionar**, clique em **Selecionar uma entidade de segurança**, digite **FinanceException** e, em seguida, clique em **OK**. Selecione as permissões futuras **Ler** e **Ler e Executar**.  
   
-11. Clique em **Okey** três vezes para concluir e retornar ao centro administrativo do Active Directory.  
+11. Clique em **OK** três vezes para concluir e voltar ao Centro Administrativo do Active Directory.  
   
     ![guias de soluções](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
   
-    O cmdlet do Windows PowerShell ou os cmdlets a seguir realizam as mesmas funções que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que eles possam aparecer com quebras automáticas em várias linhas devido a restrições de formatação.  
+    O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
  
-    $countryClaimType = Get-ADClaimType país  
-    $departmentClaimType = Get-ADClaimType departamento  
-    $countryResourceProperty = Get-ADResourceProperty país  
-    $departmentResourceProperty = Get-ADResourceProperty departamento  
-    $currentAcl = "O:SYG:SYD:AR(A;; FA;; O W) (A; FA;; BA) (A; 0 x1200a9;; S-1-5-21-1787166779-1215870801-2157059049-1113) (A; 0 x1301bf;; S-1-5-21-1787166779-1215870801-2157059049-1112) (A; FA;; SY) (XA; 0 x1200a9;; AU;((@USER." + $countryClaimType.Name + "Any_of @RESOURCE." + $countryResourceProperty.Name + ") & & (@USER." + $departmentClaimType.Name + "Any_of @RESOURCE." + $departmentResourceProperty.Name + ")))"  
-    $resourceCondition = "(@RESOURCE." + $departmentResourceProperty.Name + "Contains {`"Finance`"}) "  
-    New-ADCentralAccessRule "Finanças documentos regra" - CurrentAcl $currentAcl - ResourceCondition $resourceCondition  
+    $countryClaimType = Get-ADClaimType country  
+    $departmentClaimType = Get-ADClaimType department  
+    $countryResourceProperty = get-ADResourceProperty país  
+    $departmentResourceProperty = Get-ADResourceProperty Department  
+    $currentAcl = "O:SYG:SYD:AR(A;; FA;; O W) (A; FA;; BA) (A; 0 x1200a9;; S-1-5-21-1787166779-1215870801-2157059049-1113) (A; 0 x1301bf;; S-1-5-21-1787166779-1215870801-2157059049-1112) (A; FA;; SY) (XA; 0 x1200a9;; AU ;((@USER. " + $countryClaimType.Name + "Any_of @RESOURCE." + $countryResourceProperty.Name + ") & & (@USER." + $departmentClaimType.Name + " Any_of @RESOURCE." + $departmentResourceProperty.Name + ")))"  
+    $resourceCondition = "(@RESOURCE." + $departmentResourceProperty.Name + "contém {`"Finance`"}) "  
+    New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -ResourceCondition $resourceCondition  
 
   
 > [!IMPORTANT]  
-> No exemplo acima do cmdlet, os identificadores de segurança (SIDs) para o grupo FinanceAdmin e usuários é determinado no momento da criação e será diferentes no seu exemplo. Por exemplo, o SID valor fornecido (S-1-5-21-1787166779-1215870801-2157059049-1113) para o FinanceAdmins precisa ser substituído com o SID para o grupo de FinanceAdmin que você precisa criar em sua implantação real. Você pode usar o Windows PowerShell para procurar o valor do SID desse grupo, atribua esse valor a uma variável e, em seguida, use a variável aqui. Para obter mais informações, consulte [dica do Windows PowerShell: Trabalhando com SIDs](https://go.microsoft.com/fwlink/?LinkId=253545).  
+> No cmdlet de exemplo acima, os SIDs (identificadores de segurança) do grupo FinanceAdmin e dos usuários são determinados no momento de criação e serão diferentes em seu exemplo. Por exemplo, o valor de SID fornecido (S-1-5-21-1787166779-1215870801-2157059049-1113) para FinanceAdmins precisa ser substituído pelo SID real do grupo FinanceAdmin que você deve criar na sua implantação. Você pode usar o Windows PowerShell para pesquisar o valor de SID desse grupo, atribuir esse valor a uma variável e, em seguida, use a variável aqui. Para obter mais informações, consulte [dica do Windows PowerShell: Trabalhando com SIDs](https://go.microsoft.com/fwlink/?LinkId=253545).  
   
-Agora você deve ter uma regra de acesso central que permite que as pessoas acessem documentos do mesmo país e o mesmo departamento. A regra permite que o grupo FinanceAdmin editar os documentos e permite que o grupo FinanceException ler os documentos. Essa regra destina-se apenas os documentos classificados como finanças.  
+Você deve agora ter uma regra de acesso central que permita às pessoas acessar documentos do mesmo país e do mesmo departamento. A regra permite que o grupo FinanceAdmin edite documentos, e permite que o grupo FinanceException leia os documentos. Essa regra se destina apenas aos documentos classificados como Financeiros.  
   
 #### <a name="to-add-a-central-access-rule-to-a-central-access-policy"></a>Para adicionar uma regra de acesso central a uma política de acesso central  
   
-1.  No painel esquerdo do Centro Administrativo do Active Directory, clique em **controle de acesso dinâmico**e clique em **políticas de acesso Central**.  
+1.  No painel esquerdo do Centro Administrativo do Active Directory, clique em **Controle de Acesso Dinâmico** e, então, em **Políticas de Acesso Central**.  
   
-2.  No **tarefas** painel, clique em **nova**e clique em **política de acesso Central**.  
+2.  No painel **Tarefas**, clique em **Novo** e, depois, em **Política de Acesso Central.**  
   
-3.  Em **criar a política de acesso Central:**, tipo **Finanças política** no **nome** caixa.  
+3.  Em **Criar Política de Acesso Central**, digite **Política Financeira** na caixa **Nome**.  
   
-4.  Em **regras de acesso central membro**, clique em **adicionar**.  
+4.  Em **Regras de acesso central de membro**, clique em **Adicionar**.  
   
-5.  Clique duas vezes o **Finanças documentos regra** para adicioná-lo para o **adicione as seguintes regras de acesso central** listar e clique em **Okey **.  
+5.  Clique duas vezes na **Regra de Documentos Financeiros** para adicioná-la à lista **Adicionar as seguintes regras de acesso central** e clique em **OK**.  
   
-6.  Clique em **Okey** ao fim. Agora você deve ter uma política de acesso central chamada de política de finanças.  
+6.  Clique em **OK** para concluir. Você deve ter agora uma política de acesso central denominada Política Financeira.  
   
     ![guias de soluções](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
   
-    O cmdlet do Windows PowerShell ou os cmdlets a seguir realizam as mesmas funções que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que eles possam aparecer com quebras automáticas em várias linhas devido a restrições de formatação.  
+    O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
     ```  
     New-ADCentralAccessPolicy "Finance Policy" Add-ADCentralAccessPolicyMember   
@@ -232,49 +233,49 @@ Agora você deve ter uma regra de acesso central que permite que as pessoas aces
   
     ```  
   
-#### <a name="to-apply-the-central-access-policy-across-file-servers-by-using-group-policy"></a>Para aplicar a política de acesso central em servidores de arquivos usando a política de grupo  
+#### <a name="to-apply-the-central-access-policy-across-file-servers-by-using-group-policy"></a>Para aplicar a política de acesso central aos servidores de arquivos usando a Política de Grupo  
   
-1.  No **iniciar** de tela, além do **pesquisa**, digite **Group Policy Management **. Clique duas vezes em **gerenciamento de política de grupo **.  
-  
-    > [!TIP]  
-    > Se o **ferramentas administrativas Mostrar** configuração está desabilitada, o **ferramentas administrativas** pasta e seu conteúdo não aparecerão no **configurações** resultados.  
+1.  Na tela **Iniciar**, na caixa **Pesquisar**, digite **Gerenciamento de Política de Grupo**. Clique duas vezes em **Gerenciamento de Política de Grupo**.  
   
     > [!TIP]  
-    > No ambiente de produção, você deve criar uma unidade de organização de servidor de arquivos (UO) e adicionar todos os seus servidores de arquivos para essa UO à qual você deseja aplicar essa política. Em seguida, você pode criar uma política de grupo e adicionar essa UO para essa política.  
+    > Se a configuração **Mostrar Ferramentas Administrativas** estiver desabilitada, a pasta **Ferramentas Administrativas** e seus conteúdos não aparecerão nos resultados de **Configurações**.  
   
-2.  Nesta etapa, você editar o objeto de diretiva de grupo que você criou na [compilar o controlador de domínio](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_Build) seção no ambiente de teste para incluir a política de acesso central que você criou. No Editor de gerenciamento de política de grupo, navegue até e selecione a unidade organizacional no domínio (contoso.com neste exemplo): **Group Policy Management**, **floresta: contoso.com**, **domínios**, **contoso.com**, **Contoso**, **FileServerOU **.  
+    > [!TIP]  
+    > Em seu ambiente de produção, você deve criar uma UO (Unidade Organizacional) de Servidor de Arquivos e adicionar todos os seus servidores de arquivos a essa UO, à qual você deseja aplicar essa política. Você poderá então criar uma política de grupo e adicionar essa UO a essa política.  
   
-3.  Clique com botão direito **FlexibleAccessGPO**e clique em **editar **.  
+2.  Nessa etapa, você deve editar o objeto de política de grupo criado na seção [Criar o controlador de domínio](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_Build) do ambiente de teste para incluir a política de acesso central que você criou. No Editor de Gerenciamento de Política de Grupo, navegue e selecione a unidade organizacional do domínio (contoso.com neste exemplo): **Gerenciamento de Política de Grupo**, **Floresta: contoso.com**, **Domínios**, **contoso.com**, **Contoso**, **FileServerOU**.  
   
-4.  Na janela do Editor de gerenciamento de política de grupo, navegue até **configuração do computador**, expanda **políticas**, expanda **configurações do Windows**e clique em **configurações de segurança **.  
+3.  Clique com o botão direito do mouse em **FlexibleAccessGPO**, e clique em **Editar**.  
   
-5.  Expanda **sistema de arquivos**, clique com botão direito **política de acesso Central**e clique em **políticas de acesso Central gerenciar**.  
+4.  Na janela do Editor de Gerenciamento de Política de Grupo, navegue para **Configuração do computador**, expanda **Políticas**, expanda **Configurações do Windows** e clique nas **Configurações de Segurança**.  
   
-6.  No **configuração de políticas de acesso Central** caixa de diálogo caixa, adicione **Finanças política**e clique em **Okey **.  
+5.  Expanda **Sistema de Arquivos**, clique com o botão direito do mouse em **Política de Acesso Central** e clique em **Gerenciar políticas de acesso central**.  
   
-7.  Role para baixo até **configuração avançada de política de auditoria**e expandi-la.  
+6.  Na caixa de diálogo **Configuração de Políticas de Acesso Central**, adicione a **Política Financeira** e clique em **OK**.  
   
-8.  Expanda **políticas de auditoria**e selecione **acesso a objetos **.  
+7.  Role a tela para baixo até a **Configuração de Política de Auditoria Avançada** e expanda-a.  
   
-9. Clique duas vezes em **preparo de política de acesso Central de auditoria **. Selecione todas as três caixas de seleção e, em seguida, clique em **Okey **. Esta etapa permite que o sistema receber eventos de auditoria relacionados a políticas de preparo de acesso Central.  
+8.  Expanda **Políticas de Auditoria** e selecione **Acesso a Objeto**.  
   
-10. Clique duas vezes em **propriedades do sistema de arquivos de auditoria **. Selecione todas as três caixas de seleção e clique em **Okey **.  
+9. Clique duas vezes em **Preparo de Política de Acesso Central de Auditoria**. Marque todas as três caixas de seleção e clique em **OK**. Essa etapa permite que o sistema receba eventos de auditoria relacionados às Políticas de Preparo de Acesso Central.  
   
-11. Feche o Editor de gerenciamento de política de grupo. Agora você ter incluído a política de acesso central para a política de grupo.  
+10. Clique duas vezes em **Propriedades do Sistema de Arquivos de Auditoria**. Marque todas as três caixas de seleção e clique em **OK**.  
   
-Para controladores de domínio do domínio fornecer declarações ou dados de autorização do dispositivo, os controladores de domínio precisam ser configurados para dar suporte ao controle de acesso dinâmico.  
+11. Feche o Editor de Gerenciamento de Política de Grupo. Agora você incluiu a política de acesso central à Política de Grupo.  
   
-#### <a name="to-enable-support-for-claims-and-compound-authentication-for-contosocom"></a>Para habilitar o suporte para declarações e autenticação composta para contoso.com  
+Para controladores de domínio do domínio forneçam declarações ou dados de autorização de dispositivo, os controladores de domínio precisam ser configurados para dar suporte a controle de acesso dinâmico.  
   
-1.  Abra o gerenciamento de política de grupo, clique em **contoso.com**e clique em **controladores de domínio **.  
+#### <a name="to-enable-support-for-claims-and-compound-authentication-for-contosocom"></a>Para habilitar o suporte a declarações e autenticação composta para contoso.com  
   
-2.  Clique com botão direito **política de controladores de domínio padrão**e clique em **editar**.  
+1.  Abra o Gerenciamento de Política de Grupo, clique em **contoso.com** e, depois, em **Controladores de Domínio**.  
   
-3.  Na janela do Editor de gerenciamento de política de grupo, clique duas vezes em **configuração do computador**, clique duas vezes em **políticas**, clique duas vezes em **modelos administrativos**, clique duas vezes em **sistema**e clique duas vezes em **KDC**.  
+2.  Clique com botão direito na **Política de Controladores de Domínio Padrão**e clique em **Editar**.  
   
-4.  Clique duas vezes em **suporte KDC para declarações, autenticação composta e proteção Kerberos **. No **suporte KDC para declarações, autenticação composta e proteção Kerberos** caixa de diálogo, clique em **Enabled** e selecione **Supported** do **opções** lista suspensa. (Você precisa habilitar essa configuração usar as declarações do usuário em políticas de acesso central.)  
+3.  Na janela Editor de Gerenciamento de Política de Grupo, clique duas vezes em **Configuração do Computador**, duas vezes em **Políticas**, duas vezes em **Modelos Administrativos**, duas vezes em **Sistema** e, por fim, duas vezes em **KDC**.  
   
-5.  Fechar **gerenciamento de política de grupo**.  
+4.  Clique duas vezes em **Suporte KDC para declarações, autenticação composta e proteção Kerberos**. Na caixa de diálogo **Suporte KDC para declarações, autenticação composta e proteção Kerberos**, clique em **Habilitado** e selecione **Com suporte** na lista suspensa **Opções**. (Você precisa habilitar essa configuração para utilizar declarações de usuário nas políticas de acesso central.)  
+  
+5.  Feche o **Gerenciamento de Política de Grupo**.  
   
 6.  Abra um prompt de comando e digite `gpupdate /force`.  
   
@@ -282,126 +283,126 @@ Para controladores de domínio do domínio fornecer declarações ou dados de au
   
 ||Etapa|Exemplo|  
 |-|--------|-----------|  
-|3.1|Atribua o limite de utilização para as pastas compartilhadas apropriadas no servidor de arquivos.|Atribua a política de acesso central para a pasta compartilhada apropriada no servidor de arquivos.|  
-|3.2|Verifique se o acesso é configurado corretamente.|Verifique o acesso de usuários diferentes países e departamentos.|  
+|3.1|Atribuir a CAP às pastas compartilhadas apropriadas no servidor de arquivos.|Atribua a política de acesso central à pasta compartilhada apropriada no servidor de arquivos.|  
+|3.2|Verificar se o acesso está configurado adequadamente.|Verifique o acesso de usuários de países e departamentos diferentes.|  
   
-Nesta etapa, você atribuirá a política de acesso central para um servidor de arquivos. Você vai fazer logon em um servidor de arquivo que está recebendo a política de acesso central que você criou as etapas anteriores e atribuí-la para uma pasta compartilhada.  
+Nesta etapa, você atribuirá a política de acesso central ao servidor de arquivos. Você fará logon no servidor de arquivos que está recebendo a política de acesso central criada nas etapas anteriores e atribuirá a política a uma pasta compartilhada.  
   
-#### <a name="to-assign-a-central-access-policy-to-a-file-server"></a>Para atribuir uma política de acesso central para um servidor de arquivos  
+#### <a name="to-assign-a-central-access-policy-to-a-file-server"></a>Para atribuir uma política de acesso central a um servidor de arquivos  
   
-1.  No Gerenciador do Hyper-V, se conecte ao servidor Arquivo1. O servidor usando Contoso\administrador com a senha de logon:**pass@word1**.  
+1.  No Gerenciador Hyper-V, conecte-se ao servidor FILE1. Faça logon no servidor usando Contoso\administrador com a senha: **pass@word1**.  
   
-2.  Abra um prompt de comando com privilégios elevados e digite: **gpupdate /force**. Isso garante que as alterações de política de grupo entrem em vigor em seu servidor.  
+2.  Abra um prompt de comandos com privilégios elevados e digite: **gpupdate /force**. Isso assegura que suas alterações na Política de Grupo entrem em vigor no servidor.  
   
-3.  Você também precisa atualizar as propriedades do recurso Global do Active Directory. Abra uma janela do Windows PowerShell com privilégios elevados e digite `Update-FSRMClassificationpropertyDefinition`. Pressione a tecla ENTER e, em seguida, feche o Windows PowerShell.  
+3.  Será necessário atualizar as Propriedades de Recurso Global do Active Directory. Abra uma janela do Windows PowerShell com privilégios elevados e digite `Update-FSRMClassificationpropertyDefinition`. Clique em ENTER e feche o Windows PowerShell.  
   
     > [!TIP]  
-    > Você também pode atualizar as propriedades do recurso Global por logon o servidor de arquivos. Para atualizar as propriedades do recurso Global do servidor de arquivos, faça o seguinte  
+    > Você também pode atualizar as Propriedades de Recursos Globais fazendo logon no servidor de arquivos. Para atualizar as Propriedades de Recursos Globais a partir do servidor de arquivos, faça o seguinte:  
     >   
-    > 1.  Logon arquivo1 do servidor de arquivos como Contoso\administrador, usando a senha **pass@word1**.  
-    > 2.  Abra o Gerenciador de recursos do servidor de arquivos. Para abrir o Gerenciador de recursos do servidor de arquivos, clique em **iniciar**, tipo **Gerenciador de recursos do servidor de arquivos**e clique em **Gerenciador de recursos do servidor de arquivos**.  
-    > 3.  No Gerenciador de recursos de servidor de arquivos, clique em **gerenciamento de classificação de arquivo**, clique com botão direito **propriedades de classificação** e, em seguida, clique em **atualizar **.  
+    > 1.  Logon ao servidor arquivos FILE1 como Contoso\administrador usando a senha **pass@word1**.  
+    > 2.  Abra o Gerenciador de Recursos de Servidor de Arquivos. Para abrir o Gerenciador de Recursos de Servidor de Arquivos, clique em **Iniciar**, digite **gerenciador de recursos do servidor de arquivos**e clique em **Gerenciador de Recursos do Servidor de Arquivos**.  
+    > 3.  No Gerenciador de Recursos de Servidor de Arquivos, clique em **Gerenciamento de Classificação de Arquivos**, clique com o botão direito do mouse em **Propriedades de Classificação** e clique em **Atualizar**.  
   
-4.  Abra o Windows Explorer e no painel esquerdo, clique em unidade D. Clique com botão direito do **documentos de finanças** pasta e clique em **propriedades **.  
+4.  Abra o Windows Explorer e, no painel esquerdo, clique na unidade D. Clique com o botão direito do mouse na pasta **Documentos Financeiros** e clique em **Propriedades**.  
   
-5.  Clique no **Classification**, clique em **país**e, em seguida, selecione **EUA** no **valor** campo.  
+5.  Clique na guia **Classificação**, clique em **País** e selecione **EUA** no campo **Valor**.  
   
-6.  Clique em **departamento**, em seguida, selecione **Finanças** no **valor** campo e, em seguida, clique em **aplicar **.  
+6.  Clique em **Departamento** e selecione **Financeiro** no campo **Valor**. Em seguida, clique em **Aplicar**.  
   
     > [!NOTE]  
-    > Lembre-se de que a política de acesso central tiver sido configurada para arquivos de destino para o departamento de finanças. As etapas anteriores marcar todos os documentos na pasta com os atributos de país e departamento.  
+    > Lembre-se de que a política de acesso central foi configurada para os arquivos de destino do Departamento Financeiro. As etapas anteriores marcam todos os documentos da pasta que contêm os atributos País e Departamento.  
   
-7.  Clique no **segurança** guia e, em seguida, clique em **avançado**. Clique no **política Central** guia.  
+7.  Clique na guia **Segurança** e clique em **Avançada**. Clique na guia **Política Central**.  
   
-8.  Clique em **alteração**, selecione **Finanças política** do menu suspenso e depois clique em **aplicar **. Você pode ver o **Finanças documentos regra** listados na política. Expanda o item para exibir todas as permissões que você definiu quando você criou a regra no Active Directory.  
+8.  Clique em **Alterar**, selecione **Política Financeira** no menu suspenso e clique em **Aplicar**. Você poderá ver a **Regra de Documentos Financeiros** listada na política. Expanda o item para exibir todas as permissões que você definiu quando criou a regra no Active Directory.  
   
-9. Clique em **Okey** para retornar ao Windows Explorer.  
+9. Clique em **OK** para retornar ao Windows Explorer.  
   
-Na próxima etapa, você garantir acesso está configurado corretamente.  Contas de usuário precisam ter o conjunto de atributo departamento apropriado (defina usando o Centro Administrativo do Active Directory). A maneira mais simples para exibir os resultados da nova diretiva efetivos é usar o **acesso eficaz** guia no Windows Explorer. O **acesso eficaz** guia mostra os direitos de acesso para uma determinada conta de usuário.  
+Na próxima etapa, você garantirá que o acesso esteja configurado adequadamente.  As contas de usuários precisam ter o atributo Departamento apropriado definido (defina-o usando o Centro Administrativo do Active Directory). A maneira mais fácil de exibir os resultados efetivos da nova política é usar a guia **Acesso Efetivo** no Windows Explorer. A guia **Acesso Efetivo** mostra os direitos de acesso de determinada conta de usuário.  
   
-#### <a name="to-examine-the-access-for-various-users"></a>Para examinar o acesso para vários usuários  
+#### <a name="to-examine-the-access-for-various-users"></a>Para examinar o acesso de vários usuários  
   
-1.  No Gerenciador do Hyper-V, se conecte ao servidor Arquivo1. Faça logon no servidor usando Contoso\administrador. Navegue até D:\ no Windows Explorer. Clique com botão direito do **documentos de finanças** pasta e clique em **propriedades **.  
+1.  No Gerenciador Hyper-V, conecte-se ao servidor FILE1. Faça logon no servidor usando contoso\administrador. Navegue para D:\ no Windows Explorer. Clique com o botão direito do mouse na pasta **Documentos Financeiros** e clique em **Propriedades**.  
   
-2.  Clique no **segurança**, clique em **avançado**e, em seguida, clique no **acesso eficaz** guia.  
+2.  Clique na guia **Segurança**, clique em **Avançado** e, depois, clique na guia **Acesso Efetivo**.  
   
-3.  Para examinar as permissões para um usuário, clique em **selecionar um usuário**, digite o nome do usuário e, em seguida, clique em **exibir acesso efetivo** para ver os direitos de acesso eficaz. Por exemplo:  
+3.  Para examinar as permissões para um usuário, clique em **selecione um usuário**, digite o nome do usuário e, em seguida, clique em **exibir acesso efetivo** para consultar os direitos de acesso efetivo. Por exemplo:   
   
-    -   Myriam Delesalle (MDelesalle) está no departamento de finanças e deve ter acesso de leitura para a pasta.  
+    -   Myriam Delesalle (MDelesalle) faz parte do departamento financeiro e deve ter acesso de leitura à pasta.  
   
-    -   Miles Reid (MReid) é um membro do grupo FinanceAdmin e deve ter acesso Modificar à pasta.  
+    -   Miles Reid (MReid) é membro do grupo FinanceAdmin e deve ter acesso de modificação à pasta.  
   
-    -   Esther Valle (EValle) não está no departamento de finanças; No entanto, ela é um membro do grupo FinanceException e deve ter acesso de leitura.  
+    -   Esther Valle (EValle) não faz parte do departamento financeiro, mas é membro do grupo FinanceException e deve ter acesso de leitura.  
   
-    -   Maira Wenzel (MWenzel) não é do departamento de finanças e é não é um membro do grupo FinanceAdmin ou FinanceException. Ela não deve ter qualquer acesso à pasta.  
+    -   Maira Wenzel (MWenzel) não faz parte do departamento financeiro e não é membro dos grupos FinanceAdmin ou FinanceException. Ela não deve ter nenhum acesso à pasta.  
   
-    Observe que a última coluna denominada **acesso limitado por** na janela de acesso eficaz. Essa coluna informa quais gates são afeta as permissões da pessoa. Nesse caso, as permissões de compartilhamento e NTFS permitir que todos os usuários controle total. No entanto, a política de acesso central restringe o acesso com base nas regras que você configurou anteriormente.  
+    Observe a última coluna denominada **Acesso limitado por** na janela de acesso efetivo. Essa coluna informa portões que estão afetando as permissões da pessoa. Nesse caso, as permissões Compartilhar e NTFS permitem controle total a todos os usuários. No entanto, a política de acesso central restringe o acesso com base nas regras configuradas anteriormente.  
   
-## <a name="BKMK_1.5"></a>Manter: Alterar e testar a política  
+## <a name="BKMK_1.5"></a>Manter: Alterar e preparar a política  
   
 ||||  
 |-|-|-|  
 |Número|Etapa|Exemplo|  
-|4.1|Configurar as declarações de dispositivo para clientes|Defina a configuração de política de grupo para habilitar as declarações de dispositivo|  
-|4.2|Habilite uma declaração para dispositivos.|Habilite o tipo de declaração do país para dispositivos.|  
-|4.3|Adicione uma política de preparo para a regra de acesso central existente que você deseja modificar.|Modifique a regra de documentos de finanças para adicionar uma diretiva de preparo.|  
-|4.4|Exiba os resultados da política de preparo.|Verifique as permissões do Ester Velle.|  
+|4.1|Configurar declarações de dispositivo para clientes|Definir a configuração da política de grupo para habilitar declarações de dispositivo|  
+|4.2|Habilitar uma declaração para os dispositivos.|Habilite o tipo de declaração de país para os dispositivos.|  
+|4.3|Adicionar uma política de preparo à regra de acesso central existente que você deseja modificar.|Modifique a Regra de Documentos Financeiros para adicionar uma política de preparo.|  
+|4.4|Exibir os resultados da política de preparo.|Verifique se há permissões as clara Barbosa.|  
   
-#### <a name="to-set-up-group-policy-setting-to-enable-claims-for-devices"></a>Para configurar a política de grupo configuração Habilitar declarações para dispositivos  
+#### <a name="to-set-up-group-policy-setting-to-enable-claims-for-devices"></a>Para definir uma configuração de política de grupo a fim de habilitar declarações para dispositivos  
   
-1.  Fazer logon em DC1, gerenciamento de política de grupo aberto, clique **contoso.com**, clique em **política de domínio padrão**, clique com botão direito e selecione **editar **.  
+1.  Faça logon no DC1, abra o Gerenciamento de Política de Grupo, clique em **contoso.com**, clique em **Política de Domínio Padrão**, clique com o botão direito do mouse e selecione **Editar**.  
   
-2.  Na janela do Editor de gerenciamento de política de grupo, navegue até **configuração do computador**, **políticas**, **modelos administrativos**, **sistema**, **Kerberos **.  
+2.  Na janela Editor de Gerenciamento de Política de Grupo, navegue para **Configuração do Computador**, **Políticas**, **Modelos Administrativos**, **Sistema**, **Kerberos**.  
   
-3.  Selecione **suporte do cliente Kerberos declarações, autenticação composta e proteção Kerberos** e clique em **habilitar **.  
+3.  Selecione **Suporte Kerberos a declarações de cliente, autenticação composta e proteção Kerberos** e clique em **Habilitar**.  
   
 #### <a name="to-enable-a-claim-for-devices"></a>Para habilitar uma declaração para dispositivos  
   
-1.  Abra DC1 do servidor no Gerenciador do Hyper-V e o log em como Contoso\administrador, com a senha **pass@word1**.  
+1.  Abra o servidor DC1 no Gerenciador do Hyper-V e faça logon como Contoso\administrador, com a senha **pass@word1**.  
   
-2.  Do **ferramentas** menu, abrir Centro de administrativo do Active Directory.  
+2.  No menu **Ferramentas**, abra o Centro Administrativo do Active Directory.  
   
-3.  Clique em **modo de exibição de árvore**, expanda **controle de acesso dinâmico**, clique duas vezes em **tipos de declaração**e clique duas vezes o **país** reivindicar.  
+3.  Clique em **Modo de Exibição de Árvore**, expanda **Controle de Acesso Dinâmico**, clique duas vezes em **Tipos de Declarações** e clique duas vezes na declaração **país**.  
   
-4.  Em **requerimentos judiciais ou Extrajudiciais desse tipo podem ser emitidas para as seguintes classes**, selecione o **computador** caixa de seleção. Clique em **Okey**.   
-    Ambos **usuário** e **computador** caixas de seleção agora deverá ser selecionadas. A declaração de país agora pode ser usada com dispositivos além dos usuários.  
+4.  Em **As declarações desse tipo podem ser emitidas para as seguintes classes**, marque a caixa de seleção **Computador**. Clique em **OK**.   
+    Agora, as caixas de seleção **Usuário** e **Computador** devem estar marcadas. A declaração de país pode agora ser usada com dispositivos, além dos usuários.  
   
-A próxima etapa é criar uma regra de política de preparo. Preparo políticas podem ser usadas para monitorar os efeitos de uma nova entrada de política antes de ativá-lo. Na etapa a seguir, você criará uma entrada preparo de política e monitorar o efeito em sua pasta compartilhada.  
+A próxima etapa é criar uma regra de política de preparo. As políticas de preparo podem ser usadas para monitorar os efeitos de uma nova entrada de política antes que você a habilite. Na etapa a seguir, você criará uma entrada de política de preparo e monitorará o efeito sobre sua pasta compartilhada.  
   
-#### <a name="to-create-a-staging-policy-rule-and-add-it-to-the-central-access-policy"></a>Criar uma regra de política de preparo e adicioná-la à política de acesso central  
+#### <a name="to-create-a-staging-policy-rule-and-add-it-to-the-central-access-policy"></a>Para criar uma regra de política de preparo e adicioná-la à política de acesso central  
   
-1.  Abra DC1 do servidor no Gerenciador do Hyper-V e o log em como Contoso\administrador, com a senha **pass@word1**.  
+1.  Abra o servidor DC1 no Gerenciador do Hyper-V e faça logon como Contoso\administrador, com a senha **pass@word1**.  
   
 2.  Abra o Centro Administrativo do Active Directory.  
   
-3.  Clique em **modo de exibição de árvore**, expanda **controle de acesso dinâmico**e selecione **regras de acesso Central **.  
+3.  Clique em **Modo de Exibição de Árvore**, expanda **Controle de Acesso Dinâmico** e selecione **Regras de Acesso Central**.  
   
-4.  Clique com botão direito **Finanças documentos regra**e clique em **propriedades **.  
+4.  Clique com o botão direito do mouse em **Regra de Documentos Financeiros** e clique em **Propriedades**.  
   
-5.  No **proposta permissões** seção, selecione o **permissão de habilitar preparo configuração** caixa de seleção, clique em **editar**e clique em **adicionar **. No **entrada de permissão para permissões proposta** janela, clique no **selecionar uma entidade de segurança** vincular, digite **usuários autenticados**e clique em **Okey **.  
+5.  Na seção **Permissões Propostas**, marque a caixa de seleção **Habilitar a configuração de preparação de permissões**, clique em **Editar** e, então, em **Adicionar**. Na janela **Entrada de Permissão para Permissões Propostas**, clique no link **Selecionar uma Entidade de Segurança**, digite **Usuários Autenticados** e clique em **OK**.  
   
-6.  Clique no **adicionar uma condição** vincular e adicione as seguintes condições:   
-     [**User**] [**país**] [**Any of**] [**Recurso**] [**País**].  
+6.  Clique no link **Adicionar uma condição** e adicione a seguinte condição:   
+     [**Usuário**] [**país**] [**Qualquer**] [**Recurso**] [**País**].  
   
-7.  Clique em **adicionar uma condição** novamente e adicione as seguintes condições:  
+7.  Clique novamente em **Adicionar uma condição** e adicione a seguinte condição:  
     [**And**]   
-     [**Dispositivo**] [**país**] [**Any of**] [**Recurso**] [**País**]  
+     [**Device**] [**country**] [**Any of**] [**Resource**] [**Country**]  
   
-8.  Clique em **adicionar uma condição** novamente e adicione as seguintes condições.  
-    [E]   
-     [**User**] [**Group**] [**Membro de qualquer**] [**Valor**] \ (**FinanceException**)  
+8.  Clique novamente em **Adicionar uma condição** e adicione a condição a seguir.  
+    [And]   
+     [**Usuário**] [**grupo**] [**membro de qualquer**] [**valor**]\(**FinanceException**)  
   
-9. Para definir o FinanceException, de grupo, clique em **adicionar itens** no **Selecionar usuário, computador, conta de serviço ou grupo** janela, digite **FinanceException **.  
+9. Para definir o grupo FinanceException, clique em **Adicionar itens** na janela **Selecionar Usuário, Computador, Conta de Serviço ou Grupo** e digite **FinanceException**.  
   
-10. Clique em **permissões**, selecione **controle total**e clique em **Okey **.  
+10. Clique em **Permissões**, selecione **Controle Total** e clique em **OK**.  
   
-11. Nas configurações de segurança antecipada para janela proposta permissões, selecione **FinanceException** e clique em **remover **.  
+11. Na janela Configurações de Segurança Avançadas para Permissões Propostas, selecione **FinanceException** e clique em **Remover**.  
   
-12. Clique em **Okey** duas vezes para concluir.  
+12. Clique em **OK** duas vezes para concluir.  
   
 ![guias de soluções](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
   
-O cmdlet do Windows PowerShell ou os cmdlets a seguir realizam as mesmas funções que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que eles possam aparecer com quebras automáticas em várias linhas devido a restrições de formatação.  
+O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
 ```  
 Set-ADCentralAccessRule  
@@ -412,25 +413,25 @@ Set-ADCentralAccessRule
 ```  
   
 > [!NOTE]  
-> No exemplo acima do cmdlet, o valor de servidor reflete o servidor no ambiente de laboratório de teste. Você pode usar o Visualizador de histórico do Windows PowerShell para procurar os cmdlets do Windows PowerShell para cada procedimento que executar no Centro Administrativo do Active Directory. Para obter mais informações, consulte [Visualizador de histórico do Windows PowerShell](https://technet.microsoft.com/library/hh831702)  
+> No cmdlet de exemplo acima, o valor de servidor reflete o servidor no ambiente de laboratório de teste. Você pode usar o Visualizador do Windows PowerShell History para pesquisar os cmdlets do Windows PowerShell para cada procedimento realizado no Centro Administrativo do Active Directory. Para obter mais informações, consulte [Visualizador de histórico do Windows PowerShell](https://technet.microsoft.com/library/hh831702)  
   
-Neste conjunto de permissões proposta, membros do grupo FinanceException terão acesso completo aos arquivos do seu próprio país quando eles acessá-los por meio de um dispositivo do país mesmo que o documento. Entradas de auditoria estão disponíveis nos servidores de arquivo de log de segurança quando alguém do departamento de finanças tenta acessar os arquivos. No entanto, as configurações de segurança não são impostas até que a política seja promovida de preparo.  
+Neste conjunto de permissões propostas, os membros do grupo FinanceException terão acesso total aos arquivos do próprio país quando acessarem esses arquivos usando um dispositivo do mesmo país do documento. Entradas de auditoria são disponibilizados no log de segurança dos servidores de arquivos quando alguém do departamento financeiro tenta acessar os arquivos. No entanto, as configurações de segurança não são impostas até que a política seja promovida do preparo.  
   
-No próximo procedimento, verifique se os resultados da política de preparo. Você acessa a pasta compartilhada com um nome de usuário que tenha permissões com base na regra atual. Esther Valle (EValle) é um membro do FinanceException, e ela atualmente tem direitos de leitura. Acordo com nossa política de preparo, EValle não deve ter direitos.  
+No próximo procedimento, você verificará os resultados da política de preparo. Acesse a pasta compartilhada com um nome de usuário que tenha permissões baseadas na regra atual. Esther Valle (EValle) é membro de FinanceException e tem direitos de leitura no momento. De acordo com a política de preparo, EValle não deve ter nenhum direito.  
   
 #### <a name="to-verify-the-results-of-the-staging-policy"></a>Para verificar os resultados da política de preparo  
   
-1.  Se conectar ao arquivo1 de servidor de arquivo no Gerenciador do Hyper-V e o log em como Contoso\administrador, com a senha **pass@word1**.  
+1.  Se conectar ao servidor de arquivos FILE1 no Gerenciador do Hyper-V e faça em como contoso\administrator com a senha **pass@word1**.  
   
-2.  Abra uma janela Prompt de comando e digite **gpupdate /force **. Isso garante que as alterações de política de grupo entrarão em vigor em seu servidor.  
+2.  Abra uma janela de prompt de comando e digite **gpupdate /force**. Isso assegura que suas alterações na Política de Grupo entrem em vigor no servidor.  
   
-3.  No Gerenciador do Hyper-V, se conecte ao servidor CLIENT1. Fazer logoff do usuário que está conectado no momento. Reinicie a máquina virtual, CLIENT1. Em seguida, logon no computador usando contoso\EValle pass@word1.  
+3.  No Gerenciador Hyper-V, conecte-se ao servidor CLIENT1. Faça logoff do usuário que está conectado no momento. Reinicie a máquina virtual CLIENT1. Em seguida, faça logon no computador usando contoso\evalle e pass@word1.  
   
-4.  Clique duas vezes o atalho da área de trabalho para \\\FILE1\Finance documentos. EValle ainda devem ter acesso aos arquivos. Alternar de volta para Arquivo1.  
+4.  Clique duas vezes o atalho da área de trabalho para \\\FILE1\Finance documentos. EValle ainda deve ter acesso aos arquivos. Mude novamente para o FILE1.  
   
-5.  Abrir **Visualizador de eventos** de atalho na área de trabalho. Expanda **Logs do Windows**e, em seguida, selecione **segurança **. Abra as entradas com **4818 de ID de evento**sob o **preparo de política de acesso Central** categoria da tarefa. Você verá que EValle teve permissão acesso; No entanto, acordo com a política de preparo, o usuário deve ter acesso negado.  
+5.  Abra o **Visualizador de Eventos** a partir do atalho da área de trabalho. Expanda **Logs do Windows** e selecione **Segurança**. Abra as entradas com **Event ID 4818**sob o **preparo da política de acesso Central** categoria de tarefa. Você verá que EValle recebeu permissão de acesso. No entanto, de acordo com a política de preparo, a usuária teria o acesso negado.  
   
 ## <a name="next-steps"></a>Próximas etapas  
-Se você tiver um sistema de gerenciamento de servidor central como o System Center Operations Manager, você pode também configurar o monitoramento de eventos. Isso permite que os administradores monitorar os efeitos das políticas de acesso central antes de forçá-los.  
+Se tiver um sistema de gerenciamento de servidor central como o System Center Operations Manager, você também poderá configurar o monitoramento de eventos. Isso permite que os administradores monitorem os efeitos das políticas de acesso central antes de impô-las.  
   
 

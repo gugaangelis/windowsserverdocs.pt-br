@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: c1f261eb926eca3ead58b87aeb00a5060b9d957c
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59815917"
 ---
 # <a name="create-a-file-screen"></a>Criar uma triagem de arquivo
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Ao criar uma nova triagem de arquivo, você pode optar por salvar um modelo de triagem de arquivo com base nas propriedades de triagem de arquivo personalizado que você definir. A vantagem disso é que um link é mantido entre triagens de arquivo e o modelo é usado para criá-los, para que no futuro, as alterações no modelo podem ser aplicadas a todas as triagens de arquivo derivados dele. Esse é um recurso que simplifica a implementação das alterações de políticas de armazenamento, fornecendo um ponto central no qual todas as atualizações podem ser feitas.
 
@@ -38,7 +39,7 @@ Ao criar uma nova triagem de arquivo, você pode optar por salvar um modelo de t
 
 7.  Em **Grupos de arquivos**, selecione cada grupo de arquivos que você deseja incluir em sua triagem de arquivo. (Para marcar a caixa de seleção do grupo de arquivos, clique duas vezes no rótulo do grupo de arquivos.)
 
-    Se quiser exibir os tipos de arquivo que um grupo de arquivos inclui e exclui, clique no rótulo do grupo do arquivo e depois em **Editar**. Para criar um novo grupo de arquivos, clique em **Criar**.
+    Se você quiser exibir os tipos de arquivo que um grupo de arquivos inclui e exclui, clique no rótulo do grupo de arquivo e, em seguida, clique em **editar**. Para criar um novo grupo de arquivos, clique em **criar**.
 
 8.  Além disso, você pode configurar **Gerenciador de recursos do servidor de arquivos** para gerar uma ou mais notificações definindo opções nas guias **Email**, **Log de eventos**, **Comando** e **Relatório**. Para obter mais informações sobre opções de notificação de triagem de arquivo, consulte [Criar um modelo de triagem de arquivo](create-file-screen-template.md).
 
@@ -53,11 +54,11 @@ Ao criar uma nova triagem de arquivo, você pode optar por salvar um modelo de t
 
 12. Clique em **OK**.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
--   [Gerenciamento de triagem de arquivos](file-screening-management.md)
+-   [Gerenciamento de triagem de arquivo](file-screening-management.md)
 -   [Definir grupos de arquivos para triagem](define-file-groups-for-screening.md)
--   [Criar um modelo de triagem de arquivo](create-file-screen-template.md)
--   [Editar propriedades de modelo de triagem de arquivo](edit-file-screen-template-properties.md)
+-   [Criar um modelo de tela de arquivo](create-file-screen-template.md)
+-   [Editar propriedades do modelo de triagem de arquivo](edit-file-screen-template-properties.md)
 
 

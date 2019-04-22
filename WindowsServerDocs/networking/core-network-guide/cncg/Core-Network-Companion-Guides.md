@@ -1,6 +1,6 @@
 ---
-title: Guias de complementar de rede principal
-description: Este tópico fornece uma visão geral das guias de complemento ao guia de rede do Windows Server 2016 Core
+title: Guias Complementares de Rede Principal
+description: Este tópico fornece uma visão geral dos guias complementares para o guia de rede do Windows Server 2016 Core
 manager: brianlic
 ms.technology: networking
 ms.prod: windows-server-threshold
@@ -8,60 +8,61 @@ ms.topic: article
 ms.assetid: d57af0bd-9301-4f62-9888-f528cd10451d
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3c272c51cc69017b75e50e79e58186c0ea7c6391
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: b757e1914ee263a041f39e9767d3cb8af38403dc
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59816797"
 ---
-# <a name="core-network-companion-guides"></a>Guias de complementar de rede principal
+# <a name="core-network-companion-guidance"></a>Diretrizes de complementar de rede principal
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Enquanto o Windows Server 2016 [guia da rede principal](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide) fornece instruções sobre como implantar um novo Active Directory&reg; floresta com um novo domínio raiz e a infraestrutura de rede suporte, guias do complemento para fornecer a capacidade de adicionar recursos à sua rede.
+Embora o Windows Server 2016 [guia da rede principal](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide) fornece instruções sobre como implantar um novo Active Directory&reg; floresta com um novo domínio raiz e a infraestrutura de rede suporte, guias complementares fornecem a você com a capacidade de adicionar recursos à sua rede.
 
-Cada guia complementar permite que você realize uma meta específica depois que você tiver implantado sua rede principal. Em alguns casos, há que vários complementar orienta que, quando implantados juntos e na ordem correta, permitem que você realizar muito complexas metas de uma forma de medida, econômico e razoável.
+Cada guia complementar permite cumprir uma meta específica, depois que você implantou sua rede principal. Em alguns casos, existem vários guias complementarem que, quando implantados juntos e na ordem correta, permitem realizar objetivos muito complexos de forma medida, econômica e razoável.
 
-Se tiver implantado sua rede de domínio e núcleo do Active Directory antes de encontrar o guia da rede principal, você ainda pode usar os guias de complemento para adicionar recursos a sua rede. Basta usar a guia da rede principal como uma lista dos pré-requisitos e souber que implantar recursos adicionais com os guias de complemento, sua rede deve atender aos pré-requisitos que são fornecidos pela guia da rede principal.
+Se você implantou sua rede principal e seu domínio do Active Directory antes de encontrar o Guia da Rede Principal, ainda pode usar os Guias Complementares para adicionar recursos à sua rede. Simplesmente use o Guia da Rede Principal como uma lista de pré-requisitos e saiba que, para implantar recursos adicionais com os Guias Complementares, a rede deve atender aos pré-requisitos que são fornecidos pelo Guia da Rede Principal.
 
-## <a name="core-network-companion-guide-deploy-server-certificates-for-8021x-wired-and-wireless-deployments"></a>Guia complementar da rede principal: Implantar certificados de servidor para 802.1 X implantações com e sem fio 
+## <a name="core-network-companion-guide-deploy-server-certificates-for-8021x-wired-and-wireless-deployments"></a>Guia complementar da rede principal: Implantar certificados de servidor para implantações com e sem fio do 802.1X 
 
-Este guia prático explica como se basear a rede principal implantando certificados de servidor para computadores que executam o servidor de política de rede \(NPS\), serviço de acesso remoto \(RAS\) ou ambos.
+Este guia complementar explica como construir em cima de rede principal com a implantação de certificados de servidor para computadores que estão executando o servidor de políticas de rede \(NPS\), serviço de acesso remoto \(RAS\), ou ambos.
 
-Certificados de servidor são necessários ao implantar métodos de autenticação baseada em certificado com Extensible Authentication Protocol \(EAP\) e \(PEAP\) EAP protegido para autenticação de acesso de rede. Implantando certificados de servidor com serviços de certificados do Active Directory \(AD CS\) para métodos de autenticação baseada em certificado EAP e PEAP fornece os seguintes benefícios:
+Certificados de servidor são necessários quando você implanta os métodos de autenticação baseada em certificado com o protocolo de autenticação extensível \(EAP\) e o EAP protegido \(PEAP\) para autenticação de acesso de rede. Implantar certificados de servidor com serviços de certificados do Active Directory \(AD CS\) para autenticação baseada em certificados EAP e PEAP métodos oferece os seguintes benefícios:
 
-- Associando a identidade do servidor NPS ou RAS a uma chave privada
-- Um método seguro e eficientes de custo para registrar automaticamente certificados para servidores NPS e RAS de membro do domínio
+- Associando a identidade do servidor NPS ou o acesso remoto a uma chave privada
+- Um método eficiente e seguro para registrar automaticamente certificados para servidores NPS e RAS de membros do domínio
 - Um método eficiente para o gerenciamento de certificados e autoridades de certificação
-- Segurança fornecida pelos autenticação baseada em certificado
-- A capacidade para expandir o uso de certificados para fins de adicionais
+- Segurança fornecida por autenticação baseada em certificado
+- A capacidade de expandir o uso de certificados para outras finalidades
   
-Para obter instruções sobre como implantar certificados de servidor, consulte [implantar certificados de servidor para 802.1 X com e sem fio implantações](server-certs/Deploy-Server-Certificates-for-802.1X-Wired-and-Wireless-Deployments.md).  
-## <a name="core-network-companion-guide-deploy-password-based-8021x-authenticated-wireless-access"></a>Guia complementar da rede principal: Implantar baseada em senha acesso autenticado 802.1 X sem fio
+Para obter instruções sobre como implantar certificados de servidor, consulte [implantar certificados de servidor para 802.1 X com fio e implantações sem fio](server-certs/Deploy-Server-Certificates-for-802.1X-Wired-and-Wireless-Deployments.md).  
+## <a name="core-network-companion-guide-deploy-password-based-8021x-authenticated-wireless-access"></a>Guia complementar da rede principal: Implantar acesso sem fio autenticado 802.1X baseado em senha
 
-Este guia prático explica como se basear a rede principal, fornecendo instruções sobre como implantar Institute of Electrical e engenheiros de aparelhos eletrônicos \(IEEE\) 802.1X\-acesso sem fio 802.11 IEEE usando protegido Extensible Authentication Protocol\ – Microsoft Challenge Handshake Authentication Protocol versão 2 autenticado \ (PEAP\-MS\-CHAP v2\).
+Este guia complementar explica como construir em cima de rede principal, fornecendo instruções sobre como implantar o Institute of Electrical and Electronics Engineers \(IEEE\) 802.1 X\-autenticado sem fio do IEEE 802.11 acessar usando Protected Extensible autenticação Protocol\ – Microsoft Challenge Handshake Authentication Protocol versão 2 \(PEAP\-MS\-CHAP v2\).
 
-O método de autenticação PEAP\-MS\-CHAP v2 requer que porém autenticando servidores que executam o servidor de política de rede \(NPS\) presentes clientes sem fio com um certificado de servidor para provar a identidade do servidor NPS para o cliente, autenticação de usuário não é executada usando um certificado – em vez disso, os usuários fornecem o nome de usuário de domínio e a senha.
+O método de autenticação do PEAP\-MS\-CHAP v2 requer que autenticar servidores que executam o servidor de políticas de rede \(NPS\) apresentar os clientes sem fio com um certificado de servidor para comprovar a identidade do NPS para o cliente, no entanto, a autenticação de usuário não é executada usando um certificado - em vez disso, os usuários fornecer seu nome de usuário de domínio e senha.
 
-Como PEAP\-MS\-CHAP v2 exige que os usuários forneçam credenciais baseada em senha, em vez de um certificado durante o processo de autenticação, é geralmente mais fácil e mais econômica implantar que EAP\ TLS ou PEAP\-TLS.
+Como PEAP\-MS\-CHAP v2 requer que os usuários forneçam credenciais baseadas em senha em vez de um certificado durante o processo de autenticação, é geralmente mais fácil e mais barato de implantar que o EAP\-TLS ou PEAP \-TLS.
 
-Antes de usar este guia para implantar o acesso sem fio com o método de autenticação PEAP\-MS\-CHAP v2, você deve fazer o seguinte:
+Antes de usar este guia para implantar o acesso sem fio com o PEAP\-MS\-método de autenticação do protocolo CHAP v2, você deve fazer o seguinte:
 
-1. Siga as instruções no guia de rede principal para implantar a infraestrutura da rede principal ou já tem as tecnologias apresentadas desse guia implantado em sua rede.
-2. Siga as instruções nos principais rede complementar guia implantar certificados do servidor para 802.1 X com e sem fio implantações ou já tem as tecnologias apresentadas desse guia implantado em sua rede.
+1. Siga as instruções no guia da rede principal para implantar sua infraestrutura de rede central, ou já tem as tecnologias apresentadas no guia implantado em sua rede.
+2. Siga as instruções no Core Network Companion guia implantar certificados de servidor para 802.1 X com fio e implantações sem fio ou já tem as tecnologias apresentadas no guia implantado em sua rede.
 
-Para obter instruções sobre como implantar o acesso sem fio com PEAP\-MS\-CHAP v2, consulte [baseada em senha implantar 802.1 X autenticado acesso sem fio](wireless/a-deploy-8021X-wireless-access.md).
+Para obter instruções sobre como implantar o acesso sem fio com o PEAP\-MS\-CHAP v2, consulte [baseado em senha implantar acesso autenticado 802.1 X sem fio](wireless/a-deploy-8021X-wireless-access.md).
 
-## <a name="core-network-companion-guide-deploy-branchcache-hosted-cache-mode"></a>Guia complementar da rede principal: Implantar o modo de Cache hospedado BranchCache
+## <a name="core-network-companion-guide-deploy-branchcache-hosted-cache-mode"></a>Guia complementar da rede principal: Implantar o modo Cache Hospedado do BranchCache
 
-Este guia complementar explica como implantar BranchCache no modo de Cache hospedado em um ou mais filiais.
+Este guia complementar explica como implantar o BranchCache no modo de Cache hospedado em um ou mais filiais.
 
-BranchCache é uma tecnologia de otimização de largura de banda (WAN) de rede de longa distância que está incluída em algumas edições dos sistemas operacionais Windows Server 2016 e o Windows 10, bem como nas versões anteriores do Windows e Windows Server.
+BranchCache é uma tecnologia de otimização de largura de banda (WAN) de rede de longa distância que é incluída em algumas edições dos sistemas operacionais Windows Server 2016 e Windows 10, bem como nas versões anteriores do Windows e Windows Server.
 
-Quando você implanta BranchCache no modo de cache hospedado, o cache de conteúdo em uma filial é hospedado em um ou mais computadores de servidor, que são chamados de servidores de cache. Servidores de cache hospedado podem executar cargas de trabalho além de cache, que permite que você use o servidor para várias finalidades na filial de hospedagem.
+Quando você implanta o BranchCache no modo de cache hospedado, o cache de conteúdo em uma filial é hospedado em um ou mais servidores, que são chamados de servidores de cache hospedado. Servidores de cache hospedado podem executar cargas de trabalho além de hospedar o cache, que permite que você use o servidor para vários fins na filial.
 
-Modo de cache BranchCache hospedado aumenta a eficiência do cache porque o conteúdo está disponível, mesmo se o cliente que originalmente solicitado e os dados armazenados em cache estiver offline. Como o servidor de cache hospedado sempre está disponível, mais conteúdo é armazenado em cache, fornecendo maior economia de largura de banda WAN, e a eficiência BranchCache é aprimorada.
+O modo de cache hospedado do BranchCache aumenta a eficiência de cache porque o conteúdo estará disponível mesmo se o cliente que originalmente solicitado e os dados armazenados em cache está offline. Como o servidor de cache hospedado está sempre disponível, mais conteúdo é armazenado em cache, proporcionando maiores economias de largura de banda de WAN e aumentando a eficiência do BranchCache.
 
-Quando você implanta o modo de cache hospedado, todos os clientes em uma filial múltiplo sub-rede podem acessar um cache único, que é armazenado no servidor de cache hospedado, mesmo que os clientes estão em sub-redes diferentes.
+Quando você implanta o modo de cache hospedado, todos os clientes em uma filial de várias sub-redes podem acessar um único cache, o que é armazenado no servidor de cache hospedado, mesmo que os clientes estão em sub-redes diferentes.
 
-Para obter instruções sobre como implantar BranchCache no modo de Cache hospedado, consulte [implantar BranchCache hospedado Cache modo](bc-hcm/1-Deploy-Bc-Hcm.md).
+Para obter instruções sobre como implantar o BranchCache no modo de Cache hospedado, consulte [implantar o BranchCache modo de Cache hospedado](bc-hcm/1-Deploy-Bc-Hcm.md).
