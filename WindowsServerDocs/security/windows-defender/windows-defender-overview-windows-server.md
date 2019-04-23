@@ -1,6 +1,6 @@
 ---
-title: "Visão geral do Windows Defender para Windows Server"
-description: "Segurança do Windows Server"
+title: Visão geral do Windows Defender para Windows Server
+description: Segurança do Windows Server
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,34 +13,35 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c29f1d2a878ac0a367fd4cb49d893e4eacb1563e
-ms.sourcegitcommit: 8c5837dcfb9690e9984e27446cf4b36a286bbba1
+ms.openlocfilehash: 29506acf9ee7c52e100eb278c53205d03ef472d6
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59855617"
 ---
-# <a name="windows-defender-antivirus-for-windows-server"></a>Antivírus do Windows Defender para Windows Server
+# <a name="windows-defender-antivirus-for-windows-server"></a>Windows Defender antivírus para o Windows Server
 
 >Aplica-se a: Windows Server 2016
 
-Windows Server 2016 agora inclui o Windows Defender antivírus. Windows Defender AV é proteção contra malware que imediatamente e ativamente protege o Windows Server 2016 contra malwares conhecidos e regularmente pode atualizar as definições de antimalware via Windows Update.
+Agora, o Windows Server 2016 inclui Windows Defender antivírus. Windows Defender AV é a proteção contra malware que imediata e ativamente protege o Windows Server 2016 contra malwares conhecidos e pode regularmente atualizar definições antimalware através do Windows Update.
 
-Consulte o [antivírus do Windows Defender no Windows 10](https://docs.microsoft.com/en-us/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-in-windows-10) biblioteca de documentação para obter mais informações.
+Consulte a [Windows Defender antivírus no Windows 10](https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-in-windows-10) biblioteca de documentação para obter mais informações.
 
 
-Embora a funcionalidade, a configuração e gerenciamento é basicamente o mesmo para o Windows Defender AV no Windows 10 ou Windows Server 2016, há algumas diferenças importantes:
+Embora a funcionalidade, a configuração e o gerenciamento sejam basicamente os mesmos para o Windows Defender AV no Windows 10 ou no Windows Server 2016, há algumas diferenças importantes:
 
-- No Windows Server 2016, [exclusões automáticas](https://docs.microsoft.com/en-us/windows/threat-protection/windows-defender-antivirus/configure-server-exclusions-windows-defender-antivirus) são aplicadas com base em sua função de servidor definido.
-- No Windows Server 2016, AV do Windows Defender não desabilitará em si se você estiver executando outro produto antivírus.
+- No Windows Server 2016, [exclusões automáticas](https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/configure-server-exclusions-windows-defender-antivirus) são aplicadas com base em sua função definida de servidor.
+- No Windows Server 2016, o Windows Defender AV não se desabilitará se você estiver executando outro produto antivírus.
 
-O [antivírus do Windows Defender no Windows Server 2016](https://docs.microsoft.com/en-us/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016) tópico contém o conjunto de backup e informações de configuração específicas ao Windows Server 2016, incluindo como:
+O [Windows Defender antivírus no Windows Server 2016](https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016) tópico contém o conjunto de backup e informações de configuração específicas para o Windows Server 2016, incluindo como:
 
--   [Habilitar a interface](https://docs.microsoft.com/en-us/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_UsingDef)
+-   [Habilitar a interface](https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_UsingDef)
 
--   [Verifique se que está executando o Windows Defender AV]( https://docs.microsoft.com/en-us/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_DefRun)
+-   [Verifique se que está executando o Windows Defender AV]( https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_DefRun)
 
--   [Atualizar as definições de antimalware]( https://docs.microsoft.com/en-us/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_UpdateDef)
+-   [Atualizar as definições antimalware]( https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_UpdateDef)
 
--   [Enviar amostras]( https://docs.microsoft.com/en-us/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_DefSamples)
+-   [Enviar amostras]( https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_DefSamples)
 
--   [Configurar exclusões automáticas]( https://docs.microsoft.com/en-us/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_DefExclusions)
+-   [Configurar exclusões automáticas]( https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_DefExclusions)

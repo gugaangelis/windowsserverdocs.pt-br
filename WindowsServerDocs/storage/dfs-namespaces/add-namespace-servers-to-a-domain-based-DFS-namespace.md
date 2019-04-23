@@ -1,5 +1,5 @@
 ---
-title: "Adicionar servidores de namespace para um namespace DFS baseado em domínio"
+title: Adicionar servidores de namespace para um namespace DFS baseado em domínio
 description: Este artigo descreve como especificar os servidores de namespace adicionais para hospedar um namespace usando o Gerenciamento DFS.
 ms.date: 6/5/2017
 ms.prod: windows-server-threshold
@@ -8,15 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 70ab3cac71f5766bc572015c6b23c0937e5252f0
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: bb3b98e1ea687b68bbb87d0da413f9624d336370
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59853327"
 ---
 # <a name="add-namespace-servers-to-a-domain-based-dfs-namespace"></a>Adicionar servidores de namespace para um namespace DFS baseado em domínio
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
+> Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
 
 Você pode aumentar a disponibilidade de um namespace baseado em domínio, especificando os servidores de namespace adicionais para hospedar o namespace.
 
@@ -37,10 +38,10 @@ Para adicionar um servidor de namespace para um namespace baseado em domínio us
 > [!TIP]
 > Para adicionar um servidor de namespace usando o Windows PowerShell, use o [cmdlet New-DfsnRootTarget](https://docs.microsoft.com/powershell/module/dfsn/set-dfsnroottarget). O módulo do Windows PowerShell de DFSN foi apresentado no Windows Server 2012.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
--   [Implantando namespaces DFS](deploying-dfs-namespaces.md)
--   [Confira os requisitos do servidor de Namespaces DFS](https://technet.microsoft.com/library/cc753448(v=ws.11).aspx)
--   [Crie um namespace DFS](create-a-dfs-namespace.md)
--   [Delegar permissões de gerenciamento para Namespaces DFS](delegate-management-permissions-for-dfs-namespaces.md)
+-   [Implantando os Namespaces do DFS](deploying-dfs-namespaces.md)
+-   [Examine os requisitos do servidor de Namespaces DFS](https://technet.microsoft.com/library/cc753448(v=ws.11).aspx)
+-   [Criar um Namespace do DFS](create-a-dfs-namespace.md)
+-   [Delegar permissões de gerenciamento para Namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)
 

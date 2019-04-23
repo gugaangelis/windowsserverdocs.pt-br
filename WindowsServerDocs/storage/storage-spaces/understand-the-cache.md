@@ -10,13 +10,13 @@ author: cosmosdarwin
 ms.date: 07/18/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 62fa33d08af25c424c786c10191fe6ae2b3d02bc
-ms.sourcegitcommit: dfd25348ea3587e09ea8c2224237a3e8078422ae
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4678615"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59855507"
 ---
-# Noções básicas sobre o cache nos Espaços de Armazenamento Diretos
+# <a name="understanding-the-cache-in-storage-spaces-direct"></a>Noções básicas sobre o cache nos Espaços de Armazenamento Diretos
 
 >Aplica-se a: Windows Server 2019, Windows Server 2016
 
@@ -25,10 +25,10 @@ A maneira como o cache funciona depende dos tipos de unidades presentes.
 
 O vídeo a seguir entra em detalhes sobre como o cache funciona para Espaços de Armazenamento Diretos, assim como outras considerações de design.
 
-<strong>Considerações de design dos Espaços de Armazenamento Diretos</strong><br>(20 minutos)<br>
+<strong>Considerações de design de espaços diretos de armazenamento</strong><br>(20 minutos)<br>
 <iframe src="https://channel9.msdn.com/Blogs/windowsserver/Design-Considerations-for-Storage-Spaces-Direct/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
-## Tipos de unidade e opções de implantação
+## <a name="drive-types-and-deployment-options"></a>Tipos de unidade e opções de implantação
 
 Os Espaços de Armazenamento Diretos atualmente funcionam com três tipos de dispositivos de armazenamento:
 
@@ -61,19 +61,19 @@ Os Espaços de Armazenamento Diretos atualmente funcionam com três tipos de dis
 
 Eles podem ser combinados de seis maneiras, que podemos agrupar em duas categorias: "tudo flash" e "híbridos".
 
-### Possibilidades de implantação tudo flash
+### <a name="all-flash-deployment-possibilities"></a>Possibilidades de implantação tudo flash
 
 As implantações tudo flash pretendem maximizar o desempenho de armazenamento e não incluem unidades de disco rígido (HDD) rotacionais.
 
 ![All-Flash-Deployment-Possibilities](media/understand-the-cache/All-Flash-Deployment-Possibilities.png)
 
-### Possibilidades de implantação híbrida
+### <a name="hybrid-deployment-possibilities"></a>Possibilidades de implantação híbrida
 
 As implantações híbridas pretendem equilibrar desempenho e capacidade ou maximizar a capacidade e incluem unidades de disco rígido (HDD) rotacionais.
 
 ![Hybrid-Deployment-Possibilities](media/understand-the-cache/Hybrid-Deployment-Possibilities.png)
 
-## Unidades de cache são selecionadas automaticamente
+## <a name="cache-drives-are-selected-automatically"></a>Unidades de cache são selecionadas automaticamente
 
 Em implantações com vários tipos de unidades, os Espaços de Armazenamento Diretos usam automaticamente todas as unidades do tipo "mais rápida" para armazenar em cache. As unidades restantes são usadas para capacidade.
 
@@ -93,13 +93,13 @@ Quando todas as unidades são do mesmo tipo, nenhum cache é configurado automat
    >[!TIP]
    > Em implantações com tudo NVMe ou SSD, especialmente em escala muito pequena, não "gastar" unidades em cache pode aumentar consideravelmente a eficiência de armazenamento.
 
-## Comportamento do cache é definido automaticamente
+## <a name="cache-behavior-is-set-automatically"></a>Comportamento do cache é definido automaticamente
 
 O comportamento do cache é determinado automaticamente com base nos tipos de unidades que estão sendo usadas no armazenamento em cache. Durante o armazenamento em cache para unidades de estado sólido (como armazenamento em cache NVMe para SSDS), apenas as gravações são armazenadas em cache. Durante o armazenamento em cache para unidades de disco rígido (por exemplo, armazenamento em cache SSDs para HDDs), as leituras e as gravações são armazenadas em cache.
 
 ![Cache-Read-Write-Behavior](media/understand-the-cache/Cache-Read-Write-Behavior.png)
 
-### Armazenamento em cache somente leitura para implantações tudo em flash
+### <a name="write-only-caching-for-all-flash-deployments"></a>Armazenamento em cache somente leitura para implantações tudo em flash
 
 Durante o armazenamento em cache para unidades de estado sólido (NVMe ou SSDs), apenas as gravações são armazenadas em cache. Isso reduz o desgaste da capacidade das unidades porque muitas gravações e regravações podem se unir no cache e só serem despreparadas conforme necessário, o que reduz o tráfego cumulativo para as unidades de capacidade e prolonga a vida útil. Por esse motivo, recomendamos selecionar unidades [de mais resistência, otimizadas para gravação](http://whatis.techtarget.com/definition/DWPD-device-drive-writes-per-day) para o cache. Naturalmente, as unidades de capacidade podem ter menos resistência à gravação.
 
@@ -107,17 +107,17 @@ Isso porque as leituras não afetam significativamente o tempo de vida do flash 
 
 Isso resulta nas características de gravação, como latência de gravação, sendo ditadas pelas unidades de cache, e nas características de leitura sendo determinadas pelas unidades de capacidade. Ambas são consistentes, previsíveis e uniformes.
 
-### Armazenamento em cache de leitura/gravação para implantações híbridas
+### <a name="readwrite-caching-for-hybrid-deployments"></a>Armazenamento em cache de leitura/gravação para implantações híbridas
 
-Durante o armazenamento em cache para unidades de disco rígido (HDDs), leituras *e* gravações são armazenadas em cache, para oferecer latência semelhante a flash (normalmente, cerca de 10 vezes melhor) para ambas. O cache de leitura armazena dados de leitura recentes e frequentes para acesso rápido e minimização de tráfego aleatório para as HDDs. (Por causa de atrasos rotacionais e de busca, a latência e o tempo perdido incorridos pelo acesso aleatório a uma HDD são significativos.) As gravações são armazenadas em cache para absorver intermitências e, como antes, unir gravações e regravações, além de minimizar o tráfego cumulativo para as unidades de capacidade.
+Durante o armazenamento em cache para unidades de disco rígido (HDDs), leituras *e* gravações são armazenadas em cache, para oferecer latência semelhante a flash (normalmente, cerca de 10 vezes melhor) para ambas. O cache de leitura armazena dados de leitura recentes e frequentes para acesso rápido e minimização de tráfego aleatório para as HDDs. (Devido à busca e atrasos rotacional, a latência e perda de tempo gerado por acesso aleatório a um HDD é significativa.) Grava são armazenados em cache absorver intermitências e, assim como antes, para coalesce grava e grava novamente e minimizar o tráfego cumulativo para as unidades de capacidade.
 
 Espaços de Armazenamento Diretos implementam um algoritmo que cancela a reprodução aleatória de gravações antes da preparação delas a fim de emular um padrão de E/S para disco aparentemente sequencial, mesmo quando a E/S real proveniente da carga de trabalho (como máquinas virtuais) é aleatória. Isso maximiza o IOPS e a taxa de transferência para as HDDs.
 
-### Armazenando em cache implantações com unidades de todos os três tipos
+### <a name="caching-in-deployments-with-drives-of-all-three-types"></a>Armazenando em cache implantações com unidades de todos os três tipos
 
 Quando unidades de todos os três tipos estão presentes, as unidades NVMe oferecem armazenamento em cache para as SSDs e as HDDs. O comportamento é o descrito acima: somente gravações são armazenadas em cache para as SSDs, e leituras e gravações são armazenadas em cache para as HDDs. O custo indireto do armazenamento em cache para as HDDs é distribuído por igual entre as unidades de cache. 
 
-## Resumo
+## <a name="summary"></a>Resumo
 
 Esta tabela resume quais unidades são usadas no armazenamento em cache, quais são usadas na capacidade e qual é o comportamento de armazenamento em cache para cada possibilidade de implantação.
 
@@ -130,7 +130,7 @@ Esta tabela resume quais unidades são usadas no armazenamento em cache, quais s
 | SSD + HDD        | SSD                                 | HDD             | Leitura + gravação                              |
 | NVMe + SSD + HDD | NVMe                                | SSD + HDD       | Leitura + gravação para HDD, somente gravação para SSD  |
 
-## Arquitetura do servidor
+## <a name="server-side-architecture"></a>Arquitetura do servidor
 
 O cache é implementado no nível da unidade: unidades de cache individuais dentro de um servidor são associadas a uma ou várias unidades de capacidade dentro do mesmo servidor.
 
@@ -142,7 +142,7 @@ Uma vez que a resiliência em Espaços de Armazenamento Diretos está pelo menos
 
 Por exemplo, durante o uso do espelhamento triplo, três cópias de todos os dados são gravadas em servidores diferentes, onde eles chegam ao cache. Independentemente de serem despreparados ou não depois, sempre haverá três cópias.
 
-## Associações de unidade são dinâmicas
+## <a name="drive-bindings-are-dynamic"></a>Associações de unidade são dinâmicas
 
 A associação entre as unidades de cache e capacidade podem ter qualquer proporção, de 1:1 a 1:12 e além. Ela é ajustada dinamicamente sempre que as unidades são adicionadas ou removidas, como acontece durante escalas verticais ou depois de falhas. Isso significa que você pode adicionar unidades de cache ou de capacidade de maneira independente, sempre que quiser.
 
@@ -150,7 +150,7 @@ A associação entre as unidades de cache e capacidade podem ter qualquer propor
 
 Por simetria, recomendamos que o número de unidades de capacidade seja um múltiplo do número de unidades de cache. Por exemplo, se você tiver 4 unidades de cache, terá um desempenho mais uniforme com 8 unidades de capacidade (proporção 1:2) do que com 7 ou 9.
 
-## Identificando falhas na unidade de cache
+## <a name="handling-cache-drive-failures"></a>Identificando falhas na unidade de cache
 
 Quando ocorre uma falha em uma unidade de cache, todas as gravações que ainda não foram despreparadas são perdidas *para o servidor local*, o que significa que existem apenas nas outras cópias (em outros servidores). Assim como acontece após qualquer outra falha na unidade, os Espaços de Armazenamento podem e se recuperam automaticamente consultando as cópias sobreviventes.
 
@@ -165,7 +165,7 @@ Por um breve período, as unidades de capacidade que estavam associadas à unida
    >[!NOTE]
    > Você precisa desligar para substituir com segurança o NVMe, um fator forma de cartão suplementar (AIC) ou M.2.
 
-## Relação com outros caches
+## <a name="relationship-to-other-caches"></a>Relação com outros caches
 
 Existem diversos outros caches não relacionados na pilha de armazenamento definido pelo software do Windows. Entre os exemplos estão o cache com write-back de Espaços de Armazenamento e o cache de leitura na memória Volume Compartilhado Clusterizado (CSV).
 
@@ -177,7 +177,7 @@ Você pode optar por usar o cache CSV, ou não – cabe a você. Ele permanece d
 
 Para a maioria das implantações, a configuração manual não é necessária. Caso você precise dela, continue lendo!
 
-### Especificar o modelo da unidade de cache
+### <a name="specify-cache-drive-model"></a>Especificar o modelo da unidade de cache
 
 Em implantações nas quais todas as unidades sejam do mesmo tipo, como implantações tudo NVMe ou SSD, nenhum cache é configurado porque o Windows não consegue diferenciar automaticamente características como resistência a gravações entre unidades do mesmo tipo.
 
@@ -186,7 +186,7 @@ Para usar unidades de mais resistência no armazenamento em cache para unidades 
    >[!TIP]
    > Certifique-se de comparar a cadeia de caracteres do modelo exatamente como ela é exibida na saída de **Get-PhysicalDisk**.
 
-####  Exemplo
+####  <a name="example"></a>Exemplo
 
 ```
 PS C:\> Get-PhysicalDisk | Group Model -NoElement
@@ -201,13 +201,13 @@ PS C:\> Enable-ClusterS2D -CacheDeviceModel "FABRIKAM NVME-1710"
 
 Você pode verificar se as unidades desejadas estão sendo usadas no armazenamento em cache executando **Get-PhysicalDisk** no PowerShell e verificando se a propriedade **Usage** diz **"Journal"**.
 
-### Possibilidades de implantação manual
+### <a name="manual-deployment-possibilities"></a>Possibilidades de implantação manual
 
 A configuração manual permite as seguintes possibilidades de implantação:
 
 ![Exotic-Deployment-Possibilities](media/understand-the-cache/Exotic-Deployment-Possibilities.png)
 
-### Definir comportamento do cache
+### <a name="set-cache-behavior"></a>Definir comportamento do cache
 
 É possível substituir o comportamento padrão do cache. Por exemplo, é possível defini-lo para leituras de cache, mesmo em uma implantação tudo flash. Não incentivamos a modificação do comportamento, a menos que você tenha a certeza de que o padrão não atende à carga de trabalho.
 
@@ -215,7 +215,7 @@ Para substituir o comportamento, use o cmdlet **Set-ClusterS2D** e os parâmetro
 
 É possível usar **Get-ClusterS2D** para verificar se o comportamento está definido.
 
-#### Exemplo
+#### <a name="example"></a>Exemplo
 
 ```
 PS C:\> Get-ClusterS2D
@@ -233,7 +233,7 @@ CacheModeSSD : ReadWrite
 ...
 ```
 
-## Dimensionando o cache
+## <a name="sizing-the-cache"></a>Dimensionando o cache
 
 O cache deve ser dimensionado para acomodar o conjunto de trabalho (os dados em leitura ou gravação ativa a qualquer momento) dos aplicativos e cargas de trabalho.
 
@@ -247,8 +247,8 @@ Por exemplo, 2 unidades de cache associadas a 4 unidades de capacidade resulta e
 
 Não há regra universal, mas se houver muitas perdas de leitura no cache, isso poderá ser subdimensionado e você deverá levar em consideração a adição de unidades de cache para expandir o cache. É possível adicionar unidades de cache ou de capacidade de maneira independente, sempre que você quiser.
 
-## Consulte também
+## <a name="see-also"></a>Consulte também
 
-- [Escolhendo unidades e tipos de resiliência](choosing-drives.md)
-- [Tolerância a falhas e eficiência de armazenamento](storage-spaces-fault-tolerance.md)
-- [Requisitos de hardware dos Espaços de Armazenamento Diretos](storage-spaces-direct-hardware-requirements.md)
+- [Escolher tipos de resiliência e unidades](choosing-drives.md)
+- [Eficiência de armazenamento e a tolerância a falhas](storage-spaces-fault-tolerance.md)
+- [Requisitos de hardware de espaços diretos de armazenamento](storage-spaces-direct-hardware-requirements.md)

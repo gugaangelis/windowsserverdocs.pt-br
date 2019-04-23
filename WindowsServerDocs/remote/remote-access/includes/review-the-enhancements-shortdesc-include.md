@@ -1,0 +1,1 @@
+**[Saiba mais sobre os aprimoramentos de recursos de VPN Always On](../vpn/always-on-vpn/always-on-vpn-enhancements.md).** Descubra os recursos novos ou aprimorados que oferece de VPN Always On para melhorar a sua configuração.

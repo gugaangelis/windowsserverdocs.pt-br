@@ -1,6 +1,6 @@
 ---
-title: Exibir zonas de DNS
-description: Este tópico faz parte do guia de gerenciamento de gerenciamento de endereço IP (IPAM) no Windows Server 2016.
+title: Exibir zonas DNS
+description: Este tópico faz parte do guia de gerenciamento do gerenciamento de endereço IP (IPAM) no Windows Server 2016.
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,27 +13,28 @@ ms.topic: article
 ms.assetid: 2cfe4e40-ec6d-4541-baa9-d772409fe27c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4279a15f885758e59b6f5c30b2feddd50962f0d5
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 18a593a82a9b9fd0d8f2e59d1bb9da971856ad17
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59841517"
 ---
-# <a name="view-dns-zones"></a>Exibir zonas de DNS
+# <a name="view-dns-zones"></a>Exibir zonas DNS
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Você pode usar este tópico para visualizar as zonas DNS no console do cliente IPAM.  
+Você pode usar este tópico para exibir zonas DNS no console de cliente IPAM.  
   
-A associação ao grupo **administradores**, ou equivalente, é o requisito mínimo para executar este procedimento.  
+A associação em **Administradores**, ou equivalente, é o requisito mínimo para executar este procedimento.  
   
-### <a name="to-view-dns-zones-in-the-ipam-client-console"></a>Para exibir as zonas DNS no console do cliente IPAM  
+### <a name="to-view-dns-zones-in-the-ipam-client-console"></a>Para exibir zonas DNS no console de cliente IPAM  
   
-1.  No Gerenciador do servidor, clique em **IPAM**. O console de cliente IPAM aparece.  
+1.  No Gerenciador do servidor, clique em **IPAM**. Console de cliente IPAM é exibida.  
   
 2.  No painel de navegação, em **monitorar e gerenciar**, clique em **zonas DNS**.  Divide o painel de navegação em um painel de navegação superior e um painel de navegação inferior.  
   
-3.  No painel de navegação inferior, fazer uma das seguintes opções:  
+3.  No painel de navegação inferior, faça uma das seguintes seleções:  
   
     -   Pesquisa direta  
   
@@ -44,8 +45,8 @@ A associação ao grupo **administradores**, ou equivalente, é o requisito mín
     -   Encaminhador condicional  
   
 ## <a name="see-also"></a>Consulte também  
-[Gerenciamento de zona de DNS](DNS-Zone-Management.md)  
-[Gerenciar IPAM](Manage-IPAM.md)  
+[Gerenciamento de zonas DNS](DNS-Zone-Management.md)  
+[Gerenciar o IPAM](Manage-IPAM.md)  
   
 
 

@@ -11,11 +11,11 @@ ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
 description: Uma discussão sobre opções de resiliência em Espaços de Armazenamento Diretos incluindo espelhamento e paridade.
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e6a29e82a85ec9570cda827060dfe1cdf192c53
-ms.sourcegitcommit: 1533d994a6ddea54ac189ceb316b7d3c074307db
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1284971"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59849567"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>Falha de tolerância e eficiência de armazenamento em Espaços de Armazenamento Diretos
 
@@ -37,22 +37,22 @@ O espelhamento fornece tolerância a falhas por manter várias cópias de todos 
 
 No Windows Server 2016, os Espaços de Armazenamento oferecem dois tipos de espelhamento: 'duas vias' e 'três vias'.
 
-### <a name="two-way-mirror"></a>Espelhamento bidirecional
+### <a name="two-way-mirror"></a>Espelho duplo
 
 O espelhamento bidirecional grava duas cópias de tudo. A eficiência de armazenamento é de 50% – para gravar 1 TB de dados, é necessário ter pelo menos 2 TB de capacidade de armazenamento físico. Da mesma forma, você precisa de pelo menos dois ['domínios de falha' de hardware](../../failover-clustering/fault-domains.md) – com Espaços de Armazenamento Diretos, e isso significa dois servidores.
 
-![espelhamento de duas vias](media/Storage-Spaces-Fault-Tolerance/two-way-mirror-180px.png)
+![espelhamento bidirecional](media/Storage-Spaces-Fault-Tolerance/two-way-mirror-180px.png)
 
    >[!WARNING]
    > Se você tiver mais de dois servidores, recomendamos usar espelhamento de três vias.
 
-### <a name="three-way-mirror"></a>Espelhamento de três vias
+### <a name="three-way-mirror"></a>Espelhamento triplo
 
-O espelhamento de três vias grava três cópias de tudo. A eficiência de armazenamento é de 33,3% – para gravar 1 TB de dados, é necessário ter pelo menos 3 TB de capacidade de armazenamento físico. Da mesma forma, você precisa de pelo menos três domínios de falha de hardware – com Espaços de Armazenamento Diretos, e isso significa três servidores.
+O espelhamento triplo grava três cópias de tudo. A eficiência de armazenamento é de 33,3% – para gravar 1 TB de dados, é necessário ter pelo menos 3 TB de capacidade de armazenamento físico. Da mesma forma, você precisa de pelo menos três domínios de falha de hardware – com Espaços de Armazenamento Diretos, e isso significa três servidores.
 
 O espelhamento de três vias pode tolerar com segurança pelo menos [dois problemas de hardware (unidade ou servidor) por vez](#examples). Por exemplo, se você estiver reiniciando um servidor quando, de repente, outra unidade ou servidor falhar, todos os dados permanecem seguros e continuamente acessíveis.
 
-![espelhamento de três vias](media/Storage-Spaces-Fault-Tolerance/three-way-mirror-180px.png)
+![espelhamento triplo](media/Storage-Spaces-Fault-Tolerance/three-way-mirror-180px.png)
 
 ## <a name="parity"></a>Paridade
 
@@ -67,7 +67,7 @@ No Windows Server 2016, os Espaços de Armazenamento oferecem dois tipos de pari
 A paridade única mantém apenas um símbolo de paridade bit a bit, que fornece tolerância a falhas contra apenas uma falha de cada vez. Isso é mais parecido com o RAID-5. Para usar a paridade única, você precisa de pelo menos três domínios de falha de hardware – com Espaços de Armazenamento Diretos, e isso significa três servidores. Como o espelhamento triplo fornece mais tolerância a falhas na mesma escala, não incentivamos o uso da paridade única. Porém, ela está lá se você insistir em usá-la, e é totalmente compatível.
 
    >[!WARNING]
-   > Não incentivamos o uso da paridade única porque ela só pode tolerar com segurança uma falha de hardware por vez. Se você estiver reiniciando um servidor quando repentinamente outra unidade ou servidor falha, você terá um tempo de inatividade. Se você tiver apenas três servidores, recomendamos usar o espelhamento de três vias. Se você tem quatro ou mais, consulte a próxima seção.
+   > Não incentivamos o uso da paridade única porque ela só pode tolerar com segurança uma falha de hardware por vez. Se você estiver reiniciando um servidor quando repentinamente outra unidade ou servidor falha, você terá um tempo de inatividade. Se você tiver apenas três servidores, recomendamos usar o espelhamento triplo. Se você tem quatro ou mais, consulte a próxima seção.
 
 ### <a name="dual-parity"></a>Paridade dupla
 
@@ -95,9 +95,9 @@ Recomendamos esta instrução passo a passo sobre [como os códigos de reconstru
 
 A partir do Windows Server 2016, um volume de Espaços de Armazenamento Diretos pode ser parte espelho e parte paridade. As gravações são feitas primeiro na parte espelhada e, depois, são gradualmente movidas para a parte de paridade. Na verdade, isso [usa o espelhamento para acelerar a codificação de eliminação](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/).
 
-Para misturar o espelhamento de três vias e a paridade dupla, você precisa de pelo menos quatro domínios de falha, o que significa quatro servidores.
+Para misturar o espelhamento triplo e a paridade dupla, você precisa de pelo menos quatro domínios de falha, significando quatro servidores.
 
-A eficiência de armazenamento de paridade acelerada por espelho está entre o que você obteria usando apenas espelhamento ou apenas paridade e depende das proporções que você escolher. Por exemplo, a demonstração aos 37 minutos desta apresentação mostra [várias combinações atingindo 46%, 54% e 65% de eficiência](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s) com 12 servidores.
+A eficiência de armazenamento de paridade acelerada por espelho está entre o que você obteria usando apenas espelhamento ou apenas paridade e depende das proporções que você escolher. Por exemplo, a demonstração na marca de 37 minutos desta apresentação mostra [várias combinações atingindo 46%, 54% e 65%](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s) de eficiência com 12 servidores.
 
 > [!IMPORTANT]
 > É recomendado usar o espelhamento para a maioria das cargas de trabalho de detecção de desempenho. Para saber mais sobre como equilibras o desempenho e a capacidade de acordo com sua carga de trabalho, consulte [Planejar volumes](plan-volumes.md#choosing-the-resiliency-type).
@@ -110,8 +110,8 @@ Esta seção resume os tipos de resiliência disponíveis em Espaços de Armazen
 
 |    Resiliência          |    Tolerância a falhas       |    Eficiência de armazenamento      |
 |------------------------|----------------------------|----------------------------|
-|    Espelhamento de duas vias      |    1                       |    50,0%                   |
-|    Espelhamento de três vias    |    2                       |    33,3%                   |
+|    Espelho duplo      |    1                       |    50.0%                   |
+|    Espelhamento triplo    |    2                       |    33,3%                   |
 |    Paridade dupla         |    2                       |    50,0% - 80,0%           |
 |    Misto               |    2                       |    33,3% - 80,0%           |
 
@@ -119,8 +119,8 @@ Esta seção resume os tipos de resiliência disponíveis em Espaços de Armazen
 
 |    Resiliência          |    Mínimo necessário de domínios de falha   |
 |------------------------|-------------------------------------|
-|    Espelhamento de duas vias      |    2                                |
-|    Espelhamento de três vias    |    3                                |
+|    Espelho duplo      |    2                                |
+|    Espelhamento triplo    |    3                                |
 |    Paridade dupla         |    4                                |
 |    Misto               |    4                                |
 
@@ -135,9 +135,9 @@ Esta tabela mostra a eficiência de armazenamento de paridade dual e códigos de
 |-----------------------|---------------------|-----------------|
 |    2                  |    –                |    –            |
 |    3                  |    –                |    –            |
-|    4                  |    RS 2+2           |    50,0%        |
-|    5                  |    RS 2+2           |    50,0%        |
-|    6                  |    RS 2+2           |    50,0%        |
+|    4                  |    RS 2+2           |    50.0%        |
+|    5                  |    RS 2+2           |    50.0%        |
+|    6                  |    RS 2+2           |    50.0%        |
 |    7                  |    RS 4+2           |    66,7%        |
 |    8                  |    RS 4+2           |    66,7%        |
 |    9                  |    RS 4+2           |    66,7%        |
@@ -157,18 +157,18 @@ Esta tabela mostra a eficiência de armazenamento de paridade dual e códigos de
 |-----------------------|---------------------|-----------------|
 |    2                  |    –                |    –            |
 |    3                  |    –                |    –            |
-|    4                  |    RS 2+2           |    50,0%        |
-|    5                  |    RS 2+2           |    50,0%        |
-|    6                  |    RS 2+2           |    50,0%        |
+|    4                  |    RS 2+2           |    50.0%        |
+|    5                  |    RS 2+2           |    50.0%        |
+|    6                  |    RS 2+2           |    50.0%        |
 |    7                  |    RS 4+2           |    66,7%        |
 |    8                  |    RS 4+2           |    66,7%        |
-|    9                  |    RS 6+2           |    75,0%        |
-|    10                 |    RS 6+2           |    75,0%        |
-|    11                 |    RS 6+2           |    75,0%        |
-|    12                 |    RS 6+2           |    75,0%        |
-|    13                 |    RS 6+2           |    75,0%        |
-|    14                 |    RS 6+2           |    75,0%        |
-|    15                 |    RS 6+2           |    75,0%        |
+|    9                  |    RS 6+2           |    75.0%        |
+|    10                 |    RS 6+2           |    75.0%        |
+|    11                 |    RS 6+2           |    75.0%        |
+|    12                 |    RS 6+2           |    75.0%        |
+|    13                 |    RS 6+2           |    75.0%        |
+|    14                 |    RS 6+2           |    75.0%        |
+|    15                 |    RS 6+2           |    75.0%        |
 |    16                 |    LRC (12, 2, 1)   |    80,0%        |
 
 ## <a name="examples"></a>Exemplos
@@ -184,12 +184,12 @@ Estes seis exemplos mostram o que o espelhamento triplo e/ou a paridade dupla **
 
 ![fault-tolerance-examples-1-and-2](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-12.png)
 
-- **3.**    Um servidor e uma unidade perdidos
+- **3.**    Um servidor e uma unidade perdida
 - **4.**    Duas unidades perdidas em servidores diferentes
 
 ![fault-tolerance-examples-3-and-4](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-34.png)
 
-- **5.**    Mais de duas unidades perdidas, desde que, no máximo, dois servidores sejam afetados
+- **5.**    Mais de duas unidades perdidas, desde que no máximo dois servidores são afetados
 - **6.**    Dois servidores perdidos
 
 ![fault-tolerance-examples-5-and-6](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-56.png)
@@ -200,12 +200,12 @@ Estes seis exemplos mostram o que o espelhamento triplo e/ou a paridade dupla **
 
 Durante a vida útil, Espaços de Armazenamento podem tolerar qualquer número de falhas, uma vez que restauram a resiliência completa depois de cada uma, dando tempo suficiente. No entanto, no máximo, dois domínios de falha podem ser afetados com segurança por falhas em um dado momento. Estes são, portanto, exemplos do que o espelhamento triplo e/ou a paridade dupla **não pode** tolerar.
 
-- **7.** Unidades perdidas em três ou mais servidores de uma só vez
-- **8.** Três ou mais servidores perdidos simultaneamente
+- **7.** Unidades perdidas em três ou mais servidores ao mesmo tempo
+- **8.** Três ou mais servidores ao mesmo tempo perdido
 
-![exemplos de tolerância de falha 7 e 8](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-78.png)
+![fault-tolerance-examples-7-and-8](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-78.png)
 
-## <a name="usage"></a>Utilização
+## <a name="usage"></a>Uso
 
 Consulte [Criando volumes em Espaços de Armazenamento Diretos](create-volumes.md).
 
@@ -213,10 +213,10 @@ Consulte [Criando volumes em Espaços de Armazenamento Diretos](create-volumes.m
 
 Cada link abaixo está embutido em algum lugar no corpo deste tópico.
 
-- [Espaços de Armazenamento Diretos no Windows Server 2016](storage-spaces-direct-overview.md)
-- [Reconhecimento de domínio de falhas no Windows Server 2016](../../failover-clustering/fault-domains.md)
+- [Espaços de armazenamento diretos no Windows Server 2016](storage-spaces-direct-overview.md)
+- [Reconhecimento de domínio de falha no Windows Server 2016](../../failover-clustering/fault-domains.md)
 - [Codificação de eliminação no Azure pela Microsoft Research](https://www.microsoft.com/en-us/research/publication/erasure-coding-in-windows-azure-storage/)
-- [Códigos de reconstrução local e acelerando volumes de paridade](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
-- [Volumes na API de Gerenciamento de Armazenamento](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
+- [Códigos de reconstrução local e Volumes de paridade acelerando](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
+- [Volumes em que a API de gerenciamento de armazenamento](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
 - [Demonstração de eficiência de armazenamento no Microsoft Ignite 2016](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
-- [PRÉVIA da calculadora de capacidade para Espaços de Armazenamento Diretos](http://aka.ms/s2dcalc)
+- [Calculadora de capacidade visualização para o armazenamento de espaços diretos](http://aka.ms/s2dcalc)

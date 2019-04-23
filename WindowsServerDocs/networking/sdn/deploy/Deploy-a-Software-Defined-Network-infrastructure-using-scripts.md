@@ -1,7 +1,7 @@
 ---
-title: Implante uma infraestrutura de rede definidos Software usando Scripts
-description: Este tópico aborda como implantar uma infraestrutura de rede de definido de Software da Microsoft (SDN) usando scripts no Windows Server 2016.
-manager: brianlic
+title: Implantar uma infraestrutura de rede definida de Software usando Scripts
+description: Este tópico aborda como implantar uma infraestrutura de rede Microsoft Software Defined (SDN) usando scripts no Windows Server 2016.
+manager: dougkim
 ms.prod: windows-server-threshold
 ms.service: virtual-network
 ms.technology: networking-sdn
@@ -9,162 +9,214 @@ ms.topic: get-started-article
 ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4428ad73ab8933510d5a759ec4fa7377ea222ebd
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/23/2018
+ms.openlocfilehash: dabfe3de4cc307723ff7e614fb73e3903e74aeb2
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59844617"
 ---
-# <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>Implante uma infraestrutura de rede definidos Software usando Scripts
+# <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>Implantar uma infraestrutura de rede definida pelo software usando scripts
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Este tópico aborda como implantar uma infraestrutura de rede de definido de Software da Microsoft (SDN) usando scripts. A infraestrutura inclui um controlador de rede (HA) altamente disponível, um HA Software Load balanceador (SLB) / Multiplexador, redes virtuais e associadas a listas de controle de acesso (ACLs). Além disso, o outro script implanta uma carga de trabalho de locatário para validar sua infraestrutura SDN.  
+Neste tópico, você deve implantar uma infraestrutura de rede Microsoft Software Defined (SDN) usando scripts. A infraestrutura inclui um controlador de rede (HA) altamente disponível, uma alta disponibilidade do Software SLB balanceador de carga () / MUX, redes virtuais e associados a listas de controle de acesso (ACLs). Além disso, outro script implanta uma carga de trabalho de locatário para validar sua infraestrutura SDN.  
   
-Se você quiser que as cargas de trabalho de locatário para se comunicar fora suas redes virtuais, você pode configurar as regras SLB NAT, túneis Gateway to-Site ou encaminhamento de camada 3 rotear entre as cargas de trabalho virtuais e físicas.  
+Se você quiser que suas cargas de trabalho de locatário para se comunicar fora de suas redes virtuais, você pode configurar regras de NAT do SLB, túneis de Gateway Site a Site ou encaminhamento de camada 3 para o roteamento entre as cargas de trabalho virtuais e físicas.  
   
-Você também pode implantar uma infraestrutura SDN usando Virtual Machine Manager (VMM). Para obter mais informações, consulte [configurar uma infraestrutura de rede de definido de Software (SDN) na malha VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-overview).  
+Você também pode implantar uma infraestrutura SDN usando o Virtual Machine Manager (VMM). Para obter mais informações, consulte [configurar uma infraestrutura de rede definida pelo Software (SDN) na malha do VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-overview).  
+
   
-## <a name="pre-deployment"></a>Antes da implantação  
+## <a name="pre-deployment"></a>Pré-implantação  
   
 > [!IMPORTANT]  
-> Antes de começar a implantação, você deve planejar e configurar seu hosts e infraestrutura de rede física. Para obter mais informações, consulte [planejar uma infraestrutura de rede definidos do Software](../../sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md).  
+> Antes de começar a implantação, você deve planejar e configurar os hosts e infraestrutura de rede física. Para obter mais informações, consulte [Planejar a infraestrutura de rede definida por software](../../sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md).  
   
-Todos os hosts Hyper-V devem ter o Windows Server 2016 instalado.  
+Todos os hosts do Hyper-V devem ter o Windows Server 2016 instalado.  
   
 ## <a name="deployment-steps"></a>Etapas de implantação  
-Comece definindo o comutador virtual do Hyper-V (servidores físicos) e a atribuição de endereço IP do host do Hyper-V. Qualquer tipo de armazenamento que é compatível com o Hyper-V, compartilhado ou local pode ser usado.  
-### <a name="install-host-networking"></a>Instalar o host de rede  
-1. Instale os drivers de rede mais recentes disponíveis para seu hardware da placa de rede.  
-2. Instale a função Hyper-V em todos os hosts (para obter mais informações, consulte [começar com o Hyper-V no Windows Server 2016](https://technet.microsoft.com/en-us/library/mt126159.aspx).   
+Comece Configurando o comutador virtual do Hyper-V (servidores físicos) e a atribuição de endereço IP do host do Hyper-V. Qualquer tipo de armazenamento que é compatível com o Hyper-V, local ou compartilhado pode ser usado.  
+
+### <a name="install-host-networking"></a>Instalar o sistema de rede do host  
+
+1. Instale os drivers de rede mais recentes disponíveis para o seu hardware NIC.  
+2. Instalar a função Hyper-V em todos os hosts (para obter mais informações, consulte [Introdução ao Hyper-V no Windows Server 2016](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/Get-started-with-Hyper-V-on-Windows).   
   
-   Em um prompt do Windows PowerShellcommand com privilégios elevados:  
-   ``Install-WindowsFeature -Name Hyper-V -ComputerName <computer_name> -IncludeManagementTools -Restart``  
+   ```PowerShell
+   Install-WindowsFeature -Name Hyper-V -ComputerName <computer_name> -IncludeManagementTools -Restart
+   ```  
     
-    um. Criar o comutador virtual Hyper-V (use o mesmo nome de alternar para todos os hosts. Por exemplo: **sdnSwitch**). Configure pelo menos um adaptador de rede ou, se usando a opção Embedded agrupamento, configure pelo menos dois adaptadores de rede. Distribuindo entrada máximo ocorre ao usar dois NICs.  
- `` New-VMSwitch "<switch name>" -NetAdapterName "<NetAdapter1>" [, "<NetAdapter2>" -EnableEmbeddedTeaming $True] -AllowManagementOS $True``  
- 
- >[!NOTE] 
- >Você pode ignorar as etapas 3 e 4, se você tiver separado NICs de gerenciamento.
+3. Crie o comutador virtual do Hyper-V.<p>Usar o mesmo nome de comutador para todos os hosts, por exemplo, **sdnSwitch**. Configure pelo menos um adaptador de rede ou, se usando o conjunto, configure pelo menos dois adaptadores de rede. Difusão de entrada máximo ocorre ao usar duas NICs.  
 
-3. Consulte o tópico de planejamento ([planejar uma infraestrutura de rede definidos do Software](../../sdn/plan/../../sdn/plan/../../sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md)) e funcionam com o administrador de rede para obter a ID de VLAN da VLAN gerenciamento. Anexe o vNIC de gerenciamento do Switch Virtual recém-criada obtenham o gerenciamento. Esta etapa pode ser omitida se seu ambiente não usar tags de VLAN.  
- `` Set-VMNetworkAdapterIsolation -ManagementOS -IsolationMode Vlan -DefaultIsolationID <Management VLAN> -AllowUntaggedTraffic $True``  
+   ```PowerShell
+   New-VMSwitch "<switch name>" -NetAdapterName "<NetAdapter1>" [, "<NetAdapter2>" -EnableEmbeddedTeaming $True] -AllowManagementOS $True
+   ```  
+   >[!TIP] 
+   >Se você tiver NICs separadas do gerenciamento, você pode ignorar as etapas 4 e 5.
+
+3. Consulte o tópico de planejamento ([planejar uma infraestrutura de rede definida pelo Software](../../sdn/plan/../../sdn/plan/../../sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md)) e trabalhe com seu administrador de rede para obter a ID de VLAN da VLAN de gerenciamento. Anexe a vNIC de gerenciamento do comutador Virtual recém-criado para a VLAN de gerenciamento. Esta etapa pode ser omitida se seu ambiente de não usar marcas de VLAN.  
+   
+   ```PowerShell
+   Set-VMNetworkAdapterIsolation -ManagementOS -IsolationMode Vlan -DefaultIsolationID <Management VLAN> -AllowUntaggedTraffic $True
+   ```  
  
-4. Consulte o tópico de planejamento ([planejar uma infraestrutura de rede definidos do Software](../../sdn/plan/../../sdn/plan/../../sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md)) e funcionam com o administrador de rede para usar o DHCP ou atribuições de IP estáticas para atribuir um endereço IP a vNIC o gerenciamento de vSwitch recém-criado. O exemplo a seguir mostra como criar um endereço IP estático e atribuí-lo a vNIC o gerenciamento de vSwitch:  
- ``New-NetIPAddress -InterfaceAlias "vEthernet (<switch name>)" -IPAddress <IP> -DefaultGateway <Gateway IP> -AddressFamily IPv4 -PrefixLength <Length of Subnet Mask - for example: 24>``  
+4. Consulte o tópico de planejamento ([planejar uma infraestrutura de rede definida pelo Software](../../sdn/plan/../../sdn/plan/../../sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md)) e trabalhe com seu administrador de rede para usar o DHCP ou atribuições de IP estáticas para atribuir um endereço IP para a vNIC de gerenciamento de recém-criado vSwitch. O exemplo a seguir mostra como criar um endereço IP estático e atribuí-lo para a vNIC de gerenciamento do vSwitch:  
+ 
+   ```PowerShell
+   New-NetIPAddress -InterfaceAlias "vEthernet (<switch name>)" -IPAddress <IP> -DefaultGateway <Gateway IP> -AddressFamily IPv4 -PrefixLength <Length of Subnet Mask - for example: 24>
+   ```  
       
-5. [Opcional] Implantar uma máquina virtual de hospedar serviços de domínio do Active Directory ([instalar o Active Directory Domain Services (nível 100)](https://technet.microsoft.com/library/hh472162.aspx) e um servidor DNS.  
+5. [Opcional] Implantar uma máquina virtual para hospedar os serviços de domínio do Active Directory ([instalar o Active Directory Domain Services (nível 100)](https://technet.microsoft.com/library/hh472162.aspx) e um servidor DNS.  
    
-    um. Conectar-se a máquina virtual de servidor do Active Directory/DNS obtenham o gerenciamento:
+    a. Conecte-se a máquina virtual de servidor DNS/Active Directory para a VLAN de gerenciamento:
     
-            Set-VMNetworkAdapterIsolation -VMName "<VM Name>" -Access -VlanId <Management VLAN> -AllowUntaggedTraffic $True  
-   
-   b. Instale o DNS e serviços de domínio do Active Directory.  
-      >[!NOTE]
-      >O controlador de rede oferece suporte a Kerberos e x. 509 certificados para autenticação. Este guia usa dois mecanismos de autenticação para finalidades diferentes (embora apenas um é necessário).  
-        
-6. Junte-se todos os hosts Hyper-V para o domínio. Certifique-se a entrada de servidor DNS para o adaptador de rede que tenha um endereço IP atribuído a pontos de rede de gerenciamento para um servidor DNS que pode resolver o nome de domínio. Por exemplo:
+       ```PowerShell
+       Set-VMNetworkAdapterIsolation -VMName "<VM Name>" -Access -VlanId <Management VLAN> -AllowUntaggedTraffic $True  
+       ```   
 
-        Set-DnsClientServerAddress -InterfaceAlias "vEthernet (<switch name>)" -ServerAddresses <DNS Server IP>  
+   b. Instale o DNS e Active Directory Domain Services.  
+
+   >[!NOTE]
+   >O controlador de rede dá suporte a certificados Kerberos e X.509 para autenticação. Este guia usa ambos os mecanismos de autenticação para finalidades diferentes (embora apenas uma for necessária).  
+        
+6. Junte-se todos os hosts do Hyper-V para o domínio. Verifique se a entrada do servidor DNS para o adaptador de rede que tem um endereço IP atribuído para os pontos de gerenciamento de rede para um servidor DNS que pode resolver o nome de domínio. 
+
+   ```PowerShell   
+   Set-DnsClientServerAddress -InterfaceAlias "vEthernet (<switch name>)" -ServerAddresses <DNS Server IP>  
+   ```
    
-   um. Clique com botão direito **iniciar**, clique em **sistema**e clique em **alterar configurações**.  
-   b. Clique em **alteração**.  
+   a. Clique com botão direito **inicie**, clique em **sistema**e, em seguida, clique em **alterar configurações**.  
+   b. Clique em **Alterar**.  
    c. Clique em **domínio** e especifique o nome de domínio.  
-   d. Clique em **Okey**.  
-   e. Digite os nome e a senha credenciais do usuário quando solicitado.  
+   d. Clique em **OK**.  
+   e. Digite os nome e senha de credenciais do usuário quando solicitado.  
    f. Reinicie o servidor.  
   
 ### <a name="validation"></a>Validação  
-Use as etapas a seguir para validar esse host de rede está configurado corretamente.  
-1. Certifique-se de que a opção de VM foi criada com êxito:  
+Use as etapas a seguir para validar que o host de rede está configurado corretamente.  
+
+1. Certifique-se de que o comutador de VM foi criado com êxito:  
       
-    ``Get-VMSwitch "<switch name>"``  
-2. Verifique se o vNIC gerenciamento no Switch VM está conectado obtenham o gerenciamento:  
-    >[!NOTE]
-    >Relevantes apenas se o tráfego de gerenciamento e locatário compartilhar a mesma placa de rede.    
+   ```PowerShell
+   Get-VMSwitch "<switch name>"
+   ```  
+
+2. Verifique se que a vNIC de gerenciamento no comutador de VM está conectada à VLAN de gerenciamento:  
+
+   >[!NOTE]
+   >Relevante apenas se o tráfego de gerenciamento e locatário compartilham a mesma NIC.    
       
-    ``Get-VMNetworkAdapterIsolation -ManagementOS``  
-3. Valide que todos os hosts Hyper-V (e recursos de gerenciamento externo, por exemplo: servidores DNS) são acessíveis por meio do ping usando seu endereço IP de gerenciamento e/ou o nome de domínio totalmente qualificado (FQDN).   
+   ```PowerShell
+   Get-VMNetworkAdapterIsolation -ManagementOS
+   ```
+
+3. Valide todos os hosts do Hyper-V e recursos de gerenciamento externo, por exemplo, os servidores DNS.<p>Certifique-se de que eles são acessíveis por meio de ping usando seu endereço IP de gerenciamento e/ou nome de domínio totalmente qualificado (FQDN).   
       
    ``ping <Hyper-V Host IP>``  
    ``ping <Hyper-V Host FQDN>``  
-4. Execute o seguinte comando no host de implantação e especifique o FQDN de cada host do Hyper-V para garantir que as credenciais de Kerberos usadas fornece acesso a todos os servidores.  
+
+4. Execute o seguinte comando no host de implantação e especifique o FQDN de cada host Hyper-V para garantir que as credenciais do Kerberos usadas fornece acesso a todos os servidores.  
       
    ``winrm id -r:<Hyper-V Host FQDN>``  
       
-### <a name="nano-installation-requirements-and-notes"></a>Notas e os requisitos de instalação Nano  
-Se você usar Nano como seu hosts Hyper-V (servidores físicos) para a implantação, estes são os requisitos adicionais:  
-1. Todos os nós Nano precisam ter o pacote de DSC instalado com o pacote de idiomas:  
+### <a name="nano-installation-requirements-and-notes"></a>Observações e requisitos de instalação do Nano  
+
+Se você usar o Nano como seus hosts do Hyper-V (servidores físicos) para a implantação, serão os seguintes requisitos adicionais:  
+
+1. Todos os nós do Nano precisam ter o pacote de DSC instalado com o pacote de idiomas:  
    
-   * Microsoft-NanoServer-DSC-Package.cab  
-   * Microsoft-NanoServer-DSC-Package_en-us.cab
+    - Microsoft-NanoServer-DSC-Package.cab  
+    - Microsoft-NanoServer-DSC-Package_en-us.cab
    
-        ``dism /online /add-package /packagepath:<Path> /loglevel:4``  
-2. Os scripts SDN Express devem ser executados em host não Nano (Server Core do Windows ou Windows Server com GUI). Fluxos de trabalho do PowerShell não são suportados no Nano.  
-3.  Chamar a API em sentido norte do controlador de rede usando o PowerShell ou NC REST Wrappers (que dependem de Invoke-WebRequest e Invoke-RestMethod) deve ser feito em host não Nano.  
+    ``dism /online /add-package /packagepath:<Path> /loglevel:4``  
+
+2. Os scripts de SDN Express devem ser executados a partir de um host não Nano (Server Core do Windows ou Windows Server com GUI). Não há suporte para fluxos de trabalho do PowerShell no Nano.  
+
+3.  Invocar a API NorthBound do controlador de rede usando o PowerShell ou os Wrappers de REST do NC (que dependem de Invoke-WebRequest e Invoke-RestMethod) deve ser feito de um host não Nano.  
    
          
-### <a name="run-sdn-express-scripts"></a>Executar Scripts Express SDN  
+### <a name="run-sdn-express-scripts"></a>Executar scripts de SDN Express  
   
-1.  Os arquivos de instalação estão localizados no GitHub. Baixar o arquivo zip do [Microsoft SDN GitHub repositório](https://github.com/Microsoft/SDN.git). Na página do repositório SDN Microsoft, clique em **Clone ou baixar** e, em seguida, clique em **Download ZIP**.  
-  
-2.  Designe um computador como o computador de implantação.  Esse computador deve estar executando o Windows Server 2016. Expanda o arquivo zip e copiar o **SDNExpress** pasta no computador de implantação `C:\`pasta.  
-  
-3.  Compartilhar o `C:\SDNExpress`pasta como "**SDNExpress**" com permissão para **todos** para **leitura/gravação **.  
-  
-4.  Navegue até o `C:\SDNExpress`pasta.
+1. Vá para o [repositório Microsoft SDN GitHub](https://github.com/Microsoft/SDN.git) dos arquivos de instalação.
 
- Você verá as seguintes pastas:  
+2. Baixe os arquivos de instalação do repositório para o computador designado de implantação. Clique em **clonar ou baixar** e, em seguida, clique em **baixar ZIP**.  
+ 
+   >[!NOTE]
+   >O computador designado de implantação deve estar executando o Windows Server 2016 ou posterior.
+ 
+3. Expanda o arquivo zip e copie a **SDNExpress** pasta no computador de implantação `C:\` pasta.  
+  
+4. Compartilhamento de `C:\SDNExpress` pasta como "**SDNExpress**" com permissão para **todos** para **leitura/gravação**.  
+  
+5. Navegue até o `C:\SDNExpress` pasta.<p>Você verá as seguintes pastas:  
 
-|Nome da pasta|Descrição|  
-|---------------|---------------|  
-|AgentConf|Mantém atualizadas cópias dos esquemas OVSDB usadas pelo agente de Host SDN em cada host do Windows Server 2016 Hyper-V para política de rede do programa.|  
-|Certificados|Local compartilhado temporário para o arquivo de certificado NC.|  
-|Imagens|Esvaziar, coloque a imagem do Windows Server 2016 vhdx aqui|  
-|Ferramentas|Utilitários para solução de problemas e depuração.  Copiada para a hosts e máquinas virtuais.  Recomendamos que você coloque o Monitor de rede ou Wireshark aqui para que ele está disponível, se necessário.|  
-|Scripts|Scripts de implantação.<br /><br />-   **SDNExpress.ps1**<br />    Implanta e configura a malha, incluindo as máquinas de virtuais de controlador de rede, máquinas virtuais de multiplexador SLB, pools de gateway e as máquinas de virtuais de gateway HNV correspondente para os grupos.<br />-   **FabricConfig.psd1**<br />    Um modelo de arquivo de configuração para o script SDNExpress.  Você personalizará isso para seu ambiente.<br />-   **SDNExpressTenant.ps1**<br />    Implanta uma carga de trabalho de locatário de amostra em uma rede virtual com um VIP de balanceamento de carga.<br />    Também fornece uma ou mais conexões de rede (IPSec S2S VPN, GRE, L3) sobre os gateways de borda de provedor de serviço que estão conectados à carga de trabalho criado anteriormente locatário. Os gateways IPSec e GRE estão disponíveis para conectividade sobre o endereço de IP VIP correspondente e o gateway de encaminhamento L3 sobre o pool de endereço correspondente.<br />    Esse script pode ser usado para excluir a configuração correspondente com uma opção de desfazer também.<br />-   **TenantConfig.psd1**<br />    Um arquivo de configuração do modelo de carga de trabalho de locatário e configuração de gateway S2S.<br />-   **SDNExpressUndo.ps1**<br />    Limpa o ambiente de malha e restaura um estado inicial.<br />-   **SDNExpressEnterpriseExample.ps1**<br />    Provisiona ambientes corporativos um ou mais de site com um Gateway de acesso remoto e (opcionalmente) uma máquina de virtual enterprise correspondente por site. Os gateways enterprise IPSec ou GRE conecta-se para o endereço IP VIP correspondente do gateway de provedor de serviço para estabelecer os túneis S2S. O Gateway de encaminhamento L3 conecta o endereço de IP de par correspondente. <br />            Esse script pode ser usado para excluir a configuração correspondente com uma opção de desfazer também.<br />-   **EnterpriseConfig.psd1**<br />    Um arquivo de configuração do modelo para o gateway do Enterprise-to-site e a configuração de cliente VM.|  
-|TenantApps|Arquivos usados para implantar cargas de trabalho de locatário de exemplo.|  
+   |Nome da pasta|Descrição|  
+   |---------------|---------------|  
+   |AgentConf|Mantém cópias atualizadas dos esquemas OVSDB usados pelo agente de Host de SDN em cada host do Windows Server 2016 Hyper-V à diretiva de rede do programa.|  
+   |Certificados|Local temporário compartilhado para o arquivo de certificado do NC.|  
+   |Imagens|Esvaziar, coloque sua imagem de vhdx do Windows Server 2016 aqui|  
+   |Ferramentas|Utilitários para solução de problemas e depuração.  Copiado para os hosts e máquinas virtuais.  É recomendável que você coloque o Monitor de rede ou o Wireshark aqui para que ele esteja disponível, se necessário.|  
+   |Scripts|Scripts de implantação.<br /><br />-   **SDNExpress.ps1**<br />    Implanta e configura a malha, incluindo máquinas virtuais do controlador de rede, máquinas virtuais SLB Mux, pools de gateway e as máquinas de virtuais de gateway HNV correspondente para o pool (s).<br />-   **FabricConfig.psd1**<br />    Um modelo de arquivo de configuração para o script SDNExpress.  Você irá personalizar isso para o seu ambiente.<br />-   **SDNExpressTenant.ps1**<br />    Implanta uma carga de trabalho de locatário de exemplo em uma rede virtual com um VIP com balanceamento de carga.<br />    Também provisiona uma ou mais conexões de rede (a VPN S2S IPSec, GRE, L3) em gateways de borda de provedor do serviço que estão conectados à carga de trabalho do locatário criada anteriormente. Os gateways de IPSec e GRE estão disponíveis para conectividade sobre o endereço IP VIP correspondente e o gateway de encaminhamento L3 ao longo do pool de endereços correspondente.<br />    Esse script pode ser usado para excluir a configuração correspondente com uma opção de desfazer.<br />-   **TenantConfig.psd1**<br />    Um arquivo de configuração de modelo para a carga de trabalho de locatário e configuração de S2S do gateway.<br />-   **SDNExpressUndo.ps1**<br />    Limpa o ambiente de malha e ele será redefinido para um estado inicial.<br />-   **SDNExpressEnterpriseExample.ps1**<br />    Provisiona um ou mais ambientes de site de empresa com um Gateway de acesso remoto e (opcionalmente) uma máquina de virtual enterprise correspondente por site. Os gateways enterprise IPSec ou GRE conecta-se para o endereço IP VIP correspondente do gateway de provedor de serviço para estabelecer os túneis S2S. O Gateway de encaminhamento L3 conecta-se o endereço de IP de par correspondente. <br />            Esse script pode ser usado para excluir a configuração correspondente com uma opção de desfazer.<br />-   **EnterpriseConfig.psd1**<br />    Um arquivo de configuração de modelo para o gateway do site a site corporativo e a configuração de VM do cliente.|  
+   |TenantApps|Arquivos usados para implantar cargas de trabalho de locatário de exemplo.|  
+   ---
   
-5.  Verifique se o arquivo do Windows Server 2016 VHDX está sendo o **imagens** pasta.  
+6. Verifique se o arquivo VHDX do Windows Server 2016 está na **imagens** pasta.  
   
-6. Personalizar o arquivo SDNExpress\scripts\FabricConfig.psd1, alterando a **<< substituir >>** marcas com valores específicos ajustar à sua infraestrutura de laboratório, incluindo nomes de host, nomes de domínio, nomes de usuário e senhas e informações de rede para as redes são listadas no tópico de planejamento de rede.  
-7. Crie um registro de Host A no DNS para a NetworkControllerRestName (FQDN) e NetworkControllerRestIP.  
-8. Execute o script como um usuário com credenciais de administrador do domínio:  
+7. Personalizar o arquivo SDNExpress\scripts\FabricConfig.psd1 alterando a **<< substituir >>** marcas com valores específicos de acordo com sua infra-estrutura de laboratório, incluindo nomes de host, nomes de domínio, nomes de usuário e senhas, e informações de rede para as redes listadas no tópico de planejamento de rede.  
+
+8. Crie um registro Host A no DNS para o NetworkControllerRestIP e NetworkControllerRestName (FQDN).  
+
+9. Execute o script como um usuário com credenciais de administrador de domínio:  
       
-    ``SDNExpress\scripts\SDNExpress.ps1 -ConfigurationDataFile FabricConfig.psd1 -Verbose``  
+   ``SDNExpress\scripts\SDNExpress.ps1 -ConfigurationDataFile FabricConfig.psd1 -Verbose``  
       
-9.  Para desfazer todas as operações, execute o seguinte comando:  
+10. Para desfazer todas as operações, execute o seguinte comando:  
       
     ``SDNExpress\scripts\SDNExpressUndo.ps1 -ConfigurationDataFile FabricConfig.psd1 -Verbose``  
       
 #### <a name="validation"></a>Validação  
-Supondo que o script SDN Express executou a conclusão sem informar os erros, você pode realizar a etapa a seguir para garantir que os recursos de malha implantaram corretamente e estão disponíveis para a implantação de locatário.  
 
-- Use [ferramentas de diagnóstico](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack) para garantir que não existam erros em todos os recursos malha no controlador de rede.  
+Supondo que o script SDN Express executou até a conclusão sem relatar erros, você pode executar a etapa a seguir para garantir que os recursos de malha tem sido implantados corretamente e estão disponíveis para implantação do locatário.  
+
+Use [ferramentas de diagnóstico](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack) para garantir que não há nenhum erro em quaisquer recursos de malha no controlador de rede.  
       
-    ``Debug-NetworkControllerConfigurationState -NetworkController <FQDN of Network Controller Rest Name>``  
+   ``Debug-NetworkControllerConfigurationState -NetworkController <FQDN of Network Controller Rest Name>``  
         
    
 ### <a name="deploy-a-sample-tenant-workload-with-the-software-load-balancer"></a>Implantar uma carga de trabalho de locatário de exemplo com o balanceador de carga de software  
     
-Agora que os recursos de malha for implantados, você pode validar seu SDN implantação ponta a ponta Implantando uma carga de trabalho de locatário do exemplo. Essa carga de trabalho do locatário consiste em duas virtuais sub-redes (web e camadas de banco de dados) protegidos por meio de regras de lista de controle de acesso (ACL) usando o firewall SDN distribuído. Sub-rede virtual da camada da web é acessível por meio de SLB/Multiplexador usando um endereço IP Virtual (VIP). O script automaticamente implanta duas máquinas de virtuais de nível da web e um banco de dados camada virtual machine e conecta esses para as sub-redes virtuais.  
+Agora que os recursos de malha tem sido implantados, você pode validar seu SDN implantação ponta a ponta ao implantar uma carga de trabalho de locatário de exemplo. Essa carga de trabalho de locatário consiste em duas sub-redes virtuais (camada da web e camada de banco de dados) protegidas por meio de regras de lista de controle de acesso (ACL) usando o firewall distribuído de SDN. A sub-rede virtual da camada da web é acessível por meio do SLB/MUX usando um endereço IP Virtual (VIP). O script implanta duas máquinas virtuais da camada da web e a máquina de virtual de camada de um banco de dados e conecta-se para as sub-redes virtuais automaticamente.  
   
-1.  Personalizar o arquivo SDNExpress\scripts\TenantConfig.psd1, alterando a **<< substituir >>** marcas com valores específicos (por exemplo: de imagem VHD nome, nome da rede controlador REST, vSwitch nome, conforme indicado anteriormente no arquivo FabricConfig.psd1 etc.)  
-2.  Execute o script. Por exemplo:  
-``SDNExpress\scripts\SDNExpressTenant.ps1 -ConfigurationDataFile TenantConfig.psd1 -Verbose``  
-3.  Para desfazer a configuração, execute o script mesmo com o **desfazer** parâmetro. Por exemplo:  
-``SDNExpress\scripts\SDNExpressTenant.ps1 -Undo -ConfigurationDataFile TenantConfig.psd1 -Verbose``  
+1.  Personalizar o arquivo SDNExpress\scripts\TenantConfig.psd1 alterando a **<< substituir >>** marcas com valores específicos (por exemplo: Nome da imagem VHD, nome REST do controlador de rede, nome do vSwitch, etc. definido anteriormente no arquivo FabricConfig.psd1)  
+
+2.  Execute o script. Por exemplo:   
+
+    ``SDNExpress\scripts\SDNExpressTenant.ps1 -ConfigurationDataFile TenantConfig.psd1 -Verbose``  
+
+3.  Para desfazer a configuração, execute o mesmo script com o **desfazer** parâmetro. Por exemplo:  
+
+    ``SDNExpress\scripts\SDNExpressTenant.ps1 -Undo -ConfigurationDataFile TenantConfig.psd1 -Verbose``  
 
 #### <a name="validation"></a>Validação  
-Para validar que a implantação de locatário foi bem-sucedida, faça o seguinte:
-1.  Faça logon na máquina virtual banco de dados camada e tente ping no endereço IP de um das máquinas de virtuais de nível da web (certifique-se de que Firewall do Windows estiver desativado nas máquinas de virtuais de nível da web).  
-2.  Verifique os recursos de locatário do controlador de rede para quaisquer erros. Execute o seguinte em qualquer host do Hyper-V Layer 3 conectividade com o controlador de rede:  
-      
-    ``Debug-NetworkControllerConfigurationState -NetworkController <FQDN of Network Controller REST Name>``
-3. Para verificar o balanceador está sendo executado corretamente, execute o seguinte em qualquer host do Hyper-V:
-    
-        wget <VIP IP address>/unique.htm -disablekeepalive -usebasicparsing
-   
-   Onde `<VIP IP address>`é a camada da web endereço IP VIP configuradas no arquivo TenantConfig.psd1. Procure o `VIPIP`variável em TenantConfig.psd1.
 
-   Execute esta vezes muliple para ver o balanceador alternar entre os DIPs disponíveis. Você também pode observar esse comportamento usando um navegador da web. Navegue até `<VIP IP address>/unique.htm`. Feche o navegador e abra uma nova instância e procure novamente. Você verá a página azul e verde página alternativa, exceto quando o navegador armazena em cache da página para que o cache de apagamento.
+Para validar que a implantação do locatário foi bem-sucedida, faça o seguinte:
+
+1. Faça logon na máquina virtual da camada do banco de dados e tente executar ping no endereço IP de uma das máquinas de virtuais de camada da web (certifique-se de que o Firewall do Windows estiver desativado nas máquinas virtuais da camada da web).  
+
+2. Verifique os recursos do locatário do controlador de rede para todos os erros. Execute o seguinte em qualquer host Hyper-V com conectividade de camada 3 para o controlador de rede:  
+      
+   ``Debug-NetworkControllerConfigurationState -NetworkController <FQDN of Network Controller REST Name>``
+
+3. Para verificar o balanceador de carga está sendo executado corretamente, execute o seguinte de qualquer host Hyper-V:
+    
+   ``wget <VIP IP address>/unique.htm -disablekeepalive -usebasicparsing``
+   
+   onde `<VIP IP address>` é o endereço IP VIP configurado no arquivo TenantConfig.psd1 da camada da web. 
+
+   >[!TIP]
+   >Pesquise o `VIPIP` variável TenantConfig.psd1.
+
+   Execute este vezes vários para ver o balanceador de carga alternar entre as quedas disponíveis. Você também pode observar esse comportamento usando um navegador da web. Navegue para `<VIP IP address>/unique.htm`. Feche o navegador e abra uma nova instância e procure novamente. Você verá a página azul e a página verde alternativa, exceto quando o navegador armazena em cache a página antes que o cache expire.
+
+---

@@ -1,28 +1,29 @@
 ---
-title: "Ações de serviço de integridade"
+title: Ações de serviço de integridade
 ms.prod: windows-server-threshold
 manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
 ms.topic: article
-ms.assetid: 
+ms.assetid: ''
 author: cosmosdarwin
 ms.date: 08/14/2017
 ms.openlocfilehash: efdf8f04e68fcbdc7051e78d6725cb919e740ffa
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59843017"
 ---
 # <a name="health-service-actions"></a>Ações de serviço de integridade
 
-> Aplica-se para o Windows Server 2016
+> Aplica-se ao Windows Server 2016
 
-O serviço de integridade é um novo recurso no Windows Server 2016 que melhora o monitoramento diárias e experiência operacional para clusters que executam direta de espaços de armazenamento.
+O serviço de integridade é um novo recurso no Windows Server 2016, o que melhora o monitoramento de rotina e experiência operacional para clusters que executam espaços de armazenamento diretos.
 
 ## <a name="actions"></a>Ações  
 
-A próxima seção descreve os fluxos de trabalho que sejam automatizados pelo serviço de integridade. Para verificar se uma ação é realmente está sendo executada autonomia, ou para acompanhar seu progresso ou resultado, o serviço de integridade gera "Ações". Ao contrário de logs, ações desaparecem logo depois que tiverem terminado e destinam-se principalmente a fornecer a percepção de atividade em andamento que pode afetar o desempenho ou capacidade (por exemplo, restaurando resiliência ou redistribuição dados).  
+A próxima seção descreve os fluxos de trabalho que são automatizados pelo Serviço de Integridade. Para verificar se uma ação está realmente sendo executada de forma autônoma ou para controlar seu andamento ou o resultado, o Serviço de Integridade gera "Ações". Diferentemente de logs, as ações desapareceram logo após serem concluídas e destinam-se principalmente a fornecer informações sobre a atividade em andamento, o que pode afetar o desempenho ou a capacidade (por exemplo, restaurar a resiliência ou rebalancear os dados).  
 
 ### <a name="usage"></a>Uso  
 
@@ -36,15 +37,15 @@ Get-StorageHealthAction
 
 No Windows Server 2016, o **Get-StorageHealthAction** cmdlet pode retornar qualquer uma das seguintes informações:  
 
--   Desativação de conectividade com falha, perdida ou sem resposta disco físico  
+-   Desativação com falha, perda de conectividade ou o disco físico não responde  
 
--   Alternar o pool de armazenamento para usar o disco físico de substituição  
+-   Alternância de pool de armazenamento para usar o disco físico de substituição  
 
--   Restaurando resiliência completa aos dados  
+-   Restauração de resiliência completa para dados  
 
--   Redistribuição pool de armazenamento  
+-   Rebalanceamento de pool de armazenamento  
 
 ## <a name="see-also"></a>Consulte também
 
 - [Serviço de integridade no Windows Server 2016](health-service-overview.md)
-- [Documentação do desenvolvedor, exemplo de código e referência de API no MSDN](https://msdn.microsoft.com/windowshealthservice)
+- [Documentação do desenvolvedor, código de exemplo e referência de API no MSDN](https://msdn.microsoft.com/windowshealthservice)

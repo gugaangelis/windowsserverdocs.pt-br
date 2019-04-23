@@ -1,5 +1,5 @@
 ---
-title: "Mover dados e configurações do Windows SBS 2008 para a migração do servidor de destino para o Windows Server Essentials"
+title: Mover configurações e dados do Windows SBS 2008 para o servidor de destino para migração para o Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -13,197 +13,198 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 14a9ab8b4cc18f9c71af6207b854f34af3fa3d17
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59843907"
 ---
-# <a name="move-windows-sbs-2008-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Mover dados e configurações do Windows SBS 2008 para a migração do servidor de destino para o Windows Server Essentials
+# <a name="move-windows-sbs-2008-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Mover configurações e dados do Windows SBS 2008 para o servidor de destino para migração para o Windows Server Essentials
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Mova as configurações e dados ao servidor de destino, da seguinte maneira:  
+Mova as configurações e os dados para o servidor de destino da seguinte maneira:  
   
 
-1.  [Copiar dados ao servidor de destino](Move-Windows-SBS-2008-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_CopyData)  
+1.  [Copiar dados para o servidor de destino](Move-Windows-SBS-2008-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_CopyData)  
   
-2.  [Importar contas de usuário do Active Directory para Windows Server Essentials Dashboard (opcional)](Move-Windows-SBS-2003-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_ImportADaccounts)  
+2.  [Importar contas de usuário do Active Directory para o painel do Windows Server Essentials (opcional)](Move-Windows-SBS-2003-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_ImportADaccounts)  
   
 3.  [Mover a função de servidor DHCP do servidor de origem para o roteador](Move-Windows-SBS-2008-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_MoveDHCP)  
   
 4.  [Configurar a rede](Move-Windows-SBS-2008-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_Network)  
   
-5.  [Remover herdados objetos de diretiva de grupo do Active Directory (opcionais)](Move-Windows-SBS-2008-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_RemoveLegacyADGPO)  
+5.  [Remover objetos de diretiva de grupo do Active Directory herdados (opcionais)](Move-Windows-SBS-2008-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_RemoveLegacyADGPO)  
   
-6.  [Mapear computadores permitidos para contas de usuário](Move-Windows-SBS-2008-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_MapPermittedComputers)  
+6.  [Mapear os computadores permitidos para contas de usuário](Move-Windows-SBS-2008-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_MapPermittedComputers)  
   
-##  <a name="BKMK_CopyData"></a>Copiar dados ao servidor de destino  
- Antes de copiar dados do servidor de origem para o servidor de destino, execute as seguintes tarefas:  
+##  <a name="BKMK_CopyData"></a> Copiar dados para o servidor de destino  
+ Antes de copiar os dados do servidor de origem para o servidor de destino, execute as seguintes tarefas:  
   
--   Examine a lista de pastas compartilhadas no servidor de origem, incluindo as permissões para cada pasta. Criar ou personalizar as pastas no servidor de destino para corresponder a estrutura de pastas que você está migrando do servidor de origem.  
+-   Examine a lista de pastas compartilhadas no servidor de origem, incluindo as permissões para cada pasta. Crie ou personalize as pastas no servidor de destino para corresponderem à estrutura de pasta que você está migrando do servidor de origem.  
   
--   Analise o tamanho de cada pasta e verifique se o servidor de destino tem espaço de armazenamento suficiente.  
+-   Revise o tamanho de cada pasta e certifique-se de que o servidor de destino tenha espaço de armazenamento suficiente.  
   
--   Verifique as pastas compartilhadas no servidor de origem Read-only para todos os usuários não escrita pode carregar colocar na unidade enquanto você estiver copiando arquivos para o servidor de destino.  
+-   Torne as pastas compartilhadas no servidor de origem somente leitura para todos os usuários para que nenhuma gravação possa ocorrer na unidade enquanto você estiver copiando arquivos para o servidor de destino.  
   
-#### <a name="to-copy-data-from-the-source-server-to-the-destination-server"></a>Para copiar dados do servidor de origem para o servidor de destino  
+#### <a name="to-copy-data-from-the-source-server-to-the-destination-server"></a>Para copiar os dados do servidor de origem para o servidor de destino  
   
-1.  Fazer logon no servidor de destino como administrador do domínio e, em seguida, abra uma janela de comando.  
+1.  Faça logon no servidor de destino como administrador de domínio e, em seguida, abra uma janela Comando.  
   
 2.  No prompt de comando, digite o seguinte comando e pressione ENTER:  
   
     `robocopy \\<SourceServerName> \<SharedSourceFolderName> \\<DestinationServerName> \<SharedDestinationFolderName> /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`  
   
      Onde:
-     - \ < SourceServerName\ > é o nome do servidor de origem
-     - \ < SharedSourceFolderName\ > é o nome da pasta compartilhada no servidor de origem
-     - \ < DestinationServerName\ > é o nome do servidor de destino,
-     - \ < SharedDestinationFolderName\ > é a pasta compartilhada no servidor de destino para o qual os dados serão copiados.  
+     - \<SourceServerName\> é o nome do servidor de origem
+     - \<Nomedapastacompartilhadadeorigem\> é o nome da pasta compartilhada no servidor de origem
+     - \<Nomeservidordestino\> é o nome do servidor de destino,
+     - \<Nomedapastacompartilhadadedestino\> é a pasta compartilhada no servidor de destino para o qual os dados serão copiados.  
   
 3.  Repita a etapa anterior para cada pasta compartilhada que você está migrando do servidor de origem.  
   
-##  <a name="BKMK_ImportADaccounts"></a>Importar contas de usuário do Active Directory para Windows Server Essentials Dashboard (opcional)  
- Por padrão, todas as contas de usuário criadas no servidor de origem são migradas automaticamente para o painel no Windows Server Essentials. No entanto, a migração automática de uma conta de usuário no Active Directory falhará se algumas propriedades não atender aos requisitos de migração. Você pode usar o seguinte cmdlet do Windows PowerShell para importar os usuários do Active Directory.  
+##  <a name="BKMK_ImportADaccounts"></a> Importar contas de usuário do Active Directory para o painel do Windows Server Essentials (opcional)  
+ Por padrão, todas as contas de usuário criadas no servidor de origem são migradas automaticamente para o painel no Windows Server Essentials. No entanto, a migração automática de uma conta de usuário do Active Directory falhará se algumas propriedades não atenderem aos requisitos de migração. Você pode usar o seguinte cmdlet do Windows PowerShell para importar usuários do Active Directory.  
   
-#### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>Para importar uma conta de usuário do Active Directory para o Windows Server Essentials Dashboard  
+#### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>Para importar uma conta de usuário do Active Directory para o painel do Windows Server Essentials  
   
 1.  Faça logon no servidor de destino como um administrador de domínio.  
   
 2.  Abra o Windows PowerShell como administrador.  
   
-3.  Execute o seguinte cmdlet, onde `[AD username]`é o nome da conta de usuário do Active Directory que você deseja importar:  
+3.  Execute o seguinte cmdlet, em que `[AD username]` é o nome da conta de usuário do Active Directory que você deseja importar:  
   
      `Import-WssUser  SamAccountName [AD username]`  
   
-##  <a name="BKMK_MoveDHCP"></a>Mover a função de servidor DHCP do servidor de origem para o roteador  
- Se o servidor de origem está executando a função DHCP, execute as seguintes etapas para mover a função DHCP ao roteador.  
+##  <a name="BKMK_MoveDHCP"></a> Mover a função de servidor DHCP do servidor de origem para o roteador  
+ Se o servidor de origem estiver executando a função de DHCP, execute as seguintes etapas para mover a função DHCP para o roteador.  
   
 #### <a name="to-move-the-dhcp-role-from-the-source-server-to-the-router"></a>Para mover a função DHCP do servidor de origem para o roteador  
   
-1.  Desative o serviço DHCP no servidor de origem, da seguinte maneira:  
+1.  Desative o serviço DHCP no servidor de origem da seguinte maneira:  
   
-    1.  No servidor de origem, clique em **iniciar**, clique em **ferramentas administrativas**e clique em **serviços**.  
+    1.  No servidor de origem, clique em **Iniciar**, clique em **Ferramentas Administrativas**e clique em **Serviços**.  
   
-    2.  Na lista de serviços em execução, clique com botão direito **servidor DHCP**e clique em **propriedades**.  
+    2.  Na lista de serviços em execução, clique com o botão direito em **Servidor DHCP** e clique em **Propriedades**.  
   
-    3.  Para **iniciar tipo**, selecione **desabilitada**.  
+    3.  Para **Tipo de Início**, selecione **Desabilitado**.  
   
     4.  Interrompa o serviço.  
   
-2.  Ative a função DHCP no seu roteador  
+2.  Ative a função DHCP no roteador  
   
     1.  Siga as instruções na documentação do roteador para ativar a função DHCP no roteador.  
   
-    2.  Para garantir que os endereços IP emitidos pelo servidor de origem permanecem os mesmos, siga as instruções na documentação do roteador para definir o intervalo DHCP no roteador para ser o mesmo que o intervalo DHCP no servidor de origem.  
+    2.  Para garantir que os endereços IP emitidos pelo servidor de origem permaneçam os mesmos, siga as instruções na documentação do seu roteador para configurar o intervalo DHCP no roteador para que seja igual ao intervalo DHCP no servidor de origem.  
   
         > [!IMPORTANT]
-        >  Se você não tiver configurado um reservas de DHCP ou de IP estático do roteador para o servidor de destino, e o intervalo DHCP não é o mesmo que o servidor de origem, é possível que o roteador emitirá um novo endereço IP para o servidor de destino. Se isso acontecer, redefina a regras do roteador para encaminhar mensagens para o novo endereço IP do servidor de destino de encaminhamento de porta.  
+        >  Se você não tiver configurado reservas de DHCP ou IP estático no roteador para o servidor de destino e o intervalo DHCP não for igual ao do servidor de origem, é possível que o roteador emita um novo endereço IP para o servidor de destino. Se isso acontecer, redefina as regras do roteador para encaminhar para o novo endereço IP do servidor de destino.  
   
-##  <a name="BKMK_Network"></a>Configurar a rede  
- Depois de mover a função DHCP ao roteador, defina as configurações de rede no servidor de destino.  
+##  <a name="BKMK_Network"></a> Configurar a rede  
+ Depois que você mover a função DHCP no roteador, defina as configurações de rede no servidor de destino.  
   
 #### <a name="to-configure-the-network"></a>Para configurar a rede  
   
 1.  No servidor de destino, abra o painel.  
   
-2.  No painel **Home** página, clique em **instalação**, clique em **configurar o acesso em qualquer lugar**e, em seguida, escolha o **clique para configurar o acesso em qualquer lugar** opção.  
+2.  Na página **Home** do painel, clique em **INSTALAÇÃO**, clique em **Configurar Acesso em Qualquer Local**e escolha a opção **Clique para configurar o Acesso em Qualquer Local** .  
   
-3.  Siga as instruções no Assistente para configurar seu roteador e nomes de domínio.  
+3.  Siga as instruções no assistente para configurar seu roteador e nomes de domínio.  
   
- Se o roteador não der suporte a estrutura UPnP, ou se a estrutura UPnP está desabilitada, um ícone de aviso amarelo pode aparecer ao lado do nome do roteador. Certifique-se de que as seguintes portas estejam abertas e que eles são direcionados para o endereço IP do servidor de destino:  
+ Se o roteador não oferecer suporte para a estrutura UPnP, ou se a estrutura UPnP estiver desabilitada, um ícone de aviso amarelo pode aparecer ao lado do nome do roteador. Certifique-se de que as seguintes portas estejam abertas e que sejam direcionadas para o endereço IP do servidor de destino:  
   
--   Porta 80: O tráfego HTTP Web  
+-   Porta 80: Tráfego da Web HTTP  
   
--   Porta 443: O tráfego da Web HTTPS  
-  
-> [!NOTE]
->  Se você tiver configurado um servidor do Exchange no local em um segundo servidor, você deve garantir porta 25 (SMTP) também é aberta e que ele é redirecionado para o endereço IP do servidor do Exchange no local.  
-  
-##  <a name="BKMK_RemoveLegacyADGPO"></a>Remover herdados objetos de diretiva de grupo do Active Directory (opcionais)  
- Os objetos de política de grupo (GPOs) são atualizados para o Windows Server Essentials. Eles são um subconjunto dos GPOs Windows SBS 2008. Para o Windows Server Essentials, um número filtros de GPOs do Windows SBS 2008 e Windows Management Instrumentation (WMI) deve ser excluído manualmente para evitar conflitos com os filtros do Windows Server Essentials GPOs e WMI.  
+-   Porta 443: Tráfego da Web HTTPS  
   
 > [!NOTE]
->  Se você tiver modificado os objetos de política de grupo do Windows SBS 2008 originais, você deve salvar cópias em um local diferente e, em seguida, exclua-os do Windows SBS 2008.  
+>  Se você tiver configurado um servidor do Exchange local em um segundo servidor, deve garantir que a porta 25 (SMTP) também esteja aberta e que seja redirecionada para o endereço IP do servidor do Exchange local.  
   
-#### <a name="to-remove-old-group-policy-objects-from-windows-sbs-2008"></a>Para remover objetos de política de grupo antigos do Windows SBS 2008  
+##  <a name="BKMK_RemoveLegacyADGPO"></a> Remover objetos de diretiva de grupo do Active Directory herdados (opcionais)  
+ Os objetos de diretiva de grupo (GPOs) são atualizados para o Windows Server Essentials. Eles são um subconjunto dos GPOs Windows SBS 2008. Para o Windows Server Essentials, um número de filtros de GPOs do Windows SBS 2008 e Windows Management Instrumentation (WMI) deve ser excluído para evitar conflitos com os filtros WMI e GPOs do Windows Server Essentials.  
   
-1.  Fazer logon no servidor de origem com uma conta de administrador.  
+> [!NOTE]
+>  Se você tiver modificado os Objetos de Política de Grupo do Windows SBS 2008 originais, salve uma cópia em um local diferente e, em seguida, exclua-os do Windows SBS 2008.  
   
-2.  Clique em **iniciar**e clique em **gerenciamento de servidor**.  
+#### <a name="to-remove-old-group-policy-objects-from-windows-sbs-2008"></a>Para remover Objetos de Política de Grupo antigos do Windows SBS 2008  
   
-3.  No painel de navegação, clique em **gerenciamento avançado de**, clique em **Group Policy Management**e clique em **floresta:***< YourDomainName\ >*.  
+1.  Faça logon no servidor de origem com uma conta de administrador.  
   
-4.  Clique em **domínios**, clique em *< YourDomainName\ >*e clique em **objetos de política de grupo**.  
+2.  Clique em **Iniciar** e, em seguida, em **Gerenciamento de servidor**.  
   
-5.  Clique com botão direito **política de auditoria do servidor de negócios pequeno**, clique em **excluir**e clique em **Okey**.  
+3.  No painel de navegação, clique em **avançadas de gerenciamento**, clique em **gerenciamento de política de grupo**e, em seguida, clique em **floresta: * * * < nome_do_domínio\>*.  
   
-6.  Repita a etapa 5 para excluir os GPOs a seguir que se aplicam à sua rede:  
+4.  Clique em **domínios**, clique em *< nome_do_domínio\>* e, em seguida, clique em **os objetos de diretiva de grupo**.  
   
-    -   Computador do cliente Small Business Server  
+5.  Clique com o botão direito do mouse em **Política de auditoria do Small Business Server**, clique em **Excluir** e, em seguida, clique em **OK**.  
   
-    -   Política de senha de domínio de servidor de pequenas empresas  
+6.  Repita a etapa 5 para excluir os seguintes GPOs que se aplicam à sua rede:  
   
-         Recomendamos que você configure a política de senha no Windows Server Essentials para impor senhas fortes. Para configurar a política de senha, use o painel, que grava a configuração de política de domínio padrão. A configuração de política de senha não é gravada o objeto de diretiva de senha domínio do Small Business Server, quanto era no Windows SBS 2008.  
+    -   Computador cliente do Small Business Server  
   
-    -   Firewall de Conexão de Internet de servidor de pequenas empresas  
+    -   Política de senha de domínio do Small Business Server  
   
-    -   Política de bloqueio de servidor de pequenas empresas  
+         É recomendável que você configure a política de senha no Windows Server Essentials para impor senhas fortes. Para configurar a política de senha, use o painel, que grava a configuração de política de domínio padrão. A configuração de política de senha não é gravada no Objeto de Política de Senha do Domínio do Small Business Server, como ocorria no Windows SBS 2008.  
   
-    -   Diretiva de assistência remota do Small Business Server  
+    -   Firewall de conexão de Internet do Small Business Server  
+  
+    -   Política de bloqueio do Small Business Server  
+  
+    -   Política de assistência remota do Small Business Server  
   
     -   Firewall do Windows Small Business Server  
   
-    -   Diretiva de computador de cliente Small Business Server Update Services  
+    -   Política de computador cliente do Small Business Server Update Services  
   
          Esse GPO estará presente se você estiver migrando do Windows SBS 2008 R2.  
   
-    -   Diretiva Small Business Server Update Services comuns configurações  
+    -   Política de configurações Comuns do Small Business Server Update Services  
   
          Esse GPO estará presente se você estiver migrando do Windows SBS 2008 R2.  
   
-    -   Diretiva de computador de servidor Small Business Server Update Services  
+    -   Política de Computador do Servidor do Small Business Server Update Services  
   
          Esse GPO estará presente se você estiver migrando do Windows SBS 2008 R2.  
   
-7.  Confirme que todos os GPOs são excluídos.  
+7.  Confirme se todos os GPOs foram excluídos.  
   
-#### <a name="to-remove-wmi-filters-from-windows-sbs-2008"></a>Para remover filtros WMI do Windows SBS 2008  
+#### <a name="to-remove-wmi-filters-from-windows-sbs-2008"></a>Para remover os filtros WMI do Windows SBS 2008  
   
-1.  Fazer logon no servidor de origem com uma conta de administrador.  
+1.  Faça logon no servidor de origem com uma conta de administrador.  
   
-2.  Clique em **iniciar**e clique em **gerenciamento de servidor**.  
+2.  Clique em **Iniciar** e, em seguida, em **Gerenciamento de servidor**.  
   
-3.  No painel de navegação, clique em **gerenciamento avançado de**, clique em **Group Policy Management**e clique em **floresta:***< YourNetworkDomainName\ >*  
+3.  No painel de navegação, clique em **avançadas de gerenciamento**, clique em **gerenciamento de política de grupo**e, em seguida, clique em **floresta: * * * < YourNetworkDomainName\>*  
   
-4.  Clique em **domínios**, clique em *< YourNetworkDomainName\ >*e clique em **filtros WMI**.  
+4.  Clique em **domínios**, clique em *< YourNetworkDomainName\>* e, em seguida, clique em **filtros WMI**.  
   
-5.  Clique com botão direito **PostSP2**, clique em **excluir**e clique em **Sim**.  
+5.  Clique com o botão direito em **PostSP2**, clique em **Excluir** e, em seguida, clique em **Sim**.  
   
-6.  Clique com botão direito **PreSP2**, clique em **excluir**e clique em **Sim**.  
+6.  Clique com o botão direito em **PreSP2**, clique em **Excluir**e clique em **Sim**.  
   
-7.  Confirme que esses três filtros WMI são excluídos.  
+7.  Confirme se esses três filtros WMI foram excluídos.  
   
-##  <a name="BKMK_MapPermittedComputers"></a>Mapear computadores permitidos para contas de usuário  
- No Windows SBS 2008, se um usuário se conecta ao acesso via Web remoto, todos os computadores na rede são exibidos. Isso pode incluir computadores que o usuário não tem permissão para acessar. No Windows Server Essentials, um usuário deve ser explicitamente atribuído a um computador para que ele seja exibido no acesso via Web remoto. Cada conta de usuário migrada do Windows SBS 2008 deve ser mapeada para um ou mais computadores.  
+##  <a name="BKMK_MapPermittedComputers"></a> Mapear os computadores permitidos para contas de usuário  
+ No Windows SBS 2008, se um usuário se conecta ao Acesso Remoto via Web, todos os computadores da rede são exibidos. Isso pode incluir computadores que o usuário não tem permissão para acessar. No Windows Server Essentials, um usuário deve ser explicitamente atribuído a um computador para que ele seja exibido no acesso via Web remoto. Cada conta de usuário que for migrada do Windows SBS 2008 deve ser mapeada para um ou mais computadores.  
   
-#### <a name="to-map-user-accounts-to-computers"></a>Mapear as contas de usuário em computadores  
+#### <a name="to-map-user-accounts-to-computers"></a>Para mapear contas de usuário para computadores  
   
 1.  Abra o painel do Windows Server Essentials.  
   
-2.  Na barra de navegação, clique em **usuários**.  
+2.  Na barra de navegação, clique em **Usuários**.  
   
-3.  Na lista de contas de usuário, clique com botão direito uma conta de usuário e, em seguida, clique em **exibir as propriedades da conta**.  
+3.  Na lista de contas de usuário, clique em uma conta de usuário e clique em **Exibir Propriedades da Conta**.  
   
-4.  Clique no **acesso em qualquer local** guia e, em seguida, clique em **permitir acesso remoto via Web e acesso a aplicativos web services.**.  
+4.  Clique na guia **Acesso em Qualquer Local** e, em seguida, clique em **Permitir Acesso Remoto via Web e acesso a aplicativos de serviços Web**.  
   
-5.  Selecione **pastas compartilhadas**, selecione **computadores**, selecione **links da home page**e clique em **aplicar**.  
+5.  Selecione **Pastas Compartilhadas**, selecione **Computadores**, selecione **Links da Home Page**e, em seguida, clique em **Aplicar**.  
   
-6.  Clique no **acesso ao computador** guia e, em seguida, clique no nome do computador ao qual você deseja permitir o acesso.  
+6.  Clique na guia **Acesso ao Computador** e, em seguida, clique no nome do computador ao qual deseja permitir o acesso.  
   
 7.  Repita as etapas 3, 4, 5 e 6 para cada conta de usuário.  
   
 > [!NOTE]
->  Você não precisa alterar a configuração do computador cliente. Ele é configurado automaticamente.  
+>  Você não precisará alterar a configuração do computador cliente. Ela é definida automaticamente.  
   
 > [!NOTE]
->  Depois de concluir a migração, se você encontrar um problema quando você cria a primeira nova conta de usuário no servidor de destino, remova a conta de usuário que você adicionou e, em seguida, crie-o novamente.
+>  Depois de concluir a migração, se encontrar um problema ao criar a primeira nova conta de usuário no servidor de destino, remova a conta de usuário adicionada e crie a conta novamente.

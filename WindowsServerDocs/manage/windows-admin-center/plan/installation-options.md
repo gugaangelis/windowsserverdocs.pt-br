@@ -1,85 +1,82 @@
 ---
 title: Que tipo de instalação é ideal para você
-description: Este tópico descreve as opções de instalação diferente para o Windows Admin Center, incluindo a instalação em um computador Windows 10 ou um servidor do Windows para uso por vários administradores.
+description: Que tipo de instalação é ideal para você Windows Admin Center (projeto Paulo). Instale em um cluster de failover para alta disponibilidade e resiliência.
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.date: 04/12/2019
-ms.openlocfilehash: cc6f9e6c2f2572618c1c5fdae00047d24fbeb3cf
-ms.sourcegitcommit: f1edfc6525e09dd116b106293f9260123a94de0c
-ms.translationtype: MT
+ms.openlocfilehash: fae0305e454cdd10109219c6182ff612f539e9c9
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "9296658"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59868007"
 ---
-# Que tipo de instalação é ideal para você?
+# <a name="what-type-of-installation-is-right-for-you"></a>Que tipo de instalação é ideal para você?
 
->Aplicável à: Windows Admin Center, a visualização do Windows Admin Center
+>Aplica-se a: Windows Admin Center, Windows Admin Center Preview
 
-Este tópico descreve as opções de instalação diferente para o Windows Admin Center, incluindo a instalação em um computador Windows 10 ou um servidor do Windows para uso por vários administradores. Para instalar o Windows Admin Center em uma VM no Azure, consulte [Implantar o Windows Admin Center no Azure](../azure/deploy-wac-in-azure.md).
+## <a name="supported-operating-systems-installation"></a>Sistemas operacionais com suporte: Instalação
 
-## Sistemas operacionais suportados: instalação
+Você pode **instalar** Windows Admin Center nos seguintes sistemas operacionais Windows:
 
-Você pode **instalar o** Windows Admin Center nos seguintes sistemas operacionais Windows:
-
-| **Versão** | **Modo de instalação** |
+| **Version** | **Modo de instalação** |
 |-------------|-----------------------|
 |Windows 10, versão 1709 ou mais recente | Modo desktop |
 |Canal semestral do Windows Server | Modo de gateway |
 |Windows Server 2016 | Modo de gateway |
 |Windows Server 2019 | Modo de gateway |
 
-**Modo área de trabalho:** Iniciar a partir do Menu Iniciar e conecte-se ao gateway do Windows Admin Center no mesmo computador no qual ele está instalado (ou seja, `https://localhost:6516`)
+**Modo de área de trabalho:** Inicie a partir do Menu Iniciar e conectar-se ao gateway do Windows Admin Center no mesmo computador no qual ele está instalado (ou seja, `https://localhost:6516`)
 
 **Modo de gateway:** Conectar-se ao gateway do Windows Admin Center de um navegador cliente em um computador diferente (ou seja, `https://servername.contoso.com`) 
 
 > [!WARNING]
-> Não há suporte para instalar o Windows Admin Center em um controlador de domínio. [Leia mais sobre as práticas recomendadas de segurança de controlador de domínio](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/securing-domain-controllers-against-attack). 
+> Não há suporte para a instalação do Windows Admin Center em um controlador de domínio. [Leia mais sobre a segurança do controlador de domínio práticas recomendadas](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/securing-domain-controllers-against-attack). 
 
 > [!IMPORTANT]
-> Você não pode usar o Internet Explorer para gerenciar o Windows Admin Center - em vez disso, você precisará usar um [navegador de suporte](../understand/faq.md#which-web-browsers-are-supported-by-windows-admin-center
-).  Se você estiver instalando o Windows Admin Center no Windows Server, recomendamos gerenciar conectando-se remotamente com o Windows 10 e Edge.  Como alternativa, você pode gerenciar localmente no servidor do Windows se você tiver instalado um navegador compatível.
+> Não é possível usar o Internet Explorer para gerenciar o Windows Admin Center - em vez disso, você precisa usar um [navegador com suporte](../understand/faq.md#which-web-browsers-are-supported-by-windows-admin-center
+).  Se você estiver instalando o Windows Admin Center no Windows Server, é recomendável gerenciar conectando remotamente com o Windows 10 e borda.  Como alternativa, você pode gerenciar localmente no servidor do Windows se você tiver instalado um navegador com suporte.
 
-## Sistemas operacionais suportados: gerenciamento
+## <a name="supported-operating-systems-management"></a>Sistemas operacionais com suporte: Management
 
-Você pode **Gerenciar** os seguintes sistemas operacionais de Windows usando o Windows Admin Center:
+Você pode **gerenciar** os seguintes sistemas operacionais de Windows usando o Windows Admin Center:
 
-| Versão | Gerenciar o *nó* por meio do *Gerenciador do servidor* | Gerenciar um *cluster* por meio do *Gerenciador de Cluster de Failover* | Gerenciar *HCI* por meio do *Gerenciador de Cluster HCI*|
+| Versão | Gerencie *nó* por meio de *Gerenciador do servidor* | Gerencie *cluster* por meio de *Gerenciador de Cluster de Failover* | Gerencie *HCI* por meio de *HCI Gerenciador de Cluster*|
 |-------------------------|---------------|-----|------------------------|
-| Windows 10, versão 1709 ou mais recente | Sim (por meio do gerenciamento do computador) | N/A | N/A |
-| Canal semestral do Windows Server | Sim | Sim | N/A |
+| Windows 10, versão 1709 ou mais recente | Sim (por meio do gerenciamento do computador) | N/D | N/D |
+| Canal semestral do Windows Server | Sim | Sim | N/D |
 | Windows Server 2019 | Sim | Sim | Sim |
-| Windows Server 2016 | Sim | Sim | Sim, com a [atualização cumulativa mais recente](../use/manage-hyper-converged.md#prepare-your-windows-server-2016-cluster-for-windows-admin-center) |
-| Microsoft Hyper-V Server 2016 | Sim | Sim | N/A |
-| Windows Server 2012 R2 | Sim | Sim | N/A |
-| Microsoft Hyper-V Server 2012 R2 | Sim | Sim | N/A |
-| Windows Server 2012 | Sim | Sim | N/A |
-| Windows Server 2008 R2 | Sim, funcionalidade limitada | N/A | N/A |
+| Windows Server 2016 | Sim | Sim | Sim, com [atualização cumulativa mais recente](../use/manage-hyper-converged.md#prepare-your-windows-server-2016-cluster-for-windows-admin-center) |
+| Microsoft Hyper-V Server 2016 | Sim | Sim | N/D |
+| Windows Server 2012 R2 | Sim | Sim | N/D |
+| Microsoft Hyper-V Server 2012 R2 | Sim | Sim | N/D |
+| Windows Server 2012 | Sim | Sim | N/D |
+| Windows Server 2008 R2 | Sim, funcionalidade limitada | N/D | N/D |
 
 > [!NOTE]
-> Windows Admin Center exige recursos do PowerShell que não estão incluídos no Windows Server 2008 R2, 2012 e 2012 R2. Se você deseja gerenciar esses com o Windows Admin Center, você precisará instalar o Windows Management Framework (WMF) versão 5.1 ou posterior nesses servidores.
+> Windows Admin Center requer recursos do PowerShell que não estão incluídos no Windows Server 2008 R2, 2012 e 2012 R2. Se você gerenciar esses recursos com Windows Admin Center, você precisará instalar nesses servidores Windows Management Framework (WMF) versão 5.1 ou posterior.
 
 >Digite `$PSVersiontable` no PowerShell para verificar se o WMF está instalado e se a versão é 5.1 ou superior. 
 
->Se o WMF não estiver instalado, você pode [baixar o WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616).
+>Se o WMF não estiver instalado, você poderá [baixar o WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616).
 
-## Opções de implantação
+## <a name="deployment-options"></a>Opções de implantação
 
 | ![img](../media/deployment-options/W10.png) | ![img](../media/deployment-options/gateway.png) | ![img](../media/deployment-options/node.png) | ![img](../media/deployment-options/HA.png) |
 |---|---|---|---|
 
-| Cliente local | Servidor de gateway | Servidor gerenciado | Cluster de failover |
+| Local do cliente | Servidor de Gateway | Servidor Gerenciado | Cluster de failover |
 | --- | --- | --- | --- |
-| Instale em um cliente Windows 10 local que tenha conectividade com os servidores gerenciados.  Excelente para o início rápido, teste, ad hoc ou cenários de pequena escala. |Instalar em um servidor de gateway designado e acesso de qualquer navegador de cliente com conectividade com o servidor de gateway.  Excelente para cenários em grande escala. | Instale diretamente em um servidor gerenciado para fins de gerenciamento autônomo ou um cluster no qual ele é um nó de membro.  Excelente para cenários de distribuição. | Implante em um cluster de failover para habilitar a alta disponibilidade do serviço de gateway. Excelente para ambientes de produção garantir que a resiliência do seu serviço de gerenciamento. |
+| Instale em um cliente local do Windows 10 que tenha conectividade com servidores gerenciados.  Ótimo para início rápido, teste, ad-hoc ou cenários de pequena escala. |Instalar em um servidor de gateway designado e acessar em qualquer navegador do cliente com conectividade para o servidor de gateway.  Muito bem para cenários de larga escala. | Instale diretamente em um servidor gerenciado para fins de gerenciamento em si ou um cluster no qual ele é um nó de membro.  Muito bem para cenários de distribuição. | Implante em um cluster de failover para habilitar a alta disponibilidade do serviço de gateway. Ótimo para ambientes de produção garantir a resiliência do seu serviço de gerenciamento. |
 
-## Alta disponibilidade
+## <a name="high-availability"></a>Alta disponibilidade
 
-Você pode habilitar a alta disponibilidade do serviço de gateway ao implantar o Windows Admin Center em um modelo ativo-passivo em um cluster de failover. Se um de nós do cluster falhar, o Windows Admin Center normalmente failover para outro nó, permitindo que você continue a gerenciar os servidores no seu ambiente perfeitamente.
+Você pode habilitar a alta disponibilidade do serviço de gateway com a implantação do Windows Admin Center em um modelo ativo-passivo em um cluster de failover. Se um de nós do cluster falhar, Windows Admin Center normalmente fará failover para outro nó, permitindo que você continuar a gerenciar os servidores em seu ambiente perfeitamente.
 
 [Saiba como implantar o Windows Admin Center com alta disponibilidade.](../deploy/high-availability.md)
 
 > [!Tip]
-> Pronto para instalar o Windows Admin Center? [Baixe agora](https://aka.ms/windowsadmincenter)
+> Pronto para instalar o Windows Admin Center? [Baixar agora](https://aka.ms/windowsadmincenter)

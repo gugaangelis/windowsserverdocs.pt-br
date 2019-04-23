@@ -1,7 +1,7 @@
 ---
 ms.assetid: 74ef34c8-e13f-499b-b2bb-952ad7036622
-title: "Requisitos de resolução de nome para servidores de Federação"
-description: 
+title: Requisitos de resolução de nome para servidores de federação
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,29 +10,30 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 74701cbaa403611b081942f016b21db1c0b3ff70
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59845457"
 ---
-# <a name="name-resolution-requirements-for-federation-servers"></a>Requisitos de resolução de nome para servidores de Federação
+# <a name="name-resolution-requirements-for-federation-servers"></a>Requisitos de resolução de nome para servidores de federação
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Quando computadores cliente na rede corporativa tentam acessar um aplicativo ou serviço da Web que está protegido pelo \(AD FS\) serviços de Federação do Active Directory, o usuário deve primeiro autenticar em um servidor de Federação. É uma maneira de se autenticar com os clientes de rede corporativa acessar um servidor de federação local por meio de autenticação integrada do Windows.  
+Quando os computadores cliente na rede corporativa tentam acessar um aplicativo ou serviço da Web que é protegido pelos serviços de Federação do Active Directory \(do AD FS\), eles deverão primeiro autenticar em um servidor de Federação. Uma maneira de autenticar é fazer com que os clientes de rede corporativa acessem um servidor de federação local por meio da autenticação integrada do Windows.  
   
-## <a name="configure-corporate-dns"></a>Configurar o DNS corporativa  
-Para que a resolução de nomes bem-sucedida por meio de autenticação integrada do Windows em servidores de federação local pode ocorrer, Domain Name System \(DNS\) na rede da empresa do parceiro de conta devem ser definidas para um novo registro de recurso \(A\) do host que resolverá o nome do host \(FQDN\) do nome de domínio totalmente qualificado do servidor de federação para o endereço IP do cluster do servidor de Federação.  
+## <a name="configure-corporate-dns"></a>Configurar DNS corporativo  
+Para que a resolução de nome bem-sucedida por meio da autenticação integrada do Windows nos servidores de federação local possa ocorrer, o sistema de nomes de domínio \(DNS\) na rede corporativa da conta de parceiro deve ser configurado para um novo host \(Um\) registro de recurso que resolve o nome de domínio totalmente qualificado \(FQDN\) nome do host do servidor de federação para o endereço IP do cluster do servidor de Federação.  
   
-Na ilustração a seguir, você pode ver como essa tarefa é realizada para um determinado cenário. Nesse cenário, \(NLB\) balanceamento de carga de rede Microsoft fornece um nome FQDN do cluster único e endereço IP do cluster único para um farm de servidores de Federação existente.  
+Na ilustração a seguir, você pode ver como essa tarefa é realizada para determinado cenário. Nesse cenário, o balanceamento de carga de rede da Microsoft \(NLB\) fornece um nome de FQDN de cluster único e um único endereço IP para um farm de servidor de Federação existente.  
   
-![Requisitos de nome](media/adfs2_deploy_single_fs.gif)  
+![requisitos de nome](media/adfs2_deploy_single_fs.gif)  
   
-Para obter informações sobre como configurar um endereço IP do cluster ou FQDN usando NLB do cluster, consulte [especificando os parâmetros de Cluster](https://go.microsoft.com/fwlink/?LinkId=75282).  
+Para obter informações sobre como configurar um endereço IP ou FQDN de cluster usando NLB, consulte [especificando os parâmetros de Cluster](https://go.microsoft.com/fwlink/?LinkId=75282).  
   
-Para obter informações sobre como configurar o DNS corporativo para um servidor de federação, consulte [adicionar um Host & #40; A & #41; Registro de recurso DNS corporativo para um servidor de Federação](../../ad-fs/deployment/Add-a-Host--A--Resource-Record-to-Corporate-DNS-for-a-Federation-Server.md).  
+Para obter informações sobre como configurar DNS corporativo para um servidor de federação, consulte [adicionar um Host &#40;um&#41; registro de recurso ao DNS corporativo para um servidor de Federação](../../ad-fs/deployment/Add-a-Host--A--Resource-Record-to-Corporate-DNS-for-a-Federation-Server.md).  
   
-Para obter informações sobre como configurar proxies de servidor de federação na rede de perímetro, consulte [requisitos de resolução de nome de Proxies de servidor de Federação](Name-Resolution-Requirements-for-Federation-Server-Proxies.md).  
+Para obter informações sobre como configurar proxies de servidor de federação na rede de perímetro, consulte [Name Resolution Requirements for Federation Server Proxies](Name-Resolution-Requirements-for-Federation-Server-Proxies.md).  
   
 
 ## <a name="see-also"></a>Consulte também

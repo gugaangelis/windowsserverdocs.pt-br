@@ -1,0 +1,1 @@
+**Crie anéis de migração.** Como na maioria dos outras migrações de sistema de destino migrações de cliente em fases para ajudar a identificar quaisquer problemas antes que eles afetam toda a organização. A primeira parte da migração de VPN Always On não é diferente.

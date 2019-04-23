@@ -1,5 +1,5 @@
 ---
-title: Bem-vindo ao remoto serviços de área de trabalho no Windows Server 2016
+title: Serviços de área de trabalho bem-vindas ao remoto no Windows Server 2016
 description: Fornece uma visão geral dos serviços de área de trabalho remota
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -15,38 +15,38 @@ author: christianmontoya
 manager: scottman
 ms.localizationpriority: medium
 ms.openlocfilehash: cd00f92254f9e55f83442f5e68e344e0aa7579a2
-ms.sourcegitcommit: 1533d994a6ddea54ac189ceb316b7d3c074307db
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1708445"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59855497"
 ---
-# <a name="welcome-to-remote-desktop-services"></a>Bem-vindo ao remota de serviços de área de trabalho 
+# <a name="welcome-to-remote-desktop-services"></a>Bem-vindo aos serviços de área de trabalho remota 
 
-Serviços de área de trabalho remota (RDS) é a plataforma de escolha de criação de soluções de virtualização para cada necessidade de cliente final, incluindo o fornecimento de aplicativos virtualizados individuais, oferecendo acesso seguro de área de trabalho móvel e remoto e fornecer aos usuários finais a capacidade de executar seus aplicativos e áreas de trabalho da nuvem.
+Serviços de área de trabalho remota (RDS) é a plataforma ideal para a criação de soluções de virtualização para cada necessidade do cliente final, incluindo o fornecimento de aplicativos virtualizados individuais, fornecendo acesso seguro de área de trabalho móvel e remoto e fornecer aos usuários finais a capacidade de executar seus aplicativos e áreas de trabalho da nuvem.
 
 ![Visão geral de serviços de área de trabalho remota](.\media\rds-overview.png)
 
-RDS oferece flexibilidade de implantação, eficiência e extensibilidade de custo — tudo isso incorporando por meio de uma variedade de opções de implantação, incluindo o Windows Server 2016 para implantações em instalações, Microsoft Azure para implantações de nuvem e uma matriz robusta de parceiro soluções.
+RDS oferece a flexibilidade de implantação, extensibilidade e eficiência de custo — tudo entregue por meio de uma variedade de opções de implantação, incluindo o Windows Server 2016 para implantações locais, Microsoft Azure para implantações de nuvem e uma matriz robusta de parceiro soluções.
 
-Dependendo do seu ambiente e preferências, você pode configurar a solução RDS para virtualização baseada em sessão, como uma infraestrutura de área de trabalho virtual (VDI) ou uma combinação dos dois:
+Dependendo do seu ambiente e preferências, você pode configurar a solução RDS para virtualização baseada em sessão, como uma virtual desktop infrastructure (VDI), ou uma combinação dos dois:
 
-- **Virtualização baseada em sessão**: Aproveite o poder de computação do Windows Server para fornecer um ambiente de várias sessões e econômico para cargas de trabalho cotidianos dos usuários de unidade
-- **VDI**: cliente Windows alavancar para fornecer o alto desempenho, compatibilidade de aplicativo e familiaridade que os usuários tenham esperam de sua experiência de área de trabalho do Windows.
+- **Virtualização baseada em sessão**: Aproveite o poder de computação do Windows Server para fornecer um ambiente de várias sessões e econômico para cargas de trabalho cotidiano dos usuários da unidade
+- **VDI**: Aproveite o cliente do Windows para fornecer o alto desempenho, a compatibilidade de aplicativos e a familiaridade que seus usuários já conhecem de sua experiência de área de trabalho do Windows.
 
-Nesses ambientes de virtualização, você tem flexibilidade adicional para seus usuários, você publicar:
+Dentro desses ambientes de virtualização, você tem flexibilidade adicional em Publicar para seus usuários:
 
-- **Áreas de trabalho**: oferecer uma experiência de área de trabalho completa com uma variedade de aplicativos que você instala e gerenciar a seus usuários. Ideal para os usuários que contam com esses computadores como suas estações de trabalho principais ou que são provenientes de clientes finos, tais como com os serviços de multipontos.
-- **RemoteApps**: especificar aplicativos individuais que estão hospedados/executar na máquina virtualizada, mas aparecem como se estiver em execução na área de trabalho do usuário como local de aplicativos. Os aplicativos têm sua próprias entrada da barra de tarefas e podem ser redimensionados e movidos em vários monitores. Ideal para implantar e gerenciar aplicativos de chave no ambiente remoto seguro, permitindo que os usuários trabalhem e personalizar suas próprias áreas de trabalho.
+- **Áreas de trabalho**: Dar aos usuários uma experiência de área de trabalho completa com uma variedade de aplicativos que você instalar e gerenciar. Ideal para os usuários que se baseiam nesses computadores como suas estações de trabalho primárias ou que são provenientes de clientes finos, como com o MultiPoint Services.
+- **RemoteApps**: Especificar aplicativos individuais que são hospedados/execução no computador virtualizado, mas aparecem como se estiver em execução na área de trabalho do usuário, como aplicativos locais. Os aplicativos têm suas próprias entradas na barra de tarefas e podem ser redimensionados e movidos em monitores. Ideal para implantar e gerenciar aplicativos-chave no ambiente seguro, remoto, permitindo aos usuários trabalhar a partir e personalizar suas próprias áreas de trabalho.
 
-Para ambientes em que a economia é crucial e você deseja estender os benefícios da implantação completos áreas de trabalho em um ambiente de virtualização baseada em sessão, você pode usar [Serviços multiponto](../multipoint-services/multipoint-services.md) para oferecer o melhor valor. 
+Para ambientes em que o custo-benefício é crucial e você deseja estender os benefícios da implantação de áreas de trabalho completas em um ambiente de virtualização baseada em sessão, você pode usar [MultiPoint Services](../multipoint-services/multipoint-services.md) para entregar o melhor valor. 
 
-Com essas opções e configurações, você tem a flexibilidade para implantar os aplicativos que seus usuários precisam em um controle remoto, seguro e terão fácil e econômico e áreas de trabalho.
+Com essas opções e configurações, você tem a flexibilidade de implantação de desktops e aplicativos que os usuários precisam em um remoto, seguro e uma maneira econômica.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Aqui estão algumas das próximas etapas para ajudá-lo a obter uma compreensão melhor do RDS e até mesmo começar a implantar o seu próprio ambiente:
--   Compreender as [Configurações suportadas](rds-supported-config.md) para RDS com diversas versões do Windows e Windows Server
--   [Design e plano de](rds-plan-and-design.md) um ambiente do RDS para acomodar requisitos de vários, como a autenticação multifator e alta disponibilidade.
--   Examine os [modelos de arquitetura de serviços de área de trabalho remota](desktop-hosting-logical-architecture.md) que funcionam melhor para seu ambiente desejada.
--   Começar a [implantar o seu ambiente do RDS com ARM e Azure Marketplace](rds-in-azure.md).
+Aqui estão algumas das próximas etapas para ajudá-lo a obter uma melhor compreensão do RDS e até mesmo começar a implantar seu próprio ambiente:
+-   Entender os [configurações com suporte](rds-supported-config.md) RDS com as versões de vários Windows e Windows Server
+-   [Planejar e projetar](rds-plan-and-design.md) um ambiente de RDS para acomodar vários requisitos, como alta disponibilidade e a autenticação multifator.
+-   Examine os [modelos de arquitetura de serviços de área de trabalho remota](desktop-hosting-logical-architecture.md) que funcionam melhor para seu ambiente desejado.
+-   Começar a [implantar seu ambiente de RDS com o ARM e o Azure Marketplace](rds-in-azure.md).

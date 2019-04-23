@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 31ca46707a32d23a5dd9606c57bcaec5d6e53a80
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59846887"
 ---
 # <a name="edit-file-screen-template-properties"></a>Editar propriedades de modelo de triagem de arquivo
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Quando você faz alterações a um modelo de triagem de arquivo, você tem a opção de ampliar essas alterações para triagens de arquivo que foram criadas com o modelo de triagem de arquivo original. Você pode optar por modificar somente as triagens de arquivo que correspondem ao modelo original ou todas as triagens de arquivo que derivadas do modelo original, independentemente de quaisquer modificações que você fez nas triagens de arquivo desde que elas foram criadas. Esse recurso simplifica o processo de atualização das propriedades de suas triagens de arquivo fornecendo um ponto central onde você pode realizar todas as alterações.
 
@@ -27,7 +28,7 @@ Quando você faz alterações a um modelo de triagem de arquivo, você tem a op�
 
 1.  Em **Modelos de triagem de arquivo**, selecione o modelo que você deseja modificar.
 
-2.  Clique com o botão direito no modelo de triagem de arquivo e clique em **Editar propriedades de modelo** (ou no painel **Ações**, em **Modelos de triagem de arquivo selecionados**, selecione **Editar propriedades de modelo**.) Isso abre a caixa de diálogo **Propriedades de modelo de triagem de arquivo**.
+2.  O modelo de triagem de arquivo com o botão direito e clique em **editar propriedades do modelo** (ou o **ações** painel, em **modelos de tela de arquivo selecionado**, selecione  **Editar propriedades de modelo**.) Isso abre o **propriedades do modelo de triagem de arquivo** caixa de diálogo.
 
 3.  Se você quiser copiar as propriedades de outro modelo como base para seu modelo, selecione um modelo na lista suspensa **Copiar propriedades do modelo de cota**. Em seguida, clique em **Copiar**.
 
@@ -43,9 +44,9 @@ Quando você faz alterações a um modelo de triagem de arquivo, você tem a op�
 
 7.  Clique em **OK**.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
--   [Gerenciamento de triagem de arquivos](file-screening-management.md)
--   [Criar um modelo de triagem de arquivo](create-file-screen-template.md)
+-   [Gerenciamento de triagem de arquivo](file-screening-management.md)
+-   [Criar um modelo de tela de arquivo](create-file-screen-template.md)
 
 

@@ -1,33 +1,34 @@
 ---
 ms.assetid: c20231dd-2b83-4494-9385-1172272e00d6
-title: "Determinar se deve atualizar domínios existentes ou implantar novos domínios"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: Determinando se é necessário atualizar domínios existentes ou implantar novos domínios
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 61df11c0057ff84cd4bb8a248205e1723a6cb290
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: e07965b079a953d062f5bdaaca8f9f9f32500610
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59851787"
 ---
-# <a name="determining-whether-to-upgrade-existing-domains-or-deploy-new-domains"></a>Determinar se deve atualizar domínios existentes ou implantar novos domínios
+# <a name="determining-whether-to-upgrade-existing-domains-or-deploy-new-domains"></a>Determinando se é necessário atualizar domínios existentes ou implantar novos domínios
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Each domain in your design will either be a new domain or an existing upgraded domain. Users from existing domains that you do not upgrade must be moved into new domains.  
+Cada domínio em seu design será um novo domínio ou um existente atualizado o domínio. Os usuários de domínios existentes que você não atualizar devem ser movidos para novos domínios.  
   
-Moving accounts between domains can impact end users. Before deciding whether to move users into a new domain or to upgrade existing domains, evaluate the long-term administrative benefits of a new AD DS domain against the cost of moving users into the domain.  
+Movendo contas entre domínios pode afetar os usuários finais. Antes de decidir se deseja mover usuários para um novo domínio ou atualizar os domínios existentes, avalie os benefícios administrativos a longo prazo de um novo domínio do AD DS em relação ao custo de mover os usuários no domínio.  
   
-For more information about upgrading Active Directory domains to  Windows Server 2008 , see [Upgrading Active Directory Domains to Windows Server 2008 and Windows Server 2008 R2 AD DS Domains](https://technet.microsoft.com/library/cc731188.aspx).  
+Para obter mais informações sobre como atualizar domínios do Active Directory para Windows Server 2008, consulte [atualizando domínios do Active Directory para Windows Server 2008 e domínios do Windows Server 2008 R2 do AD DS](https://technet.microsoft.com/library/cc731188.aspx).  
   
-Para saber mais sobre reestruturação domínios dentro e entre florestas do AD DS, consulte versão da ferramenta de migração do Active Directory 3.1 guia de migração ([https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678)).  
+Para obter mais informações sobre a reestruturação de domínios do AD DS dentro e entre florestas, consulte a ferramenta de migração do Active Directory versão 3.1 guia de migração ([https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678)).  
   
-Para uma planilha para ajudá-lo a documentar seus planos para domínios novos e atualizados, baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip).  
+Para uma planilha ajudar a documentar seus planos para domínios novos e atualizados, baixar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip do trabalho auxílios para Windows Server 2003 Deployment Kit ([ https://go.microsoft.com/fwlink/?LinkID=102558 ](https://go.microsoft.com/fwlink/?LinkID=102558)) e abra "Planejamento de domínio" (DSSLOGI_5.doc).  
   
 
 

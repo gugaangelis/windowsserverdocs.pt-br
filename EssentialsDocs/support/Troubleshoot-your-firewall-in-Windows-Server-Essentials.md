@@ -1,5 +1,5 @@
 ---
-title: Solucionar problemas de seu firewall no Windows Server Essentials
+title: Solucionar problemas do firewall no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -13,38 +13,39 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 3c48d2abb7fd8431f40f76f8eece5c4142be4c75
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59846547"
 ---
-# <a name="troubleshoot-your-firewall-in-windows-server-essentials"></a>Solucionar problemas de seu firewall no Windows Server Essentials
+# <a name="troubleshoot-your-firewall-in-windows-server-essentials"></a>Solucionar problemas do firewall no Windows Server Essentials
  
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
   
- Se você tiver problemas com o acesso remoto, execute o Assistente de acesso do reparo de qualquer lugar.  
+ Se você tiver problemas com o acesso remoto, execute o assistente Reparar Acesso em Qualquer Local.  
   
-### <a name="to-run-the-repair-anywhere-access-wizard"></a>Para executar o Assistente de acesso do reparo de qualquer lugar  
+### <a name="to-run-the-repair-anywhere-access-wizard"></a>Para executar o assistente Reparar Acesso em Qualquer Local  
   
-1.  Abra o painel.  
+1.  Abra o Painel.  
   
-2.  Clique em **configurações**, clique no **acesso em qualquer local** guia e, em seguida, clique em **reparo**.  
+2.  Clique em **Configurações**, clique na guia **Acesso em Qualquer Local** e clique em **Reparar**.  
   
-3.  Siga as instruções do Assistente de acesso do reparo de qualquer lugar.  
+3.  Siga as instruções no assistente Reparar Acesso em Qualquer Local.  
   
- Se você estiver usando uma configuração avançada de rede ou usando um firewall não são da Microsoft, talvez você precise abrir portas adicionais no firewall. As portas na tabela a seguir são registradas com Internet Assigned Numbers Authority (IANA).  
+ Se você estiver usando uma configuração de rede avançada ou um firewall não Microsoft, talvez seja necessário abrir portas adicionais no firewall. As portas na tabela a seguir são registradas na IANA (Internet Assigned Numbers Authority).  
   
-|Número da porta|Descrição|  
+|Número da Porta|Descrição|  
 |-----------------|-----------------|  
-|65500|Serviço web de certificado|  
+|65500|Serviço Web de certificado|  
 |65510 e 65515|Site de implantação do computador cliente|  
-|65520|Serviço Web para os computadores cliente Mac|  
-|65532|Estrutura do provedor para comunicações de loopback de servidor|  
-|6602|Estrutura do provedor para comunicação entre o servidor e computadores cliente|  
+|65520|Serviço Web para computadores cliente Mac|  
+|65532|Estrutura do provedor para comunicações loopback do servidor|  
+|6602|Estrutura do provedor para a comunicação entre os computadores cliente e servidor|  
   
 ## <a name="see-also"></a>Consulte também  
   
--   [Use o acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Usar o acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
 -   [Gerenciar o acesso via Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
