@@ -1,6 +1,6 @@
 ---
-title: "Agende um conjunto de relatórios"
-description: "Este artigo descreve como gerar um conjunto de relatórios em uma programação regular"
+title: Agende um conjunto de relatórios
+description: Este artigo descreve como gerar um conjunto de relatórios em uma programação regular
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 15b69e723af3a30375beae73782ab122c68f8880
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59879717"
 ---
 # <a name="schedule-a-set-of-reports"></a>Agende um conjunto de relatórios
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Para gerar um conjunto de relatórios regularmente, você agenda uma *tarefa de relatório*. A tarefa de relatório especifica os relatórios para gerar e quais parâmetros devem ser usados; os volumes e pastas a serem incluídos no relatório; frequência para gerar os relatórios e em quais formatos de arquivo salvá-los.
 
@@ -76,9 +77,9 @@ A tarefa de relatório é adicionada ao nó **Gerenciamento de relatórios de ar
 
 Além disso, você pode exibir o status atual do relatório (esteja o relatório sendo executado ou não), o último tempo de execução e o resultado de funcionamento e a próxima hora agendada de execução.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
 -   [Gerenciamento de relatórios de armazenamento](storage-reports-management.md)
--   [Definindo Opções do Gerenciador de Recursos de Servidor de Arquivos](setting-file-server-resource-manager-options.md)
+-   [Opções do Gerenciador de recursos de servidor de arquivos de configuração](setting-file-server-resource-manager-options.md)
 
 

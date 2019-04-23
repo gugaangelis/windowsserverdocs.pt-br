@@ -15,11 +15,11 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c26d6d0c4c4465b5f9073dbcac951fc0adce1d5
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "1534002"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59882047"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2016"></a>Comparação das edições Standard e Datacenter do Windows Server 2016
 
@@ -50,7 +50,7 @@ ms.locfileid: "1534002"
 |Serviços de Federação do Active Directory (AD FS)| |Sim|Sim|
 |AD Lightweight Directory Services| |Sim|Sim|
 |AD Rights Management Services| |Sim|Sim|
-|Atestado de Integridade do Dispositivo| |Sim|Sim|
+|Atestado de integridade de dispositivo| |Sim|Sim|
 |Servidor DHCP| |Sim|Sim|
 |Servidor DNS| |Sim|Sim|
 |Servidor de Fax| |Sim|Sim|
@@ -74,7 +74,7 @@ ms.locfileid: "1534002"
 |Serviços de impressão e documentos| |Sim|Sim|
 |Acesso remoto| |Sim|Sim|
 |Serviços da Área de Trabalho Remota| |Sim|Sim|
-|Serviços de Ativação de Volume| |Sim|Sim|
+|Serviços de Ativação por Volume| |Sim|Sim|
 |Web Services (IIS)| |Sim|Sim|
 |Serviços de Implantação do Windows| |Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
 |Experiência do Windows Server Essentials| |Sim|Sim|
@@ -92,7 +92,7 @@ ms.locfileid: "1534002"
 |BranchCache|Sim|Sim|
 |Cliente NFS|Sim|Sim|
 |Contêineres|Sim (contêineres do Windows ilimitados; Hyper-V contêineres até 2)|Sim (todos os tipos de contêineres ilimitados)|
-|Ponte de Data Center|Sim|Sim|
+|Data Center Bridging|Sim|Sim|
 |Direct Play|Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
 |Armazenamento Avançado|Sim|Sim|
 |Clustering de failover|Sim|Sim|
@@ -164,7 +164,7 @@ ms.locfileid: "1534002"
 |Serviço de Gerenciamento de Armazenamento|Sim|Sim|
 |Espaços de Armazenamento|Sim|Sim|
 |Espaços de Armazenamento Diretos|Não|Sim|
-|Serviços de Ativação de Volume|Sim|Sim|
+|Serviços de Ativação por Volume|Sim|Sim|
 |Integração VSS (Serviço de Cópias de Sombra de Volume)|Sim|Sim|
 |Windows Server Update Services|Sim|Sim|
 |Gerenciador de Recursos de Sistema do Windows|Sim|Sim|

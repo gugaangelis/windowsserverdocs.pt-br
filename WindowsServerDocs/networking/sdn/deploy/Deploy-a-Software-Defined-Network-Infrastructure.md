@@ -1,7 +1,7 @@
 ---
-title: Implante uma infraestrutura de rede definidos de Software
-description: Este tópico fornece links para tópicos sobre como implantar uma infraestrutura de rede de definido de Software da Microsoft (SDN) usando scripts no Windows Server 2016.
-manager: brianlic
+title: Implantar uma infraestrutura de rede definida pelo software
+description: Este tópico fornece links para tópicos sobre como implantar uma infraestrutura de rede Microsoft Software Defined (SDN) usando scripts no Windows Server 2016.
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,35 +12,53 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 6c665c88-df28-4150-81d4-a47e9fa5255c
 ms.author: pashort
-ms.openlocfilehash: d24f0420349bb9ff43c931daca871be5212a8664
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/23/2018
+ms.openlocfilehash: 30d5597cdeb76d636cdf5236228f035999a6bdf6
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59878017"
 ---
-# <a name="deploy-a-software-defined-network-infrastructure"></a>Implante uma infraestrutura de rede definidos de Software
+# <a name="deploy-a-software-defined-network-infrastructure"></a>Implantar uma infraestrutura de rede definida por Software
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Os tópicos a seguir descrevem os métodos que você pode usar para implantar a infraestrutura de rede definidos Software (SDN) da Microsoft.   
+Implante a infraestrutura de Software Defined Networking (SDN) da Microsoft.   
   
-Essas implantações incluem todas as tecnologias que você precisa de uma infraestrutura totalmente funcional, incluindo a virtualização de rede do Hyper-V (HNV), controladores de rede, balanceadores de carga de software (SLB/Multiplexador) e gateways.  
+Essas implantações incluem todas as tecnologias que você precisa de uma infra-estrutura totalmente funcional, incluindo a virtualização de rede do Hyper-V (HNV), controladores de rede, balanceadores de carga de software (SLB/MUX) e gateways.  
   
-    
-  
--   [Configurar uma infraestrutura de rede de definido de Software (SDN) na malha VMM](https://technet.microsoft.com/en-us/system-center-docs/vmm/scenario/sdn-overview)  
-  
-    Use esse método se você quiser incorporar o System Center Virtual Machine Manager (VMM) para gerenciar sua infraestrutura SDN.  
-  
--   [Implante uma infraestrutura de rede definidos do Software usando scripts](../../sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)  
-  
-    Use esse método se você não quiser usar VMM para gerenciar sua infraestrutura SDN ou se você tiver outro método de gerenciamento.  
-  
- Se você deseja implantar tecnologias SDN individuais em vez de uma infraestrutura de inteira, consulte:  
-[Implantar o Software definidos tecnologias de rede usando o Windows PowerShell](Deploy-Software-Defined-Network-Technologies-using-Windows-PowerShell.md).    
-  
-Para saber mais sobre SDN, consulte:  
-[Software definidos redes (SDN)](../Software-Defined-Networking--SDN-.md)  
-  
+## <a name="set-up-sdn-infrastructure-in-the-vmm-fabric"></a>Configurar a infraestrutura SDN na malha do VMM
 
 
+
+  
+-   [Configurar uma infraestrutura de rede definida pelo Software (SDN) na malha do VMM](https://docs.microsoft.com/system-center/vmm/deploy-sdn)  
+  
+    Use este método se você deseja incorporar o System Center Virtual Machine Manager (VMM) para gerenciar sua infraestrutura SDN.  
+ 
+## <a name="deploy-sdn-infrastructure-using-scripts"></a>Implantar a infraestrutura SDN usando scripts
+ 
+-   [Implantar uma infraestrutura de rede definida por Software usando scripts](../../sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)  
+  
+    Use esse método se você não quiser usar o VMM para gerenciar sua infraestrutura SDN, ou se você tiver outro método de gerenciamento.  
+
+
+## <a name="deploy-individual-sdn-technologies-instead-of-an-entire-infrastructure"></a>Implantar tecnologias SDN individuais em vez de toda a infraestrutura  
+ Se você quiser implantar tecnologias SDN individuais em vez de uma infra-estrutura completa, consulte:  
+[Implantar o Software definido tecnologias de rede usando o Windows PowerShell](Deploy-Software-Defined-Network-Technologies-using-Windows-PowerShell.md).    
+  
+
+
+
+
+  
+
+
+## <a name="related-topics"></a>Tópicos relacionados
+- [(SDN) de rede definida pelo software](../Software-Defined-Networking--SDN-.md)  
+- [Tecnologias SDN](../technologies/Software-Defined-Networking-Technologies.md)  
+- [Planejar SDN](../plan/plan-a-software-defined-network-infrastructure.md)  
+- [Gerenciar SDN](../manage/manage-sdn.md)
+- [Segurança para SDN](../security/sdn-security-top.md)
+- [Solucionar problemas de SDN](../troubleshoot/Troubleshoot-Software-Defined-Networking.md)

@@ -1,6 +1,6 @@
 ---
-title: Novidades para área de trabalho remota no iOS?
-description: Saiba mais sobre alterações recentes para o cliente de área de trabalho remota para iOS
+title: O que há de novo para a área de trabalho remota no iOS?
+description: Saiba mais sobre as alterações recentes para o cliente de área de trabalho remota para iOS
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,35 +14,35 @@ ms.author: elizapo
 ms.date: 02/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 630287b10308d88a6040573035194f181ad8c859
-ms.sourcegitcommit: e544f5c50e023e263540e4b1b1deb4cc81df5472
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "9083774"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59879237"
 ---
-# Novidades para o cliente de área de trabalho remota no iOS?
+# <a name="whats-new-for-the-remote-desktop-client-on-ios"></a>O que há de novo para o cliente de área de trabalho remota no iOS?
 
-Podemos atualizar o [cliente de área de trabalho remota para iOS](remote-desktop-ios.md), adicionando novos recursos e corrigir problemas regularmente. Confira as últimas atualizações abaixo.
+Podemos atualizar regularmente o [cliente de área de trabalho remota para iOS](remote-desktop-ios.md), adição de novos recursos e corrigir problemas. Confira as últimas atualizações abaixo.
 
-## Cliente de Beta iOS da área de trabalho remota
-*Data de publicação: 20/02/2019*
+## <a name="remote-desktop-ios-beta-client"></a>Cliente do iOS da área de trabalho remota Beta
+*Data de publicação: 02/20/2019*
 
-O [cliente de Beta do iOS de área de trabalho remota](remote-desktop-ios.md#download-the-remote-desktop-ios-beta-client) agora está disponível em TestFlight. Ao testar o cliente do iOS Beta, tenha em mente que isso é uma versão de pré-lançamento do novo cliente iOS e não é garantido para ser o mais estável como versões de produção. Continuaremos a atualizar esse cliente regularmente com novos recursos e correções. Vários recursos do cliente iOS Beta, realçados abaixo:
+O [cliente de versão Beta do iOS de área de trabalho remota](remote-desktop-ios.md#download-the-remote-desktop-ios-beta-client) agora está disponível no TestFlight. Ao testar o cliente Beta do iOS, tenha em mente que esta é uma versão de pré-lançamento do novo cliente iOS e não é garantido para ser mais estável versões de produção. Continuaremos a atualizar esse cliente regularmente com correções e novos recursos. Vários recursos do cliente iOS Beta estão destacados abaixo:
 
-- Experiência aprimorada nos dispositivos iOS mais recentes.
-- Suporte para os mouses físicos Swiftpoint GT e ProPoint. Consulte a [lista de dispositivos de entrada com suporte](remote-desktop-ios.md#supported-input-devices) para o cliente do iOS Beta.
-- Suporte para a [área de trabalho Virtual do Windows](https://aka.ms/wvd).
+- Experiência aprimorada em dispositivos iOS mais recentes.
+- Suporte para o mice Swiftpoint GT e ProPoint físico. Consulte a [lista de dispositivos de entrada com suporte](remote-desktop-ios.md#supported-input-devices) para o cliente Beta do iOS.
+- Suporte para [área de trabalho Virtual do Windows](https://aka.ms/wvd).
 - Redirecionamento de armazenamento do microfone e iPhone.
 - Suporte AVC420 e AVC444.
-- Metal suporte para aceleração de hardware.
+- Suporte para metal aceleração de hardware.
 
-## Atualizações para a versão 8.1.42
+## <a name="updates-for-version-8142"></a>Atualizações para a versão 8.1.42
 *Data de publicação: 06/20/2018*
 
 - Correções de bugs e melhorias de desempenho.
 
-## Atualizações para a versão 8.1.41
-*Data de publicação: 28/03/2018*
+## <a name="updates-for-version-8141"></a>Atualizações para a versão 8.1.41
+*Data de publicação: 03/28/2018*
 
-- Atualizações para tratar de correção de oracle criptografia CredSSP descrita CVE-2018-0886.
+- Atualizações para tratar de correção de oracle criptografia CredSSP descrita em 0886 de CVE-2018.
  

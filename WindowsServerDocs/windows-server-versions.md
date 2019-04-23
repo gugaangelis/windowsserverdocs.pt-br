@@ -15,11 +15,11 @@ ms.author: elizapo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d14ccf734d5242301030bbb6e3c2489e1a0266a
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2081816"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59876347"
 ---
 # <a name="windows-server---it-administrator-content-for-current-and-previous-releases"></a>Windows Server - conteúdo do administrador de IT para as versões atuais e anteriores
 
@@ -38,13 +38,13 @@ Use os links a seguir para exibir o conteúdo técnico para profissionais de TI 
 
 ## <a name="windows-server-2012-r2-and-windows-server-2012"></a>Windows Server 2012 R2 e Windows Server 2012
 
-[Windows Server 2012 R2 e Biblioteca técnica do Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/) 
+[Windows Server 2012 R2 e biblioteca técnica do Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/) 
 
 [Biblioteca de desenvolvedor do Windows Server 2012 R2 no MSDN](https://msdn.microsoft.com/library/dn609939(v=vs.85).aspx) 
 
 ## <a name="windows-server-2008-r2-and-windows-server-2008"></a>Windows Server 2008 R2 e Windows Server 2008
 
-[Windows Server 2008 R2 e Biblioteca técnica do Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008)
+[Windows Server 2008 R2 e biblioteca técnica do Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008)
  
 [Biblioteca de desenvolvedor do Windows Server 2008 no MSDN](https://msdn.microsoft.com/library/hh738539.aspx) 
 
@@ -57,13 +57,13 @@ Use os links a seguir para exibir o conteúdo técnico para profissionais de TI 
 
 ## <a name="product-evaluations"></a>Avaliações de produto
 
-[Baixar a avaliação do Windows Server2016](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016?i=1) 
+[Baixe a avaliação do Windows Server 2016](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016?i=1) 
 
-[Baixar a versão de avaliação do Windows Server 2012 R2](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012-r2) 
+[Baixe a avaliação do Windows Server 2012 R2](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012-r2) 
 
 
 ## <a name="related-links"></a>Links relacionados
-[Informações sobre produto do WindowsServer2016](https://www.microsoft.com/cloud-platform/windows-server) 
+[Informações do produto Windows Server 2016](https://www.microsoft.com/cloud-platform/windows-server) 
 
 <br>
 

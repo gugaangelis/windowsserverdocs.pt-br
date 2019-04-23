@@ -1,7 +1,7 @@
 ---
-title: Adicionar um Gateway Virtual para uma rede Virtual locatário
-description: Este tópico faz parte do Software de rede definidos guia sobre como gerenciar as cargas de trabalho de locatário e redes virtuais no Windows Server 2016.
-manager: brianlic
+title: Adicionar um gateway virtual a uma rede virtual de locatário
+description: Saiba como usar cmdlets do Windows PowerShell e scripts para fornecer conectividade site a site para redes virtuais do seu locatário.
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,304 +12,284 @@ ms.topic: article
 ms.assetid: b9552054-4eb9-48db-a6ce-f36ae55addcd
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 351cafd1466c4b3c20e907ea221c9f58129b3443
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/23/2018
+ms.openlocfilehash: 6d31cde5252cd7f7e8d286d6f8886f779d17735d
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59875807"
 ---
-# <a name="add-a-virtual-gateway-to-a-tenant-virtual-network"></a>Adicionar um Gateway Virtual para uma rede Virtual locatário
+# <a name="add-a-virtual-gateway-to-a-tenant-virtual-network"></a>Adicionar um gateway virtual a uma rede virtual de locatário 
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016 
 
-Você pode usar este tópico para saber como configurar locatário Gateways virtuais, usando os cmdlets do Windows PowerShell e scripts, para fornecer redes virtuais seu locatários com conectividade to-site para os sites da organização e à Internet.   
+Saiba como usar cmdlets do Windows PowerShell e scripts para fornecer conectividade site a site para redes virtuais do seu locatário. Neste tópico, você deve adicionar gateways de virtual de locatário para instâncias do gateway RAS que são membros dos pools de gateways, usando o controlador de rede. Gateway de RAS dá suporte a até 100 locatários, dependendo da largura de banda usada por cada locatário. Controlador de rede determina automaticamente o Gateway de RAS recomendadas para usar ao implantar um novo gateway virtual para seus locatários.  
+
+Cada gateway virtual corresponde a um locatário específico e consiste em um ou mais conexões de rede (túneis de VPN site a site) e, opcionalmente, as conexões do Border Gateway Protocol (BGP). Quando você fornece conectividade site a site, os clientes podem se conectar sua rede virtual do locatário a uma rede externa, como uma rede de empresa do locatário, uma rede de provedor de serviço ou a Internet.
   
-Gateway RAS dá suporte a até cem locatários, dependendo da largura de banda usada por cada locatário. Você usar o controlador de rede para adicionar locatário Gateways Virtual às instâncias do Gateway RAS que são membros de grupos de gateway. Controlador de rede determina automaticamente o Gateway RAS recomendadas para usar quando você implanta um novo Gateway Virtual para seu locatários.  
-  
-Cada Gateway Virtual corresponde a um locatário específico e consiste em uma ou mais conexões de rede (-to-site VPN túneis) e, opcionalmente, conexões de Border Gateway Protocol (BGP). Isso permite que os clientes a conectar seu locatário rede Virtual a uma rede externa, como uma rede corporativa de locatário, uma rede de provedor de serviço ou a internet.  
-  
-Quando você implanta um Gateway Virtual de locatário, você tem as seguintes opções de configuração:  
-  
-**Opções de conexão de rede**  
-- IPSec-to-site rede virtual privada (VPN)   
-- Encapsulamento de roteamento genérico (GRE)   
-- Encaminhamento de camada 3  
-  
-**Opções de configuração de BGP**  
-- Configuração do roteador BGP  
-- Configuração de par BGP  
-- Configuração de políticas de roteamento de BGP  
-  
-Os scripts de exemplo do Windows PowerShell e comandos neste tópico demonstram como implantar um gateway de locatário virtual em um Gateway RAS com cada uma dessas opções.  
-  
-Este tópico contém as seções a seguir.  
-  
-- [Adicione um gateway virtual para um locatário](#bkmk_addgwy)  
-- [Adicionar uma Conexão de rede VPN-to-site para um locatário (IPsec, GRE ou L3)](#bkmk_s2s1)  
-- [Configurar o gateway como um roteador BGP](#bkmk_bgp1)  
-- [Configurar um gateway com todos os tipos de conexão três (IPsec, GRE, L3) e BGP](#bkmk_all3)  
-- [Modificar ou remover um gateway para uma rede Virtual](#bkmk_modify)  
+**Quando você implanta um Gateway Virtual do locatário, você tem as seguintes opções de configuração:**  
+
+| Opções de conexão de rede | Opções de configuração de BGP  |
+|---------|---------|
+|<ul><li>IPSec site a site, na rede virtual privada (VPN)</li><li>Encapsulamento de roteamento genérico (GRE)</li><li>Encaminhamento de camada 3</li></ul>     |<ul><li>Configuração do roteador BGP</li><li>Configuração de par BGP</li><li>Configuração de políticas de roteamento de BGP</li></ul>         |
+---
+
+Os scripts de exemplo do Windows PowerShell e os comandos neste tópico demonstram como implantar um gateway virtual do locatário em um Gateway de RAS com cada uma dessas opções.  
   
    
 >[!IMPORTANT]  
->Antes de executar qualquer um dos comandos do Windows PowerShell de exemplo e scripts que são fornecidos neste tópico, você deve alterar todos os valores de variáveis para que os valores são apropriados para a implantação.  
-  
-## <a name="bkmk_addgwy"></a>Adicione um gateway virtual para um locatário  
-  
-Etapa 1: Verifique se o objeto de Pool de Gateway existe no controlador de rede.  
-```  
-$uri = "https://ncrest.contoso.com"   
-  
-# Retrieve the Gateway Pool configuration  
-$gwPool = Get-NetworkControllerGatewayPool -ConnectionUri $uri  
-  
-# Display in JSON format  
-$gwPool | ConvertTo-Json -Depth 2   
-  
-  
-```  
-Etapa 2: Verificar a existência de sub-rede a ser usado para roteamento de pacotes de rede Virtual do locatário no controlador de rede; e recupere a sub-rede virtual que deve ser usado para roteamento entre o gateway de locatário e rede virtual.  
-  
-```  
-$uri = "https://ncrest.contoso.com"   
-  
-# Retrieve the Tenant Virtual Network configuration  
-$Vnet = Get-NetworkControllerVirtualNetwork -ConnectionUri $uri  -ResourceId "Contoso_Vnet1"   
-  
-# Display in JSON format  
-$Vnet | ConvertTo-Json -Depth 4   
-  
-# Retrieve the Tenant Virtual Subnet configuration  
-$RoutingSubnet = Get-NetworkControllerVirtualSubnet -ConnectionUri $uri  -ResourceId "Contoso_WebTier" -VirtualNetworkID $vnet.ResourceId   
-  
-# Display in JSON format  
-$RoutingSubnet | ConvertTo-Json -Depth 4   
-  
-```  
-Etapa 3: Criar um objeto JSON de gateway virtual e adicioná-lo ao controlador de rede.  
-  
-```  
-# Create a new object for Tenant Virtual Gateway  
-$VirtualGWProperties = New-Object Microsoft.Windows.NetworkController.VirtualGatewayProperties   
-  
-# Update Gateway Pool reference  
-$VirtualGWProperties.GatewayPools = @()   
-$VirtualGWProperties.GatewayPools += $gwPool   
-  
-# Specify the Virtual Subnet that is to be used for routing between the gateway and Virtual Network   
-$VirtualGWProperties.GatewaySubnets = @()   
-$VirtualGWProperties.GatewaySubnets += $RoutingSubnet   
-  
-# Update the rest of the Virtual Gateway object properties  
-$VirtualGWProperties.RoutingType = "Dynamic"   
-$VirtualGWProperties.NetworkConnections = @()   
-$VirtualGWProperties.BgpRouters = @()   
-  
-# Add the new Virtual Gateway for tenant   
-$virtualGW = New-NetworkControllerVirtualGateway -ConnectionUri $uri  -ResourceId "Contoso_VirtualGW" -Properties $VirtualGWProperties -Force   
-  
-```  
-  
-## <a name="bkmk_s2s1"></a>Adicionar uma Conexão de rede VPN-to-site para um locatário (IPsec, GRE ou L3)  
-  
-Você pode criar uma conexão de VPN-to-site com IPsec, GRE ou Layer 3 (L3) usando os exemplos a seguir para cada tipo de gateway de encaminhamento.  
-  
-### <a name="ipsec-vpn-site-to-site-network-connection"></a>Conexão de rede-to-site VPN IPsec  
-  
-Crie um objeto de JSON de Conexão de rede e adicioná-lo ao controlador de rede.  
-  
-```  
-# Create a new object for Tenant Network Connection  
-$nwConnectionProperties = New-Object Microsoft.Windows.NetworkController.NetworkConnectionProperties   
-  
-# Update the common object properties  
-$nwConnectionProperties.ConnectionType = "IPSec"   
-$nwConnectionProperties.OutboundKiloBitsPerSecond = 10000   
-$nwConnectionProperties.InboundKiloBitsPerSecond = 10000   
-  
-# Update specific properties depending on the Connection Type  
-$nwConnectionProperties.IpSecConfiguration = New-Object Microsoft.Windows.NetworkController.IpSecConfiguration   
-$nwConnectionProperties.IpSecConfiguration.AuthenticationMethod = "PSK"   
-$nwConnectionProperties.IpSecConfiguration.SharedSecret = "P@ssw0rd"   
-  
-$nwConnectionProperties.IpSecConfiguration.QuickMode = New-Object Microsoft.Windows.NetworkController.QuickMode   
-$nwConnectionProperties.IpSecConfiguration.QuickMode.PerfectForwardSecrecy = "PFS2048"   
-$nwConnectionProperties.IpSecConfiguration.QuickMode.AuthenticationTransformationConstant = "SHA256128"   
-$nwConnectionProperties.IpSecConfiguration.QuickMode.CipherTransformationConstant = "DES3"   
-$nwConnectionProperties.IpSecConfiguration.QuickMode.SALifeTimeSeconds = 1233   
-$nwConnectionProperties.IpSecConfiguration.QuickMode.IdleDisconnectSeconds = 500   
-$nwConnectionProperties.IpSecConfiguration.QuickMode.SALifeTimeKiloBytes = 2000   
-  
-$nwConnectionProperties.IpSecConfiguration.MainMode = New-Object Microsoft.Windows.NetworkController.MainMode   
-$nwConnectionProperties.IpSecConfiguration.MainMode.DiffieHellmanGroup = "Group2"   
-$nwConnectionProperties.IpSecConfiguration.MainMode.IntegrityAlgorithm = "SHA256"   
-$nwConnectionProperties.IpSecConfiguration.MainMode.EncryptionAlgorithm = "AES256"   
-$nwConnectionProperties.IpSecConfiguration.MainMode.SALifeTimeSeconds = 1234   
-$nwConnectionProperties.IpSecConfiguration.MainMode.SALifeTimeKiloBytes = 2000   
-  
-# L3 specific configuration (leave blank for IPSec)  
-$nwConnectionProperties.IPAddresses = @()   
-$nwConnectionProperties.PeerIPAddresses = @()   
-  
-# Update the IPv4 Routes that are reachable over the site-to-site VPN Tunnel  
-$nwConnectionProperties.Routes = @()   
-$ipv4Route = New-Object Microsoft.Windows.NetworkController.RouteInfo   
-$ipv4Route.DestinationPrefix = "14.1.10.1/32"   
-$ipv4Route.metric = 10   
-$nwConnectionProperties.Routes += $ipv4Route   
-  
-# Tunnel Destination (Remote Endpoint) Address  
-$nwConnectionProperties.DestinationIPAddress = "10.127.134.121"   
-  
-# Add the new Network Connection for the tenant  
-New-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId $virtualGW.ResourceId -ResourceId "Contoso_IPSecGW" -Properties $nwConnectionProperties -Force   
-  
-  
-```  
-### <a name="gre-vpn-site-to-site-network-connection"></a>Conexão de rede-to-site GRE VPN  
-  
-Crie um objeto de JSON de Conexão de rede e adicioná-lo ao controlador de rede.  
-  
-```  
-# Create a new object for the Tenant Network Connection  
-$nwConnectionProperties = New-Object Microsoft.Windows.NetworkController.NetworkConnectionProperties   
-  
-# Update the common object properties  
-$nwConnectionProperties.ConnectionType = "GRE"   
-$nwConnectionProperties.OutboundKiloBitsPerSecond = 10000   
-$nwConnectionProperties.InboundKiloBitsPerSecond = 10000   
-  
-# Update specific properties depending on the Connection Type  
-$nwConnectionProperties.GreConfiguration = New-Object Microsoft.Windows.NetworkController.GreConfiguration   
-$nwConnectionProperties.GreConfiguration.GreKey = 1234   
-  
-# Update the IPv4 Routes that are reachable over the site-to-site VPN Tunnel  
-$nwConnectionProperties.Routes = @()   
-$ipv4Route = New-Object Microsoft.Windows.NetworkController.RouteInfo   
-$ipv4Route.DestinationPrefix = "14.2.20.1/32"   
-$ipv4Route.metric = 10   
-$nwConnectionProperties.Routes += $ipv4Route   
-  
-# Tunnel Destination (Remote Endpoint) Address  
-$nwConnectionProperties.DestinationIPAddress = "10.127.134.122"   
-  
-# L3 specific configuration (leave blank for GRE)  
-$nwConnectionProperties.L3Configuration = New-Object Microsoft.Windows.NetworkController.L3Configuration   
-$nwConnectionProperties.IPAddresses = @()   
-$nwConnectionProperties.PeerIPAddresses = @()   
-  
-# Add the new Network Connection for the tenant  
-New-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId $virtualGW.ResourceId -ResourceId "Contoso_GreGW" -Properties $nwConnectionProperties -Force   
-  
-```  
-### <a name="l3-forwarding-network-connection"></a>L3 Conexão de rede de encaminhamento  
-  
-Para configurar uma Conexão de rede de encaminhamento L3, você também deve configurar uma rede de lógica correspondente.   
-  
-Etapa 1: Configure uma rede lógica para o L3 encaminhando a Conexão de rede.  
-  
-```  
-# Create a new object for the Logical Network to be used for L3 Forwarding  
-$lnProperties = New-Object Microsoft.Windows.NetworkController.LogicalNetworkProperties  
-  
-$lnProperties.NetworkVirtualizationEnabled = $false  
-$lnProperties.Subnets = @()  
-  
-# Create a new object for the Logical Subnet to be used for L3 Forwarding and update properties  
-$logicalsubnet = New-Object Microsoft.Windows.NetworkController.LogicalSubnet  
-$logicalsubnet.ResourceId = "Contoso_L3_Subnet"  
-$logicalsubnet.Properties = New-Object Microsoft.Windows.NetworkController.LogicalSubnetProperties  
-$logicalsubnet.Properties.VlanID = 1001  
-$logicalsubnet.Properties.AddressPrefix = "10.127.134.0/25"  
-$logicalsubnet.Properties.DefaultGateways = "10.127.134.1"  
-  
-$lnProperties.Subnets += $logicalsubnet  
-  
-# Add the new Logical Network to Network Controller  
-$vlanNetwork = New-NetworkControllerLogicalNetwork -ConnectionUri $uri -ResourceId "Contoso_L3_Network" -Properties $lnProperties -Force  
-  
-```  
-Etapa 2: Criar um objeto de JSON de Conexão de rede e adicioná-lo ao controlador de rede.  
-  
-```  
-# Create a new object for the Tenant Network Connection  
-$nwConnectionProperties = New-Object Microsoft.Windows.NetworkController.NetworkConnectionProperties   
-  
-# Update the common object properties  
-$nwConnectionProperties.ConnectionType = "L3"   
-$nwConnectionProperties.OutboundKiloBitsPerSecond = 10000   
-$nwConnectionProperties.InboundKiloBitsPerSecond = 10000   
-  
-# GRE specific configuration (leave blank for L3)  
-$nwConnectionProperties.GreConfiguration = New-Object Microsoft.Windows.NetworkController.GreConfiguration   
-  
-# Update specific properties depending on the Connection Type  
-$nwConnectionProperties.L3Configuration = New-Object Microsoft.Windows.NetworkController.L3Configuration   
-$nwConnectionProperties.L3Configuration.VlanSubnet = $vlanNetwork.properties.Subnets[0]   
-  
-$nwConnectionProperties.IPAddresses = @()   
-$localIPAddress = New-Object Microsoft.Windows.NetworkController.CidrIPAddress   
-$localIPAddress.IPAddress = "10.127.134.55"   
-$localIPAddress.PrefixLength = 25   
-$nwConnectionProperties.IPAddresses += $localIPAddress   
-  
-$nwConnectionProperties.PeerIPAddresses = @("10.127.134.65")   
-  
-# Update the IPv4 Routes that are reachable over the site-to-site VPN Tunnel  
-$nwConnectionProperties.Routes = @()   
-$ipv4Route = New-Object Microsoft.Windows.NetworkController.RouteInfo   
-$ipv4Route.DestinationPrefix = "14.2.20.1/32"   
-$ipv4Route.metric = 10   
-$nwConnectionProperties.Routes += $ipv4Route   
-  
-# Add the new Network Connection for the tenant  
-New-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId $virtualGW.ResourceId -ResourceId "Contoso_L3GW" -Properties $nwConnectionProperties -Force   
-  
-```  
-  
-## <a name="bkmk_bgp1"></a>Configurar o gateway como um roteador BGP  
-  
-Você pode usar os scripts de exemplo a seguir para configurar o gateway como um roteador Border Gateway Protocol (BGP).  
-  
-### <a name="add-a-bgp-router-for-the-tenant"></a>Adicionar um roteador BGP do locatário  
-  
-Crie um objeto de JSON BGP roteador e adicioná-lo ao controlador de rede.  
-  
-```  
-# Create a new object for the Tenant BGP Router  
-$bgpRouterproperties = New-Object Microsoft.Windows.NetworkController.VGwBgpRouterProperties   
-  
-# Update the BGP Router properties  
-$bgpRouterproperties.ExtAsNumber = "0.64512"   
-$bgpRouterproperties.RouterId = "192.168.0.2"   
-$bgpRouterproperties.RouterIP = @("192.168.0.2")   
-  
-# Add the new BGP Router for the tenant  
-$bgpRouter = New-NetworkControllerVirtualGatewayBgpRouter -ConnectionUri $uri -VirtualGatewayId $virtualGW.ResourceId -ResourceId "Contoso_BgpRouter1" -Properties $bgpRouterProperties -Force   
-   
-  
-```  
-### <a name="add-a-bgp-peer-for-this-tenant-corresponding-to-the-site-to-site-vpn-network-connection-added-above"></a>Adicione um par de BGP para esse locatário correspondente para a Conexão de rede de VPN-to-site adicionou acima  
-  
-Crie um objeto de JSON BGP par e adicioná-lo ao controlador de rede.  
-  
-```  
-# Create a new object for Tenant BGP Peer  
-$bgpPeerProperties = New-Object Microsoft.Windows.NetworkController.VGwBgpPeerProperties   
-  
-# Update the BGP Peer properties  
-$bgpPeerProperties.PeerIpAddress = "14.1.10.1"   
-$bgpPeerProperties.AsNumber = 64521   
-$bgpPeerProperties.ExtAsNumber = "0.64521"   
-  
-# Add the new BGP Peer for tenant  
-New-NetworkControllerVirtualGatewayBgpPeer -ConnectionUri $uri -VirtualGatewayId $virtualGW.ResourceId -BgpRouterName $bgpRouter.ResourceId -ResourceId "Contoso_IPSec_Peer" -Properties $bgpPeerProperties -Force   
-  
-```  
-## <a name="bkmk_all3"></a>Configurar um gateway com todos os tipos de conexão três (IPsec, GRE, L3) e BGP  
-Opcionalmente, você pode combinar todas as etapas anteriores e configurar um gateway virtual locatário com todas as opções de conexão três:   
-  
-```  
+>Antes de executar qualquer um dos comandos do Windows PowerShell de exemplo e scripts fornecidos, você deve alterar todos os valores de variáveis para que os valores são apropriados para sua implantação.  
+  
+1.  Verifique se o objeto de pool de gateway existe no controlador de rede. 
+
+    ```PowerShell
+    $uri = "https://ncrest.contoso.com"   
+      
+    # Retrieve the Gateway Pool configuration  
+    $gwPool = Get-NetworkControllerGatewayPool -ConnectionUri $uri  
+      
+    # Display in JSON format  
+    $gwPool | ConvertTo-Json -Depth 2   
+     
+    ```  
+
+2.  Verifique se a sub-rede usada para roteamento de pacotes para fora da rede virtual do locatário existe no controlador de rede. Você também pode recuperar a sub-rede virtual usada para roteamento entre o gateway do locatário e a rede virtual.  
+  
+    ```PowerShell 
+    $uri = "https://ncrest.contoso.com"   
+      
+    # Retrieve the Tenant Virtual Network configuration  
+    $Vnet = Get-NetworkControllerVirtualNetwork -ConnectionUri $uri  -ResourceId "Contoso_Vnet1"   
+      
+    # Display in JSON format  
+    $Vnet | ConvertTo-Json -Depth 4   
+      
+    # Retrieve the Tenant Virtual Subnet configuration  
+    $RoutingSubnet = Get-NetworkControllerVirtualSubnet -ConnectionUri $uri  -ResourceId "Contoso_WebTier" -VirtualNetworkID $vnet.ResourceId   
+      
+    # Display in JSON format  
+    $RoutingSubnet | ConvertTo-Json -Depth 4   
+      
+    ```  
+
+3.  Crie um novo objeto para o gateway virtual do locatário e, em seguida, atualize a referência de pool de gateway.  Você também pode especificar a sub-rede virtual usada para roteamento entre o gateway e a rede virtual.  Depois de especificar a sub-rede virtual que você atualizar o restante das propriedades do objeto de gateway virtual e, em seguida, adicione o novo gateway virtual para o locatário.
+  
+    ```PowerShell  
+    # Create a new object for Tenant Virtual Gateway  
+    $VirtualGWProperties = New-Object Microsoft.Windows.NetworkController.VirtualGatewayProperties   
+      
+    # Update Gateway Pool reference  
+    $VirtualGWProperties.GatewayPools = @()   
+    $VirtualGWProperties.GatewayPools += $gwPool   
+      
+    # Specify the Virtual Subnet that is to be used for routing between the gateway and Virtual Network   
+    $VirtualGWProperties.GatewaySubnets = @()   
+    $VirtualGWProperties.GatewaySubnets += $RoutingSubnet   
+      
+    # Update the rest of the Virtual Gateway object properties  
+    $VirtualGWProperties.RoutingType = "Dynamic"   
+    $VirtualGWProperties.NetworkConnections = @()   
+    $VirtualGWProperties.BgpRouters = @()   
+      
+    # Add the new Virtual Gateway for tenant   
+    $virtualGW = New-NetworkControllerVirtualGateway -ConnectionUri $uri  -ResourceId "Contoso_VirtualGW" -Properties $VirtualGWProperties -Force   
+      
+    ```  
+  
+4. Criar uma conexão de VPN site a site com IPsec, GRE, ou camada 3 encaminhamento de (L3).  
+
+   >[!TIP]
+   >Opcionalmente, você pode combinar todas as etapas anteriores e configurar um gateway virtual do locatário com todas as opções de conexão de três.  Para obter mais detalhes, consulte [configurar um gateway com todos os tipos de conexão de três (IPsec, GRE, L3) e BGP](#configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp).
+  
+   **Conexão de rede site a site VPN IPsec**
+  
+   ```PowerShell  
+   # Create a new object for Tenant Network Connection  
+   $nwConnectionProperties = New-Object Microsoft.Windows.NetworkController.NetworkConnectionProperties   
+  
+   # Update the common object properties  
+   $nwConnectionProperties.ConnectionType = "IPSec"   
+   $nwConnectionProperties.OutboundKiloBitsPerSecond = 10000   
+   $nwConnectionProperties.InboundKiloBitsPerSecond = 10000   
+  
+   # Update specific properties depending on the Connection Type  
+   $nwConnectionProperties.IpSecConfiguration = New-Object Microsoft.Windows.NetworkController.IpSecConfiguration   
+   $nwConnectionProperties.IpSecConfiguration.AuthenticationMethod = "PSK"   
+   $nwConnectionProperties.IpSecConfiguration.SharedSecret = "P@ssw0rd"   
+  
+   $nwConnectionProperties.IpSecConfiguration.QuickMode = New-Object Microsoft.Windows.NetworkController.QuickMode   
+   $nwConnectionProperties.IpSecConfiguration.QuickMode.PerfectForwardSecrecy = "PFS2048"   
+   $nwConnectionProperties.IpSecConfiguration.QuickMode.AuthenticationTransformationConstant = "SHA256128"   
+   $nwConnectionProperties.IpSecConfiguration.QuickMode.CipherTransformationConstant = "DES3"   
+   $nwConnectionProperties.IpSecConfiguration.QuickMode.SALifeTimeSeconds = 1233   
+   $nwConnectionProperties.IpSecConfiguration.QuickMode.IdleDisconnectSeconds = 500   
+   $nwConnectionProperties.IpSecConfiguration.QuickMode.SALifeTimeKiloBytes = 2000   
+  
+   $nwConnectionProperties.IpSecConfiguration.MainMode = New-Object Microsoft.Windows.NetworkController.MainMode   
+   $nwConnectionProperties.IpSecConfiguration.MainMode.DiffieHellmanGroup = "Group2"   
+   $nwConnectionProperties.IpSecConfiguration.MainMode.IntegrityAlgorithm = "SHA256"   
+   $nwConnectionProperties.IpSecConfiguration.MainMode.EncryptionAlgorithm = "AES256"   
+   $nwConnectionProperties.IpSecConfiguration.MainMode.SALifeTimeSeconds = 1234   
+   $nwConnectionProperties.IpSecConfiguration.MainMode.SALifeTimeKiloBytes = 2000   
+  
+   # L3 specific configuration (leave blank for IPSec)  
+   $nwConnectionProperties.IPAddresses = @()   
+   $nwConnectionProperties.PeerIPAddresses = @()   
+  
+   # Update the IPv4 Routes that are reachable over the site-to-site VPN Tunnel  
+   $nwConnectionProperties.Routes = @()   
+   $ipv4Route = New-Object Microsoft.Windows.NetworkController.RouteInfo   
+   $ipv4Route.DestinationPrefix = "14.1.10.1/32"   
+   $ipv4Route.metric = 10   
+   $nwConnectionProperties.Routes += $ipv4Route   
+  
+   # Tunnel Destination (Remote Endpoint) Address  
+   $nwConnectionProperties.DestinationIPAddress = "10.127.134.121"   
+  
+   # Add the new Network Connection for the tenant  
+   New-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId $virtualGW.ResourceId -ResourceId "Contoso_IPSecGW" -Properties $nwConnectionProperties -Force   
+  
+   ```  
+
+   **Conexão de rede site a site VPN GRE**
+  
+   ```PowerShell  
+   # Create a new object for the Tenant Network Connection  
+   $nwConnectionProperties = New-Object Microsoft.Windows.NetworkController.NetworkConnectionProperties   
+  
+   # Update the common object properties  
+   $nwConnectionProperties.ConnectionType = "GRE"   
+   $nwConnectionProperties.OutboundKiloBitsPerSecond = 10000   
+   $nwConnectionProperties.InboundKiloBitsPerSecond = 10000   
+  
+   # Update specific properties depending on the Connection Type  
+   $nwConnectionProperties.GreConfiguration = New-Object Microsoft.Windows.NetworkController.GreConfiguration   
+   $nwConnectionProperties.GreConfiguration.GreKey = 1234   
+  
+   # Update the IPv4 Routes that are reachable over the site-to-site VPN Tunnel  
+   $nwConnectionProperties.Routes = @()   
+   $ipv4Route = New-Object Microsoft.Windows.NetworkController.RouteInfo   
+   $ipv4Route.DestinationPrefix = "14.2.20.1/32"   
+   $ipv4Route.metric = 10   
+   $nwConnectionProperties.Routes += $ipv4Route   
+  
+   # Tunnel Destination (Remote Endpoint) Address  
+   $nwConnectionProperties.DestinationIPAddress = "10.127.134.122"   
+  
+   # L3 specific configuration (leave blank for GRE)  
+   $nwConnectionProperties.L3Configuration = New-Object Microsoft.Windows.NetworkController.L3Configuration   
+   $nwConnectionProperties.IPAddresses = @()   
+   $nwConnectionProperties.PeerIPAddresses = @()   
+  
+   # Add the new Network Connection for the tenant  
+   New-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId $virtualGW.ResourceId -ResourceId "Contoso_GreGW" -Properties $nwConnectionProperties -Force   
+  
+   ```  
+
+   **Conexão de rede de encaminhamento L3**<p>
+   Para um L3 encaminhamento de conexão de rede funcione corretamente, você deve configurar uma rede lógica correspondente.   
+  
+   1. Configure uma rede lógica para o L3 encaminhamento de Conexão de rede.  <br>
+  
+      ```PowerShell  
+      # Create a new object for the Logical Network to be used for L3 Forwarding  
+      $lnProperties = New-Object Microsoft.Windows.NetworkController.LogicalNetworkProperties  
+      
+      $lnProperties.NetworkVirtualizationEnabled = $false  
+      $lnProperties.Subnets = @()  
+      
+      # Create a new object for the Logical Subnet to be used for L3 Forwarding and update properties  
+      $logicalsubnet = New-Object Microsoft.Windows.NetworkController.LogicalSubnet  
+      $logicalsubnet.ResourceId = "Contoso_L3_Subnet"  
+      $logicalsubnet.Properties = New-Object Microsoft.Windows.NetworkController.LogicalSubnetProperties  
+      $logicalsubnet.Properties.VlanID = 1001  
+      $logicalsubnet.Properties.AddressPrefix = "10.127.134.0/25"  
+      $logicalsubnet.Properties.DefaultGateways = "10.127.134.1"  
+      
+      $lnProperties.Subnets += $logicalsubnet  
+      
+      # Add the new Logical Network to Network Controller  
+      $vlanNetwork = New-NetworkControllerLogicalNetwork -ConnectionUri $uri -ResourceId "Contoso_L3_Network" -Properties $lnProperties -Force  
+      
+      ```  
+
+   2. Crie um objeto de JSON de Conexão de rede e adicioná-lo ao controlador de rede.  
+  
+      ```PowerShell 
+      # Create a new object for the Tenant Network Connection  
+      $nwConnectionProperties = New-Object Microsoft.Windows.NetworkController.NetworkConnectionProperties   
+      
+      # Update the common object properties  
+      $nwConnectionProperties.ConnectionType = "L3"   
+      $nwConnectionProperties.OutboundKiloBitsPerSecond = 10000   
+      $nwConnectionProperties.InboundKiloBitsPerSecond = 10000   
+      
+      # GRE specific configuration (leave blank for L3)  
+      $nwConnectionProperties.GreConfiguration = New-Object Microsoft.Windows.NetworkController.GreConfiguration   
+      
+      # Update specific properties depending on the Connection Type  
+      $nwConnectionProperties.L3Configuration = New-Object Microsoft.Windows.NetworkController.L3Configuration   
+      $nwConnectionProperties.L3Configuration.VlanSubnet = $vlanNetwork.properties.Subnets[0]   
+      
+      $nwConnectionProperties.IPAddresses = @()   
+      $localIPAddress = New-Object Microsoft.Windows.NetworkController.CidrIPAddress   
+      $localIPAddress.IPAddress = "10.127.134.55"   
+      $localIPAddress.PrefixLength = 25   
+      $nwConnectionProperties.IPAddresses += $localIPAddress   
+      
+      $nwConnectionProperties.PeerIPAddresses = @("10.127.134.65")   
+      
+      # Update the IPv4 Routes that are reachable over the site-to-site VPN Tunnel  
+      $nwConnectionProperties.Routes = @()   
+      $ipv4Route = New-Object Microsoft.Windows.NetworkController.RouteInfo   
+      $ipv4Route.DestinationPrefix = "14.2.20.1/32"   
+      $ipv4Route.metric = 10   
+      $nwConnectionProperties.Routes += $ipv4Route   
+      
+      # Add the new Network Connection for the tenant  
+      New-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId $virtualGW.ResourceId -ResourceId "Contoso_L3GW" -Properties $nwConnectionProperties -Force   
+      
+      ```  
+  
+5. Configurar o gateway como um roteador BGP e adicioná-lo ao controlador de rede. 
+  
+   1. Adicione um roteador BGP para o locatário.  
+
+      ```PowerShell  
+      # Create a new object for the Tenant BGP Router  
+      $bgpRouterproperties = New-Object Microsoft.Windows.NetworkController.VGwBgpRouterProperties   
+      
+      # Update the BGP Router properties  
+      $bgpRouterproperties.ExtAsNumber = "0.64512"   
+      $bgpRouterproperties.RouterId = "192.168.0.2"   
+      $bgpRouterproperties.RouterIP = @("192.168.0.2")   
+      
+      # Add the new BGP Router for the tenant  
+      $bgpRouter = New-NetworkControllerVirtualGatewayBgpRouter -ConnectionUri $uri -VirtualGatewayId $virtualGW.ResourceId -ResourceId "Contoso_BgpRouter1" -Properties $bgpRouterProperties -Force   
+      
+      ```  
+
+   2. Adicione um par de BGP para esse locatário correspondente para a Conexão de rede de VPN site a site adicionadas acima.  
+  
+      ```PowerShell
+      # Create a new object for Tenant BGP Peer  
+      $bgpPeerProperties = New-Object Microsoft.Windows.NetworkController.VGwBgpPeerProperties   
+      
+      # Update the BGP Peer properties  
+      $bgpPeerProperties.PeerIpAddress = "14.1.10.1"   
+      $bgpPeerProperties.AsNumber = 64521   
+      $bgpPeerProperties.ExtAsNumber = "0.64521"   
+      
+      # Add the new BGP Peer for tenant  
+      New-NetworkControllerVirtualGatewayBgpPeer -ConnectionUri $uri -VirtualGatewayId $virtualGW.ResourceId -BgpRouterName $bgpRouter.ResourceId -ResourceId "Contoso_IPSec_Peer" -Properties $bgpPeerProperties -Force   
+      
+      ```  
+
+## <a name="optional-step-configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp"></a>(Etapa opcional) Configurar um gateway com todos os tipos de conexão de três (IPsec, GRE, L3) e BGP  
+Opcionalmente, você pode combinar todas as etapas anteriores e configurar um gateway virtual do locatário com todas as opções de conexão de três:   
+  
+```PowerShell  
 # Create a new Virtual Gateway Properties type object  
 $VirtualGWProperties = New-Object Microsoft.Windows.NetworkController.VirtualGatewayProperties  
   
@@ -475,48 +455,50 @@ $VirtualGWProperties.BgpRouters += $bgpRouter
 New-NetworkControllerVirtualGateway -ConnectionUri $uri  -ResourceId "Contoso_VirtualGW" -Properties $VirtualGWProperties -Force  
   
 ```  
-## <a name="bkmk_modify"></a>Modificar ou remover um gateway para uma rede Virtual  
+
+## <a name="modify-a-gateway-for-a-virtual-network"></a>Modificar um gateway para uma rede virtual  
+
   
-Você pode usar os scripts de exemplo a seguir para modificar ou remover um gateway existente.  
-  
-### <a name="modify-the-configuration-of-an-existing-gateway"></a>Modificar a configuração de um gateway existente  
-Você pode usar os seguintes comandos para modificar um gateway existente.  
-  
-Etapa 1: Recuperar a configuração do componente e armazená-la em uma variável  
-  
-```  
+**Recuperar a configuração do componente e armazená-lo em uma variável**
+
+```PowerShell  
 $nwConnection = Get-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -ResourceId "Contoso_IPSecGW"  
 ```  
-Etapa 2: Navegar pela estrutura de variável para acessar a propriedade necessária e configurá-lo para o valor de atualizações  
+
+**Navegar na estrutura de variável para acessar a propriedade necessária e defina-o como o valor de atualizações**
   
-```  
+```PowerShell  
 $nwConnection.properties.IpSecConfiguration.SharedSecret = "C0mplexP@ssW0rd"  
 ```  
-Etapa 3: Adicionar a configuração modificada para substituir a configuração mais antiga no controlador de rede  
-  
-```  
+
+**Adicionar a configuração modificada para substituir a configuração mais antiga no controlador de rede**
+ 
+```PowerShell  
 New-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -ResourceId $nwConnection.ResourceId -Properties $nwConnection.Properties -Force  
 ```  
-### <a name="remove-a-gateway"></a>Remover um gateway  
-Você pode usar os seguintes comandos do Windows PowerShell para remover recursos do gateway individuais ou todo o gateway.  
-  
-#### <a name="remove-a-network-connection"></a>Remover uma conexão de rede  
-```  
+
+
+## <a name="remove-a-gateway-from-a-virtual-network"></a>Remover um gateway de uma rede virtual 
+Você pode usar os seguintes comandos do Windows PowerShell para remover recursos de gateway individuais ou todo o gateway.  
+
+**Remover uma conexão de rede**  
+```PowerShell  
 Remove-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -ResourceId "Contoso_IPSecGW" -Force  
 ```  
-#### <a name="remove-a-bgp-peer"></a>Remover um par BGP  
-```  
+
+**Remover um par de BGP** 
+```PowerShell  
 Remove-NetworkControllerVirtualGatewayBgpPeer -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -BgpRouterName "Contoso_BgpRouter1" -ResourceId "Contoso_IPSec_Peer" -Force  
 ```  
-#### <a name="remove-a-bgp-router"></a>Remover um roteador BGP  
-```  
+
+**Remover um roteador BGP**
+```PowerShell  
 Remove-NetworkControllerVirtualGatewayBgpRouter -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -ResourceId "Contoso_BgpRouter1" -Force  
-```  
-#### <a name="remove-a-gateway"></a>Remover um gateway  
-```  
+```
+
+**Remover um gateway**  
+```PowerShell  
 Remove-NetworkControllerVirtualGateway -ConnectionUri $uri -ResourceId "Contoso_VirtualGW" -Force   
 ```  
-  
-  
 
-
+---

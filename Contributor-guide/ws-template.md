@@ -14,53 +14,53 @@ ms.technology: ''
 ms.localizationpriority:
 - high/medium/low
 ms.openlocfilehash: 4f885680426c0bfa55d5f73a7ef0c2143a8dd5a9
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2081773"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59879557"
 ---
-# <a name="metadata-and-markdown-template"></a>Metadados e redução de modelo
+# <a name="metadata-and-markdown-template"></a>Metadados e o modelo de Markdown
 
-Este modelo de operações contém exemplos de sintaxe de redução, bem como orientação sobre como definir os metadados. Para obter o máximo proveito dele, você deve ver a [Redução bruta](https://raw.githubusercontent.com/Microsoft/WindowsServerDocs-pr/master/Contributor-guide/ws-template.md?token=AG1vEhARRHNLtPgKXP35BGjNZGajKOArks5YLNIwwA%3D%3D) e o [renderizados o modo de exibição](https://github.com/Microsoft/WindowsServerDocs-pr/blob/master/Contributor-guide/ws-template.md). (A redução bruta mostra o bloco de metadados, enquanto o modo de exibição renderizado não.)
+Esse modelo OPS contém exemplos de sintaxe de Markdown, bem como diretrizes sobre como definir os metadados. Para obter o máximo dela, você deve exibir o [Markdown bruto](https://raw.githubusercontent.com/Microsoft/WindowsServerDocs-pr/master/Contributor-guide/ws-template.md?token=AG1vEhARRHNLtPgKXP35BGjNZGajKOArks5YLNIwwA%3D%3D) e o [exibição renderizada](https://github.com/Microsoft/WindowsServerDocs-pr/blob/master/Contributor-guide/ws-template.md). (O Markdown bruto mostra o bloco de metadados, enquanto a exibição renderizada não.)
 
-Ao criar um arquivo de redução, você deve copiar este modelo para um novo arquivo, preencha os metadados como um conjunto especificado abaixo, o cabeçalho de S1 acima para o título do artigo e excluir o conteúdo. Qualquer coisa CAPS entre colchetes requer sua atenção.
+Ao criar um arquivo Markdown, você deve copiar este modelo para um novo arquivo, preencher os metadados conforme especificado abaixo, definir o cabeçalho H1 acima para o título do artigo e excluir o conteúdo. Qualquer coisa no CAPS colchetes requer sua atenção.
 
 
 ## <a name="metadata"></a>Metadados 
 
-O bloco de metadados total está acima. Algumas observações importantes:
+O bloco de metadados completo está acima. Algumas observações importantes:
 
-- Você **deve** ter um espaço entre os dois-pontos (:) e o valor de um elemento de metadados.
-- Em um valor (por exemplo, um título)-e-vírgula quebra o analisador de metadados. Em seu lugar, use a codificação de HTML para dois-pontos de `&#58;` (por exemplo, `"title: Azure Rights Management&#58; the basics | Azure RMS"`).
-- **título**: esse título aparecerá nos resultados de mecanismo de pesquisa. 
-- **autor**: campo Autor deve conter o **GitHub username** do autor, não seu alias.
-- **MS.prod**, **ms.technology**: usar "limite de servidor windows" para ms.prod (ou w10 se você estiver usando esse modelo para criar conteúdo para Windows 10). Converse com seu contato CX para obter o valor de ms.technology.
+- Você **deve** tiver um espaço entre os dois-pontos (:) e o valor de um elemento de metadados.
+- Dois-pontos em um valor (por exemplo, um título) quebram o analisador de metadados. Em seu lugar, usar a codificação de HTML para um de dois-pontos `&#58;` (por exemplo, `"title: Azure Rights Management&#58; the basics | Azure RMS"`).
+- **title**: Esse título aparecerá nos resultados da pesquisa. 
+- **author**: O campo Autor deve conter o **nome de usuário do GitHub** do autor, não seu alias.
+- **ms.prod**, **ms.technology**: Use "windows-server-threshold" MS. prod (ou w10 se você estiver usando este modelo para criar conteúdo para o Windows 10). Fale com seu contato CX para obter o valor de MS. Technology.
 
-## <a name="basic-markdown-gfm-and-special-characters"></a>Redução básica, GFM e caracteres especiais
+## <a name="basic-markdown-gfm-and-special-characters"></a>Markdown básica, GFM e caracteres especiais
 
-Redução de básicos e GitHub-flavored todos é suportado. Para obter mais informações sobre estes, consulte:
+Há suporte para todos os Markdown básico e do tipo GitHub. Para obter mais informações sobre isso, consulte:
 
-- [Sintaxe de redução de linha de base](https://daringfireball.net/projects/markdown/syntax)
-- [Documentação de redução (GFM) GitHub-flavored](https://guides.github.com/features/mastering-markdown)
+- [Sintaxe de Markdown de linha de base](https://daringfireball.net/projects/markdown/syntax)
+- [Documentação de GFM (Markdown) para GitHub](https://guides.github.com/features/mastering-markdown)
 
-Redução usa caracteres especiais, como \ *, \', e \ # para formatação. Se você desejar incluir um dos seguintes caracteres em seu conteúdo, você deve fazer uma das duas coisas:
+Markdown usa caracteres especiais, como \*, \`, e \# para formatação. Se você quiser incluir um desses caracteres em seu conteúdo, você deve fazer uma das duas coisas:
 
-- Colocar uma barra invertida antes que o caractere especial "escape" ela (por exemplo, \ \ \ * para um \ *)
-- Use o [código HTML da entidade](http://www.ascii.cl/htmlcodes.htm) do caractere (por exemplo, \ & \#42\; por um & #42;).
+- Coloque uma barra invertida antes do caractere especial para "escapar" ele (por exemplo, \\ \* para um \*)
+- Use o [código de entidade HTML](http://www.ascii.cl/htmlcodes.htm) o caractere (por exemplo, \& \#42\; para um &#42;).
 
 ## <a name="headings"></a>Títulos
 
-Títulos devem ser feitos ou seja, usando o estilo atx, use caracteres de hash de 1 a 6 (#) no início da linha para indicar um título, correspondendo aos níveis de títulos HTML S1 até H6. Exemplos de cabeçalhos de primeiro e segundo nível são usados acima. 
+Títulos devem ser feitos usando o atx-style, ou seja, usar o 1 a 6 caracteres de hash (#) no início da linha para indicar um cabeçalho correspondente aos níveis de cabeçalho HTML H1 a H6. Exemplos de cabeçalhos de primeiro e segundo nível são usados acima. 
 
-Há **deve** ser apenas um título de primeiro nível (S1) no seu tópico, que será exibido como o título na página.  
+Lá **deve** ser apenas um título de primeiro nível (H1) no tópico, que será exibido como o título da página.  
 
-Títulos de segundo nível irá gerar um Sumário na página que aparece na seção "neste artigo" sob o título na página.
+Títulos de segundo nível gerarão o Sumário na página que aparece na seção "neste artigo" sob o título da página.
 
 ### <a name="third-level-heading"></a>Título de terceiro nível
-#### <a name="fourth-level-heading"></a>Título do quarto nível
-##### <a name="fifth-level-heading"></a>Título da quinto nível
-###### <a name="sixth-level-heading"></a>Título sexto nível
+#### <a name="fourth-level-heading"></a>Título de quarto nível
+##### <a name="fifth-level-heading"></a>Título de quinto nível
+###### <a name="sixth-level-heading"></a>Título de sexto nível
 
 ## <a name="text-styling"></a>Estilo do texto
 
@@ -74,73 +74,73 @@ Títulos de segundo nível irá gerar um Sumário na página que aparece na seç
 
 ### <a name="internal-links"></a>Links internos
 
-Para vincular a um cabeçalho no mesmo arquivo de redução, exibir a origem do artigo publicado, localize a ID do cabeçalho (por exemplo, `id="blockquote"`) e usando # + id de link (por exemplo, `#blockquote`).
+Para vincular a um cabeçalho no mesmo arquivo Markdown, exiba a origem do artigo publicado, localize a ID do cabeçalho (por exemplo, `id="blockquote"`) e vincule usando # + id (por exemplo, `#blockquote`).
 
 - Exemplo: [Blockquotes](#blockquote)
 
-Para vincular a um arquivo de redução em repo o mesmo, use [links relativos](https://www.w3.org/TR/WD-html40-970917/htmlweb.html#h-5.1.2), incluindo o ".md" ao final do nome de arquivo.
+Para vincular a um arquivo Markdown no mesmo repositório, use [links relativos](https://www.w3.org/TR/WD-html40-970917/htmlweb.html#h-5.1.2), incluindo ". MD" ao final do nome de arquivo.
 
-- Exemplo: [dicas e armadilhas](tips-gotchas.md)
-- Exemplo: a [instalação para colaboradores e ferramentas](../readme.md)
+- Exemplo: [Dicas e armadilhas](tips-gotchas.md)
+- Exemplo: [Ferramentas e configuração para colaboradores](../readme.md)
 
-Para vincular a um cabeçalho em um arquivo de redução em repo o mesmo, use a vinculação relativa + hashtag vinculação.
+Para vincular a um cabeçalho em um arquivo Markdown no mesmo repositório, use link relativo + vinculação por hashtag.
 
-- [Excluindo arquivos](tips-gotchas.md#deleting-files) de exemplo:
+- Exemplo: [Excluindo arquivos](tips-gotchas.md#deleting-files)
 
 ### <a name="external-links"></a>Links externos
 
-Para vincular a um arquivo externo, use a URL completa, como o link.
+Para vincular a um arquivo externo, use a URL completa como o link.
 
 - Exemplo: [GitHub](http://www.github.com)
 
-Se uma URL for exibido em um arquivo de redução, ele será transformado em um único link clicável.
+Se aparecer uma URL em um arquivo Markdown, ela será transformada em um link clicável.
 
-- Exemplo:http://www.github.com
+- Exemplo: http://www.github.com
 
 ## <a name="lists"></a>Listas
 
-### <a name="ordered-lists"></a>Listas com marcadores
+### <a name="ordered-lists"></a>Listas ordenadas
 
-1. Isso 
-1. É
-1. Um
-1. Ordenados
-1. Lista  
+1. Esse 
+1. Is
+1. Uma
+1. Ordenado
+1. List  
 
 
-#### <a name="ordered-list-with-an-embedded-list"></a>Lista com uma lista incorporada ordenada
+#### <a name="ordered-list-with-an-embedded-list"></a>Lista ordenada com uma lista inserida
 
 1. Aqui
-1. vem
-1. um
-1. incorporado
-    1. Erro de Scarlett
-    1. Ameixa professor
-1. ordenados
-1. list
+1. é fornecido
+1. an
+1. Inserido
+    1. Inserida
+    1. Professor Black
+1. Ordenado
+1. lista
 
 
 ### <a name="unordered-lists"></a>Listas não ordenadas
 
-- Isso
--  está 
-- a
+- Esse
+- está
+- $nbsp;
 - com marcadores
-- list
+- lista
 
 
-##### <a name="unordered-list-with-an-embedded-list"></a>Lista sem marcadores com uma lista incorporada
+##### <a name="unordered-list-with-an-embedded-list"></a>Lista não ordenada com uma lista inserida
 
-- Isso 
+- Esse 
 - com marcadores 
-- list
-    - Pavão Sra.
-    - Verde SR.
-- contém  
+- lista
+    - Dona violeta
+    - SR. marinho
+- Contém  
 - outros
-    1. Colonel Mustard
-    1. White Sra.
-- listas
+    1. Coronel Mostarda
+    1. Dona branca
+- Listas
 
 
 ## <a name="horizontal-rule"></a>Régua horizontal
@@ -149,12 +149,12 @@ Se uma URL for exibido em um arquivo de redução, ele será transformado em um 
 
 ## <a name="tables"></a>Tabelas
 
-Em quase todas as instância, use MD formatação de tabelas. Enquanto tabelas HTML oferecem mais flexibilidade faça não podemos usá-los em nosso conteúdo. Se você tiver uma tabela HTML em seu artigo, nós não será mesclado desse artigo.
+Em quase todas as instâncias, use MD formatação para tabelas. Embora tabelas HTML fornecem mais flexibilidade nós não usá-los em nosso conteúdo. Se você tiver uma tabela HTML em seu artigo, não podemos mesclará desse artigo.
 
 | Tabelas        | São           | Fresco  |
 | ------------- |:-------------:| -----:|
-| é col 3      | alinhado à direita | US $1600 |
-| é Col 2      | centralizado      |   US$ 12 |
+| a col. 3 está      | alinhado à direita | $1600 |
+| a col. 2 está      | centralizado      |   US$ 12 |
 | Col 1 é o padrão | alinhado à esquerda     |    $1 |
 
 
@@ -162,7 +162,7 @@ Em quase todas as instância, use MD formatação de tabelas. Enquanto tabelas H
 
 ### <a name="generic-codeblock"></a>Codeblock genérico
 
-Recuo espaços código quatro para a codificação de codeblock genérico.
+Recue espaços quatro do código para a codificação de codeblock genérico.
 
     function fancyAlert(arg) {
       if(arg) {
@@ -173,9 +173,9 @@ Recuo espaços código quatro para a codificação de codeblock genérico.
 
 ### <a name="codeblocks-with-language-identifier"></a>Codeblocks com o identificador de idioma
 
-Usar três backticks (& #96; & #96; & #96;) + a codificação de uma ID de idioma para aplicar a cor de idioma específico a um bloco de código.  Aqui está a lista completa de [IDs de idioma GitHub Flavored redução (GFM)](https://github.com/jmm/gfm-lang-ids/wiki/GitHub-Flavored-Markdown-(GFM)-language-IDs).
+Use três backticks (&#96;&#96;&#96;) + uma ID de idioma para aplicar cores específicas a um idioma de codificação para um bloco de código.  Aqui está a lista inteira de [IDs dos idiomas Flavored Markdown GFM (GitHub)](https://github.com/jmm/gfm-lang-ids/wiki/GitHub-Flavored-Markdown-(GFM)-language-IDs).
 
-##### <a name="c9839"></a>C & #9839;
+##### <a name="c9839"></a>C&#9839;
 
 ```c#
 using System;
@@ -212,13 +212,13 @@ $Files = Get-Childitem $Directory -recurse -Include *.log `
 
 ### <a name="inline-code"></a>Código embutido
 
-Use backticks (& #96;) para `inline code`.
+Use backticks (&#96;) para `inline code`.
 
 ## <a name="blockquotes"></a>Blockquotes
 
-> O drought tinha duração agora para milhões de dez anos, e o Reinado dos terrível lizards tempo já teve encerrados. Aqui no Equador, no continente que seria um dia ser conhecido como África, batalha existência havia atingido um novo climax de ferocity e o victor ainda não estava visíveis. Na land ambiente e desiccated, somente o pequeno ou swift ou o acirrada poderia florescer ou até mesmo, esperamos sobreviver.
+> A seca já durava dez milhões de anos, e o Reino dos terríveis lagartos muito tempo tiver terminado. Aqui no Equador, no continente que um dia seria conhecido como África, a batalha pela existência atingiu um novo clímax de ferocidade, e o vencedor ainda não estava visíveis. Este Terra estéril e deserta, apenas os pequenos ou velozes ou selvagens poderiam prosperem ou até mesmo ter esperança de sobreviver.
 
-## <a name="images"></a>Images
+## <a name="images"></a>Imagens
 
 ### <a name="static-image"></a>Imagem estática
 
@@ -226,24 +226,24 @@ Use backticks (& #96;) para `inline code`.
 
 ### <a name="linked-image"></a>Imagem vinculada
 
-[![atexto de lt para imagem vinculada](../windowsserverdocs/get-started/nano.png)](../windowsserverdocs/get-started/getting-started-with-nano-server.md) 
+[![texto ALT para imagem vinculada](../windowsserverdocs/get-started/nano.png)](../windowsserverdocs/get-started/getting-started-with-nano-server.md) 
 
 ## <a name="alerts"></a>Alertas
 
 ### <a name="note"></a>Observação
 
 > [!NOTE]
-> Esta é nota
+> Isso é Observação
 
 ### <a name="warning"></a>Aviso
 
 > [!WARNING]
-> Isso é aviso
+> Isso é um aviso
 
 ### <a name="tip"></a>Dica
 
 > [!TIP]
-> Esta é dica
+> Isso é TIP
 
 ### <a name="important"></a>Importante
 

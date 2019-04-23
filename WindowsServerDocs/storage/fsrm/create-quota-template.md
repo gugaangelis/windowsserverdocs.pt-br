@@ -1,6 +1,6 @@
 ---
 title: Criar um modelo de cota
-description: "Este artigo descreve como criar um modelo de cota para definir um limite de espaço de armazenamento"
+description: Este artigo descreve como criar um modelo de cota para definir um limite de espaço de armazenamento
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: f74382c4a5e2c0a8636edbd4f9cfe2227cd6334a
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59875867"
 ---
 # <a name="create-a-quota-template"></a>Criar um modelo de cota
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Um *modelo de cota* define um limite de espaço, o tipo de cota (rígida ou flexível) e, opcionalmente, um conjunto de notificações que será gerado automaticamente quando o uso da cota atingir limites definidos.
 
@@ -52,13 +53,13 @@ Por exemplo, você pode configurar limites para enviar uma mensagem de email par
 > [!Important]
 > Para enviar notificações por email e configurar os relatórios de armazenamento com parâmetros que são apropriados para seu ambiente de servidor, primeiro você deve definir as opções gerais do Gerenciador de recursos do servidor de arquivos. Para saber mais, confira [Definindo Opções do Gerenciador de Recursos de Servidor de Arquivos](setting-file-server-resource-manager-options.md)
 
-**Para configurar notificações que o Gerenciador de recursos do servidor de arquivos irá gerar um limite de cota**
+**Para configurar notificações que gerará o Gerenciador de recursos de servidor de arquivos em um limite de cota**
 
 1.  Na caixa de diálogo **Criar modelo de cota**, em **Limites de notificação**, Clique em **Adicionar**. A caixa de diálogo **Adicionar limite** é aberta.
 
 2.  Para definir uma porcentagem de limite de cota que irá gerar uma notificação:
 
-    No **gerar notificações quando uso atinge (%)** texto, digite uma porcentagem do limite de cota para o limite de notificação. (A porcentagem padrão para o primeiro limite de notificação é 85%).
+    No **gerar notificações quando uso atinge (%)** texto, digite uma porcentagem do limite de cota para o limite de notificação. (A porcentagem padrão para o primeiro limite de notificação é 85 por cento).
 
 3.  Para configurar notificações por email:
 
@@ -66,7 +67,7 @@ Por exemplo, você pode configurar limites para enviar uma mensagem de email par
 
     -   Para notificar os administradores quando um limite é alcançado, selecione a caixa de seleção **Enviar email para os seguintes administradores** e, em seguida, digite os nomes das contas administrativas que receberão as notificações. Use o formato *account@domain* e use ponto e vírgula para separar várias contas.
     -   Para enviar email para a pessoa que salvou o arquivo que atingido o limite de cota, selecione a caixa de seleção **envie um email para o usuário que excedeu o limite**.
-    -   Para configurar a mensagem, edite o padrão assunto linha e corpo da mensagem que são fornecidas. O texto entre colchetes insere informações variáveis sobre o evento de cota que causou a notificação. Por exemplo, a variável **\[Source Io Owner\]** insere o nome do usuário que salvou o arquivo que alcançou o limite da cota. Para inserir variáveis adicionais no texto, clique em **Inserir variável**.
+    -   Para configurar a mensagem, edite o padrão assunto linha e corpo da mensagem que são fornecidas. O texto entre colchetes insere informações variáveis sobre o evento de cota que causou a notificação. Por exemplo, o **\[proprietário da fonte de e/s\]** variável insere o nome do usuário que salvou o arquivo que atingiram o limite de cota. Para inserir variáveis adicionais no texto, clique em **Inserir variável**.
     -   Para configurar cabeçalhos adicionais (inclusive de, Cc, Cco e para resposta), clique em **Cabeçalhos de email adicionais**.
 
 4.  Para cadastrar um evento:
@@ -87,11 +88,11 @@ Por exemplo, você pode configurar limites para enviar uma mensagem de email par
 
 8.  Repita estas etapas se você quiser configurar limites de notificação adicionais para o modelo de cota.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
--   [Gerenciamento de cota](quota-management.md)
--    [Definindo Opções do Gerenciador de Recursos de Servidor de Arquivos](setting-file-server-resource-manager-options.md)
--   [Editar propriedades de modelo de cota](edit-quota-template-properties.md)
+-   [Gerenciamento de cotas](quota-management.md)
+-    [Opções do Gerenciador de recursos de servidor de arquivos de configuração](setting-file-server-resource-manager-options.md)
+-   [Editar propriedades do modelo de cota](edit-quota-template-properties.md)
 -   [Ferramentas de linha de comando](command-line-tools.md)
 
 

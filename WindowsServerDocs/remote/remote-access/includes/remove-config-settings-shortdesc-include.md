@@ -1,0 +1,1 @@
+**Remova as definições de configuração.** Remova os GPOs e as configurações de política de grupo de acesso remoto acesso remoto criado abrindo o console de gerenciamento de acesso remoto e selecionando remover definições de configuração, conforme mostrado na imagem abaixo. Se você remover o grupo antes de remover a configuração, você provavelmente receberá erros.

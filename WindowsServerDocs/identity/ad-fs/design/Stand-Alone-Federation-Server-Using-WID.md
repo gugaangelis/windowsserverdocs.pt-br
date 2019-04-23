@@ -1,7 +1,7 @@
 ---
 ms.assetid: 33b80a3f-67f3-4da7-ac4a-7fd2232fbd5d
-title: "Servidor de Federação autônomo usando o trabalho"
-description: 
+title: Servidor de federação autônomo usando WID
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,37 +10,38 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 9ec4150a7d3adfaac786219d253e1d0898c18204
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59876517"
 ---
-# <a name="stand-alone-federation-server-using-wid"></a>Servidor de Federação autônomo usando o trabalho
+# <a name="stand-alone-federation-server-using-wid"></a>Servidor de federação autônomo usando WID
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Um servidor de Federação stand\ sozinho em serviços de Federação do Active Directory \(AD FS\) consiste em um único servidor que hospeda um serviço de Federação configurada para usar \(WID\) o banco de dados interno do Windows. Essa topologia AD FS é para laboratórios de teste. Não recomendamos-lo para ambientes de produção porque ele tem um limite de servidor de Federação apenas uma, e ele não pode ser usado de dimensionar para servidores mais.  
+Um modo de espera\-servidor de Federação autônomo nos serviços de Federação do Active Directory \(do AD FS\) consiste em um único servidor que hospeda um serviço de Federação configurados para usar o banco de dados interno do Windows \(WID\). Essa topologia do AD FS é para laboratórios de teste. Não recomendamos-lo para ambientes de produção porque ela tem um limite de apenas um servidor de federação, e ele não pode ser usado para escalar verticalmente para mais servidores.  
   
-Se você quiser adicionar servidores de Federação adicionais de laboratório de teste, você deve recriar o serviço de Federação do zero Implantando qualquer uma das outras topologias mencionadas posteriormente nesta seção. Portanto, recomendamos que você use essa topologia para um laboratório de teste ou um ambiente de conceito de of\ proof\ em sua rede de teste particular em que um servidor de Federação único é adequado, conforme mostrado na ilustração a seguir.  
+Se você quiser adicionar servidores de Federação adicionais ao seu laboratório de teste, você deve recompilar o serviço de Federação do zero com a implantação de qualquer uma das outras topologias mencionadas posteriormente nesta seção. Portanto, é recomendável que você use essa topologia para um laboratório de teste ou uma prova\-de\-ambiente conceito em sua rede privada de teste no qual um servidor de Federação único é adequado, conforme mostrado na ilustração a seguir.  
   
-![servidor usando o trabalho](media/FedServerWID.gif)  
+![servidor usando o WID](media/FedServerWID.gif)  
   
-## <a name="test-lab-considerations"></a>Considerações de laboratório de teste  
-Esta seção descreve várias considerações sobre o público-alvo, benefícios e limitações que são associadas essa topologia para ambientes de laboratório de teste.  
+## <a name="test-lab-considerations"></a>Considerações sobre o laboratório de teste  
+Esta seção descreve várias considerações sobre o público-alvo, benefícios e limitações que estão associadas com esta topologia para ambientes de laboratório de teste.  
   
 ### <a name="who-should-use-this-topology"></a>Quem deve usar essa topologia?  
   
--   \(IT\) profissionais ou arquitetos de TI que desejam avaliar ou desenvolver uma prova de conceito para essa tecnologia  
+-   Tecnologia da informação \(IT\) profissionais ou arquitetos de TI que desejam avaliar ou desenvolver uma prova de conceito para esta tecnologia  
   
-### <a name="what-are-the-benefits-of-using-this-topology"></a>Quais são as vantagens de usar essa topologia?  
+### <a name="what-are-the-benefits-of-using-this-topology"></a>Quais são os benefícios de usar essa topologia?  
   
 -   Fácil de configurar em um ambiente de laboratório de teste  
   
-### <a name="what-are-the-limitations-of-using-this-topology"></a>Quais são as limitações de usar essa topologia?  
+### <a name="what-are-the-limitations-of-using-this-topology"></a>Quais são as limitações do uso dessa topologia?  
   
--   Servidor de Federação apenas um por um serviço de Federação \ (nenhuma funcionalidade de dimensionar para um farm\)  
+-   Apenas um servidor de federação por serviço de Federação \(nenhuma capacidade de escalar verticalmente para um farm\)  
   
--   Não redundantes \ (somente uma única instância de exists\ de banco de dados de configuração do AD FS)  
+-   Não redundantes \(existe apenas uma única instância do banco de dados de configuração do AD FS\)  
   
 
 ## <a name="see-also"></a>Consulte também

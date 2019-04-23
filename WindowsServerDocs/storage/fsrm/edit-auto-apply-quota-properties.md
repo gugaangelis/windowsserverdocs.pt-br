@@ -1,6 +1,6 @@
 ---
-title: "Editar propriedades de cota de aplicação automática"
-description: "Este artigo descreve como editar aplicação automática a propriedades de cota"
+title: Editar propriedades de cota de aplicação automática
+description: Este artigo descreve como editar aplicação automática a propriedades de cota
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: aa2155268d42293ade925d53da5e29142d13aae4
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59878057"
 ---
 # <a name="edit-auto-apply-quota-properties"></a>Editar propriedades de cota de aplicação automática
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Quando você faz alterações em uma cota aplicada automaticamente, você tem a opção de ampliar essas alterações para cotas existentes no demarcador de cota com aplicação automática. Você pode optar por modificar somente as cotas que ainda correspondem à cota de aplicação automática original ou todas as cotas no demarcador de cota com aplicação automática, independentemente de quaisquer modificações que foram feitas às cotas desde que elas foram criadas. Esse recurso simplifica o processo de atualização das propriedades de cotas derivadas de uma cota com aplicação automática fornecendo um ponto central onde você pode realizar todas as alterações.
 
@@ -41,9 +42,9 @@ Quando você faz alterações em uma cota aplicada automaticamente, você tem a 
 
 6.  Clique em **OK**.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
--   [Gerenciamento de cota](quota-management.md)
--   [Criar uma cota de aplicação automática](create-auto-apply-quota.md)
+-   [Gerenciamento de cotas](quota-management.md)
+-   [Crie uma cota de aplicação](create-auto-apply-quota.md)
 
 

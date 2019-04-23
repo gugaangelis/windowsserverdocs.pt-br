@@ -1,6 +1,6 @@
 ---
 title: Introdução
-description: 'Noções básicas para servidor: requisitos do sistema, notas de versão'
+description: 'Noções básicas para servidor: requisitos de sistema, notas de versão'
 ms.prod: windows-server-threshold
 ms.service: na
 manager: jasgroce
@@ -11,15 +11,15 @@ author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5604edf201213f8758b697dc683717f312941e0f
-ms.sourcegitcommit: b69683f1485e1a87d41557e1765660da5dcf04be
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4408682"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59878327"
 ---
-# Introdução ao Windows Server 2019
+# <a name="get-started-with-windows-server-2019"></a>Introdução ao Windows Server de 2019
 
->Aplicável a: Windows Server 2019
+>Aplica-se a: Windows Server 2019
 
 
 <hr />
@@ -58,7 +58,7 @@ ms.locfileid: "4408682"
                     </div>
                     <div class="cardText">
                         <h3>Canais de manutenção</h3>
-                        <p>Melhor Planeje sua implantação e aplicação de patches agendas Noções básicas sobre que a diferença entre nossos manutenção em longo prazo canal (LTSB) e o canal semestral (SAC) lança.</p>
+                        <p>Melhor Planeje sua implantação e a aplicação de patches agendas Noções básicas sobre que a diferença entre o nosso canal de manutenção de prazo longo (LTSB) e o canal semestral (SAC) libera.</p>
                     </div>
                 </div>
             </div>
@@ -75,8 +75,8 @@ ms.locfileid: "4408682"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Instalar | Atualizar | Migrar</h3>
-                        <p>Você pode mover para o Windows Server 2019 de diversas maneiras. Se você recentemente é instalação, atualização in-loco ou migração de aplicativos e funções de servidor, descobrir a melhor abordagem.</p>
+                        <h3>Instalar | Fazer Upgrade | Migrar</h3>
+                        <p>Você pode mover para o Windows Server 2019 várias maneiras. Se você recentemente é instalação, atualização in-loco ou migrar aplicativos e funções de servidor, descobrir a melhor abordagem.</p>
                     </div>
                 </div>
             </div>
@@ -94,7 +94,7 @@ ms.locfileid: "4408682"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Notas da versão</h3>
+                        <h3>Notas de versão</h3>
                         <p>Problemas que podem causar sérios problemas se não forem evitados ou solucionados.</p>
                     </div>
                 </div>
@@ -133,7 +133,7 @@ ms.locfileid: "4408682"
                     </div>
                     <div class="cardText">
                         <h3>Ativação</h3>
-                        <p>Informações básicas sobre a ativação do Windows Server 2019 em si e outros sistemas operacionais, usando o Windows Server 2019.</p>
+                        <p>Informações básicas sobre a ativação do Windows Server de 2019 em si e outros sistemas operacionais, usando o Windows Server 2019.</p>
                     </div>
                 </div>
             </div>
@@ -152,7 +152,7 @@ ms.locfileid: "4408682"
                     </div>
                     <div class="cardText">
                         <h3>Compatibilidade de aplicativos do Windows Server 2019 e Microsoft Server</h3>
-                        <p>Necessário obter SQL funcionando no Windows Server 2019 ou encontrar as etapas para executar o Exchange? Este tópico fornece links para documentação para aplicativos da Microsoft compatíveis.</p>                    </div>
+                        <p>Você precisa obter SQL trabalhando no Windows Server 2019 ou encontrar as etapas para executar o Exchange? Este tópico fornece links para documentação de aplicativos compatíveis com o Microsoft.</p>                    </div>
                 </div>
             </div>
         </div>
@@ -169,7 +169,7 @@ ms.locfileid: "4408682"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Recursos sob demanda</h3>
+                        <h3>Recursos Sob Demanda</h3>
                         <p>Recursos sob demanda (FODs) são pacotes de recursos do Windows Server que podem ser adicionados a qualquer momento. </p>
                     </div>
                 </div>
@@ -189,7 +189,7 @@ ms.locfileid: "4408682"
                     </div>
                     <div class="cardText">
                         <h3>Padrão | Comparação de edições de Datacenter</h3>
-                        <p>Windows Server Standard e Datacenter Edition têm recursos diferentes. Descubra qual deles é necessário.</p>
+                        <p>Windows Server Standard e Datacenter Editions têm recursos diferentes. Descubra qual deles você precisa.</p>
                     </div>
                 </div>
             </div>

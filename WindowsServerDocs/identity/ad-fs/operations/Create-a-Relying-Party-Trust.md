@@ -1,7 +1,7 @@
 ---
 ms.assetid: 5b9fc9c1-5d12-4ad4-8ddc-3b8a6d45b217
-title: "Criar uma terceira confiança de terceiros"
-description: 
+title: Criar um objeto de confiança de terceira parte confiável
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,86 +10,87 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 14e1cc732ed60b7f05a9a4a9aac9037c48b702f2
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59879917"
 ---
-# <a name="create-a-relying-party-trust"></a>Criar uma terceira confiança de terceiros
+# <a name="create-a-relying-party-trust"></a>Criar um objeto de confiança de terceira parte confiável
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
-Este documento fornece informações sobre como criar uma relação de confiança de terceiros terceira manualmente e usando metadados de Federação.
+O documento a seguir fornece informações sobre como criar uma terceira parte confiável manualmente e usando metadados de Federação.
   
-## <a name="to-create-a-claims-aware-relying-party-trust-manually"></a>Para criar um requerimentos judiciais ou Extrajudiciais ciente terceiros Relying confiar manualmente 
+## <a name="to-create-a-claims-aware-relying-party-trust-manually"></a>Para criar um declarações com suporte a terceira parte confiável de confiança manualmente 
 
-Para adicionar uma nova confiança de terceiros terceira usando o AD FS snap\-in Gerenciamento e definir as configurações manualmente, execute o seguinte procedimento em um servidor de Federação.  
+Para adicionar uma novo terceira parte confiável usando o snap de gerenciamento do AD FS\-além e manualmente, defina as configurações, execute o procedimento a seguir em um servidor de Federação.  
 
-A associação ao grupo **administradores**, ou equivalente, no computador local é o requisito mínimo para concluir este procedimento.  Examinar detalhes sobre como usar as contas apropriadas e agrupar associações em [Local e os grupos de domínio padrão ](https://go.microsoft.com/fwlink/?LinkId=83477).
+A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e associações de grupos em [domínio grupos padrão Local e](https://go.microsoft.com/fwlink/?LinkId=83477).
   
-1. No Gerenciador do servidor, clique em **ferramentas**e, em seguida, selecione **AD FS gerenciamento **.  
+1. No Gerenciador do servidor, clique em **ferramentas**e, em seguida, selecione **gerenciamento do AD FS**.  
   
-2.  Em **ações**, clique em **Adicionar dependência terceiros confiar **.  
-![terceiro](media/Create-a-Relying-Party-Trust/addtrust1.PNG)   
+2.  Sob **ações**, clique em **adicionar terceira parte confiável**.  
+![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust1.PNG)   
 
-3.  No **boas-vindas** página, escolha **reconhecer declarações** e clique em **iniciar **.  
-![terceiro](media/Create-a-Relying-Party-Trust/addtrust2.PNG) 
+3.  Sobre o **bem-vindo** , escolha **reconhecimento de declaração** e clique em **iniciar**.  
+![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust2.PNG) 
   
-4.  Sobre o **Selecionar fonte de dados** página, clique em **inserir manualmente os dados sobre o terceiro**e, em seguida, clique em **próxima **.  
-![terceiro](media/Create-a-Relying-Party-Trust/addtrust3.PNG) 
+4.  Na página **Selecionar Fonte de Dados** , clique em **Inserir manualmente dados sobre a terceira parte confiável**e clique em **Avançar**.  
+![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust3.PNG) 
   
-5.  Sobre o **especificar o nome de exibição** página, digite um nome na **nome de exibição**, em **notas** digite uma descrição para essa terceira confiança de terceiros e, em seguida, clique em **próxima **.  
-![terceiro](media/Create-a-Relying-Party-Trust/addtrust4.PNG) 
+5.  No **especificar nome para exibição** página, digite um nome na **nome de exibição**, em **notas** digite uma descrição para essa terceira parte confiável e, em seguida, clique em **Avançar** .  
+![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust4.PNG) 
 
-6. No **certificado configurar** página, se você tiver um certificado de criptografia do token opcional, clique em **procurar** para localizar um arquivo de certificado e clique em **próxima **.  
-![terceiro](media/Create-a-Relying-Party-Trust/addtrust5.PNG) 
+6. Sobre o **configurar certificado** página, se você tiver um certificado de criptografia de token opcional, clique em **procurar** para localizar um arquivo de certificado e, em seguida, clique em **próxima**.  
+![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust5.PNG) 
 
-7.  Sobre o **configurar URL** de página, siga um ou ambos os procedimentos, clique em **próxima**e, em seguida, vá para a etapa 8:  
+7.  Sobre o **configurar URL** , siga um ou ambos os procedimentos a seguir, clique em **próxima**e, em seguida, vá para a etapa 8:  
   
-    -   Selecione o **habilitar o suporte para o protocolo WS\ federação passiva** caixa de seleção. Em **Relying terceiros WS\ federação passiva protocolo URL**, digite a URL para essa terceira confiança de terceiros e, em seguida, clique em **próxima **.  
+    -   Selecione o **habilitar o suporte para o WS\-protocolo de federação passiva** caixa de seleção. Sob **WS de terceiros de terceira parte confiável\-URL do protocolo de federação passiva**, digite a URL para essa terceira parte confiável e, em seguida, clique em **próximo**.  
   
-    -   Selecione o **habilitar o suporte para o protocolo SAML 2.0 WebSSO** caixa de seleção. Em **Relying terceiros SAML 2.0 SSO service URL**, digite a URL de ponto de extremidade do serviço \(SAML\) linguagem de marcação de asserção de segurança para essa terceira confiança de terceiros e, em seguida, clique em **próxima**.  
-![terceiro](media/Create-a-Relying-Party-Trust/addtrust6.PNG)   
+    -   Marque a caixa de seleção **Habilitar suporte para o protocolo WebSSO do SAML 2.0**. Sob **URL de serviço de SSO do SAML 2.0 de terceiros de terceira parte confiável**, digite o Security Assertion Markup Language \(SAML\) URL de ponto de extremidade para essa terceira parte confiável do serviço e, em seguida, clique em **próximo**.  
+![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust6.PNG)   
 
-8. No **configurar identificadores** de página, especifique um ou mais identificadores para esse terceiro, clique em **adicionar** para adicioná-los à lista e, em seguida, clique em **próxima**.  
-![terceiro](media/Create-a-Relying-Party-Trust/addtrust8.PNG)
+8. Na página **Configurar Identificadores**, especifique um ou mais identificadores da terceira parte confiável, clique em **Adicionar** para adicioná-los à lista e clique em **Avançar**.  
+![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust8.PNG)
   
-9.  Sobre o **escolher política de controle de acesso** selecione uma política e clique em **próxima**.  Para obter mais informações sobre políticas de controle de acesso, consulte [políticas de controle de acesso no AD FS](Access-Control-Policies-in-AD-FS.md). 
-![terceiro](media/Create-a-Relying-Party-Trust/addtrust9.PNG)
+9.  Sobre o **escolher política de controle de acesso** selecionar uma política e clique em **próxima**.  Para obter mais informações sobre as políticas de controle de acesso, consulte [políticas de controle de acesso no AD FS](Access-Control-Policies-in-AD-FS.md). 
+![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust9.PNG)
 
-10. No **pronto para adicionar confiança** página, examine as configurações e, em seguida, clique em **próxima** para salvar o terceiro confiar em informações.  
-   ![terceiro](media/Create-a-Relying-Party-Trust/addtrust10.PNG) 
-11. Sobre o **concluir** página, clique em **fechar**. Essa ação exibe automaticamente o **editar regras de declaração** caixa de diálogo.  
-![terceiro](media/Create-a-Relying-Party-Trust/addtrust11.PNG) 
+10. Na página **Pronto para adicionar confiança** , revise as configurações e clique em **Avançar** para salvar as informações do objeto de confiança de terceira parte confiável.  
+   ![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust10.PNG) 
+11. Na página **Concluir**, clique em **Fechar**. Essa ação exibe automaticamente a caixa de diálogo **Editar Regras de Declaração**.  
+![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust11.PNG) 
 
-## <a name="to-create-a-claims-aware-relying-party-trust-using-federation-metadata"></a>Para criar um requerimentos judiciais ou Extrajudiciais ciente terceiros Relying confiar usando metadados de Federação
+## <a name="to-create-a-claims-aware-relying-party-trust-using-federation-metadata"></a>Para criar um declarações com suporte a terceira parte confiável de confiança usando metadados de Federação
 
-Para adicionar uma nova confiante de confiança de terceiros, usando o snap-in de gerenciamento do AD FS importando automaticamente os dados de configuração sobre o parceiro de metadados de federação que o parceiro publicado para uma rede local ou à Internet, execute o procedimento a seguir em um servidor de federação na organização do parceiro de conta.
+Para adicionar uma novo terceira parte confiável, usando o snap-in de gerenciamento do AD FS, importando automaticamente dados de configuração sobre o parceiro de metadados de federação que o parceiro publicou em uma rede local ou à Internet, execute o seguinte procedimento em um servidor de federação na organização do parceiro de conta.
 
 >[!NOTE]
->Embora ele foi longa prática comum usar certificados com nomes de host não qualificado, como https://myserver, esses certificados não têm nenhum valor de segurança e podem permitir que um invasor representar um serviço de federação que publica federação metadados. Portanto, ao consultar metadados de federação, você só deve usar um nome de domínio totalmente qualificado, como https://myserver.contoso.com.
+>Embora sempre foi uma prática comum usar certificados com nomes de host não qualificados, como https://myserver, esses certificados não têm nenhum valor de segurança e pode permitir que um invasor represente um serviço de federação que está publicando metadados de Federação. Portanto, ao consultar metadados de federação, você deve apenas usar um nome de domínio totalmente qualificado, como https://myserver.contoso.com.
 
-A associação ao grupo **administradores**, ou equivalente, no computador local é o requisito mínimo para concluir este procedimento.  Examinar detalhes sobre como usar as contas apropriadas e agrupar associações em [Local e os grupos de domínio padrão ](https://go.microsoft.com/fwlink/?LinkId=83477).
+A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e associações de grupos em [domínio grupos padrão Local e](https://go.microsoft.com/fwlink/?LinkId=83477).
 
 
-1. No Gerenciador do servidor, clique em **ferramentas**e, em seguida, selecione **AD FS gerenciamento **.  
+1. No Gerenciador do servidor, clique em **ferramentas**e, em seguida, selecione **gerenciamento do AD FS**.  
   
-2.  Em **ações**, clique em **Adicionar dependência terceiros confiar **.  
-![terceiro](media/Create-a-Relying-Party-Trust/addtrust1.PNG)   
+2.  Sob **ações**, clique em **adicionar terceira parte confiável**.  
+![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust1.PNG)   
 
-3.  No **boas-vindas** página, escolha **reconhecer declarações** e clique em **iniciar **.  
-![terceiro](media/Create-a-Relying-Party-Trust/addtrust2.PNG) 
+3.  Sobre o **bem-vindo** , escolha **reconhecimento de declaração** e clique em **iniciar**.  
+![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust2.PNG) 
   
-4.  Sobre o **Selecionar fonte de dados** página, clique em **importar dados sobre o terceiro publicados online ou em uma rede local*. Em **endereço de metadados de Federação (nome de host ou URL)**, digite o nome de host ou URL da metadados de Federação do parceiro e, em seguida, clique em **próxima**.  
-![terceiro](media/Create-a-Relying-Party-Trust/addtrust12.PNG) 
+4.  Sobre o **Selecionar fonte de dados** , clique em **importar dados sobre a terceira parte confiável publicados online ou em uma rede local*. Em **Endereço dos metadados de federação (nome do host ou URL)**, digite a URL de metadados de federação ou o nome do host do parceiro. Em seguida, clique em **Avançar**.  
+![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust12.PNG) 
 
-5.  Na página especificar o nome de exibição, digite um nome na **nome de exibição**, em notas, digite uma descrição para esta relação de confiança de terceiros confiante e clique **próxima**.
+5.  Na página Especificar nome para exibição, digite um nome na **nome de exibição**, em observações, digite uma descrição para essa terceira parte confiável e, em seguida, clique em **próxima**.
 
-6.  Na página Escolha as regras de autorização de emissão, selecione **permitir que todos os usuários acessem esse terceiro** ou **negar acesso de todos os usuários a esse terceiro**e clique em **próxima**.
+6.  Na página Escolher regras de autorização de emissão, selecione **permitir que todos os usuários acessem esta terceira** ou **negar acesso a todos os usuários a esta terceira**e, em seguida, clique em **Avançar**.
 
-7.  Na página pronto para adicionar confiança, examine as configurações e, em seguida, clique em **próxima** para salvar o terceiro confiar em informações.
+7.  Na página pronto para adicionar relação de confiança, examine as configurações e, em seguida, clique em **próxima** para salvar sua terceira informações de confiança.
 
-8.  Na página Finish, clique em **fechar**. Essa ação exibe a caixa de diálogo Editar reivindicação regras automaticamente. Para obter mais informações sobre como proceder com a adição de regras de declaração para essa terceira confiança de terceiros, consulte as referências adicionais.
+8.  Na página concluir, clique em **fechar**. Essa ação exibe automaticamente a caixa de diálogo Editar regras de declaração. Para obter mais informações sobre como proceder ao adicionar regras de declaração a esse objeto de confiança de terceira parte confiável, consulte as Referências adicionais.
 
 
 

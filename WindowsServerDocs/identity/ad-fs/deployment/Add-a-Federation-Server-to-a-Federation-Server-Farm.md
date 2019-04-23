@@ -1,7 +1,7 @@
 ---
 ms.assetid: 6ecf8d85-cd61-4c87-add8-00a679a6e3ff
-title: "Adicionar um servidor de federação para um Farm de servidores de Federação"
-description: 
+title: Adicionar um servidor de federação a um farm de servidores de federação
+description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -10,49 +10,50 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
 ms.openlocfilehash: d67f4c252ad25a05f11b88771f12fd01d13137d4
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59880387"
 ---
-# <a name="add-a-federation-server-to-a-federation-server-farm"></a>Adicionar um servidor de federação para um Farm de servidores de Federação
+# <a name="add-a-federation-server-to-a-federation-server-farm"></a>Adicionar um servidor de federação a um farm de servidores de federação
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Depois de instalar o serviço de função do serviço de Federação e configurar os certificados necessários em um computador, você estará pronto para configurar o computador para se tornar um servidor de Federação. Você pode usar o procedimento a seguir para ingressar um computador em um novo farm de servidores de Federação.  
+Depois de instalar o serviço de função serviço de Federação e configurar os certificados necessários em um computador, você está pronto para configurar o computador para se tornar um servidor de Federação. Use o procedimento a seguir para ingressar um computador em um novo farm de servidores de federação.  
   
-Ingressar um computador para um farm com o Assistente para configuração do servidor de Federação do AD FS. Quando você usar esse assistente para ingressar em um computador a um farm existente, o computador está configurado com uma cópia somente read\ do banco de dados de configuração do AD FS e ele deve receber atualizações de um servidor de Federação principal.  
+Ingressar um computador a um farm com o Assistente de configuração do servidor de Federação do AD FS. Quando você usa este assistente para ingressar um computador a um farm existente, o computador está configurado com uma leitura\-somente cópia do banco de dados de configuração do AD FS e ele deve receber atualizações de um servidor de Federação primário.  
   
 > [!NOTE]  
-> Para o design \(SSO\) federados Single\-Sign\-On da Web, você deve ter pelo menos um servidor de federação na organização do parceiro de conta e pelo menos um servidor de federação na organização do parceiro de recurso. Para obter mais informações, consulte [onde colocar um servidor de Federação](https://technet.microsoft.com/library/dd807127.aspx).  
+> Para um único de Web federado\-sinal\-na \(SSO\) design, você deve ter pelo menos um servidor de federação na organização do parceiro de conta e pelo menos um servidor de federação na organização do parceiro de recurso . Para obter mais informações, consulte [Onde colocar um servidor de federação](https://technet.microsoft.com/library/dd807127.aspx).  
   
-A associação ao grupo **administradores**, ou equivalente, no computador local é o requisito mínimo para concluir este procedimento.  Examinar detalhes sobre como usar as contas apropriadas e agrupar associações em [Local e os grupos de domínio padrão](https://go.microsoft.com/fwlink/?LinkId=83477) \ (http:///\/ go.microsoft.com\/fwlink\ /? LinkId\ = 83477\).   
+A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e associações de grupos em [domínio grupos padrão Local e](https://go.microsoft.com/fwlink/?LinkId=83477) \(http:\/\/go.microsoft.com\/fwlink\/? LinkId\=83477\).   
   
 ### <a name="to-add-a-federation-server-to-a-federation-server-farm"></a>Para adicionar um servidor de Federação a um farm de servidores de Federação  
   
-1.  Há duas maneiras de iniciar o Assistente para configuração do servidor de Federação do AD FS. Para iniciá-lo, siga um destes procedimentos:  
+1.  Há duas maneiras de iniciar o Assistente de configuração do servidor de Federação do AD FS. Para iniciar o assistente, tome uma das seguintes ações:  
   
-    -   Após a instalação de serviço de função do serviço de Federação for concluída, abra o AD FS snap\-in Gerenciamento e clique no **Assistente de configuração de servidor de Federação do AD FS** vincular no **visão geral** página ou no **ações** painel.  
+    -   Após a instalação do serviço de função serviço de Federação for concluída, abra o snap de gerenciamento do AD FS\-em e clique em de **Assistente de configuração do servidor de Federação do AD FS** no link a **visão geral** página ou o **ações** painel.  
   
-    -   A qualquer momento depois que o Assistente para instalação for concluída, abra o Windows Explorer, navegue até o **C:\\Windows\\ADFS** pasta e clique em double\ **FsConfigWizard.exe**.  
+    -   A qualquer momento depois que o Assistente de instalação for concluída, abra o Windows Explorer, navegue até a **c:\\Windows\\ADFS** pasta e double\-clique **FsConfigWizard.exe**.  
   
-2.  No **boas-vindas** página, verifique **adicionar um servidor de federação para um serviço de Federação existente** está selecionado e clique em **próxima**.  
+2.  Na página **Bem-vindo**, verifique se a opção **Adicionar um servidor de federação a um Serviço de Federação existente** está selecionada e clique em **Avançar**.  
   
-3.  Se o banco de dados do AD FS que você selecionou já existir, o **existente AD FS configuração do banco de dados detectado** página será exibida. Se isso ocorrer, clique em **banco de dados de excluir**e clique em **próxima**.  
+3.  Se o banco de dados do AD FS que você selecionou já existir, o **banco de dados existente do AD FS Configuration detectado** página será exibida. Se isso ocorrer, clique em **Excluir banco de dados** e clique em **Avançar**.  
   
     > [!CAUTION]  
-    > Selecione essa opção somente quando tiver certeza de que os dados neste banco de dados do AD FS não são importantes ou que não é usado em um farm de servidores de federação de produção.  
+    > Selecione esta opção apenas quando tiver certeza de que os dados neste banco de dados do AD FS não são importantes ou que não é usado em um farm de servidores de federação de produção.  
   
-4.  Sobre o **especificar o servidor de Federação primário e a conta de serviço** página, em **nome do servidor de Federação principal**, digite o nome do computador do servidor de Federação principal no farm e, em seguida, clique em **procurar**. No **procurar** caixa de diálogo, localize a conta de domínio que é usada como a conta de serviço por todos os outros servidores de federação no farm de servidores de Federação existente e clique em **Okey**. Digite a senha e confirmá-la e, em seguida, clique em **próxima**:  
+4.  Na página **Especificar o Servidor de Federação Primário e a Conta de Serviço**, em **Nome do servidor de federação primário**, digite o nome do computador do servidor de federação primário no farm e clique em **Procurar**. Na caixa de diálogo **Procurar**, localize a conta de domínio que será usada como a conta de serviço por todos os outros servidores de federação no farm de servidores de federação existente e clique em **OK**. Digite a senha e confirmá-la e, em seguida, clique em **próxima**:  
   
     > [!NOTE]  
-    > Para obter mais informações sobre como especificar uma conta de serviço para um farm de servidores de federação, consulte [manualmente configurar uma conta de serviço para um Farm de servidores de Federação](Manually-Configure-a-Service-Account-for-a-Federation-Server-Farm.md). Cada servidor de federação no farm de servidor de federação deve especificar a mesma conta de serviço para que o farm estar funcionando. Por exemplo, se a conta de serviço que foi criada foi contoso\\ADFS2SVC, cada computador que você configura para a função de servidor de Federação e que participarão mesmo farm deve especificar contoso\\ADFS2SVC nessa etapa no Assistente de configuração de servidor de Federação do farm se torne operacional.  
+    > Para obter mais informações sobre como especificar uma conta de serviço para um farm de servidores de federação, consulte [configurar manualmente uma conta de serviço para um Farm de servidores de Federação](Manually-Configure-a-Service-Account-for-a-Federation-Server-Farm.md). Cada servidor de federação no farm de servidores de federação deve especificar a mesma conta de serviço para o farm fique operacional. Por exemplo, se a conta de serviço que foi criada era contoso\\ADFS2SVC, cada computador que você configurar para a função de servidor de Federação e que participará no mesmo farm deve especificar contoso\\ADFS2SVC isso entrar a Federação Server Assistente de configuração para o farm fique operacional.  
   
-5.  Sobre o **pronto para aplicar configurações** página, examine os detalhes. Se as configurações parecerem corretas, clique em **próxima** para começar a configurar o AD FS com essas configurações.  
+5.  Na página **Pronto para Aplicar Configurações**, examine os detalhes. Se as configurações parecerem corretas, clique em **próxima** para começar a configurar o AD FS com essas configurações.  
   
-6.  Sobre o **resultados de configuração** página, examinar os resultados. Quando terminarem de todas as etapas de configuração, clique em **fechar** para sair do assistente.  
+6.  Na página **Resultados da Configuração**, examine os resultados. Quando todas as etapas de configuração estiverem concluídas, clique em **fechar** para sair do assistente.  
   
 ## <a name="additional-references"></a>Referências adicionais  
-[Lista de verificação: Configurar um servidor de Federação](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de verificação: Configurando um servidor de Federação](Checklist--Setting-Up-a-Federation-Server.md)  
   
 

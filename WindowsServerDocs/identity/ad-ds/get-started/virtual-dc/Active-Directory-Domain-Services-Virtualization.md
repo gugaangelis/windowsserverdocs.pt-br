@@ -1,33 +1,34 @@
 ---
 ms.assetid: 2f536fb8-16e5-471d-bafc-21b96197efb8
-title: "Virtualização de serviços de domínio do Active Directory"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: Virtualização dos serviços de domínio do Active Directory
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 8dc400a94d90c2d6fb3310bcc8a906d38a8c17d5
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.openlocfilehash: b43b88699d9392156be5f9846e98c5c74490c8fc
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59881957"
 ---
-# <a name="active-directory-domain-services-virtualization"></a>Virtualização de serviços de domínio do Active Directory
+# <a name="active-directory-domain-services-virtualization"></a>Virtualização dos serviços de domínio do Active Directory
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este tópico lista os recursos que estão disponíveis para o uso de controladores de domínio virtualizado.  
+Este tópico lista os recursos disponíveis para usar controladores de domínio virtualizado.  
   
--   [Introdução aos serviços de domínio do Active Directory & #40; AD DS e 41; Virtualização & #40; Nível de 100 & #41;](../../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)  
+-   [Introdução aos serviços de domínio do Active Directory &#40;AD DS&#41; virtualização &#40;nível 100&#41;](../../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)  
   
--   [Referência técnica do controlador de domínio virtualizado & #40; Nível 300 & #41;](../../../ad-ds/deploy/virtual-dc/Virtualized-Domain-Controller-Technical-Reference--Level-300-.md)  
+-   [Referência técnica do controlador de domínio de virtualizado &#40;nível 300&#41;](../../../ad-ds/deploy/virtual-dc/Virtualized-Domain-Controller-Technical-Reference--Level-300-.md)  
   
--   [Controlador de domínio virtualizado clonagem diretriz de teste para fornecedores de aplicativos](../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Cloning-Test-Guidance-for-Application-Vendors.md)  
+-   [Diretrizes de teste para fornecedores de aplicativos de clonagem do controlador de domínio virtualizado](../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Cloning-Test-Guidance-for-Application-Vendors.md)  
   
--   [Suporte para o uso da réplica do Hyper-V para controladores de domínio virtualizado](../../../ad-ds/get-started/virtual-dc/Support-for-using-Hyper-V-Replica-for-virtualized-domain-controllers.md)  
+-   [Suporte para usar a réplica do Hyper-V para controladores de domínio virtualizados](../../../ad-ds/get-started/virtual-dc/Support-for-using-Hyper-V-Replica-for-virtualized-domain-controllers.md)  
   
 
 

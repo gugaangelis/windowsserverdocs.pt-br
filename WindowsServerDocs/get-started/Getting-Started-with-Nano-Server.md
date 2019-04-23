@@ -1,6 +1,6 @@
 ---
 title: Instalar o Nano Server
-description: Nova instalação, upgrade, migração e avaliação do Nano Server
+description: Nova instalação, atualização, migração e avaliação do Nano Server
 ms.prod: windows-server-threshold
 ms.service: na
 manager: dougkim
@@ -13,20 +13,20 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 295402a3bcdcec07025ad1f803cddd47127baa8d
-ms.sourcegitcommit: e84e328c13a701e8039b16a4824a6e58a6e59b0b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4133732"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59878947"
 ---
-# Instalar o Nano Server
+# <a name="install-nano-server"></a>Instalar o Nano Server
 
 >Aplica-se a: Windows Server 2016
 
 > [!IMPORTANT]
 > A partir do Windows Server, versão 1709, o Nano Server estará disponível somente como uma [imagem de sistema operacional base do contêiner](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Confira [Mudanças no Nano Server](nano-in-semi-annual-channel.md) para saber o que isso significa. 
 
-O Windows Server 2016 oferece uma nova opção de instalação: Nano Server. O Nano Server é um sistema operacional de servidor administrado remotamente e otimizado para data centers e nuvens privadas. É semelhante ao Windows Server no modo Server Core, mas significativamente menor, não tem nenhum recurso de logon local e só oferece suporte a agentes, ferramentas e aplicativos de 64 bits. Ele ocupa bem menos espaço em disco, configura consideravelmente mais rápido e exige muito menos atualizações e reinicializações que o Windows Server. Quando ele reinicia, é muito mais rápido. A opção de instalação Nano Server está disponível para as edições Standard e Datacenter do Windows Server 2016.  
+Windows Server 2016 oferece uma nova opção de instalação: Nano Server. O Nano Server é um sistema operacional de servidor administrado remotamente e otimizado para data centers e nuvens privadas. É semelhante ao Windows Server no modo Server Core, mas significativamente menor, não tem nenhum recurso de logon local e só oferece suporte a agentes, ferramentas e aplicativos de 64 bits. Ele ocupa bem menos espaço em disco, configura consideravelmente mais rápido e exige muito menos atualizações e reinicializações que o Windows Server. Quando ele reinicia, é muito mais rápido. A opção de instalação Nano Server está disponível para as edições Standard e Datacenter do Windows Server 2016.  
 
 O Nano Server é ideal para vários cenários:  
   
@@ -40,7 +40,7 @@ O Nano Server é ideal para vários cenários:
   
 -   Como um host para aplicativos desenvolvidos usando padrões de aplicativo em nuvem e em execução em um sistema operacional convidado de máquina virtual ou contêiner  
   
-## Diferenças importantes no Nano Server
+## <a name="important-differences-in-nano-server"></a>Diferenças importantes no Nano Server
 
 Como o Nano Server é otimizado como um sistema operacional leve para execução de aplicativos "nativos da nuvem" com base em contêineres e microsserviços ou como um host de datacenter ágil e econômico com uma superfície consideravelmente menor, há diferenças importantes entre as instalações Nano Server e Server Core ou Servidor com Experiência Desktop:
 
@@ -51,23 +51,23 @@ Como o Nano Server é otimizado como um sistema operacional leve para execução
 - O Nano Server não pode ser configurado para usar um servidor proxy para acessar a Internet.
 - O Agrupamento NIC (especificamente, balanceamento de carga e failover ou LBFO) não é permitido. Ao invés disso, é oferecido suporte ao Agrupamento incorporado do comutador (SET).
 - Não há suporte para o System Center Configuration Manager e o System Center Data Protection Manager.
-- Não há suporte para cmdlets do BPA (Analisador de Práticas Recomendadas) nem para a integração do BPA ao Gerenciador do Servidor.
+- Não há suporte para cmdlets do BPA (Analisador de Práticas Recomendadas) nem para a integração do BPA com o Gerenciador do Servidor.
 - O Servidor Nano não dá suporte a HBAs (adaptadores de barramento do host) virtuais.
 - O Servidor Nano não precisa ser ativado com uma chave do produto (Product Key). Ao funcionar como um host do Hyper-V, o Nano Server não é compatível com a [Ativação Automática de Máquina Virtual](https://technet.microsoft.com/library/dn303421%28v=ws.11%29.aspx) (AVMA). Máquinas virtuais em execução em um host do Nano Server podem ser ativadas usando o [Serviço de Gerenciamento de Chaves](https://technet.microsoft.com/library/jj612867(v=ws.11).aspx) (KMS) com uma chave de licença de volume genérico ou usando a [ativação baseada no Active Directory](https://technet.microsoft.com/library/dn502534(v=ws.11).aspx).
 - A versão do Windows PowerShell fornecida com o Nano Server tem diferenças importantes. Para obter detalhes, consulte [PowerShell on Nano Server](PowerShell-on-Nano-Server.md) (PowerShell on Nano Server).
 - Há suporte para o Nano Server apenas no modelo CBB (Branch Atual para Negócios) – não há versão de LTSB (Branch de Manutenção em Longo Prazo) para o Nano Server neste momento. Consulte a subseção a seguir para obter mais informações.
 
-### Branch Atual para Negócios
+### <a name="current-branch-for-business"></a>Branch Atual para Negócios
 O Nano Server é atendido com um modelo mais ativo, chamado CBB (Branch Atual para Negócios) para oferecer suporte a clientes que estão migrando em uma "cadência de nuvem", usando rápidos ciclos de desenvolvimento. Nesse modelo, espera-se versões de atualização de recurso do Nano Server de duas a três vezes por ano. Esse modelo requer [Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx) para Nano Servers implantados e operados em produção. Para manter o suporte, os administradores devem usar não mais de duas versões anteriores do CBB. No entanto, essas versões não atualizam automaticamente implantações existentes; os administradores executam a instalação manual de uma nova versão do CBB conforme a conveniência. Para informações adicionais, consulte [Windows Server 2016 new Current Branch for Business servicing option](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/) (Nova opção de manutenção da Branch Atual para Negócios do Windows Server 2016).
 
 As opções de instalação Server Core e Servidor com Experiência Desktop ainda são atendidas no [modelo LTSB (Branch de Manutenção de Longo Prazo)](https://support.microsoft.com/lifecycle#gp%2Fgp_msl_policy), que abrange cinco anos de suporte base e cinco anos de suporte estendido.
 
-## Cenários de instalação
+## <a name="installation-scenarios"></a>Cenários de instalação
 
-### Avaliação
-Você pode obter uma cópia de avaliação de 180 dias licenciada do Windows Server em [Avaliações do Windows Server](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016). Para testar o Nano Server, escolha **Nano Server | Opção EXE de 64 bits** e, em seguida, volte para o [Início Rápido do Nano Server](Nano-Server-Quick-Start.md) ou [Implantar o Nano Server](Deploy-Nano-Server.md) para começar.
+### <a name="evaluation"></a>Avaliação
+Você pode obter uma cópia de avaliação de 180 dias licenciada do Windows Server em [Avaliações do Windows Server](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016). Para experimentar o Nano Server, escolha o **Nano Server | opção EXE de 64 bits**e, em seguida, volte para o [início rápido do Nano Server](Nano-Server-Quick-Start.md) ou [implantar o Nano Server](Deploy-Nano-Server.md) para começar a usar.
 
-### Instalação limpa
+### <a name="clean-installation"></a>Instalação limpa
 Como você instala o Nano Server configurando um VHD, uma instalação limpa é o método de implantação mais simples e rápido.
 
 - Para começar rapidamente com uma implantação básica do Nano Server usando DHCP para obter um endereço IP, confira [Início Rápido do Nano Server](Nano-Server-Quick-Start.md) 
@@ -76,10 +76,10 @@ Como você instala o Nano Server configurando um VHD, uma instalação limpa é 
 > [!IMPORTANT]  
 > Após a conclusão da instalação e imediatamente depois de ter instalado todas as funções e recursos de servidor necessários, procure por e instale as atualizações disponíveis para o Windows Server 2016. Para o Nano Server, confira a seção "Gerenciar atualizações no Nano Server" em [Gerenciar o Nano Server](Manage-Nano-Server.md).
 
-### Atualizar, Atualização (Upgrade)
-Como o Nano Server é novo no Windows Server 2016, não existe um caminho de upgrade de versões anteriores do sistema operacional para o Nano Server.
+### <a name="upgrade"></a>Atualizar, Atualização (Upgrade)
+Como o Nano Server é novo no Windows Server 2016, não existe um caminho de atualização de versões anteriores do sistema operacional para o Nano Server.
 
-### Migração
+### <a name="migration"></a>Migração
 Como o Nano Server é novo no Windows Server 2016, não existe um caminho de migração de versões anteriores do sistema operacional para o Nano Server.
   
 -------------------------------------

@@ -1,34 +1,34 @@
 ---
-title: Histórico de desempenho de discos rígidos virtuais
+title: Histórico de desempenho para discos rígidos virtuais
 ms.author: cosdar
 ms.manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/09/2018
-Keywords: Storage Spaces Direct
+Keywords: Espaços de Armazenamento Diretos
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a0d8d132b6a5ff42cbe78a22c67dd9fec397184
-ms.sourcegitcommit: 1533d994a6ddea54ac189ceb316b7d3c074307db
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1589714"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59880397"
 ---
-# <a name="performance-history-for-virtual-hard-disks"></a>Histórico de desempenho de discos rígidos virtuais
+# <a name="performance-history-for-virtual-hard-disks"></a>Histórico de desempenho para discos rígidos virtuais
 
-> Aplicável à: Demonstração de Insider Windows Server
+> Aplica-se a: Windows Server Insider Preview
 
-Este tópico sub-recursos do [histórico de desempenho para espaços de armazenamento direto](performance-history.md) descreve em detalhes o histórico de desempenho coletado para arquivos do disco rígido virtual (VHD). Histórico de desempenho está disponível para cada VHD anexado a uma máquina virtual de execução, agrupada. Histórico de desempenho está disponível para formatos VHD e o VHDX, no entanto, ele não está disponível para arquivos compartilhados VHDX.
+Este tópico subpropriedades de [histórico de desempenho para espaços de armazenamento diretos](performance-history.md) descreve detalhadamente o histórico de desempenho coletado para arquivos de disco rígido virtual (VHD). Histórico de desempenho está disponível para cada VHD anexado a uma máquina virtual em execução, em cluster. Histórico de desempenho está disponível para formatos VHD e VHDX, no entanto, ele não está disponível para arquivos VHDX compartilhados.
 
    > [!NOTE]
-   > Pode levar alguns minutos para conjunto para começar para arquivos VHD recém criados ou movidos.
+   > Pode levar vários minutos para que a coleção começar a arquivos VHD recentemente criados ou migrados.
 
-## <a name="series-names-and-units"></a>Unidades e nomes de série
+## <a name="series-names-and-units"></a>Unidades e nomes de séries
 
-Essas séries são coletadas para cada disco rígido virtual de elegível:
+Essas séries são coletadas para cada disco de rígido virtual qualificado:
 
-| Série                    | Unidade             |
+| série                    | Unidade             |
 |---------------------------|------------------|
 | `vhd.iops.read`           | por segundo       |
 | `vhd.iops.write`          | por segundo       |
@@ -37,43 +37,43 @@ Essas séries são coletadas para cada disco rígido virtual de elegível:
 | `vhd.throughput.write`    | bytes por segundo |
 | `vhd.throughput.total`    | bytes por segundo |
 | `vhd.latency.average`     | segundos          |
-| `vhd.size.current`        |  bytes            |
-| `vhd.size.maximum`        |  bytes            |
+| `vhd.size.current`        | bytes            |
+| `vhd.size.maximum`        | bytes            |
 
 ## <a name="how-to-interpret"></a>Como interpretar
 
-| Série                    | Como interpretar                                                                                                 |
+| série                    | Como interpretar                                                                                                 |
 |---------------------------|------------------------------------------------------------------------------------------------------------------|
-| `vhd.iops.read`           | Número de operações de leitura por segundo concluídas pelo disco rígido virtual.                                         |
-| `vhd.iops.write`          | Número de operações de gravação por segundo concluídas pelo disco rígido virtual.                                        |
-| `vhd.iops.total`          | Número total de ler ou gravar operações por segundo concluídas pelo disco rígido virtual.                          |
+| `vhd.iops.read`           | Número de operações de leitura por segundo concluída pelo disco rígido virtual.                                         |
+| `vhd.iops.write`          | Número de operações de gravação por segundo concluída pelo disco rígido virtual.                                        |
+| `vhd.iops.total`          | Número total de ler ou gravar operações por segundo concluída pelo disco rígido virtual.                          |
 | `vhd.throughput.read`     | Quantidade de dados lidos do disco rígido virtual por segundo.                                                     |
 | `vhd.throughput.write`    | Quantidade de dados gravados no disco rígido virtual por segundo.                                                    |
-| `vhd.throughput.total`    | Quantidade total de dados lido ou gravadas no disco rígido virtual por segundo.                                 |
+| `vhd.throughput.total`    | Quantidade total de dados lidos ou gravados no disco rígido virtual por segundo.                                 |
 | `vhd.latency.average`     | Latência média de todas as operações de ou para o disco rígido virtual.                                              |
-| `vhd.size.current`        | O tamanho de arquivo atual no disco rígido virtual, se expandir dinamicamente. Se fixo, as séries não são coletadas. |
-| `vhd.size.maximum`        | O tamanho máximo do disco rígido virtual, se expandir dinamicamente. Se fixo, o é o tamanho.                  |
+| `vhd.size.current`        | O tamanho atual do arquivo do que o disco rígido virtual, se expandindo dinamicamente. Se fixo, a série não é coletada. |
+| `vhd.size.maximum`        | O tamanho máximo do disco rígido virtual, se expandindo dinamicamente. Se corrigido, o é o tamanho.                  |
 
 ## <a name="where-they-come-from"></a>Onde eles vêm
 
-O `iops.*`, `throughput.*`, e `latency.*` série será coletada a partir do `Hyper-V Virtual Storage Device` conjunto de contadores de desempenho no servidor onde a máquina virtual está em execução, uma instância por VHD ou VHDX.
+O `iops.*`, `throughput.*`, e `latency.*` série é coletada a partir de `Hyper-V Virtual Storage Device` conjunto de contadores de desempenho no servidor de onde a máquina virtual está em execução, uma instância por VHD ou VHDX.
 
-| Série                    | Contador de origem         |
+| série                    | Contador de origem         |
 |---------------------------|------------------------|
 | `vhd.iops.read`           | `Read Operations/Sec`  |
 | `vhd.iops.write`          | `Write Operations/Sec` |
-| `vhd.iops.total`          | *soma das perguntas acima*     |
+| `vhd.iops.total`          | *soma dos itens acima*     |
 | `vhd.throughput.read`     | `Read Bytes/sec`       |
 | `vhd.throughput.write`    | `Write Bytes/sec`      |
-| `vhd.throughput.total`    | *soma das perguntas acima*     |
+| `vhd.throughput.total`    | *soma dos itens acima*     |
 | `vhd.latency.average`     | `Latency`              |
 
    > [!NOTE]
-   > Contadores são medidos durante o intervalo inteiro, não de amostra. Por exemplo, se o VHD está inativo para 9 segundos mas conclui 30 IOs na segunda 10º, seu `vhd.iops.total` serão registradas como 3 IOs por segundo em média durante esse intervalo de 10 segundos. Isso garante que seu histórico de desempenho captura todas as atividades e é robusto para ruído.
+   > Contadores são medidos ao longo de todo o intervalo, não amostrado. Por exemplo, se o VHD está inativo para 9 segundos, mas será concluído 30 IOs na segunda, 10 de seus `vhd.iops.total` serão registradas como 3 IOs por segundo em média durante esse intervalo de 10 segundos. Isso garante que seu histórico de desempenho captura todas as atividades e é robusto para o ruído.
 
 ## <a name="usage-in-powershell"></a>Uso no PowerShell
 
-Use o cmdlet [Get-VHD](https://docs.microsoft.com/powershell/module/hyper-v/get-vhd) :
+Use o [Get-VHD](https://docs.microsoft.com/powershell/module/hyper-v/get-vhd) cmdlet:
 
 ```PowerShell
 Get-VHD <Path> | Get-ClusterPerf
@@ -90,4 +90,4 @@ Para obter o caminho de cada VHD da máquina virtual:
 
 ## <a name="see-also"></a>Consulte também
 
-- [Histórico de desempenho para espaços de armazenamento direto](performance-history.md)
+- [Histórico de desempenho para espaços de armazenamento diretos](performance-history.md)

@@ -10,20 +10,20 @@ author: lizap
 ms.author: elizapo
 ms.localizationpriority: high
 ms.openlocfilehash: 47b29f8a0031267947812bd8e91005674abf9d49
-ms.sourcegitcommit: 19b4b28fa973dd3f272dd0d60710b4d34d017645
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6688954"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59876407"
 ---
-# Informações sobre versões do Windows Server
+# <a name="windows-server-release-information"></a>Informações sobre versões do Windows Server
 
 A Microsoft atualizou seu modelo de manutenção. O Canal semestral é um lançamento de atualizações de recursos que ocorre duas vezes ao ano, com os cronogramas de manutenção de 18 meses para cada versão. Esta página foi projetada para ajudar você a determinar a data de fim do suporte para os lançamentos do canal semestral.
 
 O Canal semestral oferece a oportunidade para clientes que estão inovando rapidamente aproveitarem os novos recursos do sistema operacional em um ritmo mais rápido, tanto em aplicativos, especialmente aqueles criados em contêineres e microsserviços, e no datacenter híbrido definido por software. Para obter mais informações, consulte a [Visão geral do canal semestral do Windows Server](semi-annual-channel-overview.md). Os clientes também têm a opção de continuar a usar as versões de Canal de manutenção a longo prazo, que continuam a ser lançadas a cada 2 ou 3 anos. Cada versão de canal de manutenção a longo prazo tem cinco anos de suporte base e cinco anos de suporte estendido.
 
 
-## Versões atuais do Windows Server por opção de manutenção
+## <a name="windows-server-current-versions-by-servicing-option"></a>Versões atuais do Windows Server por opção de manutenção
 
 | Informações sobre versões do Windows Server | Versão | Compilação do sistema operacional | Disponibilidade |Data de término do suporte base|Data de término do suporte estendido|
 |----------------|---------|----------|----------|---------|----------|
