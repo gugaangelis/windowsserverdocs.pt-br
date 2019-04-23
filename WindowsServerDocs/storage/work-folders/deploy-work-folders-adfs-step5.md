@@ -9,26 +9,27 @@ author: JeffPatt24
 ms.date: 4/5/2017
 ms.assetid: f168292b-0dbc-44b9-965f-d480e5134a0c
 ms.openlocfilehash: fa8b2b15ff411a59b28308a329d7ca2341ef0886
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59871937"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-5-set-up-clients"></a>Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 5, Configurar clientes
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-5-set-up-clients"></a>Implante pastas de trabalho com o AD FS e Proxy de aplicativo Web: Etapa 5, instalação de clientes
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico descreve a quinta etapa da implantação das Pastas de Trabalho com o AD FS (Serviços de Federação do Active Directory) e o Proxy de aplicativo Web. Você encontrará as outras etapas desse processo nestes tópicos:  
   
--   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: visão geral](deploy-work-folders-adfs-overview.md)  
+-   [Implante pastas de trabalho com o AD FS e Proxy de aplicativo Web: Visão geral](deploy-work-folders-adfs-overview.md)  
   
--   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 1, Configurar o AD FS](deploy-work-folders-adfs-step1.md)  
+-   [Implante pastas de trabalho com o AD FS e Proxy de aplicativo Web: Etapa 1, configure o AD FS](deploy-work-folders-adfs-step1.md)  
   
--   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 2, Trabalho de pós-configuração do AD FS](deploy-work-folders-adfs-step2.md)  
+-   [Implante pastas de trabalho com o AD FS e Proxy de aplicativo Web: Etapa 2, o trabalho de pós-configuração do AD FS](deploy-work-folders-adfs-step2.md)  
   
--   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 3, Configurar Pastas de Trabalho](deploy-work-folders-adfs-step3.md)  
+-   [Implante pastas de trabalho com o AD FS e Proxy de aplicativo Web: Etapa 3, configurar as pastas de trabalho](deploy-work-folders-adfs-step3.md)  
   
--   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 4, Configurar o Proxy de aplicativo Web](deploy-work-folders-adfs-step4.md)  
+-   [Implante pastas de trabalho com o AD FS e Proxy de aplicativo Web: Etapa 4, configurar o Proxy de aplicativo Web](deploy-work-folders-adfs-step4.md)  
   
 Use os procedimentos a seguir para configurar os clientes Windows ingressados no domínio e não ingressados no domínio. Você pode usar esses clientes para testar se arquivos estão realizando a sincronização corretamente entre as Pastas de Trabalho dos clientes.  
   
@@ -45,7 +46,7 @@ Para instalar os certificados, siga estas etapas:
   
 2.  Digite **MMC**.  
   
-3.  No menu **Arquivo**, clique em **Adicionar/Remover Snap-in**.  
+3.  No menu **Arquivo** , clique em **Adicionar/Remover Snap-in**.  
   
 4.  Na lista **Snap-ins disponíveis**, selecione **Certificados** e clique em **Adicionar**. O Assistente de Snap-in de Certificados é iniciado.  
   
@@ -78,7 +79,7 @@ Para configurar Pastas de Trabalho no computador cliente, siga estas etapas:
   
 2.  Clique em **Configurar Pastas de Trabalho**.  
   
-3.  Na página **Digite seu endereço de email de trabalho**, insira o endereço de email do usuário (por exemplo, user@contoso.com) ou a URL de Pastas de Trabalho (no exemplo de teste, https://workfolders.contoso.com) e, em seguida, clique em **Avançar**.  
+3.  No **insira seu endereço de email de trabalho** , insira o endereço de email do usuário (por exemplo, user@contoso.com) ou a URL de pastas de trabalho (o exemplo de teste, https://workfolders.contoso.com)e, em seguida, clique em **próxima**.  
   
 4.  Se o usuário estiver conectado à rede corporativa, a autenticação será executada pela Autenticação Integrada do Windows. Se o usuário não estiver conectado à rede corporativa, a autenticação será realizada pelo AD FS (OAuth), e o usuário será solicitado a inserir as credenciais. Insira suas credenciais e clique em **OK**.  
   
@@ -124,6 +125,6 @@ Quando a nova pasta Pastas de Trabalho é aberta nesse cliente, você verá que 
 Isso conclui o procedimento de implantação de Pastas de Trabalho, do AD FS e do Proxy de aplicativo Web por meio da interface do usuário do Windows Server.  
   
 ## <a name="see-also"></a>Consulte também  
-[Visão geral de Pastas de Trabalho](Work-Folders-Overview.md)  
+[Visão geral de pastas de trabalho](Work-Folders-Overview.md)  
   
 

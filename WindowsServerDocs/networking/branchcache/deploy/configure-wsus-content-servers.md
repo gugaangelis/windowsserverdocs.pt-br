@@ -1,6 +1,6 @@
 ---
-title: Configurar servidores de conteúdo do Windows Server Update Services (WSUS)
-description: Este tópico faz parte do BranchCache implantação guia para Windows Server 2016, que demonstra como implantar BranchCache nos modos de cache hospedado e distribuídos para otimizar o uso de largura de banda WAN em filiais.
+title: Configurar servidores de conteúdo do WSUS (Windows Server Update Services)
+description: Este tópico faz parte do BranchCache Deployment Guide para Windows Server 2016, que demonstra como implantar o BranchCache nos modos de cache hospedado e distribuído para otimizar o uso de largura de banda WAN em filiais.
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-bc
@@ -8,18 +8,19 @@ ms.topic: get-started-article
 ms.assetid: 9724aa8d-e4ae-404c-bee6-cef1534cd3ca
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 8200a0905f7bc5c403288a22faece5f84eac8af9
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: e8576282be92f02daf716da82ea75eddc755ee5c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59873837"
 ---
-# <a name="configure-windows-server-update-services-wsus-content-servers"></a>Configurar servidores de conteúdo do Windows Server Update Services (WSUS)
+# <a name="configure-windows-server-update-services-wsus-content-servers"></a>Configurar servidores de conteúdo do WSUS (Windows Server Update Services)
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Depois de instalar o recurso BranchCache e iniciar o serviço BranchCache, servidores WSUS devem ser configurados para armazenar arquivos de atualização no computador local. 
+Depois de instalar o recurso BranchCache e iniciar o serviço BranchCache, é necessário configurar os servidores do WSUS para armazenar arquivos de atualização no computador local. 
 
-Quando você configura servidores WSUS para armazenar arquivos de atualização no computador local, os metadados de atualização e os arquivos de atualização são baixados por e armazenados diretamente após o servidor WSUS. Isso garante que os computadores cliente BranchCache recebem arquivos de atualização do produto Microsoft do servidor WSUS e não diretamente da Website Microsoft Update.  
+Ao configurar servidores do WSUS para armazenar arquivos de atualização no computador local, os metadados de atualização e os arquivos de atualização são baixados e armazenados diretamente no servidor do WSUS. Isso garante que os computadores cliente BranchCache recebam os arquivos de atualização dos produtos da Microsoft do servidor do WSUS e não diretamente do site do Microsoft Update.  
   
-Para obter mais informações sobre a sincronização do WSUS, consulte [Configurando sincronizações de atualização](https://technet.microsoft.com/en-us/library/mt612311.aspx)  
+Para obter mais informações sobre a sincronização do WSUS, consulte [configurar sincronizações de atualização](https://technet.microsoft.com/library/mt612311.aspx)  

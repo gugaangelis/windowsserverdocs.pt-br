@@ -1,75 +1,54 @@
 ---
-title: Opções de seleção de sub-rede DHCP
-description: This topic provides information about DHCP subnet selection options for Dynamic Host Configuration Protocol (DHCP) in Windows Server 2016.
-manager: brianlic
+title: Opções de seleção de sub-rede do DHCP
+description: Este tópico fornece informações sobre as opções de seleção de sub-rede do DHCP para configuração de protocolo DHCP (Dynamic Host) no Windows Server 2016.
+manager: dougkim
 ms.prod: windows-server-threshold
 ms.technology: networking-dhcp
 ms.topic: get-started-article
 ms.assetid: ca19e7d1-e445-48fc-8cf5-e4c45f561607
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 43bc3d165f895767ded921b41118ecaccf9734e8
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/17/2018
+ms.openlocfilehash: 034ca48ef13a6bdac63ca99ac753fc9826460922
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59870807"
 ---
-# <a name="dhcp-subnet-selection-options"></a>Opções de seleção de sub-rede DHCP
+# <a name="dhcp-subnet-selection-options"></a>Opções de seleção de sub-rede do DHCP
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-You can use this topic for information about new DHCP subnet selection options.
+Você pode usar este tópico para obter informações sobre novas opções de seleção de sub-rede DHCP.
 
-DHCP agora dá suporte a opções 118 e 82 \(sub-option 5\). Você pode usar essas opções para permitir que os clientes de proxy DHCP e agentes de retransmissão solicitar um endereço IP para uma sub-rede específica e de um intervalo de endereços IP específico e escopo.
+DHCP agora dá suporte à opção 82 \(opção inferior a 5\). Você pode usar essas opções para permitir que os clientes de proxy DHCP e agentes de retransmissão solicitar um endereço IP para uma sub-rede específica e de um intervalo de endereços IP específico e um escopo.  Para obter mais detalhes, consulte **opção 82 Sub opção 5**: [Seleção de Link do RFC 3527 subopção para a opção de informações do agente de retransmissão para DHCPv4](https://tools.ietf.org/html/rfc3527).
 
-If you are using a DHCP proxy client that is configured with DHCP option 118, such as a virtual private network (VPN) server that is running Windows Server 2016 and the Remote Access server role, the VPN server can request IP address leases for VPN clients from a specific IP address range.
-
-If you are using a DHCP relay agent that is configured with DHCP option 82, sub-option 5, the relay agent can request an IP address lease for DHCP clients from a specific IP address range.
-
-Following are links to Request for Comments topics for these options.
-
-- **Option 118**: [RFC 3011 IPv4 Subnet Selection Option for DHCP](http://www.rfc-base.org/rfc-3011.html)
-- **Option 82 Sub Option 5**: [RFC 3527 Link Selection sub-option for the Relay Agent Information Option for DHCPv4](https://tools.ietf.org/html/rfc3527)
+Se você estiver usando um agente de retransmissão DHCP que é configurado com a opção DHCP 82, inferiores a opção 5, o agente de retransmissão pode solicitar uma concessão de endereço IP para clientes DHCP de um intervalo de endereço IP específico.
 
 
-## <a name="dhcp-option-118-client-subnet-and-relay-agent-link-selection"></a>DHCP Option 118: Client Subnet and Relay Agent Link-Selection
+## <a name="option-82-sub-option-5-link-selection-sub-option"></a>Opção 82 Sub opção 5: Opção de Sub de seleção do link
 
-The DHCP subnet selection option provides a mechanism for DHCP proxies to specify an IP subnet from which the DHCP server should assign IP addresses and options.
+A opção de subdiretório de seleção do Link de agente de retransmissão permite que um agente de retransmissão DHCP especificar uma sub-rede IP do qual o servidor DHCP deve atribuir endereços IP e opções.
 
-### <a name="use-case-scenario"></a>Use case scenario
+Normalmente, os agentes de retransmissão DHCP contam com o endereço IP do Gateway \(GIADDR\) campo para se comunicar com servidores DHCP. No entanto, GIADDR é limitado por suas funções operacionais dois:
 
-In this scenario, a virtual private network \(VPN\) server allocates IP addresses to VPN clients. 
+1. Para informar o servidor DHCP sobre a sub-rede na qual reside o cliente DHCP que está solicitando a concessão de endereço IP.
+2. Para informar o servidor DHCP do endereço IP para usar para se comunicar com o agente de retransmissão.
 
-In this circumstance, the VPN server is connected to both the intranet where the DHCP server is installed and to the Internet, so that VPN clients can connect to the VPN server from remote locations.
+Em alguns casos, o endereço IP que o agente de retransmissão usa para se comunicar com o servidor DHCP pode ser diferente do intervalo de endereços IP do qual o endereço IP do cliente DHCP deve ser alocado. 
 
-Before the VPN server can provide IP address leases to VPN clients, the server contacts the DHCP server on an internal subnet and reserves a block of IP addresses. The VPN server then manages the IP addresses it obtained from the DHCP server. If the VPN server provides all of the reserved IP addresses in leases to VPN clients, the VPN server then obtains additional IP addresses from the DHCP server.
+A opção de Link Sub de seleção da opção 82 é útil nessa situação, permitindo que o agente de retransmissão declarar explicitamente a sub-rede da qual ele deseja que o endereço IP alocado na forma de opção do DHCP v4 subopção 82 5.
 
-By configuring the VPN server with DHCP option 118, you can specify the IP address range and scope that you want to use for VPN clients. After you configure option 118, the VPN server requests IP addresses from a specific IP address range and scope from the DHCP server.
+> [!NOTE]
+>
+> Todos os endereços IP de agente retransmissão (GIADDR) devem ser parte de um intervalo de endereços IP do escopo do DHCP ativo. Qualquer GIADDR fora os intervalos de endereços IP de escopo do DHCP é considerado uma retransmissão rogue e servidor de DHCP do Windows não a reconhecerá solicitações do cliente desses agentes de retransmissão DHCP.
+>
+> Um escopo especial pode ser criado para "autorizar" agentes de retransmissão. Criar um escopo com o GIADDR (ou vários se o GIADDR sequenciais endereços IP), excluir o (s) GIADDR da distribuição e, em seguida, ativar o escopo. Isso autorizará os agentes de retransmissão enquanto impede que os endereços GIADDR que está sendo atribuído.
 
-### <a name="the-dhcp-subnet-selection-option-field"></a>The DHCP subnet selection option field
 
-The DHCP subnet selection option field contains a single IPv4 address used to represent the originating subnet address for a DHCP lease request.  A DHCP server that is configured to respond to this option allocates the address from either:
+### <a name="use-case-scenario"></a>Cenário de caso de uso
 
-1. The subnet that is specified in the subnet selection option.
-2. A subnet that is on the same network segment as the subnet that is specified in the subnet selection option.
+Nesse cenário, uma rede da organização inclui um servidor DHCP e um ponto de acesso sem fio \(AP\) para os usuários convidados. Endereços IP do cliente de convidados são atribuídos do servidor DHCP organização – no entanto, devido a restrições de política de firewall, o servidor DHCP não é possível acessar a rede sem fio de convidados ou clientes sem fio com broadcase mensagens.
 
-## <a name="option-82-sub-option-5-link-selection-sub-option"></a>Option 82 Sub Option 5: Link Selection Sub Option
-
-The Relay Agent Link Selection sub-option allows a DHCP Relay Agent to specify an IP subnet from which the DHCP server should assign IP addresses and options.
-
-Typically, DHCP relay agents rely on the Gateway IP Address \(GIADDR\) field to communicate with DHCP servers. However, GIADDR is limited by its two operational functions:
-
-1. To inform the DHCP server about the subnet upon which the DHCP client that is requesting the IP address lease resides.
-2. To inform the DHCP server of the IP address to use to communicate with the relay agent.
-
-In some cases, the IP address that the relay agent uses to communicate with the DHCP server might be different than the IP address range from which the DHCP client IP address needs to be allocated. 
-
-DHCP relay agents cannot make use of option 118, as their functionality is limited and can only write to the GIADDR field or the Relay Agent Information Option \(option 82\). 
-
-The Link Selection Sub option of option 82 is useful in this situation, allowing the relay agent to explicitly state the subnet from which it wants the IP address allocated in the form of DHCP v4 option 82 sub option 5.
-
-### <a name="use-case-scenario"></a>Use case scenario
-
-In this scenario, an organization network includes both a DHCP server and a Wireless Access Point \(AP\) for the guest users. Guests client IP addresses are assigned from the organization DHCP server - however, due to firewall policy restrictions, the DHCP server cannot access the guest wireless network or wireless clients with broadcase messages.
-
-To resolve this restriction, the AP is configured with the Link Selection Sub Option 5 to specify the subnet from which it wants the IP address allocated for guest clients, while in the GIADDR also specifying the IP address of the internal interface that leads to the corporate network.
+Para resolver essa restrição, o ponto de acesso está configurado com a opção 5 do Link seleção Sub para especificar a sub-rede da qual ele deseja que o endereço IP alocado para clientes de convidado, enquanto no GIADDR também especificando o endereço IP da interface interna que leva à rede corporativa.

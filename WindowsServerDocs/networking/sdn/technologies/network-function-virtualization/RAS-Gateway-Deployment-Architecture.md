@@ -1,6 +1,6 @@
 ---
-title: Arquitetura de implantação do RAS Gateway
-description: Você pode usar este tópico para saber mais sobre a implantação de provedor de serviços de nuvem (CSP) do Gateway RAS em Windows Server 2016, incluindo pools de Gateway RAS, Refletores de rota e implantar vários gateways para locatários individuais.
+title: Arquitetura de implantação do Gateway de RAS
+description: Você pode usar este tópico para saber mais sobre a implantação de provedor de serviços de nuvem (CSP) do Gateway de RAS no Windows Server 2016, incluindo os pools de Gateway de RAS, Refletores de rota e a implantação de vários gateways para locatários individuais.
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -12,153 +12,154 @@ ms.topic: get-started-article
 ms.assetid: d46e4e91-ece0-41da-a812-af8ab153edc4
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 21b101e10dba3d3b9578d6804b4fd92fbbcd2167
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: a3895e25a2af0437deb9eebe4ad89b110cfc9f2b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59870267"
 ---
-# <a name="ras-gateway-deployment-architecture"></a>Arquitetura de implantação do RAS Gateway
+# <a name="ras-gateway-deployment-architecture"></a>Arquitetura de implantação do Gateway de RAS
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Você pode usar este tópico para saber mais sobre a implantação de provedor de serviços de nuvem (CSP) do Gateway RAS, incluindo pools de Gateway RAS, Refletores de rota e implantar vários gateways para locatários individuais.  
+Você pode usar este tópico para saber mais sobre a implantação de provedor de serviços de nuvem (CSP) do Gateway de RAS, incluindo os pools de Gateway de RAS, Refletores de rota e a implantação de vários gateways para locatários individuais.  
   
-As seguintes seções fornecem breves visões gerais de alguns dos novos recursos de Gateway RAS para que você possa entender como usar esses recursos no design da implantação do gateway.  
+As seções a seguir fornecem visões gerais breves de alguns dos novos recursos do Gateway de RAS para que você possa entender como usar esses recursos no design da implantação do gateway.  
   
-Além disso, uma implantação de exemplo é fornecida, incluindo informações sobre o processo de adição de locatários novo, sincronização de rota e roteamento de plano de dados, gateway e failover refletor de rota e muito mais.  
+Além disso, um exemplo de implantação é fornecido, incluindo informações sobre o processo de adição de novos locatários, sincronização de rota e roteamento de plano de dados, gateway e failover de refletor de rota e muito mais.  
   
-Este tópico contém as seções a seguir.  
+Este tópico contém as seguintes seções.  
   
--   [Usando o Gateway RAS novos recursos para projetar sua implantação](#bkmk_new)  
+-   [Usando novos recursos do Gateway RAS para criar a sua implantação](#bkmk_new)  
   
 -   [Exemplo de implantação](#bkmk_example)  
   
--   [Adicionando novos locatários e espaço de endereço (CA) do cliente EBGP estranhas](#bkmk_tenant)  
+-   [Adição de novos locatários e o espaço de endereço (CA) de cliente EBGP emparelhamento](#bkmk_tenant)  
   
--   [Roteamento de plano de dados e sincronização de rota](#bkmk_route)  
+-   [Sincronização de rota e os dados do plano de roteamento](#bkmk_route)  
   
--   [Como o controlador de rede responde a Gateway RAS e rota Reflector Failover](#bkmk_failover)  
+-   [Como o controlador de rede responde ao Gateway RAS e Failover de refletor de rota](#bkmk_failover)  
   
 -   [Vantagens de usar os novos recursos de Gateway RAS](#bkmk_advantages)  
   
-## <a name="bkmk_new"></a>Usando o Gateway RAS novos recursos para projetar sua implantação  
-Gateway RAS inclui vários novos recursos que mudam e melhoram a forma em que você implantar sua infraestrutura de gateway em seu datacenter.  
+## <a name="bkmk_new"></a>Usando novos recursos do Gateway RAS para criar a sua implantação  
+Gateway de RAS inclui vários novos recursos que são alterados e melhorar a maneira em que você implanta sua infraestrutura de gateway em seu datacenter.  
   
-### <a name="bgp-route-reflector"></a>Rota BGP Reflector  
-A funcionalidade de refletor de rota Border Gateway Protocol (BGP) agora é incluído com o Gateway RAS e oferece uma alternativa a topologia em malha completa BGP que normalmente é necessária para a sincronização de rota entre roteadores. Com a sincronização de malha completo, todos os roteadores BGP devem se conectar com todos os outros roteadores a topologia de roteamento. Quando você usa refletor de rota, no entanto, o refletor de rota é o único roteador que se conecta com todos os outros roteadores, chamados refletor de rota BGP clientes, simplificando, assim, a sincronização de rota e reduzir o tráfego de rede. O refletor de rota aprende sobre todas as rotas, calcula melhores rotas e redistribui as rotas melhor a seus clientes BGP.  
+### <a name="bgp-route-reflector"></a>Refletor de rota BGP  
+A capacidade de refletor de rota do Border Gateway Protocol (BGP) agora está incluído com o Gateway de RAS e fornece uma alternativa para a topologia de malha completa de BGP que normalmente é necessária para sincronização de rota entre roteadores. Com a sincronização de malha completa, todos os roteadores BGP devem se conectar com todos os outros roteadores na topologia de roteamento. No entanto, quando você usa o refletor de rota, o refletor de rota é o único roteador que se conecta com todos os outros roteadores, chamados clientes refletor de rota BGP, simplificando assim o roteiro de sincronização e reduzindo o tráfego de rede. O refletor de rota aprende todas as rotas, calcula melhores rotas e redistribui as rotas melhor para seus clientes BGP.  
   
-Para obter mais informações, consulte [What's New em Gateway RAS](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md).  
+Para obter mais informações, consulte [o que há de novo no Gateway de RAS](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md).  
   
 ### <a name="bkmk_pools"></a>Pools de gateway  
-No Windows Server 2016, você pode criar grupos de gateway muitos dos tipos diferentes. Pools de gateway contêm muitas instâncias do Gateway RAS e rotear o tráfego de rede entre redes físicos e virtuais.  
+No Windows Server 2016, você pode criar vários pools de gateway de tipos diferentes. Pools de gateway contêm muitas instâncias do Gateway de RAS e rotear o tráfego de rede entre redes físicas e virtuais.  
   
-Para obter mais informações, consulte [What's New em Gateway RAS](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md) e [RAS Gateway alta disponibilidade](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md).  
+Para obter mais informações, consulte [o que há de novo no Gateway RAS](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md) e [alta disponibilidade do Gateway de RAS](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md).  
   
-### <a name="bkmk_gps"></a>Dimensionamento do Pool de gateway  
-Você pode dimensionar facilmente um pool de gateway para cima ou para baixo, adicionando ou removendo gateway VMs no pool. Remoção ou a adição de gateways não interromper os serviços que são fornecidos por um pool. Você também pode adicionar e remover todos pools de gateways.  
+### <a name="bkmk_gps"></a>Redimensionamento do Pool de gateway  
+Você pode facilmente dimensionar um pool de gateway para cima ou para baixo, adicionando ou removendo as VMs de gateway no pool. Remoção ou adição de gateways não interrompa os serviços que são fornecidos por um pool. Você também pode adicionar e remover pools inteiros de gateways.  
   
-Para obter mais informações, consulte [What's New em Gateway RAS](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md) e [RAS Gateway alta disponibilidade](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md).  
+Para obter mais informações, consulte [o que há de novo no Gateway RAS](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md) e [alta disponibilidade do Gateway de RAS](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md).  
   
-### <a name="bkmk_m"></a>M + N Gateway Pool redundância  
-Cada pool de gateway é M + N redundante. Isso significa que um estou ' diversas ativa gateway VMs são copiadas por um número de'n' de gateway espera VMs. M + N redundância fornece mais flexibilidade para determinar o nível de confiabilidade que exigem quando você implanta o Gateway RAS.  
+### <a name="bkmk_m"></a>Redundância do Pool de Gateway de M + N  
+Cada pool de gateway é com redundância M + N. Isso significa que um estou ' número de VMs de gateway Active Directory seja realizado por um número de ' n' de VMs de gateway em espera. M + N redundância fornece mais flexibilidade na determinação do nível de confiabilidade que você precisa, quando você implanta o Gateway de RAS.  
   
-Para obter mais informações, consulte [What's New em Gateway RAS](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md) e [RAS Gateway alta disponibilidade](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md).  
+Para obter mais informações, consulte [o que há de novo no Gateway RAS](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md) e [alta disponibilidade do Gateway de RAS](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md).  
   
 ## <a name="bkmk_example"></a>Exemplo de implantação  
-A ilustração a seguir fornece um exemplo com correspondências em conexões de VPN-to-site configuradas entre dois locatários, Contoso e Woodgrove e datacenter Fabrikam CSP eBGP.  
+A ilustração a seguir fornece um exemplo com eBGP emparelhamento em conexões de VPN site a site configuradas entre dois locatários, Contoso e Woodgrove e datacenter do CSP da Fabrikam.  
   
-![Correspondências pela VPN to-site eBGP](../../../media/RAS-Gateway-Deployment-Architecture/ras_gateway_architecture.png)  
+![eBGP emparelhamento sobre VPN site a site](../../../media/RAS-Gateway-Deployment-Architecture/ras_gateway_architecture.png)  
   
-Neste exemplo, Contoso requer largura de banda de gateway adicional, provocando a decisão de design de infraestrutura de gateway de encerrar o site Contoso Los Angeles GW3 em vez de GW2. Por isso, conexões VPN Contoso de sites diferentes encerrar no datacenter CSP em dois gateways diferentes.  
+Neste exemplo, Contoso requer largura de banda de gateway adicionais, à esquerda para a decisão de design de infraestrutura de gateway para encerrar o site Contoso Los Angeles no GW3 em vez de GW2. Por isso, as conexões de VPN de Contoso em sites diferentes encerrar no datacenter do CSP em dois gateways diferentes.  
   
-Ambas essas gateways, GW2 e GW3, foram os primeiros Gateways de RAS configurado pelo controlador de rede quando o CSP adicionado as Contoso e Woodgrove locatários à sua infraestrutura. Por isso, esses dois gateways são configurados como Refletores de rota para esses clientes correspondentes (ou locatários). GW2 é o refletor de rota Contoso e GW3 é o refletor de rota Woodgrove - além de ser o ponto de término do CSP RAS Gateway para a conexão VPN com o site HQ de Los Angeles Contoso.  
+Ambos esses gateways, GW2 e GW3, eram os Gateways de RAS primeiro configurado pelo controlador de rede quando o CSP adicionado aos locatários Contoso e Woodgrove à sua infra-estrutura. Por isso, esses dois gateways são configurados como Refletores de rota para esses clientes correspondentes (ou locatários). GW2 é o refletor de rota da Contoso e GW3 é o refletor de rota do Woodgrove - além de ser o ponto de encerramento de Gateway de RAS do CSP para a conexão VPN com o site Contoso HQ de Los Angeles.  
   
 > [!NOTE]  
-> Um Gateway RAS pode encaminhar o tráfego de rede físicos e virtuais para locatários diferentes até cem, dependendo dos requisitos de largura de banda de cada locatário.  
+> Um Gateway de RAS pode rotear o tráfego de rede física e virtual para locatários diferentes até cem, dependendo dos requisitos de largura de banda de cada locatário.  
   
-Como Refletores de rota, GW2 envia rotas Contoso CA espaço para o controlador de rede e GW3 envia rotas Woodgrove CA espaço para o controlador de rede.  
+Como Refletores de rota, GW2 envia rotas de espaço de CA da Contoso para o controlador de rede e GW3 envia as rotas de espaço de CA do Woodgrove para controlador de rede.  
   
-Controlador de rede empurra políticas de virtualização de rede do Hyper-V para a Contoso e Woodgrove redes virtuais, bem como as políticas RAS à Gateways RAS e políticas para Multiplexers (MUXes) que estão configurados como um pool de balanceamento de carga de Software de balanceamento de carga.  
+Controlador de rede envia por push as políticas de virtualização de rede do Hyper-V para a Contoso e Woodgrove redes virtuais, bem como as políticas de acesso remoto aos Gateways de RAS e políticas para multiplexadores (MUXes) que são configurados como um Software de balanceamento de carga de balanceamento de carga pool.  
   
-## <a name="bkmk_tenant"></a>Adicionando eBGP locatários novos e espaço de endereço do cliente (CA) Peering  
-Quando você entra um novo cliente e adicionar o cliente como um locatário novo em seu datacenter, você pode usar o processo a seguir, grande parte delas é realizado automaticamente pelo controlador de rede e Gateway RAS roteadores eBGP.  
+## <a name="bkmk_tenant"></a>Adicionando novos locatários e o espaço de endereço de cliente (CA) eBGP emparelhamento  
+Quando você assinar um novo cliente e adicionar o cliente como um novo locatário em seu datacenter, você pode usar o processo a seguir, muitos dos quais é executado automaticamente pelo controlador de rede e Gateway de RAS roteadores de eBGP.  
   
-1.  Provisione uma nova rede virtual e cargas de trabalho de acordo com os requisitos do locatário.  
+1.  Provisione uma nova rede virtual e cargas de trabalho de acordo com os requisitos do seu locatário.  
   
-2.  Se necessário, configure a conectividade remota entre o site de Enterprise locatário remoto e sua rede virtual no seu datacenter. Quando você implanta uma conexão de VPN-to-site do locatário, o controlador de rede automaticamente seleciona uma VM de Gateway RAS disponível do pool gateway disponíveis e configura a conexão.  
+2.  Se necessário, configure a conectividade remota entre o site de empresa do locatário remoto e sua rede virtual em seu datacenter. Quando você implanta uma conexão de VPN site a site para o locatário, o controlador de rede automaticamente seleciona uma VM de Gateway de RAS disponível do pool de gateway disponíveis e configura a conexão.  
   
-3.  Ao configurar a VM do Gateway RAS do locatário novo, o controlador de rede também configura o Gateway RAS como um roteador BGP e designa como o refletor de rota do locatário. Isso vale mesmo em casos onde o Gateway RAS serve como um gateway, ou como um gateway e refletor de rota para outros locatários.  
+3.  Ao configurar a VM de Gateway de RAS para o novo locatário, o controlador de rede também configura o Gateway de RAS como um roteador BGP e designa como o refletor de rota para o locatário. Isso é verdadeiro mesmo em circunstâncias em que o Gateway de RAS serve como um gateway ou como um gateway e o refletor de rota para outros locatários.  
   
-4.  Dependendo se CA espaço roteamento é configurado para usar configurada estaticamente redes ou roteamento de BGP dinâmico, o controlador de rede configura as rotas estáticas correspondentes, vizinhos de BGP ou ambos nos RAS Gateway VM e refletor de rota.  
+4.  Dependendo se o roteamento de espaço com a autoridade de certificação estiver configurado para redes de uso configurado estaticamente ou roteamento de BGP dinâmico, o controlador de rede configura as rotas estáticas correspondentes, vizinhos de BGP ou ambos na VM de Gateway de RAS e refletor de rota.  
   
     > [!NOTE]  
-    > -   Depois que o controlador de rede tiver configurado um Gateway RAS e refletor de rota de locatário, sempre que o mesmo locatário requer uma nova conexão de VPN-to-site, o controlador de rede verifica a capacidade disponível nessa VM de Gateway RAS. Se o gateway original pode atender a capacidade necessária, a nova conexão de rede também é configurado na mesma VM Gateway RAS. Se a VM do Gateway RAS não pode lidar com a capacidade adicional, o controlador de rede seleciona uma nova VM de Gateway RAS disponíveis e configura a nova conexão nele. Essa nova VM de Gateway RAS associados com o locatário torna-se o cliente de refletor de rota do locatário original refletor de rota de Gateway RAS.  
-    > -   Como pools de Gateway RAS são atrás balanceadores de carga de Software (SLBs),-to-site VPN o locatários aborda cada uso um único endereço IP público, chamado de um endereço IP virtual (VIP), que é traduzido pelos SLBs em um endereço IP datacenter interno, chamado de um endereço IP dinâmico DIP (), um gateway RAS que encaminha o tráfego do locatário Enterprise. Esse mapeamento de endereço IP público para privado por SLB garante que o túneis VPN-to-site são estabelecidos corretamente entre os sites da empresa e a CSP RAS Gateways e Refletores de rota.  
+    > -   Depois que o controlador de rede tiver configurado um Gateway de RAS e refletor de rota para o locatário, sempre que o mesmo locatário requer uma nova conexão de VPN site a site, o controlador de rede verifica a capacidade disponível nessa VM de Gateway de RAS. Se o gateway original pode atender a capacidade necessária, a nova conexão de rede também é configurado na mesma VM de Gateway de RAS. Se a VM de Gateway de RAS não pode lidar com a capacidade adicional, o controlador de rede seleciona uma nova VM de Gateway de RAS disponíveis e configura a nova conexão nele. Essa nova VM de Gateway de RAS associado ao locatário torna-se o cliente de refletor de rota do locatário original refletor de rota do Gateway de RAS.  
+    > -   Porque o pool de Gateway de RAS está por trás de balanceadores de carga de Software (SLBs), endereços VPN site a site dos locatários cada um usar um único endereço IP público, chamado de um endereço IP virtual (VIP), que é traduzido pelos SLBs para um endereço IP interno de datacenter, chamado um endereço IP dinâmico (DIP) para um Gateway de RAS que roteia o tráfego para o locatário da empresa. Esse mapeamento de endereço IP pública para privada pelo SLB garante que os túneis VPN site a site corretamente são estabelecidos entre os sites corporativos e os Gateways de RAS do CSP e Refletores de rota.  
     >   
-    >     Para obter mais informações sobre SLB, VIPs e DIPs, consulte [balanceamento de carga de Software & #40; SLB & #41; para SDN](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md).  
+    >     Para obter mais informações sobre o SLB, VIPs e quedas, consulte [balanceamento de carga de Software &#40;SLB&#41; para SDN](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md).  
   
-5.  Após o encapsulamento VPN-to-site entre o site da empresa e datacenter CSP que gateway RAS é estabelecida para o novo locatário, as rotas estáticas que são associadas as túneis automaticamente provisionadas nos lados do Enterprise e o CSP do encapsulamento.  
+5.  Após o túnel VPN site a site entre o site do Enterprise e datacenter do CSP, que gateway de RAS é estabelecida para o novo locatário, as rotas estáticas que estão associadas com os túneis são automaticamente provisionadas nos lados da empresa e o CSP do túnel .  
   
-6.  Com o espaço de CA BGP roteamento, a correspondências entre os sites corporativos e a CSP RAS Gateway rota Reflector eBGP também é estabelecida.  
+6.  Com o espaço do CA BGP eBGP emparelhamento entre os sites corporativos e o refletor de rota de Gateway de RAS do CSP do roteamento, também é estabelecida.  
   
-## <a name="bkmk_route"></a>Roteamento de plano de dados e sincronização de rota  
-Depois de correspondência eBGP é estabelecida entre sites corporativos e a CSP RAS Gateway rota Reflector, o refletor de rota aprende todas as rotas de empresa usando o roteamento de BGP dinâmico. O refletor de rota sincroniza essas rotas entre todos os clientes refletor de rota para que eles são configurados com o mesmo conjunto de rotas.  
+## <a name="bkmk_route"></a>Sincronização de rota e os dados do plano de roteamento  
+Depois que o emparelhamento de eBGP é estabelecido entre sites corporativos e o refletor de rota de Gateway de RAS do CSP, o refletor de rota aprende todas as rotas da empresa usando o roteamento de BGP dinâmico. O refletor de rota sincroniza essas rotas entre todos os clientes de refletor de rota para que eles sejam configurados com o mesmo conjunto de rotas.  
   
-Refletor de rota também atualiza essas rotas consolidadas, usando a sincronização de rota, controlador de rede. Controlador de rede, em seguida, converte as rotas em políticas de virtualização de rede do Hyper-V e configura a rede de malha para garantir que End-to-End roteamento de caminho de dados é provisionado. Esse processo faz com que o locatário rede virtual acessível a partir do locatário Enterprise sites.  
+Refletor de rota também atualiza essas rotas consolidadas, usando a sincronização de rota, ao controlador de rede. Controlador de rede, em seguida, converte as rotas para as políticas de virtualização de rede do Hyper-V e configura a rede de malha para garantir que o roteamento do caminho de dados de ponta a ponta seja provisionado. Este processo, o locatário fica acessível do locatário empresarial de rede virtual sites.  
   
-Roteamento de plano de dados, os pacotes que chegar VMs do Gateway RAS diretamente são roteados para rede virtual do locatário, porque as rotas necessárias agora estão disponíveis com todas as VMs do Gateway RAS participantes.  
+Roteamento de plano de dados, os pacotes que acessar as VMs de Gateway de RAS são roteados diretamente à rede de virtual do locatário, porque as rotas necessárias agora estão disponíveis com todas as VMs de Gateway de RAS participantes.  
   
-Da mesma forma, com as políticas de virtualização de rede do Hyper-V no lugar, a rede virtual locatário roteia pacotes diretamente para VMs do Gateway RAS (sem a necessidade de saber sobre o refletor de rota) e, em seguida, os sites corporativos sobre os túneis VPN-to-site.  
+Da mesma forma, com as políticas de virtualização de rede do Hyper-V no local, rede virtual do locatário roteia os pacotes diretamente para as VMs de Gateway de RAS (sem a necessidade de saber sobre o refletor de rota) e, em seguida, os sites empresariais nos túneis VPN site a site .  
   
-Além disso. Retorno tráfego da rede virtual locatário no site do Enterprise locatário remoto ignora SLBs, um processo chamado retornar de servidor direto (DSR).  
+Além disso. tráfego de retorno da rede virtual do locatário para o site de empresa do locatário remoto ignora SLBs, um processo chamado de retorno de servidor direto (DSR).  
   
-## <a name="bkmk_failover"></a>Como o controlador de rede responde a Gateway RAS e rota Reflector Failover  
-A seguir é dois cenários possíveis de failover - uma para clientes de refletor de rota de Gateway RAS - e outra para Refletores de rota de Gateway RAS incluindo informações sobre como o controlador de rede manipula failover para VMs em configuração.  
+## <a name="bkmk_failover"></a>Como o controlador de rede responde ao Gateway RAS e Failover de refletor de rota  
+A seguir estão dois cenários possíveis de failover - um para clientes de refletor de rota do Gateway de RAS - e outro para Refletores de rota do Gateway de RAS incluindo informações sobre como o controlador de rede trata failover para VMs na configuração.  
   
-### <a name="vm-failure-of-a-ras-gateway-bgp-route-reflector-client"></a>VM falha de um cliente do RAS Gateway rota BGP Reflector  
-Controlador de rede tem as seguintes ações quando um cliente RAS refletor de rota de Gateway falha.  
+### <a name="vm-failure-of-a-ras-gateway-bgp-route-reflector-client"></a>Falha VM de um cliente de refletor de rota BGP de Gateway RAS  
+Controlador de rede realiza as seguintes ações quando um cliente de refletor de rota do Gateway de RAS falhar.  
   
 > [!NOTE]  
-> Quando um Gateway RAS não é um refletor de rota de infraestrutura BGP do locatário, ele é um cliente de refletor de rota na infraestrutura BGP do locatário.  
+> Quando um Gateway de RAS não é um refletor de rota para a infraestrutura BGP de um locatário, ele é um cliente de refletor de rota na infraestrutura BGP do locatário.  
   
--   Controlador de rede seleciona uma VM de Gateway RAS espera disponíveis e provisiona a VM de Gateway RAS novo com a configuração do RAS Gateway VM com falha.  
+-   Controlador de rede seleciona uma VM de Gateway de RAS em espera disponível e provisiona a nova VM de Gateway de RAS com a configuração da VM de Gateway de RAS com falha.  
   
--   Controlador de rede atualiza a configuração de SLB correspondente para garantir que o túneis VPN-to-site de sites de locatário para o Gateway RAS com falha são estabelecidos corretamente com o novo Gateway RAS.  
+-   Controlador de rede atualiza a configuração do SLB correspondente para garantir que os túneis de VPN site a site de sites de locatário para o Gateway de RAS com falha são estabelecidos corretamente com o novo Gateway de RAS.  
   
--   Controlador de rede configura o cliente de refletor de rota BGP no novo gateway.  
+-   Controlador de rede configura o cliente de refletor de rota BGP no gateway de novo.  
   
--   Controlador de rede configura o novo cliente RAS Gateway BGP rota Reflector como ativa. O Gateway RAS começa imediatamente a correspondência com refletor do locatário de rota para compartilhar informações de roteamento e habilitar a correspondência eBGP para o site Enterprise correspondente.  
+-   Controlador de rede configura o novo cliente de refletor de rota de BGP de Gateway de RAS como ativa. O Gateway de RAS inicia imediatamente o emparelhamento com refletor de rota do locatário para compartilhar informações de roteamento e para habilitar o emparelhamento de eBGP para o site de empresa correspondente.  
   
-### <a name="vm-failure-for-a-ras-gateway-bgp-route-reflector"></a>VM falha para uma rota BGP o Gateway RAS Reflector  
-Controlador de rede tem as seguintes ações quando um refletor de rota RAS Gateway BGP falha.  
+### <a name="vm-failure-for-a-ras-gateway-bgp-route-reflector"></a>Falha VM para um refletor de rota BGP do Gateway RAS  
+Controlador de rede realiza as seguintes ações quando um refletor de rota de BGP de Gateway de RAS falhar.  
   
--   Controlador de rede seleciona uma VM de Gateway RAS espera disponíveis e provisiona a VM de Gateway RAS novo com a configuração do RAS Gateway VM com falha.  
+-   Controlador de rede seleciona uma VM de Gateway de RAS em espera disponível e provisiona a nova VM de Gateway de RAS com a configuração da VM de Gateway de RAS com falha.  
   
--   Controlador de rede configura o refletor de rota na nova VM Gateway RAS e atribui a VM novo o mesmo endereço IP que foi usado pela VM com falha, oferecendo integridade rota apesar da falha VM.  
+-   Controlador de rede configura o refletor de rota na nova VM de Gateway de RAS e atribui a nova VM o mesmo endereço IP que foi usado pela VM com falha, fornecendo assim a integridade de rota, apesar da falha da VM.  
   
--   Controlador de rede atualiza a configuração de SLB correspondente para garantir que o túneis VPN-to-site de sites de locatário para o Gateway RAS com falha são estabelecidos corretamente com o novo Gateway RAS.  
+-   Controlador de rede atualiza a configuração do SLB correspondente para garantir que os túneis de VPN site a site de sites de locatário para o Gateway de RAS com falha são estabelecidos corretamente com o novo Gateway de RAS.  
   
--   Controlador de rede configura novos RAS Gateway BGP rota Reflector VM como ativa.  
+-   Controlador de rede configura a nova VM RAS Gateway BGP rota Reflector como ativa.  
   
--   O refletor de rota imediatamente se torna ativo. O encapsulamento VPN-to-site para a empresa é estabelecido e o refletor de rota usa correspondência eBGP e troca rotas com roteadores Enterprise site.  
+-   O refletor de rota fica imediatamente ativo. O túnel VPN site a site para a empresa é estabelecido, e o refletor de rota usa o emparelhamento de eBGP e troca rotas com os roteadores de site de empresa.  
   
--   Após a seleção de rota BGP, as atualizações de refletor de rota RAS Gateway BGP clientes refletor de rota no datacenter do locatário e sincroniza rotas com o controlador de rede, tornando o caminho dos dados End-to-End disponíveis para o tráfego de locatário.  
+-   Após a seleção de rotas BGP, as atualizações de refletor de rota de BGP de Gateway de RAS clientes refletor de rota no data center de locatário e sincroniza as rotas com o controlador de rede, disponibilizando o caminho de dados de ponta a ponta para o tráfego de locatário.  
   
 ## <a name="bkmk_advantages"></a>Vantagens de usar os novos recursos de Gateway RAS  
-A seguir estão algumas das vantagens de usar esses novos recursos de Gateway RAS ao projetar sua implantação RAS Gateway.  
+A seguir é algumas das vantagens de usar esses novos recursos de Gateway de RAS ao projetar sua implantação do Gateway de RAS.  
   
-**Dimensionamento do Gateway RAS**  
+**Escalabilidade do Gateway de RAS**  
   
-Como você pode adicionar quantas VMs do Gateway RAS quantos forem necessários para pools de Gateway RAS, você pode facilmente dimensionar a implantação de Gateway RAS para otimizar o desempenho e capacidade. Quando você adiciona VMs a um pool, você pode configurar esses Gateways RAS com conexões de VPN-to-site de qualquer natureza (IKEv2, L3, GRE), eliminando afunilamentos de capacidade com sem tempo de inatividade.  
+Porque você pode adicionar quantas VMs de Gateway de RAS conforme necessário para os pools de Gateway de RAS, você pode facilmente dimensionar sua implantação do Gateway de RAS para otimizar o desempenho e capacidade. Quando você adiciona VMs a um pool, você pode configurar esses Gateways de RAS com conexões de VPN site a site de qualquer tipo (IKEv2, L3, GRE), eliminar gargalos de capacidade sem nenhum tempo de inatividade.  
   
-**Gerenciamento de Gateway de Site corporativo simplificado**  
+**Gerenciamento de Gateway do Site corporativo simplificado**  
   
-Quando seu locatário tem vários sites corporativos, o locatário pode configurar todos os sites com-to-site VPN endereço IP remoto e um endereço IP único vizinho remoto - seu datacenter CSP RAS Gateway BGP rota Reflector VIP para esse locatário. Isso simplifica o gerenciamento de gateway de seu locatários.  
+Quando o locatário tiver vários sites corporativos, o locatário pode configurar todos os sites com um endereço de IP de VPN site a site remoto e um endereço IP do vizinho remoto único - seu datacenter do CSP RAS Gateway BGP VIP de refletor de rota para esse locatário. Isso simplifica o gerenciamento de gateway para seus locatários.  
   
-**Correção rápida de falha de Gateway**  
+**Correção rápida de falha do Gateway**  
   
-Para garantir uma resposta de failover rápido, você pode configurar o tempo de parâmetro de Keep-Alive BGP entre rotas de borda e o roteador de controle para um intervalo de tempo curto, como menor ou igual a dez segundos. Com esse intervalo de curta keep alive, se um roteador de borda RAS Gateway BGP falhar, a falha é detectada rapidamente e controlador de rede segue as etapas fornecidas nas seções anteriores. Essa vantagem pode reduzir a necessidade de um protocolo de detecção de falha separado, como o protocolo de detecção de encaminhamento de bidirecional (BFD).  
+Para garantir uma resposta de failover rápido, você pode configurar o tempo de parâmetro de Keepalive BGP entre as rotas de borda e o roteador de controle para um intervalo de hora abreviada, como menor que ou igual a dez segundos. Com esse intervalo de curto keep alive, se um roteador de borda de BGP do Gateway de RAS falhar, a falha é detectada rapidamente e controlador de rede segue as etapas fornecidas nas seções anteriores. Essa vantagem pode reduzir a necessidade de um protocolo de detecção de falha separados, como protocolo de detecção de encaminhamento bidirecional (BFD).  
   
  
   

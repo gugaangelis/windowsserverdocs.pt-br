@@ -1,7 +1,7 @@
 ---
 ms.assetid: 22347a94-aeea-44b4-85fb-af2c968f432a
-title: "Implantar com políticas de auditoria Central (etapas de demonstração) de auditoria de segurança"
-description: 
+title: Implantar a auditoria de segurança com as políticas de auditoria central (etapas de demonstração)
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,91 +10,92 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: ac2b1643ed151e94c3815abca9a57eb3706c845a
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59871127"
 ---
-# <a name="deploy-security-auditing-with-central-audit-policies-demonstration-steps"></a>Implantar com políticas de auditoria Central (etapas de demonstração) de auditoria de segurança
+# <a name="deploy-security-auditing-with-central-audit-policies-demonstration-steps"></a>Implantar a auditoria de segurança com as políticas de auditoria central (etapas de demonstração)
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Nesse cenário, você fará a auditoria acesso a arquivos na pasta documentos de finanças usando a política de finanças que você criou na [implantar uma política de acesso Central #40 etapas de demonstração &; 41;](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md). Se um usuário que não está autorizado a acessar a pasta tenta acessá-lo, a atividade é capturada no Visualizador de eventos.   
- As etapas a seguir são necessários para testar esse cenário.  
+Nesse cenário, você irá auditar o acesso a arquivos na pasta documentos financeiros usando a política de finanças que você criou na [implantar uma política de acesso Central &#40;passo a passo&#41;](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md). Se um usuário que não estiver autorizado a acessar a pasta tentar acessá-la, a atividade será capturada no visualizador de eventos.   
+ As etapas a seguir são necessárias para testar este cenário.  
   
 |Tarefa|Descrição|  
 |--------|---------------|  
-|[Configurar o acesso a objetos globais](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_1)|Nesta etapa, você pode configurar a política de acesso do objeto global no controlador de domínio.|  
-|[Configurações de política de grupo de atualização](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_2)|Faça logon no servidor de arquivos e aplique a atualização de política de grupo.|  
-|[Verificar se a política acesso a objetos globais foi aplicada](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_3)|Exiba os eventos relevantes no Visualizador de eventos. Os eventos devem incluir metadados para o tipo de documento e país.|  
+|[Configurar o acesso ao objeto Global](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_1)|Nesta etapa, configure a política de acesso a objetos globais no controlador de domínio.|  
+|[Configurações de diretiva de grupo de atualização](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_2)|Entre no servidor de arquivos e aplique a atualização de Política de Grupo.|  
+|[Verificar se a política de acesso de objetos globais foi aplicada](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_3)|Exiba os eventos relevantes no visualizador de eventos. Os eventos devem incluir metadados para o tipo de documento e o país.|  
   
 ## <a name="BKMK_1"></a>Configurar a política de acesso a objetos globais  
-Nesta etapa, você deve configurar a política de acesso do objeto global no controlador de domínio.  
+Nesta etapa, configure a política de acesso a objetos globais no controlador de domínio.  
   
-#### <a name="to-configure-a-global-object-access-policy"></a>Para configurar uma política de acesso do objeto global  
+#### <a name="to-configure-a-global-object-access-policy"></a>Para configurar uma política de acesso a objetos globais  
   
-1.  Faça logon controlador de domínio DC1 como Contoso\administrador com a senha **pass@word1**.  
+1.  Entre no controlador de domínio DC1 como contoso\administrator com a senha **pass@word1**.  
   
-2.  No Gerenciador do servidor, aponte para **ferramentas**e clique em **Group Policy Management **.  
+2.  No Gerenciador do Servidor, aponte para **Ferramentas** e clique em **Gerenciamento de Política de Grupo**.  
   
-3.  Na árvore de console, clique duas vezes em **domínios**, clique duas vezes em **contoso.com**, clique em **Contoso**e clique duas vezes em **servidores de arquivos **.  
+3.  Na árvore do console, clique duas vezes em **Domínios**, clique duas vezes em **contoso.com**, clique em **Contoso** e clique duas vezes em **Servidores de Arquivos**.  
   
-4.  Clique com botão direito **FlexibleAccessGPO**e clique em **editar **.  
+4.  Clique com o botão direito do mouse em **FlexibleAccessGPO** e clique em **Editar**.  
   
-5.  Clique duas vezes em **configuração do computador**, clique duas vezes em **políticas**e clique duas vezes em **configurações do Windows **.  
+5.  Clique duas vezes em **Configuração do Computador**, clique duas vezes em **Políticas** e clique duas vezes em **Configurações do Windows**.  
   
-6.  Clique duas vezes em **configurações de segurança**, clique duas vezes em **configuração avançada de política de auditoria**e clique duas vezes em **políticas de auditoria **.  
+6.  Clique duas vezes em **Configurações de Segurança**, clique duas vezes em **Configuração Avançada de Política de Auditoria** e clique duas vezes em **Políticas de Auditoria**.  
   
-7.  Clique duas vezes em **acesso a objetos**e clique duas vezes em **sistema de arquivos de auditoria **.  
+7.  Clique duas vezes em **Acesso a Objeto** e clique duas vezes em **Sistema de Arquivos de Auditoria**.  
   
-8.  Selecione o **configurar os seguintes eventos** caixa de seleção, selecione o **sucesso** e **falha** caixas de seleção e, em seguida, clique em **Okey **.  
+8.  Marque a caixa de seleção **Configurar estes eventos**, marque as caixas de seleção **Êxito** e **Falha** e clique em **OK**.  
   
-9. No painel de navegação, clique duas vezes em **Global Object Access Auditing**e clique duas vezes em **sistema de arquivos **.  
+9. No painel de navegação, clique duas vezes em **Auditoria de Acesso a Objetos Globais** e clique duas vezes em **Sistema de arquivos**.  
   
-10. Selecione o **definir esta configuração de política** caixa de seleção e clique em **configurar **.  
+10. Marque a caixa de seleção **Definir esta configuração de política** e clique em **Configurar**.  
   
-11. No **configurações de segurança avançadas para SACL Global do arquivo**, clique em **adicionar**, clique em **selecionar uma entidade de segurança**, tipo **todos**e clique em **Okey **.  
+11. Na caixa **Configurações de Segurança Avançadas de SACL de Arquivo Global**, clique em **Adicionar**, clique em **Selecionar uma entidade de segurança**, digite **Todos** e clique em **OK**.  
   
-12. No **Auditing Entry for Global SACL de arquivo** caixa, selecione **controle total** no **permissões** caixa.  
+12. Na caixa **Entrada de Auditoria para SACL de Arquivo Global**, selecione **Controle total** na caixa **Permissões**.  
   
-13. No **adicionar uma condição:** seção, clique em **adicionar uma condição** e na lista suspensa lista Selecione   
-    [**Recurso**] [**Departamento**] [**Any of**] [**Value**] [**Finanças**].  
+13. No **adicionar uma condição:** seção, clique em **adicionar uma condição** e na lista suspensa lista select   
+    [**Resource**] [**departamento**] [**qualquer um dos**] [**valor**] [**Finanças**].  
   
-14. Clique em **Okey** configuração de política de auditoria de três vezes para concluir a configuração de acesso a objetos globais.  
+14. Clique em **OK** três vezes para concluir a definição da configuração de política de auditoria de acesso a objeto global.  
   
-15. No painel de navegação, clique em **acesso a objetos**e no painel de resultados, clique duas vezes em **auditoria de manipulação de identificador **. Clique em **configurar os seguintes eventos de auditoria**, **sucesso**, e **falha**, clique em **Okey**e feche o GPO de acesso flexível.  
+15. No painel de navegação, clique em **Acesso a Objeto** e, no painel de resultados, clique duas vezes em **Auditoria de Manipulação de Identificador**. Clique em **Configurar estes eventos de auditoria**, **Êxito** e **Falha**, clique em **OK** e feche o GPO de acesso flexível.  
   
-## <a name="BKMK_2"></a>Atualizar configurações de política de grupo  
-Nesta etapa, você atualiza as configurações de política de grupo depois que tiver criado a política de auditoria.  
+## <a name="BKMK_2"></a>Atualizar as configurações de diretiva de grupo  
+Nesta etapa, atualize as configurações de Política de Grupo depois de criar a política de auditoria.  
   
-#### <a name="to-update-group-policy-settings"></a>Para atualizar as configurações de política de grupo  
+#### <a name="to-update-group-policy-settings"></a>Para atualizar as configurações de Política de Grupo.  
   
-1.  Faça logon no servidor de arquivos, arquivo1 como Contoso\administrador, com a senha **pass@word1**.  
+1.  Entrar no servidor de arquivos, FILE1 como contoso\Administrator com a senha **pass@word1**.  
   
-2.  Pressione Windows tecla + R, digite **cmd** para abrir uma janela de Prompt de comando.  
+2.  Pressione a tecla do Windows+R e digite **cmd** para abrir uma janela do Prompt de Comando.  
   
     > [!NOTE]  
-    > Se o **User Account Control** caixa de diálogo aparecer, confirme se a ação exibida é o que você deseja e clique em **Sim **.  
+    > Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
   
-3.  Tipo **gpupdate /force** e pressione ENTER.  
+3.  Digite **gpupdate /force** e pressione ENTER.  
   
-## <a name="BKMK_3"></a>Verificar se a política acesso a objetos globais foi aplicada  
-Depois que as configurações de política de grupo tiverem sido aplicadas, você pode verificar se as configurações de política de auditoria foram aplicadas corretamente.  
+## <a name="BKMK_3"></a>Verificar se a política de acesso de objetos globais foi aplicada  
+Depois que as configurações de Política de Grupo forem aplicadas, você poderá verificar se as configurações de política de auditoria foram aplicadas corretamente.  
   
-#### <a name="to-verify-that-the-global-object-access-policy-has-been-applied"></a>Para verificar se a política acesso a objetos globais foi aplicada  
+#### <a name="to-verify-that-the-global-object-access-policy-has-been-applied"></a>Para verificar se a política de acesso a objetos globais foi aplicada  
   
-1.  Faça logon computador cliente, CLIENT1 como Contoso\MReid. Navegue até a pasta hiperlink "file:///\\\ID_AD_FILE1\\\Finance" \\\ FILE1\Finance documentos e modifique 2 de documento do Word.  
+1.  Entre no computador cliente, CLIENT1 como Contoso\MReid. Navegue até a pasta HYPERLINK "file:///\\\\\\\ID_AD_FILE1\\\Finance" \\\ FILE1\Finance documentos e modifique o documento do Word 2.  
   
-2.  Faça logon servidor de arquivos, arquivo1 como Contoso\administrador. Abra o Visualizador de eventos, navegue até **Logs do Windows**, selecione **segurança**e confirme se as atividades resultaram em eventos de auditoria **4656** e **4663** (mesmo que você não tenha definido SACLs de auditoria explícitas nos arquivos ou pastas que você criou, modificou e excluiu).  
+2.  Entre no servidor de arquivos, FILE1, como contoso\administrator. Abra o Visualizador de Eventos, navegue até **Logs do Windows**, selecione **Segurança** e confirme se suas atividades resultaram nos eventos de auditoria **4656** e **4663** (embora você não tenha definido SACLs de auditoria explícitas nos arquivos ou pastas que criou, modificou e excluiu).  
   
 > [!IMPORTANT]  
-> Um novo evento de logon é gerado no computador onde o recurso está localizado, em nome do usuário para o qual o acesso eficaz está sendo verificado. Ao analisar os logs de auditoria de segurança para entrar atividade do usuário, para diferenciar entre eventos de logon são gerados por causa do acesso eficaz e os gerados devido um usuário interativo rede login, as informações do nível de representação estão incluídas. Quando o evento de logon é gerado por causa do acesso eficaz, o nível de representação será identidade. Um log de usuário interativa de rede em normalmente gera um evento de logon com o nível de representação = representação ou delegação.  
+> Um novo evento de logon é gerado no computador onde o recurso está localizado, em nome do usuário para quem o acesso efetivo está sendo verificado. Durante a análise dos logs de auditoria de segurança da atividade de logon do usuário, para diferenciar entre os eventos de logon que são gerados pelo acesso efetivo e aqueles gerados por um logon de usuário de rede interativo, as informações de Nível de Representação estão incluídas. Quando o evento de logon for gerado pelo acesso efetivo, o Nível de Representação será a Identidade. Um logon de usuário de rede interativo normalmente gera um evento de logon com o Nível de Representação = Representação ou Delegação.  
   
 ## <a name="BKMK_Links"></a>Consulte também  
   
--   [Cenário: Auditoria de acesso de arquivos](Scenario--File-Access-Auditing.md)  
+-   [Cenário: Auditoria de acesso a arquivos](Scenario--File-Access-Auditing.md)  
   
--   [Planeje para o arquivo de auditoria de acesso](Plan-for-File-Access-Auditing.md)  
+-   [Planejar para o arquivo de auditoria de acesso](Plan-for-File-Access-Auditing.md)  
   
 -   [Controle de acesso dinâmico: Visão geral do cenário](Dynamic-Access-Control--Scenario-Overview.md)  
   

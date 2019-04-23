@@ -1,5 +1,5 @@
 ---
-title: "Adicionar categorias de nível superior à barra inicial (sistema de operacional Macintosh)"
+title: Adicionar Categorias de Nível Superior à Barra Inicial (Sistema Operacional Macintosh)
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -13,18 +13,19 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: ae4eb5943d37b4a9d3b554af28cb425420782cf8
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59869957"
 ---
-# <a name="add-top-level-categories-to-the-launchpad-macintosh-operating-system"></a>Adicionar categorias de nível superior à barra inicial (sistema de operacional Macintosh)
+# <a name="add-top-level-categories-to-the-launchpad-macintosh-operating-system"></a>Adicionar Categorias de Nível Superior à Barra Inicial (Sistema Operacional Macintosh)
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Você pode adicionar categorias de nível superior à barra inicial em um computador executando o sistema operacional Macintosh. Para criar um suplemento barra inicial que adiciona categorias de nível superior, você pode usar uma combinação de informações nesta página e do tópico intitulado instruções: adicionar tarefas e categorias à barra inicial? no [SDK do Windows Server Solutions](https://go.microsoft.com/fwlink/?LinkID=248648).  
+Você pode adicionar categorias de nível superior para a Barra Inicial em um computador executando o sistema operacional Macintosh. Para criar um suplemento de barra inicial que adicione categorias de nível superior, você pode usar uma combinação de informações dessa página e do tópico intitulado instruções: Adicionar tarefas e categorias à barra inicial? no [Windows Server Solutions SDK](https://go.microsoft.com/fwlink/?LinkID=248648).  
   
- O exemplo a seguir mostra como você pode especificar sua inscrição Launchpad para ser uma categoria de alto nível no arquivo .launchpad:  
+ O seguinte exemplo mostra como você pode especificar para que a entrada da Barra Inicial seja uma categoria de nível superior no arquivo .launchpad:  
   
 ```  
   
@@ -39,10 +40,10 @@ Você pode adicionar categorias de nível superior à barra inicial em um comput
 </LaunchPad>  
 ```  
   
- Para a entrada seja uma categoria de alto nível, o atributo Id do elemento categoria deve ser "Microsoft.Launchpad.HomeCategory".  
+ Para que a entrada seja uma categoria de nível superior, o atributo Id do elemento Category deve ser "Microsoft.Launchpad.HomeCategory".  
   
 ## <a name="see-also"></a>Consulte também  
- [Criar e personalizar a imagem](Creating-and-Customizing-the-Image.md)   
+ [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do cliente](Testing-the-Customer-Experience.md)
+ [Testando a experiência do usuário](Testing-the-Customer-Experience.md)

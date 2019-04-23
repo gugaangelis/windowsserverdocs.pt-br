@@ -15,15 +15,15 @@ ms.topic: article
 ms.assetid: a8c6d5fa-399b-4823-8f10-affec1bbfe65
 ms.localizationpriority: medium
 ms.openlocfilehash: 601261780f64a779d0aa43ea8d14f58fdcb5f502
-ms.sourcegitcommit: 3883eebbba70bfea0221e510863ee1a724a5f926
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5783628"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59874137"
 ---
-# Serviços de Área de Trabalho Remota - cartaz de planejamento
+# <a name="remote-desktop-services---planning-poster"></a>Serviços de Área de Trabalho Remota - cartaz de planejamento
 
-## Serviços de Área de Trabalho Remota no Windows Server
+## <a name="remote-desktop-services-in-windows-server"></a>Serviços de Área de Trabalho Remota no Windows Server
 
 A equipe de Serviços de Área de Trabalho Remota criou um cartaz para ajudar você a planejar, compilar e executar seu ambiente de RDS.
 
@@ -34,9 +34,9 @@ Você pode obter uma cópia do pôster clicando com o botão direito do mouse na
 Confira os tópicos a seguir para saber mais sobre o planejamento:
 
 - [Planejar e projetar sua implantação do RDS](rds-plan-and-design.md)
-- [Criar e implantar o RDS](rds-build-and-deploy.md)
-- [Executar e ajustar seu ambiente de RDS](rds-run-and-tune.md)
+- [Criar e implantar RDS](rds-build-and-deploy.md)
+- [Executar e ajustar seu ambiente do RDS](rds-run-and-tune.md)
 
-## Área de trabalho Virtual do Windows
+## <a name="windows-virtual-desktop"></a>Área de trabalho Virtual do Windows
 
-Você deve ter ouvido nos falar sobre uma nova "infraestrutura moderna" área de trabalho remota. Talvez você já ouviu falar nos use a frase "RDmi". A frase que você precisa saber é "Windows Virtual Desktop". Saiba mais sobre essa nova virtualização da oferta no [Microsoft 365 adiciona a área de trabalho moderna no Azure](https://azure.microsoft.com/blog/microsoft-365-adds-modern-desktop-on-azure/) e nossa [apresentação do Ignite 2018 na área de trabalho Virtual do Windows](https://www.youtube.com/watch?v=_7G37PFYVe4). Área de trabalho Virtual do Windows está atualmente em visualização particular.
+Você pode ter ouvido falar sobre uma nova "moderna infra-estrutura" para a área de trabalho remota. Talvez você já deve ter ouvido use a frase "RDmi". A frase que você precisa saber é o "Windows Virtual Desktop." Saiba mais sobre essa virtualização nova oferta [Microsoft 365 adiciona a área de trabalho moderna no Azure](https://azure.microsoft.com/blog/microsoft-365-adds-modern-desktop-on-azure/) e em nosso [apresentação do Ignite 2018 na área de trabalho Virtual do Windows](https://www.youtube.com/watch?v=_7G37PFYVe4). Área de trabalho Virtual do Windows está atualmente em versão prévia privada.

@@ -1,6 +1,6 @@
 ---
-title: Protocolo de datagrama Transport Layer Security
-description: "Segurança do Windows Server"
+title: Protocolo DTLS
+description: Segurança do Windows Server
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,28 +12,29 @@ ms.assetid: 57b8873a-ad9c-4f2c-93e0-a2af352c6965
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
-ms.date: 10/12/2016
-ms.openlocfilehash: 31c1cf1f3218c0511a4407b560be30d0c6f86233
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
+ms.date: 05/16/2018
+ms.openlocfilehash: b32ebafff5e41d5c3140f008f6f391852f2f3474
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59870787"
 ---
-# Protocolo de datagrama Transport Layer Security
+# <a name="datagram-transport-layer-security-protocol"></a>Protocolo DTLS
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+Windows Server (canal semestral), Windows Server 2016, Windows 10
 
-Este tópico de referência para o profissional de TI descreve o protocolo de datagrama Transport Layer Security (DTLS), que faz parte do Schannel Security Support Provider (SSP).
+Este tópico de referência para profissionais de TI descreve o protocolo DTLS Datagram Transport Layer Security (), que faz parte do Schannel segurança suporte Provider (SSP).
 
 ## <a name="BKMK_DTLS"></a>
-Introduzido no Schannel SSP no Windows Server 2012 e Windows 8, o protocolo DTLS fornece a privacidade de comunicação para os protocolos de datagrama. Para obter informações sobre quais DTLS versão tem suporte nas versões do Windows, consulte [protocolos TLS/SSL (Schannel SSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/mt808159(v=vs.85).aspx). O protocolo permite que aplicativos cliente e servidor para se comunicar de maneira que foi projetada para impedir a interceptação, adulteração ou falsificação de mensagem. O protocolo DTLS é baseado no protocolo Transport Layer Security (TLS), e ele fornece garantias de segurança equivalente, reduzindo a necessidade de usar IPsec ou a criação de um protocolo de segurança de camada de aplicativo personalizado.
+Introduzido no SSP Schannel no Windows Server 2012 e Windows 8, o protocolo DTLS proporciona privacidade de comunicação para protocolos de datagrama. Para obter informações sobre quais DTLS versão é suportada em versões do Windows, consulte [protocolos em TLS/SSL (Schannel SSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/mt808159(v=vs.85).aspx). O protocolo permite que aplicativos cliente e servidor se comuniquem de uma maneira concebida para impedir espionagem, sabotagem ou falsificação de mensagem. O protocolo DTLS baseia-se no protocolo TLS e fornece garantias de segurança equivalentes, reduzindo a necessidade de usar o IPsec ou criar um protocolo personalizado de segurança de camada de aplicativos.
 
-Datagramas são comuns em streaming de mídia, como jogo ou protegida videoconferência. Os desenvolvedores podem desenvolver aplicativos para usar o protocolo DTLS dentro do contexto do modelo de Interface de provedor de suporte de segurança (SSPI) de autenticação do Windows para proteger a comunicação entre clientes e servidores. O protocolo DTLS baseia-se sobre o protocolo (UDP). DTLS foi projetado para ser mais semelhante ao TLS quanto possível para minimizar invenção de segurança e para maximizar a quantidade de reutilização de código e infraestrutura.
+Datagramas são comuns em streaming de mídia, como jogo ou videoconferência segura. Os desenvolvedores podem desenvolver aplicativos para usar o protocolo DTLS dentro do contexto do modelo de Interface de provedor de suporte de segurança (SSPI) de autenticação do Windows para proteger a comunicação entre clientes e servidores. O protocolo DTLS baseia-se sobre o protocolo UDP (User Datagram). DTLS foi projetado para ser o mais semelhantes ao TLS possível para minimizar novas invenções de segurança e maximizar a quantidade de reutilização de código e infraestrutura.
 
-Os pacotes de codificação que estão disponíveis para configuração padronizadas após os que você pode definir para TLS. RC4 não é permitido. Schannel continua a usar a criptografia de próxima geração (CNG). Isso tira proveito da certificação FIPS 140, que foi introduzido no Windows Vista.
+Os conjuntos de codificação que estão disponíveis para configuração em conformidade com as que possíveis para o TLS. RC4 não é permitido. Schannel continua a usar a geração de CNG (Cryptography Next). Ele se beneficia de certificação FIPS 140, que foi introduzida no Windows Vista.
 
-## Consulte também
+## <a name="see-also"></a>Consulte também
 
-[IETF RFC 4347 datagrama Transport Layer Security](http://tools.ietf.org/html/rfc4347)
+[Segurança da camada de transporte do datagrama IETF RFC 4347](http://tools.ietf.org/html/rfc4347)
 
 

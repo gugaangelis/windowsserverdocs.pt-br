@@ -1,6 +1,6 @@
 ---
-title: "O que há de novo para contas de serviço gerenciado"
-description: "Segurança do Windows Server"
+title: What's New for Managed Service Accounts
+description: Segurança do Windows Server
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,48 +14,49 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: cac55d04a40c84ce160eb3883d6095a7db0ef3be
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59872177"
 ---
-# <a name="what39s-new-for-managed-service-accounts"></a>O que & #39; s novo para contas de serviço gerenciado
+# <a name="what39s-new-for-managed-service-accounts"></a>O que&#39;s novo para contas de serviço gerenciado
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Este tópico para o profissional de TI descreve as alterações na funcionalidade para contas de serviço gerenciado com a introdução do grupo de conta de serviço gerenciado (gMSA) no Windows Server 2012 e Windows 8.
+Este tópico para profissionais de TI descreve as alterações na funcionalidade para contas de serviço gerenciado com a introdução do grupo de conta de serviço gerenciado (gMSA) no Windows Server 2012 e Windows 8.
 
-A conta de serviço gerenciado é projetada para fornecer serviços e tarefas como pools de aplicativos do IIS para compartilhar suas próprias contas de domínio, eliminando a necessidade de um administrador administrar manualmente as senhas para essas contas e serviços do Windows. É uma conta de domínio gerenciado que fornece gerenciamento automático de senha.
+A conta de serviço gerenciado foi desenvolvida para fornecer serviços e tarefas, como serviços do Windows e pools de aplicativos do IIS, para compartilhar suas próprias contas de domínio, ao mesmo tempo em que elimina a necessidade de um administrador para administrar manualmente as senhas dessas contas. É uma conta de domínio gerenciado que oferece o gerenciamento automático de senha.
 
 ## <a name="versions"></a>Quais são as novidades para contas de serviço gerenciado no Windows Server 2012 e Windows 8
-A seguir descreve quais alterações na funcionalidade foram feitas MSA no Windows Server 2012 e Windows 8.
+O exemplo a seguir descreve quais alterações na funcionalidade foram feitas para MSA no Windows Server 2012 e Windows 8.
 
-### <a name="group-managed-service-accounts"></a>Contas de serviço gerenciado do grupo
-Quando uma conta de domínio está configurada para um servidor em um domínio, o computador cliente pode autenticar e se conectar a esse serviço. Anteriormente, apenas dois tipos de conta tem fornecido identidade sem a necessidade de gerenciamento de senhas. Mas esses tipos de conta têm limitações:
+### <a name="group-managed-service-accounts"></a>Contas de serviço gerenciado de grupo
+Quando uma conta de domínio está configurada para um servidor em um domínio, o computador cliente pode autenticar e conectar a esse serviço. Anteriormente, apenas dois tipos de conta forneciam identidade sem exigir o gerenciamento de senha. Porém, esses tipos de conta têm limitações:
 
--   Conta de computador é limitada a um servidor de domínio e as senhas são gerenciadas pelo computador
+-   A conta de computador é limitada a um servidor de domínio e as senhas são gerenciadas pelo computador.
 
--   Conta de serviço gerenciado é limitada ao servidor de um domínio e as senhas são gerenciadas pelo computador.
+-   A Conta de Serviço Gerenciado é limitada a um servidor de domínio e as senhas são gerenciadas pelo computador.
 
-Essas contas não podem ser compartilhadas entre vários sistemas. Portanto, você deverá manter regularmente a conta para cada serviço em cada sistema para evitar a expiração de senha indesejados.
+Essas contas não podem ser compartilhadas por vários sistemas. Portanto, você deve manter regularmente a conta de cada serviço em cada sistema para impedir a expiração indesejada da senha.
 
-**O valor adicione essa alteração?**
+**Qual é o valor agregado desta alteração?**
 
-O grupo de conta de serviço gerenciado resolve esse problema porque a senha da conta é gerenciada pelos controladores de domínio do Windows Server 2012 e pode ser recuperada por vários sistemas Windows Server 2012. Isso reduz a sobrecarga administrativa de uma conta de serviço, permitindo que o Windows lidar com o gerenciamento de senhas para essas contas.
+A conta de serviço gerenciado de grupo resolve esse problema porque a senha da conta é gerenciada por controladores de domínio do Windows Server 2012 e pode ser recuperada por vários sistemas Windows Server 2012. Isso minimiza a sobrecarga administrativa de uma conta de serviço, permitindo que o Windows controle o gerenciamento de senha dessas contas.
 
-**O que funciona de modo diferente?**
+**O que passou a funcionar de maneira diferente?**
 
-Em computadores executando o Windows Server 2012 ou Windows 8, um grupo MSA pode ser criado e gerenciado pelo Gerenciador de controle de serviço para que várias instâncias do serviço, como implantados por um farm de servidores, pode ser gerenciado de um servidor. Ferramentas e utilitários que você usou para administrar as contas de serviço gerenciado, como o Gerenciador de Pool de aplicativos do IIS, podem ser usados com contas de serviço gerenciado do grupo. Os administradores de domínio podem delegar o gerenciamento de serviço para administradores de serviços, que podem gerenciar o ciclo de vida de uma conta de serviço gerenciado ou o grupo de conta de serviço gerenciado. Computadores cliente existente será capazes de autenticar tais serviços sem saber qual instância de serviço que eles sejam autenticados para.
+Em computadores que executam o Windows Server 2012 ou Windows 8, um grupo de MSA pode ser criada e gerenciada por meio do Gerenciador de controle de serviço para que várias instâncias do serviço, como implantadas em um farm de servidor, pode ser gerenciado de um servidor. Ferramentas e utilitários que você usava para administrar Contas de Serviço Gerenciado, como o Gerenciador de Pool de Aplicativos do IIS, podem ser usados com Contas de Serviço Gerenciado de grupo. Administradores de domínio podem delegar o gerenciamento de serviços a administradores de serviço, que por sua vez podem gerenciar todo o ciclo de vida de uma Conta de Serviços Gerenciados ou da Conta de Serviços Gerenciados de grupo. Os computadores cliente existentes poderão autenticar em qualquer serviço desse tipo sem saber em que instância de serviço estão autenticando.
 
 ### <a name="interoperability"></a>Funcionalidade removida ou preterida
-Para o Windows Server 2012, o padrão de cmdlets do Windows PowerShell para gerenciar as contas de serviço do grupo gerenciado em vez das contas de serviço gerenciado do servidor.
+Para Windows Server 2012, o padrão de cmdlets do Windows PowerShell para gerenciar as contas de serviço de gerenciado de grupo em vez das contas de serviço gerenciado do servidor.
 
 ## <a name="see-also"></a>Consulte também
 
--   [Visão geral de contas de serviço gerenciado grupo](group-managed-service-accounts-overview.md)
+-   [Visão geral das contas de serviço gerenciado de grupo](group-managed-service-accounts-overview.md)
 
 -   [Visão geral dos serviços de domínio do Active Directory](active-directory-domain-services-overview.md)
 
--   [Noções básicas sobre contas de serviço gerenciado:, Implementação de práticas recomendadas e solução de problemas](http://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
+-   [Contas de serviço gerenciado: Compreendendo, Implementando, práticas recomendadas e solução de problemas](http://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
 
 
