@@ -13,16 +13,17 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: a02c624efa452b76fc404d58c25b94c310b93628
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59854927"
 ---
 # <a name="customize-and-deploy-windows-server-essentials"></a>Personalizar e implantar o Windows Server Essentials
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
   
- Para personalizar e implantar o Windows Server Essentials, use as informações a [Kit de avaliação e implantação (Windows ADK)](https://www.microsoft.com/download/details.aspx?id=39982) e em [personalizar e implantar o Windows Server Essentials no Windows Server 2012 R2](https://technet.microsoft.com/library/dn293241.aspx).  
+ Para personalizar e implantar o Windows Server Essentials, use a informação no [Kit de Avaliação e Implantação do Windows (Windows ADK)](https://www.microsoft.com/download/details.aspx?id=39982) e em [Personalizar e implantar o Windows Server Essentials no Windows Server 2012 R2](https://technet.microsoft.com/library/dn293241.aspx).  
   
 ## <a name="see-also"></a>Consulte também  
   

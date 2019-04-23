@@ -11,20 +11,20 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.openlocfilehash: 4127eab613abb429a200f513a11b944e05da0f76
-ms.sourcegitcommit: 9ed4c9fe04ebf3ef488170503c9a354c992b6fde
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4339364"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59851337"
 ---
-# Fazer upgrade do Windows Server 2008 e do Windows Server 2008 R2
+# <a name="upgrade-windows-server-2008-and-windows-server-2008-r2"></a>Fazer upgrade do Windows Server 2008 e do Windows Server 2008 R2
 
-O suporte estendido para Windows Server 2008 e Windows Server 2008 R2 terminará em 14 de janeiro de 2020. Existem dois caminhos de modernização disponíveis: upgrade local ou migração por nova hospedagem no Azure. **Se você hospedar novamente no Azure, poderá migrar suas imagens existentes do Servidor gratuitamente.**
+O suporte estendido para Windows Server 2008 e Windows Server 2008 R2 terminará em 14 de janeiro de 2020. Há dois caminhos de modernização disponíveis: Local de atualização ou migração por nova hospedagem no Azure. **Se você hospedar novamente no Azure, você pode migrar suas imagens de servidor existentes gratuitamente.**
 
 ![Fluxograma que descreve os caminhos de upgrade do Windows Server 2008](media/WS08_upgrade_paths.png)
 
 
-## Upgrade local
+## <a name="on-premises-upgrade"></a>Upgrade local
 Se precisar manter seu servidores no local e se estiver executando o Windows Server 2008 ou o Windows Server 2008 R2, você precisará [fazer upgrade para o Windows Server 2012/2012 R2](installation-and-upgrade.md#upgrading-to-windows-server-2012-r2) antes de poder [fazer upgrade para o Windows Server 2016](installation-and-upgrade.md#upgrading-to-windows-server-2016). Conforme faz upgrade, você ainda terá a opção de migrar para o Azure por nova hospedagem.
 
 Veja [Upgrade do Windows Server 2008 R2 ou do Windows Server 2008](installation-and-upgrade.md#upgrading-from-windows-server-2008-r2-or-windows-server-2008) para obter mais informações sobre suas opções de upgrade local.
@@ -32,7 +32,7 @@ Veja [Upgrade do Windows Server 2008 R2 ou do Windows Server 2008](installation-
 Se estiver executando o Windows Server 2003, você precisará [fazer upgrade para o Windows Server 2008](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff972408(v%3dws.10)). Veja os [caminhos de upgrade para o Windows Server 2008](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd979563(v=ws.10)) para obter mais informações sobre suas opções de upgrade local.
 
 
-## Migrar para o Azure
+## <a name="migrate-to-azure"></a>Migrar para o Azure
 Você pode migrar seus servidores locais do Windows Server 2008 e do Windows Server 2008 R2 para o Azure, onde poderá prosseguir para executá-los em máquinas virtuais. No Azure, você permanecerá em conformidade, ficará mais protegido e adicionará inovação de nuvem ao seu trabalho. Os benefícios de migração para o Azure incluem:
 
 - Atualizações de segurança no Azure.
@@ -49,12 +49,12 @@ Para iniciar a migração, veja [Fazer upload de uma imagem especializada do Win
 Para ajudá-lo a entender como analisar os recursos de TI existentes, avalie o que você tem e identifique os benefícios da mudança de serviços e aplicativos para a nuvem ou de manter as cargas de trabalho locais e do upgrade para a última versão do Windows Server, veja [Guia de migração para o Windows Server](https://go.microsoft.com/fwlink/?linkid=872689).
 
 
-## Fazer upgrade do SQL Server 2008/2008 R2 em paralelo com os servidores do Windows
+## <a name="upgrade-sql-server-20082008-r2-in-parallel-with-your-windows-servers"></a>Fazer upgrade do SQL Server 2008/2008 R2 em paralelo com os servidores do Windows
 
 ![Logotipo do SQL Server](media/sqlr2.jpg)
 
 Se estiver executando o SQL Server 2008/2008 R2, poderá fazer upgrade para o SQL Server [2016](https://docs.microsoft.com/sql/sql-server/sql-server-technical-documentation?view=sql-server-2016) ou [2017](https://docs.microsoft.com/sql/sql-server/sql-server-technical-documentation?view=sql-server-2017).
 
 
-## Recursos adicionais
+## <a name="additional-resources"></a>Recursos adicionais
 [Microsoft Azure](https://docs.microsoft.com/azure/#pivot=products)

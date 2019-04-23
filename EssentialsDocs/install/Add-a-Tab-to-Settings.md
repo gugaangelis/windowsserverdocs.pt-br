@@ -1,5 +1,5 @@
 ---
-title: "Adicionar uma guia às configurações"
+title: Adicionar uma guia a Configurações
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -13,53 +13,54 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 9eaa1aa5a9c5e8d4c2e36f2000e0adecc83245d9
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59854977"
 ---
-# <a name="add-a-tab-to-settings"></a>Adicionar uma guia às configurações
+# <a name="add-a-tab-to-settings"></a>Adicionar uma guia a Configurações
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Você pode adicionar uma guia às configurações no painel criando e instalando um assembly de código que é usado pelo Gerenciador de configurações no sistema operacional.  
+Você pode adicionar uma guia a Configurações no Dashboard criando e instalando um assembly de código usado pelo Gerenciador de Parâmetros no sistema operacional.  
   
-## <a name="add-a-tab-to-settings"></a>Adicionar uma guia às configurações  
- Adicionar uma guia Configurações, executando as seguintes tarefas:  
+## <a name="add-a-tab-to-settings"></a>Adicionar uma guia a Configurações  
+ Você adiciona uma guia a Configurações executando as seguintes tarefas:  
   
--   [Adicione uma implementação da interface ISettingsData ao assembly](Add-a-Tab-to-Settings.md#BKMK_ISettingsData).  
+-   [Adicionar uma implementação da interface ISettingsData ao assembly](Add-a-Tab-to-Settings.md#BKMK_ISettingsData).  
   
--   [Assine o assembly com uma assinatura de Authenticode](Add-a-Tab-to-Settings.md#BKMK_SignAssembly).  
+-   [Sign the assembly with an Authenticode signature](Add-a-Tab-to-Settings.md#BKMK_SignAssembly).  
   
--   [Instale o assembly no computador de referência](Add-a-Tab-to-Settings.md#BKMK_InstallAssembly).  
+-   [Instalar o assembly no computador de referência](Add-a-Tab-to-Settings.md#BKMK_InstallAssembly).  
   
-###  <a name="BKMK_ISettingsData"></a>Adicione uma implementação da interface ISettingsData ao assembly  
- Interface ISettingsData está incluída no namespace Microsoft.WindowsServerSolutions.Settings do assembly AdminCommon.dll que está localizado na \Program Files\Windows Server\Bin.  
+###  <a name="BKMK_ISettingsData"></a> Adicionar uma implementação da interface ISettingsData ao assembly  
+ A interface ISettingsData está incluída no namespace Microsoft.WindowsServerSolutions.Settings do assembly do AdminCommon.dll localizado em \Arquivos de programa\Windows Server\Bin.  
   
-##### <a name="to-add-the-isettingsdata-code-to-the-assembly"></a>Para adicionar o código ISettingsData ao assembly  
+##### <a name="to-add-the-isettingsdata-code-to-the-assembly"></a>Para adicionar o código de ISettingsData ao assembly  
   
-1.  Abra o Visual Studio 2010 como um administrador clicando com o programa no **iniciar** menu e selecionando **executar como administrador**.  
+1.  Abra o Visual Studio 2010 como administrador clicando com o botão direito do mouse no programa no menu **Iniciar** e selecione **Executar como administrador**.  
   
-2.  Clique em **arquivo**, clique em **nova**e clique em **projeto**.  
+2.  Clique em **Arquivo**, em **Novo**e em **Projeto**.  
   
-3.  No **novo projeto** caixa de diálogo, clique em **Visual c#**, clique em **biblioteca de classes**, insira **DashboardSettingsPage** para o nome para a solução e clique **Okey**.  
+3.  Na caixa de diálogo **Novo Projeto** , clique em **Visual C#**, clique em **Biblioteca de Classes**, digite **DashboardSettingsPage** para o nome da solução e clique em **OK**.  
   
     > [!IMPORTANT]
-    >  O assembly que está instalado no servidor deve ser nomeado DashboardSettingsPage.dll e, em seguida, copie a dll para %ProgramFiles%\Windows server\bin\OEM..  
+    >  O assembly instalado no servidor deve ser chamado de DashboardSettingsPage.dll e então copiar o dll em %Arquivos de programas%\Windows Server\Bin\OEM.  
   
-4.  Crie o controle que você deseja usar na guia. Neste exemplo o controle de configurações é chamado de Meucontroledeconfigurações.  
+4.  Criar o controle que você deseja usar na guia. Neste exemplo, o controle de configurações é nomeado MySettingsControl.  
   
 5.  Renomeie o arquivo Class1.cs. Por exemplo, MySettingTab.cs.  
   
-6.  Adicione uma referência ao arquivo AdminCommon.dll.  
+6.  Adicionar uma referência ao arquivo AdminCommon.dll.  
   
-7.  Adicione a seguinte instrução using:  
+7.  Adicionar a seguinte instrução de uso:  
   
     ```c#  
     using Microsoft.WindowsServerSolutions.Settings;  
     ```  
   
-8.  Altere o namespace e o cabeçalho de classe para coincidir com o exemplo a seguir:  
+8.  Altere o namespace e o cabeçalho de classe para corresponder ao exemplo a seguir:  
   
     ```  
   
@@ -78,7 +79,7 @@ Você pode adicionar uma guia às configurações no painel criando e instalando
     private MySettingsControl tab;  
     ```  
   
-10. Adicione o construtor da classe. O exemplo de código a seguir mostra o construtor:  
+10. Adicionar o construtor da classe. O exemplo de código a seguir mostra o construtor:  
   
     ```  
   
@@ -120,7 +121,7 @@ Você pode adicionar uma guia às configurações no painel criando e instalando
     }  
     ```  
   
-14. Adicione o método TabOrder, que retorna a ordem da guia. O exemplo de código a seguir mostra o método TabOrder:  
+14. Adicione o método TabOrder, que retorna a ordem das guias. O exemplo de código a seguir mostra o método TabOrder:  
   
     ```  
   
@@ -131,7 +132,7 @@ Você pode adicionar uma guia às configurações no painel criando e instalando
     ```  
   
     > [!NOTE]
-    >  A ordem de tabulação é definida usando números a partir de 0. As guias de configurações internas da Microsoft são exibidas primeiro e, em seguida, as guias são exibidas com base na ordem de tabulação que você definir. Por exemplo, se você tiver três guias de configurações, especifique a ordem de tabulação como 0, 1 e 2, com base na ordem em que você deseja que as guias sejam exibidos.  
+    >  A ordem da guia é definida usando números iniciando em 0. As guias de configuração internas da Microsoft são exibidas primeiro; a seguir, suas guias são exibidas, com base na ordem de guias definida por você. Por exemplo, se você tem três guias de configuração, especifique a ordem das guias como 0, 1 e 2 com base na ordem em que deseja que elas sejam exibidas.  
   
 15. Adicione o método TabTitle, que fornece o título da guia. O exemplo de código a seguir mostra o método TabTitle:  
   
@@ -144,20 +145,20 @@ Você pode adicionar uma guia às configurações no painel criando e instalando
     ```  
   
     > [!NOTE]
-    >  O texto do título também pode vir de um arquivo de recurso para acomodar as necessidades de localização.  
+    >  O texto do título também pode vir de um arquivo de recurso para acomodar necessidades de localização.  
   
-16. Salve e compile a solução.  
+16. Salve e crie a solução.  
   
-###  <a name="BKMK_SignAssembly"></a>Assine o assembly com uma assinatura de Authenticode  
- Você deve assinar o assembly com Authenticode para ser usado no sistema operacional. Para obter mais informações sobre como assinar o assembly, consulte [assinando e verificando códigos com Authenticode](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode).  
+###  <a name="BKMK_SignAssembly"></a> Assinar o assembly com uma assinatura Authenticode  
+ Você deve assinar com a Authenticode o assembly para que seja usado no sistema operacional. Para obter mais informações sobre a assinatura do assembly, consulte [Assinando e verificando códigos com Authenticode](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode).  
   
-###  <a name="BKMK_InstallAssembly"></a>Instale o assembly no computador de referência  
- Depois de compilar com êxito a solução, coloque uma cópia do arquivo DashboardSettingsPage.dll na seguinte pasta no computador de referência:  
+###  <a name="BKMK_InstallAssembly"></a> Instalar o assembly no computador de referência  
+ Depois de criar a solução com êxito, coloque uma cópia do arquivo DashboardSettingsPage.dll na seguinte pasta no computador de referência:  
   
- **%ProgramFiles%\Windows server\bin\OEM.**  
+ **%Programfiles%\Windows Server\Bin\OEM**  
   
 ## <a name="see-also"></a>Consulte também  
- [Criar e personalizar a imagem](Creating-and-Customizing-the-Image.md)   
+ [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do cliente](Testing-the-Customer-Experience.md)
+ [Testando a experiência do usuário](Testing-the-Customer-Experience.md)

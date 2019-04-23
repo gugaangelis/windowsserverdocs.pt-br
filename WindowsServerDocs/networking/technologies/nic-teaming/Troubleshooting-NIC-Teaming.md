@@ -1,7 +1,7 @@
 ---
-title: Solução de problemas NIC agrupamento
-description: Este tópico fornece informações sobre como solucionar problemas de agrupamento de placa de rede no Windows Server 2016.
-manager: brianlic
+title: Solucionar problemas de agrupamento NIC
+description: Este tópico fornece informações sobre como solucionar problemas de agrupamento NIC no Windows Server 2016.
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,54 +13,54 @@ ms.topic: article
 ms.assetid: fdee02ec-3a7e-473e-9784-2889dc1b6dbb
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 634ec1a5eee0cd661ca89c2673e5b74abd458cd6
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 09/13/2018
+ms.openlocfilehash: d39dc6a4dcf5dca8186b0599fb479ed5ae684e0f
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59856247"
 ---
-# <a name="troubleshooting-nic-teaming"></a>Solução de problemas NIC agrupamento
+# <a name="troubleshooting-nic-teaming"></a>Solucionar problemas de agrupamento NIC
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Este tópico fornece informações sobre como solucionar problemas de agrupamento de NIC e contém as seguintes seções, que descrevem as causas possíveis problemas com o agrupamento de placa de rede.  
+Neste tópico, discutiremos maneiras de solucionar problemas de agrupamento NIC, como o hardware e valores mobiliários de comutador físico.  Quando as implementações de protocolos padrão de hardware não está em conformidade com as especificações, o agrupamento NIC desempenho pode ser afetado. Além disso, dependendo da configuração, o agrupamento NIC pode enviar pacotes do mesmo endereço IP com vários endereços MAC enganar os recursos de segurança no comutador físico.
+
   
--   [Hardware que não seguem a especificação](#bkmk_hardware)  
+## <a name="hardware-that-doesnt-conform-to-specification"></a>Hardware que não se adequa à especificação  
   
--   [Recursos de segurança do comutador físico](#bkmk_switch)  
+Durante a operação normal, o agrupamento NIC pode enviar pacotes do mesmo endereço IP, ainda com vários endereços MAC. Acordo com os padrões de protocolo, os destinatários desses pacotes devem resolver o endereço IP do host ou VM para um endereço MAC específico em vez de responder ao endereço MAC do pacote de recebimento.  Os clientes que implementam corretamente os protocolos de resolução de endereço (ARP e NDP) enviam pacotes com os endereços MAC de destino correto — ou seja, o endereço MAC do host que possui esse endereço IP ou VM. 
   
--   [Desabilitar e habilitar com o Windows PowerShell](#bkmk_ps)  
+Alguns hardwares incorporado não implementam os protocolos de resolução de endereço corretamente e também podem não explicitamente resolver um endereço IP para um endereço MAC usando ARP ou NDP.  Por exemplo, um controlador de rede (SAN) de área de armazenamento pode executar dessa maneira. Dispositivos não conformes copiem o endereço MAC de origem de um pacote recebido e, em seguida, usá-lo como o endereço MAC de destino em que os pacotes de saída correspondentes, resultando em pacotes que estão sendo enviados para o endereço MAC de destino incorreto. Por isso, os pacotes são descartados pelo comutador Virtual Hyper-V porque elas não corresponderem a qualquer destino conhecido.  
   
-## <a name="bkmk_hardware"></a>Hardware que não seguem a especificação  
-Quando implementações de hardware de protocolos padrão não estão em conformidade com a especificação, desempenho NIC agrupamento pode ser afetado.  
+Se você estiver tendo problemas ao se conectar a controladores de SAN ou outro incorporado a hardware, você deve obter capturas de pacotes para determinar se o hardware corretamente está implementando ARP ou NDP e entre em contato com seu fornecedor de hardware para suporte.  
+
   
-Durante a operação normal, NIC agrupamento pode enviar pacotes do mesmo endereço IP, mas com acesso de mídia de origem diferentes vários endereços MAC (controle). Acordo com padrões de protocolo, os receptores desses pacotes devem resolver o endereço IP do host ou VM um endereço MAC específico em vez de responder para o endereço MAC do qual o pacote foi recebido.  Os clientes que implementam corretamente os protocolos de resolução de endereço, Address Resolution Protocol (ARP do IPv4) ou protocolo de descoberta de vizinho do IPv6 (NDP), enviarão pacotes com o endereço MAC (o endereço MAC do host que possui o endereço IP ou da VM) de destino correto.  
+## <a name="physical-switch-security-features"></a>Recursos de segurança de comutador físico  
+Dependendo da configuração, o agrupamento NIC enviar pacotes do mesmo endereço IP com vários endereços MAC de origem enganar os recursos de segurança no comutador físico. Por exemplo, inspeção dinâmica ARP ou proteção de origem IP, especialmente se o comutador físico não está ciente que as portas fazem parte de uma equipe, que ocorre quando você configurar o agrupamento NIC no modo de comutador independente. Inspecione os logs de comutador para determinar se os recursos de segurança do comutador estão causando problemas de conectividade. 
   
-Alguns inserido hardware, no entanto, não implementam corretamente os protocolos de resolução de endereço e também podem não explicitamente resolver um endereço IP para um endereço MAC usando ARP ou NDP.  Um controlador de rede (SAN) de área de armazenamento é um exemplo de um dispositivo que pode realizar dessa maneira. Dispositivos em conformidade não copiar a origem de endereço MAC que está contido em um pacote recebido e usá-lo como o endereço MAC nos pacotes de saída correspondentes de destino.  
+## <a name="disabling-and-enabling-network-adapters-by-using-windows-powershell"></a>Desabilitando e habilitando os adaptadores de rede usando o Windows PowerShell  
+
+Uma razão comum para uma equipe NIC de falha é que a interface de equipe esteja desabilitada e em muitos casos, por engano ao executar uma sequência de comandos.  Essa sequência de comandos em particular não permite que todos os NetAdapters desabilitada porque a desabilitação de todos os membros físicos subjacentes de NICs remove a interface de equipe NIC. 
+
+Nesse caso, a interface de equipe NIC não exibe em Get-NetAdapter e, por isso, **Enable-NetAdapter \***  não permite o agrupamento NIC. O **Enable-NetAdapter \***  comando, no entanto, habilitar NICs, o membro que recria a interface de equipe, em seguida, (após alguns instantes). A interface de equipe permanece no estado "desabilitado" até habilitado novamente, permitindo o tráfego de rede começar a fluir. 
+
+A seguinte sequência de Windows PowerShell de comandos pode desabilitar a interface de equipe por engano:  
   
-Isso resulta no pacote enviado para o endereço MAC de destino errado. Por isso, os pacotes são ignorados pelo Switch Hyper-V Virtual porque eles não corresponderem qualquer destino conhecido.  
-  
-Se você estiver tendo problemas ao se conectar a controladores de SAN ou outro hardware inserido, tirar capturas de pacote e determine se seu hardware é implementar corretamente ARP ou NDP e contate o fornecedor de hardware para suporte.  
-  
-## <a name="bkmk_switch"></a>Recursos de segurança do comutador físico  
-Dependendo da configuração, a NIC agrupamento pode enviar pacotes do mesmo endereço IP com vários endereços MAC de fonte diferente.  Isso pode viagem a segurança proteger recursos sob o comutador físico, como inspeção dinâmica de ARP ou origem IP, especialmente se o comutador físico não está ciente de que as portas são parte de uma equipe. Isso pode ocorrer se você definir o agrupamento de NIC no modo independente do Switch.  Você deve inspecionar os logs de alternar para determinar se os recursos de segurança do switch estão causando problemas de conectividade com NIC agrupamento.  
-  
-## <a name="bkmk_ps"></a>Desabilitar e habilitar os adaptadores de rede usando o Windows PowerShell  
-Um motivo comum para uma equipe de NIC falhar é que a interface de equipe está desabilitada. Em muitos casos, a interface está desabilitada por acidente quando a seguinte sequência do Windows PowerShell de comandos é executada:  
-  
-```  
+```PowerShell 
 Disable-NetAdapter *  
 Enable-NetAdapter *  
 ```  
   
-Esta sequência de comandos não habilite todos os NetAdapters que ele desabilitado.  
+
   
-Isso ocorre porque desabilitar todas as NICs físico membro subjacente faz com que a interface de equipe NIC a ser removido e não aparecerão mais no Get-NetAdapter. Por isso, o **NetAdapter habilitar \ *** comando não habilita a equipe de NIC, porque esse adaptador é removido.  
-  
-O **NetAdapter habilitar \ *** comando, no entanto, ativar a configuração membro NICs, que, em seguida, (após um curto período de tempo) faz com que a interface de equipe ser recriadas. Neste caso, a interface de equipe ainda está em um estado "desabilitado" porque não foi reativado. Habilitando a interface de equipe depois que ele é recriado permitirá que o tráfego de rede começar a fluir novamente.  
-  
-## <a name="see-also"></a>Consulte também  
-[Agrupamento de NIC](NIC-Teaming.md)  
+## <a name="related-topics"></a>Tópicos relacionados  
+- [Agrupamento NIC](NIC-Teaming.md): Neste tópico, nós fornecemos a você uma visão geral do agrupamento de placa de Interface de rede (NIC) no Windows Server 2016. Agrupamento NIC permite que você agrupe entre um e 32 adaptadores de rede Ethernet física em um ou mais adaptadores de rede virtual baseada em software. Esses adaptadores de rede virtual oferecem desempenho rápido e tolerância a falhas no caso de uma falha do adaptador de rede.   
+
+- [Gerenciamento e uso do endereço MAC de agrupamento NIC](NIC-Teaming-MAC-Address-Use-and-Management.md): Quando você configura uma equipe NIC com a opção de modo independente e hash de endereço ou distribuição de carga dinâmico, a equipe usa que o acesso à mídia (MAC) de endereço do membro da equipe de NIC primário no tráfego de saída de controle. O membro da equipe de NIC primário é um adaptador de rede selecionado pelo sistema operacional do conjunto inicial de membros da equipe.
+
+- [Configurações de agrupamento NIC](nic-teaming-settings.md): Neste tópico, podemos lhe dar uma visão geral das propriedades de agrupamento NIC, como agrupamento e modos de balanceamento de carga. Nós também fornecemos a você detalhes sobre a configuração do adaptador em espera e a propriedade de interface de equipe principal. Se você tiver pelo menos dois adaptadores de rede em um agrupamento NIC, você não precisa designar um adaptador de modo de espera para tolerância a falhas.
   
 
 

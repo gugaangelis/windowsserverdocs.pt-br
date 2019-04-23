@@ -1,7 +1,7 @@
 ---
 ms.assetid: 7d230527-f4fe-4572-8838-0b354ee0b06b
-title: "Adicionar uma descrição de declaração"
-description: 
+title: Adicionar uma descrição da declaração
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,47 +10,48 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 0e388ef656d3b690da62b077cb9f9e678a771e64
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59851427"
 ---
-# <a name="add-a-claim-description"></a>Adicionar uma descrição de declaração
+# <a name="add-a-claim-description"></a>Adicionar uma descrição da declaração
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
-Em uma organização de parceiro de conta, os administradores criar declarações para representar a participação do usuário em um grupo ou função ou para representar alguns dados sobre um usuário, por exemplo, um usuário funcionário número de identificação.
+Em uma organização do parceiro de conta, os administradores criam declarações para representar a associação de um usuário em um grupo ou uma função ou para representar alguns dados sobre um usuário, por exemplo, um usuário funcionário número de identificação.
 
-Em uma organização de parceiro de recurso, os administradores criar declarações correspondentes para representar grupos e os usuários que podem ser reconhecidos como usuários do recurso. Como saída declarações no mapa de organização de parceiro de conta para declarações de entrada na organização do parceiro de recurso, o parceiro de recurso é capaz de aceitar as credenciais que fornece o parceiro de conta. 
+Em uma organização de parceiro de recurso, os administradores criam declarações correspondentes para representar grupos e usuários que podem ser reconhecidos como usuários de recursos. Porque a saída de declarações no mapa de organização do parceiro de conta para declarações de entrada na organização do parceiro de recurso, o parceiro de recurso é capaz de aceitar as credenciais que o parceiro de conta fornece. 
 
-Você pode usar o procedimento a seguir para adicionar uma reivindicação.
+Você pode usar o procedimento a seguir para adicionar uma declaração.
 
-A associação ao grupo **administradores**, ou equivalente, no computador local é o requisito mínimo para concluir este procedimento.  Examinar detalhes sobre como usar as contas apropriadas e agrupar associações em [Local e os grupos de domínio padrão ](https://go.microsoft.com/fwlink/?LinkId=83477).
+A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e associações de grupos em [domínio grupos padrão Local e](https://go.microsoft.com/fwlink/?LinkId=83477).
 
 ## <a name="to-add-a-claim-description"></a>Para adicionar uma descrição de declaração
 
-1. No Gerenciador do servidor, clique em **ferramentas**e, em seguida, selecione **AD FS gerenciamento **. 
+1. No Gerenciador do servidor, clique em **ferramentas**e, em seguida, selecione **gerenciamento do AD FS**. 
 
-2.  Expanda **serviço** e sobre o botão direito do mouse **adicionar reivindicação descrição**.
-![Adicione a declaração de descrição](media\Add-a-Claim-Description\claimdesc1.png)
+2.  Expandir **Service** e, em que o botão direito do mouse **adicionar descrição de declaração**.
+![Adicionar descrição de declaração](media\Add-a-Claim-Description\claimdesc1.png)
 
-3.  Em Adicionar uma caixa de diálogo reivindicar descrição na caixa **nome de exibição**, digite um nome exclusivo que identifica o grupo ou a função para essa declaração.
+3.  Na caixa Adicionar uma descrição de declaração na caixa **nome de exibição**, digite um nome exclusivo que identifica o grupo ou função para esta declaração.
 
-4.  Adicione um **curtas nome**.
+4.  Adicionar um **abreviada nome**.
 
-5.  Em **reivindicar identificador**, digite um URI que está associado com o grupo ou a função da reivindicação que você usará.
+5.  Na **identificador de declaração**, digite um URI que é associado um grupo ou função da declaração que você usará.
 
-6.  Em **descrição**, digite o texto que melhor descreve a finalidade desta declaração.
+6.  Sob **descrição**, digite o texto que melhor descreve a finalidade dessa declaração.
 
-7.  Dependendo das necessidades da sua organização, selecione uma das caixas de seleção a seguir, conforme apropriado, para publicar dessa declaração em metadados de Federação:
+7.  Dependendo das necessidades da sua organização, selecione qualquer uma das seguintes caixas de seleção, conforme apropriado, para publicar esta declaração nos metadados de Federação:
 
 
-    - Para publicar esta declaração para tornar ciente de que esse servidor pode aceitar essa declaração de parceiros, clique em **publicar dessa declaração nos metadados de federação como um tipo de declaração que esse serviço de Federação pode aceitar**.
-    - Para publicar esta declaração para tornar ciente de que esse servidor pode emitir dessa declaração de parceiros, clique em **publicar dessa declaração nos metadados de federação como um tipo de declaração que esse serviço de Federação pode enviar**.
+    - Para publicar esta declaração de parceiros cientes de que esse servidor pode aceitar essa declaração, clique em **publicar esta declaração nos metadados da federação como um tipo de declaração que este serviço de Federação pode aceitar**.
+    - Para publicar esta declaração de parceiros cientes de que esse servidor pode emitir essa declaração, clique em **publicar esta declaração nos metadados da federação como um tipo de declaração que este serviço de Federação pode enviar**.
 
-8.  Clique em **Okey**.
+8.  Clique em **OK**.
 
-![Adicione a declaração de descrição](media\Add-a-Claim-Description\claimdesc2.png)
+![Adicionar descrição de declaração](media\Add-a-Claim-Description\claimdesc2.png)
 
   
 ## <a name="see-also"></a>Consulte também  

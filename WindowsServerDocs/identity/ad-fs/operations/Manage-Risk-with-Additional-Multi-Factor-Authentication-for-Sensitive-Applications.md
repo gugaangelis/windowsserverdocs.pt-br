@@ -1,7 +1,7 @@
 ---
 ms.assetid: 934ac796-e2ee-490d-8265-6a818be5ee79
-title: "Gerenciar o risco com autenticação multifator adicional para aplicativos confidenciais"
-description: 
+title: gerencie riscos com Multi-Factor Authentication adicional para aplicativos confidenciais
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,136 +10,137 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: e9ee275e6fe38005394cd071e9cfe9a7999350e8
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59855887"
 ---
-# <a name="manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>Gerenciar o risco com autenticação multifator adicional para aplicativos confidenciais
+# <a name="manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>gerencie riscos com Multi-Factor Authentication adicional para aplicativos confidenciais
 
 >Aplica-se a: Windows Server 2012 R2
 
 
--   [Configurar o ambiente de laboratório do AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+-   [Configurar o ambiente de laboratório para o AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 
--   [Guia passo a passo: Gerenciar o risco com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
+-   [Guia passo a passo: Gerencie riscos com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 
--   [Configurar métodos de autenticação adicional do AD FS](../../ad-fs/operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)
+-   [Configurar métodos de autenticação adicionais do AD FS](../../ad-fs/operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)
 
 ## <a name="in-this-guide"></a>Neste guia
-Este guia fornece as seguintes informações:
+Esse guia contém as seguintes informações:
 
--   [Mecanismos de autenticação no AD FS](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_1) -descrição dos mecanismos de autenticação disponíveis no serviços de Federação do Active Directory (AD FS) no Windows Server 2012 R2
+-   [Mecanismos de autenticação no AD FS](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_1) -descrição dos mecanismos de autenticação disponíveis no Active Directory Federation Services (AD FS) no Windows Server 2012 R2
 
--   [Visão geral do cenário](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_2) -uma descrição de um cenário em que você usar os serviços de Federação do Active Directory (AD FS) para habilitar a autenticação multifator (MFA) com base na associação de grupo do usuário.
+-   [Visão geral do cenário](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_2) -uma descrição de um cenário onde você usa os serviços de Federação do Active Directory (AD FS) para habilitar a autenticação multifator (MFA) com base na associação de grupo do usuário.
 
     > [!NOTE]
-    > No AD FS no Windows Server 2012 R2, você pode habilitar MFA com base na participação em grupo ou identidade do usuário, local de rede e identidade do dispositivo.
+    > No AD FS no Windows Server 2012 R2, você pode habilitar o MFA com base no local de rede, identidade do dispositivo e associação de grupo ou identidade do usuário.
 
-    Para obter instruções detalhadas passo a passo para configurar e verificar esse cenário, consulte [guia passo a passo: gerenciar o risco com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md).
+    Para obter instruções detalhadas passo a passo para configurar e verificar esse cenário, consulte [guia passo a passo: Gerencie riscos com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md).
 
 ## <a name="BKMK_1"></a>Principais conceitos - mecanismos de autenticação no AD FS
 
 ### <a name="benefits-of-authentication-mechanisms-in-ad---fs"></a>Benefícios dos mecanismos de autenticação no AD FS
-Serviços de Federação do Active Directory (AD FS) no Windows Server 2012 R2 fornece aos administradores de TI um conjunto mais rico e mais flexível de ferramentas para autenticação de usuários que desejam acesso a recursos corporativos. Ela permite que os administradores com um controle flexível principal e os métodos de autenticação adicional, oferece uma experiência de gerenciamento avançado para configurar a autenticação políticas (tanto por meio da interface do usuário e do Windows PowerShell) e melhora a experiência para os usuários finais que acessar aplicativos e serviços que são protegidos pelo AD FS. Estes são alguns dos benefícios de proteger seus aplicativos e serviços com o AD FS no Windows Server 2012 R2:
+Serviços de Federação do Active Directory (AD FS) no Windows Server 2012 R2 fornece aos administradores de TI com um conjunto de ferramentas mais avançado, mais flexível para autenticar os usuários que desejam acessar recursos corporativos. Ele capacita os administradores com controle flexível sobre o primário e os métodos de autenticação adicionais, oferece uma experiência avançada de gerenciamento para configurar a autenticação de políticas (por meio da interface do usuário e do Windows PowerShell) e aprimora a experiência para os usuários finais que acessam aplicativos e serviços que são protegidos pelo AD FS. A seguir está alguns dos benefícios de proteger seus aplicativos e serviços com o AD FS no Windows Server 2012 R2:
 
--   Política de autenticação global – uma funcionalidade de gerenciamento central, que um administrador de TI pode escolher quais métodos de autenticação são usados para autenticar usuários com base no local de rede do qual eles acessarem recursos protegidos. Isso permite que os administradores fazer o seguinte:
+-   Política de autenticação global – um recurso de gerenciamento central, no qual um administrador de TI pode escolher quais métodos de autenticação são usados para autenticar usuários com base no local de rede do qual eles acessam recursos protegidos. Isso permite que os administradores façam o seguinte:
 
-    -   Obriga o uso dos métodos de autenticação mais seguros para solicitações de acesso de extranet.
+    -   Impor o uso de métodos de autenticação mais seguros para solicitações de acesso da extranet.
 
-    -   Habilite a autenticação de dispositivo para autenticação de fator de segundo perfeita. Isso vincula a identidade do usuário para o dispositivo registrado que é usado para acessar o recurso, oferecendo assim a verificação de identidade composta mais segura antes de recursos protegidos são acessados.
+    -   Habilitar a autenticação de dispositivos para autenticação de dois fatores contínua. Isso vincula a identidade do usuário para o dispositivo registrado que é usado para acessar o recurso, oferecendo assim a verificação de identidade composta mais segura antes que recursos protegidos sejam acessados.
 
         > [!NOTE]
-        > Para obter mais informações sobre o objeto de dispositivo, serviço de registro do dispositivo, Workplace Join e o dispositivo como autenticação de fator de segundo perfeita e SSO, consulte [ingressar no local de trabalho de qualquer dispositivo para SSO e perfeita segundo fator de autenticação em todos os aplicativos da empresa](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
+        > Para obter mais informações sobre o objeto de dispositivo, serviço de registro de dispositivo, ingresso no local e o dispositivo como autenticação de dois fatores contínua e SSO, consulte [ingresse no local de trabalho de qualquer dispositivo para SSO e autenticação de dois fatores contínua Em aplicativos da empresa](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
 
-    -   Defina o requisito de MFA para todos os acessos extranet ou condicionalmente com base na identidade do usuário, local de rede ou um dispositivo que é usado para acessar recursos protegidos.
+    -   Definir o requisito de MFA para todos os acessos extranet ou condicionalmente com base na identidade do usuário, local de rede ou um dispositivo que é usado para acessar recursos protegidos.
 
--   Maior flexibilidade na configuração de políticas de autenticação: você pode configurar políticas de autenticação personalizado para recursos do AD FS protegido com diversos valores de negócios. Por exemplo, você pode exigir MFA para aplicativos com alto impacto comercial.
+-   Maior flexibilidade na configuração de políticas de autenticação: você pode configurar políticas de autenticação personalizadas para recursos do AD FS-protegido com diferentes valores de negócio. Por exemplo, é possível exigir MFA para aplicativo com alto impacto nos negócios.
 
--   Facilidade de uso: ferramentas de gerenciamento simples e intuitiva, como o snap-in baseado em GUI AD FS gerenciamento MMC e cmdlets do Windows PowerShell permitem aos administradores de TI configurar políticas de autenticação com relativa facilidade. Com o Windows PowerShell, você pode fazer script suas soluções para uso em escala e para automatizar tarefas administrativas comuns.
+-   Facilidade de uso: ferramentas de gerenciamento simples e intuitivas, como o snap-in baseado em GUI MMC de gerenciamento do AD FS e os cmdlets do Windows PowerShell permitem que os administradores de TI configurem políticas de autenticação com relativa facilidade. Com o Windows PowerShell, é possível fazer scripts de suas soluções para usar em escala e para automatizar tarefas administrativas rotineiras.
 
--   Maior controle sobre os ativos corporativos: como como um administrador, você pode usar o AD FS para configurar uma política de autenticação que se aplica a um recurso específico, você tem maior controle sobre recursos como corporativos estão protegidos. Aplicativos não podem substituir as políticas de autenticação especificadas pelos administradores de TI. Para aplicativos confidenciais e serviços, você pode habilitar o requisito MFA, autenticação de dispositivo e, opcionalmente, nova autenticação sempre que o recurso é acessado.
+-   Maior controle sobre os ativos corporativos: já que como um administrador, você pode usar o AD FS para configurar uma política de autenticação que se aplica a um recurso específico, você tem maior controle sobre como os recursos corporativos estão protegidos. Os aplicativos não podem substituir as políticas de autenticação especificadas por administradores de TI. Para serviços e aplicativos confidenciais, é possível habilitar a exigência de MFA, a autenticação de dispositivos e, opcionalmente, uma autenticação nova toda vez que o recurso for acessado.
 
--   Suporte para provedores MFA personalizados: para organizações que aproveitam métodos MFA de terceiros, o AD FS oferece a capacidade de incorporar e usar esses métodos de autenticação perfeitamente.
+-   Suporte para provedores personalizados de MFA: para organizações que utilizam métodos de MFA de terceiros, o AD FS oferece a capacidade de incorporar e usar esses métodos de autenticação sem problemas.
 
 ### <a name="authentication-scope"></a>Escopo de autenticação
-No AD FS no Windows Server 2012 R2, você pode especificar uma política de autenticação em um escopo global que se aplica a todos os aplicativos e serviços que são protegidos pelo AD FS.  Você também pode definir políticas de autenticação para aplicativos específicos e serviços (dependência relações de confiança de terceiros) que são protegidos pelo AD FS. Especificando uma política de autenticação para um aplicativo específico (por confiar confiança de terceiros) não substitui a política de autenticação global. Se global ou por confiar confiança de terceiros a política de autenticação exige MFA, MFA será acionada quando o usuário tentar autenticar nesta terceira relação de confiança de terceiros.  A política de autenticação global é um fallback para a terceira parte relações de confiança (aplicativos e serviços) que não têm uma política de autenticação específico configurada.
+No AD FS no Windows Server 2012 R2, você pode especificar uma política de autenticação em um escopo global que é aplicável a todos os aplicativos e serviços que são protegidos pelo AD FS.  Você também pode definir políticas de autenticação para aplicativos específicos e serviços (objetos de confiança da terceira parte confiável) que são protegidos pelo AD FS. Especificar uma política de autenticação para um aplicativo específico (por objeto de confiança da terceira parte confiável) não substitui a política de autenticação global. Se a política de autenticação global ou por objeto de confiança da terceira parte confiável exigir MFA, a MFA será disparada quando o usuário tentar fazer autenticação a esse objeto de confiança da terceira parte confiável.  A política de autenticação global é um fallback para objetos de confiança da terceira parte confiável (aplicativos e serviços) que não têm uma política específica de autenticação configurada.
 
-Uma política de autenticação global se aplica a todas as partes confiantes que são protegidas pelo AD FS. Você pode configurar as seguintes configurações como parte da política de autenticação global:
+Uma política de autenticação global se aplica a todas as terceiras partes confiáveis que são protegidas pelo AD FS. É possível configurar as seguintes definições como parte da política de autenticação global:
 
--   Métodos de autenticação a ser usado para autenticação principal
+-   Métodos de autenticação a serem usados para autenticação principal
 
--   Configurações e métodos de MFA
+-   Definições e métodos para a MFA
 
--   Se a autenticação de dispositivo é habilitada. Para obter mais informações, consulte [ingressar no local de trabalho de qualquer dispositivo para SSO e perfeita segundo fator de autenticação em todos os aplicativos da empresa](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
+-   Se a autenticação de dispositivo está habilitada. Para obter mais informações, consulte [Join to Workplace from Any Device for SSO and Seamless Second Factor Authentication Across Company Applications](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
 
-Políticas de autenticação de confiança de terceiros por confiar se aplicam especificamente a tentativas de acessar essa terceira confiança de terceiros (aplicativo ou serviço). Você pode configurar as seguintes configurações como parte da política de autenticação de confiança de terceiros por confiar:
+As políticas de autenticação por objeto de confiança da terceira parte confiável aplicam-se especificamente às tentativas de acessar esse objeto de confiança da terceira parte confiável (aplicativo ou serviço). É possível configurar as seguintes definições como parte da política de autenticação por objeto de confiança da terceira parte confiável:
 
--   Se os usuários são necessários para fornecer suas credenciais de cada vez para entrar
+-   Se os usuários são obrigados a fornecer suas credenciais cada vez que entram
 
--   Configurações de MFA com base na solicitação de acesso, registro de dispositivo e usuário/grupo dados de localização
+-   As configurações de MFA baseiam-se em usuário/grupo, registro de dispositivos e dados de localização de solicitação de acesso
 
 ### <a name="primary-and-additional-authentication-methods"></a>Métodos de autenticação principal e adicionais
-Com o AD FS no Windows Server 2012 R2, além do mecanismo de autenticação principal, os administradores podem configurar métodos de autenticação adicional. Métodos de autenticação principal são internos e servem para validar as identidades dos usuários. Você pode configurar os fatores de autenticação adicional para solicitar que são fornecidas mais informações sobre a identidade do usuário e, consequentemente, certifique-se de autenticação mais forte.
+Com o AD FS no Windows Server 2012 R2, além do mecanismo de autenticação primária, os administradores podem configurar métodos de autenticação adicionais. Métodos de autenticação principal são internos e destinam-se para validar as identidades de usuários. Você pode configurar fatores de autenticação adicionais para solicitar que obter mais informações sobre a identidade do usuário são fornecidas e, consequentemente, garantir uma autenticação mais forte.
 
 Com a autenticação principal no AD FS no Windows Server 2012 R2, você tem as seguintes opções:
 
--   Recursos publicados para ser acessados de fora da rede corporativa, autenticação de formulários é selecionada por padrão. Além disso, você também pode habilitar a autenticação de certificado (em outras palavras, autenticação com base em um cartão inteligente ou autenticação de certificado de cliente do usuário que funciona com o AD DS).
+-   Para recursos publicados para serem acessados de fora da rede corporativa, a Autenticação de Formulários é selecionada por padrão. Além disso, também é possível habilitar a Autenticação de Certificado (em outras palavras, a autenticação baseada em cartão inteligente ou autenticação de certificado do cliente do usuário que funciona com o AD DS).
 
--   Recursos da intranet, autenticação do Windows é selecionada por padrão. Além disso, você pode habilitar também formulários e/ou autenticação de certificado.
+-   Para os recursos de intranet, a autenticação do Windows está selecionada por padrão. Além disso, você também pode habilitar Autenticação de Certificado e/ou Formulários.
 
-Ao selecionar mais de um método de autenticação, você permite que os usuários tenham uma escolha de qual método autenticar com na página de entrada para seu aplicativo ou serviço.
+Ao selecionar mais de um método de autenticação, você habilita seus usuários a terem uma escolha de qual método com o qual autenticar para a página de entrada para o aplicativo ou serviço.
 
-Você também pode habilitar a autenticação de dispositivo para autenticação de fator de segundo perfeita. Isso vincula a identidade do usuário para o dispositivo registrado que é usado para acessar o recurso, oferecendo assim a verificação de identidade composta mais segura antes de recursos protegidos são acessados.
-
-> [!NOTE]
-> Para obter mais informações sobre o objeto de dispositivo, serviço de registro do dispositivo, Workplace Join e o dispositivo como autenticação de fator de segundo perfeita e SSO, consulte [ingressar no local de trabalho de qualquer dispositivo para SSO e perfeita segundo fator de autenticação em todos os aplicativos da empresa](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
-
-Se você especificar um método de autenticação do Windows (opção padrão) para seus recursos de intranet, solicitações de autenticação passar por esse método perfeitamente em navegadores que dão suporte à autenticação do Windows.
+Você habilita também a autenticação de dispositivos para autenticação de dois fatores contínua. Isso vincula a identidade do usuário para o dispositivo registrado que é usado para acessar o recurso, oferecendo assim a verificação de identidade composta mais segura antes que recursos protegidos sejam acessados.
 
 > [!NOTE]
-> Autenticação do Windows não é compatível com todos os navegadores. O mecanismo de autenticação do AD FS em Windows Server 2012 R2 detecta o agente de usuário do navegador do usuário e usa uma configuração configurável para determinar se esse agente do usuário dá suporte para autenticação do Windows. Os administradores podem adicionar à lista de agentes do usuário (por meio do Windows PowerShell `Set-AdfsProperties -WIASupportedUserAgents`comando, para especificar cadeias de caracteres de agente de usuário alternativo para navegadores que dão suporte à autenticação do Windows. Se o agente do usuário do cliente não dá suporte a autenticação do Windows, o método de fallback padrão é a autenticação de formulários.
+> Para obter mais informações sobre o objeto de dispositivo, serviço de registro de dispositivo, ingresso no local e o dispositivo como autenticação de dois fatores contínua e SSO, consulte [ingresse no local de trabalho de qualquer dispositivo para SSO e autenticação de dois fatores contínua Em aplicativos da empresa](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
 
-### <a name="configuring-mfa"></a>Configurando MFA
-Há duas partes para configurar o MFA do AD FS em Windows Server 2012 R2: especificando as condições sob as quais MFA é necessária e selecionando um método de autenticação adicional. Para obter mais informações sobre métodos de autenticação adicionais, consulte [configurar métodos de autenticação adicionais do AD FS](../../ad-fs/operations/Configure-Additional-Authentication-Methods-for-AD-FS.md).
+Se você especificar o método de autenticação do Windows (opção padrão) para seus recursos de intranet, as solicitações de autenticação serão submetidas a esse método sem problemas em navegadores que oferecem suporte a autenticação do Windows.
 
-**Configurações de MFA**
+> [!NOTE]
+> A autenticação do Windows não é compatível com todos os navegadores. O mecanismo de autenticação no AD FS no Windows Server 2012 R2 detecta o agente do usuário de navegador do usuário e usa uma definição configurável para determinar se o agente de usuário dá suporte à autenticação do Windows. Os administradores podem adicionar a essa lista de agentes do usuário (através do Windows PowerShell) o comando `Set-AdfsProperties -WIASupportedUserAgents`, a fim de especificar cadeias de caracteres de agente de usuário alternativas para navegadores que oferecem suporte à autenticação do Windows. Se o agente do usuário do cliente não oferece suporte a autenticação do Windows, o método de fallback padrão é a autenticação de formulários.
 
-As seguintes opções estão disponíveis para as configurações de MFA (condições sob as quais exigir MFA):
+### <a name="configuring-mfa"></a>Configuração da MFA
+Há duas partes para configurar a MFA no AD FS no Windows Server 2012 R2: especificar as condições sob as quais a MFA é necessária e selecionar um método de autenticação adicional. Para obter mais informações sobre métodos de autenticação adicionais, consulte [configurar métodos de autenticação adicionais para o AD FS](../../ad-fs/operations/Configure-Additional-Authentication-Methods-for-AD-FS.md).
 
--   Você pode exigir MFA para usuários e grupos no domínio do AD que o servidor de Federação está associado a específicos.
+**Configurações do MFA**
 
--   Você pode exigir MFA para registrado (local de trabalho ingressado) ou cujo registro foi cancelado (não local de trabalho ingressado) dispositivos.
+As seguintes opções estão disponíveis para configurações de MFA (condições sob as quais exigir a MFA):
 
-    Windows Server 2012 R2 adota uma abordagem centrada no usuário onde os objetos de dispositivo representam uma relação entre os dispositivos modernos user@devicee uma empresa. Objetos de dispositivo são uma nova classe no AD no Windows Server 2012 R2 que pode ser usado para oferecer compostos identidade ao fornecer acesso aos aplicativos e serviços. Um novo componente do AD FS - o dispositivo serviço de registro (DRS) - provisiona uma identidade do dispositivo no Active Directory e define um certificado no dispositivo consumidor que será usado para representar a identidade do dispositivo. Você pode usar este dispositivo identidade de empresa ingressar em seu dispositivo, em outras palavras, para conectar o dispositivo pessoal para o Active Directory de sua empresa. Quando você ingressar o dispositivo pessoal à área de trabalho, ele se torna um dispositivo conhecido e fornecerá autenticação de fator de segundo perfeita para recursos protegidos e aplicativos. Em outras palavras, depois que um dispositivo é ingressado do local de trabalho, a identidade do usuário está vinculada a esse dispositivo e pode ser usada para uma verificação de identidade composta perfeita antes de um recurso protegido é acessado.
+-   É possível exigir MFA para usuários e grupos específicos no domínio do AD a qual o servidor de federação está ingressado.
 
-    Para obter mais informações sobre o ingresso no local de trabalho e sair, consulte [ingresso para área de trabalho de qualquer dispositivo para SSO e perfeita segundo fator de autenticação em todos os aplicativos da empresa](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
+-   É possível exigir MFA para dispositivos registrados (ingressados no local de trabalho) ou não registrados (não ingressados no local de trabalho).
 
--   Você pode exigir MFA quando a solicitação de acesso a recursos protegidos vem de extranet ou a intranet.
+    Windows Server 2012 R2 utiliza uma abordagem centrada no usuário para dispositivos modernos em que os objetos de dispositivo representam uma relação entre user@device e uma empresa. Objetos de dispositivo são uma nova classe no AD no Windows Server 2012 R2 que pode ser usado para oferecer identidades compostas ao fornecer acesso a aplicativos e serviços. Um novo componente do AD FS - o DRS (Serviço de Registro de Dispositivos) - propicia uma identidade de dispositivo no Active Directory e define um certificado no dispositivo do consumidor que será usado para representar a identidade do dispositivo. É possível usar essa identidade de dispositivo para ingressar seu dispositivo no local de trabalho; em outras palavras, para conectar seu dispositivo pessoal no Active Directory do local de trabalho. Quando você ingressa seu dispositivo pessoal no local de trabalho, ele se torna um dispositivo conhecido e fornece autenticação de dois fatores contínua para aplicativos e recursos protegidos. Em outras palavras, depois que um dispositivo é ingressado no local de trabalho, a identidade do usuário está vinculada a esse dispositivo e pode ser usada para uma verificação de identidade composta contínua antes de um recurso protegido é acessado.
+
+    Para obter mais informações sobre ingresso no local e de saída, consulte [ingresso no local de trabalho de qualquer dispositivo para SSO e contínuo segundo fator de autenticação em aplicativos da empresa](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
+
+-   É possível exigir MFA quando a solicitação de acesso para os recursos protegidos é proveniente da extranet ou da intranet.
 
 ## <a name="BKMK_2"></a>Visão geral do cenário
-Nesse cenário, você deve habilitar MFA com base nos dados de associação de grupo do usuário para um aplicativo específico. Em outras palavras, você configurará uma política de autenticação no servidor de Federação exigir MFA quando os usuários que pertencem a um determinado grupo solicitarem acesso a um aplicativo específico que está hospedado em um servidor web.
+Nesse cenário, você habilita a MFA com base em dados de associação de grupo do usuário para um aplicativo específico. Em outras palavras, você definirá uma política de autenticação no servidor de federação para exigir MFA quando os usuários que pertencem a um determinado grupo solicitarem acesso a um aplicativo específico que está hospedado em um servidor Web.
 
-Mais especificamente, nesse cenário, você habilitar uma política de autenticação para um aplicativo de teste baseada em declarações chamado **claimapp**, pelo qual um usuário AD **Robert Hatley** será necessária para passar por MFA, já que ele pertence a um grupo do AD **Finanças**.
+Mais especificamente, nesse cenário, você habilita uma política de autenticação para um aplicativo de teste baseado em declarações chamado **claimapp**, pela qual um usuário do AD de **Robert Hatley** será requisitado a passar por MFA porque pertence ao **Finance** do grupo AD.
 
-As instruções de etapa por etapa para configurar e verificar esse cenário são fornecidas em [guia passo a passo: gerenciar o risco com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md). Para concluir as etapas neste passo a passo, você deve configurar um ambiente de laboratório e siga as etapas em [configurar o ambiente de laboratório do AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
+A passo a passo instruções passo a passo para configurar e verificar esse cenário é fornecida no [guia passo a passo: Gerencie riscos com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md). Para concluir as etapas neste passo a passo, você deve configurar um ambiente de laboratório e siga as etapas em [configurar o ambiente de laboratório para o AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
 
-Outros cenários de habilitar MFA no AD FS incluem o seguinte:
+Outros cenários de habilitação de MFA no AD FS incluem o seguinte:
 
--   Habilite MFA, quando a solicitação de acesso é proveniente de extranet. Você pode modificar o código apresentado na seção "Definir a política de MFA" [guia passo a passo: gerenciar o risco com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md) com o seguinte:
+-   Habilitar a MFA, se a solicitação de acesso provir da extranet. Você pode modificar o código apresentado na seção "Configurar MFA a política" [guia passo a passo: Gerencie riscos com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md) com o seguinte:
 
     ```
     'c:[type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", value == "false"] => issue(type="https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "https://schemas.microsoft.com/claims/multipleauthn" );'
     ```
 
--   Habilite MFA, quando a solicitação de acesso é proveniente de um dispositivo associado ao local de trabalho não.  Você pode modificar o código apresentado na seção "Definir a política de MFA" [guia passo a passo: gerenciar o risco com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md) com o seguinte:
+-   Habilitar a MFA, se a solicitação de acesso provir de um dispositivo que não está ingressado no local de trabalho.  Você pode modificar o código apresentado na seção "Configurar MFA a política" [guia passo a passo: Gerencie riscos com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md) com o seguinte:
 
     ```
     'NOT EXISTS([type=="https://schemas.microsoft.com/2012/01/devicecontext/claims/registrationid"]) => issue (type="https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "https://schemas.microsoft.com/claims/multipleauthn");'
 
     ```
 
--   Habilite MFA, se o acesso é proveniente de um usuário com um dispositivo que é o local de trabalho ingressado, mas não registrados para esse usuário. Você pode modificar o código apresentado na seção "Definir a política de MFA" [guia passo a passo: gerenciar o risco com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md) com o seguinte:
+-   Habilitar a MFA, se o acesso estiver vindo de um usuário com um dispositivo que está ingressado no local de trabalho, mas não está registrado para esse usuário. Você pode modificar o código apresentado na seção "Configurar MFA a política" [guia passo a passo: Gerencie riscos com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md) com o seguinte:
 
     ```
     'c:[type=="https://schemas.microsoft.com/2012/01/devicecontext/claims/isregistereduser", value == "false"] => issue (type="https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "https://schemas.microsoft.com/claims/multipleauthn");'
@@ -147,8 +148,8 @@ Outros cenários de habilitar MFA no AD FS incluem o seguinte:
     ```
 
 ## <a name="see-also"></a>Consulte também
-[Guia passo a passo: Gerenciar o risco com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)<ph x="2">
-</ph>[configurar o ambiente de laboratório do AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+[Guia passo a passo: Gerencie riscos com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
+[configurar o ambiente de laboratório para o AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 
 
 

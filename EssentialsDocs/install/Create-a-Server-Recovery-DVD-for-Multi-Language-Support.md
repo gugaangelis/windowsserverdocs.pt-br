@@ -1,5 +1,5 @@
 ---
-title: "Criar uma DVD de recuperação do servidor para suporte a vários idiomas"
+title: Criar um DVD de recuperação de servidor para suporte a vários idiomas
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -13,71 +13,72 @@ ms.assetid: c7da0f6c-9732-4784-9c28-7dad72c4071d
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: ac547f97b48e4cd0ebf87e0935cadc2c539b4d0b
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59854997"
 ---
-# <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>Criar uma DVD de recuperação do servidor para suporte a vários idiomas
+# <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>Criar um DVD de recuperação de servidor para suporte a vários idiomas
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-##  <a name="BKMK_MLHeadedRecovery"></a>Criar uma instalação do servidor e o DVD de recuperação de servidor para suporte a vários idiomas em servidores administrados localmente  
+##  <a name="BKMK_MLHeadedRecovery"></a> Criar uma instalação de servidor e DVD de recuperação de servidor para suporte a vários idiomas em servidores administrados localmente  
   
 > [!NOTE]
->  Você deve primeiro criar uma imagem multilíngue do Windows, conforme descrito no [passo a passo: criação de imagens multilíngues do Windows](https://technet.microsoft.com/library/jj126995) antes de adicionar o pacote de langauage do Windows Server Essentials em install.wim.  
+>  Você deve primeiro criar uma imagem multilíngue do Windows, conforme descrito no [passo a passo: Criação de imagem multilíngue do Windows](https://technet.microsoft.com/library/jj126995) antes de adicionar o pacote de idiomas do Windows Server Essentials em Install. wim.  
   
- Há duas fases da instalação: o ambiente de pré-instalação do Windows (Windows PE) e a configuração inicial. Por padrão, a página de seleção de idioma na configuração inicial não será exibida.  
+ Há duas fases de instalação: o Ambiente de Pré-Instalação do Windows (Windows PE) e a configuração inicial. Por padrão, a página de seleção de idioma na configuração inicial não será exibida.  
   
--   Para uma instalação de OEM administrado remotamente ou um cenário de pré-instalação OEM, você precisa adicionar um registro chave usando o seguinte comando para exibir a página de seleção de idioma na configuração inicial.  
+-   Para uma instalação administrada remotamente de OEM ou um cenário de pré-instalação de OEM, é preciso adicionar uma chave de registro usando o seguinte comando para exibir a página de seleção de idioma na configuração inicial.  
   
     ```  
     %systemroot%\system32\reg.exe add "HKLM\Software\microsoft\windows server\setup" /v ShowPreinstallPages /t REG_SZ /d true /f  
     ```  
   
     > [!IMPORTANT]
-    >  Quando os OEMs cria uma imagem no laboratório, deve escolher **inglês** como o idioma durante a fase de Windows PE da instalação.  
+    >  Quando os OEMs criam uma imagem no laboratório, eles devem escolher o **inglês** como idioma durante a fase de configuração do Windows PE.  
   
--   Para um cenário de revendedor opção Kit (ROK), os clientes recebem um DVD e talvez alguns itens de hardware. O cliente deve capaz de selecionar o idioma durante a instalação do Windows PE e a página de seleção de idioma não é mais exibida durante a configuração inicial.  
+-   Para um cenário de Kit de Opção de Revendedor (Reseller Option Kit - ROK), os clientes recebem um DVD, e, talvez, algum hardware. O cliente deve poder selecionar o idioma durante a instalação do Windows PE, e a página de seleção de idioma não é mais exibida durante a configuração inicial.  
   
- Você pode optar por enviar um único DVD de camada dupla que contém vários idiomas.  
+ Você pode escolher enviar um único DVD de duas camadas contendo vários idiomas.  
   
- Esta seção descreve como adicionar suporte a idiomas à instalação do Windows. A ferramenta principal para personalizar o Windows PE 3.0 é o DISM (gerenciamento), uma ferramenta de linha de comando e manutenção de imagens de implantação. Essa solução permite os seguintes cenários:  
+ Esta seção descreve como adicionar suporte a idiomas à Instalação do Windows. A principal ferramenta para personalizar o Windows PE 3.0 é DISM (Gerenciamento e Manutenção de Imagens de Implantação), uma ferramenta de linha de comando. Essa solução possibilita os seguintes cenários:  
   
-1.  Criar instalações multilíngue  
+1.  Criar instalações multilíngues  
   
-2.  Criar a mídia distribuível  
+2.  Criar uma mídia de distribuição  
   
 ### <a name="prerequisites"></a>Pré-requisitos  
- Para adicionar suporte multilíngue à instalação do Windows, você precisa do seguinte:  
+ Para adicionar suporte multilíngue à Instalação do Windows, é preciso:  
   
 
--   Um computador do técnico que fornece todas as ferramentas e os arquivos de origem necessários para criar uma imagem personalizada do WinPE. Para obter mais informações, consulte [preparar o computador do técnico](Prepare-the-Technician-Computer.md).  
+-   Um computador do técnico que forneça todas as ferramentas e arquivos de origem necessários para criar uma imagem personalizada do WinPE. Para obter mais informações, consulte [Prepare the Technician Computer](Prepare-the-Technician-Computer.md).  
 
--   Um computador do técnico que fornece todas as ferramentas e os arquivos de origem necessários para criar uma imagem personalizada do WinPE. Para obter mais informações, consulte [preparar o computador do técnico](../install/Prepare-the-Technician-Computer.md).  
+-   Um computador do técnico que forneça todas as ferramentas e arquivos de origem necessários para criar uma imagem personalizada do WinPE. Para obter mais informações, consulte [Prepare the Technician Computer](../install/Prepare-the-Technician-Computer.md).  
 
   
 -   Um DVD do Windows Server Essentials.  
   
--   Um servidor de Windows Essentials ao pacote de idiomas DVD.  
+-   Um Windows Server Essentials Language Pack DVD.  
   
-###  <a name="BKMK_Steps"></a>Adicionando suporte a vários idiomas  
- Para adicionar suporte a vários idiomas à instalação do Windows você atualizar o Install.wim, adicionando o Windows Server 2012 e pacotes de idiomas do Windows Server Essentials para ele.  
+###  <a name="BKMK_Steps"></a> Adicionando suporte a vários idiomas  
+ Para adicionar suporte a vários idiomas à instalação do Windows, você atualiza o Install. wim adicionando-se o Windows Server 2012 e pacotes de idioma do Windows Server Essentials.  
   
 #### <a name="update-installwim"></a>Atualizar Install.wim  
- Nesta etapa, você adiciona Windows Server 2012 e pacotes de idiomas do Windows Server Essentials em Install.wim.  
+ Nesta etapa, você adiciona o Windows Server 2012 e pacotes de idiomas do Windows Server Essentials em Install. wim.  
   
 > [!NOTE]
->  Verifique se que você instale pacotes de idiomas para o Windows Server 2012. Isso garante que você obtenha a identidade visual apropriado. O Windows Server 2012 multilíngue usuário Interface pacotes de idiomas estão disponíveis em [Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx). Siga as instruções conforme descrito no [passo a passo: criação de imagens multilíngues do Windows sobre como criar um multilíngue](https://technet.microsoft.com/library/jj126995.aspx) sobre como criar uma imagem multilíngue do Windows antes de adicionar o pacote de idiomas no Windows Server Essentials Install.wim.  
+>  Verifique se que você instale pacotes de idiomas para o Windows Server 2012. Isso garante que você obtenha a identidade visual correta. O Windows Server 2012 Multilingual User Interface Language Packs estão disponíveis no [Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx). Siga as instruções conforme descrito no [passo a passo: Criação de imagem multilíngue do Windows sobre como criar um multilíngue](https://technet.microsoft.com/library/jj126995.aspx) sobre como criar uma imagem multilíngue do Windows antes de adicionar o pacote de idiomas do Windows Server Essentials ao Install. wim.  
 >   
->  Pacotes de idiomas do Windows Server Essentials estão disponíveis na mídia do pacote de idioma em \Language Packs\\ < CultureName\ >.  
+>  Pacotes de idiomas do Windows Server Essentials estão disponíveis na mídia de pacote de idiomas em \Language Packs\\< CultureName\>.  
   
 > [!NOTE]
->  Nem todos os pacotes de idiomas podem não está disponível antes do lançamento do Windows Server 2012.  
+>  Nem todos os pacotes de idioma talvez não está disponível antes do lançamento do Windows Server 2012.  
   
-###### <a name="to-add-language-packs-to-installwim"></a>Para adicionar pacotes de idiomas para Install.wim  
+###### <a name="to-add-language-packs-to-installwim"></a>Para adicionar pacotes de idioma a Install.wim  
   
-1.  Adicione pacotes de idiomas do sistema operacional e do produto em Install.wim como a seguir (Este exemplo usa francês):  
+1.  Adicione o sistema operacional e os pacotes de idioma do produto ao Install.wim como segue (neste exemplo, usamos francês):  
   
     ```  
     Dism /Mount-Wim /WimFile:C:\my_distribution\sources\install.wim /index:1 /MountDir:C:\InstallMount  
@@ -88,19 +89,19 @@ ms.lasthandoff: 12/12/2017
     ```  
   
 
-2.  Adicionar arquivos específicos do idioma para dar suporte à criação do cliente Backup Restaurar USB flash drive, usando o procedimento descrito [criar mídia de restauração de cliente de vários idiomas](Build-Multi-Language-Client-Restore-Media.md).  
+2.  Adicione arquivos específicos do idioma ao suporte criando USB de restauração de Backup do cliente unidade flash, usando o procedimento descrito em [criar mídia de restauração de cliente de vários idiomas](Build-Multi-Language-Client-Restore-Media.md).  
 
-2.  Adicionar arquivos específicos do idioma para dar suporte à criação do cliente Backup Restaurar USB flash drive, usando o procedimento descrito [criar mídia de restauração de cliente de vários idiomas](../install/Build-Multi-Language-Client-Restore-Media.md).  
+2.  Adicione arquivos específicos do idioma ao suporte criando USB de restauração de Backup do cliente unidade flash, usando o procedimento descrito em [criar mídia de restauração de cliente de vários idiomas](../install/Build-Multi-Language-Client-Restore-Media.md).  
 
   
-3.  Recriar o arquivo Lang.ini na mídia flexível para refletir o suporte a idiomas adicionais usando o `DISM /Gen-LangINI`comando, por exemplo:  
+3.  Recrie o arquivo Lang.ini na mídia separada para refletir o suporte a idiomas adicional usando o comando `DISM /Gen-LangINI` , por exemplo:  
   
     ```  
     Dism /image:C:\InstallMount /Gen-LangINI /distribution:C:\my_distribution  
   
     ```  
   
-4.  Salve suas alterações de volta na imagem usando o `DISM /unmount /commit`comando, por exemplo:  
+4.  Salve suas alterações de volta na imagem usando o comando `DISM /unmount /commit` , por exemplo:  
   
     ```  
     Dism /Unmount-Wim /MountDir:C:\InstallMount /Commit  
@@ -108,13 +109,13 @@ ms.lasthandoff: 12/12/2017
   
 ## <a name="see-also"></a>Consulte também  
 
- [Criar e personalizar a imagem](Creating-and-Customizing-the-Image.md)   
+ [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do cliente](Testing-the-Customer-Experience.md)
+ [Testando a experiência do usuário](Testing-the-Customer-Experience.md)
 
- [Criar e personalizar a imagem](../install/Creating-and-Customizing-the-Image.md)   
+ [Criando e personalizando a imagem](../install/Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](../install/Additional-Customizations.md)   
  [Preparando a imagem para implantação](../install/Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do cliente](../install/Testing-the-Customer-Experience.md)
+ [Testando a experiência do usuário](../install/Testing-the-Customer-Experience.md)
 

@@ -1,7 +1,7 @@
 ---
-title: Configurar o Firewall de Datacenter listas de controle de acesso (ACLs)
-description: Este tópico faz parte do Software de rede definidos guia sobre como gerenciar as cargas de trabalho de locatário e redes virtuais no Windows Server 2016.
-manager: brianlic
+title: Configurar as listas de controle de acesso (ACLs) do firewall do datacenter
+description: Você pode aplicar ACLs específicas aos adaptadores de rede.  Se as ACLs também são definidas na sub-rede virtual ao qual o adaptador de rede está conectado, tanto as ACLs são aplicadas, mas a interface de rede ACLs são priorizadas acima a ACLs de sub-rede virtual.
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,72 +12,77 @@ ms.topic: article
 ms.assetid: 25f18927-a63e-44f3-b02a-81ed51933187
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: d5f7c4baad24a720e073857cb6c835167e5b419b
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/23/2018
+ms.openlocfilehash: 77a7706e39da265eedd65342a0ccf2174ab050ea
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59853397"
 ---
-# <a name="configure-datacenter-firewall-access-control-lists-acls"></a>Configurar o Firewall de Datacenter listas de controle de acesso (ACLs)
+# <a name="configure-datacenter-firewall-access-control-lists-acls"></a>Configurar o firewall do datacenter listas de controle de acesso (ACLs)
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Você pode aplicar ACLs específicas para interfaces de rede.  Se ACLs também são definidos na sub-rede virtual à qual a interface de rede está conectada, as ACLs são aplicadas, mas ACLs de interface de rede é priorizada acima da sub-rede virtual ACLs.
+Depois que você criou uma ACL e atribuiu a uma sub-rede virtual, você talvez queira substituir esse padrão de ACL na sub-rede virtual com uma ACL específica para uma interface de rede individuais.  Nesse caso, aplicar ACLs específicas diretamente para os adaptadores de rede anexados a VLANs, em vez da rede virtual. Se você tiver definido na sub-rede virtual conectada ao adaptador de rede de ACLs, ambas as ACLs são aplicadas e prioriza a interface de rede ACLs acima as ACLs de sub-rede virtual.
 
-Este tópico contém as seções a seguir.
+>[!IMPORTANT]
+>Se você não tiver criado uma ACL e atribuiu a uma rede virtual, consulte [uso Access Control Lists (ACLs) para gerenciar o data center rede tráfego fluir](Use-Access-Control-Lists--ACLs--to-Manage-Datacenter-Network-Traffic-Flow.md) para criar uma ACL e atribuí-lo a uma sub-rede virtual.  
 
-- [Exemplo: Adicionar uma ACL de uma interface de rede](#bkmk_addacl)
-- [Exemplo: Remover uma ACL de uma interface de rede usando o Windows Powershell e a API de REST do controlador de rede](#bkmk_removeacl)
+Neste tópico, mostramos como adicionar uma ACL a uma interface de rede. Também mostramos como remover uma ACL de um adaptador de rede usando o Windows PowerShell e a API de REST do controlador de rede.
 
-##<a name="bkmk_addacl"></a>Exemplo: Adicionar uma ACL de uma interface de rede
+- [Exemplo: Adicione uma ACL a uma interface de rede](#example-add-an-acl-to-a-network-interface)
+- [Exemplo: Remover uma ACL de um adaptador de rede usando o Windows Powershell e a API de REST do controlador de rede](#example-remove-an-acl-from-a-network-interface-by-using-windows-powershell-and-the-network-controller-rest-api)
 
-No tópico [uso controle listas de acesso (ACLs) para gerenciar Datacenter rede tráfego fluir](Use-Access-Control-Lists--ACLs--to-Manage-Datacenter-Network-Traffic-Flow.md) você aprendeu como criar uma ACL e atribua a uma sub-rede virtual.  No entanto, em alguns casos, convém substituir esse padrão ACL na sub-rede virtual com uma ACL específica para uma interface de rede individuais.  Você também precisará aplicar ACLs diretamente para interfaces de rede que são anexados ao VLANs em vez de redes virtuais.
 
+## <a name="example-add-an-acl-to-a-network-interface"></a>Exemplo: Adicione uma ACL a uma interface de rede
 Este exemplo demonstra como adicionar uma ACL a uma rede virtual. 
 
->[!NOTE]
->Também é possível adicionar uma ACL ao mesmo tempo que você cria a interface de rede.
+>[!TIP]
+>Também é possível adicionar uma ACL ao mesmo tempo que você criar a interface de rede.
 
-###<a name="step-1-get-or-create-the-network-interface-to-which-you-will-add-the-acl"></a>Etapa 1: Obter ou criar a interface de rede à qual você adicionará a ACL
-
-    $nic = get-networkcontrollernetworkinterface -ConnectionUri $uri -ResourceId "MyVM_Ethernet1"
-
-###<a name="step-2-get-or-create-the-acl-you-will-add-to-the-network-interface"></a>Etapa 2: Obtenha ou criar a ACL que você adicionará à interface de rede
-Você pode usar o comando de exemplo a seguir para obter ou criar a ACL. 
-
-    $acl = get-networkcontrolleraccesscontrollist -ConnectionUri $uri -resourceid "AllowAllACL"
-
-###<a name="step-3-assign-the-acl-to-the-accesscontrollist-property-of-the-network-interface"></a>Etapa 3: Atribuir a ACL à propriedade AccessControlList da interface de rede
-Você pode usar o comando de exemplo a seguir para atribuir a ACL à propriedade AccessControlList.
-
+1. Obter ou criar a interface de rede à qual você adicionará a ACL.
+ 
+   ```PowerShell
+   $nic = get-networkcontrollernetworkinterface -ConnectionUri $uri -ResourceId "MyVM_Ethernet1"
+   ```
+ 
+2. Obter ou criar a ACL, você adicionará ao adaptador de rede.
+ 
+   ```PowerShell
+   $acl = get-networkcontrolleraccesscontrollist -ConnectionUri $uri -resourceid "AllowAllACL"
+   ```
+ 
+3. Atribuir a ACL para a propriedade AccessControlList da interface de rede
+ 
+   ```PowerShell
     $nic.properties.ipconfigurations[0].properties.AccessControlList = $acl
-
-###<a name="step-4-add-the-network-interface-in-network-controller"></a>Etapa 4: Adicionar a interface de rede no controlador de rede
-Você pode usar o comando de exemplo a seguir para adicionar a interface de rede no controlador de rede.
-
-    new-networkcontrollernetworkinterface -ConnectionUri $uri -Properties $nic.properties -ResourceId $nic.resourceid
-
-
-##<a name="bkmk_removeacl"></a>Exemplo: Remover uma ACL de uma interface de rede usando o Windows Powershell e a API de REST do controlador de rede
-Você pode usar este exemplo, se você quiser remover uma ACL. Quando você remove uma ACL, o conjunto padrão de regras são aplicadas à interface de rede.
-
-O conjunto de regras padrão permite que todo o tráfego de saída, mas bloqueia todo o tráfego.
+   ```
+ 
+4. Adicionar a interface de rede no controlador de rede
+ 
+   ```
+   new-networkcontrollernetworkinterface -ConnectionUri $uri -Properties $nic.properties -ResourceId $nic.resourceid
+   ```
+ 
+## <a name="example-remove-an-acl-from-a-network-interface-by-using-windows-powershell-and-the-network-controller-rest-api"></a>Exemplo: Remover uma ACL de um adaptador de rede usando o Windows Powershell e a API de REST do controlador de rede
+Neste exemplo, mostramos como remover uma ACL. Remover uma ACL se aplica o conjunto de regras padrão para o adaptador de rede. O conjunto de regras padrão permite todo o tráfego de saída, mas bloqueia todo o tráfego de entrada.
 
 >[!NOTE]
->Se você quiser permitir que todo o tráfego, você deve seguir o exemplo anterior para adicionar uma ACL que permite que todo o tráfego de entrada e saído tudo.
+>Se você quiser permitir que todo o tráfego de entrada, você deve seguir anterior [exemplo](#example-add-an-acl-to-a-network-interface) para adicionar uma ACL que permite o tráfego de todas as entradas e todas as saídas.
 
-###<a name="step-1-get-the-network-interface-from-which-you-will-remove-the-acl"></a>Etapa 1: Obter a interface de rede do qual você removerá a ACL
-Você pode usar o comando de exemplo a seguir para recuperar a interface de rede.
 
-    $nic = get-networkcontrollernetworkinterface -ConnectionUri $uri -ResourceId "MyVM_Ethernet1"
-
-###<a name="step-2-assign-null-to-the-accesscontrollist-property-of-the-ipconfiguration"></a>Etapa 2: Atribuir $NULL à propriedade AccessControlList do ipConfiguration
-Você pode usar o comando de exemplo a seguir para atribuir $NULL à propriedade AccessControlList.
-
-    $nic.properties.ipconfigurations[0].properties.AccessControlList = $null
-
-###<a name="step-3-add-the-network-interface-object-in-network-controller"></a>Etapa 3: Adicionar o objeto de interface de rede no controlador de rede
-Você pode usar o comando de exemplo a seguir para adicionar o objeto de interface de rede no controlador de rede
-
-    new-networkcontrollernetworkinterface -ConnectionUri $uri -Properties $nic.properties -ResourceId $nic.resourceid
-
+1. Obtenha a interface de rede do qual você irá remover a ACL.<br>
+   ```PowerShell
+   $nic = get-networkcontrollernetworkinterface -ConnectionUri $uri -ResourceId "MyVM_Ethernet1"
+   ```
+ 
+2. Atribua $NULL à propriedade AccessControlList da ipConfiguration.<br>
+   ```PowerShell
+   $nic.properties.ipconfigurations[0].properties.AccessControlList = $null
+   ```
+ 
+3. Adicione o objeto de interface de rede no controlador de rede.<br>
+   ```PowerShell
+   new-networkcontrollernetworkinterface -ConnectionUri $uri -Properties $nic.properties -ResourceId $nic.resourceid
+   ```

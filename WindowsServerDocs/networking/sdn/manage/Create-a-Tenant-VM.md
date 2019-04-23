@@ -1,7 +1,7 @@
 ---
-title: Criar uma VM e se conectar a um locatário Virtual, rede ou VLAN
-description: Este tópico faz parte do Software de rede definidos guia sobre como gerenciar as cargas de trabalho de locatário e redes virtuais no Windows Server 2016.
-manager: brianlic
+title: Criar uma máquina virtual e se conectar a uma rede virtual de locatário ou VLAN
+description: Neste tópico, mostramos como criar uma VM de locatário e conectá-lo para uma rede virtual que você criou com a virtualização de rede do Hyper-V ou a uma rede Local virtual (VLAN).
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,187 +12,155 @@ ms.topic: article
 ms.assetid: 3c62f533-1815-4f08-96b1-dc271f5a2b36
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 001eb3efa073e4ffbdfad41f88949303159a7274
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/24/2018
+ms.openlocfilehash: e23e6c020c12dd4900caa368daae0cc6dbeceaf4
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59856807"
 ---
-# <a name="create-a-vm-and-connect-to-a-tenant-virtual-network-or-vlan"></a>Criar uma VM e se conectar a um locatário Virtual, rede ou VLAN
+# <a name="create-a-vm-and-connect-to-a-tenant-virtual-network-or-vlan"></a>Criar uma máquina virtual e se conectar a uma rede virtual de locatário ou VLAN
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Você pode usar este tópico para criar um locatário virtual \(VM\) da máquina e conectar-se a VM para uma rede Virtual que você criou com a virtualização de rede do Hyper-V ou um virtual \(VLAN\) rede Local. 
+Neste tópico, você pode cria uma VM de locatário e conectá-lo para uma rede virtual que você criou com a virtualização de rede do Hyper-V ou a uma rede Local virtual (VLAN). Você pode usar o controlador de rede do Windows PowerShell cmdlets para se conectar a uma rede virtual ou NetworkControllerRESTWrappers para se conectar a uma VLAN.
 
-Este tópico contém as seções a seguir.
+Use os processos descritos neste tópico para implantar soluções de virtualização. Com algumas etapas adicionais, você pode configurar dispositivos para processar ou inspecionar os pacotes de dados que fluem para ou de outras VMs na rede Virtual.
 
-- [Criar uma VM e se conectar a uma rede Virtual usando os cmdlets do controlador de rede do Windows PowerShell](#bkmk_vn)
-- [Criar uma VM e conecte obtenham uma usando NetworkControllerRESTWrappers](#bkmk_vlan)
+As seções neste tópico incluem comandos do Windows PowerShell de exemplo que contêm valores de exemplo para muitos parâmetros. Certifique-se de que você substitua os valores de exemplo nesses comandos com os valores que são apropriadas para sua implantação antes de executar esses comandos. 
 
-## <a name="requirements"></a>Requisitos
-Antes de executar os procedimentos nas seções a seguir, observe os requisitos a seguir.
 
-1. Você deve criar os adaptadores de rede VM com mídia estática \(MAC\) endereços para que o endereço MAC da VM não muda durante o ciclo de vida VM do controle de acesso. 
->[!NOTE]
->Se o endereço MAC de VM muda durante o ciclo de vida VM, o controlador de rede não pode configurar a política necessária para o adaptador de rede. Se a política para o adaptador de rede não estiver configurada, o adaptador de rede é impedido de processamento de tráfego de rede, e toda a comunicação com a rede falhará. 
+## <a name="prerequisites"></a>Pré-requisitos
 
-2. Se a VM requer acesso à rede na inicialização, é importante que você não inicie a VM até após a etapa de configuração final - definindo o ID de Interface na VM porta de adaptador de rede. Se você iniciar a VM antes de você concluir essa etapa, a VM não poderão se comunicar na rede até que a interface de rede é criada no controlador de rede e o controlador aplicou todas as políticas aplicáveis - política de rede Virtual, listas de controle de acesso \(ACLs\) e qualidade de serviço \(QoS\).
+1. Adaptadores de rede VM criados com endereços MAC estáticos para o tempo de vida da VM.<p>Se o endereço MAC for alterado durante o tempo de vida da VM, o controlador de rede não é possível configurar a política necessária para o adaptador de rede. Não configurar a política para a rede impede que o adaptador de rede de processamento do tráfego de rede e falha de toda a comunicação com a rede.  
 
-Você também pode usar os processos que estão descritos neste tópico para implantar dispositivos virtuais. Com algumas etapas adicionais, você pode configurar dispositivos para processar ou inspecionar os pacotes de dados que o fluem de ou para outras VMs em uma rede Virtual.
+2. Se a VM requer acesso à rede na inicialização, não inicie a VM até depois de definir a ID de interface na VM a porta do adaptador de rede. Se você iniciar a VM antes de definir a ID de interface e a interface de rede não existe, a VM não pode se comunicar na rede no controlador de rede e todas as políticas aplicadas.
 
->[!IMPORTANT]
->As seções a seguir incluem comandos do Windows PowerShell de exemplo que contêm valores de exemplo para vários parâmetros. Certifique-se de que você substitua os valores de exemplo nesses comandos com valores que são apropriados para sua implantação antes de executar esses comandos.  
+3. Se você precisar ACLs personalizadas para esse adaptador de rede, em seguida, crie a ACL agora usando instruções no tópico [Use Access Control Lists (ACLs) para gerenciar o data center tráfego fluxo de rede](../../sdn/manage/Use-Access-Control-Lists--ACLs--to-Manage-Datacenter-Network-Traffic-Flow.md)
 
-## <a name="bkmk_vn"></a>Criar uma VM e se conectar a uma rede Virtual usando os cmdlets do controlador de rede do Windows PowerShell
+Certifique-se de que você já tenha criado uma rede Virtual antes de usar este exemplo de comando. Para obter mais informações, consulte [Create, Delete ou Update redes virtuais de locatário](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create%2c-delete%2c-or-update-tenant-virtual-networks).
 
-Esta seção inclui os tópicos a seguir.
+## <a name="create-a-vm-and-connect-to-a-virtual-network-by-using-the-windows-powershell-network-controller-cmdlets"></a>Criar uma VM e conectar-se a uma rede Virtual usando os cmdlets do controlador de rede do Windows PowerShell
 
-1.  [Criar uma máquina virtual com um adaptador de rede VM que tenha um endereço MAC estático](#bkmk_create)
-2.  [Obtenha a rede Virtual que contém a sub-rede ao qual você deseja se conectar o adaptador de rede](#bkmk_getvn)
-3.  [Crie um objeto de interface de rede no controlador de rede](#bkmk_object)
-4.  [Obtenha o InstanceId para a interface de rede do controlador de rede](#bkmk_getinstance)
-5.  [Definir a ID de Interface na VM Hyper-V porta de adaptador de rede](#bkmk_setinstance)
-6.  [Inicie a máquina virtual](#bkmk_start)
 
-### <a name="bkmk_create"></a>Criar uma máquina virtual com um adaptador de rede VM que tenha um endereço MAC estático
+1. Crie uma VM com um adaptador de rede VM que tem um endereço MAC estático. 
 
-Para criar uma máquina virtual com um adaptador de rede que tenha um endereço MAC estático, use o comando de exemplo a seguir.
-
+   ```PowerShell    
+   New-VM -Generation 2 -Name "MyVM" -Path "C:\VMs\MyVM" -MemoryStartupBytes 4GB -VHDPath "c:\VMs\MyVM\Virtual Hard Disks\WindowsServer2016.vhdx" -SwitchName "SDNvSwitch" 
     
-    New-VM -Generation 2 -Name "MyVM" -Path "C:\VMs\MyVM" -MemoryStartupBytes 4GB -VHDPath "c:\VMs\MyVM\Virtual Hard Disks\WindowsServer2016.vhdx" -SwitchName "SDNvSwitch" 
+   Set-VM -Name "MyVM" -ProcessorCount 4
     
-    Set-VM -Name "MyVM" -ProcessorCount 4
+   Set-VMNetworkAdapter -VMName "MyVM" -StaticMacAddress "00-11-22-33-44-55" 
+   ```
+
+2. Obtenha a rede virtual que contém a sub-rede à qual você deseja conectar o adaptador de rede.
+
+   ```Powershell 
+   $vnet = get-networkcontrollervirtualnetwork -connectionuri $uri -ResourceId “Contoso_WebTier”
+   ```
+
+3. Crie um objeto de interface de rede no controlador de rede.
+
+   >[!TIP]
+   >Nesta etapa, você deve usar a ACL personalizada.
+
+   ```PowerShell
+   $vmnicproperties = new-object Microsoft.Windows.NetworkController.NetworkInterfaceProperties
+   $vmnicproperties.PrivateMacAddress = "001122334455" 
+   $vmnicproperties.PrivateMacAllocationMethod = "Static" 
+   $vmnicproperties.IsPrimary = $true 
+
+   $vmnicproperties.DnsSettings = new-object Microsoft.Windows.NetworkController.NetworkInterfaceDnsSettings
+   $vmnicproperties.DnsSettings.DnsServers = @("24.30.1.11", "24.30.1.12")
     
-    Set-VMNetworkAdapter -VMName "MyVM" -StaticMacAddress "00-11-22-33-44-55" 
+   $ipconfiguration = new-object Microsoft.Windows.NetworkController.NetworkInterfaceIpConfiguration
+   $ipconfiguration.resourceid = "MyVM_IP1"
+   $ipconfiguration.properties = new-object Microsoft.Windows.NetworkController.NetworkInterfaceIpConfigurationProperties
+   $ipconfiguration.properties.PrivateIPAddress = “24.30.1.101”
+   $ipconfiguration.properties.PrivateIPAllocationMethod = "Static"
     
-
-### <a name="bkmk_getvn"></a>Obtenha a rede Virtual que contém a sub-rede ao qual você deseja se conectar o adaptador de rede
-Certifique-se de que você já criou uma rede Virtual antes de usar esse comando de exemplo. Para obter mais informações, consulte [criar, excluir ou redes virtuais do locatário atualização](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create%2c-delete%2c-or-update-tenant-virtual-networks).
-
-Para obter a rede Virtual, use o comando de exemplo a seguir.
-
+   $ipconfiguration.properties.Subnet = new-object Microsoft.Windows.NetworkController.Subnet
+   $ipconfiguration.properties.subnet.ResourceRef = $vnet.Properties.Subnets[0].ResourceRef
     
-    $vnet = get-networkcontrollervirtualnetwork -connectionuri $uri -ResourceId “Contoso_WebTier”
-    
+   $vmnicproperties.IpConfigurations = @($ipconfiguration)
+   New-NetworkControllerNetworkInterface –ResourceID “MyVM_Ethernet1” –Properties $vmnicproperties –ConnectionUri $uri
+   ```
 
->[!NOTE]
->Se você precisar ACLs personalizadas para essa interface de rede, em seguida, criar a ACL agora usando instruções no tópico [uso controle listas de acesso (ACLs) para gerenciar Datacenter rede tráfego fluir](../../sdn/manage/Use-Access-Control-Lists--ACLs--to-Manage-Datacenter-Network-Traffic-Flow.md)
+4. Obtenha a ID da instância para o adaptador de rede do controlador de rede.
 
-### <a name="bkmk_object"></a>Crie um objeto de interface de rede no controlador de rede
-
-Para criar um objeto de interface de rede no controlador de rede, use o comando de exemplo a seguir.
-
->[!NOTE]
->Se você criou uma ACL personalizado após a etapa anterior, você pode usá-lo agora.
-
-    
-    $vmnicproperties = new-object Microsoft.Windows.NetworkController.NetworkInterfaceProperties
-    $vmnicproperties.PrivateMacAddress = "001122334455" 
-    $vmnicproperties.PrivateMacAllocationMethod = "Static" 
-    $vmnicproperties.IsPrimary = $true 
-
-    $vmnicproperties.DnsSettings = new-object Microsoft.Windows.NetworkController.NetworkInterfaceDnsSettings
-    $vmnicproperties.DnsSettings.DnsServers = @("24.30.1.11", "24.30.1.12")
-    
-    $ipconfiguration = new-object Microsoft.Windows.NetworkController.NetworkInterfaceIpConfiguration
-    $ipconfiguration.resourceid = "MyVM_IP1"
-    $ipconfiguration.properties = new-object Microsoft.Windows.NetworkController.NetworkInterfaceIpConfigurationProperties
-    $ipconfiguration.properties.PrivateIPAddress = “24.30.1.101”
-    $ipconfiguration.properties.PrivateIPAllocationMethod = "Static"
-    
-    $ipconfiguration.properties.Subnet = new-object Microsoft.Windows.NetworkController.Subnet
-    $ipconfiguration.properties.subnet.ResourceRef = $vnet.Properties.Subnets[0].ResourceRef
-    
-    $vmnicproperties.IpConfigurations = @($ipconfiguration)
-    New-NetworkControllerNetworkInterface –ResourceID “MyVM_Ethernet1” –Properties $vmnicproperties –ConnectionUri $uri
-    
-
-### <a name="bkmk_getinstance"></a>Obtenha o InstanceId para a interface de rede do controlador de rede
-Para obter o InstanceId da interface de rede do controlador de rede, use o comando de exemplo a seguir.
-
-    
+   ```PowerShell 
     $nic = Get-NetworkControllerNetworkInterface -ConnectionUri $uri -ResourceId "MyVM-Ethernet1"
-    
+   ```
 
-### <a name="bkmk_setinstance"></a>Definir a ID de Interface na VM Hyper-V porta de adaptador de rede
-Para definir a ID de Interface da VM do Hyper-V porta de adaptador de rede, use o comando de exemplo a seguir.
+5. Defina a ID de Interface na VM do Hyper-V a porta do adaptador de rede.
 
->[!NOTE]
->Você deve executar esses comandos no host do Hyper-V onde a VM está instalada.
+   >[!NOTE]
+   >Você deve executar esses comandos no host Hyper-V em que a VM está instalada.
 
+   ```PowerShell 
+   #Do not change the hardcoded IDs in this section, because they are fixed values and must not change.
     
-    #Do not change the hardcoded IDs in this section, because they are fixed values and must not change.
+   $FeatureId = "9940cd46-8b06-43bb-b9d5-93d50381fd56"
     
-    $FeatureId = "9940cd46-8b06-43bb-b9d5-93d50381fd56"
+   $vmNics = Get-VMNetworkAdapter -VMName “MyVM”
     
-    $vmNics = Get-VMNetworkAdapter -VMName “MyVM”
+   $CurrentFeature = Get-VMSwitchExtensionPortFeature -FeatureId $FeatureId -VMNetworkAdapter $vmNics
     
-    $CurrentFeature = Get-VMSwitchExtensionPortFeature -FeatureId $FeatureId -VMNetworkAdapter $vmNics
+   if ($CurrentFeature -eq $null)
+   {
+   $Feature = Get-VMSystemSwitchExtensionPortFeature -FeatureId $FeatureId
     
-    if ($CurrentFeature -eq $null)
-    {
-    $Feature = Get-VMSystemSwitchExtensionPortFeature -FeatureId $FeatureId
+   $Feature.SettingData.ProfileId = "{$($nic.InstanceId)}"
+   $Feature.SettingData.NetCfgInstanceId = "{56785678-a0e5-4a26-bc9b-c0cba27311a3}"
+   $Feature.SettingData.CdnLabelString = "TestCdn"
+   $Feature.SettingData.CdnLabelId = 1111
+   $Feature.SettingData.ProfileName = "Testprofile"
+   $Feature.SettingData.VendorId = "{1FA41B39-B444-4E43-B35A-E1F7985FD548}"
+   $Feature.SettingData.VendorName = "NetworkController"
+   $Feature.SettingData.ProfileData = 1
     
-    $Feature.SettingData.ProfileId = "{$($nic.InstanceId)}"
-    $Feature.SettingData.NetCfgInstanceId = "{56785678-a0e5-4a26-bc9b-c0cba27311a3}"
-    $Feature.SettingData.CdnLabelString = "TestCdn"
-    $Feature.SettingData.CdnLabelId = 1111
-    $Feature.SettingData.ProfileName = "Testprofile"
-    $Feature.SettingData.VendorId = "{1FA41B39-B444-4E43-B35A-E1F7985FD548}"
-    $Feature.SettingData.VendorName = "NetworkController"
-    $Feature.SettingData.ProfileData = 1
+   Add-VMSwitchExtensionPortFeature -VMSwitchExtensionFeature  $Feature -VMNetworkAdapter $vmNics
+   }
+   else
+   {
+   $CurrentFeature.SettingData.ProfileId = "{$($nic.InstanceId)}"
+   $CurrentFeature.SettingData.ProfileData = 1
     
-    Add-VMSwitchExtensionPortFeature -VMSwitchExtensionFeature  $Feature -VMNetworkAdapter $vmNics
-    }
-    else
-    {
-    $CurrentFeature.SettingData.ProfileId = "{$($nic.InstanceId)}"
-    $CurrentFeature.SettingData.ProfileData = 1
-    
-    Set-VMSwitchExtensionPortFeature -VMSwitchExtensionFeature $CurrentFeature  -VMNetworkAdapter $vmNic
-    }
-    
+   Set-VMSwitchExtensionPortFeature -VMSwitchExtensionFeature $CurrentFeature  -VMNetworkAdapter $vmNic
+   }
+   ```
 
-### <a name="bkmk_start"></a>Inicie a máquina virtual
-Para iniciar a VM, use o comando de exemplo a seguir.
+6. Inicie a VM.
 
-    
+   ```PowerShell
     Get-VM -Name “MyVM” | Start-VM 
-    
-Você tem agora com êxito criou uma VM, conectado a VM a um rede Virtual locatário e começar a VM para que ele possa processar locatário cargas de trabalho.
+   ```
 
-## <a name="bkmk_vlan"></a>Criar uma VM e conecte obtenham uma usando NetworkControllerRESTWrappers
+Com êxito ter criado uma VM, conectados a VM a um locatário de rede Virtual e iniciado a VM para que ele possa processar cargas de trabalho de locatário.
 
-Esta seção inclui os tópicos a seguir.
-
-1. [Crie a VM e atribua um endereço MAC estático](#bkmk_mac)
-2. [Definir a ID de VLAN no adaptador de rede VM](#bkmk_vid)
-3. [Obtenha a sub-rede da rede lógica e crie a interface de rede](#bkmk_subnet)
-4. [Defina o InstanceId na porta Hyper-V](#bkmk_instance)
-5. [Inicie a máquina virtual](#bkmk_startvlan)
+## <a name="create-a-vm-and-connect-to-a-vlan-by-using-networkcontrollerrestwrappers"></a>Criar uma VM e conectar-se a uma VLAN usando NetworkControllerRESTWrappers
 
 
-###<a name="bkmk_mac"></a>Crie a VM e atribua um endereço MAC estático
-Para criar uma VM e atribuir uma mídia estática \(MAC\) endereço do controle de acesso para a VM, você pode usar os comandos de exemplo a seguir.
+1. Criar a máquina virtual e atribuir um endereço MAC estático à VM.
 
-    New-VM -Generation 2 -Name "MyVM" -Path "C:\VMs\MyVM" -MemoryStartupBytes 4GB -VHDPath "c:\VMs\MyVM\Virtual Hard Disks\WindowsServer2016.vhdx" -SwitchName "SDNvSwitch" 
+   ```PowerShell
+   New-VM -Generation 2 -Name "MyVM" -Path "C:\VMs\MyVM" -MemoryStartupBytes 4GB -VHDPath "c:\VMs\MyVM\Virtual Hard Disks\WindowsServer2016.vhdx" -SwitchName "SDNvSwitch" 
 
-    Set-VM -Name "MyVM" -ProcessorCount 4
+   Set-VM -Name "MyVM" -ProcessorCount 4
 
-    Set-VMNetworkAdapter -VMName "MyVM" -StaticMacAddress "00-11-22-33-44-55" 
+   Set-VMNetworkAdapter -VMName "MyVM" -StaticMacAddress "00-11-22-33-44-55" 
+   ```
 
-###<a name="bkmk_vid"></a>Definir a ID de VLAN no adaptador de rede VM
-Para definir a ID de VLAN no adaptador de rede, você pode usar o comando de exemplo a seguir.
+2. Defina a ID de VLAN no adaptador de rede VM.
 
+   ```PowerShell
+   Set-VMNetworkAdapterIsolation –VMName “MyVM” -AllowUntaggedTraffic $true -IsolationMode VLAN -DefaultIsolationId 123
+   ```
 
-    Set-VMNetworkAdapterIsolation –VMName “MyVM” -AllowUntaggedTraffic $true -IsolationMode VLAN -DefaultIsolationId 123
+3. Obtenha a sub-rede de rede lógica e crie a interface de rede. 
 
-
-###<a name="bkmk_subnet"></a>Obtenha a sub-rede da rede lógica e crie a interface de rede
-
-Para obter a sub-rede da rede lógica e criar a interface de rede usando a sub-rede da rede lógica, você pode usar os comandos de exemplo a seguir.
-
-
+   ```PowerShell
     $logicalnet = get-networkcontrollerLogicalNetwork -connectionuri $uri -ResourceId "00000000-2222-1111-9999-000000000002"
 
     $vmnicproperties = new-object Microsoft.Windows.NetworkController.NetworkInterfaceProperties
@@ -216,50 +184,49 @@ Para obter a sub-rede da rede lógica e criar a interface de rede usando a sub-r
     $vnic = New-NetworkControllerNetworkInterface –ResourceID “MyVM_Ethernet1” –Properties $vmnicproperties –ConnectionUri $uri
 
     $vnic.InstanceId
-    
+   ```
 
-###<a name="bkmk_instance"></a>Defina o InstanceId na porta Hyper-V
-Para definir o InstanceId na porta Hyper-V, você pode usar os comandos de exemplo a seguir no host do Hyper-V onde a VM está localizada.
+4. Defina a ID da instância na porta do Hyper-V.
 
-  
-    #The hardcoded Ids in this section are fixed values and must not change.
-    $FeatureId = "9940cd46-8b06-43bb-b9d5-93d50381fd56"
+   ```PowerShell  
+   #The hardcoded Ids in this section are fixed values and must not change.
+   $FeatureId = "9940cd46-8b06-43bb-b9d5-93d50381fd56"
 
-    $vmNics = Get-VMNetworkAdapter -VMName “MyVM”
+   $vmNics = Get-VMNetworkAdapter -VMName “MyVM”
 
-    $CurrentFeature = Get-VMSwitchExtensionPortFeature -FeatureId $FeatureId -VMNetworkAdapter $vmNic
+   $CurrentFeature = Get-VMSwitchExtensionPortFeature -FeatureId $FeatureId -VMNetworkAdapter $vmNic
         
-    if ($CurrentFeature -eq $null)
-    {
-        $Feature = Get-VMSystemSwitchExtensionFeature -FeatureId $FeatureId
+   if ($CurrentFeature -eq $null)
+   {
+       $Feature = Get-VMSystemSwitchExtensionFeature -FeatureId $FeatureId
         
-        $Feature.SettingData.ProfileId = "{$InstanceId}"
-        $Feature.SettingData.NetCfgInstanceId = "{56785678-a0e5-4a26-bc9b-c0cba27311a3}"
-        $Feature.SettingData.CdnLabelString = "TestCdn"
-        $Feature.SettingData.CdnLabelId = 1111
-        $Feature.SettingData.ProfileName = "Testprofile"
-        $Feature.SettingData.VendorId = "{1FA41B39-B444-4E43-B35A-E1F7985FD548}"
-        $Feature.SettingData.VendorName = "NetworkController"
-        $Feature.SettingData.ProfileData = 1
+       $Feature.SettingData.ProfileId = "{$InstanceId}"
+       $Feature.SettingData.NetCfgInstanceId = "{56785678-a0e5-4a26-bc9b-c0cba27311a3}"
+       $Feature.SettingData.CdnLabelString = "TestCdn"
+       $Feature.SettingData.CdnLabelId = 1111
+       $Feature.SettingData.ProfileName = "Testprofile"
+       $Feature.SettingData.VendorId = "{1FA41B39-B444-4E43-B35A-E1F7985FD548}"
+       $Feature.SettingData.VendorName = "NetworkController"
+       $Feature.SettingData.ProfileData = 1
                 
-        Add-VMSwitchExtensionFeature -VMSwitchExtensionFeature  $Feature -VMNetworkAdapter $vmNic
-    }        
-    else
-    {
-        $CurrentFeature.SettingData.ProfileId = "{$InstanceId}"
-        $CurrentFeature.SettingData.ProfileData = 1
+       Add-VMSwitchExtensionFeature -VMSwitchExtensionFeature  $Feature -VMNetworkAdapter $vmNic
+   }        
+   else
+   {
+       $CurrentFeature.SettingData.ProfileId = "{$InstanceId}"
+       $CurrentFeature.SettingData.ProfileData = 1
 
-        Set-VMSwitchExtensionPortFeature -VMSwitchExtensionFeature $CurrentFeature  -VMNetworkAdapter $vmNic
-    }
+       Set-VMSwitchExtensionPortFeature -VMSwitchExtensionFeature $CurrentFeature  -VMNetworkAdapter $vmNic
+   }
+   ```
 
+5. Inicie a VM.
 
-###<a name="bkmk_startvlan"></a>Inicie a máquina virtual
-Para iniciar a máquina virtual, você pode usar o comando de exemplo a seguir.
+   ```PowerShell
+   Get-VM -Name “MyVM” | Start-VM 
+   ```
 
-
-    Get-VM -Name “MyVM” | Start-VM 
-
-Você tem agora com êxito criou uma VM, conectado a VM obtenham uma e começar a VM para que ele possa processar locatário cargas de trabalho.
+E com sucesso criou uma VM, conectados a VM a uma VLAN, iniciado a VM para que ele possa processar cargas de trabalho de locatário.
 
   
 

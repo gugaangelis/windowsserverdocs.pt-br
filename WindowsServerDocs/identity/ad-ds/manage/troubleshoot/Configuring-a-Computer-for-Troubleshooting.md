@@ -1,109 +1,61 @@
 ---
 ms.assetid: 155abe09-6360-4913-8dd9-7392d71ea4e6
-title: "Configurando um computador para solução de problemas"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 05/31/2017
+title: Configurar um computador para solução de problemas
+description: ''
+ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: mtillman
+ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 915b8d1133b3bee050f5eedce9e7ac445f833048
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 1acb5f7d309d58ed4a5a3aca6bb89f01c0cbf933
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59854117"
 ---
-# <a name="configuring-a-computer-for-troubleshooting"></a>Configurando um computador para solução de problemas
+# <a name="configuring-a-computer-for-troubleshooting"></a>Configurar um computador para solução de problemas
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
+Antes de usar técnicas avançadas de solução de problemas para identificar e corrigir problemas do Active Directory, configure seus computadores para solução de problemas. Você também deve ter uma compreensão básica dos conceitos, procedimentos e ferramentas de solução de problemas.
 
-<developerConceptualDocument xmlns="https://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="https://www.w3.org/1999/xlink" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://ddue.schemas.microsoft.com/authoring/2003/5 http://clixdevr3.blob.core.windows.net/ddueschema/developer.xsd">
-  <introduction>
-    <para>Antes de usar técnicas avançadas de solução de problemas para identificar e corrigir problemas do Active Directory, configure seus computadores para a solução de problemas. Você também deve ter uma compreensão básica de <token>nextref_longhorincludes > conceitos, procedimentos e ferramentas de solução de problemas. </para>
-    <para>Para obter informações sobre ferramentas de monitoramento do Windows Server 2008, consulte o Step-by-Step guia para monitoramento de desempenho e confiabilidade no Windows Server 2008 (<externalLink><linkText>https://go.microsoft.com/fwlink/?LinkId=123737</linkText><linkUri>https://go.microsoft.com/fwlink/?LinkId=123737</linkUri></externalLink>).</para>
-  </introduction>
-  <section>
-    <title>Tarefas de configuração de solução de problemas</title>
-    <content>
-      <para>para configurar seu computador para solucionar os serviços de domínio do Active Directory (AD DS), execute as seguintes tarefas:</para>
-      <para>
-        <link xlink:href="#BKMK_2">instalar de ferramentas de administração de servidor remoto para o AD DS</link>
-      </para>
-      <para>
-        <link xlink:href="#BKMK_3">configurar o Monitor de confiabilidade e desempenho</link>
-      </para>
-      <para>
-        <link xlink:href="#BKMK_4">definir níveis de log</link>
-      </para>
-    </content>
-    <sections>
-      <section address="BKMK_2">
-        <title>Instale as ferramentas de administração de servidor remoto para o AD DS</title>
-        <content>
-          <para>quando você instala o AD DS para criar um controlador de domínio, as ferramentas administrativas que você usa para gerenciar o AD DS são instaladas automaticamente. Se você quiser gerenciar controladores de domínio remotamente em um computador que não é um controlador de domínio, você pode instalar as ferramentas administrativas em um servidor membro que esteja executando <token>nextref_longhorincludes > ou em um computador que esteja executando o Windows Vista com Service Pack 1 (SP1). Em servidores membro que executam o <token>nextref_longhorincludes >, você usar o recurso ferramentas de administração de servidor remoto (RSAT) no Gerenciador de servidores para instalar as ferramentas de serviços de domínio do Active Directory. RSAT substitui ferramentas de suporte do Windows no Windows Server 2003. Você também pode instalar as ferramentas de serviços de domínio do Active Directory em um computador que esteja executando o Windows Vista com Service Pack 1 (SP1) baixando as ferramentas para esse computador.</para>
-          <para>para obter informações sobre como instalar o RSAT, consulte <link xlink:href="610ba7d9-51b5-4e14-9232-0510a9091aba">instalando de ferramentas de administração de servidor remoto para o AD DS</link>.</para>
-        </content>
-      </section>
-      <section address="BKMK_3">
-        <title>Configurar o Monitor de confiabilidade e desempenho</title>
-        <content>
-          <para>Windows Server 2008 inclui o Windows Monitor de confiabilidade e desempenho, que é um snap-in do Console de gerenciamento Microsoft (MMC) que combina a funcionalidade de ferramentas autônomas anteriores, incluindo Logs de desempenho e alertas, Supervisor de desempenho de servidor e Monitor do sistema. Esse snap-in fornece uma interface gráfica do usuário (GUI) para personalizar os conjuntos de Coletores de dados e sessões de rastreamento de eventos.</para>
-          <para>Monitor de confiabilidade e desempenho também inclui o Monitor de confiabilidade, um snap-in do MMC que controla as alterações do sistema e os compara a mudanças na estabilidade do sistema, fornecendo uma exibição gráfica de seu relacionamento.</para>
-        </content>
-      </section>
-      <section address="BKMK_4">
-        <title>Definir níveis de log</title>
-        <content>
-          <para>se as informações que você recebe no log de serviço de diretório no Visualizador de eventos não são suficientes para solução de problemas, aumente os níveis de log usando a entrada do registro apropriadas em <embeddedLabel>HKEY_LOCAL_MACHINESYSTEMCurrentControlSetServicesNTDSDiagnostics</embeddedLabel>. </para>
-          <para>por padrão, os níveis de registro em log para todas as entradas são definidos como <embeddedLabel>0</embeddedLabel>, que fornece a quantidade mínima de informações. É o mais alto nível de registro em log <embeddedLabel>5</embeddedLabel>. Aumentar o nível de uma entrada faz com que eventos adicionais a serem registrados no log de eventos de serviço de diretório.</para>
-          <para>você pode usar o procedimento a seguir para alterar o nível de log para uma entrada de diagnóstico.</para>
-          <alert class="caution">
-            <para>, recomendamos que você não diretamente editar o registro a menos que não haja nenhuma outra alternativa. Modificações no registro não são validadas pelo editor do registro ou pelo Windows antes que eles são aplicados e como resultado, os valores incorretos podem ser armazenados. Isso pode resultar em erros irrecuperáveis no sistema. Quando possível, use a política de grupo ou outras ferramentas do Windows, como snap-ins do MMC, realizar tarefas, em vez de edição do registro diretamente. Se você deve editar o registro, tenha muito cuidado.</para>
-          </alert>
-          <para>
-            <embeddedLabel>requisitos</embeddedLabel>
-          </para>
-          <list class="bullet">
-            <listItem>
-              <para>a associação ao grupo <embeddedLabel>Admins. do domínio</embeddedLabel>, ou equivalente, é o requisito mínimo para concluir este procedimento. <token>review_detailincludes ></para>
-            </listItem>
-            <listItem>
-              <para>ferramentas: Regedit.exe</para>
-            </listItem>
-          </list>
-          <procedure>
-            <title>para alterar o nível de registro em log para uma entrada de diagnóstico</title>
-            <steps class="ordered">
-              <step>
-                <content>
-                  <para>clique <ui>iniciar</ui>, clique em <ui>executar</ui>, tipo <userInput>regedit</userInput>e clique em <ui>Okey</ui>. </para>
-                </content>
-              </step>
-              <step>
-                <content>
-                  <para>navegar até a entrada para o qual você deseja configurar registro em log <embeddedLabel>HKEY_LOCAL_MACHINESYSTEMCurrentControlSetServicesNTDSDiagnostics</embeddedLabel>. </para>
-                </content>
-              </step>
-              <step>
-                <content>
-                  <para>duas vezes na entrada e em <embeddedLabel>Base</embeddedLabel>, clique em <embeddedLabel>Decimal</embeddedLabel>. </para>
-                </content>
-              </step>
-              <step>
-                <content>
-                  <para>em <embeddedLabel>valor</embeddedLabel>, digite um número inteiro de <embeddedLabel>0</embeddedLabel> por meio de <embeddedLabel>5</embeddedLabel>e clique em <ui>Okey</ui>. </para>
-                </content>
-              </step>
-            </steps>
-          </procedure>
-        </content>
-      </section>
-    </sections>
-  </section>
-  <relatedTopics />
-</developerConceptualDocument>
+Para obter informações sobre as ferramentas de monitoramento para o Windows Server, consulte o guia passo a passo para [monitoramento de desempenho e confiabilidade no Windows Server](https://go.microsoft.com/fwlink/?LinkId=123737)
 
+## <a name="configuration-tasks-for-troubleshooting"></a>Tarefas de configuração para solução de problemas
 
+Para configurar seu computador para solucionar problemas de serviços de domínio Active Directory (AD DS), execute as seguintes tarefas:
+
+### <a name="install-remote-server-administration-tools-for-ad-ds"></a>Instalar ferramentas de administração de servidor remoto para o AD DS
+
+Quando você instala o AD DS para criar um controlador de domínio, as ferramentas administrativas que você usa para gerenciar o AD DS são instaladas automaticamente. Se você quiser gerenciar controladores de domínio remotamente de um computador que não seja um controlador de domínio, você pode instalar as ferramentas de administração de servidor remoto (RSAT) em um servidor membro ou estação de trabalho que está executando uma versão com suporte do Windows. RSAT substitui as ferramentas de suporte do Windows do Windows Server 2003.
+
+Para obter informações sobre como instalar o RSAT, consulte o artigo [ferramentas de administração de servidor remoto](https://docs.microsoft.com/windows-server/remote/remote-server-administration-tools).
+
+### <a name="configure-reliability-and-performance-monitor"></a>Configurar o Monitor de desempenho e confiabilidade
+
+O Windows Server inclui o Monitor de desempenho, que é um snap-in do Console de gerenciamento Microsoft (MMC) que combina a funcionalidade de ferramentas autônomas anteriores, incluindo Logs e alertas, Server Performance Advisor, desempenho e confiabilidade do Windows e o Monitor do sistema. Esse snap-in fornece uma interface gráfica do usuário (GUI) para personalizar conjuntos de Coletores de dados e sessões de rastreamento de eventos.
+
+Monitor de confiabilidade e desempenho também inclui o Monitor de confiabilidade, um snap-in do MMC que controla as alterações no sistema e compara-as com as alterações na estabilidade do sistema, fornecendo uma exibição gráfica de suas relações.
+
+### <a name="set-logging-levels"></a>Definir níveis de log
+
+Se as informações que você recebe no log do serviço de diretório no Visualizador de eventos não são suficientes para solução de problemas, elevar os níveis de registro em log usando a entrada de registro apropriadas em **HKEY_LOCAL MACHINESYSTEMCurrentControlSetServicesNTDSDiagnostics**.
+
+Por padrão, os níveis de log para todas as entradas são definidos **0**, que fornece a quantidade mínima de informações. É o mais alto nível de log **5**. Aumentar o nível de uma entrada faz com que eventos adicionais a serem registrados no log de eventos do serviço de diretório.
+
+Use o procedimento a seguir para alterar o nível de log para uma entrada de diagnóstico. Ser membro do grupo **Admins. do Domínio**, ou equivalente, é o mínimo necessário para concluir este procedimento.
+
+> [!WARNING]
+> É recomendável não editar diretamente o Registro, a menos que não haja outra alternativa. Modificações no registro não são validadas pelo editor do registro ou pelo Windows antes que eles são aplicados e como resultado, os valores incorretos podem ser armazenados. Isso pode resultar em erros irrecuperáveis no sistema. Quando possível, use a diretiva de grupo ou outras ferramentas do Windows, como snap-ins do MMC, para realizar tarefas, em vez de editar o registro diretamente. Se você deve editar o Registro, tenha muito cuidado.
+>
+
+Para alterar o nível de log para uma entrada de diagnóstico
+
+1. Clique em **inicie** > **execute** > tipo **regedit** > clique em **Okey**.
+2. Navegue até a entrada para o qual você deseja definir o registro em log no.
+   * EXEMPLO: HKEY_LOCAL_MACHINESYSTEMCurrentControlSetServicesNTDSDiagnostics
+3. Duas vezes na entrada e, na **Base**, clique em **Decimal**.
+4. Na **valor**, digite um inteiro de **0** por meio do **5**e, em seguida, clique em **Okey**.

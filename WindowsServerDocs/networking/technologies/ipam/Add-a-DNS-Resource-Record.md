@@ -1,6 +1,6 @@
 ---
-title: Adicionar um registro de recurso DNS
-description: Este tópico faz parte do guia de gerenciamento de gerenciamento de endereço IP (IPAM) no Windows Server 2016.
+title: Adicionar um registro de recursos de DNS
+description: Este tópico faz parte do guia de gerenciamento do gerenciamento de endereço IP (IPAM) no Windows Server 2016.
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,69 +13,70 @@ ms.topic: article
 ms.assetid: 5379373f-a3d9-4f51-b6fc-bf0f6df1d244
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e14a59e9f172b20e85a34d2299e3733a796adafc
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 868b27a2a2b2005c3cf54d544d2534ae66ae0d98
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59849477"
 ---
-# <a name="add-a-dns-resource-record"></a>Adicionar um registro de recurso DNS
+# <a name="add-a-dns-resource-record"></a>Adicionar um registro de recursos de DNS
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Você pode usar este tópico para adicionar um ou mais registros de recurso DNS novo usando o console do cliente IPAM.  
+Você pode usar este tópico para adicionar um ou mais novos registros de recursos usando o console de cliente IPAM.  
   
-A associação ao grupo **administradores**, ou equivalente, é o requisito mínimo para executar este procedimento.  
+A associação em **Administradores**, ou equivalente, é o requisito mínimo para executar este procedimento.  
   
 ### <a name="to-add-a-dns-resource-record"></a>Para adicionar um registro de recurso DNS  
   
-1.  No Gerenciador do servidor, clique em **IPAM**. O console de cliente IPAM aparece.  
+1.  No Gerenciador do servidor, clique em **IPAM**. Console de cliente IPAM é exibida.  
   
 2.  No painel de navegação, em **monitorar e gerenciar**, clique em **zonas DNS**.  Divide o painel de navegação em um painel de navegação superior e um painel de navegação inferior.  
   
-3.  No painel de navegação inferior, clique em **pesquisa direta**. Todas as regiões gerenciado IPAM DNS para a frente pesquisa são exibidas nos resultados da pesquisa de painel de exibição. Clique com botão direito a zona em que você deseja adicionar um registro de recurso e, em seguida, clique em **registro de recurso DNS adicionar**.  
+3.  No painel de navegação inferior, clique em **pesquisa direta**. Todos os gerenciados pelo IPAM DNS zonas de pesquisa direta são exibidas nos resultados da pesquisa do painel exibição. A zona em que você deseja adicionar um registro de recurso e, em seguida, clique com o botão direito **registro de recurso DNS adicionar**.  
   
-    ![Adicione o registro de recurso DNS](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_01.jpg)
+    ![Adicionar um registro de recurso DNS](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_01.jpg)
   
-4.  O **adicionar registros de recurso DNS** caixa de diálogo é aberta. Em **propriedades de registro de recurso**, clique em **servidor DNS** e selecione o servidor DNS onde você deseja adicionar um ou mais registros de recurso de novo. Em **registros de recurso de configurar DNS**, clique em **nova**.  
+4.  O **adicionar registros de recursos DNS** caixa de diálogo é aberta. Na **propriedades de registro de recurso**, clique em **servidor DNS** e selecione o servidor DNS no qual você deseja adicionar um ou mais novos registros de recursos. Na **registros de recursos DNS Configure**, clique em **New**.  
   
-    ![Configurar os registros de recurso do DNS](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_02.jpg)  
+    ![Configurar registros de recurso DNS](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_02.jpg)  
   
-5.  A caixa de diálogo possa ser expandido para revelar **novo registro de recurso**. Clique em **tipo de registro de recurso**.  
+5.  A caixa de diálogo é expandida para revelar **novo registro de recurso**. Clique em **tipo de registro de recurso**.  
   
     ![Tipo de registro de recurso](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_03.jpg)  
   
-6.  A lista de tipos de registro de recursos é exibida. Clique no tipo de registro de recurso que você deseja adicionar.  
+6.  A lista de tipos de registro de recurso é exibida. Clique no tipo de registro de recurso que você deseja adicionar.  
   
     ![Selecione o tipo de registro para adicionar](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_04.jpg)  
   
-7.  Em **novo registro de recurso,** em **nome**, digite um nome de registro de recurso. Em **endereço IP**, digite um endereço IP e, em seguida, selecione as propriedades de registro de recurso que são apropriadas para a implantação. Clique em **adicionar registro de recurso**.  
+7.  Na **novo registro de recurso** na **nome**, digite um nome de registro de recurso. Na **endereço IP**, digite um endereço IP e, em seguida, selecione as propriedades de registro de recurso que são apropriadas para sua implantação. Clique em **adicionar registro de recurso**.  
   
-    ![Adicione o registro de recurso](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_06.jpg)  
+    ![Adicionar registro de recurso](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_06.jpg)  
   
-8.  Se você não quiser criar novos registros de recurso adicional, clique em **Okey**. Se você quiser criar novos registros de recurso adicional, clique em **nova**.  
+8.  Se você não quiser criar novos registros de recursos adicionais, clique em **Okey**. Se você quiser criar novos registros de recursos adicionais, clique em **New**.  
   
-    ![Clique em novo ou Okey](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_r2_01.jpg)
+    ![Clique no botão Okey ou novo](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_r2_01.jpg)
   
-9. A caixa de diálogo possa ser expandido para revelar **novo registro de recurso**. Clique em **tipo de registro de recurso**. A lista de tipos de registro de recursos é exibida. Clique no tipo de registro de recurso que você deseja adicionar.  
+9. A caixa de diálogo é expandida para revelar **novo registro de recurso**. Clique em **tipo de registro de recurso**. A lista de tipos de registro de recurso é exibida. Clique no tipo de registro de recurso que você deseja adicionar.  
   
-10. Em **novo registro de recurso,** em **nome**, digite um nome de registro de recurso. Em **endereço IP**, digite um endereço IP e, em seguida, selecione as propriedades de registro de recurso que são apropriadas para a implantação. Clique em **adicionar registro de recurso**.  
+10. Na **novo registro de recurso** na **nome**, digite um nome de registro de recurso. Na **endereço IP**, digite um endereço IP e, em seguida, selecione as propriedades de registro de recurso que são apropriadas para sua implantação. Clique em **adicionar registro de recurso**.  
   
-    ![Adicione o registro de recurso](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_r2_02.jpg)  
+    ![Adicionar registro de recurso](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_r2_02.jpg)  
   
-11. Se você quiser adicionar mais registros de recurso, repita o processo de criação de registros. Quando terminar de criar novos registros de recurso, clique em **aplicar**.  
+11. Se você quiser adicionar mais registros de recursos, repita o processo para a criação de registros. Quando você terminar de criar novos registros de recursos, clique em **aplicar**.  
   
     ![Criação de registro de recurso completo](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_r2_03.jpg)  
   
-12. O **registro de recurso Adicionar** caixa de diálogo exibe um resumo de registros de recurso enquanto IPAM cria os registros de recurso no servidor DNS que você especificou. Quando os registros são criados com êxito, o **Status** do registro é **sucesso**.  
+12. O **registro de recurso de adicionar** caixa de diálogo exibe um resumo de registros de recursos, enquanto o IPAM cria os registros de recursos no servidor DNS que você especificou. Quando os registros são criados com êxito, o **Status** do registro é **sucesso**.  
   
-    ![Status de adição do registro](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_r2_04.jpg)  
+    ![Status de registro de adição](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_r2_04.jpg)  
   
-13. Clique em **Okey**.  
+13. Clique em **OK**.  
   
 ## <a name="see-also"></a>Consulte também  
-[Gerenciamento de registros de recurso do DNS](DNS-Resource-Record-Management.md)  
-[Gerenciar IPAM](Manage-IPAM.md)  
+[Gerenciamento de registro de recurso DNS](DNS-Resource-Record-Management.md)  
+[Gerenciar o IPAM](Manage-IPAM.md)  
   
 
 

@@ -1,0 +1,111 @@
+---
+title: dfsrmig
+description: 'Tópico de comandos do Windows para * * *- '
+ms.custom: na
+ms.prod: windows-server-threshold
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: e1b6a464-6a93-4e66-9969-04f175226d8d
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 10/16/2017
+ms.openlocfilehash: da05aec5ca5a5634585c5f5406181c5c90ee3a30
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59856937"
+---
+# <a name="dfsrmig"></a>dfsrmig
+
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+
+O `dfsrmig` comando migra a replicação do SYSvol da replicação FRS (serviço) para replicação de sistema de arquivos distribuído (DFS), fornece informações sobre o andamento da migração e modifica objetos do active directory Domain Services (AD DS) para suporte à migração.
+Para obter exemplos de como usar esse comando, consulte o [exemplos](#BKMK_examples) seção mais adiante neste documento.
+## <a name="syntax"></a>Sintaxe
+```
+dfsrmig [/SetGlobalState <state> | /GetGlobalState | /GetMigrationState | /createGlobalObjects | 
+/deleteRoNtfrsMember [<read_only_domain_controller_name>] | /deleteRoDfsrMember [<read_only_domain_controller_name>] | /?]
+```
+## <a name="parameters"></a>Parâmetros
+|Parâmetro|Descrição|
+|-------|--------|
+|/SetGlobalState <state>|Define o estado de migração global desejado para o domínio para o estado que corresponde ao valor especificado por *estado*.<br /><br />Para continuar a migração ou os processos de reversão, use este comando para alternar entre os estados válidos. Essa opção permite que você inicie e controlar o processo de migração, definindo o estado de migração global no AD DS no emulador PDC. Se o emulador do PDC não estiver disponível, esse comando falhará.<br /><br /> Você só pode definir o estado de migração global em um estado estável. Os valores válidos para *estado*, portanto, são **0** para o estado de início **1** para o estado preparado, **2** para o estado de redirecionada, e **3** para o estado de eliminada.<br /><br />Migração para o estado de eliminada é irreversível e não é possível reversão a partir desse estado, portanto, use um valor de **3** para *estado* apenas quando estiver totalmente committd para uso da replicação DFS do SYSvol replicação.|
+|/GetGlobalState|Recupera o estado atual da migração global para o domínio da cópia local do banco de dados AD DS, quando executado no emulador PDC.<br /><br />Use esta opção para confirmar que você defina o estado de migração global corretos. Apenas estável de migração de estados podem ser estados de migração global, portanto, os resultados que o **dfsrmig** comando relatórios com o **/GetGlobalState** opção correspondem aos estados pode ser definido com o **/SetGlobalState** opção.<br /><br />Você deve executar o **dfsrmig** com o **/GetGlobalState** opção apenas no emulador PDC. replicação do Active Directory replica o estado global para outros controladores de domínio no domínio, mas as latências de replicação podem causar inconsistências se você executar o **dfsrmig** com o **/GetGlobalState**  opção em um controlador de domínio que não seja o emulador do PDC. Para verificar o status da migração local de um controlador de domínio que não seja o emulador PDC, use o **/GetMigrationState** opção em vez disso.|
+|/GetMigrationState|Recupera o estado atual da migração local para todos os controladores de domínio no domínio e determina se os estados de locais correspondem o estado atual da migração global.<br /><br />Use esta opção para determinar se todos os controladores de domínio tem atingido o estado de migração global. A saída a **dsfrmig** comando quando você usa o **/GetMigrationState** opção indica se a migração para o estado global atual for concluída e lista o estado de migração local para qualquer controladores de domínio que não tenham atingido o estado atual da migração global. Estado de migração local para controladores de domínio pode incluir estados de transição para controladores de domínio que não tenham atingido o estado atual da migração global.|
+|/createGlobalObjects|cria as configurações e objetos globais no AD DS que usa a replicação do DFS.<br /><br />Você não será preciso usar essa opção durante um processo de migração normal, porque o serviço de replicação DFS cria automaticamente essas configurações e objetos do AD DS durante a migração do estado inicial para o estado preparado. Use esta opção para criar manualmente esses objetos e configurações nas seguintes situações:<br /><br />-   **Um novo controlador de domínio somente leitura é promovido durante a migração**. O serviço de replicação DFS cria automaticamente as configurações para a replicação DFS e objetos do AD DS durante a migração do estado inicial para o estado preparado. Se um novo controlador de domínio somente leitura é promovido no domínio após essa transição, mas antes da migração para o estado de eliminada, em seguida, os objetos que correspondem ao controlador de domínio recém-ativada de somente leitura não são criados no AD DS, fazendo com que a replicação e Falha na migração.<br />-Nesse caso, você pode executar o **dfsrmig** comando wth a **/createGlobalObjects** opção para criar manualmente os objetos em controladores de domínio somente leitura que ainda não tivê-los. A execução desse comando não afeta os controladores de domínio que já têm os objetos e configurações para o serviço de replicação do DFS.<br />-   **As configurações globais para o serviço de replicação do DFS estão ausentes ou foram excluídas**. Se essas configurações estão ausentes para um determinado controlador de domínio, a migração de estado inicial para o estado preparado fica parada no estado de transição a preparação para o controlador de domínio. Nesse caso, você pode usar o **dfsrmig** com o **/createGlobalObjects** opção para criar manualmente as configurações. **Observação:** Como as configurações globais do AD DS para o serviço de replicação do DFS para um controlador de domínio somente leitura são criadas no emulador PDC, essas configurações devem replicar para o controlador de domínio somente leitura no emulador do PDC antes que o serviço de replicação do DFS no controlador de domínio somente leitura pode usar essas configurações. Devido a latências de replicação de diretório Active Directory, essa replicação pode levar algum tempo para ocorrer.|
+|/deleteRoNtfrsMember [< read_only_domain_controller_name >]|Exclui as configurações globais do AD DS para a replicação de FRS que correspondem ao controlador de domínio somente leitura especificado, ou exclui as configurações globais do AD DS para a replicação de FRS para todos os controladores de domínio somente leitura, se nenhum valor for especificado para *read_only_ nome_controlador_domínio*.<br /><br />Você não será preciso usar essa opção durante um processo de migração normal, porque o serviço de replicação do DFS exclui automaticamente essas configurações do AD DS durante a migração do estado redirecionada para o estado de eliminada. Como controladores de domínio somente leitura não é possível excluir essas configurações do AD DS, o emulador do PDC executa esta operação, e a replicação das alterações, eventualmente, aos controladores de domínio somente leitura após as latências aplicáveis para replicação do Active Directory.<br /><br />Você pode usar essa opção para excluir manualmente as configurações do AD DS apenas quando a exclusão automática falha em um controlador de domínio somente leitura e interrompe o controlador de domínio somente leitura para um ime longo durante a migração do estado redirecionada para o estado de eliminada.|
+|/deleteRoDfsrMember [< read_only_domain_controller_name >]|Exclui as configurações globais do AD DS para a replicação DFS que correspondem ao controlador de domínio somente leitura especificado, ou exclui as configurações globais do AD DS para a replicação DFS para todos os controladores de domínio somente leitura, se nenhum valor for especificado para *read_only_ nome_controlador_domínio*.<br /><br />Use esta opção para excluir manualmente as configurações do AD DS apenas quando a exclusão automática falha em um controlador de domínio somente leitura e interrompe o controlador de domínio somente leitura por um longo tempo ao reverter a migração de estado preparado para o estado inicial.|
+|/?|Exibe a ajuda no prompt de comando. Equivalente a executar **dfsrmig** sem opções.|
+## <a name="remarks"></a>Comentários
+-   DFSRMIG.exe, a ferramenta de migração para o serviço de replicação do DFS, é instalado com o serviço de replicação do DFS.
+    para um novo servidor do Windows Server 2008, Dcpromo.exe instala e inicia o serviço de replicação do DFS ao promover o computador a um controlador de domínio. Quando você atualizar um servidor do Windows Server 2003 para o Windows Server 2008, a processo de atualização instala e inicia o serviço de replicação do DFS. Você não precisará instalar o serviço de função de replicação do DFS para que o serviço de replicação de DFS instalado e iniciado.
+-   O **dfsrmig** ferramenta só tem suporte em controladores de domínio que executam no nível funcional do domínio de Windows Server 2008, porque a migração de SYSvol do FRS para replicação DFS só é possível em controladores de domínio que operam no  Nível funcional do domínio Windows Server 2008.
+-   Você pode executar o **dfsrmig** objetos de comando em qualquer controlador de domínio, mas as operações que criam ou manipulam o AD DS são permitidos apenas em controladores de domínio com capacidade de leitura / gravação (não em controladores de domínio somente leitura).
+-   Executando **dfsrmig** sem nenhuma opção exibe a Ajuda no prompt de comando.
+## <a name="BKMK_examples"></a>Exemplos
+Para definir o estado de migração global como preparada (**1**) e iniciar a migração para ou reversão do estado preparado, tipo:
+```
+dfsrmig /SetGlobalState 1
+```
+Para definir o estado de migração global para iniciar (**0**) e inicie a reversão para o estado inicial, digite:
+```
+dfsrmig /SetGlobalState 0
+```
+Para exibir o estado de migração global, digite:
+```
+dfsrmig /GetGlobalState
+```
+Este exemplo mostra a saída típica a **dfsrmig /GetGlobalState** comando.
+```
+Current DFSR global state:  Prepared 
+Succeeded.
+```
+Para exibir as informações sobre se os estados de migração local em todos os controladores de domínio de correspondem o estado de migração global e os estados de migração local para controladores de domínio em que o estado local não coincide com o estado global, digite:
+```
+dfsrmig /GetMigrationState
+```
+Este exemplo mostra a saída típica a **dfsrmig /GetMigrationState** comando quando os estados de migração local em todos os controladores de domínio de correspondem o estado de migração global.
+```
+All Domain Controllers have migrated successfully to Global state ( Prepared ).
+Migration has reached a consistent state on all Domain Controllers.
+Succeeded.
+```
+Este exemplo mostra a saída típica a **dfsrmig /GetMigrationState** comando quando os estados de migração local em alguns controladores de domínio não coincidem com o estado de migração global.
+```
+The following Domain Controllers are not in sync with Global state ( Prepared ):
+Domain Controller (Local Migration State)   DC type
+=========
+CONTOSO-DC2 ( start )   ReadOnly DC
+CONTOSO-DC3 ( Preparing )   Writable DC
+Migration has not yet reached a consistent state on all domain controllers
+State information might be stale due to AD latency.
+```
+Para criar objetos globais e configurações que usa a replicação do DFS no AD DS nos controladores de domínio em que essas configurações não foram criadas automaticamente durante a migração ou em que essas configurações estiverem ausentes, digite:
+```
+dfsrmig /createGlobalObjects
+```
+Para excluir as configurações globais do AD DS para a replicação de FRS para um controlador de domínio somente leitura chamado contoso-dc2, se essas configurações não foram excluídas excluído automaticamente pelo processo de migração, digite:
+```
+dfsrmig /deleteRoNtfrsMember contoso-dc2
+```
+Para excluir as configurações globais do AD DS para a replicação de FRS para todos os controladores de domínio somente leitura se essas configurações não foram excluídas automaticamente pelo processo de migração, digite:
+```
+dfsrmig /deleteRoNtfrsMember
+```
+Para excluir as configurações globais do AD DS para a replicação DFS para um controlador de domínio somente leitura chamada contoso-dc2, se essas configurações não foram excluídas automaticamente pelo processo de migração, digite:
+```
+dfsrmig /deleteRoDfsrMember contoso-dc2
+```
+Para excluir as configurações globais do AD DS para a replicação DFS para todos os controladores de domínio somente leitura se essas configurações não foram excluídas automaticamente pelo processo de migração, digite:
+```
+dfsrmig /deleteRoDfsrMember
+```
+## <a name="additional-references"></a>Referências adicionais
+[Chave de sintaxe de linha de comando](https://go.microsoft.com/fwlink/?LinkId=122056)
+
+[Série de migração SYSvol: Part 2 dfsrmig.exe: A ferramenta de migração SYSvol](https://go.microsoft.com/fwlink/?LinkID=121757)

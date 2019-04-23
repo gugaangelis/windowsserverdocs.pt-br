@@ -1,6 +1,6 @@
 ---
-title: Gateway RAS para SDN
-description: Você pode usar este tópico para saber mais sobre RAS Gateway, que é um baseada em software, multitenant, roteador capaz de Border Gateway Protocol (BGP) no Windows Server 2016.
+title: Gateway de RAS para SDN
+description: Você pode usar este tópico para saber mais sobre o Gateway de RAS, que é uma baseada em software, multilocatário, o roteador capaz do Border Gateway Protocol (BGP) no Windows Server 2016.
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -12,54 +12,56 @@ ms.topic: article
 ms.assetid: a32357a5-ab1a-4a4c-848a-7a4ed65b1921
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 052911dcd52df82ef4e259de0c64078c54f00195
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 4f1ad0b3f0b5921a53faa8a45baae9f0b8711873
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59856267"
 ---
-# <a name="ras-gateway-for-sdn"></a>Gateway RAS para SDN
+# <a name="ras-gateway-for-sdn"></a>Gateway de RAS para SDN
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Gateway RAS para SDN do Windows Server 2016. # #  
 
-Você pode usar este tópico para saber mais sobre o Gateway RAS, que é um baseada em software, vários locatários, Border Gateway Protocol (BGP) compatíveis com roteador no Windows Server 2016 é projetado para provedores de serviço de nuvem (CSPs) e as empresas que hospedam várias redes virtuais locatário usando a virtualização de rede do Hyper-V.  
+
+Gateway de RAS é um multilocatário baseado em software, o roteador habilitado do Border Gateway Protocol (BGP) criado para provedores de serviço de nuvem (CSPs) e empresas que hospedam várias redes virtuais de locatário usando a virtualização de rede do Hyper-V. Gateways de RAS roteia o tráfego de rede entre a rede física e os recursos de rede VM, independentemente do local. Você pode rotear o tráfego de rede no mesmo local físico ou em vários locais diferentes.   
+
+A multilocação é a capacidade de uma infraestrutura de nuvem para oferecer suporte as cargas de trabalho de máquina virtual de vários locatários, ainda isolá-las umas das outras, embora todas as cargas de trabalho executados na mesma infraestrutura. As várias cargas de trabalho de um locatário individual podem se interconectar e serem gerenciadas remotamente, mas esses sistemas não interconectam com as cargas de trabalho de outros locatários, nem outros locatários podem gerenciá-las remotamente.
+
   
 > [!NOTE]  
-> Além neste tópico, os seguintes tópicos de Gateway RAS estão disponíveis.  
+> Além deste tópico, estão disponíveis os seguintes tópicos de Gateway de RAS.  
 >   
-> -   [O que há de novo no RAS Gateway](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)  
-> -   [Arquitetura de implantação do RAS Gateway](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-Deployment-Architecture.md)  
-> -   [Gateway RAS alta disponibilidade](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)  
-> -   [Protocolo de Gateway de borda & #40; BGP & #41;](../../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)  
-> -   [Referência de comando do PowerShell BGP Windows](../../../../remote/remote-access/bgp/BGP-Windows-PowerShell-Command-Reference.md)  
+> -   [O que há de novo no Gateway de RAS](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)  
+> -   [Arquitetura de implantação do Gateway RAS](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-Deployment-Architecture.md)  
+> -   [Alta disponibilidade do Gateway RAS](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)  
+> -   [Border Gateway Protocol &#40;BGP&#41;](../../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)  
+> -   [Referência de comando do PowerShell do Windows via protocolo BGP](../../../../remote/remote-access/bgp/BGP-Windows-PowerShell-Command-Reference.md)  
   
-No Windows Server 2016, Gateway RAS encaminha o tráfego de rede entre a rede física e recursos de rede VM, independentemente de onde os recursos estão localizados. Você pode usar o Gateway RAS para rotear o tráfego de rede entre redes físicos e virtuais no mesmo local físico ou em vários locais físicos diferentes pela Internet.  
+    
+## <a name="prerequisites-for-installing-ras-gateway-for-sdn"></a>Pré-requisitos para instalar o Gateway de RAS para SDN  
+Você não pode usar a interface do Windows para instalar o acesso remoto quando você deseja implantar o Gateway de RAS no modo multilocatário para uso com SDN. Em vez disso, você deve usar o Windows PowerShell.  
   
-Multilocação é a capacidade de uma infraestrutura de nuvem suporte as cargas de trabalho de máquina virtual de vários locatários, ainda isole-as entre si, enquanto todos as cargas de trabalho são executados na mesma infraestrutura. Várias cargas de trabalho de um locatário individual podem interconexão e ser gerenciadas remotamente, mas esses sistemas não interconexão com as cargas de trabalho de outros locatários nem outros locatários remotamente gerenciá-los.  
-  
-## <a name="prerequisites-for-installing-ras-gateway-for-sdn"></a>Pré-requisitos para instalar o Gateway RAS em SDN  
-Você não pode usar a interface do Windows para instalar o acesso remoto quando você deseja implantar RAS Gateway no modo de vários locatários para uso com SDN. Em vez disso, você deve usar o Windows PowerShell.  
-  
-Mas antes de instalar o Gateway RAS usando o Windows PowerShell, você deve usar o Windows PowerShell para adicionar o **acesso remoto** recurso do Windows. Para fazer isso, execute o seguinte comando no prompt do Windows PowerShell.  
+Mas antes de instalar o Gateway de RAS por meio do Windows PowerShell, você deve usar o Windows PowerShell para adicionar o **RemoteAccess** recurso do Windows. Para fazer isso, execute o seguinte comando no prompt do Windows PowerShell.  
   
 `Add-WindowsFeature -Name RemoteAccess -IncludeAllSubFeature -IncludeManagementTools`  
   
-Este comando adiciona o **acesso remoto** recurso e os comandos do Windows PowerShell para o recurso.  
+Este comando adiciona o **RemoteAccess** recurso e os comandos do Windows PowerShell para o recurso.  
   
-Depois que você adicionou **acesso remoto** ao servidor, você pode instalar o acesso remoto como um Gateway RAS com o modo de vários locatários e Border Gateway Protocol (BGP).  
+Depois que você adicionou **RemoteAccess** ao seu servidor, você pode instalar o acesso remoto como um Gateway de RAS com o modo de multilocatário e Border Gateway Protocol (BGP).  
   
-Para obter mais informações, consulte o tópico de referência do Windows PowerShell [acesso remoto instalar](https://technet.microsoft.com/library/hh918408.aspx).  
+Para obter mais informações, consulte o tópico de referência do Windows PowerShell [Install-RemoteAccess](https://technet.microsoft.com/library/hh918408.aspx).  
   
 ## <a name="ras-gateway-features"></a>Recursos de Gateway RAS  
-A seguir é recursos de Gateway RAS no Windows Server 2016. Você pode implantar Gateway RAS em pools de alta disponibilidade que usam todos esses recursos ao mesmo tempo.  
+Estes são os recursos de Gateway de RAS no Windows Server 2016. Você pode implantar o Gateway de RAS em pools de alta disponibilidade que usam todos esses recursos ao mesmo tempo.  
   
--   **VPN to-site**. Esse recurso RAS Gateway permite que você conecte duas redes em locais físicos diferentes da Internet usando uma conexão de VPN-to-site. Para os CSPs que hospedam vários locatários em datacenters, RAS Gateway oferece uma solução de vários locatários gateway que permite que seu locatários acessar e gerenciar seus recursos em conexões de VPN-to-site de locais remotos, e que permite o fluxo de tráfego de rede entre recursos virtuais no data center e sua rede física.  
+-   **VPN site a site**. Esse recurso de Gateway de RAS permite que você conecte duas redes em locais físicos diferentes da Internet por meio de uma conexão de VPN site a site. Para os CSPs que hospedam muitos locatários em seus datacenters, o Gateway de RAS fornece uma solução de gateway multilocatário que permite que seus locatários acessar e gerenciar seus recursos em conexões de VPN site a site de sites remotos, e que permite que o fluxo do tráfego de rede entre recursos virtuais no seu datacenter e sua rede física.  
   
--   **Site de ponto de VPN**. Esse recurso RAS Gateway permite que os funcionários da organização ou administradores para se conectar à rede da sua organização de locais remotos.  Para implantações de vários locatários, os administradores de rede de locatário podem usar conexões VPN ponto ao site para acessar recursos de rede virtual no datacenter CSP.  
+-   **VPN ponto a site**. Esse recurso de Gateway de RAS permite que os funcionários da organização ou os administradores para se conectar à rede da sua organização de locais remotos.  Para implantações de multilocatários, os administradores de rede do locatário podem usar conexões de VPN ponto a site para acessar recursos de rede virtual no datacenter do CSP.  
   
--   **Encapsulamento de GRE**. Encapsulamento de roteamento genérico (GRE) com base em túneis habilitar conectividade entre redes virtuais locatário e redes externas. Como o protocolo GRE é leve e suporte para GRE está disponível na maioria dos dispositivos de rede se torna uma opção ideal para encapsulamento onde a criptografia de dados não é necessária. Suporte GRE em túneis do Site para outro (S2S) resolve o problema de encaminhamento entre redes virtuais locatário e locatário redes externo usando um gateway de vários locatário, conforme descrito mais adiante neste tópico.  
+-   **Túnel GRE**. Encapsulamento de roteamento genérico (GRE) com base em túneis permitem a conectividade entre redes virtuais de locatário e redes externas. Uma vez que o protocolo GRE é leve e o suporte para GRE está disponível na maioria dos dispositivos de rede, ele se torna uma opção ideal para túnel quando a criptografia de dados não é necessária. Suporte a GRE em túneis do Site a Site (S2S) resolve o problema de encaminhamento entre redes virtuais de locatário e redes externas de locatário usando um gateway de multilocatário, conforme descrito mais adiante neste tópico.  
   
--   **Roteamento dinâmico com Border Gateway Protocol (BGP)**. BGP reduz a necessidade de configuração manual rota nos roteadores porque ele é um protocolo de roteamento dinâmico e aprende automaticamente rotas entre sites que estão conectados por meio de conexões VPN ao site. Se sua organização tiver vários sites que estão conectados usando habilitado BGP roteadores como Gateway RAS, BGP permite que os roteadores automaticamente calcular e usar rotas válidas uns aos outros, no caso de interrupção de rede ou a falha. Para obter mais informações, consulte [RFC 4271](https://tools.ietf.org/html/rfc4271).  
+-   **Roteamento dinâmico com o Border Gateway Protocol (BGP)**. O BGP reduz a necessidade de configuração de roteamento manual em roteadores, porque ele é um protocolo de roteamento dinâmico e aprende rotas entre sites conectados usando conexões VPN site a site automaticamente. Se sua organização tiver vários sites que estão conectados por meio de roteadores BGP habilitado, como o Gateway de RAS, o BGP permite que os roteadores calcular automaticamente e usar as rotas válidas entre si em caso de interrupção de rede ou a falha. Para obter mais informações, consulte [4271 RFC](https://tools.ietf.org/html/rfc4271).  
   
 
   

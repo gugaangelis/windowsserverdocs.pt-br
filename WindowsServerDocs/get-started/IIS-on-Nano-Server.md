@@ -13,11 +13,11 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 1461f3e3266d77d2510aba37208347253a8f78e7
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2081822"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59851617"
 ---
 # <a name="iis-on-nano-server"></a>IIS do Nano Server
 
@@ -55,7 +55,7 @@ Nesta versão do Nano Server, os seguintes recursos do IIS estão disponíveis:
 |Restrições de IP e de domínio||  
 |Autorização de URL||  
 |Autenticação do Windows||  
-|**Desenvolvimento de aplicativo**||  
+|**Desenvolvimento de aplicativos**||  
 |Inicialização de aplicativo||  
 |CGI||  
 |Extensões ISAPI||  
@@ -65,7 +65,7 @@ Nesta versão do Nano Server, os seguintes recursos do IIS estão disponíveis:
 |**Ferramentas de gerenciamento**||  
 |Módulo de administração de IIS para Windows PowerShell|x|  
 
-Uma série de artigos sobre outras configurações do IIS (por exemplo, usando o ASP.NET, PHP e Java), bem como outros relacionados ao conteúdo é publicado em [http://iis.net/learn](http://iis.net/learn).  
+Uma série de artigos sobre outras configurações do IIS (como usar o ASP.NET, PHP e Java), bem como outros relacionados ao conteúdo seja publicado no [ http://iis.net/learn ](http://iis.net/learn).  
 
 ## <a name="installing-iis-on-nano-server"></a>Instalar o IIS no Nano Server  
 Você pode instalar essa função de servidor offline (com o Nano Server desativado) ou online (com o Nano Server em execução); a instalação offline é a opção recomendada.  
@@ -129,7 +129,7 @@ Embora seja recomendada a instalação offline da função de servidor, talvez s
 
     **dism /online /get-packages**  
 
-    Você deverá ver "Package Identity : Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~~10.0.14393.1000" listado duas vezes, uma vez para o Tipo de versão: Pacote de idiomas, e uma vez para o Tipo de versão: Feature Pack.  
+    Você deve ver "Package Identity: Microsoft-NanoServer-IIS-Package ~ 31bf3856ad364e35 ~ amd64 ~ ~ 10.0.14393.1000" listado duas vezes, uma vez para o tipo de versão: Pacote de idiomas e uma vez para o tipo de versão: Feature Pack.  
 
 6.  Inicie o serviço W3SVC com **net start w3svc** ou reiniciando o Nano Server.  
 
@@ -177,7 +177,7 @@ O conjunto completo de sub-recursos do IIS está incluído no Apêndice 1 deste 
     ```
 
 ## <a name="other-common-iis-configuration-tasks"></a>Outras tarefas comuns de configuração do IIS  
-**Criar sites**  
+**Criando sites**  
 
 Use este cmdlet:  
 
@@ -185,11 +185,11 @@ Use este cmdlet:
 
 Você pode executar `Get-IISSite` para verificar o estado do site (retorna o nome do site, ID de estado, o caminho físico e associações).  
 
-**Excluir sites**  
+**Excluindo sites da web**  
 
 Execute `Remove-IISSite -Name TestSite -Confirm:$false`.  
 
-**Criar diretórios virtuais**  
+**Criando diretórios virtuais**  
 
 Você pode criar diretórios virtuais usando o objeto IISServerManager retornado por Get-IISServerManager, que expõe a API Microsoft.Web.Administration.ServerManager do .NET. Neste exemplo, esses comandos acessam o elemento "Site Padrão" da coleção Sites e o elemento do aplicativo raiz ("/") da seção Aplicativos. Em seguida, eles chamam o método Add() da coleção VirtualDirectories desse elemento de aplicativo para criar o novo diretório:  
 
@@ -225,7 +225,7 @@ Use o utilitário Certoc.exe para importar certificados, como neste exemplo, que
 
 3.  No Nano Server, importe o certificado para o repositório "My" com este comando:  
 
-    **certoc.exe -ImportPFX -p YOUR_PFX_PASSWD My c:\temp\test.pfx**  
+    **certoc.exe - ImportPFX -p YOUR_PFX_PASSWD meu c:\temp\test.pfx**  
 
 4.  Recuperar a impressão digital desse certificado novo (no exemplo, 61E71251294B2A7BB8259C2AC5CF7BA622777E73) com `Get-ChildItem Cert:\LocalMachine\my`.  
 
@@ -242,7 +242,7 @@ Use o utilitário Certoc.exe para importar certificados, como neste exemplo, que
     $sm.CommitChanges()  
     ```  
 
-    Você também pode usar a SNI (Indicação de Nome de Servidor) com um nome de host específico com esta sintaxe: `$sm.Sites["Default Web Site"].Bindings.Add("*:443:www.foo.bar.com", $hash, "My", "Sni".`  
+    Você também pode usar a indicação de nome de servidor (SNI) com um nome de host específico com esta sintaxe: `$sm.Sites["Default Web Site"].Bindings.Add("*:443:www.foo.bar.com", $hash, "My", "Sni".`  
 
 ## <a name="appendix-1-list-of-iis-sub-features"></a>Apêndice 1: Lista de sub-recursos do IIS
 
@@ -295,7 +295,7 @@ Cada recurso do IIS existe como um conjunto de elementos de configuração. Este
 
 A entrada `StaticFile <handlers>` já pode estar presente; nesse caso, basta adicionar "DefaultDocumentModule" ao atributo \<modules>, separado por uma vírgula.  
 
-**Pesquisa no diretório**  
+**pesquisa no diretório**  
 
 |Seção|Elementos de configuração|  
 |----------------|--------------------------|   
@@ -323,7 +323,7 @@ A entrada `StaticFile <handlers>` já pode estar presente; nesse caso, basta adi
 
 A entrada `StaticFile \<handlers>` já pode estar presente; nesse caso, basta adicionar "StaticFileModule" ao atributo \<modules>, separado por uma vírgula.  
 
-**Redirecionamento HTTP**  
+**Redirecionamento de HTTP**  
 
 |Seção|Elementos de configuração|  
 |----------------|--------------------------|    
@@ -332,7 +332,7 @@ A entrada `StaticFile \<handlers>` já pode estar presente; nesse caso, basta ad
 |`<httpRedirect>`|`<httpRedirect enabled="false" />`|  
 
 ### <a name="health-and-diagnostics"></a>Integridade e diagnóstico  
-**Log de FTP**  
+**Log HTTP**  
 
 |Seção|Elementos de configuração|  
 |----------------|--------------------------|   
@@ -340,7 +340,7 @@ A entrada `StaticFile \<handlers>` já pode estar presente; nesse caso, basta ad
 |`<modules>`|`<add name="HttpLoggingModule" lockItem="true" />`|  
 |`<httpLogging>`|`<httpLogging dontLog="false" />`|  
 
-**Log personalizado**  
+**Registro em log personalizado**  
 
 |Seção|Elementos de configuração|  
 |----------------|--------------------------|  
@@ -395,7 +395,7 @@ A entrada `StaticFile \<handlers>` já pode estar presente; nesse caso, basta ad
 |`<modules>`|`<add name="WindowsAuthenticationModule" lockItem="true" />`|  
 |`<basicAuthentication>`|`<basicAuthentication enabled="false" />`|  
 
-**Autenticação do mapeamento de certificado de cliente**  
+**Autenticação de mapeamento de certificado de cliente**  
 
 |Seção|Elementos de configuração|  
 |----------------|--------------------------|  
@@ -403,7 +403,7 @@ A entrada `StaticFile \<handlers>` já pode estar presente; nesse caso, basta ad
 |`<modules>`|`<add name="CertificateMappingAuthenticationModule" lockItem="true" />`|  
 |`<clientCertificateMappingAuthentication>`|`<clientCertificateMappingAuthentication enabled="false" />`|  
 
-**Autenticação digest**  
+**Autenticação Digest**  
 
 |Seção|Elementos de configuração|  
 |----------------|--------------------------|  
@@ -411,7 +411,7 @@ A entrada `StaticFile \<handlers>` já pode estar presente; nesse caso, basta ad
 |`<modules>`|`<add name="DigestAuthenticationModule" lockItem="true" />`|  
 |`<other>`|`<digestAuthentication enabled="false" />`|  
 
-**Autenticação do mapeamento de certificados de cliente do IIS**  
+**Autenticação de mapeamento de certificado de cliente do IIS**  
 
 |Seção|Elementos de configuração|  
 |----------------|--------------------------|   
@@ -419,7 +419,7 @@ A entrada `StaticFile \<handlers>` já pode estar presente; nesse caso, basta ad
 |`<modules>`|`<add name="CertificateMappingAuthenticationModule" lockItem="true" `/>`|  
 |`<clientCertificateMappingAuthentication>`|`<clientCertificateMappingAuthentication enabled="false" />`|  
 
-**Restrições de IP e de domínio**  
+**Restrições de IP e domínio**  
 
 |Seção|Elementos de configuração|  
 |----------------|--------------------------|  
@@ -444,7 +444,7 @@ A entrada `StaticFile \<handlers>` já pode estar presente; nesse caso, basta ad
 |`<windowsAuthentication>`|`<windowsAuthentication enabled="false" authPersistNonNTLM\="true"><br />    <providers><br />        <add value="Negotiate" /><br />        <add value="NTLM" /><br />    <\providers><br /><\windowsAuthentication><windowsAuthentication enabled="false" authPersistNonNTLM\="true"><br />    <providers><br />        <add value="Negotiate" /><br />        <add value="NTLM" /><br />    <\/providers><br /><\/windowsAuthentication>`|  
 
 ### <a name="application-development"></a>Desenvolvimento de aplicativo  
-**Inicialização de aplicativo**  
+**Inicialização do aplicativo**  
 
 |Seção|Elementos de configuração|  
 |----------------|--------------------------|  
@@ -474,7 +474,7 @@ A entrada `StaticFile \<handlers>` já pode estar presente; nesse caso, basta ad
 |`<globalModules>`|`<add name="IsapiFilterModule" image="%windir%\System32\inetsrv\filter.dll" />`|  
 |`<modules>`|`<add name="IsapiFilterModule" lockItem="true" />`|  
 
-**Server-Side includes**  
+**Inclusões do lado do servidor**  
 
 |Seção|Elementos de configuração|  
 |----------------|--------------------------|  
