@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: f3c677f5ebf7dda44f4b99a64d0fbf8d2c72b92e
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59883187"
 ---
 # <a name="create-a-quota"></a>Criar uma cota
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Cotas podem ser criadas de um modelo ou com as propriedades personalizadas. O procedimento a seguir descreve como criar uma cota com base em um modelo (recomendado). Se você precisar criar uma cota com propriedades personalizadas, você pode salvar essas propriedades como um modelo para reutilizar mais tarde.
 
@@ -48,10 +49,10 @@ Quando você cria uma cota, você pode escolher um caminho de cota, que é um vo
 
 7.  Clique em **Criar**.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
--   [Gerenciamento de cota](quota-management.md)
--   [Criar uma cota de aplicação automática](create-auto-apply-quota.md)
+-   [Gerenciamento de cotas](quota-management.md)
+-   [Crie uma cota de aplicação](create-auto-apply-quota.md)
 -   [Criar um modelo de cota](create-quota-template.md)
 
 

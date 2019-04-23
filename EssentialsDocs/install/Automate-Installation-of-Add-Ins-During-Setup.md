@@ -1,5 +1,5 @@
 ---
-title: "Automatizar a instalação de suplementos durante a instalação"
+title: Automatizar a instalação de suplementos durante a configuração
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -13,17 +13,18 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: d4c547c2fec8e2b11e5c1d9bde46e55e91c9d6fa
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59884617"
 ---
-# <a name="automate-installation-of-add-ins-during-setup"></a>Automatizar a instalação de suplementos durante a instalação
+# <a name="automate-installation-of-add-ins-during-setup"></a>Automatizar a instalação de suplementos durante a configuração
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-##  <a name="BKMK_AddIns"></a>Automatizar instalar suplementos durante a instalação  
- Para instalar suplementos durante a instalação, use o método PostIC.cmd descrito no [criar o arquivo PostIC.cmd para executar Post tarefas de configuração inicial](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md) seção deste documento.  
+##  <a name="BKMK_AddIns"></a> Automatizar instalados suplementos durante a instalação  
+ Para instalar suplemento durante a instalação, use o método PostIC.cmd descrito na seção [Create the PostIC.cmd File for Running Post Initial Configuration Tasks](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md) deste documento.  
   
  Adicione a seguinte entrada ao PostIC.cmd:  
   
@@ -31,12 +32,12 @@ ms.lasthandoff: 12/12/2017
 C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q  
 ```  
   
- O suplemento agora dá suporte a etapas de pré-instalação e de desinstalação personalizada.  
+ O suplemento agora tem suporte para pré-instalação e etapas de desinstalação personalizadas.  
   
- A etapa de pré-instalação é executada antes da instalação de todos os **. msi** arquivos especificados no suplemento. Quando executado no modo interativo, a caixa de diálogo de progresso será mostrada, mas sem alterar o progresso. O botão de cancelamento é desabilitado durante a fase de pré-instalação. Para implementar uma etapa de pré-instalação, adicione o seguinte conteúdo addin.xml (logo após Package):  
+ A etapa de pré-instalação é executada antes de instalar todos os arquivos **.msi** especificados em addin.xml. Ao executar no modo interativo, o diálogo de progresso será mostrado, mas sem alterar o progresso. O botão de cancelamento é desativado durante a fase de pré-instalação. Para implantar uma etapa de pré-instalação, adicione os seguintes conteúdos em addin.xml (diretamente sob Pacote):  
   
 > [!NOTE]
->  O esquema xml deve seguir exatamente a mostrada abaixo:  
+>  O esquema xml precisa seguir exatamente o seguinte:  
   
 ```  
 <Package xmlns="https://schemas.microsoft.com/WindowsServerSolutions/2010/03/Addins" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">  
@@ -64,17 +65,17 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
 <¦>  
 ```  
   
- Wherein **exefile** é o arquivo executável no pacote de suplemento para realizar a etapa de pré-instalação e deve ser especificado. **NormalArgs** Especifica argumentos a serem passados para exefile no modo de linha de comando quando interativo é usado. Nesse modo, o exefile pode exibir algumas caixas de diálogo para interação do usuário. **SilentArgs** Especifica argumentos a serem passados para exefile no modo de linha de comando quando silencioso é usado (-q é especificado ao invocar installaddin.exe). O exefile não deverá exibir janelas nesse modo. Se **IgnoreExitCode** for especificado com verdadeiro, a etapa de pré-instalação sempre será considerada como bem-sucedida, caso contrário, o código de saída 0 indica êxito, 1 indicará cancelamento e outros valores indicarão falha. Marcas **NormalArgs**, **SilentArgs**, e **IgnoreExitCode** são todas opcionais.  
+ Em que **exefile** é o arquivo executável no pacote de suplemento para realizar a etapa de pré-instalação e deve ser especificado. **NormalArgs** especifica argumentos a serem enviados ao exefile na linha de comando quando o modo interativo é usado. Nesse modo, o exefile pode abrir alguns diálogos em pop-up para interação com o usuário. **SilentArgs** especifica argumentos a serem enviados ao exefile na linha de comando quando o modo silencioso é usado (-q é especificado ao chamar installaddin.exe). O exefile não deve abrir nenhuma janela em pop-up nesse modo. Se **IgnoreExitCode** for especificado como verdadeiro, a etapa de pré-instalação é sempre considerada bem-sucedida, caso contrário, o código de saída 0 indica sucesso, 1 indica cancelamento e outros valores indicam falha. As marcas **NormalArgs**, **SilentArgs**e **IgnoreExitCode** são todas opcionais.  
   
- Uma etapa de desinstalação personalizada pode ser usada para qualquer um destes procedimentos:  
+ Uma etapa de desinstalação personalizada pode ser usada para qualquer um dos seguintes:  
   
--   Substitua a caixa de diálogo interna de confirmação.  
+-   Substituir o diálogo de confirmação interno.  
   
--   Popule caixas de diálogo personalizadas antes da desinstalação.  
+-   Preencher os diálogos personalizados antes da desinstalação.  
   
--   Execute determinadas tarefas antes da desinstalação.  
+-   Realizar certas tarefas antes da desinstalação.  
   
- Para implementar uma etapa de desinstalação, adicione o seguinte conteúdo addin.xml (logo após Package):  
+ Para implantar uma etapa de desinstalação, adicione os seguintes conteúdos em addin.xml (diretamente sob Pacote):  
   
 ```  
 <Package xmlns="https://schemas.microsoft.com/WindowsServerSolutions/2010/03/Addins" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">  
@@ -98,26 +99,26 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
 </Package>  
 ```  
   
- Wherein **caminho completo para exefile** Especifica o exefile já instalado no sistema. **Argumentos** é opcional e especifica os argumentos de linha de comando para o exefile. O exefile é invocado antes da interna de confirmação de desinstalação caixa de diálogo será exibida.  
+ Em que **full-path-to-exefile** especifica o exefile já instalado no sistema. **Arguments** é opcional, ele especifica os argumentos da linha de comando para o exefile. O exefile é chamado antes de a caixa de diálogo interna de confirmação de desinstalação ser exibida.  
   
- O exefile pode realizar as seguintes tarefas nessa fase:  
+ Nesta fase, o exefile pode executar as seguintes tarefas:  
   
--   Algumas caixas de diálogo para interação do usuário será exibida.  
+-   Abrir em pop-up alguns diálogos para interação com o usuário.  
   
--   Realize algumas tarefas em segundo plano.  
+-   Realizar algumas tarefas em segundo plano.  
   
- O código de saída desse arquivo exe determina como o processo de desinstalação avança:  
+ O código de saída deste arquivo exe determina como o processo de desinstalação avança:  
   
--   0: o processo de desinstalação continua sem popular a caixa de diálogo interna de confirmação, assim como o usuário já confirmou. (essa abordagem pode ser usada para substituir a caixa de diálogo interna de confirmação);  
+-   0: o processo de desinstalação continua sem preencher o diálogo de confirmação interno, da mesma forma que se o usuário já tivesse confirmado. (essa abordagem pode ser usada para substituir o diálogo de confirmação interno);  
   
--   1: o processo de desinstalação é cancelado e, finalmente uma mensagem de cancelamento será mostrada ao usuário. Tudo permanece inalterado;  
+-   1: o processo de desinstalação é cancelado e, por fim, uma mensagem de cancelamento será mostrada ao usuário. Tudo permanece inalterado;  
   
--   Outros: o processo de desinstalação continua com caixa de diálogo interna de confirmação, assim como a etapa de desinstalação personalizada não está presente.  
+-   Outro: o processo de desinstalação continua com o diálogo de confirmação interno, como se a etapa de desinstalação personalizada não estivesse presente.  
   
- Qualquer falha ao invocar o exefile causará o mesmo comportamento, pois o exefile retorna um código diferente de 0 ou 1.  
+ Qualquer falha em chamar o exefile levará ao mesmo comportamento que se o exefile retornasse um código que não 0 ou 1.  
   
 ## <a name="see-also"></a>Consulte também  
- [Criar e personalizar a imagem](Creating-and-Customizing-the-Image.md)   
+ [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do cliente](Testing-the-Customer-Experience.md)
+ [Testando a experiência do usuário](Testing-the-Customer-Experience.md)

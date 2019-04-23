@@ -1,0 +1,76 @@
+---
+title: Servermanagercmd
+description: 'Tópico de comandos do Windows para * * *- '
+ms.custom: na
+ms.prod: windows-server-threshold
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: 507c4b87-8e13-4872-8b34-0c7508eecbc1
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 07/11/2018
+ms.openlocfilehash: ba0b85814d942323b12e1874b852fcf28b8ac068
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59883237"
+---
+# <a name="servermanagercmd"></a>Servermanagercmd
+
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+
+> [!IMPORTANT]
+> Esse comando está disponível apenas em servidores que executam o Windows Server 2008 ou Windows Server 2008 R2. **ServerManagerCmd.exe** foi preterido e não está disponível no Windows Server 2012. Para obter informações sobre como instalar ou remover funções, serviços de função e recursos no Windows Server 2012, consulte [instalar ou desinstalar funções, serviços de função e recursos](https://go.microsoft.com/fwlink/?LinkID=239563) no Microsoft TechNet.
+
+Instala e remove as funções, serviços de função e recursos. Também exibe a lista de todas as funções, serviços de função e recursos disponíveis e mostra quais estão instaladas neste computador. Para obter informações adicionais sobre as funções, serviços de função e recursos que você pode especificar usando essa ferramenta, consulte o [Ajuda do Server Manager](https://go.microsoft.com/fwlink/?LinkID=137387). Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
+## <a name="syntax"></a>Sintaxe
+```
+servermanagercmd -query [[[<Drive>:]<path>]<query.xml>] [-logpath   [[<Drive>:]<path>]<log.txt>]
+servermanagercmd -inputpath  [[<Drive>:]<path>]<answer.xml> [-resultpath <result.xml> [-restart] | -whatif] [-logpath [[<Drive>:]<path>]<log.txt>]
+servermanagercmd -install <Id> [-allSubFeatures] [-resultpath   [[<Drive>:]<path>]<result.xml> [-restart] | -whatif] [-logpath   [[<Drive>:]<path>]<log.txt>]
+servermanagercmd -remove <Id> [-resultpath    <result.xml> [-restart] | -whatif] [-logpath  [[<Drive>:]<path>]<log.txt>]
+servermanagercmd [-help | -?]
+servermanagercmd -version
+```
+
+## <a name="parameters"></a>Parâmetros
+|Parâmetro|Descrição|
+|-------|--------|
+|-query [[[\<Drive>:]\<path>]\<*query.xml*>]|Exibe uma lista de todas as funções, serviços de função e recursos instalados e disponíveis para instalação no servidor. Você também pode usar esse parâmetro, a forma abreviada **- q**. Se você quiser que os resultados da consulta salvos em um arquivo XML, especifique um arquivo XML para substituir *Query*.|
+|-inputpath < [[\<unidade >:]\<caminho >]*Answer*>|Instala ou remove as funções, serviços de função e recursos especificados em um arquivo de resposta XML representado por *Answer*. Você também pode usar a forma abreviada desse parâmetro, **- p.**|
+|-instalar \< *Id*>|Instala a função, serviço de função ou recurso especificado por *Id*. Os identificadores que diferenciam maiusculas de minúsculas. Várias funções, serviços de função e recursos devem ser separados por espaços. Os seguintes parâmetros opcionais são usados com o **-instalar** parâmetro.<br /><br />-   **-configuração** \< *SettingName*>=\<*SettingValue*> especifica as configurações necessárias para a instalação.<br />-   **-allSubFeatures** Especifica a instalação de todos os recursos, juntamente com a função primária, serviço de função ou recurso nomeado no e serviços subordinados a *Id* valor. **Observação:**     Alguns contêineres de função não tem um identificador de linha de comando para permitir a instalação de todos os serviços de função. Esse é o caso quando os serviços de função não podem ser instalados na mesma instância do comando Gerenciador do servidor. Por exemplo, o serviço de função serviço de federação de serviços de Federação do Active Directory e o serviço de função Proxy do serviço de Federação não pode ser instalado usando a mesma instância de comando do Gerenciador do servidor.<br />-   **-resultpath** \< *Result > salva os resultados da instalação em um arquivo XML representado por *Result*. Você também pode usar esse parâmetro, a forma abreviada **- r**. **Observação:**     Não é possível executar **servermanagercmd** tanto com o **- resultpath** parâmetro e o **- whatif** parâmetro especificado.<br /> -    **-reiniciar** reinicia o computador automaticamente quando a instalação for concluída (se é necessário reiniciar por funções ou recursos instalados).<br /> -    **- whatif** exibe as operações especificadas para o **-instalar** parâmetro. Você também pode usar a forma abreviada de **- whatif** parâmetro, **-w**. Não é possível executar **servermanagercmd** tanto com o **- resultpath** parâmetro e o **- whatif** parâmetro especificado.<br /> -    **- logpath** \<[[\<unidade >:]\<caminho >]* log.txt* > especifica um nome e local para o arquivo de log diferente do padrão de **%windir%\temp\servermanager.log**.|
+|-Remova \< *Id*>|Remove a função, serviço de função ou recurso especificado por *Id*. Os identificadores que diferenciam maiusculas de minúsculas. Várias funções, serviços de função e recursos devem ser separados por espaços. Os seguintes parâmetros opcionais são usados com o **-remover** parâmetro.<br /><br />-   **-resultpath** \<[[\<Drive >:]\<caminho >]*Result*> salva os resultados da remoção em um arquivo XML representado por *Result*. Você também pode usar esse parâmetro, a forma abreviada **- r**. **Observação:**     Não é possível executar **servermanagercmd** tanto com o **- resultpath** parâmetro e o **- whatif** parâmetro especificado.<br />-   **-reiniciar** reinicia o computador automaticamente quando a remoção for concluída (se é necessário reiniciar por funções ou os recursos restantes).<br />-   **-whatif** exibe as operações especificadas para o **-remover** parâmetro. Você também pode usar a forma abreviada de **- whatif** parâmetro, **-w**. Não é possível executar **servermanagercmd** tanto com o **- resultpath** parâmetro e o **- whatif** parâmetro especificado.<br />-   **-logpath**\<[[\<Drive >:]\<caminho >]*txt*> especifica um nome e local para o arquivo de log diferente do padrão de **%windir%\temp\ ServerManager.log**.|
+|-help|Exibe a Ajuda na janela do prompt de comando. Você também pode usar a forma abreviada, **-?**.|
+|-versão|Exibe o número de versão do Gerenciador do servidor. Você também pode usar a forma abreviada, **- v**.|
+
+## <a name="remarks"></a>Comentários
+**ServerManagerCmd** foi preterido e não tem garantia de suporte em versões futuras do Windows. É recomendável que, se você estiver executando o Gerenciador do servidor em computadores que executam o Windows Server 2008 R2, você usar os cmdlets do Windows PowerShell que estão disponíveis para o Gerenciador do servidor. Para obter mais informações, consulte [cmdlets do Gerenciador do servidor](https://go.microsoft.com/fwlink/?LinkID=137653).
+ServerManagerCmd pode ser executado de qualquer diretório em unidades de locais do servidor. Você deve ser um membro do grupo Administradores no servidor no qual você deseja instalar ou remover o software.
+
+> [!IMPORTANT]
+> Devido às restrições de segurança impostas pelo controle de conta de usuário no Windows Server 2008 R2, você deve executar **Servermanagercmd** em uma janela de prompt de comando aberta com permissões elevadas. Para fazer isso, clique com botão direito do prompt de comando executável, ou o **prompt de comando** objeto de **iniciar** menu e, em seguida, clique **executar como administrador**.
+
+## <a name="BKMK_examples"></a>Exemplos
+O exemplo a seguir mostra como usar **servermanagercmd** para exibir uma lista de todas as funções, serviços de função e recursos disponíveis e quais funções, serviços de função e recursos estão instalados no computador.
+```
+servermanagercmd -query
+```
+O exemplo a seguir mostra como usar **servermanagercmd** para instalar a função de servidor Web (IIS) e salvar os resultados da instalação em um arquivo XML representado pelo *installResult.xml*.
+```
+servermanagercmd -install Web-Server -resultpath installResult.xml
+```
+O exemplo a seguir mostra como usar o * * o parâmetro whatif * * com **servermanagercmd** exibir informações detalhadas sobre as funções, serviços de função e recursos que devem ser instalados ou removidos, com base em instruções que são especificados em um arquivo de resposta XML representado por *install.xml*.
+```
+servermanagercmd -inputpath install.xml -whatif
+```
+
+#### <a name="additional-references"></a>Referências adicionais
+-   Para obter uma lista completa de função, serviço de função ou identificadores de recurso, você pode especificar para o *identificação* parâmetro ou obter mais informações sobre como usar um arquivo de resposta XML com **Servermanagercmd**, consulte a [Ajuda do server Manager](https://go.microsoft.com/fwlink/?LinkID=137387). (https://go.microsoft.com/fwlink/?LinkID=137387).
+-   Ver [cmdlets do Gerenciador do servidor](https://go.microsoft.com/fwlink/?LinkID=137653) para obter uma lista dos cmdlets do Windows PowerShell que estão disponíveis para o Gerenciador do servidor.
+-   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)

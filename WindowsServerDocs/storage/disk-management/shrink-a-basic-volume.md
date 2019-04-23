@@ -1,6 +1,6 @@
 ---
-title: "Reduzir um volume básico"
-description: "Este artigo descreve como reduzir um volume básico"
+title: Reduzir um volume básico
+description: Este artigo descreve como reduzir um volume básico
 ms.date: 10/12/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: e54632b78fd67a65b51147323565130881d8d81b
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59885327"
 ---
 # <a name="shrink-a-basic-volume"></a>Reduzir um volume básico
 
-> **Aplicável a:** Windows 10, Windows 8.1, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> **Aplica-se a:** Windows 10, Windows 8.1, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Você pode reduzir o espaço usado pelas partições primárias e unidades lógicas encolhendo-as para um espaço adjacente e contíguo no mesmo disco. Por exemplo, se você descobrir que precisa de partição adicional, mas não tem discos adicionais, é possível encolher a partição existente do final do volume para criar novo espaço não alocado, que poderá, em seguida, ser usado para uma nova partição. A operação de redução pode ser bloqueada com a presença de determinados tipos de arquivo. Para obter mais informações, consulte [Considerações adicionais](#addcon) 
 
@@ -63,7 +64,7 @@ Quando você diminui uma partição, quaisquer arquivos comuns são automaticame
 | Valor | Descrição|
 |---|---|
 | <p>**list volume**</p> | <p>Exibe uma lista dos volumes básicos e dinâmicos em todos os discos.</p>|
-| <p>**select volume**</p> | <p>Seleciona o volume especificado, onde <em>volumenumber</em> é o número do volume e concede foco a ele. Se nenhum volume for especificado, o comando **select** lista o volume atual com foco. Você pode especificar o volume por número, letra da unidade ou caminho do ponto de montagem. Em um disco básico, a seleção de um volume também oferece o foco de partição correspondente.</p> |
+| <p>**Selecione o volume**</p> | <p>Seleciona o volume especificado, onde <em>volumenumber</em> é o número do volume e concede foco a ele. Se nenhum volume for especificado, o comando **select** lista o volume atual com foco. Você pode especificar o volume por número, letra da unidade ou caminho do ponto de montagem. Em um disco básico, a seleção de um volume também oferece o foco de partição correspondente.</p> |
 | <p>**shrink**</p> | <p>Reduz o volume com foco para criar um espaço não alocado. Não há perda de dados. Se a partição inclui os arquivos não transferíveis (como o arquivo de página ou a área de armazenamento de cópia de sombra), procedimento reduz o volume até o ponto em que os arquivos estão localizados. |
 | <p>**desired=** <em>desiredsize</em></p> | <p>A quantidade de espaço, em megabytes (MB), para recuperar na partição atual.</p> |
 | <p>**minimum=** <em>minimumsize</em></p> | <p>A quantidade de espaço mínima, em megabytes (MB), para recuperar na partição atual. Se você não especificar um tamanho mínimo ou desejado, o comando recupera a quantidade máxima de espaço possível.</p> 

@@ -1,0 +1,91 @@
+---
+title: ktpass
+description: 'Tópico de comandos do Windows para * * *- '
+ms.custom: na
+ms.prod: windows-server-threshold
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: 47087676-311e-41f1-8414-199740d01444
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 10/16/2017
+ms.openlocfilehash: 7a865b94bbbf2245e8a2e07638064f66de920b90
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59886667"
+---
+# <a name="ktpass"></a>ktpass
+
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+
+Configura o nome do servidor principal para o host ou o serviço no active directory Domain Services (AD DS) e gera um arquivo. keytab que contém o chave de segredo compartilhado do serviço. O arquivo .keytab baseia-se na implementação do protocolo de autenticação Kerberos pelo MIT (Massachusetts Institute of Technology). A ferramenta de linha de comando ktpass permite que os serviços de não-Windows que dão suporte à autenticação Kerberos usem os recursos de interoperabilidade fornecidos pelo serviço do Centro de distribuição de chaves (KDC) Kerberos. Este tópico se aplica às versões do sistema operacional designadas na **aplica-se a** no início do tópico.  
+  
+## <a name="syntax"></a>Sintaxe  
+```  
+ktpass  
+[/out <FileName>]   
+[/princ <PrincipalName>]   
+[/mapuser <UserAccount>]   
+[/mapop {add|set}] [{-|+}desonly] [/in <FileName>]  
+[/pass {Password|*|{-|+}rndpass}]  
+[/minpass]  
+[/maxpass]  
+[/crypto {DES-CBC-CRC|DES-CBC-MD5|RC4-HMAC-NT|AES256-SHA1|AES128-SHA1|All}]  
+[/itercount]  
+[/ptype {KRB5_NT_PRINCIPAL|KRB5_NT_SRV_INST|KRB5_NT_SRV_HST}]  
+[/kvno <KeyversionNum>]  
+[/answer {-|+}]  
+[/target]  
+[/rawsalt] [{-|+}dumpsalt] [{-|+}setupn] [{-|+}setpass <Password>]  [/?|/h|/help]  
+```  
+## <a name="parameters"></a>Parâmetros  
+|Parâmetro|Descrição|  
+|-------|--------|  
+|/out <FileName>|Especifica o nome do arquivo Kerberos versão 5 keytab para gerar. **Observação:** Isso é o arquivo. keytab que você transfere para um computador que não esteja executando o sistema operacional Windows, e, em seguida, substituir ou mesclar com seu arquivo keytab existente, /Etc/Krb5.keytab.|  
+|/princ <PrincipalName>|Especifica o nome da entidade na forma host/computer.contoso.com@CONTOSO.COM. **Aviso:** Esse parâmetro diferencia maiusculas de minúsculas. Ver [comentários](#BKMK_remarks) para obter mais informações.|  
+|/mapuser <UserAccount>|Mapeia o nome da entidade de segurança Kerberos, que é especificado pela **princ** parâmetro para a conta de domínio especificado.|  
+|/mapop {adicionar&#124;definir}|Especifica como o mapeamento de atributos é definido.<br /><br />-   **Adicionar** adiciona o valor de nome de usuário local especificado. Este é o padrão.<br />-   **Definir** define o valor para criptografia de dados padrão (DES)-criptografia apenas para o nome de usuário local especificado.|  
+|{-&#124;+}desonly|A criptografia DES somente é definida por padrão.<br /><br />-   **+** Define uma conta para a criptografia somente para DES.<br />-   **-** Libera a restrição em uma conta para a criptografia somente para DES. **IMPORTANTE:** Começando com o Windows 7 e Windows Server 2008 R2, Windows não oferece suporte DES por padrão.|  
+|/in <FileName>|Especifica o arquivo keytab para ler de um computador host que não esteja executando o sistema operacional Windows.|  
+|/ passar {senha&#124;*&#124;{-&#124;+} rndpass}|Especifica uma senha para o nome de usuário de entidade que é especificado pelo **princ** parâmetro. Use "*" para solicitar uma senha.|  
+|/minpass|Define o comprimento mínimo da senha aleatória a 15 caracteres.|  
+|/maxpass|Define o comprimento máximo da senha aleatória de 256 caracteres.|  
+|/crypto {DES-CBC-CRC&#124;DES-CBC-MD5&#124;RC4-HMAC-NT&#124;AES256-SHA1&#124;AES128-SHA1&#124;All}|Especifica as chaves que são geradas no arquivo keytab:<br /><br />-   **DES-CBC-CRC** é usado para compatibilidade.<br />-   **DES-CBC-MD5** cumpre mais de perto a implementação do MIT e é usado para compatibilidade.<br />-   **RC4-HMAC-NT** empregam criptografia de 128 bits.<br />-   **AES256-SHA1** empregam criptografia AES256-CTS-HMAC-SHA1-96.<br />-   **Aes128 SHA1** empregam criptografia AES128-CTS-HMAC-SHA1-96.<br />-   **Todos os** estados que todos os tipos com suporte criptográficos que podem ser usados. **Observação:** As configurações padrão são baseadas em versões mais antigas do MIT. Portanto, `/crypto` sempre deve ser especificado.|  
+|/itercount|Especifica a contagem de iteração que é usada para a criptografia AES. O padrão é que **itercount** é ignorado para a criptografia não AES e definido no 4.096 para a criptografia AES.|  
+|/ptype {KRB5_NT_PRINCIPAL&#124;KRB5_NT_SRV_INST&#124;KRB5_NT_SRV_HST}|Especifica o tipo de entidade de segurança.<br /><br />-   **KRB5_NT_PRINCIPAL** é o tipo de entidade geral (recomendado).<br />-   **KRB5_NT_SRV_INST** é a instância de serviço do usuário.<br />-   **KRB5_NT_SRV_HST** é a instância do serviço de host.|  
+|/kvno <KeyversionNum>|Especifica o número de versão da chave. O valor padrão é 1.|  
+|/answer {-&#124;+}|Define o modo de resposta em segundo plano:<br /><br />**-** Respostas de redefinição de prompts de senha automaticamente com não.<br /><br />**+** Respostas de redefinição de prompts de senha automaticamente com Sim.|  
+|/target|Define qual controlador de domínio para usar. O padrão é para o controlador de domínio ser detectado, com base no nome da entidade de segurança. Se não resolver o nome do controlador de domínio, uma caixa de diálogo solicitará um controlador de domínio válido.|  
+|/rawsalt|força ktpass para usar o algoritmo de rawsalt ao gerar a chave. Esse parâmetro não é necessária.|  
+|{-&#124;+}dumpsalt|A saída desse parâmetro mostra o algoritmo de salt MIT que está sendo usado para gerar a chave.|  
+|{-&#124;+}setupn|Define o nome principal do usuário (UPN), além do nome da entidade de serviço (SPN). O padrão é definir as duas propriedades no arquivo keytab.|  
+|{-&#124;+}setpass <Password>|Define a senha do usuário quando fornecido. Se rndpass for usado, uma senha aleatória é gerada em vez disso.|  
+|/?&#124;/h&#124;/help|Exibe a linha de comando Ajuda para ktpass.|  
+## <a name="BKMK_remarks"></a>Comentários  
+Serviços em execução em sistemas que não estão executando o sistema operacional Windows podem ser configurados com contas da instância de serviço nos serviços de domínio do Active Directory. Isso permite que qualquer cliente Kerberos autenticar os serviços que não estejam executando o sistema operacional Windows usando os KDCs do Windows.  
+O parâmetro /princ não é avaliado pelo ktpass e é usado como fornecido. Não há nenhuma verificação para ver se o parâmetro corresponde exatamente da forma do **userPrincipalName** valor do atributo ao gerar o arquivo Keytab. Distribuições de Kerberos diferencia maiusculas de minúsculas usando este arquivo Keytab podem ter problemas quando não houver nenhuma correspondência exata de maiusculas e pode falhar durante o pré-autenticação. Verifique e recupere o correto **userPrincipalName** valor do atributo de um arquivo de exportação da LDifDE. Por exemplo:   
+```  
+ldifde /f keytab_user.ldf /d "CN=Keytab User,OU=UserAccounts,DC=contoso,DC=corp,DC=microsoft,DC=com" /p base /l samaccountname,userprincipalname  
+```  
+## <a name="BKMK_examples"></a>Exemplos  
+O exemplo a seguir ilustra como criar um arquivo. keytab Kerberos, machine.keytab, no diretório atual para o usuário Sample1. (Você mesclará esse arquivo com o arquivo Krb5.keytab em um computador host que não esteja executando o sistema operacional Windows.) O arquivo. keytab Kerberos será criado para todos os tipos de criptografia com suporte para o tipo de entidade de segurança geral.  
+Para gerar um arquivo. keytab para um computador host que não esteja executando o sistema operacional Windows, use as etapas a seguir para mapear a entidade de segurança para a conta e defina a senha da entidade de host:  
+1.  Usar o usuário do Active Directory e computadores do snap-in para criar uma conta de usuário para um serviço em um computador que não esteja executando o sistema operacional Windows. Por exemplo, crie uma conta com o nome Sample1.  
+2.  Use ktpass para configurar um mapeamento de identidade da conta de usuário, digitando o seguinte no prompt de comando:  
+    ```  
+    ktpass /princ host/Sample1.contoso.com@CONTOSO.COM /mapuser Sample1 /pass MyPas$w0rd /out Sample1.keytab /crypto all /ptype KRB5_NT_PRINCIPAL /mapop set   
+    ```  
+    
+    > [!NOTE]  
+    > Você não pode mapear várias instâncias do serviço para a mesma conta de usuário.  
+    
+3.  Mescle o arquivo keytab com o arquivo /Etc/Krb5.keytab em um computador host que não esteja executando o sistema operacional Windows. 
+
+#### <a name="additional-references"></a>Referências adicionais  
+[Chave de sintaxe de linha de comando](command-line-syntax-key.md)  

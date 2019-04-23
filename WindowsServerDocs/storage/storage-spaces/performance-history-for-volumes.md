@@ -1,34 +1,34 @@
 ---
-title: Histórico de desempenho de volumes
+title: Histórico de desempenho para volumes
 ms.author: cosdar
 ms.manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/09/2018
-Keywords: Storage Spaces Direct
+Keywords: Espaços de Armazenamento Diretos
 ms.localizationpriority: medium
 ms.openlocfilehash: fea1d3d67ab96d95b1699e8ac0129dba698477fe
-ms.sourcegitcommit: 1533d994a6ddea54ac189ceb316b7d3c074307db
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1589697"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59882947"
 ---
-# <a name="performance-history-for-volumes"></a>Histórico de desempenho de volumes
+# <a name="performance-history-for-volumes"></a>Histórico de desempenho para volumes
 
-> Aplicável à: Demonstração de Insider Windows Server
+> Aplica-se a: Windows Server Insider Preview
 
-Este tópico sub-recursos do [histórico de desempenho para espaços de armazenamento direto](performance-history.md) descreve em detalhes o histórico de desempenho coletado para volumes. Histórico de desempenho está disponível para cada Cluster compartilhados Volume (CSV) no cluster. No entanto, ele não está disponível para o sistema operacional inicialize volumes nem qualquer outro armazenamento de não-CSV.
+Este tópico subpropriedades de [histórico de desempenho para espaços de armazenamento diretos](performance-history.md) descreve detalhadamente o histórico de desempenho coletado para volumes. Histórico de desempenho está disponível para cada Cluster CSV (Volume compartilhado) no cluster. No entanto, ele não está disponível para o sistema operacional de inicialização volumes nem qualquer outro armazenamento não CSV.
 
    > [!NOTE]
-   > Pode levar alguns minutos para que a coleção começar a volumes recém-criado ou renomeados.
+   > Pode levar vários minutos para que a coleção começar a volumes recém-criados ou renomeados.
 
-## <a name="series-names-and-units"></a>Unidades e nomes de série
+## <a name="series-names-and-units"></a>Unidades e nomes de séries
 
-Essas séries são coletadas para cada volume elegível:
+Essas séries são coletadas para cada volume qualificado:
 
-| Série                    | Unidade             |
+| série                    | Unidade             |
 |---------------------------|------------------|
 | `volume.iops.read`        | por segundo       |
 | `volume.iops.write`       | por segundo       |
@@ -39,57 +39,57 @@ Essas séries são coletadas para cada volume elegível:
 | `volume.latency.read`     | segundos          |
 | `volume.latency.write`    | segundos          |
 | `volume.latency.average`  | segundos          |
-| `volume.size.total`       |  bytes            |
-| `volume.size.available`   |  bytes            |
+| `volume.size.total`       | bytes            |
+| `volume.size.available`   | bytes            |
 
 ## <a name="how-to-interpret"></a>Como interpretar
 
-| Série                    | Como interpretar                                                              |
+| série                    | Como interpretar                                                              |
 |---------------------------|-------------------------------------------------------------------------------|
-| `volume.iops.read`        | Número de operações de leitura por segundo concluídas por esse volume.                |
-| `volume.iops.write`       | Número de operações de gravação por segundo concluídas por esse volume.               |
-| `volume.iops.total`       | Número total de ler ou gravar operações por segundo concluídas por esse volume. |
+| `volume.iops.read`        | Número de operações de leitura por segundo concluído por este volume.                |
+| `volume.iops.write`       | Número de operações de gravação por segundo concluído por este volume.               |
+| `volume.iops.total`       | Número total de ler ou gravar operações por segundo concluído por este volume. |
 | `volume.throughput.read`  | Quantidade de dados lidos deste volume por segundo.                            |
-| `volume.throughput.write` | Quantidade de dados gravados esse volume por segundo.                           |
-| `volume.throughput.total` | Quantidade total de dados lido ou gravado para esse volume por segundo.        |
+| `volume.throughput.write` | Quantidade de dados gravados para este volume por segundo.                           |
+| `volume.throughput.total` | Quantidade total de dados lidos ou gravados para este volume por segundo.        |
 | `volume.latency.read`     | Latência média das operações de leitura deste volume.                          |
-| `volume.latency.write`    | Latência média das operações de gravação para esse volume.                           |
-| `volume.latency.average`  | Latência média de todas as operações de ou para esse volume.                     |
+| `volume.latency.write`    | Latência média das operações de gravação para este volume.                           |
+| `volume.latency.average`  | Latência média de todas as operações de ou para este volume.                     |
 | `volume.size.total`       | A capacidade de armazenamento total do volume.                                     |
 | `volume.size.available`   | A capacidade de armazenamento disponível do volume.                                 |
 
 ## <a name="where-they-come-from"></a>Onde eles vêm
 
-O `iops.*`, `throughput.*`, e `latency.*` série será coletada a partir do `Cluster CSVFS` conjunto de contadores de desempenho. Cada servidor do cluster possui uma instância de cada volume CSV, independentemente da propriedade. O histórico de desempenho gravadas para volume `MyVolume` é a agregação do `MyVolume` instâncias em cada servidor do cluster.
+O `iops.*`, `throughput.*`, e `latency.*` série é coletada a partir de `Cluster CSVFS` conjunto de contadores de desempenho. Todos os servidores no cluster tem uma instância de cada volume CSV, independentemente da propriedade. O histórico de desempenho registrados para o volume `MyVolume` é a agregação do `MyVolume` instâncias em todos os servidores no cluster.
 
-| Série                    | Contador de origem         |
+| série                    | Contador de origem         |
 |---------------------------|------------------------|
 | `volume.iops.read`        | `Reads/sec`            |
 | `volume.iops.write`       | `Writes/sec`           |
-| `volume.iops.total`       | *soma das perguntas acima*     |
+| `volume.iops.total`       | *soma dos itens acima*     |
 | `volume.throughput.read`  | `Read bytes/sec`       |
 | `volume.throughput.write` | `Write bytes/sec`      |
-| `volume.throughput.total` | *soma das perguntas acima*     |
+| `volume.throughput.total` | *soma dos itens acima*     |
 | `volume.latency.read`     | `Avg. sec/Read`        |
 | `volume.latency.write`    | `Avg. sec/Write`       |
-| `volume.latency.average`  | *Média das perguntas acima* |
+| `volume.latency.average`  | *Média dos itens acima* |
 
    > [!NOTE]
-   > Contadores são medidos durante o intervalo inteiro, não de amostra. Por exemplo, se o volume estiver ocioso por 9 segundos mas conclui 30 IOs na segunda 10º, seu `volume.iops.total` serão registradas como 3 IOs por segundo em média durante esse intervalo de 10 segundos. Isso garante que seu histórico de desempenho captura todas as atividades e é robusto para ruído.
+   > Contadores são medidos ao longo de todo o intervalo, não amostrado. Por exemplo, se o volume estiver ocioso por 9 segundos, mas é concluída 30 IOs na segunda, 10 de seus `volume.iops.total` serão registradas como 3 IOs por segundo em média durante esse intervalo de 10 segundos. Isso garante que seu histórico de desempenho captura todas as atividades e é robusto para o ruído.
 
    > [!TIP]
-   > Esses são os contadores mesmos usados pela estrutura de parâmetro de comparação de [VM Almirante](https://github.com/Microsoft/diskspd/blob/master/Frameworks/VMFleet/watch-cluster.ps1) popular.
+   > Esses são os mesmos contadores usados por popular [frota de VM](https://github.com/Microsoft/diskspd/blob/master/Frameworks/VMFleet/watch-cluster.ps1) estrutura de benchmark.
 
-O `size.*` série será coletada a partir do `MSFT_Volume` classe WMI, uma instância por volume.
+O `size.*` série é coletada a partir de `MSFT_Volume` classe no WMI, uma instância por volume.
 
-| Série                    | Propriedade Source |
+| série                    | Propriedade Source |
 |---------------------------|-----------------|
 | `volume.size.total`       | `Size`          |
 | `volume.size.available`   | `SizeRemaining` |
 
 ## <a name="usage-in-powershell"></a>Uso no PowerShell
 
-Use o cmdlet [Get-Volume](https://docs.microsoft.com/powershell/module/storage/get-volume) :
+Use o [Get-Volume](https://docs.microsoft.com/powershell/module/storage/get-volume) cmdlet:
 
 ```PowerShell
 Get-Volume -FriendlyName <FriendlyName> | Get-ClusterPerf
@@ -97,4 +97,4 @@ Get-Volume -FriendlyName <FriendlyName> | Get-ClusterPerf
 
 ## <a name="see-also"></a>Consulte também
 
-- [Histórico de desempenho para espaços de armazenamento direto](performance-history.md)
+- [Histórico de desempenho para espaços de armazenamento diretos](performance-history.md)

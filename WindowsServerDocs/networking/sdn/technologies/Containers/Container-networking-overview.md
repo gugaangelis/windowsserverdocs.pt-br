@@ -1,6 +1,6 @@
 ---
-title: Visão geral de rede de contêiner
-description: Este tópico é uma visão geral da pilha de rede para contêineres do Windows e inclui links para orientações adicionais sobre como criar, configurar e gerenciar redes de contêiner.
+title: Visão geral de rede de contêineres
+description: Este tópico é uma visão geral da pilha da rede para contêineres do Windows e inclui links para orientações adicionais sobre como criar, configurar e gerenciar as redes de contêiner.
 manager: ravirao
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -12,24 +12,33 @@ ms.topic: article
 ms.assetid: 318659e5-e4a5-4e46-99d6-211dfc46f6b8
 ms.author: pashort
 author: jmesser81
-ms.openlocfilehash: fd2f022948208d4aacce2994ff053e77384b28fc
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 09/04/2018
+ms.openlocfilehash: 72b1ac739d9012ac7b90e97abe22e5f321ddba63
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59886137"
 ---
-# <a name="container-networking-overview"></a>Visão geral de rede de contêiner
+# <a name="container-networking-overview"></a>Visão geral de rede de contêineres
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Este tópico é uma visão geral da pilha de rede para contêineres do Windows e inclui links para orientações adicionais sobre como criar, configurar e gerenciar redes de contêiner.
+Neste tópico, nós fornecemos a você uma visão geral da pilha da rede para contêineres do Windows e incluímos links para orientações adicionais sobre como criar, configurar e gerenciar as redes de contêiner.
 
-Windows Server contêineres são um método de virtualização de sistema operacional leve usado para separar os serviços ou aplicativos de outros serviços que são executados no mesmo contêiner host. Para habilitar esse recurso, cada contêiner tem seu próprio modo de exibição do sistema operacional, processos, sistema de arquivos, do registro e endereços IP.
+Contêineres do Windows Server são um método de virtualização do sistema operacional leve separar aplicativos ou serviços de outros serviços que são executados no mesmo host do contêiner. Função de contêineres do Windows da mesma forma que as máquinas virtuais. Quando habilitado, cada contêiner tem uma exibição separada do sistema operacional, processos, sistema de arquivos, registro e endereços IP, que você pode se conectar às redes virtuais. 
 
-Função de contêineres do Windows da mesma forma para máquinas virtuais em relação à rede. Cada contêiner tem um adaptador de rede virtual que está conectado a um comutador virtual, por meio da qual tráfego de entrada e saído é encaminhado. Para impor o isolamento entre contêineres no mesmo host, um compartimento de rede é criado para cada Windows Server e Hyper-V contêiner no qual o adaptador de rede para o contêiner está instalado. Contêineres do Windows Server usam um vNIC Host para anexar ao switch virtual. Contêineres do Hyper-V use uma NIC VM sintéticos (não exposta a VM utilitário) para anexar ao switch virtual. 
+Um contêiner do Windows compartilha um kernel com o host do contêiner e todos os contêineres em execução no host. Devido ao espaço de kernel compartilhado, esses contêineres exigem a mesma versão e configuração de kernel. Os contêineres fornecem isolamento de aplicativo por meio da tecnologia de isolamento de processo e de namespace.
 
-Pontos de extremidade do contêiner podem ser anexados a uma rede de host local (por exemplo, NAT), a rede física ou uma rede virtual sobreposição criada através da pilha do Microsoft Software definido de rede (SDN). 
+>[!IMPORTANT]
+>Contêineres do Windows não fornecem um limite de segurança hostil e não devem ser usados para isolar o código não confiável. 
 
-Para obter mais informações sobre como criar e gerenciar redes de contêiner para implantações de não-sobreposição/SDN, consulte o [Windows contêiner Networking](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/management/container_networking) guia no MSDN.
+Com os contêineres do Windows, você pode implantar um host Hyper-V, em que você cria uma ou mais máquinas virtuais nos hosts de VM. Dentro dos hosts VM, contêineres são criados e o acesso de rede é por meio de um comutador virtual em execução dentro da máquina virtual. Você pode usar imagens reutilizáveis armazenadas em um repositório para implantar o sistema operacional e serviços em contêineres. Cada contêiner tem um adaptador de rede virtual que se conecta a um comutador virtual, encaminhar o tráfego de entrada e saído. Você pode anexar os pontos de extremidade do contêiner para uma rede de host local (por exemplo, o NAT), a rede física ou rede virtual de sobreposição criado por meio da pilha SDN.
 
-Para obter mais informações sobre como criar e gerenciar redes de contêiner para redes virtuais sobreposição com SDN, consulte [se conectar a pontos de extremidade do contêiner a uma rede virtual locatário ](../../manage/Connect-container-endpoints-to-a-Tenant-Virtual-Network.md). 
+Para impor o isolamento entre contêineres no mesmo host, você deve criar um compartimento de rede para cada contêiner do Windows Server e Hyper-V. Contêineres do Windows Server usam uma vNIC do host para se conectar ao comutador virtual. Os contêineres do Hyper-V usam uma NIC de VM sintética (não exposta à VM do utilitário) para se conectar ao comutador virtual. 
+
+## <a name="related-topics"></a>Tópicos relacionados 
+
+- [Rede de contêiner do Windows](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/architecture): Saiba como criar e gerenciar redes de contêiner para implantações de não-sobreposição/SDN.
+
+- [Conectar pontos de extremidade de contêiner a uma rede virtual do locatário](../../manage/Connect-container-endpoints-to-a-Tenant-Virtual-Network.md): Saiba como criar e gerenciar redes de contêiner para redes virtuais de sobreposição com SDN. 

@@ -1,6 +1,6 @@
 ---
 title: Editar propriedades de modelo de cota
-description: "Este artigo descreve como editar as propriedades de modelo de cota para estender alterações para cotas criadas com o modelo de cota original"
+description: Este artigo descreve como editar as propriedades de modelo de cota para estender alterações para cotas criadas com o modelo de cota original
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 0362b30e16dacb354220c770899195240f3e19ee
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59885777"
 ---
 # <a name="edit-quota-template-properties"></a>Editar propriedades de modelo de cota
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Quando você faz alterações a um modelo de cota, você tem a opção de ampliar essas alterações para cotas que foram criadas com o modelo de cota original. Você pode optar por modificar somente as cotas que ainda correspondem ao modelo original ou todas as cotas que foram derivadas do modelo original, independentemente de quaisquer modificações que foram feitas às cotas desde que eles foram criadas. Esse recurso simplifica o processo de atualização das propriedades de suas cotas fornecendo um ponto central onde você pode realizar todas as alterações.
 
@@ -41,9 +42,9 @@ Quando você faz alterações a um modelo de cota, você tem a opção de amplia
 
 6.  Clique em **OK**.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
--   [Gerenciamento de cota](quota-management.md)
+-   [Gerenciamento de cotas](quota-management.md)
 -   [Criar um modelo de cota](create-quota-template.md)
 
 

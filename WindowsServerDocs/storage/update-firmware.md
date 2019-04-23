@@ -8,14 +8,15 @@ ms.technology: storage-spaces
 ms.topic: article
 author: toklima
 ms.date: 10/04/2016
-ms.openlocfilehash: 90019ed8425d72d30059be5d47458785cac34c73
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 50291bd4da05d9c2736c84443b444b9a43f46344
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59884777"
 ---
-# <a name="updating-drive-firmware-in-windows-server-2016"></a>Atualizando o firmware da unidade no Windows Server 2016
->Aplicável a: Windows 10, Windows Server (canal semestral), Windows Server 2016
+# <a name="updating-drive-firmware-in-windows-server-2016"></a>Atualizar o firmware da unidade no Windows Server 2016
+>Aplica-se a: Windows 10, Windows Server (canal semestral), Windows Server 2016
 
 A atualização do firmware para unidades historicamente tem sido uma tarefa difícil com potencial para tempo de inatividade. Por isso, estamos fazendo aprimoramentos nos Espaços de Armazenamento, no Windows Server, Windows 10, versão 1703 e mais recente. Se você tiver unidades que dão suporte ao novo mecanismo de atualização de firmware incluído no Windows, poderá atualizar o firmware da unidade de unidades em produção sem tempo de inatividade. No entanto, se você pretende atualizar o firmware de uma unidade de produção, leia nossas dicas sobre como minimizar o risco ao usar essa nova e poderosa funcionalidade.
 
@@ -29,9 +30,9 @@ Para usar o Windows Server para atualizar o firmware da unidade, você deverá t
 Para obter informações sobre se o hardware oferece suporte a atualização do firmware da unidade do Windows, entre em contato com o fornecedor da solução.
 Aqui estão links para os diversos requisitos:
 
--   SATA: [Device.Storage.Hd.Sata](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata) - na seção **[If Implemented\] Firmware Download & Activate**
+-   SATA: [Device.Storage.Hd.Sata](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata) - na **[If Implemented\] Firmware Download & Activate** seção
     
--   SAS: [Device.Storage.Hd.Sas](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas) - na seção **[If Implemented\] Firmware Download & Activate**
+-   SAS: [Device.Storage.Hd.Sas](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas) - na **[If Implemented\] Firmware Download & Activate** seção
 
 -   NVMe: [Device.Storage.ControllerDrive.NVMe](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragecontrollerdrivenvme) - nas seções **5.7** e **5.8**.
 
@@ -42,7 +43,7 @@ Os dois cmdlets adicionados ao Windows são:
 -   Get-StorageFirmwareInformation
 -   Update-StorageFirmware
 
-O primeiro cmdlet fornece informações detalhadas sobre os recursos do dispositivo, as imagens de firmware e as revisões. Nesse caso, a máquina contém apenas um único SSD SATA com 1 slot de firmware. Aqui está um exemplo:
+O primeiro cmdlet fornece informações detalhadas sobre os recursos do dispositivo, as imagens de firmware e as revisões. Nesse caso, a máquina contém apenas um único SSD SATA com 1 slot de firmware. Veja um exemplo:
 
    ```powershell
    Get-PhysicalDisk | Get-StorageFirmwareInformation
@@ -104,7 +105,7 @@ Quando um servidor estiver em produção, é uma boa ideia fazer poucas alteraç
 
 1. Revise as notas de versão de firmware e confirme que a atualização corrige problemas que poderiam afetar seu ambiente e que o firmware não contém os problemas conhecidos que podem prejudicá-lo.
 
-2. Instale o firmware em um servidor em seu laboratório com unidades idênticas (incluindo a revisão da unidade, se houver várias revisões da mesma unidade) e teste a unidade sob carga com o novo firmware. Para obter informações sobre como fazer o teste de carga sintética, consulte [Testar o desempenho dos Espaços de Armazenamento usando cargas de trabalho sintéticas](https://technet.microsoft.com/en-us/library/dn894707.aspx).
+2. Instale o firmware em um servidor em seu laboratório com unidades idênticas (incluindo a revisão da unidade, se houver várias revisões da mesma unidade) e teste a unidade sob carga com o novo firmware. Para obter informações sobre como fazer o teste de carga sintética, consulte [Testar o desempenho dos Espaços de Armazenamento usando cargas de trabalho sintéticas](https://technet.microsoft.com/library/dn894707.aspx).
 
 ## <a name="automated-firmware-updates-with-storage-spaces-direct"></a>Atualizações de firmware automatizadas com Espaços de Armazenamento Diretos
 
@@ -150,7 +151,7 @@ Para fazer a distribuição do novo firmware iniciar neste cluster de Espaços d
 ```powershell
 $SpacesDirect = Get-StorageSubSystem Clus*
 
-$CurrentDoc = $SpacesDirect | Get-StorageHealtHealth Service etting -Name "System.Storage.SupportedComponents.Document"
+$CurrentDoc = $SpacesDirect | Get-StorageHealthSetting -Name "System.Storage.SupportedComponents.Document"
 
 $CurrentDoc.Value | Out-File <Path>
 ```
@@ -163,7 +164,7 @@ $NewDoc = Get-Content <Path> | Out-String
 $SpacesDirect | Set-StorageHealthSetting -Name "System.Storage.SupportedComponents.Document" -Value $NewDoc
 ```
 
-Se você quiser ver o serviço de integridade em ação e saber mais sobre seu mecanismo de distribuição, veja este vídeo: https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
+Se você quiser ver o serviço de integridade em ação e saiba mais sobre seu mecanismo de distribuição, dê uma olhada neste vídeo: https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
 
 ## <a name="frequently-asked-questions"></a>Perguntas frequentes
 
@@ -194,7 +195,7 @@ No Windows Server 2016, com o serviço de integridade implantados em Espaços de
 
 ### <a name="what-happens-if-the-update-fails"></a>O que acontece se a atualização falhar
 
-A atualização pode falhar por várias razões, algumas delas são: 1) a unidade não oferece suporte aos comandos corretos para o Windows atualizar seu firmware. Nesse caso, a nova imagem de firmware nunca é ativada e a unidade continuará funcionando com a imagem antiga. 2) A imagem não pode baixar ou ser aplicada a essa unidade (incompatibilidade de versão, imagem corrompida, ...). Nesse caso, ocorre falha no comando de ativação da unidade. Novamente, a imagem antiga do firmware continuará funcionando.
+A atualização pode falhar por vários motivos, algumas delas são: 1) a unidade não dá suporte a comandos corretos para o Windows atualizar seu firmware. Nesse caso, a nova imagem de firmware nunca é ativada e a unidade continuará funcionando com a imagem antiga. 2) A imagem não pode baixar ou ser aplicada a essa unidade (incompatibilidade de versão, imagem corrompida, ...). Nesse caso, ocorre falha no comando de ativação da unidade. Novamente, a imagem antiga do firmware continuará funcionando.
 
 Se a unidade não responder após uma atualização de firmware, você provavelmente estará atingindo um bug no próprio firmware da unidade. Teste todas as atualizações de firmware em um ambiente de laboratório antes de colocá-las em produção. A única correção poderá ser substituir a unidade.
 
@@ -207,6 +208,6 @@ Desabilite a distribuição no PowerShell por meio de:
 Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.PhysicalDisk.AutoFirmwareUpdate.RollOut.Enabled" -Value false
 ```
 
-### <a name="i-am-seeing-an-access-denied-or-path-not-found-error-during-roll-out-how-do-i-fix-this"></a>Vejo um acesso negado ou erro de caminho não encontrado durante a distribuição. Como faço para corrigir isso
+### <a name="i-am-seeing-an-access-denied-or-path-not-found-error-during-roll-out-how-do-i-fix-this"></a>Vejo um acesso negado ou erro de caminho não encontrado durante a distribuição. Como posso corrigir isso
 
 Verifique se a imagem do firmware que você deseja usar para a atualização está acessível por todos os nós do cluster. A maneira mais fácil de garantir isso é colocá-lo em um volume compartilhado do cluster.
