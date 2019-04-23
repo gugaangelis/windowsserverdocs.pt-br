@@ -1,6 +1,6 @@
 ---
-title: Usar a política de DNS para localização geográfica com base em gerenciamento de tráfego com implantações de primário secundário
-description: Este tópico faz parte do DNS política cenário guia para Windows Server 2016
+title: Usar política de DNS para gerenciamento de tráfego baseado em localização geográfica com implantações primárias e secundárias
+description: Este tópico faz parte do DNS política cenário guia para o Windows Server 2016
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-dns
@@ -8,99 +8,100 @@ ms.topic: article
 ms.assetid: a9ee7a56-f062-474f-a61c-9387ff260929
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4c78a0198e29fb59f30fd8ad776c7f200312d014
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: b11064e6b3bd2590d5712afdb7afc69de1ed83f4
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59889697"
 ---
-# <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-secondary-deployments"></a>Usar a política de DNS para localização geográfica com base em gerenciamento de tráfego com implantações de primário secundário
+# <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-secondary-deployments"></a>Usar política de DNS para gerenciamento de tráfego baseado em localização geográfica com implantações primárias e secundárias
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Você pode usar este tópico para saber como criar a política DNS para gerenciamento de tráfego com base em localização geográfica quando a implantação do DNS inclui servidores DNS primário e secundários.  
+Você pode usar este tópico para aprender a criar política de DNS para o gerenciamento de tráfego com base em localização geográfica, quando sua implantação de DNS inclui servidores DNS primário e secundários.  
 
-No cenário anterior, [usar a política de DNS para o gerenciamento de tráfego com base em localização geográfica com servidores primários](primary-geo-location.md), fornecidas instruções para configurar a política DNS para gerenciamento de tráfego de localização geográfica com base em um servidor DNS primário. A infraestrutura de Internet, no entanto, os servidores DNS são amplamente implantados em um modelo primário secundário, onde a cópia de uma zona gravável é armazenada em servidores principais select e seguras e cópias somente leitura da zona são mantidas em vários servidores secundários.   
+No cenário anterior, [usar a política de DNS para o gerenciamento de tráfego com base em localização geográfica com servidores primários](primary-geo-location.md), fornecidas instruções para configurar a política de DNS para o gerenciamento de tráfego com base em localização geográfica em um servidor DNS primário. Na infraestrutura de Internet, no entanto, os servidores DNS são amplamente implantados em um modelo de primárias e secundárias, onde a cópia gravável de uma zona é armazenada nos servidores primários select e seguras, e cópias somente leitura da zona são mantidas em vários servidores secundários.   
   
-Os servidores secundários usam os protocolos de transferência de zona de transferência (AXFR autoritativo) e transferência de zona Incremental (IXFR) para solicitar e receber atualizações de zona que incluem novas alterações para as zonas nos servidores DNS primários.   
+Os servidores secundários usam os protocolos de transferência de zona transferência autoritativo (AXFR) e a transferência de zona Incremental (IXFR) para solicitar e receber atualizações de zona que incluem novas alterações para as zonas nos servidores DNS primários.   
   
 >[!NOTE]
->Para saber mais sobre AXFR, consulte Internet Engineering Task Force (IETF) [solicitar para comentários 5936](https://tools.ietf.org/rfc/rfc5936.txt). Para saber mais sobre IXFR, consulte Internet Engineering Task Force (IETF) [solicitar para comentários 1995](https://tools.ietf.org/html/rfc1995).  
+>Para obter mais informações sobre transações AXFR, consulte Internet Engineering Task Force (IETF) [solicitação de comentários 5936](https://tools.ietf.org/rfc/rfc5936.txt). Para obter mais informações sobre IXFR, consulte Internet Engineering Task Force (IETF) [solicitação de comentários de 1995](https://tools.ietf.org/html/rfc1995).  
   
-## <a name="bkmk_example"></a>Localização geográfica primário secundário com base em exemplo de gerenciamento de tráfego  
-Este é um exemplo de como você pode usar a política DNS em uma implantação primário secundário para alcançar o redirecionamento do tráfego com base na localização física do cliente que executa uma consulta DNS.  
+## <a name="bkmk_example"></a>Exemplo de gerenciamento de tráfego com base de localização geográfica primárias e secundárias  
+A seguir está um exemplo de como você pode usar a política de DNS em uma implantação de primárias e secundárias para alcançar o redirecionamento do tráfego com base em um local físico do cliente que executa uma consulta DNS.  
   
-Este exemplo usa duas empresas fictícias - Contoso serviços em nuvem, que fornece a web e domínio que hospeda soluções; e serviços de comida Woodgrove, que fornece serviços de entrega de comida em várias cidades em todo o mundo, e que tem um site denominado woodgrove.com.  
+Este exemplo usa duas empresas fictícias - serviços de nuvem da Contoso, que fornece web e domínio que hospeda as soluções; e Woodgrove Food Services, que fornece serviços de entrega de alimento em várias cidades em todo o mundo, e que tem um site da Web denominado woodgrove.com.  
   
-Para garantir que os clientes de woodgrove.com tenham uma experiência responsiva de seu site, Woodgrove deseja europeus clientes direcionados para o datacenter Europeia e da América direcionado para o datacenter dos EUA. Clientes localizados em outro lugar do mundo podem ser direcionados a ambos os datacenters.  
+Para garantir que os clientes de woodgrove.com obtenham uma experiência responsiva de seu site, o Woodgrove deseja os clientes europeus direcionados para o data center europeu e American direcionado para o datacenter dos EUA. Os clientes localizados em outro lugar no mundo podem ser direcionados para qualquer um dos data centers.  
   
-Serviços de nuvem Contoso tem dois centros de dados, um nos EUA e outro na Europa, na qual a Contoso hospeda sua comida ordenação portal para woodgrove.com.  
+Serviços de nuvem da Contoso tem dois data centers, um dos EUA e outro na Europa, no qual a Contoso hospeda o seu portal para woodgrove.com de ordenação de alimentos.  
   
-A implantação de DNS da Contoso inclui dois servidores secundários: **SecondaryServer1**, com o endereço IP 10.0.0.2; e **SecondaryServer2**, com o endereço IP 10.0.0.3. Esses servidores secundários estiver atuando como servidores de nomes nas duas regiões diferentes, com SecondaryServer1 localizada na Europa e SecondaryServer2 localizado nos EUA
+A implantação do DNS da Contoso inclui dois servidores secundários: **SecondaryServer1**, com o endereço IP 10.0.0.2; e **SecondaryServer2**, com o endereço IP 10.0.0.3. Esses servidores secundários são que atuam como servidores de nome em duas regiões diferentes, com SecondaryServer1 localizado na Europa e SecondaryServer2 localizados nos Estados Unidos
   
-Há uma cópia da zona primária gravável em **entradas PrimaryServer** (endereço IP 10.0.0.1), onde as alterações de zona são feitas. Com transferências de zona normal para os servidores secundários, os servidores secundários sempre estão atualizados com todas as novas alterações à zona sobre as entradas de PrimaryServer.
+Há uma cópia gravável de zona primária em **PrimaryServer** (endereço IP 10.0.0.1), em que as alterações de zona são feitas. Com transferências de zona regulares para os servidores secundários, os servidores secundários são sempre atualizados com todas as novas alterações à zona em que o PrimaryServer.
   
 A ilustração a seguir ilustra esse cenário.
   
-![Localização geográfica primário secundário com base em exemplo de gerenciamento de tráfego](../../media/Dns-Policy_PS1/dns_policy_primarysecondary1.jpg)  
+![Exemplo de gerenciamento de tráfego com base de localização geográfica primárias e secundárias](../../media/Dns-Policy_PS1/dns_policy_primarysecondary1.jpg)  
    
-## <a name="bkmk_works"></a>Como funciona o sistema do DNS primário secundário
+## <a name="bkmk_works"></a>Como funciona o sistema de primárias e secundárias do DNS
 
-Quando você implanta o gerenciamento de tráfego de localização geográfica com base em uma implantação de DNS primário secundário, é importante compreender como normal zona primário secundário transferências ocorrem antes de ter conhecimento sobre transferências de nível de escopo de zona. As seções a seguir fornecem informações sobre zona e transferências de nível de escopo de zona.  
+Quando você implanta o gerenciamento de tráfego com base em localização geográfica em uma implantação de DNS primário secundário, é importante entender como normal zona primária-secundária transferências ocorrerem antes de aprender sobre transferências de nível de escopo de zona. As seções a seguir fornecem informações sobre a zona e transferências de nível de escopo de zona.  
   
-- [Transferências de zona em uma implantação do DNS primário secundário](#bkmk_zone)  
-- [Transferências de nível de escopo zona em uma implantação do DNS primário secundário](#bkmk_scope)  
+- [Transferências de zona em uma implantação de primárias e secundárias do DNS](#bkmk_zone)  
+- [Transfere o nível de escopo de zona em uma implantação de primárias e secundárias do DNS](#bkmk_scope)  
   
-### <a name="bkmk_zone"></a>Transferências de zona em uma implantação do DNS primário secundário
+### <a name="bkmk_zone"></a>Transferências de zona em uma implantação de primárias e secundárias do DNS
 
-Você pode criar uma implantação do DNS primário secundário e sincronizar zonas com as etapas a seguir.  
-1. Quando você instala o DNS, a zona principal é criada no servidor DNS primário.  
+Você pode criar uma implantação de primárias e secundárias do DNS e sincronizar as zonas com as etapas a seguir.  
+1. Quando você instala o DNS, a zona primária é criada no servidor DNS primário.  
 2. No servidor secundário, crie as zonas e especifique os servidores primários.   
-3. Nos servidores do principais, você pode adicionar os servidores secundários como confiáveis secundários na zona primária.   
-4. As zonas secundárias faça uma solicitação de transferência de zona plena (AXFR) e recebam uma cópia da zona.   
+3. Nos servidores primários, você pode adicionar os servidores secundários como secundários confiáveis na zona primária.   
+4. As zonas secundárias fazer uma solicitação de transferência de zona completa (AXFR) e recebam uma cópia da zona.   
 5. Quando necessário, os servidores primários enviam notificações para os servidores secundários sobre atualizações de zona.  
-6. Servidores secundários fazer uma solicitação de transferência de zona incremental (IXFR). Por isso, os servidores secundários permanecerão sincronizados com o servidor primário.   
+6. Servidores secundários fazem uma solicitação de transferência de zona incremental (IXFR). Por isso, os servidores secundários permanecem sincronizados com o servidor primário.   
   
-### <a name="bkmk_scope"></a>Transferências de nível de escopo zona em uma implantação do DNS primário secundário
+### <a name="bkmk_scope"></a>Transfere o nível de escopo de zona em uma implantação de primárias e secundárias do DNS
 
-O cenário de gerenciamento de tráfego requer etapas adicionais para particionar as zonas em escopos de zona diferentes. Por isso, etapas adicionais são necessárias para transferir os dados dentro os escopos de zona para os servidores secundários e transferir as políticas e sub-redes do cliente DNS para os servidores secundários.   
+O cenário de gerenciamento de tráfego requer etapas adicionais para particionar as zonas em escopos de zona diferente. Por isso, etapas adicionais são necessárias para transferir os dados dentro de escopos de zona para os servidores secundários e para transferir as políticas e subredes de cliente DNS para os servidores secundários.   
   
-Depois de configurar sua infraestrutura DNS com servidores primário e secundário, transferências de nível de escopo de zona são executadas automaticamente pelo DNS, usando os seguintes processos.  
+Depois de configurar sua infraestrutura DNS com os servidores primário e secundário, transferências de nível de escopo de zona são executadas automaticamente pelo DNS, usando os seguintes processos.  
   
-Para garantir a transferência de nível de escopo de zona, servidores DNS usam os mecanismos de extensão para RR de aceitação de DNS (EDNS0). Todas as solicitações de transferência (AXFR ou IXFR) de zona das regiões com escopos são originadas com um EDNS0 aceitar registro recurso, cuja ID de opção é definida como "65433" por padrão. Para saber mais sobre EDNSO, consulte IETF [solicitar para comentários 6891](https://tools.ietf.org/html/rfc6891).  
+Para garantir a transferência de nível de escopo de zona, servidores DNS usam os mecanismos de extensão para DNS (EDNS0) aceitar RR. Todas as solicitações de transferência (AXFR ou IXFR) zona das zonas com escopos originam-se com um EDNS0 aceitar RR, cuja ID de opção é definida para "65433" por padrão. Para obter mais informações sobre EDNSO, consulte IETF [solicitação de comentários 6891](https://tools.ietf.org/html/rfc6891).  
   
-O valor do registro de recurso de aceitação é o nome de escopo de zona para o qual a solicitação está sendo enviada. Quando um servidor DNS primário recebe esse pacote em um servidor secundário confiável, ele interpreta a solicitação como vindo para esse escopo de zona.   
+O valor do RR otimizado é o nome do escopo de zona para o qual a solicitação é enviada. Quando um servidor DNS primário recebe esse pacote de um servidor secundário confiável, ele interpreta a solicitação como proveniente desse escopo de zona.   
   
-Se o servidor primário tem esse escopo de zona ele responde com os dados de transferência (XFR) do escopo. A resposta contém um aceitar RR com a mesma ID de opção "65433" e o valor definido para o mesmo escopo da região. Os servidores secundários recebem essa resposta, recuperar as informações de escopo da resposta e atualizar esse escopo específico da zona.  
+Se o servidor primário tiver escopo zona ele responde com os dados de transferência (XFR) do escopo. A resposta contém um RR otimizado com a mesma ID de opção "65433" e o valor definido para o mesmo escopo de zona. Os servidores secundários recebem essa resposta, recuperar as informações de escopo na resposta e atualizar esse determinado escopo da zona.  
   
-Após esse processo, o servidor primário mantém uma lista de secundários confiáveis que enviaram tal uma solicitação de escopo de zona de notificações.   
+Após esse processo, o servidor primário mantém uma lista de secundários confiáveis que tal uma solicitação de escopo de zona para notificações enviados.   
   
-Para qualquer atualização adicional em um escopo de zona, uma notificação de IXFR é enviada para os servidores secundários, com o registro de recurso mesmo aceitar. O escopo de zona recebendo essa notificação faz a solicitação IXFR contendo esse RR aceitação e o mesmo processo conforme descrito acima segue.  
+Para qualquer outra atualização em um escopo de zona, uma notificação de IXFR é enviada para os servidores secundários, com o mesmo RR de aceitação. O escopo da região receber essa notificação faz a solicitação IXFR que contém esse RR otimizado e o mesmo processo conforme descrito acima segue.  
   
-## <a name="bkmk_config"></a>Como configurar a política de DNS primário secundário localização geográfica com base em gerenciamento de tráfego
+## <a name="bkmk_config"></a>Como configurar a política de DNS para o gerenciamento de tráfego de com base em localização geográfica primárias e secundárias
 
-Antes de começar, certifique-se de que você concluiu todas as etapas no tópico [usar a política de DNS para o gerenciamento de tráfego com base em localização geográfica com servidores primários](../../dns/deploy/Scenario--Use-DNS-Policy-for-Geo-Location-Based-Traffic-Management-with-Primary-Servers.md), e o servidor DNS primário está configurado com zonas, escopos da zona, sub-redes do cliente DNS e política DNS.  
+Antes de começar, certifique-se de que você tenha concluído todas as etapas no tópico [usar a política de DNS para o gerenciamento de tráfego com base em localização geográfica com servidores primários](../../dns/deploy/Scenario--Use-DNS-Policy-for-Geo-Location-Based-Traffic-Management-with-Primary-Servers.md), e seu servidor DNS primário é configurado com zonas, escopos de zona, o cliente DNS Subredes e a política DNS.  
   
 >[!NOTE]
-> As instruções neste tópico para copiar sub-redes do cliente DNS, escopos da zona e políticas DNS dos servidores DNS primários para os servidores DNS secundários destinam-se a sua instalação inicial do DNS e validação. No futuro, convém alterar as sub-redes do cliente DNS, escopos da zona e configurações de políticas no servidor primário. Neste caso, você pode criar scripts de automação para manter os servidores secundários sincronizados com o servidor principal.  
+> As instruções neste tópico para copiar as sub-redes de cliente DNS, escopos de zona e políticas de DNS de servidores DNS primários para os servidores DNS secundários são para sua configuração DNS inicial e a validação. No futuro você talvez queira alterar a subredes de cliente DNS, escopos de zona e configurações de políticas no servidor primário. Nessa circunstância, você pode criar scripts de automação para manter os servidores secundários sincronizados com o servidor primário.  
   
-Para configurar a política DNS para respostas de consulta primário secundário localização geográfica com base, você deve executar as etapas a seguir.  
+Para configurar a política de DNS para respostas de consultas de primárias e secundárias localização geográfica com base, você deve executar as etapas a seguir.  
   
 - [Criar as zonas secundário](#bkmk_secondary)  
-- [Definir as configurações de transferência de zona na zona principal](#bkmk_zonexfer)  
-- [Copie as sub-redes do cliente DNS](#bkmk_client)  
+- [Definir as configurações de transferência de zona na região primária](#bkmk_zonexfer)  
+- [Copie as sub-redes de cliente DNS](#bkmk_client)  
 - [Criar os escopos de zona no servidor secundário](#bkmk_zonescopes)  
-- [Configurar a política DNS](#bkmk_dnspolicy)  
+- [Configurar a política de DNS](#bkmk_dnspolicy)  
   
-As seguintes seções fornecem instruções de configuração detalhadas.  
+As seções a seguir fornecem instruções de configuração detalhadas.  
   
 >[!IMPORTANT]
->As seções a seguir incluem comandos do Windows PowerShell de exemplo que contêm valores de exemplo para vários parâmetros. Certifique-se de que você substitua os valores de exemplo nesses comandos com valores que são apropriados para sua implantação antes de executar esses comandos.  
-><br>A associação ao grupo **DnsAdmins**, ou equivalente, é necessário para executar os procedimentos a seguir.  
+>As seções a seguir incluem comandos do Windows PowerShell de exemplo que contêm valores de exemplo para muitos parâmetros. Certifique-se de que você substitua os valores de exemplo nesses comandos com os valores que são apropriadas para sua implantação antes de executar esses comandos.  
+><br>Associação na **DnsAdmins**, ou equivalente, é necessário para executar os procedimentos a seguir.  
   
 ### <a name="bkmk_secondary"></a>Criar as zonas secundário
 
-Você pode criar a cópia secundária da zona deseja duplicar SecondaryServer1 e SecondaryServer2 (supondo que os cmdlets estão sendo executadas remotamente de um cliente de gerenciamento único).   
+Você pode criar a cópia secundária da zona da qual você deseja replicar para SecondaryServer1 e SecondaryServer2 (supondo que os cmdlets estão sendo executados remotamente de um cliente de gerenciamento único).   
   
 Por exemplo, você pode criar a cópia secundária de www.woodgrove.com em SecondaryServer1 e SecondarySesrver2.  
   
@@ -112,30 +113,30 @@ Você pode usar os seguintes comandos do Windows PowerShell para criar as zonas 
     Add-DnsServerSecondaryZone -Name "woodgrove.com" -ZoneFile "woodgrove.com.dns" -MasterServers 10.0.0.1 -ComputerName SecondaryServer2  
       
 
-Para obter mais informações, consulte [adicionar DnsServerSecondaryZone](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserversecondaryzone?view=win10-ps).  
+Para obter mais informações, consulte [DnsServerSecondaryZone adicionar](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserversecondaryzone?view=win10-ps).  
   
-### <a name="bkmk_zonexfer"></a>Definir as configurações de transferência de zona na zona principal
+### <a name="bkmk_zonexfer"></a>Definir as configurações de transferência de zona na região primária
 
-Você deve definir as configurações de zona primária para que:
+Você deve definir as configurações de zona primária, de modo que:
 
-1. São permitidas transferências de zona do servidor principal para os servidores secundários especificados.  
-2. Notificações de atualização de zona são enviadas pelo servidor principal para os servidores secundários.  
+1. Transferências de zona do servidor primário para os servidores secundários especificados são permitidas.  
+2. Notificações de atualização de zona são enviadas pelo servidor primário para os servidores secundários.  
   
 Você pode usar os seguintes comandos do Windows PowerShell para definir as configurações de transferência de zona na zona primária.
   
 >[!NOTE]
->No seguinte exemplo de comando, o parâmetro **-notificar** Especifica que o servidor primário enviará notificações sobre atualizações na lista Selecionar de secundários.  
+>No seguinte exemplo de comando, o parâmetro **-notificar** Especifica que o servidor primário enviará notificações sobre atualizações à lista de seleção de secundários.  
   
     
     Set-DnsServerPrimaryZone -Name "woodgrove.com" -Notify Notify -SecondaryServers "10.0.0.2,10.0.0.3" -SecureSecondaries TransferToSecureServers -ComputerName PrimaryServer  
      
   
-Para obter mais informações, consulte [conjunto DnsServerPrimaryZone](https://https://docs.microsoft.com/powershell/module/dnsserver/set-dnsserverprimaryzone?view=win10-ps).  
+Para obter mais informações, consulte [Set-DnsServerPrimaryZone](https://docs.microsoft.com/powershell/module/dnsserver/set-dnsserverprimaryzone?view=win10-ps).  
   
   
-### <a name="bkmk_client"></a>Copie as sub-redes do cliente DNS
+### <a name="bkmk_client"></a>Copie as sub-redes de cliente DNS
 
-Você deve copiar as sub-redes do cliente DNS do servidor principal para os servidores secundários.
+Você deve copiar as sub-redes de cliente DNS do servidor primário para os servidores secundários.
   
 Você pode usar os seguintes comandos do Windows PowerShell para copiar as sub-redes para os servidores secundários.
   
@@ -145,11 +146,11 @@ Você pode usar os seguintes comandos do Windows PowerShell para copiar as sub-r
     Get-DnsServerClientSubnet -ComputerName PrimaryServer | Add-DnsServerClientSubnet -ComputerName SecondaryServer2  
       
 
-Para obter mais informações, consulte [adicionar DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).  
+Para obter mais informações, consulte [DnsServerClientSubnet adicionar](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).  
   
 ### <a name="bkmk_zonescopes"></a>Criar os escopos de zona no servidor secundário
 
-Você deve criar os escopos de zona nos servidores secundários. No DNS, os escopos de zona também iniciar a solicitação XFRs do servidor principal. Qualquer alteração realizada nos escopos de zona no servidor primário, uma notificação que contém as informações de escopo de zona é enviada para os servidores secundários. Os servidores secundários, em seguida, podem atualizar seus escopos zona com alteração incremental.  
+Você deve criar os escopos de zona nos servidores secundários. No DNS, os escopos de zona também iniciar a solicitação XFRs do servidor primário. Qualquer alteração feita nos escopos a zona no servidor primário, uma notificação que contém as informações de escopo de zona é enviada para os servidores secundários. Os servidores secundários, em seguida, podem atualizar seus escopos de zona com alteração incremental.  
   
 Você pode usar os seguintes comandos do Windows PowerShell para criar os escopos de zona nos servidores secundários.  
   
@@ -160,15 +161,15 @@ Você pode usar os seguintes comandos do Windows PowerShell para criar os escopo
   
 
 >[!NOTE]
->Esses comandos de exemplo, o **- ErrorAction ignorar** parâmetro está incluído, como um escopo de zona padrão existe em cada região. O escopo da região padrão não pode ser criado ou excluído. Pipelining resultará em uma tentativa de criar esse escopo e ele irá falhar. Como alternativa, você pode criar os escopos de zona de não padrão em dois fusos secundários.  
+>Esses comandos de exemplo, o **- ErrorAction ignorar** parâmetro seja incluído, como um escopo de zona padrão existe em cada zona. O escopo da região padrão não pode ser criado ou excluído. O pipelining resultará em uma tentativa de criar o escopo e irá falhar. Como alternativa, você pode criar os escopos de zonas não padrão em duas zonas secundárias.  
   
-Para obter mais informações, consulte [adicionar DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps).  
+Para obter mais informações, consulte [DnsServerZoneScope adicionar](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps).  
   
-### <a name="bkmk_dnspolicy"></a>Configurar a política DNS
+### <a name="bkmk_dnspolicy"></a>Configurar a política de DNS
 
-Depois que você criou as sub-redes, as partições (escopos de zona) e você adicionou registros, você deve criar políticas que conectam as sub-redes e partições, para que quando uma consulta vem de uma fonte em um das sub-redes do cliente DNS, a resposta da consulta é retornada do escopo da zona correto. Não há políticas são necessárias para mapear o escopo da região padrão.  
+Depois de ter criado as sub-redes, as partições (escopos de zona) e você adicionou registros, você deve criar políticas que se conectam a sub-redes e partições, para que quando uma consulta vem de uma fonte em uma das sub-redes de cliente DNS, a resposta de consulta é retornada de o escopo correto da zona. Não há políticas são necessárias para o escopo da região padrão de mapeamento.  
   
-Você pode usar os seguintes comandos do Windows PowerShell para criar uma política DNS que vincula as sub-redes do cliente DNS e os escopos de zona.   
+Você pode usar os seguintes comandos do Windows PowerShell para criar uma política DNS que vincula-se as sub-redes de cliente DNS e os escopos de zona.   
     
     $policy = Get-DnsServerQueryResolutionPolicy -ZoneName "woodgrove.com" -ComputerName PrimaryServer  
       
@@ -177,10 +178,10 @@ Você pode usar os seguintes comandos do Windows PowerShell para criar uma polí
     $policy | Add-DnsServerQueryResolutionPolicy -ZoneName "woodgrove.com" -ComputerName SecondaryServer2  
       
 
-Para obter mais informações, consulte [adicionar DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).  
+Para obter mais informações, consulte [DnsServerQueryResolutionPolicy adicionar](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).  
   
-Agora os servidores DNS secundários são configurados com as políticas DNS necessárias para redirecionar o tráfego com base na localização geográfica.  
+Agora, os servidores DNS secundários são configurados com as políticas DNS necessárias para redirecionar o tráfego com base em localização geográfica.  
   
-Quando o servidor DNS recebe consultas de resolução de nome, o servidor DNS avalia os campos na solicitação DNS contra as políticas DNS configuradas. Se o endereço IP de origem na solicitação de resolução de nome corresponde a qualquer uma das políticas, o escopo da região associado é usado para responder à consulta e o usuário será direcionado para o recurso que é geograficamente closest-los.   
+Quando o servidor DNS recebe consultas de resolução de nome, o servidor DNS avalia os campos na solicitação de DNS com as diretivas de DNS configuradas. Se o endereço IP de origem na solicitação de resolução de nome corresponde a qualquer uma das políticas, o escopo da região associada é usado para responder à consulta e o usuário é direcionado para o recurso que seja geograficamente mais próximo a eles.   
   
-Você pode criar milhares de políticas de DNS de acordo com o tráfego requisitos de gerenciamento e todas as novas políticas são aplicadas dinamicamente - sem reiniciar o servidor DNS - em consultas recebidas.
+Você pode criar milhares de políticas DNS de acordo com seu tráfego de requisitos de gerenciamento e todas as novas políticas são aplicadas dinamicamente - sem reiniciar o servidor DNS - nas consultas de entrada.

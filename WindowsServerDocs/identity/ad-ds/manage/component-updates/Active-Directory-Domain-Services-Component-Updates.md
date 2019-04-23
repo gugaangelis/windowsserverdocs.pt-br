@@ -1,64 +1,65 @@
 ---
-title: "Atualizações de componentes de serviços de domínio do Active Directory"
-description: "Este documento discute as atualizações de componente do AD DS para o Windows Server 2012 R2"
-author: billmath
-ms.author: billmath
-manager: femila
+title: Atualizações de Componentes do Active Directory Domain Services
+description: Este documento aborda as atualizações de componentes do AD DS do Windows Server 2012 R2
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 09/08/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: a3a91034-a4da-4ad7-93f8-0cd2ec3e7824
 ms.technology: identity-adds
-ms.openlocfilehash: 52d3dab542b4250670067e927f42ddf1597fc852
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 300bf7dafe0ef0ede754302f2c0aa8c36a7adbfd
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59889877"
 ---
-# <a name="active-directory-domain-services-component-updates"></a>Atualizações de componentes de serviços de domínio do Active Directory
+# <a name="active-directory-domain-services-component-updates"></a>Atualizações de Componentes do Active Directory Domain Services
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
-Esse módulo apresenta os componentes que recebeu pequenas atualizações em serviços de diretório e espaços de identidade.  
+Este módulo apresenta os componentes que receberam atualizações secundárias nos Serviços de Diretório e Espaços de Identidade.  
   
-|Sobre a autora|  
+|Sobre o autor|  
 |--------------------|  
-|**Autor:**|Tema Justin Turner|  
-|**Biografia:**|Tema Justin é um engenheiro de escalonamento de suporte sênior com a equipe de serviços de diretório baseada em Irving, Texas, EUA.  Ele criou ou contribuiu para muitos cursos de treinamento e artigos para a Microsoft Knowledgebase nos últimos 12 anos. Ele ensina os funcionários da Microsoft e a arquitetura de produto novos clientes, é um estatuto Microsoft Certified mestre (MCM), Microsoft Certified treinador (MCT) e segura é um mestre Grau no computador educação e sistemas cognitiva.|  
-|**Colaboradores**|Esse módulo de treinamento inclui contribuições de *Michiko Short*, *Dean Wells*, *Alan Jowett*, *Manu Pushpendran*, *Yashar Bahman*, *Anoosh Saboori*, *Rashmi Jha*, *Justin Hall* e *Herbert Mauerer*|  
-|**Revisores**|Nossos agradecimentos os seguintes indivíduos que gasto seus próprios tempo revisando e fornecer feedback: *Joey Seifert*, *Justin Hall*|  
+|**Autor:**|Justin Turner|  
+|**Biografia:**|Justin é engenheiro sênior de escalonamento de suporte com a equipe de Serviços de Diretório com base em Irving, Texas, nos EUA.  Ele criou ou colaborou em vários cursos de treinamento e artigos KB para a Base de Dados de Conhecimento da Microsoft nos últimos 12 anos. Ele é professor de funcionários da Microsoft e a nova arquitetura de produto aos clientes, é um estatuto Microsoft Certified Master (MCM), Microsoft Certified Trainer (MCT) e mantém uma nota mestrado em educação computacional e sistemas Cognitivos.|  
+|**Colaboradores**|Este módulo de treinamento inclui contribuições de *Michiko Short*, *Dean Wells*, *Alan Jowett*, *Manu Pushpendran*, *Yashar Bahman*, *Anoosh Saboori*, *Rashmi Jha*, *Justin Hall* e *Herbert Mauerer*|  
+|**Revisores**|Muito obrigado àqueles que passaram um tempo revisando e fazendo comentários: *Joey Seifert*, *Justin Hall*|  
   
 > [!NOTE]  
-> Este conteúdo foi criado por um engenheiro de suporte de cliente da Microsoft e se destina a arquitetos de sistemas que estão procurando mais profundamente explicações técnicas de recursos e soluções no Windows Server 2012 R2 de tópicos no TechNet geralmente fornecem e administradores experientes. No entanto, ele não passou os mesmos edição passos, para que a linguagem podem parecer que menos refinado que o que geralmente é encontrado no TechNet.  
+> Este documento foi criado por um engenheiro de atendimento ao cliente da Microsoft e é destinado a administradores e arquitetos de sistemas experientes que procuram explicações técnicas mais profundas para recursos e soluções no Windows Server 2012 R2 do que aquelas geralmente oferecidas em tópicos do TechNet. No entanto, ele não passou pelas mesmas etapas de edição que eles, por isso a linguagem pode parecer que menos refinada do que a geralmente encontrada no TechNet.  
   
 ### <a name="what-you-will-learn"></a>O que você aprenderá  
-Depois de concluir esse módulo, você será capaz de:  
+Depois de concluir este módulo, você será capaz de:  
   
--   Explique as atualizações de componente feitas nas áreas de tecnologia de identidade e serviços de diretório no Windows Server 2012 R2  
+-   Explicar as atualizações de componente feitas nas áreas dos Serviços de Diretório e Tecnologia de Identidade no Windows Server 2012 R2  
   
-    -   [Exclusividade SPN e UPN](../../../ad-ds/manage/component-updates/SPN-and-UPN-uniqueness.md)  
+    -   [Exclusividade de SPN e UPN](../../../ad-ds/manage/component-updates/SPN-and-UPN-uniqueness.md)  
   
-    -   [Winlogon automático reiniciar logon & #40; ARSO & #41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)  
+    -   [Winlogon Automatic Restart Sign-On &#40;ARSO&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)  
   
-    -   [Atestado de chave do TPM](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md)  
+    -   [Atestado de chave de TPM](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md)  
   
-    -   [Cmdlets CA Backup e restauração do Windows PowerShell](../../../ad-ds/manage/component-updates/CA-Backup-and-Restore-Windows-PowerShell-cmdlets.md)  
+    -   [Cmdlets do Windows PowerShell de backup e restauração de AC](../../../ad-ds/manage/component-updates/CA-Backup-and-Restore-Windows-PowerShell-cmdlets.md)  
   
-    -   [Auditoria do processo de linha de comando](../../../ad-ds/manage/component-updates/Command-line-process-auditing.md)  
+    -   [Auditoria de processo de linha de comando](../../../ad-ds/manage/component-updates/Command-line-process-auditing.md)  
   
-    -   [Gerenciamento e proteção de credenciais](https://technet.microsoft.com/library/dn408190.aspx)  
+    -   [Proteção e gerenciamento de credenciais](https://technet.microsoft.com/library/dn408190.aspx)  
   
-    -   [Atualizações de componentes de serviços de diretório](../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md)  
+    -   [Atualizações de componentes dos Serviços de Diretório](../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md)  
   
-        -   [Níveis funcionais de domínio e da floresta](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_FL)  
+        -   [Níveis funcionais de domínio e de floresta](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_FL)  
   
-        -   [Substituição de NTFRS](../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_NTFRS)  
+        -   [NTFRS preterido](../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_NTFRS)  
   
-        -   [Alterações do otimizador de consulta LDAP](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_LDAPQuery)  
+        -   [Alterações do otimizador de consultas LDAP](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_LDAPQuery)  
   
-        -   [Melhorias de evento da falha 1644](../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_1644)  
+        -   [Melhorias no evento 1644](../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_1644)  
   
-        -   [Melhoria de taxa de transferência Active Directory replicação](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_ADRepl)  
+        -   [Melhoria da taxa de transferência de replicação do Active Directory](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_ADRepl)  
   
 
 

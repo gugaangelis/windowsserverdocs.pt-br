@@ -1,7 +1,7 @@
 ---
 ms.assetid: ab97948a-c434-48f2-8313-c1a7a518e5f7
-title: "Criar um servidor de Federação autônomo"
-description: 
+title: Criar um servidor de federação autônomo
+description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -10,54 +10,55 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
 ms.openlocfilehash: fd075c5b7d1bfce89cc27c4917a016e7e5037ce5
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59888287"
 ---
-# <a name="create-a-stand-alone-federation-server"></a>Criar um servidor de Federação autônomo
+# <a name="create-a-stand-alone-federation-server"></a>Criar um servidor de federação autônomo
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Depois de instalar o serviço de função do serviço de Federação e configurar os certificados necessários em um computador, você estará pronto para configurar o computador para se tornar um servidor de Federação. Você pode usar o procedimento a seguir para configurar o computador para se tornar um servidor de Federação stand\ sozinho. O ato de criação de um servidor de Federação stand\ sozinho também cria um novo serviço de Federação. Você cria um servidor de federação com o Assistente para configuração do servidor de Federação do AD FS.  
+Depois de instalar o serviço de função serviço de Federação e configurar os certificados necessários em um computador, você está pronto para configurar o computador para se tornar um servidor de Federação. Você pode usar o procedimento a seguir para configurar o computador para se tornar um suporte\-servidor de Federação autônomo. O ato de criar um suporte\-servidor de Federação autônomo também cria um novo serviço de Federação. Criar um servidor de federação com o Assistente de configuração do servidor de Federação do AD FS.  
   
 > [!NOTE]  
-> Para o design \(SSO\) federados Single\-Sign\-On da Web, você deve ter pelo menos um servidor de federação na organização do parceiro de conta e pelo menos um servidor de federação na organização do parceiro de recurso. Para obter mais informações, consulte [onde colocar um servidor de Federação](https://technet.microsoft.com/library/dd807127.aspx).  
+> Para um único de Web federado\-sinal\-na \(SSO\) design, você deve ter pelo menos um servidor de federação na organização do parceiro de conta e pelo menos um servidor de federação na organização do parceiro de recurso . Para obter mais informações, consulte [Onde colocar um servidor de federação](https://technet.microsoft.com/library/dd807127.aspx).  
   
-A associação ao grupo **administradores**, ou equivalente, no computador local é o requisito mínimo para concluir este procedimento.  Examinar detalhes sobre como usar as contas apropriadas e agrupar associações em [Local e os grupos de domínio padrão](https://go.microsoft.com/fwlink/?LinkId=83477) \ (http:///\/ go.microsoft.com\/fwlink\ /? LinkId\ = 83477\).   
+A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e associações de grupos em [domínio grupos padrão Local e](https://go.microsoft.com/fwlink/?LinkId=83477) \(http:\/\/go.microsoft.com\/fwlink\/? LinkId\=83477\).   
   
-### <a name="to-create-a-stand-alone-federation-server"></a>Para criar um servidor de Federação stand\ sozinho  
+### <a name="to-create-a-stand-alone-federation-server"></a>Para criar um suporte\-servidor de Federação autônomo  
   
-1.  Há duas maneiras de iniciar o Assistente para configuração do servidor de Federação do AD FS. Para iniciá-lo, siga um destes procedimentos:  
+1.  Há duas maneiras de iniciar o Assistente de configuração do servidor de Federação do AD FS. Para iniciar o assistente, tome uma das seguintes ações:  
   
-    -   Após a instalação de serviço de função do serviço de Federação for concluída, abra o AD FS snap\-in Gerenciamento e clique no **Assistente de configuração de servidor de Federação do AD FS** vincular no **visão geral** página ou no **ações** painel.  
+    -   Após a instalação do serviço de função serviço de Federação for concluída, abra o snap de gerenciamento do AD FS\-em e clique em de **Assistente de configuração do servidor de Federação do AD FS** no link a **visão geral** página ou o **ações** painel.  
   
-    -   A qualquer momento depois que o Assistente para instalação for concluída, abra o Windows Explorer, navegue até o **C:\\Windows\\ADFS** pasta e, em seguida, clique em double\ **FsConfigWizard.exe**.  
+    -   A qualquer momento depois que o Assistente de instalação for concluída, abra o Windows Explorer, navegue até a **c:\\Windows\\ADFS** pasta e, em seguida, double\-clique **FsConfigWizard.exe**.  
   
-2.  No **boas-vindas** página, verifique **criar um novo serviço de Federação** está selecionado e clique em **próxima**.  
+2.  Na página **Bem-vindo**, verifique se **Criar um novo Serviço de Federação** está selecionado e clique em **Avançar**.  
   
-3.  No **selecione Stand\-sozinho ou implantação Farm** página, clique em **Stand\ sozinho servidor de Federação**e clique em **próxima**.  
+3.  No **selecionar espera\-Alone ou implantação de Farm** , clique em **espera\-servidor de Federação autônomo**e, em seguida, clique em **Avançar**.  
   
     > [!IMPORTANT]  
-    > Quando você selecionar a opção de servidor de Federação Stand\ sozinho no Assistente para configuração do servidor de Federação do AD FS, a conta de serviço associada com esse serviço de Federação será atribuída automaticamente para a conta de serviço de rede. Usando o serviço de rede como a conta de serviço só é recomendado em situações onde você está avaliando AD FS em um ambiente de laboratório de teste. Se você pretende usar a opção de servidor de Federação Stand\ sozinho para implantar um servidor de Federação em um ambiente de produção, é importante que você alterar essa conta de serviço para uma conta de serviço mais apropriada que pode ser dedicada a atender às solicitações para esse novo serviço de Federação. Alterar a conta de serviço para uma conta diferente de serviço de rede reduz possíveis vetores de ataque que caso contrário, o servidor de Federação vulnerável a ataques mal-intencionados.  
+    > Quando você seleciona o suporte do\-opção de servidor de Federação autônomo no Assistente de configuração do servidor de Federação do AD FS, a conta de serviço associada a esse serviço de Federação será automaticamente atribuída à conta de serviço de rede. Usando o serviço de rede como a conta de serviço é recomendado somente em situações em que você estiver avaliando o AD FS em um ambiente de laboratório de teste. Se você pretende usar o suporte do\-opção de servidor de Federação autônomo para implantar um servidor de Federação em um ambiente de produção, é importante que você alterar essa conta de serviço para uma conta de serviço mais adequada que pode ser dedicada a serviços solicitações para esse novo serviço de Federação. Alterando a conta de serviço para uma conta diferente do serviço de rede será mitigar os vetores de ataque, caso contrário, tornaria o servidor de Federação vulnerável a ataques mal-intencionados.  
   
-4.  No **especificar o nome do serviço de Federação** página, verifique o **certificado SSL** que está mostrando está correta. Se não, selecione o certificado apropriado do **certificado SSL** lista.  
+4.  Na página **Especificar o Nome do Serviço de Federação**, verifique se o **Certificado SSL** que aparece está correto. Se não estiver, selecione o certificado apropriado na **certificado SSL** lista.  
   
-    Esse certificado é gerado das configurações de Secure Sockets Layer \(SSL\) do site padrão. Se o site padrão tem apenas um certificado SSL configurado, esse certificado é apresentado e selecionado automaticamente para uso. Se vários certificados SSL são configurados para o site padrão, todos esses certificados são listados aqui e você deve selecionar dentre elas. Se não houver nenhuma configuração de SSL para o site padrão, a lista é gerada a partir dos certificados que estão disponíveis no repositório de certificados pessoais no computador local.  
+    Esse certificado é gerado a partir do Secure Sockets Layer \(SSL\) configurações para o Site da Web padrão. Se o Site Padrão tiver somente um certificado SSL configurado, esse certificado será apresentado e automaticamente selecionado para uso. Se vários certificados SSL forem configurados para o Site Padrão, todos esses certificados serão listados aqui e você deverá selecionar um dentre eles. Se não houver configurações do SSL definidas para o Site Padrão, a lista será gerada dos certificados disponíveis no repositório de certificados pessoal no computador local.  
   
     > [!NOTE]  
-    > O assistente não permitirá que você substituir o certificado se um certificado SSL está configurado para o IIS. Isso garante que qualquer destinado a configuração anterior do IIS para certificados SSL é preservada. Para contornar essa restrição, você pode remover o certificado ou reconfigurá manualmente-lo com o Console de gerenciamento do IIS.  
+    > O assistente não permitirá que você substitua o certificado se um certificado SSL estiver configurado para IIS. Isso assegura que qualquer configuração anterior do IIS pretendida para certificados SSL seja preservada. Para contornar essa restrição, você pode remover o certificado ou reconfigurar manualmente-lo com o Console de gerenciamento do IIS.  
   
-5.  Se o banco de dados do AD FS que você selecionou já existir, o **existente AD FS configuração do banco de dados detectado** página será exibida. Se isso ocorrer, clique em **banco de dados de excluir**e clique em **próxima**.  
+5.  Se o banco de dados do AD FS que você selecionou já existir, o **banco de dados existente do AD FS Configuration detectado** página será exibida. Se isso ocorrer, clique em **Excluir banco de dados** e clique em **Avançar**.  
   
     > [!CAUTION]  
-    > Selecione essa opção somente quando tiver certeza de que os dados neste banco de dados do AD FS não são importantes ou que não é usado em um farm de servidores de federação de produção.  
+    > Selecione esta opção apenas quando tiver certeza de que os dados neste banco de dados do AD FS não são importantes ou que não é usado em um farm de servidores de federação de produção.  
   
-6.  Sobre o **pronto para aplicar configurações** página, examine os detalhes. Se as configurações parecerem corretas, clique em **próxima** para começar a configurar o AD FS com essas configurações.  
+6.  Na página **Pronto para Aplicar Configurações**, examine os detalhes. Se as configurações parecerem corretas, clique em **próxima** para começar a configurar o AD FS com essas configurações.  
   
-7.  Sobre o **resultados de configuração** página, examinar os resultados. Quando terminarem de todas as etapas de configuração, clique em **fechar** para sair do assistente.  
+7.  Na página **Resultados da Configuração**, examine os resultados. Quando todas as etapas de configuração estiverem concluídas, clique em **fechar** para sair do assistente.  
   
 ## <a name="additional-references"></a>Referências adicionais  
-[Lista de verificação: Configurar um servidor de Federação](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de verificação: Configurando um servidor de Federação](Checklist--Setting-Up-a-Federation-Server.md)  
   
 
