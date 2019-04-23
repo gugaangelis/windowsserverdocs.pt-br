@@ -1,6 +1,6 @@
 ---
 ms.assetid: 4b844404-36ba-4154-aa5d-237a3dd644be
-title: "Visão geral de eliminação de duplicação de dados"
+title: Visão geral de eliminação de duplicação de dados
 ms.technology: storage-deduplication
 ms.prod: windows-server-threshold
 ms.topic: article
@@ -9,25 +9,26 @@ manager: klaasl
 ms.author: wgries
 ms.date: 05/09/2017
 ms.openlocfilehash: 4344108f96d14475c15a31bd1ab917e7fc78ef9f
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59860127"
 ---
 # <a name="data-deduplication-overview"></a>Visão geral de eliminação de duplicação de dados
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-## <a name="what-is-dedup"></a>O que é a Eliminação de Duplicação de Dados?
+## <a name="what-is-dedup"></a>O que é a eliminação de duplicação de dados?
 
-A Eliminação de Duplicação de Dados, também conhecida como Eliminação de duplicatas, é um recurso do Windows Server 2016 que pode ajudar a reduzir o impacto de dados redundantes nos custos de armazenamento. Quando habilitada, a Eliminação de Duplicação de Dados otimiza o espaço livre em um volume examinando os dados no volume para procurar duplicatas no volume. As duplicatas do conjunto de dados do volume são armazenadas uma vez e (opcionalmente) são compactadas para economizar ainda mais espaço. A Eliminação de Duplicação de Dados otimiza redundâncias sem comprometer a fidelidade ou a integridade dos dados. Mais informações sobre como a Eliminação de Duplicação de Dados funciona podem ser encontradas na seção "[Como funciona a Eliminação de Duplicação de Dados?](understand.md#how-does-dedup-work)" da página [Noções básicas sobre Eliminação de Duplicação de Dados](understand.md).
+A Eliminação de Duplicação de Dados, também conhecida como Eliminação de duplicatas, é um recurso do Windows Server 2016 que pode ajudar a reduzir o impacto de dados redundantes nos custos de armazenamento. Quando habilitada, a Eliminação de Duplicação de Dados otimiza o espaço livre em um volume examinando os dados no volume para procurar duplicatas no volume. As duplicatas do conjunto de dados do volume são armazenadas uma vez e (opcionalmente) são compactadas para economizar ainda mais espaço. A Eliminação de Duplicação de Dados otimiza redundâncias sem comprometer a fidelidade ou a integridade dos dados. Podem ser encontradas mais informações sobre como a Eliminação de Duplicação de Dados funciona na seção "[Como funciona a Eliminação de Duplicação de Dados?](understand.md#how-does-dedup-work)" da página [Noções básicas sobre Eliminação de Duplicação de Dados](understand.md).
 
 > [!Important]  
 > [O KB4025334](https://support.microsoft.com/kb/4025334) contém um pacote cumulativo de correções para Eliminação de Duplicação de Dados, incluindo correções de confiabilidade importantes; é altamente recomendável a instalação desse pacote durante o uso da Eliminação de Duplicação de Dados com o Windows Server 2016.
 
-## <a name="why-is-dedup-useful"></a>Por que a Eliminação de Duplicação de Dados é útil?
+## <a name="why-is-dedup-useful"></a>Por que a eliminação de duplicação de dados é útil?
 
-A Eliminação de Duplicação de Dados ajuda os administradores de armazenamento a reduzir os custos associados a dados duplicados. Grandes conjuntos de dados geralmente têm **<u>muita</u>** duplicação, o que aumenta os custos de armazenamento de dados. Por exemplo:
+A Eliminação de Duplicação de Dados ajuda os administradores de armazenamento a reduzir os custos associados a dados duplicados. Grandes conjuntos de dados geralmente têm **<u>muita</u>** duplicação, o que aumenta os custos de armazenamento de dados. Por exemplo: 
 
 - Os compartilhamentos de arquivos do usuário podem ter várias cópias dos mesmos arquivos ou de arquivos semelhantes.
 - Os convidados de virtualização podem ser praticamente idênticos de VM para VM.
@@ -42,7 +43,7 @@ A economia de espaço que pode ser obtida com a Eliminação de Duplicação de 
 | Bibliotecas de virtualização | ISOs, arquivos de disco rígido virtual, etc.  | 80% a 95%                |
 | Compartilhamento geral de arquivos | Todos os anteriores                           | 50% a 60%                |
 
-## <a id="when-can-dedup-be-used"></a>Quando a Eliminação de Duplicação de Dados pode ser usada?  
+## <a id="when-can-dedup-be-used"></a>Quando a eliminação de duplicação de dados pode ser usada?  
 <table>
     <tbody>
         <tr>
@@ -61,12 +62,12 @@ Servidores de arquivos de finalidade geral são bons candidatos para Eliminaçã
         <tr>
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-vdi.png" alt="Illustration of VDI servers" /></td>
             <td style="vertical-align:top">
-                <b>Implantações de VDI (Virtual Desktop Infrastructure)</b><br />
+                <b>Implantações virtualizadas de Desktop Infrastructure (VDI)</b><br />
 Servidores VDI, como <a href="https://technet.microsoft.com/library/cc725560.aspx">Serviços da Área de Trabalho Remota</a>, fornecem uma opção simples para que as organizações provisionem áreas de trabalho para os usuários. Há muitas razões para que uma organização recorra a essa tecnologia: <ul>
-                    <li><b>Implantação de aplicativos</b>: você pode implantar rapidamente aplicativos em sua empresa. Isso é particularmente útil quando você tem aplicativos que são atualizados com frequência, são usados raramente ou são difíceis de gerenciar.</li>
-                    <li><b>Consolidação de aplicativos</b>: quando você instala e executa aplicativos em um conjunto de máquinas virtuais gerenciadas centralmente, você acaba com a necessidade de atualizar aplicativos em computadores cliente. Essa opção também reduz a quantidade de largura de banda de rede necessária para acessar os aplicativos.</li>
-                    <li><b>Acesso remoto</b>: os usuários podem acessar aplicativos corporativos por meio de dispositivos, como computadores domésticos, quiosques, hardware que consomem pouca energia e sistemas operacionais diferentes do Windows.</li>
-                    <li><b>Acesso a filial</b>: implantações de VDI podem fornecer melhor desempenho de aplicativos para funcionários de filiais que precisam de acesso a repositórios de dados centralizados. Às vezes, aplicativos que fazem uso intensivo de dados não têm protocolos de cliente/servidor que são otimizados para conexões de baixa velocidade.</li>
+                    <li><b>Implantação de aplicativo</b>: Você pode implantar rapidamente aplicativos em sua empresa. Isso é particularmente útil quando você tem aplicativos que são atualizados com frequência, são usados raramente ou são difíceis de gerenciar.</li>
+                    <li><b>Consolidação de aplicativos</b>: Ao instalar e executar aplicativos a partir de um conjunto de máquinas virtuais gerenciadas centralmente, você elimina a necessidade de atualizar aplicativos em computadores cliente. Essa opção também reduz a quantidade de largura de banda de rede necessária para acessar os aplicativos.</li>
+                    <li><b>Acesso remoto</b>: Os usuários podem acessar aplicativos corporativos de dispositivos como computadores domésticos, quiosques, hardware de baixa potência e sistemas operacionais diferentes do Windows.</li>
+                    <li><b>Acesso a filial</b>: Implantações de VDI podem fornecer melhor desempenho do aplicativo para o branch funcionários do escritório que precisam de acesso a armazenamentos de dados centralizado. Às vezes, aplicativos que fazem uso intensivo de dados não têm protocolos de cliente/servidor que são otimizados para conexões de baixa velocidade.</li>
                 </ul>
 As implantações de VDI são ótimas candidatas para Eliminação de Duplicação de Dados, porque os discos rígidos virtuais que controlam as áreas de trabalho remotas para os usuários são essencialmente idênticos. Além disso, a Eliminação de Duplicação de Dados pode ajudar com os *problemas de inicialização de VDI*, a queda no desempenho de armazenamento quando muitos usuários fazem logon simultaneamente em suas áreas de trabalho para começar o dia.
             </td>
@@ -74,7 +75,7 @@ As implantações de VDI são ótimas candidatas para Eliminação de Duplicaç�
         <tr>
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-backup.png" alt="Illustration of backup applications" /></td>
             <td style="vertical-align:top">
-                <b>Destinos de backup, como aplicativos de backup virtualizado</b><br />
+                <b>Destinos de backup, como aplicativos virtualizados de backup</b><br />
 Aplicativos de backup, como o <a href="https://technet.microsoft.com/library/hh758173.aspx">Microsoft DPM (Data Protection Manager)</a>, são excelentes candidatos para a Eliminação de Duplicação de Dados devido à duplicação significativa entre os instantâneos de backup.
             </td>
         </tr>

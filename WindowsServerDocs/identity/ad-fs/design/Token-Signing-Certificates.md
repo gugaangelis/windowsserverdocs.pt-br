@@ -1,7 +1,7 @@
 ---
 ms.assetid: 98c5ef45-2bcb-4f87-86c8-5ac6c16a6097
-title: "Certificados de autenticação de token"
-description: 
+title: Certificados de autenticação de tokens
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,69 +9,70 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 84e106ec87861960d7de651b4aaa0e88c952aa79
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: a047b94906cf703bb934c93f517b8874af91e092
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59864057"
 ---
-# <a name="token-signing-certificates"></a>Certificados de autenticação de token
+# <a name="token-signing-certificates"></a>Certificados de autenticação de tokens
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Servidores de Federação exigem certificados de assinatura de token\ para impedir que invasores alterem ou falsifiquem tokens de segurança em uma tentativa de obter acesso não autorizado a recursos federados. A chave pública/private\ emparelhamento ou seja usado com certificados de assinatura de token\ é o mecanismo de validação mais importante de qualquer parceria federado porque essas chaves verificar se um token de segurança foi emitido por um servidor de Federação do parceiro válido e se o token não foi modificado durante o trânsito.  
+Servidores de Federação exigem token\-certificados de assinatura para impedir que invasores alterem ou falsifiquem tokens de segurança em uma tentativa de obter acesso não autorizado a recursos federados. Particular\/chave pública de emparelhamento que é usada com o token\-certificados de assinatura é o mecanismo de validação mais importante de qualquer parceria federada porque essas chaves verificar se um token de segurança foi emitido por um parceiro válido servidor de Federação e que o token não foi modificado durante o trânsito.  
   
-## <a name="token-signing-certificate-requirements"></a>Assinatura de Token\ requisitos de certificado  
-Um certificado de assinatura de token\ deve atender aos seguintes requisitos para trabalhar com o AD FS:  
+## <a name="token-signing-certificate-requirements"></a>Token\-requisitos de certificado de assinatura  
+Um token\-certificado de autenticação deve atender aos requisitos a seguir para trabalhar com o AD FS:  
   
--   Para um certificado de assinatura de token\ entrar com êxito um token de segurança, o certificado de assinatura de token\ deve conter uma chave privada.  
+-   Para obter um token\-certificado para assinar com êxito um token de segurança, o token de autenticação\-certificado de assinatura deve conter uma chave privada.  
   
--   A conta de serviço do AD FS deve ter acesso à chave privada do certificado de assinatura de token\ no armazenamento pessoal do computador local. Isso é controlado pela instalação. Você também pode usar o AD FS snap\-in Gerenciamento para garantir que esse acesso se você alterar o certificado de assinatura de token\ posteriormente.  
+-   A conta de serviço do AD FS deve ter acesso ao token\-assinatura de chave privada do certificado no repositório pessoal do computador local. Isso é resolvido pela instalação. Você também pode usar o snap de gerenciamento do AD FS\-para garantir que esse acesso, se você alterar posteriormente o token\-certificado de assinatura.  
   
 > [!NOTE]  
-> É uma prática recomendada de \(PKI\) de infraestrutura de chave pública para não compartilhar a chave privada para várias finalidades. Portanto, não use o certificado de comunicação de serviço que você instalou no servidor de federação como o certificado de assinatura de token\.  
+> É uma infraestrutura de chave pública \(PKI\) melhor prática para não compartilhar a chave privada para vários fins. Portanto, não use o certificado de comunicação de serviço que você instalou o servidor de federação que o token\-certificado de assinatura.  
   
-## <a name="how-token-signing-certificates-are-used-across-partners"></a>Como os certificados de assinatura de token\ são usados entre parceiros  
-Cada certificado de assinatura de token\ contém chaves privadas de criptografia e chaves públicas são usadas para assinar digitalmente \ (por meio do key\ privada) um token de segurança. Posteriormente, depois que eles são recebidos por um servidor de federação de parceiro, essas chaves validam a autenticidade \ (por meio do key\ pública) do token de segurança criptografado.  
+## <a name="how-token-signing-certificates-are-used-across-partners"></a>Como token\-certificados de autenticação são usados por parceiros  
+Todos os tokens\-certificado de assinatura contém chaves privadas de criptografia e chaves públicas que são usadas para assinar digitalmente \(por meio da chave privada\) um token de segurança. Posteriormente, depois que são recebidas por um servidor de Federação do parceiro, essas chaves validam a autenticidade \(por meio da chave pública\) do token de segurança criptografado.  
   
-Como cada token de segurança é assinado digitalmente pelo parceiro de conta, o parceiro de recurso pode verificar se o token de segurança na verdade foi emitido pelo parceiro de conta e se ele não foi modificado. Assinaturas digitais são verificadas por parte da chave pública do certificado de canto token\ do parceiro. Depois que a assinatura é verificada, o servidor de Federação do recurso gera seu próprio token de segurança para sua organização e assina o token de segurança com seu próprio certificado de assinatura de token\.  
+Como cada token de segurança é assinado digitalmente pelo parceiro de conta, o parceiro de recurso pode verificar se o token de segurança foi de fato emitido pelo parceiro de conta e não foi modificado. Assinaturas digitais serão verificadas pela parte de chave pública do token de um parceiro\-certificado de assinatura. Depois que a assinatura é verificada, o servidor de Federação do recurso gera seu próprio token de segurança para sua organização e assina o token de segurança com seu próprio token\-certificado de assinatura.  
   
-Para ambientes de parceiros de federação, quando o certificado de assinatura de token\ foi emitido por uma autoridade de certificação, certifique-se de que:  
+Para ambientes de parceiro de federação, quando o token\-certificado de autenticação foi emitido por uma autoridade de certificação, certifique-se de que:  
   
-1.  O certificado revogação listas \(CRLs\) do certificado estão acessíveis a partes confiantes e servidores Web que confiar no servidor de Federação.  
+1.  As listas de certificados revogados \(CRLs\) do certificado são acessíveis para terceiras partes confiáveis e servidores Web que confiam no servidor de Federação.  
   
-2.  O certificado da CA raiz é confiável pelo partes confiantes e servidores Web que confiar no servidor de Federação.  
+2.  O certificado de autoridade de certificação raiz é confiável pelo terceiras partes confiáveis e servidores Web que confiam no servidor de Federação.  
   
-O servidor Web no parceiro de recurso usa a chave pública do certificado de assinatura de token\ para verificar se o token de segurança é assinado pelo servidor de federação de recurso. O servidor Web, em seguida, permite o acesso apropriado para o cliente.  
+O servidor Web no parceiro de recurso usa a chave pública do token\-certificado de autenticação para verificar se o token de segurança está assinado pelo servidor de federação de recurso. O servidor Web, em seguida, permite o acesso apropriado para o cliente.  
   
-## <a name="deployment-considerations-for-token-signing-certificates"></a>Considerações sobre a implantação de certificados de autenticação de token\  
-Quando você implanta o primeiro servidor de Federação em uma nova instalação do AD FS, você deve obter um certificado de assinatura de token\ e instalá-lo no repositório de certificados pessoal do computador local nesse servidor de Federação. Você pode obter uma assinatura de token\ certificados por com uma empresa solicitante uma CA ou uma autoridade de certificação pública ou criando um certificado assinado self\.  
+## <a name="deployment-considerations-for-token-signing-certificates"></a>Considerações de implantação para o token\-certificados de assinatura  
+Quando você implanta o primeiro servidor de Federação em uma nova instalação do AD FS, você deve obter um token\-de assinatura de certificado e instalá-lo no repositório de certificados pessoal do computador local nesse servidor de Federação. Você pode obter um token\-o certificado de assinatura por um solicitante de uma empresa autoridade de certificação ou uma autoridade de certificação pública ou criando um self\-certificado autoassinado.  
   
-Quando você implanta um farm AD FS, certificados de autenticação de token\ são instalados de forma diferente, dependendo de como criar o farm de servidores.  
+Quando você implanta um farm do AD FS, token\-certificados de autenticação são instalados de forma diferente, dependendo de como você cria o farm de servidores.  
   
-Há duas opções de farm de servidor que você pode considerar ao obter certificados de autenticação de token\ sua implantação:  
+Há duas opções de farm de servidor que você pode considerar quando você obter token\-certificados para sua implantação de autenticação:  
   
--   Uma chave privada de um certificado de assinatura de token\ é compartilhada entre todos os servidores de Federação em um farm.  
+-   Uma chave privada de um token\-certificado de assinatura é compartilhado entre todos os servidores de Federação em um farm.  
   
-    Em um ambiente de farm de servidor de federação, recomendamos que todos os servidores de Federação compartilham o mesmo certificado de assinatura de token\ \(or reuse\). Você pode instalar um certificado de assinatura de token\ único de uma autoridade de certificação em um servidor de Federação e, em seguida, exportar a chave privada, desde que o certificado emitido é marcado como exportable.  
+    Em um ambiente de farm de servidores de federação, é recomendável que todos os servidores de Federação compartilham \(ou reutilizar\) o mesmo token\-certificado de assinatura. Você pode instalar um único token\-de assinatura de certificado de uma autoridade de certificação em um servidor de Federação e, em seguida, exportar a chave privada, desde que o certificado emitido é marcado como exportável.  
   
-    Conforme mostrado na ilustração a seguir, a chave privada de um único certificado de assinatura de token\ pode ser compartilhada para todos os servidores de Federação em um farm. Essa opção — em comparação com o seguinte "exclusivo token\ certificado de autenticação" opção — reduz os custos se você pretende obter um certificado de assinatura de token\ de uma autoridade de certificação pública.  
+    Conforme mostrado na ilustração a seguir, a chave privada de um único token\-certificado de autenticação pode ser compartilhado para todos os servidores de Federação em um farm. Essa opção — em comparação com o seguinte "token exclusivo\-certificado de assinatura" opção — reduz os custos se você planeja obter um token\-certificado de uma CA pública de assinatura.  
   
-![token de assinatura](media/adfs2_fedserver_certstory_3.gif)  
+![assinatura de token](media/adfs2_fedserver_certstory_3.gif)  
   
--   Há um certificado de assinatura de token\ exclusivo para cada servidor de Federação em um farm.  
+-   Há um token exclusivo\-certificado de assinatura para cada servidor de Federação em um farm.  
   
-    Quando você usa vários, certificados exclusivos em todo seu farm, cada servidor nessa farm assina tokens com sua própria chave privada exclusivo.  
+    Quando você usa vários, certificados exclusivos em todo seu farm, cada servidor no farm assina tokens com sua própria chave privada exclusivo.  
   
-    Conforme mostrado na ilustração a seguir, você pode obter um certificado de assinatura de token\ separado para cada servidor de Federação único no farm. Essa opção é mais cara, se você pretende obter os certificados de assinatura de token\ de uma autoridade de certificação pública.  
+    Conforme mostrado na ilustração a seguir, você pode obter um token separado\-certificado de assinatura para cada servidor de Federação único no farm. Essa opção é mais cara, se você planeja obter seu token\-certificados de uma CA pública de assinatura.  
   
-![token de assinatura](media/adfs2_fedserver_certstory_4.gif)  
+![assinatura de token](media/adfs2_fedserver_certstory_4.gif)  
   
-Para obter informações sobre como instalar um certificado quando você usar os serviços de certificado Microsoft como sua autoridade de certificação, consulte [IIS 7.0: criar um certificado de servidor de domínio no IIS 7.0](https://go.microsoft.com/fwlink/?LinkId=108548).  
+Para obter informações sobre como instalar um certificado ao usar serviços de certificados Microsoft como sua autoridade de certificação corporativa, consulte [IIS 7.0: Criar um certificado de servidor de domínio no IIS 7.0](https://go.microsoft.com/fwlink/?LinkId=108548).  
   
-Para obter informações sobre como instalar um certificado de uma autoridade de certificação pública, consulte [IIS 7.0: solicitar um certificado de servidor de Internet](https://go.microsoft.com/fwlink/?LinkId=108549).  
+Para obter informações sobre como instalar um certificado de uma CA pública, consulte [IIS 7.0: Solicitar um certificado de servidor de Internet](https://go.microsoft.com/fwlink/?LinkId=108549).  
   
-Para obter informações sobre como instalar um certificado assinado self\, consulte [IIS 7.0: criar um certificado de servidor Self\-Signed no IIS 7.0](https://go.microsoft.com/fwlink/?LinkID=108271).  
+Para obter informações sobre como instalar um self\-assinada do certificado, consulte [IIS 7.0: Criar um Self\-assinou o certificado do servidor no IIS 7.0](https://go.microsoft.com/fwlink/?LinkID=108271).  
   
 ## <a name="see-also"></a>Consulte também
 [Guia de Design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

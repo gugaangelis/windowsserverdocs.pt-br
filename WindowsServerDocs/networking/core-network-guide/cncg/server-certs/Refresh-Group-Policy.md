@@ -1,6 +1,6 @@
 ---
-title: Política de grupo de atualização
-description: Este tópico faz parte do guia certificados de servidor de implantação para 802.1 X com e sem fio implantações
+title: Atualizar Diretiva de Grupo
+description: Este tópico faz parte do guia de certificados de servidor de implantação para 802.1 X com fio e implantações sem fio
 manager: brianlic
 ms.topic: article
 ms.assetid: 65b36794-bb09-4c1b-a2e7-8fc780893d97
@@ -8,26 +8,27 @@ ms.prod: windows-server-threshold
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4d9f5d38199f8cf3c0ffe46df4cd975cd9c56ff6
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 83dd48297535aafe30e48fe37010d81b279f4c91
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59863447"
 ---
-# <a name="refresh-group-policy"></a>Política de grupo de atualização
+# <a name="refresh-group-policy"></a>Atualizar Diretiva de Grupo
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Você pode usar este procedimento para atualizar manualmente a política de grupo no computador local. Quando a política de grupo é atualizada, se o registro de certificado automático é configurado e funcionando corretamente, o computador local é registrado automaticamente um certificado pela autoridade de certificação (CA).  
+Você pode usar este procedimento para atualizar manualmente a Diretiva de Grupo no computador local. Quando a Diretiva de Grupo é atualizada, se o registro automático de certificados estiver configurado e funcionando corretamente, o computador local terá o registro automático de um certificado pela autoridade de certificação (CA).  
   
 > [!NOTE]  
-> Política de grupo é atualizada automaticamente quando você reiniciar o computador membro do domínio, ou quando um usuário faz logon em um computador de membro do domínio. Além disso, política de grupo é atualizada periodicamente. Por padrão, essa atualização periódica é executada a cada 90 minutos com um deslocamento aleatório de até 30 minutos.  
+> A Diretiva de Grupo é atualizada automaticamente quando você reinicia ou um usuário faz logon em um computador membro do domínio. Além disso, a Diretiva de Grupo é atualizada periodicamente. Por padrão, essa atualização periódica é realizada a cada 90 minutos com uma diferença de horário aleatória de até 30 minutos.  
   
-A associação ao grupo **administradores**, ou equivalente, é o requisito mínimo para concluir este procedimento.  
+Associação na **administradores**, ou equivalente, é o mínimo necessário para concluir este procedimento.  
   
-### <a name="to-refresh-group-policy-on-the-local-computer"></a>Para atualizar a política de grupo no computador local  
+### <a name="to-refresh-group-policy-on-the-local-computer"></a>Para atualizar a Diretiva de Grupo no computador local  
   
-1.  No computador onde o NPS está instalado, abra o Windows PowerShell&reg; usando o ícone na barra de tarefas.  
+1.  No computador em que o NPS está instalado, abra o Windows PowerShell&reg; usando o ícone na barra de tarefas.  
   
 2.  No prompt do Windows PowerShell, digite **gpupdate**, e pressione ENTER.  
   

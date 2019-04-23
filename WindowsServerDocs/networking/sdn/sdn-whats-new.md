@@ -1,25 +1,33 @@
 ---
-title: O que há de novo no SDN para o Windows Server
-description: Este tópico fornece informações sobre os novos recursos de Software de rede definidos para o Windows Server 1709
-manager: brianlic
+title: O que há de novo no SDN no Windows Server
+description: Este tópico fornece informações sobre novos recursos de rede definida pelo Software para Windows Server 1709
+manager: dougkim
 ms.prod: windows-server-threshold
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: efad919b-e9e7-4a0c-b373-e68a092f93b5
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4b8f84736c1fa8802d9aebf7cdd868c18f5ea870
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 10/02/2018
+ms.openlocfilehash: ee9ec68bbbb0be2befd432fbcc692ce177e8fd2f
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59857947"
 ---
-# <a name="whats-new-in-sdn-for-windows-server-1709"></a>O que há de novo no SDN para o Windows Server 1709
+# <a name="whats-new-in-sdn-for-windows-server-2019"></a>O que há de novo no SDN para o Windows Server de 2019
 
->Aplica-se a: Windows Server (anual por canal)
+>Aplica-se a: Windows Server (canal semestral)
 
-Você pode usar os seguintes links para conteúdo que há de novo no Software de rede definidos \(SDN\) para Windows Server 1709.
 
-- [Criptografia de rede virtual](vnet-encryption/sdn-vnet-encryption.md)
-- [Configurar a criptografia para uma rede Virtual](vnet-encryption/sdn-config-vnet-encryption.md)
+| **Recurso** | **Descrição** | **Novo/atualizado** | 
+| --- | --- | --- |
+|[Redes criptografadas](vnet-encryption/sdn-vnet-encryption.md) |Criptografia de rede virtual permite a criptografia de tráfego de rede virtual entre máquinas virtuais que se comunicam entre si em sub-redes marcadas como 'A criptografia habilitada.' Ele também utiliza datagrama Transport Layer Security (DTLS) na sub-rede virtual para criptografar pacotes. O DTLS oferece proteção contra interceptações, falsificação e falsificação por qualquer pessoa com acesso à rede física. |Novo |
+|[Auditoria de firewall](security/sdn-firewall-auditing.md) |Auditoria de firewall é um novo recurso para o firewall do SDN no Windows Server 2019. Quando você habilita o firewall do SDN, qualquer fluxo processado pelas regras de firewall SDN (ACLs) que têm o registro em log habilitado obtém gravado. |Novo |
+|[Emparelhamento de rede virtual](vnet-peering/sdn-vnet-peering.md) |Emparelhamento de rede virtual permite que você conecte duas redes virtuais perfeitamente. Uma vez emparelhadas, para fins de conectividade, as redes virtuais aparecerão como um.  |Novo |
+|[Saída de medição](manage/sdn-egress.md) |Esse novo recurso no Windows Server 2019 permite SDN oferecer os medidores de uso para transferências de dados. Com esse recurso foi adicionado, mantém o controlador de rede, uma lista de permissões por rede Virtual de todos os intervalos IP usado em SDN e considere qualquer pacote associado para um destino que não está incluído em um desses intervalos de ser cobrado transferências de dados. |Novo |
+---
+
+
 

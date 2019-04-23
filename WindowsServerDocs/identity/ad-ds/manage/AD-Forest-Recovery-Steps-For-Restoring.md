@@ -1,52 +1,51 @@
 ---
-title: "Recuperação de floresta do AD - etapas para restaurar a floresta"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 07/07/2017
+title: Recuperação de floresta do AD - as etapas para restaurar a floresta
+description: ''
+ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: mtillman
+ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.technology: identity-adfs
-ms.openlocfilehash: 29988c262897649173e039cc052bb64f38a1a0ca
-ms.sourcegitcommit: 84a2bdcb92ba6af45781fab9727617e50fa5e911
+ms.technology: identity-adds
+ms.openlocfilehash: 1712d3a636160f82495539afdd42ab2ee85ffae2
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59861467"
 ---
-#<a name="ad-forest-recovery---steps-for-restoring-the-forest"></a>Recuperação de floresta do AD - etapas para restaurar a floresta 
+# <a name="ad-forest-recovery---steps-for-restoring-the-forest"></a>Recuperação de floresta do AD - as etapas para restaurar a floresta
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 e 2012 R2, Windows Server 2008 e 2008 R2
 
-Esta seção fornece uma visão geral do caminho recomendado para recuperar uma floresta. As etapas de recuperação de floresta são descritas em detalhes mais tarde.  
+Esta seção fornece uma visão geral do que o caminho recomendado para a recuperação de uma floresta. As etapas de recuperação de floresta são descritas em detalhes mais tarde.  
   
- A lista a seguir resume as etapas de recuperação em um alto nível:  
+A lista a seguir resume as etapas de recuperação em um alto nível:  
   
-1.  [Identificar o problema](AD-Forest-Recovery-Identify-the-Problem.md)  
-  
-     Trabalhar com IT e Microsoft Support para determinar o escopo do problema e possíveis causas e avaliar as possíveis soluções com todas as partes interessadas no negócio. Em muitos casos recuperação total floresta deve ser a última opção.  
-  
-2.  [Decida como recuperar da floresta](AD-Forest-Recovery-Determine-how-to-Recover.md)  
-  
-     Depois de determinar que a recuperação de floresta é necessária, as etapas para preparar para ele preliminar completo: determinar a estrutura da floresta atual, identificar as funções que cada DC executa, decida quais DC para restaurar para cada domínio e garantir que todos os controladores de domínio graváveis são colocados offline.  
-  
-3.  [Executar a recuperação inicial](AD-Forest-Recovery-Perform-initial-recovery.md)  
-  
-     Forma isolada, recuperar um controlador de domínio para cada domínio, limpá-los e reconecte os domínios. Redefinir contas privilegiadas e corrigir problemas causados por violações de segurança nessa fase.  
-  
-4.  [Reimplantar restante controladores de domínio](AD-Forest-Recovery-Restore-Additional-DCs.md)  
-  
-     Reimplantá da floresta para retorná-lo ao seu estado antes da falha. Esta etapa precisarão ser adaptado para suas necessidades e específicos de design. Clonagem de controlador de domínio virtualizado pode ajudar a acelerar esse processo.  
-  
-5.  [Limpeza](AD-Forest-Recovery-Cleanup.md)  
-  
-     Depois que a funcionalidade tiver sido restaurada, reconfigurar a resolução de nomes conforme necessário e obter aplicativos LOB trabalhando.  
+1. [Identificar o problema](AD-Forest-Recovery-Identify-the-Problem.md)  
 
+   Trabalhar com IT e Microsoft Support para determinar o escopo do problema e as possíveis causas e avaliar as possíveis soluções com todas as partes interessadas no negócio. Em muitos casos, recuperação de floresta total deve ser a última opção.  
   
- As etapas neste guia foram projetadas para minimizar a possibilidade de reintrodução dados perigosos na floresta recuperada. Talvez você precise modificar estas etapas para levar em conta fatores como:  
-  
--   Escalabilidade  
--   Gerenciamento remoto  
--   Velocidade da recuperação  
+2. [Decidir como se recuperar da floresta](AD-Forest-Recovery-Determine-how-to-Recover.md)  
 
+   Depois de determinar que a recuperação de floresta é necessária, preliminar completa as etapas para se preparar para ele: determinar a estrutura atual da floresta, identificar as funções que cada DC executa, decidir qual controlador de domínio para restaurar para cada domínio e certifique-se de que todos os controladores de domínio graváveis estejam offline.  
+
+3. [Executar recuperação inicial](AD-Forest-Recovery-Perform-initial-recovery.md)  
+
+   Isoladamente, recuperar um controlador de domínio para cada domínio, limpá-los e reconectar-se os domínios. Redefinir contas privilegiadas e corrija problemas causados por violações de segurança nesta fase.  
+  
+4. [Reimplantar o restante de controladores de domínio](AD-Forest-Recovery-Restore-Additional-DCs.md)  
+
+   Reimplante a floresta para retorná-lo ao seu estado antes da falha. Essa etapa precisará ser adaptada aos seus requisitos e design específico. Clonagem do controlador de domínio virtualizado pode ajudar a acelerar esse processo.  
+
+5. [Limpeza](AD-Forest-Recovery-Cleanup.md)  
+
+   Depois de funcionalidade tiver sido restaurada, reconfigure a resolução de nome conforme a necessidade e obter aplicativos de LOB trabalhando.  
+
+As etapas neste guia são projetadas para minimizar a possibilidade de reintroduzir dados perigosos na floresta recuperada. Talvez você precise modificar essas etapas para considerar fatores como:  
+  
+- Escalabilidade  
+- Capacidade de gerenciamento remota  
+- Velocidade de recuperação  

@@ -1,38 +1,39 @@
 ---
 ms.assetid: c911d6c6-98c6-4532-b1db-5724e1ceb96c
-title: "Apêndice a administração simplificada"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: Apêndice de administração simplificada
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 5de7431d0f3fe9a078432b11a63ce996d3abe447
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 36cdacec27e64586c359146b858a9d68750e5026
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59858257"
 ---
-# <a name="simplified-administration-appendix"></a>Apêndice a administração simplificada
+# <a name="simplified-administration-appendix"></a>Apêndice de administração simplificada
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
   
--   [Caixa de diálogo de servidores (Active Directory) de adicionar do Gerenciador do servidor](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_AddServers)  
+-   [Gerenciador do servidor adicione servidores caixa de diálogo (Active Directory)](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_AddServers)  
   
--   [Status do servidor de controle remoto do Gerenciador do servidor](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_ServerMgrStatus)  
+-   [Status do servidor do Gerenciador do servidor remoto](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_ServerMgrStatus)  
   
 -   [Carregamento de módulo do PowerShell do Windows](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_PSLoadModule)  
   
--   [Marca d'emissão Hotfixes para sistemas operacionais anteriores](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_Rid)  
+-   [Os Hotfixes de emissão de RID para sistemas operacionais anteriores](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_Rid)  
   
--   [Ntdsutil.exe instalar da mídia muda](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM)  
+-   [Ntdsutil.exe Install from Media Changes](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM)  
   
-## <a name="BKMK_AddServers"></a>Caixa de diálogo de servidores (Active Directory) de adicionar do Gerenciador do servidor  
+## <a name="BKMK_AddServers"></a>Gerenciador do servidor adicione servidores caixa de diálogo (Active Directory)  
 
-O **adicionar servidores** caixa de diálogo permite pesquisar no Active Directory para servidores, pelo sistema operacional, uso de curingas e por localização. A caixa de diálogo também permite usar consultas do DNS, nome de domínio totalmente qualificado ou nome de prefixo. Essas pesquisas usam protocolos DNS e LDAP nativos implementados por meio do .NET, não anúncios do Windows PowerShell contra o Gateway de gerenciamento de anúncios por meio de SOAP - o que significa que os controladores de domínio contatados pelo Gerenciador de servidores ainda podem executar o Windows Server 2003. Você também pode importar um arquivo com nomes de servidor para fins de provisionamento.  
+O **adicionar servidores** caixa de diálogo permite pesquisar no Active Directory para servidores, pelo sistema operacional, usando caracteres curinga e por local. A caixa de diálogo também permite usar consultas DNS por nome de domínio totalmente qualificado ou nome de prefixo. Essas pesquisas usam protocolos DNS e LDAP nativos implementados por meio do .NET, não AD Windows PowerShell com o Gateway de gerenciamento do AD por meio do SOAP – que significa que os controladores de domínio contatados pelo Gerenciador de servidores podem até mesmo executar o Windows Server 2003. Você também pode importar um arquivo com nomes de servidor para fins de provisionamento.  
   
 A pesquisa do Active Directory usa os seguintes filtros LDAP:  
   
@@ -56,13 +57,13 @@ A pesquisa do Active Directory retorna os seguintes atributos:
   
 ```  
   
-## <a name="BKMK_ServerMgrStatus"></a>Status do servidor de controle remoto do Gerenciador do servidor  
-Gerenciador do servidor testes de acessibilidade de servidor remoto usando o protocolo de roteamento de endereço. Todos os servidores não está respondendo às solicitações de ARP não estiverem listados, mesmo que eles estejam no pool.  
+## <a name="BKMK_ServerMgrStatus"></a>Status do servidor do Gerenciador do servidor remoto  
+Gerenciador do servidor testa a acessibilidade de servidor remoto usando o protocolo de roteamento de endereço. Todos os servidores não está respondendo a solicitações de ARP não estiverem listados, mesmo se eles estão no pool.  
   
-Se ARP responde, conexões DCOM e WMI são feitas ao servidor para retornar informações de status. Se RPC, DCOM e WMI são inacessível, o Gerenciador do servidor totalmente não poderá gerenciar o servidor.  
+Se responder ARP, WMI e DCOM conexões são feitas para o servidor para retornar informações de status. Se RPC, DCOM e o WMI estiverem inacessível, o Gerenciador do servidor não pode gerenciar totalmente o servidor.  
   
 ## <a name="BKMK_PSLoadModule"></a>Carregamento de módulo do PowerShell do Windows  
-O Windows PowerShell 3.0 implementa módulo dinâmico de carregamento. Usando o **Import-Module** cmdlet normalmente não é mais necessário; em vez disso, basta invocar o cmdlet, alias ou função automaticamente carrega o módulo.  
+Windows PowerShell 3.0 implementa o carregamento de módulo dinâmico. Usando o **Import-Module** cmdlet normalmente não é mais necessário; em vez disso, simplesmente invocar o cmdlet, alias ou função automaticamente carrega o módulo.  
   
 Para ver os módulos carregados, use o **Get-Module** cmdlet.  
   
@@ -73,14 +74,14 @@ Get-Module
   
 ![Administração simplificada](media/Simplified-Administration-Appendix/ADDS_PSGetModule.gif)  
   
-Para ver todos os módulos com suas funções exportadas e cmdlets, use:  
+Para ver todos os módulos instalados com seus cmdlets e funções exportadas, use:  
   
 ```  
 Get-Module -ListAvailable  
   
 ```  
   
-O caso principal para usar o **import-module** comando é quando você precisa de acesso para o "anúncio:" unidade virtual do Windows PowerShell e nada mais já carregou o módulo. Por exemplo, usando os seguintes comandos:  
+O principal caso para usar o **import-module** comando é quando você precisa acessar a "AD:" Unidade virtual do Windows PowerShell e nada mais já carregou o módulo. Por exemplo, usando os seguintes comandos:  
   
 ```  
 import-module activedirectory  
@@ -89,19 +90,19 @@ dir
   
 ```  
   
-## <a name="BKMK_Rid"></a>Marca d'emissão Hotfixes para sistemas operacionais anteriores  
-Consulte [uma atualização está disponível para detectar e evitar excesso consumo do pool de RID global em um controlador de domínio que esteja executando o Windows Server 2008 R2](https://support.microsoft.com/kb/2618669).  
+## <a name="BKMK_Rid"></a>Os Hotfixes de emissão de RID para sistemas operacionais anteriores  
+Ver [uma atualização está disponível para detectar e impedir o excesso consumo do pool RID global em um controlador de domínio que está executando o Windows Server 2008 R2](https://support.microsoft.com/kb/2618669).  
   
-## <a name="BKMK_IFM"></a>Ntdsutil.exe instalar da mídia muda  
-Windows Server 2012 adiciona duas opções adicionais para a ferramenta de linha de comando Ntdsutil.exe para o **IFM (criação da mídia IFM)** menu. Elas permitem que você criar repositórios de IFM sem executar primeiro uma desfragmentação offline do NTDS exportado. Arquivo de banco de dados DIT. Quando o espaço em disco não é fundamental, isso economiza tempo criando o IFM.  
+## <a name="BKMK_IFM"></a>Ntdsutil.exe Install from Media Changes  
+Windows Server 2012 adiciona duas opções adicionais para a ferramenta de linha de comando Ntdsutil.exe para o **IFM (criação de mídia IFM)** menu. Elas permitem que você criar repositórios de IFM sem executar uma desfragmentação offline do NTDS exportado. Arquivo de banco de dados DIT. Quando o espaço em disco não é um bônus, isso economiza tempo criando o IFM.  
   
 A tabela a seguir descreve os dois novos itens de menu:  
   
 |||  
 |-|-|  
 |Item de menu|Explicação|  
-|Criar NoDefrag completa %s|Criar uma mídia IFM sem ser desfragmentado para um controlador de domínio do AD completo ou uma instância do AD/LDS na pasta %s|  
-|Criar Sysvol inteira NoDefrag %s|Criar uma mídia IFM com SYSVOL e sem ser desfragmentado para um controlador de domínio do AD completo para a pasta %s|  
+|Criar NoDefrag completo %s|Criar a mídia IFM sem desfragmentar para um controlador de domínio do AD completo ou uma instância de AD/LDS na pasta %s|  
+|Criar Sysvol completo NoDefrag %s|Criar a mídia IFM com SYSVOL e sem desfragmentar para um controlador de domínio do AD completo na pasta %s|  
   
 ![Administração simplificada](media/Simplified-Administration-Appendix/ADDS_PSIFM.png)  
   

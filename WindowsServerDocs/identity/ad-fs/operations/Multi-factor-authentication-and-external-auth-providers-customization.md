@@ -1,6 +1,6 @@
 ---
-title: "A autenticação multifator e personalização de provedores de autenticação externa"
-description: 
+title: A autenticação multifator e personalização de provedores de autenticação externa
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,44 +10,45 @@ ms.prod: windows-server-threshold
 ms.assetid: 08724d45-9be4-4c56-a5f1-2cf40864e136
 ms.technology: identity-adfs
 ms.openlocfilehash: 6d06c017601003e3b93df32f5fa50190ce54541d
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59864797"
 ---
 # <a name="multi-factor-authentication-and-external-authentication-providers-customization"></a>A autenticação multifator e personalização de provedores de autenticação externa 
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
-No AD FS, o suporte para autenticação multifator é fornecido out\-of\-the\-box. Por exemplo, você pode configurar o AD FS para usar autenticação de certificado built\-in como a segunda autenticação de fator. Você também pode usar provedores de autenticação externa. Essa abordagem pode habilitar o AD FS integrar com serviços adicionais, como Azure a autenticação multifator, ou você pode desenvolver seu próprio provedor. Consulte [guia de solução: gerenciar o risco com controle de acesso do fator de Multi\](https://technet.microsoft.com/library/dn280937.aspx) para obter mais informações sobre como registrar o provedor de autenticação externo usando o AD FS.  
+No AD FS, o suporte para a autenticação multifator é fornecido fora\-dos\-o\-caixa. Por exemplo, você pode configurar o AD FS para uso incorporada\-na autenticação de certificado como a autenticação de dois fatores. Você também pode usar provedores de autenticação externa. Essa abordagem pode permitir que o AD FS integrar com serviços adicionais, como a autenticação multifator, ou você pode desenvolver seu próprio provedor. Consulte [guia de solução: Gerencie riscos com vários\-fatorar o controle de acesso](https://technet.microsoft.com/library/dn280937.aspx) para obter mais informações sobre como registrar o provedor de autenticação externa usando o AD FS.  
   
-Nós recomendamos que um provedor de autenticação externo use as classes que são definidas no arquivo. CSS que o AD FS fornece para criar a interface do usuário de autenticação. Você pode usar o seguinte cmdlet para exportar o tema da web padrão e inspecione as classes de interface do usuário e elementos que são definidos no arquivo. CSS. O arquivo. CSS pode ser usado no desenvolvimento de interface do usuário sign\-in de um provedor de autenticação externa.  
+É recomendável que um provedor de autenticação externa use as classes que são definidas no arquivo. CSS que o AD FS fornece para criar a interface do usuário de autenticação. Você pode usar o seguinte cmdlet para exportar o tema da Web padrão e inspecionar as classes de interface do usuário e os elementos definidos no arquivo .css. O arquivo. CSS pode ser usado no desenvolvimento do sinal de\-na interface do usuário de um provedor de autenticação externa.  
   
 
-    Export-AdfsWebTheme -Name default -DirectoryPath C:\theme  
+    Export-AdfsWebTheme -Name default -DirectoryPath C:\theme  
  
   
-A seguir está um exemplo da interface do usuário sign\-in, que está realçado em vermelho, por um provedor de autenticação externa. A interface do usuário usa as classes de interface do usuário no arquivo. CSS AD FS.  
+A seguir está um exemplo de como o sinal\-na interface do usuário, que é destacado em vermelho, por um provedor de autenticação externa. A interface do usuário usa as classes de interface do usuário no arquivo. CSS do AD FS.  
   
 ![AD FS e MFA](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom8.png)  
   
-Antes de gravar um novo método de autenticação personalizado, recomendamos que você estudar as definições de tema e estilo do AD FS para entender o requisitos de criação de conteúdo.  
+Antes de gravar um novo método de autenticação personalizada, é recomendável que você estude as definições de tema e um estilo de AD FS para entender os requisitos de criação de conteúdo.  
   
--   Um método de autenticação personalizado só cria um segmento HTML na página do AD FS sign\-in e não a página inteira. Você deve usar a definição de estilo do AD FS para obter a aparência e comportamento consistentes.  
+-   Um método de autenticação personalizado somente cria um segmento HTML na entrada do AD FS\-na página e não a página inteira. Você deve usar a definição de estilo do AD FS para obter a aparência e comportamento consistentes.  
   
 ![AD FS e MFA](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom9.png)  
   
--   Lembre-se de que os administradores do AD FS podem personalizar os estilos do AD FS. . Não recomendamos para codificar seus próprios estilos. Em vez disso, recomendamos usar estilos do AD FS sempre que possível.  
+-   Lembre-se de que os administradores do AD FS podem personalizar os estilos do AD FS. . Não recomendamos codificar seus estilos próprios. Em vez disso, é recomendável para usar o AD FS estilos sempre que possível.  
   
--   Out\ of\-pronta, estilos do AD FS são criados com um estilo \(LTR\) left\ to\-direito e uma \(RTL\) right\-to\-left. Os administradores podem personalizar ambos e podem fornecer estilos específicos de language\ por meio da definição do tema da web. Cada folha de estilos tem três seções com os respectivos comentários:  
+-   -Out\-de\-caixa, estilos de AD FS são criados com o que resta\-para\-direita \(LTR\) estilo e uma para a direita\-para\-esquerdo \(RTL\). Os administradores podem personalizar ambos e pode fornecer a linguagem\-estilos específicos por meio da definição de tema da web. Cada folha de estilo possui três seções com os respectivos comentários:  
   
-    -   **estilos de tema** \-esses estilos não devem estar conectados e não pode ser usados. Esses estilos devem definir o tema em todas as páginas. Eles são definidos por uma ID do elemento propositadamente para que eles não são reutilizados.  
+    -   **estilos de tema** \- esses estilos não devem e não pode ser usados. Esses estilos são destinados a definir o tema em todas as páginas. Eles são definidos por um ID de elemento intencionalmente, de forma que nunca sejam reutilizados.  
   
-    -   **estilos comuns** \-esses são os estilos que devem ser usados por seu conteúdo.  
+    -   **estilos comuns** \- são estilos que devem ser usados para o seu conteúdo.  
   
-    -   **estilos de fator de forma** \-esses são estilos para diferentes fatores forma. Você deve compreender nesta seção para garantir que seu conteúdo funcione com diferentes fatores forma, por exemplo, telefones e tablets.  
+    -   **estilos de fator forma** \- esses são estilos para diferentes fatores forma. Você deve compreender esta seção para assegurar que seu conteúdo funcione com diferentes fatores forma, por exemplo, telefones e tablets.  
   
-Para obter informações adicionais, consulte [guia de solução: gerenciar o risco com controle de acesso do fator de Multi\](https://technet.microsoft.com/library/dn280937.aspx) e [guia de solução: gerenciar o risco com autenticação de fator de Multi\ adicionais para aplicativos confidenciais](https://tnstage.redmond.corp.microsoft.com/library/dn280949.aspx).  
+Para obter mais informações, consulte [guia de solução: Gerencie riscos com vários\-fatorar o controle de acesso](https://technet.microsoft.com/library/dn280937.aspx) e [guia de solução: Gerencie riscos com adicional Multi\-fatores de autenticação para aplicativos confidenciais](https://tnstage.redmond.corp.microsoft.com/library/dn280949.aspx).  
 
 ## <a name="additional-references"></a>Referências adicionais 
-[AD FS usuário entrar personalização](AD-FS-user-sign-in-customization.md) 
+[AD FS Sign-personalização de usuário](AD-FS-user-sign-in-customization.md) 

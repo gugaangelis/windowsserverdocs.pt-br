@@ -1,7 +1,7 @@
 ---
 ms.assetid: ad0bf21d-2ace-4565-b1f5-ce57c8eb2689
-title: "Quando criar um Farm de Proxy do servidor de Federação"
-description: 
+title: Quando criar um Farm de Proxy do Servidor de Federação
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,32 +10,33 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 8935760cad272d5b82edb675cda85caf0456565f
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59859437"
 ---
-# <a name="when-to-create-a-federation-server-proxy-farm"></a>Quando criar um Farm de Proxy do servidor de Federação
+# <a name="when-to-create-a-federation-server-proxy-farm"></a>Quando criar um Farm de Proxy do Servidor de Federação
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Considere Instalando proxies de servidor de Federação adicionais quando você tiver uma grande implantação \(AD FS\) serviços de Federação do Active Directory e você deseja fornecer tolerância, balanceamento load\ e escalabilidade para a implantação do proxy. O ato de criação proxies de servidor de Federação dois ou mais na mesma rede perímetro e configuração de cada um para proteger o mesmo serviço de Federação do AD FS cria um farm de proxy do servidor de Federação.  
+Considere instalar proxies de servidor de Federação adicionais quando você tem um grande serviços de Federação do Active Directory \(do AD FS\) implantação e quiser fornecer tolerância a falhas, carga\-balanceamento e escalabilidade para sua implantação do proxy. O ato de criar federação dois ou mais proxies de servidor na mesma rede de perímetro e configurar cada um deles para proteger o mesmo serviço de Federação do AD FS cria um farm de proxy do servidor de Federação.  
   
-Você pode criar um farm de proxy do servidor de Federação ou instalar proxies de servidor de Federação adicional a um farm existente usando o Assistente de configuração do AD FS federação servidor Proxy. Para obter mais informações, consulte [quando criar um Proxy de servidor de Federação](When-to-Create-a-Federation-Server-Proxy.md).  
+Você pode criar um farm de proxy do servidor de Federação ou instalar proxies de servidor de Federação adicionais a um farm existente, usando o Assistente de configuração do AD FS Federation Server Proxy. Para obter mais informações, consulte [When to Create a Federation Server Proxy](When-to-Create-a-Federation-Server-Proxy.md).  
   
-Antes de todos os proxies de servidor de federação podem funcionar juntos como um farm, você deve primeiro clustê-los em um endereço IP e um domínio totalmente qualificado Domain Name System \(DNS\) nomear \(FQDN\). Você pode agrupar os servidores Implantando balanceamento de carga de rede Microsoft \(NLB\) dentro da rede do perímetro. As tarefas na tabela a seguir requerem NLB ser configurado adequadamente para os proxies de servidor de federação no farm do cluster.  
+Antes que todos os proxies de servidor de federação podem funcionar juntos como um farm, você deve primeiro clustê-los em um endereço IP e um sistema de nomes de domínio \(DNS\) nome de domínio totalmente qualificado \(FQDN\). Você pode agrupar os servidores com a implantação de balanceamento de carga de rede da Microsoft \(NLB\) dentro da rede de perímetro. As tarefas na tabela a seguir exigem que o NLB seja configurado corretamente para os proxies de servidor de federação no farm de cluster.  
   
 Para obter mais informações sobre como configurar um FQDN para um cluster usando a tecnologia Microsoft NLB, consulte [especificando os parâmetros de Cluster](https://go.microsoft.com/fwlink/?linkid=74651).  
   
-## <a name="configuring-federation-server-proxies-for-a-farm"></a>Configuração proxies de servidor de federação para um farm  
-A tabela a seguir descreve as tarefas que devem ser concluídas para que cada proxy de servidor de Federação pode participar de um farm.  
+## <a name="configuring-federation-server-proxies-for-a-farm"></a>Configurando proxies do servidor de federação para um farm  
+A tabela a seguir descreve as tarefas que devem ser concluídas para que cada proxy do servidor de Federação pode participar de um farm.  
   
 |Tarefa|Descrição|  
 |--------|---------------|  
-|Aponte todos os proxies no farm para o mesmo nome de serviço de Federação do AD FS|Quando você cria a federação proxies de servidor, especifique o mesmo nome de serviço de Federação o Assistente de configuração do AD FS federação servidor Proxy para todos os proxies de servidor de Federação participarão sítio. O proxy do servidor de federação usa a URL que torna esse nome de host DNS para determinar qual instância do serviço de Federação do AD FS contatos.<br /><br />Para obter mais informações, consulte [configurar um computador para a função de Proxy do servidor de Federação](../../ad-fs/deployment/Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md).|  
-|Obter e compartilhar certificados|Você pode obter o certificado de autenticação de um servidor de uma autoridade de certificação pública \ (CA\) — por exemplo, VeriSign — e, em seguida, configure o certificado para que todos os proxies de servidor de Federação compartilham o mesmo parte da chave privada do mesmo certificado no site do padrão para cada proxy de servidor de Federação. Para compartilhar o certificado, você deve instalar o mesmo certificado de autenticação de servidor no site do padrão para cada proxy de servidor de Federação. Para obter mais informações, consulte [importar um certificado de autenticação de servidor para o site padrão](../../ad-fs/deployment/Import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md).<br /><br />Para obter mais informações, consulte [requisitos de certificado para Proxies de servidor de Federação](Certificate-Requirements-for-Federation-Server-Proxies.md).|  
+|Aponte todos os proxies no farm para o mesmo nome de serviço de Federação do AD FS|Quando você cria a federação, proxies de servidor, você deve digitar o mesmo nome de serviço de Federação em que o Assistente de configuração do AD FS Federation Server Proxy para todos os proxies de servidor de federação que farão parte do farm. O proxy do servidor de federação usa a URL que compõe esse nome de host DNS para determinar qual instância do serviço de Federação do AD FS-contatos.<br /><br />Para obter mais informações, consulte [Configure a Computer for the Federation Server Proxy Role](../../ad-fs/deployment/Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md).|  
+|Obter e compartilhar certificados|Você pode obter o certificado de autenticação de um servidor de uma autoridade de certificação pública \(autoridade de certificação\)— por exemplo, VeriSign — e, em seguida, configure o certificado para que todos os proxies de servidor de Federação compartilham a mesma parte de chave privada das mesmo certificado no site da Web padrão para cada proxy do servidor de Federação. Para compartilhar o certificado, você deve instalar o mesmo certificado de autenticação de servidor no site da Web padrão para cada proxy do servidor de Federação. Para obter mais informações, consulte [importar um certificado de autenticação de servidor para o Site padrão](../../ad-fs/deployment/Import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md).<br /><br />Para obter mais informações, consulte [Certificate Requirements for Federation Server Proxies](Certificate-Requirements-for-Federation-Server-Proxies.md).|  
   
-Para obter mais informações sobre como adicionar novas proxies de servidor de federação para criar um farm de proxy do servidor de federação, consulte [lista de verificação: configuração de backup de Proxy de servidor de Federação um](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server-Proxy.md).  
+Para obter mais informações sobre como adicionar novos proxies de servidor de federação para criar um farm de proxy do servidor de federação, consulte [lista de verificação: Como configurar um Proxy do servidor de Federação](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server-Proxy.md).  
   
 ## <a name="see-also"></a>Consulte também
 [Guia de Design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -1,25 +1,26 @@
 ---
-title: "Configurações de serviço de integridade"
+title: Configurações de serviço de integridade
 ms.prod: windows-server-threshold
 manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
 ms.topic: article
-ms.assetid: 
+ms.assetid: ''
 author: cosmosdarwin
 ms.date: 08/14/2017
 ms.openlocfilehash: 569cf7ba30fd3f993394efd3735a56d116c067e0
-ms.sourcegitcommit: 30fcae929ce7b611f5d3a5f8fee64b0299272110
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59858327"
 ---
 # <a name="health-service-settings"></a>Configurações de serviço de integridade
-> Aplica-se para o Windows Server 2016
+> Aplica-se ao Windows Server 2016
 
-O serviço de integridade é um novo recurso no Windows Server 2016 que melhora o monitoramento diárias e experiência operacional para clusters que executam direta de espaços de armazenamento.
+O serviço de integridade é um novo recurso no Windows Server 2016, o que melhora o monitoramento de rotina e experiência operacional para clusters que executam espaços de armazenamento diretos.
 
-Muitos dos parâmetros que controlam o comportamento do serviço de integridade são expostos como configurações. Você pode modificar esses para ajustar a agressividade de falhas ou ações, ativar determinados comportamentos de ligar/desligar e muito mais.
+Muitos dos parâmetros que controlam o comportamento do serviço de integridade são expostos como as configurações. Você pode modificar esses para ajustar a agressividade de falhas ou ações, ative a determinados comportamentos liga/desliga e muito mais.
 
 Use o seguinte cmdlet do PowerShell para definir ou modificar as configurações.
 
@@ -37,7 +38,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 
 ### <a name="common-settings"></a>Configurações comuns
 
-Algumas configurações modificadas normalmente estão listadas abaixo, juntamente com seus valores padrão.
+Algumas configurações comumente modificadas estão listadas abaixo, junto com seus valores padrão.
 
 #### <a name="volume-capacity-threshold"></a>Limite de capacidade de volume
 
@@ -53,7 +54,7 @@ Algumas configurações modificadas normalmente estão listadas abaixo, juntamen
 "System.Storage.StoragePool.CheckPoolReserveCapacity.Enabled" = True
 ```
 
-#### <a name="physical-disk-lifecycle"></a>Ciclo de vida de disco físico
+#### <a name="physical-disk-lifecycle"></a>Ciclo de vida do disco físico
 
 ```
 "System.Storage.PhysicalDisk.AutoPool.Enabled"                             = True
@@ -66,7 +67,7 @@ Algumas configurações modificadas normalmente estão listadas abaixo, juntamen
 
 #### <a name="supported-components-document"></a>Documento de componentes com suporte
 
-Veja a seção anterior.
+Consulte a seção anterior.
 
 #### <a name="firmware-rollout"></a>Distribuição de firmware
 
@@ -79,7 +80,7 @@ Veja a seção anterior.
 "System.Storage.PhysicalDisk.AutoFirmwareUpdate.RollOut.FailureTolerance"  = 3
 ```
 
-#### <a name="platform--quiescence"></a>Plataforma / Quiescence
+#### <a name="platform--quiescence"></a>Plataforma / Quiescência
 
 ```
 "Platform.Quiescence.MinDelaySeconds" = 120 (i.e. 2 minutes)
@@ -101,4 +102,4 @@ Veja a seção anterior.
 ## <a name="see-also"></a>Consulte também
 
 - [Serviço de integridade no Windows Server 2016](health-service-overview.md)
-- [Espaços de armazenamento direcionam no Windows Server 2016](../storage/storage-spaces/storage-spaces-direct-overview.md)
+- [Espaços de armazenamento diretos no Windows Server 2016](../storage/storage-spaces/storage-spaces-direct-overview.md)

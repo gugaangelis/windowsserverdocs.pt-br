@@ -1,7 +1,7 @@
 ---
-title: Agrupamento de NIC
-description: Este tópico fornece uma visão geral de agrupamento de placa de rede (NIC) no Windows Server 2016.
-manager: brianlic
+title: Agrupamento NIC
+description: Neste tópico, nós fornecemos a você uma visão geral do agrupamento de placa de Interface de rede (NIC) no Windows Server 2016. Agrupamento NIC permite que você agrupe entre um e 32 adaptadores de rede Ethernet física em um ou mais adaptadores de rede virtual baseada em software. Esses adaptadores de rede virtual oferecem desempenho rápido e tolerância a falhas no caso de uma falha do adaptador de rede.
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,106 +13,154 @@ ms.topic: article
 ms.assetid: abded6f3-5708-4e35-9a9e-890e81924fec
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 142f56153187368effdb802c0c1b50359fffc36a
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 09/10/2018
+ms.openlocfilehash: 367de10e8c77490ff27be81ddc05239f931ad1f4
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59860467"
 ---
-# <a name="nic-teaming"></a>Agrupamento de NIC
+# <a name="nic-teaming"></a>Agrupamento NIC
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Este tópico fornece uma visão geral de agrupamento de placa de rede (NIC) no Windows Server 2016.
+Neste tópico, nós fornecemos a você uma visão geral do agrupamento de placa de Interface de rede (NIC) no Windows Server 2016. Agrupamento NIC permite que você agrupe entre um e 32 adaptadores de rede Ethernet física em um ou mais adaptadores de rede virtual baseada em software. Esses adaptadores de rede virtual oferecem desempenho rápido e tolerância a falhas no caso de uma falha do adaptador de rede.  
+  
+>[!IMPORTANT]
+>Você deve instalar adaptadores de rede de membro de agrupamento NIC no mesmo computador host físico. 
 
-> [!NOTE]  
-> Além de neste tópico, o seguinte conteúdo de agrupamento de placa de rede está disponível.  
->   
-> - [NIC agrupamento em máquinas virtuais & #40; VMs & #41;](nict-vms.md)
-> - [Agrupamento de NIC e redes locais virtuais & #40; VLANs & #41;](nict-and-vlans.md)
-> - [Agrupamento de gerenciamento e o uso de endereço MAC do NIC](NIC-Teaming-MAC-Address-Use-and-Management.md)
-> - [Solução de problemas NIC agrupamento](Troubleshooting-NIC-Teaming.md) 
-> - [Criar uma nova equipe de placa de rede em um computador Host ou VM](Create-a-New-NIC-Team-on-a-Host-Computer-or-VM.md)
-> - [NIC agrupamento Cmdlets (NetLBFO) no Windows PowerShell](https://technet.microsoft.com/library/jj130849.aspx)
-> - Download de galeria do TechNet: [Windows Server 2016 NIC e alternar agrupamento Embedded guia do usuário](https://gallery.technet.microsoft.com/Windows-Server-2016-839cb607?redir=0)
+> [!TIP]  
+> Um agrupamento NIC que contém apenas um adaptador de rede não pode fornecer balanceamento de carga e failover. No entanto, com um adaptador de rede, você pode usar o agrupamento NIC para separar o tráfego de rede quando você também estiver usando redes locais virtuais (VLANs).  
   
-## <a name="bkmk_over"></a>Visão geral de agrupamento de NIC  
-Agrupamento de placa de rede permite que você agrupe entre 1 e 2 trinta físicos adaptadores de rede Ethernet em um ou mais adaptadores de rede virtual baseada em software. Esses adaptadores de rede virtual fornecem desempenho rápido e tolerância no caso de uma falha de adaptador de rede.  
+Quando você configura os adaptadores de rede em um agrupamento NIC, eles se conectam na NIC agrupamento solução comum principal, que, em seguida, apresenta um ou mais adaptadores virtuais (também chamados de interfaces de equipe ou equipe NICs [tNICs]) para o sistema operacional. 
+
+Uma vez que o Windows Server 2016 dá suporte a até 32 adaptadores de equipe por equipe, há uma variedade de algoritmos que distribui o tráfego de saída (carga) entre as NICs.  A ilustração a seguir ilustra uma equipe NIC com vários tNICs.  
   
-Todos os adaptadores de rede de membro de equipe de NIC devem ser instalados no mesmo computador host físico deve ser colocado em uma equipe.  
+![Agrupamento NIC com vários tNICs](../../media/NIC-Teaming/nict_overview.jpg)  
   
-> [!NOTE]  
-> Uma equipe NIC que contém apenas um adaptador de rede não pode fornecer balanceamento de carga e failover; No entanto com um adaptador de rede, você pode usar NIC agrupamento de separação de tráfego de rede quando você também usa as redes locais virtuais (VLANs).  
+Além disso, você pode conectar os NICs agrupados ao mesmo comutador ou comutadores diferentes. Se você conectar as NICs a diferentes comutadores, ambas as opções devem ser na mesma sub-rede.  
   
-Quando você configurar adaptadores de rede em uma equipe NIC, eles são conectados no NIC agrupamento solução núcleo comum, que, em seguida, apresenta um ou mais adaptadores virtuais (também chamados de equipe NICs [tNICs] ou interfaces de equipe) para o sistema operacional. Windows Server 2016 dá suporte a até 32 interfaces de equipe por equipe. Há uma variedade de algoritmos de distribuir o tráfego de saída (carregar) entre as NICs.  
+## <a name="availability"></a>Disponibilidade  
+Agrupamento NIC está disponível em todas as versões do Windows Server 2016. Você pode usar uma variedade de ferramentas para gerenciar o agrupamento NIC de computadores que executam um sistema operacional cliente, tais como: • • de cmdlets do Windows PowerShell área de trabalho remota • ferramentas de administração de servidor remoto  
   
-A ilustração a seguir mostra uma equipe de NIC com vários tNICs.  
+## <a name="supported-and-unsupported-nics"></a>NICs compatíveis e sem suportadas   
+Você pode usar qualquer NIC Ethernet que passou a qualificação de Hardware do Windows e o logotipo teste (testes do WHQL) em uma equipe de NIC no Windows Server 2016.  
   
-![Equipe de NIC com vários tNICs](../../media/NIC-Teaming/nict_overview.jpg)  
+Você não pode colocar as NICs a seguir em uma equipe NIC:
   
-Além disso, você pode conectar seu NICs emparelhados ao mesmo switch ou opções diferentes. Se você conectar NICs para diferentes opções, ambas as opções devem ser na mesma sub-rede.  
-  
-## <a name="bkmk_avail"></a>Disponibilidade de agrupamento de NIC  
-Agrupamento de placa de rede está disponível em todas as versões do Windows Server 2016. Além disso, você pode usar comandos do Windows PowerShell, área de trabalho remota e ferramentas de administração de servidor remoto para gerenciar o agrupamento de NIC de computadores que executam um sistema operacional do cliente no qual as ferramentas são compatíveis.  
-  
-## <a name="bkmk_nics"></a>NICs compatíveis e sem suportadas para o agrupamento de NIC  
-Você pode usar qualquer NIC Ethernet que tenha aprovado no teste de qualificação de Hardware do Windows e o logotipo (testes WHQL) em uma equipe de placa de rede no Windows Server 2016.  
-  
-As seguintes NICs não podem ser colocadas em uma equipe de placa de rede.  
-  
--   Adaptadores de rede virtual Hyper-V que são expostas como NICs na partição do host de portas de comutador Virtual Hyper-V.  
+-   Adaptadores de rede virtual do Hyper-V que são expostas como NICs na partição de host de portas de comutador Virtual Hyper-V.  
   
     > [!IMPORTANT]  
-    > Hyper-V NICs virtuais que são expostas na partição do host (vNICs) não devem ser colocadas em uma equipe. Não há suporte para o agrupamento de vNICs dentro de partição do host em qualquer configuração ou uma combinação. Tentativas de equipe vNICs podem causar perda de comunicação completa caso ocorram falhas de rede.  
+    > Não coloque NICs virtuais do Hyper-V, expostas na partição host (vNICs) em uma equipe. Não há suporte para o agrupamento de vNICs dentro da partição de host em qualquer configuração. Tentativas de vNICs equipe podem causar uma perda completa de comunicação se ocorrerem falhas de rede.  
   
--   O kernel depurar adaptador de rede (KDNIC).  
+-   Adaptador de rede de depuração do kernel (KDNIC).  
   
--   NICs que estão sendo usadas para a inicialização de rede.  
+-   NICs são usadas para inicialização de rede.  
   
--   NICs que usam as tecnologias que não sejam Ethernet, como WWAN, WLAN/Wi-Fi, Bluetooth e Infiniband, incluindo o protocolo de Internet NICs Infiniband (IPoIB).  
+-   NICs que usam tecnologias que não seja de Ethernet, como WWAN, WLAN/Wi-Fi, Bluetooth e Infiniband, incluindo o protocolo IP sobre Infiniband (IPoIB) NICs.  
   
-## <a name="bkmk_compat"></a>Compatibilidade de agrupamento de NIC  
-Agrupamento de NIC é compatível com todas as tecnologias de rede no Windows Server 2016 com as seguintes exceções.  
+## <a name="compatibility"></a>Compatibilidade  
+Agrupamento NIC é compatível com todas as tecnologias de rede no Windows Server 2016 com as seguintes exceções.  
   
--   **Virtualização de e/s de raiz única (SR-IOV)**. Para SR-IOV, dados é entregue diretamente para a placa de rede sem passar pela pilha da rede (no sistema operacional, no caso de virtualização). Portanto, não é possível para a equipe NIC de inspecionar ou redirecionar os dados para outro caminho na equipe.  
+-   **Virtualização de e/s de raiz única (SR-IOV)**. Para SR-IOV, os dados são entregues diretamente para a placa de rede sem passá-los pela pilha da rede (no sistema operacional do host, no caso de virtualização). Portanto, não é possível que o agrupamento NIC inspecionar ou redirecionar os dados para outro caminho na equipe.  
   
--   **Host nativo qualidade de serviço (QoS)**. Quando QoS políticas são definidas em um nativo ou sistema host e essas políticas invocam limitações de largura de banda mínima, a taxa de transferência geral para uma equipe NIC será menor do que seria sem as políticas de largura de banda no lugar.  
+-   **Qualidade de serviço (QoS) de host nativo**. Quando você define políticas de QoS no sistema de host ou um nativo e essas políticas invocam limitações de largura de banda mínima, a taxa de transferência geral para uma equipe NIC for menor do que seria sem as políticas de largura de banda em vigor.  
   
--   **Chaminés TCP**. Chaminés TCP não é compatível com NIC agrupamento porque TCP chaminés libera a pilha de rede inteira diretamente à NIC.  
+-   **TCP Chimney**. TCP Chimney não é compatível com o agrupamento NIC porque TCP Chimney descarrega a pilha inteira de rede diretamente à NIC.  
   
--   **802.1 autenticação de x**. 802.1 Autenticação X não deve ser usada com o agrupamento de placa de rede. Algumas opções não permitem a configuração de autenticação 802.1 X e NIC agrupamento na mesma porta.  
+-   **802.1 autenticação de x**. Você não deve usar a autenticação 802.1 X com o agrupamento NIC porque algumas opções não é possível fazer a configuração de autenticação 802.1 X e o agrupamento NIC na mesma porta.  
   
-Para saber sobre como usar o agrupamento de NIC dentro de máquinas virtuais (VMs) que estão em execução em um host do Hyper-V, consulte [NIC agrupamento em máquinas virtuais & #40; VMs & #41;](../../technologies/nic-teaming/../../technologies/nic-teaming/NIC-Teaming-in-Virtual-Machines--VMs-.md).  
+Para saber mais sobre como usar o agrupamento NIC em máquinas virtuais (VMs) que são executados em um host Hyper-V, consulte [criar um novo agrupamento NIC em uma VM ou computador host](Create-a-New-NIC-Team-on-a-Host-Computer-or-VM.md).
   
-## <a name="bkmk_vmq"></a>Agrupamento de NIC e filas de máquina Virtual (VMQs)  
-VMQ e agrupamento de NIC funcionam bem juntos; VMQ deve ser habilitado a qualquer momento Hyper-V está habilitado. Dependendo do modo de configuração do switch e o algoritmo de distribuição de carga, a NIC agrupamento ou apresentará funcionalidades VMQ alternar o Hyper-V que mostrem o número de filas disponíveis para ser o menor número de filas compatíveis com qualquer adaptador no grupo (modo de filas Min) ou o número total de filas disponíveis em todos os membros da equipe (modo de soma de filas).  
+## <a name="virtual-machine-queues-vmqs"></a>Filas de máquina virtual (VMQs)  
+
+VMQs é um recurso NIC que aloca uma fila para cada VM.  Sempre que tiver o Hyper-V habilitado; Você também deve habilitar VMQ. No Windows Server 2016, VMQs usam vPorts NIC Switch com uma única fila atribuída para o vPort para fornecer a mesma funcionalidade. 
+
+Dependendo do modo de configuração de comutador e o algoritmo de distribuição de carga, o agrupamento NIC apresenta o menor número de filas disponíveis e com suporte por qualquer adaptador da equipe (modo de Min-filas) ou o número total de filas disponíveis em todos os team membros (modo de soma de filas).  
+
+Se a equipe está no modo de agrupamento independentes de comutador e você definir a distribuição de carga para o modo de porta Hyper-V ou no modo dinâmico, o número de filas relatado é a soma de todas as filas disponíveis de membros da equipe (modo de soma de filas). Caso contrário, o número de filas relatado é o menor número de filas com suporte por qualquer membro da equipe (modo de Min-filas).
+
+Eis o porquê:  
   
-Especificamente, se a equipe é independente de comutador agrupamento modo e a distribuição da carga é definida como modo de porta do Hyper-V ou dinâmico, o número de filas relatados é a soma de todas as filas disponíveis de membros da equipe (modo de soma de filas); Caso contrário, o número de filas relatados é o menor número de filas de suporte por qualquer membro da equipe (modo de filas Min).  
+-   Quando a equipe do comutador independente está no modo de porta Hyper-V ou dinâmico o tráfego de entrada para uma porta de comutador do Hyper-V (VM) sempre são recebidos no mesmo membro da equipe. O host pode prever/controle qual membro recebe o tráfego para uma determinada VM, para que o agrupamento NIC pode ser mais profunda sobre quais filas VMQ para alocar em um membro específico da equipe. O agrupamento NIC, trabalhando com o comutador do Hyper-V, define a VMQ para uma VM em exatamente um membro da equipe e saber que o tráfego atinge essa fila.  
   
-Aqui estão as respostas:  
+-   Quando a equipe estiver em qualquer modo dependentes de switch (agrupamento estático ou LACP teaming), o que a equipe está conectada ao comutador controla a distribuição do tráfego de entrada. Software de agrupamento NIC do host não pode prever qual equipe member obtém o tráfego de entrada para uma máquina virtual e pode ser que o comutador distribui o tráfego para uma VM em todos os membros da equipe. Como resultado do software de agrupamento NIC, trabalhando com o comutador do Hyper-V, programas de uma fila para a máquina virtual em cada membro da equipe, não apenas um membro da equipe do.  
   
--   Quando a equipe independentes do switch está no modo de porta do Hyper-V ou dinâmico o tráfego de entrada para uma porta de comutador do Hyper-V (VM) sempre chegarão no membro da equipe do mesmo. O host pode prever/controle quais membro receberá o tráfego de uma VM específica para que NIC agrupamento pode ser mais cuidadoso sobre quais filas VMQ aloquem em um membro da equipe específica. Agrupamento de NIC, trabalhando com o comutador do Hyper-V, definir o VMQ para uma VM em exatamente um membro da equipe e sabe que o tráfego de entrada alcance fila.  
+-   Quando a equipe está no modo independente do comutador e o hash de endereço usa o balanceamento de carga, o tráfego de entrada sempre entra em uma NIC (o membro da equipe principal) - tudo isso em apenas um membro da equipe. Uma vez que outros membros da equipe não estão lidando com o tráfego de entrada, eles obterem programados com filas mesmas que o membro primário para que se o membro primário falhar, qualquer outro membro da equipe pode ser usado para acompanhar o tráfego de entrada e as filas já estão em vigor.  
+
+- A maioria das NICs têm filas usadas para RSS Receive Side Scaling () ou VMQ, mas não ao mesmo tempo. Algumas configurações de VMQ parecem ser as configurações para as filas RSS, mas são configurações nas filas genéricas que uso RSS e VMQ, dependendo de qual recurso está atualmente em uso. Cada NIC tem, em suas propriedades avançadas, valores para * RssBaseProcNumber e \*MaxRssProcessors. A seguir estão algumas configurações de VMQ que fornecem melhor desempenho do sistema.  
   
--   Quando a equipe está em qualquer modo dependentes switch (agrupamento estático ou agrupamento de LACP), a opção que a equipe está conectada à controla a distribuição de tráfego de entrada. Software de agrupamento de NIC do host não é possível prever quais equipe membro obterá o tráfego de entrada para uma VM e pode ser que a opção de distribuir o tráfego para uma VM em todos os membros da equipe. Como um resultado do software NIC agrupamento, trabalhando com o comutador do Hyper-V, programas uma fila para a VM em cada membro da equipe, não apenas um membro da equipe do.  
+-   O ideal é que cada NIC deve ter o * RssBaseProcNumber definido como um número par, maior que ou igual a dois (2). O primeiro processador físico, Core 0 (processadores lógicos 0 e 1), normalmente faz a maioria do processamento do sistema para que o processamento de rede deve conduzir para longe desse processador físico. Algumas arquiteturas de computador não tem dois processadores lógicos por processador físico, portanto, para essas máquinas, o processador de base deve ser maior que ou igual a 1. Se estiver em dúvida assumir que o host está usando um processador lógico 2 por arquitetura de processador físico.  
   
--   Quando a equipe está no modo de comutador independente e está usando um algoritmo de distribuição de carga de hash de endereço, o tráfego de entrada sempre serão enviados uma placa de rede (o membro da equipe principal) - todas elas no membro da equipe apenas um. Desde que os outros membros da equipe não estão lidando com o tráfego de entrada com que eles obterem programados a mesma enfileira como membro primário para que se membro primário falhar qualquer outro membro da equipe pode ser usado para pegar o tráfego de entrada e as filas já estão no lugar.  
+-   Se a equipe estiver no modo de soma de filas processadores de membros da equipe devem ser não sobrepostos. Por exemplo, em um host de 4 núcleos (8 processadores lógicos) com uma equipe de 2 NICs de 10 Gbps, você poderia definir a primeira para usar o processador de 2 de base e usar 4 núcleos; o segundo seria definido para usar o processador de base 6 e usar 2 núcleos.  
   
-A maioria dos NICs têm filas que podem ser usadas para receber lado dimensionamento RSS () ou VMQ, mas não ambos ao mesmo tempo. Algumas configurações VMQ parecem ser as configurações de filas RSS, mas são realmente configurações nas filas genéricas que use RSS e VMQ dependendo de qual recurso está atualmente em uso. Cada NIC tem, em que ele tem as propriedades avançadas, valores para * RssBaseProcNumber e \*MaxRssProcessors. A seguir estão algumas configurações VMQ que fornecem melhor desempenho do sistema.  
+-   Se a equipe estiver no modo de Min-filas, os conjuntos de processador usados por membros da equipe devem ser idênticos.  
+
   
--   O ideal é que cada NIC deve ter o * RssBaseProcNumber definido como um número par maior ou igual a 2 (dois). Isso ocorre porque o primeiro processador físico, Core 0 (processadores lógicos 0 e 1), normalmente faz a maioria de processamento do sistema para que o processamento de rede deve ser orientado longe este processador físico. (O algumas arquiteturas de máquina não têm dois processadores lógicos por processador físico para esses computadores o processador base deve ser maior ou igual a 1. Se estiver em dúvida pressuponha que o host está usando um processador lógico 2 por arquitetura de processador físico.)  
+## <a name="hyper-v-network-virtualization-hnv"></a>Virtualização de Rede Hyper-V (HNV)  
+Agrupamento NIC é totalmente compatível com virtualização de rede Hyper-V (HNV).  O sistema de gerenciamento de HNV fornece informações para o driver de agrupamento NIC que permite que o agrupamento NIC distribuir a carga de uma maneira que otimiza o tráfego da HNV.  
   
--   Se a equipe está no modo de soma de filas processadores de membros da equipe devem ser, a limite prático, não sobrepostas. Por exemplo, em um host de 4 núcleos (8 processadores lógicos) com uma equipe de 2 NICs 10 Gbps, você pode definir um dos primeiros para usar um processador base de 2 e usar 4 núcleos; o segundo seria definido para usar processador base 6 e usar 2 núcleos.  
-  
--   Se a equipe está no modo de filas Min os conjuntos de processador usados pelos membros da equipe devem ser idênticos.  
-  
-## <a name="bkmk_hnv"></a>Virtualização de rede NIC agrupamento e Hyper-V (HNV)  
-Agrupamento de NIC é totalmente compatível com a virtualização de rede Hyper-V (HNV).  O sistema de gerenciamento de HNV fornece informações para o driver NIC agrupamento que permite o agrupamento de NIC distribuir a carga de uma forma que é otimizada para o tráfego HNV.  
-  
-## <a name="bkmk_live"></a>Agrupamento de NIC e migração ao vivo  
-Agrupamento NIC em VMs não afeta a migração ao vivo. As mesmas regras existem para migração ao vivo ou não NIC agrupamento é configurado na VM.  
-  
-## <a name="see-also"></a>Consulte também  
-[NIC agrupamento em máquinas virtuais & #40; VMs & #41;](../../technologies/nic-teaming/../../technologies/nic-teaming/NIC-Teaming-in-Virtual-Machines--VMs-.md)  
-  
+## <a name="live-migration"></a>Migração ao vivo  
+Agrupamento NIC em máquinas virtuais não afeta a migração ao vivo. As mesmas regras existem para migração ao vivo ou não configurar o agrupamento NIC na VM.  
 
 
+## <a name="virtual-local-area-networks-vlans"></a>Redes locais virtuais (VLANs)
+Quando você usa o agrupamento NIC, criação de várias interfaces de equipe permite que um host para se conectar a VLANs diferentes ao mesmo tempo. Configure seu ambiente usando as diretrizes a seguir:
+  
+- Antes de habilitar o agrupamento NIC, configure as portas de comutador físico conectadas ao host de agrupamento para usar o modo de tronco (promíscuo). O comutador físico deve passar todo o tráfego para o host para filtragem sem modificar o tráfego.  
+
+- Não configure filtros VLAN nas NICs usando a NIC de configurações de propriedades avançada. Permitir que o software de agrupamento NIC ou o comutador Virtual do Hyper-V (se houver) realizar a filtragem de VLAN.  
+  
+### <a name="use-vlans-with-nic-teaming-in-a-vm"></a>Usar VLANs com o agrupamento NIC em uma VM  
+Quando uma equipe se conecta a um comutador Virtual do Hyper-V, todos os segregação da VLAN deve ser feita no comutador Virtual Hyper-V em vez de em agrupamento NIC.  
+
+Planeje usar VLANs em uma VM configurada com uma equipe NIC usando as seguintes diretrizes:
+  
+-   É o método preferencial de dar suporte a várias VLANs em uma VM configurar a VM com várias portas no comutador Virtual Hyper-V e associar cada porta de uma VLAN. Nunca equipe essas portas na VM, porque isso fizer problemas de comunicação de rede.  
+
+-   Se a VM tiver várias funções virtuais SR-IOV (VFs), certifique-se de que eles estão na mesma VLAN antes de agrupamento-los na VM. É possível facilmente configurar VFs diferentes para ser em VLANs diferentes, e isso fizer problemas de comunicação de rede.  
+ 
+  
+### <a name="manage-network-interfaces-and-vlans"></a>Gerenciar adaptadores de rede e VLANs 
+Se você precisar ter mais de uma VLAN exposto em um sistema operacional convidado, considere a possibilidade de renomear as interfaces de Ethernet para esclarecer a VLAN atribuído à interface. Por exemplo, se você associar **Ethernet** interface com 12 VLAN e a **Ethernet 2** interface com 48 de VLAN, renomeie a interface Ethernet para **EthernetVLAN12** e o para outros **EthernetVLAN48**. 
+
+Renomear interfaces usando o comando do Windows PowerShell **Rename-NetAdapter** ou executando o procedimento a seguir:
+  
+1.  No Gerenciador do servidor, no **propriedades** para o adaptador de rede que você deseja renomear, clique no link à direita do nome do adaptador de rede. 
+  
+2.  O adaptador de rede que você deseja renomear e clique com o botão direito **Renomear**.  
+  
+3.  Digite o novo nome para o adaptador de rede e pressione ENTER.  
+
+
+## <a name="virtual-machines-vms"></a>Máquinas virtuais (VMs)
+
+Se você quiser usar o agrupamento NIC em uma VM, você deve conectar os adaptadores de rede virtual na VM para Hyper-V comutadores virtuais externos somente. Isso permite que a VM manter a conectividade de rede, mesmo na circunstância quando um dos adaptadores de rede física conectado a um comutador virtual falhar ou for desconectado. Adaptadores de rede virtuais conectados a comutadores virtuais interno ou privado de Hyper-V não são capazes de se conectar ao comutador quando eles estão em uma equipe e falha de rede para a VM.  
+  
+Agrupamento NIC no Windows Server 2016 dá suporte a equipes com dois membros em máquinas virtuais. Você pode criar equipes maiores, mas não há suporte para equipes maiores. Cada membro da equipe deve se conectar a um comutador de Virtual de Hyper-V externo diferente e interfaces de rede da VM devem ser configurados para permitir o agrupamento.
+
+  
+Se você estiver configurando um agrupamento NIC em uma VM, você deve selecionar um **modo de agrupamento** dos _independente de comutador_ e um **modo de balanceamento de carga** de _deHashdeendereço_.   
+  
+  
+## <a name="sr-iov-capable-network-adapters"></a>Adaptadores de rede compatíveis com SR-IOV  
+Um agrupamento NIC no ou sob o host do Hyper-V não pode proteger o tráfego de SR-IOV, porque não passa pelo comutador do Hyper-V.  Com a opção de agrupamento de NIC de VM, você pode configurar dois comutadores de Virtual do Hyper-V externo, cada uma conectada a própria placa de rede compatíveis com SR-IOV.  
+  
+![NIC Teaming com adaptadores de rede compatíveis com SR-IOV](../../media/NIC-Teaming-in-Virtual-Machines--VMs-/nict_in_vm.jpg)  
+  
+Cada VM pode ter uma função de virtual (FV) de uma ou ambas as NICs de SR-IOV e, em caso de uma desconexão da NIC, o failover de VF primário para o adaptador de backup (FV). Como alternativa, a VM pode ter um VF de uma NIC e uma vmNIC não VF conectados a outro comutador virtual. Se a NIC associada à VF for desconectado, o tráfego pode fazer failover para outro comutador sem perda de conectividade.  
+  
+Porque o failover entre NICs em uma VM pode resultar em tráfego enviado com o endereço MAC de outro vmNIC, cada porta de comutador Virtual Hyper-V associada a uma VM usando o agrupamento NIC deve ser definida para permitir o agrupamento. 
+
+
+## <a name="related-topics"></a>Tópicos relacionados
+
+- [Gerenciamento e uso do endereço MAC de agrupamento NIC](NIC-Teaming-MAC-Address-Use-and-Management.md): Quando você configura uma equipe NIC com a opção de modo independente e hash de endereço ou distribuição de carga dinâmico, a equipe usa que o acesso à mídia (MAC) de endereço do membro da equipe de NIC primário no tráfego de saída de controle. O membro da equipe de NIC primário é um adaptador de rede selecionado pelo sistema operacional do conjunto inicial de membros da equipe.
+
+- [Configurações de agrupamento NIC](nic-teaming-settings.md): Neste tópico, podemos lhe dar uma visão geral das propriedades de agrupamento NIC, como agrupamento e modos de balanceamento de carga. Nós também fornecemos a você detalhes sobre a configuração do adaptador em espera e a propriedade de interface de equipe principal. Se você tiver pelo menos dois adaptadores de rede em um agrupamento NIC, você não precisa designar um adaptador de modo de espera para tolerância a falhas.
+  
+- [Criar um novo agrupamento NIC em uma VM ou computador host](Create-a-New-NIC-Team-on-a-Host-Computer-or-VM.md): Neste tópico, você cria um novo agrupamento NIC em um computador host ou em uma máquina virtual do Hyper-V (VM) executando o Windows Server 2016.
+
+- [Solução de problemas de agrupamento NIC](Troubleshooting-NIC-Teaming.md): Neste tópico, discutiremos maneiras de solucionar problemas de agrupamento NIC, como hardware, firmas de comutador físico e desabilitando ou habilitando adaptadores de rede usando o Windows PowerShell. 
+ 

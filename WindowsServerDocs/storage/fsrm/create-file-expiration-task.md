@@ -1,6 +1,6 @@
 ---
-title: "Criar uma tarefa de expiração de arquivos"
-description: "Este artigo descreve o processo de criação de uma tarefa de gerenciamento de arquivo para arquivos prestes a vencer"
+title: Criar uma tarefa de expiração de arquivos
+description: Este artigo descreve o processo de criação de uma tarefa de gerenciamento de arquivo para arquivos prestes a vencer
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,20 +9,21 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: b3aa535128786d0de5c1a5ef7186e26aa62b478d
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59859297"
 ---
 # <a name="create-a-file-expiration-task"></a>Criar uma tarefa de expiração de arquivos
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 O procedimento a seguir percorre com você o processo de criação de uma tarefa de gerenciamento de arquivos para arquivos expirados. As tarefas de expiração de arquivo são usadas para mover automaticamente todos os arquivos que correspondem a certos critérios para um diretório de expiração especificado, onde um administrador pode então recuperar essas arquivos e deletá-los.
 
 Quando uma tarefa de expiração de arquivo é executada, um novo diretório é criado no diretório de expiração, agrupados pelo nome do servidor no qual a tarefa foi executada.
 
-O nome do novo diretório é baseado no nome da tarefa de gerenciamento de arquivos e na hora em que ela foi executada. Quando um arquivo expirado é encontrado, ele é movido para o novo diretório, preservando, ao mesmo tempo, sua estrutura original de diretório.
+O nome do novo diretório é baseado no nome da tarefa de gerenciamento de arquivos e na hora em que ela foi executada. Quando um arquivo expirado é encontrado, ele é movido para o novo diretório, preservando, ao mesmo tempo, sua estrutura original de diretório.
 
 ## <a name="to-create-a-file-expiration-task"></a>Para criar uma tarefa de expiração de arquivo
 
@@ -60,7 +61,7 @@ O nome do novo diretório é baseado no nome da tarefa de gerenciamento de arqui
 
         -   Para enviar email para a pessoa cujos arquivos estão prestes a expirar, selecione a caixa de seleção **Envie um email para o usuário cujos arquivos estão prestes a expirar**.
 
-        -   Para configurar a mensagem, edite o padrão assunto linha e corpo da mensagem que são fornecidas. O texto entre colchetes insere informações variáveis sobre o evento de cota que causou a notificação. Por exemplo, a variável **\[Source File Owner\]** insere o nome do usuário cujo arquivo está para vencer. Para inserir variáveis adicionais no texto, clique em **Inserir variável**.
+        -   Para configurar a mensagem, edite o padrão assunto linha e corpo da mensagem que são fornecidas. O texto entre colchetes insere informações variáveis sobre o evento de cota que causou a notificação. Por exemplo, o **\[proprietário do arquivo de origem\]** variável insere o nome do usuário cujo arquivo está prestes a expirar. Para inserir variáveis adicionais no texto, clique em **Inserir variável**.
 
         -   Para anexar uma lista dos arquivos que estão prestes a expirar, clique em **Anexar ao email uma lista dos arquivos no qual ação será executada** e digite ou selecione um valor para **Número máximo de arquivos na lista**.
 
@@ -95,7 +96,7 @@ O nome do novo diretório é baseado no nome da tarefa de gerenciamento de arqui
 
 8.  Na guia **Programação**, clique em **Criar programação**, e depois na caixa de diálogo **Agendar**, clique em **Novo**. Isso exibe um agendamento padrão para 9:00. diariamente, mas você pode modificar o agendamento padrão. Quando você terminar de configurar o agendamento, clique em **OK** e, em seguida, clique em **OK** novamente.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
 -   [Gerenciamento de classificação](classification-management.md)
--   [Tarefas de Gerenciamento de Arquivos](file-management-tasks.md)
+-   [Tarefas de gerenciamento de arquivos](file-management-tasks.md)

@@ -1,6 +1,6 @@
 ---
-title: Implantar BranchCache
-description: Este tópico faz parte do BranchCache implantação guia para Windows Server 2016, que demonstra como implantar BranchCache nos modos de cache hospedado e distribuídos para otimizar o uso de largura de banda WAN em filiais
+title: Implantar o BranchCache
+description: Este tópico faz parte do BranchCache implantação guia para o Windows Server 2016, que demonstra como implantar o BranchCache nos modos de cache hospedado e distribuído para otimizar o uso de largura de banda WAN em filiais
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-bc
@@ -9,28 +9,29 @@ ms.topic: get-started-article
 ms.assetid: 30b0a6d9-d6d5-4019-b8dc-ed5365d9921f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e3c163e60777258c403b812adc19d6a598608052
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 80184322719292c4776923e4023e783eb632c26e
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59862047"
 ---
-# <a name="deploy-branchcache"></a>Implantar BranchCache
+# <a name="deploy-branchcache"></a>Implantar o BranchCache
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-As seções a seguir fornecem informações sobre como implantar BranchCache nos modos de cache distribuído e hospedados.  
+As seções a seguir fornecem informações sobre como implantar o BranchCache nos modos de cache hospedado e distribuído.  
   
 -   [Instalar e configurar servidores de conteúdo](Install-and-Configure-Content-Servers.md)  
   
--   [Implantar o Cache hospedado servidores & #40; opcional & #41;](deploy-hosted-cache-servers.md)  
+-   [Implantar servidores de Cache hospedado &#40;opcional&#41;](deploy-hosted-cache-servers.md)  
   
--   [Prehashing pré-carregamento opcional; conteúdo em Cache hospedado servidores & #40 e 41;](prehashing-and-preloading.md)  
+-   [Realizar o hash prévio e o pré-carregamento de conteúdo em servidores de Cache hospedado &#40;opcional&#41;](prehashing-and-preloading.md)  
   
 -   [Configurar computadores cliente BranchCache](Configure-BranchCache-Client-Computers.md)  
   
 > [!NOTE]  
-> Os procedimentos neste guia não inclua instruções para os casos em que o **User Account Control** abre a caixa de diálogo para solicitar sua permissão para continuar. Se essa caixa de diálogo Abrir enquanto você estiver executando os procedimentos neste guia e se a caixa de diálogo estava aberta em resposta a ações, clique em **continuar**.  
+> Os procedimentos deste guia não incluem instruções para os casos em que a caixa de diálogo **Controle de Conta de Usuário** é aberta para solicitar sua permissão para continuar. Caso essa caixa de diálogo seja aberta durante a execução dos procedimentos deste guia e em resposta às suas ações, clique em **Continuar**.  
   
 
 

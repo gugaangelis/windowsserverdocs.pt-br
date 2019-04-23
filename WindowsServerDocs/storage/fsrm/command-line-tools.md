@@ -8,15 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 7d36a30ca65ae88afdc11e516968c6f9900a5ae6
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 9b31c133b0ee4382b5b9aeded9b3852c7230d2d8
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59858437"
 ---
 # <a name="file-server-resource-manager-command-line-tools"></a>Ferramentas de linha de comando do Gerenciador de Recursos de Servidor de Arquivos
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Gerenciador de recursos do servidor de arquivos instala o cmdlets do PowerShell [FileServerResourceManager](https://technet.microsoft.com/itpro/powershell/windows/fileserverresourcemanager/fileserverresourcemanager), bem como as ferramentas de linha de comando a seguir:
 
@@ -26,9 +27,9 @@ Gerenciador de recursos do servidor de arquivos instala o cmdlets do PowerShell 
 
 Você pode usar essas ferramentas para gerenciar recursos de armazenamento em um computador local ou em um computador remoto. Para obter mais informações sobre essas ferramentas de linha de comando, consulte as referências a seguir:
 
--   **Dirquota**: <http://go.microsoft.com/fwlink/?LinkId=92741>
--   **Filescrn**: <http://go.microsoft.com/fwlink/?LinkId=92742>
--   **Storrept**: <http://go.microsoft.com/fwlink/?LinkId=92743>
+-   **Dirquota**: <https://go.microsoft.com/fwlink/?LinkId=92741>
+-   **Filescrn**: <https://go.microsoft.com/fwlink/?LinkId=92742>
+-   **Storrept**: <https://go.microsoft.com/fwlink/?LinkId=92743>
 
 
 > [!Note]
@@ -56,6 +57,6 @@ Para gerenciar recursos remotos com as ferramentas de linha de comando:
 -   A exceção **Gerenciamento do Gerenciador de Recursos de Servidor de Arquivos remoto** no computador remoto deve ser habilitada. Habilite essa exceção usando o Firewall do Windows no Painel de Controle.
 
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
--   [Gerenciamento de recursos de armazenamento remoto](managing-remote-storage-resources.md)
+-   [Gerenciando recursos de armazenamento remoto](managing-remote-storage-resources.md)

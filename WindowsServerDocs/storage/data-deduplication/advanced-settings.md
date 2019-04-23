@@ -1,6 +1,6 @@
 ---
 ms.assetid: 01c8cece-66ce-4a83-a81e-aa6cc98e51fc
-title: "Configurações avançadas de Eliminação de Duplicação de Dados"
+title: Configurações avançadas de Eliminação de Duplicação de Dados
 ms.prod: windows-server-threshold
 ms.technology: storage-deduplication
 ms.topic: article
@@ -9,10 +9,11 @@ manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
 ms.openlocfilehash: 15cfc054810a2cab85aae9a04d6195c3ae6fe0b9
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59861207"
 ---
 # <a name="advanced-data-deduplication-settings"></a>Configurações avançadas de Eliminação de Duplicação de Dados
 
@@ -20,19 +21,19 @@ ms.lasthandoff: 10/17/2017
 
 Este documento descreve como alterar configurações avançadas de [Eliminação de Duplicação de Dados](overview.md). Para [cargas de trabalho recomendadas](install-enable.md#enable-dedup-candidate-workloads), as configurações padrão devem ser suficientes. O principal motivo para alterar essas configurações é melhorar o desempenho da Eliminação de Duplicação de Dados com outros tipos de cargas de trabalho.
 
-## <a id="modifying-job-schedules"></a>Alterar o plano de trabalho da Eliminação de Duplicação de Dados
+## <a id="modifying-job-schedules"></a>Modificando agendas de trabalho de eliminação de duplicação de dados
 Os [planos de trabalho de Eliminação de Duplicação de Dados padrão](understand.md#job-info) são projetados para funcionarem bem com cargas de trabalho recomendadas e serem o menos intrusivos possível (exceto o trabalho *Otimização de Prioridade*, que está habilitado para o tipo de uso [**Backup**](understand.md#usage-type-backup)). Quando as cargas de trabalho têm grandes requisitos de recursos, é possível fazer com que os trabalhos sejam executados somente durante horas ociosas, ou reduzir ou aumentar a quantidade de recursos do sistema que um trabalho de Eliminação de Duplicação de Dados pode consumir.
 
-### <a id="modifying-job-schedules-change-schedule"></a>Alterar um plano de Eliminação de Duplicação de Dados
+### <a id="modifying-job-schedules-change-schedule"></a>Alterando uma agenda de eliminação de duplicação de dados
 Os trabalhos de Eliminação de Duplicação de Dados são programados pelo Agendador de Tarefas do Windows e podem ser exibidos e editados lá no caminho Microsoft\Windows\Deduplication. A Eliminação de Duplicação de Dados inclui vários cmdlets que facilitam o agendamento.
 * [`Get-DedupSchedule`](https://technet.microsoft.com/library/hh848446.aspx) mostra os trabalhos agendados atualmente.
 * [`New-DedupSchedule`](https://technet.microsoft.com/library/hh848445.aspx) cria um novo trabalho agendado.
 * [`Set-DedupSchedule`](https://technet.microsoft.com/library/hh848447.aspx) modifica um trabalho agendado existente.
-* [`Remove-DedupSchedule`](https://technet.microsoft.com/library/hh848451.aspx) remove um trabalho agendado.
+* [`Remove-DedupSchedule`](https://technet.microsoft.com/library/hh848451.aspx) Remove um trabalho agendado.
 
 O motivo mais comum para alterar quando executar trabalhos de Eliminação de Duplicação de Dados é garantir que os trabalhos sejam executados durante fora do horário comercial. O exemplo de passo a passo a seguir mostra como modificar o plano de Eliminação de Duplicação de Dados para um cenário em que *tudo corre bem*: um host hiperconvergido do Hyper-V que fica ocioso nos fins de semana e depois das 19h durante a semana. Para alterar a agenda, execute os cmdlets do PowerShell a seguir em um contexto de Administrador.
 
-1. Desabilite os trabalhos de [Otimização](understand.md#job-info-optimization) agendados por hora.  
+1. Desabilite os trabalhos de [Otimização](understand.md#job-info-optimization)agendados por hora.  
     ```PowerShell
     Set-DedupSchedule -Name BackgroundOptimization -Enabled $false
     Set-DedupSchedule -Name PriorityOptimization -Enabled $false
@@ -61,7 +62,7 @@ O motivo mais comum para alterar quando executar trabalhos de Eliminação de Du
     New-DedupSchedule -Name "WeeklyIntegrityScrubbing" -Type Scrubbing -DurationHours 23 -Memory 100 -Cores 100 -Priority High -Days @(0) -Start (Get-Date "2016-08-14 07:00:00")
     ```
 
-### <a id="modifying-job-schedules-available-settings"></a>Configurações disponíveis para todos os trabalhos
+### <a id="modifying-job-schedules-available-settings"></a>Configurações de todo o trabalho disponíveis
 Você pode alternar as seguintes configurações para trabalhos de Eliminação de Duplicação de Dados novos ou agendados:
 
 <table>
@@ -87,13 +88,13 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
             <td>Esse valor é necessário porque é o tipo de trabalho que você deseja agendar. Esse valor não pode ser alterado depois que a tarefa é agendada.</td>
         </tr>
         <tr>
-            <td>Prioridade</td>
+            <td>Priority</td>
             <td>A prioridade do sistema do trabalho agendado</td>
             <td>
                 <ul>
                     <li>Alto</li>
                     <li>Médio</li>
-                    <li>Baixa</li>
+                    <li>Baixo</li>
                 </ul>
             </td>
             <td>Esse valor ajuda o sistema a determinar como alocar tempo da CPU. *Alta* usará mais tempo de CPU; *Baixa* usará menos.</td>
@@ -125,7 +126,7 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
             <td>Para impedir que um trabalho seja executado em horas não ociosas de uma carga de trabalho</td>
         </tr>
         <tr>
-            <td>Habilitada</td>
+            <td>Enabled</td>
             <td>Se o trabalho será executado ou não</td>
             <td>Verdadeiro/Falso</td>
             <td>Para desabilitar um trabalho sem removê-lo</td>
@@ -151,7 +152,7 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
         <tr>
             <td>Nome</td>
             <td>O nome do trabalho agendado</td>
-            <td>Cadeia de caracteres</td>
+            <td>String</td>
             <td>Um trabalho deve ter um nome de identificação exclusivo.</td>
         </tr>
         <tr>
@@ -161,7 +162,7 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
             <td>Você deseja restaurar manualmente os arquivos que ficam em seções inválidas do disco.</td>
         </tr>
         <tr>
-            <td>Inicie o</td>
+            <td>Início</td>
             <td>Especifica a hora em que um trabalho deve ser iniciado</td>
             <td>`System.DateTime`</td>
             <td>A parte *date* do parâmetro `System.Datetime` fornecido a *Start* é irrelevante (desde que esteja no passado), mas a parte *time* especifica quando o trabalho deve começar.</td>
@@ -175,7 +176,7 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
     </tbody>
 </table>
 
-## <a id="modifying-volume-settings"></a>Alterar configurações de Eliminação de Duplicação de Dados em todo o volume
+## <a id="modifying-volume-settings"></a>Modificando configurações de todo o volume de eliminação de duplicação de dados
 ### <a id="modifying-volume-settings-how-to-toggle"></a>Alternar configurações de volume
 Você pode definir as configurações padrão para Eliminação de Duplicação de Dados de todo o volume por meio do [tipo de uso](understand.md#usage-type) que você seleciona quando habilita a eliminação de duplicação de um volume. A Eliminação de Duplicação de Dados inclui cmdlets que facilitam a edição das configurações de todo o volume:
 
@@ -274,7 +275,7 @@ As principais razões para modificar as configurações de volume do tipo de uso
     </tbody>
 </table>
 
-## <a id="modifying-dedup-system-settings"></a>Alterar configurações de Eliminação de Duplicação de Dados em todo o sistema
+## <a id="modifying-dedup-system-settings"></a>Modificando configurações de todo o sistema de eliminação de duplicação de dados
 A Eliminação de Duplicação de Dados tem configurações adicionais em todo o sistema que podem ser definidas no [registro](https://technet.microsoft.com/library/cc755256(v=ws.11).aspx). Essas configurações se aplicam a todos os trabalhos e aos volumes que são executados no sistema. Redobre os cuidados ao editar o registro.
 
 Por exemplo, convém desabilitar a coleta de lixo completa. Para saber mais sobre a utilidade disso em seu cenário, confira as [Perguntas frequentes](#faq-why-disable-full-gc). Para editar o registro com o PowerShell:
@@ -309,7 +310,7 @@ Por exemplo, convém desabilitar a coleta de lixo completa. Para saber mais sobr
         </tr>
         <tr>
             <td>DeepGCInterval</td>
-            <td>Essa configuração define o intervalo no qual os trabalhos de Coleta de Lixo regulares se tornam [Coleta de Lixo completa](advanced-settings.md#faq-full-v-regular-gc). Uma configuração de X significa que a cada <sup>X</sup> trabalhos, um era trabalho de Coleta de Lixo completa. Observe que a Coleta de Lixo completa sempre está desabilitada (independentemente do valor do registro) para volumes com o [tipo de uso Backup](understand.md#usage-type-backup). `Start-DedupJob -Type GarbageCollection -Full` Pode ser usada se a Coleta de Lixo completa for desejada em um volume de Backup.</td>
+            <td>Essa configuração define o intervalo no qual os trabalhos de Coleta de Lixo regulares se tornam [Coleta de Lixo completa](advanced-settings.md#faq-full-v-regular-gc). Uma configuração de X significa que a cada <sup>X</sup> trabalhos, um era trabalho de Coleta de Lixo completa. Observe que a Coleta de Lixo completa sempre está desabilitada (independentemente do valor do registro) para volumes com o [tipo de uso Backup](understand.md#usage-type-backup). `Start-DedupJob -Type GarbageCollection -Full` pode ser usado se a coleta de lixo completa for desejada em um volume de Backup.</td>
             <td>Números inteiros (-1 indica desabilitada)</td>
             <td>Confira [esta pergunta frequente](advanced-settings.md#faq-why-disable-full-gc)</td>
         </tr>
@@ -317,13 +318,13 @@ Por exemplo, convém desabilitar a coleta de lixo completa. Para saber mais sobr
 </table>
 
 ## <a id="faq"></a>Perguntas frequentes
-<a id="faq-use-responsibly"></a>**Mudei uma configuração da Eliminação de Duplicação de Dados e agora os trabalhos estão lentos ou não são concluídos, ou o desempenho da carga de trabalho diminuiu. Por que?**  
+<a id="faq-use-responsibly"></a>**Mudei uma configuração de eliminação de duplicação de dados e agora os trabalhos estão lentos ou não são concluídos ou diminuiu o desempenho da carga de trabalho. Por quê?**  
 Essas configurações dão bastante poder de controle sobre a execução da Eliminação de Duplicação de Dados. Use-as com responsabilidade e [monitore o desempenho](run.md#monitoring-dedup).
 
-<a id="faq-running-dedup-jobs-manually"></a>**Quero executar um trabalho de Eliminação de Duplicação de Dados no momento, mas não quero criar uma nova agenda. Posso fazer isso?**  
+<a id="faq-running-dedup-jobs-manually"></a>**Quero executar um trabalho de eliminação de duplicação de dados no momento, mas não quero criar uma nova agenda posso fazer isso?**  
 Sim, [todos os trabalhos podem ser executados manualmente](run.md#running-dedup-jobs-manually).
 
-<a id="faq-full-v-regular-gc"></a>**Qual é a diferença entre a Coleta de Lixo completa e a regular?**  
+<a id="faq-full-v-regular-gc"></a>**Qual é a diferença entre a coleta de lixo completa e a regular?**  
 Há dois tipos de [coleta de lixo](understand.md#job-info-gc):
 
 - A *Coleta de Lixo regular* usa um algoritmo estatístico para encontrar as partes grandes não referenciadas que atendem a certos critérios (memória e IOPs baixos). A Coleta de Lixo regular compacta um contêiner de repositório de partes somente se uma porcentagem mínima das partes não for referenciada. Esse tipo de Coleta de Lixo é executado muito mais rapidamente e usa menos recursos do que a Coleta de Lixo completa. O agendamento padrão de trabalho de Coleta de Lixo regular é a execução uma vez por semana.
