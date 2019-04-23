@@ -10,24 +10,24 @@ ms.date: 12/5/2017
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 9cf87597-b15d-4f43-8aa1-91e60367f011
-ms.openlocfilehash: a2da7b8437a9dc7f44fc83837e3ebad93b7fe3ab
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
-ms.translationtype: HT
+ms.openlocfilehash: 96f098457b9bac4541421c7889aefb030e3d8804
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "1410393"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59868797"
 ---
 # <a name="introducing-windows-server-version-1709"></a>Apresentando o Windows Server, versão 1709
 
->Aplicável a: Windows Server (canal semestral)
+>Aplica-se a: Windows Server (canal semestral)
 
-**O Windows Server, versão 1709 é a primeira versão no novo Canal semestral.** 
+**Windows Server, versão 1709 é a primeira versão no novo canal semestral.** 
 
-## <a name="what-the-semi-annual-channel-is--and-isnt"></a>O que o canal Semestral é -- e o que não é
-Como o primeiro lançamento neste novo canal, o Windows Server, versão 1709 *não* é uma "atualização" ou um "service pack" do Windows Server 2016. É o primeiro dos lançamentos semestrais de servidor em uma **faixa de novos lançamentos** para clientes que estejam mudando em "cadência de nuvem", como aqueles em ciclos de desenvolvimento rápido ou hosters acompanhando os investimentos mais recentes do Hyper-V. Cada versão nesta faixa terá suporte por 18 meses a partir do lançamento inicial. Para saber mais sobre o Canal Semestral, além de obter **dicas para decidir em qual canal ingressar** (ou em qual permanecer), confira [Visão geral do Canal Semestral](semi-annual-channel-overview.md).
+## <a name="what-the-semi-annual-channel-is--and-isnt"></a>O que o canal Semestral engloba
+Como o primeiro lançamento neste novo canal, o Windows Server, versão 1709 *não* é uma "atualização" ou um "service pack" do Windows Server 2016. É o primeiro dos lançamentos semestrais de servidor em uma **faixa de novos lançamentos** para clientes que estejam mudando em "cadência de nuvem", como aqueles em ciclos de desenvolvimento rápido ou hosters acompanhando os investimentos mais recentes do Hyper-V. Cada versão neste roteiro terá suporte por 18 meses a partir do lançamento inicial. Para saber mais sobre o Canal Semestral, além de obter **dicas para decidir em qual canal ingressar** (ou em qual permanecer), confira [Visão geral do Canal Semestral](semi-annual-channel-overview.md).
 
 
-**O produto do LTSC (Canal de Manutenção de Longo Prazo) atual é o Windows Server 2016**. O LTSC será melhor se você precisar de estabilidade e a previsibilidade de longo prazo em seu sistema operacional de servidor para dar suporte a aplicativos e cargas de trabalho tradicionais. Se desejar permanecer no LTSC, você deverá instalar (ou continuar a usar) o Windows Server 2016, que pode ser instalado no modo Server Core ou Servidor com o modo de Experiência Desktop. Consulte [Introdução ao Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/server-basics) para obter mais detalhes.
+**O produto do LTSC (Canal de Manutenção de Longo Prazo) atual é o Windows Server 2016**. O LTSC é o ideal se você precisar de estabilidade e a previsibilidade de longo prazo no sistema operacional de servidor para oferecer suporte a aplicativos e cargas de trabalho tradicionais. Se desejar permanecer no LTSC, você deverá instalar (ou continuar a usar) o Windows Server 2016, que pode ser instalado no modo Server Core ou Servidor com o modo de Experiência Desktop. Consulte [Introdução ao Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/server-basics) para obter mais detalhes.
 
 
 ## <a name="whats-different-about-1709"></a>Qual é a diferença para o 1709?
@@ -56,11 +56,11 @@ Para obter uma visão geral das principais informações do Windows Server, vers
 
 Esta versão deve ser instalada como uma instalação limpa.
 
-- VLSC: os clientes com licenciamento por volume com o [Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx) podem obter essa versão ao acessar o [Centro de serviço de licenciamento por volume](https://www.microsoft.com/Licensing/servicecenter/default.aspx) e clicar em **Entrar**. Em seguida, clique em **Downloads e chaves** e procure por esta versão. 
+- VLSC: Os clientes de licença de volume com [Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx) pode obter esta versão, vá para o [Volume Licensing Service Center](https://www.microsoft.com/Licensing/servicecenter/default.aspx) e clicando em **entrar**. Em seguida, clique em **Downloads e chaves** e procure por esta versão. 
 
 - O Windows Server, versão 1709 também está disponível em [Microsoft Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Microsoft.WindowsServer?tab=Overview).
 
-- Participantes das **Assinaturas do Visual Studio:** se você já participa das Assinaturas do Visual Studio, é possível obter o Windows Server, versão 1709 ao acessar a [página de download do Assinante do Visual Studio](https://my.visualstudio.com/downloads?pid=2347) e concluir o download disponível. Caso ainda não seja um assinante, acesse [Assinaturas do Visual Studio](https://www.visualstudio.com/subscriptions/) para se inscrever e, em seguida, acesse a [página de download de Assinante do Visual Studio](https://my.visualstudio.com/downloads?pid=2347) como mostrado acima. As versões obtidas por meio de Assinaturas do Visual Studio destinam-se somente a desenvolvimento e teste.
+- Os participantes **assinaturas do Visual Studio:** Se você já participar nas assinaturas do Visual Studio, você pode obter o Windows Server, versão 1709 indo para o [página de download de assinante do Visual Studio](https://my.visualstudio.com/downloads?pid=2347) e concluir o download disponível lá. Caso ainda não seja um assinante, acesse [Assinaturas do Visual Studio](https://www.visualstudio.com/subscriptions/) para se inscrever e, em seguida, acesse a [página de download de Assinante do Visual Studio](https://my.visualstudio.com/downloads?pid=2347) como mostrado acima. As versões obtidas por meio de Assinaturas do Visual Studio destinam-se somente a desenvolvimento e teste.
 
 
 

@@ -1,6 +1,6 @@
 ---
 title: Instalar o Server Core
-description: Como obter e instalar uma instalação Server Core no Windows Server (canal semestral), Windows Server 2016 ou Windows Server 2019.
+description: Como obter e instalar uma instalação Server Core no Windows Server 2019, Windows Server 2016 ou Windows Server (canal semestral).
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -15,15 +15,15 @@ ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
 ms.openlocfilehash: d99cd0b028d08d5c3247541ce3a868676b60693d
-ms.sourcegitcommit: 7fc7271745e40f110c54918b55624cadd0d7ff98
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "8991793"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59869017"
 ---
-# Instalar o Server Core
+# <a name="install-server-core"></a>Instalar o Server Core
 
-> Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server (canal semestral)
+> Aplica-se a: 2019, Windows Server 2016, Windows Server (canal semestral) do Windows Server
   
 Quando você instala o Windows Server pela primeira vez, você tem as seguintes opções de instalação:
 
@@ -52,11 +52,11 @@ Com a opção Server Core, a interface padrão do usuário (a Experiência Deskt
 
 **Instale, configure, desinstale funções de servidor localmente:** em um prompt de comando com o Windows PowerShell.
 
-**Instalar, configurar, desinstale funções de servidor remotamente de um computador de cliente do Windows (ou um servidor com a experiência Desktop instalado):** com o Gerenciador do servidor, ferramentas de administração de servidor remoto (RSAT), Windows PowerShell ou o Windows Admin Center.
+**Instale, configure, desinstale funções de servidor remotamente de um computador de cliente do Windows (ou um servidor com a experiência Desktop instalado):** com o Gerenciador do servidor, ferramentas de administração de servidor remoto (RSAT), Windows PowerShell ou Windows Admin Center .
 
 >[!NOTE]
 >
->Para RSAT, é necessário usar a versão do Windows 10.
+>Para as RSAT, é necessário usar a versão do Windows 10.
 >O Console de Gerenciamento Microsoft não está disponível localmente.
 
 **Funções de servidor de exemplo disponíveis:**
@@ -77,24 +77,24 @@ Com a opção Server Core, a interface padrão do usuário (a Experiência Deskt
 - Agente de Conexão de Serviços de Área de Trabalho Remota
 - Licenciamento
 - Virtualização
-- Serviços de ativação de volume
+- Serviços de Ativação por Volume
 
 Para funções não incluídas no Server Core, consulte [funções, serviços de função e recursos não no Windows Server - Server Core](../administration/server-core/server-core-removed-roles.md).
 
-## Instalar no Windows Server 2019 ou Windows Server 2016
+## <a name="installing-on-windows-server-2019-or-windows-server-2016"></a>Instalação no Windows Server 2019 ou no Windows Server 2016
 
-Para as etapas gerais de instalação e opções para o Windows Server (canal de manutenção a longo prazo), consulte a [atualização e instalação do Windows Server](installation-and-upgrade.md).
+Para etapas de instalação geral e as opções para o Windows Server (canal de manutenção para longo prazo), consulte [instalação do Windows Server e atualização](installation-and-upgrade.md).
 
-## Instalando no Windows Server (canal semestral)
+## <a name="installing-on-windows-server-semi-annual-channel"></a>Instalando no Windows Server (canal semestral)
 
-Etapas de instalação do Windows Server (canal semestral) são as mesmas para instalar versões anteriores do Windows Server (de um. Imagem ISO), com as seguintes exceções:
+Etapas de instalação do Windows Server (canal semestral) são o mesmo que a instalação de versões anteriores do Windows Server (de um. Imagem ISO), com as seguintes exceções:
 - Nenhuma upgrade com suporte de versões anteriores do Windows Server para o Windows Server, versão 1709. Uma nova instalação sempre é necessária.
-   Isso significa que, quando você executa setup.exe da área de trabalho de um computador Windows, a experiência de instalação não permite a opção de upgrade (ela está desativada).
+   Isso significa que quando você executa setup.exe da área de trabalho de um computador Windows, a experiência de configuração não permite que a opção de atualização (ele será esmaecido).
 - Não há nenhuma versão de avaliação do Windows Server (canal semestral)
-- Não há nenhum OEM ou uma versão de varejo. Windows Server (canal semestral) pode ser licenciado somente por meio de programas de Software Assurance ou de fidelidade.
+- Não há nenhum OEM ou uma versão de varejo. Windows Server (canal semestral) só podem ser licenciado por meio de programas de Software Assurance ou fidelidade.
 
 Para obter o Windows Server versão 1709, consulte [Apresentando o Windows Server, versão 1709](get-started-with-1709.md).
 
-Para obter o Windows Server versão 1803, consulte [Apresentando o Windows Server, versão 1803](get-started-with-1803.md).
+Para obter a versão 1803 do Windows Server, consulte [apresentando o Windows Server, versão 1803](get-started-with-1803.md).
 
-Para ver o que há de novo no Windows Server, versão 1809, veja [as novidades no Windows Server versão 1809](whats-new-in-windows-server-1809.md)
+Para ver o que há de novo no Windows Server, versão 1809, consulte [que há de novo no Windows Server versão 1809](whats-new-in-windows-server-1809.md)

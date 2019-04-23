@@ -1,52 +1,62 @@
 ---
 ms.assetid: ddfbbda3-30ca-4537-af12-667efc6f63ff
-title: "Configurar métodos de autenticação adicional do AD FS"
-description: 
+title: Configure métodos de autenticação adicionais para AD FS
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
-ms.date: 05/31/2017
+ms.date: 10/04/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 65baa6f94e1efa1fa337eab477b18f947cf0bb2d
-ms.sourcegitcommit: 36d7b1dfd7da8e9f303d007a628e76149de000f2
+ms.openlocfilehash: 73de8908677b3f74651b10c29ef2abe62e484694
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59868407"
 ---
-# <a name="configure-additional-authentication-methods-for-ad-fs"></a>Configurar métodos de autenticação adicional do AD FS
+# <a name="configure-additional-authentication-methods-for-ad-fs"></a>Configure métodos de autenticação adicionais para AD FS
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
-Para habilitar a autenticação multifator (MFA), você deve selecionar pelo menos um método de autenticação adicional. Por padrão, em serviços de Federação do Active Directory (AD FS) no Windows Server 2012 R2, você pode selecionar a autenticação de certificado (em outras palavras, autenticação com base em um cartão inteligente) como um método de autenticação adicional.
+Para habilitar o Multi-Factor Authentication (MFA), você deve selecionar pelo menos um método de autenticação adicional. Por padrão, no Active Directory Federation Services (AD FS) no Windows Server 2012 R2, você pode selecionar a autenticação de certificado (em outras palavras, autenticação baseada em cartão inteligente) como um método de autenticação adicional.
 
 > [!NOTE]
-> Se você selecionar a autenticação de certificado, certifique-se de que os certificados de cartão inteligente tem sido configurados com segurança e têm requisitos de pin.
+> Se você selecionar a Autenticação de Certificado, verifique se os certificados de cartão inteligente foram provisionados de forma segura e se têm requisitos de PIN.
 
-Você sabia que o Microsoft Azure forneça funcionalidade semelhante na nuvem? Saiba mais sobre [soluções de identidade do Microsoft Azure ](http://aka.ms/m2w274).<br /><br />Crie uma solução de identidade híbrida no Microsoft Azure:<br /> - [Saiba mais sobre autenticação multifator Azure.](http://aka.ms/ey6o9r)<br /> - [Gerencie identidades para ambientes híbridos de floresta única usando a autenticação de nuvem.](http://aka.ms/g1jat8)<br /> - [Gerencie o risco com autenticação multifator adicional para aplicativos confidenciais.](http://aka.ms/kt1bbm)|
+Você sabia que o Microsoft Azure fornece uma funcionalidade semelhante na nuvem? Saiba mais sobre as [Soluções de identidade do Microsoft Azure](http://aka.ms/m2w274).<br /><br />Criar uma solução de identidade híbrida no Microsoft Azure:<br /> - [Saiba mais sobre a autenticação multifator do Azure.](http://aka.ms/ey6o9r)<br /> - [Gerencie identidades para ambientes híbridos de floresta única usando a autenticação de nuvem.](http://aka.ms/g1jat8)<br /> - [Gerencie riscos com autenticação multifator adicional para aplicativos confidenciais.](http://aka.ms/kt1bbm)
 
-## <a name="microsoft-and-third-party-additional-authentication-methods"></a>Métodos de autenticação adicional Microsoft e serviços de terceiros
-Você também pode configurar e permitir que a Microsoft e métodos de autenticação de terceiros no AD FS no Windows Server 2012 R2. Depois de instalado e registrado com o AD FS, você pode impor MFA como parte da política de autenticação global ou por confiar-terceiros.
+## <a name="microsoft-and-third-party-additional-authentication-methods"></a>Métodos de autenticação adicionais de terceiros e da Microsoft
+Você também pode configurar e habilitar métodos de autenticação de terceiros no AD FS no Windows Server 2012 R2 e Microsoft. Depois de instalado e registrado com o AD FS, você pode impor MFA como parte da política de autenticação global ou por parte confiável.
 
-Abaixo está uma lista alfabética da Microsoft e de fornecedores de terceiros com ofertas de MFA atualmente disponível do AD FS no Windows Server 2012 R2.
+Segue abaixo uma lista em ordem alfabética dos provedores da Microsoft e de terceiros com ofertas AMF atualmente disponíveis para AD FS no Windows Server 2012 R2.
 
-||||
-|-|-|-|
-|**Provedor**|**Oferta**|**Link para saber mais**|
-|Gemalto|Serviços de segurança e identidade Gemalto|[http://www.gemalto.com/identity](http://www.gemalto.com/identity)|
-|inWebo tecnologias|inWebo serviço de autenticação empresarial|[inWebo autenticação empresarial](http://www.inwebo.com)|
-|Pessoas de logon|Conector de pessoas MFA API de logon para AD FS 2012 R2 (beta pública)|[https://www.loginpeople.com](https://www.loginpeople.com)|
-|Microsoft Corp|MFA do Microsoft Azure|[Guia passo a passo: Gerenciar o risco com autenticação multifator adicional para aplicativos confidenciais](https://technet.microsoft.com/library/dn280946.aspx) (veja a etapa 3)|
-|RSA, a divisão de segurança da EMC|Agente de autenticação RSA SecurID para serviços de Federação do Microsoft Active Directory|[Agente de autenticação RSA SecurID para serviços de Federação do Microsoft Active Directory](http://www.emc.com/security/rsa-securid/rsa-authentication-agents/microsoft-ad-fs.htm)|
-|SafeNet, Inc.|Agente de serviço (SAS) de autenticação SafeNet do AD FS|[SafeNet o serviço de autenticação: Guia de configuração do AD FS agente](http://www.safenet-inc.com/resources/integration-guide/data-protection/Safenet_Authentication_Service/SafeNet_Authentication_Service__AD_FS_Agent_Configuration_Guide/?langtype=1033)|
-|Swisscom|Serviço de autenticação de ID móvel e serviços de assinatura|[Serviço de autenticação de ID móvel](http://swisscom.ch/mid)|
-|Symantec|Validação da Symantec e serviço de proteção de ID (VIP)|[Validação da Symantec e serviço de proteção de ID (VIP)](http://www.symantec.com/vip-authentication-service)|
+|Provedor|Oferta|Link para saber mais|
+|-|-|-| 
+|aPersona|aPersona adaptável a autenticação multifator para que o SSO do Microsoft ADFS|[aPersona ASM adaptador do AD FS](https://www.apersona.com/adfs)|
+|Segurança Duo|Adaptador do MFA Duo para o AD FS|[Duo autenticação do AD FS](https://duo.com/docs/adfs)|
+|Gemalto|Identidade e Serviços de Segurança da Gemalto|[http://www.gemalto.com/identity](http://www.gemalto.com/identity)|
+|Tecnologias inWebo|Serviço inWebo Enterprise Authentication|[inWebo Enterprise autenticação](http://www.inwebo.com)|
+|Login People|Conector API de Login People MFA para AD FS 2012 R2 (beta público)|[https://www.loginpeople.com](https://www.loginpeople.com)|
+|Microsoft Corp.|Microsoft Azure MFA|[Guia passo a passo: Gerenciando riscos com a Multi-Factor Authentication adicional para aplicativos sensíveis](https://technet.microsoft.com/library/dn280946.aspx) (consulte a etapa 3)|
+Mideye | Provedor de autenticação mideye para ADFS | [Mideye autenticação de dois fatores com o serviço de Federação do Microsoft Active Directory](https://www.mideye.com/support/administrators/documentation/integration/microsoft-adfs/)|
+|Okta | MFA Okta para serviços de Federação do Active Directory | [Serviços de MFA do Okta para federação do Active Directory (ADFS)](https://help.okta.com/en/prod/Content/Topics/integrations/adfs-okta-int.htm)|
+|Uma identidade| Starling 2FA do AD FS|[Starling 2FA adaptador do AD FS](https://www.oneidentity.com/products/starling-two-factor-authentication/)|
+|Uma identidade| Defender AD FS|[Adaptador do Defender AD FS](https://www.oneidentity.com/products/defender/)|
+|Identidade de ping|MFA PingID adaptador do AD FS|[MFA PingID adaptador do AD FS](https://documentation.pingidentity.com/pingid/pingidAdminGuide/index.shtml#pid_c_PingIDforADFSSSO.html)|
+|RSA, A Divisão de Segurança da EMC|RSA SecurID Authentication Agent para Serviços de Federação do Microsoft Active Directory|[RSA SecurID Authentication Agent para serviços de Federação do Microsoft Active Directory](http://www.emc.com/security/rsa-securid/rsa-authentication-agents/microsoft-ad-fs.htm)|
+|SafeNet, Inc.|SafeNet Authentication Service (SAS) Agent para AD FS|[SafeNet Authentication Service: Guia de configuração de agente do AD FS](http://www.safenet-inc.com/resources/integration-guide/data-protection/Safenet_Authentication_Service/SafeNet_Authentication_Service__AD_FS_Agent_Configuration_Guide/?langtype=1033)|
+|SecureMFA|Provedor de OTP SecureMFA| [Provedores de autenticação multifator AD FS](https://www.securemfa.com/)|
+|Swisscom|Serviço de Autenticação de ID Móvel e Serviços de Assinatura|[Serviço de autenticação de ID móvel](http://swisscom.ch/mid)|
+|Symantec|Symantec Validation e ID Protection Service (VIP)|[Symantec Validation e ID Protection Service (VIP)](http://www.symantec.com/vip-authentication-service)|
+|Trusona|Essential (sem senha MFA) e executivo (essencial + prova de identidade)| [A Trusona a autenticação multifator](https://www.trusona.com/solution-overview/)|
 
-## <a name="custom-authentication-method-for-ad-fs-in-windows-server-2012-r2"></a>Método de autenticação personalizado do AD FS no Windows Server 2012 R2
-Agora podemos fornecer instruções para criar seu próprio método de autenticação personalizado do AD FS no Windows Server 2012 R2. Para obter mais informações, consulte [criar um método de autenticação personalizado para o AD FS no Windows Server 2012 R2](https://go.microsoft.com/fwlink/?LinkID=511980).
+
+## <a name="custom-authentication-method-for-ad-fs-in-windows-server-2012-r2"></a>Método de autenticação personalizado para AD FS em Windows Server 2012 R2
+Agora, nós fornecemos instruções para construir o seu próprio método de autenticação personalizado para AD FS no Windows Server 2012 R2. Para obter mais informações, consulte [Compilar um Método de autenticação personalizado para AD FS no Windows Server 2012 R2](https://go.microsoft.com/fwlink/?LinkID=511980).
 
 ## <a name="see-also"></a>Consulte também
-[Gerenciar o risco com autenticação multifator adicional para aplicativos confidenciais](Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
+[Gerencie riscos com autenticação multifator adicional para aplicativos confidenciais](Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 
 
