@@ -1,6 +1,6 @@
 ---
 title: Usar um plug-in de gateway personalizado em sua extensão de ferramenta
-description: Desenvolver uma extensão de ferramenta SDK do Windows Admin Center (Project Honolulu) - usar um plug-in de gateway personalizado em sua extensão de ferramenta
+description: Desenvolver uma extensão da ferramenta (projeto Paulo) do SDK do Windows Admin Center – usar um plug-in de gateway personalizado em sua extensão da ferramenta
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -8,36 +8,36 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 4652616478b7b05bde97db48bf84648984b5a325
-ms.sourcegitcommit: f1edfc6525e09dd116b106293f9260123a94de0c
-ms.translationtype: MT
+ms.openlocfilehash: c9b2e9201d58472286b42a9c89a36423f40d143d
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "9296758"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59834507"
 ---
-# Usar um plug-in de gateway personalizado em sua extensão de ferramenta
+# <a name="use-a-custom-gateway-plugin-in-your-tool-extension"></a>Usar um plug-in de gateway personalizado em sua extensão de ferramenta
 
->Aplicável à: Windows Admin Center, a visualização do Windows Admin Center
+>Aplica-se a: Windows Admin Center, Windows Admin Center Preview
 
-Neste artigo, vamos usar um plug-in de gateway personalizado em uma extensão de ferramenta nova e vazia que criamos com a CLI do Windows Admin Center.
+Neste artigo, usaremos um plug-in de gateway personalizado em uma extensão de ferramenta nova e vazia que criamos com a CLI do Windows Admin Center.
 
-## Preparar o ambiente ##
+## <a name="prepare-your-environment"></a>Prepare o ambiente ##
 
-Se você ainda não fez isto, siga as instruções em [desenvolver uma extensão de ferramenta](..\develop-tool.md) para preparar seu ambiente e criar uma extensão de ferramenta nova e vazia.
+Se você ainda não fez isso, siga as instruções em [desenvolver uma extensão da ferramenta](..\develop-tool.md) para preparar seu ambiente e criar um novo, vazio extensão da ferramenta.
 
-## Adicionar um módulo ao seu projeto ##
+## <a name="add-a-module-to-your-project"></a>Adicionar um módulo ao seu projeto ##
 
-Se você ainda não fez isto, adicione um novo [módulo vazio](add-module.md) ao seu projeto, que usaremos na próxima etapa.  
+Se você ainda não fez isso, adicione um novo [módulo vazio](add-module.md) ao seu projeto, que usaremos na próxima etapa.  
 
-## Adicionar integração ao plug-in de gateway personalizado ##
+## <a name="add-integration-to-custom-gateway-plugin"></a>Adicionar integração ao plug-in do gateway personalizado ##
 
 Agora vamos usar um plug-in de gateway personalizado no módulo novo e vazio que acabamos de criar.
 
-### Criar plugin.service.ts
+### <a name="create-pluginservicets"></a>Criar plugin.service.ts
 
-Vá para o diretório do novo módulo ferramenta criado acima (```\src\app\{!Module-Name}```) e criar um novo arquivo ```plugin.service.ts```.
+Altere o diretório do novo módulo de ferramenta criado acima (```\src\app\{!Module-Name}```) e crie um novo arquivo ```plugin.service.ts```.
 
-Adicione o código a seguir ao arquivo recém criado:
+Adicione o seguinte código para o arquivo que acabou de criar:
 ``` ts
 import { Injectable } from '@angular/core';
 import { AppContextService, HttpService } from '@microsoft/windows-admin-center-sdk/angular';
@@ -61,12 +61,9 @@ export class PluginService {
 }
 ```
 
-Altere as referências a ```Sample Uno``` e ```Sample%20Uno``` ao nome do recurso conforme apropriado.
+Alterar referências aos ```Sample Uno``` e ```Sample%20Uno``` para o seu nome de recurso conforme apropriado.
 
-[!WARNING]
-> É recomendável que interna em ```this.appContextService.node``` é usado para chamar qualquer API que é definido em seu plug-in de gateway personalizado. Isso garantirá que se as credenciais são necessárias dentro de seu gateway plug-in que eles serão manipulados corretamente.
-
-### Modificar module.ts
+### <a name="modify-modulets"></a>Modificar Module
 
 Abra o ```module.ts``` arquivo do novo módulo criado anteriormente (ou seja, ```{!Module-Name}.module.ts```):
 
@@ -78,7 +75,7 @@ import { Http } from '@microsoft/windows-admin-center-sdk/core';
 import { PluginService } from './plugin.service';
 ```
 
-Adicione os seguintes provedores (após declarações):
+Adicione os seguintes provedores (após as declarações):
 
 ``` ts
   ,
@@ -89,7 +86,7 @@ Adicione os seguintes provedores (após declarações):
   ]
 ```
 
-### Modificar component.ts
+### <a name="modify-componentts"></a>Modificar component.ts
 
 Abra o ```component.ts``` arquivo do novo módulo criado anteriormente (ou seja, ```{!Module-Name}.component.ts```):
 
@@ -110,7 +107,7 @@ Adicione as seguintes variáveis:
   private responseResult: string;
 ```
 
-Modifique o construtor e modificar ou adicionar as seguintes funções:
+Modifique o construtor e modifique/adicione as seguintes funções:
 
 ``` ts
   constructor(private appContextService: AppContextService, private plugin: PluginService) {
@@ -133,7 +130,7 @@ Modifique o construtor e modificar ou adicionar as seguintes funções:
   }
 ```
 
-### Modificar component.html ###
+### <a name="modify-componenthtml"></a>Modificar component.html ###
 
 Abra o ```component.html``` arquivo do novo módulo criado anteriormente (ou seja, ```{!Module-Name}.component.html```):
 
@@ -143,6 +140,6 @@ Adicione o seguinte conteúdo para o arquivo html:
 {{ responseResult }}
 ```
 
-## Compilação e lado carregam sua extensão
+## <a name="build-and-side-load-your-extension"></a>Compilação e o lado carregam sua extensão
 
-Agora você está pronto para a [carga de compilação e lado](..\develop-tool.md#build-and-side-load-your-extension) sua extensão no Windows Admin Center.
+Agora você está pronto para [compilação e do lado do carregamento](..\develop-tool.md#build-and-side-load-your-extension) sua extensão no Windows Admin Center.

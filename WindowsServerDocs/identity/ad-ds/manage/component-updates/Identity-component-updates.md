@@ -1,19 +1,20 @@
 ---
 ms.assetid: 7e87ce2b-062e-479f-bcf2-585b6c42026a
-title: "Atualizações de componentes de identidade"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: Atualizações de componentes de identidade
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 827acc3073b09ebb9fbbf649145442f5cf609526
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.openlocfilehash: 1d975fa32f19facfdee7a31e58293006fc5859ff
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59834477"
 ---
 # <a name="identity-component-updates"></a>Atualizações de componentes de identidade
 
@@ -21,29 +22,29 @@ ms.lasthandoff: 07/03/2017
 
   
 ## <a name="lesson-1-identity-component-updates"></a>Lição 1: Atualizações de componentes de identidade  
-Nesta lição explica as atualizações do componente de identidade no Windows Server 2012 R2.  
+Esta lição explica as atualizações de componentes de identidade no Windows Server 2012 R2.  
   
 ### <a name="what-you-will-learn"></a>O que você aprenderá  
-Depois de concluir nesta lição, você será capaz de:  
+Depois de concluir esta lição, você será capaz de:  
   
--   Descreva as seguintes alterações:  
+-   Descrevem as alterações a seguir:  
   
-    -   [Exclusividade SPN e UPN](../../../ad-ds/manage/component-updates/SPN-and-UPN-uniqueness.md)  
+    -   [Exclusividade de SPN e UPN](../../../ad-ds/manage/component-updates/SPN-and-UPN-uniqueness.md)  
   
-    -   [Winlogon automático reiniciar logon & #40; ARSO & #41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)  
+    -   [Winlogon Automatic Restart Sign-On &#40;ARSO&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)  
   
-    -   [Atestado de chave do TPM](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md)  
+    -   [Atestado de chave de TPM](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md)  
   
-    -   [Cmdlets CA Backup e restauração do Windows PowerShell](../../../ad-ds/manage/component-updates/CA-Backup-and-Restore-Windows-PowerShell-cmdlets.md)  
+    -   [Cmdlets do Windows PowerShell de backup e restauração de AC](../../../ad-ds/manage/component-updates/CA-Backup-and-Restore-Windows-PowerShell-cmdlets.md)  
   
-    -   [Auditoria do processo de linha de comando](../../../ad-ds/manage/component-updates/Command-line-process-auditing.md)  
+    -   [Auditoria de processo de linha de comando](../../../ad-ds/manage/component-updates/Command-line-process-auditing.md)  
   
-    -   [Gerenciamento e proteção de credenciais](https://technet.microsoft.com/library/dn408190.aspx)  
+    -   [Proteção e gerenciamento de credenciais](https://technet.microsoft.com/library/dn408190.aspx)  
   
-**Autor**: sênior Justin Turner engenheiro de escalonamento de suporte com o grupo do Windows  
+**Autor**: Engenheiro de escalonamento de suporte sênior Justin Turner com o grupo do Windows  
   
 > [!NOTE]  
-> Este conteúdo foi criado por um engenheiro de suporte de cliente da Microsoft e se destina a arquitetos de sistemas que estão procurando mais profundamente explicações técnicas de recursos e soluções no Windows Server 2012 R2 de tópicos no TechNet geralmente fornecem e administradores experientes. No entanto, ele não passou os mesmos edição passos, para que a linguagem podem parecer que menos refinado que o que geralmente é encontrado no TechNet.  
+> Este documento foi criado por um engenheiro de atendimento ao cliente da Microsoft e é destinado a administradores e arquitetos de sistemas experientes que procuram explicações técnicas mais profundas para recursos e soluções no Windows Server 2012 R2 do que aquelas geralmente oferecidas em tópicos do TechNet. No entanto, ele não passou pelas mesmas etapas de edição que eles, por isso a linguagem pode parecer que menos refinada do que a geralmente encontrada no TechNet.  
   
 
 

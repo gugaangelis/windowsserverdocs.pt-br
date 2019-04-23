@@ -1,6 +1,6 @@
 ---
-title: Aprimoramentos de segurança SMB
-description: Obter uma explicação sobre o recurso de criptografia SMB no Windows Server 2012 R2, Windows Server 2012 e Windows Server 2016.
+title: Melhorias de segurança do SMB
+description: Uma explicação sobre o recurso de criptografia do SMB no Windows Server 2012 R2, Windows Server 2012 e Windows Server 2016.
 ms.prod: windows-server-threshold
 ms.topic: article
 author: JasonGerend
@@ -9,104 +9,104 @@ ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 831ca8266c3ec18ffb83227dcb2d39b3f953ad1a
-ms.sourcegitcommit: 375e94dc70c76e7aa5679c32f0f4dbc26cf7dd83
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "2233522"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59838047"
 ---
-# <a name="smb-security-enhancements"></a>Aprimoramentos de segurança SMB
+# <a name="smb-security-enhancements"></a>Melhorias de segurança do SMB
 
->Aplica-se a: Windows Server 2012 R2, o Windows Server 2012, o Windows Server 2016
+>Aplica-se a: Windows Server 2012 R2, Windows Server 2012, Windows Server 2016
 
-Este tópico explica os aprimoramentos de segurança no Windows Server 2012 R2, Windows Server 2012 e Windows Server 2016 SMB.
+Este tópico explica os aprimoramentos de segurança do SMB no Windows Server 2012 R2, Windows Server 2012 e Windows Server 2016.
 
 ## <a name="smb-encryption"></a>Criptografia SMB
 
-Criptografia SMB fornece a criptografia de ponta a ponta de dados SMB e protege os dados contra interceptação ocorrências em redes não confiáveis. Você pode implantar criptografia SMB com esforço mínimo, mas ele pode exigir pequeno custo adicional para especializados de hardware ou software. Ele não tem requisitos para Internet Protocol security (IPsec) ou aceleradores de WAN. Criptografia SMB podem ser configurada em uma base por compartilhar ou para o servidor de todo o arquivo, e ele pode ser habilitado para uma variedade de cenários onde dados percorrem redes não confiáveis.
+Criptografia SMB fornece criptografia de ponta a ponta dos dados SMB e protege os dados contra ocorrências de interceptação em redes não confiáveis. Você pode implantar a criptografia SMB com um mínimo de esforço, mas ele pode exigir pequeno custos adicionais de software ou hardware especializado. Ele não tem nenhum requisito para o Internet Protocol security (IPsec) ou aceleradores de WAN. Criptografia SMB pode ser configurada em uma base por compartilhamento ou servidor de arquivos inteiro, e ele pode ser habilitado para uma variedade de cenários onde os dados percorrem redes não confiáveis.
 
 >[!NOTE]
->Criptografia SMB não aborda a segurança em repouso, que é geralmente tratada pela criptografia de unidade de disco BitLocker.
+>Criptografia SMB não aborda a segurança em repouso, que normalmente é manipulada pela criptografia de unidade de disco BitLocker.
 
-Criptografia SMB devem ser considerada para qualquer cenário no qual os dados confidenciais precisam ser protegidos contra ataques man-in-the-middle. Os possíveis cenários incluem:
+Criptografia SMB devem ser considerada para qualquer cenário em que os dados confidenciais precisam ser protegidos contra ataques man-in-the-middle. Os cenários possíveis incluem:
 
-- Dados confidenciais de um profissional da informação são movidos por meio do protocolo SMB. Criptografia SMB oferece uma garantia de privacidade e a integridade de ponta a ponta entre o servidor de arquivo e o cliente, independentemente das redes desviada, como longa distância (WAN) conexões de rede que são mantidas por provedores de não-Microsoft.
-- SMB 3.0 permite que os servidores de arquivo fornecer armazenamento continuamente disponível para aplicativos de servidor, SQL Server ou o Hyper-V. Habilitando a criptografia SMB oferece uma oportunidade para proteger essas informações contra ataques snooping. Criptografia SMB é mais simples de usar do que as soluções de hardware dedicado que são necessárias para a maioria das redes de área de armazenamento (SANs).
+- Os dados confidenciais do operador de informações são movidos usando o protocolo SMB. Criptografia SMB oferece uma garantia de privacidade e integridade de ponta a ponta entre o servidor de arquivos e o cliente, independentemente das redes percorrido, como de longa distância (WAN) conexões de rede que são mantidas por provedores de terceiros.
+- SMB 3.0 permite que os servidores de arquivo fornecer armazenamento continuamente disponível para aplicativos de servidor, como SQL Server ou Hyper-V. Habilitar a criptografia SMB fornece uma oportunidade para proteger essas informações contra ataques de espionagem. Criptografia SMB é mais simples de usar do que as soluções de hardware dedicado que são necessárias para a maioria das redes de área de armazenamento (SANs).
 
 >[!IMPORTANT]
->Observe que não há um custo com qualquer proteção de criptografia de ponta a ponta, quando comparada com não-criptografado operacional notável no desempenho.
+>Você deve observar que há um custo com qualquer proteção de criptografia de ponta a ponta, quando comparado a não-criptografado operacional notável de desempenho.
 
-## <a name="enable-smb-encryption"></a>Habilitar criptografia SMB
+## <a name="enable-smb-encryption"></a>Habilitar a criptografia SMB
 
-Você pode habilitar criptografia SMB para o servidor de arquivo inteiro ou somente para os compartilhamentos de arquivo específicos. Use um dos procedimentos a seguir para habilitar a criptografia SMB:
+Você pode habilitar a criptografia SMB para o servidor de arquivos inteiro ou apenas para compartilhamentos de arquivos específicos. Use um dos procedimentos a seguir para habilitar a criptografia SMB:
 
-### <a name="enable-smb-encryption-with-windows-powershell"></a>Habilitar criptografia SMB com o Windows PowerShell
+### <a name="enable-smb-encryption-with-windows-powershell"></a>Habilitar a criptografia SMB com o Windows PowerShell
 
-1. Para habilitar a criptografia SMB para um compartilhamento de arquivo individuais, digite o seguinte script no servidor:
+1. Para habilitar a criptografia SMB para um compartilhamento de arquivos individuais, digite o seguinte script no servidor:
     
     ```PowerShell
     Set-SmbShare –Name <sharename> -EncryptData $true
     ```
-2. Para habilitar a criptografia SMB para o servidor de todo o arquivo, digite o seguinte script no servidor:
+2. Para habilitar a criptografia SMB para o servidor de arquivos inteiro, digite o seguinte script no servidor:
     
     ```PowerShell
     Set-SmbServerConfiguration –EncryptData $true
     ```
-3. Para criar um novo compartilhamento de arquivos SMB com criptografia SMB habilitada, digite o seguinte script:
+3. Para criar um novo compartilhamento de arquivos SMB com a criptografia SMB habilitada, digite o seguinte script:
     
     ```PowerShell
     New-SmbShare –Name <sharename> -Path <pathname> –EncryptData $true
     ```
 
-### <a name="enable-smb-encryption-with-server-manager"></a>Habilitar criptografia SMB com o Gerenciador de servidores
+### <a name="enable-smb-encryption-with-server-manager"></a>Habilitar a criptografia SMB com o Gerenciador do servidor
 
-1. No Gerenciador de servidores, abra o **arquivo e serviços de armazenamento**.
+1. No Gerenciador do servidor, abra **serviços de arquivo e armazenamento**.
 2. Selecione **compartilhamentos** para abrir a página de gerenciamento de compartilhamentos.
-3. Com o botão direito no compartilhamento no qual você deseja habilitar a criptografia SMB e selecione **Propriedades**.
-4. Na página **configurações** do compartilhamento, selecione **acesso a criptografar dados**. Acesso remoto a arquivos para esse compartilhamento é criptografado.
+3. Clique com botão direito no compartilhamento no qual você deseja habilitar a criptografia SMB e, em seguida, selecione **propriedades**.
+4. Sobre o **as configurações** página do compartilhamento, selecione **criptografar o acesso a dados**. Acesso a esse compartilhamento de arquivos remoto é criptografado.
 
-### <a name="considerations-for-deploying-smb-encryption"></a>Considerações sobre a implantação de criptografia SMB
+### <a name="considerations-for-deploying-smb-encryption"></a>Considerações sobre a implantação da criptografia SMB
 
-Por padrão, quando criptografia SMB está habilitada para um compartilhamento de arquivo ou o servidor, somente os clientes SMB 3.0 têm permissão para acessar os compartilhamentos de arquivo especificado. Isso impõe a intenção de proteger os dados para todos os clientes que acessam os compartilhamentos do administrador. No entanto, em alguns casos, um administrador talvez queira permitir o acesso não criptografado para clientes que não têm suporte SMB 3.0 (por exemplo, durante um período de transição quando as versões de sistema operacional do cliente misto estão sendo usadas). Para permitir o acesso não criptografado para clientes que não têm suporte SMB 3.0, digite o seguinte script no Windows PowerShell:
+Por padrão, quando a criptografia SMB é habilitada para um compartilhamento de arquivos ou servidor, somente os clientes SMB 3.0 têm permissão para acessar os compartilhamentos de arquivos especificado. Isso reforça a intenção do administrador de proteger os dados para todos os clientes que acessam os compartilhamentos. No entanto, em algumas circunstâncias, um administrador talvez queira permitir o acesso não criptografado para clientes que não dão suporte a SMB 3.0 (por exemplo, durante um período de transição quando as versões de sistemas operacionais combinados do cliente estão sendo usadas). Para permitir o acesso não criptografado para clientes que não dão suporte a SMB 3.0, digite o seguinte script no Windows PowerShell:
 
 ```PowerShell
 Set-SmbServerConfiguration –RejectUnencryptedAccess $false
 ```
 
-O recurso de negociação de dialeto seguro descrito na próxima seção impede que um ataque man-in-the-middle desatualizar uma conexão do SMB 3.0 para SMB 2.0 (que usaria o access não criptografado). No entanto, ele não impede um downgrade para SMB 1.0, que também for resultar em acesso não criptografado. Para garantir que os clientes SMB 3.0 sempre usam criptografia SMB acessar compartilhamentos criptografados, você deve desativar o servidor SMB 1.0. (Para obter instruções, consulte a seção [Desabilitando SMB 1.0](#disabling-smb-1.0).) Se a configuração **– RejectUnencryptedAccess** for deixada em sua configuração padrão de **$true**, clientes que somente suporte à criptografia SMB 3.0 têm permissão para acessar os compartilhamentos de arquivos (SMB 1.0 clientes também serão rejeitados).
+O recurso de negociação de dialeto seguro descrito na próxima seção impede que um ataque man-in-the-middle fazer o downgrade de uma conexão do SMB 3.0 para o SMB 2.0 (que usaria o acesso sem criptografia). No entanto, ele não impede que um downgrade para o SMB 1.0, que também poderia resultar no acesso sem criptografia. Para garantir que os clientes SMB 3.0 sempre usam criptografia SMB para acessar os compartilhamentos criptografados, você deve desabilitar o servidor SMB 1.0. (Para obter instruções, consulte a seção [desabilitando o SMB 1.0](#disabling-smb-1.0).) Se o **– RejectUnencryptedAccess** configuração é deixada em sua configuração padrão de **$true**, clientes somente com capacidade de criptografia do SMB 3.0 têm permissão para acessar os compartilhamentos de arquivos (clientes SMB 1.0 também serão rejeitados).
 
 >[!NOTE]
->* Criptografia SMB usa o Advanced criptografia AES (padrão)-algoritmo CCM para criptografar e descriptografar os dados. AES-CCM também fornece validação da integridade dos dados (assinatura) para compartilhamentos de arquivos criptografados, independentemente das configurações de assinatura de SMB. Se você deseja habilitar a assinatura sem criptografia SMB, você pode continuar a fazer isso. Para obter mais informações, consulte [Noções básicas sobre o da assinatura de SMB](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/).
->* Você pode encontrar problemas quando você tenta acessar o compartilhamento de arquivos ou o servidor se sua organização usa aparelhos de aceleração de rede (WAN) de longa distância.
->* Com uma configuração padrão (onde não há nenhum acesso descriptografado permitido nos compartilhamentos de arquivos criptografados), se os clientes que não têm suporte SMB 3.0 tentar acessar um compartilhamento de arquivos criptografados, o ID do evento 1003 é registrada no log de eventos do Microsoft-Windows-SmbServer/operacional , e o cliente receberá uma mensagem de erro de **acesso negado** .
->* Criptografia SMB e o Encrypting File System (EFS) no sistema de arquivos NTFS estão relacionados e criptografia SMB não exige ou dependem usando EFS.
->* Criptografia SMB e a criptografia de unidade de disco BitLocker não estão relacionados e criptografia SMB não exige ou dependem usando a criptografia de unidade de disco BitLocker.
+>* Criptografia SMB usa a criptografia AES (padrão avançado) – algoritmo CCM para criptografar e descriptografar os dados. AES-CCM também fornece validação de integridade de dados (assinatura) para compartilhamentos de arquivos criptografados, independentemente das configurações de assinatura SMB. Se você quiser habilitar a assinatura sem criptografia SMB, você pode continuar a fazer isso. Para obter mais informações, consulte [as Noções básicas da assinatura SMB](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/).
+>* Você pode encontrar problemas ao tentar acessar o compartilhamento de arquivos ou o servidor se sua organização usa dispositivos de aceleração de rede de (longa distância WAN) de longa distância.
+>* Com uma configuração padrão (em que não há nenhum acesso sem criptografia permitido para compartilhamentos de arquivos criptografados), se os clientes que não dão suporte a SMB 3.0 tentar acessar um compartilhamento de arquivos criptografados, 1003 de ID de evento é registrado no log de eventos Microsoft-Windows-SmbServer/Operational , e o cliente receberá um **acesso negado** mensagem de erro.
+>* Criptografia SMB e o Encrypting File System (EFS) no sistema de arquivos NTFS não estão relacionados e criptografia SMB não exige ou dependem do uso do EFS.
+>* Criptografia SMB e o BitLocker Drive Encryption não estão relacionados e criptografia SMB não exige ou dependem usando o BitLocker Drive Encryption.
 
 ## <a name="secure-dialect-negotiation"></a>Negociação de dialeto seguro
 
-SMB 3.0 é capaz de detecção de ataques de man-in-the-middle que tentam downgrade o protocolo SMB 2.0 ou SMB 3.0 ou os recursos que o cliente e servidor negociar. Quando esse ataque é detectada pelo cliente ou servidor, a conexão é desconectada e ID de evento 1005 é registrada no log de eventos do Microsoft-Windows-SmbServer/operacional. Seguro dialeto negociação não pode detectar ou impedir rebaixamentos de SMB 2.0 ou 3.0 para SMB 1.0. Dessa forma e para aproveitar os recursos completos de criptografia SMB, é altamente recomendável que você desabilite o servidor SMB 1.0. Para obter mais informações, consulte [desativando SMB 1.0](#disabling-smb-1.0).
+O SMB 3.0 é capaz de detectar ataques man-in-the-middle que tentam fazer o downgrade do protocolo SMB 2.0 ou SMB 3.0 ou os recursos que o cliente e servidor negociar. Quando um ataque desse tipo é detectado pelo cliente ou servidor, a conexão é desconectada e ID de evento 1005 é registrada no log de eventos Microsoft-Windows-SmbServer/operacional. Proteger o dialeto negociação não pode detectar nem prevenir downgrades do SMB 2.0 ou 3.0 para o SMB 1.0. Por isso e para aproveitar a todos os recursos da criptografia SMB, é altamente recomendável que você desative o servidor SMB 1.0. Para obter mais informações, consulte [desabilitando o SMB 1.0](#disabling-smb-1.0).
 
-O recurso de negociação de dialeto segura é descrito na próxima seção impede que um ataque man-in-the-middle desatualizar uma conexão de SMB 3 como 2 SMB (que usaria o access não criptografado); No entanto, ele não impede rebaixamentos para SMB 1, que também for resultar em acesso não criptografado. Para obter mais informações sobre possíveis problemas com anteriormente não Windows implementações de SMB, consulte o [Microsoft Knowledge Base](http://support.microsoft.com/kb/2686098).
+O recurso de negociação de dialeto seguro que é descrito na próxima seção impede que um ataque man-in-the-middle fazer o downgrade de uma conexão do SMB 3 para SMB 2 (que usaria o acesso sem criptografia); No entanto, ele não impede a downgrades para protocolos SMB 1, que também poderia resultar no acesso sem criptografia. Para obter mais informações sobre problemas potenciais com implementações de não-Windows anteriormente do SMB, consulte a [da Base de dados de Conhecimento Microsoft](http://support.microsoft.com/kb/2686098).
 
 ## <a name="new-signing-algorithm"></a>Novo algoritmo de assinatura
 
-SMB 3.0 usa um algoritmo de criptografia mais recente para assinar: avançadas criptografia AES (padrão) - cifra - based código message authentication code (CMAC). SMB 2.0 usado o algoritmo de criptografia HMAC-SHA256 mais antigo. AES-CMAC e AES-CCM podem acelerar significativamente a criptografia de dados em CPUs mais modernas que tem a instrução AES de suporte. Para obter mais informações, consulte [Noções básicas sobre o da assinatura de SMB](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/).
+SMB 3.0 usa um algoritmo de criptografia mais recente para a assinatura: Padrão de criptografia avançada (AES) - cipher - com base em código de autenticação de mensagem (CMAC). SMB 2.0 usado o algoritmo de criptografia HMAC-SHA256 mais antigo. CMAC AES e AES-CCM podem acelerar significativamente a criptografia de dados em CPUs mais modernas que tem a instrução de AES de suporte. Para obter mais informações, consulte [as Noções básicas da assinatura SMB](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/).
 
 ## <a name="disabling-smb-10"></a>Desabilitando o SMB 1.0
 
-O serviço de navegador do computador herdado e recursos de protocolo de administração remota no SMB 1.0 agora são separados, e eles podem ser eliminados. Esses recursos ainda estão habilitados por padrão, mas se você não tiver mais antigos clientes SMB, como computadores que executam o Windows Server 2003 ou Windows XP, você pode remover os recursos de SMB 1.0 para aumentar a segurança e possivelmente reduzir a aplicação de patch.
+O serviço de navegador do computador herdado e recursos de protocolo de administração remota do SMB 1.0 agora estão separados, e eles podem ser eliminados. Esses recursos ainda estão habilitados por padrão, mas se você tiver clientes SMB mais antigos, como computadores que executam o Windows Server 2003 ou Windows XP, você pode remover os recursos do SMB 1.0 para aumentar a segurança e reduzir potencialmente a aplicação de patch.
 
 >[!NOTE]
->SMB 2.0 foi introduzido no Windows Server 2008 e Windows Vista. Clientes mais antigos, como computadores que executam o Windows Server 2003 ou Windows XP, não suportam SMB 2.0; e, portanto, eles não poderão acessar compartilhamentos de arquivos ou compartilhamentos de impressão se o servidor SMB 1.0 estiver desabilitado. Além disso, alguns clientes SMB não Microsoft podem não ser capazes de acessar compartilhamentos de arquivos SMB 2.0 ou imprimir compartilhamentos (por exemplo, impressoras com funcionalidade "varredura para compartilhar").
+>SMB 2.0 foi introduzido no Windows Server 2008 e Windows Vista. Clientes mais antigos, como computadores que executam o Windows Server 2003 ou Windows XP, não dão suporte a SMB 2.0; e, portanto, eles não poderão acessar compartilhamentos de arquivos ou compartilhamentos de impressão, se o servidor SMB 1.0 está desabilitado. Além disso, alguns clientes SMB não Microsoft podem não ser capazes de acessar compartilhamentos de arquivos do SMB 2.0 ou imprimir compartilhamentos (por exemplo, impressoras com a funcionalidade de "verificação para compartilhamento").
 
-Antes de começar a desabilitação SMB 1.0, você precisará descobrir se seus clientes SMB atualmente estão conectados ao servidor que executa o SMB 1.0. Para fazer isso, insira o seguinte cmdlet do Windows PowerShell:
+Antes de começar a desabilitar o SMB 1.0, você precisará descobrir se os clientes SMB atualmente estão conectados ao servidor executando o SMB 1.0. Para fazer isso, insira o seguinte cmdlet no Windows PowerShell:
 
 ```PowerShell
 Get-SmbSession | Select Dialect,ClientComputerName,ClientUserName | ? Dialect -lt 2
 ```
 
 >[!NOTE]
->Você deve executar esse script várias vezes ao longo de uma semana (várias vezes por dia) para criar uma trilha de auditoria. Você também pode executar este como uma tarefa agendada.
+>Esse script deve ser executado repetidamente ao longo de uma semana (várias vezes por dia) para criar uma trilha de auditoria. Você também pode executar isso como uma tarefa agendada.
 
 Para desabilitar o SMB 1.0, insira o seguinte script no Windows PowerShell:
 
@@ -115,12 +115,12 @@ Set-SmbServerConfiguration –EnableSMB1Protocol $false
 ```
 
 >[!NOTE]
->Se uma conexão de cliente SMB foi negada porque o servidor que executa o SMB 1.0 tiver sido desabilitado, ID de evento 1001 será registrada no log de eventos do Microsoft-Windows-SmbServer/operacional.
+>Se uma conexão de cliente SMB é negada porque o servidor que executa o SMB 1.0 foi desabilitado, o evento ID 1001 será registrado no log de eventos Microsoft-Windows-SmbServer/operacional.
 
 ## <a name="more-information"></a>Mais informações
 
-Aqui estão alguns recursos adicionais sobre SMB e as tecnologias relacionadas no Windows Server 2012.
+Aqui estão alguns recursos adicionais sobre o SMB e as tecnologias relacionadas no Windows Server 2012.
 
 - [Protocolo SMB](file-server-smb-overview.md)
 - [Armazenamento no Windows Server](../storage.md)
-- [Servidor de arquivos de dimensionamento para dados de aplicativo](../../failover-clustering/sofs-overview.md)
+- [Servidor de arquivos de escalabilidade horizontal para dados de aplicativo](../../failover-clustering/sofs-overview.md)

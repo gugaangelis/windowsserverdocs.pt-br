@@ -1,21 +1,22 @@
 ---
 ms.assetid: 0fd7b6aa-3e50-45a3-a3a6-56982844363e
-title: "ID de evento 2088 - DNS lookup falha com sucesso de replicação"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: ID do evento 2088 - Falha na pesquisa de DNS ocorreu com êxito da replicação
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 4f223f075775f942f83a1962da28a77e85e89aa0
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: cc090fa749a601e53b4347cce43245f22badc8ae
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59840707"
 ---
-# <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>ID de evento 2088: DNS lookup falha com sucesso de replicação
+# <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>ID do evento 2088: Falha na pesquisa de DNS ocorreu com êxito da replicação
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -41,46 +42,43 @@ ms.lasthandoff: 12/12/2017
     Active Directory Domain Services successfully replicated using the NetBIOS 
     or fully qualified computer name of the source domain controller. 
 
-Configuração inválida de DNS pode estar afetando outras operações essenciais em computadores membro, controladores de domínio ou servidores de aplicativo nesta floresta do Active Directory Domain Services, incluindo a autenticação de logon ou acesso a recursos de rede. 
+Outras operações essenciais em computadores de membro, controladores de domínio ou servidores de aplicativos nesta floresta do Active Directory Domain Services, incluindo o acesso aos recursos de rede ou autenticação de logon pode estar afetando a configuração de DNS inválido. 
 
-Você deve resolver esse erro de configuração do DNS imediatamente para que esse controlador de domínio pode resolver o endereço IP do controlador de domínio usando DNS. 
+Imediatamente, você deve resolver esse erro de configuração de DNS para que esse controlador de domínio possa resolver o endereço IP do controlador de domínio de origem usando o DNS. 
 
-Nome de servidor alternativo: nome de host DNS de falha de DC1: 4a8717eb-8e58-456 c-995a-c92e4add7e8e._msdcs. contoso.com 
+Nome do servidor alternativo: Nome do host de DC1 falhando DNS: 4a8717eb-8e58-456c-995a-c92e4add7e8e._msdcs.contoso.com 
 
-Observação: Por padrão, somente até 10 falhas DNS são mostradas para qualquer determinado 12 horas, mesmo que ocorram falhas mais de 10.  Para registrar todos os eventos de falha individuais, defina o diagnóstico seguinte valor do registro como 1: 
+OBSERVAÇÃO: Por padrão, apenas 10 falhas DNS são mostradas para qualquer período de 12 horas determinado, mesmo que ocorram falhas mais de 10.  Para registrar todos os eventos de falha individuais, defina o seguinte diagnóstico valor do registro como 1: 
 
-Caminho do registro: HKLM\System\CurrentControlSet\Services\NTDS\Diagnostics\22 DS RPC cliente 
+Caminho do registro: HKLM\System\CurrentControlSet\Services\NTDS\Diagnostics\22 DS RPC Client 
 
 Ação do usuário: 
 
-1) Se o controlador de domínio de origem for maior não funcionar ou do sistema operacional foi reinstalado com um nome de outro computador ou NTDSDSA objeto GUID, remover metadados do controlador de domínio de origem com ntdsutil.exe, usando as etapas descritas no artigo MSKB 216498. 
+1) Se o controlador de domínio de origem tem não mais funcionando ou seu sistema operacional foi reinstalado com um nome de computador diferente ou NTDSDSA objeto GUID, remover metadados do controlador de domínio de origem com ntdsutil.exe, usando as etapas descritas no artigo MSKB 216498. 
 
-2) Confirme se o controlador de domínio de origem está executando o Active Directory e é acessível na rede digitando "net exibição \ \&lt;nome origem DC&gt;" ou "ping &lt;nome origem DC&gt;". 
+2) Confirme se o controlador de domínio de origem executando o Active Directory e está acessível na rede digitando "net view \\ &lt;nome de DC de origem&gt;" ou "ping &lt;nome do DC de origem&gt;". 
 
-3) Verifique se o controlador de domínio de origem está usando um servidor DNS válido de serviços DNS e o controlador de domínio de origem registro de host e CNAME gravam são registrado corretamente, usando a versão aprimorada do DNS do DCDIAG.EXE disponível em https://www.microsoft.com/dns 
+3) Verifique se que o controlador de domínio de origem está usando um servidor DNS válido para os serviços DNS e que registro host CNAME do controlador de domínio de origem registro e estão registrados corretamente, usando a versão aprimorada do DNS de DCDIAG. EXE disponível em https://www.microsoft.com/dns 
 
-dcdiag//test: dns 
+dcdiag /test:dns 
 
-4) Verificar se esse controlador de domínio de destino está usando um servidor DNS válido para serviços DNS, executando a versão aprimorada do DNS do DCDIAG.EXE comando no console do controlador de domínio de destino, da seguinte maneira: 
+4) Verificar se esse controlador de domínio de destino está usando um servidor DNS válido para os serviços DNS, executando a versão aprimorada do DNS de DCDIAG. Comando EXE no console do controlador de domínio de destino, da seguinte maneira: 
 
-dcdiag//test: dns 
+dcdiag /test:dns 
 
-5) Para fazer uma análise adicional do DNS falhas de erro veja KB 824449: https://support.microsoft.com/?kbid=824449 
+5) Para análise posterior das falhas de erro do DNS Consulte 824449 KB: https://support.microsoft.com/?kbid=824449 
 
-Valor de erro de dados adicional: 11004 o nome solicitado é válido, mas nenhum dado do tipo solicitado foi encontrado</code>
-  </introduction>
+Valor adicional do erro de dados: 11004 o nome solicitado é válido, mas nenhum dado do tipo solicitado foi encontrado</code> </introduction>
   <section>
-              
-    <title>Diagnosis</title>
+    <title>Diagnóstico</title>
     <content>
-      <para>Failure to resolve the source domain controller name by using the alias (CNAME) resource record in DNS can be due to DNS misconfigurations or delays in DNS data propagation.</para>
+      <para>Falha ao resolver o nome de controlador de domínio de origem usando o registro de recurso de alias (CNAME) no DNS pode ser devido a configurações incorretas do DNS ou atrasos de propagação de dados DNS.</para>
     </content>
   </section>
   <section>
-              
-    <title>Resolution</title>
+    <title>Resolução</title>
     <content>
-      <para>Proceed with DNS testing as described in "<link xlink:href="85b1d179-f53e-4f95-b0b8-5b1c096a8076">Event ID 2087: DNS lookup failure caused replication to fail</link>."</para>
+      <para>Continuar com o teste de DNS, conforme descrito em "<link xlink:href="85b1d179-f53e-4f95-b0b8-5b1c096a8076">ID do evento 2087: Falha na pesquisa de DNS causou falha na replicação</link>. "</para>
     </content>
   </section>
   <relatedTopics />

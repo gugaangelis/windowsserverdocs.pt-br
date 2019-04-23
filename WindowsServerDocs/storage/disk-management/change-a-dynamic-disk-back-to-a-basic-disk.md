@@ -1,6 +1,6 @@
 ---
-title: "Converter um disco dinâmico em disco básico"
-description: "Descreve como converter um disco dinâmico em disco básico."
+title: Converter um disco dinâmico em disco básico
+description: Descreve como converter um disco dinâmico em disco básico.
 ms.date: 10/12/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,19 +8,18 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 9675141ec02c2362702265a18f5405554dff6038
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: d018b417aeba21e2b1303fd9e72b58b4e2fc334f
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59836047"
 ---
 # <a name="change-a-dynamic-disk-back-to-a-basic-disk"></a>Converter um disco dinâmico em disco básico
 
-> **Aplicável a:** Windows 10, Windows 8.1, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> **Aplica-se a:** Windows 10, Windows 8.1, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este tópico descreve como excluir tudo em um disco dinâmico e, em seguida, convertê-lo em um disco básico. Os discos dinâmicos foram substituídos no Windows. É recomendado usar a tecnologia de [Espaços de armazenamento](https://support.microsoft.com/help/12438/windows-10-storage-spaces) mais recente quando desejar fazer transformar um pool de discos em volumes maiores. Se você quiser espelhar o volume de inicialização do Windows, convém usar um controlador RAID de hardware, como o incluído em muitas placas-mãe.
-
-<br />
+Este tópico descreve como excluir tudo em um disco dinâmico e, em seguida, convertê-lo em um disco básico. Discos dinâmicos foram preteridos do Windows e não recomendamos usá-los mais. Em vez disso, é recomendável usar discos básicos ou usando o mais recente [espaços de armazenamento](https://support.microsoft.com/help/12438/windows-10-storage-spaces) tecnologia quando quiser discos do pool juntos em volumes maiores. Se você quiser espelhar o volume de inicialização do Windows, convém usar um controlador RAID de hardware, como o incluído em muitas placas-mãe.
 
 > [!WARNING]
 > Para converter um disco dinâmico em um disco básico é necessário excluir todos os volumes do disco, além de apagar permanentemente todos os dados dele. Faça o backup de todos os dados que você deseja manter antes de prosseguir.
@@ -60,17 +59,17 @@ Este tópico descreve como excluir tudo em um disco dinâmico e, em seguida, con
 7.  No prompt de comando **DISKPART**, digite `select disk <disknumber>`, especificando o número do disco que você deseja converter para disco básico.
 
 8.  No prompt de comando **DISKPART**, digite `convert basic`.
- 
+ 
 <br /> <br />
 
 | Valor  | Descrição |
 | --- |---|
-| <p>**list disk**</p>                         | <p>Exibe uma lista de discos e informações sobre eles, como o tamanho, a quantidade de espaço livre disponível, se o disco é básico ou dinâmico, e se o disco usa o estilo de partição Registro Mestre de Inicialização (MBR) ou a Tabela de Partição de GUID (GPT). O disco marcado com um asterisco (*) tem foco.</p> |
-| <p>**select disk** <em>disknumber</em></p>   | <p>Seleciona o disco especificado, onde <em>disknumber</em> é o número do disco e concede foco a ele.</p>  |
+| <p>**disco de lista**</p>                         | <p>Exibe uma lista de discos e informações sobre eles, como o tamanho, a quantidade de espaço livre disponível, se o disco é básico ou dinâmico, e se o disco usa o estilo de partição Registro Mestre de Inicialização (MBR) ou a Tabela de Partição de GUID (GPT). O disco marcado com um asterisco (*) tem foco.</p> |
+| <p>**Selecione o disco** <em>disknumber</em></p>   | <p>Seleciona o disco especificado, onde <em>disknumber</em> é o número do disco e concede foco a ele.</p>  |
 | <p>**detail disk** <em>disknumber</em></p>   | <p>Exibe as propriedades do disco selecionado e os volumes existentes nele.</p>  |
 | <p>**select volume** <em>disknumber</em></p> | <p>Seleciona o volume especificado, onde <em>disknumber</em> é o número do volume e concede foco a ele. Se nenhum volume for especificado, o comando **select** lista o volume atual com foco. Você pode especificar o volume por número, letra da unidade ou caminho do ponto de montagem. Em um disco básico, a seleção de um volume também oferece o foco de partição correspondente.</p> |
-| <p>**delete volume**</p>                     | <p>Exclui o volume selecionado. Você não pode excluir o volume do sistema, o volume de inicialização ou qualquer volume contend o arquivo de paginação ativo ou o despejo de pane (despejo de memória).</p> |
-| <p>**convert basic**</p> | <p>Converte um disco dinâmico vazio em um disco básico.</p>  |
+| <p>**Excluir volume**</p>                     | <p>Exclui o volume selecionado. Você não pode excluir o volume do sistema, o volume de inicialização ou qualquer volume contend o arquivo de paginação ativo ou o despejo de pane (despejo de memória).</p> |
+| <p>**Converter básico**</p> | <p>Converte um disco dinâmico vazio em um disco básico.</p>  |
 
 ## <a name="additional-considerations"></a>Considerações adicionais
 
@@ -79,6 +78,6 @@ Este tópico descreve como excluir tudo em um disco dinâmico e, em seguida, con
 
 ## <a name="see-also"></a>Consulte também
 
--   [Notação da sintaxe de linha de comando](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
+-   [Notação de sintaxe de linha de comando](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
 
 

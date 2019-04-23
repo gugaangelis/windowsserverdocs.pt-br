@@ -1,37 +1,40 @@
 ---
 ms.assetid: 0abe0976-4b49-45d6-a7b3-81d28bdb8210
-title: "Recomendações de política de auditoria"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: Recomendações de política de auditoria
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: d03d38834f89f8cda80b7af147e2bd3e31f4f990
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 343a9a7aedf22e9c021249f00fb628f871a2ce1f
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59835747"
 ---
 # <a name="audit-policy-recommendations"></a>Recomendações de política de auditoria
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows 10, Windows 8.1, Windows 7
 
-Esta seção aborda as configurações de política de auditoria do Windows padrão, linha de base recomendada configurações de política de auditoria e as recomendações mais agressivas da Microsoft, para produtos de estação de trabalho e servidor.  
+Esta seção aborda as configurações de política de auditoria do Windows padrão, linha de base recomendada configurações de política de auditoria e as recomendações mais agressivas da Microsoft, para produtos da estação de trabalho e de servidor.  
 
-As recomendações de linha de base SCM mostradas aqui, juntamente com as configurações, que é recomendável para ajudar a detectar comprometimento, destinam-se apenas a ser um guia de linha de base inicial para administradores. Cada organização deve fazer suas própria decisões sobre as ameaças que enfrentam, seu tolerância aceitável risco e quais categorias de política de auditoria ou subcategorias devem permitir. Para obter mais informações sobre ameaças, consulte o [guia de ameaças e contramedidas](https://technet.microsoft.com/library/hh125921(v=ws.10).aspx). Os administradores sem uma política de auditoria cuidadoso in-loco são incentivados a começar com as configurações recomendadas aqui e depois modificar e testar, antes da implementação em seu ambiente de produção.  
+As recomendações de linha de base SCM mostradas aqui, juntamente com as configurações, que é recomendável para ajudar a detectar o comprometimento, destinam-se somente a ser um guia de linha de base inicial para os administradores. Cada organização deve tomar suas próprias decisões sobre as ameaças que enfrentam, seus tolerâncias de risco aceitável e quais categorias de política de auditoria ou subcategorias deve habilitar. Para obter mais informações sobre ameaças, consulte o [guia de ameaças e contramedidas](https://technet.microsoft.com/library/hh125921(v=ws.10).aspx). Os administradores sem uma política de auditoria cuidadosa são encorajados a começar com as configurações recomendadas aqui e, em seguida, modificar e testar, antes de implementar em seu ambiente de produção.  
 
-As recomendações são para computadores de classe empresarial, que a Microsoft define como computadores que têm requisitos de segurança média e exigem um alto nível de funcionalidade operacional. Entidades que precisam de maior segurança requisitos devem considerar mais agressivos políticas de auditoria.  
+As recomendações são para computadores de nível corporativo, que a Microsoft define como os computadores que têm requisitos de segurança médio e exigem um alto nível de funcionalidade operacional. Políticas de auditoria de entidades que precisam de maior segurança requisitos devem considerar mais agressivos.  
 
 > [!NOTE]  
-> Padrões do Microsoft Windows e recomendações de linha de base foram extraídas do [ferramenta do Microsoft Security Compliance Manager](https://technet.microsoft.com/library/cc677002.aspx).  
+> Microsoft Windows assume como padrão e as recomendações de linha de base foram tiradas de [ferramenta Microsoft Security Compliance Manager](https://technet.microsoft.com/library/cc677002.aspx).  
 
-As seguintes configurações de política de auditoria de linha de base são recomendadas para computadores de segurança normal que não são conhecidos por serem sob ataque bem-sucedido, active por determinados adversários ou malware.  
+As seguintes configurações de política de auditoria de linha de base são recomendadas para computadores de segurança normal que não são conhecidos por estar sendo atacado do Active Directory, com êxito por determinados adversários ou malware.  
 
-## <a name="recommended-audit-policies-by-operating-system"></a>Recomendado políticas de auditoria pelo sistema operacional  
-Esta seção contém tabelas que listam as recomendações de configuração de auditoria que se aplicam aos seguintes sistemas operacionais:  
+## <a name="recommended-audit-policies-by-operating-system"></a>Políticas de auditoria pelo sistema operacional recomendadas  
+Esta seção contém as tabelas que listam as recomendações de configuração de auditoria que se aplicam aos seguintes sistemas operacionais:  
+
+-   Windows Server 2016 
 
 -   Windows Server 2012  
 
@@ -39,264 +42,268 @@ Esta seção contém tabelas que listam as recomendações de configuração de 
 
 -   Windows Server 2008  
 
--   Windows 8  
+-   Windows 10
+
+-   Windows 8.1  
 
 -   Windows 7  
 
-Estas tabelas contêm a configuração padrão do Windows, as recomendações de linha de base e as recomendações mais fortes para estes sistemas operacionais.  
+Essas tabelas contêm a configuração do Windows padrão, as recomendações de linha de base e as recomendações mais fortes para esses sistemas operacionais.  
 
 **Legenda de tabelas de política de auditoria**  
 
 |||  
 |-|-|  
 |**Notação**|**Recomendação**|  
-|SIM|Em geral habilitar cenários|  
-|Não|Fazer **não** em geral habilitar cenários|  
-|SE|Habilitar se necessário para um cenário específico, ou se uma função ou recurso para o qual a auditoria é desejada é instalado no computador|  
+|SIM|Em geral, habilitar cenários|  
+|NÃO|Fazer **não** em geral, habilitar cenários|  
+|IF|Habilitar se necessária para um cenário específico, ou se uma função ou recurso para o qual a auditoria é desejada é instalado no computador|  
 |DC|Habilitar em controladores de domínio|  
-|[Em branco]|Nenhuma recomendação|  
+|[Blank]|Nenhuma recomendação|  
 
-**Windows 8 e recomendações de configurações de auditoria 7 do Windows**  
+**Recomendações de configurações de auditoria 7 do Windows, Windows 8 e Windows 10**  
 
-**Política de auditoria**  
-
-|Categoria de política de auditoria ou subcategoria|Padrão do Windows<br /><br />Falha de sucesso|Recomendação de linha de base<br /><br />Falha de sucesso|Recomendação mais forte<br /><br />Falha de sucesso|  
-|----------------------------------------|------------------------------------------|--------------------------------------------------|--------------------------------------------------|  
-|**Logon de conta**||||  
-|Validação de credenciais de auditoria|Não há nenhuma|Sim não|Sim Sim|  
-|Auditoria de serviço de autenticação Kerberos|||Sim Sim|  
-|Auditoria de operações do tíquete de serviço Kerberos|||Sim Sim|  
-|Auditoria de outros eventos de Logon de conta|||Sim Sim|  
-|**Gerenciamento de contas**||||  
-|Gerenciamento de grupo de aplicativos de auditoria||||  
-|Auditoria do gerenciamento de conta de computador||Sim não|Sim Sim|  
-|Gerenciamento de grupo de distribuição de auditoria||||  
-|Auditoria de outros eventos de gerenciamento de conta||Sim não|Sim Sim|  
-|Gerenciamento de grupo de segurança de auditoria||Sim não|Sim Sim|  
-|Auditoria do gerenciamento de conta de usuário|Sim não|Sim não|Sim Sim|  
-|**Acompanhamento detalhado**||||  
-|Auditoria das atividades DPAPI|||Sim Sim|  
-|Auditoria de criação de processo||Sim não|Sim Sim|  
-|Auditoria de terminação de processo||||  
-|Auditoria dos eventos RPC||||  
-|**Acesso DS**||||  
-|Auditoria da replicação do serviço de diretório detalhadas||||  
-|Auditoria de acesso ao serviço de diretório||||  
-|Auditoria de alterações de serviço de diretório||||  
-|Auditoria da replicação do serviço de diretório||||  
-|**Logon e Logoff**||||  
-|Bloqueio de conta de auditoria|Sim não||Sim não|  
-|Auditar declarações do usuário/dispositivo||||  
-|Modo estendido do IPsec de auditoria||||  
-|Auditoria do modo principal IPsec|||SE IF|  
-|Auditoria do modo rápido IPsec||||  
-|Auditoria do Logoff|Sim não|Sim não|Sim não|  
-|Logon de auditoria|Sim não|Sim não|Sim Sim|  
-|Servidor de política de rede de auditoria|Sim Sim|||  
-|Auditoria de outros eventos de Logon/Logoff||||  
-|Auditoria do Logon especial|Sim não|Sim não|Sim Sim|  
-|**Acesso a objetos**||||  
-|Auditoria do aplicativo gerado||||  
-|Auditoria de serviços de certificação||||  
-|Auditoria de compartilhamento de arquivos detalhada||||  
-|Compartilhamento de arquivos de auditoria||||  
-|Auditoria de sistema de arquivos||||  
-|Auditoria de Conexão de plataforma de filtragem||||  
-|Descarte de pacote de plataforma de filtragem de auditoria||||  
-|Manipulação de identificador de auditoria||||  
-|Auditoria de objeto Kernel||||  
-|Auditoria de outros eventos de acesso do objeto||||  
-|Auditoria de registro||||  
-|Auditoria de armazenamento removível||||  
-|Auditoria SAM||||  
-|Auditoria do preparo da política de acesso Central||||  
-|**Alteração da política**||||  
-|Auditoria de alteração de política de auditoria|Sim não|Sim Sim|Sim Sim|  
-|Auditoria da alteração da política de autenticação|Sim não|Sim não|Sim Sim|  
-|Auditoria de alteração de políticas de autorização||||  
-|Auditoria de alteração de política de plataforma de filtragem||||  
-|Auditoria da alteração da política de nível de regra MPSSVC|||Sim  |  
-|Auditoria de outros eventos de alteração de política||||  
-|**Uso de privilégio**||||  
-|Auditoria de uso de privilégio não importante||||  
-|Auditoria de outros eventos de uso de privilégio||||  
-|Auditoria de uso de privilégio importante||||  
-|**Sistema**||||  
-|Auditoria do Driver IPsec||Sim Sim|Sim Sim|  
-|Auditoria de outros eventos do sistema|Sim Sim|||  
-|Alteração de estado de segurança de auditoria|Sim não|Sim Sim|Sim Sim|  
-|Auditoria de extensão do sistema de segurança||Sim Sim|Sim Sim|  
-|Auditoria de integridade do sistema|Sim Sim|Sim Sim|Sim Sim|  
-|**Acesso a objetos globais de auditoria**||||  
-|Auditoria do Driver IPsec||||  
-|Auditoria de outros eventos do sistema||||  
-|Alteração de estado de segurança de auditoria||||  
-|Auditoria de extensão do sistema de segurança||||  
-|Auditoria de integridade do sistema||||  
-
-**Recomendações de configurações de auditoria do Windows Server 2008, Windows Server 2008 R2 e Windows Server 2012**  
+**A política de auditoria**  
 
 |Categoria de política de auditoria ou subcategoria|Padrão do Windows<br /><br />Falha de sucesso|Recomendação de linha de base<br /><br />Falha de sucesso|Recomendação mais forte<br /><br />Falha de sucesso|  
 |----------------------------------------|------------------------------------------|--------------------------------------------------|--------------------------------------------------|  
 |**Logon de conta**||||  
-|Validação de credenciais de auditoria|Não há nenhuma|Sim Sim|Sim Sim|  
-|Auditoria de serviço de autenticação Kerberos|||Sim Sim|  
-|Auditoria de operações do tíquete de serviço Kerberos|||Sim Sim|  
-|Auditoria de outros eventos de Logon de conta|||Sim Sim|  
-|**Gerenciamento de contas**||||  
-|Gerenciamento de grupo de aplicativos de auditoria||||  
-|Auditoria do gerenciamento de conta de computador||Sim DC|Sim Sim|  
-|Gerenciamento de grupo de distribuição de auditoria||||  
-|Auditoria de outros eventos de gerenciamento de conta||Sim Sim|Sim Sim|  
-|Gerenciamento de grupo de segurança de auditoria||Sim Sim|Sim Sim|  
-|Auditoria do gerenciamento de conta de usuário|Sim não|Sim Sim|Sim Sim|  
+|Auditoria da validação de credenciais|Não há nenhum|Sim não|Sim Sim|  
+|Auditoria do serviço de autenticação Kerberos|||Sim Sim|  
+|Auditoria das operações do tíquete de serviço Kerberos|||Sim Sim|  
+|Auditoria de outros eventos de logon de conta|||Sim Sim|  
+|**Gerenciamento de conta**||||  
+|Auditoria do gerenciamento de grupo de aplicativos||||  
+|Auditoria de Gerenciamento de Conta de Computador||Sim não|Sim Sim|  
+|Auditoria de Gerenciamento de Grupo de Distribuição||||  
+|Auditoria de Outros Eventos de Gerenciamento de Contas||Sim não|Sim Sim|  
+|Auditoria de Gerenciamento de Grupo de Segurança||Sim não|Sim Sim|  
+|Auditoria de Gerenciamento de Conta de Usuário|Sim não|Sim não|Sim Sim|  
 |**Acompanhamento detalhado**||||  
-|Auditoria das atividades DPAPI|||Sim Sim|  
-|Auditoria de criação de processo||Sim não|Sim Sim|  
-|Auditoria de terminação de processo||||  
-|Auditoria dos eventos RPC||||  
+|Auditoria de Atividade DPAPI|||Sim Sim|  
+|Auditoria de Criação de Processo||Sim não|Sim Sim|  
+|Auditoria de Terminação de Processo||||  
+|Auditoria de Eventos de RPC||||  
 |**Acesso DS**||||  
-|Auditoria da replicação do serviço de diretório detalhadas||||  
-|Auditoria de acesso ao serviço de diretório||DC DC|DC DC|  
-|Auditoria de alterações de serviço de diretório||DC DC|DC DC|  
-|Auditoria da replicação do serviço de diretório||||  
+|Auditoria de Replicação Detalhada do Serviço de Diretório||||  
+|Auditoria do acesso ao serviço de diretório||||  
+|Auditoria de Alterações no Serviço de Diretório||||  
+|Auditoria de Replicação do Serviço de Diretório||||  
 |**Logon e Logoff**||||  
-|Bloqueio de conta de auditoria|Sim não||Sim não|  
-|Auditar declarações do usuário/dispositivo||||  
-|Modo estendido do IPsec de auditoria||||  
-|Auditoria do modo principal IPsec|||SE IF|  
-|Auditoria do modo rápido IPsec||||  
-|Auditoria do Logoff|Sim não|Sim não|Sim não|  
-|Logon de auditoria|Sim não|Sim Sim|Sim Sim|  
-|Servidor de política de rede de auditoria|Sim Sim|||  
-|Auditoria de outros eventos de Logon/Logoff|||Sim Sim|  
-|Auditoria do Logon especial|Sim não|Sim não|Sim Sim|  
+|Auditoria de Bloqueio de Conta|Sim não||Sim não|  
+|Auditoria das declarações de dispositivo/usuário||||  
+|Auditoria de Modo Estendido do IPsec||||  
+|Auditoria de Modo Principal do IPsec|||IF     IF|  
+|Auditoria de Modo Rápido do IPsec||||  
+|Logoff de Auditoria|Sim não|Sim não|Sim não|  
+|Logon de auditoria <sup>1</sup>|Sim Sim|Sim Sim|Sim Sim|  
+|Auditoria de Servidor de Política de Rede|Sim Sim|||  
+|Auditoria de outros eventos de logon/logoff||||  
+|Auditoria de Logon Especial|Sim não|Sim não|Sim Sim|  
 |**Acesso a objetos**||||  
-|Auditoria do aplicativo gerado||||  
+|Auditoria de Aplicativo Gerado||||  
 |Auditoria de serviços de certificação||||  
-|Auditoria de compartilhamento de arquivos detalhada||||  
-|Compartilhamento de arquivos de auditoria||||  
-|Auditoria de sistema de arquivos||||  
-|Auditoria de Conexão de plataforma de filtragem||||  
-|Descarte de pacote de plataforma de filtragem de auditoria||||  
-|Manipulação de identificador de auditoria||||  
-|Auditoria de objeto Kernel||||  
-|Auditoria de outros eventos de acesso do objeto||||  
-|Auditoria de registro||||  
-|Auditoria de armazenamento removível||||  
-|Auditoria SAM||||  
-|Auditoria do preparo da política de acesso Central||||  
+|Compartilhamento de Arquivos de Auditoria Detalhado||||  
+|Auditoria de Compartilhamento de Arquivos||||  
+|Auditoria de Sistema de Arquivos||||  
+|Auditoria de Conexão de Plataforma de Filtragem||||  
+|Auditoria de Descarte de Pacote de Plataforma de Filtragem||||  
+|Auditoria de Manipulação de Identificador||||  
+|Auditoria de Objeto Kernel||||  
+|Auditoria de Outros Eventos de Acesso a Objetos||||  
+|Auditoria de Registro||||  
+|Auditoria do armazenamento removível||||  
+|Auditoria de SAM||||  
+|Auditoria do preparo da política de acesso central||||  
 |**Alteração da política**||||  
-|Auditoria de alteração de política de auditoria|Sim não|Sim Sim|Sim Sim|  
-|Auditoria da alteração da política de autenticação|Sim não|Sim não|Sim Sim|  
-|Auditoria de alteração de políticas de autorização||||  
-|Auditoria de alteração de política de plataforma de filtragem||||  
-|Auditoria da alteração da política de nível de regra MPSSVC|||Sim  |  
-|Auditoria de outros eventos de alteração de política||||  
-|**Uso de privilégio**||||  
-|Auditoria de uso de privilégio não importante||||  
-|Auditoria de outros eventos de uso de privilégio||||  
-|Auditoria de uso de privilégio importante||||  
+|Auditoria de Alteração de Políticas de Auditoria|Sim não|Sim Sim|Sim Sim|  
+|Auditoria de Alteração de Políticas de Autenticação|Sim não|Sim não|Sim Sim|  
+|Auditoria de Alteração de Políticas de Autorização||||  
+|Auditoria de Alteração na Política da Plataforma de Filtragem||||  
+|Auditoria de Alteração na Política de Nível de Regra MPSSVC|||Sim  |  
+|Auditoria de Outros Eventos de Alteração de Políticas||||  
+|**Uso de privilégios**||||  
+|Auditoria de Uso de Privilégio Não Importante||||  
+|Auditoria de outros eventos de uso de privilégios||||  
+|Auditoria de Uso de Privilégio Importante||||  
 |**Sistema**||||  
-|Auditoria do Driver IPsec||Sim Sim|Sim Sim|  
+|Auditoria do driver IPsec||Sim Sim|Sim Sim|  
 |Auditoria de outros eventos do sistema|Sim Sim|||  
-|Alteração de estado de segurança de auditoria|Sim não|Sim Sim|Sim Sim|  
-|Auditoria de extensão do sistema de segurança||Sim Sim|Sim Sim|  
-|Auditoria de integridade do sistema|Sim Sim|Sim Sim|Sim Sim|  
-|**Acesso a objetos globais de auditoria**||||  
-|Auditoria do Driver IPsec||||  
+|Auditoria de Alteração no Estado de Segurança|Sim não|Sim Sim|Sim Sim|  
+|Auditoria de Extensão do Sistema de Segurança||Sim Sim|Sim Sim|  
+|Auditoria da integridade do sistema|Sim Sim|Sim Sim|Sim Sim|  
+|**Acesso ao objeto global de auditoria**||||  
+|Auditoria do driver IPsec||||  
 |Auditoria de outros eventos do sistema||||  
-|Alteração de estado de segurança de auditoria||||  
-|Auditoria de extensão do sistema de segurança||||  
-|Auditoria de integridade do sistema||||  
+|Auditoria de Alteração no Estado de Segurança||||  
+|Auditoria de Extensão do Sistema de Segurança||||  
+|Auditoria da integridade do sistema||||  
 
-## <a name="set-audit-policy-on-workstations-and-servers"></a>Definir a política de auditoria em servidores e estações de trabalho  
-Todos os planos de gerenciamento de log de eventos devem monitorar estações de trabalho e servidores. Um erro comum é apenas monitorar servidores ou controladores de domínio. Como mal-intencionado hackers frequentemente inicialmente ocorre em estações de trabalho, não monitorando estações de trabalho está ignorando a melhor e mais antiga fonte de informações.  
+<sup>1</sup> começando com o Windows 10 versão 1809, auditoria de Logon é habilitada por padrão para êxito e falha. Nas versões anteriores do Windows, êxito só é habilitado por padrão.
 
-Os administradores devem cuidadosamente revisar e teste qualquer política de auditoria antes da implementação em seu ambiente de produção.  
+**Recomendações de configurações de auditoria do Windows Server 2008, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 e Windows Server 2016**  
 
-## <a name="events-to-monitor"></a>Eventos a serem monitorados  
+|Categoria de política de auditoria ou subcategoria|Padrão do Windows<br /><br />Falha de sucesso|Recomendação de linha de base<br /><br />Falha de sucesso|Recomendação mais forte<br /><br />Falha de sucesso|  
+|----------------------------------------|------------------------------------------|--------------------------------------------------|--------------------------------------------------|  
+|**Logon de conta**||||  
+|Auditoria da validação de credenciais|Não há nenhum|Sim Sim|Sim Sim|  
+|Auditoria do serviço de autenticação Kerberos|||Sim Sim|  
+|Auditoria das operações do tíquete de serviço Kerberos|||Sim Sim|  
+|Auditoria de outros eventos de logon de conta|||Sim Sim|  
+|**Gerenciamento de conta**||||  
+|Auditoria do gerenciamento de grupo de aplicativos||||  
+|Auditoria de Gerenciamento de Conta de Computador||Sim o controlador de domínio|Sim Sim|  
+|Auditoria de Gerenciamento de Grupo de Distribuição||||  
+|Auditoria de Outros Eventos de Gerenciamento de Contas||Sim Sim|Sim Sim|  
+|Auditoria de Gerenciamento de Grupo de Segurança||Sim Sim|Sim Sim|  
+|Auditoria de Gerenciamento de Conta de Usuário|Sim não|Sim Sim|Sim Sim|  
+|**Acompanhamento detalhado**||||  
+|Auditoria de Atividade DPAPI|||Sim Sim|  
+|Auditoria de Criação de Processo||Sim não|Sim Sim|  
+|Auditoria de Terminação de Processo||||  
+|Auditoria de Eventos de RPC||||  
+|**Acesso DS**||||  
+|Auditoria de Replicação Detalhada do Serviço de Diretório||||  
+|Auditoria do acesso ao serviço de diretório||CONTROLADOR DE DOMÍNIO DO CONTROLADOR DE DOMÍNIO|CONTROLADOR DE DOMÍNIO DO CONTROLADOR DE DOMÍNIO|  
+|Auditoria de Alterações no Serviço de Diretório||CONTROLADOR DE DOMÍNIO DO CONTROLADOR DE DOMÍNIO|CONTROLADOR DE DOMÍNIO DO CONTROLADOR DE DOMÍNIO|  
+|Auditoria de Replicação do Serviço de Diretório||||  
+|**Logon e Logoff**||||  
+|Auditoria de Bloqueio de Conta|Sim não||Sim não|  
+|Auditoria das declarações de dispositivo/usuário||||  
+|Auditoria de Modo Estendido do IPsec||||  
+|Auditoria de Modo Principal do IPsec|||IF     IF|  
+|Auditoria de Modo Rápido do IPsec||||  
+|Logoff de Auditoria|Sim não|Sim não|Sim não|  
+|Logon de Auditoria|Sim Sim|Sim Sim|Sim Sim|  
+|Auditoria de Servidor de Política de Rede|Sim Sim|||  
+|Auditoria de outros eventos de logon/logoff|||Sim Sim|  
+|Auditoria de Logon Especial|Sim não|Sim não|Sim Sim|  
+|**Acesso a objetos**||||  
+|Auditoria de Aplicativo Gerado||||  
+|Auditoria de serviços de certificação||||  
+|Compartilhamento de Arquivos de Auditoria Detalhado||||  
+|Auditoria de Compartilhamento de Arquivos||||  
+|Auditoria de Sistema de Arquivos||||  
+|Auditoria de Conexão de Plataforma de Filtragem||||  
+|Auditoria de Descarte de Pacote de Plataforma de Filtragem||||  
+|Auditoria de Manipulação de Identificador||||  
+|Auditoria de Objeto Kernel||||  
+|Auditoria de Outros Eventos de Acesso a Objetos||||  
+|Auditoria de Registro||||  
+|Auditoria do armazenamento removível||||  
+|Auditoria de SAM||||  
+|Auditoria do preparo da política de acesso central||||  
+|**Alteração da política**||||  
+|Auditoria de Alteração de Políticas de Auditoria|Sim não|Sim Sim|Sim Sim|  
+|Auditoria de Alteração de Políticas de Autenticação|Sim não|Sim não|Sim Sim|  
+|Auditoria de Alteração de Políticas de Autorização||||  
+|Auditoria de Alteração na Política da Plataforma de Filtragem||||  
+|Auditoria de Alteração na Política de Nível de Regra MPSSVC|||Sim  |  
+|Auditoria de Outros Eventos de Alteração de Políticas||||  
+|**Uso de privilégios**||||  
+|Auditoria de Uso de Privilégio Não Importante||||  
+|Auditoria de outros eventos de uso de privilégios||||  
+|Auditoria de Uso de Privilégio Importante||||  
+|**Sistema**||||  
+|Auditoria do driver IPsec||Sim Sim|Sim Sim|  
+|Auditoria de outros eventos do sistema|Sim Sim|||  
+|Auditoria de Alteração no Estado de Segurança|Sim não|Sim Sim|Sim Sim|  
+|Auditoria de Extensão do Sistema de Segurança||Sim Sim|Sim Sim|  
+|Auditoria da integridade do sistema|Sim Sim|Sim Sim|Sim Sim|  
+|**Acesso ao objeto global de auditoria**||||  
+|Auditoria do driver IPsec||||  
+|Auditoria de outros eventos do sistema||||  
+|Auditoria de Alteração no Estado de Segurança||||  
+|Auditoria de Extensão do Sistema de Segurança||||  
+|Auditoria da integridade do sistema||||  
+
+## <a name="set-audit-policy-on-workstations-and-servers"></a>Definir política de auditoria em servidores e estações de trabalho  
+Todos os planos de gerenciamento de log de eventos devem monitorar os servidores e estações de trabalho. Um erro comum é monitorar somente os controladores de domínio ou servidores. Como geralmente inicialmente de hackers mal-intencionados ocorre em estações de trabalho, estações de trabalho de monitoramento não está ignorando a origem de melhor e mais recente das informações.  
+
+Cuidadosamente, os administradores devem examinar e testar qualquer política de auditoria antes da implementação no ambiente de produção.  
+
+## <a name="events-to-monitor"></a>Eventos a Monitorar  
 Uma ID de evento perfeito para gerar um alerta de segurança deve conter os seguintes atributos:  
 
--   Alta probabilidade dessa ocorrência indica atividades não autorizadas  
+-   Grande probabilidade de que essa ocorrência indica atividades não autorizadas  
 
 -   Número baixo de falsos positivos  
 
--   Ocorrência deve resultar em uma resposta de investigação/perícia  
+-   Ocorrência deve resultar em uma resposta de investigação/forense  
 
 Dois tipos de eventos devem ser monitorados e alertados:  
 
 1.  Esses eventos em que até mesmo uma única ocorrência indica atividades não autorizadas  
 
-2.  Um acúmulo de eventos acima de uma linha de base esperada e aceito  
+2.  Um acúmulo de eventos acima de uma linha de base esperada e aceita  
 
 Um exemplo do primeiro evento é:  
 
-Se a administradores de domínio (DAs) são proibidos de fazer logon nos computadores que não são controladores de domínio, uma única ocorrência de um membro DA fazer logon em uma estação de trabalho do usuário final deve gerar um alerta e ser investigada. Esse tipo de alerta é fácil gerar usando o evento de auditoria do Logon especial 4964 (grupos especiais atribuídos a um novo logon). Outros exemplos de alertas de instância única incluem:  
+Se a Admins. do domínio (DAs) estão proibidos de fazer logon em computadores que não são controladores de domínio, uma única ocorrência de um membro DA fazendo logon em uma estação de trabalho do usuário final deve gerar um alerta e ser investigada. Este tipo de alerta é fácil gerar usando o evento de auditoria de Logon especial 4964 (grupos especiais atribuídos a um novo logon). Outros exemplos de alertas de instância única:  
 
--   Se o servidor A nunca deve se conectar ao servidor B, alerta quando eles se conectarem entre si.  
+-   Se o servidor A nunca deve se conectar ao servidor B, o alerta quando eles se conectam uns aos outros.  
 
--   Alerte se uma conta de usuário final normal inesperadamente é adicionada a um grupo de segurança confidenciais.  
+-   Alerta se inesperadamente, uma conta normal do usuário final for adicionada a um grupo de segurança confidenciais.  
 
--   Se os funcionários no local de fábrica A funcionam nunca à noite, alerta quando um usuário faz logon à meia-noite.  
+-   Se os funcionários em um único local factory nunca funcionam durante a noite, alerta quando um usuário faz logon à meia-noite.  
 
--   Alerte se um serviço não autorizadas estiver instalado em um controlador de domínio.  
+-   Alerta se um serviço não autorizado é instalado em um controlador de domínio.  
 
--   Investigue se um usuário final normal tenta fazer logon diretamente um SQL Server para os quais não tenham nenhum motivo claro para fazê-lo.  
+-   Investigue se um usuário final regular tentativas de logon diretamente em um SQL Server para os quais não têm nenhum motivo claro para fazer isso.  
 
--   Se você não têm membros em seu grupo DA e alguém adiciona propriamente ditos lá, verificá-la imediatamente.  
+-   Se você não têm membros no seu grupo DA e alguém adiciona próprios lá, verifique-lo imediatamente.  
 
 Um exemplo do segundo evento é:  
 
-Um número de logons anormal pode indicar uma ataque de adivinhação de senha. Para uma empresa fornecer um alerta para um número excepcionalmente alto de logons, ele devem primeiro entender os níveis normais de logons com falha em seus ambientes antes de um evento de segurança mal-intencionados.  
+Um número anormal de logons com falha pode indicar uma ataque de adivinhação de senha. Para uma empresa fornecer um alerta para um número excepcionalmente alto de logons com falha, eles devem primeiro entender os níveis normais de logons com falha dentro de seu ambiente antes de um evento de segurança mal-intencionado.  
 
-Para obter uma lista abrangente de eventos que você deve incluir ao monitorar sinais de comprometimento, consulte [apêndice l: eventos a serem monitorados](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md).  
+Para obter uma lista abrangente de eventos que você deve incluir ao monitorar em busca de sinais de comprometimento, consulte [l Apêndice: Eventos a serem monitorados](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md).  
 
-## <a name="active-directory-objects-and-attributes-to-monitor"></a>Objetos do Active Directory e atributos para Monitor  
-A seguir está as contas, grupos e atributos que você deve monitorar para ajudar a detectar tentativas de comprometer sua instalação de serviços de domínio do Active Directory.  
+## <a name="active-directory-objects-and-attributes-to-monitor"></a>Objetos do Active Directory e os atributos ao Monitor  
+A seguir é as contas, grupos e atributos que você deve monitorar para ajudá-lo a detectar tentativas de comprometer a sua instalação do Active Directory Domain Services.  
 
--   Sistemas de desativação ou remoção de software antivírus e antimalware (automaticamente o reinício proteção quando ele estiver desabilitado manualmente)  
+-   Sistemas de desativação ou remoção de software antivírus e antimalware (automaticamente reiniciar a proteção quando ele é desativado manualmente)  
 
--   Contas de administrador para alterações não autorizadas  
+-   Contas de administrador para que as alterações não autorizadas  
 
--   Atividades que são executadas usando contas privilegiadas (automaticamente remover conta quando atividades suspeitas são concluídas ou alocadas tempo expirou)  
+-   Atividades que são executadas usando contas com privilégios (automaticamente remover conta quando atividades suspeitas forem concluídas ou alocadas tempo expirou)  
 
--   Privilégios e contas de VIP no AD DS. Monitorar as alterações, especialmente as alterações nos atributos na guia conta (por exemplo, cn, nome, sAMAccountName, userPrincipalName ou userAccountControl). Além de monitoramento as contas, restringir quem pode modificar as contas para como pequeno um conjunto de usuários administrativos quanto possível.  
+-   Privilegiados e contas de VIP no AD DS. Monitorar as alterações, especialmente as alterações em atributos na guia conta (por exemplo, cn, nome, sAMAccountName, userPrincipalName ou userAccountControl). Além de monitorar as contas, restringir quem pode modificar as contas a serem tão pequeno que um conjunto de usuários administrativos quanto possível.  
 
-Consulte [apêndice l: eventos a serem monitorados](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md) para obter uma lista de eventos recomendados para o monitor, suas classificações de importância e um resumo da mensagem do evento.  
+Consulte [apêndice l: Eventos a serem monitorados](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md) para obter uma lista de eventos recomendados para monitorar, suas classificações de nível de importância e um resumo de mensagem do evento.  
 
--   Servidores grupo pela classificação das cargas de trabalho, que permite identificar rapidamente os servidores que devem ser monitorados melhor e mais severamente configurado  
+-   Servidores de grupo usando a classificação de suas cargas de trabalho, que permite que você identifique rapidamente os servidores que devem ser o mais se aproxima monitorados e configurados de forma mais rigorosa  
 
--   Muda para as propriedades e a associação dos seguintes grupos do AD DS: administradores de empresa (EA), os administradores de domínio (DA), os administradores (BA) e administradores de esquema (SA)  
+-   Alterações para as propriedades e os membros dos grupos do AD DS a seguir: Administradores de empresa (EA), Admins. do domínio (DA), os administradores (BA) e administradores de esquema (SA)  
 
--   Contas desabilitadas privilegiadas (como contas de administrador internas no Active Directory e em sistemas de membro) para habilitar as contas  
+-   Contas desabilitadas com privilégios (como contas de administrador internas no Active Directory e em sistemas de membro) para habilitar as contas  
 
--   Contas de gerenciamento para todas as gravações fazer logon na conta  
+-   Contas de gerenciamento para todas as gravações de log para a conta  
 
--   Assistente de configuração de segurança interna para configurar o serviço, registro, auditoria e configurações de firewall para reduzir a superfície de ataque do servidor. Use este assistente se você implementar atalhos servidores como parte da estratégia de host administrativos.  
+-   Assistente de configuração de segurança internas para configurar o serviço, registro, auditoria e configurações de firewall para reduzir a superfície de ataque do servidor. Use este assistente se você implementar servidores de salto como parte de sua estratégia de hosts administrativos.  
 
-## <a name="additional-information-for-monitoring-active-directory-domain-services"></a>Informações adicionais para monitorar os serviços de domínio do Active Directory  
-Examine os links a seguir para obter informações adicionais sobre como monitorar o AD DS:  
+## <a name="additional-information-for-monitoring-active-directory-domain-services"></a>Informações adicionais para monitoramento de serviços de domínio do Active Directory  
+Examine os links a seguir para obter mais informações sobre como monitorar o AD DS:  
   
--   [Auditoria de acesso a objeto global é mágica](http://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx) -fornece informações sobre como configurar e usar configuração avançada de auditoria política que foi adicionado ao Windows 7 e Windows Server 2008 R2.  
+-   [Auditoria de acesso a objeto global é a mágica](http://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx) -fornece informações sobre como configurar e usar a política de configuração de auditoria avançada que foi adicionado ao Windows 7 e Windows Server 2008 R2.  
 
--   [Apresentando a auditoria de alterações no Windows 2008](http://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx) -apresenta a auditoria alterações feitas no Windows 2008.  
+-   [Introduzindo alterações de auditoria no Windows 2008](http://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx) -apresenta as alterações de auditoria feitas no Windows 2008.  
 
--   [Legais truques de auditoria no Vista e 2008](http://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx) -explica os novos recursos interessantes de auditoria no Windows Vista e Windows Server 2008, que pode ser usado para solução de problemas ou ver o que está acontecendo em seu ambiente.  
+-   [Fria truques de auditoria no Vista e no 2008](http://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx) -explica os novos recursos interessantes de auditoria no Windows Vista e Windows Server 2008 que podem ser usados para solução de problemas ou vendo o que está acontecendo em seu ambiente.  
 
--   [Loja centralizada para a auditoria no Windows Server 2008 e Windows Vista](http://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx) -contém uma compilação de auditoria de recursos e informações contidas no Windows Server 2008 e Windows Vista.  
+-   [Loja de conveniência para auditoria no Windows Server 2008 e Windows Vista](http://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx) -contém uma compilação de auditoria de recursos e as informações contidas no Windows Server 2008 e Windows Vista.  
 
--   [Guia passo a passo de auditoria do AD DS](https://technet.microsoft.com/library/a9c25483-89e2-4202-881c-ea8e02b4b2a5.aspx) -descreve o novo recurso de auditoria de serviços de domínio do Active Directory (AD DS) no Windows Server 2008. Ele também fornece os procedimentos para implementar esse novo recurso.  
+-   [Guia passo a passo de auditoria do AD DS](https://technet.microsoft.com/library/a9c25483-89e2-4202-881c-ea8e02b4b2a5.aspx) -descreve o novo recurso de auditoria de serviços de domínio Active Directory (AD DS) no Windows Server 2008. Ele também fornece procedimentos para implementar esse novo recurso.  
 
-## <a name="general-list-of-security-event-id-recommendation-criticalities"></a>Lista geral de Criticalities de recomendação de ID de evento de segurança  
-Todas as recomendações de ID de evento são acompanhadas por um nível de importância classificação da seguinte maneira:  
+## <a name="general-list-of-security-event-id-recommendation-criticalities"></a>Lista geral dos níveis de importância recomendação ID de evento de segurança  
+Todas as recomendações de ID de evento são acompanhadas por um nível de importância de classificação da seguinte maneira:  
 
-**Alto:** IDs de evento com uma classificação de alto nível de importância deve sempre imediatamente serão alertados e investigadas.  
+**Alta:** IDs de eventos com uma classificação de gravidade alta devem sempre e imediatamente ser alertadas e investigadas.  
 
-**Médio:** uma ID de evento com uma classificação de importância médio pode indicar atividade maliciosa, mas eles devem ser acompanhados por alguns outra anormalidade (por exemplo, um número incomum que ocorrem em um determinado período de tempo, ocorrências inesperadas ou ocorrências em um computador que normalmente não seria esperado para registrar o evento.). Um evento de importância médio pode também r ser coletada como uma métrica e comparado ao longo do tempo.  
+**Médio:** Uma ID de evento com uma classificação de gravidade média pode indicar atividades mal-intencionadas, mas ele deve ser acompanhado por alguns outra anormalidade (por exemplo, um número incomum que ocorrem em um determinado período de tempo, ocorrências inesperadas ou ocorrências em um computador que normalmente deve não ser esperado para o evento de log.). Um evento de nível de importância Média também poderá r ser coletado como uma métrica e comparado ao longo do tempo.  
 
-**Baixo:** e ID de evento com um eventos de pouca importância não devem conseguir atenção ou causar alertas, a menos que correlacionados com eventos de nível de importância médio ou alto.  
+**Baixa:** E ID de evento com eventos de um nível de importância baixa não deve coletar atenção ou geram alertas, a menos que correlacionadas com eventos de média ou alta prioridade.  
 
-Essas recomendações devem fornecer um guia de linha de base para o administrador. Todas as recomendações devem ser revisadas completamente antes da implementação em um ambiente de produção.  
+Essas recomendações destinam-se a fornecer um guia de linha de base para o administrador. Todas as recomendações devem ser inteiramente examinadas antes da implementação em um ambiente de produção.  
 
-Consulte [apêndice l: eventos a serem monitorados](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md) para obter uma lista dos eventos recomendados para o monitor, suas classificações de importância e um resumo da mensagem do evento.  
+Consulte [apêndice l: Eventos a serem monitorados](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md) para obter uma lista dos eventos recomendados para monitorar, suas classificações de nível de importância e um resumo da mensagem de evento.  

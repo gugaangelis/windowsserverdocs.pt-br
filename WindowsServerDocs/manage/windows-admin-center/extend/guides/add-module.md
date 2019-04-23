@@ -1,6 +1,6 @@
 ---
 title: Adicionar um módulo a uma extensão de ferramenta
-description: Desenvolver uma extensão de ferramenta SDK do Windows Admin Center (Project Honolulu) - adicionar um módulo a uma extensão de ferramenta
+description: Desenvolver uma extensão da ferramenta (projeto Paulo) do SDK do Windows Admin Center – adicionar um módulo a uma extensão de ferramenta
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -9,23 +9,23 @@ ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.openlocfilehash: e6978ce20a7c6da8addb217de8d30f733b40d261
-ms.sourcegitcommit: be0144eb59daf3269bebea93cb1c467d67e2d2f1
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4081203"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59834397"
 ---
-# Adicionar um módulo a uma extensão de ferramenta
+# <a name="add-a-module-to-a-tool-extension"></a>Adicionar um módulo a uma extensão de ferramenta
 
->Aplica-se a: Windows Admin Center, Visualização do Windows Admin Center
+>Aplica-se a: Windows Admin Center, Windows Admin Center Preview
 
-Neste artigo, vamos adicionar um módulo vazio com uma extensão de ferramenta que criamos com a CLI do Windows Admin Center.
+Neste artigo, adicionaremos um módulo vazio a uma extensão de ferramenta que criamos com a CLI do Windows Admin Center.
 
-## Preparar o ambiente
+## <a name="prepare-your-environment"></a>Prepare o ambiente
 
-Se você ainda não fez, siga as instruções em desenvolvem uma extensão de [ferramenta](..\develop-tool.md) (ou [solução](..\develop-solution.md)) para preparar seu ambiente e criar uma extensão de ferramenta nova e vazia.
+Se você ainda não fez isso, siga as instruções em desenvolver uma [ferramenta](..\develop-tool.md) (ou [solução](..\develop-solution.md)) a extensão para preparar seu ambiente e criar uma extensão de ferramenta nova e vazia.
 
-## Usar a CLI Angular para criar um módulo (e o componente)
+## <a name="use-the-angular-cli-to-create-a-module-and-component"></a>Usar a CLI do Angular para criar um módulo (e componente)
 
 Se você ainda não conhece a angulares, é altamente recomendável que você leia a documentação sobre o site Angular.Io para conhecer angulares e NgModule. Para obter mais informações sobre NgModule, acesse:https://angular.io/guide/ngmodule
 
@@ -33,7 +33,7 @@ Se você ainda não conhece a angulares, é altamente recomendável que você le
 * Mais informações sobre como gerar um novo componente no CLI angular: https://github.com/angular/angular-cli/wiki/generate-component
 
 
-Abra um prompt de comando, altere o diretório para \src\app em seu projeto e execute os seguintes comandos, substituindo ```{!ModuleName}``` com o nome do módulo (espaços removidos):
+Abra um prompt de comando, altere o diretório para \src\app em seu projeto e, em seguida, execute os seguintes comandos, substituindo ```{!ModuleName}``` com seu nome de módulo (espaços removidos):
 
 ```
 cd \src\app
@@ -53,13 +53,13 @@ ng generate component ManageFooWorksPortal
 ```
 
 
-## Adicionar informações de roteamento
+## <a name="add-routing-information"></a>Adicionar informações de roteamento
 
 Se você ainda não conhece o Angular, é altamente recomendável que aprender sobre o Roteamento e a navegação angular. As seções a seguir definem os elementos de roteamento necessários que permitem o Windows Admin Center navegar até sua extensão e entre os modos de exibição dela em resposta a atividade do usuário. Para saber mais, acesse:https://angular.io/guide/router
 
-Use o mesmo nome do módulo que você usou na etapa acima.
+Use o mesmo nome do módulo que você usou na etapa anterior.
 
-### Adicionar conteúdo ao novo arquivo de roteamento
+### <a name="add-content-to-new-routing-file"></a>Adicionar conteúdo ao novo arquivo de roteamento
 
 * Navegue até a pasta do módulo que foi criada por ``` ng generate ``` na etapa anterior.
 
@@ -108,7 +108,7 @@ Use o mesmo nome do módulo que você usou na etapa acima.
     | ```{!ModuleName}``` | O nome do módulo (espaços removidos) | ```ManageFooWorksPortal``` |
     | ```{!module-name}``` | Seu nome do módulo (letras minúsculas, espaços substituídos por traços) | ```manage-foo-works-portal``` |
 
-### Adicionar conteúdo ao novo arquivo de módulo
+### <a name="add-content-to-new-module-file"></a>Adicionar conteúdo ao novo arquivo de módulo
 
 Abra o arquivo ```{!module-name}.module.ts```, encontrado com a seguinte convenção de nomenclatura:
 
@@ -136,13 +136,13 @@ Abra o arquivo ```{!module-name}.module.ts```, encontrado com a seguinte conven�
 
 * Verifique se as instruções ```import``` estão em ordem alfabética por fonte.
 
-### Adicionar conteúdo ao novo arquivo de typescript do componente
+### <a name="add-content-to-new-component-typescript-file"></a>Adicionar conteúdo ao novo arquivo do typescript de componente
 
 Abra o arquivo ```{!module-name}.component.ts```, encontrado com a seguinte convenção de nomenclatura:
 
 | Valor | Explicação | Exemplo de nome de arquivo |
 | ----- | ----------- | ------- |
-| ```{!module-name}``` | O nome do módulo (letras minúsculas, espaços substituídos por traços) | ```manage-foo-works-portal.component.ts``` |
+| ```{!module-name}``` | Seu nome do módulo (letras minúsculas, espaços substituídos por traços) | ```manage-foo-works-portal.component.ts``` |
     
 Modifique o conteúdo do arquivo para o seguinte:
 
@@ -155,9 +155,9 @@ public ngOnInit() {
     // TODO
 }
 ```
-### Atualizar o aplicativo routing.module.ts
+### <a name="update-app-routingmodulets"></a>Atualizar aplicativo routing.module.ts
 
-Abra o arquivo ```app-routing.module.ts```e modificar o caminho padrão para que ele carregará o novo módulo que você acabou de criar.  Encontre a entrada para ```path: ''```e atualizar ```loadChildren``` para carregar o módulo em vez do módulo padrão:
+Abrir arquivo ```app-routing.module.ts```e modifique o caminho padrão para que ele carregará o novo módulo que você acabou de criar.  Localize a entrada de ```path: ''```e atualizar ```loadChildren``` para carregar o módulo em vez do módulo padrão:
 
 | Valor | Explicação | Exemplo |
 | ----- | ----------- | ------- |
@@ -179,6 +179,6 @@ Aqui está um exemplo de um caminho padrão atualizado:
 ```
 
 
-## Compilação e lado carregam sua extensão
+## <a name="build-and-side-load-your-extension"></a>Compilação e o lado carregam sua extensão
 
-Agora você adicionou um módulo até sua extensão.  Em seguida, você pode [carga de compilação e lado](..\develop-tool.md#build-and-side-load-your-extension) sua extensão no Centro de administração do Windows para ver os resultados.
+Agora, você adicionou um módulo para sua extensão.  Em seguida, você pode [compilação e do lado do carregamento](..\develop-tool.md#build-and-side-load-your-extension) sua extensão no Windows Admin Center para ver os resultados.

@@ -1,0 +1,136 @@
+---
+title: Comportamento do fsutil
+ms.prod: windows-server-threshold
+manager: dmoss
+ms.author: toklima
+author: toklima
+ms.technology: storage
+audience: IT Pro
+ms.topic: article
+ms.date: 10/16/2017
+ms.assetid: 84eaba2c-c0af-49e1-bbbd-2ed2928e5e4b
+ms.openlocfilehash: 4593739f25c356e72ea39947c67f3e1301573137
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59838267"
+---
+# <a name="fsutil-behavior"></a>Comportamento do fsutil
+
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
+
+As consultas ou define o comportamento de volume NTFS, que inclui:
+
+-   A criação de nomes de arquivo 8.3
+
+-   Uso de caracteres estendidos em nomes de arquivo curto de comprimento de caracteres 8.3 em volumes NTFS
+
+-   A atualização do carimbo de hora do último acesso quando os diretórios são listados em volumes NTFS
+
+-   A frequência com que a cota eventos são gravados no log do sistema e NTFS paginada pool e níveis de cache de memória de pool não paginável do NTFS
+
+-   O tamanho da zona da tabela mestra de arquivos (zona de MFT)
+
+-   Exclusão silenciosa de dados quando o sistema encontra corrupção em um volume NTFS.
+
+-   Notificação de exclusão de arquivos (também conhecido como cortar ou cancelar o mapeamento)
+
+Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
+## <a name="syntax"></a>Sintaxe
+
+```
+fsutil behavior query {allowextchar | bugcheckoncorrupt | disable8dot3 [<VolumePath>] | disablecompression | disablecompressionlimit | disableencryption | disablefilemetadataoptimization | disablelastaccess | disablespotcorruptionhandling | disabletxf | disablewriteautotiering | encryptpagingfile | mftzone | memoryusage | quotanotify | symlinkevaluation | disabledeletenotify}
+
+fsutil behavior set {allowextchar {1|0} | bugcheckoncorrupt {1|0} | disable8dot3 [ <Value> | [<VolumePath> {1|0}] ] | disablecompression {1|0} | disablecompressionlimit {1|0} | disableencryption {1|0} | disablefilemetadataoptimization {1|0} | disablelastaccess {1|0} | disablespotcorruptionhandling {1|0} | disabletxf {1|0} | disablewriteautotiering {1|0} | encryptpagingfile {1|0} | mftzone <Value> | memoryusage <Value> | quotanotify <Frequency> | symlinkevaluation <SymbolicLinkType> | disabledeletenotify {1|0}}
+```
+
+## <a name="parameters"></a>Parâmetros
+
+|Parâmetro|Descrição|
+|-------------|---------------|
+|consulta|Consulta os parâmetros de comportamento do sistema de arquivos.|
+|set|Altera os parâmetros de comportamento do sistema de arquivos.|
+|allowextchar {1&#124;0}|Permite que (**1**) ou não (**0**) caracteres estendidos conjunto (incluindo caracteres diacríticos) a ser usado em nomes de arquivos de comprimento de caracteres curtos 8.3 em volumes NTFS.<br /><br />Você deve reiniciar seu computador para esse parâmetro entrem em vigor.|
+|Bugcheckoncorrupt {1&#124;0}|Permite que (**1**) ou não (**0**) geração de uma verificação de bug quando estão corrompidos em um volume NTFS. Esse recurso pode ser usado para impedir que o NTFS silenciosamente a exclusão de dados quando usado com o recurso de auto-recuperação NTFS.<br /><br />Você deve reiniciar seu computador para esse parâmetro entrem em vigor.<br /><br />Esse parâmetro se aplica a:  Windows Server 2008 R2 e Windows 7.|
+|disable8dot3 [<VolumePath>] {1&#124;0}|Desabilita (**1**) ou habilita (**0**) a criação de nomes de arquivo 8.3 em volumes formatados em NTFS e FAT. Opcionalmente, de prefixo com o *VolumePath* especificado como um nome de unidade seguido por dois pontos ou GUID.|
+|disablecompression {1&#124;0}|Desabilita **(1)** ou habilita **(0)** compactação NTFS.<br /><br />Você deve reiniciar seu computador para esse parâmetro entrem em vigor.|
+|disablecompressionlimit {1&#124;0}| Desabilita **(1)** ou habilita **(0)** limite de compactação do NTFS no volume NTFS. Quando um arquivo compactado atinge um certo nível de fragmentação, em vez de falhar estender o arquivo, o NTFS interrompe compactando extensões adicionais do arquivo. Isso foi feito para permitir que os arquivos compactados ser maior do que normalmente seriam. Definir esse valor como TRUE desabilitará esse recurso, que limita o tamanho de compactados arquivos no sistema. Não é recomendável desabilitar esse recurso.<br /><br />Você deve reiniciar seu computador para esse parâmetro entrem em vigor.|
+|DisableEncryption {1&#124;0}|Desabilita **(1)** ou habilita **(0)** a criptografia de pastas e arquivos em volumes NTFS.<br /><br />Você deve reiniciar seu computador para esse parâmetro entrem em vigor.|
+|disablefilemetadataoptimization {1&#124;0}|Desabilita **(1)** ou habilita **(0)** otimização de metadados do arquivo. NTFS tem um limite em extensões quantas um determinado arquivo pode ter. Compactado e arquivos de peças de reposição podem se tornar muito fragmentados. Por padrão, o NTFS compacta periodicamente suas estruturas de metadados interno para permitir que os arquivos mais fragmentados. Definir esse valor como TRUE desabilita essa otimização interna. Não é recomendável desabilitar esse recurso.<br /><br />Você deve reiniciar seu computador para esse parâmetro entrem em vigor.|
+|disablelastaccess {1&#124;0}|Desabilita (**1**) ou habilita (**0**) de atualizações para o último carimbo de data / hora de acesso em cada diretório quando os diretórios são listados em um volume NTFS.<br /><br />Você deve reiniciar seu computador para esse parâmetro entrem em vigor.|
+|disablespotcorruptionhandling {1&#124;0}|Desabilita **(1)** ou habilita **(0)** tratamento especial de corrupção. Um dos novos recursos introduzidos no Windows 8 e Windows Server 2012 é uma nova forma de alta disponibilidade do CHKDSK. Esse recurso permite que os administradores do sistema executar o CHKDSK para analisar o estado de um volume sem colocá-lo offline. Não é recomendável desabilitar esse recurso.<br /><br />Você deve reiniciar seu computador para esse parâmetro entrem em vigor.|
+|disabletxf {1&#124;0}|Desabilita **(1)** ou habilita **(0)** txf no volume NTFS especificado. TxF é um recurso do NTFS que fornece a transação, como a semântica para operações de sistema de arquivos. TxF no momento é deprected, embora a funcionalidade ainda esteja disponível. Não é recomendável desabilitar esse recurso no volume c:.<br /><br />Você deve reiniciar seu computador para esse parâmetro entrem em vigor.|
+|disablewriteautotiering {1&#124;0}|Desabilita a lógica em camadas do ReFS v2 automática para volumes em camadas.<br /><br />Você deve reiniciar seu computador para esse parâmetro entrem em vigor.|
+|encryptpagingfile {1&#124;0}|Criptografa (**1**) ou não criptografar (**0**) o arquivo de paginação de memória no sistema operacional Windows.<br /><br />Você deve reiniciar seu computador para esse parâmetro entrem em vigor.|
+|mftzone <Value>|Define o tamanho da zona de MFT e é expresso como um múltiplo de unidades de 200MB. Definir *valor* para um número de **1** (o padrão é 200 MB) para **4** (o máximo é de 800 MB).<br /><br />Você deve reiniciar seu computador para esse parâmetro entrem em vigor.|
+|memoryusage <Value>|Configura os níveis de cache interno de memória de pool paginável do NTFS e memória de pool não-paginável do NTFS. Definido como **1** ou **2**. Quando definido como **1** (padrão), o NTFS usa a quantidade de memória de pool paginável padrão. Quando definido como **2**, NTFS aumenta o tamanho de suas listas exclusivas e limites de memória. (Uma lista exclusiva é um pool de buffers de memória de tamanho fixo que o kernel e drivers de dispositivo criam como caches de memória privada para operações de sistema de arquivos, como ler um arquivo.)<br /><br />Você deve reiniciar seu computador para esse parâmetro entrem em vigor.|
+|quotanotify <Frequency>|Configura a frequência com que as violações de cotas NTFS são relatadas no log do sistema. Os valores válidos para estão no intervalo de 0 a 4294967295. A frequência de padrão é 3600 segundos (uma hora).<br /><br />Você deve reiniciar seu computador para esse parâmetro entrem em vigor.|
+|symlinkevaluation <SymbolicLinkType>|Controla o tipo de links simbólicos que podem ser criados em um computador. As opções válidas são:<br /><br />1.  Local para locais links simbólicos, L2L: {0&#124;1}<br />2.  Local para remotos links simbólicos, L2R: {0&#124;1}<br />3.  Remoto para links simbólicos locais, R2R: {0&#124;1}<br />4.  Remoto para links simbólicos remotos, R2L: {0&#124;1}|
+|DisableDeleteNotify|Desabilita \( **1** \) ou habilita \( **0** \) excluir as notificações. Notificação de exclusão \(também conhecido como cortar ou desmapear\) é a operação de exclusão de um recurso que notifica o dispositivo de armazenamento subjacente de clusters que têm sido liberado devido a um arquivo. Além disso:<br /><br />-Para sistemas usando ReFS v2, corte é desabilitado por padrão. Aplica-se ao Windows Server 2016.<br />-Para sistemas usando ReFS v1, corte é habilitado por padrão. Aplica-se ao Windows Server 2012, Windows Server 2012 R2 e Windows Server 2016.<br />-Para sistemas usando o NTFS, trim é habilitado por padrão, a menos que um administrador a desabilita.<br />-Se a sua unidade de disco rígido ou SAN relata que não oferece suporte a corte, seu disco rígido e SANs não obter notificações de trim.<br />-Habilitar ou desabilitar não requer uma reinicialização.<br />-Trim é eficaz quando o próximo comando Cancelar o mapeamento é emitido.<br />-Existentes em andamento e/s não são afetados pela alteração do registro.<br />-Não requer qualquer reinicialização do serviço quando você habilita ou desabilita o corte.<br /><br />Esse parâmetro foi introduzido no Windows Server 2008 R2 e Windows 7. | 
+
+## <a name="remarks"></a>Comentários
+
+-   A zona de MFT é uma área reservada que permite que a tabela mestra de arquivos (MFT) para expandir conforme necessário, para evitar a fragmentação de MFT. Se o tamanho médio do arquivo no volume for 2 KB ou menos, pode ser útil definir a **mftzone** valor como 2. Se o tamanho médio do arquivo no volume é de 1 KB ou menos, pode ser útil definir a **mftzone** valor a 4.
+
+-   Quando **disable8dot3** é definido como **0**, sempre que você crie um arquivo com um nome de arquivo longo, NTFS cria uma segunda entrada de arquivo que tem um nome de 8.3 arquivo de comprimento de caracteres. Quando o NTFS cria arquivos em um diretório, ele deve procurar os nomes de arquivo 8.3 que estão associados com os nomes de arquivo longos. Este parâmetro atualiza o **HKLM\SYSTEM\CurrentControlSet\Control\FileSystem\NtfsDisable8dot3NameCreation** chave do registro.
+
+-   O **allowextchar** atualizações do parâmetro a **HKLM\SYSTEM\CurrentControlSet\Control\FileSystem\NtfsAllowExtendedCharacterIn8dot3Name** chave do registro.
+
+-   O **disablelastaccess** parâmetro reduz o impacto de atualizações de registro em log para o carimbo de data / hora do último acesso em arquivos e diretórios. Desabilitando o **hora do último acesso** recurso melhora a velocidade de acesso de arquivo e diretório. Este parâmetro atualiza o **HKLM\SYSTEM\CurrentControlSet\Control\FileSystem\NtfsDisableLastAccessUpdate** chave do registro.
+
+    Observações:
+
+    -   Com base em arquivo **hora do último acesso** consultas são precisas, mesmo se todos os valores em disco não forem atuais. NTFS retorna o valor correto em consultas porque o valor exato é armazenado na memória.
+
+    -   Uma hora é a quantidade máxima de tempo que o NTFS adia a atualização **hora do último acesso** no disco. Se o NTFS atualiza os outros atributos de arquivo, como **hora da última modificação**e um **hora do último acesso** atualização está pendente, atualizações NTFS **hora do último acesso** com as outras atualizações sem impacto de desempenho adicionais.
+
+    -   O **disablelastaccess** parâmetro pode afetar os programas, como Backup e armazenamento remoto que dependem desse recurso.
+
+-   Aumentar a memória física nem sempre aumenta a quantidade de memória paginável para NTFS. Definindo **memoryusage** à **2** aumenta o limite de memória de pool paginável. Isso pode melhorar o desempenho se o sistema estiver abrindo e fechando vários arquivos no mesmo arquivo de definição e não estiver usando grandes quantidades de memória do sistema para outros aplicativos ou para a memória de cache. Se o computador já estiver usando grandes quantidades de memória do sistema para outros aplicativos ou para a memória cache, aumentar o limite do NTFS paginável e memória de pool não paginável reduz a memória de pool disponível para outros processos. Isso pode reduzir o desempenho geral do sistema. Este parâmetro atualiza o **HKLM\SYSTEM\CurrentControlSet\Control\FileSystem\NtfsMemoryUsage** chave do registro.
+
+-   O valor especificado na **mftzone** parâmetro é uma aproximação do tamanho inicial da MFT mais a zona de MFT em um novo volume, e ela é definida no tempo de montagem para cada sistema de arquivos. Como o espaço no volume é usado, o NTFS ajusta o espaço reservado para futuro crescimento de MFT. Se a zona de MFT já for grande, o tamanho da zona de MFT completo não está reservado novamente. Como a zona de MFT é baseada no intervalo contíguo após o final da MFT, ela diminui conforme o espaço é usado.
+
+    O sistema de arquivos não determina o novo local da zona de MFT até que a zona de MFT atual seja totalmente usada. Observe que isso nunca ocorre em um sistema típico.
+
+-   Alguns dispositivos podem apresentar degradação no desempenho quando o recurso de notificação de exclusão é ativado. Nesse caso, use o **disabledeletenotify** opção para desativar o recurso de notificação.
+
+### <a name="BKMK_examples"></a>Exemplos
+Para consultar o comportamento de nome de 8dot3 disable para um volume de disco especificado com o GUID, {928842df-5a01-11de-a85c-806e6f6e6963}, digite:
+
+```
+fsutil behavior query disable8dot3 Volume{928842df-5a01-11de-a85c-806e6f6e6963}
+```
+
+Você também pode consultar o comportamento de nome de 8dot3 usando o **8dot3name** subcomando.
+
+Para consultar o sistema para verificar se o TRIM estará habilitado ou não, digite:
+
+```
+fsutil behavior query DisableDeleteNotify
+```
+Isso resulta em uma saída semelhante a esta:
+
+    NTFS DisableDeleteNotify = 1
+    ReFS DisableDeleteNotify is not currently set
+
+Para substituir o comportamento padrão para CORTE \(disabledeletenotify\) para ReFS v2, digite:
+
+```
+fsutil behavior set DisableDeleteNotify ReFS 0
+```
+
+Para substituir o comportamento padrão para CORTE \(disabledeletenotify\) para NTFS e ReFS v1, digite:
+```
+fsutil behavior set DisableDeleteNotify 1
+```
+
+#### <a name="additional-references"></a>Referências adicionais
+[Chave de sintaxe de linha de comando](Command-Line-Syntax-Key.md)
+
+[Fsutil](Fsutil.md)
+
+[Fsutil 8dot3name](Fsutil-8dot3name.md)
+
+

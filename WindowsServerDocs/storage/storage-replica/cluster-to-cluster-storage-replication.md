@@ -1,5 +1,5 @@
 ---
-title: "Replicação de armazenamento de cluster para cluster"
+title: Replicação de armazenamento de cluster para cluster
 ms.prod: windows-server-threshold
 manager: siroy
 ms.author: nedpyle
@@ -7,17 +7,18 @@ ms.technology: storage-replica
 ms.topic: get-started-article
 ms.assetid: 834e8542-a67a-4ba0-9841-8a57727ef876
 author: nedpyle
-ms.date: 10/11/2016
-description: "Como usar Armazenamento réplica para replicar volumes em um cluster para outro cluster executando o Windows Server 2016 Datacenter Edition."
-ms.openlocfilehash: 0681f6495390fda9b0c4564bf5516a48652b2c71
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.date: 10/11/2017
+description: Como usar Armazenamento réplica para replicar volumes em um cluster para outro cluster executando o Windows Server 2016 Datacenter Edition.
+ms.openlocfilehash: 46bd5a53ff0e704844f10264a9f3a6fbe0e4d512
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59838657"
 ---
 # <a name="cluster-to-cluster-storage-replication"></a>Replicação de armazenamento de cluster para cluster
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
 A replicação de cluster para cluster agora está disponível no Windows Server 2016 Datacenter Edition, incluindo a replicação de clusters usando Espaços de Armazenamento Diretos (ou seja, nada é compartilhado, armazenamento de conexão direta). O gerenciamento e a configuração são semelhantes aos da replicação de servidor para servidor.  
 
@@ -26,7 +27,7 @@ Você configurará esses computadores e o armazenamento em uma configuração de
 Não há nenhuma ferramenta gráfica no Windows Server 2016 Datacenter Edition que possa configurar a Replicação de Armazenamento para replicação de cluster para cluster, porém o Azure Site Recovery será capaz de configurar esse cenário no futuro.
 
 > [!IMPORTANT]
-> No teste, os quatro servidores são um exemplo. Você pode usar qualquer quantidade de servidores com suporte pela Microsoft em cada cluster, que atualmente é 16 para um cluster de Espaços de Armazenamento Diretos e 64 para um cluster de armazenamento compartilhado.  
+> No teste, os quatro servidores são um exemplo. Você pode usar qualquer número de servidores de suporte da Microsoft em cada cluster, o que está atualmente 8 para um cluster de espaços de armazenamento diretos e 64 para um cluster de armazenamento compartilhado.  
 >   
 > Este guia não abrange a configuração de Espaços de Armazenamento Diretos. Para saber mais sobre como configurar Espaços de Armazenamento Diretos, confira [Espaços de Armazenamento Diretos no Windows Server 2016](../storage-spaces/storage-spaces-direct-overview.md).  
 
@@ -40,7 +41,7 @@ Este passo a passo usa o seguinte ambiente como exemplo:
 
 ![Diagrama que mostra um ambiente de exemplo com um cluster no site de Redmond replicando com um cluster no site Bellevue](./media/Cluster-to-Cluster-Storage-Replication/SR_ClustertoCluster.png)  
 
-**FIGURA 1: replicação de cluster para cluster**  
+**FIGURA 1: Replicação de cluster para cluster**  
 
 ## <a name="prerequisites"></a>Pré-requisitos  
 
@@ -52,6 +53,7 @@ Este passo a passo usa o seguinte ambiente como exemplo:
 * Regras de firewall e roteador apropriadas para permitir ICMP, SMB (porta 445, além de 5445 para SMB Direct) e tráfego bidirecional de WS-MAN (porta 5985) entre todos os nós.  
 * Uma rede entre servidores com largura de banda suficiente para conter a carga de trabalho de gravação de E/S e uma média de =5 ms de latência de viagem de ida e volta, para replicação síncrona. A replicação assíncrona não tem uma recomendação de latência.  
 * O armazenamento replicado não pode ser localizado na unidade que contém a pasta do sistema operacional Windows.
+* Há considerações importantes e limitações para replicação de espaços de armazenamento diretos - examine as informações detalhadas abaixo.
 
 Muitos desses requisitos podem ser determinados usando o cmdlet `Test-SRTopology`. Você obtém acesso a essa ferramenta se instalar os recursos Ferramentas de Gerenciamento de Réplica de Armazenamento ou Réplica de Armazenamento em pelo menos um servidor. Não é necessário configurar a Réplica de Armazenamento para usar essa ferramenta, apenas para instalar o cmdlet. Mais informações estão incluídas nas etapas abaixo.  
 
@@ -93,7 +95,7 @@ Muitos desses requisitos podem ser determinados usando o cmdlet `Test-SRTopology
         $Servers | ForEach { Install-WindowsFeature -ComputerName $_ -Name Storage-Replica,Failover-Clustering,FS-FileServer -IncludeManagementTools -restart }  
         ```  
 
-        Para saber mais sobre essas etapas, confira [Instalar ou desinstalar funções, serviços de função ou recursos](http://technet.microsoft.com/library/hh831809.aspx)  
+        Para saber mais sobre essas etapas, confira [Instalar ou desinstalar funções, serviços de função ou recursos](https://technet.microsoft.com/library/hh831809.aspx)  
 
 9. Configure o armazenamento da seguinte maneira:  
 
@@ -106,19 +108,26 @@ Muitos desses requisitos podem ser determinados usando o cmdlet `Test-SRTopology
     > -   Todos os discos de log devem ter os mesmos tamanhos de setor.  
     > -   Os volumes de log devem usar armazenamento baseado em flash, como SSD.  A Microsoft recomenda que o armazenamento de log seja mais rápido do que o armazenamento de dados. Volumes de log nunca devem ser usados para outras cargas de trabalho.
     > -   Os discos de dados podem usar HDD, SSD ou uma combinação em camadas e podem usar os espaços espelhados ou de paridade, ou RAID 1 ou 10, RAID 5 ou RAID 50.  
-    > -   O volume do log deve ter pelo menos 9 GB e talvez precise ser maior dependendo dos requisitos de log.  
+    > -   O volume do log deve ser pelo menos 8GB por padrão e pode ser maior ou menor, com base nos requisitos de log.
+    > -   Ao usar espaços de armazenamento diretos (S2D) com um cache NVME ou SSD, você verá um maior do que esperado aumento na latência ao configurar a replicação de réplica de armazenamento entre clusters do S2D. A alteração na latência é proporcionalmente muito maior do que você vê ao usar NVME e SSD em um desempenho + configuração de capacidade e nenhuma camada HDD nem camada de capacidade.
+
+Esse problema ocorre devido a limitações arquitetônicas dentro do mecanismo de log do SR combinada com a latência extremamente baixa de NVME em comparação com a mídia mais lenta. Ao usar o cache de S2D, todos os logs de e/s do SR, juntamente com todos os recentes de leitura/gravação e/s de aplicativos, ocorrerá no cache e nunca nas camadas de desempenho ou capacidade. Isso significa que todas as atividades do SR acontece na mesma mídia velocidade – essa configuração não é suportada não recomendados (consulte https://aka.ms/srfaq para obter recomendações de log). 
+
+Ao usar o S2D com unidades de disco rígido, você não pode desabilitar ou evitar o cache. Como alternativa, se usando apenas o SSD e NVME, você pode configurar apenas o desempenho e níveis de capacidade. Se usar essa configuração e colocando os logs do SR no nível de desempenho apenas com os volumes de dados que eles serviço sendo apenas a camada de capacidade, você evitará o problema de alta latência descrito acima. O mesmo pode ser feito com uma mistura de SSDs mais rápido e mais lento e sem NVME.
+
+Essa solução alternativa não é ideal claro e alguns clientes talvez não consiga fazer usá-lo. A equipe do SR está trabalhando em otimizações e um mecanismo de log atualizado para o futuro reduzir esses gargalos artificiais que ocorrem. Não há nenhum ETA para isso, mas quando estiverem disponíveis para TOCAR os clientes para teste, estas perguntas Frequentes serão atualizada. 
 
     -   **Para compartimentos JBOD:**  
 
         1.  Verifique se cada cluster pode ver apenas os compartimentos de armazenamento do local e se as conexões SAS estão configuradas corretamente.  
 
-        2.  Provisione o armazenamento usando Espaços de Armazenamento seguindo as **etapas 1 a 3** fornecidas em [Implantar espaços de armazenamento em um servidor autônomo](http://technet.microsoft.com/library/jj822938.aspx) usando o Windows PowerShell ou Gerenciador do Servidor.  
+        2.  Provisione o armazenamento usando Espaços de Armazenamento seguindo as **etapas 1 a 3** fornecidas em [Implantar espaços de armazenamento em um servidor autônomo](https://technet.microsoft.com/library/jj822938.aspx) usando o Windows PowerShell ou Gerenciador do Servidor.  
 
     -   **Para armazenamento de destino iSCSI:**  
 
         1.  Verifique se cada cluster pode ver apenas compartimentos de armazenamento do site. Você deverá usar mais de um único adaptador de rede se usar iSCSI.  
 
-        2.  Provisione o armazenamento usando a documentação do fornecedor. Se estiver usando o destino iSCSI baseado em Windows, confira [Armazenamento em bloco de destino iSCSI, Como](http://technet.microsoft.com/library/hh848268.aspx).  
+        2.  Provisione o armazenamento usando a documentação do fornecedor. Se estiver usando o destino iSCSI baseado em Windows, confira [Armazenamento em bloco de destino iSCSI, Como](https://technet.microsoft.com/library/hh848268.aspx).  
 
     -   **Para o armazenamento SAN FC:**  
 
@@ -126,13 +135,13 @@ Muitos desses requisitos podem ser determinados usando o cmdlet `Test-SRTopology
 
         2.  Provisione o armazenamento usando a documentação do fornecedor.  
 
-    -   **Para Espaços de Armazenamento Diretos:**  
+    -   **Espaços de armazenamento diretos:**  
 
-        1.  Verifique se cada cluster pode ver apenas os compartimentos de armazenamento do local implantando Espaços de Armazenamento Diretos. (https://docs.microsoft.com/en-us/windows-server/storage/storage-spaces/hyper-converged-solution-using-storage-spaces-direct) 
+        1.  Verifique se cada cluster pode ver apenas os compartimentos de armazenamento do local implantando Espaços de Armazenamento Diretos. (https://docs.microsoft.com/windows-server/storage/storage-spaces/hyper-converged-solution-using-storage-spaces-direct) 
 
         2.  Certifique-se de que os volumes de log SR sempre estará no armazenamento flash mais rápido e os volumes de dados no armazenamento de mais lenta alta capacidade.
 
-10. Inicie o Windows PowerShell e use o cmdlet `Test-SRTopology` para determinar se você atende a todos os requisitos de Réplica de Armazenamento. Você pode usar o cmdlet em um modo somente de requisitos para um teste rápido, assim como em um modo de avaliação de desempenho de execução longa.  
+10. Inicie o Windows PowerShell e use o cmdlet `Test-SRTopology` para determinar se você atende a todos os requisitos de Réplica de Armazenamento. Você pode usar o cmdlet em um modo somente de requisitos para um teste rápido, assim como um modo de avaliação de desempenho de execução longa.  
 Por exemplo,  
 
    ```PowerShell
@@ -150,7 +159,7 @@ Por exemplo,
     ![Tela que mostra os resultados do relatórios de topologia de replicação](./media/Cluster-to-Cluster-Storage-Replication/SRTestSRTopologyReport.png)      
 
 ## <a name="step-2-configure-two-scale-out-file-server-failover-clusters"></a>Etapa 2: Configurar dois clusters de failover do Servidor de Arquivos de Escalabilidade Horizontal  
-Agora você criará dois clusters de failover normais. Após a configuração, a validação e o teste, você os replicará usando a Réplica de Armazenamento. Você pode executar todas as etapas abaixo diretamente nos nós do cluster ou de um computador de gerenciamento remoto que contém as ferramentas de gerenciamento RSAT do Windows Server 2016.  
+Agora você criará dois clusters de failover normais. Após a configuração, a validação e o teste, você os replicará usando a Réplica de Armazenamento. Você pode executar todas as etapas abaixo nos nós de cluster diretamente ou de um computador de gerenciamento remoto que contém as ferramentas de gerenciamento das Ferramentas de Administração de Servidor Remoto do Windows Server 2016.  
 
 ### <a name="graphical-method"></a>Método gráfico  
 
@@ -163,14 +172,14 @@ Agora você criará dois clusters de failover normais. Após a configuração, a
 4.  Configure uma testemunha de compartilhamento de arquivo ou testemunha de nuvem.  
 
     > [!NOTE]  
-    > O Windows Server 2016 agora inclui uma opção para Testemunha baseada na nuvem (Azure). Você pode escolher essa opção de quorum em vez da testemunha de compartilhamento de arquivos.  
+    > Agora o Windows Server 2016 inclui uma opção para Testemunha baseada na nuvem (Azure). Você pode escolher essa opção de quorum em vez da testemunha de compartilhamento de arquivos.  
 
     > [!WARNING]  
-    > Para saber mais sobre a configuração de quorum, confira a seção **Configuração de testemunha** em [Configurar e gerenciar o quorum em um cluster de failover do Windows Server 2012](http://technet.microsoft.com/library/jj612870.aspx). Para saber mais sobre o cmdlet `Set-ClusterQuorum`, confira [Set-ClusterQuorum](http://technet.microsoft.com/library/hh847275.aspx).  
+    > Para saber mais sobre a configuração de quorum, confira a seção **Configuração de testemunha** em [Configurar e gerenciar o quorum em um cluster de failover do Windows Server 2012](https://technet.microsoft.com/library/jj612870.aspx). Para saber mais sobre o cmdlet `Set-ClusterQuorum`, confira [Set-ClusterQuorum](https://technet.microsoft.com/library/hh847275.aspx).  
 
 5.  Adicione um disco no local de **Redmond** ao CSV de cluster. Para fazer isso, clique com botão direito em um disco de origem no nó **Discos** da seção **Armazenamento** e, em seguida, clique em **Adicionar aos Volumes Compartilhados Clusterizados**.  
 
-6.  Crie o Servidor de Arquivos de Escalabilidade Horizontal clusterizado nos dois clusters usando as instruções em [Configurar Servidor de Arquivos de Escalabilidade Horizontal](http://technet.microsoft.com/library/hh831718.aspx)  
+6.  Crie o Servidor de Arquivos de Escalabilidade Horizontal clusterizado nos dois clusters usando as instruções em [Configurar Servidor de Arquivos de Escalabilidade Horizontal](https://technet.microsoft.com/library/hh831718.aspx)  
 
 ### <a name="windows-powershell-method"></a>Método do Windows PowerShell  
 
@@ -195,23 +204,23 @@ Agora você criará dois clusters de failover normais. Após a configuração, a
     ```  
 
     > [!NOTE]  
-    > O Windows Server 2016 agora inclui uma opção para Testemunha baseada na nuvem (Azure). Você pode escolher essa opção de quorum em vez da testemunha de compartilhamento de arquivos.  
+    > Agora o Windows Server 2016 inclui uma opção para Testemunha baseada na nuvem (Azure). Você pode escolher essa opção de quorum em vez da testemunha de compartilhamento de arquivos.  
 
     > [!WARNING]  
-    > Para saber mais sobre a configuração de quorum, confira a seção **Configuração de testemunha** em [Configurar e gerenciar o quorum em um cluster de failover do Windows Server 2012](http://technet.microsoft.com/library/jj612870.aspx). Para saber mais sobre o cmdlet `Set-ClusterQuorum`, confira [Set-ClusterQuorum](http://technet.microsoft.com/library/hh847275.aspx).  
+    > Para saber mais sobre a configuração de quorum, confira a seção **Configuração de testemunha** em [Configurar e gerenciar o quorum em um cluster de failover do Windows Server 2012](https://technet.microsoft.com/library/jj612870.aspx). Para saber mais sobre o cmdlet `Set-ClusterQuorum`, confira [Set-ClusterQuorum](https://technet.microsoft.com/library/hh847275.aspx).  
 
 4.  Crie o Servidor de Arquivos de Escalabilidade Horizontal clusterizado nos dois clusters usando as instruções em [Configurar Servidor de Arquivos de Escalabilidade Horizontal](https://technet.microsoft.com/library/hh831718.aspx)  
 
-## <a name="step-3-set-up-cluster-to-cluster-replication-using-windows-powershell"></a>Etapa 3: Configurar a replicação de cluster para cluster usando o Windows PowerShell  
+## <a name="step-3-set-up-cluster-to-cluster-replication-using-windows-powershell"></a>Etapa 3: Configurar a replicação de Cluster para Cluster usando o Windows PowerShell  
 Agora você configurará a replicação de cluster para cluster usando o Windows PowerShell. Você pode executar todas as etapas abaixo diretamente nos nós ou de um computador de gerenciamento remoto que contém as ferramentas de gerenciamento RSAT do Windows Server 2016  
 
-1.  Conceda ao primeiro cluster acesso total ao outro cluster executando o cmdlet **Grant-ClusterAccess** em qualquer nó no primeiro cluster ou remotamente.  
+1.  Conceda o primeiro cluster acesso total ao outro cluster executando o **SRAccess Grant** cmdlet em qualquer nó no primeiro cluster, ou remotamente.  
 
     ```PowerShell
     Grant-SRAccess -ComputerName SR-SRV01 -Cluster SR-SRVCLUSB  
     ```  
 
-2.  Conceda ao segundo cluster acesso total ao outro cluster executando o cmdlet **Grant-ClusterAccess** em qualquer nó no segundo cluster ou remotamente.  
+2.  Conceda o segundo cluster acesso total ao outro cluster executando o **SRAccess Grant** cmdlet em qualquer nó no segundo cluster ou remotamente.  
 
     ```PowerShell
     Grant-SRAccess -ComputerName SR-SRV03 -Cluster SR-SRVCLUSA  
@@ -265,7 +274,7 @@ Agora você configurará a replicação de cluster para cluster usando o Windows
             Number of Bytes Recovered: 68583161856  
             Elapsed Time (seconds): 117  
         ```
-    3. Como alternativa, o grupo de servidores de destino para a réplica informa o número de bytes restantes para copiar todo o tempo e pode ser consultado por meio do PowerShell. Por exemplo:
+    3. Como alternativa, o grupo de servidores de destino para a réplica informa o número de bytes restantes para copiar todo o tempo e pode ser consultado por meio do PowerShell. Por exemplo: 
 
        ```PowerShell
        (Get-SRGroup).Replicas | Select-Object numofbytesremaining
@@ -276,7 +285,7 @@ Agora você configurará a replicação de cluster para cluster usando o Windows
        ```PowerShell
          while($true) {  
          $v = (Get-SRGroup -Name "Replication 2").replicas | Select-Object numofbytesremaining  
-         [System.Console]::Write("Number of bytes remaining: {0}`r", $v.numofbytesremaining)  
+         [System.Console]::Write("Number of bytes remaining: {0}`n", $v.numofbytesremaining)  
          Start-Sleep -s 5  
         }
         ```
@@ -291,7 +300,7 @@ Agora você configurará a replicação de cluster para cluster usando o Windows
 
 ## <a name="step-4-manage-replication"></a>Etapa 4: Gerenciar a replicação
 
-Agora você irá gerenciar e operar a replicação de cluster para cluster. Você pode executar todas as etapas abaixo diretamente nos nós do cluster ou de um computador de gerenciamento remoto que contém as ferramentas de gerenciamento RSAT do Windows Server 2016.  
+Agora você irá gerenciar e operar a replicação de cluster para cluster. Você pode executar todas as etapas abaixo nos nós de cluster diretamente ou de um computador de gerenciamento remoto que contém as ferramentas de gerenciamento das Ferramentas de Administração de Servidor Remoto do Windows Server 2016.  
 
 1.  Use **Get-ClusterGroup** ou **Gerenciador de Cluster de Failover** para determinar a origem e o destino atuais da replicação e seus status.  
 
@@ -303,23 +312,23 @@ Agora você irá gerenciar e operar a replicação de cluster para cluster. Voc�
 
     -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Número de solicitações da última gravação de log  
 
-    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho da Fila de Liberação Méd  
+    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho Médio da Fila de Liberação  
 
     -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho da Fila de Liberação Atual  
 
     -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Número de Solicitações de Gravação de Aplicativo  
 
-    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Número de solicitações por gravação de log Méd  
+    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho Médio de solicitações por gravação de log  
 
-    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Média de Gravação de Aplicativo  
+    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho Média de Gravação de Aplicativo  
 
-    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Média de Leitura de Aplicativo  
+    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho Média de Leitura de Aplicativo  
 
     -   \Estatísticas de Réplica de Armazenamento(*)\RPO de Destino  
 
     -   \Estatísticas de Réplica de Armazenamento(*)\RPO Atual  
 
-    -   \Estatísticas de Réplica de Armazenamento(*)\Comprimento da Fila de Log Méd  
+    -   \Estatísticas de Réplica de Armazenamento(*)\Tamanho Médio da Fila de Log  
 
     -   \Estatísticas de Réplica de Armazenamento(*)\Comprimento da Fila de Log Atual  
 
@@ -327,11 +336,11 @@ Agora você irá gerenciar e operar a replicação de cluster para cluster. Voc�
 
     -   \Estatísticas de Réplica de Armazenamento(*)\Total de Bytes Enviados  
 
-    -   \Estatísticas de réplica de armazenamento (*)\Latência enviada de rede méd  
+    -   \Estatísticas de Réplica de Armazenamento(*)\Tamanho Média de Envio de Rede  
 
     -   \Estatísticas de Réplica de Armazenamento(*)\Estado da Replicação  
 
-    -   \Estatísticas de réplica de armazenamento(*)\Média de Viagem de Ida e Volta da Mensagem  
+    -   \Estatísticas de Réplica de Armazenamento(*)\Tamanho Média de Viagem de Ida e Volta da Mensagem  
 
     -   \Estatísticas de Réplica de Armazenamento(*)\Tempo Decorrido da Última Recuperação  
 
@@ -380,11 +389,11 @@ Agora você irá gerenciar e operar a replicação de cluster para cluster. Voc�
     > [!NOTE]  
     > Armazenamento réplica desmonta os volumes de destino. Isso ocorre por design.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
--   [Visão geral da Réplica de Armazenamento](storage-replica-overview.md) 
--   [Replicação de cluster estendido usando Armazenamento Compartilhado](stretch-cluster-replication-using-shared-storage.md)  
+-   [Visão geral da réplica de armazenamento](storage-replica-overview.md) 
+-   [Replicação de Cluster estendido usando armazenamento compartilhado](stretch-cluster-replication-using-shared-storage.md)  
 -   [Replicação de armazenamento de servidor para servidor](server-to-server-storage-replication.md)  
--   [Réplica de Armazenamento: problemas conhecidos](storage-replica-known-issues.md)  
--   [Réplica de Armazenamento: perguntas frequentes](storage-replica-frequently-asked-questions.md)  
--   [Espaços de Armazenamento Diretos no Windows Server 2016](../storage-spaces/storage-spaces-direct-overview.md)  
+-   [Réplica de armazenamento: Problemas conhecidos](storage-replica-known-issues.md)  
+-   [Réplica de armazenamento: Perguntas frequentes](storage-replica-frequently-asked-questions.md)  
+-   [Espaços de armazenamento diretos no Windows Server 2016](../storage-spaces/storage-spaces-direct-overview.md)  

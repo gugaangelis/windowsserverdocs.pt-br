@@ -1,35 +1,35 @@
 ---
 title: Configurar e gerenciar o quorum em um cluster de failover
-description: Obter informações detalhadas sobre como gerenciar o quorum de cluster em um cluster de failover do Windows Server.
+description: Informações detalhadas sobre como gerenciar o quorum do cluster em um cluster de failover do Windows Server.
 ms.prod: windows-server-threshold
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage-failover-clustering
-ms.date: 05/01/2018
+ms.date: 01/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: cf7dbf7d92bf8abf3d94910ceaaf5520bf7a0447
-ms.sourcegitcommit: dfd25348ea3587e09ea8c2224237a3e8078422ae
+ms.openlocfilehash: 21f99362205e0a6aa90ebd26cef8f3a779bdc1dc
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4678635"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59836487"
 ---
-# Configurar e gerenciar o quorum
+# <a name="configure-and-manage-quorum"></a>Configurar e gerenciar o quorum
 
 >Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este tópico fornece as etapas para configurar e gerenciar o quorum em um cluster de failover do Windows Server e plano de fundo.
+Este tópico fornece o fundamento e as etapas para configurar e gerenciar o quorum em um cluster de failover do Windows Server.
 
-## Quorum de compreensão
+## <a name="understanding-quorum"></a>Quorum Noções básicas sobre
 
-O quorum para um cluster é determinado pelo número de elementos voto que deve ser parte da associação de cluster ativo para que o cluster iniciado corretamente ou continuar em execução. Para uma explicação mais detalhada, consulte as [Noções básicas sobre o documento de quorum de cluster e pool](../storage/storage-spaces/understand-quorum.md).
+O quorum de um cluster é determinado pelo número de elementos votantes que devem fazer parte da associação de cluster ativo para que o cluster seja iniciado corretamente ou continue executando. Para obter uma explicação mais detalhada, consulte o [doc de quorum de cluster e pool de Noções básicas sobre](../storage/storage-spaces/understand-quorum.md).
 
-## Opções de configuração de quorum
+## <a name="quorum-configuration-options"></a>Opções de configuração de quorum
 
-O modelo de quorum no Windows Server é flexível. Se você precisar modificar a configuração de quorum de cluster, você pode usar o Assistente para Configurar Quorum de Cluster ou os cmdlets do PowerShell de Windows de Clusters de Failover. Para as etapas e considerações para configurar o quorum, consulte [Configurar o quórum do cluster](#configure-the-cluster-quorum) neste tópico.
+O modelo de quorum no Windows Server é flexível. Se você precisar modificar a configuração de quorum para seu cluster, você pode usar o Assistente para configurar o Quorum de Cluster ou os cmdlets de Clusters de Failover do Windows PowerShell. Para ver as etapas e considerações sobre como configurar o quorum, consulte o [Configurar o quorum do cluster](#configure-the-cluster-quorum) posteriormente neste tópico.
 
-A tabela a seguir lista as opções de configuração de três quorum que estão disponíveis no Assistente para Configurar Quorum de Cluster.
+A tabela a seguir lista as três opções de configuração de quorum disponíveis no Assistente para Configurar Quorum de Cluster.
 
 <table>
 <thead>
@@ -40,21 +40,21 @@ A tabela a seguir lista as opções de configuração de três quorum que estão
 </thead>
 <tbody>
 <tr class="odd">
-<td>Usar as configurações típicas</td>
-<td>Cluster atribui automaticamente um voto em cada nó e gerencia dinamicamente os votos de nó. Se ele é adequado para o cluster e armazenamento de cluster compartilhado está disponível, o cluster seleciona uma testemunha de disco. Essa opção é recomendada na maioria dos casos, porque o software do cluster escolhe automaticamente uma configuração de quorum e testemunha que fornece a mais alta disponibilidade para o cluster.</td>
+<td>Usar configurações típicas</td>
+<td>O cluster atribui automaticamente um voto a cada nó e gerencia dinamicamente os votos do nó. Se for apropriado para seu cluster, e houver armazenamento compartilhado de cluster disponível, o cluster selecionará uma testemunha de disco. Essa opção é recomendada na maioria dos casos, pois o software de cluster escolhe automaticamente uma configuração de quorum e de testemunha que forneça a mais alta disponibilidade para seu cluster.</td>
 </tr>
 <tr class="even">
 <td>Adicionar ou alterar a testemunha de quorum</td>
-<td>Você pode adicionar, alterar ou remover um recurso de testemunha. Você pode configurar uma testemunha de compartilhamento ou disco. Cluster atribui automaticamente um voto em cada nó e gerencia dinamicamente os votos de nó.</td>
+<td>Você pode adicionar, alterar ou remover um recurso de testemunha. Você pode configurar uma testemunha de disco ou compartilhamento de arquivos. O cluster atribui automaticamente um voto a cada nó e gerencia dinamicamente os votos do nó.</td>
 </tr>
 <tr class="odd">
-<td>A configuração de quorum avançados e seleção de testemunha</td>
-<td>Você deve selecionar essa opção somente quando você tiver requisitos específicos do aplicativo ou específicos do site para configurar o quorum. Você pode modificar a testemunha de quorum, adicionar ou remover votos de nó e escolha se o cluster gerencia dinamicamente votos de nó. Por padrão, votos são atribuídos a todos os nós e os votos de nó dinamicamente são gerenciados.</td>
+<td>Configuração avançada de quorum e seleção de testemunha</td>
+<td>Você deve selecionar essa opção somente quando tiver requisitos específicos ao aplicativo ou ao site para configurar o quorum. Você pode modificar a testemunha do quorum, adicionar ou remover votos de nó e escolher se o cluster deve gerenciar dinamicamente os votos do nó. Por padrão, os votos são atribuídos a todos os nós e os votos de nó são gerenciados dinamicamente.</td>
 </tr>
 </tbody>
 </table>
 
-Dependendo da opção de configuração de quorum que você escolher e suas configurações específicas, o cluster será configurado em um dos seguintes modos de quorum:
+Dependendo da opção de configuração de quorum escolhida e das configurações específicas, o cluster será configurado em um dos seguintes modos de quorum:
 
 <table>
 <thead>
@@ -65,31 +65,31 @@ Dependendo da opção de configuração de quorum que você escolher e suas conf
 </thead>
 <tbody>
 <tr class="odd">
-<td>Maioria de nós (nenhuma testemunha)</td>
-<td>Somente os nós ter votos. Nenhuma testemunha de quorum está configurada. O quórum do cluster é a maioria de nós voto na associação de cluster ativo.</td>
+<td>Maioria dos nós (sem testemunha)</td>
+<td>Somente nós têm votos. Nenhuma testemunha de quorum é configurada. O quorum do cluster é a maioria dos nós votantes na associação de cluster ativa.</td>
 </tr>
 <tr class="even">
-<td>Maioria de nós com testemunha (disco ou compartilhamento de arquivos)</td>
-<td>Nós têm votos. Além disso, uma testemunha de quorum tem um voto. O quórum do cluster é a maioria de nós voto na associação do cluster ativo mais um voto testemunha.<br />
+<td>Maioria de nós com testemunha (compartilhamento de arquivos ou disco)</td>
+<td>Nós têm votos. Além disso, uma testemunha de quorum tem um voto. O quorum do cluster é a maioria dos nós votantes na associação de cluster ativa mais um voto de testemunha.<br />
 <br />
-Uma testemunha de quorum pode ser uma testemunha de disco designado ou uma testemunha de compartilhamento de arquivo designado.</td>
+Uma testemunha de quorum pode ser uma testemunha de disco designada ou uma testemunha de compartilhamento de arquivos designada.</td>
 </tr>
 <tr class="odd">
 <td>Sem maioria (somente testemunha de disco)</td>
-<td>Nenhum nó têm votos. Apenas uma testemunha de disco tem um voto. O quórum do cluster é determinado pelo estado de testemunha de disco.<br />
+<td>Nenhum nó tem votos. Somente uma testemunha de disco tem um voto. O quorum do cluster é determinado pelo estado da testemunha de disco.<br />
 <br />
-O cluster tem quorum se um nó está disponível e estão se comunicando com um disco específico do armazenamento de cluster. Em geral, esse modo não é recomendado e ele não deve ser selecionado porque ele cria um único ponto de falha para o cluster.</td>
+O cluster terá quorum se um nó estiver disponível e se comunicando com um disco específico no armazenamento de cluster. Geralmente, esse modo não é recomendado, e ele não deve ser selecionado, já que cria um único ponto de falha para o cluster.</td>
 </tr>
 </tbody>
 </table>
 
-As seguintes subseções dará obter mais informações sobre as definições de configuração de quorum avançados.
+As subseções a seguir oferecem mais informações sobre definições de configuração de quorum avançada.
 
-### Configuração de testemunha
+### <a name="witness-configuration"></a>Configuração de testemunha
 
-Como regra geral quando você configura um quorum, os elementos voto no cluster devem ser um número ímpar. Portanto, se o cluster contém um número par de voto nós, você deve configurar uma testemunha de disco ou uma testemunha de compartilhamento de arquivos. O cluster será capaz de oferecer um nó adicional para baixo. Além disso, adicionar um voto testemunha permite que o cluster continue executando se metade de nós de cluster simultaneamente descer ou estiver desconectado.
+Como regra geral, quando você configura um quorum, os elementos votantes no cluster devem ser um número ímpar. Portanto, se o cluster contém um número par de nós votantes, você deve configurar uma testemunha de disco ou uma testemunha de compartilhamento de arquivos. O cluster poderá sustentar um nó adicional inoperante. Além disso, adicionar um voto de testemunha habilita o cluster a continuar sendo executado caso metade dos nós de cluster fiquem inoperantes simultaneamente ou sejam desconectados.
 
-Uma testemunha de disco geralmente é recomendada se todos os nós podem ver o disco. Uma testemunha de compartilhamento de arquivos é recomendada quando você precisa considerar a recuperação de desastres multissite com armazenamento replicado. Configurar uma testemunha de disco com armazenamento replicado é possível somente se o fornecedor de armazenamento oferece suporte ao acesso de leitura / gravação em todos os sites no armazenamento replicado. <strong>*Uma testemunha de disco não é compatível com espaços de armazenamento diretos*</strong>.
+Uma testemunha de disco geralmente será recomendada se todos os nós puderem ver o disco. Uma testemunha de compartilhamento de arquivos será recomendada quando você precisar considerar a recuperação de desastre multissite com armazenamento replicado. Será possível configurar uma testemunha de disco com armazenamento replicado somente se o fornecedor do armazenamento der suporte a acesso de leitura/gravação de todos os sites ao armazenamento replicado. <strong>*Uma testemunha de disco não é suportada com espaços de armazenamento diretos*</strong>.
 
 A tabela a seguir fornece informações adicionais e considerações sobre os tipos de testemunha de quorum.
 
@@ -104,257 +104,267 @@ A tabela a seguir fornece informações adicionais e considerações sobre os ti
 <tbody>
 <tr class="odd">
 <td>Testemunha de disco</td>
-<td>- LUNs dedicado que armazena uma cópia do banco de dados do cluster<br />
-- Mais útil para clusters com armazenamento compartilhado (não replicado)</td>
-<td>- Tamanho do LUNs deve ser pelo menos 512 MB<br />
-- Deve ser dedicada para uso do cluster e não atribuídos a uma função clusterizada<br />
-- Devem ser incluídos em testes de validação de armazenamento em cluster de armazenamento e passe<br />
+<td>- LUN dedicado que armazena uma cópia do banco de dados do cluster<br />
+- Mais útil para clusters com armazenamento compartilhado de (não replicado)</td>
+<td>- O tamanho do LUN deve ser pelo menos 512 MB<br />
+- Deve ser dedicado a uso de cluster e não atribuído a uma função clusterizada<br />
+- Deve ser incluída em testes de validação de armazenamento em cluster de armazenamento e passe<br />
 - Não pode ser um disco que é um Volume compartilhado do Cluster (CSV)<br />
 - Disco básico com um único volume<br />
-- Não precisa ter uma letra de unidade<br />
-- Pode ser formatada com NTFS ou ReFS<br />
+- Não é necessário ter uma letra de unidade<br />
+- Pode ser formatado com NTFS ou ReFS<br />
 - Pode ser configurado opcionalmente com RAID de hardware para tolerância a falhas<br />
-- Devem ser excluídos do backups e verificação antivírus<br />
-- Uma testemunha de disco não é compatível com espaços de armazenamento diretos</td>
+- Deve ser excluído dos backups e verificação antivírus<br />
+- Uma testemunha de disco não é suportada com espaços de armazenamento diretos</td>
 </tr>
 <tr class="even">
 <td>Testemunha de compartilhamento de arquivos</td>
-<td>- Compartilhamento de arquivos SMB que está configurado em um servidor de arquivos que executam o Windows Server<br />
+<td>- Compartilhamento de arquivos SMB configurado em um servidor de arquivos executando o Windows Server<br />
 - Não armazena uma cópia do banco de dados do cluster<br />
-- Mantém as informações de cluster somente em um arquivo de witness.log<br />
+- Mantém informações de cluster somente em um arquivo WITNESS.<br />
 - Mais útil para clusters multissite com armazenamento replicado</td>
-<td>- Deve ter pelo menos 5 MB de espaço livre<br />
-- Deve ser dedicada ao cluster único e não são usados para armazenar dados de usuário ou aplicativo<br />
+<td>- Deve ter um mínimo de 5 MB de espaço livre<br />
+- Deve ser dedicado ao cluster único e não é usado para armazenar dados de usuário ou aplicativo<br />
 - Devem ter permissões de gravação habilitado para o objeto de computador para o nome do cluster<br />
 <br />
-Considerações adicionais para um servidor de arquivos que hospeda a testemunha de compartilhamento de arquivos são:<br />
+A seguir estão considerações adicionais para um servidor de arquivos que hospeda a testemunha de compartilhamento de arquivos:<br />
 <br />
 - Um único servidor de arquivos pode ser configurado com testemunhas de compartilhamento de arquivo para vários clusters.<br />
-- O servidor de arquivos deve estar em um site que é separado da carga de trabalho da cluster. Isso permite a oportunidade de igual para qualquer site de cluster sobreviver se comunicação de rede to-site for perdida. Se o servidor de arquivos estiver no mesmo site, esse site se torna o site principal, e é o site único que pode acessar o compartilhamento de arquivos.<br />
-- O servidor de arquivos pode executar em uma máquina virtual se a máquina virtual não está hospedada no mesmo cluster que usa a testemunha de compartilhamento de arquivos.<br />
-- Alta disponibilidade, o servidor de arquivos pode ser definido em um cluster de failover separado.</td>
+- O servidor de arquivos deve estar em um site separado da carga de trabalho do cluster. Isso permite a mesma oportunidade para que qualquer site de cluster sobreviva se a comunicação da rede de site a site for perdida. Se o servidor de arquivos estiver no mesmo site, esse site se tornará o site primário, e ele será o único site que poderá atingir o compartilhamento de arquivos.<br />
+- O servidor de arquivos pode executar em uma máquina virtual se a máquina virtual não estiver hospedada no mesmo cluster que usa a testemunha de compartilhamento de arquivo.<br />
+- Para alta disponibilidade, o servidor de arquivos pode ser configurado em um cluster de failover separado.</td>
 </tr>
+
+<tr class-"odd">
+<td>Testemunha de nuvem</td>
+<td>- Um arquivo de testemunha armazenado no armazenamento de BLOBs do Azure<br>
+-Recomendada quando todos os servidores no cluster possuem uma conexão de Internet confiável.</td>
+<td>Ver <a href="https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness">implantar uma testemunha de nuvem</a>.</td>
+<td>
+</td>
+</tr>
+
 </tbody>
 </table>
 
-### Atribuição de nó de voto
+### <a name="node-vote-assignment"></a>Atribuição de voto de nó
 
-Como uma opção de configuração de quorum avançados, você pode optar por atribuir ou remover votos de quorum em uma base por nó. Por padrão, todos os nós são atribuídos votos. Independentemente da atribuição de voto, todos os nós continuam a funcionar no cluster, receberá atualizações de banco de dados do cluster e podem hospedar aplicativos.
+Como uma opção de configuração de quorum avançada, você pode escolher Atribuir ou remover votos de quorum em uma base por nó. Por padrão, todos os nós são votos atribuídos. Independentemente da atribuição de voto, todos os nós continuam a funcionar no cluster, receber atualizações do banco de dados do cluster e podem hospedar aplicativos.
 
-Você talvez queira remover votos de nós em determinadas configurações de recuperação de desastres. Por exemplo, em um cluster multissite, você pode remover votos de nós em um site de backup para que os nós não afetam os cálculos de quorum. Essa configuração é recomendada apenas para failover manual entre sites. Para obter mais informações, consulte [as considerações de Quorum para configurações de recuperação de desastres](#quorum-considerations-for-disaster-recovery-configurations) posteriormente neste tópico.
+Você pode desejar remover votos dos nós em determinadas configurações de recuperação de desastre. Por exemplo, em um cluster multissite, você pode remover votos dos nós em um site de backup de forma que aqueles nós não afetem os cálculos de quorum. Essa configuração é recomendada somente para failover manual nos sites. Para obter mais informações, consulte [Considerações de quorum para configurações de recuperação de desastre](#quorum-considerations-for-disaster-recovery-configurations) posteriormente neste tópico.
 
-O voto configurado de um nó pode ser verificado ao consultar a propriedade comum **NodeWeight** do nó de cluster usando o cmdlet [Get-ClusterNode](http://technet.microsoft.com/library/hh847268.aspx)do Windows PowerShell. Um valor 0 indica que o nó não tenha um voto de quorum configurado. Um valor de 1 indica que o voto quorum do nó é atribuído, e ele é gerenciado pelo cluster. Para obter mais informações sobre o gerenciamento de nó votos, consulte [gerenciamento de quorum dinâmicos](#dynamic-quorum-management) neste tópico.
+O voto configurado de um nó pode ser verificado procurando a **NodeWeight** propriedade comum do nó de cluster usando o [Get-ClusterNode](http://technet.microsoft.com/library/hh847268.aspx)cmdlet do Windows PowerShell. Um valor de 0 indica que o nó não tem um voto de quorum configurado. Um valor de 1 indica que o voto de quorum do nó está atribuído e é gerenciado pelo cluster. Para obter mais informações sobre o gerenciamento de votos de nó, consulte [Gerenciamento dinâmico de quorum](#dynamic-quorum-management) posteriormente nesse tópico.
 
-A atribuição de voto para todos os nós de cluster pode ser verificada usando o teste de validação de **Validar quórum do Cluster** .
+A atribuição de voto para todos os nós de cluster pode ser verificada usando o teste de validação **Validar Quorum de Cluster** .
 
-#### Considerações adicionais sobre o nó votar atribuição
+#### <a name="additional-considerations-for-node-vote-assignment"></a>Considerações adicionais para a atribuição de voto de nó
 
-  - Atribuição de nó de voto não é recomendada para impor um número ímpar de nós voto. Em vez disso, você deve configurar uma testemunha de disco ou testemunha de compartilhamento de arquivos. Para obter mais informações, consulte [configuração de testemunha](#witness-configuration) posteriormente neste tópico.
-  - Se o gerenciamento de quorum dinâmico é ativado, somente os nós que estão configurados para ter votos de nó atribuídos podem ter seus votos atribuídos ou removidos dinamicamente. Para obter mais informações, consulte [gerenciamento de quorum dinâmicos](#dynamic-quorum-management) neste tópico.
+  - Na atribuição de voto de nó não é recomendado impor um número ímpar de nós votantes. Em vez disso, você deve configurar uma testemunha de disco ou testemunha de compartilhamento de arquivos. Para obter mais informações, consulte [configuração de testemunha](#witness-configuration) mais adiante neste tópico.
+  - Se o gerenciamento de quorum dinâmico for habilitado, somente os nós configurados para ter votos de nós atribuídos poderão ter votos atribuídos ou removidos dinamicamente. Para obter mais informações, consulte [Gerenciamento dinâmico de quorum](#dynamic-quorum-management) posteriormente neste tópico.
 
-### Gerenciamento de quorum dinâmico
+### <a name="dynamic-quorum-management"></a>Gerenciamento dinâmico de quorum
 
-No Windows Server 2012, como uma opção de configuração de quorum avançados, você pode optar por habilitar o gerenciamento de quorum dinâmico por cluster. Para obter mais detalhes sobre como dinâmico funciona de quorum, consulte [essa explicação](../storage/storage-spaces/understand-quorum.md#dynamic-quorum-behavior).
+No Windows Server 2012, como uma opção de configuração de quorum avançada, você pode escolher habilitar o gerenciamento de quorum dinâmico pelo cluster. Para obter mais detalhes sobre o quorum como dinâmico, consulte [essa explicação](../storage/storage-spaces/understand-quorum.md#dynamic-quorum-behavior).
 
-Com o gerenciamento de quorum dinâmico, também é possível para um cluster seja executado no último nó do cluster sobreviventes. Ajustando dinamicamente o requisito de maioria de quorum, um cluster pode suportar desligamentos sequencial nó para um único nó.
+Com o gerenciamento de quorum dinâmico, também é possível que um cluster seja executado no último nó de cluster sobrevivente. Pelo ajuste dinâmico do requisito de maioria de quorum, o cluster pode sustentar desligamentos de nó sequenciais para um único nó.
 
-O voto dinâmico atribuída pelo cluster de um nó pode ser verificado com a propriedade comum **DynamicWeight** do nó de cluster usando o cmdlet [Get-ClusterNode](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternode?view=win10-ps) do Windows PowerShell. Um valor 0 indica que o nó não tenha um voto de quorum. Um valor de 1 indica que o nó tem um voto de quorum.
+O voto dinâmico atribuído de cluster de um nó pode ser verificado com o **DynamicWeight** propriedade comum do nó de cluster usando o [Get-ClusterNode](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternode?view=win10-ps) cmdlet do Windows PowerShell. Um valor de 0 indica que o nó não tem um voto de quorum. Um valor de 1 indica que o nó tem um voto de quorum.
 
-A atribuição de voto para todos os nós de cluster pode ser verificada usando o teste de validação de **Validar quórum do Cluster** .
+A atribuição de voto para todos os nós de cluster pode ser verificada usando o teste de validação **Validar Quorum de Cluster** .
 
-#### Considerações adicionais sobre o gerenciamento de quorum dinâmico
+#### <a name="additional-considerations-for-dynamic-quorum-management"></a>Considerações adicionais para gerenciamento de quorum dinâmico
 
-- Gerenciamento de quorum dinâmico não permitir que o cluster sustentar uma falha simultânea da maioria dos membros voto. Para continuar em execução, o cluster deve sempre ter a maioria de quorum no momento do nó desligamento ou falha.
+- O gerenciamento de quorum dinâmico não permite que o cluster sustente uma falha simultânea de uma maioria de membros votantes. Para continuar executando, o cluster deve sempre ter uma maioria de quorum no momento de desligamento ou falha do nó.
 
-- Se você removeu explicitamente o voto de um nó, o cluster dinamicamente não é possível adicionar ou remover esse voto.
-- Quando espaços de armazenamento diretos está habilitado, o cluster só pode suportar duas falhas do nó. Isso é explicado mais na [seção de quorum de pool](../storage/storage-spaces/understand-quorum.md#poolQuorum)
+- Se você removeu explicitamente o voto de um nó, o cluster não poderá adicionar ou remover dinamicamente esse voto.
+- Quando espaços de armazenamento diretos está habilitado, o cluster só pode suportar duas falhas de nó. Isso será explicado mais o [seção de quorum do pool](../storage/storage-spaces/understand-quorum.md#poolQuorum)
 
-## Recomendações gerais para a configuração de quorum
+## <a name="general-recommendations-for-quorum-configuration"></a>Recomendações gerais para configuração de quorum
 
-O software do cluster configura automaticamente o quorum em um novo cluster, com base no número de nós configurados e a disponibilidade de armazenamento compartilhado. Isso geralmente é a configuração de quorum mais apropriada para esse cluster. No entanto, é uma boa ideia para examinar a configuração de quorum após a criação do cluster, antes de colocar o cluster em produção. Para exibir a configuração de quorum de cluster detalhados, você pode usar o validar um Assistente de configuração ou o cmdlet [Test-Cluster](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps) Windows PowerShell, para executar o teste de **Validar a configuração de Quorum** . No Gerenciador de Cluster de Failover, a configuração de quorum básico é exibida nas informações de resumo para o cluster selecionado, ou você pode revisar as informações sobre recursos de quorum que retorna ao executar o PowerShell [Get-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusterquorum?view=win10-ps) cmdlet.
+O software do cluster configura automaticamente o quorum para um novo cluster, de acordo com o número de nós configurado e a disponibilidade de armazenamento compartilhado. Essa geralmente é a configuração de quorum mais apropriada para esse cluster. Entretanto, é uma boa ideia examinar a configuração de quorum depois de criar o cluster, e antes de colocá-lo em produção. Para exibir a configuração de quorum do cluster detalhada, você pode usar o Assistente de configuração, validar ou o [Test-Cluster](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps) cmdlet do Windows PowerShell, para executar o **validar configuração de Quorum** de teste. No Gerenciador de Cluster de Failover, a configuração básica do quorum é exibida nas informações de resumo para o cluster selecionado, ou você pode examinar as informações sobre recursos de quorum que retorna quando você executa o [Get-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusterquorum?view=win10-ps) Cmdlet do Windows PowerShell.
 
-A qualquer momento, você pode executar o teste de **Validar a configuração de Quorum** para validar a configuração de quorum é ideal para seu cluster. A saída do teste indica se uma alteração na configuração de quorum é recomendada e as configurações que sejam ideais. Se uma alteração é recomendada, você pode usar o Assistente para Configurar Quorum de Cluster para aplicar as configurações recomendadas.
+A qualquer momento, você pode executar o teste **Validar Configuração de Quorum** para validar que a configuração de quorum é ideal para seu cluster. A saída do teste indica se uma alteração na configuração de quorum é recomendada e as configurações que são ideais. Se uma alteração for recomendada, você poderá usar o Assistente para Configurar Quorum do Cluster para aplicar as configurações recomendadas.
 
-Depois que o cluster estiver em produção, não altere a configuração de quorum, a menos que você determinou que a alteração é apropriada para seu cluster. Convém considerar a alteração da configuração de quorum nas seguintes situações:
+Depois que o cluster estiver em produção, não altere a configuração de quorum, a menos que você tenha determinado que a alteração é apropriada para seu cluster. Você pode desejar considerar a alteração da configuração de quorum nas seguintes situações:
 
-- Adicionando ou removendo nós
-- Adicionando ou removendo armazenamento
-- Uma falha de nó ou testemunha de longo prazo
-- Recuperando um cluster em um cenário de recuperação de desastres multissite
+- Adicionar ou remover nós
+- Adicionar ou remover armazenamento
+- Uma falha de longo prazo em nó ou em testemunha
+- Recuperar um cluster em um cenário de recuperação de desastre multissite
 
-Para obter mais informações sobre como validar um cluster de failover, consulte [Validar o Hardware para um Cluster de Failover](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v%3dws.11)>).
+Para obter mais informações sobre como validar um cluster de failover, consulte [Validar hardware para um cluster de failover](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v%3dws.11)>).
 
-## Configurar o quórum do cluster
+## <a name="configure-the-cluster-quorum"></a>Configurar o quorum do cluster
 
-Você pode configurar as configurações de quorum de cluster usando o Gerenciador de Cluster de Failover ou os cmdlets do PowerShell de Windows de Clusters de Failover.
+Você pode configurar as definições de quorum do cluster usando o Gerenciador de Cluster de Failover ou os cmdlets de Clusters de Failover do Windows PowerShell.
 
 >[!IMPORTANT]
->É melhor usar a configuração de quorum recomendado pelo Assistente para Configurar Quorum de Cluster. É recomendável Personalizando a configuração de quorum somente se você determinou que a alteração é apropriada para seu cluster. Para obter mais informações, consulte [as recomendações gerais para a configuração de quorum](#general-recommendations-for-quorum-configuration) neste tópico.
+>Geralmente é melhor usar a configuração de quorum recomendada pelo Assistente para Configurar Quorum do Cluster. Recomendamos a personalização da configuração de quorum somente se você tiver determinado que a alteração é apropriada para seu cluster. Para obter mais informações, consulte [Recomendações gerais para configuração de quorum](#general-recommendations-for-quorum-configuration) neste tópico.
 
-### Defina as configurações de quorum de cluster
+### <a name="configure-the-cluster-quorum-settings"></a>Configurar as definições de quorum do cluster
 
-Participação no grupo de **administradores** local em cada servidor de cluster, ou equivalente, é as permissões mínimas necessárias para concluir este procedimento. Além disso, a conta usada deve ser uma conta de usuário de domínio.
-
->[!NOTE]
->Você pode alterar a configuração de quorum de cluster sem parar os cluster ou a realização de recursos de cluster offline.
-
-### Alterar a configuração de quorum em um cluster de failover usando o Gerenciador de Cluster de Failover
-
-1. No Gerenciador de Cluster de Failover, selecione ou especifique o cluster que você deseja alterar.
-2. Com o cluster selecionado, em **ações**, selecione **Mais ações**e, em seguida, selecione **Definir configurações de Quorum de Cluster**. O Assistente para Configurar Quorum do Cluster é exibida. Selecione **Avançar**.
-3. Na página **Selecionar opção de configuração de Quorum** , selecione uma das três opções de configuração e conclua as etapas para essa opção. Antes de configurar as configurações de quorum, você pode revisar suas escolhas. Para obter mais informações sobre as opções, consulte [Visão geral sobre o quorum em um cluster de failover](#overview-of-the-quorum-in-a-failover-cluster), anteriormente neste tópico.
-
-    - Para permitir que o cluster redefinir automaticamente as configurações de quorum que são ideais para a configuração atual do cluster, selecione **usar configurações típicas** e, em seguida, conclua o assistente.
-    - Para adicionar ou alterar a testemunha de quorum, selecione **Adicionar ou alterar a testemunha de quorum**e, em seguida, conclua as seguintes etapas. Para obter informações e considerações sobre como configurar uma testemunha de quorum, consulte [configuração de testemunha](#witness-configuration) anteriormente neste tópico.
-
-      1. Na página **Selecionar testemunha de Quorum** , selecione uma opção para configurar uma testemunha de disco ou uma testemunha de compartilhamento de arquivos. O assistente indica as opções de seleção de testemunha que são recomendadas para seu cluster.
-
-          >[!NOTE]
-          >Você também pode selecionar **não configurar uma testemunha de quorum** e conclua o assistente. Se você tiver um número par de voto nós no cluster, isso não pode ser uma configuração recomendada.
-
-      2. Se você selecionar a opção de configurar uma testemunha de disco, na página **Configurar a testemunha de armazenamento** , selecione o volume de armazenamento que você deseja atribuir como testemunha de disco e, em seguida, conclua o assistente.
-      3. Se você selecionar a opção de configurar uma testemunha de compartilhamento de arquivos, na página **Configurar a testemunha de compartilhamento** , digite ou navegue para um compartilhamento de arquivo que será usado como o recurso de testemunha e conclua o assistente.
-
-    - Para definir as configurações de gerenciamento de quorum e para adicionar ou alterar a testemunha de quorum, selecione **a configuração de quorum avançados e seleção de testemunha**e, em seguida, conclua as seguintes etapas. Para obter informações e considerações sobre as definições de configuração de quorum avançados, consulte [nó votar atribuição](#node-vote-assignment) e [gerenciamento de quorum dinâmico](#dynamic-quorum-management) anteriormente neste tópico.
-
-      1. Na página **Select Configuration voto** , selecione uma opção para atribuir votos a nós. Por padrão, todos os nós são atribuídos um voto. No entanto, para determinados cenários, você pode atribuir votos apenas a um subconjunto de nós.
-
-          >[!NOTE]
-          >Você também pode selecionar **Não nós**. Isso geralmente não é recomendado, porque ele não permite nós para participar de quorum voto e requer configurar uma testemunha de disco. Este testemunha de disco se torna o único ponto de falha para o cluster.
-
-      2. Na página **Configurar o gerenciamento de Quorum** , você pode habilitar ou desabilitar a opção **Permitir de cluster para gerenciar dinamicamente a atribuição de nó votos** . Selecionar essa opção geralmente aumenta a disponibilidade do cluster. Por padrão, a opção está ativada, e é altamente recomendável não desativar essa opção. Essa opção permite que o cluster continuem funcionando em cenários de falha que não são possíveis quando essa opção está desativada.
-      3. Na página **Selecionar testemunha de Quorum** , selecione uma opção para configurar uma testemunha de disco ou uma testemunha de compartilhamento de arquivos. O assistente indica as opções de seleção de testemunha que são recomendadas para seu cluster.
-
-          >[!NOTE]
-          >Você pode selecionar também **não configurar uma testemunha de quorum**e conclua o assistente. Se você tiver um número par de voto nós no cluster, isso não pode ser uma configuração recomendada.
-
-      4. Se você selecionar a opção de configurar uma testemunha de disco, na página **Configurar a testemunha de armazenamento** , selecione o volume de armazenamento que você deseja atribuir como testemunha de disco e, em seguida, conclua o assistente.
-      5. Se você selecionar a opção de configurar uma testemunha de compartilhamento de arquivos, na página **Configurar a testemunha de compartilhamento** , digite ou navegue para um compartilhamento de arquivo que será usado como o recurso de testemunha e conclua o assistente.
-
-4. Selecione **Avançar**. Confirme suas seleções na página de confirmação que aparece e selecione **Avançar**.
-
-Depois que o assistente é executado e a página de **Resumo** é exibida, se você quiser exibir um relatório das tarefas realizadas pelo assistente, selecione **Exibir o relatório**. O relatório mais recente permanecerá na *systemroot * * * \\Cluster\\Reports** pasta com o nome **QuorumConfiguration.mht**.
+A associação no grupo local **Administradores** em cada servidor com cluster, ou equivalente, é a permissão mínima necessária para concluir esse procedimento. Também, a conta que você usa deve ser uma conta de usuário do domínio.
 
 >[!NOTE]
->Depois de configurar o quórum do cluster, recomendamos que você executar o teste de **Validar a configuração de Quorum** para verificar as configurações de quorum atualizados.
+>Você pode alterar a configuração de quorum do cluster sem parar o cluster ou tornar offline os recursos dele.
 
-### Comandos equivalentes do Windows PowerShell
+### <a name="change-the-quorum-configuration-in-a-failover-cluster-by-using-failover-cluster-manager"></a>Alterar a configuração de quorum em um cluster de failover usando o Gerenciador de Cluster de Failover
 
-Os exemplos a seguir mostram como usar o cmdlet [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum?view=win10-ps) e outros cmdlets do Windows PowerShell para configurar o quórum do cluster.
+1. No Gerenciador de Cluster de Failover, selecione ou especifique o cluster que deseja alterar.
+2. Com o cluster selecionado, em **ações**, selecione **mais ações**e, em seguida, selecione **configurar quorum do Cluster**. O Assistente para Configurar Quorum do Cluster aparece. Selecione **Avançar**.
+3. Na página **Selecionar Opção de Configuração de Quorum** , selecione uma das três opções de configuração e conclua as etapas para essa opção. Antes de configurar o quorum, você pode examinar suas escolhas. Para obter mais informações sobre as opções, consulte [visão geral do quorum em um cluster de failover](#overview-of-the-quorum-in-a-failover-cluster), anteriormente neste tópico.
 
-O exemplo a seguir altera a configuração de quorum em cluster *CONTOSO FC1* para uma configuração de maioria de nós simples com nenhuma testemunha de quorum.
+    - Para permitir que o cluster redefina automaticamente as configurações do quorum ideais para sua configuração de cluster atual, selecione **usar configurações típicas** e, em seguida, conclua o assistente.
+    - Para adicionar ou alterar a testemunha de quorum, selecione **adicionar ou alterar a testemunha de quorum**e, em seguida, conclua as etapas a seguir. Para obter informações e considerações sobre configurar uma testemunha de quorum, consulte [Configuração de testemunha](#witness-configuration) anteriormente neste tópico.
+
+      1. Na página **Selecionar Testemunha de Quorum** , selecione uma opção para configurar uma testemunha de disco ou uma testemunha de compartilhamento de arquivos. O assistente indica as opções de seleção de testemunha recomendadas para seu cluster.
+
+          >[!NOTE]
+          >Você pode selecionar **Não configurar uma testemunha de quorum** e concluir o assistente. Se você tiver um número par de nós votantes em seu cluster, isso pode não ser uma configuração recomendada.
+
+      2. Se você selecionar a opção para configurar uma testemunha de disco, na página **Configurar Testemunha de Armazenamento** , selecione o volume de armazenamento que deseja atribuir como a testemunha de disco e conclua o assistente.
+      3. Se você selecionar a opção para configurar uma testemunha de compartilhamento de arquivos na página **Configurar Testemunha de Compartilhamento de Arquivo**, digite ou procure um compartilhamento de arquivos que será usado como o recurso de testemunha e conclua o assistente.
+
+    - Para configurar o gerenciamento de quorum e para adicionar ou alterar a testemunha de quorum, selecione **seleção de configuração e a testemunha de quorum avançada**e, em seguida, conclua as etapas a seguir. Para obter informações e considerações sobre as configurações de quorum avançadas, consulte [Atribuição de voto de nó](#node-vote-assignment) e [Gerenciamento dinâmico de quorum](#dynamic-quorum-management) anteriormente neste tópico.
+
+      1. Na página **Selecionar Configuração de Votação** , selecione uma opção para atribuir votos aos nós. Por padrão, todos os nós são atribuídos a um voto. Entretanto, para determinados cenários, você pode atribuir votos somente a um subconjunto de nós.
+
+          >[!NOTE]
+          >Você também pode selecionar **Nenhum nó**. Isso geralmente não é recomendado, porque não permite que os nós participem na votação de quorum, e requer a configuração de uma testemunha de disco. A testemunha de disco se torna o ponto único de falha para o cluster.
+
+      2. Na página **Configurar Gerenciamento de Quorum**, você pode habilitar ou desabilitar a opção **Permitir que o cluster gerencie dinamicamente a atribuição de votos de nós**. Selecionar essa opção geralmente aumenta a disponibilidade do cluster. Por padrão, a opção é habilitada e é altamente recomendado não desabilitar essa opção. Essa opção permite ao cluster continuar a ser executado em cenários de falha que não são possíveis quando essa opção está desabilitada.
+      3. Na página **Selecionar Testemunha de Quorum** , selecione uma opção para configurar uma testemunha de disco ou uma testemunha de compartilhamento de arquivos. O assistente indica as opções de seleção de testemunha recomendadas para seu cluster.
+
+          >[!NOTE]
+          >Você pode selecionar **Não configurar uma testemunha de quorum**e concluir o assistente. Se você tiver um número par de nós votantes em seu cluster, isso pode não ser uma configuração recomendada.
+
+      4. Se você selecionar a opção para configurar uma testemunha de disco, na página **Configurar Testemunha de Armazenamento** , selecione o volume de armazenamento que deseja atribuir como a testemunha de disco e conclua o assistente.
+      5. Se você selecionar a opção para configurar uma testemunha de compartilhamento de arquivos na página **Configurar Testemunha de Compartilhamento de Arquivo**, digite ou procure um compartilhamento de arquivos que será usado como o recurso de testemunha e conclua o assistente.
+
+4. Selecione **Avançar**. Confirme suas seleções na página de confirmação que aparece e, em seguida, selecione **próxima**.
+
+Depois que o assistente é executado e o **resumo** página será exibida se você quiser exibir um relatório das tarefas executadas pelo assistente, selecione **Exibir relatório**. O relatório mais recente permanecerá na *systemroot * * *\\Cluster\\relatórios** pasta com o nome **Quorumconfiguration**.
+
+>[!NOTE]
+>Depois de configurar o quorum do cluster, recomendamos que você execute o teste **Validar Configuração de Quorum** para verificar as configurações de quorum atualizadas.
+
+### <a name="windows-powershell-equivalent-commands"></a>Comandos equivalentes do Windows PowerShell
+
+Os exemplos a seguir mostram como usar o [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum?view=win10-ps) cmdlet e outros cmdlets do Windows PowerShell para configurar o quorum do cluster.
+
+O exemplo a seguir altera a configuração de quorum no cluster *CONTOSO-FC1* para uma configuração simples de maioria dos nós sem testemunha de quorum.
 
 ```PowerShell
 Set-ClusterQuorum –Cluster CONTOSO-FC1 -NodeMajority
 ```
 
-O exemplo a seguir altera a configuração de quorum no cluster de local para a maioria do nó com a configuração de testemunha. O recurso de disco chamado *2 de disco de Cluster* está configurado como uma testemunha de disco.
+O exemplo a seguir altera a configuração de quorum no cluster local para uma maioria dos nós com configuração de testemunha. O recurso de disco denominado *Disco de Cluster 2* é configurado como uma testemunha de disco.
 
 ```PowerShell
 Set-ClusterQuorum -NodeAndDiskMajority "Cluster Disk 2"
 ```
 
-O exemplo a seguir altera a configuração de quorum no cluster de local para a maioria do nó com a configuração de testemunha. O recurso de compartilhamento de arquivo chamado *\\\CONTOSO-FS\\fsw* for configurado como uma testemunha de compartilhamento de arquivos.
+O exemplo a seguir altera a configuração de quorum no cluster local para uma maioria dos nós com configuração de testemunha. O recurso de compartilhamento de arquivos denominado  *\\ \\FS CONTOSO\\fsw* está configurado como uma testemunha de compartilhamento de arquivos.
 
 ```PowerShell
 Set-ClusterQuorum -NodeAndFileShareMajority "\\fileserver\fsw"
 ```
 
-O exemplo a seguir remove o voto quorum do nó *ContosoFCNode1* no cluster de local.
+O exemplo a seguir remove o voto de quorum do nó *ContosoFCNode1* no cluster local.
 
 ```PowerShell
 (Get-ClusterNode ContosoFCNode1).NodeWeight=0
 ```
 
-O exemplo a seguir adiciona o voto quorum ao nó *ContosoFCNode1* no cluster de local.
+O exemplo a seguir adiciona o voto de quorum ao nó *ContosoFCNode1* no cluster local.
 
 ```PowerShell
 (Get-ClusterNode ContosoFCNode1).NodeWeight=1
 ```
 
-O exemplo a seguir permite que a propriedade **DynamicQuorum** do cluster *FC1 CONTOSO* (se ele foi desabilitado anteriormente):
+O exemplo a seguir habilita a propriedade **DynamicQuorum** do cluster *CONTOSO-FC1* (se ele foi previamente desabilitado):
 
 ```PowerShell
 (Get-Cluster CONTOSO-FC1).DynamicQuorum=1
 ```
 
-## Recuperar um cluster iniciando sem quorum
+## <a name="recover-a-cluster-by-starting-without-quorum"></a>Recuperar um cluster iniciando sem quorum
 
-Um cluster que não tenha votos suficientes quorum não será iniciado. Como uma primeira etapa, você sempre deve confirmar a configuração de quorum de cluster e investigar por que o cluster não tem quorum. Isso pode acontecer se você tiver nós que pararam de responder, ou se o local principal não está acessível em um cluster multissite. Depois de identificar a causa da falha de cluster, você pode usar as etapas de recuperação descritas nesta seção.
+Um cluster que não tem votos de quorum suficientes não será iniciado. Como uma primeira etapa, você sempre deve confirmar a configuração de quorum do cluster e investigar por que o cluster não tem mais quorum. Isso poderá acontecer se você tiver nós que pararam de responder, ou se o site primário não for acessível em um cluster multissite. Após identificar a causa raiz para a falha do cluster, você poderá usar as etapas de recuperação descritas nesta seção.
 
 >[!NOTE]
-> * Se o serviço de Cluster parar porque quorum é perdido, 1177 de ID de evento aparece no log do sistema.
-> * Sempre é necessário investigar por que o quorum do cluster foi perdido.
-> * É sempre preferível a trazer uma testemunha de quorum ou de nó para um estado íntegro (ingresso no cluster) em vez de a partir do cluster sem quorum.
+> * Se o Serviço de cluster é interrompido devido a uma perda de quorum, aparecerá a ID de Evento 1177 no log do sistema.
+> * Isso sempre será necessário para investigar por que o quorum do cluster foi perdido.
+> * Sempre é preferível fazer com que uma testemunha de nó ou quorum fique no estado íntegro (ingressar no cluster), em vez de iniciar o cluster sem quorum.
 
-### Forçar iniciar nós de cluster
+### <a name="force-start-cluster-nodes"></a>Forçar a inicialização de nós de cluster
 
-Depois de determinar que não é possível recuperar seu cluster ao trazer os nós ou testemunha de quorum para um estado íntegro, forçar o início do cluster se torna necessário. Forçar o início do cluster substitui as definições de configuração de quorum de cluster e inicia o cluster no modo de **ForceQuorum** .
+Depois de determinar que não é possível recuperar seu cluster fazendo com que a testemunha de nós ou de quorum fique em um estado íntegro, será necessário forçar a inicialização do cluster. Forçar a inicialização do cluster substitui as configurações de quorum de seu cluster e inicia o cluster no modo **ForceQuorum**.
 
-Forçar um início quando ele não tem quorum do cluster pode ser especialmente útil em um cluster multissite. Considere um cenário de recuperação de desastres com um cluster que contenha sites separadamente localizados primários e de backup, *site* e *site b*. Se houver um desastre original no *site*, ele pode levar uma quantidade significativa de tempo para o site online novamente. Provavelmente, você desejaria forçar o *site b* ficar online, mesmo que ele não tem quorum.
+Forçar a inicialização de um cluster quando ele não tem quorum pode ser especialmente útil em um cluster multissite. Considere um cenário de recuperação de desastre com um cluster que contém sites primários e de backup, *SiteA* e *SiteB*. Se houver um desastre genuíno no *SiteA*, levará um período tempo significativo até que o site volte a ficar online. Você provavelmente iria querer forçar o *SiteB* a ficar online, mesmo se ele não tivesse quorum.
 
-Quando um cluster é iniciado no modo de **ForceQuorum** e depois que ele entrar novamente em votos de quorum suficiente, o cluster automaticamente deixa o estado forçado e ele se comporta normalmente. Portanto, não é necessário iniciar o cluster novamente normalmente. Se um nó perde o cluster e ele perde quorum, ele fica offline novamente porque ele não está mais no estado forçado. Para ativá-la novamente quando ele não tem quorum requer forçar o início sem quorum do cluster.
-
->[!IMPORTANT]
->* Depois que um cluster é iniciada de força, o administrador tem controle total do cluster.
->* O cluster usa a configuração de cluster no nó onde o cluster é força iniciada e duplica para todos os outros nós que estão disponíveis.
->* Se você forçar o início sem quorum do cluster, todas as definições de configuração de quorum são ignoradas enquanto o cluster permanece no modo de **ForceQuorum** . Isso inclui atribuições de voto nó específico e as configurações de gerenciamento de quorum dinâmico.
-
-### Impedir que o quorum em nós de cluster restantes
-
-Depois que tiver força iniciado do cluster em um nó, é necessário iniciar todos os nós restantes no cluster com uma configuração para impedir que o quorum. Um nó iniciado com uma configuração que impede o quorum indica ao serviço de Cluster para ingressar em um cluster existente em execução em vez de formando uma nova instância de cluster. Isso impede que os nós restantes formando um cluster de divisão que contém duas instâncias concorrentes.
-
-Isso se torna necessário quando você precisa recuperar seu cluster em alguns cenários de recuperação de desastres multissite depois que tiver força iniciado no cluster no seu site, *b*de backup. Para adicionar a força iniciado cluster no *site b*, nós no seu site primário, *site*, precisa ser iniciado com o quorum impedido.
+Quando um cluster é iniciado no modo **ForceQuorum**, e depois de recobrar votos de quorum suficientes, ele automaticamente deixa o estado forçado e se comporta normalmente. Assim, não é necessário reiniciar o cluster normalmente. Se o cluster perder um nó e este perder o quorum, ele ficará offline novamente, porque não estará mais no estado forçado. Para colocá-lo online novamente quando ele não tem quorum, é necessário forçar o cluster a iniciar sem quorum.
 
 >[!IMPORTANT]
->Depois que um cluster é iniciada em um nó de força, recomendamos que você comece sempre nós restantes com o quorum impedido.
+>* Depois que um cluster é forçado a iniciar, o administrador tem total controle sobre ele.
+>* O cluster usa a configuração do cluster no nó em que é forçado a iniciar, e replica essa configuração a todos os outros nós disponíveis.
+>* Se você forçar o cluster a iniciar sem quorum, todas as configurações do quorum serão ignoradas enquanto o cluster permanecer no modo **ForceQuorum**. Isso inclui atribuições de voto de nó específicas e configurações de gerenciamento de quorum dinâmicas.
 
-Veja como recuperar o cluster com o Gerenciador de Cluster de Failover:
+### <a name="prevent-quorum-on-remaining-cluster-nodes"></a>Impedir quorum nos nós de cluster restantes
+
+Depois de ter forçado a inicialização do cluster em um nó, será necessário iniciar os nós restantes em seu cluster com uma configuração para impedir quorum. Um nó iniciado com uma configuração que impede quorum indica para o Serviço de cluster ingressar em um cluster em execução existente, em vez de formar uma nova instância de cluster. Isso impede que os nós restantes formem um cluster dividido que possa conter duas instâncias concorrentes.
+
+Isso é necessário quando você precisa recuperar seu cluster em alguns cenários de recuperação de desastre multissite, depois de ter forçado a inicialização do cluster em seu site de backup, o *SiteB*. Para ingressar o cluster iniciado à força no *SiteB*, os nós em seu site primário, o *SiteA*, precisarão ser iniciados com o quorum impedido.
+
+>[!IMPORTANT]
+>Depois que um cluster é iniciado à força em um nó, recomendamos que você sempre inicie os nós restantes com o quorum impedido.
+
+Aqui está como recuperar o cluster com o Gerenciador de Cluster de Failover:
 
 1. No Gerenciador de Cluster de Failover, selecione ou especifique o cluster que você deseja recuperar.
-2. Com o cluster selecionado, em **ações**, selecione **Iniciar de Cluster de força**.
+2. Com o cluster selecionado, em **ações**, selecione **forçar início do Cluster**.
 
-    Gerenciador de Cluster de failover força inicia o cluster em todos os nós que podem ser acessados. O cluster usa a configuração atual do cluster ao iniciar.
+    O Gerenciador de Cluster de Failover força a inicialização do cluster em todos os nós acessíveis. O cluster usa a configuração de cluster atual ao iniciar.
 
 >[!NOTE]
->* Para forçar o cluster para iniciar em um nó específico que contém uma configuração de cluster que você deseja usar, você deve usar os cmdlets do Windows PowerShell ou ferramentas de linha de comando equivalentes conforme apresentado após esse procedimento. 
-> * Se você usar o Gerenciador de Cluster de Failover para se conectar a um cluster que é iniciada de força, e você usar a ação de **Iniciar o serviço de Cluster** para iniciar um nó, o nó será iniciado automaticamente com a configuração que impede que o quorum.
+>* Para forçar o cluster a iniciar em um nó específico que contém uma configuração de cluster que você deseja usar, você deve usar os cmdlets do Windows PowerShell ou as ferramentas de linha de comando equivalentes, conforme apresentado após esse procedimento. 
+> * Se usar o Gerenciador de Cluster de Failover para se conectar a um cluster com inicialização forçada, e usar a ação **Iniciar Serviço de Cluster** para iniciar um nó, este será automaticamente iniciado com a configuração que impede quorum.
 
-#### Comandos equivalentes do Windows PowerShell (Start-Clusternode)
+#### <a name="windows-powershell-equivalent-commands-start-clusternode"></a>Comandos equivalentes do Windows PowerShell (Start-Clusternode)
 
-O exemplo a seguir mostra como usar o cmdlet **Start-ClusterNode** para forçar o início do cluster no nó *ContosoFCNode1*.
+O exemplo a seguir mostra como usar o cmdlet **Start-ClusterNode** para forçar a inicialização do cluster no nó *ContosoFCNode1*.
 
 ```PowerShell
 Start-ClusterNode –Node ContosoFCNode1 –FQ
 ```
 
-Como alternativa, você pode digitar o seguinte comando localmente no nó:
+Você também pode digitar o seguinte comando localmente no nó:
 
 ```PowerShell
 Net Start ClusSvc /FQ
 ```
 
-O exemplo a seguir mostra como usar o cmdlet **Start-ClusterNode** para iniciar o serviço de Cluster com o quorum impedido no nó *ContosoFCNode1*.
+O exemplo a seguir mostra como usar o cmdlet **Start-ClusterNode** para iniciar o Serviço de cluster com o quorum impedido no nó *ContosoFCNode1*.
 
 ```PowerShell
 Start-ClusterNode –Node ContosoFCNode1 –PQ
 ```
 
-Como alternativa, você pode digitar o seguinte comando localmente no nó:
+Você também pode digitar o seguinte comando localmente no nó:
 
 ```PowerShell
 Net Start ClusSvc /PQ
 ```
 
-## Considerações de quorum para configurações de recuperação de desastres
+## <a name="quorum-considerations-for-disaster-recovery-configurations"></a>Considerações de quorum para configurações de recuperação de desastre
 
-Esta seção resume as características e configurações de quorum para duas configurações de cluster multissite em implantações de recuperação de desastres. As diretrizes de configuração de quorum diferem dependendo se você precisar o failover automático ou failover manual para cargas de trabalho entre os sites. A configuração geralmente depende os contratos de nível de serviço (SLAs) que estão em vigor em sua organização para fornecer e dar suporte a cargas de trabalho em cluster em caso de falha ou desastre em um site.
+Esta seção resume as características e configurações de quorum para duas configurações de cluster multissite em implantações de recuperação de desastre. As diretrizes de configuração de quorum diferem dependendo de sua necessidade de failover automático ou failover manual para cargas de trabalho entre sites. Sua configuração geralmente depende dos SLAs (contratos de nível de serviço) que estabelecidos em sua organização para fornecer cargas de trabalho clusterizadas, e dar suporte a elas, caso ocorra uma falha ou um desastre em um site.
 
-### Failover automático
+### <a name="automatic-failover"></a>Failover automático
 
-Nessa configuração, o cluster consiste em dois ou mais sites que podem hospedar funções de cluster. Se ocorrer uma falha em qualquer site, as funções de cluster devem failover automaticamente à lista de sites restantes. Portanto, o quórum do cluster deve ser configurado para que qualquer site pode sustentar uma falha de site concluída.
+Nessa configuração, o cluster consiste em um ou mais sites que podem hospedar funções clusterizadas. Se ocorrer uma falha em qualquer site, espera-se que as funções clusterizadas façam failover automático nos sites restantes. Portanto, o quorum do cluster deve ser configurado de forma que qualquer site possa sustentar uma falha completa do site.
 
-A tabela a seguir resume as considerações e recomendações para essa configuração.
+A tabela a seguir resume considerações e recomendações para essa configuração.
 
 <table>
 <thead>
@@ -369,33 +379,33 @@ A tabela a seguir resume as considerações e recomendações para essa configur
 <td>Deve ser igual</td>
 </tr>
 <tr class="even">
-<td>Atribuição de nó de voto</td>
+<td>Atribuição de voto de nó</td>
 <td>Votos de nó não devem ser removidos porque todos os nós são igualmente importantes</td>
 </tr>
 <tr class="odd">
-<td>Gerenciamento de quorum dinâmico</td>
-<td>Deve ser habilitada</td>
+<td>Gerenciamento dinâmico de quorum</td>
+<td>Deve ser habilitado</td>
 </tr>
 <tr class="even">
 <td>Configuração de testemunha</td>
-<td>Testemunha de compartilhamento é recomendável, configurados em um site que é separado de sites do cluster</td>
+<td>A testemunha de compartilhamento de arquivos é recomendada, configurada em um site separado dos sites do cluster</td>
 </tr>
 <tr class="odd">
 <td>Cargas de trabalho</td>
-<td>Cargas de trabalho podem ser configuradas em qualquer um dos sites</td>
+<td>As cargas de trabalho podem ser configuradas em qualquer um dos sites</td>
 </tr>
 </tbody>
 </table>
 
-#### Considerações adicionais para o failover automático
+#### <a name="additional-considerations-for-automatic-failover"></a>Considerações adicionais para o failover automático
 
-- Configurar a testemunha de compartilhamento de arquivo em um site separado é necessário para dar uma oportunidade de igual para sobreviver a cada site. Para obter mais informações, consulte [configuração de testemunha](#witness-configuration) anteriormente neste tópico.
+- É necessário configurar a testemunha de compartilhamento de arquivos em um site separado, a fim de que cada site tenha a mesma oportunidade de sobreviver. Para obter mais informações, consulte [Configuração de testemunha](#witness-configuration) anteriormente neste tópico.
 
-### Failover manual
+### <a name="manual-failover"></a>Failover manual
 
-Nessa configuração, o cluster consiste em um site primário, *site*e um site de backup (recuperação), *b*. Funções de cluster são hospedadas no *site*. Devido à configuração de quorum do cluster, caso ocorra uma falha em todos os nós no *site*, o cluster parará de funcionar. Nesse cenário o administrador deve manualmente os serviços de cluster para o *site b* o failover e realizar etapas adicionais para recuperar o cluster.
+Nessa configuração, o cluster consiste em um site primário, o *SiteA*, e um site de backup (recuperação), o *SiteB*. Funções clusterizadas são hospedadas no *SiteA*. Por causa da configuração de quorum do cluster, se ocorrer uma falha em todos os nós no *SiteA*, o cluster parará de funcionar. Nesse cenário, o administrador deve fazer failover manual nos serviços do cluster para o *SiteB* , e executar etapas adicionais para recuperar o cluster.
 
-A tabela a seguir resume as considerações e recomendações para essa configuração.
+A tabela a seguir resume considerações e recomendações para essa configuração.
 
 <table>
 <thead>
@@ -410,34 +420,34 @@ A tabela a seguir resume as considerações e recomendações para essa configur
 <td>Pode ser diferente</td>
 </tr>
 <tr class="even">
-<td>Atribuição de nó de voto</td>
-<td>- Nó votos não devem ser removidos em nós no local principal, <em>site</em><br />
-- Nó votos deverá ser removido de nós no local de backup, <em>site b</em><br />
-- Se ocorrer uma interrupção de longo prazo em <em>site</em>, votos devem ser atribuídos a nós em <em>site b</em> para habilitar a maioria de quorum nesse site como parte de recuperação</td>
+<td>Atribuição de voto de nó</td>
+<td>- Votos de nó não devem ser removidos de nós no site primário, <em>SiteA</em><br />
+- Votos de nó devem ser removidos de nós no site de backup, <em>SiteB</em><br />
+- Se ocorrer uma interrupção de longo prazo no <em>SiteA</em>, votos deverão ser atribuídos a nós no <em>SiteB</em> para habilitar uma maioria de quorum no site como parte da recuperação</td>
 </tr>
 <tr class="odd">
-<td>Gerenciamento de quorum dinâmico</td>
-<td>Deve ser habilitada</td>
+<td>Gerenciamento dinâmico de quorum</td>
+<td>Deve ser habilitado</td>
 </tr>
 <tr class="even">
 <td>Configuração de testemunha</td>
-<td>- Configure uma testemunha se houver um número par de nós em <em>site</em><br />
-- Se for necessária uma testemunha, configure uma testemunha de compartilhamento de arquivo ou uma testemunha de disco que seja acessível apenas para nós no <em>site</em> (às vezes chamado de uma testemunha de disco assimétrico)</td>
+<td>- Configurar uma testemunha, se houver um número par de nós em <em>SiteA</em><br />
+- Se for necessária uma testemunha, configure uma testemunha de compartilhamento de arquivo ou uma testemunha de disco que é acessível somente a nós no <em>SiteA</em> (às vezes chamado de testemunha de disco assimétrico)</td>
 </tr>
 <tr class="odd">
 <td>Cargas de trabalho</td>
-<td>Usar proprietários preferenciais para manter as cargas de trabalho em execução em nós em <em>site</em></td>
+<td>Use proprietários preferenciais para manter cargas de trabalho em execução nos nós no <em>SiteA</em></td>
 </tr>
 </tbody>
 </table>
 
-#### Considerações adicionais para o failover manual
+#### <a name="additional-considerations-for-manual-failover"></a>Considerações adicionais para failover manual
 
-- Inicialmente, somente os nós no *site* são configurados com votos de quorum. Isso é necessário para garantir que o estado de nós no *site b* não afeta o quórum do cluster.
-- Etapas de recuperação podem variar dependendo se o *site* mantém uma falha temporária ou longo prazo.
+- Somente os nós no *SiteA* são inicialmente configurados com votos de quorum. Isso é necessário para assegurar que o estado dos nós no *SiteB* não afete o quorum do cluster.
+- As etapas de recuperação podem variar, dependendo se o *SiteA* sustenta uma falha temporária ou uma falha de longo prazo.
 
-## Mais informações
+## <a name="more-information"></a>Mais informações
 
 * [Clustering de failover](failover-clustering.md)
-* [Cmdlets do PowerShell Windows de Clusters de failover](https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps)
-* [Noções básicas sobre Cluster e Pool Quorum](../storage/storage-spaces/understand-quorum.md)
+* [Cmdlets de Clusters de failover do Windows PowerShell](https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps)
+* [Noções básicas sobre Cluster e o Quorum do Pool](../storage/storage-spaces/understand-quorum.md)

@@ -1,6 +1,6 @@
 ---
-title: Configurar WEB1 para distribuir listas de revogação de certificados (CRLs)
-description: Este tópico faz parte do guia certificados de servidor de implantação para 802.1 X com e sem fio implantações
+title: Configurar o WEB1 para distribuir as listas de certificados revogados (CRLs)
+description: Este tópico faz parte do guia de certificados de servidor de implantação para 802.1 X com fio e implantações sem fio
 manager: brianlic
 ms.topic: article
 ms.assetid: fa4a8c41-8c2a-425c-8511-736fe5d196ac
@@ -8,58 +8,59 @@ ms.prod: windows-server-threshold
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b96fad769638de9835c52137e5165fa32a6b9bd4
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 57fa45eff87a1f0cdaae8b780d7f605e54ff6871
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59839187"
 ---
-# <a name="configure-web1-to-distribute-certificate-revocation-lists-crls"></a>Configurar WEB1 para distribuir listas de revogação de certificados (CRLs)
+# <a name="configure-web1-to-distribute-certificate-revocation-lists-crls"></a>Configurar o WEB1 para distribuir as listas de certificados revogados (CRLs)
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Você pode usar este procedimento para configurar o servidor web WEB1 para distribuir CRLs.  
+Você pode usar este procedimento para configurar o WEB1 para distribuir as CRLs de servidor web.  
   
-Nas extensões da CA raiz, foi mencionado que CRL da CA raiz seria disponível via http://pki.corp.contoso.com/pki. Atualmente, não há um diretório PKI em WEB1, portanto, é necessário criar um.  
+Nas extensões da AC raiz, foi mencionado que a CRL da AC raiz deve estar disponível por meio de https://pki.corp.contoso.com/pki. Atualmente, não há um diretório virtual da PKI no WEB1, portanto, deve-se criar.  
   
-Para executar este procedimento, você deve ser um membro do **Admins. do domínio**.  
+Para executar este procedimento, você deve ser um membro da **Admins. do domínio**.  
   
 > [!NOTE]  
-> No procedimento a seguir, substitua o nome da conta de usuário, o nome do servidor Web, nomes de pasta e locais e outros valores aqueles que são apropriados para a implantação.  
+> No procedimento a seguir, substitua o nome da conta de usuário, o nome do servidor Web, nomes de pastas e locais e outros valores por aqueles que são apropriadas para sua implantação.  
   
-#### <a name="to-configure-web1-to-distribute-certificates-and-crls"></a>Para configurar WEB1 para distribuir certificados e CRLs  
+#### <a name="to-configure-web1-to-distribute-certificates-and-crls"></a>Para configurar o WEB1 para distribuir certificados e CRLs  
   
-1.  Em WEB1, execute o Windows PowerShell como administrador, digite `explorer c:\`, e pressione ENTER. Windows Explorer abre a unidade C.   
+1.  No WEB1, execute o Windows PowerShell como administrador, digite `explorer c:\`, e pressione ENTER. Windows Explorer é aberto para a unidade C.   
   
-2.  Crie uma nova pasta chamada PKI na unidade c:. Para fazer isso, clique em **Home**e clique em **nova pasta**. Uma nova pasta é criada com o nome temporário realçado. Tipo **pki** e pressione ENTER.  
+2.  Crie uma nova pasta chamada PKI na unidade c:. Para fazer isso, clique em **página inicial**e, em seguida, clique em **nova pasta**. Uma nova pasta é criada com o nome temporário realçado. Tipo de **pki** e, em seguida, pressione ENTER.  
   
-3.  No Windows Explorer, clique com botão direito na pasta que você acabou de criar, passe o cursor do mouse sobre **compartilhar com**e clique em **pessoas específicas**. O **compartilhamento de arquivos** caixa de diálogo é aberta.  
+3.  No Windows Explorer, clique com botão direito na pasta que você acabou de criar, focalize o cursor do mouse **compartilhar com**e, em seguida, clique em **pessoas específicas**. A caixa de diálogo **Compartilhamento de Arquivos** será aberta.  
   
-4.  Em **compartilhamento de arquivos**, tipo **editores de certificados**e clique em **adicionar**. O grupo de editores de certificados é adicionado à lista. Na lista, em **nível de permissão**, clique na seta ao lado de **editores de certificados**e clique em **leitura/gravação**. Clique em **compartilhamento**e clique em **feito**.  
+4.  Na **compartilhamento de arquivos**, digite **editores de certificados**e, em seguida, clique em **adicionar**. O grupo de editores de certificados é adicionado à lista. Na lista, na **nível de permissão**, clique na seta ao lado de **editores de certificados**e, em seguida, clique em **leitura/gravação**. Clique em **compartilhamento**e, em seguida, clique em **feito**.  
   
 5.  Feche o Windows Explorer.  
   
-6.  Abra o console do IIS. No Gerenciador do servidor, clique em **ferramentas**e clique em **Gerenciador de serviços de informações da Internet (IIS)**.  
+6.  Abra o console do IIS. No Gerenciador do Servidor, clique em **Ferramentas** e depois em **Gerenciador dos Serviços de Informações da Internet (IIS)**.  
   
-7.  Na árvore de console do Gerenciador de serviços de informações da Internet (IIS), expanda **WEB1**. Se você está convidado para introdução ao Microsoft Web Platform, clique em **Cancelar**.  
+7.  Na árvore de console do Gerenciador de serviços de informações da Internet (IIS), expanda **WEB1**. Se for convidado a começar a usar o Microsoft Web Platform, clique em **Cancelar**.  
   
-8.  Expanda **Sites** e, em seguida, clique com botão direito do **site padrão** e, em seguida, clique em **Add Virtual Directory**.  
+8.  Expanda **Sites**, clique com o botão direito do mouse no **Site Padrão** e clique em **Adicionar Diretório Virtual**.  
   
-9. Em **Alias**, tipo **pki**. Em **caminho físico** tipo **C:\pki**, clique em **Okey**.  
+9. Na **Alias**, digite **pki**. Na **caminho físico** tipo **C:\pki**, em seguida, clique em **Okey**.  
   
-10. Habilitar anônimos acessem o diretório virtual pki, para que qualquer cliente possa verificar a validade dos certificados de CA e CRLs. Para fazer isso:  
+10. Habilitar anônimo acesso ao diretório virtual da pki, para que qualquer cliente possa verificar a validade dos certificados de autoridade de certificação e CRLs. Para fazer isso:  
   
-    1.  No **conexões** painel, certifique-se de que **pki** é selecionado.  
+    1.  No painel **Conexões**, verifique se **pki** está selecionado.  
   
-    2.  Em **pki Home** clique **autenticação**.  
+    2.  Na **Página Inicial da pki** clique em **Autenticação**.  
   
-    3.  No **ações** painel, clique em **editar permissões**.  
+    3.  No painel **Ações**, clique em **Editar Permissões**.  
   
-    4.  Sobre o **segurança**, clique em **editar**  
+    4.  Na guia **Segurança**, clique em **Editar**.  
   
-    5.  Sobre o **permissões para pki** caixa de diálogo, clique em **adicionar**.  
+    5.  Na caixa de diálogo **Permissões para pki** , clique em **Adicionar**.  
   
-    6.  No **selecionar usuários, computadores, contas de serviço ou grupos**, tipo **LOGON anônimo; Todos** e, em seguida, clique em **verificar nomes**. Clique em **Okey**.  
+    6.  No **selecionar usuários, computadores, contas de serviço ou grupos**, tipo **LOGON anônimo; Todas as pessoas** e, em seguida, clique em **verificar nomes**. Clique em **OK**.  
   
     7.  Clique em **Okey** sobre o **selecionar usuários, computadores, contas de serviço ou grupos** caixa de diálogo.  
   
@@ -67,14 +68,14 @@ Para executar este procedimento, você deve ser um membro do **Admins. do domín
   
 11. Clique em **Okey** sobre o **pki propriedades** caixa de diálogo.  
   
-12. No **pki Home** painel, clique duas vezes em **solicitar filtragem**.  
+12. No painel **Página Inicial da pki** , clique duas vezes em **Filtragem de Solicitações**.  
   
-13. O **extensões de nome de arquivo** guia é selecionada por padrão no **solicitar filtragem** painel. No **ações** painel, clique em **editar configurações de recurso**.  
+13. A guia **Extensões de Nome de Arquivo** é selecionada por padrão no painel **Filtragem de Solicitações**. No painel **Ações** , clique em **Editar Configurações de Recurso**.  
   
-14. Em **editar configurações da filtragem solicitar**, selecione **permitir escape double** e, em seguida, clique em **Okey**.  
+14. Em **Editar Configurações de Filtragem de Solicitações**, selecione **Permitir saída dupla** e clique em **OK**.  
   
-15. No MMC do Gerenciador de serviços de informações da Internet (IIS), clique em nome do seu servidor Web. Por exemplo, se o servidor Web for denominado WEB1, clique em **WEB1**.  
+15. No MMC do Gerenciador de serviços de informações da Internet (IIS), clique no nome do seu servidor Web. Por exemplo, se seu servidor Web for denominado WEB1, clique em **WEB1**.  
   
-16. Em **ações**, clique em **reiniciar**. Serviços de Internet são interrompidos e reiniciados.  
+16. Na **ações**, clique em **reiniciar**. Serviços de Internet estão parados e reiniciados.  
   
 

@@ -1,6 +1,6 @@
 ---
-title: Implantar baseada em senha acesso autenticado 802.1 X sem fio
-description: Este tópico faz parte do guia de rede do Windows Server 2016 "Implantar baseada em senha 802.1 X autenticado sem fio acesso"
+title: Implantar acesso sem fio autenticado 802.1X baseado em senha
+description: Este tópico faz parte do guia de rede do Windows Server 2016 "Implantar baseado em senha 802.1 X acesso autenticado sem fio"
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking
@@ -8,284 +8,285 @@ ms.topic: article
 ms.assetid: ff06ba23-9c0f-49ec-8f7b-611cf8d73a1b
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 0ded8a273a9ad464b44fa7245db58d0fd05f06a2
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: f34580f4a0fd92c6f059d19d09a6926fc2775960
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59840007"
 ---
-# <a name="deploy-password-based-8021x-authenticated-wireless-access"></a>Implantar com base em Password\ acesso autenticado 802.1 X sem fio
+# <a name="deploy-password-based-8021x-authenticated-wireless-access"></a>Implantar a senha\-com base em acesso sem fio autenticado 802.1 X
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Este é um guia complementar para o Windows Server&reg; 2016 guia da rede principal. A guia da rede principal fornece instruções para planejar e implantar os componentes necessários para uma rede totalmente funcional e um novo domínio Active Directory® em uma nova floresta.
+Este é um guia complementar para o Windows Server&reg; 2016 guia da rede principal. Guia da rede principal fornece instruções para planejar e implantar os componentes necessários para uma rede totalmente operacional e um novo domínio de Active Directory® em uma nova floresta.
 
-Este guia explica como criar mediante uma rede principal, fornecendo instruções sobre como implantar Institute of Electrical e engenheiros de aparelhos eletrônicos \(IEEE\) 802.1X\-acesso sem fio 802.11 IEEE usando Protected Extensible Authentication Protocol – Microsoft Challenge Handshake Authentication Protocol versão 2 autenticado \ (PEAP\-MS\-CHAP v2\).
+Este guia explica como criar uma rede principal, fornecendo instruções sobre como implantar o Institute of Electrical and Electronics Engineers \(IEEE\) 802.1 X\-usando o acesso sem fio autenticado IEEE 802.11 Protected Extensible Authentication Protocol – Microsoft Challenge Handshake Authentication Protocol versão 2 \(PEAP\-MS\-CHAP v2\).
 
-Como PEAP\-MS\-CHAP v2 exige que os usuários forneçam credenciais baseadas em password\ em vez de um certificado durante o processo de autenticação, é geralmente mais fácil e mais econômica implantar que EAP\ TLS ou PEAP\-TLS.
+Como PEAP\-MS\-CHAP v2 requer que os usuários forneçam senha\-credenciais com base em vez de um certificado durante o processo de autenticação, ele é normalmente mais fácil e econômico de implantar que o EAP\-TLS ou PEAP\-TLS.
 
 >[!NOTE]
->Neste guia, IEEE 802.1 X acesso de acesso sem fio autenticado com PEAP\-MS\-CHAP v2 é abreviado para "acesso sem fio" e "Acesso Wi-Fi."
+>Neste guia, IEEE 802.1 X acesso autenticado sem fio com o PEAP\-MS\-CHAP v2 é abreviado como "acesso sem fio" e "Acesso de Wi-Fi".
 
 ## <a name="about-this-guide"></a>Sobre este guia
-Neste guia, em combinação com os guias de pré-requisito descrito abaixo, fornece instruções sobre como implantar a infraestrutura de acesso Wi-Fi a seguir.  
+Neste guia, em combinação com os guias de pré-requisito descrita abaixo, fornece instruções sobre como implantar a seguinte infraestrutura de acesso Wi-Fi.  
 
-- Um ou mais 802.1X\-compatível com 802.11 acesso sem fio pontos \(APs\).
+- Um ou mais 802.1X\-compatíveis com pontos de acesso sem fio 802.11 \(APs\).
 
 - Serviços de domínio do Active Directory \(AD DS\) usuários e computadores.
 
-- Gerenciamento de política de grupo.
+- Gerenciamento de Política de Grupo.
 
-- Um ou mais servidores NPS \(NPS\).
+- Um ou mais servidores de diretiva de rede \(NPS\) servidores.
 
 - Certificados de servidor para computadores que executam o NPS.
 
-- Sem fio computadores cliente que executam o Windows&reg; 10, Windows 8.1 ou Windows 8.
+- Computadores cliente executando o Windows sem fio&reg; 10, Windows 8.1 ou Windows 8.
 
 ### <a name="dependencies-for-this-guide"></a>Dependências para este guia
 
-Para implantar com êxito sem fio autenticado com este guia, você deve ter um ambiente de rede e domínio com todas as tecnologias necessárias implantadas. Você também deve ter implantados para seus servidores NPS autenticação de certificados do servidor.
+Para implantar com êxito sem fio autenticado com este guia, você deve ter um ambiente de rede e domínio com todas as tecnologias necessárias implantadas. Você também deve ter certificados de servidor implantados em NPSs sua autenticação.
 
 As seções a seguir fornecem links para documentação que mostra como implantar essas tecnologias.
 
-#### <a name="network-and-domain-environment-dependencies"></a>Dependências de ambiente de rede e domínio
+#### <a name="network-and-domain-environment-dependencies"></a>Dependências do ambiente de rede e domínio
 
-Este guia foi projetado para os administradores de sistema e de rede que tem seguido as instruções no Windows Server 2016 **guia da rede principal** para implantar uma rede principal, ou para aqueles que já implantaram as principais tecnologias incluídas na rede principal, incluindo o AD DS, \(DNS\) Domain Name System, Dynamic Host Configuration Protocol \(DHCP\), TCP\/IP, NPS e nome do serviço de Internet do Windows \(WINS\).  
+Este guia foi projetado para administradores de sistema e de rede que tenham seguido as instruções do Windows Server 2016 **guia da rede principal** para implantar uma rede principal, ou para aqueles que já implantou tecnologias principais incluído na rede principal, incluindo o AD DS, o sistema de nomes de domínio \(DNS\), Dynamic Host Configuration Protocol \(DHCP\), TCP\/IP, o NPS e o Windows Internet Name Service \(WINS\).  
 
-A guia da rede principal está disponível nos seguintes locais:
+Guia da rede principal está disponível nos seguintes locais:
 
 - O Windows Server 2016 [guia da rede principal](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide) está disponível na biblioteca técnica do Windows Server 2016. 
 
-- O [guia da rede principal](https://gallery.technet.microsoft.com/Core-Network-Guide-for-9da2e683) também está disponível no formato do Word na Galeria do TechNet, em [https://gallery.technet.microsoft.com/Core-Network-Guide-for-9da2e683](https://gallery.technet.microsoft.com/Core-Network-Guide-for-9da2e683).
+- O [guia da rede principal](https://gallery.technet.microsoft.com/Core-Network-Guide-for-9da2e683) também está disponível no formato Word na Galeria do TechNet, em [ https://gallery.technet.microsoft.com/Core-Network-Guide-for-9da2e683 ](https://gallery.technet.microsoft.com/Core-Network-Guide-for-9da2e683).
 
 #### <a name="server-certificate-dependencies"></a>Dependências de certificado do servidor
-Existem duas opções disponíveis para o registro de servidores de autenticação com certificados de servidor para uso com autenticação de 802.1 X - implantar sua própria infraestrutura de chave pública usando serviços de certificados do Active Directory \(AD CS\) ou usar certificados de servidor que estão registrados por uma autoridade de certificação pública \(CA\).
+Há duas opções disponíveis para o registro de servidores de autenticação com certificados de servidor para uso com a autenticação 802.1X - implantar sua própria infraestrutura de chave pública usando serviços de certificados do Active Directory \(AD CS\) ou usar certificados de servidor que são registrados por uma autoridade de certificação pública \(autoridade de certificação\).
 
 ##### <a name="ad-cs"></a>AD CS
-Os administradores de rede e do sistema implantação sem fio autenticado siga as instruções no guia do Windows Server 2016 Core rede complementar, **implantar certificados de servidor para 802.1 X com e sem fio implantações**. Este guia explica como implantar e usar o AD CS para registrar os certificados server para computadores que executam o NPS.
+Os administradores de rede e sistema de implantação sem fio autenticado devem seguir as instruções no Windows Server 2016 Core guia complementar da rede, **implantar certificados de servidor para 802.1 X com fio e implantações sem fio**. Este guia explica como implantar e usar o AD CS para registrar automaticamente certificados de servidor para computadores que executam o NPS.
 
 Este guia está disponível no seguinte local.
 
-- O Windows Server 2016 Core guia complementar da rede [implantar certificados de servidor para 802.1 X com e sem fio implantações](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments?f=255&MSPPError=-2147217396) em formato HTML na biblioteca técnica do. 
+- O Windows Server 2016 Core Network Companion Guide [implantar certificados de servidor para 802.1 X com fio e implantações sem fio](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments?f=255&MSPPError=-2147217396) em formato HTML na biblioteca técnica. 
 
-##### <a name="public-ca"></a>Autoridade de certificação pública
-Você pode comprar certificados de servidor de uma autoridade de certificação pública, como VeriSign, computadores clientes já confiem. 
+##### <a name="public-ca"></a>CA Pública
+Você pode comprar certificados de servidor de uma CA pública, como a VeriSign, computadores cliente já confiam. 
 
-Um computador cliente confia em uma autoridade de certificação quando o certificado da CA é instalado no repositório de certificados de autoridades de certificação confiáveis. Por padrão, computadores que executam o Windows têm vários certificados de CA públicos instalados em seu certificado de autoridades de certificação confiáveis armazenar.  
+Um computador cliente confia em uma autoridade de certificação quando o certificado de autoridade de certificação está instalado no repositório de certificados de autoridades de certificação raiz confiáveis. Por padrão, a computadores que executam o Windows tem vários certificados de autoridade de certificação públicos instalados em seus certificados de autoridades de certificação raiz confiáveis a armazenar.  
 
-É recomendável que você consulte os guias de design e implantação para cada uma das tecnologias que são usadas neste cenário de implantação. Estes guias podem ajudá-lo a determinar se esse cenário de implantação fornece os serviços e configuração que você precisa para rede da sua organização.
+É recomendável que você examine os guias de design e implantação de cada uma das tecnologias usadas neste cenário de implantação. Esses guias podem ajudar a determinar se o cenário de implantação fornece os serviços e as configurações que você precisa para a rede de sua organização.
 
 ### <a name="requirements"></a>Requisitos
 A seguir estão os requisitos para implantar uma infraestrutura de acesso sem fio usando o cenário documentado neste guia:
 
-- Antes de implantar esse cenário, você deve primeiro adquirir 802.1X\-pontos de acesso sem fio com capacidade para fornecer uma cobertura sem fio nos locais desejados no seu site. Seção de planejamento deste guia ajuda a determinar os recursos que devem ter suporte para os pontos de acesso.
+- Antes de implantar este cenário, você deve primeiro comprar 802.1 X\-pontos de acesso sem fio com capacidade de fornecer cobertura sem fio nos locais desejados em seu site. A seção de planejamento deste guia ajuda a determinar os recursos que devem dar suporte a seus PAS.
 
-- Active Directory serviços de domínio \(AD DS\) é instalado, como são as outras tecnologias de rede necessários, acordo com as instruções no guia de rede do Windows Server 2016 Core.  
+- Serviços de domínio do Active Directory \(AD DS\) estiver instalado, assim como outras tecnologias de rede necessária, acordo com as instruções no guia de rede do Windows Server 2016 Core.  
 
-- AD CS é implantado e certificados de servidor são registrados nos servidores NPS. Esses certificados são necessários ao implantar o método de autenticação baseada em certificate\ v2 PEAP\-MS\-CHAP que é usado neste guia.
+- AD CS é implantado e certificados de servidor são registrados em NPSs. Esses certificados são necessários quando você implanta o PEAP\-MS\-CHAP v2 certificado\-com base em método de autenticação que é usado neste guia.
 
-- Um membro da sua organização esteja familiarizado com os padrões IEEE 802.11 que são compatíveis com os pontos de acesso sem fio e os adaptadores de rede sem fio que estão instalados em computadores cliente e dispositivos em sua rede. Por exemplo, alguém em sua organização esteja familiarizado com os tipos de radiofrequência, autenticação sem fio 802.11 \ (WPA2 ou WPA\) e as codificações de \(AES or TKIP\).
+- Um membro da sua organização é familiarizado com os padrões do IEEE 802.11 que são compatíveis com seus PAS sem fio e adaptadores de rede sem fio que estão instalados no computadores cliente e dispositivos na sua rede. Por exemplo, alguém em sua organização está familiarizado com os tipos de radiofrequência, autenticação sem fio 802.11 \(WPA2 ou WPA\)e as codificações \(AES ou TKIP\).
 
-## <a name="what-this-guide-does-not-provide"></a>O que este guia não fornece  
+## <a name="what-this-guide-does-not-provide"></a>O que este guia não contém  
 A seguir estão alguns itens que neste guia não fornece:
 
-### <a name="comprehensive-guidance-for-selecting-8021x-capable-wireless-access-points"></a>Diretrizes abrangentes para selecionar 802.1X\-pontos de acesso sem fio com capacidade
+### <a name="comprehensive-guidance-for-selecting-8021x-capable-wireless-access-points"></a>Orientações abrangentes para a seleção de 802.1 X\-pontos de acesso sem fio compatíveis com
 
-Como existem muitas diferenças entre modelos de 802.1X\ e marcas-compatível com pontos de acesso sem fio, este guia não fornece informações detalhadas sobre:  
+Porque existem muitas diferenças entre marcas e modelos de 802.1 X\-APs sem fio com capacidade, este guia não fornece informações detalhadas sobre:  
 
-- Determinar qual marca ou o modelo de ponto de acesso sem fio é melhor adequada às suas necessidades.
+- Determinar qual marca ou o modelo do AP sem fio é melhor adequada às suas necessidades.
 
-- A implantação física dos pontos de acesso sem fio em sua rede.
+- A implantação física de APs sem fio na sua rede.
 
-- Advanced configuration de ponto de acesso sem fio, como para sem fio \(VLANs\) redes locais virtuais.
+- Avançadas de configuração de ponto de acesso sem fio, como para virtual redes locais sem fio \(VLANs\).
 
-- Instruções sobre como configurar os atributos de vendor\ específicos de ponto de acesso sem fio no NPS.
+- Instruções sobre como configurar um fornecedor de AP sem fio\-atributos específicos no NPS.
 
-Além disso, terminologia e nomes para configurações variam entre os modelos e marcas de ponto de acesso sem fio e podem não coincidir com os nomes de configuração genérico que são usados neste guia. Para obter mais detalhes de configuração de ponto de acesso sem fio, você deve revisar a documentação do produto fornecida pelo fabricante dos pontos de acesso sem fio.
+Além disso, terminologia e nomes para as configurações variam entre modelos e marcas de AP sem fio e podem não coincidir com os nomes de configuração genérica que são usados neste guia. Para detalhes de configuração de ponto de acesso sem fio, você deve examinar a documentação do produto fornecida pelo fabricante do APs sem fio.
 
-### <a name="instructions-for-deploying-nps-server-certificates"></a>Instruções para implantar certificados do servidor NPS
+### <a name="instructions-for-deploying-nps-certificates"></a>Instruções para implantar certificados NPS
   
-Há duas alternativas para implantar certificados do servidor NPS. Este guia não fornece diretrizes abrangentes para ajudá-lo a determinar quais alternativa melhor atendem às suas necessidades. Em geral, no entanto, as opções que você enfrenta são:
+Há duas alternativas para a implantação de certificados do NPS. Este guia fornece orientações abrangentes para ajudá-lo a determinar qual alternativa melhor atenderá às suas necessidades. Em geral, no entanto, as opções que você enfrenta são:
 
-- Comprando certificados de autoridade de certificação pública, como VeriSign, que já são confiáveis para clientes baseados em Windows \. Normalmente, essa opção é recomendada para redes menores.
+- Comprar certificados de uma CA pública, como a VeriSign, que já são confiáveis pelo Windows\-com base em clientes. Normalmente, essa opção é recomendada para redes menores.
 
-- Implantando \(PKI\) uma infraestrutura de chave pública em sua rede usando o AD CS. Isso é recomendado para a maioria das redes, e as instruções sobre como implantar certificados do servidor com o AD CS estão disponíveis no guia de implantação mencionado anteriormente.
+- Implantar uma infraestrutura de chave pública \(PKI\) em sua rede usando o AD CS. Isso é recomendado para a maioria das redes e as instruções de como implantar certificados de servidor com o AD CS estão disponíveis no guia de implantação mencionadas anteriormente.
 
-### <a name="nps-network-policies-and-other-nps-settings"></a>Políticas de rede NPS e outras configurações de NPS
+### <a name="nps-network-policies-and-other-nps-settings"></a>Políticas de rede do NPS e outras configurações do NPS
 
-Exceto para as configurações feitas quando você executa o **configurar 802.1 X** assistente, conforme documentado neste guia, este guia não fornece informações detalhadas para configurar manualmente o NPS condições, restrições ou outras configurações de NPS.
+Exceto para as definições de configuração feitas quando você executa o **configurar 802.1 X** assistente, conforme documentado neste guia, este guia não fornece informações detalhadas para configurar manualmente o NPS condições, restrições ou outro NPS Configurações.
 
 ### <a name="dhcp"></a>DHCP
 
-Este guia de implantação não fornece informações sobre como projetar ou implantando sub-redes DHCP para redes sem fio.
+Este guia de implantação não fornece informações sobre como criar ou implantar sub-redes DHCP para LANs sem fio.
 
-## <a name="technology-overviews"></a>Visões gerais de tecnologia
-A seguir estão visões gerais de tecnologia de implantação de acesso sem fio:
+## <a name="technology-overviews"></a>Visões gerais da tecnologia
+A seguir estão as visões gerais de tecnologia para a implantação de acesso sem fio:
 
-### <a name="ieee-8021x"></a>IEEE 802.1 X
-O padrão IEEE 802.1 X define o controle de acesso de rede com base em port\ que é usado para fornecer acesso de rede autenticada para redes Ethernet. Esse controle de acesso de rede com base em port\ usa as características físicas da infraestrutura LAN alternada para autenticar dispositivos conectados a uma porta de LAN. Acesso à porta pode ser negado se o processo de autenticação falhar. Embora esse padrão foi projetado para redes Ethernet com fio, ele foi adaptado para uso em LANs sem fio 802.11.
+### <a name="ieee-8021x"></a>IEEE 802.1X
+O padrão IEEE 802.1X define a porta\-com base em controle de acesso à rede que é usado para fornecer acesso autenticado à rede para redes Ethernet. Essa porta\-controle de acesso de rede com base em usa as características físicas da infraestrutura de LAN alternada para autenticar dispositivos conectados a uma porta LAN. O acesso à porta pode ser negado se o processo de autenticação falhar. Embora esse padrão foi projetado para redes Ethernet com fio, ele foi adaptado para uso em LANs sem fio 802.11.
 
-### <a name="8021x-capable-wireless-access-points-aps"></a>802.1X\-\(APs\) de pontos de acesso sem fio compatível com
-Esse cenário requer a implantação de uma ou mais 802.1X\-compatível com pontos de acesso sem fio compatíveis com o protocolo \(RADIUS\) Remote Authentication Dial\-In User Service.
+### <a name="8021x-capable-wireless-access-points-aps"></a>802.1X\-pontos de acesso sem fio compatíveis com \(APs\)
+Esse cenário requer a implantação de um ou mais 802.1X\-APs sem fio com capacidade que são compatíveis com o Remote Authentication Dial\-In User Service \(RADIUS\) protocolo.
 
-802.1 X e compatível com RADIUS\ PAS, quando implantado em uma infraestrutura de RAIO com um servidor RADIUS, como um servidor NPS, são chamadas *clientes RADIUS*.
+802.1X e RADIUS\-compatível com pontos de acesso, quando implantado em uma infraestrutura RADIUS, com um servidor RADIUS como um NPS, são chamados *clientes RADIUS*.
 
 ### <a name="wireless-clients"></a>Clientes sem fio
-Este guia fornece detalhes de configuração abrangente para fornecer acesso autenticado para que os usuários domain\ membro que se conectam à rede com computadores cliente sem fio que executam o Windows 10, Windows 8.1 e Windows 8 802.1 X. Computadores devem ter ingressado no domínio para estabelecer acesso autenticado com êxito.
+Este guia fornece detalhes de configuração abrangente para fornecer acesso autenticado para o domínio 802.1 X\-usuários de membro que se conectam à rede com computadores de cliente sem fio que executam o Windows 10, Windows 8.1 e Windows 8. Os computadores devem ser integrados ao domínio para estabelecer o acesso autenticado com êxito.
 
 >[!NOTE]
->Você também pode usar computadores que executam o Windows Server 2012, Windows Server 2012 R2 e Windows Server 2016 como clientes sem fio.
+>Você também pode usar computadores que executam o Windows Server 2016, Windows Server 2012 R2 e Windows Server 2012 como clientes sem fio.
 
 ### <a name="support-for-ieee-80211-standards"></a>Suporte para IEEE 802.11 padrões
-Sistemas operacionais Windows e Windows Server compatíveis oferecem suporte à built\ em redes sem fio 802.11. Nesses sistemas operacionais, um adaptador de rede sem fio 802.11 instalado aparece como uma conexão de rede sem fio na Central de rede e compartilhamento. 
+Sistemas operacionais Windows e Windows Server com suporte que fornecem criado\-no suporte para 802.11 sem fio à rede. Nesses sistemas operacionais, um adaptador de rede sem fio 802.11 instalado aparece como uma conexão de rede sem fio na Central de rede e compartilhamento. 
 
-Embora não haja suporte para redes sem fio 802.11 built\-in, os componentes do Windows sem fio variam de acordo com o seguinte:
+Embora há baseia-se\-com suporte para redes sem fio 802.11, os componentes sem fio do Windows variam de acordo com o seguinte:
 
-- Os recursos do adaptador de rede sem fio. O adaptador de rede sem fio instalado deve dar suporte a LAN sem fio ou padrões de segurança sem fio que você precisa. Por exemplo, se o adaptador de rede sem fio não dá suporte a \(WPA\) Wi\-Fi Protected Access, você não pode habilitar ou configurar as opções de segurança WPA.
+- Os recursos do adaptador de rede sem fio. O adaptador de rede sem fio instalado deve dar suporte a LAN sem fio ou padrões de segurança sem fio que você precisa. Por exemplo, se o adaptador de rede sem fio não dá suporte a Wi\-Fi Protected Access \(WPA\), você não pode habilitar ou configurar opções de segurança WPA.
 
-- Os recursos do driver do adaptador de rede sem fio. Para permitir que você configurar as opções de rede sem fio, o driver do adaptador de rede sem fio deve suportar o relatório de todos os seus recursos para o Windows. Verifique se que o driver do adaptador de rede sem fio é escrito para os recursos do seu sistema operacional. Além disso, certifique-se de que o driver é a versão mais atual, verificando o Microsoft Update ou o site do fornecedor do adaptador de rede sem fio.
+- Os recursos do driver do adaptador de rede sem fio. Para permitir que você configure as opções de rede sem fio, o driver do adaptador de rede sem fio deve oferecer suporte a relatórios de todos os seus recursos para Windows. Verifique se que o driver de adaptador de rede sem fio é escrito para os recursos do seu sistema operacional. Certifique-se também de que o driver é a versão mais atual, verificando o Microsoft Update ou o site do fornecedor de adaptador de rede sem fio.
 
-A tabela a seguir mostra as taxas de transmissão e frequências para padrões comuns de sem fio 802.11 IEEE.
+A tabela a seguir mostra as taxas de transmissão e as frequências de padrões comuns de sem fio IEEE 802.11.
 
-|Padrões|Frequências|Transmissão taxas de bits|Uso|
+|Padrões|Frequências|Transmissão de taxas de bits|Uso|
 |-------------|---------------|--------------------------|---------|  
-|802.11|Intervalo de frequência de banda S\ industriais, científica e médicos \(ISM\) \ (2.4 para 2.5 GHz\)|2 megabits por segundo \(Mbps\)|Obsoleto. Não costuma ser usado.|  
-|802.11 B|Banda S\ ISM|11 Mbps|Costuma ser usado.|  
-|802.11 A|ISM de banda c \ \ (5.725 para 5.875 GHz\)|54 Mbps|Não costuma ser usado devido à despesa e intervalo limitado.|  
-|802.11g|Banda S\ ISM|54 Mbps|Amplamente usado. 802.11g dispositivos são compatíveis com 802.11 b dispositivos.|  
-|802.11 N \2.4 e 5.0 GHz|C \ banda e banda S\ ISM|250 Mbps|Dispositivos de acordo com o IEEE pre\ ratificação padrão 802.11 n se tornou disponíveis em agosto de 2007. 802.11 N muitos dispositivos são compatíveis com 802.11 a, b e dispositivos g.|
-|802.11ac |5 GHz |6.93 Gbps |802.11ac, aprovados pela IEEE em 2014, é mais escalável e mais rápidas do que 802.11 n e é implantado onde PAS e clientes sem fio oferecer suporte a ele.|
+|802.11|S\-banda Industrial, científico e Medical \(ISM\) intervalo de frequência \(2.4 a 2,5 GHz\)|2 megabits por segundo \(Mbps\)|Obsoleto. Não são comumente usados.|  
+|802.11b|S\-banda ISM|11 Mbps|Normalmente usado.|  
+|802.11 a|C\-banda ISM \(5,725 a 5.875 GHz\)|54 Mbps|Não são usados normalmente devido à despesa e intervalo limitado.|  
+|802.11g|S\-banda ISM|54 Mbps|Amplamente usado. dispositivos 802.11g são compatíveis com 802.11b dispositivos.|  
+|802.11n \2.4 e 5.0 GHz|C\-S e banda\-banda ISM|250 Mbps|Dispositivos com base no pré\-ratificação IEEE 802.11 n padrão se tornou disponível em agosto de 2007. 802.11n muitos dispositivos são compatíveis com 802.11 a, b e dispositivos g.|
+|802.11ac |5 GHz |6.93 Gbps |o 802.11ac, aprovado pelo IEEE em 2014, é mais escalonável e mais rápido do que 802.11n e é implantado onde APs e clientes sem fio oferecer suporte a ele.|
 
 ### <a name="wireless-network-security-methods"></a>Métodos de segurança de rede sem fio
-**Sem fio métodos de segurança de rede** é um agrupamento informal de autenticação sem fio \ (às vezes chamado de security\ sem fio) e a criptografia de segurança sem fio. Criptografia e autenticação sem fio são usados em pares para impedir que usuários não autorizados acessem a rede sem fio e para proteger a transmissão sem fio. 
+**Sem fio de métodos de segurança de rede** é um agrupamento informal de autenticação sem fio \(às vezes chamado de segurança sem fio\) e criptografia de segurança sem fio. Criptografia e autenticação sem fio são usadas em pares para impedir que usuários não autorizados acessem a rede sem fio e para proteger as transmissões sem fio. 
 
-Ao configurar as configurações de segurança sem fio sem fio rede políticas da política de grupo, há várias combinações de escolherem. No entanto, somente o Enterprise WPA2\, WPA\-Enterprise e abrir com 802.1 X padrões de autenticação são compatíveis para implantações sem fio 802.1 X autenticado.
+Ao definir as configurações de segurança sem fio sem fio rede diretivas de diretiva de grupo, há várias combinações para sua escolha. No entanto, somente o WPA2\-Enterprise, WPA\-Enterprise e abrir com 802.1X padrões de autenticação têm suporte para implantações sem fio 802.1 X autenticado.
 
 >[!NOTE]
->Ao configurar as políticas de rede sem fio, você deve selecionar **WPA2\ Enterprise**, **WPA\ Enterprise**, ou **abrir com 802.1 X** para acessar as configurações de EAP que são necessárias para 802.1 X autenticado implantações sem fio.  
+>Ao configurar políticas de rede sem fio, você deve selecionar **WPA2\-Enterprise**, **WPA\-Enterprise**, ou **abrir com 802.1X** em a fim de acessar as configurações de EAP que são necessários para 802.1 X autenticado implantações sem fio.  
 
 #### <a name="wireless-authentication"></a>Autenticação sem fio
-Este guia recomenda que o uso dos seguintes padrões de autenticação sem fio 802.1 X autenticado implantações sem fio.  
+Este guia recomenda que o uso dos seguintes padrões de autenticação sem fio para 802.1 X autenticado implantações sem fio.  
 
-**Wi\-Fi Protected Access – Enterprise \(WPA\-Enterprise\)** WPA é um padrão provisório desenvolvido pela rede Wi-Fi Alliance em conformidade com o protocolo de segurança sem fio 802.11. O protocolo WPA foi desenvolvido em resposta a um número de falhas graves descobertos no protocolo privacidade equivalente com fio \(WEP\) anterior.
+**Wi\-Fi Protected Access – Enterprise \(WPA\-Enterprise\)**  WPA é um padrão provisório desenvolvido pela Wi-Fi Alliance para estar em conformidade com o protocolo de segurança sem fio 802.11. O protocolo WPA foi desenvolvido em resposta a um número de falhas graves que foram descobertos no anterior Wired Equivalent Privacy \(WEP\) protocolo.
 
-Enterprise WPA\ oferece segurança aprimorada WEP ao:  
+WPA\-Enterprise fornece segurança aprimorada pelo WEP por:  
 
-1. Exigir autenticação, que usa a estrutura de X EAP 802.1 como parte da infraestrutura que garante centralizada autenticação mútua e gerenciamento de chaves dinâmico  
+1. Exigir autenticação que usa a estrutura X EAP 802.1 como parte da infraestrutura que garante que a autenticação mútua centralizada e gerenciamento de chaves dinâmico  
 
-2. Aprimorando \(ICV\) o valor de verificação de integridade com um \(MIC\) verificação de integridade de mensagem, para proteger o cabeçalho e a carga  
+2. Aumentar o valor de verificação de integridade \(ICV\) com uma mensagem de verificação de integridade \(MIC\), para proteger o cabeçalho e a carga  
 
-3. Implementando um contador de quadros para evitar ataques de repetição  
+3. Implementando um contador de quadros para evitar ataques de reprodução  
 
-**Wi\-Fi Protected Access 2 – Enterprise \(WPA2\-Enterprise\)** como o WPA\-Enterprise padrão, WPA2\-Enterprise usa 802.1 X e EAP framework. WPA2\ Enterprise oferece maior proteção de dados para vários usuários e grandes redes gerenciadas. WPA2\ empresarial é um protocolo robusto que foi projetado para impedir o acesso não autorizado de rede, verificando os usuários da rede por meio de um servidor de autenticação.  
+**Wi\-Fi Protected Access 2 – Enterprise \(WPA2\-Enterprise\)**  como o WPA\-Enterprise, standard, WPA2\-Enterprise usa 802.1 X e o framework EAP. WPA2\-Enterprise fornece maior proteção de dados para vários usuários e grandes redes de gerenciadas. WPA2\-Enterprise é um protocolo robusto que foi desenvolvido para impedir o acesso à rede não autorizado, verificando os usuários da rede por meio de um servidor de autenticação.  
 
 #### <a name="wireless-security-encryption"></a>Criptografia de segurança sem fio
-Criptografia de segurança sem fio é usada para proteger as transmissões sem fio que são enviadas entre o cliente sem fio e o ponto de acesso sem fio. Criptografia de segurança sem fio é usada em conjunto com o método de autenticação de segurança de rede selecionada. Por padrão, os computadores que executam o Windows 10, Windows 8.1 e Windows 8 dão suporte a dois padrões de criptografia:
+Criptografia de segurança sem fio é usada para proteger as transmissões sem fio que são enviadas entre o cliente sem fio e o AP sem fio. Criptografia de segurança sem fio é usada em conjunto com o método de autenticação de segurança de rede selecionada. Por padrão, os computadores que executam o Windows 8, Windows 8.1 e Windows 10 dão suporte a dois padrões de criptografia:
 
-1. **Protocolo de integridade de chave temporal** \(TKIP\) é um protocolo de criptografia mais antigo que foi projetado originalmente para fornecer uma criptografia mais segura sem fio que foi fornecido pelo protocolo inerentemente fracas \(WEP\) privacidade equivalente com fio. TKIP foi projetado por IEEE 802.11 i grupo e o Wi\-Fi Alliance para substituir o WEP sem exigir a substituição de hardware herdado de tarefas. TKIP é um conjunto de algoritmos que encapsula a carga WEP e permite que os usuários do equipamento de rede Wi-Fi Herdado atualizar para o TKIP sem substituição de hardware. Como WEP, TKIP usa o algoritmo de criptografia de fluxo RC4 como sua base. O novo protocolo, no entanto, criptografa cada pacote de dados com uma chave de criptografia exclusiva e as chaves são muito mais fortes que aqueles pelo WEP. Embora TKIP é útil para a atualização de segurança em dispositivos mais antigos que foram projetados para usar apenas WEP, ele não aborda todos os problemas de segurança voltado para redes sem fio e na maioria dos casos não é suficientemente robusto para proteger confidenciais governamentais ou transmissões de dados corporativos.  
+1. **Temporal Key Integrity Protocol** \(TKIP\) é um protocolo de criptografia mais antigo que foi originalmente projetado para fornecer uma criptografia mais segura sem fio que foi fornecido pelo inerentemente fraca Wired Equivalent Privacy \(WEP\) protocolo. TKIP foi criado pelo IEEE 802.11 i tarefas grupo e o Wi\-Fi Alliance para substituir o WEP sem a necessidade de substituição de hardware herdado. O TKIP é um pacote de algoritmos que encapsula a carga do WEP e permite que os usuários do equipamento legado de Wi-Fi atualizar para TKIP sem substituir o hardware. Como o WEP, TKIP usa o algoritmo de criptografia de fluxo RC4 como sua base. O novo protocolo, no entanto, criptografa cada pacote de dados com uma chave de criptografia exclusivo e as chaves são muito mais seguras do que aqueles pelo WEP. Embora TKIP é útil para a atualização de segurança em dispositivos mais antigos que foram projetados para usar somente o WEP, ele não aborda todos os problemas de segurança voltados para LANs sem fio e na maioria dos casos não é suficientemente robusto para proteger o governo confidencial ou dados corporativos transmissões.  
 
-2. **Advanced Encryption Standard** \(AES\) é o protocolo de criptografia preferencial para a criptografia de dados comerciais e governamentais. AES oferece um nível maior de segurança de transmissão sem fio que TKIP ou WEP. Ao contrário TKIP e WEP, AES exige hardware sem fio que suporta o padrão AES. AES é um padrão de criptografia de chave symmetric\ que usa três codificações de bloco, AES\-128, 192 AES\ e AES\-256.
+2. **Advanced Encryption Standard** \(AES\) é o protocolo de criptografia preferencial para a criptografia de dados comerciais e governamentais. AES oferece um nível mais alto de segurança de transmissão sem fio que TKIP ou WEP. Ao contrário de TKIP e WEP, AES requer hardware sem fio que suporta o padrão AES. AES é simétrica\-chave de criptografia padrão que usa três codificações de bloco, AES\-128, AES\-192 e AES\-256.
 
-No Windows Server 2016, os seguintes métodos de criptografia sem fio com base em AES\ estão disponíveis para configuração nas propriedades de perfil sem fio quando você seleciona um método de autenticação do WPA2\-Enterprise, o que é recomendado.
+No Windows Server 2016, o seguinte AES\-métodos de criptografia sem fio com base em estão disponíveis para configuração nas propriedades de perfil sem fio quando você seleciona um método de autenticação do WPA2\-Enterprise, que é recomendado.
 
-1. **CCMP AES\**. Contador modo codificação bloco encadeamento mensagem código protocolo de autenticação \(CCMP\) implementa o padrão 802.11 i e foi projetado para criptografia de segurança mais alta do que o fornecido pelo WEP e usa chaves de criptografia AES de 128 bits.
-2. **AES\ GCMP**. Protocolo de modo de contador Galois \(GCMP\) é suportada pela 802.11ac, é mais eficiente do que AES\ CCMP e fornece melhor desempenho para os clientes sem fio. GCMP usa chaves de criptografia AES de 256 bits.
+1. **AES\-CCMP**. Modo de codificação de bloco encadeamento mensagem código protocolo de autenticação de contador \(CCMP\) implementa o padrão 802.11 i e foi projetado para criptografia de segurança mais alto do que o fornecido pelo WEP e usa chaves de criptografia AES de 128 bits.
+2. **AES\-GCMP**. Protocolo de modo de contador Galois \(GCMP\) é compatível com 802.11ac, é mais eficiente do que AES\-CCMP e oferece melhor desempenho para os clientes sem fio. GCMP usa chaves de criptografia AES de 256 bits.
 
 > [!IMPORTANT]
-> Com fio equivalência privacidade \(WEP\) era o original sem fio padrão de segurança que foi usada para criptografar o tráfego de rede. Você não deve implantar WEP em sua rede porque há das vulnerabilidades conhecidas well\ neste formulário desatualizado de segurança.
+> Com fio Equivalency Privacy \(WEP\) era o padrão de segurança sem fio original que foi usado para criptografar o tráfego de rede. Você não deve implantar WEP em sua rede porque há bem\-vulnerabilidades conhecidas neste formulário desatualizado de segurança.
 
-### <a name="active-directory-doman-services-ad-ds"></a>\(AD DS\) de serviços de domínio do Active Directory
-O AD DS fornece um banco de dados distribuído que armazena e gerencia informações sobre recursos de rede e dados específicos do application\ de aplicativos habilitados para Directory \. Os administradores podem usar o AD DS para organizar elementos de uma rede, como os usuários, computadores e outros dispositivos, uma estrutura hierárquica de contenção. A estrutura hierárquica contenção inclui floresta do Active Directory, domínios na floresta e unidades organizacionais \(OUs\) em cada domínio. Um servidor que está executando o AD DS é chamado uma *controlador de domínio*.  
+### <a name="active-directorydoman-services-adds"></a>Serviços de domínio do Active Directory \(AD DS\)
+O AD DS fornece um banco de dados distribuído que armazena e gerencia informações sobre recursos de rede e aplicativo\-dados específicos do diretório\-aplicativos habilitados. Os administradores podem usar AD DS para organizar elementos de uma rede, como usuários, computadores e outros dispositivos, em uma estrutura de confinamento hierárquica. A estrutura de confinamento hierárquica inclui a floresta do Active Directory, domínios na floresta e unidades organizacionais \(UOs\) em cada domínio. Um servidor que está executando o AD DS é chamado de um *controlador de domínio*.  
 
-AD DS contém as contas de usuário, contas de computador e propriedades da conta que são exigidas por IEEE 802.1 X e PEAP\-MS\-CHAP v2 para autenticar as credenciais do usuário e para avaliar a autorização para conexões sem fio.
+AD DS contém as contas de usuário, contas de computador e propriedades da conta que são exigidas pelo IEEE 802.1 X e PEAP\-MS\-CHAP v2 para autenticar as credenciais do usuário e para avaliar a autorização para conexões sem fio.
 
-### <a name="active-directory-users-and-computers"></a>Usuários e computadores active Directory
-Diretório de usuários e computadores do Active é um componente do AD DS que contém as contas que representam as entidades físicas, como um computador, uma pessoa ou um grupo de segurança. A *grupo de segurança* é uma coleção de contas de usuário ou computador que os administradores podem gerenciar como uma única unidade. Contas de usuários e computadores que pertencem a um determinado grupo são chamadas de *Agrupar membros*.  
+### <a name="active-directory-users-and-computers"></a>Usuários e computadores do Active Directory
+Active Directory Users and Computers é um componente do AD DS que contém as contas que representam entidades físicas, como um computador, uma pessoa ou um grupo de segurança. Um *grupo de segurança* é uma coleção de contas de usuário ou computador que os administradores podem gerenciar como uma única unidade. Contas de usuário e computador que pertencem a um determinado grupo são denominadas *os membros do grupo*.  
 
-### <a name="group-policy-management"></a>Gerenciamento de política de grupo
-Gerenciamento de política de grupo permite o gerenciamento de configuração e alteração baseada em Directory \ Configurações de usuário e computador, incluindo informações de segurança e do usuário. Usar política de grupo para definir configurações para grupos de usuários e computadores. Com a política de grupo, você pode especificar configurações para entradas do registro, segurança, instalação de software, scripts, redirecionamento de pasta, serviços de instalação remota e manutenção do Internet Explorer. A política de grupo configuração que você crie está contidas em uma política de grupo objeto \(GPO\). Associando um GPO selecionados contêineres de sistema do Active Directory — sites, domínios e OUs — você pode aplicar as configurações do GPO aos usuários e computadores nesses contêineres do Active Directory. Para gerenciar objetos de política de grupo em uma empresa, você pode usar o Editor de gerenciamento de política de grupo Microsoft Management Console \(MMC\).  
+### <a name="group-policy-management"></a>Gerenciamento de Política de Grupo
+Gerenciamento de diretiva de grupo permite que o diretório\-com base em gerenciamento de configuração e alteração de configurações de usuário e computador, incluindo informações de segurança e do usuário. Usar política de grupo para definir configurações para grupos de usuários e computadores. Com a diretiva de grupo, você pode especificar configurações para as entradas do registro, segurança, instalação de software, scripts, redirecionamento de pasta, serviços de instalação remota e manutenção do Internet Explorer. As configurações de diretiva de grupo que você cria são contidas em um objeto de diretiva de grupo \(GPO\). Associando um GPO selecionados contêineres de sistema do Active Directory — sites, domínios e OUs — você pode aplicar as configurações do GPO aos usuários e computadores nesses contêineres do Active Directory. Para gerenciar objetos de diretiva de grupo em toda a empresa, você pode usar o Editor de gerenciamento de diretiva de grupo Microsoft Management Console \(MMC\).  
 
-Este guia fornece instruções detalhadas sobre como especificar as configurações da rede sem fio \ (IEEE 802.11\) extensão de políticas de gerenciamento de política de grupo. A rede sem fio \ (IEEE 802.11\) políticas configurar computadores cliente sem fio de membro domain\ com a conectividade necessária e configurações sem fio 802.1 X autenticado acesso sem fio.
+Este guia fornece instruções detalhadas sobre como especificar as configurações da rede sem fio \(IEEE 802.11\) extensão de políticas do gerenciamento de diretiva de grupo. A rede sem fio \(IEEE 802.11\) diretivas configurar domínio\-computadores cliente sem fio de membro com a conectividade necessária e configurações sem fio 802.1 X autenticado acesso sem fio.
 
-### <a name="server-certificates"></a>Certificados de servidor
-Esse cenário de implantação exige certificados de servidor para cada servidor NPS que realiza autenticação 802.1 X.  
+### <a name="server-certificates"></a>Certificados do servidor
+Neste cenário de implantação requer certificados de servidor para cada NPS que realiza a autenticação 802.1X.  
 
-Um certificado de servidor é um documento digital que costuma ser usado para autenticação e proteção de informações em redes abertas. Um certificado com segurança associa uma chave pública para a entidade que contém a chave privada correspondente. Certificados são assinados digitalmente pela CA de emissão, e eles podem ser emitidos para um usuário, um computador ou um serviço.  
+Um certificado de servidor é um documento digital geralmente usado para autenticação e proteção de informações em redes abertas. O certificado liga de forma segura uma chave pública à entidade que mantém a chave privada correspondente. Os certificados são assinados digitalmente pela autoridade de certificação emissora e podem ser emitidos para um usuário, um computador ou um serviço.  
 
-Uma autoridade de certificação \(CA\) é uma entidade responsável por estabelecer e comprovar a autenticidade de chaves públicas pertencentes a assuntos \ (geralmente os usuários ou computadores \) ou outras autoridades de certificação. Atividades de uma autoridade de certificação podem incluir a vinculação de chaves públicas para nomes diferenciados por meio de certificados assinados, o gerenciamento de números de série de certificado e revogação de certificados.  
+Uma autoridade de certificação \(autoridade de certificação\) é uma entidade responsável por estabelecer e atestar a autenticidade das chaves públicas que pertencem a sujeitos \(geral usuários ou computadores\) ou outras autoridades de certificação. Atividades de uma autoridade de certificação podem incluir a vinculação de chaves públicas a nomes destacados através de certificados assinados, números de série do certificado de gerenciamento e revogação de certificados.  
 
-Active Directory os serviços de certificado \(AD CS\) é uma função de servidor que emite certificados como uma autoridade de certificação de rede. Um AD CS certificado infraestrutura, também conhecido como um *infraestrutura de chave pública \(PKI\)*, fornecem serviços personalizáveis para emitir e gerenciar certificados para a empresa.
+Serviços de certificados do Active Directory \(AD CS\) é uma função de servidor que emite certificados como uma AC de rede. Um AD CS certificado de infra-estrutura, também conhecido como um *infraestrutura de chave pública \(PKI\)*, fornecem serviços personalizáveis para emissão e gerenciamento de certificados para a empresa.
 
-### <a name="eap-peap-and-peap-ms-chap-v2"></a>PEAP, EAP e PEAP\-MS\-CHAP v2
-Extensible Authentication Protocol \(EAP\) estende o protocolo de ponto de to\ Point\ \(PPP\), permitindo que os métodos de autenticação adicional que usam credenciais e informações de troca de tamanhos arbitrários. Com a autenticação de EAP, ambos os a acesso à rede cliente e o autenticador \ (por exemplo, o servidor \ NPS) deve ter suporte para o mesmo tipo EAP para autenticação bem-sucedida ocorra. Windows Server 2016 inclui uma infraestrutura EAP, dá suporte a dois tipos EAP e a capacidade de passar mensagens EAP para servidores NPS. Ao usar o EAP, você pode dar suporte a esquemas de autenticação adicionais, conhecidos como *tipos EAP*. Os tipos EAP que são suportados pelo Windows Server 2016 são:  
+### <a name="eap-peap-and-peap-ms-chap-v2"></a>EAP, PEAP e PEAP\-MS\-CHAP v2
+Extensible Authentication Protocol \(EAP\) estende ponto\-ao\-protocolo ponto \(PPP\) , permitindo que os métodos de autenticação adicionais que usam credenciais e informações trocas de comprimentos arbitrários. Com a autenticação do EAP, os dois a acesso à rede cliente e o autenticador \(como o NPS\) deve oferecer suporte para o mesmo tipo EAP para autenticação bem-sucedida deve ocorrer. Windows Server 2016 inclui uma infra-estrutura do EAP, dá suporte a dois tipos de EAP e a capacidade de passar mensagens EAP para NPSs. Usando o EAP, você pode dar suporte a esquemas de autenticação adicionais, conhecidos como *tipos de EAP*. Os tipos EAP que são compatíveis com o Windows Server 2016 são:  
 
-- Segurança de camada de transporte \(TLS\)
+- Transport Layer Security \(TLS\)
 
-- Microsoft Challenge Handshake Authentication Protocol versão 2 \ (CHAP MS\ v2\)
+- Microsoft Challenge Handshake Authentication Protocol versão 2 \(MS\-CHAP v2\)
 
 >[!IMPORTANT]
->Os tipos EAP robustos \ (como aqueles que se baseiam certificates\) oferecem mais segurança contra ataques de força brute\, ataques de dicionário e ataques de protocolos de autenticação baseada em password\ de detecção de senha \ (por exemplo, CHAP ou CHAP MS\ 1 versão \).
+>Os tipos EAP robustos \(, como aqueles que são baseadas em certificados\) oferecem mais segurança contra bruta\-forçar ataques, ataques de dicionário e ataques de senha de adivinhação de senha\-com base em protocolos de autenticação \(como o protocolo CHAP ou MS\-CHAP versão 1\).
 
-Protegido \(PEAP\) EAP usa TLS para criar um canal criptografado entre um cliente PEAP de autenticação, como um computador sem fio e um autenticador PEAP, como um servidor NPS ou outros servidores RADIUS. PEAP não especifica um método de autenticação, mas ele oferece segurança adicional para outros protocolos de autenticação EAP \ (como v2\ EAP\-MS\-CHAP) que pode operar pelo canal criptografado TLS fornecido pelo PEAP. PEAP é usado como um método de autenticação para clientes de acesso que estejam conectados à rede da sua organização por meio dos seguintes tipos de rede acesso servidores \(NASs\):
+EAP protegido \(PEAP\) usa TLS para criar um canal criptografado entre um cliente PEAP de autenticação, como um computador sem fio e um autenticador PEAP, como um NPS ou outros servidores RADIUS. PEAP não especifica um método de autenticação, mas ele fornece segurança adicional para outros protocolos de autenticação EAP \(, como o EAP\-MS\-CHAP v2\) que podem operar por meio do canal criptografado TLS fornecido pelo PEAP. PEAP é usado como um método de autenticação para clientes de acesso que estão se conectando à rede da sua organização por meio dos seguintes tipos de servidores de acesso de rede \(NASs\):
 
-- 802.1X\-pontos de acesso sem fio com capacidade
+- 802.1 X\-pontos de acesso sem fio compatíveis com
 
-- 802.1X\-capaz de chaves de autenticação
+- 802.1 X\-compatíveis com chaves de autenticação
 
-- Computadores que executam o Windows Server 2016 e \(RAS\) o serviço de acesso remoto que estão configurados como particular virtual de rede \(VPN\) servidores, servidores do DirectAccess ou ambos
+- Computadores que executam o Windows Server 2016 e o serviço de acesso remoto \(RAS\) que são configurados como rede virtual privada \(VPN\) servidores, servidores do DirectAccess ou ambos
 
-- Computadores que executam o Windows Server 2016 e serviços de área de trabalho remota
+- Computadores que executam o Windows Server 2016 e os serviços de área de trabalho remota
 
-PEAP\-MS\-CHAP v2 é mais fácil de implantar que TLS EAP\ porque a autenticação do usuário é executada usando credenciais baseadas em password\ \ (nome de usuário e password\), em vez de certificados ou cartões inteligentes. Somente NPS ou outros servidores RADIUS são necessárias para ter um certificado. O certificado do servidor NPS é usado pelo servidor NPS durante o processo de autenticação para provar sua identidade para os clientes PEAP.
+PEAP\-MS\-CHAP v2 é mais fácil de implantar que EAP\-TLS porque a autenticação de usuário é realizada por meio de senha\-com base em credenciais \(nome de usuário e senha\), em vez de os certificados ou cartões inteligentes. Somente o NPS ou outros servidores RADIUS devem ter um certificado. O certificado do NPS é usado pelo NPS durante o processo de autenticação para provar sua identidade para os clientes PEAP.
 
-Este guia fornece instruções para configurar os clientes sem fio e seu server\(s\) NPS para usar PEAP\-MS\-CHAP v2 para acesso autenticado 802.1 X.
+Este guia fornece instruções para configurar seus clientes sem fio e o NPS\(s\) usar PEAP\-MS\-CHAP v2 para 802.1 X autenticado acesso.
 
-### <a name="network-policy-server"></a>Servidor de política de rede
-Rede o servidor de política \(NPS\) permite configurar e gerenciar políticas de rede usando Remote Authentication Dial\-In User Service \(RADIUS\) servidor e proxy RADIUS centralmente. NPS é necessário quando você implanta acesso sem fio 802.1 X.
+### <a name="network-policy-server"></a>Servidor de Políticas de Rede
+Servidor de diretivas de rede \(NPS\) lhe permite configurar e gerenciar políticas de rede usando o Remote Authentication Dial centralmente\-In User Service \(RADIUS\) servidor e proxy RADIUS. O NPS é necessário quando você implanta o acesso sem fio 802.1 X.
 
-Quando você configura seu pontos de acesso sem fio 802.1 X como clientes RADIUS de NPS, o NPS processa as solicitações de conexão enviadas por pontos de acesso. Durante o processamento de solicitação de conexão, o NPS realiza autenticação e autorização. Autenticação determina se o cliente tenha apresentado credenciais válidas. Se o NPS autentica com êxito o cliente solicitante, NPS determina se o cliente está autorizado a fazer a conexão solicitada, e permite ou nega a conexão. Isso é explicado com mais detalhes da seguinte maneira:
+Quando você configura seus pontos de acesso sem fio 802.1 X como clientes RADIUS no NPS, o NPS processa as solicitações de conexão enviadas pelos pontos de acesso. Durante o processamento de solicitação de conexão, o NPS executa autenticação e autorização. Autenticação determina se o cliente tem apresentado credenciais válidas. Se o NPS autentica com êxito o cliente solicitante, o NPS determina se o cliente está autorizado para fazer a conexão solicitada, e permite ou nega a conexão. Isso é explicado em mais detalhes da seguinte maneira:
 
 #### <a name="authentication"></a>Autenticação
 
-Autenticação de v2 PEAP\-MS\-CHAP mútua bem-sucedido tem duas partes principais:
+PEAP mútuo bem-sucedida\-MS\-autenticação CHAP v2 tem duas partes principais:
 
-1.  O cliente autentica o servidor NPS.  Durante essa fase de autenticação mútua, o servidor NPS envia seu certificado do servidor para o computador cliente para que o cliente pode verificar a identidade do servidor NPS com o certificado. Para autenticar o servidor NPS com êxito, o computador cliente deve confiar na CA que emitiu o certificado do servidor NPS. O cliente confiará essa CA ao certificado da CA está presente no repositório de certificados de autoridades de certificação confiáveis no computador cliente.
+1.  O cliente autentica o NPS.  Durante essa fase de autenticação mútua, o NPS envia seu certificado de servidor para o computador cliente para que o cliente possa verificar a identidade do NPS com o certificado. Para autenticar com êxito o NPS, o computador cliente deve confiar na AC que emitiu o certificado do NPS. O cliente confia essa autoridade de certificação quando o certificado da AC está presente no repositório de certificados de autoridades de certificação raiz confiáveis no computador cliente.
 
-    Se você implantar sua própria CA particular, o certificado da CA é automaticamente instalado no repositório de certificados de autoridades de certificação confiáveis para o usuário atual e para o computador Local quando a diretiva de grupo é atualizada no computador de cliente de membro do domínio. Se você decidir implantar certificados de servidor de uma autoridade de certificação pública, certifique-se de que o certificado de autoridade de certificação pública já está no repositório de certificados de autoridades de certificação confiáveis.  
+    Se você implantar sua própria autoridade de certificação privada, o certificado de autoridade de certificação é instalado automaticamente no repositório de certificados de autoridades de certificação raiz confiáveis para o usuário atual e para o computador Local quando a diretiva de grupo é atualizada no computador do cliente de membro de domínio. Se você optar por implantar certificados de servidor de uma CA pública, certifique-se de que o certificado de autoridade de certificação pública já está no repositório de certificados de autoridades de certificação raiz confiáveis.  
 
-2.  O servidor NPS autentica o usuário. Depois que o cliente autentica com êxito o servidor NPS, o cliente envia as credenciais do usuário com base em password\ para o servidor NPS, que verifica as credenciais do usuário contra o banco de dados de contas de usuário nos serviços de domínio do Active Directory \(AD DS\).
+2.  O NPS autentica o usuário. Depois que o cliente autentica com êxito o NPS, o cliente envia a senha do usuário\-com base em credenciais para o NPS, que verifica as credenciais do usuário contra o banco de dados de contas de usuário nos serviços de domínio do Active Directory \(AD DS\).
 
-Se as credenciais forem válidas e autenticação for bem-sucedida, o servidor NPS começa a fase de autorização do processamento da solicitação de conexão. Se as credenciais não são válidas e autenticação falhar, o NPS envia uma mensagem de rejeição de acesso e a solicitação de conexão será negada.  
+Se as credenciais são válidas e a autenticação for bem-sucedida, o NPS começa a fase de autorização do processamento da solicitação de conexão. Se as credenciais não são válidas e a autenticação falhar, o NPS envia uma mensagem de acesso rejeitar e a solicitação de conexão será negada.  
 
 #### <a name="authorization"></a>Autorização
 
-O servidor NPS executa autorização da seguinte maneira:  
+O servidor que executa o NPS executa a autorização da seguinte maneira:  
 
-1. NPS verifica se há restrições em que o usuário ou computador dial\ propriedades da conta no AD DS. Cada conta de usuário e computador no Active Directory Users and Computers inclui várias propriedades, incluindo aqueles encontrados no **Dial\-in** guia. Nessa guia, em **permissão de acesso de rede**, se o valor for **permitir acesso**, o usuário ou computador está autorizado a se conectar à rede. Se o valor for **negar acesso**, o usuário ou o computador não está autorizado a se conectar à rede. Se o valor for **controlar o acesso por meio da política de rede NPS**, NPS avalia as políticas de rede configuradas para determinar se o usuário ou computador está autorizado a se conectar à rede. 
+1. O NPS compara para restrições de discagem de conta de usuário ou computador\-nas propriedades no AD DS. Cada conta de usuário e computador no Active Directory Users and Computers inclui várias propriedades, incluindo aqueles encontrados na **Dial\-em** guia. Nessa guia, na **permissão de acesso de rede**, se o valor estiver **permitir o acesso**, o computador ou usuário está autorizado a se conectar à rede. Se o valor for **negar acesso**, o usuário ou computador não está autorizado a se conectar à rede. Se o valor for **controlar o acesso por meio da diretiva de rede do NPS**, NPS avalia as políticas de rede configuradas para determinar se o computador ou usuário está autorizado a se conectar à rede. 
 
-2. Em seguida, o NPS processa suas políticas de rede para encontrar uma política que corresponda à solicitação de conexão. Se uma política de correspondência for encontrada, o NPS concede ou nega a conexão com base na configuração da política.  
+2. Em seguida, o NPS processa as diretivas de rede para localizar uma diretiva que corresponda à solicitação de conexão. Se uma política de correspondência for encontrada, o NPS concede ou nega a conexão com base na configuração da diretiva.  
 
-Se forem bem sucedidas autenticação e autorização, e a política de rede correspondentes concede acesso, NPS concede acesso à rede e o usuário e o computador podem se conectar aos recursos de rede para os quais tenham permissões.  
+Se a autenticação e autorização forem bem-sucedidas, e se a diretiva de rede correspondente concede acesso, NPS concede acesso à rede e o usuário e o computador podem se conectar aos recursos da rede para os quais eles têm permissões.  
 
 >[!NOTE]
->Para implantar o acesso sem fio, você deve configurar políticas NPS. Este guia fornece instruções para usar o **configurar 802.1 X wizard** no NPS para criar políticas NPS para 802.1 X autenticado acesso sem fio.  
+>Para implantar o acesso sem fio, você deve configurar as políticas de NPS. Este guia fornece instruções para usar o **configurar 802.1 X wizard** no NPS para criar políticas NPS para acesso sem fio do 802.1 X autenticado.  
 
 ### <a name="bootstrap-profiles"></a>Perfis de inicialização
-Em 802.1X\-autenticados redes sem fio, os clientes sem fio devem fornecer as credenciais de segurança que são autenticadas por um servidor RADIUS para se conectar à rede. Para EAP protegido \[PEAP\]\-Microsoft Challenge Handshake Authentication Protocol versão 2 \[MS\-CHAP v2\], as credenciais de segurança são um nome de usuário e senha. Para \[TLS\ EAP\-Transport Layer Security] ou PEAP\-TLS, as credenciais de segurança são certificados, como certificados de usuário e computador cliente ou cartões inteligentes.
+No 802.1 X\-autenticado redes sem fio, os clientes sem fio devem fornecer credenciais de segurança que são autenticadas por um servidor RADIUS para se conectar à rede. Para EAP protegido \[PEAP\]\-Microsoft Challenge Handshake Authentication Protocol versão 2 \[MS\-CHAP v2\], as credenciais de segurança são um nome de usuário e senha. Para o EAP\-Transport Layer Security \[TLS\] ou PEAP\-TLS, as credenciais de segurança são certificados, como certificados de usuário e computador cliente ou cartões inteligentes.
 
-Ao se conectar a uma rede que está configurada para executar PEAP\-MS\-CHAP v2, PEAP\ TLS ou autenticação EAP\ TLS, por padrão, os clientes do Windows sem fio também deverá validar um certificado de computador que é enviado pelo servidor RADIUS. O certificado de computador que é enviado pelo servidor RADIUS para cada sessão de autenticação é conhecido como um certificado de servidor.
+Ao se conectar a uma rede que está configurada para executar o PEAP\-MS\-CHAP v2, PEAP\-TLS ou EAP\-autenticação TLS, por padrão, os clientes sem fio também devem validar um certificado de computador do Windows enviado pelo servidor RADIUS. O certificado do computador que é enviado pelo servidor RADIUS para cada sessão de autenticação é conhecido como um certificado de servidor.
 
-Como mencionado anteriormente, você pode emitir os servidores RADIUS o certificado de servidor de duas maneiras: de uma CA comercial \ (como VeriSign, Inc., \), ou de uma CA particular que você implantar em sua rede. Se o servidor RADIUS enviará um certificado de computador que foi emitido por uma autoridade de certificação comercial que já tenha um certificado raiz instalado no repositório de certificados de autoridades de certificação confiáveis do cliente, o cliente sem fio pode validar o certificado de computador do servidor RADIUS, independentemente se o cliente sem fio já ingressou no domínio do Active Directory. Nesse caso o cliente sem fio pode se conectar à rede sem fio e, em seguida, você pode ingressar o computador ao domínio.
+Conforme mencionado anteriormente, você pode emitir os servidores RADIUS seu certificado de servidor em uma das duas maneiras: de uma CA comercial \(, como VeriSign, Inc.,\), ou de uma autoridade de certificação privada que são implantados na sua rede. Se o servidor RADIUS enviará um certificado de computador que foi emitido por uma CA comercial que já tenha um certificado raiz instalado no repositório de certificados de autoridades de certificação raiz confiáveis do cliente, o cliente sem fio pode validar o servidor RADIUS certificado de computador, independentemente se o cliente sem fio tenha ingressado no domínio do Active Directory. Nesse caso, o cliente sem fio pode se conectar à rede sem fio e, em seguida, você pode ingressar o computador ao domínio.
 
 >[!NOTE]
->O comportamento de exigir que o cliente para validar o certificado do servidor pode ser desabilitado, mas desabilitando a validação do certificado do servidor não é recomendado em ambientes de produção.
+>O comportamento que o cliente validar o certificado do servidor pode ser desabilitado, mas não é recomendável desabilitar a validação de certificado do servidor em ambientes de produção.
 
-Perfis de inicialização sem fio são temporários perfis que estão configurados de forma como para permitir que os usuários do cliente sem fio conectar-se para o 802.1X\-rede sem fio autenticada antes que o computador tiver ingressado no domínio, e \ / ou antes que o usuário faz logon com êxito domínio usando um computador sem fio fornecido pela primeira vez.  Esta seção resume qual problema for encontrado quando tentar ingressar em um computador sem fio ao domínio, ou para um usuário use um computador sem fio associado domain\ pela primeira vez para fazer logon no domínio.
+Os perfis sem fio de bootstrap são perfis temporários que são configurados de forma para permitir que os usuários do cliente sem fio para se conectar ao 802.1X\-autenticados rede sem fio, antes do computador tiver ingressado no domínio, e\/ou antes o usuário tem conectado com êxito domínio por meio de um determinado computador sem fio pela primeira vez.  Esta seção resume o problema é encontrado durante a tentativa de ingressar um computador sem fio no domínio ou um usuário poderá usar um domínio\-ingressado no computador sem fio pela primeira vez fazer logon no domínio.
 
-Para implantações em que o usuário ou o administrador de TI não é possível conectar fisicamente um computador à rede Ethernet com fio para ingressar o computador ao domínio e o computador não tiver a emissão de necessário raiz certificado da CA instalado no seu **autoridades de certificação confiáveis** repositório de certificados, você pode configurar clientes sem fio com um perfil temporário de conexão sem fio, chamado um *inicializar perfil* , para se conectar à rede sem fio.
+Para implantações em que o usuário ou administrador de TI não é possível conectar fisicamente um computador à rede Ethernet com fio para ingressar o computador ao domínio e o computador não tem emissora necessário raiz do certificado de autoridade de certificação instalado no seu  **Autoridades de certificação raiz confiáveis** repositório de certificados, você pode configurar os clientes sem fio com um perfil de conexão sem fio temporário, chamado de um *inicializar perfil*, para se conectar à rede sem fio.
 
-A *inicializar perfil* elimina a necessidade de validar o certificado de computador do servidor RADIUS. Essa configuração temporária permite que o usuário ingressar o computador no domínio, no momento em que a rede sem fio de rede sem fio \ (IEEE 802.11\) políticas são aplicadas e o certificado da CA raiz apropriado é automaticamente instalado no computador.
+Um *inicializar perfil* remove a necessidade de validar o certificado de computador do servidor RADIUS. Essa configuração temporária permite que o usuário sem fio ingressar o computador ao domínio, momento em que de rede sem fio \(IEEE 802.11\) as políticas são aplicadas e o certificado de autoridade de certificação de raiz apropriado é instalado automaticamente no computador.
 
-Quando a política de grupo é aplicada, um ou mais perfis de conexão sem fio que impõem o requisito de autenticação mútua são aplicados no computador. o perfil de inicialização não for mais necessário e é removido. Depois de ingressar o computador ao domínio e reiniciar o computador, o usuário pode usar uma conexão sem fio para fazer logon no domínio.
+Quando a política de grupo é aplicada, um ou mais perfis de conexão sem fio que impõem o requisito para autenticação mútua são aplicados no computador. o perfil de inicialização não é mais necessário e é removido. Depois de ingressar o computador no domínio e reiniciar o computador, o usuário pode usar uma conexão sem fio para fazer logon no domínio.
 
-Para obter uma visão geral do processo de implantação de acesso sem fio usando essas tecnologias, consulte [visão geral da implantação acesso sem fio](b-wireless-access-deploy-overview.md).
+Para uma visão geral do processo de implantação de acesso sem fio usando essas tecnologias, consulte [visão geral da implantação de acesso sem fio](b-wireless-access-deploy-overview.md).

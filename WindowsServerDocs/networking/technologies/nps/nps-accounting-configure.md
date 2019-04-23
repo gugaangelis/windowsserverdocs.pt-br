@@ -1,140 +1,138 @@
 ---
-title: Configurar as estatísticas de servidor de política de rede
-description: Este tópico fornece informações sobre o arquivo de texto e registro em log para o servidor de política de rede no Windows Server 2016 do SQL Server.
-manager: brianlic
+title: Configurar a contabilização do Servidor de Políticas de Rede
+description: Este tópico fornece informações sobre o arquivo de texto e o registro em log para o servidor de políticas de rede no Windows Server 2016 do SQL Server.
+manager: dougkim
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
 ms.assetid: dfde2e21-f3d5-41e8-8492-cb3f0d028afb
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 69341e30d90ee1be29c40d835a4f71fe433c11dc
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 05/25/2018
+ms.openlocfilehash: c732a9f42d942ad579468d1dd15d30324d6fea87
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59839697"
 ---
-# <a name="configure-network-policy-server-accounting"></a>Configurar as estatísticas de servidor de política de rede
+# <a name="configure-network-policy-server-accounting"></a>Configurar a contabilização do Servidor de Políticas de Rede
 
-Há três tipos de log para o servidor de política de rede \(NPS\):
+Há três tipos de log para o servidor de políticas de rede \(NPS\):
 
-- **Log de eventos**. Usado principalmente para auditoria e solucionar problemas de tentativas de conexão. Você pode configurar Obtendo as propriedades do servidor NPS no console do NPS de log de eventos NPS.
+- **O log de eventos**. Usado principalmente para auditoria e solucionar problemas de tentativas de conexão. Você pode configurar eventos NPS em log, obtendo as propriedades do NPS no console do NPS.
 
-- **Log de solicitações de contabilidade e autenticação do usuário em um arquivo local**. Usado principalmente para fins de faturamento e análise de conexão. Também é útil como uma ferramenta de investigação de segurança porque ele fornece um método de controle das atividades de um usuário mal-intencionado após um ataque. Você pode configurar o log de arquivo local usando o Assistente de configuração de contabilização.
+- **Registro em log solicitações de contabilização e autenticação de usuário em um arquivo local**. Usado principalmente para fins de análise e a cobrança de conexão. Também é útil como ferramenta de investigação de segurança porque ele oferece um método de controle a atividade de um usuário mal-intencionado após um ataque. Você pode configurar o log de arquivo local usando o Assistente de configuração de contabilização.
 
-- **Registrando solicitações de estatísticas e autenticação do usuário de um banco de dados compatível com o Microsoft SQL Server XML**. Usado para permitir que vários servidores que executam NPS para ter uma fonte de dados. Também fornece as vantagens de usar um banco de dados relacional. Você pode configurar o log do SQL Server usando o Assistente de configuração de contabilização.
+- **Registro em log solicitações de contabilização e autenticação de usuário para um banco de dados compatível com o Microsoft SQL Server XML**. Usado para permitir que vários servidores executando o NPS para ter uma fonte de dados. Também fornece as vantagens de usar um banco de dados relacional. Você pode configurar o log do SQL Server usando o Assistente de configuração de contabilização.
 
-## <a name="use-the-accounting-configuration-wizard"></a>Use o Assistente de configuração de contabilização
+## <a name="use-the-accounting-configuration-wizard"></a>Use o Assistente de configuração da contabilidade
 
-Usando o Assistente de configuração de contabilidade, você pode configurar as seguintes configurações de estatísticas de quatro:
+Usando o Assistente de configuração da contabilidade, você pode configurar as configurações de estatísticas de quatro seguintes:
 
-- **SQL apenas log**. Usando essa configuração, você pode configurar um link de dados para um SQL Server que permite que o NPS conectem e enviar dados de contabilidade para o SQL server. Além disso, o assistente pode configurar o banco de dados no SQL Server para garantir que o banco de dados é compatível com o log do servidor NPS SQL.
-- **Log de texto somente**. Usando essa configuração, você pode configurar o NPS para registrar dados contábeis em um arquivo de texto.
-- **Paralelas log**. Usando essa configuração, você pode configurar o banco de dados e vinculação de dados do SQL Server. Você também pode configurar o log de arquivo de texto para que o NPS registre simultaneamente o arquivo de texto e o banco de dados do SQL Server. 
-- **Registro em log SQL com backup**. Usando essa configuração, você pode configurar o banco de dados e vinculação de dados do SQL Server. Além disso, você pode configurar o log de arquivo de texto que NPS usa se falhar de log do SQL Server.
+- **Somente o log do SQL**. Ao usar essa configuração, você pode configurar um link de dados para um SQL Server que permite que o NPS conectar e enviar dados de estatísticas para o SQL server. Além disso, o assistente pode configurar o banco de dados no SQL Server para garantir que o banco de dados é compatível com o log do servidor SQL do NPS.
+- **Log de texto apenas**. Ao usar essa configuração, você pode configurar o NPS para registrar dados de estatísticas em um arquivo de texto.
+- **Registro em log em paralelo**. Ao usar essa configuração, você pode configurar o link de dados do SQL Server e banco de dados. Você também pode configurar o log de arquivo de texto para que o NPS registre simultaneamente para o arquivo de texto e o banco de dados do SQL Server. 
+- **Registro em log do SQL com o backup**. Ao usar essa configuração, você pode configurar o link de dados do SQL Server e banco de dados. Além disso, você pode configurar o log de arquivo de texto que o NPS usa se o log do SQL Server falhará.
 
-Essas configurações, além de log do SQL Server e o log de texto permitem que você especifique se NPS continua a processar solicitações de conexão se houver falha no log. Você pode especificar isso no **seção de ação de falha de registro em log** nas propriedades de registro em log de arquivo local, nas propriedades de log do servidor SQL e enquanto você estiver executando o Assistente de configuração de contabilidade.
+Além dessas configurações, log do SQL Server e o log de texto permitem que você especifique se o NPS continua a processar solicitações de conexão, se houver falha no log. Você pode especificar isso na **seção de ação de falha de registro em log** nas propriedades de log de arquivo local, nas propriedades de log do servidor SQL e enquanto você estiver executando o Assistente de configuração da contabilidade.
 
-### <a name="to-run-the-accounting-configuration-wizard"></a>Para executar o Assistente de configuração Contabilidade
+### <a name="to-run-the-accounting-configuration-wizard"></a>Para executar o Assistente de configuração da contabilidade
 
-Para executar o Assistente de configuração Contabilidade, conclua as seguintes etapas:
+Para executar o Assistente de configuração da contabilidade, conclua as seguintes etapas:
 
-1. Abra o console do NPS ou o snap-in do Console de gerenciamento NPS Microsoft (MMC).
-2. Na árvore de console, clique em **Accounting**.
-3. No painel de detalhes, em **Accounting**, clique em **configurar Accounting**.
+1. Abra o console do NPS ou o snap-in do NPS Microsoft Management Console (MMC).
+2. Na árvore de console, clique em **contabilidade**.
+3. No painel de detalhes, na **contabilização**, clique em **configurar a contabilização**.
 
 ## <a name="configure-nps-log-file-properties"></a>Configurar as propriedades de arquivo de Log do NPS
 
-Você pode configurar o servidor de política de rede (NPS) para realizar as estatísticas de autenticação discagem usuário serviço RADIUS (Remote) para solicitações de autenticação de usuário, mensagens de aceitação de acesso, mensagens de rejeição de acesso, contabilidade solicitações e respostas e atualizações periódicas de status. Você pode usar este procedimento para configurar os arquivos de log em que você deseja armazenar os dados de contabilidade.
+Você pode configurar o servidor de diretivas de rede (NPS) para executar autenticação Dial-In usuário serviço RADIUS (Remote) periódicas e contabilidade para solicitações de autenticação de usuário, mensagens de aceitação de acesso, mensagens de rejeição de acesso, as solicitações de contabilidade e respostas atualizações de status. Você pode usar este procedimento para configurar os arquivos de log no qual você deseja armazenar os dados de estatísticas.
 
 Para obter mais informações sobre como interpretar os arquivos de log, consulte [interpretar arquivos de Log de formato de banco de dados de NPS](https://technet.microsoft.com/library/cc771748.aspx).
 
-Para impedir que os arquivos de log ocupem o disco rígido, é altamente recomendável mantê-los em uma partição separada da partição do sistema. A seguir fornece mais informações sobre a configuração de contabilidade para NPS:
+Para impedir que os arquivos de log ocupem o disco rígido, é altamente recomendável mantê-los em uma partição separada da partição do sistema. O exemplo a seguir fornece mais informações sobre como configurar a contabilização do NPS:
 
-- Para enviar os dados do arquivo de log para a coleta por outro processo, você pode configurar o NPS gravar em um pipe nomeado. Para usar pipes nomeados, defina a pasta de arquivos de log para \\.\pipe ou \\ComputerName\pipe. O programa de servidor de pipe nomeado cria um pipe nomeado denominado \\.\pipe\iaslog.log para aceitar os dados. Na caixa de diálogo Propriedades de arquivo Local, em criar um novo arquivo de log, selecione nunca (tamanho do arquivo ilimitado) quando você usa pipes nomeados.
+- Para enviar os dados de arquivo de log para coleta por outro processo, você pode configurar o NPS para gravar em um pipe nomeado. Para usar pipes nomeados, defina a pasta de arquivos de log como \\. \pipe ou \\ComputerName\pipe. O programa de servidor de pipe nomeado cria um pipe nomeado chamado \\.\pipe\iaslog.log para aceitar os dados. Na caixa de diálogo Propriedades de arquivo Local, em criar um novo arquivo de log, selecione nunca (tamanho de arquivo ilimitado) quando você usa pipes nomeados.
 
-- O diretório do arquivo de log pode ser criado usando variáveis de ambiente do sistema (em vez de variáveis de usuário), como % systemdrive %, % systemroot % e % windir %. Por exemplo, o caminho a seguir, usando o ambiente variável % windir %, localiza o arquivo de log no diretório do sistema na subpasta \System32\Logs (ou seja, % windir%\System32\Logs\).
+- O diretório de arquivos de log pode ser criado usando variáveis de ambiente do sistema (em vez de variáveis de usuário), como % systemdrive %, % systemroot % e % windir %. Por exemplo, o caminho a seguir, usando o ambiente variável % windir %, localiza o arquivo de log no diretório de sistema na subpasta \System32\Logs (ou seja, %windir%\System32\Logs\).
 
-- Mudança de formatos de arquivo de log não faz com que um novo log seja criado. Se você alterar formatos de arquivo de log, o arquivo que está ativo no momento da alteração conterá uma mistura dos dois formatos (registros no início do log terão o formato anterior e registros no final do log terão o novo formato).
+- Alternar os formatos de arquivo de log não faz com que um novo log a ser criado. Se você alterar formatos de arquivo de log, o arquivo que está ativo no momento da alteração conterá uma mistura dos dois formatos (registros no início do log terá o formato anterior e registros no final do log terão o novo formato).
 
-- Se estatísticas RADIUS falhar devido a uma unidade de disco rígido completa ou outras causas, NPS para processar solicitações de conexão, impedindo que os usuários acessem recursos de rede.
+- Se a contabilização RADIUS falhar devido a uma unidade de disco rígido completa ou outras causas, NPS para o processamento solicitações de conexão, impedindo que os usuários acessem recursos da rede.
 
-- NPS fornece a capacidade de fazer logon para um banco de dados do Microsoft® SQL Server™ além ou em vez de fazer logon em um arquivo local.
+- NPS fornece a capacidade de registrar um banco de dados do Microsoft® SQL Server™ além ou em vez de registro em log em um arquivo local.
 
-A associação a **Admins. do domínio** grupo é o requisito mínimo para executar este procedimento.
+Associação a **Admins. do domínio** grupo é o mínimo necessário para executar este procedimento.
 
 
 ### <a name="to-configure-nps-log-file-properties"></a>Para configurar propriedades de arquivo de log do NPS
 
-1. Abra o console do NPS ou o snap-in do Console de gerenciamento NPS Microsoft (MMC).
-2. Na árvore de console, clique em **Accounting**.
-3. No painel de detalhes, em **propriedades de arquivo de Log**, clique em **alterar propriedades do arquivo de Log**. O **propriedades de arquivo de Log** caixa de diálogo é aberta.
-4. Em **propriedades de arquivo de Log**diante do **configurações** guia, **registrar as seguintes informações**, certifique-se de que você optar por registrar informações suficientes para atingir suas metas de contabilidade. Por exemplo, se os logs de precisarem realizar correlação de sessão, marque todas as caixas de seleção.
-5. Em **registrando falha ação**, selecione **se houver falha no log, descarte solicitações de conexão** se você quiser NPS para parar o processamento de mensagens de solicitação de acesso quando os arquivos de log são inteira ou não está disponível por algum motivo. Se você quiser NPS para continuar a processar solicitações de conexão se houver falha no log, não marque essa caixa de seleção.
-6. No **propriedades de arquivo de Log** caixa de diálogo, clique no **arquivo de Log** guia.
-7. Sobre o **arquivo de Log** guia, **diretório**, digite o local onde deseja armazenar arquivos de log do NPS. O local padrão é a pasta systemroot\System32\LogFiles.
-    >[!NOTE]
-    >Se você não fornecer uma declaração de caminho completo na **diretório do arquivo de Log**, o caminho padrão é usado. Por exemplo, se você digitar **NPSLogFile** em **diretório do arquivo de Log**, o arquivo está localizado em systemroot%\System32\NPSLogFile.
-8. Em **formato**, clique em **compatíveis com o DTS**. Se você preferir, você pode em vez disso, selecionar um formato de arquivo herdado, como **ODBC \(Legacy\)** ou **IAS \(Legacy\)**.
-    >[!NOTE]
-    >**ODBC** e **IAS** tipos de arquivo herdado contêm um subconjunto das informações que NPS envia ao seu banco de dados do SQL Server. O **compatíveis com o DTS** formato XML do tipo de arquivo é idêntico ao formato XML que NPS usa para importar dados para seu banco de dados do SQL Server. Portanto, o **compatíveis com o DTS** formato de arquivo fornece uma transferência mais eficiente e completa de dados para o banco de dados padrão do SQL Server para NPS.
-9. Em **criar um novo arquivo de log**, a configuração do NPS para iniciar novos arquivos de log em intervalos específicos, clique no intervalo que você deseja usar:
+1. Abra o console do NPS ou o snap-in do NPS Microsoft Management Console (MMC).
+2. Na árvore de console, clique em **contabilidade**.
+3. No painel de detalhes, na **propriedades do arquivo de Log**, clique em **propriedades do arquivo de Log de alteração**. O **propriedades do arquivo de Log** caixa de diálogo é aberta.
+4. No **propriedades do arquivo de Log**, na **configurações** guia **as seguintes informações de Log**, certifique-se de que você optar por registrar informações suficientes para alcançar suas metas de contabilidade. Por exemplo, se precisarem de seus logs realizar a correlação de sessão, marque todas as caixas de seleção.
+5. Na **log de ação de falha**, selecione **se houver falha no log, descarte as solicitações de conexão** se você quiser que o NPS para parar o processamento de mensagens de solicitação de acesso quando os arquivos de log estão completa ou indisponível por algum motivo. Se você quiser que o NPS para continuar o processamento de solicitações de conexão se houver falha no log, não selecione essa caixa de seleção.
+6. No **propriedades do arquivo de Log** caixa de diálogo, clique o **arquivo de Log** guia.
+7. Sobre o **arquivo de Log** guia de **diretório**, digite o local onde você deseja armazenar arquivos de log do NPS. O local padrão é a pasta systemroot\System32\LogFiles.<br>Se você não fornecer uma instrução de caminho completo no **diretório de arquivo de Log**, o caminho padrão é usado. Por exemplo, se você digitar **NPSLogFile** na **diretório de arquivo de Log**, o arquivo está localizado em systemroot%\System32\NPSLogFile.
+8. Na **formato**, clique em **compatível com DTS**. Se você preferir, você pode em vez disso, selecione um formato de arquivo herdados, como **ODBC \(herdados\)**  ou **IAS \(herdados\)**.<br>**ODBC** e **IAS** tipos de arquivo herdado contêm um subconjunto das informações que o NPS envia para seu banco de dados do SQL Server. O **compatível com DTS** o formato XML do tipo de arquivo é idêntico ao formato XML que o NPS usa para importar dados para seu banco de dados do SQL Server. Portanto, o **compatível com DTS** formato de arquivo fornece uma transferência mais eficiente e completa de dados no banco de dados do SQL Server padrão para o NPS.
+9. Na **criar um novo arquivo de log**, para configurar o NPS para iniciar novos arquivos de log em intervalos especificados, clique no intervalo que você deseja usar:
     - Para um volume de transações e atividades de registro em log, clique em **diária**.
-    - Para volumes de transações e atividades de registro em log menos intensos, clique em **semanais** ou **mensal**.
-    - Para armazenar todas as transações em um arquivo de log, clique em **nunca \(unlimited file size\)**.
-    - Para limitar o tamanho de cada arquivo de log, clique em **quando o arquivo de log atinge esse tamanho**e, em seguida, digite um tamanho de arquivo, após o qual um novo registro é criado. O tamanho padrão é 10 megabytes (MB).
-10. Se você quiser NPS para excluir arquivos de log antigos para criar espaço em disco para novos arquivos de log quando o disco rígido está próximo a capacidade, certifique-se de que **quando o disco estiver completo excluir arquivos de log antigos** é selecionado. Essa opção não estiver disponível, no entanto, se o valor de **criar um novo arquivo de log** é **nunca \(unlimited file size\)**. Além disso, se o arquivo de log mais antigo é o arquivo de log atual, ele não será excluído.
+    - Para volumes de transações menor e atividades de log, clique em **semanal** ou **mensal**.
+    - Para armazenar todas as transações em um arquivo de log, clique em **nunca \(tamanho de arquivo ilimitado\)**.
+    - Para limitar o tamanho de cada arquivo de log, clique em **quando o arquivo de log atinge esse tamanho**e, em seguida, digite um tamanho de arquivo, após o qual um novo log é criado. O tamanho padrão é 10 megabytes (MB).
+10. Se você quiser que o NPS para excluir arquivos de log antigos para criar o espaço em disco para novos arquivos de log quando o disco rígido esteja próximo à capacidade, certifique-se de que **quando o disco está completo excluir arquivos de log antigos** está selecionado. Essa opção não estiver disponível, no entanto, se o valor de **criar um novo arquivo de log** é **Never \(tamanho de arquivo ilimitado\)**. Além disso, se o arquivo de log mais antigo for o arquivo de log atual, ele não é excluído.
 
-## <a name="configure-nps-sql-server-logging"></a>Configurar o log do servidor NPS SQL
+## <a name="configure-nps-sql-server-logging"></a>Configurar o log do servidor SQL do NPS
 
-Você pode usar este procedimento para dados de contabilização de RAIO de log para um banco de dados local ou remoto executando o Microsoft SQL Server.
+Você pode usar este procedimento para dados de contabilização de RADIUS do log para um banco de dados local ou remoto executando o Microsoft SQL Server.
 
 >[!NOTE]
->NPS formata os dados contábeis como um documento XML que ele envia para o **report_event** procedimento armazenado no banco de dados SQL Server que você designar no NPS. Para o SQL Server de registro em log para funcionar corretamente, você deve ter um procedimento armazenado denominado **report_event** no banco de dados SQL Server que possa receber e analisar documentos XML do NPS.
+>O NPS formata os dados de estatísticas como um documento XML que ele envia para o **report_event** procedimento armazenado no banco de dados do SQL Server que você designar no NPS. Para o log do SQL Server para funcionar corretamente, você deve ter um procedimento armazenado denominado **report_event** no banco de dados do SQL Server que possa receber e analisar documentos XML do NPS.
 
-A associação ao grupo Admins. do domínio, ou equivalente, é o requisito mínimo para concluir este procedimento.
+A associação em Admins. do domínio, ou equivalente, é o mínimo necessário para concluir este procedimento.
 
-### <a name="to-configure-sql-server-logging-in-nps"></a>Para configurar registro em log no NPS do SQL Server
+### <a name="to-configure-sql-server-logging-in-nps"></a>Para configurar o log no NPS do SQL Server
 
-1. Abra o console do NPS ou o snap-in do Console de gerenciamento NPS Microsoft (MMC).
-2. Na árvore de console, clique em **Accounting**.
-3. No painel de detalhes, em **propriedades de log do SQL Server**, clique em **propriedades de log do alteração SQL Server**. O **propriedades de log do SQL Server** caixa de diálogo é aberta.
-4. Em **registrar as seguintes informações**, selecione as informações que você deseja fazer: 
-    - Para registrar em log todas as solicitações de contabilidade, clique em **solicitações de contabilidade**.
+1. Abra o console do NPS ou o snap-in do NPS Microsoft Management Console (MMC).
+2. Na árvore de console, clique em **contabilidade**.
+3. No painel de detalhes, na **propriedades de registro em log do SQL Server**, clique em **alterar propriedades servidor SQL log**. O **propriedades de registro em log do SQL Server** caixa de diálogo é aberta.
+4. Na **as seguintes informações de Log**, selecione as informações que você deseja registrar: 
+    - Para registrar em log todas as solicitações de contabilidade, clique em **as solicitações de contabilidade**.
     - Para registrar solicitações de autenticação, clique em **solicitações de autenticação**.
-    - Para registrar status periódicos de contabilidade, clique em **periódicas status de contabilidade**.
-    - Para registrar status periódicas, como solicitações de estatísticas provisórias, clique em **status periódico**.
-5. Para configurar o número de sessões simultâneas permitido entre o servidor que executa o NPS e o SQL Server, digite um número no **número máximo de sessões simultâneas**.
-6. Para definir a fonte de dados do SQL Server, em **log do SQL Server**, clique em **configurar**. O **Data Link Properties** caixa de diálogo é aberta. Sobre o **Conexão** guia, especifique o seguinte: 
+    - Para registrar o status de contabilização periódica, clique em **status de contabilização periódica**.
+    - Para registrar o status periódicas, como solicitações de contabilidade provisório, clique em **status periódico**.
+5. Para configurar o número de sessões simultâneas permitido entre o servidor que executa o NPS e o SQL Server, digite um número em **o número máximo de sessões simultâneas**.
+6. Para configurar a fonte de dados do SQL Server, no **log do SQL Server**, clique em **configurar**. O **propriedades de vínculo de dados** caixa de diálogo é aberta. Sobre o **Conexão** guia, especifique o seguinte: 
     - Para especificar o nome do servidor no qual o banco de dados está armazenado, digite ou selecione um nome na **selecione ou insira um nome de servidor**.
-    - Para especificar o método de autenticação com o qual deseja fazer logon no servidor, clique em **usar Windows segurança integrada NT**. Ou, clique em **usar um determinado nome de usuário e senha**e, em seguida, digite as credenciais no **nome de usuário** e **senha**.
+    - Para especificar o método de autenticação com o qual fazer logon servidor, clique em **a segurança integrada Use Windows NT**. Ou, clique em **usar um determinado nome de usuário e senha**e, em seguida, digite as credenciais no **nome de usuário** e **senha**.
     - Para permitir que uma senha em branco, clique em **senha em branco**.
-    - Para armazenar a senha, clique em **permitir salvar senha**.
-    - Para especificar o banco de dados para conectar-se para o computador executando o SQL Server, clique em **selecione o banco de dados no servidor**e, em seguida, selecione um nome de banco de dados da lista.
-7. Para testar a conexão entre o NPS e SQL Server, clique em **Testar Conexão**. Clique em **Okey** fechar **Data Link Properties**.
-8. Em **registrando falha ação**, selecione **habilitar o log de arquivo de texto de failover** se você quiser NPS para continuar com o log de arquivo de texto se falhar de log do SQL Server. 
-9. Em **registrando falha ação**, selecione **se houver falha no log, descarte solicitações de conexão** se você quiser NPS para parar o processamento de mensagens de solicitação de acesso quando os arquivos de log são inteira ou não está disponível por algum motivo. Se você quiser NPS para continuar a processar solicitações de conexão se houver falha no log, não marque essa caixa de seleção.
+    - Para armazenar a senha, clique em **permitir salvamento de senha**.
+    - Para especificar qual banco de dados para conectar-se para o computador executando o SQL Server, clique em **selecione o banco de dados no servidor**e, em seguida, selecione um nome de banco de dados da lista.
+7. Para testar a conexão entre o SQL Server e o NPS, clique em **Testar Conexão**. Clique em **Okey** para fechar **propriedades de vínculo de dados**.
+8. Na **log de ação de falha**, selecione **habilitar registro em log de arquivo de texto para o failover** se você quiser que o NPS para continuar com o log de arquivo de texto se falhar de log do SQL Server. 
+9. Na **log de ação de falha**, selecione **se houver falha no log, descarte as solicitações de conexão** se você quiser que o NPS para parar o processamento de mensagens de solicitação de acesso quando os arquivos de log estão completa ou indisponível por algum motivo. Se você quiser que o NPS para continuar o processamento de solicitações de conexão se houver falha no log, não selecione essa caixa de seleção.
 
-## <a name="ping-user-name"></a>Nome de usuário ping
+## <a name="ping-user-name"></a>Nome de usuário de ping
 
-Alguns servidores proxy RADIUS e servidores de acesso à rede periodicamente enviam solicitações de autenticação e estatísticas (conhecidas como solicitações ping) para verificar se o servidor NPS está presente na rede. Essas solicitações ping incluem os nomes de usuário fictício. Quando NPS processa essas solicitações, os logs de eventos e contabilidade são preenchidos com registros de rejeição de acesso, tornando mais difícil de controlar registros válidos.
+Alguns servidores proxy RADIUS e servidores de acesso à rede periodicamente enviam solicitações de autenticação e contabilidade (conhecidas como solicitações de ping) para verificar se o NPS está presente na rede. Essas solicitações ping incluem nomes de usuário fictício. Quando o NPS processa essas solicitações, os logs de eventos e contabilidade fique cheio de registros de rejeição de acesso, tornando mais difícil de controlar registros válidos.
 
-Quando você configura uma entrada do registro **executar ping nome de usuário**, NPS corresponde ao valor de entrada do registro com o valor de nome de usuário em solicitações ping por outros servidores. A **executar ping nome de usuário** entrada do registro Especifica o nome de usuário fictício (ou um nome padrão do usuário, com variáveis, que corresponde ao nome de usuário fictício) enviados por servidores proxy RADIUS e servidores de acesso à rede. Quando o NPS recebe solicitações ping que correspondem a **executar ping nome de usuário** valor da entrada do registro, o NPS rejeita as solicitações de autenticação sem processamento da solicitação. NPS não registra transações envolvendo o nome de usuário fictício em quaisquer arquivos de log, que facilita o log de eventos interpretar.
+Quando você configura uma entrada do registro **executar o ping de nome de usuário**, NPS corresponde ao valor de entrada de registro com o valor de nome de usuário em solicitações de ping por outros servidores. Um **executar o ping de nome de usuário** entrada de registro Especifica o nome de usuário fictício (ou um nome padrão do usuário, com variáveis, que corresponde ao nome de usuário fictício) enviada por servidores proxy RADIUS e servidores de acesso de rede. Quando o NPS recebe solicitações de ping que correspondem a **executar o ping de nome de usuário** valor de entrada do registro, o NPS rejeita as solicitações de autenticação sem processar a solicitação. NPS não registrar transações que envolvem o nome de usuário fictício em quaisquer arquivos de log, que torna mais fácil interpretar o log de eventos.
 
-**Executar ping nome de usuário** não é instalado por padrão. Você deve adicionar **executar ping nome de usuário** no registro. Você pode adicionar uma entrada ao registro usando o Editor do registro.
+**Executar o ping de nome de usuário** não está instalado por padrão. Você deve adicionar **executar o ping de nome de usuário** no registro. Você pode adicionar uma entrada no registro usando o Editor do registro.
 
 >[!CAUTION]
->Edição incorreta do registro pode danificar gravemente o sistema. Antes de fazer alterações no registro, você deve fazer backup de todos os dados importantes no computador.
+>a edição incorreta do Registro pode danificar gravemente o sistema. Antes de alterar o Registro, faça backup de todos os dados importantes do computador.
 
-### <a name="to-add-ping-user-name-to-the-registry"></a>Para adicionar o nome de usuário ping ao registro
+### <a name="to-add-ping-user-name-to-the-registry"></a>Para adicionar o nome de usuário do ping para o registro
 
-Nome de usuário ping pode ser adicionada a seguinte chave do registro como um valor de cadeia de caracteres por um membro do grupo Administradores local:
+Nome de usuário do ping pode ser adicionado a seguinte chave do registro como um valor de cadeia de caracteres por um membro do grupo Administradores local:
 
 `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\IAS\Parameters`
 
 - **Nome**: `ping user-name`
 - **Tipo**: `REG_SZ`
-- **Dados**: *nome de usuário*
+- **Dados**:  *Nome de usuário*
 
 >[!TIP]
->Para indicar mais de um nome de usuário para um **executar ping nome de usuário** valor, insira um nome padrão, como um nome DNS, incluindo caracteres curinga, em **dados**.
+>Para indicar a mais de um nome de usuário para um **executar o ping de nome de usuário** valor, insira um padrão de nome, como um nome DNS, incluindo caracteres curinga, em **dados**.

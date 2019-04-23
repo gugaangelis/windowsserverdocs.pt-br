@@ -1,7 +1,7 @@
 ---
 ms.assetid: 460792e4-9f1d-4e7b-b6b2-53e057f839df
-title: "Considerações de topologia de implantação do AD FS"
-description: 
+title: Considerações sobre a topologia de implantação do AD FS
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,73 +10,74 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 46692653ba10558a9236bd321127591bc7c8a275
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59838377"
 ---
-# <a name="using-ad-ds-claims-with-ad-fs"></a>Usando o AD DS declarações com o AD FS
+# <a name="using-ad-ds-claims-with-ad-fs"></a>Usando declarações do AD DS com o AD FS
   
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
   
-Você pode habilitar o controle de acesso mais avançado para aplicativos federados usando o usuário do Active Directory Domain Services \(AD DS\)\-issued e declarações de dispositivo, juntamente com os serviços de Federação do Active Directory \(AD FS\).  
+Você pode habilitar o controle de acesso avançado para aplicativos federados usando o Active Directory Domain Services \(AD DS\)\-emissões de declarações de usuário e dispositivo junto com os serviços de Federação do Active Directory \(do AD FS \).  
   
 ## <a name="about-dynamic-access-control"></a>Sobre o controle de acesso dinâmico  
-No Windows Server® 2012, o recurso de controle de acesso dinâmico permite que as organizações deve conceder acesso a arquivos com base em declarações do usuário \ (que é originado pelo attributes\ de conta de usuário) e declarações de dispositivo \ (que é originado pelo attributes\ de conta de computador) que são emitidos por \(AD DS\) serviços de domínio do Active Directory. AD DS emitidos requerimentos judiciais ou Extrajudiciais são integrados de autenticação integrada do Windows por meio do protocolo de autenticação Kerberos.  
+No Windows Server® 2012, o recurso de controle de acesso dinâmico permite que as organizações conceder acesso a arquivos com base em declarações de usuário \(que é originado pelos atributos de conta de usuário\) e declarações de dispositivo \(que é originado por atributos de conta de computador\) que são emitidos pelos serviços de domínio do Active Directory \(AD DS\). Emitida de declarações do AD DS são integrados a autenticação integrada do Windows por meio do protocolo de autenticação Kerberos.  
   
 Para obter mais informações sobre o controle de acesso dinâmico, consulte [dinâmico roteiro de conteúdo de controle de acesso](../../solution-guides/Dynamic-Access-Control--Scenario-Overview.md#BKMK_APP).  
   
 ### <a name="whats-new-in-ad-fs"></a>O que há de novo no AD FS?  
-Como uma extensão para o cenário de controle de acesso dinâmico, AD FS no Windows Server 2012 pode agora:  
+Como uma extensão para o cenário de controle de acesso dinâmico, o AD FS no Windows Server 2012 pode agora:  
   
--   Atributos de conta de computador de acesso além dos atributos da conta de usuário no AD DS. Em versões anteriores do AD FS, o serviço de Federação não foi possível acessar os atributos de conta de computador em todos do AD DS.  
+-   Atributos de conta de computador de acesso, além de atributos de conta de usuário no AD DS. Nas versões anteriores do AD FS, o serviço de Federação não pôde acessar os atributos de conta de computador em todos os do AD DS.  
   
--   Consuma o AD DS emitidos declarações do usuário ou dispositivo que residem em um tíquete de autenticação Kerberos. Em versões anteriores do AD FS, o mecanismo de requerimentos judiciais ou Extrajudiciais foi capaz de ler o usuário e grupo segurança IDs \(SIDs\) de Kerberos mas não foi capaz de ler qualquer declarações informações contidas em um tíquete Kerberos.  
+-   Consuma o AD DS emitida de declarações de usuário ou dispositivo que residem em um tíquete de autenticação Kerberos. Nas versões anteriores do AD FS, o mecanismo de declarações não conseguiu ler as IDs de segurança de usuário e grupo \(SIDs\) do Kerberos, mas não foi capaz de ler qualquer informações contidas em um tíquete Kerberos de declarações.  
   
--   Transforme AD DS que emitiu o usuário ou declarações de dispositivo no tokens SAML terceira aplicativos podem usar para executar o controle de acesso mais avançado.  
+-   Transforme o AD DS emitido declarações do usuário ou dispositivo em tokens SAML que aplicativos de terceira parte confiável podem usar para executar o controle de acesso mais avançado.  
   
-## <a name="benefits-of-using-ad-ds-claims-with-ad-fs"></a>Benefícios do uso do AD DS requerimentos judiciais ou Extrajudiciais com o AD FS  
-Esses AD DS emitidos requerimentos judiciais ou Extrajudiciais pode ser inseridos em tíquetes de autenticação Kerberos e usados com o AD FS para fornecer os seguintes benefícios:  
+## <a name="benefits-of-using-ad-ds-claims-with-ad-fs"></a>Benefícios de usar o AD DS declarações com o AD FS  
+Essas emissões de declarações do AD DS pode ser inseridos no tíquetes de autenticação Kerberos e usados com o AD FS para fornecer os seguintes benefícios:  
   
--   As organizações que exigem políticas de controle de acesso mais avançadas podem habilitar o acesso com base em claims\ para aplicativos e recursos usando o AD DS emitidos declarações que se baseiam nos valores de atributo armazenados no AD DS para um determinado usuário ou uma conta de computador. Isso pode ajudar os administradores para reduzir a sobrecarga adicional associada a criação e gerenciamento:  
+-   As organizações que exigem políticas de controle de acesso mais avançadas podem habilitar declarações\-acesso baseado em aplicativos e recursos usando o AD DS emissões de declarações com base nos valores de atributo armazenados no AD DS para uma determinada conta de usuário ou computador. Isso pode ajudar os administradores a reduzir a sobrecarga adicional associada à criação e gerenciamento:  
   
-    -   AD DS grupos de segurança que outra forma seriam usados para controlar o acesso aos aplicativos e recursos que são acessíveis por meio de autenticação integrada do Windows.  
+    -   AD DS grupos de segurança que, caso contrário, seriam usados para controlar o acesso a aplicativos e recursos que podem ser acessados por meio da autenticação integrada do Windows.  
   
-    -   Floresta relações de confiança que outra forma seriam usadas para controlar o acesso aos Business\-to\-Business \(B2B\) \ / aplicativos acessíveis da Internet e recursos.  
+    -   Relações de confiança de que, caso contrário, seriam usadas para controlar o acesso aos negócios de floresta\-à\-negócios \(B2B\) \/ aplicativos acessíveis da Internet e os recursos.  
   
--   As organizações agora podem evitar acesso não autorizado aos recursos de rede de computadores cliente com base em se uma conta de computador específico atributo valor armazenado no AD DS \ (por exemplo, um computador DNS name\) corresponde a política de controle de acesso do recurso \ (por exemplo, um servidor de arquivos que foi ACLd com claims\) ou a política de terceiros terceira \ (por exemplo, um reconhecimento de claims\ application\ da Web). Isso pode ajudar os administradores definam políticas de controle mais refinadas de acesso para recursos ou aplicativos que são:  
+-   As organizações agora podem impedir acesso não autorizado aos recursos da rede de computadores cliente com base em se armazenadas no AD DS do valor do atributo de uma conta de computador específico \(por exemplo, um nome de computador DNS\) coincide com o controle de acesso política do recurso \(por exemplo, um servidor de arquivos tiver sido ACLd com declarações\) ou a política de terceira parte confiável \(por exemplo, um declarações\-aplicativo Web com reconhecimento de\). Isso pode ajudar os administradores definam políticas de controle de acesso mais refinadas para recursos ou aplicativos que são:  
   
-    -   Só estão acessíveis por meio de autenticação integrada do Windows.  
+    -   Acessível somente por meio de autenticação integrada do Windows.  
   
-    -   Internet acessível por meio de mecanismos de autenticação do AD FS. AD FS pode ser usado para transformar o AD DS emitidos declarações de dispositivo em declarações do AD FS que podem ser encapsuladas em tokens SAML que podem ser consumidos por um aplicativo de terceiros terceira ou um recurso acessível da Internet.  
+    -   Acessível por meio de mecanismos de autenticação do AD FS na Internet. O AD FS pode ser usado para transformar as emissões de declarações de dispositivo em declarações do AD FS que podem ser encapsuladas em tokens SAML que podem ser consumidos por um recurso acessível da Internet ou um aplicativo de terceira parte confiável do AD DS.  
   
-## <a name="differences-between-ad-ds-and-ad-fs-issued-claims"></a>Diferenças entre o AD DS e do AD FS emitidos requerimentos judiciais ou Extrajudiciais  
-Há dois fatores diferenciados que são importantes para entender sobre declarações que são emitidas do AD DS vs. AD FS. Essas diferenças incluem:  
+## <a name="differences-between-ad-ds-and-ad-fs-issued-claims"></a>Diferenças entre o AD DS e AD FS emissões de declarações  
+Há dois fatores diferenciação que são importantes para entender sobre declarações que são emitidas do AD DS vs. O AD FS. Essas diferenças incluem:  
   
--   AD DS somente pode emitir declarações que são encapsuladas em tíquetes Kerberos, não tokens SAML. Para saber mais sobre como o AD DS emite requerimentos judiciais ou Extrajudiciais, consulte [dinâmico roteiro de conteúdo de controle de acesso](../../solution-guides/Dynamic-Access-Control--Scenario-Overview.md#BKMK_APP).  
+-   AD DS só pode emitir declarações que são encapsuladas em tíquetes Kerberos, não os tokens SAML. Para obter mais informações sobre como o AD DS emite declarações, consulte [dinâmico roteiro de conteúdo de controle de acesso](../../solution-guides/Dynamic-Access-Control--Scenario-Overview.md#BKMK_APP).  
   
--   AD FS só pode emitir declarações que são encapsuladas em tokens SAML, não tíquetes Kerberos. Para saber mais sobre como o AD FS emite requerimentos judiciais ou Extrajudiciais, consulte [a função do mecanismo requerimentos judiciais ou Extrajudiciais](../../ad-fs/technical-reference/The-Role-of-the-Claims-Engine.md).  
+-   AD FS pode emitir apenas declarações que são encapsuladas em tokens SAML, não os tíquetes Kerberos. Para obter mais informações sobre como o AD FS emite declarações, consulte [The Role of the Claims Engine](../../ad-fs/technical-reference/The-Role-of-the-Claims-Engine.md).  
   
-## <a name="how-ad-ds-issued-claims-work-with-ad-fs"></a>Como o AD DS emitidos requerimentos judiciais ou Extrajudiciais de trabalho com o AD FS  
-AD DS emitidos requerimentos judiciais ou Extrajudiciais pode ser usado com o AD FS para acessar declarações de dispositivo e usuário diretamente a partir do usuário contexto de autenticação, em vez de fazer uma chamada LDAP separada para o Active Directory. A ilustração a seguir e as etapas correspondentes discute como esse processo funciona mais detalhadamente para habilitar o controle de acesso baseado em claims\ para o cenário de controle de acesso dinâmico.  
+## <a name="how-ad-ds-issued-claims-work-with-ad-fs"></a>Como as declarações emitidas pelo AD DS funcionam com o AD FS  
+Emitida de declarações do AD DS pode ser usado com o AD FS para acessar as declarações de usuário e dispositivo diretamente a partir contexto de autenticação, em do usuário, o vez de fazer uma chamada LDAP separada ao Active Directory. A ilustração a seguir e as etapas correspondentes discute como esse processo funciona em mais detalhes para habilitar as declarações\-com base em controle de acesso para o cenário de controle de acesso dinâmico.  
   
 ![usando declarações](media/UsingADDSClaimswithADFS.gif)  
   
-1.  O administrador do AD DS usa o console do Centro Administrativo do Active Directory ou cmdlets do PowerShell para objetos de tipo de declaração específica permite no esquema do AD DS.  
+1.  Um administrador do AD DS usa o console da Central Administrativa do Active Directory ou cmdlets do PowerShell para objetos de tipo de declaração específico permite no esquema do AD DS.  
   
-2.  O administrador do AD FS usa o console de gerenciamento do AD FS para criar e configurar o provedor de declarações e o terceiro relações de confiança com qualquer uma pass\-through ou transformação reivindicar regras.  
+2.  Um administrador do AD FS usa o console de gerenciamento do AD FS para criar e configurar o provedor de declarações e a terceira parte confiável relações de confiança com ou da pass\-por meio de ou regras de declaração de transformação.  
   
-3.  Um cliente Windows tenta acessar a rede. Como parte do processo de autenticação Kerberos, o cliente apresenta o usuário e computador ticket\ de concessão tíquete \(TGT\) que não ainda conter todas as alegações, o controlador de domínio. O controlador de domínio, em seguida, procura no AD DS tipos de declaração habilitados e inclui todas as alegações resultantes no tíquete Kerberos retornado.  
+3.  Um cliente Windows tenta acessar a rede. Como parte do processo de autenticação Kerberos, o cliente apresenta seu respectivo tíquete de usuário e computador\-tíquete de concessão \(TGT\) que ainda não contém quaisquer reivindicações, ao controlador de domínio. O controlador de domínio, em seguida, procura os tipos de declaração habilitada no AD DS e inclui quaisquer declarações resultantes no tíquete Kerberos retornado.  
   
-4.  Quando o user\/cliente tenta acessar um recurso de arquivo que está ACLd exigir que as declarações, eles podem acessar o recurso porque a ID composta que foi mostrada de Kerberos tem essas declarações.  
+4.  Quando o usuário\/cliente tenta acessar um recurso de arquivo é acld, para exigir as declarações, eles poderão acessar o recurso porque a ID composta que apareceu do Kerberos tem essas declarações.  
   
-5.  Quando o mesmo cliente tenta acessar um site ou aplicativo que esteja configurado para autenticação do AD FS, o usuário é redirecionado para um servidor de Federação do AD FS está configurado para autenticação integrada do Windows. O cliente envia uma solicitação para o controlador de domínio usando Kerberos. O controlador de domínio emite um tíquete Kerberos contendo as declarações solicitadas que o cliente pode apresentar para o servidor de Federação.  
+5.  Quando o mesmo cliente tenta acessar um site da Web ou aplicativo Web que está configurado para autenticação do AD FS, o usuário é redirecionado para um servidor de Federação do AD FS está configurado para a autenticação integrada do Windows. O cliente envia uma solicitação para o controlador de domínio usando Kerberos. O controlador de domínio emite um tíquete Kerberos que contém as declarações solicitadas que o cliente, em seguida, pode apresentar ao servidor de Federação.  
   
-6.  Com base na maneira como as regras de requerimentos judiciais ou Extrajudiciais foram configuradas no provedor de declarações e contar relações de confiança de terceiros que o administrador configurado anteriormente, o AD FS lê as declarações do tíquete Kerberos e inclui-los em um token SAML que emitir para o cliente.  
+6.  Com base na maneira como as regras de declarações foram configuradas no provedor de declarações e objetos de confiança que o administrador configurado anteriormente, o AD FS lê as declarações no tíquete Kerberos e inclui-los em um token SAML emitido para o cliente da terceira parte confiável.  
   
-7.  O cliente recebe o token SAML contendo as declarações corretas e, em seguida, for redirecionado para o site.  
+7.  O cliente recebe o token SAML que contém as declarações corretas e, em seguida, é redirecionado para o site.  
   
-Para obter mais informações sobre como criar as regras de declaração necessárias para declarações do AD DS emitido para trabalhar com o AD FS, consulte [criar uma regra para transformar uma entrada reivindicar](../../ad-fs/operations/Create-a-Rule-to-Transform-an-Incoming-Claim.md).  
+Para obter mais informações sobre como criar regras de declaração necessárias para declarações do AD DS emitido para trabalhar com o AD FS, consulte [criar uma regra para transformar uma declaração de entrada](../../ad-fs/operations/Create-a-Rule-to-Transform-an-Incoming-Claim.md).  
   
 ## <a name="see-also"></a>Consulte também
 [Guia de Design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -1,6 +1,6 @@
 ---
-title: vRSS perguntas frequentes
-description: Neste tópico, você encontrará que alguns comumente frequentes e respostas sobre como usar vRSS.
+title: Perguntas frequentes sobre o vRSS
+description: Neste tópico, você encontrará que alguns frequentes perguntas e respostas sobre como usar o vRSS.
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
@@ -11,58 +11,58 @@ ms.date: 09/05/2018
 ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: 3fafe6c39285e65a9d39a76cc6b652dac5c3efbd
-ms.sourcegitcommit: e84e328c13a701e8039b16a4824a6e58a6e59b0b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4133812"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59840237"
 ---
-# vRSS perguntas frequentes
+# <a name="vrss-frequently-asked-questions"></a>Perguntas frequentes sobre o vRSS
 
-Neste tópico, você encontrará que alguns comumente frequentes e respostas sobre como usar vRSS.
+Neste tópico, você encontrará que alguns frequentes perguntas e respostas sobre como usar o vRSS.
 
-## Quais são os requisitos para os adaptadores de rede física que posso usar com vRSS?
+## <a name="what-are-the-requirements-for-the-physical-network-adapters-that-i-use-with-vrss"></a>Quais são os requisitos para os adaptadores de rede física que posso usar com o vRSS?
 
-Adaptadores de rede devem ser compatíveis com \(VMQ\) fila de máquina Virtual e devem ter uma velocidade de link de 10 Gbps ou mais.
+Adaptadores de rede devem ser compatíveis com a fila de máquina Virtual \(VMQ\) e deve ter uma velocidade de link de 10 Gbps ou mais.
 
-Para obter mais informações, consulte a [Planejar o uso de vRSS](vrss-plan.md).
+Para obter mais informações, consulte [planejar o uso de vRSS](vrss-plan.md).
 
-## VRSS funciona com núcleos hyper\-v-threaded?
+## <a name="does-vrss-work-with-hyper-threaded-processor-cores"></a>O vRSS funciona com hyper\-threaded núcleos de processador?
 
-Não. VRSS e VMQ ignoram núcleos hyper\-v de threads.
+Nenhum. O vRSS e VMQ ignoram hyper\-threaded núcleos de processador.
 
-## VRSS funciona para host virtual NICs \(vNICs\)?
+## <a name="does-vrss-work-for-host-virtual-nics-vnics"></a>O vRSS funciona para NICs de host virtual \(vNICs\)?
 
-Sim. Use o parâmetro **- ManagementOS** em vez de nome \(VM\) da máquina virtual no comando **Set-VMNetworkAdapter** do Windows PowerShell e **Habilitar NetAdapterRss** sobre o vNIC do host.
+Sim. Use o **- ManagementOS** parâmetro em vez da máquina virtual \(VM\) nome o **Set-VMNetworkAdapter** comando do Windows PowerShell, e  **Enable-NetAdapterRss** na vNIC do host.
 
-For more information, see [Windows PowerShell Commands for RSS and vRSS](vrss-wps.md).
+Para obter mais informações, consulte [comandos do Windows PowerShell para RSS e vRSS](vrss-wps.md).
 
-## Quantos processadores lógicos uma VM precisa usar vRSS?
+## <a name="how-many-logical-processors-does-a-vm-need-to-use-vrss"></a>Número de processadores lógico uma máquina virtual precisa usar o vRSS?
 
-VMs necessário dois ou mais \(LPs\) processadores lógicos para poder usar vRSS.
+As VMs que precisam de duas ou mais processadores lógicos \(LPs\) para poder usar o vRSS.
 
-Para obter mais informações, consulte a [Planejar o uso de vRSS](vrss-plan.md).
+Para obter mais informações, consulte [planejar o uso de vRSS](vrss-plan.md).
 
-## VRSS é compatível com o agrupamento NIC?
+## <a name="is-vrss-compatible-with-nic-teaming"></a>O vRSS é compatível com agrupamento NIC?
 
-Sim. Se você estiver usando o agrupamento NIC, é importante que você configure corretamente VMQ para trabalhar com as configurações de agrupamento NIC. Para obter informações detalhadas sobre o agrupamento NIC implantação e gerenciamento, consulte [O agrupamento NIC](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming).
+Sim. Se você estiver usando o agrupamento NIC, é importante configurar corretamente a VMQ para trabalhar com as configurações de agrupamento NIC. Para obter informações detalhadas sobre o gerenciamento e implantação do agrupamento NIC, consulte [agrupamento NIC](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming).
 
-## vRSS está habilitada, mas como saber se ele está funcionando? 
+## <a name="vrss-is-enabled-but-how-do-i-know-if-it-is-working"></a>o vRSS é ativado, mas como saber se ele está funcionando? 
 
-Você poderá dizer vRSS está funcionando abrindo o Gerenciador de tarefas na sua VM e exibindo a utilização de processador virtual. Se houver várias conexões estabelecidas para a máquina virtual, você pode ver mais de um núcleo acima 0% de utilização.
+Você poderá informar o vRSS está funcionando abrindo o Gerenciador de tarefas em sua VM e exibindo a utilização do processador virtual. Se houver várias conexões estabelecidas com a VM, você pode ver mais de um núcleo acima de 0% de utilização.
 
-Como uma única sessão TCP não pode ser balanceado entre vários núcleos lógicos, sua VM deve estar recebendo TCP várias sessões antes de você pode observar ou não vRSS está funcionando.
+Como uma única sessão TCP não pode ser balanceado entre vários núcleos de processador lógico, sua VM deve estar recebendo TCP várias sessões antes de você pode observar se ou não o vRSS está funcionando.
 
-Se a VM está recebendo várias sessões TCP, mas você não vir mais de um núcleo LP acima utilização de 0%, certifique-se de que você concluiu todas as etapas de preparação no tópico [Planejar o uso de vRSS](vrss-plan.md).
+Se a VM estiver recebendo várias sessões TCP, mas você não vir mais de um núcleo de LP acima de 0% de utilização, certifique-se de que você tenha concluído todas as etapas de preparação no tópico [planejar o uso de vRSS](vrss-plan.md).
 
-## Eu estou olhando para o host e nem todos os processadores estão sendo usados. Parece que todos os outros um está sendo ignorado.
+## <a name="im-looking-at-the-host-and-not-all-of-the-processors-are-being-used-it-looks-like-every-other-one-is-being-skipped"></a>Estou olhando um host e nem todos os processadores estão sendo usados. Parece que um sim, outro não estão sendo ignorados.
   
-Verifique se o threading hyper está habilitada. VMQ e vRSS são projetados para ignorar hyper\-v-threaded núcleos.
+Verifique se a tecnologia hyper threading está habilitada. VMQ e o vRSS é projetado para ignorar hyper\-threaded núcleos.
 
-## Are there different Windows PowerShell commands for RSS and vRSS?
+## <a name="are-there-different-windows-powershell-commands-for-rss-and-vrss"></a>Há comandos diferentes do Windows PowerShell para RSS e vRSS?
 
-Sim e não. While you use the same commands for both RSS in native hosts and RSS in VMs, vRSS also requires VMQ to be enabled on the physical NIC - and for the VM and vRSS to be enabled on the switch port.
+Sim e não. Enquanto você usa os mesmos comandos para o RSS em hosts nativos e o RSS em máquinas virtuais, o vRSS também requer VMQ esteja habilitado na NIC físico – e para a VM e o vRSS para ser habilitado na porta do comutador.
 
-For more information, see [Windows PowerShell Commands for RSS and vRSS](vrss-wps.md).
+Para obter mais informações, consulte [comandos do Windows PowerShell para RSS e vRSS](vrss-wps.md).
 
 ---

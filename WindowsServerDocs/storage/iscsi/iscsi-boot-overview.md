@@ -1,29 +1,30 @@
 ---
 ms.assetid: 134840f3-c416-4a10-ad73-ef7855b206f7
-title: "Visão geral da inicialização do destino iSCSI"
+title: Visão geral da inicialização do destino iSCSI
 ms.prod: windows-server-threshold
 ms.technology: storage-iscsi
 ms.topic: article
-author: MicGray-MS
-manager: dongill
-ms.author: micgray
-ms.date: 10/11/2016
-ms.openlocfilehash: 958d8a71e6fe62ec9d256be132aef4edf00942db
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+author: JasonGerend
+manager: dougkim
+ms.author: jgerend
+ms.date: 09/11/2018
+ms.openlocfilehash: b3ec6dad0b3fcc9ef595350c7df09505beba1103
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59838797"
 ---
 # <a name="iscsi-target-boot-overview"></a>Visão geral da inicialização do destino iSCSI
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016
+> Aplica-se a: Windows Server 2016
 
 O Servidor de Destino iSCSI no Windows Server permite inicializar centenas de computadores por meio de uma única imagem do sistema operacional, armazenada em um local centralizado. Isso aumenta a eficiência, a capacidade de gerenciamento, a disponibilidade e a segurança.  
   
 ## <a name="BKMK_OVER"></a>Descrição do recurso  
-Usando discos rígidos virtuais diferenciais \(VHDs\), é possível utilizar uma única imagem do sistema operacional \(a "imagem mestra"\) para inicializar até 256 computadores. Por exemplo, vamos supor que você implantou o Windows Server com uma imagem de sistema operacional de aproximadamente 20 GB e você usou duas unidades de disco espelhadas para funcionar como o volume de inicialização. Seria necessário cerca de 10 TB de armazenamento somente para a imagem de sistema operacional para inicializar 256 computadores. Com o Servidor de Destino iSCSI, você usará 40 GB para a imagem base do sistema operacional e 2 GB para discos rígidos virtuais diferenciais por instância do servidor, totalizando 552 GB para as imagens do sistema operacional. Isso proporciona uma economia de mais de 90% em armazenamento somente para as imagens do sistema operacional.  
+Usando discos rígidos virtuais diferenciais \(VHDs\), você pode usar uma imagem de sistema operacional \(a "imagem mestra"\) para inicializar até 256 computadores. Por exemplo, vamos supor que você implantou o Windows Server com uma imagem de sistema operacional de aproximadamente 20 GB e você usou duas unidades de disco espelhadas para atuar como o volume de inicialização. Seria necessário cerca de 10 TB de armazenamento somente para a imagem de sistema operacional para inicializar 256 computadores. Com o Servidor de Destino iSCSI, você usará 40 GB para a imagem base do sistema operacional e 2 GB para discos rígidos virtuais diferenciais por instância do servidor, totalizando 552 GB para as imagens do sistema operacional. Isso proporciona uma economia de mais de 90% em armazenamento somente para as imagens do sistema operacional.  
   
-## <a name="BKMK_APP"></a>Aplicações práticas  
+## <a name="BKMK_APP"></a>Aplicativos práticos  
 Usar uma imagem controlada do sistema operacional oferece os seguintes benefícios:  
   
 **Mais segurança e gerenciamento mais fácil.** Algumas empresas exigem que os dados sejam protegidos bloqueando fisicamente o armazenamento em um local centralizado. Nesse cenário, os servidores acessam os dados remotamente, inclusive a imagem do sistema operacional. Com o Servidor de Destino iSCSI, os administradores podem gerenciar centralmente as imagens de inicialização do sistema operacional e controlar quais aplicativos devem ser usados para a imagem mestra.  
@@ -33,10 +34,10 @@ Usar uma imagem controlada do sistema operacional oferece os seguintes benefíci
 **Recuperação rápida.** Como as imagens do sistema operacional são hospedadas no computador executando o Servidor de Destino iSCSI, se o cliente sem disco precisar ser substituído, o novo computador poderá apontar para a imagem do sistema operacional e ser inicializado imediatamente.  
   
 > [!NOTE]  
-> Vários fornecedores oferecem uma solução de inicialização \(SAN\) rede de área de armazenamento, que pode ser usada pelo Servidor de Destino iSCSI no Windows Server em hardware de mercadoria.  
+> Vários fornecedores oferecem uma solução de inicialização SAN \(rede de área de armazenamento\), que pode ser usada pelo Servidor de Destino iSCSI no Windows Server em hardware de mercadoria.  
   
 ## <a name="BKMK_HARD"></a>Requisitos de hardware  
-O Servidor de Destino iSCSI não exige hardware especial para verificação funcional. Nos data centers com implantações em grande escala, o design deve ser validado em relação a um hardware específico. Por exemplo, os testes internos da Microsoft indicaram que uma implantação de 256 computadores exigia 24 discos de 15.000 RPM para armazenamento em uma configuração RAID10. O ideal é ter uma largura de banda de rede de 10 GB. Uma estimativa geral é de 60 servidores de inicialização iSCSI por adaptador de rede de 1 GB.  
+O Servidor de Destino iSCSI não exige hardware especial para verificação funcional. Nos data centers com implantações em grande escala\-, o design deve ser validado em relação a um hardware específico. Para referência, testes internos da Microsoft indicaram que uma implantação de 256 computadores exigia 24x15k\-discos em uma configuração RAID 10 para o armazenamento de RPM. Uma largura de banda de rede de 10 GB é ideal. Uma estimativa geral é de 60 servidores de inicialização iSCSI por adaptador de rede de 1 GB.  
   
 Não é necessário ter um adaptador de rede para esse cenário, e um carregador de inicialização de software pode ser usado \(como o firmware de inicialização de software livre iPXE\).  
   
@@ -46,7 +47,7 @@ O Servidor de Destino iSCSI pode ser instalado como parte do serviço de funçã
 > [!NOTE]
 > Não há suporte para inicialização do Nano Server do iSCSI (da implementação do Servidor de Destino iSCSI do Windows ou de uma implementação de destino de terceiros).
 
-## <a name="see-also"></a>Veja também
-* [iSCSI Target Server](https://technet.microsoft.com/library/hh848272(v=ws.11).aspx)
-* [Cmdlets do iniciador iSCSI](https://technet.microsoft.com/library/hh826099(v=wps.640).aspx)
-* [Cmdlets do Servidor de Destino iSCSI](https://technet.microsoft.com/library/jj612803(v=wps.630).aspx)
+## <a name="see-also"></a>Consulte também
+* [Servidor de destino iSCSI](https://technet.microsoft.com/library/hh848272(v=ws.11).aspx)
+* [cmdlets do iniciador iSCSI](https://technet.microsoft.com/library/hh826099(v=wps.640).aspx)
+* [cmdlets do servidor de destino iSCSI](https://technet.microsoft.com/library/jj612803(v=wps.630).aspx)

@@ -1,7 +1,7 @@
 ---
-title: Criar, excluir ou atualizar redes virtuais locatário
-description: Este tópico faz parte do Software de rede definidos guia sobre como gerenciar as cargas de trabalho de locatário e redes virtuais no Windows Server 2016.
-manager: brianlic
+title: Criar, excluir ou atualizar a rede virtual do locatário
+description: Neste tópico, você aprenderá a criar, excluir e atualizar redes virtuais do Hyper-V Network Virtualization depois de implantar o Software Defined Networking (SDN). Virtualização de rede do Hyper-V ajuda a isolar redes de locatário para que cada rede de locatário é uma entidade separada. Cada entidade não tem nenhuma possibilidade de conexão cruzada, a menos que você configura cargas de trabalho de acesso público.
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,42 +12,34 @@ ms.topic: article
 ms.assetid: 6a820826-e829-4ef2-9a20-f74235f8c25b
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 6ef30dcc31593e15c36f846cf6d64afcd4b85f19
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/24/2018
+ms.openlocfilehash: a125ec220b4769a57a6be30f1425283afb7f0fe6
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59838347"
 ---
-# <a name="create-delete-or-update-tenant-virtual-networks"></a>Criar, excluir ou atualizar redes virtuais locatário
+# <a name="create-delete-or-update-tenant-virtual-networks"></a>Criar, excluir ou atualizar redes virtuais do locatário
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Você pode usar este tópico para saber como criar, excluir e atualizar redes virtuais de virtualização do Hyper-V rede após a implantação de rede definidos Software (SDN).  
+Neste tópico, você aprenderá a criar, excluir e atualizar redes virtuais do Hyper-V Network Virtualization depois de implantar o Software Defined Networking (SDN). Virtualização de rede do Hyper-V ajuda a isolar redes de locatário para que cada rede de locatário é uma entidade separada. Cada entidade não tem nenhuma possibilidade de conexão cruzada, a menos que você configura cargas de trabalho de acesso público.   
   
-Usando a virtualização de rede do Hyper-V, você pode isolar redes de locatário, para que cada rede de locatário é uma entidade completamente separada com nenhuma possibilidade de conexão entre a menos que você configure cargas de trabalho de acesso público.  
+## <a name="create-a-new-virtual-network"></a>Criar uma nova rede virtual  
+Criar uma rede virtual para um locatário coloca-o dentro de um domínio de roteamento exclusivo no host Hyper-V. Abaixo de cada rede virtual, há pelo menos uma sub-rede virtual. Subredes virtuais obtém definidas por um prefixo IP e fazer referência a uma ACL definida anteriormente.  
+
+As etapas para criar uma nova rede virtual são:
+
+1. Identifique os prefixos de endereço IP do qual você deseja criar sub-redes virtuais.   
+2. Identifique a rede lógica do provedor no qual o tráfego de locatário é encapsulado.   
+3. Crie pelo menos uma sub-rede virtual para cada prefixo IP que você identificou na etapa 1. 
+4. (Opcional) Adicionar as ACLs criadas anteriormente para as sub-redes virtuais ou adicionar conectividade de gateway para locatários. 
+
+A tabela a seguir inclui as IDs de sub-rede de exemplo e prefixos para dois locatários fictícios. O locatário Fabrikam tem duas sub-redes virtuais, enquanto o locatário Contoso tem três sub-redes virtuais.  
+ 
   
-Você pode criar novas redes virtuais para locatários, você pode modificar redes virtuais existentes e se um locatário não precisa mais determinados recursos, ou se o locatário não está mais seu cliente, você pode excluir locatário redes virtuais.  
-  
-## <a name="create-a-new-virtual-network"></a>Criar uma nova rede Virtual  
-  
-Quando você cria uma rede Virtual para um locatário, ele é colocado em um domínio de roteamento exclusivo no host do Hyper-V.  
-  
-A seguir estão as etapas para criar uma nova rede Virtual.  
-  
-1. Identifique os prefixos de endereço IP do qual você deseja criar as sub-redes virtuais.   
-2. Identifique a rede de provedor lógicos no qual o tráfego de locatário é encapsulado.   
-3. Crie pelo menos uma sub-rede virtual para cada prefixo de IP que você definiu na etapa 1.   
-  
->[!NOTE]  
->Abaixo de cada rede virtual há pelo menos uma sub-rede virtual. Virtuais sub-redes são definidos por um prefixo de IP e fazer referência a uma lista de controle de acesso definidos anteriormente.  
-  
-Opcionalmente, depois de concluir essas etapas, você pode também adicionar as listas de controle de acesso criado anteriormente para as sub-redes virtuais, ou adicionar conectividade de gateway para locatários.    
-  
-A tabela a seguir inclui exemplo sub-rede IDs e prefixos para dois locatários fictícios. O Fabrikam locatário tem duas sub-redes virtuais, e locatário da Contoso tem três sub-redes virtuais.  
-  
-  
-  
-Nome de locatário  |ID de sub-rede virtual  |Prefixo da sub-rede virtual    
+Nome do locatário  |ID de Sub-rede Virtual  |Prefixo de sub-rede virtual    
 ---------|---------|---------  
 Fabrikam    |5001         |24.30.1.0/24           
 Fabrikam     |5002         | 24.30.2.0/20          
@@ -55,9 +47,9 @@ Contoso    |6001         |  24.30.1.0/24
 Contoso    | 6002        |  24.30.2.0/24         
 Contoso     | 6003        | 24.30.3.0/24          
   
-O script de exemplo a seguir usa os comandos do Windows PowerShell exportados do **NetworkController** module para criar uma rede virtual e uma sub-rede da Contoso:   
+O script de exemplo a seguir usa comandos do Windows PowerShell exportados do **NetworkController** módulo para criar a rede virtual da Contoso e a uma sub-rede:   
   
-```  
+```Powershell  
 import-module networkcontroller  
 $URI = "https://ncrest.contoso.local"  
   
@@ -91,15 +83,14 @@ $vnetproperties.LogicalNetwork = $HNVProviderLogicalNetwork
 $vnetproperties.Subnets = @($vsubnet)  
 New-NetworkControllerVirtualNetwork -ResourceId "Contoso_VNet1" -ConnectionUri $uri -Properties $vnetproperties  
   
-  
 ```  
   
 ## <a name="modify-an-existing-virtual-network"></a>Modificar uma rede Virtual existente  
-Você pode usar o Windows PowerShell para atualizar uma sub-rede Virtual existente ou rede.   
+Você pode usar o Windows PowerShell para atualizar uma sub-rede de Virtual existente ou de rede.   
   
-Quando você executa o script de exemplo a seguir, os recursos atualizados são simplesmente colocar controlador de rede com a mesma ID de recurso. Se seu locatário Contoso quer adicionar um novo sub-rede virtual (24.30.2.0/24) para suas redes virtuais, você ou o administrador da Contoso pode usar o script a seguir.  
+Quando você executa o script de exemplo a seguir, os recursos atualizados são simplesmente COLOCADOS no controlador de rede com a mesma ID de recurso. Se seu locatário Contoso quer adicionar uma nova sub-rede virtual (24.30.2.0/24) à sua rede virtual, você ou o administrador da Contoso pode usar o script a seguir.  
   
-```  
+```PowerShell  
 $acllist = Get-NetworkControllerAccessControlList -ConnectionUri $uri -ResourceId "AllowAll"  
   
 $vnet = Get-NetworkControllerVirtualNetwork -ResourceId "Contoso_VNet1" -ConnectionUri $uri  
@@ -122,8 +113,9 @@ New-NetworkControllerVirtualNetwork -ResourceId "Contoso_VNet1" -ConnectionUri $
   
 Você pode usar o Windows PowerShell para excluir uma rede Virtual.  
   
-O exemplo a seguir do Windows PowerShell exclui um locatário rede Virtual emitindo uma exclusão HTTP para o URI de identificação do recurso.  
-  
-    Remove-NetworkControllerVirtualNetwork -ResourceId "Contoso_Vnet1" -ConnectionUri $uri  
+O Windows PowerShell exemplo a seguir exclui um locatário de rede Virtual, emitindo um HTTP delete para o URI de identificação do recurso.  
 
+```PowerShell  
+Remove-NetworkControllerVirtualNetwork -ResourceId "Contoso_Vnet1" -ConnectionUri $uri  
+```
 

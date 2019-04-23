@@ -11,13 +11,13 @@ author: shortpatti
 ms.author: pashort
 ms.localizationpriority: high
 ms.openlocfilehash: 1ae36a2e1be1559094dd55dba41fa9a468118260
-ms.sourcegitcommit: 9ed4c9fe04ebf3ef488170503c9a354c992b6fde
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4339454"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59840057"
 ---
-# Virtualização
+# <a name="virtualization"></a>Virtualização
 
 >[!TIP]
 > Procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obter informações específicas.
@@ -39,9 +39,9 @@ Virtualização no Windows Server é uma das tecnologias fundamentais necessári
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Malha Protegida e VMs Blindadas</h3>
+                        <h3>Malha protegida e VMs blindadas</h3>
 <HR />
-                        <p>Como um provedor de serviços em nuvem ou um administrador de nuvem privada corporativa, você pode usar uma malha protegida para fornecer um ambiente mais seguro para as VMs. Uma malha protegida consiste em um Serviço de Guardião de Host \(HGS\) - em geral, um cluster de três nós, além de um ou mais hosts protegidos e um conjunto de máquinas virtuais protegidas.</p>
+                        <p>Como um provedor de serviços em nuvem ou um administrador de nuvem privada corporativa, você pode usar uma malha protegida para fornecer um ambiente mais seguro para as VMs. Uma malha protegida consiste em um serviço de guardião de Host \(HGS\) -normalmente, um cluster de três nós - mais de um ou mais hosts protegidos e um conjunto de VMs blindadas.</p>
                      </div>
                   </div>
               </div>
@@ -99,7 +99,7 @@ Virtualização no Windows Server é uma das tecnologias fundamentais necessári
                         </div>
                     </div>
                     <div class="cardText">
-                       <h3>Windows 10 para a empresa: maneiras de usar dispositivos para trabalhar</h3>
+                       <h3>Windows 10 para a empresa: Maneiras de usar dispositivos para trabalho</h3>
 <HR />
                        <p>A tecnologia do Hyper-V fornece recursos de computação por meio da virtualização de hardware. Hyper-V cria uma versão de software de um computador, chamada de máquina virtual, que você usa para executar um sistema operacional e aplicativos. Você pode executar várias máquinas virtuais ao mesmo tempo e pode criá-las e excluí-las conforme necessário.</p>
                      </div>
@@ -119,7 +119,7 @@ Virtualização no Windows Server é uma das tecnologias fundamentais necessári
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Comutador Virtual do Hyper-V</h3>
+                        <h3>Comutador Virtual Hyper-V</h3>
 <HR />
                         <p>O comutador Virtual do Hyper-V é um baseada em software camada 2 comutador de rede Ethernet está incluído em todas as versões do Hyper-V.</p>
 <HR />
@@ -138,7 +138,7 @@ Virtualização no Windows Server é uma das tecnologias fundamentais necessári
 
 ---
 
-### Relacionado
+### <a name="related"></a>Relacionados
 
 - O Hyper-V exige hardware específico para criar o ambiente de virtualização. Para obter mais detalhes, consulte [Requisitos do sistema para o Hyper-V no Windows Server 2016](./hyper-v/system-requirements-for-hyper-v-on-windows.md). 
 

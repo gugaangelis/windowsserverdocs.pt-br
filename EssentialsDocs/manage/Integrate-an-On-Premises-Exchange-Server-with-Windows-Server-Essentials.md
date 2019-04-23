@@ -1,5 +1,5 @@
 ---
-title: Integrar um servidor do Exchange no local com o Windows Server Essentials
+title: Integrar um Exchange Server local com o Windows Server Essentials [fwlink_WSE_OPE]
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -12,454 +12,443 @@ ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c2020e08b94800a9750f095a2f772afb14ba5f0b
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 59478c4c6c04c5b4912b32eff895df6a3cd2f8fa
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59839177"
 ---
-# <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>Integrar um servidor do Exchange no local com o Windows Server Essentials
+# <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>Integrar um Exchange Server local com o Windows Server Essentials [fwlink_WSE_OPE]
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Este guia fornece informações e instruções básicas para ajudá-lo a configurar e integrar um servidor local que esteja executando o Exchange Server com um servidor que está executando o Windows Server Essentials.  
+Este guia fornece informações e instruções básicas para ajudá-lo a configurar e integrar um servidor local que executa o Exchange Server com um servidor que executa o Windows Server Essentials.  
   
- Você deve ler este guia antes de tentar implantar um servidor local que esteja executando o Exchange Server em uma rede do Windows Server Essentials.  
+ Você deve ler este guia antes de tentar implantar um servidor local que executa o Exchange Server em uma rede do Windows Server Essentials.  
   
 > [!NOTE]
->  Exchange Server 2010 não dá suporte a instalação em computadores que executam o Windows Server 2012.  
+>  O Exchange Server 2010 não oferece suporte à instalação em computadores que executam o Windows Server 2012.  
   
 ## <a name="prerequisites"></a>Pré-requisitos  
- Antes de instalar o servidor do Exchange em uma rede do Windows Server Essentials, certifique-se de que você concluir as tarefas descritas nesta seção.  
+ Antes de instalar o Exchange Server em uma rede do Windows Server Essentials, certifique-se de concluir as tarefas descritas nesta seção.  
   
 -   [Configurar um servidor que está executando o Windows Server Essentials](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_SetUpSBS8)  
   
--   [Preparar um segundo servidor no qual deseja instalar o servidor do Exchange](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_SecondServer)  
+-   [Preparar um segundo servidor no qual instalar o Exchange Server](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_SecondServer)  
   
--   [Configurar o nome de domínio da Internet](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_DomainNames)  
+-   [Configure seu nome de domínio de Internet](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_DomainNames)  
   
-###  <a name="BKMK_SetUpSBS8"></a>Configurar um servidor que está executando o Windows Server Essentials  
- Você deve já configurou um servidor que está executando o Windows Server Essentials. Esse será o controlador de domínio para o servidor que está executando o Exchange Server. Para obter informações sobre como configurar o Windows Server Essentials, consulte [instalar o Windows Server Essentials](../install/Install-Windows-Server-Essentials.md).  
+###  <a name="BKMK_SetUpSBS8"></a> Configurar um servidor que está executando o Windows Server Essentials  
+ Você já deve ter configurado um servidor que está executando o Windows Server Essentials. Ele será o controlador de domínio do servidor que executa o Exchange Server. Para obter informações sobre como configurar o Windows Server Essentials, consulte [Install Windows Server Essentials](../install/Install-Windows-Server-Essentials.md).  
   
-###  <a name="BKMK_SecondServer"></a>Preparar um segundo servidor no qual deseja instalar o servidor do Exchange  
- Você deve instalar o servidor do Exchange em um segundo servidor que está executando uma versão do sistema operacional Windows Server que oficialmente dá suporte à execução do Exchange Server 2010 ou o Exchange Server 2013. Em seguida, você deve associar o segundo servidor no domínio do Windows Server Essentials.  
+###  <a name="BKMK_SecondServer"></a> Preparar um segundo servidor no qual instalar o Exchange Server  
+ Você deve instalar o Exchange Server em outro servidor que esteja executando uma versão do sistema operacional Windows Server com suporte oficial à execução do Exchange Server 2010 ou do Exchange Server 2013. Em seguida, você deve associar o segundo servidor ao domínio do Windows Server Essentials.  
   
- Para obter informações sobre como ingressar em um segundo servidor no domínio do Windows Server Essentials, consulte ingressar em um segundo servidor de rede em [conectado](../use/Get-Connected-in-Windows-Server-Essentials.md).  
+ Para obter informações sobre como adicionar um segundo servidor ao domínio do Windows Server Essentials, consulte Adicionar um segundo servidor à rede no [conecte-se](../use/Get-Connected-in-Windows-Server-Essentials.md).  
   
 > [!NOTE]
->  Microsoft não oferece suporte à instalação do servidor do Exchange em um servidor que está executando o Windows Server Essentials.  
+>  A Microsoft não oferece suporte à instalação do Exchange Server em um servidor que executa o Windows Server Essentials.  
   
-###  <a name="BKMK_DomainNames"></a>Configurar o nome de domínio da Internet  
- Para integrar um servidor local que esteja executando o Exchange Server com o Windows Server Essentials, você deve ter registrado um nome de domínio Internet válido para sua empresa (como *contoso.com*). Você também deve trabalhar com seu provedor de nomes de domínio para criar os registros de recurso DNS Exchange Server requer.  
+###  <a name="BKMK_DomainNames"></a> Configure seu nome de domínio de Internet  
+ Para integrar o servidor local que executa o Exchange Server ao Windows Server Essentials, é necessário registrar um nome de domínio da Internet válido para sua empresa (como *contoso.com*). Você também deve trabalhar com o provedor de nomes de domínio para criar os registros de recursos de DNS exigidos pelo Exchange Server.  
   
- Por exemplo, se o nome de domínio da Internet sua empresa é contoso.com e quiser usar o nome de domínio totalmente qualificado (FQDN) do *mail.contoso.com* para fazer referência a seu servidor de local que está executando o Exchange Server, trabalhar com seu provedor de nomes de domínio para criar os registros de recurso DNS na tabela a seguir.  
+ Por exemplo, caso o nome de domínio da Internet de sua empresa seja contoso.com e você deseje usar um FQDN (nome de domínio totalmente qualificado) *mail.contoso.com* para fazer referência ao servidor local executando o Exchange Server, trabalhe com o provedor de nomes de domínio para criar os registros de recursos de DNS na tabela a seguir.  
   
-|Nome de registro de recurso|Tipo de registro|Configuração do registro|Descrição|  
+|Nome do registro de recurso|Tipo de registro|Configuração de registro|Descrição|  
 |--------------------------|-----------------|--------------------|-----------------|  
-|mail|host (A)|Endereço =*endereço IP público atribuído por seu ISP*|Exchange Server receberá emails endereçados para mail.contoso.com.<br /><br /> Você pode usar um nome diferente em seu próprio seleção.|  
-|MX|servidor de mensagens (MX)|Nome do host = @<br /><br /> Address=mail.contoso.com<br /><br /> Preferência = 0|Fornece o roteamento de mensagens de email para email@contoso.com para chegar ao seu servidor de local que está executando o Exchange Server.|  
-|SPF|texto (TXT)|v = spf1 um mx ~ todos|Registro de recurso que ajuda a impedir emails enviados de seu servidor como sendo identificadas como spam.|  
-|Autodiscover._tcp|serviços (SRV)|Serviço: _autodiscover<br /><br /> Protocolo: TCP<br /><br /> Prioridade: 0<br /><br /> Peso: 0<br /><br /> Porta: 443<br /><br /> Host de destino: mail.contoso.com|Permite que o Microsoft Office Outlook e dispositivos móveis detectar automaticamente o servidor local que esteja executando o Exchange Server.<br /><br /> **Observação:** você também pode configurar um registro de recurso de host (A) descoberta automática e aponte o registro para o endereço IP público do seu servidor local que esteja executando o Exchange Server. No entanto, se você implementar essa opção, você deve também fornecer certificado SSL do assunto alternativos nome (SAN) que dá suporte a mail.contoso.com e autodiscover.contoso.com nomes de domínio.|  
+|email|host (A)|Endereço=*endereço IP público atribuído pelo ISP*|O Exchange Server receberá o email enviado para mail.contoso.com.<br /><br /> Você pode usar um nome diferente, conforme desejar.|  
+|MX|trocador de emails (MX)|Nome do host=@<br /><br /> Endereço=mail.contoso.com<br /><br /> Preferência=0|Fornece o roteamento de mensagens de email para email@contoso.com para chegar ao seu servidor local que executa o Exchange Server.|  
+|SPF|texto (TXT)|v=spf1 a mx ~all|Registro de recurso que ajuda a evitar que os emails enviados do servidor sejam identificados como spam.|  
+|autodiscover._tcp|serviço (SRV)|Serviço: _autodiscover<br /><br /> Protocolo: _tcp<br /><br /> Prioridade: 0<br /><br /> Peso: 0<br /><br /> Porta: 443<br /><br /> Host de destino: mail.contoso.com|Permite que o Microsoft Office Outlook e os dispositivos móveis descubram automaticamente o servidor local executando o Exchange Server.<br /><br /> **Observação:** Você também pode configurar um registro de recurso de host (A) de descoberta automática e apontar o registro para o endereço IP público do servidor local que executa o Exchange Server. Porém, caso implementa essa opção, você também deverá fornecer o certificado SSL SAN (nome alternativo da entidade) que ofereça suporte aos nomes de domínio mail.contoso.com e a autodiscover.contoso.com.|  
   
 > [!NOTE]
->  -   Substitua as instâncias de *contoso.com* neste exemplo com o nome de domínio da Internet que você registrou.  
+>  -   Substitua as instâncias de *contoso.com* neste exemplo pelo nome de domínio da Internet registrado.  
   
- Você deve escolher um FQDN diferente do servidor local que esteja executando o servidor do Exchange que o FQDN que você está usando para o servidor que está executando o Windows Server Essentials. Por exemplo, você pode optar por usar *remote.contoso.com* como o FQDN computadores usam para acessar o servidor que executa o Windows Server Essentials da Internet. Você pode usar *mail.contoso.com* como o FQDN que é usado para rotear email ao seu servidor local que esteja executando o Exchange Server.  
+ Você deve selecionar um FQDN diferente para o servidor local que executa o Exchange Server em relação ao FQDN usado para o servidor que executa o Windows Server Essentials. Por exemplo, é possível usar *remote.contoso.com* como o FQDN utilizado pelos computadores para acessar o servidor que executa o Windows Server Essentials pela Internet. Você pode usar *mail.contoso.com* como o FQDN utilizado para encaminhar emails para o servidor local que executa o Exchange Server.  
   
 ## <a name="install-exchange-server"></a>Instalar o Exchange Server  
- O recurso de integração do Exchange Server no Windows Server Essentials compatível com as seguintes versões do Exchange Server:  
+ O recurso de integração com Exchange Server no Windows Server Essentials oferece suporte às seguintes versões do Exchange Server:  
   
 -   Exchange Server 2013  
   
 -   Exchange Server 2010 com Service Pack 1 (SP1)  
   
- Antes de instalar o servidor do Exchange no segundo servidor, primeiro você deve adicionar a conta de administrador atual para o **administradores corporativos** grupo.  
+ Antes de instalar o Exchange Server no segundo servidor, primeiro é necessário adicionar a conta do administrador local ao grupo **Enterprise Admins** .  
   
-#### <a name="to-add-the-current-administrator-account-to-the-enterprise-admins-group"></a>Para adicionar a conta de administrador atual ao grupo Administradores corporativos  
+#### <a name="to-add-the-current-administrator-account-to-the-enterprise-admins-group"></a>Para adicionar a conta do administrador atual ao grupo Administradores de Empresa  
   
 1.  Faça logon no Windows Server Essentials como administrador.  
   
 2.  Execute o Windows PowerShell como administrador.  
   
-3.  No prompt de comando do Windows PowerShell, digite **˜Enterprise ADGroupMember adicionar administradores $env: nome de usuário**, e pressione Enter.  
+3.  No prompt de comando do Windows PowerShell, digite **Add-ADGroupMember "Enterprise Admins" $env: nome de usuário**, e pressione Enter.  
   
-#### <a name="to-install-exchange-server"></a>Para instalar o servidor do Exchange  
+#### <a name="to-install-exchange-server"></a>Para instalar o Exchange Server  
   
-1.  Faça logon para o segundo servidor como administrador.  
+1.  Faça logon no segundo servidor como administrador.  
   
-2.  Abra seu navegador da Internet e, em seguida, navegue até o [Assistente de implantação do Exchange Server](https://go.microsoft.com/fwlink/p/?LinkID=249163) site.  
+2.  Abra o navegador da Internet e navegue até o site do [Assistente de Implantação do Exchange Server](https://go.microsoft.com/fwlink/p/?LinkID=249163) .  
   
-3.  Clique em **local apenas**.  
+3.  Clique em **On-Premises Only**.  
   
-4.  Clique na opção de instalação de novo para a versão do servidor do Exchange que você vai instalar.  
-  
-    > [!NOTE]
-    >  Se você estiver migrando em uma instalação do Windows Small Business Server, você deve selecionar a opção de atualização adequada que abrange as etapas de migração.  
-  
-5.  Na próxima página, aceite as configurações padrão e, em seguida, clique em **próxima**.  
+4.  Clique na opção de nova instalação da versão do Exchange Server que será instalada.  
   
     > [!NOTE]
-    >  Se você pretende usar pastas públicas na nova instalação do Exchange Server, alterar essa configuração para **Sim**.  
+    >  Caso esteja migrando de uma instalação do Windows Small Business Server, você deverá selecionar a opção de atualização correta que abrange as etapas de migração.  
   
-6.  Siga as instruções passo a passo da lista de verificação para implantar o Exchange Server.  
+5.  Na página seguinte, aceite as configurações padrão e clique em **Avançar**.  
   
-     O Assistente de implantação do servidor do Exchange também permite que você:  
+    > [!NOTE]
+    >  Caso planeje usar pastas públicas na nova instalação do Exchange Server, altere a configuração para **Sim**.  
   
-    -   Imprima uma cópia da lista de verificação.  
+6.  Siga as instruções passo a passo na lista de verificação para implantar o Exchange Server.  
   
-    -   Envie uma cópia da lista de verificação para um destinatário do email.  
+     O Assistente de Implantação do Exchange Server também permite:  
   
-    -   Baixe a lista de verificação como um arquivo PDF.  
+    -   Imprimir uma cópia da lista de verificação.  
+  
+    -   Enviar uma cópia da lista de verificação para um destinatário de email.  
+  
+    -   Baixar a lista de verificação como um arquivo PDF.  
   
 > [!NOTE]
->  -   Você deve optar por instalar as ferramentas de gerenciamento no servidor que está executando o Exchange Server. As ferramentas de gerenciamento são exigidas pelo recurso de integração com o Exchange Server no Windows Server Essentials.  
-> -   Se você precisa configurar diretórios virtuais, recomendamos que você defina também o **InternalUrl** propriedade para ser a mesma URL como o **ExternalUrl** propriedade para cada diretório virtual. Para obter mais informações, consulte [gerenciamento de cliente acesso Virtual diretórios de servidor](https://go.microsoft.com/fwlink/p/?LinkId=251058) no site de Ajuda online do Exchange Server 2010.  
-> -   Se você quiser acessar o Outlook Web Access (OWA) de dentro do site de acesso via Web remoto no Windows Server Essentials, você deve definir a propriedade URL externa para OWA.  
+>  -   Você deve sempre optar pela instalação das Ferramentas de Gerenciamento no servidor que esteja executando o Exchange Server. Elas são exigidas pelo recurso de integração do Exchange Server no Windows Server Essentials.  
+> -   Caso precise configurar diretórios virtuais, recomendamos configurar a propriedade **InternalUrl** de modo que tenha a mesma URL da propriedade **ExternalUrl** para cada diretório virtual. Para obter mais informações, consulte o artigo sobre [gerenciamento de diretórios virtuais do servidor de acesso ao cliente](https://go.microsoft.com/fwlink/p/?LinkId=251058) no site da ajuda online do Exchange Server 2010.  
+> -   Caso queira acessar o OWA (Outlook Web Access) a partir do site de Acesso via Web Remoto no Windows Server Essentials, você deverá definir a propriedade de URL externa para o OWA.  
   
- Se você estiver instalando o Exchange Server 2010 em uma instalação limpa, você também pode usar os scripts a seguir para configurar o servidor do Exchange.  
+ Caso esteja realizando uma instalação limpa do Exchange Server 2010, você também poderá usar os scripts a seguir para configurar o Exchange Server.  
   
-#### <a name="to-use-scripts-to-set-up-exchange-server"></a>Usar scripts para configurar o servidor do Exchange  
+#### <a name="to-use-scripts-to-set-up-exchange-server"></a>Para usar scripts de configuração do Exchange Server  
   
-1.  Abra o bloco de notas e cole este script em um novo arquivo:  
+1.  Abra o Bloco de Notas e cole o seguinte script em um arquivo novo:  
   
-     `Import-Module ServerManager`  
-  
-     `Add-WindowsFeature NET-Framework,RSAT-ADDS,Web-Server,Web-Basic-Auth,Web-Windows-Auth,Web-Metabase,Web-Net-Ext,Web-Lgcy-Mgmt-Console,WAS-Process-Model,RSAT-Web-Server,Web-ISAPI-Ext,Web-Digest-Auth,Web-Dyn-Compression,NET-HTTP-Activation,Web-Asp-Net,Web-Client-Auth,Web-Dir-Browsing,Web-Http-Errors,Web-Http-Logging,Web-Http-Redirect,Web-Http-Tracing,Web-ISAPI-Filter,Web-Request-Monitor,Web-Static-Content,Web-WMI,RPC-Over-HTTP-Proxy  �Restart`  
+```powershell
+Import-Module ServerManager
+
+Add-WindowsFeature NET-Framework,RSAT-ADDS,Web-Server,Web-Basic-Auth,Web-Windows-Auth,Web-Metabase,Web-Net-Ext,Web-Lgcy-Mgmt-Console,WAS-Process-Model,RSAT-Web-Server,Web-ISAPI-Ext,Web-Digest-Auth,Web-Dyn-Compression,NET-HTTP-Activation,Web-Asp-Net,Web-Client-Auth,Web-Dir-Browsing,Web-Http-Errors,Web-Http-Logging,Web-Http-Redirect,Web-Http-Tracing,Web-ISAPI-Filter,Web-Request-Monitor,Web-Static-Content,Web-WMI,RPC-Over-HTTP-Proxy  Restart
+```
   
 2.  Salve o arquivo como **InstallDependencies.ps1**.  
   
-3.  Copie o certificado SSL do Exchange para um local no servidor.  
+3.  Copie o certificado SSL do Exchange em um local no servidor.  
   
-4.  Abra um novo arquivo de bloco de notas e copie o seguinte texto para o arquivo:  
-  
-     `param (`  
-  
-     `[string]`  
-  
-     `[Parameter(Mandatory=$true, HelpMessage = "The path to your Certificate file, must be a *.pfx format")]`  
-  
-     `$CertPath = "c:\certificates\ExchangeCertificate.pfx",`  
-  
-     `[Security.SecureString]`  
-  
-     `[Parameter(Mandatory=$true, HelpMessage = "The password of your cert")]`  
-  
-     `$CertPassword = $null,`  
-  
-     `[string]`  
-  
-     `[Parameter(Mandatory=$true, HelpMessage = "Domain Name, eg. contoso.com")]`  
-  
-     `$DomainName = "contoso.com",`  
-  
-     `[string]`  
-  
-     `[Parameter(Mandatory=$true, HelpMessage = "Server IP Address, eg. 192.168.0.1")]`  
-  
-     `$ServerIpAddress = "192.168.0.1",`  
-  
-     `[string]`  
-  
-     `[Parameter(Mandatory=$true, HelpMessage = "Internal Ip Range, eg. 192.168.0.0-192.168.0.255")]`  
-  
-     `$InternalIpRange = "192.168.0.0-192.168.0.255"`  
-  
-     `)`  
-  
-     `#Import Exchange Certificate, and Enable it for POP IIS IMAP SMTP services.`  
-  
-     `Import-ExchangeCertificate  �FileData ([Byte[]]$(Get-content -Path $CertPath  �Encoding byte  �ReadCount 0)) -Password:$CertPassword -Force | Enable-ExchangeCertificate -Services 'POP, IIS, IMAP, SMTP' -Force`  
-  
-     `#New AcceptedDomain and set it to default`  
-  
-     `New-AcceptedDomain  �Name "official name"  �DomainName $domainname`  
-  
-     `Set-AcceptedDomain  �Identity "official name"  �MakeDefault $true`  
-  
-     `#New EmailAddress Policy`  
-  
-     `$address = "%m@" + $DomainName`  
-  
-     `New-EmailAddressPolicy -Name "Windows Server Essentials Email Address Policy" -IncludedRecipients AllRecipients -EnabledPrimarySMTPAddressTemplate $address`  
-  
-     `#Set owa and ecp VirtualDirectory ExternalUrl`  
-  
-     `$hostname = "mail." + $DomainName`  
-  
-     `$owa = "https://" + $hostname + "/owa"`  
-  
-     `$ecp = "https://" + $hostname + "/ecp"`  
-  
-     `$activesync = "https://" + $hostname + "/Microsoft-Server-ActiveSync"`  
-  
-     `$oab = "https://" + $hostname + "/OAB"`  
-  
-     `$ews = "https://" + $hostname + "/EWS/Exchange.asmx"`  
-  
-     `Get-OwaVirtualDirectory | Set-OwaVirtualDirectory  �ExternalUrl $owa  �InternalUrl $owa`  
-  
-     `Get-EcpVirtualDirectory | Set-EcpVirtualDirectory  �ExternalUrl $ecp  �InternalUrl $ecp`  
-  
-     `Get-ActiveSyncVirtualDirectory | Set-ActiveSyncVirtualDirectory -ExternalUrl $activesync  �InternalUrl $activesync`  
-  
-     `Get-OABVirtualDirectory | Set-OABVirtualDirectory -ExternalUrl $oab -InternalUrl $oab -RequireSSL:$true`  
-  
-     `Get-WebServicesVirtualDirectory | Set-WebServicesVirtualDirectory -ExternalUrl $ews -InternalUrl $ews -BasicAuthentication:$True -Force`  
-  
-     `#Enable outlook Anywhere`  
-  
-     `Enable-OutlookAnywhere  �ClientAuthenticationMethod:Basic  �ExternalHostname:$hostname  �SSLOffloading:$false`  
-  
-     `#new receive/send connector`  
-  
-     `$machinename = get-content env:computername`  
-  
-     `$bindingIpaddress = $ServerIpAddress + ":25"`  
-  
-     `$RecevieConnectorName = $machinename + "\Default " + $machinename`  
-  
-     `Set-ReceiveConnector $RecevieConnectorName -RemoteIPRanges $InternalIpRange`  
-  
-     `New-ReceiveConnector -Name "WSE Internet Receive Connector" -Usage "Internet" -Bindings $bindingIpaddress -Fqdn $hostname -Enabled $true -Server $machinename -AuthMechanism Tls,BasicAuth,BasicAuthRequireTLS,Integrated`  
-  
-     `New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressSpaces 'SMTP:*;1' -IsScopedConnector $false -DNSRoutingEnabled $true -UseExternalDNSServersEnabled $true -SourceTransportServers $machinename`  
-  
+4.  Abra um novo arquivo do Bloco de Notas e copie o seguinte texto nele:  
+
+```powershell
+param (
+    [string]
+    [Parameter(Mandatory=$true, HelpMessage = "The path to your Certificate file, must be a *.pfx format")]
+    $CertPath = "c:\certificates\ExchangeCertificate.pfx",
+    [Security.SecureString]
+    [Parameter(Mandatory=$true, HelpMessage = "The password of your cert")]
+    $CertPassword = $null,
+    [string]
+    [Parameter(Mandatory=$true, HelpMessage = "Domain Name, eg. contoso.com")]
+    $DomainName = "contoso.com",
+    [string]
+    [Parameter(Mandatory=$true, HelpMessage = "Server IP Address, eg. 192.168.0.1")]
+    $ServerIpAddress = "192.168.0.1",
+    [string]
+    [Parameter(Mandatory=$true, HelpMessage = "Internal Ip Range, eg. 192.168.0.0-192.168.0.255")]
+    $InternalIpRange = "192.168.0.0-192.168.0.255"
+)
+
+#Import Exchange Certificate, and Enable it for POP IIS IMAP SMTP services.
+
+Import-ExchangeCertificate  -FileData ([Byte[]]$(Get-content -Path $CertPath  -Encoding byte  -ReadCount 0)) -Password:$CertPassword -Force | Enable-ExchangeCertificate -Services 'POP, IIS, IMAP, SMTP' -Force
+
+#New AcceptedDomain and set it to default
+
+New-AcceptedDomain  -Name "official name"  -DomainName $domainname
+
+Set-AcceptedDomain  -Identity "official name"  -MakeDefault $true
+
+#New EmailAddress Policy
+
+$address = "%m@" + $DomainName
+
+New-EmailAddressPolicy -Name "Windows Server Essentials Email Address Policy" -IncludedRecipients AllRecipients -EnabledPrimarySMTPAddressTemplate $address
+
+#Set owa and ecp VirtualDirectory ExternalUrl
+
+$hostname = "mail." + $DomainName
+
+$owa = "https://" + $hostname + "/owa"
+
+$ecp = "https://" + $hostname + "/ecp"
+
+$activesync = "https://" + $hostname + "/Microsoft-Server-ActiveSync"
+
+$oab = "https://" + $hostname + "/OAB"
+
+$ews = "https://" + $hostname + "/EWS/Exchange.asmx"
+
+Get-OwaVirtualDirectory | Set-OwaVirtualDirectory  -ExternalUrl $owa  -InternalUrl $owa
+
+Get-EcpVirtualDirectory | Set-EcpVirtualDirectory  -ExternalUrl $ecp  -InternalUrl $ecp
+
+Get-ActiveSyncVirtualDirectory | Set-ActiveSyncVirtualDirectory -ExternalUrl $activesync  -InternalUrl $activesync
+
+Get-OABVirtualDirectory | Set-OABVirtualDirectory -ExternalUrl $oab -InternalUrl $oab -RequireSSL:$true
+
+Get-WebServicesVirtualDirectory | Set-WebServicesVirtualDirectory -ExternalUrl $ews -InternalUrl $ews -BasicAuthentication:$True -Force
+
+#Enable outlook Anywhere
+
+Enable-OutlookAnywhere  -ClientAuthenticationMethod:Basic  -ExternalHostname:$hostname  -SSLOffloading:$false
+
+#new receive/send connector
+
+$machinename = get-content env:computername
+
+$bindingIpaddress = $ServerIpAddress + ":25"
+
+$ReceiveConnectorName = $machinename + "\Default " + $machinename
+
+Set-ReceiveConnector $ReceiveConnectorName -RemoteIPRanges $InternalIpRange
+
+New-ReceiveConnector -Name "WSE Internet Receive Connector" -Usage "Internet" -Bindings $bindingIpaddress -Fqdn $hostname -Enabled $true -Server $machinename -AuthMechanism Tls,BasicAuth,BasicAuthRequireTLS,Integrated
+
+New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressSpaces 'SMTP:*;1' -IsScopedConnector $false -DNSRoutingEnabled $true -UseExternalDNSServersEnabled $true -SourceTransportServers $machinename
+```
+
 5.  Defina os parâmetros no início do script para refletir seu ambiente de rede.  
   
 6.  Salve o arquivo como **ConfigureExchange.ps1**.  
   
 7.  Execute o Windows PowerShell como administrador.  
   
-8.  No prompt de comando do Windows PowerShell, digite **Set-ExecutionPolicy RemoteSigned**, e pressione Enter.  
+8.  No prompt de comando do Windows PowerShell, digite **Set-ExecutionPolicy RemoteSigned**e pressione Enter.  
   
 9. Execute o script **InstallDependencies.ps1**.  
   
-10. Reinicie o servidor e executar o Windows PowerShell como administrador.  
+10. Reinicie o servidor e execute o Windows PowerShell como administrador.  
   
-11. No prompt de comando do Windows PowerShell, execute o script a seguir:  
+11. No prompt de comando do Windows PowerShell, execute o seguinte script:  
   
      `E:\setup.com /mode:install /roles:mb,ht,ca /OrganizationName:"First Organization"`  
   
     > [!NOTE]
-    >  Certifique-se de digitar o caminho correto para o programa de instalação do servidor do Exchange.  
+    >  Certifique-se de digitar o caminho correto no programa de instalação do Exchange Server.  
   
-12. Quando a instalação do Exchange Server for concluída, abra o Shell de gerenciamento do Exchange como um administrador.  
+12. Quando a instalação do Exchange Server for concluída, abra o Shell de Gerenciamento do Exchange como administrador.  
   
-13. No prompt de comando de Shell de gerenciamento do Exchange, digite **Set-ExecutionPolicy RemoteSigned**, e pressione Enter.  
+13. No prompt de comando do Shell de Gerenciamento do Exchange, digite **Set-ExecutionPolicy RemoteSigned**e pressione Enter.  
   
 14. Execute o script **ConfigureExchange.ps1**.  
   
 15. Reinicie o servidor.  
   
 > [!NOTE]
->  Se você decidir usar um certificado SSL publicamente confiável em vez de um certificado emitido por conta própria, você pode seguir as instruções no guia de instalação para criar uma solicitação de certificado e enviá-lo para sua autoridade de certificação selecionado. Você também pode usar um cmdlet do PowerShell do Exchange para criar uma solicitação de certificado. Segue um exemplo.  
+>  Se você decidir usar um certificado SSL confiável publicamente, em vez de um certificado emitido por conta própria, você pode seguir as instruções no guia de instalação para criar uma solicitação de certificado e enviá-lo para a autoridade de certificação selecionada. Você também pode usar um cmdlet do PowerShell do Exchange para criar uma solicitação de certificado. Veja um exemplo.  
 >   
 >  `New-ExchangeCertificate -GenerateRequest -SubjectName "C=US, S=Washington, L=Redmond, O=contoso, OU=contoso, CN=mail.contoso.com" -DomainName mail.contoso.com -PrivateKeyExportable $true | Set-Content -path "c:\Docs\MyCertRequest.req"`  
 >   
->  Personalize os parâmetros de script para refletir seu ambiente de rede.  
+>  Personalize os parâmetros do script de modo que reflitam seu ambiente de rede.  
   
-## <a name="post-installation-tasks"></a>Tarefas pós-instalação  
- Esta seção descreve as tarefas de configuração de servidor, que talvez seja necessário para concluir na fase de pós-instalação que contém informações específicas ao configurar um servidor local que esteja executando o Exchange Server em uma rede do Windows Server Essentials.  
+## <a name="post-installation-tasks"></a>Tarefas de pós-instalação  
+ Esta seção descreve as tarefas de configuração do servidor que podem ser necessárias na fase pós-instalação que contém informações específicas de configuração de um servidor local que executa o Exchange Server em uma rede do Windows Server Essentials.  
   
-### <a name="add-the-public-email-domain-and-configure-the-email-address-policies"></a>Adicione o domínio de email pública e configurar as políticas de endereço de email  
-  
-> [!NOTE]
->  Essa é uma tarefa necessária se você estiver executando uma instalação limpa. Se você estiver migrando do Windows Small Business Server, ignore esta etapa.  
-  
- Você deve especificar seu domínio de email para ser o domínio aceito padrão e, em seguida, configurar a política de endereço de email.  
-  
-##### <a name="to-add-your-email-domain-as-the-default-accepted-domain"></a>Para adicionar seu domínio de email como o padrão do domínio aceito  
-  
-1.  Siga as instruções no artigo do Exchange Server [criar um domínio aceito](https://go.microsoft.com/fwlink/p/?LinkId=249174) para adicionar um domínio aceito.  
-  
-2.  Logon para o segundo servidor como administrador, abra o Console de gerenciamento do Exchange e, em seguida, navegue até o **Hub de transporte** guia a **configuração da organização**.  
-  
-3.  No painel de trabalho do Console de gerenciamento do Exchange, clique com botão direito do novo domínio aceito e clique em **definir como padrão**.  
-  
-4.  Siga as instruções no artigo do Exchange Server [criar uma política de endereço de Email](https://go.microsoft.com/fwlink/p/?LinkId=249179) para criar uma nova política de endereço de email. Você pode aceitar todos os valores padrão, exceto o endereço de email. Para o endereço de email, especifique seu domínio de email pública.  
-  
-### <a name="create-smtp-send-and-receive-connectors"></a>Criar SMTP enviar e receber conectores  
+### <a name="add-the-public-email-domain-and-configure-the-email-address-policies"></a>Adicionar o domínio de email público e configurar as políticas de endereço de email  
   
 > [!NOTE]
->  Essa é uma tarefa necessária.  
+>  Esta é uma tarefa obrigatória em uma instalação limpa. Ignore-a caso esteja migrando do Windows Small Business Server.  
   
- Você deve configurar um conector de envio SMTP e um conector de recebimento SMTP para transmissão de entrada/saída de mensagens de email.  
+ Você deve especificar seu domínio de email para que seja o domínio aceito como padrão e configurar a política de endereço de email.  
   
- Para criar um conector de envio SMTP, siga as instruções no artigo do Exchange Server [criar um conector de envio SMTP](https://technet.microsoft.com/library/aa997285.aspx).  
+##### <a name="to-add-your-email-domain-as-the-default-accepted-domain"></a>Para adicionar seu domínio de email como domínio aceito por padrão  
   
- Para criar um conector de recebimento SMTP, siga as instruções no artigo do Exchange Server [criar um conector de receber SMTP](https://technet.microsoft.com/library/bb125159.aspx).  
+1.  Siga as instruções no artigo [Criar um Domínio Aceito](https://go.microsoft.com/fwlink/p/?LinkId=249174) do Exchange Server para adicionar um domínio aceito.  
   
- Como uma opção, você pode se referir ao script anteriormente contidas neste documento para criar a enviar e receber conectores usando os cmdlets do PowerShell do Exchange.  
+2.  Faça logon no segundo servidor como administrador, abra o Console de Gerenciamento do Exchange e navegue até a guia **Transporte de Hub** da **Configuração da Organização**.  
+  
+3.  No painel de trabalho do Console de Gerenciamento do Exchange, clique com o botão direito no novo domínio aceito e clique em **Definir como Padrão**.  
+  
+4.  Siga as instruções no artigo [Criar uma Política de Endereço de Email](https://go.microsoft.com/fwlink/p/?LinkId=249179) do Exchange Server para criar uma nova política de endereço de email. Você pode aceitar todos os valores padrão, exceto o endereço de email. Para endereço de email, especifique o domínio de email público.  
+  
+### <a name="create-smtp-send-and-receive-connectors"></a>Crie conectores de Envio e Recebimento de SMTP  
+  
+> [!NOTE]
+>  Esta é uma tarefa obrigatória.  
+  
+ Você deve configurar um conector de envio SMTP e um conector de recebimento SMTP para transmissão de saída/entrada de mensagens de email.  
+  
+ Para criar um conector de envio SMTP, siga as instruções no artigo [Criar um Conector de Envio SMTP](https://technet.microsoft.com/library/aa997285.aspx)do Exchange Server.  
+  
+ Para criar um conector de recebimento SMTP, siga as instruções no artigo do Exchange Server sobre [criação de um conector de recebimento SMTP](https://technet.microsoft.com/library/bb125159.aspx).  
+  
+ Como opção, você pode consultar o script mostrado anteriormente neste documento para criar os conectores de envio e recebimento usando cmdlets de Powershell do Exchange.  
   
 ### <a name="configure-the-network-router"></a>Configurar o roteador de rede  
   
 > [!NOTE]
->  Essa é uma tarefa necessária se você estiver executando uma instalação limpa. Se você estiver migrando do Windows Small Business Server, consulte [migrar dados do servidor para Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md) para obter instruções sobre como configurar a rede.  
+>  Esta é uma tarefa obrigatória em uma instalação limpa. Se você estiver migrando do Windows Small Business Server, consulte [Migrate Server Data to Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md) para obter instruções sobre como configurar a rede.  
   
- No mínimo, você deve configurar as seguintes configurações de porta no roteador:  
+ Você deve definir no mínimo as seguintes configurações de porta no roteador:  
   
-|Porta do roteador|Destino IP|Porta de destino|Observação|  
+|Porta do roteador|IP de destino|Porta de destino|Observação|  
 |-----------------|--------------------|----------------------|----------|  
-|25 (SMTP)|IP interno do servidor local que esteja executando o Exchange Server.|25||  
-|80 (HTTP)|IP interno do servidor que está executando o Windows Server Essentials|80||  
-|443 (HTTPS)|IP interno do servidor que está executando o Windows Server Essentials|443||  
+|25 (SMTP)|IP interno do servidor local que executa o Exchange Server.|25||  
+|80 (HTTP)|IP interno do servidor que executa o Windows Server Essentials|80||  
+|443 (HTTPS)|IP interno do servidor que executa o Windows Server Essentials|443||  
   
- Se você der suporte a POP3 ou IMAP mensagens protocolos em sua rede, você também deve configurar forwardings de porta para esses protocolos. Para obter informações relacionadas, consulte a seção **servidores de acesso do cliente** no tópico [referência de porta de rede do Exchange](https://go.microsoft.com/fwlink/p/?LinkId=250773) na biblioteca do TechNet do Exchange Server.  
+ Caso a rede ofereça suporte aos protocolos de mensagens POP3 ou IMAP, você também deverá configurar o encaminhamento de porta para esses protocolos. Para obter informações relacionadas, consulte a seção **Servidores de Acesso para Cliente** no tópico [Referência de porta de rede do Exchange](https://go.microsoft.com/fwlink/p/?LinkId=250773) , na biblioteca do TechNet do Exchange Server.  
   
 > [!NOTE]
->  -   Recomendamos que você configure endereços IP estáticos para o servidor que está executando o Windows Server Essentials e para o segundo servidor que está executando o Exchange Server. Para obter instruções sobre como configurar um endereço IP estático em um computador executando o Windows Server 2003 ou Windows Server 2008 R2, consulte [configurar um endereço IP estático](https://technet.microsoft.com/library/cc754203\(v=ws.10\).aspx) na biblioteca do TechNet do Windows Server  
+>  -   Recomendamos configurar os endereços IP estáticos para o servidor que executa o Windows Server Essentials e para o segundo servidor que executa o Exchange Server. Para obter instruções sobre como configurar um endereço IP estático em um computador que executa o Windows Server 2003 ou o Windows Server 2008 R2, consulte [Configurar um endereço IP estático](https://technet.microsoft.com/library/cc754203\(v=ws.10\).aspx) na Biblioteca TechNet do Windows Server  
 >   
->      **Observação:** a configuração do servidor DNS sempre deve apontar para o endereço IP do servidor que está executando o Windows Server Essentials.  
-> -   No roteador, certifique-se de que os endereços IP do servidor que está executando o Windows Server Essentials e o servidor que está executando o Exchange Server são reservados, ou que estão fora do intervalo de endereços IP DHCP.  
-> -   A configuração do roteador nesta seção pressupõe que você tenha apenas um endereço IP público atribuído pelo provedor de serviços de Internet (ISP). Se você tiver vários endereços IP públicos, você pode atribuir um endereço IP diferente para o servidor que está executando o Windows Server Essentials e ao servidor que está executando o Exchange Server e, em seguida, criar forwardings porta com base nos endereços IP públicos.  
+>      **Observação:** A configuração de servidor DNS deve sempre apontar para o endereço IP do servidor que executa o Windows Server Essentials.  
+> -   No roteador, certifique-se de que os endereços IP do servidor que executa o Windows Server Essentials e do servidor que executa o Exchange Server estejam reservados ou fora do intervalo de endereços IP do DHCP.  
+> -   A configuração de roteador nesta seção parte do pressuposto de que você  tem apenas um endereço IP público atribuído pelo ISP (provedor de serviços de Internet). Caso tenha vários endereços IP públicos, você poderá atribuir um endereço IP diferente ao servidor que executa o Windows Server Essentials e ao servidor que executa o Exchange Server e, em seguida, crie encaminhamentos de porta com base nos endereços IP públicos.  
   
-### <a name="enable-on-premises-exchange-server-integration-on-windows-server-essentials"></a>Habilitam a integração do servidor do Exchange no local no Windows Server Essentials  
+### <a name="enable-on-premises-exchange-server-integration-on-windows-server-essentials"></a>Habilitar integração com Exchange Server local no Windows Server Essentials  
   
 > [!NOTE]
->  Se você estiver migrando de uma instalação do Windows Small Business Server, recomendamos que você ignore esta etapa por enquanto e executá-lo após a desinstalação da instalação anterior do Exchange Server no servidor de origem.  
+>  Caso esteja migrando de uma instalação do Windows Small Business Server, recomendamos ignorar esta etapa por enquanto e realizá-la após desinstalar a instalação anterior do Exchange Server no servidor de origem.  
   
- Depois de instalar e configurar um servidor que está executando o Exchange Server, você deve habilitar a integração do servidor do Exchange no local no servidor que está executando o Windows Server Essentials.  
+ Após a instalação e configuração de um servidor que execute o Exchange Server, você deverá habilitar a integração com Exchange Server local no servidor que executa o Windows Server Essentials.  
   
-##### <a name="to-enable-on-premises-exchange-server-integration-from-the-dashboard"></a>Para habilitar a integração do servidor do Exchange no local do painel  
+##### <a name="to-enable-on-premises-exchange-server-integration-from-the-dashboard"></a>Para habilitar a integração com Exchange Server local a partir do Painel  
   
-1.  Fazer logon no servidor que está executando o Windows Server Essentials como administrador e, em seguida, abra o painel.  
+1.  Faça logon no servidor que executa o Windows Server Essentials como administrador e abra o Painel.  
   
-2.  Sobre o **Home** página, clique em **conectar ao meu serviço de Email**e, em seguida, clique em **integrar o Exchange Server**.  
+2.  Na página **Início**, clique na opção de **conexão com serviço de email** e clique na opção de **integração com Exchange Server**.  
   
-3.  No painel de informações, clique em **configurar a integração com o Exchange Server**.  
+3.  No painel de informações, clique na opção de **configuração da integração com Exchange Server**.  
   
 4.  Siga as instruções no assistente.  
   
 ### <a name="configure-a-reverse-proxy"></a>Configurar um proxy inverso  
   
 > [!NOTE]
->  Essa é uma tarefa necessária se você tiver apenas uma conexão de Internet do seu provedor de serviços de Internet.  
+>  Esta é uma tarefa obrigatória se você tiver apenas uma conexão de Internet do seu provedor de serviços da Internet.  
   
- Windows Server Essentials e Exchange Server oferecer suporte a alguns cenários de acesso remoto para usuários de rede. Por exemplo, se você ativar acesso em qualquer local no servidor que está executando o Windows Server Essentials, você pode acessar o site de acesso via Web remoto ou remotamente usar rede virtual privada (VPN) para se conectar remotamente com a rede do Windows Server Essentials. Para acessar remotamente mensagens de email, você deve usar o Outlook em qualquer lugar, Outlook Web Access (OWA) ou o ActiveSync.  
+ O Windows Server Essentials e o Exchange Server oferecem suporte a alguns cenários de acesso remoto para usuários de rede. Por exemplo, se você ativar o Acesso em Qualquer Lugar no servidor que executa o Windows Server Essentials, poderá acessar remotamente o site do Acesso via Web Remoto ou usar VPN (rede privada virtual) para conectar-se remotamente à rede do Windows Server Essentials. Para ter acesso remoto a mensagens de email, você deve usar o Outlook em Qualquer Lugar, OWA (Outlook Web Access) ou ActiveSync.  
   
- Se o Windows Server Essentials e o servidor que executa o Exchange Server estão ambos conectados ao mesmo roteador e não há somente uma entrada Internet conexão do seu provedor de serviços de Internet ao roteador, você deve usar uma solução de proxy inverso rotear diferentes tipos de solicitações de acesso remoto da Internet com base nos nomes de host de destino. Recomendamos que você use o Microsoft suporte extensão IIS aplicativo solicitar roteamento (ARR) como sua solução de proxy inverso. Para obter mais informações sobre o roteamento de solicitação de aplicativo do IIS, visite o [aplicativo solicitar roteamento site](https://go.microsoft.com/fwlink/p/?LinkId=249181).  
+ Caso o Windows Server Essentials e o servidor que executa o Exchange Server estejam conectados ao mesmo roteador e o provedor de serviços de Internet forneça somente uma conexão de entrada com a Internet, você deverá usar uma solução de proxy inverso para encaminhar tipos diferentes de solicitações de acesso remoto da Internet com base nos nomes dos hosts de destino. Recomendamos a utilização da extensão ARR (Application Request Routing) IIS com suporte da Microsoft como solução de proxy inverso. Para obter mais informações sobre o Application Request Routing IIS, visite o [site do Application Request Routing](https://go.microsoft.com/fwlink/p/?LinkId=249181).  
   
-##### <a name="to-install-and-configure-application-request-routing"></a>Para instalar e configurar o aplicativo solicitar roteamento  
+##### <a name="to-install-and-configure-application-request-routing"></a>Para instalar e configurar o Application Request Routing  
   
 1.  Faça logon no Windows Server Essentials como administrador.  
   
-2.  Abra seu navegador da Internet e navegue até o [aplicativo solicitar roteamento site](https://go.microsoft.com/fwlink/p/?LinkId=249181).  
+2.  Abra o navegador da Internet e navegue até o [site do Application Request Routing](https://go.microsoft.com/fwlink/p/?LinkId=249181).  
   
-3.  No site do ARR, clique em **instalar**e siga as instruções para instalar seta com  
+3.  No site do ARR, clique em **Instalar**e, em seguida, siga as instruções para instalar o ARR.  
   
     > [!NOTE]
-    >  Você deve selecionar o URL reescreva módulo durante a instalação ARR.  
+    >  Você deve selecionar o Módulo de Reescrita de URL durante a instalação do ARR.  
     >   
-    >  Você pode receber um erro ao final da instalação do ARR 2589179 KB para ARR 2.5 não foi instalado com êxito. Você pode ignorar com segurança esse erro.  
+    >  Ao fim da instalação do ARR, é possível que você receba um erro dizendo que a instalação do KB 2589179 para ARR 2.5 não foi realizada com êxito. Ignore-o.  
   
-4.  Quando ARR instalação for concluída, reinicie o **Gateway de área de trabalho remota** serviço se ele não estiver em execução.  
-  
-    > [!NOTE]
-    >  Depois de instalar o ARR, o **Gateway de área de trabalho remota** serviço pode ser interrompido. Para reiniciar manualmente o serviço, abra o **serviços** ferramenta administrativa e reinicie o **Gateway de área de trabalho remota** serviço.  
-  
-5.  [Baixe KB2732764 para ARR 2.5](https://go.microsoft.com/fwlink/?LinkID=258302)e então instalar a atualização no servidor que está executando o Windows Server Essentials.  
-  
-6.  Copie o arquivo de certificado SSL para Exchange Server para o servidor que está executando o Windows Server Essentials. O arquivo do certificado deve conter a chave privada e ele deve ser no formato de arquivo PFX.  
+4.  Quando a instalação do ARR for concluída, reinicie o serviço **Gateway de Área de Trabalho Remota**, caso ele não esteja em execução.  
   
     > [!NOTE]
-    >  Se você estiver usando um certificado emitido por conta própria, siga as instruções no artigo do Exchange Server [exportar um certificado de troca](https://technet.microsoft.com/library/dd351274.aspx) para exportar o certificado.  
+    >  Após a instalação do ARR, é possível que o serviço **Gateway de Área de Trabalho Remota** pare. Para reiniciar o serviço manualmente, abra a ferramenta administrativa **Serviços** e reinicie o serviço **Gateway de Área de Trabalho Remota**.  
   
-7.  Dependendo de qual versão do Windows Server Essentials que você está executando, siga um destes procedimentos:  
+5.  [Baixe o KB2732764 para ARR 2.5](https://go.microsoft.com/fwlink/?LinkID=258302)e instale a atualização no servidor que executa o Windows Server Essentials.  
   
-    -   No Windows Server Essentials: Abra uma janela de comando como administrador e, em seguida, abra a pasta %ProgramFiles%\Windows Server\Bin  
+6.  Copie o arquivo de certificado SSL para o Exchange Server no servidor que executa o Windows Server Essentials. O arquivo de certificado deve conter a chave privada e estar no formato PFX.  
   
-    -   No Windows Server Essentials: Abra uma janela de comando como administrador e, em seguida, abra o diretório de %Windir%\System32\Essentials.  
+    > [!NOTE]
+    >  Caso esteja usando um certificado emitido por conta própria, siga as instruções no artigo do Exchange Server sobre [exportação de um certificado do Exchange](https://technet.microsoft.com/library/dd351274.aspx) para exportar o certificado.  
   
-8.  Com base no seu cenário de instalação, siga uma destas etapas para configurar ARR:  
+7.  Dependendo da versão do Windows Server Essentials em execução, realize um dos procedimentos a seguir:  
   
-    -   Se você estiver executando uma instalação limpa, execute o seguinte comando:  
+    -   No Windows Server Essentials: Abra uma janela de comando como administrador e abra o diretório %ProgramFiles%\Windows Server\Bin  
   
-         * * ARRConfig config cert * * *caminho do arquivo de certificado* * * hostnames * * *hospedar nomes para Exchange Server* ****  
+    -   No Windows Server Essentials: Abra uma janela de comando como administrador e abra o diretório %Windir%\System32\Essentials.  
+  
+8.  Com base no cenário de instalação, siga uma destas etapas para configurar o ARR:  
+  
+    -   Caso esteja realizando uma instalação limpa, execute o seguinte comando:  
+  
+         * * ARRConfig config – cert * * *caminho para o arquivo de certificado* * * - nomes de host * * *nomes de hosts do Exchange Server* ****  
   
         > [!NOTE]
-        >  Por exemplo; * * ARRConfig config cert ***c:\temp\certificate.pfx*** ***mail.contoso.com*** hostnames  
+        >  Por exemplo: * * ARRConfig config – cert ***c:\temp\certificate.pfx*** ***mail.contoso.com*** - nomes de host  
         >   
-        >  Substitua *mail.contoso.com* com o nome do seu domínio protegido pelo certificado.  
+        >  Substitua *mail.contoso.com* pelo nome de seu domínio protegido pelo certificado.  
   
-    -   Em que você está migrando do Windows Small Business Server, execute o seguinte comando:  
+    -   Caso esteja migrando do Windows Small Business Server, execute o seguinte comando:  
   
-         * * ARRConfig config cert * * *caminho do arquivo de certificado* * * hostnames * * *hospedar nomes para Exchange Server* * * servidor de destino * * *nome do servidor do Exchange Server* ****  
+         * * ARRConfig config – cert * * *caminho para o arquivo de certificado* * * - nomes de host * * *nomes de hosts do Exchange Server* * * - targetserver * * *nome do servidor do Exchange Server* ****  
   
-         Por exemplo; * * ARRConfig config cert ***c:\temp\certificate.pfx*** hostnames ***mail.contoso.com*** servidor de destino * * * ExchangeSvr * * *  
+         Por exemplo: * * ARRConfig config – cert ***c:\temp\certificate.pfx*** - nomes de host ***mail.contoso.com*** - targetserver * * * ExchangeSvr * * *  
   
-         Substitua *mail.contoso.com* com o nome do seu domínio. Substitua *ExchangeSvr* com o nome do seu servidor que está executando o Exchange Server.  
+         Substitua *mail.contoso.com* pelo nome de seu domínio. Substitua *ExchangeSvr* pelo nome do servidor que executa o Exchange Server.  
   
-9. Quando solicitado, digite a senha para o certificado.  
-  
-> [!NOTE]
->  -   Os nomes de host que você fornece devem ser contidos no certificado SSL que você comprou para Exchange Server.  
-> -   Se você tiver vários nomes de host, use uma vírgula (,) para separá-los.  
-  
- Para verificar se a configuração está funcionando, tente acessar o site OWA para o servidor que está executando o Exchange Server (https://mail. *NomedoSeuDomínio*.com/owa) de um computador que não é um membro do domínio. Para solucionar problemas de conectividade, você também pode usar o online [analisador de conectividade remota da Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=249455) ferramenta.  
-  
-### <a name="configure-split-dns-for-exchange-server"></a>Configurar dividir o DNS para Exchange Server  
+9. Quando solicitado, digite a senha do certificado.  
   
 > [!NOTE]
->  Essa é uma tarefa recomendada.  
+>  -   Os nomes dos hosts fornecidos devem estar contidos no certificado SSL adquirido para o Exchange Server.  
+> -   Caso tenha vários nomes de hosts, use uma vírgula (,) para separá-los.  
   
- DNS de divisão permite que você configure endereços IP diferentes no DNS para o mesmo nome de host, dependendo de onde a solicitação DNS foi originada. Se o computador cliente é na intranet, a solicitação DNS será resolvido para um endereço IP da intranet. Se o computador cliente estiver na Internet, a solicitação DNS será resolvido para um endereço IP. Isso é transparente para os usuários.  
+ Para verificar se a configuração funciona, tente acessar o site do OWA para o servidor que executa o Exchange Server (https://mail. *nome_do_domínio*.com/owa) em um computador que não seja membro do domínio. Para solucionar problemas de conectividade, você também pode usar a ferramenta online [Analisador de Conectividade Remota Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=249455) .  
   
- Recomendamos que você configure divisão de serviços DNS de forma que permite que os usuários sempre usar o mesmo nome de host para acessar o servidor do Exchange, independentemente de seu local.  
+### <a name="configure-split-dns-for-exchange-server"></a>Configurar DNS dividido para o Exchange Server  
   
-##### <a name="to-configure-split-dns-for-exchange-server"></a>Para configurar o DNS de divisão para Exchange Server  
+> [!NOTE]
+>  Esta é uma tarefa recomendada.  
   
-1.  Faça logon no Windows Server Essentials como administrador e, em seguida, abra o Gerenciador DNS.  
+ O DNS dividido permite configurar endereços IP diferentes no DNS para o mesmo nome de host, dependendo da origem da solicitação de DNS. Caso o computador cliente esteja na Intranet, a solicitação de DNS resolverá para um endereço IP da Intranet. Caso o computador cliente esteja na Internet, a solicitação de DNS resolverá para um endereço IP da Internet. Isso fica claro para os usuários.  
   
-2.  Na árvore de console do Gerenciador DNS, clique com botão direito seu servidor e, em seguida, clique em **nova zona**. O **Assistente de nova zona** aparece.  
+ Recomendamos configurar o DNS dividido de modo a permitir que os usuários sempre usem o mesmo nome de host para acessar os serviços do Exchange Server, independentemente de sua localização.  
   
-3.  Sobre o **tipo de zona** página do assistente, aceite a opção padrão e, em seguida, clique em **próxima**.  
+##### <a name="to-configure-split-dns-for-exchange-server"></a>Para configurar DNS dividido para o Exchange Server  
   
-4.  Sobre o **o escopo de replicação de zona do Active Directory** página, aceite a opção padrão e, em seguida, clique em **próxima**.  
+1.  Faça logon no Windows Server Essentials como administrador e abra o Gerenciador de DNS.  
   
-5.  Sobre o **zona ou inversa pesquisa** página, aceite ou selecione **zona de pesquisa direta**e, em seguida, clique em **próxima**.  
+2.  Na árvore do console do Gerenciador de DNS, clique com o botão direito no servidor e clique em **Nova Zona**. O **Assistente de Nova Zona** é exibido.  
   
-6.  Sobre o **nome do fuso** página, digite o FQDN do servidor que está executando o servidor do Exchange (por exemplo; *mail.contoso.com*) e, em seguida, clique em **próxima**.  
+3.  Na página **Tipo de Zona** do assistente, aceite a opção padrão e clique em **Avançar**.  
   
-7.  No **atualização dinâmica** página, aceite a opção padrão, clique em **próxima**e clique em **concluir**.  
+4.  Na página **Escopo de Replicação de Zona do Active Directory** , aceite a opção padrão e clique em **Avançar**.  
   
-8.  Na árvore de console do Gerenciador DNS, clique com botão direito a nova zona de pesquisa direta e clique em **novo Host (A ou AAAA)**.  
+5.  Na página **Zona de pesquisa direta ou inversa**, aceite ou selecione **Zona de pesquisa direta** e clique em **Avançar**.  
   
-9. Sobre o **novo Host** página, deixe o **nome** campo em branco, digite o endereço IP da intranet do seu servidor que está executando o Exchange Server e, em seguida, clique em **Adicionar Host**.  
+6.  Na página **Nome da Zona**, digite o FQDN do servidor que executa o Exchange Server (por exemplo, *mail.contoso.com*) e clique em **Avançar**.  
+  
+7.  Na página **Atualização Dinâmica**, aceite a opção padrão, clique em **Avançar** e clique em **Concluir**.  
+  
+8.  Na árvore de console do Gerenciador de DNS, clique com o botão direito do mouse na nova zona de pesquisa direta e, em seguida, clique em **Novo Host (A ou AAAA)**.  
+  
+9. Na página **Novo Host**, deixe o campo **Nome** em branco, digite o endereço IP da Intranet do servidor que executa o Exchange Server e clique em **Adicionar Host**.  
   
     > [!NOTE]
-    >  Quando você deixar o **nome** campo em branco, o servidor usa o nome do domínio pai por padrão.  
+    >  Quando você deixa o campo **Nome** em branco, o servidor usa o nome do domínio pai por padrão,  
   
-10. Sobre o **novo Host** página, clique em **feito**.  
+10. Na página **Novo Host** , clique em **Concluído**.  
   
 > [!NOTE]
->  Se você usa o ActiveSync, mas não é possível sincronizar o email para algumas contas de caixa de correio, determine se essas contas são membros de um ou mais grupos protegidos, como os administradores de domínio. Para obter informações relacionadas que podem ajudá-lo a resolver esse problema, consulte [Exchange ActiveSync retornado um erro de HTTP 500](https://technet.microsoft.com/library/dd439375\(EXCHG.80\).aspx).  
+>  Caso utilize o ActiveSync mas não possa sincronizar o email para algumas contas de caixa de correio, determine se essas contas são membros de um ou mais grupos protegidos, como Administradores de Domínio. Para obter informações relacionadas que possam ajudar a solucionar o problema, consulte [O Exchange ActiveSync Retornou um Erro HTTP 500](https://technet.microsoft.com/library/dd439375\(EXCHG.80\).aspx).  
   
 ## <a name="related-topics"></a>Tópicos relacionados  
- Para obter mais informações sobre como integrar um servidor do Exchange no local, veja as seções a seguir.  
+ Para obter mais informações sobre como integrar um Exchange Server local, consulte as seções a seguir.  
   
-### <a name="what-happens-if-i-disable-exchange-integration"></a>O que acontece se eu desativar a integração do Exchange?  
- Se você desabilitar a integração com um servidor do Exchange no local, você estará mais apto a usar o Windows Server Essentials Dashboard para exibir, criar ou gerenciar caixas de correio do Exchange Server.  
+### <a name="what-happens-if-i-disable-exchange-integration"></a>O que acontece se eu desabilitar a integração com Exchange?  
+ Se você desabilitar a integração com um Exchange Server local, não poderá mais usar o Painel do Windows Server Essentials para exibir, criar ou gerenciar caixas de correio do Exchange Server.  
   
 ### <a name="what-do-i-need-to-know-about-email-accounts"></a>O que é necessário saber sobre contas de email?  
- Uma solução de email hospedadas é configurada no seu servidor. Uma solução de um provedor de email hospedadas, como o Microsoft Office 365, pode fornecer contas de email individual para os usuários da rede. Quando você executa a adicionar um Assistente de conta de usuário no Windows Server Essentials para criar uma conta de usuário, o assistente tenta adicionar a conta de usuário para a solução de email hospedadas disponíveis. Ao mesmo tempo, o assistente atribui um nome de email (alias) para o usuário e define o tamanho máximo da caixa de correio (cota). O tamanho máximo da caixa de correio varia dependendo do provedor de email que você usa. Depois de adicionar a conta de usuário, você pode continuar a gerenciar as informações de alias e cota de caixa de correio na página de propriedades para o usuário. Para gerenciamento completo de suas contas de usuário e o provedor de email hospedada, use o console de gerenciamento de seu provedor hospedado. Dependendo do seu provedor, você pode acessar o console de gerenciamento de um portal baseado na web ou de uma guia no painel do servidor.  
+ Uma solução de email hospedado é configurada no servidor. Uma solução de um provedor de email hospedado, como o Microsoft Office 365, pode fornecer contas de email individuais para os usuários da rede. Quando você executa o Assistente Incluir conta de usuário no Windows Server Essentials para criar uma conta de usuário, o assistente tenta adicionar a conta de usuário à solução de email hospedada disponível. Ao mesmo tempo, o assistente atribui um nome de email (alias) ao usuário e define o tamanho máximo da caixa de correio (cota). O tamanho máximo da caixa de correio varia de acordo com o provedor de email que você usa. Depois de adicionar a conta de usuário, você pode continuar a gerenciar as informações de alias e cota da caixa de correio na página de propriedades do usuário. Para gerenciamento completo de suas contas de usuário e provedor de email hospedado, use o console de gerenciamento do provedor hospedado. Dependendo do seu provedor, você pode acessar o console de gerenciamento de um portal baseado na web ou de uma guia no Painel do servidor.  
   
- O alias que você fornece quando você executa a adicionar um Assistente de conta de usuário é enviado para o provedor de email hospedada como o nome sugerido para o alias do usuário. Por exemplo, se o alias do usuário é *FrankM*, o endereço de email do usuário s pode ser * FrankM@Contoso.com *.  
+ O alias fornecido quando você executa o Assistente Incluir conta de usuário é enviado para o provedor de email hospedado como o nome sugerido para o alias do usuário. Por exemplo, se o alias do usuário for *FrankM*, o endereço de email do usuário pode ser *FrankM@Contoso.com*.  
   
- Além disso, a senha que você definiu para o usuário na adicionar um Assistente de conta de usuário será a senha do usuário na solução email hospedado inicial.  
+ Além disso, a senha que você definiu para o usuário no Assistente Incluir conta de usuário será a senha inicial do usuário na solução de email hospedada.  
   
- Por fim, se você excluir o usuário usando a excluir um Assistente de conta de usuário no servidor, o assistente também envia uma solicitação ao provedor de email hospedadas para excluir o usuário de seu sistema também. O provedor pode excluir a conta de usuário s e o email que está associado à conta.  
+ Por fim, se você excluir o usuário usando o Assistente Excluir uma conta de usuário no servidor, o assistente também envia uma solicitação ao provedor de email hospedado para excluir também o usuário do seu sistema. O provedor pode excluir a conta do usuário e o email que está associado à conta.  
   
- Para obter informações do usuário sobre como configurar o software de cliente de e-mail obrigatório ou como acessar uma conta de email, consulte a documentação de ajuda fornecida pelo seu provedor de email hospedado.  
+ Para obter informações sobre como configurar o software de cliente de email necessário ou acessar uma conta de email, consulte a documentação da ajuda fornecida pelo seu provedor de email hospedado.  
   
 ### <a name="what-is-a-mailbox-quota"></a>O que é uma cota de caixa de correio?  
- A quantidade de espaço de armazenamento que é alocada para um usuário de rede s dados de caixa de correio do Exchange é conhecida como a cota de caixa de correio.  
+ A quantidade de espaço de armazenamento que é alocada para dados de caixa de correio do Exchange do usuário da rede é conhecida como a cota de caixa de correio.  
   
- Quando você executa o **configurar a integração com o Exchange Server** tarefa no painel, o assistente adiciona uma página para o Assistente de conta de usuário adicionar que permite que você escolher para impor cotas de caixa de correio e para especificar o tamanho da cota. Por padrão, o **impor cotas de caixa de correio** opção é selecionada (on) e caixas de correio do usuário são atribuídas 2 GB de espaço de armazenamento. Os administradores do Exchange podem personalizar as configurações de cota de caixa de correio para atender às necessidades de seus negócios.  
+ Quando você executar a tarefa **Configurar a integração com Exchange Server** no Painel, o assistente adiciona uma página do Assistente Incluir conta do usuário que permite que você escolha se deve impor cotas de caixa de correio e especificar o tamanho da cota. Por padrão, a opção **Impor cotas de caixa de correio** é selecionada (ativada) e são atribuídos 2 GB de espaço de armazenamento às caixas de correio do usuário. Os administradores do Exchange podem personalizar as configurações de cota de caixa de correio para atender às necessidades da sua empresa.  
   
 ## <a name="see-also"></a>Consulte também  
   
 -   [Requisitos de sistema do Windows Server Essentials](../get-started/system-requirements.md)  
   
--   [Gerenciar a integração do serviço de Email](Manage-Email-Service-Integration-in-Windows-Server-Essentials.md)  
+-   [Gerenciar integração de serviços de Email](Manage-Email-Service-Integration-in-Windows-Server-Essentials.md)  
   
 -   [Gerenciar o Windows Server Essentials](Manage-Windows-Server-Essentials.md)

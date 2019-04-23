@@ -1,6 +1,6 @@
 ---
-title: "Habilitar ou desabilitar referências e Failback de cliente"
-description: "Este artigo descreve como habilitar ou desabilitar referências e failback de cliente."
+title: Habilitar ou desabilitar referências e Failback de cliente
+description: Este artigo descreve como habilitar ou desabilitar referências e failback de cliente.
 ms.date: 6/5/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,15 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: be827ba52beb65219dad30e8c182963054cfbd16
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 20ac61f86ede938efd574fc6a048775437a51211
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59835017"
 ---
 # <a name="enable-or-disable-referrals-and-client-failback"></a>Habilitar ou desabilitar referências e Failback de cliente
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
+> Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
 
 Uma referência é uma lista ordenada de servidores que um computador cliente recebe de um controlador de domínio ou servidor de namespace quando o usuário acessa uma raiz de namespace ou pasta DFS com destinos. Depois de receber a referência, o computador tenta acessar o primeiro servidor na lista. Se o servidor não estiver disponível, o computador cliente tenta acessar o próximo servidor. Se um servidor ficar indisponível, você poderá configurar clientes para fazer failback para o servidor preferencial depois que ele ficar disponível.
 
@@ -38,11 +39,11 @@ Ao desabilitar uma referência de servidor de namespace ou destino de pasta, voc
 
 
 > [!TIP]
-> Para habilitar ou desabilitar referências usando o Windows PowerShell, use o [DfsnRootTarget conjunto – estado](https://technet.microsoft.com/library/jj884266.aspx) ou [conjunto DfsnServerConfiguration](https://technet.microsoft.com/library/jj884277.aspx) cmdlets, que foram introduzidos no Windows Server 2012.
+> Para habilitar ou desabilitar referências usando o Windows PowerShell, use o [DfsnRootTarget conjunto – estado](https://technet.microsoft.com/library/jj884266.aspx) ou [DfsnServerConfiguration conjunto](https://technet.microsoft.com/library/jj884277.aspx) cmdlets, que foram introduzidos no Windows Server 2012.
 
 ## <a name="enable-client-failback"></a>Habilitar failback de cliente
 
-Se um destino ficar indisponível, você poderá configurar clientes para fazer failback para o destino depois que ele for restaurado. Para que um failback funcione, os computadores cliente devem atender aos requisitos listados no tópico a seguir: [Examinar requisitos de cliente de namespaces do DFS](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx).
+Se um destino ficar indisponível, você poderá configurar clientes para fazer failback para o destino depois que ele for restaurado. Para o failback funcione, os computadores cliente devem cumprir os requisitos listados no tópico a seguir: [Examine os requisitos do cliente de Namespaces DFS](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx).
 
 
 > [!NOTE]
@@ -67,8 +68,8 @@ Pastas com destinos herdam as configurações de failback de cliente da raiz do 
 
 3.  Na guia **Referências**, clique na caixa de seleção **Failback de clientes para destinos preferenciais**.
 
-## <a name="see-also"></a>Veja também 
+## <a name="see-also"></a>Consulte também 
 
--   [Ajustando namespaces de DFS](tuning-dfs-namespaces.md)
--   [Confira os requisitos do cliente de Namespaces DFS](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx)
--   [Delegar permissões de gerenciamento para Namespaces DFS](delegate-management-permissions-for-dfs-namespaces.md)
+-   [Ajuste os Namespaces do DFS](tuning-dfs-namespaces.md)
+-   [Examine os requisitos do cliente de Namespaces DFS](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx)
+-   [Delegar permissões de gerenciamento para Namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)

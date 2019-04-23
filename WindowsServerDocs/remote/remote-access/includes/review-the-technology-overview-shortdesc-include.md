@@ -1,0 +1,1 @@
+**[Saiba mais sobre a tecnologia VPN Always On](../vpn/always-on-vpn/always-on-vpn-technology-overview.md).** Para essa implantação, você deve instalar um novo servidor de acesso remoto que esteja executando o Windows Server 2016, bem como modificar algumas de sua infraestrutura existente para a implantação.

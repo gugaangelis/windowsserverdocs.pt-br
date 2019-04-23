@@ -1,22 +1,24 @@
 ---
 ms.assetid: fd427da3-3869-428f-bf2a-56c4b7d99b40
 title: Clonagem de blocos em ReFS
-description: 
+description: ''
 author: gawatu
 ms.author: gawatu
 manager: gawatu
-ms.date: 12/6/2016
+ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage-file-systems
-ms.openlocfilehash: 25cc523eaa2ed266e5b07c53ede4bc9e9be20e93
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 54165700209320eee50fc63d98d78cbf4a92d053
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59838107"
 ---
 # <a name="block-cloning-on-refs"></a>Clonagem de blocos em ReFS
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+
+>Aplica-se a: 2019, Windows Server 2016, Windows Server (canal semestral) do Windows Server
 
 A clonagem de blocos instrui o sistema de arquivos a copiar um intervalo de bytes do arquivo em nome de um aplicativo, onde o arquivo de destino pode ser igual ao ou diferente do arquivo de origem. As operações de cópia, infelizmente, são caras, pois disparam leituras e gravações caras para os dados físicos subjacentes. 
 
@@ -62,8 +64,8 @@ Após a gravação de modificação, a região B ainda é compartilhada pelos do
 
 ## <a name="see-also"></a>Consulte também
 
--   [Visão geral do ReFS](refs-overview.md)
--   [Fluxos de integridade ReFS](integrity-streams.md)
--   [Visão geral de Espaços de Armazenamento Diretos](../storage-spaces/storage-spaces-direct-overview.md)
+-   [Visão geral de reFS](refs-overview.md)
+-   [Fluxos de integridade de reFS](integrity-streams.md)
+-   [Visão geral direta de espaços de armazenamento](../storage-spaces/storage-spaces-direct-overview.md)
 -   [DUPLICATE_EXTENTS_DATA](https://msdn.microsoft.com/library/windows/desktop/mt590821(v=vs.85).aspx)
 -   [FSCTL_DUPLICATE_EXTENTS_TO_FILE](https://msdn.microsoft.com/library/windows/desktop/mt590823(v=vs.85).aspx)
