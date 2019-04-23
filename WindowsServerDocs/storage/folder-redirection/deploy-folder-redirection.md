@@ -1,5 +1,5 @@
 ---
-title: Implanta o redirecionamento de pasta com arquivos Offline
+title: Implantar o redirecionamento de pasta com arquivos Offline
 description: Como usar o Windows Server para implantar o redirecionamento de pasta com arquivos Offline em computadores de cliente do Windows.
 ms.prod: windows-server-threshold
 ms.topic: article
@@ -9,231 +9,231 @@ ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 33942db34314e0ff60b24d4b9c8e5e33b4ca92fd
-ms.sourcegitcommit: 5549ac178f8f3d116e88761a95223063a636ac94
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4376616"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59831567"
 ---
-# Implanta o redirecionamento de pasta com arquivos Offline
+# <a name="deploy-folder-redirection-with-offline-files"></a>Implantar o redirecionamento de pasta com arquivos Offline
 
 >Aplica-se a: Windows 10, Windows 7, Windows 8, Windows 8.1, Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2, Windows Server 2016, Windows Vista
 
-Este tópico descreve como usar o Windows Server para implantar o redirecionamento de pasta com os arquivos Offline para computadores de cliente do Windows.
+Este tópico descreve como usar o Windows Server para implantar o redirecionamento de pasta com arquivos Offline em computadores de cliente do Windows.
 
-Para obter uma lista de alterações recentes para este tópico, consulte o [histórico de alterações](#change-history).
+Para obter uma lista das alterações recentes a este tópico, consulte [histórico de alterações](#change-history).
 
 >[!IMPORTANT]
->Devido às alterações de segurança feitas no [MS16-072](https://support.microsoft.com/en-us/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016), atualizamos [etapa 3: criar um GPO para redirecionamento de pasta](#step-3:-create-a-gpo-for-folder-redirection) deste tópico para que o Windows possa corretamente, aplique a política de redirecionamento de pasta (e não reverter pastas redirecionadas em computadores afetados).
+>Devido às alterações de segurança feitas na [MS16 072](https://support.microsoft.com/en-us/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016), atualizamos [etapa 3: Criar um GPO para redirecionamento de pasta](#step-3:-create-a-gpo-for-folder-redirection) deste tópico para que o Windows possa aplicar corretamente a política de redirecionamento de pasta (e não reverter as pastas redirecionadas em computadores afetados).
 
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 
-### Requisitos de hardware
+### <a name="hardware-requirements"></a>Requisitos de hardware
 
-Redirecionamento de pasta requer um computador baseado em x86 ou x64. ele não é compatível com Windows® retângulo
+Redirecionamento de pasta requer um computador com base em x86 ou x64; não é suportado pelo Windows® retângulo
 
-### Requisitos de software
+### <a name="software-requirements"></a>Requisitos de software
 
 Redirecionamento de pasta tem os seguintes requisitos de software:
 
-- Para administrar o redirecionamento de pasta, você deve estar conectado como um membro do grupo de segurança Administradores de domínio, o grupo de segurança Administradores de empresa ou o grupo de segurança proprietários de criadores de diretiva de grupo.
-- Os computadores cliente devem executar o Windows 10, Windows 8.1, Windows 8, Windows 7, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 ou Windows Server 2008.
-- Os computadores cliente devem ser ingressados no Active Directory Domain Services (AD DS) que você está gerenciando.
-- Um computador deve estar disponível com gerenciamento de política de grupo e o Centro de administração do Active Directory instalado.
+- Para administrar o redirecionamento de pasta, você deve estar conectado como um membro do grupo de segurança Administradores de domínio, o grupo de segurança Administradores de empresa ou o grupo de segurança de proprietários de criadores de diretiva de grupo.
+- Computadores cliente devem executar o Windows 10, Windows 8.1, Windows 8, Windows 7, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 ou Windows Server 2008.
+- Os computadores cliente devem ser integrados aos AD DS (Serviços de Domínio Active Directory) que você está gerenciando.
+- Um computador deve ser disponibilizado com o Gerenciamento de Política de Grupo e o Centro de Administração do Active Directory instalados.
 - Um servidor de arquivos deve estar disponível para hospedar pastas redirecionadas.
-    - Se o compartilhamento de arquivos usa Namespaces DFS, as pastas DFS (links) devem ter um único destino para impedir que os usuários façam alterações conflitantes em servidores diferentes.
-    - Se o compartilhamento de arquivos usa a replicação DFS para replicar o conteúdo com outro servidor, os usuários devem ser capazes de acessar somente o servidor de origem para impedir que os usuários façam alterações conflitantes em servidores diferentes.
-    - Ao usar um compartilhamento de arquivos em cluster, desabilite a disponibilidade contínua no compartilhamento de arquivos para evitar problemas de desempenho com redirecionamento de pasta e arquivos Offline. Além disso, arquivos Offline pode não fazer a transição para o modo offline por 3 a 6 minutos depois que um usuário perde o acesso a um compartilhamento de arquivos continuamente disponíveis que poderia frustrante usuários que ainda não estiverem usando o modo sempre Offline dos arquivos Offline.
+    - Se o compartilhamento de arquivos usar os Namespaces do DFS, as pastas DFS (links) deverão ter um único destino para evitar que os usuários façam edições conflitantes em diferentes servidores.
+    - Se o compartilhamento de arquivos usar a Replicação do DFS para replicar o conteúdo com outro servidor, os usuários devem poder acessar apenas o servidor de origem para evitar que os usuários façam edições conflitantes em diferentes servidores.
+    - Ao usar um compartilhamento de arquivos clusterizado, desabilite a disponibilidade contínua no compartilhamento de arquivos para evitar problemas de desempenho com arquivos Offline e redirecionamento de pasta. Além disso, arquivos Offline pode não fazer a transição para o modo offline por 3 a 6 minutos depois que um usuário perder o acesso a um compartilhamento de arquivos continuamente disponíveis, que pode frustrar os usuários que ainda não estiverem usando o modo sempre Offline de arquivos Offline.
 
 >[!NOTE]
->Alguns recursos mais recentes do redirecionamento de pasta têm o computador cliente adicionais e requisitos de esquema do Active Directory. Para obter mais informações, consulte [implantar principais computadores](deploy-primary-computers.md), [Desabilitar Offline arquivos em pastas](disable-offline-files-on-folders.md), [Habilitar sempre modo Offline](enable-always-offline.md)e [permite a movimentação de pasta otimizada](enable-optimized-moving.md).
+>Alguns recursos mais recentes no redirecionamento de pasta têm o computador cliente adicionais e requisitos do esquema do Active Directory. Para obter mais informações, consulte [implantar computadores primários](deploy-primary-computers.md), [desabilitar arquivos Offline em pastas](disable-offline-files-on-folders.md), [habilitar o modo sempre Offline](enable-always-offline.md), e [Enable otimizado mover pasta ](enable-optimized-moving.md).
 
-## Etapa 1: Criar um grupo de segurança de redirecionamento de pasta
+## <a name="step-1-create-a-folder-redirection-security-group"></a>Etapa 1: Criar um grupo de segurança de redirecionamento de pasta
 
-Se seu ambiente não é já configurado com redirecionamento de pasta, a primeira etapa é criar um grupo de segurança que contém todos os usuários para o qual você deseja aplicar configurações de política de redirecionamento de pasta.
+Se seu ambiente não já está definido com o redirecionamento de pasta, a primeira etapa é criar um grupo de segurança que contém todos os usuários aos quais você deseja aplicar as configurações de diretiva de redirecionamento de pasta.
 
-Aqui está como criar um grupo de segurança para o redirecionamento de pasta:
+Aqui está como criar um grupo de segurança para redirecionamento de pasta:
 
-1. Abrir o Gerenciador de servidor em um computador com o Centro de administração do Active Directory instalado.
-2. No menu **Ferramentas** , selecione o **Centro de administração do Active Directory**. O Centro de Administração do Active Directory é exibido.
-3. Clique com botão direito no domínio apropriado ou unidade Organizacional, selecione o **novo**e, em seguida, selecione o **grupo**.
+1. Abra o Server Manager em um computador com o Centro de administração do Active Directory instalado.
+2. Sobre o **ferramentas** menu, selecione **Centro de administração do Active Directory**. O Centro de Administração do Active Directory é exibido.
+3. Clique com botão direito no domínio apropriado ou UO, selecione **New**e, em seguida, selecione **grupo**.
 4. Na janela **Criar Grupo**, na seção **Grupo**, especifique as seguintes configurações:
-    - Em **nome do grupo**, digite o nome do grupo de segurança, por exemplo: **Os usuários de redirecionamento de pasta**.
-    - No **escopo do grupo**, selecione a **segurança**e, em seguida, selecione **Global**.
-5. Na seção **membros** , selecione **Adicionar**. A caixa de diálogo Selecionar Usuários, Contatos, Computadores, Contas de Serviço ou Grupos é exibida.
-6. Digite os nomes dos usuários ou grupos aos quais você deseja implantar o redirecionamento de pasta, selecione **Okey**e, em seguida, selecione **Okey** novamente.
+    - Em **Nome do grupo**, digite o nome do grupo de segurança, por exemplo: **Os usuários de redirecionamento de pasta**.
+    - Na **escopo do grupo**, selecione **Security**e, em seguida, selecione **Global**.
+5. No **membros** seção, selecione **Add**. A caixa de diálogo Selecionar Usuários, Contatos, Computadores, Contas de Serviço ou Grupos é exibida.
+6. Digite os nomes dos usuários ou grupos ao qual você deseja implantar o redirecionamento de pasta, selecione **Okey**e, em seguida, selecione **Okey** novamente.
 
-## Etapa 2: Criar um compartilhamento de arquivos para pastas redirecionadas
+## <a name="step-2-create-a-file-share-for-redirected-folders"></a>Etapa 2: Criar um compartilhamento de arquivo para pastas redirecionadas
 
-Se você não tiver um compartilhamento de arquivos para pastas redirecionadas, use o procedimento a seguir para criar um compartilhamento de arquivos em um servidor que executa o Windows Server 2012.
+Se você ainda não tiver um compartilhamento de arquivos para pastas redirecionadas, use o procedimento a seguir para criar um compartilhamento de arquivos em um servidor executando o Windows Server 2012.
 
 >[!NOTE]
->Algumas funcionalidades podem diferir ou não estar disponível se você criar o compartilhamento de arquivos em um servidor que executa outra versão do Windows Server.
+>Alguma funcionalidade pode ser diferente ou estar indisponível, se você criar o compartilhamento de arquivos em um servidor que executar outra versão do Windows Server.
 
 Aqui está como criar um compartilhamento de arquivos no Windows Server 2012 e Windows Server 2016:
 
-1. No painel de navegação do Gerenciador do servidor, selecione o **arquivo e serviços de armazenamento**e selecione **compartilhamentos** para exibir a página de compartilhamentos.
-2. No bloco do **compartilhamentos** , selecione **tarefas**e, em seguida, selecione o **Novo compartilhamento**. O Assistente de novo compartilhamento é exibido.
-3. Na página **Selecione perfil** , selecione o **Compartilhamento SMB – rápida**. Se você tiver o Gerenciador de recursos de servidor de arquivos instalado e estiver usando as propriedades de gerenciamento de pasta, em vez disso, selecione o **Compartilhamento SMB - avançada**.
-4. Na página **Local compartilhar** , selecione o servidor e o volume no qual você deseja criar o compartilhamento.
-5. Na página **Nome do compartilhamento** , digite um nome para o compartilhamento (por exemplo, **os usuários$**) na caixa de **nome do compartilhamento** .
+1. No painel de navegação do Gerenciador do servidor, selecione **serviços de arquivo e armazenamento**e, em seguida, selecione **compartilhamentos** para exibir a página compartilhamentos.
+2. No **compartilhamentos** lado a lado, selecione **tarefas**e, em seguida, selecione **novo compartilhamento**. O Assistente Novo Compartilhamento é exibido.
+3. Sobre o **Selecionar perfil** , selecione **compartilhamento SMB – rápido**. Se você tiver o Gerenciador de recursos de servidor de arquivos instalado e estiver usando propriedades de gerenciamento de pasta, em vez disso, selecione **compartilhamento SMB - avançado**.
+4. Na página **Compartilhar Local**, selecione o servidor e o volume nos quais deseja criar o compartilhamento.
+5. No **nome do compartilhamento** página, digite um nome para o compartilhamento de (por exemplo, **usuários$**) na **nome do compartilhamento** caixa.
     >[!TIP]
-    >Ao criar o compartilhamento, ocultar o compartilhamento colocando um ```$``` após o nome do compartilhamento. Isso ocultará o compartilhamento de navegadores casuais.
-6. Na página **Outras configurações** , desmarque a caixa de seleção Habilitar disponibilidade contínua, se presente e, opcionalmente, marque as caixas de seleção de **Habilitar a enumeração baseada em acesso** e **acesso a criptografar dados** .
-7. Na página **permissões** , selecione **Personalizar permissões...**. A caixa de diálogo de configurações de segurança avançadas é exibida.
-8. Selecione **Desabilitar a herança**e, em seguida, selecione **Converter herdado permissões em permissão explícita nesse objeto**.
-9. Defina as permissões como descrito tabela 1 e mostrado na Figura 1, removendo permissões para contas e grupos não listados e adicione as permissões especiais para o grupo de usuários de redirecionamento de pasta que você criou na etapa 1.
+    >Ao criar o compartilhamento, oculte o compartilhamento colocando um ```$``` após o nome do compartilhamento. Isso ocultará o compartilhamento de navegadores casuais.
+6. Sobre o **outras configurações** página, desmarque a caixa de seleção Habilitar disponibilidade contínua, se estiver presente e, opcionalmente, selecione a **Habilitar enumeração baseada em acesso** e **criptografar o acesso a dados** caixas de seleção.
+7. Sobre o **permissões** página, selecione **personalizar permissões...** . A caixa de diálogo Configurações de Segurança Avançada é exibida.
+8. Selecione **desabilitar herança**e, em seguida, selecione **converter permissões de herança em permissões explícitas nesse objeto**.
+9. Defina as permissões conforme descrito na tabela 1 e mostrado na Figura 1, removendo as permissões para contas e grupos não listados e incluindo permissões especiais para o grupo de usuários de redirecionamento de pasta que você criou na etapa 1.
     
-    ![Definindo as permissões para o compartilhamento de pastas redirecionadas](media/deploy-folder-redirection/setting-the-permissions-for-the-redirected-folders-share.png)
+    ![Definir as permissões para o compartilhamento de pastas redirecionadas](media/deploy-folder-redirection/setting-the-permissions-for-the-redirected-folders-share.png)
     
-    **Figura 1** Definindo as permissões para o compartilhamento de pastas redirecionadas
-10. Se você escolheu o perfil de **Compartilhamento SMB - avançada** , na página de **Propriedades de gerenciamento** , selecione o valor de uso da pasta de **Arquivos do usuário** .
-11. Se você escolheu o perfil de **Compartilhamento SMB - avançada** , na página de **cota** , opcionalmente, selecione uma cota sejam aplicadas a usuários do compartilhamento.
-12. Na página de **confirmação** , selecione **Create.**
+    **Figura 1** definindo as permissões para pastas redirecionadas de compartilhamento
+10. Se você escolher o perfil **Compartilhamento SMB - Avançado** , na página **Propriedades de Gerenciamento** , selecione o valor de Uso da Pasta de **Arquivos do Usuário** .
+11. Se você escolher o perfil **Compartilhamento SMB - Avançado** , na página **Cota** , opcionalmente selecione uma cota para aplicar aos usuários do compartilhamento.
+12. Sobre o **confirmação** página, selecione **criar.**
 
-### Permissões necessárias para o arquivo compartilham hospedagem pastas redirecionadas
+### <a name="required-permissions-for-the-file-share-hosting-redirected-folders"></a>As permissões necessárias para o arquivo compartilham pastas redirecionadas de hospedagem
 
 <table>
 <tbody>
 <tr class="odd">
-<td>Conta de usuário</td>
-<td>Access</td>
-<td>Aplicável a</td>
+<td>Conta de Usuário</td>
+<td>Acesso</td>
+<td>Aplica-se a</td>
 </tr>
 <tr class="even">
 <td>Sistema</td>
 <td>Controle total</td>
-<td>Esta pasta, subpastas e arquivos</td>
+<td>Essa pasta, subpastas e arquivos</td>
 </tr>
 <tr class="odd">
 <td>Administradores</td>
 <td>Controle total</td>
-<td>Esta pasta somente</td>
+<td>Apenas essa pasta</td>
 </tr>
 <tr class="even">
-<td>Proprietário/criador</td>
+<td>Criador/Proprietário</td>
 <td>Controle total</td>
-<td>Somente arquivos e subpastas</td>
+<td>Apenas subpastas e arquivos</td>
 </tr>
 <tr class="odd">
-<td>Grupo de segurança de usuários que precisam inserir dados no compartilhamento (usuários de redirecionamento de pasta)</td>
-<td>Listar pasta / ler dados<sup>1</sup><br />
+<td>Grupo de segurança de usuários que precisam colocar dados no compartilhamento (usuários de redirecionamento de pasta)</td>
+<td>Listar pastas / ler dados<sup>1</sup><br />
 <br />
-Criar pastas / acrescentar dados<sup>1</sup><br />
+Criar pastas / anexar dados<sup>1</sup><br />
 <br />
-Ler os atributos<sup>1</sup><br />
+Ler atributos<sup>1</sup><br />
 <br />
-Atributos estendidos de leitura<sup>1</sup><br />
+Ler atributos estendidos<sup>1</sup><br />
 <br />
 Permissões de leitura<sup>1</sup></td>
-<td>Esta pasta somente</td>
+<td>Apenas essa pasta</td>
 </tr>
 <tr class="even">
-<td>Outras contas e grupos</td>
+<td>Outros grupos e contas</td>
 <td>Nenhum (remover)</td>
 <td></td>
 </tr>
 </tbody>
 </table>
 
-1 permissões avançadas
+1 Permissões avançadas
 
-## Etapa 3: Criar um GPO para redirecionamento de pasta
+## <a name="step-3-create-a-gpo-for-folder-redirection"></a>Etapa 3: Criar um GPO para redirecionamento de pasta
 
-Se você não tiver um GPO criado para configurações de redirecionamento de pasta, use o procedimento a seguir para criar um.
+Se você ainda não tiver um GPO criado para as configurações de redirecionamento de pasta, use o procedimento a seguir para criar um.
 
 Aqui está como criar um GPO para redirecionamento de pasta:
 
-1. Abrir o Gerenciador de servidor em um computador com o gerenciamento de política de grupo instalado.
-2. No menu **Ferramentas** , selecione o **Gerenciamento de política de grupo**.
-3. Clique com botão direito no domínio ou unidade Organizacional em que você deseja configurar o redirecionamento de pasta e selecione **criar um GPO neste domínio e vinculá-lo aqui**.
-4. Na caixa de diálogo **Novo GPO** , digite um nome para o GPO (por exemplo, **As configurações de redirecionamento de pasta**) e, em seguida, selecione **Okey**.
-5. Clique com botão direito no GPO recém-criado e, em seguida, desmarque a caixa de seleção **Vínculo habilitado** . Isso impede que o GPO sejam aplicadas até que você terminar de configurá-lo.
-6. Selecione o GPO. Na seção **Filtragem de segurança** da guia **escopo** , selecione **Usuários autenticados**e, em seguida, selecione **Remover** para impedir que o GPO que está sendo aplicado a todos os usuários.
-7. Na seção **Filtragem de segurança** , selecione **Adicionar**.
-8. Na caixa de diálogo **Selecionar usuário, computador ou grupo** , digite o nome do grupo de segurança que você criou na etapa 1 (por exemplo, **Os usuários de redirecionamento de pasta**) e, em seguida, selecione **Okey**.
-9. Selecione a guia de **delegação** , selecione **Add**, digite **Usuários autenticados**, selecione **Okey**e, em seguida, selecione **Okey** novamente para aceitar as permissões de leitura padrão.
+1. Abra o Gerenciador do Servidor em um computador com o Gerenciamento de Política de Grupo instalado.
+2. Dos **ferramentas** menu, selecione **Group Policy Management**.
+3. Clique com botão direito no domínio ou UO em que você deseja configurar o redirecionamento de pasta, em seguida, selecione **criar um GPO neste domínio e vinculá-lo aqui**.
+4. No **novo GPO** caixa de diálogo, digite um nome para o GPO (por exemplo, **configurações de redirecionamento de pasta**) e, em seguida, selecione **Okey**.
+5. Clique com o botão direito do mouse no GPO recentemente criado e, em seguida, desmarque a caixa de seleção **Vínculo habilitado** . Isso evita que o GPO seja aplicado até que você finalize a configuração dele.
+6. Selecione o GPO. No **filtragem de segurança** seção o **escopo** guia, selecione **Authenticated Users**e, em seguida, selecione **remover** para impedir que o GPO seja aplicada a todos.
+7. No **filtragem de segurança** seção, selecione **Add**.
+8. No **Selecionar usuário, computador ou grupo** caixa de diálogo, digite o nome da segurança do grupo que você criou na etapa 1 (por exemplo, **usuários de redirecionamento de pasta**) e, em seguida, selecione **Okey**.
+9. Selecione o **delegação** guia, selecione **Add**, digite **Authenticated Users**, selecione **Okey**e, em seguida, selecione **Okey** novamente aceitar o padrão permissões de leitura.
     
-    Esta etapa é necessária devido a alterações de segurança feitas no [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016).
+    Essa etapa é necessária devido a alterações de segurança feitas na [MS16 072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016).
 
 >[!IMPORTANT]
->Devido a segurança as alterações feitas no [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016), agora você devem fornecer o grupo de usuários autenticados leitura permissões delegadas para o GPO de redirecionamento de pasta - caso contrário, o GPO não é aplicado aos usuários ou se tiver sido aplicado, o GPO é removido, redirecionando pastas de volta para o computador local. Para obter mais informações, consulte [Implantando grupo política de segurança da atualização MS16-072](https://blogs.technet.microsoft.com/askds/2016/06/22/deploying-group-policy-security-update-ms16-072-kb3163622/).
+>Devido às alterações de segurança feitas na [MS16 072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016), agora você deve fornecer permissões de leitura de grupo delegado a usuários autenticados para o GPO de redirecionamento de pasta – caso contrário, o GPO não será aplicado a usuários ou se ele já for aplicado, o GPO é removido, o redirecionamento de pastas para o computador local. Para obter mais informações, consulte [implantação de grupo de política de segurança atualização MS16-072](https://blogs.technet.microsoft.com/askds/2016/06/22/deploying-group-policy-security-update-ms16-072-kb3163622/).
 
-## Etapa 4: Configurar o redirecionamento de pasta com arquivos Offline
+## <a name="step-4-configure-folder-redirection-with-offline-files"></a>Etapa 4: Configurar o redirecionamento de pasta com arquivos Offline
 
-Depois de criar um GPO para configurações de redirecionamento de pasta, edite as configurações de política de grupo para habilitar e configurar o redirecionamento de pasta, conforme discutido no procedimento a seguir.
+Depois de criar um GPO para as configurações de redirecionamento de pasta, edite as configurações de diretiva de grupo para habilitar e configurar o redirecionamento de pasta, conforme discutido no procedimento a seguir.
 
 >[!NOTE]
->Arquivos offline é habilitado por padrão para pastas redirecionadas em computadores de cliente do Windows e desabilitada em computadores que executam o Windows Server, a menos que alterado pelo usuário. Para usar a política de grupo para controlar se os arquivos Offline está habilitado, use o **Permitir ou impedir o uso do recurso Arquivos Offline** configuração de política.
-> Para obter informações sobre algumas das configurações de política de grupo de arquivos Offline, consulte [Habilitar avançada Offline arquivos funcionalidade](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn270369(v%3dws.11)>)e [Configurando a política de grupo para arquivos Offline](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759721(v%3dws.10)>).
+>Arquivos offline é habilitado por padrão para pastas redirecionadas em computadores de cliente do Windows e desabilitado em computadores que executam o Windows Server, a menos que alteradas pelo usuário. Para usar política de grupo para controlar se os arquivos Offline é habilitado, use o **permitir ou impedir o uso do recurso Arquivos Offline** configuração de política.
+> Para obter informações sobre algumas das configurações de diretiva de grupo de arquivos Offline, consulte [habilitar avançadas Offline arquivos funcionalidade](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn270369(v%3dws.11)>), e [Configurando a diretiva de grupo para arquivos Offline](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759721(v%3dws.10)>).
 
-Veja como configurar o redirecionamento de pasta na política de grupo:
+Aqui está como configurar o redirecionamento de pasta na política de grupo:
 
-1. No gerenciamento de política de grupo, clique com botão direito no GPO que você criou (por exemplo, **As configurações de redirecionamento de pasta**) e, em seguida, selecione **Editar**.
-2. Na janela do Editor de gerenciamento de política de grupo, navegue até **Configuração do usuário**, em seguida, **políticas**, em seguida, **Configurações do Windows**e, em seguida, **Redirecionamento de pasta**.
-3. Clique com botão direito uma pasta que você deseja redirecionar (por exemplo, **documentos**) e, em seguida, selecione **Propriedades**.
-4. Na caixa de diálogo **Propriedades** , na caixa **configuração** , selecione **Básico - Redireciona pastas de todos os usuários para o mesmo local**.
+1. Em gerenciamento de diretiva de grupo, clique com botão direito no GPO criado por você (por exemplo, **configurações de redirecionamento de pasta**) e, em seguida, selecione **editar**.
+2. Na janela do Editor de gerenciamento de diretiva de grupo, navegue até **configuração do usuário**, em seguida, **diretivas**, em seguida, **as configurações do Windows**e, em seguida, **pasta Redirecionamento**.
+3. Clique em uma pasta que você deseja redirecionar (por exemplo, **documentos**) e, em seguida, selecione **propriedades**.
+4. No **propriedades** caixa de diálogo, da **configuração** caixa, selecione **básico - redirecionamento de pasta de todos no mesmo local**.
 
     > [!NOTE]
-    > Para aplicar o redirecionamento de pasta para computadores cliente que executam o Windows XP ou Windows Server 2003, selecione a guia **configurações** e selecione o **também aplicar diretiva de redirecionamento para o Windows 2000, Windows 2000 Server, Windows XP e Windows Server 2003 operando sistemas** caixa de seleção.
-5. Na seção **local da pasta de destino** , selecione **criar uma pasta para cada usuário no caminho raiz** e, em seguida, na caixa **Caminho raiz** , digite o caminho para o compartilhamento de arquivos armazenando pastas redirecionadas, por exemplo: \\\fs1.corp.contoso.com\\ ** os usuários$**
-6. Selecione a guia **configurações** e, na seção **Remoção de política** , selecione opcionalmente **redirecionar a pasta de volta para o perfil de usuário local quando a política é removida** (essa configuração pode ajudar a tornar o redirecionamento de pasta se comportam mais previsível para usuários e adminisitrators).
+    > Para aplicar o redirecionamento de pasta para computadores cliente que executam o Windows XP ou Windows Server 2003, selecione a **as configurações** e selecione o **também aplicar a diretiva de redirecionamento para o Windows 2000, Windows 2000 Server, Windows XP, e Sistemas operacionais Windows Server 2003** caixa de seleção.
+5. No **local da pasta de destino** seção, selecione **criar uma pasta para cada usuário no caminho raiz** e, em seguida, no **caminho raiz** , digite o caminho para o armazenamento de compartilhamento de arquivo pastas redirecionadas, por exemplo:  **\\ \\fs1.corp.contoso.com\\$ de usuários**
+6. Selecione o **as configurações** guia e, na **política de remoção** seção, selecione opcionalmente **redirecionar a pasta de volta para o perfil de usuário local quando a política for removida** (essa configuração pode ajudar a tornar o redirecionamento de pasta se comportam de maneira mais previsível para adminisitrators e usuários).
 7. Selecione **Okey**e, em seguida, selecione **Sim** na caixa de diálogo de aviso.
 
-## Etapa 5: Habilitar o redirecionamento de pasta GPO
+## <a name="step-5-enable-the-folder-redirection-gpo"></a>Etapa 5: Habilitar o GPO de redirecionamento de pasta
 
-Depois que você concluiu a definir as configurações de política de grupo de redirecionamento de pasta, a próxima etapa é habilitar o GPO, permitindo que ele seja aplicado aos usuários afetados.
+Depois que você terminar de definir as configurações de política de grupo de redirecionamento de pasta, a próxima etapa é habilitar o GPO, permitindo que ele seja aplicado aos usuários afetados.
 
 >[!TIP]
->Se você pretende implementar o suporte de computador principal ou outras configurações de política, faça isso agora, antes de habilitar o GPO. Isso impede que os dados do usuário sejam copiadas para computadores não principal antes de suporte de computador principal está habilitada.
+>Se você planejar implantar suporte de computador primário ou outras configurações de política, faça isso agora, antes de habilitar o GPO. Isso evita que os dados do usuário sejam copiados para computadores não primários antes de o suporte de computador primário ser habilitado.
 
-Veja como habilitar o GPO de redirecionamento de pasta:
+Aqui está como habilitar o GPO de redirecionamento de pasta:
 
-1. Gerenciamento de política de grupo de abrir.
-2. Clique com botão direito no GPO que você criou e, em seguida, selecione o **Link habilitado**. Aparecerá uma caixa de seleção ao lado do item de menu.
+1. Abra Gerenciamento de Política de Grupo.
+2. Clique com botão direito no GPO que você criou e, em seguida, selecione **vínculo habilitado**. Uma caixa de seleção aparecerá ao lado do item de menu.
 
-## Etapa 6: Testar o redirecionamento de pasta
+## <a name="step-6-test-folder-redirection"></a>Etapa 6: Redirecionamento de pasta de teste
 
-Para testar o redirecionamento de pasta, entrar em um computador com uma conta de usuário configurada para o redirecionamento de pasta. Em seguida, confirme que as pastas e os perfis são redirecionados.
+Para testar o redirecionamento de pasta, entre em um computador com uma conta de usuário configurada para redirecionamento de pasta. Em seguida, confirme que as pastas e os perfis são redirecionados.
 
 Aqui está como testar o redirecionamento de pasta:
 
-1. Entrar um computador principal (se habilitado o suporte de computador primário) com uma conta de usuário para o qual você habilitou o redirecionamento de pasta.
-2. Se o usuário tem previamente conectado ao computador, abra um prompt de comando com privilégios elevados e digite o seguinte comando para garantir que as configurações de política de grupo mais recentes sejam aplicadas ao computador cliente:
+1. Entrar para um computador primário (se você habilitou o suporte de computador primário) com uma conta de usuário para o qual você habilitou o redirecionamento de pasta.
+2. Caso o usuário tenha sido anteriormente designado para o computador, abra um prompt de comandos com privilégios elevados e, em seguida, digite o comando a seguir para garantir que as configurações de Política de Grupo mais recentes sejam aplicadas ao computador cliente:
     
     ```PowerShell
     gpupdate /force
     ```
-3. Abra o Explorador de arquivos.
-4. Clique com botão direito uma pasta redirecionada (por exemplo, a pasta de documentos na biblioteca documentos) e, em seguida, selecione **Propriedades**.
-5. Selecione a guia **local** e confirme se o caminho exibe o compartilhamento de arquivos que você especificou em vez de um caminho local.
+3. Abra o Explorador de Arquivos.
+4. Clique em uma pasta redirecionada (por exemplo, a pasta Meus documentos da biblioteca de documentos) e, em seguida, selecione **propriedades**.
+5. Selecione o **local** guia e confirme se o caminho de compartilhamento de arquivos especificado, em vez de um caminho local é exibida.
 
-## Apêndice a: lista de verificação para a implantação de redirecionamento de pasta
+## <a name="appendix-a-checklist-for-deploying-folder-redirection"></a>Apêndice a: Lista de verificação para implantação de redirecionamento de pasta
 
 |Status|Ação|
 |:---:|---|
-|☐<br>☐<br>☐|1. preparar o domínio<br>-Adicionar computadores ao domínio<br>-Criar contas de usuário|
-|☐<br><br><br>|2. criar o grupo de segurança para o redirecionamento de pasta<br>-Nome do grupo:<br>-Membros:|
-|☐<br><br>|3. criar um compartilhamento de arquivos para pastas redirecionadas<br>-Nome do compartilhamento de arquivo:|
-|☐<br><br>|4. criar um GPO para redirecionamento de pasta<br>-Nome do GPO:|
-|☐<br><br>☐<br>☐<br>☐<br>☐<br>☐|5. definir configurações de política de redirecionamento de pasta e arquivos Offline<br>-Pastas redirecionadas:<br>-Windows 2000, Windows XP e suporte do Windows Server 2003 habilitado?<br>-Arquivos offline habilitados? (ativada por padrão em computadores de cliente do Windows)<br>-Modo Offline sempre ativado?<br>-Sincronização de arquivos em segundo plano habilitada?<br>-Otimizado movimento das pastas redirecionadas habilitado?|
-|☐<br><br>☐<br><br>☐<br>☐|6. (suporte a computadores principal habilitar opcional)<br>-Baseado no computador ou com base em usuário?<br>-Designar computadores principais para usuários<br>-Local do usuário e os mapeamentos de computador principal:<br>-Ativa (opcional) o suporte do computador principal para o redirecionamento de pasta<br>-Ativa (opcional) o suporte de computador primário para perfis de usuário móvel|
-|☐|7. habilitar o redirecionamento de pasta GPO|
-|☐|8. redirecionamento de pasta de teste|
+|☐<br>☐<br>☐|1. Preparar domínio<br>-Ingressar computadores ao domínio<br>-Criar contas de usuário|
+|☐<br><br><br>|2. Criar grupo de segurança para redirecionamento de pasta<br>-Nome do grupo de:<br>-Membros:|
+|☐<br><br>|3. Criar um compartilhamento de arquivo para pastas redirecionadas<br>-Nome do compartilhamento de arquivos:|
+|☐<br><br>|4. Criar um GPO para redirecionamento de pasta<br>-Nome do GPO:|
+|☐<br><br>☐<br>☐<br>☐<br>☐<br>☐|5. Definir as configurações de política de redirecionamento de pasta e arquivos Offline<br>-Redirecionamento de pastas:<br>-Windows 2000, Windows XP e Windows Server 2003 suporte habilitado?<br>-Arquivos off-line habilitados? (habilitado por padrão em computadores de cliente do Windows)<br>-Modo off-line sempre habilitado?<br>-Sincronização de arquivos de plano de fundo habilitada?<br>-Move otimizado de pastas redirecionadas habilitado?|
+|☐<br><br>☐<br><br>☐<br>☐|6. (Opcional) Habilitar o suporte de computador primário<br>-Baseadas em computador ou com base no usuário?<br>-Designar computadores primários para usuários<br>-Local do usuário e os mapeamentos de computador primário:<br>-(Opcional) Habilitar suporte a computadores primários para redirecionamento de pasta<br>-(Opcional) Habilitar suporte de computador primário para perfis de usuário móvel|
+|☐|7. Habilitar o GPO de redirecionamento de pasta|
+|☐|8. Redirecionamento de pasta de teste|
 
-## Histórico de alterações
+## <a name="change-history"></a>Histórico de alterações
 
-A tabela a seguir resume algumas das mudanças mais importantes para este tópico.
+A tabela a seguir resume algumas das alterações mais importantes para este tópico.
 
 |Data|Descrição|Motivo|
 |---|---|---|
-|18 de janeiro de 2017|Adicionada uma etapa para [etapa 3: criar um GPO para redirecionamento de pasta](#step-3:-create-a-gpo-for-folder-redirection) delegar permissões de leitura para usuários autenticados, que agora é necessário devido a uma atualização de segurança de política de grupo.|Comentários do cliente.|
+|18 de janeiro de 2017|Adicionada uma etapa para [etapa 3: Criar um GPO para redirecionamento de pasta](#step-3:-create-a-gpo-for-folder-redirection) delegar permissões de leitura para usuários autenticados, que agora é necessária devido a uma atualização de segurança de diretiva de grupo.|Comentários do cliente.|
 
-## Mais informações
+## <a name="more-information"></a>Mais informações
 
-* [Visão geral de Redirecionamento de Pasta, Arquivos Offline e perfis de usuários móveis](folder-redirection-rup-overview.md)
-* [Implantar computadores principais para redirecionamento de pasta e perfis de usuário móvel](deploy-primary-computers.md)
-* [Habilitar a funcionalidade avançada Arquivos Offline](enable-always-offline.md)
-* [Instrução de suporte da Microsoft em torno de dados de perfil de usuário replicado](https://blogs.technet.microsoft.com/askds/2010/09/01/microsofts-support-statement-around-replicated-user-profile-data/)
+* [Redirecionamento de pasta, arquivos Offline e perfis de usuário móvel](folder-redirection-rup-overview.md)
+* [Implantar computadores primários para redirecionamento de pasta e perfis de usuário móvel](deploy-primary-computers.md)
+* [Habilitar a funcionalidade avançada de arquivos Offline](enable-always-offline.md)
+* [Instrução de suporte da Microsoft em torno de dados de perfil de usuário duplicados](https://blogs.technet.microsoft.com/askds/2010/09/01/microsofts-support-statement-around-replicated-user-profile-data/)
 * [Sideload de aplicativos com o DISM](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
-* [Solução de problemas de empacotamento, implantação e consulta de aplicativos com base em tempo de execução do Windows](https://msdn.microsoft.com/library/windows/desktop/hh973484.aspx)
+* [Solução de problemas de empacotamento, implantação e consulta de aplicativos baseados em tempo de execução do Windows](https://msdn.microsoft.com/library/windows/desktop/hh973484.aspx)

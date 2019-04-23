@@ -1,0 +1,1 @@
+**Desativar o servidor do DirectAccess.** Quando você tiver removido com êxito as definições de configuração e os registros DNS, você está pronto para subdividir o servidor DirectAccess. Para fazer isso, remova a função no Gerenciador do servidor ou desativar o servidor e removê-lo do AD DS.

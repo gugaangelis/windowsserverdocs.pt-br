@@ -1,5 +1,5 @@
 ---
-title: Criar uma imagem usando arquivos de resposta
+title: Criar uma Imagem Usando Arquivos de Resposta
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -13,25 +13,26 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 76d335643202c8596437daf3173891eea5d4fafa
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59828487"
 ---
-# <a name="create-an-image-by-using-answer-files"></a>Criar uma imagem usando arquivos de resposta
+# <a name="create-an-image-by-using-answer-files"></a>Criar uma Imagem Usando Arquivos de Resposta
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Ao criar uma imagem personalizada, você deve aproveitar os arquivos de suporte que pode ser usado para adicionar, alterar ou manter o controle de dados, configurações e condições. Os seguintes arquivos de suporte podem ser usados no processo de instalação:  
+Ao criar uma imagem personalizada, você deve aproveitar os arquivos de suporte que podem ser usados para adicionar, alterar ou controlar dados, configurações e condições. Os seguintes arquivos de suporte podem ser usados no processo de instalação:  
   
--   [Criar o arquivo Oobe.xml incluindo logotipo e termos de licença](Create-the-Oobe.xml-File-Including-Logo-and-EULA.md)  
+-   [Criar o arquivo Oobe. XML incluindo logotipo e EULA](Create-the-Oobe.xml-File-Including-Logo-and-EULA.md)  
   
--   [Criar o arquivo Cfg.ini](Create-the-Cfg.ini-File.md)  
+-   [Criar o arquivo cfg.](Create-the-Cfg.ini-File.md)  
   
--   [Criar o arquivo PostIC.cmd para executar tarefas de configuração inicial do Post](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)  
+-   [Criar o arquivo postic. cmd para execução de tarefas de configuração inicial de postagem](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)  
   
 ## <a name="see-also"></a>Consulte também  
- [Criar e personalizar a imagem](Creating-and-Customizing-the-Image.md)   
+ [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do cliente](Testing-the-Customer-Experience.md)
+ [Testando a experiência do usuário](Testing-the-Customer-Experience.md)

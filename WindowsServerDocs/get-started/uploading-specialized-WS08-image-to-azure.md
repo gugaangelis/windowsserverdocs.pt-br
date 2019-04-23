@@ -11,19 +11,19 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.openlocfilehash: af98a219a4a5aa708df9c648f1b245a21e95f016
-ms.sourcegitcommit: f7113ccc8b664494f664cd4b100dcac06eef5654
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7012070"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59827807"
 ---
-# Carregar uma imagem especializada do Windows Server 2008/2008 R2 no Azure 
+# <a name="upload-a-windows-server-20082008-r2-specialized-image-to-azure"></a>Carregar uma imagem especializada do Windows Server 2008/2008 R2 no Azure 
 
 ![Tópico de imagem da faixa que apresenta o WS08](media/WS08-image-banner-large.png)
 
 Agora você pode executar uma VM do Windows Server 2008/2008 R2 na nuvem com o Azure. 
 
-## Preparar a imagem especializada do Windows Server 2008/2008 R2
+## <a name="prep-the-windows-server-20082008-r2-specialized-image"></a>Preparar a imagem especializada do Windows Server 2008/2008 R2
 Antes de poder carregar uma imagem, faça as seguintes alterações:
 
 - Baixe e instale o Windows Server 2008 Service Pack 2 (SP2) se você ainda não o tiver instalado na sua imagem.
@@ -43,8 +43,8 @@ Antes de poder carregar uma imagem, faça as seguintes alterações:
 - Defina as configurações do Firewall do Windows.   
    1. No prompt de comando no modo Administrador, insira "**wf.msc**" para o Firewall do Windows e configurações de segurança avançadas.   
    2. Classifique as descobertas por **Portas**, selecione a **porta 3389**.   
-     ![Captura de tela das regras de entrada das configurações do Firewall do WIndows.](media/3b_inboundrules.png)   
-   3. Habilite Área de Trabalho Remota (TCP-IN) para os perfis: **Domínio**, **Particular** e **Público** (mostrado acima).
+     ![Regras de entrada das configurações da captura de tela do Firewall do WIndows.](media/3b_inboundrules.png)   
+   3. Habilite área de trabalho remota (TCP-IN) para os perfis: **Domínio**, **privada**, e **público** (mostrado acima).
 
 - Salve todas as configurações e desligue a imagem.   
 - Se você estiver usando o Hyper-V, certifique-se de que o AVHD secundário seja mesclado ao VHD principal para que as alterações persistam.
@@ -55,10 +55,10 @@ Um bug conhecido atual faz com que a senha do administrador na imagem carregada 
 2. Digite **lusrmgr.msc**
 3. Selecione **Usuários** em Usuários e Grupos Locais
 4. Clique com o botão direito do mouse em **Administrador** e selecione **Propriedades**
-5. Selecione **senha nunca expira** e selecione **OK**
-![Captura de tela das propriedades do administrador.](media/6_adminprops.png)
+5. Selecione **a senha nunca expira** e selecione **Okey**
+![captura de tela de propriedades do administrador.](media/6_adminprops.png)
 
-## Como carregar a imagem VHD
+## <a name="uploading-the-image-vhd"></a>Como carregar a imagem VHD
 Você pode usar o script a seguir para carregar o VHD. Antes de fazer isso, você precisará publicar o arquivo de configurações para sua conta do Azure. Obtenha as [configurações de arquivo do Azure](https://azure.microsoft.com/downloads/).
 
 Aqui está o script:
@@ -80,7 +80,7 @@ Login-AzureRmAccount
       $urlOfUploadedImageVhd = "<BlobUrl>/<NameForVHD>.vhd"
       Add-AzureRmVhd -ResourceGroupName $rgName -Destination $urlOfUploadedImageVhd -LocalFilePath "<FilePath>"  
 ```
-## Implantar a imagem no Azure
+## <a name="deploy-the-image-in-azure"></a>Implantar a imagem no Azure
 Nesta seção, você implantará a imagem VHD no Azure. 
 
 > [!IMPORTANT]
@@ -95,7 +95,7 @@ Nesta seção, você implantará a imagem VHD no Azure.
      a. Vá para Discos, clique em **Adicionar**.  
      b. Insira um nome para o disco. Selecione a assinatura que você deseja usar, defina a região e escolha o tipo de conta.   
      c. Para Tipo de Origem, selecione armazenamento. Navegue até o local do VHD do blob criado usando o script.  
-     d. Selecione o tipo de sistema operacional Windows e o Tamanho (padrão: 1023).   
+     d. Selecione o tipo de sistema operacional Windows e o tamanho (padrão: 1023).   
      e. Clique em **Criar**.   
 
 7.  Vá para o Disco Criado, clique em **Criar VM**.   

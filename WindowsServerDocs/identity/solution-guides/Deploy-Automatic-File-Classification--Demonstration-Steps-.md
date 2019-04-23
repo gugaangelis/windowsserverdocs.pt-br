@@ -1,7 +1,7 @@
 ---
 ms.assetid: 01988844-df02-4952-8535-c87aefd8a38a
-title: "Implantar a classificação de arquivo automático (etapas de demonstração)"
-description: 
+title: Deploy Automatic File Classification (Demonstration Steps)
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,106 +9,107 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 1c5c0fa221e0d7375216426f838ba37bee852984
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 77fb8cc6e13cb82e4d07808c3ae77757a4b2de79
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59826777"
 ---
-# <a name="deploy-automatic-file-classification-demonstration-steps"></a>Implantar a classificação de arquivo automático (etapas de demonstração)
+# <a name="deploy-automatic-file-classification-demonstration-steps"></a>Deploy Automatic File Classification (Demonstration Steps)
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este tópico explica como habilitar as propriedades do recurso no Active Directory, crie as regras de classificação no servidor de arquivos e, depois, atribuir valores às propriedades do recurso para arquivos no servidor de arquivos. Para este exemplo, as seguintes regras de classificação são criadas:  
+Este tópico explica como habilitar as propriedades do recurso no Active Directory, criar regras de classificação no servidor de arquivos e atribuir valores a propriedades do recurso para os arquivos do servidor de arquivos. Neste exemplo, são criadas as seguintes regras de classificação:  
   
--   Uma regra de classificação de conteúdo que procura um conjunto de arquivos para a cadeia de caracteres 'Contoso confidenciais'. Se a cadeia de caracteres for encontrada em um arquivo, a propriedade de recurso impacto é definida como alta no arquivo.  
+-   Uma regra de classificação de conteúdo que pesquisa um conjunto de arquivos para a cadeia de caracteres 'Contoso Confidential'. Se a cadeia de caracteres for encontrada em um arquivo, a propriedade do recurso Impacto é definida para Alto neste arquivo.  
   
--   Uma regra de classificação de conteúdo que procura um conjunto de arquivos para uma expressão regular que corresponde a um número de CPF pelo menos 10 vezes em um arquivo. Se o padrão for encontrado, o arquivo é classificado como tendo informações pessoalmente identificáveis e a propriedade de recurso de informações pessoalmente identificáveis estiver definida como alta.  
+-   Uma regra de classificação que pesquisa em um conjunto de arquivos uma expressão regular compatível com um número de seguro social pelo menos dez vezes em um arquivo. Se o padrão for encontrado, o arquivo é classificado como possuindo informações de identificação pessoal e a propriedade de recurso Informações de identificação pessoal é definida como Alto.  
   
 **Neste documento**  
   
--   [Etapa 1: Criar recursos definições de propriedade](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step1)  
+-   [Etapa 1: Criar definições de propriedade do recurso](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step1)  
   
 -   [Etapa 2: Criar uma regra de classificação de conteúdo de cadeia de caracteres](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step2)  
   
 -   [Etapa 3: Criar uma regra de classificação de conteúdo de expressão regular](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step3)  
   
--   [Etapa 4: Verifique se que os arquivos são classificados](Deploy-Automatic-File-Classification--Demonstration-Steps-.md#BKMK_Step4)  
+-   [Etapa 4: Verificar se os arquivos foram classificados](Deploy-Automatic-File-Classification--Demonstration-Steps-.md#BKMK_Step4)  
   
 > [!NOTE]  
-> Este tópico inclui cmdlets do Windows PowerShell de exemplo que você pode usar para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [usando os Cmdlets do](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [Usando cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_Step1"></a>Etapa 1: Criar recursos definições de propriedade  
-As propriedades do recurso impacto e informações pessoalmente identificáveis são habilitadas para que a infraestrutura de classificação de arquivo pode usar essas propriedades do recurso para marcar os arquivos que são verificados em uma pasta compartilhada da rede.  
+## <a name="BKMK_Step1"></a>Etapa 1: criar definições de propriedade do recurso  
+As propriedades dos recursos Impacto e Informações de Identificação Pessoal são habilitadas de maneira que a Infraestrutura de Classificação de Arquivos possa usar tais propriedades de recurso para marcar os arquivos que são analisados em uma pasta compartilhada da rede.  
   
-[Fazer isso usando o Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
+[Siga esta etapa usando o Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
   
-#### <a name="to-create-resource-property-definitions"></a>A criação de definições de propriedade de recurso  
+#### <a name="to-create-resource-property-definitions"></a>Para criar definições de propriedade de recurso  
   
-1.  No controlador de domínio, faça logon no servidor como um membro do grupo de segurança Administradores de domínio.  
+1.  No controlador de domínio, entre no servidor como membro do grupo de segurança Admins. do Domínio.  
   
-2.  Abra o Centro Administrativo do Active Directory. No Gerenciador do servidor, clique em **ferramentas**e clique em **Centro Administrativo do Active Directory**.  
+2.  Abra o Centro Administrativo do Active Directory. No Gerenciador do Servidor, clique em **Ferramentas** e em **Centro Administrativo do Active Directory**.  
   
-3.  Expanda **controle de acesso dinâmico**e clique em **propriedades do recurso**.  
+3.  Expanda **Controle de Acesso Dinâmico** e clique em **Propriedades do Recurso**.  
   
-4.  Clique com botão direito **impacto**e clique em **habilitar **.  
+4.  Clique com o botão direito do mouse em **Impacto** e em **Habilitar**.  
   
-5.  Clique com botão direito **informações pessoalmente identificáveis**e clique em **habilitar **.  
+5.  Clique com o botão direito do mouse em **Informações de Identificação Pessoal** e em **Habilitar**.  
   
 ![guias de soluções](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
   
-O cmdlet do Windows PowerShell ou os cmdlets a seguir realizam as mesmas funções que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que eles possam aparecer com quebras automáticas em várias linhas devido a restrições de formatação.  
+O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
 ```  
 Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=Impact_MS,CN=Resource Properties,CN=Claims Configuration,CN=Services,CN=Configuration,DC=contoso,DC=com'   
 Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Properties,CN=Claims Configuration,CN=Services,CN=Configuration,DC=contoso,DC=com'  
 ```  
   
-## <a name="BKMK_Step2"></a>Etapa 2: Criar uma regra de classificação de conteúdo de cadeia de caracteres  
-Uma regra de classificação de conteúdo de cadeia de caracteres lê um arquivo para uma cadeia de caracteres específico. Se a cadeia de caracteres for encontrada, o valor de uma propriedade de recurso pode ser configurado. Neste exemplo, nós examinará cada arquivo em uma pasta compartilhada da rede e procure a cadeia de caracteres 'Contoso confidenciais'. Se a cadeia de caracteres for encontrada, o arquivo associado é classificado como ter alto impacto comercial.  
+## <a name="BKMK_Step2"></a>Etapa 2: criar uma regra de classificação de conteúdo de cadeia de caracteres  
+Uma regra de classificação de conteúdo de cadeia de caracteres analisa um arquivo em busca de uma cadeia de caracteres específica. Se a cadeia de caracteres for encontrada, o valor de uma propriedade de recurso poderá ser configurada. Neste exemplo, podemos verificar cada arquivo em uma pasta compartilhada de rede e procure a cadeia de caracteres 'Contoso Confidential'. Se a cadeia de caracteres for encontrada, o arquivo associado é classificado como alto impacto dos negócios.  
   
-[Fazer isso usando o Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
+[Siga esta etapa usando o Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
   
 #### <a name="to-create-a-string-content-classification-rule"></a>Para criar uma regra de classificação de conteúdo de cadeia de caracteres  
   
-1.  Fazer logon servidor de arquivos como um membro do grupo de segurança Administradores.  
+1.  Entre no servidor de arquivos como membro do grupo de segurança Administradores.  
   
-2.  No prompt de comando do Windows PowerShell, digite **FsrmClassificationPropertyDefinition atualização** e pressione ENTER. Isso sincronizará as definições de propriedade criadas no controlador de domínio para o servidor de arquivos.  
+2.  No prompt de comando do Windows PowerShell, digite **Update-FsrmClassificationPropertyDefinition** e pressione ENTER. Isso sincronizará as definições de propriedade criadas no controlador de domínio para o servidor de arquivos.  
   
-3.  Abra o Gerenciador de recursos do servidor de arquivos. No Gerenciador do servidor, clique em **ferramentas**e clique em **Gerenciador de recursos do servidor de arquivos**.  
+3.  Abra o Gerenciador de Recursos de Servidor de Arquivos. No Gerenciador do Servidor, clique em **Ferramentas** e em **Gerenciador de Recursos de Servidor de Arquivos**.  
   
-4.  Expanda **gerenciamento de classificação**, clique com botão direito **as regras de classificação**e clique em **configurar agendamento de classificação**.  
+4.  Expanda **Gerenciamento de Classificação**, clique com o botão direito do mouse em **Regras de Classificação**e em **Configurar Agendamento de Classificação**.  
   
-5.  Selecione o **habilitar agendamento fixo** caixa de seleção, selecione o **permitir classificação contínua para os novos arquivos** caixa de seleção, escolha um dia da semana para executar a classificação e, em seguida, clique em **Okey**.  
+5.  Marque as caixas de seleção **Habilitar agendamento fixo** e **Permitir classificação contínua para novos arquivos**, escolha um dia da semana para execução da classificação e clique em **OK**.  
   
-6.  Clique com botão direito **as regras de classificação**e clique em **criar a regra de classificação**.  
+6.  Clique com o botão direito do mouse em **Regras de Classificação**e depois clique em **Criar Regra de Classificação**.  
   
-7.  No **geral** guia, o **nome da regra**, digite um nome de regra, como **Contoso confidenciais**.  
+7.  Na guia **Geral**, na caixa **Nome da regra**, digite um nome de regra como **Contoso Confidential**.  
   
-8.  Sobre o **escopo**, clique em **adicionar**e escolher as pastas que devem ser incluídas nessa regra, como documentos D:\Finance.  
+8.  Na guia **Escopo** , clique em **Adicionar**e escolha as pastas que devem ser incluídas nessa regra, como D:\Finance Documents.  
   
     > [!NOTE]  
-    > Você também pode escolher um espaço de nome dinâmico para o escopo. Para saber mais sobre namespaces dinâmicas para as regras de classificação, consulte [What's New no Gerenciador de recursos de servidor de arquivos no Windows Server 2012 \[redirected\]](assetId:///d53c603e-6217-4b98-8508-e8e492d16083).  
+    > É possível escolher um namespace dinâmico para o escopo. Para obter mais informações sobre namespaces dinâmicos de regras de classificação, consulte [o que há de novo no Gerenciador de recursos do arquivo de servidor no Windows Server 2012 \[redirecionado\]](assetId:///d53c603e-6217-4b98-8508-e8e492d16083).  
   
-9. Sobre o **Classification** guia, configure o seguinte:  
+9. Na guia **Classificação**, configure o seguinte:  
   
-    -   No **escolher um método para atribuir uma propriedade arquivos** caixa, certifique-se de que **classificador conteúdo** é selecionado.  
+    -   Na caixa **Escolha um método para atribuir uma propriedade aos arquivos**, verifique se **Classificador de Conteúdo** está selecionado.  
   
-    -   No **escolher uma propriedade para atribuir a arquivos**, clique em **impacto**.  
+    -   Na caixa **Escolher uma propriedade a ser atribuída arquivos** , clique em **Impacto**.  
   
-    -   No **especificar um valor**, clique em **alto**.  
+    -   Na caixa **Especifique um valor**, clique em **Alto**.  
   
-10. Sob o **parâmetros** título, clique em **configurar**.  
+10. No cabeçalho **Parâmetros**, clique em **Configurar**.  
   
-11. No **tipo de expressão** coluna, selecione **cadeia de caracteres**.  
+11. Na coluna **Tipo de Expressão** , selecione **Cadeia de caracteres**.  
   
-12. No **expressão** coluna, digite **Contoso confidenciais**e clique em **Okey**.  
+12. Na coluna **Expressão** , digite **Contoso Confidential**e clique em **OK**.  
   
-13. Sobre o **tipo de avaliação**, selecione o **reavaliar valores de propriedade existentes** caixa de seleção, clique em **substituir o valor existente**e, em seguida, clique em **Okey**.  
+13. Na guia **Tipo de Avaliação**, marque a caixa de seleção **Reavaliar os valores de propriedade existentes**, clique em **Substituir o valor existente** e clique em **OK**.  
   
 ![guias de soluções](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
   
-O cmdlet do Windows PowerShell ou os cmdlets a seguir realizam as mesmas funções que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que eles possam aparecer com quebras automáticas em várias linhas devido a restrições de formatação.  
+O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
 ```  
 $date = Get-Date  
@@ -117,77 +118,78 @@ Set-FsrmClassification -Continuous -schedule $AutomaticClassificationScheduledTa
 New-FSRMClassificationRule -Name 'Contoso Confidential' -Property "Impact_MS" -PropertyValue "3000" -Namespace @('D:\Finance Documents') -ClassificationMechanism "Content Classifier" -Parameters @("StringEx=Min=1;Expr=Contoso Confidential") -ReevaluateProperty Overwrite  
 ```  
   
-## <a name="BKMK_Step3"></a>Etapa 3: Criar uma regra de classificação de conteúdo de expressão regular  
-Uma regra de classificação de expressão regular lê um arquivo para um padrão que corresponde à expressão regular. Se uma cadeia de caracteres que corresponde à expressão regular for encontrada, o valor de uma propriedade de recurso pode ser configurado. Neste exemplo, nós examinará cada arquivo em uma pasta compartilhada da rede e procure por uma cadeia de caracteres que corresponde ao padrão de um número de CPF (XXX-XX-XXXX). Se o padrão for encontrado, o arquivo associado é classificado como tendo informações pessoalmente identificáveis.  
+## <a name="BKMK_Step3"></a>Etapa 3: criar uma regra de classificação de conteúdo de expressão regular  
+Uma regra de expressão regular analisa um arquivo em busca de um padrão correspondente à expressão regular. Se uma cadeia de caracteres que correspode à expressão regular for encontrada, o valor de uma propriedade de recurso poderá ser configurada. Neste exemplo, analisaremos cada arquivo em uma pasta de rede compartilhada buscando por uma cadeia de caracteres correspondente ao número de seguro social (XXX-XX-XXXX). Se o padrão for encontrado, o arquivo associado a ele será classificado como portador de informações de identificação pessoal.  
   
-[Fazer isso usando o Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep3)  
+[Siga esta etapa usando o Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep3)  
   
 #### <a name="to-create-a-regular-expression-content-classification-rule"></a>Para criar uma regra de classificação de conteúdo de expressão regular  
   
-1.  Fazer logon servidor de arquivos como um membro do grupo de segurança Administradores.  
+1.  Entre no servidor de arquivos como um membro do grupo de segurança Administradores.  
   
-2.  No prompt de comando do Windows PowerShell, digite **FsrmClassificationPropertyDefinition atualização**, e pressione ENTER. Isso sincronizará as definições de propriedade que são criadas no controlador de domínio para o servidor de arquivos.  
+2.  No prompt de comando do Windows PowerShell, digite **Update-FsrmClassificationPropertyDefinition** e pressione ENTER. Isso sincronizará as definições de propriedade criadas no controlador de domínio para o servidor de arquivos.  
   
-3.  Abra o Gerenciador de recursos do servidor de arquivos. No Gerenciador do servidor, clique em **ferramentas**e clique em **Gerenciador de recursos do servidor de arquivos**.  
+3.  Abra o Gerenciador de Recursos de Servidor de Arquivos. No Gerenciador do Servidor, clique em **Ferramentas** e em **Gerenciador de Recursos de Servidor de Arquivos**.  
   
-4.  Clique com botão direito **as regras de classificação**e clique em **criar a regra de classificação**.  
+4.  Clique com o botão direito do mouse em **Regras de Classificação**e depois clique em **Criar Regra de Classificação**.  
   
-5.  No **geral** guia, o **nome da regra**, digite um nome para a regra de classificação, como PII regra.  
+5.  Na guia **Geral**, na caixa **Nome da regra**, digite um nome para a regra de classificação, como Regra PII.  
   
-6.  Sobre o **escopo**, clique em **adicionar**e, em seguida, escolha as pastas que devem ser incluídas nessa regra, como documentos D:\Finance.  
+6.  Na guia **Escopo**, clique em **Adicionar** e escolha as pastas que deverão ser incluídas nesta regra, como D:\Documentos financeiros.  
   
-7.  Sobre o **Classification** guia, configure o seguinte:  
+7.  Na guia **Classificação**, configure o seguinte:  
   
-    -   No **escolher um método para atribuir uma propriedade arquivos** caixa, certifique-se de que **classificador conteúdo** é selecionado.  
+    -   Na caixa **Escolha um método para atribuir uma propriedade aos arquivos**, verifique se **Classificador de Conteúdo** está selecionado.  
   
-    -   No **escolher uma propriedade para atribuir a arquivos**, clique em **informações pessoalmente identificáveis**.  
+    -   Na caixa **Escolher uma propriedade a ser atribuída aos arquivos** , clique em **Informações de Identificação Pessoal**.  
   
-    -   No **especificar um valor**, clique em **alto**.  
+    -   Na caixa **Especifique um valor**, clique em **Alto**.  
   
-8.  Sob o **parâmetros** título, clique em **configurar**.  
+8.  No cabeçalho **Parâmetros**, clique em **Configurar**.  
   
-9. No **tipo de expressão** coluna, selecione **Expressão Regular**.  
+9. Na coluna **Tipo de Expressão** , selecione **Expressão regular**.  
   
-10. No **expressão** coluna, digite **^ (?! 000)([0-7]\d{2}|7([0-7]\d|7[012])) ([-]?) (?! 00) \d\d\3 (?! \d {4}$ 0000)**  
+10. No **expressão** coluna, digite **^ (?! 000) ([0-7] \d{2}| 7([0-7]\d|7[012 ([-]?) (?! 00) \d\d\3 (?! \d 0000){4}$**  
   
-11. No **mínimo ocorrências** coluna, digite **10**e clique em **Okey**.  
+11. Na coluna **Ocorrências Mínimas** , digite **10**e clique em **OK**.  
   
-12. Sobre o **tipo de avaliação**, selecione o **reavaliar valores de propriedade existentes** caixa de seleção, clique em **substituir o valor existente**e, em seguida, clique em **Okey**.  
+12. Na guia **Tipo de Avaliação**, marque a caixa de seleção **Reavaliar os valores de propriedade existentes**, clique em **Substituir o valor existente** e clique em **OK**.  
   
 ![guias de soluções](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
   
-O cmdlet do Windows PowerShell ou os cmdlets a seguir realizam as mesmas funções que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que eles possam aparecer com quebras automáticas em várias linhas devido a restrições de formatação.  
+O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
 ```  
 New-FSRMClassificationRule -Name "PII Rule" -Property "PII_MS" -PropertyValue "5000" -Namespace @('D:\Finance Documents') -ClassificationMechanism "Content Classifier" -Parameters @("RegularExpressionEx=Min=10;Expr=^(?!000)([0-7]\d{2}|7([0-7]\d|7[012]))([ -]?)(?!00)\d\d\3(?!0000)\d{4}$") -ReevaluateProperty Overwrite  
 ```  
   
-## <a name="BKMK_Step4"></a>Etapa 4: Verifique se que os arquivos são classificados corretamente  
-Você pode verificar que os arquivos são classificados corretamente exibindo as propriedades de um arquivo que foi criado na pasta especificada nas regras de classificação.  
+## <a name="BKMK_Step4"></a>Etapa 4: verificar se os arquivos foram classificados corretamente  
+Você pode verificar se os arquivos foram devidamente classificados ao ver as propriedades de um arquivo criado na pasta especificada nas regras de classificação.  
   
-#### <a name="to-verify-that-the-files-are-classified-correctly"></a>Para verificar que os arquivos são classificados corretamente  
+#### <a name="to-verify-that-the-files-are-classified-correctly"></a>Para verificar se os arquivos foram classificados corretamente  
   
-1.  No servidor de arquivos, execute as regras de classificação usando o Gerenciador de recursos do servidor de arquivos.  
+1.  No servidor de arquivos, execute as regras de classificação usando o Gerenciador de Recursos de Servidor de Arquivos.  
   
-    1.  Clique em **gerenciamento de classificação**, clique com botão direito **as regras de classificação**e clique em **executar Classification com todas as regras agora**.  
+    1.  Clique em **Gerenciamento de Classificação**, clique com o botão direito do mouse em **Regras de Classificação** e clique em **Executar a Classificação com Todas as Regras Agora**.  
   
-    2.  Clique no **Aguarde a classificação concluir** opção e, em seguida, clique em **Okey**.  
+    2.  Clique na opção **Aguardar a conclusão da classificação** e em **OK**.  
   
-    3.  Feche o relatório de classificação automática.  
+    3.  Feche o Relatório de Classificação Automática.  
   
-    4.  Você pode fazer isso usando o Windows PowerShell com o seguinte comando: **inicial FSRMClassification ' "RunDuration 0 - confirmar: $false**  
+    4.  Você pode fazer isso usando o Windows PowerShell com o seguinte comando: **Start-FSRMClassification ' "RunDuration 0 - confirmar: $false**  
   
-2.  Navegue até a pasta que foi especificada nas regras de classificação, como documentos D:\Finance.  
+2.  Navegue para a pasta especificada nas regras de classificação, como D:\Documentos financeiros.  
   
-3.  Selecione o arquivo nessa pasta e clique em **propriedades**.  
+3.  Clique com o botão direito do mouse na pasta e clique em **Propriedades**.  
   
-4.  Clique no **Classification** guia e verifique se que o arquivo é classificado corretamente.  
+4.  Clique na guia **Classificação** e verifique se o arquivo foi classificado corretamente.  
   
 ## <a name="BKMK_Links"></a>Consulte também  
   
--   [Cenário: Obtenha ideias para seus dados por meio de classificação](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)  
+-   [Cenário: Obter ideias sobre seus dados por meio da classificação](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)  
   
--   [Planejar a classificação do arquivo automática](assetId:///e3c3bb4b-3034-42b7-b391-8ef5f5851955)  
+-   [Planejar a classificação automática de arquivos](https://docs.microsoft.com/previous-versions/orphan-topics/ws.11/jj574209(v%3dws.11))  
+
   
 -   [Controle de acesso dinâmico: Visão geral do cenário](Dynamic-Access-Control--Scenario-Overview.md)  
   

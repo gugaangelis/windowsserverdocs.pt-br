@@ -1,5 +1,5 @@
 ---
-title: "Adicionar nomes de domínio de terceiro nível"
+title: Adicionar Nomes de Domínio de Terceiro Nível
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -13,46 +13,47 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 64bf24e45155fdd981e2061b3de7ebce1c53b36c
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59833317"
 ---
-# <a name="add-third-level-domain-names"></a>Adicionar nomes de domínio de terceiro nível
+# <a name="add-third-level-domain-names"></a>Adicionar Nomes de Domínio de Terceiro Nível
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Você pode adicionar a capacidade dos usuários de solicitar nomes de domínio de terceiro nível no Assistente de configuração de nome de domínio. Você pode fazer isso criando e instalando um assembly de código que é usado pelo Gerenciador de domínio no sistema operacional.  
+É possível capacitar os usuários para que solicitem nomes de domínio de terceiro nível no Assistente de Configuração de Nome de Domínio. Isso é feito com a criação e a instalação de um assembly de código usado pelo Gerenciador de Domínio no sistema operacional.  
   
-## <a name="create-a-provider-of-third-level-domain-names"></a>Crie um provedor de nomes de domínio de terceiro nível  
- Você pode disponibilizar os nomes de domínio de terceiro nível criando e instalando um assembly de código que fornece os nomes de domínio ao assistente. Para fazer isso, você deve concluir as seguintes tarefas:  
+## <a name="create-a-provider-of-third-level-domain-names"></a>Criar um provedor de nomes de domínio de terceiro nível  
+ Você pode tornar disponíveis os nomes de domínio de terceiro nível criando e instalando um assembly de código que fornece os nomes de domínio para o assistente. Para fazer isso, conclua as seguintes tarefas:  
   
--   [Adicione uma implementação da interface IDomainSignupProvider ao assembly](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup)  
+-   [Adicionar uma implementação da interface IDomainSignupProvider ao assembly](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup)  
   
--   [Adicione uma implementação da interface IDomainMaintenanceProvider ao assembly](Add-Third-Level-Domain-Names.md#BKMK_DomainMaintenance)  
+-   [Adicionar uma implementação da interface IDomainMaintenanceProvider ao assembly](Add-Third-Level-Domain-Names.md#BKMK_DomainMaintenance)  
   
--   [Assine o assembly com uma assinatura de Authenticode](Add-Third-Level-Domain-Names.md#BKMK_SignAssembly)  
+-   [Assinar o assembly com uma assinatura Authenticode](Add-Third-Level-Domain-Names.md#BKMK_SignAssembly)  
   
--   [Instale o assembly no computador de referência](Add-Third-Level-Domain-Names.md#BKMK_InstallAssembly)  
+-   [Instalar o assembly no computador de referência](Add-Third-Level-Domain-Names.md#BKMK_InstallAssembly)  
   
--   [Reiniciar o serviço de gerenciamento de nome de domínio do Windows Server](Add-Third-Level-Domain-Names.md#BKMK_RestartService)  
+-   [Reinicie o serviço de gerenciamento de nome de domínio do Windows Server](Add-Third-Level-Domain-Names.md#BKMK_RestartService)  
   
-###  <a name="BKMK_DomainSignup"></a>Adicione uma implementação da interface IDomainSignupProvider ao assembly  
- A interface IDomainSignupProvider é usada para adicionar ofertas de domínio ao assistente.  
+###  <a name="BKMK_DomainSignup"></a> Adicionar uma implementação da interface IDomainSignupProvider ao assembly  
+ A interface IDomainSignupProvider é usada para adicionar as ofertas de domínio ao assistente.  
   
-##### <a name="to-add-the-idomainsignupprovider-code-to-the-assembly"></a>Para adicionar o código IDomainSignupProvider ao assembly  
+##### <a name="to-add-the-idomainsignupprovider-code-to-the-assembly"></a>Para adicionar o código de IDomainSignupProvider ao assembly  
   
-1.  Abra o Visual Studio 2008 como administrador clicando com o programa no **iniciar** menu e selecionando **executar como administrador**.  
+1.  Abra o Visual Studio 2008 como administrador clicando com o botão direito do mouse no programa, no menu **Iniciar** e selecione **Executar como administrador**.  
   
-2.  Clique em **arquivo**, clique em **nova**e clique em **projeto**.  
+2.  Clique em **Arquivo**, em **Novo**e em **Projeto**.  
   
-3.  No **novo projeto** caixa de diálogo, clique em **Visual c#**, clique em **biblioteca de classes**, insira um nome para a solução e, em seguida, clique em **Okey**.  
+3.  Na caixa de diálogo **Novo Projeto** , clique em **Visual C#**; clique em **Biblioteca de Classes**, digite um nome para a solução e clique em **OK**.  
   
 4.  Renomeie o arquivo Class1.cs. Por exemplo, MyDomainNameProvider.cs  
   
-5.  Adicione referências para os arquivos Wssg.Web.DomainManagerObjectModel.dll, CertManaged.dll, WssgCertMgmt.dll e WssgCommon.dll.  
+5.  Adicione referências aos arquivos Wssg.Web.DomainManagerObjectModel.dll, CertManaged.dll, WssgCertMgmt.dll e WssgCommon.dll.  
   
-6.  Adicione as seguintes instruções using.  
+6.  Adicionar as seguintes instruções de uso.  
   
     ```c#  
   
@@ -65,7 +66,7 @@ Você pode adicionar a capacidade dos usuários de solicitar nomes de domínio d
     using Microsoft.Win32;  
     ```  
   
-7.  Altere o namespace e o cabeçalho de classe para coincidir com o exemplo a seguir.  
+7.  Altere o namespace e o cabeçalho de classe para corresponder ao exemplo a seguir.  
   
     ```c#  
     namespace Microsoft.WindowsServerSolutions.RemoteAccess.Domains  
@@ -76,10 +77,10 @@ Você pode adicionar a capacidade dos usuários de solicitar nomes de domínio d
     }  
     ```  
   
-8.  Adicione o método Initialize e as variáveis necessárias à classe, que define as ofertas apresentadas no assistente.  
+8.  Adicione o método Initialize e as variáveis exigidas para a classe, que define as ofertas apresentadas no assistente.  
   
     > [!NOTE]
-    >  O método Initialize define um identificador para o provedor de domínio que deve ser exclusivo. Uma maneira comum de fazer isso é definir um GUID como o identificador. Para obter mais informações sobre como criar um GUID, consulte [criar Guid (guidgen.exe)](https://go.microsoft.com/fwlink/?LinkId=116098).  
+    >  O método Initialize define um identificador para o provedor de domínio que deve ser exclusivo. Uma forma comum de fazer isso é definir um GUID como identificador. Para obter mais informações sobre como criar uma GUID, consulte [Criar Guid (guidgen.exe)](https://go.microsoft.com/fwlink/?LinkId=116098).  
   
      O exemplo de código a seguir mostra o método Initialize.  
   
@@ -109,7 +110,7 @@ Você pode adicionar a capacidade dos usuários de solicitar nomes de domínio d
     }  
     ```  
   
-9. Adicione o método GetOfferings, que retorna a lista de ofertas que foi inicializada na etapa anterior. O exemplo de código a seguir mostra o método GetOfferings.  
+9. Adicione o método GetOfferings, que retorna a lista de ofertas inicializada na etapa anterior. O exemplo de código a seguir mostra o método GetOfferings.  
   
     ```c#  
   
@@ -131,7 +132,7 @@ Você pode adicionar a capacidade dos usuários de solicitar nomes de domínio d
   
     ```  
   
-11. Adicione o método SetCredentials, que define as credenciais que são necessárias para acessar as ofertas. O exemplo de código a seguir mostra o método SetCredentials.  
+11. Adicione o método SetCredentials, que define as credenciais exigidas para o acesso às ofertas. O exemplo de código a seguir mostra o método SetCredentials.  
   
     ```c#  
   
@@ -152,7 +153,7 @@ Você pode adicionar a capacidade dos usuários de solicitar nomes de domínio d
     }  
     ```  
   
-12. Adicione o método ValidateCredentials, que valida as credenciais definidas por SetCredentials. O exemplo de código a seguir mostra o método ValidateCredentials.  
+12. Adicione o método ValidateCredentials, que valida as credenciais definidas pelo SetCredentials. O exemplo de código a seguir mostra o método ValidateCredentials.  
   
     ```c#  
   
@@ -173,7 +174,7 @@ Você pode adicionar a capacidade dos usuários de solicitar nomes de domínio d
     }  
     ```  
   
-13. Adicione o método GetAvailableDomainRoots, que retorna a lista de nomes de domínio raiz com suporte na oferta especificada na solicitação. Essa lista de nomes de domínio raiz não deve estar vazia. O exemplo de código a seguir mostra o método GetAvailableDomainRoots.  
+13. Adicione o método GetAvailableDomainRoots, que retorna a lista de nomes de domínio raiz suportados pela oferta especificada na solicitação. Esta lista de nomes de domínio raiz não deve estar vazia. O exemplo de código a seguir mostra o método GetAvailableDomainRoots.  
   
     ```c#  
   
@@ -187,7 +188,7 @@ Você pode adicionar a capacidade dos usuários de solicitar nomes de domínio d
     }  
     ```  
   
-14. Adicione o método GetUserDomainNames, que retorna uma lista de nomes de domínio que o usuário atual já possui, em relação à oferta atual. Essa lista pode estar vazia. O exemplo de código a seguir mostra o método GetUserDomainNames.  
+14. Adicione o método GetUserDomainNames, que retorna uma lista de nomes de domínio já possuída pelo usuário atual, relativa à oferta corrente. Essa lista pode estar vazia. O exemplo de código a seguir mostra o método GetUserDomainNames.  
   
     ```c#  
   
@@ -206,7 +207,7 @@ Você pode adicionar a capacidade dos usuários de solicitar nomes de domínio d
     }  
     ```  
   
-15. Adicione o método GetUserDomainQuota, que retorna o número máximo de domínios que a oferta especificada permite. Se um máximo não for aplicável, esse método deverá retornar 0. O exemplo a seguir mostra o método GetUserDomainQuota.  
+15. Adicione o método GetUserDomainQuota, que retorna o número máximo de domínios permitido pela oferta especificada. Se um máximo não se aplicar, esse método deve retornar 0. O exemplo de código a seguir mostra o método GetUserDomainQuota.  
   
     ```c#  
   
@@ -216,7 +217,7 @@ Você pode adicionar a capacidade dos usuários de solicitar nomes de domínio d
     }  
     ```  
   
-16. Adicione o método CheckDomainAvailability, que verifica a disponibilidade do nome do domínio solicitado e pode retornar uma lista de sugestões. O exemplo de código a seguir mostra o método CheckDomainAvailability.  
+16. Adicione o método CheckDomainAvailability, que verifica a disponibilidade do nome de domínio solicitado e pode retornar uma lista de sugestões. O exemplo de código a seguir mostra o método CheckDomainAvailability .  
   
     ```c#  
   
@@ -229,7 +230,7 @@ Você pode adicionar a capacidade dos usuários de solicitar nomes de domínio d
     }  
     ```  
   
-17. Adicione o método CommitDomain, que confirma o nome de domínio solicitado. Conclusão bem-sucedida desse método implica que o nome de domínio está associado à conta de usuário, o provedor de manutenção será chamado imediatamente para recuperar o certificado se o estado for FullyOperational e o provedor e a oferta se tornarão ativos. O exemplo de código a seguir mostra o método CommitDomain.  
+17. Adicione o método CommitDomain, que confirma o nome de domínio solicitado. A conclusão bem-sucedida desse método indica que o nome de domínio foi associado à conta de usuário. O provedor de manutenção será chamado imediatamente para recuperar o certificado se o estado for FullyOperational, e o provedor e a oferta serão ativados. O exemplo de código a seguir mostra o método CommitDomain.  
   
     ```c#  
   
@@ -255,7 +256,7 @@ Você pode adicionar a capacidade dos usuários de solicitar nomes de domínio d
     }  
     ```  
   
-19. Adicione o método GetProviderLandingUrl, que retorna a URL para a página de aterrissagem no fluxo de trabalho de inscrição de domínio. O exemplo de código a seguir mostra o método GetProviderLandingUrl.  
+19. Adicione o método GetProviderLandingUrl, que retorna a URL para a página de aterrissagem no fluxo de trabalho de assinatura do domínio. O exemplo de código a seguir mostra o método GetProviderLandingUrl.  
   
     ```c#  
   
@@ -265,7 +266,7 @@ Você pode adicionar a capacidade dos usuários de solicitar nomes de domínio d
     }  
     ```  
   
-20. Adicione o método GetDomainMaintenanceProvider, que retorna uma instância de IDomainMaintenanceProvider, usado para tarefas de manutenção de domínio. Esse método é chamado depois que o método CommitDomain é bem-sucedido e quando o Gerenciador de domínio é iniciado. O exemplo de código a seguir mostra o método GetDomainMaintenanceProvider.  
+20. Adicione o método GetDomainMaintenanceProvider, que retorna uma instância do IDomainMaintenanceProvider usada para tarefas de manutenção de domínio. Esse método é requisitado após o êxito do método CommitDomain e quando o Gerenciador de Domínio é iniciado. O exemplo de código a seguir mostra o método GetDomainMaintenanceProvider.  
   
     ```c#  
   
@@ -275,14 +276,14 @@ Você pode adicionar a capacidade dos usuários de solicitar nomes de domínio d
     }  
     ```  
   
-21. Salve o projeto e não o feche porque você adicionará a ele com o próximo procedimento. Você não conseguirá compilar o projeto até você concluir o próximo procedimento.  
+21. Salve o projeto, mas não o feche, porque você irá adicionar a ele o próximo procedimento. Você não poderá criar o projeto até que tenha concluído o próximo procedimento.  
   
-###  <a name="BKMK_DomainMaintenance"></a>Adicione uma implementação da interface IDomainMaintenanceProvider ao assembly  
- IDomainMaintenanceProvider é usada para manter o domínio depois que ela é criada.  
+###  <a name="BKMK_DomainMaintenance"></a> Adicionar uma implementação da interface IDomainMaintenanceProvider ao assembly  
+ O IDomainMaintenanceProvider é usado para manter o domínio depois que ele é criado.  
   
-##### <a name="to-add-the-idomainmaintenanceprovider-code-to-the-assembly"></a>Para adicionar o código IDomainMaintenanceProvider ao assembly  
+##### <a name="to-add-the-idomainmaintenanceprovider-code-to-the-assembly"></a>Para adicionar o código de IDomainMaintenanceProvider ao assembly  
   
-1.  Adicione o cabeçalho de classe para o provedor de manutenção de domínio. Certifique-se de que o nome que você define para o provedor corresponde ao nome no método GetDomainMaintenanceProvider previamente definido.  
+1.  Adicione o cabeçalho de classe ao provedor de manutenção do domínio. Certifique-se de que o nome definido para o provedor corresponde ao nome no método GetDomainMaintenanceProvider definido anteriormente.  
   
     ```c#  
   
@@ -318,7 +319,7 @@ Você pode adicionar a capacidade dos usuários de solicitar nomes de domínio d
   
     ```  
   
-4.  Adicione o método SetCredentials, que atualiza as credenciais do usuário. Por exemplo, esse método pode ser chamado para atualizar credenciais que não são mais válidas. O exemplo de código a seguir mostra o método SetCredentials.  
+4.  Adicione o método SetCredentials, que atualiza as credenciais do usuário. Por exemplo, esse método pode ser requisitado para atualizar credenciais que não são mais válidas. O exemplo de código a seguir mostra o método SetCredentials.  
   
     ```c#  
   
@@ -387,7 +388,7 @@ Você pode adicionar a capacidade dos usuários de solicitar nomes de domínio d
     }  
     ```  
   
-7.  Adicione o método SubmitCertificateRequest, que envia a solicitação de certificado para o nome de domínio configurado no momento.  
+7.  Adicione o método SubmitCertificateRequest, que envia a solicitação de certificado para o nome de domínio configurado atualmente.  
   
     ```c#  
   
@@ -403,7 +404,7 @@ Você pode adicionar a capacidade dos usuários de solicitar nomes de domínio d
     }  
     ```  
   
-8.  Adicione o método GetCertificateResponse, que retorna a resposta do certificado se o status de domínio for FullyOperational. Esse método é chamado para as duas novas solicitações de certificado e para as solicitações de renovação de certificado. O exemplo de código a seguir mostra o método GetCertificateResponse.  
+8.  Adicione o método GetCertificateResponse, que retorna a resposta do certificado se o status do domínio for FullyOperational. Esse método é requisitado para as solicitações de novo certificado e de renovação de certificado. O exemplo de código a seguir mostra o método GetCertificateResponse.  
   
     ```c#  
   
@@ -440,7 +441,7 @@ Você pode adicionar a capacidade dos usuários de solicitar nomes de domínio d
   
     ```  
   
-11. Adicione o método Testconnectionn, que tenta estabelecer uma conexão ao serviço de back-end. Se esse método exigir autenticação, uma exceção apropriada deverá ser acionada. O exemplo de código a seguir mostra o método TestConnection.  
+11. Adicione o método TestConnection, que tenta estabelecer uma conexão com serviço de back-end. Se esse método exigir autenticação, uma exceção apropriada deverá ser lançada. O exemplo de código a seguir mostra o método TestConnection.  
   
     ```c#  
   
@@ -514,72 +515,72 @@ Você pode adicionar a capacidade dos usuários de solicitar nomes de domínio d
     }  
     ```  
   
-14. Salve e compile a solução.  
+14. Salve e crie a solução.  
   
-###  <a name="BKMK_SignAssembly"></a>Assine o assembly com uma assinatura de Authenticode  
- Você deve assinar o assembly com Authenticode para ser usado no sistema operacional. Para obter mais informações sobre como assinar o assembly, consulte [assinando e verificando códigos com Authenticode](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode).  
+###  <a name="BKMK_SignAssembly"></a> Assinar o assembly com uma assinatura Authenticode  
+ Você deve assinar com a Authenticode o assembly para que seja usado no sistema operacional. Para obter mais informações sobre a assinatura do assembly, consulte [Assinando e verificando códigos com Authenticode](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode).  
   
-###  <a name="BKMK_InstallAssembly"></a>Instale o assembly no computador de referência  
- Coloque o assembly em uma pasta no computador de referência. Anote o caminho da pasta porque você vai inseri-lo no registro na próxima etapa.  
+###  <a name="BKMK_InstallAssembly"></a> Instalar o assembly no computador de referência  
+ Coloque o assembly em uma pasta no computador de referência. Anote o caminho da pasta, porque ele será informado no Registro na próxima etapa.  
   
-### <a name="add-a-key-to-the-registry"></a>Adicionar uma chave ao registro  
- Adicione uma entrada do registro para definir as características e a localização do assembly.  
+### <a name="add-a-key-to-the-registry"></a>Adicione uma chave ao Registro  
+ Uma entrada de registro é adicionada para definir as características e a localização do assembly.  
   
-##### <a name="to-add-a-key-to-the-registry"></a>Para adicionar uma chave do registro  
+##### <a name="to-add-a-key-to-the-registry"></a>Para adicionar uma chave ao Registro  
   
-1.  No computador de referência, clique em **iniciar**, insira **regedit**e pressione **Enter**.  
+1.  No computador de referência, clique em **Iniciar**, insira **regedit**e pressione **Enter**.  
   
-2.  No painel esquerdo, expanda **HKEY_LOCAL_MACHINE**, expanda **SOFTWARE**, expanda **Microsoft**, expanda **Windows Server**, expanda **gerenciadores de domínio**e, em seguida, expanda **provedores**.  
+2.  No painel esquerdo, expanda **HKEY_LOCAL_MACHINE**, expanda **SOFTWARE**, expanda **Microsoft**, expanda **Windows Server**, expanda **Gerenciadores de Domínio** e, finalmente, expanda **Provedores**.  
   
-3.  Clique com botão direito **provedores**, aponte para **nova**e clique em **chave**.  
+3.  Clique com o botão direito do mouse em **Provedores**, aponte para **Novo** e clique em **Chave**.  
   
-4.  Digite o identificador para o provedor como o nome para a chave. O identificador é o GUID que você definiu para o provedor na etapa 8 da [adicione uma implementação da interface IDomainSignupProvider ao assembly](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup).  
+4.  Digite o identificador do provedor como o nome da chave. O identificador é o GUID que você definiu para o provedor na etapa 8 de [Add an implementation of the IDomainSignupProvider interface to the assembly](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup).  
   
-5.  Clique com botão direito a chave que você acabou criado e clique em **valor de cadeia de caracteres**.  
+5.  Clique com o botão direito do mouse na chave que você acabou de criar e, em seguida, clique em **Valor da Cadeia de Caracteres**.  
   
-6.  Tipo **Assembly** para o nome da cadeia de caracteres e pressione **Enter**.  
+6.  Digite **Assembly** para o nome da cadeia de caracteres e pressione **Enter**.  
   
-7.  Clique com botão direito do novo **Assembly** cadeia de caracteres no painel direito e clique em **modificar**.  
+7.  Clique com o botão direito do mouse na nova cadeia de caracteres do **Assembly** no painel à direita e clique em **Modificar**.  
   
-8.  Digite o caminho completo para o arquivo de assembly que você criou anteriormente e, em seguida, clique em **Okey**.  
+8.  Digite o caminho completo para o arquivo do assembly criado anteriormente e clique em **OK**.  
   
-9. Clique com botão direito a chave novamente e clique em **valor de cadeia de caracteres**.  
+9. Clique com o botão direito novamente na chave e, em seguida, clique em **Valor da Cadeia de Caracteres**.  
   
-10. Tipo **Enabled** para o nome da cadeia de caracteres e pressione **Enter**.  
+10. Digite **Habilitado** para o nome da cadeia de caracteres e pressione **Enter**.  
   
-11. Clique com botão direito do novo **Enabled** cadeia de caracteres no painel direito e clique em **modificar**.  
+11. Clique com o botão direito na nova cadeia de caracteres **Enabled** no painel à direita e, em seguida, clique em **Modificar**.  
   
-12. Tipo **True**e clique em **Okey**.  
+12. Digite **True**e, em seguida, clique em **OK**.  
   
-13. Clique com botão direito a chave novamente e clique em **valor de cadeia de caracteres**.  
+13. Clique com o botão direito novamente na chave e, em seguida, clique em **Valor da Cadeia de Caracteres**.  
   
-14. Tipo **tipo** para o nome da cadeia de caracteres e pressione **Enter**.  
+14. Digite **Tipo** para o nome da cadeia de caracteres e pressione **Enter**.  
   
-15. Clique com botão direito do novo **tipo** cadeia de caracteres no painel direito e clique em **modificar**.  
+15. Clique com o botão direito na nova cadeia de caracteres **Type** no painel à direita e clique em **Modificar**.  
   
-16. Digite o nome completo da classe do seu provedor definida no assembly e clique em **Okey**.  
+16. Digite o nome completo da classe do provedor definida no assembly e clique em **OK**.  
   
-###  <a name="BKMK_RestartService"></a>Reiniciar o serviço de gerenciamento de nome de domínio do Windows Server  
+###  <a name="BKMK_RestartService"></a> Reinicie o serviço de gerenciamento de nome de domínio do Windows Server  
  Você deve reiniciar o serviço de gerenciamento de domínio do Windows Server para o provedor se torne disponível para o sistema operacional.  
   
 ##### <a name="restart-the-service"></a>Reiniciar o serviço  
   
-1.  Clique em **iniciar**, tipo **mmc**e pressione **Enter**.  
+1.  Clique em **Iniciar**, digite **mmc**e pressione **Enter**.  
   
-2.  Se o snap-in Serviços não estiver listado no console, adicioná-lo, concluindo as seguintes etapas:  
+2.  Se o snap-in Serviços não estiver listado no console, adicione-o executando as seguintes etapas:  
   
-    1.  Clique em **arquivo**e clique em **Adicionar/Remover Snap-in**.  
+    1.  Clique em **Arquivo** e em **Adicionar/Remover Snap-in**.  
   
-    2.  No **snap-ins disponíveis** listar, clique em **serviços**e clique em **adicionar**.  
+    2.  Na lista **Snap-ins disponíveis** , clique em **Serviços**e em **Adicionar**.  
   
-    3.  No **serviços** caixa de diálogo caixa, certifique-se de que **computador local** está selecionado e clique em **concluir**.  
+    3.  Na caixa de diálogo **Serviços** , certifique-se de que **computador local** esteja selecionado e clique em **Concluir**.  
   
-    4.  Clique em **Okey** para fechar o **Adicionar/remover snap-ins** caixa de diálogo.  
+    4.  Clique em **OK** para fechar a caixa de diálogo **Adicionar/Remover snap-ins**.  
   
-3.  Clique duas vezes em **serviços**, role para baixo e selecione **gerenciamento de domínio do Windows Server**e clique em **reiniciar o serviço**.  
+3.  Clique com o botão direito do mouse em **Serviços**, role para baixo, selecione **Gerenciamento de Domínio do Windows Server**e, a seguir, clique em **Reiniciar o serviço**.  
   
 ## <a name="see-also"></a>Consulte também  
- [Criar e personalizar a imagem](Creating-and-Customizing-the-Image.md)   
+ [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do cliente](Testing-the-Customer-Experience.md)
+ [Testando a experiência do usuário](Testing-the-Customer-Experience.md)

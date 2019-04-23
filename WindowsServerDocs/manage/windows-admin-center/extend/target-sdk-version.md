@@ -1,6 +1,6 @@
 ---
-title: Direcionar uma versão diferente do SDK do Windows Admin Center
-description: Direcionar uma versão diferente do SDK do Windows Admin Center (Project Honolulu)
+title: Uma versão diferente do SDK do Windows Admin Center de destino
+description: Uma versão diferente do SDK do Windows Admin Center (projeto Paulo)
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -9,30 +9,30 @@ ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.openlocfilehash: 47ae669e517f963762ee6267594e18f3413a72ff
-ms.sourcegitcommit: be0144eb59daf3269bebea93cb1c467d67e2d2f1
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4081033"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59833617"
 ---
-# Direcionar uma versão diferente do SDK do Windows Admin Center
+# <a name="target-a-different-version-of-the-windows-admin-center-sdk"></a>Uma versão diferente do SDK do Windows Admin Center de destino
 
->Aplica-se a: Windows Admin Center, Visualização do Windows Admin Center
+>Aplica-se a: Windows Admin Center, Windows Admin Center Preview
 
-É fácil manter sua extensão atualizados com alterações SDK e plataforma.  Usamos [NPM marcas](https://www.npmjs.com/package/@microsoft/windows-admin-center-sdk) para organizar o lançamento dos novos recursos em versões do SDK.
+É fácil manter sua extensão atualizada com as alterações do SDK e plataforma.  Usamos [NPM marcas](https://www.npmjs.com/package/@microsoft/windows-admin-center-sdk) para organizar o lançamento de novos recursos em versões do SDK.
 
 Há três versões do SDK, entre que você pode escolher:
 
-* ```latest``` – Esse pacote SDK se alinha com a versão GA atual do Windows Admin Center
-* ```insider``` – Esse pacote SDK se alinha com a versão atual da visualização do Windows Admin Center (disponível no Windows Server Insider Preview)
-* ```next``` – Esse pacote SDK contém a funcionalidade mais recente
+* ```latest``` – Este pacote SDK se alinha com a atual versão de GA do Windows Admin Center
+* ```insider``` – Este pacote SDK se alinha com a versão de visualização atual do Windows Admin Center (disponível no Windows Server Insider Preview)
+* ```next``` – Este pacote do SDK contém a funcionalidade mais recente
 
 > [!NOTE]
-> Saiba mais sobre as diferentes [versões](https://aka.ms/WACDownloadPage) do Windows Admin Center que estão disponíveis para download.
+> Saiba mais sobre os diferentes [versões](https://aka.ms/WACDownloadPage) do Windows Admin Center que estão disponíveis para download.
 
-## Versão do SDK em um novo projeto de direcionamento
+## <a name="targeting-sdk-version-on-a-new-project"></a>Direcionar a versão do SDK em um novo projeto
 
-Ao criar uma nova extensão, você pode incluir o ```--version``` parâmetro para direcionar uma versão diferente do SDK:
+Ao criar uma nova extensão, você pode incluir o ```--version``` parâmetro para uma versão diferente do SDK:
 
 ```
 wac create --company "{!Company Name}" --tool "{!Tool Name}" --version {!version}
@@ -40,7 +40,7 @@ wac create --company "{!Company Name}" --tool "{!Tool Name}" --version {!version
 
 | Valor | Explicação | Exemplo |
 | ----- | ----------- | ------- |
-| ```{!Company Name}``` | O nome da empresa (com espaços) | ```Contoso Inc``` |
+| ```{!Company Name}``` | Nome da sua empresa (com espaços) | ```Contoso Inc``` |
 | ```{!Tool Name}``` | O nome da ferramenta (com espaços) | ```Manage Foo Works``` |
 | ```{!version}``` | Versão do SDK | ```latest``` |
 
@@ -50,17 +50,17 @@ Aqui está um exemplo de criação de uma nova extensão direcionamento ```insid
 wac create --company "Contoso Inc" --tool "Manage Foo Works" --version insider
 ```
 
-## Direcionando a versão do SDK em um projeto existente
+## <a name="targeting-sdk-version-on-an-existing-project"></a>Direcionar a versão do SDK em um projeto existente
 
-Para modificar um projeto existente para direcionar uma versão diferente do SDK, modifique a seguinte linha na ```package.json```:
+Para modificar um projeto existente para uma versão diferente do SDK de destino, modifique a seguinte linha no ```package.json```:
 
 ```
 "@microsoft/windows-admin-center-sdk": "latest",
 ```
-Neste exemplo, substitua ```latest``` com a versão do SDK desejado, ou seja, ```insider```:
+Neste exemplo, substitua ```latest``` com a versão desejada do SDK, ou seja, ```insider```:
 
 ```
 "@microsoft/windows-admin-center-sdk": "insider",
 ```
 
-Em seguida, execute ```npm install``` atualizar referências em todo o projeto.
+Em seguida, execute ```npm install``` para atualizar referências em todo o projeto.

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 69ec592a-5499-4249-8ba0-afa356a8ff75
-title: "Referência técnica de registro de dispositivo"
-description: 
+title: Referência Técnica de Registro do Dispositivo
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,80 +10,81 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: fac6437e9b6c3893064769a8279c2cf96cbc47d6
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59833777"
 ---
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
-# <a name="device-registration-technical-reference"></a>Referência técnica de registro de dispositivo
-The Device Registration Service \(DRS\) is a new Windows service that is included with the Active Directory Federation Service Role on Windows Server 2012 R2.  The DRS must be installed and configured on all of the federation servers in your AD FS farm.  For information on deploying DRS, see [Configure a federation server with Device Registration Service](https://technet.microsoft.com/library/dn486831.aspx).  
+# <a name="device-registration-technical-reference"></a>Referência Técnica de Registro do Dispositivo
+O Device Registration Service \(DRS\) é um novo serviço do Windows que está incluído com a função de serviço de Federação do Active Directory no Windows Server 2012 R2.  O DRS deve ser instalado e configurado em todos os servidores de federação no farm do AD FS.  Para obter informações sobre o DRS, consulte [Configurar um servidor de federação com o serviço de registro de dispositivo](https://technet.microsoft.com/library/dn486831.aspx).  
   
-## <a name="active-directory-objects-created-when-a-device-is-registered"></a>Active Directory objects created when a device is registered  
-The following Active Directory objects are created as part of Device Registration Service.  
+## <a name="active-directory-objects-created-when-a-device-is-registered"></a>Objetos do Active Directory criados quando um dispositivo é registrado  
+Os seguintes objetos do Active Directory são criados como parte do serviço de registro do dispositivo.  
   
-### <a name="device-registration-configuration"></a>Device Registration Configuration  
-The Device Registration Configuration is stored in the Configuration naming context of the Active Directory forest. \(For example, **CN\=Device Registration Configuration,CN\=Services,<configuration\-naming\-context>**\). This object is created when the Active Directory forest is initialed for Device Registration.  
+### <a name="device-registration-configuration"></a>Configuração de registro do dispositivo  
+A configuração de registro do dispositivo é armazenada no contexto de nomenclatura de configuração da floresta do Active Directory. \(Por exemplo, **CN\=Device Registration Configuration, CN\=Services, < configuration\-nomenclatura\-contexto >**\). Esse objeto é criado quando a floresta do Active Directory é iniciada para o registro do dispositivo.  
   
-The Device Registration Configuration includes the following elements:  
+A configuração do registro de dispositivo inclui os seguintes elementos:  
   
--   **Issuer keys**  
+-   **Chaves do emissor**  
   
-    The public and private keys used to issue the X.509 certificate that is associated with a registered device.  The private keys are DKM protected.  
+    As chaves públicas e privadas usadas para emitir o certificado X.509 que é associado um dispositivo registrado.  As chaves privadas são protegidas por DKM.  
   
--   **Device Registration Service Configuration**  
+-   **Configuração do serviço de registro de dispositivo**  
   
-    Policies relating to the Device Registration Service.  
+    Políticas relativas ao serviço de registro do dispositivo.  
   
-### <a name="registered-devices-container"></a>Registered devices container  
-The device object container is created under one of the domains in the Active Directory forest.  This object container will contain all of the device objects for the Active Directory forest.  
+### <a name="registered-devices-container"></a>Contêiner de dispositivos registrados  
+O contêiner do objeto de dispositivo é criado em um dos domínios na floresta do Active Directory.  Este contêiner de objeto contém todos os objetos de dispositivo para a floresta do Active Directory.  
   
-By default, the container is created in the same domain as AD FS.  \(For example, **CN\=RegisteredDevices,DC\=<default\-naming\-context>**\).This object is created when the Active Directory forest is initialed for Device Registration.  
+Por padrão, o contêiner é criado no mesmo domínio do AD FS.  \(Por exemplo, **CN\=RegisteredDevices, DC\=< padrão\-nomenclatura\-contexto >**\). Esse objeto é criado quando a floresta do Active Directory é iniciada para o registro do dispositivo.  
   
 ### <a name="registered-devices"></a>Dispositivos registrados  
-Device objects are new, light weight objects in Active Directory.  They are used to represent the relationship between: a user, a device, and the company.  Device objects use a certificate signed by AD FS to anchor the physical device to the logical device object in Active Directory.  
+Objetos de dispositivo são objetos novos e leves no Active Directory.  Eles são usados para representar a relação entre: um usuário, um dispositivo e a empresa.  Objetos de dispositivo usam um certificado assinado pelo AD FS para ancorar o dispositivo físico para o objeto de dispositivo lógico no Active Directory.  
   
-Registered devices includes the following elements:  
+Os dispositivos registrados incluem os seguintes elementos:  
   
 -   **Nome de exibição**  
   
-    Friendly name of the device.  For windows devices, this is the host name of the computer.  
+    Nome amigável do dispositivo.  Para dispositivos do Windows, esse é o nome do host do computador.  
   
--   **Device Id**  
+-   **Id do dispositivo**  
   
-    A GUID that is generated by the Device Registration server.  
+    Uma GUID que é gerada pelo servidor de registro do dispositivo.  
   
--   **Certificate Thumbprint**  
+-   **Impressão digital do certificado**  
   
-    The certificate thumbprint of the X.509 certificate that is used with the registered device.  
+    A impressão digital do certificado X.509 que é usada com o dispositivo registrado.  
   
--   **OS Type**  
+-   **Tipo de sistema operacional**  
   
-    The operating system type on the device.  
+    Tipo do sistema operacional do dispositivo.  
   
--   **OS Version**  
+-   **Versão do sistema operacional**  
   
-    The version of the operating system on the device.  
+    Versão do sistema operacional do dispositivo.  
   
--   **Is Enabled**  
+-   **Está habilitado**  
   
-    A Boolean that indicates if the device is enabled in Active Directory.  Only enabled devices are allowed to access to services.  
+    Um valor booliano que indica se o dispositivo está habilitado no Active Directory.  Somente os dispositivos habilitados têm permissão para acessar serviços.  
   
--   **Approximate Last Use Time**  
+-   **Último horário de uso aproximado**  
   
-    The approximate time the device was used to access a resource.  To limit replication traffic, this is only updated once every 14 days.  
+    O horário aproximado em que o dispositivo foi usado para acessar um recurso.  Para limitar o tráfego de replicação, isso só é atualizado uma vez a cada 14 dias.  
   
--   **Registered Owner**  
+-   **Proprietário registrado**  
   
-    The Security Identity \(SID\) of the user that joined this device to the workplace.  
+    A identidade de segurança \(SID\) do usuário que associou esse dispositivo ao local de trabalho.  
   
-## <a name="ad-fsdrs-server-ssl-certificate-revocation-checking"></a>AD FS\/DRS Server SSL certificate revocation checking  
-The Workplace Join client checks the validity of the AD FS Server SSL certificate.  If the AD FS Server SSL certificate includes a Certificate Revocation List \(CRL\) endpoint, the client must be able to reach the endpoint specified to validate the certificate.  
+## <a name="ad-fsdrs-server-ssl-certificate-revocation-checking"></a>O AD FS\/verificação de revogação de certificado SSL do servidor DRS  
+O cliente de ingresso do local de trabalho verifica a validade do certificado SSL do servidor do AD FS.  Se o certificado SSL do servidor do AD FS inclui uma lista de certificados revogados \(CRL\) ponto de extremidade, o cliente deve ser capaz de alcançar o ponto de extremidade especificado para validar o certificado.  
   
-If you are using a test environment and a test certificate authority \(CA\) to issue your server SSL certificates then you can choose to not include the CRL endpoint in the server certificates issued by your CA.  Doing so will allow the Workplace Join client to bypass the CRL check.  
+Se você estiver usando um ambiente de teste e uma autoridade de certificação de teste \(autoridade de certificação\) para emitir certificados SSL de seu servidor e em seguida, você pode optar por não incluir o ponto de extremidade da CRL nos certificados de servidor emitidos por sua autoridade de certificação.  Isso permitirá que o cliente de ingresso do local de trabalho ignore a verificação da CRL.  
   
 > [!CAUTION]  
-> This is never recommended for production systems  
+> Isso nunca é recomendado para sistemas de produção  
   
 

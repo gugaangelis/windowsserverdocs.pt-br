@@ -1,19 +1,20 @@
 ---
 ms.assetid: 73a4deba-7da6-4eae-8fdd-2a4d369f9cbb
-title: "Apêndice de referência técnica do controlador de domínio virtualizado"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: Apêndice de referência técnica do controlador de domínio virtualizado
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 2e7f264a098b6f67d98c9aa47ec5794374b8920d
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.openlocfilehash: 9e3a5cc2c71455bb040f1311bdbfed1ac7e213fb
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59832227"
 ---
 # <a name="virtualized-domain-controller-technical-reference-appendix"></a>Apêndice de referência técnica do controlador de domínio virtualizado
 
@@ -27,21 +28,21 @@ Este tópico aborda:
   
 ## <a name="BKMK_Terms"></a>Terminologia  
   
--   **Instantâneo** -o estado de uma máquina virtual em um determinado momento. É dependente da cadeia de instantâneos anteriores tirados, no hardware e na plataforma de virtualização.  
+-   **Instantâneo** -o estado de uma máquina virtual em um ponto específico no tempo. Ele é dependente da cadeia do instantâneo anterior, no hardware e a plataforma de virtualização.  
   
--   **Clone** - um concluir e separar a cópia de uma máquina virtual. Ele depende do hardware virtual (hipervisor).  
+-   **Clone** - uma conclusão e separar a cópia de uma máquina virtual. Ele é dependente do hardware virtual (hipervisor).  
   
--   **Full Clone** -um clone completo é uma cópia de uma máquina virtual que não compartilha nenhum recurso com a máquina virtual de pai após a operação de clonagem independente. Operação contínua de um clone completo é totalmente separada da máquina virtual pai.  
+-   **Total de Clone** -um clone completo é uma cópia independente de uma máquina virtual que não compartilha nenhum recurso com a máquina virtual primária após a operação de clonagem. Operação contínua de um clone completo é completamente separada da máquina virtual pai.  
   
--   **Diferencial de disco** -uma cópia de uma máquina virtual que compartilha discos virtuais com a máquina virtual de pai de forma contínua. Geralmente, isso economiza espaço em disco e permite várias máquinas virtuais para usar a mesma instalação de software.  
+-   **Disco diferencial** -uma cópia de uma máquina virtual que compartilha discos virtuais com a máquina virtual primária de maneira contínua. Normalmente, isso economiza espaço em disco e permite que várias máquinas virtuais para usar a mesma instalação de software.  
   
--   **Cópia de VM**- uma cópia do sistema de todos os arquivos relacionados e pastas de uma máquina virtual do arquivo.  
+-   **Cópia da VM**- uma cópia do sistema de todos os arquivos relacionados e as pastas de uma máquina virtual do arquivo.  
   
--   **Cópia do arquivo VHD** -uma cópia de VHD de uma máquina virtual  
+-   **Cópia de arquivo do VHD** -uma cópia do VHD de uma máquina virtual  
   
--   **ID de geração de VM** - um inteiro de 128 bits dada para a máquina virtual pelo hipervisor. Essa ID é armazenado na memória e redefinir sempre que um instantâneo é aplicado. O design usa um mecanismo de hipervisor independentes para o ID de geração de VM na máquina virtual à tona por meio. A implementação do Hyper-V expõe a ID na tabela ACPI da máquina virtual.  
+-   **ID de geração de VM** – um inteiro de 128 bits dada à máquina virtual pelo hipervisor. Essa ID é armazenada na memória e reiniciado sempre que um instantâneo é aplicado. O projeto usa um mecanismo independente de hipervisor para identificando a ID de geração de VM na máquina virtual. A implementação do Hyper-V expõe a ID na tabela ACPI da máquina virtual.  
   
--   **Importação/exportação** -recurso A Hyper-V que permite que o usuário salve a toda a máquina virtual (VM arquivos VHD e configuração do computador). Ele permite que os usuários usando esse conjunto de arquivos para trazer o computador novamente na mesma máquina como a mesma VM (restauração), em um computador diferente, como a mesma VM (mover), ou uma nova VM (copiar)  
+-   **Importação/exportação** -recurso de um Hyper-V que permite ao usuário salvar a máquina virtual inteira (arquivos VM, VHD e a configuração de máquina). Ele permite que os usuários usando esse conjunto de arquivos para colocar o computador novamente no mesmo computador como a mesma VM (restauração), em um computador diferente, como a mesma VM (mover) ou uma nova VM (cópia)  
   
 ## <a name="BKMK_FixPDCPerms"></a>FixVDCPermissions.ps1  
   

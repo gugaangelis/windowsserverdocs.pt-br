@@ -1,6 +1,6 @@
 ---
 title: Melhorar o desempenho de um servidor de arquivos com o SMB Direct
-description: Descreve o SMB Direct recurso no Windows Server 2012 R2, Windows Server 2012 e Windows Server 2016.
+description: Descreve o recurso SMB Direct no Windows Server 2012 R2, Windows Server 2012 e Windows Server 2016.
 ms.prod: windows-server-threshold
 ms.topic: article
 author: JasonGerend
@@ -9,120 +9,120 @@ ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ed8fd5b4114fc9fd9c7dc278a98cea8cc67a8749
-ms.sourcegitcommit: d31e266130b3b082372f7af4024e6089cb347d74
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "4239223"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59826437"
 ---
-# SMB Direct
+# <a name="smb-direct"></a>SMB Direct
 
 >Aplica-se a: Windows Server 2012 R2, Windows Server 2012, Windows Server 2016
 
-Windows Server 2012 R2, Windows Server 2012 e Windows Server 2016 incluem um recurso chamado SMB Direct, que permite o uso de adaptadores de rede que têm a funcionalidade de acesso de memória de Direct (RDMA) remoto. Adaptadores de rede com RDMA podem funcionar em velocidade máxima com latência muito baixa, durante o uso de CPU muito pouco. Para cargas de trabalho, como o Hyper-V ou o Microsoft SQL Server, isso permite que um servidor de arquivos remoto para se parecer com armazenamento local. SMB Direct inclui:
+Windows Server 2012 R2, Windows Server 2012 e Windows Server 2016 incluem um recurso chamado SMB Direct, que oferece suporte ao uso de adaptadores de rede que têm a capacidade de memória RDMA acesso remoto direto (). Os adaptadores de rede com RDMA podem funcionar a toda a velocidade com latência muito baixa, usando muito pouco da CPU. Para cargas de trabalho como o Hyper-V ou o Microsoft SQL Server, isso permite que um servidor de arquivos remoto se pareça com um armazenamento local. O SMB Direct inclui:
 
-- Maior produtividade: aproveita a taxa de transferência total de redes de alta velocidade em que os adaptadores de rede coordenar a transferência de grandes quantidades de dados na velocidade da linha.
-- Baixa latência: fornece respostas extremamente rápidas às solicitações de rede e, consequentemente, torne o armazenamento de arquivos remoto como se fosse o armazenamento em bloco diretamente conectado.
-- Baixa utilização da CPU: usa menos ciclos de CPU quando transferir dados pela rede, o que deixa mais energia disponível para aplicativos de servidor.
+- Maior taxa de transferência: Aproveita a taxa de transferência total de redes de alta velocidade em que os adaptadores de rede coordenam a transferência de grandes volumes de dados em velocidade da linha.
+- Baixa latência: Fornece respostas extremamente rápidas às solicitações de rede e, como resultado, faz com que o armazenamento de arquivos remoto pareça estar diretamente conectado ao armazenamento em bloco.
+- Baixa utilização da CPU: Usa menos ciclos da CPU ao transferir dados pela rede, o que disponibiliza mais energia para os aplicativos para servidor.
 
-SMB Direct é configurado automaticamente pelo Windows Server 2012 R2 e Windows Server 2012.
+O SMB Direct é automaticamente configurado pelo Windows Server 2012 R2 e Windows Server 2012.
 
-## SMB Multichannel e SMB Direct
+## <a name="smb-multichannel-and-smb-direct"></a>SMB Multichannel e SMB Direct
 
-SMB Multichannel é o recurso responsável para detectar os recursos RDMA de adaptadores de rede para habilitar o SMB Direct. Sem SMB Multichannel, SMB usa TCP/IP regulares com os adaptadores de rede compatíveis com RDMA (todos os adaptadores de rede fornecem uma pilha de TCP/IP juntamente com a nova pilha RDMA).
+SMB Multichannel é o recurso responsável pela detecção de capacidades RDMA de adaptadores de rede para habilitar o SMB Direct. Sem o SMB Multichannel, o SMB usa o TCP/IP normal com os adaptadores de rede compatíveis com RDMA (todos os adaptadores de rede fornecem uma pilha de TCP/IP juntamente com a nova pilha RDMA).
 
-Com o SMB Multichannel, SMB detecta se um adaptador de rede tem a capacidade RDMA e, em seguida, cria várias conexões de RDMA para essa sessão única (por interface dois). Isso permite que o SMB usar a taxa de transferência alta, de baixa latência e baixa utilização da CPU oferecido por adaptadores de rede compatíveis com RDMA. Ele também oferece a tolerância a falhas se você estiver usando várias interfaces RDMA.
+Com o SMB Multichannel, o SMB detecta se um adaptador de rede tem a capacidade RDMA e cria várias conexões RDMA para essa única sessão (duas por interface). Assim, o SMB pode usar a alta taxa de transferência, a baixa latência e a baixa utilização de CPU oferecidas por adaptadores de rede compatíveis com RDMA. Ele também oferecerá tolerância a falhas, se você estiver usando várias interfaces RDMA.
 
 >[!NOTE]
->Você não deve equipe adaptadores de rede compatíveis com RDMA se você pretende usar a funcionalidade RDMA dos adaptadores de rede. Quando agrupados, os adaptadores de rede não dará suporte RDMA.
->Depois que pelo menos uma conexão de rede RDMA é criada, a conexão TCP/IP usado para a negociação de protocolo original não é mais usada. No entanto, a conexão TCP/IP é mantida em caso de falham de conexões de rede RDMA.
+>Não agrupe adaptadores de rede compatíveis com RDMA se pretender usar a capacidade RDMA dos adaptadores de rede. Quando agrupados, os adaptadores de rede não dão suporte ao RDMA.
+>Depois que for criada pelo menos uma conexão de rede RDMA, a conexão TCP/IP usada para a negociação de protocolo original não será mais usada. No entanto, a conexão TCP/IP será mantida, caso as conexões de rede RDMA falhem.
 
-## Requisitos
+## <a name="requirements"></a>Requisitos
 
-SMB Direct requer o seguinte:
+O SMB Direct requer o seguinte:
 
 - Pelo menos dois computadores que executam o Windows Server 2012 R2 ou Windows Server 2012
 - Um ou mais adaptadores de rede com capacidade RDMA.
 
-### Considerações ao usar o SMB Direct
+### <a name="considerations-when-using-smb-direct"></a>Considerações sobre o uso do SMB Direct
 
-- Você pode usar o SMB Direct em um cluster de failover; No entanto, você precisará certificar-se de que as redes de cluster usadas para o acesso de cliente são adequadas para SMB Direct. Failover clustering supports using multiple networks for client access, along with network adapters that are RSS (Receive Side Scaling)-capable and RDMA-capable.
-- Você pode usar SMB Direct no sistema de operacional de gerenciamento do Hyper-V para suporte ao uso do Hyper-V em SMB e fornecer armazenamento para uma máquina virtual que usa a pilha de armazenamento do Hyper-V. No entanto, os adaptadores de rede compatíveis com RDMA não são expostos diretamente a um cliente do Hyper-V. Se você conectar um adaptador de rede compatíveis com RDMA a um comutador virtual, os adaptadores de rede virtual do switch não será capaz de RDMA.
-- Se você desabilitar o SMB Multichannel, SMB Direct também está desabilitado. Como o SMB Multichannel detecta recursos do adaptador de rede e determina se um adaptador de rede é compatível com RDMA, SMB Direct não pode ser usado pelo cliente se SMB Multichannel está desabilitada.
-- SMB Direct não é compatível com RT Windows. SMB Direct requer suporte para adaptadores de rede compatíveis com RDMA, que está disponível somente no Windows Server 2012 R2 e Windows Server 2012.
-- SMB Direct não é compatível com versões de baixo nível do Windows Server. Ele tem suporte somente no Windows Server 2012 R2 e Windows Server 2012.
+- Você pode usar o SMB Direct em um cluster de failover; entretanto, certifique-se de que as redes de cluster usadas para o acesso de clientes são adequadas para o SMB Direct. O cluster de failover dá suporte ao uso de várias redes para acesso de clientes, juntamente com adaptadores de rede compatíveis com RSS (Receive Side Scaling) e com RDMA.
+- Você pode usar o SMB Direct no sistema operacional de gerenciamento Hyper-V para dar suporte ao uso do Hyper-V no SMB, e para fornecer armazenamento para uma máquina virtual que use a pilha de armazenamento do Hyper-V. No entanto, os adaptadores de rede compatíveis com RDMA não são diretamente expostos ao cliente Hyper-V. Se você conectar um adaptador de rede compatível com RDMA a um comutador virtual, os adaptadores de rede virtual do comutador não serão compatíveis com RDMA.
+- Se você desabilitar o SMB Multichannel, o SMB Direct também será desabilitado. Como o SMB Multichannel detecta capacidades de adaptadores de rede e determina se um adaptador de rede é compatível com RDMA, o SMB Direct não pode ser usado pelo cliente quando o SMB Multichannel está desabilitado.
+- O SMB Direct não tem suporte no RT Windows. O SMB Direct exige suporte para adaptadores de rede compatíveis com RDMA, que está disponível apenas no Windows Server 2012 R2 e Windows Server 2012.
+- Não há suporte para SMB Direct em versões inferiores do Windows Server. Há suporte apenas no Windows Server 2012 R2 e Windows Server 2012.
 
-## Habilitando e desabilitando SMB Direct
+## <a name="enabling-and-disabling-smb-direct"></a>Habilitando e desabilitando o SMB Direct
 
-SMB Direct é habilitada por padrão quando o Windows Server 2012 R2 ou Windows Server 2012 é instalado. O cliente SMB detecta automaticamente e usa várias conexões de rede se uma configuração apropriada é identificada.
+O SMB Direct é habilitado por padrão quando o Windows Server 2012 R2 ou Windows Server 2012 está instalado. O cliente SMB detecta e usa automaticamente várias conexões de rede quando uma configuração apropriada é identificada.
 
-### Desabilitar o SMB Direct
+### <a name="disable-smb-direct"></a>Desabilitar o SMB Direct
 
-Normalmente, você não precisará desabilitar o SMB Direct, no entanto, você pode desativá-la, executando um dos seguintes scripts do Windows PowerShell.
+Normalmente, não será necessário desabilitar o SMB Direct; contudo, você pode desabilitá-lo executando um dos seguintes scripts do Windows PowerShell.
 
-Para desativar o RDMA para uma interface específica, digite:
+Para desabilitar o RDMA para uma interface específica, digite:
 
 ```PowerShell
 Disable-NetAdapterRdma <name>
 ```
 
-Para desativar o RDMA para todas as interfaces, digite:
+Para desabilitar o RDMA para todas as interfaces, digite:
 
 ```PowerShell
 Set-NetOffloadGlobalSetting -NetworkDirect Disabled
 ```
 
-Quando você desabilita o RDMA no cliente ou servidor, os sistemas não podem usá-lo. *Rede direta* é o nome interno para Windows Server 2012 R2 e Windows Server 2012 suporte básico de rede para interfaces RDMA.
+Quando você desabilita o RDMA no cliente ou no servidor, os sistemas não podem usá-lo. *Network Direct* é o nome interno para o Windows Server 2012 R2 e Windows Server 2012 suporte básico de rede para interfaces RDMA.
 
-### Habilitar novamente SMB Direct
+### <a name="re-enable-smb-direct"></a>Habilitar novamente o SMB Direct
 
-Depois de desabilitá RDMA, você pode reativá-la, executando um dos seguintes scripts do Windows PowerShell.
+Depois de desabilitar o RDMA, é possível reabilitá-lo executando um dos scripts do Windows PowerShell a seguir.
 
-Para reativar RDMA para uma interface específica, digite:
+Para reabilitar o RDMA para uma interface específica, digite:
 
 ```PowerShell
 Enable-NetAdapterRDMA <name>
 ```
 
-Para reativar RDMA para todas as interfaces, digite:
+Para reabilitar o RDMA para todas as interfaces, digite:
 
 ```PowerShell
 Set-NetOffloadGlobalSetting -NetworkDirect Enabled
 ```
 
-Você precisará habilitar o RDMA no cliente e o servidor começarem a usá-lo novamente.
+É necessário habilitar o RDMA no cliente e no servidor para começar a usá-lo novamente.
 
-## Teste de desempenho do SMB Direct
+## <a name="test-performance-of-smb-direct"></a>Testar o desempenho do SMB Direct
 
-Você pode testar como o desempenho está funcionando usando um dos procedimentos a seguir.
+Você pode testar o funcionamento do desempenho usando um dos procedimentos a seguir.
 
-### Comparar uma cópia de arquivo com e sem o uso de SMB Direct
+### <a name="compare-a-file-copy-with-and-without-using-smb-direct"></a>Compare cópias do arquivo com e sem usar o SMB Direct
 
-Aqui está como medir a taxa de transferência maior de SMB Direct:
+Aqui está como medir a maior taxa de transferência do SMB Direct:
 
 1. Configurar o SMB Direct
-2. Medir a quantidade de tempo para executar uma cópia de arquivo grande usando SMB Direct.
-3. Desativar RDMA no adaptador de rede, consulte [Habilitando e desabilitando SMB Direct](#enabling-and-disabling-smb-direct).
-4. Medir a quantidade de tempo para executar uma cópia de arquivo grande sem usar SMB Direct.
-5. Habilitar novamente o RDMA no adaptador de rede e, em seguida, comparar dois resultados.
-6. Para evitar o impacto de armazenamento em cache, você deve fazer o seguinte:
-    1. Copie uma grande quantidade de dados (mais dados de memória é capaz de manipulação).
-    2. Copie os dados de duas vezes, com a primeira cópia como prática e tempo, em seguida, a segunda cópia.
-    3. Reinicie o servidor e o cliente antes de cada teste para garantir que eles operam em condições semelhantes.
+2. Meça o tempo necessário para executar uma cópia de um arquivo grande usando o SMB Direct.
+3. Desabilite o RDMA no adaptador de rede, consulte [Enabling and disabling SMB Direct](#enabling-and-disabling-smb-direct).
+4. Meça o tempo necessário para executar uma cópia de um arquivo grande sem usar o SMB Direct.
+5. Reabilite o RDMA no adaptador de rede e compare os dois resultados.
+6. Para evitar o impacto do armazenamento em cache, execute o seguinte procedimento:
+    1. Copie uma grande quantidade de dados (mais dados do que a memória é capaz de tratar).
+    2. Copie os dados duas vezes, com a primeira cópia como um treino e depois medindo o tempo da segunda cópia.
+    3. Reinicie o servidor e o cliente antes de cada teste para garantir que eles estejam operando em condições semelhantes.
 
-### Falha em um dos vários adaptadores de rede durante uma cópia do arquivo com o SMB Direct
+### <a name="fail-one-of-multiple-network-adapters-during-a-file-copy-with-smb-direct"></a>Falhar um de vários adaptadores de rede durante a cópia de um arquivo com o SMB Direct
 
-Aqui está como confirmar o recurso de failover do SMB Direct:
+Aqui está como confirmar a funcionalidade de failover do SMB Direct:
 
-1. Certifique-se de que SMB Direct está funcionando em uma configuração de adaptador de rede vários.
-2. Execute uma cópia de arquivo grande. Enquanto a cópia é executada, simule uma falha de um dos caminhos de rede, desconectando um dos cabos (ou desativando um dos adaptadores de rede).
-3. Confirme que a cópia dos arquivos continua usando um dos adaptadores de rede restantes, e que não há nenhum erro de cópia de arquivo.
+1. Verifique se o SMB Direct está funcionando em uma configuração de vários adaptadores de rede.
+2. Execute a cópia de um arquivo grande. Enquanto a cópia está em execução, simule uma falha de um dos caminhos de rede desconectando um dos cabos (ou desabilitando um dos adaptadores de rede).
+3. Confirme se a cópia do arquivo continua usando um dos adaptadores de rede restantes e se não há erros de cópia do arquivo.
 
 >[!NOTE]
->Para evitar falhas de uma carga de trabalho que não usa SMB Direct, verifique não se há nenhuma outras cargas de trabalho usando o caminho de rede desconectado.
+>Para evitar falhas em uma carga de trabalho que não utilize SMB Direct, certifique-se de que não haja outras cargas de trabalho usando o caminho de rede desconectado.
 
-## Mais informações
+## <a name="more-information"></a>Mais informações
 
-- [Visão geral de bloco de mensagens de servidor](file-server-smb-overview.md)
-- [Aumentar a disponibilidade da rede, armazenamento e servidor: Visão geral do cenário](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
+- [Visão geral de bloco de mensagens do servidor](file-server-smb-overview.md)
+- [Aumentando a disponibilidade de rede, armazenamento e servidor: Visão geral do cenário](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
 - [Implantar o Hyper-V no SMB](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)

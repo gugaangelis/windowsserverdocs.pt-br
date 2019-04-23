@@ -1,6 +1,6 @@
 ---
-title: Alternar agrupamento incorporado para SDN
-description: Você pode usar este tópico para obter uma visão geral do Switch agrupamento incorporado no Windows Server 2016.
+title: Agrupamento incorporado do comutador para SDN
+description: Você pode usar este tópico para obter uma visão geral de Switch Embedded Teaming no Windows Server 2016.
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -12,18 +12,19 @@ ms.topic: article
 ms.assetid: aa5b5d11-3921-44f9-8e14-e378c75fca76
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 91b1f69ad5c07715e372db77b2ddeb3cc866a4ba
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: ff59390b54adba42e677d73e559f2fd8dd42c571
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59832437"
 ---
-# <a name="switch-embedded-teaming-for-sdn"></a>Alternar agrupamento incorporado para SDN
+# <a name="switch-embedded-teaming-for-sdn"></a>Agrupamento incorporado do comutador para SDN
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-CONJUNTO é uma solução alternativa NIC agrupamento que você pode usar em ambientes que incluem o Hyper-V e a pilha de rede definidos Software (SDN) no Windows Server 2016. CONJUNTO integra algumas funcionalidades de agrupamento de NIC o Hyper-V Virtual Switch. 
+CONJUNTO é uma solução alternativa do agrupamento NIC que você pode usar em ambientes que incluem o Hyper-V e a pilha de Software Defined Networking (SDN) no Windows Server 2016. CONJUNTO integra algumas funcionalidades de agrupamento NIC no comutador Virtual do Hyper-V. 
 
-CONJUNTO permite que você agrupe entre um e oito físicos adaptadores de rede Ethernet em um ou mais adaptadores de rede virtual baseada em software. Esses adaptadores de rede virtual fornecem desempenho rápido e tolerância no caso de uma falha de adaptador de rede.
+CONJUNTO permite que você agrupe entre uma e oito Ethernet adaptadores de rede física em um ou mais adaptadores de rede virtual baseada em software. Esses adaptadores de rede virtual oferecem desempenho rápido e tolerância a falhas no caso de uma falha do adaptador de rede.
 
-Para obter mais informações, consulte [acesso direto de memória remoto (RDMA) e agrupamento Embedded Switch (conjunto)](../../../virtualization//hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).
+Para obter mais informações, consulte [acesso direto à memória remoto (RDMA) e Switch Embedded Teaming (SET)](../../../virtualization//hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).

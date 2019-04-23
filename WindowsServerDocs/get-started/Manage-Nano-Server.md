@@ -13,11 +13,11 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 8973302fc8a0c6bdb5b19f9296e711dcc6465589
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2081827"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59826797"
 ---
 # <a name="manage-nano-server"></a>Gerenciar o Nano Server
 
@@ -40,7 +40,7 @@ Para usar qualquer ferramenta de gerenciamento remoto, você provavelmente preci
 Para gerenciar o Nano Server com a comunicação remota do Windows PowerShell, é necessário adicionar o endereço IP do Nano Server à lista de hosts confiáveis do seu computador de gerenciamento, adicionar a conta que você está usando para os administradores do Nano Server e ativar o CredSSP se quiser usar esse recurso.  
 
  >[!NOTE]  
-    > Se o Nano Server de destino e o computador de gerenciamento estiverem na mesma floresta do AD DS (ou em florestas com uma relação de confiança), você não deverá adicionar o Nano Server à lista de hosts confiáveis -- você pode se conectar ao Nano Server usando seu nome de domínio totalmente qualificado, por exemplo: PS C:\> Enter-PSSession -ComputerName nanoserver.contoso.com -Credencial (Get-Credential)
+    > Se o destino do Nano Server e o computador de gerenciamento estiverem na mesma floresta do AD DS (ou em florestas com uma relação de confiança), você não deve adicionar o Nano Server à lista de hosts confiáveis – você pode se conectar ao Nano Server usando seu nome de domínio totalmente qualificado , por exemplo: PS C:\> Enter-PSSession -ComputerName nanoserver.contoso.com -Credential (Get-Credential)
   
   
 Para adicionar o Nano Server à lista de hosts confiáveis, execute este comando em um prompt com privilégios elevados do Windows PowerShell:  
@@ -91,13 +91,13 @@ Você pode executar programas remotamente no Nano Server com o WinRM (Gerenciame
   
 **winrm quickconfig**  
   
-**winrm set winrm/config/client @{TrustedHosts="<endereço ip do Nano Server"}**  
+**WinRM define winrm/config/client @{TrustedHosts = "< endereço ip do Nano Server"}**  
   
 **chcp 65001**  
   
 Agora você pode executar comandos remotamente no Nano Server. Por exemplo:  
   
-**winrs -r:\<endereço IP do Nano Server> -u:Administrator -p:\<senha de administrador do Nano Server> ipconfig**  
+**Winrs-r:\<endereço IP do Nano Server > - u: administrador-p:\<senha de administrador do Nano Server > ipconfig**  
   
 Para saber mais sobre o Gerenciamento Remoto do Windows, confira [Visão geral do WinRM (Gerenciamento Remoto do Windows)](https://technet.microsoft.com/library/dn265971.aspx).  
    
@@ -122,7 +122,7 @@ Se você quiser instalar pacotes de serviço, use o parâmetro -ServicingPackage
   
 Geralmente, um pacote de serviço ou hotfix é baixado como um item de KB que contém um arquivo .cab. Execute estas etapas para extrair o arquivo .cab, que pode ser instalado com o parâmetro -ServicingPackagePath:  
   
-1.  Baixe o pacote de serviço (do artigo da Base de Dados de Conhecimento associado ou do [Catálogo do Microsoft Update](https://catalog.update.microsoft.com/v7/site/home.aspx). Salve-o em um compartilhamento de rede ou diretório local, por exemplo: C:\ServicingPackages  
+1.  Baixe o pacote de serviço (do artigo da Base de Dados de Conhecimento associado ou do [Catálogo do Microsoft Update](https://catalog.update.microsoft.com/v7/site/home.aspx). Salvá-lo em um compartilhamento de rede ou diretório local, por exemplo: C:\ServicingPackages  
 2.  Crie uma pasta na qual você salvará o pacote de serviço extraído.  Exemplo: c:\KB3157663_expanded  
 3.  Abra um console do Windows PowerShell e use o comando `Expand` especificando o caminho até o arquivo .msu do pacote de serviço, incluindo o parâmetro `-f:*` e o caminho onde você deseja que o pacote serviço seja extraído.  Por exemplo:  `Expand "C:\ServicingPackages\Windows10.0-KB3157663-x64.msu" -f:* "C:\KB3157663_expanded"`  
   
@@ -141,7 +141,7 @@ O Número de série do volume é B05B-CC3D
 04/17/2016  12:36 AM           185,818 WSUSSCAN.cab  
                4 File(s)     94,073,136 bytes  
                2 Dir(s)  328,559,427,584 bytes free  
-4.  Execute `New-NanoServerImage` com o parâmetro -ServicingPackagePath apontando para o arquivo .cab nesse diretório, por exemplo: `New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -ServicingPackagePath C:\KB3157663_expanded\Windows10.0-KB3157663-x64.cab`  
+4.  Executar `New-NanoServerImage` com o parâmetro - ServicingPackagePath apontando para o arquivo. cab nesse diretório, por exemplo: `New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -ServicingPackagePath C:\KB3157663_expanded\Windows10.0-KB3157663-x64.cab`  
 
 ## <a name="managing-updates-in-nano-server"></a>Gerenciar atualizações no Nano Server
 
@@ -240,7 +240,7 @@ As seções a seguir listam as atividades de coleta de dados de desempenho mais 
 wpr.exe -providers
 ```
 
-Você pode filtrar a saída para os tipos de eventos de seu interesse. Por exemplo:
+Você pode filtrar a saída para os tipos de eventos de seu interesse. Por exemplo: 
 ```
 PS C:\> wpr.exe -providers | select-string "Storage"
 
@@ -349,7 +349,7 @@ PS C:\> Remove-AutologgerConfig -Name BootPnpLog
 Para coletar rastreamentos de inicialização e instalação em um número de sistemas, ou em um sistema sem disco, considere o uso da [Coleta de evento de configuração e inicialização](../administration/get-started-with-setup-and-boot-event-collection.md).
 
 ### <a name="capture-performance-counter-data"></a>Capturar dados do contador de desempenho
-Normalmente, você monitora os dados do contador de desempenho com o GUI de Perfmon.exe. No Nano Server, use o equivalente de linha de comando de ```Typeperf.exe```. Por exemplo:
+Normalmente, você monitora os dados do contador de desempenho com o GUI de Perfmon.exe. No Nano Server, use o equivalente de linha de comando de ```Typeperf.exe```. Por exemplo: 
 
 Consulta contadores disponíveis – você pode filtrar a saída para localizar facilmente os que são de seu interesse.
 ```
