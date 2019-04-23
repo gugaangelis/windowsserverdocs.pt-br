@@ -1,6 +1,6 @@
 ---
-title: "Crie a chave raiz KDS de serviços de distribuição de chaves"
-description: "Segurança do Windows Server"
+title: Criar a chave raiz do KDS (serviço de distribuição de chave)
+description: Segurança do Windows Server
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,53 +13,54 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 30075e56f3ca8e90a0655508efeacfcf2aaa0337
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 3d5f7b46b28e6a2fbfafb664b69aebc8d34886fe
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59867207"
 ---
-# <a name="create-the-key-distribution-services-kds-root-key"></a>Crie a chave raiz KDS de serviços de distribuição de chaves
+# <a name="create-the-key-distribution-services-kds-root-key"></a>Criar a chave raiz do KDS (serviço de distribuição de chave)
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Este tópico para o profissional de TI descreve como criar uma chave de raiz do serviço de distribuição de chaves do Microsoft (kdssvc.dll) no controlador de domínio usando o Windows PowerShell para gerar agrupar conta de serviço gerenciado senhas no Windows Server 2012.
+Este tópico para profissionais de TI descreve como criar uma chave de raiz do serviço de distribuição de chaves do Microsoft (kdssvc) no controlador de domínio usando o Windows PowerShell para gerar senhas de conta de serviço gerenciado de grupo no Windows Server 2012.
 
- Controladores de domínio do Windows Server 2012 (DC) exigem uma chave raiz para começar a gerar gMSA senhas. Os controladores de domínio esperará até 10 horas de tempo de criação para permitir que todos os controladores de domínio convergir sua replicação do AD antes de permitir a criação de um gMSA. 10 horas é uma medida de segurança para evitar a geração de senha ocorra antes de todos os controladores de domínio no ambiente são capazes de responder às solicitações de gMSA.  Se você tentar usar um gMSA muito cedo a chave não pode ter sido replicada a todos os Windows Server 2012 DC e, portanto, a senha de recuperação pode falhar quando o host gMSA tenta recuperar a senha. Falhas de recuperação de senha gMSA também podem ocorrer quando usando controladores de domínio com agendas de duplicação limitada ou se há um problema de replicação.
+ Controladores de domínio do Windows Server 2012 (DC) exigem uma chave de raiz para começar a gerar senhas gMSA. Os controladores de domínio aguardarão até 10 horas desde a criação para permitir que todos os controladores de domínio convirjam a replicação do AD antes de permitir a criação de uma gMSA. O período de 10 horas é uma medida de segurança para impedir que a geração de senhas ocorra antes que todos os DCs no ambiente sejam capazes de responder às solicitações da MSA de grupo.  Se você tentar usar uma gMSA muito em breve a chave não pode ter sido replicada para todos os DCs do Windows Server 2012 e, portanto, a recuperação de senha poderá falhar quando o host de gMSA tenta recuperar a senha. falhas de recuperação de senha de gMSA também podem ocorrer ao usar controladores de domínio com agendamentos de replicação limitados ou se há um problema de replicação.
 
-A associação a **Admins. do domínio** ou **administradores corporativos** grupos, ou equivalente, é o requisito mínimo para concluir este procedimento. Para obter informações detalhadas sobre como usar as contas apropriadas e associações de grupo, consulte [Local e os grupos de domínio padrão](https://technet.microsoft.com/library/dd728026(WS.10).aspx).
+A associação ao grupo **Admins. do Domínio** ou **Administradores de Empresa** ou equivalente é o mínimo exigido para concluir este procedimento. Para obter informações detalhadas sobre como usar as contas e as associações a grupos apropriadas, consulte [Grupos padrão Local e Domínio](https://technet.microsoft.com/library/dd728026(WS.10).aspx).
 
 > [!NOTE]
-> Uma arquitetura de 64 bits é necessária para executar os comandos do Windows PowerShell que são usados para administrar as contas de serviço gerenciado do grupo.
+> Uma arquitetura de 64 bits é exigida para executar os comandos do Windows PowerShell, que são usados para administrar as contas de serviço gerenciado de grupo.
 
-#### <a name="to-create-the-kds-root-key-using-the-new-kdsrootkey-cmdlet"></a>Para criar a chave de raiz KDS usando o cmdlet New-KdsRootKey
+#### <a name="to-create-the-kds-root-key-using-the-add-kdsrootkey-cmdlet"></a>Para criar a chave de raiz do KDS usando o cmdlet Add-KdsRootKey
 
 1.  No controlador de domínio do Windows Server 2012, execute o Windows PowerShell na barra de tarefas.
 
-2.  No prompt de comando para o módulo do Active Directory do Windows PowerShell, digite os seguintes comandos e pressione ENTER:
+2.  No prompt de comando do módulo Active Directory do Windows PowerShell, digite os seguintes comandos e pressione ENTER:
 
-    **Add-KdsRootKey - EffectiveImmediately**
+    **Adicionar-KdsRootKey – EffectiveImmediately**
 
     > [!TIP]
-    > O parâmetro de tempo efetivo pode ser usado para conceder tempo para chaves sejam propagadas para todos os controladores de domínio antes de usar. Usar Add-KdsRootKey - EffectiveImmediately adicionará uma chave raiz para o destino de controlador de domínio que será usado pelo serviço KDS imediatamente. No entanto, outros controladores de domínio do Windows Server 2012 não será capaz de usar a chave raiz até replicação for bem-sucedida.
+    > O parâmetro de tempo Efetivo pode ser usado para dar tempo para que as chaves sejam propagadas a todos os DCs antes do uso. Usando Add-KdsRootKey – EffectiveImmediately adicionará uma chave raiz ao DC de destino que será usada pelo serviço do KDS imediatamente. No entanto, outros controladores de domínio do Windows Server 2012 não poderá usar a chave de raiz até que a replicação seja bem-sucedida.
 
-Para ambientes de teste com apenas um controlador de domínio, você pode criar uma chave de raiz KDS e definir a hora de início no passado para evitar a espera de intervalo na geração de chaves usando o procedimento a seguir. Valide que um evento 4004 tiver sido registrado no log de eventos kds.
+Para ambientes de teste com apenas um DC, você pode criar uma chave raiz do KDS e definir a hora de início no passado para evitar a espera do intervalo para a geração de chave usando o procedimento a seguir. Valide que um evento 4004 foi registrado no log de eventos do KDS.
 
-#### <a name="to-create-the-kds-root-key-in-a-test-environment-for-immediate-effectiveness"></a>Para criar a chave de raiz KDS em um ambiente de teste para eficácia imediato
+#### <a name="to-create-the-kds-root-key-in-a-test-environment-for-immediate-effectiveness"></a>Para criar a chave raiz do KDS em um ambiente de teste e obter eficiência imediata
 
 1.  No controlador de domínio do Windows Server 2012, execute o Windows PowerShell na barra de tarefas.
 
-2.  No prompt de comando para o módulo do Active Directory do Windows PowerShell, digite os seguintes comandos e pressione ENTER:
+2.  No prompt de comando do módulo Active Directory do Windows PowerShell, digite os seguintes comandos e pressione ENTER:
 
-    **$um = Get-Date**
+    **$a=Get-Date**
 
     **$b=$a.AddHours(-10)**
 
-    **Add-KdsRootKey - EffectiveTime $b**
+    **Add-KdsRootKey -EffectiveTime $b**
 
-    Ou use um único comando
+    Como opção, use um só comando
 
-    **Add-KdsRootKey - EffectiveTime ((get-date).addhours(-10))**
+    **Add-KdsRootKey -EffectiveTime ((get-date).addhours(-10))**
 
 ## <a name="see-also"></a>Consulte também
 [Introdução ao grupo de contas de serviço gerenciado](getting-started-with-group-managed-service-accounts.md)

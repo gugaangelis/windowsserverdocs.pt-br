@@ -12,11 +12,11 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 488d0bed661cf2078d20e491a8c68b2a29a42b73
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2081798"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59859517"
 ---
 # <a name="nano-server-quick-start"></a>Início rápido do Nano Server
 

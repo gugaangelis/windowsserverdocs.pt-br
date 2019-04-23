@@ -1,31 +1,32 @@
 ---
-title: "Falhas de serviço de integridade"
+title: Falhas de serviço de integridade
 ms.prod: windows-server-threshold
 manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
 ms.topic: article
-ms.assetid: 
+ms.assetid: ''
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: c9e1fb4568ee93739c49ccc1a13106b09161c5f3
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
+ms.openlocfilehash: 31a38eacea3af3c0a288d61a77a24b4fa45a1932
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59843367"
 ---
 # <a name="health-service-faults"></a>Falhas de serviço de integridade
-> Aplica-se para o Windows Server 2016
+> Aplica-se ao Windows Server 2016
 
-## <a name="what-are-faults"></a>Quais são falhas?
+## <a name="what-are-faults"></a>Quais são as falhas
 
-O serviço de integridade constantemente monitora o cluster direta de espaços de armazenamento para detectar problemas e gerar "falhas". Um novo cmdlet exibe quaisquer falhas atuais, permitindo que você facilmente verificar a integridade da implantação sem olhar cada entidade ou por sua vez de recursos. Falhas são projetadas para ser precisos, fácil de entender e acionáveis.  
+O serviço de integridade monitora constantemente o cluster de espaços de armazenamento diretos para detectar problemas e gerar "falhas". Um novo cmdlet exibe as falhas atuais, permitindo que você facilmente verificar a integridade da sua implantação sem examinar cada entidade ou recurso. As falhas são projetadas para serem precisas, fáceis de entender e acionáveis.  
 
 Cada falha contém cinco campos importantes:  
 
--   Severity
+-   Gravidade
 -   Descrição do problema
--   Recomendado próximas etapas para resolver o problema
+-   Próximas etapas recomendadas para solucionar o problema
 -   Informações de identificação para a entidade com falha
 -   Sua localização física (se aplicável)
 
@@ -40,26 +41,26 @@ Location: Seattle DC, Rack B07, Node 4, Slot 11
 ```
 
  >[!NOTE]
- > A localização física é derivada de sua configuração de domínio falha. Para obter mais informações sobre domínios de falha, consulte [domínios de falha no Windows Server 2016](fault-domains.md). Se você não fornecer essas informações, o campo do local será menos úteis - por exemplo, ele pode mostrar apenas o número do slot.  
+ > A localização física é derivada da configuração do domínio de falha. Para obter mais informações sobre domínios de falha, consulte [domínios de falha no Windows Server 2016](fault-domains.md). Se você não fornecer essas informações, o campo local poderá ser menos útil (por exemplo, ele pode mostrar apenas o número de slot).  
 
-## <a name="root-cause-analysis"></a>Análise de causas
+## <a name="root-cause-analysis"></a>Análise da causa raiz
 
-O serviço de integridade pode avaliar a possível casualidade entre com falha entidades para identificar e combinar falhas que são consequências do mesmo problema subjacente. Reconhecendo cadeias de efeito, isso torna por menos relatar tagarelas. Por exemplo, se um servidor for pressionada, espera-se de quaisquer unidades dentro do servidor também será sem conectividade. Portanto, apenas uma falha será gerada para a causa - nesse caso, o servidor.  
+O serviço de integridade pode avaliar o potencial de causalidade entre entidades para identificar e combinar falhas que são consequências do mesmo problema subjacente a falha. Reconhecendo cadeias de efeito, isso gera relatórios menos longos. Por exemplo, se um servidor estiver inativo, espera-se que todas as unidades dentro do servidor também ficarão sem conectividade. Portanto, apenas a uma falha será gerada para a causa - nesse caso, o servidor.  
 
-## <a name="usage-in-powershell"></a>Uso do PowerShell
+## <a name="usage-in-powershell"></a>Uso no PowerShell
 
-Para ver qualquer falha atual no PowerShell, execute este cmdlet:
+Para ver as falhas atuais no PowerShell, execute este cmdlet:
 
 ```PowerShell
 Get-StorageSubSystem Cluster* | Debug-StorageSubSystem  
 ```
 
-Isso retorna quaisquer falhas que afetam o cluster de espaços de armazenamento direta geral. Geralmente, essas falhas relacionam a hardware ou configuração. Se não houver nenhuma falha, este cmdlet não retornará nada.  
+Isso retorna as falhas que afetam o cluster geral de espaços de armazenamento diretos. Geralmente, essas falhas estão relacionadas a hardware ou configuração. Se houver falha, este cmdlet não retornará nada.  
 
 >[!NOTE]
-> Em um ambiente de não produção e de sua responsabilidade, você pode experimentar esse recurso por disparando a falhas - por exemplo, removendo um disco físico ou desligar um nó. Quando aparece a falha, insira novamente o disco físico ou reiniciar que o nó e a falha desaparecerá novamente.
+> Em um ambiente de não produção e por seu próprio risco, você pode experimentar esse recurso disparando falhas por conta própria - por exemplo, removendo um disco físico ou desligando um nó. Depois que a falha foi exibido, insira novamente o disco físico ou reinicie que o nó e a falha desaparecerá novamente.
 
-Você também pode ver falhas que afetam apenas volumes específicos ou compartilhamentos de arquivos com os seguintes cmdlets:  
+Você também pode exibir falhas que afetam somente determinados volumes ou compartilhamentos de arquivos com os seguintes cmdlets:  
 
 ```PowerShell
 Get-Volume -FileSystemLabel <Label> | Debug-Volume  
@@ -67,13 +68,13 @@ Get-Volume -FileSystemLabel <Label> | Debug-Volume
 Get-FileShare -Name <Name> | Debug-FileShare  
 ```
 
-Isso retorna quaisquer falhas que afetam apenas o compartilhamento volume ou arquivo específico. Geralmente, essas falhas se relacionam com planejamento da capacidade, resiliência de dados ou recursos, como qualidade de serviço de armazenamento ou réplica de armazenamento. 
+Isso retorna as falhas que afetam apenas o específico volume ou compartilhamento de arquivos. Geralmente, essas falhas estão relacionadas ao planejamento de capacidade, resiliência de dados ou recursos, como o armazenamento de qualidade de serviço ou réplica de armazenamento. 
 
-## <a name="usage-in-net-and-c"></a>Uso em .NET e c#
+## <a name="usage-in-net-and-c"></a>Uso no .NET eC#
 
-### <a name="connect"></a>Conectar-se
+### <a name="connect"></a>Conectar
 
-Para consultar o serviço de integridade, você precisará estabelecer uma **CimSession** com o cluster. Para fazer isso, você precisará de algumas coisas que só estão disponíveis no .NET completo, ou seja, você não pode prontamente fazer isso diretamente de um web ou aplicativo móvel. Esses exemplos de código usará c \ #, a opção mais simples para essa camada de acesso de dados.
+Para consultar o serviço de integridade, você precisa estabelecer um **CimSession** com o cluster. Para fazer isso, você precisará de algumas coisas que só estão disponíveis no .NET completo, isso significa que você não pode prontamente fazer isso diretamente de um aplicativo web ou móvel. Esses exemplos de código usará C\#, mais simples choice para esta camada de acesso de dados.
 
 ``` 
 ...
@@ -97,15 +98,15 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 }
 ```
 
-O nome do usuário fornecido deve ser um administrador local do computador de destino.
+O nome de usuário fornecido deve ser um administrador local do computador de destino.
 
-É recomendável que você constrói a senha **SecureString** diretamente da entrada do usuário em tempo real, então suas senhas jamais seja armazenada na memória em texto sem formatação. Isso ajuda a minimizar uma variedade de questões de segurança. Mas, na prática, é comum para fins de criação de protótipos construí-la como explicado acima.
+É recomendável que você construa a senha **SecureString** diretamente da entrada do usuário em tempo real, portanto, sua senha nunca seja armazenada na memória em texto não criptografado. Isso ajuda a atenuar uma variedade de questões de segurança. Mas, na prática, é comum para fins de criação de protótipos de construí-la como acima.
 
 ### <a name="discover-objects"></a>Descobrir objetos
 
 Com o **CimSession** estabelecida, você pode consultar Windows Management Instrumentation (WMI) no cluster.
 
-Antes de poder falhas ou métricas, você precisará obter instâncias de vários objetos relevantes. Primeiro, o **MSFT\_StorageSubSystem** que representa direta de espaços de armazenamento no cluster. Fazer isso, você pode obter cada **MSFT\_StorageNode** no cluster e cada **MSFT\_Volume**, os volumes de dados. Por fim, você precisará do **MSFT\_StorageHealth**, a integridade do serviço em si, também.
+Antes de poder obter falhas ou métricas, você precisará obter instâncias de vários objetos relevantes. Primeiro, o **MSFT\_StorageSubSystem** que representa espaços de armazenamento diretos no cluster. Usando essa, você pode obter cada **MSFT\_StorageNode** no cluster e cada **MSFT\_Volume**, os volumes de dados. Por fim, você precisará de **MSFT\_StorageHealth**, o serviço de integridade em si, muito.
 
 ```
 CimInstance Cluster;
@@ -133,9 +134,9 @@ public void DiscoverObjects(CimSession Session)
 }
 ```
 
-Estes são os mesmos objetos que você obtenha no PowerShell usando os cmdlets como **Get-StorageSubSystem**, **Get-StorageNode**, e **Volume Get**.
+Esses são os mesmos objetos de obter no PowerShell usando os cmdlets como **Get-StorageSubSystem**, **Get-StorageNode**, e **Get-Volume**.
 
-Você pode acessar todos os mesmos propriedades, documentadas em [Classes de API de gerenciamento de armazenamento](https://msdn.microsoft.com/en-us/library/windows/desktop/hh830612(v=vs.85).aspx).
+Você pode acessar as mesmas propriedades, documentadas em [Classes de API de gerenciamento de armazenamento](https://msdn.microsoft.com/en-us/library/windows/desktop/hh830612(v=vs.85).aspx).
 
 ```
 ...
@@ -150,9 +151,9 @@ foreach (CimInstance Node in Nodes)
 
 ### <a name="query-faults"></a>Falhas de consulta
 
-Invocar **diagnosticar** para obter quaisquer falhas atuais no escopo para o destino **CimInstance**, que seja o cluster ou qualquer volume.
+Invocar **diagnosticar** para obter as falhas atuais no escopo para o destino **CimInstance**, que ser o cluster ou qualquer volume.
 
-A lista completa de falhas disponíveis em cada escopo no Windows Server 2016 é documentada abaixo.
+A lista completa de falhas disponíveis em cada escopo no Windows Server 2016 está documentada abaixo.
 
 ```       
 public void GetFaults(CimSession Session, CimInstance Target)
@@ -173,9 +174,9 @@ public void GetFaults(CimSession Session, CimInstance Target)
 }
 ```
 
-### <a name="optional-myfault-class"></a>Opcional: MyFault classe
+### <a name="optional-myfault-class"></a>Opcional: Classe MyFault
 
-Ele pode fazer sentido para construir e manter seu próprios representação de falhas. Por exemplo, isso **MyFault** classe armazena várias propriedades de chave de falhas, incluindo o **FaultId**, que pode ser usado posteriormente para associar a atualização ou remover notificações, ou para elimine que é a mesma falha detectadas várias vezes, por qualquer motivo.
+Talvez faça sentido para você construir e manter sua própria representação de falhas. Por exemplo, isso **MyFault** classe armazena várias propriedades importantes de falhas, incluindo o **FaultId**, que pode ser usado posteriormente para associar a atualização ou remover notificações de ou para eliminar a caso a mesma falha é detectada várias vezes, por algum motivo.
 
 ```       
 public class MyFault {
@@ -207,13 +208,13 @@ foreach (CimInstance DiagnoseResult in DiagnoseResults)
 }
 ```
 
-A lista completa de propriedades em cada falha (**DiagnoseResult**) estão documentadas abaixo.
+A lista completa das propriedades em cada falha (**DiagnoseResult**) está documentada abaixo.
 
 ### <a name="fault-events"></a>Eventos de falha
 
-Quando falhas são criadas, removidas ou atualizadas, o serviço de integridade gera eventos de WMI. Esses são essenciais para manter o estado do aplicativo em sincronia sem sondagem frequente e podem ajudar a coisas como determinar quando enviar alertas de email, por exemplo. Para assinar esses eventos, esse código de exemplo usa o padrão de Design do observador novamente.
+Quando falhas são criadas, removidas ou atualizadas, o serviço de integridade gera eventos WMI. Eles são essenciais para manter o estado do seu aplicativo em sincronia sem sondagem frequente e podem ajudar com coisas como determinar quando enviar alertas por email, por exemplo. Para assinar esses eventos, esse código de exemplo usa o padrão de Design do observador novamente.
 
-Primeiro, assinar **MSFT\_StorageFaultEvent** eventos.
+Primeiro, assine **MSFT\_StorageFaultEvent** eventos.
 
 ```      
 public void ListenForFaultEvents()
@@ -226,11 +227,11 @@ public void ListenForFaultEvents()
 }   
 ```
 
-Em seguida, implemente um observador cujo **OnNext()** método será invocado sempre que um novo evento é gerado.
+Em seguida, implementar um observador cujos **OnNext()** método será invocado sempre que um novo evento é gerado.
 
-Cada evento contém **ChangeType** indicando se uma falha está sendo criada, removido ou atualizado e relevante **FaultId**.
+Cada evento contém **ChangeType** que indica se uma falha está sendo criada, atualizado ou removido e o relevantes **FaultId**.
 
-Além disso, eles contêm todas as propriedades da falha em si.
+Além disso, eles contêm todas as propriedades de falha em si.
 
 ```
 class FaultsObserver : IObserver
@@ -278,247 +279,247 @@ class FaultsObserver : IObserver
 
 ### <a name="understand-fault-lifecycle"></a>Entender o ciclo de vida de falha
 
-Falhas não se destinam a ser marcado como "visto" ou resolvido pelo usuário. Eles são criados quando o serviço de integridade observa um problema, e eles são removidos automaticamente e somente quando o serviço de integridade não pode observar o problema. Em geral, isso indica que o problema foi corrigido.
+Falhas não pretendem ser marcado como "Vista" ou resolvido pelo usuário. Eles são criados quando o serviço de integridade observa um problema, e eles serão removidos automaticamente e somente quando o serviço de integridade não pode observar o problema. Em geral, isso reflete que o problema foi corrigido.
 
-No entanto, em alguns casos, falhas podem ser redescobertas pelo serviço de integridade (por exemplo, depois de failover ou devido à conectividade intermitente, etc.). Por esse motivo, talvez faz sentido para manter sua própria representação de falhas, portanto, você pode facilmente elimine. Isso é especialmente importante se você enviar alertas de email ou equivalente.
+No entanto, em alguns casos, falhas podem ser redescobertas pelo serviço de integridade (por exemplo, após o failover, ou devido à conectividade intermitente, etc.). Por esse motivo, talvez faz sentido para manter sua própria representação de falhas, portanto, você pode eliminar facilmente. Isso é especialmente importante se você enviar alertas por email ou equivalente.
 
 ### <a name="properties-of-faults"></a>Propriedades de falhas
 
-Esta tabela apresenta várias propriedades de chave do objeto falha. Para o esquema completo, inspecionar o **MSFT\_StorageDiagnoseResult** de classe no *storagewmi.mof*.
+Esta tabela apresenta várias propriedades importantes do objeto falha. Para o esquema completo, inspecione a **MSFT\_StorageDiagnoseResult** classe *storagewmi.mof*.
 
 | **Propriedade**              | **Exemplo**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | Microsoft.Health.FaultType.Volume.Capacity                      |
-| Motivo                    | "O volume estiver ficando sem espaço disponível".                 |
+| Motivo                    | "O volume está ficando sem espaço disponível."                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | Contoso XYZ9000 S.N. 123456789                                  |
-| FaultingObjectLocation    | Coletar A06, RU 25, Slot de 11                                        |
+| FaultingObjectLocation    | Montar em rack A06, RU 25, Slot 11                                        |
 | RecommendedActions        | {"Expandir o volume.", "Migrar cargas de trabalho para outros volumes."}   |
 
-**FaultId** exclusivo no escopo de um cluster.
+**FaultId** exclusiva dentro do escopo de um cluster.
 
-**PerceivedSeverity** PerceivedSeverity = {4, 5, 6} = {"Informativo", "Aviso" e "Erro"}, ou equivalente cores, como vermelho, azul e amarelo.
+**PerceivedSeverity** PerceivedSeverity = {4, 5, 6} = {"Informativo", "Aviso" e "Error"}, ou equivalentes cores como vermelho, amarelo e azul.
 
-**FaultingObjectDescription** parte informações de hardware, normalmente em branco para objetos de software.
+**FaultingObjectDescription** parte de informações de hardware, normalmente em branco para objetos de software.
 
-**FaultingObjectLocation** informações de localização para hardware, normalmente em branco para objetos de software.
+**FaultingObjectLocation** informações de local de hardware, normalmente em branco para objetos de software.
 
-**RecommendedActions** lista de ações recomendadas, que são independentes e sem uma ordem específica. Hoje, essa lista é geralmente de comprimento 1.
+**RecommendedActions** lista de ações recomendadas, que são independentes e sem nenhuma ordem específica. Atualmente, essa lista é muitas vezes de comprimento 1.
 
 ## <a name="properties-of-fault-events"></a>Propriedades de eventos de falha
 
-Esta tabela apresenta várias propriedades de chaves do evento falha. Para o esquema completo, inspecionar o **MSFT\_StorageFaultEvent** de classe no *storagewmi.mof*.
+Esta tabela apresenta várias propriedades importantes do evento de falha. Para o esquema completo, inspecione a **MSFT\_StorageFaultEvent** classe *storagewmi.mof*.
 
-Observação o **ChangeType**, que indica se uma falha é sendo criada, removidos ou atualizados e o **FaultId**. Um evento também contém todas as propriedades da falha de afetados.
+Observe a **ChangeType**, que indica se uma falha está sendo criada, removido ou atualizada e o **FaultId**. Um evento também contém todas as propriedades da falha de afetado.
 
 | **Propriedade**              | **Exemplo**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | ChangeType                | 0                                                               |
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | Microsoft.Health.FaultType.Volume.Capacity                      |
-| Motivo                    | "O volume estiver ficando sem espaço disponível".                 |
+| Motivo                    | "O volume está ficando sem espaço disponível."                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | Contoso XYZ9000 S.N. 123456789                                  |
-| FaultingObjectLocation    | Coletar A06, RU 25, Slot de 11                                        |
+| FaultingObjectLocation    | Montar em rack A06, RU 25, Slot 11                                        |
 | RecommendedActions        | {"Expandir o volume.", "Migrar cargas de trabalho para outros volumes."}   |
 
-**ChangeType** ChangeType = {0, 1, 2} = {"criar", "Remover", "Atualizar"}.
+**ChangeType** ChangeType = { 0, 1, 2 } = { "Create", "Remove", "Update" }.
 
 ## <a name="coverage"></a>Cobertura
 
-No Windows Server 2016, o serviço de integridade fornece a cobertura de falha a seguir:  
+No Windows Server 2016, o serviço de integridade fornece a seguinte cobertura de falha:  
 
-### **<a name="physicaldisk-8"></a>Disco físico (8)**
+### <a name="physicaldisk-8"></a>**PhysicalDisk (8)**
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskfailedmedia"></a>FaultType: Microsoft.Health.FaultType.PhysicalDisk.FailedMedia
-* Severity: aviso
-* Motivo: *"no disco físico falhou."*
-* RecommendedAction: *"Substituir o disco físico".*
+* Gravidade: Aviso
+* Motivo: *"O disco físico falhou."*
+* RecommendedAction: *"Substituir o disco físico."*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldisklostcommunication"></a>FaultType: Microsoft.Health.FaultType.PhysicalDisk.LostCommunication
-* Severity: aviso
-* Motivo: *"Conectividade foi perdida no disco físico."*
-* RecommendedAction: *"Check-se de que o disco físico está conectado corretamente e funcionando."*
+* Gravidade: Aviso
+* Motivo: *"Conectividade foi perdida para o disco físico."*
+* RecommendedAction: *"Verificar que o disco físico está funcionando e conectados corretamente."*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskunresponsive"></a>FaultType: Microsoft.Health.FaultType.PhysicalDisk.Unresponsive
-* Severity: aviso
-* Motivo: *"o disco físico está apresentando falta de resposta recorrente."*
-* RecommendedAction: *"Substituir o disco físico".*
+* Gravidade: Aviso
+* Motivo: *"O disco físico está apresentando a falta de resposta recorrente".*
+* RecommendedAction: *"Substituir o disco físico."*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskpredictivefailure"></a>FaultType: Microsoft.Health.FaultType.PhysicalDisk.PredictiveFailure
-* Severity: aviso
-* Motivo: *"uma falha do disco físico é prevista para ocorrer em breve."*
-* RecommendedAction: *"Substituir o disco físico".*
+* Gravidade: Aviso
+* Motivo: *"Uma falha do disco físico está prevista para ocorrer em breve."*
+* RecommendedAction: *"Substituir o disco físico."*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskunsupportedhardware"></a>FaultType: Microsoft.Health.FaultType.PhysicalDisk.UnsupportedHardware
-* Severity: aviso
-* Motivo: *"o disco físico é colocado em quarentena porque ele não é compatível com o fornecedor da solução."*
-* RecommendedAction: *"Substituir o disco físico hardware com suporte".*
+* Gravidade: Aviso
+* Motivo: *"O disco físico está em quarentena porque não é suportado pelo seu fornecedor de soluções."*
+* RecommendedAction: *"Substituir o disco físico com o hardware com suporte".*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskunsupportedfirmware"></a>FaultType: Microsoft.Health.FaultType.PhysicalDisk.UnsupportedFirmware
-* Severity: aviso
-* Motivo: *"o disco físico é em quarentena porque sua versão do firmware não é compatível com o fornecedor da solução."*
-* RecommendedAction: *"Atualize o firmware no disco físico para a versão de destino".*
+* Gravidade: Aviso
+* Motivo: *"O disco físico está em quarentena porque sua versão de firmware não é suportada pelo seu fornecedor de solução".*
+* RecommendedAction: *"Atualizar o firmware no disco físico para a versão de destino".*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskunrecognizedmetadata"></a>FaultType: Microsoft.Health.FaultType.PhysicalDisk.UnrecognizedMetadata
-* Severity: aviso
-* Motivo: *"o disco físico tem não reconhecido metadados."*
-* RecommendedAction: *"esse disco pode conter dados de um pool de armazenamento desconhecido. Primeiro verifique se que não há nenhum dado útil no disco e o disco de redefinição."*
+* Gravidade: Aviso
+* Motivo: *"O disco físico tem metadados não reconhecida".*
+* RecommendedAction: *"Esse disco pode conter dados de um pool de armazenamento desconhecido. Primeiro verifique se que não há nenhum dado útil neste disco e o disco de redefinição."*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskfailedfirmwareupdate"></a>FaultType: Microsoft.Health.FaultType.PhysicalDisk.FailedFirmwareUpdate
-* Severity: aviso
-* Motivo: *"Falha na tentativa de atualizar o firmware no disco físico".*
-* RecommendedAction: *"Tente usar um binário de firmware diferente."*
+* Gravidade: Aviso
+* Motivo: *"Falha ao tentar atualizar o firmware no disco físico."*
+* RecommendedAction: *"Tente usando um binário de firmware diferente."*
 
-### **<a name="virtual-disk-2"></a>Disco virtual (2)**
+### <a name="virtual-disk-2"></a>**Disco virtual (2)**
 
 #### <a name="faulttype-microsofthealthfaulttypevirtualdisksneedsrepair"></a>FaultType: Microsoft.Health.FaultType.VirtualDisks.NeedsRepair
-* Severity: informativa
-* Motivo: *"alguns dados neste volume não são totalmente flexíveis. Permanece acessível."*
-* RecommendedAction: *"Restaurando a resiliência dos dados".*
+* Gravidade: Informativo
+* Motivo: *"Alguns dados sobre este volume não estão totalmente resilientes. Permanece acessível."*
+* RecommendedAction: *"Restauração de resiliência de dados".*
 
 #### <a name="faulttype-microsofthealthfaulttypevirtualdisksdetached"></a>FaultType: Microsoft.Health.FaultType.VirtualDisks.Detached
-* Severity: críticas
-* Motivo: *"o volume não está acessível. Alguns dados poderão ser perdidos."*
-* RecommendedAction: *"Verificar físico e/ou conectividade de todos os dispositivos de armazenamento de rede. Você precisará restaurar a partir do backup."*
+* Gravidade: Crítico
+* Motivo: *"O volume está inacessível. Alguns dados podem ser perdidos."*
+* RecommendedAction: *"Verificar físico e/ou a conectividade de todos os dispositivos de armazenamento de rede. Você talvez precise restaurar do backup."*
 
-### **<a name="pool-capacity-1"></a>Capacidade do pool (1)**
+### <a name="pool-capacity-1"></a>**Capacidade do pool (1)**
 
 #### <a name="faulttype-microsofthealthfaulttypestoragepoolinsufficientreservecapacityfault"></a>FaultType: Microsoft.Health.FaultType.StoragePool.InsufficientReserveCapacityFault
-* Severity: aviso
-* Motivo: *"pool de armazenamento não tem a capacidade de reserva recomendada mínima. Isso pode limitar sua capacidade de restaurar resiliência de dados no caso de falhas de unidade."*
-* RecommendedAction: *"adicionar a capacidade adicional ao pool de armazenamento ou liberar capacidade. O mínimo recomendado reservar varia de acordo com a implantação, mas é o valor dos aproximadamente 2 unidades de capacidade."*
+* Gravidade: Aviso
+* Motivo: *"O pool de armazenamento não tem a capacidade de reserva recomendada mínimo. Isso pode limitar sua capacidade de restaurar a resiliência de dados no caso de falha de unidade (s)."*
+* RecommendedAction: *"Adicionar capacidade adicional para o pool de armazenamento ou libere a capacidade. O mínimo recomendado reserva varia de acordo com a implantação, mas é a importância dos aproximadamente 2 unidades de capacidade."*
 
 ### <a name="volume-capacity-2sup1sup"></a>**A capacidade de volume (2)**<sup>1</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType: Microsoft.Health.FaultType.Volume.Capacity
-* Severity: aviso
-* Motivo: *"o volume estiver ficando sem espaço disponível".*
+* Gravidade: Aviso
+* Motivo: *"O volume está ficando sem espaço disponível."*
 * RecommendedAction: *"Expandir o volume ou migrar cargas de trabalho para outros volumes."*
 
 #### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType: Microsoft.Health.FaultType.Volume.Capacity
-* Severity: críticas
-* Motivo: *"o volume estiver ficando sem espaço disponível".*
+* Gravidade: Crítico
+* Motivo: *"O volume está ficando sem espaço disponível."*
 * RecommendedAction: *"Expandir o volume ou migrar cargas de trabalho para outros volumes."*
 
-### **<a name="server-3"></a>Servidor (3)**
+### <a name="server-3"></a>**Servidor (3)**
 
 #### <a name="faulttype-microsofthealthfaulttypeserverdown"></a>FaultType: Microsoft.Health.FaultType.Server.Down
-* Severity: críticas
-* Motivo: *"o servidor não pode ser acessado."*
-* RecommendedAction: *"Iniciar ou substituir o servidor."*
+* Gravidade: Crítico
+* Motivo: *"O servidor não pode ser alcançado."*
+* RecommendedAction: *"Iniciar ou substituir o servidor".*
 
 #### <a name="faulttype-microsofthealthfaulttypeserverisolated"></a>FaultType: Microsoft.Health.FaultType.Server.Isolated
-* Severity: críticas
-* Motivo: *"o servidor é isolado do cluster devido a problemas de conectividade."*
-* RecommendedAction: *"Se o isolamento de persistir, verifique as redes ou migrar cargas de trabalho para outros nós."*
+* Gravidade: Crítico
+* Motivo: *"O servidor está isolado do cluster devido a problemas de conectividade."*
+* RecommendedAction: *"Se isolamento persistir, verifique as redes ou migrar cargas de trabalho para outros nós."*
 
 #### <a name="faulttype-microsofthealthfaulttypeserverquarantined"></a>FaultType: Microsoft.Health.FaultType.Server.Quarantined
-* Severity: críticas
-* Motivo: *"o servidor está em quarentena pelo cluster devido a falhas recorrentes."*
+* Gravidade: Crítico
+* Motivo: *"O servidor está em quarentena pelo cluster devido a falhas recorrentes."*
 * RecommendedAction: *"Substituir o servidor ou corrigir a rede".*
 
-### **<a name="cluster-1"></a>Cluster (1)**
+### <a name="cluster-1"></a>**Cluster (1)**
 
 #### <a name="faulttype-microsofthealthfaulttypeclusterquorumwitnesserror"></a>FaultType: Microsoft.Health.FaultType.ClusterQuorumWitness.Error
-* Severity: críticas
-* Motivo: *"cluster é uma falha de servidor longe diminuindo."*
-* RecommendedAction: *"verificar se o recurso de testemunha e reiniciar conforme necessário. Iniciar ou substituir servidores que falharam."*
+* Gravidade: Crítico
+* Motivo: *"O cluster é uma falha do servidor para longe de ficar inativo".*
+* RecommendedAction: *"Verifique o recurso de testemunha e reinicie conforme necessário. Iniciar ou substituir servidores com falha".*
 
-### **<a name="network-adapterinterface-4"></a>Adaptador de rede/Interface (4)**
+### <a name="network-adapterinterface-4"></a>**Adaptador de rede/Interface (4)**
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkadapterdisconnected"></a>FaultType: Microsoft.Health.FaultType.NetworkAdapter.Disconnected
-* Severity: aviso
-* Motivo: *"a interface de rede foi desconectada."*
-* RecommendedAction: *"Reconectar o cabo de rede".*
+* Gravidade: Aviso
+* Motivo: *"O adaptador de rede tornam-se desconectou."*
+* RecommendedAction: *"Se reconectar o cabo de rede."*
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkinterfacemissing"></a>FaultType: Microsoft.Health.FaultType.NetworkInterface.Missing
-* Severity: aviso
-* Motivo: *"o servidor {servidor} tem ausentes conectados à rede de cluster {cluster} de adaptadores de rede."*
-* RecommendedAction: *"Conectar o servidor na rede ausentes do cluster".*
+* Gravidade: Aviso
+* Motivo: *"O servidor {server} tem ausente conectado à rede de cluster {rede de cluster} de adaptadores de rede."*
+* RecommendedAction: *"Conectar o servidor à rede de cluster ausente".*
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkadapterhardware"></a>FaultType: Microsoft.Health.FaultType.NetworkAdapter.Hardware
-* Severity: aviso
-* Motivo: *"a interface de rede teve uma falha de hardware."*
+* Gravidade: Aviso
+* Motivo: *"O adaptador de rede teve uma falha de hardware".*
 * RecommendedAction: *"Substituir o adaptador de interface de rede".*
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkadapterdisabled"></a>FaultType: Microsoft.Health.FaultType.NetworkAdapter.Disabled
-* Severity: aviso
-* Motivo: *"{NetworkInterface} de interface de rede não está habilitada e não está sendo usada."*
-* RecommendedAction: *"habilitar a interface de rede."*
+* Gravidade: Aviso
+* Motivo: *"O adaptador de rede {interface de rede} não está habilitado e não está sendo usado."*
+* RecommendedAction: *"Habilitar a interface de rede".*
 
-### **<a name="enclosure-6"></a>Compartimento (6)**
+### <a name="enclosure-6"></a>**Compartimento (6)**
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosurelostcommunication"></a>FaultType: Microsoft.Health.FaultType.StorageEnclosure.LostCommunication
-* Severity: aviso
-* Motivo: *"Comunicação foi perdida ao compartimento de armazenamento."*
+* Gravidade: Aviso
+* Motivo: *"Comunicação foi perdida para o compartimento de armazenamento."*
 * RecommendedAction: *"Iniciar ou substituir o compartimento de armazenamento."*
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosurefanerror"></a>FaultType: Microsoft.Health.FaultType.StorageEnclosure.FanError
-* Severity: aviso
-* Motivo: *"na posição {posição} do compartimento armazenamento houve falha no ventilador."*
-* RecommendedAction: *"Substituir o leque no compartimento da armazenamento".*
+* Gravidade: Aviso
+* Motivo: *"O ventilador na posição {posição} do compartimento de armazenamento falhou."*
+* RecommendedAction: *"Substituir o ventilador no compartimento de armazenamento".*
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosurecurrentsensorerror"></a>FaultType: Microsoft.Health.FaultType.StorageEnclosure.CurrentSensorError
-* Severity: aviso
-* Motivo: *"o sensor atual na posição {posição} do compartimento armazenamento falhou."*
-* RecommendedAction: *"Substituir um sensor atual no compartimento da armazenamento".*
+* Gravidade: Aviso
+* Motivo: *"O sensor atual na posição {posição} do compartimento de armazenamento falhou."*
+* RecommendedAction: *"Substituir um sensor de corrente no compartimento de armazenamento".*
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosurevoltagesensorerror"></a>FaultType: Microsoft.Health.FaultType.StorageEnclosure.VoltageSensorError
-* Severity: aviso
-* Motivo: *"o sensor de tensão na posição {posição} do compartimento armazenamento falhou."*
-* RecommendedAction: *"Substituir um sensor de tensão no compartimento da armazenamento".*
+* Gravidade: Aviso
+* Motivo: *"O sensor de tensão na posição {posição} do compartimento de armazenamento falhou."*
+* RecommendedAction: *"Substituir um sensor de tensão no compartimento de armazenamento".*
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosureiocontrollererror"></a>FaultType: Microsoft.Health.FaultType.StorageEnclosure.IoControllerError
-* Severity: aviso
-* Motivo: *"o controlador de e/s na posição {posição} do compartimento armazenamento falhou."*
-* RecommendedAction: *"Substituir um controlador de e/s no compartimento da armazenamento".*
+* Gravidade: Aviso
+* Motivo: *"O controlador de e/s na posição {posição} do compartimento de armazenamento falhou."*
+* RecommendedAction: *"Substituir um controlador de e/s no compartimento de armazenamento".*
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosuretemperaturesensorerror"></a>FaultType: Microsoft.Health.FaultType.StorageEnclosure.TemperatureSensorError
-* Severity: aviso
-* Motivo: *"o sensor de temperatura na posição {posição} do compartimento armazenamento falhou."*
-* RecommendedAction: *"Substituir um sensor de temperatura no compartimento da armazenamento".*
+* Gravidade: Aviso
+* Motivo: *"O sensor de temperatura na posição {posição} do compartimento de armazenamento falhou."*
+* RecommendedAction: *"Substituir um sensor de temperatura no compartimento de armazenamento".*
 
-### **<a name="firmware-rollout-3"></a>Distribuição de firmware (3)**
+### <a name="firmware-rollout-3"></a>**Distribuição de firmware (3)**
 
 #### <a name="faulttype-microsofthealthfaulttypefaultdomainfailedmaintenancemode"></a>FaultType: Microsoft.Health.FaultType.FaultDomain.FailedMaintenanceMode
-* Severity: aviso
-* Motivo: *"No momento não é possível fazer progresso durante a execução de firmware distribuição."*
-* RecommendedAction: *"Verifique se todos os espaços de armazenamento são saudáveis e que nenhum domínio de falha esteja em modo de manutenção."*
+* Gravidade: Aviso
+* Motivo: *"No momento, não é possível tornar o progresso durante a execução de firmware de lançamento."*
+* RecommendedAction: *"Verifique se todos os espaços de armazenamento estão íntegros e que nenhum domínio de falha está atualmente no modo de manutenção."*
 
 #### <a name="faulttype-microsofthealthfaulttypefaultdomainfirmwareverifyversionfaile"></a>FaultType: Microsoft.Health.FaultType.FaultDomain.FirmwareVerifyVersionFaile
-* Severity: aviso
-* Motivo: *"distribuição Firmware foi cancelada devido a informações de versão de firmware ilegível ou inesperado depois de aplicar uma atualização de firmware".*
-* RecommendedAction: *"firmware de reinicialização distribuímos o depois que o problema de firmware foi resolvido."*
+* Gravidade: Aviso
+* Motivo: *"O firmware de lançamento foi cancelado devido a informações de versão de firmware não pode ser lido ou inesperado após a aplicação de uma atualização de firmware."*
+* RecommendedAction: *"Reinicialização firmware distribuir depois que o firmware foi resolvido."*
 
 #### <a name="faulttype-microsofthealthfaulttypefaultdomaintoomanyfailedupdates"></a>FaultType: Microsoft.Health.FaultType.FaultDomain.TooManyFailedUpdates
-* Severity: aviso
-* Motivo: *"distribuição Firmware foi cancelada devido a muitos discos físicos falha uma tentativa de atualização de firmware".*
-* RecommendedAction: *"firmware de reinicialização distribuímos o depois que o problema de firmware foi resolvido."*
+* Gravidade: Aviso
+* Motivo: *"O firmware de lançamento foi cancelado devido a muitos discos físicos com falha de uma tentativa de atualização de firmware."*
+* RecommendedAction: *"Reinicialização firmware distribuir depois que o firmware foi resolvido."*
 
-### <a name="storage-qos-3sup2sup"></a>**Armazenamento QoS (3)**<sup>2</sup>
+### <a name="storage-qos-3sup2sup"></a>**QoS de armazenamento (3)**<sup>2</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypestorqosinsufficientthroughput"></a>FaultType: Microsoft.Health.FaultType.StorQos.InsufficientThroughput
-* Severity: aviso
-* Motivo: *"taxa de transferência de armazenamento é insuficiente para satisfazer reserva-se".*
-* RecommendedAction: *"Reconfigurar políticas de armazenamento QoS".*
+* Gravidade: Aviso
+* Motivo: *"Taxa de transferência de armazenamento é insuficiente para satisfazer as reservas de".*
+* RecommendedAction: *"Reconfigurar as políticas de QoS de armazenamento".*
 
 #### <a name="faulttype-microsofthealthfaulttypestorqoslostcommunication"></a>FaultType: Microsoft.Health.FaultType.StorQos.LostCommunication
-* Severity: aviso
-* Motivo: *"o Gerenciador de política de armazenamento QoS perdeu a comunicação com o volume."*
+* Gravidade: Aviso
+* Motivo: *"O Gerenciador de políticas de QoS de armazenamento perdeu a comunicação com o volume."*
 * RecommendedAction: *"Reinicialize nós {nós}"*
 
 #### <a name="faulttype-microsofthealthfaulttypestorqosmisconfiguredflow"></a>FaultType: Microsoft.Health.FaultType.StorQos.MisconfiguredFlow
-* Severity: aviso
-* Motivo: *"um ou mais consumidores de armazenamento (geralmente máquinas virtuais) estão usando uma política de não existente com id {id}".*
-* RecommendedAction: *"Recriar quaisquer políticas de armazenamento QoS ausentes".*
+* Gravidade: Aviso
+* Motivo: *"Um ou mais consumidores de armazenamento (normalmente, máquinas virtuais) estão usando uma política não existente com a id {id}".*
+* RecommendedAction: *"Recriar as políticas de QoS de armazenamento ausentes".*
 
-<sup>1</sup> indica o volume atingiu 80% completo (gravidade secundária) ou 90% completo (gravidade principal).  
-<sup>2</sup> indica alguns .vhd(s) no volume não atendidos seus IOPS mínimo de 10% (menor), 30% (principal) ou 50% (crítico) da janela de 24 horas rolante acima.  
+<sup>1</sup> indica que o volume tiver atingido a 80% cheio (severidade menor) ou 90% cheio (severidade principal).  
+<sup>2</sup> indica que alguns .vhd(s) no volume não atendidos seu IOPS mínimo para acima de 10% (secundário), 30% (principal) ou 50% (crítico) de reverter a janela de 24 horas.  
 
 >[!NOTE]
-> A integridade dos componentes de compartimento de armazenamento, como os fãs, alimentação e sensores é derivada de SCSI compartimento serviços SES (). Se o fornecedor não fornecer essas informações, o serviço de integridade não é possível exibi-lo.  
+> A integridade dos componentes do compartimento de armazenamento, como sensores, fontes de alimentação e ventiladores, é derivada de SES (Serviços de Compartimento) SCSI. Se o fornecedor não lhe der essas informações, o Serviço de Integridade não poderá exibi-las.  
 
 ## <a name="see-also"></a>Consulte também
 

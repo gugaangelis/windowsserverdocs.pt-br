@@ -1,5 +1,5 @@
 ---
-title: "Definir configurações de vídeo"
+title: Definir Configurações de Vídeo
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -13,19 +13,20 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 834451975df9610824171e5b92feae7cc8e63437
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59844217"
 ---
-# <a name="define-display-settings"></a>Definir configurações de vídeo
+# <a name="define-display-settings"></a>Definir Configurações de Vídeo
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-A resolução de tela deve ser definida de acordo com o hardware que está anexado ao servidor. Para exibição ideal do painel, é necessária uma configuração de 1024 x 768 ou superior. Para obter mais informações sobre como definir a resolução da tela, consulte o [Kit de avaliação e implantação](https://go.microsoft.com/fwlink/?LinkId=248694) documentação.  
+A resolução da tela deve ser definida de acordo com o hardware conectado ao servidor. Para a exibição ideal do Dashboard, uma configuração de 1024x768 ou superior é exigida. Para obter mais informações sobre a configuração da resolução de tela, consulte a documentação [Kit de Avaliação e Implantação do Windows](https://go.microsoft.com/fwlink/?LinkId=248694) .  
   
 ## <a name="see-also"></a>Consulte também  
- [Criar e personalizar a imagem](Creating-and-Customizing-the-Image.md)   
+ [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do cliente](Testing-the-Customer-Experience.md)
+ [Testando a experiência do usuário](Testing-the-Customer-Experience.md)

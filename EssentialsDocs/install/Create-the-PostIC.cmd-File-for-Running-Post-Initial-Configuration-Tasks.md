@@ -1,5 +1,5 @@
 ---
-title: "Criar o arquivo PostIC.cmd para executar tarefas de configuração inicial do Post"
+title: Criar o Arquivo PostIC.cmd para Execução de Tarefas após a Configuração Inicial
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -13,49 +13,50 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: f5042204cd189e3101f5e0126fd98e786a49032d
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59844117"
 ---
-# <a name="create-the-posticcmd-file-for-running-post-initial-configuration-tasks"></a>Criar o arquivo PostIC.cmd para executar tarefas de configuração inicial do Post
+# <a name="create-the-posticcmd-file-for-running-post-initial-configuration-tasks"></a>Criar o Arquivo PostIC.cmd para Execução de Tarefas após a Configuração Inicial
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Você pode adicionar personalizações posteriores à configuração inicial escrevendo seu próprio código, e, em seguida, chamando o código de um arquivo de script chamado PostIC.cmd. Ao usar o arquivo PostIC.cmd, você deve seguir as diretrizes a seguir:  
+Você pode adicionar personalizações à configuração pós-inicial escrevendo seu próprio código e então chamando esse código de um arquivo de script chamado PostIC.cmd. Ao usar o arquivo PostIC.cmd, é preciso cumprir as seguintes diretrizes:  
   
--   Seu código de personalização deve ser executado silenciosamente (ele não pode exibir uma Interface do usuário).  
+-   O código de personalização deve ser executado silenciosamente (não é possível exibir uma Interface de Usuário).  
   
--   Seu código de personalização não pode iniciar uma reinicialização do servidor. A configuração inicial reiniciará o servidor como a última tarefa.  
+-   O código de personalização não pode iniciar uma reinicialização do servidor. A Configuração Inicial irá reiniciar o servidor como a última tarefa.  
   
--   Seu código de personalização deve ser executado em três minutos ou menos.  
+-   O código de personalização deve ser executado em três minutos ou menos.  
   
- Defina seu arquivo PostIC.cmd para retornar 0 se o código é executado com êxito. Se qualquer outro valor é retornado, o sistema operacional procurará um arquivo chamado [SetupFailure.cmd](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md#BKMK_SetupFailure), que contém o código que deve ser executado se o código no arquivo PostIC.cmd não for executado com êxito. Arquivo PostIC.cmd e o arquivo SetupFailure.cmd devem ser C:\Windows\Setup\Scripts localizado.  
+ Configure o arquivo PostIC.cmd para retornar um 0 se o código for executado com êxito. Se for retornado qualquer outro valor, o sistema operacional procurará um arquivo nomeado [SetupFailure.cmd](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md#BKMK_SetupFailure), que contém um código que deverá ser executado caso o código do arquivo PostIC.cmd não seja executado com êxito. O arquivo PostIC.cmd e o arquivo SetupFailure.cmd devem estar localizados em C:\Windows\Setup\Scripts.  
   
-#### <a name="to-define-post-initial-configuration-customizations"></a>Para definir personalizações posteriores à configuração inicial  
+#### <a name="to-define-post-initial-configuration-customizations"></a>Para definir as personalizações após a configuração inicial  
   
-1.  Escreva o código que é chamado do script PostIC.cmd.  
+1.  Escreva o código chamado a partir do script PostIC.cmd.  
   
-2.  Usando o bloco de notas, crie um arquivo chamado PostIC.cmd e adicione a chamada para o código que você criou na etapa 1. Certifique-se de que seu código retorna um valor de êxito.  
+2.  Usando o Bloco de Notas, crie um arquivo chamado PostIC.cmd e adicione a chamada ao código criado na etapa 1. Verifique se seu código retorna um valor de êxito.  
   
 3.  Salve PostIC.cmd em C:\Windows\Setup\Scripts.  
   
-4.  (Opcional) Crie um arquivo SetupFailure.cmd que executa o código se PostIC.cmd retornar algo diferente de 0.  
+4.  (Opcional) Crie um arquivo SetupFailure.cmd que executará o código se PostIC.cmd retornar algo diferente de 0.  
   
-###  <a name="BKMK_SetupFailure"></a>SetupFailure.cmd  
- Você pode fornecer notificação de problemas na configuração inicial usando SetupFailure.cmd. O arquivo SetupFailure.cmd contém o código que você deseja executar caso ocorram problemas. O arquivo SetupFailure.cmd é colocado na C:\Windows\Setup\Scripts e é executado quando ocorre um problema com uma tarefa de configuração ou quando o arquivo PostIC.cmd retorna um valor diferente de 0.  
+###  <a name="BKMK_SetupFailure"></a> SetupFailure.cmd  
+ Você pode fornecer notificação de problemas na Configuração Inicial usando SetupFailure.cmd. O arquivo SetupFailure.cmd contém o código que você deseja executar se ocorrerem problemas. O arquivo SetupFailure.cmd está em C:\Windows\Setup\Scripts e será executado em caso de problemas com uma tarefa de configuração ou quando o arquivo PostIC.cmd retornar um valor diferente de 0.  
   
 ##### <a name="to-define-notifications"></a>Para definir notificações  
   
-1.  Escreva o código que é chamado do script SetupFailure.cmd.  
+1.  Escreva o código chamado a partir do script SetupFailure.cmd.  
   
-2.  Usando o bloco de notas, crie um arquivo chamado SetupFailure.cmd e adicione a chamada para o código que você criou na etapa 1. Certifique-se de que seu código retorna um valor de êxito.  
+2.  Usando o Bloco de Notas, crie um arquivo chamado SetupFailure.cmd e adicione a chamada ao código criado na etapa 1. Verifique se seu código retorna um valor de êxito.  
   
-3.  Salve SetupFailure.cmd em C:\Windows\Setup\Scripts.  
+3.  Salve o SetupFailure.cmd em C:\Windows\Setup\Scripts.  
   
 ## <a name="see-also"></a>Consulte também  
  [Introdução ao Windows Server Essentials ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [Criar e personalizar a imagem](Creating-and-Customizing-the-Image.md)   
+ [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do cliente](Testing-the-Customer-Experience.md)
+ [Testando a experiência do usuário](Testing-the-Customer-Experience.md)

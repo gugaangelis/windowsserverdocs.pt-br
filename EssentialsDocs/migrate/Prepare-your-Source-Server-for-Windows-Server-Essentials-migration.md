@@ -1,5 +1,5 @@
 ---
-title: Preparar seu servidor de origem do Windows Server Essentials migration1
+title: Preparar o servidor de origem para o Windows Server Essentials migration1
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -13,197 +13,198 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 929c7506c78667646e429c4f28df7e5642c575ab
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59841147"
 ---
-# <a name="prepare-your-source-server-for-windows-server-essentials-migration1"></a>Preparar seu servidor de origem do Windows Server Essentials migration1
+# <a name="prepare-your-source-server-for-windows-server-essentials-migration1"></a>Preparar o servidor de origem para o Windows Server Essentials migration1
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Conclua as seguintes etapas preliminares para garantir que as configurações e os dados em seu servidor de origem migram com êxito para o servidor de destino.  
+Conclua as etapas preliminares a seguir para garantir que as configurações e dados do servidor de origem sejam migradas com êxito para o servidor de destino.  
   
-#### <a name="to-prepare-for-migration"></a>Para preparar para a migração  
+#### <a name="to-prepare-for-migration"></a>Para se preparar para a migração  
   
 
-1.  [Faça backup do servidor de origem](Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_BackUpYourSourceServerToPrepareForMigration)  
+1.  [Fazer backup do servidor de origem](Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_BackUpYourSourceServerToPrepareForMigration)  
   
 2.  [Instale os service packs mais recentes](Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_InstallTheMostRecentServicePacksToPrepareForMigration)  
   
 3.  [Avaliar a integridade do servidor de origem](Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_UseWindowsBestPracticeAnalyzer)  
   
-4.  [Execute a ferramenta de preparação de migração no servidor de origem](Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_MPT)  
+4.  [Execute a ferramenta de preparação da migração no servidor de origem](Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_MPT)  
   
-5.  [Criar um plano para migrar aplicativos de linha de negócios](Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_PlanToMigrateLineOfBusinessApplications)  
+5.  [Crie um plano para migrar aplicativos de linha de negócios](Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_PlanToMigrateLineOfBusinessApplications)  
 
-1.  [Faça backup do servidor de origem](../migrate/Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_BackUpYourSourceServerToPrepareForMigration)  
+1.  [Fazer backup do servidor de origem](../migrate/Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_BackUpYourSourceServerToPrepareForMigration)  
   
 2.  [Instale os service packs mais recentes](../migrate/Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_InstallTheMostRecentServicePacksToPrepareForMigration)  
   
 3.  [Avaliar a integridade do servidor de origem](../migrate/Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_UseWindowsBestPracticeAnalyzer)  
   
-4.  [Execute a ferramenta de preparação de migração no servidor de origem](../migrate/Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_MPT)  
+4.  [Execute a ferramenta de preparação da migração no servidor de origem](../migrate/Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_MPT)  
   
-5.  [Criar um plano para migrar aplicativos de linha de negócios](../migrate/Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_PlanToMigrateLineOfBusinessApplications)  
+5.  [Crie um plano para migrar aplicativos de linha de negócios](../migrate/Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_PlanToMigrateLineOfBusinessApplications)  
 
   
-###  <a name="BKMK_BackUpYourSourceServerToPrepareForMigration"></a>Faça backup do servidor de origem  
- Faça backup do servidor de origem antes de começar o processo de migração. Fazendo um backup ajuda a proteger seus dados contra perda acidental se ocorrer um erro irrecuperável durante a migração.  
+###  <a name="BKMK_BackUpYourSourceServerToPrepareForMigration"></a> Fazer backup do servidor de origem  
+ Faça o backup do Servidor de Origem antes de iniciar o processo migração. Isso ajuda a proteger seus dados de perda acidental caso ocorra um erro irrecuperável durante a migração.  
   
-##### <a name="to-back-up-the-source-server"></a>Para fazer backup do servidor de origem  
+##### <a name="to-back-up-the-source-server"></a>Para fazer backup do Servidor de Origem  
   
-1.  Faça um backup completo do servidor de origem. Para obter mais informações sobre como fazer backup Windows Small Business Server 2011 Essentials, consulte [Saiba mais sobre como configurar o backup do servidor](https://technet.microsoft.com/library/server-backup-support-1.aspx).  
+1.  Faça um backup completo do Servidor de Origem. Para obter mais informações sobre como fazer backup do Windows Small Business Server 2011 Essentials, consulte [saber mais sobre como configurar o backup do servidor](https://technet.microsoft.com/library/server-backup-support-1.aspx).  
   
-2.  Verifique se o backup foi executado com êxito. Para testar a integridade do backup, selecione arquivos aleatórios do backup, restaurá-los em um local alternativo e confirme que os arquivos restaurados são iguais aos arquivos originais.  
+2.  Verifique se o backup foi executado com êxito. Para testar a integridade do backup, selecione arquivos aleatórios do backup, restaure-os em um local alternativo e verifique se os arquivos restaurados são iguais aos arquivos originais.  
   
-###  <a name="BKMK_InstallTheMostRecentServicePacksToPrepareForMigration"></a>Instale os service packs mais recentes  
- Você deve instalar os service packs e atualizações mais recentes no servidor de origem antes da migração.  
+###  <a name="BKMK_InstallTheMostRecentServicePacksToPrepareForMigration"></a> Instale os service packs mais recentes  
+ Você deve instalar as últimas atualizações e service packs no Servidor de Origem antes da migração.  
   
-###  <a name="BKMK_UseWindowsBestPracticeAnalyzer"></a>Avaliar a integridade do servidor de origem  
- É importante avaliar a integridade do seu servidor de origem antes de começar a migração. Use os procedimentos a seguir para garantir que as atualizações sejam atuais, para gerar um relatório de integridade do sistema e executar o Windows Server soluções melhor prática BPA (Analyzer).  
+###  <a name="BKMK_UseWindowsBestPracticeAnalyzer"></a> Avaliar a integridade do servidor de origem  
+ É importante avaliar a integridade do servidor de origem antes de começar a migração. Use os procedimentos a seguir para garantir que as atualizações sejam atuais, para gerar um relatório de integridade do sistema e executar o Analisador de Práticas Recomendadas do Windows Server Solutions.  
   
-#### <a name="download-and-install-critical-and-security-updates"></a>Download e instalação crítica e segurança atualizações  
- Instalando críticas e atualizações de segurança no servidor de origem ajuda a garantir que sua migração seja bem-sucedida e ajuda a proteger sua rede durante o processo de migração.  
+#### <a name="download-and-install-critical-and-security-updates"></a>Download e instalação de atualizações críticas e de segurança  
+ Instalar atualizações críticas e de segurança no servidor de origem ajuda a garantir que a migração seja bem-sucedida e a proteger sua rede durante o processo de migração.  
   
 ###### <a name="to-check-for-the-latest-updates"></a>Para verificar as atualizações mais recentes  
   
-1.  No servidor de origem, clique em **iniciar**, clique em **todos os programas**e clique em **Windows Update**.  
+1.  No servidor de origem, clique em **Iniciar**, clique em **Todos os Programas**e clique em **Windows Update**.  
   
-2.  Clique em **verificar se há atualizações**.  
+2.  Clique em **Procurar atualizações**.  
   
-3.  Se forem encontradas atualizações, clique em **instalar atualizações**.  
+3.  Se forem encontradas atualizações, clique em **Instalar Atualizações**.  
   
-#### <a name="check-the-alert-viewer-for-critical-errors"></a>Verifique o Visualizador de alerta para erros críticos  
- Você pode verificar o Visualizador de alerta no painel para quaisquer erros críticos.  
+#### <a name="check-the-alert-viewer-for-critical-errors"></a>Verifique o Visualizador de alertas de erros críticos  
+ Você pode verificar o Visualizador de alertas no Painel para erros críticos.  
   
-#### <a name="run-the-windows-server-solutions-best-practices-analyzer"></a>Execute o analisador de práticas recomendadas do Windows Server Solutions  
- Você pode executar o Windows Server soluções BPA Best Practices Analyzer () para verificar que não há nenhum problema no servidor, rede ou domínio antes de começar o processo de migração. A BPA coleta informações de configuração das seguintes fontes:  
+#### <a name="run-the-windows-server-solutions-best-practices-analyzer"></a>Execute o Analisador de Práticas Recomendadas do Windows Server Solutions  
+ Você pode executar o Windows Server Solutions BPA Best Practices Analyzer () para verificar se não há nenhum problema no servidor, rede ou domínio antes de iniciar o processo de migração. O BPA coleta informações de configuração das seguintes origens:  
   
--   Active Directory® Windows Management Instrumentation (WMI)  
+-   WMI (Instrumentação de Gerenciamento do Windows) do Active Directory®  
   
--   O registro  
+-   O Registro  
   
--   La Internet Information Services (IIS)  
+-   A metabase do IIS (Serviços de Informações da Internet)  
   
-###### <a name="to-use-the-windows-server-solutions-bpa-to-analyze-your-source-server"></a>Usar o Windows Server Solutions BPA para analisar seu servidor de origem  
+###### <a name="to-use-the-windows-server-solutions-bpa-to-analyze-your-source-server"></a>Para usar o Windows Server Solutions BPA para analisar o servidor de origem  
   
 1.  Baixe e instale o [analisador de práticas recomendadas do Windows Server Solutions](https://www.microsoft.com/en-us/download/details.aspx?id=15556) no Microsoft Download Center.  
   
-2.  Depois que o download for concluído, clique em **iniciar**, aponte para **todos os programas**e clique em **ferramenta do analisador de práticas recomendadas do SBS**.  
+2.  Após a conclusão do download, clique em **Iniciar**, clique em **Todos os Programas** e clique em **Ferramenta Analisadora de Práticas Recomendadas do SBS**.  
   
     > [!NOTE]
-    >  Verificar se há atualizações antes de verificar o servidor.  
+    >  Verifique se há atualizações antes de examinar o servidor.  
   
-3.  No painel de navegação, clique em **iniciar uma verificação**.  
+3.  No painel de navegação, clique na opção de **iniciar uma varredura**.  
   
-4.  No painel de detalhes, digite o rótulo da verificação e clique em **inicie a verificação**. O rótulo da verificação é o nome do relatório de digitalização, por exemplo, **SBS BPA Scan 1 de julho de 2012**.  
+4.  No painel de detalhes, digite o rótulo da varredura e, em seguida, clique em **Iniciar a varredura**. O rótulo da varredura é o nome do relatório de varredura, por exemplo, **SBS BPA Scan de 1jul2012**.  
   
-5.  Depois que a verificação termina, clique em **visualizar um relatório dessa verificação de práticas recomendadas**.  
+5.  Quando a varredura terminar, clique na opção de **exibição de relatório da varredura de práticas recomendadas**.  
   
- Depois de coletar informações sobre a configuração do servidor, o Windows Server Solutions BPA verifica se as informações estão corretas e, em seguida, apresenta os administradores com uma lista de informações e problemas classificados por gravidade. A lista descreve cada problema e fornece uma solução de recomendação ou possíveis. Existem três tipos de relatório:  
+ Depois de coletar informações sobre a configuração do servidor, o Windows Server Solutions BPA verifica que as informações estão corretas e, em seguida, apresenta os administradores com uma lista de problemas classificados por gravidade e informações. A lista descreve cada problema e fornece uma recomendação ou solução possível. Há três tipos de relatórios disponíveis:  
   
 |Tipo de relatório|Descrição|  
 |-----------------|-----------------|  
 |Relatórios de lista|Exibe relatórios em uma lista unidimensional.|  
 |Relatórios de árvore|Exibe relatórios em uma lista hierárquica.|  
-|Outros relatórios|Exibe os relatórios como um Log de tempo de execução.|  
+|Outros relatórios|Exibe relatórios como um log de tempo de execução.|  
   
- Para exibir a descrição e as soluções para um problema, clique no problema no relatório. Nem todos os problemas relatados pelo BPA do Windows SBS 2011 Essentials afetam a migração, mas você deve resolver como muitos dos problemas quanto possível para garantir que a migração foi bem-sucedida.  
+ Para exibir a descrição e as soluções de um problema, clique no problema no relatório. Nem todos os problemas relatados pelo Windows SBS 2011 Essentials BPA afetam a migração, mas você deve solucionar o máximo de problemas possível para garantir que a migração seja bem-sucedida.  
   
-####  <a name="BKMK_SynchronizeTheSourceServerTimeWithAnExternalTimeSource"></a>Sincronizar a hora do servidor de origem com uma fonte de horário externo  
- O tempo no servidor de origem deve ser definido como dentro de cinco minutos de tempo no servidor de destino, e a data e o fuso horário devem ser o mesmo em ambos os servidores. Se o servidor de origem está executando em uma máquina virtual, a data, hora e fuso horário no servidor host devem corresponder do servidor de origem e o servidor de destino. Para ajudar a garantir que o Windows Server Essentials é instalado com êxito, você deve sincronizar a hora do servidor de origem para o servidor de rede NTP (Time Protocol) na Internet.  
+####  <a name="BKMK_SynchronizeTheSourceServerTimeWithAnExternalTimeSource"></a> Sincronizar a hora do servidor de origem com uma fonte de tempo externa  
+ A hora no Servidor de Origem pode ter uma diferença de, no máximo, cinco minutos da hora no Servidor de Destino e a data e o fuso horário devem ser os mesmos em ambos os servidores. Se o Servidor de Origem estiver sendo executado em uma máquina virtual, a data, a hora e o fuso horário no servidor host devem ser os mesmos que no Servidor de Origem e no Servidor de Destino. Para ajudar a garantir que o Windows Server Essentials é instalado com êxito, você deve sincronizar a hora do servidor de origem para o servidor de protocolo NTP (Network Time) na Internet.  
   
-###### <a name="to-synchronize-the-source-server-time-with-the-ntp-server"></a>Para sincronizar a hora do servidor de origem com o servidor NTP  
+###### <a name="to-synchronize-the-source-server-time-with-the-ntp-server"></a>Para sincronizar a hora do servidor de origem com a do servidor NTP  
   
-1.  Entrar servidor de origem com uma conta de administrador do domínio e a senha.  
+1.  Faça logon no servidor de origem com uma conta de administrador de domínio e senha.  
   
-2.  Clique em **iniciar**, clique em **executar**, tipo **cmd** na caixa de texto e pressione ENTER.  
+2.  Clique em **Iniciar**, em **Executar**, digite **cmd** na caixa de texto e pressione ENTER.  
   
-3.  No prompt de comando, digite w32tm /config /syncfromflags: / confiável: nenhuma /update e pressione ENTER.  
+3.  No prompt de comando, digite w32tm /config /syncfromflags / confiável: sem /update e pressione ENTER.  
   
-4.  No prompt de comando, digite net stop w32time e pressione ENTER.  
+4.  No prompt de comando, digite net stop w32time e, em seguida, pressione ENTER.  
   
-5.  No prompt de comando, digite net start w32time e pressione ENTER.  
-  
-> [!IMPORTANT]
->  Durante a instalação do Windows Server Essentials, você tem uma oportunidade de verificar a hora no servidor de destino e alterá-lo, se necessário. Certifique-se de que o tempo é dentro de cinco minutos do tempo que é definido no servidor de origem. Quando a instalação é concluída, o servidor de destino sincronizará com o NTP. Todos os computadores ingressados em domínio, incluindo o servidor de origem, sincronizam com o servidor de destino, que assume a função de domínio primário mestre emulador do controlador (PDC).  
-  
-###  <a name="BKMK_MPT"></a>Execute a ferramenta de preparação de migração no servidor de origem  
- Você não pode executar uma instalação do modo de migração sem primeiro executar a ferramenta de preparação de migração no servidor de origem. Essa ferramenta é desenvolvida para preparar seu servidor de origem e o domínio devem ser migrados para o Windows Server Essentials.  
+5.  No prompt de comando, digite net start w32time e, em seguida, pressione ENTER.  
   
 > [!IMPORTANT]
->  Faça backup do servidor de origem antes de executar a ferramenta de preparação de migração. Todas as alterações que faz com que a ferramenta de preparação de migração para o esquema forem irreversíveis. Se você tiver problemas durante a migração, a única maneira de retornar o servidor de origem para o estado em que se encontrava antes de você executar a ferramenta é restaurar o servidor a partir de um backup do sistema.  
+>  Durante a instalação do Windows Server Essentials, você terá a oportunidade de verificar hora no servidor de destino e alterá-la, se necessário. Certifique-se de que a hora esteja no máximo cinco minutos à frente da hora definida no servidor de origem. Quando a instalação for concluída, o servidor de destino será sincronizado com o NTP. Todos os computadores que fazem parte do domínio, incluindo o servidor de origem, são sincronizados com o servidor de destino, que assume a função de mestre emulador PDC (controlador de domínio primário).  
   
- Para executar a ferramenta de preparação de migração, você deve ser um membro do grupo Administradores de empresa, o grupo Administradores de esquema e do grupo Admins. do domínio.  
+###  <a name="BKMK_MPT"></a> Execute a ferramenta de preparação da migração no servidor de origem  
+ Você não pode realizar uma instalação de modo de migração sem primeiro executar a ferramenta de preparação da migração no servidor de origem. Essa ferramenta é projetada para preparar seu servidor de origem e o domínio a serem migrados para o Windows Server Essentials.  
   
-##### <a name="to-verify-that-you-have-the-appropriate-permissions-to-run-the-tool-on-the-source-server"></a>Para verificar se você tem as permissões adequadas para executá-la no servidor de origem  
+> [!IMPORTANT]
+>  Faça backup do Servidor de Origem antes de executar a Ferramenta de Preparação da Migração. Todas as mudanças feitas pela Ferramenta de Preparação da Migração ao esquema são irreversíveis. Se tiver problemas durante a migração, a única forma de retornar o Servidor de Origem ao estado anterior à execução da ferramenta é restaurar o backup do sistema.  
   
-1.  No servidor de origem, clique em **iniciar**, clique em **ferramentas administrativas**e clique em **usuários e Active Directory computadores**.  
+ Para executar a Ferramenta de Preparação da Migração, você deve ser membro do grupo Administradores de Empresa, Administradores de Esquema e Administradores de Domínio.  
   
-2.  Na árvore de console, clique para expandir seu domínio e, em seguida, clique em **usuários**.  
+##### <a name="to-verify-that-you-have-the-appropriate-permissions-to-run-the-tool-on-the-source-server"></a>Para verificar se você tem as permissões apropriadas para executar a ferramenta no Servidor de Origem  
   
-3.  Clique com botão direito a conta de administrador que você está usando para a migração e, em seguida, clique em **propriedades**.  
+1.  No Servidor de Origem, clique em **Iniciar**, **Ferramentas Administrativas** e clique em **Usuários e Computadores do Active Directory**.  
   
-4.  Clique no **membro de** guia e, em seguida, verifique se que Admins. do domínio, administradores de esquema e administradores corporativos estão listados no **membro do** caixa de texto.  
+2.  Na árvore do console, clique para expandir seu domínio e clique em **Usuários**.  
   
-5.  Se os grupos não estiverem listados, clique em **adicionar**, e, em seguida, adicione cada grupo que não esteja listado.  
+3.  Clique com o botão direito do mouse na conta de usuário que você está usando para a migração e, em seguida, clique em **Propriedades**.  
   
-    > [!NOTE]
-    >  -   Se o serviço de logon de rede não é iniciado, você pode receber um erro de permissão.  
-    > -   Você deve fazer logoff e logon novamente no servidor para que as alterações entrem em vigor.  
+4.  Clique na guia **Membro de** e verifique se Administradores de Empresa, Administradores de Esquema e Administradores de Domínio estão listados na caixa de texto **Membro de**.  
   
-     Você pode usar a versão mais recente do Windows Update Agent para garantir que o processo de atualização do servidor funcione corretamente.  
-  
- Você pode usar a versão mais recente do Windows Update Agent para garantir que o processo de atualização do servidor funcione corretamente.  
-  
- Antes de instalar o Windows Update Agent no servidor de origem, primeiro você deve instalar o Windows PowerShell 2.0 e o Microsoft Baseline Configuration Analyzer 2.0.  
-  
--   Para baixar e instalar o Windows PowerShell 2.0, veja [968929 do artigo](https://go.microsoft.com/fwlink/p/?LinkId=241483) na Base de Conhecimento Microsoft.  
-  
--   Para baixar e instalar o Microsoft Baseline Configuration Analyzer 2.0, veja o [Microsoft Baseline Configuration Analyzer 2.0](https://go.microsoft.com/fwlink/p/?LinkId=241484) no Microsoft Download Center.  
-  
--   Para baixar e instalar a versão mais recente do agente do Windows Update, consulte [949104 do artigo](https://go.microsoft.com/fwlink/p/?LinkId=237493) na Base de Conhecimento Microsoft.  
-  
-##### <a name="to-install-and-run-the-migration-preparation-tool-on-the-source-server"></a>Instalar e executar a ferramenta de preparação de migração no servidor de origem  
-  
-1.  Insira DVD1 do Windows Server Essentials na unidade de DVD no servidor de origem.  
-  
-2.  Abra o Windows Explorer, navegue até o **\support\tools** pasta do DVD e clique duas vezes na **sourcetool.msi** arquivo.  
+5.  Se esses grupos não estiver listados, clique em **Adicionar** e adicione cada um dos grupos que estiver listado.  
   
     > [!NOTE]
-    >  -   Se a ferramenta de preparação de migração já estiver instalada no servidor, execute a ferramenta do **iniciar** menu.  
-    > -   Para garantir que você está preparado para a melhor experiência de migração possíveis, é recomendável que você optar por instalar a atualização mais recente.  
+    >  -   Você pode receber um erro de permissão se o serviço Netlogon não tiver iniciado.  
+    > -   Você deve fazer logoff e fazer logon novamente no servidor para que as alterações tenham efeito.  
   
-     O assistente instala a ferramenta de preparação de migração no servidor de origem. Quando a instalação for concluída, a ferramenta de preparação de migração é executada automaticamente e instala as atualizações mais recentes.  
+     Você pode usar a última versão do Agente de Atualização do Windows para garantir que o processo de atualização do servidor funcione adequadamente.  
   
-3.  Na ferramenta de preparação de migração, selecione **eu tenha um backup e estou pronto para prosseguir**e clique em **próxima**.  
+ Você pode usar a última versão do Agente de Atualização do Windows para garantir que o processo de atualização do servidor funcione adequadamente.  
+  
+ Antes de instalar o Windows Update Agent no servidor de origem, você deve instalar primeiro o Windows PowerShell 2.0 e o Microsoft Baseline Configuration Analyzer 2.0.  
+  
+-   Para baixar e instalar o Windows PowerShell 2.0, consulte [artigo 968929](https://go.microsoft.com/fwlink/p/?LinkId=241483) na Base de dados de Conhecimento Microsoft.  
+  
+-   Para baixar e instalar o Microsoft Baseline Configuration Analyzer 2.0, consulte o [Microsoft Baseline Configuration Analyzer 2.0](https://go.microsoft.com/fwlink/p/?LinkId=241484) no Microsoft Download Center.  
+  
+-   Para baixar e instalar a versão mais recente do Windows Update Agent, consulte [artigo 949104](https://go.microsoft.com/fwlink/p/?LinkId=237493) na Base de dados de Conhecimento Microsoft.  
+  
+##### <a name="to-install-and-run-the-migration-preparation-tool-on-the-source-server"></a>Para instalar e executar a Ferramenta de Preparação da Migração no Servidor de Origem  
+  
+1.  Insira o DVD1 do Windows Server Essentials na unidade de DVD no servidor de origem.  
+  
+2.  Abra o Windows Explorer, navegue até a pasta **\support\tools** do DVD e clique duas vezes no arquivo **sourcetool.msi**.  
+  
+    > [!NOTE]
+    >  -   Se a ferramenta de preparação da migração já estiver instalada no servidor, execute-a a partir do menu **Iniciar**.  
+    > -   Para garantir que você esteja preparado para a melhor experiência de migração possível, recomenda-se que você sempre instale a atualização mais recente.  
+  
+     O assistente instala a Ferramenta de Preparação de Migração no Servidor de Origem. Quando a instalação é concluída, a Ferramenta de Preparação de Migração é executada automaticamente e instala as atualizações mais recentes.  
+  
+3.  Na Ferramenta de Preparação da Migração, selecione **Eu tenho um backup e estou pronto para prosseguir** e em **Avançar**.  
   
     > [!WARNING]
-    >  Se você receber uma mensagem de erro referentes à instalação de um hotfix, consulte o método 2: renomeie a pasta Catroot2 em [822798 do artigo](https://go.microsoft.com/FWLink/p/?LinkID=118672) na Base de Conhecimento Microsoft.  
+    >  Se você receber uma mensagem de erro relativa à instalação de hotfix, consulte o método 2: Renomear a pasta Catroot2 no [artigo 822798](https://go.microsoft.com/FWLink/p/?LinkID=118672) na Base de dados de Conhecimento Microsoft.  
   
-     A ferramenta de preparação da migração prepara o domínio de origem para migração ao estender o esquema do Active Directory. Depois que a tarefa é concluída, clique em **próxima** para continuar.  
+     A Ferramenta de Preparação da Migração prepara o domínio de origem para migração estendendo o esquema de Diretório Ativo. Depois de a tarefa ser concluída, clique em **Avançar** para continuar.  
   
-4.  Após preparar o domínio de origem, a ferramenta de preparação da migração verifica o servidor de origem para identificar os dois tipos de problemas em potencial.  
+4.  Depois de preparar o domínio de origem, a Ferramenta de Preparação da Migração verifica o Servidor de Origem para identificar dois tipos de problemas em potencial.  
   
-    -   **Erros** problemas encontrados no servidor de origem que podem bloquear a migração ou fazer com que a migração falhar. Siga as instruções na mensagem de erro para corrigir os problemas e clique em **verificar novamente**.  
+    -   **Erros** problemas encontrados no servidor de origem que podem bloquear a migração ou causar a falha na migração. Siga as instruções na mensagem de erro para corrigir os problemas e então clique em **Verificar novamente**.  
   
-    -   **Avisos** problemas encontrados no servidor de origem que podem causar problemas funcionais durante a migração. É altamente recomendável que você siga as instruções na mensagem de erro para corrigir problemas antes de prosseguir com a migração.  
+    -   **Avisos** problemas encontrados no servidor de origem que podem causar problemas funcionais durante a migração. É fortemente recomendado que você siga as instruções na mensagem de erro para corrigir problemas antes de continuar com a migração.  
   
-     Depois de corrigir ou reconhece todos os problemas, clique em **próxima**.  
+     Depois de corrigir ou confirmar todos os problemas, clique em **Avançar**.  
   
-5.  Na ferramenta de preparação de migração, clique em **concluir**.  
+5.  Na Ferramenta de Preparação da Migração, clique em **Concluir**.  
   
-6.  Quando a ferramenta de preparação de migração é concluído, você pode ser solicitado a reiniciar o servidor de origem antes de começar a migrar para o Windows Server Essentials.  
-  
-> [!NOTE]
->  Você deve concluir uma execução bem-sucedida da ferramenta de preparação de migração no servidor de origem dentro de duas semanas de instalação do Windows Server Essentials no servidor de destino. Caso contrário, a instalação do Windows Server Essentials no servidor de destino será bloqueada. Se isso ocorrer, você deve executar a ferramenta de preparação de migração no servidor de origem novamente.  
-  
-###  <a name="BKMK_PlanToMigrateLineOfBusinessApplications"></a>Criar um plano para migrar aplicativos de linha de negócios  
- Um aplicativo de linha de negócios (LOB) é um aplicativo de computador críticos que são vital para a execução de uma empresa. Os aplicativos LOB incluem gerenciamento de contabilidade, cadeia de suprimento e aplicativos de planejamento de recursos.  
-  
- Quando você planeja migrar seus aplicativos LOB, consulte os provedores de aplicativos LOB para determinar o método apropriado para cada aplicativo a migração. Você também deve localizar a mídia que é usada para instalar os aplicativos LOB no servidor de destino.  
+6.  Quando a ferramenta de preparação da migração for concluída, você será solicitado a reiniciar o servidor de origem antes de começar a migração para o Windows Server Essentials.  
   
 > [!NOTE]
->  Se você usou o SDK do Windows Small Business Server 2011 Essentials para desenvolver uma integridade do sistema que você personalizou ou alerta suplemento e você quiser continuar a usar o suplemento com o Windows Server Essentials, você também deve atualizar o suplemento e implantá-la no servidor de destino.  
+>  Você deve concluir uma execução bem-sucedida da ferramenta de preparação de migração no servidor de origem dentro de duas semanas de instalação do Windows Server Essentials no servidor de destino. Caso contrário, a instalação do Windows Server Essentials no servidor de destino será bloqueada. Se isso ocorrer, você deve executar a Ferramenta de Preparação da Migração no Servidor de Origem novamente.  
+  
+###  <a name="BKMK_PlanToMigrateLineOfBusinessApplications"></a> Crie um plano para migrar aplicativos de linha de negócios  
+ Um aplicativo LOB (linha de negócios) é um aplicativo de computador crítico para a administração de um negócio. Os aplicativos de LOB são os aplicativos de contabilidade, gerenciamento cadeia de fornecedores e planejamento de recursos.  
+  
+ Ao planejar a migração de seus aplicativos de LOB, consulte um provedor de aplicativo de LOB para determinar o método apropriado de migração de cada aplicativo. Você também deve localizar a mídia usada para instalar os aplicativos de LOB no Servidor de Destino.  
+  
+> [!NOTE]
+>  Se você usou o Windows Small Business Server 2011 Essentials SDK para desenvolver uma integridade do sistema personalizado ou alerta add-In e você quiser continuar a usar o suplemento com o Windows Server Essentials, você também deve atualizar o suplemento e implantá-lo no servidor de destino.  
   
