@@ -1,6 +1,6 @@
 ---
-title: "Gerar relatórios sob demanda"
-description: "Este artigo descreve como gerar relatórios sob demanda para analisar o uso de disco no servidor"
+title: Gerar relatórios sob demanda
+description: Este artigo descreve como gerar relatórios sob demanda para analisar o uso de disco no servidor
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: e91bfbc306d1d2712f7b35ec48114b3a8a84ec83
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59890987"
 ---
 # <a name="generate-reports-on-demand"></a>Gerar relatórios sob demanda
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Durante as operações diárias, você pode usar a opção **Gerar relatórios agora** para gerar relatórios de um ou mais sob demanda. Com esses relatórios, você pode analisar os diferentes aspectos de uso de disco atual no servidor. Dados atuais são coletados antes dos relatórios são gerados.
 
@@ -65,8 +66,8 @@ Quando você gera relatórios sob demanda, os relatórios são salvos em um loca
 
     Ambas as opções salvar os relatórios e se você habilitou a entrega por email, enviar relatórios para administradores nos formatos que você selecionou.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
 -   [Gerenciamento de relatórios de armazenamento](storage-reports-management.md)
--   [Definindo Opções do Gerenciador de Recursos de Servidor de Arquivos](setting-file-server-resource-manager-options.md)
+-   [Opções do Gerenciador de recursos de servidor de arquivos de configuração](setting-file-server-resource-manager-options.md)
 

@@ -1,5 +1,5 @@
 ---
-title: Gerenciamento
+title: Management
 description: Saiba mais sobre ferramentas, recomendações e diretrizes sobre como gerenciar o Windows Server
 ms.prod: windows-server-threshold
 layout: LandingPage
@@ -9,17 +9,17 @@ author: lizap
 ms.author: elizapo
 ms.localizationpriority: high
 ms.openlocfilehash: e6a5357e3e33b3d3318a3e281bbb5c80be842155
-ms.sourcegitcommit: 9ed4c9fe04ebf3ef488170503c9a354c992b6fde
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4339274"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59890507"
 ---
-# Gerenciamento
+# <a name="management"></a>Management
 
 
 >[!TIP]
-> Procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar este site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obter informações específicas.
+> Procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obter informações específicas.
 
 <hr />
 
@@ -56,11 +56,11 @@ Além das ferramentas mencionadas abaixo, você também pode usar os [Serviços 
 <HR />
                         <p><h3><a href="../manage/windows-admin-center/overview.md">Gerenciar sistemas locais, sistemas remotos e sistemas sem interface do usuário com o Windows Admin Center</a></h3>Um aplicativo de gerenciamento baseado em navegador que permite a administração local de servidores Windows sem dependência do Azure ou nuvem. Windows Admin Center (anteriormente chamado de "Project Honolulu") oferece controle total sobre todos os aspectos da sua infraestrutura de servidor e é particularmente útil para gerenciamento em redes privadas que não estejam conectadas à Internet. Você pode instalar o Windows Admin Center no Windows 10, em um servidor de gateway ou diretamente no sistema do Windows Server que você deseja gerenciar.</p>
 <HR />
-                        <p><h3><a href="server-manager/server-manager.md">Gerenciar sistemas locais com o Gerenciador do Servidor</a></h3>Um console de gerenciamento incluído na instalação completa do Windows Server. (Não está disponível para instalações que não têm a interface do usuário - o Server Core não inclui o Gerenciador do Servidor). Use o Gerenciador do Servidor para instalar e remover funções de servidor, adicionar e remover servidores remotos, iniciar e parar serviços e exibir dados coletados sobre seu ambiente.</p>
+                        <p><h3><a href="server-manager/server-manager.md">Gerenciar sistemas locais com o Gerenciador do servidor</a></h3>Um console de gerenciamento incluído na instalação completa do Windows Server. (Ele não está disponível para instalações que não têm a interface do usuário - Server Core não inclui o Gerenciador do servidor). Use o Gerenciador do servidor para instalar e remover funções de servidor, adicionar e remover servidores remotos, iniciar e interromper serviços e exibir dados coletados sobre seu ambiente.</p>
 <HR />
-                        <p><h3><a href="../remote/remote-server-administration-tools.md">Gerenciar sistemas remotos e sistemas sem interface do usuário com Ferramentas de Administração de Servidor Remoto (RSAT)</a></h3>Se o ambiente inclui instalações do Server Core ou servidores remotos (local ou máquinas virtuais), você pode usar o RSAT para gerenciar esses sistemas. O RSAT inclui o Gerenciador do Servidor, para que você possa usá-lo para gerenciar todos os seus servidores. Observe que o RSAT é executado no Windows 10. Você não pode instalar o RSAT no Windows Server Core. Você também pode gerenciar instalações Server Core usando a linha de comando. Consulte <a href="server-core/server-core-administer.md">tarefas básicas de administração no Server Core</a>
+                        <p><h3><a href="../remote/remote-server-administration-tools.md">Gerenciar sistemas remotos e em sistemas sem interface do usuário com ferramentas de administração de servidor remoto (RSAT)</a></h3>Se o ambiente inclui instalações do Server Core ou servidores remotos (local ou máquinas virtuais), você pode usar o RSAT para gerenciar esses sistemas. O RSAT inclui o Gerenciador do Servidor, para que você possa usá-lo para gerenciar todos os seus servidores. Observe que o RSAT é executado no Windows 10. Você não pode instalar o RSAT no Windows Server Core. Você também pode gerenciar instalações Server Core usando a linha de comando. Consulte <a href="server-core/server-core-administer.md">tarefas administrativas básicas no Server Core</a>
 <HR />
-                        <p><h3><a href="windows-server-update-services/get-started/windows-server-update-services-wsus.md">Gerenciar atualizações de sistemas Windows Server</a></h3>Use o Windows Server Update Services (WSUS) para gerenciar e implantar atualizações para os sistemas em seu ambiente do Windows Server.</p>
+                        <p><h3><a href="windows-server-update-services/get-started/windows-server-update-services-wsus.md">Gerenciar atualizações para sistemas Windows Server</a></h3>Use o Windows Server Update Services (WSUS) para gerenciar e implantar atualizações para os sistemas em seu ambiente do Windows Server.</p>
                     </div>
                 </div>
             </div>
@@ -78,11 +78,11 @@ Além das ferramentas mencionadas abaixo, você também pode usar os [Serviços 
                     <div class="cardText">
                     <h3>Coletar informações sobre o seu ambiente</h3>
 <HR />
-                        <p><h3><a href="get-started-with-setup-and-boot-event-collection.md">Coleta de Eventos de Instalação e Inicialização</a></h3>A Coleta de Eventos de Instalação e Inicialização permite a você designar um computador "coletor" que possa coletar uma variedade de eventos importantes que ocorrem em outros computadores quando eles inicializam ou passam pelo processo de instalação. Você pode analisar posteriormente os eventos coletados com os cmdlets do Visualizador de Eventos, Analisador de Mensagem, Wevtutil ou Windows PowerShell. </p>
+                        <p><h3><a href="get-started-with-setup-and-boot-event-collection.md">Instalação e coleta de eventos de inicialização</a></h3>A Coleta de Eventos de Instalação e Inicialização permite a você designar um computador "coletor" que possa coletar uma variedade de eventos importantes que ocorrem em outros computadores quando eles inicializam ou passam pelo processo de instalação. Você pode analisar posteriormente os eventos coletados com os cmdlets do Visualizador de Eventos, Analisador de Mensagem, Wevtutil ou Windows PowerShell. </p>
 <HR />
-                        <p><h3><a href="software-inventory-logging/get-started-with-software-inventory-logging.md">SIL (Log de Inventário de Software)</a></h3>O Log de Inventário de Software no Windows Server é um recurso com um conjunto simples de cmdlets do PowerShell que ajudam os administradores de servidor a recuperar uma lista dos softwares Microsoft instalados em seus servidores. Ele também fornece a capacidade de coletar e encaminhar esses dados periodicamente pela rede para um servidor Web de destino, usando o protocolo HTTPS, para agregação. O gerenciamento do recurso, principalmente para coleta e encaminhamento por hora, é igualmente feito com comandos do PowerShell.</p>
+                        <p><h3><a href="software-inventory-logging/get-started-with-software-inventory-logging.md">SIL (log) de inventário de software</a></h3>O Log de Inventário de Software no Windows Server é um recurso com um conjunto simples de cmdlets do PowerShell que ajudam os administradores de servidor a recuperar uma lista dos softwares Microsoft instalados em seus servidores. Ele também fornece a capacidade de coletar e encaminhar esses dados periodicamente pela rede para um servidor Web de destino, usando o protocolo HTTPS, para agregação. O gerenciamento do recurso, principalmente para coleta e encaminhamento por hora, é igualmente feito com comandos do PowerShell.</p>
 <HR />
-                        <p><h3><a href="user-access-logging/get-started-with-user-access-logging.md">Log de Acesso do Usuário (UAL)</a></h3>O Log de Acesso do Usuário agrega eventos exclusivos de dispositivo do cliente e de solicitação de usuário registrados em um computador que executa o Windows Server 2012, o Windows Server 2012 R2 ou o Windows Server 2016 em um banco de dados local. Esses registros são disponibilizados (através de uma consulta por um administrador de servidor) para recuperar quantidades e instâncias por função de servidor, usuário, dispositivo, servidor local e data. Além disso, o UAL também permite que os desenvolvedores de software não Microsoft instrumentem os eventos do UAL para serem agregados. </a>
+                        <p><h3><a href="user-access-logging/get-started-with-user-access-logging.md">Acesso de usuário UAL (log)</a></h3>O Log de Acesso do Usuário agrega eventos exclusivos de dispositivo do cliente e de solicitação de usuário registrados em um computador que executa o Windows Server 2012, o Windows Server 2012 R2 ou o Windows Server 2016 em um banco de dados local. Esses registros são disponibilizados (através de uma consulta por um administrador de servidor) para recuperar quantidades e instâncias por função de servidor, usuário, dispositivo, servidor local e data. Além disso, o UAL também permite que os desenvolvedores de software não Microsoft instrumentem os eventos do UAL para serem agregados. </a>
                     </div>
                 </div>
             </div>
@@ -140,7 +140,7 @@ Além das ferramentas mencionadas abaixo, você também pode usar os [Serviços 
                     <div class="cardText">
                     <h3>Automatizar o gerenciamento do Windows Server</h3>
 <HR />
-                        <p><h3><a href="..\manage\system-insights\overview.md">Insights do Sistema</h3></a>Nativo análise de previsão localmente analisar dados de sistema do Windows Server, como contadores de desempenho e eventos ETW, ajudando os administradores de TI detectar e processar proativamente comportamento problemático em implantações de endereços.</p>
+                        <p><h3><a href="..\manage\system-insights\overview.md">Informações do sistema</h3></a>Análise preditiva nativo localmente analisar os dados do sistema Windows Server, como contadores de desempenho e eventos ETW, ajudando os administradores de TI de maneira proativa detectará e comportamento problemático em implantações de endereço.</p>
                     </div>
                 </div>
             </div>
