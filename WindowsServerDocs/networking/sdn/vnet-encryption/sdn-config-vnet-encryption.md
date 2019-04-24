@@ -1,34 +1,47 @@
 ---
 title: Configurar a criptografia para uma rede Virtual
-description: Este tópico fornece informações sobre criptografia de rede Virtual para Software definido de rede no Windows Server
+description: Criptografia de rede virtual permite a criptografia de tráfego de rede virtual entre máquinas virtuais que se comunicam entre si em sub-redes marcadas como 'A criptografia habilitada.'
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: 378213f5-2d59-4c9b-9607-1fc83f8072f1
 ms.author: pashort
-author: grcusanz
-ms.openlocfilehash: 7d1de535e7758793e5ddaa7eeefada0aa55d3328
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
-ms.translationtype: MT
+author: shortpatti
+ms.date: 08/08/2018
+ms.openlocfilehash: 90fb33eb4c4b63fdd5c84bf3ffc2447fd52a809b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59845487"
 ---
 # <a name="configure-encryption-for-a-virtual-subnet"></a>Configurar a criptografia para uma sub-rede Virtual
 
 >Aplica-se a: Windows Server
 
-Este tópico contém as seguintes seções que descrevem as etapas necessárias para habilitar a criptografia em uma rede Virtual.
+Permite a criptografia de rede virtual para a criptografia de tráfego de rede virtual entre as VMs que se comunicam entre si em sub-redes marcadas como 'A criptografia habilitada.' Ele também utiliza datagrama Transport Layer Security (DTLS) na sub-rede virtual para criptografar pacotes. O DTLS oferece proteção contra interceptações, falsificação e falsificação por qualquer pessoa com acesso à rede física.
 
-- [Criando o certificado de criptografia](#bkmk_Certificate)
-- [Criando a credencial de certificado](#bkmk_credential)
-- [Configurando uma rede Virtual para criptografia](#bkmk_vnet)
+Requer criptografia de rede virtual:
+- Certificados de criptografia instalados em cada um dos hosts Hyper-V SDN habilitado.
+- Um objeto de credencial no controlador de rede, fazendo referência a impressão digital do certificado.
+- A configuração em cada uma das redes virtuais contém sub-redes que exigem criptografia.
 
-## <a name="bkmk_Certificate"></a>Criando o certificado de criptografia
-Um certificado de criptografia é necessário para ser instalado em cada host em que a criptografia é a ser usado.  Você pode usar o mesmo certificado para todos os locatários ou gerar um certificado exclusivo por locatário se necessário.
+Depois que você habilitar a criptografia em uma sub-rede, todo o tráfego de rede dentro dessa sub-rede é criptografado automaticamente, além de qualquer criptografia no nível do aplicativo que pode ocorrer também.  Tráfego que atravessa entre sub-redes, mesmo se marcado como criptografadas, é automaticamente enviado descriptografado. Qualquer tráfego que cruza o limite de rede virtual também obtém enviado descriptografado.
 
-Etapa 1: Gerar o certificado
+>[!NOTE]
+>Ao se comunicar com outra VM na mesma sub-rede, se seu atualmente conectada ou conectado em um momento posterior, o tráfego é criptografado automaticamente.
 
+>[!TIP]
+>Se você deve restringir os aplicativos se comuniquem apenas na sub-rede criptografada, você pode usar listas de controle de acesso (ACLs) apenas para permitir a comunicação dentro da sub-rede atual. Para obter mais informações, consulte [uso Access Control Lists (ACLs) para gerenciar o data center rede tráfego fluir](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow).
+
+
+## <a name="step-1-create-the-encryption-certificate"></a>Etapa 1. Criar o certificado de criptografia
+Cada host deve ter um certificado de criptografia instalado. Você pode usar o mesmo certificado para todos os locatários ou gerar um exclusivo para cada locatário. 
+
+1.  Gerar o certificado  
+
+```
     $subjectName = "EncryptedVirtualNetworks"
     $cryptographicProviderName = "Microsoft Base Cryptographic Provider v1.0";
     [int] $privateKeyLength = 1024;
@@ -80,8 +93,9 @@ Etapa 1: Gerar o certificado
     $enrollment.InitializeFromRequest($cert)
     $certdata = $enrollment.CreateRequest(0)
     $enrollment.InstallResponse(2, $certdata, 0, "")
+```
 
-Depois de executar as ações acima, você verá um novo certificado no meu repositório do computador onde você executou o script:
+Depois de executar o script, um novo certificado aparece no meu repositório:
 
     PS D:\> dir cert:\\localmachine\my
 
@@ -93,42 +107,31 @@ Depois de executar as ações acima, você verá um novo certificado no meu repo
     84857CBBE7A1C851A80AE22391EB2C39BF820CE7  CN=MyNetwork
     5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6  CN=EncryptedVirtualNetworks
 
-Etapa 2: Exporte o certificado para um arquivo que você precisará de duas cópias do certificado, um com a chave privada e sem.
+2.  Exporte o certificado para um arquivo.<p>Você precisa de duas cópias do certificado, uma com a chave privada e outra sem.
 
-    $subjectName = "EncryptedVirtualNetworks"
-    $cert = Get-ChildItem cert:\localmachine\my | ? {$_.Subject -eq "CN=$subjectName"}
-    [System.io.file]::WriteAllBytes("c:\$subjectName.pfx", $cert.Export("PFX", "secret"))
-    Export-Certificate -Type CERT -FilePath "c:\$subjectName.cer" -cert $cert
+    $subjectName = "EncryptedVirtualNetworks" $cert = Get-ChildItem cert:\localmachine\my | ? {$_.Subject -eq "CN=$subjectName"} [System.io.file]::WriteAllBytes("c:\$subjectName.pfx", $cert.Export("PFX", "secret")) Export-Certificate -Type CERT -FilePath "c:\$subjectName.cer" -cert $cert
 
-Depois de executar as ações acima agora você terá dois arquivos de certificado.  Eles precisam ser instalados em cada um dos seus hosts hyper-v.
+3.  Instalar os certificados em cada um dos seus hosts hyper-v 
 
-    PS C:\> dir c:\$subjectname.*
+    PS c:\> dir c:\$subjectname.*
 
 
         Directory: C:\
 
 
-    Mode                LastWriteTime         Length Name
+    Nome do modo LastWriteTime comprimento
     ----                -------------         ------ ----
-    -a----        9/22/2017   4:54 PM            543 EncryptedVirtualNetworks.cer
-    -a----        9/22/2017   4:54 PM           1706 EncryptedVirtualNetworks.pfx
+    -a---9/22/2017 às 16H: 54 EncryptedVirtualNetworks.cer 543 - a---9/22/2017 às 16H: 54 1706 EncryptedVirtualNetworks.pfx
 
-Etapa 3: Instalar em um host do Hyper-V
+4.  Instalando em um host Hyper-V
 
     $server = "Server01"
 
-    $subjectname = "EncryptedVirtualNetworks"
-    copy c:\$SubjectName.* \\$server\c$
-    invoke-command -computername $server -ArgumentList $subjectname,"secret" {
-        param (
-            [string] $SubjectName,
-            [string] $Secret
-        )
-        $certFullPath = "c:\$SubjectName.cer"
+    $subjectname = "EncryptedVirtualNetworks" copy c:\$SubjectName.* \\$server\c$ invoke-command - computername $server - ArgumentList $subjectname, "segredo" {param ([string] $SubjectName, [string] $Secret) $certFullPath = "c: \$SubjectName.cer "
 
         # create a representation of the certificate file
         $certificate = new-object System.Security.Cryptography.X509Certificates.X509Certificate2
-        $certificate.import($certFullPath){$_}
+        $certificate.import($certFullPath)
 
         # import into the store
         $store = new-object System.Security.Cryptography.X509Certificates.X509Store("Root", "LocalMachine")
@@ -146,39 +149,38 @@ Etapa 3: Instalar em um host do Hyper-V
         $store.add($certificate)
         $store.close()
 
-        # Important: Remove the certficate files when finished
+        # Important: Remove the certificate files when finished
         remove-item C:\$SubjectName.cer
         remove-item C:\$SubjectName.pfx
     }    
 
-Repita para cada servidor em seu ambiente.  Agora você deve ter um certificado instalado na raiz e meu repositório de cada host do Hyper-V
+5.  Repita para cada servidor em seu ambiente.<p>Depois de repetição para cada servidor, você deve ter um certificado instalado na raiz e meu repositório de cada host Hyper-V. 
 
-Você pode verificar a instalação do certificado, verificando o conteúdo do meu e raiz repositórios de certificados:
+6.  Verifique se a instalação do certificado.<p>Verificar os certificados, verificando o conteúdo do meu e repositórios de certificados de raiz:
 
-    PS C:\> enter-pssession Server1
+    PS C:\> pssession insira Server1
 
-    [Server1]: PS C:\> get-childitem cert://localmachine/my,cert://localmachine/root | ? {$_.Subject -eq "CN=EncryptedVirtualNetworks"}
+    [Server1]: PS C:\> cert://localmachine/my de get-childitem, cert://localmachine/root |? {$_.Subject -eq "CN=EncryptedVirtualNetworks"}
 
     PSParentPath: Microsoft.PowerShell.Security\Certificate::localmachine\my
 
-    Thumbprint                                Subject
+    Assunto da impressão digital
     ----------                                -------
     5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6  CN=EncryptedVirtualNetworks
 
 
     PSParentPath: Microsoft.PowerShell.Security\Certificate::localmachine\root
 
-    Thumbprint                                Subject
+    Assunto da impressão digital
     ----------                                -------
     5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6  CN=EncryptedVirtualNetworks
 
-Anote a impressão digital, pois você precisará dele para criar o objeto de credenciais do certificado no controlador de rede.
+7.  Anote a impressão digital.<p>Você deve Anote a impressão digital pois você precisará dela para criar o objeto de credencial de certificado no controlador de rede.
 
-## <a name="bkmk_Certificate"></a>Criando a credencial de certificado
+## <a name="step-2-create-the-certificate-credential"></a>Etapa 2. Criar a credencial de certificado
 
-Depois que o certficado é instalado com êxito em cada um dos hosts Hyper-V conectados ao controlador de rede, você pode configurar o controlador de rede para usá-lo.
+Depois de instalar o certificado em cada um dos hosts do Hyper-V conectados ao controlador de rede, agora você deve configurar o controlador de rede para usá-lo.  Para fazer isso, você deve criar um objeto de credencial que contém a impressão digital do certificado do computador com os módulos do PowerShell no controlador de rede instalados. 
 
-Você precisará criar um objeto de credenciais que contém a impressão digital do certificado.  Você precisará fazer isso de uma máquina em que os módulos do powershell de controlador de rede instalados.
 
     # Replace with thumbprint from your certificate
     $thumbprint = "5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6"  
@@ -193,29 +195,38 @@ Você precisará criar um objeto de credenciais que contém a impressão digital
     $credproperties.Value = $thumbprint
     New-networkcontrollercredential -connectionuri $uri -resourceid "EncryptedNetworkCertificate" -properties $credproperties -force
 
-Você pode reutilizar essa credencial para cada netwokr virtual criptografado ou você pode implantar e usar um certificado exclusivo para cada locatário.
+>[!TIP]
+>Você pode reutilizar essa credencial para cada rede virtual criptografada, ou você pode implantar e usar um certificado exclusivo para cada locatário.
 
-## <a name="bkmk_Certificate"></a>Configurando uma rede Virtual para criptografia
 
-Esta etapa presume que você já tenha criado um nome de rede virtual "Minha rede" e contém pelo menos uma sub-rede virtual.  Para obter informações sobre como criar redes virtuais, consulte [criar, excluir ou redes virtuais do locatário atualização](../Manage/Create,-Delete,-or-Update-Tenant-Virtual-Networks.md).
+## <a name="step-3-configuring-a-virtual-network-for-encryption"></a>Etapa 3. Configurar uma rede Virtual para criptografia
 
-Etapa 1: Recuperar os objetos de rede Virtual e credenciais do controlador de rede
+Essa etapa pressupõe que você já tiver criado um nome de rede virtual "Minha rede" e contém pelo menos uma sub-rede virtual.  Para obter informações sobre como criar redes virtuais, consulte [Create, Delete ou Update redes virtuais de locatário](../Manage/Create,-Delete,-or-Update-Tenant-Virtual-Networks.md).
 
-    $vnet = Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId "MyNetwork"
-    $certcred = Get-NetworkControllerCredential -ConnectionUri $uri -ResourceId "EncryptedNetworkCertificate"
+>[!NOTE]
+>Ao se comunicar com outra VM na mesma sub-rede, se seu atualmente conectada ou conectado em um momento posterior, o tráfego é criptografado automaticamente.
 
-Etapa 2: Adicionar uma referência para a credencial de certificado e habilitar a criptografia em sub-redes individuais.
+1.  Recuperar os objetos de rede Virtual e as credenciais do controlador de rede
+
+    $vnet = Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId "MyNetwork" $certcred = Get-NetworkControllerCredential -ConnectionUri $uri -ResourceId "EncryptedNetworkCertificate"
+
+2.  Adicione uma referência para as credenciais de certificado e habilitar a criptografia em sub-redes individuais
 
     $vnet.properties.EncryptionCredential = $certcred
 
-    # Replace the Subnets index with the value corresponding to the subnet you want encrypted.  
-    # Repeat for each subnet where encryption is needed
+    # <a name="replace-the-subnets-index-with-the-value-corresponding-to-the-subnet-you-want-encrypted"></a>Substitua o índice de sub-redes com o valor correspondente para a sub-rede que você deseja que seja criptografado.  
+    # <a name="repeat-for-each-subnet-where-encryption-is-needed"></a>Repita para cada sub-rede em que a criptografia é necessária
     $vnet.properties.Subnets[0].properties.EncryptionEnabled = $true
 
-Etapa 3: Coloque o objeto de rede Virtual atualizado para o controlador de rede
+3.  Colocar o objeto de rede Virtual atualizado no controlador de rede
 
     New-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId $vnet.ResourceId -Properties $vnet.Properties -force
 
-Quando isso for concluído, não há etapas adicionais são necessárias.  Qualquer VM está atualmente conectada e qualquer VM posteriormente está conectada à sub-rede acima terão seu tráfego criptografado automaticamente ao se comunicar com outro VM na mesma sub-rede.
+
+_**Parabéns!**_ Quando terminar depois de concluir essas etapas. 
+
+
+## <a name="next-steps"></a>Próximas etapas
+
 
 
