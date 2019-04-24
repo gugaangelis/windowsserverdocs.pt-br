@@ -1,0 +1,50 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Documentação de infraestrutura hiperconvergente
+metadata:
+  document_id: null
+  title: Documentação de infraestrutura hiperconvergente
+  description: Documentação de infraestrutura hiperconvergente
+  text: 'Consolidar a computação, o armazenamento e a rede definidos por software em um cluster para oferecer virtualização econômica, de alto desempenho e facilmente escalável'
+  keywords: 'Windows Server, Windows Server 2016, hyper-v, sdn, espaços de armazenamento diretos, wssd'
+  ms.localizationpriority: high
+  author: coreyp-at-msft
+  ms.author: coreyp
+  ms.topic: article
+  ms.devlang: na
+sections:
+  - title: null
+  - items:
+      - type: markdown
+        text: 'Consolide a computação, o armazenamento e a rede definidos por software em um cluster para oferecer virtualização econômica, de alto desempenho e facilmente escalável.'
+  - items:
+      - type: list
+        style: cards
+        className: cardsI
+        columns: 2
+        items:
+          - href: ../virtualization/hyper-v/index.md
+            html: '<p>Virtualiza o hardware de servidor, permitindo executar máquinas virtuais entre servidores em um cluster hiperconvergente</p>'
+            image:
+              src: ../media/i-virtualize.svg
+            title: Hyper-V
+          - href: ../storage/storage-spaces/storage-spaces-direct-overview.md
+            html: '<p>Virtualiza o hardware de armazenamento, permitindo criar volumes sobre um pool virtualizado de unidades distribuídas entre os servidores em um cluster hiperconvergente.</p>'
+            image:
+              src: ../media/i-store.svg
+            title: Espaços de Armazenamento Diretos
+          - href: ../failover-clustering/failover-clustering-overview.md
+            html: '<p>Agrupa vários servidores para que as cargas de trabalho, como máquinas virtuais, possam ser executadas em qualquer servidor no cluster, balanceando a carga e o failover entre servidores.</p>'
+            image:
+              src: ../media/i-cluster.svg
+            title: Clustering de failover
+          - href: 'https://docs.microsoft.com/windows-server/networking/sdn/'
+            html: '<p>Virtualiza o hardware da rede, permitindo criar e gerenciar dinamicamente as redes e as políticas que abstraem as cargas de trabalho de redes físicas subjacentes.</p>'
+            image:
+              src: ../media/i-network.svg
+            title: Rede definida pelo software
+          - href: 'https://www.microsoft.com/cloud-platform/software-defined-datacenter'
+            html: '<p>Pareia a virtualização e as tecnologias de clustering do Windows Server com as soluções de hardware validadas pelo parceiro de sua escolha, ajudando a eliminar a suposição ao ajustar um datacenter definido por software.</p>'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_data-collection.svg'
+            title: WSSD (Definido pelo software do Windows Server)
