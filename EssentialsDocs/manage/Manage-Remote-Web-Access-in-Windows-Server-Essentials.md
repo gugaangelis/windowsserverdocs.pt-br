@@ -1,5 +1,5 @@
 ---
-title: Gerenciar o acesso via Web remoto no Windows Server Essentials
+title: Gerenciar o acesso remoto via Web no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -13,16 +13,17 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: de01b2fd2395377b6e7b3349b9862eb0e51a59b8
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
-ms.translationtype: MT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59869997"
 ---
-# <a name="manage-remote-web-access-in-windows-server-essentials"></a>Gerenciar o acesso via Web remoto no Windows Server Essentials
+# <a name="manage-remote-web-access-in-windows-server-essentials"></a>Gerenciar o acesso remoto via Web no Windows Server Essentials
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
  
- Acesso via Web remoto no Windows Server Essentials ou no Windows Server 2012 R2 com a função de experiência do Windows Server Essentials instalada, oferece uma experiência de navegador simplificada e sensível ao toque para acessar aplicativos e dados de praticamente qualquer lugar que você tenha uma conexão de Internet e usando praticamente qualquer dispositivo. Para usar a funcionalidade de acesso via Web remoto, você deve primeiro ativá-lo usando o Assistente de configuração de qualquer lugar acesso e, em seguida, configurar o seu roteador e o nome de domínio.  
+ Acesso via Web remoto no Windows Server Essentials ou no Windows Server 2012 R2 com a função experiência do Windows Server Essentials instalada, fornece uma experiência de navegador simplificada e compatível com toque para acessar aplicativos e dados de praticamente qualquer lugar Se você tem uma conexão de Internet e usando quase qualquer dispositivo. Para usar a funcionalidade de Acesso via Web Remoto, primeiro você deve ativá-lo usando o assistente de configuração do Acesso em Qualquer Local e, em seguida, configurar seu roteador e nome de domínio.  
   
 ## <a name="in-this-topic"></a>Neste tópico  
   
@@ -30,16 +31,16 @@ ms.lasthandoff: 12/12/2017
   
 -   [Configurar o roteador](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)  
   
--   [Configurar o seu nome de domínio](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_3)  
+-   [Configurar seu nome de domínio](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_3)  
   
--   [Personalizar o acesso via Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_4)  
+-   [Personalizar acesso via Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_4)  
   
 -   [Solucionar problemas de acesso via Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_5)  
   
-##  <a name="BKMK_1"></a>Ativar e configurar o acesso via Web remoto  
- Os tópicos a seguir ajudarão você a ativar e configurar o acesso via Web remoto:  
+##  <a name="BKMK_1"></a> Ativar e configurar o acesso via Web remoto  
+ Os tópicos a seguir o ajudarão a ativar e configurar o Acesso via Web Remoto:  
   
--   [Visão geral de acesso via Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Overview)  
+-   [Visão geral do acesso via Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Overview)  
   
 -   [Ativar o acesso via Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_TurnOnRWA)  
   
@@ -51,95 +52,95 @@ ms.lasthandoff: 12/12/2017
   
 -   [Gerenciar usuários de acesso via Web remoto e VPN](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ManageRWAVPN)  
   
-###  <a name="BKMK_Overview"></a>Visão geral de acesso via Web remoto  
- Quando você estiver fora do escritório, você pode abrir um navegador da web e acessar o acesso via Web remoto em qualquer lugar com acesso à Internet. Acesso via Web remoto, você pode:  
+###  <a name="BKMK_Overview"></a> Visão geral do acesso via Web remoto  
+ Quando você estiver fora do escritório, você pode abrir um navegador da web e acesso via Web remoto de acesso em qualquer lugar que tenha acesso à Internet. No acesso via Web remoto, você pode:  
   
--   Acesse arquivos e pastas no servidor compartilhados.  
+-   Acessar arquivos e pastas compartilhadas no servidor.  
   
--   Acesse o servidor e computadores na rede. Isso significa que você pode acessar a área de trabalho de um computador em rede, como se você estivesse sentado em frente a ele no seu escritório.  
+-   Acessar o servidor e os computadores na rede. Isso significa que você pode acessar a área de trabalho a partir de um computador na rede como se você estivesse na frente dele no escritório.  
   
-  Acesso via Web remoto não está ativado por padrão. Quando você executa a configurar o Assistente de acesso em qualquer lugar, o assistente tenta configurar o seu roteador e conectividade com a Internet. Depois que o acesso via Web remoto está ativado, você pode configurar um nome de domínio do seu servidor e personalizar o acesso via Web remoto. Você pode também configurar o roteador novamente se você alterar seu roteador.  
+  Acesso via Web remoto não está ativado por padrão. Quando você executar o Assistente de Configuração do Acesso em Qualquer Local, o assistente tenta configurar seu roteador e conectividade com a Internet. Depois que o acesso via Web remoto é ativado, você pode configurar um nome de domínio para seu servidor e personalizar acesso via Web remoto. Você também pode configurar o roteador novamente se você o alterar  
   
- Permissão para acessar o acesso via Web remoto não é concedido automaticamente quando você adiciona uma nova conta de usuário. Quando você adiciona uma conta de usuário, você pode optar por permitir o acesso a pastas compartilhadas, a biblioteca de mídia, computadores, links da página inicial e o painel do servidor. Você também pode especificar que um usuário não poderá usar o acesso via Web remoto.  
+ Permissão para acessar o acesso via Web remoto não é concedida automaticamente quando você adiciona uma nova conta de usuário. Quando você adicionar uma conta de usuário, você pode optar por permitir o acesso às pastas compartilhadas, Biblioteca de mídia, computadores, links de Página inicial e o Painel do servidor. Você também pode especificar que um usuário não ser permissão para usar o acesso via Web remoto.  
   
- A configuração de acesso via Web remoto é exibida para cada conta de usuário no **usuários** guia do Windows Server Essentials Dashboard. Para alterar a configuração de acesso via Web remoto, clique com botão direito a conta de usuário e, em seguida, clique em **exibir as propriedades da conta**.  
+ A configuração de acesso via Web remoto é exibida para cada conta de usuário na **usuários** no painel do Windows Server Essentials. Para alterar a configuração de acesso via Web remoto, a conta de usuário com o botão direito e, em seguida, clique em **exibir as propriedades da conta**.  
   
-###  <a name="BKMK_TurnOnRWA"></a>Ativar o acesso via Web remoto  
- Você pode ativar o acesso via Web remoto, executando a configurar o Assistente de acesso em qualquer lugar do servidor de painel.  
+###  <a name="BKMK_TurnOnRWA"></a> Ativar o acesso via Web remoto  
+ Você pode ativar o Acesso via Web Remoto executando o assistente de configuração do Acesso em Qualquer Local no Painel do servidor.  
   
-##### <a name="to-turn-on-remote-web-access"></a>Para ativar o acesso via Web remoto  
+##### <a name="to-turn-on-remote-web-access"></a>Para ativar o Acesso via Web Remoto  
   
-1.  Abra o painel.  
+1.  Abra o Painel.  
   
-2.  Clique em **configurações**e, em seguida, clique no **acesso em qualquer local** guia.  
+2.  Clique em **Configurações** e clique na guia **Acesso em Qualquer Local**.  
   
-3.  Clique em **configurar**. Assistente de configuração de qualquer lugar acesso aparece.  
+3.  Clique em **Configurar**. O assistente de configuração do Acesso em Qualquer Local é exibido.  
   
-4.  Sobre o **escolher qualquer lugar acessar os recursos para permitir que** página, selecione o **acesso via Web remoto** caixa de seleção.  
+4.  Na página **Escolher os recursos de Acesso em Qualquer Local para habilitar** , selecione a caixa de seleção **Acesso via Web remoto** .  
   
 5.  Siga as instruções para concluir o assistente.  
   
-###  <a name="BKMK_Region"></a>Alterar sua região  
+###  <a name="BKMK_Region"></a> Alterar sua região  
  Você deve ser um administrador de rede para alterar a configuração de região no Windows Server Essentials.  
   
 ##### <a name="to-change-the-region-setting"></a>Para alterar a configuração de região  
   
-1.  Em um computador que esteja conectado ao Windows Server Essentials, abra o painel.  
+1.  Abra o Painel em um computador que esteja conectado ao Windows Server Essentials.  
   
-2.  Clique em **configurações**.  
+2.  Clique em **Configurações**.  
   
-3.  No **geral** guia, clique na lista suspensa no **local do país/região do servidor** seção.  
+3.  Na guia **Geral** , clique na lista suspensa na seção **Local do país/região do servidor** .  
   
-4.  Na lista suspensa, selecione nova região e, em seguida, clique em **aplicar** para aceitar a nova configuração de região.  
+4.  Na lista suspensa, selecione a nova região e clique em **Aplicar** para aceitar a nova configuração de região.  
   
-###  <a name="BKMK_ManagePerms"></a>Gerenciar permissões de acesso via Web remoto  
- Quando você adiciona uma conta de usuário no Windows Server Essentials, o novo usuário é permitido por padrão para usar o acesso via Web remoto. Se você optar por não permitir o acesso via Web remoto para uma conta de usuário e, em seguida, saiba que o usuário precisa usar o acesso via Web remoto, você pode atualizar as propriedades de s da conta de usuário.  
+###  <a name="BKMK_ManagePerms"></a> Gerenciar permissões de acesso via Web remoto  
+ Quando você adicionar uma conta de usuário no Windows Server Essentials, o novo usuário tem permissão de usar o Acesso via Web Remoto por padrão. Se você optar por não permitir o acesso via Web remoto para uma conta de usuário e, em seguida, localizar o que o usuário precisa usar o acesso via Web remoto, você pode atualizar as propriedades de s da conta de usuário.  
   
-##### <a name="to-manage-remote-web-access-permissions-for-a-user-account"></a>Para gerenciar permissões de acesso via Web remoto para uma conta de usuário  
+##### <a name="to-manage-remote-web-access-permissions-for-a-user-account"></a>Para gerenciar permissões de Acesso via Web Remoto para uma conta de usuário  
   
-1.  Fazer logon no painel e clique em **usuários**.  
+1.  Faça logon no Painel e em seguida, clique em **Usuários**.  
   
-2.  Clique na conta de usuário que você deseja gerenciar e, em seguida, clique em **exibir as propriedades da conta** no **tarefas** painel.  
+2.  Clique na conta de usuário que você deseja gerenciar e em seguida, clique em **Exibir as propriedades de conta** no painel **Tarefas**.  
   
-3.  No **propriedades** caixa de diálogo, clique no **acesso em qualquer local** guia.  
+3.  Na caixa de diálogo **Propriedades** , clique na guia **Acesso em Qualquer Local** .  
   
-4.  Sobre o **acesso em qualquer local**, selecione o **permitir acesso remoto via Web e acesso a aplicativos web services** caixa de seleção Permitir que um usuário se conectar ao servidor usando o acesso via Web remoto.  
+4.  Na guia **Acesso em Qualquer Local** , marque a caixa de seleção **Permitir o Acesso via Web remoto e o acesso a aplicativos de serviços Web** para permitir que um usuário se conecte ao servidor usando o Acesso via Web remoto.  
   
-5.  Clique em **aplicar**e clique em **Okey**.  
+5.  Clique em **Aplicar**e clique em **OK**.  
   
  Para obter mais informações, consulte [gerenciar contas de usuário](Manage-User-Accounts-in-Windows-Server-Essentials.md).  
   
-###  <a name="BKMK_SecureRWA"></a>Proteger o acesso via Web remoto  
- Windows Server Essentials usa um certificado de segurança para ajudar a proteger as informações que são trocadas entre o software e um navegador da web. Quando você instala o software do conector em seus computadores, o certificado de segurança do Windows Server Essentials é adicionado à lista de certificados confiáveis em seus computadores. A melhor maneira dos usuários acessem o acesso via Web remoto quando estiverem fora do escritório é usar um computador portátil que tem o software de conector instalado nele.  
+###  <a name="BKMK_SecureRWA"></a> Proteger o acesso via Web remoto  
+ O Windows Server Essentials usa um certificado de segurança para ajudar a proteger as informações que são trocadas entre o software e um navegador da Web. Quando você instala o software Connector em seus computadores, o certificado de segurança do Windows Server Essentials é adicionado à lista de certificados confiáveis em seus computadores. A melhor maneira de os usuários acessarem o Acesso via Web Remoto quando estiverem fora do escritório é usar um computador portátil que tenha o software Connector instalado nele.  
   
 > [!WARNING]
->  Os usuários que usam o acesso via Web remoto em locais públicos ou outros computadores não confiáveis devem garantir que o site fazem logoff antes de sair do computador autônomo ou quando eles estiverem terminar sua sessão.  
+>  Os usuários que utilizam o Acesso via Web Remoto de locais públicos ou outros computadores não confiáveis devem garantir que fazem logoff do site da Internet antes de deixar o computador sem supervisão ou quando tiver concluídos suas sessões.  
   
-###  <a name="BKMK_ManageRWAVPN"></a>Gerenciar usuários de acesso via Web remoto e VPN  
- Você pode usar VPN para se conectar ao Windows Server Essentials e acessar todos os recursos que são armazenados no servidor. Isso é especialmente útil se você tiver um computador cliente que é configurado com contas de rede que podem ser usadas para se conectar a um servidor Windows Server Essentials hospedado por meio de uma conexão VPN. Todas as contas de usuário recém criada no servidor Windows Server Essentials hospedado devem usar VPN para fazer logon no computador cliente pela primeira vez.  
+###  <a name="BKMK_ManageRWAVPN"></a> Gerenciar usuários de acesso via Web remoto e VPN  
+ Você pode usar VPN para se conectar ao Windows Server Essentials e acessar todos os seus recursos que estão armazenados no servidor. Isso é especialmente útil se você tiver um computador cliente que está configurado com contas de rede que podem ser usadas para se conectar a um servidor do Windows Server Essentials hospedado por meio de uma conexão VPN. Todas as contas de usuário recém-criadas no Windows Server Essentials hospedado devem usar VPN para fazer logon no computador cliente pela primeira vez.  
   
-##### <a name="to-set-vpn-and-remote-web-access-permissions-for-network-users"></a>Para definir as permissões de VPN e acesso via Web remoto para usuários de rede  
+##### <a name="to-set-vpn-and-remote-web-access-permissions-for-network-users"></a>Para definir permissões de VPN e Acesso via Web remoto para os usuários da rede  
   
-1.  Abra o painel.  
+1.  Abra o Painel.  
   
-2.  Na barra de navegação, clique em **usuários**.  
+2.  Na barra de navegação, clique em **USUÁRIOS**.  
   
-3.  Na lista de contas de usuário, selecione a conta de usuário que você deseja conceder permissões para acessar a área de trabalho remota.  
+3.  Na lista de contas de usuário, selecione a conta de usuário que você deseja conceder permissões para acessar a área de trabalho remotamente.  
   
-4.  No **< usuário Account\ > tarefas** painel, clique em **propriedades**.  
+4.  No **< Conta_de_usuário\> tarefas** painel, clique em **propriedades**.  
   
-5.  Em **< usuário Account\ > propriedades**, clique no **acesso em qualquer local** guia.  
+5.  No **< Conta_de_usuário\> propriedades**, clique no **acesso em qualquer lugar** guia.  
   
-6.  Sobre o **acesso em qualquer local** guia, faça o seguinte:  
+6.  Na guia **Acesso em qualquer lugar**, faça o seguinte:  
   
-    1.  Para permitir que um usuário se conectar ao servidor usando VPN, selecione o **permitir rede Virtual privada (VPN)** caixa de seleção.  
+    1.  Para permitir que um usuário se conecte ao servidor usando VPN, marque a caixa de seleção **Permitir VPN (rede privada virtual)**.  
   
-    2.  Para permitir que um usuário se conectar ao servidor usando o acesso via Web remoto, selecione o **permitir acesso remoto via Web e acesso a aplicativos web services** caixa de seleção.  
+    2.  Para permitir que um usuário se conecte ao servidor usando o Acesso Remoto via Web, marque a caixa de seleção **Permitir Acesso Remoto via Web e acesso a aplicativos de serviços Web**.  
   
-7.  Clique em **aplicar**e clique em **Okey**.  
+7.  Clique em **Aplicar**e clique em **OK**.  
   
-##  <a name="BKMK_2"></a>Configurar o roteador  
- Quando você configurar seu servidor para acesso via Web remoto, o Assistente de configuração de qualquer lugar acesso tenta configurar o roteador. Se você alterar roteadores ou alterar as configurações do roteador, você deve executar novamente o seu roteador Assistente de configuração. Para obter mais informações, consulte os seguintes tópicos:  
+##  <a name="BKMK_2"></a> Configurar o roteador  
+ Quando você configura o servidor para acesso via Web remoto, o Assistente de configuração de qualquer lugar acesso tenta configurar o roteador. Caso troque de roteador ou altere suas configurações, você deverá retornar ao assistente de configuração do roteador. Para mais informações, consulte os seguintes tópicos:  
   
 -   [Configurar o roteador](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SetUpRouter)  
   
@@ -147,71 +148,71 @@ ms.lasthandoff: 12/12/2017
   
 -   [Local de rede definido](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_NetworkLocation)  
   
--   [Habilitar controles ActiveX de serviços de área de trabalho remota](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ActiveX)  
+-   [Habilitar os controles ActiveX de serviços de área de trabalho remota](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ActiveX)  
   
-###  <a name="BKMK_SetUpRouter"></a>Configurar o roteador  
- Durante esta etapa, o Windows Server Essentials tenta configurar automaticamente o roteador usando comandos de UPnP. Para fazer isso, o roteador deve dar suporte a UPnP padrões e a configuração UPnP deve estar habilitada no seu roteador.  
+###  <a name="BKMK_SetUpRouter"></a> Configurar o roteador  
+ Durante esta etapa, o Windows Server Essentials tenta configurar automaticamente seu roteador usando comandos UPnP. Para isso, seu roteador deve oferecer suporte aos padrões UPnP e a configuração de UPnP deve estar habilitada no roteador.  
   
 > [!NOTE]
->  A configuração de rede deve seguir os requisitos de rede com suporte do Windows Server Essentials. Deve haver apenas um roteador em sua rede.  
+>  A configuração da sua rede deve seguir os requisitos de rede com suporte do Windows Server Essentials. Deve haver apenas um roteador na rede.  
   
- Se o roteador não é configurado pelo Assistente de configuração de seu domínio nome, você deve encaminhar porta 443 manualmente. Para obter informações sobre como configurar o encaminhamento de porta no roteador, consulte [configuração de roteador](https://social.technet.microsoft.com/wiki/contents/articles/windows-small-business-server-2011-essentials-router-setup.aspx).  
+ Caso o roteador não seja configurado pelo assistente de configuração de nome de domínio, encaminhe manualmente a porta 443. Para obter informações sobre a configuração do encaminhamento de porta no roteador, consulte [Configuração do roteador](https://social.technet.microsoft.com/wiki/contents/articles/windows-small-business-server-2011-essentials-router-setup.aspx).  
   
-###  <a name="BKMK_ReplaceRouter"></a>Substituir um roteador  
- Substitua o roteador de acordo com as instruções do fabricante s e, em seguida, execute o Assistente de configuração de seu roteador para configurar o roteador novo.  
+###  <a name="BKMK_ReplaceRouter"></a> Substituir um roteador  
+ Substitua o roteador de acordo com as instruções do fabricante s e, em seguida, execute o roteador de Assistente de configuração para configurar o novo roteador.  
   
 ##### <a name="to-set-up-your-new-router"></a>Para configurar seu novo roteador  
   
-1.  No painel Windows Server Essentials, clique em **configurações**.  
+1.  No Painel do Windows Server Essentials, clique em **Configurações**.  
   
-2.  Clique no **acesso em qualquer local** guia e, em seguida, no **roteador** seção, clique em **configurar**. Inicia o Assistente de configuração de seu roteador.  
+2.  Clique na guia **Acesso em Qualquer Local** e em seguida, na seção **Roteador**, clique em **Configurar**. O Assistente de configuração de seu roteador é iniciado.  
   
-3.  Siga as instruções no Assistente para concluir a configuração seu novo roteador.  
+3.  Siga as instruções do Assistente para concluir a configuração do seu novo roteador.  
   
-###  <a name="BKMK_NetworkLocation"></a>Local de rede definido  
- Um local de rede é uma coleção de configurações de rede que Windows aplica quando você se conectar a uma rede. As configurações variam e podem ser personalizadas com base no tipo de rede que você usa. As configurações para um local de rede determinam se determinados recursos (como arquivos e compartilhamento de impressora, descoberta de rede e compartilhamento de pasta pública) estão ativados ou desativado. Locais de rede são úteis quando você precisa se conectar a redes diferentes.  
+###  <a name="BKMK_NetworkLocation"></a> Local de rede definido  
+ Um local de rede é um conjunto de configurações de rede que o Windows aplica quando você se conectar a uma rede. As configurações variam e podem ser personalizadas com base no tipo de rede que você usa. As configurações para um local de rede determinam se certos recursos (como compartilhamento de arquivos e impressora, descoberta de rede e o compartilhamento de pasta pública) são ativados ou desativados. Locais de rede são úteis quando você precisa se conectar a redes diferentes.  
   
- Por exemplo, você pode tiver um notebook que você usa em casa e no trabalho. Quando você estiver no escritório, você se conectar à rede office. No entanto, assim que você entra inicial, você usa seu notebook para acessar e reproduzir vídeos e músicas que é armazenada no servidor doméstico. Quando você se conectar a uma nova rede e especifica o tipo de local, o Windows atribui um perfil de rede predefinido para esse tipo de local. Na próxima vez que você se conectar à rede, o Windows reconhece a rede e atribui automaticamente as configurações corretas. Isso adiciona uma camada de segurança para ajudar a proteger as informações em seu computador, e apenas os recursos de rede que você precisa para esse local são ativados.  
+ Por exemplo, você pode ter um laptop que você usa em casa e no trabalho. Quando estiver no escritório, você se conecta à rede do escritório. No entanto, quando você chegar em casa, você usa seu laptop para acessar e reproduzir vídeos e música armazenados no servidor doméstico. Quando você se conectar a uma nova rede e especificar o tipo de local, o Windows atribui um perfil de rede predefinido para esse tipo de local. Na próxima vez que você se conectar àquela rede, o Windows reconhece a rede e atribui automaticamente as configurações corretas. Isso adiciona uma camada de segurança para ajudar a proteger as informações em seu computador, e somente os recursos de rede que você precisa para esse local são ativados.  
   
  Há quatro tipos de locais de rede:  
   
--   **Rede doméstica** escolher essa rede para redes domésticas ou quando você conhece e confia as pessoas e os dispositivos na rede. Computadores em uma rede doméstica podem pertencer a um grupo doméstico. Descoberta de rede está ativada para redes domésticas, que permite que você veja outros computadores e dispositivos na rede e permite que outros usuários da rede vejam seu computador.  
+-   **Rede doméstica** Escolha essa rede para redes domésticas ou quando você conhecer e confia nas pessoas e dispositivos na rede. Computadores em uma rede doméstica podem pertencer a um grupo doméstico. Descoberta de rede está ativada para redes domésticas, o que permite que você veja outros computadores e dispositivos na rede e permite que outros usuários da rede vejam seu computador.  
   
--   **Rede de trabalho** escolher essa rede de pequena empresa ou outras redes de área de trabalho. Descoberta de rede, que permite que você veja outros computadores e dispositivos em uma rede e permite que outros usuários da rede vejam seu computador, é ativada por padrão, mas você não pode criar ou ingressar em um grupo doméstico.  
+-   **Rede corporativa** Escolha essa rede para pequenos escritórios ou outras redes de área de trabalho. Descoberta de rede, que permite que você veja outros computadores e dispositivos em uma rede e permite que outros usuários da rede vejam seu computador, é ativada por padrão, mas você não pode criar ou ingressar em um grupo doméstico.  
   
--   **Rede pública** escolher essa rede para locais públicos (como cafés ou aeroportos). Esse local destina-se para manter o seu computador fique visível para outros computadores e para ajudar a proteger seu computador contra software mal-intencionado da Internet. Grupo doméstico não está disponível em redes públicas e descoberta de rede está desativada. Você também deve escolher essa opção se você estiver conectado diretamente à Internet sem usar um roteador, ou se você tiver uma conexão de banda larga móvel.  
+-   **Rede pública** Escolha essa rede para locais públicos (como cafés ou aeroportos). Esse local foi projetado para que seu computador não seja visível para outros computadores e para ajudar a proteger o computador contra softwares maliciosos da Internet. Grupo doméstico não está disponível em redes públicas e a descoberta de rede está desativada. Você também deve escolher essa opção se estiver conectado diretamente à Internet sem usar um roteador ou se você tiver uma conexão de banda larga móvel.  
   
--   **Domínio** escolher essa rede para domínios como aqueles em locais de trabalho da empresa. Esse tipo de local de rede é controlado pelo seu administrador de rede, e não pode ser selecionado ou alterado.  
+-   **Domínio** Escolha essa rede para domínios, como aqueles em locais de trabalho da empresa. Esse tipo de local de rede é controlado pelo seu administrador de rede e não pode ser selecionado ou alterado.  
   
-###  <a name="BKMK_ActiveX"></a>Habilitar controles ActiveX de serviços de área de trabalho remota  
- Os controles ActiveX de serviços de área de trabalho remota permite que você acesse seu computador residencial ou comercial, via Internet, de outro computador usando o acesso via Web remoto.  
+###  <a name="BKMK_ActiveX"></a> Habilitar os controles ActiveX de serviços de área de trabalho remota  
+ Os controles ActiveX de serviços de área de trabalho remota permite que você acesse seu computador doméstico ou de trabalho, via Internet, de outro computador usando o acesso via Web remoto.  
   
 ##### <a name="to-enable-remote-desktop-services-activex-controls"></a>Para habilitar os controles ActiveX de serviços de área de trabalho remota  
   
-1.  No Internet Explorer, clique em **ferramentas**e clique em **opções da Internet**.  
+1.  No Internet Explorer, clique em **Ferramentas**e clique em **Opções da Internet**.  
   
-2.  Sobre o **segurança**, clique em **nível personalizado**.  
+2.  Na guia **Segurança** , clique em **Nível personalizado**.  
   
-3.  No **ActiveX plug-ins e controles** seção, faça o seguinte:  
+3.  Na seção **Controles ActiveX e plug-ins** , faça o seguinte:  
   
-    1.  Em **carregar controles ActiveX assinados**, clique em **Prompt**.  
+    1.  Em **Baixar Controles ActiveX assinados**, clique em **Prompt**.  
   
-    2.  Em **executar controles ActiveX e plug-ins**, clique em **habilitar**.  
+    2.  Em **Executar Controles ActiveX e plug-ins**, clique em **Habilitar**.  
   
-4.  Clique em **Okey** duas vezes para aceitar as alterações e fechar a caixa de diálogo.  
+4.  Clique em **OK** duas vezes para aceitar as alterações e fechar a caixa de diálogo.  
   
-##  <a name="BKMK_3"></a>Configurar o seu nome de domínio  
- Depois que o acesso via Web remoto está ativado, você pode configurar um nome de domínio para o servidor que está executando o Windows Server Essentials. Isso é uma etapa necessária se você pretende usar o acesso via Web remoto de um computador remoto. Para obter mais informações, consulte os seguintes tópicos:  
+##  <a name="BKMK_3"></a> Configurar seu nome de domínio  
+ Depois que o Acesso via Web Remoto é ativado, você pode configurar um nome de domínio para o servidor que executa o Windows Server Essentials. Essa é uma etapa necessária para usar o Acesso via Web Remoto a partir de um computador remoto. Para mais informações, consulte os seguintes tópicos:  
   
--   [Visão geral de nomes de domínio](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_DNOverview)  
+-   [Visão geral dos nomes de domínio](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_DNOverview)  
   
--   [Entender os nomes de domínio Microsoft personalizada](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_PersonalizedNames)  
+-   [Entender os nomes de domínio personalizados da Microsoft](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_PersonalizedNames)  
   
--   [Use um nome de domínio novos ou existentes](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_UseNewName)  
+-   [Use um nome de domínio novo ou existente](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_UseNewName)  
   
 -   [Configurar um nome de domínio](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SetUpName)  
   
--   [Escolher um provedor de serviço de nomes de domínio](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ChooseProvider)  
+-   [Escolher um provedor de serviço de nome de domínio](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ChooseProvider)  
   
 -   [Escolha um nome de domínio](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ChooseDomainName)  
   
@@ -219,249 +220,249 @@ ms.lasthandoff: 12/12/2017
   
 -   [Escolha uma extensão de nome de domínio](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Extension)  
   
--   [Atualizar ou atualize o seu serviço de nome de domínio](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_UpdateService)  
+-   [Atualizar ou fazer upgrade de seu serviço de nome de domínio](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_UpdateService)  
   
--   [Exportar ou importar o certificado no servidor](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ExportCert)  
+-   [Exportar ou importar um certificado no seu servidor](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ExportCert)  
   
 -   [Configurar um nome de domínio manualmente](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SetNameManually)  
   
--   [Encontre seu provedor de serviços de nome de domínio](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Find)  
+-   [Localize o provedor de serviços de nome de domínio](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Find)  
   
-###  <a name="BKMK_DNOverview"></a>Visão geral de nomes de domínio  
- Um nome de domínio identifica exclusivamente o seu servidor na Internet. Nomes de domínio consistem em pelo menos duas partes: um nome de domínio de nível superior (TLD) e um segundo nome de domínio de nível. Por exemplo, em contoso.com, com é o TLD e contoso é o nome de domínio de nível segundo.  
+###  <a name="BKMK_DNOverview"></a> Visão geral dos nomes de domínio  
+ Um nome de domínio identifica exclusivamente seu servidor na Internet. Nomes de domínio consistem em pelo menos duas partes: um nome de domínio de nível superior (TLD) e um nome de domínio de segundo nível. Por exemplo, contoso.com, com é o TLD e contoso é o segundo nome de domínio de nível.  
   
- Enquanto você estiver fora do escritório, você pode usar o nome de domínio para acessar arquivos compartilhados no servidor ou computadores na rede. Você também pode gerenciar seu servidor quando estiver ausente. Por exemplo, você deve registrar contoso.com do seu servidor. Quando você estiver fora do escritório, você pode abrir um navegador da web em seu notebook e o tipo **contoso.com** na caixa de texto de endereço para se conectar à instância do acesso via Web remoto que você configurou no Windows Server Essentials.  
+ Enquanto você estiver fora do escritório, você pode usar seu nome de domínio para acessar arquivos compartilhados no servidor ou computadores na rede. Você também pode gerenciar seu servidor quando estiver ausente. Por exemplo, você deve registrar contoso.com em seu servidor. Quando você está fora do escritório, você pode abrir um navegador da Web em seu laptop e digitar **contoso.com** na caixa de texto de endereço para se conectar à instância do Aacesso via Web Remoto que você configurou no Windows Server Essentials.  
   
-###  <a name="BKMK_PersonalizedNames"></a>Entender os nomes de domínio Microsoft personalizada  
- Um nome de domínio personalizado do Microsoft inclui os seguintes recursos:  
+###  <a name="BKMK_PersonalizedNames"></a> Entender os nomes de domínio personalizados da Microsoft  
+ Um nome de domínio personalizado da Microsoft inclui os seguintes recursos:  
   
--   Um nome de domínio personalizado para acesso via Web remoto (por exemplo, *yourhostname*. remotewebaccess.com). O nome de domínio é associado a seu endereço IP público.  
+-   Um nome de domínio personalizado para acesso via Web remoto (por exemplo, *yourhostname*. remotewebaccess.com). Seu nome do domínio é associado com seu endereço IP público.  
   
--   Uma dinâmica DNS atualizar o serviço de protocolo para que o acesso via Web remoto usando o nome de domínio não será interrompido se mudar seu endereço IP público. Normalmente, provedores de serviços de Internet (ISPs) para as conexões de banda larga s organização forneça dinâmicos endereços IP públicos que podem mudar.  
+-   Um DNS dinâmico atualize o serviço de protocolo para que o acesso via Web remoto usando seu nome de domínio não será interrompido se seu endereço IP público mude. Normalmente, os provedores de serviços de Internet (ISPs) para suas conexões de banda larga s organização fornecem endereços IP públicos dinâmicos que podem ser alterados.  
   
 -   Um certificado confiável associado com o nome de domínio.  
   
- Para integrar um nome de domínio personalizado da Microsoft ao seu servidor, você precisa de uma conta da Microsoft (anteriormente conhecida como um Windows Live ID). Se você não tiver uma conta da Microsoft, você pode se inscrever para obter um no [Microsoft Hotmail](https://login.live.com/) site.  
+ Para integrar um nome de domínio personalizado da Microsoft com seu servidor, você precisa de uma conta da Microsoft (anteriormente conhecida como Windows Live ID). Se você não tiver uma conta da Microsoft, pode se registrar em uma no site [Microsoft Hotmail](https://login.live.com/) .  
   
 > [!IMPORTANT]
->  Windows Live permite que caracteres especiais em sua senha de conta da Microsoft que o servidor não dá suporte. Se você usar um domínio personalizado da Microsoft, certifique-se de que sua senha de conta da Microsoft contém apenas os caracteres que o servidor der suporte. O servidor não dá suporte para uso de caracteres $, /, ' e %.  
+>  O Windows Live permite caracteres especiais em sua senha da conta da Microsoft que não têm suporte no servidor. Se você usar um domínio personalizado da Microsoft, certifique-se de que sua senha da conta da Microsoft contenha apenas caracteres com suporte no servidor. O servidor não tem suporte ao uso dos caracteres $, /, ‘ e %.  
   
-###  <a name="BKMK_UseNewName"></a>Use um nome de domínio novos ou existentes  
- Para configurar automaticamente o nome de domínio em um servidor que executa o Windows Server Essentials, você deve usar um provedor de serviços de nome de domínio que esteja listado no Assistente de configuração de seu domínio nome. Você pode optar por receber um novo nome de domínio ou usar um nome de domínio existente. Siga um destes procedimentos:  
+###  <a name="BKMK_UseNewName"></a> Use um nome de domínio novo ou existente  
+ Para configurar automaticamente seu nome de domínio em um servidor que executa o Windows Server Essentials, você deve usar um provedor de serviços de nome de domínio listado no Assistente de configuração de seu nome de domínio. Você pode optar por obter um novo nome de domínio ou usar um nome de domínio existente. Siga um destes procedimentos:  
   
--   Se você quiser obter um novo nome de domínio de um domínio provedores de serviço de nomes que estão listados no assistente, clique em **eu quiser configurar um novo nome de domínio**.  
+-   Se você deseja obter um novo nome de domínio dos provedores de serviço de nome de domínio listados no assistente, clique em **Desejo configurar um novo nome de domínio**.  
   
--   Se você tiver um nome de domínio existente que você comprou em um dos provedores de serviços de nome de domínio que têm suporte, você pode usar o Assistente de configuração de seu domínio nome para configurar o nome de domínio do seu servidor. Clique em **eu quiser usar um nome de domínio que já tenho**e, em seguida, digite o nome de domínio no **definir seu domínio nome** caixa de texto. Você deve fornecer o nome de usuário e senha que você usou para adquirir o nome de domínio.  
+-   Se você tiver um nome de domínio existente, comprado de um dos provedores de serviços de nome de domínio com suporte, você pode usar o Assistente de configuração de nome de domínio para configurar o nome de domínio para o seu servidor. Clique em **Desejo usar um nome de domínio que já possuo** e digite o nome do domínio na caixa de texto **Definir seu nome de domínio**. Você deve fornecer o nome de usuário e a senha que você usou para adquirir o nome de domínio.  
   
--   Se você tem um nome de domínio existentes que você comprou em um provedor de serviços de nome de domínio que não é compatível com o Windows Server Essentials e quiser usar o Assistente de configuração de seu domínio nome para configurar o nome de domínio do seu servidor, você pode transferir o nome de domínio para um dos provedores de serviços de nome de domínio listados no assistente. Clique em **eu quiser usar um nome de domínio que já tenho**, digite o nome de domínio no **nome de domínio** texto caixa e siga as instruções no site de s do provedor de serviço do domínio nome para transferir o nome de domínio.  
+-   Se você tiver um nome de domínio existente, comprado de um provedor de serviços de nome de domínio que não tem suporte no Windows Server Essentials e você deseja usar o Assistente de configuração de nome de domínio para configurar o nome de domínio para o seu servidor, você pode transferir o nome de domínio para um dos provedores de serviços de nome de domínio listados no assistente. Clique em **desejo usar um nome de domínio que já possuo**, digite o nome de domínio na **nome de domínio** texto caixa e, em seguida, siga as instruções no site do domínio nome serviço provedor s para transferir o nome de domínio .  
   
-###  <a name="BKMK_SetUpName"></a>Configurar um nome de domínio  
- Quando você ativar o acesso via Web remoto, você pode optar por configurar o nome de domínio da Internet do servidor.  
+###  <a name="BKMK_SetUpName"></a> Configurar um nome de domínio  
+ Quando você ativa o acesso via Web Remoto, você pode optar por configurar o nome de domínio da Internet do servidor.  
   
-##### <a name="to-set-up-or-manage-an-internet-domain-name"></a>Configurar ou gerenciar um nome de domínio da Internet  
+##### <a name="to-set-up-or-manage-an-internet-domain-name"></a>Para configurar ou gerenciar um nome de domínio da Internet  
   
-1.  Abra o painel.  
+1.  Abra o Painel.  
   
-2.  Clique em **configurações do servidor**e, em seguida, clique no **acesso em qualquer local** guia.  
+2.  Clique em **Configurações do servidor** e clique na guia **Acesso em Qualquer Local**.  
   
-3.  No **nome de domínio** seção, clique em **configurar**.  
+3.  Na seção **Nome de domínio**, clique em **Configurar**.  
   
-4.  Siga as instruções para concluir o assistente. Se você ainda não tem um nome de domínio e um certificado, o assistente ajuda você a encontrar um provedor de nomes de domínio para comprar um nome de domínio e um certificado, ou você pode obter um nome de domínio personalizado do Microsoft.  
+4.  Siga as instruções para concluir o assistente. Se você ainda não tem um nome de domínio e um certificado, o assistente ajuda você a encontrar um provedor de nomes de domínio para adquirir um nome de domínio e um certificado ou você pode obter um nome de domínio personalizado da Microsoft.  
   
-###  <a name="BKMK_ChooseProvider"></a>Escolher um provedor de serviço de nomes de domínio  
- Você deve escolher um provedor de serviços de nome de domínio que dá suporte a extensão de nome de domínio que você deseja usar. Assistente de configuração de seu domínio nome inclui uma lista de provedores qualificados que você pode usar com um link para cada site do provedor s. Clique no **mais informações** link ao lado de cada nome de provedor s para obter informações sobre os serviços e os preços são oferecidos pelo fornecedor.  
+###  <a name="BKMK_ChooseProvider"></a> Escolher um provedor de serviço de nome de domínio  
+ Você deve escolher um provedor de serviços de nome de domínio que suporte a extensão de nome de domínio que você deseja usar. O seu domínio nome do Assistente de configuração inclui uma lista de provedores qualificados que podem ser usados com um link para cada site de s provedor. Clique o **mais informações** link ao lado de cada nome de provedor s para obter informações sobre os serviços e preços oferecidos pelo provedor.  
   
 > [!NOTE]
->  Alguns provedores de serviço de nomes de domínio têm amplos regiões internacionais e outros servem mercados menores. Por isso, alguns provedores podem não oferecer um site que é convertido em seu idioma de preferência.  
+>  Alguns provedores de serviços de nome de domínio servem amplas regiões internacionais e outros atendem mercados menores. Por isso, alguns provedores podem não oferecer um site que traduzido em seu idioma preferencial.  
   
- Quando você compra o nome de domínio, você também pode considerar comprando o serviço de protocolo de atualização dinâmica do sistema de nome de domínio (DNS) de seu provedor de serviços de nome de domínio. Protocolo de atualização dinâmica DNS é um serviço que permite que qualquer pessoa na Internet obter acesso aos recursos em uma rede local quando o endereço IP de rede está constantemente mudando. Ou você pode adquirir um endereço IP estático do seu provedor de serviços de Internet (ISP) para garantir que seu endereço IP não muda.  
+ Quando você compra seu nome de domínio, você também pode considerar adquirir o serviço de protocolo de atualização dinâmica do sistema de nome de domínio (DNS) de seu provedor de serviços de nome de domínio. O Protocolo de atualização dinâmica do DNS é um serviço que permite que qualquer pessoa na Internet acesse recursos em uma rede local quando o endereço IP da rede está em constante mudança. Ou você pode adquirir um endereço IP estático de seu provedor de serviços de Internet (ISP) para assegurar que seu endereço IP não seja alterado.  
   
-###  <a name="BKMK_ChooseDomainName"></a>Escolha um nome de domínio  
- Escolha um nome que identifica exclusivamente o seu servidor de negócios. Por exemplo, se seu nome de empresa for Contoso Ltd, você pode escolher Contoso para identificar exclusivamente o seu servidor doméstico ou empresarial na Internet. Se o nome de domínio não estiver disponível, tente outra variação de mesmo nome, ou talvez algo completamente diferente.  
+###  <a name="BKMK_ChooseDomainName"></a> Escolha um nome de domínio  
+ Escolher um nome que identifique exclusivamente o seu servidor de negócios. Por exemplo, se o nome da empresa for Contoso Ltd, você poderá escolher Contoso para identificar exclusivamente o seu servidor doméstico ou corporativo na Internet. Se o nome de domínio não estiver disponível, tente outra variação desse nome ou talvez algo completamente diferente.  
   
  O nome digitado pode conter o seguinte:  
   
 -   máximo de 63 caracteres  
   
--   Letras (inglês ou os caracteres localizados), números ou hifens (-). O nome deve começar e terminar com uma letra ou um número.  
+-   Letras (Inglês ou caracteres localizados), números ou hifens (-). O nome deve começar e terminar com uma letra ou um número.  
   
     > [!NOTE]
-    >  Nomes de domínio não diferenciam maiusculas de minúsculas.  
+    >  Nomes de domínio não diferenciam maiúsculas de minúsculas.  
   
-###  <a name="BKMK_Prefixes"></a>Escolha um prefixo de nome de domínio  
+###  <a name="BKMK_Prefixes"></a> Escolha um prefixo de nome de domínio  
  Um nome de domínio consiste em rótulos hierárquicos.  
   
- **A extensão de domínio de nível superior** é o rótulo de extrema direita no nome do domínio. Por exemplo, no www.contoso.com, com é a extensão de nome de domínio de nível superior.  
+ **A extensão do domínio de primeiro nível** é o rótulo mais à direita no nome do domínio. Por exemplo, em www.contoso.com, com é a extensão de nome de domínio de nível superior.  
   
- **O nome de domínio de segundo nível** é o rótulo ao lado da extensão de nome de domínio de nível superior. O nome de domínio de segundo nível geralmente é criado com base no nome da empresa, produtos ou serviços. Por exemplo, em www.contoso.com, contoso é o nome de domínio de segundo nível e foi escolhida para o nome da empresa Contoso produtos farmacêuticos. O domínio de segundo nível, às vezes, é conhecido como o nome do host, que tem um endereço IP associado a ele.  
+ **O nome de domínio de segundo nível** é o rótulo próximo à extensão de nome de domínio de primeiro nível. O nome de domínio de segundo nível geralmente é criado com base no nome da empresa, produtos ou serviços. Por exemplo, em www.contoso.com, contoso é o nome de domínio de segundo nível e foi escolhido para o nome da empresa Contoso Pharmaceuticals. O domínio de segundo nível às vezes também é chamado de nome de host, que tem um endereço IP associado a ele.  
   
- **O prefixo de nome de domínio** identifica um subdomínio. O nome de subdomínio pode ser usado para identificar os serviços, dispositivos ou regiões. Por exemplo, Contoso produtos farmacêuticos quer permitir que usuários remotos fazer logon no acesso via Web remoto, mas não quiser que o site esteja disponível para o público, portanto, eles criam um subdomínio que permite que somente usuários com as permissões adequadas para acessar o site. Contoso produtos farmacêuticos configura remote.contoso.com como o subdomínio e remoto é o prefixo de nome de domínio.  
+ **O prefixo de nome de domínio** identifica um subdomínio. O nome de subdomínio pode ser usado para identificar serviços, dispositivos ou regiões. Por exemplo, a Contoso Pharmaceuticals deseja permitir que os usuários remotos façam logon no Acesso via Web Remoto, mas não quer que o site esteja disponível para o público, então, eles criam um subdomínio que permite que apenas os usuários com permissões apropriadas acessem o site. A Contoso Pharmaceuticals configura remote.contoso.com como o subdomínio e remoto é o prefixo de nome de domínio.  
   
 > [!TIP]
->  É recomendável que você use o padrão **remoto** como o prefixo para seu nome de domínio.  
+>  É recomendável que você use o padrão **Remoto** como o prefixo de nome de domínio.  
   
-###  <a name="BKMK_Extension"></a>Escolha uma extensão de nome de domínio  
- Quando você escolhe um nome de domínio para o seu site da Internet, você também precisa especificar a extensão de nome de domínio que você deseja usar. A extensão é identificada pelas letras que seguem o período final de qualquer nome de domínio. (O termo formal para a extensão é o domínio de nível superior ou TLD.)  
+###  <a name="BKMK_Extension"></a> Escolha uma extensão de nome de domínio  
+ Quando você escolher um nome de domínio para o site da Internet, você também precisa especificar a extensão de nome de domínio que você deseja usar. A extensão é identificada por letras após o ponto final de qualquer nome de domínio. (O termo formal para a extensão é o domínio de nível superior ou o TLD.)  
   
- Existem dois tipos principais de extensões de domínio que você pode usar: genérico e o código do país.  
+ Há dois tipos principais de extensões de domínio que você pode usar: genérico e código do país.  
   
 #### <a name="generic-top-level-domains"></a>Domínios de nível superior genéricos  
- Extensões de domínio genérico são três ou mais letras de comprimento, e eles são normalmente usados por determinados tipos de organizações.  
+ Extensões de domínio genérico têm três ou mais letras e normalmente são usadas por determinados tipos de organizações.  
   
  **Exemplos de domínios de nível superior genéricos**  
   
 |Extensão do domínio|Descrição|  
 |----------------------|-----------------|  
-|.com|Normalmente utilizado por organizações comerciais, mas ele pode ser usado por qualquer pessoa.|  
-|.NET|Projetado para empresas que oferecem serviços de infraestrutura de rede.|  
-|. org|Originalmente usado pelo agências sem fins lucrativos e outras empresas que não se enquadram em nenhuma outra categoria genérico de domínio de nível superior. Pode ser usado por qualquer pessoa.|  
-|edu|Restrito para uso por organizações educacionais.|  
+|.com|Normalmente usado por organizações comerciais, mas pode ser usado por qualquer pessoa.|  
+|.net|Projetado para empresas que oferecem serviços de infraestrutura de rede.|  
+|.org|Originalmente usados por organizações sem fins lucrativos e outros negócios que não se encaixam em outra categoria de domínio de primeiro nível genérico. Pode ser usado por qualquer pessoa.|  
+|.edu|Restrito para uso por organizações de ensino.|  
   
-#### <a name="country-code-top-level-domains"></a>Domínios de nível superior do código do país  
- Essas extensões de domínio são duas letras de comprimento. Eles são projetados para ser usado por organizações no país ou região que está associado esse código. Alguns domínios de nível superior do código do país são restritos para uso por cidadãos desse país ou região. Outras estão disponíveis para uso por qualquer pessoa.  
+#### <a name="country-code-top-level-domains"></a>Domínios de nível superior de código do país  
+ Essas extensões de domínio têm duas letras. Eles são projetados para serem usados por organizações no país ou região associada com esse código. Alguns domínios de nível superior de código do país são restritos para uso por cidadãos desse país ou região. Outros estão disponíveis para uso por qualquer pessoa.  
   
  **Exemplos de domínios de nível superior do código do país**  
   
 |Extensão do domínio|Descrição|  
 |----------------------|-----------------|  
-|. CA|Para uso por sites no Canadá|  
-|. CN|Para uso por sites na China|  
+|.ca|Para uso por sites no Canadá|  
+|.cn|Para uso por sites na China|  
 |.de|Para uso por sites na Alemanha|  
-|. co.uk|Para uso por sites no Reino Unido|  
+|.co.uk|Para uso por sites no Reino Unido|  
   
- Para ver a lista completa de domínios de nível superior, consulte o [site Internet Assigned Numbers Authority](https://go.microsoft.com/fwlink/?LinkId=117438).  
+ Para exibir a lista completa de domínios de nível superior, consulte o [site da Internet Assigned Numbers Authority](https://go.microsoft.com/fwlink/?LinkId=117438).  
   
-#### <a name="if-a-domain-extension-is-not-available-to-select-in-the-set-up-domain-name-wizard"></a>Se uma extensão de domínio não estiver disponível para selecionar em que o Assistente de configuração de nome de domínio  
- Quando você executa o Assistente de configuração de nome de domínio, o assistente analisa as informações do sistema para determinar seu país ou região. O assistente, em seguida, exibe apenas as extensões de domínio que dão suporte as provedores participantes em sua área. Se a extensão de domínio que você deseja não aparecer na lista, você deve escolher uma extensão de domínio diferente para continuar. Selecione uma extensão da lista que o assistente retornado.  
+#### <a name="if-a-domain-extension-is-not-available-to-select-in-the-set-up-domain-name-wizard"></a>Se uma extensão de domínio não estiver disponível para seleção no Assistente de configuração de nome de domínio  
+ Quando você executar o Assistente de configuração de nome de domínio, o assistente analisa as informações do seu sistema para determinar seu país ou região. O assistente exibe apenas as extensões de domínio que têm suporte dos provedores participantes em sua área. Se a extensão do domínio que você deseja não aparecer na lista, você deve escolher uma extensão de domínio diferente para continuar. Selecione uma extensão da lista que o assistente mostrar.  
   
-###  <a name="BKMK_UpdateService"></a>Atualizar ou atualize o seu serviço de nome de domínio  
- Você talvez precise atualizar ou atualizar seu serviço de nome de domínio, se você comprou um nome de domínio, mas não tiver comprado um certificado. Você deve ter um certificado para o nome de domínio do seu provedor de serviço de nome de domínio.  
+###  <a name="BKMK_UpdateService"></a> Atualizar ou fazer upgrade de seu serviço de nome de domínio  
+ Talvez seja necessário atualizar o serviço de nomes de domínio se você tiver adquirido um nome de domínio, mas não tiver adquirido um certificado. Você deve ter um certificado para o nome de domínio de seu provedor de serviços de nome de domínio.  
   
 > [!NOTE]
->  Trabalhar com seu provedor de serviços de nome de domínio para determinar o tipo de certificado que você precisa. O certificado pode ser um dos baratos certificados que são oferecidos. No entanto, você deve revisar a documentação e os recursos de certificados de segurança de nível superiores para determinar se eles atender melhor suas necessidades.  
+>  Trabalhe com seu provedor de serviços de nome de domínio para determinar o tipo de certificado que você precisa. O certificado pode ser um dos certificados de baixo custo oferecidos. No entanto, você deve examinar a documentação e os recursos de certificados de segurança de nível superior para determinar se eles atender melhor as necessidades da sua empresa.  
   
-###  <a name="BKMK_ExportCert"></a>Exportar ou importar o certificado no servidor  
- Se você quiser criar uma cópia de backup de um certificado ou usá-lo em outro servidor, você deve exportar o certificado. Para obter informações sobre como exportar certificados, consulte [exportar um certificado](https://go.microsoft.com/fwlink/p/?LinkId=214362).  
+###  <a name="BKMK_ExportCert"></a> Exportar ou importar um certificado no seu servidor  
+ Se você deseja criar uma cópia de backup de um certificado ou usá-lo em outro servidor, você deve exportar o certificado. Para informações sobre como exportar certificados, consulte [Exportar um certificado](https://go.microsoft.com/fwlink/p/?LinkId=214362).  
   
-###  <a name="BKMK_SetNameManually"></a>Configurar um nome de domínio manualmente  
- Se você escolher essa opção, o servidor não monitorar ou manter o nome de domínio, e ele não alertá-lo se houver um problema de configuração. Você também pode considerar essa opção se qualquer um dos procedimentos a seguir for verdadeira:  
+###  <a name="BKMK_SetNameManually"></a> Configurar um nome de domínio manualmente  
+ Caso selecione esta opção, o servidor não irá monitorar ou manter o nome do domínio, nem o alertará caso haja um problema de configuração. Use também esta opção se:  
   
--   Não há provedores de nome de domínio do parceiro são listados para seu país ou região.  
+-   Não houver provedores de nome de domínio de parceiros listados para seu país ou região.  
   
--   Os provedores de domínio do parceiro listados não dão suporte a sua extensão de nome de domínio.  
+-   Os provedores de domínio de parceiros listados não oferecerem suporte à sua extensão de nome de domínio.  
   
--   Você tem um nome de domínio existente de um provedor de nomes de domínio que não é um parceiro no momento, e você não deseja transferir esse nome de domínio para um provedor de nomes de domínio que têm suporte do Windows Server Essentials.  
+-   Você tem um nome de domínio existente de um provedor de nomes de domínio que não é atualmente um parceiro e você não deseja transferir esse nome de domínio para um provedor de nomes de domínio com suporte do Windows Server Essentials.  
   
--   O assistente não lista a extensão de nome de domínio que você deseja usar, mas a extensão está disponível em um provedor de nomes de domínio que não é atualmente um parceiro.  
+-   O assistente não listar a extensão de nome de domínio que você deseja usar, mas a extensão estiver disponível para um provedor de nomes de domínio que não é um parceiro.  
   
- Se você optar por configurar manualmente o nome de domínio, trabalhe com seu provedor de serviços de nome de domínio para criar um registro do seu domínio.  
+ Se você optar por configurar manualmente o seu nome de domínio, trabalhe com seu provedor de serviços de nome de domínio para criar um registro a para seu domínio.  
   
 ##### <a name="to-create-an-a-record"></a>Para criar um registro  
   
-1.  Decida sobre um nome de host, como o controle remoto. Este é o prefixo de nome de domínio. O prefixo de nome de domínio e seu nome de domínio definirão a URL para abrir a página de logon do acesso via Web remoto; Por exemplo, **http://remote.contoso.com**.  
+1.  Escolha um nome de host, como remoto. Esse é o prefixo do nome de domínio. O prefixo de nome de domínio mais seu nome de domínio definirão a URL para abrir a página de logon do acesso via Web remoto; Por exemplo, **http://remote.contoso.com**.  
   
-2.  Em seu domínio nome serviço provedores configuração painel (geralmente na sua página da Web), crie o registro para o nome do host que você escolheu na etapa 1. Certifique-se de que o endereço IP que você especificar no registro é o endereço IP no lado WAN do roteador (Internet voltado para o lado). Consulte a documentação do roteador para localizar seu endereço IP WAN.  
+2.  No seu domínio nome provedores configuração Painel de serviço (normalmente na sua página da Web), crie o registro para o nome do host escolhido na etapa 1. Certifique-se de que o endereço IP que você especificar no registro é o endereço IP no lado da WAN do roteador (o lado voltado para a Internet). Consulte a documentação do roteador para encontrar o endereço IP da WAN.  
   
-3.  É recomendável que você entre em contato com seu provedor de serviços de Internet (ISP) para adquirir um endereço IP estático para sua rede. Isso garante que o endereço IP não será modificada e que a entrada DNS não ficar desatualizada.  
+3.  Recomenda-se entrar em contato com seu ISP (provedor de serviços de Internet) a fim de adquirir um endereço IP estático para sua rede. Isso garante que o endereço IP não mude e que a entrada DNS não fique desatualizada.  
   
-     Se você não tiver a opção para obter um endereço IP estático do seu provedor, você também pode considerar comprando o serviço de protocolo de atualização dinâmica do sistema de nome de domínio (DNS) de seu provedor de serviços de nome de domínio ou outro provedor de serviço. Protocolo de atualização dinâmica DNS é um serviço que mantém o endereço IP WAN sua rede atualizado para que o endereço IP pode ser resolvido para o nome de domínio, mesmo se o endereço IP muda.  
+     Caso não tenha a opção de obtenção de um endereço IP estático de seu ISP, considere adquirir também o serviço de protocolo de atualização dinâmica de DNS (Sistema de Nomes de Domínio) de seu provedor de serviços de nome de domínio ou outro provedor de serviços. O protocolo de atualização dinâmica de DNS é um serviço que mantém o endereço IP da WAN de sua rede atualizado, de modo que esse endereço IP possa ser resolvido para o nome do domínio mesmo que o endereço IP mude.  
   
-4.  Importe um certificado confiável quando o assistente avisa você. Se você não tiver um certificado confiável, você pode obtê-lo de um dos provedores de nome de domínio com suporte listados no assistente ou adquirir um do provedor de confiáveis de sua escolha. Para obter mais informações sobre um certificado confiável, contate seu provedor de nomes de domínio.  
+4.  Importe um certificado de confiança quando o assistente solicitar. Caso não tenha um certificado de confiança, obtenha um com um dos provedores de nomes de serviço com suporte listados no assistente ou adquira um do provedor de confiança de sua escolha. Para obter mais informações sobre um certificado de confiança, entre em contato com seu provedor de nomes de domínio.  
   
-###  <a name="BKMK_Find"></a>Encontre seu provedor de serviços de nome de domínio  
+###  <a name="BKMK_Find"></a> Localize o provedor de serviços de nome de domínio  
   
-##### <a name="to-find-the-domain-name-service-provider-for-your-domain-name"></a>Para encontrar o provedor de serviço de nomes de domínio para o nome de domínio  
+##### <a name="to-find-the-domain-name-service-provider-for-your-domain-name"></a>Para localizar o provedor de serviços de nome de domínio para seu nome de domínio  
   
-1.  Abra um navegador da web e, em seguida, digite **www.internic.com** na barra de endereços para ir para a home page Internic.  
+1.  Abra um navegador da Web e digite **www.internic.com** na barra de endereços para ir para página inicial da Internic.  
   
-2.  Na home page de Internic, clique em **Whois**.  
+2.  Na página inicial da Internic, clique em **Whois**.  
   
-3.  No **Whois** , digite o nome de domínio (por exemplo, contoso.com).  
+3.  Na caixa **Whois**, digite o nome do seu domínio (por exemplo, contoso.com).  
   
-4.  Clique no **domínio** opção e, em seguida, clique em **enviar**.  
+4.  Clique na opção **Domínio** e em seguida, clique em **Enviar**.  
   
-5.  Nos resultados da pesquisa, o nome do seu provedor de serviços de nome de domínio está listado sob **registrador**.  
+5.  Nos resultados da pesquisa, o nome do seu provedor de serviços de nome de domínio está listado sob **Registrar**.  
   
-##  <a name="BKMK_4"></a>Personalizar o acesso via Web remoto  
- Você pode personalizar o seu site de acesso via Web remoto, adicionando uma imagem de logotipo ou em segundo plano pessoal. Você também pode adicionar links na página inicial para que essas informações estão disponíveis para todos os seus usuários. Para obter mais informações, consulte os seguintes tópicos:  
+##  <a name="BKMK_4"></a> Personalizar acesso via Web remoto  
+ Você pode personalizar o site de Acesso via Web Remoto adicionando um logotipo pessoal ou uma imagem de fundo. Você também pode adicionar links na Home page, de modo que essas informações fiquem disponíveis para todos os usuários. Para mais informações, consulte os seguintes tópicos:  
   
--   [Personalizar o acesso via Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_CustomizeRWA)  
+-   [Personalizar acesso via Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_CustomizeRWA)  
   
--   [Personalizar imagens para telas de fundo e logotipos](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_CustomizeImages)  
+-   [Personalizar imagens de fundo e logotipos](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_CustomizeImages)  
   
 -   [Reparar o acesso via Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_RepairRWA)  
   
-###  <a name="BKMK_CustomizeRWA"></a>Personalizar o acesso via Web remoto  
- Você pode personalizar o acesso via Web remoto, alterando o título do site, alterando a imagem de plano de fundo e o logotipo e adicionar links a outros sites na home page.  
+###  <a name="BKMK_CustomizeRWA"></a> Personalizar acesso via Web remoto  
+ Você pode personalizar o Acesso via Web Remoto alterando o título do site, alterando a imagem de plano de fundo e logotipo e adicionando links para outros sites na página inicial.  
   
-##### <a name="to-customize-remote-web-access"></a>Para personalizar o acesso via Web remoto  
+##### <a name="to-customize-remote-web-access"></a>Personalizaro  Acesso via Web Remoto  
   
-1.  Abra o painel.  
+1.  Abra o Painel.  
   
-2.  Clique em **configurações**e, em seguida, clique no **acesso em qualquer local** guia.  
+2.  Clique em **Configurações** e clique na guia **Acesso em Qualquer Local**.  
   
-3.  No **configurações do site** seção, clique em **personalizar**.  
+3.  Na seção **Configurações do site**, clique em **Personalizar**.  
   
-4.  Quando você terminar de personalizar o acesso via Web remoto, clique em **Okey**. Teste suas alterações no acesso via Web remoto.  
+4.  Quando você concluir a personalização do Acesso via Web Remoto, clique em **OK**. Teste as alterações no Acesso via Web Remoto.  
   
-###  <a name="BKMK_CustomizeImages"></a>Personalizar imagens para telas de fundo e logotipos  
- Esta seção fornece informações sobre as imagens que você pode usar para personalizar o acesso via Web remoto.  
+###  <a name="BKMK_CustomizeImages"></a> Personalizar imagens de fundo e logotipos  
+ Esta seção fornece informações sobre as imagens que você pode usar para personalizar o Acesso via Web Remoto.  
   
 #### <a name="image-size"></a>Tamanho da imagem  
  **Imagens de logotipo**  
   
- É recomendável que você use imagens de logotipo que têm 32 x 32 pixels. Imagens maiores são reduzidas para 32 x 32 e imagens menores são ampliadas para 32 x 32, que pode distorcer a imagem.  
+ É recomendável que você use as imagens de logotipo com 32 x 32 pixels. Imagens maiores são reduzidas para 32 x 32 e imagens menores são aumentadas para 32 x 32, o que pode distorcer a imagem.  
   
  **Imagens de plano de fundo**  
   
- Embora não haja nenhum limite de tamanho para imagens de plano de fundo, para obter melhores resultados, é recomendável que você use imagens que são aproximadamente 800 x 500 pixels. A imagem de fundo é colocada no centro (horizontal e vertical) da página de logon. Para ajudar a tornar o texto na página de logon fácil de ler, o centro da imagem de plano de fundo deve ser ter cores claras.  
+ Embora não haja nenhum limite de tamanho para imagens de plano de fundo, para obter melhores resultados, é recomendável que você use imagens de aproximadamente 800 x 500 pixels. A imagem de plano de fundo é colocada no centro (horizontal e vertical) da página de logon. Para ajudar a facilitar a leitura do texto na página de logon, o centro da imagem de plano de fundo deve ser de cor clara.  
   
 #### <a name="image-file-types"></a>Tipos de arquivo de imagem  
- Os seguintes tipos de arquivo de imagem podem ser usados para substituir o logotipo de site e tela de fundo padrão:  
+ Os seguintes tipos de arquivo de imagem podem ser usados para substituir o logotipo de plano de fundo e site padrão:  
   
--   Bitmap (bmp, \*.dib, \*.rle)  
+-   Bitmap (*.bmp, \*.dib, \*.rle)  
   
--   GIF (GIF)  
+-   GIF (*.gif)  
   
--   PNG (*. png)  
+-   PNG (*.png)  
   
--   JPG (jpg)  
+-   JPG (*.jpg)  
   
-###  <a name="BKMK_RepairRWA"></a>Reparar o acesso via Web remoto  
- O Assistente de reparo ajuda você a detectar e resolver problemas com seu roteador ou o nome de domínio. Há duas maneiras de descobrir problemas com acesso via Web remoto:  
+###  <a name="BKMK_RepairRWA"></a> Reparar o acesso via Web remoto  
+ O Assistente de reparo ajuda a detectar e resolver problemas com seu roteador ou o nome de domínio. Há duas maneiras de descobrir problemas com o Acesso via Web Remoto:  
   
--   Nas configurações do servidor no painel, na guia acesso em qualquer lugar, um ícone será exibido com um X vermelho, juntamente com uma descrição do problema.  
+-   Nas configurações do servidor do Painel, na guia Acesso em Qualquer Local, um ícone é exibido com um X vermelho junto com uma descrição do problema.  
   
--   Um alerta no Visualizador de alerta.  
+-   Um alerta no Visualizador de Alertas.  
   
 > [!NOTE]
->  O Assistente de reparo não está disponível até que você ativa o acesso via Web remoto. Para obter informações sobre como ativar o acesso via Web remoto, consulte [ativar o acesso via Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_TurnOnRWA).  
+>  O Assistente de reparo não está disponível até que você ative o Acesso via Web Remoto. Para obter informações sobre como ativar o Acesso via Web Remoto, veja [Ativar o Acesso via Web Remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_TurnOnRWA).  
   
-##### <a name="to-repair-remote-web-access"></a>Para reparar o acesso via Web remoto  
+##### <a name="to-repair-remote-web-access"></a>Reparar o Acesso via Web Remoto  
   
-1.  O painel de logon.  
+1.  Faça logon no Painel.  
   
-2.  Clique em **configurações**e, em seguida, clique no **acesso em qualquer local** guia.  
+2.  Clique em **Configurações** e clique na guia **Acesso em Qualquer Local**.  
   
-3.  Clique em **reparo**. O **acesso via Web remoto de reparo** assistente é iniciado.  
+3.  Clique em **Reparar**. O Assistente **Reparo do Acesso via Web Remoto** é iniciado.  
   
-4.  Clique em **próxima**. O assistente analisa o acesso via Web remoto, identifica o problema e, em seguida, tenta corrigir o problema.  
+4.  Clique em **Avançar**. O assistente analisa o Acesso via Web Remoto, identifica o problema e tenta repará-lo.  
   
-5.  Se você receber um alerta quando o assistente for concluído, você pode clicar em **repetir** para tentar corrigir o problema novamente. Se você continuar a receber um alerta, verifique o alerta para obter informações adicionais sobre o problema e as etapas de solução de problemas.  
+5.  Se você receber um alerta quando o assistente for concluído, você pode clicar em **Tentar novamente** para tentar reparar o problema novamente. Se você continuar a receber um alerta, verifique o alerta para obter informações adicionais sobre o problema e as etapas de solução de problemas.  
   
-##  <a name="BKMK_5"></a>Solucionar problemas de acesso via Web remoto  
+##  <a name="BKMK_5"></a> Solucionar problemas de acesso via Web remoto  
   
--   [Solucionar problemas de conectividade de acesso via Web remoto](../support/Troubleshoot-Remote-Web-Access-connectivity-in-Windows-Server-Essentials.md)  
+-   [Solucionar problemas de conectividade do acesso via Web remoto](../support/Troubleshoot-Remote-Web-Access-connectivity-in-Windows-Server-Essentials.md)  
   
--   [Solucionar problemas de seu firewall](../support/Troubleshoot-your-firewall-in-Windows-Server-Essentials.md)  
+-   [Solucionar problemas de firewall](../support/Troubleshoot-your-firewall-in-Windows-Server-Essentials.md)  
   
 -   [Solucionar problemas de acesso em qualquer lugar](../support/Troubleshoot-Anywhere-Access-in-Windows-Server-Essentials.md)  
   
 ## <a name="see-also"></a>Consulte também  
   
--   [Opções de área de trabalho remotas](Remote-desktop-options.md)  
+-   [Opções de área de trabalho remota](Remote-desktop-options.md)  
   
--   [Use o acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Usar o acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
 -   [Gerenciar o acesso em qualquer lugar](Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
   

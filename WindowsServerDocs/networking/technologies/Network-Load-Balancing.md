@@ -1,159 +1,159 @@
 ---
-title: Balanceamento de carga de rede
-description: Este tópico fornece uma visão geral do recurso balanceamento de carga de rede (NLB) no Windows Server 2016 e inclui links para orientações adicionais sobre como criar, configurar e gerenciar clusters NLB.
-manager: brianlic
+title: Balanceamento de Carga de Rede
+description: Neste tópico, nós fornecemos uma visão geral do balanceamento de carga de rede \(NLB\) recurso no Windows Server 2016. Você pode usar o NLB para gerenciar dois ou mais servidores como um único cluster virtual. NLB melhora a disponibilidade e escalabilidade de aplicativos de servidor de Internet, como aqueles usados na web, FTP, firewall, proxy, rede virtual privada \(VPN\)e a outro missão\-servidores críticos.
+manager: dougkim
 ms.prod: windows-server-threshold
 ms.technology: networking-nlb
 ms.topic: article
 ms.assetid: 244a4b48-06e5-4796-8750-a50e4f88ac72
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b9fd39381316a8bcd06328e7aa75492ed99bc7f1
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
-ms.translationtype: MT
+ms.date: 09/13/2018
+ms.openlocfilehash: d0cf1e1d6b1681a0f18908b08cd17572159e0462
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59881747"
 ---
-# <a name="network-load-balancing"></a>Balanceamento de carga de rede
+# <a name="network-load-balancing"></a>Balanceamento de Carga de Rede
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Este tópico fornece uma visão geral do recurso \(NLB\) balanceamento de carga de rede no Windows Server 2016 e inclui links para orientações adicionais sobre como criar, configurar e gerenciar clusters NLB.
-
-Você pode usar NLB para gerenciar servidores de dois ou mais como um único cluster virtual. NLB aprimora a disponibilidade e escalabilidade dos aplicativos de servidor de Internet, como aqueles usados na web, FTP, firewall, proxy, virtuais privadas \(VPN\) e outros servidores mission\ críticos de rede.   
+Neste tópico, nós fornecemos uma visão geral do balanceamento de carga de rede \(NLB\) recurso no Windows Server 2016. Você pode usar o NLB para gerenciar dois ou mais servidores como um único cluster virtual. NLB melhora a disponibilidade e escalabilidade de aplicativos de servidor de Internet, como aqueles usados na web, FTP, firewall, proxy, rede virtual privada \(VPN\)e a outro missão\-servidores críticos.  
 
 >[!NOTE]
->Windows Server 2016 inclui um novo \(SLB\) Software balanceador inspirado Azure como um componente da infraestrutura \(SDN\) Software de rede definidos. Use SLB em vez de NLB se você estiver usando SDN, são usando cargas de trabalho não são do Windows, precisa de conversão de endereços de rede de saída \(NAT\), ou precisa \(L3\) Layer 3 ou não-TCP com base em balanceamento de carga. Você pode continuar a usar o NLB com o Windows Server 2016 para implantações de não SDN. Para saber mais sobre SLB, consulte [Software carga balanceamento (SLB) para SDN](../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md).
+>Windows Server 2016 inclui um novo balanceador de carga de Software inspirada no Azure \(SLB\) como um componente da rede definida pelo Software \(SDN\) infraestrutura. Use SLB, em vez de NLB se você estiver usando a SDN, usando cargas de trabalho não Windows, precisa de conversão de endereços de rede de saída \(NAT\), ou precisar de camada 3 \(L3\) ou balanceamento de carga não-com base em TCP. Você pode continuar a usar o NLB com o Windows Server 2016 para implantações não SDN. Para obter mais informações sobre o SLB, consulte [Software SLB balanceamento de carga () para SDN](../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md).
 
-O recurso de balanceamento de carga de rede \(NLB\) distribui o tráfego entre vários servidores usando o protocolo de rede TCP\/IP. Combinando dois ou mais computadores que executam aplicativos em um único cluster virtual, o NLB fornece confiabilidade e desempenho para servidores web e outros servidores mission\ crítico.  
+O balanceamento de carga de rede \(NLB\) recurso distribui o tráfego entre vários servidores usando o TCP\/protocolo de rede IP. Combinando dois ou mais computadores que executam aplicativos em um único cluster virtual, o NLB proporciona confiabilidade e desempenho para servidores web e outro missão\-servidores críticos.  
   
-Os servidores em um cluster NLB são chamados *hosts*, e cada host executa uma cópia separada dos aplicativos do servidor. NLB distribui solicitações de cliente em todos os hosts no cluster. Você pode configurar a carga deve ser tratado por cada host. Você também pode adicionar hosts dinamicamente ao cluster para lidar com o aumento na carga. NLB também pode direcionar todo o tráfego para um único host designado, que é chamado a *host padrão*.  
+Os servidores em um cluster NLB se chamam *hosts*, e cada host executa uma cópia separada dos aplicativos de servidor. O NLB distribui as solicitações de entrada dos clientes pelos hosts do cluster. É possível configurar a carga que será tratada por cada host. Você também pode adicionar hosts dinamicamente ao cluster para tratar aumentos de carga. Além disso, o NLB pode direcionar todo o tráfego para um único host designado, chamado de *host padrão*.  
   
-NLB permite que todos os computadores do cluster devem ser atendidas pelo mesmo conjunto de endereços IP e mantém um conjunto de endereços IP exclusivos e dedicados para cada host. Para aplicativos equilibrado load\, quando um host falha ou fica offline, a carga é automaticamente redistribuída entre os computadores que ainda estão funcionando. Quando estiver pronto, o computador offline pode reingressar no cluster transparente e retomar sua parcela da carga de trabalho, que permite que os outros computadores do cluster para lidar com menos tráfego.  
+O NLB permite que todos os computadores no cluster sejam abordados pelo mesmo conjunto de endereços IP, e mantém um conjunto de endereços IP exclusivos e dedicados para cada host. Para carga\-com balanceamento de aplicativos, quando um host falha ou fica offline, a carga é automaticamente redistribuída entre os computadores que ainda estão operando. Quando estiver pronto, o computador offline poderá reintegrar-se ao cluster de forma transparente e retomar sua parcela da carga de trabalho, o que permite que os outros computadores do cluster lidem com menos tráfego.  
   
-## <a name="BKMK_APP"></a>Aplicativos práticos  
-NLB é útil para assegurar que os aplicativos sem estado, como servidores web que executam o Internet Information Services \(IIS\), estão disponíveis com tempo ocioso mínimo e que estão escalonáveis \ (adicionando servidores adicionais como o increases\ de carga). As seções a seguir descrevem como NLB dá suporte a capacidade de gerenciamento de cluster servidores que executam esses aplicativos, alta disponibilidade e escalabilidade.  
+## <a name="practical-applications"></a>Aplicações práticas  
+O NLB é útil para garantir sem monitoração de estado ou aplicativos, como servidores web executando serviços de informações da Internet \(IIS\), estão disponíveis com inatividade mínima e que eles sejam dimensionáveis \(adicionando mais servidores como a carga aumenta\). As seções a seguir descrevem como o NLB suporta alta disponibilidade, escalabilidade e gerenciamento dos servidores em cluster que executam esses aplicativos.  
   
 ### <a name="high-availability"></a>Alta disponibilidade  
-Um sistema de alta disponibilidade confiável fornece um nível de serviço com tempo ocioso mínimo aceitável. Para proporcionar alta disponibilidade, NLB inclui built\ recursos que podem executar automaticamente:  
+Um sistema altamente disponível oferece, de forma confiável, um nível aceitável de serviço com tempo de inatividade mínimo. Para fornecer alta disponibilidade, o NLB inclui criado\-nos recursos que podem automaticamente:  
   
--   Detectar um host de cluster que falha ou fica offline e, em seguida, recuperar.  
+-   Detectar um host de cluster que falha ou fica offline, e depois recuperar.  
   
--   Equilibre a carga de rede quando hosts são adicionados ou removidos.  
+-   Equilibrar a carga da rede quando hosts são adicionados ou removidos.  
   
--   Recuperar e redistribuir a carga de trabalho até dez segundos.  
+-   Recuperar e redistribuir carga de trabalho no prazo de dez segundos.  
   
 ### <a name="scalability"></a>Escalabilidade  
-Escalabilidade é a medida de quanto um computador, serviço ou aplicativo pode crescer para atender às necessidades crescentes de desempenho. Para clusters NLB escalabilidade é a capacidade de adicionar um ou mais sistemas incrementais a um cluster existente quando a carga total do cluster excede seus recursos. Para dar suporte a escalabilidade, você pode fazer o seguinte com NLB:  
+Escalabilidade é a medida que determina como um computador, serviço ou aplicativo pode atender melhor às necessidades crescentes de desempenho. No caso de clusters NLB , a escalabilidade é a capacidade de adicionar paulatinamente um ou mais sistemas a um cluster existente quando a carga total sobre o cluster excede seus recursos. Para dar suporte à escalabilidade, o NLB pode fazer o seguinte:  
   
--   Equilibre solicitações de carga no cluster NLB para serviços TCP\/IP individuais.  
+-   Equilibrar solicitações de carga no cluster NLB para TCP individual\/serviços IP.  
   
--   Suporte a até 32 computadores em um único cluster.  
+-   Dar suporte para até 32 computadores em um único cluster.  
   
--   Equilibrar várias solicitações de carregamento de servidor \ (do mesmo cliente ou de vários clients\) em vários hosts no cluster.  
+-   Equilibrar as várias solicitações de carga \(do mesmo cliente ou de vários clientes\) em vários hosts no cluster.  
   
--   Adicione hosts ao cluster NLB como a carga aumenta, sem causar falha no cluster.  
+-   Adicionar hosts ao cluster do NLB à medida que a carga aumenta, sem fazer o cluster falhar.  
   
--   Remova os hosts do cluster quando diminui a carga.  
+-   Remover os hosts do cluster quando a carga diminui.  
   
--   Ative alto desempenho e baixa sobrecarga por meio de uma implementação pipelining integral. Pipelining permite que as solicitações sejam enviadas ao cluster NLB sem aguardar uma resposta a uma solicitação anterior.  
+-   Permitir alto desempenho e baixa sobrecarga através de implementação com pipelining integral. O pipelining permite que as solicitações sejam enviadas ao cluster NLB sem aguardar resposta da solicitação enviada anteriormente.  
   
 ### <a name="manageability"></a>Capacidade de gerenciamento  
-Para dar suporte a capacidade de gerenciamento, você pode fazer o seguinte com NLB:  
+Para dar suporte à escalabilidade, o NLB pode fazer o seguinte:  
   
--   Gerenciar e configurar vários clusters NLB e os hosts de cluster de um único computador, usando o Gerenciador NLB ou o [Cmdlets de balanceamento de carga de rede (NLB) no Windows PowerShell](https://technet.microsoft.com/library/hh801274.aspx).
+-   Gerenciar e configurar vários clusters NLB e os hosts de cluster de um único computador usando o Gerenciador NLB ou o [os Cmdlets de balanceamento de carga de rede (NLB) no Windows PowerShell](https://technet.microsoft.com/library/hh801274.aspx).
   
--   Especifica o comportamento de uma única porta IP ou grupo de portas balanceamento usando as regras de gerenciamento de porta.  
+-   Especificar o comportamento do balanceamento de carga para uma única porta ou para um grupo de portas IP usando regras de gerenciamento de portas.  
   
--   Defina regras de porta diferente para cada site. Se você usar o mesmo conjunto de servidores equilibrado load\ para vários aplicativos ou sites, regras de porta são com base no endereço IP virtual de destino \(using virtual clusters\).  
+-   Definir regras de porta diferentes para cada site. Se você usar o mesmo conjunto de carga\-servidores com balanceamento de vários aplicativos ou sites, as regras de porta baseiam-se no endereço IP virtual de destino \(usando clusters virtuais\).  
 
--   Direcioná-todas as solicitações de cliente para um único host usando opcional e regras de single\-host. NLB roteia solicitações de cliente para um host específico que esteja executando aplicativos específicos.  
+-   Direcionar todas as solicitações de cliente para um único host com o uso opcional de único\-hospedar as regras. O NLB roteia solicitações de clientes para um host específico que esteja executando aplicativos específicos.  
 
--   Bloquear o acesso de rede indesejadas para determinadas portas IP.  
+-   Bloquear o acesso indesejado à rede para determinadas portas IP.  
 
--   Habilitar o suporte do protocolo IGMP \(IGMP\) nos hosts de cluster para controlar a saturação de porta do switch \ (onde pacotes de rede de entrada são enviadas para todas as portas o switch\) ao operar no modo de multicast.  
+-   Habilitar o protocolo IGMP \(IGMP\) suporte nos hosts de cluster para controlar inundações porta do comutador \(onde os pacotes de rede de entrada são enviados para todas as portas no comutador\) ao operar em modo de multicast.  
 
--   Iniciar, parar e controlar as ações de NLB remotamente usando comandos do Windows PowerShell ou scripts.  
+-   Iniciar, parar e controlar as ações NLB remotamente usando comandos do Windows PowerShell ou scripts.  
 
--   Exiba o Log de eventos do Windows para verificar os eventos NLB. NLB registra em log todas as ações e alterações de cluster no log de eventos.  
+-   Exibir o log de eventos do Windows para verificar eventos do NLB. O NLB registra todas as ações e alterações de cluster no log de eventos.  
 
 ## <a name="important-functionality"></a>Funcionalidade importante  
  
-NLB é instalado como um componente de padrão driver de rede do Windows Server. Suas operações são transparentes para a pilha de rede TCP\/IP. A figura a seguir mostra a relação entre NLB e outros componentes de software em uma configuração típica.  
+O NLB é instalado como um componente de padrão driver de rede do Windows Server. Suas operações são transparentes para o TCP\/pilha da rede IP. A figura a seguir mostra a relação entre NLB e outros componentes de software em uma configuração típica.  
   
-![Balanceamento de carga de rede e outros componentes de software](../media/NLB/nlb.jpg)  
+![O balanceamento de carga de rede e outros componentes de software](../media/NLB/nlb.jpg)  
   
-A seguir estão os principais recursos do NLB.  
+A seguir é os principais recursos do NLB.  
   
-- Não requer nenhuma alteração de hardware para executar.  
+- Não requer alterações de hardware para funcionar.  
   
-- Fornece ferramentas de balanceamento de carga de rede para configurar e gerenciar vários clusters e todos os hosts de um único computador local ou remoto.  
+- Oferece Ferramentas de Balanceamento de Carga de Rede para configurar e gerenciar vários clusters e todos os hosts do cluster em um único computador remoto ou local.  
   
-- Permite que os clientes acessem o cluster usando um único nome lógico de Internet e o endereço IP virtual, que é conhecido como endereço IP do cluster \ (mantém os nomes individuais para cada computer\). NLB permite vários endereços IP virtuais para servidores de hospedagem múltipla.  
+- Permite que os clientes acessem o cluster usando um só nome lógico de Internet e endereço IP virtual, o que é conhecido como endereço IP do cluster \(mantém os nomes individuais de cada computador\). O NLB permite vários endereços IP virtuais para servidores multihomed.  
   
 > [!NOTE]  
-> Quando você implanta VMs como clusters virtuais, NLB não exige servidores seja de hospedagem múltipla com vários endereços IP virtuais.  
+> Quando você implanta VMs como clusters virtuais, o NLB não requer servidores sejam multihomed para ter vários endereços IP virtuais.  
   
-- Permite NLB a ser vinculado a vários adaptadores de rede, que permite configurar vários clusters independentes em cada host. Suporte para vários adaptadores de rede é diferente de clusters virtuais, clusters virtuais permitem que você configurar vários clusters em um único adaptador de rede.  
+- Permite que o NLB seja vinculado a vários adaptadores de rede, o que permite configurar vários clusters independentes em cada host. O suporte a vários adaptadores de rede difere dos clusters virtuais, pois os clusters virtuais permitem configurar vários clusters em um único adaptador de rede.  
   
-- Não exige nenhuma modificação para aplicativos de servidor para que eles podem executar em um cluster NLB.  
+- Não requer modificações para aplicativos de servidor para que eles possam ser executados em um cluster NLB.  
   
-- Pode ser configurado para adicionar automaticamente um host ao cluster se esse host de cluster falha e subsequentemente é colocado online. O host adicionado pode começar a lidar com novas solicitações de servidor de clientes.  
+- Pode ser configurado para adicionar automaticamente um host ao cluster se esse host de cluster falhar e voltar ao modo online posteriormente. O host adicionado pode começar a manipular os pedidos de novos servidores clientes.  
   
--   Permite que você tire computadores offline para manutenção preventiva sem afetar as operações de cluster nos outros hosts.  
+-   Permite que você coloque computadores offline para manutenção preventiva sem perturbar as operações de cluster nos outros hosts.  
   
-## <a name="BKMK_HARD"></a>Requisitos de hardware  
-A seguir é os requisitos de hardware para executar um cluster NLB.  
+## <a name="hardware-requirements"></a>Requisitos de hardware  
+A seguir está os requisitos de hardware para executar um cluster NLB.  
   
--   Todos os hosts no cluster devem residir na mesma sub-rede.  
+-   Todos os hosts do cluster devem residir na mesma sub-rede.  
   
--   Não há nenhuma restrição no número de adaptadores de rede em cada host e hosts diferentes podem ter um número diferente de adaptadores.  
+-   Não há restrição ao número de adaptadores de rede em cada host, e hosts diferentes podem ter um número diferente de adaptadores.  
   
--   Dentro de cada cluster, todos os adaptadores de rede devem ser multicast ou unicast. NLB não oferece suporte a um ambiente misto de multicast e unicast em um único cluster.  
+-   Dentro de cada cluster, todos os adaptadores de rede devem ser multicast ou unicast. O NLB não dá suporte a ambientes mistos unicast e multicast em um único cluster.  
   
--   Se você usar o modo unicast, o adaptador de rede é usado para manipular o tráfego client\-to\-cluster deve ter suporte alterando seu endereço de \(MAC\) de controle de acesso de mídia.  
+-   Se você usar o modo unicast, o adaptador de rede que é usado para lidar com o cliente\-à\-tráfego de cluster deve apoiar a mudança de seu controle de acesso de mídia \(MAC\) endereço.  
   
-## <a name="BKMK_SOFT"></a>Requisitos de software  
-A seguir é os requisitos de software para executar um cluster NLB.  
+## <a name="software-requirements"></a>Requisitos de software  
+A seguir está os requisitos de software para executar um cluster NLB.  
   
--   TCP\/IP somente pode ser usado no adaptador para o qual NLB está habilitado em cada host. Não adicione quaisquer outros protocolos \ (por exemplo, IPX\) a esse adaptador.  
+-   Apenas o protocolo TCP\/IP pode ser usado no adaptador para o qual o NLB seja habilitado em cada host. Não adicione todos os outros protocolos \(por exemplo, IPX\) para este adaptador.  
   
 -   Os endereços IP dos servidores no cluster devem ser estáticos.  
   
 > [!NOTE]  
-> NLB não oferece suporte a \(DHCP\) Dynamic Host Configuration Protocol. NLB desabilita o DHCP em cada interface que configura o.  
+> NLB não dá suporte a Dynamic Host Configuration Protocol \(DHCP\). O NLB desabilita o DHCP em cada interface que ele configura.  
   
-## <a name="BKMK_INSTALL"></a>Informações de instalação  
-Você pode instalar NLB usando o Gerenciador do servidor ou os comandos do Windows PowerShell para NLB.
+## <a name="installation-information"></a>Informações sobre a instalação  
+Você pode instalar o NLB usando o Gerenciador do servidor ou os comandos do Windows PowerShell para NLB.
 
-Opcionalmente, você pode instalar as ferramentas de balanceamento de carga de rede para gerenciar um cluster NLB local ou remoto. As ferramentas incluem os comandos de NLB Windows PowerShell e Gerenciador de balanceamento de carga de rede.
+Opcionalmente, você pode instalar as Ferramentas de Balanceamento de Carga de Rede para gerenciar um cluster NLB local ou remoto. As ferramentas incluem o Gerenciador de balanceamento de carga de rede e os comandos do PowerShell do Windows NLB.
 
 ### <a name="installation-with-server-manager"></a>Instalação com o Gerenciador do servidor
 
-No Gerenciador do servidor, você pode usar a adição de funções e recursos do Assistente para adicionar o **balanceamento de carga de rede** recurso. Quando você concluir o assistente, NLB é instalado, e você não precisa reiniciar o computador.
+No Gerenciador do servidor, você pode usar o assistente Adicionar funções e recursos para adicionar o **balanceamento de carga de rede** recurso. Quando você concluir o assistente, o NLB é instalado e você não precisará reiniciar o computador.
 
 
 ### <a name="installation-with-windows-powershell"></a>Instalação com o Windows PowerShell  
 
-Para instalar o NLB usando o Windows PowerShell, execute o seguinte comando em um prompt do Windows PowerShell com privilégios elevados no computador onde deseja instalar o NLB.
+Para instalar o NLB usando o Windows PowerShell, execute o seguinte comando em um prompt elevado do Windows PowerShell no computador onde você deseja instalar o NLB.
 
     
     Install-WindowsFeature NLB -IncludeManagementTools
     
-Após a instalação estiver concluída, nenhuma reinicialização do computador é necessária.
+Após a instalação for concluída, nenhuma reinicialização do computador é necessária.
 
-Para obter mais informações, consulte [Install-WindowsFeature](https://technet.microsoft.com/library/jj205467.aspx).
+Para obter mais informações, consulte [Install-WindowsFeature](https://docs.microsoft.com/powershell/module/servermanager/install-windowsfeature?view=win10-ps).
 
 ### <a name="network-load-balancing-manager"></a>Gerenciador de balanceamento de carga de rede
-Para abrir o Gerenciador de balanceamento de carga de rede no Gerenciador do servidor, clique em **ferramentas**e clique em **Gerenciador de balanceamento de carga de rede**.
+Para abrir o Gerenciador de Balanceamento de Carga de Rede em um Gerenciador do Servidor, clique em **Ferramentas** e depois clique em **Gerenciador de Balanceamento de Carga de Rede**.
   
-## <a name="BKMK_LINKS"></a>Recursos adicionais  
+## <a name="additional-resources"></a>Recursos adicionais  
 A tabela a seguir fornece links para informações adicionais sobre o recurso NLB.  
   
 |Tipo de conteúdo|Referências|  
 |----------------|--------------|  
-|Implantação|[Guia de implantação de balanceamento de carga de rede](https://technet.microsoft.com/library/cc754833(WS.10).aspx) & #124; [Configurando com serviços de Terminal de balanceamento de carga de rede](https://technet.microsoft.com/library/cc771300(v=WS.10).aspx)|  
-|Operações|[Gerenciando Clusters de balanceamento de carga de rede](https://technet.microsoft.com/library/cc753954(WS.10).aspx) & #124; [Definir parâmetros de balanceamento de carga de rede](https://technet.microsoft.com/library/cc731619(WS.10).aspx) & #124; [Controlando Hosts em Clusters de balanceamento de carga de rede](https://technet.microsoft.com/library/cc770870(WS.10).aspx)|  
-|Solução de problemas|[Solução de problemas de Clusters de balanceamento de carga de rede](https://technet.microsoft.com/library/cc732592(WS.10).aspx) & #124; [Erros e eventos do Cluster NLB](https://technet.microsoft.com/library/cc731678(WS.10).aspx)|
-|Ferramentas e configurações|[Cmdlets do PowerShell de Windows de balanceamento de carga de rede](https://go.microsoft.com/fwlink/p/?LinkId=238123)|
-|Recursos da comunidade|[Fórum de \(Clustering\) alta disponibilidade](https://go.microsoft.com/fwlink/p/?LinkId=230641)
+|Implantação|[Guia de implantação de balanceamento de carga de rede](https://technet.microsoft.com/library/cc754833(WS.10).aspx) &#124; [configurando com serviços de Terminal de balanceamento de carga de rede](https://technet.microsoft.com/library/cc771300(v=WS.10).aspx)|  
+|Operações|[Gerenciar Clusters de balanceamento de carga de rede](https://technet.microsoft.com/library/cc753954(WS.10).aspx) &#124; [definindo parâmetros de balanceamento de carga de rede](https://technet.microsoft.com/library/cc731619(WS.10).aspx) &#124; [controlando Hosts em Clusters de balanceamento de carga de rede](https://technet.microsoft.com/library/cc770870(WS.10).aspx)|  
+|Solução de problemas|[Solução de problemas de Clusters de balanceamento de carga de rede](https://technet.microsoft.com/library/cc732592(WS.10).aspx) &#124; [erros e eventos de Cluster NLB](https://technet.microsoft.com/library/cc731678(WS.10).aspx)|
+|Ferramentas e configurações|[Cmdlets do PowerShell do Windows de balanceamento de carga de rede](https://go.microsoft.com/fwlink/p/?LinkId=238123)|
+|Recursos da comunidade|[Alta disponibilidade \(Clustering\) fórum](https://go.microsoft.com/fwlink/p/?LinkId=230641)

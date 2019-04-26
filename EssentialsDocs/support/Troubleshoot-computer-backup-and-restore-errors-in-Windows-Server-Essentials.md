@@ -1,5 +1,5 @@
 ---
-title: Solucionar problemas de backup do computador e restaurar erros no Windows Server Essentials
+title: Solucionar problemas referentes a erros de backup restauração do computador no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 06/25/2013
@@ -13,233 +13,234 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 37e79661442ba9f66a564b6c6c8fb57db1978454
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
-ms.translationtype: MT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812327"
 ---
-# <a name="troubleshoot-computer-backup-and-restore-errors-in-windows-server-essentials"></a>Solucionar problemas de backup do computador e restaurar erros no Windows Server Essentials
+# <a name="troubleshoot-computer-backup-and-restore-errors-in-windows-server-essentials"></a>Solucionar problemas referentes a erros de backup restauração do computador no Windows Server Essentials
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Use estes procedimentos para solucionar problemas de backups de computador no Windows Server Essentials, incluindo problemas de configuração de backup, incompletos ou malsucedidos backups, alertas de integridade de backup e problemas com o arquivo, pasta ou todo o sistema restaura.  
+Use estes procedimentos para solução de problemas de backups de computador no Windows Server Essentials, incluindo problemas de configuração de backup, os backups incompletos ou malsucedidos, alertas de integridade de backup e problemas com arquivos, pastas ou restaurações de todo o sistema.  
   
 > [!NOTE]
 >  Para obter as informações de solução de problemas mais recentes da comunidade do Windows Server Essentials, visite o [Fórum do Windows Server Essentials](https://social.technet.microsoft.com/Forums//winserveressentials/threads).  
   
-##  <a name="BKMK_TroubleshootBackupConfigurationIssues"></a>Solucionar problemas de configuração de backup para um computador conectado  
- Use estes procedimentos para solucionar problemas com as configurações de backup para computadores que são armazenados em backup no seu servidor Windows Server Essentials.  
+##  <a name="BKMK_TroubleshootBackupConfigurationIssues"></a> Solucionar problemas de configuração de backup para um computador conectado  
+ Use estes procedimentos para solucionar problemas com as configurações de backup para computadores que estão incluídos no backup em seu servidor do Windows Server Essentials.  
   
 ### <a name="errors"></a>Erros  
   
--   Configuração de backup não foi concluída com êxito  
+-   Configuração de backup não foi concluído com êxito  
   
--   A coleta de informações de erro para o computador  
+-   Erro na coleta de informações para o computador  
   
--   Computador de remoção de erro de backup  
+-   Erro ao remover o computador do backup  
   
-### <a name="resolutions"></a>Resoluções  
+### <a name="resolutions"></a>Soluções  
   
-##### <a name="to-troubleshoot-errors-that-occur-while-you-configure-backups-for-a-connected-computer"></a>Para solucionar os erros que ocorrem enquanto você configura os backups para um computador conectado  
+##### <a name="to-troubleshoot-errors-that-occur-while-you-configure-backups-for-a-connected-computer"></a>Para solucionar problemas de erros que ocorrem enquanto você configurar backups para um computador conectado  
   
-1.  Verifique se que o computador estiver conectado à rede por meio de um dispositivo de rede.  
+1.  Verifique se que o computador está conectado à rede por meio de um dispositivo de rede.  
   
-2.  Verifique se o dispositivo de rede que o computador estiver conectado a também está conectado à rede, ligada e funcionando corretamente.  
+2.  Verifique se o dispositivo de rede que o computador está conectado a também está conectado à rede, ligado e funcionando corretamente.  
   
-3.  Certifique-se de que o serviço de Backup do cliente do Windows Server e o serviço de provedor de Backup do Windows Server cliente computador estiver executando no servidor.  
+3.  Certifique-se de que o serviço de backup do computador cliente do Windows Server e o Serviço de provedor de backup do computador cliente do Windows Server estão sendo executados no servidor.  
   
     ###### <a name="to-start-computer-backup-services-on-the-server"></a>Para iniciar os serviços de backup do computador no servidor  
   
-    1.  No servidor, clique em **iniciar**, clique em **ferramentas administrativas**e clique em **serviços**.  
+    1.  No servidor, clique em **Iniciar**, clique em **Ferramentas Administrativas** e clique em **Serviços**.  
   
-    2.  Role para baixo e clique em **provedor de serviço do Windows Server cliente computador Backup**. Se o status do serviço não for **iniciado**, clique com botão direito do serviço e, em seguida, clique em **iniciar**.  
+    2.  Role para baixo e clique em **Serviço de provedor de backup do computador cliente do Windows Server**. Se o status do serviço não for **Iniciado**, clique com o botão direito no serviço e depois clique em **Iniciar**.  
   
-    3.  Clique em **serviço Backup do computador do cliente Windows Server**. Se o status do serviço não for **iniciado**, clique com botão direito do serviço e, em seguida, clique em **iniciar**.  
+    3.  Clique em **Serviço de backup do computador cliente do Windows Server**. Se o status do serviço não for **Iniciado**, clique com o botão direito no serviço e depois clique em **Iniciar**.  
   
-    4.  Fechar **serviços**.  
+    4.  Feche **Serviços**.  
   
-4.  Certifique-se de que o serviço de provedor de Backup do Windows Server cliente computador está em execução no computador cliente.  
+4.  Certifique-se de que o Serviço de provedor de backup do computador cliente do Windows Server está sendo executado no computador cliente.  
   
     ###### <a name="to-start-the-computer-backup-service-on-the-client-computer"></a>Para iniciar o serviço de backup do computador no computador cliente  
   
-    1.  No computador cliente, clique em **iniciar**, tipo **serviços** no **pesquisar programas e arquivos** caixa de texto e pressione Enter.  
+    1.  No computador cliente, clique em **Iniciar**, digite **Serviços** na caixa de texto **Pesquisar programas e arquivos** e pressione Enter.  
   
-    2.  Role para baixo e clique em **provedor de serviço do Windows Server cliente computador Backup**. Se o status do serviço não for **iniciado**, clique com botão direito do serviço e, em seguida, clique em **iniciar**.  
+    2.  Role para baixo e clique em **Serviço de provedor de backup do computador cliente do Windows Server**. Se o status do serviço não for **Iniciado**, clique com o botão direito no serviço e depois clique em **Iniciar**.  
   
-    3.  Fechar **serviços**.  
+    3.  Feche **Serviços**.  
   
 5.  Verifique os alertas para determinar se há erros no banco de dados de backup. Se houver erros, siga as instruções no alerta para reparar o banco de dados de backup.  
   
-6.  Desinstalar o software do Windows Server Essentials conector do computador e reinstalá-lo. Para obter mais informações, consulte os tópicos [desinstalar o software do conector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13) e [instalar o software do conector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_11).  
+6.  Desinstale o software do Windows Server Essentials Connector do computador e então reinstale-o. Para obter mais informações, consulte os tópicos [Desinstalar o software Connector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13) e [Instalar o software Connector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_11).  
   
-##  <a name="BKMK_TroubleshootaBackupThatDidNotCompleteProperly"></a>Solucionar problemas de um backup que não foi concluída corretamente  
- Quando um backup tem status malsucedida, nenhuma parte do backup foi bem-sucedida e os dados não estão disponíveis para a restauração. No entanto, quando um backup tem status incompleto, nem todos os itens especificado no backup configuração incluídos no backup, mas alguns dados podem estar disponíveis para a restauração.  
+##  <a name="BKMK_TroubleshootaBackupThatDidNotCompleteProperly"></a> Solucionar problemas de um backup que não foi concluída corretamente  
+ Quando um backup tem status Malsucedido, nenhuma parte do backup foi bem-sucedida e nenhum dado está disponível para você realizar a restauração. No entanto, quando um backup tem status Incompleto, nem todos os itens especificados na configuração do backup tiveram seu backup feito, mas alguns dados podem estar disponíveis para você realizar a restauração.  
   
 ### <a name="errors"></a>Erros  
   
--   Backup está incompleto  
+-   O backup é incompleto  
   
--   Backup malsucedida  
+-   Backup malsucedido  
   
-### <a name="resolutions"></a>Resoluções  
+### <a name="resolutions"></a>Soluções  
   
-##### <a name="to-identify-volumes-that-were-not-backed-up-successfully"></a>Para identificar os volumes que não foram feitos com êxito  
+##### <a name="to-identify-volumes-that-were-not-backed-up-successfully"></a>Para identificar os volumes cujo backup não foram feito com êxito  
   
-1.  Abrir o painel do Windows Server Essentials e clique em **computadores e Backup**.  
+1.  Abra o Painel do Windows Server Essentials e, em seguida, clique em **Computadores e Backup**.  
   
-2.  Clique no nome do computador onde backup não for concluída com êxito e, em seguida, clique em **exibir as propriedades de computador** no **tarefas** painel.  
+2.  Clique no nome do computador em que backup não concluído com êxito e, em seguida, clique em **Exibir as propriedades do computador** no painel **Tarefas**.  
   
-3.  Clique no backup que não for concluída com êxito e, em seguida, clique em **exibir detalhes**.  
+3.  Clique no backup que não foi concluído com êxito e, em seguida, clique em **Exibir detalhes**.  
   
-4.  No **Backup detalhes** caixa de diálogo, uma marca de seleção verde é exibida no status de cada volume que foi feito com êxito.  
+4.  Na caixa de diálogo **Detalhes de Backup**, uma marca de seleção verde é exibida no status de todos os volumes cujo backup foi realizado com êxito.  
   
-##### <a name="to-troubleshoot-an-unsuccessful-backup-of-a-volume"></a>Para solucionar um backup malsucedido de um volume  
+##### <a name="to-troubleshoot-an-unsuccessful-backup-of-a-volume"></a>Para solucionar problemas de um backup malsucedido de um volume  
   
 1.  Certifique-se de que o disco rígido está conectado ao computador, ligado e funcionando corretamente.  
   
-2.  Executar **chkdsk /f /r** corrigir os erros no disco rígido (**/f**) e recupere informações legíveis de todos os setores defeituosos (**/r**). Para obter mais informações sobre como executar **chkdsk**, consulte [CHKDSK](https://go.microsoft.com/fwlink/?LinkId=206562).  
+2.  Execute **chkdsk /f /r** para corrigir quaisquer erros no disco rígido (**/f**) e recupere informações que podem ser lidas a partir de eventuais setores ruins (**/r**). Para obter mais informações sobre a execução do **chkdsk**, consulte [CHKDSK](https://go.microsoft.com/fwlink/?LinkId=206562).  
   
-3.  Certifique-se de que o computador não foi desligado ou desconectado da rede enquanto estava executando o backup.  
+3.  Certifique-se de que o computador não foi desligado ou desconectado da rede durante a execução do backup.  
   
-4.  Verifique se há espaço livre suficiente em cada volume para backup para ser executado. Backup requer espaço em disco adicional no computador cliente para criar um instantâneo VSS. Em qualquer volume que não é reservado do sistema, pelo menos 10% do espaço em disco disponível devem ser gratuito. Em um volume de sistema reservado, se o tamanho do volume tem menos de 500 MB, VSS requer 32 MB de espaço livre criar um instantâneo; Se o volume for 500 MB ou superior, VSS requer 320 MB de espaço livre.  
+4.  Verifique se há espaço livre suficiente em cada volume para que o backup seja executado. O backup exige espaço em disco adicional no computador cliente para criar uma imagem instantânea VSS. Em qualquer volume que não é reservado do sistema, pelo menos 10% do espaço em disco disponível deve estar livre. Em um volume de sistema reservado, se o tamanho do volume é menor do que 500 MB, o VSS requer 32 MB de espaço livre criar uma imagem instantânea; se o volume for 500 MB ou maior, o VSS requer 320 MB de espaço livre.  
   
-     Se houver espaço livre suficiente em um volume, tente um dessas resoluções:  
+     Se não houver espaço livre suficiente disponível em um volume, tente uma dessas soluções:  
   
-    -   Estenda o volume. Você pode ampliar qualquer volume básico ou dinâmico, exceto o volume do sistema reservado.  
+    -   Estenda o volume. Você pode estender qualquer volume básico ou dinâmico, exceto o volume reservado pelo sistema.  
   
         ###### <a name="to-extend-a-volume"></a>Para estender um volume  
   
-        1.  No painel de controle, clique em **sistema e segurança**.  
+        1.  No painel de controle, clique em **Sistema e segurança**.  
   
-        2.  Em **ferramentas administrativas**, clique em **criar e formatar partições do disco rígido**.  
+        2.  Em **Ferramentas Administrativas**, clique em **Criar e formatar partições de disco rígido**.  
   
-        3.  Clique com botão direito no volume que você deseja estender. Se **estender Volume** é habilitado, selecione essa opção. Se a opção não estiver habilitada, você não pode estender o volume.  
+        3.  Clique com o botão direito no volume que você deseja estender. Se a opção **Estender volume** está habilitada, selecione essa opção. Se a opção não estiver habilitada, você não pode estender o volume.  
   
-        4.  Siga as etapas no Assistente de Volume estender para estender o volume.  
+        4.  Para estender o volume, siga as etapas do Assistente para estender volume.  
   
-    -   Exclua o conteúdo do volume para liberar mais espaço.  
+    -   Exclua o conteúdo do volume para disponibilizar mais espaço.  
   
         > [!NOTE]
-        >  Se você precisar liberar espaço no volume do sistema reservado, você pode mover a imagem de recuperação do sistema para um volume diferente. Para obter instruções, consulte [implantar uma imagem de recuperação do sistema](https://technet.microsoft.com/library/dd744280\(v=ws.10\).aspx).  
+        >  Se você precisar liberar espaço no volume do sistema reservado, você pode mover a imagem de recuperação do sistema para um volume diferente. Para instruções, consulte [Implantar uma imagem de recuperação de sistema](https://technet.microsoft.com/library/dd744280\(v=ws.10\).aspx).  
   
-    -   Exclua o volume usando o backup do cliente. Faça isso somente se ele não é importante para você manter uma cópia de backup dos dados no volume.  
+    -   Exclua o volume do backup do cliente. Faça isso apenas se não é importante para você manter uma cópia de backup dos dados no volume.  
   
         > [!WARNING]
-        >  Se você excluir o volume do sistema reservado de um backup do cliente, o sistema de cliente não será feito backup, e não será capaz de executar uma restauração completa do sistema no computador.  
+        >  Se você excluir o volume reservado pelo sistema de um backup do cliente, o backup do sistema do cliente não será feito e você não poderá realizar uma restauração completa do sistema no computador.  
   
-5.  Procure outras alertas no servidor que pode indicar que não há espaço em disco suficiente no servidor de backup seja concluído com êxito. Siga as instruções no alerta para corrigir o problema.  
+5.  Verifique se há outros alertas no servidor que podem indicar que não há espaço em disco suficiente no servidor para que o backup seja concluído com êxito. Siga as instruções no alerta para corrigir o problema.  
   
-6.  Executar **vssadmin** em um prompt de comando para solucionar problemas de Volume Shadow Copy Service (VSS) emite. Para obter informações sobre **vssadmin**, consulte [VSSADMIN](https://go.microsoft.com/fwlink/?LinkID=94332).  
+6.  Execute **vssadmin** em um prompt de comando para solucionar problemas do Volume Shadow Copy Service (VSS). Para obter informações sobre o **vssadmin**, consulte [VSSADMIN](https://go.microsoft.com/fwlink/?LinkID=94332).  
   
-##  <a name="BKMK_TroubleshootBackupHealthAlertIssues"></a>Solucionar problemas de alerta de integridade de backup  
+##  <a name="BKMK_TroubleshootBackupHealthAlertIssues"></a> Solucionar problemas de alerta de integridade de backup  
   
 ### <a name="errors"></a>Erros  
   
--   O serviço de provedor do Windows Server Solutions computador Backup parou de funcionar  
+-   O serviço de provedor de backup do computador do Windows Server Solutions parou de funcionar  
   
--   O serviço de provedor do Windows Server Solutions computador cliente Backup parou de funcionar  
+-   O serviço de provedor de backup do computador cliente do Windows Server Solutions parou de funcionar  
   
-### <a name="resolutions"></a>Resoluções  
+### <a name="resolutions"></a>Soluções  
   
-##### <a name="to-troubleshoot-a-backup-health-alert"></a>Para solucionar um alerta de integridade de backup  
+##### <a name="to-troubleshoot-a-backup-health-alert"></a>Para solucionar problemas de um alerta de integridade de backup  
   
 1.  Se um alerta informa que o banco de dados de backup tem problemas, siga as instruções no alerta para corrigir o problema.  
   
-2.  Se um alerta informa que um serviço de backup não está funcionando, tente iniciar o serviço no servidor ou o computador cliente que recebeu a mensagem de erro.  
+2.  Se um alerta informa que um serviço de backup não está em execução, tente iniciar o serviço no servidor ou no computador cliente em que você recebeu a mensagem de erro.  
   
-    ###### <a name="to-start-backup-services-on-the-server"></a>Para iniciar os serviços de backup no servidor  
+    ###### <a name="to-start-backup-services-on-the-server"></a>Para iniciar serviços do backup do servidor  
   
-    1.  No servidor, clique em **iniciar**e clique em **ferramentas administrativas**e clique em **serviços**.  
+    1.  No servidor, clique em **Iniciar**, clique em **Ferramentas Administrativas** e clique em **Serviços**.  
   
         > [!NOTE]
-        >  Se você estiver administrando o servidor remotamente, você deve usar a Conexão de área de trabalho remota para acessar a área de trabalho do servidor. Para obter informações sobre como usar a Conexão de área de trabalho remota, consulte [conectar a outro computador usando a Conexão de área de trabalho remota](https://windows.microsoft.com/windows-vista/Connect-to-another-computer-using-Remote-Desktop-Connection).  
+        >  Se você estiver administrando o servidor remotamente, você deve usar a conexão de área de trabalho remota para acessar a área de trabalho do servidor. Para obter informações sobre como usar a Conexão de Área de Trabalho Remota, consulte [Conectar-se a outro computador usando a Conexão de Área de Trabalho Remota](https://windows.microsoft.com/windows-vista/Connect-to-another-computer-using-Remote-Desktop-Connection).  
   
-    2.  Role para baixo e clique em **provedor de serviço do Windows Server cliente computador Backup**. Se o status do serviço não for **iniciado**, clique com botão direito do serviço e, em seguida, clique em **iniciar**.  
+    2.  Role para baixo e clique em **Serviço de provedor de backup do computador cliente do Windows Server**. Se o status do serviço não for **Iniciado**, clique com o botão direito no serviço e depois clique em **Iniciar**.  
   
-    3.  Clique em **serviço Backup do computador do cliente Windows Server**. Se o status do serviço não for **iniciado**, clique com botão direito do serviço e, em seguida, clique em **iniciar**.  
+    3.  Clique em **Serviço de backup do computador cliente do Windows Server**. Se o status do serviço não for **Iniciado**, clique com o botão direito no serviço e depois clique em **Iniciar**.  
   
-    4.  Fechar **serviços**.  
+    4.  Feche **Serviços**.  
   
-    ###### <a name="to-start-backup-services-on-a-client-computer"></a>Para iniciar os serviços de backup em um computador cliente  
+    ###### <a name="to-start-backup-services-on-a-client-computer"></a>Para iniciar serviços de backup em um computador cliente  
   
-    1.  No computador cliente, clique em **iniciar**, tipo **serviços** no **pesquisar programas e arquivos** caixa de texto e clique em ENTER.  
+    1.  No computador cliente, clique em **Iniciar**, digite **Serviços** na caixa de texto **Pesquisar programas e arquivos** e pressione ENTER.  
   
-    2.  Clique com botão direito **provedor de serviço do Windows Server cliente computador Backup**e clique em **iniciar**.  
+    2.  Clique com botão direito em **Serviço de provedor de backup do computador cliente do Windows Server**e clique em **Iniciar**.  
   
-    3.  Fechar o **serviços**.  
+    3.  Feche os **Serviços**.  
   
-3.  Verifique os logs de eventos no computador cliente ou servidor para problemas referentes a serviços de backup ou drivers.  
+3.  Verifique os logs de eventos no computador cliente ou servidor para problemas relacionados a serviços de backup ou drivers.  
   
-4.  Reinicialize o servidor ou computador cliente que recebeu a mensagem de erro.  
+4.  Reinicie o computador servidor ou cliente em que você recebeu a mensagem de erro.  
   
-5.  Verifique os alertas de integridade para outros problemas que podem ter um efeito no backup do cliente.  
+5.  Verifique alertas de integridade para outros problemas que podem ter um efeito sobre backup do cliente.  
   
-##  <a name="BKMK_FileAndFolder"></a>Solucionar problemas de uma restauração de arquivo ou pasta  
+##  <a name="BKMK_FileAndFolder"></a> Solucionar problemas de uma restauração de arquivo ou pasta  
   
 ### <a name="errors"></a>Erros  
   
--   Restauração de arquivo ou pasta não foi concluída com êxito.  
+-   A restauração de arquivo ou pasta não foi concluída com êxito.  
   
-### <a name="resolutions"></a>Resoluções  
+### <a name="resolutions"></a>Soluções  
   
-##### <a name="to-troubleshoot-an-unsuccessful-file-or-folder-restore"></a>Para solucionar uma restauração de arquivo ou pasta malsucedida  
+##### <a name="to-troubleshoot-an-unsuccessful-file-or-folder-restore"></a>Para solucionar problemas de uma restauração de arquivo ou pasta malsucedida  
   
-1.  Verifique se que o computador estiver conectado à rede por meio de um dispositivo de rede.  
+1.  Verifique se que o computador está conectado à rede por meio de um dispositivo de rede.  
   
-2.  Verifique se o dispositivo de rede que o computador estiver conectado a também está conectado à rede, ligada e funcionando corretamente.  
+2.  Verifique se o dispositivo de rede que o computador está conectado a também está conectado à rede, ligado e funcionando corretamente.  
   
 3.  Verifique os alertas para determinar se há erros no banco de dados de backup. Se houver erros, siga as instruções no alerta para reparar o banco de dados de backup.  
   
-4.  Tente restaurar os arquivos ou pastas a partir de outro backup.  
+4.  Tente restaurar os arquivos ou pastas de outro backup.  
   
-5.  Certifique-se de que o **Driver restaurar o Windows Server solução computador** está instalado e funcionando corretamente.  
+5.  Certifique-se de que o **Driver para Restauração de Computador do Windows Server Solution** está instalado e funcionando corretamente.  
   
-    ###### <a name="to-check-the-status-of-the-windows-server-solution-computer-restore-driver"></a>Para verificar o status do Windows Server solução computador restaurar Driver  
+    ###### <a name="to-check-the-status-of-the-windows-server-solution-computer-restore-driver"></a>Para verificar o status do Driver para Restauração de Computador do Windows Server Solution  
   
-    1.  Clique em **iniciar**, tipo **Gerenciador de dispositivos** no **pesquisar programas e arquivos** caixa de texto e clique em ENTER.  
+    1.  Clique em **Iniciar**, digite **Gerenciador de dispositivos** na caixa de texto **Pesquisar programas e arquivos** e clique em ENTER.  
   
-    2.  No Gerenciador de dispositivos, clique em **dispositivos do sistema**, role até **Windows Server Solutions computador restaurar Driver**.  
+    2.  No Gerenciador de dispositivos, clique em **Dispositivos de sistema**, role até **Driver para Restauração de Computador do Windows Server Solution**.  
   
     3.  Se o driver não for exibido:  
   
         1.  Abra um prompt de comando com privilégios de administrador e execute o seguinte comando:  
   
-             **%ProgramFiles%\Windows Server\Bin\BackupDriverInstaller.exe?  Eu**  
+             **%ProgramFiles%\Windows Server\Bin\BackupDriverInstaller.exe?  �i**  
   
         2.  Atualize o Gerenciador de dispositivos. O driver deve aparecer.  
   
-    4.  Se o ícone é exibido um monitor de computador, o driver é instalado e executado corretamente. Feche o Gerenciador de dispositivos.  
+    4.  Se o ícone é exibido um monitor de computador, o driver está instalado e funcionando corretamente. Feche o Gerenciador de dispositivos.  
   
-    5.  Se o ícone seja exibido não for um monitor de computador  
+    5.  Se o ícone exibido não for um monitor de computador  
   
-        1.  Clique com botão direito **Windows Server Solutions computador restaurar Driver**e clique em **propriedades**.  
+        1.  Clique com o botão direito em **Driver para Restauração de Computador do Windows Server Solution**e clique em **Propriedades**.  
   
-        2.  Clique no **Driver** guia e, em seguida, clique em **Atualizar Driver**.  
+        2.  Clique na guia **Driver** e, em seguida, clique em **Atualizar Driver**.  
   
-        3.  Clique em **pesquisar automaticamente software de driver atualizado de**e siga as instruções para atualizar o driver.  
+        3.  Clique em **Pesquisar automaticamente software de driver atualizado**e, em seguida, siga as instruções para atualizar o driver.  
   
     6.  Feche o Gerenciador de dispositivos.  
   
-6.  Desinstalar o software do Windows Server Essentials conector do computador e reinstalá-lo. Para obter mais informações, consulte os tópicos [desinstalar o software do conector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13) e [instalar o software do conector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_11).  
+6.  Desinstale o software do Windows Server Essentials Connector do computador e então reinstale-o. Para obter mais informações, consulte os tópicos [Desinstalar o software Connector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13) e [Instalar o software Connector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_11).  
   
-##  <a name="BKMK_Troubleshootfullsystemrestoreissues"></a>Solucionar problemas de uma restauração completa do sistema  
+##  <a name="BKMK_Troubleshootfullsystemrestoreissues"></a> Solucionar problemas de uma restauração completa do sistema  
   
 ### <a name="errors"></a>Erros  
   
 -   Não é possível fazer logon no computador cliente após uma restauração completa do sistema.  
   
-### <a name="resolutions"></a>Resoluções  
- Se você alterar o nome de um computador, e você precisa restaurar um backup que foi salvo antes que o nome do computador alterado, após a restauração, quando você tenta fazer logon em sua conta de domínio, você receberá esse erro: "o banco de dados de segurança no servidor não tem uma conta de computador para essa relação de confiança de estação de trabalho." Para obter acesso à rede para o computador novamente, remova o software do conector, remover o computador do domínio do Windows e, em seguida, conectar ao servidor novamente.  
+### <a name="resolutions"></a>Soluções  
+ Se você alterar o nome de um computador e, posteriormente, precisar restaurar um backup que foi salvo antes do nome do computador ser alterado, após a restauração, quando você tentar fazer logon em sua conta de domínio, você receberá esse erro: "O banco de dados de segurança no servidor não tem uma conta de computador para essa relação de confiança da estação de trabalho." Para obter acesso à rede para o computador novamente, remova o software Connector, remova o computador do domínio do Windows e então conecte-se novamente ao servidor.  
   
-##### <a name="to-regain-network-access-to-a-restored-computer-after-a-computer-name-change"></a>Para recuperar o acesso à rede para um computador restaurado após uma mudança de nome de computador  
+##### <a name="to-regain-network-access-to-a-restored-computer-after-a-computer-name-change"></a>Para recuperar o acesso à rede para um computador restaurado após uma alteração de nome do computador  
   
 1.  Faça logon no computador como um administrador local.  
   
-2.  Desinstale o software do conector. Para obter mais informações, consulte [desinstalar o software do conector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13).  
+2.  Desinstale o software Connector. Para obter mais informações, consulte [Uninstall the Connector software](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13).  
   
-3.  Remova o computador do domínio. Para obter mais informações, consulte [remover um computador de um domínio do Windows](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_8).  
+3.  Remova o computador do domínio. Para obter mais informações, consulte [Remove a computer from a Windows domain](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_8).  
   
-4.  Conecte o computador para o servidor novamente. Para obter mais informações, consulte [conectar computadores para o servidor](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).  
+4.  Conecte o computador ao servidor novamente. Para obter mais informações, consulte [Computadores conectados ao servidor](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).  
   
 ## <a name="see-also"></a>Consulte também  
   

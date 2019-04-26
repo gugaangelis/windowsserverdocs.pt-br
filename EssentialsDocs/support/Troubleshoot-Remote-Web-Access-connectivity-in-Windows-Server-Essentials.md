@@ -1,5 +1,5 @@
 ---
-title: Solucionar problemas de conectividade de acesso via Web remoto no Windows Server Essentials
+title: Solucionar problemas de conectividade do Acesso Remoto via Web no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -13,48 +13,49 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: af4725fd3b1861c847434e3ed62c3da030689fb5
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
-ms.translationtype: MT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59853467"
 ---
-# <a name="troubleshoot-remote-web-access-connectivity-in-windows-server-essentials"></a>Solucionar problemas de conectividade de acesso via Web remoto no Windows Server Essentials
+# <a name="troubleshoot-remote-web-access-connectivity-in-windows-server-essentials"></a>Solucionar problemas de conectividade do Acesso Remoto via Web no Windows Server Essentials
  
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
   
- Normalmente, o Windows Server Essentials automaticamente pode configurar um roteador banda larga se o roteador for um UPnP certificado do dispositivo e se a configuração UPnP esteja habilitada no roteador.  
+ Normalmente, o Windows Server Essentials pode configurar automaticamente um roteador de banda larga se o roteador for um dispositivo UPnP certificado e se a configuração de UPnP estiver habilitada no roteador.  
   
 ## <a name="possible-issues"></a>Possíveis problemas  
- Você pode enfrentar os seguintes problemas com conectividade de acesso via Web remoto:  
+ Você pode encontrar os seguintes problemas de conectividade no Acesso Remoto via Web:  
   
--   O roteador não está ativado ou não estiver conectado à rede.  
+-   Seu roteador não está ativado ou não está conectado à sua rede.  
   
--   A configuração de UPnP do roteador está desativada.  
+-   A configuração UPnP está desativada no seu roteador.  
   
--   O roteador pode não suportar totalmente o padrão de UPnP. A Microsoft mantém uma lista dos roteadores que funcionam com os sistemas operacionais Windows. Para ver a lista dos roteadores (incluindo roteadores sem fio) que são compatíveis com o Windows Server Essentials, visite o [Centro de compatibilidade do Windows](https://www.microsoft.com/windows/compatibility/CompatCenter/Home).  
+-   Seu roteador talvez não dê suporte total ao padrão UPnP. A Microsoft mantém uma lista de roteadores que trabalham com os sistemas operacionais Windows. Para exibir a lista de roteadores (incluindo roteadores sem fio) compatíveis com o Windows Server Essentials, visite o [Centro de compatibilidade do Windows](https://www.microsoft.com/windows/compatibility/CompatCenter/Home).  
   
-## <a name="possible-fixes"></a>Possíveis correções  
- As seguintes ações podem corrigir esses problemas:  
+## <a name="possible-fixes"></a>Soluções possíveis  
+ Os procedimentos a seguir podem solucionar esses problemas:  
   
--   Verifique se o roteador está ligado e funcionando corretamente.  
+-   Verifique se o seu roteador está ativado e funcionando corretamente.  
   
--   Certifique-se de que o servidor está conectado diretamente ao roteador ou se ele está conectado a um comutador que está conectado ao roteador.  
+-   Assegure que o adaptador de rede local esteja diretamente conectado ao seu roteador ou a um comutador que esteja conectado ao seu roteador.  
   
--   Verifique se o dispositivo de banda larga que se conecta ao seu provedor de serviços de Internet (ISP) está ativado, funcione corretamente, e o roteador está conectado ao dispositivo de banda larga.  
+-   Confirme que o dispositivo de banda larga que se conecta a seu ISP (provedor de serviço de Internet) está ligado e funcionando adequadamente; confirme também que seu roteador está conectado ao dispositivo de banda larga.  
   
--   Ative a configuração UPnP do roteador. Conectar-se à página da web de configuração do roteador para ativar a configuração UPnP. Para obter informações sobre como fazer logon em seu roteador e como ativar a configuração UPnP, consulte a documentação do roteador. Depois de ativar a configuração UPnP, execute o ativar em remoto da Web acesso assistente novamente para configurar o roteador.  
+-   Ative a configuração UPnP no roteador. Conecte-se à página da Web de configuração do seu roteador e ative a configuração de UPnP. Para obter mais informações sobre como efetuar logon no seu roteador e como ativar a configuração de UPnP, consulte a documentação para seu roteador. Depois de ativar a configuração de UPnP, execute ativar na Web Assistente de acesso remoto novamente para configurar seu roteador.  
   
--   Se o roteador não oferece suporte total o UPnP padrão, ele não pode ser configurado automaticamente. Você deve configurar seu roteador ou comprar um roteador que suporta o padrão de UPnP manualmente.  
+-   Se o seu roteador não dá suporte total ao padrão UPnP, ele não pode ser configurado automaticamente. Você deve configurar manualmente o seu roteador ou adquirir um roteador que dê suporte ao padrão UPnP.  
   
-     Para configurar manualmente o roteador você, conclua as seguintes tarefas:  
+     Para configurar manualmente o seu roteador, conclua as tarefas a seguir:  
   
-    -   Crie reserva de endereço IP do servidor Windows Server Essentials.  
+    -   Criar reserva de endereço IP para seu servidor do Windows Server Essentials.  
   
-         Antes de configurar manualmente o roteador para encaminhar as portas necessárias ao Windows Server Essentials, você deve configurar uma reserva Dynamic Host Configuration Protocol (DHCP) para o servidor que está executando o Windows Server Essentials no roteador. Esta etapa garante que o endereço IP encaminhar as portas não mudar.  
+         Antes de configurar manualmente o roteador para encaminhar as portas requeridas para o Windows Server Essentials, você deve configurar uma reserva de protocolo DHCP para o servidor que está executando o Windows Server Essentials no roteador. Isso garante que o endereço IP que você estará encaminhando às portas não mude.  
   
-         Para obter informações sobre como configurar manualmente uma reserva de DHCP para o servidor no roteador, consulte a documentação de s do fabricante do roteador.  
+         Para obter informações sobre como configurar manualmente uma reserva de DHCP para o servidor no seu roteador, consulte a documentação de s do fabricante do seu roteador.  
   
-    -   Configure o encaminhamento de porta no roteador para as seguintes portas:  
+    -   Configure o encaminhamento de porta no seu roteador para as portas a seguir:  
   
         |Serviço ou protocolo|Porta|  
         |-------------------------|----------|  
@@ -63,26 +64,26 @@ ms.lasthandoff: 12/12/2017
   
      Para obter informações sobre como configurar manualmente o encaminhamento de porta no roteador, consulte a documentação do fabricante s.  
   
-     Uma página de configuração de roteador típico inclui uma tabela que é semelhante ao seguinte.  
+     Uma página típica de configuração de roteador inclui uma tabela com a aparência demonstrada a seguir.  
   
     > [!NOTE]
-    >  Nesta tabela, o endereço IP do computador que esteja executando o Windows Server Essentials é 192.168.0.100. Você deve determinar o endereço IP do seu computador e substituir esse endereço IP para o endereço IP mostrado na tabela.  
+    >  Nessa tabela, o endereço IP do computador que executa o Windows Server Essentials é 192.168.0.100. Você deve determinar o endereço IP do seu computador e substituir esse endereço IP por aquele mostrado na tabela.  
   
-    |Endereço IP|Protocolo TCP/UDP|Agendamento|Filtro de entrada|  
+    |Endereço IP|Protocolo (TCP/UDP)|Agendamento|Filtro de entrada|  
     |----------------|---------------------------|--------------|--------------------|  
-    |192.168.0.100|TCP 80|Sempre|Permitir tudo|  
-    |192.168.0.100|TCP 443|Sempre|Permitir tudo|  
+    |192.168.0.100|TCP 80|Sempre|Permitir todos|  
+    |192.168.0.100|TCP 443|Sempre|Permitir todos|  
   
-     Depois de configurar manualmente o roteador, execute a ative em Web Assistente de acesso remoto, garantindo que você selecione o **configuração de roteador ignorar** opção no **Introdução** página.  
+     Depois de configurar seu roteador manualmente, execute ativar na Web Assistente de acesso remoto, garantindo que você selecione os **ignorar a configuração do roteador** opção a **Introdução** página.  
   
--   Compre um novo roteador se o roteador não oferece suporte total o UPnP padrão.  
+-   Se o seu roteador não der total suporte ao padrão UPnP, adquira um novo.  
   
 > [!TIP]
->  Certifique-se de que seu roteador tem o firmware do BIOS mais recente instalado. Geralmente, você pode atualizar o firmware do BIOS para o seu roteador da página da web de configuração para o roteador. Para obter mais informações, consulte a documentação do roteador. Depois que o roteador for atualizado, execute o Assistente de configuração de qualquer lugar acesso.  
+>  Certifique-se que o seu roteador tem o firmware de BIOS mais recente instalado. Você pode atualizar o firmware de BIOS para seu roteador na página da Web de configuração para ele. Para obter mais informações, veja a documentação do seu roteador. Após seu roteador ser atualizado, execute o Assistente de Configuração do Acesso em Qualquer Local.  
   
 ## <a name="see-also"></a>Consulte também  
   
--   [Use o acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Usar o acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
 -   [Gerenciar o acesso via Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   

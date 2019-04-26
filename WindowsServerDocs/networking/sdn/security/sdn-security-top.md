@@ -1,6 +1,6 @@
 ---
 title: Segurança para SDN
-description: Você pode usar os tópicos nesta seção para saber mais sobre segurança em \(SDN\) Software de rede definidos no Windows Server 2016 Datacenter.
+description: Você pode usar os tópicos nesta seção para saber mais sobre a segurança na rede definida pelo Software \(SDN\) no Windows Server 2016 Datacenter.
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-sdn
@@ -8,28 +8,29 @@ ms.topic: article
 ms.assetid: 763d11a8-4225-4d96-b56f-1ec62e256bfd
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: f191741a8445a33dfc3634859ee4fbea82b5bc39
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
-ms.translationtype: MT
+ms.openlocfilehash: 6a38f55745e9f1b4f38b36ce613d7c3f23a32ee6
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59850287"
 ---
 # <a name="security-for-sdn"></a>Segurança para SDN
 
->Aplica-se a: Windows Server (anual por canal), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016
 
-Você pode usar os tópicos nesta seção para saber mais sobre segurança em \(SDN\) Software de rede definidos.
+Você pode usar os tópicos nesta seção para saber mais sobre a segurança na rede definida pelo Software \(SDN\).
 
 >[!Note]
->Para obter outras documentações de Software de rede definidos, você pode usar as seguintes seções de biblioteca.
+>Para obter documentação adicional rede definida pelo Software, você pode usar as seguintes seções da biblioteca.
 >
 > - [Tecnologias SDN](../technologies/Software-Defined-Networking-Technologies.md)  
-> - [Planeje SDN](../plan/Plan-Software-Defined-Networking.md) 
+> - [Planejar SDN](../plan/Plan-Software-Defined-Networking.md) 
 > - [Implantar SDN](../deploy/Deploy-Software-Defined-Networking.md)  
 > - [Gerenciar SDN](../manage/manage-sdn.md)  
-> - [Solucionar problemas SDN](../troubleshoot/Troubleshoot-Software-Defined-Networking.md)
+> - [Solucionar problemas de SDN](../troubleshoot/Troubleshoot-Software-Defined-Networking.md)
 
-Esta seção contém os tópicos a seguir.
+Esta seção contém os seguintes tópicos.
 
 - [Segurança de controlador de rede](nc-security.md)
-- [Gerenciar certificados de Software definidos rede](sdn-manage-certs.md)
+- [Gerenciar certificados para a rede definida pelo Software](sdn-manage-certs.md)

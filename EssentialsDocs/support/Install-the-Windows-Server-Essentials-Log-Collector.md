@@ -1,5 +1,5 @@
 ---
-title: Instalar o coletor de Log do Windows Server Essentials
+title: Instalar o coletor de log do Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -13,60 +13,61 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: ade18cec590392f35e7ad6b30d9a22ccdce44dcd
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
-ms.translationtype: MT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59837027"
 ---
-# <a name="install-the-windows-server-essentials-log-collector"></a>Instalar o coletor de Log do Windows Server Essentials
+# <a name="install-the-windows-server-essentials-log-collector"></a>Instalar o coletor de log do Windows Server Essentials
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-O Assistente de instalação do coletor de Log do Windows Server Essentials instala o coletor de Log como um Launchpad Add-in. Você pode instalar e usar o coletor de Log em computadores de rede ou o servidor ou ambos. Após a instalação, o coletor de Log será exibido no painel.  
+O Assistente de instalação do Windows Server Essentials Log Collector instala o coletor de Log como um Launchpad Add-in. Você pode instalar e usar o Coletor de Log em computadores da rede ou servidor, ou ambos. Após a instalação, o coletor de log será exibido no painel.  
   
-###  <a name="BKMK_ToInstall"></a>Para instalar o coletor de Log  
+###  <a name="BKMK_ToInstall"></a> Para instalar o coletor de Log  
   
-1.  Baixe o pacote de instalação do coletor de Log para qualquer servidor ou computador na rede.  
+1.  Baixe o pacote de instalação do coletor de log para qualquer servidor ou computador na rede.  
   
     > [!NOTE]
-    >  Você pode [baixar o pacote de instalação do coletor de Log](https://go.microsoft.com/fwlink/p/?LinkId=255470) da Microsoft.  
+    >  Você pode [baixar o pacote de instalação do Coletor de Log](https://go.microsoft.com/fwlink/p/?LinkId=255470) da Microsoft.  
   
-2.  Clique duas vezes no ícone do coletor de Log.  
+2.  Clique duas vezes no ícone do coletor de log.  
   
-3.  Se você estiver executando a instalação de um computador de rede, insira suas credenciais de administrador de servidor quando solicitado.  
+3.  Se você estiver executando a instalação de um computador de rede, insira suas credenciais de administrador do servidor quando solicitado.  
   
-4.  Optar por aceitar os termos de licença de Software da Microsoft.  
+4.  Escolha aceitar os termos de licença de software da Microsoft.  
   
-5.  Para instalar o coletor de Log somente no servidor, selecione o **somente no servidor** caixa de seleção. Para instalar o coletor de Log em todos os computadores de rede, selecione o **no servidor e em todos os computadores na rede** caixa de seleção.  
+5.  Para instalar o coletor de log somente no servidor, marque a caixa de seleção **Somente no servidor** . Para instalar o coletor de log em todos os computadores de rede, marque a caixa de seleção **No servidor e em todos os computadores na rede** .  
   
-6.  Clique em **instalar o suplemento**.  
+6.  Clique em **Instalar o suplemento**.  
   
-###  <a name="BKMK_Reinstall"></a>Reinstalar o coletor de Log  
- Se for necessário reinstalar o coletor de Log, você deve desinstalar e reinstalar o coletor de Log no servidor e os computadores da rede na rede. Desinstalando o coletor de Log no servidor do painel, todos os computadores de rede desinstalará automaticamente o coletor de Log.  
+###  <a name="BKMK_Reinstall"></a> Reinstalar o coletor de Log  
+ Se for necessário reinstalar o coletor de log, desinstale e reinstale o coletor de log no servidor e os computadores de rede na rede. Ao desinstalar o coletor de log no servidor do painel, todos os computadores de rede irão automaticamente desinstalar o coletor de log.  
   
-##### <a name="to-uninstall-and-reinstall-the-log-collector"></a>Desinstalar e reinstalar o coletor de Log  
+##### <a name="to-uninstall-and-reinstall-the-log-collector"></a>Para desinstalar e reinstalar o coletor de log  
   
-1.  Abra o painel.  
+1.  Abra o Painel.  
   
-2.  Clique no **suplemento** , selecione **coletor de Log** na lista e, em seguida, clique **desinstalar**.  
+2.  Clique na guia **Suplemento** , selecione **Coletor de Log** na lista e clique em **Desinstalar**.  
   
 
-3.  Baixe e instale o coletor de Log realizando as etapas no procedimento anterior, [para instalar o coletor de Log](Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall).  
+3.  Baixe e instale o Coletor de Log executando as etapas no procedimento anterior, [To install the Log Collector](Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall).  
 
-3.  Baixe e instale o coletor de Log realizando as etapas no procedimento anterior, [para instalar o coletor de Log](../support/Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall).  
+3.  Baixe e instale o Coletor de Log executando as etapas no procedimento anterior, [To install the Log Collector](../support/Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall).  
 
   
-### <a name="manually-install-the-log-collector"></a>Instalar manualmente o coletor de Log  
- Se o Assistente de instalação falha ao instalar o coletor de Log, você pode instalar o coletor de Log em um único computador usando o procedimento a seguir.  
+### <a name="manually-install-the-log-collector"></a>Instalar o coletor de log manualmente  
+ Se o assistente de instalação falhar ao instalar o coletor de log, você pode instalar o coletor de log em um único computador usando o procedimento a seguir.  
   
-##### <a name="to-manually-install-the-log-collector"></a>Para instalar manualmente o coletor de Log  
+##### <a name="to-manually-install-the-log-collector"></a>Para instalar o coletor de log manualmente  
   
-1.  Renomeie a extensão do arquivo baixado de instalação da. wssx para. cab.  
+1.  Renomeie a extensão do arquivo de instalação baixado do wssx para. cab.  
   
-2.  Clique duas vezes em nome do arquivo de instalação.  
+2.  Clique duas vezes no nome do arquivo de instalação.  
   
-3.  Clique em **Okey** se você for solicitado.  
+3.  Clique em **OK** se você for solicitado.  
   
-4.  Clique duas vezes em nome do arquivo termina com ˜.msi e selecione uma pasta na qual extraí-lo.  
+4.  Clique duas vezes no nome do arquivo terminando com ˜.msi e selecione uma pasta na qual deseja extraí-lo.  
   
-5.  Navegue até a pasta com o arquivo extraído e clique duas vezes no arquivo de instalação para usar o Assistente para concluir a instalação.
+5.  Navegue até a pasta com os arquivos extraídos e clique duas vezes no arquivo de instalação para usar o assistente para concluir a instalação.

@@ -1,5 +1,5 @@
 ---
-title: "Gerenciar contas de usuário no Windows Server Essentials"
+title: Gerenciar contas de usuário no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -13,28 +13,29 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 91175836e4453860b17d2655e6a5a831645de410
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
-ms.translationtype: MT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59873447"
 ---
 # <a name="manage-user-accounts-in-windows-server-essentials"></a>Gerenciar contas de usuário no Windows Server Essentials
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-A página de usuários do Windows Server Essentials painel centraliza informações e tarefas que ajudarão a gerenciem as contas de usuário em sua rede de pequena empresa. Para obter uma visão geral do painel de usuários, consulte [visão geral do painel](Overview-of-the-Dashboard-in-Windows-Server-Essentials.md).  
+A página Usuários do Painel do Windows Server Essentials centraliza informações e tarefas que ajudam você gerenciar as contas de usuário em sua rede de pequena empresa. Para uma visão geral do painel de usuários, consulte [visão geral do painel](Overview-of-the-Dashboard-in-Windows-Server-Essentials.md).  
   
   
-##  <a name="BKMK_ManageAccounts"></a>Gerenciar contas de usuário  
- Os tópicos a seguir fornecem informações sobre como usar o Windows Server Essentials Dashboard para gerenciar as contas de usuário no servidor:  
+##  <a name="BKMK_ManageAccounts"></a> Gerenciar contas de usuário  
+ Os tópicos a seguir fornecem informações sobre como usar o Painel do Windows Server Essentials para gerenciar as contas de usuário no servidor:  
   
 -   [Adicionar uma conta de usuário](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1)  
   
 -   [Remover uma conta de usuário](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Remove)  
   
--   [Contas de usuário de modo de exibição](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage3)  
+-   [Exibir contas de usuário](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage3)  
   
--   [Alterar o nome de exibição da conta de usuário](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage4)  
+-   [Alterar o nome de exibição para a conta de usuário](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage4)  
   
 -   [Ativar uma conta de usuário](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage5)  
   
@@ -44,165 +45,165 @@ A página de usuários do Windows Server Essentials painel centraliza informaç�
   
 -   [Gerenciar contas de usuário usando o painel](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage8)  
   
-###  <a name="BKMK_Manage1"></a>Adicionar uma conta de usuário  
- Quando você adiciona uma conta de usuário, o usuário atribuído pode fazer logon na rede, e você pode dar ao usuário permissão para acessar recursos de rede, como pastas compartilhadas e o site de acesso via Web remoto. Windows Server Essentials inclui um Assistente de conta de usuário que ajuda você a adicionar:  
+###  <a name="BKMK_Manage1"></a> Adicionar uma conta de usuário  
+ Quando você adiciona uma conta de usuário, o usuário atribuído pode fazer logon na rede e você pode conceder ao usuário permissão para acessar recursos de rede, como pastas compartilhadas e o site de Acesso via Web remoto. O Windows Server Essentials inclui um Assistente de Adição de Conta de Usuário que o ajuda a:  
   
--   Forneça um nome e senha da conta de usuário.  
+-   Fornecer um nome e a senha da conta de usuário.  
   
--   Defina a conta como um administrador ou como um usuário padrão.  
+-   Definir a conta como administrador ou usuário padrão.  
   
--   Selecione pastas que pode acessar a conta de usuário que compartilhadas.  
+-   Selecionar quais pastas compartilhadas a conta de usuário pode acessar.  
   
--   Especifique se a conta de usuário tem acesso remoto à rede.  
+-   Especificar se a conta de usuário tem acesso remoto à rede.  
   
--   Selecione opções de email, se aplicável.  
+-   Selecionar as opções de email, se aplicável.  
   
--   Atribua uma conta da Microsoft Online Services (chamada de uma conta do Office 365 no Windows Server Essentials), se aplicável.  
+-   Atribua uma conta de serviços Online da Microsoft (conhecida como uma conta do Office 365 no Windows Server Essentials), se aplicável.  
   
--   Atribua grupos de usuários (somente Windows Server Essentials).  
+-   Atribua grupos de usuários (Windows Server Essentials apenas).  
   
 > [!NOTE]
->  -   Caracteres não ASCII não têm suporte no Microsoft Azure Active Directory (Azure AD). Não use quaisquer caracteres não ASCII em sua senha, se o servidor está integrado com o Azure AD.  
-> -   As opções de email estão disponíveis somente se você instalar um suplemento que fornece o serviço de email.  
+>  -   Caracteres não ASCII não têm suporte no Microsoft Azure Active Directory (Azure AD). Não use caracteres não ASCII em sua senha, se o servidor estiver integrado com o Azure AD.  
+> -   As opções de email só estarão disponíveis se você instalar um suplemento que fornece o serviço de email.  
   
 ##### <a name="to-add-a-user-account"></a>Para adicionar uma conta de usuário  
   
-1.  Abra o painel do Windows Server Essentials.  
+1.  Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação, clique em **usuários**.  
+2.  Na barra de navegação, clique em **Usuários**.  
   
-3.  No **usuários tarefas** painel, clique em **adicionar uma conta de usuário**. Adicionar um Assistente de conta de usuário é exibida.  
+3.  No painel  **Tarefas de Usuários** , clique em **Adicionar uma conta de usuário**. O Assistente de Adição de Conta de Usuário é exibido.  
   
 4.  Siga as instruções para concluir o assistente.  
   
-###  <a name="BKMK_Remove"></a>Remover uma conta de usuário  
- Quando você optar por remover uma conta de usuário do servidor, um assistente exclui a conta selecionada. Por isso, você pode usar não é mais a conta para fazer logon na rede ou acessar qualquer um dos recursos da rede. Como opção, você também pode excluir os arquivos para a conta de usuário ao mesmo tempo que você remova a conta. Se você não quiser remover permanentemente a conta de usuário, você pode desativar a conta de usuário em vez disso, para suspender o acesso aos recursos de rede.  
+###  <a name="BKMK_Remove"></a> Remover uma conta de usuário  
+ Quando você opta por remover uma conta de usuário do servidor, um assistente exclui a conta selecionada. Por esse motivo, você não pode usar a conta para fazer logon na rede ou acessar os recursos de rede. Como opção, você também pode excluir os arquivos da conta de usuário ao mesmo tempo em que remover a conta. Caso não deseje remover permanentemente a conta de usuário, você pode desativar a conta para suspender o acesso aos recursos da rede.  
   
 > [!IMPORTANT]
->  Se uma conta de usuário tem um Microsoft online conta atribuído, quando você remover a conta de usuário, a conta online também é removida do Microsoft Online Services e os dados do usuário s, incluindo email, estão sujeito às dados políticas de retenção no Microsoft Online Services. Se você quiser manter os dados do usuário para a conta online, desative a conta de usuário em vez de removê-lo. Para obter mais informações, consulte [gerenciar contas Online para que os usuários](Manage-Online-Accounts-for-Users.md).  
+>  Se uma conta de usuário tem um Microsoft online conta atribuída, quando você remover a conta de usuário, a conta online também é removida do Microsoft Online Services e os dados de s do usuário, incluindo email, estão sujeitos a dados as políticas de retenção do Microsoft Online Services. Se você deseja manter os dados de usuário da conta online, desative a conta de usuário em vez de removê-la. Para obter mais informações, consulte [gerenciar contas Online para usuários](Manage-Online-Accounts-for-Users.md).  
   
 ##### <a name="to-remove-a-user-account"></a>Para remover uma conta de usuário  
   
-1.  Abra o painel do Windows Server Essentials.  
+1.  Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação, clique em **usuários**.  
+2.  Na barra de navegação, clique em **Usuários**.  
   
-3.  Na lista de contas de usuário, selecione a conta de usuário que você deseja remover.  
+3.  Na lista de contas de usuário, selecione a conta de usuário que deseja remover.  
   
-4.  No **< usuário Account\ > tarefas** painel, clique em **remover a conta de usuário**. Excluir um Assistente de conta de usuário é exibida.  
+4.  No **< Conta_de_usuário\> tarefas** painel, clique em **remover a conta de usuário**. O Assistente de Exclusão de Conta de Usuário é exibido.  
   
-5.  Sobre o **você deseja manter os arquivos? **página do assistente, você pode optar por excluir os arquivos de usuário s, inclusive backups de histórico de arquivos e a pasta redirecionada para a conta de usuário. Para manter o usuário arquivos s, deixe a caixa de seleção vazia. Depois de fazer sua seleção, clique em **próxima**.  
+5.  Sobre o **você deseja manter os arquivos?** página do assistente, você pode optar por excluir os arquivos de usuário s, incluindo backups do histórico de arquivos e a pasta redirecionada para a conta de usuário. Para manter o usuário arquivos s, deixe a caixa de seleção vazia. Depois de fazer sua escolha, clique em **Avançar**.  
   
-6.  Clique em **excluir conta**.  
+6.  Clique em **Excluir conta**.  
   
 > [!NOTE]
->  Depois de remover uma conta de usuário, a conta não aparece na lista de contas de usuário. Se você optar por excluir os arquivos, o servidor exclui permanentemente a pasta do usuário s do **usuários** pasta de servidor e do **Backups de histórico de arquivos** pasta do servidor.  
+>  Depois de você remover uma conta de usuário, a conta deixará de aparecer na lista de contas de usuário. Se você optar por excluir os arquivos, o servidor excluirá permanentemente a pasta de usuário s da pasta a **os usuários** pasta do servidor e para o **File History Backups** pasta do servidor.  
 >   
 >  Se você tiver um provedor de email integrado, a conta de email atribuída à conta de usuário também será removida.  
   
-###  <a name="BKMK_Manage3"></a>Contas de usuário de modo de exibição  
- O **usuários** seção do Windows Server Essentials painel exibe uma lista de contas de usuário de rede. A lista também fornece informações adicionais sobre cada conta.  
+###  <a name="BKMK_Manage3"></a> Exibir contas de usuário  
+ A seção **Usuários** do Painel do Windows Server Essentials exibe uma lista de contas de usuário de rede. A lista também fornece informações adicionais sobre cada conta.  
   
 ##### <a name="to-view-a-list-of-user-accounts"></a>Para exibir uma lista de contas de usuário  
   
-1.  Abra o painel do Windows Server Essentials.  
+1.  Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação principal, clique em **usuários**.  
+2.  Na barra de navegação principal, clique em **Usuários**.  
   
-3.  O painel exibe uma lista de contas de usuário atual.  
+3.  O Painel exibe uma lista de contas de usuário atual.  
   
 ##### <a name="to-view-or-change-properties-for-a-user-account"></a>Para exibir ou alterar as propriedades de uma conta de usuário  
   
-1.  Na lista de contas de usuário, selecione a conta para o qual você deseja exibir ou alterar propriedades.  
+1.  Na lista de contas de usuário, selecione a conta para a qual você deseja exibir ou alterar as propriedades.  
   
-2.  No **< usuário Account\ > tarefas** painel, clique em **exibir as propriedades da conta**. O **propriedades** página para a conta de usuário é exibido.  
+2.  No **< conta de usuário\> tarefas** painel, clique em **exibir propriedades da conta**. A página **Propriedades** da conta de usuário é exibida.  
   
-3.  Clique em uma guia para exibir as propriedades para esse recurso de conta.  
+3.  Clique na guia para exibir as propriedades da conta.  
   
-4.  Para salvar as alterações feitas nas propriedades da conta de usuário, clique em **aplicar**.  
+4.  Para salvar as alterações feitas nas propriedades da conta de usuário, clique em **Aplicar**.  
   
-###  <a name="BKMK_Manage4"></a>Alterar o nome de exibição da conta de usuário  
- O nome de exibição é o nome que aparece no **nome** coluna no **usuários** página do painel. Alterar o nome de exibição não altera o nome de logon ou entrada de uma conta de usuário.  
+###  <a name="BKMK_Manage4"></a> Alterar o nome de exibição para a conta de usuário  
+ O nome de exibição é o nome que aparece na coluna **Nome** da página **Usuários** do Painel. Alterar o nome de exibição não altera o nome de logon ou de entrada da uma conta de usuário.  
   
-##### <a name="to-change-the-display-name-for-a-user-account"></a>Para alterar o nome de exibição para uma conta de usuário  
+##### <a name="to-change-the-display-name-for-a-user-account"></a>Para alterar o nome de exibição de uma conta de usuário  
   
-1.  Abra o painel do Windows Server Essentials.  
+1.  Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação, clique em **usuários**.  
+2.  Na barra de navegação, clique em **Usuários**.  
   
 3.  Na lista de contas de usuário, selecione a conta de usuário que você deseja alterar.  
   
-4.  No **< usuário Account\ > tarefas** painel, clique em **exibir as propriedades da conta**. O **propriedades** página para a conta de usuário é exibido.  
+4.  No **< conta de usuário\> tarefas** painel, clique em **exibir propriedades da conta**. A página **Propriedades** da conta de usuário é exibida.  
   
-5.  No **geral** guia, digite um novo **nome** e **Sobrenome** para a conta de usuário e clique em **Okey**.  
+5.  Na guia **Geral**, digite um novo **Nome** e **Sobrenome** para a conta de usuário e clique em **OK**.  
   
      O novo nome de exibição aparece na lista de contas de usuário.  
   
-###  <a name="BKMK_Manage5"></a>Ativar uma conta de usuário  
- Quando você ativa uma conta de usuário, o usuário atribuído pode fazer logon para os recursos de rede de rede e acesso aos quais a conta tem permissão, como pastas compartilhadas e o site de acesso via Web remoto.  
+###  <a name="BKMK_Manage5"></a> Ativar uma conta de usuário  
+ Quando você ativa uma conta de usuário, o usuário atribuído pode fazer logon na rede e acessar recursos de rede para os quais a conta tem permissão, como pastas compartilhadas e o Acesso via Web remoto.  
   
 > [!NOTE]
->  Você pode ativar apenas uma conta de usuário que está desativada. Você não pode ativar uma conta de usuário após a remoção do servidor.  
+>  Só é possível ativar uma conta de usuário que está desativada. Você não pode ativar uma conta de usuário após ela ser removida do servidor.  
   
 ##### <a name="to-activate-a-user-account"></a>Para ativar uma conta de usuário  
   
-1.  Abra o painel do Windows Server Essentials.  
+1.  Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação, clique em **usuários**.  
+2.  Na barra de navegação, clique em **Usuários**.  
   
 3.  Na exibição de lista, selecione a conta de usuário que você deseja ativar.  
   
-4.  No **< usuário Account\ > tarefas** painel, clique em **ativar a conta de usuário**.  
+4.  No **< Conta_de_usuário\> tarefas** painel, clique em **ativar a conta de usuário**.  
   
 5.  Na janela de confirmação, clique em **Sim** para confirmar a ação.  
   
 > [!NOTE]
->  Depois de ativar uma conta de usuário, exibe o status da conta **Active**. A conta de usuário retoma os mesmos direitos de acesso que foram atribuídos antes da desativação da conta.  
+>  Depois que você ativar uma conta de usuário, o status da conta será exibido como **Ativa**. A conta de usuário recupera os mesmos direitos de acesso que foram atribuídos antes da desativação de conta.  
 >   
 >  Se você tiver um provedor de email integrado, a conta de email atribuída à conta de usuário também será ativada.  
   
-###  <a name="BKMK_Manage6"></a>Desativar uma conta de usuário  
- Quando você desativa uma conta de usuário, o acesso de contas para o servidor está temporariamente suspensa. Por isso, o usuário atribuído não pode usar a conta para acessar o site de acesso via Web remoto ou recursos de rede, como pastas compartilhadas até que você ativa a conta.  
+###  <a name="BKMK_Manage6"></a> Desativar uma conta de usuário  
+ Quando você desativa uma conta de usuário, o acesso da conta ao servidor é suspenso temporariamente. Por isso, o usuário atribuído não pode usar a conta para acessar recursos de rede como pastas compartilhadas ou o site de Acesso Remoto via Web até você ativar a conta.  
   
- Se a conta de usuário tiver uma conta online da Microsoft atribuída, a conta online também é desativada. O usuário não pode usar recursos no Office 365 e outros serviços online que você assine, mas os dados do usuário s, incluindo email, são mantidos no Microsoft Online Services.  
+ Se a conta de usuário tiver uma conta da Microsoft online atribuída, a conta online também será desativada. O usuário não pode usar recursos do Office 365 e outros serviços online que você assina, mas os dados do usuário s, incluindo email, são mantidos no Microsoft Online Services.  
   
 > [!NOTE]
->  Você pode desativar somente uma conta de usuário que está atualmente ativa.  
+>  Você só pode desativar uma conta de usuário que está ativa no momento.  
   
 ##### <a name="to-deactivate-a-user-account"></a>Para desativar uma conta de usuário  
   
-1.  Abra o painel do Windows Server Essentials.  
+1.  Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação, clique em **usuários**.  
+2.  Na barra de navegação, clique em **Usuários**.  
   
 3.  Na exibição de lista, selecione a conta de usuário que você deseja desativar.  
   
-4.  No **< usuário Account\ > tarefas** painel, clique em **desativar a conta de usuário**.  
+4.  No **< Conta_de_usuário\> tarefas** painel, clique em **desativar a conta de usuário**.  
   
 5.  Na janela de confirmação, clique em **Sim** para confirmar a ação.  
   
 > [!NOTE]
->  Depois que você desativa uma conta de usuário, exibe o status da conta **inativo**.  
+>  Após você desativar uma conta de usuário, o status da conta será exibido como **Inativo**.  
 >   
 >  Se você tiver um provedor de email integrado, a conta de email atribuída à conta de usuário também será desativada.  
   
-###  <a name="BKMK_Manage7"></a>Entender as contas de usuário  
- Uma conta de usuário fornece informações importantes para o Windows Server Essentials, que permite que pessoas acessem informações que são armazenadas no servidor e torna possível para os usuários individuais criar e gerenciar seus arquivos e configurações. Os usuários podem fazer logon em qualquer computador da rede se eles têm uma conta de usuário do Windows Server Essentials e têm permissões para acessar um computador. Os usuários acessem suas contas de usuário com seu nome de usuário e senha.  
+###  <a name="BKMK_Manage7"></a> Entender as contas de usuário  
+ Uma conta de usuário fornece informações importantes para o Windows Server Essentials, que permite acessar informações armazenadas no servidor e possibilita que usuários individuais criem e gerenciem seus arquivos e configurações. Os usuários podem fazer logon em qualquer computador da rede se tiverem uma conta de usuário do Windows Server Essentials e têm permissão para acessar um computador. Os usuários acessam suas contas de usuário com seu nome de usuário e senha.  
   
- Há dois tipos principais de contas de usuário. Cada tipo oferece aos usuários um nível diferente de controle do computador:  
+ Há dois tipos principais de contas de usuário. Cada tipo fornece aos usuários um nível diferente de controle sobre o computador:  
   
--   **Padrão** contas são para o dia a dia. A conta padrão ajuda a proteger sua rede, impedindo que os usuários façam alterações que afetam outros usuários, como excluir arquivos ou alterar configurações de rede.  
+-   Contas **Padrão** são destinadas à computação cotidiana. A conta padrão ajuda a proteger sua rede, impedindo que os usuários façam alterações que afetam outros usuários, como excluir arquivos ou alterar as configurações de rede.  
   
--   **Administrador** contas oferecem mais controle sobre uma rede do computador. Você deve atribuir o administrador da conta tipo somente quando necessário.  
+-   Contas de **Administrador** oferecem mais controle sobre uma rede de computadores. Você deve atribuir o tipo de conta de administrador somente quando for necessário.  
   
-###  <a name="BKMK_Manage8"></a>Gerenciar contas de usuário usando o painel  
- Windows Server Essentials torna possível realizar tarefas administrativas comuns usando o painel do Windows Server Essentials. Por padrão, o **usuários** página do painel inclui duas guias **usuários** e **grupos de usuários**.  
+###  <a name="BKMK_Manage8"></a> Gerenciar contas de usuário usando o painel  
+ O Windows Server Essentials torna possível executar tarefas administrativas comuns usando o Painel do Windows Server Essentials. Por padrão, o **os usuários** página do painel inclui duas guias **usuários** e **grupos de usuários**.  
   
 > [!NOTE]
->  -   Se integrar seu servidor que está executando o Windows Server Essentials com o Office 365, uma nova guia chamado **grupos de distribuição** também é adicionada dentro do **usuários** página do painel.  
-> -   No Windows Server Essentials, o **usuários** página do painel inclui apenas uma única guia - **usuários**.  
+>  -   Se você integrar seu servidor que está executando o Windows Server Essentials com o Office 365, uma nova guia chamada **grupos de distribuição** também será adicionada a **usuários** página do painel.  
+> -   No Windows Server Essentials, o **os usuários** página do painel contém apenas uma guia - **usuários**.  
   
- O **usuários** guia inclui o seguinte:  
+ A guia **Usuários** inclui o seguinte:  
   
 -   Uma lista de contas de usuário, que exibe:  
   
@@ -210,55 +211,55 @@ A página de usuários do Windows Server Essentials painel centraliza informaç�
   
     -   O nome de Logon da conta de usuário.  
   
-    -   Se a conta de usuário tem permissão de acesso em qualquer local. Em qualquer lugar permissão de acesso para uma conta de usuário é **permitidos** ou **não permitido**.  
+    -   Se a conta de usuário tem permissão de Acesso em qualquer lugar. A permissão de Acesso em qualquer lugar para uma conta de usuário é **Permitido** ou **Não permitido**.  
   
-    -   Se o histórico de arquivos para essa conta de usuário é gerenciado pelo servidor que executa o Windows Server Essentials. O status do histórico de arquivos para uma conta de usuário seja **gerenciado** ou **não gerenciado**.  
+    -   Se o histórico de arquivos para esta conta de usuário é gerenciado pelo servidor que executa o Windows Server Essentials. O status do histórico de arquivos para uma conta de usuário é **Gerenciado** ou **Não gerenciado**.  
   
-    -   O nível de acesso atribuído à conta de usuário. Você pode atribuir um **usuário padrão** acesso ou **administrador** acesso para uma conta de usuário.  
+    -   O nível de acesso que é atribuído à conta de usuário. Você pode atribuir o acesso de **Usuário padrão** ou **Administrador** a uma conta de usuário.  
   
-    -   O status de conta de usuário. Uma conta de usuário pode ser **Active**, **inativo**, ou **incompleto**.  
+    -   O status da conta de usuário. Uma conta de usuário pode ser **Ativa**, **Inativa**ou **Incompleta**.  
   
-    -   No Windows Server Essentials, se o servidor está integrado com o Office 365 ou o Windows Intune, a conta online da Microsoft é exibida.  
+    -   No Windows Server Essentials, se o servidor estiver integrado ao Office 365 ou Windows Intune, a conta online da Microsoft é exibida.  
   
-    -   No Windows Server Essentials, se o servidor está integrado com o Microsoft Office 365, o status da conta do Office 365 (conhecida no Windows Server Essentials como a conta online da Microsoft) para a conta de usuário é exibido.  
+    -   No Windows Server Essentials, se o servidor estiver integrado com o Microsoft Office 365, o status da conta do Office 365 (conhecido no Windows Server Essentials como conta online da Microsoft) para a conta de usuário é exibido.  
   
--   Um painel de detalhes com informações adicionais sobre uma conta de usuário selecionado.  
+-   Um painel de detalhes com informações adicionais sobre uma conta de usuário selecionada.  
   
 -   Um painel de tarefas que inclui:  
   
-    -   Um conjunto de tarefas administrativas de conta de usuário, como exibir e remover as contas de usuário e alterar as senhas.  
+    -   Um conjunto de tarefas administrativas de conta de usuário, como exibir e remover as contas de usuário e alterar senhas.  
   
-    -   Tarefas que permitem que você definir ou alterar as configurações de todas as contas de usuário na rede globalmente.  
+    -   Tarefas que permitem definir globalmente ou alterar as configurações para todas as contas de usuário na rede.  
   
- A tabela a seguir descreve as várias tarefas de conta de usuário que estão disponíveis no **usuários** guia. Algumas das tarefas são específicas de conta de usuário, e eles só ficam visíveis quando você seleciona uma conta de usuário na lista.  
+ A tabela a seguir descreve as diversas tarefas de conta de usuário que estão disponíveis a partir da guia **Usuários** . Algumas das tarefas são específicas de conta de usuário, e são visíveis apenas quando você seleciona uma conta de usuário na lista.  
   
 > [!NOTE]
->  Se você integrar o Office 365 com o Windows Server Essentials, tarefas adicionais serão disponibilizados. Para obter mais informações, consulte [gerenciar contas Online para que os usuários](Manage-Online-Accounts-for-Users.md).  
+>  Se você integrar o Office 365 com o Windows Server Essentials, tarefas adicionais serão disponibilizadas. Para obter mais informações, consulte [gerenciar contas Online para usuários](Manage-Online-Accounts-for-Users.md).  
   
-### <a name="user-account-tasks-in-the-dashboard"></a>Tarefas de conta de usuário no painel  
+### <a name="user-account-tasks-in-the-dashboard"></a>Tarefas de conta de usuário no Painel  
   
 |Nome da tarefa|Descrição|  
 |---------------|-----------------|  
-|Exibir as propriedades da conta|Permite que você exibir e alterar as propriedades da conta de usuário selecionado e para especificar as permissões de acesso de pasta para a conta.|  
-|Desativar a conta de usuário|Uma conta de usuário que está desativada não pode fazer logon nas rede ou acessar recursos da rede, como impressoras ou pastas compartilhadas.|  
-|Ativar a conta de usuário|Uma conta de usuário que é ativada pode fazer logon rede e pode acessar recursos de rede, conforme definido pelas permissões da conta.|  
-|Remover a conta de usuário|Permite que você remova a conta de usuário selecionado.|  
-|Alterar a senha da conta de usuário|Permite que você redefina a senha de rede para a conta de usuário selecionado.|  
-|Adicionar uma conta de usuário|Inicia a adicionar um Assistente de conta de usuário, que permite que você crie uma nova conta de usuário único que tem acesso de usuário padrão ou acesso de administrador.|  
-|Atribuir uma conta online da Microsoft|Adiciona uma conta online da Microsoft para a conta de usuário de rede local está selecionada.<br /><br /> Essa tarefa é exibida quando o servidor está integrado com os serviços online da Microsoft, como o Office 365.|  
-|Adicionar contas online da Microsoft|Adiciona contas online da Microsoft e associa-los para contas de usuário de rede local.<br /><br /> Essa tarefa é exibida quando o servidor está integrado com os serviços online da Microsoft, como o Office 365.|  
-|Defina a política de senha|Permite que você altere os valores da senha políticas com base em sua rede.|  
-|Importar contas online da Microsoft|Executa uma importação em massa de contas de serviços online da Microsoft na rede local.<br /><br /> Essa tarefa é exibida quando o servidor está integrado com os serviços online da Microsoft, como o Office 365.|  
+|Ver as propriedades da conta|Permite exibir e alterar as propriedades da conta de usuário selecionada e especificar as permissões de acesso a pastas para a conta.|  
+|Desativar a conta de usuário|Uma conta de usuário que está desativada não consegue fazer logon de rede ou acessar recursos de rede, como pastas compartilhadas ou impressoras.|  
+|Ativar a conta de usuário|Uma conta de usuário ativada pode fazer logon na rede e acessar recursos de rede, conforme definido pelas permissões da conta.|  
+|Remover a conta de usuário|Permite que você remova a conta de usuário selecionada.|  
+|Alterar a senha da conta de usuário|Permite que você redefina a senha de rede para a conta de usuário selecionada.|  
+|Adicionar uma conta de usuário|Inicia o Assistente de Adição de Conta de Usuário, que permite que você crie uma nova conta de usuário que tem acesso de usuário padrão ou de administrador.|  
+|Atribuir uma conta online da Microsoft|Adiciona uma conta online da Microsoft à conta de usuário da rede local que está selecionada.<br /><br /> Essa tarefa é exibida quando o servidor é integrado aos serviços online da Microsoft, como o Office 365.|  
+|Adicionar contas online da Microsoft|Adiciona contas online da Microsoft e as associa a contas de usuário de rede local.<br /><br /> Essa tarefa é exibida quando o servidor é integrado aos serviços online da Microsoft, como o Office 365.|  
+|Definir a política de senha|Permite que você altere os valores da política de senhas para sua rede.|  
+|Importar contas online da Microsoft|Realiza uma importação em massa de contas de serviços online da Microsoft na rede local.<br /><br /> Essa tarefa é exibida quando o servidor é integrado aos serviços online da Microsoft, como o Office 365.|  
 |Atualizar|Atualiza a guia de usuários.<br /><br /> Essa tarefa é aplicável ao Windows Server Essentials.|  
-|Alterar as configurações do histórico de arquivos|Permite que você altere as configurações de histórico de arquivos, como backup frequência ou duração do backup.<br /><br /> Essa tarefa é aplicável ao Windows Server Essentials.|  
-|Exportar todas as conexões remotas|Cria um. Arquivo de formato CSV de todas as conexões remotas com o servidor que ocorreram nos últimos 30 dias.|  
+|Alterar as configurações do histórico de arquivos|Permite que você altere as configurações do histórico de arquivos, como a frequência de backup ou duração do backup.<br /><br /> Essa tarefa é aplicável ao Windows Server Essentials.|  
+|Exportar todas as conexões remotas|Cria um arquivo de formato .CSV de todas as conexões remotas ao servidor que ocorreram nos últimos 30 dias.|  
   
-##  <a name="BKMK_ManageAccess"></a>Gerenciamento de senhas e acesso  
- Os tópicos a seguir fornecem informações sobre como usar o Windows Server Essentials Dashboard para gerenciar o acesso de usuário às pastas compartilhadas no servidor e senhas de conta de usuário:  
+##  <a name="BKMK_ManageAccess"></a> Acesso e gerenciamento de senhas  
+ Os tópicos a seguir fornecem informações sobre como usar o Painel do Windows Server Essentials para gerenciar as senhas de contas de usuário e o acesso dos usuários às pastas compartilhadas no servidor:  
   
 -   [Alterar ou redefinir a senha de uma conta de usuário](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access1)  
   
--   [O que você deve saber sobre políticas de senha](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access3)  
+-   [O que você deve saber sobre as políticas de senha](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access3)  
   
 -   [Alterar a política de senha](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access4)  
   
@@ -266,368 +267,368 @@ A página de usuários do Windows Server Essentials painel centraliza informaç�
   
 -   [Manter e gerenciar o acesso a arquivos para contas de usuário removido](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access6)  
   
--   [Sincronizar a senha DSRM com a senha de administrador de rede](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access7)  
+-   [Sincronizar a senha do DSRM com a senha de administrador de rede](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access7)  
   
--   [Dar permissão da área de trabalho remota a contas de usuário](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access8)  
+-   [Conceder permissão de área de trabalho remota de contas de usuário](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access8)  
   
--   [Permitir que os usuários acessem os recursos no servidor](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access9)  
+-   [Permitir que usuários acessem recursos do servidor](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access9)  
   
--   [Alterar as permissões de acesso remoto para uma conta de usuário](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access10)  
+-   [Alterar permissões de acesso remoto para uma conta de usuário](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access10)  
   
--   [Alterar as permissões de rede virtual privada para uma conta de usuário](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access11)  
+-   [Alterar permissões de rede virtual privada para uma conta de usuário](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access11)  
   
--   [Alterar o acesso a pastas compartilhadas internas para uma conta de usuário](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access12)  
+-   [Alterar o acesso a pastas compartilhadas internas de uma conta de usuário](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access12)  
   
--   [Permitir que as contas de usuário estabelecer uma sessão da área de trabalho remota em seus computadores](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access13)  
+-   [Permitir que contas de usuário estabelecer uma sessão de área de trabalho remota para seu computador](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access13)  
   
-###  <a name="BKMK_Access1"></a>Alterar ou redefinir a senha de uma conta de usuário  
- Para alterar ou redefinir uma senha de conta de usuário, siga estas etapas.  
+###  <a name="BKMK_Access1"></a> Alterar ou redefinir a senha de uma conta de usuário  
+ Para alterar ou redefinir a senha de uma conta de usuário, siga estas etapas.  
   
 ##### <a name="to-reset-the-password-for-a-user-account"></a>Para redefinir a senha de uma conta de usuário  
   
-1.  Abra o painel do Windows Server Essentials.  
+1.  Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação, clique em **usuários**.  
+2.  Na barra de navegação, clique em **Usuários**.  
   
 3.  Na lista de contas de usuário, selecione a conta de usuário que você deseja redefinir.  
   
-4.  No **< usuário Account\ > tarefas** painel, clique em **alterar a senha da conta de usuário**. O Assistente de senha de conta de usuário de alteração aparece.  
+4.  No **< Conta_de_usuário\> tarefas** painel, clique em **alterar a senha da conta de usuário**. O Assistente de Alteração de Senha de Conta de Usuário é exibido.  
   
-5.  Digite uma nova senha da conta de usuário e, em seguida, digite a senha novamente para confirmá-la.  
+5.  Digite uma nova senha para a conta de usuário e, em seguida, digite a senha novamente para confirmá-la.  
   
-6.  Clique em **alterar senha**.  
+6.  Clique em **Alterar senha**.  
   
-7.  Fornece a nova senha para o usuário.  
+7.  Fornece a nova senha do usuário.  
   
     > [!IMPORTANT]
-    >  -   Você não consiga alterar sua senha, se a política de senha para sua conta tiver sido definida **as senhas nunca expirem**.  
-    > -   Caracteres não ASCII não são suportados no Azure AD. Portanto, se o servidor está integrado com o Azure AD, não use quaisquer caracteres não ASCII em sua senha.  
-    > -   Se uma conta online da Microsoft (conhecida no Windows Server Essentials como uma conta do Office 365) é atribuída ao usuário, a senha será sincronizada com a senha da conta online. O usuário usará a nova senha para fazer logon no servidor ou fazer logon no Office 365. Para obter mais informações, consulte [gerenciar contas Online para que os usuários](Manage-Online-Accounts-for-Users.md).  
+    >  -   Você não poderá alterar sua senha se a política de senha para a sua conta tiver sido definida como **As senhas nunca expiram**.  
+    > -   Caracteres não ASCII não têm suporte no Azure AD. Portanto, se seu servidor estiver integrado com o Azure AD, não use caracteres não ASCII em sua senha.  
+    > -   Se uma conta online da Microsoft (conhecida no Windows Server Essentials como uma conta do Office 365) é atribuída ao usuário, a senha é sincronizada com a senha da conta online. O usuário usará a nova senha para entrar no servidor ou no Office 365. Para obter mais informações, consulte [gerenciar contas Online para usuários](Manage-Online-Accounts-for-Users.md).  
   
-###  <a name="BKMK_Access3"></a>O que você deve saber sobre políticas de senha  
- A política de senha é um conjunto de regras que definem como os usuários criarem e usam senhas. A política ajuda a impedir o acesso não autorizado aos dados de usuário e outras informações que são armazenadas no servidor. A política de senha é aplicada a todas as contas de usuário que acessam a rede.  
+###  <a name="BKMK_Access3"></a> O que você deve saber sobre as políticas de senha  
+ A política de senha é um conjunto de regras que definem como os usuários criam e usam senhas. A política ajuda a evitar acesso não autorizado aos dados do usuário e a outras informações armazenadas no servidor. A política de senha é aplicada a todas as contas de usuário que acessam a rede.  
   
- A política de senha do Windows Server Essentials consiste em três elementos principais da seguinte maneira:  
+ A política de senha do Windows Server Essentials consiste em três elementos principais, da seguinte maneira:  
   
--   **Tamanho de senha**.  Quanto mais tempo uma senha é, mais seguro. Senhas em branco não são seguras.  
+-   **Comprimento da senha**.  Quanto maior é de uma senha, mais segura. Senhas em branco não são seguras.  
   
--   **Complexidade de senha**.  Senhas complexas contêm uma mistura de letras maiusculas e letras minúsculas (a-z, a Z), base (0-9) de números e símbolos não alfabéticos (como;!, @, #, _-). Senhas complexas são muito menos vulneráveis a acesso não autorizado. As senhas que contêm os nomes de usuário, datas de nascimento ou outras informações pessoais não fornecer segurança adequada.  
+-   **Complexidade de senha**.  Senhas complexas contêm uma mistura de letras maiúsculas e minúsculas (a-z, A-Z), números básicos (0-9) e símbolos não alfabéticos (como;!, @, #, _,-). Senhas complexas são muito menos suscetíveis a acesso não autorizado. As senhas que contêm nomes de usuário, datas de nascimento ou outras informações pessoais não fornecem segurança adequada.  
   
--   **Duração da senha**.  Windows Server Essentials requer que os usuários alterar a senha de pelo menos uma vez a cada 180 dias. Como opção, você pode optar por ter senhas nunca expirarão.  
+-   **Duração da senha**.  O Windows Server Essentials exige que os usuários alterem suas senhas pelo menos uma vez a cada 180 dias. Como opção, você pode optar por ter senhas nunca expirar.  
   
- Para tornar mais fácil de implementar uma política de senha em sua rede do computador, o Windows Server Essentials fornece uma ferramenta simple que permite que você definir ou alterar a política de senha para qualquer um dos seguintes perfis predefinidos política quatro:  
+ Para tornar mais fácil implementar uma política de senha no computador da rede, o Windows Server Essentials fornece uma ferramenta simples que permite que você defina ou altere a política de senha para qualquer um dos seguintes quatro perfis predefinidos de política:  
   
--   **Fracas**.  Os usuários podem especificar qualquer senha que não está em branco.  
+-   **Fraca**.  Os usuários podem especificar qualquer senha que não esteja em branco.  
   
--   **Médio**.  Essas senhas devem conter pelo menos 5 caracteres. Uma senha complexa não é necessária.  
+-   **Média**.  Essas senhas devem conter pelo menos 5 caracteres. Uma senha complexa não é obrigatória.  
   
--   **Forte médio**.  Essas senhas devem conter pelo menos 5 caracteres e devem incluir letras, números e símbolos.  
+-   **Média Forte**.  As senhas devem conter pelo menos 5 caracteres e devem incluir letras, números e símbolos.  
   
--   **Forte**.  Essas senhas devem conter pelo menos 7 caracteres e devem incluir letras, números e símbolos. Essas senhas são mais seguras, mas podem ser mais difícil para os usuários se lembrarem.  
+-   **Forte**.  As senhas devem conter pelo menos 7 caracteres e devem incluir letras, números e símbolos. Essas senhas são mais seguras, mas podem ser mais difíceis para os usuários memorizarem.  
   
     > [!NOTE]
-    >  As senhas não podem conter o usuário nome ou endereço de email.  
+    >  A senhas não podem conter o endereço de email ou o nome de usuário.  
     >   
-    >  Se você integrar com o Office 365, a integração impõe a **forte** política de senha e atualiza a política para incluir os seguintes requisitos:  
+    >  Se você integrar com o Office 365, a integração impõe a política de senha **Forte** e atualiza a política para incluir os seguintes requisitos:  
     >   
-    >  -   As senhas devem conter 16 de 8 caracteres.  
-    > -   Senhas não podem conter um espaço ou o nome de email do Office 365.  
+    >  -   As senhas devem conter 8 16 caracteres.  
+    > -   As senhas não podem conter espaços ou o nome de email do Office 365.  
   
- Por padrão, a instalação do servidor define a política de senha padrão o **forte** opção.  
+ Por padrão, a instalação do servidor define a política de senha padrão a opção **Forte**.  
   
-###  <a name="BKMK_Access4"></a>Alterar a política de senha  
- Use o procedimento a seguir para definir ou alterar a política de senha para qualquer uma das quatro perfis predefinidos política.  
+###  <a name="BKMK_Access4"></a> Alterar a política de senha  
+ Use o procedimento a seguir para definir ou alterar a política de senha para qualquer um dos quatro perfis predefinidos de política.  
   
 ##### <a name="to-change-the-password-policy"></a>Para alterar a política de senha  
   
-1.  Abrir o painel do Windows Server Essentials e clique em **usuários**.  
+1.  Abra o Painel do Windows Server Essentials e, em seguida, clique em **Usuários**.  
   
-2.  No **usuários tarefas** painel, clique em **definir a política de senha**.  
+2.  No painel **Tarefas de usuários** , clique em **Definir a política de senha**.  
   
-3.  Sobre o **alterar a política de senha** tela, defina o nível de força de senha, movendo o controle deslizante.  
+3.  Na tela **Alterar a política de senha** , defina o nível de força da senha movendo o controle deslizante.  
   
-     A Microsoft recomenda que você definir a força de senha para **forte**.  
+     A Microsoft recomenda que você defina a força da senha como **Forte**.  
   
     > [!NOTE]
-    >  Como opção, você também pode selecionar **as senhas nunca expirem**. Essa configuração é menos segura e, portanto ele não é recomendado.  
+    >  Como opção, você também pode selecionar **As senhas nunca expiram**. Essa configuração é menos segura, e portanto não é recomendada.  
   
-4.  Clique em **alterar política**.  
+4.  Clique em **Alterar política**.  
   
-###  <a name="BKMK_Access5"></a>Nível de acesso a pastas compartilhadas  
- Como prática recomendada, você deve atribuir as permissões mais restritivas disponíveis que ainda permitem que os usuários realizem tarefas necessárias.  
+###  <a name="BKMK_Access5"></a> Nível de acesso a pastas compartilhadas  
+ Como prática recomendada, você deve atribuir as permissões mais restritivas possíveis que ainda permitam que os usuários executem as tarefas necessárias.  
   
  Você tem três configurações de acesso disponíveis para as pastas compartilhadas no servidor:  
   
--   **Leitura/gravação**.  Escolha esta configuração se você deseja permitir que a permissão de conta de usuário criar, alterar e excluir todos os arquivos na pasta compartilhada.  
+-   **Leitura/gravação**.  Escolha essa configuração se você quiser permitir que a conta de usuário permissão Criar, alterar e excluir os arquivos na pasta compartilhada.  
   
--   **Somente leitura**.  Escolha essa configuração se você quiser conceder a permissão de conta de usuário para ler somente os arquivos na pasta compartilhada. Contas de usuário com acesso somente leitura não podem criar, alterar ou excluir todos os arquivos na pasta compartilhada.  
+-   **Somente leitura**.  Escolha essa configuração para permitir que a conta de usuário somente leia arquivos na pasta compartilhada. Contas de usuário com acesso somente leitura não podem criar, alterar ou excluir os arquivos na pasta compartilhada.  
   
--   **Sem acesso**.  Escolha essa configuração se você não quiser que a conta de usuário para acessar todos os arquivos na pasta compartilhada.  
+-   **Sem acesso**.  Escolha essa opção se você não quiser que a conta de usuário acesse arquivos na pasta compartilhada.  
   
-###  <a name="BKMK_Access6"></a>Manter e gerenciar o acesso a arquivos para contas de usuário removido  
- O administrador da rede pode remover uma conta de usuário e optar por manter o usuário arquivos s para uso futuro. Nesse cenário, a conta de usuário removido não pode mais ser usada para entrar em rede; No entanto, os arquivos para este usuário serão salvos em uma pasta compartilhada, que pode ser compartilhada com outro usuário.  
+###  <a name="BKMK_Access6"></a> Manter e gerenciar o acesso a arquivos para contas de usuário removido  
+ O administrador de rede pode remover uma conta de usuário e optar por manter o usuário arquivos s para uso futuro. Neste cenário, a conta de usuário removida não pode mais ser usada para entrar na rede. No entanto, os arquivos desse usuário serão salvos em uma pasta compartilhada, que pode ser compartilhada com outro usuário.  
   
 > [!IMPORTANT]
->  Lembre-se de que se você remover uma conta de usuário que tem uma conta online da Microsoft atribuída, a conta online também é removida, e os dados do usuário, incluindo email, estão sujeito às políticas de retenção de dados no Microsoft Online Services. Para manter os dados do usuário para a conta online, desative a conta de usuário em vez de removê-lo. Para obter mais informações, consulte [gerenciar contas Online para que os usuários](Manage-Online-Accounts-for-Users.md).  
+>  Lembre-se de que se você remover uma conta de usuário que tiver uma conta da Microsoft online atribuída, a conta online também será removida e os dados do usuário, incluindo email, estarão sujeitos às políticas de retenção de dados do Microsoft Online Services. Para manter os dados do usuário da conta online, desative a conta de usuário em vez de removê-lo. Para obter mais informações, consulte [gerenciar contas Online para usuários](Manage-Online-Accounts-for-Users.md).  
   
-##### <a name="to-remove-a-user-account-but-retain-access-to-the-user-s-files"></a>Para remover uma conta de usuário, mas manter o acesso aos arquivos do usuário s  
+##### <a name="to-remove-a-user-account-but-retain-access-to-the-user-s-files"></a>Para remover uma conta de usuário, mas manter o acesso aos arquivos de usuário s  
   
-1.  Abra o painel do Windows Server Essentials.  
+1.  Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação, clique em **usuários**.  
+2.  Na barra de navegação, clique em **Usuários**.  
   
-3.  Na lista de contas de usuário, selecione a conta de usuário que você deseja remover.  
+3.  Na lista de contas de usuário, selecione a conta de usuário que deseja remover.  
   
-4.  No **< usuário Account\ > tarefas** painel, clique em **remover a conta de usuário**. Excluir um Assistente de conta de usuário é exibida.  
+4.  No **< Conta_de_usuário\> tarefas** painel, clique em **remover a conta de usuário**. O Assistente de Exclusão de Conta de Usuário é exibido.  
   
-5.  Sobre o **você deseja manter os arquivos? ** de página, certifique-se de que o **excluir os arquivos, inclusive backups de histórico de arquivo e pasta redirecionada para essa conta de usuário** verificar caixa é clara e clique em **próxima**.  
+5.  Na página **Deseja manter os arquivos?** , certifique-se de que a caixa de seleção **Excluir os arquivos, incluindo os backups do Histórico de Arquivos e a pasta redirecionada, desta conta de usuário** não esteja marcada e clique em **Avançar**.  
   
-     Uma página de confirmação é exibida avisando que está excluindo a conta, mas manter os arquivos.  
+     Uma página de confirmação aparece, informando que você está excluindo a conta e mantendo os arquivos.  
   
-6.  Clique em **excluir conta** para remover a conta de usuário.  
+6.  Clique em **Excluir conta** para remover a conta de usuário.  
   
- Depois que a conta de usuário for removida, o administrador pode dar acesso à outra conta de usuário para a pasta compartilhada.  
+ Depois que a conta de usuário for removida, o administrador pode fornecer a outra conta de usuário acesso à pasta compartilhada.  
   
-##### <a name="to-give-a-user-account-permission-to-access-a-shared-folder"></a>Para dar uma permissão de conta de usuário para acessar uma pasta compartilhada  
+##### <a name="to-give-a-user-account-permission-to-access-a-shared-folder"></a>Para dar a uma conta de usuário permissão para acessar uma pasta compartilhada  
   
-1.  Abra o painel do Windows Server Essentials.  
+1.  Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação, clique em **armazenamento**e, em seguida, clique no **pastas de servidor** guia.  
+2.  Na barra de navegação, clique em **Armazenamento** e clique na guia **Pastas do Servidor**.  
   
-3.  Na lista de pastas, selecione o **usuários** pasta.  
+3.  Na lista de pastas, selecione a pasta **Usuários** .  
   
-4.  No **usuários tarefas** painel, clique em **abra a pasta**. Windows Explorer abre e exibe o conteúdo do **usuários** pasta.  
+4.  No painel **Tarefas de Usuários**, clique em **Abrir a pasta**. O Windows Explorer é aberto e exibe o conteúdo da pasta **Usuários**.  
   
-5.  Clique com botão direito na pasta para a conta de usuário que você deseja compartilhar e, em seguida, clique em **propriedades**.  
+5.  Clique com o botão direito do mouse na pasta da conta de usuário que deseja compartilhar e, em seguida, clique em **Propriedades**.  
   
-6.  Em **< usuário Account\ > propriedades**, clique no **compartilhamento** guia e, em seguida, clique em **compartilhamento**.  
+6.  No **< conta de usuário\> Properties**, clique no **compartilhamento** guia e, em seguida, clique em **compartilhamento**.  
   
-7.  No **compartilhamento de arquivos** janela, digite ou selecione o nome da conta de usuário com quem deseja compartilhá-la e, em seguida, clique em **adicionar**.  
+7.  Na janela **Compartilhamento de arquivos** , digite ou selecione o nome da conta de usuário com que você deseja compartilhar a pasta e, em seguida, clique em **Adicionar**.  
   
-8.  Escolha o **nível de permissão** que você deseja que a conta de usuário e, em seguida, clique em **compartilhamento**.  
+8.  Escolha o **Nível de permissão** que você deseja que a conta de usuário tenha e, em seguida, clique em **Compartilhamento**.  
   
-###  <a name="BKMK_Access7"></a>Sincronizar a senha DSRM com a senha de administrador de rede  
- Modo de restauração de serviços de diretório (DSRM) é um modo especial para inicialização para reparar ou recuperar do Active Directory. O sistema operacional usa DSRM para fazer logon no computador, se Active Directory falhar ou precisa ser restaurado. Se a senha de administrador de rede e a senha DSRM forem diferentes, DSRM não será carregado.  
+###  <a name="BKMK_Access7"></a> Sincronizar a senha do DSRM com a senha de administrador de rede  
+ Modo de Restauração dos Serviços de Diretório (DSRM) é um modo especial de inicialização para reparo ou recuperação do Active Directory. O sistema operacional usa o DSRM para fazer logon no computador se o Active Directory falhar ou precisar ser restaurado. Se a senha de administrador de rede e a senha do DSRM forem diferentes, o DSRM não será carregado.  
   
- Durante uma instalação limpa e pela primeira vez, do Windows Server Essentials, o programa define a senha DSRM como a senha de conta de administrador da rede que você especifica durante a instalação ou no arquivo de resposta da migração. Quando você alterar sua senha de administrador de rede (como recomendado normalmente cada 60 dias para a segurança do servidor maior), a alteração de senha não é encaminhada ao DSRM. Isso resulta em uma incompatibilidade de senha. Se isso ocorrer, você pode usar as seguintes soluções para manualmente ou sincronizar automaticamente a senha de s do administrador de rede com a senha DSRM.  
+ Durante uma instalação limpa do Windows Server Essentials, feita pela primeira vez, o programa define a senha do DSRM como a senha da conta do administrador de rede que você especificar durante a instalação ou que estiver no arquivo de resposta da migração. Quando você altera a senha de administrador de rede (como recomendado normalmente cada 60 dias, para maior segurança do servidor), a alteração de senha não será refletida no DSRM. Isso resulta em uma incompatibilidade de senhas. Se isso ocorrer, você pode usar as seguintes soluções para manualmente ou sincronizar automaticamente a senha de s de administrador de rede com a senha do DSRM.  
   
-##### <a name="to-manually-synchronize-the-dsrm-password-to-a-network-administrator-account"></a>Para sincronizar manualmente a senha DSRM para uma conta de administrador de rede  
+##### <a name="to-manually-synchronize-the-dsrm-password-to-a-network-administrator-account"></a>Para sincronizar manualmente a senha do DSRM com uma conta de administrador de rede  
   
 1.  Em um prompt de comando, execute `ntdsutil.exe` para abrir a ferramenta ntdsutil.  
   
-2.  Para redefinir a senha DSRM, digite **definir dsrm senha**.  
+2.  Para redefinir a senha do DSRM, digite **set dsrm password**.  
   
-3.  Para sincronizar a senha DSRM em um controlador de domínio com a conta de s de administrador de rede atual, digite:  
+3.  Para sincronizar a senha do DSRM em um controlador de domínio com a conta de s de administrador de rede atual, digite:  
   
-     **sincronização de conta de domínio** *< current_network_administrator_account >*, e pressione Enter.  
+     **sincronização da conta de domínio** *< current_network_administrator_account >*, e pressione Enter.  
   
- Porque você alterará periodicamente a senha da conta de administrador de rede, para garantir que a senha DSRM é sempre o mesmo que a senha atual do administrador de rede, recomendamos que você crie uma tarefa agendada para automaticamente sincronize a senha DSRM para a senha de administrador de rede diariamente.  
+ Como você alterará periodicamente a senha da conta de administrador de rede, para garantir que a senha do DSRM seja sempre igual à senha atual do administrador de rede, recomendamos que você crie uma tarefa agendada para sincronizar automaticamente a senha do DSRM com a senha do administrador de rede diariamente.  
   
-##### <a name="to-automatically-synchronize-the-dsrm-password-to-a-network-administrator-account"></a>Para sincronizar automaticamente a senha DSRM para uma conta de administrador de rede  
+##### <a name="to-automatically-synchronize-the-dsrm-password-to-a-network-administrator-account"></a>Para sincronizar automaticamente a senha do DSRM com uma conta de administrador de rede  
   
-1.  No servidor, abra **ferramentas administrativas**e clique duas vezes em **Agendador de tarefas**.  
+1.  No servidor, abra **Ferramentas Administrativas**e clique duas vezes em **Agendador de Tarefas**.  
   
-2.  No Agendador de tarefas **ações** painel, clique em **criar tarefa**.  
+2.  No painel **Ações** do Agendador de Tarefas, clique em **Criar Tarefa**.  
   
-3.  No **nome** caixa de texto, digite um nome para a tarefa, como **sincronização automática DSRM senha**e, em seguida, selecione o **executar com privilégios mais altos** opção.  
+3.  Na caixa de texto **Nome** , digite um nome para a tarefa, como **Sincronização automática da senha do DSM**e selecione a opção **Executar com privilégios mais altos** .  
   
-4.  Defina quando a tarefa deve ser executado:  
+4.  Defina quando a tarefa deve ser executada:  
   
-    1.  No **criar tarefa** caixa de diálogo, clique no **gatilhos** guia e, em seguida, clique em **nova**.  
+    1.  Na caixa de diálogo **Criar Tarefa**, clique na guia **Disparadores** e, em seguida, clique em **Novo**.  
   
-    2.  No **novo disparador** caixa de diálogo, selecione a opção de recorrência, especifique o intervalo de recorrência e escolha uma hora de início.  
+    2.  Na caixa de diálogo **Novo gatilho**, selecione a opção de recorrência, especifique o intervalo de recorrência e escolha uma hora de início.  
   
         > [!NOTE]
-        >  Como prática recomendada, você deve definir a tarefa seja executada diariamente durante fora do expediente.  
+        >  Como prática recomendada, você deve definir que a tarefa seja executada diariamente, não horário comercial.  
   
-    3.  Clique em **Okey** para salvar suas alterações e retornar para o **criar tarefa** caixa de diálogo.  
+    3.  Clique em **OK** para salvar suas alterações e retornar para a caixa de diálogo **Criar Tarefa**.  
   
-5.  Defina as ações de tarefa:  
+5.  Defina as ações da tarefa:  
   
-    1.  Clique no **ações** guia e, em seguida, clique em **nova**. O **nova ação** caixa de diálogo aparece.  
+    1.  Clique na guia **Ações** e, em seguida, clique em **Nova**. A caixa de diálogo **Nova ação** é exibida.  
   
-    2.  No **ação** listar, clique em **iniciar um programa**e, em seguida, navegue até **C:\WINDOWS\SYSTEM32\ntdsutil.exe**.  
+    2.  Na lista **Ação** , clique em **Iniciar um programa**e navegue até **C:\WINDOWS\SYSTEM32\ntdsutil.exe**.  
   
-    3.  No **adicionar argumentos**texto (opcional), digite o seguinte (você deve incluir as aspas): **definir dsrm sincronização de senha de conta de domínio SBS_network_administrator_account q q** onde *SBS_network_administrator_account* é o nome de conta de administrador s de rede atual.  
+    3.  No **adicionar argumentos**texto (opcional), digite o seguinte (você deve incluir as aspas): **definir a sincronização de senha do dsrm da conta de domínio SBS_network_administrator_account q q** onde  *SBS_network_administrator_account* é o nome de conta de administrador s de rede atual.  
   
-6.  Clique em **Okey** duas vezes para salvar a tarefa e feche o **criar tarefa** caixa de diálogo. A nova tarefa aparece no **tarefas ativas** seção **Agendador**.  
+6.  Clique em **OK** duas vezes para salvar a tarefa e fechar a caixa de diálogo **Criar Tarefa** . A nova tarefa aparece na seção **Tarefas ativas** do **Agendador de Tarefas**.  
   
-###  <a name="BKMK_Access8"></a>Dar permissão da área de trabalho remota a contas de usuário  
- Na instalação padrão do Windows Server Essentials, os usuários da rede não têm permissão para estabelecer uma conexão remota a computadores ou outros recursos na rede.  
+###  <a name="BKMK_Access8"></a> Conceder permissão de área de trabalho remota de contas de usuário  
+ Na instalação padrão do Windows Server Essentials, os usuários da rede não têm permissão para estabelecer uma conexão remota com computadores ou outros recursos na rede.  
   
- Antes dos usuários da rede podem estabelecer uma conexão remota aos recursos de rede, primeiro você deve configurar acesso em qualquer local. Depois de configurar o acesso em qualquer lugar, os usuários podem acessar arquivos, aplicativos e computadores em sua rede de escritório de um dispositivo em qualquer local com uma conexão de Internet.  
+ Para que os usuários da rede possam estabelecer uma conexão remota com recursos da rede, primeiro você deve configurar o Acesso em qualquer local. Após o Acesso em qualquer lugar ser configurado, os usuários podem acessar arquivos, aplicativos e computadores em sua rede de escritório a partir de um dispositivo em qualquer local com uma conexão à Internet.  
   
- Configurar Assistente de acesso em qualquer lugar permitirá que você habilite dois métodos de acesso remoto:  
+ O Assistente de Acesso em Qualquer Local permite habilitar dois métodos de acesso remoto:  
   
--   Rede virtual privada (VPN)  
+-   VPN (rede privada virtual)  
   
--   Acesso via Web remoto  
+-   Acesso Remoto via Web  
   
- Quando você executa o assistente, você pode optar por permitir o acesso em qualquer lugar para todas as contas de usuário atual e recém-adicionado.  
+ Quando você executa o assistente, também é possível permitir acesso em qualquer lugar para todas as contas de usuário atuais e recém-adicionada.  
   
- Para configurar o acesso em qualquer lugar, abra o painel **Home** página, clique em **instalação**e clique em **configurar o acesso em qualquer lugar**.  
+ Para configurar o Acesso em qualquer lugar, abra a página de **Início** do Painel, clique em **INSTALAÇÃO**e clique em **Configurar Acesso em Qualquer Local**.  
   
- Para obter mais informações sobre acesso em qualquer lugar, consulte [gerenciar o acesso em qualquer local](Manage-Anywhere-Access-in-Windows-Server-Essentials.md).  
+ Para obter mais informações sobre o acesso em qualquer lugar, consulte [Manage Anywhere Access](Manage-Anywhere-Access-in-Windows-Server-Essentials.md).  
   
-###  <a name="BKMK_Access9"></a>Permitir que os usuários acessem os recursos no servidor  
-  Esta seção se aplica a um servidor que executa o Windows Server Essentials ou o Windows Server Essentials, ou para um servidor que executa o Windows Server 2012 R2 Standard ou o Windows Server 2012 R2 Datacenter com a função de experiência do Windows Server Essentials instalada.  
+###  <a name="BKMK_Access9"></a> Permitir que usuários acessem recursos do servidor  
+  Esta seção se aplica a um servidor executando o Windows Server Essentials ou Windows Server Essentials, ou para um servidor que executa o Windows Server 2012 R2 Standard ou Windows Server 2012 R2 Datacenter com a função experiência Windows Server Essentials instalada.  
   
- Se você quer que os usuários usam o acesso remoto, e/ou ter contas de usuário individual, depois de concluir a conexão de um computador para o servidor, você pode criar nova rede contas de usuário para que os usuários do computador em rede no servidor usando o Dashboard. Para obter mais informações sobre como criar uma conta de usuário, consulte [adicionar uma conta de usuário](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1). Depois de criar as contas de usuário, você deve fornecer as informações de nome e a senha de usuário rede para os usuários do computador cliente para que eles possam acessar recursos no servidor por meio da barra inicial.  
+ Se você deseja que os usuários usem acesso remoto e/ou tenham contas de usuário individuais, depois de concluir a conexão de um computador com o servidor, você pode criar novas contas de usuário da rede para os usuários do computador em rede no servidor usando o Painel. Para obter mais informações sobre como criar uma conta de usuário, consulte [Add a user account](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1). Depois de criar as contas de usuário, você deve fornecer as informações de nome de usuário e senha rede para os usuários do computador cliente, para que eles possam acessar recursos do servidor usando a Barra Inicial.  
   
- Para cada conta de usuário que você crie você pode definir acesso para o seguinte por meio do usuário propriedades da conta:  
+ Para cada conta de usuário que criar, você pode definir o acesso por meio das seguintes propriedades de conta de usuário:  
   
--   **Pastas compartilhadas**.  Por padrão, os administradores de rede têm **leitura/gravação** têm permissão para todas as pastas compartilhadas e contas de usuário padrão **somente leitura** permissões para a pasta da empresa. Se o streaming de mídia estiver habilitado, você pode atribuir permissões de acesso para contas de usuário padrão individuais para as seguintes pastas compartilhadas: **música**, **imagens**, **TV gravada**, e **vídeos**. Você pode definir permissões para contas de usuário acessar pastas compartilhadas no **pastas compartilhadas** guia das propriedades de conta de usuário.  
+-   **Pastas compartilhadas**.  Por padrão, os administradores de rede têm permissão de **Leitura/gravação** para todas as pastas compartilhadas, e as contas de usuário padrão têm permissões **Somente leitura** para a pasta da Empresa. Se o streaming de mídia estiver habilitado, você poderá atribuir permissões de acesso para contas de usuário padrão para as seguintes pastas compartilhadas: **Música**, **Imagens**, **TV gravada**, e **Vídeos**. Você pode definir permissões para contas de usuário acessarem pastas compartilhadas na guia **Pastas compartilhadas** das propriedades da conta do usuário.  
   
--   **Acesso em qualquer lugar**.  Por padrão, os administradores de rede podem usar VPN ou acesso via Web remoto aos recursos do servidor de acesso. Para contas de usuário padrão, você deve definir permissões da conta de usuário a **acesso em qualquer local** guia.  
+-   **Acesso em qualquer lugar**.  Por padrão, os administradores de rede podem usar VPN ou Acesso Remoto via Web para acessar recursos do servidor. Para contas de usuário padrão, você deve definir permissões de conta de usuário na guia **Acesso em qualquer lugar** .  
   
--   **Acesso ao computador**.  Por padrão, os administradores de rede podem acessar todos os computadores na rede. No entanto, para contas de usuário padrão você pode definir permissões da conta de usuário individual para acessar computadores na rede no **acesso ao computador** guia das propriedades de conta de usuário.  
+-   **Acesso ao computador**.  Por padrão, os administradores de rede podem acessar todos os computadores na rede. No entanto, para contas de usuário padrão você pode definir permissões de conta de usuário individual para acessar os computadores da rede na guia **Acesso ao computador** das propriedades da conta do usuário.  
   
 ##### <a name="to-edit-user-account-properties-in-windows-server-essentials-2012-r2"></a>Para editar as propriedades de conta de usuário no Windows Server Essentials 2012 R2  
   
-1.  Abra o painel do Windows Server Essentials.  
+1.  Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação, clique em **usuários**.  
+2.  Na barra de navegação, clique em **USUÁRIOS**.  
   
-3.  Na lista de contas de usuário, selecione a conta de usuário que você deseja editar.  
+3.  Na lista de contas de usuário, selecione a conta de usuário que deseja remover.  
   
-4.  No **< usuário Account\ > tarefas** painel, clique em **exibir as propriedades da conta**.  
+4.  No **< conta de usuário\> tarefas** painel, clique em **exibir propriedades da conta**.  
   
-5.  No **< usuário Account\ > propriedades**, faça o seguinte:  
+5.  No **< Conta_de_usuário\> propriedades**, faça o seguinte:  
   
-    1.  Sobre o **pastas compartilhadas** guia, defina as permissões de pasta apropriada para cada pasta compartilhada, conforme necessário.  
+    1.  Na guia **Pastas compartilhadas**, defina as permissões de pasta apropriada para cada pasta compartilhada, conforme necessário.  
   
-    2.  Sobre o **acesso em qualquer local** guia:  
+    2.  Na guia **Acesso em qualquer lugar**:  
   
-        1.  Para permitir que um usuário se conectar ao servidor usando VPN, selecione o **permitir rede Virtual privada (VPN)** caixa de seleção.  
+        1.  Para permitir que um usuário se conecte ao servidor usando VPN, marque a caixa de seleção **Permitir VPN (rede privada virtual)**.  
   
-        2.  Para permitir que um usuário se conectar ao servidor usando o acesso via Web remoto, selecione o **permitir acesso remoto via Web e acesso a aplicativos web services** caixa de seleção.  
+        2.  Para permitir que um usuário se conecte ao servidor usando o Acesso Remoto via Web, marque a caixa de seleção **Permitir Acesso Remoto via Web e acesso a aplicativos de serviços Web**.  
   
-    3.  Sobre o **acesso ao computador** , selecione os computadores da rede que você gostaria que o usuário tenha acesso a.  
+    3.  Na guia **Acesso ao computador** , selecione os computadores da rede a que deseja que o usuário tenha.  
   
 ##### <a name="to-edit-user-account-properties-in-windows-server-essentials-2012"></a>Para editar as propriedades de conta de usuário no Windows Server Essentials 2012  
   
-1.  Abra o painel do Windows Server Essentials.  
+1.  Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação, clique em **usuários**.  
+2.  Na barra de navegação, clique em **USUÁRIOS**.  
   
-3.  Na lista de contas de usuário, selecione a conta de usuário que você deseja editar.  
+3.  Na lista de contas de usuário, selecione a conta de usuário que deseja remover.  
   
-4.  No **< usuário Account\ > tarefas** painel, clique em **propriedades**.  
+4.  No **< Conta_de_usuário\> tarefas** painel, clique em **propriedades**.  
   
-5.  No **< usuário Account\ > propriedades**, faça o seguinte:  
+5.  No **< Conta_de_usuário\> propriedades**, faça o seguinte:  
   
-    1.  Sobre o **geral** , selecione **usuário pode exibir alertas de integridade de rede** se a conta de usuário precisa acessar relatórios de integridade de rede.  
+    1.  Na guia **Geral** , selecione **O usuário pode exibir alertas da integridade da rede** se a conta de usuário precisar acessar os relatórios de integridade da rede.  
   
-    2.  Sobre o **pastas compartilhadas** guia, defina as permissões de pasta apropriada para cada pasta compartilhada, conforme necessário.  
+    2.  Na guia **Pastas compartilhadas**, defina as permissões de pasta apropriada para cada pasta compartilhada, conforme necessário.  
   
-    3.  Sobre o **acesso em qualquer local** guia:  
+    3.  Na guia **Acesso em qualquer lugar**:  
   
-        1.  Para permitir que um usuário se conectar ao servidor usando VPN, selecione o **permitir rede Virtual privada (VPN)** caixa de seleção.  
+        1.  Para permitir que um usuário se conecte ao servidor usando VPN, marque a caixa de seleção **Permitir VPN (rede privada virtual)**.  
   
-        2.  Para permitir que um usuário se conectar ao servidor usando o acesso via Web remoto, selecione o **permitir acesso remoto via Web e acesso a aplicativos web services** caixa de seleção.  
+        2.  Para permitir que um usuário se conecte ao servidor usando o Acesso Remoto via Web, marque a caixa de seleção **Permitir Acesso Remoto via Web e acesso a aplicativos de serviços Web**.  
   
-    4.  Sobre o **acesso ao computador** , selecione os computadores da rede que você gostaria que o usuário tenha acesso a.  
+    4.  Na guia **Acesso ao computador** , selecione os computadores da rede a que deseja que o usuário tenha.  
   
-###  <a name="BKMK_Access10"></a>Alterar as permissões de acesso remoto para uma conta de usuário  
- Um usuário pode acessar recursos localizados no servidor de um local remoto por meio de uma rede virtual privada (VPN), acesso via Web remoto ou outros aplicativos de serviços da web. Por padrão, as permissões de acesso remoto estiverem ativadas para os usuários da rede ao configurar o acesso em qualquer lugar no Windows Server Essentials usando o Dashboard.  
+###  <a name="BKMK_Access10"></a> Alterar permissões de acesso remoto para uma conta de usuário  
+ Um usuário pode acessar os recursos localizados no servidor a partir de um local remoto usando uma rede privada virtual (VPN), Acesso Remoto via Web ou outros aplicativos de serviços Web. Por padrão, as permissões de acesso remoto estão ativadas para os usuários da rede quando você configura o acesso em qualquer local no Windows Server Essentials usando o Painel.  
   
-##### <a name="to-change-remote-access-permissions-for-a-user-account"></a>Para alterar as permissões de acesso remoto para uma conta de usuário  
+##### <a name="to-change-remote-access-permissions-for-a-user-account"></a>Para alterar permissões de acesso remoto para uma conta de usuário  
   
-1.  Abra o painel do Windows Server Essentials.  
+1.  Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação, clique em **usuários**.  
+2.  Na barra de navegação, clique em **Usuários**.  
   
 3.  Na lista de contas de usuário, selecione a conta de usuário que você deseja alterar.  
   
-4.  No **< usuário Account\ > tarefas** painel, clique em **exibir as propriedades da conta**. O **propriedades** página para a conta de usuário é exibido.  
+4.  No **< conta de usuário\> tarefas** painel, clique em **exibir propriedades da conta**. A página **Propriedades** da conta de usuário é exibida.  
   
-5.  Sobre o **acesso em qualquer local** guia, faça o seguinte:  
+5.  Na guia **Acesso em qualquer lugar**, faça o seguinte:  
   
-    -   Selecione o **permitir rede Virtual privada (VPN)** caixa de seleção Permitir que um usuário se conectar ao servidor usando VPN.  
+    -   Marque a caixa de seleção **Permitir VPN (rede privada virtual)** para permitir que um usuário se conecte ao servidor usando VPN.  
   
-    -   Selecione o **permitir acesso remoto via Web e acesso a aplicativos web services** caixa de seleção Permitir que um usuário se conectar ao servidor usando o acesso via Web remoto.  
+    -   Marque a caixa de seleção **Permitir Acesso Remoto via Web e acesso a aplicativos de serviços Web** para permitir que um usuário se conecte ao servidor usando o Acesso Remoto via Web.  
   
-6.  Clique em **aplicar**e clique em **Okey**.  
+6.  Clique em **Aplicar**e clique em **OK**.  
   
-###  <a name="BKMK_Access11"></a>Alterar as permissões de rede virtual privada para uma conta de usuário  
- Você pode usar uma rede virtual privada (VPN) para se conectar ao Windows Server Essentials e acessar todos os recursos que são armazenados no servidor. Isso é especialmente útil se você tiver um computador cliente que é configurado com contas de rede que podem ser usadas para se conectar a um servidor Windows Server Essentials hospedado por meio de uma conexão VPN. Todas as contas de usuário recém criada no servidor Windows Server Essentials hospedado devem usar VPN para fazer logon no computador cliente pela primeira vez.  
+###  <a name="BKMK_Access11"></a> Alterar permissões de rede virtual privada para uma conta de usuário  
+ Você pode usar uma rede privada virtual (VPN) para conectar-se ao Windows Server Essentials e acessar todos os recursos que estão armazenados no servidor. Isso é especialmente útil se você tiver um computador cliente que está configurado com contas de rede que podem ser usadas para se conectar a um servidor do Windows Server Essentials hospedado por meio de uma conexão VPN. Todas as contas de usuário recém-criadas no Windows Server Essentials hospedado devem usar VPN para fazer logon no computador cliente pela primeira vez.  
   
-##### <a name="to-change-vpn-permissions-for-network-users"></a>Para alterar as permissões de VPN para usuários de rede  
+##### <a name="to-change-vpn-permissions-for-network-users"></a>Para alterar permissões de VPN para os usuários da rede  
   
-1.  Abra o painel do Windows Server Essentials.  
+1.  Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação, clique em **usuários**.  
+2.  Na barra de navegação, clique em **USUÁRIOS**.  
   
-3.  Na lista de contas de usuário, selecione a conta de usuário ao qual você deseja conceder permissões para acessar a área de trabalho remota.  
+3.  Na lista de contas de usuário, selecione a conta de usuário para a qual você deseja conceder permissões para acessar a área de trabalho remotamente.  
   
-4.  No **< usuário Account\ > tarefas** painel, clique em **propriedades**.  
+4.  No **< Conta_de_usuário\> tarefas** painel, clique em **propriedades**.  
   
-5.  No **< usuário Account\ > propriedades**, clique no **acesso em qualquer local** guia.  
+5.  No **< conta de usuário\> Properties**, clique no **acesso em qualquer lugar** guia.  
   
-6.  Sobre o **acesso em qualquer local** tab, para permitir que um usuário se conectar ao servidor usando VPN, selecione o **permitir rede Virtual privada (VPN)** caixa de seleção.  
+6.  Na guia **Acesso em qualquer lugar** , para permitir que um usuário se conecte ao servidor usando VPN, marque a caixa de seleção **Permitir VPN (rede privada virtual)** .  
   
-7.  Clique em **aplicar**e clique em **Okey**.  
+7.  Clique em **Aplicar**e clique em **OK**.  
   
-###  <a name="BKMK_Access12"></a>Alterar o acesso a pastas compartilhadas internas para uma conta de usuário  
- Você pode gerenciar o acesso a todas as pastas compartilhadas no servidor, usando as tarefas no **pastas de servidor** guia do painel. Por padrão, as seguintes pastas de servidor são criadas quando você instala o Windows Server Essentials:  
+###  <a name="BKMK_Access12"></a> Alterar o acesso a pastas compartilhadas internas de uma conta de usuário  
+ Você pode gerenciar o acesso a pastas compartilhadas no servidor usando as tarefas na guia **Pastas do servidor** do Painel. Por padrão, as seguintes pastas do servidor são criadas quando você instala o Windows Server Essentials:  
   
--   **Backups do computador cliente**.  Usado para armazenar os backups do computador cliente criados pelo backup do Windows Server. Essa pasta de servidor não é compartilhada.  
+-   **Backups de computador cliente**.  Usada para armazenar backups de computador cliente criados pelo backup do Windows Server. Esta pasta de servidor não é compartilhada.  
   
 -   **Empresa**.  Usado para armazenar e acessar documentos relacionados à sua organização pelos usuários da rede.  
   
--   **Backups do histórico de arquivos**.  Por padrão, o Windows Server Essentials armazena os backups de arquivo criados usando o histórico de arquivos. Essa pasta de servidor não é compartilhada.  
+-   **Backups de histórico de arquivos**.  Por padrão, o Windows Server Essentials armazena backups de arquivos criados usando o histórico de arquivos. Esta pasta de servidor não é compartilhada.  
   
--   **Redirecionamento de pasta**.  Usado para armazenar e acessar as pastas que estão configuradas para redirecionamento de pasta pelos usuários da rede. Essa pasta de servidor não é compartilhada.  
+-   **Redirecionamento de pasta**.  Usado para armazenar e acessar pastas que estão configuradas para redirecionamento de pasta pelos usuários da rede. Esta pasta de servidor não é compartilhada.  
   
--   **Música**.  Usado para armazenar e acessar arquivos de música pelos usuários da rede. Essa pasta é criada quando você ativar o compartilhamento de mídia.  
+-   **Música**.  Usado para armazenar e acessar arquivos de música pelos usuários da rede. Essa pasta é criada quando você ativa o compartilhamento de mídia.  
   
--   **Imagens**.  Usado para armazenar e acessar fotos pelos usuários da rede. Essa pasta é criada quando você ativar o compartilhamento de mídia.  
+-   **Imagens**  Usada para armazenar e acessar imagens por usuários da rede. Essa pasta é criada quando você ativa o compartilhamento de mídia.  
   
--   **Programas de TV gravados**.  Usado para armazenar e acessar programas de TV gravados pelos usuários da rede. Essa pasta é criada quando você ativar o compartilhamento de mídia.  
+-   **TV gravada**.  Usada para armazenar e acessar programas de TV gravados pelos usuários da rede. Essa pasta é criada quando você ativa o compartilhamento de mídia.  
   
--   **Vídeos**.  Usado para armazenar e acessar vídeos pelos usuários da rede. Essa pasta é criada quando você ativar o compartilhamento de mídia.  
+-   **Vídeos**.  Usada para armazenar e acessar vídeos pelos usuários da rede. Essa pasta é criada quando você ativa o compartilhamento de mídia.  
   
--   **Os usuários**.  Usado para armazenar e acessar arquivos por usuários de rede. Uma pasta específica do usuário é gerada automaticamente no **usuários** pasta de servidor para cada conta de usuário de rede que você criar.  
+-   **Usuários**.  Usada para armazenar e acessar arquivos por usuários da rede. Uma pasta específica do usuário é gerada automaticamente na pasta **Usuários** do servidor para cada conta de usuário de rede que você criar.  
   
 ##### <a name="to-change-access-to-a-shared-folder-for-a-user-account"></a>Para alterar o acesso a uma pasta compartilhada para uma conta de usuário  
   
-1.  Abra o painel do Windows Server Essentials.  
+1.  Abra o Painel do Windows Server Essentials.  
   
-2.  Clique em **armazenamento**e clique em **pastas de servidor**.  
+2.  Clique em **ARMAZENAMENTO** e clique em **Pastas do servidor**.  
   
-3.  Navegue até e selecione a pasta de servidor para o qual você deseja modificar permissões.  
+3.  Navegue e selecione a pasta do servidor cujas permissões você deseja modificar.  
   
-4.  No painel de tarefas, clique em **exibir as propriedades da pasta**.  
+4.  No painel de tarefas, clique em **Exibir as propriedades da pasta**.  
   
-5.  Em **< FolderName\ > propriedades**, clique em **compartilhamento**, selecione o nível de acesso do usuário apropriado para as contas de usuário listada e, em seguida, clique em **aplicar**.  
+5.  Na **< FolderName\> propriedades**, clique em **compartilhamento**, selecione o nível de acesso de usuário apropriado para as contas de usuário listada e, em seguida, clique em **aplicar**.  
   
     > [!NOTE]
-    >  Você não pode modificar as permissões de compartilhamento **Backups de histórico de arquivos**, **redirecionamento de pasta**, e **usuários** pastas do servidor. Portanto, as propriedades da pasta dessas pastas de servidor não incluem um **compartilhamento** guia.  
+    >  Não é possível modificar as permissões de compartilhamento das pastas **Backups do histórico de arquivos**, **Redirecionamento de pasta**, e **Usuários** do servidor. Assim, as propriedades dessas pastas de servidor não incluem uma guia **Compartilhamento**.  
   
-###  <a name="BKMK_Access13"></a>Permitir que as contas de usuário estabelecer uma sessão da área de trabalho remota em seus computadores  
-  Esta seção se aplica a um servidor que executa o Windows Server Essentials ou o Windows Server Essentials, ou para um servidor que executa o Windows Server 2012 R2 Standard ou o Windows Server 2012 R2 Datacenter com a função de experiência do Windows Server Essentials instalada.  
+###  <a name="BKMK_Access13"></a> Permitir que contas de usuário estabelecer uma sessão de área de trabalho remota para seu computador  
+  Esta seção se aplica a um servidor executando o Windows Server Essentials ou Windows Server Essentials, ou para um servidor que executa o Windows Server 2012 R2 Standard ou Windows Server 2012 R2 Datacenter com a função experiência Windows Server Essentials instalada.  
   
- O administrador da rede pode conceder permissões a usuários de rede que permitem que eles acessem seus computadores de rede de um local remoto.  
+ O administrador de rede pode conceder permissões para usuários de rede, permitindo que eles acessem computadores de sua rede a partir de um local remoto.  
   
-##### <a name="to-enable-users-to-access-their-network-computers-from-a-remote-location"></a>Permitir que os usuários acessem seus computadores de rede de um local remoto  
+##### <a name="to-enable-users-to-access-their-network-computers-from-a-remote-location"></a>Para permitir aos usuários acessar seus computadores da rede a partir de um local remoto  
   
-1.  Abra o painel do Windows Server Essentials.  
+1.  Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação, clique em **usuários**.  
+2.  Na barra de navegação, clique em **USUÁRIOS**.  
   
-3.  Na lista de contas de usuário, selecione a conta de usuário que você deseja conceder permissões para acessar a área de trabalho remota.  
+3.  Na lista de contas de usuário, selecione a conta de usuário a que você deseja conceder permissões para acessar a área de trabalho remotamente.  
   
-4.  No **< usuário Account\ > tarefas** painel, clique em **propriedades**.  
+4.  No **< Conta_de_usuário\> tarefas** painel, clique em **propriedades**.  
   
-5.  No **< usuário Account\ > propriedades**, clique no **acesso ao computador** guia.  
+5.  No **< conta de usuário\> Properties**, clique no **acesso ao computador** guia.  
   
-6.  Selecione os computadores que você deseja ser capaz de acessar remotamente e, em seguida, clique nesta conta de usuário **Okey**.  
+6.  Selecione os computadores que você deseja que a conta de usuário possa acessar remotamente e, em seguida, clique em **OK**.  
   
 ## <a name="see-also"></a>Consulte também  
   
--   [Gerenciar contas Online para os usuários](Manage-Online-Accounts-for-Users.md)  
+-   [Gerenciar contas Online para usuários](Manage-Online-Accounts-for-Users.md)  
   
--   [Se conectar](../use/Get-Connected-in-Windows-Server-Essentials.md)  
+-   [Conecte-se](../use/Get-Connected-in-Windows-Server-Essentials.md)  
   
 -   [Usar o Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)  
   

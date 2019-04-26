@@ -1,5 +1,5 @@
 ---
-title: "Preparando a imagem para implantação"
+title: Preparando a Imagem para Implantação
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
@@ -13,53 +13,54 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 16411ab073e9417c52592aa9a6b13707dd461537
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
-ms.translationtype: MT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59838527"
 ---
-# <a name="preparing-the-image-for-deployment"></a>Preparando a imagem para implantação
+# <a name="preparing-the-image-for-deployment"></a>Preparando a Imagem para Implantação
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Uma ferramenta típica para preparar uma imagem é sysprep.exe. Executar esta ferramenta generaliza a imagem e desliga o servidor para que a configuração inicial será executado quando o servidor que contém a imagem for reiniciado. Todas as modificações feitas na imagem devem ser concluídas antes que você execute sysprep.exe.  
+Uma ferramenta típica para preparar uma imagem é sysprep.exe. Executar essa ferramenta generaliza a imagem e desliga o servidor, de modo que a Configuração Inicial executará quando o servidor que contém a imagem for reiniciado. Todas as modificações da imagem devem ser concluídas antes da execução do sysprep.exe.  
   
 > [!NOTE]
->  Você pode redefinir a ativação do produto Windows um máximo de três vezes usando sysprep.exe.  
+>  Você pode redefinir a Ativação do Windows no máximo três vezes usando o sysprep.exe.  
   
 #### <a name="to-prepare-the-image"></a>Para preparar a imagem  
   
-1.  Excluir SkipIC.txt que você tem que você adicionou?  
+1.  Exclua o SkipIC.txt que você já adicionou.  
   
-2.  Abra uma janela de prompt de comando com privilégios elevados. Clique em **iniciar**, clique com botão direito **Prompt de comando**e, em seguida, selecione **executar como administrador**.  
+2.  Abra uma janela de prompt de comando elevado. Clique em **Iniciar**, clique com o botão direito do mouse em **Prompt de Comando** e selecione **Executar como Administrador**.  
   
-3.  Execute o seguinte comando para redefinir a chave do registro para que o usuário terá o período de carência completo antes do servidor se torne incompatível.  
+3.  Execute o seguinte comando para redefinir a chave de registro, para que o usuário disponha do período de cortesia completo antes que o servidor torne-se não compatível.  
   
     ```  
     %systemroot%\system32\reg.exe add HKLM\Software\Microsoft\ServerInfrastructureLicensing /v Rearm /t REG_DWORD /d 1 /f  
     ```  
   
-4.  Execute o seguinte comando para adicionar a chave do registro para exibir a chave, página de idioma, página de localidade e página de EULA. Por padrão essas páginas não exibirá durante a configuração inicial. Portanto, se você estiver lançando uma caixa pré-instalado, você precisa adicionar essa chave do registro. No entanto, se você estiver lançando um DVD, você não deve adicionar essa chave, como essas páginas exibirão durante o WinPE e configuração inicial.  
+4.  Execute o seguinte comando para adicionar a chave de registro para exibir a chave, página de idioma, página de localidade e página de EULA. Por padrão, essas páginas não serão exibidas durante a configuração inicial. Assim, se você estiver liberando uma caixa pré-instalada, é preciso adicionar essa chave de registro. Porém, se você estiver liberando um DVD, não deve adicionar esta chave, pois essas páginas serão exibidas durante o WinPE e a configuração inicial.  
   
     ```  
     %systemroot%\system32\reg.exe add "HKLM\Software\microsoft\windows server\setup" /v ShowPreinstallPages /t REG_SZ /d true /f  
     ```  
   
-5.  Desabilite a página de chave de configuração inicial se sua caixa é previamente inserida. A página de chave só mostrará quando ShowPreinstallPages = true e KeyPreInstalled! = true.  
+5.  Desabilite a página de chave de configuração inicial se sua caixa estiver com a chave pré-inserida. A página de chave somente aparecerá quando ShowPreinstallPages = true e KeyPreInstalled != true.  
   
     ```  
     %systemroot%\system32\reg.exe add "HKLM\Software\microsoft\windows server\setup" /v KeyPreInstalled /t REG_SZ /d true /f  
     ```  
   
-6.  Execute o seguinte comando para adicionar a chave do registro, se você quiser desabilitar as verificações de requisito de hardware. Isso é apenas para sua caixa pré-instalado que não atendem ao requisito de hardware. Se você estiver lançando um DVD ou, sua caixa atende ao requisito de hardware, é recomendável não adicionar essa chave.  
+6.  Execute o seguinte comando para adicionar a chave de registro se desejar desativar as verificações de requisitos de hardware. Isso é somente para sua caixa pré-instalada que não cumpre o requisito de hardware. Se estiver liberando um DVD, ou se sua caixa cumprir o requisito de hardware, recomenda-se não adicionar essa chave.  
   
     ```  
     %systemroot%\system32\reg.exe add "HKLM\Software\microsoft\windows server\setup" /v HWRequirementChecks /t REG_DWORD /d 0 /f  
     ```  
   
-7.  (Opcional) Remover os registros em **%programdata%\Microsoft\Windows Server\Logs**.  
+7.  (Opcional) Remova os logs sob **%programdata%\Microsoft\Windows Server\Logs**.  
   
-8.  Prepare o arquivo xml autônomo para sysprep conforme mostrado no modelo a seguir.  
+8.  Prepare o arquivo unattended.xml para o sysprep como mostra o modelo a seguir.  
   
     ```  
     <unattend xmlns="urn:schemas-microsoft-com:unattend" xmlns:ms="urn:schemas-microsoft-com:asm.v3">  
@@ -115,31 +116,31 @@ Uma ferramenta típica para preparar uma imagem é sysprep.exe. Executar esta fe
     </unattend>  
     ```  
   
-9. Execute o comando a seguir para sysprep.  
+9. Execute o seguinte comando para o sysprep.  
   
     ```  
     %systemroot%\system32\sysprep\sysprep.exe /generalize /OOBE /unattend:xxx.xml /Quit  
     ```  
   
     > [!IMPORTANT]
-    >  Você também pode adicionar o unattend.xml em % systemdrive %, em vez de como um parâmetro do sysprep. Se o arquivo está localizado em c:\ que ele será coberto por configurações de s do usuário, mas se usado como um parâmetro do sysprep, ele não será coberto por configurações de s do usuário. O unattend.xml em % systemdrive % será excluído sempre que o servidor for reiniciado. Portanto, certifique-se de que, depois de criar o unattend.xml em % systemdrive %, o servidor não for reiniciado.  
+    >  Você também pode adicionar unattend.xml sob %systemdrive%, em vez de como um parâmetro de sysprep. Se o arquivo está localizado sob c:\ ele será coberto pelas configurações de usuário s, mas se usado como um parâmetro de sysprep, ele não será coberto pelas configurações de usuário s. O unattend.xml sob %systemdrive% será excluído sempre que o servidor reiniciar. Assim, garanta que depois de criar unattend.xml sob %systemdrive%, o servidor não seja reiniciado.  
   
-10. Execute o seguinte comando para adicionar a chave do registro para ignorar a página de chave de tela de apresentação do Windows.  
+10. Execute o seguinte comando para adicionar a chave de registro para ignorar a página de chave do OOBE do Windows.  
   
     ```  
     %systemroot%\system32\reg.exe add "HKLM\Software\microsoft\Windows\CurrentVersion\Setup\OOBE" /v SetupDisplayedProductKey /t REG_DWORD /d 1 /f  
     ```  
   
-11. Execute o seguinte comando para adicionar a chave do registro para ignorar a página de seleção de idioma do Windows.  
+11. Execute o seguinte comando para adicionar a chave de registro para ignorar a página de seleção de idiomas do Windows.  
   
     ```  
     %systemroot%\system32\reg.exe add "HKLM\Software\microsoft\Windows\CurrentVersion\Setup\OOBE" /v SetupDisplayedLanguageSelection /t REG_DWORD /d 1 /f  
     ```  
   
     > [!IMPORTANT]
-    >  Você deve executar as 2 últimos etapas, senão a página de tela de apresentação do Windows aparecerá que ocorre com o cenário de servidor de administração remota de página e quebra de configuração inicial.  
+    >  É preciso realizar as duas últimas etapas, ou a página do Windows OOBE aparecerá, que é devida com a página de configuração inicial e interrompe um cenário de servidor administrado remotamente.  
   
-12. Desligar a caixa após sysprep, você pode capturar uma imagem ou reiniciar o servidor para continuar a configuração inicial de um computador cliente.  
+12. Ao desligar a caixa após sysprep, é possível capturar uma imagem ou reiniciar o servidor para continuar a Configuração Inicial de um computador cliente.  
   
 > [!IMPORTANT]
->  Os parceiros que planejam criar mídia de recuperação do servidor devem capturar a imagem e criar a mídia de recuperação antes de prosseguir para a próxima etapa.
+>  Os parceiros que estão planejando criar uma mídia de recuperação do servidor devem capturar a imagem e criar a mídia de recuperação antes de seguir para a próxima etapa.
