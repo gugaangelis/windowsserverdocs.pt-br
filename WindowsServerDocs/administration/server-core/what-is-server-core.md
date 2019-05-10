@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ms.date: 02/20/2018
 ms.openlocfilehash: 08229e458d0aa0c8e8397f0f053f37a207a1aea5
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59885597"
@@ -71,7 +71,7 @@ A tabela a seguir mostra quais aplicativos estão disponíveis *localmente* no S
 | Barra de tarefas                            | não disponível   | disponível                      |
 | Notificações da barra de tarefas              | não disponível   | disponível                      |
 | Taskmgr                            | disponível       | disponível                      |
-| Internet Explorer ou Edge          | não disponível   | disponível                      |
+| Internet Explorer ou Microsoft Edge          | não disponível   | disponível                      |
 | Sistema de ajuda integrado               | não disponível   | disponível                      |
 | Windows 10 Shell                   | não disponível   | disponível                      |
 | Windows Media Player               | não disponível   | disponível                      |

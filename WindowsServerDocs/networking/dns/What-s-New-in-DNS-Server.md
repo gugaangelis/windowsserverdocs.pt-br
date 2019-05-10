@@ -10,7 +10,7 @@ ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: 665e411eda834a59c6dbe3581611b9b58bd006f2
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59833567"
@@ -67,11 +67,11 @@ Você pode configurar as configurações de RRL para controlar como responder a 
   
 -   **Respostas máximo**. Isso é o número máximo de respostas, que o servidor emitirá a um cliente, enquanto as respostas são suspensos.  
   
--   **Domínios de lista branca**. Esta é uma lista de domínios a serem excluídos das configurações de RRL.  
+-   **Domínios de permissões**. Esta é uma lista de domínios a serem excluídos das configurações de RRL.  
   
--   **Lista branca sub-redes**. Esta é uma lista de sub-redes a serem excluídos das configurações de RRL.  
+-   **Lista de permissões de sub-redes**. Esta é uma lista de sub-redes a serem excluídos das configurações de RRL.  
   
--   **Interfaces de servidor da lista branca**. Esta é uma lista de interfaces de servidor DNS a serem excluídos das configurações de RRL.  
+-   **Interfaces de servidor da lista de permissões**. Esta é uma lista de interfaces de servidor DNS a serem excluídos das configurações de RRL.  
   
 ## <a name="dane-support"></a>Suporte de painel
 

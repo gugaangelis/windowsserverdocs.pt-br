@@ -11,7 +11,7 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: 16973b32407985ffc3f66bf5ac579384a756b5d0
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59817137"
@@ -42,8 +42,8 @@ Esta seção apresenta a série de etapas de alto nível que auxiliam na fase de
 |1.1|A empresa determina que uma política de acesso central é necessária.|Para proteger as informações financeiras armazenadas nos servidores de arquivos, as operações de segurança do departamento financeiro trabalham com a segurança das informações para especificar a necessidade de uma política de acesso central.|  
 |1.2|Expressar a política de acesso|Os documentos financeiros só devem ser lidos pelos membros do departamento financeiro. Os membros do departamento financeiro só devem acessar documentos do próprio país. Apenas os administradores financeiros devem ter acesso de gravação. Uma exceção será permitida para os membros do grupo FinanceException. Esse grupo terá acesso de leitura.|  
 |1.3|Expressar a política de acesso em construções do Windows Server 2012|Direcionamento:<br /><br />-Resource.Department contém Finanças<br /><br />Regras de acesso:<br /><br />-Permitir leitura User.Country=Resource.Country e User. Department = Resource.Department<br />-Permitir controle total User.MemberOf(FinanceAdmin)<br /><br />Exceção:<br /><br />Allow read memberOf(FinanceException)|  
-|1.4|Determinar as propriedades de arquivo necessárias para a política|Marque os arquivos com:<br /><br />-Departamento<br />-País|  
-|1.5|Determinar os tipos de declarações e os grupos necessários para a política|Tipos de declarações:<br /><br />-País<br />-Departamento<br /><br />Grupos de usuários:<br /><br />-FinanceAdmin<br />-   FinanceException|  
+|1.4|Determinar as propriedades de arquivo necessárias para a política|Marque os arquivos com:<br /><br />-Departamento<br />-País/Região|  
+|1.5|Determinar os tipos de declarações e os grupos necessários para a política|Tipos de declarações:<br /><br />-País/Região<br />-Departamento<br /><br />Grupos de usuários:<br /><br />-FinanceAdmin<br />-   FinanceException|  
 |1.6|Determinar os servidores aos quais essa política será aplicada|Aplique a política a todos os servidores de arquivos financeiros.|  
   
 ## <a name="BKMK_1.3"></a>Implementar: Configurar os componentes e a política  
@@ -51,14 +51,14 @@ Esta seção apresenta um exemplo de implantação de uma política de acesso ce
   
 |Não|Etapa|Exemplo|  
 |------|--------|-----------|  
-|2.1|Criar tipos de declarações|Crie os seguintes tipos de declarações:<br /><br />-Departamento<br />-País|  
-|2.2|Criar propriedades de recurso|Crie e habilite as seguintes propriedades de recurso:<br /><br />-Departamento<br />-País|  
+|2.1|Criar tipos de declarações|Crie os seguintes tipos de declarações:<br /><br />-Departamento<br />-País/Região|  
+|2.2|Criar propriedades de recurso|Crie e habilite as seguintes propriedades de recurso:<br /><br />-Departamento<br />-País/Região|  
 |2.3|Configurar uma regra de acesso central|Crie a regra Documentos Financeiros incluindo a política determinada na seção anterior.|  
 |2.4|Configurar uma CAP (política de acesso central)|Crie uma CAP chamada Política Financeira e adicione a ela a regra Documentos Financeiros.|  
 |2.5|Direcionar a política de acesso central aos servidores de arquivos|Publique a CAP Política Financeira nos servidores de arquivos.|  
 |2.6|Habilitar o Suporte KDC (centro de distribuição de chaves) para declarações, autenticação composta e proteção Kerberos.|Habilite o Suporte KDC para declarações, autenticação composta e proteção Kerberos para contoso.com.|  
   
-No procedimento a seguir, você criará dois tipos de declarações: País e Departamento.  
+No procedimento a seguir, você criará dois tipos de declarações: País/Região e Departamento.  
   
 #### <a name="to-create-claim-types"></a>Para criar tipos de declarações  
   
@@ -77,7 +77,7 @@ No procedimento a seguir, você criará dois tipos de declarações: País e Dep
   
 5.  No painel **Tarefas**, clique em **Novo** e, depois, em **Tipo de Declaração**.  
   
-6.  Na lista **Atributo de Origem**, role a lista de atributos para baixo e clique no atributo **c** (Country-Name). No campo **Nome de exibição**, digite **país**.  
+6.  Na lista **Atributo de Origem**, role a lista de atributos para baixo e clique no atributo **c** (Country-Name). No campo **Nome de exibição**, digite **país/região**.  
   
 7.  Na seção **Valores Sugeridos**, selecione **Os seguintes valores são sugeridos:** e clique em **Adicionar**.  
   
@@ -109,9 +109,9 @@ A próxima etapa consiste em criar as propriedades de recurso. No procedimento a
     > [!TIP]  
     > Você também pode escolher uma propriedade de recurso no painel **Tarefas**. Clique em **Novo** e, depois, em **Propriedade de Recurso de Referência**.  
   
-3.  Em **Selecionar um tipo de declaração para compartilhar sua lista de valores sugeridos**, clique em **país**.  
+3.  Em **Selecionar um tipo de declaração para compartilhar sua lista de valores sugeridos**, clique em **país/região**.  
   
-4.  No campo **Nome de exibição**, digite **país** e clique em **OK**.  
+4.  No campo **Nome de exibição**, digite **país/região** e clique em **OK**.  
   
 5.  Clique duas vezes na lista **Propriedades de Recurso** e role a lista para baixo até a propriedade de recurso **Departamento**. Clique com o botão direito do mouse e clique em **Habilitar**. Isso habilitará a propriedade de recurso interna **Departamento**.  
   
@@ -176,7 +176,7 @@ Regras de acesso:
 6.  Na caixa de diálogo **Entrada de Permissão para Permissões**, clique em **Selecionar uma entidade de segurança**, digite **Usuários Autenticados** e clique em **OK**.  
   
 7.  Na caixa de diálogo **Entrada de Permissão para Permissões**, clique em **Adicionar uma condição** e adicione as seguintes condições:   
-    [**Usuário**] [**país**] [**qualquer um dos**] [**recurso**] [**país**]   
+    [**Usuário**] [**país/região**] [**qualquer um dos**] [**recurso**] [**país/região**]   
      Clique em **Adicionar uma condição**.   
      [**And**]   
     Clique em [**usuário**] [**departamento**] [**qualquer um dos**] [**recurso**] [**departamento**]. Defina as **Permissões** como **Leitura**.  
@@ -305,12 +305,12 @@ Nesta etapa, você atribuirá a política de acesso central ao servidor de arqui
   
 4.  Abra o Windows Explorer e, no painel esquerdo, clique na unidade D. Clique com o botão direito do mouse na pasta **Documentos Financeiros** e clique em **Propriedades**.  
   
-5.  Clique na guia **Classificação**, clique em **País** e selecione **EUA** no campo **Valor**.  
+5.  Clique na guia **Classificação**, clique em **País/Região** e selecione **EUA** no campo **Valor**.  
   
 6.  Clique em **Departamento** e selecione **Financeiro** no campo **Valor**. Em seguida, clique em **Aplicar**.  
   
     > [!NOTE]  
-    > Lembre-se de que a política de acesso central foi configurada para os arquivos de destino do Departamento Financeiro. As etapas anteriores marcam todos os documentos da pasta que contêm os atributos País e Departamento.  
+    > Lembre-se de que a política de acesso central foi configurada para os arquivos de destino do Departamento Financeiro. As etapas anteriores marcam todos os documentos da pasta que contêm os atributos País/Região e Departamento.  
   
 7.  Clique na guia **Segurança** e clique em **Avançada**. Clique na guia **Política Central**.  
   
@@ -362,7 +362,7 @@ Na próxima etapa, você garantirá que o acesso esteja configurado adequadament
   
 2.  No menu **Ferramentas**, abra o Centro Administrativo do Active Directory.  
   
-3.  Clique em **Modo de Exibição de Árvore**, expanda **Controle de Acesso Dinâmico**, clique duas vezes em **Tipos de Declarações** e clique duas vezes na declaração **país**.  
+3.  Clique em **Modo de Exibição de Árvore**, expanda **Controle de Acesso Dinâmico**, clique duas vezes em **Tipos de Declarações** e clique duas vezes na declaração **país/região**.  
   
 4.  Em **As declarações desse tipo podem ser emitidas para as seguintes classes**, marque a caixa de seleção **Computador**. Clique em **OK**.   
     Agora, as caixas de seleção **Usuário** e **Computador** devem estar marcadas. A declaração de país pode agora ser usada com dispositivos, além dos usuários.  
@@ -382,7 +382,7 @@ A próxima etapa é criar uma regra de política de preparo. As políticas de pr
 5.  Na seção **Permissões Propostas**, marque a caixa de seleção **Habilitar a configuração de preparação de permissões**, clique em **Editar** e, então, em **Adicionar**. Na janela **Entrada de Permissão para Permissões Propostas**, clique no link **Selecionar uma Entidade de Segurança**, digite **Usuários Autenticados** e clique em **OK**.  
   
 6.  Clique no link **Adicionar uma condição** e adicione a seguinte condição:   
-     [**Usuário**] [**país**] [**Qualquer**] [**Recurso**] [**País**].  
+     [**Usuário**] [**país/região**] [**Qualquer**] [**Recurso**] [**País/Região**].  
   
 7.  Clique novamente em **Adicionar uma condição** e adicione a seguinte condição:  
     [**And**]   

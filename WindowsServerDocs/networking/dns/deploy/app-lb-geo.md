@@ -10,7 +10,7 @@ ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: 806c0cdeedb44db44fc0ec5218124f516a6f70e5
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59852547"
@@ -32,7 +32,7 @@ Neste exemplo, Contoso presente serviços com êxito está expandindo sua presen
 
 Semelhante da América do Norte, a empresa agora tem servidores web hospedados em data centers europeus.
 
-Os administradores de DNS do Contoso presente serviços deseja configurar o aplicativo de balanceamento de carga para data centers europeus de maneira semelhante para a implementação de política DNS nos Estados Unidos, com o tráfego de aplicativo distribuído entre os servidores Web que estão localizados em Dublin, Irlanda, Amsterdã, Holanda e em outro lugar.
+Os administradores de DNS do Contoso presente serviços deseja configurar o aplicativo de balanceamento de carga para data centers europeus de maneira semelhante para a implementação de política DNS nos Estados Unidos, com o tráfego de aplicativo distribuído entre os servidores Web que estão localizados em Dublin, Irlanda, Amsterdã, Países Baixos e em outro lugar.
 
 Os administradores de DNS também deseja que todas as consultas de outros locais no mundo distribuído igualmente entre todos os seus data centers.
 

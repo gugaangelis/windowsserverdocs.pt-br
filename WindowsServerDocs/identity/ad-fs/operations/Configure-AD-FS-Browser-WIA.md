@@ -11,7 +11,7 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: f71680bb721635bd37197dca9d3ae4726099525f
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59845477"
@@ -20,7 +20,7 @@ ms.locfileid: "59845477"
 
 Por padrão, a autenticação integrada do Windows (WIA) está habilitada no Active Directory Federation Services (AD FS) no Windows Server 2012 R2 para solicitações de autenticação que ocorrem na rede interna da organização (intranet) para qualquer aplicativo que usa um navegador para a sua autenticação.
 
-AD FS 2016 agora tem uma configuração padrão aprimorada que permite que o navegador Edge fazer WIA enquanto o Windows Phone não também (incorretamente) a captura também:
+AD FS 2016 agora tem uma configuração padrão aprimorada que permite que o navegador Microsoft Edge fazer WIA enquanto o Windows Phone não também (incorretamente) a captura também:
 
     =~Windows\s*NT.*Edge
 
