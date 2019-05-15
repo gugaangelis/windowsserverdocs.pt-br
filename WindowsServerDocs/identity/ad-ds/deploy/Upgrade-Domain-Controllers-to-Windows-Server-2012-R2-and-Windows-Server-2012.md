@@ -11,7 +11,7 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: e3b44dbc1c869680db91f5e9732a50504d80e7b8
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59877497"
@@ -27,7 +27,7 @@ A maneira recomendada de atualizar um domínio é promover controladores de dom�
   
 1. Verifique se o servidor de destino atende aos [requisitos de sistema](https://technet.microsoft.com/library/dn303418.aspx).  
 2. Verifique [Application compatibility](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_AppCompat).  
-3. Verifique as configurações de segurança. Para obter mais informações, consulte [Recursos preteridos e alterações de comportamento relacionadas ao AD DS no Windows Server 2012 e no [Secure default settings in Windows Server 2008 e no Windows Server 2008 R2](https://technet.microsoft.com/library/upgrade-domain-controllers-to-windows-server-2008-r2(WS.10).aspx#BKMK_SecureDefault).  
+3. Verifique as configurações de segurança. Para obter mais informações, consulte [Recursos preteridos e alterações de comportamento relacionadas ao AD DS no Windows Server 2012](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_DeprecatedFeatures) e no [Secure default settings in Windows Server 2008 e no Windows Server 2008 R2](https://technet.microsoft.com/library/upgrade-domain-controllers-to-windows-server-2008-r2(WS.10).aspx#BKMK_SecureDefault).  
 4. Verifique a conectividade com o servidor de destino a partir do computador em que você planeja executar a instalação.  
 5. Verifique a disponibilidade das funções mestras de operações necessárias:  
 

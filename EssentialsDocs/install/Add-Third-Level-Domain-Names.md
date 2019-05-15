@@ -14,7 +14,7 @@ ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 64bf24e45155fdd981e2061b3de7ebce1c53b36c
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59833317"
@@ -534,7 +534,7 @@ ms.locfileid: "59833317"
   
 3.  Clique com o botão direito do mouse em **Provedores**, aponte para **Novo** e clique em **Chave**.  
   
-4.  Digite o identificador do provedor como o nome da chave. O identificador é o GUID que você definiu para o provedor na etapa 8 de [Add an implementation of the IDomainSignupProvider interface to the assembly](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup).  
+4.  Digite o identificador do provedor como o nome da chave. O identificador é o GUID que você definiu para o provedor na etapa 8 de [Adicionar uma implementação da interface IDomainSignupProvider ao assembly](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup).  
   
 5.  Clique com o botão direito do mouse na chave que você acabou de criar e, em seguida, clique em **Valor da Cadeia de Caracteres**.  
   
