@@ -11,7 +11,7 @@ ms.assetid: dda9d148-d72f-4bff-aa2a-f2249fa47e4c
 ms.technology: identity-adfs
 ms.openlocfilehash: 05728f04f6fb924cf3793bc843df3832c7c383f7
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59855687"
@@ -75,7 +75,7 @@ A tabela a seguir fornece um exemplo de várias - condições de expressão.
   
 |Descrição da condição|Exemplo de sintaxe da condição|  
 |-------------------------|----------------------------|  
-|Essa regra tem uma condição de verificação de duas declarações, cada um com um tipo de declaração especificado de entrada ("http://test/name"e"http://test/email"). Se houver duas declarações correspondentes nas declarações de entrada, a regra copia a declaração de nome no conjunto de declarações de saída.|``` c1: [type  == "http://test/name"] && c2: [type == "http://test/email"] => issue (claim  = c1 );```|  
+|Essa regra tem uma condição de verificação de duas declarações, cada um com um tipo de declaração especificado de entrada ("http://test/name" e "http://test/email"). Se houver duas declarações correspondentes nas declarações de entrada, a regra copia a declaração de nome no conjunto de declarações de saída.|``` c1: [type  == "http://test/name"] && c2: [type == "http://test/email"] => issue (claim  = c1 );```|  
   
 #### <a name="regular--condition-examples"></a>Regular - exemplos de condição  
 A tabela a seguir fornece um exemplo de uma expressão regular,-com base em condição.  
