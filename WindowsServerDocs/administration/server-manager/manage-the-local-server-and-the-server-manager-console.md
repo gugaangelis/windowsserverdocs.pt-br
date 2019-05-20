@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 1f22578cc54a22464fe5d9208731fe681be30481
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59832977"
@@ -26,7 +26,7 @@ ms.locfileid: "59832977"
 
 No Windows Server, o Gerenciador do servidor permite que você gerencie o servidor local (se você está executando o Gerenciador do servidor no Windows Server e não em um sistema operacional cliente com base em Windows) e servidores remotos que executam o Windows Server 2008 e versões mais recentes do que o Windows Sistema operacional de servidor.
 
-O **servidor Local** página no Gerenciador de servidores exibe os dados de contador de propriedades, eventos, serviços e desempenho do servidor e resultados do analisador de práticas recomendadas (BPA) para o servidor local. Os blocos de eventos, serviços, BPA e desempenho funcionam da mesma maneira que em páginas de grupo de servidores e função. Para obter mais informações sobre como configurar os dados exibidos nesses blocos, consulte [View e Configure Performance, Event, e Service Data e [Run Best Practices Analyzer Scans e Manage Scan Results.
+O **servidor Local** página no Gerenciador de servidores exibe os dados de contador de propriedades, eventos, serviços e desempenho do servidor e resultados do analisador de práticas recomendadas (BPA) para o servidor local. Os blocos de eventos, serviços, BPA e desempenho funcionam da mesma maneira que em páginas de grupo de servidores e função. Para obter mais informações sobre como configurar os dados que são exibidos nesses blocos, consulte [Exibir e configurar dados de desempenho, eventos e serviços](view-and-configure-performance-event-and-service-data.md) e [Executar verificações do Analisador de Práticas Recomendadas e gerenciar os resultados da verificação](run-best-practices-analyzer-scans-and-manage-scan-results.md).
 
 Comandos de menu e as configurações nas barras de título do console Gerenciador do servidor se aplicam globalmente a todos os servidores no pool de servidores e permitem que você use o Gerenciador de servidores para gerenciar o pool de servidores inteiro.
 
@@ -104,7 +104,7 @@ Quando servidores que estão em um cluster são adicionados ao Gerenciador do se
 Dados que são exibidos em home pages de funções no Gerenciador do servidor para serviços de área de trabalho remota, gerenciamento de endereço de IP e serviços de arquivo e armazenamento não são atualizados automaticamente. Atualize os dados que são exibidos nessas páginas manualmente, pressionando **F5** ou clicando em **atualizar** no cabeçalho de console de Gerenciador do servidor enquanto está nessas páginas.
 
 ### <a name="add-or-remove-roles-or-features"></a>Adicionar ou remover funções ou recursos
-Os comandos que abrem o Assistente de recursos e adicionar funções e remover funções e Assistente de recursos e permitem que você adicionar ou remover funções, serviços de função e recursos aos servidores no pool de servidores, estão na **gerenciar** menu do Gerenciador de servidores console e o **tarefas** menu das **funções e recursos** lado a lado em páginas de função ou grupo. Para obter informações detalhadas sobre como adicionar ou remover funções ou recursos, consulte [Install or Uninstall Roles, Role Services, or Features](install-or-uninstall-roles-role-services-or-features.md).
+Os comandos que abrem o Assistente de recursos e adicionar funções e remover funções e Assistente de recursos e permitem que você adicionar ou remover funções, serviços de função e recursos aos servidores no pool de servidores, estão na **gerenciar** menu do Gerenciador de servidores console e o **tarefas** menu das **funções e recursos** lado a lado em páginas de função ou grupo. Para obter informações detalhadas sobre como adicionar ou remover funções ou recursos, consulte [instalar ou desinstalar funções, serviços de função ou recursos](install-or-uninstall-roles-role-services-or-features.md).
 
 No Gerenciador do servidor, os dados de funções e recursos são exibidos no idioma base do sistema, também chamado de idioma de GUI padrão do sistema ou o idioma selecionado durante a instalação do sistema operacional.
 
