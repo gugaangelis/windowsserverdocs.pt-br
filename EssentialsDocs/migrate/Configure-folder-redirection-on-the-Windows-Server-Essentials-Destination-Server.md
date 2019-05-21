@@ -14,7 +14,7 @@ ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 7cc1207f36d3a921b49cc3ecd02acf3fe4fa243c
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59827367"
@@ -31,7 +31,7 @@ Realize essa tarefa se o redirecionamento de pasta estiver habilitado no servido
   
 1.  No servidor de destino, abra a ferramenta administrativa **Gerenciamento de Política de Grupo**.  
   
-2.  Na **gerenciamento de política de grupo**, expanda **floresta: * * * YourNetworkDomainName*, expanda **domínios**, expanda *YourNetworkDomainName* e, em seguida, expanda **objetos de diretiva de grupo**.  
+2.  Na **gerenciamento de política de grupo**, expanda **floresta:***YourNetworkDomainName*, expanda **domínios**, expanda *YourNetworkDomainName* e, em seguida, expanda **objetos de diretiva de grupo**.  
   
 3.  Clique com botão direito em **Redirecionamento de Pasta de Política de Grupo do SBS**e clique em **Excluir**.  
   

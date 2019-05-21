@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 5cd84269a5ac1a85d4b6cf359cc97f478a500c4f
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59825977"
@@ -32,7 +32,7 @@ arp [/a [<Inetaddr>] [/n <ifaceaddr>]] [/g [<Inetaddr>] [-n <ifaceaddr>]] [/d <I
 ### <a name="parameters"></a>Parâmetros
 |Parâmetro|Descrição|
 |-------|--------|
-|/a [<Inetaddr>] [/n <ifaceaddr>]|Exibe as tabelas do cache arp atual para todas as interfaces. O parâmetro /n diferencia maiusculas de minúsculas.<br /><br />Para exibir a entrada de cache arp para um endereço IP específico, use **/a arp** com o *End_ip_da_rede* parâmetro, onde *End_ip_da_rede* é um endereço IP. Se *End_ip_da_rede* não for especificado, a primeira interface aplicável é usada.<br /><br />Para exibir a tabela de cache arp para uma interface específica, use o **/n * * * End_da_Interf* parâmetro junto com o **/a** parâmetro em que *End_da_Interf* é o endereço IP atribuído à interface.|
+|/a [<Inetaddr>] [/n <ifaceaddr>]|Exibe as tabelas do cache arp atual para todas as interfaces. O parâmetro /n diferencia maiusculas de minúsculas.<br /><br />Para exibir a entrada de cache arp para um endereço IP específico, use **/a arp** com o *End_ip_da_rede* parâmetro, onde *End_ip_da_rede* é um endereço IP. Se *End_ip_da_rede* não for especificado, a primeira interface aplicável é usada.<br /><br />Para exibir a tabela de cache arp para uma interface específica, use o **/n***End_da_Interf* parâmetro junto com o **/a** parâmetro em que *End_da_Interf* é o endereço IP atribuído à interface.|
 |/g [<Inetaddr>] [/n <ifaceaddr>]|Idêntico ao **/a**.|
 |[/d <Inetaddr> [<ifaceaddr>]|Exclui uma entrada com um endereço IP específico, onde *End_ip_da_rede* é o endereço IP.<br /><br />Para excluir uma entrada em uma tabela para uma interface específica, use o *End_da_Interf* parâmetro onde *End_da_Interf* é o endereço IP atribuído à interface.<br /><br />Para excluir todas as entradas, use o asterisco (\*) o caractere curinga no lugar de *End_ip_da_rede*.|
 |/s <Inetaddr> <Etheraddr> [<ifaceaddr>]|Adiciona uma entrada estática ao cache arp que resolve o endereço IP *End_ip_da_rede* para o endereço físico *End_ether*.<br /><br />Para adicionar uma entrada de cache arp estáticas para a tabela para uma interface específica, use o *End_da_Interf* parâmetro onde *End_da_Interf* é um endereço IP atribuído à interface.|

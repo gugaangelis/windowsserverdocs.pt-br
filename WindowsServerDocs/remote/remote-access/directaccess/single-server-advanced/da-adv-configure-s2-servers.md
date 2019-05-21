@@ -15,7 +15,7 @@ ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: 0d51ac71fa2fbe4d0bb7121a9ef511524c47f4f4
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59826607"
@@ -57,7 +57,7 @@ Para implantar o Acesso Remoto, você deverá instalar a função Acesso Remoto 
   
 6.  Na página **Progresso da instalação**, verifique se a instalação foi bem-sucedida e clique em **Fechar**.  
   
-![Sucesso de progresso da instalação](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
+![Sucesso de progresso da instalação](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)****Windows PowerShell equivalente comandos****  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
