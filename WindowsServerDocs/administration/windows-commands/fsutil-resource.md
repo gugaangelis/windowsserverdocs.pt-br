@@ -11,7 +11,7 @@ ms.topic: article
 ms.date: 10/16/2017
 ms.openlocfilehash: b55063c3c5ea41b43573e6322b5efb36d2dad90e
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59828327"
@@ -57,7 +57,7 @@ fsutil resource [stop] <RmRootPathname>
 |setavailable|Especifica que um Gerenciador de recursos transacional será prefira disponibilidade a consistência.|
 |setconsistent|Especifica que um Gerenciador de recursos transacionais preferirão consistência em relação à disponibilidade.|
 |setlog|Altera as características de um Gerenciador de recursos transacional que já está em execução.|
-|crescimento|Especifica a quantidade pela qual o log do Gerenciador de recursos transacional pode atingir.<br /><br />O parâmetro de aumento pode ser especificado da seguinte maneira:<br /><br />– O número de contêineres usando o formato: *Contêineres ***recipientes**<br />– usando o formato de porcentagem: *Percent***percent**|
+|crescimento|Especifica a quantidade pela qual o log do Gerenciador de recursos transacional pode atingir.<br /><br />O parâmetro de aumento pode ser especificado da seguinte maneira:<br /><br />– O número de contêineres usando o formato: *Contêineres***recipientes**<br />–   usando o formato de porcentagem: *Percent***percent**|
 |<containers>|Especifica os objetos de dados que são usados pelo Gerenciador de recursos transacionais.|
 |maxextent|Especifica o número máximo de contêineres para o Gerenciador transacional de recursos especificado.|
 |minextent|Especifica o número mínimo de contêineres para o Gerenciador transacional de recursos especificado.|

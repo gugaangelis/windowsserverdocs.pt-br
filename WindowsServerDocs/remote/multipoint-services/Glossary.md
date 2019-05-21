@@ -15,7 +15,7 @@ manager: scottman
 ms.author: evas
 ms.openlocfilehash: 4449d2d6fb87f74496b7d482a7a7263f703c7822
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59831107"
@@ -79,13 +79,13 @@ Em contraste com o *estação principal*, que pode ser usado por um administrado
 Ponto de extremidade de usuário para se conectar ao computador executando o MultiPoint Services. Há suporte para três tipos de estação: estações vídeo diretamente conectados, conectados por USB zero-client e RDP-over-conectados à rede local. Para obter mais informações sobre as estações, consulte [estações do MultiPoint](MultiPoint-services-Stations.md).  
   
 **hub de estação**  
-Um hub USB que tenha sido associado um monitor para criar uma estação do MultiPoint. Ele se conecta dispositivos periféricos de USB ao MultiPoint Services. Consulte também: *Zero cliente USB* e *hub USB*.  
+Um hub USB que tenha sido associado um monitor para criar uma estação do MultiPoint. Ele se conecta dispositivos periféricos de USB ao MultiPoint Services. Consulte também:  *Zero cliente USB* e *hub USB*.  
   
 **modo de estação**  
 Um dos dois modos de MultiPoint services pode iniciar. Normalmente, o sistema MultiPoint Services está no modo de estação. Quando estiver no modo de estação, as estações do MultiPoint Services se comportam como se cada estação é um computador separado que esteja executando o sistema operacional Windows e vários usuários podem usar o sistema ao mesmo tempo. Consulte também: *modo de console*.  
   
 **Hub USB**  
-Um genérico multiporta expansão hub USB que está em conformidade com as especificações de barramento serial universal (USB) 2.0 ou posterior. Tais hubs normalmente têm várias portas USB, que permite que vários dispositivos USB sejam conectados a uma única porta USB no computador. Hubs USB são dispositivos normalmente separados que podem ser *alimentados externamente* ou *barramento*. Alguns outros dispositivos, como teclados e monitores de vídeo podem incorporar um hub USB em seu design. Consulte também: *Zero cliente USB*.  
+Um genérico multiporta expansão hub USB que está em conformidade com as especificações de barramento serial universal (USB) 2.0 ou posterior. Tais hubs normalmente têm várias portas USB, que permite que vários dispositivos USB sejam conectados a uma única porta USB no computador. Hubs USB são dispositivos normalmente separados que podem ser *alimentados externamente* ou *barramento*. Alguns outros dispositivos, como teclados e monitores de vídeo podem incorporar um hub USB em seu design. Consulte também:  *Zero cliente USB*.  
   
 **USB ao longo do cliente Ethernet zero**  
 Um zero cliente USB que se conecta ao computador por meio de uma conexão de rede local, em vez de uma porta USB. Esse cliente é exibida para o servidor como um dispositivo USB até mesmo por meio dos dados é enviado por meio de conexão de Ethernet.  

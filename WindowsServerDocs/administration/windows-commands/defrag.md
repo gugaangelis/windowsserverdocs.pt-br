@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 6997e878b2bb7b77a5920ad7398ef7c2301cc8c0
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59813187"
@@ -67,7 +67,7 @@ defrag <volume> [/<Parameter>]*
 -   Um volume deve ter pelo menos 15% espaço livre para **defrag** desfragmente total e adequadamente. **executa a desfragmentação** utiliza esse espaço como uma área de classificação para fragmentos de arquivos. Se um volume tiver menos de 15% de espaço livre, **defrag** desfragmentará apenas parcialmente. Para aumentar o espaço livre em um volume, exclua arquivos desnecessários ou mova-os para outro disco.
 -   Embora **defrag** é analisar e desfragmentar um volume, ele exibe um cursor piscando. Quando **defrag** é termina de analisar e desfragmentar o volume, ele exibe o relatório de análise, o relatório de desfragmentação ou ambos os relatórios e, em seguida, sai para o prompt de comando.
 -   Por padrão, **defrag** exibe um resumo dos relatórios de análise e de desfragmentação, se você não especificar a **/a** ou **/v** parâmetros.
--   Você pode enviar relatórios para um arquivo de texto digitando **> ***FileName.txt*, onde *filename. txt* é um nome de arquivo que você especificar. Por exemplo: `defrag volume /v > FileName.txt`
+-   Você pode enviar relatórios para um arquivo de texto digitando **>** *FileName.txt*, onde *filename. txt* é um nome de arquivo que você especificar. Por exemplo: `defrag volume /v > FileName.txt`
 -   Para interromper o processo de desfragmentação, na linha de comando, pressione **CTRL + C**.
 -   Executando o **defrag** Desfragmentador de disco e de comando são mutuamente exclusivos. Se você estiver usando o Desfragmentador de disco para desfragmentar um volume e você executar o **defrag** comando em uma linha de comando, o **defrag** comando falhará. Por outro lado, se você executar o **defrag** comando e abrir o Desfragmentador de disco, as opções de desfragmentação em Desfragmentador de disco não estão disponíveis.
 
