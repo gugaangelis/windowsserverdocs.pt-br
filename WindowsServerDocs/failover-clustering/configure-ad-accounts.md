@@ -6,17 +6,17 @@ ms.technology: storage-failover-clustering
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 2fcc6047a0e85170754d8f05d10f728a4c529049
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 454783a13b834ef705bd896155195750de2b183c
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871957"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64772716"
 ---
 # <a name="configuring-cluster-accounts-in-active-directory"></a>Configuração de contas de cluster no Active Directory
 
 
-Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 e Windows Server 2008
+Aplica-se a: 2019 do Windows Server, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 e Windows Server 2008
 
 No Windows Server, quando você cria um cluster de failover e configura serviços em cluster ou aplicativos, os assistentes de cluster de failover criam as contas de computador do Active Directory necessárias (também chamadas de objetos de computador) em conceda a permissão específica. Os assistentes criam uma conta de computador para o cluster em si (essa conta também é chamada de objeto de nome do cluster ou CNO) e uma conta de computador para a maioria dos tipos de aplicativos e serviços clusterizados, com exceção de uma máquina virtual Hyper-V. As permissões para essas contas são definidas automaticamente pelos assistentes de cluster de failover. Se as permissões forem modificadas, será preciso alterá-las de volta para que correspondam aos requisitos do cluster. Este guia descreve essas contas e permissões do Active Directory, fornece informações históricas sobre a importância delas e descreve as etapas para configurar e gerenciar as contas.
       
@@ -113,7 +113,7 @@ Conforme descrito nas três seções anteriores, determinados requisitos devem s
 
 ### <a name="planning-ahead-for-password-resets-and-other-account-maintenance"></a>Planejando redefinições de senha e outra manutenção de conta com antecipação
 
-Às vezes, os administradores de clusters de failover podem precisar redefinir a senha da conta de nome do cluster. Essa ação exige uma permissão específica, **Redefinir senha**. Portanto, é uma prática recomendada editar as permissões da conta de nome do cluster (usando o snap-in Usuários e Computadores do Active Directory) para fornecer aos administradores do cluster a permissão **Redefinir senha** para a conta de nome do cluster. Para obter mais informações, consulte [Etapas para solucionar problemas de senha com a conta de nome do cluster](#steps_for_troubleshooting_password_problems_with_the_cluster_name_account), mais adiante neste guia.
+Às vezes, os administradores de clusters de failover podem precisar redefinir a senha da conta de nome do cluster. Essa ação exige uma permissão específica, **Redefinir senha**. Portanto, é uma prática recomendada editar as permissões da conta de nome do cluster (usando o snap-in Usuários e Computadores do Active Directory) para fornecer aos administradores do cluster a permissão **Redefinir senha** para a conta de nome do cluster. Para obter mais informações, consulte [Etapas para solucionar problemas de senha com a conta de nome do cluster](#steps-for-troubleshooting-password-problems-with-the-cluster-name-account), mais adiante neste guia.
 
 ## <a name="steps-for-configuring-the-account-for-the-person-who-installs-the-cluster"></a>Etapas para configurar a conta para a pessoa que instala o cluster
 
@@ -152,7 +152,7 @@ A associação de grupo mínima exigida para concluir o procedimento a seguir de
           
         Quando **Recursos Avançados** estiver selecionada, você poderá ver a guia **Segurança** nas propriedades de contas (objetos) em **Usuários e Computadores do Active Directory**.  
           
-    3.  Clique com o botão direito do mouse no contêiner padrão **Computadores** ou no contêiner padrão no qual as contas de computador são criadas no seu domínio e clique em **Propriedades**. **Computadores** está localizado na <b>computadores e usuários do Active Directory /</b><i>nó do domínio</i><b>/Computers.</b>.  
+    3.  Clique com o botão direito do mouse no contêiner padrão **Computadores** ou no contêiner padrão no qual as contas de computador são criadas no seu domínio e clique em **Propriedades**. **Computadores** está localizado na <b>computadores e usuários do Active Directory /</b><i>nó do domínio</i><b>/Computers</b>.  
           
     4.  Na guia **Segurança** , clique em **Avançado**.  
           
@@ -174,7 +174,7 @@ A associação ao grupo **Admins. do Domínio** , ou equivalente, é o mínimo n
 
 2.  Em um controlador de domínio, clique em **Iniciar**, **Ferramentas Administrativas** e em **Usuários e Computadores do Active Directory**. Se a caixa de diálogo **Controle de Conta de Usuário** for exibida, confirme se a ação exibida é a desejada e clique em **Continuar**.
 
-3.  Na árvore de console, clique com o botão direito do mouse em **Computadores** ou no contêiner padrão no qual as contas de computador são criadas no seu domínio. **Computadores** está localizado na <b>computadores e usuários do Active Directory /</b><i>nó do domínio</i><b>/Computers.</b>.
+3.  Na árvore de console, clique com o botão direito do mouse em **Computadores** ou no contêiner padrão no qual as contas de computador são criadas no seu domínio. **Computadores** está localizado na <b>computadores e usuários do Active Directory /</b><i>nó do domínio</i><b>/Computers</b>.
 
 4.  Clique em **Novo** e em **Computador**.
 
@@ -226,7 +226,7 @@ A associação ao grupo **Operadores de Conta**, ou equivalente, é o mínimo ne
 
 2.  Em um controlador de domínio, clique em **Iniciar**, **Ferramentas Administrativas** e em **Usuários e Computadores do Active Directory**. Se a caixa de diálogo **Controle de Conta de Usuário** for exibida, confirme se a ação exibida é a desejada e clique em **Continuar**.
 
-3.  Na árvore de console, clique com o botão direito do mouse em **Computadores** ou no contêiner padrão no qual as contas de computador são criadas no seu domínio. **Computadores** está localizado na <b>computadores e usuários do Active Directory /</b><i>nó do domínio</i><b>/Computers.</b>.
+3.  Na árvore de console, clique com o botão direito do mouse em **Computadores** ou no contêiner padrão no qual as contas de computador são criadas no seu domínio. **Computadores** está localizado na <b>computadores e usuários do Active Directory /</b><i>nó do domínio</i><b>/Computers</b>.
 
 4.  Clique em **Novo** e em **Computador**.
 
@@ -287,7 +287,7 @@ A associação ao grupo **Admins. do Domínio** , ou equivalente, é o mínimo n
 
 1.  Em um controlador de domínio, clique em **Iniciar**, **Ferramentas Administrativas** e em **Usuários e Computadores do Active Directory**. Se a caixa de diálogo **Controle de Conta de Usuário** for exibida, confirme se a ação exibida é a desejada e clique em **Continuar**.
 
-2.  Expanda o contêiner padrão **Computadores** ou a pasta na qual a conta de nome do cluster (a conta de computador para o cluster) está localizada. **Computadores** está localizado na <b>computadores e usuários do Active Directory /</b><i>nó do domínio</i><b>/Computers.</b>.
+2.  Expanda o contêiner padrão **Computadores** ou a pasta na qual a conta de nome do cluster (a conta de computador para o cluster) está localizada. **Computadores** está localizado na <b>computadores e usuários do Active Directory /</b><i>nó do domínio</i><b>/Computers</b>.
 
 3.  Examine o ícone da conta de nome do cluster. Ele não deve ter uma seta apontando para baixo, isto é, a conta não deve estar desabilitada. Se ela aparecer como desabilitada, clique nela com o botão direito do mouse e procure o comando **Habilitar Conta**. Ao visualizar o comando, clique nele.
 
