@@ -11,7 +11,7 @@ ms.date: 6/24/2017
 description: Como implantar Pastas de Trabalho, incluindo a instalação da função de servidor, a criação de compartilhamentos de sincronização e a criação de registros DNS.
 ms.openlocfilehash: 1f7a0aa0b7e08a1dd444cd6b488a1ced6ee3d9d7
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59812537"
@@ -110,7 +110,7 @@ Add-WindowsFeature FS-SyncShareService
 
 4.  Na janela **Criar Grupo**, na seção **Grupo**, especifique as seguintes configurações:
 
-    -   Em **Nome do grupo**, digite o nome do grupo de segurança, por exemplo: Usuários de compartilhamento de sincronização de RH, ou **Administradores de pastas de trabalho**.  
+    -   Em **Nome do grupo**, digite o nome do grupo de segurança, por exemplo: **Usuários de compartilhamento de sincronização de RH**, ou **Administradores de pastas de trabalho**.  
   
     -   No **Escopo do grupo**, clique em **Segurança** e em **Global**.  
   
@@ -181,7 +181,7 @@ DsAcls $ADGroupPath /I:S /G ""$GroupName":RPWP;msDS-SyncServerUrl;user"
   
     -   **Alias de usuário** cria pastas de usuário que não incluem um nome de domínio. Se você estiver usando um compartilhamento de arquivos que já está em uso com Redirecionamento de Pasta ou outra solução de dados do usuário, selecione essa convenção de nomenclatura. Opcionalmente, você pode marcar a caixa de seleção **Sincronizar apenas a subpasta a seguir** para sincronizar apenas uma subpasta específica, como a pasta Documentos.  
   
-    -    **alias@domain de usuário** cria pastas de usuário que incluem um nome de domínio. Se você não estiver usando um compartilhamento de arquivos em uso com Redirecionamento de Pasta ou outra solução de dados do usuário, selecione essa convenção de nomenclatura para eliminar os conflitos de nomenclatura de pastas quando vários usuários do compartilhamento tiverem alias idênticos (o que pode ocorrer se os usuários pertencerem a domínios diferentes).  
+    -   **alias@domain de usuário** cria pastas de usuário que incluem um nome de domínio. Se você não estiver usando um compartilhamento de arquivos em uso com Redirecionamento de Pasta ou outra solução de dados do usuário, selecione essa convenção de nomenclatura para eliminar os conflitos de nomenclatura de pastas quando vários usuários do compartilhamento tiverem alias idênticos (o que pode ocorrer se os usuários pertencerem a domínios diferentes).  
   
 6.  Na página **Inserir o nome de compartilhamento da sincronização**, especifique um nome e uma descrição para o compartilhamento de sincronização. Isso não é anunciado na rede, mas está visível no Gerenciador de Servidores e no Windows Powershell para ajudar a distinguir um compartilhamento de sincronização do outro.  
   

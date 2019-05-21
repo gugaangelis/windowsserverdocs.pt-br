@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: f8d23cc1bb5739b47c755d90c927cbcf82b8da7f
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59825017"
@@ -44,7 +44,7 @@ color [[<B>]<F>]
 
 ## <a name="remarks"></a>Comentários
 
--   A tabela a seguir lista os dígitos hexadecimais válidos que podem ser usados como valores para *B* e *F*.  
+-   A tabela a seguir lista os dígitos hexadecimais válidos que podem ser usados como valores para *B* e *F*.   
     |Valor|Cor|
     |-----|-----|
     |0|Preto|
