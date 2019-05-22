@@ -5,16 +5,16 @@ author: billmath
 ms.author: billmath
 manager: mtillman
 ms.reviewer: anandyadavMSFT
-ms.date: 02/13/2019
+ms.date: 03/29/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: a5b5f895a0575094f8f1af950bde82e1d56325b2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 8d9acd1adcb8d9566b154abfef940e21609a6684
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829117"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64773377"
 ---
 # <a name="ad-fs-help-diagnostics-analyzer"></a>Analisador de diagnóstico do AD FS ajuda
 
@@ -32,15 +32,15 @@ Vá para [analisador de diagnóstico Ajuda do AD FS (https://aka.ms/adfsdiagnost
 
 ## <a name="step-1-setup-the-adfstoolbox-module-on-ad-fs-server"></a>Etapa 1: Configurar o módulo ADFSToolbox no servidor AD FS
 
-Para executar o [analisador de diagnóstico](https://aka.ms/adfsdiagnosticsanalyzer), você deve instalar o módulo do ADFSToolbox PowerShell. Se o servidor do AD FS tiver conectividade com a internet, você pode instalar o módulo ADFSToolbox diretamente da Galeria do PowerShell. No caso de nenhuma conectividade com a internet, clone o repositório do GitHub para a instalação manual. 
+Para executar o [analisador de diagnóstico](https://aka.ms/adfsdiagnosticsanalyzer), você deve instalar o módulo do ADFSToolbox PowerShell. Se o servidor do AD FS tiver conectividade com a internet, você pode instalar o módulo ADFSToolbox diretamente da Galeria do PowerShell. No caso de nenhuma conectividade com a internet, clone o repositório do GitHub para a instalação manual.
 
 ![Analisador de diagnóstico do AD FS - instalação](media/ad-fs-diagonostics-analyzer/step1.png)
 
 ### <a name="setup-using-powershell-gallery"></a>Configuração usando a Galeria do PowerShell
 
 Se o servidor do AD FS tiver conectividade com a internet, é recomendável instalar o módulo de ADFSToolbox diretamente da Galeria do PowerShell usando os comandos do PowerShell abaixo.
- 
-   ```powershell 
+
+   ```powershell
     Install-Module -Name ADFSToolbox -force
     Import-Module ADFSToolbox -force
    ```
@@ -51,8 +51,8 @@ O módulo ADFSToolbox pode ser instalado manualmente do GitHub diretamente. Siga
 1. Baixe o [repositório](https://github.com/Microsoft/adfsToolbox/archive/master.zip)
 2. Descompacte o arquivo baixado e copie a pasta adfsToolbox mestre para % SYSTEMDRIVE %\\Program Files\\WindowsPowerShell\\módulos\\.
 3. Importe o módulo do PowerShell. Em uma janela elevada do PowerShell, execute o seguinte:
- 
-   ```powershell 
+
+   ```powershell
     Import-Module ADFSToolbox -Force
    ```
 
@@ -78,6 +78,11 @@ Na etapa 2 na [ https://aka.ms/adfsdiagnosticsanalyzer ](https://aka.ms/adfsdiag
 
 Clique em **carregar** para concluir o carregamento e mover para a próxima etapa.
 
+
+Ao entrar com uma conta da Microsoft, suporte do diagnóstico de seu resultados podem ser salvas em um momento posterior de visualização e podem ser enviados à Microsoft. Se a qualquer momento em que você abrir um caso de suporte, a Microsoft será capaz de exibir os resultados do analisador de diagnóstico e ajudar a solucionar seu problema mais rapidamente.
+
+![Ferramenta de analisador de diagnóstico do AD FS - entrar](media/ad-fs-diagonostics-analyzer/sign_in_step.png)
+
 ## <a name="step-3-view-diagnostics-analysis-and-resolve-any-issues"></a>Etapa 3: Exibir análise de diagnóstico e resolva os problemas
 
 Há quatro seções dos resultados de teste:
@@ -87,19 +92,15 @@ Há quatro seções dos resultados de teste:
 3. Não aplicável: Esta seção contém a lista de testes que não foram executadas porque eles não eram aplicáveis para o servidor específico no qual o comando estava em execução.
 4. Passados: Esta seção contém a lista de testes que passado e nenhum item de ação do usuário.
 
-Cada resultado de teste é exibido com detalhes que descrevem o teste e a resolução de etapas:
+![Ferramenta de analisador de diagnóstico do AD FS - lista de resultados de teste](media/ad-fs-diagonostics-analyzer/step3a_v2.png) cada resultado de teste é exibido com detalhes que descrevem o teste e a resolução de etapas:
 
 1. Nome do teste: Nome do teste que foi executado
 2. Detalhes: Descrição da operação geral que foi executada durante o teste
 3. Etapas de resolução: As etapas sugeridas para resolver o problema realçado pelo teste
 
-![Ferramenta de analisador de diagnóstico do AD FS - lista de resultados de teste](media/ad-fs-diagonostics-analyzer/step3a.png)
-
-![Ferramenta do analisador de diagnóstico do AD FS - resolução de falhas](media/ad-fs-diagonostics-analyzer/step3b.png)
+![Ferramenta do analisador de diagnóstico do AD FS - resolução de falhas](media/ad-fs-diagonostics-analyzer/step3b_v2.png)
 
 ## <a name="next"></a>Próximo
 
 - [Use guias de troublehshooting Ajuda do AD FS](https://aka.ms/adfshelp/troubleshooting )
 - [Solução de problemas do AD FS](ad-fs-tshoot-overview.md)
-
- 
