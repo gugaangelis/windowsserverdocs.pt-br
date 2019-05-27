@@ -14,7 +14,7 @@ ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: f8cf1b12a8fffe2a6e3389aad518ac96bc136cc9
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59872167"
@@ -314,13 +314,13 @@ ms.locfileid: "59872167"
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-mobile-device"></a>Para fazer logon no Acesso via Web Remoto de um dispositivo móvel  
   
-1.  Abra um navegador da Web e digite **https://***< nome_do_domínio\>***/remota** na barra de endereços.  Certifique-se de que você incluir o s em https.  
+1.  Abra um navegador da Web e digite **https://***<nome_do_domínio\>***/remota** na barra de endereços.  Certifique-se de que você incluir o s em https.  
   
 2.  Na página de logon do acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto e, em seguida, clique na seta. Você está conectado à versão móvel do Acesso Remoto via Web .  
   
 ##### <a name="to-switch-to-the-desktop-version-of-remote-web-access"></a>Alternar para a versão da área de trabalho do acesso via Web Remoto  
   
-1.  Abra um navegador da Web e digite **https://***< nome_do_domínio\>***/remota** na barra de endereços.  Certifique-se de que você incluir o s em https.  
+1.  Abra um navegador da Web e digite **https://***<nome_do_domínio\>***/remota** na barra de endereços.  Certifique-se de que você incluir o s em https.  
   
 2.  Na página de logon do acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto, clique em **exibir a versão da área de trabalho**e, em seguida, clique na seta. Você está conectado à versão da área de trabalho do acesso remoto via Web .  
   
@@ -328,7 +328,7 @@ ms.locfileid: "59872167"
   
 1.  Faça logoff.  
   
-2.  Abra um navegador da Web e digite **https://***< nome_do_domínio\>*** m/remoto/** na barra de endereços. Certifique-se de que você incluir o s em https.  
+2.  Abra um navegador da Web e digite **https://***<nome_do_domínio\>*** m/remoto/** na barra de endereços. Certifique-se de que você incluir o s em https.  
   
 3.  A versão móvel do acesso via Web remoto é exibida. Na página de logon do acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto e, em seguida, clique na seta. Você efetuou logon para a versão móvel do acesso via Web remoto.  
   

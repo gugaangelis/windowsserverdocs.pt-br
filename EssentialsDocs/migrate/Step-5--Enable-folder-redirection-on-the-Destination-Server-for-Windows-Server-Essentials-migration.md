@@ -14,7 +14,7 @@ ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 613ff4c80a80ed4f3207cb0c1ead6db12c723e85
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59815377"
@@ -43,7 +43,7 @@ Caso o redirecionamento de pastas esteja habilitado no servidor de origem, você
   
 1.  No servidor de destino, abra a ferramenta administrativa **Gerenciamento de Política de Grupo**.  
   
-2.  Na **gerenciamento de política de grupo**, expanda **floresta: * * * YourNetworkDomainName*, expanda **domínios**, expanda *YourNetworkDomainName* e, em seguida, expanda **objetos de diretiva de grupo**.  
+2.  Na **gerenciamento de política de grupo**, expanda **floresta:***YourNetworkDomainName*, expanda **domínios**, expanda *YourNetworkDomainName* e, em seguida, expanda **objetos de diretiva de grupo**.  
   
 3.  Clique com o botão direito na política que você deseja excluir e, em seguida, clique em **Excluir**.  
   
