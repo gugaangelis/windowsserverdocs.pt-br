@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: c520cbe22739f2bde263e133c7feb681d824d251
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 80a6cb2bc8e6f0fdb1a777a42f5d245f98ac3dee
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883707"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192093"
 ---
 # <a name="install-the-federation-service-role-service"></a>Instalar o serviço de função Serviço de Federação
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Agora que você configurou corretamente um computador com os aplicativos de pré-requisitos e os certificados, você está pronto para instalar o serviço de função serviço de Federação dos serviços de Federação do Active Directory \(do AD FS\). Quando você instala o serviço de Federação em um computador, esse computador torna-se um servidor de Federação.  
   

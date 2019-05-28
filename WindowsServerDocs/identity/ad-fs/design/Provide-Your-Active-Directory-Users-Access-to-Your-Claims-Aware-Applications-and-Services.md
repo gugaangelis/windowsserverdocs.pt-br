@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f6fb37c16c20915c0051e3a24cdb0c147ae92d9c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8c3db2873e1c7a0fa217ba37b9439cc38dfafc36
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835867"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191004"
 ---
 # <a name="provide-your-active-directory-users-access-to-your-claims-aware-applications-and-services"></a>Fornecer a seus usuários do Active Directory acesso a aplicativos e serviços com reconhecimento de declarações
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Quando você for um administrador na organização do parceiro de conta em um Active Directory Federation Services \(do AD FS\) implantação e você tem uma meta de implantação para fornecer um único\-sinal\-em \( SSO\) acesso para os funcionários na rede corporativa aos recursos hospedados:  
   
@@ -58,4 +56,4 @@ A ilustração a seguir mostra cada um dos componentes necessários para essa me
 ![acesso a suas declarações](media/31394ea8-fecb-4372-ac3f-cc3cf566ffc9.gif)  
   
 ## <a name="see-also"></a>Consulte também
-[Guia de Design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

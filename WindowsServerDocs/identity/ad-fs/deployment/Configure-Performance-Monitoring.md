@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 6a7602cddcaee274d42213cd9365f6d1722dab79
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5426ea929037e59d2105fb2b3b06d4ebfdb7a577
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852907"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192290"
 ---
 # <a name="configure-performance-monitoring"></a>Configurar monitoramento de desempenho
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
   
 ## <a name="bkmk_ConfigurePerfMon"></a>  
 O AD FS inclui seus próprios contadores de desempenho dedicados para ajudá-lo a monitorar o desempenho dos servidores de Federação e computadores de proxy do servidor de Federação. Para usar o Monitor de desempenho para monitorar o desempenho dos servidores do AD FS, é útil criar um novo conjunto de Coletores de dados e adicionar os contadores do AD FS para essa exibição. O procedimento a seguir descreve como configurar o monitoramento de desempenho para o AD FS.  

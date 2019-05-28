@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: f80425b6f062040c51357353038fd07ff0a79ae6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0eb9265513d5ca18da1150d3be6752d364b7cd1a
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812167"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192085"
 ---
 # <a name="interoperating-with-ad-fs-1x"></a>Interoperando com o AD FS 1.x
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Para interoperabilidade entre serviços de Federação do Active Directory \(do AD FS\) no Windows Server® 2012 e do AD FS 1. *x*, execute uma ou mais das tarefas a seguir, dependendo das necessidades da sua organização:  
   

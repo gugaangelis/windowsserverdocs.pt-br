@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e26b7cac971f472bc8b5e48e3dc8cd2592dc22ce
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 585d0195b096056ba769f4e9a08d5c4d2156b96a
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814777"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191454"
 ---
 # <a name="federation-server-farm-using-sql-server"></a>Farm de servidores de federação usando SQL Server
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
 Essa topologia para os serviços de Federação do Active Directory \(do AD FS\) difere do farm de servidor de Federação usando o banco de dados interno do Windows \(WID\) topologia de implantação em que ele não replica os dados para cada servidor de federação no farm. Em vez disso, todos os servidores de federação no farm podem ler e gravar dados em um banco de dados comum que é armazenado em um servidor executando o Microsoft SQL Server que está localizado na rede corporativa.  
   
@@ -163,6 +161,6 @@ Para obter instruções mais detalhadas sobre como configurar o AD FS para usar 
   
 ## <a name="see-also"></a>Consulte também  
 [Planejar a topologia de implantação do AD FS](Plan-Your-AD-FS-Deployment-Topology.md)  
-[Guia de Design do AD FS no Windows Server 2012 R2](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
+[Guia de design do AD FS no Windows Server 2012 R2](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
 
