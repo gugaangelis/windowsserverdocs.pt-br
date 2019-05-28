@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e6d57f95379fce80bec9cb5e8445b28f887123c8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 55a76d58ba7a473881dade55c4f00052c9764ae9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826727"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192696"
 ---
 # <a name="wevtutil"></a>wevtutil
 
@@ -49,8 +49,8 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 |{sl \| log do conjunto} \<Logname > [/ e:\<habilitado >] [/ i:\<isolamento >] [/ lfn:\<Logpath >] [/ rt:\<retenção >] [/ ab:\<automática >] [/ ms:\< MaxSize >] [/ l:\<nível >] [/ nexar\<palavras-chave >] [/ autoridade de certificação:\<canal >] [/ c:\<Config >]|Modifica a configuração de log especificado.|
 |{ep \| enum Publicadores}|Exibe os editores de eventos no computador local.|
 |{gp \| get-publisher} \<Publishername > [/ ge:\<metadados >] [/ gm:\<mensagem >] [/ f:\<formato >]]|Exibe as informações de configuração para o publicador do evento especificado.|
-|{im \| manifesto instalação} \<manifesto >|Instala os logs e editores de eventos de um manifesto. Para obter mais informações sobre manifestos de evento e o uso desse parâmetro, consulte o SDK do Log de eventos do Windows no site da Microsoft Developers Network (MSDN) (https://msdn.microsoft.com).|
-|{Hum \| manifesto desinstalar} \<manifesto >|Desinstala todos os logs e editores de um manifesto. Para obter mais informações sobre manifestos de evento e o uso desse parâmetro, consulte o SDK do Log de eventos do Windows no site da Microsoft Developers Network (MSDN) (https://msdn.microsoft.com).|
+|{im \| manifesto instalação} \<manifesto >|Instala os logs e editores de eventos de um manifesto. Para obter mais informações sobre manifestos de evento e o uso desse parâmetro, consulte o SDK do Log de eventos do Windows no site da Microsoft Developers Network (MSDN) ([https://msdn.microsoft.com](https://msdn.microsoft.com)).|
+|{Hum \| manifesto desinstalar} \<manifesto >|Desinstala todos os logs e editores de um manifesto. Para obter mais informações sobre manifestos de evento e o uso desse parâmetro, consulte o SDK do Log de eventos do Windows no site da Microsoft Developers Network (MSDN) ([https://msdn.microsoft.com](https://msdn.microsoft.com)).|
 |{qe \| eventos de consulta} \<caminho > [/ lf:\<arquivo de log >] [/ sq:\<Structquery >] [/ p:\<consulta >] [/ bm:\<indicador >] [/ sbm:\<Savebm >] [/ área de trabalho remota:\< Direção >] [/ f:\<formato >] [/ l:\<localidade >] [/ c:\<contagem >] [/ e:\<elemento >]|Lê os eventos de um log de eventos de um arquivo de log, ou usando uma consulta estruturada. Por padrão, você fornecer um nome de log para \<caminho >. No entanto, se você usar o **/lf** opção, em seguida, \<caminho > deve ser um caminho para um arquivo de log. Se você usar o **/sq** parâmetro, \<caminho > deve ser um caminho para um arquivo que contém uma consulta estruturada.|
 |{gli \| get-loginfo} \<Logname > [/ lf:\<Logfile >]|Exibe informações de status sobre um log de eventos ou o arquivo de log. Se o **/lf** opção for usada, \<Logname > é um caminho para um arquivo de log. Você pode executar **wevtutil el** para obter uma lista de nomes de log.|
 |{epl \| log de exportação} \<caminho > \<arquivo de exportação > [/ lf:\<Logfile >] [/ sq:\<Structquery >] [/ p:\<consulta >] [/ omo:\<substituição >]|Exporta os eventos de um log de eventos de um arquivo de log, ou usando uma consulta a estruturadas no arquivo especificado. Por padrão, você fornecer um nome de log para \<caminho >. No entanto, se você usar o **/lf** opção, em seguida, \<caminho > deve ser um caminho para um arquivo de log. Se você usar o **/sq** opção, \<caminho > deve ser um caminho para um arquivo que contém uma consulta estruturada. \<Arquivo de exportação > é um caminho para o arquivo onde os eventos exportados serão armazenados.|
@@ -70,7 +70,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 |/ms:\<MaxSize>|Define o tamanho máximo do log em bytes. O tamanho mínimo do log é 1048576 bytes (1024KB) e arquivos de log sempre são múltiplos de 64KB, portanto, o valor que você inserir será arredondado adequadamente.|
 |/l:\<Level>|Define o filtro de nível do log. \<Nível > pode ser qualquer valor válido de nível. Essa opção só é aplicável aos logs com uma sessão dedicado. Você pode remover um filtro de nível definindo <Level> como 0.|
 |/k:\<Keywords>|Especifica o filtro de palavras-chave do log. \<Palavras-chave > pode ser qualquer máscara de palavra-chave de 64 bits válido. Essa opção só é aplicável aos logs com uma sessão dedicado.|
-|/ca:\<Channel>|Define a permissão de acesso para um log de eventos. \<Canal > é um descritor de segurança que usa a definição de linguagem SDDL (Security Descriptor). Para obter mais informações sobre o formato SDDL, consulte o site Microsoft Developers Network (MSDN) (https://msdn.microsoft.com).|
+|/ca:\<Channel>|Define a permissão de acesso para um log de eventos. \<Canal > é um descritor de segurança que usa a definição de linguagem SDDL (Security Descriptor). Para obter mais informações sobre o formato SDDL, consulte o site Microsoft Developers Network (MSDN) ([https://msdn.microsoft.com](https://msdn.microsoft.com)).|
 |/c:\<Config>|Especifica o caminho para um arquivo de configuração. Essa opção fará com que as propriedades de log a ser lido do arquivo de configuração definido no \<Config >. Se você usa essa opção, você deve especificar um <Logname> parâmetro. O nome do log será lido do arquivo de configuração.|
 |/GE:\<metadados >|Obtém informações de metadados para eventos que podem ser gerados por este publicador. \<Metadados > pode ser true ou false.|
 |/GM:\<mensagem >|Exibe a mensagem real em vez de ID da mensagem numérica. \<Mensagem > pode ser true ou false.|
@@ -155,4 +155,4 @@ wevtutil cl Application /bu:C:\admin\backups\a10306.evtx
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

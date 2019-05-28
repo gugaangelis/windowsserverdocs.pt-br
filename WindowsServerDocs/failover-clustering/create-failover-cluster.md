@@ -1,6 +1,6 @@
 ---
 title: criar um cluster de failover
-description: Como criar um cluster de failover para o Windows Server 2012 R2, Windows Server 2012 e Windows Server 2016.
+description: Como criar um cluster de failover para o Windows Server 2012 R2, Windows Server 2012, Windows Server 2016 e Windows Server 2019.
 ms.prod: windows-server-threshold
 ms.topic: article
 author: JasonGerend
@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 11/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f919e69488c4f2272ddd07e535ba4e2248ddf79c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4122375a48cae17e5f3ebcd7e9f3ce1fad28a105
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843287"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222487"
 ---
 # <a name="create-a-failover-cluster"></a>criar um cluster de failover
 
->Aplica-se a: Windows Server 2012 R2, Windows Server 2012, Windows Server 2016
+>Aplica-se a: No Windows Server 2012, Windows Server 2016, Windows Server 2012 R2 e Windows Server de 2019
 
 Este tópico mostra como criar um cluster de failover usando o snap-in Gerenciador de Cluster de Failover ou o Windows PowerShell. O tópico aborda uma implantação típica, na qual os objetos de computador do cluster e suas funções clusterizadas associadas são criados no AD DS (Serviços de Domínio Active Directory). Se você estiver implantando um cluster de espaços de armazenamento diretos, em vez disso, consulte [implantar espaços de armazenamento diretos](../storage/storage-spaces/deploy-storage-spaces-direct.md).
 
@@ -123,7 +123,7 @@ Para concluir esta etapa, verifique se a conta de usuário com a qual você fez 
     1. Na caixa **Nome do Cluster**, digite o nome que deseja usar para administrar o cluster. Antes disso, examine as seguintes informações:
         
           - Durante a criação do cluster, esse nome é registrado como o objeto de computador do cluster (também conhecido como *CNO* ou *objeto de nome do cluster*) no AD DS. Se você especificar um nome NetBIOS para o cluster, o CNO será criado no mesmo local em que residem os objetos de computador dos nós do cluster. Isso pode ser o contêiner de computadores padrão ou uma OU.
-          - Para especificar um local diferente para o CNO, você pode digitar o nome diferenciado de uma OU na caixa **Nome do Cluster** . Por exemplo:  *CN=ClusterName, OU=Clusters, DC=Contoso, DC=com*.
+          - Para especificar um local diferente para o CNO, você pode digitar o nome diferenciado de uma OU na caixa **Nome do Cluster** . Por exemplo: *CN=ClusterName, OU=Clusters, DC=Contoso, DC=com*.
           - Se um administrador do domínio tiver pré-configurado o CNO em uma OU diferente da qual residem os nós do cluster, especifique o nome diferenciado fornecido pelo administrador do domínio.
     2. Se o servidor não tiver um adaptador de rede configurado para usar protocolo DHCP, você deverá configurar um ou mais endereços IP estáticos para o cluster de failover. Marque a caixa de seleção ao lado de cada rede que deseja usar para o gerenciamento de cluster. Selecione o **endereço** campo ao lado de uma rede selecionada e, em seguida, insira o endereço IP que você deseja atribuir ao cluster. Esse endereço (ou endereços) IP será associado ao nome do cluster no DNS (Sistema de Nomes de Domínio).
     3. Quando tiver terminado, selecione **próxima**.
@@ -152,72 +152,24 @@ Aqui está como criar uma função clusterizada:
     
     A tabela a seguir mostra as funções clusterizadas que você pode configurar no Assistente de Alta Disponibilidade e a função de servidor ou o recurso associado que você deve instalar como um pré-requisito.
     
-    <table>
-    <thead>
-    <tr class="header">
-    <th>Função clusterizada</th>
-    <th>Função ou recurso de pré-requisito</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-    <td>Servidor de namespace do DFS</td>
-    <td>Namespaces do DFS (parte da função Servidor de Arquivos)</td>
-    </tr>
-    <tr class="even">
-    <td>Servidor DHCP</td>
-    <td>Função Servidor DHCP</td>
-    </tr>
-    <tr class="odd">
-    <td>DTC (Coordenador de Transações Distribuídas):</td>
-    <td>Nenhuma</td>
-    </tr>
-    <tr class="even">
-    <td>Servidor de arquivos</td>
-    <td>Função Servidor de Arquivos</td>
-    </tr>
-    <tr class="odd">
-    <td>Aplicativo genérico</td>
-    <td>Não Aplicável</td>
-    </tr>
-    <tr class="even">
-    <td>Script genérico</td>
-    <td>Não Aplicável</td>
-    </tr>
-    <tr class="odd">
-    <td>Serviço genérico</td>
-    <td>Não Aplicável</td>
-    </tr>
-    <tr class="even">
-    <td>Agente de Réplica do Hyper-V</td>
-    <td>Função Hyper-V</td>
-    </tr>
-    <tr class="odd">
-    <td>iSCSI Target Server</td>
-    <td>Servidor de Destino iSCSI (parte da função Servidor de Arquivos)</td>
-    </tr>
-    <tr class="even">
-    <td>iSNS Server</td>
-    <td>Recurso Serviço do iSNS Server</td>
-    </tr>
-    <tr class="odd">
-    <td>Enfileiramento de Mensagens</td>
-    <td>Recurso Serviços de Enfileiramento de Mensagens</td>
-    </tr>
-    <tr class="even">
-    <td>Outro servidor</td>
-    <td>Nenhuma</td>
-    </tr>
-    <tr class="odd">
-    <td>Máquina Virtual</td>
-    <td>Função Hyper-V</td>
-    </tr>
-    <tr class="even">
-    <td>Servidor WINS</td>
-    <td>Recurso servidor WINS</td>
-    </tr>
-    </tbody>
-    </table>
+
+|Função clusterizada  |Função ou recurso de pré-requisito  |
+|---------|---------|
+|Namespace Server     |   Namespaces (parte da função de servidor de arquivos)       |
+|Servidor de namespace do DFS     |  Função Servidor DHCP       |
+|DTC (Coordenador de Transações Distribuídas):     | Nenhuma        |
+|Servidor de arquivos     |  Função Servidor de Arquivos       |
+|Aplicativo genérico     |  Não Aplicável       |
+|Script genérico     |   Não Aplicável      |
+|Serviço genérico     |   Não Aplicável      |
+|Agente de Réplica do Hyper-V     |   Função Hyper-V      |
+|iSCSI Target Server     |    Servidor de Destino iSCSI (parte da função Servidor de Arquivos)     |
+|iSNS Server     |  Recurso Serviço do iSNS Server       |
+|Enfileiramento de Mensagens     |  Recurso Serviços de Enfileiramento de Mensagens       |
+|Outro servidor     |  Nenhuma       |
+|Máquina Virtual     |  Função Hyper-V       |
+|Servidor WINS     |   Recurso servidor WINS      |
+
 2. No Gerenciador de Cluster de Failover, expanda o nome do cluster, clique com botão direito **funções**e, em seguida, selecione **configurar função**.
 3. Siga as etapas do Assistente de Alta Disponibilidade para criar a função clusterizada.
 4. Para verificar se a função clusterizada foi criada, no painel **Funções**, verifique se o status da função está definido como **Em execução**. O painel Funções também indica o nó do proprietário. Para testar o failover, a função com o botão direito, aponte para **mova**e, em seguida, selecione **selecionar nó**. No **mover função clusterizada** caixa de diálogo, selecione o nó de cluster desejado e, em seguida, selecione **Okey**. Na coluna **Nó do Proprietário** , verifique se o nó do proprietário foi alterado.
@@ -271,6 +223,6 @@ Para obter exemplos de como adicionar funções clusterizadas, consulte tópicos
   - [Servidor de arquivos de escalabilidade horizontal para dados de aplicativo](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831349(v%3dws.11)>)
   - [Implantar um Cluster de desanexado do Active Directory](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11))
   - [Using Guest Clustering for High Availability](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn440540(v%3dws.11)>)
-  - [Cluster-Aware Updating](cluster-aware-updating.md)
+  - [Atualização com suporte a cluster](cluster-aware-updating.md)
   - [New-Cluster](https://docs.microsoft.com/powershell/module/failoverclusters/new-cluster?view=win10-ps)
   - [Cluster de teste](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)

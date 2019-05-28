@@ -13,20 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 82ba51cdb49501492c1fa38c6c93933f4aee90d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ea306127be9497c21a5b8efa9fd3f0fa2433014c
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890457"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192673"
 ---
 # <a name="findstr"></a>findstr
 
-
-
 Procura por padrões de texto em arquivos.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+Para obter exemplos de como usar esse comando, consulte [Exemplos](#examples).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -88,7 +86,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
     b.*ing
     ```
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="examples"></a>Exemplos
 
 Use espaços para separar várias cadeias de caracteres de pesquisa, a menos que o argumento é prefixado com **/c**.
 
@@ -127,4 +125,4 @@ findstr /s /i /m "\<comp.*" *.*
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

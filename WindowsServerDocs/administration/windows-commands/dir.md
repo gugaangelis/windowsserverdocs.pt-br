@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5d11a2d149ec1d83facd4aea64019bbb963ec70e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: acd3b4bb0342dfb8dc651ce7c31e85f1e77a2569
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840677"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222976"
 ---
 # <a name="dir"></a>dir
 
@@ -26,7 +26,7 @@ ms.locfileid: "59840677"
 
 Exibe uma lista de arquivos e subdiretórios de um diretório. Se usado sem parâmetros, **dir** exibe o rótulo do volume do disco e o número de série, seguido por uma lista de diretórios e arquivos no disco (incluindo seus nomes e a data e hora que cada um foi modificado pela última vez). Para arquivos, **dir** exibe a extensão de nome e o tamanho em bytes. **Dir** também exibe o número total de arquivos e diretórios listados, seu tamanho cumulativo e o espaço livre (em bytes) restante no disco.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+Para obter exemplos de como usar esse comando, consulte [Exemplos](#examples).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -59,7 +59,7 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
 ## <a name="remarks"></a>Comentários
 
 -   Para usar várias *FileName* parâmetros, separe cada nome de arquivo com um espaço, vírgula ou ponto e vírgula.
--   Você pode usar caracteres curinga (**&#42;** ou **?**), para representar um ou mais caracteres do nome do arquivo e exibir um subconjunto de arquivos ou subdiretórios.
+-   Você pode usar caracteres curinga (**&#42;** ou **?** ), para representar um ou mais caracteres do nome do arquivo e exibir um subconjunto de arquivos ou subdiretórios.
 
     **Asterisco (\*):** Use o asterisco como um substituto para qualquer cadeia de caracteres, por exemplo:  
     -   **dir \*. txt** lista todos os arquivos no diretório atual com as extensões que começam com. txt, como. txt, .txt1, .txt_old.
@@ -90,10 +90,10 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
     Se você especificar mais de uma *SortOrder* valor, **dir** classifica os nomes de arquivo pelo primeiro critério e, em seguida, pelo segundo critério e assim por diante. Por exemplo, se você usar **/o** com o **eletrônico** e **-s** os valores para *SortOrder* (usando o **/o: e-s**ou **/oe-s**), **dir** classificará os nomes de diretórios e arquivos por extensão, com o maior em primeiro lugar e, em seguida, exibe o resultado final. A classificação alfabética por extensão faz com que os nomes de arquivos sem extensões apareçam primeiro, nomes de diretório e, em seguida, nomes de arquivos com extensões.
 -   Usando pipes e símbolos de redirecionamento
 
-    Quando você usa o símbolo de redirecionamento (**>**) para enviar **dir** de saída para um arquivo ou um pipe (**|**) para enviar **dir**de saída para outro comando, use **/a:-d** e **/b** para listar os nomes de arquivo. Você pode usar *FileName* com **/b** e **/s** para especificar que **dir** é pesquisar o diretório atual e seus subdiretórios para todos os arquivos nomes que correspondem *FileName*. **Dir** lista apenas a letra da unidade, nome do diretório, nome de arquivo e extensão de nome de arquivo (um caminho por linha) para cada arquivo nome localiza. Antes de usar um pipe envie **dir** de saída para outro comando, você deve definir o TEMP variável de ambiente em seu arquivo Autoexec.
+    Quando você usa o símbolo de redirecionamento ( **>** ) para enviar **dir** de saída para um arquivo ou um pipe ( **|** ) para enviar **dir**de saída para outro comando, use **/a:-d** e **/b** para listar os nomes de arquivo. Você pode usar *FileName* com **/b** e **/s** para especificar que **dir** é pesquisar o diretório atual e seus subdiretórios para todos os arquivos nomes que correspondem *FileName*. **Dir** lista apenas a letra da unidade, nome do diretório, nome de arquivo e extensão de nome de arquivo (um caminho por linha) para cada arquivo nome localiza. Antes de usar um pipe envie **dir** de saída para outro comando, você deve definir o TEMP variável de ambiente em seu arquivo Autoexec.
 -   O **dir** comando com parâmetros diferentes, está disponível no Console de recuperação.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="examples"></a>Exemplos
 
 Para exibir todos os diretórios um após o outro, em ordem alfabética, no formato amplo e pausar depois de cada tela, certifique-se de que o diretório raiz é o diretório atual e, em seguida, digite:
 ```
@@ -127,4 +127,4 @@ dir c:\*.txt /w/o/s/p
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

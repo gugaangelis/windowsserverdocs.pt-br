@@ -6,16 +6,16 @@ ms.manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 03/06/2019
+ms.date: 03/26/2019
 ms.assetid: 8bd0d09a-0421-40a4-b752-40ecb5350ffd
 description: Uma visão geral de espaços de armazenamento diretos, um recurso do Windows Server que permite que os servidores de cluster com armazenamento interno em uma solução de armazenamento definida por software.
 ms.localizationpriority: medium
-ms.openlocfilehash: 25de20b398f780f5da07b6b6cf4d396a7d12204a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 87e7f2549578ba1ceb62772ca7ed156aed115c5f
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823887"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192781"
 ---
 # <a name="storage-spaces-direct-overview"></a>Visão geral de Espaços de Armazenamento Diretos
 
@@ -27,144 +27,40 @@ Espaços de armazenamento diretos está incluído no Windows Server Datacenter d
 
 Para outros aplicativos de espaços de armazenamento, como SAS compartilhado clusters e servidores autônomos, consulte [visão geral dos espaços de armazenamento](overview.md). Se você estiver procurando informações sobre como usar espaços de armazenamento em um computador Windows 10, consulte [espaços de armazenamento no Windows 10](https://support.microsoft.com/help/12438/windows-10-storage-spaces).
 
-<table>
-    <tr style="border: 0;">
-        <td style="padding: 5px; border: 0;">
-            <strong>Entender</a></strong>
-            <ul>
-              <li>Visão geral (você está aqui)</li>
-              <li><a href="understand-the-cache.md">Entender o cache</a></li>
-              <li><a href="storage-spaces-fault-tolerance.md">Eficiência de armazenamento e a tolerância a falhas</a></li>
-              <li><a href="drive-symmetry-considerations.md">Considerações de simetria de unidade</a></li>
-              <li><a href="understand-storage-resync.md">Compreender e monitorar a ressincronização de armazenamento</a></li>
-              <li><a href="understand-quorum.md">Noções básicas sobre cluster e pool de quorum</a></li>
-              <li><a href="cluster-sets.md">Conjuntos de cluster</a></li>
-            </ul>
-        </td>
-        <td style="padding: 5px; border: 0;">
-            <strong>Plano</a></strong>
-            <ul>
-              <li><a href="storage-spaces-direct-hardware-requirements.md">Requisitos de hardware</a></li>
-              <li><a href="csv-cache.md">Usar o CSV na memória cache de leitura</li>
-              <li><a href="choosing-drives.md">Escolha unidades</a></li>
-              <li><a href="plan-volumes.md">Plano de volumes</a></li>
-              <li><a href="storage-spaces-direct-in-vm.md">Usando clusters de convidado da VM</a></li>
-              <li><a href="storage-spaces-direct-disaster-recovery.md">Recuperação de desastre</a></li>
-            </ul>
-        </td>
-    </tr>
-    <tr style="border: 0;">
-        <td style="padding: 5px; border: 0;">
-            <strong>Implantar</a></strong>
-            <ul>
-                    <li><a href="deploy-storage-spaces-direct.md">Implantar espaços de armazenamento diretos</a></li>
-                    <li><a href="create-volumes.md">Criar volumes</a></li>
-              <li><a href="nested-resiliency.md">Resiliência aninhada</a></li>
-              <li><a href="../../failover-clustering/manage-cluster-quorum.md">Configurar o quorum</a></li>
-              <li><a href="upgrade-storage-spaces-direct-to-windows-server-2019.md">Atualizar um cluster de espaços de armazenamento diretos para o Windows Server 2019</a></li>
-            </ul>
-        </td>        
-        <td style="padding: 5px; border: 0;">
-            <strong>Gerenciar</a></strong>
-            <ul>
-              <li><a href="../../manage/windows-admin-center/use/manage-hyper-converged.md">Gerenciar com o Windows Admin Center</a></li>
-              <li><a href="add-nodes.md">Adicionar servidores ou unidades</a></li>
-              <li><a href="maintain-servers.md">Colocar um servidor offline para manutenção</li>
-              <li><a href="remove-servers.md">Remover servidores</a></li>
-              <li><a href="resize-volumes.md">Estender os volumes</a></li>
-              <li><a href="../update-firmware.md">Atualizar o firmware da unidade</a></li>
-              <li><a href="performance-history.md">Histórico de desempenho</a></li>
-              <li><a href="delimit-volume-allocation.md">Delimitar a alocação de volumes</a></li>
-            </ul>
-        </td>
-    </tr>
-    <tr style="border: 0;">
-         <td style="padding: 5px; border: 0;">
-            <strong>Solução de problemas</a></strong>
-            <ul>
-              <li><a href="storage-spaces-states.md">Solucionar problemas de integridade e estados operacionais</a></li>
-              <li><a href="data-collection.md">Coletar dados de diagnóstico com espaços de armazenamento diretos</a></li>
-            </ul>
-         <td style="padding: 5px; border: 0;">
-            <strong>Postagens recentes no blog</a></strong>
-            <ul>
-              <li><a href="https://blogs.technet.microsoft.com/filecab/2018/10/30/windows-server-2019-and-intel-optane-dc-persistent-memory/">13.7 milhão de IOPS com espaços de armazenamento diretos: o novo registro do setor para infraestrutura hiperconvergente</a></li>
-              <li><a href="https://blogs.technet.microsoft.com/filecab/2018/10/02/hci-the-countdown-clock-starts-now/">Infraestrutura hiperconvergente no Windows Server de 2019 – o relógio de contagem regressiva começa agora!</a></li>
-              <li><a href="https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap/">Cinco big avisos do Windows Server Summit</a></li>
-              <li><a href="https://blogs.technet.microsoft.com/filecab/2018/03/27/storage-spaces-direct-momentum/">Clusters de espaços de armazenamento diretos 10.000 e contagem...</a></li>
-            </ul>
-</table>
+|       |       |
+|   -   |   -   |
+|**Entender**<br><ul><li>Visão geral (você está aqui)</li><li>[Noções básicas sobre o cache](understand-the-cache.md)</li><li>[Tolerância a falhas e eficiência de armazenamento](storage-spaces-fault-tolerance.md)<li>[Considerações de simetria de unidade](drive-symmetry-considerations.md)</li><li>[Entender e monitorar a ressincronização de armazenamento](understand-storage-resync.md)</li><li>[Noções básicas de quórum de cluster e de pool](understand-quorum.md)</li><li>[Conjuntos de cluster](cluster-sets.md)</li>|**Plano**<br><ul><li>[Requisitos de hardware](storage-spaces-direct-hardware-requirements.md)</li><li>[Usar o cache de leitura na memória de CSV](csv-cache.md)</li><li>[Escolher unidades](choosing-drives.md)</li><li>[Planejar volumes](plan-volumes.md)</li><li>[Usar clusters de VM convidada](storage-spaces-direct-in-vm.md)</li><li>[Recuperação de desastres](storage-spaces-direct-disaster-recovery.md)</li>|
+|**Implantar**<br><ul><li>[Implantar Espaços de Armazenamento Diretos](deploy-storage-spaces-direct.md)</li><li>[Criar volumes](create-volumes.md)</li><li>[Resiliência aninhada](nested-resiliency.md)</li><li>[Configurar quorum](../../failover-clustering/manage-cluster-quorum.md)</li><li>[Atualizar um cluster de Espaços de Armazenamento Diretos para o Windows Server 2019](upgrade-storage-spaces-direct-to-windows-server-2019.md)</li>|**Gerenciar**<br><ul><li>[Gerenciar com o Centro de Administração do Windows](../../manage/windows-admin-center/use/manage-hyper-converged.md)</li><li>[Adicionar servidores ou unidades](add-nodes.md)</li><li>[Colocar um servidor offline para manutenção](maintain-servers.md)</li><li>[Remover servidores](remove-servers.md)</li><li>[Estender volumes](resize-volumes.md)</li><li>[Excluir volumes](delete-volumes.md)</li><li>[Atualizar firmware da unidade](../update-firmware.md)</li><li>[Histórico de desempenho](performance-history.md)</li><li>[Delimitar a alocação de volumes](delimit-volume-allocation.md)</li><li>[Usar o Azure Monitor em um cluster hiperconvergente](configure-azure-monitor.md)</li>|
+|**Solução de problemas**<br><ul><li>[Solucionar problemas de integridade e estados operacionais](storage-spaces-states.md)</li><li>[Coletar dados de diagnóstico com espaços de armazenamento diretos](data-collection.md)</li>|**Postagens recentes no blog**<br><ul><li>[13.7 milhão de IOPS com espaços de armazenamento diretos: o novo registro do setor para infraestrutura hiperconvergente](https://blogs.technet.microsoft.com/filecab/2018/10/30/windows-server-2019-and-intel-optane-dc-persistent-memory/)</li><li>[Infraestrutura hiperconvergente no Windows Server de 2019 – o relógio de contagem regressiva começa agora!](https://blogs.technet.microsoft.com/filecab/2018/10/02/hci-the-countdown-clock-starts-now/)</li><li>[Cinco big avisos do Windows Server Summit](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap)</li><li>[Clusters de espaços de armazenamento diretos 10.000 e contagem...](https://blogs.technet.microsoft.com/filecab/2018/03/27/storage-spaces-direct-momentum/)</li>|
 
 ## <a name="videos"></a>Vídeos
 
 **Visão geral rápida do vídeo (5 minutos)**
 
-<iframe src="https://www.youtube-nocookie.com/embed/raeUiNtMk0E" width="560" height="315" allowfullscreen></iframe>
+> [!Video https://www.youtube-nocookie.com/embed/raeUiNtMk0E]
 
 **Espaços de armazenamento diretos no Microsoft Ignite 2018 (1 hora)**
 
-[Assista no YouTube](https://www.youtube.com/watch?v=5kaUiW3qo30)
+> [!Video https://www.youtube-nocookie.com/embed/5kaUiW3qo30]
 
 **Espaços de armazenamento diretos no Microsoft Ignite 2017 (1 hora)**
 
-[Assista no YouTube](https://www.youtube.com/watch?v=YDr2sqNB-3c)
+> [!Video https://www.youtube-nocookie.com/embed/YDr2sqNB-3c]
 
 **Inicie o evento no Microsoft Ignite 2016 (1 hora)**
 
-[Assista no YouTube](https://www.youtube.com/watch?v=-LK2ViRGbWs)
+> [!Video https://www.youtube-nocookie.com/embed/LK2ViRGbWs]
 
 ## <a name="key-benefits"></a>Principais benefícios
 
-<table>
-    <tr style="border: 0;">
-        <td style="padding: 10px; border: 0; width:100px">
-            <img src="media/storage-spaces-direct-in-windows-server-2016/simplicity-icon.png" width="100" alt="">
-        </td>
-        <td style="padding: 10px; border: 0;">
-            <b>Manter a simplicidade.</b> Passe de servidores padrão do setor que executam o Windows Server 2016 para seu primeiro cluster de Espaços de Armazenamento Diretos em menos de 15 minutos. Para usuários do System Center, a implantação é apenas uma caixa de seleção.
-        </td>
-    </tr>
-    <tr style="border: 0;">
-        <td style="padding: 10px; border: 0; width:100px">
-            <img src="media/storage-spaces-direct-in-windows-server-2016/performance-icon.png" width="100" alt="">
-        </td>
-        <td style="padding: 10px; border: 0;">
-            <b>Desempenho inigualável.</b> Se todos os flash ou híbrida, espaços de armazenamento Direct facilmente exceder <a href="https://blogs.technet.microsoft.com/filecab/2016/07/26/storage-iops-update-with-storage-spaces-direct/">150.000 misto 4K aleatório IOPS por servidor</a> com consistente e de baixa latência graças à sua arquitetura de hipervisor interno, seu interno cache de leitura/gravação e suporte para unidades de NVMe ponta montadas diretamente no barramento PCIe.
-        </td>
-    </tr>
-    <tr style="border: 0;">
-        <td style="padding: 10px; border: 0; width:100px">
-            <img src="media/storage-spaces-direct-in-windows-server-2016/fault-tolerance-icon.png" width="100" alt="">
-        </td>
-        <td style="padding: 10px; border: 0;">
-            <b>Tolerância a falhas. </b> A resiliência interna manuseia unidade, servidor ou falhas de componente com disponibilidade contínua. Implantações maiores também podem ser configuradas para <a href="../../failover-clustering/fault-domains.md">a tolerância a falhas de chassis e do rack</a>. Quando o hardware falhar, basta trocá-lo; o software se repara sozinho, sem etapas de gerenciamento complicadas.
-        </td>
-    </tr>
-    <tr style="border: 0;">
-        <td style="padding: 10px; border: 0; width:100px">
-            <img src="media/storage-spaces-direct-in-windows-server-2016/efficiency-icon.png" width="100" alt="">
-        </td>
-        <td style="padding: 10px; border: 0;">
-            <b>Eficiência de recursos.</b> A codificação de eliminação oferece eficiência de armazenamento até 2,4 x maior, com inovações exclusivas como Códigos de reconstrução local e camadas em tempo real ReFS para expandir esses ganhos a unidades de disco rígido e cargas de trabalho ativas/passivas mistas, tudo isso enquanto o consumo da CPU é minimizado para devolver recursos para onde eles são mais necessários – nas VMs.
-        </td>
-    </tr>
-    <tr style="border: 0;">
-        <td style="padding: 10px; border: 0; width:100px">
-            <img src="media/storage-spaces-direct-in-windows-server-2016/manageability-icon.png" width="100" alt="">
-        </td>
-        <td style="padding: 10px; border: 0;">
-            <b>Capacidade de gerenciamento.</b> Use <a href="../storage-qos/storage-qos-overview.md">Controles QoS de armazenamento</a> para manter VMs ocupadas excessivamente na verificação dos limites mínimo e máximo de IOPS por VM. O <a href="../../failover-clustering/health-service-overview.md">serviço de integridade</a> oferece monitoramento e alertas internos contínuos e novas APIs facilitam a coleta de métricas de capacidade e desempenho avançadas em todo o cluster.
-        </td>
-    </tr>
-    <tr style="border: 0;">
-        <td style="padding: 10px; border: 0; width:100px">
-            <img src="media/storage-spaces-direct-in-windows-server-2016/scalability-icon.png" width="100" alt="">
-        </td>
-        <td style="padding: 10px; border: 0;">
-            <b>Escalabilidade.</b> Tenha até 16 servidores e mais de 400 unidades para até 1 petabyte (1.000 terabytes) de armazenamento por cluster. Para escalar horizontalmente, basta adicionar unidades ou mais servidores. O recurso Espaços de Armazenamento Diretos integrará automaticamente novas unidades e começará a usá-las. O desempenho e a eficiência de armazenamento melhoram de maneira previsível grande escala.
-        </td>
-    </tr>
-</table>
+|       |       |
+|   -   |   -   |
+|![Simplicidade](media/storage-spaces-direct-in-windows-server-2016/simplicity-icon.png)   |**Manter a simplicidade.** Passe de servidores padrão do setor que executam o Windows Server 2016 para seu primeiro cluster de Espaços de Armazenamento Diretos em menos de 15 minutos. Para usuários do System Center, a implantação é apenas uma caixa de seleção.       |
+|![Desempenho inigualável](media/storage-spaces-direct-in-windows-server-2016/performance-icon.png)   | **Desempenho inigualável.** Se todos os flash ou híbrida, espaços de armazenamento Direct facilmente exceder [150.000 misto 4K aleatório IOPS por servidor](https://blogs.technet.microsoft.com/filecab/2016/07/26/storage-iops-update-with-storage-spaces-direct/) com consistente e de baixa latência graças à sua arquitetura de hipervisor interno, seu interno cache de leitura/gravação e suporte para unidades de NVMe ponta montadas diretamente no barramento PCIe.      |
+|![Tolerância a falhas](media/storage-spaces-direct-in-windows-server-2016/fault-tolerance-icon.png)   |**Tolerância a falhas.** A resiliência interna manuseia falhas de unidade, servidor ou componente com disponibilidade contínua. Implantações maiores também podem ser configuradas para [a tolerância a falhas de chassis e do rack](../../failover-clustering/fault-domains.md). Quando o hardware falhar, basta trocá-lo; o software se repara sozinho, sem etapas de gerenciamento complicadas.       |
+|![Eficiência de recursos](media/storage-spaces-direct-in-windows-server-2016/efficiency-icon.png)   |**Eficiência de recursos.** A codificação de eliminação oferece eficiência de armazenamento até 2,4 x maior, com inovações exclusivas como Códigos de reconstrução local e camadas em tempo real ReFS para expandir esses ganhos a unidades de disco rígido e cargas de trabalho ativas/passivas mistas, tudo isso enquanto o consumo da CPU é minimizado para devolver recursos para onde eles são mais necessários – nas VMs.       |
+|![Capacidade de gerenciamento](media/storage-spaces-direct-in-windows-server-2016/manageability-icon.png)   | **Capacidade de gerenciamento**. Use [Controles QoS de armazenamento](../storage-qos/storage-qos-overview.md) para manter VMs ocupadas excessivamente na verificação dos limites mínimo e máximo de IOPS por VM. O [serviço de integridade](../../failover-clustering/health-service-overview.md) oferece monitoramento e alertas internos contínuos e novas APIs facilitam a coleta de métricas de capacidade e desempenho avançadas em todo o cluster.      |
+|![Escalabilidade](media/storage-spaces-direct-in-windows-server-2016/scalability-icon.png)   |**Escalabilidade**. Tenha até 16 servidores e mais de 400 unidades para até 1 petabyte (1.000 terabytes) de armazenamento por cluster. Para escalar horizontalmente, basta adicionar unidades ou mais servidores. O recurso Espaços de Armazenamento Diretos integrará automaticamente novas unidades e começará a usá-las. O desempenho e a eficiência de armazenamento melhoram de maneira previsível grande escala.       |
 
 ## <a name="deployment-options"></a>Opções de implantação
 
@@ -227,7 +123,7 @@ As ferramentas a seguir podem ser usadas para gerenciar e/ou monitorar espaços 
 | [Windows Admin Center](../../manage/windows-admin-center/overview.md)     | Gráfica    | Incluído |
 | Gerenciador do servidor & Gerenciador de Cluster de Failover                                 | Gráfica    | Incluído |
 | Windows PowerShell                                                        | Linha de comando | Incluído |
-| [System Center Virtual Machine Manager (SCVMM)](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-storage-spaces-direct-vmm) & [Operations Manager (SCOM)](https://www.microsoft.com/download/details.aspx?id=54700) | Gráfica    | Pagos     |
+| [System Center Virtual Machine Manager (SCVMM)](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-storage-spaces-direct-vmm) <br>& [Operations Manager (SCOM)](https://www.microsoft.com/download/details.aspx?id=54700) | Gráfica    | Pagos     |
 
 ## <a name="get-started"></a>Introdução
 
@@ -235,10 +131,10 @@ Experimente Espaços de Armazenamento Diretos [no Microsoft Azure](https://blogs
 
 ## <a name="see-also"></a>Consulte também
 
--   [Eficiência de armazenamento e a tolerância a falhas](storage-spaces-fault-tolerance.md)
--   [Réplica de armazenamento](../storage-replica/storage-replica-overview.md)
--   [Armazenamento no blog da Microsoft](https://blogs.technet.microsoft.com/filecab/)
--   [Taxa de transferência de Espaços de Armazenamento Diretos com iWARP](https://blogs.technet.microsoft.com/filecab/2017/03/13/storage-spaces-direct-throughput-with-iwarp) (blog do TechNet)
--   [O que há de novo no Clustering de Failover no Windows Server](../../failover-clustering/whats-new-in-failover-clustering.md)  
--   [Qualidade de serviço de armazenamento](../storage-qos/storage-qos-overview.md)
--   [Windows IT Pro suporte](https://www.microsoft.com/itpro/windows/support)
+- [Tolerância a falhas e eficiência de armazenamento](storage-spaces-fault-tolerance.md)
+- [Réplica de armazenamento](../storage-replica/storage-replica-overview.md)
+- [Armazenamento no blog da Microsoft](https://blogs.technet.microsoft.com/filecab/)
+- [Taxa de transferência de Espaços de Armazenamento Diretos com iWARP](https://blogs.technet.microsoft.com/filecab/2017/03/13/storage-spaces-direct-throughput-with-iwarp) (blog do TechNet)
+- [O que há de novo no Clustering de Failover no Windows Server](../../failover-clustering/whats-new-in-failover-clustering.md)  
+- [Qualidade de serviço de armazenamento](../storage-qos/storage-qos-overview.md)
+- [Windows IT Pro suporte](https://www.microsoft.com/itpro/windows/support)

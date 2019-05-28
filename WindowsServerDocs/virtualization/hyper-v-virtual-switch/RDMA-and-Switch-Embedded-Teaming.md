@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.assetid: 68c35b64-4d24-42be-90c9-184f2b5f19be
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c945144194ac86623bfa8ce60a306f0202df0874
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 485da451eb092336ec93eddfadc6ffa0e677452b
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881657"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222757"
 ---
 # <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>Acesso remoto direto à memória \(RDMA\) e agrupamento incorporado do comutador \(definido\)
 
@@ -120,7 +120,7 @@ Verifique se os recursos RDMA; Certifique-se de que os recursos são diferentes 
     Get-NetAdapterRdma | fl *
 
 
-## <a name="bkmk_sswitchembedded"></a>Alternar agrupamento incorporado (SET)  
+## <a name="switch-embedded-teaming-set"></a>Alternar agrupamento incorporado (SET)  
 
 Esta seção fornece uma visão geral de Switch Embedded Teaming (SET) no Windows Server 2016 e contém as seções a seguir.
 

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 01/05/2019
-ms.openlocfilehash: 54697b1c967d3e21583977418383d5a372e6f5d4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5001e070b63fe88da50a5219f129855606e7a2e5
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859397"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192712"
 ---
 # <a name="xcopy"></a>xcopy
 
@@ -57,12 +57,12 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 |/k|Copia os arquivos e mantém o atributo somente leitura nos *destino* arquivos, se presente na *origem* arquivos. Por padrão, **xcopy** remove o atributo somente leitura.|
 |/r|Copia arquivos somente leitura.|
 |/h|Copia os arquivos com ocultos e os atributos de arquivo do sistema. Por padrão, **xcopy** não não cópia ocultada ou arquivos do sistema|
-|/a|Copia só *origem* arquivos que têm seu arquivamento de atributos de arquivo. **/a** não modifica o atributo de arquivo do arquivo de origem. Para obter informações sobre como definir o atributo de arquivo usando **attrib**, consulte [referências adicionais](xcopy.md#BKMK_addref).|
-|/m|Cópias *origem* arquivos que têm seu arquivamento de atributos de arquivo. Diferentemente **/a**, **/m** desativa o atributo de arquivo nos arquivos que são especificados na origem. Para obter informações sobre como definir o atributo de arquivo usando **attrib**, consulte [referências adicionais](xcopy.md#BKMK_addref).|
+|/a|Copia só *origem* arquivos que têm seu arquivamento de atributos de arquivo. **/a** não modifica o atributo de arquivo do arquivo de origem. Para obter informações sobre como definir o atributo de arquivo usando **attrib**, consulte [referências adicionais](#additional-references).|
+|/m|Cópias *origem* arquivos que têm seu arquivamento de atributos de arquivo. Diferentemente **/a**, **/m** desativa o atributo de arquivo nos arquivos que são especificados na origem. Para obter informações sobre como definir o atributo de arquivo usando **attrib**, consulte [referências adicionais](#additional-references).|
 |/n|Cria cópias usando o curto de arquivo NTFS ou nomes de diretório. **/n** é necessário quando você copiar arquivos ou diretórios de um volume NTFS para um volume FAT ou quando o FAT arquivo convenção de nomenclatura do sistema (ou seja, 8.3 caracteres) é necessário em de *destino* sistema de arquivos. O *destino* sistema de arquivos pode ser FAT ou NTFS.|
 |/o|Cópias de propriedade de arquivos e informações de DACL (lista) de controle de acesso condicional.|
 |/x|Copia as configurações de auditoria e informações de SACL (lista) de controle de acesso do sistema de arquivos (implica **/o**).|
-|/exclude:FileName1[+[FileName2][+[FileName3]( \)]|Especifica uma lista de arquivos. Pelo menos um arquivo deve ser especificado. Cada arquivo contém cadeias de caracteres de pesquisa com cada cadeia de caracteres em uma linha separada no arquivo.</br>Quando qualquer uma das cadeias de caracteres corresponde a qualquer parte do caminho absoluto do arquivo a ser copiado, esse arquivo será excuded que está sendo copiado. Por exemplo, especificar a cadeia de caracteres **obj** excluirá todos os arquivos sob o diretório **obj** ou todos os arquivos com o **obj** extensão.|
+|/exclude:FileName1[+[FileName2][+[FileName3]( \)]|Especifica uma lista de arquivos. Pelo menos um arquivo deve ser especificado. Cada arquivo contém cadeias de caracteres de pesquisa com cada cadeia de caracteres em uma linha separada no arquivo.</br>Quando qualquer uma das cadeias de caracteres corresponde a qualquer parte do caminho absoluto do arquivo a ser copiado, esse arquivo será excluído do que está sendo copiado. Por exemplo, especificar a cadeia de caracteres **obj** excluirá todos os arquivos sob o diretório **obj** ou todos os arquivos com o **obj** extensão.|
 |/y|Suprime a solicitação para confirmar que você deseja substituir um arquivo de destino existente.|
 |/-y|Os prompts para confirmar que você deseja substituir um arquivo de destino existente.|
 |/z|Copia em uma rede no modo reiniciável.|
@@ -98,13 +98,13 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
     Você pode suprimir esta mensagem usando o **/i** opção de linha de comando, que faz com que **xcopy** pressupor que o destino é um diretório, se a fonte for mais de um arquivo ou diretório.
 -   Usando o **xcopy** comando para definir o atributo archive para *destino* arquivos
 
-    O **xcopy** comando cria arquivos com o conjunto de atributos de arquivo morto, se esse atributo foi definido no arquivo de origem. Para obter mais informações sobre atributos de arquivo e **attrib**, consulte [referências adicionais](xcopy.md#BKMK_addref).
+    O **xcopy** comando cria arquivos com o conjunto de atributos de arquivo morto, se esse atributo foi definido no arquivo de origem. Para obter mais informações sobre atributos de arquivo e **attrib**, consulte [referências adicionais](#additional-references).
 -   Comparando **xcopy** e **diskcopy**
 
     Se você tiver um disco que contenha arquivos em subpastas e quiser copiá-lo para um disco que tem um formato diferente, use o **xcopy** comando em vez de **diskcopy**. Porque o **diskcopy** comando copia discos trilha por trilha, seus discos de origem e de destino devem ter o mesmo formato. O **xcopy** comando não tem esse requisito. Use **xcopy** , a menos que você precisa de uma cópia da imagem completa do disco.
 -   Códigos de saída de **xcopy**
 
-    Para processar códigos de saída retornados por **xcopy**, use o **ErrorLevel** parâmetro no **se** linha de comando em um arquivo em lotes. Para obter um exemplo de um arquivo em lotes que processe usando os códigos de saída **se**, consulte [referências adicionais](xcopy.md#BKMK_addref). A tabela a seguir lista cada código de saída e uma descrição.  
+    Para processar códigos de saída retornados por **xcopy**, use o **ErrorLevel** parâmetro no **se** linha de comando em um arquivo em lotes. Para obter um exemplo de um arquivo em lotes que processe usando os códigos de saída **se**, consulte [referências adicionais](#additional-references). A tabela a seguir lista cada código de saída e uma descrição.  
     |Código de Saída|Descrição|
     |---------|-----------|
     |0|Os arquivos foram copiados sem erro.|
@@ -182,7 +182,7 @@ rem  3 File(s) copied
 ```
 No exemplo anterior, esse valor de parâmetro de origem em particular **.\\ sumário\*. yml** copiar o igual 3 arquivos, mesmo que seus caracteres de dois caminho **.\\**  foram removidos. No entanto, não há arquivos seriam copiados se o caractere curinga asterisco foi removido do parâmetro de origem, tornando-o apenas **.\\ TOC.yml**.
 
-#### <a name="BKMK_addref"></a>Referências adicionais
+#### <a name="additional-references"></a>Referências adicionais
 
 -   [Cópia](copy.md)
 -   [Mover](move.md)
@@ -190,4 +190,4 @@ No exemplo anterior, esse valor de parâmetro de origem em particular **.\\ sum�
 -   [Attrib](attrib.md)
 -   [Diskcopy](diskcopy.md)
 -   [If](if.md)
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

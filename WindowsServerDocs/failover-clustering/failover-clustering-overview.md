@@ -10,16 +10,16 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 03/08/2019
 ms.localizationpriority: high
-ms.openlocfilehash: 445de065ff5b68b83481ee5bd83ebf18fdd180a7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9e4184e52ef48e758ebc80e63d3d6f952a09cc2c
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848647"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222453"
 ---
 # <a name="failover-clustering-in-windows-server"></a>Clustering de failover no Windows Server
 
-> Aplica-se a: 2019, Windows Server 2016, Windows Server (canal semestral) do Windows Server
+> Aplica-se a: Windows Server 2019, Windows Server 2016
 
 >[!TIP]
 > Procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obter informações específicas.
@@ -34,189 +34,30 @@ O clustering de failover tem muitos aplicativos práticos, incluindo:
 * Armazenamento de compartilhamento de arquivos altamente disponível ou continuamente disponível para aplicativos como máquinas virtuais de Microsoft SQL Server e Hyper-V
 * Funções clusterizadas com alta disponibilidade que são executadas em servidores físicos ou em máquinas virtuais instaladas em servidores que executam o Hyper-V
 
-<hr />
 
-<ul class="cardsF panelContent">
-<li>
-                         <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="../media/i-whats-new.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                        <h2><a href="whats-new-in-failover-clustering.md">Quais são as novidades no Clustering de Failover</a></h2>
-                                        </div>
-                                    </div>
-                                </div>
-                             </div>
-                          </a>
-                        </li>
-                     </ul>
-<HR />
+|  |  |
+|---------|---------|
+|![Novidades](../media/i-whats-new.svg)  | [**Quais são as novidades no Clustering de Failover**](whats-new-in-failover-clustering.md) |
 
-<ul class="cardsF panelContent">
 
-<li>
-                         <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="../media/i-cluster.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                        <h3>Entender</h3>
-<HR />
-                                        <p><a href="sofs-overview.md">Servidor de arquivos de escalabilidade horizontal para dados de aplicativo</a></p>
-<HR />
-                                        <p><a href="../storage/storage-spaces/understand-quorum.md">Quorum de cluster e pool</a></p>
-<HR />
-                                        <p><a href="fault-domains.md">Reconhecimento de domínio de falha</a></p>
-<HR />
-                                        <p><a href="smb-multichannel.md">Redes de cluster de multi-NIC e de SMB Multichannel simplificados</a></p>
-<HR />
-                                        <p><a href="vm-load-balancing-overview.md">Balanceamento de carga VM</a></p>
-<HR />
-                                        <p><a href="../storage/storage-spaces/cluster-sets.md">Conjuntos de cluster</a></p>
-<HR />
-                                        <p><a href="cluster-affinity.md">Afinidade de cluster</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </a>
-                        </li>
+|  |  |  |
+|---------|---------|---------|
+|![Entender](../media/i-cluster.svg)**entender**  |  ![Planejamento](../media/i-cluster.svg)**planejamento**  |  ![Implantação](../media/i-cluster.svg)**implantação**       |
+| [Servidor de arquivos de escalabilidade horizontal para dados de aplicativos](sofs-overview.md)    |   [Planejamento de requisitos de Hardware de Clustering de Failover e opções de armazenamento](clustering-requirements.md)      |  [Implantação Cluster pré-configurar objetos de computador nos serviços de domínio do Active Directory](prestage-cluster-adds.md)  |
+|  [Quorum de cluster e pool](../storage/storage-spaces/understand-quorum.md)   |   [Usar CSVs (Volumes Compartilhados do Cluster)](failover-cluster-csvs.md)      | [Criando um Cluster de Failover](create-failover-cluster.md)        |
+|  [Reconhecimento de domínio de falha](fault-domains.md)   |  [Usando clusters convidados da máquina virtual com espaços de armazenamento diretos](../storage/storage-spaces/storage-spaces-direct-in-vm.md)       | [Implantar um servidor de arquivos com dois nós](../storage/storage-spaces/storage-spaces-direct-in-vm.md)        |
+| [SMB Multichannel simplificado e redes de cluster de várias NICs](smb-multichannel.md)    |         |  [Gerenciar o quorum e testemunhas](manage-cluster-quorum.md)       |
+|   [Balanceamento de carga de VM](vm-load-balancing-overview.md)  |         |   [Implantar uma testemunha de nuvem](deploy-cloud-witness.md)      |
+|   [Conjuntos de cluster](../storage/storage-spaces/cluster-sets.md)  |         |     [Implantar testemunha de compartilhamento de arquivos](file-share-witness.md)    |
+|   [Afinidade de cluster](cluster-affinity.md)  |         |    [Atualizações sem interrupção do sistema operacional do cluster]()     |
+|     |         |     [Atualizar um cluster de failover no mesmo hardware](upgrade-option-same-hardware.md)    |
+|     |         |     [Implantar um Cluster desanexado do Active Directory](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265970\(v%3dws.11\))    |
 
-<li>
-                         <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="../media/i-cluster.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                        <h3>Planejamento</h3>
-<HR />
-                                        <p><a href="clustering-requirements.md">Requisitos de Hardware de Clustering de failover e opções de armazenamento</a></p>
-<HR />
-                                        <p><a href="failover-cluster-csvs.md">Use Cluster Volumes Compartilhados (CSVs)</a></p>               
-<HR />
-                                        <p><a href="../storage/storage-spaces/storage-spaces-direct-in-vm.md">Usando clusters convidados da máquina virtual com espaços de armazenamento diretos</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </a>
-                        </li>
-<li>
-                         <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="../media/i-cluster.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                        <h3>Implantação</a></h3> 
-<HR />
-                                        <p><a href="prestage-cluster-adds.md">Pré-configurar os objetos de computador do Cluster nos serviços de domínio do Active Directory</a></p>
-<HR />
-                                        <p><a href="create-failover-cluster.md">Criando um Cluster de Failover</a></p> 
-<HR />
-                                        <p><a href="deploy-two-node-clustered-file-server.md">Implantar um servidor de arquivos com dois nós</a></p> 
-<HR />
-                                        <p><a href="manage-cluster-quorum.md">Gerenciar o quorum e testemunhas</a></p> 
-<HR />
-                                        <p><a href="deploy-cloud-witness.md">Implantar uma testemunha de nuvem</a></p>
-<HR />
-                                        <p><a href="file-share-witness.md">Implantar uma testemunha de compartilhamento de arquivo</a></p>
-<HR />
-                                        <p><a href="cluster-operating-system-rolling-upgrade.md">As atualizações sem interrupção do sistema operacional do cluster</a></p> 
-<HR />
-                                        <p><a href="upgrade-option-same-hardware.md">Atualizar um cluster de failover no mesmo hardware</a></p>
-<HR />
-                                        <p><a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265970\(v%3dws.11\)">Implantar um Cluster desanexado do Active Directory</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </a>
-                        </li>
-                     </ul>
-<HR />
-<ul class="cardsF panelContent">
-<li>
-                         <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="../media/i-cluster.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                        <h3>Gerenciar</h3>
-<HR />
-                                        <p><a href="cluster-aware-updating.md">Cluster-Aware Updating</a></p> 
-<HR />
-                                        <p><a href="health-service-overview.md">Serviço de integridade</a></p>
-<HR />
-                                        <p><a href="cluster-domain-migration.md">Migração de domínio do cluster</a></p>
-<HR />
-                                        <p><a href="troubleshooting-using-wer-reports.md">Solução de problemas usando o relatório de erros do Windows</a></p> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </a>
-                        </li>
-<li>
-                         <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="../media/i-cluster.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                        <h3>Ferramentas e configurações</a></h3>
-<HR />
-                                        <p><a href="https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps">Cmdlets do PowerShell de Clustering de failover</a></p> 
-<HR />
-                                        <p><a href="https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps">Com suporte a Cmdlets de PowerShell de atualização de cluster</a></p> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </a>
-                        </li>
-<li>
-                         <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="../media/i-cluster.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                        <h3>Recursos da comunidade</a></h3>
-<HR />
-                                        <p><a href="https://go.microsoft.com/fwlink/p/?LinkId=230641">Fórum sobre alta disponibilidade (Clustering)</a></p> 
-<HR />
-                                        <p><a href="http://blogs.msdn.com/b/clustering/">Blog da equipe balanceamento de carga de rede e Clustering de failover</a></p> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </a>
-                        </li>
-</ul>
+
+|  |  |  |
+|---------|---------|---------|
+|![Gerenciar](../media/i-cluster.svg)**gerenciar**  |  ![Ferramentas e configurações](../media/i-cluster.svg)**ferramentas e configurações**  |  ![Recursos da comunidade](../media/i-cluster.svg)**recursos da comunidade**       |
+| [Atualização com suporte a cluster](cluster-aware-updating.md)    |   [Cmdlets do PowerShell de Clustering de failover](https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps)      |  [Fórum sobre alta disponibilidade (Clustering)](https://go.microsoft.com/fwlink/p/?LinkId=230641)       |
+|  [Serviço de integridade](health-service-overview.md)   |   [Com suporte a Cmdlets de PowerShell de atualização de cluster](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps)      | [Blog da equipe balanceamento de carga de rede e Clustering de failover](http://blogs.msdn.com/b/clustering/)        |
+|  [Migração de domínio do cluster](cluster-domain-migration.md)   |         |         |
+|  [Solução de problemas usando o Relatório de Erros do Windows](troubleshooting-using-wer-reports.md)   |         |         |

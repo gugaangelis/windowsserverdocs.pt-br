@@ -8,16 +8,16 @@ author: bhattacharyaz
 manager: eldenc
 ms.author: subhatt
 ms.date: 09/19/2016
-ms.openlocfilehash: 8b8ecee16c778ed26953be325fb88748fc458176
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 125dd7421cc1876c07983016498a9689d8a507ac
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867747"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475984"
 ---
 # <a name="virtual-machine-load-balancing-overview"></a>Visão geral do balanceamento de carga de máquina virtual
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+> Aplica-se a: Windows Server 2019, Windows Server 2016
 
 Uma consideração importante para implantações de nuvem privada é a despesa de capital (<abbr title="as despesas de capital">CapEx</abbr>) necessária para entrar em produção. É muito comum para adicionar redundância em implantações de nuvem privada para evitar a capacidade insuficiente durante picos de tráfego em produção, mas isso aumenta <abbr title="as despesas de capital">CapEx</abbr>. A necessidade de redundância é orientada pelo desbalanceada nuvens privadas em que alguns nós hospeda mais máquinas virtuais (<abbr title="máquinas virtuais">VMs</abbr>) e outras pessoas estão subutilizadas (como um servidor reinicializado recentemente).
 
@@ -25,7 +25,7 @@ Uma consideração importante para implantações de nuvem privada é a despesa 
 > [!VIDEO https://channel9.msdn.com/Blogs/windowsserver/Virtual-Machine-Load-Balancing-in-Windows-Server-2016/player]
 
 ## <a id="what-is-vm-load-balancing"></a>O que é balanceamento de carga com a máquina Virtual?
-<abbr title="máquina virtual">VM</abbr> balanceamento de carga é um novo recurso incluído no Windows Server 2016 que permite que você otimize a utilização de nós em um Cluster de Failover. Ele identifica os nós de excesso de comprometimento e distribui novamente <abbr title="máquinas virtuais">VMs</abbr> de em nós para nós sob confirmada. Alguns dos principais aspectos desse recurso são da seguinte maneira:
+<abbr title="máquina virtual">VM</abbr> balanceamento de carga é um recurso de caixa de entrada no Windows Server 2019 e Windows Server 2016 que permite que você otimize a utilização de nós em um Cluster de Failover. Ele identifica os nós de excesso de comprometimento e distribui novamente <abbr title="máquinas virtuais">VMs</abbr> de em nós para nós sob confirmada. Alguns dos principais aspectos desse recurso são da seguinte maneira:
 
 * *É uma solução sem tempo de inatividade*: <abbr title="Máquinas virtuais">VMs</abbr> são migradas ao vivo para nós ociosos.
 * *Integração perfeita com o ambiente de cluster existente*: Diretivas de falha como antiafinidade, domínios de falha e possíveis proprietários sejam respeitadas.

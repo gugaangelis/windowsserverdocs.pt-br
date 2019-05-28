@@ -7,12 +7,12 @@ ms.topic: article
 author: phstee
 ms.author: NedPyle; Danlo; DKruse
 ms.date: 4/14/2017
-ms.openlocfilehash: 93718cf13f28cde8f25b35b42ce20ca75c6fa13c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 337716792a4bb3cf730b723df3abe1029631426b
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832057"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222499"
 ---
 # <a name="performance-tuning-for-smb-file-servers"></a>Ajuste de desempenho para servidores de arquivos SMB
 
@@ -106,10 +106,8 @@ O seguinte REG\_configurações do Registro DWORD podem afetar o desempenho dos 
     Os padrões são 512 e 8192, respectivamente. Esses parâmetros permitem que o servidor aumentar a simultaneidade da operação de cliente dinamicamente dentro dos limites especificados. Alguns clientes podem alcançar maior taxa de transferência mais alta limites de simultaneidade, por exemplo, copiando os arquivos em links de alta largura de banda, alta latência.
     
     >[!TIP]
-    > Antes do Windows 10 e Server 2016, o número de créditos concedidas ao cliente variado dinamicamente Smb2CreditsMin e Smb2CreditsMax com base em um algoritmo que tentou a determinar o número ideal de créditos para conceder com base na latência de rede e de crédito uso. No Windows 10 e Server 2016, o servidor SMB foi alterado para conceder incondicionalmente créditos mediante solicitação até o número máximo configurado de créditos. Como parte dessa alteração, o crédito de mecanismo, o que reduz o tamanho da janela de crédito do cada conexão quando o servidor estiver sob pressão de memória, a limitação foi removido. Evento de pouca memória do kernel que disparou a limitação é sinalizado somente quando o servidor está muito baixo de memória (< alguns MB) virou inútil. Uma vez que o servidor não diminui windows crédito a configuração de Smb2CreditsMin não é mais necessária e agora é ignorada.
+    > Antes do Windows 10 e Windows Server 2016, o número de créditos concedidas ao cliente variam dinamicamente Smb2CreditsMin e Smb2CreditsMax com base em um algoritmo que tentou a determinar o número ideal de créditos para conceder com base na latência de rede e o uso de crédito. No Windows 10 e Windows Server 2016, o servidor SMB foi alterado para conceder incondicionalmente créditos mediante solicitação até o número máximo configurado de créditos. Como parte dessa alteração, o crédito de mecanismo, o que reduz o tamanho da janela de crédito do cada conexão quando o servidor estiver sob pressão de memória, a limitação foi removido. Evento de pouca memória do kernel que disparou a limitação é sinalizado somente quando o servidor está muito baixo de memória (< alguns MB) virou inútil. Uma vez que o servidor não diminui windows crédito a configuração de Smb2CreditsMin não é mais necessária e agora é ignorada.
 
-
-    >[!TIP]
     > Você pode monitorar compartilhamentos de cliente SMB\\crédito fica parada/seg. para ver se há problemas com créditos.
 
 - **AdditionalCriticalWorkerThreads**
@@ -134,7 +132,8 @@ O seguinte REG\_configurações do Registro DWORD podem afetar o desempenho dos 
     >[!TIP]
     > Uma indicação de que o valor precisa ser aumentado é se as filas de trabalho SMB2 estão crescendo muito grandes (contador de desempenho ' filas de trabalho do servidor\\comprimento da fila\\SMB2 sem bloqueio \*' estiver consistentemente acima de ~ 100).
 
-     
+    >[!Note]
+    >No Windows 10 e Windows Server 2016, MaxThreadsPerQueue não está disponível. O número de threads para um pool de threads será "20 * o número de processadores em um nó NUMA".  
 
 -   **AsynchronousCredits**
 
@@ -146,7 +145,7 @@ O seguinte REG\_configurações do Registro DWORD podem afetar o desempenho dos 
 
 ### <a name="smb-server-tuning-example"></a>Exemplo de ajuste de servidor SMB
 
-As configurações a seguir podem otimizar um computador para o desempenho do servidor de arquivos em muitos casos. As configurações não são apropriados em todos os computadores ou ideal. Você deve avaliar o impacto de configurações individuais antes de aplicá-las.
+As configurações a seguir podem otimizar um computador para o desempenho do servidor de arquivos em muitos casos. As configurações não são ideais nem adequadas em todos os computadores. Você deve avaliar o impacto de configurações individuais antes de aplicá-las.
 
 | Parâmetro                       | Valor | Padrão |
 |---------------------------------|-------|---------|

@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 1ae755b9c41d66ce5f907f600be17547398acc1a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c42cffec0ddc1ae480ae67982147e9f186f0e50a
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839577"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222858"
 ---
 # <a name="convert-a-gpt-disk-into-an-mbr-disk"></a>Converter um disco GPT em um disco MBR
 
@@ -29,8 +29,6 @@ Você pode alterar um estilo de partição de disco de GPT para MBR desde que o 
 > [!NOTE]
 > No mínimo, você deve ser um membro do grupo **Operadores de backup** ou **Administradores** para concluir estas etapas.
 
-<a id="BKMK_WINUI"></a>
-
 ## <a name="converting-using-the-windows-interface"></a>Converter usando a interface do Windows
 
 1.  Faça backup ou mova todos os volumes no disco GPT básico que você deseja converter em MBR.
@@ -38,8 +36,6 @@ Você pode alterar um estilo de partição de disco de GPT para MBR desde que o 
 2.  Se o disco tiver partições ou volumes, clique com botão direito do mouse em cada uma e, em seguida, clique em **Excluir volume**.
 
 3.  Clique com botão direito do mouse no disco GPT que você deseja transformar em um disco MBR e, em seguida, clique em **Converter em disco MBR**.
-
-<a id="BKMK_CMD"></a>
 
 ## <a name="converting-using-a-command-line"></a>Converter a linha de comando
 

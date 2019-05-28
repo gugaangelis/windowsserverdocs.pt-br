@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.date: 02/15/2019
-ms.openlocfilehash: f4fd9f69e75ed80bbdb345b4041c2337c65ec2e6
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: ff1f949c764473a63eafa25346949d710699dbd1
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63742618"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222726"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Introdução ao Windows Admin Center
 
@@ -114,7 +114,7 @@ Você pode aplicar as credenciais para todas as conexões, que serão o cache-lo
 
 **Solução de senha de administrador local LAPS)**
 
-Se seu ambiente usa [LAPS](https://technet.microsoft.com/mt227395.aspx), você pode usar credenciais LAPS para autenticar com o nó gerenciado. **Se você usar esse cenário, por favor** [fornecer comentários](http://aka.ms/WACFeedback).
+Se seu ambiente usa [LAPS](https://technet.microsoft.com/mt227395.aspx)e você tiver o Windows Admin Center instalado no seu PC com Windows 10, você pode usar credenciais LAPS para autenticar com o nó gerenciado. **Se você usar esse cenário, por favor** [fornecer comentários](http://aka.ms/WACFeedback).
 
 ## <a name="using-tags-to-organize-your-connections"></a>Usando marcas para organizar suas conexões
 
