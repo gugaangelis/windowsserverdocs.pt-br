@@ -12,7 +12,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 9e51d5f69ff62c120cabfbe549a84fc9fd26f822
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59820477"
@@ -58,7 +58,7 @@ Se houver um firewall corporativo entre o WSUS e a Internet, você talvez precis
 
 -   http://windowsupdate.microsoft.com
 
--   http://windowsupdate.microsoft.com
+-   http://*.windowsupdate.microsoft.com
 
 -   https://*.windowsupdate.microsoft.com
 
@@ -72,7 +72,7 @@ Se houver um firewall corporativo entre o WSUS e a Internet, você talvez precis
 
 -   https://download.microsoft.com
 
--   http://download.windowsupdate.com
+-   http://*.download.windowsupdate.com
 
 -   http://wustat.windows.com
 
@@ -153,7 +153,7 @@ Para adicionar o servidor proxy que usa o protocolo HTTP à configuração do WS
 
     4.  FF o servidor proxy exige que você use uma conta de usuário específico, selecione o **usar as credenciais do usuário para se conectar ao servidor proxy** caixa de seleção. Digite o nome de usuário necessária, o domínio e a senha nas caixas de texto correspondentes.
 
-    5.  Se o servidor proxy der suporte à autenticação básica, marque a caixa de seleção **Permitir autenticação básica (a senha é enviada em texto não criptografado)**.
+    5.  Se o servidor proxy der suporte à autenticação básica, marque a caixa de seleção **Permitir autenticação básica (a senha é enviada em texto não criptografado)** .
 
     6.  Clique em **OK**.
 
@@ -303,7 +303,7 @@ Vincule esse GPO do WSUS para um contêiner do Active Directory que é apropriad
 9. Clique em **Habilitado** e, em seguida, no servidor nas caixas de texto **Definir o serviço intranet de atualização para detectar atualizações** e **Definir o servidor de estatísticas da intranet** Por exemplo, digite *http://servername* em ambas as caixas (em que *servername* é o nome do servidor do WSUS).
 
     > [!WARNING]
-    > Ao digitar o endereço da intranet do servidor do WSUS, verifique se especificou qual porta será usada. Por padrão, o WSUS usará a porta 8530 para HTTP, e 8531 para HTTPS. Por exemplo, se você estiver usando HTTP, você deverá digitar **http://servername:8530**.
+    > Ao digitar o endereço da intranet do servidor do WSUS, verifique se especificou qual porta será usada. Por padrão, o WSUS usará a porta 8530 para HTTP, e 8531 para HTTPS. Por exemplo, se você estiver usando HTTP, você deverá digitar **http://servername:8530** .
 
 10. Clique em **OK**.
 
@@ -387,7 +387,7 @@ O WSUS requer duas portas para o SSL: uma porta que usa HTTPS para enviar metada
 
 2.  Vá para **iniciar**, digite **CMD**, clique com botão direito **prompt de comando**e, em seguida, clique em **executar como administrador**.
 
-3.  Navegue até a *%ProgramFiles%***\Update services\tools.\\** pasta.
+3.  Navegue até a *%ProgramFiles%***\Update services\tools.\\* * pasta.
 
 4.  Na janela do prompt de comando, digite o seguinte comando:
 
