@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d50d26c5c654e5c91b82f6f209e21f257221c12d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fc0cbb461a48d04ddaa677d4de2369ef58fd5390
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843577"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190963"
 ---
 # <a name="provide-your-active-directory-users-access-to-the-applications-and-services-of-other-organizations"></a>Fornecer a seus usuários do Active Directory acesso a aplicativos e serviços de outras organizações
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Esse serviços de Federação do Active Directory \(do AD FS\) meta de implantação se baseia na meta no [fornecer Your Active Directory Users Access to Your Claims-Aware Applications and Services](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md).  
   
@@ -47,4 +45,4 @@ A ilustração a seguir mostra cada um dos componentes necessários para essa me
 ![acesso a seus aplicativos](media/50af4837-31e0-451f-a942-e705c2300065.gif)  
   
 ## <a name="see-also"></a>Consulte também
-[Guia de Design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -5,20 +5,18 @@ description: ''
 author: billmath
 ms.author: billmath
 manager: femila
-ms.date: 09/19/2018
+ms.date: 04/01/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 6fb023529ac8857f7c2eb35586be497f0c809a51
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: a831154a8b1e84f5ed879375980882e208c33d73
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874167"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190355"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>Ferramenta de restauração rápida do AD FS
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
 ## <a name="overview"></a>Visão geral
 Hoje em dia do AD FS é feito altamente disponível ao configurar um farm do AD FS. Algumas organizações gostam de uma maneira de ter um único servidor de implantação do AD FS, eliminando a necessidade de vários servidores do AD FS e infraestrutura, enquanto ainda tem alguns de balanceamento de carga garantia de que o serviço pode ser restaurada rapidamente se há um problema.
@@ -215,6 +213,16 @@ Sempre que um backup ou restauração é executada, um arquivo de log é criado.
 > Quando executar uma restauração de que um arquivo de PostRestore_Instructions pode ser criado que contém uma visão geral dos provedores de autenticação adicional, repositórios de atributos e relações de confiança de provedor de declarações local para ser instalado manualmente antes de iniciar o serviço AD FS.
 
 ## <a name="version-release-history"></a>Histórico de versão
+
+### <a name="version-10810"></a>Versão: 1.0.81.0
+Versão: Abril de 2019
+
+**Problemas corrigidos:**
+
+
+- Correções de bug para o certificado backup e restauração
+- Informações de rastreamento adicionais para o arquivo de log
+
 
 ### <a name="version-10750"></a>Versão: 1.0.75.0
 Versão: Agosto de 2018

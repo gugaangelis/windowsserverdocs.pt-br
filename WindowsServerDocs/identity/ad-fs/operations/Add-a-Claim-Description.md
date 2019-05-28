@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0e388ef656d3b690da62b077cb9f9e678a771e64
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 454d261aa520778a6129ac9809f53894937b036a
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851427"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190143"
 ---
 # <a name="add-a-claim-description"></a>Adicionar uma descrição da declaração
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
 Em uma organização do parceiro de conta, os administradores criam declarações para representar a associação de um usuário em um grupo ou uma função ou para representar alguns dados sobre um usuário, por exemplo, um usuário funcionário número de identificação.
 

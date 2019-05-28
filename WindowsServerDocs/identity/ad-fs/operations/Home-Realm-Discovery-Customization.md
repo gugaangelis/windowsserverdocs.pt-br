@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1198d8b76f2ecdad728e2de6ce7a5c0d053f779f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e91306ecd8ef08dd6af9173ead314a39dd5d2eff
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868927"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189134"
 ---
 # <a name="home-realm-discovery-customization"></a>Personalização de descoberta de Realm inicial
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
 Quando o cliente do AD FS primeiro solicita um recurso, o servidor de Federação do recurso não possui informações sobre o realm do cliente. O servidor de Federação do recurso responde ao cliente do AD FS com um **descoberta de Realm do cliente** página, em que o usuário seleciona o realm inicial de uma lista. Os valores da lista são preenchidos a partir da propriedade de nome de exibição nas Relações de Confiança do Provedor de Declarações. Use os seguintes cmdlets do Windows PowerShell para modificar e personalizar a experiência do AD FS Home Realm Discovery.  
   

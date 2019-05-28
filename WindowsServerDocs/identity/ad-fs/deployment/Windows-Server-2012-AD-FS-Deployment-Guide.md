@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3e555d1003878e12320cb8557bd205ac24e1bbb3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6be56c25cc6f639f73842f57cdf48a6339dccf9c
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882437"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191846"
 ---
 # <a name="windows-server-2012-ad-fs-deployment-guide"></a>Guia de Implantação do AD FS do Windows Server 2012
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Você pode usar os serviços de Federação do Active Directory® \(do AD FS\) com o sistema de operacional Windows Server® 2012 para criar uma solução de gerenciamento de identidade federada que estenda identificação distribuída, autenticação, e Serviços de autorização para Web\-aplicativos baseados em toda a organização e limites de plataforma. Ao implantar o AD FS, você pode estender recursos de gerenciamento de identidade existentes da sua organização com a Internet.  
   
@@ -60,20 +59,20 @@ O que este guia não contém:
   
 ## <a name="in-this-guide"></a>Neste guia  
   
--   [Planejando a implantação do AD FS](Planning-to-Deploy-AD-FS.md)  
+-   [Como planejar a implantação do AD FS](Planning-to-Deploy-AD-FS.md)  
   
--   [Plano de Design de implementação do AD FS](Implementing-Your-AD-FS-Design-Plan.md)  
+-   [Como implementar seu plano de design do AD FS](Implementing-Your-AD-FS-Design-Plan.md)  
   
--   [Lista de verificação: Implementando um Design SSO da Web](Checklist--Implementing-a-Web-SSO-Design.md)  
+-   [Lista de verificação: Como implementar um design SSO da Web](Checklist--Implementing-a-Web-SSO-Design.md)  
   
--   [Lista de verificação: Implementando um Design SSO da Web federado](Checklist--Implementing-a-Federated-Web-SSO-Design.md)  
+-   [Lista de verificação: Como implementar um design de SSO da Web federado](Checklist--Implementing-a-Federated-Web-SSO-Design.md)  
   
 -   [Configurando a organizações de parceiros](Configuring-Partner-Organizations.md)  
   
--   [Configurando regras de declaração](Configuring-Claim-Rules.md)  
+-   [Como configurar regras de declaração](Configuring-Claim-Rules.md)  
   
--   [Implantando servidores de Federação](Deploying-Federation-Servers.md)  
+-   [Como implantar servidores de federação](Deploying-Federation-Servers.md)  
   
--   [Implantação de Proxies de servidor de Federação](Deploying-Federation-Server-Proxies.md)  
+-   [Como implantar proxies de servidor de federação](Deploying-Federation-Server-Proxies.md)  
   
--   [Interoperação com o AD FS 1.x](Interoperating-with-AD-FS-1.x.md)  
+-   [Como interoperar com o AD FS 1.x](Interoperating-with-AD-FS-1.x.md)  

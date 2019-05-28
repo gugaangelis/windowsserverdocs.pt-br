@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: df35348cb51a9021f4aaa2fc6516cb119bdb8b8f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 542d7a24e29b52dd3fa0d7ea6a9b2d27fb620d8d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849427"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188496"
 ---
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
-
 # <a name="the-role-of-claims"></a>A função das declarações
 Nas declarações\-modelo de identidade baseado em declarações desempenham um papel fundamental no processo de federação, eles são o componente de chave pelo qual o resultado de todas as Web\-solicitações com base em autenticação e autorização são determinadas. Esse modelo permite que as organizações projetem, de forma segura, identidade digital e direitos de titularidade, ou *declarações*, através dos limites de segurança e da empresa, de forma padronizada.  
   

@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: fd222eb47982591e051594e8a572443b65c0357f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8b3b2934e7aa177e873e19d77530b2d796ccd521
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863997"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188902"
 ---
 # <a name="walkthrough-workplace-join-with-a-windows-device"></a>Passo a passo: Ingresso no local de trabalho com um dispositivo do Windows
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
 Este tópico demonstra como usar a Ingresso no Local de Trabalho para conectar seu dispositivo Windows com seu local de trabalho e como acessar um aplicativo Web usando Logon Único. Você deve concluir as etapas a [configurar o ambiente de laboratório para o AD FS no Windows Server 2012 R2](../deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md) seção antes que você pode experimentar este passo a passo.
 
@@ -84,7 +82,7 @@ Nesta parte da demonstração, você acessa um aplicativo Web da empresa de seu 
 ## <a name="see-also"></a>Consulte também
 [Ingresse no local de trabalho de qualquer dispositivo para SSO e contínuo segundo fator de autenticação em aplicativos da empresa](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 [configurar o ambiente de laboratório para o AD FS no Windows Server 2012 R2](../deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md) 
- [ Passo a passo: Ingresso no local com um dispositivo iOS](Walkthrough--Workplace-Join-with-an-iOS-Device.md)
+ [ Passo a passo: Ingressar no Local de Trabalho com um dispositivo iOS](Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
 
 

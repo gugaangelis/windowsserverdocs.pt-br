@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: c7b7ea2c8d9a08a4cbf6c89c2de2482043efe25b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5ed8ee500582e0e687a2b52e83d99fc3cb8f147f
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885557"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188337"
 ---
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
-
 # <a name="when-to-use-a-transform-claim-rule"></a>Quando usar uma regra de declaração de transformação
 Você pode usar essa regra nos serviços de Federação do Active Directory \(do AD FS\) quando precisar mapear um tipo de declaração de entrada para um tipo de saída e, em seguida, aplicar uma ação que determinará qual saída deve ocorrer com base nos valores que com origem na declaração de entrada. Quando você usa essa regra, passa ou transforma declarações que correspondem à lógica da regra a seguir, com base em uma das opções configuradas na regra, conforme descrito na tabela abaixo:  
   

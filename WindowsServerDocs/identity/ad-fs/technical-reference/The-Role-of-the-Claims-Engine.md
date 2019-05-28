@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 930b6f8034f17d8902104419042f944b82e90b4f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b69277cdedd697605f57aa4cf7214f5b65bb2e81
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814927"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188471"
 ---
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
-
 # <a name="the-role-of-the-claims-engine"></a>A função do mecanismo de declaração
 Em seu nível mais alto, o mecanismo de declarações nos serviços de Federação do Active Directory \(do AD FS\) é uma regra\-com base em mecanismo é dedicado a atender e processar as solicitações de declaração para o serviço de Federação. O mecanismo de declarações é a única entidade no serviço de federação que é responsável por executar cada um dos conjuntos de regras em todas as relações de confiança federadas que você configurou e por entregar o resultado ao pipeline de declarações.  
   

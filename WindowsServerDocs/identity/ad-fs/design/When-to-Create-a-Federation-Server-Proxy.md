@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1f0253dfb5a690371dae1a2bfcb6b7520077d473
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b41c2194940c85e39e5a3724f747dd12c2544259
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883197"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190640"
 ---
 # <a name="when-to-create-a-federation-server-proxy"></a>Quando criar um proxy do Servidor de Federação
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Criar um proxy do servidor de federação na sua organização adiciona camadas extras de segurança para seus serviços de Federação do Active Directory \(do AD FS\) implantação. Considere a implantação de um proxy do servidor de federação na rede de perímetro da sua organização quando você deseja:  
   
@@ -38,4 +36,4 @@ Você pode criar um proxy de servidor de Federação usando o Assistente de conf
 Para obter informações gerais sobre como configurar todos os pré-requisitos necessários para implantar um proxy do servidor de federação, consulte [lista de verificação: Como configurar um Proxy do servidor de Federação](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server-Proxy.md).  
   
 ## <a name="see-also"></a>Consulte também
-[Guia de Design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

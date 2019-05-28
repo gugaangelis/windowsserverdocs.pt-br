@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: dc49d8f4b656fdbb92083aa3c60bc4ce81091e9b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 330214e83b6da5bf711c36995306f8f1a098fa24
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890817"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192207"
 ---
 # <a name="deploying-federation-server-proxies"></a>Implantando proxies de servidor de federação
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
 Nos serviços de Federação do Active Directory \(do AD FS\) no Windows Server 2012 R2, a função de um proxy do servidor de Federação é tratada por um novo serviço de função acesso remoto chamado Proxy de aplicativo Web. Para habilitar o AD FS para acessibilidade de fora da rede corporativa, o que era o propósito de implantar um proxy do servidor de Federação em versões herdadas do AD FS, como o AD FS 2.0 e AD FS no Windows Server 2012, você pode implantar um ou mais proxies de aplicativo web para um D FS no Windows Server 2012 R2.  
   
@@ -43,6 +41,6 @@ Para implantar o Proxy de Aplicativo Web, você pode seguir os procedimentos dos
 
 [Guia de implantação do Windows Server 2012 R2 AD FS](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)  
  
-[Implantar um Farm de servidores de Federação](../../ad-fs/deployment/Deploying-a-Federation-Server-Farm.md)  
+[Como implantar um farm de servidores de federação](../../ad-fs/deployment/Deploying-a-Federation-Server-Farm.md)  
   
 

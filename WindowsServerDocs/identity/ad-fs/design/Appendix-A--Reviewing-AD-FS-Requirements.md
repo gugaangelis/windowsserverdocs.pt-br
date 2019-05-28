@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d5cfb5de77843eebfc152b9c79ac55bab1fa7727
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5e90df713f08dd387a2438b34839d16efe6e470f
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818167"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191688"
 ---
 # <a name="appendix-a-reviewing-ad-fs-requirements"></a>Apêndice a: Examinando requisitos do AD FS
-
->Aplica-se a: Windows Server 2012
 
 Para que os parceiros organizacionais em sua implantação de serviços de Federação do Active Directory (AD FS) podem colaborar com êxito, primeiro certifique-se de que sua infraestrutura de rede corporativa está configurada para dar suporte a requisitos do AD FS para contas, nomeie resolução e certificados. O AD FS tem os seguintes tipos de requisitos:  
   
@@ -182,4 +180,4 @@ Autenticação de cartão inteligente usa o protocolo Kerberos para autenticar e
 Para dar suporte a certos requisitos de força de autenticação em alguns cenários, também é possível configurar o AD FS a fim de criar uma declaração que indique como o usuário foi autenticado. Uma terceira parte confiável pode usar essa declaração para tomar uma decisão sobre a autorização.  
   
 ## <a name="see-also"></a>Consulte também
-[Guia de Design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

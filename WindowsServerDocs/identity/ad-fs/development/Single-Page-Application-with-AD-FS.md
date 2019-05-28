@@ -1,5 +1,5 @@
 ---
-title: Crie um aplicativo web de página única usando ADAL e OAuth. JS com o AD FS 2016
+title: Crie um aplicativo web de página única usando ADAL e OAuth. JS com o AD FS 2016 ou posterior
 description: Um passo a passo que fornece instruções para se autenticar no AD FS usando a ADAL para JavaScript protegendo um AngularJS com base em aplicativo de página única
 author: billmath
 ms.author: billmath
@@ -8,16 +8,14 @@ ms.date: 06/12/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 78ab9f5d7c3e75650a4efb171d3b9281c56c63d3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1292c7e6cd1dec6926516880c34fe60fb97a9ec8
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865297"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190505"
 ---
-# <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016"></a>Crie um aplicativo web de página única usando ADAL e OAuth. JS com o AD FS 2016
-
->Aplica-se a: Windows Server 2016
+# <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>Crie um aplicativo web de página única usando ADAL e OAuth. JS com o AD FS 2016 ou posterior
 
 Este passo a passo fornece instruções para se autenticar no AD FS usando o ADAL para JavaScript protegendo um AngularJS baseado em aplicativo de página única implementado com um back-end de API Web do ASP.NET.
 
@@ -26,7 +24,7 @@ Nesse cenário, quando o usuário faz logon, o JavaScript front-end usa [Active 
 >AVISO: O exemplo que você pode criar aqui é apenas para fins educacionais. Essas instruções são para a implementação mais simples e mais concisa possível expor os elementos necessários do modelo. O exemplo pode não incluir todos os aspectos de tratamento de erros e outros relacionados a funcionalidade.
 
 >[!NOTE]
->Este passo a passo é aplicável **apenas** ao servidor do AD FS 2016 e superior 
+>Este passo a passo é aplicável **apenas** ao servidor do AD FS 2016 e posterior 
 
 ## <a name="overview"></a>Visão geral
 Neste exemplo estamos criando um fluxo de autenticação em que um cliente de aplicativo de página única estará autenticando com o AD FS para proteger o acesso aos recursos da API Web no back-end. Abaixo está o fluxo geral de autenticação
@@ -157,7 +155,7 @@ Altere o appsettings, conforme mostrado a seguir:
 ## <a name="running-the-solution"></a>Executar a solução
 Limpa a solução, recompile a solução e executá-lo. Se você quiser ver rastreamentos detalhados, inicie o Fiddler e habilitar a descriptografia de HTTPS.
 
-O navegador carregará o SPA e você verá a tela a seguir:
+O navegador (use o navegador Chrome) carregará o SPA e você verá a tela a seguir:
 
 ![Registrar o cliente](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
 

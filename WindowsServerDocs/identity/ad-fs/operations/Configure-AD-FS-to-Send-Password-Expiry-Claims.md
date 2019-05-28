@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 080e8cc81949df3bf74ae846eee7f32c5e145f53
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3be14b824038e9424b86c40bfd657dd988fa99e9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834357"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189872"
 ---
 # <a name="configure-ad-fs-to-send-password-expiry-claims"></a>Configurar o AD FS para enviar solicitações de expiração de senha
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
 Você pode configurar os serviços de Federação do Active Directory (AD FS) para enviar solicitações de expiração de senha para a terceira parte (aplicativos) que é protegidas pelo AD FS. Como essas declarações são usadas depende do aplicativo. Por exemplo, com o Office 365, como a terceira, as atualizações foram implementadas ao Exchange e Outlook para notificar os usuários federados das suas senhas estar expirado em breve.
 

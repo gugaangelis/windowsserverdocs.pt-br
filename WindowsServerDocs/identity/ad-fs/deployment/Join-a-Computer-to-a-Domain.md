@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 811f5296143637974cf82e59d57665f8a96f1c8c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 02df9659ee3a1121c0cee3f7c5fa21b91c36b87c
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884107"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192046"
 ---
 # <a name="join-a-computer-to-a-domain"></a>Ingressar um computador em um domínio
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Para serviços de Federação do Active Directory \(do AD FS\) funcionar, cada computador que funciona como um servidor de federação deve ser associado a um domínio. proxies de servidor de federação podem ser unidos a um domínio, mas isso não é um requisito.  
   
@@ -41,8 +39,8 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
 6.  Clique em **OK** e reinicie o computador.  
   
 ## <a name="additional-references"></a>Referências adicionais  
-[Lista de verificação: Configurando um servidor de Federação](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de verificação: Como configurar um servidor de federação](Checklist--Setting-Up-a-Federation-Server.md)  
   
-[Lista de verificação: Como configurar um Proxy do servidor de Federação](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
+[Lista de verificação: Como configurar um proxy do servidor de federação](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
   
 

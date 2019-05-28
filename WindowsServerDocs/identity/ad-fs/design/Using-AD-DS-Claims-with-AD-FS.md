@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 46692653ba10558a9236bd321127591bc7c8a275
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d2af0950e52d800202235bf674545f6c47e9cd88
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838377"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190783"
 ---
 # <a name="using-ad-ds-claims-with-ad-fs"></a>Usando declarações do AD DS com o AD FS
   
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
   
 Você pode habilitar o controle de acesso avançado para aplicativos federados usando o Active Directory Domain Services \(AD DS\)\-emissões de declarações de usuário e dispositivo junto com os serviços de Federação do Active Directory \(do AD FS \).  
   
@@ -80,4 +79,4 @@ Emitida de declarações do AD DS pode ser usado com o AD FS para acessar as dec
 Para obter mais informações sobre como criar regras de declaração necessárias para declarações do AD DS emitido para trabalhar com o AD FS, consulte [criar uma regra para transformar uma declaração de entrada](../../ad-fs/operations/Create-a-Rule-to-Transform-an-Incoming-Claim.md).  
   
 ## <a name="see-also"></a>Consulte também
-[Guia de Design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

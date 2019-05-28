@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: a047b94906cf703bb934c93f517b8874af91e092
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9db69cfb2eb42af90b392433a6e05eaab9978160
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864057"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190812"
 ---
 # <a name="token-signing-certificates"></a>Certificados de autenticação de tokens
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Servidores de Federação exigem token\-certificados de assinatura para impedir que invasores alterem ou falsifiquem tokens de segurança em uma tentativa de obter acesso não autorizado a recursos federados. Particular\/chave pública de emparelhamento que é usada com o token\-certificados de assinatura é o mecanismo de validação mais importante de qualquer parceria federada porque essas chaves verificar se um token de segurança foi emitido por um parceiro válido servidor de Federação e que o token não foi modificado durante o trânsito.  
   
@@ -75,4 +73,4 @@ Para obter informações sobre como instalar um certificado de uma CA pública, 
 Para obter informações sobre como instalar um self\-assinada do certificado, consulte [IIS 7.0: Criar um Self\-assinou o certificado do servidor no IIS 7.0](https://go.microsoft.com/fwlink/?LinkID=108271).  
   
 ## <a name="see-also"></a>Consulte também
-[Guia de Design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: dda9d148-d72f-4bff-aa2a-f2249fa47e4c
 ms.technology: identity-adfs
-ms.openlocfilehash: 05728f04f6fb924cf3793bc843df3832c7c383f7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: bf36f12803b8ba621f2249b53ad868fcd8f6c4a7
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855687"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188462"
 ---
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
-
 # <a name="the-role-of-the-claim-rule-language"></a>A função da linguagem da regra de declaração
 Os serviços de Federação do Active Directory (AD FS) de declaração de linguagem da regra atua como o bloco de construção administrativo para o comportamento das declarações de entrada e saídas, enquanto o mecanismo de declarações atua como o mecanismo de processamento para a lógica na linguagem de regra de declaração que Define a regra personalizada. Para obter mais informações sobre como todas as regras são processadas pelo mecanismo de declarações, consulte [The Role of the Claims Engine](The-Role-of-the-Claims-Engine.md).  
   

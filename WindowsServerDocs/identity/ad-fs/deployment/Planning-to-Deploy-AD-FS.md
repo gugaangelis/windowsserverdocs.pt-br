@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: ca9e53d7d98f3ae5e6b7b329e52d4979e8c10215
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1459cade5071374ca39d453b9915a68e4bcfe539
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831687"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192044"
 ---
 # <a name="planning-to-deploy-ad-fs"></a>Planejando a implantação do AD FS
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 
 Depois de coletar informações sobre seu ambiente e decidir sobre um serviços de Federação do Active Directory \(do AD FS\) design seguindo as diretrizes a [guia de Design do AD FS no Windows Server 2012](https://technet.microsoft.com/library/dd807036.aspx), Você pode começar a planejar a implantação do design do AD FS da sua organização. Com o design completo e as informações neste tópico, você pode determinar as tarefas a serem executadas para implantar o AD FS em sua organização.  
@@ -30,9 +28,9 @@ Se a equipe de design que construída com o AD FS original de design para sua or
   
     -   [A função do banco de dados de configuração do AD FS](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)  
   
-    -   [Planejando o posicionamento do servidor de Federação](https://technet.microsoft.com/library/dd807069.aspx)  
+    -   [Como planejar o posicionamento do servidor de federação](https://technet.microsoft.com/library/dd807069.aspx)  
   
-    -   [Planejando o posicionamento do Proxy de servidor de Federação](https://technet.microsoft.com/library/dd807130.aspx)  
+    -   [Como planejar o posicionamento do proxy do servidor de federação](https://technet.microsoft.com/library/dd807130.aspx)  
   
     É possível que a equipe de design deixe a questão do posicionamento do servidor de federação ou do proxy do servidor de federação para a equipe de implantação. A equipe de implantação será, então, responsável por documentar e implementar a topologia física dos servidores.  
   

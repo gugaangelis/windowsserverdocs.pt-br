@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 4900d8621b94a514a07bba55b2f7f3df5dd36353
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 26b0ae4f331607d83c6b94a2655ddc9eded8a356
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814617"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191870"
 ---
 # <a name="verify-that-a-federation-server-proxy-is-operational"></a>Verificar se um proxy do servidor de federação está funcionando
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Você pode usar o procedimento a seguir para verificar se o proxy do servidor de Federação pode se comunicar com o serviço de federação nos serviços de Federação do Active Directory \(do AD FS\). Execute este procedimento depois de executar o **o Assistente de configuração do AD FS Federation Server Proxy** para configurar o computador para executar na função de proxy do servidor de Federação. Para obter mais informações sobre como executar este assistente, consulte [configurar um computador para a função de Proxy do servidor de Federação](Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md).  
   
@@ -40,6 +39,6 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
     Se o proxy do servidor de Federação está configurado corretamente, você verá um novo evento no log de aplicativo do Visualizador de eventos, com a ID de evento 198. Esse evento verifica se o serviço de proxy do servidor de Federação foi iniciado com êxito e agora está online.  
   
 ## <a name="additional-references"></a>Referências adicionais  
-[Lista de verificação: Como configurar um Proxy do servidor de Federação](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
+[Lista de verificação: Como configurar um proxy do servidor de federação](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
   
 

@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 7d215c80c03236df9479aff8046981741dfc83e2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b027bff4645203c44e228f11c651b767fa4502e0
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838147"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192060"
 ---
 # <a name="manually-configure-a-service-account-for-a-federation-server-farm"></a>Configurar manualmente uma conta de serviço para um farm de servidores de federação
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Se você pretende configurar um ambiente de farm de servidor de federação nos serviços de Federação do Active Directory \(do AD FS\), você deve criar e configurar uma conta de serviço dedicada no Active Directory Domain Services \(doADDS\) onde o farm residirá. Você deverá configurar cada servidor de federação no farm para usar esta conta. Você deve concluir as tarefas a seguir em sua organização quando você deseja permitir que computadores cliente na rede corporativa sejam autenticados para qualquer um dos servidores de Federação em um farm do AD FS usando a autenticação integrada do Windows.  
 

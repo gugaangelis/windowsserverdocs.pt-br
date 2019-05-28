@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1b8344594c9fc477ed8424c716ec8d7f7fd91ef3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 29d50a4d1855e609b6ac9ee627256201074a5033
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852797"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190716"
 ---
 # <a name="web-sso-design"></a>Design SSO da Web
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 No único da Web\-sinal\-nos \(SSO\) design nos serviços de Federação do Active Directory \(AD FS\), os usuários devem autenticar somente uma vez para acessar vários AD FS\- protegido de aplicativos ou serviços. Nesse design, todos os usuários são externos e nenhuma relação de confiança de federação existe porque não há organizações de parceiro. Normalmente, você implanta esse design, quando você deseja fornecer acesso de cliente ou consumidor individual a um ou mais aplicativos ou serviços do AD FS – protegido pela Internet, conforme mostrado na ilustração a seguir.  
   
@@ -33,4 +31,4 @@ Esse design coincide com a meta de implantação em [Provide Your Active Directo
 Para obter uma lista de tarefas detalhadas que você pode usar para planejar e implantar seu design de SSO da Web, consulte [lista de verificação: Implementando um Design SSO da Web](../../ad-fs/deployment/Checklist--Implementing-a-Web-SSO-Design.md).  
   
 ## <a name="see-also"></a>Consulte também
-[Guia de Design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

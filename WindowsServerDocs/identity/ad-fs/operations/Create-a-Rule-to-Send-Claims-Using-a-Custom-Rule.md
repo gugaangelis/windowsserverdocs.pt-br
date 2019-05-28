@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f0eef89e651585d48ba87d14bc782efa49087669
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ade2a8304288d102608c81a0c29155478e5a4b7b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824827"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189427"
 ---
 # <a name="create-a-rule-to-send-claims-using-a-custom-rule"></a>Criar uma regra para enviar declarações usando uma regra personalizada
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
 Usando o **enviar declarações usando uma regra personalizada** modelo nos serviços de Federação do Active Directory (AD FS), você pode criar regras de declaração personalizadas para a situação em que um modelo de regra padrão não satisfaz os requisitos de sua organização. Regras de declaração personalizadas são gravadas na linguagem de regra de declaração e, em seguida, deve ser copiadas para o **regra personalizada** antes que possam ser usados em um conjunto de regras de caixa de texto. Para obter informações sobre como construir a sintaxe para uma regra avançada, consulte [The Role of the Claim Rule Language](../../ad-fs/technical-reference/The-Role-of-the-Claim-Rule-Language.md).  
   
@@ -125,12 +124,12 @@ Associação na **administradores**, ou equivalente, no computador local é o re
 ## <a name="additional-references"></a>Referências adicionais 
 [Configurar regras de declaração](Configure-Claim-Rules.md)  
  
-[Lista de verificação: Criando regras de declaração para a Relying Party Trust](https://technet.microsoft.com/library/ee913578.aspx)  
+[Lista de verificação: Como criar regras de declaração para um objeto de confiança de terceira parte confiável](https://technet.microsoft.com/library/ee913578.aspx)  
 
-[Lista de verificação: Criando regras de declaração para um provedor de declarações de confiança](https://technet.microsoft.com/library/ee913564.aspx)  
+[Lista de verificação: Como criar regras de declaração para uma relação de confiança do provedor de declarações](https://technet.microsoft.com/library/ee913564.aspx)  
   
 [Quando usar uma regra de declaração de autorização](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 
 [A função das declarações](../../ad-fs/technical-reference/The-Role-of-Claims.md)  
   
-[A função de regras de declaração](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md) 
+[A função das regras de declaração](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md) 

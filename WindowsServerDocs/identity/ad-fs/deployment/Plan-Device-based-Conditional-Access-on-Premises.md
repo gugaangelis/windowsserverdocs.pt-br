@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d878134824ea14a511ad59520d8f6522a14693b3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ffd7131f7f3772ab47b62c9755008fe3b1c4b274
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854237"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192073"
 ---
 # <a name="plan-device-based-conditional-access-on-premises"></a>Planejar acesso condicional com base em dispositivo no local
 
->Aplica-se a: Windows Server 2016
 
 Este documento descreve as políticas de acesso condicional com base em dispositivos em um cenário híbrido em que os diretórios locais são conectados ao Azure AD usando o Azure AD Connect.     
 

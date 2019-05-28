@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: bb4e5f88f3d62511b185a2b4317416169717c860
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f0f3d8c70a41d512e7cd33282524bc401ce84600
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851397"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191433"
 ---
 # <a name="federation-server-farm-using-wid"></a>Farm de servidores de federação usando WID
-
->Aplica-se a: Windows Server 2012
 
 A topologia padrão para os serviços de Federação do Active Directory \(do AD FS\) é um farm de servidores de Federação usando o banco de dados interno do Windows \(WID\), que consiste em até cinco servidores de federação que hospedam seu Serviço de Federação da organização. Nessa topologia, o AD FS usa o WID como o repositório para o banco de dados de configuração do AD FS para todos os servidores de federação que ingressaram nesse farm. O farm replica e mantém os dados do Serviço de Federação no banco de dados de configuração em cada servidor no farm.  
   
@@ -75,4 +73,4 @@ O host NLB pode usar as configurações que são definidas nesse cluster NLB par
 Para obter mais informações sobre como configurar seu ambiente de rede para uso com servidores de federação, consulte [requisitos de resolução de nome para servidores de Federação](Name-Resolution-Requirements-for-Federation-Servers.md) no guia de Design do AD FS.  
   
 ## <a name="see-also"></a>Consulte também
-[Guia de Design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

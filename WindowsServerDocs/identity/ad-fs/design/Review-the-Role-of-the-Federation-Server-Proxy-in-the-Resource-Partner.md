@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 31e285e863e4316a8e0a65f9b68c27442290927d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 377baa8f282f3886284a53b686944fe145b1b15e
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862887"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190892"
 ---
 # <a name="review-the-role-of-the-federation-server-proxy-in-the-resource-partner"></a>Analisar a função do proxy do servidor de federação no parceiro de recurso
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Um proxy do servidor de federação nos serviços de Federação do Active Directory \(do AD FS\) pode funcionar em uma ou mais das funções a seguir, dependendo de como você configura o servidor para atender às necessidades da organização do parceiro de recurso:  
   
@@ -32,5 +30,5 @@ Para resumir, um proxy de servidor de federação de recurso facilita o processo
 > Quando for necessário ajudar a reduzir a quantidade de hardware e o número de certificados necessários, o proxy do servidor de Federação pode estar localizado no mesmo computador como o servidor Web.  
   
 ## <a name="see-also"></a>Consulte também
-[Guia de Design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 

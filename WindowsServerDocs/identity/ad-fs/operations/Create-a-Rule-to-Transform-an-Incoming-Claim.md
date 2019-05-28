@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e982b7608f7602268657ceae74f641bbaaaec939
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6bd107aca6c6f33cdf5f88e5b48a52fdea8d2086
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816677"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189336"
 ---
 # <a name="create-a-rule-to-transform-an-incoming-claim"></a>Criar uma regra para transformar uma declaração de entrada
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
 Usando o **transformar uma declaração de entrada** modelo de regra nos serviços de Federação do Active Directory \(AD FS\), selecione uma declaração de entrada, alterar seu tipo de declaração e altere seu valor de declaração. Por exemplo, você pode usar esse modelo de regra para criar uma regra que envia uma declaração de função com o mesmo valor de declaração de uma declaração de grupo de entrada. Você também pode usar essa regra para enviar a declaração de um grupo com um valor de declaração de compradores quando há uma declaração de grupo de entrada com um valor de administradores, ou você pode enviar somente nome UPN \(UPN\) declarações que terminam com @fabrikam.  
   
@@ -138,12 +137,12 @@ Associação na **administradores**, ou equivalente, no computador local é o re
 ## <a name="additional-references"></a>Referências adicionais 
 [Configurar regras de declaração](Configure-Claim-Rules.md)  
  
-[Lista de verificação: Criando regras de declaração para a Relying Party Trust](https://technet.microsoft.com/library/ee913578.aspx)  
+[Lista de verificação: Como criar regras de declaração para um objeto de confiança de terceira parte confiável](https://technet.microsoft.com/library/ee913578.aspx)  
 
-[Lista de verificação: Criando regras de declaração para um provedor de declarações de confiança](https://technet.microsoft.com/library/ee913564.aspx)  
+[Lista de verificação: Como criar regras de declaração para uma relação de confiança do provedor de declarações](https://technet.microsoft.com/library/ee913564.aspx)  
   
 [Quando usar uma regra de declaração de autorização](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 
 [A função das declarações](../../ad-fs/technical-reference/The-Role-of-Claims.md)  
   
-[A função de regras de declaração](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md) 
+[A função das regras de declaração](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md) 

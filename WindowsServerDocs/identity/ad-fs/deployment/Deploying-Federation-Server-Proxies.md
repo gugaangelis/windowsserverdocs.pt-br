@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: b914141a0445febd3961b688aadc2f444b2eee7b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 02311522ee229eeaf0b27ce8d39090a9529b99ae
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816257"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192205"
 ---
 # <a name="deploying-federation-server-proxies"></a>Implantando proxies de servidor de federação
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Para implantar os proxies de servidor de federação nos serviços de Federação do Active Directory \(do AD FS\), preencha cada uma das tarefas no [lista de verificação: Como configurar um Proxy do servidor de Federação](Checklist--Setting-Up-a-Federation-Server-Proxy.md).  
   
