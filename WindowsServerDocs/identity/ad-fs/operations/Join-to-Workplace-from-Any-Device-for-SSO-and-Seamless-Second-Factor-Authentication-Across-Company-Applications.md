@@ -9,16 +9,16 @@ ms.date: 12/05/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0ee22afd6fdec96ab69d915e4730bb834d2ab8ad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e9d6161666be89673cff6ef1a975d3205fa4b5c9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855517"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189093"
 ---
 # <a name="join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications"></a>ingresso no Local de Trabalho em qualquer dispositivo de SSO e autenticação de dois fatores contínua em aplicativos da empresa
 
->Aplica-se a: Windows Server 2012 R2
+
 
 O aumento rápido no número de dispositivos de consumidor e o acesso onipresente a informações está mudando a maneira como as pessoas entendem sua tecnologia. O uso constante da tecnologia da informação durante todo o dia, juntamente com o acesso fácil a informações, está obscurecendo os limites tradicionais entre trabalho e vida doméstica. Esses limites inconstantes são acompanhados pela crença esse pessoal tecnologia selecionada e personalizada para se ajustar personalidades, atividades e agendas dos usuários-deve se estender ao local de trabalho. Para acomodar a necessidade crescente de dispositivos de consumidor pessoal serem conectados a redes corporativas, estamos introduzindo as seguintes propostas de valor:
 
@@ -54,11 +54,11 @@ Como parte dessa solução, aprenda como usar o Ingresso no Local de Trabalho em
 
 Estes guias de solução orientam você nas seguintes etapas passo a passo:
 
-1.  [Passo a passo: Ingresso no local de um dispositivo Windows](../../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+1.  [Passo a passo: Ingressar no local de trabalho com um dispositivo do Windows](../../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 
-2.  [Passo a passo: Ingresso no local com um dispositivo iOS](../../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
+2.  [Passo a passo: Ingressar no Local de Trabalho com um dispositivo iOS](../../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
-3.  [Passo a passo: Ingresso no local com um dispositivo Android](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
+3.  [Passo a passo: Ingressar no local de trabalho com um dispositivo Android](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
 
 ## <a name="see-also"></a>Consulte também
 [Configurar um servidor de federação com o Device Registration Service](../deployment/configure-a-federation-server-with-device-registration-service.md)

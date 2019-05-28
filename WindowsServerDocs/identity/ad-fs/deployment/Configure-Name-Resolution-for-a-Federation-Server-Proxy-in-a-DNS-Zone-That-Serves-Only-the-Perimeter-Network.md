@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 32b8e3cc133ce95872881115608bb8cfb17b2427
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7d046c720c5c6250b6efa03e068aa66e2a6bbe3d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816007"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192301"
 ---
 # <a name="configure-name-resolution-for-a-federation-server-proxy-in-a-dns-zone-that-serves-only-the-perimeter-network"></a>Configurar resolução de nomes para um servidor de proxy em uma zona DNS que atende apenas a rede de perímetro
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Para que a resolução de nomes pode funcionar com êxito para um servidor de Federação em um Active Directory Federation Services \(do AD FS\) cenário no qual sistema de nomes de domínio de um ou mais \(DNS\) zonas servem apenas o perímetro rede, as seguintes tarefas devem ser concluídas:  
   
@@ -58,7 +57,7 @@ Associação na **administradores**, ou equivalente, é o mínimo necessário pa
   
 1.  Em um servidor DNS para a rede de perímetro, abra o snap DNS\-no. Clique em **inicie**, aponte para **ferramentas administrativas**e, em seguida, clique em **DNS**.  
   
-2.  Na árvore de console, com o botão direito\-clique na zona de pesquisa direta aplicável e, em seguida, clique em **novo Host \(A ou AAAA\)**.  
+2.  Na árvore de console, com o botão direito\-clique na zona de pesquisa direta aplicável e, em seguida, clique em **novo Host \(A ou AAAA\)** .  
   
 3.  Na **nome**, digite apenas o nome do computador do servidor de Federação. Por exemplo, para o nome de domínio totalmente qualificado \(FQDN\) fs.fabrikam.com, digite **fs**.  
   
@@ -67,8 +66,8 @@ Associação na **administradores**, ou equivalente, é o mínimo necessário pa
 5.  Clique em **Adicionar Host**.  
   
 ## <a name="additional-references"></a>Referências adicionais  
-[Lista de verificação: Como configurar um Proxy do servidor de Federação](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
+[Lista de verificação: Como configurar um proxy do servidor de federação](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
   
-[Requisitos de resolução de nome para Proxies de servidor de Federação](https://technet.microsoft.com/library/dd807055.aspx)  
+[Requisitos de resolução de nome para proxies de servidor de federação](https://technet.microsoft.com/library/dd807055.aspx)  
   
 

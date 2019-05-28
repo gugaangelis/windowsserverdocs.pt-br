@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: a20fab1cca4c33485fd599de5525c7a718e9598e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 87849e1d7a5eb8fef24a551dfc681c65a202f027
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882317"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191542"
 ---
 # <a name="deploying-ad-fs-in-the-resource-partner-organization"></a>Implantando o AD FS na organização do parceiro de recurso
-
->Aplica-se a: Windows Server 2012
 
 A organização do parceiro de recurso nos serviços de Federação do Active Directory \(do AD FS\) representa a organização cujos servidores Web podem ser protegidos por um recurso\-servidor de federação de lado. O servidor de federação no parceiro de recurso usa os tokens de segurança que são produzidos pelo parceiro de conta fornecer declarações aos servidores Web que estão localizados no parceiro de recurso.  
   
@@ -28,12 +26,12 @@ Para obter mais informações sobre como instalar e configurar uma organização
   
 ## <a name="in-this-section"></a>Nesta seção  
   
--   [Examine a função do servidor de federação no parceiro de recurso](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)  
+-   [Analisar a função do servidor de federação no parceiro de recurso](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)  
   
--   [Review the Role of the Federation Server Proxy in the Resource Partner](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Resource-Partner.md)  
+-   [Analisar a função do proxy do servidor de federação no parceiro de recurso](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Resource-Partner.md)  
   
 -   [Determinar sua estratégia de aplicativo federado no parceiro de recurso](Determine-Your-Federated-Application-Strategy-in-the-Resource-Partner.md)  
   
 
 ## <a name="see-also"></a>Consulte também
-[Guia de Design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

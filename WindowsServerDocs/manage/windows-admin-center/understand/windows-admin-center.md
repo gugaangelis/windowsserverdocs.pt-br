@@ -2,40 +2,40 @@
 title: Windows Admin Center
 description: Saiba como gerenciar o Windows e i Windows Server com um novo aplicativo com base em navegador, o Windows Admin Center (anteriormente Project Honolulu)
 ms.technology: manage
-ms.topic: landing-page
-layout: LandingPage
+ms.topic: article
 author: haley-rowland
 ms.author: harowl
-ms.date: 03/07/2019
+ms.date: 04/12/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 094db8e0214fc49df45605927c139247bff86621
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 618d9a51c0411fb2cbf4c51661a92eed9c9636a1
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888617"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188230"
 ---
 # <a name="hello-windows-admin-center"></a>Olá, Windows Admin Center!
+
+>Aplica-se a: Windows Admin Center, Windows Admin Center Preview
 
 Windows Admin Center é um aplicativo com base em navegador e implantado localmente para o gerenciamento de servidores, clusters, infraestrutura hiperconvergente e computadores Windows 10. Ele vem sem custo adicional além do Windows e está pronto para uso na produção.
 
 ## <a name="download-now"></a>Baixar agora
 
-**Visualização do Windows Admin Center** (versão 1902)
+<!--**Windows Admin Center Preview** (version 1906)
+[Which version is right for me?](faq.md#what-is-windows-admin-center-preview-which-version-is-right-for-me)
 
-Inclui as atualizações de recurso mais recentes. [Baixe-o do Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) > Downloads adicionais
+- [Windows Admin Center Preview 1906](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) - Includes the latest feature updates.
+-  -->
+[Windows Admin Center (versão 1904)](https://aka.ms/WACDownload) <!--Broadly validated & generally available.-->
 
-**Windows Admin Center** (versão 1809.51)
+[O que há de novo?](../overview.md#release-history)
 
-Amplamente validado e disponível.
-[Obtenha aqui](https://aka.ms/WACDownload)
+Você pode atualizar versões de não-preview do Windows Admin Center usando o Microsoft Update ou instalar manualmente. Cada versão de não-preview do Windows Admin Center há suporte para até 30 dias após o lançamento da próxima versão de não-preview. Consulte nosso [política de suporte](../support/index.md) para obter mais informações.
 
-[Qual versão é adequada para mim?](faq.md#what-is-windows-admin-center-preview-which-version-is-right-for-me)
-
-********************
-
-Links rápidos: [Documentação](../overview.md) | [recursos mais recentes](../overview.md#release-history) | [para desenvolvedores](../extend/extensibility-overview.md) | [enviar comentários](https://aka.ms/WACFeedback)
+> [!IMPORTANT]
+> Os usuários do Lenovo XClarity integrador, leia este [problema conhecido](../support/known-issues.md) antes de instalar o Windows Admin Center versão 1904.
 
 ********************
 
@@ -44,9 +44,9 @@ Links rápidos: [Documentação](../overview.md) | [recursos mais recentes](../o
 
 |   |   |
 |:-:|:--|
-| <img src="../media/simple-icon.png" width="100" alt="Icon representing app window">  | <font style="font-size:110%"><b> Simples e leve</b> <br/> As ferramentas familiares são simplificadas para facilitar as tarefas de gerenciamento. Instale em menos de cinco minutos e gerencie os servidores no seu ambiente imediatamente, sem precisar de configuração de destino. </font> |
-| <img src="../media/future-icon.png" width="100" alt="Icon representing hybrid cloud">  | <font style="font-size:110%"><b>Criado para o futuro</b> <br/> A integração com serviços do Azure ajuda você a aproveitar o potencial do mundo híbrido. Gerencie clusters hiperconvergentes com ferramentas eficientes e simples. </font>  |
-| <img src="../media/secure-icon.png" width="100" alt="Icon representing secure server">  | <font style="font-size:110%"><b>Gerenciamento seguro</b> <br/> Controle quem pode gerenciar servidores e obtenha informações sobre as ações que os administradores executam em seu ambiente. </font>  |
+| [Janela do ícone que representa um aplicativo de](/media/simple-icon.png)| **Simples e leve** <br/> As ferramentas familiares são simplificadas para facilitar as tarefas de gerenciamento. Instale em menos de cinco minutos e gerencie os servidores no seu ambiente imediatamente, sem precisar de configuração de destino. |
+| [Nuvem híbrida que representa de ícone](/media/future-icon.png)| **Criado para o futuro** <br/> A integração com serviços do Azure ajuda você a aproveitar o potencial do mundo híbrido. Gerencie clusters hiperconvergentes com ferramentas eficientes e simples. |
+| [Servidor seguro que representa de ícone](/media/secure-icon.png)| **Gerenciamento seguro** <br/> Controle quem pode gerenciar servidores e obtenha informações sobre as ações que os administradores executam em seu ambiente. |
 
 [Saiba como Windows Admin Center pode melhorar o gerenciamento de seu ambiente de servidor.](../overview.md)
 
@@ -56,10 +56,10 @@ Links rápidos: [Documentação](../overview.md) | [recursos mais recentes](../o
 
 |  |
 |--|
-| "[Windows Admin Center] reduziu o tempo/esforço de administração do sistema de gerenciamento em mais de 75%." <br/> <font color="grey">*-Rand Morimoto, presidente, Convergent Computing* </font>|
-| "Graças ao [Windows Admin Center], podemos gerenciar nossos clientes remotamente do portal do HTML5 sem problemas e com total integração ao Windows Azure Active Directory; podemos aumentar a segurança graças à Autenticação multifator."<br/> <font color="grey"> *-Silvio Benedetto de Di, fundador e consultor sênior, dentro de tecnologias* </font>|
-| "Conseguimos implantar SKUs [Server Core] de forma mais eficiente, melhorando a eficiência de recursos, segurança e automação, enquanto atingimos um bom grau de produtividade e reduzimos os erros que podem acontecer com a dependência somente de scripts." <br/> <font color="grey">*-Guglielmo Mengora, fundador e CEO, VaiSulWeb* </font>|
-| "Com o [Windows Admin Center], os clientes no mercado de pequenas e médias empresas agora têm uma ferramenta fácil de usar para gerenciar sua infraestrutura interna. Isso minimiza os esforços administrativos e economiza muito tempo. E o melhor: não há taxas de licença adicionais para o [Windows Admin Center]!" <br/><font color="grey"> *-SecureGUARD Otto Antônio, diretor de gerenciamento,* </font>|
+| "[Windows Admin Center] reduziu o tempo/esforço de administração do sistema de gerenciamento em mais de 75%."<br> *-Rand Morimoto, presidente, Convergent Computing* |
+| "Graças ao [Windows Admin Center], podemos gerenciar nossos clientes remotamente do portal do HTML5 sem problemas e com total integração ao Windows Azure Active Directory; podemos aumentar a segurança graças à Autenticação multifator."<br/> *-Silvio Benedetto de Di, fundador e consultor sênior, dentro de tecnologias* |
+| "Conseguimos implantar SKUs [Server Core] de forma mais eficiente, melhorando a eficiência de recursos, segurança e automação, enquanto atingimos um bom grau de produtividade e reduzimos os erros que podem acontecer com a dependência somente de scripts." <br/> *-Guglielmo Mengora, fundador e CEO, VaiSulWeb* |
+| "Com o [Windows Admin Center], os clientes no mercado de pequenas e médias empresas agora têm uma ferramenta fácil de usar para gerenciar sua infraestrutura interna. Isso minimiza os esforços administrativos e economiza muito tempo. E o melhor: não há taxas de licença adicionais para o [Windows Admin Center]!" <br/> *-SecureGUARD Otto Antônio, diretor de gerenciamento,* |
 
 [Leia mais sobre as empresas que usam Windows Admin Center em seus ambientes de produção.](case-studies.md)
 
@@ -73,4 +73,8 @@ O Windows Admin Center foi projetado para gerenciar um servidor único ou cluste
 
 ********************
 
-## Siga-nos &nbsp; <a target="_blank" class="mscom-link twitter-follow-link" title="siga-no Twitter" aria-label="Follow us on Twitter" data-info="Twitter" href="https://twitter.com/servermgmt"><picture><source srcset="//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR" media="(min-width:0)"><img srcset="//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR" alt="Follow us on Twitter" src="//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR"></picture></a>&nbsp; <a target="_blank" class="mscom-link blogs-follow-link" title="Siga-nos blogs" aria-label="Follow us on Blogs" data-info="Blogs" href="https://blogs.technet.microsoft.com/servermanagement/"><picture><source srcset="//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw" media="(min-width:0)"><img srcset="//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw" alt="Follow us on Blogs" src="//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw"></picture></a>
+## <a name="connect-with-us"></a>Fale conosco
+
+![ ](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR)[Siga-no Twitter](https://twitter.com/servermgmt)
+
+![ ](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw)[Leia nossos Blogs](https://blogs.technet.microsoft.com/servermanagement/)

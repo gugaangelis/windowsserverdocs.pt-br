@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 14e1cc732ed60b7f05a9a4a9aac9037c48b702f2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 42df338ee5a5aecb3cf32f91a2b1aedae1210164
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879917"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189514"
 ---
 # <a name="create-a-relying-party-trust"></a>Criar um objeto de confiança de terceira parte confiável
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
 O documento a seguir fornece informações sobre como criar uma terceira parte confiável manualmente e usando metadados de Federação.
   
@@ -81,7 +80,7 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
 3.  Sobre o **bem-vindo** , escolha **reconhecimento de declaração** e clique em **iniciar**.  
 ![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust2.PNG) 
   
-4.  Sobre o **Selecionar fonte de dados** , clique em **importar dados sobre a terceira parte confiável publicados online ou em uma rede local*. Em **Endereço dos metadados de federação (nome do host ou URL)**, digite a URL de metadados de federação ou o nome do host do parceiro. Em seguida, clique em **Avançar**.  
+4.  Sobre o **Selecionar fonte de dados** , clique em **importar dados sobre a terceira parte confiável publicados online ou em uma rede local*. Em **Endereço dos metadados de federação (nome do host ou URL)** , digite a URL de metadados de federação ou o nome do host do parceiro. Em seguida, clique em **Avançar**.  
 ![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust12.PNG) 
 
 5.  Na página Especificar nome para exibição, digite um nome na **nome de exibição**, em observações, digite uma descrição para essa terceira parte confiável e, em seguida, clique em **próxima**.

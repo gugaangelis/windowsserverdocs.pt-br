@@ -9,15 +9,14 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: cd3ad4e6547194a971d8a51ecb95ee56f5e4e8c2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 54b0e055d6cfde5e5c69540ac804a38cbceb1e59
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822717"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188772"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>Personalizar cabeçalhos de resposta de segurança HTTP com o AD FS de 2019 
-Aplica-se a: Windows Server 2019 
  
 Para proteger contra vulnerabilidades de segurança e fornecem aos administradores a capacidade de aproveitar os avanços mais recentes em mecanismos de proteção baseada em navegador, o AD FS 2019 adicionado a funcionalidade para personalizar os cabeçalhos de resposta de segurança HTTP enviado pelo AD FS. Isso é feito por meio da introdução de dois novos cmdlets: `Get-AdfsResponseHeaders` e `Set-AdfsResponseHeaders`.  
  

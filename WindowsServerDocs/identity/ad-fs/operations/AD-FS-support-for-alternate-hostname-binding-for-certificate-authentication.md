@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 553ff059693c7b0c0e6f0364d82c1adbca661097
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3e3d1e5d86afbef2fdabd211047f513d31a40300
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887247"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190318"
 ---
 # <a name="ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication"></a>Suporte do AD FS para associação de nome de host alternativo para autenticação de certificado
-
->Aplica-se a: Windows Server 2016
 
 Em muitas redes as políticas de firewall local talvez não permitam o tráfego por meio de portas não padrão, como 49443. Isso se tornou um problema ao tentar realizar a autenticação de certificado com o AD FS antes do AD FS no Windows Server 2016. Isso ocorre porque você não pode ter associações diferentes para autenticação de dispositivo e autenticação de certificado de usuário no mesmo host. A porta padrão 443 está associada a receber os certificados de dispositivo e não pode ser alterada para dar suporte a vários associação no mesmo canal. Os resultados foram que autenticação de cartão inteligente não funcionará e os usuários não estavam cientes do que aconteceu porque não há nenhuma indicação do que realmente aconteceu.  
   

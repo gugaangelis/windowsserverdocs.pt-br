@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e2ad7d1467abd6d69077b515b8c69a65f7e70f19
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2c399467a8bb70e723a86618aa37fc54425f4e7d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865587"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189053"
 ---
 # <a name="manage-risk-with-conditional-access-control"></a>Gerenciar riscos com Controle de Acesso Condicional
 
->Aplica-se a: Windows Server 2012 R2
+
 
 
 -   [Controle de acesso à chave de conceitos condicional no AD FS](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
@@ -106,7 +106,7 @@ A tabela a seguir inclui todos os tipos de declaração disponíveis no AD FS no
 |Nome alternativo do assunto|Um dos nomes alternativos do certificado.|
 |Número de Série|O número de série do certificado.|
 |Algoritmo de assinatura|O algoritmo usado para criar a assinatura de um certificado.|
-|Assunto|O assunto do certificado.|
+|Subject|O assunto do certificado.|
 |Identificador da chave de assunto|O identificador da chave de assunto do certificado.|
 |Nome do assunto|O nome diferenciado do assunto de um certificado.|
 |Nome do modelo V2|O nome do modelo do certificado de versão 2 usado durante a emissão ou renovação de um certificado. Este é um valor específico da Microsoft.|

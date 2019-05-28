@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 50f50cd4e096b107a2b58ac05328ff8ed413f2dc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: be20996d1df3898b8ff23422759e810a4b333b3d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860267"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189543"
 ---
 # <a name="create-a-rule-to-pass-through-or-filter-an-incoming-claim"></a>Criar uma regra para passar ou filtrar uma declaração de entrada
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
 Usando a passagem ou filtrar um modelo de regra de declaração de entrada nos serviços de Federação do Active Directory \(do AD FS\), você pode passar por todas as declarações de entrada com um tipo de declaração selecionado. Você também pode filtrar os valores das declarações de entrada com um tipo de declaração selecionado. Por exemplo, você pode usar esse modelo de regra para criar uma regra que enviará todas as declarações de grupo de entrada. Você também pode usar essa regra para enviar apenas nome UPN \(UPN\) declarações que terminam com @fabrikam.  
   
@@ -136,5 +134,5 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
   
 [A função das declarações](../../ad-fs/technical-reference/The-Role-of-Claims.md)  
   
-[A função de regras de declaração](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md)  
+[A função das regras de declaração](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md)  
   

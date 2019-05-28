@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: a94e4de181cd8794d479bbd6695a94658aba0f86
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8aef8b3d8f1e6dde4f960a3bee5a93964d07c72b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855017"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191279"
 ---
 # <a name="name-resolution-requirements-for-federation-server-proxies"></a>Requisitos de resolução de nome para proxies de servidor de federação
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Quando os computadores cliente na Internet tentam acessar um aplicativo que é protegido pelos serviços de Federação do Active Directory \(do AD FS\), eles devem primeiro autenticar para o servidor de Federação. Na maioria dos casos, o servidor de Federação geralmente não é diretamente acessível pela Internet. Portanto, computadores cliente da Internet deverá ser redirecionados em vez disso, para o proxy do servidor de Federação. Você pode realizar o redirecionamento bem-sucedido, adicionando o sistema de nome de domínio apropriado \(DNS\) registros para a zona DNS ou zonas voltadas para a Internet.  
   
@@ -69,4 +67,4 @@ Para a resolução de nome ser bem-sucedida neste cenário, todas as solicitaç�
 Para obter mais informações sobre como modificar a rede de perímetro e zonas de DNS da Internet, consulte [configurar a resolução de nomes para um Proxy do servidor de Federação em um DNS zona que serve tanto a rede de perímetro e os clientes da Internet](../../ad-fs/deployment/Configure-Name-Resolution-for-a-Federation-Server-Proxy-in-a-DNS-Zone-That-Serves-Both-the-Perimeter-Network-and-Internet-Clients.md).  
   
 ## <a name="see-also"></a>Consulte também
-[Guia de Design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

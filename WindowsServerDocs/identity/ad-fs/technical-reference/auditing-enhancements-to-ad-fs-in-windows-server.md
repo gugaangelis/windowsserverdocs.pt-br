@@ -9,16 +9,15 @@ ms.date: 10/25/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3d622686a3cc34316f0cf5187839785195c2f104
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2f6e4abb4255281be85b7fa928566f681bcf2de2
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880227"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188363"
 ---
 # <a name="auditing-enhancements-to-ad-fs-in-windows-server-2016"></a>Aprimoramentos de auditoria para o AD FS no Windows Server 2016
 
->Aplica-se a: Windows Server 2016
 
 Atualmente, no AD FS para o Windows Server 2012 R2 lá são vários eventos de auditoria gerados por uma única solicitação e as informações relevantes sobre um log-in ou atividade de emissão de token está ausente (em algumas versões do AD FS) ou espalhada em vários eventos de auditoria. Por padrão, o AD FS eventos de auditoria são desativados devido à sua natureza detalhada.  
     Com o lançamento do AD FS no Windows Server 2016, o auditoria tornou mais simples e menos detalhada.  

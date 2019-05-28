@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: fe113eb7fe5cb096ff1e94150b929682d137b24b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8e05043d029636ddeb3a24349897ac61a713b2a7
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871947"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034115"
 ---
 # <a name="perform-initial-recovery"></a>Executar recuperação inicial  
 
@@ -22,9 +22,9 @@ ms.locfileid: "59871947"
 
 Esta seção inclui as seguintes etapas:  
 
-- [Restaurar o primeiro controlador de domínio gravável em cada domínio](#Restore-the-first-writeable-domain-controller-in-each-domain)  
-- [Reconectar-se cada controlador de domínio gravável restaurado à rede](#Reconnect-each-restored-writeable-domain-controller-to-a-common-network)  
-- [Adicionar o catálogo global para um controlador de domínio no domínio raiz da floresta](#Add-the-global-catalog-to-a-domain-controller-in-the-forest-root-domain)  
+- [Restaurar o primeiro controlador de domínio gravável em cada domínio](#restore-the-first-writeable-domain-controller-in-each-domain)  
+- [Reconectar-se cada controlador de domínio gravável restaurado à rede](#reconnect-each-restored-writeable-domain-controller-to-a-common-network)  
+- [Adicionar o catálogo global para um controlador de domínio no domínio raiz da floresta](#add-the-global-catalog-to-a-domain-controller-in-the-forest-root-domain)  
 
 ## <a name="restore-the-first-writeable-domain-controller-in-each-domain"></a>Restaurar o primeiro controlador de domínio gravável em cada domínio  
 
@@ -151,12 +151,12 @@ Neste estágio, você deve ter uma floresta estável, com um controlador de dom�
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Recuperação de floresta do AD - pré-requisitos](AD-Forest-Recovery-Prerequisties.md)  
+- [Recuperação de floresta do AD – Pré-requisitos](AD-Forest-Recovery-Prerequisties.md)  
 - [Recuperação de floresta do AD - elaborar um plano de recuperação de floresta personalizado](AD-Forest-Recovery-Devising-a-Plan.md)  
 - [Recuperação de floresta do AD - identificar o problema](AD-Forest-Recovery-Identify-the-Problem.md)
 - [Recuperação de floresta do AD - determinar como recuperar](AD-Forest-Recovery-Determine-how-to-Recover.md)
 - [Recuperação de floresta do AD - executar a recuperação inicial](AD-Forest-Recovery-Perform-initial-recovery.md)  
-- [Recuperação de floresta do AD - procedimentos](AD-Forest-Recovery-Procedures.md)  
+- [Recuperação de floresta do AD – Procedimentos](AD-Forest-Recovery-Procedures.md)  
 - [Recuperação de floresta do AD - perguntas frequentes](AD-Forest-Recovery-FAQ.md)  
 - [Recuperação de floresta do AD - recuperação de um único domínio dentro de uma floresta Multidomain](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
 - [Recuperação de floresta do AD - recuperação de floresta com controladores de domínio do Windows Server 2003](AD-Forest-Recovery-Windows-Server-2003.md)  

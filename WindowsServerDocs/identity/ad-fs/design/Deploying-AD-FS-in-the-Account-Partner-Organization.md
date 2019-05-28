@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 5b4ba00aa9fed1022d9c0137d05ac6240b44b276
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 93f61bc7fd147b2e0220178bcd163b6ca56279cf
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837907"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191572"
 ---
 # <a name="deploying-ad-fs-in-the-account-partner-organization"></a>Implantando o AD FS na organização do parceiro de conta
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
 Um parceiro de conta nos serviços de Federação do Active Directory \(do AD FS\) representa a organização na relação de confiança de federação que armazena fisicamente as contas de usuário em um repositório de atributos com suporte. Para obter mais informações sobre qual atributo armazenamentos com suporte, consulte [função The dos repositórios de atributos](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md).  
   
@@ -30,11 +28,11 @@ Para obter mais informações sobre como instalar e configurar uma organização
   
 ## <a name="in-this-section"></a>Nesta seção  
   
--   [Examine a função do servidor de federação no parceiro de conta](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)  
+-   [Analisar a função do servidor de federação no parceiro de conta](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)  
   
--   [Review the Role of the Federation Server Proxy in the Account Partner](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Account-Partner.md)  
+-   [Analisar a função do proxy do servidor de federação no parceiro de conta](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Account-Partner.md)  
   
 -   [Preparar os computadores cliente no parceiro de conta](Prepare-Client-Computers-in-the-Account-Partner.md)  
   
 ## <a name="see-also"></a>Consulte também
-[Guia de Design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

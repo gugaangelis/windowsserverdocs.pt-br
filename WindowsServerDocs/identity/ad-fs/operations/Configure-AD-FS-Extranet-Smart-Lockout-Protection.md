@@ -5,483 +5,276 @@ description: ''
 author: billmath
 ms.author: billmath
 manager: mtilman
-ms.date: 02/20/2019
+ms.date: 03/20/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 904b563da2f1404d873c7352db9eadb7bfe252f2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: dd6dea2fb8a16bfdbe93f93fbdd1dc5ac47af4be
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869757"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189900"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>Bloqueio de Extranet e bloqueio inteligente de Extranet do AD FS
 
-# <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão geral
 
->Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
+Bloqueio de extranet inteligente (ESL) protege os usuários experimentem o bloqueio de conta de extranet de atividades mal-intencionadas.  
 
-No AD FS no Windows Server 2012 R2, apresentamos um recurso de segurança chamado [bloqueio de Extranet do Soft](configure-ad-fs-extranet-soft-lockout-protection.md).  Com esse recurso, o AD FS para autenticar usuários da extranet para um período de tempo.  Isso impede que as contas de usuário que está sendo bloqueado no Active Directory. Além de proteger os usuários de um bloqueio de conta do AD, o bloqueio de extranet do AD FS também protege contra ataques de adivinhação de senha de força bruta.
+ESL permite que o AD FS diferenciar entre tentativas de logon de uma localização familiar para um usuário e tentativas de logon do que pode ser um invasor. O AD FS pode bloquear os invasores, permitindo que os usuários válidos continuam a usar suas contas. Isso impede e protege contra determinadas classes de ataques spray de senha de logon do usuário e de negação de serviço. ESL está disponível para o AD FS no Windows Server 2016 e é incorporado ao AD FS no Windows Server 2019. 
 
-Em junho de 2018, o AD FS no Windows Server 2016 introduziu **bloqueio de Extranet inteligente (ESL)**.  ESL permite que o AD FS diferenciar entre tentativas de entrada que parecem do usuário válido e entradas do que pode ser um invasor. Como resultado, o AD FS pode bloquear os invasores, permitindo que os usuários válidos continuam a usar suas contas. Isso impede a negação de serviço no usuário e protege contra ataques direcionados, como ataques de "senha spray".  
-ESL está disponível para o AD FS no Windows Server 2016 e é incorporado ao AD FS no Windows Server 2019.
+ESL só está disponível para o nome de usuário e quais são fornecidos por meio da extranet com Proxy de aplicativo Web ou um suporte as solicitações de autenticação de senha 3ª proxy de terceiros.   
 
-> [!NOTE]
-> Esse recurso funciona somente para o **cenário de extranet** nas quais solicitações de autenticação são fornecidos por meio do Proxy de aplicativo Web e se aplica somente aos **autenticação de nome de usuário e senha**.
+## <a name="additional-features-in-ad-fs-2019"></a>Recursos adicionais do AD FS de 2019 
+Bloqueio inteligente de extranet do AD FS 2019 adiciona as seguintes vantagens em comparação comparadas o AD FS 2016: 
+- Definir limites de bloqueio independentes para familiarizados e locais para que usuários em locais bons conhecidos possam ter mais espaço para erro que as solicitações de locais suspeitos 
+- Habilite o modo de auditoria para o bloqueio inteligente enquanto continua a impor o comportamento de bloqueio flexível anterior. Isso permite que você saiba mais sobre locais familiares do usuário e ainda estará protegido pelo recurso de bloqueio de extranet que está disponível a partir do AD FS 2012R2.  
 
-## <a name="advantages-of-extranet-smart-lockout-in-ad-fs-2016"></a>Vantagens do bloqueio inteligente de Extranet do AD FS 2016
-Bloqueio de extranet reversível no AD FS 2012 R2 fornecidas as seguintes vantagens essenciais:
-- Protege suas contas de usuário do **ataques de força bruta** em que o invasor tenta adivinhar a senha do usuário enviando continuamente as solicitações de autenticação e de **ataques de senha de spray** onde os invasores tentam usar senhas comuns com muitas contas diferentes
-- Protege suas contas de usuário do **bloqueio de conta do Active Directory** das solicitações de autenticação mal-intencionado com senhas erradas. Nesse caso, embora a conta de usuário será bloqueada para acesso à extranet, o usuário ainda poderá logon no AD da rede corporativa. Isso é conhecido como um **bloqueio reversível**.
+## <a name="how-it-works"></a>Como ele funciona 
+### <a name="configuration-information"></a>informações de configuração 
+Quando ESL está habilitada, uma nova tabela no banco de dados de artefato, AdfsArtifactStore.AccountActivity, é criada e um nó é selecionado no farm do AD FS como o mestre de "Atividade de usuário". Em uma configuração de WID, esse nó é sempre o nó primário. Em uma configuração de SQL, um nó é selecionado para ser o mestre de atividade do usuário.  
 
-Compilações extranet do bloqueio inteligente sobre as vantagens do software de bloqueio de extranet, adicionando o seguinte:
-- Protege os usuários experimentem **bloqueio de conta de extranet** das solicitações de autenticação mal-intencionado.  Bloqueio inteligente impedirá que solicitações possivelmente mal-intencionados de locais desconhecidos, permitindo que o usuário fazer logon da extranet de locais familiares (do qual o usuário fez logon com êxito antes dos locais).
-- Tem um único modo de log para que o sistema pode aprender a atividade de logon boa e potencialmente malicioso sem desabilitar todas as contas
+Para exibir o nó selecionado como o mestre de atividade do usuário. Get-AdfsFarmInformation.FarmRoles 
 
-## <a name="additional-advantages-of-extranet-smart-lockout-in-ad-fs-2019"></a>Vantagens adicionais inteligente de bloqueio de Extranet do AD FS de 2019
-Bloqueio inteligente de extranet do AD FS 2019 adiciona as seguintes vantagens em comparação comparadas o AD FS 2016:
-- Definir limites de bloqueio independentes para familiarizados e locais para que usuários em locais bons conhecidos possam ter mais espaço para erro que as solicitações de locais suspeitos
-- Habilitar o modo de auditoria para o bloqueio inteligente enquanto continua a impor o comportamento de bloqueio flexível anterior
+Todos os nós secundários entre em contato com o nó mestre em cada novo logon por meio da porta 80 para saber o valor mais recente das contagens de senha incorreta e novos valores de local familiar e atualizar esse nó após o logon é processado. 
 
-## <a name="pre-requisites-for-extranet-smart-lockout-in-ad-fs-2016"></a>Pré-requisitos para o bloqueio inteligente de Extranet do AD FS 2016
-Os seguintes pré-requisitos são necessários para ESL com o AD FS de 2019.
+![configuração](media/configure-ad-fs-extranet-smart-lockout-protection/esl1.png)
 
-### <a name="install-updates-on-all-nodes-in-the-farm"></a>Instalar atualizações em todos os nós no farm
-Primeiro, verifique se todos os servidores do AD FS do Windows Server 2016 são atualizados a partir das atualizações do Windows de junho de 2018 e se o farm do AD FS 2016 está em execução no nível de comportamento de farm 2016.
+ Se o nó secundário não pode contatar o mestre, ele gravará eventos de erro no log do administrador do AD FS. Autenticações continuarão a ser processada, mas o AD FS irá gravar apenas o estado atualizado localmente. AD FS tentará entrar em contato com o mestre de cada 10 minutos e alternará para o mestre depois que o mestre está disponível. 
 
-### <a name="update-artifact-database-permissions"></a>Atualizar as permissões de banco de dados de artefato
-Bloqueio de extranet do smart requer a conta de serviço do AD FS tenha permissões para uma nova tabela no banco de dados de artefato do ADFS.  Conceda essa permissão, executando o seguinte comando em uma janela de comando do PowerShell:
-``` powershell
-PS C:\>$cred = Get-Credential
-PS C:\>Update-AdfsArtifactDatabasePermission -Credential $cred
-```
-Onde `$cred` é uma conta com permissões de administrador do AD FS (permissões de administrador do AD FS são necessárias para alterar o banco de dados.)
+### <a name="terminology"></a>Terminologia 
+- **FamiliarLocation**: Durante uma solicitação de autenticação, ESL verifica que todos os IPs de apresentada. Esses IPs será uma combinação de IP de rede, encaminhado IP e o IP de x-forwarded-for opcional. Se a solicitação for bem-sucedida, todos os IPs são adicionados à tabela de atividades de conta como "IPs familiares". Se a solicitação tiver todos os IPs presentes no "IPs familiar", a solicitação será tratada como um local de "Familiar".
+- **UnknownLocation**: Se uma solicitação que chega tem pelo menos um IP não está presente na lista de "FamiliarLocation" existente, a solicitação será tratada como um local de "Desconhecido". Isso serve para lidar com cenários de proxy como a autenticação herdado do Exchange Online em que o Exchange Online endereços lidar com solicitações bem-sucedidas e com falha.  
+- **badPwdCount**: Um valor que representa o número de vezes que uma senha incorreta foi enviada e a autenticação foi bem-sucedida. Para cada usuário, os contadores separados são mantidos por locais familiares e de locais desconhecidos. 
+- **UnknownLockout**: Um valor booliano por usuário se o usuário será impedido de acessar de locais desconhecidos. Esse valor é calculado com base nos valores de ExtranetLockoutThreshold e badPwdCountUnfamiliar. 
+- **ExtranetLockoutThreshold**: Esse valor determina o número máximo de tentativas de senha incorreta. Quando o limite for atingido, o ADFS rejeitará as solicitações da extranet até que a janela de Observação tenha passado.
+- **ExtranetObservationWindow**: Esse valor determina a duração em que as solicitações de nome de usuário e senha de locais desconhecidos estão bloqueadas. Quando a janela tiver passado, o ADFS começará a realizar a autenticação de nome de usuário e senha de locais desconhecidos novamente. 
+- **ExtranetLockoutRequirePDC**: Quando habilitada, o bloqueio de extranet requer um controlador de domínio primário (PDC). Quando desabilitado, o bloqueio de extranet fará fallback para outro controlador de domínio caso o controlador de domínio primário não está disponível.  
+- **ExtranetLockoutMode**: Controles de log somente modo de vs impostas inteligente de bloqueio de Extranet 
+    - **ADFSSmartLockoutLogOnly**: Extranet bloqueio inteligente está habilitado, mas o AD FS será apenas escrever admin e eventos de auditoria, mas será rejeitado não as solicitações de autenticação. Esse modo destina-se a ser habilitada inicialmente para FamiliarLocation sejam preenchidos antes de 'ADFSSmartLockoutEnforce' está habilitada.
+    - **ADFSSmartLockoutEnforce**: Suporte completo para o bloqueio de solicitações de autenticação desconhecido quando os limites são atingidos. 
 
->[!NOTE]
->Em um farm de vários servidores que usa o banco de dados WID, o cmdlet acima exige que o gerenciamento remoto do Windows ser habilitado em todos os servidores do AD FS
+Há suporte para endereços IPv4 e IPv6. 
 
-Se você não tiver permissões de administrador do AD FS, você pode configurar permissões de banco de dados manualmente em SQL ou um WID, executando o comando a seguir quando conectado ao banco de dados AdfsArtifactStore.
-```
-sp_addrolemember 'db_owner', 'db_genevaservice'
-```
-### <a name="ensure-ad-fs-security-audit-logging-is-enabled"></a>Verifique se o que log de auditoria de segurança do AD FS está habilitado
-Este recurso faz uso de auditoria de segurança de logs, portanto, a auditoria devem ser habilitados no AD FS, bem como a política local em todos os servidores do AD FS.
+### <a name="anatomy-of-a-transaction"></a>Anatomia de uma transação 
+- **Verificação de pré-autenticação**: Durante uma solicitação de autenticação, ESL verifica que todos os IPs de apresentada. Esses IPs será uma combinação de IP de rede, encaminhado IP e o IP de x-forwarded-for opcional. Nos logs de auditoria, esses IPs estão listados no <IpAddress> campo na ordem de x-ms-forwarded-client-ip, x-forwarded-for, x-ms-proxy-cliente-ip. 
+ 
+  ADFS com base nesses IPs, determina se a solicitação é de uma localização familiar e não familiar e, em seguida, verifica se o respectivo badPwdCount é menor que o limite de conjunto ou se a última **falha** tentativa é aconteceu maior que o intervalo de tempo da janela de observação. Se uma das seguintes condições for verdadeira, o ADFS permite que essa transação para processamento adicional e validação de credenciais. Se ambas as condições forem falsas, a conta estiver em um estado bloqueado até que a janela de Observação passa. Depois que a janela de Observação passa, o usuário é permitido uma tentativa de autenticar. Observe que de 2019, ADFS verificará com relação ao limite de limite apropriado com base em se o endereço IP corresponde a uma localização familiar ou não.
+- **Logon bem-sucedido**: Se o log-in for bem-sucedida, os IPs da solicitação são adicionados à lista IP do usuário local familiar.  
+- **Falha no logon**: Se o log-in falha o badPwdCount é aumentada. O usuário entra em um estado de bloqueio se o invasor envia mais senhas incorretas no sistema que o limite permite. (badPwdCount > ExtranetLockoutThreshold)  
 
-## <a name="pre-requisites-for-extranet-smart-lockout-in-ad-fs-2019"></a>Pré-requisitos para o bloqueio inteligente de Extranet do AD FS de 2019
-Os seguintes pré-requisitos são necessários para ESL com o AD FS 2016.
+![configuração](media/configure-ad-fs-extranet-smart-lockout-protection/esl2.png)
 
-### <a name="ensure-ad-fs-security-audit-logging-is-enabled"></a>Verifique se o que log de auditoria de segurança do AD FS está habilitado
-Este recurso faz uso de auditoria de segurança de logs, portanto, a auditoria devem ser habilitados no AD FS, bem como a política local em todos os servidores do AD FS.
+O valor de "UnknownLockout" será igual a true quando a conta está bloqueada. Isso significa que badPwdCount do usuário em que o limite ou seja, alguém tentou mais senhas que foram permitido pelo sistema. Nesse estado, existem 2 maneiras de um usuário válido que pode fazer logon. 
+- O usuário deve aguardar o tempo de ObservationWindow decorrer ou
+- Para redefinir o estado de bloqueio, redefina o badPwdCount como zero com 'Redefinição ADFSAccountLockout'. 
 
-## <a name="lockout-settings"></a>Configurações de bloqueio
-Bloqueio de extranet do smart consiste em um conjunto de novos recursos controlado por propriedades novas e existentes do AD FS.
+Se nenhum redefinições ocorrerem, a conta poderão ser uma tentativa de senha única no AD para cada janela de observação. A conta retornará ao estado bloqueado depois disso serão reiniciado tentativa e a janela de observação. O valor de badPwdCount só será redefinido automaticamente após um logon de senha com êxito. 
 
-### <a name="extranet-lockout-enabled"></a>Bloqueio de extranet habilitado
-Bloqueio de extranet do inteligente usa a mesma propriedade do AD FS que anteriormente era usada apenas para controlar o bloqueio de extranet "soft".  A propriedade é chamada ExtranetLockoutEnabled e pode ser exibida por meio de Get-AdfsProperties.
+### <a name="log-only-mode-versus-enforce-mode"></a>Modo somente log versus modo 'Aplicar' 
+A tabela AccountActivity é preenchida durante o modo 'Somente Log' e 'Aplicar' modo. Se o modo 'Somente Log' é ignorado e ESL é movido diretamente para o modo 'Aplicar' sem o período de espera recomendada, os IPs familiarizar os usuários não será conhecido ao ADFS. Nesse caso, ESL seria se comportam como 'ADBadPasswordCounter', bloqueando o tráfego de usuário legítimo potencialmente se a conta de usuário estiver sob um ataque de força bruta de Active Directory. Se o modo 'Somente Log' é ignorado e o usuário insere um bloqueado estado com "UnknownLockout" = TRUE e tenta entrar com uma senha válida de um IP que não está na lista IP "familiar", em seguida, eles não poderão entrar. É recomendado somente para log de 3 a 7 dias para evitar esse cenário. Se as contas são ativamente sob ataque, um mínimo de 24 horas de modo 'Log ' somente é necessário para evitar bloqueios para que os usuários legítimos.  
 
-### <a name="extranet-smart-lockout-mode"></a>Modo de bloqueio inteligente de extranet
-Uma propriedade do AD FS novo chamada ExtranetLockoutMode foi adicionada para controlar o comportamento de bloqueio "soft" inteligente vs.  Ele pode ser definido por meio de Set-AdfsProperties e contém 3 valores:
+## <a name="extranet-smart-lockout-configuration"></a>Configuração de extranet de bloqueio inteligente  
+ 
+### <a name="prerequisites-for-ad-fs-2016"></a>Pré-requisitos para o AD FS 2016 
+ 
+1. **Instalar atualizações em todos os nós no farm**
 
-    - **ADPasswordCounter** – isso é herdado, modo de "bloqueio de extranet reversível" do AD FS que não diferencia com base no local.  Este é o valor padrão.
+   Primeiro, verifique se todos os servidores do AD FS do Windows Server 2016 são atualizados a partir das atualizações do Windows de junho de 2018 e se o farm do AD FS 2016 está em execução no nível de comportamento de farm 2016.
+1. **Verifique as permissões** 
 
-    - **ADFSSmartLockoutLogOnly** – esse é o bloqueio inteligente de Extranet, mas em vez de rejeitar solicitações de autenticação, o AD FS será somente gravação eventos admin e auditoria.
+   Bloqueio de extranet do Smart exige que o gerenciamento remoto do Windows esteja habilitado em todos os servidores do AD FS.
+3. **Atualizar as permissões de banco de dados de artefato** 
+ 
+   Bloqueio de extranet do smart requer a conta de serviço do AD FS tenha permissões para criar uma nova tabela no banco de dados de artefato do AD FS. Fazer logon em qualquer servidor do AD FS como um administrador do AD FS e, em seguida, conceda essa permissão, executando os seguintes comandos em uma janela de Prompt de comando do PowerShell: 
 
-    - **ADFSSmartLockoutEnforce** -esse é o bloqueio inteligente de Extranet com suporte completo para bloquear solicitações não familiares, quando os limites são atingidos.
+   ``` powershell
+   PS C:\>$cred = Get-Credential 
+   PS C:\>Update-AdfsArtifactDatabasePermission -Credential $cred 
+   ``` 
+   >[!NOTE]
+   >O espaço reservado $cred é uma conta que tenha permissões de administrador do AD FS. Isso deve fornecer as permissões de gravação para criar a tabela. 
 
-No AD FS 2019, os valores ADPasswordCounter e ADFSSmartLockoutLogOnly podem ser combinados para que o bloqueio de soft continua a ser aplicada enquanto você estiver se preparando para o bloqueio inteligente.
+   Os comandos acima podem falhar devido à falta de permissão suficiente porque seu farm do AD FS usando o SQL Server e a credencial fornecida acima não tem permissão de administrador no SQL server. Nesse caso, você pode configurar permissões de banco de dados manualmente no banco de dados do SQL Server executando o comando a seguir quando você está conectado ao banco de dados AdfsArtifactStore. 
+    ```  
+    # when prompted with “Are you sure you want to perform this action?”, enter Y. 
 
-### <a name="lockout-threshold-and-observation-window"></a>Limite de bloqueio e a janela de Observação
-Bloqueio inteligente no AD FS 2019 usa as mesmas duas propriedades do AD FS como bloqueio flexível usado anteriormente: ExtranetObservationWindow e ExtranetLockoutThreshold.
+    [CmdletBinding(SupportsShouldProcess=$true,ConfirmImpact = 'High')] 
+    Param() 
 
-- **ExtranetLockoutThreshold &lt;inteiro&gt;**  define o número máximo de tentativas de senha incorreta. Quando o limite é atingido, no ADFSSmartLockoutEnforce modo AD FS rejeitará as solicitações da extranet até que a janela de Observação tenha passado.  No modo de ADFSSmartLockoutLogOnly, AD FS irá escrever apenas entradas de log.  
-- **ExtranetObservationWindow &lt;TimeSpan&gt;**  Isso determina quanto tempo o nome de usuário e senha solicitações de locais desconhecidos serão bloqueadas. O AD FS será iniciado realizar a autenticação de nome de usuário e senha novamente quando a janela é passada.
+    $fileLocation = "$env:windir\ADFS\Microsoft.IdentityServer.Servicehost.exe.config" 
 
-> [!NOTE]
-> Funções de bloqueio de extranet do AD FS independentemente das políticas de bloqueio do AD. É recomendável que você defina as **ExtranetLockoutThreshold** valor do parâmetro para um valor que é menor que o limite de bloqueio de conta do AD. Falha ao fazer isso resultaria no AD FS não ser capaz de proteger as contas de serem bloqueados no Active Directory. 
+    if (-not [System.IO.File]::Exists($fileLocation)) 
+    { 
+    write-error "Unable to open ADFS configuration file." 
+    return 
+    } 
 
-No AD FS 2019, apresentamos um novo limite de bloqueio específico para locais bons conhecidos: ExtranetLockoutThresholdFamiliarLocation.
-- **ExtranetLockoutThresholdFamiliarLocation &lt;inteiro&gt;**  define o número máximo de tentativas de senha incorreta de locais familiares. No AD FS 2019, o parâmetro original ExtranetLockoutThreshold se aplica a locais desconhecidos (endereços IP não é conhecidos em boas condições).
+    $doc = new-object Xml 
+    $doc.Load($fileLocation) 
+    $connString = $doc.configuration.'microsoft.identityServer.service'.policystore.connectionString 
+    $connString = $connString -replace "Initial Catalog=AdfsConfigurationV[0-9]*", "Initial Catalog=AdfsArtifactStore" 
 
-### <a name="primary-domain-controller-requirement"></a>Requisito de controlador de domínio primário
-O AD FS 2016 oferece um parâmetro que permite o fallback para outro controlador de domínio quando o controlador de domínio primário não está disponível.
+    if ($PSCmdlet.ShouldProcess($connString, "Executing SQL command sp_addrolemember 'db_owner', 'db_genevaservice' ")) 
+    { 
+    $cli = new-object System.Data.SqlClient.SqlConnection 
+    $cli.ConnectionString = $connString 
+    $cli.Open() 
 
-- **ExtranetLockoutRequirePDC &lt;Boolean&gt;**  quando habilitada, o bloqueio de extranet requer um controlador de domínio primário (PDC). Quando desabilitado, o bloqueio de extranet fará fallback para outro controlador de domínio caso o controlador de domínio primário não está disponível.
+    try 
+    {     
 
-   O exemplo a seguir mostra o cmdlet para habilitar o bloqueio com o requisito de PDC desabilitado:
+    $cmd = new-object System.Data.SqlClient.SqlCommand 
+    $cmd.CommandText = "sp_addrolemember 'db_owner', 'db_genevaservice'" 
+    $cmd.Connection = $cli 
+    $rowsAffected = $cmd.ExecuteNonQuery()  
+    if ( -1 -eq $rowsAffected ) 
+    { 
+    write-host "Success" 
+    } 
+    } 
+    finally 
+    { 
+    $cli.CLose() 
+    } 
+    } 
+    ``` 
 
-    ```powershell
-    Set-AdfsProperties -EnableExtranetLockout $true -ExtranetLockoutThreshold 15 -ExtranetObservationWindow (new-timespan -Minutes 30) -ExtranetLockoutRequirePDC $false
-    ```
+### <a name="ensure-ad-fs-security-audit-logging-is-enabled"></a>Verifique se o que log de auditoria de segurança do AD FS está habilitado 
+Este recurso faz uso de auditoria de segurança de logs, portanto, a auditoria devem ser habilitados no AD FS, bem como a política local em todos os servidores do AD FS. 
+ 
+### <a name="configuration-instructions"></a>Instruções de configuração 
+Bloqueio de extranet do inteligente usa a propriedade do ADFS **ExtranetLockoutEnabled**. Essa propriedade foi usada anteriormente para o controle de "Bloqueio de Extranet reversível" no Server 2012 R2. Se o bloqueio de Extranet do reversível foi habilitado, para exibir a configuração da propriedade atual, execute ` Get-AdfsProperties` . 
 
-## <a name="configuring-ad-fs-with-smart-lockout-in-log-only-mode"></a>Configuração do AD FS com o bloqueio inteligente no modo somente de Log
+### <a name="configuration-recommendations"></a>Recomendações de configuração 
+Ao configurar o bloqueio inteligente de Extranet, siga as práticas recomendadas para configuração de limites:  
 
-### <a name="ad-fs-2016"></a>AD FS 2016
-É recomendável que você defina primeiro o comportamento de bloqueio para fazer logon apenas executando o seguinte cmdlet:
+`ExtranetObservationWindow (new-timespan -Minutes 30)` 
 
- ```powershell
-PS C:\>Set-AdfsProperties -ExtranetLockoutMode AdfsSmartlockoutLogOnly
- ```
+`ExtranetLockoutThreshold: – 2x AD Threshold Value` 
 
-Nesse modo, o AD FS preenche as informações de localização familiar de usuários e grava eventos de auditoria de segurança, mas não bloqueia todas as solicitações.  Esse modo é usado para validar que o bloqueio inteligente está em execução e para habilitar o AD FS para "saber" locais familiares para os usuários antes de habilitar o "modo de imposição".
-Como o AD FS aprende, ele armazena a atividade de logon por usuário (em modo somente de log ou modo de imposição). 
+Valor do AD: 20, ExtranetLockoutThreshold: 10 
 
->[!NOTE]
->Configurando `ExtranetLockoutMode` à `AdfsSmartlockoutLogOnly` fará com que o comportamento herdado de FS "reversível bloqueio de extranet" AD não precisa mais estar em vigor, mesmo se o `EnableExtranetLockout` propriedade é definida como True.  Isso significa que os usuários que excedem os limites de bloqueio de endereços IP familiares ou desconhecidos não ser bloqueados pelo bloqueio inteligente do AD FS. No entanto, no local AD pode bloqueio do usuário com base na configuração de lá.   Consulte [política de bloqueio de conta](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/account-lockout-policy) para saber como local AD pode bloquear usuários. "  Isso serve para ser um estado temporário para que o sistema possa aprender o comportamento de logon antes de reintrodução imposição de bloqueio com o novo comportamento de bloqueio inteligente.
+Bloqueio do Active Directory funciona independentemente do bloqueio inteligente de Extranet. No entanto, se o bloqueio do Active Directory estiver ativado, ExtranetLockoutThreshold no AD FS < limite de bloqueio de conta do AD 
 
-Para o novo modo entrem em vigor, reinicie o serviço do AD FS em todos os nós no farm
-  
-  ``` powershell
-PS C:\>Restart-service adfssrv
-  ```
-Depois que o modo é configurado, você pode habilitar o bloqueio inteligente usando o `EnableExtranetLockout` parâmetro
-
-
-``` powershell
-PS C:\>Set-AdfsProperties -EnableExtranetLockout $true
-```
-
-Observe que você pode usar o mesmo cmdlet para desabilitar o bloqueio
-
-Exemplo: Desabilitar bloqueio
-
-``` powershell
-PS C:\>Set-AdfsProperties -EnableExtranetLockout $false
-```
-### <a name="ad-fs-2019"></a>AD FS 2019
-Se não estiver usando atualmente o AD FS Extranet Lockout reversível, é recomendável que você siga as mesmas orientações para AD FS 2016 acima.
-Se você estiver usando o bloqueio flexível, no entanto, recomendamos que você defina o comportamento de bloqueio do AD FS de 2019 para fazer logon para o bloqueio inteligente, mas manter a imposição de bloqueio flexível, usando o powershell abaixo:
-
- ```powershell
-PS C:\>Set-AdfsProperties -ExtranetLockoutMode 3
- ```
-
-Depois de executar esse cmdlet, você pode usar Get-AdfsProperties para consultar o valor da propriedade ExtranetLockoutMode AD FS.  Você verá que seu valor foi atualizado para uma combinação bit a bit de ADPasswordCounter e ADFSSmartLockoutLogOnly.
-
-## <a name="observing-audit-events"></a>Observando os eventos de auditoria
-O AD FS gravará eventos de bloqueio de extranet para o log de auditoria de segurança:
--   Quando um usuário está bloqueado out (atingir o limite de bloqueio de tentativas de logon malsucedida)
--   Quando o AD FS recebe uma tentativa de logon para um usuário que já está em estado de bloqueio
-
-No modo somente de log, você pode verificar o log de auditoria de segurança para eventos de bloqueio.  Para todos os eventos encontrados, você pode verificar o estado do usuário usando o cmdlet Get-ADFSAccountActivity para determinar se o bloqueio ocorreu de endereços IP familiares ou desconhecidos e verifique a lista de endereços IP familiares para o usuário.
-
-Evento de exemplo:
-```
-Log Name:      Security
-Source:        AD FS Auditing
-Date:          5/21/2018 12:55:59 AM
-Event ID:      1210
-Task Category: (3)
-Level:         Information
-Keywords:      Classic,Audit Failure
-User:          CONTOSO\adfssvc
-Computer:      ADFS2016FS1.corp.contoso.com
-Description:
-An extranet lockout event has occurred. See XML for failure details. 
-
-Activity ID: fa7a8052-0694-48f0-84e2-b51cde40ac3d 
-
-Additional Data 
-XML: <?xml version="1.0" encoding="utf-16"?>
-<AuditBase xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ExtranetLockoutAudit">
-  <AuditType>ExtranetLockout</AuditType>
-  <AuditResult>Failure</AuditResult>
-  <FailureType>ExtranetLockoutError</FailureType>
-  <ErrorCode>AccountRestrictedAudit</ErrorCode>
-  <ContextComponents>
-    <Component xsi:type="ResourceAuditComponent">
-      <RelyingParty>http://fs.contoso.com/adfs/services/trust</RelyingParty>
-      <ClaimsProvider>N/A</ClaimsProvider>
-      <UserId>CONTOSO\user</UserId>
-    </Component>
-    <Component xsi:type="RequestAuditComponent">
-      <Server>N/A</Server>
-      <AuthProtocol>WSFederation</AuthProtocol>
-      <NetworkLocation>Extranet</NetworkLocation>
-      <IpAddress>64.187.173.10</IpAddress>
-      <ForwardedIpAddress>64.187.173.10</ForwardedIpAddress>
-      <ProxyIpAddress>N/A</ProxyIpAddress>
-      <NetworkIpAddress>N/A</NetworkIpAddress>
-      <ProxyServer>ADFS2016PROXY2</ProxyServer>
-      <UserAgentString>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36</UserAgentString>
-      <Endpoint>/adfs/ls/</Endpoint>
-    </Component>
-    <Component xsi:type="LockoutConfigAuditComponent">
-      <CurrentBadPasswordCount>5</CurrentBadPasswordCount>
-      <ConfigBadPasswordCount>5</ConfigBadPasswordCount>
-      <LastBadAttempt>05/21/2018 00:55:05</LastBadAttempt>
-      <LockoutWindowConfig>00:30:00</LockoutWindowConfig>
-    </Component>
-  </ContextComponents>
-</AuditBase>
-Event Xml:
-<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
-  <System>
-    <Provider Name="AD FS Auditing" />
-    <EventID Qualifiers="0">1210</EventID>
-    <Level>0</Level>
-    <Task>3</Task>
-    <Keywords>0x8090000000000000</Keywords>
-    <TimeCreated SystemTime="2018-05-21T00:55:59.921880300Z" />
-    <EventRecordID>35521235</EventRecordID>
-    <Channel>Security</Channel>
-    <Computer>ADFS2016FS1.contoso.com</Computer>
-    <Security UserID="S-1-5-21-1156273042-1594504307-2076964089-1104" />
-  </System>
-  <EventData>
-    <Data>fa7a8052-0694-48f0-84e2-b51cde40ac3d</Data>
-    <Data><?xml version="1.0" encoding="utf-16"?>
-<AuditBase xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ExtranetLockoutAudit">
-  <AuditType>ExtranetLockout</AuditType>
-  <AuditResult>Failure</AuditResult>
-  <FailureType>ExtranetLockoutError</FailureType>
-  <ErrorCode>AccountRestrictedAudit</ErrorCode>
-  <ContextComponents>
-    <Component xsi:type="ResourceAuditComponent">
-      <RelyingParty>http://fs.contoso.com/adfs/services/trust</RelyingParty>
-      <ClaimsProvider>N/A</ClaimsProvider>
-      <UserId>CONTOSO\user</UserId>
-    </Component>
-    <Component xsi:type="RequestAuditComponent">
-      <Server>N/A</Server>
-      <AuthProtocol>WSFederation</AuthProtocol>
-      <NetworkLocation>Extranet</NetworkLocation>
-      <IpAddress>64.187.173.10</IpAddress>
-      <ForwardedIpAddress>64.187.173.10</ForwardedIpAddress>
-      <ProxyIpAddress>N/A</ProxyIpAddress>
-      <NetworkIpAddress>N/A</NetworkIpAddress>
-      <ProxyServer>ADFS2016PROXY2</ProxyServer>
-      <UserAgentString>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36</UserAgentString>
-      <Endpoint>/adfs/ls/</Endpoint>
-    </Component>
-    <Component xsi:type="LockoutConfigAuditComponent">
-      <CurrentBadPasswordCount>5</CurrentBadPasswordCount>
-      <ConfigBadPasswordCount>5</ConfigBadPasswordCount>
-      <LastBadAttempt>05/21/2018 00:55:05</LastBadAttempt>
-      <LockoutWindowConfig>00:30:00</LockoutWindowConfig>
-    </Component>
-  </ContextComponents>
-</AuditBase></Data>
-  </EventData>
-</Event>
-```
-
-## <a name="observing-user-activity"></a>Observando a atividade do usuário
-O AD FS fornece cmdlets do powershell para exibir e gerenciar dados de atividade de conta de usuário.  Para ler a atividade da conta atual para uma conta de usuário.  Use o cmdlet abaixo
+`ExtranetLockoutRequirePDC - $false`
+ 
+Quando habilitada, o bloqueio de extranet requer um controlador de domínio primário (PDC). Quando desabilitado e configurado como false, o bloqueio de extranet fará fallback para outro controlador de domínio caso o controlador de domínio primário não está disponível. 
+ 
+Para definir essa propriedade executar: 
 
 ``` powershell
-PS C:\>Get-ADFSAccountActivity user@contoso.com
+Set-AdfsProperties -EnableExtranetLockout $true -ExtranetLockoutThreshold 15 -ExtranetObservationWindow (new-timespan -Minutes 30) -ExtranetLockoutRequirePDC $false 
 ```
+### <a name="enable-log-only-mode"></a>Habilitar o modo de Log 
+ 
+No modo somente de log, o AD FS preenche as informações de localização familiar de usuários e grava eventos de auditoria de segurança, mas não bloqueia todas as solicitações. Esse modo é usado para validar que o bloqueio inteligente está em execução e para habilitar o AD FS para "saber" locais familiares para os usuários antes de habilitar o "modo de imposição". Como o AD FS aprende, ele armazena a atividade de logon por usuário (em modo somente de log ou modo de imposição). Defina o comportamento de bloqueio para fazer logon apenas executando o cmdlet a seguir.  
 
-Exemplo de saída
-```
-Identifier             : CONTOSO\user
-BadPwdCountFamiliar    : 0
-BadPwdCountUnknown     : 0
-LastFailedAuthFamiliar : 1/1/0001 12:00:00 AM
-LastFailedAuthUnknown  : 1/1/0001 12:00:00 AM
-FamiliarLockout        : False
-UnknownLockout         : False
-FamiliarIps            : {}
-```
+`Set-AdfsProperties -ExtranetLockoutMode AdfsSmartlockoutLogOnly` 
 
-A saída da atividade atual contém os seguintes dados:
+Modo de log somente destina-se a ser um estado temporário para que o sistema possa aprender o comportamento de logon antes de introduzir a imposição de bloqueio com o comportamento de bloqueio inteligente. A duração recomendada para o modo de log é de 3 a 7 dias. Se as contas são ativamente sob ataque, o modo de log deve ser executado por um mínimo de 24 horas. 
 
-**Identificador**: isso é o nome de usuário
+No AD FS 2016, se o comportamento de 'Bloqueio de Extranet reversível' 2012R2 estiver habilitado antes de habilitar o bloqueio de Extranet inteligente, o modo de Log desabilitará o comportamento de 'Bloqueio de Extranet reversível'. Bloqueio inteligente do AD FS não bloqueará os usuários no modo de Log. No entanto, no local AD pode bloquear o usuário com base na configuração do AD. Examine as políticas de bloqueio do AD para saber como local AD pode usuários de bloqueio. 
 
-**BadPwdCountFamiliar**: essa é a contagem atual de tentativas de logon de senha incorreta de endereços IP que estavam na lista de "FamiliarIps" no momento da tentativa
+No AD FS 2019, uma vantagem adicional deve ser capaz de habilitar o modo de log somente para o bloqueio inteligente enquanto continua a impor o comportamento flexível bloqueio anterior usando o Powershell abaixo. 
 
-**BadPwdCountUnknown**: essa é a contagem atual de tentativas de logon de senha incorreta de endereços IP que não estavam na lista de "FamiliarIps" no momento da tentativa
+`Set-AdfsProperties -ExtranetLockoutMode 3` 
+ 
+Para o novo modo entrem em vigor, reinicie o serviço do AD FS em todos os nós no farm 
 
-**LastFailedAuthFamiliar**: isso é a hora da última tentativa de logon de senha incorreta de um endereço IP que estava na lista de "FamiliarIps" na hora da tentativa
+`Restart-service adfssrv` 
+ 
+Depois que o modo é configurado, você pode habilitar o bloqueio inteligente usando o parâmetro EnableExtranetLockout 
+ 
+`Set-AdfsProperties -EnableExtranetLockout $true` 
 
-**LastFailedAuthUnknown**: isso é a hora da última tentativa de logon de senha incorreta de um endereço IP que não estava na lista de "FamiliarIps" na hora da tentativa
+### <a name="enable-enforce-mode"></a>Habilitar o modo de imposição 
+ 
+Depois que você estiver familiarizado com a janela de observação e de limite de bloqueio, ESL pode ser movido para "modo de imposição" usando o seguinte cmdlet PSH: 
 
-**FamiliarLockout**: isso indica se o usuário está atualmente em um estado de bloqueio de tentativas de senha correta de endereços IP na lista de "FamiliarIps" 
+`Set-AdfsProperties -ExtranetLockoutMode AdfsSmartLockoutEnforce` 
 
-**UnknownLockout**: isso indica se o usuário está atualmente em um estado de bloqueio de tentativas de senha correta de endereços IP não está na lista de "FamiliarIps" FamiliarIps: esta é a lista atual de familiarizados endereços IP para o usuário
+Para o novo modo entrem em vigor, reinicie o serviço do AD FS em todos os nós no farm usando o comando a seguir. 
 
-## <a name="adjust-threshold-and-window"></a>Ajustar o limite e a janela
-Depois que você estava executando no modo de log somente para uma quantidade suficiente de tempo para o AD FS saber os locais de logon, talvez você queira ajustar a janela de observação ou de limite das configurações padrão.  Isso é feito usando `Set-AdfsProperties` como nos exemplos a seguir:
+`Restart-service adfssrv` 
 
-A janela de observação é definida usando `ExtranetObservationWindow`:
+## <a name="manage-user-account-activity"></a>Gerenciar a atividade de conta de usuário 
+O AD FS fornece três cmdlets para gerenciar os dados de atividade de conta. Esses cmdlets se conectam automaticamente para o nó no farm que mantém a função principal. 
+>[!NOTE] 
+>Administração JEA (Just Enough) pode ser usado para delegar commandlets do AD FS para redefinir os bloqueios de conta. Por exemplo, o pessoal de assistência técnica pode ser permissões delegadas para usar os commandlets ESL. Para obter informações sobre como delegar permissões para usar esses cmdlets, consulte [delegado AD FS Powershell Commandlet acesso a usuários não-administrador](delegate-ad-fs-pshell-access.md)
 
-Exemplo: 
+Esse comportamento pode ser substituído, passando o parâmetro - Server. 
 
-``` powershell
-PS C:\>Set-AdfsProperties -ExtranetObservationWindow ( new-timespan -minutes 30 )
-```
+- Get-ADFSAccountActivity 
 
-Onde o valor é um intervalo de tempo
+  Leia a atividade da conta atual para uma conta de usuário. O cmdlet sempre automaticamente se conecta ao mestre do farm usando o ponto de extremidade REST da atividade de conta. Portanto, todos os dados devem sempre ser consistentes. 
 
-### <a name="setting-threshold-value-in-ad-fs-2016"></a>Valor de limite de configuração do AD FS 2016
-No AD FS 2016, o limite é definido usando ExtranetLockoutThreshold:
+  Exemplo: Get-ADFSAccountActivity user@contoso.com 
 
-Exemplo:
+  Propriedades: 
+    - BadPwdCountFamiliar: Incrementado quando uma autenticação é bem-sucedida de um local conhecido.
+    - BadPwdCountUnknown: Incrementado quando uma autenticação for bem-sucedida de um local desconhecido
+    - LastFailedAuthFamiliar: Se a autenticação foi bem-sucedida de uma localização familiar, LastFailedAuthUnknown é definida para hora de autenticação sem êxito 
+    - LastFailedAuthUnknown: Se a autenticação foi bem-sucedida de um local desconhecido, LastFailedAuthUnknown é definida para hora de autenticação sem êxito 
+    - FamiliarLockout: Valor booliano que será "True" se "BadPwdCountFamiliar" > ExtranetLockoutThreshold 
+    - UnknownLockout: Valor booliano que será "True" se "BadPwdCountUnknown" > ExtranetLockoutThreshold  
+    - FamiliarIPs: o máximo de 20 IPs que são familiares para o usuário. Quando isso for excedido o IP na lista de mais antigo será removido. 
+-    Set-ADFSAccountActivity 
+     
+     Adiciona novos locais familiares. A conhecida lista IP tem um máximo de 20 entradas, se isso for excedido, o IP na lista de mais antigo será removido. 
 
-``` powershell
-PS C:\>Set-AdfsProperties -ExtranetLockoutThreshold 5
-```
+     Exemplo: Conjunto ADFSAccountActivity user@contoso.com - AdditionalFamiliarIps "1.2.3.4"
 
-### <a name="setting-threshold-values-in-ad-fs-2019"></a>Valores de limite de configuração do AD FS de 2019
-No AD FS 2019, há valores de limite distintos para locais conhecidos do BOM e desconhecidos
+- Reset-ADFSAccountLockout 
+   
+  Redefine o contador de bloqueios de conta de usuário para cada local Familiar (badPwdCountFamiliar) ou contadores de um local desconhecido (badPwdCountUnfamiliar). Redefinindo um contador, o valor "FamiliarLockout" ou "UnfamiliarLockout" será atualizado, pois a contador será inferior ao limite.  
 
-Para definir o valor de limite de locais desconhecidos, use a mesma propriedade usada para o AD FS 2016 acima:
+   Exemplo: Redefinição ADFSAccountLockout user@contoso.com -exemplo de localização Familiar:  Redefinição ADFSAccountLockout user@contoso.com -local desconhecido 
 
-Exemplo:
+## <a name="event-logging--user-activity-information-for-ad-fs-extranet-lockout"></a>O log de eventos e informações de atividade de usuário para o bloqueio de Extranet do AD FS 
 
-``` powershell
-PS C:\>Set-AdfsProperties -ExtranetLockoutThreshold 5
-```
+### <a name="connect-health"></a>Connect Health 
+É a maneira recomendada para monitorar a atividade de conta de usuário por meio do Connect Health. Connect Health gera relatórios que pode ser baixado em IPs arriscados e tentativas de senha incorreta. Cada item no relatório IP arriscado mostra informações agregadas sobre atividades com falha do AD FS sign-in que excedem o limite designado. Notificações de email podem ser definidas para alertar os administradores assim que isso ocorre com as configurações de email personalizáveis. Para obter mais informações e instruções de instalação, visite o [documentação do Connect Health](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-health-adfs). 
 
-Para definir o valor de limite para locais de BOM conhecidos, use a nova propriedade ExtranetLockoutThresholdFamiliarLocation, conforme mostrado no exemplo a seguir:
+### <a name="ad-fs-extranet-smart-lockout-events"></a>Eventos do AD FS o bloqueio inteligente Extranet. 
+Para eventos de bloqueio inteligente de Extranet a serem gravados, ESL deve estar habilitado no modo 'somente log' ou 'Aplicar' e a auditoria de segurança do AD FS está habilitada. O AD FS gravará eventos de bloqueio de extranet para o log de auditoria de segurança: 
+- Quando um usuário está bloqueado out (atingir o limite de bloqueio de tentativas de logon malsucedida) 
+- Quando o AD FS recebe uma tentativa de logon para um usuário que já está em estado de bloqueio 
 
-Exemplo:
-
-``` powershell
-PS C:\>Set-AdfsProperties -ExtranetLockoutThresholdFamiliarLocation 10
-```
-
-
-## <a name="enable-enforce-mode"></a>Habilitar o modo de imposição
-Depois que você estava executando no modo de log somente por tempo suficiente para o AD FS para saber os locais de logon e observar qualquer atividade de bloqueio e, quando estiver familiarizado com a janela de observação e de limite de bloqueio, bloqueio inteligente pode ser movido para "forçar" o uso de modo a Cmdlet PSH abaixo:
-
-``` powershell
-PS C:\>Set-AdfsProperties -ExtranetLockoutMode AdfsSmartLockoutEnforce
-```
-
-Para o novo modo entrem em vigor, reinicie o serviço do AD FS em todos os nós no farm
-
-``` powershell
-PS C:\>Restart-service adfssrv
-```
+No modo somente de log, você pode verificar o log de auditoria de segurança para eventos de bloqueio. Para todos os eventos encontrados, você pode verificar o estado do usuário usando o cmdlet Get-ADFSAccountActivity para determinar se o bloqueio ocorreu de endereços IP familiares ou desconhecidos e verifique a lista de endereços IP familiares para o usuário. 
 
 
-## <a name="manage-user-account-activity"></a>Gerenciar a atividade de conta de usuário
-O AD FS fornece 3 cmdlets para gerenciar dados de atividade de conta de usuário.  Esses cmdlets se conectar automaticamente para o nó no farm que mantém a função de mestre (embora esse comportamento pode ser substituído, passando o parâmetro - Server).
+|ID de evento|Descrição|
+|-----|-----| 
+|1203|Esse evento é criado para cada tentativa de senha incorreta. Assim que o badPwdCount atinge o valor especificado em ExtranetLockoutThreshold, a conta será bloqueada no AD FS para a duração especificada no ExtranetObservationWindow.</br>ID da atividade: %1</br>XML: %2|
+|1201|Esse evento é gravado cada vez que um usuário está bloqueado. </br>ID da atividade: %1</br>XML: %2| 
+|557 (2019 ADFS)| Ocorreu um erro ao tentar se comunicar com o serviço de rest do armazenamento de conta no nó %1. Quando se trata de um farm de WID de nó primário pode estar offline. Quando se trata de um farm de SQL AD FS selecionará automaticamente um novo nó para hospedar a função de mestre do repositório de usuário.| 
+|562 (2019 ADFS)|Ocorreu um erro quando communcating com a conta armazena o ponto de extremidade no servidor %1.</br>Mensagem de exceção: %2| 
+|563 (2019 ADFS)|Ocorreu um erro ao calcular o status de bloqueio de extranet. Porque o valor da %1 Configurando a autenticação será permitida para esse usuário e a emissão de token continuará. Quando se trata de um farm de WID de nó primário pode estar offline. Quando se trata de um farm de SQL AD FS selecionará automaticamente um novo nó para hospedar a função de mestre do repositório de usuário.</br>Nome da conta de armazenamento de servidor: %2</br>Id de usuário: %3</br>Mensagem de exceção: %4|
+|512|A conta para o seguinte usuário está bloqueada. Uma tentativa de logon está sendo permitida por causa da configuração do sistema.</br>ID da atividade: %1 </br>Usuário: %2 </br>Cliente IP: %3 </br>Contagem de senha inválida: %4  </br>Última tentativa de senha incorreta: %5|
+|515|A seguinte conta de usuário estava em um estado bloqueado e a senha correta apenas foi fornecida. Essa conta pode ser comprometida.</br>Dados adicionais </br>ID da atividade: %1 </br>Usuário: %2 </br>Cliente IP: %3 |
+|516|A seguinte conta de usuário foi bloqueada devido a muitas tentativas de senha incorreta.</br>ID da atividade: %1  </br>Usuário: %2  </br>Cliente IP: %3  </br>Contagem de senha inválida: %4  </br>Última tentativa de senha incorreta: %5|
 
-> [!NOTE] 
-> Para obter informações sobre como delegar permissões para usar esses cmdlets, consulte [delegado AD FS Powershell Commandlet acesso a usuários não-administrador](delegate-ad-fs-pshell-access.md)
+## <a name="esl-frequently-asked-questions"></a>Perguntas frequentes sobre o ESL 
+ 
+**Será um farm de AD FS usando o bloqueio de Extranet inteligente no modo de imposição topar com bloqueios de usuário mal-intencionado?**  
 
-Esses cmdlets são:
+R: Se o bloqueio inteligente do ADFS é definido como 'modo de imposição' e em seguida, você nunca verá a conta do usuário legítimo bloqueada por força bruta ou de negação de serviço. A única maneira de um bloqueio de conta mal-intencionado pode impedir que um usuário de entrada é se o ator mal-intencionado tem a senha do usuário ou pode enviar solicitações de um endereço IP (familiar) bom conhecido para o usuário.  
+ 
+**O que acontece ESL está habilitado e o ator mal-intencionado tem uma senha de usuário?**  
 
-`Get-ADFSAccountActivity`
+R: O objetivo típico do cenário de ataque de força bruta é adivinhar uma senha e entrar com êxito.  Se um usuário de captura ou se uma senha é acertada, em seguida, o recurso ESL não bloqueará o acesso, pois a entrada atenderá aos critérios de "êxito" da senha correta mais novo IP. O IP de atores ruins, em seguida, será exibido como um "familiar". A melhor atenuação neste cenário é para limpar a atividade do usuário no AD FS e para exigir autenticação multifator para os usuários. É altamente recomendável instalar a proteção de senha do AAD que garante que adivinhar senhas não entrar em um sistema. 
+ 
+**Se meu usuário nunca tiver entrado com êxito de um IP e, em seguida, tentativas com senha incorreta algumas vezes eles poderão fazer logon depois de eles, por fim, digitem a senha corretamente?**  
 
-Leia a atividade da conta atual para uma conta de usuário.  O cmdlet sempre automaticamente se conecta ao mestre do farm usando o ponto de extremidade REST da atividade de conta, portanto, todos os dados sempre devem ser consistentes
+R: Se um usuário envia várias senhas incorretas (incorretamente digitando ou seja, legitimamente) e na tentativa a seguir obtém a senha correta, o usuário terá êxito imediatamente para entrar no aplicativo.  Isso limpará a contagem de senha incorreta e adicionar esse IP à lista FamiliarIPs.  No entanto, se eles ficarem acima do limite de logons com falha do local desconhecido, eles entrará no estado de bloqueio e será necessário esperar após a janela de observação e entrar com uma senha válida ou exigem a intervenção do administrador para redefinir a sua conta.  
+ 
+**ESL funciona na intranet muito?**    R: Se os clientes se conectarem diretamente aos servidores do AD FS e não por meio de servidores de Proxy de aplicativo Web, em seguida, o comportamento de ESL não se aplicará.  
+ 
+**Estou vendo endereços IP da Microsoft no campo de IP do cliente. ESL bloco EXO transmitidas por proxy ataques de força bruta?**   
 
-``` powershell
-Get-ADFSAccountActivity user@contoso.com
-```
-`
-Set-ADFSAccountActivity
-`
-
-Atualize a atividade de conta para uma conta de usuário.  Isso pode ser usado para adicionar novos locais familiares ou apagar o estado de qualquer conta
-
-``` powershell
-Set-ADFSAccountActivity user@upnsuffix.com -FamiliarLocation “1.2.3.4”
-```
-`Reset-ADFSAccountLockout`
-
-Redefine o contador de bloqueio para uma conta de usuário
-
-``` powershell
-Reset-ADFSAccountLockout user@upnsuffix.com -Familiar
-```
-
-## <a name="troubleshooting-esl"></a>Solução de problemas ESL
-A seguir pode ajudá-lo com o recurso de bloqueio inteligente de extranet de solução de problemas.
-
-### <a name="updating-database-permissions-for-esl"></a>Atualizar as permissões de banco de dados para ESL
-Se erros forem retornados do `Update-AdfsArtifactDatabasePermission` cmdlet, verifique o seguinte
-
-1.  A lista de nós do farm está correta.  Se um nó está na lista de farm de AD FS, mas não há mais a verificação de patch do Active Directory falhará.  Isso pode ser corrigido executando `remove-adfsnode <node name >`
-2.  Verifique se que o patch é implantado em todos os nós no farm
-3.  Verifique se as credenciais passadas para o cmdlet tem permissão para modificar o proprietário do esquema de banco de dados de artefato do ad fs.  
-
-### <a name="logging--auditing"></a>Registro em log / auditoria
-Quando uma solicitação de autenticação é rejeitada porque a conta excede o limite de bloqueio, o AD FS gravará um `ExtranetLockoutEvent` no fluxo de auditoria de segurança.  
-
-Evento de exemplo:
-
-Ocorreu um evento de bloqueio de extranet. Consulte o XML para detalhes da falha. 
-
-**ID da atividade: 172332e1-1301-4e56-0e00-0080000000db**
-
-```
-Additional Data 
-XML: <?xml version="1.0" encoding="utf-16"?>
-<AuditBase xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ExtranetLockoutAudit">
-  <AuditType>ExtranetLockout</AuditType>
-  <AuditResult>Failure</AuditResult>
-  <FailureType>ExtranetLockoutError</FailureType>
-  <ErrorCode>AccountRestrictedAudit</ErrorCode>
-  <ContextComponents>
-    <Component xsi:type="ResourceAuditComponent">
-      <RelyingParty>http://contoso.com/adfs/services/trust</RelyingParty>
-      <ClaimsProvider>N/A</ClaimsProvider>
-      <UserId>TQDFTD\Administrator</UserId>
-    </Component>
-    <Component xsi:type="RequestAuditComponent">
-      <Server>N/A</Server>
-      <AuthProtocol>WSFederation</AuthProtocol>
-      <NetworkLocation>Intranet</NetworkLocation>
-      <IpAddress>4.4.4.4</IpAddress>
-      <ForwardedIpAddress />
-      <ProxyIpAddress>1.2.3.4</ProxyIpAddress>
-      <NetworkIpAddress>1.2.3.4</NetworkIpAddress>
-      <ProxyServer>N/A</ProxyServer>
-      <UserAgentString>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36</UserAgentString>
-      <Endpoint>/adfs/ls</Endpoint>
-    </Component>
-    <Component xsi:type="LockoutConfigAuditComponent">
-      <CurrentBadPasswordCount>5</CurrentBadPasswordCount>
-      <ConfigBadPasswordCount>5</ConfigBadPasswordCount>
-      <LastBadAttempt>02/07/2018 21:47:44</LastBadAttempt>
-      <LockoutWindowConfig>00:30:00</LockoutWindowConfig>
-    </Component>
-  </ContextComponents>
-</AuditBase>
-
-```
-
-## <a name="banned-ip-addresses"></a>Endereços IP proibidos
-Além dos recursos de bloqueio inteligente de extranet, a atualização de junho de 2018 do AD FS permite configurar um conjunto de endereços IP globalmente no AD FS, para que as solicitações provenientes de endereços IP, ou que tenham esses endereços IP **x-forwarded-for**  ou **x-ms-forwarded-client-ip** cabeçalhos, serão bloqueados pelo AD FS.
-
-##### <a name="adding-banned-ips"></a>Adicionando IPs proibidos
-Para adicionar IPs proibidos à lista global, use o cmdlet do Powershell abaixo:
-
-``` powershell
-PS C:\ >Set-AdfsProperties -AddBannedIps "1.2.3.4", "::3", "1.2.3.4/16"
-```
-
-Formatos permitidos
-
-1.  IPv4
-2.  IPv6
-3.  Formato CIDR com IPv4 ou v6
-4.  Intervalo de IP com o IPv4 ou v6 (ou seja, 1.2.3.4-1.2.3.6)
-
-#### <a name="removing-banned-ips"></a>Removendo IPs proibidos
-Para remover banidas IPs da lista global, use o cmdlet do Powershell abaixo:
-
-``` powershell
-PS C:\ >Set-AdfsProperties -RemoveBannedIps "1.2.3.4"
-```
-
-#### <a name="read-banned-ips"></a>IPs proibidos de leitura
-Para ler o conjunto atual de endereços IP proibidos, use o cmdlet do Powershell abaixo:
-
-``` powershell
-PS C:\ >Get-AdfsProperties 
-```
-
-Exemplo de saída:
-
-```
-BannedIpList                   : {1.2.3.4, ::3,1.2.3.4/16}
-```
-
+R: ESL funcionará bem para impedir que o Exchange Online ou outros cenários de ataque de força bruta de autenticação herdados. Uma autenticação herdada tem uma "ID de atividade" de 00000000-0000-0000-0000-000000000000. Esses ataques, o ator mal-intencionado está aproveitando o Exchange Online (também conhecida como autenticação herdados) de autenticação básica para que o endereço IP do cliente seja exibido como o Microsoft. Os servidores Exchange online no proxy de nuvem a verificação de autenticação em nome do cliente do Outlook. Nesses cenários, o endereço IP do remetente mal-intencionado será o x-ms-forwarded--ip do cliente e servidor Microsoft Exchange Online que IP será o valor de x-ms-client-ip. Bloqueio de extranet do Smart verifica os IPs de rede, encaminhado IPs, o x-forwarded--IP do cliente e o valor de x-ms-client-ip. Se a solicitação for bem-sucedida, todos os IPs são adicionados à lista de ferramentas familiar. Se uma solicitação chega e qualquer um dos IPs apresentada não estão na lista familiar, em seguida, a solicitação será marcada como desconhecida. O usuário familiar será capaz de entrar com êxito enquanto as solicitações de locais desconhecidos serão bloqueadas.  
 
 
 ## <a name="additional-references"></a>Referências adicionais  

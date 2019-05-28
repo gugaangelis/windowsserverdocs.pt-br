@@ -5,21 +5,19 @@ description: ''
 author: billmath
 ms.author: billmath
 manager: daveba
-ms.date: 02/26/2019
+ms.date: 04/23/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: faa0590dc38921a56952aa54bf38243b6ff84d82
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fbb289c16d82da79aded49e3af4134ac7f6df325
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867707"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188701"
 ---
 # <a name="whats-new-in-active-directory-federation-services"></a>Novidades nos Serviços de Federação do Active Directory (AD FS)
 
-
->Aplica-se a: Windows Server 2019, Windows Server 2016
 
 ## <a name="whats-new-in-active-directory-federation-services-for-windows-server-2019"></a>O que há de novo no Active Directory Directory Federation Services para Windows Server 2019
 
@@ -27,7 +25,7 @@ ms.locfileid: "59867707"
 Este é um breve resumo de atualizações a serem protegidos logons disponíveis no AD FS 2019:
 - **Provedores de autenticação externos como primário** -os clientes podem agora usar 3ª produtos de autenticação de terceiros como o primeiro fator e não expõem as senhas como o primeiro fator. Nos casos em que um provedor de autenticação externa pode provar 2 fatores, ele poderá solicitar MFA. 
 - **Autenticação de senha como autenticação adicional** -os clientes têm uma opção de caixa de entrada com suporte completo para usar a senha somente para os fatores adicionais depois de uma senha menor opção é usada como o primeiro fator. Isso melhora a experiência do cliente do ADFS 2016 em que os clientes tinham para baixar um adaptador do github que tem suporte como está. 
-- **Framework de módulo de ameaça conectável** -os clientes agora podem criar seu próprios plug-in módulos bloquear determinados tipos de solicitações durante a fase de pré-autenticação. Isso torna mais fácil para os clientes usem inteligência da nuvem, como proteção de identidade para bloquear os logons para usuários arriscados ou transações arriscadas.
+- **Módulo de avaliação de risco conectável** -os clientes agora podem criar seu próprios plug-in módulos bloquear determinados tipos de solicitações durante a fase de pré-autenticação. Isso torna mais fácil para os clientes usem inteligência da nuvem, como proteção de identidade para bloquear os logons para usuários arriscados ou transações arriscadas.  Para obter mais informações, consulte [ criar Plug-ins com o modelo de avaliação de risco do AD FS 2019](../../ad-fs/development/ad-fs-risk-assessment-model.md) 
 - **Aprimoramentos de ESL** -aprimora o QFE ESL em 2016, adicionando os seguintes recursos
     - Permite que os clientes estejam no modo de auditoria ao que está sendo protegido pela funcionalidade de bloqueio de extranet 'clássico' disponível desde o ADFS 2012R2. Atualmente, os clientes de 2016 teria sem proteção no modo de auditoria. 
     - Permite que o limite de bloqueio independentes para locais familiares. Isso torna possível para várias instâncias de aplicativos em execução com uma conta de serviço comum sobrepor senhas com o mínimo de impacto. 
@@ -142,7 +140,7 @@ AD FS 2016 tem como base a autenticação multifator recursos (MFA) do AD FS no 
 * O MFA do Azure pode ser configurado para a intranet ou extranet ou como parte de qualquer política de controle de acesso.
 
 Para obter mais informações sobre o Azure MFA com AD FS
-*  [Configurar o AD FS 2016 e MFA do Azure](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa)  
+*  [Configurar o AD FS 2016 e o MFA do Azure](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa)  
 
 ### <a name="password-less-access-from-compliant-devices"></a>Acesso sem senha em dispositivos compatíveis
 AD FS 2016 se baseia nos recursos de registro de dispositivo anterior para habilitar o logon e controle de acesso com base em status de conformidade do dispositivo. Os usuários podem entrar no usando a credencial de dispositivo e a conformidade é avaliada novamente quando os atributos de dispositivo são alterados, para que você sempre pode garantir que políticas estão sendo aplicadas.  Isso permite que as políticas, como

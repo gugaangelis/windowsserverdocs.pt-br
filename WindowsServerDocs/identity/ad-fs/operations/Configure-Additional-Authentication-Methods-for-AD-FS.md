@@ -9,16 +9,14 @@ ms.date: 10/04/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 73de8908677b3f74651b10c29ef2abe62e484694
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 88c4d976b9808d254dc1681ce9eee3ca556824ab
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868407"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189795"
 ---
 # <a name="configure-additional-authentication-methods-for-ad-fs"></a>Configure métodos de autenticação adicionais para AD FS
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
 Para habilitar o Multi-Factor Authentication (MFA), você deve selecionar pelo menos um método de autenticação adicional. Por padrão, no Active Directory Federation Services (AD FS) no Windows Server 2012 R2, você pode selecionar a autenticação de certificado (em outras palavras, autenticação baseada em cartão inteligente) como um método de autenticação adicional.
 

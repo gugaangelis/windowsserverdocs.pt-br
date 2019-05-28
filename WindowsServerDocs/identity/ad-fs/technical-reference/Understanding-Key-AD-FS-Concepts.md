@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 27282c6b88b0457af3b4cf031fdadced7b40268c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ac666539170bb7aabf0b7f58a7ef003ebe87c2a8
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878127"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188387"
 ---
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
-
 # <a name="understanding-key-ad-fs-concepts"></a>Entendendo os conceitos do Key AD FS
 É recomendável que você saiba mais sobre os conceitos importantes para os serviços de Federação do Active Directory e se familiarizar com o conjunto de recursos.  
   
@@ -56,13 +54,13 @@ Com o AD FS, as organizações podem ignorar as solicitações de credenciais se
   
 -   [A função das declarações](The-Role-of-Claims.md)  
   
--   [A função de regras de declaração](The-Role-of-Claim-Rules.md)  
+-   [A função das regras de declaração](The-Role-of-Claim-Rules.md)  
   
 -   [A função do mecanismo de declarações](The-Role-of-the-Claims-Engine.md)  
   
--   [A função do Pipeline de declarações](The-Role-of-the-Claims-Pipeline.md)  
+-   [A função do pipeline de declarações](The-Role-of-the-Claims-Pipeline.md)  
   
--   [A função da linguagem de regra de declaração](The-Role-of-the-Claim-Rule-Language.md)  
+-   [A função da linguagem da regra de declaração](The-Role-of-the-Claim-Rule-Language.md)  
   
 -   [Determinar o tipo de modelo de regra de declaração para usar](Determine-the-Type-of-Claim-Rule-Template-to-Use.md)  
   

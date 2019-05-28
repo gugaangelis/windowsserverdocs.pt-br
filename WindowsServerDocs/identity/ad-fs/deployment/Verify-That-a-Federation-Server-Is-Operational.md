@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 2034b4c35061879a64004486395d0887c59087b2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b9498451e8f6d7701e9ed4b3ac7d61f19d2dcdb4
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877707"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191888"
 ---
 # <a name="verify-that-a-federation-server-is-operational"></a>Verificar se um servidor de federação está funcionando
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Você pode usar os procedimentos a seguir para verificar se um servidor de federação está funcionando; ou seja, se qualquer cliente na mesma rede pode acessar um novo servidor de federação.  
   
@@ -49,6 +48,6 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
 4.  No **ID do evento** coluna, procure a ID de evento 100. Se o servidor de Federação está configurado corretamente, você verá um novo evento — no log do aplicativo do Visualizador de eventos — com a ID de evento 100. Esse evento verifica que o servidor de Federação conseguiu se comunicar com êxito com o serviço de Federação.  
   
 ## <a name="additional-references"></a>Referências adicionais  
-[Lista de verificação: Configurando um servidor de Federação](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de verificação: Como configurar um servidor de federação](Checklist--Setting-Up-a-Federation-Server.md)  
   
 

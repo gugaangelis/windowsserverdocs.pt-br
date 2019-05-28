@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 730411ed7efbb9cf0db3d7e94a486cec4c363849
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bec3ebf1bd12b260dbbb245a6a905277ff0d749f
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860407"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188545"
 ---
- >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
-
 # <a name="the-role-of-attribute-stores"></a>A função dos repositórios de atributos
 Serviços de Federação do Active Directory usa o termo "repositórios de atributos" para fazer consultar diretórios ou bancos de dados que uma organização usa para armazenar suas contas de usuário e seus valores de atributo associados. Depois que ele é configurado em uma organização do provedor de identidade, o AD FS recupera esses valores de atributo do repositório e cria declarações com base nessas informações, para que um aplicativo Web ou serviço que é hospedado em uma organização de terceira parte confiável possa fazer apropriado decisões de autorização, sempre que um usuário federado \(um usuário cuja conta é armazenada na organização do provedor de identidade\) tenta acessar o aplicativo ou serviço.  
   

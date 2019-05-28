@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3372e1f051ba7f900753a4961d948ddabdef6f4d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 40f1f4952730fad0749a173fdc968714d043b1c1
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867617"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188511"
 ---
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
-
 # <a name="the-role-of-the-ad-fs-configuration-database"></a>A função do banco de dados de configuração do AD FS
 O banco de dados de configuração do AD FS armazena todos os dados de configuração que representa uma única instância dos serviços de Federação do Active Directory \(do AD FS\) \(, ou seja, o serviço de Federação\). O banco de dados de configuração do AD FS define o conjunto de parâmetros que um Serviço de Federação requer para identificar parceiros, certificados, repositórios de atributo, declarações e diversos dados sobre essas entidades associadas. Você pode armazenar esses dados de configuração em um banco de dados Microsoft SQL Server® ou o banco de dados interno do Windows \(WID\) recurso que está incluído no Windows Server® 2008, Windows Server 2008 R2 e Windows Server® 2012.  
   

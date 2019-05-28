@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 13ce514dc5f3f70217a26c898cde6fe24d4967c6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d2f597994aa74f453903e09f7d3eefd83f26faba
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847377"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192274"
 ---
 # <a name="configure-a-federation-server"></a>Configurar um servidor de federação
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
 Depois de instalar os serviços de Federação do Active Directory \(do AD FS\) serviço de função em seu computador, você estará pronto para configurar este computador para se tornar um servidor de Federação. Você pode fazer o seguinte:  
   
@@ -118,7 +116,7 @@ Você pode criar um novo farm de servidores de Federação usando uma conta gMSA
         Install-AdfsFarm -CertificateThumbprint <certificate_thumbprint> -FederationServiceName <federation_service_name> -ServiceAccountCredential $fscred  
         ```  
   
-        Para obter o valor de **< certificado\_impressão digital >**, execute `dir Cert:\LocalMachine\My`e, em seguida, selecione a impressão digital do seu certificado SSL. O valor de **< federação\_service\_nome >** é o nome do serviço de federação, por exemplo, fs.contoso.com.  
+        Para obter o valor de **< certificado\_impressão digital >** , execute `dir Cert:\LocalMachine\My`e, em seguida, selecione a impressão digital do seu certificado SSL. O valor de **< federação\_service\_nome >** é o nome do serviço de federação, por exemplo, fs.contoso.com.  
   
         > [!NOTE]  
         > Se isso não for a primeira vez que você executar esse comando, adicione o `OverwriteConfiguration` parâmetro.  
@@ -225,6 +223,6 @@ Você pode adicionar um servidor de Federação a um farm existente usando uma c
 
 [Guia de implantação do Windows Server 2012 R2 AD FS](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)  
  
-[Implantar um Farm de servidores de Federação](../../ad-fs/deployment/Deploying-a-Federation-Server-Farm.md)  
+[Como implantar um farm de servidores de federação](../../ad-fs/deployment/Deploying-a-Federation-Server-Farm.md)  
   
 

@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: af227d9e87ddb73f194dd46c8ce45fcdf12a34cf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2544001b871a1eda2c03005c384a99d5209e7282
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872547"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190549"
 ---
 # <a name="when-to-use-identity-delegation"></a>Quando usar a delegação de identidade
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
   
 ## <a name="what-is-identity-delegation"></a>O que é a delegação de identidade?  
 Delegação de identidade é um recurso dos serviços de Federação do Active Directory \(do AD FS\) que permite que o administrador\-especificado contas para representar usuários. A conta que representa o usuário é chamada de *Representante*. Essa capacidade de delegação é essencial para muitos aplicativos distribuídos para os quais há uma série de verificações de controle de acesso que devem ser feitas em sequência para cada aplicativo, banco de dados ou serviço que está na cadeia de autorização da solicitação de origem. Muitos real\-existem cenários do mundo em que um aplicativo Web "front-end" deve recuperar dados de um "back-end" mais seguro, como um serviço Web que está conectado a um banco de dados do Microsoft SQL Server.  
@@ -61,4 +59,4 @@ Você pode configurar a delegação de identidade adicionando regras de autoriza
 Os desenvolvedores têm várias opções que podem usar para programar devidamente frente Web\-encerrar o aplicativo ou serviço para redirecionar as solicitações de delegação para um computador do AD FS. Para obter mais informações sobre como personalizar um aplicativo Web para trabalhar com a delegação de identidade, consulte o [SDK Windows Identity Foundation](https://go.microsoft.com/fwlink/?LinkId=122266).  
   
 ## <a name="see-also"></a>Consulte também
-[Guia de Design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

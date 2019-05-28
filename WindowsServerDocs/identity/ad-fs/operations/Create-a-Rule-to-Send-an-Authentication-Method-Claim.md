@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 4065a61e042f52298da656899289e718e010f932
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: be3a16bac9c146637117aa7b9720cb4aa76177e2
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819087"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189393"
 ---
 # <a name="create-a-rule-to-send-an-authentication-method-claim"></a>Criar uma regra para enviar uma declaração do método de autenticação
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
 Você pode usar o **enviar associação de grupo como declarações** modelo de regra ou o **transformar uma declaração de entrada** modelo de regra para enviar uma declaração de método de autenticação. A terceira parte confiável pode usar uma declaração de método de autenticação para determinar o mecanismo de logon que o usuário usa para autenticar e obter as declarações do Active Directory Federation Services \(do AD FS\). Você também pode usar o recurso de garantia do mecanismo de autenticação dos serviços de Federação do Active Directory \(do AD FS\) no Windows Server 2012 R2 como entrada para gerar declarações de método de autenticação para situações em que a terceira parte confiável quer determinar o nível de acesso com base em logons de cartão inteligente. Por exemplo, um desenvolvedor pode atribuir diferentes níveis de acesso para usuários federados do aplicativo de terceira parte confiável. Os níveis de acesso baseiam-se em se os usuários fizerem logon com seus nome e senha de credenciais de usuário, em vez de seus cartões inteligentes.  
   
@@ -285,12 +284,12 @@ Dependendo dos requisitos da sua organização, use um dos procedimentos a segui
 ## <a name="additional-references"></a>Referências adicionais 
 [Configurar regras de declaração](Configure-Claim-Rules.md)  
  
-[Lista de verificação: Criando regras de declaração para a Relying Party Trust](https://technet.microsoft.com/library/ee913578.aspx)  
+[Lista de verificação: Como criar regras de declaração para um objeto de confiança de terceira parte confiável](https://technet.microsoft.com/library/ee913578.aspx)  
 
-[Lista de verificação: Criando regras de declaração para um provedor de declarações de confiança](https://technet.microsoft.com/library/ee913564.aspx)  
+[Lista de verificação: Como criar regras de declaração para uma relação de confiança do provedor de declarações](https://technet.microsoft.com/library/ee913564.aspx)  
   
 [Quando usar uma regra de declaração de autorização](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 
 [A função das declarações](../../ad-fs/technical-reference/The-Role-of-Claims.md)  
   
-[A função de regras de declaração](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md) 
+[A função das regras de declaração](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md) 

@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 259e2b266b64a3b34c237cfe209a3558124c8ef2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e7eedd907c07c2aaef1670c5db3a6892ca3e650d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871627"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189633"
 ---
 # <a name="configure-claim-rules"></a>Configurar regras de declaração
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
 Em um declarações\-modelo de identidade baseada no, a função dos serviços de Federação do Active Directory (AD FS) como os serviços de Federação é emitir um token que contém um conjunto de declarações. Regras de declarações controlam as decisões em relação a declarações de problemas do AD FS. Regras de declaração e todos os dados de configuração de servidor são armazenados no banco de dados de configuração do AD FS.  
   
@@ -34,11 +32,11 @@ Os tópicos a seguir o ajudarão a criar as regras que processará o AD FS:
   
 -   [Criar uma regra para enviar atributos LDAP como declarações](../../ad-fs/operations/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims.md)  
   
--   [Criar uma regra de associação do grupo de envio como uma declaração](../../ad-fs/operations/Create-a-Rule-to-Send-Group-Membership-as-a-Claim.md)  
+-   [Criar uma regra para enviar associação a um grupo como uma declaração](../../ad-fs/operations/Create-a-Rule-to-Send-Group-Membership-as-a-Claim.md)  
   
 -   [Criar uma regra para transformar uma declaração de entrada](../../ad-fs/operations/Create-a-Rule-to-Transform-an-Incoming-Claim.md)  
   
--   [Criar uma regra para enviar uma declaração de método de autenticação](../../ad-fs/operations/Create-a-Rule-to-Send-an-Authentication-Method-Claim.md)  
+-   [Criar uma regra para enviar uma declaração do método de autenticação](../../ad-fs/operations/Create-a-Rule-to-Send-an-Authentication-Method-Claim.md)  
   
 -   [Criar uma regra para enviar declarações usando uma regra personalizada](../../ad-fs/operations/Create-a-Rule-to-Send-Claims-Using-a-Custom-rule.md)  
 

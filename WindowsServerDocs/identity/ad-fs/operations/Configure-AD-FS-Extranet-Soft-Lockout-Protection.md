@@ -9,16 +9,14 @@ ms.date: 02/01/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 37b8c4b9b07e3111fce1bfc0a9aae10c8754bb3a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6612c05e664b50c5a50b10b712b91715cc85d230
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884627"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189885"
 ---
 # <a name="configure-ad-fs-extranet-lockout-protection"></a>Configurar a proteção de bloqueio de Extranet do AD FS
-
->Aplica-se a: Windows Server 2012 R2
 
 No AD FS no Windows Server 2012 R2, apresentamos um recurso de segurança chamado bloqueio de Extranet.  Com esse recurso, o AD FS "interromperá" autenticar a conta de usuário "mal-intencionado" de fora para um período de tempo.  Isso impede que as contas de usuário que está sendo bloqueado no Active Directory.  Além de proteger os usuários de um bloqueio de conta do AD, o bloqueio de extranet do AD FS também protege contra ataques de adivinhação de senha de força bruta
 
@@ -95,7 +93,7 @@ Há um problema conhecido em que a conta de usuário do AD não pode autenticar 
 
 ## <a name="additional-references"></a>Referências adicionais  
 - [Práticas recomendadas para proteger os serviços de Federação do Active Directory](../../ad-fs/deployment/best-practices-securing-ad-fs.md)
-- [Delegar o acesso do Commandlet do Powershell do AD FS para usuários não administradores](delegate-ad-fs-pshell-access.md)
+- [Delegar acesso do Powershell Commandlet do AD FS para usuários não administradores](delegate-ad-fs-pshell-access.md)
 - [Set-AdfsProperties](https://technet.microsoft.com/itpro/powershell/windows/adfs/set-adfsproperties)
 
 [Operações do AD FS](../../ad-fs/AD-FS-2016-Operations.md)

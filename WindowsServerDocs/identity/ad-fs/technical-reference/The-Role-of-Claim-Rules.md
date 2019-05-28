@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e47dbecdeee620d3a237ad8d8c41a550d3ef069c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 06f2f0d1fb48c6b9dea89762a30fdf77643d0e53
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860777"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188573"
 ---
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
-
 # <a name="the-role-of-claim-rules"></a>A função das regras de declaração
 A função geral do serviço de federação nos serviços de Federação do Active Directory \(do AD FS\) é emitir um token que contém um conjunto de declarações. A decisão sobre quais declarações do AD FS aceita e emite é regida pelas regras de declaração.  
   

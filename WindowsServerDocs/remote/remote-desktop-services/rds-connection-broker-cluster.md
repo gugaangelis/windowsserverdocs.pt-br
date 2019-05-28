@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 2f4fc63c6ff7c1254fda630a8f34188d8fedc8e5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: e20b4960faac0ef40ad68271fa907394344e9c47
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825037"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034421"
 ---
 # <a name="add-the-rd-connection-broker-server-to-the-deployment-and-configure-high-availability"></a>Adicionar o servidor do Agente de Conexão de Área de Trabalho Remota à implantação e configurar a alta disponibilidade
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016
 
 Você pode implantar um cluster do agente de Conexão de área de trabalho remota (agente de Conexão de área de trabalho remota) para melhorar a disponibilidade e escala de sua infraestrutura de serviços de área de trabalho remota. 
 
@@ -37,7 +37,7 @@ Configure um banco de dados para o agente de Conexão. Você pode usar [banco de
     1. No portal do Azure, clique em **procurar > grupos de recursos** e clique no grupo de recursos para a implantação.   
     2. Selecione o banco de dados do SQL que você acabou de criar (por exemplo, DB1 CB).   
     3. Clique em **Configurações > Propriedades > Mostrar cadeias de conexão de banco de dados**.   
-    4. Copie a cadeia de conexão para **ODBC (inclui Node. js)**, que deve ser assim:   
+    4. Copie a cadeia de conexão para **ODBC (inclui Node. js)** , que deve ser assim:   
       
         Driver={SQL Server Native Client 13.0};Server=tcp:cb-sqls1.database.windows.net,1433;Database=CB-DB1;Uid=sqladmin@contoso;Pwd={your_password_here};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;   
   
@@ -62,7 +62,7 @@ Configure um banco de dados para o agente de Conexão. Você pode usar [banco de
 
 ## <a name="step-2-configure-load-balancing-on-the-rd-connection-brokers"></a>Etapa 2: Configurar o balanceamento de carga em que os agentes de Conexão de área de trabalho remota 
 
-Se você estiver usando a infraestrutura do Azure, você pode criar uma [balanceador de carga do Azure](#create-a-load-balancer); se não, você pode definir até [round robin DNS](#configure-dns-round--robin). 
+Se você estiver usando a infraestrutura do Azure, você pode criar uma [balanceador de carga do Azure](#create-a-load-balancer); se não, você pode definir até [round robin DNS](#configure-dns-round-robin).
 
 ### <a name="create-a-load-balancer"></a>Criar um balanceador de carga  
 1. Criar um balanceador de carga do Azure   
@@ -88,9 +88,9 @@ Se você estiver usando a infraestrutura do Azure, você pode criar uma [balance
       1. Conecte-se à máquina virtual de servidor RDMS (por exemplo, Contoso-CB1). Confira a [preparar a VM de agente de Conexão de área de trabalho remota](Prepare-the-RD-Connection-Broker-VM-for-Remote-Desktop.md) artigo para obter etapas sobre como conectar-se à VM.   
       2. No Gerenciador do servidor, clique em **Ferramentas > DNS**.   
       3. No painel esquerdo, expanda **DNS**, clique na máquina DNS, clique em **zonas de pesquisa direta**e, em seguida, clique em seu nome de domínio (por exemplo, Contoso.com). (Pode levar alguns segundos para processar a consulta para o servidor DNS para obter as informações.)  
-      4. Clique em **ação > Novo Host (A ou AAAA)**.   
+      4. Clique em **ação > Novo Host (A ou AAAA)** .   
       9. Insira o nome (por exemplo, hacb) e o endereço IP especificado anteriormente (por exemplo, 10.0.0.32).   
-  
+
 ### <a name="configure-dns-round-robin"></a>Configurar DNS round robin  
   
 As etapas a seguir são uma alternativa para criar um balanceador de carga interno do Azure.   
@@ -99,7 +99,7 @@ As etapas a seguir são uma alternativa para criar um balanceador de carga inter
 2. Crie registros DNS:   
       1. No Gerenciador do servidor, clique em **Ferramentas > DNS**.   
       2. No painel esquerdo, expanda **DNS**, clique na máquina DNS, clique em **zonas de pesquisa direta**e, em seguida, clique em seu nome de domínio (por exemplo, Contoso.com). (Pode levar alguns segundos para processar a consulta para o servidor DNS para obter as informações.)  
-      3. Clique em **ação** e **novo Host (A ou AAAA)**.   
+      3. Clique em **ação** e **novo Host (A ou AAAA)** .   
       4. Insira o **nome DNS** para o agente de Conexão de área de trabalho de cluster (por exemplo, hacb) e, em seguida, insira o **endereço IP** do agente de Conexão de área de trabalho remota primeiro.   
       5. Repita as etapas 3 a 4 para cada agente de Conexão de área de trabalho adicionais, fornecendo a cada endereço IP exclusivo para cada registro adicional.
 
