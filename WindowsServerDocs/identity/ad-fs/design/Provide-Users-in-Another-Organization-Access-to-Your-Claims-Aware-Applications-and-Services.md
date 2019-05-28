@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: b4ec08182e2523b0fcb16088ec9c1d094a5923fe
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4a13332cd7cf6361824f05ead4568a45211cc70a
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836527"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191021"
 ---
 # <a name="provide-users-in-another-organization-access-to-your-claims-aware-applications-and-services"></a>Fornecer a usuários de outra organização acesso a seus aplicativos e serviços com reconhecimento de declarações
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Quando você for um administrador na organização do parceiro de recurso nos serviços de Federação do Active Directory \(do AD FS\) e você tem uma meta de implantação para fornecer acesso federado para usuários em outra organização \(o organização do parceiro de conta\) para uma de declarações\-uma Web ou aplicativo com reconhecimento\-com base em serviço que está localizado em sua organização \(a organização do parceiro de recurso\):  
   
@@ -49,4 +48,4 @@ A ilustração a seguir mostra cada um dos componentes necessários para essa me
 ![acesso a suas declarações](media/75358b16-2a6f-4e16-9cc4-b0e614480305.gif)  
   
 ## <a name="see-also"></a>Consulte também
-[Guia de Design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -9,16 +9,15 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 615faf4153949aa4ad989f017068d1809fca26b1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 5bc43717f37fb3b14ac7f384a061ee64c734222d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820867"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189662"
 ---
 # <a name="configuring-alternate-login-id"></a>Configurar a ID de logon alternativa
 
->Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
 
 ## <a name="what-is-alternate-login-id"></a>O que é a ID de logon alternativo?
 Na maioria dos cenários, os usuários usar seus UPNS (nomes da entidade de usuário) para fazer logon em suas contas. No entanto, em alguns ambientes devido a políticas corporativas ou de dependências do aplicativo de linha de negócios no local, os usuários podem estar usando alguma outra forma de entrar. 
@@ -127,18 +126,19 @@ Configurar seu diretório para que o SSO com id alternativa usando id alternativ
 
 Com a seguinte configuração adicional, a experiência do usuário foi aprimorada significativamente e você pode conseguir quase zero prompts de autenticação para usuários de id alternativa em sua organização.
 
-##### <a name="step-1-update-to-required-office-version"></a>Etapa 1. Atualizar para a versão do office necessária
-Versão 1712 do Office (compilar sem 8827.2148) e acima atualizou a lógica de autenticação para lidar com o cenário de id alternativa. Para aproveitar a nova lógica, os computadores cliente precisam ser atualizados para a versão 1712 do office (compilar sem 8827.2148) e superior.
+##### <a name="step-1-update-to-required-office-version"></a>Etapa 1. Atualização necessária a versão do Office
+Versão 1712 do Office (compilar sem 8827.2148) e acima atualizou a lógica de autenticação para lidar com o cenário de id alternativa. Para aproveitar a nova lógica, os computadores cliente precisam ser atualizados para a versão 1712 do Office (compilar sem 8827.2148) e superior.
 
-##### <a name="step-2-configure-registry-for-impacted-users-using-group-policy"></a>Etapa 2. Configurar o registro para os usuários afetados usando a diretiva de grupo
+##### <a name="step-2-update-to-required-windows-version"></a>Etapa 2. Atualização necessária a versão do Windows
+Windows versão 1709 e posterior atualizou a lógica de autenticação para lidar com o cenário de id alternativa. Para aproveitar a nova lógica, os computadores cliente precisam ser atualizados para Windows versão 1709 e superior.
+
+##### <a name="step-3-configure-registry-for-impacted-users-using-group-policy"></a>Etapa 3. Configurar o registro para os usuários afetados usando a diretiva de grupo
 Os aplicativos do office se baseiam nas informações enviadas por push pelo administrador do diretório para identificar o ambiente de id alternativa. As seguintes chaves do registro precisam ser configurados para ajudar a autenticar o usuário com a id alternativa sem mostrar avisos adicionais de aplicativos do office
 
 |RegKey para adicionar|Nome de dados de Regkey, tipo e valor|Windows 7/8|Windows 10|Descrição|
 |-----|-----|-----|-----|-----|
 |HKEY_CURRENT_USER\Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|Obrigatório|Obrigatório|O valor desse regkey é um nome de domínio personalizado verificado no locatário da organização. Por exemplo, a Contoso corp pode fornecer um valor de Contoso.com nesse regkey se Contoso.com é um dos nomes de domínio personalizado verificado no locatário Contoso.onmicrosoft.com.|
 HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\Identity|EnableAlternateIdSupport</br>REG_DWORD</br>1|Necessário para o Outlook 2016 ProPlus|Necessário para o Outlook 2016 ProPlus|O valor desse regkey pode ser de 1 / 0 para indicar ao aplicativo Outlook se deverá contar com a lógica de autenticação de id alternativa aprimorada.|
-HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Common\Identity|DisableADALatopWAMOverride</br>REG_DWORD</br>1|Não Aplicável|Obrigatório.|Isso garante que o Office não usa o WAM como alt-id não é suportado pelo WAM.|
-HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Common\Identity|DisableAADWAM</br>REG_DWORD</br>1|Não Aplicável|Obrigatório.|Isso garante que o Office não usa o WAM como alt-id não é suportado pelo WAM.|
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\contoso.com\sts|&#42;</br>REG_DWORD</br>1|Obrigatório|Obrigatório|Este regkey pode ser usado para definir o STS como uma zona confiável nas configurações de internet. Implantação do AD FS padrão recomenda adicionar o namespace do ADFS a zona da Intranet Local para o Internet Explorer|
 
 ## <a name="new-authentication-flow-after-additional-configuration"></a>Novo fluxo de autenticação após a configuração adicional

@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 498b399818fb8c9e463f9990fa13c87648c0a33d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2d15f680f28c54da75100a03f7b85e880442d9be
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822147"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191743"
 ---
-# <a name="ad-fs-design-guide-in-windows-server-2012-r2"></a>Guia de Design do AD FS no Windows Server 2012 R2
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
+# <a name="ad-fs-design-guide-in-windows-server"></a>Guia de Design do AD FS no Windows Server 
 
 Serviços de Federação do Active Directory \(do AD FS\) fornece logon único da Web e federação de identidade simplificada e segura\-na \(SSO\) recursos para os usuários finais que desejam acessar aplicativos dentro de um AD FS\-protegidos da empresa, em organizações de parceiros de federação, ou na nuvem.  
   
@@ -39,6 +37,6 @@ Este guia fornece recomendações para ajudá-lo a planejar uma nova implantaç�
   
   
 ## <a name="see-also"></a>Consulte também  
-[AD FS Design](../../ad-fs/AD-FS-Design.md)  
+[Design do AD FS](../../ad-fs/AD-FS-Design.md)  
   
 

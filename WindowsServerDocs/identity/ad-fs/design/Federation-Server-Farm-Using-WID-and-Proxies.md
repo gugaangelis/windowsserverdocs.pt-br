@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e372f066fc82b9857d438234b491732a177e24fa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d49ae34d83d4a0b912bd92dbb9de16e18cc5b7ff
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860387"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191341"
 ---
 # <a name="federation-server-farm-using-wid-and-proxies"></a>Farm de servidores de federação usando WID e proxies
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
 Essa topologia de implantação para os serviços de Federação do Active Directory \(do AD FS\) é idêntico ao farm de servidores de federação com o banco de dados interno do Windows \(WID\) topologia, mas ele adiciona os computadores de proxy para o rede de perímetro para oferecer suporte a usuários externos. Esses proxies redirecionar as solicitações de autenticação de cliente que vêm de fora da rede corporativa para o farm de servidores de Federação. Nas versões anteriores do AD FS, esses proxies foram chamados proxies de servidor de Federação.  
   
@@ -67,6 +65,6 @@ Para obter mais informações sobre como configurar seu ambiente de rede para us
   
 ## <a name="see-also"></a>Consulte também  
 [Planejar a topologia de implantação do AD FS](Plan-Your-AD-FS-Deployment-Topology.md)  
-[Guia de Design do AD FS no Windows Server 2012 R2](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
+[Guia de design do AD FS no Windows Server 2012 R2](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
 

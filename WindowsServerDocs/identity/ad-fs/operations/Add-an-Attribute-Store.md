@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 11baba5bfdb699f120a506feb8361db21d26cff1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 103ee707c88f4e88b231a833f739cf75b6503e18
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837857"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190103"
 ---
 # <a name="add-an-attribute-store"></a>Adicionar um repositório de atributos
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
 Contas de usuário e contas de computador que requerem acesso a um recurso que é protegido pelos serviços de Federação do Active Directory \(do AD FS\) são armazenados em um repositório de atributos, como o Active Directory Domain Services \(AD DS \). O mecanismo de emissão de declarações usa repositórios de atributos para coletar dados que é necessários emitir declarações. Dados de repositórios de atributos são então projetados como declarações.  
   

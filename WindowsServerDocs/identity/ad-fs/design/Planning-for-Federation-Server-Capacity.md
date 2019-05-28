@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 618dc9419be965dedaaf7dc946da436a5001f121
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 569bea74fe7750eaf2b410a552876e0862b1e24b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839627"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191088"
 ---
 # <a name="planning-for-federation-server-capacity"></a>Planning for Federation Server Capacity (Planejando a capacidade do servidor de federação)
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Planejamento de capacidade para servidores de Federação ajuda a estimar:  
   
@@ -56,7 +54,7 @@ Em um esforço para simplificar o processo para servidores de federação de pla
 > O número de servidores de federação que essa planilha recomendará baseia-se sobre as especificações de hardware e de rede que a equipe de produto do AD FS usada durante o teste. Portanto, o número de servidores de federação que a planilha será recomendável deve ser compreendido dentro desse contexto.  Para obter mais informações sobre as especificações usadas durante o teste, consulte o tópico intitulado [planejamento de capacidade do servidor do AD FS](Planning-for-AD-FS-Server-Capacity.md).  
   
 ### <a name="using-the-ad-fs-capacity-planning-sizing-spreadsheet"></a>Usando a planilha de dimensionamento do planejamento de capacidade do AD FS  
-Quando você usa essa planilha, você precisará selecionar um valor \(ambos **40%**, **60%**, ou **80%** \) que melhor representa o percentual de total de usuários que você espera que enviará solicitações de autenticação para seus servidores de Federação durante períodos de pico de uso.  
+Quando você usa essa planilha, você precisará selecionar um valor \(ambos **40%** , **60%** , ou **80%** \) que melhor representa o percentual de total de usuários que você espera que enviará solicitações de autenticação para seus servidores de Federação durante períodos de pico de uso.  
   
 Em seguida, você precisará selecionar um valor \(ambos **1 minuto**, **15 minutos**, ou **1 hora** \) que melhor representa o período de tempo esperado o período de uso de pico para a última. Por exemplo, você pode estimar a 40% como o valor para o número total de usuários que farão logon em um período de 15 minutos, ou que 60% dos usuários farão logon em um período de 1 hora. Juntos, esses valores definem o perfil de carga de pico pelo qual sua recomendação de dimensionamento será calculada.  
   
@@ -75,7 +73,7 @@ Você pode usar as etapas a seguir para cada instância de farm de servidor de f
   
 1.  Baixe e abra o [planilha de dimensionamento do planejamento do AD FS capacidade para o Windows Server 2012 R2](https://adfsdocs.blob.core.windows.net/adfs/ADFSCapacityPlanning.xlsx) ou o [planilha de dimensionamento do planejamento do AD FS capacidade para o Windows Server 2016](https://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx).
   
-2.  Na célula à direita do **durante o período de uso do sistema de pico, espero que essa porcentagem dos usuários se autentiquem** de célula, clique na célula e, em seguida, use a\-para baixo as setas para selecionar a utilização de sistema estimados nível, tanto **40%**, **60%** ou **80%** para a implantação.  
+2.  Na célula à direita do **durante o período de uso do sistema de pico, espero que essa porcentagem dos usuários se autentiquem** de célula, clique na célula e, em seguida, use a\-para baixo as setas para selecionar a utilização de sistema estimados nível, tanto **40%** , **60%** ou **80%** para a implantação.  
   
 3.  Na célula à direita do **dentro do período de tempo seguinte** de célula, clique na célula e, em seguida, use a operação de soltar\-para baixo as setas para selecionar **1 minuto**, **de15minutos**, ou **1 hora** para selecionar a duração da carga de pico.  
   
@@ -95,4 +93,4 @@ Você pode usar as etapas a seguir para cada instância de farm de servidor de f
 > O valor que será calculado automaticamente na célula à direita da célula intitulada **o número Total de servidores de Federação recomendado** na parte inferior da planilha contém uma fórmula que adicionará um buffer adicional de 20% para o soma total de todos os valores em cada uma das linhas individuais precede. A fórmula adicionada para o **Número Total de servidores de Federação recomendado** célula se baseia nesse buffer ao seu total número recomendado de servidores de Federação implantado para torná-lo muito improvável que nunca atingirá a carga total no farm seu ponto de saturação.  
   
 ## <a name="see-also"></a>Consulte também
-[Guia de Design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
