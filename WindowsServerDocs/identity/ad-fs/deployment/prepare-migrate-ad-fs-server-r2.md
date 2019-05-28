@@ -8,18 +8,18 @@ ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 4d0ff53b9118db1dd6ba5af94b3e627bf1597e0c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b5658676d08318d88ddee44a0589db5873b4660b
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889017"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034295"
 ---
 # <a name="prepare-to-migrate-the-ad-fs-20-federation-server-to-ad-fs-on-windows-server-2012-r2"></a>Preparar para migrar o servidor do AD FS 2.0 Federation para o AD FS no Windows Server 2012 R2
 
 Este documento descreve como migrar um AD FS 2.0 ou um farm de servidores de Federação do Windows Server 2012 para um farm do AD FS do Windows Server 2012 R2.  As etapas podem ser usadas com farms do AD FS que usam o WID ou SQL Server como banco de dados subjacente.  
   
--   [Contorno do processo de migração](prepare-migrate-ad-fs-server-r2.md#migrate-process-outline)  
+-   [Contorno do processo de migração](prepare-migrate-ad-fs-server-r2.md#migration-process-outline)  
   
 -   [Nova funcionalidade do AD FS no Windows Server 2012 R2](prepare-migrate-ad-fs-server-r2.md#new-ad-fs-functionality-in-windows-server-2012-r2)  
   
@@ -29,7 +29,8 @@ Este documento descreve como migrar um AD FS 2.0 ou um farm de servidores de Fed
   
 -   [Outras considerações e tarefas de migração](prepare-migrate-ad-fs-server-r2.md#other-migration-tasks-and-considerations)  
   
-##  <a name="migration-process-outline"></a>Estrutura de tópicos do processo de migração  
+##  <a name="migration-process-outline"></a>Estrutura de tópicos do processo de migração
+
  Para concluir a migração de seu farm de servidores de federação do AD FS para o Windows Server 2012 R2, é preciso concluir as seguintes tarefas:  
   
 1.  Exportação, registro e backup dos seguintes dados de configuração no farm do AD FS existente. Para obter instruções detalhadas sobre como concluir essas tarefas, consulte [Migração do Proxy do Servidor de Federação do AD FS](migrate-ad-fs-fed-server-r2.md).  

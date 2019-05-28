@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f5bd0ad05bdc2573a5ea0abbe165de2d3e7f5c8f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 00f29c70628f2869e9f3aeffd0d08032bce5aeda
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857697"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034187"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>Usar Volumes Compartilhados do Cluster em um cluster de failover
 
->Aplica-se a: Windows Server 2012 R2, Windows Server 2012, Windows Server 2016
+>Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012, Windows Server 2012 R2
 
 Os CSVs (Volumes Compartilhados Clusterizados) habilitam múltiplos nós em um cluster de failover a ter acesso de leitura e gravação simultaneamente ao LUN (número de unidade lógica), ou disco, provisionado como volume NTFS (New Technology File System). (No Windows Server 2012 R2, o disco pode ser provisionado como NTFS ou sistema de arquivos resiliente (ReFS).) Com o CSV, as funções clusterizadas podem executar rapidamente o failover de um nó para outro sem precisar alterar a propriedade da unidade ou desmontar e remontar um volume. O CSV também ajuda a simplificar o gerenciamento potencial de muitos LUNs em um cluster de failover.
 
@@ -55,7 +55,7 @@ Considere o seguinte ao configurar redes que deem suporte o CSV.
     >No Windows Server 2012 R2, há várias instâncias do serviço servidor por nó de cluster de failover. Há a instância padrão, que manuseia o tráfego de entrada dos clientes SMB que acessam compartilhamentos de arquivos regulares, e uma segunda instância do CSV, que manuseia somente o tráfego CSV entre nós. Além disso, se o serviço Servidor em um nó tiver sua integridade comprometida, a propriedade de CSV mudará automaticamente para outro nó.
 
     O SMB 3.0 inclui os recursos SMB Multichannel e SMB Direct, que habilitam a transmissão do tráfego CSV em várias redes no cluster e o aproveitamento de adaptadores de rede que deem suporte ao o RDMA (Acesso Remoto Direto à Memória). Por padrão, o SMB Multichannel é usado para o tráfego CSV. Para saber mais, confira [Visão geral do protocolo SMB](../storage/file-server/file-server-smb-overview.md).
-  - **Filtro de desempenho do adaptador virtual de cluster de failover da Microsoft**. Esta configuração aprimora a capacidade de os nós efetuarem o redirecionamento de E/S, quando for preciso se comunicar ao CSV. Por exemplo, quando uma falha de conectividade impedir que o nó se conecte diretamente ao disco do CSV. Para obter mais informações, consulte [sincronização de sobre e/s e redirecionamento de e/s na comunicação do CSV](#about-i/o-synchronization-and-i/o-redirection-in-csv-communication) mais adiante neste tópico.
+  - **Filtro de desempenho do adaptador virtual de cluster de failover da Microsoft**. Esta configuração aprimora a capacidade de os nós efetuarem o redirecionamento de E/S, quando for preciso se comunicar ao CSV. Por exemplo, quando uma falha de conectividade impedir que o nó se conecte diretamente ao disco do CSV. Para obter mais informações, consulte [sincronização de sobre e/s e redirecionamento de e/s na comunicação do CSV](#about-io-synchronization-and-io-redirection-in-csv-communication) mais adiante neste tópico.
 - **Priorização de rede de cluster**. Geralmente, é recomendável não alterar as preferências configuradas no cluster para as redes.
 - **Configuração da sub-rede de IP**. Nenhuma configuração de sub-rede específica é necessária para que os nós de uma rede usem o CSV. O CSV pode dar suporte a clusters com múltiplas sub-redes.
 - **QoS (Qualidade de Serviço) baseado em políticas**. Recomendamos configurar uma política de prioridade de QoS e uma política de largura de banda mínima para o tráfego de rede em cada nó ao usar o CSV. Para obter mais informações, consulte [qualidade de serviço (QoS)](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831679(v%3dws.11)>).
@@ -144,7 +144,7 @@ Ao planejar a configuração de armazenamento para um cluster de failover que us
 
   - Uma organização está implantando máquinas virtuais que darão suporte a uma VDI, uma carga de trabalho relativamente leve. O cluster usa um armazenamento de alto desempenho. O administrador do cluster, após consultar o fornecedor de armazenamento, decide colocar um número relativamente grande de máquinas virtuais por volume CSV.
   - Outra organização está implantando um grande número de máquinas virtuais que darão suporte a um aplicativo de banco de dados altamente usado, uma carga de trabalho mais pesada. O cluster usa um armazenamento de baixo desempenho. O administrador do cluster, após consultar o fornecedor de armazenamento, decide colocar um número relativamente pequeno de máquinas virtuais por volume CSV.
-- Ao planejar a configuração de armazenamento de uma máquina virtual específica, considere os requisitos de disco do serviço, aplicativo ou função aos quais a máquina virtual dará suporte. Compreender esses requisitos ajuda a evitar uma contenção de disco, resultando em baixo desempenho. A configuração de armazenamento da máquina virtual deve assemelhar-se à configuração de armazenamento usada para um servidor físico executando o mesmo serviço, aplicativo ou função. Para obter mais informações, consulte [organização dos LUNs, volumes e VHD arquivos](#arrangement-of-luns,-volumes,-and-vhd-files) anteriormente neste tópico.
+- Ao planejar a configuração de armazenamento de uma máquina virtual específica, considere os requisitos de disco do serviço, aplicativo ou função aos quais a máquina virtual dará suporte. Compreender esses requisitos ajuda a evitar uma contenção de disco, resultando em baixo desempenho. A configuração de armazenamento da máquina virtual deve assemelhar-se à configuração de armazenamento usada para um servidor físico executando o mesmo serviço, aplicativo ou função. Para obter mais informações, consulte [organização dos LUNs, volumes e VHD arquivos](#arrangement-of-luns-volumes-and-vhd-files) anteriormente neste tópico.
 
     Você também pode mitigar a contenção de disco ao ter um armazenamento com grande número de discos rígidos físicos independentes. Escolha o hardware de armazenamento adequadamente e consulte seu fornecedor para saber como otimizar o desempenho do armazenamento.
 - Dependendo das cargas de trabalho de cluster e da necessidade de operações de E/S das cargas, você pode considerar configurar somente um percentual das máquinas virtuais para acessar cada LUN, enquanto as outras não teriam conectividade e seriam dedicadas a operações de computação.

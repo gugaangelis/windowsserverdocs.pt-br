@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 831ca8266c3ec18ffb83227dcb2d39b3f953ad1a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b1586c8c63e46452075b4106c944670395734142
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838047"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034407"
 ---
 # <a name="smb-security-enhancements"></a>Melhorias de segurança do SMB
 
@@ -73,7 +73,7 @@ Por padrão, quando a criptografia SMB é habilitada para um compartilhamento de
 Set-SmbServerConfiguration –RejectUnencryptedAccess $false
 ```
 
-O recurso de negociação de dialeto seguro descrito na próxima seção impede que um ataque man-in-the-middle fazer o downgrade de uma conexão do SMB 3.0 para o SMB 2.0 (que usaria o acesso sem criptografia). No entanto, ele não impede que um downgrade para o SMB 1.0, que também poderia resultar no acesso sem criptografia. Para garantir que os clientes SMB 3.0 sempre usam criptografia SMB para acessar os compartilhamentos criptografados, você deve desabilitar o servidor SMB 1.0. (Para obter instruções, consulte a seção [desabilitando o SMB 1.0](#disabling-smb-1.0).) Se o **– RejectUnencryptedAccess** configuração é deixada em sua configuração padrão de **$true**, clientes somente com capacidade de criptografia do SMB 3.0 têm permissão para acessar os compartilhamentos de arquivos (clientes SMB 1.0 também serão rejeitados).
+O recurso de negociação de dialeto seguro descrito na próxima seção impede que um ataque man-in-the-middle fazer o downgrade de uma conexão do SMB 3.0 para o SMB 2.0 (que usaria o acesso sem criptografia). No entanto, ele não impede que um downgrade para o SMB 1.0, que também poderia resultar no acesso sem criptografia. Para garantir que os clientes SMB 3.0 sempre usam criptografia SMB para acessar os compartilhamentos criptografados, você deve desabilitar o servidor SMB 1.0. (Para obter instruções, consulte a seção [desabilitando o SMB 1.0](#disabling-smb-10).) Se o **– RejectUnencryptedAccess** configuração é deixada em sua configuração padrão de **$true**, clientes somente com capacidade de criptografia do SMB 3.0 têm permissão para acessar os compartilhamentos de arquivos (clientes SMB 1.0 também serão rejeitados).
 
 >[!NOTE]
 >* Criptografia SMB usa a criptografia AES (padrão avançado) – algoritmo CCM para criptografar e descriptografar os dados. AES-CCM também fornece validação de integridade de dados (assinatura) para compartilhamentos de arquivos criptografados, independentemente das configurações de assinatura SMB. Se você quiser habilitar a assinatura sem criptografia SMB, você pode continuar a fazer isso. Para obter mais informações, consulte [as Noções básicas da assinatura SMB](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/).
@@ -84,7 +84,7 @@ O recurso de negociação de dialeto seguro descrito na próxima seção impede 
 
 ## <a name="secure-dialect-negotiation"></a>Negociação de dialeto seguro
 
-O SMB 3.0 é capaz de detectar ataques man-in-the-middle que tentam fazer o downgrade do protocolo SMB 2.0 ou SMB 3.0 ou os recursos que o cliente e servidor negociar. Quando um ataque desse tipo é detectado pelo cliente ou servidor, a conexão é desconectada e ID de evento 1005 é registrada no log de eventos Microsoft-Windows-SmbServer/operacional. Proteger o dialeto negociação não pode detectar nem prevenir downgrades do SMB 2.0 ou 3.0 para o SMB 1.0. Por isso e para aproveitar a todos os recursos da criptografia SMB, é altamente recomendável que você desative o servidor SMB 1.0. Para obter mais informações, consulte [desabilitando o SMB 1.0](#disabling-smb-1.0).
+O SMB 3.0 é capaz de detectar ataques man-in-the-middle que tentam fazer o downgrade do protocolo SMB 2.0 ou SMB 3.0 ou os recursos que o cliente e servidor negociar. Quando um ataque desse tipo é detectado pelo cliente ou servidor, a conexão é desconectada e ID de evento 1005 é registrada no log de eventos Microsoft-Windows-SmbServer/operacional. Proteger o dialeto negociação não pode detectar nem prevenir downgrades do SMB 2.0 ou 3.0 para o SMB 1.0. Por isso e para aproveitar a todos os recursos da criptografia SMB, é altamente recomendável que você desative o servidor SMB 1.0. Para obter mais informações, consulte [desabilitando o SMB 1.0](#disabling-smb-10).
 
 O recurso de negociação de dialeto seguro que é descrito na próxima seção impede que um ataque man-in-the-middle fazer o downgrade de uma conexão do SMB 3 para SMB 2 (que usaria o acesso sem criptografia); No entanto, ele não impede a downgrades para protocolos SMB 1, que também poderia resultar no acesso sem criptografia. Para obter mais informações sobre problemas potenciais com implementações de não-Windows anteriormente do SMB, consulte a [da Base de dados de Conhecimento Microsoft](http://support.microsoft.com/kb/2686098).
 
