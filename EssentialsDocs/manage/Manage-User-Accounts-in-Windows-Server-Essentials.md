@@ -12,12 +12,12 @@ ms.assetid: 0d115697-532b-48c2-a659-9f889e235326
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 91175836e4453860b17d2655e6a5a831645de410
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 008e614ca7ae202d575d2c3e5976ed3d5544b6ea
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873447"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63720699"
 ---
 # <a name="manage-user-accounts-in-windows-server-essentials"></a>Gerenciar contas de usuário no Windows Server Essentials
 
@@ -420,7 +420,7 @@ A página Usuários do Painel do Windows Server Essentials centraliza informaç�
   
 3.  Para sincronizar a senha do DSRM em um controlador de domínio com a conta de s de administrador de rede atual, digite:  
   
-     **sincronização da conta de domínio** *< current_network_administrator_account >*, e pressione Enter.  
+     **sincronização da conta de domínio** *< current_network_administrator_account >* , e pressione Enter.  
   
  Como você alterará periodicamente a senha da conta de administrador de rede, para garantir que a senha do DSRM seja sempre igual à senha atual do administrador de rede, recomendamos que você crie uma tarefa agendada para sincronizar automaticamente a senha do DSRM com a senha do administrador de rede diariamente.  
   
@@ -499,7 +499,7 @@ A página Usuários do Painel do Windows Server Essentials centraliza informaç�
   
     2.  Na guia **Acesso em qualquer lugar**:  
   
-        1.  Para permitir que um usuário se conecte ao servidor usando VPN, marque a caixa de seleção **Permitir VPN (rede privada virtual)**.  
+        1.  Para permitir que um usuário se conecte ao servidor usando VPN, marque a caixa de seleção **Permitir VPN (rede privada virtual)** .  
   
         2.  Para permitir que um usuário se conecte ao servidor usando o Acesso Remoto via Web, marque a caixa de seleção **Permitir Acesso Remoto via Web e acesso a aplicativos de serviços Web**.  
   
@@ -523,7 +523,7 @@ A página Usuários do Painel do Windows Server Essentials centraliza informaç�
   
     3.  Na guia **Acesso em qualquer lugar**:  
   
-        1.  Para permitir que um usuário se conecte ao servidor usando VPN, marque a caixa de seleção **Permitir VPN (rede privada virtual)**.  
+        1.  Para permitir que um usuário se conecte ao servidor usando VPN, marque a caixa de seleção **Permitir VPN (rede privada virtual)** .  
   
         2.  Para permitir que um usuário se conecte ao servidor usando o Acesso Remoto via Web, marque a caixa de seleção **Permitir Acesso Remoto via Web e acesso a aplicativos de serviços Web**.  
   
@@ -630,6 +630,6 @@ A página Usuários do Painel do Windows Server Essentials centraliza informaç�
   
 -   [Conecte-se](../use/Get-Connected-in-Windows-Server-Essentials.md)  
   
--   [Usar o Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)  
+-   [Utilizar o Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)  
   
 -   [Gerenciar o Windows Server Essentials](Manage-Windows-Server-Essentials.md)
