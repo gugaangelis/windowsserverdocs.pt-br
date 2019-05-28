@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 8013764b88a1061cfcaa3a507466c111bfd59aad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7e61c734780baa1482670af3f24697c10345b292
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864807"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190592"
 ---
 # <a name="when-to-create-a-federation-server"></a>Quando criar um Servidor de Federação
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Quando você cria uma federação serverin serviços de Federação do Active Directory \(do AD FS\), fornece um meio pelo qual sua organização pode:  
   
@@ -40,7 +38,7 @@ Você pode criar servidores de federação na sua organização sempre que você
   
 -   [Design SSO da Web](Web-SSO-Design.md)  
   
--   [Design de SSO da Web federado](Federated-Web-SSO-Design.md)  
+-   [Design SSO da Web federado](Federated-Web-SSO-Design.md)  
   
 Se necessário, uma organização que implanta um design SSO da Web federado pode configurar um servidor de Federação único para que ele atue na função de parceiro de conta e na função de parceiro de recurso. Nesse caso, o servidor de Federação pode produzir Security Assertion Markup Language \(SAML\) tokens, com base em contas de usuário em sua própria organização ou redirecionar solicitações de token para a organização, com base em onde residem as contas de usuários .  
   
@@ -79,5 +77,5 @@ Para obter informações mais detalhadas sobre como cada uma dessas opções fun
 Para obter mais informações sobre como configurar todos os pré-requisitos necessários para implantar um servidor de federação, consulte [lista de verificação: Configurando um servidor de Federação](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md).  
   
 ## <a name="see-also"></a>Consulte também
-[Guia de Design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 

@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 7bc890c744de5cd86d4e8b0418e75512518f656c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: da91a3e8c34c86f7fd03ca875b3800fdb6001750
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880937"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192123"
 ---
 # <a name="import-a-server-authentication-certificate-to-the-default-web-site"></a>Importar um Certificado de Autenticação de Servidor para o site padrão
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Depois de obter um servidor de certificado de autenticação de uma autoridade de certificação \(autoridade de certificação\), você deve instalar manualmente esse certificado no Site da Web padrão para cada servidor de Federação ou proxy de servidor de Federação em um farm de servidores.  
   
@@ -48,13 +46,13 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
 7.  Digite uma senha para o certificado e clique em **OK**.  
   
 ## <a name="additional-references"></a>Referências adicionais  
-[Lista de verificação: Configurando um servidor de Federação](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de verificação: Como configurar um servidor de federação](Checklist--Setting-Up-a-Federation-Server.md)  
   
-[Lista de verificação: Como configurar um Proxy do servidor de Federação](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
+[Lista de verificação: Como configurar um proxy do servidor de federação](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
   
-[Requisitos de certificado para servidores de Federação](https://technet.microsoft.com/library/dd807040.aspx)  
+[Requisitos de certificado para servidores de federação](https://technet.microsoft.com/library/dd807040.aspx)  
   
-[Requisitos de certificado para Proxies de servidor de Federação](https://technet.microsoft.com/library/dd807054.aspx)  
+[Requisitos de certificado para proxies do servidor de federação](https://technet.microsoft.com/library/dd807054.aspx)  
    
   
 

@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: d3a7e05e4d16565b17b69de254e353df749bbc3a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 11cdd9c75ca588ebeac9387e6512fee439621bf8
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839227"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192160"
 ---
 # <a name="distribute-certificates-to-client-computers-by-using-group-policy"></a>Distribuir certificados para computadores cliente usando a diretiva de grupo
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 
 Você pode usar o procedimento a seguir para enviar por push apropriados Secure Sockets Layer \(SSL\) certificados \(ou o equivalente em certificados vinculados a uma raiz confiável\) para servidores de federação de conta servidores de federação de recursos e servidores Web para cada computador cliente na floresta do parceiro de conta usando a diretiva de grupo.  

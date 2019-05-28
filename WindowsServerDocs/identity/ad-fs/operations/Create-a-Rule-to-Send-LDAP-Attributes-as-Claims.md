@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e9762e4bc50a1c2b862999af5269a0da376ec9a1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 00ea4f9f868b9c82c2a0859be971db26394251a3
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887607"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189354"
 ---
 # <a name="create-a-rule-to-send-ldap-attributes-as-claims"></a>Criar uma regra para enviar atributos LDAP como declarações
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
 Usando enviar atributos LDAP como modelo de regra de declarações nos serviços de Federação do Active Directory \(do AD FS\), você pode criar uma regra que selecionará os atributos de um Lightweight Directory Access Protocol \(LDAP\)repositório de atributos, como o Active Directory, para enviar como declarações à terceira. Por exemplo, você pode usar esse modelo de regra para criar um enviar atributos LDAP como declarações de regra que extrairá os valores de atributo para usuários autenticados do **displayName** e **telephoneNumber** Active Directory Diretório de atributos e, em seguida, enviar esses valores como duas declarações de saída diferentes.  
   
@@ -108,12 +107,12 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
 ## <a name="additional-references"></a>Referências adicionais 
 [Configurar regras de declaração](Configure-Claim-Rules.md)  
  
-[Lista de verificação: Criando regras de declaração para a Relying Party Trust](https://technet.microsoft.com/library/ee913578.aspx)  
+[Lista de verificação: Como criar regras de declaração para um objeto de confiança de terceira parte confiável](https://technet.microsoft.com/library/ee913578.aspx)  
 
-[Lista de verificação: Criando regras de declaração para um provedor de declarações de confiança](https://technet.microsoft.com/library/ee913564.aspx)  
+[Lista de verificação: Como criar regras de declaração para uma relação de confiança do provedor de declarações](https://technet.microsoft.com/library/ee913564.aspx)  
   
 [Quando usar uma regra de declaração de autorização](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 
 [A função das declarações](../../ad-fs/technical-reference/The-Role-of-Claims.md)  
   
-[A função de regras de declaração](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md)  
+[A função das regras de declaração](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md)  
