@@ -1,6 +1,6 @@
 ---
-title: Personalizar declarações a serem emitidos no id_token ao usar o OAuth ou OpenID Connect com o AD FS 2016
-description: Uma visão geral técnica de conecpts de token de id personalizada no AD FS 2016
+title: Personalizar declarações a ser emitido no id_token ao usar o OAuth ou OpenID Connect com o AD FS 2016 ou posterior
+description: Uma visão geral técnica dos conceitos de token de id personalizada no AD FS 2016 ou posterior
 author: anandyadavmsft
 ms.author: billmath
 manager: mtillman
@@ -9,17 +9,17 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.reviewer: anandy
 ms.technology: identity-adfs
-ms.openlocfilehash: 8c8e14f22a4bca5b6d32e841814a58a4b4ddca01
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c4f9a2880aa91b7a600cdb40238bead7d565e6bc
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820637"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976972"
 ---
-# <a name="customize-claims-to-be-emitted-in-idtoken-when-using-openid-connect-or-oauth-with-ad-fs-2016"></a>Personalizar declarações a serem emitidos no id_token ao usar o OAuth ou OpenID Connect com o AD FS 2016
+# <a name="customize-claims-to-be-emitted-in-idtoken-when-using-openid-connect-or-oauth-with-ad-fs-2016-or-later"></a>Personalizar declarações a ser emitido no id_token ao usar o OAuth ou OpenID Connect com o AD FS 2016 ou posterior
 
 ## <a name="overview"></a>Visão geral
-O artigo [aqui](enabling-openId-connect-with-ad-fs.md) mostra como criar um aplicativo que usa o AD FS para o OpenID Connect do logon. No entanto, por padrão existem apenas um conjunto fixo de declarações disponíveis no id_token. AD FS 2016 tem a capacidade de personalizar o id_token em cenários de OpenID Connect.
+O artigo [aqui](native-client-with-ad-fs.md) mostra como criar um aplicativo que usa o AD FS para o OpenID Connect do logon. No entanto, por padrão existem apenas um conjunto fixo de declarações disponíveis no id_token. AD FS 2016 e versões posteriores têm a capacidade de personalizar o id_token em cenários de OpenID Connect.
 
 ## <a name="when-are-custom-id-token-used"></a>Quando são ID personalizada token usado?
 Em determinados cenários, é possível que o aplicativo cliente não tem um recurso que está tentando acessar. Portanto, ele não precisa realmente um token de acesso. Nesses casos, o aplicativo cliente precisa basicamente apenas um ID token, mas com algumas declarações adicionais para ajudá-lo a funcionalidade.
@@ -32,7 +32,7 @@ Em determinados cenários, é possível que o aplicativo cliente não tem um rec
 
 1.  response_mode é definido como form_post
 2.  Somente os clientes públicos podem obter declarações personalizadas na ID de token
-3.  Identificador de terceira parte confiável deve ser o mesmo que o identificador de cliente
+3.  Identificador da terceira parte (identificador de API da Web) deve ser o mesmo que o identificador de cliente
 
 ### <a name="scenario-2"></a>Cenário 2
 
@@ -40,86 +40,186 @@ Em determinados cenários, é possível que o aplicativo cliente não tem um rec
 
 Com o [KB4019472](https://support.microsoft.com/help/4019472/windows-10-update-kb4019472) instalado nos servidores do AD FS
 1.  response_mode é definido como form_post
-2.  Atribua allatclaims de escopo para o cliente – par da RP.
+2.  Clientes públicos e confidenciais podem obter declarações personalizadas na ID de token
+3.  Atribua allatclaims de escopo para o cliente – par da RP.
 Você pode atribuir o escopo usando o cmdlet Grant ADFSApplicationPermission conforme indicado no exemplo a seguir:
 
 ``` powershell
 Grant-AdfsApplicationPermission -ClientRoleIdentifier "https://my/privateclient" -ServerRoleIdentifier "https://rp/fedpassive" -ScopeNames "allatclaims","openid"
 ```
 
-## <a name="creating-an-oauth-application-to-handle-custom-claims-in-id-token"></a>Criando um aplicativo OAuth para lidar com declarações personalizadas no token de ID
-Use o artigo [aqui](Enabling-OpenId-Connect-with-AD-FS-2016.md) para criar um aplicativo do aplicativo que usa o AD FS para o OpenID Connect de logon. Em seguida, siga as etapas abaixo para configurar o aplicativo no AD FS para receber o token de ID com declarações personalizadas.
+## <a name="creating-and-configuring-an-oauth-application-to-handle-custom-claims-in-id-token"></a>Criando e configurando um aplicativo OAuth para lidar com declarações personalizadas no token de ID
+Siga as etapas abaixo para criar e configurar o aplicativo no AD FS para receber o token de ID com declarações personalizadas.
 
-### <a name="create-the-application-group-in-ad-fs-2016"></a>Crie o grupo de aplicativos no AD FS 2016
+### <a name="create-and-configure-an-application-group-in-ad-fs-2016-or-later"></a>Criar e configurar um grupo de aplicativos no AD FS 2016 ou posterior
 
-1.  Crie um grupo de aplicativos com base no novo modelo, mostrado abaixo, chamado CustomTokenClient.
+1. No gerenciamento do AD FS, clique duas vezes em grupos de aplicativos e selecione **adicionar grupo de aplicativos**.
 
-![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap1.png)
+2. No Assistente de grupo do aplicativo, para o nome, digite **ADFSSSO** e em cliente-servidor de aplicativos, selecione o **aplicativo nativo acessando um aplicativo web** modelo. Clique em **Avançar**.
 
-2. Este modelo cria um cliente confidencial. Observe o identificador e especifique o URI de retorno como a URL do SSL do projeto VS.
+  ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap1.png)
 
-![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap2.png)
+3. Cópia de **identificador de cliente** valor.  Ele será usado posteriormente como o valor para ida: ClientId no arquivo de Web. config do aplicativo.
 
-3.  Na próxima etapa, selecione **gerar um segredo compartilhado** para criar as credenciais de cliente e copiar as credenciais do cliente geradas.
+4. Insira o seguinte para **URI de redirecionamento:**  -  **https://localhost:44320/** .  Clique em **Adicionar**. Clique em **Avançar**.
 
-![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap3.png)
+  ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap2.png)
 
-4. Clique em **próxima** e continue para concluir o assistente.
+5. Sobre o **configurar a API da Web** tela, insira o seguinte para **identificador** -  **https://contoso.com/WebApp** .  Clique em **Adicionar**. Clique em **Avançar**.  Esse valor será usado posteriormente para **ida: ResourceID** no arquivo de Web. config do aplicativo.
 
-![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap4.png)
+  ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap3.png)
 
-### <a name="create-the-relying-party"></a>Criar a terceira parte confiável
-Para adicionar declarações personalizadas na ID de token, você precisa criar uma RP cujas declarações serão adicionadas no token de ID. Use o assistente Adicionar terceira parte confiável para criar uma nova parte confiável, como mostrado abaixo:
- 
-![Terceira parte confiável](media/Custom-Id-Tokens-in-AD-FS/rpsnap1.png)
+6. Sobre o **escolher política de controle de acesso** tela, selecione **permitir todos** e clique em **próxima**.
 
-Depois de terceira parte confiável for criada, clique com o botão direito na entrada de terceiros de terceira parte confiável e selecione **Editar política de emissão de declaração** para adicionar regras de emissão de declarações. Adicione as declarações personalizadas necessárias para o token de ID, conforme mostrado abaixo:
+  ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap4.png)
 
-![Terceira parte confiável](media/Custom-Id-Tokens-in-AD-FS/rpsnap2.png)
+7. No **configurar permissões do aplicativo** tela, verifique se **openid** e **allatclaims** estão selecionadas e clique em **Avançar**.
 
-### <a name="assign-allatclaims-scope-to-the-pair-of-client-and-relying-party"></a>Atribuir o escopo de "allatclaims" para o par de cliente e a terceira parte confiável
-Usando o PowerShell no servidor do AD FS, atribua o novo escopo allatclaims conforme indicado no exemplo a seguir (altere o clientID e o servidor:
+  ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap5.png)
 
-``` powershell
-Grant-AdfsApplicationPermission -ClientRoleIdentifier "5db77ce4-cedf-4319-85f7-cc230b7022e0" -ServerRoleIdentifier "https://customidrp1/" -ScopeNames "allatclaims","openid"
-```
+8. Sobre o **resumo** tela, clique em **próxima**.  
 
->[!NOTE]
->Alterar o ClientRoleIdentifier e ServerRoleIdentifier acordo com as configurações de aplicativo
+  ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap6.png)
 
-## <a name="test-the-custom-claims-in-id-token"></a>Testar as declarações personalizadas no token de ID
+9. Sobre o **Complete** tela, clique em **fechar**.
 
-Em seguida, usando o mesmo trecho de código que você sempre usou para acessar as declarações, você pode ver as declarações adicionais que se tornará parte do id_token.
-Por exemplo, em um aplicativo de exemplo .NET MVC, abra os arquivos do controlador e insira o código como o abaixo:
+10. No gerenciamento do AD FS, clique em grupos de aplicativos para obter a lista de todos os grupos de aplicativos. Clique duas vezes em **ADFSSSO** e selecione **propriedades**. Selecione **ADFSSSO - API Web** e clique em **editar...**
 
+    ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap7.png)
 
-``` code
-    [Authorize]
-    public ActionResult About()
-    {
+11. Na **ADFSSSO - propriedades da API Web** tela, selecione **regras de transformação de emissão** guia e clique em **Adicionar regra...**
 
-        ClaimsPrincipal cp = ClaimsPrincipal.Current;
+  ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap8.png)
 
-        string userName = cp.FindFirst(ClaimTypes.GivenName).Value;
-        ViewBag.Message = String.Format("Hello {0}!", userName);
-        return View();
+12. Na **Adicionar Assistente de regra de declaração de transformação** tela, selecione **enviar declarações usando uma regra personalizada** na lista suspensa e clique em **Avançar**
 
-    }
+  ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap9.png)
+
+13. Na **transformação de declaração assistente Adicionar regra** tela, insira **ForCustomIDToken** na **nome da regra de declaração** e a seguinte declaração de regra no **regra personalizada**. Clique em **concluir**
+
+  ```  
+  x:[]
+  => issue(claim=x);  
+  ```
+
+  ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap10.png)
 
 ```
 
 >[!NOTE]
->Esteja ciente de que o parâmetro de recurso é necessário na solicitação de Oauth2.
->
->Exemplo incorreto:
->
->**HTTPS&#58;//sts.contoso.com/adfs/oauth2/authorize?response_type=id_token & escopo = openid & redirect_uri = https&#58;//myportal/auth & nonce = b3ceb943fc756d927777 & client_id = 6db3ec2a-075a - 4c 72 9b22 ca7ab60cb4e7 & estado = 42c2c156aef47e8d0870 & resource = 6db3ec2a-075a - 4c 72 9b22 ca7ab60cb4e7**
->
->Bom exemplo:
->
->**HTTPS&#58;//sts.contoso.com/adfs/oauth2/authorize?response_type=id_token & escopo = openid & redirect_uri = https&#58;//myportal/auth & nonce = b3ceb943fc756d927777 & client_id = 6db3ec2a-075a - 4c 72 9b22 ca7ab60cb4e7 & estado = 42c2c156aef47e8d0870 & resource = https&#58;//customidrp1/ & response_mode = form_post**
->
->Se o parâmetro de recurso não estiver na solicitação, que você pode receber um erro ou um token sem quaisquer declarações personalizadas.
+>You can also use PowerShell to assign the allatclaims and openid scopes
+>``` powershell
+Grant-AdfsApplicationPermission -ClientRoleIdentifier "[Client ID from #3 above]" -ServerRoleIdentifier "[Identifier from #5 above]" -ScopeNames "allatclaims","openid"
+```
+
+### <a name="download-and-modify-the-sample-application-to-emit-custom-claims-in-idtoken"></a>Baixe e modifique o aplicativo de exemplo para emitir declarações personalizadas no id_token
+
+Esta seção discute como baixar o aplicativo Web de exemplo e modificá-lo no Visual Studio.   Vamos usar o exemplo do Azure AD que está [aqui](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect).  
+
+Para baixar o projeto de exemplo, use Git Bash e digite o seguinte:  
+
+```  
+git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect  
+```  
+
+![OpenID do AD FS](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_1.PNG)
+
+#### <a name="to-modify-the-app"></a>Para modificar o aplicativo
+
+1.  Abra o exemplo usando o Visual Studio.  
+
+2.  Recompile o aplicativo para que todos os NuGets ausentes são restaurados.  
+
+3.  Abra o arquivo Web. config.  Modifique os valores a seguir para que a aparência semelhante à seguinte:  
+
+    ```  
+    <add key="ida:ClientId" value="[Replace this Client Id from #3 above under section Create and configure an Application Group in AD FS 2016 or later]" />  
+    <add key="ida:ResourceID" value="[Replace this with the Web API Identifier from #5 above]"  />
+    <add key="ida:ADFSDiscoveryDoc" value="https://[Your ADFS hostname]/adfs/.well-known/openid-configuration" />  
+    <!--<add key="ida:Tenant" value="[Enter tenant name, e.g. contoso.onmicrosoft.com]" />      
+    <add key="ida:AADInstance" value="https://login.microsoftonline.com/{0}" />-->  
+    <add key="ida:PostLogoutRedirectUri" value="[Replace this with the Redirect URI from #4 above]" />  
+    ```  
+
+    ![OpenID do AD FS](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_2.PNG)  
+
+4.  Abra o arquivo Startup.Auth.cs e faça as seguintes alterações:  
+
+    -   Ajuste a lógica de inicialização de middleware OpenId Connect com as seguintes alterações:  
+
+        ```  
+        private static string clientId = ConfigurationManager.AppSettings["ida:ClientId"];  
+        //private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];  
+        //private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];  
+        private static string metadataAddress = ConfigurationManager.AppSettings["ida:ADFSDiscoveryDoc"];
+        private static string resourceId = ConfigurationManager.AppSettings["ida:ResourceID"];
+        private static string postLogoutRedirectUri = ConfigurationManager.AppSettings["ida:PostLogoutRedirectUri"];  
+        ```  
+
+    -   Comente o seguinte:  
+
+            ```  
+            //string Authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenant);  
+            ```
+
+          ![OpenID do AD FS](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_3.PNG)
+
+    -   Modificar ainda mais para baixo, as opções de middleware OpenId Connect da seguinte maneira:  
+
+        ```  
+        app.UseOpenIdConnectAuthentication(  
+            new OpenIdConnectAuthenticationOptions  
+            {  
+                ClientId = clientId,  
+                //Authority = authority,  
+                Resource = resourceId,
+                MetadataAddress = metadataAddress,  
+                PostLogoutRedirectUri = postLogoutRedirectUri,
+                RedirectUri = postLogoutRedirectUri
+        ```  
+
+        ![OpenID do AD FS](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_4.PNG)
+
+5.  Abra o arquivo HomeController.cs e faça as seguintes alterações:  
+
+    -   Adicione o seguinte:  
+
+            ```  
+            using System.Security.Claims;  
+            ```
+
+    -   Atualize o método About (), conforme mostrado abaixo:  
+
+        ```  
+        [Authorize]
+        public ActionResult About()
+        {
+            ClaimsPrincipal cp = ClaimsPrincipal.Current;
+            string userName = cp.FindFirst(ClaimTypes.WindowsAccountName).Value;
+            ViewBag.Message = String.Format("Hello {0}!", userName);
+            return View();
+        }
+        ```  
+
+        ![OpenID do AD FS](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_5.PNG)
+
+### <a name="test-the-custom-claims-in-id-token"></a>Testar as declarações personalizadas no token de ID
+
+Depois que foram feitas as alterações acima, pressione F5. Isso abrirá a página de exemplo. Clique em entrar.
+
+![OpenID do AD FS](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_6.PNG)
+
+Você será redirecionado para a página de entrada do AD FS. Vá em frente e entre.
+
+![OpenID do AD FS](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_7.PNG)
+
+Quando essa operação for bem-sucedida, você deve ver o que você agora está conectado.
+
+![OpenID do AD FS](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_8.PNG)
+
+Clique em sobre o link. Você verá Hello [Username] que é recuperado da declaração de nome de usuário no token de ID
+
+![OpenID do AD FS](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_9.PNG)
 
 ## <a name="next-steps"></a>Próximas etapas
 [Desenvolvimento do AD FS](../../ad-fs/AD-FS-Development.md)  

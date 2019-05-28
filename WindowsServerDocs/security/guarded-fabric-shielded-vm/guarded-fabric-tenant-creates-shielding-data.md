@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: 1245b88a42b80218b5557dc89f2b97b5d0059d44
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 25ed17d964f12c2f497ccde443dad9f8bc253b20
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852537"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034678"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>VMs blindadas para locatários – criando dados de blindagem para definir uma VM blindada
 
@@ -35,7 +35,7 @@ Para se preparar para criar um arquivo de dados de blindagem, execute as seguint
 
 Em seguida, você pode criar o arquivo de dados de blindagem:
 
-- [Crie um arquivo de dados de blindagem e adicione guardiões](#create-a-shielding-data-file-and-add-guardians)
+- [Crie um arquivo de dados de blindagem e adicione guardiões](#create-a-shielding-data-file-and-add-guardians-using-the-shielding-data-file-wizard)
 
 
 ## <a name="obtain-a-certificate-for-remote-desktop-connection"></a>Obter um certificado para a Conexão de área de trabalho remota
@@ -211,7 +211,7 @@ Este comando cria um par de certificados de assinatura e criptografia no reposit
 Você precisará de certificados de proprietário e suas chaves privadas correspondentes para unshield uma máquina virtual, portanto, verifique se esses certificados são submetidos a backup e protegidos contra roubo.
 Um invasor com acesso aos certificados de proprietário pode usá-los para iniciar sua máquina virtual blindada ou alterar sua configuração de segurança.
 
-Se você precisar importar informações de guardião de uma malha protegida em que você deseja executar sua máquina virtual (o seu datacenter primário, backup datacenters, etc.), execute o seguinte comando para cada [recuperado do arquivo de metadados do seu malhas protegidas ](#Select-trusted-fabrics).
+Se você precisar importar informações de guardião de uma malha protegida em que você deseja executar sua máquina virtual (o seu datacenter primário, backup datacenters, etc.), execute o seguinte comando para cada [recuperado do arquivo de metadados do seu malhas protegidas ](#select-trusted-fabrics).
 
 ```powershell
 Import-HgsGuardian -Name 'EAST-US Datacenter' -Path '.\EastUSGuardian.xml'
@@ -220,7 +220,7 @@ Import-HgsGuardian -Name 'EAST-US Datacenter' -Path '.\EastUSGuardian.xml'
 > [!TIP]
 > Se você tiver usado certificados autoassinados ou certificados registrados com HGS está expirado, você talvez precise usar o `-AllowUntrustedRoot` e/ou `-AllowExpired` sinalizadores com o comando de importação HgsGuardian para ignorar as verificações de segurança.
 
-Você também precisará [obter um catálogo de assinatura de volume](#Get-the-volume-signature-catalog-file) para cada disco de modelo que você deseja usar com esse arquivo de dados de blindagem e uma [arquivo de resposta de dados de blindagem](#Create-an-answer-file) para permitir que o sistema operacional para concluir sua especialização tarefas automaticamente.
+Você também precisará [obter um catálogo de assinatura de volume](#get-the-volume-signature-catalog-file) para cada disco de modelo que você deseja usar com esse arquivo de dados de blindagem e uma [arquivo de resposta de dados de blindagem](#create-an-answer-file) para permitir que o sistema operacional para concluir sua especialização tarefas automaticamente.
 Por fim, decida se deseja que sua VM seja totalmente blindado ou apenas habilitadas para vTPM.
 Use `-Policy Shielded` de uma VM blindada totalmente ou `-Policy EncryptionSupported` para um vTPM habilitado VM que permite conexões de console básico e o PowerShell Direct.
 

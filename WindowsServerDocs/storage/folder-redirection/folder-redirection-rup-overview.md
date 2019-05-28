@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e3cf32cd718b906f16fc09901284d8520177df8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ad44ba4bbe0b31f423a4ae4593e349571d838de2
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824277"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475919"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>Visão geral de Redirecionamento de pasta, Arquivos offline e Perfis de usuário móvel
 
->Aplica-se a: Windows 10, Windows 8, Windows 8.1, Windows Server 2012, Windows Server 2012 R2, Windows Server 2016
+>Aplica-se a: Windows 10, Windows 8, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012, Windows Server 2012 R2
 
 Este tópico discute o redirecionamento de pasta, arquivos Offline (cache do cliente ou CSC) e tecnologias de perfis de usuário móvel (também conhecido como RUP), incluindo o que há de novo e onde encontrar informações adicionais.
 
@@ -76,7 +76,7 @@ Para obter mais informações, consulte [Enable the Always Offline Mode to Provi
 Com a sincronização com reconhecimento de custo, o Windows desabilita a sincronização em segundo plano quando o usuário está usando uma conexão de rede limitada, como uma rede móvel 4G, e o assinante está perto do limite de largura de banda ou usando roaming na rede de outro provedor.
 
 >[!NOTE]
->Conexões de rede limitadas costumam apresentar latências de rede de ida e volta mais lentas do que o valor de latência de 35 milissegundos padrão para a transição para o modo Offline (Conexão lenta) no Windows 8, Windows Server 2012 e Windows Server 2016. Portanto, essas conexões geralmente fazem a transição para o modo Offline (Conexão Lenta) automaticamente.
+>Conexões de rede limitadas costumam apresentar latências de rede de ida e volta mais lentas do que o valor de latência de 35 milissegundos padrão para a transição para o modo Offline (Conexão lenta) no Windows 8, Windows Server 2019, Windows Server 2016 e Windows Server 2012. Portanto, essas conexões geralmente fazem a transição para o modo Offline (Conexão Lenta) automaticamente.
 
 ### <a name="what-value-does-cost-aware-synchronization-add"></a>O valor agregado sincronização com reconhecimento de custo?
 
@@ -123,7 +123,7 @@ O Redirecionamento de Pastas, os Arquivos Offline e os Perfis de Usuário Móvel
 Para designar computadores primários, seu ambiente deve satisfazer aos seguintes requisitos:
 
 - O esquema de serviços de domínio Active Directory (AD DS) deve ser atualizado para incluir o esquema do Windows Server 2012 e condições (instalação de um Windows Server 2012 ou posterior controlador de domínio automaticamente atualiza o esquema). Para obter mais informações sobre como atualizar o esquema do AD DS, consulte [atualizar controladores de domínio para o Windows Server 2016](../../identity/ad-ds/deploy/upgrade-domain-controllers.md).
-- Computadores cliente devem executar o Windows 10, Windows 8.1, Windows 8, Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012 e ser ingressado no domínio do Active Directory que você está gerenciando.
+- Computadores cliente devem executar o Windows 10, Windows 8.1, Windows 8, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012 e ser ingressado no domínio do Active Directory que você está gerenciando.
 
 ## <a name="more-information"></a>Mais informações
 

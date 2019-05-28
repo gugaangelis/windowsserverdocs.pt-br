@@ -11,18 +11,34 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 02/22/2019
+ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2746127c15753ac8f4f6067eef068fe97b425829
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 15218af2f084e9c998d89250aace1d763d03b42a
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844547"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976335"
 ---
 # <a name="whats-new-for-the-remote-desktop-web-client"></a>O que há de novo para o cliente da web de área de trabalho remota?
 
 Podemos atualizar regularmente o [cliente da web de área de trabalho remota](remote-desktop-web-client.md), adição de novos recursos e corrigir problemas. Confira as últimas atualizações abaixo.
+
+   >[!NOTE]
+    >Alteramos o sistema de controle de versão para o cliente web. Começando com a versão 1.0.18.0, todas as versões de lançamento do cliente da web irá conter números (no formato de "W.x.y. z"). Números de versão para o cliente da web de área de trabalho remota sempre terminará com um 0 (por exemplo, W.X.Y.0). Cada versão do cliente de área de trabalho Virtual do Windows web alterará o último dígito até a próxima versão da área de trabalho remoto da web cliente (por exemplo, 1.0.18.1).
+
+## <a name="updates-for-version-10180"></a>Atualizações para a versão 1.0.18.0
+*Data de publicação: 5/14/2019*
+
+- Configuração do método de inicialização de recurso adicionada na guia Configurações, permitindo que os usuários abrir recursos no navegador ou baixar um arquivo. rdp para tratar com outro cliente. Essa configuração pode ser configurada pelo seu administrador. Fornece detalhes sobre as configurações de administrador para esse recurso pode ser encontrado na [documentação de instalação do cliente web](remote-desktop-web-client-admin.md).
+- Cor fixa mais vivas de renderização de problemas, permitindo que as cores em sua sessão remota.
+- Mensagens de erro revisado relacionadas a erros de feed de recurso remoto. 
+- Adicionado suporte para mais atalhos do office, como Colar especial (Ctrl + Alt + V).
+- Atalho de teclado adicionados para os usuários o invoquem a chave do Windows na sessão remota (Alt+F3)
+- Mensagem de erro atualizado para os usuários que tentarem autenticar usando uma senha expirada.
+- Feed atualizado da interface do usuário na página de todos os recursos.
+- Reconecte resolvidos diálogos sobrepostos que ocorreram durante a sessão.
+- Corrigido o dimensionamento do ícone de recurso remoto na barra de tarefas do recurso. 
 
 ## <a name="updates-for-version-1011"></a>Atualizações para a versão 1.0.11
 *Data de publicação: 2/22/2019*

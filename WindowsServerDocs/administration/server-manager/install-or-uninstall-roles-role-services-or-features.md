@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32d356b3ae70b7b15f23a40247e73b4b8f61c3db
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 18ba3517f6533a85fe7cb24f24a7f4ffdfad6991
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822367"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222979"
 ---
 # <a name="install-or-uninstall-roles-role-services-or-features"></a>Instalar ou desinstalar funções, serviços de função ou recursos
 
@@ -35,19 +35,19 @@ Para obter mais informações sobre o que são funções, serviços de função 
   
 Este tópico contém as seguintes seções.  
   
--   [Instalar funções, serviços de função e recursos usando o Assistente de recursos e adicionar funções](#BKMK_installarfw)  
+-   [Instalar funções, serviços de função e recursos usando o Assistente de recursos e adicionar funções](#install-roles-role-services-and-features-by-using-the-add-roles-and-features-wizard)  
   
--   [Instalar funções, serviços de função e recursos usando os cmdlets do Windows PowerShell](#BKMK_installwps)  
+-   [Instalar funções, serviços de função e recursos usando os cmdlets do Windows PowerShell](#install-roles-role-services-and-features-by-using-windows-powershell-cmdlets)  
   
--   [Remover funções, serviços de função e recursos usando o remover Assistente de funções e recursos](#BKMK_removerrfw)  
+-   [remover funções, serviços de função e recursos usando o remover Assistente de funções e recursos](#remove-roles-role-services-and-features-by-using-the-remove-roles-and-features-wizard)  
   
--   [Remover funções, serviços de função e recursos usando os cmdlets do Windows PowerShell](#BKMK_removewps)  
+-   [Remover funções, serviços de função e recursos usando os cmdlets do Windows PowerShell](#remove-roles-role-services-and-features-by-using-windows-powershell-cmdlets)  
   
--   [Instalar funções e recursos em vários servidores executando um script do Windows PowerShell](#BKMK_batch)  
+-   [Instalar funções e recursos em vários servidores executando um script do Windows PowerShell](#install-roles-and-features-on-multiple-servers-by-running-a-windows-powershell-script)  
   
--   [Instalar o .NET Framework 3.5 e outros recursos sob demanda](#BKMK_FoD)  
+-   [Instalar o .NET Framework 3.5 e outros recursos sob demanda](#install-net-framework-35-and-other-features-on-demand)  
   
-## <a name="BKMK_installarfw"></a>Instalar funções, serviços de função e recursos usando o Assistente de recursos e adicionar funções  
+## <a name="install-roles-role-services-and-features-by-using-the-add-roles-and-features-wizard"></a>Instalar funções, serviços de função e recursos usando o Assistente de recursos e adicionar funções  
 Em uma única sessão no adicionar funções e recursos do assistente, você pode instalar funções, serviços de função e recursos no servidor local, um servidor remoto que foi adicionado ao Gerenciador do servidor ou um VHD offline. Para obter mais informações sobre como adicionar um servidor ao Gerenciador do servidor para gerenciar, consulte [adicionar servidores ao Gerenciador do servidor](add-servers-to-server-manager.md).  
   
 > [!NOTE]  
@@ -72,7 +72,7 @@ Em uma única sessão no adicionar funções e recursos do assistente, você pod
     > [!NOTE]  
     > Para instalar funções e recursos em VHDs offline, os VHDs de destino devem atender aos requisitos a seguir.  
     >   
-    > -   VHDs devem estar executando a versão do Windows Server que corresponde à versão do Gerenciador do servidor estiver executando. Consulte a observação no início da [instalar funções, serviços de função e recursos usando o Assistente de recursos e adicionar funções](#BKMK_installarfw).  
+    > -   VHDs devem estar executando a versão do Windows Server que corresponde à versão do Gerenciador do servidor estiver executando. Consulte a observação no início da [instalar funções, serviços de função e recursos usando o Assistente de recursos e adicionar funções](#install-roles-role-services-and-features-by-using-the-add-roles-and-features-wizard).  
     > -   Os VHDs não podem ter mais de um volume ou partição do sistema.  
     > -   A pasta compartilhada de rede na qual o arquivo VHD é armazenado deve conceder os seguintes direitos de acesso à conta do computador (ou sistema local) do servidor selecionado para montagem do VHD. O acesso à conta somente do usuário não é suficiente. O compartilhamento pode fornecer permissões de **Leitura** e **Gravação** ao grupo **Todos** para conceder acesso ao VHD. Porém, por motivos de segurança, isso não é recomendado.  
     >   
@@ -95,7 +95,7 @@ Em uma única sessão no adicionar funções e recursos do assistente, você pod
   
 8.  Depois de clicar em **instale**, o **progresso da instalação** página exibe o progresso da instalação, resultados e mensagens, como avisos, falhas ou etapas de configuração de pós-instalação que são necessário para as funções ou recursos instalados. No Windows Server 2012 e versões posteriores do Windows Server, você pode fechar o Assistente de recursos e adicionar funções enquanto a instalação ainda está em andamento e exibir resultados da instalação ou outras mensagens na **notificações** área na parte superior do console do Gerenciador do servidor. Clique o **notificações** ícone de sinalizador para ver mais detalhes sobre as instalações ou outras tarefas que você está executando no Gerenciador do servidor.  
   
-## <a name="BKMK_installwps"></a>Instalar funções, serviços de função e recursos usando cmdlets do Windows PowerShell  
+## <a name="install-roles-role-services-and-features-by-using-windows-powershell-cmdlets"></a>Instalar funções, serviços de função e recursos usando os cmdlets do Windows PowerShell  
 Os cmdlets de implantação do Gerenciador do servidor para a função do Windows PowerShell da mesma forma que a interface gráfica do usuário com base em Adicionar funções e Assistente de recursos e remover funções e recursos do assistente, com uma diferença importante. No Windows PowerShell, ao contrário a adicionar Assistente de funções e recursos, ferramentas de gerenciamento e snap-ins para uma função não são incluídos por padrão. Para incluir ferramentas de gerenciamento como parte da instalação de uma função, adicione o parâmetro `IncludeManagementTools` ao cmdlet. Se você estiver instalando funções e recursos em um servidor que está executando a opção de instalação Server Core do Windows Server 2012 ou versões posteriores, você pode adicionar ferramentas de gerenciamento da função a uma instalação, mas o snap-ins e ferramentas de gerenciamento baseado em GUI não podem ser instalados em servidores que estão executando a opção de instalação Server Core do Windows Server. Somente linha de comando e ferramentas de gerenciamento do Windows PowerShell podem ser instaladas na opção de instalação Server Core.  
   
 #### <a name="to-install-roles-and-features-by-using-the-install-windowsfeature-cmdlet"></a>Para instalar funções e recursos usando o cmdlet Install-WindowsFeature  
@@ -109,7 +109,7 @@ Os cmdlets de implantação do Gerenciador do servidor para a função do Window
   
     -   Sobre o Windows **inicie** tela, clique com botão direito no bloco para o Windows PowerShell e, em seguida, na barra de aplicativos, clique em **executar como administrador**.  
   
-2.  Digite **Get-WindowsFeature** e pressione **Enter** para exibir uma lista de funções e recursos disponíveis e instalados no servidor local. Se o computador local não é um servidor, ou se desejar obter informações sobre um servidor remoto, execute **Get-WindowsFeature - computerName <***computer_name***>**, em que  *nome_do_computador* representa o nome de um computador remoto que esteja executando o Windows Server 2016. Os resultados do cmdlet contêm os nomes de comando das funções e recursos que você adiciona ao cmdlet na etapa 4.  
+2.  Digite **Get-WindowsFeature** e pressione **Enter** para exibir uma lista de funções e recursos disponíveis e instalados no servidor local. Se o computador local não é um servidor, ou se desejar obter informações sobre um servidor remoto, execute **Get-WindowsFeature - computerName <***computer_name***>** , em que  *nome_do_computador* representa o nome de um computador remoto que esteja executando o Windows Server 2016. Os resultados do cmdlet contêm os nomes de comando das funções e recursos que você adiciona ao cmdlet na etapa 4.  
   
     > [!NOTE]  
     > No Windows PowerShell 3.0 e versões posteriores do Windows PowerShell, não é necessário para importar o módulo de cmdlet do Gerenciador do servidor para a sessão do Windows PowerShell antes de executar os cmdlets que fazem parte do módulo. Um módulo é importado automaticamente durante a primeira execução de um cmdlet que faça parte do módulo. Além disso, nem cmdlets do Windows PowerShell, nem os nomes de recurso usados com os cmdlets diferenciam maiusculas de minúsculas.  
@@ -129,7 +129,7 @@ Os cmdlets de implantação do Gerenciador do servidor para a função do Window
     >   
     > Para instalar funções e recursos em VHDs offline, os VHDs de destino devem atender aos requisitos a seguir.  
     >   
-    > -   VHDs devem estar executando a versão do Windows Server que corresponde à versão do Gerenciador do servidor estiver executando. Consulte a observação no início da [instalar funções, serviços de função e recursos usando o Assistente de recursos e adicionar funções](#BKMK_installarfw).  
+    > -   VHDs devem estar executando a versão do Windows Server que corresponde à versão do Gerenciador do servidor estiver executando. Consulte a observação no início da [instalar funções, serviços de função e recursos usando o Assistente de recursos e adicionar funções](#install-roles-role-services-and-features-by-using-the-add-roles-and-features-wizard).  
     > -   Os VHDs não podem ter mais de um volume ou partição do sistema.  
     > -   A pasta compartilhada de rede na qual o arquivo VHD é armazenado deve conceder os seguintes direitos de acesso à conta do computador (ou sistema local) do servidor selecionado para montagem do VHD. O acesso à conta somente do usuário não é suficiente. O compartilhamento pode fornecer permissões de **Leitura** e **Gravação** ao grupo **Todos** para conceder acesso ao VHD. Porém, por motivos de segurança, isso não é recomendado.  
     >   
@@ -148,7 +148,7 @@ Os cmdlets de implantação do Gerenciador do servidor para a função do Window
   
 5.  Quando a instalação for concluída, verifique a instalação abrindo a **todos os servidores** página no Gerenciador do servidor, selecionando um servidor no qual você instalou as funções e recursos e exibindo o **funções e recursos** lado a lado na página para o servidor selecionado. Você também pode executar o `Get-WindowsFeature` cmdlet do direcionado ao servidor selecionado (Get-WindowsFeature - computerName <*computer_name*>) para exibir uma lista de funções e recursos que estão instalados no servidor.  
   
-## <a name="BKMK_removerrfw"></a>remover funções, serviços de função e recursos usando o remover Assistente de funções e recursos  
+## <a name="remove-roles-role-services-and-features-by-using-the-remove-roles-and-features-wizard"></a>remover funções, serviços de função e recursos usando o remover Assistente de funções e recursos  
 Você deve fazer logon em um servidor como administrador para desinstalar funções, serviços de função e recursos. Caso esteja conectado ao computador remoto com uma conta sem direitos de administrador no servidor de destino de desinstalação, clique com o botão direito no servidor de destino, no bloco **Servidores** , e clique em **Gerenciar como** para fornecer uma conta com direitos de administrador. O servidor no qual você deseja montar o VHD offline deve ser adicionado ao Gerenciador do Servidor, e você deve ter direitos de Administrador nesse servidor.  
   
 #### <a name="to-remove-roles-and-features-by-using-the-remove-roles-and-features-wizard"></a>Para remover funções e recursos usando o remover Assistente de funções e recursos  
@@ -186,7 +186,7 @@ Você deve fazer logon em um servidor como administrador para desinstalar funç�
   
 7.  Depois de clicar em **remova**, o **progresso da remoção** página exibe o progresso da remoção, resultados e mensagens, como avisos, falhas ou etapas de configuração pós-remoção que são necessárias, como reiniciando o servidor de destino. No Windows Server 2012 e versões posteriores do Windows Server, você pode fechar a remover funções e recursos do assistente enquanto a remoção ainda está em andamento e exibir os resultados da remoção ou outras mensagens na **notificações** área na parte superior das Console do Gerenciador do servidor. Clique o **notificações** sinalizador para ver mais detalhes sobre remoções ou outras tarefas que você está executando no Gerenciador do servidor.  
   
-## <a name="BKMK_removewps"></a>remover funções, serviços de função e recursos usando cmdlets do Windows PowerShell  
+## <a name="remove-roles-role-services-and-features-by-using-windows-powershell-cmdlets"></a>Remover funções, serviços de função e recursos usando os cmdlets do Windows PowerShell  
 Os cmdlets de implantação do Gerenciador do servidor para a função do Windows PowerShell da mesma forma que o baseado em GUI remover funções e recursos do assistente, com uma diferença importante. No Windows PowerShell, ao contrário de na remover funções e Assistente de recursos, ferramentas de gerenciamento e snap-ins para uma função não são removidos por padrão. Para remover ferramentas de gerenciamento como parte da remoção de uma função, adicione o parâmetro `IncludeManagementTools` ao cmdlet. Se você estiver desinstalando funções e recursos de um servidor que está executando a opção de instalação Server Core do Windows Server 2012 ou uma versão posterior do Windows Server, esse parâmetro removerá a linha de comando e ferramentas de gerenciamento do Windows PowerShell para especificado funções e recursos.  
   
 #### <a name="to-remove-roles-and-features-by-using-the-uninstall-windowsfeature-cmdlet"></a>Para remover funções e recursos usando o cmdlet Uninstall-WindowsFeature  
@@ -200,7 +200,7 @@ Os cmdlets de implantação do Gerenciador do servidor para a função do Window
   
     -   Sobre o Windows **inicie** tela, clique com botão direito no bloco do Windows PowerShell e, em seguida, na barra de aplicativos, clique em **executar como administrador**.  
   
-2.  Digite **Get-WindowsFeature** e pressione **Enter** para exibir uma lista de funções e recursos disponíveis e instalados no servidor local. Se o computador local não é um servidor, ou se desejar obter informações sobre um servidor remoto, execute **Get-WindowsFeature - computerName <***computer_name***>**, em que  *nome_do_computador* representa o nome de um computador remoto que esteja executando o Windows Server 2016. Os resultados do cmdlet contêm os nomes de comando das funções e recursos que você adiciona ao cmdlet na etapa 4.  
+2.  Digite **Get-WindowsFeature** e pressione **Enter** para exibir uma lista de funções e recursos disponíveis e instalados no servidor local. Se o computador local não é um servidor, ou se desejar obter informações sobre um servidor remoto, execute **Get-WindowsFeature - computerName <***computer_name***>** , em que  *nome_do_computador* representa o nome de um computador remoto que esteja executando o Windows Server 2016. Os resultados do cmdlet contêm os nomes de comando das funções e recursos que você adiciona ao cmdlet na etapa 4.  
   
     > [!NOTE]  
     > No Windows PowerShell 3.0 e versões posteriores do Windows PowerShell, não é necessário para importar o módulo de cmdlet do Gerenciador do servidor para a sessão do Windows PowerShell antes de executar os cmdlets que fazem parte do módulo. Um módulo é importado automaticamente durante a primeira execução de um cmdlet que faça parte do módulo. Além disso, nem cmdlets do Windows PowerShell, nem os nomes de recurso usados com os cmdlets diferenciam maiusculas de minúsculas.  
@@ -235,7 +235,7 @@ Os cmdlets de implantação do Gerenciador do servidor para a função do Window
   
 5.  Concluída a remoção, verifique se que as funções e recursos foram removidos abrindo a **todos os servidores** página no Gerenciador do servidor, selecionando o servidor do qual você removeu as funções e recursos e exibindo o **funções e Recursos** lado a lado na página para o servidor selecionado. Você também pode executar o `Get-WindowsFeature` cmdlet do direcionado ao servidor selecionado (Get-WindowsFeature - computerName <*computer_name*>) para exibir uma lista de funções e recursos que estão instalados no servidor.  
   
-## <a name="BKMK_batch"></a>Instalar funções e recursos em vários servidores executando um script do Windows PowerShell  
+## <a name="install-roles-and-features-on-multiple-servers-by-running-a-windows-powershell-script"></a>Instalar funções e recursos em vários servidores executando um script do Windows PowerShell  
 Embora você não pode usar o Assistente de recursos e adicionar funções para instalar funções, serviços de função e recursos em mais de um servidor de destino em uma única sessão de assistente, você pode usar um script do Windows PowerShell para instalar funções, serviços de função e recursos em múltiplos de destino servidores que você está gerenciando usando o Gerenciador do servidor. O script utilizado para realizar implantação em lote, como esse processo é chamado, aponta para um arquivo de configuração XML que você pode criar facilmente usando o Assistente de recursos e adicionar funções e, em seguida, clicando em **exportar definições de configuração** depois aprimorando o Assistente para o **confirmar seleções de instalação** página do Assistente de recursos e adicionar funções.  
   
 > [!IMPORTANT]  
@@ -294,18 +294,18 @@ Embora você não pode usar o Assistente de recursos e adicionar funções para 
   
 5.  Quando a instalação for concluída, verifique a instalação abrindo a **todos os servidores** página no Gerenciador do servidor, selecionando um servidor no qual você instalou as funções e recursos e exibindo o **funções e recursos** lado a lado na página para o servidor selecionado. Você também pode executar o `Get-WindowsFeature` cmdlet do direcionado a um servidor específico (`Get-WindowsFeature -computerName` <*nome_do_computador*>) para exibir uma lista de funções e recursos que estão instalados no servidor.  
   
-## <a name="BKMK_FoD"></a>Instalar o .NET Framework 3.5 e outros recursos sob demanda  
+## <a name="install-net-framework-35-and-other-features-on-demand"></a>Instalar o .NET Framework 3.5 e outros recursos sob demanda  
 começando com o Windows Server 2012 e Windows 8, os arquivos de recursos do .NET Framework 3.5 (que inclui o .NET Framework 2.0 e o .NET Framework 3.0) não estão disponíveis no computador local por padrão. Os arquivos foram removidos. Os arquivos dos recursos que foram removidos na configuração Recursos sob Demanda, juntamente com os arquivos de recursos do .NET Framework 3.5, estão disponíveis através do Windows Update. Por padrão, se os arquivos de recursos não estão disponíveis no servidor de destino que esteja executando o Windows Server 2012 ou versões posteriores, o processo de instalação procura os arquivos ausentes conectando-se ao Windows Update. Você pode substituir o comportamento padrão definindo uma configuração de diretiva de grupo ou especificando um caminho de origem alternativo durante a instalação, se você estiver instalando por meio de adicionar funções e recursos do Assistente de GUI ou uma linha de comando.  
   
 É possível instalar o .NET Framework 3.5 de uma das seguintes maneiras.  
   
--   Consulte [Para instalar o .NET Framework 3.5 executando o cmdlet Install-WindowsFeature](#BKMK_dotnetcmdlet) para adicionar o parâmetro `Source` e especifique a fonte da qual obter os arquivos de recursos do .NET Framework 3.5. Se você não adicionar o parâmetro `Source`, o processo de instalação primeiro determinará se foi especificado pelas configurações de Política de Grupo um caminho para os arquivos de recursos e, se nenhum caminho for encontrado, usará o Windows Update para procurar os arquivos de recursos ausentes.  
+-   Consulte [Para instalar o .NET Framework 3.5 executando o cmdlet Install-WindowsFeature](#to-install-net-framework-35-by-running-the-install-windowsfeature-cmdlet) para adicionar o parâmetro `Source` e especifique a fonte da qual obter os arquivos de recursos do .NET Framework 3.5. Se você não adicionar o parâmetro `Source`, o processo de instalação primeiro determinará se foi especificado pelas configurações de Política de Grupo um caminho para os arquivos de recursos e, se nenhum caminho for encontrado, usará o Windows Update para procurar os arquivos de recursos ausentes.  
   
--   Use [para instalar o .NET Framework 3.5 usando o Assistente de recursos e adicionar funções](#BKMK_arfw) para especificar um local de arquivo de origem alternativo na **Confirmar Opções de instalação** página do Assistente de recursos e adicionar funções.  
+-   Use [para instalar o .NET Framework 3.5 usando o Assistente de recursos e adicionar funções](#to-install-net-framework-35-by-using-the-add-roles-and-features-wizard) para especificar um local de arquivo de origem alternativo na **Confirmar Opções de instalação** página do Assistente de recursos e adicionar funções.  
   
--   Consulte [Para instalar o .NET Framework 3.5 usando o DISM](#BKMK_dism) para obter os arquivos do Windows Update por padrão ou especificando um caminho de origem para a mídia de instalação.  
+-   Consulte [Para instalar o .NET Framework 3.5 usando o DISM](#to-install-net-framework-35-by-using-dism) para obter os arquivos do Windows Update por padrão ou especificando um caminho de origem para a mídia de instalação.  
   
-[Configurar fontes alternativas para os arquivos de recursos na Política de Grupo](#BKMK_configgp) para o .NET Framework 3.5 ou outros recursos, se os arquivos de recursos não forem encontrados no computador local.  
+[Configurar fontes alternativas para os arquivos de recursos na Política de Grupo](#configure-alternate-sources-for-feature-files-in-group-policy) para o .NET Framework 3.5 ou outros recursos, se os arquivos de recursos não forem encontrados no computador local.  
   
 > [!IMPORTANT]  
 > Quando você instala arquivos de recursos de uma fonte remota, o caminho de origem ou o compartilhamento de arquivos deve conceder as permissões **Leitura** ao grupo **Todos** (não é recomendável por questões de segurança) ou à conta de computador (sistema local) do servidor de destino. Permitir acesso à conta de usuário apenas não é suficiente.  
@@ -314,7 +314,7 @@ começando com o Windows Server 2012 e Windows 8, os arquivos de recursos do .NE
 >   
 > Você pode especificar um arquivo WIM como uma fonte de arquivo de recurso alternativo quando você estiver instalando funções, serviços de função e recursos em um servidor físico em funcionamento. O caminho de origem para um arquivo WIM deve ser no seguinte formato, com **WIM** como um prefixo e o índice no qual os arquivos de recursos estão localizados como um sufixo: **WIM:e:\sources\install.wim:4**. No entanto, você não pode usar um arquivo WIM diretamente como fonte para a instalação de funções, serviços de função e recursos em um VHD offline; Você deve montar o VHD offline e apontar para seu caminho de montagem para arquivos de origem, ou você deve apontar para uma pasta que contém uma cópia do conteúdo do arquivo WIM.  
   
-### <a name="BKMK_dotnetcmdlet"></a>Para instalar o .NET Framework 3.5 executando o cmdlet Install-WindowsFeature  
+### <a name="to-install-net-framework-35-by-running-the-install-windowsfeature-cmdlet"></a>Para instalar o .NET Framework 3.5 executando o cmdlet Install-WindowsFeature  
   
 1.  Execute uma das ações a seguir para abrir uma sessão do Windows PowerShell com direitos de usuário elevados.  
   
@@ -335,7 +335,7 @@ começando com o Windows Server 2012 e Windows 8, os arquivos de recursos do .NE
   
     Para que o comando utilize o Windows Update como a fonte para os arquivos de recursos ausentes, ou se uma fonte padrão já foi configurada usando a Política de Grupo, você não precisa adicionar o parâmetro `Source` , exceto para especificar uma fonte diferente.  
   
-### <a name="BKMK_arfw"></a>Para instalar o .NET Framework 3.5 usando o Assistente de recursos e adicionar funções  
+### <a name="to-install-net-framework-35-by-using-the-add-roles-and-features-wizard"></a>Para instalar o .NET Framework 3.5 usando o Assistente de recursos e adicionar funções  
   
 1.  Sobre o **Manage** menu no Gerenciador do servidor, clique em **adicionar funções e recursos**.  
   
@@ -357,7 +357,7 @@ começando com o Windows Server 2012 e Windows 8, os arquivos de recursos do .NE
   
 6.  Clique em **OK**e em **Instalar**.  
   
-### <a name="BKMK_dism"></a>Para instalar o .NET Framework 3.5 usando o DISM  
+### <a name="to-install-net-framework-35-by-using-dism"></a>Para instalar o .NET Framework 3.5 usando o DISM  
   
 1.  Execute uma das ações a seguir para abrir uma sessão do Windows PowerShell com direitos de usuário elevados.  
   
@@ -387,7 +387,7 @@ começando com o Windows Server 2012 e Windows 8, os arquivos de recursos do .NE
     > [!NOTE]  
     > O comando DISM diferencia maiúsculas de minúsculas.  
   
-### <a name="BKMK_configgp"></a>Configurar fontes alternativas para arquivos de recursos na diretiva de grupo  
+### <a name="configure-alternate-sources-for-feature-files-in-group-policy"></a>Configurar fontes alternativas para os arquivos de recursos na Política de Grupo  
 A configuração de Política de Grupo descrita nesta seção especifica os locais de origem autorizados para os arquivos do .NET Framework 3.5 e outros arquivos de recursos que foram removidos como parte da configuração Recursos sob Demanda. A configuração de política **especificar configurações para instalação de componentes opcionais e reparo de componentes** está localizado na **computador configuração do Computador\Modelos Administrativos\Sistema** pasta na política de grupo Editor de diretiva de Grupo Local ou de Console de gerenciamento.  
   
 > [!NOTE]  
@@ -403,13 +403,13 @@ A configuração de Política de Grupo descrita nesta seção especifica os loca
   
 3.  Na caixa de texto **Caminho de arquivo de origem alternativo** da área **Opções**, especifique o caminho totalmente qualificado para uma pasta compartilhada ou um arquivo WIM. Para especificar um arquivo WIM como um local de arquivo de origem alternativo, adicione o prefixo **WIM:** ao caminho e acrescente o índice da imagem para usar no arquivo WIM como um sufixo. Veja a seguir exemplos de valores que você pode especificar.  
   
-    -   caminho para uma pasta compartilhada: **\\\\***nome_do_servidor***\share\\* * * nome_da_pasta*  
+    -   caminho para uma pasta compartilhada: * *\\\\***nome_do_servidor***\share\\* * * nome_da_pasta*  
   
     -   caminho para um arquivo WIM, em que **3** representa o índice da imagem na qual os arquivos de recursos se encontram:  **WIM:\\\\***server_name***\share\install.wim:3**  
   
 4.  Se você não quiser que os computadores controlados por essa configuração de política para pesquisar arquivos de recurso ausente no Windows Update, selecione **nunca tentar baixar carga do Windows Update**.  
   
-5.  Se os computadores controlados por essa configuração de política normalmente recebem atualizações pelo WSUS, mas você prefere usar o Windows Update em vez do WSUS para localizar os arquivos de recursos ausentes, selecione **Contatar diretamente o Windows Update para baixar conteúdo de reparo em vez do WSUS (Windows Server Update Services)**.  
+5.  Se os computadores controlados por essa configuração de política normalmente recebem atualizações pelo WSUS, mas você prefere usar o Windows Update em vez do WSUS para localizar os arquivos de recursos ausentes, selecione **Contatar diretamente o Windows Update para baixar conteúdo de reparo em vez do WSUS (Windows Server Update Services)** .  
   
 6.  Clique em **OK** quando terminar de alterar essa configuração de política e feche o Editor de Política de Grupo.  
   

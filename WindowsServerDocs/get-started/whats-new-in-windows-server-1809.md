@@ -4,21 +4,22 @@ description: Novos recursos no Windows Server, versão 1809
 ms.prod: windows-server-threshold
 ms.technology: server-general
 ms.topic: article
-author: coreyp-at-msft
-ms.author: coreyp
+author: jasongerend
+ms.author: jgerend
+ms.date: 05/21/2019
 ms.localizationpriority: high
-ms.openlocfilehash: 32868a4a5044360bf596e26d497138bccf6692bc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d268550112236daecbe3dc1a9d9da21bc8ec67fb
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834407"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976639"
 ---
 # <a name="whats-new-in-windows-server-version-1809"></a>Novidades no Windows Server versão 1809
 
 >Aplica-se a: Windows Server (canal semestral)
 
-Este tópico descreve alguns dos novos recursos no Windows Server, versão 1809. Para conhecer as novidades no Windows Server 2019, consulte [o que há de novo no Windows Server 2019](../get-started-19/whats-new-19.md).
+Para saber mais sobre os recursos mais recentes do Windows, consulte [o que há de novo no Windows Server](whats-new-in-windows-server.md). Este tópico descreve alguns dos novos recursos no Windows Server, versão 1809.
 
 ## <a name="container-networking-with-kubernetes"></a>Contêiner de rede com Kubernetes
 
@@ -41,7 +42,7 @@ Além dos recursos que são novos no Windows Server versão 1809, os seguintes n
 * Contêineres do Linux no Windows
 * [Plano de fundo de pouco atraso adicional transporte (LEDBAT)](https://blogs.technet.microsoft.com/networking/2018/07/25/ledbat/)
 * Melhorias de desempenho de rede para cargas de trabalho virtuais
-* [Recurso de compatibilidade de aplicativos do núcleo de servidor sob demanda (FOD) ](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19)
+* [Recurso de compatibilidade de aplicativos do núcleo de servidor sob demanda (FOD)](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19)
 * [Serviço de migração de armazenamento (SMS)](../storage/whats-new-in-storage.md#storage-spaces-direct)
 * Réplica de Armazenamento
 * Insights do Sistema 

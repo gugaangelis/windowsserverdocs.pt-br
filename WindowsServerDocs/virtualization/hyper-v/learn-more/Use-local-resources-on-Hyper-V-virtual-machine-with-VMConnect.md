@@ -11,12 +11,12 @@ ms.assetid: 18eface5-7518-4c6b-9282-93e2e3e87492
 author: KBDAzure
 ms.author: kathyDav
 ms.date: 12/06/2016
-ms.openlocfilehash: 196a32d57877662ccd73647835e16af9348135c8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a7e465313c68ee793715aba045cc56a2ca5fd1de
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845287"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222847"
 ---
 # <a name="use-local-resources-on-hyper-v-virtual-machine-with-vmconnect"></a>Use local resources on Hyper-V virtual machine with VMConnect
 
@@ -24,11 +24,11 @@ ms.locfileid: "59845287"
 
 Conexão de máquina virtual (VMConnect) permite o uso de recursos um computador local em uma máquina virtual, como um removível unidade flash USB ou uma impressora. Modo de sessão avançado também permite que você redimensione a janela VMConnect. Este artigo mostra como configurar o host e, em seguida, conceder o acesso de máquina virtual a um recurso local.
 
-Modo de sessão avançado e digite o texto da área de transferência estão disponíveis apenas para máquinas virtuais que executam os sistemas operacionais Windows recentes. \(Ver [requisitos para usar recursos locais](#BKMK_NEW), abaixo.\) 
+Modo de sessão avançado e digite o texto da área de transferência estão disponíveis apenas para máquinas virtuais que executam os sistemas operacionais Windows recentes. \(Ver [requisitos para usar recursos locais](#requirements-for-using-local-resources), abaixo.\) 
 
 Para máquinas virtuais que executam o Ubuntu, consulte [alteração de resolução de tela de Ubuntu em uma VM do Hyper-V](https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/09/19/changing-ubuntu-screen-resolution-in-a-hyper-v-vm/). 
   
-## <a name="BKMK_OVER"></a>Ativar o modo de sessão avançado em um host Hyper-V  
+## <a name="turn-on-enhanced-session-mode-on-a-hyper-v-host"></a>Ativar o modo de sessão avançado em um host Hyper-V  
 Se o host do Hyper-V executa o Windows 10 ou Windows 8.1, modo de sessão Avançado está ativado por padrão, portanto, você pode ignorar essa etapa e vá para a próxima seção. Mas, se o host executa o Windows Server 2016 ou Windows Server 2012 R2, faça isso primeiro. 
   
 Ative o modo de sessão avançado:
@@ -61,7 +61,7 @@ Ative o modo de sessão avançado:
   
 ## <a name="choose-a-local-resource"></a>Escolha um recurso local
 
-Recursos locais incluem impressoras, a área de transferência e uma unidade local no computador em que você está executando o VMConnect. Para obter mais detalhes, consulte [requisitos para usar recursos locais](#BKMK_NEW), abaixo.  
+Recursos locais incluem impressoras, a área de transferência e uma unidade local no computador em que você está executando o VMConnect. Para obter mais detalhes, consulte [requisitos para usar recursos locais](#requirements-for-using-local-resources), abaixo.  
   
 Para escolher um recurso local:
   
@@ -97,7 +97,7 @@ Você pode editar facilmente as configurações de conexão do VMConnect executa
   
 `VMConnect.exe <ServerName> <VMName> /edit`  
   
-## <a name="BKMK_NEW"></a>Requisitos para usar recursos locais
+## <a name="requirements-for-using-local-resources"></a>Requisitos para usar recursos locais
 
 Para poder usar os recursos de locais de um computador em uma máquina virtual:  
   
@@ -125,7 +125,7 @@ Se o computador que executa o VMConnect e a máquina virtual ambos atender aos r
   
 -   Dispositivos plug and play com suporte  
   
-## <a name="BKMK_APP"></a>Por que usar recursos um computador local?
+## <a name="why-use-a-computers-local-resources"></a>Por que usar recursos um computador local?
 Você pode desejar usar os recursos de um computador local para:  
   
 -   Solucionar problemas de uma máquina virtual sem uma conexão de rede com a máquina virtual.  

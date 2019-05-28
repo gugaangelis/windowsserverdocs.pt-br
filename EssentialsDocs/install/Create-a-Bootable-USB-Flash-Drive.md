@@ -12,12 +12,12 @@ ms.assetid: 2fe8e35c-69f9-40b3-a270-22e2402510d8
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2716ffb7ce8f74d7c729565064de91e0598d0753
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cb62a460c09fdb2874bcc051176a05e88cee19e7
+ms.sourcegitcommit: 7cb939320fa2613b7582163a19727d7b77debe4b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884677"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65621275"
 ---
 # <a name="create-a-bootable-usb-flash-drive"></a>Criar uma Unidade Flash USB Inicializável
 
@@ -31,9 +31,9 @@ Você pode criar uma unidade flash USB inicializável para usar para implantar o
   
  Para outros cenários em que convenham criar ou usar uma unidade unidade flash USB inicializável, consulte os seguintes tópicos:  
   
--   [Restaurar um sistema completo de um backup do computador cliente existente](../manage/restore-a-full-system-from-an-existing-client-computer-backup.md)  
+-   [Restaurar um sistema completo de um backup de computador cliente existente](../manage/restore-a-full-system-from-an-existing-client-computer-backup.md)  
   
--   [Restaurar ou reparar seu servidor que executa o Windows Server Essentials](../manage/restore-or-repair-your-server-running-windows-server-essentials.md)  
+-   [Restaurar ou reparar o servidor que executa o Windows Server Essentials](../manage/restore-or-repair-your-server-running-windows-server-essentials.md)  
 
   
 ### <a name="to-create-a-bootable-usb-flash-drive"></a>Para criar uma unidade flash USB inicializável  
@@ -50,9 +50,9 @@ Você pode criar uma unidade flash USB inicializável para usar para implantar o
   
 6.  Digite `clean`e clique em ENTER. Esse comando exclui todos os dados da unidade flash USB.  
   
-7.  Para criar uma nova partição primária na unidade flash USB, digite `create part pri` e clique em ENTER.  
+7.  Para criar uma nova partição primária na unidade flash USB, digite `create partition primary` e clique em ENTER.  
   
-8.  Para selecionar a partição recém-criada, digite `select part 1`e clique em ENTER.  
+8.  Para selecionar a partição recém-criada, digite `select partition 1`e clique em ENTER.  
   
 9. Para formatar a partição, digite `format fs=ntfs quick`e clique em ENTER.  
   
@@ -71,12 +71,12 @@ Você pode criar uma unidade flash USB inicializável para usar para implantar o
  [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do usuário](Testing-the-Customer-Experience.md)   
+ [Testar a experiência do usuário](Testing-the-Customer-Experience.md)   
 
  [Introdução ao Windows Server Essentials ADK](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [Criando e personalizando a imagem](../install/Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](../install/Additional-Customizations.md)   
  [Preparando a imagem para implantação](../install/Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do usuário](../install/Testing-the-Customer-Experience.md)   
+ [Testar a experiência do usuário](../install/Testing-the-Customer-Experience.md)   
 
  [Como podemos ajudar você?](https://windows.microsoft.com/windows/support)

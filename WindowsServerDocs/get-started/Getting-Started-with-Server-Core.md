@@ -1,25 +1,22 @@
 ---
 title: Instalar o Server Core
 description: Como obter e instalar uma instalação Server Core no Windows Server 2019, Windows Server 2016 ou Windows Server (canal semestral).
-ms.custom: na
 ms.prod: windows-server-threshold
-ms.reviewer: na
-ms.suite: na
-ms.date: 1/04/2019
+ms.date: 05/21/2019
 ms.technology: server-general
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2d22818c-fbb7-487a-bb82-81ef0a3f7ede
-author: jaimeo
-ms.author: jaimeo
+author: jasongerend
+ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: d99cd0b028d08d5c3247541ce3a868676b60693d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6f685ce29088b56bb243d21315787ab90e6863a4
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869017"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976717"
 ---
 # <a name="install-server-core"></a>Instalar o Server Core
 
@@ -35,7 +32,7 @@ Quando você instala o Windows Server pela primeira vez, você tem as seguintes 
 -   Windows Server Datacenter
 -   Windows Server Datacenter com Experiência Desktop
 
-Quando você instala o Windows Server (canal semestral), incluindo versões 1709, 1803 e 1809, você tem as seguintes opções de instalação:
+Quando você instala o Windows Server (canal semestral), você tem as seguintes opções de instalação:
 
 -   Windows Server Standard 
 -   Windows Server Datacenter
@@ -74,10 +71,10 @@ Com a opção Server Core, a interface padrão do usuário (a Experiência Deskt
 - Windows Server Update Services
 - Servidor de Gerenciamento de Direitos do Active Directory
 - Servidor de Roteamento e Acesso Remoto e as seguintes subfunções:
-- Agente de Conexão de Serviços de Área de Trabalho Remota
-- Licenciamento
-- Virtualização
-- Serviços de Ativação por Volume
+   - Agente de Conexão de Serviços de Área de Trabalho Remota
+   - Licenciamento
+   - Virtualização
+   - Serviços de Ativação por Volume
 
 Para funções não incluídas no Server Core, consulte [funções, serviços de função e recursos não no Windows Server - Server Core](../administration/server-core/server-core-removed-roles.md).
 
@@ -88,13 +85,12 @@ Para etapas de instalação geral e as opções para o Windows Server (canal de 
 ## <a name="installing-on-windows-server-semi-annual-channel"></a>Instalando no Windows Server (canal semestral)
 
 Etapas de instalação do Windows Server (canal semestral) são o mesmo que a instalação de versões anteriores do Windows Server (de um. Imagem ISO), com as seguintes exceções:
+
 - Nenhuma upgrade com suporte de versões anteriores do Windows Server para o Windows Server, versão 1709. Uma nova instalação sempre é necessária.
    Isso significa que quando você executa setup.exe da área de trabalho de um computador Windows, a experiência de configuração não permite que a opção de atualização (ele será esmaecido).
 - Não há nenhuma versão de avaliação do Windows Server (canal semestral)
 - Não há nenhum OEM ou uma versão de varejo. Windows Server (canal semestral) só podem ser licenciado por meio de programas de Software Assurance ou fidelidade.
 
-Para obter o Windows Server versão 1709, consulte [Apresentando o Windows Server, versão 1709](get-started-with-1709.md).
+Para obter mais informações sobre como canal semestral, consulte [comparação dos canais de manutenção](../get-started-19/servicing-channels-19.md).
 
-Para obter a versão 1803 do Windows Server, consulte [apresentando o Windows Server, versão 1803](get-started-with-1803.md).
-
-Para ver o que há de novo no Windows Server, versão 1809, consulte [que há de novo no Windows Server versão 1809](whats-new-in-windows-server-1809.md)
+Para ver o que há de novo no canal semestral do Windows Server, consulte [que há de novo no Windows Server](whats-new-in-windows-server.md)

@@ -8,23 +8,41 @@ ms.technology: storage-failover-clustering
 ms.topic: article
 author: cosmosdarwin
 ms.date: 09/16/2016
-ms.openlocfilehash: f5c64bb8f8b7d4b8d13c76c4e94cfcf52ee32c30
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 18b7a932cc8a22c356fde89baa316c0532ebc374
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821467"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475998"
 ---
-# <a name="fault-domain-awareness-in-windows-server-2016"></a>Reconhecimento de domínio de falha no Windows Server 2016
+# <a name="fault-domain-awareness"></a>Reconhecimento de domínio de falha
 
-> Aplica-se a: Windows Server 2016
+> Aplica-se a: Windows Server 2019 e Windows Server 2016
 
-Clustering de failover permite que vários servidores funcionem juntos para fornecer alta disponibilidade ou, em outras palavras, para fornecer tolerância a falhas de nó. Mas as empresas de hoje exigem disponibilidade cada vez maior de suas infraestrutura. Para conseguir um tempo de atividade parecido com o da nuvem, é necessário se proteger até mesmo de ocorrências altamente improváveis como desastres naturais, interrupções de rack ou falhas de chassi. É por isso que o Clustering de Failover no Windows Server 2016 apresenta o chassi, rack e site a tolerância a falhas também.
+Clustering de failover permite que vários servidores funcionem juntos para fornecer alta disponibilidade ou, em outras palavras, para fornecer tolerância a falhas de nó. Mas as empresas de hoje exigem disponibilidade cada vez maior de suas infraestrutura. Para conseguir um tempo de atividade parecido com o da nuvem, é necessário se proteger até mesmo de ocorrências altamente improváveis como desastres naturais, interrupções de rack ou falhas de chassi. É por isso que o Clustering de Failover no Windows Server 2016 introduziu o chassi, rack e site a tolerância a falhas também.
+
+## <a name="fault-domain-awareness"></a>Reconhecimento de domínio de falha
 
 Domínios de falha e tolerância a falhas são conceitos bem próximos. Um domínio de falha é um conjunto de componentes de hardware que compartilham um único ponto de falha. Para ser tolerante a falhas em um determinado nível, você precisa de vários domínios de falha nesse nível. Por exemplo, para ser rack tolerante a falhas do rack, seus servidores e seus dados devem ser distribuídos entre vários racks.
 
 Este breve vídeo apresenta uma visão geral de domínios de falha no Windows Server 2016:  
 [![Clique nessa imagem para assistir a uma visão geral de domínios de falha no Windows Server 2016](media/Fault-Domains-in-Windows-Server-2016/Part-1-Fault-Domains-Overview.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-1-Overview)
+
+### <a name="fault-domain-awareness-in-windows-server-2019"></a>Reconhecimento de domínio de falha no Windows Server 2019
+
+Reconhecimento de domínio de falha está disponível no Windows Server 2019, mas é desabilitado por padrão e deve ser habilitado por meio do registro do Windows.
+
+Para habilitar o reconhecimento de domínio de falha no Windows Server 2019, vá para o registro do Windows e definir o (Get-Cluster). Chave do registro AutoAssignNodeSite como 1.
+
+```Registry
+    (Get-Cluster).AutoAssignNodeSite=1
+```
+
+Para desabilitar o reconhecimento de domínio de falha no Windows de 2019, vá para o registro do Windows e defina o (Get-Cluster). Chave do registro AutoAssignNodeSite como 0.
+
+```Registry
+    (Get-Cluster).AutoAssignNodeSite=0
+```
 
 ## <a name="benefits"></a>Benefícios
 - **Espaços de armazenamento, incluindo espaços de armazenamento diretos, usam domínios de falha para maximizar a segurança dos dados.**  
@@ -103,7 +121,7 @@ Remove-ClusterFaultDomain -Name "Rack A"
 ```
 
 ### <a name="defining-fault-domains-with-xml-markup"></a>Definir domínios de falha com marcação XML
-Os domínios de falha podem ser especificados usando uma sintaxe inspirada em XML. Recomendamos o uso de seu editor de texto favorito, como o Visual Studio Code (disponível gratuitamente *[aqui](https://code.visualstudio.com/)*) ou o Bloco de Notas, para criar um documento XML que você pode salvar e reutilizar.  
+Os domínios de falha podem ser especificados usando uma sintaxe inspirada em XML. Recomendamos o uso de seu editor de texto favorito, como o Visual Studio Code (disponível gratuitamente *[aqui](https://code.visualstudio.com/)* ) ou o Bloco de Notas, para criar um documento XML que você pode salvar e reutilizar.  
 
 Este breve vídeo demonstra o uso de Marcação XML para especificar os domínios de falha.
 
@@ -176,5 +194,6 @@ Você pode fornecer opcional **local** ou **descrição** metadados para qualque
 [![Clique para ver um breve vídeo que demonstra a importância de adicionar descritores de local em domínios de falha](media/Fault-Domains-in-Windows-Server-2016/part-4-location-description.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-4-Location-Description)
 
 ## <a name="see-also"></a>Consulte também  
--   [Windows Server 2016](../get-started/windows-server-2016.md)  
--   [Espaços de armazenamento diretos no Windows Server 2016](../storage/storage-spaces/storage-spaces-direct-overview.md) 
+- [Introdução ao Windows Server 2019](https://docs.microsoft.com/windows-server/get-started-19/get-started-19)  
+- [Introdução ao Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/server-basics)  
+-   [Visão geral do espaços de armazenamento diretos](../storage/storage-spaces/storage-spaces-direct-overview.md) 

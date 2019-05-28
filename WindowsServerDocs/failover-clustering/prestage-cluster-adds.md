@@ -5,26 +5,27 @@ ms.prod: windows-server-threshold
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
+ms.manager: daveba
 ms.technology: storage-failover-clustering
-ms.date: 04/25/2018
+ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 111969b074b33764dbbf72bfb24ad606f8314e41
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 151f02572d7595776539af163831b4a7a060c1c7
+ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869717"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65613171"
 ---
 # <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>Pré-configurar os objetos de computador do cluster nos serviços de domínio do Active Directory
 
->Aplica-se a: Windows Server 2012 R2, Windows Server 2012, Windows Server 2016
+>Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Este tópico mostra como pré-configurar os objetos de computador do cluster em AD DS (Serviços de Domínio Active Directory). É possível usar esse procedimento para habilitar um usuário ou grupo para a criação de um cluster de failover quando não tiverem permissões para a criação de objetos de computador em AD DS.
 
 Ao criar um cluster de failover usando o Assistente de Criação de Cluster ou usando o Windows PowerShell, é necessário especificar um nome para o cluster. Se tiver permissões suficientes ao criar o cluster, o processo de criação do cluster criará automaticamente um objeto de computador em AD DS que corresponda ao nome do cluster. Tal objeto é chamado de *objeto do nome do cluster* ou CNO. Por meio do CNO, os VCOs (Objetos de Computador Virtual) são automaticamente criados durante a configuração das funções clusterizadas que utilizam pontos de acesso de cliente. Por exemplo, se você criar um servidor de arquivos altamente disponível com um ponto de acesso de cliente denominado *FileServer1*, o CNO criará um VCO correspondente em AD DS.
 
 >[!NOTE]
->No Windows Server 2012 R2, há a opção de criar um cluster desanexado do Active Directory, onde nenhum CNO ou VCOs são criados no AD DS. Isso destina-se a tipos específicos de implantações de cluster. Para obter mais informações, consulte [Implantar um Cluster Desanexado do Active Directory](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v%3dws.11)>).
+>Há a opção de criar um cluster desanexado do Active Directory, onde nenhum CNO ou VCOs são criados no AD DS. Isso destina-se a tipos específicos de implantações de cluster. Para obter mais informações, consulte [Implantar um Cluster Desanexado do Active Directory](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v%3dws.11)>).
 
 Para criar o CNO automaticamente, o usuário que cria o cluster de failover deve ter permissão para **Criar objetos de computador** para a OU (Unidade Organizacional) ou o contêiner onde ficam os servidores que formarão o cluster. Para habilitar um usuário ou grupo para criar um cluster sem ter essa permissão, um usuário com as permissões adequadas em AD DS (normalmente, um administrador de domínio) poderá pré-configurar o CNO no AD DS. Isso também dá ao administrador do domínio maior controle sobre a convenção de nomenclatura que é utilizada para o cluster e controle sobre qual OU na qual os objetos de cluster são criados.
 
@@ -95,7 +96,7 @@ Caso tenha pré-configurado o CNO em AD DS, será possível escolher uma das op�
 >[!NOTE]
 >A associação ao grupo **Admins. do Domínio** , ou equivalente, é o mínimo necessário para concluir as etapas desta opção.
 
-- Opção 2: [Pré-configurar um VCO de uma função clusterizada](#prestage-a-vco-for-the-clustered-role). Utilize essa opção se for necessário pré-configurar as contas das funções clusterizadas devido aos requisitos de sua organização. Por exemplo, talvez você queira controlar a convenção de nomenclatura ou controlar quais funções clusterizadas são criadas.
+- Opção 2: [Pré-configurar um VCO de uma função clusterizada](#prestage-a-vco-for-a-clustered-role). Utilize essa opção se for necessário pré-configurar as contas das funções clusterizadas devido aos requisitos de sua organização. Por exemplo, talvez você queira controlar a convenção de nomenclatura ou controlar quais funções clusterizadas são criadas.
 
 >[!NOTE]
 >A associação ao grupo **Operadores da Conta** é o mínimo necessário para concluir as etapas desta opção.
@@ -103,7 +104,7 @@ Caso tenha pré-configurado o CNO em AD DS, será possível escolher uma das op�
 ### <a name="grant-the-cno-permissions-to-the-ou"></a>Conceda as permissões do CNO à UO
 
 1. Em Usuários e Computadores do Active Directory, no menu **Exibir**, verifique se a opção **Recursos Avançados** está selecionada.
-2. Clique com botão direito a UO em que você criou o CNO em [etapa 1: Pré-configurar o CNO em AD DS](#step-1:-prestage-the-CNO-in-ad-ds)e, em seguida, selecione **propriedades**.
+2. Clique com botão direito a UO em que você criou o CNO em [etapa 1: Pré-configurar o CNO em AD DS](#step-1-prestage-the-cno-in-ad-ds)e, em seguida, selecione **propriedades**.
 3. Sobre o **segurança** guia, selecione **avançado**.
 4. No **configurações de segurança avançadas** caixa de diálogo, selecione **Add**.
 5. Lado **Principal**, selecione **selecionar uma entidade**.
@@ -138,3 +139,4 @@ Um administrador no cluster de failover poderá agora criar funções clusteriza
 ## <a name="more-information"></a>Mais informações
 
 - [Clustering de failover](failover-clustering.md)
+- [Configuração de contas de cluster no Active Directory](configure-ad-accounts.md)

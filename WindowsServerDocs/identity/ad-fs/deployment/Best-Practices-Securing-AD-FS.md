@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 38de2bca413ce7f8aeda2af4392f9a616641b189
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 958bf8455d03ddc04395fafe83e70a49c7659c96
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873067"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192437"
 ---
 ## <a name="best-practices-for-securing-active-directory-federation-services"></a>Práticas recomendadas para proteger os serviços de Federação do Active Directory
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Este documento fornece as práticas recomendadas para o planejamento de seguro e a implantação de serviços de Federação do Active Directory (AD FS) e o Proxy de aplicativo Web.  Ele contém informações sobre os comportamentos padrão desses componentes e recomendações para configurações de segurança adicionais para uma organização com os requisitos de segurança e casos de uso específicos.
 
@@ -39,7 +38,7 @@ O diagrama abaixo ilustra as portas de firewall devem ser habilitadas, entre e e
 ### <a name="azure-ad-connect-and-federation-serverswap"></a>Azure AD Connect e servidores de Federação/WAP
 Esta tabela descreve as portas e protocolos que são necessários para a comunicação entre o servidor do Azure AD Connect e servidores de Federação/WAP.  
 
-Protocolo |Portas |Descrição
+Protocol |Portas |Descrição
 --------- | --------- |---------
 HTTP|80 (TCP/UDP)|Usado para baixar as CRLs (listas de certificados revogados) para verificar os certificados SSL.
 HTTPS|443(TCP/UDP)|Usado para sincronizar com o Azure AD.
@@ -48,14 +47,14 @@ WinRM|5985| Ouvinte do WinRM
 ### <a name="wap-and-federation-servers"></a>Servidores de Federação e WAP
 Esta tabela descreve as portas e protocolos que são necessários para a comunicação entre os servidores de Federação e WAP.
 
-Protocolo |Portas |Descrição
+Protocol |Portas |Descrição
 --------- | --------- |---------
 HTTPS|443(TCP/UDP)|Usado para autenticação.
 
 ### <a name="wap-and-users"></a>WAP e usuários
 Esta tabela descreve as portas e protocolos que são necessários para a comunicação entre usuários e os servidores WAP.
 
-Protocolo |Portas |Descrição
+Protocol |Portas |Descrição
 --------- | --------- |--------- |
 HTTPS|443(TCP/UDP)|Usado para autenticação de dispositivo.
 TCP|49443 (TCP)|Usado para autenticação de certificado.
@@ -86,7 +85,7 @@ Pontos de extremidade do AD FS podem ser desabilitados no proxy usando o seguint
     
     PS:\>Set-AdfsEndpoint -TargetAddressPath <address path> -Proxy $false
 
-Por exemplo: 
+Por exemplo:
     
     PS:\>Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/13/certificatemixed -Proxy $false
     

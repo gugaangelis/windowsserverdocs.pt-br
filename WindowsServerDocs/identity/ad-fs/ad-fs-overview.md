@@ -9,18 +9,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3ab72145dbe6daf518edac4e01fa28c2b64c38a6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1dd204ec930cb69d7117fc240b5384fa928d7626
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874347"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192517"
 ---
-# <a name="ad-fs-2016-overview"></a>Visão geral do AD FS 2016
+# <a name="ad-fs-overview"></a>Visão geral do AD FS
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este documento contém uma lista de todas as visões gerais de documentação do AD FS do Windows Server 2016. Isso inclui o seguinte:
+
+Este documento contém uma lista de todas as visões gerais de documentação do AD FS para o Windows Server. Isso inclui o seguinte:
   
   
   
@@ -28,7 +28,7 @@ Este documento contém uma lista de todas as visões gerais de documentação do
   
 * [Cenários do AD FS para desenvolvedores](../ad-fs/overview/AD-FS-Scenarios-for-Developers.md) 
 
-* [Requisitos do AD FS 2016](../ad-fs/overview/AD-FS-2016-Requirements.md)
+* [Requisitos do AD FS](../ad-fs/overview/AD-FS-2016-Requirements.md)
 
 * [PERGUNTAS FREQUENTES SOBRE O AD FS](../ad-fs/overview/AD-FS-FAQ.md)
 

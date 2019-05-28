@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fb31cff44cac6bd66f9aa5b7234ff3fd3b215ccf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9b0d339df588c784f8fe46f7dd0e6ce2975d0c48
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876297"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034657"
 ---
 # <a name="network-file-system-overview"></a>Visão geral de sistema de arquivos de rede
 
@@ -51,7 +51,7 @@ Funcionalidades novas e alteradas no sistema de arquivos de rede incluem suporte
 
 |Recurso/funcionalidade|Novo ou atualizado|Descrição|
 |---|---|---|
-|[NFS versão 4.1](#nfs-version-4.1)|Novo|Aumentar a segurança, desempenho e interoperabilidade em comparação com o NFS versão 3.|
+|[NFS versão 4.1](#nfs-version-41)|Novo|Aumentar a segurança, desempenho e interoperabilidade em comparação com o NFS versão 3.|
 |[Infraestrutura NFS](#nfs-infrastructure)|Atualizado|Melhora a implantação e a capacidade de gerenciamento e aumenta a segurança.|
 |[Disponibilidade contínua do NFS versão 3](#nfs-version-3-continuous-availability)|Atualizado|Melhora a disponibilidade contínua em clientes do NFS versão 3.|
 |[Melhorias de implantação e a capacidade de gerenciamento](#deployment-and-manageability-improvements)|Atualizado|Permite que você facilmente implante e gerencie NFS com novos cmdlets do Windows PowerShell e um novo provedor WMI.|
@@ -116,6 +116,6 @@ A tabela a seguir fornece recursos adicionais para avaliar o NFS.
 
 |Tipo de conteúdo|Referências|
 |---|---|
-|Implantação|[Implantar o sistema de arquivos de rede](deploy-nfs.md)|
+|Implantação|[Implantar o Network File System](deploy-nfs.md)|
 |Operações|[Cmdlets NFS no Windows PowerShell](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps)|
 |Tecnologias relacionadas|[Armazenamento no Windows Server](../storage.md)|

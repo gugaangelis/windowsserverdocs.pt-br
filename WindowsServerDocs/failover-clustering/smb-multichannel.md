@@ -7,18 +7,18 @@ ms.topic: article
 author: RobHindman
 ms.author: robhind
 ms.date: 09/15/2016
-ms.openlocfilehash: 45d8364adf9d3db24a8e6d8f7bc91178ce7d1551
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1b9271ceac99ac9b21cbfac902ba133d66815df4
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881127"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476123"
 ---
 # <a name="simplified-smb-multichannel-and-multi-nic-cluster-networks"></a>SMB Multichannel simplificado e redes de cluster de várias NICs
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+> Aplica-se a: Windows Server 2019, Windows Server 2016
 
-SMB Multichannel e Multi - simplificados<abbr title="placa de Interface de rede">NIC</abbr> redes de Cluster é um novo recurso no Windows Server 2016 que permite o uso de várias NICs na mesma sub-rede de rede do cluster e habilita automaticamente o SMB Multichannel.  
+SMB Multichannel e Multi - simplificados<abbr title="placa de Interface de rede">NIC</abbr> redes de Cluster é um recurso que permite o uso de várias NICs na mesma sub-rede de rede do cluster e habilita automaticamente o SMB Multichannel.
 
 SMB Multichannel simplificado e redes de Cluster Multi-NIC oferece os seguintes benefícios:  
 - Clustering de failover reconhece automaticamente todas as NICs em nós que estão usando o mesmo comutador / mesmo subnet - nenhuma configuração adicional necessária.  
@@ -31,7 +31,7 @@ SMB Multichannel simplificado e redes de Cluster Multi-NIC oferece os seguintes 
 -   Várias NICs por servidor, usando o mesmo comutador / sub-rede.  
 
 ## <a name="how-to-take-advantage-of-multi-nic-clusters-networks-and-simplified-smb-multichannel"></a>Como tirar proveito de multi-NIC clusters redes e SMB multichannel simplificado  
-Esta seção descreve como tirar proveito das novas redes de clusters com várias NICs e recursos de multicanal SMB simplificados no Windows Server 2016.  
+Esta seção descreve como tirar proveito dos recursos de multicanal SMB simplificados e redes de clusters de multi-NIC nova.  
 
 ### <a name="use-at-least-two-networks-for-failover-clustering"></a>Use pelo menos duas redes para Clustering de Failover   
 Embora seja raro, comutadores de rede podem falhar, é ainda melhor prática usar pelo menos duas redes para Clustering de Failover. Todas as redes encontradas são usadas para as pulsações do cluster. Evite usar uma única rede para o Cluster de Failover para evitar um ponto único de falha. Idealmente, deve haver vários caminhos de comunicação física entre os nós no cluster e nenhum ponto único de falha.  
@@ -58,7 +58,7 @@ Ao usar mais de uma rede privada (cluster), verifique a configuração de roteam
 **Figura 4: Configuração automática do recurso de endereço IPv6 Link Local (fe80)**  
 
 ## <a name="throughput-and-fault-tolerance"></a>Taxa de transferência e tolerância a falhas  
-Windows Server 2016 automaticamente detecta capacidades NIC e tentará usar a cada NIC na configuração mais rápida possível. NICs estão agrupadas, NICs usando RSS e NICs com capacidade RDMA podem todos ser usadas. A tabela a seguir resume os prós e contras ao usar essas tecnologias. Taxa de transferência máxima é obtida ao usar várias NICs de compatíveis com RDMA. Para obter mais informações, consulte [os conceitos básicos do SMB multicanais](https://blogs.technet.microsoft.com/josebda/2012/06/28/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0/).
+2019 do Windows Server e Windows Server 2016 automaticamente detectam recursos NIC e tentarão usar a cada NIC na configuração mais rápida possível. NICs estão agrupadas, NICs usando RSS e NICs com capacidade RDMA podem todos ser usadas. A tabela a seguir resume os prós e contras ao usar essas tecnologias. Taxa de transferência máxima é obtida ao usar várias NICs de compatíveis com RDMA. Para obter mais informações, consulte [os conceitos básicos do SMB multicanais](https://blogs.technet.microsoft.com/josebda/2012/06/28/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0/).
 
 ![Uma ilustração da taxa de transferência e tolerância a falhas para várias configurações de NIC](media/Simplified-SMB-Multichannel-and-Multi-NIC-Cluster-Networks/Clustering_MulitNIC_Fig5.png)  
 **Figura 5: Taxa de transferência e tolerância a falhas para vários conifigurations NIC**   

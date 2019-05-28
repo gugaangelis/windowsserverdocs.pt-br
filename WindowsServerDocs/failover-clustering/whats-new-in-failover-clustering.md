@@ -8,18 +8,18 @@ manager: dongill
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: b4fa59aa62acba5c89f20c191da2c3c1b776b1ca
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3c0792347aaa70fe80d346cc51cbc44b73c42f39
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884747"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476016"
 ---
 # <a name="whats-new-in-failover-clustering"></a>Novidades no Clustering de Failover
 
-> Aplica-se a: 2019, Windows Server 2016, Windows Server (canal semestral) do Windows Server
+> Aplica-se a: Windows Server 2019, Windows Server 2016
 
-Este tópico explica as funcionalidades novas e alteradas no Failover Clustering para o Windows Server de 2019, Windows Server 2016, e versões de canal semestral do Windows Server.
+Este tópico explica as funcionalidades novas e alteradas no Clustering do Failover para o Windows Server 2019 e Windows Server 2016.
 
 ## <a name="whats-new-in-windows-server-2019"></a>Novidades no Windows Server 2019
 

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: e63aa5d53f01fbff3029c6896556d92c9c99aa50
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4ede63ab08d204c29555b28ae3a73795291c321c
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857677"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222481"
 ---
 # <a name="managing-wsus-client-computers-and-wsus-computer-groups"></a>Gerenciar os computadores cliente do WSUS e os grupos de computadores do WSUS
 
@@ -29,10 +29,10 @@ O nó de computadores é um ponto de acesso central no console administrativo do
 ## <a name="managing-client-computers"></a>Gerenciamento de computadores cliente
 Selecionando um dos grupos de computadores a **computadores** nó sob **opções** faz com que os computadores nesse grupo a ser exibido no painel de detalhes. Se um computador for atribuído a vários grupos, ele aparecerá nas listagens de ambos os grupos. Se você selecionar um computador na lista, você pode ver suas propriedades, que incluem detalhes gerais sobre o computador e o status das atualizações para ele, como a instalação ou status de detecção de uma atualização de um computador específico. Você pode filtrar a lista de computadores em um grupo de computadores determinado pelo status. O padrão mostra somente os computadores para os quais atualizações são necessárias ou que tiveram falhas de instalação; No entanto, você pode filtrar a exibição por qualquer status. Clique em **Refresh** depois de alterar o filtro de status.
 
-Você também pode gerenciar grupos de computadores em que a página de computadores, que inclui a criação de grupos e atribuir computadores a eles. Para obter mais informações sobre como gerenciar grupos de computadores, consulte Gerenciando grupos de computadores na próxima seção deste guia e seção [1.5. Planejar grupos de computadores do WSUS](../plan/plan-your-wsus-deployment.md#BKMK_1.5) na etapa 1: Prepare para a implantação do WSUS do guia de implantação do WSUS.
+Você também pode gerenciar grupos de computadores em que a página de computadores, que inclui a criação de grupos e atribuir computadores a eles. Para obter mais informações sobre como gerenciar grupos de computadores, consulte Gerenciando grupos de computadores na próxima seção deste guia e seção [1.5. Planejar grupos de computadores do WSUS](../plan/plan-your-wsus-deployment.md#15-plan-wsus-computer-groups) na etapa 1: Prepare para a implantação do WSUS do guia de implantação do WSUS.
 
 > [!NOTE]
-> Primeiro você deve configurar computadores clientes para contatar o servidor do WSUS antes que você possa gerenciá-los desse servidor. Até que você executa essa tarefa, o servidor do WSUS não reconhecerá os computadores cliente e elas não serão exibidas na lista na página de computadores. Para obter mais informações sobre como configurar computadores cliente, consulte [1.5. Planejar grupos de computadores do WSUS](../plan/plan-your-wsus-deployment.md#BKMK_1.5) da etapa 1: Preparar para implantação do WSUS e a etapa 3: Configure o WSUS, no guia de implantação do WSUS.
+> Primeiro você deve configurar computadores clientes para contatar o servidor do WSUS antes que você possa gerenciá-los desse servidor. Até que você executa essa tarefa, o servidor do WSUS não reconhecerá os computadores cliente e elas não serão exibidas na lista na página de computadores. Para obter mais informações sobre como configurar computadores cliente, consulte [1.5. Planejar grupos de computadores do WSUS](../plan/plan-your-wsus-deployment.md#15-plan-wsus-computer-groups) da etapa 1: Preparar para implantação do WSUS e a etapa 3: Configure o WSUS, no guia de implantação do WSUS.
 
 ## <a name="controlling-when-wsus-client-computers-install-updates"></a>Controlando quando os computadores cliente WSUS instalam as atualizações
 Há dois métodos para controlar quando os computadores cliente WSUS instalam atualizações:
@@ -55,6 +55,6 @@ Como os computadores podem ser atribuídos a vários grupos, é possível que um
 É possível atribuir computadores a grupos de computadores usando um destes dois métodos: direcionamento do lado do servidor ou direcionamento do lado do cliente. Com o direcionamento do lado do servidor, você mover manualmente um ou mais computadores cliente para um grupo de computadores por vez. Com o direcionamento do lado do cliente, você usa a Diretiva de Grupo ou edita as configurações de registro nos computadores clientes para habilitar esses computadores para serem adicionados automaticamente aos grupos de computadores criados anteriormente. Esse processo pode ser inserido no script e implantado em vários computadores ao mesmo tempo. Você deve especificar o método de direcionamento que será usado no servidor do WSUS, selecionando uma das duas opções na **computadores** seção o **opções** página.
 
 > [!NOTE]
-> Se um servidor do WSUS estiver em execução em modo de réplica, não será possível criar grupos de computadores nesse servidor. Todos os grupos de computador necessários para clientes do servidor de réplica devem ser criados no servidor do WSUS que é a raiz da hierarquia de servidor do WSUS. Para obter mais informações sobre o modo de réplica, consulte [modo de réplica do WSUS em execução](running-wsus-replica-mode.md) e para obter mais informações sobre o direcionamento do lado do servidor e do lado do cliente, consulte a seção [1.5. Planejar grupos de computadores do WSUS](../plan/plan-your-wsus-deployment.md#BKMK_1.5) da etapa 1: Prepare para a implantação do WSUS no guia de implantação do WSUS.
+> Se um servidor do WSUS estiver em execução em modo de réplica, não será possível criar grupos de computadores nesse servidor. Todos os grupos de computador necessários para clientes do servidor de réplica devem ser criados no servidor do WSUS que é a raiz da hierarquia de servidor do WSUS. Para obter mais informações sobre o modo de réplica, consulte [modo de réplica do WSUS em execução](running-wsus-replica-mode.md) e para obter mais informações sobre o direcionamento do lado do servidor e do lado do cliente, consulte a seção [1.5. Planejar grupos de computadores do WSUS](../plan/plan-your-wsus-deployment.md#15-plan-wsus-computer-groups) da etapa 1: Prepare para a implantação do WSUS no guia de implantação do WSUS.
 
 

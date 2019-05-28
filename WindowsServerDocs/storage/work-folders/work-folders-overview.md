@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 6/11/2017
 description: Uma visão geral de Pastas de Trabalho - uma função de servidor no Windows Server que fornece uma maneira consistente para os usuários acessarem arquivos de trabalho de computadores e dispositivos.
-ms.openlocfilehash: dd32b84e6442ec55414da27ea94ef16eeab769eb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e3e3c86efb2f781dc88cac6851ea22f19c6ae812
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890477"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222852"
 ---
 # <a name="work-folders-overview"></a>Visão geral de Pastas de Trabalho
 
@@ -24,18 +24,18 @@ Este tópico aborda as Pastas de Trabalho, um serviço de função para servidor
   
 Se você estiver procurando para baixar ou usar pastas de trabalho em um dispositivo Android ou iOS, Windows 7 ou Windows 10, consulte o seguinte:
 
--   [Pastas de trabalho para Windows 10](https://support.microsoft.com/help/12370/windows-10-work-folders)
--   [Pastas de trabalho para o Windows 7 (download de 64 bits)](https://www.microsoft.com/download/details.aspx?id=42558)
--   [Pastas de trabalho para o Windows 7 (download de 32 bits)](https://www.microsoft.com/download/details.aspx?id=42559)
+- [Pastas de trabalho para Windows 10](https://support.microsoft.com/help/12370/windows-10-work-folders)
+- [Pastas de trabalho para o Windows 7 (download de 64 bits)](https://www.microsoft.com/download/details.aspx?id=42558)
+- [Pastas de trabalho para o Windows 7 (download de 32 bits)](https://www.microsoft.com/download/details.aspx?id=42559)
 - [Pastas de trabalho para iOS](https://itunes.apple.com/app/work-folders/id950878067)
 - [Pastas de trabalho para Android](https://play.google.com/store/apps/details?id=com.microsoft.workfolders)
 
-##  <a name="BKMK_OVER"></a> Descrição da função  
+## <a name="role-description"></a>Descrição da função  
  Com Pastas de trabalho, os usuários podem armazenar e acessar arquivos de trabalho em PCs e dispositivos, também conhecidos como BYOD (traga seu próprio dispositivo), além de PCs corporativos. Os usuários obtêm um local conveniente para armazenar arquivos de trabalho e acessá-los em qualquer lugar. As organizações mantêm controle sobre dados corporativos armazenando os arquivos em servidores de arquivos gerenciados centralmente e, opcionalmente, especificando políticas de dispositivo de usuário como criptografia e senhas de bloqueio de tela.  
   
  Pastas de Trabalho pode ser implantado com implantações existentes de Redirecionamento de Pasta, Arquivos Offline e pastas base. Pastas de Trabalho armazena arquivos do usuário em uma pasta no servidor chamada *compartilhamento de sincronização*. Você pode especificar uma pasta que já contém dados do usuário, o que permite a você adotar Pastas de Trabalho sem a migração de dados e servidores ou a finalização imediata da solução existente.  
   
-##  <a name="BKMK_APP"></a> Aplicativos práticos  
+## <a name="practical-applications"></a>Aplicações práticas  
  Os administradores podem usar Pastas de Trabalho para fornecer aos usuários acesso aos seus arquivos de trabalho, mantendo o armazenamento centralizado e o controle sobre os dados da organização. Estes são algumas aplicações específicas para Pastas de Trabalho:  
   
 -   Fornecer um único ponto de acesso a arquivos de trabalho nos computadores e dispositivos pessoais e de trabalho de um usuário  
@@ -50,7 +50,8 @@ Se você estiver procurando para baixar ou usar pastas de trabalho em um disposi
   
 -   Usar o Clustering de Failover com Pastas de Trabalho para fornecer uma solução de alta disponibilidade  
   
-##  <a name="BKMK_NEW"></a> Funcionalidade importante  
+## <a name="important-functionality"></a>Funcionalidade importante
+
  O serviço Pastas de Trabalho oferece a funcionalidade a seguir.  
   
 |Funcionalidade|Disponibilidade|Descrição|  
@@ -60,7 +61,8 @@ Se você estiver procurando para baixar ou usar pastas de trabalho em um disposi
 |Integração de Pastas de Trabalho ao Windows|Windows 10<br /><br /> Windows 8.1<br /><br /> Windows RT 8.1<br /><br /> Windows 7 (é necessário download)|O serviço Pastas de Trabalho fornece a seguinte funcionalidade em computadores Windows:<br /><br /> -   Um item do Painel de Controle que configura e monitora Pastas de Trabalho<br />-   Integração ao Explorador de Arquivos que permite fácil acesso aos arquivos em Pastas de Trabalho<br />-   Um mecanismo de sincronização que transfere os arquivos de/para um servidor de arquivos central, maximizando, ao mesmo tempo, o desempenho do sistema e a duração da bateria|  
 |Aplicativo Pastas de Trabalho para dispositivos|Android<br /><br /> Apple iPhone e iPad®|Um aplicativo que permite que dispositivos populares acessem arquivos em Pastas de Trabalho|  
   
-##  <a name="BKMK_New"></a> Funcionalidades novas e alteradas  
+## <a name="new-and-changed-functionality"></a>Funcionalidade nova e alterada
+  
  A tabela a seguir descreve algumas das principais mudanças em Pastas de Trabalho.  
   
 |Recurso/funcionalidade|Novo ou atualizado?|Descrição|  
@@ -70,7 +72,7 @@ Se você estiver procurando para baixar ou usar pastas de trabalho em um disposi
 |Integrado a Proteção de Informações do Windows (WIP)|Adicionado ao Windows 10, versão 1607|Se um administrador implantar a WIP, Pastas de Trabalho pode impor a proteção de dados criptografando os dados no computador. A criptografia está usando uma chave associada à ID da Empresa, que pode ser apagada remotamente por meio de um pacote de gerenciamento de dispositivos móveis com suporte, como o Microsoft Intune.|  
 |Integração do Microsoft Office|Adicionado ao Windows 10, versão 1511|No Windows 8.1, você pode navegar até Pastas de Trabalho nos aplicativos do Office, clicando ou tocando em Este PC e, em seguida, navegando até o local de Pastas de Trabalho no computador. No Windows 10, pode ser ainda mais fácil acessar Pastas de Trabalho; para isso, adicione o serviço à lista de locais exibida pelo Office ao salvar ou abrir arquivos. Para obter mais informações, consulte [Pastas de Trabalho no Windows 10](https://windows.microsoft.com/windows-10/work-folders-in-windows-10) e  [Solução de problemas sobre o uso de Pastas de Trabalho como um local no Microsoft Office](https://social.technet.microsoft.com/wiki/contents/articles/32881.troubleshooting-using-work-folders-as-a-place-in-microsoft-office.aspx).|  
   
-##  <a name="BKMK_SOFT"></a> Requisitos de software  
+## <a name="software-requirements"></a>Requisitos de software
 
 As Pastas de Trabalho têm os seguintes requisitos de software para os servidores de arquivos e sua infraestrutura de rede:  
   
@@ -126,7 +128,7 @@ As Pastas de Trabalho têm os seguintes requisitos de software para computadores
   
 -   O serviço Pastas de Trabalho não oferece suporte à reversão do estado das máquinas virtuais clientes. Em vez disso, execute operações de backup e restauração de dentro da máquina virtual cliente usando o Backup de Imagem do Sistema ou outro aplicativo de backup.  
   
-##  <a name="BKMK_Comparison"></a> Em comparação comparadas outras tecnologias de sincronização de pastas de trabalho  
+## <a name="work-folders-compared-to-other-sync-technologies"></a>Comparação de Pastas de Trabalho com outras tecnologias  
 
 A tabela a seguir aborda como diversas tecnologias de sincronização da Microsoft são posicionadas e quando usar cada uma delas.  
   
@@ -141,7 +143,7 @@ A tabela a seguir aborda como diversas tecnologias de sincronização da Microso
 > [!NOTE]
 >  Além das tecnologias de sincronização listadas na tabela anterior, a Microsoft oferece outras tecnologias de replicação, incluindo Replicação do DFS, que é projetada para replicação de servidor a servidor, e BranchCache, que é projetado como uma tecnologia de aceleração WAN em filial. Para obter mais informações, consulte [Visão geral de namespaces do DFS e Replicação do DFS](https://technet.microsoft.com/library/jj127250(v=ws.11).aspx) e [Visão geral do BranchCache](https://technet.microsoft.com/library/hh831696(v=ws.11).aspx)  
   
-##  <a name="BKMK_INSTALL"></a> Informações do Gerenciador do servidor  
+## <a name="server-manager-information"></a>Informações sobre o Gerenciador do Servidor  
 
 O serviço Pastas de trabalho faz parte da função Serviços de Arquivo e Armazenamento. Você pode instalar Pastas de Trabalho usando o Assistente de Adição de Funções e Recursos ou o cmdlet `Install-WindowsFeature`. Os dois métodos têm a seguinte função:  
   
@@ -151,12 +153,13 @@ O serviço Pastas de trabalho faz parte da função Serviços de Arquivo e Armaz
   
 -   Instala o módulo SyncShare do Windows PowerShell para gerenciar Pastas de Trabalho no servidor  
   
-##  <a name="BKMK_Azure"></a> Interoperabilidade com máquinas virtuais do Windows Azure  
+## <a name="interoperability-with-windows-azure-virtual-machines"></a>Interoperabilidade com máquinas virtuais do Windows Azure
+
  Você pode executar esse serviço de função do Windows Server em uma máquina virtual no Windows Azure. Esse cenário foi testado com o Windows Server 2012 R2 e o Windows Server 2016.  
   
 Para saber mais sobre como começar a usar máquinas virtuais do Windows Azure, acesse o [site do Windows Azure](http://www.windowsazure.com/documentation/services/virtual-machines).  
   
-##  <a name="BKMK_LINKS"></a> Consulte também  
+## <a name="see-also"></a>Consulte também  
  Para obter informações adicionais relacionadas, consulte os seguintes recursos.  
   
 |Tipo de conteúdo|Referências|  

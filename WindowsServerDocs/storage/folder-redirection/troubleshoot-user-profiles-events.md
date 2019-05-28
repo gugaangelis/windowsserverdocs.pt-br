@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6099dac7d77e37b761785b4f58b6106472e5ba1e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f30bfcd531731e3a0d14350536ddf418c50f3ea0
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827947"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475945"
 ---
 # <a name="troubleshoot-user-profiles-with-events"></a>Solucionar problemas de perfis de usuário com eventos
 
->Aplica-se a: Windows 10, Windows 8, Windows 8.1, Windows Server 2012, Windows Server 2012 R2 e Windows Server 2016.
+>Aplica-se a: Windows 10, Windows 8, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 e Windows Server (canal semestral).
 
 Este tópico discute como solucionar problemas de carregamento e descarregamento de perfis de usuário usando eventos e logs de rastreamento. As seções a seguir descrevem como usar os três logs de eventos que registram informações de perfil do usuário.
 
@@ -58,7 +58,7 @@ Aqui está como habilitar e exibir analítica e logs de depuração:
 1. No **ações** painel do Visualizador de eventos, selecione **exibição**e, em seguida, selecione **Mostrar Logs analíticos e depuração**.
 2. Navegue até **Applications and Services Logs**, em seguida, **Microsoft**, em seguida, **Windows**, em seguida, **serviço de perfil do usuário**e, em seguida,  **Diagnóstico**.
 3. Selecione **Habilitar Log** e, em seguida, selecione **Sim**. Isso permite que o log de diagnóstico, que iniciará o registro em log.
-4. Se você precisar de informações ainda mais detalhadas, consulte [etapa 4: Criando e decodificação de um rastreamento](#step-4:-creating-and-decoding-a-trace) para obter mais informações sobre como criar um log de rastreamento.
+4. Se você precisar de informações ainda mais detalhadas, consulte [etapa 4: Criando e decodificação de um rastreamento](#step-4-creating-and-decoding-a-trace) para obter mais informações sobre como criar um log de rastreamento.
 5. Quando tiver terminado de solucionar o problema, navegue até a **diagnóstico** log, selecione **desabilitar Log**, selecione **exibição** e, em seguida, desmarque o **Mostrar Depurar Logs analíticos e** caixa de seleção para ocultar analítica e o log de depuração.
 
 ## <a name="step-4-creating-and-decoding-a-trace"></a>Etapa 4: Criando e decodificação de um rastreamento
@@ -93,4 +93,4 @@ Aqui está como criar e decodificar um rastreamento para o serviço de perfil do
 
 ## <a name="more-information"></a>Mais informações
 
-* [Implantar perfis de usuário móvel](deploy-roaming-user-profiles.md)
+* [Implantar perfis de usuário móveis](deploy-roaming-user-profiles.md)

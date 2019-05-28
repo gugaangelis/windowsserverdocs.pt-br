@@ -8,21 +8,21 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4706372b06d0554196b692c3ddcda145dee5bae5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e6eb6f2acd420ae657a5c1b698e9733751378552
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848167"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476068"
 ---
 # <a name="failover-clustering-hardware-requirements-and-storage-options"></a>Requisitos de hardware de clustering de failover e opções de armazenamento
 
-Aplica-se a: Windows Server 2012 R2, Windows Server 2012, Windows Server 2016
+Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Você precisa do seguinte hardware para criar um cluster de failover. Para receber suporte da Microsoft, todo o hardware deve ser certificado para a versão do Windows Server que você está executando, e a solução de cluster de failover completa deve passar por todos os testes no Assistente para Validar Configuração. Para obter mais informações sobre como validar um cluster de failover, consulte [Validar hardware para um cluster de failover](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v%3dws.11)>).
 
 - **Servidores**: É recomendável usar um conjunto de computadores correspondentes que contenham os mesmos ou componentes similares.
-- **Adaptadores e cabo de rede (para comunicação de rede)**: Se você usa iSCSI, cada adaptador de rede deve ser dedicado à comunicação de rede ou iSCSI, não para ambos.
+- **Adaptadores e cabo de rede (para comunicação de rede)** : Se você usa iSCSI, cada adaptador de rede deve ser dedicado à comunicação de rede ou iSCSI, não para ambos.
 
     Na infraestrutura de rede que conecta os nós do cluster, evite ter pontos de falha únicos. Por exemplo, é possível conectar os nós do cluster por várias redes distintas. Como alternativa, você pode conectar os nós de cluster com uma rede construída com adaptadores de rede emparelhados, comutadores redundantes, roteadores redundantes ou hardware semelhante que remova pontos únicos de falha.
 

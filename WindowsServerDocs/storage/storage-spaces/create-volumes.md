@@ -1,29 +1,98 @@
 ---
-ms.assetid: a9f229eb-bef4-4231-97d0-0899e17cef32
 title: Criando volumes em Espaços de Armazenamento Diretos
+description: Como criar volumes em espaços de armazenamento diretos usando o PowerShell e Windows Admin Center.
 ms.prod: windows-server-threshold
-ms.author: cosdar
-ms.manager: eldenc
-ms.technology: storage-spaces
-ms.topic: article
+ms.reviewer: cosmosdarwin
 author: cosmosdarwin
-ms.date: 01/11/2017
-ms.localizationpriority: medium
-ms.openlocfilehash: 277a676d8e53a7847d54039aab6607be8e5a78c5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.author: cosdar
+manager: eldenc
+ms.technology: storage-spaces
+ms.date: 05/09/2019
+ms.openlocfilehash: d7c842a9b393f67c482dadeaa4090627887a67a3
+ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823607"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65613219"
 ---
 # <a name="creating-volumes-in-storage-spaces-direct"></a>Criando volumes em Espaços de Armazenamento Diretos
 
->Aplica-se a: Windows Server 2016
+>Aplica-se a: Windows Server 2019, Windows Server 2016
 
-Este tópico descreve como criar volumes em Espaços de Armazenamento Diretos usando o PowerShell ou Gerenciador de Cluster de Failover.
+Este tópico descreve como criar volumes em um cluster de espaços de armazenamento diretos usando o Windows Admin Center, o PowerShell ou Gerenciador de Cluster de Failover.
 
    >[!TIP]
    >  Se você ainda não fez isto, consulte primeiro [Planejando volumes em Espaços de Armazenamento Diretos](plan-volumes.md).
+
+## <a name="create-a-three-way-mirror-volume"></a>Criar um volume de três vias
+
+Para criar um volume de três vias no Windows Admin Center: 
+
+1. No do Windows Admin Center, conectar a um cluster de espaços de armazenamento diretos e, em seguida, selecione **Volumes** da **ferramentas** painel.
+2. Na página de Volumes, selecione a **estoque** guia e, em seguida, selecione **Criar volume**.
+3. No **Criar volume** painel, insira um nome para o volume e deixe **resiliência** como **espelho triplo**.
+4. Na **tamanho de unidade de disco rígido**, especifique o tamanho do volume. Por exemplo, 5 TB (terabytes).
+5. Selecione **Criar**.
+
+Dependendo do tamanho, criar o volume pode levar alguns minutos. As notificações no canto superior direito permitem que você sabe quando o volume é criado. O novo volume é exibida na lista de inventário.
+
+Assista a um vídeo rápido sobre como criar um volume de três vias.
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/o66etKq70N8]
+
+## <a name="create-a-mirror-accelerated-parity-volume"></a>Criar um volume de paridade de aceleração de espelho
+
+Aceleração de espelho paridade reduz o volume do volume em que o disco rígido. Por exemplo, um volume de três vias significa que para cada 10 terabytes de tamanho, você precisará 30 terabytes como volume. Para reduzir a sobrecarga na superfície, crie um volume com a paridade de aceleração de espelho. Isso reduz a superfície de 30 terabytes para apenas 22 terabytes, mesmo com apenas 4 servidores, os 20% mais ativos de dados de espelhamento e, em seguida, usar a paridade, o que é mais eficiente para armazenar o resto de espaço. Você pode ajustar essa proporção de espelho para tornar o desempenho em relação ao equilíbrio de capacidade que é ideal para sua carga de trabalho e de paridade. Por exemplo, 90 por cento 10 por cento e paridade espelho gera um desempenho menor, mas simplifica ainda mais o volume.
+
+Para criar um volume com aceleração de espelho paridade no Windows Admin Center:
+
+1. No do Windows Admin Center, conectar a um cluster de espaços de armazenamento diretos e, em seguida, selecione **Volumes** da **ferramentas** painel.
+2. Na página de Volumes, selecione a **estoque** guia e, em seguida, selecione **Criar volume**.
+3. No **Criar volume** painel, insira um nome para o volume.
+4. Na **resiliência**, selecione **acelerada de espelho paridade**.
+5. Na **porcentagem de paridade**, selecione a porcentagem de paridade.
+6. Selecione **Criar**.
+
+Assista a um vídeo rápido sobre como criar um volume de paridade de aceleração de espelho.
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/R72QHudqWpE]
+
+## <a name="open-volume-and-add-files"></a>Abra o volume e adicionar arquivos
+
+Para abrir um volume e adicionar arquivos ao volume no Windows Admin Center:
+
+1. No do Windows Admin Center, conectar a um cluster de espaços de armazenamento diretos e, em seguida, selecione **Volumes** da **ferramentas** painel.
+2. Na página de Volumes, selecione a **inventário** guia.
+2. Na lista de volumes, selecione o nome do volume que você deseja abrir.
+
+    Na página de detalhes de volume, você pode ver o caminho para o volume.
+
+4. Na parte superior da página, selecione **aberto**. Isso inicia a ferramenta arquivos do Windows Admin Center.
+5. Navegue até o caminho do volume. Aqui você pode procurar os arquivos no volume.
+6. Selecione **carregar**e, em seguida, selecione um arquivo para carregar.
+7. Use o navegador **volta** botão para voltar ao painel de ferramentas no Windows Admin Center.
+
+Assista a um vídeo rápido sobre como abrir um volume e adicionar arquivos.
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/j59z7ulohs4]
+
+## <a name="turn-on-deduplication-and-compression"></a>Ativar a eliminação de duplicação e compactação
+
+Eliminação de duplicação e compactação é gerenciado por volume. Eliminação de duplicação e compactação usa um modelo de pós-processamento, o que significa que você não verá a economia de até que ele seja executado. Quando isso acontecer, trabalhará em todos os arquivos, mesmo aqueles que não eram lá antes.
+
+1. No do Windows Admin Center, conectar a um cluster de espaços de armazenamento diretos e, em seguida, selecione **Volumes** da **ferramentas** painel.
+2. Na página de Volumes, selecione a **inventário** guia.
+3. Na lista de volumes, selecione o nome do volume que deseja gerenciar.
+4. Na página de detalhes de volume, clique na opção rotulada **eliminação de duplicação e compactação**.
+5. No painel de eliminação de duplicação de ativar, selecione o modo de eliminação de duplicação.
+
+    Em vez de configurações complicadas, o Windows Admin Center permite que você escolha entre os perfis prontos para diferentes cargas de trabalho. Se você não tiver certeza, use a configuração padrão.
+
+6. Selecione **Habilitar**.
+
+Assista a um vídeo rápido sobre como ativar a eliminação de duplicação e compactação.
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/PRibTacyKko]
 
 ## <a name="create-volumes-using-powershell"></a>Criar volumes usando o PowerShell
 
@@ -82,7 +151,7 @@ New-Volume -FriendlyName "Volume4" -FileSystem CSVFS_ReFS -StoragePoolFriendlyNa
 
 ## <a name="create-volumes-using-failover-cluster-manager"></a>Criar volumes usando o Gerenciador de Cluster de Failover
 
-Você também pode criar volumes usando o *Assistente de Novo Disco Virtual (Espaços de Armazenamento Diretos)*, seguido pelo *Assistente de Novo Volume* do Gerenciador de Cluster de Failover, embora esse fluxo de trabalho tenha muitas etapas manuais e não seja recomendado.
+Você também pode criar volumes usando o *Assistente de Novo Disco Virtual (Espaços de Armazenamento Diretos)* , seguido pelo *Assistente de Novo Volume* do Gerenciador de Cluster de Failover, embora esse fluxo de trabalho tenha muitas etapas manuais e não seja recomendado.
 
 Há três etapas principais:
 
@@ -120,3 +189,5 @@ Concluído! Repita conforme necessário para criar mais de um volume.
 
 - [Visão geral direta de espaços de armazenamento](storage-spaces-direct-overview.md)
 - [Planejando volumes em espaços de armazenamento diretos](plan-volumes.md)
+- [Extensão dos volumes em espaços de armazenamento diretos](resize-volumes.md)
+- [Excluindo volumes em espaços de armazenamento diretos](delete-volumes.md)

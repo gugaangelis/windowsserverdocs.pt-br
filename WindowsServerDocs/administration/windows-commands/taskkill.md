@@ -13,19 +13,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db264181ef8e5e3632f3312ade61183cac3fc8f5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c31098a7dc151b29def2f3615da1e969ff8c5664
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853077"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222941"
 ---
 # <a name="taskkill"></a>taskkill
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Termina uma ou mais tarefas ou processos. Os processos podem ser encerrados pela identificação do processo ou nome da imagem. **Taskkill** substitui o **kill** ferramenta.
-Para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_examples).
+Para obter exemplos de como usar esse comando, consulte [exemplos](#examples).
 
 ## <a name="syntax"></a>Sintaxe
 ```
@@ -37,13 +37,13 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 |/s \<computer>|Especifica o nome ou endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local.|
 |/u \<domínio >\\\<nome de usuário >|Executa o comando com as permissões de conta do usuário que é especificado pelo *nome de usuário* ou *domínio*\\*UserName*. **/u** pode ser especificado somente se **/s** for especificado. O padrão é que as permissões do usuário que está conectado no momento no computador que está emitindo o comando.|
 |/p \<Password>|Especifica a senha da conta de usuário que é especificada na **/u** parâmetro.|
-|/fi \<Filter>|Aplica um filtro para selecionar um conjunto de tarefas. Você pode usar mais de um filtro ou use o caractere curinga (**\***) para especificar todas as tarefas ou nomes de imagem. Consulte o seguinte [tabela de nomes de filtro válido](#BKMK_table), operadores e valores.|
+|/fi \<Filter>|Aplica um filtro para selecionar um conjunto de tarefas. Você pode usar mais de um filtro ou use o caractere curinga ( **\*** ) para especificar todas as tarefas ou nomes de imagem. Consulte o seguinte [tabela de nomes de filtro válido](#filter-names-operators-and-values), operadores e valores.|
 |/PID \<ProcessID >|Especifica a ID de processo do processo a ser encerrado.|
-|/im \<ImageName>|Especifica o nome da imagem do processo a ser encerrado. Use o caractere curinga (**\***) para especificar todos os nomes de imagem.|
+|/im \<ImageName>|Especifica o nome da imagem do processo a ser encerrado. Use o caractere curinga ( **\*** ) para especificar todos os nomes de imagem.|
 |/f|Especifica que os processos de modo forçado ser terminado. Esse parâmetro é ignorado para processos remotos; todos os processos remotos são forçados.|
 |/t|Encerra o processo especificado e todos os processos filho iniciados por ele.|
 
-#### <a name="BKMK_table"></a>Os nomes de filtro, operadores e valores
+#### <a name="filter-names-operators-and-values"></a>Os nomes de filtro, operadores e valores
 |Nome do filtro|Operadores válidos|Valor (es) válido|
 |--------|----------|----------|
 |STatUS|eq, ne|RUNNING &#124; NOT RESPONDING &#124; UNKNOWN|
@@ -59,7 +59,7 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 
 ## <a name="remarks"></a>Comentários
 * Não há suporte para os filtros de STatUS e WINDOWTITLE quando um sistema remoto é especificado.
-* O caractere curinga (**\***) é aceito para o **/im** opção somente quando um filtro é aplicado.
+* O caractere curinga ( **\*** ) é aceito para o **/im** opção somente quando um filtro é aplicado.
 * Encerramento de processos remotos sempre é realizado de modo forçado, independentemente se o **/f** opção for especificada.
 * Fornecer um nome de computador para o filtro de nome de host faz com que um desligamento e todos os processos são interrompidos.
 * Você pode usar **tasklist** para determinar o PID (ID) para o processo de encerramento do processo.
@@ -87,4 +87,4 @@ taskkill /f /fi "PID ge 1000" /im *
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

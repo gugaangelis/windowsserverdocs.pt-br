@@ -13,16 +13,16 @@ author: haley-rowland
 ms.author: elizapo
 ms.date: 06/14/2017
 manager: dongill
-ms.openlocfilehash: 7d895b1098c4d8cdf162c77f35209b7308872d60
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 2d12062f302c28a8124e0aa49af7f441e77ffe33
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849957"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222790"
 ---
 # <a name="create-a-geo-redundant-multi-data-center-rds-deployment-for-disaster-recovery"></a>Criar um centro com redundância geográfica, vários data de implantação do RDS para recuperação de desastres
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016
 
 Você pode habilitar a recuperação de desastre para sua implantação de serviços de área de trabalho remota, aproveitando a vários data centers no Azure. Ao contrário de uma implantação de RDS altamente disponível padrão (conforme descrito na [arquitetura dos serviços de área de trabalho remota](desktop-hosting-logical-architecture.md)), que usa os centros de dados em uma única região do Azure (por exemplo, na Europa Ocidental), uma implantação de vários data centers usa dados centros em várias localizações geográficas, aumentando a disponibilidade da sua implantação - um data center do Azure podem não estar disponíveis, mas é improvável que várias regiões deve ir para baixo ao mesmo tempo. Ao implantar uma arquitetura RDS com redundância geográfica, você pode habilitar o failover no caso de falha catastrófica de uma região inteira.
 
@@ -44,7 +44,7 @@ Em comparação, aqui está a arquitetura para uma implantação que usa vários
 
 ![Uma implantação do RDS que usa várias regiões do Azure](media/rds-ha-multi-region.png)
 
-Toda a implantação do RDS é replicada em uma segunda região do Azure para criar uma implantação com redundância geográfica. Essa arquitetura usa um modelo ativo-passivo, onde apenas uma implantação de RDS está sendo executado por vez. Uma conexão de rede virtual para rede virtual permite que os dois ambientes se comunicam entre si. As implantações de RDS são com base em um domínio/floresta de Active Directory único e os servidores do AD replicam entre as duas implantações, os usuários de significado podem entrar em qualquer implantação usando as mesmas credenciais. As configurações de usuário e dados armazenados em discos de perfil do usuário (UPD) são armazenados em um servidor de arquivos de escalabilidade horizontal de espaços de armazenamento diretos (S2D) de cluster de dois nós (SOFS). Um segundo cluster S2D idêntico é implantado na segunda região (passivo) e a réplica de armazenamento é usada para replicar os perfis de usuário do ativo para passiva implantação. O Azure Traffic Manager é usado para direcionar automaticamente os usuários finais a qualquer implantação está ativa no momento – da perspectiva do usuário final, a implantação usando uma única URL de acesso e não estão cientes de qual região eles acabam usando.
+Toda a implantação do RDS é replicada em uma segunda região do Azure para criar uma implantação com redundância geográfica. Essa arquitetura usa um modelo ativo-passivo, onde apenas uma implantação de RDS está sendo executado por vez. Uma conexão de rede virtual para rede virtual permite que os dois ambientes se comunicam entre si. As implantações de RDS são com base em um domínio/floresta de Active Directory único e os servidores do AD replicam entre as duas implantações, os usuários de significado podem entrar em qualquer implantação usando as mesmas credenciais. As configurações de usuário e dados armazenados em discos de perfil de usuário (UDP) são armazenados em um servidor de arquivos de escalabilidade horizontal de espaços de armazenamento diretos de cluster de dois nós (SOFS). Um segundo cluster de espaços de armazenamento diretos idêntico é implantado na segunda região (passivo) e a réplica de armazenamento é usada para replicar os perfis de usuário do ativo para passiva implantação. O Azure Traffic Manager é usado para direcionar automaticamente os usuários finais a qualquer implantação está ativa no momento – da perspectiva do usuário final, a implantação usando uma única URL de acesso e não estão cientes de qual região eles acabam usando.
 
 
 Você *poderia* criar uma implantação do RDS não altamente disponível em cada região, mas se até mesmo uma única VM for reiniciada em uma região, ocorrerá um failover, aumentando a probabilidade de failovers ocorrendo com associados impactos no desempenho.
@@ -74,8 +74,8 @@ Crie os seguintes recursos no Azure para criar uma implantação do RDS vários 
 
    > [!NOTE]
    > Você pode provisionar armazenamento manualmente (em vez de usar o script do PowerShell e o modelo): 
-   >1. Implantar um [SOFS de S2D de 2 nós](rds-storage-spaces-direct-deployment.md) no RG A armazenar seus discos de perfil do usuário (UPDs).
-   >2. Implantar um segundo, idêntico SOFS de S2D no RG B - Certifique-se de usar a mesma quantidade de armazenamento em cada cluster.
+   >1. Implantar um [SOFS de espaços de armazenamento de dois nós diretos](rds-storage-spaces-direct-deployment.md) no RG A armazenar seus discos de perfil do usuário (UPDs).
+   >2. Implantar um segundo, idêntico armazenamento SOFS dos espaços diretos no RG B - Certifique-se de usar a mesma quantidade de armazenamento em cada cluster.
    >3. Configure [a réplica de armazenamento com a replicação assíncrona](../../storage/storage-replica/cluster-to-cluster-storage-replication.md) entre os dois.
 
 ### <a name="enable-upds"></a>Habilitar UPDs
@@ -85,14 +85,14 @@ Quer saber mais sobre como gerenciar a replicação? Fazer check-out [replicaç�
 
 Para habilitar os UPDs em ambas as implantações, faça o seguinte:
 
-1. Execute o [cmdlet Set-RDSessionCollectionConfiguration](https://technet.microsoft.com/itpro/powershell/windows/remote-desktop/set-rdsessioncollectionconfiguration) para habilitar os discos de perfil do usuário para a implantação primária (ativa) – forneça um caminho para o compartilhamento de arquivos no volume de origem (o que você criou na etapa 7 nas etapas de implantação).
+1. Execute o [cmdlet Set-RDSessionCollectionConfiguration](https://docs.microsoft.com/powershell/module/remotedesktop/set-rdsessioncollectionconfiguration) para habilitar os discos de perfil do usuário para a implantação primária (ativa) – forneça um caminho para o compartilhamento de arquivos no volume de origem (o que você criou na etapa 7 nas etapas de implantação).
 2. Inverter a direção da réplica de armazenamento para que o volume de destino se torne o volume de origem (Isso monta o volume e o torna acessível pela implantação secundária). Você pode executar **Set-SRPartnership** para fazer isso. Por exemplo: 
 
    ```powershell
    Set-SRPartnership -NewSourceComputerName "cluster-b-s2d-c" -SourceRGName "cluster-b-s2d-c" -DestinationComputerName "cluster-a-s2d-c" -DestinationRGName "cluster-a-s2d-c"
    ```
 3. Habilite os discos de perfil do usuário na implantação secundário (passivo). Use as mesmas etapas, assim como para a implantação primária, na etapa 1.
-4. Inverter a direção da réplica de armazenamento novamente, para que o volume de origem original é novamente o volume de origem na parceria SR, e a implantação primária pode acessar o compartilhamento de arquivos. Por exemplo: 
+4. Inverter a direção da réplica de armazenamento novamente, para que o volume de origem original é novamente o volume de origem na parceria SR, e a implantação primária pode acessar o compartilhamento de arquivos. Por exemplo:
 
    ```powershell
    Set-SRPartnership -NewSourceComputerName "cluster-a-s2d-c" -SourceRGName "cluster-a-s2d-c" -DestinationComputerName "cluster-b-s2d-c" -DestinationRGName "cluster-b-s2d-c"
@@ -105,10 +105,10 @@ Criar uma [Gerenciador de tráfego do Azure](/azure/traffic-manager/traffic-mana
 
 Observe que o Gerenciador de tráfego requer que os pontos de extremidade para retornar 200 Okey em resposta a uma solicitação GET para ser marcado como "Íntegro". O objeto de publicIP criado a partir de modelos RDS funcionará, mas não adicione um adendo do caminho. Em vez disso, você pode dar aos usuários finais a URL do Gerenciador de tráfego com "/ RDWeb" acrescentado, por exemplo: ```http://deployment.trafficmanager.net/RDWeb```
 
-Implantando o Gerenciador de tráfego do Azure com o método de roteamento de prioridade, impedir que os usuários finais acessem a implantação passiva durante a implantação do Active Directory é funcional. Se os usuários finais acessar a implantação passiva e a direção de réplica de armazenamento ainda não foi alternada para o failover, a entrada do usuário para de responder conforme a implantação tenta e não pode acessar o compartilhamento de arquivos no cluster do S2D passivo - eventualmente a implantação será desista e dê o usuário a um perfil temporário.  
+Implantando o Gerenciador de tráfego do Azure com o método de roteamento de prioridade, impedir que os usuários finais acessem a implantação passiva durante a implantação do Active Directory é funcional. Se os usuários finais acessar a implantação passiva e a direção de réplica de armazenamento ainda não foi alternada para o failover, a entrada do usuário para de responder conforme a implantação tenta e não pode acessar o compartilhamento de arquivos no cluster de espaços de armazenamento diretos passivo - eventualmente a implantação será desistir e dar ao usuário um perfil temporário.  
 
 ### <a name="deallocate-vms-to-save-resources"></a>Desalocar as VMs para salvar os recursos 
-Depois de configurar ambas as implantações, você pode, opcionalmente, desligar e desalocar as VMs de RDSH economize nessas máquinas virtuais e infraestrutura de RDS de secundário. O servidor de SOFS de S2D e o AD VMs sempre deve permanecer em execução na implantação secundária/passivo para habilitar a sincronização de conta e perfil do usuário.  
+Depois de configurar ambas as implantações, você pode, opcionalmente, desligar e desalocar as VMs de RDSH economize nessas máquinas virtuais e infraestrutura de RDS de secundário. O servidor SOFS dos espaços de armazenamento diretos e AD VMs sempre deve permanecer em execução na implantação secundária/passivo para habilitar a sincronização de conta e perfil do usuário.  
 
 Quando ocorre um failover, você precisará iniciar as VMs desalocadas. Essa configuração de implantação tem a vantagem de ser um custo menor, mas às custas do tempo de failover. Se ocorrer uma falha catastrófica na implantação do Active Directory, você precisará iniciar manualmente a implantação passiva, ou você precisará de um script de automação para detectar a falha e iniciar a implantação passiva automaticamente. Em ambos os casos, pode levar vários minutos para obter a implantação passiva em execução e disponíveis para os usuários a entrar, resultando em algum tempo de inatividade para o serviço. Esse tempo de inatividade depende da quantidade de tempo ele leva para iniciar a infraestrutura RDS e VMs de RDSH (normalmente 2 a 4 minutos, se as VMs são iniciadas em paralelo em vez de em série) e o tempo para colocar o cluster passivo online (que depende do tamanho do cluster normalmente 2 a 4 minutos para um cluster de 2 nós com 2 discos por nó). 
 
@@ -123,7 +123,7 @@ Conforme você atualiza as imagens RDSH para fornecer atualizações de software
 
 ## <a name="failover"></a>Failover
 
-No caso de implantação ativa-passiva, o failover exige que você iniciar as VMs da implantação secundária. Você pode fazer isso manualmente ou com um script de automação. No caso de um failover catastrófico do SOFS de S2D, altere a direção da parceria de réplica de armazenamento, para que o volume de destino se torna o volume de origem. Por exemplo: 
+No caso de implantação ativa-passiva, o failover exige que você iniciar as VMs da implantação secundária. Você pode fazer isso manualmente ou com um script de automação. No caso de um failover catastrófico do SOFS dos espaços de armazenamento diretos, altere a direção da parceria de réplica de armazenamento, para que o volume de destino se torna o volume de origem. Por exemplo: 
 
    ```powershell
    Set-SRPartnership -NewSourceComputerName "cluster-b-s2d-c" -SourceRGName "cluster-b-s2d-c" -DestinationComputerName "cluster-a-s2d-c" -DestinationRGName "cluster-a-s2d-c"

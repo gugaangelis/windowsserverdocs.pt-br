@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 8af76edbdb5fc2aa5768811f01c563aab1a89fc6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f6aba72c329ba380f9617f484c4cf754fbcbb363
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849597"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192733"
 ---
 # <a name="convert-an-mbr-disk-into-a-gpt-disk"></a>Converter um disco MBR em um disco GPT
 
@@ -23,15 +23,11 @@ Os discos de Registro Mestre de Inicialização (MBR) usam a tabela de partiçã
 
 Você pode alterar um estilo de partição de disco de MBR para GPT desde que o disco não contenha nenhuma partição ou volume.
 
-
 > [!NOTE]
 > Antes de converter um disco, faça backup dos dados nele e feche os programas que estão acessando o disco.
 
-
 > [!NOTE]
 > No mínimo, você deve ser um membro do grupo **Operadores de backup** ou **Administradores** para concluir estas etapas.
-
-<a id="BKMK_WINUI"></a>
 
 ## <a name="converting-using-the-windows-interface"></a>Converter usando a interface do Windows
 
@@ -40,8 +36,6 @@ Você pode alterar um estilo de partição de disco de MBR para GPT desde que o 
 2.  Se o disco tiver partições ou volumes, clique com botão direito do mouse em cada uma e, em seguida, clique em **Excluir partição** ou **Excluir volume**.
 
 3.  Clique com botão direito do mouse no disco MBR que você deseja transformar em um disco GPT e, em seguida, clique em **Converter em Disco GPT**.
-
-<a id="BKMK_CMD"></a>
 
 ## <a name="converting-using-a-command-line"></a>Converter a linha de comando
 
@@ -64,14 +58,12 @@ Use as seguintes etapas para converter um disco MBR vazio em um disco GPT. Há t
 
 7.  No prompt de comando **DISKPART**, digite `convert gpt`.
 
-<br />
-
 | Valor  | Descrição  |
 | ----- | ----|
-| <p>**disco de lista**</p> | <p>Exibe uma lista de discos e informações sobre eles, como o tamanho, a quantidade de espaço livre disponível, se o disco é básico ou dinâmico, e se o disco usa o estilo de partição Registro Mestre de Inicialização (MBR) ou a Tabela de Partição de GUID (GPT). O disco marcado com um asterisco (*) tem foco.</p> |
-| <p>**Selecione o disco** <em>disknumber</em></p> | <p>Seleciona o disco especificado, onde <em>disknumber</em> é o número do disco e concede foco a ele.</p> |
-| <p>**clean**</p> | <p>Remove todas as partições ou volumes do disco com foco.</p>  |
-| <p>**Converter gpt**</p>| <p>Converte um disco básico vazio com o estilo de partição de Registro Mestre de Inicialização (MBR) em um disco básico com o estilo de partição de Tabela de Partição de GUID (GPT).</p> |
+| **disco de lista** | Exibe uma lista de discos e informações sobre eles, como o tamanho, a quantidade de espaço livre disponível, se o disco é básico ou dinâmico, e se o disco usa o estilo de partição Registro Mestre de Inicialização (MBR) ou a Tabela de Partição de GUID (GPT). O disco marcado com um asterisco (*) tem foco. |
+| **Selecione o disco** *disknumber* | Seleciona o disco especificado, onde *disknumber* é o número do disco e concede foco a ele. |
+| **clean** | Remove todas as partições ou volumes do disco com foco.  |
+| **Converter gpt**| Converte um disco básico vazio com o estilo de partição de Registro Mestre de Inicialização (MBR) em um disco básico com o estilo de partição de Tabela de Partição de GUID (GPT). |
 
 ## <a name="see-also"></a>Consulte também
 

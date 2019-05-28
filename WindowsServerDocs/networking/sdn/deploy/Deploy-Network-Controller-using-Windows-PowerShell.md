@@ -13,12 +13,12 @@ ms.assetid: 2448d381-55aa-4c14-997a-202c537c6727
 ms.author: pashort
 author: shortpatti
 ms.date: 08/23/2018
-ms.openlocfilehash: 31c1579dc840f6f4eb805ac4e10f51192a6b4c99
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d671d044896ae9e71edad8302f06f2a21fe50772
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816187"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034559"
 ---
 # <a name="deploy-network-controller-using-windows-powershell"></a>Implantar controlador de rede usando o Windows PowerShell
 
@@ -31,19 +31,19 @@ Este tópico fornece instruções sobre como usar o Windows PowerShell para impl
 
 Este tópico contém as seguintes seções.
 
-- [Instalar a função de servidor do controlador de rede](#bkmk_role)
+- [Instalar a função de servidor do controlador de rede](#install-the-network-controller-server-role)
 
-- [Configurar o cluster de controlador de rede](#bkmk_configure)
+- [Configurar o cluster de controlador de rede](#configure-the-network-controller-cluster)
 
-- [Configurar o aplicativo do controlador de rede](#bkmk_app)
+- [Configurar o aplicativo do controlador de rede](#configure-the-network-controller-application)
 
-- [Validação de implantação do controlador de rede](#bkmk_validation)
+- [Validação de implantação do controlador de rede](#network-controller-deployment-validation)
 
-- [Comandos adicionais do Windows PowerShell para o controlador de rede](#bkmk_ps)
+- [Comandos adicionais do Windows PowerShell para o controlador de rede](#additional-windows-powershell-commands-for-network-controller)
 
-- [Exemplo de script de configuração de controlador de rede](#bkmk_script)
+- [Exemplo de script de configuração de controlador de rede](#sample-network-controller-configuration-script)
 
-- [Etapas de pós-implantação para implantações não Kerberos](#bkmk_nonkerb)
+- [Etapas de pós-implantação para implantações não Kerberos](#post-deployment-steps-for-non-kerberos-deployments)
 
 ## <a name="install-the-network-controller-server-role"></a>Instalar a função de servidor do controlador de rede
 
@@ -90,7 +90,7 @@ A tabela a seguir fornece descrições para cada parâmetro do **New-NetworkCont
 |-------------|---------------|
 |Nome|O **nome** parâmetro especifica o nome amigável do servidor que você deseja adicionar ao cluster|
 |Servidor|O **Server** parâmetro especifica o nome do host, totalmente o nome de domínio qualificado (FQDN) ou endereço IP do servidor que você deseja adicionar ao cluster. Para computadores que ingressaram no domínio, o FQDN é necessária.|
-|FaultDomain|O **FaultDomain** parâmetro especifica o domínio de falha para o servidor que você está adicionando ao cluster. Esse parâmetro define os servidores que podem apresentar falha ao mesmo tempo em que o servidor que você está adicionando ao cluster. Essa falha pode ser devido às dependências físicas compartilhadas, como energia e fontes de sistema de rede. Normalmente, os domínios de falha representam hierarquias relacionadas a essas dependências compartilhadas, com mais probabilidade de falhar juntos em um ponto mais alto na árvore de domínio de falha de servidores. Durante o tempo de execução, o controlador de rede considera os domínios de falha no cluster e tenta distribuir os serviços de controlador de rede para que eles fiquem em domínios de falha separados. Esse processo ajuda a garantir que, em caso de falha de qualquer domínio de falha, que a disponibilidade do serviço e seu estado não seja comprometida. Domínios de falha são especificados em um formato hierárquico. Por exemplo:  "Fd: / Rack1/DC1/Host1", em que DC1 é o nome do data center, Rack1 é o nome do rack e Host1 é o nome do host no qual o nó é colocado.|
+|FaultDomain|O **FaultDomain** parâmetro especifica o domínio de falha para o servidor que você está adicionando ao cluster. Esse parâmetro define os servidores que podem apresentar falha ao mesmo tempo em que o servidor que você está adicionando ao cluster. Essa falha pode ser devido às dependências físicas compartilhadas, como energia e fontes de sistema de rede. Normalmente, os domínios de falha representam hierarquias relacionadas a essas dependências compartilhadas, com mais probabilidade de falhar juntos em um ponto mais alto na árvore de domínio de falha de servidores. Durante o tempo de execução, o controlador de rede considera os domínios de falha no cluster e tenta distribuir os serviços de controlador de rede para que eles fiquem em domínios de falha separados. Esse processo ajuda a garantir que, em caso de falha de qualquer domínio de falha, que a disponibilidade do serviço e seu estado não seja comprometida. Domínios de falha são especificados em um formato hierárquico. Por exemplo: "Fd: / Rack1/DC1/Host1", em que DC1 é o nome do data center, Rack1 é o nome do rack e Host1 é o nome do host no qual o nó é colocado.|
 |RestInterface|O **RestInterface** parâmetro especifica o nome da interface no nó em que a comunicação do REST Representational State Transfer () é encerrada. Essa interface do controlador de rede recebe solicitações de API Northbound da camada de gerenciamento da rede.|
 |NodeCertificate|O **NodeCertificate** parâmetro especifica o certificado que usa o controlador de rede para autenticação de computador. O certificado é necessário se você usar a autenticação baseada em certificado para a comunicação dentro do cluster. o certificado também é usado para criptografia de tráfego entre os serviços de controlador de rede. O nome de assunto do certificado deve ser o mesmo que o nome DNS do nó.|
 

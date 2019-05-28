@@ -8,18 +8,21 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/16/2016
-ms.openlocfilehash: 2a28be1bdd22915182cbdbb2726ab9d37422e889
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9453811b0f76b249c245990293ba82cf5a6e0867
+ms.sourcegitcommit: 29ad32b9dea298a7fe81dcc33d2a42d383018e82
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834427"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65624634"
 ---
 # <a name="data-deduplication-interoperability"></a>Interoperabilidade de Eliminação de Duplicação de Dados
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server de 2019
 
 ## <a id="supported"></a>Com suporte
+
+### <a id="supported-ReFS"></a>ReFS
+Eliminação de duplicação de dados dá suporte a partir do Windows Server 2019. 
 
 ### <a id="supported-clusters"></a>Clustering de failover
 
@@ -76,8 +79,6 @@ O Backup do Windows Server pode fazer backup de um volume otimizado "como está"
     ```
 
 ## <a id="unsupported"></a>Sem suporte
-### <a id="unsupported-refs"></a>ReFS
-O Windows Server 2016 não dá suporte à Eliminação de Duplicação de Dados em volumes formatados por ReFS. [Vote nesse item para o Windows Server vNext no Windows Server Storage UserVoice](https://windowsserver.uservoice.com/forums/295056-storage/suggestions/7962813-support-deduplication-on-refs).
 
 ### <a id="unsupported-windows-client"></a>Windows 10 (client OS)
 Não há suporte para a eliminação da duplicação de dados no Windows 10. Há várias postagens de blog populares na Comunidade do Windows que descrevem como remover os binários do Windows Server 2016 e instalar no Windows 10, mas esse cenário não foi validado como parte do desenvolvimento de eliminação de duplicação de dados. [Vote nesse item para o Windows 10 no Windows Server Storage UserVoice](https://windowsserver.uservoice.com/forums/295056-storage/suggestions/9011008-add-deduplication-support-to-client-os).

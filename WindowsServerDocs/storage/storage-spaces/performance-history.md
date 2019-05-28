@@ -8,12 +8,12 @@ author: cosmosdarwin
 ms.date: 09/07/2018
 Keywords: Espaços de Armazenamento Diretos
 ms.localizationpriority: medium
-ms.openlocfilehash: 828a3265c9770bab0158067c4f856866d03e3d42
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1916d2d5e4d1fc846bec19826437b200afe36f42
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870857"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64772216"
 ---
 # <a name="performance-history-for-storage-spaces-direct"></a>Histórico de desempenho para espaços de armazenamento diretos
 
@@ -153,7 +153,7 @@ Logo após os espaços de armazenamento diretos está habilitado, um volume GB c
 
 O volume é apoiado por espaços de armazenamento e usa o espelho bidirecional de simple ou resiliência de espelho triplo, dependendo do número de nós no cluster. Ele é reparado após falhas de unidade ou servidor assim como qualquer outro volume em espaços de armazenamento diretos.
 
-O volume usa ReFS, mas não é Cluster CSV (Volume compartilhado), portanto, ela só será exibida no nó do proprietário do grupo de clusters. Além do que está sendo criado automaticamente, não há nada especial sobre este volume: você pode vê-lo, navegar por ele, redimensioná-la ou excluí-lo (não recomendado). Se algo der errado, consulte [solução de problemas](#troubleshooting). 
+O volume usa ReFS, mas não é Cluster CSV (Volume compartilhado), portanto, ela só será exibida no nó do proprietário do grupo de clusters. Além do que está sendo criado automaticamente, não há nada especial sobre este volume: você pode vê-lo, navegar por ele, redimensioná-la ou excluí-lo (não recomendado). Se algo der errado, consulte [solução de problemas](#troubleshooting).
 
 ### <a name="object-discovery-and-data-collection"></a>Coleta de dados e descoberta de objeto
 
@@ -163,7 +163,7 @@ Coleção é manipulada pelo serviço de integridade, que é altamente disponív
 
 ### <a name="handling-measurement-gaps"></a>Tratando intervalos de medição
 
-Quando as medidas são mescladas em série menos granular que se estendem por mais tempo, conforme descrito em [períodos de tempo](#Timeframes), períodos de dados ausentes são excluídos. Por exemplo, se o servidor ficou inativo por 30 minutos, em seguida, executando a 50% da CPU por 30 minutos, o `ClusterNode.Cpu.Usage` média para a hora será registrada corretamente como 50% (não em 25%).
+Quando as medidas são mescladas em série menos granular que se estendem por mais tempo, conforme descrito em [períodos de tempo](#timeframes), períodos de dados ausentes são excluídos. Por exemplo, se o servidor ficou inativo por 30 minutos, em seguida, executando a 50% da CPU por 30 minutos, o `ClusterNode.Cpu.Usage` média para a hora será registrada corretamente como 50% (não em 25%).
 
 ### <a name="extensibility-and-customization"></a>Personalização e extensibilidade
 

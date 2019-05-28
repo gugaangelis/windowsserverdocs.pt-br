@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: fe99487d3a770547af36f69722b442d0e2cbb8b1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 41a71ff49d211d294768c0e4a55692ced3f2d844
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828287"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192452"
 ---
 # <a name="checklist-configuring-ad-fs--to-consume-claims-from-ad-fs-1x"></a>Lista de verificação: Configurar o AD FS para consumir as declarações do AD FS 1.x
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
   
 ## <a name="checklist-configuring-ad-fs-to-consume-claims-from-adfs1x"></a>Lista de verificação: Configurar o AD FS para consumir as declarações do AD FS 1.x  
 Esta lista de verificação inclui as tarefas que são necessárias para configurar seus serviços de Federação do Active Directory \(do AD FS\) serviço de federação no Windows Server 2012 consumam as declarações que são enviadas por um AD FS 1. *x* serviço de Federação.  

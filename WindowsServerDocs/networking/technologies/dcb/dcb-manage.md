@@ -8,12 +8,12 @@ ms.assetid: 1575cc7c-62a7-4add-8f78-e5d93effe93f
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3912bb6048a06a4656b5b27ccec8f8fb3f5b114b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: daed746fe798ae253956d0977827d0e205bb8b3e
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847407"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034572"
 ---
 # <a name="manage-data-center-bridging-dcb"></a>Gerenciar o Data Center Bridging (DCB)
 
@@ -39,7 +39,7 @@ As configurações de atribuição de prioridade de classe, PFC e aplicativo de 
 2. Habilite a DCB nos adaptadores de rede. Ver [habilitar e exibir configurações de DCB nos adaptadores de rede](#bkmk_enabledcb).
 
 >[!NOTE]
->Se você quiser configurar o DCB do switch por meio de DCBX, consulte [configurações DCBX](#BKMK_DCBX_Settings)
+>Se você quiser configurar o DCB do switch por meio de DCBX, consulte [configurações DCBX](#dcb-configuration-on-network-adapters).
 
 O bit de disposto DCBX é descrito na especificação do DCB. Se o bit está disposto em um dispositivo é definido como true, o dispositivo está disposto a aceitar as configurações de um dispositivo remoto por meio de DCBX. Se o bit está disposto em um dispositivo é definido como false, o dispositivo será rejeitar todas as tentativas de configuração de dispositivos remotos e impor apenas as configurações de locais.
 

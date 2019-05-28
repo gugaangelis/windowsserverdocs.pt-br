@@ -3,22 +3,20 @@ ms.assetid: 8e7015bc-c489-4ec7-8b6e-3ece90f72317
 title: Configurar políticas de autenticação
 description: ''
 author: billmath
-ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 7faffb7ccbb4b0ea3c65329d18f915d7dafcd46f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.author: billmath
+ms.openlocfilehash: 9345f995af2f256dddcbcbd7d05c4bf6170b563e
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861787"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189862"
 ---
 # <a name="configure-authentication-policies"></a>Configurar políticas de autenticação
-
->Aplica-se a: Windows Server 2012 R2
 
 No AD FS no Windows Server 2012 R2, controle de acesso e o mecanismo de autenticação são aprimoradas com vários fatores que incluem dados de usuário, dispositivo, localização e autenticação. Essas melhorias permitem que você, por meio da interface do usuário ou por meio do Windows PowerShell, para gerenciar o risco de conceder permissões de acesso para o AD FS\-protegidos aplicativos por meio de várias\-fatorar o controle de acesso e várias\-autenticação multifator com base em associação de grupo ou identidade de usuário, local de rede, dados de dispositivo que é o local de trabalho\-unidas, e a autenticação do estado quando várias\-autenticação multifator \(MFA\) foi executada.  
   
@@ -27,7 +25,7 @@ Para obter mais informações sobre o MFA e multi-thread\-fatorar o controle de 
 
 -   [Ingresse no local de trabalho de qualquer dispositivo de SSO contínuo e fatores de autenticação em aplicativos da empresa](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 
--   [Gerencie riscos com controle de acesso condicional](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
+-   [Gerenciar risco com o Controle de Acesso Condicional](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 
 -   [Gerencie riscos com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 

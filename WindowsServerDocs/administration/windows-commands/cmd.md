@@ -13,16 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 966ac7f70984dff6d26265e07a26a6eebcde9fb6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7d9b99dbe7e26190e87c5dfc9de29980b9cb2f43
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874387"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192591"
 ---
 # <a name="cmd"></a>Cmd
-
-
 
 Inicia uma nova instância do interpretador de comandos, Cmd.exe. Se usado sem parâmetros, **cmd** exibe as informações de versão e copyright do sistema operacional.
 
@@ -78,7 +76,7 @@ A tabela a seguir lista os dígitos hexadecimais válidos que podem ser usados c
 
 -   Usando vários comandos
 
-    Para usar vários comandos para \<cadeia de caracteres >, separe-os pelo separador de comando **&&** e coloque-os entre aspas. Por exemplo:  
+    Para usar vários comandos para \<cadeia de caracteres >, separe-os pelo separador de comando **&&** e coloque-os entre aspas. Por exemplo:   
     ```
     "<Command>&&<Command>&&<Command>"
     ```  
@@ -104,6 +102,7 @@ A tabela a seguir lista os dígitos hexadecimais válidos que podem ser usados c
 
 > [!CAUTION]
 > A edição incorreta do Registro pode causar danos graves ao sistema. Antes de alterar o Registro, faça backup de todos os dados importantes do computador.
+
 -   Habilitando e desabilitando as extensões de comando
 
     As extensões de comando são habilitadas por padrão no Windows XP. Você pode desabilitá-los para um processo específico usando **/e: off**. Você pode habilitar ou desabilitar as extensões para todos os **cmd** opções de linha de comando em um computador ou sessão de usuário definindo o seguinte **REG_DWORD** valores:
@@ -114,34 +113,35 @@ A tabela a seguir lista os dígitos hexadecimais válidos que podem ser usados c
 
     Defina a **REG_DWORD** valor para um **0 × 1** (habilitado) ou **0 × 0** (desabilitada) no registro usando Regedit.exe. Configurações especificadas pelo usuário têm precedência sobre configurações de computador e opções de linha de comando têm precedência sobre as configurações do registro.
 
->     [!CAUTION]
->     Incorrectly editing the registry may severely damage your system. Before making changes to the registry, you should back up any valued data on the computer.
+> [!CAUTION]
+> A edição incorreta do Registro pode causar danos graves ao sistema. Antes de alterar o Registro, faça backup de todos os dados importantes do computador.
 
     When you enable command extensions, the following commands are affected:  
-    -   **assoc**
-    -   **call**
-    -   **chdir (cd)**
-    -   **color**
-    -   **del (erase)**
-    -   **endlocal**
-    -   **for**
-    -   **ftype**
-    -   **goto**
-    -   **if**
-    -   **mkdir (md)**
-    -   **popd**
-    -   **prompt**
-    -   **pushd**
-    -   **set**
-    -   **setlocal**
-    -   **shift**
-    -   **start** (also includes changes to external command processes)
+    -  **assoc**
+    -  **call**
+    -  **chdir (cd)**
+    -  **color**
+    -  **del (erase)**
+    -  **endlocal**
+    -  **for**
+    -  **ftype**
+    -  **goto**
+    -  **if**
+    -  **mkdir (md)**
+    -  **popd**
+    -  **prompt**
+    -  **pushd**
+    -  **set**
+    -  **setlocal**
+    -  **shift**
+    -  **start** (also includes changes to external command processes)
+
 -   Habilitando a expansão de variáveis de ambiente atrasada
 
     Se você habilitar a expansão de variáveis de ambiente atrasada, você pode usar o caractere de ponto de exclamação para substituir o valor de uma variável de ambiente em tempo de execução.
 -   Habilitando a conclusão de nome de arquivo e pasta
 
-    Conclusão de nome de arquivo e pasta não está habilitado por padrão. Você pode habilitar ou desabilitar a conclusão de nome de arquivo para um determinado processo do **cmd** comando **/f:**{**na**|**off**}. Você pode habilitar ou desabilitar a conclusão de nome de arquivo e pasta para todos os processos do **cmd** comando em um computador ou para uma sessão de logon do usuário definindo o seguinte **REG_DWORD** valores:
+    Conclusão de nome de arquivo e pasta não está habilitado por padrão. Você pode habilitar ou desabilitar a conclusão de nome de arquivo para um determinado processo do **cmd** comando **/f:** {**na**|**off**}. Você pode habilitar ou desabilitar a conclusão de nome de arquivo e pasta para todos os processos do **cmd** comando em um computador ou para uma sessão de logon do usuário definindo o seguinte **REG_DWORD** valores:
 
     **HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\CompletionChar\REG_DWORD**
 
@@ -170,4 +170,4 @@ Se você processar a conclusão de nome de arquivo e pasta de dentro *cadeia de 
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

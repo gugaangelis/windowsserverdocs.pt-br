@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 52a08ae7eaee81c00985d5334f9abeaa84e30879
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 05fcaf402347d16bf8c28528d402664ae5f99165
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814157"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476061"
 ---
 # <a name="file-screening-management"></a>Gerenciamento de triagem de arquivos
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server (canal semestral), Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 No nó **Gerenciamento de triagem de arquivo** do snap-in do MMC do Gerenciador de recursos do servidor de arquivos, você pode executar as seguintes tarefas:
 
@@ -35,14 +35,14 @@ Esta seção inclui os seguintes tópicos:
 -   [Definir grupos de arquivos para triagem](define-file-groups-for-screening.md)
 -   [Criar uma tela de arquivo](create-file-screen.md)
 -   [Criar uma exceção de triagem de arquivo](create-file-screen-exception.md)
--   [Criar um modelo de tela de arquivo](create-file-screen-template.md)
--   [Editar propriedades do modelo de triagem de arquivo](edit-file-screen-template-properties.md)
+-   [Criar um modelo de triagem de arquivo](create-file-screen-template.md)
+-   [Editar propriedades de modelo de triagem de arquivo](edit-file-screen-template-properties.md)
 
 > [!Note]
 > Para definir notificações por email e determinados recursos de relatório, você deve configurar primeiro as opções gerais do Gerenciador de recursos do servidor de arquivos.
 
 ## <a name="see-also"></a>Consulte também
 
--   [Opções do Gerenciador de recursos de servidor de arquivos de configuração](setting-file-server-resource-manager-options.md)
+-   [Definir opções do Gerenciador de Recursos de Servidor de Arquivos](setting-file-server-resource-manager-options.md)
 
 

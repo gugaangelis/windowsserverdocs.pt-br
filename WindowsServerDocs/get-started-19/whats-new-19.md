@@ -4,25 +4,30 @@ description: Uma visão geral dos novos recursos no Windows Server 2019, incluin
 ms.prod: windows-server-threshold
 ms.technology: server-general
 ms.topic: article
-author: coreyp-at-msft
-ms.author: coreyp
+author: jasongerend
+ms.author: jgerend
 ms.localizationpriority: high
-ms.openlocfilehash: 4c454fc397b662e313d5cfb7ed02a83dc7059207
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.date: 05/21/2019
+ms.openlocfilehash: af887c0e1c66a017ee091fb2cab2dc61fa9ac1dc
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871837"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976551"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Novidades no Windows Server 2019
 
-Este tópico descreve alguns dos novos recursos no Windows Server 2019. Windows Server 2019 baseia-se a base sólida de Windows Server 2016 e traz diversas inovações em quatro temas principais: Nuvem híbrida, segurança, plataforma de aplicativos e infraestrutura Hiperconvergida (HCI). Para conhecer as novidades no Windows Server, versão 1809, veja [as novidades no Windows Server, versão 1809](../get-started/whats-new-in-windows-server-1809.md).
+> Aplica-se a: Windows Server 2019
+
+Este tópico descreve alguns dos novos recursos no Windows Server 2019. Windows Server 2019 baseia-se a base sólida de Windows Server 2016 e traz diversas inovações em quatro temas principais: Nuvem híbrida, segurança, plataforma de aplicativos e infraestrutura Hiperconvergida (HCI).
+
+Para descobrir o que há de novo nas versões de canal semestral do Windows Server, consulte [o que há de novo no Windows Server](../get-started/whats-new-in-windows-server.md). 
 
 ## <a name="general"></a>Geral
 
 ### <a name="desktop-experience"></a>Experiência Desktop
 
-Como o Windows Server 2019 é uma versão do Canal de Manutenção a Longo Prazo (LTSC), ele inclui a <b>Experiência Desktop</b>. (Ele não está incluído no Windows Server, versão 1709, Windows Server, versão 1803 ou Windows Server, versão 1809, porque o canal semestral \(SAC\) versões não incluem a experiência de área de trabalho por design; eles são estritamente do servidor Versões de imagem de contêiner do Core e Nano Server.) Assim como acontece com o Windows Server 2016, durante a instalação do sistema operacional você pode escolher entre as instalações Server Core ou Server com instalações de experiência de área de trabalho.
+Como o Windows Server 2019 é uma versão do Canal de Manutenção a Longo Prazo (LTSC), ele inclui a <b>Experiência Desktop</b>. (Canal semestral \(SAC\) versões não incluem a experiência de área de trabalho por design; eles são estritamente o Server Core e versões de imagem de contêiner do Nano Server.) Assim como acontece com o Windows Server 2016, durante a instalação do sistema operacional você pode escolher entre as instalações Server Core ou Server com instalações de experiência de área de trabalho.
 
 ### <a name="system-insights"></a>Insights do Sistema
 
@@ -148,7 +153,7 @@ Veja a seguir uma lista das novidades no Clustering de Failover. Para obter deta
 
 Agora é possível executar o Windows e contêineres do Linux no mesmo host do contêiner, usando o mesmo daemon do docker. Isso permite que você tenha um ambiente de host do contêiner heterogêneos enquanto fornece flexibilidade para desenvolvedores de aplicativos.
 
-### <a name="building-support-for-kubernetes"></a>Suporte de construção para Kubernetes
+### <a name="built-in-support-for-kubernetes"></a>Suporte interno para Kubernetes
 
 O Windows Server 2019 mantém as melhorias de computação, rede e armazenamento das versões de canal semestral necessárias para dar suporte a plataforma Kubernetes no Windows. Mais detalhes estarão disponíveis em versões futuras da Kubernetes.
 

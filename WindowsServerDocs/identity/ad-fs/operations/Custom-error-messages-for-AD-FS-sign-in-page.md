@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3a015c27f784d5b1f488f984450612820d4a06b1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8bcc653cc9eb9adb6d31331463d01774d4faec1a
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828977"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189222"
 ---
 # <a name="custom-error-messages-for-ad-fs-sign-in-page"></a>Mensagens de erro personalizada para página de entrada do AD FS  
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
 Você pode configurar mensagens de erro personalizadas que podem ser ajustadas à sua organização. A ilustração a seguir mostra uma descrição de página de erro personalizada e uma mensagem de erro genérica. Use os seguintes cmdlets do Windows PowerShell para personalizar suas mensagens de erro.  
   

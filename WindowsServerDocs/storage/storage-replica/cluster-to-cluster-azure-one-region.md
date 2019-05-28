@@ -1,23 +1,26 @@
 ---
-title: Réplica de armazenamento de cluster para Cluster dentro da região de mesma no Azure
-description: Replicação de armazenamento de Cluster para cluster na mesma região no Azure
+title: Cluster para cluster de réplica de armazenamento na mesma região no Azure
+description: Cluster para cluster de replicação de armazenamento na mesma região no Azure
 keywords: A réplica de armazenamento, Gerenciador de servidores, Windows Server, Azure, Cluster, a mesma região
 author: arduppal
 ms.author: arduppal
-ms.date: 12/19/2017
+ms.date: 04/26/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 8dbfab96404f5c98b9861476c0bc654af1bda775
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4371192d44878d3c953374b8d307b4d5612869f5
+ms.sourcegitcommit: 7e54a1bcd31cd2c6b18fd1f21b03f5cfb6165bf3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829137"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65461975"
 ---
-# <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>Réplica de armazenamento de cluster para Cluster dentro da região de mesma no Azure
-Você pode configurar réplicas de armazenamento de Cluster para Cluster na mesma região no Azure. Nos exemplos a seguir, usamos um cluster de dois nós, mas a réplica de armazenamento de Cluster para Cluster não está restrita a um cluster de dois nós. A ilustração a seguir é um cluster de espaço de armazenamento diretos de dois nós que pode se comunicar uns com os outros estão no mesmo domínio e na mesma região.
+# <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>Cluster para cluster de réplica de armazenamento na mesma região no Azure
+
+> Aplica-se a: 2019, Windows Server 2016, Windows Server (canal semestral) do Windows Server
+
+Você pode configurar a replicação de armazenamento de cluster para cluster na mesma região no Azure. Nos exemplos a seguir, usamos um cluster de dois nós, mas a réplica de armazenamento de cluster para cluster não está restrita a um cluster de dois nós. A ilustração a seguir é um cluster de espaço de armazenamento diretos de dois nós que pode se comunicar uns com os outros estão no mesmo domínio e na mesma região.
 
 Assista aos vídeos abaixo para obter uma explicação completa do processo.
 
@@ -57,10 +60,10 @@ Parte dois
     
 9. Criar os clusters (**SRAZC1**, **SRAZC2**). Abaixo está os comandos do PowerShell para o nosso exemplo
 ```PowerShell
-    New-Cluster -Name SRAZC1 -Node az2az1,az2az2 – StaticAddress 10.3.0.100
+    New-Cluster -Name SRAZC1 -Node az2az1,az2az2 –StaticAddress 10.3.0.100
 ```
 ```PowerShell
-    New-Cluster -Name SRAZC2 -Node az2az3,az2az4 – StaticAddress 10.3.0.101
+    New-Cluster -Name SRAZC2 -Node az2az3,az2az4 –StaticAddress 10.3.0.101
 ```
 10. Habilitar espaços de armazenamento diretos
 ```PowerShell

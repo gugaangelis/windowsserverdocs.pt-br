@@ -1,6 +1,6 @@
 ---
 title: Visão geral do servidor de arquivos de expansão para dados de aplicativos
-description: Visão geral do recurso de servidor de arquivos de escalabilidade horizontal para Windows Server 201 R2, Windows Server 2012 e Windows Server 2016.
+description: Visão geral do recurso de servidor de arquivos de escalabilidade horizontal para Windows Server 201 R2 e Windows Server 2012.
 ms.prod: windows-server-threshold
 ms.topic: article
 author: JasonGerend
@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 04e25e9c69062611d9d14c220614f148ac5de770
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3e6d67eee496d19b216a4366af51ab5736229cf0
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884767"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476148"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>Visão geral do servidor de arquivos de expansão para dados de aplicativos
 
->Aplica-se a: Windows Server 2012 R2, Windows Server 2012, Windows Server 2016
+>Aplica-se a: Windows Server 2012 R2, Windows Server 2012
 
 Servidor de Arquivos de Escalabilidade Horizontal é um recurso projetado para fornecer compartilhamentos de arquivos de escalabilidade horizontal que estão continuamente disponíveis para armazenamento de aplicativo para servidores com base em arquivo. Os compartilhamentos de arquivos de expansão proporcionam a capacidade de compartilhar a mesma pasta em múltiplos nós do mesmo cluster. Esse cenário se concentra em como planejar e implantar o Servidor de Arquivos de Escalabilidade Horizontal.
 

@@ -7,14 +7,14 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.date: 03/08/2019
+ms.date: 03/25/2019
 description: Tópicos novos e atualizados na documentação do armazenamento local para o Windows Server para profissionais de TI.
-ms.openlocfilehash: 3eb2f0e8dd05612d1c160ffe53791db3c1ef1828
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: fa3da6e14c36fecfa48c3688a36518babb257920
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851087"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192682"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Histórico de alterações dos tópicos de armazenamento no Windows Server
 
@@ -24,11 +24,20 @@ Este tópico lista os tópicos novos e atualizados a [armazenamento](storage.md)
 
 > Se você estiver procurando o histórico de atualização para o Windows Server, consulte [histórico de atualizações do Windows 10 e Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history).
 
+## <a name="may-2019"></a>Maio de 2019
+
+|Tópico novo ou alterado                                        |Descrição|
+|---                                                         |---           |
+|[Excluir volumes](storage-spaces/delete-volumes.md)| Novo        |
+|[Criar volumes](storage-spaces/create-volumes.md)| Etapas adicionais e vídeos para a criação de um volume no Windows Admin Center.|
+|[Estender volumes](storage-spaces/resize-volumes.md)| Etapas adicionais e vídeo para o redimensionamento de um volume no Windows Admin Center.|
+
 ## <a name="march-2019"></a>Março de 2019
 
 |Tópico novo ou alterado                                        |Descrição|
 |---                                                         |---           |
-|[Atualizar um cluster de espaços de armazenamento diretos para o Windows Server 2019](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| Novo        |
+|[Monitorar com o Azure Monitor](storage-spaces/configure-azure-monitor.md)| Novo|
+|[Atualizar um cluster de Espaços de Armazenamento Diretos para o Windows Server 2019](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| Novo        |
 |[Replicação do DFS](dfs-replication/dfsr-overview.md)        | Migrado do [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11)) biblioteca|
 
 ## <a name="february-2019"></a>Fevereiro de 2019
@@ -41,15 +50,15 @@ Este tópico lista os tópicos novos e atualizados a [armazenamento](storage.md)
 
 |Tópico novo ou alterado                                        |Descrição|
 |---                                                         |---           |
-|[Compreender e monitorar a ressincronização de armazenamento](storage-spaces/understand-storage-resync.md)|Novo tópico|
+|[Entender e monitorar a ressincronização de armazenamento](storage-spaces/understand-storage-resync.md)|Novo tópico|
 
 ## <a name="december-2018"></a>Dezembro de 2018
 
 |Tópico novo ou alterado                                        |Descrição|
 |---                                                         |---           |
 |[Use o serviço de migração de armazenamento para migrar um servidor](storage-migration-service/migrate-data.md)| Adicionado algum esclarecimento sobre como podemos transferir arquivos |
-|[Réplica de armazenamento de Cluster para cluster cross região no Azure](storage-replica/cluster-to-cluster-azure-cross-region.md)|Etapas de validação adicional|
-|[Réplica de armazenamento de Cluster para cluster na mesma região no Azure](storage-replica/cluster-to-cluster-azure-one-region.md)|Etapas de validação adicional|
+|[Réplica de armazenamento de cluster para cluster entre regiões no Azure](storage-replica/cluster-to-cluster-azure-cross-region.md)|Etapas de validação adicional|
+|[Réplica de armazenamento de cluster para cluster na mesma região no Azure](storage-replica/cluster-to-cluster-azure-one-region.md)|Etapas de validação adicional|
 |[Perguntas frequentes sobre a réplica de armazenamento](storage-replica/storage-replica-frequently-asked-questions.md)| Instrução de suporte adicionado para eliminação de duplicação de dados|
 
 ## <a name="november-2018"></a>Novembro de 2018
@@ -58,16 +67,16 @@ Este tópico lista os tópicos novos e atualizados a [armazenamento](storage.md)
 |---                                                         |---           |
 |[Resiliência aninhada](storage-spaces/nested-resiliency.md)    | Novo tópico    |
 |[Problemas conhecidos do serviço de migração de armazenamento](storage-migration-service/known-issues.md)   | Novo tópico    |
-|[Replicação do DFS: Perguntas frequentes (FAQ)](dfs-replication/dfsr-faq.md)|Migrado do [versões anteriores](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/) biblioteca|
-|[Migrar uma replicação do SYSVOL para replicação do DFS](dfs-replication/migrate-sysvol-to-dfsr.md)|Migrado do [versões anteriores](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/) biblioteca|
-|[SMB: Arquivo e impressora, portas de compartilhamento devem estar abertas](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|Migrado do [versões anteriores](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/) biblioteca|
-|[Serviço de cópias de sombra de volume](file-server/volume-shadow-copy-service.md)|Migrado do [versões anteriores](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/) biblioteca|
+|[Replicação do DFS: perguntas frequentes (FAQ)](dfs-replication/dfsr-faq.md)|Migrado do [versões anteriores](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/) biblioteca|
+|[Migrar a replicação do SYSVOL para a replicação do DFS](dfs-replication/migrate-sysvol-to-dfsr.md)|Migrado do [versões anteriores](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/) biblioteca|
+|[SMB: portas de compartilhamento de arquivo e impressora devem estar abertas](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|Migrado do [versões anteriores](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/) biblioteca|
+|[Serviço de Cópias de Sombra de Volume](file-server/volume-shadow-copy-service.md)|Migrado do [versões anteriores](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/) biblioteca|
 
 ## <a name="october-2018"></a>Outubro de 2018
 
 |Tópico novo ou alterado|Descrição|
 |---|---|
-|[O que há de novo no armazenamento](whats-new-in-storage.md)|Atualizado para abordar o que há de novo no Windows Server 2019|
+|[Novidades no armazenamento](whats-new-in-storage.md)|Atualizado para abordar o que há de novo no Windows Server 2019|
 |[Problemas conhecidos de réplica de armazenamento](storage-replica/storage-replica-known-issues.md)|Adicionadas informações sobre uma nova atualização.|
 
 ## <a name="september-2018"></a>Setembro de 2018
@@ -78,7 +87,7 @@ Este tópico lista os tópicos novos e atualizados a [armazenamento](storage.md)
 |[Use o serviço de migração de armazenamento para migrar um servidor](storage-migration-service/migrate-data.md)| Novo tópico |
 |[Perguntas frequentes (FAQ) do serviço de migração de armazenamento](storage-migration-service/faq.md)| Novo tópico |
 | [Servidor de destino iSCSI](iscsi/iscsi-target-server.md) | Migrado do [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
-| [limites de escalabilidade do servidor de destino iSCSI](iscsi/iscsi-target-server-limits.md) |Migrado do [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
+| [Limites de escalabilidade do servidor de destino iSCSI](iscsi/iscsi-target-server-limits.md) |Migrado do [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
 
 ## <a name="june-2018"></a>Junho de 2018
 
@@ -110,7 +119,7 @@ Este tópico lista os tópicos novos e atualizados a [armazenamento](storage.md)
 |[Visão geral do redirecionamento de pasta, arquivos Offline e perfis de usuário móvel](folder-redirection/folder-redirection-rup-overview.md)|Migrado vários tópicos, desde o [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
 |[Usando o protocolo SMB 3 de compartilhamento de arquivos](file-server/file-server-smb-overview.md)|Migrado do [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
 |[Melhorar o desempenho de um servidor de arquivos com o SMB Direct](file-server/smb-direct.md)|Migrado do [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
-|[Aprimoramentos de segurança SMB](file-server/smb-security.md)|Migrado do [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
+|[Melhorias de segurança do SMB](file-server/smb-security.md)|Migrado do [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
 
 ## <a name="march-2018"></a>Março de 2018
 
@@ -140,12 +149,12 @@ Este tópico lista os tópicos novos e atualizados a [armazenamento](storage.md)
 
 |Tópico novo ou alterado|Descrição|
 |---|---|
-|[Alterar uma letra de unidade](disk-management/change-a-drive-letter.md)|Novo tópico.|
-|[Solucionando problemas de gerenciamento de disco](disk-management/troubleshooting-disk-management.md)|Reescreveu a [é de status de um disco não inicializado ou o disco está ausente inteiramente](disk-management/troubleshooting-disk-management.md#disk-not-initialized) seção extensivo de adicionar etapas, solução de problemas com base nas solicitações de cliente.|
+|[Alterar a letra da unidade](disk-management/change-a-drive-letter.md)|Novo tópico.|
+|[Solução de problemas do Gerenciamento de disco](disk-management/troubleshooting-disk-management.md)|Reescreveu a [é de status de um disco não inicializado ou o disco está ausente inteiramente](disk-management/troubleshooting-disk-management.md#a-disks-status-is-not-initialized-or-the-disk-is-missing) seção extensivo de adicionar etapas, solução de problemas com base nas solicitações de cliente.|
 |[Inicializar novos discos](disk-management/initialize-new-disks.md)|Foi reescrito para tentar tornar mais fácil de entender e resolver a dúvidas dos clientes.|
 |[Planejando volumes em espaços de armazenamento diretos](storage-spaces/plan-volumes.md)|Adicionada a uma tabela de resumo de tipos de resiliência disponíveis em clusters maiores e quatro nós.|
 |[Visão geral de reFS](refs/refs-overview.md)|Esclareceu as cargas de trabalho recomendadas para paridade acelerada de espelho e corrigido os tamanhos de arquivo e volume com suporte para ReFS e NTFS.|
-|[Paridade de aceleração de espelho](refs/mirror-accelerated-parity.md)|Esclarecida a recomendação para colocar os arquivos de pesada de gravação em diretórios separados.|
+|[Paridade acelerada por espelho](refs/mirror-accelerated-parity.md)|Esclarecida a recomendação para colocar os arquivos de pesada de gravação em diretórios separados.|
 |[Problemas conhecidos de réplica de armazenamento](storage-replica/storage-replica-known-issues.md)|Novas informações adicionadas.|
 
 ## <a name="november-2017"></a>Novembro de 2017
@@ -171,7 +180,7 @@ Este tópico lista os tópicos novos e atualizados a [armazenamento](storage.md)
 |Tópico novo ou alterado|Descrição|
 |---|---|
 |[Namespaces do DFS](dfs-namespaces/dfs-overview.md)|Publicado 20 novos tópicos para o Windows Server 2016.|
-|[Gerenciador de recursos de servidor de arquivos](fsrm/fsrm-overview.md)|Publicados 33 novos tópicos para o Windows Server 2016.|
+|[Gerenciador de Recursos de Servidor de Arquivos](fsrm/fsrm-overview.md)|Publicados 33 novos tópicos para o Windows Server 2016.|
 |[Compreendendo o cache em espaços de armazenamento diretos](storage-spaces/understand-the-cache.md)|Adicionado um vídeo de Considerações de design dos Espaços de Armazenamento Diretos|
 |[Perguntas frequentes sobre a réplica de armazenamento](storage-replica/storage-replica-frequently-asked-questions.md)|Adicionadas mais práticas recomendadas em torno de volumes de log.|
 
@@ -182,14 +191,14 @@ Este tópico lista os tópicos novos e atualizados a [armazenamento](storage.md)
 |[Planejando uma implantação de pastas de trabalho](work-folders/plan-work-folders.md)|Adicionadas informações sobre o Proxy de aplicativo do Azure AD suporte e atualizados requisitos.|
 |[Pastas de trabalho](work-folders/work-folders-overview.md)|Adicionadas informações sobre o Proxy de aplicativo do Azure AD suporte e atualizados requisitos.|
 |[Implantar espaços de armazenamento diretos](storage-spaces/deploy-storage-spaces-direct.md)|Removido o servidor Nano de opções de instalação com suporte.|
-|[Gerenciador de recursos de servidor de arquivos](fsrm/fsrm-overview.md)|Novo tópico para o Windows Server 2016.|
+|[Gerenciador de Recursos de Servidor de Arquivos](fsrm/fsrm-overview.md)|Novo tópico para o Windows Server 2016.|
 
 ## <a name="may-2017"></a>Maio de 2017
 
 |Tópico novo ou alterado|Descrição|
 |---|---|
 |[Visão geral de eliminação de duplicação de dados](data-deduplication/overview.md) e <br>[Instalar a eliminação de duplicação de dados](data-deduplication/install-enable.md)|Atualizados os requisitos do sistema para incluir uma atualização de software mais recente. |
-|[Implantando pastas de trabalho](work-folders/deploy-work-folders.md)|Adicionadas informações sobre o Proxy de aplicativo do Azure AD suporte e atualizados etapas necessárias.|
+|[Implantar pastas de trabalho](work-folders/deploy-work-folders.md)|Adicionadas informações sobre o Proxy de aplicativo do Azure AD suporte e atualizados etapas necessárias.|
 |[Implantar espaços de armazenamento diretos](storage-spaces/deploy-storage-spaces-direct.md)|Etapa adicional 1.3 com recursos requeridos e correção de um parâmetro obsoleto no Enable-NetAdapterQos.||[Visão geral da réplica do armazenamento](storage-replica/storage-replica-overview.md) (e outros tópicos da réplica do armazenamento)|Adicionada uma recomendação rápida de usar, armazenamento exclusivo para armazenamento réplica logs.|
 |[Perguntas frequentes sobre a réplica de armazenamento](storage-replica/storage-replica-frequently-asked-questions.md)|Adicionadas informações sobre como escolher entre topologias de replicação diferentes.|
 |[Requisitos de hardware de espaços diretos de armazenamento](storage-spaces/storage-spaces-direct-hardware-requirements.md)|Requisitos de duração de um disco alterados para dispositivos de cache.|
@@ -201,8 +210,8 @@ Este tópico lista os tópicos novos e atualizados a [armazenamento](storage.md)
 |[Atualizações de firmware de unidade de solução de problemas](troubleshoot-firmware-update.md)|Novo tópico.|
 |[Pastas de trabalho](work-folders/work-folders-overview.md)|Novo tópico.|
 |[Planejando uma implantação de pastas de trabalho](work-folders/plan-work-folders.md)|Novo tópico.|
-|[Implantando pastas de trabalho](work-folders/deploy-work-folders.md)|Novo tópico.|
-|[Implantando pastas de trabalho com o AD FS e Proxy de aplicativo Web (WAP)](work-folders/deploy-work-folders-adfs-overview.md)|Novo tópico.|
+|[Implantar pastas de trabalho](work-folders/deploy-work-folders.md)|Novo tópico.|
+|[Implantar pastas de trabalho com o AD FS e o Proxy de aplicativo Web (WAP)](work-folders/deploy-work-folders-adfs-overview.md)|Novo tópico.|
 |[Implantar espaços de armazenamento diretos](storage-spaces/deploy-storage-spaces-direct.md)|Removido uma referência para uma atualização de software obsoletos e corrigimos um erro de digitação na saída do exemplo.|
 |[Problemas conhecidos de réplica de armazenamento](storage-replica/storage-replica-known-issues.md)|Novas informações adicionadas.|
 
@@ -228,8 +237,8 @@ Este tópico lista os tópicos novos e atualizados a [armazenamento](storage.md)
 |[Criação de volumes](storage-spaces/create-volumes.md)|Novo tópico.|
 |[Extensão dos volumes em espaços de armazenamento diretos](storage-spaces/resize-volumes.md)|Novo tópico.|
 |[Visão geral de reFS](refs/refs-overview.md)|Novo tópico.|
-|[Noções básicas sobre espaços de armazenamento diretos](storage-spaces/understand-storage-spaces-direct.md)|Nova lista de links.|
-|[Planejamento de espaços de armazenamento diretos](storage-spaces/plan-storage-spaces-direct.md)|Nova lista de links.|
+|[Noções básicas de Espaços de Armazenamento Diretos](storage-spaces/understand-storage-spaces-direct.md)|Nova lista de links.|
+|[Planejar Espaços de Armazenamento Diretos](storage-spaces/plan-storage-spaces-direct.md)|Nova lista de links.|
 |[Implantar espaços de armazenamento diretos](storage-spaces/deploy-storage-spaces-direct.md)|Nova lista de links.|
 |[Gerenciar espaços de armazenamento diretos](storage-spaces/manage-storage-spaces-direct.md)|Novo tópico.|
 |[Perguntas frequentes sobre a réplica de armazenamento](storage-replica/storage-replica-frequently-asked-questions.md)|Requisitos de porta atualizados e esclarecimento sobre como os volumes replicados estendidos funcionam.|

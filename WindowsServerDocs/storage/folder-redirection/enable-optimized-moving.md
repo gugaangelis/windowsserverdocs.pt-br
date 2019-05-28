@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 98fd5d50645ad454204dcf9dabf58e97c246ab1a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7bdf30a4f721568add4e7902245da2a803b72db1
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853987"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475865"
 ---
 # <a name="enable-optimized-moves-of-redirected-folders"></a>Habilitar movimentos otimizados de pastas redirecionadas
 
->Aplica-se a: Windows 10, Windows 8, Windows 8.1, Windows Server 2012, Windows Server 2012 R2, Windows Server 2016
+>Aplica-se a: Windows 10, Windows 8, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server (canal semestral)
 
 Este tópico descreve como executar uma mudança otimizada de pastas redirecionadas (redirecionamento de pasta) para um novo compartilhamento de arquivos. Se você habilitar essa configuração de política, quando um administrador move o compartilhamento de arquivos que hospedam as pastas redirecionadas e atualiza o caminho de destino das pastas redirecionadas na diretiva de grupo, o conteúdo em cache simplesmente renomeado no cache de arquivos Offline local sem atrasos ou perda de dados para o usuário.
 
@@ -28,7 +28,7 @@ Anteriormente, os administradores poderiam alterar o caminho de destino das past
 Mover otimizado tem os seguintes requisitos:
 
 - Redirecionamento de pasta deve ser configurado. Para obter mais informações, consulte [implantar o redirecionamento de pasta com arquivos Offline](deploy-folder-redirection.md).
-- Computadores cliente devem executar o Windows 10, Windows 8.1, Windows 8, Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012.
+- Computadores cliente devem executar o Windows 10, Windows 8.1, Windows 8, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 ou Windows Server (canal semestral).
 
 ## <a name="step-1-enable-optimized-move-in-group-policy"></a>Etapa 1: Habilitar otimizada mudança na política de grupo
 
@@ -75,5 +75,5 @@ Ao mover o compartilhamento de arquivo que contém usuários pastas redirecionad
 ## <a name="more-information"></a>Mais informações
 
 * [Implantar o redirecionamento de pasta com arquivos Offline](deploy-folder-redirection.md)
-* [Implantar perfis de usuário móvel](deploy-roaming-user-profiles.md)
+* [Implantar perfis de usuário móveis](deploy-roaming-user-profiles.md)
 * [Visão geral do redirecionamento de pasta, arquivos Offline e perfis de usuário móvel](folder-redirection-rup-overview.md)

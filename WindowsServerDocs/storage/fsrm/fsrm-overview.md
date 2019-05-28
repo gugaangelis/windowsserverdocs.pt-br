@@ -8,16 +8,16 @@ ms.topic: article
 author: jasongerend
 ms.date: 5/14/2018
 description: Gerenciador de recursos de servidor de arquivos (FSRM) é uma ferramenta que lhe permite gerenciar e classificar dados em um servidor de arquivos do Windows Server.
-ms.openlocfilehash: 107d08f247fc56720ccc3d11a3db88c77377257c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8488c7418ac03be53db7164678fad353bc7c637d
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870717"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476132"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>Visão Geral do FSRM (Gerenciador de Recursos de Servidor de Arquivos)
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplica-se a: 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server (canal semestral), do Windows Server 
 
 O Gerenciador de Recursos do Servidor de Arquivos (FSRM) é um serviço de função no Windows Server que permite que você gerencie e classifique dados armazenados nos servidores de arquivo. Você pode usar o Gerenciador de recursos de servidor de arquivos para classificar arquivos, executar tarefas com base nessas classificações, definir cotas nas pastas e criar relatórios para monitorar o uso de armazenamento.
 
@@ -72,7 +72,7 @@ Para impedir que o Gerenciador de recursos de servidor de arquivos criando um di
 3. Abra o Editor do registro, por exemplo, digitando `regedit` na mesma sessão do PowerShell.
 4. Navegue até a seguinte chave: **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SrmSvc\Settings**
 5. Opcionalmente, para ignorar alterar criação de diário para o servidor inteiro (pule esta etapa se você quiser desabilitá-lo somente em volumes específicos):
-    1. Clique com botão direito do **configurações** da chave e, em seguida, selecione **New** > **valor DWORD (32 bits)**. 
+    1. Clique com botão direito do **configurações** da chave e, em seguida, selecione **New** > **valor DWORD (32 bits)** . 
     1. O nome do valor `SkipUSNCreationForSystem`.
     1. Defina o valor como **1** (em hexadecimal).
 6. Para opcionalmente ignorar a criação do diário de alteração para volumes específicos:
@@ -90,7 +90,7 @@ Para impedir que o Gerenciador de recursos de servidor de arquivos criando um di
        ```
     2. Com o botão direito novamente no Editor do registro, o **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SrmSvc\Settings** da chave e, em seguida, selecione **New** > **várias cadeias de caracteres Valor**.
     3. O nome do valor `SkipUSNCreationForVolumes`.
-    4. Insira o caminho de cada volume no qual você ignorar a criação de um diário de alterações, colocando cada caminho em uma linha separada. Por exemplo:
+    4. Insira o caminho de cada volume no qual você ignorar a criação de um diário de alterações, colocando cada caminho em uma linha separada. Por exemplo: 
 
         ```
         \\?\Volume{8d3c9e8a-0000-0000-0000-100000000000}\

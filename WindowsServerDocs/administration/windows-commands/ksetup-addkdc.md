@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d3e0d38bdec11618561ee4acaa32ffdd06695fab
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 0466bee0b357e896bd971152a56da57612472672
+ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868527"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65564734"
 ---
 # <a name="ksetupaddkdc"></a>ksetup:addkdc
 
@@ -53,7 +53,7 @@ Configure um servidor KDC não - Windows e o realm do que a estação de trabalh
 ```
 ksetup /addkdc CORP.CONTOSO.COM mitkdc.contoso.com
 ```
-Execute a ferramenta de Ksetup na linha de comando do mesmo computador como no comando anterior para definir a senha da conta de computador local como "p@sswrd1%?. Em seguida, reinicie o computador.
+Execute a ferramenta de Ksetup na linha de comando do mesmo computador como no comando anterior para definir a senha da conta de computador local como "p@sswrd1%". Em seguida, reinicie o computador.
 ```
 Ksetup /setcomputerpassword p@sswrd1%
 ```
@@ -62,4 +62,4 @@ Ksetup /setcomputerpassword p@sswrd1%
 
 -   [Ksetup](ksetup.md)
 -   [Ksetup:setcomputerpassword](ksetup-setcomputerpassword.md)
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

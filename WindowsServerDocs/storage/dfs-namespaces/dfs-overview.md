@@ -2,22 +2,22 @@
 title: Visão geral de Namespaces DFS
 ms.prod: windows-server-threshold
 ms.author: jgerend
-ms.manager: brianlic
+ms.manager: daveba
 ms.technology: storage
 ms.topic: article
 author: jasongerend
-ms.date: 10/15/2018
+ms.date: 05/09/2019
 description: Este tópico descreve o namespaces do DFS, que é um serviço de função no Windows Serve que permite que você agrupe pastas compartilhadas localizadas em diferentes servidores em um ou mais namespaces estruturados logicamente.
-ms.openlocfilehash: 0f80e5a25254513702c25ce895a28c4cb1e0f2b4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 33b5a36c9f13179286a95735621272f79983231c
+ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844247"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65613188"
 ---
 # <a name="dfs-namespaces-overview"></a>Visão geral de Namespaces DFS
 
-> Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
+> Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008, Windows Server (canal semestral)
 
 O Namespaces do DFS é um serviço de função no Windows Serve que permite que você agrupe pastas compartilhadas localizadas em diferentes servidores em um ou mais namespaces estruturados logicamente. Isso torna possível dar aos usuários uma exibição virtual de pastas compartilhadas, onde um único caminho leva a arquivos localizados em vários servidores, conforme mostrado na figura a seguir:
 
@@ -42,11 +42,12 @@ Um servidor de namespace é um controlador de domínio ou servidor membro que ho
 
 Servidores que executam os seguintes sistemas operacionais podem hospedar vários namespaces baseados em domínio, além de um único namespace autônomo. 
 
-- Windows Server (canal semestral)
+- Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2012
-- Windows Server 2008 R2 Datacenter/Enterprise
+- Windows Server 2008 R2 Datacenter e Enterprise Editions
+- Windows Server (canal semestral)
 
 Servidores que executam os seguintes sistemas operacionais podem hospedar um único namespace autônomo:
 
@@ -123,7 +124,7 @@ Para obter informações adicionais relacionadas, consulte os seguintes recursos
 |------------------|----------------|
 |**Avaliação do produto**|[Novidades nos Namespaces do DFS e replicação do DFS no Windows Server](https://technet.microsoft.com/library/dn281957(v=ws.11).aspx)|
 |**Implantação**|[Considerações sobre escalabilidade de Namespace do DFS](http://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx)|
-|**Operações**|[Namespaces DFS: Perguntas frequentes](https://technet.microsoft.com/library/ee404780.aspx)|
+|**Operações**|[Namespaces DFS: perguntas frequentes](https://technet.microsoft.com/library/ee404780.aspx)|
 |**Recursos da comunidade**|[Serviços de arquivo e armazenamento Fórum do TechNet](https://social.technet.microsoft.com/forums/winserverfiles/threads/)|
 |**Protocolos**|[Protocolos do Windows Server de serviços de arquivo](https://msdn.microsoft.com/en-us/library/cc239318.aspx) (preterido)|
 |**Tecnologias relacionadas**| [Clustering de failover](../../failover-clustering/failover-clustering-overview.md)|

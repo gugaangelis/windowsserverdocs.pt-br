@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 01/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 21f99362205e0a6aa90ebd26cef8f3a779bdc1dc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d6641ba08323aeffa680e59c8e0bc5fcfa9757fd
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836487"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222445"
 ---
 # <a name="configure-and-manage-quorum"></a>Configurar e gerenciar o quorum
 
@@ -31,57 +31,20 @@ O modelo de quorum no Windows Server é flexível. Se você precisar modificar a
 
 A tabela a seguir lista as três opções de configuração de quorum disponíveis no Assistente para Configurar Quorum de Cluster.
 
-<table>
-<thead>
-<tr class="header">
-<th>Opção</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Usar configurações típicas</td>
-<td>O cluster atribui automaticamente um voto a cada nó e gerencia dinamicamente os votos do nó. Se for apropriado para seu cluster, e houver armazenamento compartilhado de cluster disponível, o cluster selecionará uma testemunha de disco. Essa opção é recomendada na maioria dos casos, pois o software de cluster escolhe automaticamente uma configuração de quorum e de testemunha que forneça a mais alta disponibilidade para seu cluster.</td>
-</tr>
-<tr class="even">
-<td>Adicionar ou alterar a testemunha de quorum</td>
-<td>Você pode adicionar, alterar ou remover um recurso de testemunha. Você pode configurar uma testemunha de disco ou compartilhamento de arquivos. O cluster atribui automaticamente um voto a cada nó e gerencia dinamicamente os votos do nó.</td>
-</tr>
-<tr class="odd">
-<td>Configuração avançada de quorum e seleção de testemunha</td>
-<td>Você deve selecionar essa opção somente quando tiver requisitos específicos ao aplicativo ou ao site para configurar o quorum. Você pode modificar a testemunha do quorum, adicionar ou remover votos de nó e escolher se o cluster deve gerenciar dinamicamente os votos do nó. Por padrão, os votos são atribuídos a todos os nós e os votos de nó são gerenciados dinamicamente.</td>
-</tr>
-</tbody>
-</table>
+|Opção  |Descrição  |
+|---------|---------|
+|Usar configurações típicas     |  O cluster atribui automaticamente um voto a cada nó e gerencia dinamicamente os votos do nó. Se for apropriado para seu cluster, e houver armazenamento compartilhado de cluster disponível, o cluster selecionará uma testemunha de disco. Essa opção é recomendada na maioria dos casos, pois o software de cluster escolhe automaticamente uma configuração de quorum e de testemunha que forneça a mais alta disponibilidade para seu cluster.       |
+|Adicionar ou alterar a testemunha de quorum     |   Você pode adicionar, alterar ou remover um recurso de testemunha. Você pode configurar uma testemunha de disco ou compartilhamento de arquivos. O cluster atribui automaticamente um voto a cada nó e gerencia dinamicamente os votos do nó.      |
+|Configuração avançada de quorum e seleção de testemunha     | Você deve selecionar essa opção somente quando tiver requisitos específicos ao aplicativo ou ao site para configurar o quorum. Você pode modificar a testemunha do quorum, adicionar ou remover votos de nó e escolher se o cluster deve gerenciar dinamicamente os votos do nó. Por padrão, os votos são atribuídos a todos os nós e os votos de nó são gerenciados dinamicamente.        |
 
 Dependendo da opção de configuração de quorum escolhida e das configurações específicas, o cluster será configurado em um dos seguintes modos de quorum:
 
-<table>
-<thead>
-<tr class="header">
-<th>Modo</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Maioria dos nós (sem testemunha)</td>
-<td>Somente nós têm votos. Nenhuma testemunha de quorum é configurada. O quorum do cluster é a maioria dos nós votantes na associação de cluster ativa.</td>
-</tr>
-<tr class="even">
-<td>Maioria de nós com testemunha (compartilhamento de arquivos ou disco)</td>
-<td>Nós têm votos. Além disso, uma testemunha de quorum tem um voto. O quorum do cluster é a maioria dos nós votantes na associação de cluster ativa mais um voto de testemunha.<br />
-<br />
-Uma testemunha de quorum pode ser uma testemunha de disco designada ou uma testemunha de compartilhamento de arquivos designada.</td>
-</tr>
-<tr class="odd">
-<td>Sem maioria (somente testemunha de disco)</td>
-<td>Nenhum nó tem votos. Somente uma testemunha de disco tem um voto. O quorum do cluster é determinado pelo estado da testemunha de disco.<br />
-<br />
-O cluster terá quorum se um nó estiver disponível e se comunicando com um disco específico no armazenamento de cluster. Geralmente, esse modo não é recomendado, e ele não deve ser selecionado, já que cria um único ponto de falha para o cluster.</td>
-</tr>
-</tbody>
-</table>
+
+|Modo  |Descrição  |
+|---------|---------|
+|Maioria dos nós (sem testemunha)     |   Somente nós têm votos. Nenhuma testemunha de quorum é configurada. O quorum do cluster é a maioria dos nós votantes na associação de cluster ativa.      |
+|Maioria de nós com testemunha (compartilhamento de arquivos ou disco)     |   Nós têm votos. Além disso, uma testemunha de quorum tem um voto. O quorum do cluster é a maioria dos nós votantes na associação de cluster ativa mais um voto de testemunha. Uma testemunha de quorum pode ser uma testemunha de disco designada ou uma testemunha de compartilhamento de arquivos designada. 
+|Sem maioria (somente testemunha de disco)     | Nenhum nó tem votos. Somente uma testemunha de disco tem um voto. <br>O quorum do cluster é determinado pelo estado da testemunha de disco. Geralmente, esse modo não é recomendado, e ele não deve ser selecionado, já que cria um único ponto de falha para o cluster.       |
 
 As subseções a seguir oferecem mais informações sobre definições de configuração de quorum avançada.
 
@@ -93,59 +56,12 @@ Uma testemunha de disco geralmente será recomendada se todos os nós puderem ve
 
 A tabela a seguir fornece informações adicionais e considerações sobre os tipos de testemunha de quorum.
 
-<table>
-<thead>
-<tr class="header">
-<th>Tipo de testemunha</th>
-<th>Descrição</th>
-<th>Requisitos e recomendações</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Testemunha de disco</td>
-<td>- LUN dedicado que armazena uma cópia do banco de dados do cluster<br />
-- Mais útil para clusters com armazenamento compartilhado de (não replicado)</td>
-<td>- O tamanho do LUN deve ser pelo menos 512 MB<br />
-- Deve ser dedicado a uso de cluster e não atribuído a uma função clusterizada<br />
-- Deve ser incluída em testes de validação de armazenamento em cluster de armazenamento e passe<br />
-- Não pode ser um disco que é um Volume compartilhado do Cluster (CSV)<br />
-- Disco básico com um único volume<br />
-- Não é necessário ter uma letra de unidade<br />
-- Pode ser formatado com NTFS ou ReFS<br />
-- Pode ser configurado opcionalmente com RAID de hardware para tolerância a falhas<br />
-- Deve ser excluído dos backups e verificação antivírus<br />
-- Uma testemunha de disco não é suportada com espaços de armazenamento diretos</td>
-</tr>
-<tr class="even">
-<td>Testemunha de compartilhamento de arquivos</td>
-<td>- Compartilhamento de arquivos SMB configurado em um servidor de arquivos executando o Windows Server<br />
-- Não armazena uma cópia do banco de dados do cluster<br />
-- Mantém informações de cluster somente em um arquivo WITNESS.<br />
-- Mais útil para clusters multissite com armazenamento replicado</td>
-<td>- Deve ter um mínimo de 5 MB de espaço livre<br />
-- Deve ser dedicado ao cluster único e não é usado para armazenar dados de usuário ou aplicativo<br />
-- Devem ter permissões de gravação habilitado para o objeto de computador para o nome do cluster<br />
-<br />
-A seguir estão considerações adicionais para um servidor de arquivos que hospeda a testemunha de compartilhamento de arquivos:<br />
-<br />
-- Um único servidor de arquivos pode ser configurado com testemunhas de compartilhamento de arquivo para vários clusters.<br />
-- O servidor de arquivos deve estar em um site separado da carga de trabalho do cluster. Isso permite a mesma oportunidade para que qualquer site de cluster sobreviva se a comunicação da rede de site a site for perdida. Se o servidor de arquivos estiver no mesmo site, esse site se tornará o site primário, e ele será o único site que poderá atingir o compartilhamento de arquivos.<br />
-- O servidor de arquivos pode executar em uma máquina virtual se a máquina virtual não estiver hospedada no mesmo cluster que usa a testemunha de compartilhamento de arquivo.<br />
-- Para alta disponibilidade, o servidor de arquivos pode ser configurado em um cluster de failover separado.</td>
-</tr>
 
-<tr class-"odd">
-<td>Testemunha de nuvem</td>
-<td>- Um arquivo de testemunha armazenado no armazenamento de BLOBs do Azure<br>
--Recomendada quando todos os servidores no cluster possuem uma conexão de Internet confiável.</td>
-<td>Ver <a href="https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness">implantar uma testemunha de nuvem</a>.</td>
-<td>
-</td>
-</tr>
-
-</tbody>
-</table>
+|Tipo de testemunha  |Descrição  |Requisitos e recomendações  |
+|---------|---------|---------|
+|Testemunha de disco     |  <ul><li> LUN dedicado que armazena uma cópia do banco de dados do cluster</li><li> Mais útil para clusters com armazenamento compartilhado (não replicado)</li>       |  <ul><li>O tamanho do LUN deve ser, no mínimo, 512 MB</li><li> Deve ser dedicado a uso de cluster e não designado a uma função clusterizada</li><li> Deve ser incluído em um armazenamento clusterizado e passar nos testes de validação de armazenamento</li><li> Não pode ser um disco que seja um CSV (Volume Compartilhado Clusterizado)</li><li> Disco básico com um volume único</li><li> Não precisa ter uma letra da unidade</li><li> Pode ser formatado com NTFS ou ReFS</li><li> Também pode ser configurado com RAID de hardware para tolerância a falhas</li><li> Deve ser excluído dos backups e da verificação antivírus</li><li> Uma testemunha de disco não é suportada com espaços de armazenamento diretos</li>|
+|Testemunha de compartilhamento de arquivos     | <ul><li>Compartilhamento de arquivos SMB configurado em um servidor de arquivos que executa Windows Server</li><li> Não armazena uma cópia do banco de dados do cluster</li><li> Mantém informações de cluster somente em um arquivo witness.log</li><li> Mais útil para clusters multissite com armazenamento replicado </li>       |  <ul><li>Deve ter um espaço livre mínimo de 5 MB</li><li> Deve ser dedicado a um único cluster e não usado para armazenar dados de usuário ou de aplicativo</li><li> Deve ter permissões de gravação habilitadas para objeto de computador do nome do cluster</li></ul><br>A seguir estão considerações adicionais para um servidor de arquivos que hospeda a testemunha de compartilhamento de arquivos:<ul><li>Um único servidor de arquivos pode ser configurado com testemunhas de compartilhamento de arquivos para vários clusters.</li><li> O servidor de arquivos deve estar em um site separado da carga de trabalho do cluster. Isso permite a mesma oportunidade para que qualquer site de cluster sobreviva se a comunicação da rede de site a site for perdida. Se o servidor de arquivos estiver no mesmo site, esse site se tornará o site primário, e ele será o único site que poderá atingir o compartilhamento de arquivos.</li><li> O servidor de arquivos pode ser executado em uma máquina virtual, se esta não estiver hospedada no mesmo cluster que utiliza a testemunha de compartilhamento de arquivos.</li><li> Para alta disponibilidade, o servidor de arquivos pode ser configurado em um cluster de failover separado. </li>      |
+|Testemunha de nuvem     |  <ul><li>Um arquivo de testemunha armazenado no armazenamento de BLOBs do Azure</li><li> Recomendado quando todos os servidores no cluster possuem uma conexão de Internet confiável.</li>      |  Ver [implantar uma testemunha de nuvem](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness).       |
 
 ### <a name="node-vote-assignment"></a>Atribuição de voto de nó
 
@@ -212,7 +128,7 @@ A associação no grupo local **Administradores** em cada servidor com cluster, 
 
 1. No Gerenciador de Cluster de Failover, selecione ou especifique o cluster que deseja alterar.
 2. Com o cluster selecionado, em **ações**, selecione **mais ações**e, em seguida, selecione **configurar quorum do Cluster**. O Assistente para Configurar Quorum do Cluster aparece. Selecione **Avançar**.
-3. Na página **Selecionar Opção de Configuração de Quorum** , selecione uma das três opções de configuração e conclua as etapas para essa opção. Antes de configurar o quorum, você pode examinar suas escolhas. Para obter mais informações sobre as opções, consulte [visão geral do quorum em um cluster de failover](#overview-of-the-quorum-in-a-failover-cluster), anteriormente neste tópico.
+3. Na página **Selecionar Opção de Configuração de Quorum** , selecione uma das três opções de configuração e conclua as etapas para essa opção. Antes de configurar o quorum, você pode examinar suas escolhas. Para obter mais informações sobre as opções, consulte [quorum Noções básicas sobre](#understanding-quorum), anteriormente neste tópico.
 
     - Para permitir que o cluster redefina automaticamente as configurações do quorum ideais para sua configuração de cluster atual, selecione **usar configurações típicas** e, em seguida, conclua o assistente.
     - Para adicionar ou alterar a testemunha de quorum, selecione **adicionar ou alterar a testemunha de quorum**e, em seguida, conclua as etapas a seguir. Para obter informações e considerações sobre configurar uma testemunha de quorum, consulte [Configuração de testemunha](#witness-configuration) anteriormente neste tópico.
@@ -366,36 +282,14 @@ Nessa configuração, o cluster consiste em um ou mais sites que podem hospedar 
 
 A tabela a seguir resume considerações e recomendações para essa configuração.
 
-<table>
-<thead>
-<tr class="header">
-<th>Item</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Número de votos de nó por site</td>
-<td>Deve ser igual</td>
-</tr>
-<tr class="even">
-<td>Atribuição de voto de nó</td>
-<td>Votos de nó não devem ser removidos porque todos os nós são igualmente importantes</td>
-</tr>
-<tr class="odd">
-<td>Gerenciamento dinâmico de quorum</td>
-<td>Deve ser habilitado</td>
-</tr>
-<tr class="even">
-<td>Configuração de testemunha</td>
-<td>A testemunha de compartilhamento de arquivos é recomendada, configurada em um site separado dos sites do cluster</td>
-</tr>
-<tr class="odd">
-<td>Cargas de trabalho</td>
-<td>As cargas de trabalho podem ser configuradas em qualquer um dos sites</td>
-</tr>
-</tbody>
-</table>
+
+|Item  |Descrição  |
+|---------|---------|
+|Número de votos de nó por site     | Deve ser igual       |
+|Atribuição de voto de nó     |  Votos de nó não devem ser removidos porque todos os nós são igualmente importantes       |
+|Gerenciamento dinâmico de quorum     |   Deve ser habilitado      |
+|Configuração de testemunha     |  A testemunha de compartilhamento de arquivos é recomendada, configurada em um site separado dos sites do cluster       |
+|Cargas de trabalho     |  As cargas de trabalho podem ser configuradas em qualquer um dos sites       |
 
 #### <a name="additional-considerations-for-automatic-failover"></a>Considerações adicionais para o failover automático
 
@@ -407,39 +301,13 @@ Nessa configuração, o cluster consiste em um site primário, o *SiteA*, e um s
 
 A tabela a seguir resume considerações e recomendações para essa configuração.
 
-<table>
-<thead>
-<tr class="header">
-<th>Item</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Número de votos de nó por site</td>
-<td>Pode ser diferente</td>
-</tr>
-<tr class="even">
-<td>Atribuição de voto de nó</td>
-<td>- Votos de nó não devem ser removidos de nós no site primário, <em>SiteA</em><br />
-- Votos de nó devem ser removidos de nós no site de backup, <em>SiteB</em><br />
-- Se ocorrer uma interrupção de longo prazo no <em>SiteA</em>, votos deverão ser atribuídos a nós no <em>SiteB</em> para habilitar uma maioria de quorum no site como parte da recuperação</td>
-</tr>
-<tr class="odd">
-<td>Gerenciamento dinâmico de quorum</td>
-<td>Deve ser habilitado</td>
-</tr>
-<tr class="even">
-<td>Configuração de testemunha</td>
-<td>- Configurar uma testemunha, se houver um número par de nós em <em>SiteA</em><br />
-- Se for necessária uma testemunha, configure uma testemunha de compartilhamento de arquivo ou uma testemunha de disco que é acessível somente a nós no <em>SiteA</em> (às vezes chamado de testemunha de disco assimétrico)</td>
-</tr>
-<tr class="odd">
-<td>Cargas de trabalho</td>
-<td>Use proprietários preferenciais para manter cargas de trabalho em execução nos nós no <em>SiteA</em></td>
-</tr>
-</tbody>
-</table>
+
+|Item  |Descrição  |
+|---------|---------|
+|Número de votos de nó por site     |  <ul><li> Votos de nó não devem ser removidos dos nós no site primário, o **SiteA**</li><li>Votos de nó devem ser removidos dos nós no site de backup, o **SiteB**</li><li>Se ocorrer uma interrupção de longo prazo no **SiteA**, os votos deverão ser atribuídos aos nós no **SiteB**, a fim de habilitar uma maioria de quorum no site como parte da recuperação</li>       |
+|Gerenciamento dinâmico de quorum     |  Deve ser habilitado       |
+|Configuração de testemunha     |  <ul><li>Configure uma testemunha se houver um número par de nós no **SiteA**</li><li>Se for necessária uma testemunha, configure uma testemunha de compartilhamento de arquivos ou uma testemunha de disco que seja acessível somente aos nós no **SiteA** (às vezes chamada de testemunha de disco assimétrico)</li>       |
+|Cargas de trabalho     |  Use proprietários preferenciais para manter cargas de trabalho em execução nos nós no **SiteA**       |
 
 #### <a name="additional-considerations-for-manual-failover"></a>Considerações adicionais para failover manual
 

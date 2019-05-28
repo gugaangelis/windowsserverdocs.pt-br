@@ -7,21 +7,27 @@ ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
-ms.date: 09/15/2016
-ms.openlocfilehash: 4a69221548d9defff5a45413ccfe824f9788755a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.date: 04/17/2019
+ms.openlocfilehash: 44a08443312d4e48b8fa518755e2a9b7aa50643c
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876447"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476092"
 ---
 # <a name="whats-new-in-data-deduplication"></a>Novidades na Eliminação de Duplicação de Dados
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+> Aplica-se a: 2019, Windows Server 2016, Windows Server (canal semestral) do Windows Server
 
-A [Eliminação de Duplicação de Dados](overview.md) no Windows Server 2016 foi otimizada para ser altamente funcional, flexível e gerenciável no nível de nuvens privadas. Para obter mais informações sobre a pilha de armazenamento definido pelo software no Windows Server 2016, consulte [What's New in Storage in Windows Server 2016](../whats-new-in-storage.md) (Novidades no Armazenamento no Windows Server 2016).
+[Eliminação de duplicação de dados](overview.md) no Windows Server foi otimizada para ser altamente funcional, flexível e gerenciável em escala de nuvem privada. Para obter mais informações sobre a pilha de armazenamento definida por software no Windows Server, consulte [o que há de novo no armazenamento no Windows Server](../whats-new-in-storage.md).
 
-A Eliminação de Duplicação de Dados tem os seguintes aprimoramentos no Windows Server 2016:
+Eliminação de duplicação de dados tem os seguintes aprimoramentos no Windows Server 2019:
+
+| Funcionalidade | Novo ou atualizado | Descrição |
+|---------------|----------------|-------------|
+| Suporte a reFS  | Novo            | Store até 10 vezes mais dados no mesmo volume com eliminação de duplicação e compactação para o sistema de arquivos ReFS. (Ele tem [apenas um clique](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be) ativar com Windows Admin Center.) O repositório de partes de tamanho variável com a compactação opcional maximiza a taxas de economia, enquanto a arquitetura de pós-processamento multi-threaded mantém mínimo de impacto no desempenho. Dá suporte a volumes de até 64 TB e será eliminar os primeiros 4 TB de cada arquivo.|
+
+Eliminação de duplicação de dados tem as seguintes melhorias a partir do Windows Server 2016:
 
 | Funcionalidade | Novo ou atualizado | Descrição |
 |---------------|----------------|-------------|

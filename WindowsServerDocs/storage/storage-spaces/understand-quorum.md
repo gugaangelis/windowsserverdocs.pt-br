@@ -10,12 +10,12 @@ ms.topic: article
 author: adagashe
 ms.date: 01/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 24890b191db8bc6934132857e830d4f77c394b02
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 66d4796a6ffb453f6edb5fed20dba29b70f7ec4b
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879967"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476106"
 ---
 # <a name="understanding-cluster-and-pool-quorum"></a>Noções básicas sobre cluster e pool de quorum
 
@@ -27,7 +27,7 @@ Quorum é projetado para evitar *separação* cenários que podem acontecer quan
 
 Quorum determina o número de falhas que o cluster pode sustentar enquanto ainda permanecem online. Quorum é projetado para lidar com o cenário quando há um problema com a comunicação entre os subconjuntos de nós de cluster, para que vários servidores não tentam simultaneamente um grupo de recursos de host e gravar no mesmo disco ao mesmo tempo. Fazendo com que esse conceito de quorum, o cluster será forçar o serviço de cluster para parar em um dos subconjuntos de nós para garantir que haja apenas um verdadeiro proprietário de um determinado grupo de recursos. Depois que nós que tenham sido interrompidos mais uma vez podem se comunicar com o grupo principal de nós, eles serão automaticamente reingresso no cluster e iniciar seu serviço de cluster.
 
-No Windows Server 2016, há dois componentes do sistema que têm seus próprios mecanismos de quorum:
+No Windows Server 2019 e no Windows Server 2016, há dois componentes do sistema que têm seus próprios mecanismos de quorum:
 
 - <strong>Quorum de cluster</strong>: Isso funciona no nível do cluster (ou seja, você pode perder a nós e fazer com que o cluster permaneça backup)
 - <strong>Pool de Quorum</strong>: Isso funciona no nível do pool quando espaços de armazenamento diretos está habilitado (ou seja, você pode perder a nós e unidades e fazer com que o pool de manter). Pools de armazenamento foram projetados para ser usado em cenários clusterizados e não clusterizados, que é o motivo pelo qual eles têm um mecanismo de quorum diferentes.
@@ -229,5 +229,5 @@ Cada uma das 24 unidades tem um voto e nó dois também tem um voto (já que é 
 
 ## <a name="more-information"></a>Mais informações
 
-- [Configurar e gerenciar o quorum](../../failover-clustering/manage-cluster-quorum.md)
+- [Configurar e gerenciar o quórum](../../failover-clustering/manage-cluster-quorum.md)
 - [Implantar uma testemunha de nuvem](../../failover-clustering/deploy-cloud-witness.md)

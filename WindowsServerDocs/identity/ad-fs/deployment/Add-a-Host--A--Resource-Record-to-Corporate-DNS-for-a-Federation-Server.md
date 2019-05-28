@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 425cfe794095f1515eb3fae2f1a5e5db90ba3d00
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5767fa45f8b25680aa1b1d97ddab630923d10fae
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856177"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192493"
 ---
 # <a name="add-a-host-a-resource-record-to-corporate-dns-for-a-federation-server"></a>Adicionar um registro de recurso de host (A) ao DNS corporativo para um servidor de federação
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 
 Os clientes na empresa de rede para acesso com êxito de um servidor de Federação usando a autenticação integrada do Windows, um host \(um\) registro de recurso deve ser criado primeiramente no sistema de nomes de domínio corporativo \(DNS\) que resolve o nome do host do servidor de federação de conta \(por exemplo, fs.fabrikam.com\) para o endereço IP do servidor de Federação ou o cluster de servidor de Federação. Você pode usar o procedimento a seguir para adicionar um host \(um\) registro de recurso ao DNS corporativo para um servidor de Federação.  
@@ -29,7 +28,7 @@ Associação na **administradores**, ou equivalente, é o mínimo necessário pa
   
 1.  Em um servidor DNS para a rede corporativa, abra o snap DNS\-no.  
   
-2.  Na árvore de console, com o botão direito\-clique na zona de pesquisa direta aplicável e, em seguida, clique em **novo Host \(A ou AAAA\)**.  
+2.  Na árvore de console, com o botão direito\-clique na zona de pesquisa direta aplicável e, em seguida, clique em **novo Host \(A ou AAAA\)** .  
   
 3.  Na **nome**, digite o nome de computador do servidor de Federação ou o cluster de servidor de federação; por exemplo, para o nome de domínio totalmente qualificado \(FQDN\) fs.fabrikam.com, digite **fs**.  
   
@@ -38,8 +37,8 @@ Associação na **administradores**, ou equivalente, é o mínimo necessário pa
 5.  Clique em **Adicionar Host**.  
   
 ## <a name="additional-references"></a>Referências adicionais  
-[Lista de verificação: Configurando um servidor de Federação](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de verificação: Como configurar um servidor de federação](Checklist--Setting-Up-a-Federation-Server.md)  
   
-[Requisitos de resolução de nome para servidores de Federação](https://technet.microsoft.com/library/dd807055.aspx)  
+[Requisitos de resolução de nomes para servidores de federação](https://technet.microsoft.com/library/dd807055.aspx)  
   
 

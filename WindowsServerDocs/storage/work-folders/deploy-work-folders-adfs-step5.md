@@ -8,12 +8,12 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 4/5/2017
 ms.assetid: f168292b-0dbc-44b9-965f-d480e5134a0c
-ms.openlocfilehash: fa8b2b15ff411a59b28308a329d7ca2341ef0886
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4b2c771a83824318f889c955f6194bcb062761f3
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871937"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976803"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-5-set-up-clients"></a>Implante pastas de trabalho com o AD FS e Proxy de aplicativo Web: Etapa 5, instalação de clientes
 
@@ -79,7 +79,7 @@ Para configurar Pastas de Trabalho no computador cliente, siga estas etapas:
   
 2.  Clique em **Configurar Pastas de Trabalho**.  
   
-3.  No **insira seu endereço de email de trabalho** , insira o endereço de email do usuário (por exemplo, user@contoso.com) ou a URL de pastas de trabalho (o exemplo de teste, https://workfolders.contoso.com)e, em seguida, clique em **próxima**.  
+3.  Sobre o **inserir seu endereço de email de trabalho** página, insira o endereço de email do usuário (por exemplo, user@contoso.com) ou a URL de pastas de trabalho (no teste de exemplo, https:\//workfolders.contoso.com) e, em seguida, clique em  **Próxima**.  
   
 4.  Se o usuário estiver conectado à rede corporativa, a autenticação será executada pela Autenticação Integrada do Windows. Se o usuário não estiver conectado à rede corporativa, a autenticação será realizada pelo AD FS (OAuth), e o usuário será solicitado a inserir as credenciais. Insira suas credenciais e clique em **OK**.  
   

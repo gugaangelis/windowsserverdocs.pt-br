@@ -13,12 +13,12 @@ ms.assetid: 63f08b5b-c735-41f4-b6c8-411eff85a4ab
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: befd784f4a2179c121992057e298d4ea9068c11b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0aa81ef3633adf27a25b45b3b7c00082d83bf0bb
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862077"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034629"
 ---
 # <a name="create-windows-10-enterprise-virtual-desktops-for-stations"></a>Criar áreas de trabalho virtuais do Windows 10 Enterprise para estações
 Essa configuração opcional no MultiPoint Services destina-se principalmente para situações em que um aplicativo essencial requer sua própria instância de um sistema operacional cliente para cada usuário. Exemplos incluem aplicativos que não podem ser instalados no Windows Server e aplicativos que não serão executados várias instâncias no mesmo computador host.  
@@ -44,13 +44,13 @@ Para se preparar para criar a estação de áreas de trabalho virtuais, certifiq
 ## <a name="procedures"></a>Procedimentos  
 Use os procedimentos a seguir para:  
   
--   [Criar um modelo para áreas de trabalho virtuais](#a-namebkmkcreateatemplateacreate-a-template-for-virtual-desktops)  
+-   [Criar um modelo para áreas de trabalho virtuais](#create-a-template-for-virtual-desktops)  
   
--   [Criar áreas de trabalho virtuais a partir do modelo](#BKMK_CreateVirtualDesktopsfromTemplate)  
+-   [Criar áreas de trabalho virtuais a partir do modelo](#create-virtual-machine-desktops-from-the-template)  
   
--   [Copiar um modelo de área de trabalho virtual existente](#BKMK_CopyExiistingVirtualDesktopTemplate)  
+-   [Copiar um modelo de área de trabalho virtual existente](#copy-an-existing-virtual-desktop-template)  
   
-### <a name="BKMK_CreateaTemplate"></a>Criar um modelo para áreas de trabalho virtuais  
+### <a name="create-a-template-for-virtual-desktops"></a>Criar um modelo para áreas de trabalho virtuais  
 Antes de criar um modelo para áreas de trabalho virtuais, você deve habilitar o recurso de área de trabalho Virtual no servidor do MultiPoint.  
   
 ##### <a name="to-enable-the-virtual-desktop-feature"></a>Para habilitar o recurso de área de trabalho Virtual  
@@ -98,7 +98,7 @@ A próxima etapa é configurar o modelo com o software e configuração que dese
 4.  Selecione o modelo que você deseja personalizar, clique em **personalizar modelo**e, em seguida, clique em **Okey**.  
   
     > [!NOTE]  
-    > Somente os modelos que não foram usados para criar estações de área de trabalho virtual estão disponíveis. Se você quiser atualizar um modelo que já está em uso, você deve fazer uma cópia do modelo usando o **Importar modelo** tarefa, descrita posteriormente, na [copiar um modelo de área de trabalho virtual existente](#BKMK_CopyExiistingVirtualDesktopTemplate).  
+    > Somente os modelos que não foram usados para criar estações de área de trabalho virtual estão disponíveis. Se você quiser atualizar um modelo que já está em uso, você deve fazer uma cópia do modelo usando o **Importar modelo** tarefa, descrita posteriormente, na [copiar um modelo de área de trabalho virtual existente](#copy-an-existing-virtual-desktop-template).  
   
     O modelo é aberto em um Hyper-V **VM conectar** janela e logon automático é executada usando a conta de administrador interna.  
   
@@ -111,7 +111,7 @@ A próxima etapa é configurar o modelo com o software e configuração que dese
   
 6.  Depois de concluir a configuração de seu sistema, clique duas vezes o **CompleteCustomization** atalho na área de trabalho do administrador para executar o Sysprep e desligue o modelo. Durante a personalização, a ferramenta Sysprep remove todas as informações de sistema exclusivo para preparar a instalação do Windows a ser espelhado.  
   
-### <a name="BKMK_CreateVirtualDesktopsfromTemplate"></a>Criar áreas de trabalho de máquina virtual do modelo  
+### <a name="create-virtual-machine-desktops-from-the-template"></a>Criar áreas de trabalho de máquina virtual do modelo  
 Com o modelo de área de trabalho virtual configurado da maneira que você deseja que suas áreas de trabalho, você está pronto para começar a criar áreas de trabalho virtuais. Uma área de trabalho virtual será criada para cada estação que está anexada ao computador do MultiPoint Server. Na próxima vez que um usuário faz logon em uma estação, ele poderá ver a área de trabalho virtual em vez de com base em sessão de área de trabalho que foi exibida antes.  
   
 > [!NOTE]  
@@ -141,7 +141,7 @@ Quando a tarefa for concluída, cada estação local se conectar a um desktop vi
 > [!NOTE]  
 > Se uma conta de usuário é conectada a qualquer uma das estações locais, você precisará fazer logoff da sessão para obter a estação de se conectar a uma das áreas de trabalho virtual estação recém-criado.  
   
-### <a name="BKMK_CopyExiistingVirtualDesktopTemplate"></a>Copiar um modelo de área de trabalho virtual existente  
+### <a name="copy-an-existing-virtual-desktop-template"></a>Copiar um modelo de área de trabalho virtual existente  
 Use o procedimento a seguir para criar uma cópia de um modelo existente de área de trabalho virtual que você pode personalizar e usar. Isso pode ser útil nas seguintes situações:  
   
 -   Para copiar um modelo de mestre de um compartilhamento de rede em um computador de host do MultiPoint Server, para que as estações da área de trabalho virtual podem ser criadas usando o modelo mestre.  

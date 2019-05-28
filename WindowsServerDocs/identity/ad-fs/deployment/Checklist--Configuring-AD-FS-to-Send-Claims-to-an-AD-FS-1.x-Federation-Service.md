@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: bdfd06a28f8ccaa04014024a235cd19512adb181
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bd4c436c806074f63bf51f497429532d7be32f75
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887027"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192406"
 ---
 # <a name="checklist-configuring-ad-fs-to-send-claims-to-an-ad-fs-1x-federation-service"></a>Lista de verificação: Configurar o AD FS para enviar solicitações para um serviço de Federação do AD FS 1.x
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
   
 ## <a name="checklist-configuring-ad-fs-to-send-claims-to-an-adfs1x-federation-service"></a>Lista de verificação: Configurar o AD FS para enviar solicitações ao an AD FS 1.x Federation Service  
 Esta lista de verificação inclui as tarefas que são necessárias para configurar seus serviços de Federação do Active Directory \(do AD FS\) serviço de federação no Windows Server 2012 para enviar as declarações que podem ser compreendidas por um AD FS 1. *x* serviço de Federação.  

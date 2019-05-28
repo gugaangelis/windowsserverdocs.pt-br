@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 61131d2bf253c66d93408bc66b78d1dca2502087
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d358c47bd278cf11c4bab6887302bf6d053529ec
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840587"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192661"
 ---
 # <a name="gpupdate"></a>gpupdate
 
 
 
-Atualiza as configurações de diretiva de grupo. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+Atualiza as configurações de diretiva de grupo. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#examples).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -48,7 +48,7 @@ gpupdate [/target:{Computer | User}] [/force] [/wait:<VALUE>] [/logoff] [/boot] 
 
 -   O **gpupdate** comando está disponível no Windows Server 2008 R2, Windows Server 2008, Windows 7 Ultimate, Windows 7 Professional, Windows Vista Ultimate, Windows Vista Enterprise e Windows Vista Business.
 
-## <a name="BKMK_Examples"></a>Exemplos
+## <a name="examples"></a>Exemplos
 
 Força uma atualização do plano de fundo de todas as configurações de diretiva de grupo, independentemente se eles foram alterados.
 ```
@@ -58,4 +58,4 @@ gpupdate /force
 #### <a name="additional-references"></a>Referências adicionais
 
 -   [Group Policy TechCenter](https://go.microsoft.com/fwlink/?LinkID=145531)
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

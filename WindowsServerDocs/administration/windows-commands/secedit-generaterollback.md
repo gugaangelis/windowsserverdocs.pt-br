@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d7a55ddc3caea1002ab51ce4f992b36673ea312b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3229e6ccb07c925a900b298a8332c5e48cefefe7
+ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825637"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65564673"
 ---
 # <a name="seceditgeneraterollback"></a>secedit:generaterollback
 
@@ -44,11 +44,11 @@ Secedit /generaterollback /db <database file name> /cfg <configuration file name
 
 ## <a name="remarks"></a>Comentários
 
-Se o caminho para o arquivo de log não for fornecido, o arquivo de log padrão (*systemroot*\Users \*UserAccount*\My Documents\Security\Logs\*DatabaseName*. log) é usado.
+Se o caminho para o arquivo de log não for fornecido, o arquivo de log padrão (*systemroot*\Users \*UserAccount *\My Documents\Security\Logs\*DatabaseName*. log) é usado.
 
 Começando com o Windows Server 2008, `Secedit /refreshpolicy` foi substituído por `gpupdate`. Para obter informações sobre como atualizar as configurações de segurança, consulte [Gpupdate](gpupdate.md).
 
-A execução bem-sucedida desse comando informará "a tarefa foi concluída com êxito.? e apenas as incompatibilidades entre o modelo de segurança estabelecidas e a configuração de política de segurança de logs. Ele lista dessas incompatibilidades no scesrv.
+A execução bem-sucedida desse comando informará "a tarefa foi concluída com êxito". e apenas as incompatibilidades entre o modelo de segurança estabelecidas e a configuração de política de segurança de logs. Ele lista dessas incompatibilidades no scesrv.
 
 Se um modelo de reversão existente for especificado, esse comando irá substituí-lo. Você pode criar um novo modelo de reversão com este comando. Sem parâmetros adicionais são necessários para uma dessas condições.
 
@@ -62,4 +62,4 @@ Secedit /generaterollback /db C:\Security\FY11\SecDbContoso.sdb /cfg sectmplcont
 #### <a name="additional-references"></a>Referências adicionais
 
 -   [Secedit](secedit.md)
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

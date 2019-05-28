@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b3c87597e07102d00fc068b7ecd5744e4ba366f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 39b790f39a2bf9c6334eb2176aa2e5f2e0196c0c
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854007"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475972"
 ---
 # <a name="deploy-primary-computers-for-folder-redirection-and-roaming-user-profiles"></a>Implantar computadores primários para redirecionamento de pasta e perfis de usuário móvel
 
->Aplica-se a: Windows 10, Windows 8, Windows 8.1, Windows Server 2012, Windows Server 2012 R2, Windows Server 2016
+>Aplica-se a: Windows 10, Windows 8, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012, Windows Server 2012 R2
 
 Este tópico descreve como habilitar o suporte de computador primário e designar computadores primários para usuários. Isso permite que você controle os computadores que usarão redirecionamento de pasta e perfis de usuário móvel.
 
@@ -31,7 +31,7 @@ Este tópico descreve como habilitar o suporte de computador primário e designa
 Suporte de computador primário tem os seguintes requisitos:
 
 - O esquema de serviços de domínio Active Directory (AD DS) deve ser atualizado para incluir adições de esquema do Windows Server 2012 (instalar um controlador de domínio do Windows Server 2012 automaticamente atualiza o esquema). Para obter informações sobre como atualizar o esquema do AD DS, consulte [integração Adprep.exe](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472161(v=ws.11)#adprepexe-integration>) e [Adprep.exe executando](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10)>).
-- Computadores cliente devem executar o Windows 10, Windows 8.1, Windows 8, Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012.
+- Computadores cliente devem executar o Windows 10, Windows 8.1, Windows 8, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012.
 
 >[!TIP]
 >Embora o suporte de computador primário exige o redirecionamento de pasta e/ou os perfis de usuário móvel, se você estiver implantando dessas tecnologias pela primeira vez, é melhor configurar o suporte de computador primário antes de habilitar os GPOs que configurar o redirecionamento de pasta e Perfis de usuário móvel. Isso evita que os dados do usuário sejam copiados para computadores não primários antes de o suporte de computador primário ser habilitado. Para obter informações de configuração, consulte [implantar o redirecionamento de pasta](deploy-folder-redirection.md) e [implantar perfis de usuário móvel](deploy-roaming-user-profiles.md).
@@ -115,6 +115,6 @@ Aqui está como testar a funcionalidade de computador primário:
 ## <a name="more-information"></a>Mais informações
 
 - [Implantar o redirecionamento de pasta com arquivos Offline](deploy-folder-redirection.md)
-- [Implantar perfis de usuário móvel](deploy-roaming-user-profiles.md)
+- [Implantar perfis de usuário móveis](deploy-roaming-user-profiles.md)
 - [Visão geral do redirecionamento de pasta, arquivos Offline e perfis de usuário móvel](folder-redirection-rup-overview.md)
 - [Se aprofundar um pouco no computador primário do Windows 8](https://blogs.technet.com/b/askds/archive/2012/10/23/digging-a-little-deeper-into-windows-8-primary-computer.aspx)

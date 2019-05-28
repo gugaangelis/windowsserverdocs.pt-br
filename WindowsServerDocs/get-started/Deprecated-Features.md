@@ -1,33 +1,32 @@
 ---
 title: Recursos removidos ou preteridos no Windows Server 2016
-description: Recursos e funcionalidades removidos ou planejados para remoção nas versões.
-ms.custom: na
+description: Uma lista de recursos e funcionalidades no Windows Server 2016 que foram removidas do produto na versão atual ou estão previstas para possível remoção em versões futuras (preteridos). Essa lista é direcionada para profissionais de TI que estão atualizando sistemas operacionais em um ambiente comercial.
 ms.prod: windows-server-threshold
-ms.reviewer: na
-ms.suite: na
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 05/02/2017
+ms.date: 05/21/2019
 ms.assetid: 5d10c5f9-ebac-49a0-b808-c0b1702e0437
-author: jaimeo
-ms.author: jaimeo
+author: jasongerend
+ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 20178a3be14c076623f647fa139e013528de9a69
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 83855cf7e4fa86a932298dd15735dc5bf7277dfb
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858157"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976602"
 ---
 # <a name="features-removed-or-deprecated-in--windows-server-2016"></a>Recursos removidos ou preteridos no Windows Server 2016
 
 >Aplica-se a: Windows Server 2016
 
-Veja a seguir uma lista de recursos e funcionalidades do Windows Server 2016 que foram removidos do produto na versão atual ou estão previstos para possível remoção em versões futuras (preteridos). Essa lista é direcionada para profissionais de TI que estão atualizando sistemas operacionais em um ambiente comercial. Esta lista está sujeita à alteração nas versões subsequentes e pode não incluir todos os recursos ou funcionalidades preteridas. Para obter mais detalhes sobre determinado recurso ou funcionalidade e sua substituição, consulte a documentação desse recurso.  
+Veja a seguir uma lista de recursos e funcionalidades do Windows Server 2016 que foram removidos do produto na versão atual ou estão previstos para possível remoção em versões futuras (preteridos). Essa lista é direcionada para profissionais de TI que estão atualizando sistemas operacionais em um ambiente comercial. Esta lista está sujeita à alteração nas versões subsequentes e pode não incluir todos os recursos ou funcionalidades preteridas. Para obter mais detalhes sobre determinado recurso ou funcionalidade e sua substituição, consulte a documentação desse recurso.
 
-## <a name="features-removed-from-windows-server-2016"></a>Recursos removidos do Windows Server 2016 
+Para obter informações sobre o que foi removido ou preterido nas versões mais recentes, consulte [recursos removidos ou planejados para substituição iniciando o Windows Server 2019](../get-started-19/removed-features-19.md).
+
+## <a name="features-removed-from-windows-server-2016"></a>Recursos removidos do Windows Server 2016
+
 Os recursos e funcionalidades a seguir foram retirados desta versão do Windows Server 2016. Aplicativos, códigos ou o uso que dependem desses recursos não funcionarão nesta versão a menos que você implante um método alternativo.  
 
 > [!NOTE]  

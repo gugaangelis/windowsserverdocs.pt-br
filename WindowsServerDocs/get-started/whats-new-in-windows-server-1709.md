@@ -7,25 +7,25 @@ ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d63721dde484756e67b68bcff078257c130ae36
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 32ce591a8b50c6e35c3fde4fedb177b6d76fccdd
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825487"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976733"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Novidades no Windows Server versão 1709
 
 >Aplica-se a: Windows Server (canal semestral)
 
-<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;O conteúdo desta seção descreve as novidades e as alterações no Windows Server, versão 1709. Os novos recursos e alterações listados aqui são os que têm maior probabilidade de ter um impacto maior ao trabalhar com esta versão. Consulte também [Windows Server, versão 1709](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/).
+<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;Para saber mais sobre os recursos mais recentes do Windows, consulte [o que há de novo no Windows Server](whats-new-in-windows-server.md). O conteúdo desta seção descreve as novidades e as alterações no Windows Server, versão 1709. Os novos recursos e alterações listados aqui são os que têm maior probabilidade de ter um impacto maior ao trabalhar com esta versão. Consulte também [Windows Server, versão 1709](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/).
    
 
 ## <a name="new-cadence-of-releases"></a>Nova cadência de versões
 
 A partir desta versão, você tem duas opções para receber atualizações de recursos do Windows Server:
 - **Canal (LTSC) de manutenção de longo prazo**: Esse é o negócio como de costume, com 5 anos de suporte base e 5 anos de suporte estendido. Você tem a opção de fazer upgrade para a próxima versão do LTSC a cada dois ou três anos, com o mesmo suporte dos últimos 20 anos.
-- **Canal semestral (SAC)**: Isso é um benefício do Software Assurance e é totalmente suportado em produção. A diferença é que ele oferece suporte por 18 meses e há uma nova versão a cada seis meses.
+- **Canal semestral (SAC)** : Isso é um benefício do Software Assurance e é totalmente suportado em produção. A diferença é que ele oferece suporte por 18 meses e há uma nova versão a cada seis meses.
 
 Os canais de lançamento estão resumidos na tabela a seguir.
 
@@ -36,7 +36,7 @@ Os canais de lançamento estão resumidos na tabela a seguir.
 | Disponibilidade  | Software Assurance ou Azure (hospedado em nuvem)  | Todos os canais |
 | Convenção de nomenclatura  | Windows Server, versão MMAA  | YYYY do Windows Server |
 
-Para obter mais informações, consulte a [Visão geral do canal semestral do Windows Server](https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview).
+Para obter mais informações, consulte [comparação dos canais de manutenção](https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview).
 
 ## <a name="application-containers-and-micro-services"></a>Contêineres de aplicativo e microsserviços
 
@@ -66,11 +66,11 @@ O **Suporte de memória da classe de armazenamento para VMs** permite que os vol
 
 A **Memória Persistente Virtualizada (vPMEM)** é habilitada ao criar um arquivo VHD (.vhdpmem) em um volume de acesso direto em um host, adicionando um Controlador vPMEM a uma VM, além de adicionar o dispositivo criado (.vhdpmem) a uma VM. O uso de arquivos vhdpmem nos volumes de acesso direto em um host para vPMEM proporciona a flexibilidade de alocação e aproveita um modelo de gerenciamento conhecido para adicionar discos às VMs.
 
-**Armazenamento de contêiner: volumes de dados persistentes nos volumes compartilhados do cluster (CSV)**. No Windows Server, versão 1709, bem como no Windows Server 2016 com as últimas atualizações, adicionamos suporte para que os contêineres acesse volumes de dados persistentes localizados em CSVs, incluindo os CSVs em Espaços de Armazenamento Diretos. Isso proporciona o acesso persistente do contêiner de aplicativo ao volume, independentemente do nó de cluster no qual a instância do contêiner está em execução. Para obter mais informações, consulte [Suporte ao armazenamento de contêiner com Volumes Compartilhados do Cluster (CSV), Espaços de Armazenamento Diretos (S2D), Mapeamento Global de SMB](https://blogs.msdn.microsoft.com/clustering/2017/08/10/container-storage-support-with-cluster-shared-volumes-csv-storage-spaces-direct-s2d-smb-global-mapping/).
+**Armazenamento de contêiner: volumes de dados persistentes nos volumes compartilhados do cluster (CSV)** . No Windows Server, versão 1709, bem como no Windows Server 2016 com as últimas atualizações, adicionamos suporte para que os contêineres acesse volumes de dados persistentes localizados em CSVs, incluindo os CSVs em Espaços de Armazenamento Diretos. Isso proporciona o acesso persistente do contêiner de aplicativo ao volume, independentemente do nó de cluster no qual a instância do contêiner está em execução. Para obter mais informações, consulte [Suporte ao armazenamento de contêiner com Volumes Compartilhados do Cluster (CSV), Espaços de Armazenamento Diretos (S2D), Mapeamento Global de SMB](https://blogs.msdn.microsoft.com/clustering/2017/08/10/container-storage-support-with-cluster-shared-volumes-csv-storage-spaces-direct-s2d-smb-global-mapping/).
 
 **Armazenamento de contêiner: volumes de dados persistentes com mapeamento global de SMB**. No Windows Server, versão 1709, adicionamos suporte para mapeamento de um compartilhamento de arquivo SMB para uma letra de unidade em um contêiner; isso é chamado de mapeamento global de SMB. Essa unidade mapeada fica acessível para todos os usuários no servidor local, para que o contêiner de E/S no volume de dados pode passar da unidade montada para o compartilhamento de arquivos subjacente. Para obter mais informações, consulte [Suporte ao armazenamento de contêiner com Volumes Compartilhados do Cluster (CSV), Espaços de Armazenamento Diretos (S2D), Mapeamento Global de SMB](https://blogs.msdn.microsoft.com/clustering/2017/08/10/container-storage-support-with-cluster-shared-volumes-csv-storage-spaces-direct-s2d-smb-global-mapping/).
 
-**Formato de arquivo de configuração de máquina virtual (atualizado)**. Um outro arquivo (.vmgs) foi adicionado a máquinas virtuais com uma versão de configuração 8.2 e superior. VMGS significa o estado de convidado da VM e é um novo arquivo interno que inclui o estado do dispositivo que já fazia parte do arquivo de estado de tempo de execução da VM.
+**Formato de arquivo de configuração de máquina virtual (atualizado)** . Um outro arquivo (.vmgs) foi adicionado a máquinas virtuais com uma versão de configuração 8.2 e superior. VMGS significa o estado de convidado da VM e é um novo arquivo interno que inclui o estado do dispositivo que já fazia parte do arquivo de estado de tempo de execução da VM.
 
 ## <a name="security-and-assurance"></a>Segurança e garantia
 
@@ -115,7 +115,7 @@ Suporte para **Roteamento de malha do Docker**. Malha de roteamento de ingresso 
 **Windows Networking em paridade com o Linux para o Kubernetes**: Windows agora está no Linux em termos de rede. Os clientes podem implantar sistemas operacionais mistos, clusters de Kubernetes em qualquer ambiente incluindo o Azure, no local e em pilhas de nuvem de terceiros com os mesmos primitivos e topologias de rede compatíveis com o Linux sem precisar de qualquer solução alternativa ou extensões do switch.
 
 **Pilha de rede de núcleo**: Vários recursos da pilha de rede de núcleo estão aprimorados. Para obter mais informações sobre esses recursos, consulte [Principais recursos da pilha de rede na Atualização do Windows 10 para Criadores](https://blogs.technet.microsoft.com/networking/2017/07/13/core-network-stack-features-in-the-creators-update-for-windows-10/).
-- **Abrir rápida de TCP (TFO)**: Foi adicionado suporte para a TFO para otimizar o processo de handshake de 3 vias TCP. O TFO estabelece um cookie TFO seguro na primeira conexão usando um handshake de três vias.  As conexões subsequentes ao mesmo servidor usam o cookie TFO em vez de um handshake de três vias para se conectar sem afetar o tempo de ida e volta.
+- **Abrir rápida de TCP (TFO)** : Foi adicionado suporte para a TFO para otimizar o processo de handshake de 3 vias TCP. O TFO estabelece um cookie TFO seguro na primeira conexão usando um handshake de três vias.  As conexões subsequentes ao mesmo servidor usam o cookie TFO em vez de um handshake de três vias para se conectar sem afetar o tempo de ida e volta.
 - **CÚBICA**: Experimental Windows implementação nativa CÚBICA, um algoritmo de controle de congestionamento de TCP está disponível. Os seguintes comandos habilitam ou desabilitam o CUBIC, respectivamente.
 
     ```
@@ -140,7 +140,7 @@ Suporte para **Roteamento de malha do Docker**. Malha de roteamento de ingresso 
     ```
 
     - **ISATAP e 6to4**: Como uma etapa em direção a substituição futura, a atualização para criadores terá essas tecnologias desabilitadas por padrão.
-- **Detecção de gateways inativos (DGD)**: O algoritmo DGD automaticamente faz a transição conexões na outro gateway quando o gateway atual está inacessível. Nesta versão, o algoritmo é melhorado para testar periodicamente o ambiente de rede.
+- **Detecção de gateways inativos (DGD)** : O algoritmo DGD automaticamente faz a transição conexões na outro gateway quando o gateway atual está inacessível. Nesta versão, o algoritmo é melhorado para testar periodicamente o ambiente de rede.
 - O [Test-NetConnection](https://technet.microsoft.com/itpro/powershell/windows/nettcpip/test-netconnection) é um cmdlet nativo do Windows PowerShell que executa diversos diagnósticos de rede.  Nesta versão, aprimoraram o cmdlet para fornecer informações detalhadas sobre a seleção de rota, bem como a seleção do endereço de origem.
 
 **Rede definida pelo software**

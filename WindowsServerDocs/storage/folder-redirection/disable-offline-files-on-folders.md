@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: adc93906cb7ff958fc1db7b00abdc557623e764e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b006742c9256c357d9aff3fb1b765dbed087383a
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834197"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475877"
 ---
 # <a name="disable-offline-files-on-individual-redirected-folders"></a>Desabilitar Arquivos Offline em pastas redirecionadas individuais
 
->Aplica-se a: Windows 10, Windows 8, Windows 8.1, Windows Server 2012, Windows Server 2012 R2, Windows Server 2016
+>Aplica-se a: Windows 10, Windows 8, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012, Windows Server 2012 R2, Windows (canal semestral)
 
 Este tópico descreve como desabilitar o cache de arquivos Offline em pastas individuais são redirecionadas para compartilhamentos de rede usando o redirecionamento de pasta. Isso fornece a capacidade de especificar quais pastas a serem excluídos do armazenamento em cache localmente, reduzindo o cache de arquivos off-line tamanho e o tempo necessário para sincronizar arquivos Offline.
 
@@ -29,7 +29,7 @@ Este tópico descreve como desabilitar o cache de arquivos Offline em pastas ind
 Para desabilitar o cache de arquivos off-line de pastas redirecionadas específicas, seu ambiente deve cumprir os pré-requisitos a seguir.
 
 - Um domínio de serviços de domínio Active Directory (AD DS), com os computadores cliente ingressados no domínio. Não há nenhum requisito de esquema ou requisitos de nível funcional de floresta ou domínio.
-- Computadores de cliente que executam o Windows 10, Windows 8.1, Windows 8, Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012.
+- Computadores de cliente que executam o Windows 10, Windows 8.1, Windows 8, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 ou Windows (canal semestral).
 - Um computador com o gerenciamento de diretiva de grupo instalado.
 
 ## <a name="disabling-offline-files-on-individual-redirected-folders"></a>Desabilitar Arquivos Offline em pastas redirecionadas individuais

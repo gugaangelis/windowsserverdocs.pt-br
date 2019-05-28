@@ -8,27 +8,27 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 05/09/2017
-ms.openlocfilehash: 4344108f96d14475c15a31bd1ab917e7fc78ef9f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4376dbb2c172a82c4ab64dc63acefbc37457110f
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860127"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476039"
 ---
 # <a name="data-deduplication-overview"></a>Visão geral de eliminação de duplicação de dados
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+> Aplica-se a: Windows Server do Windows Server 2016, Windows Server (canal semestral), de 2019 
 
 ## <a name="what-is-dedup"></a>O que é a eliminação de duplicação de dados?
 
-A Eliminação de Duplicação de Dados, também conhecida como Eliminação de duplicatas, é um recurso do Windows Server 2016 que pode ajudar a reduzir o impacto de dados redundantes nos custos de armazenamento. Quando habilitada, a Eliminação de Duplicação de Dados otimiza o espaço livre em um volume examinando os dados no volume para procurar duplicatas no volume. As duplicatas do conjunto de dados do volume são armazenadas uma vez e (opcionalmente) são compactadas para economizar ainda mais espaço. A Eliminação de Duplicação de Dados otimiza redundâncias sem comprometer a fidelidade ou a integridade dos dados. Podem ser encontradas mais informações sobre como a Eliminação de Duplicação de Dados funciona na seção "[Como funciona a Eliminação de Duplicação de Dados?](understand.md#how-does-dedup-work)" da página [Noções básicas sobre Eliminação de Duplicação de Dados](understand.md).
+Eliminação de duplicação de dados, também conhecida como eliminação para abreviar, é um recurso que pode ajudar a reduzir o impacto de dados redundantes nos custos de armazenamento. Quando habilitada, a Eliminação de Duplicação de Dados otimiza o espaço livre em um volume examinando os dados no volume para procurar duplicatas no volume. As duplicatas do conjunto de dados do volume são armazenadas uma vez e (opcionalmente) são compactadas para economizar ainda mais espaço. A Eliminação de Duplicação de Dados otimiza redundâncias sem comprometer a fidelidade ou a integridade dos dados. Podem ser encontradas mais informações sobre como a Eliminação de Duplicação de Dados funciona na seção "[Como funciona a Eliminação de Duplicação de Dados?](understand.md#how-does-dedup-work)" da página [Noções básicas sobre Eliminação de Duplicação de Dados](understand.md).
 
 > [!Important]  
-> [O KB4025334](https://support.microsoft.com/kb/4025334) contém um pacote cumulativo de correções para Eliminação de Duplicação de Dados, incluindo correções de confiabilidade importantes; é altamente recomendável a instalação desse pacote durante o uso da Eliminação de Duplicação de Dados com o Windows Server 2016.
+> [KB4025334](https://support.microsoft.com/kb/4025334) contém um roll up de correções para eliminação de duplicação de dados, incluindo confiabilidade importante correções, e é altamente recomendável instalá-lo ao usar a eliminação de duplicação de dados com o Windows Server 2016 e Windows Server 2019.
 
 ## <a name="why-is-dedup-useful"></a>Por que a eliminação de duplicação de dados é útil?
 
-A Eliminação de Duplicação de Dados ajuda os administradores de armazenamento a reduzir os custos associados a dados duplicados. Grandes conjuntos de dados geralmente têm **<u>muita</u>** duplicação, o que aumenta os custos de armazenamento de dados. Por exemplo: 
+A Eliminação de Duplicação de Dados ajuda os administradores de armazenamento a reduzir os custos associados a dados duplicados. Grandes conjuntos de dados geralmente têm **<u>muita</u>** duplicação, o que aumenta os custos de armazenamento de dados. Por exemplo:
 
 - Os compartilhamentos de arquivos do usuário podem ter várias cópias dos mesmos arquivos ou de arquivos semelhantes.
 - Os convidados de virtualização podem ser praticamente idênticos de VM para VM.

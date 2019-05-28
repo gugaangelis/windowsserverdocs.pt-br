@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b60127cf957a30d147c9992c74c01e37e5b8bf89
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 68af5f118b2cc9d7941abddccd2a1bc7fde4c6d0
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871917"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222931"
 ---
 # <a name="sc-delete"></a>Exclusão de SC
 
@@ -26,7 +26,7 @@ ms.locfileid: "59871917"
 
 Exclui uma subchave de serviço do registro. Se o serviço está em execução ou se outro processo tem um identificador aberto para o serviço, o serviço está marcado para exclusão.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+Para obter exemplos de como usar esse comando, consulte [Exemplos](#examples).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -46,7 +46,7 @@ sc [<ServerName>] delete [<ServiceName>]
 
 Use **adicionar ou remover programas** nos **painel de controle** excluir DHCP, DNS ou qualquer outro serviço interno do sistema operacional. Observe que **adicionar ou remover programas** não removerá apenas a subchave do registro para o serviço, mas ele também desinstale o serviço e exclua todos os atalhos para ele.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="examples"></a>Exemplos
 
 Para excluir a subchave de serviço **NewServ** do registro no computador local, digite:
 ```
@@ -55,4 +55,4 @@ sc delete newserv
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

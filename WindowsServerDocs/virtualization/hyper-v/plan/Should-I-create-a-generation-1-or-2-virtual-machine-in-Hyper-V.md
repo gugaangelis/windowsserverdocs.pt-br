@@ -11,19 +11,19 @@ ms.assetid: 02e31413-6140-4723-a8d6-46c7f667792d
 author: KBDAzure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: 48319e057da9c815a77349bba34996f89973d85a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e3c88ef5ee700bb3906746402bf6cc8916976800
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850497"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192770"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>Deve criar uma máquina virtual de geração 1 ou 2 no Hyper-V?
 
 >Aplica-se a: Windows 10, Windows Server 2016, Microsoft Hyper-V Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019
 
-> [!WARNING]
-> Se você planeja carregar nunca um Windows máquinas virtuais (VM) do local para o Microsoft Azure **apenas VMs da geração 1** que estão no formato de arquivo VHD e têm um disco de tamanho fixo têm suporte. Para obter mais informações sobre como carregar um VHD do Windows ou VHDX, consulte [preparar um VHD do Windows ou o VHDX para carregar no Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/prepare-for-upload-vhd-image).
+> [!NOTE]
+> Se você planeja nunca carregar uma máquina virtual do Windows (VM) do local para o Microsoft Azure, geração 1 e geração 2 VMs em um formato de arquivo VHD e tiver um disco de tamanho fixo têm suporte. Ver [VMs da geração 2 no Azure](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2) para saber mais sobre os recursos de geração 2 tem suportados no Azure. Para obter mais informações sobre como carregar um VHD do Windows ou VHDX, consulte [preparar um VHD do Windows ou o VHDX para carregar no Azure](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image).
 
 Sua escolha para criar uma geração 1 ou a máquina virtual de geração 2 depende do sistema operacional convidado em que você deseja instalar e o método de inicialização que você deseja usar para implantar a máquina virtual. É recomendável que você crie uma máquina virtual de geração 2 para tirar proveito dos recursos como inicialização segura, a menos que uma das instruções a seguir for verdadeira:  
 

@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 1d9e91ec8f4c998f34e324b5d551a387eba5a310
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5717fcc9e1732b6273620e633c140c6df58ec8b7
+ms.sourcegitcommit: 29ad32b9dea298a7fe81dcc33d2a42d383018e82
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823627"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65624649"
 ---
 # <a name="create-os-specialization-answer-file"></a>Criar arquivo de resposta do sistema operacional especialização
 
@@ -38,10 +38,8 @@ As seções a seguir mostram como você pode usar os parâmetros de função par
 - [Arquivo de resposta básico do Windows](#basic-windows-answer-file)
 - [Arquivo com o ingresso no domínio de resposta do Windows](#windows-answer-file-with-domain-join)
 - [Arquivo de resposta do Windows com endereços IPv4 estáticos](#windows-answer-file-with-static-ipv4-addresses)
-- [Arquivo de resposta do Windows com uma localidade personalizada](#windows-answer-file-with-custom-locale)
+- [Arquivo de resposta do Windows com uma localidade personalizada](#windows-answer-file-with-a-custom-locale)
 - [Arquivo de resposta básico do Linux](#basic-linux-answer-file)
-
-Você também pode examinar a [parâmetros de função](#function-parameters), mais adiante neste tópico.
 
 ## <a name="basic-windows-answer-file"></a>Arquivo de resposta básico do Windows
 
@@ -51,7 +49,7 @@ Quando solicitado a inserir uma credencial de administrador, especifique o nome 
 Use "Administrador" para o nome de usuário, se você quiser configurar a conta interna administrador.
 
 ```powershell
-$adminCred = Get-Credential -Prompt "Local administrator account"
+$adminCred = Get-Credential -Message "Local administrator account"
 
 New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -AdminCredentials $adminCred
 ```
@@ -69,8 +67,8 @@ A segunda solicitação de credenciais solicitará credenciais que tenham o dire
 Certifique-se de alterar o valor da "-DomainName" parâmetro para o FQDN do domínio do Active Directory.
 
 ```powershell
-$adminCred = Get-Credential -Prompt "Local administrator account"
-$domainCred = Get-Credential -Prompt "Domain join credentials"
+$adminCred = Get-Credential -Message "Local administrator account"
+$domainCred = Get-Credential -Message "Domain join credentials"
 
 New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -AdminCredentials $adminCred -DomainName 'my.contoso.com' -DomainJoinCredentials $domainCred
 ```
@@ -97,7 +95,7 @@ Você precisa configurar o adaptador de rede para sua máquina virtual. Captura 
 Em seguida, você pode usar o `-StaticIPPool` parâmetro para incluir os elementos IP estáticos no arquivo de resposta. Os parâmetros `@IPAddr-1@`, `@NextHop-1-1@`, e `@DNSAddr-1-1@` na resposta arquivo será substituído pelos valores reais que você especificou no Virtual Machine Manager no momento da implantação.
 
 ```powershell
-$adminCred = Get-Credential -Prompt "Local administrator account"
+$adminCred = Get-Credential -Message "Local administrator account"
 
 New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -AdminCredentials $adminCred -StaticIPPool IPv4Address
 ```
@@ -110,8 +108,8 @@ Quando solicitado a inserir uma credencial de administrador, especifique o nome 
 Use "Administrador" para o nome de usuário, se você quiser configurar a conta interna administrador.
 
 ```powershell
-$adminCred = Get-Credential -Prompt "Local administrator account"
-$domainCred = Get-Credential -Prompt "Domain join credentials"
+$adminCred = Get-Credential -Message "Local administrator account"
+$domainCred = Get-Credential -Message "Domain join credentials"
 
 New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -AdminCredentials $adminCred -Locale es-ES
 ```

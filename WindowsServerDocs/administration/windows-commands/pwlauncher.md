@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1aa2e22f74323bb6cabfc644ca67e17a7fcbd3fc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 8ec9748056b296bb0c74250b36c762fb86fa90ad
+ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851017"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65564648"
 ---
 # <a name="pwlauncher"></a>pwlauncher
 
@@ -44,7 +44,7 @@ Pwlauncher {/enable | /disable}
 
 ## <a name="remarks"></a>Comentários
 
-O maior obstáculo para um usuário que desejarem usar o Windows To Go é obter o seu computador para inicializar de USB. Tradicionalmente, isso é feito inserindo o firmware e experimentar diferentes opções de configuração até que o computador está configurado corretamente. Isso não é uma tarefa simple para a maioria dos usuários e é muito arriscado porque o firmware contém opções que podem inutilizar um sistema se usada incorretamente. Para ajudar a aliviar esse problema, o Windows 8and sistemas operacionais posteriores incluem um recurso chamado "Windows para acessar as opções de inicialização? que permite que um usuário configurar seu computador para inicializar de USB de dentro do Windows — sem inserir nunca firmware, desde que o firmware dá suporte à inicialização a partir de USB. Primeiro permitindo que um sistema sempre inicializar de USB tem implicações que devem ser consideradas. Por exemplo, um dispositivo USB que inclui o malware poderia ser inicializado inadvertidamente para comprometer o sistema ou várias unidades USB podem ser conectadas para fazer com que um conflito de inicialização. Por esse motivo, a configuração padrão tem o Windows para opções de inicialização Go desabilitado por padrão. Além disso, são necessários privilégios de administrador para configurar o Windows para opções de inicialização Go. Se você habilitar as opções de inicialização do Windows To Go usando a ferramenta de linha de comando pwlauncher ou o **alteração Windows para acessar opções de inicialização** o computador tentará inicializar a partir de qualquer dispositivo USB que é inserido no computador antes que seja do aplicativo iniciado.
+O maior obstáculo para um usuário que desejarem usar o Windows To Go é obter o seu computador para inicializar de USB. Tradicionalmente, isso é feito inserindo o firmware e experimentar diferentes opções de configuração até que o computador está configurado corretamente. Isso não é uma tarefa simple para a maioria dos usuários e é muito arriscado porque o firmware contém opções que podem inutilizar um sistema se usada incorretamente. Para ajudar a aliviar esse problema, o Windows 8and sistemas operacionais posteriores incluem um recurso chamado "Windows para acessar opções de inicialização" que permite que um usuário configurar seu computador para inicializar de USB de dentro do Windows-sem inserir nunca firmware, contanto que seus firmware dá suporte à inicialização a partir de USB. Primeiro permitindo que um sistema sempre inicializar de USB tem implicações que devem ser consideradas. Por exemplo, um dispositivo USB que inclui o malware poderia ser inicializado inadvertidamente para comprometer o sistema ou várias unidades USB podem ser conectadas para fazer com que um conflito de inicialização. Por esse motivo, a configuração padrão tem o Windows para opções de inicialização Go desabilitado por padrão. Além disso, são necessários privilégios de administrador para configurar o Windows para opções de inicialização Go. Se você habilitar as opções de inicialização do Windows To Go usando a ferramenta de linha de comando pwlauncher ou o **alteração Windows para acessar opções de inicialização** o computador tentará inicializar a partir de qualquer dispositivo USB que é inserido no computador antes que seja do aplicativo iniciado.
 
 ## <a name="BKMK_examples"></a>Exemplos
 
@@ -55,4 +55,4 @@ Pwlauncher /enable
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

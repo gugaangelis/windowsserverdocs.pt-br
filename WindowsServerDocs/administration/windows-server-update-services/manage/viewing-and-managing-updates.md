@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cd517be0de3ba6ca97ca11f4bbe8f59111a01216
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f2ffc6680239fa468b058b74f9acf26d22f2b65f
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870947"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222616"
 ---
 # <a name="viewing-and-managing-updates"></a>Exibir e gerenciar atualizações
 
@@ -127,7 +127,7 @@ As atualizações são usadas para atualizar ou fornecendo uma substituição de
 
 -   Arquivos de atualização: Os arquivos reais necessários para instalar uma atualização em um computador.
 
-Quando as atualizações são sincronizadas com o servidor do WSUS, os metadados e os arquivos de atualização são armazenados em dois locais separados. Os metadados são armazenados no banco de dados do WSUS. Arquivos de atualização podem ser armazenados no servidor do WSUS ou em servidores do Microsoft Update, dependendo de como você configurou suas opções de sincronização. Se você optar por armazenar os arquivos de atualização nos servidores do Microsoft Update, somente os metadados é baixado no momento da sincronização; aprovar as atualizações por meio do console do WSUS e, em seguida, os computadores cliente obtém os arquivos de atualização diretamente do Microsoft Update no momento da instalação. Para obter mais informações sobre as opções de armazenamento de atualizações, consulte a seção [1.3. Escolha uma estratégia de armazenamento do WSUS](../plan/plan-your-wsus-deployment.md#BKMK_1.3.) da etapa 1: Prepare a implantação do WSUS, no guia de implantação do WSUS.
+Quando as atualizações são sincronizadas com o servidor do WSUS, os metadados e os arquivos de atualização são armazenados em dois locais separados. Os metadados são armazenados no banco de dados do WSUS. Arquivos de atualização podem ser armazenados no servidor do WSUS ou em servidores do Microsoft Update, dependendo de como você configurou suas opções de sincronização. Se você optar por armazenar os arquivos de atualização nos servidores do Microsoft Update, somente os metadados é baixado no momento da sincronização; aprovar as atualizações por meio do console do WSUS e, em seguida, os computadores cliente obtém os arquivos de atualização diretamente do Microsoft Update no momento da instalação. Para obter mais informações sobre as opções de armazenamento de atualizações, consulte a seção [1.3. Escolha uma estratégia de armazenamento do WSUS](../plan/plan-your-wsus-deployment.md#13-choose-a-wsus-storage-strategy) da etapa 1: Prepare a implantação do WSUS, no guia de implantação do WSUS.
 
 Você será como configurar e executar sincronizações, adição de computadores e grupos de computadores e implantar atualizações regularmente. A lista a seguir fornece exemplos de tarefas gerais que você pode executar na atualização de computadores com o WSUS.
 
