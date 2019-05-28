@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: fd075c5b7d1bfce89cc27c4917a016e7e5037ce5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4b70b0b048f66f9a8ba19cd7990dde57e0655ae4
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888287"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192234"
 ---
 # <a name="create-a-stand-alone-federation-server"></a>Criar um servidor de federação autônomo
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Depois de instalar o serviço de função serviço de Federação e configurar os certificados necessários em um computador, você está pronto para configurar o computador para se tornar um servidor de Federação. Você pode usar o procedimento a seguir para configurar o computador para se tornar um suporte\-servidor de Federação autônomo. O ato de criar um suporte\-servidor de Federação autônomo também cria um novo serviço de Federação. Criar um servidor de federação com o Assistente de configuração do servidor de Federação do AD FS.  
   
@@ -59,6 +57,6 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
 7.  Na página **Resultados da Configuração**, examine os resultados. Quando todas as etapas de configuração estiverem concluídas, clique em **fechar** para sair do assistente.  
   
 ## <a name="additional-references"></a>Referências adicionais  
-[Lista de verificação: Configurando um servidor de Federação](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de verificação: Como configurar um servidor de federação](Checklist--Setting-Up-a-Federation-Server.md)  
   
 

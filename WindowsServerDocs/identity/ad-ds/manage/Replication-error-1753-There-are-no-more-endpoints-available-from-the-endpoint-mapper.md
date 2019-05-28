@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: e429c87a2194ecfaf02c3d6c579eda75293250d4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a280d540d09c6fdcb7846d1cf545856869be1152
+ms.sourcegitcommit: b190fac4bfa5599751a60d3fc3b4c4a64dd9afd7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827507"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66008962"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>Erro de replicação 1753 Não há mais pontos de extremidade disponíveis do mapeador de ponto de extremidade
 
@@ -194,7 +194,6 @@ Para Windows Server 2008 ou Windows Server 2008 R2: no console do DC de origem, 
           <code>c:&gt;nslookup -type=cname &lt;fully qualified cname of source DC&gt; &lt;destination DCs primary DNS Server IP &gt;
 c:&gt;nslookup -type=cname &lt;fully qualified cname of source DC&gt; &lt;destination DCs secondary DNS Server IP&gt;</code>
           <para>Verificar se o endereço IP retornado pelo NSLOOKUP "possui" o nome do host / identidade de segurança do DC de origem:</para>
-
           <code>C:&gt;NBTSTAT -A &lt;IP address returned by NSLOOKUP in the step above&gt;</code>
           <para>ou</para>
           <para>Fazer logon no console do DC de origem, executar "IPCONFIG" no prompt de comando e verificar se o DC de origem possui o endereço IP retornado pelo comando NSLOOKUP acima</para>
@@ -218,7 +217,7 @@ NSLOOKUP -type=hostname &lt;fully qualified computer name of source DC&gt; &lt;s
                   <para>Aplicativo de servidor RPC</para>
                 </TD>
                 <TD>
-                  <para>Porta</para>
+                  <para>Port</para>
                 </TD>
                 <TD>
                   <para>TCP</para>

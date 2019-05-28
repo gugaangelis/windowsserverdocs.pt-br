@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 9b1fa833-4325-48a8-bf34-46265f40c001
 author: christianmontoya
 manager: scottman
-ms.openlocfilehash: 73beb1539420f4b4aad818ffe0b0bdaabe901748
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 63037dd7e32320b6e640396e20344e5678ed91dd
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870257"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034434"
 ---
 # <a name="migrate-your-remote-desktop-services-deployment-to-windows-server-2016"></a>Migrar sua implantação de serviços de área de trabalho remota para Windows Server 2016
 
@@ -28,8 +28,8 @@ Há suporte para a migração para uma implantação de serviços de área de tr
 
 Para obter mais informações sobre os requisitos e o processo de atualização, consulte [Atualizando suas implantações dos serviços de área de trabalho remota para o Windows Server 2016](upgrade-to-rds-2016.md).
 
-Use as seguintes etapas para migrar sua implantação de serviços de área de trabalho remota: 
-- [Migrar servidores do agente de Conexão de área de trabalho remota](#migrate-rd-connection-broker-servers) 
+Use as seguintes etapas para migrar sua implantação de serviços de área de trabalho remota:
+- [Migrar servidores do agente de Conexão de área de trabalho remota](#migrate-rd-connection-broker-servers)
 - [Migre as coleções de sessão](#migrate-session-collections)
 - [Migre as coleções de área de trabalho virtual](#migrate-virtual-desktop-collections)
 - [Migrar servidores de acesso via Web RD](#migrate-rd-web-access-servers)
@@ -54,7 +54,7 @@ Isso é a primeira e mais importante etapa para a migração: Migrando seus agen
 
 Siga estas etapas para migrar uma coleção de sessão no Windows Server 2012 R2 para uma coleção de sessão no Windows Server 2016.
 > [!IMPORTANT] 
-> Migre as coleções de sessão somente após concluir com êxito a etapa anterior, [servidores do agente de Conexão de área de trabalho remota migrar](#Migrate-RD-Connection-Broker-servers).
+> Migre as coleções de sessão somente após concluir com êxito a etapa anterior, [servidores do agente de Conexão de área de trabalho remota migrar](#migrate-rd-connection-broker-servers).
 
 1. [Atualize a coleção de sessão](Upgrade-to-RDSH-2016.md) do Windows Server 2012 R2 para o Windows Server 2016.
 2. Adicione o novo servidor de Host de sessão de área de trabalho remota executando o Windows Server 2016 à coleção de sessão.
@@ -69,7 +69,7 @@ Siga estas etapas para migrar uma coleção de sessão no Windows Server 2012 R2
 Siga estas etapas para migrar uma coleção de área de trabalho virtuais de um servidor de origem executando o Windows Server 2012 R2 para um servidor de destino executando o Windows Server 2016.
 
 > [!IMPORTANT] 
-> Migre as coleções de área de trabalho virtual somente após concluir com êxito a etapa anterior, [servidores do agente de Conexão de área de trabalho remota migrar](#Migrate-RD-Connection-Broker-servers).
+> Migre as coleções de área de trabalho virtual somente após concluir com êxito a etapa anterior, [servidores do agente de Conexão de área de trabalho remota migrar](#migrate-rd-connection-broker-servers).
 
 1. [Atualize a coleção da área de trabalho virtuais](Upgrade-to-RDVH-2016.md) do servidor executando o Windows Server 2012 R2 para o Windows Server 2016.
 2. Adicione os novos servidores de Host de virtualização de área de trabalho remota do Windows Server 2016 à coleção da área de trabalho virtual.
@@ -85,14 +85,14 @@ Siga estas etapas para migrar uma coleção de área de trabalho virtuais de um 
 Siga estas etapas para migrar servidores de acesso via Web RD:
 - Ingressar nos servidores de destino executando o Windows Server 2016 para a implantação dos serviços de área de trabalho remota e instalar a função da Web da área de trabalho remota
 - Use [ferramenta de implantação da Web IIS](https://www.iis.net/) para migrar as configurações de site da Web da área de trabalho remota de servidores de acesso via Web RD atuais para os servidores de destino executando o Windows Server 2016.
-- [Migrar certificados](#Migrate-certificates) para os servidores de destino executando o Windows Server 2016.
+- [Migrar certificados](#migrate-certificates) para os servidores de destino executando o Windows Server 2016.
 - Remova os servidores de origem da implantação dos serviços de área de trabalho remota  
 
 ## <a name="migrate-rdgateway-servers"></a>Migrar servidores de Gateway de Área de Trabalho Remota
 Siga estas etapas para migrar servidores de Gateway de área de trabalho remota:
 - Ingressar nos servidores de destino executando o Windows Server 2016 para a implantação dos serviços de área de trabalho remota e instalar a função de Gateway de área de trabalho remota
 - Use [ferramenta de implantação da Web IIS](https://www.iis.net/) para migrar as configurações de ponto de extremidade de Gateway de área de trabalho remota de servidores do Gateway de área de trabalho remota do atuais para os servidores de destino executando o Windows Server 2016.
-- [Migrar certificados](#Migrate-certificates) para os servidores de destino executando o Windows Server 2016.
+- [Migrar certificados](#migrate-certificates) para os servidores de destino executando o Windows Server 2016.
 - Remova os servidores de origem da implantação de serviços de área de trabalho remota  
 
 ## <a name="migrate-rdlicensing-servers"></a>Migrar servidores de Licenciamento de Área de Trabalho Remota

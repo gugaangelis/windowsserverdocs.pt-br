@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 62910af666fb16db5c2e7a30b49eedfa8c12cacb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e937464ca3af1292de5fd63303ba4a430f831dcd
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860847"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475857"
 ---
 # <a name="checklist-apply-a-quota-to-a-volume-or-folder"></a>Lista de verificação: Aplique uma cota para um volume ou pasta
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplica-se a: 2019 do Windows Server, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server (canal semestral)
 
 1. Defina configurações de email se você pretende enviar notificações de limite ou relatórios de armazenamento por email. [Configurar notificações por email](configure-email-notifications.md)
 
@@ -27,7 +27,7 @@ ms.locfileid: "59860847"
 <br />-Or- <br /> Crie um novo modelo de cota para impor uma política de armazenamento em sua organização. [Criar um modelo de cota](create-quota-template.md)
 
 4. Crie uma cota baseada no modelo no volume ou na pasta.  
- [Criar uma cota](create-quota.md) <br /> -Or- <br /> Crie uma cota de aplicação automática para gerar automaticamente cotas para todas as subpastas no volume ou na pasta. [Crie uma cota de aplicação](create-auto-apply-quota.md)
+ [Criar uma cota](create-quota.md) <br /> -Or- <br /> Crie uma cota de aplicação automática para gerar automaticamente cotas para todas as subpastas no volume ou na pasta. [Criar uma cota de aplicação automática](create-auto-apply-quota.md)
 
 6. Agende uma tarefa de relatório que contém um relatório de Uso de cota para monitorar o uso de cota periodicamente. [Agendar um conjunto de relatórios](schedule-set-of-reports.md)
 

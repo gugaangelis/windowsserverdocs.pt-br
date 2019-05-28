@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a7a14b1a1e0f91002b201869e4c68187ffaf3f8f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: eaec563157a77fd4e782842a81e5b59e49a5ea09
+ms.sourcegitcommit: 7cb939320fa2613b7582163a19727d7b77debe4b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865077"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65621302"
 ---
 # <a name="use-robocopy-to-preseed-files-for-dfs-replication"></a>Usar o Robocopy para pré-propagar arquivos para a replicação DFS
 
@@ -28,9 +28,9 @@ O utilitário de linha de comando Robocopy (cópia de arquivo robusto) está inc
 
 Para usar o Robocopy para pré-propagar arquivos para a replicação DFS, siga estas etapas:
 
-1. [Baixe e instale a última versão do Robocopy.](#step-1:-download-and-install-the-latest-version-of-robocopy)
-2. [Estabilize arquivos que serão replicados.](#step-2:-stabilize-files-that-will-be-replicated)
-3. [Copie os arquivos replicados para o servidor de destino.](#step-3:-copy-the-replicated-files-to-the-destination-server)
+1. [Baixe e instale a última versão do Robocopy.](#step-1-download-and-install-the-latest-version-of-robocopy)
+2. [Estabilize arquivos que serão replicados.](#step-2-stabilize-files-that-will-be-replicated)
+3. [Copie os arquivos replicados para o servidor de destino.](#step-3-copy-the-replicated-files-to-the-destination-server)
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -38,7 +38,7 @@ Porque pré-propagar não envolve a replicação do DFS diretamente, você só p
 
 - Você precisa de uma conta que seja membro do grupo Administradores local nos servidores de origem e de destino.
 
-- Instalar a versão mais recente do Robocopy no servidor que você usará para copiar os arquivos — o servidor de origem ou o servidor de destino. Você precisará instalar a versão mais recente para a versão do sistema operacional. Para obter instruções, consulte [etapa 2: Estabilizar arquivos que serão replicados](#step-2:-stabilize-files-that-will-be-replicated). A menos que você está pré-propagar arquivos de um servidor executando o Windows Server 2003 R2, você pode executar o Robocopy no servidor de origem ou destino. O servidor de destino, que geralmente tem a versão mais recente do sistema operacional, fornece acesso para a versão mais recente do Robocopy.
+- Instalar a versão mais recente do Robocopy no servidor que você usará para copiar os arquivos — o servidor de origem ou o servidor de destino. Você precisará instalar a versão mais recente para a versão do sistema operacional. Para obter instruções, consulte [etapa 2: Estabilizar arquivos que serão replicados](#step-2-stabilize-files-that-will-be-replicated). A menos que você está pré-propagar arquivos de um servidor executando o Windows Server 2003 R2, você pode executar o Robocopy no servidor de origem ou destino. O servidor de destino, que geralmente tem a versão mais recente do sistema operacional, fornece acesso para a versão mais recente do Robocopy.
 
 - Certifique-se de que o espaço de armazenamento suficiente está disponível na unidade de destino. Não crie uma pasta no caminho que você pretende copiar para: Robocopy deve criar a pasta raiz.
     
@@ -63,7 +63,7 @@ Como alternativa, você pode localizar e instalar o hotfix mais recente para um 
     
     ```robocopy.exe kbqfe "<operating system version>"```
     
-    Por exemplo, digite **robocopy.exe kbqfe "Windows Server 2008 R2"**.
+    Por exemplo, digite **robocopy.exe kbqfe "Windows Server 2008 R2"** .
 
 3. Localizar e baixar o hotfix com o maior número de ID (ou seja, a versão mais recente).
 
@@ -105,7 +105,7 @@ Depois que você minimizar bloqueios nos arquivos que serão replicados, você p
     |"\<destino replicada caminho da pasta\>"|Especifica o caminho para a pasta que armazenará os arquivos preseeded.<br><br>Não, a pasta de destino já deve existir no servidor de destino. Para obter os hashes de arquivo correspondente, o Robocopy deve criar a pasta raiz quando ele preseeds os arquivos.|
     |/e|Copia os subdiretórios e seus arquivos, bem como os subdiretórios vazios.|
     |/b|Copia os arquivos no modo de Backup.|
-    |/copyal|Copia todas as informações de arquivo, incluindo dados, atributos, carimbos de data / hora, a lista de controle de acesso (ACL) do NTFS, informações sobre o proprietário e informações de auditoria.|
+    |/copyall|Copia todas as informações de arquivo, incluindo dados, atributos, carimbos de data / hora, a lista de controle de acesso (ACL) do NTFS, informações sobre o proprietário e informações de auditoria.|
     |/r:6|Repete a operação de seis vezes quando ocorre um erro.|
     |/w:5|Espera cinco segundos entre repetições.|
     |MT:64|Copia os arquivos de 64 simultaneamente.|

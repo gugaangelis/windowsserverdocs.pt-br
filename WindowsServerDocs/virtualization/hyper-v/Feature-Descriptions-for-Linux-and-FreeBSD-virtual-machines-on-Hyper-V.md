@@ -11,12 +11,12 @@ ms.assetid: a9ee931d-91fc-40cf-9a15-ed6fa6965cb6
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 944f8e9d902953ab4d6da0750603a2c40fa9e96d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a574275f6d3495a9cc9bff36fa785f28a7cd8d6f
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844887"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222880"
 ---
 # <a name="feature-descriptions-for-linux-and-freebsd-virtual-machines-on-hyper-v"></a>Descrições de recursos para máquinas virtuais de Linux e FreeBSD no Hyper-V
 
@@ -24,7 +24,7 @@ ms.locfileid: "59844887"
 
 Este artigo descreve os recursos disponíveis em componentes como core, rede, armazenamento e memória ao usar o Linux e FreeBSD em uma máquina virtual.
 
-## <a name="BKMK_core"></a>Core
+## <a name="core"></a>Core
 
 |**Recurso**|**Descrição**|
 |-|-|
@@ -37,7 +37,7 @@ Este artigo descreve os recursos disponíveis em componentes como core, rede, ar
 |Dispositivo de armazenamento específico do Hyper-V|Esse recurso concede acesso de alto desempenho para os dispositivos de armazenamento que estão anexados a uma máquina virtual.|
 |Dispositivo de rede específico do Hyper-V|Esse recurso concede acesso de alto desempenho para os adaptadores de rede que estão anexados a uma máquina virtual.|
 
-## <a name="BKMK_Networking"></a>Sistema de rede
+## <a name="networking"></a>Rede
 
 |**Recurso**|**Descrição**|
 |-|-|
@@ -50,7 +50,7 @@ Este artigo descreve os recursos disponíveis em componentes como core, rede, ar
 |Grande receber descarregamento (LRO)|Aumenta a produtividade entrada de conexões de alta largura de banda por agregar vários pacotes em um buffer maior, diminuindo a sobrecarga da CPU.|
 |SR-IOV|Dispositivos de e/s de raiz únicos usam DDA para permitir o acesso de convidados para partes de placas NIC específicas, permitindo uma latência reduzida e maior taxa de transferência. SR-IOV exige drivers função atualizado físico (PF) no host e a função virtual (FV) na convidada.|
 
-## <a name="BKMK_Storage"></a>Armazenamento
+## <a name="storage"></a>Armazenamento
 
 |**Recurso**|**Descrição**|
 |-|-|
@@ -60,7 +60,7 @@ Este artigo descreve os recursos disponíveis em componentes como core, rede, ar
 |Suporte de CORTE|Dicas de CORTE notificam a unidade que determinados setores que foram alocados anteriormente não são mais necessários pelo aplicativo e podem ser limpos. Esse processo normalmente é usado quando um aplicativo faz com que as alocações de espaço grande por meio de um arquivo e, em seguida, gerencia automaticamente as alocações para o arquivo, por exemplo, para arquivos de disco rígido virtual.|
 |SCSI WWN|O driver storvsc extrai informações de nome WWN (World Wide) de porta e do nó de dispositivos conectados à máquina virtual e cria os arquivos de sysfs apropriado. |
 
-## <a name="BKMK_Memory"></a>Memória
+## <a name="memory"></a>Memória
 
 |**Recurso**|**Descrição**|
 |-|-|
@@ -70,13 +70,13 @@ Este artigo descreve os recursos disponíveis em componentes como core, rede, ar
 |Memória dinâmica - inflação|O host pode aumentar ou diminuir a quantidade de memória disponível para uma máquina virtual enquanto ela estiver em operação dinamicamente. Antes de provisionar, o administrador permite memória dinâmica no painel de configurações da máquina Virtual e especifique a memória de inicialização, memória mínima e máxima de memória para a máquina virtual. Quando a máquina virtual está em operação de que memória dinâmica não podem ser desabilitada e somente as configurações de mínimo e máximo pode ser alterado. (Ele é uma prática recomendada para especificar esses tamanhos de memória como múltiplos de 128MB).<br /><br />Quando a máquina virtual é iniciada pela primeira vez disponível a memória é igual a **memória de inicialização**. Conforme aumenta a demanda de memória devido a cargas de trabalho de aplicativo do Hyper-V dinamicamente poderá alocar mais memória à máquina virtual por meio do mecanismo de quente (acima). Conforme a demanda de memória diminui o Hyper-V pode automaticamente desprovisionar memória da máquina virtual por meio do mecanismo de balão. Hyper-V não cancelará memória abaixo de **memória mínima** parâmetro.<br /><br />Na guia de memória do Hyper-V manager exibirá a quantidade de memória atribuída à máquina virtual, mas as estatísticas de memória dentro da máquina virtual mostrará a maior quantidade de memória alocada.<br /><br />Para obter mais informações, consulte [Hyper-V Dynamic Memory Overview](https://technet.microsoft.com/library/hh831766.aspx).<br /><br />|
 |Redimensionamento de memória de tempo de execução|Um administrador pode definir a quantidade de memória disponível para uma máquina virtual enquanto ela estiver em operação, aumentando a memória ("quente") ou reduzi-lo ("Hot remover"). Memória é retornada para o Hyper-V por meio do driver de balão (consulte "Inflação de – de memória dinâmica"). O driver de balão mantém uma quantidade mínima de memória livre após inchamento, chamado "base", portanto, atribuído a memória não pode ser reduzida abaixo a demanda atual mais essa quantidade de chão. Na guia de memória do Hyper-V manager exibirá a quantidade de memória atribuída à máquina virtual, mas as estatísticas de memória dentro da máquina virtual mostrará a maior quantidade de memória alocada. (Ele é uma prática recomendada para especificar valores de memória como múltiplos de 128MB).|
 
-## <a name="BKMK_Video"></a>Vídeo
+## <a name="video"></a>Vídeo
 
 |**Recurso**|**Descrição**|
 |-|-|
 |Dispositivo de vídeo específico do Hyper-V|Esse recurso fornece gráficos de alto desempenho e a resolução superior para máquinas virtuais. Este dispositivo não fornece recursos de modo de sessão avançado ou o RemoteFX.|
 
-## <a name="BKMK_Misc"></a>Diversos
+## <a name="miscellaneous"></a>Diversos
 
 |**Recurso**|**Descrição**|
 |-|-|
@@ -87,7 +87,7 @@ Este artigo descreve os recursos disponíveis em componentes como core, rede, ar
 |Soquetes do Hyper-V|Isso é um canal de comunicação adicional entre o sistema operacional host e convidado. Para carregar e usar o módulo de kernel de soquetes do Hyper-V, consulte [tornar seus próprios serviços de integração](https://msdn.microsoft.com/virtualization/hyperv_on_windows/develop/make_mgmt_service).|
 |Passagem/DDA de PCI|Com o Windows Server 2016 os administradores podem passar por dispositivos PCI Express por meio do mecanismo de atribuição de dispositivo discretos. Dispositivos comuns são placas de rede, placas de vídeo e dispositivos de armazenamento especial. A máquina virtual exigirá o driver apropriado para usar o hardware exposto. O hardware deve ser atribuído à máquina virtual para que ele seja usado.<br /><br />Para obter mais informações, consulte [atribuição de dispositivo discretos – descrição e o plano de fundo](https://blogs.technet.microsoft.com/virtualization/2015/11/19/discrete-device-assignment-description-and-background/).<br /><br />DDA é um pré-requisito para a rede da SR-IOV. Portas virtuais precisará ser atribuído à máquina virtual e a máquina virtual deve usar os drivers corretos de função Virtual (FV) multiplexação de dispositivo.|
 
-## <a name="BKMK_gen2"></a>Máquinas virtuais de geração 2
+## <a name="generation-2-virtual-machines"></a>Máquinas virtuais de 2ª geração
 
 |**Recurso**|**Descrição**|
 |-|-|
@@ -98,7 +98,7 @@ Este artigo descreve os recursos disponíveis em componentes como core, rede, ar
 
 * [Suporte para CentOS e Red Hat Enterprise Linux máquinas virtuais do Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 
-* [Suporte para máquinas virtuais do Debian no Hyper-V](Supported-Debian-virtual-machines-on-Hyper-V.md)
+* [Máquinas virtuais do Debian com suporte no Hyper-V](Supported-Debian-virtual-machines-on-Hyper-V.md)
 
 * [Máquinas de virtuais do Oracle Linux com suporte no Hyper-V](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)
 

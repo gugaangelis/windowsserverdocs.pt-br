@@ -4,19 +4,19 @@ description: Chaves necessárias para ativar os produtos Windows de um servidor 
 ms.prod: windows-server-threshold
 ms.mktglfcycl: manage
 ms.sitesec: library
-author: jaimeo
+author: jasongerend
+ms.author: jgerend
 ms.localizationpriority: medium
-ms.date: 10/02/2018
-ms.tgt_pltfrm: na
+ms.date: 05/21/2019
 ms.topic: get-started-article
-ms.openlocfilehash: 57ce4c4d7623c2a424efbdf0ff117ede8fad726b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e2aac6db7bb9e118d672190c95f0d73294474f75
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847027"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976534"
 ---
-# <a name="kms-client-setup-keys"></a>Chaves de Instalação de Cliente KMS
+# <a name="kms-client-setup-keys"></a>Chaves de instalação de cliente KMS
 
 >Aplica-se a: Windows Server de 2019, canal semestral do Windows Server, Windows Server 2016, Windows 10
 
@@ -29,9 +29,9 @@ Computadores que executam edições licenciadas do Windows Server, Windows 10, W
 
 Caso esteja convertendo um computador a partir de um host KMS, MAK ou edição comercial do Windows em um cliente KMS, instale a chave de instalação (GVLK) aplicável com base nas tabelas a seguir. Para instalar uma chave de instalação do cliente, abra um prompt de comando administrativo no cliente, digite **slmgr /ipk \<chave de instalação\>**  e pressione **Enter**.
 
-| Se você quiser...                                                                                                                                                                                          | … usar esses recursos                                                                                                         |
-|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
-| Ativar o Windows fora de um cenário de ativação de volume (isto é, você está tentando ativar uma versão comercial do Windows), **essas chaves não funcionarão**.                                                     | Use esses links para versões de varejo do Windows:                                                                              |
+| Se você quiser...    | … usar esses recursos   |
+|--------------------|------------------------|
+| Ativar o Windows fora de um cenário de ativação de volume (isto é, você está tentando ativar uma versão comercial do Windows), **essas chaves não funcionarão**. | Use esses links para versões de varejo do Windows: |
 | Corrigi esse erro obtido quando você tenta ativar um Windows 8.1, Windows Server 2012 R2 ou o sistema mais recente: “Erro: 0xC004F050 o Serviço de licenciamento de software relatou que a chave do produto é inválida”… | [Instale essa atualização](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2) no host KMS se ele estiver executando o Windows 8.1, o Windows Server 2012 R2, o Windows 8 ou o Windows Server 2012. |
 
 -   [Obter o Windows 10](https://www.microsoft.com/en-us/windows/get-windows-10)
@@ -43,15 +43,14 @@ Caso esteja convertendo um computador a partir de um host KMS, MAK ou edição c
 
 >   Se você estiver executando o Windows Server 2008 R2 ou o Windows 7, procure uma atualização para dar suporte ao seu uso como hosts KMS para clientes Windows 10.
 
-
 ## <a name="windows-server-semi-annual-channel-versions"></a>Versões de canal semestral do Windows Server
 
-### <a name="windows-server-version-1809"></a>Windows Server, versão 1809
-| Edição do sistema operacional       | Chave de instalação de cliente KMS          |
-|--------------------------------|-------------------------------|
-| Windows Server Datacenter | 6NMRW-2C8FM-D24W7-TQWMY-CWH2D  | 
-| Windows Server Standard | N2KJX-J94YW-TQVFB-DG9YT-724CC  |
+### <a name="windows-server-version-1903-and-windows-server-version-1809"></a>Windows Server, versão 1903 e Windows Server, versão 1809
 
+| Edição do sistema operacional  | Chave de instalação de cliente KMS          |
+|---------------------------|-------------------------------|
+| Windows Server Datacenter | 6NMRW-2C8FM-D24W7-TQWMY-CWH2D |
+| Windows Server Standard   | N2KJX-J94YW-TQVFB-DG9YT-724CC |
 
 ### <a name="windows-server-version-1803"></a>Windows Server, versão 1803
 

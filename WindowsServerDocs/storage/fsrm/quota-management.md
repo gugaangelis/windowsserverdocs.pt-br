@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: febcd6ab0744a7fddd024e1f0afdb93711e8939a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6effaf7c2d197c08b4930e09c3ada96462b17d6f
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829537"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476187"
 ---
 # <a name="quota-management"></a>Gerenciamento de cota
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server (canal semestral), Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 No nó **Gerenciamento de cota** do snap-in do Console de Gerenciamento Microsoft<sup>®</sup> do Gerenciador de Recursos de Servidor de Arquivos, você pode realizar as seguintes tarefas:
 
@@ -34,16 +34,16 @@ Por exemplo, você pode:
 Esta seção inclui os seguintes tópicos:
 
 -   [Criar uma cota](create-quota.md)
--   [Crie uma cota de aplicação](create-auto-apply-quota.md)
+-   [Criar uma cota de aplicação automática](create-auto-apply-quota.md)
 -   [Criar um modelo de cota](create-quota-template.md)
--   [Editar propriedades do modelo de cota](edit-quota-template-properties.md)
--   [Editar automática aplicar propriedades de cota](edit-auto-apply-quota-properties.md)
+-   [Editar propriedades de modelo de cota](edit-quota-template-properties.md)
+-   [Editar propriedades de cota de aplicação automática](edit-auto-apply-quota-properties.md)
 
 > [!Note]
 > Para definir notificações por email e recursos de relatório, você deve configurar primeiro as opções gerais do Gerenciador de recursos do servidor de arquivos.
 
 ## <a name="see-also"></a>Consulte também
 
--   [Opções do Gerenciador de recursos de servidor de arquivos de configuração](setting-file-server-resource-manager-options.md)
+-   [Definir opções do Gerenciador de Recursos de Servidor de Arquivos](setting-file-server-resource-manager-options.md)
 
 

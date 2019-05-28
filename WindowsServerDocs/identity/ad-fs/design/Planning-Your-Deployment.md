@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 5c7cec9ad92605f3dc98f8ce8fb7853a7ae61299
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0206197b24f13d80019cbc864057e99e195ebc4b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863687"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191143"
 ---
 # <a name="planning-your-deployment"></a>Planejando sua implantação
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Ao planejar cross\-organizacionais \(federação\-com base\) colaboração usando serviços de Federação do Active Directory \(AD FS\), primeiro determine se sua organização hospedará um recurso da Web para ser acessado por outras organizações na Internet ou se você for fornecer acesso ao recurso da Web para os funcionários em sua organização. Essa determinação afeta como implantar o AD FS, e é fundamental no planejamento de infraestrutura do AD FS.  
   
@@ -33,17 +31,17 @@ Os tópicos a seguir explicam que alguns dos AD FS conceitos da organização do
   
 ## <a name="in-this-section"></a>Nesta seção  
   
--   [Práticas recomendadas para o seguro de planejamento e implantação do AD FS](Best-Practices-for-Secure-Planning-and-Deployment-of-AD-FS.md)  
+-   [Melhores práticas para o planejamento e a implantação seguros do AD FS](Best-Practices-for-Secure-Planning-and-Deployment-of-AD-FS.md)  
   
 -   [Planejamento para interoperabilidade com o AD FS 1.x](Planning-for-Interoperability-with-AD-FS-1.x.md)  
   
 -   [Quando usar a delegação de identidade](When-to-Use-Identity-Delegation.md)  
   
--   [Implantar o AD FS na organização do parceiro de conta](Deploying-AD-FS-in-the-Account-Partner-Organization-2012.md)  
+-   [Como implantar o AD FS na organização do parceiro de conta](Deploying-AD-FS-in-the-Account-Partner-Organization-2012.md)  
   
--   [Implantar o AD FS na organização do parceiro de recurso](Deploying-AD-FS-in-the-Resource-Partner-Organization-2012.md)  
+-   [Como implantar o AD FS na organização do parceiro de recurso](Deploying-AD-FS-in-the-Resource-Partner-Organization-2012.md)  
   
 ## <a name="see-also"></a>Consulte também
-[Guia de Design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 
 

@@ -1,0 +1,42 @@
+---
+title: Recursos removidos ou planejados para substituição, começando com o Windows Server, versão 1903
+description: A seguir está uma lista dos recursos e funcionalidades no Windows Server, versão 1903 que foram removidas do produto em que a liberação ou estão começando a ser considerado para substituição potencial em versões futuras. Essa lista é direcionada para profissionais de TI que estão atualizando sistemas operacionais em um ambiente comercial.
+ms.prod: windows-server-threshold
+ms.technology: server-general
+ms.topic: article
+ms.date: 05/21/2019
+author: jasongerend
+ms.author: jgerend
+manager: daveba
+ms.openlocfilehash: e2f51af55ba7005cb20d8a1c22f6ba9edc20c704
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65983416"
+---
+# <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1903"></a>Recursos removidos ou planejados para substituição, começando com o Windows Server, versão 1903
+
+>Aplica-se a: Windows Server, versão 1903
+
+A seguir está uma lista dos recursos e funcionalidades no Windows Server, versão 1903 que foram removidas do produto em que a liberação ou estão começando a ser considerado para substituição potencial em versões futuras. Essa lista é direcionada para profissionais de TI que estão atualizando sistemas operacionais em um ambiente comercial. **Esta lista está sujeita a alterações em versões futuras e pode não incluir todos os recursos afetados ou funcionalidade.**
+
+Consulte também [recursos removidos ou planejados para substituição iniciando o Windows Server 2019](removed-features-19.md).
+
+## <a name="features-were-no-longer-developing"></a>Recursos que não estamos mais desenvolvendo
+
+Nós não é mais ativamente está desenvolvendo esses recursos e removê-las de uma atualização futura. Alguns recursos foram substituídos por outros recursos ou funcionalidades, enquanto outros agora estão disponíveis de fontes diferentes. 
+
+Se tiver comentários sobre a substituição proposta de qualquer um desses recursos, você pode usar o [aplicativo Hub de Feedback](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app). 
+
+| Recurso | Em vez disso, você pode usar |
+|-----------|---------------------|
+|Wi-Fi WEP e TKIP (**novo**)| Redes Wi-Fi usando as mais antigas do WEP e TKIP não são tão seguros quanto aqueles que usam o AES, como o WPA2 e WPA3. No Windows 10, versão 1903, conectar-se a uma rede WEP ou TKIP mostrará uma mensagem de aviso que a rede não é segura, mas nenhuma mensagem é exibida no Windows Server, versão 1903. Em uma versão futura qualquer conexão a uma rede Wi-Fi usando essas codificações antigas não será permitida. Para obter mais informações sobre os riscos de segurança do WEP e TKIP, consulte este [postagem de blog](https://go.microsoft.com/fwlink/p/?linkid=2008426).|
+|Driver de vídeo remoto baseado no XDDM (**novo**)|Usa um Windows Display Driver WDDM (Model) começar com esta versão, os serviços de área de trabalho remota com base indireta Display Driver (IDD) para uma área de trabalho remota única sessão. O suporte para drivers do Windows 2000 exibição XDDM (Driver Model) com base em exibição remota será removido em uma versão futura. Fornecedores independentes de Software que usam o driver de vídeo remoto baseados em XDDM deve planejar uma migração para o modelo de driver WDDM. Para obter mais informações sobre a implementação de exibição remota driver de vídeo indireta ISVs pode chegar aos [ rdsdev@microsoft.com ](mailto:rdsdev@microsoft.com).|
+|Ferramenta de coleta de log de UCS (**novo**)|A ferramenta de coleta de log UCS, embora não explicitamente destinado para uso com o Windows Server, ainda assim está sendo substituída pelo hub de comentários no Windows 10.|
+|Unidade de armazenamento de chave no Hyper-V|Não estamos trabalhando sobre o recurso de unidade de armazenamento de chave no Hyper-V. Se você estiver usando VMs da geração 1, fazer check-out [geração 1 VM virtualização segurança](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/generation-1-virtual-machine-security-settings-for-hyper-v) para obter informações sobre as opções no futuro. Se você estiver criando novas VMs usam máquinas virtuais de geração 2 com dispositivos TPM para uma solução mais segura. |
+|Console de gerenciamento confiável Platform Module (TPM)|As informações disponíveis anteriormente no console de gerenciamento do TPM agora estão disponíveis na [ **segurança do dispositivo** ](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-security-center/wdsc-device-security) página o [Central de segurança do Windows Defender](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-security-center/windows-defender-security-center).|
+|Modo de Atestado do Active Directory do serviço guardião de host|Não estamos desenvolvendo o modo de Atestado guardião de Host serviço do Active Directory – em vez disso, adicionamos um novo modo de Atestado [atestado de chaves de host](../security/guarded-fabric-shielded-vm/guarded-fabric-create-host-key.md), que é muito mais simples e igualmente como compatível, como o Active Directory com base Atestado.  Esse novo modo fornece funcionalidade equivalente com uma experiência de instalação, gerenciamento mais simples e menos dependências de infraestrutura que o Atestado do Active Directory. Atestado de chaves de host tem nenhum requisito de hardware adicional além do qual Atestado do Active Directory necessários, para que todos os sistemas existentes permanecerão compatíveis com o novo modo. Ver [implantar hosts protegidos do](../security/guarded-fabric-shielded-vm/guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md) para obter mais informações sobre suas opções de Atestado.|
+|Serviço OneSync|O serviço OneSync sincroniza os dados para os aplicativos de email, calendário e pessoas. Adicionamos um mecanismo de sincronização para o aplicativo do Outlook que fornece a mesma sincronização.|
+|Suporte a API de compactação diferencial remoto|Suporte a API de compactação diferencial remoto habilitado a sincronização de dados com uma fonte remota usando tecnologias de compactação, que a quantidade de dados enviados pela rede. Esse suporte não esteja sendo usado por qualquer produto da Microsoft.|
+|Extensão do comutador WFP filtro simples|A extensão de comutador de filtro simples da WFP permite aos desenvolvedores compilar [extensões para o comutador virtual do Hyper-V de filtragem de pacotes de rede simples](https://docs.microsoft.com/en-us/windows-hardware/drivers/network/using-virtual-switch-filtering). Você pode obter a mesma funcionalidade, criando uma extensão de filtragem completa. Dessa forma, podemos vai ser removendo essa extensão no futuro.|

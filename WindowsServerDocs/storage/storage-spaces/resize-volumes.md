@@ -1,27 +1,42 @@
 ---
 title: Estendendo volumes em Espaços de Armazenamento Diretos
-ms.assetid: fa48f8f7-44e7-4a0b-b32d-d127eff470f0
+description: Como redimensionar os volumes em espaços de armazenamento diretos usando o PowerShell e Windows Admin Center.
 ms.prod: windows-server-threshold
-ms.author: cosmosdarwin
-ms.manager: eldenc
-ms.technology: storage-spaces
-ms.topic: article
+ms.reviewer: cosmosdarwin
 author: cosmosdarwin
-ms.date: 01/23/2017
-ms.localizationpriority: medium
-ms.openlocfilehash: 51f58ec23c55a6cb1664d800d6f4a75dae545899
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.author: cosdar
+manager: eldenc
+ms.technology: storage-spaces
+ms.date: 05/07/2019
+ms.openlocfilehash: 3be6a4cda20f4d7d7d881ad8a272dc38fd787bba
+ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824967"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65613232"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>Estendendo volumes em Espaços de Armazenamento Diretos
 > Aplica-se a: Windows Server 2019, Windows Server 2016
 
-Este tópico fornece instruções para redimensionamento de volumes em [Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md).
+Este tópico fornece instruções para o redimensionamento de volumes em um [espaços de armazenamento diretos](storage-spaces-direct-overview.md) cluster usando o Windows Admin Center.
 
-## <a name="prerequisites"></a>Pré-requisitos
+Assista a um vídeo rápido sobre como redimensionar um volume.
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/hqyBzipBoTI]
+
+## <a name="extending-volumes-using-windows-admin-center"></a>Extensão de volumes usando o Windows Admin Center
+
+1. No do Windows Admin Center, conectar a um cluster de espaços de armazenamento diretos e, em seguida, selecione **Volumes** da **ferramentas** painel.
+2. Na página de Volumes, selecione a **inventário** guia e, em seguida, selecione o volume que você deseja redimensionar.
+
+    Na página de detalhes do volume, a capacidade de armazenamento para o volume é indicada. Você também pode abrir a página de detalhes de volumes diretamente do painel. No painel, no painel de alertas, selecione o alerta, que avisa se um volume está com pouco capacidade de armazenamento, e, em seguida, selecione **ir para o Volume**.
+
+4. Na parte superior da página de detalhes de volumes, selecione **redimensionar**.
+5. Insira um novo tamanho maior e, em seguida, selecione **redimensionar**.
+
+    Na página de detalhes de volumes, a capacidade de armazenamento maior para o volume é indicada e o alerta no painel está desmarcado.
+
+## <a name="extending-volumes-using-powershell"></a>Extensão de volumes usando o PowerShell
 
 ### <a name="capacity-in-the-storage-pool"></a>Capacidade no pool de armazenamento
 
@@ -35,7 +50,7 @@ Em Espaços de Armazenamento Diretos, cada volume é composto por vários objeto
 
 Para se familiarizar com eles, tente executar **Get -** com o substantivo correspondente no PowerShell.
 
-Por exemplo: 
+Por exemplo:
 
 ```PowerShell
 Get-VirtualDisk
@@ -49,7 +64,7 @@ Por exemplo, veja aqui como ir de um disco virtual para seu volume:
 Get-VirtualDisk <FriendlyName> | Get-Disk | Get-Partition | Get-Volume 
 ```
 
-## <a name="step-1--resize-the-virtual-disk"></a>Etapa 1 –Redimensionar o disco virtual
+### <a name="step-1--resize-the-virtual-disk"></a>Etapa 1 –Redimensionar o disco virtual
 
 O disco virtual pode usar camadas de armazenamento, ou não, dependendo de como ele foi criado.
 
@@ -61,7 +76,7 @@ Get-VirtualDisk <FriendlyName> | Get-StorageTier
 
 Se o cmdlet retornar nada, o disco virtual não usa camadas de armazenamento.
 
-### <a name="no-storage-tiers"></a>Sem camadas de armazenamento
+#### <a name="no-storage-tiers"></a>Sem camadas de armazenamento
 
 Se o disco virtual não tiver nenhuma camada de armazenamento, você pode redimensioná-lo diretamente usando o cmdlet **Resize-VirtualDisk** cmdlet.
 
@@ -75,7 +90,7 @@ Quando você redimensionar o **VirtualDisk**, o **disco** segue automaticamente 
 
 ![Redimensionar VirtualDisk](media/resize-volumes/Resize-VirtualDisk.gif)
 
-### <a name="with-storage-tiers"></a>Com camadas de armazenamento
+#### <a name="with-storage-tiers"></a>Com camadas de armazenamento
 
 Se o disco virtual usar camadas de armazenamento, você poderá redimensionar cada camada separadamente usando o cmdlet **Resize-StorageTier** cmdlet.
 
@@ -98,7 +113,7 @@ Quando você redimensiona as **StorageTier**(s), o **VirtualDisk** e **disco** s
 
 ![Resize-StorageTier](media/resize-volumes/Resize-StorageTier.gif)
 
-## <a name="step-2--resize-the-partition"></a>Etapa 2 - Redimensionar a partição
+### <a name="step-2--resize-the-partition"></a>Etapa 2 - Redimensionar a partição
 
 Em seguida, redimensione a partição usando o cmdlet **Resize-Partition**. O disco virtual deve ter duas partições: a primeira é reservada e não deve ser modificada; a que você precisa redimensionar é **PartitionNumber = 2** e **Type = Basic**.
 
@@ -129,3 +144,4 @@ Quando você redimensiona a **Partição**, o **Volume** e o **Volume Compartilh
 - [Espaços de armazenamento diretos no Windows Server 2016](storage-spaces-direct-overview.md)
 - [Planejando volumes em espaços de armazenamento diretos](plan-volumes.md)
 - [Criação de volumes em espaços de armazenamento diretos](create-volumes.md)
+- [Excluindo volumes em espaços de armazenamento diretos](delete-volumes.md)

@@ -6,17 +6,17 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: f1d77b6640bc0d6a5832a5a19c80d9d0af5d2b00
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3782667e54f5e6b52c07645704b95fc9e7409a27
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832657"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476066"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>Replicação do DFS: Perguntas frequentes (FAQ)
 
 
-Atualizado: 9 de outubro de 2013
+Atualizado: 30 de abril de 2019
 
 Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
 
@@ -41,7 +41,7 @@ Para obter uma lista das alterações recentes deste tópico, consulte a seção
 
 ### <a name="can-dfs-replication-communicate-with-frs"></a>Replicação do DFS pode se comunicar com o FRS?
 
-Nenhum. Replicação do DFS não se comunica com a replicação FRS (serviço). Replicação do DFS e FRS podem ser executados no mesmo servidor ao mesmo tempo, mas eles nunca devem ser configurados para replicar as mesmas pastas ou subpastas, porque isso pode causar perda de dados.
+Não. Replicação do DFS não se comunica com a replicação FRS (serviço). Replicação do DFS e FRS podem ser executados no mesmo servidor ao mesmo tempo, mas eles nunca devem ser configurados para replicar as mesmas pastas ou subpastas, porque isso pode causar perda de dados.
 
 ### <a name="can-dfs-replication-replace-frs-for-sysvol-replication"></a>Replicação do DFS pode substituir o FRS para replicação do SYSVOL
 
@@ -82,7 +82,7 @@ Sim. Não configure diretivas do sistema de arquivos em pastas replicadas. A pol
 
 ### <a name="does-dfs-replication-replicate-mailboxes-hosted-on-microsoft-exchange-server"></a>A replicação DFS replique caixas de correio hospedadas no Microsoft Exchange Server?
 
-Nenhum. Replicação do DFS não pode ser usada para replicar as caixas de correio hospedadas no Microsoft Exchange Server.
+Não. Replicação do DFS não pode ser usada para replicar as caixas de correio hospedadas no Microsoft Exchange Server.
 
 ### <a name="does-dfs-replication-support-file-screens-created-by-file-server-resource-manager"></a>Replicação do DFS dá suporte a telas de arquivo criadas pelo Gerenciador de recursos de servidor de arquivos?
 
@@ -139,7 +139,7 @@ Sim, supondo que há um link redes de longa distância (WANs) privada (não a In
 
 ### <a name="can-dfs-replication-replicate-files-encrypted-with-the-encrypting-file-system"></a>A replicação DFS replique arquivos criptografados com o sistema de arquivos com criptografia?
 
-Nenhum. Replicação do DFS não serão replicadas arquivos ou pastas que são criptografadas usando o Encrypting File System (EFS). Se um usuário criptografa um arquivo que tenha sido replicado anteriormente, a replicação do DFS exclui o arquivo de todos os outros membros do grupo de replicação. Isso garante que a cópia disponível somente do arquivo é a versão criptografada no servidor.
+Não. Replicação do DFS não serão replicadas arquivos ou pastas que são criptografadas usando o Encrypting File System (EFS). Se um usuário criptografa um arquivo que tenha sido replicado anteriormente, a replicação do DFS exclui o arquivo de todos os outros membros do grupo de replicação. Isso garante que a cópia disponível somente do arquivo é a versão criptografada no servidor.
 
 ### <a name="can-dfs-replication-replicate-outlook-pst-or-microsoft-office-access-database-files"></a>A replicação DFS replique. pst do Outlook ou arquivos de banco de dados do Access do Microsoft Office?
 
@@ -152,7 +152,7 @@ Replicação do DFS pode replicar com segurança arquivos de pasta particular do
 
 ### <a name="can-i-use-dfs-replication-in-a-workgroup"></a>Pode usar a replicação do DFS em um grupo de trabalho?
 
-Nenhum. Replicação do DFS se baseia em serviços de domínio do Active Directory® para a configuração. Ele só funcionará em um domínio.
+Não. Replicação do DFS se baseia em serviços de domínio do Active Directory® para a configuração. Ele só funcionará em um domínio.
 
 ### <a name="can-more-than-one-folder-be-replicated-on-a-single-server"></a>Mais de uma pasta pode ser replicada em um único servidor?
 
@@ -160,11 +160,11 @@ Sim. A replicação DFS replique várias pastas entre servidores. Certifique-se 
 
 ### <a name="does-dfs-replication-require-dfs-namespaces"></a>Replicação do DFS requer Namespaces DFS?
 
-Nenhum. Namespaces do DFS e replicação DFS podem ser usados separadamente ou em conjunto. Além disso, a replicação DFS pode ser usada para replicar os namespaces DFS autônomo, que não era possível com o FRS.
+Não. Namespaces do DFS e replicação DFS podem ser usados separadamente ou em conjunto. Além disso, a replicação DFS pode ser usada para replicar os namespaces DFS autônomo, que não era possível com o FRS.
 
 ### <a name="does-dfs-replication-require-time-synchronization-between-servers"></a>Replicação do DFS requer sincronização de horário entre servidores?
 
-Nenhum. Replicação do DFS não requer sincronização de horário entre servidores explicitamente. No entanto, a replicação do DFS requer que os relógios dos servidores correspondam. Os relógios dos servidores devem ser definidos dentro de cinco minutos entre si (por padrão) para a autenticação Kerberos funcione corretamente. Por exemplo, a replicação DFS usa carimbos de data / hora para determinar qual arquivo tem precedência em caso de conflito. Tempos exatos também são importantes para coleta de lixo, agendas e outros recursos.
+Não. Replicação do DFS não requer sincronização de horário entre servidores explicitamente. No entanto, a replicação do DFS requer que os relógios dos servidores correspondam. Os relógios dos servidores devem ser definidos dentro de cinco minutos entre si (por padrão) para a autenticação Kerberos funcione corretamente. Por exemplo, a replicação DFS usa carimbos de data / hora para determinar qual arquivo tem precedência em caso de conflito. Tempos exatos também são importantes para coleta de lixo, agendas e outros recursos.
 
 ### <a name="does-dfs-replication-support-replicating-an-entire-volume"></a>A replicação DFS oferece suporte a replicação de um volume inteiro?
 
@@ -179,7 +179,7 @@ Sim. No entanto, você deve primeiro instalar Windows Server 2003 Service Pack 2
 
 ### <a name="does-dfs-replication-support-rpc-over-http"></a>A replicação DFS oferece suporte a RPC sobre HTTP?
 
-Nenhum.
+Não.
 
 ### <a name="does-dfs-replication-work-across-wireless-networks"></a>Replicação do DFS funciona em redes sem fio?
 
@@ -187,7 +187,7 @@ Sim. A replicação DFS é independente do tipo de conexão.
 
 ### <a name="does-dfs-replication-work-on-refs-or-fat-volumes"></a>Replicação do DFS funciona em volumes FAT ou ReFS?
 
-Nenhum. A replicação DFS oferece suporte a volumes formatados com o sistema de arquivos NTFS xibições Não há suporte para o sistema de arquivos resiliente (ReFS) e o sistema de arquivos FAT. Replicação do DFS requer NTFS porque ele usa o diário de alterações do NTFS e sistema de arquivos de outros recursos do NTFS.
+Não. A replicação DFS oferece suporte a volumes formatados com o sistema de arquivos NTFS xibições Não há suporte para o sistema de arquivos resiliente (ReFS) e o sistema de arquivos FAT. Replicação do DFS requer NTFS porque ele usa o diário de alterações do NTFS e sistema de arquivos de outros recursos do NTFS.
 
 ### <a name="does-dfs-replication-work-with-sparse-files"></a>Replicação do DFS funciona com arquivos esparsos?
 
@@ -195,7 +195,7 @@ Sim. Você pode replicar arquivos esparsos. O **Sparse** atributo é preservado 
 
 ### <a name="do-i-need-to-log-in-as-administrator-to-replicate-files"></a>É necessário fazer logon como administrador para replicar arquivos?
 
-Nenhum. A replicação DFS é um serviço executado sob a conta sistema local, portanto, você não precisará fazer logon como administrador para replicar. No entanto, você deve ser um administrador de domínio ou um administrador local dos servidores de arquivos afetados para fazer alterações na configuração de replicação do DFS.
+Não. A replicação DFS é um serviço executado sob a conta sistema local, portanto, você não precisará fazer logon como administrador para replicar. No entanto, você deve ser um administrador de domínio ou um administrador local dos servidores de arquivos afetados para fazer alterações na configuração de replicação do DFS.
 
 Para obter mais informações, consulte "requisitos de segurança de replicação do DFS e a delegação" na [delegar a capacidade de gerenciar a replicação do DFS](http://go.microsoft.com/fwlink/?linkid=182294) (http://go.microsoft.com/fwlink/?LinkId=182294).
 
@@ -213,7 +213,7 @@ Windows e a replicação do DFS dá suporte a caminhos de pasta com até 32 mil 
 
 ### <a name="must-members-of-a-replication-group-reside-in-the-same-domain"></a>Membros de um grupo de replicação devem residir no mesmo domínio?
 
-Nenhum. Grupos de replicação podem abranger entre domínios em uma única floresta, mas não em florestas diferentes.
+Não. Grupos de replicação podem abranger entre domínios em uma única floresta, mas não em florestas diferentes.
 
 ### <a name="what-are-the-supported-limits-of-dfs-replication"></a>Quais são os limites com suporte de replicação do DFS?
 
@@ -290,7 +290,7 @@ Gerenciamento de DFS está incluído no Windows Server 2012 R2, Windows Server 2
 
 ### <a name="do-ultrasound-and-sonar-work-with-dfs-replication"></a>O Ultrasound e Sonar funcionam com a replicação DFS?
 
-Nenhum. A replicação DFS tem seu próprio conjunto de ferramentas de monitoramento e diagnóstico. O Ultrasound e Sonar só são capazes de monitoramento de FRS.
+Não. A replicação DFS tem seu próprio conjunto de ferramentas de monitoramento e diagnóstico. O Ultrasound e Sonar só são capazes de monitoramento de FRS.
 
 ### <a name="how-can-files-be-recovered-from-the-conflictanddeleted-or-preexisting-folders"></a>Como os arquivos podem ser recuperados das pastas ConflictAndDeleted ou PreExisting?
 
@@ -319,7 +319,7 @@ Embora a replicação do DFS funcione em velocidades de conexão discada, pode o
 
 ### <a name="does-dfs-replication-perform-bandwidth-sensing"></a>Replicação do DFS realiza a detecção de largura de banda?
 
-Nenhum. Replicação do DFS não realiza a detecção de largura de banda. Você pode configurar a replicação do DFS para usar uma quantidade limitada de largura de banda em uma base por conexão (limitação de largura de banda). No entanto, a replicação do DFS não reduzir ainda mais a utilização de largura de banda se o adaptador de rede se torna saturado, e a replicação do DFS pode esgotar o link por curtos períodos. Largura de banda com a replicação do DFS não está completamente precisa porque a replicação do DFS limita a largura de banda pela limitação de chamadas RPC. Como resultado, vários buffers em níveis inferiores da pilha de rede (incluindo RPC) podem interferir, fazendo com que os picos de tráfego de rede.
+Não. Replicação do DFS não realiza a detecção de largura de banda. Você pode configurar a replicação do DFS para usar uma quantidade limitada de largura de banda em uma base por conexão (limitação de largura de banda). No entanto, a replicação do DFS não reduzir ainda mais a utilização de largura de banda se o adaptador de rede se torna saturado, e a replicação do DFS pode esgotar o link por curtos períodos. Largura de banda com a replicação do DFS não está completamente precisa porque a replicação do DFS limita a largura de banda pela limitação de chamadas RPC. Como resultado, vários buffers em níveis inferiores da pilha de rede (incluindo RPC) podem interferir, fazendo com que os picos de tráfego de rede.
 
 ### <a name="does-dfs-replication-throttle-bandwidth-per-schedule-per-server-or-per-connection"></a>Replicação do DFS Limitar largura de banda de acordo com a agenda, por servidor ou por conexão?
 
@@ -327,7 +327,7 @@ Se você configurar a limitação de largura de banda ao especificar o agendamen
 
 ### <a name="does-dfs-replication-use-active-directory-domain-services-to-calculate-site-links-and-connection-costs"></a>Replicação do DFS usar os serviços de domínio do Active Directory para calcular os custos de conexão e de links de site?
 
-Nenhum. A replicação DFS usa a topologia definida pelo administrador, que é independente do custo de site do Active Directory Domain Services.
+Não. A replicação DFS usa a topologia definida pelo administrador, que é independente do custo de site do Active Directory Domain Services.
 
 ### <a name="how-can-i-improve-replication-performance"></a>Como posso melhorar o desempenho da replicação?
 
@@ -387,7 +387,7 @@ As edições do Windows Server Standard não dão suporte a RDC entre arquivos. 
 
 ### <a name="is-rdc-true-block-level-replication"></a>É a replicação em nível de bloco RDC true?
 
-Nenhum. RDC é um protocolo de finalidade geral para a compactação de transferência de arquivo. A replicação DFS usa RDC em blocos no nível de arquivo, não no nível de bloco do disco. RDC divide um arquivo em blocos. Para cada bloco em um arquivo, ele calcula uma assinatura, que é um pequeno número de bytes que pode representar o bloco maior. O conjunto de assinaturas é transferido do servidor para cliente. O cliente compara as assinaturas de servidor para seu próprio. O cliente e solicitações para o servidor enviar somente os dados de assinaturas que ainda não estão no cliente.
+Não. RDC é um protocolo de finalidade geral para a compactação de transferência de arquivo. A replicação DFS usa RDC em blocos no nível de arquivo, não no nível de bloco do disco. RDC divide um arquivo em blocos. Para cada bloco em um arquivo, ele calcula uma assinatura, que é um pequeno número de bytes que pode representar o bloco maior. O conjunto de assinaturas é transferido do servidor para cliente. O cliente compara as assinaturas de servidor para seu próprio. O cliente e solicitações para o servidor enviar somente os dados de assinaturas que ainda não estão no cliente.
 
 ### <a name="what-happens-if-i-rename-a-file"></a>O que acontece se eu renomear um arquivo?
 
@@ -468,7 +468,7 @@ Para usar a RDC entre arquivos, um membro da conexão de replicação deve estar
 
 ### <a name="can-i-change-the-path-for-a-replicated-folder-after-it-is-created"></a>Posso alterar o caminho para uma pasta replicada depois que ela é criada?
 
-Nenhum. Se você precisar alterar o caminho de uma pasta replicada, você deve excluí-lo no Gerenciamento DFS e adicioná-lo novamente como uma nova pasta replicada. A replicação DFS usa compactação diferencial remota (RDC) para executar uma sincronização que determina se os dados são os mesmos no envio e recebimento de membros. Ele não replica todos os dados na pasta novamente.
+Não. Se você precisar alterar o caminho de uma pasta replicada, você deve excluí-lo no Gerenciamento DFS e adicioná-lo novamente como uma nova pasta replicada. A replicação DFS usa compactação diferencial remota (RDC) para executar uma sincronização que determina se os dados são os mesmos no envio e recebimento de membros. Ele não replica todos os dados na pasta novamente.
 
 ### <a name="can-i-configure-which-file-attributes-are-replicated"></a>Pode configurar quais atributos de arquivo são replicados?
 
@@ -550,7 +550,7 @@ Sim. Replicação do DFS supera três problemas comuns de FRS:
 
 ### <a name="does-dfs-replication-replicate-files-in-chronological-order"></a>Replicação do DFS replica arquivos em ordem cronológica?
 
-Nenhum. Os arquivos podem ser replicados fora de ordem.
+Não. Os arquivos podem ser replicados fora de ordem.
 
 ### <a name="does-dfs-replication-replicate-files-that-are-being-used-by-another-application"></a>Replicação do DFS replica arquivos que estão sendo usados por outro aplicativo?
 
@@ -591,7 +591,7 @@ Sim. A replicação DFS usa conexões de procedimento remoto (RPC) com criptogra
 
 ### <a name="is-it-possible-to-disable-the-use-of-encrypted-rpc"></a>É possível desabilitar o uso de RPC criptografado?
 
-Nenhum. O serviço de replicação do DFS usa chamadas de procedimento remoto (RPC) sobre TCP para replicar os dados. Para proteger as transferências de dados pela Internet, o serviço de replicação do DFS foi projetado para sempre usar a constante de nível de autenticação, `RPC_C_AUTHN_LEVEL_PKT_PRIVACY`. Isso garante que a comunicação de RPC com a Internet sempre é criptografada. Portanto, não é possível desabilitar o uso de RPC criptografado pelo serviço de replicação do DFS.
+Não. O serviço de replicação do DFS usa chamadas de procedimento remoto (RPC) sobre TCP para replicar os dados. Para proteger as transferências de dados pela Internet, o serviço de replicação do DFS foi projetado para sempre usar a constante de nível de autenticação, `RPC_C_AUTHN_LEVEL_PKT_PRIVACY`. Isso garante que a comunicação de RPC com a Internet sempre é criptografada. Portanto, não é possível desabilitar o uso de RPC criptografado pelo serviço de replicação do DFS.
 
 Para obter mais informações, consulte os seguintes sites:
 
@@ -614,7 +614,7 @@ Você pode forçar a replicação imediatamente usando o Gerenciamento DFS, conf
 
 ### <a name="is-it-possible-to-configure-a-quiet-time-between-replications-for-files-that-change-frequently"></a>É possível configurar o tempo de espera entre as replicações para arquivos que mudam com frequência?
 
-Nenhum. Se a agenda estiver aberta, a replicação do DFS replicará alterações conforme ele observa-los. Não é possível configurar o tempo de espera para arquivos.
+Não. Se a agenda estiver aberta, a replicação do DFS replicará alterações conforme ele observa-los. Não é possível configurar o tempo de espera para arquivos.
 
 ### <a name="is-it-possible-to-configure-one-way-replication-with-dfs-replication"></a>É possível configurar a replicação unidirecional com a replicação DFS?
 
@@ -631,7 +631,7 @@ Se você estiver usando o Windows Server 2008 ou Windows Server 2003 R2, você p
 
 ### <a name="is-there-a-way-to-force-a-complete-replication-of-all-files-including-unchanged-files"></a>Há uma maneira de forçar uma replicação completa de todos os arquivos, incluindo arquivos não alterados?
 
-Nenhum. Se a replicação do DFS considera os arquivos idênticos, ele não serão replicadas. Se não tiverem sido replicados arquivos alterados, a replicação do DFS serão replicadas-las quando configurado para fazer isso automaticamente. Para substituir o agendamento configurado, use o método WMI **ForceReplicate()**. No entanto, isso só é substituir uma agenda e não força a replicação de arquivos inalterados ou idênticos.
+Não. Se a replicação do DFS considera os arquivos idênticos, ele não serão replicadas. Se não tiverem sido replicados arquivos alterados, a replicação do DFS serão replicadas-las quando configurado para fazer isso automaticamente. Para substituir o agendamento configurado, use o método WMI **ForceReplicate()** . No entanto, isso só é substituir uma agenda e não força a replicação de arquivos inalterados ou idênticos.
 
 ### <a name="what-happens-if-the-primary-member-suffers-a-database-loss-during-initial-replication"></a>O que acontece se o membro primário sofre uma perda de banco de dados durante a replicação inicial?
 
@@ -670,11 +670,11 @@ Quando ocorre um conflito, a replicação do DFS registra um evento informativo 
 
 ### <a name="does-dfs-replication-continue-staging-files-when-replication-is-disabled-by-a-schedule-or-bandwidth-throttling-quota-or-when-a-connection-is-manually-disabled"></a>Replicação do DFS continuar a arquivos de teste quando a replicação é desabilitada por uma agenda ou de largura de banda de cota, ou quando uma conexão é desativado manualmente?
 
-Nenhum. Replicação do DFS não continua a arquivos de estágio fora de horários de replicação agendada, se a cota de limitação de largura de banda foi excedida, ou quando as conexões estão desabilitadas.
+Não. Replicação do DFS não continua a arquivos de estágio fora de horários de replicação agendada, se a cota de limitação de largura de banda foi excedida, ou quando as conexões estão desabilitadas.
 
 ### <a name="does-dfs-replication-prevent-other-applications-from-accessing-a-file-during-staging"></a>Replicação do DFS impedir que outros aplicativos acessando um arquivo durante o preparo?
 
-Nenhum. Replicação do DFS abre arquivos de forma que não bloqueia a usuários ou aplicativos de abrir arquivos na pasta de replicação. Esse método é conhecido como "bloqueio oportunista".
+Não. Replicação do DFS abre arquivos de forma que não bloqueia a usuários ou aplicativos de abrir arquivos na pasta de replicação. Esse método é conhecido como "bloqueio oportunista".
 
 ### <a name="is-it-possible-to-change-the-location-of-the-staging-folder-with-the-dfs-management-tool"></a>É possível alterar o local da pasta de teste com a ferramenta de gerenciamento de DFS?
 
@@ -728,9 +728,9 @@ Se qualquer parte do arquivo já está sendo transmitido, a replicação do DFS 
 </colgroup>
 <thead>
 <tr class="header">
-<th>Data</th>
+<th>Date</th>
 <th>Descrição</th>
-<th>Motivo</th>
+<th>Reason</th>
 </tr>
 </thead>
 <tbody>

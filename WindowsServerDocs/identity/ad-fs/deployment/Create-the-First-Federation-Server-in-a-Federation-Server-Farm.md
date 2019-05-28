@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: af0aa61f0d16d4ca567b140c95d74445d09f1cf3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e16289142ea2e53adba52a4ed8f6c01a929a530d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879297"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192222"
 ---
 # <a name="create-the-first-federation-server-in-a-federation-server-farm"></a>Criar o primeiro servidor de federação em um farm de servidores de federação
-
- >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Depois de instalar o serviço de função serviço de Federação e configurar os certificados necessários em um computador, você está pronto para configurar o computador para se tornar um servidor de Federação. Você pode usar o procedimento a seguir para configurar o computador para se tornar o primeiro servidor de Federação em um novo farm de servidores de Federação usando o Assistente de configuração do servidor de Federação do AD FS.  
   
@@ -66,6 +64,6 @@ O mínimo necessário para concluir esse procedimento é a associação em Admin
     > Para fins de implantação segura, a resolução de artefato e a detecção de resposta são desabilitadas quando você usa o Assistente de Configuração do Servidor de Federação do AD FS para configurar um farm de servidores de federação. Esse assistente configura automaticamente o Banco de Dados Interno do Windows para armazenar dados de configuração de serviço. Você pode, no entanto, erradamente, desfazer essa alteração, permitindo que o ponto de extremidade de resolução de artefato usando qualquer um de **pontos de extremidade** nó no snap do gerenciamento do AD FS\-em ou permitir\-cmdlet ADFSEndpoint no Windows PowerShell. Tenha cuidado para não reconfigurar a definição padrão de forma que esse ponto de extremidade permaneça desabilitado ao usar um farm de servidores de federação junto com o Banco de Dados Interno do Windows.  
   
 ## <a name="additional-references"></a>Referências adicionais  
-[Lista de verificação: Configurando um servidor de Federação](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de verificação: Como configurar um servidor de federação](Checklist--Setting-Up-a-Federation-Server.md)  
   
 

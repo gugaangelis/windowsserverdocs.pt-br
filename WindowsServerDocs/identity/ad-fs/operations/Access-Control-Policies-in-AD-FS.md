@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 101cab68d7c79bb107f1d6ef73900d9a4475b6ea
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c690f81620f97622a2f068b07c36e0a6c59e90d4
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861297"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190344"
 ---
 # <a name="access-control-policies-in-windows-server-2016-ad-fs"></a>Políticas de controle de acesso no AD FS para Windows Server 2016
-
->Aplica-se a: Windows Server 2016
 
   
 ## <a name="access-control-policy-templates-in-ad-fs"></a>Modelos de política de controle de acesso no AD FS  
@@ -55,9 +53,9 @@ Se o administrador seleciona várias condições, elas são de **AND** relação
 |**Política**|**Regras de política**|
 | --- | --- |  
 |Acesso à extranet requer MFA<br /><br />Todos os usuários são permitidos|**Regra #1**<br /><br />de **extranet**<br /><br />e com o MFA<br /><br />Permissão<br /><br />**Rule#2**<br /><br />de **intranet**<br /><br />Permissão|  
-|Acesso externo não são permitidas, exceto não FTE<br /><br />Acesso à intranet para FTE em dispositivos ingressados no local são permitidos|**Regra #1**<br /><br />De **extranet**<br /><br />bidirecionalmente **não FTE** grupo<br /><br />Permissão<br /><br />**Regra #2**<br /><br />de **intranet**<br /><br />bidirecionalmente **ingresso** dispositivo<br /><br />bidirecionalmente **FTE** grupo<br /><br />Permissão|  
+|Acesso externo não são permitidas, exceto não FTE<br /><br />Acesso à intranet para FTE em dispositivos ingressados no local são permitidos|**Regra #1**<br /><br />de **extranet**<br /><br />bidirecionalmente **não FTE** grupo<br /><br />Permissão<br /><br />**Regra #2**<br /><br />de **intranet**<br /><br />bidirecionalmente **ingresso** dispositivo<br /><br />bidirecionalmente **FTE** grupo<br /><br />Permissão|  
 |Acesso à extranet requer a MFA, exceto o "administrador de serviço"<br /><br />Todos os usuários têm permissão para acessar|**Regra #1**<br /><br />de **extranet**<br /><br />e com o MFA<br /><br />Permissão<br /><br />Exceto **grupo de administradores de serviço**<br /><br />**Regra #2**<br /><br />Sempre<br /><br />Permissão|  
-|dispositivo ingressado no local de trabalho, acessando da extranet requer MFA<br /><br />Permitir que a malha do AD para acesso extranet e intranet|**Regra #1**<br /><br />de **intranet**<br /><br />Bidirecionalmente **AD Fabric** grupo<br /><br />Permissão<br /><br />**Regra #2**<br /><br />de **extranet**<br /><br />bidirecionalmente **não-ingresso** dispositivo<br /><br />bidirecionalmente **AD Fabric** grupo<br /><br />e com o MFA<br /><br />Permissão<br /><br />**Regra #3**<br /><br />de **extranet**<br /><br />bidirecionalmente **ingresso** dispositivo<br /><br />bidirecionalmente **AD Fabric** grupo<br /><br />Permissão|  
+|dispositivo ingressado no local de trabalho, acessando da extranet requer MFA<br /><br />Permitir que a malha do AD para acesso extranet e intranet|**Regra #1**<br /><br />de **intranet**<br /><br />Bidirecionalmente **AD Fabric** grupo<br /><br />Permissão<br /><br />**Regra #2**<br /><br />de **extranet**<br /><br />bidirecionalmente **não-ingresso** dispositivo<br /><br />Bidirecionalmente **AD Fabric** grupo<br /><br />e com o MFA<br /><br />Permissão<br /><br />**Regra #3**<br /><br />de **extranet**<br /><br />bidirecionalmente **ingresso** dispositivo<br /><br />Bidirecionalmente **AD Fabric** grupo<br /><br />Permissão|  
   
 ## <a name="parameterized-policy-template-vs-non-parameterized-policy-template"></a>Modelo de política sem parâmetros de vs de modelo de política com parâmetros  
 As políticas de controle de acesso podem ser  
@@ -77,7 +75,7 @@ Para criar um acesso sem parâmetros, política de controle de usar o procedimen
   
 1.  De gerenciamento do AD FS à esquerda selecione políticas de controle de acesso e à direita, clique em Adicionar política de controle de acesso.  
   
-2.  Insira um nome e uma descrição.  Por exemplo:  Permitir que usuários com dispositivos autenticados.  
+2.  Insira um nome e uma descrição.  Por exemplo:   Permitir que usuários com dispositivos autenticados.  
   
 3.  Sob **permitir o acesso se qualquer uma das regras a seguir forem atendidas**, clique em **Add**.  
   
@@ -100,7 +98,7 @@ Para criar um controle de acesso com parâmetros política usar o procedimento a
   
 1.  De gerenciamento do AD FS à esquerda selecione políticas de controle de acesso e à direita, clique em Adicionar política de controle de acesso.  
   
-2.  Insira um nome e uma descrição.  Por exemplo:   Permitir que usuários com uma declaração específica.  
+2.  Insira um nome e uma descrição.  Por exemplo:  Permitir que usuários com uma declaração específica.  
   
 3.  Sob **permitir o acesso se qualquer uma das regras a seguir forem atendidas**, clique em **Add**.  
   
@@ -150,7 +148,7 @@ Para criar uma política de controle de acesso com permissão de várias condiç
   
 1.  De gerenciamento do AD FS à esquerda selecione políticas de controle de acesso e à direita, clique em Adicionar política de controle de acesso.  
   
-2.  Insira um nome e uma descrição.  Por exemplo:  Permitir que usuários com uma declaração específica e de grupo específico.  
+2.  Insira um nome e uma descrição.  Por exemplo:   Permitir que usuários com uma declaração específica e de grupo específico.  
   
 3.  Sob **permitir o acesso se qualquer uma das regras a seguir forem atendidas**, clique em **Add**.  
   

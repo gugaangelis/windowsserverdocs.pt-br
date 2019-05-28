@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 305bf0cece742c961604dacda7e27b8eac8065e5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 677d3136305cbddd29f2fd782be33ae1e824d096
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812217"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188555"
 ---
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
-
 # <a name="how-uris-are-used-in-ad-fs"></a>Como URIs são usados no AD FS
 Um Uniform Resource Identifier \(URI\) é uma cadeia de caracteres que é usada como um identificador exclusivo.  No AD FS, os URIs são usados para identificar os endereços de rede do parceiro e objetos de configuração.  Quando usado para identificar os endereços de rede do parceiro, o URI é sempre uma URL.  Quando usado para identificar objetos de configuração, o URI pode ser uma URL ou um URN.  Para obter mais informações sobre URIs, consulte [RFC 2396](https://go.microsoft.com/fwlink/?LinkId=48289) e [RFC 3986](https://go.microsoft.com/fwlink/?LinkId=90453).  
   
@@ -63,7 +61,7 @@ Por exemplo, se o identificador de terceira parte confiável no banco de dados d
   
 A tabela a seguir fornece exemplos adicionais.  
   
-|Identificador de terceira parte confiável no banco de dados de configuração do AD FS|Identificador de terceira parte confiável na mensagem de solicitação|O identificador de solicitação corresponde ao identificador de configuração?|Motivo|  
+|Identificador de terceira parte confiável no banco de dados de configuração do AD FS|Identificador de terceira parte confiável na mensagem de solicitação|O identificador de solicitação corresponde ao identificador de configuração?|Reason|  
 |------------------------------------------------------------|-----------------------------------------------|------------------------------------------------------------|----------|  
 |http:\/\/contoso.com|http:\/\/contoso.com|TRUE|Correspondência exata|  
 |http:\/\/contoso.com\/|http:\/\/contoso.com|TRUE|Barras à direita são ignoradas|  

@@ -9,23 +9,25 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ecf3cb5703a90976dce15abbd0c9fdd1d4aa24ec
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 48099ad15465b885ccaf562bcf94b4bafdeff388
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812627"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64772631"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>Solucionar problemas de espaços de armazenamento diretos
+
+> Aplica-se a: Windows Server 2019, Windows Server 2016
 
 Use as informações a seguir para solucionar problemas de sua implantação de espaços de armazenamento diretos.
 
 Em geral, começar com as seguintes etapas:
 
-1. Confirme se que a marca/modelo de SSD é certificado para o Windows Server 2016 usando o catálogo do Windows Server. Confirme com o fornecedor que as unidades têm suporte para espaços de armazenamento diretos.
+1. Confirme se que a marca/modelo de SSD é certificado para o Windows Server 2016 e Windows Server 2019 usando o catálogo do Windows Server. Confirme com o fornecedor que as unidades têm suporte para espaços de armazenamento diretos.
 2. Inspecione o armazenamento para todas as unidades com defeito. Use o software de gerenciamento de armazenamento para verificar o status das unidades. Se qualquer uma das unidades estiverem com defeito, trabalhe com seu fornecedor. 
 3. Atualize o armazenamento e o firmware da unidade se necessário.
-   Certifique-se de que as atualizações mais recentes do Windows são instaladas em todos os nós. Você pode obter as atualizações mais recentes para o Windows Server 2016 do [ https://aka.ms/update2016 ](https://aka.ms/update2016).
+   Certifique-se de que as atualizações mais recentes do Windows são instaladas em todos os nós. Você pode obter as atualizações mais recentes para o Windows Server 2016 do [histórico de atualizações do Windows 10 e Windows Server 2016](https://aka.ms/update2016) e para o Windows Server 2019 da [histórico de atualizações do Windows 10 e Windows Server 2019](https://support.microsoft.com/help/4464619).
 4. Atualizar drivers de adaptador de rede e firmware.
 5. Executar a validação de cluster e examine a seção de espaço de armazenamento diretos, certifique-se de que as unidades que serão usadas para o cache são relatadas corretamente e sem erros.
 
@@ -195,7 +197,8 @@ Para obter mais informações, consulte [integridade de solução de problemas d
     
 ## <a name="event-5120-with-statusiotimeout-c00000b5"></a>Evento 5120 com STATUS_IO_TIMEOUT c00000b5 
 
->[! Importante} para reduzir a chance de receber esses sintomas ao aplicar a atualização com a correção, é recomendável usar o procedimento de modo de manutenção de armazenamento a seguir para instalar o [18 de outubro de 2018, a atualização cumulativa para o Windows Server 2016 ](https://support.microsoft.com/help/4462928) ou uma versão posterior quando os nós no momento, instalou uma atualização cumulativa do Windows Server 2016 que foi lançada a partir [8 de maio de 2018](https://support.microsoft.com/help/4103723) à [9 de outubro de 2018](https://support.microsoft.com/help/KB4462917).
+> [!Important]
+> **Para o Windows Server 2016:** Para reduzir a chance de receber esses sintomas ao aplicar a atualização com a correção, é recomendável usar o procedimento de modo de manutenção de armazenamento a seguir para instalar o [18 de outubro de 2018, a atualização cumulativa para o Windows Server 2016](https://support.microsoft.com/help/4462928)ou uma versão posterior quando os nós no momento, instalou uma atualização cumulativa do Windows Server 2016 que foi lançada a partir [8 de maio de 2018](https://support.microsoft.com/help/4103723) para [9 de outubro de 2018](https://support.microsoft.com/help/KB4462917).
 
 Você pode obter o evento 5120 com STATUS_IO_TIMEOUT c00000b5 após a reinicialização de um nó no Windows Server 2016 com a atualização cumulativa que foram lançadas de [de 8 de maio de 2018, KB 4103723](https://support.microsoft.com/help/4103723) para [9 de outubro de 2018 KB 4462917](https://support.microsoft.com/help/4462917)instalado.
 
@@ -217,11 +220,7 @@ Event ID: 1135
 Description: Cluster node 'NODENAME'was removed from the active failover cluster membership. The Cluster service on this node may have stopped. This could also be due to the node having lost communication with other active nodes in the failover cluster. Run the Validate a Configuration wizard to check your network configuration. If the condition persists, check for hardware or software errors related to the network adapters on this node. Also check for failures in any other network components to which the node is connected such as hubs, switches, or bridges.
 ```
 
-Uma alteração foi introduzida na atualização cumulativa 8 de maio de 2018, para adicionar o SMB resiliente manipula para as sessões de rede SMB dentro do cluster espaços de armazenamento diretos. Isso foi feito para melhorar a resiliência a falhas de rede transitórios e melhorar como RoCE trata o congestionamento da rede.
-
-Esses aprimoramentos também inadvertidamente aumentado tempos limite quando conexões SMB tentam reconectar-se e espera para tempo limite quando um nó é reiniciado. Esses problemas podem afetar um sistema que está sob carga excessiva. Durante o tempo de inatividade não planejado, pausa e/s de até 60 segundos também foram observada enquanto o sistema aguarda para conexões com o tempo limite.
-
-Para corrigir esse problema, instale o [18 de outubro de 2018, a atualização cumulativa para o Windows Server 2016](https://support.microsoft.com/help/4462928) ou uma versão posterior.
+Uma alteração foi introduzida no dia 8 de maio de 2018, para o Windows Server 2016, que era uma atualização cumulativa para adicionar o SMB resiliente manipula para as sessões de rede SMB dentro do cluster espaços de armazenamento diretos. Isso foi feito para melhorar a resiliência a falhas de rede transitórios e melhorar como RoCE trata o congestionamento da rede. Esses aprimoramentos também inadvertidamente aumentado tempos limite quando conexões SMB tentam reconectar-se e espera para tempo limite quando um nó é reiniciado. Esses problemas podem afetar um sistema que está sob carga excessiva. Durante o tempo de inatividade não planejado, pausa e/s de até 60 segundos também foram observada enquanto o sistema aguarda para conexões com o tempo limite. Para corrigir esse problema, instale o [18 de outubro de 2018, a atualização cumulativa para o Windows Server 2016](https://support.microsoft.com/help/4462928) ou uma versão posterior.
 
 *Observação* essa atualização alinha os tempos limite CSV com tempos limite de conexão de SMB para corrigir esse problema. Ele não implementa as alterações para desabilitar a geração do despejo ao vivo mencionada na seção de solução alternativa.
     
@@ -351,7 +350,7 @@ A próxima etapa é remover o pool de armazenamento fantasma:
 
 Agora, se você executar **Get-PhysicalDisk** em qualquer um de nós, você verá todos os discos que estavam no pool. Por exemplo, em um laboratório com um cluster de 4 nós com 4 discos SAS, 100GB cada apresentada para cada nó. Nesse caso, depois que o espaço de armazenamento diretos é desabilitado, que remove o SBL (camada de barramento de armazenamento), mas deixa o filtro, se você executar **Get-PhysicalDisk**, ele deve relatar 4 discos, exceto o disco do sistema operacional local. Em vez disso, ele relatado 16 em vez disso. Isso é o mesmo para todos os nós no cluster. Quando você executa um **Get-Disk** comando, você verá os discos conectados localmente numerados como 0, 1, 2 e assim por diante, conforme mostrado nesta saída de exemplo:
 
-|Número| Nome Amigável| Número de Série|HealthStatus|OperationalStatus|Tamanho total| Estilo de partição|
+|Number| Nome Amigável| Número de Série|HealthStatus|OperationalStatus|Tamanho total| Estilo de partição|
 |-|-|-|-|-|-|-|-|
 |0|Msft Virtu...  ||Íntegro | Online|  127 GB| GPT|
 ||Msft Virtu... ||Íntegro| Offline| 100 GB| RAW|
@@ -455,4 +454,4 @@ Nós identificamos um problema crítico que afeta alguns espaços de armazenamen
 >[!NOTE]
 > Os OEMs individuais podem ter dispositivos que se baseiam na família Intel P3x00 de dispositivos NVMe com cadeias de caracteres de versão de firmware exclusivo. Entre em contato com seu OEM para obter mais informações da última versão do firmware.
 
-Se você estiver usando o hardware em sua implantação com base na família Intel P3x00 de dispositivos NVMe, é recomendável que você aplique imediatamente o firmware mais recente (pelo menos 8 da versão de manutenção). Isso [artigo do Microsoft Support](https://support.microsoft.com/en-us/help/4052341/slow-performance-or-lost-communication-io-error-detached-or-no-redunda) fornece informações adicionais sobre esse problema. 
+Se você estiver usando o hardware em sua implantação com base na família Intel P3x00 de dispositivos NVMe, é recomendável que você aplique imediatamente o firmware mais recente (pelo menos 8 da versão de manutenção). Isso [artigo do Microsoft Support](https://support.microsoft.com/help/4052341/slow-performance-or-lost-communication-io-error-detached-or-no-redunda) fornece informações adicionais sobre esse problema. 

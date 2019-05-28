@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 52e4b215c406eeae11dbab41e367f6ce4cd83507
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b4df753a1635a0935e70a76278b097d2f9f70142
+ms.sourcegitcommit: b190fac4bfa5599751a60d3fc3b4c4a64dd9afd7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849247"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66009099"
 ---
 # <a name="ad-ds-installation-and-removal-wizard-page-descriptions"></a>Descrições das páginas do assistente de instalação e remoção do AD DS
 
@@ -61,7 +61,7 @@ As opções a seguir são exibidas quando uma nova floresta é criada.
   
 -   Ao criar uma nova floresta, especifique um nome para o domínio raiz da floresta. O nome de domínio de raiz da floresta não pode ser apenas uma palavra (por exemplo, ele deve ser "contoso.com", em vez de "contoso"). E deve usar as convenções de nomenclatura permitidas para domínios DNS. É possível especificar um IDN (Nome de Domínio Internacionalizado). Para obter mais informações sobre convenções de nomenclatura de domínio DNS, consulte [KB 909264](https://support.microsoft.com/kb/909264).  
   
--   Não crie novas florestas do Active Directory usando um nome igual ao nome DNS externo. Por exemplo, se a URL de DNS de Internet for http://contoso.com, você deve escolher um nome diferente para sua floresta interna evitar futuros problemas de compatibilidade. Esse nome deve ser exclusivo e de uso improvável no tráfego da Web; por exemplo, corp.contoso.com.  
+-   Não crie novas florestas do Active Directory usando um nome igual ao nome DNS externo. Por exemplo, se sua URL de DNS da Internet é http:\/contoso.com, você deve escolher um nome diferente para sua floresta interna evitar futuros problemas de compatibilidade. Esse nome deve ser exclusivo e de uso improvável no tráfego da Web; por exemplo, corp.contoso.com.  
   
 -   Você precisa ser membro do grupo Administradores no servidor em que será criada uma nova floresta.  
   

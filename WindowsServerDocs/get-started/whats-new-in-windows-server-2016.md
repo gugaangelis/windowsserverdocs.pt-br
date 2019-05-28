@@ -5,34 +5,30 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.date: 01/05/2017
+ms.date: 05/21/2019
 ms.technology: server-general
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2827f332-44d4-4785-8b13-98429087dcc7
-author: jaimeo
-ms.author: jaimeo
+author: jasongerend
+ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: b504c3396200502a09467ae97a36f9de613e4820
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8d36961558066197a54f42d27a3560d653bd81f2
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830327"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976628"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Novidades no Windows Server 2016
 
 >Aplica-se a: Windows Server 2016
 
-<img src="media/whats-new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">O conteúdo desta seção descreve as novidades e as alterações no Windows Server&reg; 2016. Os novos recursos e alterações listados aqui são os que têm maior probabilidade de ter um impacto maior ao trabalhar com esta versão.  
-   
-<br>
-<br>
-<br>
-<br>
-<br>
-## <a name="computevirtualizationvirtualizationmd"></a>[Computação](../virtualization/virtualization.md)  
+<img src="media/whats-new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">Para saber mais sobre os recursos mais recentes do Windows, consulte [o que há de novo no Windows Server](whats-new-in-windows-server.md). O conteúdo desta seção descreve as novidades e as alterações no Windows Server&reg; 2016. Os novos recursos e alterações listados aqui são os que têm maior probabilidade de ter um impacto maior ao trabalhar com esta versão.  
+
+## <a name="computevirtualizationvirtualizationmd"></a>[Computação](../virtualization/virtualization.md)
+
 A área de virtualização inclui produtos e recursos de virtualização para profissionais de TI projetarem, implantarem e manterem o Windows Server.  
 
 ### <a name="general"></a>Geral  
@@ -117,7 +113,7 @@ A ICW (Janela de Congestionamento Inicial) padrão aumentou de quatro para 10 e 
 
 Para melhorar o comportamento do TCP durante a recuperação de perda de pacotes, implementamos o TLP (TCP Tail Loss Probe) e o RACK (Confirmação recente). O TLP ajuda a converter RTOs (Tempo limite de retransmissão) em Recuperações rápidas, e o RACK reduz o tempo necessário para Recuperação rápida a fim de retransmitir um pacote perdido. 
 
-## <a name="security-and-assurancesecuritysecurity-and-assurancemd"></a>[Garantia e segurança](../security/Security-and-Assurance.md)  
+## <a name="security-and-assurancesecuritysecurity-and-assurancemd"></a>[Segurança e garantia](../security/Security-and-Assurance.md)  
 Inclui recursos e soluções de segurança para profissionais de TI implantarem em seu data center e ambiente de nuvem. Para obter informações sobre a segurança no Windows Server 2016 em geral, confira [Garantia e segurança](../security/Security-and-Assurance.md).  
 
 ### <a name="just-enough-administration"></a>Administração Just Enough  

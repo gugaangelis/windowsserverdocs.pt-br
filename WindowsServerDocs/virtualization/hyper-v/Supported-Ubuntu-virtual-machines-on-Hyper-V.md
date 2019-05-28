@@ -11,12 +11,12 @@ ms.assetid: 95ea5f7c-25c6-494b-8ffd-2a77f631ee94
 author: shirgall
 ms.author: shirgall
 ms.date: 11/19/2018
-ms.openlocfilehash: afba885fc49ba129c0ef452704cbfe9f9cf884ba
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b58193ec570cf0d94b6c95018b8c00c813331986
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834037"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222639"
 ---
 # <a name="supported-ubuntu-virtual-machines-on-hyper-v"></a>Máquinas virtuais do Ubuntu com suporte no Hyper-V
 
@@ -39,9 +39,9 @@ O mapa de distribuição de recurso a seguir indica os recursos em cada versão.
 |**Recurso**|**Versão do sistema operacional Windows Server**|**18.10**|**18.04 LTS**|**16.04 LTS**|**14.04 LTS**|**12.04 LTS**|
 |-|-|-|-|-|-|-|
 |**Disponibilidade**||Internos|Internos|Internos|Internos|Internos|
-|**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_core)**|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Hora precisa do Windows Server 2016|2019, 2016|&#10004;|&#10004;|&#10004;|||
-|**[Sistema de rede](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_Networking)**|||||||
+|**[Sistema de rede](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**|||||||
 |Quadros jumbo|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Marcação de VLAN e entroncamento|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Migração ao vivo|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
@@ -49,32 +49,32 @@ O mapa de distribuição de recurso a seguir indica os recursos em cada versão.
 |vRSS|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||
 |Descarregamento de soma de verificação e de segmentação TCP|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;||
 |SR-IOV|2019, 2016|&#10004;|&#10004;|&#10004;|||
-|**[Armazenamento](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_Storage)**||||||
+|**[Armazenamento](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||||||
 |Redimensionamento VHDX|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||
 |Fibre Channel Virtual|2019, 2016, 2012 R2|&#10004;Observação 2|&#10004;Observação 2|&#10004;Observação 2|&#10004;Observação 2||
 |Backup de máquina virtual ao vivo|2019, 2016, 2012 R2|&#10004;Observe a 3, 4, 6|&#10004;Observe a 3, 4, 5|&#10004;Observe a 3, 4, 5|&#10004;Observe a 3, 4, 5||
 |Suporte de CORTE|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |SCSI WWN|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||
-|**[Memória](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_Memory)**||||||
+|**[Memória](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**||||||
 |Suporte do Kernel PAE|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Configuração de lacuna MMIO|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Memória dinâmica - quente|2019, 2016, 2012 R2, 2012|&#10004;Observe a 7, 8, 9|&#10004;Observe a 7, 8, 9|&#10004;Observe a 7, 8, 9|&#10004;Observe a 7, 8, 9||
 |Memória dinâmica - inflação|2019, 2016, 2012 R2, 2012|&#10004;Observe a 7, 8, 9|&#10004;Observe a 7, 8, 9|&#10004;Observe a 7, 8, 9|&#10004;Observe a 7, 8, 9||
 |Redimensionamento de memória de tempo de execução|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;||
-|**[Vídeo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_Video)**|||||||
+|**[Vídeo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||
 |Dispositivo de vídeo específico do Hyper-V|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;||
-|**[Diversos](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_Misc)**||||||
+|**[Diversos](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**||||||
 |Par chave/valor|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;Nota 6, 10|&#10004;Observação 5, 10|&#10004;Observação 5, 10|&#10004;Observação 5, 10|&#10004;Observação 5, 10|
 |Interrupção não mascarável|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Cópia do arquivo do host para a convidada|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||
 |comando lsvmbus|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;||
 |Soquetes do Hyper-V|2019, 2016||||||
 |Passagem/DDA de PCI|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;||
-|**[Máquinas virtuais de geração 2](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_gen2)**||||||
+|**[Máquinas virtuais de geração 2](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**||||||
 |Inicialização usando UEFI|2019, 2016, 2012 R2|&#10004;Observação 11, 12|&#10004;Observação 11, 12|&#10004;Observação 11, 12|&#10004;Observação 11, 12||
 |Inicialização segura|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;||
 
-## <a name="BKMK_notes"></a>Notas
+## <a name="notes"></a>Observações
 
 1. Injeção de IP estática pode não funcionar se **Gerenciador de rede** foi configurado para um determinado adaptador de rede específico do Hyper-V na máquina virtual. Para garantir o bom funcionamento do endereço IP estático injeção Certifique-se de que o Gerenciador de rede está desativado completamente ou foi desativado para um adaptador de rede específico por meio de seu **ifcfg ethX** arquivo.
 
@@ -184,7 +184,7 @@ O mapa de distribuição de recurso a seguir indica os recursos em cada versão.
 
 * [Suporte para CentOS e Red Hat Enterprise Linux máquinas virtuais do Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 
-* [Suporte para máquinas virtuais do Debian no Hyper-V](Supported-Debian-virtual-machines-on-Hyper-V.md)
+* [Máquinas virtuais do Debian com suporte no Hyper-V](Supported-Debian-virtual-machines-on-Hyper-V.md)
 
 * [Máquinas de virtuais do Oracle Linux com suporte no Hyper-V](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)
 

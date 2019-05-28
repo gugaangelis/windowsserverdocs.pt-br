@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 67b122353ca9dff3a4df6cbfac56b16bed52b539
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: df1afc77afffd9b737965215a5c9d96f278c8129
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848077"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191672"
 ---
 # <a name="best-practices-for-secure-planning-and-deployment-of-ad-fs"></a>Práticas recomendadas para o planejamento e a implantação seguros do AD FS
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Este tópico fornece informações de práticas recomendadas para ajudá-lo a planejar e avaliar a segurança ao projetar sua implantação de serviços de Federação do Active Directory (AD FS). Este tópico é um ponto de partida para revisar e avaliar considerações que afetam a segurança geral de uso do AD FS. As informações contidas neste tópico visam complementar e agregar ao seu planejamento de segurança existente e outras práticas recomendadas de design.  
   
@@ -146,4 +145,4 @@ As seguintes práticas recomendadas de segurança são específicas para o uso d
     Para fornecer um melhor serviço e isolamento dos dados, você pode criar procedimentos armazenados para todos os comandos de pesquisa de armazenamento de atributo. Você pode criar uma função de banco de dados que receberá permissão para executar os procedimentos armazenados. Atribua a identidade de serviço do serviço Windows do AD FS para essa função de banco de dados. O serviço Windows do AD FS não deve ser capaz de executar qualquer outra instrução SQL além dos procedimentos devidamente armazenados usados para pesquisa de atributos. Bloquear o acesso ao banco de dados do SQL Server desta maneira reduz o risco de um ataque de elevação de privilégio.  
   
 ## <a name="see-also"></a>Consulte também
-[Guia de Design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

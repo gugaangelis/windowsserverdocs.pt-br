@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: afb4b10a0d347367780dbaf19b764f2cabd480d9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: eb5c9650b95703f1316e6f5f179b910d22574f68
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819537"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222960"
 ---
 # <a name="echo"></a>echo
 
@@ -26,7 +26,7 @@ ms.locfileid: "59819537"
 
 Exibe mensagens ou ativa ou desativa o recurso de eco de comando. Se usado sem parâmetros, **echo** exibe a configuração atual.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+Para obter exemplos de como usar esse comando, consulte [Exemplos](#examples).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -49,9 +49,9 @@ echo [on | off]
 -   Quando **echo** estiver desativada, o prompt de comando não aparece na janela do Prompt de comando. Para exibir o prompt de comando, digite **eco.**
 -   Se usado em um arquivo de lote **eco** e **echo off** não afetam a configuração no prompt de comando.
 -   Para evitar repetir um determinado comando em um arquivo em lotes, insira um sinal de arroba (@) na frente do comando. Para evitar repetir todos os comandos em um arquivo em lotes, inclua o **echo off** comando no início do arquivo.
--   Para exibir um pipe (**|**) ou o caractere de redirecionamento (**<** ou **>**) quando você estiver usando **eco**, use um acento circunflexo (^) imediatamente antes do caractere de pipe ou redirecionamento (por exemplo, **^|**, **^>**, ou **^<**). Para exibir um acento circunflexo, digite acentos dois circunflexos em sucessão (**^^**).
+-   Para exibir um pipe ( **|** ) ou o caractere de redirecionamento (**<** ou **>**) quando você estiver usando **eco**, use um acento circunflexo (^) imediatamente antes do caractere de pipe ou redirecionamento (por exemplo, **^|**, **^>**, ou **^<**). Para exibir um acento circunflexo, digite acentos dois circunflexos em sucessão ( **^^** ).
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="examples"></a>Exemplos
 
 Para exibir o atual **echo** configurando, digite:
 ```
@@ -106,4 +106,4 @@ File3.txt
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

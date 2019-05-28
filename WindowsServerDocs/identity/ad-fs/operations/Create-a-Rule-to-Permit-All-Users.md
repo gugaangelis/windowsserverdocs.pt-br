@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: de85af27e699242977054420178dd3c424b2ddb3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: abb00e14dd0b3ce7b06efba816fbd7452e7bf0f1
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822587"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189408"
 ---
 # <a name="create-a-rule-to-permit-all-users"></a>Criar uma regra para permitir todos os usuários
-
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2
 
 No Windows Server 2016, você pode usar um **política de controle de acesso** para criar uma regra que dará todos os usuários acesso a uma terceira parte confiável.  No Windows Server 2012 R2, usando o **permitir todos os usuários** modelo de regra nos serviços de Federação do Active Directory \(AD FS\), você pode criar uma regra de autorização que fornecerá todos os usuários acesso para a terceira parte confiável de terceiros. 
 
@@ -61,10 +59,10 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
 ## <a name="additional-references"></a>Referências adicionais 
 [Configurar regras de declaração](Configure-Claim-Rules.md)  
  
-[Lista de verificação: Criando regras de declaração para a Relying Party Trust](https://technet.microsoft.com/library/ee913578.aspx)  
+[Lista de verificação: Como criar regras de declaração para um objeto de confiança de terceira parte confiável](https://technet.microsoft.com/library/ee913578.aspx)  
   
 [Quando usar uma regra de declaração de autorização](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 
 [A função das declarações](../../ad-fs/technical-reference/The-Role-of-Claims.md)  
   
-[A função de regras de declaração](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md)  
+[A função das regras de declaração](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md)  
