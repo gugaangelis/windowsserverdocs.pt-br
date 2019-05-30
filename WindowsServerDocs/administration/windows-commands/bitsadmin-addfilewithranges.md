@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69b402195f90977aa63299c1a2a550ba310a4513
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 081e5caeb7fb458b367f035b9995929de84a5528
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832337"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266566"
 ---
 # <a name="bitsadmin-addfilewithranges"></a>bitsadmin addfilewithranges
 
@@ -41,14 +41,14 @@ bitsadmin /AddFileWithRanges <Job> <RemoteURL> <LocalName> <RangeList>
 
 ## <a name="more-information"></a>Mais Informações
 
--   O token **eof** é um valor de comprimento válido dentro de pares de deslocamento e comprimento na  *\<RangeList >*. Ele instrui o serviço para ler até o final do arquivo especificado.
+-   O token **eof** é um valor de comprimento válido dentro de pares de deslocamento e comprimento na  *\<RangeList >* . Ele instrui o serviço para ler até o final do arquivo especificado.
 -   Observe que o AddFileWithRanges falhará com o código de erro 0x8020002c quando um intervalo de comprimento zero for especificado, juntamente com outro intervalo com o mesmo deslocamento, tais como: C:\bits > bitsadmin /addfilewithranges j2 http://bitsdc/dload/1k.zip c:\1k.zip 100:0, 100:5
 
     Mensagem de erro: Não é possível adicionar arquivo ao trabalho - 0x8020002c. A lista de intervalos de bytes contém alguns intervalos sobrepostos, que não têm suporte.
 
     Solução alternativa: não especifique o intervalo de comprimento zero pela primeira vez. Por exemplo: bitsadmin /addfilewithranges j2 http://bitsdc/dload/1k.zip c:\1k.zip 100:5, 100:0.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="examples"></a>Exemplos
 
 O exemplo a seguir informa o BITS para transferir 100 bytes do deslocamento de 0, 100 bytes do deslocamento 2000 e os bytes restantes de deslocamento 5000 até o final do arquivo.
 ```
@@ -57,4 +57,4 @@ C:\>bitsadmin /addfilewithranges http://downloadsrv/10mb.zip c:\10mb.zip "0:100,
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

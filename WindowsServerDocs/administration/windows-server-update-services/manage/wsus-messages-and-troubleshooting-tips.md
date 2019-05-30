@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cc24893b1a227501959002ea2d81c62813855d4a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 77a4702ddab987cb3adda7627badb790e3102952
+ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883627"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66308552"
 ---
 # <a name="wsus-messages-and-troubleshooting-tips"></a>Mensagens do WSUS e dicas de solução de problemas
 
@@ -57,7 +57,7 @@ Quando você tenta abrir os serviços de atualização no servidor do WSUS, voc�
 
 > Erro ao tentar se conectar ao servidor do WSUS. Esse erro pode ocorrer por vários motivos. Entre em contato com seu administrador de rede se o problema persistir. Clique a reinicialização do nó do servidor para se conectar ao servidor novamente.
 
-Além disso, as tentativas de acesso a URL para o site de administração do WSUS (ou seja, http://CM12CAS:8530) falha com o erro:
+Além disso, as tentativas de acesso a URL para o site de administração do WSUS (ou seja, `http://CM12CAS:8530`) falha com o erro:
 
 > Erro HTTP 503. O serviço está indisponível
 

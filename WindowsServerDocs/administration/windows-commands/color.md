@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8d23cc1bb5739b47c755d90c927cbcf82b8da7f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 5e1ee9b7c1ade184cf17b867b7fce10ab8885f0f
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825017"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64771882"
 ---
 # <a name="color"></a>color
 
@@ -44,25 +44,27 @@ color [[<B>]<F>]
 
 ## <a name="remarks"></a>Comentários
 
--   A tabela a seguir lista os dígitos hexadecimais válidos que podem ser usados como valores para *B* e *F*.  
-    |Valor|Cor|
-    |-----|-----|
-    |0|Preto|
-    |1|Azul|
-    |2|Verde|
-    |3|Aqua|
-    |4|Vermelho|
-    |5|Roxo|
-    |6|Amarelo|
-    |7|Branco|
-    |8|Cinza|
-    |9|Azul-claro|
-    |A|Verde claro|
-    |B|Azul-piscina claro|
-    |C|Vermelho-claro|
-    |D|Roxo-claro|
-    |E|Amarelo-claro|
-    |F|Branco brilhante|
+-   A tabela a seguir lista os dígitos hexadecimais válidos que podem ser usados como valores para *B* e *F*.
+
+|Valor|Cor|
+|-----|-----|
+|0|Preto|
+|1|Azul|
+|2|Verde|
+|3|Aqua|
+|4|Vermelho|
+|5|Roxo|
+|6|Amarelo|
+|7|Branco|
+|8|Cinza|
+|9|Azul-claro|
+|A|Verde claro|
+|B|Azul-piscina claro|
+|C|Vermelho-claro|
+|D|Roxo-claro|
+|E|Amarelo-claro|
+|F|Branco brilhante|
+    
 -   Não use caracteres de espaço entre *B* e *F*.
 -   Se você especificar apenas um dígito hexadecimal, a cor correspondente é usada como a cor de primeiro plano e a cor do plano de fundo é definida como a cor padrão.
 -   Para definir a cor padrão da janela de Prompt de comando, clique no canto superior esquerdo da janela do Prompt de comando, clique em **padrões**, clique no **cores** guia e, em seguida, clique nas cores que você deseja usar para a  **Tela de texto** e **tela de fundo**.
@@ -84,4 +86,4 @@ color e
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

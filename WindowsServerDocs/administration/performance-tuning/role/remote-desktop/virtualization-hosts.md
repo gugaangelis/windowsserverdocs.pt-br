@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 1893c0d2689657a5213b2d59e8d83cea0fc3a0db
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 0aa359644f5e9bf85f4e013e6571276716ed0218
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63722720"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266621"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>Hosts de virtualização de área de trabalho remota de ajuste de desempenho
 
@@ -40,14 +40,14 @@ Quando apropriado, use eliminação de duplicação de disco e armazenamento em 
 
 Introduzido no Windows Server 2012 R2, a eliminação de duplicação dá suporte à otimização de arquivos abertos. Para usar máquinas virtuais em execução em um volume com eliminação de duplicação, os arquivos de máquina virtual precisam ser armazenado em um host separado do host do Hyper-V. Se estiver executando o Hyper-V e a eliminação de duplicação no mesmo computador, os dois recursos serão disputam os recursos do sistema e afetar negativamente o desempenho geral.
 
-O volume também deve ser configurado para usar o "Virtual Desktop Infrastructure (VDI)? tipo de otimização da eliminação de duplicação. Você pode configurar isso usando o Gerenciador do servidor (**serviços de arquivo e armazenamento**  - &gt; **Volumes**  - &gt; **deconfiguraçõesdeeliminaçãodeduplicação**) ou, usando o Windows PowerShell a seguir de comando:
+O volume também deve ser configurado para usar o tipo de otimização da eliminação de duplicação de "Virtual Desktop Infrastructure (VDI)". Você pode configurar isso usando o Gerenciador do servidor (**serviços de arquivo e armazenamento**  - &gt; **Volumes**  - &gt; **deconfiguraçõesdeeliminaçãodeduplicação**) ou, usando o Windows PowerShell a seguir de comando:
 
 ``` syntax
 Enable-DedupVolume <volume> -UsageType HyperV
 ```
 
-**Observação**    otimização de eliminação de duplicação de dados de arquivos abertos tem suporte somente para cenários VDI com Hyper-V usando armazenamento remoto em SMB 3.0.
-
+> [!Note]
+> Otimização da eliminação de duplicação de dados de arquivos abertos tem suporte apenas para cenários de VDI com Hyper-V usando armazenamento remoto em SMB 3.0.
 
 ### <a name="memory"></a>Memória
 

@@ -136,13 +136,7 @@
 #### [Remover servidores](storage-spaces/remove-servers.md)
 #### [Atualizar firmware da unidade](update-firmware.md)
 #### [Estender volumes](storage-spaces/resize-volumes.md)
-### Solução de problemas
-#### [Cenários de solução de problemas](storage-spaces/troubleshooting-storage-spaces.md)
-#### [Integridade e estados operacionais](storage-spaces/storage-spaces-states.md)
-#### [Coletar dados](storage-spaces/data-collection.md)
-#### [Perguntas frequentes](storage-spaces/storage-spaces-direct-faq.md)
-### Insider Preview
-#### [Conjuntos de cluster](storage-spaces/cluster-sets.md)
+#### [Excluir volumes](storage-spaces/delete-volumes.md)
 #### [Histórico de desempenho](storage-spaces/performance-history.md)
 ##### [Unidades](storage-spaces/performance-history-for-drives.md)
 ##### [Adaptadores de rede](storage-spaces/performance-history-for-network-adapters.md)
@@ -153,6 +147,12 @@
 ##### [Clusters](storage-spaces/performance-history-for-clusters.md)
 ##### [Exemplos de scripts](storage-spaces/performance-history-scripting.md)
 #### [Delimitar a alocação de volumes](storage-spaces/delimit-volume-allocation.md)
+#### [Monitorar com o Azure Monitor](storage-spaces/configure-azure-monitor.md)
+### Solução de problemas
+#### [Cenários de solução de problemas](storage-spaces/troubleshooting-storage-spaces.md)
+#### [Integridade e estados operacionais](storage-spaces/storage-spaces-states.md)
+#### [Coletar dados](storage-spaces/data-collection.md)
+#### [Perguntas frequentes](storage-spaces/storage-spaces-direct-faq.md)
 ## [Pastas de trabalho](work-folders/work-folders-overview.md)
 ### [Projetar uma implementação de pastas de trabalho](work-folders/plan-work-folders.md)
 ### [Implantar pastas de trabalho](work-folders/deploy-work-folders.md)

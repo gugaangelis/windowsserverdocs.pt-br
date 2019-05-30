@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/31/2018
-ms.openlocfilehash: 4b9deb4fc7fbfccf569250e965274009764054f7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a98e1a876c972b0f146ff37aff0a77399b684e99
+ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849327"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66308557"
 ---
 # <a name="bitsadmin-examples"></a>exemplos de Bitsadmin
 
@@ -28,7 +28,7 @@ Os exemplos a seguir mostram como usar o `bitsadmin` ferramenta para executar as
 
 O **/transferência** switch é um atalho para executar as tarefas listadas abaixo. Essa opção cria o trabalho, adiciona os arquivos para o trabalho, ativa o trabalho na fila de transferência e conclui o trabalho. BITSAdmin continua Mostrar informações sobre o andamento na janela do MS-DOS, até que a transferência for concluída ou ocorre um erro.
 
-**Bitsadmin /transfer myDownloadJob /download /priority normal https://downloadsrv/10mb.zip c:\\10mb.zip**
+**Bitsadmin /transfer myDownloadJob /download /priority normal `https://downloadsrv/10mb.zip c:\\10mb.zip`**
 
 ## <a name="create-a-download-job"></a>Criar um trabalho de download
 

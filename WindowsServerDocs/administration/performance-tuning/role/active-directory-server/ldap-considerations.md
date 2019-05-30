@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9032988c65581ea602451d224f40719b932ab7f5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 79f95c88c49d384f8a13b8808c63a0dc00de53cb
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821687"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266626"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>Considerações de LDAP no ajuste de desempenho do ADDS
 
@@ -49,7 +49,7 @@ Os atributos de indexação é útil ao procurar por objetos que têm o nome do 
 
     -   **NTDS\\latência de solicitação** – isso está sujeito a quanto a solicitação é necessário para processar. Active Directory solicitações expira depois de 120 segundos (padrão), no entanto, a maioria deve ser executado muito mais rapidamente e consultas extremamente longas devem obter ocultos nos números geral. Procure alterações nessa linha de base, em vez de limites absolutos.
 
-        **Observação**    valores altos aqui também podem ser indicadores de atrasos na "proxy? solicitações para outros domínios e verificações CRL.
+        > [!Note]   Valores altos aqui também podem ser indicadores de atrasos nas solicitações de "proxy" para outros domínios e verificações CRL.
 
 
     -   **NTDS\\estimado atraso de fila** – ideal seria próximos a 0 para um desempenho ideal, isso significa que as solicitações não gastam nenhum tempo aguardando para serem atendidas.
@@ -64,7 +64,7 @@ Esses cenários podem ser detectados usando uma ou mais das seguintes abordagens
 
 -   [Microsoft Server Performance Advisor](../../../server-performance-advisor/microsoft-server-performance-advisor.md) pacote de Supervisor do Active Directory
 
--   Pesquisas usando qualquer filtro além de "(objectClass =\*)? que usam o índice de ancestrais.
+-   Pesquisas usando qualquer filtro além de "(objectClass =\*)" que usam o índice de ancestrais.
 
 ### <a name="other-index-considerations"></a>Outras considerações de índice
 
@@ -101,7 +101,7 @@ Para obter mais informações, consulte o seguinte:
 
 ## <a name="see-also"></a>Consulte também
 - [Servidores do Active Directory de ajuste de desempenho](index.md)
-- [Considerações de hardware](hardware-considerations.md)
-- [Posicionamento adequado dos controladores de domínio e considerações de site](site-definition-considerations.md)
-- [Solucionando problemas de desempenho do ADDS](troubleshoot.md) 
-- [Planejamento de capacidade para Active Directory Domain Services](https://go.microsoft.com/fwlink/?LinkId=324566)
+- [Considerações sobre hardware](hardware-considerations.md)
+- [Posicionamento adequado dos controladores de domínio e considerações sobre o local](site-definition-considerations.md)
+- [Solução de problemas de desempenho do ADDS](troubleshoot.md) 
+- [Planejamento de capacidade para o Active Directory Domain Services](https://go.microsoft.com/fwlink/?LinkId=324566)

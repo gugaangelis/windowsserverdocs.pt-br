@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9224e2572d7d5efded149cd113730dabc1624299
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: c54a747f4dde1113fa735c1408f48dbfaf2e74dc
+ms.sourcegitcommit: 39ab8041d166e6817a95417d6aa30bc7abeeef54
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843607"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66260266"
 ---
 # <a name="winrs"></a>winrs
 
@@ -32,12 +32,12 @@ winrs [/<parameter>[:<value>]] <command>
 ### <a name="parameters"></a>Parâmetros  
 |Parâmetro|Descrição|  
 |-------|--------|  
-|[/remote]:\<endpoint>|Especifica o ponto de extremidade de destino usando um nome NetBIOS ou a conexão padrão:<br /><br />-   <url>: [\<transport>://]\<target>[:\<port>]<br /><br />Se não for especificado, **/r:localhost** é usado.|  
-|/unencrypted]|Especifica que as mensagens para o shell remoto não serão criptografadas. Isso é útil para solução de problemas ou quando o tráfego de rede já está criptografado com **ipsec**, ou quando a segurança física é imposta.<br /><br />Por padrão, as mensagens são criptografadas usando chaves de Kerberos ou NTLM.<br /><br />Essa opção de linha de comando é ignorada quando o transporte HTTPS é selecionada.|  
-|/UserName]:\<username >|Especifica o nome de usuário na linha de comando.<br /><br />Se não for especificado, a ferramenta usará a autenticação Negotiate ou o prompt para o nome.<br /><br />Se **/username** for especificado, **/password** também deve ser especificado.|  
-|/password]:\<password>|Especifica a senha na linha de comando.<br /><br />Se **/password** não for especificado, mas **/username** é, a ferramenta solicitará a senha.<br /><br />Se **/password** for especificado, **/username** também deve ser especificado.|  
+|/remote:\<endpoint>|Especifica o ponto de extremidade de destino usando um nome NetBIOS ou a conexão padrão:<br /><br />-   <url>: [\<transport>://]\<target>[:\<port>]<br /><br />Se não for especificado, **/r:localhost** é usado.|  
+|/unencrypted|Especifica que as mensagens para o shell remoto não serão criptografadas. Isso é útil para solução de problemas ou quando o tráfego de rede já está criptografado com **ipsec**, ou quando a segurança física é imposta.<br /><br />Por padrão, as mensagens são criptografadas usando chaves de Kerberos ou NTLM.<br /><br />Essa opção de linha de comando é ignorada quando o transporte HTTPS é selecionada.|  
+|/username:\<username>|Especifica o nome de usuário na linha de comando.<br /><br />Se não for especificado, a ferramenta usará a autenticação Negotiate ou o prompt para o nome.<br /><br />Se **/username** for especificado, **/password** também deve ser especificado.|  
+|/password:\<password>|Especifica a senha na linha de comando.<br /><br />Se **/password** não for especificado, mas **/username** é, a ferramenta solicitará a senha.<br /><br />Se **/password** for especificado, **/username** também deve ser especificado.|  
 |/timeout:\<seconds>|Essa opção é preterida.|  
-|/directory:\<path>|Especifica o diretório inicial para o shell remoto.<br /><br />Se não for especificado, o shell remoto começará no diretório base do usuário, definido pela variável de ambiente **% USERPROFILE %**.|  
+|/directory:\<path>|Especifica o diretório inicial para o shell remoto.<br /><br />Se não for especificado, o shell remoto começará no diretório base do usuário, definido pela variável de ambiente **% USERPROFILE %** .|  
 |/Environment:\<cadeia de caracteres > =<value>|Especifica uma variável de ambiente único a ser definido quando inicia do shell, o que permite alterar o ambiente padrão do shell.<br /><br />Várias ocorrências dessa opção devem ser usadas para especificar diversas variáveis de ambiente.|  
 |/noecho|Especifica que o eco deve ser desabilitado. Isso pode ser necessário para garantir respostas do usuário aos prompts remotos não são exibidas localmente.<br /><br />Por padrão o eco for "on".|  
 |/noprofile|Especifica que o perfil do usuário não deve ser carregado.<br /><br />Por padrão, o servidor tentará carregar o perfil do usuário.<br /><br />Se o usuário remoto não é um administrador local no sistema de destino e, em seguida, essa opção será necessária (o padrão resultará em erro).|  
@@ -87,5 +87,5 @@ winrs /r:myserver /ad /u:administrator /p:$%fgh7 dir \\anotherserver\share
 ```  
 
 ## <a name="additional-references"></a>Referências adicionais  
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   

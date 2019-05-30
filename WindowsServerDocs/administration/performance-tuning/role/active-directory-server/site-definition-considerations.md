@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0e5c5f8b7cf5c028fbfa5d72c4bc1218565d4087
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e1652e45f51500ceeb0026b8892fbe9c54ff38f3
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814017"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266634"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>Posicionamento adequado dos controladores de domínio e considerações de site
 
@@ -64,7 +64,7 @@ Entre os cenários são uma área que tem sido consistentemente um ponto problem
 
     -   Use DnsAvoidRegisterRecords para eliminar a controladores de domínio de desempenho ruim ou alta latência, como aqueles em locais de satélite, de anúncio para os localizadores genéricos. Para obter mais informações, consulte [como otimizar o local de um controlador de domínio ou catálogo global que reside fora do site do cliente](https://support.microsoft.com/kb/306602).
 
-        **Observação**    há um limite prático de cerca de 50 para o número de controladores de domínio, o cliente pode consumir. Eles devem ser mais capacidade ideal de site e maior controladores de domínio.
+        > [!Note]   Há um limite prático de cerca de 50 para o número de controladores de domínio, que o cliente pode consumir. Eles devem ser mais capacidade ideal de site e maior controladores de domínio.
 
          
 
@@ -78,7 +78,7 @@ Para todos os cenários de confiança, as credenciais são roteadas de acordo co
 
 ## <a name="see-also"></a>Consulte também
 - [Servidores do Active Directory de ajuste de desempenho](index.md)
-- [Considerações de hardware](hardware-considerations.md)
-- [Considerações de LDAP](ldap-considerations.md)
-- [Solucionando problemas de desempenho do ADDS](troubleshoot.md) 
-- [Planejamento de capacidade para Active Directory Domain Services](https://go.microsoft.com/fwlink/?LinkId=324566)
+- [Considerações sobre hardware](hardware-considerations.md)
+- [Considerações sobre LDAP](ldap-considerations.md)
+- [Solução de problemas de desempenho do ADDS](troubleshoot.md) 
+- [Planejamento de capacidade para o Active Directory Domain Services](https://go.microsoft.com/fwlink/?LinkId=324566)

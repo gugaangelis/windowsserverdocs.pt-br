@@ -9,13 +9,13 @@ author: jasongerend
 ms.author: jgerend
 manager: jasgroce
 ms.localizationpriority: medium
-ms.date: 05/24/2019
-ms.openlocfilehash: c9af38720df79918bed3404995e81a7f93a10744
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.date: 05/29/2019
+ms.openlocfilehash: e76b7862549814d5453717c40cec45e341141d7a
+ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222893"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66308599"
 ---
 # <a name="server-core-app-compatibility-feature-on-demand-fod"></a>Recurso de compatibilidade de aplicativo do Server Core sob demanda (FOD)
 
@@ -156,7 +156,7 @@ O FOD de compatibilidade de aplicativo só pode ser instalado no Server Core. N�
 1. Baixe os arquivos de imagem do Windows Server e o servidor FOD ISO em uma pasta local em um computador Windows.
 
    - Se você tiver uma licença de volume, você pode baixar os arquivos de imagem do Windows Server e o servidor FOD ISO do [Volume Licensing Service Center](https://www.microsoft.com/Licensing/servicecenter/default.aspx).
-   - O arquivo de imagem ISO do servidor FOD também está disponível na [Microsoft Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server) ou nos [portal do Visual Studio](https://visualstudio.microsoft.com) para assinantes.
+   - O arquivo de imagem ISO do servidor FOD também está disponível para versões de canal de manutenção em longo prazo na [Microsoft Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server) ou nos [portal do Visual Studio](https://visualstudio.microsoft.com) para assinantes.
 
 2. Abra uma sessão do PowerShell como administrador e, em seguida, use os seguintes comandos para montar os arquivos de imagem como unidades:
 

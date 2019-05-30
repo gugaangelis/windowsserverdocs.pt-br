@@ -7,19 +7,49 @@ ms.manager: dongill
 ms.technology: storage
 ms.topic: article
 author: jasongerend
-ms.date: 10/22/2019
-ms.openlocfilehash: b8b6b1145e5b921fac64c47cbfb1e7489fa3f41e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.date: 05/29/2019
+ms.openlocfilehash: 5469d663f64fdb453e03863f409b675473d3f6aa
+ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847237"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66308568"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>O que há de novo no armazenamento no Windows Server
 
 >Aplica-se a: 2019, Windows Server 2016, Windows Server (canal semestral) do Windows Server
 
 Este tópico explica as funcionalidades novas e alteradas no armazenamento no Windows Server 2019, Windows Server 2016, e versões de canal semestral do Windows Server.
+
+## <a name="whats-new-in-storage-in-windows-server-2019-and-windows-server-version-1903"></a>O que há de novo no armazenamento no Windows Server 2019 e Windows Server, versão 1903
+
+Esta versão do Windows Server adiciona as seguintes alterações e tecnologias.
+
+### <a name="storage-migration-service-now-migrates-local-accounts-clusters-and-linux-servers"></a>Serviço de migração de armazenamento agora migra contas locais, clusters e servidores Linux
+
+Serviço de migração de armazenamento facilita a migração de servidores para uma versão mais recente do Windows Server. Ele fornece uma ferramenta gráfica que faz o inventário de dados em servidores e, em seguida, transfere os dados e a configuração para servidores mais recentes — tudo sem aplicativos ou usuários que têm alterar nada.
+
+Ao usar esta versão do Windows Server para orquestrar as migrações, adicionamos as seguintes capacidades:
+
+- Migrar usuários e grupos locais para o novo servidor
+- Migrar o armazenamento de clusters de failover
+- Migrar o armazenamento de um servidor Linux que usa o Samba
+- Mais facilmente migrados compartilhamentos de sincronização no Azure usando a sincronização de arquivos do Azure
+- Migrar para novas redes, como o Azure
+
+Para obter mais informações sobre o serviço de migração de armazenamento, consulte [visão geral do serviço de migração de armazenamento](storage-migration-service/overview.md).
+
+### <a name="system-insights-disk-anomaly-detection"></a>Detecção de anomalias de disco do sistema Insights
+
+[Insights de sistema](../manage/system-insights/overview.md) é um recurso de análise preditiva que analisa dados de sistema do Windows Server localmente e fornece informações sobre o funcionamento do servidor. Ele vem com um número de recursos internos, mas nós adicionamos a capacidade de instalar recursos adicionais por meio do Windows Admin Center, começando com a detecção de anomalias de disco.
+
+Detecção de anomalias de disco é um novo recurso que destaca quando discos estão se comportando *diferentemente* que o normal. Embora diferentes não necessariamente uma coisa ruim, vendo esses momentos anormais pode ser útil ao solucionar problemas em seus sistemas.
+
+Essa funcionalidade também está disponível para servidores que executam o Windows Server 2019.
+
+### <a name="windows-admin-center-enhancements"></a>Aprimoramentos do Windows Admin Center
+
+Uma nova versão do Windows Admin Center é horizontalmente, adicionando novas funcionalidades para o Windows Server. Para obter informações sobre os recursos mais recentes, consulte [Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md).
 
 ## <a name="whats-new-in-storage-in-windows-server-2019-and-windows-server-version-1809"></a>O que há de novo no armazenamento no Windows Server 2019 e Windows Server, versão 1809
 
@@ -41,7 +71,7 @@ Há vários aprimoramentos para espaços de armazenamento diretos no Windows Ser
 
 - **Eliminação de duplicação e compactação para volumes de ReFS**
 
-    Store até 10 vezes mais dados no mesmo volume com eliminação de duplicação e compactação para o sistema de arquivos ReFS. (Ele tem [apenas um clique](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be) ativar com Windows Admin Center.) O repositório de partes de tamanho variável com a compactação opcional maximiza a taxas de economia, enquanto a arquitetura de pós-processamento multi-threaded mantém mínimo de impacto no desempenho. Dá suporte a volumes de até 64 TB e arquivos de até 1 TB cada.
+    Store até dez vezes mais dados no mesmo volume com eliminação de duplicação e compactação para o sistema de arquivos ReFS. (Ele tem [apenas um clique](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be) ativar com Windows Admin Center.) O repositório de partes de tamanho variável com a compactação opcional maximiza a taxas de economia, enquanto a arquitetura de pós-processamento multi-threaded mantém mínimo de impacto no desempenho. Dá suporte a volumes de até 64 TB e será eliminar os primeiros 4 TB de cada arquivo.
 
 - **Suporte nativo para memória persistente**
 
@@ -268,4 +298,4 @@ O ReFS apresenta as seguintes melhorias:
 Esses recursos são novos no Windows Server 2016. 
 
 ## <a name="see-also"></a>Consulte também  
-* [O que há de novo no Windows Server 2016](../get-started/what-s-new-in-windows-server-2016.md)  
+* [Novidades no Windows Server 2016](../get-started/what-s-new-in-windows-server-2016.md)  

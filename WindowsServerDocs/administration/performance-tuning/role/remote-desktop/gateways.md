@@ -7,22 +7,24 @@ ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 7619d2e2ce394c7f06826d6ebe36bccfa43344ad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 70b27d45acbfb046d52271a50ca7deffb226b8d0
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842567"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266724"
 ---
 # <a name="performance-tuning-remote-desktop-gateways"></a>Gateways de área de trabalho remotos de ajuste de desempenho
 
-**Observação**    no Windows 8 e posteriores e no Windows Server 2012 R2 +, o Gateway de área de trabalho remota (Gateway RD) oferece suporte a TCP, UDP e os transportes RPC herdados. A maioria dos seguintes dados é em relação ao transporte RPC herdado. Se o transporte herdado de RPC não está sendo usado, esta seção não é aplicável.
+> [!Note]
+> No Windows 8 e posteriores e no Windows Server 2012 R2 +, o Gateway de área de trabalho remota (Gateway RD) oferece suporte a TCP, UDP e os transportes RPC herdados. A maioria dos seguintes dados é em relação ao transporte RPC herdado. Se o transporte herdado de RPC não está sendo usado, esta seção não é aplicável.
 
 Este tópico descreve os parâmetros relacionados ao desempenho que ajudam a melhorar o desempenho de uma implantação de cliente e o tunings que se baseiam em padrões de uso de rede do cliente.
 
 Em seu núcleo, o Gateway de área de trabalho remota executa muitas operações entre instâncias de Conexão de área de trabalho remota e as instâncias de servidor de Host de sessão de área de trabalho remota na rede do cliente de encaminhamento de pacote.
 
-**Observação**    os parâmetros a seguir se aplicam a apenas a transporte RPC.
+> [!Note]
+> Os parâmetros a seguir se aplicam a apenas a transporte RPC.
 
 Serviços de informações da Internet (IIS) e o Gateway de área de trabalho remota exportar os seguintes parâmetros de registro para ajudar a melhorar o desempenho do sistema no Gateway de área de trabalho remota.
 

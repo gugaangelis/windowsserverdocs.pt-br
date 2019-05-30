@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1c47986cda3f091033274aa2c59a656ec861a98f
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 909be9e4bbcd12b00fd60ff061b1f4e2ede34546
+ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189706"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66308534"
 ---
 # <a name="create-a-claims-provider-trust"></a>Criar uma relação de confiança do provedor de declarações
 
@@ -57,7 +57,7 @@ Associação na **administradores**, ou equivalente, no computador local é o re
 Para adicionar uma nova relação de confiança do provedor de declarações, usando o snap-in de gerenciamento do AD FS, importando automaticamente dados de configuração sobre o parceiro de metadados de federação que o parceiro publicou em uma rede local ou à Internet, execute o procedimento a seguir em um servidor de federação na organização do parceiro de recurso.
 
 >[!NOTE]
->Embora sempre foi uma prática comum usar certificados com nomes de host não qualificados, como https://myserver, esses certificados não têm nenhum valor de segurança e pode permitir que um invasor represente um serviço de federação que está publicando metadados de Federação. Portanto, ao consultar metadados de federação, você deve apenas usar um nome de domínio totalmente qualificado, como https://myserver.contoso.com.
+>Embora sempre foi uma prática comum usar certificados com nomes de host não qualificado como https:\//myserver, esses certificados não têm nenhum valor de segurança e pode permitir que um invasor represente um serviço de federação que está publicando a federação metadados. Portanto, ao consultar metadados de federação, você deve apenas usar um nome de domínio totalmente qualificado, como `https://myserver.contoso.com`.
 
 1.  No Gerenciador do servidor, clique em **ferramentas**e, em seguida, selecione **gerenciamento do AD FS**.  
   

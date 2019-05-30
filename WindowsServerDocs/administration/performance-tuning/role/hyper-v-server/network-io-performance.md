@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: d52c4fff6c7e06fb0a9f2b44ea51a0a790e6674d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6dd9d03cce71c42e2ecc1388519de049a5e4e8dd
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814357"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266720"
 ---
 # <a name="hyper-v-network-io-performance"></a>Desempenho de rede do Hyper-V e/s
 
@@ -22,7 +22,8 @@ Server 2016 contém vários aprimoramentos e novas funcionalidades para otimizar
 
 Migração ao vivo permite mover de maneira transparente máquinas virtuais em execução de um nó de um cluster de failover para outro nó no mesmo cluster sem uma conexão de rede perdida ou tempo de inatividade perceptível.
 
-**Observação**    Clustering de Failover exige armazenamento compartilhado para os nós de cluster.
+> [!Note]
+> Clustering de failover exige armazenamento compartilhado para os nós de cluster.
 
 O processo de mover uma máquina virtual em execução pode ser dividido em duas fases principais. A primeira fase copia a memória da máquina virtual do host atual para o novo host. A segunda fase transfere o estado da máquina virtual do host atual para o novo host. As durações de ambas as fases bastante é determinada pela velocidade na qual os dados podem ser transferidos do host atual para o novo host.
 
@@ -38,15 +39,15 @@ Windows Server 2012 R2 introduziu uma opção para acelerar a migração ao vivo
 
 -   [Terminologia do Hyper-V](terminology.md)
 
--   [Arquitetura do Hyper-V](architecture.md)
+-   [Arquitetura Hyper-V](architecture.md)
 
--   [Configuração de servidor Hyper-V](configuration.md)
+-   [Configuração do servidor do Hyper-V](configuration.md)
 
 -   [Desempenho do processador do Hyper-V](processor-performance.md)
 
 -   [Desempenho de memória do Hyper-V](memory-performance.md)
 
--   [Desempenho de e/s de armazenamento do Hyper-V](storage-io-performance.md)
+-   [Desempenho de E/S de armazenamento do Hyper-V](storage-io-performance.md)
 
 -   [Detectar gargalos em um ambiente virtualizado](detecting-virtualized-environment-bottlenecks.md)
 

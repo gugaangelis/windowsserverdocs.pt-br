@@ -7,12 +7,12 @@ author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 6091edd7aa7f790f6029ca6b6ae402bf1b7e61ca
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: c775dd5a3011115bbb031c0b9e4e24a8911d378e
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877017"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63748410"
 ---
 # <a name="install-and-manage-extensions"></a>Instalar e gerenciar extensões
 
@@ -85,9 +85,6 @@ $feedUrlBase = "https://aka.ms/sme-extension-feed"
 >Aplica-se a: Windows Admin Center, Windows Admin Center Preview
 
 Visualização do Windows Admin Center inclui um módulo do PowerShell para gerenciar suas extensões de gateway.
-
->[!IMPORTANT]
->Gerenciamento de extensões de gateway com o módulo do PowerShell tem suporte apenas ao Windows Admin Center é implantado como um serviço de gateway no Windows Server.
 
 ```powershell
 # Add the module to the current session
