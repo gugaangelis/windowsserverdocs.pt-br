@@ -38,6 +38,7 @@
 ##### [Referência técnica do controlador de domínio virtualizado (nível 300)](ad-ds/deploy/virtual-dc/Virtualized-Domain-Controller-Technical-Reference--Level-300-.md)
 ###### [Arquitetura do controlador de domínio virtualizado](ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md)
 ###### [Implantação e configuração do controlador de domínio virtualizado](ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Deployment-and-Configuration.md)
+###### [Executando o Active Directory nas VMs do Azure](ad-ds/deploy/virtual-dc/adds-on-azure-vm.md)
 ###### [Controladores de domínio virtualizados que usam o Hyper-V](ad-ds/get-started/virtual-dc/virtualized-domain-controllers-hyper-v.md)
 ###### [Solução de problemas do controlador de domínio virtualizado](ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md)
 ###### [Apêndice de referência técnica do controlador de domínio virtualizado](ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-appendix.md)
@@ -365,6 +366,9 @@
 
 
 ### [Desenvolvimento do AD FS](ad-fs/AD-FS-Development.md)
+
+#### [Compilar um Método de Autenticação Personalizada para o AD FS](ad-fs/development/ad-fs-build-custom-auth-method.md)
+#### [Criar Plug-ins com o Modelo de Avaliação de Risco do AD FS 2019](ad-fs/development/ad-fs-risk-assessment-model.md)
 #### [Tokens de ID personalizada no AD FS](ad-fs/development/Custom-Id-Tokens-in-AD-FS.md)
 #### [Autenticação em nome do AD FS no Windows Server 2016](ad-fs/development/AD-FS-On-behalf-of-Authentication-in-Windows-Server.md)
 #### [Como habilitar o OpenId Connect com o AD FS 2016](ad-fs/development/Enabling-OpenId-Connect-with-AD-FS.md)
