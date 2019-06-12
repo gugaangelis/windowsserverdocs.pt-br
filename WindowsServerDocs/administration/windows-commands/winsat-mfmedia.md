@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69ce4fac127a6af8a94f3800d62c45989cf7020b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2c63682e474311a49b01dc8078b023547e1fb170
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845427"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440026"
 ---
 # <a name="winsat-mfmedia"></a>o WinSAT mfmedia
 
@@ -54,10 +54,10 @@ winsat mfmedia <parameters>
 
 ## <a name="BKMK_examples"></a>Exemplos
 
--   O exemplo a seguir executa a avaliação com o arquivo de entrada que é usado durante um **winsat formal** avaliação, sem empregar o Media Foundation protegido mídia Pipeline (MFPMP), em um computador onde o c:\windows é o local do a pasta Windows.  
-    ```
-    winsat mfmedia -input c:\windows\performance\winsat\winsat.wmv -nopmp
-    ```
+- O exemplo a seguir executa a avaliação com o arquivo de entrada que é usado durante um **winsat formal** avaliação, sem empregar o Media Foundation protegido mídia Pipeline (MFPMP), em um computador onde o c:\windows é o local do a pasta Windows.  
+  ```
+  winsat mfmedia -input c:\windows\performance\winsat\winsat.wmv -nopmp
+  ```
 
 ## <a name="remarks"></a>Comentários
 

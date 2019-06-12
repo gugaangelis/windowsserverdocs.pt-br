@@ -14,16 +14,16 @@ manager: dongill
 ms.author: elizapo
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 20879507e13ac7da566c95db7b59d88e0b5d8ce8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: b2141a6a57629ccbb585b2f74c581eba5ba2b1b1
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873567"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446679"
 ---
 # <a name="get-started-with-remote-desktop-on-windows"></a>Comece com a área de trabalho remota no Windows
 
->Aplica-se a: Windows 10, Windows 8.1, Windows Server 2012 R2, Windows Server 2016
+>Aplica-se a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
 
 Você pode usar o cliente de área de trabalho remota para Windows para trabalhar com aplicativos do Windows e áreas de trabalho remotamente de um dispositivo diferente do Windows.
 
@@ -48,25 +48,25 @@ Para criar uma conexão de área de trabalho remota:
 
 1. No tap Centro de Conexão **+ adicionar**e, em seguida, toque em **área de trabalho**.
 2. Insira as seguintes informações para o computador que você deseja se conectar:
-  - **Nome do PC** – o nome do computador. Isso pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode anexar informações de porta ao nome do computador (por exemplo, **MyDesktop:3389** ou **10.0.0.1:3389**).
-  - **Conta de usuário** – a conta de usuário a ser usada para acessar o computador remoto. Toque **+** para adicionar uma nova conta ou selecione uma conta existente. Você pode usar os seguintes formatos para o nome de usuário: *user_name*, *domain\user_name*, ou *user_name@domain.com*. Você também pode especificar se deseja solicitar um nome de usuário e senha durante a conexão, selecionando **Perguntar sempre**.
+   - **Nome do PC** – o nome do computador. Isso pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode anexar informações de porta ao nome do computador (por exemplo, **MyDesktop:3389** ou **10.0.0.1:3389**).
+   - **Conta de usuário** – a conta de usuário a ser usada para acessar o computador remoto. Toque **+** para adicionar uma nova conta ou selecione uma conta existente. Você pode usar os seguintes formatos para o nome de usuário: *user_name*, *domain\user_name*, ou <em>user_name@domain.com</em>. Você também pode especificar se deseja solicitar um nome de usuário e senha durante a conexão, selecionando **Perguntar sempre**.
 3. Você também pode definir opções adicionais tocando no **Mostrar mais**:
-  - **Nome de exibição** – um nome fácil de lembrar para o PC que você está se conectando. Você pode usar qualquer cadeia de caracteres, mas se você não especificar um nome amigável, o nome do computador é exibido.
-  - **Grupo** – especificar um grupo para torná-lo mais fácil de encontrar suas conexões mais tarde. Você pode adicionar um novo grupo tocando **+** ou selecione um na lista.
-  - **Gateway** – gateway de área de trabalho remota a que você deseja usar para se conectar a áreas de trabalho virtuais, programas RemoteApp e áreas de trabalho baseadas em sessão em uma rede corporativa interna. Obtenha as informações sobre o gateway do administrador do sistema.
-  - **Conectar-se à sessão de administrador** -Use essa opção para se conectar a uma sessão de console para administrar um servidor Windows.
-  - **Trocar os botões do mouse** – Use essa opção, a troca de funções do botão esquerdo do mouse para o botão direito do mouse. (Isso é especialmente útil se o computador remoto está configurado para um usuário canhoto, mas usar um mouse destro.)
-  - **Defina a resolução da sessão remota:** – selecione a resolução que você deseja usar na sessão. **Escolha para mim** definirá a resolução com base no tamanho do cliente.
-  - **Alterar o tamanho da tela:** – ao selecionar uma resolução alta de estática para a sessão, você tem a opção para exibir itens na tela maiores para melhorar a legibilidade. Observação: Isso se aplica somente ao conectar-se ao Windows 8.1 ou superior.
-  - **Atualizar a resolução de sessão remota no redimensionamento** – quando habilitado, o cliente atualizar dinamicamente a resolução de sessão com base no tamanho do cliente. Observação: Isso se aplica somente ao conectar-se ao Windows 8.1 ou superior.
-  - **Área de transferência** – quando habilitada, permite que você copie o texto e imagens para/do PC remoto.
-  - **Reprodução de áudio** – selecione o dispositivo a ser usado para áudio durante sua sessão remota. Você pode optar por reproduzir som nos dispositivos locais, o computador remoto, ou não de forma alguma.
-  - **Gravação de áudio** – quando habilitada, permite que você use um microfone local com aplicativos no PC remoto.
+   - **Nome de exibição** – um nome fácil de lembrar para o PC que você está se conectando. Você pode usar qualquer cadeia de caracteres, mas se você não especificar um nome amigável, o nome do computador é exibido.
+   - **Grupo** – especificar um grupo para torná-lo mais fácil de encontrar suas conexões mais tarde. Você pode adicionar um novo grupo tocando **+** ou selecione um na lista.
+   - **Gateway** – gateway de área de trabalho remota a que você deseja usar para se conectar a áreas de trabalho virtuais, programas RemoteApp e áreas de trabalho baseadas em sessão em uma rede corporativa interna. Obtenha as informações sobre o gateway do administrador do sistema.
+   - **Conectar-se à sessão de administrador** -Use essa opção para se conectar a uma sessão de console para administrar um servidor Windows.
+   - **Trocar os botões do mouse** – Use essa opção, a troca de funções do botão esquerdo do mouse para o botão direito do mouse. (Isso é especialmente útil se o computador remoto está configurado para um usuário canhoto, mas usar um mouse destro.)
+   - **Defina a resolução da sessão remota:** – selecione a resolução que você deseja usar na sessão. **Escolha para mim** definirá a resolução com base no tamanho do cliente.
+   - **Alterar o tamanho da tela:** – ao selecionar uma resolução alta de estática para a sessão, você tem a opção para exibir itens na tela maiores para melhorar a legibilidade. Observação: Isso se aplica somente ao conectar-se ao Windows 8.1 ou superior.
+   - **Atualizar a resolução de sessão remota no redimensionamento** – quando habilitado, o cliente atualizar dinamicamente a resolução de sessão com base no tamanho do cliente. Observação: Isso se aplica somente ao conectar-se ao Windows 8.1 ou superior.
+   - **Área de transferência** – quando habilitada, permite que você copie o texto e imagens para/do PC remoto.
+   - **Reprodução de áudio** – selecione o dispositivo a ser usado para áudio durante sua sessão remota. Você pode optar por reproduzir som nos dispositivos locais, o computador remoto, ou não de forma alguma.
+   - **Gravação de áudio** – quando habilitada, permite que você use um microfone local com aplicativos no PC remoto.
 4. Toque **salvar**.
 
-É necessário editar essas configurações? Toque no menu de estouro (**...** ) ao lado do nome da área de trabalho e, em seguida, toque **editar**.
+É necessário editar essas configurações? Toque no menu de estouro ( **...** ) ao lado do nome da área de trabalho e, em seguida, toque **editar**.
 
-Deseja excluir a conexão? Novamente, toque no menu de estouro (**...** ) e, em seguida, toque **remover**.
+Deseja excluir a conexão? Novamente, toque no menu de estouro ( **...** ) e, em seguida, toque **remover**.
 
 ### <a name="add-a-remote-resource"></a>Adicionar um recurso remoto
 Recursos remotos são programas RemoteApp, áreas de trabalho baseadas em sessão e áreas de trabalho virtuais publicadas pelo seu administrador usando os serviços de área de trabalho remota.
@@ -82,12 +82,12 @@ Os recursos remotos serão exibidos no centro da Conexão.
 
 Para excluir os recursos remotos:
 
-1. No Centro de Conexão, toque no menu de estouro (**...** ) ao lado do recurso remoto.
+1. No Centro de Conexão, toque no menu de estouro ( **...** ) ao lado do recurso remoto.
 2. Toque **remover**.
 
 ### <a name="pin-a-saved-desktop-to-your-start-menu"></a>Fixar uma área de trabalho salva ao menu Iniciar
 
-Para fixar uma conexão ao menu Iniciar, toque no menu de estouro (**...** ) ao lado do nome da área de trabalho e, em seguida, toque **Fixar na tela inicial**.
+Para fixar uma conexão ao menu Iniciar, toque no menu de estouro ( **...** ) ao lado do nome da área de trabalho e, em seguida, toque **Fixar na tela inicial**.
 
 Agora você pode iniciar a conexão de área de trabalho remota diretamente do seu menu Iniciar tocando-lo.
 
@@ -100,8 +100,8 @@ Para configurar um novo gateway:
 1. No Centro de Conexão, toque em **configurações**.
 2. Ao lado de Gateway, toque em **+** para adicionar um novo gateway. Observação: Um gateway também pode ser adicionado ao adicionar uma nova conexão.
 3. Insira as seguintes informações:
-  - **Nome do servidor** – o nome do computador que você deseja usar como um gateway. Isso pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode adicionar informações de porta ao nome do servidor (por exemplo: **RDGateway:443** ou **10.0.0.1:443**).
-  - **Conta de usuário** - selecionar ou adicionar uma conta de usuário para usar com o Gateway de área de trabalho remota estiver se conectando a. Você também pode selecionar **usar conta de usuário da área de trabalho** para usar as mesmas credenciais usadas para a conexão de área de trabalho remota.
+   - **Nome do servidor** – o nome do computador que você deseja usar como um gateway. Isso pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode adicionar informações de porta ao nome do servidor (por exemplo: **RDGateway:443** ou **10.0.0.1:443**).
+   - **Conta de usuário** - selecionar ou adicionar uma conta de usuário para usar com o Gateway de área de trabalho remota estiver se conectando a. Você também pode selecionar **usar conta de usuário da área de trabalho** para usar as mesmas credenciais usadas para a conexão de área de trabalho remota.
 4. Toque **salvar**.  
 
 ## <a name="global-app-settings"></a>Configurações de aplicativo global

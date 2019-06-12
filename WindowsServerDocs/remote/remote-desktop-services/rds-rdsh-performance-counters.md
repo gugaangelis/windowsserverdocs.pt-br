@@ -10,12 +10,12 @@ ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 241b2b776a68cf5aec68a4d331201a07f0e5ea53
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f9aafaa34d5c16e45681e88b1ce60e99a9ad2842
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844647"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447097"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>Usar contadores de desempenho para diagnosticar problemas de desempenho do aplicativo nos Hosts de sessão de área de trabalho remota
 
@@ -25,17 +25,17 @@ O contador de atraso de entrada do usuário pode ajudá-lo a identificar rapidam
 
 A imagem a seguir mostra uma representação aproximada do fluxo de entrada do usuário do cliente ao aplicativo.
 
-![Área de trabalho remota - fluxos de entrada usuário do cliente de área de trabalho remota de usuários para o aplicativo](.\media\rds-user-input.png)
+![Área de trabalho remota - fluxos de entrada usuário do cliente de área de trabalho remota de usuários para o aplicativo](./media/rds-user-input.png)
 
 O contador de atraso de entrada do usuário mede o delta máximo (dentro de um intervalo de tempo) entre a entrada que está sendo enfileirado e quando é captado pelo aplicativo em um [loop de mensagem tradicional](https://msdn.microsoft.com/library/windows/desktop/ms644927.aspx#loop), conforme mostrado no gráfico de fluxo a seguir:
 
-![Área de trabalho remota - fluxo de contador de desempenho de atraso de entrada do usuário](.\media\rds-user-input-delay.png)
+![Área de trabalho remota - fluxo de contador de desempenho de atraso de entrada do usuário](./media/rds-user-input-delay.png)
 
 Um detalhe importante desse contador é que ele relata o atraso de entrada de usuário máxima dentro de um intervalo configurável. Isso é o tempo mais longo necessário para alcançar o aplicativo, que pode afetar a velocidade das ações visíveis e importantes, como digitar uma entrada.
 
 Por exemplo, na tabela a seguir, o atraso de entrada do usuário seria informado como 1.000 ms dentro deste intervalo. O contador informa o usuário mais lento de entrada atraso no intervalo porque a percepção do usuário de "lento" é determinada pela hora de entrada mais lenta (o máximo) eles experimentam, não a velocidade média de todas as entradas de total.
 
-|Número| 0 | 1 | 2 |
+|Number| 0 | 1 | 2 |
 |------|---|---|---|
 |Atraso |16 ms| 20 ms| 1.000 ms|
 
@@ -52,13 +52,13 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 Em seguida, reinicie o servidor. Em seguida, abra o Monitor de desempenho e selecione o sinal de adição (+), conforme mostrado na captura de tela a seguir.
 
-![Contador de desempenho de atraso de entrada de área de trabalho remota - uma captura de tela mostrando como adicionar o usuário](.\media\rds-add-user-input-counter-screen.png)
+![Contador de desempenho de atraso de entrada de área de trabalho remota - uma captura de tela mostrando como adicionar o usuário](./media/rds-add-user-input-counter-screen.png)
 
 Depois de fazer isso, você deverá ver a caixa de diálogo Adicionar contadores, onde você pode selecionar **atraso de entrada do usuário por processo** ou **atraso de entrada do usuário por sessão**.
 
-![Área de trabalho remota - uma captura de tela mostrando como adicionar o atraso de entrada do usuário por sessão](.\media\rds-user-delay-per-session.png)
+![Área de trabalho remota - uma captura de tela mostrando como adicionar o atraso de entrada do usuário por sessão](./media/rds-user-delay-per-session.png)
 
-![Área de trabalho remota - uma captura de tela mostrando como adicionar o atraso de entrada do usuário por processo](.\media\rds-user-delay-per-process.png)
+![Área de trabalho remota - uma captura de tela mostrando como adicionar o atraso de entrada do usuário por processo](./media/rds-user-delay-per-process.png)
 
 Se você selecionar **atraso de entrada do usuário por processo**, você verá o **instâncias do objeto selecionado** (em outras palavras, os processos) no ```SessionID:ProcessID <Process Image>``` formato.
 
@@ -69,7 +69,7 @@ Por exemplo, se o aplicativo Calculadora está em execução um [ID de sessão 1
 
 O contador começará a reportar o atraso de entrada do usuário, assim você adicioná-lo. Observe que a escala máxima é definida como 100 (ms) por padrão. 
 
-![Área de trabalho remota - um exemplo de atividade para o atraso de entrada do usuário por processo no Monitor de desempenho](.\media\rds-sample-user-input-delay-perfmon.png)
+![Área de trabalho remota - um exemplo de atividade para o atraso de entrada do usuário por processo no Monitor de desempenho](./media/rds-sample-user-input-delay-perfmon.png)
 
 Em seguida, vamos examinar a **atraso de entrada do usuário por sessão**. Há instâncias para cada ID de sessão e seus contadores mostram o atraso de entrada do usuário de qualquer processo dentro da sessão especificada. Além disso, há duas instâncias, chamadas "Max" (o atraso entrada máxima de usuários em todas as sessões) e "Média" (o acorss de média todas as sessões).
 
@@ -89,7 +89,7 @@ Esta tabela mostra um exemplo visual dessas instâncias. (Você pode obter as me
 
 Agora vamos examinar o que você verá no relatório se o desempenho de um aplicativo está degradado. O gráfico a seguir mostra as leituras para os usuários que trabalham remotamente no Microsoft Word. Nesse caso, o desempenho do servidor RDSH degrada ao longo do tempo conforme os usuários mais fazer logon.
 
-![Área de trabalho remota - um exemplo de grafo de desempenho para o servidor RDSH executando o Microsoft Word](.\media\rds-user-input-perf-graph.png)
+![Área de trabalho remota - um exemplo de grafo de desempenho para o servidor RDSH executando o Microsoft Word](./media/rds-user-input-perf-graph.png)
 
 Aqui está como ler linhas do gráfico:
 
@@ -104,7 +104,7 @@ Você observará que há uma correlação entre picos de CPU e o atraso de entra
 
 Uma coisa importante a lembrar ao usar esse contador de desempenho é que ele relata o atraso de entrada do usuário em um intervalo de 1.000 ms por padrão. Se você definir a propriedade de intervalo de amostra de contador de desempenho (como mostrado na seguinte captura de tela) como algo diferente, o valor relatado será incorreto.
 
-![Área de trabalho remota - as propriedades para o monitor de desempenho](.\media\rds-user-input-perfmon-properties.png)
+![Área de trabalho remota - as propriedades para o monitor de desempenho](./media/rds-user-input-perfmon-properties.png)
 
 Para corrigir isso, você pode definir a seguinte chave do registro para coincidir com o intervalo (em milissegundos) que você deseja usar. Por exemplo, se alterarmos exemplo cada x segundos para 5 segundos, precisamos definir essa chave para 5.000 ms.
 
@@ -125,7 +125,7 @@ Também adicionamos algumas chaves que podem ser úteis na mesma chave do regist
 
 Este é o que se parece se você ativar as duas chaves:
 
-![Área de trabalho remota – o monitor de desempenho com ambas as chaves no](.\media\rds-user-input-delay-with-two-counters.png)
+![Área de trabalho remota – o monitor de desempenho com ambas as chaves no](./media/rds-user-input-delay-with-two-counters.png)
 
 ## <a name="using-the-new-counters-with-non-microsoft-tools"></a>Usando os novos contadores com ferramentas de não-Microsoft
 

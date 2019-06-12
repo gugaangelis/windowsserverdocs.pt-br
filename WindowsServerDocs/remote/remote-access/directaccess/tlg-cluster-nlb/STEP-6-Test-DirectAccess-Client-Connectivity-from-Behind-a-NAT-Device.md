@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: aded2881-99ed-4f18-868b-b765ab926597
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a48bb9b012a81e91fbbe0ad914637dacac5a8a5f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d61bf2ec9abb6d54617f624f26680263d761e5b6
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882997"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446083"
 ---
 # <a name="step-6-test-directaccess-client-connectivity-from-behind-a-nat-device"></a>ETAPA 6 de testar a conectividade do cliente DirectAccess por trás de um dispositivo NAT
 
@@ -47,48 +47,48 @@ Inicie EDGE1 e EDGE2 se já não estiverem em execução.
   
 ## <a name="test-teredo-connectivity"></a>Testar conectividade Teredo  
   
-1.  Em CLIENT1, abra uma janela elevada do Windows PowerShell, digite **ipconfig/all** e pressione ENTER.  
+1. Em CLIENT1, abra uma janela elevada do Windows PowerShell, digite **ipconfig/all** e pressione ENTER.  
   
-2.  Examine o resultado do comando ipconfig.  
+2. Examine o resultado do comando ipconfig.  
   
-    O CLIENT1 estará então conectado à Internet por trás de um dispositivo NAT e um endereço IPv4 privado será atribuído a ele. Quando o cliente do DirectAccess estiver atrás de um dispositivo NAT e receber um endereço IPv4 privado, a tecnologia de transição IPv6 preferida será Teredo. Se você examinar a saída do comando ipconfig, você deverá ver uma seção para o adaptador de túnel Teredo Pseudo-interface de túnel e, em seguida, uma descrição de Microsoft Teredo Tunneling Adapter, com um endereço IP que começa com 2001: consistente com o que está sendo um Teredo endereço. Se você não vir a seção Teredo, ative o Teredo com o seguinte comando: **netsh interface Teredo definir estado enterpriseclient** e, em seguida, execute novamente o comando ipconfig. Você não verá um gateway padrão listado para o adaptador de túnel Teredo.  
+   O CLIENT1 estará então conectado à Internet por trás de um dispositivo NAT e um endereço IPv4 privado será atribuído a ele. Quando o cliente do DirectAccess estiver atrás de um dispositivo NAT e receber um endereço IPv4 privado, a tecnologia de transição IPv6 preferida será Teredo. Se você examinar a saída do comando ipconfig, você deverá ver uma seção para o adaptador de túnel Teredo Pseudo-interface de túnel e, em seguida, uma descrição de Microsoft Teredo Tunneling Adapter, com um endereço IP que começa com 2001: consistente com o que está sendo um Teredo endereço. Se você não vir a seção Teredo, ative o Teredo com o seguinte comando: **netsh interface Teredo definir estado enterpriseclient** e, em seguida, execute novamente o comando ipconfig. Você não verá um gateway padrão listado para o adaptador de túnel Teredo.  
   
-3.  Na janela do Windows PowerShell, digite **ipconfig /flushdns** e pressione ENTER.  
+3. Na janela do Windows PowerShell, digite **ipconfig /flushdns** e pressione ENTER.  
   
-    Isso liberará as entradas de resolução de nome no cache do DNS do cliente que ainda poderiam existir de quando o computador estava conectado à Internet.  
+   Isso liberará as entradas de resolução de nome no cache do DNS do cliente que ainda poderiam existir de quando o computador estava conectado à Internet.  
   
-4.  Na janela do Windows PowerShell, digite **Get-DnsClientNrptPolicy** e pressione ENTER.  
+4. Na janela do Windows PowerShell, digite **Get-DnsClientNrptPolicy** e pressione ENTER.  
   
-    O resultado mostra as configurações atuais da NRPT (Tabela de Políticas de Resolução de Nomes). Essas configurações indicam que todas as conexões com .corp.contoso.com devem ser resolvidas pelo servidor DNS de Acesso Remoto com o endereço IPv6 2001:db8:1::2. Observe também a entrada de NRPT indicando uma exceção para o nome nls.corp.contoso.com. Nomes na lista de exceção não são respondidos pelo servidor DNS de Acesso Remoto. Você pode executar o ping do endereço IP do servidor DNS de acesso remoto para confirmar a conectividade com o servidor de acesso remoto; Por exemplo, você pode executar o ping 2001:db8:1::2 neste exemplo.  
+   O resultado mostra as configurações atuais da NRPT (Tabela de Políticas de Resolução de Nomes). Essas configurações indicam que todas as conexões com .corp.contoso.com devem ser resolvidas pelo servidor DNS de Acesso Remoto com o endereço IPv6 2001:db8:1::2. Observe também a entrada de NRPT indicando uma exceção para o nome nls.corp.contoso.com. Nomes na lista de exceção não são respondidos pelo servidor DNS de Acesso Remoto. Você pode executar o ping do endereço IP do servidor DNS de acesso remoto para confirmar a conectividade com o servidor de acesso remoto; Por exemplo, você pode executar o ping 2001:db8:1::2 neste exemplo.  
   
-5.  Na janela do Windows PowerShell, digite **ping app1** e pressione ENTER. Você deverá ver as respostas do endereço IPv6 do APP1, 2001:db8:1::3.  
+5. Na janela do Windows PowerShell, digite **ping app1** e pressione ENTER. Você deverá ver as respostas do endereço IPv6 do APP1, 2001:db8:1::3.  
   
-6.  Na janela do Windows PowerShell, digite **ping app2** e pressione ENTER. Você deverá ver as respostas do endereço assinado NAT64 pelo EDGE1 para APP2, que neste caso é fdc9:9f4e:eb1b:7777::a00:4.  
+6. Na janela do Windows PowerShell, digite **ping app2** e pressione ENTER. Você deverá ver as respostas do endereço assinado NAT64 pelo EDGE1 para APP2, que neste caso é fdc9:9f4e:eb1b:7777::a00:4.  
   
-7.  Deixe a janela do Windows PowerShell aberta para o próximo procedimento.  
+7. Deixe a janela do Windows PowerShell aberta para o próximo procedimento.  
   
-8.  Abra o Internet Explorer, na barra de endereços do Internet Explorer, digite **https://app1/** e pressione ENTER. Você verá o site de IIS padrão no APP1.  
+8. Abra o Internet Explorer, na barra de endereços do Internet Explorer, digite **https://app1/** e pressione ENTER. Você verá o site de IIS padrão no APP1.  
   
 9. Na barra de endereços do Internet Explorer, digite **https://app2/** e pressione ENTER. Você verá o site padrão no APP2.  
   
-10. Sobre o **inicie** tela, digite**\\\App2\Files**, e pressione ENTER. Clique duas vezes no arquivo Novo Documento de Texto. Isso demonstra que você conseguiu se conectar a um servidor somente IPv4 usando SMB para obter um recurso em um host somente IPv4.  
+10. Sobre o **inicie** tela, digite<strong>\\\App2\Files</strong>, e pressione ENTER. Clique duas vezes no arquivo Novo Documento de Texto. Isso demonstra que você conseguiu se conectar a um servidor somente IPv4 usando SMB para obter um recurso em um host somente IPv4.  
   
 ## <a name="test-ip-https-connectivity"></a>Testar conectividade IP-HTTPS  
   
-1.  Abra uma janela elevada do Windows PowerShell, digite **teredo do netsh interface definir estado desabilitado** e pressione ENTER. Isso desativa o Teredo no computador cliente e permite que o computador cliente configure a si mesmo para usar IP-HTTPS. Uma resposta **Ok** aparecerá quando o comando for concluído.  
+1. Abra uma janela elevada do Windows PowerShell, digite **teredo do netsh interface definir estado desabilitado** e pressione ENTER. Isso desativa o Teredo no computador cliente e permite que o computador cliente configure a si mesmo para usar IP-HTTPS. Uma resposta **Ok** aparecerá quando o comando for concluído.  
   
-2.  Na janela do Windows PowerShell, digite **ipconfig/all** e pressione ENTER.  
+2. Na janela do Windows PowerShell, digite **ipconfig/all** e pressione ENTER.  
   
-3.  Examine o resultado do comando ipconfig. Este computador estará então conectado à Internet por trás de um dispositivo NAT e um endereço IPv4 privado será atribuído a ele. O Teredo foi desabilitado e o cliente do DirectAccess retornará para o IP-HTTPS. Quando você examinar a saída do comando ipconfig, você verá uma seção para o adaptador de túnel iphttpsinterface com um endereço IP que é iniciado por 2001:db8:1:100 com isso que está sendo um endereço de IP-HTTPS com base no prefixo que foi configurado durante a configuração compatível com DirectAccess. Você não verá um gateway padrão listado para o adaptador de túnel IP-HTTPS.  
+3. Examine o resultado do comando ipconfig. Este computador estará então conectado à Internet por trás de um dispositivo NAT e um endereço IPv4 privado será atribuído a ele. O Teredo foi desabilitado e o cliente do DirectAccess retornará para o IP-HTTPS. Quando você examinar a saída do comando ipconfig, você verá uma seção para o adaptador de túnel iphttpsinterface com um endereço IP que é iniciado por 2001:db8:1:100 com isso que está sendo um endereço de IP-HTTPS com base no prefixo que foi configurado durante a configuração compatível com DirectAccess. Você não verá um gateway padrão listado para o adaptador de túnel IP-HTTPS.  
   
-4.  Na janela do Windows PowerShell, digite **ipconfig /flushdns** e pressione ENTER. Isso liberará as entradas de resolução de nome no cache do DNS do cliente que ainda poderiam existir de quando o computador estava conectado à rede corporativa.  
+4. Na janela do Windows PowerShell, digite **ipconfig /flushdns** e pressione ENTER. Isso liberará as entradas de resolução de nome no cache do DNS do cliente que ainda poderiam existir de quando o computador estava conectado à rede corporativa.  
   
-5.  Na janela do Windows PowerShell, digite **ping app1** e pressione ENTER. Você deverá ver as respostas do endereço IPv6 do APP1, 2001:db8:1::3.  
+5. Na janela do Windows PowerShell, digite **ping app1** e pressione ENTER. Você deverá ver as respostas do endereço IPv6 do APP1, 2001:db8:1::3.  
   
-6.  Na janela do Windows PowerShell, digite **ping app2** e pressione ENTER. Você deverá ver as respostas do endereço assinado NAT64 pelo EDGE1 para APP2, que neste caso é fdc9:9f4e:eb1b:7777::a00:4.  
+6. Na janela do Windows PowerShell, digite **ping app2** e pressione ENTER. Você deverá ver as respostas do endereço assinado NAT64 pelo EDGE1 para APP2, que neste caso é fdc9:9f4e:eb1b:7777::a00:4.  
   
-7.  Abra o Internet Explorer, na barra de endereços do Internet Explorer, digite **https://app1/** e pressione ENTER. Você verá o site de IIS padrão no APP1.  
+7. Abra o Internet Explorer, na barra de endereços do Internet Explorer, digite **https://app1/** e pressione ENTER. Você verá o site de IIS padrão no APP1.  
   
-8.  Na barra de endereços do Internet Explorer, digite **https://app2/** e pressione ENTER. Você verá o site padrão no APP2.  
+8. Na barra de endereços do Internet Explorer, digite **https://app2/** e pressione ENTER. Você verá o site padrão no APP2.  
   
-9. Sobre o **inicie** tela, digite**\\\App2\Files**, e pressione ENTER. Clique duas vezes no arquivo Novo Documento de Texto. Isso demonstra que você conseguiu se conectar a um servidor somente IPv4 usando SMB para obter um recurso em um host somente IPv4.
+9. Sobre o **inicie** tela, digite<strong>\\\App2\Files</strong>, e pressione ENTER. Clique duas vezes no arquivo Novo Documento de Texto. Isso demonstra que você conseguiu se conectar a um servidor somente IPv4 usando SMB para obter um recurso em um host somente IPv4.

@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: b3cd60f7-d380-4712-9a78-0a8f551e1121
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 0a9ef4c61794aec6c46cdad2c7111a03430972a1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ef764356c5f74eb0aff15753e7f83a020c68c091
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850537"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446533"
 ---
 # <a name="core-network-components"></a>Principais componentes de rede
 
@@ -488,7 +488,7 @@ Você pode usar os procedimentos neste tópico para configurar o protocolo IP ve
 
 4.  Na caixa de diálogo **Propriedades** da conexão de rede, em **Esta conexão utiliza os seguintes itens**, selecione **Protocolo TCP/IPv4 (TCP/IP Versão 4)** e clique em **Propriedades**. A caixa de diálogo **Propriedades do Protocolo TCP/IPv4 (TCP/IP Versão 4)** será aberta.
 
-5.  Em **Propriedades do Protocolo TCP/IPv4 (TCP/IP Versão 4)**, na guia **Geral**, clique em **Usar o seguinte endereço IP**. Em **Endereço IP**, digite o endereço IP que deseja usar.
+5.  Em **Propriedades do Protocolo TCP/IPv4 (TCP/IP Versão 4)** , na guia **Geral**, clique em **Usar o seguinte endereço IP**. Em **Endereço IP**, digite o endereço IP que deseja usar.
 
 6.  Pressione Tab para colocar o cursor em **Máscara de sub-rede**. Um valor padrão para máscara de sub-rede será inserido automaticamente. Aceite a máscara de sub-rede padrão ou digite a máscara de sub-rede que deseja usar.
 
@@ -561,11 +561,11 @@ O mínimo necessário para executar este procedimento é ser membro do grupo **A
 
 Quando a instalação for concluída com êxito, a seguinte mensagem é exibida no Windows PowerShell.
 
-    
+
     Success Restart Needed  Exit Code   Feature Result
     ------- --------------  ---------   --------------
     True    No              Success     {Active Directory Domain Services, Group P...
-    
+
 
 - No Windows PowerShell, digite o seguinte comando, substituindo o texto **corp.contoso.com** com seu nome de domínio e pressione ENTER:
 
@@ -583,11 +583,13 @@ Install-ADDSForest -DomainName "corp.contoso.com"
 
 - Quando o prompt a seguir for exibida, digite a letra **Y** e, em seguida, pressione ENTER.
 
-    
-    O servidor de destino será configurado como um controlador de domínio e reiniciado quando essa operação for concluída.
-    Você deseja continuar com esta operação?
-    [Y] Sim [A] Sim para todos os [N] não [L] não para todos os [S] suspender [?] Ajuda (o padrão é "Y"):
-    
+
+~~~
+The target server will be configured as a domain controller and restarted when this operation is complete.
+Do you want to continue with this operation?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
+~~~
+
 - Se você quiser, você pode ler as mensagens de aviso são exibidas durante a instalação normal e bem-sucedida do AD DS e DNS. Essas mensagens são normais e não são uma indicação de falha de instalação.
 
 - Após a instalação for bem-sucedida, será exibida uma mensagem informando que você está prestes a ser desconectado do computador para que o computador pode ser reiniciado. Se você clicar **fechar**, imediatamente, você efetuou logoff no computador e o computador for reiniciado. Se você não clicar **fechar**, o computador é reiniciado após um período padrão.
@@ -902,7 +904,7 @@ A associação em **Administradores DHCP**, ou equivalente, é o requisito míni
 
 11. Em **Configurar opções DHCP**, selecione **Sim, desejo configurar essas opções agora** e clique em **Avançar**.
 
-12. Na seção **Roteador (Gateway Padrão)**, siga um destes procedimentos:
+12. Na seção **Roteador (Gateway Padrão)** , siga um destes procedimentos:
 
     -   Se você não tiver roteadores na rede, clique em **Avançar**.
 
@@ -940,7 +942,7 @@ A associação em **Administradores DHCP**, ou equivalente, é o requisito míni
 
 1.  Faça logon no computador com a conta de Administrador local.
 
-2.  Na **pesquisar a web e o Windows**, digite **sistema**. Nos resultados da pesquisa, clique em **sistema (painel de controle)**. Será exibida a caixa de diálogo **Sistema**.
+2.  Na **pesquisar a web e o Windows**, digite **sistema**. Nos resultados da pesquisa, clique em **sistema (painel de controle)** . Será exibida a caixa de diálogo **Sistema**.
 
 3.  Na **System**, clique em **configurações avançadas do sistema**. A caixa de diálogo **Propriedades do Sistema** será aberta. Clique o **nome do computador** guia.
 
@@ -1147,7 +1149,7 @@ Para concluir este procedimento, é preciso ser um membro do grupo **Administrad
 
 4.  Sobre o **Selecionar servidor de destino** página, certifique-se de que o computador local está selecionado e, em seguida, clique em **próxima**.
 
-5.  Sobre o **selecionar funções de servidor** página, role até e selecione **servidor Web (IIS)**. O **adicionar recursos que são necessários para o servidor Web (IIS)** caixa de diálogo é aberta. Clique em **Adicionar Recursos** e depois em **Avançar**.
+5.  Sobre o **selecionar funções de servidor** página, role até e selecione **servidor Web (IIS)** . O **adicionar recursos que são necessários para o servidor Web (IIS)** caixa de diálogo é aberta. Clique em **Adicionar Recursos** e depois em **Avançar**.
 
 6.  Clique em **Avançar** até ter aceitado todas as configurações padrão do servidor Web e clique em **Instalar**.
 
@@ -1252,7 +1254,7 @@ A associação em **Administradores**, ou equivalente, é o requisito mínimo pa
 
 5.  Em **Propriedades da Conexão Local**, em **Esta conexão utiliza os seguintes itens**, selecione **Protocolo TCP/IPv4 (TCP/IP Versão 4)** e clique em **Propriedades**. A caixa de diálogo **Propriedades do Protocolo TCP/IPv4 (TCP/IP Versão 4)** será aberta.
 
-6.  Em **Propriedades do Protocolo TCP/IPv4 (TCP/IP Versão 4)**, na guia **Geral**, clique em **Usar o seguinte endereço IP**. Em **Endereço IP**, digite o endereço IP que deseja usar.
+6.  Em **Propriedades do Protocolo TCP/IPv4 (TCP/IP Versão 4)** , na guia **Geral**, clique em **Usar o seguinte endereço IP**. Em **Endereço IP**, digite o endereço IP que deseja usar.
 
 7.  Pressione Tab para colocar o cursor em **Máscara de sub-rede**. Um valor padrão para máscara de sub-rede será inserido automaticamente. Aceite a máscara de sub-rede padrão ou digite a máscara de sub-rede que deseja usar.
 
@@ -1279,7 +1281,7 @@ A associação a **Administradores** ou equivalente é o requisito mínimo para 
 
 5.  Em **Propriedades da Conexão Local**, em **Esta conexão utiliza os seguintes itens**, selecione **Protocolo TCP/IPv4 (TCP/IP Versão 4)** e clique em **Propriedades**. A caixa de diálogo **Propriedades do Protocolo TCP/IPv4 (TCP/IP Versão 4)** será aberta.
 
-6.  Em **Propriedades do Protocolo TCP/IPv4 (TCP/IP Versão 4)**, na guia **Geral**, clique em **Usar o seguinte endereço IP**. Em **Endereço IP**, digite o endereço IP que deseja usar.
+6.  Em **Propriedades do Protocolo TCP/IPv4 (TCP/IP Versão 4)** , na guia **Geral**, clique em **Usar o seguinte endereço IP**. Em **Endereço IP**, digite o endereço IP que deseja usar.
 
 7.  Pressione Tab para colocar o cursor em **Máscara de sub-rede**. Um valor padrão para máscara de sub-rede será inserido automaticamente. Aceite a máscara de sub-rede padrão ou digite a máscara de sub-rede que deseja usar.
 

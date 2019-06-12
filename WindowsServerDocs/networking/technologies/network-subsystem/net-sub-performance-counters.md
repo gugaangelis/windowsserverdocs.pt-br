@@ -8,12 +8,12 @@ ms.assetid: 7ebaa271-2557-4c24-a679-c3d863e6bf9e
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e5e8abbc19482bcd0dd5670065cde59d5be3169a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bcb0c1c5a08a306fbd9b419d0c458c3bc54e1786
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824347"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446199"
 ---
 # <a name="network-related-performance-counters"></a>Contadores de desempenho relacionados à rede
 
@@ -31,43 +31,43 @@ Este tópico lista os contadores que são relevantes para o gerenciamento de des
 
 Os contadores de desempenho a seguir são relevantes para a utilização de recursos de rede.  
   
--   IPv4, IPv6  
+- IPv4, IPv6  
   
-    -   Datagramas recebidos/s  
+  -   Datagramas recebidos/s  
   
-    -   Datagramas enviados/s  
+  -   Datagramas enviados/s  
   
--   TCPv4, TCPv6  
+- TCPv4, TCPv6  
   
-    -   Segmentos recebidos/s  
+  -   Segmentos recebidos/s  
   
-    -   Segmentos enviados/s  
+  -   Segmentos enviados/s  
   
-    -   Segmentos retransmitidos/s  
+  -   Segmentos retransmitidos/s  
   
--   Interface(*) de rede, adaptador de rede (\*)  
+- Interface(*) de rede, adaptador de rede (\*)  
   
-    -   Bytes recebidos/s  
+  - Bytes recebidos/s  
   
-    -   Bytes enviados/s  
+  - Bytes enviados/s  
   
-    -   Pacotes recebidos/s  
+  - Pacotes recebidos/s  
   
-    -   Pacotes enviados/s  
+  - Pacotes enviados/s  
   
-    -   Comprimento da fila de saída  
+  - Comprimento da fila de saída  
   
-     Esse contador é o comprimento da fila de pacotes de saída \(em pacotes\). Se isso for maior que 2, ocorrer atrasos. Você deve encontrar o afunilamento e eliminá-lo, se possível. Porque o NDIS enfileira as solicitações, esse comprimento deve ser sempre 0.  
+    Esse contador é o comprimento da fila de pacotes de saída \(em pacotes\). Se isso for maior que 2, ocorrer atrasos. Você deve encontrar o afunilamento e eliminá-lo, se possível. Porque o NDIS enfileira as solicitações, esse comprimento deve ser sempre 0.  
   
--   Informações do processador  
+- Informações do processador  
   
-    -   % Tempo do processador  
+  - % Tempo do processador  
   
-    -   Interrupções/s  
+  - Interrupções/s  
   
-    -   DPCs enfileiradas/s  
+  - DPCs enfileiradas/s  
   
-     Esse contador é uma taxa média no qual as DPCs foram adicionadas à fila de DPCS do processador lógico. Cada processador lógico tem sua própria fila DPC. Esse contador mede a taxa na qual as DPCs são adicionadas à fila, não o número de DPCs na fila. Ele exibe a diferença entre os valores que foram observados nas últimas duas amostras, divididas pela duração do intervalo de amostragem.  
+    Esse contador é uma taxa média no qual as DPCs foram adicionadas à fila de DPCS do processador lógico. Cada processador lógico tem sua própria fila DPC. Esse contador mede a taxa na qual as DPCs são adicionadas à fila, não o número de DPCs na fila. Ele exibe a diferença entre os valores que foram observados nas últimas duas amostras, divididas pela duração do intervalo de amostragem.  
   
 ##  <a name="bkmk_np"></a> Possíveis problemas de rede  
 

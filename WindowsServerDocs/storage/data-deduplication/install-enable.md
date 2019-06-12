@@ -9,12 +9,12 @@ manager: klaasl
 ms.author: wgries
 ms.date: 05/09/2017
 description: Como instalar a eliminação de duplicação de dados no Windows Server, determinar se uma carga de trabalho é forte candidata à eliminação de duplicação e habilitar a eliminação de duplicação em volumes.
-ms.openlocfilehash: 153b064b158028c696bad4eeb00764d3e10822e1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e9ea3a144ae68ba9a51cdad66d493a7b962d3838
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814897"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447274"
 ---
 # <a name="install-and-enable-data-deduplication"></a>Instalar e habilitar a Eliminação de Duplicação de Dados
 > Aplicável a: Windows Server (canal semestral), Windows Server 2016
@@ -46,7 +46,7 @@ Para instalar a Eliminação de Duplicação de Dados em uma instalação do Nan
     Install-WindowsFeature -ComputerName <MyNanoServer> -Name FS-Data-Deduplication
     ```  
     <br />
-    **-- OR --**
+    <strong>-- OR --</strong>
     <br />
     Conecte-se remotamente à instância do Nano Server com o PowerShell remoto e instale a Eliminação de Duplicação de Dados usando o DISM:  
     

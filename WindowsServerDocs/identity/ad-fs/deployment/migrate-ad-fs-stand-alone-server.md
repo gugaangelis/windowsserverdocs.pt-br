@@ -8,12 +8,12 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 10371349fe19be92fb997c9c28f19def0ecad7e9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5526afa758a142e30b9a238b4c7204cacebb1812
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851927"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444549"
 ---
 # <a name="migrate-a-stand-alone-ad-fs-federation-server-or-a-single-node-ad-fs-farm"></a>Migrar um servidor de federação AD FS autônomo ou um farm de AD FS de nó único  
 Este documento fornece informações detalhadas sobre como migrar um servidor autônomo do AD FS 2.0 autônomo para o Windows Server 2012.
@@ -29,7 +29,7 @@ Use o procedimento a seguir para migrar o AD FS 2.0 server para Windows Server 2
 > [!IMPORTANT]
 >  Como resultado da atualização do sistema operacional, a configuração do AD FS neste servidor é perdida e a função do servidor do AD FS 2.0 é removida. A função de servidor AD FS do Windows Server 2012 está instalada em vez disso, mas ele não está configurado. Você deverá criar manualmente a configuração original do AD FS e restaurar as definições restantes do AD FS para concluir a migração do servidor de federação.  
   
-3.  Criar a configuração original do AD FS. Você pode criar a configuração original do AD FS usando um dos métodos a seguir:  
+3. Criar a configuração original do AD FS. Você pode criar a configuração original do AD FS usando um dos métodos a seguir:  
   
 -   Use o **Assistente de configuração de servidor de federação do AD FS** para criar um novo servidor de federação. Para saber mais informações, confira [Criar o primeiro servidor de federação em um farm de servidores de federação](Create-the-First-Federation-Server-in-a-Federation-Server-Farm.md).  
   
@@ -52,20 +52,20 @@ Ao avançar no assistente, use as informações coletadas durante a preparação
   
 Veja a seguir um exemplo de como usar o Windows PowerShell para criar a configuração original do AD FS em um servidor de federação no farm de nó único do SQL Server.  Abra o módulo do Windows PowerShell e execute o seguinte comando: `$fscredential = Get-Credential`. Digite o nome e a senha da conta de serviço definida ao preparar a migração do farm do SQL Server. Em seguida, execute o seguinte comando: `C:\PS> Add-AdfsFarmNode -ServiceAccountCredential $fscredential -SQLConnectionString "Data Source=<Data Source>;Integrated Security=True"` onde `Data Source` é o valor da fonte de dados no valor da cadeia de conexão do repositório de políticas no seguinte arquivo: `%programfiles%\Active Directory Federation Services 2.0\Microsoft.IdentityServer.Servicehost.exe.config`.  
   
-4.  Restaurar as configurações de serviço e relações de confiança restantes do AD FS. Esta é uma etapa manual na qual você poderá usar os arquivos exportados e os valores coletados durante a preparação da migração do AD FS. Para ver instruções detalhadas, confira Restaurar a configuração restante do farm do AD FS.  
+4. Restaurar as configurações de serviço e relações de confiança restantes do AD FS. Esta é uma etapa manual na qual você poderá usar os arquivos exportados e os valores coletados durante a preparação da migração do AD FS. Para ver instruções detalhadas, confira Restaurar a configuração restante do farm do AD FS.  
   
 > [!NOTE]
 >  Esta etapa somente será pedida se você estiver migrando um servidor de federação autônomo ou um farm de WID de nó único.  Se o servidor de federação usar um banco de dados do SQL Server como armazenamento da configuração, as configurações do serviço e relações de confiança serão preservadas no banco de dados.  
   
-5.  Atualizar suas páginas da web do AD FS. Esta é uma etapa manual. Se você fez backup suas páginas personalizadas do AD FS durante a preparação para a migração, use seus dados de backup para substituir a páginas da Web do AD FS que foram criadas por padrão no padrão de **%systemdrive%\inetpub\adfs\ls** diretório como resultado de configuração do AD FS no Windows Server 2012.  
+5. Atualizar suas páginas da web do AD FS. Esta é uma etapa manual. Se você fez backup suas páginas personalizadas do AD FS durante a preparação para a migração, use seus dados de backup para substituir a páginas da Web do AD FS que foram criadas por padrão no padrão de **%systemdrive%\inetpub\adfs\ls** diretório como resultado de configuração do AD FS no Windows Server 2012.  
   
-6.  Restaure as personalizações restantes do AD FS, tais como armazenamento de atributos personalizados.  
+6. Restaure as personalizações restantes do AD FS, tais como armazenamento de atributos personalizados.  
   
 ## <a name="restoring-the-remaining-ad-fs-farm-configuration"></a>Restaurando as configurações restantes do farm do AD FS  
   
 -   Restaure as configurações a seguir do serviço do AD FS para um farm de WID com nó único ou serviço de federação autônomo da seguinte maneira:  
   
-    -   No console de gerenciamento do AD FS, escolha **Serviço** e clique em **Editar serviço de federação…**. Verifique as configurações do serviço de federação comparando cada um com os valores que você exportou para o arquivo properties.txt durante a preparação para a migração:  
+    -   No console de gerenciamento do AD FS, escolha **Serviço** e clique em **Editar serviço de federação…** . Verifique as configurações do serviço de federação comparando cada um com os valores que você exportou para o arquivo properties.txt durante a preparação para a migração:  
   
     
 |**Nome de propriedade do serviço de federação, conforme relatado por Get-ADFSProperties**|**Nome de propriedade do serviço de federação no console de gerenciamento do AD FS**|  
@@ -91,7 +91,7 @@ Para alterar os certificados de descriptografia de token e de autenticação de 
  [Preparar para migrar o Proxy do AD FS 2.0 Federation Server](prepare-to-migrate-ad-fs-fed-proxy.md)   
  [Migrar o servidor do AD FS 2.0 Federation](migrate-the-ad-fs-fed-server.md)   
  [Migrar o Proxy do AD FS 2.0 Federation Server](migrate-the-ad-fs-2-fed-server-proxy.md)   
- [Migrar os AD FS agentes Web 1.1](migrate-the-ad-fs-web-agent.md)
+ [Migrar os Agentes Web do AD FS 1.1](migrate-the-ad-fs-web-agent.md)
 
 
 

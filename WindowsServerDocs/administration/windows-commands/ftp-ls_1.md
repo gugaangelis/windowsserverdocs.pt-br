@@ -13,19 +13,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c45e26f6578510837f190ae20e3140e619dc59cb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6abf8466f90ac29846f2e1ee7d305e7e4280231e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841757"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438637"
 ---
 # <a name="ftp-ls1"></a>ftp: ls_1
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
-
-
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> 
+> 
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Exibe uma lista abreviada de arquivos e subdiretórios do computador remoto.   
 ## <a name="syntax"></a>Sintaxe  
@@ -33,10 +33,12 @@ Exibe uma lista abreviada de arquivos e subdiretórios do computador remoto.
 ls [<remotedirectory>] [<LocalFile>]  
 ```  
 ### <a name="parameters"></a>Parâmetros  
-|Parâmetro|Descrição|  
-|-------|--------|  
-|[<remotedirectory>]|Especifica o diretório para o qual você deseja ver uma listagem. Se nenhum diretório for especificado, o diretório de trabalho atual no computador remoto é usado.|  
-|[<LocalFile>]|Especifica um arquivo local no qual armazenar a listagem. Se um arquivo local não for especificado, os resultados são exibidos na tela.|  
+
+|      Parâmetro      |                                                                       Descrição                                                                        |
+|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [<remotedirectory>] | Especifica o diretório para o qual você deseja ver uma listagem. Se nenhum diretório for especificado, o diretório de trabalho atual no computador remoto é usado. |
+|    [<LocalFile>]    |               Especifica um arquivo local no qual armazenar a listagem. Se um arquivo local não for especificado, os resultados são exibidos na tela.               |
+
 ## <a name="BKMK_Examples"></a>Exemplos  
 Exiba uma lista abreviada de arquivos e subdiretórios do computador remoto.  
 ```  
@@ -47,4 +49,4 @@ Obter uma listagem de diretório abreviada de **dir1** no computador remoto e sa
 ls dir1 dirlist.txt   
 ```  
 ## <a name="additional-references"></a>Referências adicionais  
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  

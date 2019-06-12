@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 245f8fb2e6419d22da3e2e76eebd9f801ab90664
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 45545b4e12d31c293ead5b18b83efd50d7bc37bb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821477"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439654"
 ---
 # <a name="dfsutil"></a>dfsutil
 
@@ -53,13 +53,13 @@ command </parameter> </param2>
 Se você especificar um objeto \(como um servidor de namespace\) no final de um comando, a maioria dos comandos serão exibidas informações sobre o objeto sem a necessidade de mais comandos ou parâmetros. Por exemplo, ao usar o comando raiz dfsutil, você pode acrescentar uma raiz do namespace para o comando para exibir informações sobre a raiz.
 
 ## <a name="BKMK_Examples"></a>Exemplos
-<Here is where you put a detailed description of your example.>
+&lt;Aqui é onde você coloca uma descrição detalhada do seu exemplo.&gt;
 
 ```
 This /is /the /example /of /calling /command /with /parameters
 ```
 
-<Here is where you put a detailed description of another example.>
+&lt;Aqui é onde você coloca uma descrição detalhada do outro exemplo.&gt;
 
 ```
 This /is /a:different /example
@@ -67,6 +67,6 @@ This /is /a:different /example
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
 

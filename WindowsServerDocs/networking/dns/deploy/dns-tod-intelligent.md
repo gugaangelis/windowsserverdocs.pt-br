@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 161446ff-a072-4cc4-b339-00a04857ff3a
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 33fd9447a79346127714a5e5e73977611eba483c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c36475dacb8664352f4ab270878357118d281c60
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829467"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446425"
 ---
 # <a name="use-dns-policy-for-intelligent-dns-responses-based-on-the-time-of-day"></a>Usar a política de DNS para respostas de DNS inteligente com base na hora do dia
 
@@ -107,7 +107,7 @@ Para obter mais informações, consulte [DnsServerZoneScope adicionar](https://d
 #### <a name="bkmk_records"></a>Adicionar registros para os escopos de zona  
 Agora você deve adicionar os registros que representa o host do servidor web para os escopos de zona de dois.  
   
-Por exemplo, na **SeattleZoneScope**, o registro **www.contosogiftservices.com** é adicionado com o endereço IP 192.0.0.1, que está localizado em um datacenter de Seattle. Da mesma forma, na **DublinZoneScope**, o registro **www.contosogiftservices.com** é adicionado com o endereço IP 141.1.0.3 no datacenter Dublin  
+Por exemplo, na **SeattleZoneScope**, o registro <strong>www.contosogiftservices.com</strong> é adicionado com o endereço IP 192.0.0.1, que está localizado em um datacenter de Seattle. Da mesma forma, na **DublinZoneScope**, o registro <strong>www.contosogiftservices.com</strong> é adicionado com o endereço IP 141.1.0.3 no datacenter Dublin  
   
 Você pode usar os seguintes comandos do Windows PowerShell para adicionar registros para os escopos de zona.  
   

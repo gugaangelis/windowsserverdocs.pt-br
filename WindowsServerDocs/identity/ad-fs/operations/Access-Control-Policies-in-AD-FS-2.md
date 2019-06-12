@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 216af933aee643ee56feff71c59d9ecc2e62998c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 036d6d0543687e7f82caf3dfd2c3bb0b4a981181
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842987"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445055"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>Políticas de controle de acesso de cliente no AD FS 2.0
 Uma política de acesso de cliente no Active Directory Federation Services 2.0 permitem restringir ou conceder aos usuários acesso aos recursos.  Este documento descreve como habilitar políticas de acesso do cliente no AD FS 2.0 e como configurar os cenários mais comuns.
@@ -52,11 +52,13 @@ Sobre a confiança do provedor de declarações do Active Directory, crie uma no
     `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`
 
 
-    `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`
+~~~
+`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`
 
-    `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`
+`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`
 
-    `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`
+`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`
+~~~
 
 ### <a name="step-3-update-the-microsoft-office-365-identity-platform-relying-party-trust"></a>Etapa 3: Atualizar a plataforma de identidade do Microsoft Office 365 de confiança de terceira parte confiável
 
@@ -160,16 +162,16 @@ O exemplo a seguir habilita o acesso de clientes internos com base no endereço 
 
 ### <a name="descriptions-of-the-claim-rule-language-syntax-used-in-the-above-scenarios"></a>Descrições de sintaxe de linguagem de regra de declaração usada nos cenários acima
 
-|Descrição|Sintaxe de linguagem de regra de declaração|
-|-----|-----| 
-|Padrão do AD FS regra permitir o acesso a todos os usuários. Essa regra já deve existir na plataforma de identidade do Microsoft Office 365 lista de regras de autorização de emissão de confiança de terceira parte confiável.|=> issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");| 
-|Adicionar esta cláusula para uma regra nova e personalizada Especifica que a solicitação é proveniente de proxy do servidor de Federação (ou seja, ele tem o cabeçalho x-ms-proxy)
-É recomendável que todas as regras de incluem isso.|exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"])| 
-|Usado para estabelecer que a solicitação é de um cliente com um IP no intervalo aceitável definido.|NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value=~"customer-provided public ip address regex"])| 
-|Essa cláusula é usada para especificar se o aplicativo que está sendo acessado não for Microsoft.Exchange.ActiveSync a solicitação deve ser negada.|NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application", Value=="Microsoft.Exchange.ActiveSync"])| 
-|Essa regra permite que você determine se a chamada for feita através de um navegador da Web e não será negada.|NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value == "/adfs/ls/"])| 
-|Esta regra indica que os únicos usuários em um grupo específico do Active Directory (com base no valor de SID) devem ser negados. Adicionando para essa instrução não significa que um grupo de usuários será permitido, independentemente do local.|exists([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value =~ "{Group SID value of allowed AD group}"])| 
-|Isso é uma cláusula necessária para emitir um deny quando todas as condições anteriores forem atendidas.|=> issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");|
+|                                                                                                   Descrição                                                                                                   |                                                                     Sintaxe de linguagem de regra de declaração                                                                     |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|              Padrão do AD FS regra permitir o acesso a todos os usuários. Essa regra já deve existir na plataforma de identidade do Microsoft Office 365 lista de regras de autorização de emissão de confiança de terceira parte confiável.              |                                  => issue(Type = "<https://schemas.microsoft.com/authorization/claims/permit>", Value = "true");                                   |
+|                               Adicionar esta cláusula para uma regra nova e personalizada Especifica que a solicitação é proveniente de proxy do servidor de Federação (ou seja, ele tem o cabeçalho x-ms-proxy)                                |                                                                                                                                                                    |
+|                                                                                 É recomendável que todas as regras de incluem isso.                                                                                  |                                    exists([Type == "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy>"])                                    |
+|                                                         Usado para estabelecer que a solicitação é de um cliente com um IP no intervalo aceitável definido.                                                         | NOT exists([Type == "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip>", Value=~"customer-provided public ip address regex"]) |
+|                                    Essa cláusula é usada para especificar se o aplicativo que está sendo acessado não for Microsoft.Exchange.ActiveSync a solicitação deve ser negada.                                     |       NOT exists([Type == "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application>", Value=="Microsoft.Exchange.ActiveSync"])        |
+|                                                      Essa regra permite que você determine se a chamada for feita através de um navegador da Web e não será negada.                                                      |              NOT exists([Type == "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path>", Value == "/adfs/ls/"])               |
+| Esta regra indica que os únicos usuários em um grupo específico do Active Directory (com base no valor de SID) devem ser negados. Adicionando para essa instrução não significa que um grupo de usuários será permitido, independentemente do local. |             exists([Type == "<https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid>", Value =~ "{Group SID value of allowed AD group}"])              |
+|                                                                Isso é uma cláusula necessária para emitir um deny quando todas as condições anteriores forem atendidas.                                                                 |                                   => issue(Type = "<https://schemas.microsoft.com/authorization/claims/deny>", Value = "true");                                    |
 
 ### <a name="building-the-ip-address-range-expression"></a>Compilar a expressão de intervalo de endereço IP
 
@@ -271,4 +273,4 @@ Depois de habilitar o rastreamento, use a seguinte sintaxe de linha de comando p
 
 ## <a name="related"></a>Relacionados
 Para obter mais informações sobre os novos tipos de declaração, consulte [tipos de declarações do AD FS](AD-FS-Claims-Types.md).
- 
+

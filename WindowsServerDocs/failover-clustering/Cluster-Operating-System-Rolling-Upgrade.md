@@ -7,16 +7,16 @@ ms.assetid: 6e102c1f-df26-4eaa-bc7a-d0d55d3b82d5
 author: jasongerend
 ms.author: jgerend
 ms.date: 03/27/2018
-ms.openlocfilehash: 60dacf63f1a355b961f84169060dbd7122a6fd32
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f56c036768de7c1afcf3327135a7ff7d7a690a8b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842727"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440146"
 ---
 # <a name="cluster-operating-system-rolling-upgrade"></a>Atualização sem interrupção do sistema operacional do cluster
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+> Aplica-se a: Windows Server 2019, Windows Server 2016
 
 Atualização sem interrupção do cluster do sistema operacional permite que um administrador atualizar o sistema operacional de nós do cluster sem interromper o Hyper-V ou as cargas de trabalho do servidor de arquivos de escalabilidade horizontal. Usando esse recurso, as penalidades de tempo de inatividade em SLAs (Contratos de Nível de Serviço) podem ser evitadas.
 
@@ -226,12 +226,12 @@ Atualização sem interrupção do sistema operacional de cluster inclui as segu
         ![Captura mostrando a saída do cmdlet Get-VMHostSupportedVersion](media/Cluster-Operating-System-Rolling-Upgrade/Clustering_GetVMHostSupportVersion.png)  
         **Figura 21: Exibindo as versões de configuração de VM do Hyper-V com suporte pelo host**  
 
-   3.  Em cada nó de host do Hyper-V no cluster, versões de configuração da VM do Hyper-V podem ser atualizadas pelo agendamento de uma janela de manutenção breve com usuários, fazendo backup, desativar as máquinas virtuais e executando o [ `Update-VMVersion` ](https://docs.microsoft.com/powershell/module/hyper-v/Update-VMVersion?view=win10-ps) cmdlet (consulte Figura 22). Isso irá atualizar a versão da máquina virtual e habilitar novos recursos do Hyper-V, eliminando a necessidade de atualizações futuras do componente de integração do Hyper-V (IC). Esse cmdlet pode ser executado do nó do Hyper-V que hospeda a VM, ou o `-ComputerName` parâmetro pode ser usado para atualizar a versão da VM remotamente. Neste exemplo, aqui vamos atualizar a versão da configuração de VM1 do 5.0 para 7.0 para tirar proveito dos muitos novos recursos de Hyper-V associada com esta versão de configuração de VM, como pontos de verificação de produção (backups consistentes com o aplicativo) e a VM binário arquivo de configuração.  
+   3. Em cada nó de host do Hyper-V no cluster, versões de configuração da VM do Hyper-V podem ser atualizadas pelo agendamento de uma janela de manutenção breve com usuários, fazendo backup, desativar as máquinas virtuais e executando o [ `Update-VMVersion` ](https://docs.microsoft.com/powershell/module/hyper-v/Update-VMVersion?view=win10-ps) cmdlet (consulte Figura 22). Isso irá atualizar a versão da máquina virtual e habilitar novos recursos do Hyper-V, eliminando a necessidade de atualizações futuras do componente de integração do Hyper-V (IC). Esse cmdlet pode ser executado do nó do Hyper-V que hospeda a VM, ou o `-ComputerName` parâmetro pode ser usado para atualizar a versão da VM remotamente. Neste exemplo, aqui vamos atualizar a versão da configuração de VM1 do 5.0 para 7.0 para tirar proveito dos muitos novos recursos de Hyper-V associada com esta versão de configuração de VM, como pontos de verificação de produção (backups consistentes com o aplicativo) e a VM binário arquivo de configuração.  
 
-        ![Captura mostrando o cmdlet Update-VMVersion em ação](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_StopVM.png)  
-        **Figura 22: Atualizando uma versão VM usando o cmdlet Update-VMVersion PowerShell**  
+       ![Captura mostrando o cmdlet Update-VMVersion em ação](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_StopVM.png)  
+       **Figura 22: Atualizando uma versão VM usando o cmdlet Update-VMVersion PowerShell**  
 
-4.  Pools de armazenamento podem ser atualizados usando o [Update-StoragePool](https://docs.microsoft.com/powershell/module/storage/Update-StoragePool?view=win10-ps) cmdlet do PowerShell - esta é uma operação online.  
+6. Pools de armazenamento podem ser atualizados usando o [Update-StoragePool](https://docs.microsoft.com/powershell/module/storage/Update-StoragePool?view=win10-ps) cmdlet do PowerShell - esta é uma operação online.  
 
 Embora estamos visando cenários de nuvem privada, especificamente o Hyper-V e clusters de servidor de arquivos de escalabilidade horizontal, que podem ser atualizados sem tempo de inatividade, o processo de atualização sem interrupção do Cluster do sistema operacional podem ser usados para qualquer função de cluster.  
 
@@ -254,7 +254,7 @@ Embora estamos visando cenários de nuvem privada, especificamente o Hyper-V e c
     Sim, antes de iniciar o processo de atualização sem interrupção do Cluster do sistema operacional, verifique se que todos os nós de cluster são atualizados com as últimas atualizações de software.  
 
 **É possível executar o [ `Update-ClusterFunctionalLevel` ](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) cmdlet enquanto nós desativados ou em pausa?**  
-    Nenhum. Todos os nós de cluster devem estar em e na associação ativa para o [ `Update-ClusterFunctionalLevel` ](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) cmdlet funcione.  
+    Não. Todos os nós de cluster devem estar em e na associação ativa para o [ `Update-ClusterFunctionalLevel` ](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) cmdlet funcione.  
 
 **Atualização sem interrupção do Cluster do sistema operacional funciona para qualquer carga de trabalho do cluster? Ele funciona para o SQL Server?**  
     Sim, a atualização sem interrupção do Cluster do sistema operacional funciona para qualquer carga de trabalho do cluster. No entanto, é apenas sem tempo de inatividade para Hyper-V e clusters de servidor de arquivos de escalabilidade horizontal. A maioria das outras cargas de trabalho incorrerá em algum tempo de inatividade (normalmente alguns minutos) quando eles failover e o failover é necessário pelo menos uma vez durante o processo de atualização sem interrupção do Cluster do sistema operacional.  
@@ -279,5 +279,5 @@ Embora estamos visando cenários de nuvem privada, especificamente o Hyper-V e c
 
 ## <a name="see-also"></a>Consulte também  
 -   [Notas de versão: Problemas importantes no Windows Server 2016](../get-started/Release-Notes--Important-Issues-in-Windows-Server-2016-Technical-Preview.md)  
--   [O que há de novo no Windows Server 2016](../get-started/What-s-New-in-windows-server-2016.md)  
+-   [Novidades no Windows Server 2016](../get-started/What-s-New-in-windows-server-2016.md)  
 -   [O que há de novo no Clustering de Failover no Windows Server](whats-new-in-failover-clustering.md)  

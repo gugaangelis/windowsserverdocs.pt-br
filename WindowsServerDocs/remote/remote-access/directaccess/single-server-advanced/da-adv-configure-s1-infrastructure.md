@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 43abc30a-300d-4752-b845-10a6b9f32244
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: edd59208237f9b1042427dfecba0a407a34b30a8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9d19ac813280981341019330470cc5d53ee00778
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835807"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446115"
 ---
 # <a name="step-1-configure-advanced-directaccess-infrastructure"></a>Etapa 1 Configurar infraestrutura avançada do DirectAccess
 
@@ -246,17 +246,17 @@ Você deve configurar manualmente uma entrada DNS para o site do servidor de loc
   
 1.  No servidor DNS da rede interna: Sobre o **inicie** tela, digite**Dnsmgmt. msc**, e pressione ENTER.  
   
-2.  No painel esquerdo do console **Gerenciador DNS**, expanda a zona de pesquisa direta para o seu domínio. Clique com o botão direito do mouse no domínio e clique em **Novo Host (A ou AAAA)**.  
+2.  No painel esquerdo do console **Gerenciador DNS**, expanda a zona de pesquisa direta para o seu domínio. Clique com o botão direito do mouse no domínio e clique em **Novo Host (A ou AAAA)** .  
   
 3.  Na caixa de diálogo **Novo Host**, na caixa **Endereço IP**:  
   
-    -   Na caixa **Nome (usa domínio pai se deixado em branco)**, digite o nome DNS do site do servidor de local de rede (o nome que os clientes do DirectAccess usam para se conectarem ao servidor de local de rede).  
+    -   Na caixa **Nome (usa domínio pai se deixado em branco)** , digite o nome DNS do site do servidor de local de rede (o nome que os clientes do DirectAccess usam para se conectarem ao servidor de local de rede).  
   
     -   Digite o endereço IPv4 ou IPv6 do servidor de local de rede, clique em **Adicionar Host** e **OK**.  
   
 4.  Na caixa de diálogo **Novo Host**:  
   
-    -   Na caixa **Nome (usa domínio pai se deixado em branco)**, digite o nome DNS da investigação da Web (o nome padrão da investigação da Web é **directaccess-webprobehost**).  
+    -   Na caixa **Nome (usa domínio pai se deixado em branco)** , digite o nome DNS da investigação da Web (o nome padrão da investigação da Web é **directaccess-webprobehost**).  
   
     -   Na caixa **Endereço IP**, digite o endereço IPv4 ou IPv6 da investigação da Web e clique em **Adicionar Host**.  
   
@@ -264,7 +264,7 @@ Você deve configurar manualmente uma entrada DNS para o site do servidor de loc
   
 5.  Na caixa de diálogo **DNS**, clique em **OK** e **Concluído**.  
   
-![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
+![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -336,7 +336,7 @@ O servidor e todos os computadores cliente do DirectAccess devem ser reunidos em
   
 10. Quando for solicitado a reiniciar o computador, clique em **Reiniciar Agora**.  
   
-![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
+![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -425,7 +425,7 @@ Depois que o administrador do Acesso Remoto concluir todas as alterações na co
   
     10. Na página **Examinando Backup**, clique em **Avançar** e **Concluir**.  
   
-![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
+![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -556,7 +556,7 @@ As condições a seguir são pedidas para os dois tipos de certificado, caso ain
   
 ## <a name="BKMK_Links"></a>Próxima etapa  
   
--   [Etapa 2: Configurar os servidores DirectAccess avançado](da-adv-configure-s2-servers.md)  
+-   [Etapa 2: Configurar os servidores do DirectAccess Avançado](da-adv-configure-s2-servers.md)  
   
 
 

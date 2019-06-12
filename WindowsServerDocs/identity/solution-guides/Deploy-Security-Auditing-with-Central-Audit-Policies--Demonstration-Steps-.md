@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: ac2b1643ed151e94c3815abca9a57eb3706c845a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b14ded98c4f1a340349119bd9f5f42e3a1bf9434
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871127"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445739"
 ---
 # <a name="deploy-security-auditing-with-central-audit-policies-demonstration-steps"></a>Implantar a auditoria de segurança com as políticas de auditoria central (etapas de demonstração)
 
@@ -34,21 +34,21 @@ Nesta etapa, configure a política de acesso a objetos globais no controlador de
   
 #### <a name="to-configure-a-global-object-access-policy"></a>Para configurar uma política de acesso a objetos globais  
   
-1.  Entre no controlador de domínio DC1 como contoso\administrator com a senha **pass@word1**.  
+1. Entre no controlador de domínio DC1 como contoso\administrator com a senha <strong>pass@word1</strong>.  
   
-2.  No Gerenciador do Servidor, aponte para **Ferramentas** e clique em **Gerenciamento de Política de Grupo**.  
+2. No Gerenciador do Servidor, aponte para **Ferramentas** e clique em **Gerenciamento de Política de Grupo**.  
   
-3.  Na árvore do console, clique duas vezes em **Domínios**, clique duas vezes em **contoso.com**, clique em **Contoso** e clique duas vezes em **Servidores de Arquivos**.  
+3. Na árvore do console, clique duas vezes em **Domínios**, clique duas vezes em **contoso.com**, clique em **Contoso** e clique duas vezes em **Servidores de Arquivos**.  
   
-4.  Clique com o botão direito do mouse em **FlexibleAccessGPO** e clique em **Editar**.  
+4. Clique com o botão direito do mouse em **FlexibleAccessGPO** e clique em **Editar**.  
   
-5.  Clique duas vezes em **Configuração do Computador**, clique duas vezes em **Políticas** e clique duas vezes em **Configurações do Windows**.  
+5. Clique duas vezes em **Configuração do Computador**, clique duas vezes em **Políticas** e clique duas vezes em **Configurações do Windows**.  
   
-6.  Clique duas vezes em **Configurações de Segurança**, clique duas vezes em **Configuração Avançada de Política de Auditoria** e clique duas vezes em **Políticas de Auditoria**.  
+6. Clique duas vezes em **Configurações de Segurança**, clique duas vezes em **Configuração Avançada de Política de Auditoria** e clique duas vezes em **Políticas de Auditoria**.  
   
-7.  Clique duas vezes em **Acesso a Objeto** e clique duas vezes em **Sistema de Arquivos de Auditoria**.  
+7. Clique duas vezes em **Acesso a Objeto** e clique duas vezes em **Sistema de Arquivos de Auditoria**.  
   
-8.  Marque a caixa de seleção **Configurar estes eventos**, marque as caixas de seleção **Êxito** e **Falha** e clique em **OK**.  
+8. Marque a caixa de seleção **Configurar estes eventos**, marque as caixas de seleção **Êxito** e **Falha** e clique em **OK**.  
   
 9. No painel de navegação, clique duas vezes em **Auditoria de Acesso a Objetos Globais** e clique duas vezes em **Sistema de arquivos**.  
   
@@ -70,14 +70,14 @@ Nesta etapa, atualize as configurações de Política de Grupo depois de criar a
   
 #### <a name="to-update-group-policy-settings"></a>Para atualizar as configurações de Política de Grupo.  
   
-1.  Entrar no servidor de arquivos, FILE1 como contoso\Administrator com a senha **pass@word1**.  
+1. Entrar no servidor de arquivos, FILE1 como contoso\Administrator com a senha <strong>pass@word1</strong>.  
   
-2.  Pressione a tecla do Windows+R e digite **cmd** para abrir uma janela do Prompt de Comando.  
+2. Pressione a tecla do Windows+R e digite **cmd** para abrir uma janela do Prompt de Comando.  
   
-    > [!NOTE]  
-    > Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
+   > [!NOTE]  
+   > Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
   
-3.  Digite **gpupdate /force** e pressione ENTER.  
+3. Digite **gpupdate /force** e pressione ENTER.  
   
 ## <a name="BKMK_3"></a>Verificar se a política de acesso de objetos globais foi aplicada  
 Depois que as configurações de Política de Grupo forem aplicadas, você poderá verificar se as configurações de política de auditoria foram aplicadas corretamente.  
@@ -93,10 +93,10 @@ Depois que as configurações de Política de Grupo forem aplicadas, você poder
   
 ## <a name="BKMK_Links"></a>Consulte também  
   
--   [Cenário: Auditoria de acesso a arquivos](Scenario--File-Access-Auditing.md)  
+-   [Cenário: auditoria de acesso a arquivos](Scenario--File-Access-Auditing.md)  
   
--   [Planejar para o arquivo de auditoria de acesso](Plan-for-File-Access-Auditing.md)  
+-   [Planejar a auditoria de acesso a arquivos](Plan-for-File-Access-Auditing.md)  
   
--   [Controle de acesso dinâmico: Visão geral do cenário](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [Controle de acesso dinâmico: visão geral do cenário](Dynamic-Access-Control--Scenario-Overview.md)  
   
 

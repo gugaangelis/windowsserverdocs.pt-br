@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: lizapo
 ms.date: 07/25/2018
-ms.openlocfilehash: a10b3d3877e9511164d298bcc1dab11540e6f596
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 7ab2eff32b105916d979a954275e9c9122a06903
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188202"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441727"
 ---
 # <a name="robocopy"></a>robocopy
 
@@ -32,12 +32,12 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 
 ## <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|\<origem >|Especifica o caminho para o diretório de origem.|
-|\<Destino >|Especifica o caminho para o diretório de destino.|
-|\<arquivo >|Especifica o arquivo ou arquivos a serem copiados. Você pode usar caracteres curinga (**&#42;** ou **?** ), se você quiser. Se o **arquivo** parâmetro não for especificado, **\*.\*** é usado como o valor padrão.|
-|\<Opções >|Especifica as opções a serem usados com o **robocopy** comando.|
+|   Parâmetro    |                                                                                            Descrição                                                                                             |
+|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   \<origem >    |                                                                            Especifica o caminho para o diretório de origem.                                                                             |
+| \<Destino > |                                                                          Especifica o caminho para o diretório de destino.                                                                          |
+|    \<arquivo >     | Especifica o arquivo ou arquivos a serem copiados. Você pode usar caracteres curinga ( **&#42;** ou **?** ), se você quiser. Se o **arquivo** parâmetro não for especificado, **\*.\\** \* é usado como o valor padrão. |
+|   \<Opções >   |                                                                    Especifica as opções a serem usados com o **robocopy** comando.                                                                     |
 
 ### <a name="copy-options"></a>Opções de cópia
 
@@ -90,7 +90,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/m|Copia somente arquivos para o qual o **arquivamento** atributo é definido e redefine o **arquivamento** atributo.|
 |/ia:[RASHCNETO]|Inclui somente os arquivos para que qualquer um dos atributos especificados são definidos.|
 |/xa:[RASHCNETO]|Exclui arquivos para que qualquer um dos atributos especificados são definidos.|
-|/xf \<FileName>[ ...]|Exclui os arquivos que correspondem aos nomes especificados ou caminhos. Observe que *FileName* pode incluir caracteres curinga (**&#42;** e **?** ).|
+|/xf \<FileName>[ ...]|Exclui os arquivos que correspondem aos nomes especificados ou caminhos. Observe que *FileName* pode incluir caracteres curinga ( **&#42;** e **?** ).|
 |/xd \<Directory>[ ...]|Exclui os diretórios que correspondem aos nomes especificados e caminhos.|
 |/xc|Exclui os arquivos alterados.|
 |/xn|Exclui arquivos mais recentes.|
@@ -157,6 +157,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/if|Inclui os arquivos especificados.|
 
 ### <a name="exit-return-codes"></a>Códigos de saída (retorno)
+
 Valor | Descrição
 -- | --
 0 | Não há arquivos foram copiados. Não foi encontrada nenhuma falha.  Não há arquivos eram incompatíveis. Os arquivos já existirem no diretório de destino; Portanto, a operação de cópia foi ignorada.

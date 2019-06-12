@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 09b2ffabcea414dd4717a2ffa1f6e860a17f3653
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2ac602506960b92333750e7a37692c44c92aae22
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871697"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440270"
 ---
 # <a name="wbadmin-start-backup"></a>WBADMIN Iniciar backup
 
@@ -87,27 +87,27 @@ Wbadmin start backup
 Os exemplos a seguir mostram como o **wbadmin Iniciar backup** comando pode ser usado em cenários de backup diferentes:
 
 Cenário 1 #
--   Criar um backup de volumes e:, d:\mountpoint, e \\ \\? \Volume{cc566d14-4410-11d9-9d93-806e6f6e6963}
--   Salvar o backup em f: de volume
-```
-wbadmin start backup -backupTarget:f: -include:e:,d:\mountpoint,\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
-```
-Cenário 2 #
--   Executar um backup único de *f:\folder1* e *h:\folder2* volume *unidade d:*.
--   Fazer backup do estado do sistema
--   Faça um backup de cópia para que o backup diferencial normalmente agendado não é afetado.
-```
-wbadmin start backup –backupTarget:d: -include:g\folder1,h:\folder2 –systemstate -vsscopy
-```
-Cenário 3 #
--   Executar um backup único de *d:\folder1* que deve ser feito backup não recursiva.
--   Fazer backup da pasta para o local de rede  *\\ \\backupshare\backup1*
--   Restringir o acesso para o backup para os membros de **administradores** ou **operadores de Backup** grupo.
-```
-wbadmin start backup –backupTarget: \\backupshare\backup1 -noinheritacl -nonrecurseinclude:d:\folder1
-```
+- Criar um backup de volumes e:, d:\mountpoint, e \\ \\? \Volume{cc566d14-4410-11d9-9d93-806e6f6e6963}
+- Salvar o backup em f: de volume
+  ```
+  wbadmin start backup -backupTarget:f: -include:e:,d:\mountpoint,\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
+  ```
+  Cenário 2 #
+- Executar um backup único de *f:\folder1* e *h:\folder2* volume *unidade d:* .
+- Fazer backup do estado do sistema
+- Faça um backup de cópia para que o backup diferencial normalmente agendado não é afetado.
+  ```
+  wbadmin start backup –backupTarget:d: -include:g\folder1,h:\folder2 –systemstate -vsscopy
+  ```
+  Cenário 3 #
+- Executar um backup único de *d:\folder1* que deve ser feito backup não recursiva.
+- Fazer backup da pasta para o local de rede  *\\ \\backupshare\backup1*
+- Restringir o acesso para o backup para os membros de **administradores** ou **operadores de Backup** grupo.
+  ```
+  wbadmin start backup –backupTarget: \\backupshare\backup1 -noinheritacl -nonrecurseinclude:d:\folder1
+  ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

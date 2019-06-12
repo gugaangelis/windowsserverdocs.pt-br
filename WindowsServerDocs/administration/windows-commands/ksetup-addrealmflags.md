@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bbc878bd0ee25ad92c640710ab6b46bbc0eaf62a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: f097fc8268976cf038523de0d5fa33c1dd3c6901
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827677"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438032"
 ---
 # <a name="ksetupaddrealmflags"></a>ksetup:addrealmflags
 
@@ -52,7 +52,7 @@ Os sinalizadores de território especificam recursos adicionais de um realm Kerb
 |0x08|NcSupported|Esse realm dá suporte à canonização do nome, o que permite o DNS e o Realm padrões de nomenclatura.|
 |0x80|RC4|Esse realm dá suporte a criptografia RC4 para habilitar a relação de confiança entre territórios, que permite o uso do TLS.|
 
-Sinalizadores de território são armazenadas no registro em **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\*** Realm-nome*. Essa entrada não existe no Registro por padrão. Você pode usar o [Ksetup:addrealmflags](ksetup-addrealmflags.md) comando preencher o registro.
+Sinalizadores de território são armazenadas no registro em **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\\** <em>nome de Realm</em>. Essa entrada não existe no Registro por padrão. Você pode usar o [Ksetup:addrealmflags](ksetup-addrealmflags.md) comando preencher o registro.
 
 Você pode ver quais sinalizadores de território são disponível e defina exibindo a saída de ksetup ou ksetup /dumpstate.
 
@@ -70,11 +70,11 @@ Adicione mais um sinalizador que não está atualmente no conjunto:
 ```
 ksetup /addrealmflags CONTOSO SendAddress
 ```
-Execute o **ksetup** comando para verificar se o sinalizador de território está definido exibindo a saída e procurando **sinalizadores de território =**.
+Execute o **ksetup** comando para verificar se o sinalizador de território está definido exibindo a saída e procurando **sinalizadores de território =** .
 
 #### <a name="additional-references"></a>Referências adicionais
 
 -   [Ksetup:listrealmflags](ksetup-listrealmflags.md)
 -   [Ksetup:setrealmflags](ksetup-setrealmflags.md)
 -   [Ksetup:delrealmflags](ksetup-delrealmflags.md)
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

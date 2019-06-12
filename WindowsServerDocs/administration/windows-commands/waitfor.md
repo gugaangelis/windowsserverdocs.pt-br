@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c4a91dd3822cf4d8dd904f473f146a2f0ee54c0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 21ced4a9ef0dd7dac5f6c4fc6f171d99fa516c07
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840157"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440315"
 ---
 # <a name="waitfor"></a>waitfor
 
@@ -37,15 +37,15 @@ waitfor [/t <Timeout>] <SignalName>
 
 ## <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|/s \<Computer>|Especifica o nome ou endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando.|
-|/u [\<Domain>\]<User>|Executa o script usando as credenciais da conta de usuário especificada. Por padrão, **waitfor** usa credenciais do usuário atual.|
-|/p [\<Password>]|Especifica a senha da conta de usuário que é especificada na **/u** parâmetro.|
-|/si|Envia o sinal especificado pela rede.|
-|/t \<Timeout>|Especifica o número de segundos de espera por um sinal. Por padrão, **waitfor** aguardará indefinidamente.|
-|\<SignalName>|Especifica o sinal de que **waitfor** aguarda ou envia. *SignalName* não diferencia maiusculas de minúsculas.|
-|/?|Exibe a ajuda no prompt de comando.|
+|       Parâmetro       |                                                                                         Descrição                                                                                          |
+|-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    /s \<Computer>     | Especifica o nome ou endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
+| /u [\<Domain>\]<User> |                              Executa o script usando as credenciais da conta de usuário especificada. Por padrão, **waitfor** usa credenciais do usuário atual.                               |
+|   /p [\<Password>]    |                                                    Especifica a senha da conta de usuário que é especificada na **/u** parâmetro.                                                     |
+|          /si          |                                                                        Envia o sinal especificado pela rede.                                                                        |
+|     /t \<Timeout>     |                                              Especifica o número de segundos de espera por um sinal. Por padrão, **waitfor** aguardará indefinidamente.                                               |
+|     \<SignalName>     |                                                Especifica o sinal de que **waitfor** aguarda ou envia. *SignalName* não diferencia maiusculas de minúsculas.                                                 |
+|          /?           |                                                                             Exibe a ajuda no prompt de comando.                                                                             |
 
 ## <a name="remarks"></a>Comentários
 
@@ -76,4 +76,4 @@ waitfor /si espresso\build007
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

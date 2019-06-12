@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 0e7d1f5b-c939-47ca-892f-5bb285027fbc
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: dc08d89f7d84b5435e97ed5ed77eb72d003b0c84
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 95fc9cbef454c8f36b1921eb7f570138bf124256
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888567"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446947"
 ---
 # <a name="step-1-configure-the-remote-access-infrastructure"></a>Etapa 1 configurar a infraestrutura de acesso remoto
 
@@ -57,11 +57,11 @@ Requer o seguinte:
   
 -   Um único endereço estático interno IPv4 ou IPv6.  
   
-**Por trás do dispositivo NAT (dois adaptadores de rede)**:  
+**Por trás do dispositivo NAT (dois adaptadores de rede)** :  
   
 Requer um único voltado para a rede endereço estático interno IPv4 ou IPv6.  
   
-**Por trás do dispositivo NAT (um adaptador de rede)**:  
+**Por trás do dispositivo NAT (um adaptador de rede)** :  
   
 Requer um único endereço IPv4 ou IPv6 estático.  
   
@@ -234,7 +234,7 @@ Você deve configurar manualmente uma entrada DNS para o site do servidor de loc
   
 1.  No servidor DNS da rede interna: Sobre o **inicie** tela, digite**Dnsmgmt. msc**, e pressione ENTER.  
   
-2.  No painel esquerdo do console **Gerenciador DNS**, expanda a zona de pesquisa direta para o seu domínio. Clique com botão direito no domínio e, em seguida, clique em **novo Host (A ou AAAA)**.  
+2.  No painel esquerdo do console **Gerenciador DNS**, expanda a zona de pesquisa direta para o seu domínio. Clique com botão direito no domínio e, em seguida, clique em **novo Host (A ou AAAA)** .  
   
 3.  No **novo Host** na caixa de **nome (usa nome do domínio pai se deixado em branco)** , digite o nome DNS para o site de servidor de local de rede (esse é o nome que os clientes do DirectAccess usam para se conectar ao servidor de local de rede). No **endereço IP** caixa, digite o endereço IPv4 do servidor de local de rede e clique em **Adicionar Host**e, em seguida, clique em **Okey**.  
   
@@ -244,7 +244,7 @@ Você deve configurar manualmente uma entrada DNS para o site do servidor de loc
   
 6.  Clique em **Concluído**.  
   
-![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
+![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -316,7 +316,7 @@ O servidor de Acesso Remoto e todos os computadores cliente do DirectAccess deve
   
 10. Clique em **Reiniciar Agora** quando solicitado.  
   
-![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
+![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   

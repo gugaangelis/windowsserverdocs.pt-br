@@ -9,16 +9,16 @@ ms.topic: article
 author: vpetter
 ms.date: 03/27/2018
 ms.localizationpriority: ''
-ms.openlocfilehash: 55167d0f4c838af5f6f79432ede2dd45eac848a5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6e301b8c46041f107739bbcdb09c2eb0c8252ebb
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853857"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452899"
 ---
 # <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>Solução de problemas de um Cluster de Failover usando o relatório de erros do Windows 
 
-> Aplica-se a: Windows Server 2016, Windows Server
+> Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server
 
 Relatório de erros do Windows (WER) é uma infraestrutura de comentários flexível baseado em evento projetada para ajudar os administradores avançados ou suporte de camada 3 reunir informações sobre os problemas de hardware e software que o Windows podem detectar, relatar as informações à Microsoft, e fornecer aos usuários com todas as soluções disponíveis. Isso [referência](https://docs.microsoft.com/powershell/module/windowserrorreporting/) fornece descrições e sintaxe para todos os cmdlets de WindowsErrorReporting.
 
@@ -317,15 +317,15 @@ Eis um exemplo da saída:
 
 Analisador de mensagem permite capturar, exibir e analisar o tráfego de mensagens de protocolo. Ele também permite rastrear e avaliar os eventos do sistema e outras mensagens de componentes do Windows. Você pode baixar [Microsoft Message Analyzer daqui](https://www.microsoft.com/download/details.aspx?id=44226). Quando você carrega os logs no analisador de mensagem, você verá os seguintes provedores e mensagens de canais de log.
 
-![Carregar logs no analisador de mensagem](media\troubleshooting-using-WER-reports\loading-logs-into-message-analyzer.png)
+![Carregar logs no analisador de mensagem](media/troubleshooting-using-WER-reports/loading-logs-into-message-analyzer.png)
 
 Você também pode agrupar por provedores para obter a exibição a seguir:
 
-![Agrupados por provedores de logs](media\troubleshooting-using-WER-reports\logs-grouped-by-providers.png)
+![Agrupados por provedores de logs](media/troubleshooting-using-WER-reports/logs-grouped-by-providers.png)
 
-Para identificar o motivo pelo qual o disco com falha, navegue até os eventos sob **FailoverClustering/diagnóstico** e **FailoverClustering/DiagnosticVerbose**. Em seguida, execute a consulta a seguir: **EventLog.EventData["LogString"] contains "Cluster Disk 10"**.  Isso dará a você fornecer a seguinte saída:
+Para identificar o motivo pelo qual o disco com falha, navegue até os eventos sob **FailoverClustering/diagnóstico** e **FailoverClustering/DiagnosticVerbose**. Em seguida, execute a consulta a seguir: **EventLog.EventData["LogString"] contains "Cluster Disk 10"** .  Isso dará a você fornecer a seguinte saída:
 
-![Saída da consulta de log em execução](media\troubleshooting-using-WER-reports\output-of-running-log-query.png)
+![Saída da consulta de log em execução](media/troubleshooting-using-WER-reports/output-of-running-log-query.png)
 
 
 ### <a name="physical-disk-timed-out"></a>Disco físico atingiu o tempo limite
@@ -423,7 +423,7 @@ A lista de serviços e processos que coletamos em um despejo é controlada pela 
 
 Para identificar o motivo pelo qual o travamento aconteceu, abra os arquivos de he. Em seguida, execute a consulta a seguir: **EventLog.EventData["LogString]" contém "Disco de Cluster 10"** Isso dará a você fornecer a seguinte saída:
 
-![Saída da consulta de log de execução 2](media\troubleshooting-using-WER-reports\output-of-running-log-query-2.png)
+![Saída da consulta de log de execução 2](media/troubleshooting-using-WER-reports/output-of-running-log-query-2.png)
 
 Podemos pode cross-examine isso com o thread do **memory.hdmp** arquivo:
 

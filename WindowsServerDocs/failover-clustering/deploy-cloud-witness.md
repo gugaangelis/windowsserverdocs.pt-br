@@ -9,16 +9,16 @@ ms.topic: article
 author: JasonGerend
 ms.date: 01/18/2019
 description: Como usar o Microsoft Azure para hospedar a testemunha para um Cluster de Failover do Windows Server na nuvem – também conhecido como como implantar uma testemunha de nuvem.
-ms.openlocfilehash: f7e1c84e54f08044a772f06e591588c1add33026
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 64fd39a37c63d24f8fc0eb4f45c8a7e9f6089013
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857977"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439786"
 ---
 # <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>Implantar uma testemunha de nuvem para um Cluster de Failover
 
-> Aplica-se a: 2019, Windows Server 2016, Windows Server (canal semestral) do Windows Server
+> Aplica-se a: Windows Server 2019, Windows Server 2016
 
 Testemunha de nuvem é um tipo de testemunha de quorum de Cluster de Failover que usa o Microsoft Azure para fornecer um voto de quorum do cluster. Este tópico fornece uma visão geral de instruções sobre como configurar uma testemunha de nuvem para um Cluster de Failover, os cenários que ele dá suporte e o recurso de testemunha de nuvem.
 
@@ -134,14 +134,14 @@ Configuração de testemunha de nuvem é bem integrada dentro o Assistente de co
     **Figura 8. Selecionar a testemunha de Quorum**  
 
 5. Sobre o **configurar testemunha de nuvem** página, insira as seguintes informações:  
-    1. (Parâmetro necessário) Nome da conta de armazenamento do Azure.  
-    2. (Parâmetro necessário) Chave de acesso correspondente à conta de armazenamento.  
-        1. Ao criar pela primeira vez, use a chave de acesso primária (veja a Figura 5)  
-        2. Para girar a chave de acesso primária, use a chave de acesso secundária (veja a Figura 5)  
-    3. (Parâmetro opcional) Se você pretende usar um ponto de extremidade de serviço do Azure diferente (por exemplo o serviço Microsoft Azure na China), em seguida, atualize o nome do servidor de ponto de extremidade.  
+   1. (Parâmetro necessário) Nome da conta de armazenamento do Azure.  
+   2. (Parâmetro necessário) Chave de acesso correspondente à conta de armazenamento.  
+       1. Ao criar pela primeira vez, use a chave de acesso primária (veja a Figura 5)  
+       2. Para girar a chave de acesso primária, use a chave de acesso secundária (veja a Figura 5)  
+   3. (Parâmetro opcional) Se você pretende usar um ponto de extremidade de serviço do Azure diferente (por exemplo o serviço Microsoft Azure na China), em seguida, atualize o nome do servidor de ponto de extremidade.  
 
-    ![Instantâneo do painel de configuração de testemunha de nuvem no Assistente para Quorum do Cluster](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_10.png)  
-    **Figura 9: Configure a testemunha de nuvem**
+      ![Instantâneo do painel de configuração de testemunha de nuvem no Assistente para Quorum do Cluster](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_10.png)  
+      **Figura 9: Configure a testemunha de nuvem**
 
 6. Após a configuração bem-sucedida da testemunha de nuvem, você poderá exibir o recurso de testemunha recém-criado no Gerenciador de Cluster de Failover snap-in (veja a Figura 10).
 

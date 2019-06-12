@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c10cf6c9355b5f7457a5f17babdfb44aaa679b2
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: 0e001b590f524711185e3dd70db3bc52a9b8d9af
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976787"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447118"
 ---
 # <a name="compare-the-client-apps"></a>Compare os aplicativos cliente
 
@@ -35,12 +35,13 @@ Se você remoto em sua área de trabalho pessoal, há redirecionamentos adiciona
 
 ### <a name="input-redirection"></a>Redirecionamento de entrada
 
-| Redirecionamento | Área de Trabalho Remota<br> Conexão | Universal | Android | iOS | macOS | cliente Web |
-|-------------|-------------------------------|-----------|---------|-----|-------|------------|
-| Teclado    | X                             | X         | X       | X   | X     | X          |
-| Mouse       | X                             | X         | X       | X*    | X     | X          |
-| Touch       | X                             | X         | X       | X   |       | X (Edge e IE sem suporte) |
-| Outro       | Caneta                           |           |         |     |       |            |
+| Redirecionamento | Área de Trabalho Remota<br> Conexão | Universal | Android | iOS | macOS |          cliente Web           |
+|-------------|-------------------------------|-----------|---------|-----|-------|-------------------------------|
+|  Teclado   |               X               |     X     |    X    |  X  |   X   |               X               |
+|    Mouse    |               X               |     X     |    X    | X\* |   X   |               X               |
+|    Touch    |               X               |     X     |    X    |  X  |       | X (Edge e IE sem suporte) |
+|    Outro    |              Caneta              |           |         |     |       |                               |
+
 * Exibir o [lista de dispositivos de entrada com suporte para o cliente de versão Beta do iOS de área de trabalho remota](remote-desktop-ios.md#supported-input-devices).
 
 ### <a name="port-redirection"></a>Redirecionamento de porta   

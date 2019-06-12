@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: c9a769fdd9fb7d13c47da465b25bc59e7f55237f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 13259f7f12a37c4ceb8bdd2e35ae2fe131ec35cf
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856737"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442809"
 ---
 # <a name="spn-and-upn-uniqueness"></a>Exclusividade de SPN e UPN
 
@@ -81,7 +81,7 @@ Uma tentativa de criar um novo usuário no Centro Administrativo do Active Direc
   
 **Figura Figura SEQ \\ \* 2974 árabe da ID de evento 2 com erro 8648**  
   
-O evento 2974 lista o valor que foi bloqueado e uma lista de objetos de um ou mais (até 10) que já contêm esse valor.  Na figura a seguir, você pode ver esse valor de atributo UPN ***dhunt@blue.contoso.com*** já existe em quatro outros objetos.  Como esse é um novo recurso no Windows Server 2012 R2, criação acidental de UPN e o SPNs duplicados em um ambiente misto ainda ocorrerá quando a tentativa de gravação de processar os controladores de domínio de nível inferior.  
+O evento 2974 lista o valor que foi bloqueado e uma lista de objetos de um ou mais (até 10) que já contêm esse valor.  Na figura a seguir, você pode ver esse valor de atributo UPN **<em>dhunt@blue.contoso.com</em>** já existe em quatro outros objetos.  Como esse é um novo recurso no Windows Server 2012 R2, criação acidental de UPN e o SPNs duplicados em um ambiente misto ainda ocorrerá quando a tentativa de gravação de processar os controladores de domínio de nível inferior.  
   
 ![Exclusividade de SPN e UPN](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig05_Event2974ShowAllDups.gif)  
   

@@ -11,14 +11,14 @@ author: sakitong
 ms.author: coreyp
 manager: dougkim
 ms.date: 10/16/2017
-ms.openlocfilehash: c89d5eb754685fb8000ac2025af391057e77654c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 272d3865bbe1a9853f5349c5e878155351525ef0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848607"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439945"
 ---
-#<a name="monthly-delta-update-isv-support-without-wsus"></a>Suporte do ISV sem WSUS a atualização mensal Delta
+# <a name="monthly-delta-update-isv-support-without-wsus"></a>Suporte do ISV sem WSUS a atualização mensal Delta
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10
 
@@ -30,7 +30,7 @@ Se você não tenha instalado o WSUS, mas precisa atualizar menores tamanhos dos
 
 ![Comparação de tamanho de download](../../media/express-update-delivery-isv-support/delta-1.png)
 
-##<a name="what-is-monthly-delta-update"></a>O que é a atualização de Delta mensal?
+## <a name="what-is-monthly-delta-update"></a>O que é a atualização de Delta mensal?
 
 Há duas variantes da atualização de segurança mensal: Delta e cumulativas.
 
@@ -49,8 +49,8 @@ Usando a atualização mensal Delta, pacotes conterá apenas as atualizações d
 
 Delta e cumulativas têm o mesmo número KB, com a mesma classificação e de versão ao mesmo tempo. As atualizações podem ser diferenciadas pelo título de atualização no catálogo ou pelo nome no msu:
 
-- 2017-02 *\***atualização delta**\** para Windows 10 versão 1607 para sistemas baseados em x64 (KB1234567)
-- 2017-02 *\***atualização cumulativa**\** para Windows 10 versão 1607 para sistemas baseados em x86 (KB1234567)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+- 2017-02 *\***atualização delta**\**  para Windows 10 versão 1607 para sistemas baseados em x64 (KB1234567)
+- 2017-02 *\***atualização cumulativa**\**  para Windows 10 versão 1607 para sistemas baseados em x86 (KB1234567)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 
 ### <a name="when-to-use-monthly-delta-update"></a>Quando usar a atualização mensal do Delta
 

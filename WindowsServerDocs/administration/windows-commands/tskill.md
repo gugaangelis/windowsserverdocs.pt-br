@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 59958481a7c832aca7bc25d7d4d3ebbf4e8ef80c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b582334d7b79b2badbb86818be1093b6a5f55080
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835037"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440809"
 ---
 # <a name="tskill"></a>tskill
 
@@ -36,6 +36,7 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
 ```
 
 ## <a name="parameters"></a>Parâmetros
+
 |Parâmetro|Descrição|
 |-------|--------|
 |\<ProcessID >|Especifica a ID do processo que você deseja encerrar.|
@@ -47,19 +48,19 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
--   Você pode usar **tskill** para encerrar apenas os processos que pertencem a você, a menos que você seja um administrador. Os administradores têm acesso completo a todos **tskill** funções e podem encerrar os processos em execução em outras sessões de usuário.
--   Quando terminam de todos os processos em execução em uma sessão, a sessão também termina.
--   Se você usar o *ProcessName* e o **/server: * * * ServerName* parâmetros, você deve também especificar o **/id: * * * SessionID* ou o **/a** parâmetro.
+- Você pode usar **tskill** para encerrar apenas os processos que pertencem a você, a menos que você seja um administrador. Os administradores têm acesso completo a todos **tskill** funções e podem encerrar os processos em execução em outras sessões de usuário.
+- Quando terminam de todos os processos em execução em uma sessão, a sessão também termina.
+- Se você usar o *ProcessName* e o **/server:** <em>ServerName</em> parâmetros, você deve também especificar o **/id:**  <em>SessionID</em> ou o **/a** parâmetro.
 
 ## <a name="BKMK_examples"></a>Exemplos
--   Para encerrar o processo 6543, digite:
-    ```
-    tskill 6543
-    ```
--   Para encerrar o processo "explorer" em execução na sessão 5, digite:
-    ```
-    tskill explorer /id:5
-    ```
-#### <a name="additional-references"></a>Referências adicionais
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[serviços de área de trabalho remota &#40;serviços de Terminal&#41; referência do comando](remote-desktop-services-terminal-services-command-reference.md)
+- Para encerrar o processo 6543, digite:
+  ```
+  tskill 6543
+  ```
+- Para encerrar o processo "explorer" em execução na sessão 5, digite:
+  ```
+  tskill explorer /id:5
+  ```
+  #### <a name="additional-references"></a>Referências adicionais
+  [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+  [serviços de área de trabalho remota &#40;serviços de Terminal&#41; referência do comando](remote-desktop-services-terminal-services-command-reference.md)

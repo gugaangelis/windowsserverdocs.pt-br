@@ -12,12 +12,12 @@ author: jaimeo
 ms.author: jaimeo
 ms.date: 09/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c669db414c4f12b6145a26a75b83449f43e8918
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c3376d03a2e9f02b20aba608de0228efd7dfddea
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887677"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443624"
 ---
 # <a name="developing-powershell-cmdlets-for-nano-server"></a>Desenvolvimento de cmdlets do PowerShell para Nano Server
 
@@ -110,7 +110,7 @@ At line:1 char:1
 Etapas detalhadas e de início rápido para instalar o Nano Server em máquinas virtuais ou físicas são apresentadas em [Install Nano Server](Getting-Started-with-Nano-Server.md) (Instalar o Nano Server), que é o tópico pai deste.  
   
 > [!NOTE]  
-> Para o trabalho de desenvolvimento no Nano Server, talvez seja útil instalar o Nano Server usando o parâmetro -Development de New-NanoServerImage. Isso habilitará a instalação de drivers não assinados, cópia de binários do depurador, abertura de uma porta de depuração, habilitação da assinatura de teste e habilitação da instalação de pacotes AppX sem uma licença de desenvolvedor. Por exemplo:   
+> Para o trabalho de desenvolvimento no Nano Server, talvez seja útil instalar o Nano Server usando o parâmetro -Development de New-NanoServerImage. Isso habilitará a instalação de drivers não assinados, cópia de binários do depurador, abertura de uma porta de depuração, habilitação da assinatura de teste e habilitação da instalação de pacotes AppX sem uma licença de desenvolvedor. Por exemplo:  
 >  
 >`New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -Development`  
   
@@ -127,9 +127,9 @@ Se você não tiver certeza sobre a implementação usada para os cmdlets existe
 * %UserProfile%\Documents\WindowsPowerShell\Modules   
 * \<o local de instalação do produto >   
     
- Verifique os seguintes detalhes nesses locais:  
- * Cmdlets do CIM têm extensões de arquivo .cdxml.  
- * Cmdlets de .NET têm extensões de arquivo .dll, ou têm assemblies instalados no GAC e listados no arquivo .psd1 nos campos RootModule, ModuleToProcess ou NestedModules.  
+  Verifique os seguintes detalhes nesses locais:  
+  * Cmdlets do CIM têm extensões de arquivo .cdxml.  
+  * Cmdlets de .NET têm extensões de arquivo .dll, ou têm assemblies instalados no GAC e listados no arquivo .psd1 nos campos RootModule, ModuleToProcess ou NestedModules.  
 * Cmdlets de script do PowerShell têm extensões de arquivo .psm1 ou .ps1.   
   
 ## <a name="porting-cim-cmdlets"></a>Portabilidade de cmdlets do CIM  

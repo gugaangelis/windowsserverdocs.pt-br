@@ -8,12 +8,12 @@ ms.prod: windows-server-threshold
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 769a4165cfd82056a904c79c41e96fb666d05e43
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2d4cdcd11e0eb334064ddefec0eda775ffccff2c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842267"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446475"
 ---
 # <a name="deploy-server-certificates-for-8021x-wired-and-wireless-deployments"></a>Implantar certificados de servidor para implantações com e sem fio do 802.1X
 
@@ -66,8 +66,8 @@ O registro automático de certificados do servidor, também chamado de registro 
 Este guia fornece instruções sobre como implantar certificados de servidor usando o AD CS e a função de servidor servidor Web (IIS) no Windows Server 2016. A seguir estão os pré-requisitos para executar os procedimentos neste guia.  
 
 - Você deve implantar uma rede principal usando o guia de rede do Windows Server 2016 Core, ou você já deve ter as tecnologias fornecidas no guia da rede principal instaladas e funcionando corretamente em sua rede. Essas tecnologias incluem o TCP/IP v4, DHCP, Active Directory Domain Services (AD DS), DNS e NPS.  
->[!NOTE]
->Guia de rede do Windows Server 2016 Core está disponível na biblioteca técnica do Windows Server 2016. Para obter mais informações, consulte [guia da rede principal](../../../core-network-guide/Core-Network-Guide.md).
+  >[!NOTE]
+  >Guia de rede do Windows Server 2016 Core está disponível na biblioteca técnica do Windows Server 2016. Para obter mais informações, consulte [guia da rede principal](../../../core-network-guide/Core-Network-Guide.md).
 
 - Você deve ler a seção de planejamento deste guia para garantir que você esteja preparado para essa implantação antes de executar a implantação.  
 - Você deve executar as etapas neste guia, na ordem em que eles são apresentados. Não vá em frente e implantar sua autoridade de certificação sem executando as etapas que levam ao implantar o servidor ou a implantação falhará.  

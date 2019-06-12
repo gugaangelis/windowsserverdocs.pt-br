@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.date: 10/17/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: ab5bee55975b803a77db0b6cdb179b76590e1d83
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: be41267d6584002ebf87e5fe828a41575d305e1b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826047"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445916"
 ---
 # <a name="windows-admin-center-ui-text-and-design-style-guide"></a>Guia de estilo de texto e o design de IU de Windows Admin Center
 
@@ -40,7 +40,7 @@ Podemos siga o estilo da Microsoft para [capitalização](https://docs.microsoft
 
 ## <a name="colons"></a>Dois-pontos
 
-Use dois-pontos para apresentar listas. Por exemplo: 
+Use dois-pontos para apresentar listas. Por exemplo:
 
     Choose one of the following:
     Cats
@@ -199,12 +199,12 @@ Estado nulo ocorre quando os dados do cliente ou o conteúdo está ausente de um
 
 ### <a name="guidelines"></a>Diretrizes
 
- - Se possível, use situações do estado nulo como uma oportunidade de ensinar as pessoas sobre como usar o recurso (por exemplo, como adicionar música, onde a localizar as imagens, etc.)  
-- Se você tiver um título em sua interface do usuário, explique a ação a ser realizada para "corrigir" estado nulo (por exemplo, "adicionar alguns música") 
-- Divirta-se com o texto. Esse espaço pode ser uma oportunidade de fornecer a felicidade, pois ele provavelmente não será visto várias vezes. 
-- Evitar "É solitário aqui." Isso é triste e foi o uso excessivo. 
-- Evitar a perguntas como "Ainda não tiver conectado sua impressora?" Okey para usar uma vez, mas esse formato tende a obter uso excessivo e perguntas fazer mais carga/pressão sobre o cliente. Isso também pode parecer condescendente. 
-- Variedade no texto do estado nulo é algo bom. 
+- Se possível, use situações do estado nulo como uma oportunidade de ensinar as pessoas sobre como usar o recurso (por exemplo, como adicionar música, onde a localizar as imagens, etc.)  
+  - Se você tiver um título em sua interface do usuário, explique a ação a ser realizada para "corrigir" estado nulo (por exemplo, "adicionar alguns música") 
+  - Divirta-se com o texto. Esse espaço pode ser uma oportunidade de fornecer a felicidade, pois ele provavelmente não será visto várias vezes. 
+  - Evitar "É solitário aqui." Isso é triste e foi o uso excessivo. 
+  - Evitar a perguntas como "Ainda não tiver conectado sua impressora?" Okey para usar uma vez, mas esse formato tende a obter uso excessivo e perguntas fazer mais carga/pressão sobre o cliente. Isso também pode parecer condescendente. 
+  - Variedade no texto do estado nulo é algo bom. 
 
 ### <a name="examples"></a>Exemplos
 
@@ -247,7 +247,7 @@ Dicas de ferramenta devem ser usadas com moderação ou nada. Eles podem ser uma
 
 |    Contexto                                 |    Como escrever as dicas de ferramenta    |
 |    -----------------------                 |    -------------------------    |
-|Quando um controle ou elemento de interface do usuário é sem rótulo...|Use uma frase substantiva simples e descritivo. Por exemplo: <br> Realce de caneta |
+|Quando um controle ou elemento de interface do usuário é sem rótulo...|Use uma frase substantiva simples e descritivo. Por exemplo:<br> Realce de caneta |
 |Quando um elemento de interface do usuário é rotulado, mas sua finalidade precisa de esclarecimento...|<ul><li>Descreva resumidamente o que você pode fazer com este elemento de interface do usuário. </li><li>Use o formulário de verbo imperativa. Por exemplo, "localizar texto nesse arquivo" (não "localizar o texto neste arquivo").</li><li>Não inclua pontuação final, a menos que haja várias frases completas.</li> </ul>|
 |Quando um rótulo de texto é truncada ou provável truncar em alguns idiomas...|<ul><li>Forneça o rótulo completo na dica de ferramenta.</li><li>Opcional: Em outra linha, forneça uma descrição de esclarecimento das, mas somente se necessário.</li><li>Não fornece uma dica de ferramenta se as informações de completo é fornecida em outro lugar na página ou fluxo.</li></ul>|
 |Se um atalho de teclado está disponível...|<ul><li>Opcional: Forneça o atalho de teclado entre parênteses após o rótulo ou a frase descritivo, por exemplo "Print (Ctrl + P)" ou "Localizar o texto neste arquivo (Ctrl + F)"</li><li>Ele é Okey para adicionar um atalho de teclado úteis para uma esclarecimento das dica de ferramenta, mas evitar adicionar uma dica de ferramenta apenas para mostrar um atalho de teclado. </li></ul>|

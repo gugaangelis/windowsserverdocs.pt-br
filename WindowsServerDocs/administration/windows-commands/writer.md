@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 94be02aa25867845436b83d052c4990ff9212975
-ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.openlocfilehash: 8aee4ecca85c7d5f46ee79f3ad928b746c02e7bb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65564679"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439980"
 ---
 # <a name="writer"></a>Gravador
 
@@ -35,11 +35,11 @@ writer exclude [<Writer> | <Component>]
 
 ## <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|verify|Verifica se o gravador especificado ou o componente está incluído no procedimento de backup ou restauração. O procedimento de backup ou restauração falhará se o gravador ou o componente não está incluído.|
-|exclude|Exclui o gravador especificado ou o componente do procedimento de backup ou restauração.|
-|[\<Writer> | <Component>]|Especifica o gravador ou o componente para verificar ou excluir. Os gravadores são especificados pelo gravador GUID ou pelo nome do gravador, por exemplo "gravador do sistema".|
+| Parâmetro  |                                                                                      Descrição                                                                                      |
+|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   verify   | Verifica se o gravador especificado ou o componente está incluído no procedimento de backup ou restauração. O procedimento de backup ou restauração falhará se o gravador ou o componente não está incluído. |
+|  exclude   |                                                   Exclui o gravador especificado ou o componente do procedimento de backup ou restauração.                                                    |
+| [\<Writer> |                                                                                     <Component>]                                                                                      |
 
 ## <a name="BKMK_examples"></a>Exemplos
 

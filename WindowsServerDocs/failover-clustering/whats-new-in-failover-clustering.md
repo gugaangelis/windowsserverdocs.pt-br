@@ -8,12 +8,12 @@ manager: dongill
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: 3c0792347aaa70fe80d346cc51cbc44b73c42f39
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: 330f65721fca1908ac54ddfd194f96ffe540f1b5
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476016"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442366"
 ---
 # <a name="whats-new-in-failover-clustering"></a>Novidades no Clustering de Failover
 
@@ -50,10 +50,10 @@ Este tópico explica as funcionalidades novas e alteradas no Clustering do Failo
     A Atualização com Suporte a Cluster (CAU) agora está integrada e tem suporte aos Espaços de Armazenamento Diretos, validando e garantindo que a ressincronização de dados seja concluída em cada nó. A atualização com suporte do cluster inspeciona as atualizações de forma inteligente reiniciem somente se for necessário. Isso permite que as reinicializações de orquestração de todos os servidores no cluster para a manutenção planejada.
 
 - **Aprimoramentos de testemunha de compartilhamento de arquivo** habilitamos o uso de uma testemunha de compartilhamento de arquivos nos seguintes cenários: 
-    - Acesso à Internet ausente ou muito ruim devido a um local remoto, evitando o uso de uma testemunha de nuvem. 
-    - Falta de unidades compartilhadas para uma testemunha de disco. Isso pode ser uma configuração hiperconvergente espaços de armazenamento diretos, um SQL Server sempre em grupos AG (disponibilidade), ou um * Exchange banco de dados do grupo de disponibilidade (DAG), nenhuma delas usar discos compartilhados. 
-    - Falta de uma conexão do controlador de domínio devido a do cluster que está sendo por trás de uma rede de Perímetro. 
-    - Um cluster de grupo de trabalho ou domínio cruzado para o qual existe não é nenhum objeto de nome de cluster (CNO) do Active Directory. Saiba mais sobre esses aprimoramentos na seguinte postagem no servidor de & gerenciamento Blogs: Testemunha de compartilhamento de arquivos do Cluster de failover e do DFS.
+  - Acesso à Internet ausente ou muito ruim devido a um local remoto, evitando o uso de uma testemunha de nuvem. 
+  - Falta de unidades compartilhadas para uma testemunha de disco. Isso pode ser uma configuração hiperconvergente espaços de armazenamento diretos, um SQL Server sempre em grupos AG (disponibilidade), ou um * Exchange banco de dados do grupo de disponibilidade (DAG), nenhuma delas usar discos compartilhados. 
+  - Falta de uma conexão do controlador de domínio devido a do cluster que está sendo por trás de uma rede de Perímetro. 
+  - Um cluster de grupo de trabalho ou domínio cruzado para o qual existe não é nenhum objeto de nome de cluster (CNO) do Active Directory. Saiba mais sobre esses aprimoramentos na seguinte postagem no servidor de & gerenciamento Blogs: Testemunha de compartilhamento de arquivos do Cluster de failover e do DFS.
     
     Vamos agora também bloquear explicitamente o uso de um compartilhamento de Namespaces do DFS como um local. Adicionar uma testemunha de compartilhamento de arquivo para um DFS compartilhamento pode causar problemas de estabilidade do cluster e essa configuração nunca tem sido suportada. Adicionamos a lógica para detectar se um compartilhamento usa Namespaces do DFS, e se os Namespaces do DFS for detectado, o Gerenciador de Cluster de Failover bloqueia a criação da testemunha e exibe uma mensagem de erro sobre não tem suporte.
 - **Proteção do cluster**

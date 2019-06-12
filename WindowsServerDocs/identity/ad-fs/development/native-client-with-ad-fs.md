@@ -9,12 +9,12 @@ ms.date: 07/17/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: e85a97fa08e4c77588b17aee08ee03e0b897a74c
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: 15bb6f1e39f64ff19ebb5515188ee944e277d3b7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976873"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445483"
 ---
 # <a name="build-a-native-client-application-using-oauth-public-clients-with-ad-fs-2016-or-later"></a>Criar um cliente nativo do aplicativo usando clientes públicos OAuth com o AD FS 2016 ou posterior
 
@@ -163,7 +163,7 @@ Executando o aplicativo
 
 Nesta etapa, o aplicativo nativo redirecionado para o AD FS e tem um token de ID e um token de acesso para a API da Web
 
-3.  Insira um item na caixa de texto e clique em Adicionar item. Nesta etapa, o aplicativo acessa a API da Web para adicionar o item e para fazer isso, apresenta o token de acesso para a API Web obtida do AD FS. A API da Web corresponde ao valor de público-alvo para garantir que o token é destinado para ele e verifica a assinatura do token usando as informações de metadados de Federação.
+3. Insira um item na caixa de texto e clique em Adicionar item. Nesta etapa, o aplicativo acessa a API da Web para adicionar o item e para fazer isso, apresenta o token de acesso para a API Web obtida do AD FS. A API da Web corresponde ao valor de público-alvo para garantir que o token é destinado para ele e verifica a assinatura do token usando as informações de metadados de Federação.
 
 ![Entrar](media/native-client-with-ad-fs-2016/clienttodoadd.png)
 

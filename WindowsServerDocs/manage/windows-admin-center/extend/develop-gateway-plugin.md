@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 93cee5b8e3611a264119947103d22d9aa3b9a56b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 66e36a349fc6bd38a77ccf4f00d380788ea4b422
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834387"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445949"
 ---
 # <a name="develop-a-gateway-plugin"></a>Desenvolver um plug-in de gateway
 
@@ -69,7 +69,7 @@ Depois que o processo de administração do Windows é reiniciado, você poderá
 
 ### <a name="optional-attach-to-plugin-for-debugging"></a>Opcional: Anexar ao plug-in para depuração
 
-No Visual Studio 2017, no menu Depurar, selecione "Anexar ao processo". Na próxima janela, percorra a lista de processos disponíveis, selecione SMEDesktop.exe e clique em "Anexar". Uma vez o depurador é iniciado, você pode colocar um ponto de interrupção no seu código de recurso e o exercício, em seguida, por meio do formato de URL acima. Para nosso projeto de exemplo (nome de recurso: "Exemplo Uno") a URL é: "http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno"
+No Visual Studio 2017, no menu Depurar, selecione "Anexar ao processo". Na próxima janela, percorra a lista de processos disponíveis, selecione SMEDesktop.exe e clique em "Anexar". Uma vez o depurador é iniciado, você pode colocar um ponto de interrupção no seu código de recurso e o exercício, em seguida, por meio do formato de URL acima. Para nosso projeto de exemplo (nome de recurso: "Exemplo Uno") a URL é: "<http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno>"
 
 ## <a name="create-a-tool-extension-with-the-windows-admin-center-cli"></a>Criar uma extensão de ferramenta com a CLI do Windows Admin Center ##
 
@@ -104,8 +104,8 @@ Quando isso for concluído, você configurou tudo o que você precisa carregar s
 
 Agora que você criou uma extensão com a CLI do Windows Admin Center, você está pronto para se conectar a sua extensão de ferramenta para seu plug-in do gateway personalizado, seguindo estas etapas:
 
-- Adicionar um [módulo vazio](guides\add-module.md)
-- Use sua [plug-in do gateway personalizado](guides\use-custom-gateway-plugin.md) em sua extensão de ferramenta
+- Adicionar um [módulo vazio](guides/add-module.md)
+- Use sua [plug-in do gateway personalizado](guides/use-custom-gateway-plugin.md) em sua extensão de ferramenta
  
 ## <a name="build-and-side-load-your-extension"></a>Compilação e o lado carregam sua extensão
 

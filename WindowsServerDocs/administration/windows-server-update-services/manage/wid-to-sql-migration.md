@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dougkim
 ms.date: 07/25/2018
-ms.openlocfilehash: ed6f695947fc17d2e96b5282b3a67a221bb0140d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9015bbc54a4c4bda0f691b79dbb7d3ba8ddbc4a1
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858027"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439897"
 ---
 >Aplica-se a: Windows Server 2012, Windows Server 2012 R2, Windows Server 2016
 
@@ -55,8 +55,8 @@ No PowerShell (elevado), execute:
 
 > [!IMPORTANT]
 > Estas etapas mostram como desanexar o banco de dados do WSUS (SUSDB) da instância do banco de dados interno do Windows usando o **sqlcmd** utilitário. Para obter mais informações sobre o **sqlcmd** utilitário, consulte [utilitário sqlcmd](https://go.microsoft.com/fwlink/?LinkId=81183).
-1. Abra um prompt de comando elevado
-2. Execute o seguinte comando SQL para desanexar o banco de dados do WSUS (SUSDB) da instância do banco de dados interno do Windows usando o **sqlcmd** utilitário:
+> 1. Abra um prompt de comando elevado
+> 2. Execute o seguinte comando SQL para desanexar o banco de dados do WSUS (SUSDB) da instância do banco de dados interno do Windows usando o **sqlcmd** utilitário:
 
 ```batchfile
         sqlcmd -S \\.\pipe\Microsoft##WID\tsql\query
@@ -70,7 +70,7 @@ No PowerShell (elevado), execute:
 
 ### <a name="copy-the-susdb-files-to-the-sql-server"></a>Copie os arquivos SUSDB para o SQL Server
 
-1. Cópia **susdb. mdf** e **SUSDB\_log** da pasta de dados WID (**% SystemDrive %**\** Windows\WID\Data * *) para os dados da instância SQL Pasta.
+1. Cópia **susdb. mdf** e **SUSDB\_log** da pasta de dados WID ( **% SystemDrive %** \** Windows\WID\Data * *) para os dados da instância SQL Pasta.
 
 > [!TIP]
 > Por exemplo, se sua pasta de instância do SQL for **C:\Program Files\Microsoft SQL Server\MSSQL12. MSSQLSERVER\MSSQL**, e é a pasta de dados WID **C:\Windows\WID\Data,** copie os arquivos SUSDB da **C:\Windows\WID\Data** para **C:\Program Files\Microsoft SQL Server \MSSQL12. MSSQLSERVER\MSSQL\Data**
@@ -111,7 +111,7 @@ Depois de anexar o SUSDB, verifique **NT AUTHORITY\NETWORK SERVICE** tem permiss
 O **NT AUTHORITY\NETWORK SERVICE** conta deve estar listada. Se não for, você precisará adicioná-lo adicionando o novo nome de logon.
 
 > [!IMPORTANT]
-> Se a instância do SQL está em um computador diferente do WSUS, conta de computador do servidor do WSUS deve ser listada no formato **[FQDN]\\[WSUSComputerName] $**.  Se não, as etapas a seguir podem ser usadas para adicioná-lo, substituindo **NT AUTHORITY\NETWORK SERVICE** com a conta de computador do servidor WSUS (**[FQDN]\\[WSUSComputerName] $**), isso deveria ser ***além*** conceder direitos a **NT AUTHORITY\NETWORK SERVICE**
+> Se a instância do SQL está em um computador diferente do WSUS, conta de computador do servidor do WSUS deve ser listada no formato **[FQDN]\\[WSUSComputerName] $** .  Se não, as etapas a seguir podem ser usadas para adicioná-lo, substituindo **NT AUTHORITY\NETWORK SERVICE** com a conta de computador do servidor WSUS ( **[FQDN]\\[WSUSComputerName] $** ), isso deveria ser ***além*** conceder direitos a **NT AUTHORITY\NETWORK SERVICE**
 
 ##### <a name="adding-nt-authoritynetwork-service-and-granting-it-rights"></a>Adicionando NT AUTHORITY\NETWORK SERVICE e conceder a ele direitos
 
@@ -150,7 +150,7 @@ O **NT AUTHORITY\NETWORK SERVICE** conta deve estar listada.
     > ![image11](images/image11.png)
 
 4. Sobre o **mapeamento de usuário** página, selecione o **SUSDB** do banco de dados em **"Usuários mapeados para este logon"**
-5. Verifique **webservice** sob o **"associação de função para o banco de dados: SUSDB"**: ![image12](images/image12.png)
+5. Verifique **webservice** sob o **"associação de função para o banco de dados: SUSDB"** : ![image12](images/image12.png)
 6. Clique em **Okey** ao salvar as configurações.
     > [!NOTE]
     > Talvez você precise reiniciar o serviço do SQL para que as alterações entrem em vigor.
@@ -162,7 +162,7 @@ O **NT AUTHORITY\NETWORK SERVICE** conta deve estar listada.
 
 1. Clique em **Iniciar**, **Executar**, digite **regedit** e clique em **OK**.
 2. Localize a seguinte chave: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\UpdateServices\Server\Setup\SqlServerName**
-3. No **valor** caixa de texto, digite **[ServerName]\\[NomedaInstância]** e, em seguida, clique em **Okey**. Se o nome da instância for a instância padrão, digite **[ServerName]**.
+3. No **valor** caixa de texto, digite **[ServerName]\\[NomedaInstância]** e, em seguida, clique em **Okey**. Se o nome da instância for a instância padrão, digite **[ServerName]** .
 4. Localize a seguinte chave: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Update Services\Server\Setup\Installed Role Services\UpdateServices-WidDatabase** ![image13](images/image13.png)
 5. Renomear a chave a ser **UpdateServices-banco de dados** ![image41](images/image14.png)
 
@@ -184,7 +184,7 @@ No PowerShell (elevado), execute:
 ## <a name="uninstalling-the-wid-role-not-recommended"></a>Desinstalando a função WID (não recomendada)
 
 > [!WARNING]
-> Removendo a função do WID também remove uma pasta de banco de dados (**%SystemDrive%\Program programas\update Services\Database**) que contém os scripts necessários para WSUSUtil.exe para tarefas de pós-instalação. Se você optar por desinstalar a função WID, verifique se você fazer backup de **%SystemDrive%\Program programas\update Services\Database** pasta com antecedência.
+> Removendo a função do WID também remove uma pasta de banco de dados ( **%SystemDrive%\Program programas\update Services\Database**) que contém os scripts necessários para WSUSUtil.exe para tarefas de pós-instalação. Se você optar por desinstalar a função WID, verifique se você fazer backup de **%SystemDrive%\Program programas\update Services\Database** pasta com antecedência.
 
 Usando o PowerShell:
 

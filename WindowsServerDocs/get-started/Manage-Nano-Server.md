@@ -12,12 +12,12 @@ ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 8973302fc8a0c6bdb5b19f9296e711dcc6465589
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cc535934705878c7f2b7fdc4e655ab5c853e4f96
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826797"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443532"
 ---
 # <a name="manage-nano-server"></a>Gerenciar o Nano Server
 
@@ -39,8 +39,8 @@ Para usar qualquer ferramenta de gerenciamento remoto, você provavelmente preci
 ## <a name="using-windows-powershell-remoting"></a>Usar a comunicação remota do Windows PowerShell  
 Para gerenciar o Nano Server com a comunicação remota do Windows PowerShell, é necessário adicionar o endereço IP do Nano Server à lista de hosts confiáveis do seu computador de gerenciamento, adicionar a conta que você está usando para os administradores do Nano Server e ativar o CredSSP se quiser usar esse recurso.  
 
- >[!NOTE]  
-    > Se o destino do Nano Server e o computador de gerenciamento estiverem na mesma floresta do AD DS (ou em florestas com uma relação de confiança), você não deve adicionar o Nano Server à lista de hosts confiáveis – você pode se conectar ao Nano Server usando seu nome de domínio totalmente qualificado , por exemplo: PS C:\> Enter-PSSession -ComputerName nanoserver.contoso.com -Credential (Get-Credential)
+> [!NOTE]
+> Se o destino do Nano Server e o computador de gerenciamento estiverem na mesma floresta do AD DS (ou em florestas com uma relação de confiança), você não deve adicionar o Nano Server à lista de hosts confiáveis – você pode se conectar ao Nano Server usando seu nome de domínio totalmente qualificado , por exemplo: PS C:\> Enter-PSSession -ComputerName nanoserver.contoso.com -Credential (Get-Credential)
   
   
 Para adicionar o Nano Server à lista de hosts confiáveis, execute este comando em um prompt com privilégios elevados do Windows PowerShell:  
@@ -51,7 +51,7 @@ Para iniciar a sessão remota do Windows PowerShell, inicie uma sessão local do
   
   
 ```  
-$ip = "\<IP address of Nano Server>"  
+$ip = "<IP address of Nano Server>"  
 $user = "$ip\Administrator"  
 Enter-PSSession -ComputerName $ip -Credential $user  
 ```  
@@ -72,7 +72,7 @@ Inicie a sessão CIM executando estes comandos em um prompt do Windows PowerShel
   
 ```  
 $ip = "<IP address of the Nano Server\>"  
-$ip\Administrator  
+$user = $ip\Administrator  
 $cim = New-CimSession -Credential $user -ComputerName $ip  
 ```  
   
@@ -89,15 +89,17 @@ Get-CimInstance -CimSession $Cim -Query "SELECT * from Win32_Process WHERE name 
 ## <a name="windows-remote-management"></a>Gerenciamento Remoto do Windows  
 Você pode executar programas remotamente no Nano Server com o WinRM (Gerenciamento Remoto do Windows). Para usar o WinRM, primeiro configure o serviço e defina a página de código com estes comandos em um prompt de comandos com privilégios elevados:  
   
-**winrm quickconfig**  
-  
-**WinRM define winrm/config/client @{TrustedHosts = "< endereço ip do Nano Server"}**  
-  
-**chcp 65001**  
+```
+winrm quickconfig
+winrm set winrm/config/client @{TrustedHosts="<ip address of Nano Server>"}
+chcp 65001
+```
   
 Agora você pode executar comandos remotamente no Nano Server. Por exemplo:  
-  
-**Winrs-r:\<endereço IP do Nano Server > - u: administrador-p:\<senha de administrador do Nano Server > ipconfig**  
+
+```
+winrs -r:<IP address of Nano Server> -u:Administrator -p:<Nano Server administrator password> ipconfig
+```
   
 Para saber mais sobre o Gerenciamento Remoto do Windows, confira [Visão geral do WinRM (Gerenciamento Remoto do Windows)](https://technet.microsoft.com/library/dn265971.aspx).  
    
@@ -115,7 +117,7 @@ Stop-NetEventSession [-Name]
 ```  
 Esses cmdlets estão documentados com detalhes em [Cmdlets de captura de pacote de evento de rede do Windows PowerShell](https://technet.microsoft.com/library/dn268520(v=wps.630).aspx)  
 
-##<a name="installing-servicing-packages"></a>Instalar pacotes de serviço  
+## <a name="installing-servicing-packages"></a>Instalar pacotes de serviço  
 Se você quiser instalar pacotes de serviço, use o parâmetro -ServicingPackagePath (você pode passar uma matriz de caminhos para arquivos .cab):  
   
 `New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -ServicingPackagePath \\path\to\kb123456.cab`  
@@ -134,7 +136,7 @@ O Número de série do volume é B05B-CC3D
       Diretório de C:\KB3157663_expanded  
    
       04/19/2016  01:17 PM    \<DIR>          .  
-      04/19/2016  01:17 PM    \<DIR>          ..  
+      04/19/2016  01:17 PM    \<DIR&gt;          .  
         04/17/2016  12:31 AM               517 Windows10.0-KB3157663-x64-pkgProperties.txt  
 04/17/2016  12:30 AM        93,886,347 Windows10.0-KB3157663-x64.cab  
 04/17/2016  12:31 AM               454 Windows10.0-KB3157663-x64.xml  
@@ -240,7 +242,7 @@ As seções a seguir listam as atividades de coleta de dados de desempenho mais 
 wpr.exe -providers
 ```
 
-Você pode filtrar a saída para os tipos de eventos de seu interesse. Por exemplo: 
+Você pode filtrar a saída para os tipos de eventos de seu interesse. Por exemplo:
 ```
 PS C:\> wpr.exe -providers | select-string "Storage"
 
@@ -349,7 +351,7 @@ PS C:\> Remove-AutologgerConfig -Name BootPnpLog
 Para coletar rastreamentos de inicialização e instalação em um número de sistemas, ou em um sistema sem disco, considere o uso da [Coleta de evento de configuração e inicialização](../administration/get-started-with-setup-and-boot-event-collection.md).
 
 ### <a name="capture-performance-counter-data"></a>Capturar dados do contador de desempenho
-Normalmente, você monitora os dados do contador de desempenho com o GUI de Perfmon.exe. No Nano Server, use o equivalente de linha de comando de ```Typeperf.exe```. Por exemplo: 
+Normalmente, você monitora os dados do contador de desempenho com o GUI de Perfmon.exe. No Nano Server, use o equivalente de linha de comando de ```Typeperf.exe```. Por exemplo:
 
 Consulta contadores disponíveis – você pode filtrar a saída para localizar facilmente os que são de seu interesse.
 ```
@@ -378,7 +380,7 @@ The command completed successfully.
 
 Outras opções de linha de comando permitem que você especifique nomes de contador de desempenho de interesse em um arquivo de configuração, redirecionando a saída para um arquivo de log, entre outras coisas. Veja a [documentação sobre typeperf.exe](https://technet.microsoft.com/library/bb490960.aspx) para obter detalhes.
 
-Você também pode usar a interface gráfica do Perfmon.exe remotamente com destinos do Nano Server. Ao adicionar contadores de desempenho ao modo de exibição, especifique o destino do Nano Server no nome do computador em vez do padrão *<Local computer>*.
+Você também pode usar a interface gráfica do Perfmon.exe remotamente com destinos do Nano Server. Ao adicionar contadores de desempenho ao modo de exibição, especifique o destino do Nano Server no nome do computador em vez do padrão *<Local computer>* .
 
 ### <a name="interact-with-the-windows-event-log"></a>Interagir com o Log de eventos do Windows
 

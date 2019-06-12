@@ -10,12 +10,12 @@ ms.date: 03/16/2018
 ms.topic: landing-page
 author: kaushika-msft
 ms.author: elizapo
-ms.openlocfilehash: 1a4d28e168e7ce328ac125d12a07cb0c133e2d0e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fc87bf87a79f5f7e13069ad1a58be0dc940a558e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852117"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447784"
 ---
 # <a name="top-support-solutions-for-windows-server"></a>Principais soluções de suporte do Windows Server
 
@@ -84,10 +84,9 @@ Essas são as principais soluções do Suporte da Microsoft para a maioria dos p
                         <p><a href="https://technet.microsoft.com/library/ee939272.aspx">Como solucionar o serviço de gerenciamento de chaves (KMS)</a></p>
 <hr>
                         <p><a href="https://technet.microsoft.com/library/ff793439.aspx">Solução de problemas de ativação de volume</a></p>
-<hr>                       
-                        <p><a href="https://technet.microsoft.com/library/ff793399.aspx">Códigos de erro de ativação</a></p>
+<hr><br/>                        <p><a href="https://technet.microsoft.com/library/ff793399.aspx">Códigos de erro de ativação</a></p>
 <hr>
-                        <p><a href="https://support.microsoft.com/help/2796988/windows-8-or-windows-server-2012-installation-may-fail-with-error-mess">Instalação do Windows pode falhar com o erro "a chave do produto inserida não corresponde a nenhum das imagens do Windows disponíveis para instalação. Insira uma chave de produto diferente"</a></p>
+                        <p><a href="https://support.microsoft.com/help/2796988/windows-8-or-windows-server-2012-installation-may-fail-with-error-mess">A instalação do Windows pode falhar com o erro &quot;a chave do produto inserida não corresponde a nenhuma das imagens do Windows disponíveis para instalação. Insira uma chave de produto diferente&quot;</a></p>
                     </div>
                 </div>
             </div>
@@ -113,7 +112,7 @@ Essas são as principais soluções do Suporte da Microsoft para a maioria dos p
 <hr>
                         <p><a href="https://support.microsoft.com/kb/255504">Usando Ntdsutil.exe para executar ou transferir funções FSMO para um controlador de domínio</a></p>
 <hr>
-                        <p><a href="../identity/ad-ds/deploy/troubleshooting-domain-controller-deployment.md">Solução de problemas de implantação do controlador de domínio</a></p>
+                        <p><a href="../identity/ad-ds/deploy/troubleshooting-domain-controller-deployment.md">Solução de problemas de implantação de controlador de domínio</a></p>
 <hr>
                         <p><a href="https://msdn.microsoft.com/library/bb727058.aspx">Solucionando problemas de Assistente de instalação do Active Directory</a></p>
 <hr>
@@ -138,8 +137,7 @@ Essas são as principais soluções do Suporte da Microsoft para a maioria dos p
                         <a href="/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup">Como configurar o registro automático de dispositivos ingressados no domínio do Windows com o Azure Active Directory</a>
 <hr>
                         <p><a href="/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup#step-2-setup-issuance-of-claims">Configurar a emissão de declarações</a></p>
-<hr>  
-                        <p><a href="../identity/ad-fs/operations/configure-ad-fs-to-authenticate-users-stored-in-ldap-directories.md">Configurar o AD FS para autenticar usuários armazenados em diretórios LDAP</a></p>
+<hr><br/>                        <p><a href="../identity/ad-fs/operations/configure-ad-fs-to-authenticate-users-stored-in-ldap-directories.md">Configurar o AD FS para autenticar usuários armazenados nos diretórios do LDAP</a></p>
 <hr>
                         <p><a href="../identity/ad-fs/operations/ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md">Suporte do AD FS para associação de nome de host alternativo para autenticação de certificado</a></p>
 <hr>

@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 42df338ee5a5aecb3cf32f91a2b1aedae1210164
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: b000d4cfd4ded7ad37dbb235a9d33c83d8951707
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189514"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444364"
 ---
 # <a name="create-a-relying-party-trust"></a>Criar um objeto de confiança de terceira parte confiável
 
@@ -74,22 +74,22 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
 
 1. No Gerenciador do servidor, clique em **ferramentas**e, em seguida, selecione **gerenciamento do AD FS**.  
   
-2.  Sob **ações**, clique em **adicionar terceira parte confiável**.  
-![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust1.PNG)   
+2. Sob **ações**, clique em **adicionar terceira parte confiável**.  
+   ![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust1.PNG)   
 
-3.  Sobre o **bem-vindo** , escolha **reconhecimento de declaração** e clique em **iniciar**.  
-![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust2.PNG) 
+3. Sobre o **bem-vindo** , escolha **reconhecimento de declaração** e clique em **iniciar**.  
+   ![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust2.PNG) 
   
-4.  Sobre o **Selecionar fonte de dados** , clique em **importar dados sobre a terceira parte confiável publicados online ou em uma rede local*. Em **Endereço dos metadados de federação (nome do host ou URL)** , digite a URL de metadados de federação ou o nome do host do parceiro. Em seguida, clique em **Avançar**.  
-![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust12.PNG) 
+4. Sobre o **Selecionar fonte de dados** , clique em <strong>importar dados sobre a terceira parte confiável publicados online ou em uma rede local *. Em * * endereço de metadados de Federação (nome de host ou URL)</strong>, digite o nome de host ou URL da metadados de Federação do parceiro e, em seguida, clique em **próxima**.  
+   ![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust12.PNG) 
 
-5.  Na página Especificar nome para exibição, digite um nome na **nome de exibição**, em observações, digite uma descrição para essa terceira parte confiável e, em seguida, clique em **próxima**.
+5. Na página Especificar nome para exibição, digite um nome na **nome de exibição**, em observações, digite uma descrição para essa terceira parte confiável e, em seguida, clique em **próxima**.
 
-6.  Na página Escolher regras de autorização de emissão, selecione **permitir que todos os usuários acessem esta terceira** ou **negar acesso a todos os usuários a esta terceira**e, em seguida, clique em **Avançar**.
+6. Na página Escolher regras de autorização de emissão, selecione **permitir que todos os usuários acessem esta terceira** ou **negar acesso a todos os usuários a esta terceira**e, em seguida, clique em **Avançar**.
 
-7.  Na página pronto para adicionar relação de confiança, examine as configurações e, em seguida, clique em **próxima** para salvar sua terceira informações de confiança.
+7. Na página pronto para adicionar relação de confiança, examine as configurações e, em seguida, clique em **próxima** para salvar sua terceira informações de confiança.
 
-8.  Na página concluir, clique em **fechar**. Essa ação exibe automaticamente a caixa de diálogo Editar regras de declaração. Para obter mais informações sobre como proceder ao adicionar regras de declaração a esse objeto de confiança de terceira parte confiável, consulte as Referências adicionais.
+8. Na página concluir, clique em **fechar**. Essa ação exibe automaticamente a caixa de diálogo Editar regras de declaração. Para obter mais informações sobre como proceder ao adicionar regras de declaração a esse objeto de confiança de terceira parte confiável, consulte as Referências adicionais.
 
 
 

@@ -11,12 +11,12 @@ ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
-ms.openlocfilehash: b32b4879ad454d1154c3d65dbf690cdaae73d76c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fed0587b74873005f14a216bac22f952bcc65a4f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827217"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447288"
 ---
 # <a name="security-and-assurance-in-windows-server"></a>Segurança e garantia no Windows Server 
 
@@ -71,7 +71,7 @@ Este guia fornece informações sobre como resolver problemas que você pode enc
 Este white paper proporciona uma visão geral sobre como as VMs blindadas aumentam a segurança geral para evitar a violação.                                         
 
 ## <a name="privileged-access-management"></a>Gerenciamento de Acesso Privilegiado
-### <a name="securing-privileged-accesshttpstechnetmicrosoftcomwindows-server-docssecuritysecuring-privileged-accesssecuring-privileged-access"></a>[Protegendo o acesso privilegiado](https://technet.microsoft.com/windows-server-docs/security/securing-privileged-access/securing-privileged-access)
+### <a name="securing-privileged-accesshttpstechnetmicrosoftcomwindows-server-docssecuritysecuring-privileged-accesssecuring-privileged-access"></a>[Como proteger o acesso privilegiado](https://technet.microsoft.com/windows-server-docs/security/securing-privileged-access/securing-privileged-access)
 Um roteiro para proteger o acesso privilegiado. Esse roteiro foi criado com base na experiência combinada da equipe de segurança de servidores, a TI da Microsoft, a equipe do Azure e os serviços de consultoria da Microsoft                           
 
 ### <a name="just-in-time-administration-with-microsoft-identity-managerhttpstechnetmicrosoftcomlibrarymt150258aspx"></a>[Administração just in Time com o Microsoft Identity Manager](https://technet.microsoft.com/library/mt150258.aspx)
@@ -90,7 +90,7 @@ Passo a passo da demonstração da Administração Just Enough.
 ### <a name="protect-derived-domain-credentials-with-credential-guardhttpsdocsmicrosoftcomwindowssecurityidentity-protectioncredential-guardcredential-guard"></a>[Proteger as credenciais de domínio derivadas com o Credential Guard](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)
 O Credential Guard usa segurança baseada em virtualização para isolar segredos para que apenas o software de sistema privilegiado possa acessá-los. O acesso não autorizado a esses segredos pode levar a ataques de roubo de credenciais, como os ataques Pass-the-Hash ou Pass-The-Ticket. O Credential Guard evita esses ataques, protegendo hashes de senha NTLM e Tíquetes de Concessão de Tíquetes Kerberos.
 
-### <a name="protect-remote-desktop-credentials-with-remote-credential-guardhttpsdocsmicrosoftcomwindowssecurityidentity-protectionremote-credential-guard"></a>[Proteger as credenciais de área de trabalho remota com do Credential Guard remoto](https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard)
+### <a name="protect-remote-desktop-credentials-with-remote-credential-guardhttpsdocsmicrosoftcomwindowssecurityidentity-protectionremote-credential-guard"></a>[Proteger as credenciais de Área de Trabalho Remota com o Remote Credential Guard](https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard)
 O Remote Credential Guard ajuda a proteger suas credenciais através de uma Conexão de Área de Trabalho Remota ao redirecionar as solicitações de Kerberos para o dispositivo que está solicitando a conexão. Ele também fornece experiências de logon único para sessões de Área de Trabalho Remota.                                                                                                        |
 ### <a name="credential-guard-demo-videohttpswwwyoutubecomwatchveupkogsl7yk"></a>[Credential Guard vídeo de demonstração](https://www.youtube.com/watch?v=eUpKOGSl7yk)
 Este vídeo de cinco minutos demonstra o Credential Guard e o Remote Credential Guard.         
@@ -111,7 +111,7 @@ A Proteção de Fluxo de Controle oferece proteção incorporada contra algumas 
 ### <a name="windows-defenderhttpstechnetmicrosoftcomwindows-server-docssecuritywindows-defenderwindows-defender-overview-windows-server"></a>[Windows Defender](https://technet.microsoft.com/windows-server-docs/security/windows-defender/windows-defender-overview-windows-server)
 O Windows Defender proporciona recursos de detecção ativa para bloquear malware conhecido. O Windows Defender é ativado por padrão e é otimizado para oferecer suporte a várias funções de servidor no Windows Server.
 
-##<a name="detecting-and-responding-to-threats"></a>Detectar e responder a ameaças
+## <a name="detecting-and-responding-to-threats"></a>Detectar e responder a ameaças
 ### <a name="security-threat-analysis-using-microsoft-operations-management-suitehttpschannel9msdncomeventsignite2015brk3464"></a>[Análise de ameaças de segurança usando o Microsoft Operations Management Suite](https://channel9.msdn.com/events/ignite/2015/brk3464)
 Esta apresentação do Ignite discute como você pode usar informações operacionais para executar análise de riscos de segurança.
 

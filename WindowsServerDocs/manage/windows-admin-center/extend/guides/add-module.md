@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: e6978ce20a7c6da8addb217de8d30f733b40d261
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d8d901097eb280679a388ff66161e3514befcd13
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834397"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452656"
 ---
 # <a name="add-a-module-to-a-tool-extension"></a>Adicionar um módulo a uma extensão de ferramenta
 
@@ -23,7 +23,7 @@ Neste artigo, adicionaremos um módulo vazio a uma extensão de ferramenta que c
 
 ## <a name="prepare-your-environment"></a>Prepare o ambiente
 
-Se você ainda não fez isso, siga as instruções em desenvolver uma [ferramenta](..\develop-tool.md) (ou [solução](..\develop-solution.md)) a extensão para preparar seu ambiente e criar uma extensão de ferramenta nova e vazia.
+Se você ainda não fez isso, siga as instruções em desenvolver uma [ferramenta](../develop-tool.md) (ou [solução](../develop-solution.md)) a extensão para preparar seu ambiente e criar uma extensão de ferramenta nova e vazia.
 
 ## <a name="use-the-angular-cli-to-create-a-module-and-component"></a>Usar a CLI do Angular para criar um módulo (e componente)
 
@@ -181,4 +181,4 @@ Aqui está um exemplo de um caminho padrão atualizado:
 
 ## <a name="build-and-side-load-your-extension"></a>Compilação e o lado carregam sua extensão
 
-Agora, você adicionou um módulo para sua extensão.  Em seguida, você pode [compilação e do lado do carregamento](..\develop-tool.md#build-and-side-load-your-extension) sua extensão no Windows Admin Center para ver os resultados.
+Agora, você adicionou um módulo para sua extensão.  Em seguida, você pode [compilação e do lado do carregamento](../develop-tool.md#build-and-side-load-your-extension) sua extensão no Windows Admin Center para ver os resultados.

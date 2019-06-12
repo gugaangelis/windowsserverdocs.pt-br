@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 52b3012a39409f9d48ae8aa7608e7bd0af5787d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e72b4be1b265d682d489cf372cdfe5ef54bb444d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858817"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441245"
 ---
 # <a name="shift"></a>shift
 
@@ -43,11 +43,11 @@ shift [/n <N>]
 
 ## <a name="remarks"></a>Comentários
 
--   O **shift** comando altera os valores dos parâmetros em lotes **%0** por meio do **%9** copiando cada parâmetro para o anterior — o valor de **%1** é copiado **%0**, o valor de **%2** é copiado para **%1**e assim por diante. Isso é útil para gravar um arquivo em lotes que executa a mesma operação em qualquer número de parâmetros.
--   Se as extensões de comando estiverem habilitadas, o **shift** comando dá suporte a **/n** opção de linha de comando. O **/n** opção especifica para iniciar a alternância no enésimo argumento, onde **N** é qualquer valor de 0 a 8. Por exemplo, **e de deslocamento/2** mudaria **%3** para **%2**, **%4** para **%3**e assim por diante e deixe **%0** e **%1** afetados. As extensões de comando são habilitadas por padrão.
--   Você pode usar o **shift** comando para criar um arquivo em lotes que pode aceitar parâmetros de lote mais de 10. Se você especificar mais de 10 parâmetros na linha de comando, aqueles que são exibidos após o décimo (**%9**) será deslocada um por vez no **%9**.
--   O **shift** comando não tem efeito sobre o **% \*** parâmetro do lote.
--   Não há não com versões anteriores **shift** comando. Depois de implementar o **shift** de comando, não é possível recuperar o parâmetro de lote (**%0**) que existia antes do deslocamento.
+- O **shift** comando altera os valores dos parâmetros em lotes **%0** por meio do **%9** copiando cada parâmetro para o anterior — o valor de **%1** é copiado **%0**, o valor de **%2** é copiado para **%1**e assim por diante. Isso é útil para gravar um arquivo em lotes que executa a mesma operação em qualquer número de parâmetros.
+- Se as extensões de comando estiverem habilitadas, o **shift** comando dá suporte a **/n** opção de linha de comando. O **/n** opção especifica para iniciar a alternância no enésimo argumento, onde **N** é qualquer valor de 0 a 8. Por exemplo, **e de deslocamento/2** mudaria **%3** para **%2**, **%4** para **%3**e assim por diante e deixe **%0** e **%1** afetados. As extensões de comando são habilitadas por padrão.
+- Você pode usar o **shift** comando para criar um arquivo em lotes que pode aceitar parâmetros de lote mais de 10. Se você especificar mais de 10 parâmetros na linha de comando, aqueles que são exibidos após o décimo ( **%9**) será deslocada um por vez no **%9**.
+- O **shift** comando não tem efeito sobre o **% \\** * parâmetro do lote.
+- Não há não com versões anteriores **shift** comando. Depois de implementar o **shift** de comando, não é possível recuperar o parâmetro de lote ( **%0**) que existia antes do deslocamento.
 
 ## <a name="BKMK_examples"></a>Exemplos
 
@@ -71,4 +71,4 @@ echo All done
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

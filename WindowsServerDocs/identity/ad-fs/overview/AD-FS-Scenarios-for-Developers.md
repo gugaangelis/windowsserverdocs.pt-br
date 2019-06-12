@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3a3156eefc4af52fb7daefb618c689b78fef5efc
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: fb1bc5776ea4d24f274c79563d9e346b104de6d9
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188823"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444225"
 ---
 # <a name="ad-fs-scenarios-for-developers"></a>Cenários do AD FS para desenvolvedores
 
@@ -115,20 +115,20 @@ Esse cenário permite que o usuário de um aplicativo cliente nativo para chamar
 1.  O aplicativo cliente nativo inicia o fluxo com uma chamada para a biblioteca ADAL.  Isso dispara um navegador com base em HTTP GET para o AD FS autorizar o ponto de extremidade:  
   
 **Solicitação de autorização:**  
-GET https://fs.contoso.com/adfs/oauth2/authorize?  
+GET <https://fs.contoso.com/adfs/oauth2/authorize?>  
   
 Parâmetro|Valor  
 ---------|---------  
 response_type|"código"  
-recurso|RP ID (identificador) da API Web no grupo de aplicativos  
+resource|RP ID (identificador) da API Web no grupo de aplicativos  
 client_id|Id do aplicativo nativo no grupo de aplicativos do cliente  
 redirect_uri|URI de redirecionamento do aplicativo nativo no grupo de aplicativos  
   
 **Resposta de solicitação de autorização:**  
 Se o usuário não tiver entrado antes, o usuário é solicitado a fornecer credenciais.    
-O AD FS responde, retornando um código de autorização como o parâmetro "code" no componente de consulta do redirect_uri.  Por exemplo:  Local do HTTP/1.1 302 encontrado:  **http://redirect_uri:80/?code=&lt; código&gt;.**  
+O AD FS responde, retornando um código de autorização como o parâmetro "code" no componente de consulta do redirect_uri.  Por exemplo: HTTP/1.1 302 encontrado local:  **<http://redirect_uri:80/?code=&lt;code&gt>;.**  
   
-2.  O native client, em seguida, envia o código, juntamente com os parâmetros a seguir, para o ponto de extremidade de token do AD FS:  
+2. O native client, em seguida, envia o código, juntamente com os parâmetros a seguir, para o ponto de extremidade de token do AD FS:  
   
 **Solicitação de token:**  
 POST https://fs.contoso.com/adfs/oauth2/token  
@@ -137,14 +137,14 @@ Parâmetro|Valor
 ---------|---------  
 grant_type|"authorization_code" 
 code|código de autorização de 1  
-recurso|RP ID (identificador) da API Web no grupo de aplicativos  
+resource|RP ID (identificador) da API Web no grupo de aplicativos  
 client_id|Id do aplicativo nativo no grupo de aplicativos do cliente  
 redirect_uri|URI de redirecionamento do aplicativo nativo no grupo de aplicativos  
   
 **Resposta de solicitação de token:**  
 O AD FS responde com um HTTP 200, com o access_token, refresh_token e id_token no corpo.  
   
-3.  O aplicativo nativo, em seguida, envia a parte access_token da resposta acima como o cabeçalho de autorização na solicitação HTTP à API da web.  
+3. O aplicativo nativo, em seguida, envia a parte access_token da resposta acima como o cabeçalho de autorização na solicitação HTTP à API da web.  
   
 ### <a name="single-sign-on-behavior"></a>Comportamento de logon único  
 Solicitações do cliente subsequentes dentro de 1 hora (por padrão) o access_token ainda serão válidos no cache e uma nova solicitação não disparará a qualquer tráfego para o AD FS.  O access_token automaticamente será buscada no cache por ADAL.  
@@ -157,7 +157,7 @@ POST https://fs.contoso.com/adfs/oauth2/token
 Parâmetro|Valor|
 ---------|---------
 grant_type|"refresh_token"|
-recurso|RP ID (identificador) da API Web no grupo de aplicativos|
+resource|RP ID (identificador) da API Web no grupo de aplicativos|
 client_id|Id do aplicativo nativo no grupo de aplicativos do cliente
 refresh_token|o token de atualização emitido pelo AD FS em resposta à solicitação de token inicial
 
@@ -177,40 +177,40 @@ Esse cenário é semelhante ao acima em que há uma solicitação de autorizaç�
   
 ![Descrição do fluxo de protocolo](media/ADFS_DEV_4.png)  
   
-1.  Inicia o aplicativo Web a uma autorização de solicitação por meio do navegador, que envia um HTTP GET para o AD FS autoriza o ponto de extremidade  
-**Solicitação de autorização**:  
-GET https://fs.contoso.com/adfs/oauth2/authorize?  
+1. Inicia o aplicativo Web a uma autorização de solicitação por meio do navegador, que envia um HTTP GET para o AD FS autoriza o ponto de extremidade  
+   **Solicitação de autorização**:  
+   GET <https://fs.contoso.com/adfs/oauth2/authorize?>  
   
 Parâmetro|Valor  
 ---------|---------  
 response_type|"código"  
-recurso|RP ID (identificador) da API Web no grupo de aplicativos  
+resource|RP ID (identificador) da API Web no grupo de aplicativos  
 client_id|Id do aplicativo nativo no grupo de aplicativos do cliente  
 redirect_uri|URI de redirecionamento do aplicativo web (aplicativo de servidor) no grupo de aplicativos  
   
 Resposta de solicitação de autorização:  
 Se o usuário não tiver entrado antes, o usuário é solicitado a fornecer credenciais.  
-O AD FS responde, retornando um código de autorização como o parâmetro "code" no componente de consulta do redirect_uri, por exemplo: Local do HTTP/1.1 302 encontrado: https://webapp.contoso.com/?code=&lt; código&gt;.  
+O AD FS responde, retornando um código de autorização como o parâmetro "code" no componente de consulta do redirect_uri, por exemplo: HTTP/1.1 302 encontrado local: <https://webapp.contoso.com/?code=&lt;code&gt>;.  
   
-2.  Como resultado de 302 acima, o navegador inicia um HTTP GET para o aplicativo web, por exemplo: Obtenha http://redirect_uri:80/?code=&lt; código&gt;.   
+2. Como resultado de 302 acima, o navegador inicia um HTTP GET para o aplicativo web, por exemplo: GET <http://redirect_uri:80/?code=&lt;code&gt>;.   
   
-3.  Neste ponto o aplicativo web, ter recebido o código inicia uma solicitação para o AD FS token ponto de extremidade, enviando o seguinte  
-**Solicitação de token:**  
-POST https://fs.contoso.com/adfs/oauth2/token  
+3. Neste ponto o aplicativo web, ter recebido o código inicia uma solicitação para o AD FS token ponto de extremidade, enviando o seguinte  
+   **Solicitação de token:**  
+   POST https://fs.contoso.com/adfs/oauth2/token  
   
 Parâmetro|Valor  
 ---------|---------  
 grant_type|"authorization_code"  
 code|código de autorização do 2 acima  
-recurso|RP ID (identificador) da API Web no grupo de aplicativos  
+resource|RP ID (identificador) da API Web no grupo de aplicativos  
 client_id|Id do cliente do aplicativo web (aplicativo de servidor) no grupo de aplicativos  
 redirect_uri|URI de redirecionamento do aplicativo web (aplicativo de servidor) no grupo de aplicativos  
 client_secret|Segredo do aplicativo web (aplicativo de servidor) no grupo de aplicativos. **Observação: Credencial do cliente não precisa ser um client_secret.  AD FS dá suporte a capacidade de usar certificados ou autenticação integrada do Windows também.**  
   
 **Resposta de solicitação de token:**  
 O AD FS responde com um HTTP 200, com o access_token, refresh_token e id_token no corpo.  
-declarações  
-4.  A web, aplicativo e em seguida, o consome a parte access_token da resposta acima (no caso em que o próprio aplicativo web hospeda o recurso), ou caso contrário, envia como o cabeçalho de autorização na solicitação HTTP para a API da web.  
+claims  
+4. A web, aplicativo e em seguida, o consome a parte access_token da resposta acima (no caso em que o próprio aplicativo web hospeda o recurso), ou caso contrário, envia como o cabeçalho de autorização na solicitação HTTP para a API da web.  
   
 #### <a name="single-sign-on-behavior"></a>Comportamento de logon único  
 Enquanto o token de acesso ainda serão válido por 1 hora (por padrão) no cache do cliente, você pode achar que a segunda solicitação funcione como no cenário acima - cliente nativo que todo o tráfego para o AD FS não irá disparar uma nova solicitação como o token de acesso será automaticamente ser buscadas no cache por ADAL.  No entanto, é possível que o aplicativo web pode enviar solicitações de token, o primeiro por meio do link de URL distinta, como em nossa amostra e autorização distinta.  
@@ -227,7 +227,7 @@ POST https://fs.contoso.com/adfs/oauth2/token
 Parâmetro|Valor  
 ---------|---------  
 grant_type|"refresh_token"  
-recurso|RP ID (identificador) da API Web no grupo de aplicativos  
+resource|RP ID (identificador) da API Web no grupo de aplicativos  
 client_id|Id do cliente do aplicativo web (aplicativo de servidor) no grupo de aplicativos  
 refresh_token|Atualizar o token emitido pelo AD FS em resposta à solicitação de token inicial  
 client_secret|Segredo do aplicativo web (aplicativo de servidor) no grupo de aplicativos  
@@ -245,13 +245,13 @@ Esse cenário é semelhante ao acima em que existe uma solicitação de autoriza
 1.  Inicia o aplicativo Web a uma autorização de solicitação por meio do navegador, que envia um HTTP GET para o AD FS autoriza o ponto de extremidade  
   
 **Solicitação de autorização:**  
-GET https://fs.contoso.com/adfs/oauth2/authorize?  
+GET <https://fs.contoso.com/adfs/oauth2/authorize?>  
   
 Parâmetro|Valor  
 ---------|---------  
 response_type|"código + id_token"  
 response_mode|"form_post"  
-recurso|RP ID (identificador) da API Web no grupo de aplicativos  
+resource|RP ID (identificador) da API Web no grupo de aplicativos  
 client_id|Id do cliente do aplicativo web (aplicativo de servidor) no grupo de aplicativos  
 redirect_uri|URI de redirecionamento do aplicativo web (aplicativo de servidor) no grupo de aplicativos  
   
@@ -260,9 +260,9 @@ Se o usuário não tiver entrado antes, o usuário é solicitado a fornecer cred
 AD FS responde com um HTTP 200 e o formulário que contém o abaixo como elementos ocultos:  
 * código: o código de autorização  
 * id_token: um token JWT que contêm declarações que descrevem a autenticação do usuário  
-2.  O formulário lançará automaticamente para o redirect_uri do aplicativo web, enviando o código e o id_token para o aplicativo web.  
+* O formulário lançará automaticamente para o redirect_uri do aplicativo web, enviando o código e o id_token para o aplicativo web.  
   
-3.  Neste ponto o aplicativo web, ter recebido o código inicia uma solicitação para o AD FS token ponto de extremidade, enviando o seguinte  
+3. Neste ponto o aplicativo web, ter recebido o código inicia uma solicitação para o AD FS token ponto de extremidade, enviando o seguinte  
   
 **Solicitação de token:**  
 POST https://fs.contoso.com/adfs/oauth2/token
@@ -273,7 +273,7 @@ Parâmetro|Valor
 ---------|---------  
 grant_type|"authorization_code"  
 code|código de autorização acima  
-recurso|RP ID (identificador) da API Web no grupo de aplicativos  
+resource|RP ID (identificador) da API Web no grupo de aplicativos  
 client_id|Id do cliente do aplicativo web (aplicativo de servidor) no grupo de aplicativos  
 redirect_uri|URI de redirecionamento do aplicativo web (aplicativo de servidor) no grupo de aplicativos  
 client_secret|Segredo do aplicativo web (aplicativo de servidor) no grupo de aplicativos  
@@ -281,7 +281,7 @@ client_secret|Segredo do aplicativo web (aplicativo de servidor) no grupo de apl
 **Resposta de solicitação de token:**  
 O AD FS responde com um HTTP 200, com o access_token, refresh_token e id_token no corpo.  
   
-4.  A web, aplicativo e em seguida, o consome a parte access_token da resposta acima (no caso em que o próprio aplicativo web hospeda o recurso), ou caso contrário, envia como o cabeçalho de autorização na solicitação HTTP para a API da web.  
+4. A web, aplicativo e em seguida, o consome a parte access_token da resposta acima (no caso em que o próprio aplicativo web hospeda o recurso), ou caso contrário, envia como o cabeçalho de autorização na solicitação HTTP para a API da web.  
   
 #### <a name="single-sign-on-behavior"></a>Comportamento de logon único  
 O comportamento de logon único é da mesma maneira que o fluxo de cliente confidencial do Oauth 2.0 acima.  

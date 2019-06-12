@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ed9518fae07745502d01dc0084b7443a1332db83
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 264bdb6d51622e6323be00b44014b86cd9662e61
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859797"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440506"
 ---
 # <a name="using-the-get-driverpackagefile-command"></a>Usando o comando get-DriverPackageFile
 
@@ -34,11 +34,11 @@ WDSUTIL /Get-DriverPackageFile /InfFile:<Inf File path> [/Architecture:{x86 | ia
 
 ## <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|/ InfFile:\<caminho do arquivo Inf >|Especifica o nome de arquivo e caminho completo do arquivo. inf de pacote do driver.|
-|[/Architecture:{x86 | ia64 | x64}]|Especifica a arquitetura do pacote de driver.|
-|[/Show: {Drivers | Arquivos | All}]|Indica as informações do pacote para exibir. Se **/Mostrar** não for especificado, o padrão é retornar somente o driver de metadados do pacote. **Drivers** exibe a lista de drivers no pacote. **Arquivos** exibe a lista de arquivos no pacote. **Todos os** exibe drivers e arquivos.|
+|         Parâmetro         |                              Descrição                               |
+|---------------------------|------------------------------------------------------------------------|
+| / InfFile:\<caminho do arquivo Inf > | Especifica o nome de arquivo e caminho completo do arquivo. inf de pacote do driver. |
+|    [/Architecture:{x86    |                                  ia64                                  |
+|     [/Show: {Drivers      |                                 Arquivos                                  |
 
 ## <a name="BKMK_examples"></a>Exemplos
 
@@ -49,4 +49,4 @@ WDSUTIL /Get-DriverPackageFile /InfFile:"C:\temp\1394.inf" /Architecture:x86
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

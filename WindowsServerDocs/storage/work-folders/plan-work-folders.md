@@ -9,12 +9,12 @@ manager: dongill
 ms.author: jgerend
 ms.date: 4/5/2017
 description: Como planejar uma implantação de Pastas de Trabalho, incluindo os requisitos de sistema e como preparar o ambiente de rede.
-ms.openlocfilehash: 2ac52b15f266fce7202df4c9c76e774fca4098cc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 06d56df7ce9ddb8c9822f62de383ccad0394b4f3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824637"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447839"
 ---
 # <a name="planning-a-work-folders-deployment"></a>Planejando uma implantação de Pastas de Trabalho
 
@@ -22,17 +22,17 @@ ms.locfileid: "59824637"
 
 Este tópico explica o processo de projeto de uma implementação de Pastas de Trabalho e supõe que você tenha o seguinte conhecimento básico:  
   
--   Noção básica de Pastas de Trabalho (conforme descrito em [Pastas de Trabalho](work-folders-overview.md))  
+- Noção básica de Pastas de Trabalho (conforme descrito em [Pastas de Trabalho](work-folders-overview.md))  
   
--   Noção básica de conceitos do AD DS (Active Directory Domain Services)  
+- Noção básica de conceitos do AD DS (Active Directory Domain Services)  
   
--   Noção básica de compartilhamento de arquivos do Windows e das tecnologias relacionadas  
+- Noção básica de compartilhamento de arquivos do Windows e das tecnologias relacionadas  
   
--   Noção básica de uso de certificados SSL  
+- Noção básica de uso de certificados SSL  
   
--   Noção básica de habilitação de acesso da Web a recursos internos por meio de um proxy reverso da Web  
+- Noção básica de habilitação de acesso da Web a recursos internos por meio de um proxy reverso da Web  
   
- As seções a seguir ajudarão você no projeto de implementação de Pastas de Trabalho. A implantação de Pastas de Trabalho será abordada no próximo tópico, [Implantando Pastas de Trabalho](deploy-work-folders.md).  
+  As seções a seguir ajudarão você no projeto de implementação de Pastas de Trabalho. A implantação de Pastas de Trabalho será abordada no próximo tópico, [Implantando Pastas de Trabalho](deploy-work-folders.md).  
   
 ##  <a name="BKMK_SOFT"></a> Requisitos de software  
 
@@ -119,16 +119,16 @@ As Pastas de Trabalho têm os seguintes requisitos de software para computadores
 ###  <a name="GroupPolicy"></a> Política de grupo  
  Se você tiver os computadores Windows 7 no seu ambiente, recomendamos o seguinte:  
   
--   Usar a Política de Grupo para controlar políticas de senha para todos os computadores ingressados no domínio que usam Pastas de Trabalho.  
+- Usar a Política de Grupo para controlar políticas de senha para todos os computadores ingressados no domínio que usam Pastas de Trabalho.  
   
--   Use a política **Bloquear tela automaticamente e solicitar uma senha** de Pastas de Trabalho em computadores que não são ingressados no domínio.  
+- Use a política **Bloquear tela automaticamente e solicitar uma senha** de Pastas de Trabalho em computadores que não são ingressados no domínio.  
   
- Você também pode usar a Política de Grupo para especificar um servidor de Pastas de Trabalho para os computadores ingressados no domínio. Isso simplifica um pouco a configuração de Pastas de Trabalho – de outra forma, os usuários precisariam inserir seu endereço de email de trabalho para procurar as configurações (supondo-se que as Pastas de Trabalho estejam configuradas adequadamente) ou inserir a URL de Pastas de Trabalho que você forneceu explicitamente por email ou outros meios de comunicação.  
+  Você também pode usar a Política de Grupo para especificar um servidor de Pastas de Trabalho para os computadores ingressados no domínio. Isso simplifica um pouco a configuração de Pastas de Trabalho – de outra forma, os usuários precisariam inserir seu endereço de email de trabalho para procurar as configurações (supondo-se que as Pastas de Trabalho estejam configuradas adequadamente) ou inserir a URL de Pastas de Trabalho que você forneceu explicitamente por email ou outros meios de comunicação.  
   
- Você também pode usar a Política de Grupo para forçar a configuração de Pastas de Trabalho por usuário ou por computador, embora isso possa fazer com que as Pastas de Trabalho sincronizem em cada PC uma entrada de usuário (ao usar a configuração de política por usuário) e possa impedir que os usuários especifiquem um local alternativo para Pastas de Trabalho no PC (como um cartão microSD para conservar espaço na unidade principal). Sugerimos avaliar com atenção as necessidades do usuário antes de forçar a configuração automática.  
+  Você também pode usar a Política de Grupo para forçar a configuração de Pastas de Trabalho por usuário ou por computador, embora isso possa fazer com que as Pastas de Trabalho sincronizem em cada PC uma entrada de usuário (ao usar a configuração de política por usuário) e possa impedir que os usuários especifiquem um local alternativo para Pastas de Trabalho no PC (como um cartão microSD para conservar espaço na unidade principal). Sugerimos avaliar com atenção as necessidades do usuário antes de forçar a configuração automática.  
   
 ### <a name="windows-intune"></a>Windows Intune  
- O Windows Intune também oferece uma camada de segurança e capacidade de gerenciamento para dispositivos não ingressados no domínio que de outra forma não estariam presentes. Você pode usar o Windows Intune para configurar e gerenciar dispositivos pessoais dos usuários, como tablets, que se conectam a Pastas de Trabalho pela Internet. Windows Intune pode fornecer dispositivos com a URL do servidor de sincronização para usar – caso contrário, os usuários devem inserir seu endereço de email de trabalho para consultar as configurações (se você publicar uma URL de pastas de trabalho pública na forma de https://workfolders. *Contoso.com*), ou insira a URL do servidor de sincronização diretamente.  
+ O Windows Intune também oferece uma camada de segurança e capacidade de gerenciamento para dispositivos não ingressados no domínio que de outra forma não estariam presentes. Você pode usar o Windows Intune para configurar e gerenciar dispositivos pessoais dos usuários, como tablets, que se conectam a Pastas de Trabalho pela Internet. Windows Intune pode fornecer dispositivos com a URL do servidor de sincronização para usar – caso contrário, os usuários devem inserir seu endereço de email de trabalho para consultar as configurações (se você publicar uma URL de pastas de trabalho pública na forma de https://workfolders. <em>Contoso.com</em>), ou insira a URL do servidor de sincronização diretamente.  
   
  Sem uma implantação do Windows Intune, os usuários devem configurar dispositivos externos manualmente, o que pode resultar no aumento da demanda na equipe de suporte técnico de um cliente.  
   
@@ -149,16 +149,16 @@ Pastas de Trabalho usando proxy de aplicativo Web, proxy de aplicativo Azure AD 
 ### <a name="number-of-sync-servers"></a>Número de servidores de sincronização  
  É possível para um cliente operar vários servidores de sincronização em um ambiente. Esta pode ser uma configuração desejável por vários motivos:  
   
--   Distribuição geográfica de usuários – por exemplo, servidores de arquivos de filiais ou datacenters regionais  
+- Distribuição geográfica de usuários – por exemplo, servidores de arquivos de filiais ou datacenters regionais  
   
--   Requisitos de armazenamento de dados – certos departamentos corporativos podem ter requisitos específicos de controle ou armazenamento de dados que são mais fáceis com um servidor dedicado  
+- Requisitos de armazenamento de dados – certos departamentos corporativos podem ter requisitos específicos de controle ou armazenamento de dados que são mais fáceis com um servidor dedicado  
   
--   Balanceamento de carga – em grandes ambientes, o armazenamento de dados de usuário em vários servidores pode aumentar o desempenho e o tempo de atividade do servidor.  
+- Balanceamento de carga – em grandes ambientes, o armazenamento de dados de usuário em vários servidores pode aumentar o desempenho e o tempo de atividade do servidor.  
   
- Para obter informações sobre dimensionamento e desempenho do servidor de Pastas de Trabalho, consulte [Considerações de desempenho para implantações de Pastas de Trabalho](http://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx).  
+  Para obter informações sobre dimensionamento e desempenho do servidor de Pastas de Trabalho, consulte [Considerações de desempenho para implantações de Pastas de Trabalho](http://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx).  
   
 > [!NOTE]
->  Ao usar vários servidores de sincronização, recomendamos configurar a descoberta automática de servidor para usuários. Esse processo conta com a configuração de um atributo em cada conta de usuário no AD DS. O atributo é denominado **msDS-SyncServerURL** e se torna disponível em contas de usuário depois que um controlador de domínio do Windows Server 2012 R2 é adicionado ao domínio ou as atualizações de esquema do Active Directory são aplicadas. Esse atributo deve ser definido para cada usuário, a fim de garantir que os usuários se conectem ao servidor de sincronização apropriado. Ao usar a descoberta automática do servidor, as organizações podem publicar pastas de trabalho por trás de uma URL "amigável", como *https://workfolders.contoso.com*, independentemente do número de servidores de sincronização em operação.  
+>  Ao usar vários servidores de sincronização, recomendamos configurar a descoberta automática de servidor para usuários. Esse processo conta com a configuração de um atributo em cada conta de usuário no AD DS. O atributo é denominado **msDS-SyncServerURL** e se torna disponível em contas de usuário depois que um controlador de domínio do Windows Server 2012 R2 é adicionado ao domínio ou as atualizações de esquema do Active Directory são aplicadas. Esse atributo deve ser definido para cada usuário, a fim de garantir que os usuários se conectem ao servidor de sincronização apropriado. Ao usar a descoberta automática do servidor, as organizações podem publicar pastas de trabalho por trás de uma URL "amigável", como *https://workfolders.contoso.com* , independentemente do número de servidores de sincronização em operação.  
   
 ### <a name="number-of-sync-shares"></a>Número de compartilhamentos de sincronização  
  Servidores de sincronização individuais podem manter vários compartilhamentos de sincronização. Isso pode ser útil pelos seguintes motivos:  

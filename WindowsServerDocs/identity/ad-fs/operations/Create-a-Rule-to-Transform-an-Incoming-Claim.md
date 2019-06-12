@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 6bd107aca6c6f33cdf5f88e5b48a52fdea8d2086
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: a29406880481f0e4e257105e94bc1a33ee661164
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189336"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444447"
 ---
 # <a name="create-a-rule-to-transform-an-incoming-claim"></a>Criar uma regra para transformar uma declaração de entrada
 
@@ -130,9 +130,9 @@ Associação na **administradores**, ou equivalente, no computador local é o re
 >   
 > Para obter mais informações sobre cenários de controle de acesso dinâmico, consulte [dinâmico roteiro de conteúdo de controle de acesso](../../solution-guides/dynamic-access-control--scenario-overview.md) ou [usando declarações de AD DS com o AD FS](https://technet.microsoft.com/library/hh831504.aspx).  
   
-7.  Clique em **concluir**.  
+7. Clique em **concluir**.  
   
-8.  No **editar regras de declaração** caixa de diálogo, clique em **Okey** para salvar a regra.  
+8. No **editar regras de declaração** caixa de diálogo, clique em **Okey** para salvar a regra.  
 
 ## <a name="additional-references"></a>Referências adicionais 
 [Configurar regras de declaração](Configure-Claim-Rules.md)  

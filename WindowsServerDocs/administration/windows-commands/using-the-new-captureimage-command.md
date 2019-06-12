@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7d9f402acb9904624bdb4193a4306d57b104eda8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 00f15ae7ee1a7ab1ac1f71599d2cae9bb51d921e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888607"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440408"
 ---
 # <a name="using-the-new-captureimage-command"></a>Usando o comando novo CaptureImage
 
@@ -43,20 +43,19 @@ WDSUTIL [Options] /New-CaptureImage [/Server:<Server name>]
 
 ## <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|[/Server:\<Server name>]|Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.|
-|/ Imagem:\<nome da imagem >|Especifica o nome da imagem de inicialização de origem.|
-|/Architecture: {x86 | ia64 | x64}|Especifica a arquitetura da imagem a ser usado. Como você pode ter o mesmo nome de imagem para imagens de inicialização diferente em diferentes arquiteturas, especificar que isso garante que a imagem correta é usada.|
-|[/Filename: \<Nome do arquivo >]|Se a imagem não pode ser identificada exclusivamente pelo nome, você deve usar essa opção para especificar o nome do arquivo.|
-|/DestinationImage|Especifica as configurações para a imagem de destino. Você especifica as configurações usando as seguintes opções:</br>-   /FilePath: \<Caminho e nome do arquivo > define o caminho completo para a nova imagem de captura.</br>-[/Name: \<Nome >]-define o nome de exibição da imagem. Se nenhum nome de exibição for especificada, será usado o nome de exibição da imagem de origem.</br>-[/ Descrição: \<Descrição >]-define a descrição da imagem.</br>-[/Overwrite: {Sim | Não | Acrescentar}] - determina se o arquivo especificado na **/DestinationImage** deve ser substituído se outro arquivo com esse nome já existe no /FilePath. **Sim** substituirá o arquivo existente. **Não** (padrão) causa um erro ocorra se outro arquivo com o mesmo nome já existe. **Acrescentar** anexa a imagem gerada como uma nova imagem no arquivo. wim existente.</br>-   [/UnattendFilePath: \<Caminho do arquivo >]-define o caminho completo e nome para o arquivo de captura de imagem autônomo.|
+|        Parâmetro         |                                                                                                                                                                                                                         Descrição                                                                                                                                                                                                                          |
+|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [/Server:\<Server name>] |                                                                                                                                       Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.                                                                                                                                        |
+|   / Imagem:\<nome da imagem >   |                                                                                                                                                                                                         Especifica o nome da imagem de inicialização de origem.                                                                                                                                                                                                         |
+|   /Architecture: {x86    |                                                                                                                                                                                                                             ia64                                                                                                                                                                                                                             |
+| [/Filename: \<Nome do arquivo >] |                                                                                                                                                                            Se a imagem não pode ser identificada exclusivamente pelo nome, você deve usar essa opção para especificar o nome do arquivo.                                                                                                                                                                            |
+|    /DestinationImage     | Especifica as configurações para a imagem de destino. Você especifica as configurações usando as seguintes opções:</br>-   /FilePath: \<Caminho e nome do arquivo > define o caminho completo para a nova imagem de captura.</br>-[/Name: \<Nome >]-define o nome de exibição da imagem. Se nenhum nome de exibição for especificada, será usado o nome de exibição da imagem de origem.</br>-[/ Descrição: \<Descrição >]-define a descrição da imagem.</br>-[/Overwrite: {Sim |
 
 ## <a name="BKMK_examples"></a>Exemplos
 
 Para criar uma imagem de captura e nomeie-o WinPECapture.wim, digite:
 ```
 WDSUTIL /New-CaptureImage /Image:"WinPE boot image" /Architecture:x86 /DestinationImage /FilePath:"C:\Temp\WinPECapture.wim"
-
 ```
 Para criar uma imagem de captura e aplicar as configurações especificadas, digite:
 ```
@@ -66,4 +65,4 @@ WDSUTIL /Verbose /Progress /New-CaptureImage /Server:MyWDSServer /Image:"WinPE b
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

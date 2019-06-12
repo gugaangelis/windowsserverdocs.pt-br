@@ -14,12 +14,12 @@ ms.assetid: fdee02ec-3a7e-473e-9784-2889dc1b6dbb
 ms.author: pashort
 author: shortpatti
 ms.date: 09/13/2018
-ms.openlocfilehash: d39dc6a4dcf5dca8186b0599fb479ed5ae684e0f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a6af3cbd038e97d889269b83d72c77c50680e513
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856247"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446173"
 ---
 # <a name="troubleshooting-nic-teaming"></a>Solucionar problemas de agrupamento NIC
 
@@ -44,7 +44,7 @@ Dependendo da configuração, o agrupamento NIC enviar pacotes do mesmo endereç
 
 Uma razão comum para uma equipe NIC de falha é que a interface de equipe esteja desabilitada e em muitos casos, por engano ao executar uma sequência de comandos.  Essa sequência de comandos em particular não permite que todos os NetAdapters desabilitada porque a desabilitação de todos os membros físicos subjacentes de NICs remove a interface de equipe NIC. 
 
-Nesse caso, a interface de equipe NIC não exibe em Get-NetAdapter e, por isso, **Enable-NetAdapter \***  não permite o agrupamento NIC. O **Enable-NetAdapter \***  comando, no entanto, habilitar NICs, o membro que recria a interface de equipe, em seguida, (após alguns instantes). A interface de equipe permanece no estado "desabilitado" até habilitado novamente, permitindo o tráfego de rede começar a fluir. 
+Nesse caso, a interface de equipe NIC não exibe em Get-NetAdapter e, por isso, **Enable-NetAdapter \\** * não permite o agrupamento NIC. O **Enable-NetAdapter \\** * comando, no entanto, habilitar NICs, o membro que recria a interface de equipe, em seguida, (após alguns instantes). A interface de equipe permanece no estado "desabilitado" até habilitado novamente, permitindo o tráfego de rede começar a fluir. 
 
 A seguinte sequência de Windows PowerShell de comandos pode desabilitar a interface de equipe por engano:  
   

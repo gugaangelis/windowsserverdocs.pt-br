@@ -13,12 +13,12 @@ ms.assetid: 73bff8ba-939d-40d8-b1e5-3ba3ed5439c3
 ms.author: pashort
 author: shortpatti
 ms.date: 08/23/2018
-ms.openlocfilehash: 55847bfbc0362887497514009f6efe1312d79906
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4d53c4bcbe1f37f532f2861d5669201959a9f091
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819347"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446675"
 ---
 # <a name="configure-the-software-load-balancer-for-load-balancing-and-network-address-translation-nat"></a>Configurar o balanceador de carga de software para balanceamento de carga e Conversão de endereços de rede (NAT)
 
@@ -109,22 +109,22 @@ Neste exemplo, você cria um objeto de Balanceador de carga com um VIP público 
     $LoadBalancerProperties.Probes += $Probe
    ```
 
-5.  Defina uma regra para enviar o tráfego que chega no IP de front-end para o IP de back-end de balanceamento de carga.  Neste exemplo, o pool de back-end recebe o tráfego TCP para a porta 80.<p>Use o exemplo a seguir para definir uma regra de balanceamento de carga:
+5. Defina uma regra para enviar o tráfego que chega no IP de front-end para o IP de back-end de balanceamento de carga.  Neste exemplo, o pool de back-end recebe o tráfego TCP para a porta 80.<p>Use o exemplo a seguir para definir uma regra de balanceamento de carga:
 
    ```PowerShell
-    $Rule = new-object Microsoft.Windows.NetworkController.LoadBalancingRule
-    $Rule.ResourceId = "webserver1"
+   $Rule = new-object Microsoft.Windows.NetworkController.LoadBalancingRule
+   $Rule.ResourceId = "webserver1"
 
-    $Rule.Properties = new-object Microsoft.Windows.NetworkController.LoadBalancingRuleProperties
-    $Rule.Properties.FrontEndIPConfigurations += $FrontEndIPConfig
-    $Rule.Properties.backendaddresspool = $BackEndAddressPool 
-    $Rule.Properties.protocol = "TCP"
-    $Rule.Properties.FrontEndPort = 80
-    $Rule.Properties.BackEndPort = 80
-    $Rule.Properties.IdleTimeoutInMinutes = 4
-    $Rule.Properties.Probe = $Probe
+   $Rule.Properties = new-object Microsoft.Windows.NetworkController.LoadBalancingRuleProperties
+   $Rule.Properties.FrontEndIPConfigurations += $FrontEndIPConfig
+   $Rule.Properties.backendaddresspool = $BackEndAddressPool 
+   $Rule.Properties.protocol = "TCP"
+   $Rule.Properties.FrontEndPort = 80
+   $Rule.Properties.BackEndPort = 80
+   $Rule.Properties.IdleTimeoutInMinutes = 4
+   $Rule.Properties.Probe = $Probe
 
-    $LoadBalancerProperties.loadbalancingRules += $Rule
+   $LoadBalancerProperties.loadbalancingRules += $Rule
    ```
 
 6. Adicione a configuração de Balanceador de carga no controlador de rede.<p>Use o exemplo a seguir para adicionar a configuração de Balanceador de carga no controlador de rede:
@@ -205,7 +205,7 @@ Você também pode repetir esse processo em uma interface de rede para adicioná
    ```PowerShell
    $lbresourceid = "LB2"
    $lb = get-networkcontrollerloadbalancer -connectionuri $uri -resourceID $LBResourceId -PassInnerException
-  ```
+   ```
 
 2. Obtenha a interface de rede e adicione o pool backendaddress à matriz loadbalancerbackendaddresspools.
 
@@ -280,17 +280,17 @@ Este exemplo repete a mesma ação que o exemplo anterior, mas ele aloca automat
     PreviousIpConfiguration  :
    ```
  
-1. Atribua o PublicIPAddress a um adaptador de rede.
+3. Atribua o PublicIPAddress a um adaptador de rede.
 
    ```PowerShell
    $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06
    $nic.properties.IpConfigurations[0].Properties.PublicIPAddress = $publicIP
    New-NetworkControllerNetworkInterface -ConnectionUri $uri -ResourceId $nic.ResourceId -Properties $nic.properties -PassInnerException
    ```
-## <a name="example-remove-a-publicip-address-that-is-being-used-for-forwarding-traffic-and-return-it-to-the-vip-pool"></a>Exemplo: Remover um endereço de PublicIP que está sendo usado para encaminhar o tráfego e retorná-lo ao pool de VIP
-Este exemplo remove o recurso de PublicIPAddress que foi criado por um dos exemplos anteriores.  Depois que o PublicIPAddress for removido, a referência para o PublicIPAddress será removida automaticamente da interface de rede, interromperá o tráfego seja encaminhado e o endereço IP será retornado ao pool de VIP público para reutilização.  
+   ## <a name="example-remove-a-publicip-address-that-is-being-used-for-forwarding-traffic-and-return-it-to-the-vip-pool"></a>Exemplo: Remover um endereço de PublicIP que está sendo usado para encaminhar o tráfego e retorná-lo ao pool de VIP
+   Este exemplo remove o recurso de PublicIPAddress que foi criado por um dos exemplos anteriores.  Depois que o PublicIPAddress for removido, a referência para o PublicIPAddress será removida automaticamente da interface de rede, interromperá o tráfego seja encaminhado e o endereço IP será retornado ao pool de VIP público para reutilização.  
 
-1. Remover o PublicIP
+4. Remover o PublicIP
 
    ```PowerShell
    Remove-NetworkControllerPublicIPAddress -ConnectionURI $uri -ResourceId "MyPIP"

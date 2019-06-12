@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc675ac202f87703074f78c45b1f264f6105c324
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 38d6c032f347f9945701f17b9289f3e3ff474031
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843737"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440627"
 ---
 # <a name="using-the-add-imagedriverpackage-command"></a>Usando o comando add-ImageDriverPackage
 
@@ -33,15 +33,17 @@ wdsutil /add-ImageDriverPackage [/Server:<Server name>media:<Image namemediatype
 [/Filename:<File name>] {/DriverPackage:<Package Name> | /PackageId:<ID>}
 ```
 ## <a name="parameters"></a>Parâmetros
-|Parâmetro|Descrição|
-|-------|--------|
-|[/Server:<Server name>|Especifica o nome do servidor. Isso pode ser o nome NetBIOS ou FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado.|
-mídia:<Image name>|Especifica o nome da imagem para adicionar o driver.|
-mediatype:Boot|Especifica o tipo de imagem para adicionar o driver. Só podem ser adicionados a pacotes de driver a imagens de inicialização.|
-|/ Arquitetura: {x86 &#124; ia64 &#124; x64}|Especifica a arquitetura da imagem de inicialização. Como é possível ter o mesmo nome de imagem para imagens de inicialização em arquiteturas diferentes, você deve especificar a arquitetura para garantir que a imagem correta é usada.|
-|/Filename:<File name>]|Especifica o nome do arquivo. Se a imagem não pode ser identificada exclusivamente pelo nome, o nome do arquivo deve ser especificado.|
-|[/DriverPackage:<Name>|Especifica o nome do pacote de driver para adicionar à imagem.|
-|[/PackageId:<ID>]|Especifica a ID de serviços de implantação do Windows do pacote de driver. Você deve especificar essa opção se o pacote de driver não pode ser identificado exclusivamente pelo nome. Para localizar a ID do pacote, clique no grupo de driver que o pacote está em (ou o **todos os pacotes** nó), o pacote com o botão direito e, em seguida, clique em **propriedades**. A ID do pacote está listada na **geral** guia. Por exemplo: {DD098D20-1850-4fc8-8E35-EA24A1BEFF5E}.|
+
+|                 Parâmetro                  |                                                                                                                                                                                                            Descrição                                                                                                                                                                                                             |
+|--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|           [/Server:<Server name>           |                                                                                                                                               Especifica o nome do servidor. Isso pode ser o nome NetBIOS ou FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado.                                                                                                                                                |
+|             mídia:<Image name>             |                                                                                                                                                                                       Especifica o nome da imagem para adicionar o driver.                                                                                                                                                                                        |
+|               mediatype:Boot               |                                                                                                                                                                Especifica o tipo de imagem para adicionar o driver. Só podem ser adicionados a pacotes de driver a imagens de inicialização.                                                                                                                                                                 |
+| / Arquitetura: {x86 &#124; ia64 &#124; x64} |                                                                                                       Especifica a arquitetura da imagem de inicialização. Como é possível ter o mesmo nome de imagem para imagens de inicialização em arquiteturas diferentes, você deve especificar a arquitetura para garantir que a imagem correta é usada.                                                                                                        |
+|           /Filename:<File name>]           |                                                                                                                                                        Especifica o nome do arquivo. Se a imagem não pode ser identificada exclusivamente pelo nome, o nome do arquivo deve ser especificado.                                                                                                                                                        |
+|           [/DriverPackage:<Name>           |                                                                                                                                                                                   Especifica o nome do pacote de driver para adicionar à imagem.                                                                                                                                                                                    |
+|             [/PackageId:<ID>]              | Especifica a ID de serviços de implantação do Windows do pacote de driver. Você deve especificar essa opção se o pacote de driver não pode ser identificado exclusivamente pelo nome. Para localizar a ID do pacote, clique no grupo de driver que o pacote está em (ou o **todos os pacotes** nó), o pacote com o botão direito e, em seguida, clique em **propriedades**. A ID do pacote está listada na **geral** guia. Por exemplo: {DD098D20-1850-4fc8-8E35-EA24A1BEFF5E}. |
+
 ## <a name="BKMK_examples"></a>Exemplos
 Para adicionar um pacote de driver a uma imagem de inicialização, digite um dos seguintes:
 ```

@@ -11,12 +11,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: e7b1128d93912f724225905bedd38131f8aab0b2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a4cab0246226cf22a1b7212b832a902783952407
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854837"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446499"
 ---
 # <a name="customize-the-active-directory-administrative-center-navigation-pane"></a>Personalizar o painel de navegação do Centro Administrativo do Active Directory
 
@@ -33,21 +33,21 @@ ms.locfileid: "59854837"
 
 ### <a name="to-customize-the-active-directory-administrative-center-navigation-pane"></a>Para personalizar o painel de navegação da Central Administrativa do Active Directory
 
-1.  No painel de navegação da Central Administrativa do Active Directory, com o botão direito\-clique no nó que você deseja modificar. É possível modificar a posição ou o nome do nó ou criar uma duplicata do mesmo.
+1. No painel de navegação da Central Administrativa do Active Directory, com o botão direito\-clique no nó que você deseja modificar. É possível modificar a posição ou o nome do nó ou criar uma duplicata do mesmo.
 
-2.  Clique em um dos seguintes comandos:
+2. Clique em um dos seguintes comandos:
 
-    -   **Renomear**
+   -   **Renomear**
 
-    -   **Criar nó duplicado**
+   -   **Criar nó duplicado**
 
-    -   **Remover**
+   -   **Remover**
 
-    -   **Mover para cima**
+   -   **Mover para cima**
 
-    -   **Mover para baixo**
+   -   **Mover para baixo**
 
- Ao usar o modo de exibição de lista, você pode tirar proveito dos mais usados recentemente \(MRU\) lista. A lista MRU é exibida automaticamente sob um nó de navegação quando você visita pelo menos um contêiner neste nó de navegação. Você também pode exibir a lista MRU atual expandindo a barra estrutural na parte superior da janela Central Administrativa do Active Directory. A lista MRU sempre contém os três últimos contêineres que você visitou em um determinado nó de navegação. Toda vez que você selecionar um contêiner específico, ele será adicionado ao topo da lista MRU e o último contêiner da lista será removido.
+   Ao usar o modo de exibição de lista, você pode tirar proveito dos mais usados recentemente \(MRU\) lista. A lista MRU é exibida automaticamente sob um nó de navegação quando você visita pelo menos um contêiner neste nó de navegação. Você também pode exibir a lista MRU atual expandindo a barra estrutural na parte superior da janela Central Administrativa do Active Directory. A lista MRU sempre contém os três últimos contêineres que você visitou em um determinado nó de navegação. Toda vez que você selecionar um contêiner específico, ele será adicionado ao topo da lista MRU e o último contêiner da lista será removido.
 
   
 

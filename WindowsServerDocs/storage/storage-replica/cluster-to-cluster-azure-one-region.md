@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 4371192d44878d3c953374b8d307b4d5612869f5
-ms.sourcegitcommit: 7e54a1bcd31cd2c6b18fd1f21b03f5cfb6165bf3
+ms.openlocfilehash: 9cf998087e23f45fe5981aef6d1ff5b7b4e85b9b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65461975"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447612"
 ---
 # <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>Cluster para cluster de réplica de armazenamento na mesma região no Azure
 
@@ -30,7 +30,7 @@ Parte um
 Parte dois
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE269Pq]
 
-![O diagrama da arquitetura mostrando a réplica de armazenamento de cluster para Cluster no Azure na mesma região.](media\Cluster-to-cluster-azure-one-region\architecture.png)
+![O diagrama da arquitetura mostrando a réplica de armazenamento de cluster para Cluster no Azure na mesma região.](media/Cluster-to-cluster-azure-one-region/architecture.png)
 > [!IMPORTANT]
 > Todos os exemplos de referência são específicos para a ilustração acima.
 
@@ -58,41 +58,43 @@ Parte dois
 8. Em nosso exemplo, o controlador de domínio **az2azDC** tem o endereço IP privado (10.3.0.8). Na rede Virtual (**az2az Vnet**) alterar servidor DNS 10.3.0.8. Conecte todos os nós para "Contoso.com" e forneça os privilégios de administrador para "contosoadmin".
    - Faça logon como contosoadmin de todos os nós. 
     
-9. Criar os clusters (**SRAZC1**, **SRAZC2**). Abaixo está os comandos do PowerShell para o nosso exemplo
-```PowerShell
+9. Criar os clusters (**SRAZC1**, **SRAZC2**). 
+   Abaixo está os comandos do PowerShell para o nosso exemplo
+   ```PowerShell
     New-Cluster -Name SRAZC1 -Node az2az1,az2az2 –StaticAddress 10.3.0.100
-```
-```PowerShell
+   ```
+   ```PowerShell
     New-Cluster -Name SRAZC2 -Node az2az3,az2az4 –StaticAddress 10.3.0.101
-```
+   ```
 10. Habilitar espaços de armazenamento diretos
-```PowerShell
+    ```PowerShell
     Enable-clusterS2D
-```   
+    ```   
    
-   Para cada cluster, crie volume e disco virtual. Um para os dados e outro para o log. 
+    Para cada cluster, crie volume e disco virtual. Um para os dados e outro para o log. 
    
 11. Criar uma SKU padrão interno [balanceador de carga](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM) para cada cluster (**azlbr1**,**azlbr2**). 
    
-   Forneça o endereço IP de Cluster como o endereço IP privado estático para o balanceador de carga.
-   - azlbr1 => Frontend IP: 10.3.0.100 (pegar um endereço IP não usado da rede Virtual (**az2az Vnet**) sub-rede)
-   - Crie Pool de back-end para cada balanceador de carga. Adicione os nós de cluster associado.
-   - Criar a investigação de integridade: porta 59999
-   - Crie regra de balanceamento de carga: Permitir que as portas de alta disponibilidade, com habilitada IP flutuante. 
+    Forneça o endereço IP de Cluster como o endereço IP privado estático para o balanceador de carga.
+    - azlbr1 => Frontend IP: 10.3.0.100 (pegar um endereço IP não usado da rede Virtual (**az2az Vnet**) sub-rede)
+    - Crie Pool de back-end para cada balanceador de carga. Adicione os nós de cluster associado.
+    - Criar a investigação de integridade: porta 59999
+    - Crie regra de balanceamento de carga: Permitir que as portas de alta disponibilidade, com habilitada IP flutuante. 
    
-   Forneça o endereço IP de Cluster como o endereço IP privado estático para o balanceador de carga.
-   - azlbr2 => Frontend IP: 10.3.0.101 (pegar um endereço IP não usado da rede Virtual (**az2az Vnet**) sub-rede)
-   - Crie Pool de back-end para cada balanceador de carga. Adicione os nós de cluster associado.
-   - Criar a investigação de integridade: porta 59999
-   - Crie regra de balanceamento de carga: Permitir que as portas de alta disponibilidade, com habilitada IP flutuante. 
+    Forneça o endereço IP de Cluster como o endereço IP privado estático para o balanceador de carga.
+    - azlbr2 => Frontend IP: 10.3.0.101 (pegar um endereço IP não usado da rede Virtual (**az2az Vnet**) sub-rede)
+    - Crie Pool de back-end para cada balanceador de carga. Adicione os nós de cluster associado.
+    - Criar a investigação de integridade: porta 59999
+    - Crie regra de balanceamento de carga: Permitir que as portas de alta disponibilidade, com habilitada IP flutuante. 
    
 12. Em cada nó de cluster, abra a porta 59999 (investigação de integridade). 
    
     Execute o seguinte comando em cada nó:
-```PowerShell
-netsh advfirewall firewall add rule name=PROBEPORT dir=in protocol=tcp action=allow localport=59999 remoteip=any profile=any 
-```   
-13. Instrua o cluster para escutar mensagens de investigação de integridade na porta 59999 e responder a partir do nó que atualmente possui esse recurso. Execute uma vez a partir de qualquer nó do cluster, para cada cluster. 
+    ```PowerShell
+    netsh advfirewall firewall add rule name=PROBEPORT dir=in protocol=tcp action=allow localport=59999 remoteip=any profile=any 
+    ```   
+13. Instrua o cluster para escutar mensagens de investigação de integridade na porta 59999 e responder a partir do nó que atualmente possui esse recurso. 
+    Execute uma vez a partir de qualquer nó do cluster, para cada cluster. 
     
     Em nosso exemplo, certifique-se de alterar o "ILBIP" acordo com seus valores de configuração. Execute o comando a seguir em qualquer nó **az2az1**/**az2az2**:
 
@@ -113,16 +115,16 @@ netsh advfirewall firewall add rule name=PROBEPORT dir=in protocol=tcp action=al
     [int]$ProbePort = 59999
     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";”ProbeFailureThreshold”=5;"EnableDhcp"=0}  
     ```   
-   Verifique se ambos os clusters podem conectar-se / se comunicam entre si. 
+    Verifique se ambos os clusters podem conectar-se / se comunicam entre si. 
 
-   A usar o recurso de "Conectar-se ao Cluster" no Gerenciador de cluster de Failover para se conectar ao outro cluster ou verificar a que outro cluster responde a partir de um de nós do cluster atual.  
+    A usar o recurso de "Conectar-se ao Cluster" no Gerenciador de cluster de Failover para se conectar ao outro cluster ou verificar a que outro cluster responde a partir de um de nós do cluster atual.  
    
-   ```PowerShell
+    ```PowerShell
      Get-Cluster -Name SRAZC1 (ran from az2az3)
-   ```
-   ```PowerShell
+    ```
+    ```PowerShell
      Get-Cluster -Name SRAZC2 (ran from az2az1)
-   ```   
+    ```   
 
 15. Crie as testemunhas de nuvem para os dois clusters. Criar duas [contas de armazenamento](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM) (**az2azcw**, **az2azcw2**) no azure para cada cluster no mesmo grupo de recursos (**SR AZ2AZ**).
 
@@ -135,25 +137,25 @@ netsh advfirewall firewall add rule name=PROBEPORT dir=in protocol=tcp action=al
 
 18. Configure a réplica de armazenamento de cluster para cluster.
    
-   Conceder acesso de um cluster para outro cluster em ambas as direções:
+    Conceder acesso de um cluster para outro cluster em ambas as direções:
 
-   Em nosso exemplo:
+    Em nosso exemplo:
 
-   ```PowerShell
+    ```PowerShell
       Grant-SRAccess -ComputerName az2az1 -Cluster SRAZC2
-   ```
-Se você estiver usando o Windows Server 2016, em seguida, também, execute este comando:
+    ```
+    Se você estiver usando o Windows Server 2016, em seguida, também, execute este comando:
 
-   ```PowerShell
+    ```PowerShell
       Grant-SRAccess -ComputerName az2az3 -Cluster SRAZC1
-   ```   
+    ```   
    
 19. Crie SRPartnership para os clusters:</ol>
 
- - Para o cluster **SRAZC1**.
-   - Local do volume:-c:\ClusterStorage\DataDisk1
-   - Local do log:-g:
- - Para o cluster **SRAZC2**
+    - Para o cluster **SRAZC1**.
+    - Local do volume:-c:\ClusterStorage\DataDisk1
+    - Local do log:-g:
+    - Para o cluster **SRAZC2**
     - Local do volume:-c:\ClusterStorage\DataDisk2
     - Local do log:-g:
 

@@ -9,12 +9,12 @@ ms.prod: windows-server-threshold
 ms.assetid: a5307da5-02ff-4c31-80f0-47cb17a87272
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: db58fcce054f34c4b0a3f6725456badae9fd0468
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 32b0d08f678e9e612bb0ce9cc38d254564bd9b2f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879307"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444095"
 ---
 # <a name="ad-fs-and-certificate-keyspec-property-information"></a>O AD FS e a propriedade KeySpec informações de certificado
 A especificação de chave ("KeySpec") é uma propriedade associada a um certificado e chave. Especifica se uma chave privada associada com um certificado pode ser usada para autenticação, criptografia ou ambos.   
@@ -53,8 +53,8 @@ Veja como verificar se há um valor válido de KeySpec abaixo.
 ### <a name="example"></a>Exemplo
 Um exemplo de um CSP herdado é o Microsoft Enhanced Cryptographic Provider. 
 
-Formato de blob de chave RSA CSP Microsoft inclui um identificador de algoritmo, tanto **CALG_RSA_KEYX** ou **CALG_RSA_SIGN**, respectivamente, para atender a solicitações para qualquer um * * AT_KEYEXCHANGE * * ou **AT_ ASSINATURA** chaves.
-  
+Formato de blob de chave RSA CSP Microsoft inclui um identificador de algoritmo, tanto **CALG_RSA_KEYX** ou **CALG_RSA_SIGN**, respectivamente, para atender a solicitações para qualquer um <strong>AT_KEYEXCHANGE * * ou * * AT_ ASSINATURA</strong> chaves.
+
 Os identificadores de algoritmo de chave RSA mapeiam para os valores de KeySpec da seguinte maneira
 
 | Algoritmo de provedor de suporte| Valor de especificação de chave para chamadas CAPI |
@@ -82,21 +82,22 @@ Sob CERT_KEY_PROV_INFO_PROP_ID procure duas coisas:
 
 
 1. **ProviderType:** isso denota se o certificado usa um herdados armazenamento provedor criptografia (CSP) ou um provedor de armazenamento de chaves com base na mais recente certificado CNG (Next Generation) APIs.  Qualquer valor diferente de zero indica um provedor herdado.
-2.  **KeySpec:** Os seguintes valores são válidos KeySpec para um certificado do AD FS:
+2. **KeySpec:** Os seguintes valores são válidos KeySpec para um certificado do AD FS:
 
-    Provedor CSP herdado (ProviderType não é igual a 0):
-    
-    |Finalidade do AD FS certificado|Valores válidos KeySpec|
-    | --- | --- |
-    |Comunicação de serviço|1|
-    |Descriptografia de token|1|
-    |Assinatura de token|1 e 2|
-    |SSL|1|
+   Provedor CSP herdado (ProviderType não é igual a 0):
 
-    Provedor de CNG (ProviderType = 0):
-    |Finalidade do AD FS certificado|Valores válidos KeySpec|
-    | --- | --- |   
-    |SSL|0|
+   |Finalidade do AD FS certificado|Valores válidos KeySpec|
+   | --- | --- |
+   |Comunicação de serviço|1|
+   |Descriptografia de token|1|
+   |Assinatura de token|1 e 2|
+   |SSL|1|
+
+   Provedor de CNG (ProviderType = 0):
+
+   |Finalidade do AD FS certificado|Valores válidos KeySpec|
+   | --- | --- |   
+   |SSL|0|
 
 ## <a name="how-to-change-the-keyspec-for-your-certificate-to-a-supported-value"></a>Como alterar o keyspec para seu certificado para um valor com suporte
 Alterando o valor de KeySpec não exige o certificado a ser gerado novamente ou novamente emitido pela autoridade de certificação.  KeySpec pode ser alterado com a importação novamente o certificado concluído e a chave privada de um arquivo PFX no repositório de certificados usando as etapas abaixo:

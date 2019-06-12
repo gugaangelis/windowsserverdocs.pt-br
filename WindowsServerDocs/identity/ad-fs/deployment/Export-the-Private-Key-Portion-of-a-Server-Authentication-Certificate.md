@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: c3a39f9d51ed8243118522ae37bc7d205a7ea416
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 1a7e59dd83ebc9a9eabd5bda1dc598d320f5028d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192143"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442506"
 ---
 # <a name="export-the-private-key-portion-of-a-server-authentication-certificate"></a>Exportar a parte da chave privada de um Certificado de Autenticação de Servidor
 
@@ -31,24 +31,24 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
   
 ### <a name="to-export-the-private-key-portion-of-a-server-authentication-certificate"></a>Para exportar a parte da chave privada de um certificado de autenticação de servidor  
   
-1.  Sobre o **iniciar** tela, digite**serviços de informações da Internet \(IIS\) Manager**, e, em seguida, pressione ENTER.  
+1. Sobre o **iniciar** tela, digite**serviços de informações da Internet \(IIS\) Manager**, e, em seguida, pressione ENTER.  
   
-2.  Na árvore de console, clique em **ComputerName**.  
+2. Na árvore de console, clique em **ComputerName**.  
   
-3.  No painel central, clique duas vezes\-clique em **certificados de servidor**.  
+3. No painel central, clique duas vezes\-clique em **certificados de servidor**.  
   
-4.  No painel central, com o botão direito\-clique no certificado que você deseja exportar e, em seguida, clique em **exportar**.  
+4. No painel central, com o botão direito\-clique no certificado que você deseja exportar e, em seguida, clique em **exportar**.  
   
-5.  Na caixa de diálogo **Exportar Certificado** , clique no botão **…** .  
+5. Na caixa de diálogo **Exportar Certificado** , clique no botão **…** .  
   
-6.  No **nome do arquivo**, digite **c:\\* * * Nomedocertificado*e, em seguida, clique em **abrir**.  
+6. No **nome do arquivo**, digite **c:\\** <em>Nomedocertificado</em>e, em seguida, clique em **abra**.  
   
-7.  Digite uma senha para o certificado, confirme e clique em **OK**.  
+7. Digite uma senha para o certificado, confirme e clique em **OK**.  
   
-8.  Verifique se a exportação foi concluída com êxito e confirme se o arquivo desejado foi criado no local especificado.  
+8. Verifique se a exportação foi concluída com êxito e confirme se o arquivo desejado foi criado no local especificado.  
   
-    > [!IMPORTANT]  
-    > Para que este certificado possa ser importado para o repositório de certificados local no novo servidor, você precisará transferir para mídia física e proteger sua segurança durante a transição para o novo servidor. É extremamente importante proteger a segurança da chave privada. Se essa chave for comprometida, a segurança de toda a implantação do AD FS \(incluindo recursos na sua organização e em organizações parceiras\) estiver comprometido.  
+   > [!IMPORTANT]  
+   > Para que este certificado possa ser importado para o repositório de certificados local no novo servidor, você precisará transferir para mídia física e proteger sua segurança durante a transição para o novo servidor. É extremamente importante proteger a segurança da chave privada. Se essa chave for comprometida, a segurança de toda a implantação do AD FS \(incluindo recursos na sua organização e em organizações parceiras\) estiver comprometido.  
   
 9. Importe o certificado de autenticação de servidor exportado para o repositório de certificados do novo servidor antes de instalar o Serviço de Federação. Para obter informações sobre como importar o certificado, consulte Importar um certificado de servidor \( [http:\/\/go.microsoft.com\/fwlink\/? LinkId\=108283](https://go.microsoft.com/fwlink/?LinkId=108283)\).  
   

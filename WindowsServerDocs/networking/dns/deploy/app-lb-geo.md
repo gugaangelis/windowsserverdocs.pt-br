@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: b6e679c6-4398-496c-88bc-115099f3a819
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 806c0cdeedb44db44fc0ec5218124f516a6f70e5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 9f76163e6b064ac3225ab4d755afd548e1cb720b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852547"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446416"
 ---
 # <a name="use-dns-policy-for-application-load-balancing-with-geo-location-awareness"></a>Usar a Política de DNS para balanceamento de aplicativo com reconhecimento de localização geográfica
 
@@ -32,7 +32,7 @@ Neste exemplo, Contoso presente serviços com êxito está expandindo sua presen
 
 Semelhante da América do Norte, a empresa agora tem servidores web hospedados em data centers europeus.
 
-Os administradores de DNS do Contoso presente serviços deseja configurar o aplicativo de balanceamento de carga para data centers europeus de maneira semelhante para a implementação de política DNS nos Estados Unidos, com o tráfego de aplicativo distribuído entre os servidores Web que estão localizados em Dublin, Irlanda, Amsterdã, Países Baixos e em outro lugar.
+Os administradores de DNS do Contoso presente serviços deseja configurar o aplicativo de balanceamento de carga para data centers europeus de maneira semelhante para a implementação de política DNS nos Estados Unidos, com o tráfego de aplicativo distribuído entre os servidores Web que estão localizados em Dublin, Irlanda, Amsterdã, Holanda e em outro lugar.
 
 Os administradores de DNS também deseja que todas as consultas de outros locais no mundo distribuído igualmente entre todos os seus data centers.
 
@@ -45,7 +45,7 @@ As seções a seguir mostram como configurar a política de DNS para balanceamen
 >[!IMPORTANT]
 >As seções a seguir incluem comandos do Windows PowerShell de exemplo que contêm valores de exemplo para muitos parâmetros. Certifique-se de que você substitua os valores de exemplo nesses comandos com os valores que são apropriadas para sua implantação antes de executar esses comandos.
 
-###<a name="bkmk_clientsubnets"></a>Crie as sub-redes de cliente DNS
+### <a name="bkmk_clientsubnets"></a>Crie as sub-redes de cliente DNS
 
 Primeiro, você deve identificar a sub-redes ou espaço de endereço IP das regiões América do Norte e Europa.
 
@@ -61,7 +61,7 @@ Você pode usar os seguintes comandos do Windows PowerShell para criar sub-redes
     
 Para obter mais informações, consulte [DnsServerClientSubnet adicionar](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).
 
-###<a name="bkmk_zscopes2"></a>Criar os escopos de zona
+### <a name="bkmk_zscopes2"></a>Criar os escopos de zona
 
 Depois que as sub-redes de cliente estão em vigor, você deve particionar a zona contosogiftservices.com em escopos de zona diferente, cada um para um data center.
 
@@ -85,7 +85,7 @@ Você pode usar os seguintes comandos do Windows PowerShell para criar escopos d
 
 Para obter mais informações, consulte [DnsServerZoneScope adicionar](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-###<a name="bkmk_records2"></a>Adicionar registros para os escopos de zona
+### <a name="bkmk_records2"></a>Adicionar registros para os escopos de zona
 
 Agora você deve adicionar os registros que representa o host do servidor web para os escopos de zona.
 
@@ -98,7 +98,7 @@ Os registros para os datacenters América foram adicionados no cenário anterior
 
 Para obter mais informações, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
 
-###<a name="bkmk_policies2"></a>Crie as políticas de DNS
+### <a name="bkmk_policies2"></a>Crie as políticas de DNS
 
 Depois que você criou as partições (escopos de zona) e adicionar registros, você deve criar políticas DNS que distribui as consultas de entrada nesses escopos.
 

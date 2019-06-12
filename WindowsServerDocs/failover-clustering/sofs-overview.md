@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e6d67eee496d19b216a4366af51ab5736229cf0
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: e38c53c3458c3f66f24ea2ddaa66febf508c4568
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476148"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442450"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>Visão geral do servidor de arquivos de expansão para dados de aplicativos
 
@@ -177,25 +177,25 @@ A tabela a seguir lista os recursos do SMB 3.0, os sistemas de arquivos comuns d
 <td>Gerenciamento de arquivos</td>
 <td>Redirecionamento de pasta</td>
 <td>Sim</td>
-<td>Não recomendável*</td>
+<td>Não é recomendado<em></td>
 </tr>
 <tr class="odd">
 <td>Gerenciamento de arquivos</td>
 <td>Arquivos offline (cache do lado do cliente)</td>
 <td>Sim</td>
-<td>Não recomendável*</td>
+<td>Não recomendável</em></td>
 </tr>
 <tr class="even">
 <td>Gerenciamento de arquivos</td>
 <td>Perfis de usuário em roaming</td>
 <td>Sim</td>
-<td>Não recomendável*</td>
+<td>Não é recomendado<em></td>
 </tr>
 <tr class="odd">
 <td>Gerenciamento de arquivos</td>
 <td>Diretórios base</td>
 <td>Sim</td>
-<td>Não recomendável*</td>
+<td>Não recomendável</em></td>
 </tr>
 <tr class="even">
 <td>Gerenciamento de arquivos</td>
@@ -256,13 +256,13 @@ A tabela a seguir lista os recursos que fazem parte deste cenário e descreve co
 <tbody>
 <tr class="odd">
 <td><a href="failover-clustering.md">Clustering de failover</a></td>
-<td>Clusters de failover adicionaram os seguintes recursos no Windows Server 2012 para dar suporte ao servidor de arquivos de escalabilidade horizontal: Nome de rede distribuída, o tipo de recurso do servidor de arquivos de escalabilidade horizontal, Cluster Shared Volumes (CSV) 2 e a função de expansão alta disponibilidade do servidor. Para obter mais informações sobre esses recursos, consulte <a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">o que há de novo no Clustering de Failover do Windows Server 2012 [redirecionado]</a>.</td>
+<td>Clusters de failover adicionaram os seguintes recursos no Windows Server 2012 para dar suporte ao servidor de arquivos de escalabilidade horizontal: Nome de rede distribuída, o tipo de recurso do servidor de arquivos de escalabilidade horizontal, Cluster Shared Volumes (CSV) 2 e a função de expansão alta disponibilidade do servidor. Para obter mais informações sobre esses recursos, consulte <a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">o que&#39;Novidades no Clustering de Failover no Windows Server 2012 [redirecionado]</a>.</td>
 </tr>
 <tr class="even">
 <td><a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831795(v%3dws.11)">Protocolo SMB</a></td>
 <td>SMB 3.0 adicionou os seguintes recursos no Windows Server 2012 para dar suporte ao servidor de arquivos de escalabilidade horizontal: SMB Transparent Failover, SMB Multichannel e SMB Direct.<br />
 <br />
-Para obter mais informações sobre funcionalidades novas e alteradas para SMB no Windows Server 2012 R2, consulte <a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)">novidades do SMB no Windows Server</a>.</td>
+Para obter mais informações sobre funcionalidades novas e alteradas para SMB no Windows Server 2012 R2, consulte <a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)">o que&#39;novidades do SMB no Windows Server</a>.</td>
 </tr>
 </tbody>
 </table>

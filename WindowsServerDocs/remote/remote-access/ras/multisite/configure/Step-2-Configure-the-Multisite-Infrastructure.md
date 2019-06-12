@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: faec70ac-88c0-4b0a-85c7-f0fe21e28257
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: beecef692b2ac01e6cb6c36892fec16e55b08209
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f3b2eb55c11348c3abcb1ef9e234cd19ba727758
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835167"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446595"
 ---
 # <a name="step-2-configure-the-multisite-infrastructure"></a>Etapa 2 configurar a infraestrutura de multissite
 
@@ -61,7 +61,7 @@ Para obter mais informações, consulte [adicionando um Site na floresta](https:
   
 8.  Feche os serviços e Sites do Active Directory.  
   
-![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
+![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -129,13 +129,13 @@ Para obter mais informações, consulte [instalando um controlador de domínio a
             > [!NOTE]  
             > Se você selecionar a opção de instalar o servidor DNS, você poderá receber uma mensagem que indica que uma delegação de DNS para o servidor DNS não pôde ser criada e que você deve criar manualmente uma delegação de DNS para o servidor DNS para garantir que a resolução de nome confiável. Se você estiver instalando um controlador de domínio no domínio raiz da floresta ou um domínio raiz da árvore, você não precisa criar a delegação de DNS. Nesse caso, clique em **Sim** e desconsidere a mensagem.  
   
-        -   **Catálogo global (GC)**"essa opção é selecionada por padrão. Ela adiciona o catálogo global, as partições de diretório somente leitura, ao controlador de domínio e habilita a funcionalidade de pesquisa do catálogo global.  
+        -   **Catálogo global (GC)** "essa opção é selecionada por padrão. Ela adiciona o catálogo global, as partições de diretório somente leitura, ao controlador de domínio e habilita a funcionalidade de pesquisa do catálogo global.  
   
-        -   **O controlador de domínio somente leitura (RODC)**"essa opção não é selecionada por padrão. Ele faz com que o controlador de domínio adicional somente leitura; ou seja, ele torna o controlador de domínio um RODC.  
+        -   **O controlador de domínio somente leitura (RODC)** "essa opção não é selecionada por padrão. Ele faz com que o controlador de domínio adicional somente leitura; ou seja, ele torna o controlador de domínio um RODC.  
   
     2.  Na **nome do Site**, selecione um site na lista.  
   
-    3.  Sob **digite a senha do modo de restauração dos serviços de diretório (DSRM)**, na **senha** e **Confirmar senha**, digite uma senha forte duas vezes e, em seguida, clique em  **Próxima**. Essa senha deve ser usada para iniciar o AD DS em DSRM para tarefas que devem ser executadas offline.  
+    3.  Sob **digite a senha do modo de restauração dos serviços de diretório (DSRM)** , na **senha** e **Confirmar senha**, digite uma senha forte duas vezes e, em seguida, clique em  **Próxima**. Essa senha deve ser usada para iniciar o AD DS em DSRM para tarefas que devem ser executadas offline.  
   
 10. No **opções de DNS** página, selecione o **delegação de DNS atualizar** caixa de seleção se você quiser atualizar delegação de DNS durante a instalação da função e, em seguida, clique em **próxima**.  
   
@@ -170,7 +170,7 @@ Uma implantação multissite requer um grupo de segurança adicionais para compu
   
 8.  Repita este procedimento para criar um grupo de segurança para cada ponto de entrada conforme necessário.  
   
-![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
+![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -301,7 +301,7 @@ Informações de associação de controlador de domínio são armazenadas no reg
     ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssocFinal.png)  
   
 ### <a name="ConfigDistOptimization"></a>Otimização de distribuição de configuração  
-Ao fazer alterações de configuração, as alterações são aplicadas somente depois que os GPOs do servidor se propague para servidores de acesso remoto. Para reduzir o tempo de distribuição de configuração, o acesso remoto seleciona automaticamente um controlador de domínio gravável que é o HYPERLINK "https://technet.microsoft.com/library/cc978016.aspx" mais próximo ao servidor de acesso remoto ao criar o GPO do servidor.  
+Ao fazer alterações de configuração, as alterações são aplicadas somente depois que os GPOs do servidor se propague para servidores de acesso remoto. Para reduzir o tempo de distribuição de configuração, o acesso remoto seleciona automaticamente um controlador de domínio gravável que é o HYPERLINK "<https://technet.microsoft.com/library/cc978016.aspx>" mais próximo ao servidor de acesso remoto ao criar o GPO do servidor.  
   
 Em alguns cenários, pode ser necessário modificar manualmente o controlador de domínio que gerencia um GPO de servidor para otimizar o tempo de distribuição de configuração:  
   

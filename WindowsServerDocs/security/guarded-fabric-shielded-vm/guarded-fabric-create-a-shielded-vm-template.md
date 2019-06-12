@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: e00322186ea34784048366bf17881af742cb4444
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d9f07d2e6e93d4f8d198c2fc3b62c28c940bdefb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853687"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447514"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>Criar um disco de modelo VM blindado do Windows
 
@@ -27,7 +27,7 @@ Para entender como este tópico se encaixa no processo geral de implantação de
 
 Primeiro, prepare um disco do sistema operacional que você executará, em seguida, por meio do Assistente de criação de disco modelo blindado. Esse disco será usado como o disco do sistema operacional em VMs do locatário. Você pode usar as ferramentas existentes para criar esse disco, como o Microsoft Desktop imagem Service Manager (DISM), ou configurar uma VM com um VHDX em branco e instalar manualmente o sistema operacional nesse disco. Ao configurar o disco, ele deve cumprir os seguintes requisitos que são específicos para a geração 2 e/ou VMs blindadas: 
 
-| Requisito para VHDX | Motivo |
+| Requisito para VHDX | Reason |
 |-----------|----|
 |Deve ser um disco de tabela de partição GUID (GPT) | Necessário para máquinas virtuais de geração 2 deem suporte à UEFI|
 |Tipo de disco deve ser **básicas** em vez de **dinâmico**. <br>Observação: Isso se refere ao tipo de disco lógico, não o "expansão dinâmica" recurso VHDX suportado pelo Hyper-V. | O BitLocker não oferece suporte a discos dinâmicos.|
@@ -163,8 +163,8 @@ Save-VolumeSignatureCatalog -TemplateDiskPath 'C:\temp\MyLinuxTemplate.vhdx' -Vo
 
 ## <a name="next-step"></a>Próximas etapas
 
->[!div class="nextstepaction"]
-[Criar um arquivo de dados de blindagem](guarded-fabric-tenant-creates-shielding-data.md)
+> [!div class="nextstepaction"]
+> [Criar um arquivo de dados de blindagem](guarded-fabric-tenant-creates-shielding-data.md)
 
 ## <a name="see-also"></a>Consulte também
 

@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e9a2b2162fcf11385a5a866372e57338df87c541
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7e9a5b397127e9eb88352fb4d7bc28955023d4b7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850587"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447209"
 ---
 # <a name="enable-access-based-enumeration-on-a-namespace"></a>Habilitar a enumeração baseada em acesso em um Namespace
 
@@ -78,15 +78,15 @@ Você pode controlar quais usuários e grupos podem exibir pastas DFS individuai
 
 ## <a name="to-control-folder-visibility-by-using-a-command-line"></a>Para controlar visibilidade da pasta usando uma linha de comando
 
-1.  Abra uma janela de prompt de comando em um servidor que tem o **Distributed File System** serviço de função ou **ferramentas do sistema de arquivos distribuído** recurso instalado.
+1. Abra uma janela de prompt de comando em um servidor que tem o **Distributed File System** serviço de função ou **ferramentas do sistema de arquivos distribuído** recurso instalado.
 
-2.  Digite o seguinte comando, onde *&lt;DFSPath&gt;* é o caminho da pasta do DFS (link), *< domínio\\conta >* é o nome da conta de usuário ou grupo, e *(...)*  é substituído por entradas de controle de acesso (ACEs) adicionais:
+2. Digite o seguinte comando, onde *&lt;DFSPath&gt;* é o caminho da pasta do DFS (link), *< domínio\\conta >* é o nome da conta de usuário ou grupo, e *(...)*  é substituído por entradas de controle de acesso (ACEs) adicionais:
 
-    ```
-    dfsutil property sd grant <DFSPath> DOMAIN\Account:R (...) Protect Replace
-    ```
+   ```
+   dfsutil property sd grant <DFSPath> DOMAIN\Account:R (...) Protect Replace
+   ```
 
-    Por exemplo, para substituir as permissões existentes com as permissões que permite que os administradores de domínio e a CONTOSO\\grupos de treinadores Read (R) acesso para o \\contoso.office\public\training pasta, digite o seguinte comando:
+   Por exemplo, para substituir as permissões existentes com as permissões que permite que os administradores de domínio e a CONTOSO\\grupos de treinadores Read (R) acesso para o \\contoso.office\public\training pasta, digite o seguinte comando:
 
    ```
    dfsutil property sd grant \\contoso.office\public\training "CONTOSO\Domain Admins":R CONTOSO\Trainers:R Protect Replace 
@@ -103,7 +103,7 @@ Você pode controlar quais usuários e grupos podem exibir pastas DFS individuai
 
 ## <a name="see-also"></a>Consulte também
 
--   [Criar um Namespace do DFS](create-a-dfs-namespace.md)
--   [Delegar permissões de gerenciamento para Namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)
+-   [Criar um namespace do DFS](create-a-dfs-namespace.md)
+-   [Delegar permissões de gerenciamento para namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)
 -   [Instalando o DFS](https://technet.microsoft.com/library/cc731089(v=ws.11).aspx)
 -   [Usando as permissões herdadas com a enumeração baseada em acesso](using-inherited-permissions-with-access-based-enumeration.md)

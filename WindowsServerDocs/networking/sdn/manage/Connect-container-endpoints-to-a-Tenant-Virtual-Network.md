@@ -13,12 +13,12 @@ ms.assetid: f7af1eb6-d035-4f74-a25b-d4b7e4ea9329
 ms.author: pashort
 author: jmesser81
 ms.date: 08/24/2018
-ms.openlocfilehash: 1968a4db9231459fe5858d9a0f3ba5e8f317ed1b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cb9c7157ffb07233e41e1c933f6775f1cd0766a9
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872737"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446352"
 ---
 # <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>Conectar pontos de extremidade do contêiner a uma rede virtual do locatário
 
@@ -34,9 +34,11 @@ Diretiva de rede (ACLs, o encapsulamento e QoS) para esses pontos de extremidade
 
 A diferença entre o *l2bridge* e *l2tunnel* drivers são:
 
-| l2bridge | l2tunnel |
-| --- | --- |
-|Pontos de extremidade de contêiner que residem em: <ul><li>O mesmo contêiner de host de máquina virtual e na mesma sub-rede ter todo o tráfego de rede com ponte no comutador virtual Hyper-V. </li><li>Contêiner diferente hospedar VMs ou em sub-redes diferentes e têm seu tráfego encaminhado para o host físico do Hyper-V. </li></ul>Política de rede não obter imposta, pois o tráfego de rede entre contêineres no mesmo host e na mesma sub-rede não fluem para o host físico. Política de rede aplica-se o tráfego de rede de contêiner somente como entre hosts ou entre sub-redes. | *Todos os* tráfego de rede entre dois pontos de extremidade do contêiner é encaminhado para o host do Hyper-V físico independentemente do host ou sub-rede. Política de rede se aplica ao tráfego de rede entre sub-redes e entre hosts. |
+
+|                                                                                                                                                                                                                                                                            l2bridge                                                                                                                                                                                                                                                                            |                                                                                                 l2tunnel                                                                                                  |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Pontos de extremidade de contêiner que residem em: <ul><li>O mesmo contêiner de host de máquina virtual e na mesma sub-rede ter todo o tráfego de rede com ponte no comutador virtual Hyper-V. </li><li>Contêiner diferente hospedar VMs ou em sub-redes diferentes e têm seu tráfego encaminhado para o host físico do Hyper-V. </li></ul>Política de rede não obter imposta, pois o tráfego de rede entre contêineres no mesmo host e na mesma sub-rede não fluem para o host físico. Política de rede aplica-se o tráfego de rede de contêiner somente como entre hosts ou entre sub-redes. | *Todos os* tráfego de rede entre dois pontos de extremidade do contêiner é encaminhado para o host do Hyper-V físico independentemente do host ou sub-rede. Política de rede se aplica ao tráfego de rede entre sub-redes e entre hosts. |
+
 ---
 
 >[!NOTE]
@@ -60,10 +62,10 @@ A diferença entre o *l2bridge* e *l2tunnel* drivers são:
 ## <a name="workflow"></a>Fluxo de Trabalho
 
 [1. Adicionar várias configurações de IP a um recurso NIC da VM existente por meio do controlador de rede (Host Hyper-V)](#1-add-multiple-ip-configurations)
-[2. Habilitar o proxy de rede no host para alocar endereços IP de CA para pontos de extremidade do contêiner (Host Hyper-V) ](#2-enable-the-network-proxy) 
- [3. Instalar a plug-in para atribuir endereços IP de autoridade de certificação para pontos de extremidade do contêiner (VM do Host do contêiner) de nuvem privada ](#3-install-the-private-cloud-plug-in) 
- [4. Criar uma *l2bridge* ou *l2tunnel* rede usando o docker (VM do Host do contêiner) ](#4-create-an-l2bridge-container-network)
- 
+[2. Habilitar o proxy de rede no host para alocar endereços IP de CA para pontos de extremidade do contêiner (Host Hyper-V)](#2-enable-the-network-proxy)
+[3. Instalar a plug-in para atribuir endereços IP de autoridade de certificação para pontos de extremidade do contêiner (VM do Host do contêiner) de nuvem privada](#3-install-the-private-cloud-plug-in)
+[4. Criar uma *l2bridge* ou *l2tunnel* rede usando o docker (VM do Host do contêiner)](#4-create-an-l2bridge-container-network)
+
 >[!NOTE]
 >Não há suporte para várias configurações de IP nos recursos de NIC da VM criados por meio do System Center Virtual Machine Manager. É recomendável para esses tipos de implantações que você crie o recurso NIC da VM fora da banda usando o PowerShell do controlador de rede.
 
@@ -101,10 +103,10 @@ foreach ($i in 1..10)
         $resourceid += "0$i"
         $ipstr = "192.168.1.10$i"
     }
-    
+
     $newipconfig.ResourceId = $resourceid
     $props.PrivateIPAddress = $ipstr    
-    
+
     $props.PrivateIPAllocationMethod = "Static"
     $props.Subnet = new-object Microsoft.Windows.NetworkController.Subnet
     $props.Subnet.ResourceRef = $vmsubnet.ResourceRef
@@ -130,7 +132,7 @@ PS C:\> ConfigureMCNP.ps1
 ### <a name="3-install-the-private-cloud-plug-in"></a>3. Instalar o plug-in de nuvem privada
 Nesta etapa, você instala um plug-in para permitir que o HNS para se comunicar com o proxy de rede no Host Hyper-V.
 
-Para instalar o plug-in, execute as [InstallPrivateCloudPlugin.ps1](https://github.com/Microsoft/SDN/blob/master/Containers/InstallPrivateCloudPlugin.ps1) dentro do script as **máquina virtual do contêiner host (Locatário)**.
+Para instalar o plug-in, execute as [InstallPrivateCloudPlugin.ps1](https://github.com/Microsoft/SDN/blob/master/Containers/InstallPrivateCloudPlugin.ps1) dentro do script as **máquina virtual do contêiner host (Locatário)** .
 
 
 ```powershell

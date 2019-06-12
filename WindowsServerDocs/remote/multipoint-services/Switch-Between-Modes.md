@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 77700eb5f82ea36cd484e80bd59b9296e1290177
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a9c00d65ad1c59e91f4011ab932bf9f921957c59
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851167"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446153"
 ---
 # <a name="switch-between-modes"></a>Alternar entre modos
 MultiPoint Manager inclui os seguintes modos para ajudá-lo a executar diferentes tipos de gerenciamento do sistema MultiPoint Services:  
@@ -27,9 +27,9 @@ MultiPoint Manager inclui os seguintes modos para ajudá-lo a executar diferente
   
 -   *Modo de console*: Quando o sistema MultiPoint Services está em modo de console, você pode instalar e atualizar drivers e software ou executar outras tarefas de manutenção. Quando o sistema está em modo de console, nenhuma *estação* está disponível para uso por outros usuários do computador. Essas estações não são exibidas no Gerenciador do MultiPoint. Todos os monitores conectados diretamente ao servidor são tratados como exibições desse sistema de computador.   
   
-> [!NOTE]  
+> [!NOTE]
 > Você pode impor o sistema iniciando no modo de Console ao alterar o padrão nas configurações para o servidor.  
-## <a name="to-switch-from-station-mode-to-console-mode"></a>Para alternar do modo de estação para o modo de console  
+> ## <a name="to-switch-from-station-mode-to-console-mode"></a>Para alternar do modo de estação para o modo de console  
   
 1.  Abra o MultiPoint Manager no modo de estação e, em seguida, clique no **Home** guia.  
   

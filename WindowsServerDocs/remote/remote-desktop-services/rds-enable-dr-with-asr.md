@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: e3f9db4afb37452b4fd5d0229b385492b915fe45
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 7aa25602c71e5d114be7ae59c5e3ce168844d700
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859007"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446552"
 ---
 # <a name="enable-disaster-recovery-of-rds-using-azure-site-recovery"></a>Habilitar a recuperação de desastres do RDS usando o Azure Site Recovery
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016
 
 Para garantir que sua implantação do RDS está adequadamente configurada para recuperação de desastres, você precisa proteger todos os componentes que compõem sua implantação do RDS:
 
@@ -29,7 +29,7 @@ Para garantir que sua implantação do RDS está adequadamente configurada para 
 - SQL Server tier
 - Componentes RDS
 - Componentes de rede
- 
+
 ## <a name="configure-active-directory-and-dns-replication"></a>Configurar a replicação do Active Directory e DNS
 
 Você precisa do Active Directory no site de recuperação de desastre para sua implantação do RDS para trabalhar. Você tem duas opções com base em sua implantação do RDS quão complexo é:
@@ -47,9 +47,10 @@ Ver [proteger o SQL Server usando a recuperação de desastres do SQL Server e o
 
 Dependendo do seu tipo de implantação do RDS, você pode habilitar proteção para VMs de componente diferentes (conforme listado na tabela a seguir) no Azure Site Recovery. Configure os elementos relevantes do Azure Site Recovery com base em se suas VMs são implantadas no Hyper-V ou VMWare.
 
-| Tipo de implantação                              | Etapas de proteção                                                                                                                                                                                      |
-|----------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Área de trabalho virtual (não gerenciada)         |  1. Verifique se que todos os hosts de virtualização estão prontos com a função RDVH instalada.    </br>2. Agente de Conexão.  </br>3. Áreas de trabalho pessoais. </br>4. VM do modelo Gold. </br>5. Web Access, servidor de licença e o servidor de Gateway |
-| Com o pool de área de trabalho virtual (gerenciada com nenhuma UPD) |  1. Todos os hosts de virtualização estão prontos com a função RDVH instalada.  </br>2. Agente de Conexão.  </br>3. VM do modelo Gold. </br>4. Web Access, servidor de licença e o servidor de Gateway.                                  |
-| Aplicativos remotos e sessões da área de trabalho (sem UDP)     |  1. Hosts de sessão.  </br>2. Agente de Conexão. </br>3. Web Access, servidor de licença e o servidor de Gateway.                                                                                                          |                                                                                                                                      |
+
+|               Tipo de implantação                |                                                                                                     Etapas de proteção                                                                                                     |
+|----------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|     Área de trabalho virtual (não gerenciada)     | 1. Verifique se que todos os hosts de virtualização estão prontos com a função RDVH instalada.    </br>2. Agente de Conexão.  </br>3. Áreas de trabalho pessoais. </br>4. VM do modelo Gold. </br>5. Web Access, servidor de licença e o servidor de Gateway |
+| Com o pool de área de trabalho virtual (gerenciada com nenhuma UPD) |                    1. Todos os hosts de virtualização estão prontos com a função RDVH instalada.  </br>2. Agente de Conexão.  </br>3. VM do modelo Gold. </br>4. Web Access, servidor de licença e o servidor de Gateway.                    |
+|   Aplicativos remotos e sessões da área de trabalho (sem UDP)   |                                                          1. Hosts de sessão.  </br>2. Agente de Conexão. </br>3. Web Access, servidor de licença e o servidor de Gateway.                                                           |
 

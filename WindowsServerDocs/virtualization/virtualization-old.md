@@ -9,12 +9,12 @@ author: shortpatti
 ms.author: pashort
 ms.localizationpriority: medium
 ms.date: 03/16/2018
-ms.openlocfilehash: b3b018037d788d47fafe7d3adda50cfb5831ab56
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e6dbb5be6d836462c9a24078dbec3700b09b08fc
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829907"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446054"
 ---
 # <a name="virtualization"></a>Virtualização
 
@@ -41,7 +41,7 @@ Tecnologias de virtualização do Windows Server incluem atualizações do Hyper
                     </div>
                     <div class="cardText">
                         <h3>Malha protegida e VMs blindadas</h3>
-                        <p>Como um provedor de serviços em nuvem ou um administrador de nuvem privada corporativa, você pode usar uma malha protegida para fornecer um ambiente mais seguro para as VMs. Uma malha protegida consiste em um serviço de guardião de Host \(HGS\) -normalmente, um cluster de três nós - mais de um ou mais hosts protegidos e um conjunto de VMs blindadas.</p>
+                        <p>Como um provedor de serviços em nuvem ou um administrador de nuvem privada corporativa, você pode usar uma malha protegida para fornecer um ambiente mais seguro para as VMs. Uma malha protegida consiste em um Host de HGS (serviço guardião) - normalmente, um cluster de três nós - mais de um ou mais protegidos hosts e um conjunto de VMs blindadas.</p>
                     </div>
                 </div>
             </div>
@@ -101,11 +101,11 @@ Tecnologias de virtualização do Windows Server incluem atualizações do Hyper
                     </div>
                     <div class="cardText">
                         <h3>Comutador Virtual Hyper-V</h3>
-                        <p>O Hyper\-comutador Virtual V é um software\-com base em camada\-2 comutador de rede Ethernet que está incluído em todas as versões do Hyper\-V.</p>
+                        <p>O comutador Virtual do Hyper-V é um baseada em software camada 2 comutador de rede Ethernet está incluído em todas as versões do Hyper-V.</p>
 
-                        <p>Hyper\-V Virtual Switch está disponível no Hyper\-V Manager depois de instalar o Hyper\-função de servidor V.</p>
+                        <p>Comutador Virtual Hyper-V está disponível no Gerenciador do Hyper-V depois de instalar a função de servidor do Hyper-V.</p>
 
-                        <p>Incluídos no Hyper\-V Virtual Switch são funcionalidades programaticamente gerenciadas e extensíveis que permitem que você se conectar a máquinas virtuais a redes virtuais e a rede física.</p> 
+                        <p>Funcionalidades programaticamente gerenciadas e extensíveis que permitem que você conectar máquinas virtuais à rede física e redes virtuais estão incluídos no comutador Virtual do Hyper-V.</p> 
 
                         <p>Além disso, o Comutador Virtual Hyper-V fornece imposição de política para níveis de segurança, de isolamento e de serviço.</p>
                     </div>
@@ -128,7 +128,7 @@ Tecnologias de virtualização do Windows Server incluem atualizações do Hyper
                     </div>
                     <div class="cardText">
                         <h3>Contêineres do Windows</h3>
-                        <p>Contêineres do Windows fornecem um sistema operacional\-virtualização no nível que permite que vários aplicativos isolados ser executado em um único sistema. Dois tipos diferentes de tempos de execução do contêiner são incluídos no recurso, cada um com um grau de isolamento do aplicativo diferente.</p>
+                        <p>Contêineres do Windows fornecem uma virtualização no nível do sistema operacional que permite que vários aplicativos isolados sejam executados em um único sistema. Dois tipos diferentes de tempos de execução do contêiner são incluídos no recurso, cada um com um grau de isolamento do aplicativo diferente.</p>
                     </div>
                 </div>
             </div>

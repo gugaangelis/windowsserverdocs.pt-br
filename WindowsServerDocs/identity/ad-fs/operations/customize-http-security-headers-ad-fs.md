@@ -9,12 +9,12 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 54b0e055d6cfde5e5c69540ac804a38cbceb1e59
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 231c8783032f51f607565922d90ea7f7eb877cfd
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188772"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444694"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>Personalizar cabeçalhos de resposta de segurança HTTP com o AD FS de 2019 
  
@@ -39,7 +39,7 @@ Antes de discutirmos os cabeçalhos, vamos dar uma olhada em alguns cenários, c
 ## <a name="http-security-response-headers"></a>Cabeçalhos de resposta de segurança HTTP 
 Os cabeçalhos de resposta são incluídos na resposta de saída HTTP enviada pelo AD FS para um navegador da web. Os cabeçalhos podem ser listados usando o `Get-AdfsResponseHeaders` cmdlet, conforme mostrado abaixo.  
 
-![Resposta do cabeçalho](media\customize-http-security-headers-ad-fs\header1.png)
+![Resposta do cabeçalho](media/customize-http-security-headers-ad-fs/header1.png)
 
 O `ResponseHeaders` atributo na captura de tela acima identifica os cabeçalhos de segurança que serão incluídos pelo AD FS em cada resposta HTTP. Os cabeçalhos de resposta serão enviados somente se `ResponseHeadersEnabled` é definido como `True` (valor padrão). O valor pode ser definido como `False` para impedir que o AD FS, incluindo qualquer um dos cabeçalhos de segurança na resposta HTTP. No entanto isso não é recomendado.  Para isso, use o seguinte:
 
@@ -218,7 +218,7 @@ Set-AdfsResponseHeaders -SetHeaderName "TestHeader" -SetHeaderValue "TestHeaderV
 
 Uma vez definido, o novo cabeçalho é enviado na resposta do AD FS (fiddler trecho de código abaixo).  
  
-![Fiddler](media\customize-http-security-headers-ad-fs\header2.png)
+![Fiddler](media/customize-http-security-headers-ad-fs/header2.png)
 
 ## <a name="web-browswer-compatibility"></a>Compatibilidade de navegador da Web
 Use a tabela e os links a seguir para determinar quais navegadores são compatíveis com cada um dos cabeçalhos de resposta de segurança.

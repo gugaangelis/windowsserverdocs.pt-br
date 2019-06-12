@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8267a35aefc279ff57ce3d200415e16e431775f7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d8cac59b2f5524df5a82e9c83424fd781f0ef7c8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883057"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440930"
 ---
 # <a name="tscon"></a>tscon
 
@@ -35,9 +35,10 @@ Para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_example
 tscon {<SessionID> | <SessionName>} [/dest:<SessionName>] [/password:<pw> | /password:*] [/v]  
 ```  
 ## <a name="parameters"></a>Parâmetros  
+
 |Parâmetro|Descrição|  
 |-------|--------|  
-|\<SessionID>|Especifica a ID da sessão para o qual você deseja se conectar. Se você usar opcional **/dest:**<*SessionName*> parâmetro, isso é a ID da sessão para o qual você deseja se conectar.|  
+|\<SessionID>|Especifica a ID da sessão para o qual você deseja se conectar. Se você usar opcional **/dest:** <*SessionName*> parâmetro, isso é a ID da sessão para o qual você deseja se conectar.|  
 |\<SessionName>|Especifica o nome da sessão à qual você deseja se conectar.|  
 |/dest:\<SessionName>|Especifica o nome da sessão atual. Esta sessão será desconectada quando você se conectar à nova sessão.|  
 |/password:\<pw>|Especifica a senha do usuário que possui a sessão à qual você deseja se conectar. Esta senha é necessária quando o usuário conectado não possui a sessão.|  
@@ -47,23 +48,23 @@ tscon {<SessionID> | <SessionName>} [/dest:<SessionName>] [/password:<pw> | /pas
 
 ## <a name="remarks"></a>Comentários  
 -   Você deve ter permissão de acesso de controle total ou a permissão de acesso especial para se conectar a outra sessão de conexão.  
--   O **/dest:**<*SessionName*> parâmetro permite que você se conecte a sessão de outro usuário a uma sessão diferente.  
+-   O **/dest:** <*SessionName*> parâmetro permite que você se conecte a sessão de outro usuário a uma sessão diferente.  
 -   Se você não especificar uma senha no <*senha*> parâmetro e a sessão de destino pertence a um usuário diferente do atual, **tscon** falhar.  
 -   Você não pode se conectar à sessão de console.  
 
 ## <a name="BKMK_examples"></a>Exemplos  
--   Para se conectar à sessão 12 no servidor de Host de sessão de área de trabalho remota atual e desconectar a sessão atual, digite:  
-    ```  
-    tscon 12  
-    ```  
--   Para conectar-se à sessão 23 no servidor de Host de sessão de área de trabalho remota atual, usando a senha minha_senha e desconectar a sessão atual, digite:  
-    ```  
-    tscon 23 /password:mypass  
-    ```  
--   Para conectar-se a sessão denominada TERM03 à sessão denominada TERM05 e desconectar a sessão TERM05, se ele estiver conectado, digite:  
-    ```  
-    tscon TERM03 /v /dest:TERM05  
-    ```  
-#### <a name="additional-references"></a>Referências adicionais  
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
-[Serviços de área de trabalho remota &#40;serviços de Terminal&#41; referência do comando](remote-desktop-services-terminal-services-command-reference.md)  
+- Para se conectar à sessão 12 no servidor de Host de sessão de área de trabalho remota atual e desconectar a sessão atual, digite:  
+  ```  
+  tscon 12  
+  ```  
+- Para conectar-se à sessão 23 no servidor de Host de sessão de área de trabalho remota atual, usando a senha minha_senha e desconectar a sessão atual, digite:  
+  ```  
+  tscon 23 /password:mypass  
+  ```  
+- Para conectar-se a sessão denominada TERM03 à sessão denominada TERM05 e desconectar a sessão TERM05, se ele estiver conectado, digite:  
+  ```  
+  tscon TERM03 /v /dest:TERM05  
+  ```  
+  #### <a name="additional-references"></a>Referências adicionais  
+  [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+  [Serviços de área de trabalho remota &#40;serviços de Terminal&#41; referência do comando](remote-desktop-services-terminal-services-command-reference.md)  

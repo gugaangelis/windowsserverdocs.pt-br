@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: d53be34d04edfac9f30b6e269833be74a6ebcf22
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 541ceec25e8cb0fae0b55c3de3be269982546c54
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820347"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447665"
 ---
 # <a name="configure-e-mail-notifications"></a>Configurar notificações por email
 
@@ -25,21 +25,21 @@ Para enviar essas notificações e relatórios de armazenamento, é necessário 
 
 ## <a name="to-configure-e-mail-options"></a>Para configurar opções de email
 
-1.  Na árvore de console, clique com o botão direito do mouse em **Gerenciador de Recursos de Servidor de Arquivos** e em **Configurar Opções**. A caixa de diálogo **Opções do Gerenciador de Recursos de Servidor de Arquivos** é aberta.
+1. Na árvore de console, clique com o botão direito do mouse em **Gerenciador de Recursos de Servidor de Arquivos** e em **Configurar Opções**. A caixa de diálogo **Opções do Gerenciador de Recursos de Servidor de Arquivos** é aberta.
 
-2.  Na guia **Notificações por Email**, em **Nome do servidor SMTP ou endereço IP**, digite o nome do host ou o endereço IP do servidor SMTP para encaminhar as notificações por email e relatórios de armazenamento.
+2. Na guia **Notificações por Email**, em **Nome do servidor SMTP ou endereço IP**, digite o nome do host ou o endereço IP do servidor SMTP para encaminhar as notificações por email e relatórios de armazenamento.
 
-3.  Se você desejar notificar rotineiramente certos administradores sobre os eventos de cota e triagem de arquivos ou relatórios de armazenamento de email, em **Administradores destinatários padrão**, digite cada endereço de email.
+3. Se você desejar notificar rotineiramente certos administradores sobre os eventos de cota e triagem de arquivos ou relatórios de armazenamento de email, em **Administradores destinatários padrão**, digite cada endereço de email.
 
-    Use o formato *account@domain*. Usar ponto-e-vírgula para separar múltiplas contas.
+   Use o formato <em>account@domain</em>. Usar ponto-e-vírgula para separar múltiplas contas.
 
-4.  Para especificar um endereço "De" diferente de notificações por email e relatórios de armazenamento enviados do Gerenciador de Recursos de Servidor de Arquivos, em **Endereço de email padrão "De"**, digite o endereço e email que deseja exibir em sua mensagem.
+4. Para especificar um endereço "De" diferente de notificações por email e relatórios de armazenamento enviados do Gerenciador de Recursos de Servidor de Arquivos, em **Endereço de email padrão "De"** , digite o endereço e email que deseja exibir em sua mensagem.
 
-5.  Para testar suas configurações, clique em **Enviar email de teste**.
+5. Para testar suas configurações, clique em **Enviar email de teste**.
 
-6.  Clique em **OK**.
+6. Clique em **OK**.
 
 
 ## <a name="see-also"></a>Consulte também
 
--   [Opções do Gerenciador de recursos de servidor de arquivos de configuração](setting-file-server-resource-manager-options.md)
+-   [Definir opções do Gerenciador de Recursos de Servidor de Arquivos](setting-file-server-resource-manager-options.md)

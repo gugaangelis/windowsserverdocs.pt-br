@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69b433ee3e0f57398db1e7814d2de24df7dd1696
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 9205565486b75edcd550174fc89990a5aa2d69b7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222920"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439855"
 ---
 # <a name="step-4-configure-group-policy-settings-for-automatic-updates"></a>Etapa 4: Definir configurações de política de grupo para atualizações automáticas
 
@@ -420,10 +420,11 @@ Para usar essa configuração, você deve definir dois valores de nome de servid
 
 **Opções:** Quando essa configuração de política está habilitada, você deve especificar o serviço de atualização da intranet que os clientes do WSUS usará ao detectar atualizações e o servidor de estatísticas de Internet para o qual atualizado os clientes do WSUS carregará as estatísticas. Valores de exemplo:
 
-|Opção de configuração:|Valor de exemplo:|
-|----------|---------|
-|Definir o serviço de atualização da intranet para detectar atualizações|http://wsus01:8530|
-|Definir o servidor de estatísticas da intranet|http://IntranetUpd01|
+
+|                    Opção de configuração:                    |    Valor de exemplo:    |
+|-------------------------------------------------------|----------------------|
+| Definir o serviço de atualização da intranet para detectar atualizações |  http://wsus01:8530  |
+|          Definir o servidor de estatísticas da intranet           | http://IntranetUpd01 |
 
 #### <a name="turn-on-recommended-updates-via-automatic-updates"></a>Ative as atualizações recomendadas via atualizações automáticas
 Especifica se as atualizações automáticas entregará importantes e atualizações recomendadas do WSUS.
@@ -586,7 +587,7 @@ Especifica se o **instalar atualizações e desligar** opção é permitida como
 |**Desabilitado**|Especifica se o **instalar atualizações e desligar** será a opção padrão no **desligar o Windows** caixa de diálogo se houver atualizações disponíveis para instalação no momento em que o usuário seleciona o desligamento Para baixo de opção para desligar o computador.|
 
 **Opções:** Não existem opções para essa configuração.
-    
+
 #### <a name="remove-access-to-use-all-windows-update-features"></a>Remover o acesso para usar todos os recursos do Windows Update
 Essa configuração permite que você remover o acesso de cliente do WSUS ao Windows Update.
 

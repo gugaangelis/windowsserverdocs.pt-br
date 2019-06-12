@@ -10,12 +10,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
-ms.openlocfilehash: 4e4da87e5a2a4cd80e748a05596da3f23b5ac85f
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: a568324ba69b13c7016f4715d3c37f991ae4c1ad
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222902"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439718"
 ---
 # <a name="plan-your-wsus-deployment"></a>Planejar sua implantação do WSUS
 
@@ -94,19 +94,19 @@ Durante o processo de instalação, o WSUS instalará estes componentes:
 
 Esteja ciente de que configurar computadores cliente (incluindo servidores) para atualizar usando o WSUS resultará nas seguintes limitações:
 
-1.  Funções de servidor que tiveram suas cargas removidas usando os Recursos sob Demanda não podem ser instaladas sob demanda pelo Microsoft Update. Você deve fornecer uma origem de instalação no momento em que você tentar instalar tais funções de servidor ou configurar uma origem para os recursos sob demanda na política de grupo.
+1. Funções de servidor que tiveram suas cargas removidas usando os Recursos sob Demanda não podem ser instaladas sob demanda pelo Microsoft Update. Você deve fornecer uma origem de instalação no momento em que você tentar instalar tais funções de servidor ou configurar uma origem para os recursos sob demanda na política de grupo.
 
-2.  As edições do cliente Windows não poderão instalar o .NET 3.5 sob demanda por meio da Web. Aplicam-se ao .NET 3.5 as mesmas considerações que para as funções de servidor.
+2. As edições do cliente Windows não poderão instalar o .NET 3.5 sob demanda por meio da Web. Aplicam-se ao .NET 3.5 as mesmas considerações que para as funções de servidor.
 
-    > [!NOTE]
-    > Configurando um recursos na origem de instalação de demanda não envolve WSUS. Para obter informações sobre como configurar os Recursos, consulte [Configurar Recursos sob Demanda no Windows Server](https://technet.microsoft.com/library/jj127275.aspx).
+   > [!NOTE]
+   > Configurando um recursos na origem de instalação de demanda não envolve WSUS. Para obter informações sobre como configurar os Recursos, consulte [Configurar Recursos sob Demanda no Windows Server](https://technet.microsoft.com/library/jj127275.aspx).
 
 3. Dispositivos da empresa que executam o Windows 10, versão 1709 ou versão 1803, não é possível instalar todos os recursos sob demanda diretamente do WSUS. Para instalar recursos sob demanda, [criar um arquivo de recurso (side-by-side repositório)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275%28v=ws.11%29#create-a-feature-file-or-side-by-side-store) ou obtenha o recurso no pacote de demanda de uma das seguintes fontes:
-    - [Volume Licensing Service Center](https://www.microsoft.com/licensing/servicecenter) (VLSC) - é necessário acesso de VL
-    - Portal de OEM - é necessário acesso de OEM
-    - Download do MSDN – é necessária uma assinatura do MSDN
+   - [Volume Licensing Service Center](https://www.microsoft.com/licensing/servicecenter) (VLSC) - é necessário acesso de VL
+   - Portal de OEM - é necessário acesso de OEM
+   - Download do MSDN – é necessária uma assinatura do MSDN
 
-    Recurso obtido individualmente em pacotes de demanda pode ser instalado usando [opções de linha de comando DISM](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options).
+     Recurso obtido individualmente em pacotes de demanda pode ser instalado usando [opções de linha de comando DISM](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options).
 
 ### <a name="wsus-database-requirements"></a>Requisitos de banco de dados do WSUS
 O WSUS requer um dos seguintes bancos de dados:
@@ -319,7 +319,7 @@ A escolha de idiomas para um servidor upstream não é igual à escolha de idiom
 > [!NOTE]
 > Você deve fazer isso mesmo que deseje que o servidor downstream baixe os mesmos idiomas do servidor upstream.
 
-2.  Se o servidor upstream tiver sido configurado para baixar os arquivos de atualização em todos os idiomas: No Assistente de Configuração do WSUS, clique em **Baixar atualizações em todos os idiomas com suporte pelo servidor upstream**.
+2. Se o servidor upstream tiver sido configurado para baixar os arquivos de atualização em todos os idiomas: No Assistente de Configuração do WSUS, clique em **Baixar atualizações em todos os idiomas com suporte pelo servidor upstream**.
 
 > [!NOTE]
 > Você deve fazer isso mesmo que deseje que o servidor downstream baixe os mesmos idiomas do servidor upstream. Essa configuração faz com que o servidor upstream baixe atualizações em todos os idiomas, incluindo idiomas que não foram originalmente configurados para o servidor upstream. Se você adicionar idiomas ao servidor upstream, deve copiar as novas atualizações para seus servidores de réplica.

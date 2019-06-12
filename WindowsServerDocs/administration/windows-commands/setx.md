@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a650fae246d71d8c1f9822dfa9ff8e96d855b4b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0b2caceed6962bef22e7d546fa3b4469c9682b39
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886567"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441249"
 ---
 # <a name="setx"></a>setx
 
@@ -38,21 +38,21 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 
 ## <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|/s \<Computer>|Especifica o nome ou endereço IP de um computador remoto. Não use barras invertidas. O valor padrão é o nome do computador local.|
-|/u [\<Domain>\]<User name>|Executa o script com as credenciais da conta de usuário especificado. O valor padrão é que as permissões do sistema.|
-|/p [\<Password>]|Especifica a senha da conta de usuário que é especificada na **/u** parâmetro.|
-|\<Variable>|Especifica o nome da variável de ambiente que você deseja definir.|
-|\<valor >|Especifica o valor para o qual você deseja definir a variável de ambiente.|
-|/k \<Path>|Especifica que a variável é definida com base nas informações de uma chave do registro. O p*ath* usa a seguinte sintaxe:</br>`\\<HIVE>\<KEY>\...\<Value>`</br>Por exemplo, você pode especificar o caminho a seguir:</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName`|
-|/f \<nome do arquivo >|Especifica o arquivo que você deseja usar.|
-|/a \<X>,<Y>|Especifica as coordenadas absolutas e o deslocamento como parâmetros de pesquisa.|
-|/r \<X>,<Y> "<String>"|Especifica as coordenadas relativas e o deslocamento a partir **cadeia de caracteres** como parâmetros de pesquisa.|
-|/m|Especifica para definir a variável no ambiente do sistema. A configuração padrão é o ambiente local.|
-|/x|Exibe arquivos coordenadas, ignorando os **/a**, **/r**, e **/d** opções de linha de comando.|
-|/d \<Delimiters>|Especifica os delimitadores, como "**,**" ou "**\**" para ser usado em conjunto com os quatro delimitadores internos — espaço, TAB, ENTER e avanço de linha. Delimitadores válidos incluem qualquer caractere ASCII. O número máximo de delimitadores é 15, incluindo os delimitadores internos.|
-|/?|Exibe a ajuda no prompt de comando.|
+|         Parâmetro          |                                                                                                                                              Descrição                                                                                                                                              |
+|----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|       /s \<Computer>       |                                                                                  Especifica o nome ou endereço IP de um computador remoto. Não use barras invertidas. O valor padrão é o nome do computador local.                                                                                  |
+| /u [\<Domain>\]<User name> |                                                                                           Executa o script com as credenciais da conta de usuário especificado. O valor padrão é que as permissões do sistema.                                                                                            |
+|      /p [\<Password>]      |                                                                                                         Especifica a senha da conta de usuário que é especificada na **/u** parâmetro.                                                                                                         |
+|        \<Variable>         |                                                                                                                 Especifica o nome da variável de ambiente que você deseja definir.                                                                                                                  |
+|          \<valor >          |                                                                                                                Especifica o valor para o qual você deseja definir a variável de ambiente.                                                                                                                 |
+|         /k \<Path>         | Especifica que a variável é definida com base nas informações de uma chave do registro. O p*ath* usa a seguinte sintaxe:</br>`\\<HIVE>\<KEY>\...\<Value>`</br>Por exemplo, você pode especificar o caminho a seguir:</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
+|      /f \<nome do arquivo >       |                                                                                                                               Especifica o arquivo que você deseja usar.                                                                                                                                |
+|        /a \<X>,<Y>         |                                                                                                                    Especifica as coordenadas absolutas e o deslocamento como parâmetros de pesquisa.                                                                                                                    |
+|   /r \<X>,<Y> "<String>"   |                                                                                                            Especifica as coordenadas relativas e o deslocamento a partir **cadeia de caracteres** como parâmetros de pesquisa.                                                                                                            |
+|             /m             |                                                                                                Especifica para definir a variável no ambiente do sistema. A configuração padrão é o ambiente local.                                                                                                 |
+|             /x             |                                                                                                       Exibe arquivos coordenadas, ignorando os **/a**, **/r**, e **/d** opções de linha de comando.                                                                                                        |
+|      /d \<Delimiters>      |                    Especifica os delimitadores, como " **,** "ou" **\\** " para ser usado em conjunto com os quatro delimitadores internos — espaço, TAB, ENTER e avanço de linha. Delimitadores válidos incluem qualquer caractere ASCII. O número máximo de delimitadores é 15, incluindo os delimitadores internos.                    |
+|             /?             |                                                                                                                                 Exibe a ajuda no prompt de comando.                                                                                                                                  |
 
 ## <a name="remarks"></a>Comentários
 
@@ -80,7 +80,7 @@ Para definir a variável de ambiente MYPATH no ambiente local para usar o caminh
 ```
 setx MYPATH %PATH%
 ```
-Para definir a variável de ambiente MYPATH no ambiente local para usar o caminho de pesquisa definido na variável de ambiente PATH depois de substituir **~** com **%**, tipo:
+Para definir a variável de ambiente MYPATH no ambiente local para usar o caminho de pesquisa definido na variável de ambiente PATH depois de substituir **~** com **%** , tipo:
 ```
 setx MYPATH ~PATH~ 
 ```
@@ -131,4 +131,4 @@ setx /s computer1 /u maindom\hiropln /p p@ssW23 /f ipconfig.out /x
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

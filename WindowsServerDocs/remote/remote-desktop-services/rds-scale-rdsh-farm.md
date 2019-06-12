@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: d243994a68c0bf4f0584f68475a185acb9cb73d5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 0e3852b4ea5f1080a3798c0806e5c87ca808c3be
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865487"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446525"
 ---
 # <a name="scale-out-your-remote-desktop-services-deployment-by-adding-an-rd-session-host-farm"></a>Escalar horizontalmente sua implantação de serviços de área de trabalho remota com a adição de um farm de Host de sessão de área de trabalho remota
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016
 
 Você pode melhorar a disponibilidade e escala de sua implantação do RDS com a adição de um farm de Host de sessão de área de trabalho remota (RDSH).   
   
@@ -30,7 +30,7 @@ Use as etapas a seguir para adicionar outro Host de sessão de área de trabalho
   
 1. Crie um servidor para hospedar o segundo Host de sessão de área de trabalho remota. Se você estiver usando máquinas virtuais do Azure, certifique-se de incluir a nova VM no mesmo conjunto de disponibilidade que contém seu Host de sessão de área de trabalho remota primeiro.
 2. Habilite o gerenciamento remoto no novo servidor ou máquina virtual:
-   1. No Gerenciador do servidor, clique em **servidor Local > configuração atual do gerenciamento remoto (desabilitada)**. 
+   1. No Gerenciador do servidor, clique em **servidor Local > configuração atual do gerenciamento remoto (desabilitada)** . 
    2. Selecione **habilitar o gerenciamento remoto para este servidor**e, em seguida, clique em **Okey**. 
    3. Opcional: Você pode definir temporariamente o Windows Update para baixar e instalar as atualizações não automaticamente. Isso ajuda a impedir alterações e reinicializações do sistema, enquanto você implanta o servidor de RDSH. No Gerenciador do servidor, clique em **servidor Local > configuração atual do Windows Update**. Clique em **Advanced options > Adiar atualizações**. 
 3. Adicione o servidor ou vm no domínio:
@@ -39,8 +39,8 @@ Use as etapas a seguir para adicionar outro Host de sessão de área de trabalho
    3. Insira as credenciais de administrador de domínio. 
    4. Reinicie o servidor ou vm.
 4. Adicione novo Host de sessão RD no farm:
->[!NOTE] 
-> Etapa 1, criar um endereço IP público para a máquina virtual RDMS, só é necessário se você estiver usando uma vm para os RDMS e se ele ainda não tiver um endereço IP atribuído.
+   >[!NOTE] 
+   > Etapa 1, criar um endereço IP público para a máquina virtual RDMS, só é necessário se você estiver usando uma vm para os RDMS e se ele ainda não tiver um endereço IP atribuído.
    
    1. Crie um endereço IP público para a máquina virtual executando serviços de gerenciamento de área de trabalho remota (RDMS). A máquina virtual RDMS normalmente será a máquina virtual executando a primeira instância da função de agente de Conexão de área de trabalho.  
        1. No portal do Azure, clique em **procurar > grupos de recursos**, clique no grupo de recursos para a implantação e, em seguida, clique na máquina de virtual RDMS (por exemplo, Contoso-Cb1).  

@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: f3f34b4c86854bfc55cf4b1b57a0fd3c2baf2ffc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3cce07ba5b3d2cc89f1363bbb2af5acd048c0466
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839247"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445945"
 ---
 # <a name="control-your-tools-visibility-in-a-solution"></a>Controlar a visibilidade da sua ferramenta em uma solução #
 
@@ -90,10 +90,10 @@ O SDK inclui um conjunto estruturado previamente de propriedades de inventário 
 | operatingSystemVersion | version_string (eg: "10.1.*") |
 | productType | number |
 | clusterFqdn | cadeia de caracteres |
-| isHyperVRoleInstalled | booliano |
-| isHyperVPowershellInstalled | booliano |
-| isManagementToolsAvailable | booliano |
-| isWmfInstalled | booliano |
+| isHyperVRoleInstalled | boolean |
+| isHyperVPowershellInstalled | boolean |
+| isManagementToolsAvailable | boolean |
+| isWmfInstalled | boolean |
 
 Cada objeto na matriz de inventário deve estar de acordo com a seguinte estrutura json:
 
@@ -129,7 +129,7 @@ Opções disponíveis para a propriedade 'type':
 | version | um número de versão (por exemplo: 10.1.*) |
 | number | um valor numérico |
 | cadeia de caracteres | um valor de cadeia de caracteres |
-| booliano | VERDADEIRO ou falso |
+| boolean | VERDADEIRO ou falso |
 
 #### <a name="value-types"></a>Tipos de valor ####
 
@@ -137,7 +137,7 @@ A propriedade 'value' aceita esses tipos:
 
 * cadeia de caracteres
 * number
-* booliano
+* boolean
 
 Um conjunto de condições de inventário corretamente formado tem esta aparência:
 
@@ -194,6 +194,7 @@ Por fim, você pode executar um script do PowerShell personalizado para identifi
 }
 ```
 A propriedade de estado é o valor importante que controlará a decisão para mostrar ou ocultar sua extensão na lista de ferramentas.  Os valores permitidos são:
+
 | Valor | Descrição |
 | ---- | ----------- |
 | Disponível | A extensão deve ser exibida na lista de ferramentas. |

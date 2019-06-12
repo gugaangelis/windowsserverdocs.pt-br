@@ -9,12 +9,12 @@ ms.date: 01/16/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 73ff3fc6df872edd29735ee96c0918144250d5f1
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: ee7bef2afe61500fe75b2d3c61b92b902f9757fa
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190043"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444266"
 ---
 # <a name="advanced-customization-of-ad-fs-sign-in-pages"></a>A personalização avançada de AD FS Sign-in Pages
 
@@ -104,33 +104,33 @@ if (loginMessage)
 ```  
   
 ### <a name="example-2-accept-sam-account-name-as-a-login-format-on-an-ad-fs-form-based-sign-in-page"></a>Exemplo 2: aceitar SAM\-nome da conta como um formato de logon em um formulário do AD FS\-logon baseado em\-na página  
-O padrão de formulário do AD FS\-logon baseado em\-na página dá suporte ao formato de logon de nomes da entidade de usuário \(UPNs\) \(, por exemplo, **johndoe@contoso.com** \) ou domínio qualificado sam\-nomes de conta \( **contoso\\joãosilva** ou **contoso.com\\joãosilva**\). No caso de todos os usuários vêm do mesmo domínio e elas só conhecem sam\-nomes de conta, você talvez queira suportar o cenário em que os usuários podem entrar em usá-los sam\-somente nomes de conta. Você pode adicionar o código a seguir para onload.js para dar suporte a esse cenário, basta substituir o domínio "contoso.com" no exemplo abaixo com o domínio que você deseja usar.  
+O padrão de formulário do AD FS\-logon baseado em\-na página dá suporte ao formato de logon de nomes da entidade de usuário \(UPNs\) \(, por exemplo, <strong>johndoe@contoso.com</strong> \) ou domínio qualificado sam\-nomes de conta \( **contoso\\joãosilva** ou **contoso.com\\joãosilva**\). No caso de todos os usuários vêm do mesmo domínio e elas só conhecem sam\-nomes de conta, você talvez queira suportar o cenário em que os usuários podem entrar em usá-los sam\-somente nomes de conta. Você pode adicionar o código a seguir para onload.js para dar suporte a esse cenário, basta substituir o domínio "contoso.com" no exemplo abaixo com o domínio que você deseja usar.  
   
 ```  
 if (typeof Login != 'undefined'){  
-    Login.submitLoginRequest = function () {   
-    var u = new InputUtil();  
-    var e = new LoginErrors();  
-    var userName = document.getElementById(Login.userNameInput);  
-    var password = document.getElementById(Login.passwordInput);  
-    if (userName.value && !userName.value.match('[@\\\\]'))   
-    {  
-        var userNameValue = 'contoso.com\\' + userName.value;  
-        document.forms['loginForm'].UserName.value = userNameValue;  
-    }  
+    Login.submitLoginRequest = function () {   
+    var u = new InputUtil();  
+    var e = new LoginErrors();  
+    var userName = document.getElementById(Login.userNameInput);  
+    var password = document.getElementById(Login.passwordInput);  
+    if (userName.value && !userName.value.match('[@\\\\]'))   
+    {  
+        var userNameValue = 'contoso.com\\' + userName.value;  
+        document.forms['loginForm'].UserName.value = userNameValue;  
+    }  
   
-    if (!userName.value) {  
-       u.setError(userName, e.userNameFormatError);  
-       return false;  
-    }  
+    if (!userName.value) {  
+       u.setError(userName, e.userNameFormatError);  
+       return false;  
+    }  
   
-    if (!password.value)   
-    {  
-        u.setError(password, e.passwordEmpty);  
-        return false;  
-    }  
-    document.forms['loginForm'].submit();  
-    return false;  
+    if (!password.value)   
+    {  
+        u.setError(password, e.passwordEmpty);  
+        return false;  
+    }  
+    document.forms['loginForm'].submit();  
+    return false;  
 };  
 }  
   

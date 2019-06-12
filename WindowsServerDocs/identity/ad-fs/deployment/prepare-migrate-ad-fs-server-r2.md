@@ -8,12 +8,12 @@ ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: b5658676d08318d88ddee44a0589db5873b4660b
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: cb301d0d68f00625ccea8c11d315b9defffe40f3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034295"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444529"
 ---
 # <a name="prepare-to-migrate-the-ad-fs-20-federation-server-to-ad-fs-on-windows-server-2012-r2"></a>Preparar para migrar o servidor do AD FS 2.0 Federation para o AD FS no Windows Server 2012 R2
 
@@ -45,17 +45,17 @@ As seguintes configurações são migradas com os scripts localizados na pasta \
   
 Todas as configurações personalizadas a seguir devem ser migradas manualmente:  
   
- -   Configurações de serviço:  
+- Configurações de serviço:  
   
-     -   Certificados de descriptografia de token e de assinatura de token não padrão que foram emitidos por uma empresa ou autoridade de certificação pública.  
+  - Certificados de descriptografia de token e de assinatura de token não padrão que foram emitidos por uma empresa ou autoridade de certificação pública.  
   
-     -   O certificado de autenticação do servidor SSL usado pelo AD FS.  
+  - O certificado de autenticação do servidor SSL usado pelo AD FS.  
   
-     -   O certificado de comunicações de serviço usado pelo AD FS (por padrão, esse é o mesmo certificado do certificado SSL).  
+  - O certificado de comunicações de serviço usado pelo AD FS (por padrão, esse é o mesmo certificado do certificado SSL).  
   
-      -   Valores não padrão para todas as propriedades do serviço de federação, como AutoCertificateRollover ou tempo de vida SSO.  
+    -   Valores não padrão para todas as propriedades do serviço de federação, como AutoCertificateRollover ou tempo de vida SSO.  
   
-      -   Descrições de declarações e configurações de ponto de extremidade do AD FS não padrão.  
+    -   Descrições de declarações e configurações de ponto de extremidade do AD FS não padrão.  
   
 -   Regras de declaração personalizada sobre o objeto de confiança do provedor de declarações do Active Directory.  
   
@@ -63,11 +63,11 @@ Todas as configurações personalizadas a seguir devem ser migradas manualmente:
   
 Para obter mais informações, consulte [Migração do Servidor de Federação do AD FS](migrate-ad-fs-fed-server-r2.md).  
   
-2.  Criar um farm de servidor de federação do Windows Server 2012 R2.  
+2. Criar um farm de servidor de federação do Windows Server 2012 R2.  
   
-3.  Importar os dados de configuração original para o novo farm do AD FS do Windows Server 2012 R2  
+3. Importar os dados de configuração original para o novo farm do AD FS do Windows Server 2012 R2  
   
-4.  Configurar e personalizar as páginas de entrada do AD FS.  
+4. Configurar e personalizar as páginas de entrada do AD FS.  
   
 ##  <a name="new-ad-fs-functionality-in-windows-server-2012-r2"></a>Novas funcionalidades do AD FS no Windows Server 2012 R2  
  A seguinte funcionalidade do AD FS é alterado no Windows Server 2012 R2 impacto em uma migração do AD FS 2.0 ou AD FS no Windows Server 2012:  
@@ -109,27 +109,27 @@ Se você tiver a personalização da página da web em seu farm do AD FS existen
   
  Para o AD FS em execução no Windows Server 2012 R2 para a função, seu domínio do Active Directory deve executar um destes procedimentos:  
   
--   Windows Server 2012 R2  
+- Windows Server 2012 R2  
   
--   Windows Server 2012  
+- Windows Server 2012  
   
--   Windows Server 2008 R2  
+- Windows Server 2008 R2  
   
--   Windows Server 2008  
+- Windows Server 2008  
   
- Se você planeja usar um grupo de conta de serviço gerenciado (gMSA) como a conta de serviço do AD FS, você deve ter pelo menos um controlador de domínio em seu ambiente que está em execução no sistema operacional Windows Server 2012 ou Windows Server 2012 R2.  
+  Se você planeja usar um grupo de conta de serviço gerenciado (gMSA) como a conta de serviço do AD FS, você deve ter pelo menos um controlador de domínio em seu ambiente que está em execução no sistema operacional Windows Server 2012 ou Windows Server 2012 R2.  
   
- Se você planeja implantar o serviço de registro de dispositivo (DRS) para ingresso no AD como parte da sua implantação do AD FS, o esquema do AD DS precisa ser atualizado para o nível do Windows Server 2012 R2. Existem três maneiras de atualizar o esquema:  
+  Se você planeja implantar o serviço de registro de dispositivo (DRS) para ingresso no AD como parte da sua implantação do AD FS, o esquema do AD DS precisa ser atualizado para o nível do Windows Server 2012 R2. Existem três maneiras de atualizar o esquema:  
   
 1.  Em uma floresta do Active Directory existente, execute adprep /forestprep da pasta \support\adprep do DVD do sistema operacional do Windows Server 2012 R2 em qualquer servidor de 64 bits que executa o Windows Server 2008 ou posterior. Nesse caso, nenhum controlador de domínio adicional precisa ser instalado e nenhum controlador de domínio existente precisa ser atualizado.  
   
 Para executar adprep /forestprep, é necessário ser membro do grupo Administradores de Esquema, do grupo Administradores de Empresa e do grupo Admins. do Domínio do domínio que hospeda o mestre de esquema.  
   
-2.  Em uma floresta do Active Directory existente, instale um controlador de domínio que executa o Windows Server 2012 R2. Nesse caso, adprep /forestprep é executado automaticamente como parte da instalação do controlador de domínio.  
+2. Em uma floresta do Active Directory existente, instale um controlador de domínio que executa o Windows Server 2012 R2. Nesse caso, adprep /forestprep é executado automaticamente como parte da instalação do controlador de domínio.  
   
 Durante a instalação do controlador de domínio, talvez seja necessário especificar credenciais adicionais a fim de executar adprep /forestprep.  
   
-3.  Crie uma nova floresta do Active Directory instalando o AD DS em um servidor que executa o Windows Server 2012 R2. Nesse caso, adprep /forestprep não precisa ser executado, porque o esquema será criado inicialmente com todos os objetos e contêineres necessários para suportar o DRS.  
+3. Crie uma nova floresta do Active Directory instalando o AD DS em um servidor que executa o Windows Server 2012 R2. Nesse caso, adprep /forestprep não precisa ser executado, porque o esquema será criado inicialmente com todos os objetos e contêineres necessários para suportar o DRS.  
   
 ### <a name="sql-server-support-for-ad-fs-in-windows-server-2012-r2"></a>Suporte do SQL Server para o AD FS no Windows Server 2012 R2  
  Se você deseja criar um farm do AD FS e usar o SQL Server para armazenar seus dados de configuração, pode usar o SQL Server 2008 e versões mais recentes, incluindo o SQL Server 2012.  

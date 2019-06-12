@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 7b61a0494b8a63168b40bfaed42dedf0fff40c35
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d67f15d65feb28fb05fc056fd3c34c04cee80d09
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887257"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447760"
 ---
 # <a name="volume-shadow-copy-service"></a>Serviço de Cópias de Sombra de Volume
 
@@ -97,7 +97,7 @@ Para criar uma cópia de sombra, o solicitante, o gravador e o provedor de execu
 > A criação de cópias de sombra pode ser anulada se os gravadores são mantidos no estado de congelamento por mais de 60 segundos ou se os provedores de levar mais de 10 segundos para confirmar a cópia de sombra. 
 <br>
 
-9.  O solicitante pode repetir o processo (vá para a etapa 1) ou notificar o administrador para tentar novamente mais tarde.  
+9. O solicitante pode repetir o processo (vá para a etapa 1) ou notificar o administrador para tentar novamente mais tarde.  
       
 10. Se a cópia de sombra for criada com êxito, o serviço de cópias de sombra de Volume retorna as informações de local para a cópia de sombra para o solicitante. Em alguns casos, a cópia de sombra pode ser temporariamente disponibilizada como um volume de leitura / gravação para que o VSS e um ou mais aplicativos podem alterar o conteúdo da cópia de sombra antes da cópia de sombra for concluída. Depois que o VSS e os aplicativos de fazer suas alterações, a cópia de sombra é somente leitura. Essa fase é chamada de recuperação automática, e ele é usado para desfazer as transações de aplicativo ou sistema de arquivos no volume de cópia de sombra que não foram concluídas antes que a cópia de sombra foi criada.  
       
@@ -136,7 +136,7 @@ O método de cópia na gravação, quando ocorre uma alteração para o volume o
 </colgroup>
 <thead>
 <tr class="header">
-<th>Hora</th>
+<th>Time</th>
 <th>Fonte de dados (dados e status)</th>
 <th>Cópia de sombra (e dados de status)</th>
 </tr>
@@ -177,7 +177,7 @@ No método de redirecionamento na gravação, sempre que o volume original receb
 </colgroup>
 <thead>
 <tr class="header">
-<th>Hora</th>
+<th>Time</th>
 <th>Fonte de dados (dados e status)</th>
 <th>Cópia de sombra (e dados de status)</th>
 </tr>
@@ -376,12 +376,12 @@ Para excluir arquivos específicos de cópias de sombra, use a seguinte chave do
 
 > [!NOTE]
 > O <STRONG>FilesNotToSnapshot</STRONG> chave do registro se destina a ser usado apenas por aplicativos. Os usuários que tentam usá-lo encontrará limitações, como o seguinte:
-<br>
-<UL>
-<LI>Ele não é possível excluir arquivos de uma cópia de sombra foi criada em um servidor Windows usando o recurso de versões anteriores.<BR><BR>
-<LI>Ele não é possível excluir arquivos de cópias de sombra para pastas compartilhadas.<BR><BR>
-<LI>Ele pode excluir arquivos de uma cópia de sombra foi criada usando o [Diskshadow](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskshadow) utilitário, mas ele não é possível excluir arquivos de uma cópia de sombra foi criada usando o [Vssadmin](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/vssadmin) utilitário.<BR><BR>
-<LI>Arquivos são excluídos de uma cópia de sombra em uma base de melhor esforço. Isso significa que eles não são garantidos para ser excluído.<BR><BR></LI></UL>
+> <br>
+> <UL>
+> <LI>Ele não é possível excluir arquivos de uma cópia de sombra foi criada em um servidor Windows usando o recurso de versões anteriores.<BR><BR>
+> <LI>Ele não é possível excluir arquivos de cópias de sombra para pastas compartilhadas.<BR><BR>
+> <LI>Ele pode excluir arquivos de uma cópia de sombra foi criada usando o <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskshadow)">Diskshadow</a> utilitário, mas ele não é possível excluir arquivos de uma cópia de sombra foi criada usando o <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/vssadmin)">Vssadmin</a> utilitário.<BR><BR>
+> <LI>Arquivos são excluídos de uma cópia de sombra em uma base de melhor esforço. Isso significa que eles não são garantidos para ser excluído.<BR><BR></LI></UL>
 
 
 Para obter mais informações, consulte [excluindo arquivos de cópias de sombra](http://go.microsoft.com/fwlink/?linkid=180904) (http://go.microsoft.com/fwlink/?LinkId=180904) no MSDN.

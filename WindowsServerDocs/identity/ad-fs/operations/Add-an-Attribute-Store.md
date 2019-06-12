@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 103ee707c88f4e88b231a833f739cf75b6503e18
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 8d3027c419e85d1aec4b3b0308926a86bb37620d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190103"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445095"
 ---
 # <a name="add-an-attribute-store"></a>Adicionar um repositório de atributos
 
@@ -33,20 +33,20 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
 
 ![Adicionar repositório de atributos](media/Add-an-Attribute-Store/addstore1.PNG)
   
-3.  No **adicionar um repositório de atributos** caixa de diálogo caixa, configure as seguintes propriedades para o repositório de atributos que você deseja adicionar:  
+3. No **adicionar um repositório de atributos** caixa de diálogo caixa, configure as seguintes propriedades para o repositório de atributos que você deseja adicionar:  
   
-    -   Na **nome de exibição**, digite o nome que você deseja usar para identificar o repositório de atributos.  
+   -   Na **nome de exibição**, digite o nome que você deseja usar para identificar o repositório de atributos.  
   
-    -   Na **tipo de repositório de atributo**, selecione um tipo de repositório de atributos com suporte, ou **do Active Directory**, **LDAP**, ou **SQL**.  
+   -   Na **tipo de repositório de atributo**, selecione um tipo de repositório de atributos com suporte, ou **do Active Directory**, **LDAP**, ou **SQL**.  
   
-    -   Na **cadeia de caracteres de Conexão**, se você tiver selecionado a um Lightweight Directory Access Protocol \(LDAP\) repositório ou uma linguagem de consulta estruturada \(SQL\) armazenar, insira a cadeia de caracteres que é usado para estabelecer uma conexão para o repositório de atributos. Para repositórios de atributos do Active Directory, nenhuma cadeia de conexão é necessária; Portanto, este campo será desabilitado.  
+   -   Na **cadeia de caracteres de Conexão**, se você tiver selecionado a um Lightweight Directory Access Protocol \(LDAP\) repositório ou uma linguagem de consulta estruturada \(SQL\) armazenar, insira a cadeia de caracteres que é usado para estabelecer uma conexão para o repositório de atributos. Para repositórios de atributos do Active Directory, nenhuma cadeia de conexão é necessária; Portanto, este campo será desabilitado.  
   
-        > [!NOTE]  
-        > Por padrão, o AD FS cria automaticamente um repositório de atributos do Active Directory.  
+       > [!NOTE]  
+       > O AD FS cria automaticamente um repositório de atributos do Active Directory, por padrão.  
  
 ![Adicionar repositório de atributos](media/Add-an-Attribute-Store/addstore2.PNG) 
 
-4.  Clique em **OK**.  
+4. Clique em **OK**.  
   
 ## <a name="additional-references"></a>Referências adicionais  
 

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b32d72a1317683e4c1bbeb2d6101d1315b69148e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ad9d180e2cf2110d36ebc82211af3a495a0e0b6b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862637"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440734"
 ---
 # <a name="using-the-add-drivergrouppackage-command"></a>Usando o comando add-DriverGroupPackage
 
@@ -30,12 +30,14 @@ Adiciona um pacote de driver para um grupo de drivers.
 wdsutil /add-DriverGroupPackage /DriverGroup:<Group Name> [/Server:<Server Name>] {/DriverPackage:<Name> | /PackageId:<ID>}
 ```
 ## <a name="parameters"></a>Parâmetros
-|Parâmetro|Descrição|
-|-------|--------|
-|/DriverGroup:<Group Name>|Especifica o nome do grupo de drivers.|
-|/Server:<Server name>|Especifica o nome do servidor. Isso pode ser o nome NetBIOS ou FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado.|
-|/DriverPackage:<Name>|Especifica o nome do pacote de driver a ser adicionado ao grupo. Você deve especificar essa opção se o pacote de driver não pode ser identificado exclusivamente pelo nome.|
-|/PackageId:<ID>|Especifica a ID de um pacote. Para localizar a ID do pacote, clique no grupo de driver que o pacote está em (ou o **todos os pacotes** nó), o pacote com o botão direito e, em seguida, clique em **propriedades**. A ID do pacote está listada na **gerais** guia, por exemplo: **{DD098D20-1850-4fc8-8E35-EA24A1BEFF5E}**.|
+
+|         Parâmetro         |                                                                                                                                               Descrição                                                                                                                                               |
+|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| /DriverGroup:<Group Name> |                                                                                                                                 Especifica o nome do grupo de drivers.                                                                                                                                 |
+|   /Server:<Server name>   |                                                                                  Especifica o nome do servidor. Isso pode ser o nome NetBIOS ou FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado.                                                                                  |
+|   /DriverPackage:<Name>   |                                                                      Especifica o nome do pacote de driver a ser adicionado ao grupo. Você deve especificar essa opção se o pacote de driver não pode ser identificado exclusivamente pelo nome.                                                                       |
+|      /PackageId:<ID>      | Especifica a ID de um pacote. Para localizar a ID do pacote, clique no grupo de driver que o pacote está em (ou o **todos os pacotes** nó), o pacote com o botão direito e, em seguida, clique em **propriedades**. A ID do pacote está listada na **gerais** guia, por exemplo: **{DD098D20-1850-4fc8-8E35-EA24A1BEFF5E}** . |
+
 ## <a name="BKMK_examples"></a>Exemplos
 Para adicionar um pacote de driver, digite o seguinte:
 ```

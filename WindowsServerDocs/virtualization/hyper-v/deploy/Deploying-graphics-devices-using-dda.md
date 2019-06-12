@@ -9,12 +9,12 @@ ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 67a01889-fa36-4bc6-841d-363d76df6a66
-ms.openlocfilehash: 9e9a36df39c7bd7a96cc8c5681e83bf263ee5f8e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6c528535fd34f57957a37992843933d4cd9f8824
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833867"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447875"
 ---
 # <a name="deploy-graphics-devices-using-discrete-device-assignment"></a>Implantar dispositivos de gráficos usando a atribuição de dispositivo discretos
 
@@ -42,19 +42,19 @@ Set-VM -Name VMName -AutomaticStopAction TurnOff
 
 Alguns hardwares um desempenho melhor se a VM no configurado em uma determinada maneira.  Para obter detalhes sobre se você precisa ou não as seguintes configurações para o seu hardware, entre em contato com o fornecedor do hardware. Detalhes adicionais podem ser encontrados em [planejar a implantação de dispositivos usando atribuição de dispositivo discretos](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md) e nesta [postagem de blog.](https://blogs.technet.microsoft.com/virtualization/2015/11/23/discrete-device-assignment-gpus/)
 
-1.  Ativar ao combinar na CPU
-```
-Set-VM -GuestControlledCacheTypes $true -VMName VMName
-```
-2.  Configurar o espaço MMIO de 32 bits
-```
-Set-VM -LowMemoryMappedIoSpace 3Gb -VMName VMName
-```
-3.  Configurar o maior espaço MMIO de 32 bits
-```
-Set-VM -HighMemoryMappedIoSpace 33280Mb -VMName VMName
-```
-Observe que os valores de espaço MMIO acima são valores razoáveis para definir para experimentar com uma única GPU.  Se depois de iniciar a máquina virtual, o dispositivo está relatando um erro relacionado a recursos insuficientes, provavelmente você precisará modificar esses valores.  Além disso, se você atribuir várias GPUs, você precisará aumentar esses valores também.
+1. Ativar ao combinar na CPU
+   ```
+   Set-VM -GuestControlledCacheTypes $true -VMName VMName
+   ```
+2. Configurar o espaço MMIO de 32 bits
+   ```
+   Set-VM -LowMemoryMappedIoSpace 3Gb -VMName VMName
+   ```
+3. Configurar o maior espaço MMIO de 32 bits
+   ```
+   Set-VM -HighMemoryMappedIoSpace 33280Mb -VMName VMName
+   ```
+   Observe que os valores de espaço MMIO acima são valores razoáveis para definir para experimentar com uma única GPU.  Se depois de iniciar a máquina virtual, o dispositivo está relatando um erro relacionado a recursos insuficientes, provavelmente você precisará modificar esses valores.  Além disso, se você atribuir várias GPUs, você precisará aumentar esses valores também.
 
 ## <a name="dismount-the-device-from-the-host-partition"></a>Desmontar o dispositivo da partição de Host
 ### <a name="optional---install-the-partitioning-driver"></a>Opcional - instale o Driver de particionamento
@@ -69,14 +69,14 @@ Usando o Gerenciador de dispositivos ou o PowerShell, verifique se o dispositivo
 
 ### <a name="dismount-the-device"></a>Desmontar o dispositivo
 Dependendo se o fornecedor forneceu um driver de atenuação, você precisará usar o "-force" opção ou não.
--   Se um Driver de mitigação foi instalado
-```
-Dismount-VMHostAssignableDevice -LocationPath $locationPath
-```
--   Se um Driver de atenuação não tiver sido instalado
-```
-Dismount-VMHostAssignableDevice -force -LocationPath $locationPath
-```
+- Se um Driver de mitigação foi instalado
+  ```
+  Dismount-VMHostAssignableDevice -LocationPath $locationPath
+  ```
+- Se um Driver de atenuação não tiver sido instalado
+  ```
+  Dismount-VMHostAssignableDevice -force -LocationPath $locationPath
+  ```
 
 ## <a name="assigning-the-device-to-the-guest-vm"></a>Atribuir o dispositivo a VM convidada
 A etapa final é informar ao Hyper-V que uma VM deve ter acesso ao dispositivo.  Além do caminho local encontrado acima, você precisará saber o nome da vm.

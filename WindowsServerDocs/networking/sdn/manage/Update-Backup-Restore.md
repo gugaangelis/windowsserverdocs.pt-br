@@ -9,12 +9,12 @@ ms.assetid: e9a8f2fd-48fe-4a90-9250-f6b32488b7a4
 ms.author: grcusanz
 author: shortpatti
 ms.date: 08/27/2018
-ms.openlocfilehash: 3374d1b79b84edd78dca3b61c73ea2db1dff9561
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7916377f58261d0ccaa3fa24f135fccca3d5e79b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854457"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446337"
 ---
 # <a name="upgrade-backup-and-restore-sdn-infrastructure"></a>Atualização, backup e restauração de infraestrutura SDN
 
@@ -131,18 +131,18 @@ Backups regulares do banco de dados do controlador de rede garante a continuidad
 
 **Procedimento:**
 
-1.  Use o método de backup de VM de sua escolha, ou usar o Hyper-V para exportar uma cópia de cada VM do controlador de rede.<p>Fazer backup da VM do controlador de rede garante que os certificados necessários para descriptografar o banco de dados estão presentes.  
+1. Use o método de backup de VM de sua escolha, ou usar o Hyper-V para exportar uma cópia de cada VM do controlador de rede.<p>Fazer backup da VM do controlador de rede garante que os certificados necessários para descriptografar o banco de dados estão presentes.  
 
-2.  Se usando o System Center Virtual Machine Manager (SCVMM), pare o serviço do SCVMM e fazer seu backup por meio do SQL Server.<p>A meta aqui é garantir que nenhuma atualização get feitas ao SCVMM durante esse tempo, o que poderia criar uma inconsistência entre o SCVMM e o backup do controlador de rede.  
+2. Se usando o System Center Virtual Machine Manager (SCVMM), pare o serviço do SCVMM e fazer seu backup por meio do SQL Server.<p>A meta aqui é garantir que nenhuma atualização get feitas ao SCVMM durante esse tempo, o que poderia criar uma inconsistência entre o SCVMM e o backup do controlador de rede.  
 
    >[!IMPORTANT]
    >Não inicie novamente o serviço do SCVMM até que o controlador de rede de backup for concluído.
 
-3.  Fazer backup de banco de dados do controlador de rede com o `new-networkcontrollerbackup` cmdlet.
+3. Fazer backup de banco de dados do controlador de rede com o `new-networkcontrollerbackup` cmdlet.
 
-4.  Verificar a conclusão e o sucesso do backup com o `get-networkcontrollerbackup` cmdlet.
+4. Verificar a conclusão e o sucesso do backup com o `get-networkcontrollerbackup` cmdlet.
 
-5.  Se usando o SCVMM, inicie o serviço do SCVMM.
+5. Se usando o SCVMM, inicie o serviço do SCVMM.
 
 
 

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 109d162e8d5c4bdd59871a21f16b6f568df4fbd6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e5805fcc14d6874d95ba90537d72b560229ba99b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861657"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436312"
 ---
 # <a name="pause"></a>pause
 
@@ -44,16 +44,16 @@ pause
 
 ## <a name="remarks"></a>Comentários
 
--   Quando você executa o **pausar** de comando, a seguinte mensagem aparecerá:  
-    ```
-    Press any key to continue . . .
-    ```  
--   Se você pressionar CTRL + C para interromper um programa em lote, a seguinte mensagem será exibida:  
-    ```
-    Terminate batch job (Y/N)?
-    ```  
-    Se você pressionar S (para Sim) em resposta a essa mensagem, o programa de lote será encerrado e o controle retorna para o sistema operacional.
--   Você pode inserir o **pausar** comando antes de uma seção do arquivo em lotes que você não deseja processar. Quando **pausar** suspende o processamento de lotes, você pode pressionar CTRL + C e, em seguida, pressione Y para interromper o programa.
+- Quando você executa o **pausar** de comando, a seguinte mensagem aparecerá:  
+  ```
+  Press any key to continue . . .
+  ```  
+- Se você pressionar CTRL + C para interromper um programa em lote, a seguinte mensagem será exibida:  
+  ```
+  Terminate batch job (Y/N)?
+  ```  
+  Se você pressionar S (para Sim) em resposta a essa mensagem, o programa de lote será encerrado e o controle retorna para o sistema operacional.
+- Você pode inserir o **pausar** comando antes de uma seção do arquivo em lotes que você não deseja processar. Quando **pausar** suspende o processamento de lotes, você pode pressionar CTRL + C e, em seguida, pressione Y para interromper o programa.
 
 ## <a name="BKMK_examples"></a>Exemplos
 
@@ -70,4 +70,4 @@ Neste exemplo, todos os arquivos no disco na unidade A são copiados para o dire
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

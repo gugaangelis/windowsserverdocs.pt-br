@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 940b0931671d5f3c2137fafe4ae73b7cecd0160e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1e4b9cde10e11558aaa95edda94921144dac1f86
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821187"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441807"
 ---
 # <a name="repair"></a>Reparo
 
@@ -36,11 +36,11 @@ repair disk=<n> [align=<n>] [noerr]
   
 ## <a name="parameters"></a>Parâmetros  
   
-|Parâmetro|Descrição|  
-|-------|--------|  
-|disco\=<n>|Especifica o disco dinâmico que substituirá a região do disco com falha.|  
-|align\=<n>|Alinha-se todas as extensões de volume ou partição até o limite de alinhamento mais próximo. *n* é o número de kilobytes \(KB\) desde o início do disco para o limite de alinhamento mais próximo.|  
-|noerr|Somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro.|  
+| Parâmetro  |                                                                                             Descrição                                                                                              |
+|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| disco\=<n>  |                                                                 Especifica o disco dinâmico que substituirá a região do disco com falha.                                                                 |
+| align\=<n> |          Alinha-se todas as extensões de volume ou partição até o limite de alinhamento mais próximo. *n* é o número de kilobytes \(KB\) desde o início do disco para o limite de alinhamento mais próximo.           |
+|   noerr    | Somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro. |
   
 ## <a name="remarks"></a>Comentários  
   
@@ -56,7 +56,7 @@ repair disk=4
 ```  
   
 #### <a name="additional-references"></a>Referências adicionais  
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 
   

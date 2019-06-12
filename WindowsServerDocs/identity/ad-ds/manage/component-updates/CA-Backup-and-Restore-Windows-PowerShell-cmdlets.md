@@ -9,20 +9,20 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: a4bbeeedfb40e789a799103f9a29a848a2b32324
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6055d9b694f72a6a874acdcb5135fde61bcf0d76
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877347"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442755"
 ---
 # <a name="ca-backup-and-restore-windows-powershell-cmdlets"></a>Cmdlets de autoridade de certificação de Backup e restauração do Windows PowerShell
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
->
-**Autor**: Engenheiro de escalonamento de suporte sênior Justin Turner com o grupo do Windows  
-  
-> [!NOTE]  
+> Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> 
+> **Autor**: Engenheiro de escalonamento de suporte sênior Justin Turner com o grupo do Windows  
+> 
+> [!NOTE]
 > Este documento foi criado por um engenheiro de atendimento ao cliente da Microsoft e é destinado a administradores e arquitetos de sistemas experientes que procuram explicações técnicas mais profundas para recursos e soluções no Windows Server 2012 R2 do que aquelas geralmente oferecidas em tópicos do TechNet. No entanto, ele não passou pelas mesmas etapas de edição que eles, por isso a linguagem pode parecer que menos refinada do que a geralmente encontrada no TechNet.  
   
 ## <a name="overview"></a>Visão geral  

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fdbe9873cc15866037c4688aaac89095e4a85dec
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: efb30e243d9c165fdcf13943225eb90d38235070
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889417"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438211"
 ---
 # <a name="gpfixup"></a>gpfixup
 
@@ -38,18 +38,18 @@ Gpfixup [/v]
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|/v|Exibe mensagens de status detalhado.</br>Se esse parâmetro não for usado, somente mensagens de erro ou uma mensagem de resumo de status de **sucesso** ou **falha** é exibida.|
-|/olddns:\<OLDDNSNAME>|Especifica o nome antigo do DNS do domínio renomeado como  *\<OLDDNSNAME >* quando a operação de renomeação de domínio muda o nome DNS de um domínio. Você pode usar esse parâmetro somente se você também usar o **/newdns** parâmetro para especificar um novo nome de domínio DNS.|
-|/newdns:\<NEWDNSNAME>|Especifica o novo nome DNS do domínio renomeado como  *\<NEWDNSNAME >* quando a operação de renomeação de domínio muda o nome DNS de um domínio. Você pode usar esse parâmetro somente se você também usar o **/olddns** parâmetro para especificar o nome DNS do domínio antigo.|
-|/oldnb:\<OLDFLATNAME>|Especifica o nome antigo do NetBIOS do domínio renomeado como  *\<OLDFLATNAME >* quando a operação de renomeação de domínio muda o nome NetBIOS de um domínio. Você pode usar esse parâmetro somente se você usar o **/newnb** parâmetro para especificar um novo nome de NetBIOS do domínio.|
-|/newnb:\<NEWFLATNAME>|Especifica o novo nome NetBIOS do domínio renomeado como  *\<NEWFLATNAME >* quando a operação de renomeação de domínio muda o nome NetBIOS de um domínio. Você pode usar esse parâmetro somente se você usar o **/oldnb** parâmetro para especificar o nome de NetBIOS do domínio antigo.|
-|/dc:\<DCNAME>|Conectar-se ao controlador de domínio denominado  *\<DCNAME >* (um nome DNS ou um nome NetBIOS). *\<DCNAME >* deve hospedar uma réplica gravável da partição de diretório do domínio, conforme indicado por um dos seguintes:</br>-O nome DNS  *\<NEWDNSNAME >* usando **/newdns**</br>-O nome NetBIOS  *\<NEWFLATNAME >* usando **/newnb**</br>Se esse parâmetro não for usado, se conectar a qualquer controlador de domínio no domínio renomeado indicado por  *\<NEWDNSNAME >* ou  *\<NEWFLATNAME >*.|
-|/sionly|Executa somente a correção de diretiva de grupo relacionadas à instalação de softwares gerenciados (a extensão de instalação do Software de diretiva de grupo). Ignore as ações que corrigem links de diretiva de grupo e os caminhos SYSVOL nos GPOs.|
-|/User:\<USERNAME >|Executa este comando no contexto de segurança do usuário  *\<nome de usuário >*, onde  *\<USERNAME >* está no formato domínio \ usuário.</br>Se esse parâmetro não for usado, executa este comando como o usuário conectado.|
-|/pwd: {\<senha >|*}|Especifica a senha para o contexto de segurança que indicado, usando **/user**. Se **&#42;** for especificado, em vez de uma senha, você será solicitado para uma senha.|
-|/?|Exibe a ajuda no prompt de comando.|
+|       Parâmetro       |                                                                                                                                                                                                                               Descrição                                                                                                                                                                                                                               |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|          /v           |                                                                                                                                                      Exibe mensagens de status detalhado.</br>Se esse parâmetro não for usado, somente mensagens de erro ou uma mensagem de resumo de status de **sucesso** ou **falha** é exibida.                                                                                                                                                       |
+| /olddns:\<OLDDNSNAME> |                                                                                                           Especifica o nome antigo do DNS do domínio renomeado como  *\<OLDDNSNAME >* quando a operação de renomeação de domínio muda o nome DNS de um domínio. Você pode usar esse parâmetro somente se você também usar o **/newdns** parâmetro para especificar um novo nome de domínio DNS.                                                                                                            |
+| /newdns:\<NEWDNSNAME> |                                                                                                          Especifica o novo nome DNS do domínio renomeado como  *\<NEWDNSNAME >* quando a operação de renomeação de domínio muda o nome DNS de um domínio. Você pode usar esse parâmetro somente se você também usar o **/olddns** parâmetro para especificar o nome DNS do domínio antigo.                                                                                                           |
+| /oldnb:\<OLDFLATNAME> |                                                                                                        Especifica o nome antigo do NetBIOS do domínio renomeado como  *\<OLDFLATNAME >* quando a operação de renomeação de domínio muda o nome NetBIOS de um domínio. Você pode usar esse parâmetro somente se você usar o **/newnb** parâmetro para especificar um novo nome de NetBIOS do domínio.                                                                                                        |
+| /newnb:\<NEWFLATNAME> |                                                                                                       Especifica o novo nome NetBIOS do domínio renomeado como  *\<NEWFLATNAME >* quando a operação de renomeação de domínio muda o nome NetBIOS de um domínio. Você pode usar esse parâmetro somente se você usar o **/oldnb** parâmetro para especificar o nome de NetBIOS do domínio antigo.                                                                                                       |
+|     /dc:\<DCNAME>     | Conectar-se ao controlador de domínio denominado  *\<DCNAME >* (um nome DNS ou um nome NetBIOS). *\<DCNAME >* deve hospedar uma réplica gravável da partição de diretório do domínio, conforme indicado por um dos seguintes:</br>-O nome DNS  *\<NEWDNSNAME >* usando **/newdns**</br>-O nome NetBIOS  *\<NEWFLATNAME >* usando **/newnb**</br>Se esse parâmetro não for usado, se conectar a qualquer controlador de domínio no domínio renomeado indicado por  *\<NEWDNSNAME >* ou  *\<NEWFLATNAME >* . |
+|        /sionly        |                                                                                                                           Executa somente a correção de diretiva de grupo relacionadas à instalação de softwares gerenciados (a extensão de instalação do Software de diretiva de grupo). Ignore as ações que corrigem links de diretiva de grupo e os caminhos SYSVOL nos GPOs.                                                                                                                           |
+|   /User:\<USERNAME >   |                                                                                                                                   Executa este comando no contexto de segurança do usuário  *\<nome de usuário >* , onde  *\<USERNAME >* está no formato domínio \ usuário.</br>Se esse parâmetro não for usado, executa este comando como o usuário conectado.                                                                                                                                    |
+|   /pwd: {\<senha >   |                                                                                                                                                                                                                                   \*}                                                                                                                                                                                                                                   |
+|          /?           |                                                                                                                                                                                                                  Exibe a ajuda no prompt de comando.                                                                                                                                                                                                                   |
 
 ## <a name="remarks"></a>Comentários
 
@@ -71,4 +71,4 @@ gpfixup /olddns: MyOldDnsName /newdns:MyNewDnsName /dc:MyDcDnsName 2>&1 >gpfixup
 
 -   [Administrando a renomeação de domínio do Active Directory](https://go.microsoft.com/fwlink/?LinkId=198385)
 -   [Group Policy TechCenter](https://go.microsoft.com/fwlink/?LinkID=145531)
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

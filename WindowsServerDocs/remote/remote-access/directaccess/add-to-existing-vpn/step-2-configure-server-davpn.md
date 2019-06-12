@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: fe221fc9-c7d9-4508-b8a1-000d2515283c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 31a5310ddb59831650f6b46108d071c120116dc1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f8a6448661861fdc9f97c66fb130bfc03d0ce72c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830927"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446969"
 ---
 #  <a name="step-2-configure-the-directaccess-vpn-server"></a>Etapa 2 configurar o servidor de VPN do DirectAccess
 
@@ -83,10 +83,10 @@ Quando o sufixo de pesquisa a lista não está vazia e tem pelo menos um sufixo 
 
 Se as consultas por todos os FQDNs criados como resultado da agregação e tentativa de cada sufixo na lista não forem resolvidas, o processo de consulta falhará, produzindo um resultado "nome não encontrado". 
 
->[!WARNING]
->Se a lista de sufixo de domínio for usada, os clientes continuarão a enviar consultas alternativas adicionais com base nos diferentes nomes de domínio do DNS quando uma consulta não é respondida ou resolvida. Depois que o nome é resolvido usando uma entrada da lista de sufixos, as entradas da lista não usadas não serão tentadas. Por esta razão, é mais eficiente ordenar a lista começando pelos sufixos de domínio mais usados.
-
->Pesquisas pelo sufixo de nome de domínio somente são usadas quando uma entrada de nome de DNS não é totalmente qualificado. Para tornar um nome de DNS totalmente elegível, um ponto à direita (.) deverá ser inserido no fim do nome.
+> [!WARNING]
+> Se a lista de sufixo de domínio for usada, os clientes continuarão a enviar consultas alternativas adicionais com base nos diferentes nomes de domínio do DNS quando uma consulta não é respondida ou resolvida. Depois que o nome é resolvido usando uma entrada da lista de sufixos, as entradas da lista não usadas não serão tentadas. Por esta razão, é mais eficiente ordenar a lista começando pelos sufixos de domínio mais usados.
+> 
+> Pesquisas pelo sufixo de nome de domínio somente são usadas quando uma entrada de nome de DNS não é totalmente qualificado. Para tornar um nome de DNS totalmente elegível, um ponto à direita (.) deverá ser inserido no fim do nome.
 
 ## <a name="gpo-configuration"></a>Configuração do GPO
 

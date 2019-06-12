@@ -9,12 +9,12 @@ ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: pashort
 author: shortpatti
 ms.date: 08/10/2018
-ms.openlocfilehash: 9db7609f6f1273c46cba1dd29f81c297bb26f94b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 51ba991397a7c35ee0198f8e75c67b2f99b7c7bc
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829857"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446313"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>Requisitos para implantar o controlador de rede
 
@@ -31,13 +31,13 @@ Implantação do controlador de rede requer um ou mais computadores ou máquinas
 - Qualquer computador ou máquina virtual (VM) no qual você instala o controlador de rede deve estar executando a Datacenter edition do Windows Server 2016. 
 - O computador cliente de gerenciamento ou a VM para o controlador de rede deve estar executando o Windows 10. 
 
-  
+
 ## <a name="configuration-requirements"></a>Requisitos de configuração
 
 Antes de implantar o controlador de rede, você deve configurar os grupos de segurança, locais de arquivo de log (se necessário) e o registro DNS dinâmico.
-  
+
 ### <a name="step-1-configure-your-security-groups"></a>Etapa 1. Configurar seus grupos de segurança
-  
+
 A primeira coisa que você deseja fazer é criar dois grupos de segurança para a autenticação Kerberos. 
 
 Você cria grupos para os usuários que têm permissão para: 
@@ -57,22 +57,24 @@ A próxima coisa que você deseja fazer é configurar os locais de arquivo para 
 
 
 ### <a name="step-3-configure-dynamic-dns-registration-for-network-controller"></a>Etapa 3. Configurar o registro DNS dinâmico para o controlador de rede
-  
+
 Por fim, a próxima coisa que você deseja fazer é implantar nós de cluster de controlador de rede na mesma sub-rede ou sub-redes diferentes. 
 
-|Se...  |Então...  |
-|---------|---------|
-|Na mesma sub-rede, |Você deve fornecer o endereço IP de REST do controlador de rede. |
-|Em sub-redes diferentes, |Você deve fornecer o nome DNS de REST do controlador de rede que você criar durante o processo de implantação. Você também deve fazer o seguinte:<ul><li>Configure atualizações dinâmicas de DNS para o nome DNS do controlador de rede no servidor DNS.</li><li>Restringir as atualizações dinâmicas de DNS a somente nós de controlador de rede.</li></ul> |
+
+|         Se...         |                                                                                                                                                         Então...                                                                                                                                                         |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  Na mesma sub-rede,  |                                                                                                                                Você deve fornecer o endereço IP de REST do controlador de rede.                                                                                                                                 |
+| Em sub-redes diferentes, | Você deve fornecer o nome DNS de REST do controlador de rede que você criar durante o processo de implantação. Você também deve fazer o seguinte:<ul><li>Configure atualizações dinâmicas de DNS para o nome DNS do controlador de rede no servidor DNS.</li><li>Restringir as atualizações dinâmicas de DNS a somente nós de controlador de rede.</li></ul> |
+
 ---
 
 > [!NOTE]
 > Associação na **Admins. do domínio**, ou equivalente, é o mínimo necessário para executar esses procedimentos.
-  
+
 1. Permitir atualizações dinâmicas de DNS para uma zona.
 
    a. Abra o Gerenciador de DNS, na árvore de console, clique com botão direito na zona aplicável e, em seguida, clique em **propriedades**. 
-      
+
    b. Sobre o **gerais** , verifique se que o tipo de zona é **primário** ou **integradas ao Active Directory**.
 
    c. Na **atualizações dinâmicas**, verifique **somente Secure** está selecionado e, em seguida, clique em **Okey**.
@@ -82,7 +84,7 @@ Por fim, a próxima coisa que você deseja fazer é implantar nós de cluster de
    a.  Clique na guia **Segurança** e clique em **Avançada**. 
 
    b. Na **configurações de segurança avançadas**, clique em **Add**. 
-  
+
    c. Clique em **Selecionar um principal**. 
 
    d. No **Selecionar usuário, computador, conta de serviço ou grupo** caixa de diálogo, clique em **tipos de objeto**. 
@@ -95,7 +97,7 @@ Por fim, a próxima coisa que você deseja fazer é implantar nós de cluster de
 
       - **Tipo** = permitir
       - **Aplica-se a** = este objeto e todos os objetos descendentes
-  
+
    h. Na **permissões**, selecione **gravar todas as propriedades** e **excluir**e, em seguida, clique em **Okey**.
 
 3. Repita para todos os computadores e VMs do cluster de controlador de rede.
@@ -115,19 +117,19 @@ A instalação está altamente disponível com três nós de controlador de rede
 ### <a name="network-controller-and-software-load-balancer-deployment"></a>Implantação de Balanceador de carga de software e o controlador de rede
 
 Para obter alta disponibilidade, há dois ou mais nós SLB/MUX.
-   
+
 ![Planejamento de NC de SDN](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-SLB-Deployment.png)
-  
+
 ### <a name="network-controller-software-load-balancer-and-ras-gateway-deployment"></a>Implantação do controlador de rede, o balanceador de carga de Software e o Gateway de RAS
 
 Há três máquinas virtuais de gateway; dois estão ativos e um é redundante.
 
 ![Planejamento de NC de SDN](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-GW-Deployment.png)  
-  
-  
-  
+
+
+
 Para a automação de implantação com base em TP5, Active Directory deve estar disponível e acessível a partir dessas sub-redes. Para obter mais informações sobre o Active Directory, consulte [visão geral dos serviços do domínio do Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview).  
-  
+
 >[!IMPORTANT] 
 >Se você implantar usando o VMM, verifique se suas máquinas virtuais de infraestrutura (servidor do VMM, AD/DNS, SQL Server, etc.) não são hospedados em qualquer um dos quatro hosts mostrados nos diagramas.  
 
@@ -138,5 +140,5 @@ Para a automação de implantação com base em TP5, Active Directory deve estar
 ## <a name="related-topics"></a>Tópicos relacionados
 - [Controlador de rede](../technologies/network-controller/Network-Controller.md) 
 - [Alta disponibilidade do controlador de rede](../technologies/network-controller/network-controller-high-availability.md) 
-- [Implantar o controlador de rede usando o Windows PowerShell](../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)   
-- [Instalar a função de servidor de controlador de rede usando o Gerenciador do servidor](../technologies/network-controller/Install-the-Network-Controller-server-role-using-Server-Manager.md)   
+- [Implantar controlador de rede usando o Windows PowerShell](../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)   
+- [Instalar a função de servidor do Controlador de Rede usando o Gerenciador do Servidor](../technologies/network-controller/Install-the-Network-Controller-server-role-using-Server-Manager.md)   

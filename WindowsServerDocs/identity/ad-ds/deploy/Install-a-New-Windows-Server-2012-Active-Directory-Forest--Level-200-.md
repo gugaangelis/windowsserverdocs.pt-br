@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 187db7e201e98ae97268b96c2e4faa202a9a5372
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 40471354af5434e77a300303572ccce639ba2489
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874827"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443778"
 ---
 # <a name="install-a-new-windows-server-2012-active-directory-forest-level-200"></a>Instalar uma nova floresta do Active Directory do Windows Server 2012 (nível 200)
 
@@ -88,15 +88,15 @@ Esses novos recursos não são mais compatíveis com versões anteriores dos sis
   
 ![Instalar uma nova floresta](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSInstallADDSForest.png)  
   
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Dcpromo.exe não contém mais um assistente gráfico e não instala mais binários de funções ou recursos. Ao tentar executar o Dcpromo.exe do shell do Explorer o seguinte é retornado:  
->   
-> "O Assistente de instalação dos serviços de domínio Active Directory está realocado no Gerenciador do servidor. Para obter mais informações, consulte https://go.microsoft.com/fwlink/?LinkId=220921. "  
->   
+> 
+> "O Assistente de instalação dos serviços de domínio Active Directory está realocado no Gerenciador do servidor. Para obter mais informações, consulte <https://go.microsoft.com/fwlink/?LinkId=220921>. "  
+> 
 > A tentativa de executar o Dcpromo.exe /unattend ainda instala os binários, como nos sistemas operacionais anteriores, mas avisa:  
->   
-> "O dcpromo operação autônoma é substituída pelo módulo ADDSDeployment do Windows PowerShell. Para obter mais informações, consulte https://go.microsoft.com/fwlink/?LinkId=220924. "  
->   
+> 
+> "O dcpromo operação autônoma é substituída pelo módulo ADDSDeployment do Windows PowerShell. Para obter mais informações, consulte <https://go.microsoft.com/fwlink/?LinkId=220924>. "  
+> 
 > O Windows Server 2012 substituiu o dcpromo.exe e ele não será mais incluído em versões futuras do Windows, nem receberá novos aprimoramentos nesse sistema operacional. Os administradores devem descontinuar seu uso e mudar para os módulos do Windows PowerShell compatíveis se desejarem criar controladores de domínio usando a linha de comando.  
   
 #### <a name="prerequisite-checking"></a>Verificação de pré-requisito  
@@ -287,7 +287,7 @@ A página **Rotas** permite substituir os locais de pasta padrão do banco de da
   
 A página **Examinar Opções** permite que você valide suas configurações e verifique se elas cumprem os requisitos, antes de iniciar a instalação. Esta não é a última oportunidade de interromper a instalação ao usar o Gerenciador do Servidor. Essa página simplesmente permite que você confirme suas configurações antes de continuar a configuração.  
   
-A página **Opções de revisão** do Gerenciador do Servidor também oferece um botão **Exibir Script** para criar um arquivo de texto Unicode contendo a configuração atual de ADDSDeployment como um script simples do Windows PowerShell. Isso permite que você use a interface gráfica do Gerenciador do Servidor como um estúdio de implantação do Windows PowerShell. Use o Assistente de Configuração dos Serviços de Domínio do Active Directory para configurar opções, exportar a configuração e então cancelar o assistente. Esse processo cria um exemplo válido e sintaticamente correto para modificações adicionais ou uso direto. Por exemplo:   
+A página **Opções de revisão** do Gerenciador do Servidor também oferece um botão **Exibir Script** para criar um arquivo de texto Unicode contendo a configuração atual de ADDSDeployment como um script simples do Windows PowerShell. Isso permite que você use a interface gráfica do Gerenciador do Servidor como um estúdio de implantação do Windows PowerShell. Use o Assistente de Configuração dos Serviços de Domínio do Active Directory para configurar opções, exportar a configuração e então cancelar o assistente. Esse processo cria um exemplo válido e sintaticamente correto para modificações adicionais ou uso direto. Por exemplo:  
   
 ```powershell 
 #  

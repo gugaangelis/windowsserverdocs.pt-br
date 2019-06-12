@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: e2af1bfc295469d43e59593d69d4ba88f476e427
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: 1a9db8b4cdfbb4cc7d7edc2a17a3e747943fb073
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034144"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442805"
 ---
 # <a name="ad-forest-recovery---windows-server-2003-recovery"></a>Recuperação de floresta do AD - recuperação do Windows Server 2003
 
@@ -112,10 +112,10 @@ Se o controlador de domínio restaurado do backup está executando o Windows Ser
 
 10. Digite o seguinte comando e pressione ENTER:  
 
-   **net start netlogon**
+    **net start netlogon**
 
-   > [!NOTE]
-   > Logon de rede registrará os registros de recursos do localizador do controlador de domínio no DNS para esse controlador de domínio. Se você estiver instalando o serviço servidor DNS em um servidor no domínio filho, esse controlador de domínio não poderão registrar seus registros de imediatamente. Isso ocorre porque ele é isolado atualmente como parte do processo de recuperação e seu servidor DNS primário é o servidor DNS de raiz de floresta. Configure este computador com o mesmo endereço IP conforme ele tinha antes do desastre para evitar falhas de pesquisa de serviço do controlador de domínio.
+    > [!NOTE]
+    > Logon de rede registrará os registros de recursos do localizador do controlador de domínio no DNS para esse controlador de domínio. Se você estiver instalando o serviço servidor DNS em um servidor no domínio filho, esse controlador de domínio não poderão registrar seus registros de imediatamente. Isso ocorre porque ele é isolado atualmente como parte do processo de recuperação e seu servidor DNS primário é o servidor DNS de raiz de floresta. Configure este computador com o mesmo endereço IP conforme ele tinha antes do desastre para evitar falhas de pesquisa de serviço do controlador de domínio.
 
 ## <a name="next-steps"></a>Próximas etapas
 

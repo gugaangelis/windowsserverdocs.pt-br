@@ -9,18 +9,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1e37aded450555d293806d1ed8903a51e3df9424
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0ffa4273a2c776a16f3ea0ce77d1b3a528481468
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839137"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445164"
 ---
-#<a name="client-access-policy-claim-types-in-ad-fs"></a>Política de acesso de cliente tipos de declarações no AD FS
+# <a name="client-access-policy-claim-types-in-ad-fs"></a>Política de acesso de cliente tipos de declarações no AD FS
 
 Para fornecer informações de contexto de solicitação adicionais, as políticas de acesso do cliente use os seguintes tipos de declaração, o AD FS gera de informações de cabeçalho de solicitação de processamento.  Para obter mais informações, consulte [a função do mecanismo de declarações](../technical-reference/the-role-of-the-claims-engine.md).
 
-##<a name="x-ms-forwarded-client-ip"></a>X-MS-Forwarded-Client-IP
+## <a name="x-ms-forwarded-client-ip"></a>X-MS-Forwarded-Client-IP
 
 Tipo de declaração: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`
 
@@ -32,8 +32,8 @@ Essa declaração do AD FS representa uma "melhor tentativa" atestar o endereço
     >! [Observação] O endereço IP de um cliente na rede corporativa será exibido como o endereço IP de interface externa do gateway ou proxy de saída da organização.
 
 - Um ou mais endereços IP
-    - Se o Exchange Online não puder determinar o endereço IP do cliente conectado, ele definirá o valor com base no valor do cabeçalho x-forwarded-for, um cabeçalho não padrão que pode ser incluído em HTTP com base em solicitações e é compatível com muitos clientes, balanceadores de carga, e proxies do mercado.
-    - Vários endereços IP que indica o endereço IP do cliente e o endereço de cada proxy que passou a solicitação serão ser separados por uma vírgula.
+  - Se o Exchange Online não puder determinar o endereço IP do cliente conectado, ele definirá o valor com base no valor do cabeçalho x-forwarded-for, um cabeçalho não padrão que pode ser incluído em HTTP com base em solicitações e é compatível com muitos clientes, balanceadores de carga, e proxies do mercado.
+  - Vários endereços IP que indica o endereço IP do cliente e o endereço de cada proxy que passou a solicitação serão ser separados por uma vírgula.
 
     >! [Observação] Endereços IP relacionados à infraestrutura do Exchange Online não estarão presentes na lista.
 

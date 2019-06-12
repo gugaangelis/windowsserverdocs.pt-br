@@ -14,16 +14,16 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 41f8b511453143bb6239de6cdb369ebe8a307aec
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: b4b188eb8148b2f4e5c6672b07884af8fdcd0c60
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885847"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446743"
 ---
 # <a name="get-started-with-remote-desktop-on-android"></a>Comece com a área de trabalho remota no Android
 
->Aplica-se a: Windows 10, Windows 8.1, Windows Server 2012 R2, Windows Server 2016
+>Aplica-se a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
 
 Você pode usar o cliente de área de trabalho remota para o Android para trabalhar com áreas de trabalho e os aplicativos do Windows diretamente do seu dispositivo Android.
 
@@ -51,22 +51,22 @@ Para criar uma conexão de área de trabalho remota:
 
 1. No tap Centro de Conexão **+** e, em seguida, toque em **Desktop**.
 2. Insira as seguintes informações para o computador que você deseja se conectar:
-  - **Nome do PC** – o nome do computador. Isso pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode anexar informações de porta ao nome do computador (por exemplo, **MyDesktop:3389** ou **10.0.0.1:3389**).
-  - **Nome de usuário** – o nome de usuário a ser usada para acessar o computador remoto. Você pode usar os seguintes formatos: *user_name*, *domain\user_name*, ou *user_name@domain.com*. Você também pode especificar se é solicitar um nome de usuário e senha.
+   - **Nome do PC** – o nome do computador. Isso pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode anexar informações de porta ao nome do computador (por exemplo, **MyDesktop:3389** ou **10.0.0.1:3389**).
+   - **Nome de usuário** – o nome de usuário a ser usada para acessar o computador remoto. Você pode usar os seguintes formatos: *user_name*, *domain\user_name*, ou <em>user_name@domain.com</em>. Você também pode especificar se é solicitar um nome de usuário e senha.
 3. Você também pode definir as seguintes opções adicionais:
-  - **Nome amigável** – um nome fácil de lembrar para o PC que você está se conectando. Você pode usar qualquer cadeia de caracteres, mas se você não especificar um nome amigável, o nome do computador é exibido.
-  - **Gateway** – gateway de área de trabalho remota a que você deseja usar para se conectar a áreas de trabalho virtuais, programas RemoteApp e áreas de trabalho baseadas em sessão em uma rede corporativa interna. Obtenha as informações sobre o gateway do administrador do sistema.
+   - **Nome amigável** – um nome fácil de lembrar para o PC que você está se conectando. Você pode usar qualquer cadeia de caracteres, mas se você não especificar um nome amigável, o nome do computador é exibido.
+   - **Gateway** – gateway de área de trabalho remota a que você deseja usar para se conectar a áreas de trabalho virtuais, programas RemoteApp e áreas de trabalho baseadas em sessão em uma rede corporativa interna. Obtenha as informações sobre o gateway do administrador do sistema.
     Você precisa configurar um Gateway de área de trabalho remota?
-  - **Som** – selecione o dispositivo a ser usado para áudio durante sua sessão remota. Você pode optar por reproduzir som nos dispositivos locais, o dispositivo remoto, ou não de forma alguma.
-  - **Personalizar a resolução de vídeo** -definir uma resolução personalizada para uma conexão ao habilitar essa configuração. Quando desativar a resolução é aplicado que você definiu nas configurações globais do aplicativo.
-  - **Trocar os botões do mouse** – Use essa opção, a troca de funções do botão esquerdo do mouse para o botão direito do mouse. (Isso é especialmente útil se o computador remoto está configurado para um usuário canhoto, mas usar um mouse destro.)
-  - **Conectar-se à sessão de administrador** -Use essa opção para se conectar a uma sessão de console para administrar um servidor Windows.
-  - **Redirecionar para o armazenamento local** – seu armazenamento local é montado como um sistema de arquivos remoto no PC remoto.
+   - **Som** – selecione o dispositivo a ser usado para áudio durante sua sessão remota. Você pode optar por reproduzir som nos dispositivos locais, o dispositivo remoto, ou não de forma alguma.
+   - **Personalizar a resolução de vídeo** -definir uma resolução personalizada para uma conexão ao habilitar essa configuração. Quando desativar a resolução é aplicado que você definiu nas configurações globais do aplicativo.
+   - **Trocar os botões do mouse** – Use essa opção, a troca de funções do botão esquerdo do mouse para o botão direito do mouse. (Isso é especialmente útil se o computador remoto está configurado para um usuário canhoto, mas usar um mouse destro.)
+   - **Conectar-se à sessão de administrador** -Use essa opção para se conectar a uma sessão de console para administrar um servidor Windows.
+   - **Redirecionar para o armazenamento local** – seu armazenamento local é montado como um sistema de arquivos remoto no PC remoto.
 4. Toque **salvar**.
 
-É necessário editar essas configurações? Toque no menu de estouro (**...** ) ao lado do nome da área de trabalho e, em seguida, toque **editar**.
+É necessário editar essas configurações? Toque no menu de estouro ( **...** ) ao lado do nome da área de trabalho e, em seguida, toque **editar**.
 
-Deseja excluir a conexão? Novamente, toque no menu de estouro (**...** ) e, em seguida, toque **remover**.
+Deseja excluir a conexão? Novamente, toque no menu de estouro ( **...** ) e, em seguida, toque **remover**.
 
 >[!TIP]
 > Se você receber o erro 0xf07 uma senha incorreta ("não foi possível conectar ao PC remoto porque a senha associada com a conta de usuário expirou"), alterar sua senha e tente novamente.
@@ -88,7 +88,7 @@ Os recursos remotos serão exibidos no centro da Conexão.
 
 Para excluir os recursos remotos:
 
-1. No Centro de Conexão, toque no menu de estouro (**...** ) ao lado do recurso remoto.
+1. No Centro de Conexão, toque no menu de estouro ( **...** ) ao lado do recurso remoto.
 2. Toque **remover**.
 3. Confirme a exclusão.
 
@@ -115,8 +115,8 @@ Para configurar um novo gateway:
 
 1. No Centro de Conexão, toque em **Configurações > Gateways**. Toque **+** para adicionar um novo gateway.
 2. Insira as seguintes informações:
-  - **Nome do servidor** – o nome do computador que você deseja usar como um gateway. Isso pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode adicionar informações de porta ao nome do servidor (por exemplo: **RDGateway:443** ou **10.0.0.1:443**).
-  - **Nome de usuário** -o nome de usuário e a senha a ser usada para o Gateway de área de trabalho remota estiver se conectando a. Você também pode selecionar **usar conta de usuário da área de trabalho** para usar as mesmas credenciais usadas para a conexão de área de trabalho remota.
+   - **Nome do servidor** – o nome do computador que você deseja usar como um gateway. Isso pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode adicionar informações de porta ao nome do servidor (por exemplo: **RDGateway:443** ou **10.0.0.1:443**).
+   - **Nome de usuário** -o nome de usuário e a senha a ser usada para o Gateway de área de trabalho remota estiver se conectando a. Você também pode selecionar **usar conta de usuário da área de trabalho** para usar as mesmas credenciais usadas para a conexão de área de trabalho remota.
 
 ## <a name="manage-your-user-accounts"></a>Gerenciar suas contas de usuário
 
@@ -153,13 +153,13 @@ Você pode definir as seguintes configurações globais no seu cliente do Androi
 - **Aperte zoom** -permite que você use gestos de pinçar para ampliar. Se o aplicativo que você está usando, por meio da área de trabalho remota oferece suporte a multitoque (introduzido no Windows 8), desative essa configuração **desativar**.
 - **Ajudam a melhorar a área de trabalho remota** -envia dados anônimos à Microsoft. Usamos esses dados para melhorar o cliente. Você pode saber mais sobre como tratamos esses dados anônimos, privados, consulte o [declaração de privacidade de cliente de área de trabalho remota](https://www.microsoft.com/privacystatement/RemoteApp/Default.aspx). Por padrão, essa configuração é **em**.
 - **Exibir** -há duas configurações globais para a exibição:
-   - **Orientação** -define a orientação preferida (paisagem ou retrato) para a sua sessão. 
-   >[!NOTE]
-   > Se você se conectar a um computador executando o Windows 8 ou uma versão anterior do Windows, a sessão não dimensionadas corretamente. Sua melhor aposta é desconectar do computador e, em seguida, reconectar-se na orientação que você deseja usar. Uma opção ainda melhor é atualizar o PC pelo menos Windows 8.1.
+  - **Orientação** -define a orientação preferida (paisagem ou retrato) para a sua sessão. 
+    >[!NOTE]
+    > Se você se conectar a um computador executando o Windows 8 ou uma versão anterior do Windows, a sessão não dimensionadas corretamente. Sua melhor aposta é desconectar do computador e, em seguida, reconectar-se na orientação que você deseja usar. Uma opção ainda melhor é atualizar o PC pelo menos Windows 8.1.
 
-   - **Resolução** -define a resolução que você deseja usar para conexões de área de trabalho global. Se você já tiver definido uma resolução personalizada para um aplicativo individual ou a conexão, essa configuração não mudará que.
-   >[!NOTE]
-   >Quando você altera uma das configurações de exibição, elas se aplicam apenas a novas conexões desse ponto em. Para ver a alteração em uma sessão já está conectado para desconectar e, em seguida, conectar-se novamente.
+  - **Resolução** -define a resolução que você deseja usar para conexões de área de trabalho global. Se você já tiver definido uma resolução personalizada para um aplicativo individual ou a conexão, essa configuração não mudará que.
+    >[!NOTE]
+    >Quando você altera uma das configurações de exibição, elas se aplicam apenas a novas conexões desse ponto em. Para ver a alteração em uma sessão já está conectado para desconectar e, em seguida, conectar-se novamente.
 
 ### <a name="connection-bar"></a>Barra de Conexão
 

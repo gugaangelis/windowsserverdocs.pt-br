@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32345b22395107f4a2c3d88894126d4e5e0875a1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 36dc7f861e88cf991af57dda2f150107c6870f0f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842357"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441044"
 ---
 # <a name="telnet-send"></a>telnet: send
 
@@ -30,20 +30,22 @@ Envia comandos telnet para o servidor telnet.
 sen[d] {ao | ayt | brk | esc | ip | synch | <string>} [?]  
 ```  
 ### <a name="parameters"></a>Parâmetros  
-|Parâmetro|Descrição|  
-|-------|--------|  
-|sol|Envia o comando do telnet Abort Output.|  
-|ayt|Envia o comando do telnet são você lá.|  
-|brk|Envia o comando telnet brk.|  
-|esc|Envia o caractere de escape telnet atual.|  
-|ip|Envia o processo de interrupção de comando do telnet.|  
-|sincronização|Envia a sincronização de comando do telnet.|  
-|<string>|Envia a você digitar qualquer cadeia de caracteres para o servidor telnet.|  
-|?|Exibe a Ajuda associada a este comando.|  
+
+| Parâmetro |                     Descrição                      |
+|-----------|------------------------------------------------------|
+|    sol     |       Envia o comando do telnet Abort Output.        |
+|    ayt    |       Envia o comando do telnet são você lá.       |
+|    brk    |            Envia o comando telnet brk.            |
+|    esc    |      Envia o caractere de escape telnet atual.      |
+|    ip     |     Envia o processo de interrupção de comando do telnet.     |
+|   sincronização   |           Envia a sincronização de comando do telnet.           |
+| <string>  | Envia a você digitar qualquer cadeia de caracteres para o servidor telnet. |
+|     ?     |     Exibe a Ajuda associada a este comando.      |
+
 ## <a name="BKMK_Examples"></a>Exemplos  
 Send tem existe para o servidor telnet.  
 ```  
 sen ayt  
 ```  
 ## <a name="additional-references"></a>Referências adicionais  
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  

@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 7469171005164d9ff823dad7de230d877c874dc9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 486c11ebd46c6fd23b3bd16cd90463f8d607287e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840877"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443539"
 ---
 # <a name="migrating-roles-and-features-in-windows-server"></a>Migrando funções e recursos no Windows Server
 
@@ -36,7 +36,7 @@ Um e-book do Windows Server 2012 R2 e guias de migração do Windows Server 2012
 
 >[!NOTE]
 >Sempre que você migra ou atualiza para qualquer versão do Windows Server, deve consultar e entender a [política de ciclo de vida de suporte](https://support.microsoft.com/lifecycle) e o período para essa versão e planejar corretamente. Você pode [procurar as informações de ciclo de vida](https://support.microsoft.com/lifecycle) para a versão específica do Windows Server em que está interessado.
- 
+ 
 ## <a name="windows-server-2016"></a>Windows Server 2016
 
 ### <a name="migration-guides"></a>Guias de Migração
@@ -45,8 +45,8 @@ Guias de migração atualizados para Windows Server 2016 estão em desenvolvimen
 - [Serviços de área de trabalho remota](https://technet.microsoft.com/windows-server-docs/compute/remote-desktop-services/migrate-rds-role-services)
 - [Servidor Web (IIS)](https://www.iis.net/downloads/microsoft/web-deploy)
 - [Windows Server Update Services](https://technet.microsoft.com/library/hh852339.aspx)
-- [Serviços do multiPoint](https://technet.microsoft.com/windows-server-docs/compute/remote-desktop-services/multipoint-services/multipoint-services-migrate)
- 
+- [MultiPoint Services](https://technet.microsoft.com/windows-server-docs/compute/remote-desktop-services/multipoint-services/multipoint-services-migrate)
+ 
 ## <a name="windows-server-2012-r2"></a>Windows Server 2012 R2
 
 ### <a name="migration-guides"></a>Guias de Migração
@@ -63,14 +63,14 @@ Siga as etapas nestes guias para migrar funções e recursos de servidores que e
 - [Migrar o Windows Server Update Services para o Windows Server 2012 R2](https://technet.microsoft.com/library/hh852339.aspx)
 - [Migrar funções de Cluster para o Windows Server 2012 R2](https://technet.microsoft.com/library/dn530779.aspx)
 - [Migrar o servidor DHCP para o Windows Server 2012 R2](https://technet.microsoft.com/library/dn495425.aspx)
- 
+ 
 ## <a name="windows-server-2012"></a>Windows Server 2012
 
 ### <a name="migration-guides"></a>Guias de Migração
 Siga as etapas nestes guias para migrar funções e recursos de servidores que executam o Windows Server 2003, o Windows Server 2008, o Windows Server 2008 R2 ou o Windows Server 2012 para o Windows Server 2012. As Ferramentas de Migração do Windows Server no Windows Server 2012 permitem migrações de sub-rede cruzada.
 
 - [Instalar, usar e remover ferramentas de migração do Windows Server](https://technet.microsoft.com/library/jj134202)
-- [Migrar Serviços de função de serviços de Federação do Active Directory para o Windows Server 2012](https://technet.microsoft.com/library/jj647765)
+- [Migrar os Serviços de Função dos Serviços de Federação do Active Directory (AD FS) para o Windows Server 2012](https://technet.microsoft.com/library/jj647765)
 - [Migrar autoridade de registro de integridade para o Windows Server 2012](https://technet.microsoft.com/library/hh831513)
 - [Migrar o Hyper-V para o Windows Server 2012 do Windows Server 2008 R2](https://technet.microsoft.com/library/jj574113)
 - [Migrar a configuração de IP para o Windows Server 2012](https://technet.microsoft.com/library/jj574133)
@@ -80,7 +80,7 @@ Siga as etapas nestes guias para migrar funções e recursos de servidores que e
 - [Migrar o Windows Server Update Services para o Windows Server 2012](https://technet.microsoft.com/library/hh852339)
 - [Atualizar controladores de domínio do Active Directory para o Windows Server 2012](https://technet.microsoft.com/library/hh994618.aspx)
 - [Migrando serviços clusterizados e aplicativos para o Windows Server 2012](https://technet.microsoft.com/library/dn486790.aspx)
- 
+ 
 
 Para obter recursos de migração adicionais, visite [Migrar funções e recursos do Windows Server 2012](https://technet.microsoft.com/library/jj134039).
 
@@ -104,5 +104,6 @@ Siga as etapas nestes guias para migrar funções e recursos de servidores que e
 - [Guia de migração de serviços de área de trabalho remota](https://technet.microsoft.com/library/ff849223)
 - [Guia de migração do RRAS](https://technet.microsoft.com/library/ee822825)
 - [Informações e tarefas comuns de migração do Windows Server](https://technet.microsoft.com/library/ff400258)
-- [Guia de migração do Windows Server Update Services 3.0 SP2](https://technet.microsoft.com/library/ee822826)  
+- [Guia de migração do Windows Server Update Services 3.0 SP2](https://technet.microsoft.com/library/ee822826)
+ 
 Para obter recursos de migração adicionais, visite [Migrar funções e recursos do Windows Server 2008 R2](https://technet.microsoft.com/library/dd365353).

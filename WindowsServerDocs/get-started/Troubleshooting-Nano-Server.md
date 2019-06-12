@@ -12,12 +12,12 @@ ms.assetid: e427c66f-9571-4b8c-b65d-e7370d91544d
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f5d3e352cd022853a1602c67c3aaf2530cfc696
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e832d35f1ae3bbdba256b3531a22f93b69cadbb3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813637"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443397"
 ---
 # <a name="troubleshooting-nano-server"></a>Solução de problemas do Nano Server
 
@@ -36,15 +36,15 @@ Quando você inicializa o Nano Server em uma máquina virtual ou em um computado
   
 -   Use as teclas de seta para rolar  
   
--   Use TAB para mover para qualquer texto que começa com **>**; e pressione ENTER para selecionar.  
+-   Use TAB para mover para qualquer texto que começa com **>** ; e pressione ENTER para selecionar.  
   
 -   Para retornar uma tela ou página, pressione ESC. Se você estiver na home page, pressionar ESC o desconectará.  
   
 -   Algumas telas têm recursos adicionais exibidos na última linha da tela. Por exemplo, se você explorar um adaptador de rede, F4 desabilitará o adaptador de rede.  
   
 O Console de Recuperação permite que você exiba e configure adaptadores de rede e configurações de TCP/IP, bem como regras de firewall.
-> [!NOTE]  
-    > O Console de Recuperação só oferece suporte a funções básicas de teclado. Não há suporte para as luzes do teclado, seções de 10 teclas e alternância do layout do teclado, como caps lock e bloqueio de número. Só há suporte para teclados e conjunto de caracteres em inglês.
+> [!NOTE]
+> O Console de Recuperação só oferece suporte a funções básicas de teclado. Não há suporte para as luzes do teclado, seções de 10 teclas e alternância do layout do teclado, como caps lock e bloqueio de número. Só há suporte para teclados e conjunto de caracteres em inglês.
 
 ## <a name="accessing-nano-server-over-a-serial-port-with-emergency-management-services"></a>Acessar o Nano Server em uma porta serial com Serviços de Gerenciamento de Emergência  
 O EMS (Serviços de Gerenciamento de Emergência) permite que você execute a solução de problemas básica, obtenha o status da rede e abra sessões do console (incluindo PowerShell/CMD) usando um emulador de terminal por meio de uma porta serial. Isso substitui a necessidade de um teclado e um monitor para solucionar problemas de um servidor. Para saber mais sobre o EMS, confira [Emergency Management Services Technical Reference (Referência técnica dos Serviços de Gerenciamento de Emergência)](https://technet.microsoft.com/library/cc784411(v=ws.10).aspx).

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b4639ff780687ad7a69ddba5374a722a15b06542
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4b13a2fe573ffc81fa5c85d8fd28e9ab13ca4342
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848257"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439347"
 ---
 # <a name="find"></a>find
 
@@ -36,16 +36,16 @@ find [/v] [/c] [/n] [/i] [/off[line]] "<String>" [[<Drive>:][<Path>]<FileName>[.
 
 ## <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|/v|Exibe todas as linhas que não contêm especificado \<cadeia de caracteres >.|
-|/c|Conta as linhas que contêm especificado \<cadeia de caracteres > e exibe o total.|
-|/n|Precede cada linha com o número da linha do arquivo.|
-|/i|Especifica que a pesquisa não diferencia maiusculas de minúsculas.|
-|[/off[line]]|Não ignorar arquivos que têm o atributo offline definido.|
-|"\<String>"|Obrigatório. Especifica o grupo de caracteres (colocadas entre aspas) que você deseja pesquisar.|
-|[\<Drive>:][<Path>]<FileName>|Especifica o local e o nome do arquivo no qual pesquisar a cadeia de caracteres especificada.|
-|/?|Exibe a ajuda no prompt de comando.|
+|           Parâmetro           |                                              Descrição                                               |
+|-------------------------------|--------------------------------------------------------------------------------------------------------|
+|              /v               |                    Exibe todas as linhas que não contêm especificado \<cadeia de caracteres >.                     |
+|              /c               |              Conta as linhas que contêm especificado \<cadeia de caracteres > e exibe o total.              |
+|              /n               |                            Precede cada linha com o número da linha do arquivo.                             |
+|              /i               |                            Especifica que a pesquisa não diferencia maiusculas de minúsculas.                            |
+|         [/off[line]]          |                        Não ignorar arquivos que têm o atributo offline definido.                        |
+|          "\<String>"          | Obrigatório. Especifica o grupo de caracteres (colocadas entre aspas) que você deseja pesquisar. |
+| [\<Drive>:][<Path>]<FileName> |        Especifica o local e o nome do arquivo no qual pesquisar a cadeia de caracteres especificada.        |
+|              /?               |                                  Exibe a ajuda no prompt de comando.                                  |
 
 ## <a name="remarks"></a>Comentários
 
@@ -62,7 +62,7 @@ find [/v] [/c] [/n] [/i] [/off[line]] "<String>" [[<Drive>:][<Path>]<FileName>[.
     Você pode digitar parâmetros e opções de linha de comando para o **localizar** comando em qualquer ordem.
 -   Usando caracteres curinga
 
-    Não é possível usar caracteres curinga (**&#42;** e **?**) em nomes de arquivos ou extensões especificados com o **localizar** comando. Para procurar uma cadeia de caracteres em um conjunto de arquivos que você especificar com caracteres curinga, você pode usar o **encontrar** comando dentro de uma **para** comando.
+    Não é possível usar caracteres curinga ( **&#42;** e **?** ) em nomes de arquivos ou extensões especificados com o **localizar** comando. Para procurar uma cadeia de caracteres em um conjunto de arquivos que você especificar com caracteres curinga, você pode usar o **encontrar** comando dentro de uma **para** comando.
 -   Usando o **/v** ou **/n** com **/c**
 
     Se você usar **/c** e **/v** na mesma linha de comando **localizar** exibe uma contagem de linhas que não contêm a cadeia de caracteres especificada. Se você especificar **/c** e **/n** na mesma linha de comando **localizar** ignora **/n**.
@@ -92,4 +92,4 @@ Porque **encontrar** pesquisas diferenciam maiusculas de minúsculas e **dir** p
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

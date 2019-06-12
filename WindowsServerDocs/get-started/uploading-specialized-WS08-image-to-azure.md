@@ -10,12 +10,12 @@ ms.date: 07/11/2018
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: af98a219a4a5aa708df9c648f1b245a21e95f016
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 425197d3462762c60a7371fc6ca529ad1b70e7ef
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827807"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443377"
 ---
 # <a name="upload-a-windows-server-20082008-r2-specialized-image-to-azure"></a>Carregar uma imagem especializada do Windows Server 2008/2008 R2 no Azure 
 
@@ -29,17 +29,17 @@ Antes de poder carregar uma imagem, faça as seguintes alterações:
 - Baixe e instale o Windows Server 2008 Service Pack 2 (SP2) se você ainda não o tiver instalado na sua imagem.
 
 - Definir configurações da Área de Trabalho Remota (RDP).
-   1. Vá para o **Painel de Controle** > **Configurações do sistema**.   
-   2. Selecione **Configurações remotas** no menu esquerdo.
+  1. Vá para o **Painel de Controle** > **Configurações do sistema**.   
+  2. Selecione **Configurações remotas** no menu esquerdo.
 
-   ![Captura de tela das configurações do sistema, com "Configurações remotas" realçado.](media/1a_remote_settings.png)
+     ![Captura de tela das configurações do sistema, com "Configurações remotas" realçado.](media/1a_remote_settings.png)
 
-   3. Selecione a guia **Remoto** nas Propriedades em Sistema.   
+  3. Selecione a guia **Remoto** nas Propriedades em Sistema.   
 
-   ![Captura de tela da guia remoto em propriedades do sistema.](media/2c_sysprops.png)
+     ![Captura de tela da guia remoto em propriedades do sistema.](media/2c_sysprops.png)
 
-   4. Selecione Permitir conexões de computadores executando qualquer versão da Área de Trabalho Remota (menos seguro).   
-   5. Clique em **Aplicar**e em **OK**.
+  4. Selecione Permitir conexões de computadores executando qualquer versão da Área de Trabalho Remota (menos seguro).   
+  5. Clique em **Aplicar**e em **OK**.
 - Defina as configurações do Firewall do Windows.   
    1. No prompt de comando no modo Administrador, insira "**wf.msc**" para o Firewall do Windows e configurações de segurança avançadas.   
    2. Classifique as descobertas por **Portas**, selecione a **porta 3389**.   

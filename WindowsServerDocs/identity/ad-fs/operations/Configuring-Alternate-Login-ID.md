@@ -9,12 +9,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 5bc43717f37fb3b14ac7f384a061ee64c734222d
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 75ab011ed4931af3d5a03a38b3f7a7f0cfecbe3d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189662"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444915"
 ---
 # <a name="configuring-alternate-login-id"></a>Configurar a ID de logon alternativa
 
@@ -31,9 +31,9 @@ ID do Active Directory Federation Services (AD FS) permite que aplicativos feder
 
 ## <a name="alternate-id-in-azure-ad"></a>Id alternativa no Azure AD
 Uma organização pode ter que usar a ID alternativa nos seguintes cenários:
-1.  O nome de domínio local não for roteável, ex. Contoso. local e, consequentemente o nome principal de usuário padrão não for roteável (jdoe@contoso.local). UPN existente não pode ser alterado devido a dependências do aplicativo local ou as políticas da empresa. Azure AD e Office 365 exige todos os sufixos de domínio associados com o diretório do AD do Azure para ser totalmente roteável da internet. 
-2.  O UPN local não é o mesmo que o endereço de email do usuário e usam o endereço de email para entrar no Office 365, os usuários e UPN não pode ser usado devido a restrições de organizacionais.
-Nos cenários mencionados acima, a ID alternativa com AD FS permite aos usuários entrar no Azure AD sem modificar seu UPNs locais. 
+1. O nome de domínio local não for roteável, ex. Contoso. local e, consequentemente o nome principal de usuário padrão não for roteável (jdoe@contoso.local). UPN existente não pode ser alterado devido a dependências do aplicativo local ou as políticas da empresa. Azure AD e Office 365 exige todos os sufixos de domínio associados com o diretório do AD do Azure para ser totalmente roteável da internet. 
+2. O UPN local não é o mesmo que o endereço de email do usuário e usam o endereço de email para entrar no Office 365, os usuários e UPN não pode ser usado devido a restrições de organizacionais.
+   Nos cenários mencionados acima, a ID alternativa com AD FS permite aos usuários entrar no Azure AD sem modificar seu UPNs locais. 
 
 ## <a name="end-user-experience-with-alternate-login-id"></a>Experiência do usuário final com a ID de logon alternativo
 A experiência do usuário final varia dependendo do método de autenticação usado com a id de logon alternativo.  Atualmente, há três maneiras diferentes nos quais usando a id de logon alternativo pode ser obtido.  São eles:
@@ -81,7 +81,7 @@ No exemplo a seguir, você estiver habilitando a funcionalidade de ID de logon a
 Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID mail -LookupForests contoso.com,fabrikam.com
 ```
 
-3.  Para desabilitar esse recurso, defina o valor para ambos os parâmetros ser nulo.
+3. Para desabilitar esse recurso, defina o valor para ambos os parâmetros ser nulo.
 
 ``` powershell
 Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID $NULL -LookupForests $NULL
@@ -155,6 +155,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 ## <a name="applications-and-user-experience-after-the-additional-configuration"></a>Aplicativos e experiência do usuário após a configuração adicional
 
 ### <a name="non-exchange-and-skype-for-business-clients"></a>Não sejam do Exchange e Skype para clientes de negócios
+
 |Remota|Instrução de suporte|Comentários|
 | ----- | -----|-----|
 |Microsoft Teams|Com suporte|<li>Microsoft Teams dá suporte ao AD FS (SAML-P, WS-Fed, WS-Trust e OAuth) e autenticação moderna.</li><li> Core Microsoft Teams, como as funcionalidades de canais, bate-papos e arquivos de trabalhar com a ID de logon alternativo.</li><li>aplicativos de terceiros 1º e o 3º devem ser investigados separadamente pelo cliente. Isso ocorre porque cada aplicativo tem seus próprios protocolos de autenticação de capacidade de suporte.</li>|     
@@ -173,7 +174,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 |Outlook Web Access|Com suporte|Com suporte|
 |Aplicativos móveis de Outlook para IOS, Android e Windows Phone|Com suporte|Com suporte|
 |Skype for Business / Lync|Com suporte, sem prompts extras|Com suporte (exceto como observado), mas há um potencial de confusão do usuário.</br></br>Em clientes móveis, Id alternativa é suportada somente se o endereço SIP = endereço de email = ID alternativa.</br></br> Os usuários podem precisar entrar duas vezes para o Skype para cliente da área de trabalho de negócios, pela primeira vez usando o UPN local e, em seguida, usando a ID alternativa. (Observe que o "endereço de entrada" é, na verdade, o que pode não ser o mesmo que o "nome de usuário", porém muitas vezes é endereço SIP). Quando solicitado pela primeira vez para um nome de usuário, o usuário deve inserir o UPN, mesmo se ele incorretamente é previamente preenchido com o endereço SIP ou de ID alternativa. Depois que o usuário clica em entrar com o UPN, o usuário nome prompt será exibido novamente, desta vez preenchida previamente com o UPN. Neste momento, o usuário deve substituir isso com a ID alternativa e clique em entrar para concluir o processo de entrada. Em clientes móveis, os usuários devem inserir a ID de usuário local na página Avançado, usando o formato de estilo do SAM (domínio \ nomedeusuário), não o formato UPN.</br></br>Depois de entrar com êxito, se o Skype for Business ou Lync diz "Exchange precisa das suas credenciais", você precisa fornecer as credenciais que são válidas para onde a caixa de correio está localizada. Se a caixa de correio está na nuvem que você precisa fornecer a ID alternativa. Se a caixa de correio for local, você precisará fornecer o UPN local.| 
- 
+
 ## <a name="additional-details--considerations"></a>Detalhes adicionais e considerações sobre
 
 -   O recurso de ID de logon alternativa está disponível para ambientes agrupados com o AD FS implantado.  Não há suporte nos seguintes cenários:
@@ -211,12 +212,12 @@ Seguem diversos casos de erro e o impacto correspondente no experiência de entr
 
 
 
-**Casos de erro**|**Impacto na experiência de entrada**|**Event**|
----------|---------|---------
-Não é possível obter um valor para o SAMAccountName para o objeto de usuário|Falha no logon|ID do evento 364 com a mensagem de exceção MSIS8012: Não é possível localizar o samAccountName do usuário: '{0}'.|
-O atributo CanonicalName não está acessível|Falha no logon|ID do evento 364 com a mensagem de exceção MSIS8013: CanonicalName: '{0}' do usuário:'{1}' está no formato incorreto.|
-Vários objetos de usuário são encontrados em uma floresta|Falha no logon|ID do evento 364 com a mensagem de exceção MSIS8015: Encontradas várias contas de usuário com identidade '{0}'na floresta'{1}' com identidades: {2}|
-Vários objetos de usuário são encontrados em várias florestas|Falha no logon|ID do evento 364 com a mensagem de exceção MSIS8014: Encontradas várias contas de usuário com identidade '{0}' em florestas: {1}|
+|                       **Casos de erro**                        | **Impacto na experiência de entrada** |                                                              **Event**                                                              |
+|--------------------------------------------------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| Não é possível obter um valor para o SAMAccountName para o objeto de usuário |          Falha no logon           |                  ID do evento 364 com a mensagem de exceção MSIS8012: Não é possível localizar o samAccountName do usuário: '{0}'.                   |
+|        O atributo CanonicalName não está acessível         |          Falha no logon           |               ID do evento 364 com a mensagem de exceção MSIS8013: CanonicalName: '{0}' do usuário:'{1}' está no formato incorreto.                |
+|        Vários objetos de usuário são encontrados em uma floresta        |          Falha no logon           | ID do evento 364 com a mensagem de exceção MSIS8015: Encontradas várias contas de usuário com identidade '{0}'na floresta'{1}' com identidades: {2} |
+|   Vários objetos de usuário são encontrados em várias florestas    |          Falha no logon           |           ID do evento 364 com a mensagem de exceção MSIS8014: Encontradas várias contas de usuário com identidade '{0}' em florestas: {1}            |
 
 ## <a name="see-also"></a>Consulte também
 [Operações do AD FS](../../ad-fs/AD-FS-2016-Operations.md)

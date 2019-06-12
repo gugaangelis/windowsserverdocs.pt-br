@@ -12,12 +12,12 @@ ms.assetid: f1e6b377-4a24-4d28-9b25-05910914826b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 72fe309e0e7ce6d7227cce8b7f2c5dbf018eb4a1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1adf8ae2dd8763d0bc5a514609bb2470de6acde4
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813087"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436075"
 ---
 # <a name="troubleshoot-computer-monitoring-in-windows-server-essentials"></a>Solucionar problemas de monitoramento de computador no Windows Server Essentials
 
@@ -36,13 +36,13 @@ Este tópico fornece uma solução de problemas para problemas encontrados ao mo
   
  **Causa** Esse erro poderá ocorrer devido a qualquer um dos seguintes problemas nas configurações de notificações de alerta:  
   
--   Um nome de servidor SMTP ou número de porta incorreto.  
+- Um nome de servidor SMTP ou número de porta incorreto.  
   
--   Foi especificado incorretamente que o servidor SMTP requer uma conexão Single Sockets Layer (SSL).  
+- Foi especificado incorretamente que o servidor SMTP requer uma conexão Single Sockets Layer (SSL).  
   
--   O servidor SMTP exigir autenticação e credenciais incorretas foram inseridas.  
+- O servidor SMTP exigir autenticação e credenciais incorretas foram inseridas.  
   
- **Soluções** Corrigir quaisquer erros em suas configurações de notificação por email.  
+  **Soluções** Corrigir quaisquer erros em suas configurações de notificação por email.  
   
 ##### <a name="to-identify-issues-in-your-email-notification-settings"></a>Para identificar problemas em suas configurações de notificação por email  
   
@@ -53,7 +53,7 @@ Este tópico fornece uma solução de problemas para problemas encontrados ao mo
      %ProgramData%\Microsoft\Windows Server\Logs\SharedServiceHost-AlertServiceConfig.log  
   
     > [!TIP]
-    >  Para ver a pasta ProgramData, você deve usar uma configuração para exibir itens ocultos. Se você don t vir a pasta ProgramData, na faixa de opções s **exibição** guia, o **Mostrar/ocultar** grupo, selecione o **itens ocultos** caixa de texto.  
+    >  Para ver a pasta ProgramData, você deve usar uma configuração para exibir itens ocultos. Se você não vir a pasta ProgramData, na faixa de opções **modo de exibição** guia, o **Mostrar/ocultar** grupo, selecione o **itens ocultos** caixa de texto.  
   
 ##### <a name="to-update-your-email-notification-setup-for-alerts"></a>Para atualizar a configuração de notificação por email para alertas  
   

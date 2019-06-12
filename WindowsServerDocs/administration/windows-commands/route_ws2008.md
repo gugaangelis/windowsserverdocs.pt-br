@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 1164767a80b4d7dd24152bc34eda5d88834c1bdb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 30843fe94ac7a4dc60092adcede60120bc9e627f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854817"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441763"
 ---
 # <a name="routews2008"></a>route_ws2008
 
@@ -46,12 +46,12 @@ route [/f] [/p] [<Command> [<Destination>] [mask <Netmask>] [<Gateway>] [metric 
 |/?|Exibe a ajuda no prompt de comando.|  
 
 ## <a name="remarks"></a>Comentários  
--   Valores grandes na **métrica** coluna da tabela de roteamento são o resultado de permitir que o TCP/IP determinar automaticamente a métrica de rotas na tabela de roteamento com base na configuração do endereço IP, máscara de sub-rede e gateway padrão para cada interface de LAN. Determinação automática da métrica da interface, habilitada por padrão, determina a velocidade de cada interface e ajusta as métricas de rotas para cada interface para que a interface mais rápida cria as rotas com a métrica mais baixa. Para remover as métricas de grandes, desative o cálculo automático da métrica de interface das propriedades avançadas do protocolo TCP/IP para cada conexão de rede local.  
--   Nomes podem ser usados para *destino* se houver uma entrada apropriada no arquivo redes local armazenado na **systemroot\System32\Drivers\\**pasta Etc. Nomes podem ser usados para o *gateway* desde que eles podem ser resolvidos para um endereço IP por meio de técnicas de resolução de nome de host padrão, como consultas de sistema de nome de domínio (DNS), usar o arquivo de Hosts local armazenado no  **systemroot\system32\drivers\\**pasta etc e a resolução de nomes NetBIOS.  
--   Se o comando **imprimir** ou **excluir**, o *Gateway* parâmetro pode ser omitido e curingas podem ser usados para o destino e o gateway. O *destino* valor pode ser um valor de curinga especificado por um asterisco (*). Se o destino especificado contém um asterisco (\*) ou um ponto de interrogação (?), ele será tratado como um caractere curinga e somente rotas de destino correspondente são impressos ou excluídas. O asterisco corresponde a qualquer cadeia de caracteres e o ponto de interrogação corresponde a qualquer caractere único. Por exemplo, 10. \*.1, 192.168. \*, 127. \*, e \*224\* são usos válidos do curinga asterisco.  
--   Usar uma combinação inválida de um valor de máscara (máscara de rede) de destino e a sub-rede exibe uma "rota: máscara de rede de endereço de gateway incorreto" mensagem de erro. Essa mensagem de erro aparece quando o destino contém um ou mais bits definidos como 1 em locais de bit em que o bit correspondente de máscara de sub-rede é definido como 0. Para testar essa condição, expressam a destino e máscara de sub-rede usando notação binária. A máscara de sub-rede na notação binária consiste em uma série de bits 1, que representa a parte do endereço de rede de destino e uma série de bits 0, que representa a parte do endereço de host do destino. Verifique se há bits no destino que são definidos como 1 para a parte de destino que é o endereço do host (conforme definido pela máscara de sub-rede).  
--   O **/p** parâmetro só é compatível com o comando de rota para o Windows NT 4.0, Windows 2000, Windows Millennium edition, Windows XP e Windows Server 2003. Não há suporte para esse parâmetro o **rota** comando para o Windows 95 ou Windows 98.  
--   Esse comando está disponível somente se o protocolo de Internet Protocol (TCP/IP) é instalado como um componente nas propriedades de um adaptador de rede em conexões de rede.  
+- Valores grandes na **métrica** coluna da tabela de roteamento são o resultado de permitir que o TCP/IP determinar automaticamente a métrica de rotas na tabela de roteamento com base na configuração do endereço IP, máscara de sub-rede e gateway padrão para cada interface de LAN. Determinação automática da métrica da interface, habilitada por padrão, determina a velocidade de cada interface e ajusta as métricas de rotas para cada interface para que a interface mais rápida cria as rotas com a métrica mais baixa. Para remover as métricas de grandes, desative o cálculo automático da métrica de interface das propriedades avançadas do protocolo TCP/IP para cada conexão de rede local.  
+- Nomes podem ser usados para *destino* se houver uma entrada apropriada no arquivo redes local armazenado na <strong>systemroot\System32\Drivers\\</strong>pasta Etc. Nomes podem ser usados para o *gateway* desde que eles podem ser resolvidos para um endereço IP por meio de técnicas de resolução de nome de host padrão, como consultas de sistema de nome de domínio (DNS), usar o arquivo de Hosts local armazenado no  <strong>systemroot\system32\drivers\\</strong>pasta etc e a resolução de nomes NetBIOS.  
+- Se o comando **imprimir** ou **excluir**, o *Gateway* parâmetro pode ser omitido e curingas podem ser usados para o destino e o gateway. O *destino* valor pode ser um valor de curinga especificado por um asterisco (*). Se o destino especificado contém um asterisco (\*) ou um ponto de interrogação (?), ele será tratado como um caractere curinga e somente rotas de destino correspondente são impressos ou excluídas. O asterisco corresponde a qualquer cadeia de caracteres e o ponto de interrogação corresponde a qualquer caractere único. Por exemplo, 10. \*.1, 192.168. \*, 127. \*, e \*224\* são usos válidos do curinga asterisco.  
+- Usar uma combinação inválida de um valor de máscara (máscara de rede) de destino e a sub-rede exibe uma "rota: máscara de rede de endereço de gateway incorreto" mensagem de erro. Essa mensagem de erro aparece quando o destino contém um ou mais bits definidos como 1 em locais de bit em que o bit correspondente de máscara de sub-rede é definido como 0. Para testar essa condição, expressam a destino e máscara de sub-rede usando notação binária. A máscara de sub-rede na notação binária consiste em uma série de bits 1, que representa a parte do endereço de rede de destino e uma série de bits 0, que representa a parte do endereço de host do destino. Verifique se há bits no destino que são definidos como 1 para a parte de destino que é o endereço do host (conforme definido pela máscara de sub-rede).  
+- O **/p** parâmetro só é compatível com o comando de rota para o Windows NT 4.0, Windows 2000, Windows Millennium edition, Windows XP e Windows Server 2003. Não há suporte para esse parâmetro o **rota** comando para o Windows 95 ou Windows 98.  
+- Esse comando está disponível somente se o protocolo de Internet Protocol (TCP/IP) é instalado como um componente nas propriedades de um adaptador de rede em conexões de rede.  
 
 ## <a name="BKMK_Examples"></a>Exemplos  
 Para exibir todo o conteúdo da tabela de roteamento IP, digite:  
@@ -96,4 +96,4 @@ route change 10.41.0.0 mask 255.255.0.0 10.27.0.25
 ```  
 
 ## <a name="additional-references"></a>Referências adicionais  
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  

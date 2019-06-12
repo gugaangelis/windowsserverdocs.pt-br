@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 591ff7caa554a892bda0bc0e888bd89a87d8b0ef
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d98ba295b2a76baf98e85a01a02677d57922877d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863547"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440267"
 ---
 # <a name="wbadmin-start-systemstatebackup"></a>Wbadmin start systemstatebackup
 
@@ -43,10 +43,10 @@ wbadmin start systemstatebackup
 
 ## <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|-backupTarget|Especifica o local onde você deseja armazenar o backup. O local de armazenamento requer uma letra de unidade ou um volume com base no GUID do formato: \\ \\? \Volume {*GUID*}.</br>Não há suporte para um backup de estado do sistema para uma pasta de rede compartilhada em um computador executando o Windows Server 2008. Se o servidor estiver executando o Windows Server 2008 R2 ou posterior, você pode usar o comando **- backuptarget:\\\\servername\sharedFolder\**  para armazenar os backups de estado do sistema.|
-|-quiet|Executa o subcomando sem prompts para o usuário.|
+|   Parâmetro   |                                                                                                                                                                                                                      Descrição                                                                                                                                                                                                                      |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| -backupTarget | Especifica o local onde você deseja armazenar o backup. O local de armazenamento requer uma letra de unidade ou um volume com base no GUID do formato: \\ \\? \Volume {*GUID*}.</br>Não há suporte para um backup de estado do sistema para uma pasta de rede compartilhada em um computador executando o Windows Server 2008. Se o servidor estiver executando o Windows Server 2008 R2 ou posterior, você pode usar o comando **- backuptarget:\\\\servername\sharedFolder\\**  para armazenar os backups de estado do sistema. |
+|    -quiet     |                                                                                                                                                                                                   Executa o subcomando sem prompts para o usuário.                                                                                                                                                                                                    |
 
 ## <a name="remarks"></a>Comentários
 
@@ -61,6 +61,6 @@ wbadmin start systemstatebackup -backupTarget:f:
 
 #### <a name="additional-references"></a>Referências adicionais
 
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   [Iniciar WBBackup](https://technet.microsoft.com/library/jj902459.aspx) cmdlet

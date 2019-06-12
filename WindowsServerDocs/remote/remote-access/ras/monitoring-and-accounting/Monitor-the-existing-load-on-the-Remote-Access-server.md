@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 62fa2895-62ae-42cf-817c-53e06ac2a26c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a1f47273ab3be6faa762df2fb90d6486bc0ed2d5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6d7a5aa7b699f5a8f24c4a36ee8ae314768329b4
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849017"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446864"
 ---
 # <a name="monitor-the-existing-load-on-the-remote-access-server"></a>Monitorar a carga existente no servidor de acesso remoto
 
@@ -51,7 +51,7 @@ Você pode usar o painel de monitoramento está disponível no console de gerenc
   
 3.  Clique o **Add** botão (indicado por um ícone de cruz verde) na **Monitor de desempenho** barra de ferramentas.  
   
-4.  Na lista de **contadores disponíveis**, selecione todos os contadores na **RAS** e **RAmgmtsvc** categorias e depois clique em **Adicionar >>**.  
+4.  Na lista de **contadores disponíveis**, selecione todos os contadores na **RAS** e **RAmgmtsvc** categorias e depois clique em **Adicionar >>** .  
   
 5.  Novamente, na lista de **contadores disponíveis**, selecione todos os contadores na **conexões IPsec** categoria e clique **Adicionar >>.**  
   
@@ -59,7 +59,7 @@ Você pode usar o painel de monitoramento está disponível no console de gerenc
   
 **Monitor de desempenho** agora mostrará graficamente as estatísticas de carga do servidor selecionado.  
   
-![Windows PowerShell](../../../media/Monitor-the-existing-load-on-the-Remote-Access-server/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
+![Windows PowerShell](../../../media/Monitor-the-existing-load-on-the-Remote-Access-server/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   

@@ -8,12 +8,12 @@ ms.date: 02/21/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 20e2d0747b98e7c7728230d0768506261f5b0d50
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1acc00ca376c48f7fb34214cef3a92961d355ae4
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825117"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444026"
 ---
 # <a name="ad-fs-troubleshooting---events-and-logging"></a>Solucionando problemas do AD FS - eventos e registro em log
 O AD FS fornece dois logs principais que podem ser usados na solução de problemas.  São eles:
@@ -89,18 +89,21 @@ A tabela a seguir descreve os tipos básicos de eventos.
 Auditoria de segurança da conta de serviço do AD FS, às vezes, pode ajudar no rastreamento de problemas com atualizações de senha, registro em log de solicitação/resposta, os cabeçalhos de solicitação contect e resultados de registro do dispositivo.  Auditoria da conta de serviço do AD FS está desabilitada por padrão.
 
 ### <a name="to-enable-security-auditing"></a>Para habilitar a auditoria de segurança
-1.       Clique em Iniciar, aponte para **programas**, aponte para **ferramentas administrativas**e, em seguida, clique em **política de segurança Local**.
-2.       Navegue até a pasta **Configurações de Segurança\Políticas Locais\Gerenciamento de Direitos do Usuário** e clique duas vezes em **Gerar Auditorias de Segurança**.
-3.       Sobre o **configuração de segurança Local** guia, verifique se a conta de serviço do AD FS está listada. Se não estiver presente, clique em Adicionar usuário ou grupo e adicioná-lo à lista e clique em Okey.
-4.       Abra um prompt de comando com privilégios elevados e execute o seguinte comando para habilitar a auditoria auditpol.exe /Set /subcategory: "Aplicativo gerado" /Success /failure:enable 5.       Fechar **política de segurança Local**e, em seguida, abra o snap-in de gerenciamento do AD FS.
- 
+1. Clique em Iniciar, aponte para **programas**, aponte para **ferramentas administrativas**e, em seguida, clique em **política de segurança Local**.
+2. Navegue até a pasta **Configurações de Segurança\Políticas Locais\Gerenciamento de Direitos do Usuário** e clique duas vezes em **Gerar Auditorias de Segurança**.
+3. Sobre o **configuração de segurança Local** guia, verifique se a conta de serviço do AD FS está listada. Se não estiver presente, clique em Adicionar usuário ou grupo e adicioná-lo à lista e clique em Okey.
+4. Abra um prompt de comando com privilégios elevados e execute o seguinte comando para habilitar a auditoria auditpol.exe /Set /subcategory: "Aplicativo gerado" /failure:enable /Success
+5. Fechar **política de segurança Local**e, em seguida, abra o snap-in de gerenciamento do AD FS.
+ 
 Para abrir o snap-in de gerenciamento do AD FS, clique em Iniciar, aponte para programas, aponte para ferramentas administrativas e, em seguida, clique em gerenciamento do AD FS.
- 
-6.       No painel de ações, clique em Editar 7 de propriedades de serviço de Federação.       Na caixa de diálogo Propriedades do serviço de federação, clique na guia eventos. 8.       Selecione o **auditorias com êxito** e **auditorias com falha** caixas de seleção.
-9.       Clique em OK.
+ 
+6. No painel de ações, clique em Editar propriedades do serviço de Federação
+7. Na caixa de diálogo Propriedades do serviço de federação, clique na guia eventos.
+8. Selecione o **auditorias com êxito** e **auditorias com falha** caixas de seleção.
+9. Clique em OK.
 
 ![aprimoramentos de auditoria](media/ad-fs-tshoot-logging/event4.PNG)  
- 
+ 
 >[!NOTE]
 >As instruções acima são usadas somente quando o AD FS está em um servidor autônomo do membro.  Se o AD FS está em execução em um controlador de domínio, em vez de diretiva de segurança Local, use o **política de controlador de domínio padrão** localizado em **controladores de gerenciamento/floresta/domínios/domínio de diretiva de grupo**.  Clique em Editar e navegue até **computador \ Diretivas \ Configurações de segurança locais \ Atribuição Rights Management**
 

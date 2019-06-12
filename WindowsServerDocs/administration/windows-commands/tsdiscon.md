@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2033cbc9b3d9127249656c3e0dcf95d872229797
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a1b5fca329864ebed9eab66671a17493f0fc3ca8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842537"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440917"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 
@@ -36,6 +36,7 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 ```
 
 ## <a name="parameters"></a>Parâmetros
+
 |Parâmetro|Descrição|
 |-------|--------|
 |\<SessionId>|Especifica a ID de sessão a ser desconectada.|
@@ -52,18 +53,18 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 -   A sessão de console não poderá ser desconectada.
 
 ## <a name="BKMK_examples"></a>Exemplos
--   Para desconectar a sessão atual, digite:
-    ```
-    tsdiscon
-    ```
--   Para desconectar a sessão 10, digite:
-    ```
-    tsdiscon 10
-    ```
--   Para desconectar a sessão denominada TERM04, digite:
-    ```
-    tsdiscon TERM04
-    ```
-#### <a name="additional-references"></a>Referências adicionais
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[serviços de área de trabalho remota &#40;serviços de Terminal&#41; referência do comando](remote-desktop-services-terminal-services-command-reference.md)
+- Para desconectar a sessão atual, digite:
+  ```
+  tsdiscon
+  ```
+- Para desconectar a sessão 10, digite:
+  ```
+  tsdiscon 10
+  ```
+- Para desconectar a sessão denominada TERM04, digite:
+  ```
+  tsdiscon TERM04
+  ```
+  #### <a name="additional-references"></a>Referências adicionais
+  [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+  [serviços de área de trabalho remota &#40;serviços de Terminal&#41; referência do comando](remote-desktop-services-terminal-services-command-reference.md)

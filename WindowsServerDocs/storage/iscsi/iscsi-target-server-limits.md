@@ -8,12 +8,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 9514392da133911c900f68fc8f1be260b6c91138
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d912047ab0e3136c6dc05064f3a28aaaafd36c79
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873027"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447718"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>Limites de escalabilidade do servidor de destino de iSCSI
 
@@ -73,7 +73,7 @@ Este tópico fornece os limites do servidor de destino Microsoft iSCSI testado e
 <td><p>Discos virtuais montados localmente ou instantâneos por dispositivo de armazenamento</p></td>
 <td><p>32</p></td>
 <td><p>Sim</p></td>
-<td><p>Discos virtuais montados localmente não oferecem qualquer funcionalidade específica do iSCSI e são preteridas – para obter mais informações, consulte <a href="https://technet.microsoft.com/library/dn303411.aspx">recursos removidos ou preteridos no Windows Server 2012 R2</a>.</p></td>
+<td><p>Montado localmente don discos virtuais&#39;oferta de t, qualquer funcionalidade específica do iSCSI e são preteridas – para obter mais informações, consulte <a href="https://technet.microsoft.com/library/dn303411.aspx">recursos removidos ou preteridos no Windows Server 2012 R2</a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -105,7 +105,7 @@ Este tópico fornece os limites do servidor de destino Microsoft iSCSI testado e
 <tr class="even">
 <td><p>Vários nós de cluster ativo</p></td>
 <td><p>Com suporte</p></td>
-<td> 
+<td> 
 <p>N/D</p></td>
 <td><p>Cada nó ativo no cluster de failover é o proprietário de uma instância clusterizada do servidor de destino de iSCSI diferentes com outros nós que atua como possíveis nós do proprietário.</p></td>
 </tr>
@@ -205,8 +205,7 @@ Este tópico fornece os limites do servidor de destino Microsoft iSCSI testado e
 <tr class="odd">
 <td><p>Descarregamento de iSCSI</p></td>
 <td><p>Sem suporte</p></td>
-<td>              
-<p>N/D</p></td>
+<td><br/><p>N/D</p></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -249,7 +248,7 @@ Este tópico fornece os limites do servidor de destino Microsoft iSCSI testado e
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>De um iniciador iSCSI convertendo o disco virtual de um disco básico para um disco dinâmico </p></td>
+<td><p>De um iniciador iSCSI convertendo o disco virtual de um disco básico para um disco dinâmico </p></td>
 <td><p>Sim</p></td>
 <td><p>Não</p></td>
 <td></td>
@@ -312,7 +311,7 @@ Este tópico fornece os limites do servidor de destino Microsoft iSCSI testado e
 <td><p>.vhdx: Sim</p>
 <p>.vhd: Sim (não no Windows Server 2012)</p></td>
 <td><p>Sim</p></td>
-<td><p>Cancelar o mapeamento não é suportado.</p></td>
+<td><p>Cancelar o mapeamento não é&#39;t tem suportada.</p></td>
 </tr>
 <tr class="odd">
 <td><p>exFAT/FAT32/FAT (que hospeda o volume do VHD)</p></td>
@@ -348,7 +347,7 @@ Este tópico fornece os limites do servidor de destino Microsoft iSCSI testado e
 <td><p>Provisionamento dinâmico</p></td>
 <td><p>Não</p></td>
 <td><p>N/D</p></td>
-<td><p>VHDs dinâmicos têm suporte, mas não há suporte para desmapeamento.</p></td>
+<td><p>VHDs dinâmicos têm suporte, mas não é cancelar o mapeamento de&#39;t tem suportada.</p></td>
 </tr>
 <tr class="odd">
 <td><p>Redução de unidade lógica</p></td>
@@ -435,7 +434,7 @@ Se você deseja criar cópias de sombra (instantâneos do VSS arquivos abertos) 
 
 O provedor de armazenamento de destino iSCSI é um serviço de função no Windows Server 2016, Windows Server 2012 R2 e Windows Server 2012; Você também pode baixar e instalar [iSCSI provedores de armazenamento de destino (VDS/VSS) para servidores de aplicativos de nível inferior](http://www.microsoft.com/download/details.aspx?id=34759) em sistemas operacionais a seguir, desde que o servidor de destino iSCSI está em execução no Windows Server 2012:
 
-  - Windows Storage Server 2008 R2
+  - Windows Storage Server 2008 R2
 
   - Windows Server 2008 R2
 
@@ -542,9 +541,9 @@ Testamos também os iniciadores iSCSI seguir efetuar uma inicialização sem dis
 
 A lista a seguir fornece recursos adicionais sobre o Servidor de Destino iSCSI e as tecnologias relacionadas.
 
-  - [Visão geral de armazenamento de bloco de destino iSCSI](iscsi-target-server.md)
+- [Visão geral de armazenamento de bloco de destino iSCSI](iscsi-target-server.md)
 
-  - [Visão geral de inicialização de destino iSCSI](iscsi-boot-overview.md)
+- [Visão geral de inicialização de destino iSCSI](iscsi-boot-overview.md)
 
-  - [Armazenamento no Windows Server](..\storage.md)
+- [Armazenamento no Windows Server](../storage.md)
 

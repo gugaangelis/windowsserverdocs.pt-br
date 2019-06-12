@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: abb36c8c794836387af5547f3706e910dc06fa42
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f2c933bb68c488d83311856958a56809f2f5b859
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842997"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440988"
 ---
 # <a name="tasklist"></a>tasklist
 
@@ -34,34 +34,34 @@ tasklist [/s <Computer> [/u [<Domain>\]<UserName> [/p <Password>]]] [{/m <Module
 
 ## <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|/s \<Computer>|Especifica o nome ou endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local.|
-|/u [\<domínio >\\\]\<nome de usuário >|Executa o comando com as permissões de conta do usuário que é especificado pelo *nome de usuário* ou *domínio*\** nome de usuário. **/u** pode ser especificado somente se **/s** for especificado. O padrão é que as permissões do usuário que está conectado no momento no computador que está emitindo o comando.|
-|/p \<Password>|Especifica a senha da conta de usuário que é especificada na **/u** parâmetro.|
-|/m \<Module>|Lista todas as tarefas com DLL módulos carregados que corresponde ao nome padrão fornecido. Se o nome do módulo não for especificado, esta opção exibe todos os módulos carregados por cada tarefa.|
-|/svc|Lista todas as informações de serviço para cada processo sem truncamento. Válido quando o **/fo** parâmetro for definido como **tabela**.|
-|/v|Exibe informações detalhadas de tarefa na saída. Para a saída detalhada completa sem truncamento, use **/v** e **/svc** juntos.|
-|/FO {tabela \| lista \| csv}|Especifica o formato a ser usado para a saída. Os valores válidos são **tabela**, **lista**, e **csv**. O formato padrão para a saída é **tabela**.|
-|/nh|Suprime os cabeçalhos de coluna na saída. Válido quando o **/fo** parâmetro for definido como **tabela** ou **csv**.|
-|/fi \<Filter>|Especifica os tipos de processos a serem incluídos ou excluídos da consulta. Consulte a tabela a seguir para nomes de filtro válido, operadores e valores.|
-|/?|Exibe a ajuda no prompt de comando.|
+|          Parâmetro           |                                                                                                                                            Descrição                                                                                                                                             |
+|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|        /s \<Computer>        |                                                                                         Especifica o nome ou endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local.                                                                                         |
+| /u [\<domínio >\\\]\<nome de usuário > | Executa o comando com as permissões de conta do usuário que é especificado pelo *nome de usuário* ou *domínio*\*nome de usuário<em>. \* \*/u</em> \* pode ser especificado somente se **/s** for especificado. O padrão é que as permissões do usuário que está conectado no momento no computador que está emitindo o comando. |
+|        /p \<Password>        |                                                                                                       Especifica a senha da conta de usuário que é especificada na **/u** parâmetro.                                                                                                        |
+|         /m \<Module>         |                                                               Lista todas as tarefas com DLL módulos carregados que corresponde ao nome padrão fornecido. Se o nome do módulo não for especificado, esta opção exibe todos os módulos carregados por cada tarefa.                                                                |
+|             /svc             |                                                                                    Lista todas as informações de serviço para cada processo sem truncamento. Válido quando o **/fo** parâmetro for definido como **tabela**.                                                                                    |
+|              /v              |                                                                                 Exibe informações detalhadas de tarefa na saída. Para a saída detalhada completa sem truncamento, use **/v** e **/svc** juntos.                                                                                 |
+|  /FO {tabela \| lista \| csv}  |                                                                             Especifica o formato a ser usado para a saída. Os valores válidos são **tabela**, **lista**, e **csv**. O formato padrão para a saída é **tabela**.                                                                             |
+|             /nh              |                                                                                             Suprime os cabeçalhos de coluna na saída. Válido quando o **/fo** parâmetro for definido como **tabela** ou **csv**.                                                                                              |
+|        /fi \<Filter>         |                                                                          Especifica os tipos de processos a serem incluídos ou excluídos da consulta. Consulte a tabela a seguir para nomes de filtro válido, operadores e valores.                                                                          |
+|              /?              |                                                                                                                                Exibe a ajuda no prompt de comando.                                                                                                                                |
 
 ### <a name="filter-names-operators-and-values"></a>Os nomes de filtro, operadores e valores
 
-|Nome do filtro|Operadores válidos|Valores válidos|
-|-----------|---------------|------------|
-|STATUS|eq, ne|EM EXECUÇÃO | NÃO RESPONDENDO | DESCONHECIDO|
-|IMAGENAME|eq, ne|Nome da imagem|
-|PID|eq, ne, gt, lt, ge, le|Valor PID|
-|SESSÃO|eq, ne, gt, lt, ge, le|Número da sessão|
-|SESSIONNAME|eq, ne|Nome da sessão|
-|CPUTIME|eq, ne, gt, lt, ge, le|Tempo de CPU no formato *HH ***:*** MM ***:*** SS*, onde *MM* e *SS* estão entre 0 e 59 e *HH* é qualquer número de unsigned|
-|MEMUSAGE|eq, ne, gt, lt, ge, le|Uso de memória em KB|
-|NOME DE USUÁRIO|eq, ne|Qualquer nome de usuário válido|
-|SERVIÇOS|eq, ne|Nome do serviço|
-|WINDOWTITLE|eq, ne|Título da janela|
-|MÓDULOS|eq, ne|Nome da DLL|
+| Nome do filtro |    Operadores válidos     |                                                                 Valores válidos                                                                 |
+|-------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+|   STATUS    |         eq, ne         |                                                                   EM EXECUÇÃO                                                                    |
+|  IMAGENAME  |         eq, ne         |                                                                  Nome da imagem                                                                  |
+|     PID     | eq, ne, gt, lt, ge, le |                                                                  Valor PID                                                                   |
+|   SESSÃO   | eq, ne, gt, lt, ge, le |                                                                Número da sessão                                                                |
+| SESSIONNAME |         eq, ne         |                                                                 Nome da sessão                                                                 |
+|   CPUTIME   | eq, ne, gt, lt, ge, le | Tempo de CPU no formato <em>HH</em> **:** <em>MM</em> **:** <em>SS</em>, onde *MM* e *SS* estão entre 0 e 59 e *HH* é qualquer número de unsigned |
+|  MEMUSAGE   | eq, ne, gt, lt, ge, le |                                                              Uso de memória em KB                                                              |
+|  NOME DE USUÁRIO   |         eq, ne         |                                                             Qualquer nome de usuário válido                                                              |
+|  SERVIÇOS   |         eq, ne         |                                                                 Nome do serviço                                                                 |
+| WINDOWTITLE |         eq, ne         |                                                                 Título da janela                                                                 |
+|   MÓDULOS   |         eq, ne         |                                                                   Nome da DLL                                                                   |
 
 ## <a name="remarks"></a>Comentários
 
@@ -96,4 +96,4 @@ tasklist /s srvmain /u maindom\hiropln /p p@ssW23
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

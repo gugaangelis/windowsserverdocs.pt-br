@@ -9,12 +9,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 4577e65fe5dd2193fe7256cc555e859a78824b4b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 35d6322f053c7a02dc1df5430b28f771f57a1ad7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867937"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442574"
 ---
 # <a name="mapping-design-requirements-to-forest-design-models"></a>Requisitos de mapeamento de Design para modelos de Design de floresta
 
@@ -89,13 +89,13 @@ Considerações sobre a criação de florestas para isolamento de dados incluem 
 
 - Organizacionais florestas criadas para o isolamento de dados podem confiar em domínios de outras florestas, mas os usuários de outras florestas não devem ser incluídos em qualquer uma das seguintes opções:  
 
-   - Grupos responsáveis pelo gerenciamento de serviços ou grupos que podem gerenciar a associação de grupos de administradores de serviço  
+  - Grupos responsáveis pelo gerenciamento de serviços ou grupos que podem gerenciar a associação de grupos de administradores de serviço  
 
-   - Grupos que têm controle administrativo sobre computadores que armazenam dados protegidos  
+  - Grupos que têm controle administrativo sobre computadores que armazenam dados protegidos  
 
-   - Protegido de grupos que têm acesso a dados ou grupos responsáveis pelo gerenciamento de objetos de usuário ou objetos de grupo que têm acesso a dados de protegidos  
+  - Protegido de grupos que têm acesso a dados ou grupos responsáveis pelo gerenciamento de objetos de usuário ou objetos de grupo que têm acesso a dados de protegidos  
 
-   Se os usuários de outra floresta forem incluídos em qualquer um desses grupos, um comprometimento de outra floresta pode levar ao comprometimento da floresta isolado e a divulgação dos dados protegidos.  
+    Se os usuários de outra floresta forem incluídos em qualquer um desses grupos, um comprometimento de outra floresta pode levar ao comprometimento da floresta isolado e a divulgação dos dados protegidos.  
 
 - Outras florestas podem ser configuradas para confiar na floresta organizacional criada para o isolamento de dados para que os usuários na floresta isolado podem acessar recursos em outras florestas. No entanto, os usuários da floresta isolado interativamente nunca devem fazer logon em estações de trabalho na floresta confiante. O computador na floresta confiante potencialmente pode ser comprometido por software mal-intencionado e pode ser usado para capturar as credenciais de logon do usuário.  
 

@@ -8,12 +8,12 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f207993580e6fd06c9ff185e58e5b7e81af60252
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2b2275af0934413fa2de02de720d609feda7392c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847827"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444452"
 ---
 # <a name="prepare-to-migrate-the-ad-fs-20-federation-server-proxy"></a>Preparar para migrar o proxy do servidor de federação do AD FS 2.0
 
@@ -35,13 +35,13 @@ Para se preparar para migrar um proxy do AD FS 2.0 federation server to Windows 
 > [!NOTE]
 >  Esta etapa é opcional porque esse certificado é preservado durante a atualização do sistema operacional.  
   
-2.  Exporte as propriedades de proxy de federação do AD FS 2.0 para um arquivo. É possível fazer isso usando o Windows PowerShell.  
+2. Exporte as propriedades de proxy de federação do AD FS 2.0 para um arquivo. É possível fazer isso usando o Windows PowerShell.  
   
 Abra o Windows PowerShell e execute o seguinte comando para adicionar os cmdlets do AD FS à sessão do Windows PowerShell: `PSH:>add-pssnapin “Microsoft.adfs.powershell”`. Em seguida, execute o seguinte comando para exportar as propriedades do proxy de federação para um arquivo: `PSH:> Get-ADFSProxyProperties | out-file “.\proxyproperties.txt”`.  
   
-3.  Certifique-se de que você saiba as credenciais de uma conta que é um administrador do servidor de federação do AD FS ou a conta de serviço sob a qual o serviço de federação do AD FS é executado.  Essas informações são necessárias para a configuração de confiança do proxy.  
+3. Certifique-se de que você saiba as credenciais de uma conta que é um administrador do servidor de federação do AD FS ou a conta de serviço sob a qual o serviço de federação do AD FS é executado.  Essas informações são necessárias para a configuração de confiança do proxy.  
   
- Concluir essa etapa resulta em reunir as informações a seguir que são necessárias para configurar seu proxy do servidor de federação do AD FS:  
+   Concluir essa etapa resulta em reunir as informações a seguir que são necessárias para configurar seu proxy do servidor de federação do AD FS:  
   
 -   Nome do serviço de federação do AD FS  
   
@@ -57,4 +57,4 @@ Abra o Windows PowerShell e execute o seguinte comando para adicionar os cmdlets
  [Preparar para migrar o Proxy do AD FS 2.0 Federation Server](prepare-to-migrate-ad-fs-fed-proxy.md)   
  [Migrar o servidor do AD FS 2.0 Federation](migrate-the-ad-fs-fed-server.md)   
  [Migrar o Proxy do AD FS 2.0 Federation Server](migrate-the-ad-fs-2-fed-server-proxy.md)   
- [Migrar os AD FS agentes Web 1.1](migrate-the-ad-fs-web-agent.md)
+ [Migrar os Agentes Web do AD FS 1.1](migrate-the-ad-fs-web-agent.md)

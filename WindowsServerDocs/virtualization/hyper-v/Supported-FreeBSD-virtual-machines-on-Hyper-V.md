@@ -11,12 +11,12 @@ ms.assetid: 930e758f-bd50-46b4-a3a4-9857110f17b4
 author: shirgall
 ms.author: kathydav
 ms.date: 08/30/2017
-ms.openlocfilehash: a398334700f7c292732207919b73a33145a6aae9
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: f11ef246ce4ac4f8773f046a25badd83cff106d0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222688"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447736"
 ---
 # <a name="supported-freebsd-virtual-machines-on-hyper-v"></a>Máquinas de virtuais FreeBSD com suporte no Hyper-V
 
@@ -94,7 +94,7 @@ O mapa de distribuição de recurso a seguir indica os recursos em cada versão.
     # dd if=/dev/da1 of=/dev/da1 count=0
     # gpart recover da1
     ```
-**Observações adicionais**: A matriz de recurso de estável 10 e 11 estável é a mesma versão do FreeBSD 11.1. Além disso, FreeBSD 10.2 e versões anteriores (10.1, 10.0, 9, 8. x) são o fim da vida útil. Consulte [aqui](https://security.freebsd.org/) para obter uma lista atualizada das versões com suporte e os comunicados de segurança mais recentes.
+   **Observações adicionais**: A matriz de recurso de estável 10 e 11 estável é a mesma versão do FreeBSD 11.1. Além disso, FreeBSD 10.2 e versões anteriores (10.1, 10.0, 9, 8. x) são o fim da vida útil. Consulte [aqui](https://security.freebsd.org/) para obter uma lista atualizada das versões com suporte e os comunicados de segurança mais recentes.
 
 **Observações adicionais**: A matriz de recurso de estável 10 e 11 estável é a mesma versão do FreeBSD 11.1. Além disso, FreeBSD 10.2 e versões anteriores (10.1, 10.0, 9, 8. x) são o fim da vida útil. Consulte [aqui](https://security.freebsd.org/) para obter uma lista atualizada das versões com suporte e os comunicados de segurança mais recentes.
 

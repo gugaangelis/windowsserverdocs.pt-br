@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8684926beb0f0c911ac384970d15ba7d25f84079
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: ddf6a816e417c2eddff090df8dba841a894a3255
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65475927"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447677"
 ---
 # <a name="enable-always-offline-mode-for-faster-access-to-files"></a>Habilitar o modo sempre Offline para acesso mais rápido aos arquivos
 
@@ -44,7 +44,7 @@ Para habilitar o modo sempre Offline, use a diretiva de grupo para habilitar o *
 6. Selecione **Habilitado**.
 7. No **opções** caixa, selecione **Mostrar**. O **janela Mostrar conteúdo** será exibida.
 8. No **nome do valor** , especifique o compartilhamento de arquivos para o qual você deseja habilitar o modo sempre Offline.
-9. Para habilitar o modo sempre Offline em todos os compartilhamentos de arquivos, insira **\***.
+9. Para habilitar o modo sempre Offline em todos os compartilhamentos de arquivos, digite * *\\* * *.
 10. No **valor** , digite **latência = 1** para definir o limite de latência de um milissegundo e, em seguida, selecione **Okey**.
 
 >[!NOTE]

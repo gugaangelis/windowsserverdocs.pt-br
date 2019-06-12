@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cde0e9786f72823f446202f1c87ad8e9e181d29c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0b76d16bdc9099d78e35d8714397d61b9af0f389
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848197"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437325"
 ---
 # <a name="mode"></a>modo
 
@@ -44,21 +44,21 @@ mode com<M>[:] [baud=<B>] [parity=<P>] [data=<D>] [stop=<S>] [to={on|off}] [xon=
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|Com\<M>[:]|Especifica o número de porta de comunicação Prncnfg.vbshronous async.|
-|baud=\<B>|Especifica a taxa de transmissão em bits por segundo. A tabela a seguir lista as abreviações válidas para *B* e suas taxas de relacionados.</br>-   **11** = 110 baud</br>-   **15** = 150 baud</br>-   **30** = 300 baud</br>-   **60** = 600 baud</br>-   **12** = 1200 baud</br>-   **24** = 2400 baud</br>-   **48** = 4800 baud</br>-   **96** = 9600 baud</br>-   **19** = baud 19.200|
-|parity=\<P>|Especifica como o sistema usa o bit de paridade para verificar se há erros de transmissão. A tabela a seguir lista os valores válidos para *P*. O valor padrão é **eletrônico**. Nem todos os computadores suportam os valores **m** e **s**.</br>-   **n** = nenhum</br>-   **e** = even</br>-   **o** = odd</br>-   **m** = marca</br>-   **s** = space|
-|data=\<D>|Especifica o número de bits de dados em um caractere. Os valores válidos para **1!d** estão no intervalo de 5 a 8. O valor padrão é 7. Nem todos os computadores suportam os valores 5 e 6.|
-|stop=\<S>|Especifica o número de bits de parada que define o final de um caractere de: 1, 1.5 ou 2. Se a taxa de transmissão for 110, o valor padrão é 2. Caso contrário, o valor padrão é 1. Nem todos os computadores suportam o valor 1.5.|
-|to={on | off}|Especifica se o processamento de tempo limite infinito está ativado ou desativado. O padrão é off.|
-|xon={on | off}|Especifica se o protocolo xon ou xoff para controle de fluxo de dados está ativado ou desativado.|
-|odsr={on | off}|Especifica se o handshake de saída que utiliza o circuito de conjunto de dados pronto (DSR) está ativado ou desativado.|
-|octs={on | off}|Especifica se o handshake de saída que utiliza o circuito pronto para enviar (CTS) está ativado ou desativado.|
-|dtr={on | configurações | hs}|Especifica se o circuito Data Terminal Ready (DTR) está ativado ou desativado ou definido para handshake.|
-|rts={on | configurações | hs | tg}|Especifica se o circuito de solicitação para enviar (RTS) é definido como ativado, desativado, handshake ou ativar/desativar.|
-|idsr={on | off}|Especifica se a sensibilidade do DSR circuito está ativado ou desativado.|
-|/?|Exibe a ajuda no prompt de comando.|
+|  Parâmetro  |                                                                                                                                                                                     Descrição                                                                                                                                                                                     |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Com\<M>[:]  |                                                                                                                                                      Especifica o número de porta de comunicação Prncnfg.vbshronous async.                                                                                                                                                      |
+|  baud=\<B>  | Especifica a taxa de transmissão em bits por segundo. A tabela a seguir lista as abreviações válidas para *B* e suas taxas de relacionados.</br>-   **11** = 110 baud</br>-   **15** = 150 baud</br>-   **30** = 300 baud</br>-   **60** = 600 baud</br>-   **12** = 1200 baud</br>-   **24** = 2400 baud</br>-   **48** = 4800 baud</br>-   **96** = 9600 baud</br>-   **19** = baud 19.200 |
+| parity=\<P> |                              Especifica como o sistema usa o bit de paridade para verificar se há erros de transmissão. A tabela a seguir lista os valores válidos para *P*. O valor padrão é **eletrônico**. Nem todos os computadores suportam os valores **m** e **s**.</br>-   **n** = nenhum</br>-   **e** = even</br>-   **o** = odd</br>-   **m** = marca</br>-   **s** = space                              |
+|  data=\<D>  |                                                                                                    Especifica o número de bits de dados em um caractere. Os valores válidos para **1!d** estão no intervalo de 5 a 8. O valor padrão é 7. Nem todos os computadores suportam os valores 5 e 6.                                                                                                     |
+|  stop=\<S>  |                                                                                  Especifica o número de bits de parada que define o final de um caractere de: 1, 1.5 ou 2. Se a taxa de transmissão for 110, o valor padrão é 2. Caso contrário, o valor padrão é 1. Nem todos os computadores suportam o valor 1.5.                                                                                   |
+|   to={on    |                                                                                                                                                                                        off}                                                                                                                                                                                         |
+|   xon={on   |                                                                                                                                                                                        off}                                                                                                                                                                                         |
+|  odsr={on   |                                                                                                                                                                                        off}                                                                                                                                                                                         |
+|  octs={on   |                                                                                                                                                                                        off}                                                                                                                                                                                         |
+|   dtr={on   |                                                                                                                                                                                         configurações                                                                                                                                                                                         |
+|   rts={on   |                                                                                                                                                                                         configurações                                                                                                                                                                                         |
+|  idsr={on   |                                                                                                                                                                                        off}                                                                                                                                                                                         |
+|     /?      |                                                                                                                                                                        Exibe a ajuda no prompt de comando.                                                                                                                                                                         |
 
 ## <a name="BKMK_2"></a>Para exibir o status de todos os dispositivos ou de um único dispositivo
 
@@ -171,14 +171,14 @@ mode con[:] [rate=<R> delay=<D>]
 
 ### <a name="remarks"></a>Comentários
 
--   A taxa de digitação é a taxa na qual um caractere se repete quando você mantém pressionada a tecla desse caractere. A taxa de digitação tem dois componentes, a taxa e o atraso. Alguns teclados não reconhecem esse comando.
--   Usando **taxa = * * * R*
+- A taxa de digitação é a taxa na qual um caractere se repete quando você mantém pressionada a tecla desse caractere. A taxa de digitação tem dois componentes, a taxa e o atraso. Alguns teclados não reconhecem esse comando.
+- Usando o **taxa =** <em>R</em>
 
-    Valores válidos estão no intervalo de 1 a 32. Esses valores são iguais a aproximadamente de 2 a 30 caracteres por segundo. O valor padrão é 20 para teclados compatíveis com o IBM AT e 21 para teclados PS/2 compatíveis com IBM. Se você definir a taxa, você também deve definir o atraso.
--   Usando o **atraso**=*1!d*
+  Valores válidos estão no intervalo de 1 a 32. Esses valores são iguais a aproximadamente de 2 a 30 caracteres por segundo. O valor padrão é 20 para teclados compatíveis com o IBM AT e 21 para teclados PS/2 compatíveis com IBM. Se você definir a taxa, você também deve definir o atraso.
+- Usando o **atraso**=*1!d*
 
-    Os valores válidos para *1!d* são 1, 2, 3 e 4 (representando 0,25, 0,50, 0,75 e 1 segundo). O valor padrão é 2. Se você definir o atraso, você também deve definir a taxa.
+  Os valores válidos para *1!d* são 1, 2, 3 e 4 (representando 0,25, 0,50, 0,75 e 1 segundo). O valor padrão é 2. Se você definir o atraso, você também deve definir a taxa.
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

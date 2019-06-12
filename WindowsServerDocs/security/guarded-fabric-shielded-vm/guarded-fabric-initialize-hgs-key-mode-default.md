@@ -7,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: e4561729b904bc379f20de914cef9544fc036486
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 891e94338544e1ced5833a5272502beb239dfd86
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859237"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447449"
 ---
 # <a name="initialize-the-hgs-cluster-using-key-mode-in-a-new-dedicated-forest-default"></a>Inicializar o cluster HGS usando o modo de chave em uma floresta nova dedicada (padrão)
 
@@ -46,5 +46,5 @@ ms.locfileid: "59859237"
 
 ## <a name="next-step"></a>Próximas etapas
 
->[!div class="nextstepaction"]
-[Criar chave de host](guarded-fabric-create-host-key.md)
+> [!div class="nextstepaction"]
+> [Criar chave de host](guarded-fabric-create-host-key.md)

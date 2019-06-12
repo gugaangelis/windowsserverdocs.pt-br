@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: e20b4960faac0ef40ad68271fa907394344e9c47
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: b1e5726e3976527278b11f105007a32548da0bc4
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034421"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66805156"
 ---
 # <a name="add-the-rd-connection-broker-server-to-the-deployment-and-configure-high-availability"></a>Adicionar o servidor do Agente de Conexão de Área de Trabalho Remota à implantação e configurar a alta disponibilidade
 
@@ -27,7 +27,7 @@ Você pode implantar um cluster do agente de Conexão de área de trabalho remot
 
 ## <a name="pre-requisites"></a>Pré-requisitos
 
-Configurar um servidor para atuar como um segundo agente de Conexão de área de trabalho remota - isso pode ser um servidor físico ou em uma VM.
+Configurar um servidor para atuar como um segundo agente de Conexão de área de trabalho remota — isso pode ser um servidor físico ou em uma VM.
 
 Configure um banco de dados para o agente de Conexão. Você pode usar [banco de dados SQL](https://azure.microsoft.com/documentation/articles/sql-database-get-started/#create-a-new-aure-sql-database) instância ou o SQL Server em seu ambiente local. Falamos sobre como usar o SQL do Azure abaixo, mas as etapas ainda se aplicam ao SQL Server. Você precisará encontrar a cadeia de conexão para o banco de dados e verifique se que você tem o driver ODBC correto.
 
@@ -36,21 +36,23 @@ Configure um banco de dados para o agente de Conexão. Você pode usar [banco de
 1. Encontrar a cadeia de conexão para o banco de dados que você criou - você precisa-la para identificar a versão do driver ODBC, você precisa e mais tarde, quando você estiver configurando o agente de Conexão em si (etapa 3), portanto, salve a cadeia de caracteres em algum lugar em que você possa referenciá-la facilmente. Aqui está como você encontrar a cadeia de caracteres de conexão para o SQL Azure:  
     1. No portal do Azure, clique em **procurar > grupos de recursos** e clique no grupo de recursos para a implantação.   
     2. Selecione o banco de dados do SQL que você acabou de criar (por exemplo, DB1 CB).   
-    3. Clique em **Configurações > Propriedades > Mostrar cadeias de conexão de banco de dados**.   
+    3. Clique em **as configurações** > **as propriedades** > **Mostrar cadeias de conexão de banco de dados**.   
     4. Copie a cadeia de conexão para **ODBC (inclui Node. js)** , que deve ser assim:   
       
-        Driver={SQL Server Native Client 13.0};Server=tcp:cb-sqls1.database.windows.net,1433;Database=CB-DB1;Uid=sqladmin@contoso;Pwd={your_password_here};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;   
+        ```
+        Driver={SQL Server Native Client 13.0};Server=tcp:cb-sqls1.database.windows.net,1433;Database=CB-DB1;Uid=sqladmin@contoso;Pwd={your_password_here};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;
+        ```
   
     5. Substitua "your_password_here" com a senha real. Você usará essa cadeia de caracteres inteira, com sua senha incluída, ao se conectar ao banco de dados. 
 2. Instale o driver ODBC no novo agente de Conexão: 
    1. Se você estiver usando uma VM para o agente de Conexão, crie um endereço IP público para o primeiro agente de Conexão de área de trabalho. (Você só precisará fazer isso se a máquina virtual RDMS ainda não tiver um endereço IP público para permitir conexões de RDP.)
-       1. No portal do Azure, clique em **procurar > grupos de recursos**, clique no grupo de recursos para a implantação e, em seguida, clique na primeira máquina de virtual do agente de Conexão de área de trabalho (por exemplo, Contoso-Cb1).
+       1. No portal do Azure, clique em **navegue** > **grupos de recursos**, clique no grupo de recursos para a implantação e, em seguida, clique na primeira máquina virtual de agente de Conexão de área de trabalho (por exemplo, Contoso-Cb1).
        2. Clique em **Configurações > interfaces de rede**e, em seguida, clique em interface de rede correspondente.
        3. Clique em **Configurações > endereço IP**.
        4. Para **endereço IP público**, selecione **Enabled**e, em seguida, clique em **endereço IP**.
        5. Se você tiver um endereço IP público existente que você deseja usar, selecione-o na lista. Caso contrário, clique em **criar novo**, insira um nome e, em seguida, clique em **Okey** e, em seguida, **salvar**.
    2. Conecte-se para o primeiro agente de Conexão de área de trabalho remota:
-       1. No portal do Azure, clique em **procurar > grupos de recursos**, clique no grupo de recursos para a implantação e, em seguida, clique na primeira máquina de virtual do agente de Conexão de área de trabalho (por exemplo, Contoso-Cb1).
+       1. No portal do Azure, clique em **navegue** > **grupos de recursos**, clique no grupo de recursos para a implantação e, em seguida, clique na primeira máquina virtual de agente de Conexão de área de trabalho (por exemplo, Contoso-Cb1).
        2. Clique em **Connect > Abrir** para abrir o cliente de área de trabalho remota.
        3. No cliente, clique em **Connect**e, em seguida, clique em **usar outra conta de usuário**. Insira o nome de usuário e senha para uma conta de administrador de domínio.
        4. Clique em **Sim** quando avisado sobre o certificado.

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08a9fad482930d353eff1c09923155a510791c9a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 99ac8736ca8223a1a444784c4cf605a973a9e4dd
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818427"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436547"
 ---
 # <a name="nslookup-set"></a>nslookup set
 
@@ -30,11 +30,13 @@ Altera as configurações que afetam como função de pesquisas.
 set <KeyWord>[=<Value>]
 ```
 ## <a name="parameters"></a>Parâmetros
-|Parâmetro|Descrição|
-|-------|--------|
-|<KeyWord>|Identifica subcomandos que derivam de **definir** subcomando. Por exemplo, o subcomando **set d2** tem uma palavra-chave do [**nenhuma**]**d2**. Para obter a lista de subcomandos que são derivados do **definir** subcomando, consulte Referências adicionais.|
-|<Value>|Especifica o valor de configuração nslookup para cada subcomando.|
-|{Ajuda &#124; ?}|Exibe um resumo breve dos **nslookup** subcomandos.|
+
+|    Parâmetro    |                                                                                                                    Descrição                                                                                                                    |
+|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    <KeyWord>    | Identifica subcomandos que derivam de **definir** subcomando. Por exemplo, o subcomando **set d2** tem uma palavra-chave do [**nenhuma**]**d2**. Para obter a lista de subcomandos que são derivados do **definir** subcomando, consulte Referências adicionais. |
+|     <Value>     |                                                                                      Especifica o valor de configuração nslookup para cada subcomando.                                                                                      |
+| {Ajuda &#124; ?} |                                                                                               Exibe um resumo breve dos **nslookup** subcomandos.                                                                                               |
+
 ## <a name="remarks"></a>Comentários
 Use **definir tudo** para ver uma lista das configurações atuais.
 ## <a name="additional-references"></a>Referências adicionais

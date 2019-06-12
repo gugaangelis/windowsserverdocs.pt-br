@@ -9,12 +9,12 @@ ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 42b71667758f392d641c5262e34322f8b21cfad9
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 979802469737066612bc6242f942fd3acd077479
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188906"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444797"
 ---
 # <a name="walkthrough-workplace-join-with-an-ios-device"></a>Passo a passo: Ingresso no Local de Trabalho com um dispositivo iOS
 
@@ -37,23 +37,23 @@ Nesta demonstração, você ingressa o dispositivo no local de trabalho.
 
 #### <a name="to-join-an-ios-device-to-a-workplace"></a>Para ingressar um dispositivo iOS em um local de trabalho
 
-1.  -   **Quando o serviço Registro de Dispositivo do Active Directory do Azure é o DRS configurado:** Abra o Apple Safari e navegue até o ponto de extremidade do perfil por satélite de serviço de registro de dispositivo do Active Directory do Azure para dispositivos iOS, <`https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/<yourdomainname` > em que <`yourdomainname`> é o nome de domínio que você configurou com o Azure Active Directory. Por exemplo, se seu nome de domínio for contoso.com, a URL seria: `https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/contoso.com`
+1. -   **Quando o serviço Registro de Dispositivo do Active Directory do Azure é o DRS configurado:** Abra o Apple Safari e navegue até o ponto de extremidade do perfil por satélite de serviço de registro de dispositivo do Active Directory do Azure para dispositivos iOS, <`https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/<yourdomainname` > em que <`yourdomainname`> é o nome de domínio que você configurou com o Azure Active Directory. Por exemplo, se seu nome de domínio for contoso.com, a URL seria: `https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/contoso.com`
 
-    -   **Quando DRS local é o DRS configurado**: Abra o Apple Safari e navegue até o ponto de extremidade perfil por satélite de serviço de registro de dispositivo (DRS) para dispositivos iOS, `https://adf1s.contoso.com/enrollmentserver/otaprofile`
+   -   **Quando DRS local é o DRS configurado**: Abra o Apple Safari e navegue até o ponto de extremidade perfil por satélite de serviço de registro de dispositivo (DRS) para dispositivos iOS, `https://adf1s.contoso.com/enrollmentserver/otaprofile`
 
-    Há muitas maneiras de se comunicar esta URL aos usuários. Uma maneira recomendada é publicando a URL em uma mensagem negada de acesso de aplicativo personalizado no AD FS. Isso é abordado na seção a seguir: [Criar uma política de acesso do aplicativo e o acesso negado a mensagem personalizada](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup#create-an-application-access-policy-and-custom-access-denied-message)
+   Há muitas maneiras de se comunicar esta URL aos usuários. Uma maneira recomendada é publicando a URL em uma mensagem negada de acesso de aplicativo personalizado no AD FS. Isso é abordado na seção a seguir: [Criar uma política de acesso do aplicativo e o acesso negado a mensagem personalizada](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup#create-an-application-access-policy-and-custom-access-denied-message)
 
-2.  Faça logon na página da Web usando uma conta de domínio da empresa: **roberth@contoso.com** e a senha: **P@ssword**.
+2. Faça logon na página da Web usando uma conta de domínio da empresa: <strong>roberth@contoso.com</strong> e a senha: <strong>P@ssword</strong>.
 
-3.  Aparecerá um aviso para que você instale um perfil. Na tela **Instalar Perfil** , clique em **Instalar**.
+3. Aparecerá um aviso para que você instale um perfil. Na tela **Instalar Perfil** , clique em **Instalar**.
 
-4.  Quando solicitado a confirmar a instalação do perfil, clique em **Instalar Agora**.
+4. Quando solicitado a confirmar a instalação do perfil, clique em **Instalar Agora**.
 
-5.  Se seu dispositivo requer um PIN para ser desbloqueado, você será solicitado a inserir seu PIN.
+5. Se seu dispositivo requer um PIN para ser desbloqueado, você será solicitado a inserir seu PIN.
 
-6.  A instalação do perfil é concluída quando você aparecer a tela **Perfil Instalado** . Clique em **Concluído**.
+6. A instalação do perfil é concluída quando você aparecer a tela **Perfil Instalado** . Clique em **Concluído**.
 
-    Retorne ao Safari. Uma mensagem informa que você pode fechar ou sair do Safari.
+   Retorne ao Safari. Uma mensagem informa que você pode fechar ou sair do Safari.
 
 > [!TIP]
 > Para exibir ou remover o perfil do Ingresso no Local de Trabalho, navegue até **Configurações**, clique em **Geral** e em **Perfis** em seu dispositivo iOS.

@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 4846b548-8fbc-4a7f-af13-09e834acdec0
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ed6ac2ebc8839d0e7ecee682d7644251f8a59381
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 68f30973ef58b64006181990425e6ca84c39c059
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829067"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812042"
 ---
 # <a name="dns-responses-based-on-time-of-day-with-an-azure-cloud-app-server"></a>Respostas de DNS com base na hora do dia com o Servidor de aplicativos da nuvem do Azure
 
@@ -23,10 +23,10 @@ Você pode usar este tópico para aprender a distribuir o tráfego de aplicativo
 
 Esse cenário é útil em situações em que você deseja direcionar o tráfego em um fuso horário para servidores de aplicativos alternativo, como servidores Web são hospedados no Microsoft Azure, que estão localizados em outro fuso horário. Isso permite que você carregue balancear o tráfego entre as instâncias do aplicativo durante o horário de pico quando seus servidores primários são sobrecarregados com o tráfego de períodos de tempo. 
 
->[!NOTE]
->Para saber como usar a política DNS para respostas DNS inteligentes sem o uso do Azure, consulte [usar a política de DNS para inteligente DNS respostas com base na hora do dia](Scenario--Use-DNS-Policy-for-Intelligent-DNS-Responses-Based-on-the-Time-of-Day.md). 
+> [!NOTE]
+> Para saber como usar a política DNS para respostas DNS inteligentes sem o uso do Azure, consulte [usar a política de DNS para inteligente DNS respostas com base na hora do dia](Scenario--Use-DNS-Policy-for-Intelligent-DNS-Responses-Based-on-the-Time-of-Day.md). 
 
-## <a name="bkmk_azureexample"></a>Exemplo de respostas DNS inteligente com base na hora do dia com o servidor de aplicativos de nuvem do Azure
+## <a name="example-of-intelligent-dns-responses-based-on-the-time-of-day-with-azure-cloud-app-server"></a>Exemplo de respostas DNS inteligente com base na hora do dia com o servidor de aplicativos de nuvem do Azure
 
 A seguir está um exemplo de como você pode usar a política de DNS para o tráfego de aplicativo de saldo com base na hora do dia.
 
@@ -44,8 +44,8 @@ Para garantir que os clientes contosogiftservices.com obtenham uma experiência 
 
 Os serviços de brinde do Contoso obtém um endereço IP público do Azure para a VM (192.68.31.44) e desenvolve a automação para implantar o servidor Web de todos os dias no Azure entre - 10 às 17H, permitindo um período de contingência de uma hora.
 
->[!NOTE]
->Para obter mais informações sobre as VMs do Azure, consulte [documentação das máquinas virtuais](https://azure.microsoft.com/documentation/services/virtual-machines/) 
+> [!NOTE]
+> Para obter mais informações sobre as VMs do Azure, consulte [documentação das máquinas virtuais](https://azure.microsoft.com/documentation/services/virtual-machines/) 
 
 Os servidores DNS estão configurados com escopos de zona e políticas de DNS para que entre 5 a 9 horas diariamente, 30% das consultas são enviadas para a instância do servidor Web que está em execução no Azure.
 
@@ -53,7 +53,7 @@ A ilustração a seguir ilustra esse cenário.
 
 ![Política de DNS para o tempo de respostas do dia](../../media/DNS-Policy-Tod2/dns_policy_tod2.jpg)  
 
-## <a name="bkmk_azurehow"></a>Como as respostas DNS inteligente com base na hora do dia com o Azure do servidor de aplicativo funciona
+## <a name="how-intelligent-dns-responses-based-on-time-of-day-with-azure-app-server-works"></a>Como as respostas DNS inteligente com base na hora do dia com o Azure do servidor de aplicativo funciona
  
 Este artigo demonstra como configurar o servidor DNS para responder a consultas DNS com dois endereços IP de servidor de aplicativo diferentes - um servidor web está em Seattle e o outro está em um datacenter do Azure.
 
@@ -63,29 +63,29 @@ Em todos os outros momentos do dia, o processamento de consulta normal ocorre e 
 
 O TTL de 10 minutos no registro do Azure garante que o registro é expirado do cache LDNS antes que a VM seja removida do Azure. Um dos benefícios de dimensionamento de tal é que você pode manter seu DNS dados locais e manter escala horizontal para o Azure conforme a demanda.
 
-## <a name="bkmk_azureconfigure"></a>Como configurar a política de DNS para respostas DNS inteligente com base na hora do dia com o servidor de aplicativo do Azure
+## <a name="how-to-configure-dns-policy-for-intelligent-dns-responses-based-on-time-of-day-with-azure-app-server"></a>Como configurar a política de DNS para respostas DNS inteligente com base na hora do dia com o servidor de aplicativo do Azure
+
 Para configurar a política de DNS para respostas de consulta de tempo de balanceamento de carga de aplicativo dia com base, você deve executar as etapas a seguir.
 
+- [Criar os escopos de zona](#create-the-zone-scopes)
+- [Adicionar registros para os escopos de zona](#add-records-to-the-zone-scopes)
+- [Crie as políticas de DNS](#create-the-dns-policies)
 
-- [Criar os escopos de zona](#bkmk_zscopes)
-- [Adicionar registros para os escopos de zona](#bkmk_records)
-- [Crie as políticas de DNS](#bkmk_policies)
-
-
->[!NOTE]
->Você deve executar essas etapas no servidor DNS autoritativo para a zona que você deseja configurar. Associação no grupo DnsAdmins, ou equivalente, é necessário para executar os procedimentos a seguir. 
+> [!NOTE]
+> Você deve executar essas etapas no servidor DNS autoritativo para a zona que você deseja configurar. Associação no grupo DnsAdmins, ou equivalente, é necessário para executar os procedimentos a seguir. 
 
 As seções a seguir fornecem instruções de configuração detalhadas.
 
->[!IMPORTANT]
->As seções a seguir incluem comandos do Windows PowerShell de exemplo que contêm valores de exemplo para muitos parâmetros. Certifique-se de que você substitua os valores de exemplo nesses comandos com os valores que são apropriadas para sua implantação antes de executar esses comandos. 
+> [!IMPORTANT]
+> As seções a seguir incluem comandos do Windows PowerShell de exemplo que contêm valores de exemplo para muitos parâmetros. Certifique-se de que você substitua os valores de exemplo nesses comandos com os valores que são apropriadas para sua implantação antes de executar esses comandos. 
 
 
-### <a name="bkmk_zscopes"></a>Criar os escopos de zona
+### <a name="create-the-zone-scopes"></a>Criar os escopos de zona
+
 Um escopo de zona é uma instância exclusiva da zona. Uma zona DNS pode ter vários escopos de zona, com cada escopo de zona que contém seu próprio conjunto de registros DNS. O mesmo registro pode estar presente em vários escopos, com diferentes endereços IP ou os mesmos endereços IP. 
 
->[!NOTE]
->Por padrão, um escopo de zona existe nas zonas DNS. Esse escopo de zona tem o mesmo nome que a zona e operações de DNS herdadas funcionam neste escopo. 
+> [!NOTE]
+> Por padrão, um escopo de zona existe nas zonas DNS. Esse escopo de zona tem o mesmo nome que a zona e operações de DNS herdadas funcionam neste escopo. 
 
 Você pode usar o comando de exemplo a seguir para criar um escopo de zona para hospedar os registros do Azure.
 
@@ -95,7 +95,7 @@ Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AzureZoneScope
 
 Para obter mais informações, consulte [DnsServerZoneScope adicionar](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-### <a name="bkmk_records"></a>Adicionar registros para os escopos de zona
+### <a name="add-records-to-the-zone-scopes"></a>Adicionar registros para os escopos de zona
 A próxima etapa é adicionar os registros que representa o host do servidor Web para os escopos de zona. 
 
 AzureZoneScope, www.contosogiftservices.com o registro é adicionado com o endereço IP 192.68.31.44, que está localizado na nuvem pública do Azure. 
@@ -114,7 +114,7 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 
 Para obter mais informações, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).  
 
-### <a name="bkmk_policies"></a>Crie as políticas de DNS 
+### <a name="create-the-dns-policies"></a>Crie as políticas de DNS 
 Depois que os escopos de zona são criados, você pode criar políticas DNS que distribui as consultas de entrada nesses escopos para que ocorra o seguinte.
 
 1. Do PM de 6 a 9 PM diariamente, 30% dos clientes recebem o endereço IP do servidor Web no datacenter do Azure na resposta DNS, enquanto os 70% dos clientes recebem o endereço IP do servidor Web de local de Seattle.
