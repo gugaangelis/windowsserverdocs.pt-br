@@ -12,12 +12,12 @@ ms.assetid: 198d16cb-3d07-4706-be89-ad14a5f7dc47
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9c240320d990652a4669499d99c1fc3eba9e06fa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4dd32d57f6f36bdbf94c763fe0cbd1f37ff990b8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883587"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433117"
 ---
 # <a name="overview-of-the-launchpad-in-windows-server-essentials"></a>Visão geral da Barra Inicial no Windows Server Essentials
 
@@ -29,20 +29,20 @@ A Barra Inicial do Windows Server Essentials é um pequeno aplicativo que é ins
   
  Os seguintes sistemas operacionais do Windows oferecem suporte ao uso da Barra Inicial do Windows Server Essentials:  
   
--   **Windows 8**: Todas as edições.  
+- **Windows 8**: Todas as edições.  
   
--   **Windows 7**: Todas as edições.  
--   **Windows 10**: Todas as edições. 
+- **Windows 7**: Todas as edições.  
+- **Windows 10**: Todas as edições. 
   
- Os seguintes sistemas operacionais não têm suporte para o uso da Barra Inicial do Windows Server Essentials:  
+  Os seguintes sistemas operacionais não têm suporte para o uso da Barra Inicial do Windows Server Essentials:  
   
--   **Servidores adicionais**: Você não pode executar a Barra Inicial do Windows Server Essentials em quaisquer outros computadores que executam um sistema operacional Windows Server.  
+- **Servidores adicionais**: Você não pode executar a Barra Inicial do Windows Server Essentials em quaisquer outros computadores que executam um sistema operacional Windows Server.  
   
- Neste tópico:  
+  Neste tópico:  
   
--   [Usar a barra inicial](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Launchpad)  
+- [Usar a barra inicial](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Launchpad)  
   
--   [Usar a barra inicial com um computador Mac](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Mac)  
+- [Usar a barra inicial com um computador Mac](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Mac)  
   
 ##  <a name="BKMK_Launchpad"></a> Usar a barra inicial  
  Os links e informações a seguir estão disponíveis na Barra Inicial do Windows Server Essentials.  
@@ -50,13 +50,13 @@ A Barra Inicial do Windows Server Essentials é um pequeno aplicativo que é ins
 ### <a name="backup"></a>Backup  
  Clique em **Backup** para abrir as **Propriedades de Backup** do computador. Na página **Propriedades de Backup**, você pode:  
   
--   Iniciar ou interromper um backup.  
+- Iniciar ou interromper um backup.  
   
--   Exibir o status e os detalhes do backup mais recente.  
+- Exibir o status e os detalhes do backup mais recente.  
   
--   Especificar como gerenciar a energia do computador quando o backup é executado.  
+- Especificar como gerenciar a energia do computador quando o backup é executado.  
   
- Para obter informações sobre como usar a barra inicial para fazer backup do computador, consulte [Gerenciar Backup do cliente](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md).  
+  Para obter informações sobre como usar a barra inicial para fazer backup do computador, consulte [Gerenciar Backup do cliente](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md).  
   
 ### <a name="remote-web-access"></a>Acesso Remoto via Web  
  Clique em **Acesso via Web remoto** para abrir o navegador da Web no site do Acesso via Web remoto. O site de Acesso via Web remoto permite que você se conecte a outros computadores e acesse alguns dos recursos de rede de dentro do escritório ou de qualquer local remoto com um computador conectado à Internet. Para obter mais informações sobre o acesso via Web remoto, consulte [Manage Remote Web Access](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md).  
@@ -100,6 +100,6 @@ A Barra Inicial do Windows Server Essentials é um pequeno aplicativo que é ins
   
 -   [Conecte-se](../use/Get-Connected-in-Windows-Server-Essentials.md)  
   
--   [Usar o Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)  
+-   [Utilizar o Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)  
   
 -   [Gerenciar o Windows Server Essentials](Manage-Windows-Server-Essentials.md)

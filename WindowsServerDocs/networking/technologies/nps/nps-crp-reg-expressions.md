@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: bc22d29c-678c-462d-88b3-1c737dceca75
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a985df9fea31e5ee180caef4e69899ae8468ff71
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f51bfb1c767c0eee3aed64df9879dd0a97f2f7b1
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865257"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446166"
 ---
 # <a name="use-regular-expressions-in-nps"></a>Use expressões regulares no NPS
 
@@ -25,37 +25,38 @@ Este tópico explica o uso de expressões regulares para correspondência de pad
 
 Você pode usar a tabela a seguir como uma fonte de referência durante a criação de expressões regulares com a sintaxe de correspondência de padrões.
 
-|Caractere|Descrição|Exemplo|
-|---------|-----------|-------|
-|`\`  |Marca o próximo caractere como um caractere para corresponder. |`/n/ matches the character "n". The sequence /\n/ matches a line feed or newline character.`  |
-|`^`  |Corresponde ao início da entrada ou da linha. | &nbsp; |
-|`$`  |Corresponde ao final da entrada ou da linha. | &nbsp; |
-|`*`  |Corresponde ao caractere anterior zero ou mais vezes. |`/zo*/ matches either "z" or "zoo."` |
-|`+`  |Corresponde ao caractere anterior uma ou mais vezes. |`/zo+/ matches "zoo" but not "z."` |
-|`?`  |Corresponde os tempos de caractere zero ou um anterior. |`/a?ve?/ matches the "ve" in "never."` |
-|`.`  |Corresponde a qualquer caractere único, exceto o caractere de nova linha.  | &nbsp; |
-|`(pattern)`  |Corresponde a "padrão" e lembra a correspondência.<br />Para corresponder aos caracteres literais `(` e `)` (parênteses), use `\(` ou `\)`.   | &nbsp;  |
-|`x|y `  |Corresponde a x ou y.  |`/z|food?/ matches "zoo" or "food."` |
-|`{n} `  |Corresponde exatamente a n vezes \(n é um não\-inteiro negativo\).  |`/o{2}/ does not match the "o" in "Bob," but matches the first two instances of the letter o in "foooood."`  |
-|`{n,}`  |Corresponde a pelo menos n vezes \(n é um não\-inteiro negativo\).  |`/o{2,}/ does not match the "o" in "Bob" but matches all of the instances of the letter o in "foooood." /o{1,}/ is equivalent to /o+/.`  |
-|`{n,m}`  |Corresponde a pelo menos n e no máximo m vezes \(m e n são não\-números inteiros negativos\).  |`/o{1,3}/ matches the first three instances of the letter o in "fooooood."`  |
-|`[xyz]`  |Corresponde a qualquer um dos caracteres incluídos \(um conjunto de caracteres\).  |`/[abc]/ matches the "a" in "plain."`  |
-|`[^xyz]`  |Corresponde a qualquer caractere que não está entre \(um conjunto de caracteres negativos\).  |`/[^abc]/ matches the "p" in "plain."`  |
-|`\b`  |Corresponde a um limite de palavra \(por exemplo, um espaço\).  |`/ea*r\b/ matches the "er" in "never early."`  |
-|`\B`  |Corresponde a um limite de não palavra.  |`/ea*r\B/ matches the "ear" in "never early."`  |
-|`\d`  |Corresponde a um caractere de dígito \(equivalentes aos dígitos de 0 a 9\).  | &nbsp; |
-|`\D`  |Corresponde a um caractere não dígito \(equivalente a `[^0-9]` \).  | &nbsp; |
-|`\f`  |Corresponde ao caractere de feed de um formulário.  | &nbsp; |
-|`\n`  |Corresponde ao caractere de feed de uma linha.  | &nbsp; |
-|`\r`  |Corresponde a um caractere de retorno de carro.  | &nbsp; |
-|`\s`  |Corresponde a qualquer caractere de espaço em branco, incluindo espaço, tabulação e avanço de página \(equivalente a `[ \f\n\r\t\v]` \).  | &nbsp; |
-|`\S`  |Corresponde a qualquer caractere não seja espaço em branco \(equivalente a `[^ \f\n\r\t\v]` \).  | &nbsp; |
-|`\t`  |Corresponde a um caractere de tabulação.  | &nbsp; |
-|`\v`  |Corresponde a um caractere de tabulação vertical.  | &nbsp; |
-|`\w`  |Corresponde a qualquer caractere de palavra, incluindo o caractere de sublinhado \(equivalente a `[A-Za-z0-9_]` \).  | &nbsp; |
-|`\W`  |Correspondências não qualquer\-caractere de palavra, exceto o sublinhado \(equivalente a `[^A-Za-z0-9_]` \).  | &nbsp; |
-|`\num`  |Refere-se às correspondências lembradas \( `?num`, onde num é um inteiro positivo\).  Essa opção pode ser usada somente na **substituir** caixa de texto ao configurar a manipulação de atributos.| `\1` substitui o que está armazenado na primeira correspondência lembrada.  |
-|`/n/ `  |Permite a inserção de códigos ASCII em expressões regulares \( `?n`, onde n é um valor de escape octal, hexadecimal ou decimal\).  | &nbsp; |
+
+|  Caractere  |                                                                                 Descrição                                                                                  |                                                                 Exemplo                                                                 |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+|     `\`     |                                                              Marca o próximo caractere como um caractere para corresponder.                                                               |                      `/n/ matches the character "n". The sequence /\n/ matches a line feed or newline character.`                       |
+|     `^`     |                                                                 Corresponde ao início da entrada ou da linha.                                                                  |                                                                 &nbsp;                                                                  |
+|     `$`     |                                                                    Corresponde ao final da entrada ou da linha.                                                                     |                                                                 &nbsp;                                                                  |
+|     `*`     |                                                             Corresponde ao caractere anterior zero ou mais vezes.                                                              |                                                  `/zo*/ matches either "z" or "zoo."`                                                   |
+|     `+`     |                                                              Corresponde ao caractere anterior uma ou mais vezes.                                                              |                                                   `/zo+/ matches "zoo" but not "z."`                                                    |
+|     `?`     |                                                              Corresponde os tempos de caractere zero ou um anterior.                                                              |                                                 `/a?ve?/ matches the "ve" in "never."`                                                  |
+|     `.`     |                                                           Corresponde a qualquer caractere único, exceto o caractere de nova linha.                                                           |                                                                 &nbsp;                                                                  |
+| `(pattern)` |                         Corresponde a "padrão" e lembra a correspondência.<br />Para corresponder aos caracteres literais `(` e `)` (parênteses), use `\(` ou `\)`.                         |                                                                 &nbsp;                                                                  |
+|     \`x     |                                                                                     y \`                                                                                     |                                                         Corresponde a x ou y.                                                          |
+|   `{n} `    |                                                          Corresponde exatamente a n vezes \(n é um não\-inteiro negativo\).                                                           |               `/o{2}/ does not match the "o" in "Bob," but matches the first two instances of the letter o in "foooood."`               |
+|   `{n,}`    |                                                          Corresponde a pelo menos n vezes \(n é um não\-inteiro negativo\).                                                          | `/o{2,}/ does not match the "o" in "Bob" but matches all of the instances of the letter o in "foooood." /o{1,}/ is equivalent to /o+/.` |
+|   `{n,m}`   |                                                Corresponde a pelo menos n e no máximo m vezes \(m e n são não\-números inteiros negativos\).                                                |                               `/o{1,3}/ matches the first three instances of the letter o in "fooooood."`                               |
+|   `[xyz]`   |                                                       Corresponde a qualquer um dos caracteres incluídos \(um conjunto de caracteres\).                                                        |                                                  `/[abc]/ matches the "a" in "plain."`                                                  |
+|  `[^xyz]`   |                                                  Corresponde a qualquer caractere que não está entre \(um conjunto de caracteres negativos\).                                                  |                                                 `/[^abc]/ matches the "p" in "plain."`                                                  |
+|    `\b`     |                                                              Corresponde a um limite de palavra \(por exemplo, um espaço\).                                                               |                                              `/ea*r\b/ matches the "er" in "never early."`                                              |
+|    `\B`     |                                                                         Corresponde a um limite de não palavra.                                                                          |                                             `/ea*r\B/ matches the "ear" in "never early."`                                              |
+|    `\d`     |                                                       Corresponde a um caractere de dígito \(equivalentes aos dígitos de 0 a 9\).                                                        |                                                                 &nbsp;                                                                  |
+|    `\D`     |                                                           Corresponde a um caractere não dígito \(equivalente a `[^0-9]` \).                                                           |                                                                 &nbsp;                                                                  |
+|    `\f`     |                                                                        Corresponde ao caractere de feed de um formulário.                                                                        |                                                                 &nbsp;                                                                  |
+|    `\n`     |                                                                        Corresponde ao caractere de feed de uma linha.                                                                        |                                                                 &nbsp;                                                                  |
+|    `\r`     |                                                                     Corresponde a um caractere de retorno de carro.                                                                     |                                                                 &nbsp;                                                                  |
+|    `\s`     |                                   Corresponde a qualquer caractere de espaço em branco, incluindo espaço, tabulação e avanço de página \(equivalente a `[ \f\n\r\t\v]` \).                                   |                                                                 &nbsp;                                                                  |
+|    `\S`     |                                                  Corresponde a qualquer caractere não seja espaço em branco \(equivalente a `[^ \f\n\r\t\v]` \).                                                   |                                                                 &nbsp;                                                                  |
+|    `\t`     |                                                                           Corresponde a um caractere de tabulação.                                                                           |                                                                 &nbsp;                                                                  |
+|    `\v`     |                                                                      Corresponde a um caractere de tabulação vertical.                                                                       |                                                                 &nbsp;                                                                  |
+|    `\w`     |                                              Corresponde a qualquer caractere de palavra, incluindo o caractere de sublinhado \(equivalente a `[A-Za-z0-9_]` \).                                              |                                                                 &nbsp;                                                                  |
+|    `\W`     |                                           Correspondências não qualquer\-caractere de palavra, exceto o sublinhado \(equivalente a `[^A-Za-z0-9_]` \).                                           |                                                                 &nbsp;                                                                  |
+|   `\num`    | Refere-se às correspondências lembradas \( `?num`, onde num é um inteiro positivo\).  Essa opção pode ser usada somente na **substituir** caixa de texto ao configurar a manipulação de atributos. |                                       `\1` substitui o que está armazenado na primeira correspondência lembrada.                                       |
+|   `/n/ `    |                      Permite a inserção de códigos ASCII em expressões regulares \( `?n`, onde n é um valor de escape octal, hexadecimal ou decimal\).                       |                                                                 &nbsp;                                                                  |
 
 ## <a name="examples-for-network-policy-attributes"></a>Exemplos de atributos de política de rede
 
@@ -81,7 +82,7 @@ Em um cenário de discagem terceirizado na qual provedor de serviços de Interne
 
 - Substitua:
 
-**Para substituir *user@example.microsoft.com* com *example.microsoft.com\user***
+**Para substituir <em>user@example.microsoft.com</em> com *example.microsoft.com\user***
 
 - Localize:`(.*)@(.*)`
 
@@ -97,7 +98,7 @@ Em um cenário de discagem terceirizado na qual provedor de serviços de Interne
 
 
 
-**Para substituir *usuário* com *user@specific_domain***
+<strong>Para substituir *usuário* com *user@specific_domain</strong>*
 
 - Localize:`$`
 

@@ -9,16 +9,18 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: c8e72f1075b984506f9f992cd45cf853b50bddeb
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 6f3cdc34ee03fab1a8fb1d42ebed2d2f76e2618d
+ms.sourcegitcommit: ccc802338b163abdad2e53b55f39addcfea04603
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191924"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66687408"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>Atualizando para o AD FS no Windows Server 2016 por meio de um banco de dados WID
 
 
+> [!NOTE]  
+> Iniciar apenas uma atualização com um período definitivo planejado para conclusão. Não é recomendável manter o AD FS em um estado de modo misto por um longo período de tempo, como sair do AD FS em um estado de modo misto pode causar problemas com o farm.
 
 ## <a name="upgrading-a-windows-server-2012-r2-or-2016-ad-fs-farm-to-windows-server-2019"></a>Atualizando um Windows Server 2012 R2 ou o farm 2016 AD FS para Windows Server 2019
 O documento a seguir descrevem como atualizar o farm do AD FS para AD FS no Windows Server 2019, quando você estiver usando um banco de dados WID.  
@@ -27,6 +29,7 @@ O documento a seguir descrevem como atualizar o farm do AD FS para AD FS no Wind
 No AD FS do Windows Server 2016, o nível de comportamento de farm (FBL) foi introduzido. Isso é a configuração de todo o farm que determina que o farm de recursos do AD FS pode ser usado.
 
 A tabela a seguir lista os valores FBL pela versão do Windows Server:
+
 | Versão do Windows Server  | FBL | Nome de banco de dados de configuração do AD FS |
 | ------------- | ------------- | ------------- |
 | 2012 R2  | 1  | AdfsConfiguration |

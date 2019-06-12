@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 61ed9273c0225477d8bd6043dfc599e3e3ae6228
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d46fc2df23391a1dbb782014addc68d9522d603a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868877"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441909"
 ---
 # <a name="reg-add"></a>Adicionar reg
 
@@ -34,27 +34,28 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 
 ## <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|\<KeyName*>*|Especifica o caminho completo da subchave ou entrada a ser adicionada. Para especificar um computador remoto, inclua o nome do computador (no formato \\ \\ \<ComputerName >\) como parte do *KeyName*. A omissão \\ \\ComputerName\ faz com que a operação padrão no computador local. O *KeyName* deve incluir uma chave de raiz válido. As chaves de raiz válido para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves válidas são: HKLM e HKU. Se o nome da chave do registro contém um espaço, coloque o nome da chave entre aspas.|
-|/v \<ValueName>|Especifica o nome da entrada do registro a ser adicionada sob a subchave especificada.|
-|/ve|Especifica que a entrada do registro que é adicionada ao registro tem um valor nulo.|
-|/t \<Type>|Especifica o tipo da entrada do registro. *Tipo* deve ser um dos seguintes:</br>REG_SZ</br>REG_MULTI_SZ</br>REG_DWORD_BIG_ENDIAN</br>REG_DWORD</br>REG_BINARY</br>REG_DWORD_LITTLE_ENDIAN</br>REG_LINK</br>REG_FULL_RESOURCE_DESCRIPTOR</br>REG_EXPAND_SZ|
-|/s \<separador >|Especifica o caractere a ser usado para separar várias instâncias de dados quando o tipo de dados REG_MULTI_SZ for especificado e mais de uma entrada precisa ser listado. Se não for especificado, o separador padrão é **\0**.|
-|/d \<Data>|Especifica os dados para a nova entrada de registro.|
-|/f|Adiciona a entrada do registro sem solicitar confirmação.|
-|/?|Exibe a Ajuda para **reg adicionar** no prompt de comando.|
+|      Parâmetro      |                                                                                                                                                                                                                                                                   Descrição                                                                                                                                                                                                                                                                   |
+|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| \<KeyName<em>></em> | Especifica o caminho completo da subchave ou entrada a ser adicionada. Para especificar um computador remoto, inclua o nome do computador (no formato \\ \\ \<ComputerName >\) como parte do *KeyName*. A omissão \\ \\ComputerName\ faz com que a operação padrão no computador local. O *KeyName* deve incluir uma chave de raiz válido. As chaves de raiz válido para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves válidas são: HKLM e HKU. Se o nome da chave do registro contém um espaço, coloque o nome da chave entre aspas. |
+|   /v \<ValueName>   |                                                                                                                                                                                                                                Especifica o nome da entrada do registro a ser adicionada sob a subchave especificada.                                                                                                                                                                                                                                 |
+|         /ve         |                                                                                                                                                                                                                                Especifica que a entrada do registro que é adicionada ao registro tem um valor nulo.                                                                                                                                                                                                                                |
+|     /t \<Type>      |                                                                                                                                          Especifica o tipo da entrada do registro. *Tipo* deve ser um dos seguintes:</br>REG_SZ</br>REG_MULTI_SZ</br>REG_DWORD_BIG_ENDIAN</br>REG_DWORD</br>REG_BINARY</br>REG_DWORD_LITTLE_ENDIAN</br>REG_LINK</br>REG_FULL_RESOURCE_DESCRIPTOR</br>REG_EXPAND_SZ                                                                                                                                          |
+|   /s \<separador >   |                                                                                                                                                              Especifica o caractere a ser usado para separar várias instâncias de dados quando o tipo de dados REG_MULTI_SZ for especificado e mais de uma entrada precisa ser listado. Se não for especificado, o separador padrão é **\0**.                                                                                                                                                              |
+|     /d \<Data>      |                                                                                                                                                                                                                                                 Especifica os dados para a nova entrada de registro.                                                                                                                                                                                                                                                  |
+|         /f          |                                                                                                                                                                                                                                           Adiciona a entrada do registro sem solicitar confirmação.                                                                                                                                                                                                                                           |
+|         /?          |                                                                                                                                                                                                                                              Exibe a Ajuda para **reg adicionar** no prompt de comando.                                                                                                                                                                                                                                               |
 
 ## <a name="remarks"></a>Comentários
 
 -   Não não possível adicionar subárvores com esta operação. Esta versão do **reg** não peça confirmação quando você estiver adicionando uma subchave.
 -   A tabela a seguir lista os valores retornados para o **reg adicionar** operação.
 
-|Valor|Descrição|
-|-----|-----------|
-|0|Êxito|
-|1|Falha|
--   O tipo de chave REG_EXPAND_SZ, use o símbolo de acento circunflexo ( **^** ) com **%**"dentro do parâmetro /d.
+| Valor | Descrição |
+|-------|-------------|
+|   0   |   Êxito   |
+|   1   |   Falha   |
+
+-   O tipo de chave REG_EXPAND_SZ, use o símbolo de acento circunflexo ( **^** ) com **%** "dentro do parâmetro /d.
 
 ## <a name="BKMK_examples"></a>Exemplos
 
@@ -70,11 +71,11 @@ Para adicionar uma entrada de registro com vários valores ao HKLM\Software\MyCo
 ```
 REG ADD HKLM\Software\MyCo /v MRU /t REG_MULTI_SZ /d fax\0mail\0\0
 ```
-Para adicionar uma entrada de registro expandida ao HKLM\Software\MyCo com um nome de valor de **caminho** de tipo REG_EXPAND_SZ e os dados de **% systemroot %**, tipo:
+Para adicionar uma entrada de registro expandida ao HKLM\Software\MyCo com um nome de valor de **caminho** de tipo REG_EXPAND_SZ e os dados de **% systemroot %** , tipo:
 ```
 REG ADD HKLM\Software\MyCo /v Path /t REG_EXPAND_SZ /d ^%systemroot^%
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

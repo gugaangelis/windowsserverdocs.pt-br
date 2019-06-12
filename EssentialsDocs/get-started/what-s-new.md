@@ -12,20 +12,20 @@ ms.assetid: affff774-5fa6-4944-887a-9bfde05f6a3f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 7fed7e71f7ac163437fe5d32da7c867f93fbcf00
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bc83686f76c49773203d63a88894841f65ffd1d9
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869967"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433765"
 ---
-#<a name="whats-new-in-windows-server-2016-essentials"></a>O que há de novo no Windows Server 2016 Essentials
+# <a name="whats-new-in-windows-server-2016-essentials"></a>O que há de novo no Windows Server 2016 Essentials
 
 > Aplica-se a: Windows Server 2016 Essentials
 
 A seguir é nova e aprimorados recursos no Windows Server 2016 Essentials.
 
-##<a name="integration-with-azure-site-recovery-servicesazure-site-recovery-services-integrationmd"></a>[Integração com serviços de recuperação de Site do Azure](azure-site-recovery-services-integration.md)
+## <a name="integration-with-azure-site-recovery-servicesazure-site-recovery-services-integrationmd"></a>[Integração com serviços de recuperação de Site do Azure](azure-site-recovery-services-integration.md)
 
 **O que ele faz** – quando uma máquina virtual que é protegido falhar ou o servidor de host que a máquina virtual protegida é executado falhar, o failover com serviços do Azure Site Recovery mantém a continuidade dos negócios até que a máquina de virtual no local ou servidor de host é reparado e está disponível. 
 
@@ -40,7 +40,7 @@ A seguir é nova e aprimorados recursos no Windows Server 2016 Essentials.
 
 
 
-##<a name="support-for-larger-deploymentssupport-for-larger-deploymentsmd"></a>[Suporte para implantações maiores](support-for-larger-deployments.md) 
+## <a name="support-for-larger-deploymentssupport-for-larger-deploymentsmd"></a>[Suporte para implantações maiores](support-for-larger-deployments.md) 
 
 Algumas pequenas empresas maiores precisam de mais funcionalidades e capacidades para implementar o Windows Server Essentials com eficiência. Windows Server 2016 Essentials oferece maior capacidade de gerenciamento de domínios, usuários e dispositivos, adicionando suporte para implantações maiores com:                                                                                                                                                                                                 
 

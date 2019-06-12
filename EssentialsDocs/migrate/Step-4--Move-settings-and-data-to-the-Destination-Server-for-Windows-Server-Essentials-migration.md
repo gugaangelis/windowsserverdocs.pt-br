@@ -12,12 +12,12 @@ ms.assetid: e143df43-e227-4629-a4ab-9f70d9bf6e84
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e5a8db44f80c333d589e0c1664174c394701f90d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fa6ab8e2108e569b7cef6bfbf0d20af4fa31016d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835677"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432573"
 ---
 # <a name="step-4-move-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Etapa 4: Mover configurações e dados para o servidor de destino para migração para o Windows Server Essentials
 
@@ -46,41 +46,41 @@ Esta seção fornece informações sobre a migração de dados e configurações
   
 #### <a name="to-copy-data-from-the-source-server-to-the-destination-server"></a>Para copiar os dados do servidor de origem para o servidor de destino  
   
-1.  Autentique-se no servidor de destino como um administrador de domínio e, em seguida, abra uma janela de Prompt de comando ou um prompt de comando do Windows PowerShell.  
+1. Autentique-se no servidor de destino como um administrador de domínio e, em seguida, abra uma janela de Prompt de comando ou um prompt de comando do Windows PowerShell.  
   
-2.  Se você usar a janela de Prompt de Comando, digite o seguinte comando e pressione ENTER:  
+2. Se você usar a janela de Prompt de Comando, digite o seguinte comando e pressione ENTER:  
   
-    `robocopy \\<SourceServerName>\<SharedSourceFolderName> "<PathOfTheDestination>\<SharedDestinationFolderName>" /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`
+   `robocopy \\<SourceServerName>\<SharedSourceFolderName> "<PathOfTheDestination>\<SharedDestinationFolderName>" /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`
   
-     Onde:  
+    Onde:  
   
-    -   \<SourceServerName\> é o nome do servidor de origem  
+   - \<SourceServerName\> é o nome do servidor de origem  
   
-    -   \<Nomedapastacompartilhadadeorigem\> é o nome da pasta compartilhada no servidor de origem  
+   - \<Nomedapastacompartilhadadeorigem\> é o nome da pasta compartilhada no servidor de origem  
   
-    -   \<Caminhododestino\> é o caminho absoluto onde você deseja mover a pasta  
+   - \<Caminhododestino\> é o caminho absoluto onde você deseja mover a pasta  
   
-    -   \<Nomedapastacompartilhadadedestino\> é a pasta no servidor de destino para o qual os dados serão copiados.  
+   - \<Nomedapastacompartilhadadedestino\> é a pasta no servidor de destino para o qual os dados serão copiados.  
   
      Por exemplo,  `robocopy \\sourceserver\MyData "d:\ServerFolders\MyData" /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`.  
   
-3.  Se você usar o Windows PowerShell, digite o comando a seguir e pressione ENTER.  
+3. Se você usar o Windows PowerShell, digite o comando a seguir e pressione ENTER.  
   
-     `Add-Wssfolder  Path \ -Name  -KeepPermission`  
+    `Add-Wssfolder  Path \ -Name  -KeepPermission`  
   
-4.  Repita esse processo para cada pasta compartilhada que você está migrando do servidor de origem.  
+4. Repita esse processo para cada pasta compartilhada que você está migrando do servidor de origem.  
   
 ##  <a name="BKMK_Network"></a> Configurar a rede  
   
 #### <a name="to-configure-the-network"></a>Para configurar a rede  
   
-1.  No servidor de destino, abra o painel.  
+1. No servidor de destino, abra o painel.  
   
-2.  Na página **Início** do painel, clique em **Instalação**, clique em **Configurar Acesso em Qualquer Local** e escolha a opção **Clique para configurar o Acesso em Qualquer Local**.  
+2. Na página **Início** do painel, clique em **Instalação**, clique em **Configurar Acesso em Qualquer Local** e escolha a opção **Clique para configurar o Acesso em Qualquer Local**.  
   
-3.  O assistente de configuração do Acesso em Qualquer Local é exibido. Siga as instruções no assistente para configurar seu roteador e nomes de domínio.  
+3. O assistente de configuração do Acesso em Qualquer Local é exibido. Siga as instruções no assistente para configurar seu roteador e nomes de domínio.  
   
- Se o roteador não oferecer suporte para a estrutura UPnP, ou se a estrutura UPnP estiver desabilitada, um ícone de aviso amarelo pode aparecer ao lado do nome do roteador. Certifique-se de que as seguintes portas estejam abertas e que sejam direcionadas para o endereço IP do servidor de destino:  
+   Se o roteador não oferecer suporte para a estrutura UPnP, ou se a estrutura UPnP estiver desabilitada, um ícone de aviso amarelo pode aparecer ao lado do nome do roteador. Certifique-se de que as seguintes portas estejam abertas e que sejam direcionadas para o endereço IP do servidor de destino:  
   
 -   Porta 80: Tráfego da Web HTTP  
   

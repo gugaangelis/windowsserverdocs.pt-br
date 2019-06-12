@@ -9,12 +9,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 220b0b72734d1456e3cf877ebc2ff267a7dd56ad
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 167f74522172790d8f5b3fc1dea46d0b7059cd20
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190652"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501676"
 ---
 # <a name="build-a-server-side-application-using-oauth-confidential-clients-with-ad-fs-2016-or-later"></a>Criar um servidor no aplicativo usando clientes confidenciais OAuth com o AD FS 2016 ou posterior
 
@@ -83,7 +83,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
 #### <a name="to-upgrade-the-database-file"></a>Para atualizar o arquivo de banco de dados  
 
-1.  Abra o projeto no Visual Studio, haverá um pop-up informando que o aplicativo requer o SQL Server 2102 Express ou você precisará atualizar o banco de dados.  Clique em Okey.  
+1.  Abra o projeto no Visual Studio, haverá um pop-up informando que o aplicativo requer o SQL Server 2012 Express, ou você precisará atualizar o banco de dados.  Clique em Okey.  
 
     ![Oauth do AD FS](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_12.PNG)  
 
@@ -226,25 +226,25 @@ Nesta seção, testaremos a solução de cliente confidencial.  Use o procedimen
 
 #### <a name="testing-the-confidential-client-solution"></a>Testando a solução de cliente confidencial  
 
-1.  Na parte superior do Visual Studio, verifique se o que Internet Explorer está selecionado e clique na seta verde.  
+1. Na parte superior do Visual Studio, verifique se o que Internet Explorer está selecionado e clique na seta verde.  
 
-    ![Oauth do AD FS](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_36.png)  
+   ![Oauth do AD FS](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_36.png)  
 
-2.  Depois que a página ASP.Net é exibida, clique em **registrar** na parte superior direita da página.  Insira um nome de usuário e senha e, em seguida, clique em **registrar** botão.  Isso cria uma conta local no banco de dados SQL.  
+2. Depois que a página ASP.Net é exibida, clique em **registrar** na parte superior direita da página.  Insira um nome de usuário e senha e, em seguida, clique em **registrar** botão.  Isso cria uma conta local no banco de dados SQL.  
 
-    ![Oauth do AD FS](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_31.PNG)  
+   ![Oauth do AD FS](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_31.PNG)  
 
-4.  Observe que agora, o site do ASP.NET diz Hello abby@contoso.com!.  Clique em **perfil**.  
+3. Observe que agora, o site do ASP.NET diz Hello abby@contoso.com!.  Clique em **perfil**.  
 
-    ![Oauth do AD FS](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_32.PNG)  
+   ![Oauth do AD FS](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_32.PNG)  
 
-5.  Isso abre uma página sem qualquer informação e diz que podemos deve clique aqui para entrar.  Clique em **aqui**.  
+4. Isso abre uma página sem qualquer informação e diz que podemos deve clique aqui para entrar.  Clique em **aqui**.  
 
-    ![Oauth do AD FS](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_33.PNG)  
+   ![Oauth do AD FS](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_33.PNG)  
 
-6.  Agora você será solicitado a entrar no AD FS.  
+5. Agora você será solicitado a entrar no AD FS.  
 
-    ![Oauth do AD FS](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_35.PNG)  
+   ![Oauth do AD FS](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_35.PNG)  
 
 ## <a name="next-steps"></a>Próximas etapas
 [Desenvolvimento do AD FS](../../ad-fs/AD-FS-Development.md)  

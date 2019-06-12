@@ -12,12 +12,12 @@ ms.assetid: 0302d070-c58a-40f2-b56d-7e7842813d02
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2b0cd926b15d65e5cd4c784681c40df29b18a48f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7e40a4675cf77d55a3047b41e0ab852fd7cd9de9
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890137"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433217"
 ---
 # <a name="manage-server-backup-in-windows-server-essentials"></a>Gerenciar o backup do servidor no Windows Server Essentials
 
@@ -48,7 +48,7 @@ ms.locfileid: "59890137"
   
 1.  Consulte o proprietário dos arquivos ou pastas e anote as datas e horários em que eles foram adicionados ou editados. Use essas datas e horários como um ponto de partida.  
   
-2.  Na página **Escolha uma opção de restauração** do Assistente de Restauração de Arquivos ou Pastas, clique em **Restaurar de um backup selecionado (avançado)**.  
+2.  Na página **Escolha uma opção de restauração** do Assistente de Restauração de Arquivos ou Pastas, clique em **Restaurar de um backup selecionado (avançado)** .  
   
 3.  Se desejar restaurar uma versão mais antiga ou mais recente dos arquivos ou pastas, selecione o backup que melhor corresponder às datas e horários anotados na etapa 1.  
   
@@ -75,17 +75,17 @@ ms.locfileid: "59890137"
   
 #### <a name="to-use-remote-web-access-to-manage-your-server"></a>Para usar o Acesso via Web Remoto para gerenciar o servidor  
   
-1.  Abra um navegador da Web.  
+1. Abra um navegador da Web.  
   
-2.  Na caixa de endereços, digite o nome de domínio do Windows Server Essentials.  
+2. Na caixa de endereços, digite o nome de domínio do Windows Server Essentials.  
   
-3.  Quando solicitado, digite o nome de usuário e senha.  
+3. Quando solicitado, digite o nome de usuário e senha.  
   
-4.  Quando você clicar no nome do servidor no acesso via Web remoto, a página de logon para o painel é exibida.  
+4. Quando você clicar no nome do servidor no acesso via Web remoto, a página de logon para o painel é exibida.  
   
-5.  Faça logon no Painel como administrador e, em seguida, clique em **Dispositivos**.  
+5. Faça logon no Painel como administrador e, em seguida, clique em **Dispositivos**.  
   
- Para obter mais informações sobre o acesso via Web remoto, consulte [visão geral do acesso via Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Overview).  
+   Para obter mais informações sobre o acesso via Web remoto, consulte [visão geral do acesso via Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Overview).  
   
 ##  <a name="BKMK_4"></a> Desabilitar o backup do servidor  
  Você deve proteger seu servidor e seus dados automaticamente com o agendamento de backups diários. É recomendável que você mantenha um plano de backup diário, porque a maioria das organizações não pode perder dados criados ao longo de vários dias.  
@@ -138,12 +138,12 @@ ms.locfileid: "59890137"
   
 > [!NOTE]
 >  Na instalação padrão do Windows Server Essentials, o servidor está configurado para executar automaticamente uma desfragmentação uma vez por semana. Isso pode resultar em backups maiores que o normal se você usar um software de imagem que não for da Microsoft. Se não for necessário desfragmentar o servidor regularmente, você pode seguir estas etapas para desativar o agendamento de desfragmentação:  
->   
->  1.  Pressione a tecla Windows + W para abrir a **Pesquisa**.  
-> 2.  Na caixa de texto Pesquisar, digite **Defragment**.  
-> 3.  Na seção de resultados, clique em **Desfragmentar e Otimizar Unidades**.  
-> 4.  Na página **Otimizar Unidades**, selecione uma unidade e, em seguida, clique em **Alterar configurações**.  
-> 5.  Na janela **Agendamento de otimização** , desmarque a caixa de seleção **Executar seguindo um agendamento (recomendado)** e clique em **OK** para salvar a alteração.  
+> 
+> 1. Pressione a tecla Windows + W para abrir a **Pesquisa**.  
+>    2. Na caixa de texto Pesquisar, digite **Defragment**.  
+>    3. Na seção de resultados, clique em **Desfragmentar e Otimizar Unidades**.  
+>    4. Na página **Otimizar Unidades**, selecione uma unidade e, em seguida, clique em **Alterar configurações**.  
+>    5. Na janela **Agendamento de otimização** , desmarque a caixa de seleção **Executar seguindo um agendamento (recomendado)** e clique em **OK** para salvar a alteração.  
   
 ### <a name="items-to-be-backed-up"></a>Itens para backup  
  Por padrão, todos os arquivos do sistema operacional e pastas estão selecionados para backup. Você pode optar por fazer backup de todos os discos rígidos, arquivos e pastas no servidor ou selecionar apenas discos rígidos, arquivos ou pastas individuais para backup. Para adicionar ou remover itens para backup, siga um destes procedimentos:  
@@ -199,4 +199,4 @@ ms.locfileid: "59890137"
   
 -   [Gerenciar o Windows Server Essentials](Manage-Windows-Server-Essentials.md)  
   
--   [Usar o Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)
+-   [Utilizar o Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)

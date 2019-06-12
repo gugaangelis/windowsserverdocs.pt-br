@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: f3e0553b1919a7f9129d47616d0ffb66b6ff48f8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fe27b61abe196a2148ced18806be904ebd555fcc
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874437"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442896"
 ---
 # <a name="directory-services-component-updates"></a>Atualizações de componentes dos Serviços de Diretório
 
@@ -161,12 +161,12 @@ Você pode usar o parâmetro - DomainMode com o Install-ADDSForest ou os cmdlets
 ### <a name="overview"></a>Visão geral  
 O algoritmo de Otimizador de consulta LDAP foi reavaliado e ainda mais otimizado.  O resultado é a melhoria de desempenho na eficiência da pesquisa LDAP e tempo de pesquisa LDAP de consultas complexas.  
   
-> [!NOTE]  
-> **Do desenvolvedor:** melhorias no desempenho de pesquisas por meio de melhorias no mapeamento de LDAP de consulta à consulta do ESE.  Filtros LDAP, além de um determinado nível de complexidade de impedir que a seleção de índice otimizado, resultando em desempenho reduzido drasticamente (x 1000 ou mais). Essa alteração altera a maneira na qual podemos selecionar índices para consultas LDAP evitar esse problema.  
-  
-> [!NOTE]  
+> [!NOTE]
+> <strong>Do desenvolvedor:</strong>melhorias no desempenho de pesquisas por meio de melhorias no mapeamento de LDAP de consulta à consulta do ESE.  Filtros LDAP, além de um determinado nível de complexidade de impedir que a seleção de índice otimizado, resultando em desempenho reduzido drasticamente (x 1000 ou mais). Essa alteração altera a maneira na qual podemos selecionar índices para consultas LDAP evitar esse problema.  
+> 
+> [!NOTE]
 > Uma revisão completa do algoritmo de Otimizador de consulta LDAP, resultando em:  
->   
+> 
 > -   Tempos mais rápidos de pesquisa  
 > -   Ganhos de eficiência permitem que os controladores de domínio fazer mais  
 > -   Menos chamadas ao suporte emite sobre desempenho do AD  

@@ -4,16 +4,16 @@ description: Perguntas frequentes sobre o serviço de migração de armazenament
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
-ms.date: 11/06/2018
+ms.date: 06/04/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: df03f722b7b36a163693f675a2eaade2fabeb82f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 258f25a7e1ec5c796c15450625397e96db25d693
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860907"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501518"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>Perguntas frequentes (FAQ) do serviço de migração de armazenamento
 
@@ -63,7 +63,7 @@ Serviço de armazenamento de migração migra todos os sinalizadores, configura�
     - Comunicação remota de identidade
     - Infraestrutura
     - Nome
-    - Caminho
+    - `Path`
     - No escopo
     - Nome do escopo
     - Descritor de Segurança
@@ -86,17 +86,6 @@ O serviço de migração de armazenamento usa um banco de dados de (ESE) do meca
 7. Remova suas próprias permissões de contas.
 8. Inicie o serviço de "Serviço de migração de armazenamento".
 
-## <a name="transfer-threads"></a> Posso aumentar o número de arquivos que a cópia simultaneamente?
-
-O serviço de Proxy de serviço de migração de armazenamento copia 8 arquivos simultaneamente em um determinado trabalho. Esse serviço é executado sobre o orchestrator durante a transferência se os computadores de destino Windows Server 2012 R2 ou Windows Server 2016, mas também é executado em todos os nós de destino do Windows Server 2019. Você pode aumentar o número de threads de cópia simultâneas, ajustando o seguinte nome de valor REG_DWORD do registro no formato decimal em cada nó que está executando o Proxy de SMS:
-
-    HKEY_Local_Machine\Software\Microsoft\SMSProxy
-    FileTransferThreadCount
-
- O intervalo válido é de 1 a 128, no Windows Server 2019. 
-
- Depois de alterar você deve reiniciar o serviço de Proxy de serviço de migração de armazenamento no partipating de todos os computadores em uma migração. Planejamos aumentar esse número em uma versão futura do serviço de migração de armazenamento.
-
 ## <a name="non-windows"></a> Pode migrar de fontes diferentes do Windows Server?
 
 A versão de serviço de migração de armazenamento fornecida no Windows Server 2019 dá suporte à migração do Windows Server 2003 e sistemas operacionais posteriores. Atualmente, ele não pode migrar do Linux, Samba, NetApp, EMC ou outros dispositivos de armazenamento SAN e NAS. Estamos planejando permitir isso em uma versão futura do serviço de migração de armazenamento, começando com o suporte a Linux Samba.
@@ -113,6 +102,40 @@ A versão de serviço de migração de armazenamento fornecida no Windows Server
 
 A versão de serviço de migração de armazenamento fornecida no Windows Server 2019 não dá suporte a consolidação de vários servidores em um servidor. Um exemplo de consolidação seria migrando três servidores de origem separado - que podem ter os mesmos nomes de compartilhamento e caminhos de arquivo local - em um único servidor novo que virtualizados esses caminhos e compartilhamentos para evitar qualquer colisão, ou a sobreposição respondeu todos os três nomes de servidores anteriores e o endereço IP. Poderemos adicionar essa funcionalidade em uma versão futura do serviço de migração de armazenamento.  
 
+## <a name="optimize"></a> Otimizando o desempenho do inventário e de transferência
+
+O serviço de migração de armazenamento contém um mecanismo de cópia chamado serviço de Proxy de serviço de migração de armazenamento que é projetado para ser rápido, bem como trazer a falta de fidelidade de dados perfeito em muitas ferramentas de cópia de arquivo e de leitura com multithread. Enquanto a configuração padrão será ideal para muitos clientes, há maneiras de melhorar o desempenho de SMS durante o inventário e de transferência.
+
+- **Use o Windows Server 2019 para o sistema operacional de destino.** Windows Server 2019 contém o serviço de Proxy de serviço de migração de armazenamento. Quando você instala este recurso e migrar para o Windows Server 2019 destinos, todas as transferências de operam como linha de visão direta entre a origem e destino. Esse serviço é executado o orquestrador durante a transferência se os computadores de destino são o Windows Server 2012 R2 ou Windows Server 2016, o que significa que as transferências de salto duplo e serão muito mais lentos. Se houver vários trabalhos em execução com Windows Server 2012 R2 ou Windows Server 2016 destinos, o orquestrador se tornará um gargalo. 
+
+- **Altere os threads de transferência padrão.** O serviço de Proxy de serviço de migração de armazenamento copia 8 arquivos simultaneamente em um determinado trabalho. Você pode aumentar o número de threads de cópia simultâneas, ajustando o seguinte nome de valor REG_DWORD do registro no formato decimal em cada nó que está executando o Proxy de SMS:
+
+    HKEY_Local_Machine\Software\Microsoft\SMSProxy   FileTransferThreadCount
+
+   O intervalo válido é de 1 a 128, no Windows Server 2019. Depois de alterar, você deve reiniciar o serviço de Proxy de serviço de migração de armazenamento em todos os computadores que participam de uma migração. Tenha cuidado com essa configuração; defini-lo o mais alto pode exigir núcleos adicionais, o desempenho de armazenamento e largura de banda de rede. Defini-lo muito alto pode levar a desempenho reduzido em comparação comparado as configurações padrão. A capacidade de alterar heuristicamente as configurações de threads com base na CPU, memória, rede e armazenamento está planejada para uma versão posterior do SMS.
+
+- **Adicione os núcleos e memória.**  É altamente recomendável que os computadores de origem, o orchestrator e o destino tem pelo menos dois núcleos de processador ou duas vCPUs e significativamente mais podem ajudar a inventário e transferência de desempenho, especialmente quando combinadas com FileTransferThreadCount (acima). Durante a transferência de arquivos que são maiores do que os formatos comuns do Office (gigabytes ou superior) desempenho de transferência irá se beneficiar de mais memória que o mínimo de 2GB padrão.
+
+- **Crie trabalho de várias.** Ao criar um trabalho com várias fontes de servidor, cada servidor é contatado em modo serial para o inventário de transferência e a transferência. Isso significa que cada servidor deve concluir sua fase antes do início de outro servidor. Para executar mais servidores em paralelo, basta crie vários trabalhos, com cada trabalho que contém apenas um servidores. SMS oferece suporte a até 100 simultaneamente a execução de trabalhos, que significa que um único orchestrator pode paralelizar muitos computadores de destino do Windows Server 2019. Não recomendamos a execução de vários trabalhos paralelos se seus computadores de destino são o Windows Server 2016 ou Windows Server 2012 R2 como sem o serviço de proxy SMS em execução no destino, o orquestrador deve executar todas as transferências em si e pode se tornar um gargalo. A capacidade para servidores executar em paralelo dentro de um único trabalho é um recurso que estamos planejando adicionar em uma versão posterior do SMS.
+
+- **Use o SMB 3 com redes RDMA.** Se a transferência de um Windows Server 2012 ou o computador de origem posterior, o modo direto do SMB 3.x dá suporte a SMB e a rede RDMA. RDMA move a maioria dos custo de CPU de transferência da placa-mãe CPUs para processadores NIC integrados, reduzindo a utilização de CPU de latência e o servidor. Além disso, redes RDMA, como ROCE e iWARP normalmente têm substancialmente maior largura de banda que o TCP/ethernet típico, incluindo a 25, 50 e velocidades de 100Gb por interface. Usando o SMB Direct normalmente move o limite de velocidade de transferência da rede até o armazenamento em si.   
+
+- **Use 3 SMB multichannel.** Se transferir de um computador de origem posterior ou o Windows Server 2012, o SMB 3.x dá suporte a vários canais cópias que podem melhorar significativamente a arquivo desempenho da cópia. Esse recurso funciona automaticamente, desde que tenham a origem e destino:
+
+   - Vários adaptadores de rede
+   - Um ou mais adaptadores de rede que dão suporte a RSS Receive Side Scaling)
+   - Um dos mais adaptadores de rede são configuradas usando o agrupamento NIC
+   - Um ou mais adaptadores de rede com suporte a RDMA
+
+- **Atualize os drivers.** Conforme apropriado, instale o armazenamento de fornecedor mais recente e firmware de compartimento e drivers, drivers HBA de fornecedor mais recentes, firmware UEFI/BIOS mais recente do fornecedor, drivers de rede de fornecedor mais recentes e drivers de chipsets da placa-mãe mais recentes na origem, destino e no orchestrator servidores. Reinicie os nós conforme necessário. confira a documentação do fornecedor de hardware para configurar o armazenamento compartilhado e o hardware de rede.
+
+- **Habilite o processamento de alto desempenho.** Verifique se as configurações de BIOS/UEFI para servidores permitem o alto desempenho, como desabilitar C-State, definir a velocidade de QPI, habilitar NUMA e definir a frequência de memória mais alta. Certifique-se de que o gerenciamento de energia no Windows Server é definido como de alto desempenho. Reinicie conforme necessário. Não se esqueça de retornar esses estados apropriado depois de concluir a migração. 
+
+- **Ajustar o hardware** examine as [desempenho ajustando as diretrizes para o Windows Server 2016](https://docs.microsoft.com/en-us/windows-server/administration/performance-tuning/) para ajustar o orchestrator e computadores de destino executando o Windows Server 2019 e Windows Server 2016. O [ajuste de desempenho do subsistema de rede](https://docs.microsoft.com/en-us/windows-server/networking/technologies/network-subsystem/net-sub-performance-tuning-nics) seção contém informações especialmente valiosas.
+
+- **Use o armazenamento mais rápido.** Embora seja difícil atualizar a velocidade de armazenamento do computador de origem, verifique se que o armazenamento de destino seja pelo menos tão rápido em desempenho de e/s de gravação como a fonte está em desempenho de e/s de leitura para garantir que não há nenhum gargalo desnecessário em transferências. Se o destino for uma máquina virtual, certifique-se de que, pelo menos para fins de migração, ele é executado na camada de armazenamento mais rápida dos seus hosts de hipervisor, como na camada de flash ou com clusters HCI direta de espaços de armazenamento utilizando todos os flash espelhado ou espaços híbrido. Quando a migração de SMS é concluída a VM pode ser migrada dinamicamente para um host ou a camada mais lento.
+
+- **Atualização de antivírus.** Sempre verifique se a origem e destino estão executando a versão corrigida mais recente do software antivírus para garantir que a sobrecarga de desempenho mínimo. Como um teste, você pode *temporariamente* excluir a verificação de pastas estiver inventariando ou migração nos servidores de origem e destino. Se sua transferência de desempenho é aprimorada, entre em contato com seu fornecedor de software antivírus para obter instruções, ou para uma versão atualizada do software antivírus ou obter uma explicação de degradação de desempenho esperados.
 
 ## <a name="give-feedback"></a> Quais são minhas opções para enviar comentários, arquivar bugs ou obter suporte?
 

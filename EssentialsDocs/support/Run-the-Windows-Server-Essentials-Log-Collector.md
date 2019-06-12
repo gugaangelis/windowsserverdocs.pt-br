@@ -12,12 +12,12 @@ ms.assetid: 0d340223-fa24-4c75-ba8e-b654feb120ab
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6b49fee7ca4a19d5a501cf96c1ce356f8242c81f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5654f28aeda3c231376ed888a8aa04bc0cf3d000
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830917"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432494"
 ---
 # <a name="run-the-windows-server-essentials-log-collector"></a>Executar o coletor de log do Windows Server Essentials
 Você pode executar o coletor de Log do Windows Server Essentials do servidor ou um computador na rede. Se executar o coletor de log do servidor, você só poderá coletar logs do servidor. Se você executar o coletor de log de um computador da rede, você pode optar por coletar logs do servidor, além de logs para esse computador.  
@@ -26,20 +26,20 @@ Você pode executar o coletor de Log do Windows Server Essentials do servidor ou
   
 #### <a name="to-run-the-log-collector-on-the-server-by-using-the-wizard"></a>Para executar o coletor de log no servidor usando o assistente  
   
-1.  Sobre o **inicie** página do servidor, clique em **coletor de Log do Windows Server Essentials**.  
+1. Sobre o **inicie** página do servidor, clique em **coletor de Log do Windows Server Essentials**.  
   
-    > [!NOTE]
-    >  -   Se o programa de coletor de Log não aparecer na **inicie** página, navegue até **%system%\Program arquivos (x86) \Windows Server Essentials Log Collector**e, em seguida, clique duas vezes em **LogCollector** .  
-    > -   Se você não estiver conectado ao servidor com privilégios administrativos, o coletor de log solicitará que você insira suas credenciais.  
+   > [!NOTE]
+   > - Se o programa de coletor de Log não aparecer na **inicie** página, navegue até **%system%\Program arquivos (x86) \Windows Server Essentials Log Collector**e, em seguida, clique duas vezes em **LogCollector** .  
+   >   -   Se você não estiver conectado ao servidor com privilégios administrativos, o coletor de log solicitará que você insira suas credenciais.  
   
-2.  Quando você for solicitado um local salvar os arquivos de log coletados, você pode escolher o local padrão,  **\\ \\< ServerName\>\logs**, ou especificar outro local. Para aceitar o local padrão, clique em **Avançar**. Para alterar o local, clique em **Navegar**, navegue até a pasta onde deseja salvar os arquivos de log e, em seguida, clique em **Salvar**.  
+2. Quando você for solicitado um local salvar os arquivos de log coletados, você pode escolher o local padrão,  **\\ \\< ServerName\>\logs**, ou especificar outro local. Para aceitar o local padrão, clique em **Avançar**. Para alterar o local, clique em **Navegar**, navegue até a pasta onde deseja salvar os arquivos de log e, em seguida, clique em **Salvar**.  
   
-    > [!NOTE]
-    >  Você não precisará fornecer nomes de arquivo para os arquivos de log. O coletor de Log nomeia a coleção de arquivos zip concatenando o nome do computador e o carimbo de hora do arquivo.  
+   > [!NOTE]
+   >  Você não precisará fornecer nomes de arquivo para os arquivos de log. O coletor de Log nomeia a coleção de arquivos zip concatenando o nome do computador e o carimbo de hora do arquivo.  
   
-3.  Uma barra de progresso é exibida enquanto os logs estão sendo coletados.  
+3. Uma barra de progresso é exibida enquanto os logs estão sendo coletados.  
   
-4.  Para exibir o conteúdo do arquivo de coleta de log, marque a caixa de seleção **Abrir o local do arquivo onde os logs foram salvos** e clique em **Fechar** para fechar o assistente e abrir o arquivo de coleta de log.  
+4. Para exibir o conteúdo do arquivo de coleta de log, marque a caixa de seleção **Abrir o local do arquivo onde os logs foram salvos** e clique em **Fechar** para fechar o assistente e abrir o arquivo de coleta de log.  
   
 #### <a name="to-run-the-log-collector-on-a-network-computer-by-using-the-wizard"></a>Para executar o coletor de log em um computador de rede usando o assistente  
   

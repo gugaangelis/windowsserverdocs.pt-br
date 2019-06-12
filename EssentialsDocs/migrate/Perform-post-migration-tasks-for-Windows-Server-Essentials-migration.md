@@ -12,12 +12,12 @@ ms.assetid: f2d236a4-0d62-4961-9d1f-332054e06f6d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 535a547ded55cb4afc0942259eadf5222a815274
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 93d07938435ab1ce7686b1960974696582a2924c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821017"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432665"
 ---
 # <a name="perform-post-migration-tasks-for-windows-server-essentials-migration1"></a>Realizar tarefas pós-migração para migration1 do Windows Server Essentials
 
@@ -84,11 +84,11 @@ As tarefas a seguir ajudaram a concluir a configuração do servidor de destino 
   
 2.  Clique na guia **Conexões**, clique em **Configurações da LAN** e siga um destes procedimentos:  
   
-    -   Se você não estiver usando um servidor proxy na rede, desmarque todas as caixas de seleção na caixa de diálogo **Configurações de Rede Local (LAN)**.  
+    -   Se você não estiver usando um servidor proxy na rede, desmarque todas as caixas de seleção na caixa de diálogo **Configurações de Rede Local (LAN)** .  
   
     -   Se você deseja usar um novo servidor proxy na rede:  
   
-        1.  Na caixa de diálogo **Configurações da Rede Local (LAN)**, desmarque as caixas de seleção na seção **Configuração Automática**.  
+        1.  Na caixa de diálogo **Configurações da Rede Local (LAN)** , desmarque as caixas de seleção na seção **Configuração Automática**.  
   
         2.  Na seção **Servidor Proxy**, verifique se ambas as caixas de seleção estão marcadas.  
   
@@ -105,21 +105,21 @@ As tarefas a seguir ajudaram a concluir a configuração do servidor de destino 
   
 #### <a name="to-give-the-built-in-administrators-group-the-right-to-log-on-as-a-batch-job"></a>Para dar ao grupo de Administradores interno o direito de fazer logon como um trabalho em lotes  
   
-1.  No servidor de destino, abra a ferramenta administrativa **Gerenciamento de Política de Grupo**.  
+1. No servidor de destino, abra a ferramenta administrativa **Gerenciamento de Política de Grupo**.  
   
-2.  No **gerenciamento de política de grupo** árvore de Console, expanda **floresta:** *< ServerName\>*, expanda domínios e, em seguida, expanda seu servidor.  
+2. No **gerenciamento de política de grupo** árvore de Console, expanda **floresta:** *< ServerName\>* , expanda domínios e, em seguida, expanda seu servidor.  
   
-3.  Expanda **Controladores de Domínio**, clique com botão direito na **Política de Controladores de Domínio Padrão** e clique em **Editar**.  
+3. Expanda **Controladores de Domínio**, clique com botão direito na **Política de Controladores de Domínio Padrão** e clique em **Editar**.  
   
-4.  Na **Editor de gerenciamento de diretiva de grupo**, clique em **política de controladores de domínio padrão ***< ServerName\>*** política**e, em seguida, expanda  **Configuração do computador**.  
+4. Na **Editor de gerenciamento de diretiva de grupo**, clique em **política de controladores de domínio padrão**<em>< ServerName\></em>**política**, e, em seguida, expanda **configuração do computador**.  
   
-5.  Expanda **Políticas**, expanda **Configurações do Windows** e então expanda **Configurações de Segurança**.  
+5. Expanda **Políticas**, expanda **Configurações do Windows** e então expanda **Configurações de Segurança**.  
   
-6.  Na árvore **Configurações de Segurança**, expanda **Políticas Locais** e clique em **Atribuição de Direitos de Usuário**.  
+6. Na árvore **Configurações de Segurança**, expanda **Políticas Locais** e clique em **Atribuição de Direitos de Usuário**.  
   
-7.  No painel de resultados, clique com botão direito em **Fazer logon como um trabalho em lotes** e clique em Propriedades.  
+7. No painel de resultados, clique com botão direito em **Fazer logon como um trabalho em lotes** e clique em Propriedades.  
   
-8.  Na página **Propriedades de Fazer logon como um trabalho em lotes**, clique em **Adicionar Usuário ou Grupo**.  
+8. Na página **Propriedades de Fazer logon como um trabalho em lotes**, clique em **Adicionar Usuário ou Grupo**.  
   
 9. Na caixa de diálogo **Adicionar Usuário ou Grupo**, clique em **Procurar**.  
   

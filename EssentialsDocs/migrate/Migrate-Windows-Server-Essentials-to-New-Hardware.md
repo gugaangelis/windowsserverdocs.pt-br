@@ -12,12 +12,12 @@ ms.assetid: f695ae90-3160-407b-bebf-9e460f22c86d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 61106439a63a75143a9cca0989c70370adfedd38
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f59e84877606f65d3f8eb6fd9dc39fe701af8a5a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853407"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432929"
 ---
 # <a name="migrate-windows-server-essentials-to-new-hardware"></a>Migrar do Windows Server Essentials para um novo hardware
 
@@ -27,9 +27,9 @@ Este guia descreve como migrar um domínio existente do Windows Server® 2012 Es
   
 > [!NOTE]
 >  Para evitar problemas durante a migração, a equipe de desenvolvimento de produto do Windows Server Essentials recomenda enfaticamente a leitura deste documento antes de começar a migração.  
-  
+> 
 > [!NOTE]
-
+> 
 >  Para migrar dados do servidor para a versão mais recente do Windows Server Essentials, consulte [migrar para o Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md).  
 
   
@@ -45,23 +45,23 @@ Este guia descreve como migrar um domínio existente do Windows Server® 2012 Es
  Este guia de migração inclui as seguintes etapas:  
   
 
-1.  [Preparar a migração do servidor de origem para o Windows Server Essentials](Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md).  Você deve garantir que o servidor de origem e a rede estejam prontos para a migração. Esta seção o guia pelos processos de backup do servidor de origem, avaliação da integridade do sistema do servidor de origem, instalação dos service packs e das correções mais recentes e verificação da configuração da rede.  
+1. [Preparar a migração do servidor de origem para o Windows Server Essentials](Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md).  Você deve garantir que o servidor de origem e a rede estejam prontos para a migração. Esta seção o guia pelos processos de backup do servidor de origem, avaliação da integridade do sistema do servidor de origem, instalação dos service packs e das correções mais recentes e verificação da configuração da rede.  
   
-2.  [Instalar o Windows Server Essentials no modo de migração](Install-Windows-Server-Essentials-in-migration-mode.md).  Esta seção descreve as etapas que necessárias para instalar o Windows Server Essentials no servidor de destino no modo de migração.  
+2. [Instalar o Windows Server Essentials no modo de migração](Install-Windows-Server-Essentials-in-migration-mode.md).  Esta seção descreve as etapas que necessárias para instalar o Windows Server Essentials no servidor de destino no modo de migração.  
   
-3.  [Fazer computadores ingressarem no novo servidor Windows Server Essentials](Join-computers-to-the-new-Windows-Server-Essentials-server.md).  Esta seção abrange o ingresso de computadores cliente para o novo servidor do Windows Server Essentials e atualizando as configurações de diretiva de grupo.  
+3. [Fazer computadores ingressarem no novo servidor Windows Server Essentials](Join-computers-to-the-new-Windows-Server-Essentials-server.md).  Esta seção abrange o ingresso de computadores cliente para o novo servidor do Windows Server Essentials e atualizando as configurações de diretiva de grupo.  
   
-4.  [Mover configurações e dados para a migração do servidor de destino para o Windows Server Essentials](Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md).  Esta seção fornece informações sobre a migração de dados e configurações do servidor de origem.  
+4. [Mover configurações e dados para a migração do servidor de destino para o Windows Server Essentials](Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md).  Esta seção fornece informações sobre a migração de dados e configurações do servidor de origem.  
   
-5.  [Configurar o redirecionamento de pasta no servidor de destino do Windows Server Essentials](Configure-folder-redirection-on-the-Windows-Server-Essentials-Destination-Server.md).  Caso o redirecionamento de pastas esteja habilitado no servidor de origem, você poderá habilitá-lo no servidor de destino e excluir a antiga configuração de Política de Grupo de Redirecionamento de Pastas.  
+5. [Configurar o redirecionamento de pasta no servidor de destino do Windows Server Essentials](Configure-folder-redirection-on-the-Windows-Server-Essentials-Destination-Server.md).  Caso o redirecionamento de pastas esteja habilitado no servidor de origem, você poderá habilitá-lo no servidor de destino e excluir a antiga configuração de Política de Grupo de Redirecionamento de Pastas.  
   
-6.  [Rebaixar e remover o servidor de origem da nova rede do Windows Server Essentials](Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md).  Antes da remoção do servidor de origem da rede, você deve forçar uma atualização da Política de Grupo e rebaixar o servidor de origem.  
+6. [Rebaixar e remover o servidor de origem da nova rede do Windows Server Essentials](Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md).  Antes da remoção do servidor de origem da rede, você deve forçar uma atualização da Política de Grupo e rebaixar o servidor de origem.  
   
-7.  [Realizar tarefas pós-migração para a migração do Windows Server Essentials](Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md).  Depois de concluir a migração de todas as configurações e dados para o Windows Server Essentials, convém mapear os computadores permitidos para contas de usuário.  
+7. [Realizar tarefas pós-migração para a migração do Windows Server Essentials](Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md).  Depois de concluir a migração de todas as configurações e dados para o Windows Server Essentials, convém mapear os computadores permitidos para contas de usuário.  
   
-8.  [Executar o analisador de práticas recomendadas do Windows Server Essentials](Run-the-Windows-Server-Essentials-Best-Practices-Analyzer.md).  Depois de concluir a migração das configurações e dados para o Windows Server Essentials, você deve baixar e executar o BPA do Windows Server Essentials.  
+8. [Executar o analisador de práticas recomendadas do Windows Server Essentials](Run-the-Windows-Server-Essentials-Best-Practices-Analyzer.md).  Depois de concluir a migração das configurações e dados para o Windows Server Essentials, você deve baixar e executar o BPA do Windows Server Essentials.  
   
- Vários procedimentos de migração exigem a abertura de uma janela de prompt de comando como administrador.  
+   Vários procedimentos de migração exigem a abertura de uma janela de prompt de comando como administrador.  
   
 #### <a name="to-open-a-command-prompt-window-as-an-administrator"></a>Abra uma janela de Prompt de Comando como administrador.  
   

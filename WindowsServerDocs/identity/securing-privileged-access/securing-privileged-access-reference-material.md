@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 75474bd37f425388f01986ca32073107ee4fed99
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bcc06a3ccc4e95fa43a7f8f0ef7d110fd427f5a0
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830687"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501649"
 ---
 # <a name="active-directory-administrative-tier-model"></a>Modelo de camadas administrativas do Active Directory
 
@@ -330,11 +330,11 @@ Os administradores que oferecem suporte a usuários e sistemas remotos devem seg
 Certifique-se de que as práticas a seguir sejam aplicadas neste cenário:
 
 - **Suporte de servidor remoto**: ao acessar remotamente um servidor, os administradores de Camada 0 devem seguir estas diretrizes:
-   - **Primário (ferramenta)** ferramentas remotas que usam logons de rede (tipo 3). Para saber mais, consulte [Ferramentas administrativas e tipos de logon](http://aka.ms/admintoolsecurity).
-   - **Primário (interativo)** use RDP RestrictedAdmin ou uma sessão RDP padrão de uma estação de trabalho do administrador com uma conta de domínio
+  - **Primário (ferramenta)** ferramentas remotas que usam logons de rede (tipo 3). Para saber mais, consulte [Ferramentas administrativas e tipos de logon](http://aka.ms/admintoolsecurity).
+  - **Primário (interativo)** use RDP RestrictedAdmin ou uma sessão RDP padrão de uma estação de trabalho do administrador com uma conta de domínio
 
-   > [!NOTE]
-   > Se você tiver uma solução de gerenciamento de privilégio de Camada 0, adicione "que usa permissões obtidas just-in-time de uma solução de gerenciamento de acesso privilegiado."
+    > [!NOTE]
+    > Se você tiver uma solução de gerenciamento de privilégio de Camada 0, adicione "que usa permissões obtidas just-in-time de uma solução de gerenciamento de acesso privilegiado."
 
 - **Suporte do servidor físico** Quando estiverem fisicamente presentes em um console do servidor ou em um console de máquina virtual (ferramentas Hyper-V ou VMWare), essas contas não terão restrições específicas de uso de ferramentas administrativas, somente as restrições gerais das tarefas de usuário padrão, como email e navegação na internet aberta.
 
@@ -436,10 +436,10 @@ Para qualquer utilização das contas de acesso de emergência:
 - Somente administradores de domínio autorizados podem acessar as contas de acesso de emergência com privilégios de administrador de domínio.
 - As contas de acesso de emergência podem ser usadas somente em controladores de domínio e outros hosts de Camada 0.
 - Esta conta deve ser usada somente para:
-   - Executar a solução de problemas e correção de problemas técnicos que estão impedindo o uso das contas administrativas corretas.
-   - Execute tarefas raras, como:
-      - Administração de esquema
-      - Tarefas de toda a floresta que exigem privilégios administrativos corporativos
+  - Executar a solução de problemas e correção de problemas técnicos que estão impedindo o uso das contas administrativas corretas.
+  - Execute tarefas raras, como:
+    - Administração de esquema
+    - Tarefas de toda a floresta que exigem privilégios administrativos corporativos
 
       > [!NOTE]
       > Gerenciamento de topologia, incluindo o gerenciamento de site e sub-rede do Active Directory é delegado ao limitar o uso desses privilégios.
@@ -555,7 +555,7 @@ As organizações devem controlar e monitorar a associação em todos os grupos 
 - Opers. de servidores
 - Controladores de Domínio
 - Controladores de Domínio somente leitura
-- Proprietários Criadores de Política de Grupo
+- Proprietários criadores de política de grupo
 - Operadores criptográficos
 - Usuários COM Distribuídos
 - Outros grupos delegados - grupos personalizados que podem ser criados por sua organização para gerenciar operações de diretório que também podem ter acesso efetivo de camada 0.

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: c8070268fdf58fbbb71c159a7360b488222ef740
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1e2ccf6187e4480f94b30632b6f8f9f092052541
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852177"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811082"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -31,22 +31,31 @@ O **PowerShell.exe** ferramenta de linha de comando inicia uma sessão do Window
 Você pode usar o **PowerShell.exe** ferramenta de linha de comando para iniciar uma sessão do Windows PowerShell em uma janela de Prompt de comando.
 
 - Para iniciar uma sessão do Windows PowerShell em uma janela de prompt de comando, digite `PowerShell`. Um **PS** prefixo é adicionado ao prompt de comando para indicar que você está em uma sessão do Windows PowerShell.
-- Para iniciar uma sessão com uma política de execução específico, use o **ExecutionPolicy** parâmetro.  
+
+- Para iniciar uma sessão com uma política de execução específico, use o **ExecutionPolicy** parâmetro.
+
     ```
     PowerShell.exe -ExecutionPolicy Restricted
-    ```  
-- Para iniciar uma sessão do Windows PowerShell sem os perfis do Windows PowerShell, use o **NoProfile** parâmetro.  
+    ```
+
+- Para iniciar uma sessão do Windows PowerShell sem os perfis do Windows PowerShell, use o **NoProfile** parâmetro.
+
     ```
     PowerShell.exe -NoProfile
-    ```  
-- Para iniciar uma sessão, use o **ExecutionPolicy** parâmetro.  
+    ```
+  
+- Para iniciar uma sessão, use o **ExecutionPolicy** parâmetro.
+
     ```
     PowerShell.exe -ExecutionPolicy Restricted
-    ```  
+    ```
+  
 - Para ver o PowerShell.exe no arquivo de Ajuda, use o seguinte formato de comando.  
+    
     ```
     PowerShell.exe -help, -?, /?
-    ```  
+    ```
+
 - Para encerrar uma sessão do Windows PowerShell em uma janela de Prompt de comando, digite `exit`. Retorna o prompt de comando típico.
 
 Para obter uma lista completa da **PowerShell.exe** parâmetros de linha de comando, consulte [about_PowerShell.Exe](https://go.microsoft.com/fwlink/?LinkID=113439).

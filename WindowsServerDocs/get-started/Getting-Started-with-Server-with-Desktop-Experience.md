@@ -14,24 +14,24 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: eb2e5be2ed19fe7cd64f6c6bd64ca9afafd93bff
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cf67a1c9675191936a6150bb950c59e6f99b54ad
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812307"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810698"
 ---
 # <a name="install-server-with-desktop-experience"></a>Instalar o Server com a Experiência Desktop
 > Aplica-se a: Windows Server 2016
   
 
-Ao instalar o Windows Server 2016 usando o Assistente de Instalação, é possível escolher entre o **Windows Server 2016** e o **Windows Server (Servidor com Experiência Desktop)**. A opção Servidor com Experiência Desktop é o equivalente do Windows Server 2016 à opção Instalação completa disponível no Windows Server 2012 R2 com o recurso Experiência Desktop instalado. Se você não fizer uma escolha no Assistente de instalação, o **Windows Server 2016**será instalado. Essa é a opção de instalação do **Server Core**.
+Ao instalar o Windows Server 2016 usando o Assistente de Instalação, é possível escolher entre o **Windows Server 2016** e o **Windows Server (Servidor com Experiência Desktop)** . A opção Servidor com Experiência Desktop é o equivalente do Windows Server 2016 à opção Instalação completa disponível no Windows Server 2012 R2 com o recurso Experiência Desktop instalado. Se você não fizer uma escolha no Assistente de instalação, o **Windows Server 2016**será instalado. Essa é a opção de instalação do **Server Core**.
 
 A opção Servidor com Experiência Desktop instala a interface de usuário padrão e todas as ferramentas, incluindo recursos de experiência do cliente que exigiam uma instalação separada no Windows Server 2012 R2. As funções e recursos do servidor são instalados com o Gerenciador de Servidores ou por outros métodos. Comparando com a opção Server Core, requer maior espaço em disco e tem mais requisitos de manutenção, portanto recomendamos que você escolha a instalação Server Core, a menos que tenha uma necessidade específica dos elementos adicionais da interface do usuário e das ferramentas gráficas de gerenciamento que estão incluídas na opção Servidor com Experiência Desktop. Se você achar que pode trabalhar sem os elementos adicionais, consulte [Install Server Core](Getting-Started-with-Server-Core.md) (Instalar o Server Core). Para uma opção ainda mais leve, consulte [Install Nano Server](Getting-Started-with-Nano-Server.md) (Instalar o Nano Server).
 
->[!NOTE]
+> [!NOTE]
 >
->Ao contrário de algumas versões anteriores do Windows Server, não é possível converter entre Server Core e Server com Experiência Desktop após a instalação. Se você instalar o Server com Experiência Desktop e posteriormente decidir usar o Server Core, deverá fazer uma nova instalação.
+> Ao contrário de algumas versões anteriores do Windows Server, não é possível converter entre Server Core e Server com Experiência Desktop após a instalação. Se você instalar o Server com Experiência Desktop e posteriormente decidir usar o Server Core, deverá fazer uma nova instalação.
 
 **Interface do usuário:** interface gráfica de usuário padrão ("Shell Gráfico de Servidor"). O Shell Gráfico de Servidor inclui o novo shell do Windows 10. Os recursos específicos do Windows instalados por padrão com essa opção são User-Interfaces-Infra, Server-GUI-Shell, Server-GUI-Mgmt-Infra, InkAndHandwritingServices, ServerMediaFoundation e Experiência Desktop. Embora esses recursos estejam no Gerenciador do Servidor nesta versão, não há suporte para desinstalá-los e eles não estarão disponíveis em versões futuras.
 

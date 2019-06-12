@@ -11,12 +11,12 @@ ms.topic: article
 ms.assetid: 8e7b77a4-1c6a-4c21-8844-0df89b63f68d
 author: brianlic-msft
 ms.date: 10/12/2016
-ms.openlocfilehash: d304ee3456f8db1e5b202c1d9221d1374a5251be
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7c2d7113847cc44f18c5234502b58becde1dcb9f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831007"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446515"
 ---
 # <a name="device-health-attestation"></a>Atestado de integridade de dispositivo
 
@@ -58,15 +58,15 @@ O serviço de DHA integra-se com soluções do MDM e fornece o seguinte:
 Aqui está um exemplo que mostra como você pode usar o DHA para ajudar a elevar o nível de proteção de segurança para os ativos da sua organização.
 
 1. Crie uma política que verifica os seguintes atributos/configuração de inicialização:
-  - Inicialização Segura
-  - BitLocker
-  - ELAM
+   - Inicialização Segura
+   - BitLocker
+   - ELAM
 2. A solução MDM impõe essa política e dispara uma ação corretiva com base nos dados do relatório de DHA.  Por exemplo, ela pode verificar o seguinte:
-  - A Inicialização Segura foi habilitada, o dispositivo carregou um código confiável autêntico e o carregador de inicialização do Windows não foi violado.
-  - A Inicialização Confiável verificou com sucesso a assinatura digital do kernel do Windows e os componentes que foram carregados enquanto o dispositivo foi iniciado.
-  - A Inicialização Medida criou uma trilha de auditoria protegida por TPM que pode ser verificada remotamente.
-  - O BitLocker foi habilitado e protegeu os dados quando o dispositivo foi desativado.
-  - O ELAM foi habilitado nos primeiros estágios de inicialização e está monitorando o tempo de execução.
+   - A Inicialização Segura foi habilitada, o dispositivo carregou um código confiável autêntico e o carregador de inicialização do Windows não foi violado.
+   - A Inicialização Confiável verificou com sucesso a assinatura digital do kernel do Windows e os componentes que foram carregados enquanto o dispositivo foi iniciado.
+   - A Inicialização Medida criou uma trilha de auditoria protegida por TPM que pode ser verificada remotamente.
+   - O BitLocker foi habilitado e protegeu os dados quando o dispositivo foi desativado.
+   - O ELAM foi habilitado nos primeiros estágios de inicialização e está monitorando o tempo de execução.
   
 #### <a name="dha-cloud-service"></a>Serviço de nuvem de DHA
 

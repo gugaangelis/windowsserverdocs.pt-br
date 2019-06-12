@@ -13,19 +13,19 @@ manager: dongill
 ms.author: elizapo
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 15218af2f084e9c998d89250aace1d763d03b42a
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: 5be9b05da1e78cc54e12254f43d0f44f7ff65c5d
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976335"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66804886"
 ---
 # <a name="whats-new-for-the-remote-desktop-web-client"></a>O que há de novo para o cliente da web de área de trabalho remota?
 
 Podemos atualizar regularmente o [cliente da web de área de trabalho remota](remote-desktop-web-client.md), adição de novos recursos e corrigir problemas. Confira as últimas atualizações abaixo.
 
-   >[!NOTE]
-    >Alteramos o sistema de controle de versão para o cliente web. Começando com a versão 1.0.18.0, todas as versões de lançamento do cliente da web irá conter números (no formato de "W.x.y. z"). Números de versão para o cliente da web de área de trabalho remota sempre terminará com um 0 (por exemplo, W.X.Y.0). Cada versão do cliente de área de trabalho Virtual do Windows web alterará o último dígito até a próxima versão da área de trabalho remoto da web cliente (por exemplo, 1.0.18.1).
+> [!NOTE]
+> Alteramos o sistema de controle de versão para o cliente web. Começando com a versão 1.0.18.0, todas as versões de lançamento do cliente da web irá conter números (no formato de "W.x.y. z"). Números de versão para o cliente da web de área de trabalho remota sempre terminará com um 0 (por exemplo, W.X.Y.0). Cada versão do cliente de área de trabalho Virtual do Windows web alterará o último dígito até a próxima versão da área de trabalho remoto da web cliente (por exemplo, 1.0.18.1).
 
 ## <a name="updates-for-version-10180"></a>Atualizações para a versão 1.0.18.0
 *Data de publicação: 5/14/2019*
@@ -38,7 +38,7 @@ Podemos atualizar regularmente o [cliente da web de área de trabalho remota](re
 - Mensagem de erro atualizado para os usuários que tentarem autenticar usando uma senha expirada.
 - Feed atualizado da interface do usuário na página de todos os recursos.
 - Reconecte resolvidos diálogos sobrepostos que ocorreram durante a sessão.
-- Corrigido o dimensionamento do ícone de recurso remoto na barra de tarefas do recurso. 
+- Corrigido o dimensionamento do ícone de recurso remoto na barra de tarefas do recurso.
 
 ## <a name="updates-for-version-1011"></a>Atualizações para a versão 1.0.11
 *Data de publicação: 2/22/2019*
@@ -58,7 +58,7 @@ Podemos atualizar regularmente o [cliente da web de área de trabalho remota](re
 - Bugs de acessibilidade fixo, permitindo que os usuários com deficiência visual usar o cliente da web.
 - Aprimorada a mensagens de erro exibidas ao usuário para erros de feed.
 - Adicionado Ctrl + Alt + End (Windows) e fn + controle + opção + atalhos de exclusão (Mac) para invocar o Ctrl + Alt + Del no computador remoto.
-- Telemetria aprimorada para eventos de falha. 
+- Telemetria aprimorada para eventos de falha.
 - Aprimorado o nosso pipeline de build e as ferramentas de compilação.
 - Várias correções de bugs.
 
@@ -86,7 +86,7 @@ Podemos atualizar regularmente o [cliente da web de área de trabalho remota](re
 
 - Nova entrada na experiência do cliente da web.
 - Não há mais solicitado a fornecer credenciais ao iniciar uma conexão de área de trabalho ou aplicativo (logon único).
-- Movido o cliente da web para uma nova URL: **https://server_FQDN/RDWeb/webclient/index.html**
+- Movido o cliente da web para uma nova URL: <https://server_FQDN/RDWeb/webclient/index.html>
 - Redirecionamento de zona de tempo adicionadas.
 - Várias correções de bugs.
 

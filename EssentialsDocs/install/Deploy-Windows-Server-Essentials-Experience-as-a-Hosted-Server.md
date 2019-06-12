@@ -12,12 +12,12 @@ ms.assetid: a455c6b4-b29f-4f76-8c6b-1578b6537717
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b44b395a39a53194b73a0d503c2310edcbe53a2c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 94d4040b65a63fe64e5d49d55f82c4deead5a121
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876067"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433579"
 ---
 # <a name="deploy-windows-server-essentials-experience-as-a-hosted-server"></a>Implantar a Experiência do Windows Server Essentials como um servidor hospedado
 
@@ -116,35 +116,35 @@ Este documento inclui informações específicas a hosters que pretendem implant
   
  Aqui estão duas topologias típicas de rede no lado do servidor e como a VPN e o Acesso via Web remoto podem ser configurados:  
   
--   **Topologia 1** (Esta é a topologia preferencial e ela coloca todos os servidores e o intervalo de IP da VPN na mesma sub-rede):  
+- **Topologia 1** (Esta é a topologia preferencial e ela coloca todos os servidores e o intervalo de IP da VPN na mesma sub-rede):  
   
-    -   Configure o servidor em uma rede virtual separada sob um dispositivo de conversão de endereço de rede (NAT).  
+  -   Configure o servidor em uma rede virtual separada sob um dispositivo de conversão de endereço de rede (NAT).  
   
-    -   Habilite o serviço DHCP na rede virtual ou atribua um endereço IP estático para o servidor.  
+  -   Habilite o serviço DHCP na rede virtual ou atribua um endereço IP estático para o servidor.  
   
-    -   Encaminhe a porta 443 do IP público no roteador para o endereço de rede local do servidor.  
+  -   Encaminhe a porta 443 do IP público no roteador para o endereço de rede local do servidor.  
   
-    -   Permita a passagem da VPN para a porta 443.  
+  -   Permita a passagem da VPN para a porta 443.  
   
-    -   Defina o conjunto de endereços IPv4 da VPN no mesmo intervalo de sub-rede que o endereço do servidor.  
+  -   Defina o conjunto de endereços IPv4 da VPN no mesmo intervalo de sub-rede que o endereço do servidor.  
   
-    -   Atribua um segundo servidor ao endereço IP estático na mesma sub-rede, mas fora do conjunto de endereço da VPN.  
+  -   Atribua um segundo servidor ao endereço IP estático na mesma sub-rede, mas fora do conjunto de endereço da VPN.  
   
--   **Topologia 2**:  
+- **Topologia 2**:  
   
-    -   Atribua ao servidor um endereço IP privado.  
+  -   Atribua ao servidor um endereço IP privado.  
   
-    -   Permita que a porta 443 no servidor acesse um endereço IP público da porta 443.  
+  -   Permita que a porta 443 no servidor acesse um endereço IP público da porta 443.  
   
-    -   Permita a passagem da VPN para a porta 443.  
+  -   Permita a passagem da VPN para a porta 443.  
   
-    -   Atribua diferentes intervalos para o conjunto de endereços IPv4 da VPN e o endereço do servidor.  
+  -   Atribua diferentes intervalos para o conjunto de endereços IPv4 da VPN e o endereço do servidor.  
   
- Com a topologia 2, não há suporte para cenários de segundo servidor porque não é possível adicionar outro servidor ao mesmo domínio.  
+  Com a topologia 2, não há suporte para cenários de segundo servidor porque não é possível adicionar outro servidor ao mesmo domínio.  
   
- Você pode habilitar a VPN durante uma implantação autônoma usando nosso script do Windows PowerShell ou ela pode ser configurada com o assistente após a configuração inicial.  
+  Você pode habilitar a VPN durante uma implantação autônoma usando nosso script do Windows PowerShell ou ela pode ser configurada com o assistente após a configuração inicial.  
   
- Para habilitar a VPN usando o Windows PowerShell, execute o seguinte comando com privilégios administrativos no servidor que executa o Windows Server Essentials e forneça todas as informações necessárias.  
+  Para habilitar a VPN usando o Windows PowerShell, execute o seguinte comando com privilégios administrativos no servidor que executa o Windows Server Essentials e forneça todas as informações necessárias.  
   
 ```  
 ##  
@@ -177,19 +177,19 @@ Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyT
   
  Se essa chave estiver definida como 0x1, alguns dos recursos locais terão o comportamento alterado. Essas alterações de recurso incluem:  
   
--   **Backup do cliente** O backup de cliente será desativado por padrão para computadores cliente recentemente associados.  
+- **Backup do cliente** O backup de cliente será desativado por padrão para computadores cliente recentemente associados.  
   
--   **Serviço de restauração do cliente** Serviço de restauração do cliente will be disabled, and the UI will be hidden from the Dashboard.  
+- **Serviço de restauração do cliente** Serviço de restauração do cliente will be disabled, and the UI will be hidden from the Dashboard.  
   
--   **Histórico de arquivos** As configurações do histórico de arquivos para contas de usuário recém-criadas não serão gerenciadas automaticamente pelo servidor.  
+- **Histórico de arquivos** As configurações do histórico de arquivos para contas de usuário recém-criadas não serão gerenciadas automaticamente pelo servidor.  
   
--   **Backup do servidor** O serviço de Backup do servidor será desabilitado e a interface do usuário do servidor de Backup ficará oculta do Painel.  
+- **Backup do servidor** O serviço de Backup do servidor será desabilitado e a interface do usuário do servidor de Backup ficará oculta do Painel.  
   
--   **Espaços de armazenamento** A interface do usuário para criar ou gerenciar espaços de armazenamento ficará oculta do Painel.  
+- **Espaços de armazenamento** A interface do usuário para criar ou gerenciar espaços de armazenamento ficará oculta do Painel.  
   
--   **Acesso em qualquer local** A configuração do roteador e VPN será ignorada por padrão quando você executar o Assistente de configuração Acesso em qualquer lugar.  
+- **Acesso em qualquer local** A configuração do roteador e VPN será ignorada por padrão quando você executar o Assistente de configuração Acesso em qualquer lugar.  
   
- Se você deseja controlar o comportamento de cada recurso listado, você pode definir a chave do Registro correspondente para cada um deles. Para obter informações sobre como definir a chave do Registro, consulte [Personalizar e implantar o Windows Server Essentials no Windows Server 2012 R2](https://technet.microsoft.com/library/dn293241.aspx)  
+  Se você deseja controlar o comportamento de cada recurso listado, você pode definir a chave do Registro correspondente para cada um deles. Para obter informações sobre como definir a chave do Registro, consulte [Personalizar e implantar o Windows Server Essentials no Windows Server 2012 R2](https://technet.microsoft.com/library/dn293241.aspx)  
   
 ##  <a name="BKMK_AutomateDeployment"></a> Automatizar a implantação de experiência do Windows Server Essentials  
  Para automatizar a implantação, você precisa primeiro implantar o sistema operacional e, em seguida, instale a função experiência do Windows Server Essentials.  
@@ -217,9 +217,9 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
   
 > [!NOTE]
 >  Recomenda-se colocar o servidor de origem e o servidor de destino na mesma sub-rede. Se isso não for possível, você deve garantir que:  
->   
->  -   O servidor de origem e o servidor de destino podem acessar uns aos outros "relatório s nomes DNS internos.  
-> -   Todas as portas necessárias estejam abertas.  
+> 
+> - O servidor de origem e o servidor de destino podem acessar uns aos outros "relatório s nomes DNS internos.  
+>   -   Todas as portas necessárias estejam abertas.  
   
  Após a migração, você pode atualizar suas licenças para remover os bloqueios e limites. Para obter mais informações, consulte [transição do Windows Server Essentials para o Windows Server 2012 Standard](https://technet.microsoft.com/library/jj247582.aspx).  
   

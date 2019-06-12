@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: ffd7131f7f3772ab47b62c9755008fe3b1c4b274
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 3a78334f64d9e51515757b01f2d788bf87f67a35
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192073"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501614"
 ---
 # <a name="plan-device-based-conditional-access-on-premises"></a>Planejar acesso condicional com base em dispositivo no local
 
@@ -30,7 +30,7 @@ O AD FS fornece o componente local diante das políticas de acesso condicional e
 ### <a name="types-of-registered-devices"></a>Tipos de dispositivos registrados  
 Há três tipos de dispositivos registrados, que são representados como objetos de dispositivo no AD do Azure e pode ser usado para acesso condicional com o AD FS no local também.  
 
-| |Adicionar trabalho ou de estudante  |Ingressar no Azure AD  |Junção Domian do Windows 10    
+| |Adicionar trabalho ou de estudante  |Ingressar no Azure AD  |Ingresso no domínio 10 Windows    
 | --- | --- |--- | --- |
 |Descrição    |  Os usuários adicionar seu trabalho ou de estudante para seus dispositivos BYOD interativamente.  **Observação:** Adicionar conta corporativa ou escolar é o substituto do ingresso no local no Windows 8/8.1       | Os usuários ingressar seus dispositivos de trabalho do Windows 10 ao Azure AD.|Dispositivos de ingressados no domínio do Windows 10 registrados automaticamente no Azure AD.|           
 |Como os usuários fazem logon no dispositivo     |  Nenhum logon para o Windows como a conta corporativa ou de estudante.  Faça logon usando uma conta da Microsoft.       |   Faça logon no Windows como a conta (ou de estudante) que registrou o dispositivo.      |     Faça logon usando a conta do AD.|      

@@ -7,16 +7,17 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 76427cc6d86a3d61dcf2d66cdf47ded9ba9be848
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.date: 06/07/2019
+ms.openlocfilehash: 99f1a9a32ef69ba8322b2dba902003f8a750a4d2
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829037"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811649"
 ---
 # <a name="what-is-windows-admin-center"></a>O que é o Windows Admin Center?
 
->Aplica-se a: Windows Admin Center, Windows Admin Center Preview
+> Aplica-se a: Windows Admin Center, Windows Admin Center Preview
 
 Windows Admin Center é um conjunto de ferramentas de gerenciamento novo implantado localmente, baseada em navegador que permite a você gerenciar seus servidores do Windows com nenhuma dependência do Azure ou nuvem. O Windows Admin Center oferece controle total sobre todos os aspectos da sua infraestrutura de servidor e é útil para gerenciar servidores em redes privadas que não estão conectadas à Internet.
 

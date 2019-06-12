@@ -12,12 +12,12 @@ ms.assetid: cdfa9504-9881-4265-b308-c7ee8721bfaa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1a67cda9e4b04e8d861232b48f45915fb2b460d1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0240abfff58baedd79ab038af93b107dbb898eb2
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836407"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432945"
 ---
 # <a name="join-computers-to-the-new-windows-server-essentials-server1"></a>Fazer computadores ingressarem o server1 novos do Windows Server Essentials
 
@@ -31,7 +31,7 @@ ms.locfileid: "59836407"
   
  O processo para se conectar a um computador cliente para o servidor é o mesmo para computadores associados ao domínio ou não ingressou no domínio.  
   
--   Navegue até **http://***destino servername***/ connect** e instalar o software Windows Server Connector como se fosse um novo computador.  
+- Navegue até **http://** <em>destino servername</em> **/connect** e instale o software Windows Server Connector como se fosse um novo computador.  
   
 > [!NOTE]
 >  O software Connector do Windows Server não dá suporte a computadores que executam o Windows XP ou Windows Vista. Se você tiver computadores que executam o Windows XP ou Windows Vista já associados ao domínio, ignore esta etapa.  
@@ -47,7 +47,7 @@ ms.locfileid: "59836407"
   
 2.  No prompt de comando, digite **GPRESULT /R** e pressione Enter.  
   
-3.  Examine a saída resultante para a seção de política de grupo foi aplicada de: e certifique-se de que ela lista o servidor de destino, como **Destinationsrv**. Por exemplo:   
+3.  Examine a saída resultante para a seção de política de grupo foi aplicada de: e certifique-se de que ela lista o servidor de destino, como **Destinationsrv**. Por exemplo:  
   
     ```  
     USER SETTINGS  

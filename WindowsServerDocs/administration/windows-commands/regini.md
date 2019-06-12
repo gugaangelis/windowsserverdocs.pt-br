@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 292dfe5755a10a91f2b8bcffaa6412ccda6c6f8a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e3f8454572b662c9327aeb4783c5e9651ad2022b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867627"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441891"
 ---
 # <a name="regini"></a>regini
 
@@ -35,6 +35,7 @@ regini [-m \\machinename | -h hivefile hiveroot][-i n] [-o outputWidth][-b] text
 ### <a name="parameters"></a>Parâmetros
 
 | Parâmetro | Descrição |
+
 |-m \< \\ \\ComputerName >|Especifica o nome do computador remoto com um registro que deve ser modificado. Use o formato  **\\ \\ComputerName**.|
 |---------------------|-|
 |-h \<ArquivoDe Sessão hiveroot >|Especifica o hive do Registro local para modificar. Você deve especificar o nome do arquivo de hive e a raiz do hive no formato **hiveroot arquivode sessão**.|
@@ -52,4 +53,4 @@ As diretrizes a seguir se aplicam principalmente para o conteúdo dos arquivos d
 
 #### <a name="additional-references"></a>Referências adicionais
 
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

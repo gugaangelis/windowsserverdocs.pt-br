@@ -8,24 +8,24 @@ author: johnmarlin-msft
 ms.date: 01/30/2019
 description: Este artigo descreve o cenário de conjuntos de Cluster
 ms.localizationpriority: medium
-ms.openlocfilehash: 2deeb6968f910e80bacb2354ad2e575060a7797a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 349b69835ae68c626e886cad30f4d5a89d358372
+ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833947"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719710"
 ---
 # <a name="cluster-sets"></a>Conjuntos de cluster
 
-> Aplica-se a: Build do Windows Server Insider Preview 17650 e posterior
+> Aplica-se a: Windows Server 2019
 
-Conjuntos de cluster é a nova tecnologia de expansão de nuvem nesta versão de visualização que aumenta a contagem de nós de cluster em uma única nuvem de Software definida pelo Data Center SDDC () em ordens de magnitude. Um conjunto de cluster é um agrupamento flexível de vários Clusters de Failover: computação, armazenamento ou hiperconvergente. Cluster conjuntos de tecnologia habilita fluidez da máquina virtual em clusters de membro dentro de um conjunto de cluster e um namespace unificado de armazenamento em todo o conjunto para dar suporte a fluidez de máquina virtual. 
+Conjuntos de cluster é a nova tecnologia de expansão de nuvem na versão do Windows Server 2019 que aumenta a contagem de nós de cluster em uma única nuvem de Software definida pelo Data Center SDDC () em ordens de magnitude. Um conjunto de cluster é um agrupamento flexível de vários Clusters de Failover: computação, armazenamento ou hiperconvergente. Cluster conjuntos de tecnologia habilita fluidez da máquina virtual em clusters de membro dentro de um conjunto de cluster e um namespace unificado de armazenamento em todo o conjunto para dar suporte a fluidez de máquina virtual.
 
-Enquanto o gerenciamento de Cluster de Failover existente preservando experiências em clusters de membro, uma instância de cluster de conjunto Além disso oferece principais casos de uso em torno do gerenciamento de ciclo de vida na agregação. Este guia de avaliação de cenário de visualização do Windows Server fornece as informações necessárias em segundo plano, juntamente com instruções passo a passo para avaliar a tecnologia de conjuntos de cluster usando o PowerShell. 
+Enquanto o gerenciamento de Cluster de Failover existente preservando experiências em clusters de membro, uma instância de cluster de conjunto Além disso oferece principais casos de uso em torno do gerenciamento de ciclo de vida na agregação. Este guia de avaliação do Windows Server 2019 cenário fornece as informações necessárias em segundo plano, juntamente com instruções passo a passo para avaliar a tecnologia de conjuntos de cluster usando o PowerShell.
 
 ## <a name="technology-introduction"></a>Introdução da tecnologia
 
-Tecnologia de conjuntos de cluster é desenvolvida para atender às solicitações de cliente específico operar nuvens de Software definidas SDDC (Datacenter) em escala. Proposta de valor de conjuntos de cluster nesta versão de visualização pode ser resumida da seguinte maneira:  
+Tecnologia de conjuntos de cluster é desenvolvida para atender às solicitações de cliente específico operar nuvens de Software definidas SDDC (Datacenter) em escala. Proposta de valor de conjuntos de cluster pode ser resumida da seguinte maneira:  
 
 - Aumentar significativamente a escala de nuvem SDDC com suporte para a execução de máquinas virtuais altamente disponíveis, combinando vários clusters menores em uma única malha grande, até mesmo enquanto mantém o limite de falha de software em um único cluster
 - Gerenciar todo ciclo de vida do Cluster de Failover incluindo integração e desativação de clusters, sem afetar a disponibilidade de máquina virtual de locatário, por meio de fluidez migrando máquinas virtuais entre esta malha grande
@@ -35,7 +35,7 @@ Tecnologia de conjuntos de cluster é desenvolvida para atender às solicitaçõ
 
 De uma exibição de alto nível, isso é qual cluster podem se parecer com conjuntos.
 
-![Cluster define o modo de exibição de solução](media\Cluster-sets-Overview\Cluster-sets-solution-View.png)
+![Cluster define o modo de exibição de solução](media/Cluster-sets-Overview/Cluster-sets-solution-View.png)
 
 O exemplo a seguir fornece um resumo de cada um dos elementos na imagem acima:
 
@@ -49,7 +49,7 @@ Um cluster de membro em um conjunto de cluster normalmente é um cluster hiperco
 
 **Cluster definir referência de namespace SOFS**
 
-Uma referência de namespace do conjunto de cluster (Namespace para definir Cluster) SOFS é um servidor de arquivos de escalabilidade horizontal no qual cada compartilhamento SMB no Cluster defina Namespace SOFS é um compartilhamento de referência – do tipo 'SimpleReferral' recentemente introduzido nesta versão de visualização.  Esta referência permite que os clientes de bloco de mensagens de servidor (SMB) para acesso ao destino de compartilhamento SMB hospedado no cluster SOFS membro. O cluster definir referência de namespace SOFS é um mecanismo leve de referência e como tal, não participar no caminho de e/s. As referências de SMB são armazenados em cache perpetuamente em cada um de nós de cliente e o namespace de conjuntos do cluster dinamicamente atualiza automaticamente essas referências conforme necessário.
+Uma referência de namespace do conjunto de cluster (Namespace para definir Cluster) SOFS é um servidor de arquivos de escalabilidade horizontal no qual cada compartilhamento SMB no Cluster defina Namespace SOFS é um compartilhamento de referência – do tipo 'SimpleReferral' recentemente introduzido no Windows Server 2019. Esta referência permite que os clientes de bloco de mensagens de servidor (SMB) para acesso ao destino de compartilhamento SMB hospedado no cluster SOFS membro. O cluster definir referência de namespace SOFS é um mecanismo leve de referência e como tal, não participar no caminho de e/s. As referências de SMB são armazenados em cache perpetuamente em cada um de nós de cliente e o namespace de conjuntos do cluster dinamicamente atualiza automaticamente essas referências conforme necessário.
 
 **Define o cluster mestre**
 
@@ -100,7 +100,7 @@ No Windows Server de 2019, há uma nova função de servidor de arquivos escalá
 
 As seguintes considerações se aplicam a uma função de infraestrutura SOFS:
 
-1.  Pode haver no máximo apenas uma função de cluster de SOFS de infraestrutura em um Cluster de Failover. Função SOFS de infraestrutura é criada especificando o "**-infra-estrutura**" Troque o parâmetro para o **ClusterScaleOutFileServerRole adicionar** cmdlet.  Por exemplo:
+1.  Pode haver no máximo apenas uma função de cluster de SOFS de infraestrutura em um Cluster de Failover. Função SOFS de infraestrutura é criada especificando o " **-infra-estrutura**" Troque o parâmetro para o **ClusterScaleOutFileServerRole adicionar** cmdlet.  Por exemplo:
 
         Add-ClusterScaleoutFileServerRole -Name "my_infra_sofs_name" -Infrastructure
 
@@ -112,7 +112,7 @@ Depois de criar um conjunto de cluster, o namespace do conjunto de cluster se ba
 
 No momento em um cluster de membro é adicionado a um conjunto de cluster, o administrador especifica o nome do SOFS infra-estrutura nesse cluster se já existir um. Se o SOFS de infraestrutura não existir, uma nova função de SOFS de infraestrutura no cluster novo membro é criada por esta operação. Se já existir uma função de SOFS de infraestrutura no cluster de membro, a operação de adição implicitamente renomeia o arquivo como o nome especificado conforme necessário. Quaisquer servidores SMB de singleton existentes, ou funções não - infraestrutura SOFS no membro clusters são deixados não utilizada pelo conjunto de cluster. 
 
-No momento em que o conjunto de cluster é criado, o administrador tem a opção de usar um objeto de computador do AD já existente como a raiz do namespace no cluster de gerenciamento. Operações de criação do cluster conjunto criar a função de cluster de SOFS de infraestrutura no cluster de gerenciamento ou renomeia a função de infraestrutura SOFS existente apenas conforme descrita anteriormente para clusters de membro. O SOFS de infraestrutura no cluster de gerenciamento é usado como o cluster do conjunto de referência de namespace (Namespace para definir Cluster) SOFS. Isso simplesmente significa que cada compartilhamento SMB no cluster defina namespace que SOFS é um compartilhamento de referência – do tipo 'SimpleReferral' - recentemente introduzido nesta versão de visualização.  Esta referência permite acesso de clientes SMB para o destino de compartilhamento SMB hospedado no cluster SOFS membro. O cluster definir referência de namespace SOFS é um mecanismo leve de referência e como tal, não participar no caminho de e/s. As referências de SMB são armazenados em cache perpetuamente em cada um de nós de cliente e o namespace de conjuntos do cluster dinamicamente atualiza automaticamente essas referências conforme necessário
+No momento em que o conjunto de cluster é criado, o administrador tem a opção de usar um objeto de computador do AD já existente como a raiz do namespace no cluster de gerenciamento. Operações de criação do cluster conjunto criar a função de cluster de SOFS de infraestrutura no cluster de gerenciamento ou renomeia a função de infraestrutura SOFS existente apenas conforme descrita anteriormente para clusters de membro. O SOFS de infraestrutura no cluster de gerenciamento é usado como o cluster do conjunto de referência de namespace (Namespace para definir Cluster) SOFS. Isso simplesmente significa que cada compartilhamento SMB no cluster defina namespace que SOFS é um compartilhamento de referência – do tipo 'SimpleReferral' - recentemente introduzido no Windows Server 2019.  Esta referência permite acesso de clientes SMB para o destino de compartilhamento SMB hospedado no cluster SOFS membro. O cluster definir referência de namespace SOFS é um mecanismo leve de referência e como tal, não participar no caminho de e/s. As referências de SMB são armazenados em cache perpetuamente em cada um de nós de cliente e o namespace de conjuntos do cluster dinamicamente atualiza automaticamente essas referências conforme necessário
 
 ## <a name="creating-a-cluster-set"></a>Criação de um conjunto de Cluster
 
@@ -120,7 +120,7 @@ No momento em que o conjunto de cluster é criado, o administrador tem a opção
 
 Ao criar um cluster de conjunto, você os pré-requisitos a seguir é recomendadas:
 
-1. Configure um cliente de gerenciamento executando a versão mais recente do Windows Server Insider.
+1. Configure um cliente de gerenciamento executando o Windows Server 2019.
 2. Instale as ferramentas de Cluster de Failover no servidor de gerenciamento.
 3. Criar membros do cluster (pelo menos dois clusters pelo menos dois Volumes Compartilhados do Cluster em cada cluster)
 4. Crie um cluster de gerenciamento (físico ou convidado) que amplia os clusters de membro.  Essa abordagem garante que os conjuntos de Cluster no plano de gerenciamento continua disponível, independentemente de falhas de cluster de membro possíveis.
@@ -258,7 +258,11 @@ Ao vivo de migração de uma máquina virtual entre clusters de conjunto de clus
 2. migração ao vivo a máquina virtual para um nó de membro de um cluster diferente.
 3. Adicione a máquina virtual no cluster como uma nova função de máquina virtual.
 
-Com conjuntos de Cluster, essas etapas não são necessárias e apenas um comando é necessária.  Por exemplo, eu quero mover uma máquina virtual de Cluster definido de CLUSTER1 para NODE2 CL3 em CLUSTER3.  O único comando seria:
+Com conjuntos de Cluster, essas etapas não são necessárias e apenas um comando é necessária.  Primeiro, você deve definir todas as redes estejam disponíveis para a migração com o comando:
+
+    Set-VMHost -UseAnyNetworkMigration $true
+
+Por exemplo, eu quero mover uma máquina virtual de Cluster definido de CLUSTER1 para NODE2 CL3 em CLUSTER3.  O único comando seria:
 
         Move-ClusterSetVM -CimSession CSMASTER -VMName CSVM1 -Node NODE2-CL3
 
@@ -322,12 +326,12 @@ Por exemplo, o comando para remover o cluster CLUSTER1 de conjuntos de cluster s
 ## <a name="frequently-asked-questions-faq"></a>Perguntas frequentes (FAQ)
 
 **Pergunta:** Em meu conjunto de cluster, estou limitado a usar somente os clusters hiperconvergente? <br>
-**Resposta:** Nenhum.  Você pode combinar espaços de armazenamento diretos com clusters tradicionais.
+**Resposta:** Não.  Você pode combinar espaços de armazenamento diretos com clusters tradicionais.
 
 **Pergunta:** Pode gerenciar meu Cluster definido por meio do System Center Virtual Machine Manager? <br>
 **Resposta:** System Center Virtual Machine Manager não oferece suporte a conjuntos de Cluster <br><br> **Pergunta:** Podem Windows Server 2012 R2 ou 2016 clusters coexistir no mesmo conjunto de cluster? <br>
 **Pergunta:** Posso migrar cargas de trabalho do Windows Server 2012 R2 ou 2016 clusters por simplesmente ter esses clusters ingressar o mesmo conjunto de Cluster? <br>
-**Resposta:** Conjuntos de cluster é uma nova tecnologia que estão sendo introduzidos no Windows Server Preview compilações, então, como tal, não existe nas versões anteriores. Clusters com base no sistema operacional de nível inferior não podem ingressar em um conjunto de cluster. No entanto, a tecnologia de atualizações sem interrupção do sistema operacional do Cluster deve fornecer a funcionalidade de migração que você está procurando atualizando esses clusters para o Windows Server 2019.
+**Resposta:** Conjuntos de cluster é uma nova tecnologia que estão sendo introduzida no Windows Server de 2019, então, como tal, não existe nas versões anteriores. Clusters com base no sistema operacional de nível inferior não podem ingressar em um conjunto de cluster. No entanto, a tecnologia de atualizações sem interrupção do sistema operacional do Cluster deve fornecer a funcionalidade de migração que você está procurando atualizando esses clusters para o Windows Server 2019.
 
 **Pergunta:** Podem conjuntos de Cluster permite dimensionar o armazenamento ou de computação (sozinho)? <br>
 **Resposta:** Sim, simplesmente adicionando um espaço de armazenamento diretos ou cluster do Hyper-V tradicional. Com conjuntos de cluster, é uma simples alteração de taxa de computação e armazenamento, mesmo em um conjunto de cluster hiperconvergente.
@@ -360,16 +364,16 @@ Por exemplo, o comando para remover o cluster CLUSTER1 de conjuntos de cluster s
 **Resposta:** Todos os clusters de membro devem estar na mesma floresta do AD.
 
 **Pergunta:** O número de nós ou clusters pode ser parte de um único cluster definida? <br>
-**Resposta:** Na visualização, conjuntos de cluster foram testados e suporte para até 64 nós total do cluster. No entanto, cluster define as escalas de arquitetura para limites muito maiores e não é algo que é codificado para um limite. Informe à Microsoft saber se a escala maior é crítica para você e como você planeja usá-lo.
+**Resposta:** No Windows Server de 2019, conjuntos de cluster foram testados e suporte para até 64 nós total do cluster. No entanto, cluster define as escalas de arquitetura para limites muito maiores e não é algo que é codificado para um limite. Informe à Microsoft saber se a escala maior é crítica para você e como você planeja usá-lo.
 
 **Pergunta:** Todos os clusters de espaços de armazenamento diretos em um conjunto de cluster formarão um único pool de armazenamento? <br>
-**Resposta:** Nenhum. Tecnologia de armazenamento de espaços diretos ainda opera em um único cluster e não entre clusters de membro em um conjunto de cluster.
+**Resposta:** Não. Tecnologia de armazenamento de espaços diretos ainda opera em um único cluster e não entre clusters de membro em um conjunto de cluster.
 
 **Pergunta:** O cluster está definido namespace altamente disponível? <br>
 **Resposta:** Sim, o namespace do conjunto de cluster é fornecido por meio de um servidor de namespace continuamente disponíveis (CA) referência SOFS em execução no cluster de gerenciamento. A Microsoft recomenda ter um número suficiente de máquinas virtuais de clusters de membro para tornar resilientes a falhas localizadas de todo o cluster. No entanto, para levar em conta falhas catastróficas imprevistas – por exemplo, todas as máquinas virtuais de cluster de gerenciamento ficar inativo ao mesmo tempo – as informações de referência é adicionalmente persistentemente armazenado em cache em cada nó do conjunto de cluster, mesmo entre as reinicializações.
  
 **Pergunta:** O cluster define o acesso de armazenamento com base no namespace desacelerar o desempenho de armazenamento em um conjunto de cluster? <br>
-**Resposta:** Nenhum. Namespace do conjunto de cluster oferece um namespace de referência de sobreposição dentro de um conjunto de cluster – conceitualmente como distribuídas arquivo sistema DFSN (Namespaces). E, ao contrário de DFSN, todos os metadados de referência do namespace conjunto de cluster são populado automaticamente e atualizado automaticamente em todos os nós sem nenhuma intervenção do administrador, portanto, não há quase nenhuma sobrecarga de desempenho no caminho de acesso de armazenamento. 
+**Resposta:** Não. Namespace do conjunto de cluster oferece um namespace de referência de sobreposição dentro de um conjunto de cluster – conceitualmente como distribuídas arquivo sistema DFSN (Namespaces). E, ao contrário de DFSN, todos os metadados de referência do namespace conjunto de cluster são populado automaticamente e atualizado automaticamente em todos os nós sem nenhuma intervenção do administrador, portanto, não há quase nenhuma sobrecarga de desempenho no caminho de acesso de armazenamento. 
 
 **Pergunta:** Como fazer backup metadados do conjunto de cluster? <br>
-**Resposta:** Essa orientação é o mesmo que um Cluster de Failover. O Backup de estado do sistema fará backup o estado do cluster.  Por meio do Backup do Windows Server, você pode fazer restaurações de apenas de um nó cluster banco de dados (que nunca deve ser necessária por causa de um pouco de lógica de auto-recuperação temos) ou fazer uma restauração autoritativa para reverter o banco de dados de todo o cluster em todos os nós. No caso de conjuntos de cluster, a Microsoft recomenda fazer tal uma restauração autoritativa pela primeira vez no cluster membro e, em seguida, o grupo de gerenciamento se necessário. 
+**Resposta:** Essa orientação é o mesmo que um Cluster de Failover. O Backup de estado do sistema fará backup o estado do cluster.  Por meio do Backup do Windows Server, você pode fazer restaurações de apenas de um nó cluster banco de dados (que nunca deve ser necessária por causa de um pouco de lógica de auto-recuperação temos) ou fazer uma restauração autoritativa para reverter o banco de dados de todo o cluster em todos os nós. No caso de conjuntos de cluster, a Microsoft recomenda fazer tal uma restauração autoritativa pela primeira vez no cluster membro e, em seguida, o grupo de gerenciamento se necessário.

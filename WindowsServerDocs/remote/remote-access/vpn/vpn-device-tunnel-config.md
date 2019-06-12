@@ -9,12 +9,12 @@ ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: 005721873ad3a0df942bc9e23eba13728965ccba
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 989216f90e78689b464240cff957bab1d9c1229b
+ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864547"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66749565"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>Configurar túneis de dispositivo VPN no Windows 10
 
@@ -92,22 +92,23 @@ A seguir está o exemplo VPN profileXML.
 Dependendo das necessidades de cada cenário de implantação em particular, é outro recurso VPN que pode ser configurado com o túnel de dispositivo [detecção de rede confiável](https://social.technet.microsoft.com/wiki/contents/articles/38546.new-features-for-vpn-in-windows-10-and-windows-server-2016.aspx#Trusted_Network_Detection).
 
 ```
- <!-- inside/outside detection --> 
-  <TrustedNetworkDetection>corp.contoso.com</TrustedNetworkDetection> 
+ <!-- inside/outside detection -->
+  <TrustedNetworkDetection>corp.contoso.com</TrustedNetworkDetection>
 ```
 
 ## <a name="deployment-and-testing"></a>Implantação e teste
 
-Você pode configurar túneis de dispositivo usando um script do Windows PowerShell e usando o Windows Management Instrumentation \(WMI\) ponte. O túnel de dispositivo de VPN Always On deve ser configurado no contexto do **sistema LOCAL** conta. Para fazer isso, será necessário usar [PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec), um da [PsTools](https://docs.microsoft.com/sysinternals/downloads/pstools) incluídos no [Sysinternals](https://docs.microsoft.com/sysinternals/) conjunto de utilitários.
+Você pode configurar túneis de dispositivo usando um script do Windows PowerShell e usando a ponte de Windows Management Instrumentation (WMI). O túnel de dispositivo de VPN Always On deve ser configurado no contexto do **sistema LOCAL** conta. Para fazer isso, será necessário usar [PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec), um da [PsTools](https://docs.microsoft.com/sysinternals/downloads/pstools) incluídos no [Sysinternals](https://docs.microsoft.com/sysinternals/) conjunto de utilitários.
 
-Para obter diretrizes sobre como implantar um por dispositivo `(.\Device)` versus um por usuário `(.\User)` de perfil, consulte [usando o PowerShell scripts com o provedor WMI do Bridge](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider). 
+Para obter diretrizes sobre como implantar um por dispositivo `(.\Device)` versus um por usuário `(.\User)` de perfil, consulte [usando o PowerShell scripts com o provedor WMI do Bridge](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider).
 
 Execute o seguinte comando do Windows PowerShell para verificar que você implantou um perfil de dispositivo com êxito:
 
-    `Get-VpnConnection -AllUserConnection`
+  ```powershell
+  Get-VpnConnection -AllUserConnection
+  ```
 
 A saída exibe uma lista de dispositivo\-amplos perfis VPN que são implantados no dispositivo.
-
 
 ### <a name="example-windows-powershell-script"></a>Exemplo Script do Windows PowerShell
 
@@ -166,19 +167,19 @@ Write-Host "$Message"
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-Estes são os recursos adicionais para ajudá-lo com sua implantação de VPN.
+A seguir estão os recursos adicionais para ajudá-lo com sua implantação de VPN.
 
 ### <a name="vpn-client-configuration-resources"></a>Recursos de configuração de cliente VPN
 
-Esses são recursos de configuração de cliente VPN.
+A seguir estão os recursos de configuração de cliente VPN.
 
 - [Como criar perfis VPN no System Center Configuration Manager](https://docs.microsoft.com/sccm/protect/deploy-use/create-vpn-profiles)
 - [Configurar o cliente do Windows 10 sempre em conexões VPN](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
 - [Opções de perfil VPN](https://docs.microsoft.com/windows/access-protection/vpn/vpn-profile-options)
 
-### <a name="remote-access-server-ras-gateway-resources"></a>Servidor de acesso remoto \(RAS\) recursos de Gateway
+### <a name="remote-access-server-gateway-resources"></a>Recursos de Gateway de servidor de acesso remotos
 
-Estes são os recursos de Gateway de RAS.
+Estes são os recursos de Gateway de servidor de acesso remoto (RAS).
 
 - [Configurar o RRAS com um certificado de autenticação de computador](https://technet.microsoft.com/library/dd458982.aspx)
 - [Solucionando problemas de conexões de VPN IKEv2](https://technet.microsoft.com/library/dd941612.aspx)
@@ -187,4 +188,3 @@ Estes são os recursos de Gateway de RAS.
 >[!IMPORTANT]
 >Ao usar o túnel do dispositivo com um gateway de RAS da Microsoft, você precisará configurar o servidor RRAS para dar suporte à autenticação de certificado de computador IKEv2, permitindo que o **permitir autenticação de certificado de computador para IKEv2** método de autenticação, conforme descrito [aqui](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee922682%28v=ws.10%29). Quando essa configuração estiver habilitada, é altamente recomendável que o **Set-VpnAuthProtocol** cmdlet do PowerShell, juntamente com o **RootCertificateNameToAccept** parâmetro opcional, é usado para garantir que As conexões IKEv2 de RRAS são permitidas somente para certificados de cliente VPN que se encadeiam com uma definido explicitamente interna/privada autoridade de certificação raiz. Como alternativa, o **autoridades de certificação raiz confiáveis** repositório no servidor RRAS deve ser corrigido para garantir que ele não contenha autoridades de certificação pública, conforme discutido [aqui](https://blogs.technet.microsoft.com/rrasblog/2009/06/10/what-type-of-certificate-to-install-on-the-vpn-server/). Métodos semelhantes podem também precisam ser considerados para outros gateways de VPN.
 
----

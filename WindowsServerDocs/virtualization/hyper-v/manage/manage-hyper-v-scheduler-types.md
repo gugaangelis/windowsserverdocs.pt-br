@@ -9,12 +9,12 @@ ms.prod: windows-server-hyper-v
 ms.technology: virtualization
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: 7af6d68b02367d349580eacb27405c6f37e97ff8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c0c2f85fbbeca9e8ac5d40bbcb71f286fabfb65c
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871987"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501667"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>Gerenciar tipos de Agendador de hipervisor Hyper-V
 
@@ -141,14 +141,14 @@ Windows Server 2016 Hyper-V usa o modelo de Agendador do hipervisor clássico po
 
 ## <a name="windows-server-2019-hyper-v-defaults-to-using-the-core-scheduler"></a>Padrões de servidor 2019 Hyper-V do Windows para usar o Agendador de núcleo
 
-Para ajudar a garantir que os hosts do Hyper-V são implantados em lt;{0}&gt a segurança ideal, Windows Server 2019 Hyper-V agora usarão o modelo de Agendador do hipervisor core por padrão. O administrador do host, opcionalmente, pode configurar o host para usar o Agendador clássico herdado. Os administradores devem cuidadosamente ler, compreender e considerar o impacto de que cada tipo de Agendador tem sobre a segurança e o desempenho dos hosts de virtualização antes da substituição das configurações de padrão de tipo do Agendador.  Ver [seleção do tipo de Agendador Noções básicas sobre Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/understanding-hyper-v-scheduler-type-selection) para obter mais informações.
+Para ajudar a garantir que os hosts do Hyper-V são implantados na configuração de segurança ideal, Windows Server 2019 Hyper-V agora usarão o modelo de Agendador do hipervisor core por padrão. O administrador do host, opcionalmente, pode configurar o host para usar o Agendador clássico herdado. Os administradores devem cuidadosamente ler, compreender e considerar o impacto de que cada tipo de Agendador tem sobre a segurança e o desempenho dos hosts de virtualização antes da substituição das configurações de padrão de tipo do Agendador.  Ver [seleção do tipo de Agendador Noções básicas sobre Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/understanding-hyper-v-scheduler-type-selection) para obter mais informações.
 
 ### <a name="required-updates"></a>Atualizações necessárias
 
 >[!NOTE]
 >As seguintes atualizações são necessárias para usar os recursos do Agendador de hipervisor descritos neste documento. Essas atualizações incluem alterações para dar suporte a nova opção de BCD 'hypervisorschedulertype', que é necessária para configuração do host.
 
-| Versão | Versão  | Atualização necessária | Artigo da KB |
+| Version | Versão  | Atualização necessária | Artigo da KB |
 |--------------------|------|---------|-------------:|
 |Windows Server 2016 | 1607 | 2018.07 C | [KB4338822](https://support.microsoft.com/help/4338822/windows-10-update-kb4338822) |
 |Windows Server 2016 | 1703 | 2018.07 C | [KB4338827](https://support.microsoft.com/help/4338827/windows-10-update-kb4338827) |
@@ -169,6 +169,7 @@ Onde `type` é um dos:
 
 * Clássico
 * Core
+* Raiz
 
 O sistema deve ser reinicializado para todas as alterações para o tipo de Agendador do hipervisor entrem em vigor.
 
@@ -177,7 +178,7 @@ O sistema deve ser reinicializado para todas as alterações para o tipo de Agen
 
 ## <a name="determining-the-current-scheduler-type"></a>Determinando o tipo atual do Agendador
 
-Você pode determinar o tipo de Agendador do hipervisor atual em uso, examinando o log pelo sistema no Visualizador de eventos para o evento de lançamento mais recente do hipervisor ID 2, que informa o tipo de Agendador do hipervisor configurado na inicialização do hipervisor. Eventos de lançamento do hipervisor podem ser obtidos do Visualizador de eventos do Windows, ou por meio do PowerShell.
+Você pode determinar o tipo de Agendador do hipervisor atual em uso, examinando o log do sistema no Visualizador de eventos para o evento de lançamento mais recente do hipervisor ID 2, que informa o tipo de Agendador do hipervisor configurado na inicialização do hipervisor. Eventos de lançamento do hipervisor podem ser obtidos do Visualizador de eventos do Windows, ou por meio do PowerShell.
 
 Evento de lançamento do hipervisor ID 2 indica o tipo de Agendador do hipervisor, onde:
 

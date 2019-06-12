@@ -11,12 +11,12 @@ ms.prod: windows-server-threshold
 ms.custom: it-pro
 ms.reviewer: maheshu
 ms.technology: identity-adds
-ms.openlocfilehash: ea56c718394d145a36145d32e5769661a62efd56
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: cb9b5b9448f364760c3d2a7e43edd01a5a9f7f9d
+ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840997"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719670"
 ---
 # <a name="forest-and-domain-functional-levels"></a>Níveis funcionais de floresta e domínio
 
@@ -34,7 +34,7 @@ No Windows Server 2008 e superiores níveis funcionais de domínio, replicação
 
 Não há nenhuma nova floresta ou níveis funcionais de domínio adicionados nesta versão.
 
-O requisito mínimo para adicionar um controlador de domínio do Windows Server 2019 é um nível funcional do Windows Server 2008 R2.
+O requisito mínimo para adicionar um controlador de domínio do Windows Server 2019 é um nível funcional do Windows Server 2008. O domínio também deve usar DFS-R como o mecanismo para replicar o SYSVOL.
 
 ## <a name="windows-server-2016"></a>Windows Server 2016
 
@@ -139,25 +139,27 @@ Sistema de operacional do controlador de domínio com suporte:
 ### <a name="windows-server-2008-domain-functional-level-features"></a>Recursos de nível funcional de domínio do Windows Server 2008
 
 * Todos os padrão do AD DS recursos, todos os recursos do que o nível funcional do domínio de Windows Server 2003, e os recursos a seguir estão disponíveis:
-   * Suporte de replicação Distributed File System (DFS) para o Windows Server 2003 Volume do sistema (SYSVOL)
-      * Suporte de replicação DFS fornece replicação mais robusta e detalhada do conteúdo de SYSVOL.
-        [!NOTE]>
-        >Começando com o Windows Server 2012 R2, a replicação FRS (serviço) foi preterido. Um novo domínio é criado em um controlador de domínio que executa pelo menos o Windows Server 2012 R2 deve ser definido para o nível funcional de domínio do Windows Server 2008 ou superior.
+  * Suporte de replicação Distributed File System (DFS) para o Windows Server 2003 Volume do sistema (SYSVOL)
+    * Suporte de replicação DFS fornece replicação mais robusta e detalhada do conteúdo de SYSVOL.
 
-   * Baseado em domínio namespaces do DFS em execução no modo Windows Server 2008, que inclui suporte para a enumeração baseada em acesso e maior escalabilidade. Namespaces baseados em domínio no modo do Windows Server 2008 também exigem a floresta para usar o nível funcional de floresta do Windows Server 2003. Para obter mais informações, consulte [escolher um tipo de Namespace](https://go.microsoft.com/fwlink/?LinkId=180400).
-   * Suporte avançado de padrão de criptografia (AES 128 e AES 256) para o protocolo Kerberos. Em ordem para TGTs a ser emitido usando AES, o nível funcional do domínio deve ser Windows Server 2008 ou superior e a senha de domínio precisa ser alterado. 
-      * Para obter mais informações, consulte [aperfeiçoamentos de Kerberos](https://technet.microsoft.com/library/cc749438(ws.10).aspx).
-        [!NOTE]>
-        >Erros de autenticação podem ocorrer em um controlador de domínio depois que o nível funcional do domínio é gerado para o Windows Server 2008 ou superior se o controlador de domínio já replicou a alteração DFL, mas ainda não foi atualizado a senha de krbtgt. Nesse caso, uma reinicialização do serviço KDC no controlador de domínio irá disparar uma atualização na memória da nova senha krbtgt e resolva erros de autenticação relacionadas.
+      > [!NOTE]
+      > Começando com o Windows Server 2012 R2, a replicação FRS (serviço) foi preterido. Um novo domínio é criado em um controlador de domínio que executa pelo menos o Windows Server 2012 R2 deve ser definido para o nível funcional de domínio do Windows Server 2008 ou superior.
 
-   * [Último Logon interativo](https://go.microsoft.com/fwlink/?LinkId=180387) informações exibe as seguintes informações:
-      * O número total de tentativas de logon com falha em um servidor do Windows Server 2008 ingressado no domínio ou uma estação de trabalho do Windows Vista
-      * O número total de tentativas de logon com falha após um logon bem-sucedido em um servidor Windows Server 2008 ou uma estação de trabalho do Windows Vista
-      * A hora da última tentativa de logon com falha em um Windows Server 2008 ou uma estação de trabalho do Windows Vista
-      * O horário do último logon bem-sucedido tentativa em um servidor Windows Server 2008 ou uma estação de trabalho do Windows Vista
-   * Políticas de senha refinada tornam possível para você especificar políticas de bloqueio de conta e senha para usuários e grupos de segurança global em um domínio. Para obter mais informações, consulte [guia passo a passo para configuração de política de bloqueio de conta e de senha refinada](https://go.microsoft.com/fwlink/?LinkID=91477).
-   * Áreas de trabalho virtuais pessoais
-      * Para usar a funcionalidade adicional fornecida pela guia Área de trabalho Virtual Pessoal na caixa de diálogo Propriedades da conta de usuário no Active Directory Users and Computers, o esquema do AD DS deve ser estendido para o Windows Server 2008 R2 (versão do esquema do objeto = 47). Para obter mais informações, consulte [Implantando áreas de trabalho virtuais usando RemoteApp e guia de passo a passo de Conexão de área de trabalho](https://go.microsoft.com/fwlink/?LinkId=183552).
+  * Baseado em domínio namespaces do DFS em execução no modo Windows Server 2008, que inclui suporte para a enumeração baseada em acesso e maior escalabilidade. Namespaces baseados em domínio no modo do Windows Server 2008 também exigem a floresta para usar o nível funcional de floresta do Windows Server 2003. Para obter mais informações, consulte [escolher um tipo de Namespace](https://go.microsoft.com/fwlink/?LinkId=180400).
+  * Suporte avançado de padrão de criptografia (AES 128 e AES 256) para o protocolo Kerberos. Em ordem para TGTs a ser emitido usando AES, o nível funcional do domínio deve ser Windows Server 2008 ou superior e a senha de domínio precisa ser alterado. 
+    * Para obter mais informações, consulte [aperfeiçoamentos de Kerberos](https://technet.microsoft.com/library/cc749438(ws.10).aspx).
+
+      > [!NOTE]
+      >Erros de autenticação podem ocorrer em um controlador de domínio depois que o nível funcional do domínio é gerado para o Windows Server 2008 ou superior se o controlador de domínio já replicou a alteração DFL, mas ainda não foi atualizado a senha de krbtgt. Nesse caso, uma reinicialização do serviço KDC no controlador de domínio irá disparar uma atualização na memória da nova senha krbtgt e resolva erros de autenticação relacionadas.
+
+  * [Último Logon interativo](https://go.microsoft.com/fwlink/?LinkId=180387) informações exibe as seguintes informações:
+     * O número total de tentativas de logon com falha em um servidor do Windows Server 2008 ingressado no domínio ou uma estação de trabalho do Windows Vista
+     * O número total de tentativas de logon com falha após um logon bem-sucedido em um servidor Windows Server 2008 ou uma estação de trabalho do Windows Vista
+     * A hora da última tentativa de logon com falha em um Windows Server 2008 ou uma estação de trabalho do Windows Vista
+     * O horário do último logon bem-sucedido tentativa em um servidor Windows Server 2008 ou uma estação de trabalho do Windows Vista
+  * Políticas de senha refinada tornam possível para você especificar políticas de bloqueio de conta e senha para usuários e grupos de segurança global em um domínio. Para obter mais informações, consulte [guia passo a passo para configuração de política de bloqueio de conta e de senha refinada](https://go.microsoft.com/fwlink/?LinkID=91477).
+  * Áreas de trabalho virtuais pessoais
+     * Para usar a funcionalidade adicional fornecida pela guia Área de trabalho Virtual Pessoal na caixa de diálogo Propriedades da conta de usuário no Active Directory Users and Computers, o esquema do AD DS deve ser estendido para o Windows Server 2008 R2 (versão do esquema do objeto = 47). Para obter mais informações, consulte [Implantando áreas de trabalho virtuais usando RemoteApp e guia de passo a passo de Conexão de área de trabalho](https://go.microsoft.com/fwlink/?LinkId=183552).
 
 ## <a name="windows-server-2003"></a>Windows Server 2003
 

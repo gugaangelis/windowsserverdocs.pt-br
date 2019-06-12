@@ -12,12 +12,12 @@ ms.assetid: 32fc90d8-31c5-4c7e-9fe3-483cf3c35f78
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 5d65429e31e43aa15d1631878ae7e1486e9fd60f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8f41efde192ea039a6ee9c7f9f3a4b49bedf4f48
+ms.sourcegitcommit: 9a4ab3a0d00b06ff16173aed616624c857589459
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835147"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826997"
 ---
 # <a name="migrate-windows-small-business-server-2011-essentials-to-windows-server-essentials"></a>Migrar do Windows Small Business Server 2011 Essentials para o Windows Server Essentials
 
@@ -27,11 +27,11 @@ Este guia descreve como migrar um domínio existente do Windows Small Business S
   
 > [!NOTE]
 >  Para evitar problemas durante a migração, a equipe de desenvolvimento de produto do Windows Server Essentials recomenda enfaticamente a leitura deste documento antes de começar a migração.  
-  
+> 
 > [!NOTE]
-
+> 
 >  Para migrar dados do servidor para a versão mais recente do Windows Server Essentials, consulte [migrar para o Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md).  
-
+> 
 >  Para migrar dados do servidor para a versão mais recente do Windows Server Essentials, consulte [migrar para o Windows Server Essentials](../migrate/Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md).  
 
   
@@ -53,7 +53,7 @@ Este guia descreve como migrar um domínio existente do Windows Small Business S
   
 3.  [Fazer computadores ingressarem no novo servidor Windows Server Essentials](Join-computers-to-the-new-Windows-Server-Essentials-server.md).  Esta seção abrange o ingresso de computadores cliente para o novo servidor do Windows Server Essentials e atualizando as configurações de diretiva de grupo.  
   
-4.  [Mover dados e configurações do SBS 2011 Essentials para o servidor de destino](Move-Windows-SBS-2011-Essentials-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md).  Esta seção fornece informações sobre a migração de dados e configurações do servidor de origem.  
+4.  [Mover dados e configurações do SBS 2011 Essentials para o servidor de destino](Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md).  Esta seção fornece informações sobre a migração de dados e configurações do servidor de origem.  
   
 5.  [Habilitar o redirecionamento de pasta no servidor de destino do Windows Server Essentials](Enable-folder-redirection-on-the-Windows-Server-Essentials-Destination-Server.md).  Caso o redirecionamento de pastas esteja habilitado no servidor de origem, você poderá habilitá-lo no servidor de destino e excluir a antiga configuração de Política de Grupo de Redirecionamento de Pastas.  
   
@@ -69,7 +69,7 @@ Este guia descreve como migrar um domínio existente do Windows Small Business S
   
 3.  [Fazer computadores ingressarem no novo servidor Windows Server Essentials](../migrate/Join-computers-to-the-new-Windows-Server-Essentials-server.md).  Esta seção abrange o ingresso de computadores cliente para o novo servidor do Windows Server Essentials e atualizando as configurações de diretiva de grupo.  
   
-4.  [Mover dados e configurações do SBS 2011 Essentials para o servidor de destino](../migrate/Move-Windows-SBS-2011-Essentials-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md).  Esta seção fornece informações sobre a migração de dados e configurações do servidor de origem.  
+4.  [Mover dados e configurações do SBS 2011 Essentials para o servidor de destino](../migrate/Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md).  Esta seção fornece informações sobre a migração de dados e configurações do servidor de origem.  
   
 5.  [Habilitar o redirecionamento de pasta no servidor de destino do Windows Server Essentials](../migrate/Enable-folder-redirection-on-the-Windows-Server-Essentials-Destination-Server.md).  Caso o redirecionamento de pastas esteja habilitado no servidor de origem, você poderá habilitá-lo no servidor de destino e excluir a antiga configuração de Política de Grupo de Redirecionamento de Pastas.  
   

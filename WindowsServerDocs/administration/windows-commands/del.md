@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a1c2756e53d9f047160ddd037b3868e47d6e3181
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b10da1a6035155d525a516f35f83a25209e90075
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822987"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433892"
 ---
 # <a name="del"></a>del
 
@@ -51,29 +51,29 @@ erase [/p] [/f] [/s] [/q] [/a[:]<Attributes>] <Names>
 
 > [!CAUTION]
 > Se você usar **/DEL** para excluir um arquivo do disco, você não pode recuperá-lo.
--   Se você usar **/p**, **/DEL** exibe o nome de um arquivo e envia a mensagem a seguir:
+> -   Se você usar **/p**, **/DEL** exibe o nome de um arquivo e envia a mensagem a seguir:
 
     `FileName, Delete (Y/N)?`
 
-    Para confirmar a exclusão, pressione Y. Para cancelar a exclusão e exibir o próximo nome de arquivo (ou seja, se você especificou um grupo de arquivos), pressione N. Para parar o **/DEL** de comando, pressione CTRL + C.
--   Se você desabilitar as extensões de comando **/s** exibe os nomes de todos os arquivos que não foram encontrados em vez de exibir os nomes dos arquivos que estão sendo excluídos (ou seja, o comportamento é invertido).
--   Se você especificar uma pasta no *nomes*, todos os arquivos na pasta são excluídos. Por exemplo, o comando a seguir exclui todos os arquivos na pasta \Work:  
-    ```
-    del \work
-    ```  
--   Você pode usar caracteres curinga (**&#42;** e **?**) para excluir mais de um arquivo por vez. No entanto, para evitar a exclusão de arquivos acidentalmente, você deve usar caracteres curinga com cuidado com o **/DEL** comando. Por exemplo, se você digitar o comando a seguir:  
-    ```
-    del *.*
-    ```  
-    O **/DEL** comando exibe o prompt a seguir:
+    To confirm the deletion, press Y. To cancel the deletion and display the next file name (that is, if you specified a group of files), press N. To stop the **del** command, press CTRL+C.
+- Se você desabilitar as extensões de comando **/s** exibe os nomes de todos os arquivos que não foram encontrados em vez de exibir os nomes dos arquivos que estão sendo excluídos (ou seja, o comportamento é invertido).
+- Se você especificar uma pasta no *nomes*, todos os arquivos na pasta são excluídos. Por exemplo, o comando a seguir exclui todos os arquivos na pasta \Work:  
+  ```
+  del \work
+  ```  
+- Você pode usar caracteres curinga ( **&#42;** e **?** ) para excluir mais de um arquivo por vez. No entanto, para evitar a exclusão de arquivos acidentalmente, você deve usar caracteres curinga com cuidado com o **/DEL** comando. Por exemplo, se você digitar o comando a seguir:  
+  ```
+  del *.*
+  ```  
+  O **/DEL** comando exibe o prompt a seguir:
 
-    `Are you sure (Y/N)?`
+  `Are you sure (Y/N)?`
 
-    Para excluir todos os arquivos no diretório atual, pressione Y e pressione ENTER. Para cancelar a exclusão, pressione N e pressione ENTER.
+  Para excluir todos os arquivos no diretório atual, pressione Y e pressione ENTER. Para cancelar a exclusão, pressione N e pressione ENTER.
 
 > [!NOTE]
 > Antes de usar caracteres curinga com o **/DEL** de comando, use os mesmos caracteres curinga com o **dir** comando para listar todos os arquivos que serão excluídos.
--   O **/DEL** comando com parâmetros diferentes, está disponível no Console de recuperação.
+> -   O **/DEL** comando com parâmetros diferentes, está disponível no Console de recuperação.
 
 ## <a name="BKMK_examples"></a>Exemplos
 
@@ -84,7 +84,7 @@ del c:\test\*.*
 ```
 Para excluir todos os arquivos com a extensão de nome de arquivo. bat do diretório atual, digite:
 ```
-del *.bak
+del *.bat
 ```
 Para excluir todos os arquivos somente leitura no diretório atual, digite:
 ```
@@ -93,4 +93,4 @@ del /a:r *.*
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

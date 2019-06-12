@@ -12,12 +12,12 @@ ms.assetid: d94de050-3300-4323-a5ea-c824cb9cecc9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c6abc11ba2ce8a9f1d32c6a884db6332586de78b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 62f31f859ed3fd0f77baf37d3467d4702b24ad95
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822637"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432909"
 ---
 # <a name="join-computers-to-the-new-windows-server-essentials-network1"></a>Fazer computadores ingressarem o network1 novos do Windows Server Essentials
 
@@ -27,13 +27,13 @@ ms.locfileid: "59822637"
  A próxima etapa no processo de migração é ingressar os computadores cliente para a nova rede do Windows Server Essentials e atualizar as configurações de diretiva de grupo.  
   
 ### <a name="domain-joined-client-computers"></a>Computadores cliente associados ao domínio  
- Navegue até **http://***destino servername***/ connect** e instalar o software Windows Server Connector como se fosse um novo computador. O processo de instalação é o mesmo para computadores cliente ingressados no domínio ou não ingressados no domínio.  
+ Navegue até **http://** <em>destino servername</em> **/connect** e instale o software Windows Server Connector como se fosse um novo computador. O processo de instalação é o mesmo para computadores cliente ingressados no domínio ou não ingressados no domínio.  
   
 > [!NOTE]
 >  O software Connector do Windows Server não dá suporte a computadores que executam o Windows XP ou Windows Vista. Se você tiver computadores que executam o Windows XP ou Windows Vista já associados ao domínio, ignore esta etapa.  
   
 ### <a name="non-domain-joined-client-computers"></a>Computadores cliente não associados ao domínio  
- Navegue até **http://***destino servername***/ connect** e instalar o software Windows Server Connector como se fosse um novo computador. O processo de instalação é o mesmo para associado a um domínio ou computadores cliente associados fora do domínio.  
+ Navegue até **http://** <em>destino servername</em> **/connect** e instale o software Windows Server Connector como se fosse um novo computador. O processo de instalação é o mesmo para associado a um domínio ou computadores cliente associados fora do domínio.  
   
 > [!NOTE]
 >  O software Connector do Windows Server não dá suporte a computadores que executam o Windows XP ou Windows Vista. Se você tiver computadores que executam o Windows XP ou Windows Vista já associados ao domínio, ignore esta etapa.  

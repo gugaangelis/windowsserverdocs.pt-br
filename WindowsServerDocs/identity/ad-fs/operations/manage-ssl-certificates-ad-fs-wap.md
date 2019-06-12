@@ -9,12 +9,12 @@ ms.date: 10/02/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 9bae831da9d247c423c2874a5928b7f811ef65dc
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 9acdbe2be56b990876fe365c1f535aaa411009c5
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188714"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501629"
 ---
 # <a name="managing-ssl-certificates-in-ad-fs-and-wap-in-windows-server-2016"></a>Gerenciamento de certificados SSL no AD FS e no Windows Server 2016
 
@@ -109,7 +109,7 @@ Para configurar a associação de autenticação de certificado padrão ou o mod
 Para substituir o certificado SSL de Proxy de aplicativo Web, em **cada** servidor Proxy de aplicativo Web use o seguinte cmdlet para instalar o novo certificado SSL:
 
 ```powershell
-Set-WebApplicationProxySslCertificate '<thumbprint of new cert>'
+Set-WebApplicationProxySslCertificate -Thumbprint '<thumbprint of new cert>'
 ```
 
 Se o cmdlet acima falhar porque o antigo certificado já expirou, reconfigure o proxy usando os cmdlets a seguir:

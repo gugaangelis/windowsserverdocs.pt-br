@@ -12,12 +12,12 @@ ms.assetid: a14689e3-2310-4229-bd3e-dafc0e739e02
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d371e24b17310c0687666185f56fe07a135ff91f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ca36533af169c899865789f153960bf5f0dda684
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840077"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432554"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-r2-standard"></a>Transição do Windows Server Essentials para o Windows Server 2012 R2 Standard
 
@@ -52,24 +52,24 @@ Windows Server 2016 é o sistema operacional pronto para a nuvem que oferece sup
 ## <a name="transition-to--windows-server-2012-r2-standard"></a>Transição para o Windows Server 2012 R2 Standard  
  Após decidir fazer a transição do Windows Server Essentials para Windows Server 2012 R2 Standard, completa essas duas etapas:  
   
-1.  Compre uma licença para o Windows Server 2012 R2 Standard e o número apropriado de usuário e/ou licenças de acesso de cliente de dispositivo para o seu ambiente.  
+1. Compre uma licença para o Windows Server 2012 R2 Standard e o número apropriado de usuário e/ou licenças de acesso de cliente de dispositivo para o seu ambiente.  
   
-     Você pode adquirir uma licença para o Windows Server 2012 R2 Standard em uma loja, um distribuidor ou com a Ajuda de um [Microsoft Partner](https://pinpoint.microsoft.com/SelectCulture.aspx).  
+    Você pode adquirir uma licença para o Windows Server 2012 R2 Standard em uma loja, um distribuidor ou com a Ajuda de um [Microsoft Partner](https://pinpoint.microsoft.com/SelectCulture.aspx).  
   
-    > [!NOTE]
-    >  Se você adquiriu o Windows Server 2012 R2 Standard inicialmente e utilizado seus direitos de downgrade para instalar uma das duas instâncias virtuais como Windows Server Essentials, não é necessário aquirir mais nada.  
-    >   
-    >  Se você comprar o Windows Server 2012 R2 Standard por meio do canal de licenciamento por Volume, você pode baixar uma imagem ISO e uma chave de produto para o Windows Server 2012 R2 Standard do Volume Licensing Service Center (VLSC).  
-    >   
-    >  Se você comprar o Windows Server 2012 R2 Standard em qualquer outro canal, você pode baixar uma imagem ISO e uma chave de produto de avaliação do Windows Server Essentials a partir de [Centro de avaliação TechNet](https://technet.microsoft.com/evalcenter/jj659306.aspx). A execução da transição descrita na etapa a seguir converterá o produto de avaliação em um produto com licença e suporte completos.  
+   > [!NOTE]
+   >  Se você adquiriu o Windows Server 2012 R2 Standard inicialmente e utilizado seus direitos de downgrade para instalar uma das duas instâncias virtuais como Windows Server Essentials, não é necessário aquirir mais nada.  
+   >   
+   >  Se você comprar o Windows Server 2012 R2 Standard por meio do canal de licenciamento por Volume, você pode baixar uma imagem ISO e uma chave de produto para o Windows Server 2012 R2 Standard do Volume Licensing Service Center (VLSC).  
+   >   
+   >  Se você comprar o Windows Server 2012 R2 Standard em qualquer outro canal, você pode baixar uma imagem ISO e uma chave de produto de avaliação do Windows Server Essentials a partir de [Centro de avaliação TechNet](https://technet.microsoft.com/evalcenter/jj659306.aspx). A execução da transição descrita na etapa a seguir converterá o produto de avaliação em um produto com licença e suporte completos.  
   
-2.  Abra o Windows PowerShell como administrador e execute o comando a seguir:  
+2. Abra o Windows PowerShell como administrador e execute o comando a seguir:  
   
-     **dism /online /set-edition:ServerStandard /accepteula /productkey:** *Chave do produto* (onde *chave do produto* é a chave do produto de sua cópia do Windows Server 2012 R2 Standard).  
+    **dism /online /set-edition:ServerStandard /accepteula /productkey:** *Chave do produto* (onde *chave do produto* é a chave do produto de sua cópia do Windows Server 2012 R2 Standard).  
   
-     O servidor é reiniciado para concluir o processo de transição.  
+    O servidor é reiniciado para concluir o processo de transição.  
   
- Após a transição, os recursos do Windows Server Essentials permanecem no servidor e têm suporte para até 100 usuários e 200 dispositivos.  
+   Após a transição, os recursos do Windows Server Essentials permanecem no servidor e têm suporte para até 100 usuários e 200 dispositivos.  
   
 ## <a name="see-also"></a>Consulte também  
   

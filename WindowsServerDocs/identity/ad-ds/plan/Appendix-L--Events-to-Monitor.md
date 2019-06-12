@@ -9,12 +9,12 @@ ms.date: 07/30/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 0b937debf2d9156c50f3c0ae51fdab8bd2a2bf2d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c245c5a6b2165385096f32713a92916236cdddfb
+ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863477"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719700"
 ---
 # <a name="appendix-l-events-to-monitor"></a>Apêndice l: Eventos a Monitorar
 
@@ -174,7 +174,7 @@ Uma criticidade potencial alta significa que uma ocorrência do evento deve ser 
 |4707|611|Baixo|Foi removida a confiança de um domínio.|  
 |4709|N/D|Baixo|Os serviços IPsec foram iniciados.|  
 |4710|N/D|Baixo|Os serviços IPsec foram desabilitados.|  
-|4711|N/D|Baixo|Pode conter qualquer um dos seguintes: PAStore Engine aplicou a cópia em cache local de armazenamento do Active Directory a diretiva IPsec no computador. Mecanismo PAStore aplicou a diretiva IPsec de armazenamento do Active Directory no computador. Mecanismo PAStore aplicou a diretiva IPsec de armazenamento de registro local no computador. Mecanismo PAStore Falha ao aplicar a cópia armazenada em cache localmente da diretiva IPsec de armazenamento do Active Directory no computador. Mecanismo PAStore Falha ao aplicar a diretiva IPsec de armazenamento do Active Directory no computador. Mecanismo PAStore Falha ao aplicar a política de IPsec do armazenamento de registro local no computador. Mecanismo PAStore Falha ao aplicar algumas regras da diretiva IPsec ativa no computador. Mecanismo PAStore Falha ao carregar o armazenamento de diretório diretiva IPsec no computador. PAStore Engine carregou a diretiva de IPsec no computador de armazenamento de diretório. PAStore Engine Falha ao carregar a política de IPsec no computador do armazenamento local. PAStore Engine carregou a diretiva IPsec no computador do armazenamento local. Mecanismo PAStore sondado para alterações na diretiva de IPsec ativa e não detectou alterações.|  
+|4711|N/D|Baixo|Pode conter qualquer um dos seguintes: O PAStore Engine aplicou localmente na máquina local a cópia em cache da diretiva IPSec de armazenamento do Active Directory. O PAStore Engine aplicou na máquina a diretiva IPSec de armazenamento do Active Directory. O PAStore Engine aplicou na máquina a diretiva IPSec de armazenamento de Registro local. O PAStore Engine não pôde aplicar localmente na máquina a cópia em cache da diretiva IPSec de armazenamento do Active Directory. O PAStore Engine não pôde aplicar na máquina a diretiva IPSec de armazenamento do Active Directory. O PAStore Engine não pôde aplicar na máquina a diretiva IPSec de armazenamento de Registro local. O PAStore Engine não pôde aplicar na máquina algumas regras da diretiva IPSec ativa. O PAStore Engine não pôde carregar na máquina a diretiva IPSec de armazenamento de diretórios. O PAStore Engine carregou na máquina a diretiva IPSec de armazenamento de diretórios. O PAStore Engine não pôde carregar na máquina a diretiva IPSec de armazenamento local. PAStore Engine carregou a diretiva IPsec no computador do armazenamento local. Mecanismo PAStore sondado para alterações na diretiva de IPsec ativa e não detectou alterações. |  
 |4712|N/D|Baixo|Os serviços IPSec encontraram uma falha possivelmente séria.|  
 |4717|621|Baixo|O acesso de segurança do sistema foi concedido a uma conta.|  
 |4718|622|Baixo|O acesso de segurança do sistema foi removido de uma conta.|  

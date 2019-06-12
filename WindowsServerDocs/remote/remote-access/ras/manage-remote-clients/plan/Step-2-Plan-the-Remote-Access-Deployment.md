@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: cc9f02b9-8ddd-4cae-b397-a832996144dd
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fb940effaae7989dec397e539b64160c87828d5a
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: 7aec08a19759c98150cf7518643f634947c5133d
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266703"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66805000"
 ---
 # <a name="step-2-plan-the-remote-access-deployment"></a>Etapa 2 planejar a implantação do acesso remoto
 
@@ -56,7 +56,7 @@ Existem três decisões que precisam ser tomadas ao planejar a implantação do 
   
     -   **Verificadores de conectividade**  
   
-        Uma sonda de web padrão é criada para os clientes validarem a conectividade com a rede interna. O nome padrão é https://directaccess-WebProbeHost.<domain_name>. O nome deverá ser registrado manualmente no DNS. Você pode criar outros verificadores de conectividade que usam outros endereços da web via HTTP ou PING. Uma entrada de DNS deverá existir para cada verificador de conectividade.  
+        Uma sonda de web padrão é criada para os clientes validarem a conectividade com a rede interna. O nome padrão é `https://directaccess-WebProbeHost.<domain_name>`. O nome deverá ser registrado manualmente no DNS. Você pode criar outros verificadores de conectividade que usam outros endereços da web via HTTP ou PING. Uma entrada de DNS deverá existir para cada verificador de conectividade.  
   
     -   **Ajuda do endereço de email do suporte técnico**  
   

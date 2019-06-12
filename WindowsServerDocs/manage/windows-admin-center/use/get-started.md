@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.date: 02/15/2019
-ms.openlocfilehash: ff1f949c764473a63eafa25346949d710699dbd1
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: bd35e439ee3c76af1306bbbd712d754dd79f555f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222726"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446094"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Introdução ao Windows Admin Center
 
@@ -52,17 +52,17 @@ Depois de concluir a instalação do Windows Admin Center, você pode adicionar 
 
  **Adicionar um único servidor ou um cluster como um nó gerenciado**
 
- 1. Clique em **+ adicionar** sob **todas as conexões**.
+1. Clique em **+ adicionar** sob **todas as conexões**.
 
-    ![](../media/launch/addserver0.png)
+   ![](../media/launch/addserver0.png)
 
- 2. Escolha esta opção para adicionar uma conexão de servidor, Cluster de Failover ou Hyper-Converged Cluster:
+2. Escolha esta opção para adicionar uma conexão de servidor, Cluster de Failover ou Hyper-Converged Cluster:
     
-    ![](../media/launch/addserver1.png)
+   ![](../media/launch/addserver1.png)
 
- 3. Digite o nome do servidor ou cluster para gerenciar e clique em **enviar**. O servidor ou cluster será adicionado à sua lista de conexão na página de visão geral.
+3. Digite o nome do servidor ou cluster para gerenciar e clique em **enviar**. O servidor ou cluster será adicionado à sua lista de conexão na página de visão geral.
 
-    ![](../media/launch/addserver2.png)
+   ![](../media/launch/addserver2.png)
 
    **-OU-**
 
@@ -96,7 +96,7 @@ Você pode usar suas credenciais atuais do Windows para autenticar com o nó ger
 
 **O logon único quando implantado como um serviço no Windows Server**
 
-Se você tiver instalado o Windows Admin Center no Windows Server, a configuração adicional é necessária para o logon único.  [Configurar seu ambiente para delegação](..\configure\user-access-control.md)
+Se você tiver instalado o Windows Admin Center no Windows Server, a configuração adicional é necessária para o logon único.  [Configurar seu ambiente para delegação](../configure/user-access-control.md)
 
 **-OU-**
 

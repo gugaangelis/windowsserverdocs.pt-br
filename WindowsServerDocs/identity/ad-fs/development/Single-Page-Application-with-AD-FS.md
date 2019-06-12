@@ -4,16 +4,16 @@ description: Um passo a passo que fornece instruções para se autenticar no AD 
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 06/12/2018
+ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 24a9caba7a2745973d7c69c3bd7bc42717e7a06c
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: f8a8d6b81f63a691954eecf02dba4e33215a462a
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266689"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811752"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>Crie um aplicativo web de página única usando ADAL e OAuth. JS com o AD FS 2016 ou posterior
 
@@ -21,7 +21,8 @@ Este passo a passo fornece instruções para se autenticar no AD FS usando o ADA
 
 Nesse cenário, quando o usuário faz logon, o JavaScript front-end usa [Active Directory Authentication Library para JavaScript (ADAL. JS)](https://github.com/AzureAD/azure-activedirectory-library-for-js) e a concessão de autorização implícita para obter um token de ID (id_token) do Azure AD. O token é armazenado em cache e o cliente o anexa à solicitação de token de portador ao fazer chamadas à API da Web de back-end, que é protegido usando o middleware OWIN.
 
->AVISO: O exemplo que você pode criar aqui é apenas para fins educacionais. Essas instruções são para a implementação mais simples e mais concisa possível expor os elementos necessários do modelo. O exemplo pode não incluir todos os aspectos de tratamento de erros e outros relacionados a funcionalidade.
+>[!IMPORTANT]
+>O exemplo que você pode criar aqui é apenas para fins educacionais. Essas instruções são para a implementação mais simples e mais concisa possível expor os elementos necessários do modelo. O exemplo pode não incluir todos os aspectos de tratamento de erros e outros relacionados a funcionalidade.
 
 >[!NOTE]
 >Este passo a passo é aplicável **apenas** ao servidor do AD FS 2016 e posterior 
@@ -50,7 +51,7 @@ Você pode usar se desejar, somente duas máquinas. Um para DC/AD FS e o outro p
 
 Como configurar o controlador de domínio e o AD FS está além do escopo deste artigo. Para obter informações adicionais de implantação consulte:
 
-- [Implantação do AD DS](../../ad-ds/deploy/AD-DS-Deployment.md) 
+- [Implantação do AD DS](../../ad-ds/deploy/AD-DS-Deployment.md)
 - [Implantação do AD FS](../AD-FS-Deployment.md)
 
 
@@ -109,14 +110,14 @@ Abra o **App. js** do arquivo e altere o **adalProvider.init** definição para:
         $httpProvider
         );
 
-|Configuração|Descrição
-|--------|--------
-|instância|A URL do STS, por exemplo, https://fs.contoso.com/
-|tenant|Mantenha-o como 'adfs'
-|clientID|Esta é a ID de cliente que você especificou ao configurar o cliente público para seu aplicativo de página única
+|Configuração|Descrição|
+|--------|--------|
+|instância|A URL do STS, por exemplo, https://fs.contoso.com/|
+|tenant|Mantenha-o como 'adfs'|
+|clientID|Esta é a ID de cliente que você especificou ao configurar o cliente público para seu aplicativo de página única|
 
 ## <a name="configure-webapi-to-use-ad-fs"></a>Configurar API da Web para usar o AD FS
-Abra o **Startup.Auth.cs** no exemplo de arquivo e adicione o seguinte no início: 
+Abra o **Startup.Auth.cs** no exemplo de arquivo e adicione o seguinte no início:
 
     using System.IdentityModel.Tokens;
 
@@ -143,11 +144,11 @@ e adicione:
     }
     );
 
-|Parâmetro|Descrição
-|--------|--------
-|ValidAudience|Isso configura o valor de 'público' que serão verificados em relação a no token
-|ValidIssuer|Isso configura o valor de ' emissor que será verificado em relação a no token
-|MetadataEndpoint|Isso aponta para as informações de metadados de seu STS
+|Parâmetro|Descrição|
+|--------|--------|
+|ValidAudience|Isso configura o valor de 'público' que serão verificados em relação a no token|
+|ValidIssuer|Isso configura o valor de ' emissor que será verificado em relação a no token|
+|MetadataEndpoint|Isso aponta para as informações de metadados de seu STS|
 
 ## <a name="add-application-configuration-for-ad-fs"></a>Adicionar configuração de aplicativo do AD FS
 Altere o appsettings, conforme mostrado a seguir:

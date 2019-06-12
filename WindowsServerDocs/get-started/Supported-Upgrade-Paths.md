@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 796ee001e20cff5587c5409f7571d223ff7900a8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 299cf420b44e4a15985d00489edf84784316540d
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857937"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810581"
 ---
 # <a name="upgrade-and-conversion-options-for-windows-server-2016"></a>Opções de atualização e conversão para o Windows Server 2016
 
@@ -109,7 +109,8 @@ Se o servidor estiver executando uma versão de avaliação do Windows Server 20
 
 Para a versão de avaliação do Windows Server 2016 Standard, também é possível realizar a conversão na versão comercial do Windows Server 2016 Datacenter em uma etapa usando o mesmo comando e a chave do produto correta.
 
-> Para saber mais sobre o Dism.exe, confira [Opções de linha de comando do DISM](https://go.microsoft.com/fwlink/?LinkId=192466).
+> [!TIP] 
+> Para obter mais informações sobre Dism.exe, consulte [opções de linha de comando DISM](https://go.microsoft.com/fwlink/?LinkId=192466).
 
 ## <a name="converting-a-current-retail-edition-to-a-different-current-retail-edition"></a>Conversão de uma edição comercial atual em outra edição comercial atual
 
@@ -125,7 +126,3 @@ A qualquer momento após instalar o Windows Server 2016, será possível convert
 Para fazer isso, em um prompt de comandos com privilégios elevados, execute: **slmgr /ipk \<chave\>**
 
 Em que \<chave\> é a chave de licença de volume, comercial ou chave do produto (Product Key) OEM adequada.
-
-
- 
-

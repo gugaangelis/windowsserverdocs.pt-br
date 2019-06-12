@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 29183c62830cbe9e26cce4e0ce4543b554f0ed65
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d089af3562467aa1c222b17d9a1ad69d9c1b5008
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837307"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810590"
 ---
 # <a name="system-requirements"></a>Requisitos do sistema
 
@@ -27,10 +27,8 @@ ms.locfileid: "59837307"
 
 Este tópico aborda os requisitos mínimos de sistema para executar o Windows Server&reg; 2016 ou o Windows Server, versão 1709.
 
-
-> [!Note]  
+> [!NOTE]  
 > Nesta versão, apenas instalações limpas são recomendadas.  
->   
 
 > [!NOTE]  
 > Se, no momento da instalação, você optar por instalar com a opção Server Core, deverá estar ciente de que nenhum componente de GUI está instalado e você não poderá instalá-los ou desinstalá-los com o Gerenciador do Servidor. Se você precisar de recursos de GUI, escolha a opção "Servidor com Experiência Desktop" ao instalar o Windows Server 2016. Para obter mais informações, consulte [Install Nano Server](Getting-Started-with-Nano-Server.md) (Instalar o Nano Server)  
@@ -79,13 +77,13 @@ Estes são os requisitos de espaço em disco **mínimos** estimados para a parti
 
 **Mínimo**: 32 GB  
 
-   > [!NOTE]  
-    > Esteja ciente de que o valor 32 GB deve ser considerado um *valor mínimo absoluto* para uma instalação bem-sucedida. Este mínimo deve permitir que você instale o modo Server Core do Windows Server 2016, com a função de servidor Serviços Web (IIS). Um servidor no modo de Server Core é cerca de 4 GB menor que o mesmo servidor no modo de Servidor com GUI. 
-    >   
-    > A partição do sistema precisará de espaço extra em qualquer uma das seguintes circunstâncias:  
-    >   
-    > -   Se você instalar o sistema em uma rede.  
-    > -   Computadores com mais de 16 GB de RAM precisarão de mais espaço em disco para arquivos de paginação, hibernação e despejo.  
+> [!NOTE]
+> Esteja ciente de que o valor 32 GB deve ser considerado um *valor mínimo absoluto* para uma instalação bem-sucedida. Este mínimo deve permitir que você instale o modo Server Core do Windows Server 2016, com a função de servidor Serviços Web (IIS). Um servidor no modo de Server Core é cerca de 4 GB menor que o mesmo servidor no modo de Servidor com GUI. 
+> 
+> A partição do sistema precisará de espaço extra em qualquer uma das seguintes circunstâncias:  
+> 
+> -   Se você instalar o sistema em uma rede.  
+> -   Computadores com mais de 16 GB de RAM precisarão de mais espaço em disco para arquivos de paginação, hibernação e despejo.  
 
 ## <a name="network-adapter-requirements"></a>Requisitos do adaptador de rede  
 
@@ -97,8 +95,6 @@ Os adaptadores de rede usados com essa versão devem incluir estes recursos:
 - Oferece suporte a PXE (Pre-Boot Execution Environment).  
 
 Um adaptador de rede que oferece suporte à depuração de rede (KDNet) é útil, mas não é um requisito mínimo.   
-
-
 
 ## <a name="other-requirements"></a>Outros requisitos  
 Os computadores que executam essa versão também devem ter o seguinte:  
@@ -117,13 +113,13 @@ Os itens a seguir não são rigorosamente exigidos, mas são necessários para d
 
 -   Acesso à Internet (tarifas podem ser aplicadas)  
 
->[!NOTE]  
+> [!NOTE]  
 > Um chip Trusted Platform Module (TPM) não é estritamente necessário para instalar esta versão, embora seja necessário para usar determinados recursos, como Criptografia de Unidade de Disco BitLocker. Se o computador usar TPM, ele deverá atender a estes requisitos:  
 >  
->- Os TPMs baseados em hardware devem implementar a versão 2.0 da especificação de TPM.  
->- Os TPMs que implementam a versão 2.0 devem ter um certificado EK previamente provisionado ao TPM pelo fornecedor de hardware ou ser capazes de serem recuperados pelo dispositivo durante a primeira inicialização.  
->- Os TPMs que implementam a versão 2.0 devem acompanhar os bancos PCR SHA-256 e implemente os PCRs 0 a 23 para SHA-256. É aceitável enviar os TPMs com um único banco de PCR de alternância que pode ser usado para as medições de SHA-1 e SHA-256.  
->- Uma opção de UEFI para desativar o TPM não é um requisito.  
+> - Os TPMs baseados em hardware devem implementar a versão 2.0 da especificação de TPM.  
+> - Os TPMs que implementam a versão 2.0 devem ter um certificado EK previamente provisionado ao TPM pelo fornecedor de hardware ou ser capazes de serem recuperados pelo dispositivo durante a primeira inicialização.  
+> - Os TPMs que implementam a versão 2.0 devem acompanhar os bancos PCR SHA-256 e implemente os PCRs 0 a 23 para SHA-256. É aceitável enviar os TPMs com um único banco de PCR de alternância que pode ser usado para as medições de SHA-1 e SHA-256.  
+> - Uma opção de UEFI para desativar o TPM não é um requisito.  
 
 ## <a name="installation-of-nano-server"></a>Instalação do Nano Server  
 Para etapas detalhadas para instalar o Windows Server 2016 como um Nano Server, consulte [Install Nano Server](Getting-Started-with-Nano-Server.md) (Instalar o Nano Server).
@@ -131,5 +127,5 @@ Para etapas detalhadas para instalar o Windows Server 2016 como um Nano Server, 
 ## <a name="additional-resources"></a>Recursos adicionais
 - [Requisitos de processador do Windows](https://docs.microsoft.com/windows-hardware/design/minimum/windows-processor-requirements)
 - [Comparação de edições Standard e Datacenter do Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/2016-edition-comparison)
-- [Requisitos de sistema do Windows 10 ](https://www.microsoft.com/windows/windows-10-specifications#system-specifications)
+- [Requisitos de sistema do Windows 10](https://www.microsoft.com/windows/windows-10-specifications#system-specifications)
 - [Baixe a folha de dados de licenciamento do Windows Server 2016](http://download.microsoft.com/download/7/2/9/7290EA05-DC56-4BED-9400-138C5701F174/WS2016LicensingDatasheet.pdf)

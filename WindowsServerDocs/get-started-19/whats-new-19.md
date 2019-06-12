@@ -7,13 +7,13 @@ ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
-ms.date: 05/21/2019
-ms.openlocfilehash: af887c0e1c66a017ee091fb2cab2dc61fa9ac1dc
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.date: 06/04/2019
+ms.openlocfilehash: 7110fe78982fec616174a93514d86fb2e1cf9fa5
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976551"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810769"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Novidades no Windows Server 2019
 
@@ -21,9 +21,17 @@ ms.locfileid: "65976551"
 
 Este tópico descreve alguns dos novos recursos no Windows Server 2019. Windows Server 2019 baseia-se a base sólida de Windows Server 2016 e traz diversas inovações em quatro temas principais: Nuvem híbrida, segurança, plataforma de aplicativos e infraestrutura Hiperconvergida (HCI).
 
-Para descobrir o que há de novo nas versões de canal semestral do Windows Server, consulte [o que há de novo no Windows Server](../get-started/whats-new-in-windows-server.md). 
+Para descobrir o que há de novo nas versões de canal semestral do Windows Server, consulte [o que há de novo no Windows Server](../get-started/whats-new-in-windows-server.md).
 
 ## <a name="general"></a>Geral
+
+### <a name="windows-admin-center"></a>Windows Admin Center
+
+Windows Admin Center é um aplicativo com base em navegador e implantado localmente para o gerenciamento de servidores, clusters, infraestrutura hiperconvergente e computadores Windows 10. Ele vem sem custo adicional além do Windows e está pronto para uso na produção.
+
+Você pode instalar o Windows Admin Center no Windows Server 2019, bem como o Windows 10 e versões anteriores do Windows e Windows Server e usá-lo para gerenciar servidores e clusters que executam o Windows Server 2008 R2 e versões posteriores.
+
+Para obter mais informações, consulte [Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md).
 
 ### <a name="desktop-experience"></a>Experiência Desktop
 
@@ -60,8 +68,6 @@ Os sensores de plataforma profunda e as ações de resposta do ATP expõem ataqu
 -   [Acesso controlado a pastas](https://cloudblogs.microsoft.com/microsoftsecure/2017/10/23/stopping-ransomware-where-it-counts-protecting-your-data-with-controlled-folder-access/?ocid=cx-blog-mmpc?source=mmpc) protege dados confidenciais contra ransomware bloqueando processos não confiáveis acessem suas pastas protegidas.
 
 -   [Exploit protection](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/exploit-protection-exploit-guard) é um conjunto de mitigações de explorações de vulnerabilidade (substituindo EMET) que podem ser facilmente configuradas para proteger seu sistema e aplicativos.
-
-
 
 [Controle de Aplicativos do Windows Defender](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control) (também conhecido como a política de integridade de código (CI)) foi lançada no Windows Server 2016.
 De acordo com os comentários dos clientes, este é um excelente conceito, mas difícil de implantar.
@@ -111,7 +117,7 @@ O Serviço de Migração do Armazenamento é uma nova tecnologia que facilita mi
 
 ### <a name="storage-spaces-direct"></a>Espaços de Armazenamento Diretos
 
-Aqui está uma lista das novidades nos Espaços de Armazenamento Diretos. Para obter detalhes, consulte [o que há de novo nos Espaços de Armazenamento Diretos](../storage/whats-new-in-storage.md#storage-spaces-direct).
+Aqui está uma lista das novidades nos Espaços de Armazenamento Diretos. Para obter detalhes, consulte [o que há de novo nos Espaços de Armazenamento Diretos](../storage/whats-new-in-storage.md#storage-spaces-direct). Consulte também [do Azure Stack HCI](https://docs.microsoft.com/azure-stack/operator/azure-stack-hci-overview) para informações sobre a aquisição de validada sistemas espaços de armazenamento diretos.
 
 - **Eliminação de duplicação e compactação para volumes de ReFS**
 - **Suporte nativo para memória persistente**

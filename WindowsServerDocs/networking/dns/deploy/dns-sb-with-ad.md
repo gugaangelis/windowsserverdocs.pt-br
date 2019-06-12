@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: f9533204-ad7e-4e49-81c1-559324a16aeb
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7a5761cafff0a4bf148958a7f14aeaf311075b2e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 66931d2196b741e469cb726929f7b58985b8d0cd
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839777"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812144"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-in-active-directory"></a>Usar a política de DNS para DNS com partição de rede no Active Directory
 
@@ -25,7 +25,7 @@ No Windows Server 2016, suporte para políticas DNS é estendido para o Active D
 
 Anteriormente, esse cenário exigia que os administradores de DNS mantenham dois servidores DNS diferentes, cada fornecendo serviços a cada conjunto de usuários, internos e externos. Se apenas alguns registros dentro da zona foram divididos\-brained ou ambas as instâncias da zona (interna e externa) foram delegadas ao mesmo domínio pai, isso se tornou um enigma de gerenciamento.
 
->[!NOTE]
+> [!NOTE]
 > - Implantações de DNS são divididas\-cérebro quando há duas versões de uma única zona, uma versão para usuários internos na intranet da organização e uma versão para usuários externos – que são, normalmente, os usuários na Internet.
 > - O tópico [usar a política de DNS para a implantação de DNS Split-Brain](split-brain-DNS-deployment.md) explica como você pode usar políticas de DNS e escopos de zona para implantar uma divisão\-cérebro sistema DNS em um único servidor DNS do Windows Server 2016.
 
@@ -124,8 +124,8 @@ Você pode usar o comando de exemplo a seguir para adicionar registros para os e
     
     Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4Address "10.0.0.39”
 
->[!NOTE]
->O **ZoneScope –** parâmetro não for incluído quando o registro é adicionado ao escopo de zona padrão. Essa ação é igual a adicionar registros a uma zona normal.
+> [!NOTE]
+> O **ZoneScope –** parâmetro não for incluído quando o registro é adicionado ao escopo de zona padrão. Essa ação é igual a adicionar registros a uma zona normal.
 
 Para obter mais informações, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
 
@@ -133,18 +133,18 @@ Para obter mais informações, consulte [Add-DnsServerResourceRecord](https://do
 
 Depois que você identificou as interfaces de servidor para a rede externa e a rede interna e você tiver criado os escopos de zona, você deve criar políticas DNS que conectam os escopos de zona internos e externos.
 
->[!NOTE]
->Este exemplo usa a interface de servidor \(o parâmetro - ServerInterface no comando de exemplo a seguir\) como critérios de diferenciar entre os clientes internos e externos. Outro método para diferenciar entre os clientes internos e externos é por meio de subredes de cliente como um critério. Se você puder identificar as sub-redes aos quais pertencem os clientes internos, você pode configurar a política de DNS para diferenciar com base na sub-rede do cliente. Para obter informações sobre como configurar o gerenciamento de tráfego usando critérios de subrede de cliente, consulte [usar a política de DNS para o gerenciamento de tráfego com base em localização geográfica com servidores primários](primary-geo-location.md).
+> [!NOTE]
+> Este exemplo usa a interface de servidor \(o parâmetro - ServerInterface no comando de exemplo a seguir\) como critérios de diferenciar entre os clientes internos e externos. Outro método para diferenciar entre os clientes internos e externos é por meio de subredes de cliente como um critério. Se você puder identificar as sub-redes aos quais pertencem os clientes internos, você pode configurar a política de DNS para diferenciar com base na sub-rede do cliente. Para obter informações sobre como configurar o gerenciamento de tráfego usando critérios de subrede de cliente, consulte [usar a política de DNS para o gerenciamento de tráfego com base em localização geográfica com servidores primários](primary-geo-location.md).
 
 Depois de configurar políticas, quando uma consulta DNS é recebida na interface pública, a resposta é retornada do escopo externo da zona. 
 
->[!NOTE]
->Não há políticas são necessárias para o escopo da região interna padrão de mapeamento. 
+> [!NOTE]
+> Não há políticas são necessárias para o escopo da região interna padrão de mapeamento. 
 
     Add-DnsServerQueryResolutionPolicy -Name "SplitBrainZonePolicy" -Action ALLOW -ServerInterface "eq,208.84.0.53" -ZoneScope "external,1" -ZoneName contoso.com
 
->[!NOTE]
->208.84.0.53 é o endereço IP no adaptador de rede pública.
+> [!NOTE]
+> 208.84.0.53 é o endereço IP no adaptador de rede pública.
 
 Para obter mais informações, consulte [DnsServerQueryResolutionPolicy adicionar](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
 

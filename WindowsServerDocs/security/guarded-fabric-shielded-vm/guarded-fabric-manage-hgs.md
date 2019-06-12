@@ -7,12 +7,12 @@ ms.assetid: eecb002e-6ae5-4075-9a83-2bbcee2a891c
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: ed3a3d4c5d0e55126f4dae8ecaf0ba1f32e46317
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dab27e71e42970507f321271edda90f6d161c691
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820217"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447395"
 ---
 # <a name="managing-the-host-guardian-service"></a>Gerenciando o serviço guardião de Host
 
@@ -221,7 +221,7 @@ O backup dos backup HGS o estado do servidor não incluirá o nome do cluster HG
 Essas configurações são importantes para manter a consistência, mas não é crítica para colocar seu cluster HGS online novamente após um desastre.
 
 Para capturar o nome do serviço HGS, execute `Get-HgsServer` e anote o nome simples no Atestado e URLs de proteção de chave.
-Por exemplo, se a URL de Atestado é "http://hgs.contoso.com/Attestation", "hgs" é o nome do serviço HGS.
+Por exemplo, se a URL de Atestado é "<http://hgs.contoso.com/Attestation>", "hgs" é o nome do serviço HGS.
 
 Domínio do Active Directory usado pelo HGS deve ser gerenciado como qualquer outro domínio do Active Directory.
 Ao restaurar o HGS após um desastre, você não necessariamente precisará recriar os objetos exatos que estão presentes no domínio atual.
@@ -702,10 +702,10 @@ Para cada VM blindada, execute as seguintes etapas:
 10. Copiar o KP atualizado para a malha de hospedagem
 11. Aplique o KP para a VM original:
 
-    ```powershell
-    $updatedKP = Get-Content -Path .\updatedVM001.kp
-    Set-VMKeyProtector -VMName VM001 -KeyProtector $updatedKP
-    ```
+   ```powershell
+   $updatedKP = Get-Content -Path .\updatedVM001.kp
+   Set-VMKeyProtector -VMName VM001 -KeyProtector $updatedKP
+   ```
 12. Finalmente, inicie a VM e verifique se que ele é executado com êxito.
 
 > [!NOTE]
@@ -718,10 +718,10 @@ Depois que todas as VMs foram atualizadas para autorizar as novas chaves de guar
 
 14. Desabilite cada certificado executando os comandos a seguir:  
 
-    ```powershell
-    Set-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint <Thumbprint> -IsEnabled $false
-    Set-HgsKeyProtectionCertificate -CertificateType Encryption -Thumbprint <Thumbprint> -IsEnabled $false
-    ```
+   ```powershell
+   Set-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint <Thumbprint> -IsEnabled $false
+   Set-HgsKeyProtectionCertificate -CertificateType Encryption -Thumbprint <Thumbprint> -IsEnabled $false
+   ```
 
 15. Depois de garantir que as VMs são ainda pode começar com os certificados desabilitados, remova os certificados de HGS, executando os comandos a seguir:
 

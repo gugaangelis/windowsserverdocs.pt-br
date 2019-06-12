@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 10/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e8c5da1960d0e3129b5520e65c2d5ecf45eef778
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a54ffd3d5596ba8c71deab668e4952da445ca12e
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886947"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66804944"
 ---
 # <a name="get-started-with-remote-desktop-on-mac"></a>Comece com a área de trabalho remota no Mac
 
@@ -27,7 +27,7 @@ ms.locfileid: "59886947"
 
 Você pode usar o cliente de área de trabalho remota para Mac para trabalhar com aplicativos, recursos e áreas de trabalho do Windows no computador Mac. Use as seguintes informações para começar – e fazer check-out a [perguntas frequentes sobre](remote-desktop-client-faq.md) se você tiver dúvidas.
 
->[!Note]
+>[!NOTE]
 > - Curioso sobre novas versões para o cliente do macOS? Fazer check-out [o que há de novo para a área de trabalho remota no Mac?](mac-whatsnew.md)
 > - O cliente Mac é executado em computadores que executam o macOS 10.10 e versões mais recentes.
 > - As informações neste artigo aplica-se principalmente para a versão completa do cliente Mac - a versão disponível na loja de aplicativos do Mac. Test drive de novos recursos ao baixar nosso aplicativo de visualização aqui: [notas de versão do cliente beta](https://go.microsoft.com/fwlink/?LinkID=619698&clcid=0x409).
@@ -53,11 +53,11 @@ Para criar uma conexão de área de trabalho remota:
       - Isso pode ser um nome de computador do Windows (encontrada na **sistema** configurações), um nome de domínio ou um endereço IP.
       - Você também pode adicionar informações de porta ao final desse nome, como *MyDesktop:3389*.
    - **Conta de usuário** -adicionar a conta de usuário que você usa para acessar o computador remoto.
-      - Para ingressados no Active Directory (AD), computadores ou contas locais, use um destes formatos: *user_name*, *domain\user_name*, ou *user_name@domain.com*.
-      - Para o Azure Active Directory (AAD) computadores Unidos, use um destes formatos: *AzureAD\user_name* ou *AzureAD\user_name@domain.com*.
-      - Você também pode escolher se deseja exigir uma senha.
-      - Ao gerenciar várias contas de usuário com o mesmo nome de usuário, defina um nome amigável para diferenciar as contas.
-      - Gerencie suas contas de usuário que foram salvos nas preferências do aplicativo. 
+     - Para ingressados no Active Directory (AD), computadores ou contas locais, use um destes formatos: *user_name*, *domain\user_name*, ou <em>user_name@domain.com</em>.
+     - Para o Azure Active Directory (AAD) computadores Unidos, use um destes formatos: *AzureAD\user_name* ou <em>AzureAD\user_name@domain.com</em>.
+     - Você também pode escolher se deseja exigir uma senha.
+     - Ao gerenciar várias contas de usuário com o mesmo nome de usuário, defina um nome amigável para diferenciar as contas.
+     - Gerencie suas contas de usuário que foram salvos nas preferências do aplicativo. 
 
 3. Você também pode definir essas configurações opcionais para a conexão:
    - Definir um nome amigável 
@@ -82,7 +82,7 @@ Você pode exportar uma definição de conexão de área de trabalho remota e us
 
 Use as etapas a seguir para importar uma área de trabalho remota. Arquivo RDP.
 
-1. Na barra de menus, clique em **arquivo > Importar**.
+1. Na barra de menus, clique em **arquivo** > **importação**.
 2. Navegue até o. Arquivo RDP.
 3. Clique em **Abrir**.
 
@@ -113,8 +113,8 @@ Para configurar um novo gateway nas preferências:
 
 1. No Centro de Conexão, clique em **Preferências > Gateways**. 
 2. Clique o **+** botão na parte inferior da tabela insira as seguintes informações:
-  - **Nome do servidor** – o nome do computador que você deseja usar como um gateway. Isso pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode adicionar informações de porta ao nome do servidor (por exemplo: **RDGateway:443** ou **10.0.0.1:443**).
-  - **Nome de usuário** -o nome de usuário e a senha a ser usada para o gateway de área de trabalho remota que você está se conectando. Você também pode selecionar **usar credenciais de conexão** para usar o mesmo nome de usuário e senha usadas para a conexão de área de trabalho remota.
+   - **Nome do servidor** – o nome do computador que você deseja usar como um gateway. Isso pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode adicionar informações de porta ao nome do servidor (por exemplo: **RDGateway:443** ou **10.0.0.1:443**).
+   - **Nome de usuário** -o nome de usuário e a senha a ser usada para o gateway de área de trabalho remota que você está se conectando. Você também pode selecionar **usar credenciais de conexão** para usar o mesmo nome de usuário e senha usadas para a conexão de área de trabalho remota.
 
 
 ## <a name="manage-your-user-accounts"></a>Gerenciar suas contas de usuário
@@ -136,10 +136,10 @@ Você pode especificar a resolução de vídeo para a sessão de área de trabal
 
 1. No Centro de Conexão, clique em **preferências**.
 2. Clique em **resolução**. 
-3. Clique em **+**.
+3. Clique em **+** .
 4. Insira uma resolução de altura e largura e, em seguida, clique em **Okey.**
 
-Para excluir a resolução, selecioná-lo e, em seguida, clique em **-**.
+Para excluir a resolução, selecioná-lo e, em seguida, clique em **-** .
 
 **Monitores têm espaços separados** se você estiver executando o Mac OS X 10.9 e desabilitada **monitores têm espaços separados** em Mavericks (**preferências do sistema > controle de missão**), você precisa configurar Essa configuração no cliente de área de trabalho remota usando a mesma opção.
 

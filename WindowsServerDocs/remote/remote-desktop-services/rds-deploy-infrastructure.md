@@ -13,16 +13,16 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: acfdd99fa67e218f58fe650de5607f2a5ba97bf8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 5b9ce1bb87a7a2ad8819235edc412fd095bc2985
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833827"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66805136"
 ---
 # <a name="deploy-your-remote-desktop-environment"></a>Implantar o seu ambiente de Área de Trabalho Remota
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016
 
 Use as etapas a seguir para implantar os servidores de área de trabalho remota em seu ambiente. Você pode instalar as funções de servidor em computadores físicos ou máquinas virtuais, dependendo se você estiver criando um local, com base em nuvem ou ambiente híbrido. 
 
@@ -30,11 +30,11 @@ Se você estiver usando máquinas virtuais para qualquer um dos servidores dos s
   
   
 1.  Adicione todos os servidores que você pretende usar para serviços de área de trabalho remota ao Gerenciador do servidor:  
-    1.  No Gerenciador do servidor, clique em **Gerenciar > Adicionar servidores**.  
+    1.  No Gerenciador do servidor, clique em **Manage** > **adicionar servidores**.  
     2.  Clique em **Localizar Agora**.  
     3.  Clique em cada servidor na implantação (por exemplo, Contoso Cb1, Contoso-WebGw1 e Sh1 Contoso) e clique em **Okey**.  
 2.  Crie uma implantação baseada em sessão para implantar os componentes de serviços de área de trabalho remota:  
-    1.  No Gerenciador do servidor, clique em **Gerenciar > Adicionar funções e recursos**.  
+    1.  No Gerenciador do servidor, clique em **Manage** > **adicionar funções e recursos**.  
     2.  Clique em **instalação de serviços de área de trabalho remota**, **implantação padrão**, e **implantação de desktop baseada em sessão**.  
     3.  Selecione os servidores apropriados para o servidor do agente de Conexão de área de trabalho remota, o servidor de acesso via Web RD e o servidor Host de sessão de área de trabalho remota (por exemplo, Contoso-Cb1, Contoso-WebGw1 e Contoso-SH1, respectivamente).  
     4.  Selecione **reiniciar o servidor de destino automaticamente se necessário**e, em seguida, clique em **implantar**.  

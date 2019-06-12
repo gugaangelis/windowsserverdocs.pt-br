@@ -11,18 +11,27 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 05/06/2019
+ms.date: 06/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e2b79a1f914bdbc971299493ca00680e2504fbd3
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: 7730790495babf4a70fb5a70ce93464faa86f1e3
+ms.sourcegitcommit: 1102e91571c88c7a1a2e021a6c53af1def7bb0a4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476025"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66736536"
 ---
 # <a name="whats-new-for-the-remote-desktop-client-on-android"></a>O que há de novo para o cliente de área de trabalho remota no Android?
 
 Podemos atualizar regularmente o [cliente de área de trabalho remota para o Android](remote-desktop-android.md), adição de novos recursos e corrigir problemas. Confira as últimas atualizações abaixo.
+
+## <a name="updates-for-version-8171"></a>Atualizações para a versão 8.1.71
+
+*Data de publicação: 06/05/2019*
+
+- Removido o suporte para versões do Android 4.0.3 e 4.0.4.
+- Corrigido um problema em que os recursos remotos do mesmo nome exibido corretamente.
+- Atualizado o ícone do aplicativo.
+- Pequenas correções de bug e melhorias.
 
 ## <a name="updates-for-version-8170"></a>Atualizações para a versão 8.1.70
 

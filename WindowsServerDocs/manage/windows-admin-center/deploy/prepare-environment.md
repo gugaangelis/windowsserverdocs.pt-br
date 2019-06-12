@@ -5,19 +5,19 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 09/19/2018
+ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 598eeae64925d24ec6d97b59da9cae1e2d10585d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d018ea65ce61cab67fe2041b9ef885d32de51b17
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864967"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811921"
 ---
 # <a name="prepare-your-environment-for-windows-admin-center"></a>Preparar seu ambiente para o Windows Admin Center
 
->Aplica-se a: Windows Admin Center, Windows Admin Center Preview
+> Aplica-se a: Windows Admin Center, Windows Admin Center Preview
 
 Há algumas versões de servidor que precisam de preparação adicional antes de serem prontos para gerenciar com o Windows Admin Center:
 
@@ -82,7 +82,7 @@ Para habilitar a função de servidor de arquivos para o gerenciamento remoto e 
 1. Clique em **Funções e recursos** no menu **Ferramentas** .
 2. Em **Funções e recursos**, encontre **Arquivo e Serviços de armazenamento** e marque **Arquivo e serviços de iSCSI** e **Servidor de arquivos**:
 
-![](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
+![Captura de tela de funções e recursos que mostra o arquivo e iSCSI função dos serviços selecionado](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
 
 ### <a name="step-3-enable-hyper-v-module-for-powershell"></a>**Etapa 3:** Habilitar o módulo do Hyper-V para o PowerShell
 
@@ -91,7 +91,7 @@ Para habilitar o módulo do Hyper-V para recursos do PowerShell:
 1. Clique em **Funções e recursos** no menu **Ferramentas** .
 2. Em **Funções e recursos**, encontre as **Ferramentas de administração de servidor remoto** e marque **Ferramentas de administração de função** e **Módulo do Hyper-V para PowerShell**:
 
-![](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
+![Captura de tela de funções e recursos que mostra as funções do Hyper-V selecionadas](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
 
 O Microsoft Hyper-V Server 2016 agora está pronto para o gerenciamento com o Windows Admin Center.
 
@@ -106,7 +106,7 @@ Para gerenciar o Microsoft Hyper-V Server 2012 R2 com o Windows Admin Center, h�
 3. Habilitar a função de servidor de arquivo
 4. Habilitar o módulo do Hyper-V para o PowerShell
 
-### <a name="step-1-install-windows-management-framework-51"></a>**Etapa 1:** Instale o Windows Management Framework 5.1
+### <a name="step-1-install-windows-management-framework-51"></a>Etapa 1: Instale o Windows Management Framework 5.1
 
 Requer o Windows Admin Center PowerShell recursos que não estão incluídos por padrão no Microsoft Hyper-V Server 2012 R2. Para gerenciar o Microsoft Hyper-V Server 2012 R2 com o Windows Admin Center, você precisará instalar WMF versão 5.1 ou posterior.
 
@@ -114,7 +114,7 @@ Digite `$PSVersiontable` no PowerShell para verificar se o WMF está instalado e
 
 Se não estiver instalado, você pode [baixar o WMF 5.1](https://docs.microsoft.com/powershell/wmf/5.1/install-configure).
 
-### <a name="step-2-enable-remote-management"></a>**Etapa 2:** Habilitar o gerenciamento remoto 
+### <a name="step-2-enable-remote-management"></a>Etapa 2: Habilitar o gerenciamento remoto
 
 Para habilitar o gerenciamento remoto do Hyper-V Server.
 
@@ -130,16 +130,16 @@ Para habilitar a função de servidor de arquivos para o gerenciamento remoto e 
 1. Clique em **Funções e recursos** no menu **Ferramentas** .
 2. Em **Funções e recursos**, encontre **Arquivo e serviços de armazenamento** e marque **Arquivo e serviços de iSCSI** e **Servidor de arquivos**:
 
-![](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
+![Captura de tela de funções e recursos que mostra o arquivo e iSCSI função dos serviços selecionado](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
 
-### <a name="step-4-enable-hyper-v-module-for-powershell"></a>Etapa 4: Habilitar o módulo do Hyper-V para o PowerShell ##
+### <a name="step-4-enable-hyper-v-module-for-powershell"></a>Etapa 4: Habilitar o módulo do Hyper-V para o PowerShell
 
 Para habilitar o módulo do Hyper-V para recursos do PowerShell:
 
 1. Clique em **Funções e recursos** no menu **Ferramentas** .
 2. Em **Funções e recursos**, encontre as **Ferramentas de administração de servidor remoto** e marque **Ferramentas de administração de função** e **Módulo do Hyper-V para PowerShell**:
 
-![](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
+![Captura de tela de funções e recursos mostrando as ferramentas de administração de servidor remoto do Hyper-V selecionadas](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
 
 O Microsoft Hyper-V Server 2012 R2 agora está pronto para o gerenciamento com o Windows Admin Center.
 

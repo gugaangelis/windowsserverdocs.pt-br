@@ -9,12 +9,12 @@ ms.date: 03/06/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 235030ea913f2fe1860efaa00bdb4641ac56750d
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: e62032533b15ec3d93896d242273612faafdca58
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188677"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444107"
 ---
 # <a name="ad-fs-requirements"></a>Requisitos do AD FS
 
@@ -191,16 +191,16 @@ A tabela a seguir fornece um resumo de quantos servidores do AD FS são um farm 
 ## <a name="BKMK_6"></a>Requisitos de navegador  
 Quando a autenticação do AD FS é realizada por meio de um navegador ou um controle de navegador, seu navegador deve estar em conformidade aos seguintes requisitos:  
   
--   JavaScript deve estar habilitado  
+- JavaScript deve estar habilitado  
   
--   Para logon único, o navegador do cliente deve ser configurado para permitir cookies  
+- Para logon único, o navegador do cliente deve ser configurado para permitir cookies  
   
--   Indicação de nome de servidor \(SNI\) devem ter suporte  
+- Indicação de nome de servidor \(SNI\) devem ter suporte  
   
--   Certificado & dispositivo certificado para autenticação de usuário, o navegador deve oferecer suporte a autenticação de certificado de cliente SSL  
+- Certificado & dispositivo certificado para autenticação de usuário, o navegador deve oferecer suporte a autenticação de certificado de cliente SSL  
 
--   Para o logon usando a autenticação integrada do Windows, o nome do serviço de Federação contínuo (como https:\/\/fs.contoso.com) deve ser configurado na zona de intranet local ou a zona de sites confiáveis.
-## <a name="BKMK_7"></a>Requisitos de rede  
+- Para o logon usando a autenticação integrada do Windows, o nome do serviço de Federação contínuo (como https:\/\/fs.contoso.com) deve ser configurado na zona de intranet local ou a zona de sites confiáveis.
+  ## <a name="BKMK_7"></a>Requisitos de rede  
  
 **Requisitos de firewall**  
   
@@ -210,7 +210,7 @@ Além disso, se a autenticação de certificado de usuário do cliente \(autenti
 
 Para obter mais informações sobre porta híbrida requisitos, consulte [protocolos e portas de identidade híbrida](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-ports). 
 
-Para obter mais informações, consulte [práticas recomendadas para proteger os serviços de Federação do Active Directory](..\deployment\Best-Practices-Securing-AD-FS.md)
+Para obter mais informações, consulte [práticas recomendadas para proteger os serviços de Federação do Active Directory](../deployment/Best-Practices-Securing-AD-FS.md)
   
 **Requisitos de DNS**  
   

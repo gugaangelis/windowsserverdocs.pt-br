@@ -6,14 +6,14 @@ ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
-ms.date: 09/10/2018
+ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 39b790f39a2bf9c6334eb2176aa2e5f2e0196c0c
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: b6e0a019297dbee557e284508a329001cac93bde
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65475972"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812513"
 ---
 # <a name="deploy-primary-computers-for-folder-redirection-and-roaming-user-profiles"></a>Implantar computadores primários para redirecionamento de pasta e perfis de usuário móvel
 
@@ -21,8 +21,8 @@ ms.locfileid: "65475972"
 
 Este tópico descreve como habilitar o suporte de computador primário e designar computadores primários para usuários. Isso permite que você controle os computadores que usarão redirecionamento de pasta e perfis de usuário móvel.
 
->[!IMPORTANT]
->Ao habilitar o suporte de computador primário para perfis de usuário móvel, sempre habilite suporte a computadores primários para redirecionamento de pasta também. Isso impede que documentos e outros arquivos de usuário fora os perfis de usuário, que ajuda a perfis permanecem pequenos e tempos de logon rápido permanecer.
+> [!IMPORTANT]
+> Ao habilitar o suporte de computador primário para perfis de usuário móvel, sempre habilite suporte a computadores primários para redirecionamento de pasta também. Isso impede que documentos e outros arquivos de usuário fora os perfis de usuário, que ajuda a perfis permanecem pequenos e tempos de logon rápido permanecer.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -33,15 +33,15 @@ Suporte de computador primário tem os seguintes requisitos:
 - O esquema de serviços de domínio Active Directory (AD DS) deve ser atualizado para incluir adições de esquema do Windows Server 2012 (instalar um controlador de domínio do Windows Server 2012 automaticamente atualiza o esquema). Para obter informações sobre como atualizar o esquema do AD DS, consulte [integração Adprep.exe](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472161(v=ws.11)#adprepexe-integration>) e [Adprep.exe executando](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10)>).
 - Computadores cliente devem executar o Windows 10, Windows 8.1, Windows 8, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012.
 
->[!TIP]
->Embora o suporte de computador primário exige o redirecionamento de pasta e/ou os perfis de usuário móvel, se você estiver implantando dessas tecnologias pela primeira vez, é melhor configurar o suporte de computador primário antes de habilitar os GPOs que configurar o redirecionamento de pasta e Perfis de usuário móvel. Isso evita que os dados do usuário sejam copiados para computadores não primários antes de o suporte de computador primário ser habilitado. Para obter informações de configuração, consulte [implantar o redirecionamento de pasta](deploy-folder-redirection.md) e [implantar perfis de usuário móvel](deploy-roaming-user-profiles.md).
+> [!TIP]
+> Embora o suporte de computador primário exige o redirecionamento de pasta e/ou os perfis de usuário móvel, se você estiver implantando dessas tecnologias pela primeira vez, é melhor configurar o suporte de computador primário antes de habilitar os GPOs que configurar o redirecionamento de pasta e Perfis de usuário móvel. Isso evita que os dados do usuário sejam copiados para computadores não primários antes de o suporte de computador primário ser habilitado. Para obter informações de configuração, consulte [implantar o redirecionamento de pasta](deploy-folder-redirection.md) e [implantar perfis de usuário móvel](deploy-roaming-user-profiles.md).
 
 ## <a name="step-1-designate-primary-computers-for-users"></a>Etapa 1: Designar computadores primários para usuários
 
 A primeira etapa na implantação de suporte a computadores primários é designar os computadores primários para cada usuário. Para fazer isso, use o Centro de administração do Active Directory para obter o nome distinto de computadores relevantes e, em seguida, defina as **msDs-PrimaryComputer** atributo.
 
->[!TIP]
->Para usar o Windows PowerShell para trabalhar com computadores primários, consulte o postagem no blog [se aprofundar um pouco em computador primário do Windows 8](<https://blogs.technet.microsoft.com/askds/2012/10/23/digging-a-little-deeper-into-windows-8-primary-computer/>).
+> [!TIP]
+> Para usar o Windows PowerShell para trabalhar com computadores primários, consulte o postagem no blog [se aprofundar um pouco em computador primário do Windows 8](<https://blogs.technet.microsoft.com/askds/2012/10/23/digging-a-little-deeper-into-windows-8-primary-computer/>).
 
 Aqui está como especificar os computadores primários para usuários:
 
@@ -76,8 +76,7 @@ A próxima etapa é configurar opcionalmente a política de grupo para habilitar
 
 Aqui está como habilitar os computadores primários para perfis de usuário móvel:
 
-1. Habilite suporte a computadores primários para redirecionamento de pasta, se você ainda não fez isso.
-    * Isso impede que documentos e outros arquivos de usuário fora os perfis de usuário, que ajuda a perfis permanecem pequenos e tempos de logon rápido permanecer.
+1. Habilite suporte a computadores primários para redirecionamento de pasta, se você ainda não fez isso.<br>Isso impede que documentos e outros arquivos de usuário fora os perfis de usuário, que ajuda a perfis permanecem pequenos e tempos de logon rápido permanecer.
 2. Em gerenciamento de diretiva de grupo, clique com botão direito no GPO criado por você (por exemplo, **redirecionamento de pastas e configurações de perfis de usuário móvel**) e, em seguida, selecione **editar**.
 3. Navegue até **configuração do computador**, em seguida, **políticas**, em seguida, **modelos administrativos**, em seguida, **sistema**e, em seguida, **Perfis de usuário**.
 4. Clique com botão direito **baixar perfis móveis somente, nos computadores primários** e, em seguida, selecione **editar**.
@@ -100,17 +99,19 @@ Aqui está como testar a funcionalidade de computador primário:
 
 1. Entre em um computador primário designado com uma conta de usuário para o qual você habilitou o redirecionamento de pasta e/ou perfis de usuário móvel.
 2. Se a conta de usuário tiver se conectado anteriormente no computador, abra uma janela de Prompt de comando como administrador ou sessão do Windows PowerShell, digite o seguinte comando e saia em seguida, quando for solicitado para garantir que as configurações de diretiva de grupo mais recentes sejam aplicadas para o computador cliente:
+
     ```PowerShell
     Gpupdate /force
     ```
-3. Abra o Explorador de Arquivos.
-4. Clique em uma pasta redirecionada (por exemplo, a pasta Meus documentos da biblioteca de documentos) e, em seguida, selecione **propriedades**.
-5. Selecione o **local** guia e confirme se o caminho de compartilhamento de arquivos especificado, em vez de um caminho local é exibida. Para confirmar que o perfil do usuário está em roaming, abra **painel de controle**, selecione **sistema e segurança**, selecione **sistema**, selecione **configurações avançadas do sistema** , selecione **configurações** nos perfis de usuário seção e, em seguida, procure **Roaming** no **tipo** coluna.
-6. Entrar com a mesma conta de usuário para um computador que não esteja designado como computador primário do usuário.
-7. Repita as etapas 2 a 5, em vez disso, procurando os caminhos de locais e um **Local** tipo de perfil.
 
->[!NOTE]
->Se a pastas foram redirecionadas em um computador antes de habilitar o suporte de computador primário, as pastas permanecerão redirecionadas, a menos que a seguinte configuração é definida na configuração de diretiva de redirecionamento de pasta de cada pasta: **Redirecionar a pasta de volta para o perfil de usuário local quando a política for removida**. Da mesma forma, mostrará os perfis que foram anteriormente roaming em um computador específico **Roaming** na **tipo** colunas; no entanto, o **Status** coluna mostrará **Local**.
+3. Abra o Explorador de Arquivos.
+1. Clique em uma pasta redirecionada (por exemplo, a pasta Meus documentos da biblioteca de documentos) e, em seguida, selecione **propriedades**.
+1. Selecione o **local** guia e confirme se o caminho de compartilhamento de arquivos especificado, em vez de um caminho local é exibida. Para confirmar que o perfil do usuário está em roaming, abra **painel de controle**, selecione **sistema e segurança**, selecione **sistema**, selecione **configurações avançadas do sistema** , selecione **configurações** nos perfis de usuário seção e, em seguida, procure **Roaming** no **tipo** coluna.
+1. Entrar com a mesma conta de usuário para um computador que não esteja designado como computador primário do usuário.
+1. Repita as etapas 2 a 5, em vez disso, procurando os caminhos de locais e um **Local** tipo de perfil.
+
+> [!NOTE]
+> Se a pastas foram redirecionadas em um computador antes de habilitar o suporte de computador primário, as pastas permanecerão redirecionadas, a menos que a seguinte configuração é definida na configuração de diretiva de redirecionamento de pasta de cada pasta: **Redirecionar a pasta de volta para o perfil de usuário local quando a política for removida**. Da mesma forma, mostrará os perfis que foram anteriormente roaming em um computador específico **Roaming** na **tipo** colunas; no entanto, o **Status** coluna mostrará **Local**.
 
 ## <a name="more-information"></a>Mais informações
 

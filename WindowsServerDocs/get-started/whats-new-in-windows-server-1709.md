@@ -7,19 +7,23 @@ ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
-ms.openlocfilehash: 32ce591a8b50c6e35c3fde4fedb177b6d76fccdd
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.date: 06/03/2019
+ms.openlocfilehash: e17a636c5bf06d194abd1bfe9b6d20970773e993
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976733"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501398"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Novidades no Windows Server versão 1709
 
 >Aplica-se a: Windows Server (canal semestral)
 
 <img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;Para saber mais sobre os recursos mais recentes do Windows, consulte [o que há de novo no Windows Server](whats-new-in-windows-server.md). O conteúdo desta seção descreve as novidades e as alterações no Windows Server, versão 1709. Os novos recursos e alterações listados aqui são os que têm maior probabilidade de ter um impacto maior ao trabalhar com esta versão. Consulte também [Windows Server, versão 1709](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/).
-   
+
+> [!IMPORTANT]
+> Windows Server, versão 1709 está fora do suporte a partir de 9 de abril de 2019.
+
 
 ## <a name="new-cadence-of-releases"></a>Nova cadência de versões
 
@@ -126,20 +130,20 @@ Suporte para **Roteamento de malha do Docker**. Malha de roteamento de ingresso 
 - **Receber janela Autotuning**: Lógica de autotuning TCP calcula o parâmetro "janela de recebimento" de uma conexão TCP.  As conexões de alta velocidade e/ou demoradas precisam desse algoritmo para alcançar as características de bom desempenho.  Nesta versão, o algoritmo é modificado para usar uma função degrau para conversão no valor máximo de janela de recepção para uma determinada conexão.
 - **Status do TCP API**: Uma nova API é introduzida chamado SIO_TCP_INFO.  SIO_TCP_INFO permite que os desenvolvedores consultem informações sobre conexões TCP individuais usando a opção de soquete.
 - **IPv6**: Há vários aprimoramentos no IPv6 nesta versão.
-    - **RFC 6106** dar suporte a: 6106 RFC que permite a configuração de DNS por meio de anúncios de roteador (RAs). Você pode usar o seguinte comando para habilitar ou desabilitar o suporte de RFC 6106:
+  - **RFC 6106** dar suporte a: 6106 RFC que permite a configuração de DNS por meio de anúncios de roteador (RAs). Você pode usar o seguinte comando para habilitar ou desabilitar o suporte de RFC 6106:
 
     ```
     netsh int ipv6 set interface <ifindex> rabaseddnsconfig=<enabled | disabled>
     ```
 
-    - **Fluxo de rótulos**: Começando com a atualização de criadores de saída TCP e UDP pacotes via IPv6 têm esse campo definido como um hash de 5-tupla (IP Src, Dst IP, porta de origem, porta de destino).  Isso melhora a eficiência dos datacenters somente com IPv6 para balanceamento de carga os classificação de fluxo. Para habilitar flowlabels:
+  - **Fluxo de rótulos**: Começando com a atualização de criadores de saída TCP e UDP pacotes via IPv6 têm esse campo definido como um hash de 5-tupla (IP Src, Dst IP, porta de origem, porta de destino).  Isso melhora a eficiência dos datacenters somente com IPv6 para balanceamento de carga os classificação de fluxo. Para habilitar flowlabels:
 
     ```
     netsh int ipv6 set flowlabel=[disabled|enabled] (enabled by default)
     netsh int ipv6 set global flowlabel=<enabled | disabled>
     ```
 
-    - **ISATAP e 6to4**: Como uma etapa em direção a substituição futura, a atualização para criadores terá essas tecnologias desabilitadas por padrão.
+  - **ISATAP e 6to4**: Como uma etapa em direção a substituição futura, a atualização para criadores terá essas tecnologias desabilitadas por padrão.
 - **Detecção de gateways inativos (DGD)** : O algoritmo DGD automaticamente faz a transição conexões na outro gateway quando o gateway atual está inacessível. Nesta versão, o algoritmo é melhorado para testar periodicamente o ambiente de rede.
 - O [Test-NetConnection](https://technet.microsoft.com/itpro/powershell/windows/nettcpip/test-netconnection) é um cmdlet nativo do Windows PowerShell que executa diversos diagnósticos de rede.  Nesta versão, aprimoraram o cmdlet para fornecer informações detalhadas sobre a seleção de rota, bem como a seleção do endereço de origem.
 

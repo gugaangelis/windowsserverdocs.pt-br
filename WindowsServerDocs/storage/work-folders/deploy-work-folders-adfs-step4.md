@@ -8,12 +8,12 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 6/242017
 ms.assetid: 4a11ede0-b000-4188-8190-790971504e17
-ms.openlocfilehash: 1f452fd1e2f054c449660eb0ee12642fefe4da8f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4cbf85f8413353801f048f253859c9f3ef9c7691
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865047"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812556"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-4-set-up-web-application-proxy"></a>Implante pastas de trabalho com o AD FS e Proxy de aplicativo Web: Etapa 4, o Proxy de aplicativo Web de configuração
 
@@ -32,7 +32,7 @@ Este tópico descreve a quarta etapa da implantação das Pastas de Trabalho com
 -   [Implante pastas de trabalho com o AD FS e Proxy de aplicativo Web: Etapa 5, configurar os clientes](deploy-work-folders-adfs-step5.md)  
 
 > [!NOTE]
->   As instruções abordadas nesta seção destinam-se a um ambiente do Server 2016. Se você estiver usando o Windows Server 2012 R2, siga as [instruções do Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
+>   As instruções apresentadas nesta seção são para um ambiente de 2019 do Windows Server ou Windows Server 2016. Se você estiver usando o Windows Server 2012 R2, siga as [instruções do Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
 
 Para configurar o Proxy de aplicativo Web para uso com Pastas de Trabalho, use os procedimentos a seguir.  
   
@@ -108,47 +108,47 @@ Para configurar o Proxy de aplicativo Web, siga estas etapas:
 ## <a name="publish-the-work-folders-web-application"></a>Publicar o aplicativo Web de Pastas de Trabalho  
 A próxima etapa é publicar um aplicativo Web que disponibilizará Pastas de Trabalho aos clientes. Para publicar o aplicativo Web de Pastas de Trabalho, siga estas etapas:  
   
-1.  Abra **Gerenciador do Servidor** e, no menu **Ferramentas**, clique em **Gerenciamento de Acesso Remoto** para abrir o Console de Gerenciamento de Acesso Remoto.  
+1. Abra **Gerenciador do Servidor** e, no menu **Ferramentas**, clique em **Gerenciamento de Acesso Remoto** para abrir o Console de Gerenciamento de Acesso Remoto.  
   
-2.  Em **Configuração**, clique em **Proxy de aplicativo Web**.  
+2. Em **Configuração**, clique em **Proxy de aplicativo Web**.  
   
-3.  Em **Tarefas**, clique em **Publicar**. O Assistente para Publicar Novos Aplicativos é aberto.  
+3. Em **Tarefas**, clique em **Publicar**. O Assistente para Publicar Novos Aplicativos é aberto.  
   
-4.  Na página Bem-vindo, clique em **Avançar**.  
+4. Na página Bem-vindo, clique em **Avançar**.  
   
-5.  Na página **Pré-autenticação**, selecione **Serviços de Federação do Active Directory (AD FS)** e clique em **Avançar**.  
+5. Na página **Pré-autenticação**, selecione **Serviços de Federação do Active Directory (AD FS)** e clique em **Avançar**.  
   
-6.  Na página **Dar Suporte a Clientes**, selecione **OAuth2** e clique em **Avançar**.
+6. Na página **Dar Suporte a Clientes**, selecione **OAuth2** e clique em **Avançar**.
 
-7.  Na página **Terceira Parte Confiável**, selecione **Pastas de Trabalho** e clique em **Avançar**. Essa lista é publicada no Proxy de aplicativo Web do AD FS.  
+7. Na página **Terceira Parte Confiável**, selecione **Pastas de Trabalho** e clique em **Avançar**. Essa lista é publicada no Proxy de aplicativo Web do AD FS.  
   
-8.  Na página **Configurações de Publicação**, insira os dados a seguir e clique em **Avançar**:  
+8. Na página **Configurações de Publicação**, insira os dados a seguir e clique em **Avançar**:  
   
-    -   O nome que você deseja usar para o aplicativo Web  
+   -   O nome que você deseja usar para o aplicativo Web  
   
-    -   A URL externa de Pastas de Trabalho  
+   -   A URL externa de Pastas de Trabalho  
   
-    -   O nome do certificado de Pastas de Trabalho  
+   -   O nome do certificado de Pastas de Trabalho  
   
-    -   A URL de back-end para Pastas de Trabalho  
+   -   A URL de back-end para Pastas de Trabalho  
   
-    Por padrão, o assistente torna a URL de back-end idêntica à URL externa.  
+   Por padrão, o assistente torna a URL de back-end idêntica à URL externa.  
   
-    No exemplo de teste, use estes valores:  
+   No exemplo de teste, use estes valores:  
   
-    Nome: **WorkFolders**  
+   Nome: **WorkFolders**  
   
-    URL externa: **https://workfolders.contoso.com**  
+   URL externa: **https://workfolders.contoso.com**  
   
-    Certificado externo: **O certificado de pastas de trabalho que você instalou anteriormente**  
+   Certificado externo: **O certificado de pastas de trabalho que você instalou anteriormente**  
   
-    URL do servidor de back-end: **https://workfolders.contoso.com**  
+   URL do servidor de back-end: **https://workfolders.contoso.com**  
   
-9.  A página de confirmação mostra o comando do Windows PowerShell que será executado para publicar o aplicativo. Clique em **Publicar**.  
+9. A página de confirmação mostra o comando do Windows PowerShell que será executado para publicar o aplicativo. Clique em **Publicar**.  
   
 10. Na página **Resultados**, você verá que o aplicativo foi publicado com êxito.
-   >[!NOTE]
-   > Se você tiver vários servidores de Pastas de Trabalho, você precisa publicar um aplicativo Web de Pastas de Trabalho para cada servidor das Pastas de Trabalho (repita as etapas 1 a 10).  
+    >[!NOTE]
+    > Se você tiver vários servidores de Pastas de Trabalho, você precisa publicar um aplicativo Web de Pastas de Trabalho para cada servidor das Pastas de Trabalho (repita as etapas 1 a 10).  
   
 Próxima etapa: [Implante pastas de trabalho com o AD FS e Proxy de aplicativo Web: Etapa 5, configurar os clientes](deploy-work-folders-adfs-step5.md)  
   

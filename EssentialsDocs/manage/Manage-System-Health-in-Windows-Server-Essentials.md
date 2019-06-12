@@ -12,12 +12,12 @@ ms.assetid: 3043f83b-389c-4f37-a1ff-85afe99314fa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 91635a58c64fbf74d3b0139be7c9c36365487319
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: d9002a1530e114f490ddf1cfb0e5706ddec52431
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842047"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433149"
 ---
 # <a name="manage-system-health-in-windows-server-essentials"></a>Gerenciar a integridade do sistema no Windows Server Essentials
 
@@ -28,7 +28,7 @@ ms.locfileid: "59842047"
 > [!NOTE]
 >  No Windows Server Essentials e no Windows Server 2012 R2 com a função experiência Windows Server Essentials instalada, os alertas de integridade para o servidor e os computadores cliente na rede não são mais exibidos no Visualizador de alertas, mas em vez disso, podem ser exibidos sobre o  **Relatórios de integridade** guia do **Home** página.  
   
- Windows Server Essentials monitora ativamente a cada computador que está conectado ao servidor e alerta o administrador problemas relacionados à integridade do sistema s, incluindo atualizações essenciais, falta de proteção contra malware, definições de vírus desatualizadas no cliente computadores e outros problemas importantes que exigem ação. Esses problemas são exibidos como alertas no Visualizador de alertas, que pode ser iniciado a partir do servidor s Dashboard ou s barra inicial no Windows Server Essentials ou no computador cliente a **relatórios de integridade** guia no Windows Server Essentials. Por padrão, os alertas são atualizados a cada trinta minutos, mas você pode avaliar sua rede para alertas a qualquer momento, clicando em **Atualizar** no Visualizador de alertas ou no guia **Relatórios de integridade** .  
+ Windows Server Essentials monitora ativamente a cada computador que está conectado ao servidor e alerta o administrador problemas relacionados à integridade do sistema, incluindo atualizações essenciais, falta de proteção contra malware, definições de vírus desatualizadas no cliente computadores e outros problemas importantes que exigem ação. Esses problemas são exibidos como alertas no Visualizador de alertas, que pode ser iniciado no painel do servidor ou o Launchpad do computador cliente no Windows Server Essentials, ou sobre o **relatórios de integridade** guia no Windows Server Essentials. Por padrão, os alertas são atualizados a cada trinta minutos, mas você pode avaliar sua rede para alertas a qualquer momento, clicando em **Atualizar** no Visualizador de alertas ou no guia **Relatórios de integridade** .  
   
  Os tópicos a seguir ajudarão você a entender, exibir e responder aos alertas no Visualizador de alerta e também fornece instruções para configurar seu servidor para receber notificações de alerta por email:  
   
@@ -56,7 +56,7 @@ ms.locfileid: "59842047"
 > [!NOTE]
 >  **Windows Server Essentials:** Você pode baixar o suplemento relatório de integridade do Windows Server Essentials a partir de [Microsoft Download Center](https://go.microsoft.com/fwlink/p/?LinkId=266342).  
 >   
->  **Windows Server Essentials:** Por padrão, o suplemento relatório de integridade é integrado com o Windows Server Essentials ou Windows Server 2012 R2 com a função experiência Windows Server Essentials instalada, e os relatórios de integridade são exibidos na **relatórios de integridade** guia do painel s **Home** página.  
+>  **Windows Server Essentials:** Por padrão, o suplemento relatório de integridade é integrado com o Windows Server Essentials ou Windows Server 2012 R2 com a função experiência Windows Server Essentials instalada, e os relatórios de integridade são exibidos na **relatórios de integridade** guia do painel **Home** página.  
   
 ###  <a name="BKMK_Generate"></a> Gerar um relatório sob demanda ou agendamento  
  Depois de instalar o suplemento de relatório de integridade e reiniciar o Painel, uma nova guia **Relatórios** é adicionada ao Painel geral. Você pode gerar um relatório de integridade sob demanda a qualquer momento clicando na tarefa **Gerar um relatório de integridade** na guia **relatórios** .  
@@ -68,21 +68,21 @@ ms.locfileid: "59842047"
 ###  <a name="BKMK_Customize"></a> Personalizar o conteúdo do relatório  
  O relatório de integridade contém o seguinte:  
   
--   **Alertas críticose avisos** Essa opção é consistente com os alertas essenciais e avisos que você vê no Visualizador de alertas no Painel geral. Alertas de informações não são incluídas no relatório de integridade.  
+- **Alertas críticose avisos** Essa opção é consistente com os alertas essenciais e avisos que você vê no Visualizador de alertas no Painel geral. Alertas de informações não são incluídas no relatório de integridade.  
   
--   **Erros críticos nos logs de eventos** logs de aplicativos e serviços são verificados e os erros que são registrados em logs nas últimas 24 horas serão apresentados na  seção **Detalhes** do relatório.  
+- **Erros críticos nos logs de eventos** logs de aplicativos e serviços são verificados e os erros que são registrados em logs nas últimas 24 horas serão apresentados na  seção **Detalhes** do relatório.  
   
--   **Backup do servidor** As informações sobre o último backup de servidor são apresentadas na seção **Detalhes** do relatório.  
+- **Backup do servidor** As informações sobre o último backup de servidor são apresentadas na seção **Detalhes** do relatório.  
   
--   **Serviços de Início automático não estão funcionandoá em execução** No momento em que o relatório é gerado, se não estiver executando um serviço de início automático, as informações sobre esse serviço serão listadas na seção **Detalhes** do relatório.  
+- **Serviços de Início automático não estão funcionandoá em execução** No momento em que o relatório é gerado, se não estiver executando um serviço de início automático, as informações sobre esse serviço serão listadas na seção **Detalhes** do relatório.  
   
--   **Atualizações** Você pode ver o status de atualização do servidor e todos os computadores cliente na seção **Detalhes** .  
+- **Atualizações** Você pode ver o status de atualização do servidor e todos os computadores cliente na seção **Detalhes** .  
   
--   **Armazenamento** A lista de unidades e sua capacidade é apresentada na seção**Detalhes** .  
+- **Armazenamento** A lista de unidades e sua capacidade é apresentada na seção**Detalhes** .  
   
- No Relatório de Integridade, primeiro exiba o **Resumo**e, para os itens com ícone de erro vermelho ou um ícone de aviso amarelo, clique no link **Detalhes** na mesma linha para exibir os detalhes do item.  
+  No Relatório de Integridade, primeiro exiba o **Resumo**e, para os itens com ícone de erro vermelho ou um ícone de aviso amarelo, clique no link **Detalhes** na mesma linha para exibir os detalhes do item.  
   
- Se você não estiver interessado em alguns dos pontos de discrimidados que são incluídos no relatório por padrão, você pode personalizar o conteúdo do relatório clicando **personalizar as configurações do relatório de integridade** no painel de tarefas e clicando na guia **conteúdo**. Desmarque as caixas de seleção para o conteúdo que você não t deseja ver no relatório. Por exemplo, se você tiver seu próprio plano de backup do servidor e don t deseja ver avisos sobre backups do servidor, você pode excluir backups de servidor do relatório desmarcando a **backup do servidor** caixa de seleção.  
+  Se você não estiver interessado em alguns dos pontos de discrimidados que são incluídos no relatório por padrão, você pode personalizar o conteúdo do relatório clicando **personalizar as configurações do relatório de integridade** no painel de tarefas e clicando na guia **conteúdo**. Desmarque as caixas de seleção para o conteúdo que você não deseja ver no relatório. Por exemplo, se você tiver seu próprio plano de backup do servidor e não deseja ver avisos sobre backups do servidor, você pode excluir backups de servidor do relatório desmarcando a **backup do servidor** caixa de seleção.  
   
 ###  <a name="BKMK_emailreport"></a> O relatório de email  
  Fazer logon no painel para ler relatórios é ainda inconveniente para alguns administradores, especialmente se eles têm mais de um servidor para gerenciar. Com o recurso de email ativado, depois que um relatório é gerado, um email será enviado para uma lista de endereços de email especificado com o conteúdo do relatório. O administrador pode facilmente exibir o relatório de qualquer dispositivo ou qualquer aplicativo cliente e certifique-se de que o servidor está sendo executado no melhor estado de funcionamento.  
@@ -140,13 +140,13 @@ ms.locfileid: "59842047"
   
 ##### <a name="to-ignore-an-alert"></a>Para ignorar um alerta  
   
-1.  No computador que está conectado ao servidor do Windows Server Essentials, abra a barra inicial.  
+1. No computador que está conectado ao servidor do Windows Server Essentials, abra a barra inicial.  
   
-2.  Na barra inicial, clique em algum dos ícones exibidos alertas (críticos, de aviso e informativos). Isso abre o Visualizador de alertas.  
+2. Na barra inicial, clique em algum dos ícones exibidos alertas (críticos, de aviso e informativos). Isso abre o Visualizador de alertas.  
   
-3.  No Visualizador de alerta, selecione o alerta que você deseja ignorar, e, em seguida, na seção**tarefas**, clique em **ignorar o alerta**.  
+3. No Visualizador de alerta, selecione o alerta que você deseja ignorar, e, em seguida, na seção**tarefas**, clique em **ignorar o alerta**.  
   
- Para responder a um alerta desabilitado, você precisará primeiro habilitar o alerta.  
+   Para responder a um alerta desabilitado, você precisará primeiro habilitar o alerta.  
   
 ###  <a name="BKMK_5"></a> Habilitar um alerta  
  Você pode habilitar um alerta havia ignorado anteriormente. Depois que o alerta estiver habilitado, você pode resolvê-lo ou excluí-la conforme necessário. Um alerta é exibido como desabilitado quando marcado para ser ignorado. Quando você habilita um alerta desabilitado anteriormente, ele se torna ativo e novamente está incluído na avaliação de integridade geral dos computadores.  
@@ -276,7 +276,7 @@ ms.locfileid: "59842047"
   
 4.  No **Configurações de SMTP** janela, faça o seguinte:  
   
-    1.  Em **Do endereço de email**, digite o endereço de email que você deseja usar para enviar o email de alertas. Este endereço de email será exibido como o endereço do remetente s na notificação de alerta.  
+    1.  Em **Do endereço de email**, digite o endereço de email que você deseja usar para enviar o email de alertas. Este endereço de email será exibido como o endereço do remetente na notificação de alerta.  
   
     2.  Em **Nome do servidor SMTP**, na caixa de texto **Do endereço de email** , digite o nome do servidor SMTP que você especificou na etapa 4a. (Consulte a tabela 1 para obter uma lista de alguns nomes de servidor SMTP).  
   
@@ -309,7 +309,7 @@ ms.locfileid: "59842047"
  Esta seção descreve como definir as configurações de SMTP para o servidor para que você possa receber relatórios de integridade por email.  
   
 > [!NOTE]
->  Por padrão, o suplemento relatório de integridade é integrado com o Windows Server Essentials ou Windows Server 2012 R2 com a função experiência Windows Server Essentials instalada, e os relatórios de integridade são exibidos na **relatórios de integridade** guia do painel s **Home** página.  
+>  Por padrão, o suplemento relatório de integridade é integrado com o Windows Server Essentials ou Windows Server 2012 R2 com a função experiência Windows Server Essentials instalada, e os relatórios de integridade são exibidos na **relatórios de integridade** guia do painel **Home** página.  
   
 ##### <a name="to-set-up-email-notification-for-health-reports"></a>Configurar  emails de notificação para relatórios de integridade  
   
@@ -321,7 +321,7 @@ ms.locfileid: "59842047"
   
 4.  Na guia **Agendamento e email**, na seção **email**, faça o seguinte:  
   
-    1.  Clique em **habilitar**e digite o endereço de email que você deseja usar para enviar os relatórios de integridade. Este endereço de email será exibido como o endereço do remetente s nos relatórios de integridade são enviados por email.  
+    1.  Clique em **habilitar**e digite o endereço de email que você deseja usar para enviar os relatórios de integridade. Esse endereço de email será exibido como o endereço do remetente nos relatórios de integridade são enviados por email.  
   
         1.  Para **nome do servidor SMTP**, digite o nome do servidor SMTP. (Consulte a tabela 1 para obter uma lista de alguns nomes de servidor SMTP).  
   
@@ -348,7 +348,7 @@ ms.locfileid: "59842047"
     |smtp.comcast.net|Sim|Não|587|Fornece o endereço de email completo com nome de domínio e senha para autenticação.|  
     |Yahoo.com|Não|Sim|25|Forneça apenas o endereço de email sem um nome de domínio para o nome de usuário.|  
   
-6.  Em **personalizar as configurações do relatório de integridade**, para **automaticamente enviar o relatório de integridade para os destinatários de email a seguir:**, digite os endereços de email das pessoas que você deseja que recebam os relatórios de integridade por email. Certifique-se de separar cada endereço de email com um ponto e vírgula (;).  
+6.  Em **personalizar as configurações do relatório de integridade**, para **automaticamente enviar o relatório de integridade para os destinatários de email a seguir:** , digite os endereços de email das pessoas que você deseja que recebam os relatórios de integridade por email. Certifique-se de separar cada endereço de email com um ponto e vírgula (;).  
   
 7.  Para verificar se você configurou suas configurações do servidor SMTP corretamente para enviar relatórios de integridade através de email, a partir da guia Relatório de integridade no Painel, selecione um relatório, e clique em **Enviar o relatório de integridade por Email** no painel de tarefas.  
   
@@ -387,6 +387,6 @@ ms.locfileid: "59842047"
   
 ## <a name="see-also"></a>Consulte também  
   
--   [Usar o Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)  
+-   [Utilizar o Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)  
   
 -   [Gerenciar o Windows Server Essentials](Manage-Windows-Server-Essentials.md)

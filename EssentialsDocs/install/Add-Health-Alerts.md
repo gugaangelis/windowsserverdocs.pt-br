@@ -12,12 +12,12 @@ ms.assetid: 270e0aac-dc42-46f3-a20b-a68ffbded06d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cf0c062b92c687f5f7b33b419eafdca2dd3bbbfc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8c3ba4746211690ad52f775b8bdc1ccf9b6c74b7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828507"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433723"
 ---
 # <a name="add-health-alerts"></a>Adicionar Alertas de Integridade
 
@@ -32,13 +32,13 @@ Um suplemento de integridade fornece definições para alertas, verificações d
   
 #### <a name="to-install-the-xml-files-on-the-server"></a>Para instalar os arquivos xml no servidor  
   
-1.  Na pasta **%ProgramFiles%\Windows Server\Bin\Feature Definitions** , crie uma nova pasta nomeada **MyHealthAddIn**. Você pode atribuir qualquer nome para esta pasta. Sugere-se que o nome da pasta seja o mesmo do recurso.  
+1. Na pasta **%ProgramFiles%\Windows Server\Bin\Feature Definitions** , crie uma nova pasta nomeada **MyHealthAddIn**. Você pode atribuir qualquer nome para esta pasta. Sugere-se que o nome da pasta seja o mesmo do recurso.  
   
-2.  Copie os arquivos Definition.xml e Definition.xml.config para a nova pasta.  
+2. Copie os arquivos Definition.xml e Definition.xml.config para a nova pasta.  
   
-3.  Se você criou arquivos binários para condições ou ações, também deverá copiá-los para **%ProgramFiles%\Windows Server\Bin**.  
+3. Se você criou arquivos binários para condições ou ações, também deverá copiá-los para **%ProgramFiles%\Windows Server\Bin**.  
   
- Os computadores clientes executam uma tarefa agendada a cada 6 horas que coloca os arquivos XML no local apropriado. É possível forçar a sincronização entre o computador cliente e o servidor executando manualmente a tarefa.  
+   Os computadores clientes executam uma tarefa agendada a cada 6 horas que coloca os arquivos XML no local apropriado. É possível forçar a sincronização entre o computador cliente e o servidor executando manualmente a tarefa.  
   
 #### <a name="to-install-the-xml-files-on-the-client-computer"></a>Para instalar os arquivos xml no computador cliente  
   
@@ -53,4 +53,4 @@ Um suplemento de integridade fornece definições para alertas, verificações d
  [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do usuário](Testing-the-Customer-Experience.md)
+ [Testar a experiência do usuário](Testing-the-Customer-Experience.md)

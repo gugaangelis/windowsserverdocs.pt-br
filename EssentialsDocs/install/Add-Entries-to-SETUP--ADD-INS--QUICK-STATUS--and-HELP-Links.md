@@ -12,12 +12,12 @@ ms.assetid: c0a8f10d-fd85-4c8d-b9bb-176cb1db1f46
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6d3303f2c6d84932ad9d5dee8a547cd478447732
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f0a66d0d36a3012369a9bc26c513dad069235ad8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864387"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433789"
 ---
 # <a name="add-entries-to-setup-add-ins-quick-status-and-help-links"></a>Adicione entradas para os links SETUP, ADD-INS, QUICK STATUS e HELP
 
@@ -33,111 +33,111 @@ ms.locfileid: "59864387"
   
 ##### <a name="to-define-the-tasks-and-links"></a>Para definir as tarefas e os links  
   
-1.  Abra o Visual Studio 2010 ou superior como administrador clicando com o botão direito do mouse no programa no menu Iniciar e selecione **Executar como administrador**.  
+1. Abra o Visual Studio 2010 ou superior como administrador clicando com o botão direito do mouse no programa no menu Iniciar e selecione **Executar como administrador**.  
   
-2.  Clique em **Arquivo**, em **Novo**e em **Projeto**.  
+2. Clique em **Arquivo**, em **Novo**e em **Projeto**.  
   
-3.  No painel **Modelos** , clique em **Biblioteca de Classes**, digite **OEMHomePageContent** na caixa **Nome** e clique em **OK**.  
+3. No painel **Modelos** , clique em **Biblioteca de Classes**, digite **OEMHomePageContent** na caixa **Nome** e clique em **OK**.  
   
-4.  Exclua o arquivo Class1.cs.  
+4. Exclua o arquivo Class1.cs.  
   
-5.  Clique com o botão direito do mouse no novo projeto, clique em **Adicionar**e em **Novo Item**.  
+5. Clique com o botão direito do mouse no novo projeto, clique em **Adicionar**e em **Novo Item**.  
   
-6.  No painel **Modelos**, clique em **Arquivo XML**, digite **OEMHomePageContent.home** na caixa de texto **Nome** e, em seguida, clique em **Adicionar**.  
+6. No painel **Modelos**, clique em **Arquivo XML**, digite **OEMHomePageContent.home** na caixa de texto **Nome** e, em seguida, clique em **Adicionar**.  
   
-    > [!NOTE]
-    >  Se o arquivo XML estiver sendo instalado sem um arquivo de recurso, ele deve ser chamado OEMHomePageContent.home. Se estiver incluído em um assembly, pode receber qualquer nome, desde que tenha uma extensão .home.  
+   > [!NOTE]
+   >  Se o arquivo XML estiver sendo instalado sem um arquivo de recurso, ele deve ser chamado OEMHomePageContent.home. Se estiver incluído em um assembly, pode receber qualquer nome, desde que tenha uma extensão .home.  
   
-7.  Adicione o seguinte código XML ao arquivo OEMHomePageContent.home:  
+7. Adicione o seguinte código XML ao arquivo OEMHomePageContent.home:  
   
-    ```  
+   ```  
   
-    <Tasks version=?2.0? xmlns=?https://schemas.microsoft.com/WindowsServerSolutions/2010/01/Dashboard>  
-       <SetupMyServerTasks>  
-          <Task name="MyTask"  
-             description="MyTaskDescription"  
-             id="GUID">  
-                  <Action   
-                  name=?MyAction1Name?   
-                  image=?IconForAction1?  
-                  type=?TaskType?  
-                  exelocation=?ActionExeLocation? />  
-                  <Action   
-                  name=?MyAction2Name?   
-                  image=?IconForAction2?  
-                  type=?TaskType?  
-                  exelocation=?ActionExeLocation? />  
-                   ¦  
-           </Task>  
-                   ¦  
-        </SetupMyServerTasks>  
-    <MailServiceTasks>  
-         <!-- Same schema as in œSetupMyServerTasks? but the tasks are shown in œConnect to Email Service? category. -->  
-    </MailServiceTasks>  
-    <LineOfBusinessTasks>  
-         <!-- Same schema as in œSetupMyServerTasks? but the tasks are shown in œAdd-ins? category. -->  
+   <Tasks version=?2.0? xmlns=?https://schemas.microsoft.com/WindowsServerSolutions/2010/01/Dashboard>  
+      <SetupMyServerTasks>  
+         <Task name="MyTask"  
+            description="MyTaskDescription"  
+            id="GUID">  
+                 <Action   
+                 name=?MyAction1Name?   
+                 image=?IconForAction1?  
+                 type=?TaskType?  
+                 exelocation=?ActionExeLocation? />  
+                 <Action   
+                 name=?MyAction2Name?   
+                 image=?IconForAction2?  
+                 type=?TaskType?  
+                 exelocation=?ActionExeLocation? />  
+                  ¦  
+          </Task>  
+                  ¦  
+       </SetupMyServerTasks>  
+   <MailServiceTasks>  
+        <!-- Same schema as in œSetupMyServerTasks? but the tasks are shown in œConnect to Email Service? category. -->  
+   </MailServiceTasks>  
+   <LineOfBusinessTasks>  
+        <!-- Same schema as in œSetupMyServerTasks? but the tasks are shown in œAdd-ins? category. -->  
   
-    <GetQuickStatusTasks>  
-          <Task name="MyQuickStatusTask1"  
-             description="MyQuickStatusTask1Desc   "  
-             id="GUID"  
-             assembly="AssemblyName of quick status query implementation"  
-             class="ClassName of quick status query implementation"           
-             replaceid="GUID"/>  
-               <!--  Same schema as Actions in œSetupMyServerTasks? -->   
-             </Task>  
-    </GetQuickStatusTasks>  
-       <Links>  
-          <Link  
-             ID=?GUID?  
-             Title="Displayed text of the link"  
-             Description="A very short description"  
-             ShellExecPath="Path to the application or URL"/>  
-       </Links>  
-    </Tasks>  
-    ```  
+   <GetQuickStatusTasks>  
+         <Task name="MyQuickStatusTask1"  
+            description="MyQuickStatusTask1Desc   "  
+            id="GUID"  
+            assembly="AssemblyName of quick status query implementation"  
+            class="ClassName of quick status query implementation"           
+            replaceid="GUID"/>  
+              <!--  Same schema as Actions in œSetupMyServerTasks? -->   
+            </Task>  
+   </GetQuickStatusTasks>  
+      <Links>  
+         <Link  
+            ID=?GUID?  
+            Title="Displayed text of the link"  
+            Description="A very short description"  
+            ShellExecPath="Path to the application or URL"/>  
+      </Links>  
+   </Tasks>  
+   ```  
   
-     Onde:  
+    Onde:  
   
-    |Atributo|Descrição|  
-    |---------------|-----------------|  
-    |Name (Task)|O nome que é exibido para a tarefa na lista. Se você criar um arquivo de recurso inserido, o valor deste atributo será o recurso da cadeia de caracteres.|  
-    |description (Task)|A descrição da tarefa. Se você criar um arquivo de recurso inserido, o valor deste atributo será o recurso da cadeia de caracteres.|  
-    |id (Task)|O identificador da tarefa. Esse identificador deve ser um GUID. Você cria um novo GUID para uma tarefa **exe**, mas para uma tarefa **global**, você usa o GUID criado quando você definiu a tarefa para o painel de tarefas da subguia. Para obter mais informações sobre como criar uma GUID, consulte [Criar Guid (guidgen.exe)](https://go.microsoft.com/fwlink/?LinkId=116098).|  
-    |image|Esse campo será ignorado.|  
-    |Name (Action)|Exibe o nome da tarefa.|  
-    |Tipo (Ação)|Descreve o tipo de tarefa. A tarefa pode ser uma das seguintes:- tarefa **global**, **exe** ou url. Uma tarefa **global** é a mesma tarefa global que você criou ao definir as tarefas para o painel de tarefas na subguia. Para obter mais informações sobre como criar uma tarefa global que pode ser usada no painel de tarefas da subguia e as listas Getting Started Tasks ou Common Tasks da home page, consulte œCreating as classes de suporte? em como: Criar uma subguia? dos [Windows Server Solutions SDK](https://go.microsoft.com/fwlink/?LinkID=248648). Uma tarefa **exe** pode ser usada para executar aplicativos a partir das listas Tarefas Iniciais ou Tarefas Comuns.|  
-    |exelocation|O caminho para o aplicativo associado à tarefa. Esse atributo é usado apenas para tarefas **exe** .|  
-    |replaceid|O identificador da tarefa que será substituído por esta tarefa.|  
-    |assembly|O AssemblyName do assembly que fornece a classe para implementar a consulta de status rápido. O assembly precisa estar localizado no programa de programas \ windows server\bin\\.|  
-    |class|O nome da classe implementa uma consulta de status rápido. A classe precisa implementar a interface **ITaskStatusQuery**.|  
-    |Title (link)|O texto que é exibido para o link. Se você criar um arquivo de recurso inserido, o valor deste atributo será o recurso da cadeia de caracteres.|  
-    |Description (link)|A descrição do destino do link. Se você criar um arquivo de recurso inserido, o valor deste atributo será o recurso da cadeia de caracteres.|  
-    |ShellExecPath|O caminho para o aplicativo ou para a URL.<br /><br /> **Observação:** As variáveis de ambiente têm suporte no atributo ShellExecPath.|  
+   |Atributo|Descrição|  
+   |---------------|-----------------|  
+   |Name (Task)|O nome que é exibido para a tarefa na lista. Se você criar um arquivo de recurso inserido, o valor deste atributo será o recurso da cadeia de caracteres.|  
+   |description (Task)|A descrição da tarefa. Se você criar um arquivo de recurso inserido, o valor deste atributo será o recurso da cadeia de caracteres.|  
+   |id (Task)|O identificador da tarefa. Esse identificador deve ser um GUID. Você cria um novo GUID para uma tarefa **exe**, mas para uma tarefa **global**, você usa o GUID criado quando você definiu a tarefa para o painel de tarefas da subguia. Para obter mais informações sobre como criar uma GUID, consulte [Criar Guid (guidgen.exe)](https://go.microsoft.com/fwlink/?LinkId=116098).|  
+   |image|Esse campo será ignorado.|  
+   |Name (Action)|Exibe o nome da tarefa.|  
+   |Tipo (Ação)|Descreve o tipo de tarefa. A tarefa pode ser uma das seguintes:- tarefa **global**, **exe** ou url. Uma tarefa **global** é a mesma tarefa global que você criou ao definir as tarefas para o painel de tarefas na subguia. Para obter mais informações sobre como criar uma tarefa global que pode ser usada no painel de tarefas da subguia e as listas Getting Started Tasks ou Common Tasks da home page, consulte œCreating as classes de suporte? em como: Criar uma subguia? dos [Windows Server Solutions SDK](https://go.microsoft.com/fwlink/?LinkID=248648). Uma tarefa **exe** pode ser usada para executar aplicativos a partir das listas Tarefas Iniciais ou Tarefas Comuns.|  
+   |exelocation|O caminho para o aplicativo associado à tarefa. Esse atributo é usado apenas para tarefas **exe** .|  
+   |replaceid|O identificador da tarefa que será substituído por esta tarefa.|  
+   |assembly|O AssemblyName do assembly que fornece a classe para implementar a consulta de status rápido. O assembly precisa estar localizado no programa de programas \ windows server\bin\\.|  
+   |class|O nome da classe implementa uma consulta de status rápido. A classe precisa implementar a interface **ITaskStatusQuery**.|  
+   |Title (link)|O texto que é exibido para o link. Se você criar um arquivo de recurso inserido, o valor deste atributo será o recurso da cadeia de caracteres.|  
+   |Description (link)|A descrição do destino do link. Se você criar um arquivo de recurso inserido, o valor deste atributo será o recurso da cadeia de caracteres.|  
+   |ShellExecPath|O caminho para o aplicativo ou para a URL.<br /><br /> **Observação:** As variáveis de ambiente têm suporte no atributo ShellExecPath.|  
   
-     O seguinte exemplo de código mostra como definir um link para um aplicativo:  
+    O seguinte exemplo de código mostra como definir um link para um aplicativo:  
   
-    ```  
-    <Links>  
-       <Link Title="Calc" Description="Launches Calc" ShellExecPath="%windir%\system32\calc.exe" />  
-    </Links>  
-    ```  
+   ```  
+   <Links>  
+      <Link Title="Calc" Description="Launches Calc" ShellExecPath="%windir%\system32\calc.exe" />  
+   </Links>  
+   ```  
   
-     O seguinte exemplo de código mostra como definir um link para uma página da Web:  
+    O seguinte exemplo de código mostra como definir um link para uma página da Web:  
   
-    ```  
-    <Links>  
-       <Link Title="Browser" Description="Open browser" ShellExecPath="http://www.adventureworks.com/" />  
-    </Links>  
-    ```  
+   ```  
+   <Links>  
+      <Link Title="Browser" Description="Open browser" ShellExecPath="http://www.adventureworks.com/" />  
+   </Links>  
+   ```  
   
-8.  Altere os valores de atributo para representar seu link ou tarefa.  
+8. Altere os valores de atributo para representar seu link ou tarefa.  
   
 9. Em **Gerenciador de Soluções**, clique com o botão direito do mouse em **OEMHomePageContent.home** e depois clique em **Propriedades**.  No painel **Propriedades**, sob **Ação de Compilação**, selecione **Recurso Incorporado**.  
   
 10. Salve o arquivo OEMHomePageContent.home.  
   
- Para saber como implantar uma consulta de status rápido, consulte documentos e amostras no [SDK do Windows Server Solutions](https://go.microsoft.com/fwlink/?LinkID=248648).  
+    Para saber como implantar uma consulta de status rápido, consulte documentos e amostras no [SDK do Windows Server Solutions](https://go.microsoft.com/fwlink/?LinkID=248648).  
   
 #### <a name="change-the-status-of-a-setupadd-ins-task"></a>Alterar o status de uma tarefa SETUP/ADD-INS  
  As tarefas que são listadas em SETUP e ADD-INS podem ser alternadas em estados de concluídas (configuradas para Complementos) e não concluídas (não configuradas para Complementos).  
@@ -217,4 +217,4 @@ ms.locfileid: "59864387"
  [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do usuário](Testing-the-Customer-Experience.md)
+ [Testar a experiência do usuário](Testing-the-Customer-Experience.md)

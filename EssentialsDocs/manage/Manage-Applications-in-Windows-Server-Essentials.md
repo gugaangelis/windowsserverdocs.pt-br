@@ -12,12 +12,12 @@ ms.assetid: ae89c46a-0afd-4858-9150-ec97650f45a4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e98d661ac71697bc0e38b6a25fe2f9d2b0b7254f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1a60a9e7fd958d447b4770431a69546f0ad6f229
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860167"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433354"
 ---
 # <a name="manage-applications-in-windows-server-essentials"></a>Gerenciar aplicativos no Windows Server Essentials
 
@@ -32,21 +32,21 @@ ms.locfileid: "59860167"
 ##  <a name="BKMK_1"></a> Tarefas de gerenciamento de aplicativo no painel  
  A página de Gerenciamento de **Aplicativos** do Painel fornece:  
   
--   Uma lista de suplementos instalados, que exibe:  
+- Uma lista de suplementos instalados, que exibe:  
   
-    -   O nome do serviço online ou suplemento  
+  -   O nome do serviço online ou suplemento  
   
-    -   O status de atualização do suplemento  
+  -   O status de atualização do suplemento  
   
-    -   O status da assinatura de complemento  
+  -   O status da assinatura de complemento  
   
-    -   O nome da empresa ou distribuidor que está disponibilizando o suplemento  
+  -   O nome da empresa ou distribuidor que está disponibilizando o suplemento  
   
--   Um painel de tarefas que inclui um conjunto de tarefas para gerenciamento de um suplemento selecionado  
+- Um painel de tarefas que inclui um conjunto de tarefas para gerenciamento de um suplemento selecionado  
   
--   Uma lista de suplementos que estão disponíveis para download e instalação a partir do Microsoft Pinpoint  
+- Uma lista de suplementos que estão disponíveis para download e instalação a partir do Microsoft Pinpoint  
   
- A tabela a seguir descreve as várias tarefas de gerenciamento de suplemento que estão disponíveis no Painel do servidor. Algumas tarefas são específicas do suplemento, então, elas são visíveis apenas quando você seleciona um suplemento na lista.  
+  A tabela a seguir descreve as várias tarefas de gerenciamento de suplemento que estão disponíveis no Painel do servidor. Algumas tarefas são específicas do suplemento, então, elas são visíveis apenas quando você seleciona um suplemento na lista.  
   
 |Nome da tarefa|Descrição|  
 |---------------|-----------------|  

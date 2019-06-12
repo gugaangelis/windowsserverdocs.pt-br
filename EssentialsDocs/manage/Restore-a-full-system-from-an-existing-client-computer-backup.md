@@ -12,12 +12,12 @@ ms.assetid: 47e498a6-1b71-47de-88f6-8c13c221d108
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cfc4d1ce461e1e1cbb9b99970355c4dc7241911b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: c78a2a2d950c8542bcf56005eb340ec78619acdb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869687"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433094"
 ---
 # <a name="restore-a-full-system-from-an-existing-client-computer-backup"></a>Restaurar um sistema completo de um backup de computador cliente existente
 
@@ -128,11 +128,11 @@ ms.locfileid: "59869687"
   
 > [!NOTE]
 >   Windows Server Essentials não oferece suporte para os seguintes cenários de restauração:  
->   
->  -   Restaurar um disco de registro mestre de inicialização (MBR) para um UEFI Unified Extensible Firmware Interface () com base em computador.  
-> -   Restaurar um backup UEFI/GPT para um sistema BIOS.  
->   
->  Se você restaurar os dados em qualquer um desses cenários, não poderá inicializar o sistema. Além disso, talvez você não consiga usar discos rígidos com mais de dois terabytes.  
+> 
+> - Restaurar um disco de registro mestre de inicialização (MBR) para um computador baseado em UEFI (Unified Extensible Firmware Interface).  
+>   -   Restaurar um backup UEFI/GPT para um sistema BIOS.  
+> 
+>   Se você restaurar os dados em qualquer um desses cenários, não poderá inicializar o sistema. Além disso, talvez você não consiga usar discos rígidos com mais de dois terabytes.  
   
  **Pré-requisitos:**  
   
@@ -149,46 +149,46 @@ ms.locfileid: "59869687"
   
 #### <a name="to-use-the-full-system-restore-wizard"></a>Para usar o Assistente de Restauração Completa do Sistema  
   
-1.  Siga um destes procedimentos:  
+1. Siga um destes procedimentos:  
   
-    -   Windows Server Essentials: Ligue o computador cliente que deseja restaurar, insira a mídia de restauração e desligue o computador.  
+   -   Windows Server Essentials: Ligue o computador cliente que deseja restaurar, insira a mídia de restauração e desligue o computador.  
   
-         Ligue o computador novamente e, durante o POST (Power On Self Test), pressione a tecla de função correta (tecla F) para acessar o menu Inicializar Dispositivo e, em seguida, selecione a unidade de CD/DVD. O Gerenciador de Inicialização do Windows é iniciado.  
+        Ligue o computador novamente e, durante o POST (Power On Self Test), pressione a tecla de função correta (tecla F) para acessar o menu Inicializar Dispositivo e, em seguida, selecione a unidade de CD/DVD. O Gerenciador de Inicialização do Windows é iniciado.  
   
-    -   Windows Server Essentials: Se você estiver usando o serviço de restauração do cliente, reinicie o computador usando a opçaõ **Inicialização de rede**. Caso contrário, inicie o computador usando a chave USB.  
+   -   Windows Server Essentials: Se você estiver usando o serviço de restauração do cliente, reinicie o computador usando a opçaõ **Inicialização de rede**. Caso contrário, inicie o computador usando a chave USB.  
   
-         Ligue o computador novamente durante POST, pressione a tecla de função apropriada (tecla F) para acessar o Menu Inicializar Dispositivo e, em seguida, selecione **Inicialização de rede** (ou você pode optar por inicializar a partir da chave USB). O Gerenciador de Inicialização do Windows é iniciado.  
+        Ligue o computador novamente durante POST, pressione a tecla de função apropriada (tecla F) para acessar o Menu Inicializar Dispositivo e, em seguida, selecione **Inicialização de rede** (ou você pode optar por inicializar a partir da chave USB). O Gerenciador de Inicialização do Windows é iniciado.  
   
-    > [!NOTE]
-    >  Consulte a documentação do fabricante do computador para determinar qual a tecla de função que acessa o menu Inicializar dispositivo.  
+   > [!NOTE]
+   >  Consulte a documentação do fabricante do computador para determinar qual a tecla de função que acessa o menu Inicializar dispositivo.  
   
-2.  A mídia de restauração do computador contém opções de inicialização de 32 bits (x86) e 64 bits (x64). No Gerenciador de Inicialização do Windows, escolha **Restauração Completa do Sistema (x86)** ou **Restauração Completa do Sistema (x64)**. Se os drivers de hardware do computador tiverem 32 bits, escolha x86; se eles tiverem 64 bits, escolha x64. Os arquivos do Windows são carregados e o Assistente de Restauração Completa realiza uma verificação para certificar-se de que todos os drivers de hardware estejam disponíveis.  
+2. A mídia de restauração do computador contém opções de inicialização de 32 bits (x86) e 64 bits (x64). No Gerenciador de Inicialização do Windows, escolha **Restauração Completa do Sistema (x86)** ou **Restauração Completa do Sistema (x64)** . Se os drivers de hardware do computador tiverem 32 bits, escolha x86; se eles tiverem 64 bits, escolha x64. Os arquivos do Windows são carregados e o Assistente de Restauração Completa realiza uma verificação para certificar-se de que todos os drivers de hardware estejam disponíveis.  
   
-3.  Na janela **Assistente de Restauração Completa do Sistema**, escolha seu idioma preferencial e clique na seta.  
+3. Na janela **Assistente de Restauração Completa do Sistema**, escolha seu idioma preferencial e clique na seta.  
   
-4.  Escolha o **Formato de hora e moeda**adequado e o **Teclado ou método de entrada** para esse computador. Clique em **Continuar**.  
+4. Escolha o **Formato de hora e moeda**adequado e o **Teclado ou método de entrada** para esse computador. Clique em **Continuar**.  
   
-5.  Se os drivers estão ausentes, a mensagem que o processo de restauração não é possível verificar os drivers é exibida. Clique em **Fechar**e na caixa de diálogo de boas-vindas, clique em **Carregar drivers**.  
+5. Se os drivers estão ausentes, a mensagem que o processo de restauração não é possível verificar os drivers é exibida. Clique em **Fechar**e na caixa de diálogo de boas-vindas, clique em **Carregar drivers**.  
   
-    1.  Na caixa de diálogo **Detectar Hardware** , clique em **Instalar Drivers**.  
+   1.  Na caixa de diálogo **Detectar Hardware** , clique em **Instalar Drivers**.  
   
-    2.  Insira a unidade flash USB que contém os drivers do hardware e, na caixa de diálogo **Instalar Drivers** , clique em **Digitalizar**.  
+   2.  Insira a unidade flash USB que contém os drivers do hardware e, na caixa de diálogo **Instalar Drivers** , clique em **Digitalizar**.  
   
-    3.  Na caixa de diálogo **Instalar Drivers** , clique em **OK** quando os drivers forem encontrados.  
+   3.  Na caixa de diálogo **Instalar Drivers** , clique em **OK** quando os drivers forem encontrados.  
   
-    4.  Na caixa de diálogo **Detectar Hardware** , clique em **Continuar**.  
+   4.  Na caixa de diálogo **Detectar Hardware** , clique em **Continuar**.  
   
-6.  Se todos os drivers forem encontrados na verificação inicial ou quando todos os drivers críticos estiverem instalados, na janela **Restauração Completa do Sistema**, clique em **Continuar**.  
+6. Se todos os drivers forem encontrados na verificação inicial ou quando todos os drivers críticos estiverem instalados, na janela **Restauração Completa do Sistema**, clique em **Continuar**.  
   
-7.  Na página **Bem-vindo ao Assistente de Restauração Completa do Sistema**, clique em **Avançar**.  
+7. Na página **Bem-vindo ao Assistente de Restauração Completa do Sistema**, clique em **Avançar**.  
   
-8.  O assistente procura o seu servidor.  
+8. O assistente procura o seu servidor.  
   
-    1.  Se o assistente não puder localizar o servidor, você terá a opção de procurar novamente ou de inserir o endereço IP do servidor.  
+   1.  Se o assistente não puder localizar o servidor, você terá a opção de procurar novamente ou de inserir o endereço IP do servidor.  
   
-    2.  Se vários servidores forem detectados, você precisará selecionar um.  
+   2.  Se vários servidores forem detectados, você precisará selecionar um.  
   
-    3.  Se o servidor for localizado, o **faça logon em < YourServerName\>**  página é exibida.  
+   3.  Se o servidor for localizado, o **faça logon em < YourServerName\>**  página é exibida.  
   
 9. No **faça logon em < nomedoservidor\>**  página, digite *< AdministratorAccountName\>*  no **nome de usuário** caixa de texto e o senha da conta de administrador na **senha** caixa de texto e clique **próxima**.  
   
@@ -214,55 +214,55 @@ ms.locfileid: "59869687"
     > [!NOTE]
     >  Esta página não será exibida se o particionamento automático não for suportado.  
   
-    1.  **Permitir que o assistente restaure totalmente o computador (recomendado)**. Esta opção ajuda a garantir que computador seja restaurado para o estado em que se encontrava antes da hora e data do backup escolhido. Se você escolher essa opção, pule para a etapa 15.  
+    1.  **Permitir que o assistente restaure totalmente o computador (recomendado)** . Esta opção ajuda a garantir que computador seja restaurado para o estado em que se encontrava antes da hora e data do backup escolhido. Se você escolher essa opção, pule para a etapa 15.  
   
-    2.  **Permitir que eu selecione os volumes a serem restaurados (avançado)**. Esta opção permite escolher os volumes que você deseja restaurar e onde você deseja restaurá-los. Você também pode criar partições no disco rígido.  
+    2.  **Permitir que eu selecione os volumes a serem restaurados (avançado)** . Esta opção permite escolher os volumes que você deseja restaurar e onde você deseja restaurá-los. Você também pode criar partições no disco rígido.  
   
 15. Na página **Selecionar os volumes para restaurar**, você pode escolher os volumes que deseja restaurar.  
   
     > [!NOTE]
     >  Essa página é exibida se houver vários discos rígidos no computador de origem do backup ou se a unidade de destino da restauração tiver menos espaço de armazenamento que a unidade de origem do backup.  
   
-    1.  O assistente tenta fazer a correspondência dos volumes de origem e de destino. Você deverá verificar se o mapeamento padrão está correto.  
+    1. O assistente tenta fazer a correspondência dos volumes de origem e de destino. Você deverá verificar se o mapeamento padrão está correto.  
   
-        1.  Para desmarcar um volume, clique na seta do menu da lista do volume e clique em **Nenhum**.  
+       1.  Para desmarcar um volume, clique na seta do menu da lista do volume e clique em **Nenhum**.  
   
-        2.  Ao concluir a seleção dos volumes, clique em **Avançar**.  
+       2.  Ao concluir a seleção dos volumes, clique em **Avançar**.  
   
-    2.  Se o volume de origem e o volume de destino tiverem o mesmo tamanho ou se o tamanho de origem for menor que o de destino, uma seta verde será exibida entre eles. Se houver incompatibilidade no tamanho do volume (quando o volume de origem for maior que o volume de destino), um X vermelho será exibido entre a origem e o destino.  
+    2. Se o volume de origem e o volume de destino tiverem o mesmo tamanho ou se o tamanho de origem for menor que o de destino, uma seta verde será exibida entre eles. Se houver incompatibilidade no tamanho do volume (quando o volume de origem for maior que o volume de destino), um X vermelho será exibido entre a origem e o destino.  
   
-        > [!NOTE]
-        >  Um X vermelho também poderá ser exibido se:  
-        >   
-        >  -   O tamanho do setor do disco do volume de origem não corresponder ao tamanho do setor do disco do volume de destino. Isso pode ocorrer se você substituir o disco físico por um disco com um tamanho de setor diferente, ou se você configurar os Espaços de Armazenamento (que podem ter um tamanho de setor diferente que aquele do disco físico).  
-        > -   O limite do número de cluster foi atingido. Para restaurar o volume de origem ao volume de destino, você deve formatar o volume de destino com o mesmo tamanho de cluster que o volume de origem. Se o volume de destino for muito grande e, se o tamanho do cluster for muito pequeno, o limite do número de cluster pode ser atingido.  
+       > [!NOTE]
+       >  Um X vermelho também poderá ser exibido se:  
+       > 
+       > - O tamanho do setor do disco do volume de origem não corresponder ao tamanho do setor do disco do volume de destino. Isso pode ocorrer se você substituir o disco físico por um disco com um tamanho de setor diferente, ou se você configurar os Espaços de Armazenamento (que podem ter um tamanho de setor diferente que aquele do disco físico).  
+       >   -   O limite do número de cluster foi atingido. Para restaurar o volume de origem ao volume de destino, você deve formatar o volume de destino com o mesmo tamanho de cluster que o volume de origem. Se o volume de destino for muito grande e, se o tamanho do cluster for muito pequeno, o limite do número de cluster pode ser atingido.  
   
-        1.  Clique em **Executar Gerenciador de Disco (avançado)** e crie um novo volume com o mesmo tamanho que o volume reservado pelo sistema.  
+       1. Clique em **Executar Gerenciador de Disco (avançado)** e crie um novo volume com o mesmo tamanho que o volume reservado pelo sistema.  
   
-            > [!NOTE]
-            >  Se um computador cliente for UEFI Unified Extensible Firmware Interface () com base, você deve usar o **diskpart** ferramenta para inicializar o disco do sistema. Para fazer isso, abra uma janela Comando (pressione Ctrl+Alt+Shift por 5 segundos no ambiente WinPE), execute **diskpart.exe** e depois execute os seguintes comandos de diskpart:  
-            >   
-            >  1.  **DISKPART > disco de lista**  
-            > 2.  **DISKPART > Selecionar disco n º** *< disco\>*  
-            > 3.  **DISKPART > Limpar**  
-            > 4.  **DISKPART > Converter gpt**  
-            > 5.  **DISKPART > Criar partição efi tamanho =** *100* (onde *100* é um tamanho de partição de exemplo no MB, deve ser o mesmo que a partição original)  
-            > 6.  **DISKPART > Criar partição msr tamanho =** *128* (onde *128* é um tamanho de partição de exemplo no MB, deve ser o mesmo que a partição original)  
-            > 7.  **DISKPART > Sair**  
+          > [!NOTE]
+          >  Se um computador cliente é baseado em UEFI (Unified Extensible Firmware Interface), você deve usar o **diskpart** ferramenta para inicializar o disco do sistema. Para fazer isso, abra uma janela Comando (pressione Ctrl+Alt+Shift por 5 segundos no ambiente WinPE), execute **diskpart.exe** e depois execute os seguintes comandos de diskpart:  
+          > 
+          > 1. **DISKPART > disco de lista**  
+          >    2. **DISKPART > Selecionar disco n º** *< disco\>*  
+          >    3. **DISKPART > Limpar**  
+          >    4. **DISKPART > Converter gpt**  
+          >    5. **DISKPART > Criar partição efi tamanho =** *100* (onde *100* é um tamanho de partição de exemplo no MB, deve ser o mesmo que a partição original)  
+          >    6. **DISKPART > Criar partição msr tamanho =** *128* (onde *128* é um tamanho de partição de exemplo no MB, deve ser o mesmo que a partição original)  
+          >    7. **DISKPART > Sair**  
   
-        2.  *(Opcional)* Selecione a opção **Não Atribuir uma Letra ou Caminho de Unidade**.  
+       2. *(Opcional)* Selecione a opção **Não Atribuir uma Letra ou Caminho de Unidade**.  
   
-        3.  Formate o volume como **NTFS**.  
+       3. Formate o volume como **NTFS**.  
   
-        4.  Ao concluir a formatação, clique com o botão direito do mouse no novo volume do sistema e clique em **Marcar Partição como Ativa**.  
+       4. Ao concluir a formatação, clique com o botão direito do mouse no novo volume do sistema e clique em **Marcar Partição como Ativa**.  
   
-        5.  Se você precisar de mais volumes que correspondam a outros volumes no backup, repita as etapas de *ii* a *iv* para criar e ativar os volumes e feche **Gerenciamento de Disco**.  
+       5. Se você precisar de mais volumes que correspondam a outros volumes no backup, repita as etapas de *ii* a *iv* para criar e ativar os volumes e feche **Gerenciamento de Disco**.  
   
-        6.  Na página **Selecione os volumes para restaurar**, mapeie o volume reservado pelo sistema da origem do backup para o volume de mesmo tamanho que você criou na etapa *v*.  
+       6. Na página **Selecione os volumes para restaurar**, mapeie o volume reservado pelo sistema da origem do backup para o volume de mesmo tamanho que você criou na etapa *v*.  
   
-        7.  Mapear todos os volumes de origem para os volumes de destino correspondentes.  
+       7. Mapear todos os volumes de origem para os volumes de destino correspondentes.  
   
-        8.  Clique em **Avançar** para continuar com a restauração.  
+       8. Clique em **Avançar** para continuar com a restauração.  
   
 16. Na página **Confirmar volumes que serão restaurados** , examine o mapeamento e clique em **Avançar**. Se você precisar fazer alterações, clique em **Voltar** e repita a etapa 14.  
   
@@ -280,24 +280,24 @@ ms.locfileid: "59869687"
   
 #### <a name="to-copy-drivers-from-a-backup-to-a-usb-flash-drive"></a>Para copiar drivers de um backup para uma unidade flash USB  
   
-1.  Em outro computador, abra o Dashboard.  
+1. Em outro computador, abra o Dashboard.  
   
-2.  Clique em **Dispositivos** e clique no computador para o qual os drivers são necessários.  
+2. Clique em **Dispositivos** e clique no computador para o qual os drivers são necessários.  
   
-3.  Clique em **Restaurar arquivos ou pastas do computador**. O Assistente de Restauração de Arquivos ou Pastas é aberto.  
+3. Clique em **Restaurar arquivos ou pastas do computador**. O Assistente de Restauração de Arquivos ou Pastas é aberto.  
   
-4.  Clique no backup com êxito mais recente e, em seguida, clique em **Avançar**.  
+4. Clique no backup com êxito mais recente e, em seguida, clique em **Avançar**.  
   
-5.  Clique em um volume para abrir e clique em **Avançar**. Uma janela que lista os arquivos e pastas no backup é aberta.  
+5. Clique em um volume para abrir e clique em **Avançar**. Uma janela que lista os arquivos e pastas no backup é aberta.  
   
-6.  Insira sua unidade flash USB em um conector USB no computador e, em seguida, copie a pasta Drivers para a restauração completa do sistema para sua unidade flash USB.  
+6. Insira sua unidade flash USB em um conector USB no computador e, em seguida, copie a pasta Drivers para a restauração completa do sistema para sua unidade flash USB.  
   
-    > [!NOTE]
-    >  Talvez seja necessário clicar em **Até um nível**, até que você alcance a raiz do volume do sistema.  
+   > [!NOTE]
+   >  Talvez seja necessário clicar em **Até um nível**, até que você alcance a raiz do volume do sistema.  
   
-7.  Remova a unidade flash e insira-a no computador que você está restaurando.  
+7. Remova a unidade flash e insira-a no computador que você está restaurando.  
   
- Você pode usar unidade flash USB para instalar os drivers para seu computador quando for restaurá-lo. O assistente de restauração ou assistente de pastas procura drivers adicionais nessa unidade flash USB, enquanto usa o Assistente de Restauração Completa do Sistema. Provavelmente, você precisará do driver do adaptador de rede e dos drivers do dispositivo de armazenamento.  
+   Você pode usar unidade flash USB para instalar os drivers para seu computador quando for restaurá-lo. O assistente de restauração ou assistente de pastas procura drivers adicionais nessa unidade flash USB, enquanto usa o Assistente de Restauração Completa do Sistema. Provavelmente, você precisará do driver do adaptador de rede e dos drivers do dispositivo de armazenamento.  
   
 ## <a name="see-also"></a>Consulte também  
   

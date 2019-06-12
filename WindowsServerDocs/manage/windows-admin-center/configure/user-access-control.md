@@ -5,23 +5,23 @@ ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
-ms.date: 03/19/2019
+ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: b19657f4ce1a1a2cfb94f7234f07805ba0abd42c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 96d09b25ddb2f473fb4fe22c0cf716bfcf8becaa
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850567"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811932"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>Configurar as permissões e controle de acesso do usuário
 
->Aplica-se a: Windows Admin Center, Windows Admin Center Preview
+> Aplica-se a: Windows Admin Center, Windows Admin Center Preview
 
 Se você ainda não fez isso, você se familiarizar com o [opções de controle de acesso do usuário no Windows Admin Center](../plan/user-access-options.md)
 
->[!NOTE]
+> [!NOTE]
 > Não há suporte para acesso de grupo com base no Windows Admin Center em ambientes de grupo de trabalho ou em domínios não confiáveis.
 
 ## <a name="gateway-access-role-definitions"></a>Definições de função de acesso do gateway
@@ -41,7 +41,7 @@ Por padrão, o Active Directory ou grupos de computadores locais são usados par
 
 Sobre o **usuários** guia, você pode controlar quem tem acesso à Windows Admin Center como um usuário do gateway. Por padrão, e se você não especificar um grupo de segurança, qualquer usuário que acessa a URL do gateway tem acesso. Depois de adicionar um ou mais grupos de segurança à lista de usuários, o acesso é restrito aos membros desses grupos.
 
-Se você não usar um domínio do Active Directory em seu ambiente, o acesso é controlado pelo ```Users``` e ```Administrators``` grupos locais no computador do gateway do Windows Admin Center.
+Se você não usar um domínio do Active Directory em seu ambiente, o acesso é controlado pelo `Users` e `Administrators` grupos locais no computador do gateway do Windows Admin Center.
 
 ### <a name="smartcard-authentication"></a>Autenticação de cartão inteligente
 
@@ -143,6 +143,7 @@ Como configurar o RBAC consiste nas 2 etapas: habilitar o suporte nos computador
 
 O modelo de implantação de máquina única é ideal para ambientes simples com apenas alguns computadores para gerenciar.
 Configurar uma máquina com suporte para controle de acesso baseado em função resultará nas seguintes alterações:
+
 -   Módulos do PowerShell com as funções exigidas pelo Windows Admin Center serão instalados na unidade do sistema, em `C:\Program Files\WindowsPowerShell\Modules`. Todos os módulos começarão com **Microsoft.Sme**
 -   Desired State Configuration será executado em uma única configuração para configurar um ponto de extremidade de administração Just Enough no computador, nomeado **Microsoft.Sme.PowerShell**. Esse ponto de extremidade define as 3 funções usadas pelo Windows Admin Center e será executado como um administrador local temporário, quando um usuário se conecta a ele.
 -   3 novos grupos locais serão criados para controlar quais usuários recebem acesso a quais funções:
@@ -191,6 +192,7 @@ Invoke-RestMethod -Uri "https://localhost:6516/api/nodes/all/features/jea/endpoi
 ```
 
 Quando você expande o arquivo zip, você verá a seguinte estrutura de pasta:
+
 - InstallJeaFeatures.ps1
 - JustEnoughAdministration (diretório)
 - Módulos (diretório)
@@ -198,6 +200,7 @@ Quando você expande o arquivo zip, você verá a seguinte estrutura de pasta:
     - WindowsAdminCenter.Jea (diretório)
 
 Para configurar o suporte para controle de acesso baseado em função em um nó, você precisará executar as seguintes ações:
+
 1.  Copie o JustEnoughAdministration, Microsoft.SME. \*e os módulos de WindowsAdminCenter.Jea para o diretório do módulo do PowerShell no computador de destino. Normalmente, isso está localizado em `C:\Program Files\WindowsPowerShell\Modules`.
 2.  Atualização **InstallJeaFeature.ps1** arquivo para corresponder à configuração desejada para o ponto de extremidade do RBAC.
 3.  Execute InstallJeaFeature.ps1 para compilar o recurso de DSC.

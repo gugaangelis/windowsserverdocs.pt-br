@@ -14,16 +14,16 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: af41304e08f19ca155f6fd13c9258e9a8f20c163
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d03dcd307696aea55ab6a1569ab907635994772a
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817007"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66804994"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc"></a>Área de trabalho remota - permitir o acesso a seu computador
 
->Aplica-se a: Windows 10, Windows 8.1, Windows Server 2012 R2, Windows Server 2016
+>Aplica-se a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
 
 Você pode usar a área de trabalho remota para conectar e controlar seu PC de um dispositivo remoto usando um [cliente de área de trabalho remota Microsoft](remote-desktop-clients.md) (disponível para Windows, iOS, macOS e Android). Quando você permitir conexões remotas para o seu PC, você pode usar outro dispositivo para se conectar ao seu PC e ter acesso a todos os seus aplicativos, arquivos e recursos de rede como se estivesse em sua mesa.  
 
@@ -64,7 +64,7 @@ Lembre-se de que quando você habilita o acesso à área de trabalho remota, voc
 Você deve garantir que cada conta que tenha acesso a seu computador está configurada com uma senha forte.
 
 ## <a name="why-allow-connections-only-with-network-level-authentication"></a>Por que permitir conexões somente com autenticação no nível da rede? 
- 
-Se você quiser restringir quem pode acessar seu PC, optar por permitir acesso apenas com o nível de autenticação rede (NLA). Quando você habilitar essa opção, os usuários precisam autenticar-se à rede, antes que eles possam se conectar a seu computador. Permitir conexões somente de computadores que executam a área de trabalho remota com NLA é um método de autenticação mais seguro que pode ajudar a proteger seu computador contra usuários mal-intencionados e de software. Para obter mais informações sobre NLA e área de trabalho remota, fazer check-out [NLA configurar para conexões do RDS](https://technet.microsoft.com/library/cc732713(v=ws.11).aspx). 
+
+Se você quiser restringir quem pode acessar seu PC, optar por permitir acesso apenas com o nível de autenticação rede (NLA). Quando você habilitar essa opção, os usuários precisam autenticar-se à rede, antes que eles possam se conectar a seu computador. Permitir conexões somente de computadores que executam a área de trabalho remota com NLA é um método de autenticação mais seguro que pode ajudar a proteger seu computador contra usuários mal-intencionados e de software. Para obter mais informações sobre NLA e área de trabalho remota, fazer check-out [NLA configurar para conexões do RDS](https://technet.microsoft.com/library/cc732713(v=ws.11).aspx).
 
 Se você estiver se conectando remotamente a um computador em sua rede doméstica, de fora da rede, não selecione essa opção.

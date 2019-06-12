@@ -7,22 +7,22 @@ ms.manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
-ms.date: 04/12/2018
+ms.date: 06/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 84d10ab3e25500720dd13e2ba057dc3c5bf05a6f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f2031afada302c0f73621a75f572c8547620db16
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849317"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501656"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>Requisitos de hardware dos Espaços de Armazenamento Diretos
 
-> Aplica-se a: Windows Server 2016, Windows Server Insider Preview
+> Aplica-se a: Windows Server 2019, Windows Server 2016
 
 Este tópico descreve os requisitos mínimos de hardware para espaços de armazenamento diretos.
 
-Para a produção, a Microsoft recomenda essas [definida pelo Software do Windows Server](https://microsoft.com/wssd) hardware/software oferece de nossos parceiros, que incluem procedimentos e ferramentas de implantação. Eles são projetados, montados e validados em relação a nossa arquitetura de referência para garantir a compatibilidade e confiabilidade, para que você começar a trabalhar em funcionamento rapidamente. Saiba mais em [ https://microsoft.com/wssd ](https://microsoft.com/wssd).
+Para a produção, a Microsoft recomenda a compra de uma solução de hardware/software validado de nossos parceiros, quais incluem procedimentos e ferramentas de implantação. Essas soluções são projetadas, reunimos e validadas em relação a nossa arquitetura de referência para garantir a compatibilidade e confiabilidade, para que você começar a trabalhar em funcionamento rapidamente. Para soluções do Windows Server 2019, visite o [site de soluções do Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci). Para soluções do Windows Server 2016, saiba mais em [definida pelo Software do Windows Server](https://microsoft.com/wssd).
 
 ![logotipos de nossos parceiros definida pelo Software do Windows Server](media/hardware-requirements/wssd-partners.png)
 
@@ -79,25 +79,27 @@ Espaços de armazenamento diretos funciona com conexão direta NVMe, SAS ou SATA
 - 512n, 512e e unidades nativas de 4K têm suporte
 - Unidades de estado sólido devem fornecer [proteção contra perda de energia](https://blogs.technet.microsoft.com/filecab/2016/11/18/dont-do-it-consumer-ssd/)
 - Mesmo número e tipos de unidades em cada servidor – consulte [considerações de simetria de unidade](drive-symmetry-considerations.md)
+- Dispositivos de cache devem ser de 32 GB ou maior
+- Ao usar dispositivos de memória persistentes como dispositivos de cache, você deve usar dispositivos NVMe ou SSD de capacidade (você não pode usar HDDs)
 - Driver de NVMe é na caixa da Microsoft ou NVMe driver atualizado.
 - Recomendado: Número de unidades de capacidade é um múltiplo inteiro do número de unidades de cache
 - Recomendado: Unidades de cache devem ter a gravação alta durabilidade: pelo menos 3 unidade gravações-por dia (DWPD) ou pelo menos 4 terabytes escritos (TBW) por dia – consulte [unidade Noções básicas sobre gravações por dia (DWPD), terabytes escrito (TBW) e o mínimo recomendado para armazenamento Espaços diretos](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
 
 Aqui está como unidades podem ser conectadas para espaços de armazenamento diretos:
 
-1. Discos SATA de conexão direta
-2. Unidades de NVMe direta
-3. SAS controladora (HBA) com unidades SAS
-4. SAS controladora (HBA) com unidades SATA
-5. **NÃO TEM SUPORTE:** RAID SAN (Fibre Channel, iSCSI, FCoE) ou placas do controlador de armazenamento. Placas de barramento de host (HBA) devem implementar o modo de passagem simples.
+- Discos SATA de conexão direta
+- Unidades de NVMe direta
+- SAS controladora (HBA) com unidades SAS
+- SAS controladora (HBA) com unidades SATA
+- **NÃO TEM SUPORTE:** RAID SAN (Fibre Channel, iSCSI, FCoE) ou placas do controlador de armazenamento. Placas de barramento de host (HBA) devem implementar o modo de passagem simples.
 
 ![interconexões do diagrama da unidade com suporte](media/hardware-requirements/drive-interconnect-support-1.png)
 
 Unidades podem ser internas ao servidor ou em um aparelho externo que é conectado a apenas um servidor. Serviços de compartimento SCSI (SES) é necessária para identificação e mapeamento do slot. Cada compartimento externo deve apresentar um identificador exclusivo (ID exclusiva).
 
-1. Unidades internas ao servidor
-2. Unidades em um aparelho externo conectado a um servidor ("JBOD")
-3. **NÃO TEM SUPORTE:** Compartimentos SAS compartilhados conectado a vários servidores ou de qualquer forma de múltiplos caminhos IO (MPIO) em que as unidades são acessíveis por vários caminhos.
+- Unidades internas ao servidor
+- Unidades em um aparelho externo conectado a um servidor ("JBOD")
+- **NÃO TEM SUPORTE:** Compartimentos SAS compartilhados conectado a vários servidores ou de qualquer forma de múltiplos caminhos IO (MPIO) em que as unidades são acessíveis por vários caminhos.
 
 ![interconexões do diagrama da unidade com suporte](media/hardware-requirements/drive-interconnect-support-2.png)
 
@@ -108,8 +110,10 @@ Unidades podem ser internas ao servidor ou em um aparelho externo que é conecta
 
 | Tipos de unidade presentes   | Número mínimo necessário |
 |-----------------------|-------------------------|
+| Toda a memória persistente (mesmo modelo) | 4 de memória persistente |
 | Tudo NVMe (mesmo modelo) | 4 NVMes                  |
 | Tudo SSD (mesmo modelo)  | 4 SSDs                   |
+| Memória persistente + NVMe ou SSD | Memória persistente 2 + 4 NVMe ou SSD |
 | NVMe + SSD            | 2 NVMes + 4 SSDs          |
 | NVMe + HDD            | 2 NVMes + 4 HDDs          |
 | SSD + HDD             | 2 SSDs + 4 HDDs           |
@@ -120,5 +124,7 @@ Unidades podem ser internas ao servidor ou em um aparelho externo que é conecta
 
 ### <a name="maximum-capacity"></a>Capacidade máxima
 
-- Recomendado: Capacidade máxima de armazenamento bruto 100 terabytes (TB) por servidor
-- 1 petabyte (1.000 TB) capacidade bruta máxima no pool de armazenamento
+| Limites máximos                | Windows Server 2019  | Windows Server 2016  |
+| ---                     | ---------            | ---------            |
+| Capacidade bruta por servidor | 100 TB               | 100 TB               |
+| Capacidade do pool           | 4 PB (4.000 TB)      | 1 PB                 |

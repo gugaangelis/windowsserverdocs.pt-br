@@ -1,23 +1,23 @@
 ---
 title: Visão geral do Gerenciamento de Disco
 description: Gerenciamento de disco é um utilitário do sistema no Windows que permite que você execute tarefas de armazenamento avançado, como inicializar uma nova unidade, extensão dos volumes, reduzindo as partições e alterar as letras de unidade.
-ms.date: 4/2/2018
+ms.date: 06/07/2019
 ms.prod: windows-server-threshold
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 2a467c64a3e0ff38b5165b9e001fc2deb2d92148
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a3885ae6b09ad431fd1ea5e4c593e02c7bb274d9
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819277"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812552"
 ---
 # <a name="overview-of-disk-management"></a>Visão geral do Gerenciamento de Disco
 
-> **Aplica-se a:** Windows 10, Windows 8.1, Windows 7, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> **Aplica-se a:** Windows 10, Windows 8.1, Windows 7, Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Gerenciamento de disco é um utilitário do sistema no Windows que permite que você execute tarefas de armazenamento avançado. Aqui estão algumas coisas que o gerenciamento de disco é bom para:
 
@@ -53,7 +53,7 @@ Embora o gerenciamento de disco pode mostrar a partição do sistema EFI e a par
 
 - [Gerenciar discos](manage-disks.md)
 - [Gerenciar volumes básicos](manage-basic-volumes.md)
-- [Solucionando problemas de gerenciamento de disco](troubleshooting-disk-management.md)
+- [Solução de problemas do Gerenciamento de disco](troubleshooting-disk-management.md)
 - [Opções de recuperação no Windows 10](https://support.microsoft.com/help/12415/windows-10-recovery-options)
 - [Localizar arquivos perdidos após a atualização para o Windows 10](https://support.microsoft.com/help/12386/windows-10-find-lost-files-after-update)
 - [Fazer backup e restaurar os arquivos](https://support.microsoft.com/help/17143/windows-10-back-up-your-files)

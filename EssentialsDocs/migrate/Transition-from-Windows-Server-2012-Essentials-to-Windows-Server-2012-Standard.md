@@ -12,12 +12,12 @@ ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d2005b72adede72b718fa5b49b93435f5fbac1bd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 445472822de09263b84821e552c931ca19f14b2b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882497"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432536"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>Transição do Windows Server Essentials para o Windows Server 2012 Standard
 
@@ -53,28 +53,28 @@ ms.locfileid: "59882497"
 ## <a name="transition-to--windows-server-2012-standard"></a>Transição para o Windows Server 2012 Standard  
  Após decidir fazer a transição do Windows Server Essentials para Windows Server 2012 Standard, completa essas duas etapas:  
   
-1.  Compre uma licença para o Windows Server 2012 Standard e o número apropriado de usuário e/ou dispositivo licenças de acesso para cliente para o seu ambiente.  
+1. Compre uma licença para o Windows Server 2012 Standard e o número apropriado de usuário e/ou dispositivo licenças de acesso para cliente para o seu ambiente.  
   
-     Você pode adquirir uma licença para o Windows Server 2012 Standard em uma loja, um distribuidor ou com a Ajuda de um [Microsoft Partner](https://pinpoint.microsoft.com/SelectCulture.aspx).  
+    Você pode adquirir uma licença para o Windows Server 2012 Standard em uma loja, um distribuidor ou com a Ajuda de um [Microsoft Partner](https://pinpoint.microsoft.com/SelectCulture.aspx).  
   
-    > [!NOTE]
-    >  Se você adquiriu o Windows Server 2012 Standard inicialmente e utilizado seus direitos de downgrade para instalar uma das duas instâncias virtuais como Windows Server Essentials, não é necessário aquirir mais nada.  
-    >   
-    >  Se você comprar o Windows Server 2012 Standard por meio do canal de licenciamento por Volume, você pode baixar uma imagem ISO e uma chave de produto para o Windows Server 2012 Standard do Volume Licensing Service Center (VLSC).  
-    >   
-    >  Se você comprar o Windows Server 2012 Standard de todos os outros canais pode baixar uma imagem ISO e uma chave de produto de avaliação do Windows Server Essentials a partir de [Centro de avaliação TechNet](https://technet.microsoft.com/evalcenter/jj659306.aspx). A execução da transição descrita na etapa a seguir converterá o produto de avaliação em um produto com licença e suporte completos.  
+   > [!NOTE]
+   >  Se você adquiriu o Windows Server 2012 Standard inicialmente e utilizado seus direitos de downgrade para instalar uma das duas instâncias virtuais como Windows Server Essentials, não é necessário aquirir mais nada.  
+   >   
+   >  Se você comprar o Windows Server 2012 Standard por meio do canal de licenciamento por Volume, você pode baixar uma imagem ISO e uma chave de produto para o Windows Server 2012 Standard do Volume Licensing Service Center (VLSC).  
+   >   
+   >  Se você comprar o Windows Server 2012 Standard de todos os outros canais pode baixar uma imagem ISO e uma chave de produto de avaliação do Windows Server Essentials a partir de [Centro de avaliação TechNet](https://technet.microsoft.com/evalcenter/jj659306.aspx). A execução da transição descrita na etapa a seguir converterá o produto de avaliação em um produto com licença e suporte completos.  
   
-2.  Abra o Windows PowerShell como administrador e execute o comando a seguir.  
+2. Abra o Windows PowerShell como administrador e execute o comando a seguir.  
   
-     **dism /online /set-edition:ServerStandard /accepteula /productkey:** *Chave do produto*  
+    **dism /online /set-edition:ServerStandard /accepteula /productkey:** *Chave do produto*  
   
-     Em que *chave do produto* é a chave do produto de sua cópia do Windows Server 2012 Standard.  
+    Em que *chave do produto* é a chave do produto de sua cópia do Windows Server 2012 Standard.  
   
-     O servidor é reiniciado para concluir o processo de transição.  
+    O servidor é reiniciado para concluir o processo de transição.  
   
- Após a transição, os recursos do Windows Server Essentials permanecem no servidor e têm suporte para até 75 usuários e 75 dispositivos. Se você exceder qualquer um desses limites, você deve usar as ferramentas nativas do Windows Server 2012 Standard para gerenciar dispositivos e contas de usuário.  
+   Após a transição, os recursos do Windows Server Essentials permanecem no servidor e têm suporte para até 75 usuários e 75 dispositivos. Se você exceder qualquer um desses limites, você deve usar as ferramentas nativas do Windows Server 2012 Standard para gerenciar dispositivos e contas de usuário.  
   
- Além disso, após a transição para o Windows Server 2012 Standard, os recursos de mídia do Windows Server Essentials não estão mais disponíveis. Isso inclui o Acesso via Web Remoto e as configurações de mídia no Painel.  
+   Além disso, após a transição para o Windows Server 2012 Standard, os recursos de mídia do Windows Server Essentials não estão mais disponíveis. Isso inclui o Acesso via Web Remoto e as configurações de mídia no Painel.  
   
 ## <a name="turn-off--windows-server-essentials-features"></a>Desativar recursos do Windows Server Essentials  
  Se você não precisar mais do painel do Windows Server Essentials ou outros recursos para gerenciar o servidor, você pode desativar os recursos e removê-los do seu servidor.  
@@ -97,13 +97,13 @@ ms.locfileid: "59882497"
   
 #### <a name="from-the-get-help-and-support-pane"></a>No painel de ajuda e suporte  
   
-1.  Na Home page, clique em Obter Ajuda e Suporte.  
+1. Na Home page, clique em Obter Ajuda e Suporte.  
   
-2.  Clique em **desativar Assistente de recursos do Windows Server Essentials**.  
+2. Clique em **desativar Assistente de recursos do Windows Server Essentials**.  
   
- É possível que algumas tarefas executadas pelo **desativar Assistente de recursos do Windows Server Essentials** não será concluída com êxito. Em alguns casos, isso pode impedir a execução do Painel. Caso isso ocorra, você poderá iniciar o assistente manualmente executando o arquivo:  
+   É possível que algumas tarefas executadas pelo **desativar Assistente de recursos do Windows Server Essentials** não será concluída com êxito. Em alguns casos, isso pode impedir a execução do Painel. Caso isso ocorra, você poderá iniciar o assistente manualmente executando o arquivo:  
   
- **%systemdrive%\Program Files\Windows Server\Bin\TurnOffFeaturesWizard.exe**  
+   **%systemdrive%\Program Files\Windows Server\Bin\TurnOffFeaturesWizard.exe**  
   
 ## <a name="see-also"></a>Consulte também  
   

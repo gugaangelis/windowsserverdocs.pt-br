@@ -15,12 +15,12 @@ ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 210540846f5d62dfc74a2e629a6b7675ccf9894d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4aaad98cd04c9b07bdea848294e10d9bcb602064
+ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837367"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66749545"
 ---
 # <a name="step-74-deploy-conditional-access-root-certificates-to-on-premises-ad"></a>Etapa 7.4. Implantar certificados de raiz do acesso condicional para o local AD
 
@@ -28,10 +28,10 @@ ms.locfileid: "59837367"
 
 Nesta etapa, você implanta o certificado de raiz do acesso condicional como certificado de raiz confiável para autenticação de VPN em suas instalações AD.
 
-&#171;  [**Anterior:** Etapa 7.3. Configurar a política de acesso condicional](vpn-config-conditional-access-policy.md)<br>
-&#187; [ **Next:** Etapa 7.5. Criar perfis de VPNv2 baseados em OMA-DM para dispositivos Windows 10](vpn-create-oma-dm-based-vpnv2-profiles.md)
+- [**Anterior:** Etapa 7.3. Configurar a política de acesso condicional](vpn-config-conditional-access-policy.md)
+- [**Avançar:** Etapa 7.5. Criar perfis VPNv2 baseados em OMA-DM para dispositivos Windows 10](vpn-create-oma-dm-based-vpnv2-profiles.md)
 
-1. Sobre o **conectividade VPN** , clique em **baixar certificado**. 
+1. Sobre o **conectividade VPN** página, selecione **baixar certificado**. 
    
     ![Baixe o certificado para acesso condicional](../../media/Always-On-Vpn/06.png)
 
@@ -62,10 +62,11 @@ Nesta etapa, você implanta o certificado de raiz do acesso condicional como cer
 
     d.  Clique com botão direito **Enterprise PKI** e selecione **contêineres de gerenciar o AD**.
 
-    d.  Verifique se cada certificado de Ger 1 VPN Microsoft autoridade de certificação raiz está presente em:<ul><li>NTAuthCertificates</li><li>Contêiner AIA</li><li>Contêiner de autoridades de certificado</li></ul>
+    d.  Verifique se cada certificado de Ger 1 VPN Microsoft autoridade de certificação raiz está presente em:
+      - NTAuthCertificates
+      - Contêiner AIA
+      - Contêiner de autoridades de certificado
 
-    
-## <a name="next-step"></a>Próximas etapas
+## <a name="next-steps"></a>Próximas etapas
+
 [Etapa 7.5. Criar perfis de VPNv2 baseados em OMA-DM para dispositivos Windows 10](vpn-create-oma-dm-based-vpnv2-profiles.md): Nesta etapa, você pode criar o OMA-DM com base em perfis de VPNv2 usando o Intune para implantar uma política de configuração do dispositivo VPN. Se você quiser SCCM ou Script do PowerShell para criar perfis de VPNv2, consulte [configurações de CSP de VPNv2](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp) para obter mais detalhes.
-
----

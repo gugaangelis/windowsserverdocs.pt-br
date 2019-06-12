@@ -12,12 +12,12 @@ ms.assetid: 911dc494-0f8f-4723-93d6-2106f914b906
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 77866acccac13ac48da8779700c8654f2c7f3277
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4e5ce037c7a8c802419cd980fc0272c4f687c6a6
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819947"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433456"
 ---
 # <a name="set-the-winsat-score-on-the-server"></a>Definir a Pontuação do WinSAT no Servidor
 
@@ -30,19 +30,19 @@ Você deve definir a pontuação da CPU do WinSAT para um servidor que está exe
   
 #### <a name="to-obtain-the-winsat-cpu-score"></a>Para obter a pontuação da CPU do WinSAT  
   
-1.  Copie o Resources\WinServerSAT\\* na mídia ADK para o computador de referência.  
+1. Copie o Resources\WinServerSAT\\* na mídia ADK para o computador de referência.  
   
-2.  Neste computador, abra uma janela do Prompt de Comando elevada.  
+2. Neste computador, abra uma janela do Prompt de Comando elevada.  
   
-3.  Se a pasta %ProgramFiles%\Windows Server\Bin\OEM não existir, digite o seguinte comando e pressione Enter.  
+3. Se a pasta %ProgramFiles%\Windows Server\Bin\OEM não existir, digite o seguinte comando e pressione Enter.  
   
-     **mkdir "%ProgramFiles%\Windows Server\Bin\OEM"**  
+    **mkdir "%ProgramFiles%\Windows Server\Bin\OEM"**  
   
-4.  Digite o seguinte comando e pressione Enter.  
+4. Digite o seguinte comando e pressione Enter.  
   
-     **WinServerSAT.exe "%ProgramFiles%\Windows Server\Bin\OEM\WinServerSAT.xml"**  
+    **WinServerSAT.exe "%ProgramFiles%\Windows Server\Bin\OEM\WinServerSAT.xml"**  
   
- O exemplo a seguir mostra o conteúdo XML do arquivo WinServerSAT.xml que foi criado.  
+   O exemplo a seguir mostra o conteúdo XML do arquivo WinServerSAT.xml que foi criado.  
   
 ```  
   

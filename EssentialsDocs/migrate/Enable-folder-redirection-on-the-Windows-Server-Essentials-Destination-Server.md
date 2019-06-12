@@ -13,12 +13,12 @@ ms.assetid: f67d195e-36f6-495a-8361-6d5faa889441
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f93d7b28177f96725f2e62c40f9c81cbf186ee6d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 50995f0d03b400d6e44d16389afc69e5f25465ac
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819377"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432975"
 ---
 # <a name="enable-folder-redirection-on-the-windows-server-essentials-destination-server1"></a>Habilitar o redirecionamento de pastas no servidor de destino 1 do Windows Server Essentials
 
@@ -42,14 +42,14 @@ Se o redirecionamento de pasta estiver habilitado no servidor de origem, você p
   
 ### <a name="to-delete-the-old-folder-redirection-group-policy-setting"></a>Para excluir a antiga configuração da Política de Grupo de Redirecionamento de Pasta  
   
-1.  No servidor de destino, abra a ferramenta administrativa **Gerenciamento de Política de Grupo**.  
+1. No servidor de destino, abra a ferramenta administrativa **Gerenciamento de Política de Grupo**.  
   
-2.  Na **gerenciamento de política de grupo**, expanda **floresta: * * * YourNetworkDomainName*, expanda **domínios**, expanda *YourNetworkDomainName* e, em seguida, expanda **objetos de diretiva de grupo**.  
+2. Em **Gerenciamento de Política de Grupo**, expandaaa **Floresta:** <em>YourNetworkDomainName</em>, expandaaa **Domínios**, expandaaa *YourNetworkDomainName*, e expanda **Objetos de Política de Grupo**.  
   
-3.  Clique com botão direito em **Redirecionamento de Pasta W7PVP**e clique em **Excluir**.  
+3. Clique com botão direito em **Redirecionamento de Pasta W7PVP**e clique em **Excluir**.  
   
-4.  Leia o aviso e depois clique em **Sim**.  
+4. Leia o aviso e depois clique em **Sim**.  
   
-5.  Feche o **Gerenciamento de Política de Grupo**.  
+5. Feche o **Gerenciamento de Política de Grupo**.  
   
- Para aplicar a alteração no redirecionamento de pasta, os usuários da rede devem fazer logoff do computador e fazer logon novamente. Isso garante a transferência de todas as pastas redirecionadas para o servidor de destino.
+   Para aplicar a alteração no redirecionamento de pasta, os usuários da rede devem fazer logoff do computador e fazer logon novamente. Isso garante a transferência de todas as pastas redirecionadas para o servidor de destino.

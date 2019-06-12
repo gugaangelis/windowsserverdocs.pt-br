@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e381316372e68d2a43203b8fc90a243af5f40b02
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5fdfaaf1af2b74fe15530095700005a422b64986
+ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869207"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719629"
 ---
 # <a name="setting-up-update-synchronizations"></a>Configurar sincronizações de atualização
 
@@ -60,18 +60,6 @@ O servidor WSUS baixa atualizações com base nas linguagens que você especific
 
 ### <a name="synchronizing-updates-from-the-microsoft-update-catalog"></a>Sincronização de atualizações do catálogo do Microsoft Update
 Para obter detalhes sobre a sincronização de atualizações do site do catálogo do Microsoft Update, consulte: [WSUS e o Site do catálogo](wsus-and-the-catalog-site.md).
-
-### <a name="synchronizing-device-updates-by-inventory-inventory-based-synchronization"></a>Sincronização de atualizações do dispositivo pelo inventário (inventário com base em sincronização)
-Determinadas categorias de produtos e classificações (por exemplo, Drivers) contenham um número muito grande de atualizações e não é recomendável para sincronizar essas categorias todas para seu servidor do WSUS. Isso pode levar a problemas de desempenho e os desafios de manutenção contínua. O sistema de inventário do WSUS coleta informações sem identificação de dispositivos cliente e usa essas informações de inventário para recuperar apenas o suficiente metadados de atualização do Microsoft Update. Esse mecanismo é aproximadamente equivalente a ter o WSUS pesquisar o catálogo do Microsoft Update automaticamente, importar somente as atualizações para dispositivos que são detectados nos dispositivos gerenciados.
-
-Habilitar esse recurso de inventário é a única maneira com suporte para obter certos firmware do dispositivo e conjuntos de manutenção com base no modelo que não são publicados para o catálogo do Microsoft Update.
-
-Atualizações sincronizadas dessa maneira são analisadas e aprovadas assim como qualquer outra atualização, e também sujeito às mesmas regras de aprovação automática, substituição e expiração e qualquer outro comportamento associados às atualizações tradicionais.
-
-WSUS executa a filtragem de lado do servidor quando os clientes solicitam determinadas atualizações de Firmware e Driver, inclusive atualizações que foram importadas pelo inventário. Assim, um dispositivo ou computador cliente recebe metadados e detectoids para drivers e atualizações de driver apenas para dispositivos conectados, na verdade, para que o dispositivo. Esse comportamento minimiza o tempo de verificação do cliente e reduz os dados transferidos entre o cliente e o servidor do WSUS.
-
-> [!NOTE]
-> Quando a sincronização com base em estoque é habilitada, o WSUS mantém o inventário de dispositivo em uma base por dispositivo; apenas uma resumida acumulação (com eliminação de duplicação de lista de IDs) nunca é enviada para o servidor upstream do WSUS. Servidores do WSUS upstream não recebem informações sobre quais dispositivos estão associados a quais computadores nem quantas instâncias de um determinado dispositivo existem dentro de sua hierarquia do WSUS. Em geral, esse resumida acumulação não pode ser usada para identificar ou contagem de dispositivos em uma rede gerenciados pelo WSUS.
 
 ## <a name="configuring-proxy-server-settings"></a>Definir configurações de servidor Proxy
 Você pode configurar seu servidor do WSUS para usar um servidor proxy durante a sincronização com um servidor upstream ou o Microsoft Update. Essa configuração será aplicada apenas quando o servidor do WSUS executar sincronizações. Por padrão o servidor do WSUS tentará se conectar diretamente ao servidor upstream ou Microsoft Update.

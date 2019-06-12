@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: de1af9712b54c977c591953c68eec506c80d3cdd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5666943138070cfa8cfe62f1ba932c2793daa003
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821997"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501600"
 ---
 # <a name="ad-fs-password-attack-protection"></a>Proteção do AD FS ataque de senha
 
@@ -29,23 +29,22 @@ Há 2 tipos de ataques comuns à senha. Ataque de senha de força de senha spray
 ### <a name="password-spray-attack"></a>Ataque de Spray de senha
 Em um ataque de spray de senha, esses atores ruins tentará as senhas mais comuns em muitas contas diferentes e serviços para obter acesso a todos eles podem encontrar os ativos protegido por senha. Geralmente eles abrangem muitos diferentes organizações e provedores de identidade. Por exemplo, um invasor usará um kit de ferramentas geralmente disponível para enumerar todos os usuários em várias organizações e, em seguida, tente "P@$$w0rd" e "Password1" em relação a todas essas contas. Para dar a ideia, um ataque pode parecer com:
 
-|Usuário de destino|Senha de destino|
-|-----|-----|-----|
-|User1@org1.com|Password1|
-|User2@org1.com|Password1|
-|User1@org2.com|Password1|
-|User2@org2.com|Password1|
-|…|…|
-|User1@org1.com|P@$$w0rd|
-|User2@org1.com|P@$$w0rd|
-|User1@org2.com|P@$$w0rd|
-|User2@org2.com|P@$$w0rd|
+
+|  Usuário de destino   | Senha de destino |
+|----------------|-----------------|
+| User1@org1.com |    Password1    |
+| User2@org1.com |    Password1    |
+| User1@org2.com |    Password1    |
+| User2@org2.com |    Password1    |
+|       …        |        …        |
+| User1@org1.com |    P@$$w0rd     |
+| User2@org1.com |    P@$$w0rd     |
+| User1@org2.com |    P@$$w0rd     |
+| User2@org2.com |    P@$$w0rd     |
 
 Esse padrão de ataque escapa a maioria das técnicas de detecção, porque a partir do ponto de posições de vantagem de um usuário individual ou da empresa, o ataque apenas se parece com um logon com falha isolado.
 
 Para os invasores, é um jogo de números: eles sabem que há algumas senhas por aí que são muito comuns.  O invasor obterá alguns êxitos para todas as contas de milhar atacadas e isso é o suficiente para ser eficaz. Eles usam as contas para obter dados de emails, colete informações de contato e enviar links de phishing ou apenas, expanda o grupo de destino de spray de senha. Os invasores não se preocupar muito com quem são os destinos iniciais — apenas que eles têm algum sucesso que podem utilizar.
-
-Eles usam as contas para obter dados de emails, colete informações de contato e enviar links de phishing ou apenas, expanda o grupo de destino de spray de senha. Os invasores não se preocupar muito com quem são os destinos iniciais — apenas que eles têm algum sucesso que podem utilizar.
 
 Mas seguindo algumas etapas para configurar o AD FS e de rede corretamente, os pontos de extremidade do AD FS podem ser protegidos contra esses tipos de ataques. Este artigo aborda 3 áreas que precisam ser configurados corretamente para ajudar a proteger contra esses ataques.
 
@@ -55,7 +54,7 @@ Essa forma de ataque, o invasor tenta várias tentativas de senha em relação a
 Esse tipo de ataque também pode resultar em padrões DOS. Isso pode ocorrer no nível de serviço em que o ADFS é capaz de processar um grande número de solicitações devido ao # insuficiente de servidores ou poderia estar em um nível de usuário em que um usuário estiver bloqueado do sua conta.  
 
 ## <a name="securing-ad-fs-against-password-attacks"></a>Protegendo o AD FS contra ataques de senha 
- 
+
 Mas seguindo algumas etapas para configurar o AD FS e de rede corretamente, os pontos de extremidade do AD FS podem ser protegidos contra esses tipos de ataques. Este artigo aborda 3 áreas que precisam ser configurados corretamente para ajudar a proteger contra esses ataques. 
 
 
@@ -70,11 +69,11 @@ Mas seguindo algumas etapas para configurar o AD FS e de rede corretamente, os p
 
 2. Monitor & Bloco de endereços IP suspeitos 
     - Se você tiver o Azure AD Premium, implementar o Connect Health para AD FS e usar o [relatório IP arriscado](https://docs.microsoft.com/azure/active-directory/connect-health/active-directory-aadconnect-health-adfs#risky-ip-report-public-preview) notificações que ele oferece.
-        
+
         a. Licenciamento não é para todos os usuários e requer o servidor de licenças/ADFS/WAP 25 que pode ser mais fácil para um cliente.
-    
+
         b. Agora você pode investigar o IP que está gerando um grande número de logons com falha
-    
+
         c. Isso exigirá que você habilitar a auditoria nos servidores ADFS.
 
 3.  Bloquear o IP suspeito.  Potencialmente, isso bloqueia ataques DOS.
@@ -97,20 +96,20 @@ Mas seguindo algumas etapas para configurar o AD FS e de rede corretamente, os p
 
     b. Você precisará usar o Outlook 2013 (com os patches CU mais recente) ou o Outlook 2016.
 
-6.  Habilite a MFA para todos os acessos extranet. Assim você adicionou uma proteção para qualquer acesso à extranet.
+6. Habilite a MFA para todos os acessos extranet. Assim você adicionou uma proteção para qualquer acesso à extranet.
 
-    a.  Se você tiver o Azure AD premium, use [políticas de acesso condicional do Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/overview) controlar isso.  Isso é melhor do que implementar as regras no AD FS.  Isso ocorre porque os aplicativos cliente modernos são aplicados com mais frequência.  Isso ocorre, no Azure AD, ao solicitar um novo token de acesso (normalmente a cada hora) usando um token de atualização.  
+   a.  Se você tiver o Azure AD premium, use [políticas de acesso condicional do Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/overview) controlar isso.  Isso é melhor do que implementar as regras no AD FS.  Isso ocorre porque os aplicativos cliente modernos são aplicados com mais frequência.  Isso ocorre, no Azure AD, ao solicitar um novo token de acesso (normalmente a cada hora) usando um token de atualização.  
 
-    b.  Se você não tiver o Azure AD premium ou se tiveram aplicativos adicionais no AD FS que permitem a internet acesso com base em, implementar o MFA (também pode ser Azure MFA no AD FS 2016) e fazer uma [política MFA global](../../ad-fs/operations/configure-authentication-policies.md#to-configure-multi-factor-authentication-globally) para todo o acesso à extranet.
- 
+   b.  Se você não tiver o Azure AD premium ou se tiveram aplicativos adicionais no AD FS que permitem a internet acesso com base em, implementar o MFA (também pode ser Azure MFA no AD FS 2016) e fazer uma [política MFA global](../../ad-fs/operations/configure-authentication-policies.md#to-configure-multi-factor-authentication-globally) para todo o acesso à extranet.
+
 ## <a name="level-3-move-to-password-less-for-extranet-access"></a>Nível 3: Mover para a senha, menos para acesso à extranet
 
 7. Mover a janela de 10 e usar [Hello For Business](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification).
 
 8. Para outros dispositivos, se no AD FS 2016, você pode usar [OTP de MFA do Azure](../../ad-fs/operations/configure-ad-fs-and-azure-mfa.md) como o primeiro e a senha como o 2º fator. 
 
-9.  Para dispositivos móveis, se você permitir que somente dispositivos gerenciados MDM, você pode usar [certificados](../../ad-fs/operations/configure-user-certificate-authentication.md) para o usuário. 
- 
+9. Para dispositivos móveis, se você permitir que somente dispositivos gerenciados MDM, você pode usar [certificados](../../ad-fs/operations/configure-user-certificate-authentication.md) para o usuário. 
+
 ## <a name="urgent-handling"></a>Tratamento de urgente
 
 Se o ambiente do AD FS estiver sob ataque ativo, as etapas a seguir devem ser implementadas o mais rápido possível:

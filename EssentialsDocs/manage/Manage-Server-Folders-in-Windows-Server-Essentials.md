@@ -12,12 +12,12 @@ ms.assetid: 090cf1b8-7b9b-48b9-ae85-b98477b8d7cc
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e1f3640f21b95acafa850b2204cd52f9c0f324e5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0c46d19f4f172786e0ffe7f3b9dd7ac1d8f4fcf0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859327"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433199"
 ---
 # <a name="manage-server-folders-in-windows-server-essentials"></a>Gerenciar Pastas do Servidor no Windows Server Essentials
 
@@ -42,23 +42,23 @@ ms.locfileid: "59859327"
 ##  <a name="BKMK_2"></a> Gerenciar pastas do servidor usando o painel  
  O Windows Server Essentials possibilita realizar tarefas administrativas comuns usando o Painel. A página **Pastas do Servidor** do Painel oferece o seguinte:  
   
--   Uma lista de pastas do servidor, que exibe:  
+- Uma lista de pastas do servidor, que exibe:  
   
-    -   O nome da pasta  
+  -   O nome da pasta  
   
-    -   Uma descrição da pasta  
+  -   Uma descrição da pasta  
   
-    -   O local da pasta  
+  -   O local da pasta  
   
-    -   A quantidade de espaço livre disponível no local da pasta  
+  -   A quantidade de espaço livre disponível no local da pasta  
   
-    -   Breves informações de status sobre as tarefas que estão sendo executadas na pasta; o campo **Status** fica em branco se a pasta estiver íntegra e não houver tarefas em execução  
+  -   Breves informações de status sobre as tarefas que estão sendo executadas na pasta; o campo **Status** fica em branco se a pasta estiver íntegra e não houver tarefas em execução  
   
--   Um painel de detalhes que pode fornecer informações adicionais sobre uma pasta selecionada  
+- Um painel de detalhes que pode fornecer informações adicionais sobre uma pasta selecionada  
   
--   Um painel de tarefas que inclui um conjunto de tarefas administrativas relacionadas à pasta  
+- Um painel de tarefas que inclui um conjunto de tarefas administrativas relacionadas à pasta  
   
- A tabela a seguir descreve as diversas tarefas de pasta do servidor que estão disponíveis no Painel do Windows Server Essentials. A maioria das tarefas são específicas da pasta e são visíveis apenas quando você seleciona uma pasta da lista.  
+  A tabela a seguir descreve as diversas tarefas de pasta do servidor que estão disponíveis no Painel do Windows Server Essentials. A maioria das tarefas são específicas da pasta e são visíveis apenas quando você seleciona uma pasta da lista.  
   
 ### <a name="server-folder-tasks-on-the-dashboard"></a>Tarefas de pasta do servidor no Painel  
   
@@ -77,13 +77,13 @@ ms.locfileid: "59859327"
   
  Usar pastas do servidor para armazenar os arquivos permite que você:  
   
--   Faça backup da pasta de servidor usando o Servidor de backup e restauração para ajudar na proteção contra falha total do servidor.  
+- Faça backup da pasta de servidor usando o Servidor de backup e restauração para ajudar na proteção contra falha total do servidor.  
   
--   Acesse os arquivos que estão armazenados na pasta do servidor a partir de qualquer local usando um navegador da Internet por meio do Acesso via Web remoto ou por meio de aplicativos My Server para Windows Phone e Windows 8.  
+- Acesse os arquivos que estão armazenados na pasta do servidor a partir de qualquer local usando um navegador da Internet por meio do Acesso via Web remoto ou por meio de aplicativos My Server para Windows Phone e Windows 8.  
   
--   Acesse a nova pasta no servidor a partir de qualquer computador cliente.  
+- Acesse a nova pasta no servidor a partir de qualquer computador cliente.  
   
- Você pode gerenciar o acesso às pastas de qualquer servidor no servidor usando as tarefas da guia **Pastas do servidor** no Painel. A tabela a seguir lista as pastas do servidor que são criadas por padrão quando você instala o Windows Server Essentials ou ativa o streaming de mídia no seu servidor.  
+  Você pode gerenciar o acesso às pastas de qualquer servidor no servidor usando as tarefas da guia **Pastas do servidor** no Painel. A tabela a seguir lista as pastas do servidor que são criadas por padrão quando você instala o Windows Server Essentials ou ativa o streaming de mídia no seu servidor.  
   
 |Nome de pasta do servidor|Descrição|  
 |------------------------|-----------------|  
@@ -188,43 +188,43 @@ ms.locfileid: "59859327"
   
  Você pode **Mover uma pasta de servidor** que está localizada no servidor primário que executa o Windows Server Essentials e é exibida na guia **Pastas do servidor** do Painel para outra unidade de disco rígido, quando necessário, usando o Assistente de Adição de Pasta. Você pode mover uma pasta de servidor para outro endereço local de unidade de disco rígido se:  
   
--   A unidade de disco rígido de dados não tiver espaço suficiente para armazenar dados.  
+- A unidade de disco rígido de dados não tiver espaço suficiente para armazenar dados.  
   
--   Você quiser alterar o local de armazenamento padrão. Para um movimento mais rápido, considere a possibilidade de mover a pasta do servidor enquanto ele não inclui nenhum dado.  
+- Você quiser alterar o local de armazenamento padrão. Para um movimento mais rápido, considere a possibilidade de mover a pasta do servidor enquanto ele não inclui nenhum dado.  
   
--   Você deseja remover o disco rígido existente sem perder as pastas do servidor que estão localizadas nele.  
+- Você deseja remover o disco rígido existente sem perder as pastas do servidor que estão localizadas nele.  
   
- Antes de mover a pasta, verifique o seguinte:  
+  Antes de mover a pasta, verifique o seguinte:  
   
--   Certifique-se de que você fez backup do servidor.  
+- Certifique-se de que você fez backup do servidor.  
   
--   Certifique-se de que todos os backups do cliente foram interrompidos e não estão em andamento, se você planeja migrar a pasta de Backup do computador cliente. Ao mover a pasta de Backup do computador cliente, o servidor não poderá fazer backup de nenhum dos computadores cliente até que a movimentação de pasta esteja concluída.  
+- Certifique-se de que todos os backups do cliente foram interrompidos e não estão em andamento, se você planeja migrar a pasta de Backup do computador cliente. Ao mover a pasta de Backup do computador cliente, o servidor não poderá fazer backup de nenhum dos computadores cliente até que a movimentação de pasta esteja concluída.  
   
--   Certifique-se de que o servidor não está executando operações críticas do sistema. É recomendável que você conclua todas as atualizações ou backups que estiverem em andamento antes de uma movimentação de pasta, ou o processo pode levar mais tempo para ser concluído.  
+- Certifique-se de que o servidor não está executando operações críticas do sistema. É recomendável que você conclua todas as atualizações ou backups que estiverem em andamento antes de uma movimentação de pasta, ou o processo pode levar mais tempo para ser concluído.  
   
--   Nenhum dos arquivos na pasta a ser movida estão em uso. Não será possível acessar a pasta do servidor enquanto ele é movido.  
+- Nenhum dos arquivos na pasta a ser movida estão em uso. Não será possível acessar a pasta do servidor enquanto ele é movido.  
   
- Não é possível mover uma pasta do NTFS para ReFS se os arquivos nas pastas do servidor implementam as tecnologias a seguir:  
+  Não é possível mover uma pasta do NTFS para ReFS se os arquivos nas pastas do servidor implementam as tecnologias a seguir:  
   
--   Fluxos de dados alternados  
+- Fluxos de dados alternados  
   
--   Identificadores de objeto  
+- Identificadores de objeto  
   
--   Nomes curtos (nomes 8.3)  
+- Nomes curtos (nomes 8.3)  
   
--   Compactação  
+- Compactação  
   
--   Criptografia EFS  
+- Criptografia EFS  
   
--   NTFS Transacional, TxF (introduzido com o Windows Vista)  
+- NTFS Transacional, TxF (introduzido com o Windows Vista)  
   
--   Arquivos esparsos  
+- Arquivos esparsos  
   
--   Links físicos  
+- Links físicos  
   
--   Atributos estendidos  
+- Atributos estendidos  
   
--   Cotas  
+- Cotas  
   
 ###  <a name="BKMK_6"></a> Onde adicionar ou mover uma pasta do servidor  
  Normalmente, você deve adicionar ou mover as pastas de servidor para unidades de disco rígido com a quantidade máxima de espaço livre. Se possível, evite adicionar ou mover uma pasta compartilhada para a unidade do sistema (por exemplo, c:), pois isso pode ocupar imediatamente o espaço em disco necessário para o sistema operacional e suas atualizações. Além disso, evite adicionar ou mover pastas do servidor para um disco rígido externo, porque eles podem ser facilmente desconectados e, como resultado, você não poderá acessar seus arquivos. Em vez disso, é recomendável que você crie a pasta em uma unidade interna.  
@@ -254,17 +254,17 @@ ms.locfileid: "59859327"
   
 ##### <a name="to-add-a-server-folder"></a>Para adicionar uma pasta de servidor  
   
-1.  Abra o Painel.  
+1. Abra o Painel.  
   
-2.  Clique em **ARMAZENAMENTO** e clique em **Pastas do servidor**.  
+2. Clique em **ARMAZENAMENTO** e clique em **Pastas do servidor**.  
   
-3.  Em **Tarefas de pasta do servidor**, clique em **Adicionar uma pasta**. Isso inicia o Assistente de Adição de Pasta.  
+3. Em **Tarefas de pasta do servidor**, clique em **Adicionar uma pasta**. Isso inicia o Assistente de Adição de Pasta.  
   
-4.  Siga as instruções para concluir o assistente.  
+4. Siga as instruções para concluir o assistente.  
   
-    > [!NOTE]
-    >  -   Se você navegar para uma pasta específica usando o botão Procurar para especificar o local da pasta de servidor, a pasta para a qual você navegou será adicionada como uma pasta no servidor.  
-    > -   Você pode definir quais pastas de servidor podem ser acessadas por meio do Acesso Remoto via Web. Para obter mais informações, consulte [Gerenciar o acesso a pastas do servidor](Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_1).  
+   > [!NOTE]
+   > - Se você navegar para uma pasta específica usando o botão Procurar para especificar o local da pasta de servidor, a pasta para a qual você navegou será adicionada como uma pasta no servidor.  
+   >   -   Você pode definir quais pastas de servidor podem ser acessadas por meio do Acesso Remoto via Web. Para obter mais informações, consulte [Gerenciar o acesso a pastas do servidor](Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_1).  
   
 ##### <a name="to-move-a-server-folder"></a>Para mover uma pasta de servidor  
   
@@ -294,13 +294,13 @@ ms.locfileid: "59859327"
 ##  <a name="BKMK_Shadow"></a> Entender as cópias de sombra  
  Com cópias de sombra do servidor, os usuários podem exibir arquivos e pastas compartilhadas como eram no passado. Acessar versões anteriores de arquivos ou cópias de sombra é útil porque os usuários podem:  
   
-1.  **Recuperar arquivos que foram excluídos acidentalmente**. Se excluir um arquivo acidentalmente, você pode abrir uma versão anterior e copiá-lo para um local seguro.  
+1. **Recuperar arquivos que foram excluídos acidentalmente**. Se excluir um arquivo acidentalmente, você pode abrir uma versão anterior e copiá-lo para um local seguro.  
   
-2.  **Recuperar a substituição acidental de um arquivo**. Se substituir um arquivo acidentalmente, você pode recuperar uma versão anterior do arquivo. (O número de versões depende quantos instantâneos você criou.)  
+2. **Recuperar a substituição acidental de um arquivo**. Se substituir um arquivo acidentalmente, você pode recuperar uma versão anterior do arquivo. (O número de versões depende quantos instantâneos você criou.)  
   
-3.  **Comparar versões de um arquivo durante o trabalho**. Você pode usar versões anteriores quando quiser verificar o que foi alterado entre as versões de um arquivo.  
+3. **Comparar versões de um arquivo durante o trabalho**. Você pode usar versões anteriores quando quiser verificar o que foi alterado entre as versões de um arquivo.  
   
- Para usar cópias de sombra, de um computador cliente, clique em uma pasta compartilhada do servidor e selecione **Restaurar versão anterior**.  
+   Para usar cópias de sombra, de um computador cliente, clique em uma pasta compartilhada do servidor e selecione **Restaurar versão anterior**.  
   
 ## <a name="see-also"></a>Consulte também  
   

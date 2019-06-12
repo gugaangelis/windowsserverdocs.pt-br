@@ -5,15 +5,15 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 09/18/2018
+ms.date: 06/06/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 883fba96fcb71cb1c6e8162c1564d66924c4e24d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b79e832ee45990d18baf4c211ab68b907134ceb7
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885647"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811840"
 ---
 # <a name="create-a-connection-provider-for-a-solution-extension"></a>Criar um provedor de conexão para uma extensão da solução
 
@@ -76,26 +76,24 @@ Um ponto de entrada do tipo "connnectionProvider" indica para o shell do Windows
 | Propriedade | Descrição |
 | -------- | ----------- |
 | entryPointType | Esta é uma propriedade necessária. Há três valores válidos: "tool", "solução" e "connectionProvider". | 
-| nome | Identifica o provedor de Conexão dentro do escopo de uma solução. Esse valor deve ser exclusivo dentro de uma instância completa do Windows Admin Center (não apenas uma solução). |
+| name | Identifica o provedor de Conexão dentro do escopo de uma solução. Esse valor deve ser exclusivo dentro de uma instância completa do Windows Admin Center (não apenas uma solução). |
 | path | Representa o caminho da URL para o "Adicionar Conexão" da interface do usuário, se ele estará configurado pela solução. Esse valor deve mapear para uma rota que é configurada no arquivo de aplicativo routing.module.ts. Quando o ponto de entrada de solução é configurado para usar o rootNavigationBehavior conexões, essa rota carregará o módulo que é usado pelo Shell para exibir a interface do usuário adicionar de Conexão. Mais informações disponíveis na seção sobre rootNavigationBehavior. |
 | displayName | O valor digitado aqui é exibido no lado direito do shell, abaixo da barra preta do Windows Admin Center quando um usuário carrega a página de conexões da solução. |
 | ícone | Representa o ícone usado no menu suspenso de soluções para representar a solução. |
-| descrição | Insira uma breve descrição do ponto de entrada. |
+| description | Insira uma breve descrição do ponto de entrada. |
 | connectionType | Representa o tipo de conexão que o provedor será carregado. O valor digitado aqui também será usado no ponto de entrada de solução para especificar que a solução pode carregar essas conexões. O valor digitado aqui também será usado no ponto (s) de entrada de ferramenta para indicar que a ferramenta é compatível com esse tipo. Esse valor digitado aqui também será usado no objeto de conexão que é enviado para o RPC chamar em "Adicionar janela", na etapa de implementação de camada de aplicativo. |
 | connectionTypeName | Usado na tabela de conexões para representar uma conexão que usa o provedor de Conexão. Isso é esperado para ser o nome no plural do tipo. |
-| connectionTypeUrlName | Usado na criação de URL para representar a solução carregada, depois que o Windows Admin Center se conectou a uma instância. Essa entrada é usada depois de conexões e antes do destino. Neste exemplo, "connectionexample" é onde esse valor aparece na URL: http://localhost:6516/solutionexample/connections/connectionexample/con-fake1.corp.contoso.com |
-| connectionTypeDefaultSolution | Representa o componente padrão que deve ser carregado pelo provedor de Conexão. Esse valor é uma combinação de: [a] o nome do pacote de extensão definido na parte superior do manifesto; [b] ponto de exclamação (!); [c] nome do ponto de entrada a solução.    Para um projeto com "msft.sme.mySample-extensão de nome" e um ponto de entrada de solução com o nome "exemplo", esse valor seria "extensão msft.sme.solutionExample! exemplo". |
-| connectionTypeDefaultTool | Representa o padrão de ferramenta que deve ser carregado em uma conexão bem-sucedida. Esse valor da propriedade é composto de duas partes, semelhantes ao connectionTypeDefaultSolution. Esse valor é uma combinação de: [a] o nome do pacote de extensão definido na parte superior do manifesto; [b] ponto de exclamação (!); [c] o nome de ponto de entrada de ferramenta para a ferramenta que deve ser carregado inicialmente. Para um projeto com "msft.sme.solutionExample-extensão de nome" e um ponto de entrada de solução com o nome "exemplo", esse valor seria "extensão msft.sme.solutionExample! exemplo". |
+| connectionTypeUrlName | Usado na criação de URL para representar a solução carregada, depois que o Windows Admin Center se conectou a uma instância. Essa entrada é usada depois de conexões e antes do destino. Neste exemplo, "connectionexample" é onde esse valor aparece na URL: `http://localhost:6516/solutionexample/connections/connectionexample/con-fake1.corp.contoso.com` |
+| connectionTypeDefaultSolution | Representa o componente padrão que deve ser carregado pelo provedor de Conexão. Esse valor é uma combinação de: <br>[a] o nome do pacote de extensão definido na parte superior do manifesto; <br>[b] ponto de exclamação (!); <br>[c] nome do ponto de entrada a solução.    <br>Para um projeto com "msft.sme.mySample-extensão de nome" e um ponto de entrada de solução com o nome "exemplo", esse valor seria "extensão msft.sme.solutionExample! exemplo". |
+| connectionTypeDefaultTool | Representa o padrão de ferramenta que deve ser carregado em uma conexão bem-sucedida. Esse valor da propriedade é composto de duas partes, semelhantes ao connectionTypeDefaultSolution. Esse valor é uma combinação de: <br>[a] o nome do pacote de extensão definido na parte superior do manifesto; <br>[b] ponto de exclamação (!); <br>[c] o nome de ponto de entrada de ferramenta para a ferramenta que deve ser carregado inicialmente. <br>Para um projeto com "msft.sme.solutionExample-extensão de nome" e um ponto de entrada de solução com o nome "exemplo", esse valor seria "extensão msft.sme.solutionExample! exemplo". |
 | connectionStatusProvider | Consulte a seção "Definir o provedor de Status de Conexão" |
 
 ## <a name="define-connection-status-provider"></a>Definir provedor de Status de Conexão
 
 Provedor de Status de Conexão é o mecanismo pelo qual um destino é validado para estar online e disponível, garantindo que o usuário conectado tem permissão para acessar o destino. Atualmente, há dois tipos de provedores de Status de Conexão:  PowerShell e RelativeGatewayUrl.
 
-*   Provedor de Status de Conexão do PowerShell
-    *   Determina se um destino está online e acessível com um script do PowerShell. O resultado deve ser retornado em um objeto com uma única propriedade "status" definida abaixo.
-*   Provedor de Status de Conexão RelativeGatewayUrl
-    *   Determina se um destino está online e acessível com uma chamada rest. O resultado deve ser retornado em um objeto com uma única propriedade "status" definida abaixo.
+*   <strong>Provedor de Status de Conexão do PowerShell</strong> -determina se um destino está online e acessível com um script do PowerShell. O resultado deve ser retornado em um objeto com uma única propriedade "status" definida abaixo.
+*   <strong>Provedor de Status de Conexão RelativeGatewayUrl</strong> -determina se um destino está online e acessível com uma chamada rest. O resultado deve ser retornado em um objeto com uma única propriedade "status" definida abaixo.
 
 ### <a name="define-status"></a>Definir status
 
@@ -113,25 +111,22 @@ Provedores de Status de Conexão são necessárias para retornar um objeto com u
 
 Propriedades de status:
 
-* Rotular
-    * Um rótulo que descreve o tipo de retorno de status. Observe que os valores para o rótulo podem ser mapeados no tempo de execução. Consulte a entrada abaixo para mapear valores no tempo de execução.
+* <strong>Rótulo</strong> – um rótulo que descreve o tipo de retorno de status. Observe que os valores para o rótulo podem ser mapeados no tempo de execução. Consulte a entrada abaixo para mapear valores no tempo de execução.
 
-* Tipo
-    * O tipo de retorno de status. Tipo tem os seguintes valores de enumeração. Para qualquer valor 2 ou superior, a plataforma não navegará para o objeto conectado, e um erro será exibido na interface do usuário.
+* <strong>Tipo</strong> -o status do tipo de retorno. Tipo tem os seguintes valores de enumeração. Para qualquer valor 2 ou superior, a plataforma não navegará para o objeto conectado, e um erro será exibido na interface do usuário.
 
-Tipos:
+   Tipos:
 
-| Valor | Descrição |
-| ----- | ----------- |
-| 0 | Online |
-| 1 | Aviso |
-| 2 | Não autorizado |
-| 3 | Erro |
-| 4 | Fatal |
-| 5 | Desconhecido |
+  | Valor | Descrição |
+  | ----- | ----------- |
+  | 0 | Online |
+  | 1 | Aviso |
+  | 2 | Não autorizado |
+  | 3 | Erro |
+  | 4 | Fatal |
+  | 5 | Desconhecido |
 
-* Detalhes
-    * Tipo de retorno que descreve o status de detalhes adicionais.
+* <strong>Detalhes</strong> – detalhes adicionais que descrevem o tipo de retorno de status.
 
 ### <a name="powershell-connection-status-provider-script"></a>Script de provedor de Status de Conexão do PowerShell
 
@@ -139,7 +134,7 @@ O script do PowerShell de provedor de Status de Conexão determina se um destino
 
 Exemplo de script do PowerShell:
 
-``` ts
+```PowerShell
 ## Get-My-Status ##
 
 function Get-Status()

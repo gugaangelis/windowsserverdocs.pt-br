@@ -10,17 +10,17 @@ ms.author: pashort
 author: shortpatti
 ms.date: 07/13/2018
 ms.reviewer: deverette
-ms.openlocfilehash: c9104a5d9ae3069e753b8b771270502c4264db96
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c87d0075696bf8ab5794667d42c40829c3eb61bd
+ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885267"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66749523"
 ---
 # <a name="step-7-optional-conditional-access-for-vpn-connectivity-using-azure-ad"></a>Etapa 7. (Opcional) Acesso condicional para conectividade VPN usando o Azure AD
 
-&#171;  [**Anterior:** Etapa 6. Configurar o cliente do Windows 10 sempre em conexões VPN](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)<br>
-&#187; [ **Next:** Etapa 7.1. Configurar o EAP-TLS para ignorar a verificação da lista de revogação de certificados (CRL)](vpn-config-eap-tls-to-ignore-crl-checking.md)
+- [**Anterior:** Etapa 6. Configurar as conexões da VPN Always On do cliente Windows 10](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
+- [**Avançar:** Etapa 7.1. Configurar o EAP-TLS para ignorar a verificação da CRL (lista de certificados revogados)](vpn-config-eap-tls-to-ignore-crl-checking.md)
 
 Esta etapa opcional, você pode ajustar como usuários da VPN acessam seus recursos usando o [acesso condicional do Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal). Com acesso condicional do Azure AD para conectividade de rede virtual privada (VPN), você pode ajudar a proteger as conexões VPN. O Acesso Condicional é um mecanismo de avaliação com base em política que permite que você crie regras de acesso para qualquer aplicativo conectado ao Azure Active Directory (Azure AD). 
 
@@ -37,14 +37,11 @@ Para configurar o acesso condicional do Azure Active Directory para conectividad
 - [DNS e as configurações de Firewall](always-on-vpn/deploy/vpn-deploy-dns-firewall.md)
 - [Cliente do Windows 10 sempre em conexões VPN](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
 
-## <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checkingvpn-config-eap-tls-to-ignore-crl-checkingmd"></a>[Etapa 7.1. Configurar o EAP-TLS para ignorar a verificação da lista de revogação de certificados (CRL)](vpn-config-eap-tls-to-ignore-crl-checking.md)
+## <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checkingvpn-config-eap-tls-to-ignore-crl-checkingmd"></a>[Etapa 7.1. Configurar o EAP-TLS para ignorar a verificação da CRL (lista de certificados revogados)](vpn-config-eap-tls-to-ignore-crl-checking.md)
 
 Nesta etapa, você pode adicionar **IgnoreNoRevocationCheck** e defini-lo para permitir a autenticação de clientes quando o certificado não inclui os pontos de distribuição da CRL. Por padrão, IgnoreNoRevocationCheck é definido como 0 (desabilitado).
 
-Não é possível conectar a um cliente EAP-TLS, a menos que o servidor NPS conclui uma verificação de revogação da cadeia de certificados (incluindo o certificado raiz). Certificados de nuvem emitidos para o usuário pelo AD do Azure não tem uma CRL, porque eles são certificados de curta duração com um tempo de vida de uma hora. EAP no NPS deve ser configurado para ignorar a ausência de uma CRL. Como o método de autenticação EAP-TLS, esse valor de registro é necessário apenas sob **EAP\13**. Se outros métodos de autenticação EAP são usados, em seguida, o valor do registro deve ser adicionado abaixo deles também. 
-
-
-
+Não é possível conectar a um cliente EAP-TLS, a menos que o servidor NPS conclui uma verificação de revogação da cadeia de certificados (incluindo o certificado raiz). Certificados de nuvem emitidos para o usuário pelo AD do Azure não tem uma CRL, porque eles são certificados de curta duração com um tempo de vida de uma hora. EAP no NPS deve ser configurado para ignorar a ausência de uma CRL. Como o método de autenticação EAP-TLS, esse valor de registro é necessário apenas sob **EAP\13**. Se outros métodos de autenticação EAP são usados, em seguida, o valor do registro deve ser adicionado abaixo deles também.
 
 ## <a name="step-72-create-root-certificates-for-vpn-authentication-with-azure-advpn-create-root-cert-for-vpn-auth-azure-admd"></a>[Etapa 7.2. Criar certificados raiz para autenticação de VPN com o Azure AD](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
 
@@ -57,9 +54,10 @@ Para configurar o acesso condicional para conectividade VPN, você precisa:
 
 ## <a name="step-73-configure-the-conditional-access-policyvpn-config-conditional-access-policymd"></a>[Etapa 7.3. Configurar a política de acesso condicional](vpn-config-conditional-access-policy.md)
 
-Nesta etapa, você deve configurar a política de acesso condicional para conectividade VPN. 
+Nesta etapa, você deve configurar a política de acesso condicional para conectividade VPN.
 
 Para configurar a política de acesso condicional, você precisa:
+
 1. Crie uma política de acesso condicional que é atribuída a usuários VPN.
 2. Defina o aplicativo de nuvem **servidor VPN**.
 3. Defina a concessão (controle de acesso) **exigir a autenticação multifator**.  Você pode usar outros controles conforme necessário.
@@ -73,24 +71,20 @@ Para implantar o certificado raiz confiável, você precisa:
 2. Importe o certificado raiz para o servidor VPN e o cliente VPN.
 3. Verifique se os certificados estão presentes e mostrarem como confiáveis.
 
-
-## <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devicesvpn-create-oma-dm-based-vpnv2-profilesmd"></a>[Etapa 7.5. Criar perfis de VPNv2 baseados em OMA-DM para dispositivos Windows 10](vpn-create-oma-dm-based-vpnv2-profiles.md)
+## <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devicesvpn-create-oma-dm-based-vpnv2-profilesmd"></a>[Etapa 7.5. Criar perfis VPNv2 baseados em OMA-DM para dispositivos Windows 10](vpn-create-oma-dm-based-vpnv2-profiles.md)
 
 Nesta etapa, você pode criar o OMA-DM com base em perfis de VPNv2 usando o Intune para implantar uma política de configuração do dispositivo VPN. Se você quiser usar o SCCM ou Script do PowerShell para criar perfis de VPNv2, consulte [configurações de CSP de VPNv2](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp) para obter mais detalhes. 
 
+## <a name="next-steps"></a>Próximas etapas
 
-## <a name="next-step"></a>Próximas etapas
 [Etapa 7.1. Configurar o EAP-TLS para ignorar a verificação da lista de revogação de certificados (CRL)](vpn-config-eap-tls-to-ignore-crl-checking.md): Nesta etapa, você deve adicionar **IgnoreNoRevocationCheck** e defini-lo para permitir a autenticação de clientes quando o certificado não inclui os pontos de distribuição da CRL. Por padrão, IgnoreNoRevocationCheck é definido como 0 (desabilitado).
 
----
-
 ## <a name="related-topics"></a>Tópicos relacionados
-- [Configurar perfis de VPNv2](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access): Agora o cliente VPN é capaz de integrar-se com a Plataforma de Acesso Condicional com base na nuvem para fornecer uma opção de conformidade do dispositivo para clientes remotos. Nesta etapa, você configura os perfis de VPNv2 com  **\<DeviceCompliance > \<habilitado > true\<habilitado >**. 
- 
-- [Aprimorando o acesso remoto no Windows 10 com um perfil VPN automático](https://www.microsoft.com/itshowcase/Article/Content/894/Enhancing-remote-access-in-Windows-10-with-an-automatic-VPN-profile): Saiba como a Microsoft implementa o acesso condicional para conectividade VPN. Perfis de VPN contêm todas as informações de que um dispositivo exige para se conectar à rede corporativa, incluindo os métodos de autenticação que têm suporte e que o dispositivo deve se conectar ao servidor VPN. Alterações na atualização de aniversário do Windows 10, incluindo o acesso condicional e logon único, feita para que possamos criar nosso perfil de conexão de VPN Always-on. Criamos o perfil de conexão para o domínio e dispositivos gerenciados para Intune da Microsoft usando o console do System Center Configuration Manager. 
+
+- [Configurar perfis de VPNv2](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access): Agora o cliente VPN é capaz de integrar-se com a Plataforma de Acesso Condicional com base na nuvem para fornecer uma opção de conformidade do dispositivo para clientes remotos. Nesta etapa, você configura os perfis de VPNv2 com  **\<DeviceCompliance > \<habilitado > true\<habilitado >** . 
+
+- [Aprimorando o acesso remoto no Windows 10 com um perfil VPN automático](https://www.microsoft.com/itshowcase/Article/Content/894/Enhancing-remote-access-in-Windows-10-with-an-automatic-VPN-profile): Saiba como a Microsoft implementa o acesso condicional para conectividade VPN. Perfis de VPN contêm todas as informações de que um dispositivo exige para se conectar à rede corporativa, incluindo os métodos de autenticação que têm suporte e que o dispositivo deve se conectar ao servidor VPN. Alterações na atualização de aniversário do Windows 10, incluindo o acesso condicional e logon único, feita para que possamos criar nosso perfil de conexão de VPN Always-on. Criamos o perfil de conexão para o domínio e dispositivos gerenciados para Intune da Microsoft usando o console do System Center Configuration Manager.
 
 - [Acesso condicional no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal): A segurança é uma grande preocupação para organizações que usam a nuvem. Um aspecto importante da segurança na nuvem é a identidade e acesso quando se trata de gerenciar seus recursos de nuvem. Em um mundo de dispositivos móveis e nuvem em primeiro lugar, os usuários podem acessar recursos da sua organização usando uma variedade de dispositivos e aplicativos de qualquer lugar. Como resultado, concentrando-se apenas em quem pode acessar um recurso não é mais suficiente. Para dominar o equilíbrio entre segurança e produtividade, os profissionais de TI também precisam considerar como um recurso está sendo acessado em uma decisão de controle de acesso.
 
-- [VPN e acesso condicional](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access): Agora o cliente VPN é capaz de integrar-se com a Plataforma de Acesso Condicional com base na nuvem para fornecer uma opção de conformidade do dispositivo para clientes remotos. O Acesso Condicional é um mecanismo de avaliação com base em política que permite que você crie regras de acesso para qualquer aplicativo conectado ao Azure Active Directory (Azure AD). 
-
----
+- [VPN e acesso condicional](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access): Agora o cliente VPN é capaz de integrar-se com a Plataforma de Acesso Condicional com base na nuvem para fornecer uma opção de conformidade do dispositivo para clientes remotos. O Acesso Condicional é um mecanismo de avaliação com base em política que permite que você crie regras de acesso para qualquer aplicativo conectado ao Azure Active Directory (Azure AD).

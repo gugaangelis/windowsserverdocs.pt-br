@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: e45d1abb545ad46e654c811a0347c589bd12adf0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e95671718616fc7c81977434e83a227c858fca17
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863237"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811414"
 ---
 # <a name="performance-tuning-remote-desktop-session-hosts"></a>Hosts de sessão da área de trabalho remota de ajuste de desempenho
 
@@ -21,13 +21,13 @@ Este tópico discute como selecionar o hardware do Host da sessão da área de t
 
 **Neste tópico:**
 
--   [Selecionando o hardware adequado para desempenho](#hw)
+-   [Selecionando o hardware adequado para desempenho](#selecting-the-proper-hardware-for-performance)
 
--   [Ajustando aplicativos para o Host de sessão de área de trabalho remota](#apps)
+-   [Ajustando aplicativos para o Host de sessão de área de trabalho remota](#tuning-applications-for-remote-desktop-session-host)
 
--   [Host da sessão da área de trabalho remota parâmetros de ajuste](#host)
+-   [Host da sessão da área de trabalho remota parâmetros de ajuste](#remote-desktop-session-host-tuning-parameters)
 
-## <a href="" id="hw"></a>Selecionando o hardware adequado para desempenho
+## <a name="selecting-the-proper-hardware-for-performance"></a>Selecionar o hardware adequado para desempenho
 
 
 Para uma implantação de servidor de Host de sessão de área de trabalho remota, a escolha de hardware será regida pelo conjunto de aplicativos e como os usuários usá-los. Os principais fatores que afetam o número de usuários e a experiência deles são CPU, memória, disco e gráficos. Esta seção contém diretrizes adicionais que são específicas para os servidores de Host de sessão de área de trabalho remota e está relacionada principalmente ao ambiente de vários usuário de servidores de Host de sessão de área de trabalho remota.
@@ -72,7 +72,7 @@ Uso de rede para um servidor de Host de sessão de área de trabalho remota incl
 
     O volume e o perfil de tráfego de rede é específico para cada implantação.
 
-## <a href="" id="apps"></a>Ajustando aplicativos para o Host de sessão de área de trabalho remota
+## <a name="tuning-applications-for-remote-desktop-session-host"></a>Ajustando aplicativos para o Host de sessão de área de trabalho remota
 
 
 A maioria do uso da CPU em um servidor Host de sessão de área de trabalho remota é orientada por aplicativos. Aplicativos da área de trabalho normalmente são otimizados em direção a capacidade de resposta com o objetivo de minimizar o tempo que levará a um aplicativo para responder a uma solicitação de usuário. No entanto, em um ambiente de servidor, é igualmente importante minimizar a quantidade total de uso da CPU que é necessária para concluir uma ação para evitar afetar negativamente outras sessões.
@@ -111,7 +111,7 @@ Para o consumo de memória, você deve considerar o seguinte:
 
     Quando possível, aplica técnicas semelhantes a outros mecanismos de execução semelhantes.
 
-## <a href="" id="host"></a>Host da sessão da área de trabalho remota parâmetros de ajuste
+## <a name="remote-desktop-session-host-tuning-parameters"></a>Host da sessão da área de trabalho remota parâmetros de ajuste
 
 
 ### <a name="page-file"></a>Arquivo de paginação

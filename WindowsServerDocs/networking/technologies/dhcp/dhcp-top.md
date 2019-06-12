@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 0ff29ef3-c458-4432-9065-e50a7de5b4b9
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 08b07e902486ae633b30949270e15f8bf94afaaf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7828d75d58ff328e826cb685899a76347ce56953
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857487"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812210"
 ---
 # <a name="dynamic-host-configuration-protocol-dhcp"></a>Protocolo DHCP
 
@@ -21,11 +21,11 @@ ms.locfileid: "59857487"
 
 Você pode usar este tópico para obter uma visão geral do DHCP no Windows Server 2016.
 
->[!NOTE]
->Além deste tópico, a seguinte documentação de DHCP está disponível.
+> [!NOTE]
+> Além deste tópico, a seguinte documentação de DHCP está disponível.
 >
->- [O que há de novo no DHCP](What-s-New-in-DHCP.md)
->- [Implantar o DHCP usando o Windows PowerShell](dhcp-deploy-wps.md)
+> - [O que há de novo no DHCP](What-s-New-in-DHCP.md)
+> - [Implantar o DHCP usando o Windows PowerShell](dhcp-deploy-wps.md)
 
 Protocolo de configuração de Host dinâmico (DHCP) é um protocolo de cliente/servidor que fornece automaticamente um host de IP (Internet Protocol) com seu endereço IP e outras informações de configuração relacionados como o gateway padrão e máscara de sub-rede. As RFCs 2131 e 2132 definem DHCP como uma Engineering Task Force IETF (Internet) padrão com base em Bootstrap Protocol (BOOTP), um protocolo com o qual o DHCP compartilha muitos detalhes de implementação. DHCP permite que os hosts obter informações de configuração necessárias do TCP/IP de um servidor DHCP.
 

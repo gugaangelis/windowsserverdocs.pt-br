@@ -9,12 +9,12 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f3719277c80eae2bf2a4d923146920d17546601d
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 97e1fa441c5fe4fb7d23743387392732663326de
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188735"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501594"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS único as configurações de logon
 
@@ -56,7 +56,7 @@ Habilitar/desabilitar o SSO persistente | ```` Set-AdfsProperties –EnablePersi
 
 
 ## <a name="ad-fs-2016---single-sign-on-and-authenticated-devices"></a>AD FS 2016 - Sign-On único e dispositivos autenticados
-AD FS 2016 altera o PSSO ao solicitante é autenticar a partir de um dispositivo registrado, o aumento máximo 90 dias, mas que exigem um authenticvation dentro de um período de 14 dias (janela de uso do dispositivo).
+AD FS 2016 altera o PSSO ao solicitante é autenticar a partir de um dispositivo registrado, o aumento máximo 90 dias, mas exigindo uma autenticação dentro de um período de 14 dias (janela de uso do dispositivo).
 Depois de fornecer as credenciais pela primeira vez, por padrão os usuários com dispositivos registrados obtém logon único por um período máximo de 90 dias, desde que usam o dispositivo para acessar recursos do AD FS pelo menos uma vez a cada 14 dias.  Se eles aguardam 15 dias depois de fornecer credenciais, os usuários deverão credenciais novamente.  
 
 SSO persistente é habilitado por padrão. Se ele estiver desabilitado, nenhum cookie PSSO será gravado. |  
@@ -103,23 +103,23 @@ Set-AdfsProperties –KmsiLifetimeMins <Int32\>
 ## <a name="psso-revocation"></a>Revogação PSSO  
  Para proteger a segurança, o AD FS rejeitará qualquer cookie do SSO persistente anteriormente emitido quando as seguintes condições forem atendidas. Isso exige que o usuário a fornecer suas credenciais para autenticar novamente com o AD FS. 
   
--   Usuário altera a senha  
+- Usuário altera a senha  
   
--   Configuração de SSO persistente está desabilitada no AD FS  
+- Configuração de SSO persistente está desabilitada no AD FS  
   
--   Dispositivo é desativado pelo administrador no caso de perda ou roubo  
+- Dispositivo é desativado pelo administrador no caso de perda ou roubo  
   
--   O AD FS recebe um cookie SSO persistente que é emitido para um usuário registrado, mas o usuário ou o dispositivo não está mais registrado  
+- O AD FS recebe um cookie SSO persistente que é emitido para um usuário registrado, mas o usuário ou o dispositivo não está mais registrado  
   
--   O AD FS recebe um cookie SSO persistente para um usuário registrado, mas o usuário registrado novamente  
+- O AD FS recebe um cookie SSO persistente para um usuário registrado, mas o usuário registrado novamente  
   
--   O AD FS recebe um cookie SSO persistente que é emitido como resultado de "Mantenha-me conectado", mas "Mantenha-me conectado" configuração está desabilitada no AD FS  
+- O AD FS recebe um cookie SSO persistente que é emitido como resultado de "Mantenha-me conectado", mas "Mantenha-me conectado" configuração está desabilitada no AD FS  
   
--   AD FS recebe um cookie SSO persistente que é emitido para um usuário registrado, mas o certificado do dispositivo está ausente ou alterada durante a autenticação  
+- AD FS recebe um cookie SSO persistente que é emitido para um usuário registrado, mas o certificado do dispositivo está ausente ou alterada durante a autenticação  
   
--   O administrador do AD FS tiver definido uma hora de corte para SSO persistente. Quando isso estiver configurado, o AD FS rejeitará qualquer cookie do SSO persistente emitido antes dessa hora  
+- O administrador do AD FS tiver definido uma hora de corte para SSO persistente. Quando isso estiver configurado, o AD FS rejeitará qualquer cookie do SSO persistente emitido antes dessa hora  
   
- Para definir a hora de corte, execute o seguinte cmdlet do PowerShell:  
+  Para definir a hora de corte, execute o seguinte cmdlet do PowerShell:  
   
 
 ``` powershell
@@ -163,7 +163,7 @@ Resumo:
     <th>SIM</th>
   </tr>
  <tr align="center">
-    <td>SSO = > definir Token de atualização = ></td>
+    <td>SSO =&gt;definir Token de atualização =&gt;</td>
     <td>8 horas</td>
     <td>N/D</td>
     <td>N/D</td>
@@ -174,7 +174,7 @@ Resumo:
   </tr>
 
  <tr align="center">
-    <td>PSSO = > definir Token de atualização = ></td>
+    <td>PSSO =&gt;definir Token de atualização =&gt;</td>
     <td>N/D</td>
     <td>24 horas</td>
     <td>7 dias</td>

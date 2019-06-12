@@ -7,14 +7,14 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.date: 03/25/2019
+ms.date: 06/04/2019
 description: Tópicos novos e atualizados na documentação do armazenamento local para o Windows Server para profissionais de TI.
-ms.openlocfilehash: fa3da6e14c36fecfa48c3688a36518babb257920
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 3245e6bc5320cc0ffae01817a8f7b9caeaa6c685
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192682"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501493"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Histórico de alterações dos tópicos de armazenamento no Windows Server
 
@@ -22,7 +22,13 @@ ms.locfileid: "66192682"
 
 Este tópico lista os tópicos novos e atualizados a [armazenamento](storage.md) documentação do Windows Server.
 
-> Se você estiver procurando o histórico de atualização para o Windows Server, consulte [histórico de atualizações do Windows 10 e Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history).
+> Se você estiver procurando o histórico de atualização para o Windows Server, consulte [histórico de atualizações do Windows 10 e Windows Server 2019](https://support.microsoft.com/help/4464619) ou [histórico de atualização do Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history).
+
+## <a name="june-2019"></a>Junho de 2019
+
+| Tópico novo ou alterado                                        | Descrição|
+| ---                                                         | ---           |
+| [Perguntas frequentes sobre o serviço de migração de armazenamento](storage-migration-service/faq.md#consolidate-servers) | Adicionou informações de otimização do desempenho. |
 
 ## <a name="may-2019"></a>Maio de 2019
 
@@ -105,7 +111,7 @@ Este tópico lista os tópicos novos e atualizados a [armazenamento](storage.md)
 |[Implantar espaços de armazenamento em um servidor autônomo](storage-spaces/deploy-standalone-storage-spaces.md)|Migrado do [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
 |[Visão geral do NTFS](file-server/ntfs-overview.md)|Migrado do [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
 |[Usar o Robocopy para pré-propagar arquivos para a replicação DFS](dfs-replication/preseed-dfsr-with-robocopy.md)|Migrado do [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
-|[Vssadmin - ferramenta de linha de comando de versões anteriores](..\administration\windows-commands\vssadmin.md)|Migrado do [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
+|[Vssadmin - ferramenta de linha de comando de versões anteriores](../administration/windows-commands/vssadmin.md)|Migrado do [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
 |[Visão geral do Gerenciador de recursos de servidor de arquivos](fsrm/fsrm-overview.md)| Adicionadas informações sobre uma nova configuração de registro no Windows Server 2016, versão 1803.|
 |[Replicação de armazenamento de servidor para servidor](storage-replica/server-to-server-storage-replication.md)|Adicionadas informações sobre como usar o Windows Admin Center.|
 |[Problemas conhecidos de réplica de armazenamento](storage-replica/storage-replica-known-issues.md)|Novas informações adicionadas.|
@@ -195,13 +201,13 @@ Este tópico lista os tópicos novos e atualizados a [armazenamento](storage.md)
 
 ## <a name="may-2017"></a>Maio de 2017
 
-|Tópico novo ou alterado|Descrição|
-|---|---|
-|[Visão geral de eliminação de duplicação de dados](data-deduplication/overview.md) e <br>[Instalar a eliminação de duplicação de dados](data-deduplication/install-enable.md)|Atualizados os requisitos do sistema para incluir uma atualização de software mais recente. |
-|[Implantar pastas de trabalho](work-folders/deploy-work-folders.md)|Adicionadas informações sobre o Proxy de aplicativo do Azure AD suporte e atualizados etapas necessárias.|
-|[Implantar espaços de armazenamento diretos](storage-spaces/deploy-storage-spaces-direct.md)|Etapa adicional 1.3 com recursos requeridos e correção de um parâmetro obsoleto no Enable-NetAdapterQos.||[Visão geral da réplica do armazenamento](storage-replica/storage-replica-overview.md) (e outros tópicos da réplica do armazenamento)|Adicionada uma recomendação rápida de usar, armazenamento exclusivo para armazenamento réplica logs.|
-|[Perguntas frequentes sobre a réplica de armazenamento](storage-replica/storage-replica-frequently-asked-questions.md)|Adicionadas informações sobre como escolher entre topologias de replicação diferentes.|
-|[Requisitos de hardware de espaços diretos de armazenamento](storage-spaces/storage-spaces-direct-hardware-requirements.md)|Requisitos de duração de um disco alterados para dispositivos de cache.|
+|                                                           Tópico novo ou alterado                                                           |                                          Descrição                                           |
+|------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
+| [Visão geral de eliminação de duplicação de dados](data-deduplication/overview.md) e <br>[Instalar a eliminação de duplicação de dados](data-deduplication/install-enable.md) |              Atualizados os requisitos do sistema para incluir uma atualização de software mais recente.               |
+|                                      [Implantar pastas de trabalho](work-folders/deploy-work-folders.md)                                       |         Adicionadas informações sobre o Proxy de aplicativo do Azure AD suporte e atualizados etapas necessárias.          |
+|                            [Implantar espaços de armazenamento diretos](storage-spaces/deploy-storage-spaces-direct.md)                             | Etapa adicional 1.3 com recursos requeridos e correção de um parâmetro obsoleto no Enable-NetAdapterQos. |
+|               [Perguntas frequentes sobre a réplica de armazenamento](storage-replica/storage-replica-frequently-asked-questions.md)                |             Adicionadas informações sobre como escolher entre topologias de replicação diferentes.              |
+|               [Requisitos de hardware de espaços diretos de armazenamento](storage-spaces/storage-spaces-direct-hardware-requirements.md)               |                    Requisitos de duração de um disco alterados para dispositivos de cache.                     |
 
 ## <a name="april-2017"></a>Abril de 2017
 

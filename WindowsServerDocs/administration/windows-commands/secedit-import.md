@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f24cf173d1bacd70d92b325bfe7b342d0589a490
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 305b915a0d7e8ab152b072ff131854f56b9b0386
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874277"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441529"
 ---
 # <a name="seceditimport"></a>Secedit:Import
 
@@ -30,7 +30,6 @@ Importa as configurações de segurança armazenadas em um arquivo inf previamen
 
 ```
 Secedit /import /db <database file name> /cfg <configuration file name> [/overwrite] [/areas [securitypolicy | group_mgmt | user_rights | regkeys | filestore | services]] [/log <log file name>] [/quiet]
-
 ```
 
 ### <a name="parameters"></a>Parâmetros
@@ -49,7 +48,7 @@ Secedit /import /db <database file name> /cfg <configuration file name> [/overwr
 
 Antes de importar um arquivo. inf em outro computador, execute o /generaterollback secedit de comando no banco de dados qual será realizada a importação e secedit / validar no arquivo de importação para verificar sua integridade.
 
-Se o caminho para o arquivo de log não for fornecido, o arquivo de log padrão (*systemroot*\Documents and Settings\*UserAccount*\My Documents\Security\Logs\*DatabaseName*. log) é usado.
+Se o caminho para o arquivo de log não for fornecido, o arquivo de log padrão (*systemroot*\Documents and Settings\*UserAccount<em>\My Documents\Security\Logs\*DatabaseName</em>. log) é usado.
 
 No Windows Server 2008, `Secedit /refreshpolicy` foi substituído por `gpupdate`. Para obter informações sobre como atualizar as configurações de segurança, consulte [Gpupdate](gpupdate.md).
 
@@ -66,8 +65,8 @@ Secedit /import /db C:\Security\FY12\SecDbContoso.sdb /cfg NetworkShare\Policies
 
 #### <a name="additional-references"></a>Referências adicionais
 
--   [Secedit:Export](secedit-export.md)
+-   [Secedit:export](secedit-export.md)
 -   [Secedit:generaterollback](secedit-generaterollback.md)
--   [Secedit: validar](secedit-validate.md)
+-   [Secedit:validate](secedit-validate.md)
 -   [Secedit](secedit.md)
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

@@ -11,12 +11,12 @@ ms.assetid: 92bb573b-03b7-470e-b72e-e35edf52b349
 author: KBDAzure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 239cce3c9f1acb2d45935e0f60fb1875b004485b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3591e17c9485fc8f9e365f6322c4f48e783db8ce
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880947"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442232"
 ---
 # <a name="choose-between-standard-or-production-checkpoints-in-hyper-v"></a>Escolha entre pontos de verificação padrão ou de produção no Hyper-V
 
@@ -29,7 +29,7 @@ Começando com o Windows Server 2016 e Windows 10, você pode escolher entre pon
   
 - Pontos de verificação padrão capturam a configuração de estado, dados e hardware de uma máquina virtual em execução e se destinam para uso em cenários de desenvolvimento e teste. Pontos de verificação padrão podem ser útil se você precisar recriar um estado específico ou uma condição de uma máquina virtual em execução para que você pode solucionar um problema.  
  
- ## <a name="change-checkpoints-to-production-or-standard-checkpoints"></a>Alterar os pontos de verificação de produção ou pontos de verificação padrão  
+  ## <a name="change-checkpoints-to-production-or-standard-checkpoints"></a>Alterar os pontos de verificação de produção ou pontos de verificação padrão  
   
 1.  Na **Gerenciador do Hyper-V**, clique com botão direito na máquina virtual e clique em **configurações**.  
   
@@ -50,7 +50,7 @@ Começando com o Windows Server 2016 e Windows 10, você pode escolher entre pon
   
 -   [Pontos de verificação de produção](../What-s-new-in-Hyper-V-on-Windows.md#BKMK_check)  
   
--   [Habilitar ou desabilitar os pontos de verificação](Enable-or-disable-checkpoints-in-Hyper-V.md)  
+-   [Habilitar ou desabilitar pontos de verificação](Enable-or-disable-checkpoints-in-Hyper-V.md)  
   
 
 

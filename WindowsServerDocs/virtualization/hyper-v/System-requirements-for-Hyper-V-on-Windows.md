@@ -11,12 +11,12 @@ ms.assetid: bc4a4971-f727-40cd-91f5-2ee6d24b54cb
 author: KBDAzure
 ms.author: kathydav
 ms.date: 9/30/2016
-ms.openlocfilehash: 55114821b5ac2f1cc028c662217f4bee6980c923
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 97fb1b9003705ba8ad26c2b3e71eda34e88642ee
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845197"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812620"
 ---
 # <a name="system-requirements-for-hyper-v-on-windows-server"></a>Requisitos de sistema do Hyper-V no Windows Server
 
@@ -44,7 +44,7 @@ Independentemente dos recursos do Hyper-V que você deseja usar, você precisar�
 
   - A DEP (Prevenção de Execução de Dados) imposta por hardware deve estar disponível e habilitada. Para sistemas Intel, essa é a parte de XD (bit execute disable). Para sistemas AMD, esse é o bit NX (nenhum bit no execute).
 
-## <a name="bkmk_CheckReq"></a>Como verificar se há requisitos do Hyper-V
+## <a name="how-to-check-for-hyper-v-requirements"></a>Como verificar se há requisitos do Hyper-V
 
 Abra o Windows PowerShell ou um prompt de comando e digite:
 

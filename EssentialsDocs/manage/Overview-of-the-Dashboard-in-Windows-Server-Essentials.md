@@ -12,12 +12,12 @@ ms.assetid: f70a79de-9c56-4496-89b5-20a1bff2293e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c2cc603f5e0303ada245956a524151393c538b27
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2322fa3f4617e8a8450aaf7fd5ead702574bf759
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881567"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433136"
 ---
 # <a name="overview-of-the-dashboard-in-windows-server-essentials"></a>Visão geral do Painel no Windows Server Essentials
 
@@ -25,39 +25,39 @@ ms.locfileid: "59881567"
  
  Windows Server Essentials e o Windows Server 2012 R2 Standard com a função Experiência do Windows Server Essentials habilitada incluem um Painel administrativo, que simplifica as tarefas que você pode executar para gerenciar sua rede do Windows Server Essentials e o servidor. Usando o Painel do Windows Server Essentials, você pode:  
   
--   Concluir a configuração do servidor  
+- Concluir a configuração do servidor  
   
--   Acessar e executar tarefas administrativas comuns  
+- Acessar e executar tarefas administrativas comuns  
   
--   Exibir alertas do servidor e agir sobre eles  
+- Exibir alertas do servidor e agir sobre eles  
   
--   Definir e alterar as configurações do servidor  
+- Definir e alterar as configurações do servidor  
   
--   Acesso ou procurar tópicos da Ajuda na web  
+- Acesso ou procurar tópicos da Ajuda na web  
   
--   Acessar recursos da comunidade na web  
+- Acessar recursos da comunidade na web  
   
--   Gerenciar contas de usuário  
+- Gerenciar contas de usuário  
   
--   Gerenciar backups e dispositivos  
+- Gerenciar backups e dispositivos  
   
--   Gerenciar configurações de pastas do servidor e unidades de disco rígidos e acesso  
+- Gerenciar configurações de pastas do servidor e unidades de disco rígidos e acesso  
   
--   Exibir e gerenciar os aplicativos complementares  
+- Exibir e gerenciar os aplicativos complementares  
   
--   Integrar se com os serviços online da Microsoft  
+- Integrar se com os serviços online da Microsoft  
   
- Este tópico inclui:  
+  Este tópico inclui:  
   
--   [Recursos básicos do painel](#BKMK_Design)  
+- [Recursos básicos do painel](#BKMK_Design)  
   
--   [Recursos da página inicial do Dashboard](#BKMK_Home)  
+- [Recursos da página inicial do Dashboard](#BKMK_Home)  
   
--   [Seções administrativas do painel](#BKMK_Features)  
+- [Seções administrativas do painel](#BKMK_Features)  
   
--   [Acessar o painel do Windows Server Essentials](#BKMK_AccessDb)  
+- [Acessar o painel do Windows Server Essentials](#BKMK_AccessDb)  
   
--   [Use o modo de segurança](#BKMK_UseSafeMode)  
+- [Use o modo de segurança](#BKMK_UseSafeMode)  
   
 ##  <a name="BKMK_Design"></a> Recursos básicos do painel  
  O Painel do Windows Server Essentials ajuda você a acessar rapidamente os principais recursos de gerenciamento e informações do seu servidor. O painel inclui várias seções. A tabela a seguir descreve as seções.  
@@ -90,7 +90,7 @@ ms.locfileid: "59881567"
   
  A tabela a seguir descreve as seções administrativas do Painel que estão disponíveis por padrão, após a instalação. A tabela também lista as tarefas que estão disponíveis em cada seção.  
   
-|Seção|Descrição|  
+|`Section`|Descrição|  
 |-------------|-----------------|  
 |Início|A página **Inicial** aparece por padrão sempre que você abrir o Painel. Ela inclui tarefas e informações nas seguintes categorias:<br /><br /> **INSTALAÇÃO** œ concluir as tarefas nesta categoria para configurar o servidor pela primeira vez. Para obter informações sobre essas tarefas, consulte [instalar e configurar o Windows Server Essentials](../install/Install-and-Configure-Windows-Server-Essentials.md).<br /><br /> **EMAIL** œ escolha uma opção nesta categoria para integrar um serviço de email com o servidor.<br /><br /> **Observação:** Esta categoria só está disponível no Windows Server Essentials.<br /><br /> **SERVIÇOS** œ escolha uma tarefa nessa categoria para integrar serviços online da Microsoft com o servidor.<br /><br /> **Observação:** Esta categoria só está disponível no Windows Server Essentials e no Windows Server 2012 R2 Standard com a função experiência Windows Server Essentials habilitada.<br /><br /> **ADD-INS** œ clique nessa categoria para instalar complementos importantes para a sua empresa.<br /><br /> **STATUS rápido** œ exibe o status de alto nível do servidor. Clique em um status para exibir as opções de configuração e as informações para o recurso. Se você executar todas as tarefas na categoria instalação, esta categoria é exibida na parte superior do painel de categoria.<br /><br /> **Ajudar a** œ Use a caixa de pesquisa para procurar por ajuda na Web. Clique no link para visitar o site para a opção de suporte selecionado.|  
 |Usuários|Para que os usuários acessem os recursos do Windows Server Essentials, você precisará criar contas de usuário usando o Painel do Windows Server Essentials. Depois de criar contas de usuário, você pode gerenciar as contas usando as tarefas que estão disponíveis na página **Usuários** do Painel. Tarefas que você pode executar nessa página incluem:<br /><br /> -Exiba uma lista de contas de usuário.<br /><br /> -Exibir e gerenciar as propriedades de conta de usuário.<br /><br /> -Ativar ou desativar contas de usuário.<br /><br /> -Adicionar ou remover contas de usuário.<br /><br /> -Atribua contas de rede local para contas de serviços online da Microsoft se o servidor estiver integrado com o Office 365.<br /><br /> -Alterar senhas de conta de usuário e gerenciar a política de senha.<br /><br /> Para obter informações sobre como gerenciar contas de usuário, consulte [gerenciar contas de usuário](Manage-User-Accounts-in-Windows-Server-Essentials.md).|  

@@ -12,12 +12,12 @@ ms.assetid: ecf19216-7aac-4aca-839a-342ac28f5329
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 293b392203269a65efffcefb3744bedc659f71c9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4756d3735fd710930e0eb124b7b5c58c50078d9e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862017"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432426"
 ---
 # <a name="troubleshoot-windows-server-essentials-installation"></a>Solucionar problemas de instalação do Windows Server Essentials
 
@@ -79,26 +79,26 @@ Este tópico fornece uma solução de problemas para problemas que ocorrem duran
   
 ##### <a name="to-manually-install-a-storage-controller-driver"></a>Para instalar manualmente um driver de controlador de armazenamento  
   
-1.  Localize os drivers para seu controlador de armazenamento. Eles são fornecidos pelo fabricante do hardware e podem estar disponíveis também no site desse fabricante.  
+1. Localize os drivers para seu controlador de armazenamento. Eles são fornecidos pelo fabricante do hardware e podem estar disponíveis também no site desse fabricante.  
   
-2.  Crie uma pasta chamada DRIVERS em um disquete ou uma unidade flash USB e, em seguida, copie os drivers para a pasta.  
+2. Crie uma pasta chamada DRIVERS em um disquete ou uma unidade flash USB e, em seguida, copie os drivers para a pasta.  
   
-3.  Anexe a unidade de disquete ou unidade flash USB contendo os drivers ao computador.  
+3. Anexe a unidade de disquete ou unidade flash USB contendo os drivers ao computador.  
   
-4.  Inicialize o computador a partir do DVD do Windows Server Essentials.  
+4. Inicialize o computador a partir do DVD do Windows Server Essentials.  
   
-     Se os drivers de controlador de armazenamento estiverem ausentes, a caixa de diálogo de erro de instalação do Windows Server Essentials será exibida.  
+    Se os drivers de controlador de armazenamento estiverem ausentes, a caixa de diálogo de erro de instalação do Windows Server Essentials será exibida.  
   
-5.  Na caixa de diálogo de erro de instalação do Windows Server Essentials, clique em **Sim** para carregar os drivers de armazenamento adicional.  
+5. Na caixa de diálogo de erro de instalação do Windows Server Essentials, clique em **Sim** para carregar os drivers de armazenamento adicional.  
   
-6.  No prompt **Selecione o arquivo inf de seu driver** , navegue até o arquivo .inf na pasta DRIVERS em sua unidade de disquete ou unidade flash USB, selecione o arquivo, clique com o botão direito do mouse no nome do arquivo e, por fim, clique em **Abrir**. Isso carrega o driver.  
+6. No prompt **Selecione o arquivo inf de seu driver** , navegue até o arquivo .inf na pasta DRIVERS em sua unidade de disquete ou unidade flash USB, selecione o arquivo, clique com o botão direito do mouse no nome do arquivo e, por fim, clique em **Abrir**. Isso carrega o driver.  
   
-    > [!NOTE]
-    >  Antes de tentar carregar o arquivo, verifique se a extensão de nome de arquivo (.inf) está em letras minúsculas. Essa operação diferencia maiúsculas de minúsculas, portanto, um arquivo não será carregado se a extensão de nome de arquivo estiver em letras maiúsculas.  
+   > [!NOTE]
+   >  Antes de tentar carregar o arquivo, verifique se a extensão de nome de arquivo (.inf) está em letras minúsculas. Essa operação diferencia maiúsculas de minúsculas, portanto, um arquivo não será carregado se a extensão de nome de arquivo estiver em letras maiúsculas.  
   
-7.  No prompt, clique em **Sim** para tornar o driver de armazenamento disponível durante a fase de modo texto da instalação.  
+7. No prompt, clique em **Sim** para tornar o driver de armazenamento disponível durante a fase de modo texto da instalação.  
   
- A instalação agora deve prosseguir normalmente.  
+   A instalação agora deve prosseguir normalmente.  
   
 ###  <a name="BKMK_AddingNICdrivers"></a> Adicionando drivers para adaptadores de rede  
  Se um adaptador de rede no computador não é suportado pelo Windows Server Essentials, o servidor não terá conectividade de rede após a conclusão da instalação, e você não poderá conectar computadores ao seu servidor.  

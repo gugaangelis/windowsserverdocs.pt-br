@@ -12,12 +12,12 @@ ms.assetid: c7da0f6c-9732-4784-9c28-7dad72c4071d
 4author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ac547f97b48e4cd0ebf87e0935cadc2c539b4d0b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e2bbc7bf7af71c671153bf7ba3356ddc08dcc38b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854997"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433637"
 ---
 # <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>Criar um DVD de recuperação de servidor para suporte a vários idiomas
 
@@ -30,20 +30,20 @@ ms.locfileid: "59854997"
   
  Há duas fases de instalação: o Ambiente de Pré-Instalação do Windows (Windows PE) e a configuração inicial. Por padrão, a página de seleção de idioma na configuração inicial não será exibida.  
   
--   Para uma instalação administrada remotamente de OEM ou um cenário de pré-instalação de OEM, é preciso adicionar uma chave de registro usando o seguinte comando para exibir a página de seleção de idioma na configuração inicial.  
+- Para uma instalação administrada remotamente de OEM ou um cenário de pré-instalação de OEM, é preciso adicionar uma chave de registro usando o seguinte comando para exibir a página de seleção de idioma na configuração inicial.  
   
-    ```  
-    %systemroot%\system32\reg.exe add "HKLM\Software\microsoft\windows server\setup" /v ShowPreinstallPages /t REG_SZ /d true /f  
-    ```  
+  ```  
+  %systemroot%\system32\reg.exe add "HKLM\Software\microsoft\windows server\setup" /v ShowPreinstallPages /t REG_SZ /d true /f  
+  ```  
   
-    > [!IMPORTANT]
-    >  Quando os OEMs criam uma imagem no laboratório, eles devem escolher o **inglês** como idioma durante a fase de configuração do Windows PE.  
+  > [!IMPORTANT]
+  >  Quando os OEMs criam uma imagem no laboratório, eles devem escolher o **inglês** como idioma durante a fase de configuração do Windows PE.  
   
--   Para um cenário de Kit de Opção de Revendedor (Reseller Option Kit - ROK), os clientes recebem um DVD, e, talvez, algum hardware. O cliente deve poder selecionar o idioma durante a instalação do Windows PE, e a página de seleção de idioma não é mais exibida durante a configuração inicial.  
+- Para um cenário de Kit de Opção de Revendedor (Reseller Option Kit - ROK), os clientes recebem um DVD, e, talvez, algum hardware. O cliente deve poder selecionar o idioma durante a instalação do Windows PE, e a página de seleção de idioma não é mais exibida durante a configuração inicial.  
   
- Você pode escolher enviar um único DVD de duas camadas contendo vários idiomas.  
+  Você pode escolher enviar um único DVD de duas camadas contendo vários idiomas.  
   
- Esta seção descreve como adicionar suporte a idiomas à Instalação do Windows. A principal ferramenta para personalizar o Windows PE 3.0 é DISM (Gerenciamento e Manutenção de Imagens de Implantação), uma ferramenta de linha de comando. Essa solução possibilita os seguintes cenários:  
+  Esta seção descreve como adicionar suporte a idiomas à Instalação do Windows. A principal ferramenta para personalizar o Windows PE 3.0 é DISM (Gerenciamento e Manutenção de Imagens de Implantação), uma ferramenta de linha de comando. Essa solução possibilita os seguintes cenários:  
   
 1.  Criar instalações multilíngues  
   
@@ -112,10 +112,10 @@ ms.locfileid: "59854997"
  [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do usuário](Testing-the-Customer-Experience.md)
+ [Testar a experiência do usuário](Testing-the-Customer-Experience.md)
 
  [Criando e personalizando a imagem](../install/Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](../install/Additional-Customizations.md)   
  [Preparando a imagem para implantação](../install/Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do usuário](../install/Testing-the-Customer-Experience.md)
+ [Testar a experiência do usuário](../install/Testing-the-Customer-Experience.md)
 

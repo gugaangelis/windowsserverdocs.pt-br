@@ -12,12 +12,12 @@ ms.assetid: 2e6ff6e4-8d68-4d49-9e38-8088bc8bf95e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d4c547c2fec8e2b11e5c1d9bde46e55e91c9d6fa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c2345726a17a074fc7022c8c4dc9b2443e9ad384
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884617"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433646"
 ---
 # <a name="automate-installation-of-add-ins-during-setup"></a>Automatizar a instalação de suplementos durante a configuração
 
@@ -69,13 +69,13 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
   
  Uma etapa de desinstalação personalizada pode ser usada para qualquer um dos seguintes:  
   
--   Substituir o diálogo de confirmação interno.  
+- Substituir o diálogo de confirmação interno.  
   
--   Preencher os diálogos personalizados antes da desinstalação.  
+- Preencher os diálogos personalizados antes da desinstalação.  
   
--   Realizar certas tarefas antes da desinstalação.  
+- Realizar certas tarefas antes da desinstalação.  
   
- Para implantar uma etapa de desinstalação, adicione os seguintes conteúdos em addin.xml (diretamente sob Pacote):  
+  Para implantar uma etapa de desinstalação, adicione os seguintes conteúdos em addin.xml (diretamente sob Pacote):  
   
 ```  
 <Package xmlns="https://schemas.microsoft.com/WindowsServerSolutions/2010/03/Addins" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">  
@@ -103,22 +103,22 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
   
  Nesta fase, o exefile pode executar as seguintes tarefas:  
   
--   Abrir em pop-up alguns diálogos para interação com o usuário.  
+- Abrir em pop-up alguns diálogos para interação com o usuário.  
   
--   Realizar algumas tarefas em segundo plano.  
+- Realizar algumas tarefas em segundo plano.  
   
- O código de saída deste arquivo exe determina como o processo de desinstalação avança:  
+  O código de saída deste arquivo exe determina como o processo de desinstalação avança:  
   
--   0: o processo de desinstalação continua sem preencher o diálogo de confirmação interno, da mesma forma que se o usuário já tivesse confirmado. (essa abordagem pode ser usada para substituir o diálogo de confirmação interno);  
+- 0: o processo de desinstalação continua sem preencher o diálogo de confirmação interno, da mesma forma que se o usuário já tivesse confirmado. (essa abordagem pode ser usada para substituir o diálogo de confirmação interno);  
   
--   1: o processo de desinstalação é cancelado e, por fim, uma mensagem de cancelamento será mostrada ao usuário. Tudo permanece inalterado;  
+- 1: o processo de desinstalação é cancelado e, por fim, uma mensagem de cancelamento será mostrada ao usuário. Tudo permanece inalterado;  
   
--   Outro: o processo de desinstalação continua com o diálogo de confirmação interno, como se a etapa de desinstalação personalizada não estivesse presente.  
+- Outro: o processo de desinstalação continua com o diálogo de confirmação interno, como se a etapa de desinstalação personalizada não estivesse presente.  
   
- Qualquer falha em chamar o exefile levará ao mesmo comportamento que se o exefile retornasse um código que não 0 ou 1.  
+  Qualquer falha em chamar o exefile levará ao mesmo comportamento que se o exefile retornasse um código que não 0 ou 1.  
   
 ## <a name="see-also"></a>Consulte também  
  [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do usuário](Testing-the-Customer-Experience.md)
+ [Testar a experiência do usuário](Testing-the-Customer-Experience.md)

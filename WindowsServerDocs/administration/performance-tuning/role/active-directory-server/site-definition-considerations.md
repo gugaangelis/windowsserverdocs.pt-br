@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: e1652e45f51500ceeb0026b8892fbe9c54ff38f3
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: 9861703e5ae88dcaec5e76d9fab426b928d0cb9a
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266634"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811500"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>Posicionamento adequado dos controladores de domínio e considerações de site
 
@@ -64,11 +64,11 @@ Entre os cenários são uma área que tem sido consistentemente um ponto problem
 
     -   Use DnsAvoidRegisterRecords para eliminar a controladores de domínio de desempenho ruim ou alta latência, como aqueles em locais de satélite, de anúncio para os localizadores genéricos. Para obter mais informações, consulte [como otimizar o local de um controlador de domínio ou catálogo global que reside fora do site do cliente](https://support.microsoft.com/kb/306602).
 
-        > [!Note]   Há um limite prático de cerca de 50 para o número de controladores de domínio, que o cliente pode consumir. Eles devem ser mais capacidade ideal de site e maior controladores de domínio.
+        > [!NOTE]
+        > Há um limite prático de cerca de 50 para o número de controladores de domínio, que o cliente pode consumir. Eles devem ser mais capacidade ideal de site e maior controladores de domínio.
 
-         
-
-    -   Considere a colocação de controladores de domínio de domínios confiáveis e confiantes no mesmo local físico.
+    
+    -  Considere a colocação de controladores de domínio de domínios confiáveis e confiantes no mesmo local físico.
 
 Para todos os cenários de confiança, as credenciais são roteadas de acordo com o domínio especificado nas solicitações de autenticação. Isso também é verdadeiro para consultas ao LookupAccountName e LsaLookupNames (bem como outros, eles são apenas mais usados) APIs. Quando os parâmetros de domínio para essas APIs recebem um valor NULL, o controlador de domínio tentará localizar o nome da conta especificada em cada domínio confiável disponível.
 

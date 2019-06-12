@@ -9,12 +9,12 @@ ms.date: 01/28/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 33b782ded2ae1bdd8b00c08b81e4e0ee7f885899
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 62b366b8fa388319a758ab853d28d1c49cb1bf06
+ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188831"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719721"
 ---
 # <a name="configure-azure-mfa-as-authentication-provider-with-ad-fs"></a>Configurar o MFA do Azure como provedor de autenticação com o AD FS
 
@@ -65,17 +65,14 @@ Conforme descrito acima, qualquer usuário do AD FS que ainda não foram registr
 Os seguintes pré-requisitos são necessários ao usar o Azure MFA para autenticação com o AD FS:  
   
 - Uma [assinatura do Azure com o Azure Active Directory](https://azure.microsoft.com/pricing/free-trial/).  
-- [Autenticação multifator do Azure](https://azure.microsoft.com/documentation/articles/multi-factor-authentication/)  
-- Proxy de aplicativo Web é capaz de se comunicar com o seguinte nas portas 80 e 443:
-
-    - https://adnotifications.windowsazure.com
-    - https://login.microsoftonline.com
+- [Autenticação multifator do Azure](https://azure.microsoft.com/documentation/articles/multi-factor-authentication/) 
 
 
 > [!NOTE]
 > Azure AD e o Azure MFA estão incluídas no Azure AD Premium e o Enterprise Mobility Suite (EMS).  Se você tiver uma dessas assinaturas individuais não é necessário.
+
 - Um ambiente do AD FS do Windows Server 2016 no local.  
-   - O servidor precisa ser capaz de se comunicar com as seguintes URLs nas portas 80 e 443.
+   - O servidor precisa ser capaz de se comunicar com as seguintes URLs pela porta 443.
       - https://adnotifications.windowsazure.com
       - https://login.microsoftonline.com
 - O seu ambiente local é [federado com o Azure AD.](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-get-started-custom/#configuring-federation-with-ad-fs)  

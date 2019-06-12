@@ -11,12 +11,12 @@ ms.assetid: 8e871317-09d2-4314-a6ec-ced12b7aee89
 author: KBDAzure
 ms.author: kathydav
 ms.date: 12/02/2016
-ms.openlocfilehash: a4167065c11cf87ba761ed65884b88c5413dfdf8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 80154c569701608ad190fb76eb3737578895d187
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870427"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812375"
 ---
 # <a name="install-the-hyper-v-role-on-windows-server"></a>Instalar a função Hyper-V no Windows Server
 
@@ -24,15 +24,15 @@ ms.locfileid: "59870427"
   
 Para criar e executar máquinas virtuais, instalar a função Hyper-V no Windows Server usando o Gerenciador do servidor ou o **Install-WindowsFeature** cmdlet do Windows PowerShell. Para Windows 10, consulte [instalar o Hyper-V no Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v).
 
-Para saber mais sobre o Hyper-V, consulte o [visão geral da tecnologia do Hyper-V](..\Hyper-V-Technology-Overview.md). Para experimentar o Windows Server 2019, você pode baixar e instalar uma cópia de avaliação. Consulte a [Centro de avaliação](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019).
+Para saber mais sobre o Hyper-V, consulte o [visão geral da tecnologia do Hyper-V](../Hyper-V-Technology-Overview.md). Para experimentar o Windows Server 2019, você pode baixar e instalar uma cópia de avaliação. Consulte a [Centro de avaliação](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019).
 
 Antes de instalar o Windows Server ou adicionar a função Hyper-V, verifique se:
 - O hardware do computador é compatível. Para obter detalhes, consulte [requisitos de sistema para o Windows Server](../../../get-started/System-Requirements.md) e [requisitos de sistema do Hyper-V no Windows Server](../System-requirements-for-Hyper-V-on-Windows.md).
 - Você não planeja usar aplicativos de virtualização de terceiros que dependem dos mesmos recursos de processador Hyper-V exige. Exemplos incluem o VMWare Workstation e o VirtualBox. Você pode instalar o Hyper-V sem desinstalar esses outros aplicativos. Mas, se você tentar usá-las para gerenciar máquinas virtuais quando o hipervisor Hyper-V está em execução, as máquinas virtuais não pode iniciar ou pode ser executado de modo não confiável. Para obter detalhes e instruções sobre como desativar o hipervisor Hyper-V, se você precisar usar um desses aplicativos, consulte [aplicativos de virtualização não funcionam em conjunto com o Hyper-V, o Device Guard e Credential Guard](https://support.microsoft.com/help/3204980/virtualization-applications-do-not-work-together-with-hyper-v-device-g).
 
-Se você deseja instalar apenas as ferramentas de gerenciamento, como o Gerenciador do Hyper-V, consulte [gerenciar remotamente os hosts do Hyper-V com o Gerenciador do Hyper-V](..\Manage\Remotely-manage-Hyper-V-hosts.md).
+Se você deseja instalar apenas as ferramentas de gerenciamento, como o Gerenciador do Hyper-V, consulte [gerenciar remotamente os hosts do Hyper-V com o Gerenciador do Hyper-V](../Manage/Remotely-manage-Hyper-V-hosts.md).
   
-## <a name="BKMK_SERV"></a>Instalar o Hyper-V usando o Gerenciador do servidor  
+## <a name="install-hyper-v-by-using-server-manager"></a>Instalar o Hyper-V usando o Gerenciador do servidor  
   
 1. Em **Gerenciador do Servidor**, no menu **Gerenciar** clique em **Adicionar Funções e Recursos**.  
   
@@ -52,7 +52,7 @@ Se você deseja instalar apenas as ferramentas de gerenciamento, como o Gerencia
   
 9. Quando a instalação for concluída, verifique se que o Hyper-V foi instalado corretamente. Abra o **todos os servidores** página no Gerenciador do servidor e selecione um servidor no qual você instalou o Hyper-V. Verifique as **funções e recursos** lado a lado na página para o servidor selecionado.  
   
-## <a name="BKMK_PWRSH"></a>Instalar o Hyper-V usando o cmdlet Install-WindowsFeature  
+## <a name="install-hyper-v-by-using-the-install-windowsfeature-cmdlet"></a>Instalar o Hyper-V usando o cmdlet Install-WindowsFeature  
   
 1. Na área de trabalho do Windows, clique no botão Iniciar e digite qualquer parte do nome **Windows PowerShell**.  
   
@@ -75,7 +75,7 @@ Se você deseja instalar apenas as ferramentas de gerenciamento, como o Gerencia
     Se você estiver conectado localmente no servidor, execute o comando sem `-ComputerName <computer_name>`.  
   
 > [!NOTE]  
-> Se você instalar essa função em um servidor que executa a opção de instalação Server Core do Windows Server 2016 e use o parâmetro `-IncludeManagementTools`, somente o Hyper-V Module para Windows PowerShell está instalado. Você pode usar a ferramenta de gerenciamento de GUI, o Gerenciador do Hyper-V, em outro computador para gerenciar remotamente um host Hyper-V que é executado em uma instalação Server Core. Para obter instruções sobre como se conectar remotamente, consulte [gerenciar remotamente os hosts do Hyper-V com o Gerenciador do Hyper-V](..\Manage\Remotely-manage-Hyper-V-hosts.md).  
+> Se você instalar essa função em um servidor que executa a opção de instalação Server Core do Windows Server 2016 e use o parâmetro `-IncludeManagementTools`, somente o Hyper-V Module para Windows PowerShell está instalado. Você pode usar a ferramenta de gerenciamento de GUI, o Gerenciador do Hyper-V, em outro computador para gerenciar remotamente um host Hyper-V que é executado em uma instalação Server Core. Para obter instruções sobre como se conectar remotamente, consulte [gerenciar remotamente os hosts do Hyper-V com o Gerenciador do Hyper-V](../Manage/Remotely-manage-Hyper-V-hosts.md).  
   
 ## <a name="see-also"></a>Consulte também  
   

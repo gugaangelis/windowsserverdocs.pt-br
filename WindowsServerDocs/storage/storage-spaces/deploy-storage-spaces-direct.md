@@ -7,15 +7,15 @@ ms.technology: storage-spaces
 ms.topic: get-started-article
 ms.assetid: 20fee213-8ba5-4cd3-87a6-e77359e82bc0
 author: stevenek
-ms.date: 8/16/2018
+ms.date: 06/07/2019
 description: Instruções passo a passo para implantar o armazenamento definido por software com espaços de armazenamento diretos no Windows Server como infraestrutura hiperconvergente ou convergida infra-estrutura (também conhecida como desagregada).
 ms.localizationpriority: medium
-ms.openlocfilehash: 55cfa0e066506d7174f9e5b1e61cc0aa290706d7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a4159c85be23025ef57084b47dcc77d4f749888f
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865407"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812356"
 ---
 # <a name="deploy-storage-spaces-direct"></a>Implantar espaços de armazenamento diretos
 
@@ -24,7 +24,7 @@ ms.locfileid: "59865407"
 Este tópico fornece instruções passo a passo para implantar [espaços de armazenamento diretos](storage-spaces-direct-overview.md).
 
 > [!Tip]
-> Buscando para adquirir infraestrutura Hyper-Converged? A Microsoft recomenda essas [definida pelo Software do Windows Server](https://microsoft.com/wssd) soluções de nossos parceiros. Eles são projetados, montados e validados em relação a nossa arquitetura de referência para garantir a compatibilidade e confiabilidade, para que você começar a trabalhar em funcionamento rapidamente.
+> Buscando para adquirir infraestrutura Hyper-Converged? A Microsoft recomenda a compra de uma solução de hardware/software validado de nossos parceiros, que incluem procedimentos e ferramentas de implantação. Essas soluções são projetadas, reunimos e validadas em relação a nossa arquitetura de referência para garantir a compatibilidade e confiabilidade, para que você começar a trabalhar em funcionamento rapidamente. Para soluções do Windows Server 2019, visite o [site de soluções do Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci). Para soluções do Windows Server 2016, saiba mais em [definida pelo Software do Windows Server](https://microsoft.com/wssd).
 
 > [!Tip]
 > Você pode usar máquinas virtuais de Hyper-V, incluindo no Microsoft Azure, para [avaliar os espaços de armazenamento diretos sem hardware](storage-spaces-direct-in-vm.md). Também convém examinar o útil [scripts de implantação do Windows Server laboratório rápida](https://aka.ms/wslab), que usamos para fins de treinamento.
@@ -51,7 +51,7 @@ Reúna as seguintes informações:
 
 A primeira etapa é instalar o Windows Server em todos os servidores que estarão no cluster. Espaços de armazenamento diretos requer o Windows Server 2016 Datacenter Edition. Você pode usar a opção de instalação Server Core ou servidor com experiência Desktop.
 
-Quando você instala o Windows Server usando o Assistente de instalação, você pode escolher entre *Windows Server* (se referir ao Server Core) e *do Windows Server (servidor com experiência Desktop)*, que é o equivalente dos *completo* opção de instalação disponível no Windows Server 2012 R2. Se você não escolher, você terá a opção de instalação Server Core. Para obter mais informações, consulte [opções de instalação para o Windows Server 2016](../../get-started/Windows-Server-2016.md).
+Quando você instala o Windows Server usando o Assistente de instalação, você pode escolher entre *Windows Server* (se referir ao Server Core) e *do Windows Server (servidor com experiência Desktop)* , que é o equivalente dos *completo* opção de instalação disponível no Windows Server 2012 R2. Se você não escolher, você terá a opção de instalação Server Core. Para obter mais informações, consulte [opções de instalação para o Windows Server 2016](../../get-started/Windows-Server-2016.md).
 
 ### <a name="step-12-connect-to-the-servers"></a>Etapa 1.2: Conectar-se aos servidores
 
@@ -229,7 +229,7 @@ Após a criação do cluster, a replicação da entrada de DNS para o nome do cl
 
 Para obter mais informações, consulte os seguintes tópicos:
 
-- [Configurar e gerenciar o quorum](../../failover-clustering/manage-cluster-quorum.md)
+- [Configurar e gerenciar o quórum](../../failover-clustering/manage-cluster-quorum.md)
 - [Implantar uma testemunha de nuvem para um Cluster de Failover](../../failover-clustering/deploy-cloud-witness.md)
 
 ### <a name="step-35-enable-storage-spaces-direct"></a>Etapa 3.5: Habilitar os Espaços de Armazenamento Diretos
@@ -297,15 +297,15 @@ A próxima etapa na configuração de serviços do cluster para seu servidor de 
 
 #### <a name="to-create-a-scale-out-file-server-role-by-using-server-manager"></a>Para criar uma função de servidor de arquivos de escalabilidade horizontal usando o Gerenciador do servidor
 
-1.  No Gerenciador de Cluster de Failover, selecione o cluster, acesse **funções**e, em seguida, clique em **configurar função...** .<br>O Assistente para alta disponibilidade é exibida.
-2.  Sobre o **Selecionar função** , clique em **servidor de arquivos**.
-3.  Sobre o **tipo de servidor de arquivos** , clique em **servidor de arquivos de escalabilidade horizontal para dados de aplicativo**.
-4.  Sobre o **ponto de acesso para cliente** página, digite um nome para o servidor de arquivos de escalabilidade horizontal.
-5.  Verifique se que a função foi configurada com êxito, vá para **funções** e confirmando que o **Status** coluna mostra **executando** ao lado da função de servidor de arquivos em cluster é criado, conforme mostrado na Figura 1.
+1. No Gerenciador de Cluster de Failover, selecione o cluster, acesse **funções**e, em seguida, clique em **configurar função...** .<br>O Assistente para alta disponibilidade é exibida.
+2. Sobre o **Selecionar função** , clique em **servidor de arquivos**.
+3. Sobre o **tipo de servidor de arquivos** , clique em **servidor de arquivos de escalabilidade horizontal para dados de aplicativo**.
+4. Sobre o **ponto de acesso para cliente** página, digite um nome para o servidor de arquivos de escalabilidade horizontal.
+5. Verifique se que a função foi configurada com êxito, vá para **funções** e confirmando que o **Status** coluna mostra **executando** ao lado da função de servidor de arquivos em cluster é criado, conforme mostrado na Figura 1.
 
-    ![Captura de tela do Gerenciador de Cluster Failover mostrando o servidor de arquivos de escalabilidade horizontal](media\Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016\SOFS_in_FCM.png "Gerenciador de Cluster de Failover mostrando o servidor de arquivos de escalabilidade horizontal")
+   ![Captura de tela do Gerenciador de Cluster Failover mostrando o servidor de arquivos de escalabilidade horizontal](media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "Gerenciador de Cluster de Failover mostrando o servidor de arquivos de escalabilidade horizontal")
 
-     **Figura 1** mostrando o servidor de arquivos de escalabilidade horizontal com o status de execução do Gerenciador de Cluster de Failover
+    **Figura 1** mostrando o servidor de arquivos de escalabilidade horizontal com o status de execução do Gerenciador de Cluster de Failover
 
 > [!NOTE]
 >  Depois de criar a função clusterizada, pode haver alguma rede atrasos de propagação que pode impedir que você crie compartilhamentos de arquivos nele por alguns minutos, ou potencialmente mais.  

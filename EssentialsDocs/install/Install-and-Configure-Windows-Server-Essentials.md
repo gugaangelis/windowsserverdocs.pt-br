@@ -12,12 +12,12 @@ ms.assetid: e95cf219-46a4-4041-bd81-0c4c2a0622cf
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cdad118c30fbf303b55ec7ea25bbe3e209c016db
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 48fa18d5baf7d4b48b14cbda5a513c487920d70a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870157"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433469"
 ---
 # <a name="install-and-configure-windows-server-essentials"></a>Instalar e configurar o Windows Server Essentials
 
@@ -53,34 +53,34 @@ ms.locfileid: "59870157"
   
 ##### <a name="to-install-the-operating-system"></a>Para instalar o sistema operacional  
   
-1.  Conecte seu computador à rede com um cabo de rede.  
+1. Conecte seu computador à rede com um cabo de rede.  
   
-    > [!IMPORTANT]
-    >  Não desconecte o computador da rede durante a instalação. Fazer isso pode provocar falha na instalação.  
+   > [!IMPORTANT]
+   >  Não desconecte o computador da rede durante a instalação. Fazer isso pode provocar falha na instalação.  
   
-2.  Ligue o computador e, em seguida, insira o DVD do Windows Server Essentials na unidade de DVD.  
+2. Ligue o computador e, em seguida, insira o DVD do Windows Server Essentials na unidade de DVD.  
   
-     Se você estiver realizando uma instalação sem supervisão, conecte a mídia removível (como um disquete ou unidade flash USB) contendo os arquivos de resposta. Dependendo do conteúdo dos arquivos de resposta, você pode não ver alguns ou todas as telas de instalação a seguir.  
+    Se você estiver realizando uma instalação sem supervisão, conecte a mídia removível (como um disquete ou unidade flash USB) contendo os arquivos de resposta. Dependendo do conteúdo dos arquivos de resposta, você pode não ver alguns ou todas as telas de instalação a seguir.  
   
-3.  Reinicie seu computador. Quando a mensagem **Pressione qualquer tecla para inicializar a partir do CD ou DVD** aparecer, pressione qualquer tecla.  
+3. Reinicie seu computador. Quando a mensagem **Pressione qualquer tecla para inicializar a partir do CD ou DVD** aparecer, pressione qualquer tecla.  
   
-    > [!NOTE]
-    >  Se o computador não iniciar a partir do DVD, garanta que o leitor de CD-ROM esteja listado primeiro na sequência de inicialização do BIOS. Para mais informações sobre a sequência de inicialização do BIOS, consulte a documentação do fabricante do computador.  
+   > [!NOTE]
+   >  Se o computador não iniciar a partir do DVD, garanta que o leitor de CD-ROM esteja listado primeiro na sequência de inicialização do BIOS. Para mais informações sobre a sequência de inicialização do BIOS, consulte a documentação do fabricante do computador.  
   
-4.  Selecione o **Idioma** que deseja instalar, o **formato de hora e moeda** e o **Teclado ou método de entrada** e então clique em **Avançar**.  
+4. Selecione o **Idioma** que deseja instalar, o **formato de hora e moeda** e o **Teclado ou método de entrada** e então clique em **Avançar**.  
   
-5.  Clique em **Instalar agora**.  
+5. Clique em **Instalar agora**.  
   
-6.  Em **Digite a chave do produto**, digite a chave do produto.  
+6. Em **Digite a chave do produto**, digite a chave do produto.  
   
-7.  Leia os **Termos de licença**. Se você aceitá-los, marque a caixa de seleção **Eu aceito os termos de licença** e depois clique em **Avançar**.  
+7. Leia os **Termos de licença**. Se você aceitá-los, marque a caixa de seleção **Eu aceito os termos de licença** e depois clique em **Avançar**.  
   
-    > [!NOTE]
-    >  Se escolher não aceitar os termos de licença, a instalação não continua.  
+   > [!NOTE]
+   >  Se escolher não aceitar os termos de licença, a instalação não continua.  
   
-8.  Na **que tipo de instalação você deseja?**, clique em **personalizado: Instalar somente o Windows (Avançado)**  
+8. Na **que tipo de instalação você deseja?** , clique em **personalizado: Instalar somente o Windows (Avançado)**  
   
-9. Em **Onde deseja instalar o Windows?**, selecione o disco rígido em que deseja instalar o sistema operacional Windows. Verifique se todos os discos rígidos internos estão disponíveis para instalação.  
+9. Em **Onde deseja instalar o Windows?** , selecione o disco rígido em que deseja instalar o sistema operacional Windows. Verifique se todos os discos rígidos internos estão disponíveis para instalação.  
   
     > [!IMPORTANT]
     >   Windows Server Essentials deve ser instalado como volume c:, e o tamanho do volume deve ser pelo menos 60 GB. Recomenda-se criar duas partições no disco do sistema operacional, e não usar C: (partição do sistema) para armazenar nenhum dado de negócio.  
@@ -93,24 +93,24 @@ ms.locfileid: "59870157"
     1.  Para excluir uma partição, selecione a partição, clique em **Opções de unidade (avançadas)** e clique em **Excluir**. Depois de excluir a partição do sistema, crie uma nova partição usando as instruções na etapa **b** ou **c**.  
   
         > [!NOTE]
-        >  Depois de clicar em **Opções de unidade (avançadas)**, essa opção não aparecerá novamente. Nesse caso, ignore a parte da etapa que se refere a opções de unidade.  
+        >  Depois de clicar em **Opções de unidade (avançadas)** , essa opção não aparecerá novamente. Nesse caso, ignore a parte da etapa que se refere a opções de unidade.  
   
-    2.  Para criar uma partição a partir de um espaço não particionado, clique no disco rígido que deseja particionar, clique em **Opções de unidade (avançadas)**, clique em **Novo**, clique na caixa de texto **Tamanho** e digite o tamanho da partição que deseja criar. Por exemplo, se usar o tamanho de partição recomendado de 120 gigabytes (GB), digite **122880**e depois clique em **Aplicar**. Depois de a partição ter sido criada, clique em **Avançar**. A partição é formatada antes de a instalação continuar.  
+    2.  Para criar uma partição a partir de um espaço não particionado, clique no disco rígido que deseja particionar, clique em **Opções de unidade (avançadas)** , clique em **Novo**, clique na caixa de texto **Tamanho** e digite o tamanho da partição que deseja criar. Por exemplo, se usar o tamanho de partição recomendado de 120 gigabytes (GB), digite **122880**e depois clique em **Aplicar**. Depois de a partição ter sido criada, clique em **Avançar**. A partição é formatada antes de a instalação continuar.  
   
-    3.  Para criar uma partição que use todo o espaço não particionado, clique no disco rígido que você deseja particionar, clique em **Opções de unidade (avançadas)**, clique em **Novo** e clique em **Aplicar** para aceitar o tamanho padrão da partição. Depois de a partição ter sido criada, clique em **Avançar**. A partição é formatada antes de a instalação continuar.  
+    3.  Para criar uma partição que use todo o espaço não particionado, clique no disco rígido que você deseja particionar, clique em **Opções de unidade (avançadas)** , clique em **Novo** e clique em **Aplicar** para aceitar o tamanho padrão da partição. Depois de a partição ter sido criada, clique em **Avançar**. A partição é formatada antes de a instalação continuar.  
   
         > [!IMPORTANT]
         >  Você não pode mover o sistema operacional para uma partição diferente depois de concluir esta etapa.  
   
- Durante a instalação, os arquivos temporários são copiados para uma pasta de instalação no seu computador, o que leva cerca de 30 minutos. Depois que o sistema operacional Windows Server Essentials é instalado, o computador for reiniciado. Agora, você está pronto para configurar o sistema operacional Windows Server Essentials.  
+   Durante a instalação, os arquivos temporários são copiados para uma pasta de instalação no seu computador, o que leva cerca de 30 minutos. Depois que o sistema operacional Windows Server Essentials é instalado, o computador for reiniciado. Agora, você está pronto para configurar o sistema operacional Windows Server Essentials.  
   
 ###  <a name="BKMK_Step2Configure"></a> Etapa 2: Configurar o sistema operacional Windows Server Essentials  
   
 > [!IMPORTANT]
 >  Se você estiver migrando de uma versão anterior do Windows Small Business Server para Windows Server Essentials, você deve seguir um processo diferente. Para informações sobre a migração de instalações, consulte o seguinte:  
->   
->  -   [Migrar do Windows SBS 2003](../migrate/Migrate-Windows-Small-Business-Server-2003-to-Windows-Server-Essentials.md)  
-> -   [Migrar do Windows SBS 2008](../migrate/Migrate-Windows-Small-Business-Server-2008-to-Windows-Server-Essentials.md)  
+> 
+> - [Migrar do Windows SBS 2003](../migrate/Migrate-Windows-Small-Business-Server-2003-to-Windows-Server-Essentials.md)  
+>   -   [Migrar do Windows SBS 2008](../migrate/Migrate-Windows-Small-Business-Server-2008-to-Windows-Server-Essentials.md)  
   
  Durante essa fase da instalação, você é solicitado a responder algumas perguntas sobre a sua organização. Essa informação é usada para configurar o sistema operacional.  
   

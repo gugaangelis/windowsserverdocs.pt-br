@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e7a61fe34965ecf47505e6825a5c03680b1b40d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4cc669fee4fbd31edc8813f16761ecb9f90532df
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841317"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810922"
 ---
 # <a name="windows-server-2019-activation"></a>Ativação do Windows Server de 2019
 
@@ -33,9 +33,9 @@ Hosts KMS não precisam ser servidores dedicados e o KMS pode ser hospedado junt
 Um host KMS em execução no Windows 10 ou no Windows 8.1 pode ativar apenas computadores que executem sistemas operacionais clientes.
 A tabela a seguir resume os requisitos do cliente e host KMS para redes que incluem clientes do Windows Server 2016, Windows Server 2019 e Windows 10.
 
->[!NOTE]
->- Podem ser necessárias atualizações no servidor KMS para dar suporte à ativação de qualquer um desses clientes mais recentes. Se você receber erros de ativação, verifique se tem as atualizações adequadas listadas abaixo desta tabela.
->- Se você estiver trabalhando com máquinas virtuais, consulte [Automatic Virtual Machine Activation](vm-activation-19.md) para obter informações e as chaves AVMA.
+> [!NOTE]
+> - Podem ser necessárias atualizações no servidor KMS para dar suporte à ativação de qualquer um desses clientes mais recentes. Se você receber erros de ativação, verifique se tem as atualizações adequadas listadas abaixo desta tabela.
+> - Se você estiver trabalhando com máquinas virtuais, consulte [Automatic Virtual Machine Activation](vm-activation-19.md) para obter informações e as chaves AVMA.
 
 |Grupo da chave do produto (Product Key)|O KMS pode ser hospedado em|Edições do Windows ativadas por este host KMS|  
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|  
@@ -45,11 +45,11 @@ A tabela a seguir resume os requisitos do cliente e host KMS para redes que incl
 |Licença de volume para “Windows Server 2012 R2 para Windows 10”|Windows Server 2008 R2<br /><br /> Windows Server 2012 Standard<br /><br /> Windows Server 2012 Datacenter<br /><br /> Windows Server 2012 R2 Standard<br /><br />Windows Server 2012 R2 Datacenter|Windows 10 Professional<br /><br /> Windows 10 Enterprise<br /><br />Windows 10 Enterprise LTSB (2015)<br><br>Windows 10 Pro for Workstations<br><br>Windows 10 Education<br><br> Windows Server 2012 R2 (todas as edições)<br /><br /> Windows 8.1 Professional<br /><br /> Windows 8.1 Enterprise<br /><br /> Windows Server 2012 (todas as edições)<br /><br /> Windows Server 2008 R2 (todas as edições)<br /><br /> Windows Server 2008 (todas as edições)<br /><br />Windows 7 Professional<br /><br /> Windows 7 Enterprise|
 
 > [!NOTE]  
->Dependendo do sistema operacional no qual o servidor KMS está sendo executado e os sistemas operacionais que deseja ativar, talvez seja necessário instalar uma ou mais dessas atualizações:
->- A instalação do KMS no Windows 7 ou no Windows Server 2008 R2 deve ser atualizada para dar suporte à ativação de clientes que executem o Windows 10. Para obter mais informações, consulte [atualização que permite que os hosts do Windows 7 e Windows Server 2008 R2 KMS ativar o Windows 10](https://support.microsoft.com/help/3079821/update-that-enables-windows-7-and-windows-server-2008-r2-kms-hosts-to-activate-windows-10).  
->- Instalação do KMS no Windows Server 2012 deve ser atualizada para dar suporte à ativação de clientes que executam o Windows 10 e Windows Server 2016 ou Windows Server de 2019, ou o cliente mais recente ou sistemas operacionais de servidor. Para obter mais informações, consulte [atualização de julho de 2016 pacote cumulativo de atualizações para o Windows Server 2012](https://support.microsoft.com/help/3172615/july-2016-update-rollup-for-windows-server-2012). 
->- Instalação do KMS no Windows 8.1 ou Windows Server 2012 R2 deve ser atualizada para dar suporte à ativação de clientes que executam o Windows 10 e Windows Server 2016 ou Windows Server de 2019, ou o cliente mais recente ou sistemas operacionais de servidor. Para obter mais informações, consulte [atualização cumulativa de julho de 2016 para Windows 8.1 e Windows Server 2012 R2](https://support.microsoft.com/help/3172614/july-2016-update-rollup-for-windows-8.1-and-windows-server-2012-r2).  
->- Windows Server 2008 R2 não pode ser atualizado para dar suporte à ativação dos clientes que executam o Windows Server 2016, Windows Server 2019 ou sistemas operacionais mais recentes. 
+> Dependendo do sistema operacional no qual o servidor KMS está sendo executado e os sistemas operacionais que deseja ativar, talvez seja necessário instalar uma ou mais dessas atualizações:
+> - A instalação do KMS no Windows 7 ou no Windows Server 2008 R2 deve ser atualizada para dar suporte à ativação de clientes que executem o Windows 10. Para obter mais informações, consulte [atualização que permite que os hosts do Windows 7 e Windows Server 2008 R2 KMS ativar o Windows 10](https://support.microsoft.com/help/3079821/update-that-enables-windows-7-and-windows-server-2008-r2-kms-hosts-to-activate-windows-10).  
+> - Instalação do KMS no Windows Server 2012 deve ser atualizada para dar suporte à ativação de clientes que executam o Windows 10 e Windows Server 2016 ou Windows Server de 2019, ou o cliente mais recente ou sistemas operacionais de servidor. Para obter mais informações, consulte [atualização de julho de 2016 pacote cumulativo de atualizações para o Windows Server 2012](https://support.microsoft.com/help/3172615/july-2016-update-rollup-for-windows-server-2012). 
+> - Instalação do KMS no Windows 8.1 ou Windows Server 2012 R2 deve ser atualizada para dar suporte à ativação de clientes que executam o Windows 10 e Windows Server 2016 ou Windows Server de 2019, ou o cliente mais recente ou sistemas operacionais de servidor. Para obter mais informações, consulte [atualização cumulativa de julho de 2016 para Windows 8.1 e Windows Server 2012 R2](https://support.microsoft.com/help/3172614/july-2016-update-rollup-for-windows-8.1-and-windows-server-2012-r2).  
+> - Windows Server 2008 R2 não pode ser atualizado para dar suporte à ativação dos clientes que executam o Windows Server 2016, Windows Server 2019 ou sistemas operacionais mais recentes. 
 
 Um único host KMS pode dar suporte a um número ilimitado de clientes KMS. Se tiver mais de 50 clientes, recomendamos que você tenha pelo menos dois hosts KMS, para o caso de um deles ficar indisponível. A maioria das organizações pode operar com um mínimo de dois hosts KMS para toda a infraestrutura.
 
@@ -68,8 +68,8 @@ Depois que o primeiro host KMS é ativado, é possível usar a chave KMS usada n
 
 Se a organização precisar de mais de seis hosts KMS, solicite ativações adicionais para a chave KMS da organização – por exemplo, quando dez locais físicos são regidos por um único contrato de licenciamento por volume e você quer um host KMS local em cada um deles.
 
->[!NOTE] 
->Para solicitar essa exceção, contate o Call Center de Ativação. Para obter mais informações, consulte [Microsoft Volume Licensing](https://go.microsoft.com/fwlink/?LinkID=73076).
+> [!NOTE] 
+> Para solicitar essa exceção, contate o Call Center de Ativação. Para obter mais informações, consulte [Microsoft Volume Licensing](https://go.microsoft.com/fwlink/?LinkID=73076).
 
 Computadores que executam edições de licenciamento por volume do Windows 10, Windows Server 2019, Windows Server 2016, Windows 8.1, Windows Server 2012 R2, Windows Server 2012, Windows 7, Windows Server 2008 R2 são, por padrão, clientes KMS sem nenhuma configuração adicional necessário.
 

@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 4a6b378bc4aef180ebedd260008febaa2f2a76ae
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a1f5c724d041a9f64c3b2697a8b5acd17a2a7bd9
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856207"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445815"
 ---
 # <a name="claims-transformation-rules-language"></a>Linguagem de regras de transformação de declarações
 
@@ -225,75 +225,75 @@ As regras de transformação de declarações são analisadas por um analisador 
   
 Esta seção ilustra alguns exemplos de regras que são escritos com sintaxe incorreta e a sintaxe correspondente erros gerados pelo analisador.  
   
-1.  Exemplo:  
+1. Exemplo:  
   
-    ```  
-    c1;[]=>Issue(claim=c1);  
-    ```  
+   ```  
+   c1;[]=>Issue(claim=c1);  
+   ```  
   
-    Este exemplo tem uma ponto e vírgula incorretamente usada no lugar de dois-pontos.   
-    **Mensagem de erro:**  
-    *POLICY0002: Não foi possível analisar os dados de política.*  
-    *Número da linha: 1, número de coluna: Erro token 2,:;. Linha: ' c1; [] = > Issue(claim=c1);'.*  
-    *Erro do analisador: 'POLICY0030: Erro de sintaxe inesperado ';', esperando um dos seguintes: ':'.'*  
+   Este exemplo tem uma ponto e vírgula incorretamente usada no lugar de dois-pontos.   
+   **Mensagem de erro:**  
+   *POLICY0002: Não foi possível analisar os dados de política.*  
+   *Número da linha: 1, número de coluna: Erro token 2,:;. Linha: ' c1; [] = > Issue(claim=c1);'.*  
+   *Erro do analisador: 'POLICY0030: Erro de sintaxe inesperado ';', esperando um dos seguintes: ':'.'*  
   
-2.  Exemplo:  
+2. Exemplo:  
   
-    ```  
-    c1:[]=>Issue(claim=c2);  
-    ```  
+   ```  
+   c1:[]=>Issue(claim=c2);  
+   ```  
   
-    Neste exemplo, a marca de identificador na instrução de emissão de cópia é indefinida.   
-    **Mensagem de erro**:   
-    *POLICY0011: Nenhuma das condições na regra de declaração corresponde à marca de condição especificada no CopyIssuanceStatement: 'c2'.*  
+   Neste exemplo, a marca de identificador na instrução de emissão de cópia é indefinida.   
+   **Mensagem de erro**:   
+   *POLICY0011: Nenhuma das condições na regra de declaração corresponde à marca de condição especificada no CopyIssuanceStatement: 'c2'.*  
   
-3.  Exemplo:  
+3. Exemplo:  
   
-    ```  
-    c1:[type=="x1", value=="1", valuetype=="bool"]=>Issue(claim=c1)  
-    ```  
+   ```  
+   c1:[type=="x1", value=="1", valuetype=="bool"]=>Issue(claim=c1)  
+   ```  
   
-    "bool" não é um Terminal no idioma e não é um ValueType válido. Terminais válidos são listados na seguinte mensagem de erro.   
-    **Mensagem de erro:**  
-    *POLICY0002: Não foi possível analisar os dados de política.*  
-    Número da linha: 1, número de coluna: 39, token de erro: "bool". Line: 'c1:[type=="x1", value=="1",valuetype=="bool"]=>Issue(claim=c1);'.   
-    *Erro do analisador: 'POLICY0030: Erro de sintaxe, inesperado 'STRING', esperando um dos seguintes: 'INT64_TYPE' 'UINT64_TYPE' 'STRING_TYPE' 'BOOLEAN_TYPE' 'IDENTIFIER'*  
+   "bool" não é um Terminal no idioma e não é um ValueType válido. Terminais válidos são listados na seguinte mensagem de erro.   
+   **Mensagem de erro:**  
+   *POLICY0002: Não foi possível analisar os dados de política.*  
+   Número da linha: 1, número de coluna: 39, token de erro: "bool". Line: 'c1:[type=="x1", value=="1",valuetype=="bool"]=>Issue(claim=c1);'.   
+   *Erro do analisador: 'POLICY0030: Erro de sintaxe, inesperado 'STRING', esperando um dos seguintes: 'INT64_TYPE' 'UINT64_TYPE' 'STRING_TYPE' 'BOOLEAN_TYPE' 'IDENTIFIER'*  
   
-4.  Exemplo:  
+4. Exemplo:  
   
-    ```  
-    c1:[type=="x1", value==1, valuetype=="boolean"]=>Issue(claim=c1);  
-    ```  
+   ```  
+   c1:[type=="x1", value==1, valuetype=="boolean"]=>Issue(claim=c1);  
+   ```  
   
-    O numeral **1** neste exemplo não é um token válido no idioma, e tal uso não é permitido em uma condição de correspondência. Ele deve ser colocado entre aspas duplas para torná-lo em uma cadeia de caracteres.   
-    **Mensagem de erro:**  
-    *POLICY0002: Não foi possível analisar os dados de política.*  
-    *Número da linha: 1, número de coluna: 23, token de erro: 1. Line: 'c1:[type=="x1", value==1, valuetype=="bool"]=>Issue(claim=c1);'.**Parser error: 'POLICY0029: Entrada inesperada.*  
+   O numeral **1** neste exemplo não é um token válido no idioma, e tal uso não é permitido em uma condição de correspondência. Ele deve ser colocado entre aspas duplas para torná-lo em uma cadeia de caracteres.   
+   **Mensagem de erro:**  
+   *POLICY0002: Não foi possível analisar os dados de política.*  
+   *Número da linha: 1, número de coluna: 23, token de erro: 1. Line: 'c1:[type=="x1", value==1, valuetype=="bool"]=>Issue(claim=c1);'.* <em>Parser error: 'POLICY0029: Entrada inesperada.</em>  
   
-5.  Exemplo:  
+5. Exemplo:  
   
-    ```  
-    c1:[type == "x1", value == "1", valuetype == "boolean"] =>   
+   ```  
+   c1:[type == "x1", value == "1", valuetype == "boolean"] =>   
   
-         Issue(type = c1.type, value="0", valuetype == "boolean");  
-    ```  
+        Issue(type = c1.type, value="0", valuetype == "boolean");  
+   ```  
   
-    Este exemplo usou um sinal de igualdade duplo (= =), em vez de um único sinal de igual (=).   
-    **Mensagem de erro:**  
-    *POLICY0002: Não foi possível analisar os dados de política.*  
-    *Número da linha: 1, número de coluna: 91, token de erro: = =. Line: 'c1:[type=="x1", value=="1",*  
-    *valuetype=="boolean"]=>Issue(type=c1.type, value="0", valuetype=="boolean");'.*  
-    *Erro do analisador: 'POLICY0030: Erro de sintaxe, inesperado '= =', esperando um dos seguintes: '='*  
+   Este exemplo usou um sinal de igualdade duplo (= =), em vez de um único sinal de igual (=).   
+   **Mensagem de erro:**  
+   *POLICY0002: Não foi possível analisar os dados de política.*  
+   *Número da linha: 1, número de coluna: 91, token de erro: = =. Line: 'c1:[type=="x1", value=="1",*  
+   *valuetype=="boolean"]=>Issue(type=c1.type, value="0", valuetype=="boolean");'.*  
+   *Erro do analisador: 'POLICY0030: Erro de sintaxe, inesperado '= =', esperando um dos seguintes: '='*  
   
-6.  Exemplo:  
+6. Exemplo:  
   
-    ```  
-    c1:[type=="x1", value=="boolean", valuetype=="string"] =>   
+   ```  
+   c1:[type=="x1", value=="boolean", valuetype=="string"] =>   
   
-          Issue(type=c1.type, value=c1.value, valuetype = "string");  
-    ```  
+         Issue(type=c1.type, value=c1.value, valuetype = "string");  
+   ```  
   
-    Este exemplo é sintaticamente e semanticamente correto. No entanto, usando "boolean" como um valor de cadeia de caracteres é associado a causar confusão, e ele deve ser evitado. Como mencionado anteriormente, usando os terminais de linguagem como valores de declarações devem ser evitados sempre que possível.  
+   Este exemplo é sintaticamente e semanticamente correto. No entanto, usando "boolean" como um valor de cadeia de caracteres é associado a causar confusão, e ele deve ser evitado. Como mencionado anteriormente, usando os terminais de linguagem como valores de declarações devem ser evitados sempre que possível.  
   
 ## <a name="BKMK_LT"></a>Terminais de idioma  
 A tabela a seguir lista o conjunto completo de cadeias de caracteres terminal e os terminais de idiomas associados que são usados na linguagem de regras de transformação de declarações. Essas definições usem cadeias de caracteres UTF-16 diferencia maiusculas de minúsculas.  

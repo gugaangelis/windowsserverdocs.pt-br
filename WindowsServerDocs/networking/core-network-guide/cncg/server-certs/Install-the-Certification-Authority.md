@@ -8,12 +8,12 @@ ms.prod: windows-server-threshold
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 84e4b2fe0b59820b9e51229335f3539bcbeeec90
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1774d235703bd75d810f2649cb8ed3f2f92622d5
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860737"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811600"
 ---
 # <a name="install-the-certification-authority"></a>Instalar a autoridade de certificação
 
@@ -38,8 +38,8 @@ A associação aos grupos **Administradores de Empresa** e **Admins. do Domínio
   
 ### <a name="to-install-active-directory-certificate-services"></a>Para instalar os Serviços de Certificados do Active Directory  
 
->[!TIP]
->Se você quiser usar o Windows PowerShell para instalar os serviços de certificados do Active Directory, consulte [Install-AdcsCertificationAuthority](https://docs.microsoft.com/powershell/module/adcsdeployment/install-adcscertificationauthority?view=win10-ps) para cmdlets e parâmetros opcionais.
+> [!TIP]
+> Se você quiser usar o Windows PowerShell para instalar os serviços de certificados do Active Directory, consulte [Install-AdcsCertificationAuthority](https://docs.microsoft.com/powershell/module/adcsdeployment/install-adcscertificationauthority?view=win10-ps) para cmdlets e parâmetros opcionais.
   
 1.  Faça logon como membro do grupo Administradores de Empresa e do grupo Admins. do Domínio do domínio raiz.  
   

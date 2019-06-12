@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 4/26/2019
 ms.assetid: e9b18e14-e692-458a-a39f-d5b569ae76c5
-ms.openlocfilehash: e8b437a1a4ba3e5c10d6709e23efb306a077a21b
-ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
+ms.openlocfilehash: 1897b57e1f4cf05d222732278835483791f1109b
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64773538"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812650"
 ---
 # <a name="storage-replica-overview"></a>Visão geral da Réplica de Armazenamento
 
@@ -85,31 +85,31 @@ O **Cluster Estendido** permite a configuração de computadores e o armazenamen
 
 A réplica de armazenamento inclui os seguintes recursos:  
 
-|Recurso|Detalhes|  
-|-----------|-----------|  
-|Tipo|Baseado em host|  
-|Síncrono|Sim|  
-|Assíncrono|Sim|  
-|Independente de hardware de armazenamento|Sim|  
-|Unidade de replicação|Volume (partição)|  
-|Windows Server alongar a criação do cluster|Sim|  
-|Replicação de servidor para servidor|Sim|  
-|Replicação de cluster para cluster|Sim|  
-|Transporte|SMB3|  
-|Rede|TCP/IP ou RDMA|
-|Suporte a restrição de rede|Sim|  
-|RDMA*|iWARP, InfiniBand, RoCE v2|  
-|Requisitos de firewall de porta de rede de replicação|Porta IANA única (TCP 445 ou 5445)|  
-|Multicaminhos/multicanal|Sim (SMB3)|  
-|Suporte a Kerberos|Sim (SMB3)|  
-|Criptografia e assinatura durante a transmissão|Sim (SMB3)|  
-|Failovers por volume permitidos|Sim|
-|Suporte ao armazenamento com provisionamento dinâmico|Sim|
-|Interface do usuário de gerenciamento pronta para uso|PowerShell, Gerenciador de Cluster de Failover|  
+| Recurso | Detalhes |
+| ----------- | ----------- |  
+| Tipo | Baseado em host |
+| Síncrono | Sim |
+| Assíncrono | Sim |
+| Independente de hardware de armazenamento | Sim |
+| Unidade de replicação | Volume (partição) |
+| Windows Server alongar a criação do cluster | Sim |
+| Replicação de servidor para servidor | Sim |
+| Replicação de cluster para cluster | Sim |
+| Transporte | SMB3 |
+| Rede | TCP/IP ou RDMA |
+| Suporte a restrição de rede | Sim |
+| RDMA* | iWARP, InfiniBand, RoCE v2 |
+| Requisitos de firewall de porta de rede de replicação | Porta IANA única (TCP 445 ou 5445) |
+| Multicaminhos/multicanal | Sim (SMB3) |
+| Suporte a Kerberos | Sim (SMB3) |
+| Criptografia e assinatura durante a transmissão|Sim (SMB3) |
+| Failovers por volume permitidos | Sim |
+| Suporte ao armazenamento com provisionamento dinâmico | Sim |
+| Interface do usuário de gerenciamento pronta para uso | PowerShell, Gerenciador de Cluster de Failover |
 
 *Pode exigir equipamento e cabeamento de longa distância adicionais.  
 
-## <a name="BKMK_SR3"></a> Pré-requisitos de réplica de armazenamento  
+## <a name="BKMK_SR3"></a> Pré-requisitos de réplica de armazenamento
 
 * Floresta de Active Directory Domain Services.
 * Espaços de Armazenamento com JBODs de SAS, Espaços de Armazenamento Diretos, fibre channel de SAN, VHDX compartilhado, iSCSI de destino ou armazenamento SCSI/SAS/SATA local. SSD ou mais rápido recomendado para unidades de log de replicação. A Microsoft recomenda que o armazenamento de log seja mais rápido do que o armazenamento de dados. Volumes de log nunca devem ser usados para outras cargas de trabalho.
@@ -122,33 +122,37 @@ A réplica de armazenamento inclui os seguintes recursos:
   * A réplica de armazenamento replica um único volume em vez de um número ilimitado de volumes.
   * Volumes podem ter um tamanho de até 2 TB, em vez de um tamanho ilimitado.
 
-##  <a name="BKMK_SR4"> </a> Em segundo plano  
+##  <a name="BKMK_SR4"> </a> Em segundo plano
+
 Esta seção inclui informações sobre termos de alto nível do setor, replicação síncrona e assíncrona e comportamentos importantes.
 
-### <a name="high-level-industry-terms"></a>Termos de alto nível do setor  
+### <a name="high-level-industry-terms"></a>Termos de alto nível do setor
+
 RD (Recuperação de Desastre) refere-se a um plano de contingência para recuperação de catástrofes do local para que a empresa continue a operar. RD de dados significa várias cópias dos dados de produção em um local físico separado. Por exemplo, um cluster estendido, em que metade dos nós está em um site e metade está em outro. PD (Preparação para Desastre) refere-se a um plano de contingência para mover cargas de trabalho de forma preventiva para um local diferente antes de um desastre iminente, como um furacão.  
 
 SLAs (contratos de nível de serviço) definem a disponibilidade de aplicativos de uma empresa e sua tolerância de tempo de inatividade e perda de dados durante interrupções planejadas e não planejadas. RTO (objetivo de tempo de recuperação) define por quanto tempo a empresa pode tolerar a total falta de acesso aos dados. RPO (objetivo de ponto de recuperação) define a quantidade de dados perdidos com a qual a empresa pode arcar.  
 
-### <a name="synchronous-replication"></a>Replicação síncrona  
+### <a name="synchronous-replication"></a>Replicação síncrona
+
 A replicação síncrona garante que o aplicativo grave dados em dois locais ao mesmo tempo antes da conclusão da E/S. Essa replicação é mais adequada para dados críticos, pois exige investimentos em armazenamento e rede, bem como um risco de desempenho de aplicativos degradado.  
 
 Quando gravações de aplicativo ocorrem na cópia de dados de origem, o armazenamento de origem não reconhece a E/S imediatamente. Em vez disso, essas alterações de dados são replicadas para a cópia de destino remoto e retornam uma confirmação. Somente então o aplicativo recebe a confirmação de E/S. Isso garante a sincronização constante do local remoto com o local de origem, estendendo de fato o armazenamento de E/S pela rede. Em caso de falha do local de origem, os aplicativos podem fazer failover para o local remoto do site e retomar as operações com a garantia de zero perda de dados.  
 
-|Modo|Diagrama|Etapas|  
-|--------|-----------|---------|  
-|**Síncrona**<br /><br />Zero Perda de dados<br /><br />RPO|![Diagrama que mostra como a Réplica de Armazenamento grava dados em replicação síncrona](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png)|1.  O aplicativo grava dados<br />2.  Dados de log são gravados e os dados são replicados para o local remoto<br />3.  Dados de log são gravados no local remoto<br />4.  Confirmação do local remoto<br />5.  Gravação de aplicativo confirmada<br /><br />t & t1: Dados liberados para o volume, sempre gravar os logs por meio de|  
+| Modo | Diagrama | Etapas |
+| -------- | ----------- | --------- |
+| **Síncrona**<br /><br />Zero Perda de dados<br /><br />RPO | ![Diagrama que mostra como a Réplica de Armazenamento grava dados em replicação síncrona](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.  O aplicativo grava dados<br />2.  Dados de log são gravados e os dados são replicados para o local remoto<br />3.  Dados de log são gravados no local remoto<br />4.  Confirmação do local remoto<br />5.  Gravação de aplicativo confirmada<br /><br />t & t1: Dados liberados para o volume, sempre gravar os logs por meio de |
 
-### <a name="asynchronous-replication"></a>Replicação assíncrona  
+### <a name="asynchronous-replication"></a>Replicação assíncrona
+
 Diferentemente, a replicação assíncrona significa que, quando o aplicativo grava dados, eles são replicados para o local remoto sem garantias de confirmação imediata. Esse modo permite um tempo de resposta mais rápido para o aplicativo, bem como uma solução de recuperação de desastre que funciona geograficamente.  
 
 Quando o aplicativo grava dados, o mecanismo de replicação captura a gravação e imediatamente informa ao aplicativo. Em seguida, os dados capturados são replicados para o local remoto. O nó remoto processa a cópia dos dados e reconhece lentamente para a cópia de origem. Como o desempenho de replicação não está mais no caminho de E/S do aplicativo, a capacidade de resposta e a distância do local remoto são fatores menos importantes. Haverá risco de perda de dados se a fonte de dados for perdida e a cópia de destino dos dados ainda estiver no buffer sem sair da origem.  
 
 Com seu RPO maior que zero, a replicação assíncrona é menos adequada para soluções de alta disponibilidade como Clusters de Failover, pois eles são projetados para operação contínua com redundância e sem perda de dados.  
 
-|Modo|Diagrama|Etapas|  
-|--------|-----------|---------|  
-|**Assíncrono**<br /><br />Perda de dados quase zero<br /><br />(depende de vários fatores)<br /><br />RPO|![Diagrama que mostra como a Réplica de Armazenamento grava dados em replicação assíncrona](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.  O aplicativo grava dados<br />2.  Dados de log gravados<br />3.  Gravação de aplicativo confirmada<br />4.  Dados replicados para o local remoto<br />5.  Dados de log gravados no local remoto<br />6.  Confirmação do local remoto<br /><br />t & t1: Dados liberados para o volume, sempre gravar os logs por meio de|  
+| Modo | Diagrama | Etapas |
+| -------- | ----------- | --------- |
+| **Assíncrono**<br /><br />Perda de dados quase zero<br /><br />(depende de vários fatores)<br /><br />RPO | ![Diagrama que mostra como a Réplica de Armazenamento grava dados em replicação assíncrona](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.  O aplicativo grava dados<br />2.  Dados de log gravados<br />3.  Gravação de aplicativo confirmada<br />4.  Dados replicados para o local remoto<br />5.  Dados de log gravados no local remoto<br />6.  Confirmação do local remoto<br /><br />t & t1: Dados liberados para o volume, sempre gravar os logs por meio de |
 
 ### <a name="key-evaluation-points-and-behaviors"></a>Pontos principais de avaliação e comportamentos  
 
@@ -156,7 +160,7 @@ Com seu RPO maior que zero, a replicação assíncrona é menos adequada para so
 
 -   O volume de destino não está acessível durante a replicação no Windows Server 2016. Quando você configura a replicação, o volume de destino é desmontado, tornando-o inacessível para quaisquer leituras ou gravações realizadas por usuários. Sua letra de driver pode estar visível em interfaces típicas, como o Explorador de Arquivos, mas um aplicativo não pode acessar o volume em si. Tecnologias de replicação em nível de bloco são incompatíveis com a permissão de acesso ao sistema de arquivos montado no destino em um volume. NTFS e ReFS não dão suporte à gravação de dados por usuários no volume enquanto os blocos são alterados abaixo deles. 
 
-No Windows Server 2019 (e Windows Server, versão 1709) a **Failover de teste** cmdlet foi adicionado. Agora dá suporte à montagem temporariamente um instantâneo de leitura / gravação do volume de destino para backups, teste, etc. Consulte https://aka.ms/srfaq para obter mais informações.
+O **Failover de teste** cmdlet estreou no Windows Server, versão 1709 e também foi incluído no Windows Server 2019. Agora dá suporte à montagem temporariamente um instantâneo de leitura / gravação do volume de destino para backups, teste, etc. Consulte https://aka.ms/srfaq para obter mais informações.
 
 -   A implementação da replicação assíncrona pela Microsoft é diferente da maioria. A maioria das implementações do setor de replicação assíncrona conta com replicação baseada em instantâneos, em que transferências diferenciais periódicas se movem para outro nó e realizam a mesclagem. A replicação assíncrona da Réplica de Armazenamento funciona como a replicação síncrona, com a exceção de que elimina a necessidade de confirmação síncrona serializada do destino. Isso significa que, teoricamente, a Réplica de Armazenamento tem um RPO mais baixo, pois realiza a replicação continuamente. No entanto, isso também significa que depende de garantias de consistência interna do aplicativo, em vez de usar instantâneos para forçar a consistência em arquivos de aplicativos. A Réplica de Armazenamento garante a consistência de falhas em todos os modos de replicação  
 
@@ -185,6 +189,7 @@ Frequentemente, este guia usa os seguintes termos:
 Para obter uma lista dos novos recursos na réplica de armazenamento no Windows Server 2019, consulte [o que há de novo no armazenamento](../whats-new-in-storage.md#storage-replica2019)
 
 ## <a name="see-also"></a>Consulte também
+
 - [Replicação de Cluster estendido usando armazenamento compartilhado](stretch-cluster-replication-using-shared-storage.md)  
 - [Replicação de armazenamento de servidor para servidor](server-to-server-storage-replication.md)  
 - [Replicação de armazenamento de Cluster para cluster](cluster-to-cluster-storage-replication.md)  

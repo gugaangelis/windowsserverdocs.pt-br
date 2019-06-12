@@ -14,20 +14,20 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ec1b0a17c578f2d8ac55d1704af6b267b6bb8e5c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: e6f91aa02cd0f19d480c24309be5797c273b0f2e
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865927"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66804955"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>Perguntas frequentes sobre os clientes de área de trabalho remota
 
->Aplica-se a: Windows 10, Windows 8.1, Windows Server 2012 R2, Windows Server 2016
+>Aplica-se a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
 
 Agora que você configurou o cliente de área de trabalho remota em seu dispositivo (Android, Mac, iOS ou Windows), você pode ter dúvidas. Aqui estão as respostas às perguntas mais frequentes sobre os clientes de área de trabalho remota. 
 
-- [Como configurar](#Setting-up)
+- [Como configurar](#setting-up)
 - [Conexões de gateway e redes](#connection-gateway-and-networks)
 - [cliente Web](#web-client)
 - [Monitores, áudio e mouse](#monitors-audio-and-mouse)
@@ -81,18 +81,20 @@ Aqui estão algumas possíveis soluções para problemas comuns que pode ocorrer
 - **Há um problema com a rede.** Verifique se que você tem conexão de internet. 
 - **A porta de área de trabalho remota pode ser bloqueada por um firewall.** Se você estiver usando o Firewall do Windows, siga estas etapas:
 
-   1. Abra o Firewall do Windows. 
-   2. Clique em **permitir um aplicativo ou recurso pelo Firewall do Windows**. 
-   3. Clique em **alterar configurações**. Você pode ser solicitado para uma senha de administrador ou para confirmar sua escolha.
-   4. Sob **aplicativos e recursos permitidos**, selecione **área de trabalho remota**e, em seguida, toque ou clique em **Okey**.
+  1. Abra o Firewall do Windows. 
+  2. Clique em **permitir um aplicativo ou recurso pelo Firewall do Windows**. 
+  3. Clique em **alterar configurações**. Você pode ser solicitado para uma senha de administrador ou para confirmar sua escolha.
+  4. Sob **aplicativos e recursos permitidos**, selecione **área de trabalho remota**e, em seguida, toque ou clique em **Okey**.
 
-   Se você estiver usando um firewall diferente, verifique se que a porta para a área de trabalho remota (normalmente 3389) é aberta.
+     Se você estiver usando um firewall diferente, verifique se que a porta para a área de trabalho remota (normalmente 3389) é aberta.
 - **Conexões remotas não podem ser configuradas no PC remoto.** Para corrigir esse problema, role para cima até [como para configurar um computador para a área de trabalho remota?](#how-do-i-set-up-a-pc-for-remote-desktop) pergunta neste tópico.
 - **PC remoto pode permitir apenas PCs conectar-se com a configuração de autenticação de nível de rede.** 
 - **O computador remoto pode ter sido desligado.** Você não pode se conectar a um computador que está desligado, suspensão ou hibernação, portanto, verifique se as configurações de suspensão e hibernação no PC remoto estiverem definida como **nunca** (hibernação não está disponível em todos os computadores.).
 
 ### <a name="why-cant-i-find-or-connect-to-my-pc"></a>Por que não é possível localizar ou se conectar ao meu PC?
+
 Verifique o seguinte:
+
 - É o PC e ativo?
 - Você inseriu o nome correto ou o endereço IP?
 
@@ -105,9 +107,11 @@ Verifique o seguinte:
    > Não há suporte para Windows XP Home, Windows Media Center Edition, Windows Vista Home e Windows 7 Home ou Starter sem 3ª software de terceiros.
 
 ### <a name="why-cant-i-sign-in-to-a-remote-pc"></a>Por que não posso entrar em um computador remoto?
+
 Se você pode ver a tela de logon do computador remoto, mas não conseguir entrar, você talvez não foram adicionados ao grupo de usuários da área de trabalho remota ou a qualquer grupo com direitos de administrador no PC remoto. Peça ao seu administrador de sistema para fazer isso para você.
 
 ### <a name="which-connection-methods-are-supported-for-company-networks"></a>Quais métodos de conexão têm suporte para redes da empresa?
+
 Se você quiser acessar sua área de trabalho office de fora da rede da empresa, sua empresa deve fornecem um meio de acesso remoto. O cliente de área de trabalho remota atualmente suporta o seguinte:
 
 - Gateway de servidor de terminal ou Gateway de área de trabalho remota
@@ -124,9 +128,11 @@ Outros itens a serem verificados:
 - **VPN está configurado incorretamente.** Um servidor VPN configurado incorretamente pode ser o motivo por que as conexões VPN nunca funcionou ou parou de funcionar após algum tempo. Certifique-se de testar com o iOS navegador da web do dispositivo ou um PC ou Mac na mesma rede, se isso acontecer.
 
 ### <a name="how-can-i-test-if-vpn-is-working-properly"></a>Como testar se a VPN está funcionando corretamente?
+
 Verifique se que a VPN estiver habilitada em seu dispositivo. Você pode testar sua conexão VPN indo para uma página da Web em sua rede interna ou usando um serviço web que só está disponível por meio da VPN.
 
 ### <a name="how-do-i-configure-l2tp-or-pptp-vpn-connections"></a>Como fazer para configurar conexões VPN de PPTP ou L2TP?
+
 Se você estiver usando o PPTP ou L2TP em sua VPN, certifique-se de definir **enviar todo o tráfego** à **ON** na configuração de VPN.
 
 ## <a name="web-client"></a>cliente Web
@@ -141,11 +147,11 @@ O cliente web dá suporte a Windows, macOS, Linux e ChromeOS. Não há suporte p
 
 ### <a name="can-i-use-the-web-client-in-a-remote-desktop-deployment-without-a-gateway"></a>Pode usar o cliente da web em uma implantação de área de trabalho remota sem um gateway?
 
-Nenhum. O cliente requer um Gateway de área de trabalho remota para se conectar. Não sabe o que isso significa? Peça ao seu administrador sobre ele.
+Não. O cliente requer um Gateway de área de trabalho remota para se conectar. Não sabe o que isso significa? Peça ao seu administrador sobre ele.
 
 ### <a name="does-the-remote-desktop-web-client-replace-the-remote-desktop-web-access-page"></a>O cliente da web de área de trabalho remota substitui a página de acesso remoto via Web da área de trabalho?
 
-Nenhum. O cliente da web de área de trabalho remota é hospedado em um URL diferente que a página de acesso remoto via Web da área de trabalho. Você pode usar o cliente da web ou a página de acesso via Web para exibir os recursos remotos em um navegador.
+Não. O cliente da web de área de trabalho remota é hospedado em um URL diferente que a página de acesso remoto via Web da área de trabalho. Você pode usar o cliente da web ou a página de acesso via Web para exibir os recursos remotos em um navegador.
 
 ### <a name="can-i-embed-the-web-client-in-another-web-page"></a>Pode inserir o cliente da web em outra página da web?
 

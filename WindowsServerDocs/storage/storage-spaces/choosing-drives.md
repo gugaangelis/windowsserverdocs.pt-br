@@ -9,16 +9,16 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 227906685d77c31587c66d1c292f20ca94775058
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d16a9ddea96760b41c6cd2e4239b9bb51c8b3b38
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881047"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501636"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>Escolher unidades para Espaços de Armazenamento Diretos
 
->Aplica-se a: Windows Server 2016
+>Aplica-se a: Windows 2019, Windows Server 2016
 
 Este tópico fornece diretrizes sobre como escolher unidades para [Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md) para atender às suas necessidades de desempenho e capacidade.
 
@@ -116,7 +116,7 @@ O cache deve ser dimensionado para acomodar o conjunto de trabalho de seus aplic
 
 É recomendável limitar a capacidade de armazenamento total por servidor a aproximadamente 100 TB. Quanto maior a capacidade de armazenamento por servidor, mais tempo é necessário para ressincronizar os dados após a inatividade ou reinicialização, como na aplicação de atualizações de software.
 
-O tamanho máximo atual por pool de armazenamento é de 1 PB (1.000 TB).
+O tamanho máximo atual por pool de armazenamento é 4 petabytes (PB) (4.000 TB) para Windows Server 2019 ou 1 petabyte para Windows Server 2016.
 
 ## <a name="see-also"></a>Consulte também
 
@@ -124,4 +124,4 @@ O tamanho máximo atual por pool de armazenamento é de 1 PB (1.000 TB).
 - [Entender o cache em espaços de armazenamento diretos](understand-the-cache.md)
 - [Requisitos de hardware de espaços diretos de armazenamento](storage-spaces-direct-hardware-requirements.md)
 - [Planejando volumes em espaços de armazenamento diretos](plan-volumes.md)
-- [Eficiência de armazenamento e a tolerância a falhas](storage-spaces-fault-tolerance.md)
+- [Tolerância a falhas e eficiência de armazenamento](storage-spaces-fault-tolerance.md)

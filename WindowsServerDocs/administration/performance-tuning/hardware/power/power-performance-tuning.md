@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: Qizha;TristanB
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 91bc02e5edbdfbbbf3ccf600f3536a783e49eb79
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 4ad58e9b477f61844dedd9f6638efb12f1a96500
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814907"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811569"
 ---
 # <a name="power-and-performance-tuning"></a>Energia e ajuste de desempenho
 
@@ -60,7 +60,7 @@ Você precisa compreender totalmente os requisitos de carga de trabalho para esc
 
 **PowerCfg.exe** dá suporte a uma opção de linha de comando que você pode usar para analisar a eficiência de energia ociosa do seu servidor. Quando você executa PowerCfg.exe com o **/energy** opção, a ferramenta executa um teste de 60 segundos para detectar problemas de eficiência de energia potencial. A ferramenta gera um relatório HTML simples no diretório atual.
 
->[!Important]
+> [!Important]
 > Para garantir uma análise precisa, certifique-se de que todos os aplicativos locais estão fechados antes de executar **PowerCfg.exe**. 
 
 Reduzido a taxas de tique do temporizador, drivers que falta suporte ao gerenciamento de energia e utilização excessiva da CPU são alguns dos problemas de comportamento que são detectados pelo **/energy powercfg** comando. Essa ferramenta fornece uma maneira simples de identificar e corrigir problemas de gerenciamento de energia, possivelmente resultando em economia de custo significativa em um datacenter grande.
@@ -74,7 +74,7 @@ Windows Server 2016 tem três planos de energia internos, projetados para atende
 | **Plano** | **Descrição** | **Cenários aplicáveis comuns** | **Destaques da implementação** |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Balanceamento (recomendado) | Configuração padrão. Eficiência de energia bons destinos com impacto mínimo no desempenho. | Geral de computação | Corresponde a capacidade à demanda. Recursos de economia de energia equilibrar o desempenho e energia. |
-| Alto desempenho | Aumenta o desempenho às custas de consumo de energia alta. Energia e térmicas limitações, considerações sobre a confiabilidade e despesas operacionais se aplicam. | Aplicativos de baixa latência e o código do aplicativo que é sensível às alterações de desempenho do processador | Processadores sempre estão bloqueados no estado de desempenho mais alto (incluindo "turbo? frequências). Todos os núcleos são unparked. Saída térmica poderá ser significativa. |
+| Alto desempenho | Aumenta o desempenho às custas de consumo de energia alta. Energia e térmicas limitações, considerações sobre a confiabilidade e despesas operacionais se aplicam. | Aplicativos de baixa latência e o código do aplicativo que é sensível às alterações de desempenho do processador | Processadores sempre estão bloqueados no estado de desempenho mais alto (incluindo frequências "turbo"). Todos os núcleos são unparked. Saída térmica poderá ser significativa. |
 | Economia de energia | Limita o desempenho de economizar energia e reduzir os custos operacionais. Não é recomendável sem um teste completo tornar-se de desempenho é adequado. | Implantações com orçamentos de energia limitado e restrições térmicas | Limita a frequência do processador em uma porcentagem de máximo (se houver suporte) e permite que outros recursos de economia de energia. |
 
 
@@ -82,7 +82,7 @@ Esses planos de energia existem no Windows corrente alternada (AC) e sistemas co
 
 Para obter mais informações sobre planos de energia e configurações de política de energia, consulte [configuração de política de energia e a implantação no Windows](https://msdn.microsoft.com/windows/hardware/gg463243.aspx).
 
->[!Note]
+> [!Note]
 > Alguns fabricantes de servidor têm suas próprias opções de gerenciamento de energia disponíveis por meio das configurações de BIOS. Se o sistema operacional não tem controle sobre o gerenciamento de energia, os planos de energia no Windows a alteração não afetará desempenho e energia do sistema.
 
 ## <a name="tuning-processor-power-management-parameters"></a>Ajuste os parâmetros de gerenciamento de energia do processador
@@ -97,7 +97,7 @@ Tecnologias Intel Turbo Boost e AMD Turbo CORE são recursos que permitem que os
 
 O Turbo está habilitado para planos de energia de alto desempenho em todos os processadores Intel e AMD e ele está desabilitado para planos de energia de economia de energia. Para planos de energia Equilibrado em sistemas que se baseiam no gerenciamento de frequência tradicional baseado em estado de P, Turbo é habilitado por padrão, somente se a plataforma oferece suporte o registro EPB.
 
->[!Note]
+> [!Note]
 > O registro EPB só é suportado no Intel Westmere e processadores mais adiante.
 
 Para os processadores Intel Nehalem e AMD, Turbo está desabilitado por padrão em plataformas com base no estado P. No entanto, se um sistema der suporte ao controle do desempenho de processador colaborativa (CPPC), que é um novo modo alternativo de comunicação de desempenho entre o sistema operacional e o hardware (definido na versão 5.0 do ACPI), Turbo pode ser ativado se a operação do Windows dinamicamente, o sistema solicita o hardware para fornecer os mais altos níveis de desempenho possível.
@@ -106,7 +106,7 @@ Para habilitar ou desabilitar o recurso Turbo Boost, o parâmetro de modo de aum
 
 Para um controle com base no estado P, as opções são desabilitadas, habilitado (Turbo está disponível para o hardware, sempre que for solicitado a desempenho nominal) e eficiente (Turbo está disponível somente se o registro EPB é implementado).
 
-Para um controle com base em CPPC, as opções são desabilitadas, habilitado eficiente (Windows Especifica o valor exato do Turbo para fornecer) e agressivo (Windows perguntará "máximo desempenho? Para habilitar Turbo).
+Para um controle com base em CPPC, as opções são desabilitadas, habilitado eficiente (Windows Especifica o valor exato do Turbo para fornecer) e agressivo (Windows solicita "desempenho máximo" para habilitar Turbo).
 
 No Windows Server 2016, o valor padrão para o modo de aumento é 3.
 
@@ -118,7 +118,7 @@ No Windows Server 2016, o valor padrão para o modo de aumento é 3.
 | 3 (eficiente habilitado) | Eficiente | Eficiente habilitado |
 | 4 (eficiente agressivo) | Eficiente | Agressiva |
 
- 
+ 
 Os comandos a seguir habilitar o modo de aumento de desempenho do processador no plano de energia atual (especificar a política por meio de um alias GUID):
 
 ``` syntax
@@ -126,9 +126,10 @@ Powercfg -setacvalueindex scheme_current sub_processor PERFBOOSTMODE 1
 Powercfg -setactive scheme_current
 ```
 
->[!Important]  Você deve executar o **powercfg - setactive** comando para habilitar as novas configurações. Não é necessário reinicializar o servidor.
+> [!Important]
+> Você deve executar o **powercfg - setactive** comando para habilitar as novas configurações. Não é necessário reinicializar o servidor.
 
-Para definir esse valor para planos de energia que não seja o plano selecionado no momento, você pode usar aliases como esquema\_máximo (economia de energia), o esquema de\_MIN (alto desempenho) e o esquema\_EQUILIBRADO (equilibrado) no lugar do esquema\_Atual. Substituir "esquema atual? nos comandos - setactive powercfg mostrados anteriormente com o alias desejado para habilitar esse plano de energia.
+Para definir esse valor para planos de energia que não seja o plano selecionado no momento, você pode usar aliases como esquema\_máximo (economia de energia), o esquema de\_MIN (alto desempenho) e o esquema\_EQUILIBRADO (equilibrado) no lugar do esquema\_Atual. Substitua "esquema atual" nos comandos powercfg - setactive mostrada anteriormente com o alias desejado para habilitar esse plano de energia.
 
 Por exemplo ajustar o modo de aumento no plano de economia de energia e fazer essa economia de energia é o plano atual, execute os seguintes comandos:
 
@@ -157,7 +158,7 @@ Powercfg -setacvalueindex scheme_current sub_processor PROCTHROTTLEMAX 75
 Powercfg -setactive scheme_current
 ```
 
->[!Note]
+> [!Note]
 > Limitar o desempenho do processador em uma porcentagem de máximo requer suporte do processador. Consulte a documentação do processador para determinar se esse suporte existe, ou exibir o contador de desempenho do sistema **% de frequência máxima** na **processador** grupo para ver se qualquer caps frequência foram aplicado.
 
 ## <a name="processor-performance-increase-and-decrease-of-thresholds-and-policies"></a>Desempenho do processador aumentam e diminuem de limites e políticas
@@ -168,9 +169,9 @@ A velocidade na qual um estado de desempenho do processador aumenta ou diminui �
 
 -   **Limite de diminuir o desempenho do processador** define o valor da utilização abaixo que diminuirá o estado de desempenho do processador. Valores maiores aumentam a taxa de redução para o estado de desempenho durante períodos ociosos.
 
--   **Política de aumentar o desempenho de processador e diminuir o desempenho do processador** política determinar qual estado de desempenho deve ser definido quando ocorre uma alteração. "Único? diretiva significa que ele escolhe o próximo estado. "Rocket? significa que o estado de desempenho de energia máximo ou mínimo. "Ideal? tenta encontrar um equilíbrio entre desempenho e energia.
+-   **Política de aumentar o desempenho de processador e diminuir o desempenho do processador** política determinar qual estado de desempenho deve ser definido quando ocorre uma alteração. Política de "Única" significa que ele escolhe o próximo estado. "Rocket" significa que o estado de desempenho de energia máximo ou mínimo. "Ideal" tenta encontrar um equilíbrio entre desempenho e energia.
 
-Por exemplo, se o servidor exigir latência extremamente baixa, apesar de desejarem ainda se beneficiar de baixo consumo de energia durante períodos ociosos, poderia quicken o aumento de estado de desempenho para qualquer aumento de carga e lenta a diminuição quando carga fica inativo. Os comandos a seguir definem a diretiva de aumento como "Rocket? para um estado mais rápido, aumentar e definir a política de diminuição para "único?. Os limites de aumento e diminuição são definidos como 10 e 8, respectivamente.
+Por exemplo, se o servidor exigir latência extremamente baixa, apesar de desejarem ainda se beneficiar de baixo consumo de energia durante períodos ociosos, poderia quicken o aumento de estado de desempenho para qualquer aumento de carga e lenta a diminuição quando carga fica inativo. Os comandos a seguir definir a política de aumento como "Rocket" para um aumento de estado mais rápido e definir a política de diminuição para "Único". Os limites de aumento e diminuição são definidos como 10 e 8, respectivamente.
 
 ``` syntax
 Powercfg.exe -setacvalueindex scheme_current sub_processor PERFINCPOL 2
@@ -221,6 +222,6 @@ Powercfg -setactive scheme_current
 
 ## <a name="see-also"></a>Consulte também
 - [Considerações de desempenho de Hardware do servidor](../index.md)
-- [Considerações de energia de Hardware do servidor](../power.md)
-- [Ajuste de gerenciamento de energia do processador](processor-power-management-tuning.md)
-- [Parâmetros de plano com balanceamento de recomendado](recommended-balanced-plan-parameters.md)
+- [Server Hardware Power Considerations](../power.md) (Considerações de energia de hardware do servidor)
+- [Processor Power Management Tuning](processor-power-management-tuning.md) (Ajuste de gerenciamento de energia do processador)
+- [Parâmetros de plano balanceado recomendados](recommended-balanced-plan-parameters.md)

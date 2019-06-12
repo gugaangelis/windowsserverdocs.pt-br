@@ -12,12 +12,12 @@ ms.assetid: 95a9f593-fad7-4335-bd4d-c7bb8c033efb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 37d59d500a2de1e2b98c848e7484ae13639d09b7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: c0357c1a2dc0bebee11355d1e2d1faa2dc80d06a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890717"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433295"
 ---
 # <a name="manage-online-backup-in-windows-server-essentials"></a>Gerenciar backup online no Windows Server Essentials
 
@@ -25,23 +25,23 @@ ms.locfileid: "59890717"
   
  Após você integrar com o Backup do Microsoft Azure, o **Backup Online** página de gerenciamento é exibida no painel do Windows Server Essentials. A página **Backup Online** torna possível realizar tarefas administrativas comuns. Os recursos na página de Backup Online incluem:  
   
--   As seguintes páginas subseção:  
+- As seguintes páginas subseção:  
   
-    -   **Backup Online** Depois de registrar o servidor para backup online, esta seção exibe o status atual de backup, status de armazenamento e informações da conta.  
+  -   **Backup Online** Depois de registrar o servidor para backup online, esta seção exibe o status atual de backup, status de armazenamento e informações da conta.  
   
-    -   **Pastas protegidas** esta seção lista todas as pastas compartilhadas e todas as pastas de histórico de arquivos no servidor e qualquer outra pasta que você optou por fazer backup no Azure. A lista inclui o nome de pasta, o caminho da pasta e o status para cada pasta compartilhada.  
+  -   **Pastas protegidas** esta seção lista todas as pastas compartilhadas e todas as pastas de histórico de arquivos no servidor e qualquer outra pasta que você optou por fazer backup no Azure. A lista inclui o nome de pasta, o caminho da pasta e o status para cada pasta compartilhada.  
   
-    -   **Histórico de backups** Esta seção exibe uma lista de backups online recentes. A lista inclui o tipo de operação, o tempo e o status de cada backup.  
+  -   **Histórico de backups** Esta seção exibe uma lista de backups online recentes. A lista inclui o tipo de operação, o tempo e o status de cada backup.  
   
--   Um painel de detalhes com informações adicionais sobre um trabalho de backup ou de restauração selecionado.  
+- Um painel de detalhes com informações adicionais sobre um trabalho de backup ou de restauração selecionado.  
   
--   Um painel de tarefas que inclui um conjunto de tarefas administrativas que você pode executar.  
+- Um painel de tarefas que inclui um conjunto de tarefas administrativas que você pode executar.  
   
- Como prática recomendada, você deve fazer backup dos dados de negócios e de usuário mais importantes. Por exemplo, você deve fazer backup de pastas do servidor que contêm arquivos de dados críticos. Você também deve fazer backup do Histórico de Arquivos para os computadores da rede que contêm informações críticas.  
+  Como prática recomendada, você deve fazer backup dos dados de negócios e de usuário mais importantes. Por exemplo, você deve fazer backup de pastas do servidor que contêm arquivos de dados críticos. Você também deve fazer backup do Histórico de Arquivos para os computadores da rede que contêm informações críticas.  
   
- Ao decidir em quais dados você fará o backup online, considere a frequência de backup e a política de retenção que você deseja implantar. Em seguida, examine seu orçamento e determine a quantidade de espaço de armazenamento que você precisa ter. Equilibre o custo e o volume de armazenamento em relação às suas necessidades e, em seguida, configure o backup online para proteger a maior quantidade de dados importantes possível. Para informações sobre preço, consulte [detalhes de preços de backup do Microsoft Azure](https://azure.microsoft.com/pricing/details/backup/).  
+  Ao decidir em quais dados você fará o backup online, considere a frequência de backup e a política de retenção que você deseja implantar. Em seguida, examine seu orçamento e determine a quantidade de espaço de armazenamento que você precisa ter. Equilibre o custo e o volume de armazenamento em relação às suas necessidades e, em seguida, configure o backup online para proteger a maior quantidade de dados importantes possível. Para informações sobre preço, consulte [detalhes de preços de backup do Microsoft Azure](https://azure.microsoft.com/pricing/details/backup/).  
   
- As seções a seguir descrevem várias tarefas de backup online que podem aparecer no Painel do Windows Server Essentials.  
+  As seções a seguir descrevem várias tarefas de backup online que podem aparecer no Painel do Windows Server Essentials.  
   
 ## <a name="online-backup-tasks-in-the-dashboard"></a>Tarefas de backup online no Painel  
   
@@ -65,41 +65,41 @@ ms.locfileid: "59890717"
   
 ##### <a name="to-upload-a-certificate-to-use-with-the-azure-backup-service"></a>Para fazer upload de um certificado para uso com o Serviço de Backup do Azure  
   
-1.  Faça logon no Painel do Windows Server Essentials com uma conta de administrador.  
+1. Faça logon no Painel do Windows Server Essentials com uma conta de administrador.  
   
-2.  No página de **Início** do Painel, clique em **BACKUP ONLINE**.  
+2. No página de **Início** do Painel, clique em **BACKUP ONLINE**.  
   
-3.  Na área **BACKUP ONLINE**, clique em **Fazer upload do certificado ao Cofre do Windows Azure Backup**.  
+3. Na área **BACKUP ONLINE**, clique em **Fazer upload do certificado ao Cofre do Windows Azure Backup**.  
   
-     Que é aberta **serviços de recuperação** no Portal de gerenciamento do Azure. Se você são inválidas t tiver entrado Azure, você precisará entrar usando sua conta da Microsoft.  
+    Que é aberta **serviços de recuperação** no Portal de gerenciamento do Azure. Se você não tiver entrado Azure, você precisará entrar usando sua conta da Microsoft.  
   
-4.  Clique no nome do cofre de backup que você usará para backups online para abrir a página **Início Rápido** do Cofre de backup.  
+4. Clique no nome do cofre de backup que você usará para backups online para abrir a página **Início Rápido** do Cofre de backup.  
   
-5.  Clique em **Gerenciar Certificado**.  
+5. Clique em **Gerenciar Certificado**.  
   
-6.  Na caixa de diálogo **Gerenciar Certificado** , cole o caminho do certificado público gerado pelo Windows Server Essentials. Para obter o caminho do certificado público, faça o seguinte:  
+6. Na caixa de diálogo **Gerenciar Certificado** , cole o caminho do certificado público gerado pelo Windows Server Essentials. Para obter o caminho do certificado público, faça o seguinte:  
   
-    1.  No Painel do Windows Server Essentials, clique na guia **Backup Online** .  
+   1.  No Painel do Windows Server Essentials, clique na guia **Backup Online** .  
   
-    2.  Na página **Backup Online** , copie o caminho do certificado gerado.  
+   2.  Na página **Backup Online** , copie o caminho do certificado gerado.  
   
-    3.  Alterne para o Portal de gerenciamento e, em seguida, na **gerenciar certificado** caixa de diálogo caixa, cole o caminho para carregar o certificado público gerado.  
+   3.  Alterne para o Portal de gerenciamento e, em seguida, na **gerenciar certificado** caixa de diálogo caixa, cole o caminho para carregar o certificado público gerado.  
   
-    > [!NOTE]
-    >  Você também pode usar seu próprio certificado público. Para saber qual certificado é necessário, na página **Início Rápido**, clique no link **Adquirir Certificado**.  
+   > [!NOTE]
+   >  Você também pode usar seu próprio certificado público. Para saber qual certificado é necessário, na página **Início Rápido**, clique no link **Adquirir Certificado**.  
   
-    > [!NOTE]
-    >   Azure requer um certificado x.509 v2 com uma chave pública. Para obter mais informações, consulte [Gerenciar contas online](https://msdn.microsoft.com/library/azure/dn169036.aspx).  
+   > [!NOTE]
+   >   Azure requer um certificado x.509 v2 com uma chave pública. Para obter mais informações, consulte [Gerenciar contas online](https://msdn.microsoft.com/library/azure/dn169036.aspx).  
   
-7.  Depois de selecionar o certificado, clique em **OK** (marca de seleção).  
+7. Depois de selecionar o certificado, clique em **OK** (marca de seleção).  
   
-8.  Você retorna para a página **Início Rápido** . Clique em **Painel**e verifique se o certificado foi carregado com êxito. Depois que o certificado é carregado com êxito, o painel exibe a impressão digital do certificado e a data de vencimento.  
+8. Você retorna para a página **Início Rápido** . Clique em **Painel**e verifique se o certificado foi carregado com êxito. Depois que o certificado é carregado com êxito, o painel exibe a impressão digital do certificado e a data de vencimento.  
   
- Depois de concluir este procedimento, faça o seguinte:  
+   Depois de concluir este procedimento, faça o seguinte:  
   
-1.  Registre o servidor com o serviço de Backup do Azure. Para obter mais informações, veja [Registrar esse servidor para backup](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_5).  
+9. Registre o servidor com o serviço de Backup do Azure. Para obter mais informações, veja [Registrar esse servidor para backup](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_5).  
   
-2.  Configure o backup online do servidor. Para obter mais informações, consulte [Configure online backup](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_2).  
+10. Configure o backup online do servidor. Para obter mais informações, consulte [Configure online backup](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_2).  
   
 ###  <a name="BKMK_2"></a> Configurar o backup online  
  Depois de registrar o servidor com o Backup do Azure, você pode configurar as configurações de backup online no Windows Server Essentials.  
@@ -250,15 +250,15 @@ ms.locfileid: "59890717"
   
 ##### <a name="to-change-the-online-backup-policy"></a>Para alterar a política de backup online  
   
-1.  Faça logon no Painel como administrador.  
+1. Faça logon no Painel como administrador.  
   
-2.  Na barra de navegação, clique em **Backup Online**.  
+2. Na barra de navegação, clique em **Backup Online**.  
   
-3.  No painel **Tarefas de Backup Online** , clique em **Configurar o Backup Online**.  
+3. No painel **Tarefas de Backup Online** , clique em **Configurar o Backup Online**.  
   
-4.  Siga as instruções no Assistente para personalizar a política de backup online.  
+4. Siga as instruções no Assistente para personalizar a política de backup online.  
   
- Para obter mais informações sobre as configurações que você pode personalizar,veja [Configurar o Backup Online](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_2).  
+   Para obter mais informações sobre as configurações que você pode personalizar,veja [Configurar o Backup Online](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_2).  
   
 ###  <a name="BKMK_8"></a> Exibir o uso do armazenamento de backup online  
   
@@ -274,23 +274,23 @@ ms.locfileid: "59890717"
   
 ##### <a name="to-include-a-new-folder-in-the-online-backup-policy"></a>Para incluir uma nova pasta na política de backup online  
   
-1.  Faça logon no Painel como administrador.  
+1. Faça logon no Painel como administrador.  
   
-2.  Na barra de navegação, clique em **Backup Online**.  
+2. Na barra de navegação, clique em **Backup Online**.  
   
-3.  No painel **Tarefas de Backup Online** , clique em **Configurar o Backup Online**.  
+3. No painel **Tarefas de Backup Online** , clique em **Configurar o Backup Online**.  
   
-4.  Na página **Alterar ou Remover a Política de Backup**, clique em **Personalizar a Política de Backup Online**.  
+4. Na página **Alterar ou Remover a Política de Backup**, clique em **Personalizar a Política de Backup Online**.  
   
-5.  Na página **Configurar o Backup Online** , se a pasta que você deseja incluir não aparece na lista, clique em **Adicionar pastas**.  
+5. Na página **Configurar o Backup Online** , se a pasta que você deseja incluir não aparece na lista, clique em **Adicionar pastas**.  
   
-6.  Na janela **Adicionar pastas** , procure e selecione a pasta que você deseja incluir no backup online e em seguida, clique em **OK**.  
+6. Na janela **Adicionar pastas** , procure e selecione a pasta que você deseja incluir no backup online e em seguida, clique em **OK**.  
   
-7.  Na página **Configurar o Backup Online** , selecione outras pastas para incluir conforme desejado e clique em **Avançar**.  
+7. Na página **Configurar o Backup Online** , selecione outras pastas para incluir conforme desejado e clique em **Avançar**.  
   
-8.  Siga as instruções no Assistente para concluir a personalização da política de backup online.  
+8. Siga as instruções no Assistente para concluir a personalização da política de backup online.  
   
- Para obter informações detalhadas sobre outras configurações que você pode personalizar, veja [Configure online backup](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_2).  
+   Para obter informações detalhadas sobre outras configurações que você pode personalizar, veja [Configure online backup](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_2).  
   
 ###  <a name="BKMK_10"></a> Remover ou excluir backups de histórico do arquivo de política de backup online  
   
@@ -336,17 +336,17 @@ ms.locfileid: "59890717"
   
 ##### <a name="to-view-online-backup-alerts-in-the-alert-viewer"></a>Para exibir alertas de backup online no Visualizador de Alertas  
   
-1.  Abra o Painel.  
+1. Abra o Painel.  
   
-2.  Siga um destes procedimentos:  
+2. Siga um destes procedimentos:  
   
-      Windows Server Essentials: No painel de navegação, clique no ícone de alertas \(pode ser crítico, aviso ou informativo\). Isso abre o Visualizador de alertas.  
+     Windows Server Essentials: No painel de navegação, clique no ícone de alertas \(pode ser crítico, aviso ou informativo\). Isso abre o Visualizador de alertas.  
   
-      Windows Server Essentials: Na página de **Início**, clique na guia **Monitoramento de Integridade**.  
+     Windows Server Essentials: Na página de **Início**, clique na guia **Monitoramento de Integridade**.  
   
-3.  Examine a lista de alertas para problemas relacionados ao Backup do Azure.  
+3. Examine a lista de alertas para problemas relacionados ao Backup do Azure.  
   
- Para obter mais informações sobre como usar a guia Visualizador de alertas ou monitoramento de integridade para gerenciar alertas, consulte [Manage System Health](Manage-System-Health-in-Windows-Server-Essentials.md).  
+   Para obter mais informações sobre como usar a guia Visualizador de alertas ou monitoramento de integridade para gerenciar alertas, consulte [Manage System Health](Manage-System-Health-in-Windows-Server-Essentials.md).  
   
 ###  <a name="BKMK_15"></a> Redefinir backup online para as configurações padrão  
  O Windows Server Essentials fornece um assistente que ajuda você a configurar as definições de backup online. Se você deseja restaurar as configurações padrão, execute a tarefa**Configurar o Backup Online** e escolha a opção **Remover a Política de Backup Online**. Em seguida, execute a tarefa **Configurar o Backup Online** novamente. Os dados previamente carregados permanecem inalterados.  
@@ -376,7 +376,7 @@ ms.locfileid: "59890717"
   
      Se você já tiver uma assinatura do Azure, clique em **Portal** no canto superior direito da página da web para ir para o Portal de gerenciamento do Azure.  
   
-5.  Na página do Portal de gerenciamento, você verá **serviços de recuperação** no painel esquerdo. Que s onde você ll gerenciar o backup de cofres que armazenou seus backups online do Windows Server Essentials.  
+5.  Na página do Portal de gerenciamento, você verá **serviços de recuperação** no painel esquerdo. Isso é onde você gerenciará os cofres de backup que armazenam seus backups online do Windows Server Essentials.  
   
 ####  <a name="BKMK_Createabackupvaulttostoreonlinebackups"></a> Criar um cofre de backup para armazenar os backups online  
   
@@ -396,30 +396,30 @@ ms.locfileid: "59890717"
   
 ####  <a name="BKMK_InstalltheWindowsAzureBackupAddIn"></a> Instalar o suplemento Backup do Azure no servidor  
   
-1.  Entre no seu servidor usando uma conta de administrador e execute o arquivo **OnlineBackupAddin.wssx** baixado na etapa anterior.  
+1. Entre no seu servidor usando uma conta de administrador e execute o arquivo **OnlineBackupAddin.wssx** baixado na etapa anterior.  
   
-2.  Os **Termos de Licença de Software** são exibidos. Se você concorda com os termos e condições, clique em **Aceitar** para continuar a instalação.  
+2. Os **Termos de Licença de Software** são exibidos. Se você concorda com os termos e condições, clique em **Aceitar** para continuar a instalação.  
   
-3.  Na página **Instalar o suplemento** , clique em **Instalar o suplemento**.  
+3. Na página **Instalar o suplemento** , clique em **Instalar o suplemento**.  
   
-    > [!NOTE]
-    >  Talvez seja necessário que você reinicie o servidor para instalar os softwares pré-solicitados.  
+   > [!NOTE]
+   >  Talvez seja necessário que você reinicie o servidor para instalar os softwares pré-solicitados.  
   
-     A página de **Instalação** é exibida. Um indicador de progresso exibe quando a instalação começa e mostra o andamento da instalação. Quando a instalação for concluída, você receberá uma mensagem que o suplemento de Backup do Azure foi instalado com êxito.  
+    A página de **Instalação** é exibida. Um indicador de progresso exibe quando a instalação começa e mostra o andamento da instalação. Quando a instalação for concluída, você receberá uma mensagem que o suplemento de Backup do Azure foi instalado com êxito.  
   
-4.  Clique em **concluir**.  
+4. Clique em **concluir**.  
   
-5.  Feche e reabra o Painel.  
+5. Feche e reabra o Painel.  
   
-     Uma nova guia, **Backup Online**, é adicionada ao Painel. Nessa guia, você pode registrar seu servidor, definir configurações de backup e abrir **serviços de recuperação** no Portal de gerenciamento do Azure para gerenciar os cofres de backup de seus servidores.  
+    Uma nova guia, **Backup Online**, é adicionada ao Painel. Nessa guia, você pode registrar seu servidor, definir configurações de backup e abrir **serviços de recuperação** no Portal de gerenciamento do Azure para gerenciar os cofres de backup de seus servidores.  
   
- Depois de concluir essas etapas, faça o seguinte:  
+   Depois de concluir essas etapas, faça o seguinte:  
   
-1.  No Windows Server Essentials, carregar um certificado a ser usado para backups online. Para obter mais informações, consulte [Carregar um certificado no cofre do Microsoft Azure Backup](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_1).  
+6. No Windows Server Essentials, carregar um certificado a ser usado para backups online. Para obter mais informações, consulte [Carregar um certificado no cofre do Microsoft Azure Backup](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_1).  
   
-2.  Registre o servidor com o Cofre de Backup do Azure. Para obter mais informações, veja [Registrar esse servidor para backup](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_5).  
+7. Registre o servidor com o Cofre de Backup do Azure. Para obter mais informações, veja [Registrar esse servidor para backup](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_5).  
   
-3.  Configure o backup online do servidor. Para obter mais informações, consulte [Configure online backup](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_2).  
+8. Configure o backup online do servidor. Para obter mais informações, consulte [Configure online backup](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_2).  
   
 ###  <a name="BKMK_17"></a> Integrar o Backup do Azure com o Windows Server Essentials  
  O módulo de integração de Backup do Microsoft Azure é um novo recurso do Windows Server Essentials que lhe permite criptografar e fazer backup de arquivos e pastas do seu servidor para um sistema de armazenamento hospedado no Azure fornecido pela Microsoft. Usando o Backup do Azure para criptografar e fazer backup de dados no servidor, você pode ajudar a prevenir perdas catastróficas de dados de negócios críticos devido a incêndio, enchente, roubo ou outros desastres. Quando você usa o Backup do Azure para fazer backup de dados do servidor, as informações são criptografadas usando uma senha antes de serem carregado em um datacenter seguro na Internet. Para acessar dados de um backup online, você deve ter um servidor autenticado por um certificado e deve fornecer a senha.  
@@ -446,7 +446,7 @@ ms.locfileid: "59890717"
 |------------|-----------------|  
 |**Nome da pasta:**|O nome da pasta que está incluído no backup online.<br /><br /> Para adicionar ou excluir uma pasta, execute a tarefa **Configurar o Backup Online**.|  
 |**Caminho da pasta:**|O local da pasta.|  
-|**Status:**|Há três tipos de status **Protected**, **não protegido**, e **desconhecido**.|  
+|**Status:**|Há três tipos de status - **Protected**, **não protegido**, e **desconhecido**.|  
   
 ###  <a name="BKMK_19"></a> Histórico de backup online no Windows Server Essentials  
  A subseção **Histórico de Backup** na seção de Backup Online do Painel exibe uma lista de backups online recentes. Você pode usar os backups com êxito para restaurar arquivos e pastas. A tabela a seguir descreve as informações que estão incluídas na lista.  
@@ -455,7 +455,7 @@ ms.locfileid: "59890717"
 |------------|-----------------|  
 |**Operação:**|Há dois tipos de operações - **Backup** e **Restauração**.|  
 |**Tempo:**|Esta é a hora registrada para o status mais recente.|  
-|**Status:**|Há cinco tipos de status **sucesso**, **em andamento**, **cancelado**, **aviso**, e **malsucedido**.|  
+|**Status:**|Há cinco tipos de status - **sucesso**, **em andamento**, **cancelado**, **aviso**, e **malsucedido**.|  
   
 ## <a name="see-also"></a>Consulte também  
   
@@ -465,4 +465,4 @@ ms.locfileid: "59890717"
   
 -   [Gerenciar o Windows Server Essentials](Manage-Windows-Server-Essentials.md)  
   
--   [Usar o Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)
+-   [Utilizar o Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)

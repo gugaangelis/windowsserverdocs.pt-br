@@ -12,12 +12,12 @@ ms.assetid: fd7196ac-cfa6-46a5-ba77-6962b47a825e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 808a4b1e120fa559d603b34ad006b18de6b94378
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 74c40cc0f06d73a922a3d7fb819f7e71b47ac088
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847687"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432959"
 ---
 # <a name="install-windows-server-essentials-in-migration-mode1"></a>Instalar o Windows Server Essentials no modo1 de migração
 
@@ -47,25 +47,25 @@ Você pode ter apenas um servidor em sua rede que está executando o Windows Ser
   
 #### <a name="to-install-windows-server-essentials-on-the-destination-server"></a>Para instalar o Windows Server Essentials no servidor de destino  
   
-1.  Ative o servidor de destino e insira o DVD1 do Windows Server Essentials na unidade de DVD. Se você visualizar uma mensagem perguntando se deseja inicializar a partir de um CD ou DVD, pressione qualquer tecla.  
+1. Ative o servidor de destino e insira o DVD1 do Windows Server Essentials na unidade de DVD. Se você visualizar uma mensagem perguntando se deseja inicializar a partir de um CD ou DVD, pressione qualquer tecla.  
   
-    > [!NOTE]
-    >  Se o servidor de destino der suporte à inicialização a partir de uma unidade flash USB, você pode usar o **ferramenta de Download de USB/DVD do Windows 7** para criar uma unidade Flash USB inicializável do arquivo ISO do Windows Server Essentials. O uso uma unidade flash USB pode acelerar consideravelmente o processo de instalação, pois as unidades flash leem dados muito mais rapidamente do que as unidades de DVD-ROM. Depois de criar uma unidade flash USB inicializável, você pode adicionar um arquivo de resposta para a unidade flash. Você pode [baixar a ferramenta de Download de USB/DVD do Windows 7](https://go.microsoft.com/fwlink/p/?LinkId=248282) gratuitamente no site da Microsoft Store.  
+   > [!NOTE]
+   >  Se o servidor de destino der suporte à inicialização a partir de uma unidade flash USB, você pode usar o **ferramenta de Download de USB/DVD do Windows 7** para criar uma unidade Flash USB inicializável do arquivo ISO do Windows Server Essentials. O uso uma unidade flash USB pode acelerar consideravelmente o processo de instalação, pois as unidades flash leem dados muito mais rapidamente do que as unidades de DVD-ROM. Depois de criar uma unidade flash USB inicializável, você pode adicionar um arquivo de resposta para a unidade flash. Você pode [baixar a ferramenta de Download de USB/DVD do Windows 7](https://go.microsoft.com/fwlink/p/?LinkId=248282) gratuitamente no site da Microsoft Store.  
   
-    > [!NOTE]
-    >  Se o servidor de destino não inicializar do DVD, reinicie o computador e verifique a configuração do BIOS para garantir que o **DVD-ROM** seja listado primeiro na sequência de inicialização. Para obter mais informações sobre como alterar a sequência de inicialização de configuração do BIOS, consulte a documentação do fabricante do hardware.  
+   > [!NOTE]
+   >  Se o servidor de destino não inicializar do DVD, reinicie o computador e verifique a configuração do BIOS para garantir que o **DVD-ROM** seja listado primeiro na sequência de inicialização. Para obter mais informações sobre como alterar a sequência de inicialização de configuração do BIOS, consulte a documentação do fabricante do hardware.  
   
-2.  Clique em **Nova Instalação**.  
+2. Clique em **Nova Instalação**.  
   
-3.  Se você tiver um disco rígido interno que não é exibido na lista, clique em **Carregar Drivers** e instale o driver necessário antes de continuar.  
+3. Se você tiver um disco rígido interno que não é exibido na lista, clique em **Carregar Drivers** e instale o driver necessário antes de continuar.  
   
-4.  Marque a caixa de seleção que verifica que todos os arquivos e pastas no disco rígido primário serão excluídas e clique em **Instalar**.  
+4. Marque a caixa de seleção que verifica que todos os arquivos e pastas no disco rígido primário serão excluídas e clique em **Instalar**.  
   
-5.  Na página **Escolher modo de instalação do servidor** página, clique em **Migração do servidor** e, em seguida, forneça as informações de migração necessárias.  
+5. Na página **Escolher modo de instalação do servidor** página, clique em **Migração do servidor** e, em seguida, forneça as informações de migração necessárias.  
   
-6.  Quando a mensagem **Seu servidor foi migrado com sucesso** for exibida, clique em **Fechar**.  
+6. Quando a mensagem **Seu servidor foi migrado com sucesso** for exibida, clique em **Fechar**.  
   
- Após a conclusão da instalação, você é automaticamente conectado com a conta de usuário administrador e a senha fornecidas no arquivo de resposta da migração.  
+   Após a conclusão da instalação, você é automaticamente conectado com a conta de usuário administrador e a senha fornecidas no arquivo de resposta da migração.  
   
 > [!NOTE]
 >  Para desbloquear a área de trabalho durante a instalação do Windows Server Essentials, use a conta de administrador interno e deixe a senha em branco.  

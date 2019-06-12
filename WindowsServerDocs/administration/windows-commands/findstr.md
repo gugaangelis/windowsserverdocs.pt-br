@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ea306127be9497c21a5b8efa9fd3f0fa2433014c
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 8d080420d250deee9bef701272e936d33733a9d6
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192673"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811202"
 ---
 # <a name="findstr"></a>findstr
 
@@ -60,65 +60,84 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 
 ## <a name="remarks"></a>Comentários
 
--   Todos os **findstr** opções de linha de comando devem preceder *cadeias de caracteres* e *FileName* na cadeia de caracteres de comando.
--   Expressões regulares usam metacaracteres e caracteres literais para localizar padrões de texto, em vez de cadeias de caracteres exatas de caracteres. Um caractere literal é um caractere que não tem um significado especial na sintaxe de expressão regular — ela corresponde a uma ocorrência do caractere. Por exemplo, letras e números são caracteres literais. Um metacaractere é um símbolo com significado especial (um operador ou um delimitador) na sintaxe de expressão regular.
+- Todos os **findstr** opções de linha de comando devem preceder *cadeias de caracteres* e *FileName* na cadeia de caracteres de comando.
+- Expressões regulares usam metacaracteres e caracteres literais para localizar padrões de texto, em vez de cadeias de caracteres exatas de caracteres. Um caractere literal é um caractere que não tem um significado especial na sintaxe de expressão regular — ela corresponde a uma ocorrência do caractere. Por exemplo, letras e números são caracteres literais. Um metacaractere é um símbolo com significado especial (um operador ou um delimitador) na sintaxe de expressão regular.
 
-    A tabela a seguir lista os metacaracteres que **findstr** aceita.  
-    |Metacaractere|Valor|
-    |-------------|-----|
-    |.|Curinga: qualquer caractere|
-    |*|Repetir: zero ou mais ocorrências do caractere anterior ou classe|
-    |^|Posição da linha: a partir da linha|
-    |$|Posição da linha: final da linha|
-    |[class]|Classe de caractere: qualquer caractere em um conjunto|
-    |[^class]|Classe inverso: qualquer caractere não em um conjunto|
-    |[x-y]|Intervalo: qualquer caractere dentro do intervalo especificado|
-    |\x|Escape: uso de literal de um metacaractere x|
-    |\\< cadeia de caracteres|Posição do Word: a partir da palavra|
-    |cadeia de caracteres\>|Posição do Word: fim da palavra|
+  A tabela a seguir lista os metacaracteres que **findstr** aceita.  
 
-    Os caracteres especiais na sintaxe de expressão regular tem mais poder ao usá-los juntos. Por exemplo, use a seguinte combinação do caractere curinga (.) e repetir o caractere (*) para corresponder a qualquer cadeia de caracteres:  
-    ```
-    .*
-    ```  
-    Use a expressão a seguir como parte de uma expressão maior para corresponder a qualquer cadeia de caracteres começando com "b" e terminando com "ing":  
-    ```
-    b.*ing
-    ```
+  |Metacaractere|Valor|
+  |-------------|-----|
+  |.|Curinga: qualquer caractere|
+  |*|Repetir: zero ou mais ocorrências do caractere anterior ou classe|
+  |^|Posição da linha: a partir da linha|
+  |$|Posição da linha: final da linha|
+  |[class]|Classe de caractere: qualquer caractere em um conjunto|
+  |[^class]|Classe inverso: qualquer caractere não em um conjunto|
+  |[x-y]|Intervalo: qualquer caractere dentro do intervalo especificado|
+  |\x|Escape: uso de literal de um metacaractere x|
+  |\\< cadeia de caracteres|Posição do Word: a partir da palavra|
+  |cadeia de caracteres\>|Posição do Word: fim da palavra|
+
+  Os caracteres especiais na sintaxe de expressão regular tem mais poder ao usá-los juntos. Por exemplo, use a seguinte combinação do caractere curinga (.) e repetir o caractere (*) para corresponder a qualquer cadeia de caracteres:
+
+  ```
+  .*
+  ``` 
+
+  Use a expressão a seguir como parte de uma expressão maior para corresponder a qualquer cadeia de caracteres começando com "b" e terminando com "ing": 
+
+  ```
+  b.*ing
+  ```
 
 ## <a name="examples"></a>Exemplos
 
 Use espaços para separar várias cadeias de caracteres de pesquisa, a menos que o argumento é prefixado com **/c**.
 
 Para procurar por "Olá" ou "there" no arquivo x. y, digite:
+
 ```
 findstr "hello there" x.y 
 ```
+
 Para procurar por "Olá" no arquivo x. y, digite:
+
 ```
 findstr /c:"hello there" x.y 
 ```
+
 Para localizar todas as ocorrências da palavra "Windows" (com inicial maiuscula W) no arquivo txt, digite:
+
 ```
 findstr Windows proposal.txt 
 ```
+
 Para pesquisar todos os arquivos no diretório atual e todas as subpastas que contêm a palavra Windows, sem diferenciar maiusculas de minúsculas, digite:
+
 ```
 findstr /s /i Windows *.* 
 ```
+
 Para localizar todas as ocorrências de linhas que começam com "FOR" e são precedidas por zero ou mais espaços (como em um loop de programa de computador) e para exibir o número da linha em que cada ocorrência for encontrada, digite:
+
 ```
 findstr /b /n /r /c:"^ *FOR" *.bas 
 ```
+
 Para pesquisar várias cadeias de caracteres em um conjunto de arquivos, crie um arquivo de texto que contém cada critério de pesquisa em uma linha separada. Você também pode listar os arquivos exatos que você deseja pesquisar em um arquivo de texto. Por exemplo, para usar os critérios de pesquisa no arquivo Stringlist.txt, pesquisar os arquivos listados na Filelist. txt e, em seguida, armazenar os resultados no arquivo Results, tipo:
+
 ```
 findstr /g:stringlist.txt /f:filelist.txt > results.out 
 ```
+
 Para listar todos os arquivos que contêm a palavra "computador" no diretório atual e todos os subdiretórios, independentemente do caso, digite:
+
 ```
 findstr /s /i /m "\<computer\>" *.*
 ```
+
 Para listar todos os arquivos que contêm a palavra "computer" e todas as palavras que começam com "composição", (como "complemento" e "competem"), digite:
+
 ```
 findstr /s /i /m "\<comp.*" *.*
 ```

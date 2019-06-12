@@ -8,12 +8,12 @@ ms.date: 02/21/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 91f252f5b0eca0f4c44e0b1a4564037298bf023c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9703a8652b0e0bbafe48858cbfbcc8aa9aa31ef8
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814057"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812051"
 ---
 # <a name="ad-fs-troubleshooting---integrated-windows-authentication"></a>Solucionando problemas do AD FS - autenticação integrada com o Windows
 Autenticação integrada do Windows permite que os usuários entrem com suas credenciais do Windows e a experiência de logon único (SSO), usando Kerberos ou NTLM.
@@ -24,7 +24,7 @@ Há três principal motivo por que a autenticação integrada do windows falhar�
     - Token de associação de canal
     - Configuração do Internet Explorer
 
-## <a name="spn-misonfiguration"></a>SPN misonfiguration
+## <a name="spn-misconfiguration"></a>Erro de configuração de SPN
 Um nome de entidade de serviço (SPN) é um identificador exclusivo de uma instância de serviço. Os SPNs são usados pela autenticação do Kerberos para associar uma instância de serviço com uma conta de logon do serviço. Isso permite que um aplicativo cliente solicitar que o serviço autentique uma conta, mesmo se o cliente não tem o nome da conta.
 
 Um exemplo de um como um SPN é usado com o AD FS é da seguinte maneira:
@@ -67,13 +67,14 @@ Por padrão, a Internet explorer terão da seguinte maneira:
 
 Há 2 coisas principais que podem impedir que isso happeing.
    - Habilitar a autenticação integrada do Windows não está marcada nas propriedades do IE.  Ela está localizada em Opções da Internet -> Avançado -> segurança.
-![integrated](media/ad-fs-tshoot-iwa/iwa4.png)
+   
+   ![Integrado](media/ad-fs-tshoot-iwa/iwa4.png)
    
    - As zonas de segurança não estão configuradas corretamente
        - FQDNs não estão na zona da intranet
        - URL do AD FS não está na zona da intranet.
 
-![Integrado](media/ad-fs-tshoot-iwa/iwa5.png)
+      ![Integrado](media/ad-fs-tshoot-iwa/iwa5.png)
 ## <a name="next-steps"></a>Próximas etapas
 
 - [Solução de problemas do AD FS](ad-fs-tshoot-overview.md)
