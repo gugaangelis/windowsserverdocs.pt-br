@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 955f6d93379802444d542ea571f98b69b9191f5c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c4dc49e23d67ae68c598367de5a3fb0d7d6398a8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837107"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437159"
 ---
 # <a name="nfsadmin"></a>nfsadmin
 
@@ -62,7 +62,7 @@ Além de serviço\-argumentos de comando específicos e opções, **nfsadmin** a
 Especifica o computador remoto que você deseja administrar. Você pode especificar o computador usando um Windows Internet Name Service \(WINS\) nome ou um sistema de nomes de domínio \(DNS\) ou pelo protocolo de Internet \(IP\) endereço.  
   
 **\-u** *UserName*  
-Especifica o nome de usuário do usuário cujas credenciais devem ser usados. Talvez seja necessário adicionar o nome de domínio para o nome de usuário na forma *domínio***\\***nome de usuário*  
+Especifica o nome de usuário do usuário cujas credenciais devem ser usados. Talvez seja necessário adicionar o nome de domínio para o nome de usuário na forma <em>domínio</em> **\\** <em>nome de usuário</em>  
   
 **\-p** *senha*  
 Especifica a senha do usuário especificado usando o  **\-u** opção. Se você especificar o  **\-u** opção, mas omita a  **\-p** opção, será solicitada a senha do usuário.  
@@ -85,10 +85,10 @@ Interrompe o serviço Server for NFS.
 **config**  
 Especifica as configurações gerais para o Server for NFS. Você deve fornecer pelo menos uma das opções a seguir com o **config** argumento de comando:  
   
-**mapsvr\=***server*  
+**mapsvr\=** <em>server</em>  
 Conjuntos *server* como o servidor de mapeamento de nome de usuário para o Server for NFS. Embora essa opção continua a ter suporte para compatibilidade com versões anteriores, você deve usar o **sfuadmin** utilitário em vez disso.  
   
-**auditlocation\=**{**eventlog** | **arquivo** | **ambos** | **none** }  
+**auditlocation\=** {**eventlog** | **arquivo** | **ambos** | **none** }  
 Especifica se os eventos serão auditados e onde os eventos serão registrados. Um dos argumentos a seguir é obrigatório.  
   
 **eventlog**  
@@ -103,16 +103,16 @@ Especifica que os eventos auditados serão gravados no log do Visualizador de ev
 **None**  
 Especifica que eventos não serão auditados.  
   
-**fname\=***file*  
+**fname\=** <em>file</em>  
 Define o arquivo especificado por *arquivo* como o arquivo de auditoria. O padrão é % sfudir\\log\\nfssvr.log  
   
-**fsize\=**\=*size*  
+**fsize\=** \=*size*  
 Conjuntos *tamanho* como o tamanho máximo em megabytes, do arquivo de auditoria. O tamanho máximo padrão é 7 MB.  
   
-**auditar\=**\[**\+**|**\-**\]**montar** \[ **\+** | **\-** \] **ler** \[ **\+** | **\-** \] **gravar** \[ **\+** | **\-** \] **crie** \[ **\+** | **\-** \] **excluir** \[ **\+** | **\-** \] **bloqueio** \[ **\+** | **\-** \] **todos**  
+**auditar\=** \[ **\+** | **\-** \]**montar** \[ **\+** | **\-** \] **ler** \[ **\+** | **\-** \] **gravar** \[ **\+** | **\-** \] **crie** \[ **\+** | **\-** \] **excluir** \[ **\+** | **\-** \] **bloqueio** \[ **\+** | **\-** \] **todos**  
 Especifica os eventos a serem registrados. Para começar a registrar um evento, digite um sinal de adição \( **\+** \) antes do nome do evento; para parar o log de um evento, digite um sinal de subtração \( **\-** \) antes do nome do evento. Se o sinal for omitido, o sinal será assumido. Não use **todos os** com qualquer outro nome de evento.  
   
-**lockperiod\=***seconds*  
+**lockperiod\=** <em>seconds</em>  
 Especifica o número de segundos que o Server for NFS irá esperar para recuperar os bloqueios após uma conexão para o Server for NFS foi perdido e, em seguida, restabelecida ou após o serviço Server for NFS foi reiniciado.  
   
 Portmapprotocol\={TCP | UDP | TCP\+UDP  
@@ -130,16 +130,16 @@ Especifica qual transporte protocolos NLM \(NLM\) dá suporte. A configuração 
 nsmprotocol\={TCP | UDP | TCP\+UDP}  
 Especifica qual transporte protocolos Gerenciador de Status de rede \(NSM\) dá suporte. A configuração padrão é **TCP\+UDP**.  
   
-**enableV3\=**{**yes** | **no**}  
+**enableV3\=** {**yes** | **no**}  
 Especifica se os protocolos do NFS versão 3 terá suporte. A configuração padrão é **Sim**.  
   
-**renewauth\=**{**yes** | **no**}  
+**renewauth\=** {**yes** | **no**}  
 Especifica se as conexões de cliente será necessárias para ser autenticado novamente após o período especificado por **config renewauthinterval**. A configuração padrão é **nenhum**.  
   
-**renewauthinterval\=***seconds*  
+**renewauthinterval\=** <em>seconds</em>  
 Especifica o número de segundos decorridos antes que um cliente é forçado a ser autenticado novamente se **config renewauth** é definido como **Sim**. O valor padrão é 600 segundos.  
   
-**dircache\=***size*  
+**dircache\=** <em>size</em>  
 Especifica o tamanho em quilobytes, do cache do diretório. O número especificado como *tamanho* deve ser um múltiplo de 4 entre 4 e 128. O diretório padrão\-tamanho do cache é 128 KB.  
   
 **translationfile**\=\[file\]  
@@ -148,7 +148,7 @@ Especifica um arquivo que contém informações de mapeamento para a substituiç
 **dotfileshidden**\={**yes** | **nenhum**}  
 Especifica se os arquivos que são criados com nomes que começam com um período \(.\) será marcado como oculto no sistema de arquivos do Windows e, consequentemente, ocultados dos clientes NFS. A configuração padrão é **nenhum**.  
   
-**casesensitivelookups\=**{**yes** | **nenhum**}  
+**casesensitivelookups\=** {**yes** | **nenhum**}  
 Especifica se as pesquisas de diretório serão diferencia maiusculas de minúsculas \(exigir que uma correspondência exata do caso de caractere\).  
   
 Você também precisará desabilitar o caso de kernel do Windows\-diferenciação em ordem para o Server for NFS para dar suporte ao caso\-nomes de arquivos confidenciais. Você pode desabilitar o caso de kernel do Windows\-não diferenciação, limpando a seguinte chave do registro como 0:  
@@ -160,7 +160,7 @@ DWOrd  obcaseinsensitive
 > [!IMPORTANT]  
 > Esta seção se aplica somente ao Windows Server 2008 R2, Windows Server 2008 e Windows Server 2003. Esta seção não se aplica ao Windows Server 2012 R2 ou Windows Server 2012.  
   
-**ntfscase\=**{**lower** | **upper** | **preserve**}  
+**ntfscase\=** {**lower** | **upper** | **preserve**}  
 Especifica se o caso de caracteres nos nomes de arquivos no sistema de arquivos NTFS será retornado em letras minúsculas, letras maiusculas, ou no formulário armazenados no diretório. A configuração padrão é **preservar**. Essa configuração não pode ser alterada se **casesensitivelookups** é definido como **Sim**.  
   
 **creategroup** *name*  
@@ -198,28 +198,28 @@ Interrompe o serviço Client for NFS.
 **config**  
 Especifica as configurações gerais do Client for NFS. Você deve fornecer pelo menos uma das opções a seguir com o **config** argumento de comando:  
   
-**FileAccess\=* * * modo*  
+**fileaccess\=** <em>mode</em>  
 -   Especifica o modo de permissão padrão para arquivos criados no sistema de arquivos de rede \(NFS\) servidores. O *modo* argumento consiste em um três dígitos de 0 a 7 \(inclusivo\) que representa as permissões padrão concedidas ao usuário, grupo e outros \(respectivamente\). Os dígitos traduzem para UNIX\-permissões de estilo da seguinte maneira: 0\=nenhum, 1\=x 2\=w, 3\=wx, 4\=r, 5\=rx, 6\=rw e 7\=rwx. Por exemplo, **fileaccess\=750** dá permissões rwx para o proprietário, permissão de rx ao grupo e nenhuma permissão de acesso a outras pessoas.  
   
-**mapsvr\=***server*  
+**mapsvr\=** <em>server</em>  
 Conjuntos *server* como o servidor de mapeamento de nome de usuário do Client for NFS. Embora essa opção continua a ter suporte para compatibilidade com versões anteriores, você deve usar o **sfuadmin** utilitário em vez disso.  
   
-**mtype\=**{**hard** | **soft**}  
+**mtype\=** {**hard** | **soft**}  
 Especifica o tipo de montagem padrão. Para uma montagem rígida, Client for NFS continuará a tentar novamente um RPC com falha até obter êxito. Para uma montagem flexível, Client for NFS retorna falha para o aplicativo de chamada após a chamada de repetir o número de vezes especificado pela **Repita** opção.  
   
-**retry\=***number*  
+**retry\=** <em>number</em>  
 Especifica o número de vezes para estabelecer uma conexão para uma montagem flexível. Esse valor deve ser de 1 a 10, inclusive. O padrão é 1.  
   
-**timeout\=***seconds*  
+**timeout\=** <em>seconds</em>  
 Especifica o número de segundos a aguardar uma conexão \(chamada de procedimento remoto\). Esse valor deve ser 0,8, 0,9 ou um inteiro de 1 a 60, inclusivo. O padrão é 0,8.  
   
 **Protocol\={TCP | UDP | TCP\+UDP}**  
 Especifica qual transporte protocolos o oferece suporte ao cliente. A configuração padrão é **TCP\+UDP**  
   
-**rsize\=***size*  
+**rsize\=** <em>size</em>  
 Especifica o tamanho, em quilobytes, do buffer de leitura. Esse valor pode ser 0,5, 1, 2, 4, 8, 16 ou 32. O padrão é 32.  
   
-**wsize\=***size*  
+**wsize\=** <em>size</em>  
 Especifica o tamanho, em quilobytes, do buffer de gravação. Esse valor pode ser 0,5, 1, 2, 4, 8, 16 ou 32. O padrão é 32.  
   
 **perf\=default**  
@@ -235,7 +235,7 @@ Restaura as seguintes configurações de desempenho para os valores padrão:
   
 -   **wsize**  
   
-**FileAccess\=* * * modo*  
+**fileaccess\=** <em>mode</em>  
 Especifica o modo de permissão padrão para arquivos criados no sistema de arquivos de rede \(NFS\) servidores. O *modo* argumento consiste em um três dígitos de 0 a 7 \(inclusivo\) que representa as permissões padrão concedidas ao usuário, grupo e outros \(respectivamente\). Os dígitos traduzem para UNIX\-permissões de estilo da seguinte maneira: 0\=nenhum, 1\=x 2\=w, 3\=wx, 4\=r, 5\=rx, 6\=rw e 7\=rwx. Por exemplo, **fileaccess\=750** dá permissões rwx para o proprietário, permissão de rx ao grupo e nenhuma permissão de acesso a outras pessoas.  
   
 Se você não especificar uma opção de comando ou um argumento, **nfsadmin client** exibe o cliente atual para definições de configuração do NFS.  

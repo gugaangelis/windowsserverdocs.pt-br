@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1365373097cf7280c4475514107a940f46e65893
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1c8af4beb83b789be1456d5556a0aa07749590fb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840067"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438718"
 ---
 # <a name="ftp-delete"></a>ftp: delete
 
@@ -30,13 +30,15 @@ Exclui arquivos em computadores remotos.
 delete <remoteFile>  
 ```  
 ### <a name="parameters"></a>Parâmetros  
-|Parâmetro|Descrição|  
-|-------|--------|  
-|<remoteFile>|Especifica o arquivo a ser excluído.|  
+
+|  Parâmetro   |          Descrição          |
+|--------------|-------------------------------|
+| <remoteFile> | Especifica o arquivo a ser excluído. |
+
 ## <a name="BKMK_Examples"></a>Exemplos  
 Exclua o arquivo Test. txt no computador remoto.  
 ```  
 delete test.txt  
 ```  
 ## <a name="additional-references"></a>Referências adicionais  
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  

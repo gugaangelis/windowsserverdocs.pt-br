@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 007256fffde11899d930c9197cade6d3bf9be42c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3ad9f55ba130014227326f4abe8540c78755f6c5
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868777"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437369"
 ---
 # <a name="mapadmin"></a>mapadmin
 
@@ -52,7 +52,7 @@ Além dos argumentos de comando específico **mapadmin** aceita os seguintes arg
 
 &lt;computador&gt; Especifica o computador remoto que executa o serviço de mapeamento de nome de usuário que você deseja administrar. Você pode especificar o computador usando um nome de serviço de nome na Internet do Windows (WINS) ou um nome de sistema de nome de domínio (DNS) ou pelo IP (Internet Protocol) de endereço.
 
--u &lt;usuário&gt; Especifica o nome de usuário do usuário cujas credenciais devem ser usados. Talvez seja necessário adicionar o nome de domínio para o nome de usuário na forma *domínio***\\***nome de usuário*.
+-u &lt;usuário&gt; Especifica o nome de usuário do usuário cujas credenciais devem ser usados. Talvez seja necessário adicionar o nome de domínio para o nome de usuário na forma <em>domínio</em> **\\** <em>nome de usuário</em>.
 
 -p &lt;senha&gt; Especifica a senha do usuário. Se você especificar o **-u** opção, mas omita a **-p** opção, será solicitada a senha do usuário.
 A ação específica que **mapadmin** executa depende do argumento de comando que você especificar:
@@ -90,7 +90,7 @@ Especifica as configurações gerais para o mapeamento de nome de usuário. As s
 
 |Opção|Definição|
 |-----|-------|
-|-wu &lt;user&gt;|O usuário do Windows para o qual o mapeamento será excluído, especificado como &lt; *WindowsDomain&gt;\\&lt;nome de usuário&gt;*. Você deve especificar o **- wu** ou o **- uu** opção, ou ambos. Se você especificar ambas as opções, o mapeamento específico identificado por duas opções será excluído. Se você especificar apenas o **- wu** opção, todos os mapeamentos para o usuário especificado será excluído.|
+|-wu &lt;user&gt;|O usuário do Windows para o qual o mapeamento será excluído, especificado como &lt; *WindowsDomain&gt;\\&lt;nome de usuário&gt;* . Você deve especificar o **- wu** ou o **- uu** opção, ou ambos. Se você especificar ambas as opções, o mapeamento específico identificado por duas opções será excluído. Se você especificar apenas o **- wu** opção, todos os mapeamentos para o usuário especificado será excluído.|
 |-wg &lt;group&gt;|O grupo do Windows para o qual o mapeamento será excluído, especificado como &lt;WindowsDomain&gt;\\&lt;groupname&gt;. Você deve especificar o **- wg** ou o **- ug** opção, ou ambos. Se você especificar ambas as opções, o mapeamento específico identificado por duas opções será excluído. Se você especificar apenas o **- wg** opção, todos os mapeamentos para o grupo especificado será excluído.|
 |-uu &lt;user&gt;|O usuário do UNIX para o qual o mapeamento será excluído, especificado como &lt;nome de usuário&gt;. Você deve especificar o **- wu** ou o **- uu** opção, ou ambos. Se você especificar ambas as opções, o mapeamento específico identificado por duas opções será excluído. Se você especificar apenas o **- uu** opção, todos os mapeamentos para o usuário especificado será excluído.|
 |-ug &lt;grupo&gt;|O grupo do UNIX para o qual o mapeamento será excluído, especificado como &lt;groupname&gt;. Você deve especificar o **- wg** ou o **- ug** opção, ou ambos. Se você especificar ambas as opções, o mapeamento específico identificado por duas opções será excluído. Se você especificar apenas o **- ug** opção, todos os mapeamentos para o grupo especificado será excluído.|
@@ -114,7 +114,7 @@ Especifica as configurações gerais para o mapeamento de nome de usuário. As s
 |Opção|Definição|
 |-----|-------|
 |-d &lt;WindowsDomain&gt;|Especifica o domínio do Windows a serem mapeados.|
-|-y &lt;NISdomain&gt;|Especifica o domínio NIS a serem mapeados. &lt;br /&gt;&lt;br /&gt;**- n** &lt;nisServer&gt; Especifica o servidor de NIS para o domínio NIS especificado com o **- y**opção.|
+|-y &lt;NISdomain&gt;|Especifica o domínio NIS a serem mapeados. &lt;br /&gt;&lt;br /&gt; **- n** &lt;nisServer&gt; Especifica o servidor de NIS para o domínio NIS especificado com o **- y**opção.|
 |-f &lt;path&gt;|Especifica o caminho totalmente qualificado do diretório que contém os arquivos de senha e de grupo a ser mapeado. Os arquivos devem estar localizados no computador que está sendo gerenciado e não é possível usar **mapadmin** para gerenciar um computador remoto para configurar mapas com base em senha e grupo de arquivos.|
 
 **removedomainmap** -remove um mapa simple entre um domínio do Windows e um domínio NIS. As seguintes opções e argumentos estão disponíveis para este argumento de comando:
@@ -136,4 +136,4 @@ Especifica as configurações gerais para o mapeamento de nome de usuário. As s
 -   para grupos de UNIX, use o formulário &lt;NISdomain&gt;\\&lt;groupname&gt;, &lt;groupname&gt;@&lt;NISdomain&gt;, &lt;groupname&gt;@PCNFS, ou PCNFS\\&lt;groupname&gt;
 
 ## <a name="additional-references"></a>Referências adicionais
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

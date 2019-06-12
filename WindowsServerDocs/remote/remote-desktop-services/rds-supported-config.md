@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
-ms.openlocfilehash: 894ea8b134ae5b871a2978e3f72e683c12346fe5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8571c2220f804a27e4e1a6b744e8e15e38bd53a3
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850197"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453080"
 ---
 # <a name="supported-configurations-for-remote-desktop-services-in-windows-server-2016"></a>Configurações com suporte para serviços de área de trabalho remota no Windows Server 2016
 
@@ -90,7 +90,7 @@ RDS do Windows Server 2016 dá suporte a duas principais experiências SSO:
  - No aplicativo (aplicativo de área de trabalho remota no Windows, iOS, Android e Mac)
  - SSO da Web
  
-Usando o aplicativo de área de trabalho remota, você pode armazenar credenciais como parte das informações de conexão ([Mac](clients\remote-desktop-mac.md)) ou como parte das contas gerenciadas ([iOS](clients\remote-desktop-ios.md#manage-your-user-accounts), [Android](clients\remote-desktop-android.md#manage-your-user-accounts), Windows) com segurança por meio de mecanismos exclusivos para cada sistema operacional.
+Usando o aplicativo de área de trabalho remota, você pode armazenar credenciais como parte das informações de conexão ([Mac](clients/remote-desktop-mac.md)) ou como parte das contas gerenciadas ([iOS](clients/remote-desktop-ios.md#manage-your-user-accounts), [Android](clients/remote-desktop-android.md#manage-your-user-accounts), Windows) com segurança por meio de mecanismos exclusivos para cada sistema operacional.
 
 Para conectar-se a áreas de trabalho e RemoteApps com o SSO por meio da caixa de entrada do cliente Conexão de área de trabalho remota no Windows, você deve se conectar à página da Web de área de trabalho remota por meio do Internet Explorer. As opções de configuração a seguir são necessárias no lado do servidor. Outras configurações não têm suporte para SSO da Web:
 

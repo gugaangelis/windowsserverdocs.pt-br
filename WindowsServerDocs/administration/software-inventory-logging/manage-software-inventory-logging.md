@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 095cd2ad799857b789943b4f477aa9e6a8c3ae50
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 506072251b77362f3dc35faa0c976f396f7f6034
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59815177"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435485"
 ---
 # <a name="manage-software-inventory-logging"></a>Gerenciar o Log de Inventário de Software
 
@@ -121,7 +121,7 @@ Coleção de diário de log de inventário de software e encaminhamento pela red
 ## <a name="configuring-software-inventory-logging"></a>Configurando o Log de Inventário de Software  
 Há três etapas para configurar o Log de Inventário de Software para encaminhar dados para um servidor de agregação ao longo do tempo:  
   
-1.  Use **Set-SilLogging – TargetUri** para especificar o endereço web do seu servidor de agregação (deve começar com "https://?).  
+1.  Use **Set-SilLogging – TargetUri** para especificar o endereço web do seu servidor de agregação (deve começar com "https://").  
   
 2.  Use **Set-SilLogging –CertificateThumbprint** para especificar o hash de impressão digital do seu certificado SSL válido a ser usado para autenticar as transmissões de dados para o servidor de agregação (o servidor de agregação precisará ser configurado para aceitar o hash).  
   
@@ -140,17 +140,17 @@ Se o Log de Inventário de Software foi iniciado por um administrador, a coleta 
 ## <a name="BKMK_Step3"></a>Exibindo dados de log de inventário de Software  
 Além dos cmdlets do PowerShell descritos na seção anterior, seis cmdlets adicionais podem ser usados para coletar dados de Log de Inventário de Software:  
   
--   **[Get-SilComputer](https://technet.microsoft.com/library/dn283392.aspx)**: Exibe os valores de um ponto no tempo para dados relacionados ao sistema operacional e servidor específicos, bem como o FQDN ou nome do host físico, se disponível.  
+-   **[Get-SilComputer](https://technet.microsoft.com/library/dn283392.aspx)** : Exibe os valores de um ponto no tempo para dados relacionados ao sistema operacional e servidor específicos, bem como o FQDN ou nome do host físico, se disponível.  
   
--   **[Get-SilComputerIdentity (KB 3000850)](https://technet.microsoft.com/library/dn858074.aspx)**: Exibe identificadores utilizados pelo SIL para servidores individuais.  
+-   **[Get-SilComputerIdentity (KB 3000850)](https://technet.microsoft.com/library/dn858074.aspx)** : Exibe identificadores utilizados pelo SIL para servidores individuais.  
   
--   **[Get-SilData](https://technet.microsoft.com/library/dn283388.aspx)**: Exibe uma coleta de um ponto no tempo de todos os dados de Log de Inventário de Software.  
+-   **[Get-SilData](https://technet.microsoft.com/library/dn283388.aspx)** : Exibe uma coleta de um ponto no tempo de todos os dados de Log de Inventário de Software.  
   
--   **[Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx)**: Exibe a identidade do ponto no tempo de todo o software instalado no computador.  
+-   **[Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx)** : Exibe a identidade do ponto no tempo de todo o software instalado no computador.  
   
--   **[Get-SilUalAccess](https://technet.microsoft.com/library/dn283389.aspx)**: Exibe o número total de solicitações únicas do dispositivo cliente e solicitações do usuário do cliente do servidor de dois dias antes.  
+-   **[Get-SilUalAccess](https://technet.microsoft.com/library/dn283389.aspx)** : Exibe o número total de solicitações únicas do dispositivo cliente e solicitações do usuário do cliente do servidor de dois dias antes.  
   
--   **[Get-SilWindowsUpdate](https://technet.microsoft.com/library/dn283393.aspx)**: Exibe a lista do ponto no tempo de todas as atualizações do Windows instaladas no computador.  
+-   **[Get-SilWindowsUpdate](https://technet.microsoft.com/library/dn283393.aspx)** : Exibe a lista do ponto no tempo de todas as atualizações do Windows instaladas no computador.  
   
 Um cenário típico de caso de uso dos cmdlets do Log de Inventário de Software seria o de um administrador consultar o Log de Inventário de Software para uma coleta de um ponto no tempo de todos os dados do Log de Inventário de Software usando o [Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx).  
   
@@ -206,13 +206,13 @@ O Log de Inventário de Software não tem a finalidade de ser um componente crí
   
 #### <a name="to-delete-data-logged-by-software-inventory-logging"></a>Para excluir dados registrados pelo Log de Inventário de Software  
   
-1.  No PowerShell, pare o Log de Inventário de Software com o comando **[Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)** .  
+1. No PowerShell, pare o Log de Inventário de Software com o comando **[Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)** .  
   
-2.  Abra o Windows Explorer.  
+2. Abra o Windows Explorer.  
   
-3.  Vá até **\Windows\System32\Logfiles\SIL\**  
+3. Vá para **\Windows\System32\Logfiles\SIL\\**  
   
-4.  Exclua todos os arquivos da pasta.  
+4. Exclua todos os arquivos da pasta.  
   
 ## <a name="BKMK_Step5"></a>Fazendo backup e restaurando dados registrados pelo log de inventário de Software  
 O Log de Inventário de Software armazenará temporariamente coletas de dados de hora em hora se os encaminhamentos pela rede estiverem falhando. Os arquivos de log são armazenados no diretório \Windows\System32\LogFiles\SIL\. Os backups desses dados de Log de Inventário de Software podem ser feitos com seus backups de servidora programados regularmente.  
@@ -237,9 +237,9 @@ Todos os dados armazenados localmente em um Windows Server (ocorre apenas se o r
   
 -   Ao usar [Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay para definir a hora em que o registro em log do SIL é executado, é necessário especificar uma data e hora. A data do calendário será definida e registro em log não ocorrerá até que a data seja atingida, na hora do sistema local.  
   
--   Ao usar [Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx), ou [Get-SilWindowsUpdate](https://technet.microsoft.com/library/dn283393.aspx), "InstallDate? sempre mostrará 12:00:00 AM, um valor insignificante.  
+-   Ao usar [Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx), ou [Get-SilWindowsUpdate](https://technet.microsoft.com/library/dn283393.aspx), "InstallDate" sempre mostrará 12:00:00 AM, um valor insignificante.  
   
--   Ao usar [Get-SilUalAccess](https://technet.microsoft.com/library/dn283389.aspx), "SampleDate? sempre mostrará 11:59:00 PM, um valor insignificante.  A data é o dado pertinente para essas consultas de cmdlet.  
+-   Ao usar [Get-SilUalAccess](https://technet.microsoft.com/library/dn283389.aspx), "SampleDate" sempre mostrará 11:59:00 PM, um valor insignificante.  A data é o dado pertinente para essas consultas de cmdlet.  
   
 ## <a name="BKMK_Step10"></a>Habilitando e configurando o inventário de Software, registro em log em um disco rígido Virtual montado  
 O Log de Inventário de Software também dá suporte à configuração e habilitação em máquinas virtuais offline. Os usos práticos para isso destinam-se a cobrir a instalação da “imagem da memória” para a implantação ampla entre data centers, assim como a configuração de imagens de usuário final indo de uma implantação local a uma em nuvem.  
@@ -256,11 +256,11 @@ Para dar suporte a esses usos, o Log de Inventário de Software tem entradas de 
   
 Para modificar esses valores em um VHD offline (sistema operacional da VM não em execução), um VHD primeiro deve ser montado e, em seguida, os comandos a seguir podem ser usados para fazer alterações:  
   
--   [Carga de reg](https://technet.microsoft.com/library/cc742053.aspx)  
+-   [Reg load](https://technet.microsoft.com/library/cc742053.aspx)  
   
 -   [Reg delete](https://technet.microsoft.com/library/cc742145.aspx)  
   
--   [Adicionar reg](https://technet.microsoft.com/library/cc742162.aspx)  
+-   [Reg add](https://technet.microsoft.com/library/cc742162.aspx)  
   
 -   [Reg unload](https://technet.microsoft.com/library/cc742043.aspx)  
   
@@ -297,7 +297,7 @@ Abaixo estão dois exemplos de VM com o log de SIL do qual a saída, o PowerShel
   
 ## <a name="see-also"></a>Consulte também  
 [Introdução ao Software de log de inventário](get-started-with-software-inventory-logging.md)  
-[Agregador do log de inventário de software](software-inventory-logging-aggregator.md)  
+[Agregador de registro em log de inventário de software](software-inventory-logging-aggregator.md)  
 [Cmdlets de registro em log de inventário de software no Windows PowerShell](https://technet.microsoft.com/library/dn283390.aspx)  
 [Import-BinaryMiLog](https://technet.microsoft.com/library/dn262592.aspx)  
 [Export-BinaryMiLog](https://technet.microsoft.com/library/dn262591.aspx)  

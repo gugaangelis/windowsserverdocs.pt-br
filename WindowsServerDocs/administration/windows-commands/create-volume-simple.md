@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d754a6b5788656132459a0b4a42954e9084f26bb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a35d0de5110c0e1616c42921c8402ecc1aff8c41
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836497"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434057"
 ---
 # <a name="create-volume-simple"></a>Criar volume simples
 
@@ -39,12 +39,12 @@ create volume simple [size=<n>] [disk=<n>] [align=<n>] [noerr]
   
 ## <a name="parameters"></a>Parâmetros  
   
-|Parâmetro|Descrição|  
-|-------|--------|  
-|size\=<n>|O tamanho do volume em megabytes \(MB\). Se nenhum tamanho for especificado, o novo volume ocupará o espaço livre restante no disco.|  
-|disco\=<n>|O disco dinâmico em que o volume é criado. Se nenhum for especificado, o disco atual será usado.|  
-|align\=<n>|Alinha-se todas as extensões de volume para o limite de alinhamento mais próximo. Normalmente usado com o número de unidade lógica do RAID de hardware \(LUN\) matrizes para melhorar o desempenho. *n* é o número de kilobytes \(KB\) desde o início do disco para o limite de alinhamento mais próximo.|  
-|noerr|Somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro.|  
+| Parâmetro  |                                                                                                                            Descrição                                                                                                                            |
+|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| size\=<n>  |                                                                  O tamanho do volume em megabytes \(MB\). Se nenhum tamanho for especificado, o novo volume ocupará o espaço livre restante no disco.                                                                   |
+| disco\=<n>  |                                                                                O disco dinâmico em que o volume é criado. Se nenhum for especificado, o disco atual será usado.                                                                                |
+| align\=<n> | Alinha-se todas as extensões de volume para o limite de alinhamento mais próximo. Normalmente usado com o número de unidade lógica do RAID de hardware \(LUN\) matrizes para melhorar o desempenho. *n* é o número de kilobytes \(KB\) desde o início do disco para o limite de alinhamento mais próximo. |
+|   noerr    |                               Somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro.                                |
   
 ## <a name="remarks"></a>Comentários  
   
@@ -58,7 +58,7 @@ create volume simple size=1000 disk=1
 ```  
   
 #### <a name="additional-references"></a>Referências adicionais  
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 
   

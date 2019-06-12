@@ -6,17 +6,18 @@ ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
+ms.date: 06/07/2019
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 39f862485cf938981aae37e352f3448998b7c9c0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 5c306dd181d4db400e6ab5bab919399fdebca9f3
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829567"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811670"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Perguntas frequentes sobre o Windows Admin Center
 
->Aplica-se a: Windows Admin Center, Windows Admin Center Preview
+> Aplica-se a: Windows Admin Center, Windows Admin Center Preview
 
 Veja as respostas para as perguntas mais frequentes sobre o Windows Admin Center.
 
@@ -26,7 +27,9 @@ O Windows Admin Center é uma plataforma de GUI e conjunto de ferramentas leve, 
 
 ## <a name="can-i-use-windows-admin-center-in-production-environments"></a>Posso usar o Windows Admin Center em ambientes de produção?
 
-Sim. Em geral, o Windows Admin Center está disponível e pronto para implantações de produção e uso amplas. Como uma plataforma que continuará a crescer e se desenvolver, sair da versão preview significa que os recursos atuais de plataforma e ferramentas principais atendem aos critérios de versão padrão da Microsoft e a nossa meta de qualidade para usabilidade, confiabilidade, desempenho, acessibilidade, segurança e adoção.
+Sim. Em geral, o Windows Admin Center está disponível e pronto para implantações de produção e uso amplas. As ferramentas de núcleo e recursos da plataforma atual atende aos critérios de liberação padrão da Microsoft e a nossa barra de qualidade de usabilidade, confiabilidade, desempenho, acessibilidade, segurança e adoção.
+
+[!INCLUDE [support-policy](../includes/support-policy.md)]
 
 ## <a name="how-much-does-it-cost-to-use-windows-admin-center"></a>Quanto custa para usar o Windows Admin Center?
 
@@ -38,7 +41,7 @@ Windows Admin Center é otimizado para o Windows Server 2019 habilitar temas pri
 
 ## <a name="is-windows-admin-center-a-complete-replacement-for-all-traditional-in-box-and-rsat-tools"></a>O Windows Admin Center substitui completamente todas as ferramentas tradicionais e RSAT?
 
-Nenhum. Embora o Windows Admin Center possa gerenciar muitos cenários comuns, ele não substitui completamente todas as ferramentas do Console de Gerenciamento Microsoft (MMC) tradicional. Para uma visão detalhada de quais ferramentas estão incluídas com do Windows Admin Center, leia mais sobre [gerenciamento de servidores](..\use\manage-servers.md) em nossa documentação. O Windows Admin Center tem os seguintes recursos principais em sua solução de Gerenciador do Servidor:
+Não. Embora o Windows Admin Center possa gerenciar muitos cenários comuns, ele não substitui completamente todas as ferramentas do Console de Gerenciamento Microsoft (MMC) tradicional. Para uma visão detalhada de quais ferramentas estão incluídas com do Windows Admin Center, leia mais sobre [gerenciamento de servidores](../use/manage-servers.md) em nossa documentação. O Windows Admin Center tem os seguintes recursos principais em sua solução de Gerenciador do Servidor:
 
 * Exibir os recursos e a utilização de recursos
 * Gerenciamento de certificado
@@ -75,11 +78,11 @@ Sim. O Windows Admin Center pode ser usado para gerenciar o Microsoft Hyper-V Se
 
 ## <a name="can-i-deploy-windows-admin-center-on-a-windows-10-computer"></a>Posso implantar o Windows Admin Center em um computador Windows 10?
 
-Sim, o Windows Admin Center pode ser instalado no Windows 10 (versão 1709 ou posterior) em execução no modo de desktop.  Windows Admin Center também pode ser instalado em um servidor com Windows Server 2016 ou superior no modo de gateway e, em seguida, acessado por meio de um navegador da web de um computador Windows 10. [Saiba mais sobre as opções de instalação](..\plan\installation-options.md).
+Sim, o Windows Admin Center pode ser instalado no Windows 10 (versão 1709 ou posterior) em execução no modo de desktop.  Windows Admin Center também pode ser instalado em um servidor com Windows Server 2016 ou superior no modo de gateway e, em seguida, acessado por meio de um navegador da web de um computador Windows 10. [Saiba mais sobre as opções de instalação](../plan/installation-options.md).
 
 ## <a name="ive-heard-that-windows-admin-center-uses-powershell-under-the-hood-can-i-see-the-actual-scripts-that-it-uses"></a>Ouvi dizer que usa o Windows Admin Center PowerShell nos bastidores, posso ver os scripts reais que ele usa?
 
-Sim! o [Showscript recurso](..\use\get-started.md#view-powershell-scripts-used-in-windows-admin-center) foi adicionado no Windows Admin Center visualização 1806 e agora está incluído no canal de GA.
+Sim! o [Showscript recurso](../use/get-started.md#view-powershell-scripts-used-in-windows-admin-center) foi adicionado no Windows Admin Center visualização 1806 e agora está incluído no canal de GA.
 
 ## <a name="are-there-any-plans-for-windows-admin-center-to-manage-windows-server-2008-r2-or-earlier"></a>Há planos para o Windows Admin Center gerenciar o Windows Server 2008 R2 ou anterior?
 
@@ -91,11 +94,24 @@ Estamos investigando devido à demanda do cliente, mas no momento, não há nenh
 
 ## <a name="which-web-browsers-are-supported-by-windows-admin-center"></a>Quais navegadores da Web são suportados pelo Windows Admin Center?
 
-As versões mais recentes do Microsoft Edge (Windows 10, versão 1709 ou posterior) e navegadores Google Chrome são testadas e suportadas no Windows 10. [Navegador de exibição específico problemas conhecidos](..\use\known-issues.md#browser-specific-issues). Outros navegadores da web modernos ou outras plataformas atualmente não fazem parte da nossa matriz de teste e, portanto, não *oficialmente* com suporte.
+As versões mais recentes do Microsoft Edge (Windows 10, versão 1709 ou posterior) e navegadores Google Chrome são testadas e suportadas no Windows 10. [Navegador de exibição específico problemas conhecidos](../support/known-issues.md#browser-specific-issues). Outros navegadores da web modernos ou outras plataformas atualmente não fazem parte da nossa matriz de teste e, portanto, não *oficialmente* com suporte.
 
 ## <a name="how-does-windows-admin-center-handle-security"></a>Como o Windows Admin Center processa a segurança?
 
 O tráfego do navegador para o gateway do Windows Admin Center usa HTTPS. O tráfego do gateway para servidores gerenciados é do PowerShell padrão e WMI por WinRM. Oferecemos suporte a LAPS (Solução de Senha de Administrador Local) com base no recurso de delegação restrita, controle de acesso do gateway usando AD ou Azure AD e controle de acesso com base em função para gerenciar os servidores de destino.
+
+## <a name="does-windows-admin-center-use-credssp"></a>Windows Admin Center usar CredSSP?
+
+Sim, em alguns casos Windows Admin Center requer CredSSP. Isso é necessário passar suas credenciais para autenticação para máquinas além do servidor específico que você estiver direcionando para o gerenciamento. Por exemplo, se você estiver gerenciando máquinas virtuais no **servidor B**, mas deseja armazenar os arquivos vhdx para essas máquinas virtuais em um compartilhamento de arquivos hospedado pelo **servidor C**, Windows Admin Center deve usar o CredSSP para autenticar com o **servidor C** para acessar o compartilhamento de arquivos.
+
+Windows Admin Center lida com a configuração do CredSSP automaticamente depois de solicitar o consentimento de você. Antes de configurar o CredSSP, Windows Admin Center verificará para garantir que o sistema tenha o recente CredSSP [atualizações](https://support.microsoft.com/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018). Enquanto o CredSSP é habilitado, haverá uma notificação sobre a visão geral do servidor e uma opção para desabilitá-lo-
+
+![CredSSP na visão geral do servidor](../media/CredSSP-overview.png)
+
+CredSSP é atualmente usado nas seguintes áreas:
+
+- Usando desagregada armazenamento SMB na ferramenta de máquinas virtuais (no exemplo acima.)
+- Usando as atualizações de ferramentas no cluster Hiperconvergente ou Failover soluções de gerenciamento, que executa a [Cluster-Aware Updating](https://docs.microsoft.com/windows-server/failover-clustering/cluster-aware-updating) 
 
 ## <a name="are-there-any-cloud-dependencies"></a>Existem dependências de nuvem?
 
@@ -107,15 +123,15 @@ O Windows Admin Center pode ser instalado no Windows 10 Fall Anniversary Update 
 
 ## <a name="what-about-extensibility-and-3rd-party-support"></a>E quanto a extensibilidade e suporte de terceiros 3rd?
 
-Windows Admin Center tem um SDK disponível para que qualquer pessoa possa escrever sua própria extensão. Como uma plataforma, nossa prioridade foi a ampliação do ecossistema e permitir a extensibilidade de parceiro. [Leia mais sobre o SDK do Windows Admin Center](..\extend\extensibility-overview.md).
+Windows Admin Center tem um SDK disponível para que qualquer pessoa possa escrever sua própria extensão. Como uma plataforma, nossa prioridade foi a ampliação do ecossistema e permitir a extensibilidade de parceiro. [Leia mais sobre o SDK do Windows Admin Center](../extend/extensibility-overview.md).
 
 ## <a name="can-i-manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Pode gerenciar a infraestrutura hiperconvergente com o Windows Admin Center?
 
-Sim. Windows Admin Center dá suporte ao gerenciamento de clusters hiperconvergentes que executam o Windows Server 2016 ou Windows Server 2019. A solução de Gerenciador de cluster hiperconvergente no Windows Admin Center estava anteriormente no modo de visualização, mas agora é **geralmente disponível**, com algumas novas funcionalidades na visualização. Para obter mais informações, [Leia mais sobre o gerenciamento da infraestrutura hiperconvergente](..\use\manage-hyper-converged.md).
+Sim. Windows Admin Center dá suporte ao gerenciamento de clusters hiperconvergentes que executam o Windows Server 2016 ou Windows Server 2019. A solução de Gerenciador de cluster hiperconvergente no Windows Admin Center estava anteriormente no modo de visualização, mas agora é **geralmente disponível**, com algumas novas funcionalidades na visualização. Para obter mais informações, [Leia mais sobre o gerenciamento da infraestrutura hiperconvergente](../use/manage-hyper-converged.md).
 
 ## <a name="does-windows-admin-center-require-system-center"></a>O Windows Admin Center requer o System Center?
 
-Nenhum. O Windows Admin Center é um complemento do System Center, mas o System Center não é necessário. [Leia mais sobre o Windows Admin Center e o System Center](related-management.md#system-center).
+Não. O Windows Admin Center é um complemento do System Center, mas o System Center não é necessário. [Leia mais sobre o Windows Admin Center e o System Center](related-management.md#system-center).
 
 ## <a name="can-windows-admin-center-replace-system-center-virtual-machine-manager-scvmm"></a>O Windows Admin Center pode substituir o System Center Virtual Machine Manager (SCVMM)?
 
@@ -127,15 +143,18 @@ Há duas versões do Windows Admin Center disponíveis para download:
 
 ### <a name="windows-admin-center"></a>Windows Admin Center
 
-* Para administradores de TI que não podem atualizar com frequência ou para quem deseja mais tempo de validação para os lançamentos usados na produção, esta versão é para você. Nosso atual disponível (GA) é Windows Admin Center 1809.5.
-* Para obter a versão mais recente do GA, [baixe-a aqui](https://aka.ms/WACDownload).
-
-* GA do Windows Admin Center há suporte para versões continuamente, com base em da Microsoft [política de ciclo de vida moderno](https://support.microsoft.com/help/30881/modern-lifecycle-policy). Isso significa que apenas a versão lançada mais recente do GA Windows Admin Center é atendida e com suporte, e os usuários devem "Mantenha-se atualizado" ao atualizar para a versão mais recente do GA Windows Admin Center dentro de 30 dias de disponibilidade permaneça com suporte. Essa política se aplica ao própria plataforma do Windows Admin Center, bem como quaisquer extensões da Microsoft que são GA e publicada na extensão do Windows Admin Center feed. Observe que algumas extensões podem ser atualizadas com mais frequência do que outros, entre as versões do Windows Admin Center GA.
+* Para administradores de TI que não podem atualizar com frequência ou para quem deseja mais tempo de validação para os lançamentos usados na produção, esta versão é para você. Nosso atual disponível (GA) é Windows Admin Center 1904.
+* [!INCLUDE [support-policy](../includes/support-policy.md)]
+* Para obter a versão mais recente, [baixar aqui](https://aka.ms/WACDownload).
 
 ### <a name="windows-admin-center-preview"></a>Windows Admin Center Preview
 
+> [!NOTE]
+> A versão atual do GA (Windows Admin Center 1904) contém todas as funcionalidades de visualização anterior.
+> Insider Preview retornará nos próximos meses.
+
 * Para administradores de TI que desejam os melhores e mais recentes recursos em um cadência regular, esta versão é para você. Nosso objetivo é fornecer a atualização subsequente libera todos os meses ou menos. A plataforma de núcleo continua a estar pronto para produção e a licença fornece os direitos de uso de produção. No entanto, observe que você verá a introdução das novas ferramentas e recursos que estão marcados claramente como visualização e são adequados para avaliação e teste.
-* Para obter a versão mais recente do Preview, os participantes registrados do Insider podem baixar o Windows Admin Center Preview diretamente da [página de download do Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver), sob o menu suspenso Downloads adicionais. Se você ainda não se registrou como um Insider, consulte o [Guia de Introdução ao Windows Server](https://insider.windows.com/en-us/for-business-getting-started-server/) no portal Windows Insider para Empresas.
+* Para obter a versão mais recente do Insider Preview, Insiders registrado podem baixar o Windows Admin Center visualização diretamente a partir de [página de download do Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver), sob o menu suspenso Downloads adicionais. Se você ainda não se registrou como um Insider, consulte o [Guia de Introdução ao Windows Server](https://insider.windows.com/en-us/for-business-getting-started-server/) no portal Windows Insider para Empresas.
 
 ## <a name="why-was-windows-admin-center-chosen-as-the-final-name-for-project-honolulu"></a>Por que o "Windows Admin Center" foi escolhido como o nome final "Project Honolulu"?
 
@@ -147,8 +166,8 @@ A [página de início](https://aka.ms/WindowsAdminCenter) é o melhor ponto de p
 
 ## <a name="what-is-the-version-history-of-windows-admin-center"></a>O que é o histórico de versão do Windows Admin Center?
 
-[Exiba o histórico de versão.](..\overview.md#release-history)
+[Exiba o histórico de versão.](../overview.md#release-history)
 
 ## <a name="im-having-an-issue-with-windows-admin-center-where-can-i-get-help"></a>Estou tendo um problema com o Windows Admin Center, onde posso obter ajuda?
 
-Consulte nosso [guia de solução de problemas](..\use\troubleshooting.md) e nossa lista de [problemas conhecidos](..\use\known-issues.md).
+Consulte nosso [guia de solução de problemas](../use/troubleshooting.md) e nossa lista de [problemas conhecidos](../use/known-issues.md).

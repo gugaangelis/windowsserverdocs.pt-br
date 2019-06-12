@@ -12,18 +12,18 @@ author: brentfor
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ea8a336e2c40b55e2ad6b508d89db7dcb668315
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8a1fe22a1f721c0ac94096fe22c559c9bb092293
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832847"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435309"
 ---
 # <a name="troubleshoot-software-inventory-logging"></a>Solucionar problemas do Log de Inventário de Software 
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
-##<a name="understanding-sil"></a>Noções básicas sobre o SIL
+## <a name="understanding-sil"></a>Noções básicas sobre o SIL
 
 Antes de iniciar o SIL de solução de problemas, você deve ter uma boa compreensão de seus componentes e como ele funciona. Os vídeos a seguir fornecem uma visão geral do SIL e o agregador do SIL e como usá-los para encaminhar e dados de inventário do relatório:
 
@@ -33,7 +33,7 @@ Antes de iniciar o SIL de solução de problemas, você deve ter uma boa compree
 
 3. [Software de log de inventário: Habilitar o encaminhamento do SIL (7:20)](https://channel9.msdn.com/Blogs/windowsserver/Software-Inventory-Logging-Enabling-SIL-Forwarding)
 
-##<a name="how-sil-data-flow-works"></a>Como que o fluxo de dados SIL funciona
+## <a name="how-sil-data-flow-works"></a>Como que o fluxo de dados SIL funciona
 
 A estrutura do SIL tem dois componentes principais e dois canais de comunicação. Fluxo de dados em ambos os canais e entre os dois componentes, é necessário para uma implantação bem-sucedida do SIL (Isso pressupõe um ambiente virtualizado ou nuvem,--ambientes físicos puramente precisam apenas um dos canais de comunicação). Você precisará entender os componentes e fluxo de dados do SIL para implantá-lo corretamente. Depois de assistir os vídeos de visão geral acima, você já viu o diagrama de arquitetura que ilustra os componentes e o fluxo de dados em ambos os canais. Setas laranjas indicam consultas remotas no WinRM, setas tracejadas verdes indicam que HTTPS envia para o agregador do SIL do SIL em cada nó de término do WS:
 
@@ -47,7 +47,7 @@ Se você encontrar um problema com o SIL, ele provavelmente está relacionado a 
 
 -   **Problema 3 de fluxo de dados** – **excesso várias VMs em hosts físicos listados como o SO desconhecido** no relatório, e/ou um erro produzidas quando usando **Publish-SilData** em servidores Windows que esteja executando o SIL.
 
-##<a name="troubleshooting-data-flow-issues"></a>Solucionando problemas de fluxo de dados
+## <a name="troubleshooting-data-flow-issues"></a>Solucionando problemas de fluxo de dados
 
 Antes de começar, você precisará saber quanto tempo atrás agregador do SIL iniciado com o **Start-SilAggregator** cmdlet.
 
@@ -65,20 +65,20 @@ Se você estiver solucionando problemas de dados no relatório (ou ausentes do r
 
 Se ainda não houver nenhum dado no relatório, continue com a solução de problemas de fluxo de dados de três.
 
-###<a name="data-flow-issue-1"></a>Problema de fluxo de dados 1 
+### <a name="data-flow-issue-1"></a>Problema de fluxo de dados 1 
 
-####<a name="no-data-in-the-report-when-using-the-publish-silreport-cmdlet-or-data-is-generally-missing"></a>Nenhum dado no relatório ao usar o cmdlet Publish-SilReport (ou os dados estão ausentes em geral)
+#### <a name="no-data-in-the-report-when-using-the-publish-silreport-cmdlet-or-data-is-generally-missing"></a>Nenhum dado no relatório ao usar o cmdlet Publish-SilReport (ou os dados estão ausentes em geral)
 
 Se dados estão ausentes, provavelmente devido ao cubo de dados SQL não ter processado ainda. Se ele tiver processado recentemente e você acredita que devem ter chegado a dados ausentes no agregador antes do processamento de cubo, siga o caminho dos dados na ordem inversa. Escolha um host exclusivo e uma única VM para solucionar problemas. O caminho de dados em ordem inversa seria **relatório SILA** &lt; **banco de dados SILA** &lt; **diretório local de SILA** &lt;  **host físico remoto** ou **executando o SIL/tarefa do agente de VM de WS**.
 
-####<a name="check-to-see-if-data-is-in-the-database"></a>Verifique se os dados estão no banco de dados
+#### <a name="check-to-see-if-data-is-in-the-database"></a>Verifique se os dados estão no banco de dados
 
 Há duas maneiras de verificar se há dados: **PowerShell** ou **SSMS**.
 
 >[!Important]
 >Se o cubo foi processado pelo menos uma vez, pois o SILA inseriu dados no banco de dados, esses dados devem ser refletidos no relatório. Se não houver nenhum dado no banco de dados, em seguida, qualquer um dos hosts físicos de sondagem está falhando ou nada está sendo recebido via HTTPS, ou ambos.
 
- ####<a name="powershell"></a>PowerShell
+ #### <a name="powershell"></a>PowerShell
 
 1. Abra o PowerShell como administrador e execute o **get-silvmhost** cmdlet e, em seguida, execute **get-silaggregator**.
 
@@ -86,16 +86,17 @@ Há duas maneiras de verificar se há dados: **PowerShell** ou **SSMS**.
     >A saída de **get-silaggregator** sempre imita a **guia de detalhes do Windows Server** de relatório do Excel. Não espere um resultado diferente.
 
 2. Executar **get-silvmhost**
- - Se não há hosts estiverem listados, em seguida, adicione hosts usando o **silvmhost adicionar** cmdlet.
- - Se os hosts são listados como **desconhecido**, em seguida, vá para o problema 2. d - se hosts são listados, mas não há nenhuma **datetime** sob o **sondagem recente** coluna e, em seguida, vá para **problema 2** abaixo.
+   - Se não há hosts estiverem listados, em seguida, adicione hosts usando o **silvmhost adicionar** cmdlet.
+   - Se os hosts são listados como **desconhecido**, em seguida, vá para o problema 2. 
+   d - se hosts são listados, mas não há nenhuma **datetime** sob o **sondagem recente** coluna e, em seguida, vá para **problema 2** abaixo.
 
 **Outros comandos relacionados**
 
-**Get-SilAggregator - Computername &lt;fqdn de um servidor conhecido enviando dados por push&gt;**: Isso produzirá informações do banco de dados sobre um computador (VM), mesmo antes do cubo foi processado. Assim, esse cmdlet pode ser usado para verificar em dados no banco de dados para um envio por push dados de SIL via HTTPS, antes ou sem o processo de cubo às 3:00 (ou se você ainda não tiver atualizado o cubo em tempo real, conforme descrito no início desta seção) do Windows Server.
+**Get-SilAggregator - Computername &lt;fqdn de um servidor conhecido enviando dados por push&gt;** : Isso produzirá informações do banco de dados sobre um computador (VM), mesmo antes do cubo foi processado. Assim, esse cmdlet pode ser usado para verificar em dados no banco de dados para um envio por push dados de SIL via HTTPS, antes ou sem o processo de cubo às 3:00 (ou se você ainda não tiver atualizado o cubo em tempo real, conforme descrito no início desta seção) do Windows Server.
 
-**Get-SilAggregator - VmHostName &lt;fqdn de um host físico poll onde há um valor na coluna de pesquisa recentes ao usar o cmdlet Get-SilVmHost&gt;**: Isso produzirá informações do banco de dados sobre um host físico, mesmo antes do cubo foi processado.
+**Get-SilAggregator - VmHostName &lt;fqdn de um host físico poll onde há um valor na coluna de pesquisa recentes ao usar o cmdlet Get-SilVmHost&gt;** : Isso produzirá informações do banco de dados sobre um host físico, mesmo antes do cubo foi processado.
 
-####<a name="ssms"></a>SSMS
+#### <a name="ssms"></a>SSMS
 
 n**verificar se há dados a partir de hosts sendo pesquisados:**
  
@@ -104,18 +105,18 @@ n**verificar se há dados a partir de hosts sendo pesquisados:**
 
     Se houver dados para um ou mais hosts na tabela, sondagem, em seguida, para hosts que/those foi bem-sucedida pelo menos uma vez.
 
- **Verificação de dados de VMs ou servidores autônomos, o que tem enviado por push dados via HTTPS:** 
+   **Verificação de dados de VMs ou servidores autônomos, o que tem enviado por push dados via HTTPS:** 
 
-1. Abra **SSMS** e conecte-se para o **mecanismo de banco de dados**.
-a2. Expandir **bancos de dados**, expanda o **SoftwareInventoryLogging** banco de dados, expanda **tabelas**, clique com botão direito do **VMInfo** tabela e, em seguida, Selecione as 1000 linhas superiores. 
+3. Abra **SSMS** e conecte-se para o **mecanismo de banco de dados**.
+   a2. Expandir **bancos de dados**, expanda o **SoftwareInventoryLogging** banco de dados, expanda **tabelas**, clique com botão direito do **VMInfo** tabela e, em seguida, Selecione as 1000 linhas superiores. 
 
     >[!NOTE] 
     >Cada linha de uma VM exclusiva representará um processado **bmil** arquivo enviado por push via HTTPS e processados pelo agregador do SIL com êxito. Bmil arquivos são arquivos de propriedade usados pelo SIL, uma será criada cada nosso por cada instância do SIL Observe que isso só é necessário quando o SIL e o SILA são usados em ambientes virtuais. Caso contrário, somente o tráfego HTTPS é necessário/esperado).
 
- Todos os dados no banco de dados devem ser refletidos nos relatórios do SIL após o cubo foi processado.
+   Todos os dados no banco de dados devem ser refletidos nos relatórios do SIL após o cubo foi processado.
 
-###<a name="data-flow-issue-2"></a>Problema de fluxo de dados 2
-####<a name="too-many-servers-under-unknown-host"></a>Muitos servidores em um Host desconhecido
+### <a name="data-flow-issue-2"></a>Problema de fluxo de dados 2
+#### <a name="too-many-servers-under-unknown-host"></a>Muitos servidores em um Host desconhecido
 
 Isso é muito provável que ocorram em ambientes virtuais quando o agregador do SIL não está sondando com êxito a hosts físicos que hospedam as máquinas virtuais.
 
@@ -133,15 +134,15 @@ Isso é muito provável que ocorram em ambientes virtuais quando o agregador do 
 
 Depois que os hosts estão sondando corretamente, você poderá ver os dados para esses hosts físicos no banco de dados SILA onde há uma **datetime** sob **sondagem recente**. Seção 1 problema acima fornece etapas para recuperar os dados.
 
-###<a name="data-flow-issue-3"></a>Problema de fluxo de dados 3
-####<a name="too-many-physical-hosts-with-vms-listed-as-unknown-os"></a>Muitos hosts físicos com VMs listados como o sistema operacional desconhecido
+### <a name="data-flow-issue-3"></a>Problema de fluxo de dados 3
+#### <a name="too-many-physical-hosts-with-vms-listed-as-unknown-os"></a>Muitos hosts físicos com VMs listados como o sistema operacional desconhecido
 
 1. Escolha um nó do Windows Server final (VM) que você sabe que está em um desses hosts, faça logon como administrador.
 2. Abra o PowerShell como administrador.
 3. Verifique se **SilLogging** está em execução usando o **Get-SilLogging** cmdlet.
- - Se em execução, tente enviar manualmente os dados SIL usando **Publish-SilData**.
+   - Se em execução, tente enviar manualmente os dados SIL usando **Publish-SilData**.
 
-  - Se houver um erro:
+   - Se houver um erro:
      - Verifique se o **targeturi** tem **https://** na entrada.
      - Verifique se que todos os pré-requisitos foram atendidos 
      - Verifique se todas as atualizações necessárias para o Windows Server estão instaladas (consulte os pré-requisitos para o SIL). Uma maneira rápida de verificar (no WS 2012 R2 apenas) é procurar por elas usando o seguinte cmdlet: **Get-SilWindowsUpdate \*3060, \*3000**
@@ -149,11 +150,11 @@ Depois que os hosts estão sondando corretamente, você poderá ver os dados par
      - No agregador do SIL, certifique-se que a impressão digital do certificado que está sendo usado para autenticar no agregador é adicionada à lista usando o **Set-SilAggregator** **– AddCertificateThumbprint** cmdlet.
      - Se estiver usando certificados corporativos, verifique se o servidor com o SIL habilitado está ingressado no domínio para o qual o certificado foi criado ou se ele é, de outro modo, verificável com uma autoridade raiz. Se um certificado não for confiável no computador local que tenta encaminhar/enviar por push os dados para um Agregador, essa ação falhará com um erro.
 
-    Se todos os itens acima foram verificados e verificados, mas o problema persistir:
+     Se todos os itens acima foram verificados e verificados, mas o problema persistir:
 
-    - Verifique se o certificado usado para instalar o agregador do SIL está íntegro e corresponde ao nome do servidor agregador do SIL em si. Além disso, se certificados corporativos forem usados para instalar o Agregador do SIL, o Agregador talvez precise ser ingressado no domínio em que o certificado foi criado (essas etapas são desnecessárias se outras máquinas estão encaminhando com êxito para o mesmo Agregador do SIL).
+     - Verifique se o certificado usado para instalar o agregador do SIL está íntegro e corresponde ao nome do servidor agregador do SIL em si. Além disso, se certificados corporativos forem usados para instalar o Agregador do SIL, o Agregador talvez precise ser ingressado no domínio em que o certificado foi criado (essas etapas são desnecessárias se outras máquinas estão encaminhando com êxito para o mesmo Agregador do SIL).
 
-    -  Por fim, você pode verificar o seguinte local para arquivos do SIL armazenados em cache no servidor que está tentando encaminhar/enviar por push **\Windows\System32\Logfiles\SIL**. Se **SilLogging** foi iniciado e está em execução por mais de uma hora, ou **Publish-SilData** foi executado recentemente, e não existem arquivos nesse diretório, que foi o registro em log para o agregador concluída com êxito.
+     -  Por fim, você pode verificar o seguinte local para arquivos do SIL armazenados em cache no servidor que está tentando encaminhar/enviar por push **\Windows\System32\Logfiles\SIL**. Se **SilLogging** foi iniciado e está em execução por mais de uma hora, ou **Publish-SilData** foi executado recentemente, e não existem arquivos nesse diretório, que foi o registro em log para o agregador concluída com êxito.
 
 Se não houver nenhum erro e nenhuma saída no console, em seguida, os dados por push/publicar a partir do nó de final do Windows Server para o agregador do SIL via HTTPS foi bem-sucedida. Siga o caminho de logon de encaminhamento, os dados para o agregador do SIL como um administrador e examinar os arquivos de dados que foram recebidos. Vá para **arquivos de programas (x86)** &gt; **agregador do SIL Microsoft** &gt; diretório SILA. Você pode inspecionar os arquivos de dados que chegam em tempo real.
 

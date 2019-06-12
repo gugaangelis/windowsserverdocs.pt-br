@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: a9ee7a56-f062-474f-a61c-9387ff260929
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 6869ee5f39f1719a3c71025207ef9ffe740492ff
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: cf66a306c7f023852cec93d6458e74a99c46c831
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266784"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812107"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-secondary-deployments"></a>Usar política de DNS para gerenciamento de tráfego baseado em localização geográfica com implantações primárias e secundárias
 
@@ -25,8 +25,8 @@ No cenário anterior, [usar a política de DNS para o gerenciamento de tráfego 
   
 Os servidores secundários usam os protocolos de transferência de zona transferência autoritativo (AXFR) e a transferência de zona Incremental (IXFR) para solicitar e receber atualizações de zona que incluem novas alterações para as zonas nos servidores DNS primários.   
   
->[!NOTE]
->Para obter mais informações sobre transações AXFR, consulte Internet Engineering Task Force (IETF) [solicitação de comentários 5936](https://tools.ietf.org/rfc/rfc5936.txt). Para obter mais informações sobre IXFR, consulte Internet Engineering Task Force (IETF) [solicitação de comentários de 1995](https://tools.ietf.org/html/rfc1995).  
+> [!NOTE]
+> Para obter mais informações sobre transações AXFR, consulte Internet Engineering Task Force (IETF) [solicitação de comentários 5936](https://tools.ietf.org/rfc/rfc5936.txt). Para obter mais informações sobre IXFR, consulte Internet Engineering Task Force (IETF) [solicitação de comentários de 1995](https://tools.ietf.org/html/rfc1995).  
   
 ## <a name="primary-secondary-geo-location-based-traffic-management-example"></a>Exemplo de gerenciamento de tráfego com base de localização geográfica primárias e secundárias  
 A seguir está um exemplo de como você pode usar a política de DNS em uma implantação de primárias e secundárias para alcançar o redirecionamento do tráfego com base em um local físico do cliente que executa uma consulta DNS.  
@@ -82,7 +82,7 @@ Para qualquer outra atualização em um escopo de zona, uma notificação de IXF
 
 Antes de começar, certifique-se de que você tenha concluído todas as etapas no tópico [usar a política de DNS para o gerenciamento de tráfego com base em localização geográfica com servidores primários](../../dns/deploy/Scenario--Use-DNS-Policy-for-Geo-Location-Based-Traffic-Management-with-Primary-Servers.md), e seu servidor DNS primário é configurado com zonas, escopos de zona, o cliente DNS Subredes e a política DNS.  
   
->[!NOTE]
+> [!NOTE]
 > As instruções neste tópico para copiar as sub-redes de cliente DNS, escopos de zona e políticas de DNS de servidores DNS primários para os servidores DNS secundários são para sua configuração DNS inicial e a validação. No futuro você talvez queira alterar a subredes de cliente DNS, escopos de zona e configurações de políticas no servidor primário. Nessa circunstância, você pode criar scripts de automação para manter os servidores secundários sincronizados com o servidor primário.  
   
 Para configurar a política de DNS para respostas de consultas de primárias e secundárias localização geográfica com base, você deve executar as etapas a seguir.  
@@ -95,9 +95,10 @@ Para configurar a política de DNS para respostas de consultas de primárias e s
   
 As seções a seguir fornecem instruções de configuração detalhadas.  
   
->[!IMPORTANT]
->As seções a seguir incluem comandos do Windows PowerShell de exemplo que contêm valores de exemplo para muitos parâmetros. Certifique-se de que você substitua os valores de exemplo nesses comandos com os valores que são apropriadas para sua implantação antes de executar esses comandos.  
-><br>Associação na **DnsAdmins**, ou equivalente, é necessário para executar os procedimentos a seguir.  
+> [!IMPORTANT]
+> As seções a seguir incluem comandos do Windows PowerShell de exemplo que contêm valores de exemplo para muitos parâmetros. Certifique-se de que você substitua os valores de exemplo nesses comandos com os valores que são apropriadas para sua implantação antes de executar esses comandos.  
+> 
+> Associação na **DnsAdmins**, ou equivalente, é necessário para executar os procedimentos a seguir.  
   
 ### <a name="create-the-secondary-zones"></a>Criar as zonas secundário
 
@@ -124,8 +125,8 @@ Você deve definir as configurações de zona primária, de modo que:
   
 Você pode usar os seguintes comandos do Windows PowerShell para definir as configurações de transferência de zona na zona primária.
   
->[!NOTE]
->No seguinte exemplo de comando, o parâmetro **-notificar** Especifica que o servidor primário enviará notificações sobre atualizações à lista de seleção de secundários.  
+> [!NOTE]
+> No seguinte exemplo de comando, o parâmetro **-notificar** Especifica que o servidor primário enviará notificações sobre atualizações à lista de seleção de secundários.  
   
     
     Set-DnsServerPrimaryZone -Name "woodgrove.com" -Notify Notify -SecondaryServers "10.0.0.2,10.0.0.3" -SecureSecondaries TransferToSecureServers -ComputerName PrimaryServer  
@@ -160,8 +161,8 @@ Você pode usar os seguintes comandos do Windows PowerShell para criar os escopo
     Get-DnsServerZoneScope -ZoneName "woodgrove.com" -ComputerName PrimaryServer|Add-DnsServerZoneScope -ZoneName "woodgrove.com" -ComputerName SecondaryServer2 -ErrorAction Ignore  
   
 
->[!NOTE]
->Esses comandos de exemplo, o **- ErrorAction ignorar** parâmetro seja incluído, como um escopo de zona padrão existe em cada zona. O escopo da região padrão não pode ser criado ou excluído. O pipelining resultará em uma tentativa de criar o escopo e irá falhar. Como alternativa, você pode criar os escopos de zonas não padrão em duas zonas secundárias.  
+> [!NOTE]
+> Esses comandos de exemplo, o **- ErrorAction ignorar** parâmetro seja incluído, como um escopo de zona padrão existe em cada zona. O escopo da região padrão não pode ser criado ou excluído. O pipelining resultará em uma tentativa de criar o escopo e irá falhar. Como alternativa, você pode criar os escopos de zonas não padrão em duas zonas secundárias.  
   
 Para obter mais informações, consulte [DnsServerZoneScope adicionar](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps).  
   

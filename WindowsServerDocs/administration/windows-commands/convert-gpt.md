@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e838f68162b6faabf2ecbc7dea2ce840235890c0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 433e30efeecec4e4ec51d67c40c14cacf986d12e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859107"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434219"
 ---
 # <a name="convert-gpt"></a>convert gpt
 
@@ -44,8 +44,8 @@ convert gpt [noerr]
 
 > [!IMPORTANT]
 > O disco deve estar vazio para convertê-lo em um disco GPT. Fazer backup dos dados e, em seguida, exclua todas as partições ou volumes antes de converter o disco.
--   O tamanho de disco mínimo necessário para a conversão em GPT é de 128 MB.
--   Um disco MBR básico deve ser selecionado para essa operação seja bem-sucedida. Use o **Selecionar disco** comando para selecionar um disco básico e mudar o foco a ele.
+> -   O tamanho de disco mínimo necessário para a conversão em GPT é de 128 MB.
+> -   Um disco MBR básico deve ser selecionado para essa operação seja bem-sucedida. Use o **Selecionar disco** comando para selecionar um disco básico e mudar o foco a ele.
 
 ## <a name="BKMK_examples"></a>Exemplos
 
@@ -56,5 +56,5 @@ convert gpt
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 

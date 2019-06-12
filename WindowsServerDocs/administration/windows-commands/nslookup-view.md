@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0712189f9043622ef6d252a88328f01042aad159
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 623064db7a3e89decbfc1fbc27fa0598e398ac34
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872227"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436413"
 ---
 # <a name="nslookup-view"></a>nslookup view
 
@@ -30,10 +30,12 @@ classifica e lista a saída de versões anteriores **ls** subcomando ou comandos
 view <FileName>  
 ```  
 ## <a name="parameters"></a>Parâmetros  
-|Parâmetro|Descrição|  
-|-------|--------|  
-|<FileName>|Especifica o nome do arquivo que contém a saída do anterior **ls** subcomando ou comandos.|  
-|{Ajuda &#124; ?}|Exibe um resumo breve dos **nslookup** subcomandos.|  
+
+|    Parâmetro    |                                            Descrição                                            |
+|-----------------|---------------------------------------------------------------------------------------------------|
+|   <FileName>    | Especifica o nome do arquivo que contém a saída do anterior **ls** subcomando ou comandos. |
+| {Ajuda &#124; ?} |                       Exibe um resumo breve dos **nslookup** subcomandos.                       |
+
 ## <a name="additional-references"></a>Referências adicionais  
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
-[ls nslookup](nslookup-ls.md)  
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+[nslookup ls](nslookup-ls.md)  

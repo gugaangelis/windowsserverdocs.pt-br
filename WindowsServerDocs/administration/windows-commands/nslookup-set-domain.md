@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9019893d92201079fb60b820a14dda3763bafd6b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d1af9f30dd2c44111adecb477a6469333f4f7685
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886637"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436772"
 ---
 # <a name="nslookup-set-domain"></a>nslookup set domain
 
@@ -30,13 +30,15 @@ Altera o nome de domínio do sistema de nome de domínio (DNS) padrão para o no
 set domain=<DomainName>
 ```
 ## <a name="parameters"></a>Parâmetros
-|Parâmetro|Descrição|
-|-------|--------|
-|<DomainName>|Especifica um novo nome para o nome de domínio DNS padrão. O nome de domínio padrão é o nome do host.|
-|{Ajuda &#124; ?}|Exibe um resumo breve dos **nslookup** subcomandos.|
+
+|    Parâmetro    |                                           Descrição                                           |
+|-----------------|-------------------------------------------------------------------------------------------------|
+|  <DomainName>   | Especifica um novo nome para o nome de domínio DNS padrão. O nome de domínio padrão é o nome do host. |
+| {Ajuda &#124; ?} |                      Exibe um resumo breve dos **nslookup** subcomandos.                      |
+
 ## <a name="remarks"></a>Comentários
--   O nome de domínio DNS padrão é acrescentado a uma solicitação de pesquisa dependendo do estado do **defname** e **pesquisa** opções. A lista de pesquisa de domínio DNS contém o pai do domínio DNS padrão se ele tiver pelo menos dois componentes em seu nome. Por exemplo, se o domínio DNS padrão for mfg.widgets.com, a lista de pesquisa é denominada mfg.widgets.com e widgets.com. Use o **definir srchlist** comando para especificar uma lista diferente e o **definir tudo** comando para exibir a lista.
-## <a name="additional-references"></a>Referências adicionais
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[nslookup definir srchlist](nslookup-set-srchlist.md)
-[nslookup definir todos](nslookup-set-all.md)
+- O nome de domínio DNS padrão é acrescentado a uma solicitação de pesquisa dependendo do estado do **defname** e **pesquisa** opções. A lista de pesquisa de domínio DNS contém o pai do domínio DNS padrão se ele tiver pelo menos dois componentes em seu nome. Por exemplo, se o domínio DNS padrão for mfg.widgets.com, a lista de pesquisa é denominada mfg.widgets.com e widgets.com. Use o **definir srchlist** comando para especificar uma lista diferente e o **definir tudo** comando para exibir a lista.
+  ## <a name="additional-references"></a>Referências adicionais
+  [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+  [nslookup definir srchlist](nslookup-set-srchlist.md)
+  [nslookup definir todos](nslookup-set-all.md)

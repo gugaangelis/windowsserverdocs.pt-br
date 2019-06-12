@@ -9,13 +9,13 @@ author: jasongerend
 ms.author: jgerend
 manager: jasgroce
 ms.localizationpriority: medium
-ms.date: 05/29/2019
-ms.openlocfilehash: e76b7862549814d5453717c40cec45e341141d7a
-ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
+ms.date: 06/07/2019
+ms.openlocfilehash: 747258601aa05885d209aacde6947eb7b05e8121
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66308599"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810798"
 ---
 # <a name="server-core-app-compatibility-feature-on-demand-fod"></a>Recurso de compatibilidade de aplicativo do Server Core sob demanda (FOD)
 
@@ -64,7 +64,7 @@ Componentes do sistema operacional que estão disponíveis como parte do que o S
 
         -   Para executar o Gerenciador de Cluster de Failover, digite **cluadmin** no prompt de comando.
 
-Servidores que executam o Windows Server, versão 1903 e versões posterior também dão suporte os seguintes componentes:
+Servidores que executam o Windows Server, versão 1903 e versões posterior também dão suporte os seguintes componentes (ao usar a mesma versão do FOD de compatibilidade de aplicativo):
 
 - Gerenciador do Hyper-V (virtmgmt.msc)
 - Agendador de tarefas (taskschd)
@@ -104,7 +104,7 @@ O FOD de compatibilidade de aplicativo só pode ser instalado no Server Core. N�
 
 8. Após a barra de progresso, reinicie o sistema operacional.
 
- Para obter mais informações sobre os comandos do DISM, consulte [usar DISM no Windows PowerShell](https://docs.microsoft.com/windows-hardware/manufacture/desktop/use-dism-in-windows-powershell-s14)
+   Para obter mais informações sobre os comandos do DISM, consulte [usar DISM no Windows PowerShell](https://docs.microsoft.com/windows-hardware/manufacture/desktop/use-dism-in-windows-powershell-s14)
 
 ## <a name="to-optionally-add-internet-explorer-11-to-server-core-after-adding-the-server-core-app-compatibility-fod"></a>Para adicionar, opcionalmente, o Internet Explorer 11 para Server Core (depois de adicionar o FOD de compatibilidade de aplicativo Server Core)
 
@@ -148,8 +148,8 @@ O FOD de compatibilidade de aplicativo só pode ser instalado no Server Core. N�
 
 - Como um ponto geral de orientação, quando a instalação de aplicativos no servidor principal (com ou sem esses pacotes opcionais) ele às vezes, é necessário usar as instruções e opções de instalação silenciosa. 
     
- - Por exemplo, o SQL Server Management Studio para SQL Server 2016 e SQL Server 2017 podem ser instalado no Server Core e é totalmente funcional, quando o FOD de compatibilidade do aplicativo está presente.  Consulte, [instalar o SQL Server do Prompt de comando](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-from-the-command-prompt?view=sql-server-2017).
- - Se o SQL Server Management Studio não for desejado, em seguida, não é necessário instalar o Server Core aplicativo compatibilidade FOD.  Consulte, [instalar o SQL Server no Server Core](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-on-server-core?view=sql-server-2017).
+  - Por exemplo, o SQL Server Management Studio para SQL Server 2016 e SQL Server 2017 podem ser instalado no Server Core e é totalmente funcional, quando o FOD de compatibilidade do aplicativo está presente.  Consulte, [instalar o SQL Server do Prompt de comando](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-from-the-command-prompt?view=sql-server-2017).
+  - Se o SQL Server Management Studio não for desejado, em seguida, não é necessário instalar o Server Core aplicativo compatibilidade FOD.  Consulte, [instalar o SQL Server no Server Core](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-on-server-core?view=sql-server-2017).
 
 ## <a name="a-idadd-capabilities-adding-capabilities-and-optional-packages-to-an-offline-wim-server-core-image"></a><a id="add-capabilities"> Adicionando recursos e pacotes opcionais em uma imagem do Server Core do WIM offline
 

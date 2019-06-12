@@ -12,12 +12,12 @@ ms.assetid: 5f570492-ee21-471b-92c1-3fd9bfb84f55
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8228d0b17a58858ed893181ddceb465715ffdeb5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: f38d234768d40903615145954f1215546119344a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874097"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435945"
 ---
 # <a name="play-digital-media-in-windows-server-essentials"></a>Gerenciar mídia digital no Windows Server Essentials
 
@@ -190,25 +190,25 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
   
 #### <a name="to-play-shared-media-files-when-you-are-away-from-the-network"></a>Para executar arquivos de mídia compartilhada quando está fora da rede  
   
-1.  Abra um navegador da Internet.  
+1. Abra um navegador da Internet.  
   
-2.  Vá para o site de Acesso Remoto via Web . Tipo de **https://<YourDomainName\>/remota** na barra de endereços do navegador da Internet e pressione Enter.  
+2. Vá para o site de Acesso Remoto via Web . Tipo de **https://<YourDomainName\>/remota** na barra de endereços do navegador da Internet e pressione Enter.  
   
-    > [!NOTE]
-    >  *< nome_do_domínio\>*  é um espaço reservado. É um nome exclusivo para seu servidor, o endereço que você digita parecerá assim **https://contoso.com/remote**. Se você não souber o nome do seu domínio, peça ao administrador que escolheu o nome de domínio quando a função Acesso remoto estiver configurada no servidor. Para obter mais informações, consulte [Turn on Remote Web Access](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_TurnOnRWA).  
+   > [!NOTE]
+   >  *< nome_do_domínio\>*  é um espaço reservado. É um nome exclusivo para seu servidor, o endereço que você digita parecerá assim **https://contoso.com/remote** . Se você não souber o nome do seu domínio, peça ao administrador que escolheu o nome de domínio quando a função Acesso remoto estiver configurada no servidor. Para obter mais informações, consulte [Turn on Remote Web Access](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_TurnOnRWA).  
   
-3.  Sobre a acesso remoto via Web da página de entrada, digite o nome de conta de usuário e senha e, em seguida, clique na seta.  
+3. Sobre a acesso remoto via Web da página de entrada, digite o nome de conta de usuário e senha e, em seguida, clique na seta.  
   
-4.  Use qualquer método que você desejar para pesquisar o arquivo de mídia que você deseja executar.  
+4. Use qualquer método que você desejar para pesquisar o arquivo de mídia que você deseja executar.  
   
-    > [!NOTE]
+   > [!NOTE]
+   > 
+   >  Para obter informações sobre os vários métodos de pesquisa, consulte [pesquisar e executar arquivos de mídia no Windows Server Essentials de um computador ou player de mídia digital na rede](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2.1).  
+   > 
+   >  Para obter informações sobre os vários métodos de pesquisa, consulte [pesquisar e executar arquivos de mídia no Windows Server Essentials de um computador ou player de mídia digital na rede](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2.1).  
 
-    >  Para obter informações sobre os vários métodos de pesquisa, consulte [pesquisar e executar arquivos de mídia no Windows Server Essentials de um computador ou player de mídia digital na rede](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2.1).  
-
-    >  Para obter informações sobre os vários métodos de pesquisa, consulte [pesquisar e executar arquivos de mídia no Windows Server Essentials de um computador ou player de mídia digital na rede](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2.1).  
-
   
-5.  Quando o nome do arquivo de mídia for exibida, clique no nome do arquivo para executar a mídia.  
+5. Quando o nome do arquivo de mídia for exibida, clique no nome do arquivo para executar a mídia.  
   
 ##  <a name="BKMK_4"></a> Adicionar arquivos de mídia digital para o servidor  
 
@@ -241,21 +241,21 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
   
  Escolha a opção a seguir que atenda às suas necessidades de downloads:  
   
--   **Arquivo ZIP compactado (. zip)**  
+- **Arquivo ZIP compactado (. zip)**  
   
-     Ao compactar um arquivo cria uma versão compactada do arquivo que é menor do que o arquivo original. A versão compactada do arquivo tem uma extensão de nome de arquivo .zip. Tipos de arquivos que são reduzidos em mais compactados são tipos de arquivo de texto (por exemplo, .txt, .doc e .xls) e arquivos de elementos gráficos que usa tipos de arquivo não compactados (como .bmp). Alguns arquivos gráficos, como arquivos. jpg e. gif, já usam compressão, o tamanho do arquivo reduz muito pouco ao ser compactado. Além disso, um documento do Word que contém muitos elementos gráficos não é reduzido quanto um documento é de texto.  
+   Ao compactar um arquivo cria uma versão compactada do arquivo que é menor do que o arquivo original. A versão compactada do arquivo tem uma extensão de nome de arquivo .zip. Tipos de arquivos que são reduzidos em mais compactados são tipos de arquivo de texto (por exemplo, .txt, .doc e .xls) e arquivos de elementos gráficos que usa tipos de arquivo não compactados (como .bmp). Alguns arquivos gráficos, como arquivos. jpg e. gif, já usam compressão, o tamanho do arquivo reduz muito pouco ao ser compactado. Além disso, um documento do Word que contém muitos elementos gráficos não é reduzido quanto um documento é de texto.  
   
-    > [!NOTE]
-    >  Essa opção fornece suporte limitado para nomes de arquivo internacionais.  
+  > [!NOTE]
+  >  Essa opção fornece suporte limitado para nomes de arquivo internacionais.  
   
--   **Arquivo executável auto-extraível (.exe)**  
+- **Arquivo executável auto-extraível (.exe)**  
   
-     Um arquivo executável auto-extraível é um arquivo permitido para baixar e que combina o programa de (executável) descompactação com os arquivos compactados. Quando você executar o programa executável, ele descompacta automaticamente os arquivos compactados. Isso é uma forma comum de distribuir dados compactados sem se preocupar se o destinatário tem o utilitário de descompactação certo.  
+   Um arquivo executável auto-extraível é um arquivo permitido para baixar e que combina o programa de (executável) descompactação com os arquivos compactados. Quando você executar o programa executável, ele descompacta automaticamente os arquivos compactados. Isso é uma forma comum de distribuir dados compactados sem se preocupar se o destinatário tem o utilitário de descompactação certo.  
   
-    > [!NOTE]
-    >  Essa opção oferece suporte a caracteres Unicode.  
+  > [!NOTE]
+  >  Essa opção oferece suporte a caracteres Unicode.  
   
- Antes de iniciar o download, o arquivo .exe ou .zip é criado. Dependendo do número de arquivos e o tamanho total dos arquivos a serem baixados, isso pode levar vários minutos. Depois que o arquivo de download é criado, o download do arquivo ocorre em segundo plano. Isso permite que você continue trabalhando enquanto o processo de download é concluído.  
+  Antes de iniciar o download, o arquivo .exe ou .zip é criado. Dependendo do número de arquivos e o tamanho total dos arquivos a serem baixados, isso pode levar vários minutos. Depois que o arquivo de download é criado, o download do arquivo ocorre em segundo plano. Isso permite que você continue trabalhando enquanto o processo de download é concluído.  
   
 ##  <a name="BKMK_6"></a> Ferramenta de carregamento de arquivo fácil  
  A ferramenta de carregamento fácil de arquivo simplifica o processo de carregamento de arquivos em seu servidor do Windows Server Essentials. Você pode adicionar quantos arquivos conforme desejado para a ferramenta de carregamento fácil de arquivo e, em seguida, carregá-los para as pastas compartilhadas no servidor Windows Server Essentials em um único lote. Para obter mais informações, consulte a postagem de blog [Understanding Remote Web Access File Sharing (Entendendo o compartilhamento de arquivos do Acesso Remoto via Web)](http://blogs.technet.com/b/sbs/archive/2012/04/19/understanding-remote-web-access-file-sharing.aspx).  

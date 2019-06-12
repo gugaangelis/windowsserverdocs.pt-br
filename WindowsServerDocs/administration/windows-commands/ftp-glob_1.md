@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 249e9546bec467f92991b15a3d65df173036e464
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8824fab77c3cc10828b31abbe2f9034778c39c47
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857367"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438740"
 ---
 # <a name="ftp-glob1"></a>FTP: glob_1
 
@@ -32,12 +32,12 @@ glob
 ### <a name="parameters"></a>Parâmetros  
 nenhuma  
 ## <a name="remarks"></a>Comentários  
--   Por padrão, a globalização está ativada.  
--   Recurso de curinga permite o uso do asterisco (*) e ponto de interrogação (?) como caracteres curinga em nomes de arquivo ou caminho locais.  
-## <a name="BKMK_Examples"></a>Exemplos  
-Ativar/desativar expansão de curinga de nomes de arquivo local.  
-```  
-glob  
-```  
-## <a name="additional-references"></a>Referências adicionais  
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+- Por padrão, a globalização está ativada.  
+- Recurso de curinga permite o uso do asterisco (*) e ponto de interrogação (?) como caracteres curinga em nomes de arquivo ou caminho locais.  
+  ## <a name="BKMK_Examples"></a>Exemplos  
+  Ativar/desativar expansão de curinga de nomes de arquivo local.  
+  ```  
+  glob  
+  ```  
+  ## <a name="additional-references"></a>Referências adicionais  
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  

@@ -14,12 +14,12 @@ ms.assetid: abded6f3-5708-4e35-9a9e-890e81924fec
 ms.author: pashort
 author: shortpatti
 ms.date: 09/10/2018
-ms.openlocfilehash: 367de10e8c77490ff27be81ddc05239f931ad1f4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cf58956ead8e8a47b8ec6d189bf23e5c576d5f15
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860467"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812187"
 ---
 # <a name="nic-teaming"></a>Agrupamento NIC
 
@@ -27,8 +27,8 @@ ms.locfileid: "59860467"
 
 Neste tópico, nós fornecemos a você uma visão geral do agrupamento de placa de Interface de rede (NIC) no Windows Server 2016. Agrupamento NIC permite que você agrupe entre um e 32 adaptadores de rede Ethernet física em um ou mais adaptadores de rede virtual baseada em software. Esses adaptadores de rede virtual oferecem desempenho rápido e tolerância a falhas no caso de uma falha do adaptador de rede.  
   
->[!IMPORTANT]
->Você deve instalar adaptadores de rede de membro de agrupamento NIC no mesmo computador host físico. 
+> [!IMPORTANT]
+> Você deve instalar adaptadores de rede de membro de agrupamento NIC no mesmo computador host físico. 
 
 > [!TIP]  
 > Um agrupamento NIC que contém apenas um adaptador de rede não pode fornecer balanceamento de carga e failover. No entanto, com um adaptador de rede, você pode usar o agrupamento NIC para separar o tráfego de rede quando você também estiver usando redes locais virtuais (VLANs).  
@@ -63,7 +63,7 @@ Você não pode colocar as NICs a seguir em uma equipe NIC:
 ## <a name="compatibility"></a>Compatibilidade  
 Agrupamento NIC é compatível com todas as tecnologias de rede no Windows Server 2016 com as seguintes exceções.  
   
--   **Virtualização de e/s de raiz única (SR-IOV)**. Para SR-IOV, os dados são entregues diretamente para a placa de rede sem passá-los pela pilha da rede (no sistema operacional do host, no caso de virtualização). Portanto, não é possível que o agrupamento NIC inspecionar ou redirecionar os dados para outro caminho na equipe.  
+-   **Virtualização de e/s de raiz única (SR-IOV)** . Para SR-IOV, os dados são entregues diretamente para a placa de rede sem passá-los pela pilha da rede (no sistema operacional do host, no caso de virtualização). Portanto, não é possível que o agrupamento NIC inspecionar ou redirecionar os dados para outro caminho na equipe.  
   
 -   **Qualidade de serviço (QoS) de host nativo**. Quando você define políticas de QoS no sistema de host ou um nativo e essas políticas invocam limitações de largura de banda mínima, a taxa de transferência geral para uma equipe NIC for menor do que seria sem as políticas de largura de banda em vigor.  
   

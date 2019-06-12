@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: acd3b4bb0342dfb8dc651ce7c31e85f1e77a2569
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 37fdcd1f60281eedc4faa9a14e18410b1215b685
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222976"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811203"
 ---
 # <a name="dir"></a>dir
 
@@ -58,71 +58,83 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
 
 ## <a name="remarks"></a>Comentários
 
--   Para usar várias *FileName* parâmetros, separe cada nome de arquivo com um espaço, vírgula ou ponto e vírgula.
--   Você pode usar caracteres curinga (**&#42;** ou **?** ), para representar um ou mais caracteres do nome do arquivo e exibir um subconjunto de arquivos ou subdiretórios.
+- Para usar várias *FileName* parâmetros, separe cada nome de arquivo com um espaço, vírgula ou ponto e vírgula.
+- Você pode usar caracteres curinga ( **&#42;** ou **?** ), para representar um ou mais caracteres do nome do arquivo e exibir um subconjunto de arquivos ou subdiretórios.
 
-    **Asterisco (\*):** Use o asterisco como um substituto para qualquer cadeia de caracteres, por exemplo:  
-    -   **dir \*. txt** lista todos os arquivos no diretório atual com as extensões que começam com. txt, como. txt, .txt1, .txt_old.
-    -   **dir de leitura\*. txt** lista todos os arquivos no diretório atual que começam com "leitura" e com as extensões que começam com. txt, como. txt, .txt1 ou .txt_old.
-    -   **dir de leitura\*.\***  lista todos os arquivos no diretório atual que começam com "leitura" com qualquer extensão.
+  **Asterisco (\*):** Use o asterisco como um substituto para qualquer cadeia de caracteres, por exemplo:  
+  - **dir \*. txt** lista todos os arquivos no diretório atual com as extensões que começam com. txt, como. txt, .txt1, .txt_old.
+  - **dir de leitura\*. txt** lista todos os arquivos no diretório atual que começam com "leitura" e com as extensões que começam com. txt, como. txt, .txt1 ou .txt_old.
+  - **dir de leitura\*.\\** * lista todos os arquivos no diretório atual que começam com "leitura" com qualquer extensão.
 
-    O caractere curinga asterisco sempre usa mapeamento de nomes de arquivos curtos, portanto, você pode obter resultados inesperados. Por exemplo, o seguinte diretório contém dois arquivos (t.txt2 e t97.txt):  
-    ```
-    C:\test>dir /x
-    Volume in drive C has no label.
-    Volume Serial Number is B86A-EF32
+  O caractere curinga asterisco sempre usa mapeamento de nomes de arquivos curtos, portanto, você pode obter resultados inesperados. Por exemplo, o seguinte diretório contém dois arquivos (t.txt2 e t97.txt): 
+ 
+  ```
+  C:\test>dir /x
+  Volume in drive C has no label.
+  Volume Serial Number is B86A-EF32
     
-    Directory of C:\test
+  Directory of C:\test
     
-    11/30/2004  01:40 PM <DIR>  .
-    11/30/2004  01:40 PM <DIR> ..
-    11/30/2004  11:05 AM 0 T97B4~1.TXT t.txt2
-    11/30/2004  01:16 PM 0 t97.txt
-    ```  
-    Você pode esperar que pressionar **dir t97\***  retornaria t97.txt o arquivo. No entanto, digitar **dir t97\***  retorna os dois arquivos, como o caractere curinga asterisco corresponde a t.txt2 de arquivo para t97.txt usando seu mapa de nome curto T97B4~1.TXT. Da mesma forma, digitar **del t97\***  excluiria os dois arquivos.
+  11/30/2004  01:40 PM <DIR>  .
+  11/30/2004  01:40 PM <DIR> ..
+  11/30/2004  11:05 AM 0 T97B4~1.TXT t.txt2
+  11/30/2004  01:16 PM 0 t97.txt
+  ```  
 
-    **Ponto de interrogação (?):** Use o ponto de interrogação como um substituto para um único caractere em um nome. Por exemplo, digitar **dir ler???. txt** lista todos os arquivos no diretório atual com a extensão. txt que começam com "leitura" e são seguidos por até três caracteres. Isso inclui Read.txt, Read1.txt, Read12.txt, Read123.txt e Readme1.txt, mas não Readme12.txt.
--   Especificando atributos de exibição de arquivo
+  Você pode esperar que pressionar **dir t97\\** * retornaria t97.txt o arquivo. No entanto, digitar **dir t97\\** * retorna os dois arquivos, como o caractere curinga asterisco corresponde a t.txt2 de arquivo para t97.txt usando seu mapa de nome curto T97B4~1.TXT. Da mesma forma, digitar **del t97\\** * excluiria os dois arquivos.
 
-    Se você usar **/a** com mais de um valor em *atributos*, **dir** exibe os nomes dos somente os arquivos com todos os atributos especificados. Por exemplo, se você usar **/a** com **r** e **-h** como atributos (usando o **/a: r-h** ou **/ar-h** ), **dir** será somente exibirá os nomes dos arquivos somente leitura que não estão ocultos.
--   Especificando a classificação de nome de arquivo
+  **Ponto de interrogação (?):** Use o ponto de interrogação como um substituto para um único caractere em um nome. Por exemplo, digitar **dir ler???. txt** lista todos os arquivos no diretório atual com a extensão. txt que começam com "leitura" e são seguidos por até três caracteres. Isso inclui Read.txt, Read1.txt, Read12.txt, Read123.txt e Readme1.txt, mas não Readme12.txt.
+- Especificando atributos de exibição de arquivo
 
-    Se você especificar mais de uma *SortOrder* valor, **dir** classifica os nomes de arquivo pelo primeiro critério e, em seguida, pelo segundo critério e assim por diante. Por exemplo, se você usar **/o** com o **eletrônico** e **-s** os valores para *SortOrder* (usando o **/o: e-s**ou **/oe-s**), **dir** classificará os nomes de diretórios e arquivos por extensão, com o maior em primeiro lugar e, em seguida, exibe o resultado final. A classificação alfabética por extensão faz com que os nomes de arquivos sem extensões apareçam primeiro, nomes de diretório e, em seguida, nomes de arquivos com extensões.
--   Usando pipes e símbolos de redirecionamento
+  Se você usar **/a** com mais de um valor em *atributos*, **dir** exibe os nomes dos somente os arquivos com todos os atributos especificados. Por exemplo, se você usar **/a** com **r** e **-h** como atributos (usando o **/a: r-h** ou **/ar-h** ), **dir** será somente exibirá os nomes dos arquivos somente leitura que não estão ocultos.
+- Especificando a classificação de nome de arquivo
 
-    Quando você usa o símbolo de redirecionamento ( **>** ) para enviar **dir** de saída para um arquivo ou um pipe ( **|** ) para enviar **dir**de saída para outro comando, use **/a:-d** e **/b** para listar os nomes de arquivo. Você pode usar *FileName* com **/b** e **/s** para especificar que **dir** é pesquisar o diretório atual e seus subdiretórios para todos os arquivos nomes que correspondem *FileName*. **Dir** lista apenas a letra da unidade, nome do diretório, nome de arquivo e extensão de nome de arquivo (um caminho por linha) para cada arquivo nome localiza. Antes de usar um pipe envie **dir** de saída para outro comando, você deve definir o TEMP variável de ambiente em seu arquivo Autoexec.
--   O **dir** comando com parâmetros diferentes, está disponível no Console de recuperação.
+  Se você especificar mais de uma *SortOrder* valor, **dir** classifica os nomes de arquivo pelo primeiro critério e, em seguida, pelo segundo critério e assim por diante. Por exemplo, se você usar **/o** com o **eletrônico** e **-s** os valores para *SortOrder* (usando o **/o: e-s**ou **/oe-s**), **dir** classificará os nomes de diretórios e arquivos por extensão, com o maior em primeiro lugar e, em seguida, exibe o resultado final. A classificação alfabética por extensão faz com que os nomes de arquivos sem extensões apareçam primeiro, nomes de diretório e, em seguida, nomes de arquivos com extensões.
+- Usando pipes e símbolos de redirecionamento
+
+  Quando você usa o símbolo de redirecionamento ( **>** ) para enviar **dir** de saída para um arquivo ou um pipe ( **|** ) para enviar **dir**de saída para outro comando, use **/a:-d** e **/b** para listar os nomes de arquivo. Você pode usar *FileName* com **/b** e **/s** para especificar que **dir** é pesquisar o diretório atual e seus subdiretórios para todos os arquivos nomes que correspondem *FileName*. **Dir** lista apenas a letra da unidade, nome do diretório, nome de arquivo e extensão de nome de arquivo (um caminho por linha) para cada arquivo nome localiza. Antes de usar um pipe envie **dir** de saída para outro comando, você deve definir o TEMP variável de ambiente em seu arquivo Autoexec.
+- O **dir** comando com parâmetros diferentes, está disponível no Console de recuperação.
 
 ## <a name="examples"></a>Exemplos
 
 Para exibir todos os diretórios um após o outro, em ordem alfabética, no formato amplo e pausar depois de cada tela, certifique-se de que o diretório raiz é o diretório atual e, em seguida, digite:
+
 ```
 dir /s/w/o/p
 ```
+
 **Dir** lista o diretório raiz, as subpastas e os arquivos no diretório raiz, incluindo as extensões. Em seguida, **dir** lista os nomes de subpastas e nomes de arquivo em cada subdiretório na árvore.
 
 Para alterar o exemplo anterior, de modo que **dir** exibe os nomes de arquivo e extensões, mas omite os nomes de diretório, digite:
+
 ```
 dir /s/w/o/p/a:-d
 ```
+
 Para imprimir uma listagem de diretório, digite:
+
 ```
 dir > prn
 ```
+
 Quando você especifica **prn**, a lista de diretórios é enviada para a impressora que está conectada à porta LPT1. Se sua impressora está conectada a uma porta diferente, você deve substituir **prn** com o nome da porta correta.
 
 Você também pode redirecionar a saída do **dir** comando para um arquivo, substituindo **prn** com um nome de arquivo. Você também pode digitar um caminho. Por exemplo, para o direct **dir** para Regs o arquivo no diretório de registros, o tipo de saída:
+
 ```
 dir > \records\dir.doc
 ```
+
 Se não existir, Regs **dir** cria, a menos que o diretório de registros não existe. Nesse caso, a seguinte mensagem será exibida:
 
 `File creation error`
 
 Para exibir uma lista de todos os nomes de arquivo com a extensão. txt em todos os diretórios na unidade C, digite:
+
 ```
 dir c:\*.txt /w/o/s/p
 ```
+
 **Dir** exibe, em formato amplo, nomes de uma lista em ordem alfabética de arquivo correspondente em cada diretório e ele faz uma pausa sempre que a tela é completada até que você pressione qualquer tecla para continuar.
 
 #### <a name="additional-references"></a>Referências adicionais

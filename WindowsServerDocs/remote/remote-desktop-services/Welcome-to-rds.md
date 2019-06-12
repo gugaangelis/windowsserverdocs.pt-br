@@ -14,18 +14,18 @@ ms.assetid: 52b9e09f-39e0-41a9-9d3b-4d5f4eacf3e0
 author: christianmontoya
 manager: scottman
 ms.localizationpriority: medium
-ms.openlocfilehash: cd00f92254f9e55f83442f5e68e344e0aa7579a2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3d148c99911be0cebfc29429d93241f24c2b9606
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855497"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453011"
 ---
 # <a name="welcome-to-remote-desktop-services"></a>Bem-vindo aos serviços de área de trabalho remota 
 
 Serviços de área de trabalho remota (RDS) é a plataforma ideal para a criação de soluções de virtualização para cada necessidade do cliente final, incluindo o fornecimento de aplicativos virtualizados individuais, fornecendo acesso seguro de área de trabalho móvel e remoto e fornecer aos usuários finais a capacidade de executar seus aplicativos e áreas de trabalho da nuvem.
 
-![Visão geral de serviços de área de trabalho remota](.\media\rds-overview.png)
+![Visão geral de serviços de área de trabalho remota](./media/rds-overview.png)
 
 RDS oferece a flexibilidade de implantação, extensibilidade e eficiência de custo — tudo entregue por meio de uma variedade de opções de implantação, incluindo o Windows Server 2016 para implantações locais, Microsoft Azure para implantações de nuvem e uma matriz robusta de parceiro soluções.
 

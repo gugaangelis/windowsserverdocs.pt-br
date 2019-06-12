@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ffdbd6f67e4e4c32022134191deabd861bf248b9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ef98a98088e345f267aa852318cee6e237604aa4
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827667"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433995"
 ---
 # <a name="cscript"></a>cscript
 
@@ -30,24 +30,26 @@ inicia um script para que ele seja executado em um ambiente de linha de comando.
 cscript <Scriptname.extension> [/B] [/D] [/E:<Engine>] [{/H:cscript|/H:wscript}] [/I] [/Job:<Identifier>] [{/Logo|/NoLogo}] [/S] [/T:<Seconds>] [/X] [/U] [/?] [<ScriptArguments>]
 ```
 ### <a name="parameters"></a>Parâmetros
-|Parâmetro|Descrição|
-|-------|--------|
-|Scriptname.extension|Especifica o nome de arquivo e caminho do arquivo de script com a extensão de nome de arquivo opcional.|
-|/B|Especifica o modo de lote, que não exibe alertas, erros de script ou prompts de entrada.|
-|/D|Inicia o depurador.|
-|/E:<Engine>|Especifica o mecanismo usado para executar o script.|
-|/H:cscript|Registra cscript.exe como host de script padrão para a execução de scripts.|
-|/H:wscript|Registra wscript.exe como host de script padrão para a execução de scripts. Este é o padrão.|
-|/I|Especifica o modo interativo, que exibe alertas, erros de script e prompts de entrada. Este é o padrão e o oposto da **/b**.|
-|/Job:<Identifier>|Executa o trabalho identificado pelo *identificador* em um arquivo de script. wsf.|
-|/ Logotipo|Especifica que a faixa do Windows Script Host é exibida no console antes do script é executado. Este é o padrão e o oposto da **/Nologo**.|
-|/Nologo|Especifica que a faixa do Windows Script Host não é exibida antes do script é executado.|
-|/S|Salva as opções de prompt de comando atuais para o usuário atual.|
-|/T:<Seconds>|Especifica o tempo máximo que o script pode ser executado (em segundos). Você pode especificar até 32.767 segundos. O padrão é sem limite de tempo.|
-|/U|Especifica o Unicode para entrada e saída é redirecionada do console.|
-|/X|Inicia o script no depurador.|
-|/?|Exibe os parâmetros de comando disponíveis e fornece ajuda para usá-los. Isso é o mesmo que digitar **cscript.exe** sem parâmetros e nenhum script.|
-|ScriptArguments|Especifica os argumentos passados para o script. Cada argumento de script deve ser precedido por uma barra (**/**).|
+
+|      Parâmetro       |                                                                      Descrição                                                                       |
+|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Scriptname.extension |                                 Especifica o nome de arquivo e caminho do arquivo de script com a extensão de nome de arquivo opcional.                                 |
+|          /B          |                                Especifica o modo de lote, que não exibe alertas, erros de script ou prompts de entrada.                                |
+|          /D          |                                                                  Inicia o depurador.                                                                  |
+|     /E:<Engine>      |                                                  Especifica o mecanismo usado para executar o script.                                                  |
+|      /H:cscript      |                                         Registra cscript.exe como host de script padrão para a execução de scripts.                                          |
+|      /H:wscript      |                               Registra wscript.exe como host de script padrão para a execução de scripts. Este é o padrão.                               |
+|          /I          |        Especifica o modo interativo, que exibe alertas, erros de script e prompts de entrada. Este é o padrão e o oposto da **/b**.         |
+|  /Job:<Identifier>   |                                             Executa o trabalho identificado pelo *identificador* em um arquivo de script. wsf.                                             |
+|        / Logotipo         | Especifica que a faixa do Windows Script Host é exibida no console antes do script é executado. Este é o padrão e o oposto da **/Nologo**. |
+|       /Nologo        |                                 Especifica que a faixa do Windows Script Host não é exibida antes do script é executado.                                 |
+|          /S          |                                             Salva as opções de prompt de comando atuais para o usuário atual.                                             |
+|     /T:<Seconds>     |            Especifica o tempo máximo que o script pode ser executado (em segundos). Você pode especificar até 32.767 segundos. O padrão é sem limite de tempo.             |
+|          /U          |                                      Especifica o Unicode para entrada e saída é redirecionada do console.                                       |
+|          /X          |                                                           Inicia o script no depurador.                                                           |
+|          /?          |  Exibe os parâmetros de comando disponíveis e fornece ajuda para usá-los. Isso é o mesmo que digitar **cscript.exe** sem parâmetros e nenhum script.  |
+|   ScriptArguments    |                        Especifica os argumentos passados para o script. Cada argumento de script deve ser precedido por uma barra ( **/** ).                         |
+
 ### <a name="remarks"></a>Comentários
 -   A execução dessa tarefa não requer que você tenha credenciais administrativas. Portanto, como a prática recomendada de segurança, considere executar essa tarefa como um usuário sem credenciais administrativas.
 -   Para abrir um prompt de comando na **inicie** tela, digite **cmd**e, em seguida, clique em **prompt de comando**.
@@ -62,4 +64,4 @@ cscript <Scriptname.extension> [/B] [/D] [/E:<Engine>] [{/H:cscript|/H:wscript}]
 
 #### <a name="BKMK_references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

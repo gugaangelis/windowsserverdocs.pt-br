@@ -1,23 +1,23 @@
 ---
 title: Initialize novos discos
 description: Como inicializar novos discos com o gerenciamento de disco, fazendo com que eles prontos para uso. Também inclui links para solução de problemas.
-ms.date: 10/24/2018
+ms.date: 06/07/2019
 ms.prod: windows-server-threshold
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e009780d83220b528ba7dac6e2561be36e662f71
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 7a275c372e1486b26821f797a7663eecbc3e8784
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192764"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812432"
 ---
 # <a name="initialize-new-disks"></a>Initialize novos discos
 
-> **Aplica-se a:** Windows 10, Windows 8.1, Windows 7, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> **Aplica-se a:** Windows 10, Windows 8.1, Windows 7, Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Se você adicionar um novo disco a seu computador e ele não apareça no Explorador de arquivos, você talvez precise [adicionar uma letra de unidade](change-a-drive-letter.md), ou inicializá-lo antes de usá-lo. Você só pode inicializar uma unidade que ainda não está formatada. Inicializar um disco apaga tudo nele e o prepara para uso pelo Windows, após o qual você pode formatá-la e, em seguida, armazenar arquivos nele.
 
@@ -35,12 +35,12 @@ Aqui está como inicializar um novo disco usando o gerenciamento de disco. Se vo
 
      Observe que algumas unidades USB não tem a opção a ser inicializada, eles apenas obterem formatados e um [letra da unidade](change-a-drive-letter.md).
 
-    ![Gerenciamento de disco mostrando um disco formatado com o menu de atalho inicializar disco exibido](media\uninitialized-disk.PNG)
+    ![Gerenciamento de disco mostrando um disco formatado com o menu de atalho inicializar disco exibido](media/uninitialized-disk.PNG)
 2. No **inicializar disco** caixa de diálogo (mostrados aqui), a verificação para certificar-se de que o disco correto está selecionado e, em seguida, clique em **Okey** para aceitar o estilo de partição padrão. Se você precisar alterar a partição estilo (GPT ou MBR), consulte [sobre os estilos de partição - GPT e MBR](#about-partition-styles---gpt-and-mbr).
 
      O status do disco se altera brevemente para **Inicializando** e, em seguida, para o **Online** status. Se a inicialização falhar por algum motivo, consulte [é de status de um disco não inicializado ou o disco está ausente inteiramente](troubleshooting-disk-management.md#a-disks-status-is-not-initialized-or-the-disk-is-missing).
 
-    ![A caixa de diálogo Inicializar disco com o estilo de partição GPT selecionado](media\initialize-disk.PNG)
+    ![A caixa de diálogo Inicializar disco com o estilo de partição GPT selecionado](media/initialize-disk.PNG)
 
 ## <a name="about-partition-styles---gpt-and-mbr"></a>Sobre os estilos de partição - GPT e MBR
 

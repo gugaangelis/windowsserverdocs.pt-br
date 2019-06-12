@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 6dd9d03cce71c42e2ecc1388519de049a5e4e8dd
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: 9f576963a93c8c0b9d6c05f406cc3331c407ceb9
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266720"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811522"
 ---
 # <a name="hyper-v-network-io-performance"></a>Desempenho de rede do Hyper-V e/s
 
@@ -22,7 +22,7 @@ Server 2016 contém vários aprimoramentos e novas funcionalidades para otimizar
 
 Migração ao vivo permite mover de maneira transparente máquinas virtuais em execução de um nó de um cluster de failover para outro nó no mesmo cluster sem uma conexão de rede perdida ou tempo de inatividade perceptível.
 
-> [!Note]
+> [!NOTE]
 > Clustering de failover exige armazenamento compartilhado para os nós de cluster.
 
 O processo de mover uma máquina virtual em execução pode ser dividido em duas fases principais. A primeira fase copia a memória da máquina virtual do host atual para o novo host. A segunda fase transfere o estado da máquina virtual do host atual para o novo host. As durações de ambas as fases bastante é determinada pela velocidade na qual os dados podem ser transferidos do host atual para o novo host.

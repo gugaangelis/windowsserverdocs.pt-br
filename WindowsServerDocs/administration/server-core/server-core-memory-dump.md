@@ -7,12 +7,12 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: bd22378ec7ce5a1ff4e39546246e6e85ca859c45
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 235df6f681de51a12f82b9fad019dd2db45fd486
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828837"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435555"
 ---
 # <a name="configure-memory-dump-files-for-server-core-installation"></a>Configurar arquivos de despejo de memória para a instalação do Server Core
 
@@ -49,8 +49,8 @@ Você não precisa ter o arquivo de paginação na partição onde o sistema ope
 9. Clique com botão direito **DumpFileSize**e, em seguida, clique em **modificar**.
 10. Na **Editar valor DWORD**, em **Base**, clique em **Decimal**.
 11. Na **dados do valor**, digite o valor apropriado e, em seguida, clique em **Okey**.
-   >[!NOTE]
-   > É o tamanho do arquivo de despejo de memória em megabytes (MB).
+    >[!NOTE]
+    > É o tamanho do arquivo de despejo de memória em megabytes (MB).
 12. Saia do Editor do registro.
 
 Depois de determinar o local da partição do despejo de memória, configure o caminho de destino para o arquivo de paginação. Para exibir o caminho de destino atual para o arquivo de paginação, execute o seguinte comando:

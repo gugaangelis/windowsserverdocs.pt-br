@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: e5e55ad492439fcb7150469d9a35b639f5ff9a2f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: baea091482818c581414ba1d9c1c01db2a52e3d7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830507"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435659"
 ---
 # <a name="hyper-v-configuration"></a>Configuração do Hyper-V
 
@@ -76,30 +76,30 @@ Hyper-V publica contadores de desempenho para ajudar a caracterizar o comportame
 
 Você sempre deve medir o uso da CPU do sistema físico usando os contadores de desempenho do processador lógico do hipervisor do Hyper-V. A utilização da CPU contadores de Monitor de desempenho e Gerenciador de tarefas do relatório na raiz e partições filho não refletem o uso de CPU físico real. Use os seguintes contadores de desempenho para monitorar o desempenho:
 
--   **Processador lógico Hypervisor do Hyper-V (\*)\\% tempo de execução Total** o tempo não ocioso total dos processadores lógicos
+- **Processador lógico Hypervisor do Hyper-V (\*)\\% tempo de execução Total** o tempo não ocioso total dos processadores lógicos
 
--   **Processador lógico Hypervisor do Hyper-V (\*)\\% tempo de execução de convidado** o tempo gasto ciclos em execução dentro de um convidado ou dentro do host
+- **Processador lógico Hypervisor do Hyper-V (\*)\\% tempo de execução de convidado** o tempo gasto ciclos em execução dentro de um convidado ou dentro do host
 
--   **Processador lógico Hypervisor do Hyper-V (\*)\\% tempo de execução do hipervisor** o tempo gasto na execução do hipervisor
+- **Processador lógico Hypervisor do Hyper-V (\*)\\% tempo de execução do hipervisor** o tempo gasto na execução do hipervisor
 
--   **Processador Virtual do Hyper-V hipervisor raiz (\*)\\ \***  mede o uso da CPU da partição raiz
+- **Processador Virtual do Hyper-V hipervisor raiz (\*)\\\\** * mede o uso da CPU da partição raiz
 
--   **Processador Virtual do hipervisor do Hyper-V (\*)\\ \***  mede o uso da CPU de partições de convidado
+- **Processador Virtual do hipervisor do Hyper-V (\*)\\\\** * mede o uso da CPU de partições de convidado
 
 
 ## <a name="see-also"></a>Consulte também
 
 -   [Terminologia do Hyper-V](terminology.md)
 
--   [Arquitetura do Hyper-V](architecture.md)
+-   [Arquitetura Hyper-V](architecture.md)
 
 -   [Desempenho do processador do Hyper-V](processor-performance.md)
 
 -   [Desempenho de memória do Hyper-V](memory-performance.md)
 
--   [Desempenho de e/s de armazenamento do Hyper-V](storage-io-performance.md)
+-   [Desempenho de E/S de armazenamento do Hyper-V](storage-io-performance.md)
 
--   [Desempenho de e/s de rede de Hyper-V](network-io-performance.md)
+-   [Desempenho de E/S de rede do Hyper-V](network-io-performance.md)
 
 -   [Detectar gargalos em um ambiente virtualizado](detecting-virtualized-environment-bottlenecks.md)
 

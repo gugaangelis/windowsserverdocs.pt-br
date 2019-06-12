@@ -11,12 +11,12 @@ ms.assetid: b5387444-595f-4f38-abb7-163a70ea1895
 author: szarkos
 ms.author: szark
 ms.date: 10/16/2017
-ms.openlocfilehash: dbdbd0f436645f7e19c07e4f3278c5073636a547
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.openlocfilehash: 3b4feb6b8b3dad5c34de92f634eb30d0e952fe76
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831857"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435768"
 ---
 # <a name="linux-software-repository-for-microsoft-products"></a>Repositório de Software do Linux para produtos da Microsoft
 
@@ -29,8 +29,8 @@ Repositório de Software do Linux da Microsoft é composto de vários repositór
 
  - MSSQL-server - esses repositórios contêm pacotes para o Microsoft SQL Server no Linux – consulte também: [SQL Server no Linux](https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux).
 
->[!Note]
-Os pacotes nos repositórios de software Linux são sujeito aos termos de licença localizados nos pacotes. Leia os termos de licença antes de usar o pacote. Sua instalação e uso do pacote constitui a sua aceitação destes termos. Se você não concordar com os termos de licença, não use o pacote.
+> [!Note]
+> Os pacotes nos repositórios de software Linux são sujeito aos termos de licença localizados nos pacotes. Leia os termos de licença antes de usar o pacote. Sua instalação e uso do pacote constitui a sua aceitação destes termos. Se você não concordar com os termos de licença, não use o pacote.
 
 
 ## <a name="configuring-the-repositories"></a>Configurando os repositórios

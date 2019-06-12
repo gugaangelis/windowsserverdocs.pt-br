@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ad44ba4bbe0b31f423a4ae4593e349571d838de2
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: 89506d0f7445f0df230945f45a31d4f58390c5c1
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65475919"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812414"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>Visão geral de Redirecionamento de pasta, Arquivos offline e Perfis de usuário móvel
 
@@ -46,11 +46,11 @@ Os administradores podem usar o Redirecionamento de Pastas, os Arquivos Offline 
 
 A tabela a seguir descreve algumas das principais alterações no Redirecionamento de Pastas, nos Arquivos Offline e nos Perfis de Usuário Móvel que estão disponíveis nesta versão.
 
-|Recurso/funcionalidade|Novo ou atualizado?|Descrição|
-|---|---|---|
-|Modo Sempre Offline|Novo|Fornece acesso mais rápido aos arquivos e menor uso de largura de banda sempre trabalhando offline, mesmo quando está conectado por uma conexão de rede de alta velocidade.|
-|Sincronização com reconhecimento de custo|Novo|Ajuda os usuários a evitar os custos do uso elevado de dados da sincronização ao usar conexões monitoradas que têm limites de uso ou fazer roaming na rede de outro provedor.|
-|Suporte ao Computador Primário|Novo|Permite que você limite o uso do Redirecionamento de Pastas, dos Perfis de Usuário Móvel ou dos dois a somente os computadores principais do usuário.|
+| Recurso/funcionalidade | Novo ou atualizado? | Descrição |
+| --- | --- | --- |
+| Modo Sempre Offline | Novo | Fornece acesso mais rápido aos arquivos e menor uso de largura de banda sempre trabalhando offline, mesmo quando está conectado por uma conexão de rede de alta velocidade. |
+| Sincronização com reconhecimento de custo | Novo | Ajuda os usuários a evitar os custos do uso elevado de dados da sincronização ao usar conexões monitoradas que têm limites de uso ou fazer roaming na rede de outro provedor. |
+| Suporte ao Computador Primário | Novo | Permite que você limite o uso do Redirecionamento de Pastas, dos Perfis de Usuário Móvel ou dos dois a somente os computadores principais do usuário. |
 
 ## <a name="always-offline-mode"></a>Modo Sempre Offline
 
@@ -75,8 +75,8 @@ Para obter mais informações, consulte [Enable the Always Offline Mode to Provi
 
 Com a sincronização com reconhecimento de custo, o Windows desabilita a sincronização em segundo plano quando o usuário está usando uma conexão de rede limitada, como uma rede móvel 4G, e o assinante está perto do limite de largura de banda ou usando roaming na rede de outro provedor.
 
->[!NOTE]
->Conexões de rede limitadas costumam apresentar latências de rede de ida e volta mais lentas do que o valor de latência de 35 milissegundos padrão para a transição para o modo Offline (Conexão lenta) no Windows 8, Windows Server 2019, Windows Server 2016 e Windows Server 2012. Portanto, essas conexões geralmente fazem a transição para o modo Offline (Conexão Lenta) automaticamente.
+> [!NOTE]
+> Conexões de rede limitadas costumam apresentar latências de rede de ida e volta mais lentas do que o valor de latência de 35 milissegundos padrão para a transição para o modo Offline (Conexão lenta) no Windows 8, Windows Server 2019, Windows Server 2016 e Windows Server 2012. Portanto, essas conexões geralmente fazem a transição para o modo Offline (Conexão Lenta) automaticamente.
 
 ### <a name="what-value-does-cost-aware-synchronization-add"></a>O valor agregado sincronização com reconhecimento de custo?
 
@@ -129,10 +129,10 @@ Para designar computadores primários, seu ambiente deve satisfazer aos seguinte
 
 Para obter informações adicionais relacionadas, consulte os seguintes recursos.
 
-|Tipo de conteúdo|Referências|
-|---|---|
-|Avaliação do produto|[Suporte a operadores de informações com serviços de arquivo confiável e armazenamento](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[Quais são as novidades em arquivos Offline](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>) (Windows 7 e Windows Server 2008 R2)<br>[Quais são as novidades em arquivos Offline para o Windows Vista](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>[As alterações em arquivos Offline no Windows Vista](<https://technet.microsoft.com/library/2007.11.offline.aspx>) (TechNet Magazine)|
-|Implantação|[Implantar o redirecionamento de pasta, arquivos Offline e perfis de usuário móvel](deploy-folder-redirection.md)<br>[Implementando uma solução de centralização de dados do usuário final: Redirecionamento de pasta e validação de tecnologia de arquivos Offline e implantação](http://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[Gerenciando o guia de implantação de dados de usuário de Roaming](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[Guia Passo a Passo de Configuração de Novos Recursos de Arquivos Offline para Computadores com o Windows 7](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[Usando o redirecionamento de pasta](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[Implementando o redirecionamento de pasta](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>) (Windows Server 2003)|
-|Ferramentas e configurações|[Arquivos offline no MSDN](https://msdn.microsoft.com/library/cc296092.aspx)<br>[Referência de política de grupo de arquivos offline](https://msdn.microsoft.com/library/ms878937.aspx) (Windows 2000)|
-|Recursos da comunidade|[Fórum de armazenamento e serviços de arquivo](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winserverfiles)<br>[Hey, Scripting Guy! Como trabalhar com o recurso de arquivos Offline no Windows?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[Hey, Scripting Guy! Como habilitar e desabilitar arquivos Offline?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)|
-Tecnologias relacionadas|[Identidade e acesso no Windows Server](../../identity/identity-and-access.md)<br>[Armazenamento no Windows Server](../storage.md)<br>[Gerenciamento de acesso e o servidor remoto](../../remote/index.md)|
+| Tipo de conteúdo | Referências |
+| --- | --- |
+| Avaliação do produto | [Suporte a operadores de informações com serviços de arquivo confiável e armazenamento](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[Quais são as novidades em arquivos Offline](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>) (Windows 7 e Windows Server 2008 R2)<br>[Quais são as novidades em arquivos Offline para o Windows Vista](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>[As alterações em arquivos Offline no Windows Vista](<https://technet.microsoft.com/library/2007.11.offline.aspx>) (TechNet Magazine) |
+| Implantação | [Implantar o redirecionamento de pasta, arquivos Offline e perfis de usuário móvel](deploy-folder-redirection.md)<br>[Implementando uma solução de centralização de dados do usuário final: Redirecionamento de pasta e validação de tecnologia de arquivos Offline e implantação](http://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[Gerenciando o guia de implantação de dados de usuário de Roaming](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[Guia Passo a Passo de Configuração de Novos Recursos de Arquivos Offline para Computadores com o Windows 7](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[Usando o redirecionamento de pasta](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[Implementando o redirecionamento de pasta](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>) (Windows Server 2003) |
+| Ferramentas e configurações | [Arquivos offline no MSDN](https://msdn.microsoft.com/library/cc296092.aspx)<br>[Referência de política de grupo de arquivos offline](https://msdn.microsoft.com/library/ms878937.aspx) (Windows 2000) |
+| Recursos da comunidade | [Fórum de armazenamento e serviços de arquivo](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winserverfiles)<br>[Hey, Scripting Guy! Como trabalhar com o recurso de arquivos Offline no Windows?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[Hey, Scripting Guy! Como habilitar e desabilitar arquivos Offline?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |
+| Tecnologias relacionadas|[Identidade e acesso no Windows Server](../../identity/identity-and-access.md)<br>[Armazenamento no Windows Server](../storage.md)<br>[Gerenciamento de acesso e o servidor remoto](../../remote/index.md) |

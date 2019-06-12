@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 7cf1dcec1bc8e187b6db789c5402ca8119ca8b6c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: da3850b75a0e069f9153d3c66baef9f00b67d61c
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850757"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452593"
 ---
 # <a name="add-an-iframe-to-a-tool-extension"></a>Adicionar um iFrame para uma extensão de ferramenta
 
@@ -23,7 +23,7 @@ Neste artigo, adicionaremos um iFrame para uma extensão de ferramenta nova e va
 
 ## <a name="prepare-your-environment"></a>Prepare o ambiente ##
 
-Se você ainda não fez isso, siga as instruções em [desenvolver uma extensão da ferramenta](..\develop-tool.md) para preparar seu ambiente e criar um novo, vazio extensão da ferramenta.
+Se você ainda não fez isso, siga as instruções em [desenvolver uma extensão da ferramenta](../develop-tool.md) para preparar seu ambiente e criar um novo, vazio extensão da ferramenta.
 
 ## <a name="add-a-module-to-your-project"></a>Adicionar um módulo ao seu projeto ##
 
@@ -47,7 +47,7 @@ Adicione o seguinte conteúdo para o arquivo html:
 </div>
 ```
 
-Isso é tudo, você adicionou um iFrame para a sua extensão.  Em seguida, você pode [compilação e do lado do carregamento](..\develop-tool.md#build-and-side-load-your-extension) sua extensão no Windows Admin Center para ver os resultados.
+Isso é tudo, você adicionou um iFrame para a sua extensão.  Em seguida, você pode [compilação e do lado do carregamento](../develop-tool.md#build-and-side-load-your-extension) sua extensão no Windows Admin Center para ver os resultados.
 
 > [!Note]
 > Configurações de política de segurança (CSP) de conteúdo pode impedir que alguns sites renderização em um iFrame dentro do Windows Admin Center. Você pode aprender mais sobre isso [aqui](https://content-security-policy.com/). 

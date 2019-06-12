@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 91fceb429ca00b1b3d9d36d01f5e97cfd464ccb9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 179d540371870075906bbcbf8ff912e1b883915d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825157"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433929"
 ---
 # <a name="dcgpofix"></a>dcgpofix
 
@@ -34,11 +34,11 @@ DCGPOFix [/ignoreschema] [/target: {Domain | DC | Both}] [/?]
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|/ignoreschema|Ignora a versão do esquema mc Active Directory®</br>Quando você executar esse comando. Caso contrário, o comando só funciona da mesma versão de esquema, como a versão do Windows no qual o comando foi enviado.|
-|/target {Domain | DC | Ambos}|Especifica qual GPO para restaurar. Você pode restaurar o GPO de diretiva de domínio padrão, o GPO de controladores de domínio padrão ou ambos.|
-|/?|Exibe a ajuda no prompt de comando.|
+|    Parâmetro    |                                                                                                 Descrição                                                                                                 |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  /ignoreschema  | Ignora a versão do esquema mc Active Directory®</br>Quando você executar esse comando. Caso contrário, o comando só funciona da mesma versão de esquema, como a versão do Windows no qual o comando foi enviado. |
+| /target {Domain |                                                                                                     DC                                                                                                      |
+|       /?        |                                                                                    Exibe a ajuda no prompt de comando.                                                                                     |
 
 ## <a name="remarks"></a>Comentários
 
@@ -59,4 +59,4 @@ dcgpofix /ignoreschema /target:DC
 #### <a name="additional-references"></a>Referências adicionais
 
 -   [Group Policy TechCenter](https://go.microsoft.com/fwlink/?LinkID=145531)
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

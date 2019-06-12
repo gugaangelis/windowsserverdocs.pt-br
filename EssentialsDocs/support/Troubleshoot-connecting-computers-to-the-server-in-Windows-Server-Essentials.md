@@ -12,12 +12,12 @@ ms.assetid: e45b3d89-c057-4c70-a627-86fb06dd22aa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9b0d11be08840ecedabab6fd4e96f5d453ea4857
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 52ec9bf1caa4cb4c7ed661eec1448f3f2a4be980
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848187"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436054"
 ---
 # <a name="troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials"></a>Solucionar problemas de computadores que se conectam ao servidor no Windows Server Essentials
 
@@ -165,7 +165,7 @@ ms.locfileid: "59848187"
   
  Isso pode ocorrer se a data e hora no computador conectado não estiverem sincronizadas àquelas no servidor.  Windows Server Essentials e Windows Server Essentials usam o serviço de sincronização para sincronizar a data e hora de computadores que executam em um Windows Server Essentials ou a rede do Windows Server Essentials. A data/hora sincronizada é fundamental, porque o protocolo de autenticação padrão usa o horário do servidor como parte do processo de autenticação. Por exemplo, se o relógio em um computador cliente não está sincronizado com a data e hora corretas, o Windows Server Essentials ou a autenticação do Windows Server Essentials falsamente pode interpretar uma solicitação de logon como uma tentativa de invasão e negar acesso ao usuário.  
   
- Isso pode acontecer se a memória livre do servidor s for menor que 5 por cento.  
+ Isso pode acontecer se a memória livre do servidor é menor que 5 por cento.  
   
  Isso pode ocorrer se você já tem uma conexão VPN ao Windows Essentials Server e você tenta configurar o software Connector de fora do local, usando um endereço de domínio.  
   
@@ -179,17 +179,17 @@ ms.locfileid: "59848187"
   
 #### <a name="to-change-the-date-and-time-on-the-client-computer"></a>Para alterar a data e hora no computador cliente  
   
-1.  Na página Inicial do computador cliente, abra o **Painel de Controle**.  
+1. Na página Inicial do computador cliente, abra o **Painel de Controle**.  
   
-2.  No Painel de Controle, clique em **Relógio, Idioma e Região** e, a seguir, em **Data e Hora**.  
+2. No Painel de Controle, clique em **Relógio, Idioma e Região** e, a seguir, em **Data e Hora**.  
   
-3.  Clique em **Alterar data e hora**, defina-as para a data e hora corretas e clique em **OK**.  
+3. Clique em **Alterar data e hora**, defina-as para a data e hora corretas e clique em **OK**.  
   
-4.  Clique em **OK**, então feche o Painel de Controle.  
+4. Clique em **OK**, então feche o Painel de Controle.  
   
-5.  Tente novamente para conectar o computador ao servidor. Para obter instruções, consulte Conectar computadores ao servidor.  
+5. Tente novamente para conectar o computador ao servidor. Para obter instruções, consulte Conectar computadores ao servidor.  
   
- Se você ainda não puder conectar o computador cliente ao servidor, certifique-se de que a data e hora no servidor estão certas. Se a data e hora não estão certas, modifique-as.  
+   Se você ainda não puder conectar o computador cliente ao servidor, certifique-se de que a data e hora no servidor estão certas. Se a data e hora não estão certas, modifique-as.  
   
 #### <a name="to-change-the-date-and-time-on-the-server"></a>Para alterar data e hora no servidor  
   

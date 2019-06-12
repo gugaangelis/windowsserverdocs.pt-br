@@ -5,21 +5,21 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 04/12/2019
+ms.date: 06/07/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: ee3c4ba5d6c3dc911ab318ade9a46b279317496f
-ms.sourcegitcommit: 39ab8041d166e6817a95417d6aa30bc7abeeef54
+ms.openlocfilehash: 2314e336cbf9ad44b07f3f94d7a866b48b5e9bff
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66260255"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811812"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
->Aplica-se a: Windows Admin Center, Windows Admin Center Preview
+> Aplica-se a: Windows Admin Center, Windows Admin Center Preview
 
-**Windows Admin Center** (apelidado **projeto Paulo**) é uma evolução do Windows Server na caixa de ferramentas de gerenciamento; é um único painel que consolida todos os aspectos do gerenciamento de servidores locais e remotos. Como uma experiência de gerenciamento com base em navegador implantado localmente, isso não requer uma conexão de Internet e o Azure. O Windows Admin Center oferece controle total sobre todos os aspectos da sua implantação, incluindo as redes privadas que não estejam conectadas à Internet.
+**Windows Admin Center** (anteriormente conhecido pelo codinome **projeto Paulo**) é uma evolução do Windows Server na caixa de ferramentas de gerenciamento; é um único painel que consolida todos os aspectos do gerenciamento de servidores locais e remotos. Como uma experiência de gerenciamento com base em navegador implantado localmente, isso não requer uma conexão de Internet e o Azure. O Windows Admin Center oferece controle total sobre todos os aspectos da sua implantação, incluindo as redes privadas que não estejam conectadas à Internet.
 
 ## <a name="introduction"></a>Introdução
 
@@ -75,6 +75,7 @@ Você pode obter o Windows Admin Center para cima e em execução em seu ambient
             <ul>
             <li><a href="configure/settings.md">Configurações do Windows Admin Center</a>
             <li><a href="configure/user-access-control.md">Permissões e controle de acesso do usuário</a>
+            <li><a href="configure/shared-connections.md">Conexões compartilhadas</a>
             <li><a href="configure/using-extensions.md">Extensões</a>
             </ul>
         </td>

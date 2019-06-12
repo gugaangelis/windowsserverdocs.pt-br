@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: c87b76224d1ac5dbe3befc837fad8879d0b9a1ef
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: bda071be6668710361205643125fc8ad44246012
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189400"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453019"
 ---
 # <a name="create-a-rule-to-send-an-ad-fs-1x-compatible-claim"></a>Criar uma regra para enviar uma declaração compatível do AD FS 1.x
 
@@ -42,9 +42,6 @@ Dependendo das necessidades da sua organização, use um dos procedimentos a seg
   
 > [!NOTE]  
 > Para esta regra funcione conforme o esperado, certifique-se de que a terceira parte confiável ou relação de confiança de provedor de declarações em que você está criando essa regra foi configurada para usar o **perfil do AD FS 1.0 e 1.1**. 
-
-
-
 
 ## <a name="to-create-a-rule-to-issue-an-adfs1x-name-id-claim-using-the-pass-through-or-filter-an-incoming-claim-rule-template-on-a-relying-party-trust-in-windows-server-2016"></a>Para criar uma regra para emitir um AD FS 1. *x* ID de nome de declaração usando a passagem ou filtrar um modelo de regra de declaração de entrada em uma terceira parte confiável no Windows Server 2016 
 
@@ -125,11 +122,10 @@ Dependendo das necessidades da sua organização, use um dos procedimentos a seg
     -   **Passar apenas valores de declaração que correspondem a um valor de sufixo de email específico**  
   
     -   **Passar apenas valores de declaração que começam com um valor específico**  
-![Criar regra](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs3.PNG)   
+![Criar regra](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs3.PNG)
 
 10. Clique em **terminar**e, em seguida, clique em **Okey** para salvar a regra.  
 
-  
 
 ## <a name="to-create-a-rule-to-transform-an-incoming-claim-on-a-relying-party-trust-in-windows-server-2016"></a>Para criar uma regra para transformar uma declaração de entrada em uma terceira parte confiável no Windows Server 2016 
 
@@ -139,13 +135,13 @@ Dependendo das necessidades da sua organização, use um dos procedimentos a seg
 ![Criar regra](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
   
 3.  À direita\-clique a relação de confiança selecionada e, em seguida, clique em **Editar política de emissão de declaração**.
-![Criar regra](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
+![Criar regra](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
   
 4.  No **Editar política de emissão de declaração** caixa de diálogo **regras de transformação de emissão** clique em **Adicionar regra** para iniciar o Assistente de regra. 
-![Criar regra](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
+![Criar regra](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
 
 5.  Sobre o **Selecionar modelo de regra** página, em **modelo de regra de declaração**, selecione **transformar uma declaração de entrada** na lista e, em seguida, clique **Avançar**.  
-![Criar regra](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)      
+![Criar regra](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)
 
 6.  Sobre o **configurar regra** página, digite um nome de regra de declaração.  
   
@@ -168,7 +164,7 @@ Dependendo das necessidades da sua organização, use um dos procedimentos a seg
     -   **Substituir um valor de declaração de entrada com um valor diferente de declaração de saída**  
   
     -   **Substituir e entrada\-declarações de sufixo com um novo e de email\-sufixo de email**  
-![Criar regra](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs4.PNG)    
+![Criar regra](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs4.PNG)
 
 11. Clique em **terminar**e, em seguida, clique em **Okey** para salvar a regra.  
 
@@ -273,7 +269,7 @@ Dependendo das necessidades da sua organização, use um dos procedimentos a seg
     -   **Passar apenas valores de declaração que correspondem a um valor de sufixo de email específico**  
   
     -   **Passar apenas valores de declaração que começam com um valor específico**  
-![Criar regra](media/\Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs1.PNG)   
+![Criar regra](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs1.PNG)
 
 10. Clique em **terminar**e, em seguida, clique em **Okey** para salvar a regra.  
 

@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d65a40e229fe4b0a1b27db496523dfe7a9419752
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 03bad9864f81cf75be13b4ca391fdcbc5f9dcb5c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886787"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435350"
 ---
 # <a name="manage-user-access-logging"></a>Gerenciar o Log de Acesso do Usuário
 
@@ -195,7 +195,7 @@ No primeiro dia do ano, o UAL cria um novo *GUID.mdb*. O *GUID.mdb* antigo é gu
   
 2.  Pressione o logotipo do Windows + R e digite **cmd** para abrir uma janela Prompt de Comando.  
   
-3.  Adicione o valor do Registro:  **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\AutoLogger\Sum\PollingInterval (REG_DWORD)**.  
+3.  Adicione o valor do Registro:  **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\AutoLogger\Sum\PollingInterval (REG_DWORD)** .  
   
     > [!WARNING]  
     > A edição incorreta do Registro pode causar danos graves ao sistema. Antes de alterar o Registro, faça backup de todos os dados importantes no computador.  
@@ -211,13 +211,13 @@ O UAL não tem a finalidade de ser um componente crítico. Seu design destina-se
   
 #### <a name="to-delete-data-logged-by-ual"></a>Para excluir dados registrados pelo UAL  
   
-1.  Interrompa o Serviço de Log para Acesso de Usuário.  
+1. Interrompa o Serviço de Log para Acesso de Usuário.  
   
-2.  Abra o Windows Explorer.  
+2. Abra o Windows Explorer.  
   
-3.  Vá para **\Windows\System32\Logfiles\SUM\**.  
+3. Vá para **\Windows\System32\Logfiles\SUM\\** .  
   
-4.  Exclua todos os arquivos da pasta.  
+4. Exclua todos os arquivos da pasta.  
   
 ## <a name="managing-ual-in-high-volume-environments"></a>Gerenciando o UAL em ambientes de volumes elevados  
 Esta seção descreve o que um administrador pode esperar quando o UAL é usado em um servidor com elevado volume de clientes.  

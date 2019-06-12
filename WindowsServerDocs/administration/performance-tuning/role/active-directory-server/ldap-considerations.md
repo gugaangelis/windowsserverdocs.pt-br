@@ -7,16 +7,16 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 79f95c88c49d384f8a13b8808c63a0dc00de53cb
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: 7ac9453159fe97dc15ecbb2ab858214664a2a197
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266626"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811530"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>Considerações de LDAP no ajuste de desempenho do ADDS
 
->[!Important]
+> [!IMPORTANT]
 > A seguir está um resumo da chave recomendações e considerações para otimizar o hardware de servidor para cargas de trabalho do Active Directory abordado em mais detalhes na [planejamento de capacidade para Active Directory Domain Services](https://go.microsoft.com/fwlink/?LinkId=324566) artigo. Os leitores são altamente incentivados a revisar [planejamento de capacidade para Active Directory Domain Services](https://go.microsoft.com/fwlink/?LinkId=324566) para uma maior compreensão técnica e as implicações dessas recomendações.
 
 ## <a name="verify-ldap-queries"></a>Verifique se as consultas LDAP
@@ -45,14 +45,14 @@ Os atributos de indexação é útil ao procurar por objetos que têm o nome do 
 
 -   Uma consulta está demorando muito tempo e não está concluindo em um período de tempo aceitável para o cliente devido à falta de cobertura de índices.
 
--   Grandes volumes de consultas com alta durações estão causando o esgotamento dos Threads de LDAP ATQ e o consumo. Monitore os contadores de desempenho a seguir:
+- Grandes volumes de consultas com alta durações estão causando o esgotamento dos Threads de LDAP ATQ e o consumo. Monitore os contadores de desempenho a seguir:
 
-    -   **NTDS\\latência de solicitação** – isso está sujeito a quanto a solicitação é necessário para processar. Active Directory solicitações expira depois de 120 segundos (padrão), no entanto, a maioria deve ser executado muito mais rapidamente e consultas extremamente longas devem obter ocultos nos números geral. Procure alterações nessa linha de base, em vez de limites absolutos.
+    - **NTDS\\latência de solicitação** – isso está sujeito a quanto a solicitação é necessário para processar. Active Directory solicitações expira depois de 120 segundos (padrão), no entanto, a maioria deve ser executado muito mais rapidamente e consultas extremamente longas devem obter ocultos nos números geral. Procure alterações nessa linha de base, em vez de limites absolutos.
 
-        > [!Note]   Valores altos aqui também podem ser indicadores de atrasos nas solicitações de "proxy" para outros domínios e verificações CRL.
+        > [!NOTE]
+        > Valores altos aqui também podem ser indicadores de atrasos nas solicitações de "proxy" para outros domínios e verificações CRL.
 
-
-    -   **NTDS\\estimado atraso de fila** – ideal seria próximos a 0 para um desempenho ideal, isso significa que as solicitações não gastam nenhum tempo aguardando para serem atendidas.
+    - **NTDS\\estimado atraso de fila** – ideal seria próximos a 0 para um desempenho ideal, isso significa que as solicitações não gastam nenhum tempo aguardando para serem atendidas.
 
 Esses cenários podem ser detectados usando uma ou mais das seguintes abordagens:
 
@@ -98,8 +98,8 @@ Para obter mais informações, consulte o seguinte:
 
 -   [Atributos indexados](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
 
-
 ## <a name="see-also"></a>Consulte também
+
 - [Servidores do Active Directory de ajuste de desempenho](index.md)
 - [Considerações sobre hardware](hardware-considerations.md)
 - [Posicionamento adequado dos controladores de domínio e considerações sobre o local](site-definition-considerations.md)

@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 01/24/2019
 description: As testemunhas de compartilhamento de arquivos permitem que você use um compartilhamento de arquivos para votar em quorum do cluster. Este tópico descreve as testemunhas de compartilhamento de arquivo e a nova funcionalidade, incluindo o uso de uma unidade USB conectada a um roteador como uma testemunha de compartilhamento de arquivos.
 ms.localizationpriority: medium
-ms.openlocfilehash: 1888142f96208800a0417c9caeea89e8a0472e88
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 47371be946c08cac2f271138d701922fc340a89d
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831747"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453038"
 ---
 # <a name="deploy-a-file-share-witness"></a>Implantar uma testemunha de compartilhamento de arquivo
 
@@ -61,26 +61,26 @@ Outras Observações:
 
 No [Microsoft Ignite 2018](https://azure.microsoft.com/ignite/), [armazenamento de dados](http://www.dataonstorage.com/) tinha um Cluster de espaços de armazenamento diretos em suas áreas de quiosque.  Este cluster foi conectado a um [NetGear](https://www.netgear.com) semelhante a este de testemunha de compartilhamento de Nighthawk X4S Wi-Fi roteador usando a porta USB como um arquivo.
 
-![NetGear testemunha](media\File-Share-Witness\FSW1.png)
+![NetGear testemunha](media/File-Share-Witness/FSW1.png)
 
 As etapas para criar uma testemunha de compartilhamento de arquivo usando um dispositivo USB no roteador específico estão listadas abaixo.  Observe que as etapas em outros roteadores e os dispositivos NAS irão variar e devem ser feitas usando o fornecedor fornecido direções.
 
 
 1. Faça logon no roteador com o dispositivo USB conectado.
 
-   ![NetGear Interface](media\File-Share-Witness\FSW2.png)
+   ![NetGear Interface](media/File-Share-Witness/FSW2.png)
 
 2. Na lista de opções, selecione ReadySHARE que é onde os compartilhamentos podem ser criados.
 
-   ![NetGear ReadySHARE](media\File-Share-Witness\FSW3.png)
+   ![NetGear ReadySHARE](media/File-Share-Witness/FSW3.png)
 
 3. Para uma testemunha de compartilhamento de arquivo, um compartilhamento básico é que tudo o que é necessário.  Selecionando o botão Edit será exibida uma caixa de diálogo onde o compartilhamento pode ser criado no dispositivo USB.
 
-   ![Interface NetGear compartilhamento](media\File-Share-Witness\FSW4.png)
+   ![Interface NetGear compartilhamento](media/File-Share-Witness/FSW4.png)
 
 4. Depois de selecionar o botão Aplicar, o compartilhamento é criado e pode ser visto na lista.
 
-   ![Compartilhamentos NetGear](media\File-Share-Witness\FSW5.png)
+   ![Compartilhamentos NetGear](media/File-Share-Witness/FSW5.png)
 
 5. Depois que o compartilhamento tiver sido criado, a testemunha de compartilhamento de arquivo para o Cluster é criado com o PowerShell.
 

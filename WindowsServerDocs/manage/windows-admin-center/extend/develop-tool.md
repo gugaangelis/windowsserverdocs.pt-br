@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 092a97c1166f1090dd7c556f1ab86d42a1f46ee4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 31d8dbd3df4c44b6e0a3780b022dfbd9fffdffec
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889267"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452585"
 ---
 # <a name="develop-a-tool-extension"></a>Desenvolver uma extensão de ferramenta
 
@@ -63,8 +63,8 @@ Quando isso for concluído, você configurou tudo o que você precisa carregar s
 
 Agora que você criou uma extensão com a CLI do Windows Admin Center, você está pronto para personalizar o conteúdo.  Confira estes guias para obter exemplos de como você pode fazer:
 
-- Adicionar um [módulo vazio](guides\add-module.md)
-- Adicionar um [iFrame](guides\add-iframe.md)
+- Adicionar um [módulo vazio](guides/add-module.md)
+- Adicionar um [iFrame](guides/add-iframe.md)
  
 Ainda mais exemplos podem ser encontrados nossos [site do GitHub SDK](https://aka.ms/wacsdk):
 -  [Ferramentas de desenvolvedor](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/windows-admin-center-developer-tools) é uma extensão totalmente funcional que pode ser carregado por sideload no Windows Admin Center e contém um rico conjunto de exemplos de funcionalidade e a ferramenta de exemplo que você pode procurar e usar em sua própria extensão.

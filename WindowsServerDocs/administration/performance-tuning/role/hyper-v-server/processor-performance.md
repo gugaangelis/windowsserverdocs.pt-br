@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 2a49fdaba89a01c8daf6483f72dbc88daa91452b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f16ee9cff9c244a8c579e008bced1e90b1a20673
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843237"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435595"
 ---
 # <a name="hyper-v-processor-performance"></a>Desempenho do processador do Hyper-V
 
@@ -69,19 +69,19 @@ Os recursos de NUMA virtual e memória dinâmica não podem ser usados ao mesmo 
 
 Para obter mais informações sobre o NUMA Virtual, consulte [visão geral do NUMA Virtual do Hyper-V](https://technet.microsoft.com/library/dn282282.aspx).
 
-##<a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Consulte também
 
 -   [Terminologia do Hyper-V](terminology.md)
 
--   [Arquitetura do Hyper-V](architecture.md)
+-   [Arquitetura Hyper-V](architecture.md)
 
--   [Configuração de servidor Hyper-V](configuration.md)
+-   [Configuração do servidor do Hyper-V](configuration.md)
 
 -   [Desempenho de memória do Hyper-V](memory-performance.md)
 
--   [Desempenho de e/s de armazenamento do Hyper-V](storage-io-performance.md)
+-   [Desempenho de E/S de armazenamento do Hyper-V](storage-io-performance.md)
 
--   [Desempenho de e/s de rede de Hyper-V](network-io-performance.md)
+-   [Desempenho de E/S de rede do Hyper-V](network-io-performance.md)
 
 -   [Detectar gargalos em um ambiente virtualizado](detecting-virtualized-environment-bottlenecks.md)
 

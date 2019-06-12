@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b347581773a086d525bb005edeca2efa31e1848
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d3af60aed6c8305e410c6ebfba3cf2e006034ad7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886047"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434155"
 ---
 # <a name="create-partition-logical"></a>Criar partição lógica
 
@@ -36,12 +36,12 @@ create partition logical [size=<n>] [offset=<n>] [align=<n>] [noerr]
   
 ## <a name="parameters"></a>Parâmetros  
   
-|Parâmetro|Descrição|  
-|-------|--------|  
-|size\=<n>|Especifica o tamanho da partição lógica em megabytes \(MB\), que deve ser menor do que a partição estendida. Se nenhum tamanho for especificado, a partição continuará até que haja espaço livre não mais na partição estendida.|  
-|offset\=<n>|Especifica o deslocamento, em quilobytes \(KB\), no qual a partição é criada. O deslocamento Arredonda para cima para preencher completamente todo o cilindro é usado. Se o deslocamento não for especificado, a partição é colocada na primeira extensão de disco que seja grande o suficiente para contê-la. A partição é pelo menos o mesmo tamanho em bytes, como o número especificado por **tamanho\=<n>**. Se você especificar um tamanho para a partição lógica, ele deve ser menor do que a partição estendida.|  
-|align\=<n>|Alinha-se todas as extensões de volume ou partição até o limite de alinhamento mais próximo. Normalmente usado com o número de unidade lógica do RAID de hardware \(LUN\) matrizes para melhorar o desempenho.  <n> é o número de kilobytes \(KB\) desde o início do disco para o limite de alinhamento mais próximo.|  
-|noerr|Somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro.|  
+|  Parâmetro  |                                                                                                                                                                                                                       Descrição                                                                                                                                                                                                                        |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  size\=<n>  |                                                                                                              Especifica o tamanho da partição lógica em megabytes \(MB\), que deve ser menor do que a partição estendida. Se nenhum tamanho for especificado, a partição continuará até que haja espaço livre não mais na partição estendida.                                                                                                               |
+| offset\=<n> | Especifica o deslocamento, em quilobytes \(KB\), no qual a partição é criada. O deslocamento Arredonda para cima para preencher completamente todo o cilindro é usado. Se o deslocamento não for especificado, a partição é colocada na primeira extensão de disco que seja grande o suficiente para contê-la. A partição é pelo menos o mesmo tamanho em bytes, como o número especificado por **tamanho\=<n>** . Se você especificar um tamanho para a partição lógica, ele deve ser menor do que a partição estendida. |
+| align\=<n>  |                                                                                     Alinha-se todas as extensões de volume ou partição até o limite de alinhamento mais próximo. Normalmente usado com o número de unidade lógica do RAID de hardware \(LUN\) matrizes para melhorar o desempenho.  <n> é o número de kilobytes \(KB\) desde o início do disco para o limite de alinhamento mais próximo.                                                                                      |
+|    noerr    |                                                                                                                           Somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro.                                                                                                                           |
   
 ## <a name="remarks"></a>Comentários  
   
@@ -59,7 +59,7 @@ create partition logical size=1000
 ```  
   
 #### <a name="additional-references"></a>Referências adicionais  
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 
   

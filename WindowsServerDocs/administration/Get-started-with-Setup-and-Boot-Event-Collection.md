@@ -12,12 +12,12 @@ ms.topic: get-started-article
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247b3f8
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: 781ed17fb07d2aecd4bb0b7bc672056096ab8060
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e94659c62db574dc8779c8246d471ab401414ddb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837057"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435800"
 ---
 # <a name="get-started-with-setup-and-boot-event-collection"></a>Introdução à Coleta de Eventos de Instalação e Inicialização
 
@@ -311,7 +311,7 @@ O log para o serviço coletor propriamente dito (que é distinto dos dados de co
   
 ||Erro|Descrição do erro|Sintoma|Problema em potencial|  
 |-|---------|---------------------|-----------|---------------------|  
-|Dism.exe|87|A opção de nome do recurso não é reconhecida nesse contexto||-Isso pode acontecer ao escrever incorretamente o nome do recurso. Verifique se a ortografia está correta e tente novamente.<br />-Confirme se este recurso está disponível na versão do sistema operacional que você está usando. No Windows PowerShell, execute **dism /online /get-features &#124; ?{$_ -match "boot"}**. Se nenhuma correspondência for retornada, você provavelmente está executando uma versão que não oferece suporte a esse recurso.|  
+|Dism.exe|87|A opção de nome do recurso não é reconhecida nesse contexto||-Isso pode acontecer ao escrever incorretamente o nome do recurso. Verifique se a ortografia está correta e tente novamente.<br />-Confirme se este recurso está disponível na versão do sistema operacional que você está usando. No Windows PowerShell, execute **dism /online /get-features &#124; ?{$_ -match "boot"}** . Se nenhuma correspondência for retornada, você provavelmente está executando uma versão que não oferece suporte a esse recurso.|  
 |Dism.exe|0x800f080c|Recurso \<nome > é desconhecido.||Mesmo que acima|  
   
 ### <a name="troubleshooting-the-collector"></a>Solução de problemas do coletor  
@@ -335,23 +335,23 @@ No nível de depuração, talvez seja útil gravar o log em um arquivo em vez de
       
  **Uma abordagem sugerida para o coletor de solução de problemas:**  
    
- 1. Primeiro, verifique se o coletor recebeu a conexão do destino (ele criará o arquivo somente quando o destino começa a enviar as mensagens) com   
-```  
-Get-SbecForwarding  
-```  
-Se retorna que há uma conexão a partir deste destino, o problema pode ser nas configurações do agente de log automático. Se retorna nada, o problema é com a conexão KDNET. Para diagnosticar problemas de conexão KDNET, tente verificar a conexão de ambas as extremidades (ou seja, de um coletor e do destino).  
+1. Primeiro, verifique se o coletor recebeu a conexão do destino (ele criará o arquivo somente quando o destino começa a enviar as mensagens) com   
+   ```  
+   Get-SbecForwarding  
+   ```  
+   Se retorna que há uma conexão a partir deste destino, o problema pode ser nas configurações do agente de log automático. Se retorna nada, o problema é com a conexão KDNET. Para diagnosticar problemas de conexão KDNET, tente verificar a conexão de ambas as extremidades (ou seja, de um coletor e do destino).  
   
 2. Para ver um diagnóstico estendido do coletor, adicione esta opção para o \<coletor > elemento do arquivo de configuração:  
-\<collector ... minlog="verbose">  
-Isso permitirá mensagens sobre cada pacote recebido.  
+   \<collector ... minlog="verbose">  
+   Isso permitirá mensagens sobre cada pacote recebido.  
 3. Verifique se todos os pacotes são recebidos. Opcionalmente, você talvez queira gravar o log no modo detalhado diretamente em um arquivo e não por ETW. Para fazer isso, adicione esta opção para o \<coletor > elemento do arquivo de configuração:  
-\<collector ... minlog="verbose" log="c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt">  
+   \<collector ... minlog="verbose" log="c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt">  
       
 4. Verifique os logs de evento para todas as mensagens sobre os pacotes recebidos. Verifique se todos os pacotes são recebidos. Se os pacotes são recebidos, mas de forma incorreta, verifique as mensagens de eventos para obter detalhes.  
 5. Do lado do destino, o KDNET grava algumas informações de diagnósticos no registro. Examinar   
-**HKLM\SYSTEM\CurrentControlSet\Services\kdnet** para mensagens.  
-  KdInitStatus (DWORD) será = 0, em caso de sucesso e mostra um código de erro no erro  
-  KdInitErrorString = explicação sobre o erro (também contém mensagens informativas se não houver nenhum erro)  
+   **HKLM\SYSTEM\CurrentControlSet\Services\kdnet** para mensagens.  
+   KdInitStatus (DWORD) será = 0, em caso de sucesso e mostra um código de erro no erro  
+   KdInitErrorString = explicação sobre o erro (também contém mensagens informativas se não houver nenhum erro)  
   
 6. Execute Ipconfig.exe no destino e procure o nome do dispositivo relatado. Se KDNET for carregado adequadamente, o nome do dispositivo deve ser parecido com "kdnic" em vez do nome do cartão do fornecedor original.  
 7. Verifique se o DHCP está configurado para o destino. O KDNET requer DHCP.  

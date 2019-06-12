@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5f907b6162e6767820e23222e287b933397397d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 53340612d26eaa7c4ae6fd977a0eac573f91881d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861097"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434604"
 ---
 # <a name="cd"></a>cd
 
@@ -53,16 +53,16 @@ chdir [..]
 ## <a name="remarks"></a>Comentários
 
 Se as extensões de comando estiverem habilitadas, as seguintes condições se aplicam para o **cd** comando:
--   A cadeia de caracteres de diretório atual é convertida para usar da mesma forma como os nomes no disco. Por exemplo, `cd C:\TEMP` definiria o diretório atual como C:\Temp se esse for o caso no disco.
--   Os espaços não são tratados como delimitadores, portanto *caminho* podem conter espaços sem aspas de circunscrição. Por exemplo:   
-    ```
-    cd username\programs\start menu
-    ```  
-    é o mesmo que:  
-    ```
-    cd "username\programs\start menu"
-    ```  
-    As aspas são necessárias, no entanto, se as extensões estão desabilitadas.
+- A cadeia de caracteres de diretório atual é convertida para usar da mesma forma como os nomes no disco. Por exemplo, `cd C:\TEMP` definiria o diretório atual como C:\Temp se esse for o caso no disco.
+- Os espaços não são tratados como delimitadores, portanto *caminho* podem conter espaços sem aspas de circunscrição. Por exemplo:  
+  ```
+  cd username\programs\start menu
+  ```  
+  é o mesmo que:  
+  ```
+  cd "username\programs\start menu"
+  ```  
+  As aspas são necessárias, no entanto, se as extensões estão desabilitadas.
 
 Para desabilitar as extensões de comando, digite:
 ```
@@ -86,4 +86,4 @@ cd [<Drive>:]
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

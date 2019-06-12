@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: c9b2e9201d58472286b42a9c89a36423f40d143d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 348ebf5b99de7f582a3edf57b0a190f87f1c4a5b
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834507"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452604"
 ---
 # <a name="use-a-custom-gateway-plugin-in-your-tool-extension"></a>Usar um plug-in de gateway personalizado em sua extensão de ferramenta
 
@@ -23,7 +23,7 @@ Neste artigo, usaremos um plug-in de gateway personalizado em uma extensão de f
 
 ## <a name="prepare-your-environment"></a>Prepare o ambiente ##
 
-Se você ainda não fez isso, siga as instruções em [desenvolver uma extensão da ferramenta](..\develop-tool.md) para preparar seu ambiente e criar um novo, vazio extensão da ferramenta.
+Se você ainda não fez isso, siga as instruções em [desenvolver uma extensão da ferramenta](../develop-tool.md) para preparar seu ambiente e criar um novo, vazio extensão da ferramenta.
 
 ## <a name="add-a-module-to-your-project"></a>Adicionar um módulo ao seu projeto ##
 
@@ -62,6 +62,9 @@ export class PluginService {
 ```
 
 Alterar referências aos ```Sample Uno``` e ```Sample%20Uno``` para o seu nome de recurso conforme apropriado.
+
+[!WARNING]
+> É recomendável que internos no ```this.appContextService.node``` é usada para chamar qualquer API que é definido no seu plug-in de gateway personalizado. Isso garantirá que se as credenciais são necessárias dentro de seu plug-in de gateway que eles serão manipulados corretamente.
 
 ### <a name="modify-modulets"></a>Modificar Module
 
@@ -142,4 +145,4 @@ Adicione o seguinte conteúdo para o arquivo html:
 
 ## <a name="build-and-side-load-your-extension"></a>Compilação e o lado carregam sua extensão
 
-Agora você está pronto para [compilação e do lado do carregamento](..\develop-tool.md#build-and-side-load-your-extension) sua extensão no Windows Admin Center.
+Agora você está pronto para [compilação e do lado do carregamento](../develop-tool.md#build-and-side-load-your-extension) sua extensão no Windows Admin Center.

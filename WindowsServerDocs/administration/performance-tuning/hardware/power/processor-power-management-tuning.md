@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: Qizha;TristanB
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 8a2ef4fd39554446aaac686e142ad24f53b4efaa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 9b8af89992f01712e16d0ef503c8cbbac915df1d
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863047"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811584"
 ---
 # <a name="processor-power-management-ppm-tuning-for-the-windows-server-balanced-power-plan"></a>Gerenciamento de energia do processador (PPM) de ajuste para o plano de energia Equilibrado do Windows Server
 
@@ -20,7 +20,7 @@ Começando com o Windows Server 2008, Windows Server fornece três planos de ene
 
 Se você executar um sistema de servidor que tem requisitos de energia que essas cargas de trabalho ou de desempenho e de características de carga de trabalho drasticamente diferente, talvez queira considerar o ajuste as configurações de energia padrão (ou seja, criar um plano de energia personalizado). Uma fonte de informações úteis de ajustes é o [considerações de energia de Hardware de servidor](../power.md). Como alternativa, você pode decidir que o **de alto desempenho** plano de energia é a escolha certa para seu ambiente, reconhecendo que você provavelmente levará uma quantidade significativa de energia de ocorrências em troca de algum nível de maior capacidade de resposta.
 
->[!Important]
+> [!IMPORTANT]
 > Você deve aproveitar as políticas de energia que são incluídas com o Windows Server, a menos que você tenha uma necessidade específica para criar um personalizado e ter uma compreensão muito boa que os resultados vão variar dependendo das características da carga de trabalho.
 
 ## <a name="windows-processor-power-tuning-methodology"></a>Metodologia de ajuste do Windows processador Power
@@ -28,7 +28,7 @@ Se você executar um sistema de servidor que tem requisitos de energia que essas
 
 ### <a name="tested-workloads"></a>Cargas de trabalho testadas
 
-Cargas de trabalho são selecionadas para abranger um conjunto de melhor esforço de "típica? Cargas de trabalho do Windows Server. Obviamente, esse conjunto não se destina para representar a largura inteira de ambientes de servidor do mundo real.
+Cargas de trabalho são selecionadas para abranger um conjunto de melhor esforço "típica" cargas de trabalho do Windows Server. Obviamente, esse conjunto não se destina para representar a largura inteira de ambientes de servidor do mundo real.
 
 O ajuste de cada política de energia é conduzidos pelas seguintes cinco cargas de trabalho de dados:
 
@@ -60,12 +60,12 @@ Para cada versão do Windows, servidores de produção mais recentes são usados
 
 Considerando que a maioria dos servidores são vendidas com soquetes de processador de 1 a 4, e como os servidores de expansão são menos propensos a eficiência de energia como uma preocupação principal, os testes de otimização do plano de energia principalmente são executados em sistemas de soquete de 2 e 4 soquetes. A quantidade de RAM, disco e recursos de rede para cada teste são escolhidos para permitir que cada sistema ser executado até sua capacidade total, levando em consideração as restrições de custo que normalmente seriam em vigor para ambientes de servidor do mundo real, como manter o configurações de razoáveis.
 
->[!Important]
+> [!IMPORTANT]
 > Mesmo que o sistema pode executar em sua carga de pico, normalmente otimizamos para níveis inferiores de carga, uma vez que os servidores que executam consistentemente em seus níveis de carga de pico, seria bem aconselhados a usar o **de alto desempenho** , a menos que o plano de energia energia eficiência é uma prioridade alta.
 
-### <a name="metrics"></a>Métricas
+### <a name="metrics"></a>metrics
 
-Todos os parâmetros de comparação testados usar taxa de transferência como a métrica de desempenho. Tempo de resposta é considerado como um requisito do SLA para essas cargas de trabalho (exceto para SAP, onde ele é uma métrica principal). Por exemplo, um padrão de referência é considerado "válido? Se o tempo de resposta máximo ou média for menor que determinado valor.
+Todos os parâmetros de comparação testados usar taxa de transferência como a métrica de desempenho. Tempo de resposta é considerado como um requisito do SLA para essas cargas de trabalho (exceto para SAP, onde ele é uma métrica principal). Por exemplo, uma execução de parâmetro de comparação é considerada "válida" se o tempo de resposta máximo ou média for menor que o valor determinado.
 
 Portanto, o PPM análise de ajuste também usa taxa de transferência como sua métrica de desempenho.  No nível de carga mais alto (100% de utilização da CPU), nosso objetivo é que a taxa de transferência não deva ser reduzido mais de um pequeno percentual devido às otimizações de gerenciamento de energia. Mas a principal consideração é maximizar a eficiência de energia (conforme definido abaixo) nos níveis de carga média e baixa.
 
@@ -73,7 +73,7 @@ Portanto, o PPM análise de ajuste também usa taxa de transferência como sua m
 
 Executar os núcleos de CPU a frequências baixas reduz o consumo de energia. No entanto, frequências inferiores geralmente diminuir a taxa de transferência e aumentam o tempo de resposta. Para o **equilibrado** plano de energia, há uma compensação intencional de eficiência de energia e de capacidade de resposta. Os testes de carga de trabalho do SAP, bem como o tempo de resposta SLAs nas outras cargas de trabalho, certifique-se de que o aumento do tempo de resposta não excede determinado limite (% 5 como um exemplo) para essas cargas de trabalho específicas.
 
->[!Note]
+> [!NOTE]
 > Se a carga de trabalho usa o tempo de resposta como a métrica de desempenho, o sistema deve pode alterar para o **de alto desempenho** plano de energia ou alteração **equilibrado** plano de energia conforme sugerido no [ Recomendado parâmetros de plano de energia Equilibrado para tempo de resposta rápido](recommended-balanced-plan-parameters.md).
 
 ### <a name="tuning-results"></a>Resultados do ajuste
@@ -98,20 +98,20 @@ Devido ao número e a complexidade de parâmetros, isso pode ser uma tarefa desa
 
 -   **Tempo de diminuir o desempenho de processador** – valores maiores mais gradualmente diminuem o desempenho durante períodos ociosos
 
--   **Política de aumento de desempenho do processador** – "único? diretiva reduz a resposta de desempenho para aumento e sustentada atividade; "Rocket? diretiva rapidamente reage ao aumento de atividade
+-   **Política de aumentar o desempenho de processador** – a política "Única" reduz a resposta de desempenho para aumento e sustentada atividade; a política "Rocket" reage rapidamente para maior atividade
 
--   **Política de diminuição de desempenho do processador** – "único? diretiva diminui mais gradualmente perf por períodos mais ociosos; "Rocket? diretiva descarta power muito rapidamente ao inserir um período ocioso
+-   **Política de diminuir o desempenho de processador** – a política "Única" diminui mais gradualmente perf por períodos mais ociosos; a política "Rocket" descarta power muito rapidamente ao inserir um período ocioso
 
 >[!Important]
 > Antes de iniciar qualquer experimentos, você deve primeiro compreender suas cargas de trabalho, o que ajudarão você a fazer as escolhas de parâmetro PPM corretas e reduzir os esforços de ajuste.
 
 ### <a name="understand-high-level-performance-and-power-requirements"></a>Entender o desempenho de alto nível e requisitos de energia
 
-Se sua carga de trabalho é "em tempo real? (por exemplo, suscetível a problemas na imagem ou de outros visíveis ao usuário final afeta) ou tem o requisito de capacidade de resposta muito forte (por exemplo, um corretagem de ações), e se o consumo de energia não é um critério principal para o seu ambiente, você provavelmente só deve alternar para o **Alto desempenho** plano de energia. Caso contrário, você deve entender os requisitos de tempo de resposta de suas cargas de trabalho e, em seguida, ajustar os parâmetros PPM para a melhor eficiência possível de energia que atende a esses requisitos ainda.
+Se sua carga de trabalho é "em tempo real" (por exemplo, suscetível a problemas na imagem ou de outros visíveis ao usuário final afeta) ou tem o requisito de capacidade de resposta muito forte (por exemplo, um corretagem de ações), e se o consumo de energia não é um critério principal para o seu ambiente, você provavelmente deve simplesmente alternar para o **de alto desempenho** plano de energia. Caso contrário, você deve entender os requisitos de tempo de resposta de suas cargas de trabalho e, em seguida, ajustar os parâmetros PPM para a melhor eficiência possível de energia que atende a esses requisitos ainda.
 
 ### <a name="understand-underlying-workload-characteristics"></a>Entender as características de carga de trabalho subjacente
 
-Você deve conhecer suas cargas de trabalho e os conjuntos de parâmetros de teste para o ajuste de design. Por exemplo, se as frequências dos núcleos da CPU precisam ser aumentada muito fast (talvez você tenha uma carga de trabalho de intermitente com períodos de inatividade significativos, mas precisar de capacidade de resposta muito rápida quando uma nova transação acompanha) e, em seguida, o desempenho do processador aumenta política talvez precise ser definido como "rocket? (que, como o nome implica, Atira a frequência de núcleo de CPU para seu valor máximo em vez de progredirem durante um período de tempo).
+Você deve conhecer suas cargas de trabalho e os conjuntos de parâmetros de teste para o ajuste de design. Por exemplo, se as frequências dos núcleos da CPU precisam ser aumentada muito fast (talvez você tenha uma carga de trabalho de intermitente com períodos de inatividade significativos, mas precisar de capacidade de resposta muito rápida quando uma nova transação acompanha) e, em seguida, o desempenho do processador aumenta política Talvez seja necessário a ser definido como "rocket" (que, como o nome implica, Atira a frequência de núcleo de CPU para seu valor máximo em vez de progredirem durante um período de tempo).
 
 Se sua carga de trabalho for muito intermitente, o intervalo de verificação do PPM pode ser reduzido para fazer com que a frequência da CPU inicie progredirem mais cedo depois que chega um disparo. Se sua carga de trabalho não tiver a simultaneidade de threads alta, e estacionamento do núcleo pode ser ativado para forçar a carga de trabalho para executar em um número menor de núcleos, que também pode melhorar de acertos do cache do processador proporções.
 
@@ -127,7 +127,7 @@ Isso ocorre porque o Windows fornece um **equilibrado** plano de energia em prim
 
 ## <a name="see-also"></a>Consulte também
 - [Considerações de desempenho de Hardware do servidor](../index.md)
-- [Considerações de energia de Hardware do servidor](../power.md)
-- [Energia e ajuste de desempenho](power-performance-tuning.md)
-- [Ajuste de gerenciamento de energia do processador](processor-power-management-tuning.md)
-- [Parâmetros de plano com balanceamento de recomendado](recommended-balanced-plan-parameters.md)
+- [Server Hardware Power Considerations](../power.md) (Considerações de energia de hardware do servidor)
+- [Power and Performance Tuning](power-performance-tuning.md) (Energia e ajuste de desempenho)
+- [Processor Power Management Tuning](processor-power-management-tuning.md) (Ajuste de gerenciamento de energia do processador)
+- [Parâmetros de plano balanceado recomendados](recommended-balanced-plan-parameters.md)

@@ -8,12 +8,12 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 10/18/2018
 ms.assetid: 938cdda2-f17e-4964-9218-f5868fd96735
-ms.openlocfilehash: a26b784c18049ee473a191abc7bfa0a5d253d15e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4f4119e893b215bd9f6d713bc5a17218b751c3d3
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883027"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812688"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-1-set-up-ad-fs"></a>Implante pastas de trabalho com o AD FS e Proxy de aplicativo Web: Etapa 1, a configuração do AD FS
 
@@ -32,7 +32,7 @@ Este tópico descreve a primeira etapa da implantação das Pastas de Trabalho c
 -   [Implante pastas de trabalho com o AD FS e Proxy de aplicativo Web: Etapa 5, configurar os clientes](deploy-work-folders-adfs-step5.md)  
   
 > [!NOTE]
->   As instruções abordadas nesta seção destinam-se a um ambiente do Server 2016. Se você estiver usando o Windows Server 2012 R2, siga as [instruções do Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
+>   As instruções apresentadas nesta seção são para um ambiente de 2019 do Windows Server ou Windows Server 2016. Se você estiver usando o Windows Server 2012 R2, siga as [instruções do Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
 
 Para configurar o AD FS para uso com Pastas de Trabalho, execute os procedimentos a seguir.  
   
@@ -113,7 +113,7 @@ Para instalar o AD FS, siga estas etapas:
   
 2.  Na página **Funções de Servidor**, selecione a função **Serviços de Federação do Active Directory** e clique em **Avançar**.  
   
-3.  Na página **Serviços de Federação do Active Directory (AD FS)**, você verá uma mensagem informando que a função Proxy de aplicativo Web não pode ser instalada no mesmo computador do AD FS. Clique em **Avançar**.  
+3.  Na página **Serviços de Federação do Active Directory (AD FS)** , você verá uma mensagem informando que a função Proxy de aplicativo Web não pode ser instalada no mesmo computador do AD FS. Clique em **Avançar**.  
   
 4.  Clique em **Instalar** na página de confirmação.  
   

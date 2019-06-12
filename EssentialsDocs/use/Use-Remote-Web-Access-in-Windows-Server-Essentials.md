@@ -12,12 +12,12 @@ ms.assetid: 47ea21a0-5e05-4b4b-8fa4-338c82601276
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f8cf1b12a8fffe2a6e3389aad518ac96bc136cc9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: b78d6abbaf287fc56336ff8d16127ce249b97519
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872167"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435917"
 ---
 # <a name="use-remote-web-access-in-windows-server-essentials"></a>Utilizar o acesso remoto via Web no Windows Server Essentials
 
@@ -139,21 +139,21 @@ ms.locfileid: "59872167"
   
 ###### <a name="to-upload-files"></a>Carregar arquivos  
   
-1.  No acesso remoto via Web , clique na guia **pastas compartilhadas** e, em seguida, clique no link da pasta compartilhada. Uma lista de arquivos e pastas da pasta compartilhada é exibida.  
+1. No acesso remoto via Web , clique na guia **pastas compartilhadas** e, em seguida, clique no link da pasta compartilhada. Uma lista de arquivos e pastas da pasta compartilhada é exibida.  
   
-2.  Na lista de pasta compartilhada de arquivos e pastas, clique na pasta onde você deseja carregar o arquivo e clique em **carregar**.  
+2. Na lista de pasta compartilhada de arquivos e pastas, clique na pasta onde você deseja carregar o arquivo e clique em **carregar**.  
   
-3.  Se a ferramenta de carregamento padrão ainda não estiver carregada, clique em **usar o método de carregamento padrão**.  
+3. Se a ferramenta de carregamento padrão ainda não estiver carregada, clique em **usar o método de carregamento padrão**.  
   
-4.  Clicar em **Procurar**  para encontrar um arquivo no seu computador.  
+4. Clicar em **Procurar**  para encontrar um arquivo no seu computador.  
   
-5.  Navegue nas pastas do seu computador para localizar o arquivo que você deseja carregar e, em seguida, clique em **abrir**.  
+5. Navegue nas pastas do seu computador para localizar o arquivo que você deseja carregar e, em seguida, clique em **abrir**.  
   
-6.  Repita as etapas 2 e 3 para cada arquivo que você deseja carregar.  
+6. Repita as etapas 2 e 3 para cada arquivo que você deseja carregar.  
   
-7.  Quando você tiver adicionado todos os arquivos que você deseja carregar, clique em **carregar**.  
+7. Quando você tiver adicionado todos os arquivos que você deseja carregar, clique em **carregar**.  
   
- A ferramenta de carregamento fácil de arquivo simplifica o processo de carregamento de arquivos no servidor que executa o Windows Server Essentials. Você pode adicionar quantos arquivos desejar à ferramenta de carregamento fácil de arquivo usando o recurso de arrastar e soltar e carregá-los para as pastas compartilhadas no servidor.  
+   A ferramenta de carregamento fácil de arquivo simplifica o processo de carregamento de arquivos no servidor que executa o Windows Server Essentials. Você pode adicionar quantos arquivos desejar à ferramenta de carregamento fácil de arquivo usando o recurso de arrastar e soltar e carregá-los para as pastas compartilhadas no servidor.  
   
 > [!NOTE]
 >  Upload de vários arquivos tem suporte nativo em navegadores da Web compatíveis com HTML5. Essa ferramenta só é necessária quando o navegador da Web não oferece suporte a HTML5.  
@@ -178,39 +178,39 @@ ms.locfileid: "59872167"
   
 ###### <a name="to-download-a-single-file"></a>Para baixar um único arquivo  
   
-1.  No acesso remoto via Web , clique na guia **pastas compartilhadas** e, em seguida, clique no link da pasta compartilhada. Uma lista de arquivos e pastas da pasta compartilhada é exibida.  
+1. No acesso remoto via Web , clique na guia **pastas compartilhadas** e, em seguida, clique no link da pasta compartilhada. Uma lista de arquivos e pastas da pasta compartilhada é exibida.  
   
-2.  Da lista de arquivos da pasta compartilhada, clique na caixa de seleção ao lado do arquivo que você deseja baixar no seu computador doméstico.  
+2. Da lista de arquivos da pasta compartilhada, clique na caixa de seleção ao lado do arquivo que você deseja baixar no seu computador doméstico.  
   
-3.  Clique em **baixar** para iniciar o download.  
+3. Clique em **baixar** para iniciar o download.  
   
-4.  Na caixa de diálogo **Download de arquivo** , clique em **salvar** para salvar o arquivo em seu computador.  
+4. Na caixa de diálogo **Download de arquivo** , clique em **salvar** para salvar o arquivo em seu computador.  
   
-5.  Na caixa de diálogo **Salvar como** , selecione o local para salvar o arquivo e clique em **salvar**. Nenhum arquivo não é compactado antes até o serem baixados.  
+5. Na caixa de diálogo **Salvar como** , selecione o local para salvar o arquivo e clique em **salvar**. Nenhum arquivo não é compactado antes até o serem baixados.  
   
- Há duas opções para o download de vários arquivos ou pastas. Escolha a opção que atenda às suas necessidades:  
+   Há duas opções para o download de vários arquivos ou pastas. Escolha a opção que atenda às suas necessidades:  
   
 > [!NOTE]
 >  Essas opções estão disponíveis somente quando você baixar vários arquivos ou pastas para o computador.  
   
--   **Arquivo executável auto-extraível (.exe)**  
+- **Arquivo executável auto-extraível (.exe)**  
   
-    > [!NOTE]
-    >   Esta seção se aplica a um servidor que executa o Windows Server Essentials.  
+  > [!NOTE]
+  >   Esta seção se aplica a um servidor que executa o Windows Server Essentials.  
   
-     Um arquivo executável auto-extraível é um arquivo permitido para baixar e que combina o programa de (executável) descompactação com os arquivos compactados. Quando você executar o programa executável, ele descompacta automaticamente os arquivos compactados (auto-extraível). Isso é uma forma comum de distribuir dados compactados sem se preocupar se o destinatário tem o utilitário de descompactação certo.  
+   Um arquivo executável auto-extraível é um arquivo permitido para baixar e que combina o programa de (executável) descompactação com os arquivos compactados. Quando você executar o programa executável, ele descompacta automaticamente os arquivos compactados (auto-extraível). Isso é uma forma comum de distribuir dados compactados sem se preocupar se o destinatário tem o utilitário de descompactação certo.  
   
-    > [!NOTE]
-    >  Essa opção oferece suporte a caracteres Unicode.  
+  > [!NOTE]
+  >  Essa opção oferece suporte a caracteres Unicode.  
   
--   **Pasta compactada Windows (. zip)**  
+- **Pasta compactada Windows (. zip)**  
   
-     Ao compactar um arquivo cria uma versão compactada do arquivo que é menor do que o arquivo original. A versão compactada do arquivo tem uma extensão de nome de arquivo .zip. Tipos de arquivos que são reduzidos em mais compactados são tipos de arquivo de texto, .txt, .doc, .xls e arquivos de elementos gráficos que usam tipos de arquivo não compactado, como .bmp. Alguns arquivos gráficos, como arquivos. jpg e. gif, já usam compressão, o tamanho do arquivo reduz muito pouco ao ser compactado. Além disso, um documento do Word que contém muitos elementos gráficos não é reduzido quanto um documento é de texto.  
+   Ao compactar um arquivo cria uma versão compactada do arquivo que é menor do que o arquivo original. A versão compactada do arquivo tem uma extensão de nome de arquivo .zip. Tipos de arquivos que são reduzidos em mais compactados são tipos de arquivo de texto, .txt, .doc, .xls e arquivos de elementos gráficos que usam tipos de arquivo não compactado, como .bmp. Alguns arquivos gráficos, como arquivos. jpg e. gif, já usam compressão, o tamanho do arquivo reduz muito pouco ao ser compactado. Além disso, um documento do Word que contém muitos elementos gráficos não é reduzido quanto um documento é de texto.  
   
-    > [!NOTE]
-    >  Essa opção fornece suporte limitado para nomes de arquivo internacionais no Windows Server Essentials.  
+  > [!NOTE]
+  >  Essa opção fornece suporte limitado para nomes de arquivo internacionais no Windows Server Essentials.  
   
- Antes de inicia o download, o arquivo exe ou zip é criado. Dependendo do número de arquivos e o tamanho total dos arquivos a serem baixados, isso pode levar vários minutos. Depois que o arquivo de download é criado, o download do arquivo ocorre em segundo plano. Isso permite que você continue trabalhando enquanto o processo de download é concluído.  
+  Antes de inicia o download, o arquivo exe ou zip é criado. Dependendo do número de arquivos e o tamanho total dos arquivos a serem baixados, isso pode levar vários minutos. Depois que o arquivo de download é criado, o download do arquivo ocorre em segundo plano. Isso permite que você continue trabalhando enquanto o processo de download é concluído.  
   
 ###### <a name="to-download-multiple-files-or-folders"></a>Para baixar vários arquivos ou pastas  
   
@@ -326,13 +326,13 @@ ms.locfileid: "59872167"
   
 ##### <a name="to-return-to-the-mobile-version-of-remote-web-access"></a>Para voltar para a versão móvel do acesso via Web Remoto  
   
-1.  Faça logoff.  
+1. Faça logoff.  
   
-2.  Abra um navegador da Web e digite **https://***<nome_do_domínio\>*** m/remoto/** na barra de endereços. Certifique-se de que você incluir o s em https.  
+2. Abra um navegador da Web e digite **https://***<nome_do_domínio\>*** m/remoto/** na barra de endereços. Certifique-se de que você incluir o s em https.  
   
-3.  A versão móvel do acesso via Web remoto é exibida. Na página de logon do acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto e, em seguida, clique na seta. Você efetuou logon para a versão móvel do acesso via Web remoto.  
+3. A versão móvel do acesso via Web remoto é exibida. Na página de logon do acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto e, em seguida, clique na seta. Você efetuou logon para a versão móvel do acesso via Web remoto.  
   
- Você pode procurar arquivos e pastas em pastas compartilhadas no servidor.  
+   Você pode procurar arquivos e pastas em pastas compartilhadas no servidor.  
   
 ###  <a name="BKMK_9"></a> Suporte a navegadores da Web para dispositivos móveis  
  Os navegadores web compatíveis com dispositivos móveis incluem:  
@@ -358,9 +358,9 @@ ms.locfileid: "59872167"
 
 -   [Trabalhar remotamente](Work-Remotely-in-Windows-Server-Essentials.md)  
   
--   [Usar o Windows Server Essentials](Use-Windows-Server-Essentials.md)
+-   [Utilizar o Windows Server Essentials](Use-Windows-Server-Essentials.md)
 
 -   [Trabalhar remotamente](../use/Work-Remotely-in-Windows-Server-Essentials.md)  
   
--   [Usar o Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)
+-   [Utilizar o Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)
 

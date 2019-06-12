@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 17fa97e28d099806c9280e42dd900e8d6c708641
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dd381c04b02889a7f2e7b8992ff6050d1b0f078a
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850237"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453066"
 ---
 # <a name="dfs-replication-overview"></a>Visão geral da replicação DFS
 
@@ -25,7 +25,7 @@ Para obter mais informações sobre a replicação de SYSVOL usando a replicaç�
 
 Para usar a replicação do DFS, você deve criar grupos de replicação e adicionar pastas replicadas para os grupos. Grupos de replicação, as pastas replicadas e membros são ilustrados na figura a seguir.
 
-![Um grupo de replicação que contém uma conexão entre os dois membros, cada um com duas pastas replicadas](media\dfsr-overview.gif)
+![Um grupo de replicação que contém uma conexão entre os dois membros, cada um com duas pastas replicadas](media/dfsr-overview.gif)
 
 Esta figura mostra que um grupo de replicação é um conjunto de servidores, conhecidos como membros, que participa da replicação de uma ou mais pastas replicadas. Uma pasta replicada é uma pasta que permanece sincronizada em cada membro. Na figura, há duas pastas replicadas: Os projetos e propostas. Como os dados são alterados em cada pasta replicada, as alterações são replicadas em conexões entre os membros do grupo de replicação. As conexões entre todos os membros formam a topologia de replicação.
 Criar várias pastas replicadas em um grupo de replicação único simplifica o processo de implantação de pastas replicadas porque a topologia, o agendamento e largura de banda para o grupo de replicação são aplicadas a cada pasta replicada. Para implantar pastas replicadas adicionais, você pode usar Dfsradmin.exe ou um siga as instruções em um Assistente para definir o caminho local e permissões para a nova pasta replicada.

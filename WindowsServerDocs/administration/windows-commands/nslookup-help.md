@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e571a0b6fb7744860f3c710a32e1789098ce73d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f413a34cbdb8f29528f1ddc59613d2ca929ef747
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882177"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437003"
 ---
 # <a name="nslookup-help"></a>nslookup help
 
@@ -34,10 +34,10 @@ Exibe um resumo breve dos **nslookup** subcomandos.
 
 ## <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|{Ajuda | ?}|Exibe um resumo breve dos **nslookup** subcomandos.|
+| Parâmetro | Descrição |
+|-----------|-------------|
+|   {Ajuda   |     ?}      |
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

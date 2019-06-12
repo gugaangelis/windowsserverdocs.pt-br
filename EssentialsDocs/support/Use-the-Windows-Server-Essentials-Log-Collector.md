@@ -12,12 +12,12 @@ ms.assetid: c6985518-b42d-4cfb-9761-eaa75306b6d7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d003c6a45159548f7e34d86ca242f74868659d2f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ba5c0de9d8689c63c95ea3410a74fc9a7289aeab
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877987"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435994"
 ---
 # <a name="use-the-windows-server-essentials-log-collector"></a>Usar o coletor de log do Windows Server Essentials
 
@@ -28,9 +28,9 @@ Quando você estiver solucionando problemas do computador, um representante de s
  O coletor de log copia logs de programas, logs do revisor de eventos e informações relacionadas ao ambiente em um único arquivo zip em um local especificado. Você pode executar o coletor de log diretamente do servidor ou de qualquer computador na rede ou usando uma conexão remota para os computadores.  
   
 > [!NOTE]
->  -   O coletor de log não analisa problemas de rede ou faz alterações em qualquer servidor ou computador na rede. Para obter informações sobre como solucionar problemas de rede, consulte a documentação de ajuda para o seu produto de servidor.  
-> -   Neste guia, os computadores em sua rede, diferentes do servidor, são chamados de computadores da rede.  
-> -   [Baixe o pacote de instalação do Windows Server Essentials Log Collector](https://go.microsoft.com/fwlink/?LinkID=266341).  
+> - O coletor de log não analisa problemas de rede ou faz alterações em qualquer servidor ou computador na rede. Para obter informações sobre como solucionar problemas de rede, consulte a documentação de ajuda para o seu produto de servidor.  
+>   -   Neste guia, os computadores em sua rede, diferentes do servidor, são chamados de computadores da rede.  
+>   -   [Baixe o pacote de instalação do Windows Server Essentials Log Collector](https://go.microsoft.com/fwlink/?LinkID=266341).  
   
  Para instalar e executar o coletor de log, execute as etapas nos tópicos a seguir:  
   

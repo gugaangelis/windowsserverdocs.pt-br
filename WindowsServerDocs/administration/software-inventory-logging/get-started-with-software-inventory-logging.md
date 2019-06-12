@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a3e51effa6321c3575e385f1c56bba57318eca5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6944eac179c605db6c7b6f3e08f87c2329fb777f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822827"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435368"
 ---
 # <a name="get-started-with-software-inventory-logging"></a>Introdução ao Software de log de inventário
 
@@ -45,8 +45,8 @@ O Log de Inventário de Software pode ajudar os administradores de servidor a ex
 -   Agregar informações de inventário de software e servidor para uma ampla variedade de cenários de gerenciamento de ativos de software habilitando o recurso de Log de Inventário de Software de cada servidor e selecionando um URI de destino de servidor Web e a impressão digital do certificado para autenticação.
 
 ## <a name="see-also"></a>Consulte também
-[Agregador do log de inventário de software](https://technet.microsoft.com/library/mt572043.aspx)<br>
-[Gerenciar Software log de inventário](manage-software-inventory-logging.md)<br>
+[Agregador de registro em log de inventário de software](https://technet.microsoft.com/library/mt572043.aspx)<br>
+[Gerenciar o Registro em log de inventário de software](manage-software-inventory-logging.md)<br>
 [Cmdlets de registro em log de inventário de software no Windows PowerShell](https://technet.microsoft.com/library/dn283390.aspx)<br>
 [Microsoft Assessment and Planning Toolkit](https://www.microsoft.com/download/en/details.aspx?id=7826)
 [Volume Activation Management Tool](http://blogs.technet.com/b/volume-licensing/)

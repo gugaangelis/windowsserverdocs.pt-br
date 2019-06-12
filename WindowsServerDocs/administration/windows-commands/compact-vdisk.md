@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ba04bdc8c469ef80853b6092b8745defa1f3f19e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c4a95354bf041777e43a9eac5f16e693b02c185c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877297"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434300"
 ---
 # <a name="compact-vdisk"></a>Compactar vdisk
 
@@ -27,21 +27,21 @@ ms.locfileid: "59877297"
 Reduz o tamanho físico de um arquivo de disco rígido virtual (VHD) de expansão dinâmica. Esse parâmetro é útil porque VHDs aumento no tamanho de expansão dinâmica, como adicionar arquivos, mas eles não é reduzido automaticamente quando você excluir arquivos.
 > [!NOTE]
 > Este comando só é aplicável ao Windows 7 e Windows Server 2008 R2.
-## <a name="syntax"></a>Sintaxe
-```
-compact vdisk
-```
-## <a name="remarks"></a>Comentários
--   Um VHD de expansão dinâmica deve ser selecionado para essa operação seja bem-sucedida. Use o **selecionar o vdisk** comando para selecionar um VHD e mudar o foco a ele.
--   Você só pode compactar a expandir dinamicamente os VHDs que são desanexados ou anexados como somente leitura.
-## <a name="BKMK_Examples"></a>Exemplos
-Para compactar um VHD de expansão dinâmica, digite:
-```
-compact vdisk
-```
-## <a name="additional-references"></a>Referências adicionais
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
--   [attach vdisk](attach-vdisk.md)
+> ## <a name="syntax"></a>Sintaxe
+> ```
+> compact vdisk
+> ```
+> ## <a name="remarks"></a>Comentários
+> - Um VHD de expansão dinâmica deve ser selecionado para essa operação seja bem-sucedida. Use o **selecionar o vdisk** comando para selecionar um VHD e mudar o foco a ele.
+> - Você só pode compactar a expandir dinamicamente os VHDs que são desanexados ou anexados como somente leitura.
+>   ## <a name="BKMK_Examples"></a>Exemplos
+>   Para compactar um VHD de expansão dinâmica, digite:
+>   ```
+>   compact vdisk
+>   ```
+>   ## <a name="additional-references"></a>Referências adicionais
+> - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+> - [attach vdisk](attach-vdisk.md)
 
 -   [Detalhar vdisk](detail-vdisk.md)
 -   [Desanexar vdisk](detach-vdisk.md)

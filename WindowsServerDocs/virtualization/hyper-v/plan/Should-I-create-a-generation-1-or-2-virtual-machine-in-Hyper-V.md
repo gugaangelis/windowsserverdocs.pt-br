@@ -11,12 +11,12 @@ ms.assetid: 02e31413-6140-4723-a8d6-46c7f667792d
 author: KBDAzure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: e3c88ef5ee700bb3906746402bf6cc8916976800
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 95ececde8a1b8c591ea2baf367a93f63ee55a6e3
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192770"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811990"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>Deve criar uma máquina virtual de geração 1 ou 2 no Hyper-V?
 
@@ -35,25 +35,25 @@ Para obter mais informações sobre quais recursos estão disponíveis com as m�
 
 Você não pode alterar a geração de uma máquina virtual depois que você criou. Portanto, é recomendável que você examine as considerações aqui, bem como escolher o sistema operacional, o método de inicialização e a recursos que você deseja usar antes de escolher uma geração.  
 
-## <a name="BKMK_OS"></a>Há suporte para quais sistemas operacionais de convidados?
+## <a name="which-guest-operating-systems-are-supported"></a>Há suporte para quais sistemas operacionais de convidados?
 
 A maioria dos sistemas operacionais convidados do suporte a máquinas virtuais de geração 1. Máquinas virtuais de geração 2 oferecem suporte a maioria das versões de 64 bits do Windows e versões mais atuais dos sistemas operacionais Linux e FreeBSD. Use as seções a seguir para ver qual geração de máquina virtual dá suporte ao sistema operacional convidado que deseja instalar.  
 
-- [Suporte de sistema operacional de convidado do Windows](Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md#BKMK_Windows)  
+- [Suporte de sistema operacional de convidado do Windows](#windows-guest-operating-system-support)  
 
-- [CentOS e Red Hat Enterprise Linux suporte do sistema operacional de convidado](Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md#BKMK_CentOS)  
+- [CentOS e Red Hat Enterprise Linux suporte do sistema operacional de convidado](#centos-and-red-hat-enterprise-linux-guest-operating-system-support)  
 
-- [Suporte do sistema operacional convidado Debian](Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md#BKMK_Debian)  
+- [Suporte do sistema operacional convidado Debian](#debian-guest-operating-system-support)  
 
-- [Suporte de sistema operacional convidado FreeBSD](Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md#BKMK_FreeBSD)  
+- [Suporte de sistema operacional convidado FreeBSD](#freebsd-guest-operating-system-support)  
 
-- [Suporte do sistema operacional de convidado do Oracle Linux](Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md#BKMK_Oracle)  
+- [Suporte do sistema operacional de convidado do Oracle Linux](#oracle-linux-guest-operating-system-support)  
 
-- [Suporte de sistema operacional convidado SUSE](Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md#BKMK_SUSE)  
+- [Suporte de sistema operacional convidado SUSE](#suse-guest-operating-system-support)  
 
-- [Suporte de sistema operacional de convidado do Ubuntu](Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md#BKMK_Ubuntu)  
+- [Suporte de sistema operacional de convidado do Ubuntu](#ubuntu-guest-operating-system-support)  
 
-### <a name="BKMK_Windows"></a>Suporte de sistema operacional de convidado do Windows
+### <a name="windows-guest-operating-system-support"></a>Suporte de sistema operacional de convidado do Windows
 
 A tabela a seguir mostra quais versões de 64 bits do Windows você pode usar como um sistema operacional convidado para a geração 1 e máquinas virtuais de geração 2.  
 
@@ -79,7 +79,7 @@ A tabela a seguir mostra quais versões de 32 bits do Windows você pode usar co
 |Windows 8|&#10004;| &#10006;|  
 |Windows 7|&#10004;| &#10006;|  
 
-### <a name="BKMK_CentOS"></a>CentOS e Red Hat Enterprise Linux suporte do sistema operacional de convidado
+### <a name="centos-and-red-hat-enterprise-linux-guest-operating-system-support"></a>CentOS e Red Hat Enterprise Linux suporte do sistema operacional de convidado
 
 A tabela a seguir mostra quais versões do Red Hat Enterprise Linux \(RHEL\) e CentOS você pode usar como um sistema operacional convidado para a geração 1 e máquinas virtuais de geração 2.
 
@@ -91,7 +91,7 @@ A tabela a seguir mostra quais versões do Red Hat Enterprise Linux \(RHEL\) e C
 
 Para obter mais informações, consulte [CentOS e Red Hat Enterprise Linux máquinas virtuais no Hyper-V](../Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md).  
 
-### <a name="BKMK_Debian"></a>Suporte do sistema operacional convidado Debian  
+### <a name="debian-guest-operating-system-support"></a>Suporte do sistema operacional convidado Debian  
 
 A tabela a seguir mostra quais versões do Debian você pode usar como um sistema operacional convidado para a geração 1 e máquinas virtuais de geração 2.
 
@@ -102,7 +102,7 @@ A tabela a seguir mostra quais versões do Debian você pode usar como um sistem
 
 Para obter mais informações, consulte [máquinas virtuais do Debian no Hyper-V](../Supported-Debian-virtual-machines-on-Hyper-V.md).  
 
-### <a name="BKMK_FreeBSD"></a>Suporte de sistema operacional convidado FreeBSD
+### <a name="freebsd-guest-operating-system-support"></a>Suporte de sistema operacional convidado FreeBSD
 
 A tabela a seguir mostra quais versões do FreeBSD você pode usar como um sistema operacional convidado para a geração 1 e máquinas virtuais de geração 2.  
 
@@ -114,7 +114,7 @@ A tabela a seguir mostra quais versões do FreeBSD você pode usar como um siste
 
 Para obter mais informações, consulte [máquinas de virtuais FreeBSD no Hyper-V](../Supported-FreeBSD-virtual-machines-on-Hyper-V.md).  
 
-### <a name="BKMK_Oracle"></a>Suporte do sistema operacional de convidado do Oracle Linux  
+### <a name="oracle-linux-guest-operating-system-support"></a>Suporte do sistema operacional de convidado do Oracle Linux  
 
 A tabela a seguir mostra quais versões de série de Kernel compatível do Red Hat você pode usar como um sistema operacional convidado para a geração 1 e máquinas virtuais de geração 2.  
 
@@ -133,7 +133,7 @@ A tabela a seguir mostra quais versões do Unbreakable Enterprise Kernel você p
 
 Para obter mais informações, consulte [máquinas de virtuais do Oracle Linux no Hyper-V](../Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md).  
 
-### <a name="BKMK_SUSE"></a>Suporte de sistema operacional convidado SUSE
+### <a name="suse-guest-operating-system-support"></a>Suporte de sistema operacional convidado SUSE
 
 A tabela a seguir mostra quais versões do SUSE você pode usar como um sistema operacional convidado para a geração 1 e máquinas virtuais de geração 2.
 
@@ -145,7 +145,7 @@ A tabela a seguir mostra quais versões do SUSE você pode usar como um sistema 
 
 Para obter mais informações, consulte [máquinas virtuais SUSE do Hyper-V](../Supported-SUSE-virtual-machines-on-Hyper-V.md).  
 
-### <a name="BKMK_Ubuntu"></a>Suporte de sistema operacional de convidado do Ubuntu
+### <a name="ubuntu-guest-operating-system-support"></a>Suporte de sistema operacional de convidado do Ubuntu
 
 A tabela a seguir mostra quais versões do Ubuntu você pode usar como um sistema operacional convidado para a geração 1 e máquinas virtuais de geração 2.
 
@@ -156,7 +156,7 @@ A tabela a seguir mostra quais versões do Ubuntu você pode usar como um sistem
 
 Para obter mais informações, consulte [máquinas virtuais do Ubuntu no Hyper-V](../Supported-Ubuntu-virtual-machines-on-Hyper-V.md).  
 
-## <a name="BKMK_Boot"></a>Como é possível inicializar a máquina virtual?
+## <a name="how-can-i-boot-the-virtual-machine"></a>Como é possível inicializar a máquina virtual?
 
 A tabela a seguir mostra quais métodos são suportados pela geração 1 e máquinas virtuais de geração 2 de inicialização.  
 
@@ -168,7 +168,7 @@ A tabela a seguir mostra quais métodos são suportados pela geração 1 e máqu
 |Inicialização a partir do controlador IDE do disco rígido virtual (. VHD) ou de DVD virtual (. ISO)|&#10004;| &#10006;|  
 |Inicialização a partir do disquete (. VFD)|&#10004;| &#10006;|  
 
-## <a name="BKMK_Advantages"></a>Quais são as vantagens de usar as máquinas virtuais de 2ª geração?
+## <a name="what-are-the-advantages-of-using-generation-2-virtual-machines"></a>Quais são as vantagens de usar as máquinas virtuais de 2ª geração?
 
 Aqui estão algumas das vantagens que você obtém ao usar uma máquina virtual de 2ª geração:  
 - **Inicialização segura** esse é um recurso que verifica se o carregador de inicialização é assinado por uma autoridade confiável no banco de dados UEFI para ajudar a impedir o firmware não autorizado, sistemas operacionais ou drivers UEFI em execução no momento da inicialização. A Inicialização Segura é habilitada por padrão em máquinas virtuais da 2ª geração. Se você precisar executar um sistema operacional convidado que não é suportado pela inicialização segura, você pode desabilitá-lo após a criação da máquina virtual.  Para saber mais, confira [Inicialização Segura](https://technet.microsoft.com/library/dn486875.aspx).  
@@ -177,9 +177,9 @@ Aqui estão algumas das vantagens que você obtém ao usar uma máquina virtual 
 
 - **Volume de inicialização maior** o volume de inicialização de máximo de máquinas virtuais de geração 2 é 64 TB. Esse é o tamanho máximo em disco com suporte por um. VHDX. Para máquinas virtuais de geração 1, o volume de inicialização máximo é de 2TB para um. VHDX e 2040GB para um. VHD. Para obter mais informações, consulte [Hyper-V Virtual Hard Disk Format Overview](https://technet.microsoft.com/library/hh831446.aspx).  
 
- Você também pode ver uma ligeira melhoria nos tempos de inicialização e instalação de máquina virtual com máquinas virtuais de geração 2.
+  Você também pode ver uma ligeira melhoria nos tempos de inicialização e instalação de máquina virtual com máquinas virtuais de geração 2.
 
-## <a name="BKMK_DeviceCompare"></a> O que é a diferença no suporte a dispositivos?
+## <a name="whats-the-difference-in-device-support"></a>O que é a diferença no suporte a dispositivos?
 
 A tabela a seguir compara os dispositivos disponíveis entre a geração 1 e máquinas virtuais de geração 2.  
 
@@ -200,7 +200,7 @@ A tabela a seguir compara os dispositivos disponíveis entre a geração 1 e má
 |PIT (temporizador de intervalo programável)|Não é mais necessário|N/D|  
 |Superdispositivo de E/S|Não é mais necessário|N/D|  
 
-## <a name="BKMK_More"></a> Mais sobre máquinas virtuais de geração 2
+## <a name="more-about-generation-2-virtual-machines"></a>Mais sobre máquinas virtuais de geração 2
 
 Aqui estão algumas dicas adicionais sobre como usar máquinas virtuais de geração 2.
 
@@ -230,7 +230,7 @@ Por padrão, máquinas virtuais da 2ª geração usam IPv4. Para usar IPv6, em v
 Set-VMFirmware -VMName TestVM -IPProtocolPreference IPv6  
 ```  
 
-## <a name="BKMK_Debug"></a>Adicionar uma porta COM para depuração de kernel
+## <a name="add-a-com-port-for-kernel-debugging"></a>Adicionar uma porta COM para depuração de kernel
 
 As portas COM não estão disponíveis em máquinas virtuais de geração 2 até você adicioná-los. Você pode fazer isso com o Windows PowerShell ou o Windows Management Instrumentation (WMI). Estas etapas mostram como fazer isso com o Windows PowerShell.
 

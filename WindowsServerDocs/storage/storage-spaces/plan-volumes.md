@@ -9,16 +9,16 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 01/10/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e2d9e6828584f4027aa32cec26572c2290098ab6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c68444be5662480293cee630970d5eb76b52268a
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830097"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453189"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>Planejamento de volumes nos Espaços de Armazenamento Diretos
 
-> Aplica-se a: Windows Server 2016, Windows Server 2019
+> Aplica-se a: Windows Server 2019, Windows Server 2016
 
 Este tópico fornece diretrizes de como planejar volumes em Espaços de Armazenamento Diretos para atender às necessidades de desempenho e capacidade de cargas de trabalho, incluindo escolher o sistema de arquivos, tipo de resiliência e tamanho.
 
@@ -31,7 +31,7 @@ Volumes são os armazenamentos de dados em que você coloca os arquivos necessá
 
 ![o que são volumes](media/plan-volumes/what-are-volumes.png)
 
-Todos os volumes são acessíveis por todos os servidores do cluster ao mesmo tempo. Depois de criados, eles aparecem em **C:\ClusterStorage\** em todos os servidores.
+Todos os volumes são acessíveis por todos os servidores do cluster ao mesmo tempo. Depois de criado, elas aparecem em **C:\ClusterStorage\\**  em todos os servidores.
 
 ![pasta de captura de tela csv](media/plan-volumes/csv-folder-screenshot.png)
 
@@ -87,9 +87,9 @@ O tipo de resiliência a ser usado depende das necessidades de sua carga de trab
 
 | **Tipo de resiliência**| **Eficiência de capacidade**| **Velocidade**| **Cargas de trabalho**
 |--------------------|--------------------------------|--------------------------------|--------------------------
-| **Espelho**         | ![Mostrando de eficiência de armazenamento 33%](media\plan-volumes\3-way-mirror-storage-efficiency.png)<br>Espelho de três formas: 33% <br>Duas-way-espelho: 50%     |![Mostrando desempenho 100%](media\plan-volumes\three-way-mirror-perf.png)<br> Maior desempenho  | Cargas de trabalho virtualizadas<br> Bancos de dados<br>Outras cargas de trabalho de alto desempenho |
-| **Paridade de aceleração de espelho** |![Mostrando cerca de 50% de eficiência de armazenamento](media\plan-volumes\mirror-accelerated-parity-storage-efficiency.png)<br> Depende de proporção de espelho e paridade | ![Desempenho mostrando cerca de 20%](media\plan-volumes\mirror-accelerated-parity-perf.png)<br>Muito mais lento do que espelham, mas até duas vezes mais rápido paridade dupla<br> Melhor para leituras e gravações sequenciais grandes | Backup e arquivamento<br> Infraestrutura de área de trabalho virtualizada     |
-| **Paridade dupla**               | ![Mostrando cerca de 80% de eficiência de armazenamento](media\plan-volumes\dual-parity-storage-efficiency.png)<br>4 servidores: 50% <br>16 servidores: até 80% | ![Desempenho mostrando cerca de 10%](media\plan-volumes\dual-parity-perf.png)<br>Latência de e/s mais alta e uso de CPU em gravações<br> Melhor para leituras e gravações sequenciais grandes | Backup e arquivamento<br> Infraestrutura de área de trabalho virtualizada  |
+| **Espelho**         | ![Mostrando de eficiência de armazenamento 33%](media/plan-volumes/3-way-mirror-storage-efficiency.png)<br>Espelho de três formas: 33% <br>Duas-way-espelho: 50%     |![Mostrando desempenho 100%](media/plan-volumes/three-way-mirror-perf.png)<br> Maior desempenho  | Cargas de trabalho virtualizadas<br> Bancos de dados<br>Outras cargas de trabalho de alto desempenho |
+| **Paridade acelerada por espelho** |![Mostrando cerca de 50% de eficiência de armazenamento](media/plan-volumes/mirror-accelerated-parity-storage-efficiency.png)<br> Depende de proporção de espelho e paridade | ![Desempenho mostrando cerca de 20%](media/plan-volumes/mirror-accelerated-parity-perf.png)<br>Muito mais lento do que espelham, mas até duas vezes mais rápido paridade dupla<br> Melhor para leituras e gravações sequenciais grandes | Backup e arquivamento<br> Infraestrutura de área de trabalho virtualizada     |
+| **Paridade dupla**               | ![Mostrando cerca de 80% de eficiência de armazenamento](media/plan-volumes/dual-parity-storage-efficiency.png)<br>4 servidores: 50% <br>16 servidores: até 80% | ![Desempenho mostrando cerca de 10%](media/plan-volumes/dual-parity-perf.png)<br>Latência de e/s mais alta e uso de CPU em gravações<br> Melhor para leituras e gravações sequenciais grandes | Backup e arquivamento<br> Infraestrutura de área de trabalho virtualizada  |
 
 #### <a name="when-performance-matters-most"></a>Quando desempenho é o mais importante
 
@@ -199,4 +199,4 @@ Consulte [Criando volumes em Espaços de Armazenamento Diretos](create-volumes.m
 
 - [Visão geral direta de espaços de armazenamento](storage-spaces-direct-overview.md)
 - [Escolhendo unidades para espaços de armazenamento diretos](choosing-drives.md)
-- [Eficiência de armazenamento e a tolerância a falhas](storage-spaces-fault-tolerance.md)
+- [Tolerância a falhas e eficiência de armazenamento](storage-spaces-fault-tolerance.md)

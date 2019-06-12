@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 79288fe90d037659f5e3934f1925dd8b7c21ad7f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3fa9ba46418c3ed3b7999a734b4c0df40dce5027
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873427"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434169"
 ---
 # <a name="create-partition-msr"></a>Criar partição msr
 
@@ -39,11 +39,11 @@ create partition msr [size=<n>] [offset=<n>] [noerr]
   
 ## <a name="parameters"></a>Parâmetros  
   
-|Parâmetro|Descrição|  
-|-------|--------|  
-|size\=<n>|O tamanho da partição em megabytes \(MB\). A partição é pelo menos o mesmo tamanho em bytes, como o número especificado por <n>. Se nenhum tamanho for especificado, a partição continuará até que haja espaço livre não mais na região atual.|  
-|offset\=<n>|Especifica o deslocamento, em quilobytes \(KB\), no qual a partição é criada. O deslocamento Arredonda para cima para preencher completamente a qualquer tamanho de setor é usado. Se o deslocamento não for especificado, a partição será colocada na primeira extensão de disco que seja grande o suficiente para contê-la.|  
-|noerr|Somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro.|  
+|  Parâmetro  |                                                                                                                         Descrição                                                                                                                         |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  size\=<n>  |               O tamanho da partição em megabytes \(MB\). A partição é pelo menos o mesmo tamanho em bytes, como o número especificado por <n>. Se nenhum tamanho for especificado, a partição continuará até que haja espaço livre não mais na região atual.               |
+| offset\=<n> | Especifica o deslocamento, em quilobytes \(KB\), no qual a partição é criada. O deslocamento Arredonda para cima para preencher completamente a qualquer tamanho de setor é usado. Se o deslocamento não for especificado, a partição será colocada na primeira extensão de disco que seja grande o suficiente para contê-la. |
+|    noerr    |                            Somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro.                             |
   
 ## <a name="remarks"></a>Comentários  
   
@@ -63,7 +63,7 @@ create partition msr size=1000
 ```  
   
 #### <a name="additional-references"></a>Referências adicionais  
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 
   

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3307ba71e7b3c8b4113f9ed29ab06660dafa5f6f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4d602c685b7eac5d18c88bc0f6709b189cc61a77
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868737"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438458"
 ---
 # <a name="ftp-put"></a>FTP: put
 
@@ -30,23 +30,25 @@ Copia um arquivo local para o computador remoto usando o tipo de transferência 
 put <LocalFile> [<remoteFile>]  
 ```  
 ### <a name="parameters"></a>Parâmetros  
-|Parâmetro|Descrição|  
-|-------|--------|  
-|<LocalFile>|Especifica o arquivo local para copiar.|  
-|[<remoteFile>]|Especifica o nome a ser usado no computador remoto.|  
+
+|   Parâmetro    |                    Descrição                    |
+|----------------|---------------------------------------------------|
+|  <LocalFile>   |         Especifica o arquivo local para copiar.         |
+| [<remoteFile>] | Especifica o nome a ser usado no computador remoto. |
+
 ## <a name="remarks"></a>Comentários  
--   O **colocar** comando é idêntico de **enviar** comando.  
--   Se *Arquivo_remoto* não for especificado, o arquivo é fornecido o *LocalFile* nome.  
-## <a name="BKMK_Examples"></a>Exemplos  
-Copie o arquivo local **Test. txt** e nomeie-o **test1.txt** no computador remoto.  
-```  
-put test.txt test1.txt  
-```  
-Copie o arquivo local **program.exe** ao computador remoto.  
-```  
-put program.exe  
-```  
-## <a name="additional-references"></a>Referências adicionais  
--   [ftp: ascii](ftp-ascii.md)  
--   [ftp: binary](ftp-binary.md)  
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+- O **colocar** comando é idêntico de **enviar** comando.  
+- Se *Arquivo_remoto* não for especificado, o arquivo é fornecido o *LocalFile* nome.  
+  ## <a name="BKMK_Examples"></a>Exemplos  
+  Copie o arquivo local **Test. txt** e nomeie-o **test1.txt** no computador remoto.  
+  ```  
+  put test.txt test1.txt  
+  ```  
+  Copie o arquivo local **program.exe** ao computador remoto.  
+  ```  
+  put program.exe  
+  ```  
+  ## <a name="additional-references"></a>Referências adicionais  
+- [ftp: ascii](ftp-ascii.md)  
+- [ftp: binary](ftp-binary.md)  
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  

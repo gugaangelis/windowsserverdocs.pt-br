@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 432d661d8c0ce4cae6fe08a2671e8f9d613ce351
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ca75dd9af441446081cb10743329eb8e42166c0c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846777"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434075"
 ---
 # <a name="create-volume-raid"></a>Criar volume raid
 
@@ -39,12 +39,12 @@ create volume raid [size=<n>] disk=<n>,<n>,<n>[,<n>,...] [align=<n>] [noerr]
   
 ## <a name="parameters"></a>Parâmetros  
   
-|Parâmetro|Descrição|  
-|-------|--------|  
-|size\=<n>|A quantidade de espaço em disco, em megabytes \(MB\), que o volume ocupará em cada disco. Se nenhum tamanho for fornecido, o maior possível RAID\-5 volume será criado. O disco com o menor espaço livre contíguo disponível determina o tamanho para o RAID\-volume 5 e a mesma quantidade de espaço é alocado em cada disco. A quantidade real de espaço em disco utilizável no RAID\-volume 5 é menor que a quantidade combinada de espaço em disco, como parte do espaço em disco é necessária para paridade.|  
-|disco\=<n>,<n>,<n>\[,<n>,...\]|Os discos dinâmicos no qual criar o RAID\-volume 5. Você precisa de pelo menos três discos dinâmicos para criar um RAID\-volume 5. Uma quantidade de espaço igual a **tamanho\= <n>**  é alocada em cada disco.|  
-|align\=<n>|Alinha-se todas as extensões de volume para o limite de alinhamento mais próximo. Normalmente usado com o número de unidade lógica do RAID de hardware \(LUN\) matrizes para melhorar o desempenho. *n* é o número de kilobytes \(KB\) desde o início do disco para o limite de alinhamento mais próximo.|  
-|noerr|Somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro.|  
+|           Parâmetro           |                                                                                                                                                                                                                                              Descrição                                                                                                                                                                                                                                              |
+|-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|           size\=<n>           | A quantidade de espaço em disco, em megabytes \(MB\), que o volume ocupará em cada disco. Se nenhum tamanho for fornecido, o maior possível RAID\-5 volume será criado. O disco com o menor espaço livre contíguo disponível determina o tamanho para o RAID\-volume 5 e a mesma quantidade de espaço é alocado em cada disco. A quantidade real de espaço em disco utilizável no RAID\-volume 5 é menor que a quantidade combinada de espaço em disco, como parte do espaço em disco é necessária para paridade. |
+| disco\=<n>,<n>,<n>\[,<n>,...\] |                                                                                                                                               Os discos dinâmicos no qual criar o RAID\-volume 5. Você precisa de pelo menos três discos dinâmicos para criar um RAID\-volume 5. Uma quantidade de espaço igual a **tamanho\= <n>**  é alocada em cada disco.                                                                                                                                                |
+|          align\=<n>           |                                                                                                                   Alinha-se todas as extensões de volume para o limite de alinhamento mais próximo. Normalmente usado com o número de unidade lógica do RAID de hardware \(LUN\) matrizes para melhorar o desempenho. *n* é o número de kilobytes \(KB\) desde o início do disco para o limite de alinhamento mais próximo.                                                                                                                   |
+|             noerr             |                                                                                                                                                 Somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro.                                                                                                                                                  |
   
 ## <a name="remarks"></a>Comentários  
   
@@ -58,7 +58,7 @@ create volume raid size=1000 disk=1,2,3
 ```  
   
 #### <a name="additional-references"></a>Referências adicionais  
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 
   

@@ -14,12 +14,12 @@ author: lizap
 ms.author: elizapo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d14ccf734d5242301030bbb6e3c2489e1a0266a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f9a4e4e0dde0c2c6178629f0dee744448edc72dd
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876347"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812593"
 ---
 # <a name="windows-server---it-administrator-content-for-current-and-previous-releases"></a>Windows Server - conteúdo do administrador de IT para as versões atuais e anteriores
 
@@ -29,7 +29,7 @@ Use os links a seguir para exibir o conteúdo técnico para profissionais de TI 
 
 > [!IMPORTANT]
 > Você tem o Windows em execução no seu computador? Windows 10, Windows 8 ou 8.1? Windows 7? Você tem um problema? Vá para [Suporte da Microsoft](https://support.microsoft.com) - basta digitar o problema na barra de pesquisa. Eles têm informações sobre o Windows, Office, Skype - você pode escolher. 
-
+> 
 > As informações abaixo são *somente* sobre o **Servidor** do Windows.
 
 ## <a name="windows-server-2016"></a>Windows Server 2016
@@ -54,18 +54,14 @@ Use os links a seguir para exibir o conteúdo técnico para profissionais de TI 
 
 [Biblioteca de desenvolvedor do Windows Server 2003 no MSDN](https://msdn.microsoft.com/library/dn792549.aspx)
 
-
 ## <a name="product-evaluations"></a>Avaliações de produto
 
 [Baixe a avaliação do Windows Server 2016](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016?i=1) 
 
 [Baixe a avaliação do Windows Server 2012 R2](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012-r2) 
 
-
 ## <a name="related-links"></a>Links relacionados
 [Informações do produto Windows Server 2016](https://www.microsoft.com/cloud-platform/windows-server) 
-
-<br>
 
 > [!TIP]
 > Você está com um problema? Acesse [Suporte da Microsoft](https://support.microsoft.com) - apenas digite o problema na barra de pesquisa. Você pode obter ajuda para Windows, Office, Skype e muito mais. 

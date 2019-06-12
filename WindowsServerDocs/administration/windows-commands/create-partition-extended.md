@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aa8d556822bc6caf4277812be818a0cf456e75dc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0a1cca93a064cfb6e5c18f4a472ea837b922d07b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818877"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434197"
 ---
 # <a name="create-partition-extended"></a>Criar partição estendida
 
@@ -36,12 +36,12 @@ create partition extended [size=<n>] [offset=<n>] [align=<n>] [noerr]
   
 ## <a name="parameters"></a>Parâmetros  
   
-|Parâmetro|Descrição|  
-|-------|--------|  
-|size\=<n>|Especifica o tamanho da partição em megabytes \(MB\). Se nenhum tamanho for especificado, a partição continuará até que haja espaço livre não mais na partição estendida.|  
-|offset\=<n>|Especifica o deslocamento, em quilobytes \(KB\), no qual a partição é criada. Se o deslocamento não for especificado, a partição será iniciado no início do espaço livre no disco que seja grande o suficiente para reter a nova partição.|  
-|align\=<n>|Alinha-se todas as extensões de partição para o limite de alinhamento mais próximo. Normalmente usado com o número de unidade lógica do RAID de hardware \(LUN\) matrizes para melhorar o desempenho. <n> é o número de kilobytes \(KB\) desde o início do disco para o limite de alinhamento mais próximo.|  
-|noerr|Somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro.|  
+|  Parâmetro  |                                                                                                                             Descrição                                                                                                                              |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  size\=<n>  |                                                  Especifica o tamanho da partição em megabytes \(MB\). Se nenhum tamanho for especificado, a partição continuará até que haja espaço livre não mais na partição estendida.                                                  |
+| offset\=<n> |                     Especifica o deslocamento, em quilobytes \(KB\), no qual a partição é criada. Se o deslocamento não for especificado, a partição será iniciado no início do espaço livre no disco que seja grande o suficiente para reter a nova partição.                      |
+| align\=<n>  | Alinha-se todas as extensões de partição para o limite de alinhamento mais próximo. Normalmente usado com o número de unidade lógica do RAID de hardware \(LUN\) matrizes para melhorar o desempenho. <n> é o número de kilobytes \(KB\) desde o início do disco para o limite de alinhamento mais próximo. |
+|    noerr    |                                 Somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro.                                 |
   
 ## <a name="remarks"></a>Comentários  
   
@@ -63,7 +63,7 @@ create partition extended size=1000
 ```  
   
 #### <a name="additional-references"></a>Referências adicionais  
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 
   

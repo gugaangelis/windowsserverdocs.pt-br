@@ -8,12 +8,12 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 4/5/2017
 ms.assetid: 5a43b104-4d02-4d73-a385-da1cfb67e341
-ms.openlocfilehash: 81f30a7a4d50423a68719343fec3032cc6a1602e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d6b21579fb1dedc777733317e7222debd8d944a1
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854707"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812671"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-3-set-up-work-folders"></a>Implante pastas de trabalho com o AD FS e Proxy de aplicativo Web: Etapa 3, pastas de trabalho de configuração
 
@@ -32,7 +32,7 @@ Este tópico descreve a terceira etapa da implantação das Pastas de Trabalho c
 -   [Implante pastas de trabalho com o AD FS e Proxy de aplicativo Web: Etapa 5, configurar os clientes](deploy-work-folders-adfs-step5.md)  
   
 > [!NOTE]
->   As instruções abordadas nesta seção destinam-se a um ambiente do Server 2016. Se você estiver usando o Windows Server 2012 R2, siga as [instruções do Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
+>   As instruções apresentadas nesta seção são para um ambiente de 2019 do Windows Server ou Windows Server 2016. Se você estiver usando o Windows Server 2012 R2, siga as [instruções do Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
 
 Para configurar Pastas de Trabalho, use os procedimentos a seguir.  
   
@@ -49,7 +49,7 @@ Para criar o registro CNAME para Pastas de Trabalho, siga estas etapas:
   
 1.  No controlador de domínio, abra o **Gerenciador DNS**.  
   
-2.  Expanda a pasta Zonas de Pesquisa Direta, clique com botão direito do mouse no domínio e clique em **Novo Alias (CNAME)**.  
+2.  Expanda a pasta Zonas de Pesquisa Direta, clique com botão direito do mouse no domínio e clique em **Novo Alias (CNAME)** .  
   
 3.  Na janela **Novo Registro de Recursos**, no campo **Nome do alias**, insira o alias de Pastas de Trabalho. No exemplo de teste, o alias é **workfolders**.  
   
@@ -250,7 +250,7 @@ Para configurar Pastas de Trabalho para usar a autenticação do AD FS, siga est
   
 4.  Na janela **Configurações de Pasta de Trabalho**, selecione **Serviços de Federação do Active Directory** e digite a URL do serviço de federação. Clique em **Aplicar**.  
   
-    O exemplo de teste, a URL é **https://blueadfs.contoso.com**.  
+    O exemplo de teste, a URL é **https://blueadfs.contoso.com** .  
   
 O cmdlet para realizar a mesma tarefa por meio do Windows PowerShell é:  
   

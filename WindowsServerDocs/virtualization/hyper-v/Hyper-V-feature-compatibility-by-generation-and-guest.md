@@ -11,12 +11,12 @@ ms.assetid: 81c1f32d-7814-4992-8a66-dd4b77c939b4
 author: KBDAzure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: 1863c1736d3c8573b3d11c6bef492c6645d28a77
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5950a75da4569979794a5848bd41ab349dc34676
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859757"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812659"
 ---
 # <a name="hyper-v-feature-compatibility-by-generation-and-guest"></a>Compatibilidade de recursos do Hyper-V por geração e convidado
 
@@ -27,7 +27,7 @@ As tabelas neste artigo mostram as gerações e sistemas operacionais que são c
 Tenha em mente que alguns recursos dependem de hardware ou outra infraestrutura. Para obter detalhes de hardware, consulte [requisitos de sistema do Hyper-V no Windows Server 2016](System-requirements-for-Hyper-V-on-Windows.md). Em alguns casos, um recurso pode ser usado com qualquer sistema operacional convidado com suporte. Para obter detalhes sobre quais sistemas operacionais são suportados, consulte:  
   
 * [Máquinas virtuais Linux e FreeBSD com suporte](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)  
-* [Sistemas operacionais de convidados de Windows com suporte](Supported-Windows-guest-operating-systems-for-Hyper-V-on-Windows.md)  
+* [Sistemas operacionais convidados compatíveis com o Windows](Supported-Windows-guest-operating-systems-for-Hyper-V-on-Windows.md)  
   
 ## <a name="availability-and-backup"></a>Disponibilidade e backup  
   
@@ -49,7 +49,7 @@ NUMA Virtual | 1 e 2 | Qualquer convidado com suporte
 ## <a name="development-and-test"></a>Desenvolvimento e teste  
 Recurso  | geração | Sistema operacional convidado  
 ------------- | ------------- | -----------  
-Portas seriais/COM | 1 e 2 <br>**Observação:** Para a geração 2, use o Windows PowerShell para configurar. Para obter detalhes, consulte [adicionar uma porta COM para depuração de kernel](./plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v.md#BKMK_Debug). | Qualquer convidado com suporte  
+Portas seriais/COM | 1 e 2 <br>**Observação:** Para a geração 2, use o Windows PowerShell para configurar. Para obter detalhes, consulte [adicionar uma porta COM para depuração de kernel](./plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v.md#add-a-com-port-for-kernel-debugging). | Qualquer convidado com suporte  
   
 ## <a name="mobility"></a>Mobilidade  
   

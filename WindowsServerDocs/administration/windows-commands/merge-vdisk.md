@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 159e307912cb06bc3ea5e452f735e786c0cf9965
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bc20fcaf6e511bb25156996bddc3357f99195875
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847007"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437415"
 ---
 # <a name="merge-vdisk"></a>Mesclar vdisk
 
@@ -27,26 +27,28 @@ ms.locfileid: "59847007"
 Mescla um disco rígido virtual diferencial (VHD) com o VHD pai correspondente. O VHD pai será modificado para incluir as modificações do VHD diferencial.
 > [!NOTE]
 > Este comando só é aplicável ao Windows 7 e Windows Server 2008 R2.
-## <a name="syntax"></a>Sintaxe
-```
-merge vdisk depth=<n>
-```
-### <a name="parameters"></a>Parâmetros
-|Parâmetro|Descrição|
-|-------|--------|
-|depth=<n>|Indica o número de arquivos do VHD pai juntos de mesclagem. Por exemplo, **profundidade = 1** indica que o VHD diferencial será mesclado com um nível da cadeia de diferenciação.|
-## <a name="remarks"></a>Comentários
--   Um VHD deve ser selecionado e desanexado para essa operação seja bem-sucedida. Use o **selecionar o vdisk** comando para selecionar um VHD e mudar o foco a ele.
--   Esse parâmetro modifica o VHD pai. Como resultado, os outros VHDs diferenciais que dependem do pai não serão válidos.
-## <a name="BKMK_Examples"></a>Exemplos
-Para mesclar um VHD diferencial com seu VHD pai, digite:
-```
-merge vdisk depth=1
-```
-## <a name="additional-references"></a>Referências adicionais
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
--   [attach vdisk](attach-vdisk.md)
--   [Compactar vdisk](compact-vdisk.md)
+> ## <a name="syntax"></a>Sintaxe
+> ```
+> merge vdisk depth=<n>
+> ```
+> ### <a name="parameters"></a>Parâmetros
+> 
+> | Parâmetro |                                                                                    Descrição                                                                                    |
+> |-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+> | depth=<n> | Indica o número de arquivos do VHD pai juntos de mesclagem. Por exemplo, **profundidade = 1** indica que o VHD diferencial será mesclado com um nível da cadeia de diferenciação. |
+> 
+> ## <a name="remarks"></a>Comentários
+> - Um VHD deve ser selecionado e desanexado para essa operação seja bem-sucedida. Use o **selecionar o vdisk** comando para selecionar um VHD e mudar o foco a ele.
+> - Esse parâmetro modifica o VHD pai. Como resultado, os outros VHDs diferenciais que dependem do pai não serão válidos.
+>   ## <a name="BKMK_Examples"></a>Exemplos
+>   Para mesclar um VHD diferencial com seu VHD pai, digite:
+>   ```
+>   merge vdisk depth=1
+>   ```
+>   ## <a name="additional-references"></a>Referências adicionais
+> - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+> - [attach vdisk](attach-vdisk.md)
+> - [Compactar vdisk](compact-vdisk.md)
 
 -   [Detalhar vdisk](detail-vdisk.md)
 -   [Desanexar vdisk](detach-vdisk.md)

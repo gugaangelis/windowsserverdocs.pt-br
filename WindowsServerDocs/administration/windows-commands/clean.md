@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e7d7613784f3e599005b25259f70466db60e626
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cd5eb2ec1bde4523eb6f0f919e09b9711b2654fb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877427"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434323"
 ---
 # <a name="clean"></a>clean
 
@@ -30,17 +30,19 @@ O comando de Diskpart limpo remove toda e qualquer partição ou volume de forma
 clean [all]
 ```
 ## <a name="parameters"></a>Parâmetros
-|Parâmetro|Descrição|
-|-------|--------|
-|all|Especifica que todos os setores do disco é definido como zero, o que exclui completamente todos os dados contidos no disco.|
+
+| Parâmetro |                                                        Descrição                                                        |
+|-----------|---------------------------------------------------------------------------------------------------------------------------|
+|    all    | Especifica que todos os setores do disco é definido como zero, o que exclui completamente todos os dados contidos no disco. |
+
 ## <a name="remarks"></a>Comentários
--   No mestre de inicialização discos MBR (registro), somente o particionamento MBR informações e setores ocultos são substituídos.
--   Em discos de tabela de partição GUID (gpt), o particionamento de informações, incluindo o MBR protetor, gpt será substituído. Não há nenhuma informação de setores ocultos.
--   Um disco deve ser selecionado para essa operação seja bem-sucedida. Use o **Selecionar disco** comando para selecionar um disco e mudar o foco a ele.
-## <a name="BKMK_examples"></a>Exemplos
-Para remover toda a formatação do disco selecionado, digite:
-```
-clean
-```
+- No mestre de inicialização discos MBR (registro), somente o particionamento MBR informações e setores ocultos são substituídos.
+- Em discos de tabela de partição GUID (gpt), o particionamento de informações, incluindo o MBR protetor, gpt será substituído. Não há nenhuma informação de setores ocultos.
+- Um disco deve ser selecionado para essa operação seja bem-sucedida. Use o **Selecionar disco** comando para selecionar um disco e mudar o foco a ele.
+  ## <a name="BKMK_examples"></a>Exemplos
+  Para remover toda a formatação do disco selecionado, digite:
+  ```
+  clean
+  ```
 
 [Clear-Disk](https://technet.microsoft.com/library/hh848661.aspx)

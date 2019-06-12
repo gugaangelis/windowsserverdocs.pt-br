@@ -12,12 +12,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic-msft
 ms.date: 02/28/2019
-ms.openlocfilehash: 0d618d465ee45245e98fbc6aa58b32b974be08e8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 32068319aae7545675e126eed6e1ab4c914bcbcf
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880877"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812639"
 ---
 # <a name="transport-layer-security-tls-registry-settings"></a>Configurações do registro Layer Security (TLS) de transporte
 
@@ -25,9 +25,13 @@ ms.locfileid: "59880877"
 
 Este tópico de referência para profissionais de TI contém informações de configuração do registro com suporte para a implementação do Windows do protocolo Transport Layer Security (TLS) e o protocolo Secure Sockets Layer (SSL) por meio do suporte de segurança Schannel SSP (provedor). As subchaves do registro e entradas abordadas nesta Ajuda do tópico, administrar e solucionar problemas de SSP Schannel, especificamente os protocolos TLS e SSL. 
 
->[!Caution]
->Essas informações são fornecidas como uma referência a ser usada quando você estiver solucionando problemas ou verificando se as configurações necessárias estão aplicadas. É recomendável não editar diretamente o Registro, a menos que não haja outra alternativa.
->Modificações no Registro não são validadas pelo editor de Registro nem pelo sistema operacional Windows antes de serem aplicadas. Como resultado, valores incorretos podem ser armazenados, e isso pode resultar em erros irrecuperáveis no sistema. Quando possível, em vez de editar o Registro diretamente, use a Política de Grupo ou outras ferramentas do Windows, como o MMC (Console de Gerenciamento Microsoft) para realizar tarefas. Se você deve editar o Registro, tenha muito cuidado. 
+> [!CAUTION]
+> Essas informações são fornecidas como uma referência a ser usada quando você estiver solucionando problemas ou verificando se as configurações necessárias estão aplicadas.
+> É recomendável não editar diretamente o Registro, a menos que não haja outra alternativa.
+> Modificações no Registro não são validadas pelo editor de Registro nem pelo sistema operacional Windows antes de serem aplicadas.
+> Como resultado, valores incorretos podem ser armazenados, e isso pode resultar em erros irrecuperáveis no sistema.
+> Quando possível, em vez de editar o Registro diretamente, use a Política de Grupo ou outras ferramentas do Windows, como o MMC (Console de Gerenciamento Microsoft) para realizar tarefas.
+> Se você deve editar o Registro, tenha muito cuidado.
 
 ## <a name="certificatemappingmethods"></a>CertificateMappingMethods 
 
@@ -57,7 +61,7 @@ Codificações TLS/SSL devem ser controladas pela configuração da ordem do cip
 
 Para obter informações sobre a ordem de conjuntos de codificação padrão que são usadas pelo SSP Schannel, consulte [conjuntos de codificação no TLS/SSL (Schannel SSP)](https://msdn.microsoft.com/library/windows/desktop/aa374757.aspx). 
 
-##<a name="ciphersuites"></a>Conjuntos de criptografia
+## <a name="ciphersuites"></a>Conjuntos de criptografia
 
 Configurar conjuntos de codificação TLS/SSL deve ser feito usando a diretiva de grupo, MDM ou o PowerShell, consulte [Configurando o TLS Cipher Suite Order](manage-tls.md#configuring-tls-cipher-suite-order) para obter detalhes.
 
@@ -100,8 +104,8 @@ Para desabilitar, defina o valor DWORD para 0:
 
 "EnableOcspStaplingForSni" = DWORD: 00000000
 
->[!NOTE] 
->Habilitar essa chave do registro tem um impacto no desempenho.
+> [!NOTE] 
+> Habilitar essa chave do registro tem um impacto no desempenho.
 
 ## <a name="fipsalgorithmpolicy"></a>FIPSAlgorithmPolicy
 
@@ -207,7 +211,7 @@ Essa entrada não existe no Registro por padrão.
 
 Comportamento de envio de lista de emissores confiáveis padrão
 
-| Versão do Windows | Hora |
+| Versão do Windows | Time |
 |-----------------|------|
 | Windows Server 2012 e Windows 8 e posterior | FALSE |
 | Windows Server 2008 R2 e Windows 7 e anteriores | TRUE |

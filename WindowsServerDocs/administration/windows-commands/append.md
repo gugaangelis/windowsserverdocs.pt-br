@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: abf7713b3fd5bbb6172969ca1cc39cbbbbafafc6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fe641e1336c163b5e98421a5fc32f8dbe64023b0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881977"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435326"
 ---
 # <a name="append"></a>append
 
@@ -41,16 +41,16 @@ append ;
 
 ## <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|[\<Drive>:]<Path>|Especifica uma unidade e diretório para acrescentar.|
-|/x:on|Aplica-se pastas acrescentadas a pesquisas de arquivo e inicialização de aplicativos.|
-|/x:off|Aplica-se pastas acrescentadas apenas às solicitações para abrir arquivos.</br>**/x: off** é a configuração padrão.|
-|/path:on|Aplica-se pastas acrescentadas às solicitações de arquivo que já especificam um caminho. **/path: em** é a configuração padrão.|
-|/path:off|Desativa o efeito de **/path: em**.|
-|/e|Armazena uma cópia da lista de pastas acrescentadas em uma variável de ambiente denominada APPEND. **/e** pode ser usado apenas na primeira vez em que você usar **acrescente** depois de iniciar seu sistema.|
-|;|Limpa a lista de pastas acrescentadas.|
-|/?|Exibe a ajuda no prompt de comando.|
+|     Parâmetro     |                                                                                 Descrição                                                                                 |
+|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [\<Drive>:]<Path> |                                                                 Especifica uma unidade e diretório para acrescentar.                                                                  |
+|       /x:on       |                                                  Aplica-se pastas acrescentadas a pesquisas de arquivo e inicialização de aplicativos.                                                  |
+|      /x:off       |                                     Aplica-se pastas acrescentadas apenas às solicitações para abrir arquivos.</br>**/x: off** é a configuração padrão.                                     |
+|     /path:on      |                               Aplica-se pastas acrescentadas às solicitações de arquivo que já especificam um caminho. **/path: em** é a configuração padrão.                               |
+|     /path:off     |                                                                    Desativa o efeito de **/path: em**.                                                                    |
+|        /e         | Armazena uma cópia da lista de pastas acrescentadas em uma variável de ambiente denominada APPEND. **/e** pode ser usado apenas na primeira vez em que você usar **acrescente** depois de iniciar seu sistema. |
+|         ;         |                                                                     Limpa a lista de pastas acrescentadas.                                                                     |
+|        /?         |                                                                    Exibe a ajuda no prompt de comando.                                                                     |
 
 ## <a name="BKMK_examples"></a>Exemplos
 
@@ -65,4 +65,4 @@ append /e
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

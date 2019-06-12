@@ -10,12 +10,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.service: na
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: b049efc61d5060791574f20fcdd8b369a26f0507
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e2c14e471abb9af7a9182100969a8dd94a17205a
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890247"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812199"
 ---
 >Aplica-se a: Windows 10, Windows Server 2016, Windows Server 2019
 
@@ -25,8 +25,8 @@ Serviços de integração do Hyper-V aprimorar o desempenho da máquina virtual 
 
 Para obter detalhes sobre cada serviço de integração, consulte [serviços de integração do Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/integration-services).
 
->[!IMPORTANT]
->Cada serviço que você deseja usar deve ser habilitado no host e convidado para funcionar. Todos os serviços de integração, exceto "Interface de serviço de convidado do Hyper-V" são ativados por padrão em sistemas operacionais convidados do Windows. Os serviços podem ser ativados e desativado individualmente. As seções a seguir mostram como fazer isso.
+> [!IMPORTANT]
+> Cada serviço que você deseja usar deve ser habilitado no host e convidado para funcionar. Todos os serviços de integração, exceto "Interface de serviço de convidado do Hyper-V" são ativados por padrão em sistemas operacionais convidados do Windows. Os serviços podem ser ativados e desativado individualmente. As seções a seguir mostram como fazer isso.
 
 ## <a name="turn-an-integration-service-on-or-off-using-hyper-v-manager"></a>Ativar ou desativar usando o Gerenciador do Hyper-V a um serviço de integração
 
@@ -47,6 +47,7 @@ Os exemplos a seguir demonstram a transformar o arquivo cópia integração serv
     ``` PowerShell
     Get-VMIntegrationService -VMName "DemoVM"
     ```
+
 1. A saída deve parecer com esta:
 
     ``` PowerShell
@@ -84,12 +85,13 @@ Alguns recursos podem não funcionar corretamente ou em todos os se os serviços
 ```
 REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesVersion
 ```
+
 Em sistemas operacionais convidados anteriores não terá todos os serviços disponíveis. Por exemplo, os convidados do Windows Server 2008 R2 não podem ter "Hyper-V convidado Service Interface".
 
 ## <a name="start-and-stop-an-integration-service-from-a-windows-guest"></a>Iniciar e parar um serviço de integração de um convidado do Windows
 Para um serviço de integração para que seja totalmente funcional que, seu serviço correspondente deve estar executando no convidado além do que está sendo ativado no host. Em convidados do Windows, cada serviço de integração está listado como um serviço do Windows padrão. Você pode usar o miniaplicativo Serviços no painel de controle ou o PowerShell para parar e iniciar esses serviços.
 
->[!IMPORTANT]
+> [!IMPORTANT]
 > Interromper um serviço de integração pode afetar gravemente a capacidade dos hosts para gerenciar sua máquina virtual. Para funcionar corretamente, cada serviço de integração que você deseja usar deve ser habilitado no host e convidado.
 > Como prática recomendada, você deve controlar apenas a serviços de integração do Hyper-V usando as instruções acima. O serviço correspondente no sistema operacional convidado será interromper ou iniciar automaticamente quando você altera seu status no Hyper-V.
 > Se você iniciar um serviço no sistema operacional convidado, mas ela está desabilitada no Hyper-V, o serviço será interrompido. Se você parar um serviço no sistema operacional convidado que está habilitado no Hyper-V, do Hyper-V será, eventualmente, inicie-o novamente. Se você desabilitar o serviço no convidado, Hyper-V será possível iniciá-lo.
@@ -104,7 +106,6 @@ Para um serviço de integração para que seja totalmente funcional que, seu ser
 
 1. Clique com botão direito do serviço que você deseja iniciar ou parar. Clique na ação desejada.
 
-
 ### <a name="use-windows-powershell-to-start-or-stop-an-integration-service-within-a-windows-guest"></a>Usar o Windows PowerShell para iniciar ou parar um serviço de integração dentro de um convidado do Windows
 
 1. Para obter uma lista de serviços de integração, execute:
@@ -112,6 +113,7 @@ Para um serviço de integração para que seja totalmente funcional que, seu ser
     ```
     Get-Service -Name vm*
     ```
+
 1.  A saída deve ser semelhante a este:
 
     ```PowerShell
@@ -137,13 +139,13 @@ Para um serviço de integração para que seja totalmente funcional que, seu ser
 
 Os serviços de integração do Linux geralmente são fornecidos por meio do kernel do Linux. O driver de serviços de integração do Linux é denominado **hv_utils**.
 
-1.  Para descobrir se **hv_utils** é carregado, use este comando:
+1. Para descobrir se **hv_utils** é carregado, use este comando:
 
-    ``` BASH
-    lsmod | grep hv_utils
-    ``` 
+   ``` BASH
+   lsmod | grep hv_utils
+   ``` 
   
-1. A saída deve ser semelhante a este:  
+2. A saída deve ser semelhante a este:  
   
     ``` BASH
     Module                  Size   Used by
@@ -151,13 +153,13 @@ Os serviços de integração do Linux geralmente são fornecidos por meio do ker
     hv_vmbus               61440   8 hv_balloon,hyperv_keyboard,hv_netvsc,hid_hyperv,hv_utils,hyperv_fb,hv_storvsc
     ```
 
-1. Para descobrir se os daemons necessários estão em execução, use este comando.
+3. Para descobrir se os daemons necessários estão em execução, use este comando.
   
     ``` BASH
     ps -ef | grep hv
     ```
   
-1. A saída deve ser semelhante a este: 
+4. A saída deve ser semelhante a este: 
   
     ```BASH
     root       236     2  0 Jul11 ?        00:00:00 [hv_vmbus_con]
@@ -170,13 +172,13 @@ Os serviços de integração do Linux geralmente são fornecidos por meio do ker
     scooley  43774 43755  0 21:20 pts/0    00:00:00 grep --color=auto hv          
     ```
 
-1. Para ver quais daemons estão disponíveis, execute:
+5. Para ver quais daemons estão disponíveis, execute:
 
     ``` BASH
     compgen -c hv_
     ```
   
-1. A saída deve ser semelhante a este:
+6. A saída deve ser semelhante a este:
   
     ``` BASH
     hv_vss_daemon
@@ -187,10 +189,10 @@ Os serviços de integração do Linux geralmente são fornecidos por meio do ker
     hv_fcopy_daemon     
     ```
   
- Daemons do serviço de integração que podem ser listados incluem o seguinte. Se qualquer um estiver ausente, eles não podem ter suporte em seu sistema ou não pode ser instalados. Localizar detalhes, consulte [máquinas virtuais de suporte para Linux e FreeBSD para Hyper-V no Windows](https://technet.microsoft.com/library/dn531030.aspx).  
-  - **hv_vss_daemon**: Esse daemon é necessário para criar backups de máquina virtual Linux em tempo real.
-  - **hv_kvp_daemon**: Esse daemon permite definir e consultar pares chave-valor intrínsecos e extrínsecos.
-  - **hv_fcopy_daemon**: Esse daemon implementa um serviço entre o host e convidado de cópia de arquivos.  
+   Daemons do serviço de integração que podem ser listados incluem o seguinte. Se qualquer um estiver ausente, eles não podem ter suporte em seu sistema ou não pode ser instalados. Localizar detalhes, consulte [máquinas virtuais de suporte para Linux e FreeBSD para Hyper-V no Windows](https://technet.microsoft.com/library/dn531030.aspx).  
+   - **hv_vss_daemon**: Esse daemon é necessário para criar backups de máquina virtual Linux em tempo real.
+   - **hv_kvp_daemon**: Esse daemon permite definir e consultar pares chave-valor intrínsecos e extrínsecos.
+   - **hv_fcopy_daemon**: Esse daemon implementa um serviço entre o host e convidado de cópia de arquivos.  
 
 ### <a name="examples"></a>Exemplos
 

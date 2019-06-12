@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c3bc06f82f557f136850872180a5c430f70da5fd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 39b28e7d43df2427caae46d323cd30f03b6b484c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888477"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436577"
 ---
 # <a name="nslookup-set-srchlist"></a>nslookup set srchlist
 
@@ -31,18 +31,20 @@ Altera a lista de pesquisa e de nome de domínio do sistema de nome de domínio 
 Set srchlist=<DomainName>[/...]
 ```
 ## <a name="parameters"></a>Parâmetros
-|Parâmetro|Descrição|
-|-------|--------|
-|<DomainName>|Especifica novos nomes para a lista de domínio e a pesquisa DNS padrão. O valor de nome de domínio padrão baseia-se no nome do host. Você pode especificar um máximo de seis nomes separados por barras (/).|
-|{Ajuda &#124; ?}|Exibe um resumo breve dos **nslookup** subcomandos.|
+
+|    Parâmetro    |                                                                                        Descrição                                                                                        |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  <DomainName>   | Especifica novos nomes para a lista de domínio e a pesquisa DNS padrão. O valor de nome de domínio padrão baseia-se no nome do host. Você pode especificar um máximo de seis nomes separados por barras (/). |
+| {Ajuda &#124; ?} |                                                                   Exibe um resumo breve dos **nslookup** subcomandos.                                                                   |
+
 ## <a name="remarks"></a>Comentários
--   O **definir srchlist**comando substitui o domínio DNS padrão nome e a pesquisa de lista da **domínio conjunto** comando. Use o **definir tudo** comando para exibir a lista.
-## <a name="BKMK_examples"></a>Exemplos
-O exemplo a seguir define o domínio DNS para mfg.widgets.com e a lista de pesquisa para os três nomes:
-```
-set srchlist=mfg.widgets.com/mrp2.widgets.com/widgets.com
-```
-## <a name="additional-references"></a>Referências adicionais
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[nslookup definir domínio](nslookup-set-domain.md)
-[nslookup definir todos](nslookup-set-all.md)
+- O **definir srchlist**comando substitui o domínio DNS padrão nome e a pesquisa de lista da **domínio conjunto** comando. Use o **definir tudo** comando para exibir a lista.
+  ## <a name="BKMK_examples"></a>Exemplos
+  O exemplo a seguir define o domínio DNS para mfg.widgets.com e a lista de pesquisa para os três nomes:
+  ```
+  set srchlist=mfg.widgets.com/mrp2.widgets.com/widgets.com
+  ```
+  ## <a name="additional-references"></a>Referências adicionais
+  [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+  [nslookup definir domínio](nslookup-set-domain.md)
+  [nslookup definir todos](nslookup-set-all.md)

@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 05/21/2019
 ms.topic: get-started-article
-ms.openlocfilehash: e2aac6db7bb9e118d672190c95f0d73294474f75
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: c0d85da8a51a43acd7765957b34220829a43b086
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976534"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810710"
 ---
 # <a name="kms-client-setup-keys"></a>Chaves de instalação de cliente KMS
 
@@ -22,7 +22,7 @@ ms.locfileid: "65976534"
 
 Computadores que executam edições licenciadas do Windows Server, Windows 10, Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows 7 e Windows Server 2008 R2, Windows Vista e Windows Server 2008 são, por padrão, clientes KMS sem a necessidade de configuração adicional.
 
->[!NOTE]
+> [!NOTE]
 > Nas tabelas a seguir, "LTSC" significa "Canal de manutenção em longo prazo," enquanto "LTSB" refere-se para o "a longo prazo Branch de serviço." 
 
 **Para usar as chaves listadas aqui (que são GVLKs), você deve primeiramente ter um host KMS em execução em sua implantação.** Se você ainda não tiver configurado um host KMS, consulte [Deploy KMS Activation](https://technet.microsoft.com/library/dn502531(v=ws.11).aspx) para ver as etapas para configurá-lo.
