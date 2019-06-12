@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2e3a3cf3baf2a3469560b90bed30c6813284a8bc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 65f7505dfcb3677fcaace9bd645cca7e7ba70b7d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866447"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438597"
 ---
 # <a name="ftp-prompt1"></a>ftp: prompt_1
 
@@ -32,12 +32,12 @@ prompt
 ### <a name="parameters"></a>Parâmetros  
 nenhuma  
 ## <a name="remarks"></a>Comentários  
--   Por padrão, **prompt** está em.  
--   **FTP** solicita durante várias transferências de arquivo para que você possa recuperar ou armazenar arquivos de forma seletiva.  **Mget** e **mput** transferir todos os arquivos se **prompt** está desativado.  
-## <a name="BKMK_Examples"></a>Exemplos  
-Ativar e desativar o modo de solicitação.  
-```  
-prompt  
-```  
-## <a name="additional-references"></a>Referências adicionais  
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+- Por padrão, **prompt** está em.  
+- **FTP** solicita durante várias transferências de arquivo para que você possa recuperar ou armazenar arquivos de forma seletiva.  **Mget** e **mput** transferir todos os arquivos se **prompt** está desativado.  
+  ## <a name="BKMK_Examples"></a>Exemplos  
+  Ativar e desativar o modo de solicitação.  
+  ```  
+  prompt  
+  ```  
+  ## <a name="additional-references"></a>Referências adicionais  
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  

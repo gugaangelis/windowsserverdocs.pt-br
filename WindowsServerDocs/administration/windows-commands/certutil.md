@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: faaf936e4c23579e908e12543c07d0764a2cdcc1
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 7a602472d30f19cb2d4a802423635e5788e78a43
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192618"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434556"
 ---
 # <a name="certutil"></a>certutil
 
@@ -145,14 +145,15 @@ Retorne ao [Menu](#menu)
 
 A tabela a seguir descreve a notação usada para indicar a sintaxe de linha de comando.
 
-|Notação|Descrição|
-|--------|-----------|
-|Texto sem colchetes ou entre chaves|Itens que você deve digitar conforme mostrado|
-|\<Texto dentro de colchetes angulares >|Espaço reservado para o qual você deve fornecer um valor|
-|[Texto dentro dos colchetes]|Itens opcionais|
-|{Texto entre chaves}|Conjunto de itens necessários; Escolha uma|
-|Barra (vertical|) simples|Separador de itens mutuamente exclusivos; Escolha uma|
-|Reticências (…)|Itens que podem ser repetidos|
+
+|            Notação             |                  Descrição                  |
+|---------------------------------|-----------------------------------------------|
+| Texto sem colchetes ou entre chaves |         Itens que você deve digitar conforme mostrado          |
+|  \<Texto dentro de colchetes angulares >  | Espaço reservado para o qual você deve fornecer um valor |
+|  [Texto dentro dos colchetes]  |                Itens opcionais                 |
+|      {Texto entre chaves}       |       Conjunto de itens necessários; Escolha uma       |
+|         Barra (vertical          |                       ) simples                       |
+|          Reticências (…)           |          Itens que podem ser repetidos           |
 
 Retorne ao [Menu](#menu)
 

@@ -9,12 +9,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f98141745cb5bc8355d1ad3c37e72b4710eb4fc9
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 047f297cfaabff3cbbd45057a4198e2fd2e747de
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190623"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445455"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>Criar um aplicativo de várias camadas usando em nome (OBO) usando o OAuth com o AD FS 2016 ou posterior
 
@@ -229,22 +229,24 @@ Para concluir o fluxo on-behalf-of, você precisa criar um recurso de back-end q
 * Adicione o seguinte código no controlador
 
 
-        using System;
-        using System.Collections.Generic;
-        using System.Linq;
-        using System.Net;
-        using System.Net.Http;
-        using System.Web.Http;
-        namespace WebAPIOBO.Controllers
+~~~
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Net;
+    using System.Net.Http;
+    using System.Web.Http;
+    namespace WebAPIOBO.Controllers
+    {
+        public class WebAPIOBOController : ApiController
         {
-            public class WebAPIOBOController : ApiController
+            public IHttpActionResult Get()
             {
-                public IHttpActionResult Get()
-                {
-                    return Ok("WebAPI via OBO");
-                }
+                return Ok("WebAPI via OBO");
             }
         }
+    }
+~~~
 
 Esse código simplesmente retornará a cadeia de caracteres quando alguém coloca uma solicitação Get para o WebAPI WebAPIOBO
 
@@ -272,15 +274,14 @@ Prossiga com o restante do assistente mesmo como quando configuramos o ToDoListS
 * Abra o arquivo Web. config
 * Modifique as seguintes chaves
 
-| Chave | Valor |
-|:-----|:-------|
-|ida: público-alvo| ID do ToDoListService conforme fornecido para o AD FS ao configurar o ToDoListService WebAPI, por exemplo, https://localhost:44321/|
-|ida:ClientID| ID do ToDoListService conforme fornecido para o AD FS ao configurar o ToDoListService WebAPI, por exemplo, https://localhost:44321/ </br>**É muito importante que a ida: público-alvo e ida: ClientID correspondem uns aos outros**|
-|ida:ClientSecret| Esse é o segredo gerada pelo AD FS ao configurar o cliente ToDoListService no AD FS|
-|ida:AdfsMetadataEndpoint| Esta é a URL para os metadados do AD FS, para, por exemplo https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml|
-|ida:OBOWebAPIBase| Esse é o endereço base que usaremos para chamar o back-end de API, por exemplo https://localhost:44300|
-|ida:Authority| Esta é a URL para o serviço do AD FS, exemplo https://fs.anandmsft.com/adfs/|
-
+| Chave                      | Valor                                                                                                                                                                                                                   |
+|:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ida: público-alvo             | ID do ToDoListService conforme fornecido para o AD FS ao configurar o ToDoListService WebAPI, por exemplo, https://localhost:44321/                                                                                         |
+| ida:ClientID             | ID do ToDoListService conforme fornecido para o AD FS ao configurar o ToDoListService WebAPI, por exemplo, <https://localhost:44321/> </br>**É muito importante que a ida: público-alvo e ida: ClientID correspondem uns aos outros** |
+| ida:ClientSecret         | Esse é o segredo gerada pelo AD FS ao configurar o cliente ToDoListService no AD FS                                                                                                                   |
+| ida:AdfsMetadataEndpoint | Esta é a URL para os metadados do AD FS, para, por exemplo https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml                                                                                             |
+| ida:OBOWebAPIBase        | Esse é o endereço base que usaremos para chamar o back-end de API, por exemplo https://localhost:44300                                                                                                                     |
+| ida:Authority            | Esta é a URL para o serviço do AD FS, exemplo https://fs.anandmsft.com/adfs/                                                                                                                                          |
 
 As chaves de todos os outro ida: XXXXXXX na **appsettings** nó pode ser comentada ou excluída
 

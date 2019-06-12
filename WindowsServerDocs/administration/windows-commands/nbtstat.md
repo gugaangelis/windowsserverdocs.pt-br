@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0193152674dc934aa4f2d3be4dec54afc3066951
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4e670b1490f1c4c54b8cf377d48755849faa16f8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867697"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437122"
 ---
 # <a name="nbtstat"></a>nbtstat
 
@@ -34,19 +34,19 @@ nbtstat [/a <remoteName>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|-------|--------|
-|/a <remoteName>|Exibe a tabela de nomes NetBIOS de um computador remoto, onde *remoteName* é o nome do computador NetBIOS do computador remoto. A tabela de nomes NetBIOS é a lista de nomes NetBIOS que corresponde aos aplicativos em execução nesse computador.|
-|/A <IPaddress>|Exibe a tabela de nomes NetBIOS de um computador remoto, especificado pelo endereço IP (em notação de ponto decimal) do computador remoto.|
-|/c|Exibir o conteúdo de NetBIOS nome do cache, a tabela de nomes NetBIOS e seus endereços IP resolvidos.|
-|/n|Exibe a tabela de nomes NetBIOS do computador local. O status dos **registrado** indica que o nome é registrado por difusão ou com um servidor WINS.|
-|/r|Exibe as estatísticas de resolução de nome NetBIOS. Em um computador executando o Windows XP ou Windows Server 2003 que está configurado para usar o WINS, esse parâmetro retorna o número de nomes que foram resolvidos e registrados por difusão ou WINS.|
-|/R|Limpa o conteúdo do cache de nomes NetBIOS e recarrega o #tagged previamente as entradas a **Lmhosts** arquivo.|
-|/RR|Libera e, em seguida, atualiza nomes NetBIOS para o computador local que está registrado com servidores WINS.|
-|/s|Exibe sessões de cliente e servidor NetBIOS, a tentativa de converter o endereço IP de destino com um nome.|
-|/S|Exibe sessões de cliente e servidor NetBIOS, listando os computadores remotos por apenas o endereço IP de destino.|
-|<Interval>|Exibe novamente estatísticas selecionadas, pausando o número de segundos especificado no *intervalo* entre cada exibição. Pressione CTRL + C para parar de reexibir estatísticas. Se esse parâmetro for omitido, **nbtstat** imprime as informações de configuração atuais apenas uma vez.|
-|/?|Exibe a ajuda no prompt de comando.|
+|    Parâmetro    |                                                                                                                         Descrição                                                                                                                         |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| /a <remoteName> |    Exibe a tabela de nomes NetBIOS de um computador remoto, onde *remoteName* é o nome do computador NetBIOS do computador remoto. A tabela de nomes NetBIOS é a lista de nomes NetBIOS que corresponde aos aplicativos em execução nesse computador.     |
+| /A <IPaddress>  |                                                           Exibe a tabela de nomes NetBIOS de um computador remoto, especificado pelo endereço IP (em notação de ponto decimal) do computador remoto.                                                            |
+|       /c        |                                                                        Exibir o conteúdo de NetBIOS nome do cache, a tabela de nomes NetBIOS e seus endereços IP resolvidos.                                                                         |
+|       /n        |                                            Exibe a tabela de nomes NetBIOS do computador local. O status dos **registrado** indica que o nome é registrado por difusão ou com um servidor WINS.                                             |
+|       /r        |      Exibe as estatísticas de resolução de nome NetBIOS. Em um computador executando o Windows XP ou Windows Server 2003 que está configurado para usar o WINS, esse parâmetro retorna o número de nomes que foram resolvidos e registrados por difusão ou WINS.       |
+|       /R        |                                                                      Limpa o conteúdo do cache de nomes NetBIOS e recarrega o #tagged previamente as entradas a **Lmhosts** arquivo.                                                                      |
+|       /RR       |                                                                           Libera e, em seguida, atualiza nomes NetBIOS para o computador local que está registrado com servidores WINS.                                                                            |
+|       /s        |                                                                          Exibe sessões de cliente e servidor NetBIOS, a tentativa de converter o endereço IP de destino com um nome.                                                                           |
+|       /S        |                                                                          Exibe sessões de cliente e servidor NetBIOS, listando os computadores remotos por apenas o endereço IP de destino.                                                                          |
+|   <Interval>    | Exibe novamente estatísticas selecionadas, pausando o número de segundos especificado no *intervalo* entre cada exibição. Pressione CTRL + C para parar de reexibir estatísticas. Se esse parâmetro for omitido, **nbtstat** imprime as informações de configuração atuais apenas uma vez. |
+|       /?        |                                                                                                            Exibe a ajuda no prompt de comando.                                                                                                             |
 
 ## <a name="remarks"></a>Comentários
 
@@ -130,6 +130,6 @@ nbtstat /S 5
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
 

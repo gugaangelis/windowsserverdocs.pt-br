@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 9ca9f41770c977b6e7c4900b090471dbfe11a450
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 156832087bc7af0c95a92cab9a0c1501264d47a5
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855717"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447506"
 ---
 # <a name="shielded-vms---hosting-service-provider-sets-up-windows-azure-pack"></a>VMs blindadas – provedor de serviços de hospedagem configura o Pacote do Microsoft Azure
 
@@ -52,7 +52,7 @@ Instalar e configurar o Windows Azure Pack (WAP) no computador em que você dese
 
 3.  Abra o Web Platform Installer e encontrar **Windows Azure Pack: Portal e API Express** sob o **produtos** guia. Clique em **Add**, em seguida, **instalar** na parte inferior da janela.
 
-4.  Continue com a instalação. Depois que a instalação for concluída, o site de configuração (*https://&lt;wapserver&gt;: 30101 /*) é aberto no navegador da web. Neste site, fornecem informações sobre o SQL server e concluir a configuração do WAP.
+4.  Continue com a instalação. Depois que a instalação for concluída, o site de configuração (*https://&lt;wapserver&gt;: 30101 /* ) é aberto no navegador da web. Neste site, fornecem informações sobre o SQL server e concluir a configuração do WAP.
 
 Para obter ajuda sobre como configurar Windows Azure Pack, consulte [instalar uma implantação expressa do Windows Azure Pack](https://technet.microsoft.com/dn296439.aspx).
 
@@ -77,37 +77,37 @@ Antes de usar o Windows Azure Pack, você já deve ter instalado e configurado p
 
 Para permitir que os locatários criar VMs no WAP, crie primeiro um plano de hospedagem que locatários podem assinar. Planos de definem as nuvens de VM permitidos, modelos, redes e entidades de cobrança para seus locatários.
 
-1.  No painel inferior do portal, clique em **+ novo** &gt; **planejar** &gt; **criar plano**.
+1. No painel inferior do portal, clique em **+ novo** &gt; **planejar** &gt; **criar plano**.
 
-2.  Na primeira etapa do assistente, escolha um nome para o seu plano. Esse é o nome que seus locatários verá durante a assinatura.
+2. Na primeira etapa do assistente, escolha um nome para o seu plano. Esse é o nome que seus locatários verá durante a assinatura.
 
-3.  Na segunda etapa, selecione **NUVENS da máquina VIRTUAL** como um dos serviços para oferecer no plano.
+3. Na segunda etapa, selecione **NUVENS da máquina VIRTUAL** como um dos serviços para oferecer no plano.
 
-4.  Ignore a etapa sobre como selecionar quaisquer complementos para o plano.
+4. Ignore a etapa sobre como selecionar quaisquer complementos para o plano.
 
-5.  Clique em **Okey** (marca de seleção) para criar o plano. Embora isso cria o plano, ele ainda não está em um estado configurado.
+5. Clique em **Okey** (marca de seleção) para criar o plano. Embora isso cria o plano, ele ainda não está em um estado configurado.
 
-    ![Planos no Windows Azure Pack](../media/Guarded-Fabric-Shielded-VM/guarded-host-azure-pack-02-create-plan.png)
+   ![Planos no Windows Azure Pack](../media/Guarded-Fabric-Shielded-VM/guarded-host-azure-pack-02-create-plan.png)
 
-6.  Para começar a configurar o plano, clique em seu nome.
+6. Para começar a configurar o plano, clique em seu nome.
 
-7.  Na próxima página, sob **serviços do plano**, clique em **nuvens da máquina Virtual**. Isso abre a página onde você pode configurar as cotas para este plano.
+7. Na próxima página, sob **serviços do plano**, clique em **nuvens da máquina Virtual**. Isso abre a página onde você pode configurar as cotas para este plano.
 
-8.  Sob **básica**, selecione o servidor de gerenciamento do VMM e a nuvem de máquina Virtual que você deseja oferecer aos locatários. As nuvens que podem oferecer as VMs blindadas serão exibidas com o **(suporte de blindagem)** ao lado do nome.
+8. Sob **básica**, selecione o servidor de gerenciamento do VMM e a nuvem de máquina Virtual que você deseja oferecer aos locatários. As nuvens que podem oferecer as VMs blindadas serão exibidas com o **(suporte de blindagem)** ao lado do nome.
 
-9.  Selecione as cotas que você deseja aplicar neste plano. (Por exemplo, limites de núcleo da CPU e uso de RAM). Certifique-se de deixar o **permitir que máquinas virtuais para blindar** caixa de seleção marcada.
+9. Selecione as cotas que você deseja aplicar neste plano. (Por exemplo, limites de núcleo da CPU e uso de RAM). Certifique-se de deixar o **permitir que máquinas virtuais para blindar** caixa de seleção marcada.
 
-    ![Configurações para nuvens de máquina virtual no Windows Azure Pack](../media/Guarded-Fabric-Shielded-VM/guarded-host-azure-pack-03-virtual-machine-clouds.png)
+   ![Configurações para nuvens de máquina virtual no Windows Azure Pack](../media/Guarded-Fabric-Shielded-VM/guarded-host-azure-pack-03-virtual-machine-clouds.png)
     
-10.  Role para baixo até a seção intitulada **modelos**e, em seguida, selecione um ou mais modelos para oferecer a seus locatários. Você pode oferecer ambos blindado e modelos não blindados para locatários, mas um modelo blindado deve ser oferecidos para dar garantias de ponta a ponta sobre a integridade da VM e seus segredos de locatários.
+10. Role para baixo até a seção intitulada **modelos**e, em seguida, selecione um ou mais modelos para oferecer a seus locatários. Você pode oferecer ambos blindado e modelos não blindados para locatários, mas um modelo blindado deve ser oferecidos para dar garantias de ponta a ponta sobre a integridade da VM e seus segredos de locatários.
 
-11.  No **redes** seção, adicione uma ou mais redes para seus locatários.
+11. No **redes** seção, adicione uma ou mais redes para seus locatários.
 
-12.  Depois de definir outras configurações ou cotas para o plano, clique em **salvar** na parte inferior.
+12. Depois de definir outras configurações ou cotas para o plano, clique em **salvar** na parte inferior.
 
-13.  Na parte superior esquerda da tela, clique na seta para levá-lo de volta para o **planejar** página.
+13. Na parte superior esquerda da tela, clique na seta para levá-lo de volta para o **planejar** página.
 
-14.  Na parte inferior da tela, altere o plano de que está sendo **privados** ao **público** , de modo que os locatários podem assinar o plano.
+14. Na parte inferior da tela, altere o plano de que está sendo **privados** ao **público** , de modo que os locatários podem assinar o plano.
 
     ![Alterar o acesso para um plano no Windows Azure Pack](../media/Guarded-Fabric-Shielded-VM/guarded-host-azure-pack-04-change-access.png)
 

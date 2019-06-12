@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f74382c4a5e2c0a8636edbd4f9cfe2227cd6334a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 236b5cb198a13441a087ad6dbfeef9a416e07e61
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875867"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445986"
 ---
 # <a name="create-a-quota-template"></a>Criar um modelo de cota
 
@@ -55,44 +55,44 @@ Por exemplo, você pode configurar limites para enviar uma mensagem de email par
 
 **Para configurar notificações que gerará o Gerenciador de recursos de servidor de arquivos em um limite de cota**
 
-1.  Na caixa de diálogo **Criar modelo de cota**, em **Limites de notificação**, Clique em **Adicionar**. A caixa de diálogo **Adicionar limite** é aberta.
+1. Na caixa de diálogo **Criar modelo de cota**, em **Limites de notificação**, Clique em **Adicionar**. A caixa de diálogo **Adicionar limite** é aberta.
 
-2.  Para definir uma porcentagem de limite de cota que irá gerar uma notificação:
+2. Para definir uma porcentagem de limite de cota que irá gerar uma notificação:
 
-    No **gerar notificações quando uso atinge (%)** texto, digite uma porcentagem do limite de cota para o limite de notificação. (A porcentagem padrão para o primeiro limite de notificação é 85 por cento).
+   No **gerar notificações quando uso atinge (%)** texto, digite uma porcentagem do limite de cota para o limite de notificação. (A porcentagem padrão para o primeiro limite de notificação é 85%).
 
-3.  Para configurar notificações por email:
+3. Para configurar notificações por email:
 
-    Na guia **Email**, defina as seguintes opções:
+   Na guia **Email**, defina as seguintes opções:
 
-    -   Para notificar os administradores quando um limite é alcançado, selecione a caixa de seleção **Enviar email para os seguintes administradores** e, em seguida, digite os nomes das contas administrativas que receberão as notificações. Use o formato *account@domain* e use ponto e vírgula para separar várias contas.
-    -   Para enviar email para a pessoa que salvou o arquivo que atingido o limite de cota, selecione a caixa de seleção **envie um email para o usuário que excedeu o limite**.
-    -   Para configurar a mensagem, edite o padrão assunto linha e corpo da mensagem que são fornecidas. O texto entre colchetes insere informações variáveis sobre o evento de cota que causou a notificação. Por exemplo, o **\[proprietário da fonte de e/s\]** variável insere o nome do usuário que salvou o arquivo que atingiram o limite de cota. Para inserir variáveis adicionais no texto, clique em **Inserir variável**.
-    -   Para configurar cabeçalhos adicionais (inclusive de, Cc, Cco e para resposta), clique em **Cabeçalhos de email adicionais**.
+   - Para notificar os administradores quando um limite é alcançado, selecione a caixa de seleção **Enviar email para os seguintes administradores** e, em seguida, digite os nomes das contas administrativas que receberão as notificações. Use o formato <em>account@domain</em> e use ponto e vírgula para separar várias contas.
+   - Para enviar email para a pessoa que salvou o arquivo que atingido o limite de cota, selecione a caixa de seleção **envie um email para o usuário que excedeu o limite**.
+   - Para configurar a mensagem, edite o padrão assunto linha e corpo da mensagem que são fornecidas. O texto entre colchetes insere informações variáveis sobre o evento de cota que causou a notificação. Por exemplo, o **\[proprietário da fonte de e/s\]** variável insere o nome do usuário que salvou o arquivo que atingiram o limite de cota. Para inserir variáveis adicionais no texto, clique em **Inserir variável**.
+   - Para configurar cabeçalhos adicionais (inclusive de, Cc, Cco e para resposta), clique em **Cabeçalhos de email adicionais**.
 
-4.  Para cadastrar um evento:
+4. Para cadastrar um evento:
 
-    Na guia **Log de eventos**, selecione a caixa de seleção **Enviar um aviso ao log de eventos** e edite a entrada de log padrão.
+   Na guia **Log de eventos**, selecione a caixa de seleção **Enviar um aviso ao log de eventos** e edite a entrada de log padrão.
 
-5.  Para executar um comando ou script:
+5. Para executar um comando ou script:
 
-    Na guia **Comando**, selecione a caixa de seleção **Executar esse comando ou script**. Em seguida, digite o comando ou clique em **Procurar** para procurar o local onde o script está armazenado. Você também pode inserir o comando argumentos, selecione um diretório de trabalho para o comando ou script ou modificar a configuração de segurança do comando.
+   Na guia **Comando**, selecione a caixa de seleção **Executar esse comando ou script**. Em seguida, digite o comando ou clique em **Procurar** para procurar o local onde o script está armazenado. Você também pode inserir o comando argumentos, selecione um diretório de trabalho para o comando ou script ou modificar a configuração de segurança do comando.
 
-6.  Para gerar um ou mais relatórios de armazenamento:
+6. Para gerar um ou mais relatórios de armazenamento:
 
-    Na guia **Relatório**, selecione a caixa de seleção **Gerar relatórios** e, em seguida, selecione os relatórios para gerar. (Você pode escolher um ou mais destinatários de email administrativos para o relatório ou enviar o relatório ao usuário que alcançou o limite.)
+   Na guia **Relatório**, selecione a caixa de seleção **Gerar relatórios** e, em seguida, selecione os relatórios para gerar. (Você pode escolher um ou mais destinatários de email administrativos para o relatório ou enviar o relatório ao usuário que alcançou o limite.)
 
-    O relatório é salvo no local padrão de relatórios de incidentes, que você pode modificar na caixa de diálogo **Opções do Gerenciador de Recursos de Servidor de Arquivos**.
+   O relatório é salvo no local padrão de relatórios de incidentes, que você pode modificar na caixa de diálogo **Opções do Gerenciador de Recursos de Servidor de Arquivos**.
 
-7.  Clique em **OK** para salvar seu limite de notificação.
+7. Clique em **OK** para salvar seu limite de notificação.
 
-8.  Repita estas etapas se você quiser configurar limites de notificação adicionais para o modelo de cota.
+8. Repita estas etapas se você quiser configurar limites de notificação adicionais para o modelo de cota.
 
 ## <a name="see-also"></a>Consulte também
 
--   [Gerenciamento de cotas](quota-management.md)
--    [Opções do Gerenciador de recursos de servidor de arquivos de configuração](setting-file-server-resource-manager-options.md)
--   [Editar propriedades do modelo de cota](edit-quota-template-properties.md)
+-   [Gerenciamento de cota](quota-management.md)
+-    [Definir opções do Gerenciador de Recursos de Servidor de Arquivos](setting-file-server-resource-manager-options.md)
+-   [Editar propriedades de modelo de cota](edit-quota-template-properties.md)
 -   [Ferramentas de linha de comando](command-line-tools.md)
 
 

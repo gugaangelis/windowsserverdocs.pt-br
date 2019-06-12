@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 632d25e29c09d7a164668128196964d082e160c3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6a11867ff2ec69b1ef938149ac485ff8827b58de
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848517"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436927"
 ---
 # <a name="nslookup-ls"></a>nslookup ls
 
@@ -30,14 +30,16 @@ Lista informações para um domínio do sistema de nome de domínio (DNS).
 ls [<Option>] <DNSDomain> [{[>] <FileName>|[>>] <FileName>}]
 ```
 ## <a name="parameters"></a>Parâmetros
-|Parâmetro|Descrição|
-|-------|--------|
-|<Option>|A tabela a seguir lista as opções válidas.<br /><br />--t: lista todos os registros do tipo especificado. Para obter uma descrição <querytype>, consulte **setquerytype** nas referências adicionais.<br />--r: lista de aliases de computadores no domínio DNS. Esse parâmetro é um sinônimo de **- t CNAME**<br />--unidade d: lista todos os registros para o domínio DNS. Esse parâmetro é um sinônimo de **- t ANY**<br />--h: lista as informações de CPU e sistema operacional para o domínio DNS. Esse parâmetro é um sinônimo de **- t HINFO**<br />--s: lista de serviços bem conhecidos de computadores no domínio DNS. Esse parâmetro é um sinônimo de **-t WKS**.|
-|<DNSDomain>|Especifica o domínio DNS para o qual você deseja informações.|
-|<FileName>|Especifica um nome de arquivo no qual salvar a saída. Você pode usar o maior que (>) e double maior que (>>) caracteres para redirecionar a saída da maneira usual.|
-|{Ajuda &#124; ?}|Exibe um resumo breve dos **nslookup** subcomandos.|
+
+|    Parâmetro    |                                                                                                                                                                                                                                                                                                               Descrição                                                                                                                                                                                                                                                                                                                |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    <Option>     | A tabela a seguir lista as opções válidas.<br /><br />--t: lista todos os registros do tipo especificado. Para obter uma descrição <querytype>, consulte **setquerytype** nas referências adicionais.<br />--r: lista de aliases de computadores no domínio DNS. Esse parâmetro é um sinônimo de **- t CNAME**<br />--unidade d: lista todos os registros para o domínio DNS. Esse parâmetro é um sinônimo de **- t ANY**<br />--h: lista as informações de CPU e sistema operacional para o domínio DNS. Esse parâmetro é um sinônimo de **- t HINFO**<br />--s: lista de serviços bem conhecidos de computadores no domínio DNS. Esse parâmetro é um sinônimo de **-t WKS**. |
+|   <DNSDomain>   |                                                                                                                                                                                                                                                                                         Especifica o domínio DNS para o qual você deseja informações.                                                                                                                                                                                                                                                                                         |
+|   <FileName>    |                                                                                                                                                                                                                                 Especifica um nome de arquivo no qual salvar a saída. Você pode usar o maior que (>) e double maior que (>>) caracteres para redirecionar a saída da maneira usual.                                                                                                                                                                                                                                  |
+| {Ajuda &#124; ?} |                                                                                                                                                                                                                                                                                          Exibe um resumo breve dos **nslookup** subcomandos.                                                                                                                                                                                                                                                                                           |
+
 ## <a name="remarks"></a>Comentários
--   A saída padrão contém nomes de computador e seu IP endereços. Quando a saída é direcionada para um arquivo, hash são impressas para cada 50 registros recebidos do servidor
-## <a name="additional-references"></a>Referências adicionais
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[nslookup definir querytype](nslookup-set-querytype.md)
+- A saída padrão contém nomes de computador e seu IP endereços. Quando a saída é direcionada para um arquivo, hash são impressas para cada 50 registros recebidos do servidor
+  ## <a name="additional-references"></a>Referências adicionais
+  [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+  [nslookup definir querytype](nslookup-set-querytype.md)

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 798317f3921cd0e5ff12b69b972e2ea423fa6b3f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 28961ccf0ae04b52586728f9c68a9b2ca3e69b1d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816727"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438773"
 ---
 # <a name="ftp-get"></a>ftp: get
 
@@ -30,10 +30,12 @@ Copia um arquivo remoto no computador local usando o tipo de transferência de a
 get <remoteFile> [<LocalFile>]  
 ```  
 ### <a name="parameters"></a>Parâmetros  
-|Parâmetro|Descrição|  
-|-------|--------|  
-|<remoteFile>|Especifica o arquivo remoto a ser copiado.|  
-|[<LocalFile>]|Especifica o nome do arquivo a ser usado no computador local. Se *LocalFile* não for especificado, o arquivo é fornecido o *Arquivo_remoto* nome.|  
+
+|   Parâmetro   |                                                              Descrição                                                               |
+|---------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| <remoteFile>  |                                                   Especifica o arquivo remoto a ser copiado.                                                   |
+| [<LocalFile>] | Especifica o nome do arquivo a ser usado no computador local. Se *LocalFile* não for especificado, o arquivo é fornecido o *Arquivo_remoto* nome. |
+
 ## <a name="remarks"></a>Comentários  
 O **Obtenha** comando é idêntico de **recv** comando.  
 ## <a name="BKMK_Examples"></a>Exemplos  
@@ -48,4 +50,4 @@ Get test.txt test1.txt
 ## <a name="additional-references"></a>Referências adicionais  
 -   [ftp: ascii](ftp-ascii.md)  
 -   [ftp: binary](ftp-binary.md)  
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  

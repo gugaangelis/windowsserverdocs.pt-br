@@ -12,12 +12,12 @@ ms.assetid: 1b4776e8-9504-4b98-ae80-11da797d9819
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d184c97e47f04b9d7434aaeb0d328761bcfac1c0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 4249273c42e07fea980af3e97ae59b31db243e56
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839267"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433349"
 ---
 # <a name="manage-client-computer-backup-in-windows-server-essentials"></a>Gerenciar o backup do computador cliente no Windows Server Essentials
 
@@ -109,7 +109,7 @@ ms.locfileid: "59839267"
 4.  Clique em **Fechar** quando o backup estiver definido para o computador.  
   
 ### <a name="critical-system-files"></a>Arquivos essenciais do sistema  
- Quando você instala o sistema operacional Windows, o programa de instalação cria pastas na unidade do sistema para coloca os arquivos que o sistema exige para iniciar e executar. Arquivos essenciais do sistema incluem arquivos com extensões de arquivo. sys, .exe,. ocx e. dll. Alguns desses arquivos são fontes True Type. Além disso, os arquivos de estado do sistema, como o registro do sistema s, são necessários para o sistema operacional seja executado corretamente.  
+ Quando você instala o sistema operacional Windows, o programa de instalação cria pastas na unidade do sistema para coloca os arquivos que o sistema exige para iniciar e executar. Arquivos essenciais do sistema incluem arquivos com extensões de arquivo. sys, .exe,. ocx e. dll. Alguns desses arquivos são fontes True Type. Além disso, os arquivos de estado do sistema, como o registro do sistema, são necessários para o sistema operacional seja executado corretamente.  
   
 ### <a name="find-the-file-you-are-looking-for"></a>Localizar o arquivo que você está procurando  
  Você pode restaurar todas as pastas para um computador, vários arquivos e pastas, ou um único arquivo ou pasta de um backup existente.  
@@ -119,17 +119,17 @@ ms.locfileid: "59839267"
 ### <a name="why-am-i-unable-to-select-some-items"></a>Por que não é possível selecionar alguns itens?  
  A caixa de seleção no menu seleção do **Selecione os itens para backup página** pode indicar status diferente para cada pasta. Quando a caixa de seleção é:  
   
--   **Selecionada**, a pasta associada e o conteúdo da pasta está selecionado para backup.  
+- **Selecionada**, a pasta associada e o conteúdo da pasta está selecionado para backup.  
   
--   **Não selecionada**, a pasta associada e o conteúdo da pasta é excluído do backup.  
+- **Não selecionada**, a pasta associada e o conteúdo da pasta é excluído do backup.  
   
--   **Sólido**, a pasta associada é selecionada para backup, mas um ou mais itens nessa pasta são excluídos do backup.  
+- **Sólido**, a pasta associada é selecionada para backup, mas um ou mais itens nessa pasta são excluídos do backup.  
   
- Se você não pode selecionar uma pasta específica:  
+  Se você não pode selecionar uma pasta específica:  
   
--   O volume pode ser configurado para backup, mas pode estar offline. Isso é comum para unidades de USB removíveis. Volumes que estão offline são mostrados em texto cinza.  
+- O volume pode ser configurado para backup, mas pode estar offline. Isso é comum para unidades de USB removíveis. Volumes que estão offline são mostrados em texto cinza.  
   
--   Você só pode fazer backup dos dados de uma unidade local formatada no sistema de arquivos NTFS. Unidades formatadas como FAT (incluindo FAT32) ou sistemas de arquivos ReFS não aparecem na lista de unidades de backup.  
+- Você só pode fazer backup dos dados de uma unidade local formatada no sistema de arquivos NTFS. Unidades formatadas como FAT (incluindo FAT32) ou sistemas de arquivos ReFS não aparecem na lista de unidades de backup.  
   
 > [!IMPORTANT]
 >  O Volume Shadow Copy Service (VSS) não oferece suporte à criação de uma cópia fantasma de um volume virtual e o volume de hospedagem do mesmo conjunto istantâneo. O VSS oferece suporte à criação de instantâneos de volumes em um disco rígido virtual (VHD), se o backup do volume virtual for necessário. Para obter mais informações, consulte [Fazendo manutenção e backup de discos rígidos virtuais](https://go.microsoft.com/fwlink/p/?LinkId=256577).  
@@ -265,30 +265,30 @@ ms.locfileid: "59839267"
   
 #### <a name="to-disable-backup-for-a-computer"></a>Para desabilitar o backup de um computador  
   
-1.  Abra o **Dashboard**.  
+1. Abra o **Dashboard**.  
   
-2.  Clique na guia **Dispositivos**.  
+2. Clique na guia **Dispositivos**.  
   
-3.  Clique no nome do computador para o qual você deseja desabilitar backups.  
+3. Clique no nome do computador para o qual você deseja desabilitar backups.  
   
-4.  No painel de tarefas, clique em **personalizar Backup para o computador**. O Assistente para personalizar o Backup é exibida.  
+4. No painel de tarefas, clique em **personalizar Backup para o computador**. O Assistente para personalizar o Backup é exibida.  
   
-5.  Clique em **Desabilitar o backup deste computador** e, em seguida, selecione se você deseja manter ou excluir os arquivos de backup existentes.  
+5. Clique em **Desabilitar o backup deste computador** e, em seguida, selecione se você deseja manter ou excluir os arquivos de backup existentes.  
   
-6.  Clique em **salvar alterações**e clique em **fechar**.  
+6. Clique em **salvar alterações**e clique em **fechar**.  
   
- Para obter informações sobre como habilitar o backup de um computador depois que o backup foi desabilitado, consulte [Set up backup for a client computer](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md#BKMK_3).  
+   Para obter informações sobre como habilitar o backup de um computador depois que o backup foi desabilitado, consulte [Set up backup for a client computer](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md#BKMK_3).  
   
 ##  <a name="BKMK_10"></a> Executar a tarefa de limpeza de backup  
  A tarefa de limpeza backup do computador cliente está agendada para ser executada às 23:59H sempre aos sábados depois que todos os backups forem concluídos. A tarefa de limpeza exclui os backups do cliente computador backup do banco de dados de acordo com a política de amarzenamento de backup. As configurações padrão para a política de armazenamento de backup são:  
   
--   Número de dias que os backups diários são mantidos: 5 dias  
+- Número de dias que os backups diários são mantidos: 5 dias  
   
--   Número de semanas que o último backup da semana será mantido: 4 semanas  
+- Número de semanas que o último backup da semana será mantido: 4 semanas  
   
--   Número de meses que o último backup do mês será mantido: 6 meses  
+- Número de meses que o último backup do mês será mantido: 6 meses  
   
- Para obter informações sobre como alterar a política de retenção de backup, consulte [alterar a política de retenção de backup do computador](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md#BKMK_5).  
+  Para obter informações sobre como alterar a política de retenção de backup, consulte [alterar a política de retenção de backup do computador](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md#BKMK_5).  
   
 #### <a name="to-run-the-client-backup-database-cleanup-task"></a>Para executar o cliente a tarefa de limpeza de banco de dados de backup  
   
@@ -465,4 +465,4 @@ ms.locfileid: "59839267"
   
 -   [Gerenciar o Windows Server Essentials](Manage-Windows-Server-Essentials.md)  
   
--   [Usar o Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)
+-   [Utilizar o Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)

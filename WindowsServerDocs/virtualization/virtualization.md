@@ -10,12 +10,12 @@ ms.topic: landing-page
 author: shortpatti
 ms.author: pashort
 ms.localizationpriority: high
-ms.openlocfilehash: 1ae36a2e1be1559094dd55dba41fa9a468118260
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 53c927f89fd3ccaa212c998f7102d0fdb9f41bde
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840057"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447945"
 ---
 # <a name="virtualization"></a>Virtualização
 
@@ -41,7 +41,7 @@ Virtualização no Windows Server é uma das tecnologias fundamentais necessári
                     <div class="cardText">
                         <h3>Malha protegida e VMs blindadas</h3>
 <HR />
-                        <p>Como um provedor de serviços em nuvem ou um administrador de nuvem privada corporativa, você pode usar uma malha protegida para fornecer um ambiente mais seguro para as VMs. Uma malha protegida consiste em um serviço de guardião de Host \(HGS\) -normalmente, um cluster de três nós - mais de um ou mais hosts protegidos e um conjunto de VMs blindadas.</p>
+                        <p>Como um provedor de serviços em nuvem ou um administrador de nuvem privada corporativa, você pode usar uma malha protegida para fornecer um ambiente mais seguro para as VMs. Uma malha protegida consiste em um Host de HGS (serviço guardião) - normalmente, um cluster de três nós - mais de um ou mais protegidos hosts e um conjunto de VMs blindadas.</p>
                      </div>
                   </div>
               </div>

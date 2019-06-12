@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 42622fdf19cdd50b76d32989769874cbd05e9f4a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 526363db3ecff4a9138c9cf13cbf330196e14ced
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826937"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439257"
 ---
 # <a name="finger"></a>finger
 
@@ -30,12 +30,14 @@ Exibe informações sobre um usuário ou usuários em um computador remoto espec
 finger [-l] [<User>] [@<Host>] [...]
 ```
 ### <a name="parameters"></a>Parâmetros
-|Parâmetro|Descrição|
-|-------|--------|
-|-l|Exibe informações de usuário no formato de lista longa.|
-|<User>|Especifica o usuário sobre o qual você deseja informações. Se você omitir a *usuário* parâmetro, **dedo** exibe informações sobre todos os usuários no computador especificado.|
-|@<Host>|Especifica o computador remoto que executa o serviço de dedo em que você estiver procurando por informações do usuário. Você pode especificar um nome de computador ou endereço IP.|
-|/?|Exibe a ajuda no prompt de comando.|
+
+| Parâmetro |                                                                            Descrição                                                                            |
+|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    -l     |                                                          Exibe informações de usuário no formato de lista longa.                                                           |
+|  <User>   | Especifica o usuário sobre o qual você deseja informações. Se você omitir a *usuário* parâmetro, **dedo** exibe informações sobre todos os usuários no computador especificado. |
+|  @<Host>  |        Especifica o computador remoto que executa o serviço de dedo em que você estiver procurando por informações do usuário. Você pode especificar um nome de computador ou endereço IP.        |
+|    /?     |                                                               Exibe a ajuda no prompt de comando.                                                                |
+
 ## <a name="remarks"></a>Comentários
 Vários User@Host parâmetros podem ser especificados.
 Você deve prefixar **dedo** parâmetros com um hífen (-) em vez de uma barra (/).
@@ -51,4 +53,4 @@ Para exibir informações para todos os usuários no computador users.microsoft.
 finger @users.microsoft.com
 ```
 ## <a name="additional-references"></a>Referências adicionais
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

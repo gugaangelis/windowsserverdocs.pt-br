@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6436ea47e3ec5c7c9ceee9fd50d052dba4a49724
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 88a59f9da9927bb923418695bc760303c0fb00b0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861167"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439481"
 ---
 # <a name="driverquery"></a>driverquery
 
@@ -36,16 +36,16 @@ driverquery [/s <System> [/u [<Domain>\]<Username> [/p <Password>]]] [/fo {table
 
 ## <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|/s \<System>|Especifica o nome ou endereço IP de um computador remoto. Não use barras invertidas. O padrão é o computador local.|
-|/u [\<Domain>\]<Username>|Executa o comando com as credenciais da conta de usuário conforme especificado por *usuário* ou *domínio*\*usuário *. Por padrão, **/s** usa as credenciais do usuário que está conectado no momento no computador que está emitindo o comando. **/u** não pode ser usado, a menos que **/s** for especificado.|
-|/p \<Password>|Especifica a senha da conta de usuário que é especificada na **/u** parâmetro. **/p** não pode ser usado, a menos que **/u** for especificado.|
-|/FO {tabela | lista | csv}|Especifica o formato para exibir as informações do driver. Os valores válidos são **tabela**, **lista**, e **csv**. O formato padrão para a saída é **tabela**.|
-|/nh|Omite a linha de cabeçalho a partir das informações exibidas de driver. Não é válido se o **/fo** parâmetro for definido como **lista**.|
-|/v|Exibe a saída detalhada. **/v** não é válido para drivers assinados.|
-|/si|Fornece informações sobre drivers assinados.|
-|/?|Exibe a ajuda no prompt de comando.|
+|         Parâmetro         |                                                                                                                                         Descrição                                                                                                                                          |
+|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|       /s \<System>        |                                                                                      Especifica o nome ou endereço IP de um computador remoto. Não use barras invertidas. O padrão é o computador local.                                                                                       |
+| /u [\<Domain>\]<Username> | Executa o comando com as credenciais da conta de usuário conforme especificado por *usuário* ou *domínio*\*usuário<em>. Por padrão, \* \*/s</em> \* usa as credenciais do usuário que está conectado no momento no computador que está emitindo o comando. **/u** não pode ser usado, a menos que **/s** for especificado. |
+|      /p \<Password>       |                                                                           Especifica a senha da conta de usuário que é especificada na **/u** parâmetro. **/p** não pode ser usado, a menos que **/u** for especificado.                                                                            |
+|        /FO {tabela         |                                                                                                                                             lista                                                                                                                                             |
+|            /nh            |                                                                                      Omite a linha de cabeçalho a partir das informações exibidas de driver. Não é válido se o **/fo** parâmetro for definido como **lista**.                                                                                      |
+|            /v             |                                                                                                               Exibe a saída detalhada. **/v** não é válido para drivers assinados.                                                                                                               |
+|            /si            |                                                                                                                          Fornece informações sobre drivers assinados.                                                                                                                          |
+|            /?             |                                                                                                                             Exibe a ajuda no prompt de comando.                                                                                                                             |
 
 ## <a name="BKMK_examples"></a>Exemplos
 
@@ -72,4 +72,4 @@ driverquery /s server1 /u maindom\user1 /p p@ssw3d
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

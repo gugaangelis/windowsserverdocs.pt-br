@@ -8,12 +8,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: 15cfc054810a2cab85aae9a04d6195c3ae6fe0b9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: af977519b5e77eb768fdf8de1e6a34f7c8274666
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861207"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447246"
 ---
 # <a name="advanced-data-deduplication-settings"></a>Configurações avançadas de Eliminação de Duplicação de Dados
 
@@ -97,7 +97,7 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
                     <li>Baixo</li>
                 </ul>
             </td>
-            <td>Esse valor ajuda o sistema a determinar como alocar tempo da CPU. *Alta* usará mais tempo de CPU; *Baixa* usará menos.</td>
+            <td>Esse valor ajuda o sistema a determinar como alocar tempo da CPU. <em>Alta</em> usará mais tempo de CPU; <em>Baixa</em> usará menos.</td>
         </tr>
         <tr>
             <td>Days</td>
@@ -123,7 +123,7 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
             <td>DurationHours</td>
             <td>O número máximo de horas que um trabalho deve ter permissão de execução</td>
             <td>Números inteiros positivos</td>
-            <td>Para impedir que um trabalho seja executado em horas não ociosas de uma carga de trabalho</td>
+            <td>Para impedir que um trabalho em execução em uma carga de trabalho&#39;s horas não ociosas</td>
         </tr>
         <tr>
             <td>Enabled</td>
@@ -141,7 +141,7 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
             <td>InputOutputThrottle</td>
             <td>Especifica a quantidade de limitação de entrada/saída aplicada ao trabalho</td>
             <td>Números inteiros de 0 a 100 (indica uma porcentagem)</td>
-            <td>A limitação faz com que os trabalhos não interfiram com outros processos intensos de E/S.</td>
+            <td>A limitação garante que não de trabalhos&#39;t interferem com outros processos de e/S intensas.</td>
         </tr>
         <tr>
             <td>Memória</td>
@@ -164,8 +164,8 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
         <tr>
             <td>Início</td>
             <td>Especifica a hora em que um trabalho deve ser iniciado</td>
-            <td>`System.DateTime`</td>
-            <td>A parte *date* do parâmetro `System.Datetime` fornecido a *Start* é irrelevante (desde que esteja no passado), mas a parte *time* especifica quando o trabalho deve começar.</td>
+            <td><code>System.DateTime</code></td>
+            <td>O <em>data</em> fazem parte do <code>System.Datetime</code> fornecido para <em>iniciar</em> é irrelevante (desde que ele&#39;s no passado), mas o <em>tempo</em> parte Especifica quando o trabalho deve começar .</td>
         </tr>
         <tr>
             <td>StopWhenSystemBusy</td>
@@ -208,9 +208,9 @@ As principais razões para modificar as configurações de volume do tipo de uso
     <tbody>
         <tr>
             <td>ChunkRedundancyThreshold</td>
-            <td>O número de vezes que uma parte é referenciada antes de ser duplicada na seção do ponto de acesso do Repositório de partes. O valor da seção de ponto de acesso é que as partes ditas "populares" referenciadas com frequência têm vários caminhos de acesso para melhorar o tempo de acesso.</td>
+            <td>O número de vezes que uma parte é referenciada antes de ser duplicada na seção do ponto de acesso do Repositório de partes. O valor da seção de ponto de acesso é chamado isto &quot;hot&quot; partes que são referenciadas com frequência têm vários caminhos de acesso para melhorar o tempo de acesso.</td>
             <td>Números inteiros positivos</td>
-            <td>O principal motivo para alterar esse número é o aumento da taxa de economia de volumes com eliminação de duplicação alta. Em geral, o valor padrão (100) é a configuração recomendada e você não precisa modificá-lo.</td>
+            <td>O principal motivo para alterar esse número é o aumento da taxa de economia de volumes com eliminação de duplicação alta. Em geral, o valor padrão (100) é a configuração recomendada e você não deve&#39;t necessário modificar isso.</td>
         </tr>
         <tr>
             <td>ExcludeFileType</td>
@@ -228,13 +228,13 @@ As principais razões para modificar as configurações de volume do tipo de uso
             <td>InputOutputScale</td>
             <td>Especifica o nível da paralelização de E/S (filas E/S) que a Eliminação de Duplicação de Dados usa em um volume durante um trabalho de pós-processamento</td>
             <td>Números inteiros positivos no intervalo de 1 a 36</td>
-            <td>O principal motivo para modificar esse valor é a diminuição do impacto no desempenho de uma carga de trabalho alta de E/S restringindo o número de filas de E/S que a Eliminação de Duplicação de Dados pode usar em um volume. Observe que a modificação dessa configuração padrão pode fazer com que os trabalhos de pós-processamento da Eliminação de Duplicação de Dados fiquem lentos.</td>
+            <td>O principal motivo para modificar esse valor é a diminuição do impacto no desempenho de uma carga de trabalho alta de E/S restringindo o número de filas de E/S que a Eliminação de Duplicação de Dados pode usar em um volume. Observe que modificar essa configuração padrão pode causar a eliminação de duplicação de dados&#39;s pós-processamento trabalhos sejam executados lentamente.</td>
         </tr>
         <tr>
             <td>MinimumFileAgeDays</td>
             <td>Número de dias após a criação do arquivo antes que o arquivo seja considerado na política para otimização.</td>
             <td>Números inteiros positivos (incluindo zero)</td>
-            <td>Os tipos de uso **Padrão** e **HyperV** definem esse valor como 3 para maximizar o desempenho em arquivos populares ou recém-criados. Convém modificar isso se você quer que a Eliminação de Duplicação de Dados seja mais agressiva ou se não se importa com a latência extra associada à eliminação de duplicação.</td>
+            <td>Os tipos de uso <strong>Padrão</strong> e <strong>HyperV</strong> definem esse valor como 3 para maximizar o desempenho em arquivos populares ou recém-criados. Convém modificar isso se você quer que a Eliminação de Duplicação de Dados seja mais agressiva ou se não se importa com a latência extra associada à eliminação de duplicação.</td>
         </tr>
         <tr>
             <td>MinimumFileSize</td>
@@ -258,7 +258,7 @@ As principais razões para modificar as configurações de volume do tipo de uso
             <td>OptimizeInUseFiles</td>
             <td>Quando habilitado, os arquivos que têm identificadores ativos serão considerados na política de otimização.</td>
             <td>Verdadeiro/Falso</td>
-            <td>Habilite essa configuração se sua carga de trabalho mantém os arquivos abertos por longos períodos de tempo. Se essa configuração não está habilitada, um arquivo nunca é otimizado se a carga de trabalho tem um identificador aberto, mesmo que ele apenas acrescente dados no final de vez em quando.</td>
+            <td>Habilite essa configuração se sua carga de trabalho mantém os arquivos abertos por longos períodos de tempo. Se essa configuração não estiver habilitada, um arquivo nunca é otimizado se a carga de trabalho tem um identificador aberto para ele, mesmo se ele&#39;s apenas ocasionalmente acrescentando dados no final.</td>
         </tr>
         <tr>
             <td>OptimizePartialFiles</td>
@@ -310,9 +310,9 @@ Por exemplo, convém desabilitar a coleta de lixo completa. Para saber mais sobr
         </tr>
         <tr>
             <td>DeepGCInterval</td>
-            <td>Essa configuração define o intervalo no qual os trabalhos de Coleta de Lixo regulares se tornam [Coleta de Lixo completa](advanced-settings.md#faq-full-v-regular-gc). Uma configuração de X significa que a cada <sup>X</sup> trabalhos, um era trabalho de Coleta de Lixo completa. Observe que a Coleta de Lixo completa sempre está desabilitada (independentemente do valor do registro) para volumes com o [tipo de uso Backup](understand.md#usage-type-backup). `Start-DedupJob -Type GarbageCollection -Full` pode ser usado se a coleta de lixo completa for desejada em um volume de Backup.</td>
+            <td>Essa configuração define o intervalo no qual os trabalhos de Coleta de Lixo regulares se tornam <a href="advanced-settings.md#faq-full-v-regular-gc" data-raw-source="[full Garbage Collection jobs](advanced-settings.md#faq-full-v-regular-gc)">Coleta de Lixo completa</a>. Uma configuração de X significa que a cada <sup>X</sup> trabalhos, um era trabalho de Coleta de Lixo completa. Observe que a Coleta de Lixo completa sempre está desabilitada (independentemente do valor do registro) para volumes com o <a href="understand.md#usage-type-backup" data-raw-source="[Backup Usage Type](understand.md#usage-type-backup)">tipo de uso Backup</a>. <code>Start-DedupJob -Type GarbageCollection -Full</code> pode ser usado se a coleta de lixo completa for desejada em um volume de Backup.</td>
             <td>Números inteiros (-1 indica desabilitada)</td>
-            <td>Confira [esta pergunta frequente](advanced-settings.md#faq-why-disable-full-gc)</td>
+            <td>Confira <a href="advanced-settings.md#faq-why-disable-full-gc" data-raw-source="[this frequently asked question](advanced-settings.md#faq-why-disable-full-gc)">esta pergunta frequente</a></td>
         </tr>
     </tbody>
 </table>

@@ -9,12 +9,12 @@ ms.date: 08/11/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0df290248f049b3f8a823e902cefa860fa074091
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: bcb6c415aae33b9742d7a7080ec169ca947098b9
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189847"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445003"
 ---
 # <a name="configure-on-premises-conditional-access-using-registered-devices"></a>Configurar locais acesso condicional usando dispositivos registrados
 
@@ -92,11 +92,11 @@ Se o farm do AD FS já não estiver configurado para Autenticação de dispositi
 
 ![Registro do dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device2.png)
   
-2.  No servidor primário do AD FS, verifique se você está conectado como usuário do AD DS com privilégios de administrador Enterprise (EA) e abra um prompt do powershell com privilégios elevados.  Em seguida, execute os seguintes comandos do PowerShell:  
+2. No servidor primário do AD FS, verifique se você está conectado como usuário do AD DS com privilégios de administrador Enterprise (EA) e abra um prompt do powershell com privilégios elevados.  Em seguida, execute os seguintes comandos do PowerShell:  
     
-    `Import-module activedirectory`  
-    `PS C:\> Initialize-ADDeviceRegistration -ServiceAccountName "<your service account>" ` 
-3.  Na janela pop-up pressione Sim.
+   `Import-module activedirectory`  
+   `PS C:\> Initialize-ADDeviceRegistration -ServiceAccountName "<your service account>" ` 
+3. Na janela pop-up pressione Sim.
 
 >Observação: Se o serviço do AD FS está configurado para usar uma conta GMSA, insira o nome da conta no formato "domain\accountname$"
 
@@ -111,7 +111,7 @@ O PSH acima cria os seguintes objetos:
 
 ![Registro do dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device4.png)  
 
-4.  Depois disso, você verá uma mensagem de conclusão bem-sucedida.
+4. Depois disso, você verá uma mensagem de conclusão bem-sucedida.
 
 ![Registro do dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device5.png) 
 
@@ -131,9 +131,9 @@ Se você pretende usar o ingresso em domínio no Windows 10 (com o registro auto
 
 ![Registro do dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device7.png) 
 
-3.  Execute o seguinte comando do PowerShell 
+3. Execute o seguinte comando do PowerShell 
 
-    `PS C:>Initialize-ADSyncDomainJoinedComputerSync -AdConnectorAccount [AD connector account name] -AzureADCredentials $aadAdminCred ` 
+   `PS C:>Initialize-ADSyncDomainJoinedComputerSync -AdConnectorAccount [AD connector account name] -AzureADCredentials $aadAdminCred ` 
 
 Onde o [nome da conta do conector do AD] é o nome da conta configurada no Azure AD Connect ao adicionar o diretório do AD DS local.
   
@@ -180,7 +180,7 @@ Para referência, veja a seguir uma lista abrangente de dispositivos, contêiner
 - objeto do tipo serviceConnectionpoint em CN =&lt;guid&gt;, CN=Registro de dispositivo
 
 - Configuração,CN=Serviços,CN=Configuration,DC=&lt;domínio&gt;  
- - acesso de leitura/gravação para o nome da conta de conector do AD especificado no novo objeto</br></br> 
+  - acesso de leitura/gravação para o nome da conta de conector do AD especificado no novo objeto</br></br> 
 
 
 - objeto do tipo msDS-DeviceRegistrationServiceContainer em CN = Serviços de registro de dispositivo, CN = Device Registration Configuration, CN = Services, CN = Configuration, DC = & ltdomain >  

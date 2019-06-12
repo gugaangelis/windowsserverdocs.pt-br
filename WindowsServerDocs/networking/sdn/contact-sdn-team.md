@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
 ms.author: pashort
 author: kallie-b
-ms.openlocfilehash: ff102fc02208bc12b99b50c3b16e3dc51f397d76
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dd67fe27c048a15903d18dca43cf331a025933b3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884487"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446385"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>Entrar em contato com a equipe de rede na nuvem e Datacenter
 
@@ -37,8 +37,8 @@ Vá [aqui](https://github.com/Microsoft/SDN/issues) para enviar os problemas à 
 Nossos [documentação de rede do contêiner](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking) podem ser encontrados na [(docs.microsoft.com) do Microsoft Docs](https://docs.microsoft.com/), que tem **funcionalidade interna de comentário**. Para manter ou para responder a um comentário no Microsoft Docs, basta entrar no, role para baixo até o final da página Microsoft Docs que você deseja fazer referência, em seguida, fazer e enviar seu comentário lá.
 
 > [Microsoft Docs](https://docs.microsoft.com/) é o novo site de documentação unificada da Microsoft. Enquanto a maioria da nossa equipe [documentação de SDN](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking) permanece no TechNet, nosso [documentação de rede do contêiner](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking) está agora no Microsoft Docs.
-
->*Em geral, se você executar em um tópico no Microsoft Docs que faíscas uma pergunta ou deixa você que desejam mais, apenas deixe um comentário na página para compartilhar seus comentários com a equipe da Microsoft que pode ajudar.*
+> 
+> *Em geral, se você executar em um tópico no Microsoft Docs que faíscas uma pergunta ou deixa você que desejam mais, apenas deixe um comentário na página para compartilhar seus comentários com a equipe da Microsoft que pode ajudar.*
 
 ## <a name="container-specific-forums"></a>Fóruns de contêineres específicos
 Fique à vontade para usar qualquer Avenida nesta página para fornecer comentários relacionados à rede de contêiner e contêineres. No entanto, se você estiver procurando fóruns de principal da Microsoft para a comunidade do contêiner especificamente, consulte o seguinte:

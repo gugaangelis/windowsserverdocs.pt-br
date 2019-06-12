@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: ea7ecd52-4c12-4a49-92fd-b8c08cec42a9
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 5c74a9277af3853d709a8ecd58c1e53e1bccc719
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 009ded50b156162ad1f3397fc0708ef8075c6a6f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812507"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446829"
 ---
 # <a name="step-3-configure-the-multisite-deployment"></a>Etapa 3 configurar uma implantação multissite
 
@@ -67,7 +67,7 @@ Depois de configurar a infraestrutura de multissite, siga estas etapas para conf
 11.  Na caixa de diálogo **Progresso da instalação**, verifique se a instalação foi bem-sucedida e clique em **Fechar**.  
   
   
-![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
+![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
 
   
 As etapas 1 a 3 devem ser executadas manualmente e não são realizadas usando este cmdlet do Windows PowerShell.  
@@ -183,7 +183,7 @@ Se você selecionou para configurar o site de servidor de local de rede no servi
   
 1.  No servidor DNS: Sobre o **inicie** tela, digite **Dnsmgmt. msc**, e pressione ENTER.  
   
-2.  No painel esquerdo do **Gerenciador de DNS** console, abra a zona de pesquisa direta para a rede interna. Clique com botão direito a zona relevante e clique em **novo Host (A ou AAAA)**.  
+2.  No painel esquerdo do **Gerenciador de DNS** console, abra a zona de pesquisa direta para a rede interna. Clique com botão direito a zona relevante e clique em **novo Host (A ou AAAA)** .  
   
 3.  Sobre o **novo Host** na caixa de **nome (usa nome do domínio pai se deixado em branco)** , digite o nome que foi usado para o servidor de local de rede para o primeiro servidor de acesso remoto. No **endereço IP** caixa, digite o endereço de IPv4 voltado para a intranet do servidor de acesso remoto e, em seguida, clique em **Adicionar Host**. Na caixa de diálogo **DNS**, clique em **OK**.  
   
@@ -261,7 +261,7 @@ Para configurar uma implantação multissite, habilite o recurso multissite no s
   
 10. Sobre o **habilitando a implantação de multissite** caixa de diálogo, clique em **fechar** e, em seguida, no assistente habilitar implantação multissite, clique em **fechar**.  
   
-![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
+![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -343,7 +343,7 @@ Depois de habilitar o multissite em sua implantação, você pode adicionar pont
   
 16. Repita esse procedimento da etapa 2 para cada ponto de entrada que você deseja adicionar à implantação multissite.  
   
-![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
+![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   

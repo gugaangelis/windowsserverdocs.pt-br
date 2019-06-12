@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: e0f79dd72190888340144bc5c109ee31fa301937
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0acfa6eec1d83c246c43ad32f7548ea771eb3c11
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870797"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445764"
 ---
 # <a name="deploy-implementing-retention-of-information-on-file-servers-demonstration-steps"></a>Deploy Implementing Retention of Information on File Servers (Demonstration Steps)
 
@@ -57,7 +57,7 @@ Nessa etapa, habilitamos as propriedades do recurso Período de Retenção e Des
   
 5.  Clique com o botão direito do mouse em **Descoberta**e em **Habilitar**.  
   
-![guias de soluções](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
+![guias de soluções](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -91,7 +91,7 @@ Nessa etapa, usamos o console do Gerenciador de Recursos de Servidor de Arquivos
   
 6.  Clique em **OK**.  
   
-![guias de soluções](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
+![guias de soluções](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -142,7 +142,7 @@ Nessa etapa, usamos o console do Gerenciador de Recursos de Servidor de Arquivos
   
 11. Clique em **OK**.  
   
-![guias de soluções](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
+![guias de soluções](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -185,10 +185,10 @@ Nessa etapa, classificamos manualmente um arquivo para ficar em retenção legal
   
 ## <a name="BKMK_Links"></a>Consulte também  
   
--   [Cenário: Implementar a retenção de informações em servidores de arquivos](Scenario--Implement-Retention-of-Information-on-File-Servers.md)  
+-   [Cenário: implementar a retenção de informações em servidores de arquivos](Scenario--Implement-Retention-of-Information-on-File-Servers.md)  
   
 -   [Plano para retenção de informações em servidores de arquivos](assetId:///edf13190-7077-455a-ac01-f534064a9e0c)  
   
--   [Controle de acesso dinâmico: Visão geral do cenário](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [Controle de acesso dinâmico: visão geral do cenário](Dynamic-Access-Control--Scenario-Overview.md)  
   
 

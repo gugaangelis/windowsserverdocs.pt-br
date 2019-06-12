@@ -13,12 +13,12 @@ author: gitmichiko
 ms.author: michikos
 manager: dongill
 ms.date: 03/06/2017
-ms.openlocfilehash: ec41e85949cb61c8130d8765b4786eefe39ebd0b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 475b6a0b24b811008ee213c1604d98d9aa9eb092
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855587"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447029"
 ---
 # <a name="whats-new-in-credential-protection"></a>Novidades na proteção de credenciais
 
@@ -49,7 +49,7 @@ As proteções de domínio exigem um domínio do Active Directory.
 
 Começando com o Windows 10 versão 1507 e Windows Server 2016, se um dispositivo ingressado no domínio é capaz de registrar sua chave pública associado um controlador de domínio (DC) do Windows Server 2016, em seguida, o dispositivo pode autenticar com a chave pública usando Kerberos PKINIT autenticação para um controlador de domínio do Windows Server 2016.
 
-Começando com o Windows Server 2016, os KDCs suportam a autenticação usando Kerberos confiança de chave.  
+Começando com o Windows Server 2016, os KDCs suportam a autenticação usando Kerberos confiança de chave.  
 
 [Saiba mais sobre o suporte de chave público para dispositivos ingressados no domínio e confiança de chaves Kerberos](https://technet.microsoft.com/windows-server-docs/security/kerberos/whats-new-in-kerberos-authentication).
 
@@ -63,7 +63,7 @@ Começando com o Windows Server 2016, os KDCs podem dar suporte a extensão de a
 
 ### <a name="rolling-public-key-only-users-ntlm-secrets"></a>Sem interrupção pública chave única segredos do usuário NTLM
 
-Começando com o nível funcional de domínio do Windows Server 2016 (DFL), controladores de domínio podem dar suporte sem interrupção de um público chave única segredos do usuário NTLM. Esse recurso é unavailble no DFLs inferiores.
+Começando com o nível funcional de domínio do Windows Server 2016 (DFL), controladores de domínio podem dar suporte sem interrupção de um público chave única segredos do usuário NTLM. Esse recurso é unavailble no DFLs inferiores.
 
 > [!WARNING] 
 > Adicionando um controlador de domínio a um domínio com sem interrupção segredos NTLM habilitados antes que o controlador de domínio foi atualizado com pelo menos 8 de novembro de 2016 manutenção é executado o risco do travamento do controlador de domínio. 
@@ -73,7 +73,7 @@ Configuração: Para novos domínios, esse recurso é habilitado por padrão. Pa
 1. Do Centro Administrativo do Active Directory, o domínio no painel esquerdo e selecione **propriedades**.
 
     ![Propriedades do domínio](../media/Credentials-Protection-And-Management/domain-properties.png)
-    
+
 2. Selecione **habilitar a distribuição dos segredos prestes a expirar de NTLM durante a inscrição, para os usuários que são necessários para usar o Microsoft Passport ou cartão inteligente para logon interativo**.
 
     ![Segredos NTLM expirando Autoroll](../media/Credentials-Protection-And-Management/autoroll-ntlm.png)

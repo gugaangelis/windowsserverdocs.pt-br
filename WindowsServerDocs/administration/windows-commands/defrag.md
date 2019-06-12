@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6997e878b2bb7b77a5920ad7398ef7c2301cc8c0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 6b5f6231273fb9fe9a99a1cd1bf72dbd0bad71af
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813187"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433917"
 ---
 # <a name="defrag"></a>defrag
 
@@ -35,6 +35,7 @@ defrag <volumes> | /C | /E <volumes> /X [/H] [/M [n]| [/U] [/V]]
 defrag <volume> [/<Parameter>]*
 ```
 ## <a name="parameters"></a>Parâmetros
+
 |Parâmetro|Descrição|
 |-------|--------|
 |`<volume>`|Especifica o unidade montagem ou letra ponto de caminho do volume a ser desfragmentado ou analisados.|
@@ -56,20 +57,20 @@ defrag <volume> [/<Parameter>]*
 |?|Exibe essas informações de Ajuda.|
 
 ## <a name="remarks"></a>Comentários
--   Você não pode desfragmentar tipos específicos de unidades ou volumes de sistema de arquivos:
-    -   Você não pode desfragmentar volumes que bloqueou o sistema de arquivos.
-    -   Você não pode desfragmentar volumes que o sistema de arquivos marcado como sujo, que indica um possível corrompimento. Você deve executar **chkdsk** em um volume sujo antes de desfragmentá-lo. Você pode determinar se um volume está sujo usando o **fsutil** sujos comando de consulta. Para obter mais informações sobre **chkdsk** e **fsutil** sujos, consulte [referências adicionais](defrag.md#BKMK_additionalRef).
-    -   Você não pode desfragmentar unidades de rede.
-    -   Você não pode desfragmentar o CD-ROMs.
-    -   Você não pode desfragmentar volumes de sistema de arquivos que não são **NTFS**, **ReFS**, **Fat** ou **Fat32**.
--   Com o Windows Server 2008 R2, Windows Server 2008 e Windows Vista, você pode agendar para desfragmentar um volume. No entanto, você não pode agendar para desfragmentar um volume em um disco rígido Virtual (VHD) que reside em um SSD ou um estado unidade sólido (SSD).
--   Para executar esse procedimento, você deve ser membro do grupo Administradores no computador local ou deve ter recebido a autoridade apropriada. Se o computador fizer parte de um domínio, é possível que os membros do grupo Administradores de domínio possam executar esse procedimento. Como uma segurança prática recomendada, considere usar **executar como** para executar este procedimento.
--   Um volume deve ter pelo menos 15% espaço livre para **defrag** desfragmente total e adequadamente. **executa a desfragmentação** utiliza esse espaço como uma área de classificação para fragmentos de arquivos. Se um volume tiver menos de 15% de espaço livre, **defrag** desfragmentará apenas parcialmente. Para aumentar o espaço livre em um volume, exclua arquivos desnecessários ou mova-os para outro disco.
--   Embora **defrag** é analisar e desfragmentar um volume, ele exibe um cursor piscando. Quando **defrag** é termina de analisar e desfragmentar o volume, ele exibe o relatório de análise, o relatório de desfragmentação ou ambos os relatórios e, em seguida, sai para o prompt de comando.
--   Por padrão, **defrag** exibe um resumo dos relatórios de análise e de desfragmentação, se você não especificar a **/a** ou **/v** parâmetros.
--   Você pode enviar relatórios para um arquivo de texto digitando **>** *FileName.txt*, onde *filename. txt* é um nome de arquivo que você especificar. Por exemplo: `defrag volume /v > FileName.txt`
--   Para interromper o processo de desfragmentação, na linha de comando, pressione **CTRL + C**.
--   Executando o **defrag** Desfragmentador de disco e de comando são mutuamente exclusivos. Se você estiver usando o Desfragmentador de disco para desfragmentar um volume e você executar o **defrag** comando em uma linha de comando, o **defrag** comando falhará. Por outro lado, se você executar o **defrag** comando e abrir o Desfragmentador de disco, as opções de desfragmentação em Desfragmentador de disco não estão disponíveis.
+- Você não pode desfragmentar tipos específicos de unidades ou volumes de sistema de arquivos:
+  -   Você não pode desfragmentar volumes que bloqueou o sistema de arquivos.
+  -   Você não pode desfragmentar volumes que o sistema de arquivos marcado como sujo, que indica um possível corrompimento. Você deve executar **chkdsk** em um volume sujo antes de desfragmentá-lo. Você pode determinar se um volume está sujo usando o **fsutil** sujos comando de consulta. Para obter mais informações sobre **chkdsk** e **fsutil** sujos, consulte [referências adicionais](defrag.md#BKMK_additionalRef).
+  -   Você não pode desfragmentar unidades de rede.
+  -   Você não pode desfragmentar o CD-ROMs.
+  -   Você não pode desfragmentar volumes de sistema de arquivos que não são **NTFS**, **ReFS**, **Fat** ou **Fat32**.
+- Com o Windows Server 2008 R2, Windows Server 2008 e Windows Vista, você pode agendar para desfragmentar um volume. No entanto, você não pode agendar para desfragmentar um volume em um disco rígido Virtual (VHD) que reside em um SSD ou um estado unidade sólido (SSD).
+- Para executar esse procedimento, você deve ser membro do grupo Administradores no computador local ou deve ter recebido a autoridade apropriada. Se o computador fizer parte de um domínio, é possível que os membros do grupo Administradores de domínio possam executar esse procedimento. Como uma segurança prática recomendada, considere usar **executar como** para executar este procedimento.
+- Um volume deve ter pelo menos 15% espaço livre para **defrag** desfragmente total e adequadamente. **executa a desfragmentação** utiliza esse espaço como uma área de classificação para fragmentos de arquivos. Se um volume tiver menos de 15% de espaço livre, **defrag** desfragmentará apenas parcialmente. Para aumentar o espaço livre em um volume, exclua arquivos desnecessários ou mova-os para outro disco.
+- Embora **defrag** é analisar e desfragmentar um volume, ele exibe um cursor piscando. Quando **defrag** é termina de analisar e desfragmentar o volume, ele exibe o relatório de análise, o relatório de desfragmentação ou ambos os relatórios e, em seguida, sai para o prompt de comando.
+- Por padrão, **defrag** exibe um resumo dos relatórios de análise e de desfragmentação, se você não especificar a **/a** ou **/v** parâmetros.
+- Você pode enviar relatórios para um arquivo de texto, digitando **>** <em>filename. txt</em>, onde *filename. txt* é um nome de arquivo que você especificar. Por exemplo: `defrag volume /v > FileName.txt`
+- Para interromper o processo de desfragmentação, na linha de comando, pressione **CTRL + C**.
+- Executando o **defrag** Desfragmentador de disco e de comando são mutuamente exclusivos. Se você estiver usando o Desfragmentador de disco para desfragmentar um volume e você executar o **defrag** comando em uma linha de comando, o **defrag** comando falhará. Por outro lado, se você executar o **defrag** comando e abrir o Desfragmentador de disco, as opções de desfragmentação em Desfragmentador de disco não estão disponíveis.
 
 ## <a name="BKMK_examples"></a>Exemplos
 Para desfragmentar o volume na unidade C, fornecendo o andamento e a saída detalhada, digite:
@@ -105,4 +106,4 @@ Executa a desfragmentação do agendada será executada como uma tarefa de manut
 -   [chkdsk](chkdsk.md)
 -   [fsutil](fsutil.md)
 -   [fsutil suja](fsutil-dirty.md)
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

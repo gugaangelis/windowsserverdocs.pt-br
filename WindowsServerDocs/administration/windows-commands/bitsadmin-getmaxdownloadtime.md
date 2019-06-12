@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 868f7ac58a69c067681bf0597524fbaa5a25984f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d067d6a0821d9af4784c02c6a332e8eddd2352c0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842417"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434939"
 ---
-#<a name="bitsadmin-getmaxdownloadtime"></a>Bitsadmin getmaxdownloadtime
+# <a name="bitsadmin-getmaxdownloadtime"></a>Bitsadmin getmaxdownloadtime
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -50,6 +50,6 @@ C:\>bitsadmin /GetMaxDownloadtime myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
 

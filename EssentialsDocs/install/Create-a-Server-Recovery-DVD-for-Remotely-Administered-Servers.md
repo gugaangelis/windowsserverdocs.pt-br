@@ -12,12 +12,12 @@ ms.assetid: 6141fa69-5952-4e3c-a868-40ef3f4badd2
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 7bfe1686ac84962cdb4ab1cde8d6ca5226cb9d44
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 999887f09c27c1df481cb5e46579942424a2847b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844347"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433627"
 ---
 # <a name="create-a-server-recovery-dvd-for-remotely-administered-servers"></a>Criar um DVD de recuperação de servidor para servidores administrados remotamente
 
@@ -83,11 +83,11 @@ ms.locfileid: "59844347"
 ####  <a name="BKMK_Collecting"></a> Etapa 2: Coletar as imagens de redefinição aos padrões de fábrica e arquivos XML  
  Para redefinir um servidor para os padrões de fábrica, as duas imagens a seguir precisam ser capturadas:  
   
--   A imagem da unidade do sistema  
+- A imagem da unidade do sistema  
   
--   A partição reservada do sistema  
+- A partição reservada do sistema  
   
- Para capturar essas imagens, a ferramenta GenDiskXML.exe é fornecida. O GenDiskXML.exe também coleta um arquivo chamado disk.xml que é usado pelo processo de recuperação para recriar a configuração do disco.  
+  Para capturar essas imagens, a ferramenta GenDiskXML.exe é fornecida. O GenDiskXML.exe também coleta um arquivo chamado disk.xml que é usado pelo processo de recuperação para recriar a configuração do disco.  
   
 1.  Após o Sysprep, reinicie o sistema usando qualquer versão de 64 bits do Windows PE.  
   
@@ -117,29 +117,29 @@ ms.locfileid: "59844347"
 > [!NOTE]
 >  Os nomes de arquivo listados devem corresponder exatamente.  
   
-1.  A página do assistente tem um link para ajuda adicional. Se esse arquivo .chm existir, ele substituirá o FWLink para a Ajuda na Web. O arquivo de Ajuda está localizado em:  
+1. A página do assistente tem um link para ajuda adicional. Se esse arquivo .chm existir, ele substituirá o FWLink para a Ajuda na Web. O arquivo de Ajuda está localizado em:  
   
-     < raiz do DVD\>\\$OEM$ \Customization\\< nome da cultura\>\RestartHelp.chm  
+    < raiz do DVD\>\\$OEM$ \Customization\\< nome da cultura\>\RestartHelp.chm  
   
-2.  O arquivo contém o texto que o cliente vê na página do assistente. O texto deve explicar como inicializar o servidor no modo de recuperação. O controle é rolável, o que impõe um limite prático à quantidade de texto que pode ser adicionada.  
+2. O arquivo contém o texto que o cliente vê na página do assistente. O texto deve explicar como inicializar o servidor no modo de recuperação. O controle é rolável, o que impõe um limite prático à quantidade de texto que pode ser adicionada.  
   
-     O seguinte arquivo é usado para substituir a imagem de amostra no assistente e é principalmente sobre a identidade visual. Deve ser um arquivo .png. O tamanho do arquivo precisa ser de 256 pixels x 256 pixels ou será cortado quando for exibido no assistente.  
+    O seguinte arquivo é usado para substituir a imagem de amostra no assistente e é principalmente sobre a identidade visual. Deve ser um arquivo .png. O tamanho do arquivo precisa ser de 256 pixels x 256 pixels ou será cortado quando for exibido no assistente.  
   
-     < raiz do DVD\>\\$OEM$ \Customization\\< nome da cultura\>\RestartInstructions.rtf  
+    < raiz do DVD\>\\$OEM$ \Customization\\< nome da cultura\>\RestartInstructions.rtf  
   
-3.  < raiz do DVD\>\\$OEM$ \Customization\\< nome da cultura\>\ServerImage.png  
+3. < raiz do DVD\>\\$OEM$ \Customization\\< nome da cultura\>\ServerImage.png  
   
- Quando você estiver convertendo seu DVD de recuperação do servidor para suporte a vários idiomas, certifique-se de fazer o seguinte:  
+   Quando você estiver convertendo seu DVD de recuperação do servidor para suporte a vários idiomas, certifique-se de fazer o seguinte:  
   
-1.  Você deve sempre ter a pasta en-us. Se o aplicativo de recuperação do servidor não encontrar os arquivos específicos da cultura que correspondam ao computador cliente no qual está em execução, ele retorna para en-us.  
+4. Você deve sempre ter a pasta en-us. Se o aplicativo de recuperação do servidor não encontrar os arquivos específicos da cultura que correspondam ao computador cliente no qual está em execução, ele retorna para en-us.  
   
-2.  Em cada pasta de cultura que você criar, adicione os três arquivos de personalização (.png, .chm e .rtf).  
+5. Em cada pasta de cultura que você criar, adicione os três arquivos de personalização (.png, .chm e .rtf).  
   
-3.  Copie as duas pastas de cultura de Language Packs\\< CultureName\>\Server Recovery para a raiz do DVD de recuperação do servidor. Por exemplo: As pastas ES e ES-ES serão copiadas para a raiz do DVD para oferecer suporte ao espanhol.  
+6. Copie as duas pastas de cultura de Language Packs\\< CultureName\>\Server Recovery para a raiz do DVD de recuperação do servidor. Por exemplo: As pastas ES e ES-ES serão copiadas para a raiz do DVD para oferecer suporte ao espanhol.  
   
-4.  Finalize o arquivo ISO.  
+7. Finalize o arquivo ISO.  
   
- Nomes de cultura compatíveis incluem:  
+   Nomes de cultura compatíveis incluem:  
 
 |-|-|  
 |- cs-CZ<br /><br /> -de-DE<br /><br /> -en-US<br /><br /> -es-ES<br /><br /> - fr-FR<br /><br /> - hu-HU<br /><br /> -it-IT<br /><br /> - ja-JP<br /><br /> -ko-KR<br /><br /> - nl-NL|- pl-PL<br /><br /> - pt-BR<br /><br /> - pt-PT<br /><br /> -ru-RU<br /><br /> - sv-SE<br /><br /> -tr-TR<br /><br /> - zh-CN<br /><br /> - zh-HK<br /><br /> - zh-TW
@@ -172,4 +172,4 @@ ms.locfileid: "59844347"
  [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do usuário](Testing-the-Customer-Experience.md)
+ [Testar a experiência do usuário](Testing-the-Customer-Experience.md)

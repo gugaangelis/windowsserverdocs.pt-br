@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 06e7aa1309b453da649537d5ae9b22acce830530
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 52568944a98bed7960b37335b2e3cbbde61479ca
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816857"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447207"
 ---
 # <a name="set-the-ordering-method-for-targets-in-referrals"></a>Defina o método de ordenação dos destinos nas referências
 
@@ -36,9 +36,9 @@ Use o procedimento a seguir para definir o método de ordenação na raiz do nam
 
 > [!NOTE]
 > Para usar o Windows PowerShell para definir o método de ordenação de destinos em referências de raiz do namespace, use o [conjunto DfsnRoot](https://technet.microsoft.com/library/jj884281.aspx) cmdlet com um dos seguintes parâmetros:
-   -   **EnableSiteCosting** Especifica o **ordenação de custo mais baixo** método
-   -   **EnableInsiteReferrals** especifica o método de ordenação **Excluir destinos fora do site do cliente**
-   -   Omitir o parâmetro especifica o **ordem aleatória** ordenação de método de referência. 
+>    -   **EnableSiteCosting** Especifica o **ordenação de custo mais baixo** método
+>    -   **EnableInsiteReferrals** especifica o método de ordenação **Excluir destinos fora do site do cliente**
+>    -   Omitir o parâmetro especifica o **ordem aleatória** ordenação de método de referência. 
 
 O módulo do PowerShell do Windows DFSN foi introduzido no Windows Server 2012.
    
@@ -91,5 +91,5 @@ Nesse método, a referência contém apenas os alvos que estão no mesmo site qu
 
 ## <a name="see-also"></a>Consulte também 
 
--   [Ajuste os Namespaces do DFS](tuning-dfs-namespaces.md)
--   [Delegar permissões de gerenciamento para Namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)
+-   [Ajustar namespaces do DFS](tuning-dfs-namespaces.md)
+-   [Delegar permissões de gerenciamento para namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)

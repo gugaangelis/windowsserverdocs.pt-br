@@ -9,12 +9,12 @@ author: justinha
 ms.author: justinha
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: d63726e7046896c9ef7aa0c3b3d85237bc3f788d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8e1ef34370b1459cd55705bc0069b49a572de303
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879057"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447534"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>Início rápido para a implantação de malha protegida
 
@@ -107,7 +107,7 @@ Para o modo TPM, são necessárias três coisas:
 
 1.  Um _chave de endosso público_ (ou _EKpub_) do que o TPM 2.0 em cada host do Hyper-V. Para capturar o EKpub, use `Get-PlatformIdentifier`. 
 2.  Um _linha de base de hardware_. Se cada um dos seus hosts Hyper-V forem idêntica, uma única linha de base é tudo o que você precisa. Se não forem, será necessário um para cada classe de hardware. A linha de base está na forma de um arquivo de log do grupo de computação confiável, ou TCGlog. O TCGlog contém tudo o que fez o host, do firmware UEFI, por meio do kernel, até onde o host está totalmente inicializado. Para capturar a linha de base de hardware, instale a função Hyper-V e o recurso de suporte de Hyper-V de guardião de Host e usar `Get-HgsAttestationBaselinePolicy`. 
-3.  Um _política de integridade de código_. Se cada um dos seus hosts Hyper-V forem idêntica, uma única política de CI é tudo o que você precisa. Se não forem, será necessário um para cada classe de hardware. Windows Server 2016 e Windows 10 tem um novo formulário de imposição de políticas de CI chamado _integridade de código de imposto de hipervisor (HVAC)_. HVAC fornece imposição de alta segurança e garante que um host só tem permissão para executar binários que um administrador confiável permitiu que ele seja executado. Essas instruções são encapsuladas em uma política de CI é adicionada ao HGS. HGS mede a política de CI do cada host antes de eles estiverem permissão para executar VMs blindadas. Para capturar uma política de CI, use `New-CIPolicy`. A política deve ser convertida em seu formato binário usando `ConvertFrom-CIPolicy`.
+3.  Um _política de integridade de código_. Se cada um dos seus hosts Hyper-V forem idêntica, uma única política de CI é tudo o que você precisa. Se não forem, será necessário um para cada classe de hardware. Windows Server 2016 e Windows 10 tem um novo formulário de imposição de políticas de CI chamado _integridade de código de imposto de hipervisor (HVAC)_ . HVAC fornece imposição de alta segurança e garante que um host só tem permissão para executar binários que um administrador confiável permitiu que ele seja executado. Essas instruções são encapsuladas em uma política de CI é adicionada ao HGS. HGS mede a política de CI do cada host antes de eles estiverem permissão para executar VMs blindadas. Para capturar uma política de CI, use `New-CIPolicy`. A política deve ser convertida em seu formato binário usando `ConvertFrom-CIPolicy`.
 
 ![Extrair identidades, a linha de base e a política de CI](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-three-extract-identity-baseline-ci-policy.png)
 
@@ -165,5 +165,5 @@ Criação de máquinas virtuais blindadas difere muito pouco de máquinas de vir
 
 ## <a name="next-step"></a>Próximas etapas
 
->[!div class="nextstepaction"]
-[Pré-requisitos do HGS](guarded-fabric-prepare-for-hgs.md)
+> [!div class="nextstepaction"]
+> [Pré-requisitos do HGS](guarded-fabric-prepare-for-hgs.md)

@@ -8,12 +8,12 @@ ms.topic: article
 author: gawatu
 ms.date: 10/17/2018
 ms.assetid: ''
-ms.openlocfilehash: ba7454f58255ba7a66624a5c59b062da9f871063
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0f4fb73941c5d6667d3c13356b6f29178d73788f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865937"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447686"
 ---
 # <a name="mirror-accelerated-parity"></a>Paridade acelerada por espelho
 
@@ -100,12 +100,12 @@ Compactação de ReFS corrige esses problemas de desempenho, liberando espaço n
 ### <a name="performance-counters"></a>Contadores de desempenho
 
 ReFS mantém contadores de desempenho para ajudar a avaliar o desempenho de paridade com aceleração de espelho. 
--   Conforme descrito anteriormente na gravação à seção de paridade, o ReFS gravará diretamente a paridade quando ela não conseguir localizar espaço livre no espelho. Em geral, isso ocorre quando a faixa de espelho preenche mais rápido do que o ReFS consegue girar dados na paridade. Em outras palavras, a rotação ReFS não é capaz de acompanhar a taxa de inclusão. Os contadores de desempenho abaixo identificam quando o ReFS grava diretamente na paridade:
-```
-ReFS\Data allocations slow tier/sec
-ReFS\Metadata allocations slow tier/sec
-```
--   Se esses contadores forem diferentes de zero, isso indica que o ReFS não está girando dados rápidos o suficiente de espelho. Para ajudar a minimizar esse problema, um pode mudar a agressividade de rotação ou aumentar o tamanho da camada espelhada.
+- Conforme descrito anteriormente na gravação à seção de paridade, o ReFS gravará diretamente a paridade quando ela não conseguir localizar espaço livre no espelho. Em geral, isso ocorre quando a faixa de espelho preenche mais rápido do que o ReFS consegue girar dados na paridade. Em outras palavras, a rotação ReFS não é capaz de acompanhar a taxa de inclusão. Os contadores de desempenho abaixo identificam quando o ReFS grava diretamente na paridade:
+  ```
+  ReFS\Data allocations slow tier/sec
+  ReFS\Metadata allocations slow tier/sec
+  ```
+- Se esses contadores forem diferentes de zero, isso indica que o ReFS não está girando dados rápidos o suficiente de espelho. Para ajudar a minimizar esse problema, um pode mudar a agressividade de rotação ou aumentar o tamanho da camada espelhada.
 
 ### <a name="rotation-aggressiveness"></a>Agressividade de rotação
 

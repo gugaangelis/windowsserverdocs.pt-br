@@ -8,12 +8,12 @@ ms.date: 09/07/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 270fb6efd63e6355c410ee45d09e6fd16b14222b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2380060894ff2f365451bbabfd41b8aa7e6792a0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867987"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445289"
 ---
 # <a name="compound-authentication-and-ad-ds-claims-in-ad-fs"></a>Compostos de autenticação e declarações do AD DS no AD FS
 Windows Server 2012 aprimora a autenticação Kerberos com a introdução de autenticação composta.  Autenticação composta permite que uma solicitação de serviço de concessão de tíquete do Kerberos (TGS) incluir duas identidades: 
@@ -87,21 +87,21 @@ Set-AdfsGlobalAuthenticationPolicy -PrimaryIntranetAuthenticationProvider 'Windo
 >Em um farm SQL com base, o comando do PowerShell pode ser executado em qualquer servidor do AD FS que é um membro do farm.
 
 ### <a name="step-5--add-the-claim-description-to-ad-fs"></a>Etapa 5:  Adicionar a descrição de declaração para o AD FS
-1.  Adicione a seguinte descrição de declaração ao farm. Essa descrição de declaração não está presente por padrão no AD FS 2012 R2 e precisa ser adicionado manualmente.
-2.  No gerenciamento do AD FS, sob **Service**, clique com botão direito **descrição de declaração** e selecione **adicionar descrição de declaração**
-3.  Insira as seguintes informações na descrição de declaração
-    - Nome de exibição: 'Grupo de dispositivos do Windows' 
-    - Descrição de declaração: 'https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup' '
+1. Adicione a seguinte descrição de declaração ao farm. Essa descrição de declaração não está presente por padrão no AD FS 2012 R2 e precisa ser adicionado manualmente.
+2. No gerenciamento do AD FS, sob **Service**, clique com botão direito **descrição de declaração** e selecione **adicionar descrição de declaração**
+3. Insira as seguintes informações na descrição de declaração
+   - Nome de exibição: 'Grupo de dispositivos do Windows' 
+   - Descrição de declaração: '<https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup>' '
 4. Colocar uma marca de seleção em ambas as caixas.
 5. Clique em **OK**.
 
 ![Descrição de declaração](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc6.png)
 
 6. Usando o PowerShell, você pode usar o **AdfsClaimDescription adicionar** cmdlet.
-``` powershell
-Add-AdfsClaimDescription -Name 'Windows device group' -ClaimType 'https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup' `
--ShortName 'windowsdevicegroup' -IsAccepted $true -IsOffered $true -IsRequired $false -Notes 'The windows group SID of the device' 
-```
+   ``` powershell
+   Add-AdfsClaimDescription -Name 'Windows device group' -ClaimType 'https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup' `
+   -ShortName 'windowsdevicegroup' -IsAccepted $true -IsOffered $true -IsRequired $false -Notes 'The windows group SID of the device' 
+   ```
 
 
 >[!NOTE]
@@ -118,7 +118,7 @@ Add-AdfsClaimDescription -Name 'Windows device group' -ClaimType 'https://schema
 ``` powershell
 Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySupported:$true 
 ```
-2.  Reinicie o serviço do ADFS.
+2. Reinicie o serviço do ADFS.
 
 >[!NOTE]
 >Depois de 'CompoundIdentitySupported' está definido como true, instalação da mesma gMSA no novo falha de servidores (2012R2/2016) com o seguinte erro – **Install-ADServiceAccount: Não é possível instalar a conta de serviço. Mensagem de erro: 'O contexto fornecido não correspondeu ao destino.'** .
@@ -137,15 +137,15 @@ CompoundIdentitySupported de desabilitação e reabilitação, em seguida, não 
 ![Descrição de declaração](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc7.png)
 
 ### <a name="step-8-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>Etapa 8: Sobre a terceira parte confiável em que as declarações de 'WindowsDeviceGroup' são esperadas, adicione uma regra de declaração 'Passagem' ou 'Transformar' semelhante.
-2.  Na **gerenciamento do AD FS**, clique em **terceira** e, no painel direito, ao clicar o RP e selecione **editar regras de declaração**.
-3.  Sobre o **regras de transformação de emissão** clique em **Adicionar regra**.
-4.  Sobre o **Adicionar Assistente de regra de declaração de transformação** selecionar **passar ou filtrar uma declaração de entrada** e clique em **próxima**.
-5.  Adicione um nome de exibição e selecione **grupo de dispositivos do Windows** da **tipo de declaração de entrada** lista suspensa.
-6.  Clique em **concluir**.  Clique em **aplique** e **Okey**.
-![Descrição de declaração](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc8.png)
+2. Na **gerenciamento do AD FS**, clique em **terceira** e, no painel direito, ao clicar o RP e selecione **editar regras de declaração**.
+3. Sobre o **regras de transformação de emissão** clique em **Adicionar regra**.
+4. Sobre o **Adicionar Assistente de regra de declaração de transformação** selecionar **passar ou filtrar uma declaração de entrada** e clique em **próxima**.
+5. Adicione um nome de exibição e selecione **grupo de dispositivos do Windows** da **tipo de declaração de entrada** lista suspensa.
+6. Clique em **concluir**.  Clique em **aplique** e **Okey**.
+   ![Descrição de declaração](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc8.png)
 
 
-##<a name="steps-for-configuring-ad-fs-in-windows-server-2016"></a>Etapas para configurar o AD FS no Windows Server 2016
+## <a name="steps-for-configuring-ad-fs-in-windows-server-2016"></a>Etapas para configurar o AD FS no Windows Server 2016
 O exemplo a seguir detalha as etapas para configurar a autenticação composta no AD FS do Windows Server 2016.
 
 ### <a name="step-1--enable-kdc-support-for-claims-compound-authentication-and-kerberos-armoring-on-the-default-domain-controller-policy"></a>Etapa 1:  Habilitar o suporte KDC para declarações, autenticação composta e proteção Kerberos na diretiva de controlador de domínio padrão
@@ -189,7 +189,7 @@ Set-AdfsGlobalAuthenticationPolicy -PrimaryIntranetAuthenticationProvider 'Windo
 ``` powershell
 Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySupported:$true 
 ```
-2.  Reinicie o serviço do ADFS.
+2. Reinicie o serviço do ADFS.
 
 >[!NOTE]
 >Depois de 'CompoundIdentitySupported' está definido como true, instalação da mesma gMSA no novo falha de servidores (2012R2/2016) com o seguinte erro – **Install-ADServiceAccount: Não é possível instalar a conta de serviço. Mensagem de erro: 'O contexto fornecido não correspondeu ao destino.'** .
@@ -208,11 +208,11 @@ CompoundIdentitySupported de desabilitação e reabilitação, em seguida, não 
 
 
 ### <a name="step-6-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>Etapa 6: Sobre a terceira parte confiável em que as declarações de 'WindowsDeviceGroup' são esperadas, adicione uma regra de declaração 'Passagem' ou 'Transformar' semelhante.
-2.  Na **gerenciamento do AD FS**, clique em **terceira** e, no painel direito, ao clicar o RP e selecione **editar regras de declaração**.
-3.  Sobre o **regras de transformação de emissão** clique em **Adicionar regra**.
-4.  Sobre o **Adicionar Assistente de regra de declaração de transformação** selecionar **passar ou filtrar uma declaração de entrada** e clique em **próxima**.
-5.  Adicione um nome de exibição e selecione **grupo de dispositivos do Windows** da **tipo de declaração de entrada** lista suspensa.
-6.  Clique em **concluir**.  Clique em **aplique** e **Okey**.
+2. Na **gerenciamento do AD FS**, clique em **terceira** e, no painel direito, ao clicar o RP e selecione **editar regras de declaração**.
+3. Sobre o **regras de transformação de emissão** clique em **Adicionar regra**.
+4. Sobre o **Adicionar Assistente de regra de declaração de transformação** selecionar **passar ou filtrar uma declaração de entrada** e clique em **próxima**.
+5. Adicione um nome de exibição e selecione **grupo de dispositivos do Windows** da **tipo de declaração de entrada** lista suspensa.
+6. Clique em **concluir**.  Clique em **aplique** e **Okey**.
 
 ## <a name="validation"></a>Validação
 Para validar a versão de declarações de 'WindowsDeviceGroup', crie um teste usando o .net 4.6 de aplicativo com reconhecimento de declarações. Com o WIF SDK 4.0.

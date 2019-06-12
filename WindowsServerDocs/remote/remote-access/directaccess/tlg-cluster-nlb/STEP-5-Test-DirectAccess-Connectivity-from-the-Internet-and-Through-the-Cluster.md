@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 8399bdfa-809a-45e4-9963-f9b6a631007f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 49b3f6f68bf30ff197b51643f9f1b8f36cc76f19
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3077aa54163ed9548ae3f45f8c673c731b8ef73b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825967"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446653"
 ---
 # <a name="step-5-test-directaccess-connectivity-from-the-internet-and-through-the-cluster"></a>ETAPA 5 testar a conectividade do DirectAccess da Internet e por meio do Cluster
 
@@ -35,27 +35,27 @@ CLIENT1 agora está pronto para teste do DirectAccess.
   
 ## <a name="test-directaccess-connectivity-from-the-internet"></a>Testar a conectividade do DirectAccess da Internet  
   
-1.  Desconecte o CLIENT1 do comutador da rede corporativa e conectá-lo ao comutador da Internet. Aguarde 30 segundos.  
+1. Desconecte o CLIENT1 do comutador da rede corporativa e conectá-lo ao comutador da Internet. Aguarde 30 segundos.  
   
-2.  Em uma janela elevada do Windows PowerShell, digite **ipconfig /flushdns** e pressione ENTER. Isso libera as entradas de resolução de nome que ainda podem existir no cache DNS do cliente de quando o computador cliente estava conectado à rede corporativa.  
+2. Em uma janela elevada do Windows PowerShell, digite **ipconfig /flushdns** e pressione ENTER. Isso libera as entradas de resolução de nome que ainda podem existir no cache DNS do cliente de quando o computador cliente estava conectado à rede corporativa.  
   
-3.  Na janela do Windows PowerShell, digite **Get-DnsClientNrptPolicy** e pressione ENTER.  
+3. Na janela do Windows PowerShell, digite **Get-DnsClientNrptPolicy** e pressione ENTER.  
   
-    O resultado mostra as configurações atuais da NRPT (Tabela de Políticas de Resolução de Nomes). Essas configurações indicam que todas as conexões com. corp.contoso.com devem ser resolvidas pelo servidor DNS de acesso remoto, com o 2001:db8:1::2 de endereço IPv6. Observe também a entrada de NRPT indicando uma exceção para o nome nls.corp.contoso.com. Nomes na lista de exceção não são respondidos pelo servidor DNS de Acesso Remoto. Você pode executar o ping do endereço IP do servidor DNS de acesso remoto para confirmar a conectividade com o servidor de acesso remoto; Por exemplo, você pode executar o ping 2001:db8:1::2.  
+   O resultado mostra as configurações atuais da NRPT (Tabela de Políticas de Resolução de Nomes). Essas configurações indicam que todas as conexões com. corp.contoso.com devem ser resolvidas pelo servidor DNS de acesso remoto, com o 2001:db8:1::2 de endereço IPv6. Observe também a entrada de NRPT indicando uma exceção para o nome nls.corp.contoso.com. Nomes na lista de exceção não são respondidos pelo servidor DNS de Acesso Remoto. Você pode executar o ping do endereço IP do servidor DNS de acesso remoto para confirmar a conectividade com o servidor de acesso remoto; Por exemplo, você pode executar o ping 2001:db8:1::2.  
   
-4.  Na janela do Windows PowerShell, digite **ping app1** e pressione ENTER. Você deve ver as respostas do endereço IPv6 para o APP1, que nesse caso é 2001:db8:1::3.  
+4. Na janela do Windows PowerShell, digite **ping app1** e pressione ENTER. Você deve ver as respostas do endereço IPv6 para o APP1, que nesse caso é 2001:db8:1::3.  
   
-5.  Na janela do Windows PowerShell, digite **ping app2** e pressione ENTER. Você deverá ver as respostas do endereço assinado NAT64 pelo EDGE1 para APP2, que neste caso é fdc9:9f4e:eb1b:7777::a00:4.  
+5. Na janela do Windows PowerShell, digite **ping app2** e pressione ENTER. Você deverá ver as respostas do endereço assinado NAT64 pelo EDGE1 para APP2, que neste caso é fdc9:9f4e:eb1b:7777::a00:4.  
   
-    A capacidade de executar o ping APP2 é importante, porque o sucesso indica que você não pode estabelecer uma conexão usando o NAT64 e o DNS64, como APP2 é um recurso somente do IPv4.  
+   A capacidade de executar o ping APP2 é importante, porque o sucesso indica que você não pode estabelecer uma conexão usando o NAT64 e o DNS64, como APP2 é um recurso somente do IPv4.  
   
-6.  Deixe a janela do Windows PowerShell aberta para o próximo procedimento.  
+6. Deixe a janela do Windows PowerShell aberta para o próximo procedimento.  
   
-7.  Abra o Internet Explorer, na barra de endereços do Internet Explorer, digite **https://app1/** e pressione ENTER. Você verá o site de IIS padrão no APP1.  
+7. Abra o Internet Explorer, na barra de endereços do Internet Explorer, digite **https://app1/** e pressione ENTER. Você verá o site de IIS padrão no APP1.  
   
-8.  Na barra de endereços do Internet Explorer, digite **https://app2/** e pressione ENTER. Você verá o site padrão no APP2.  
+8. Na barra de endereços do Internet Explorer, digite **https://app2/** e pressione ENTER. Você verá o site padrão no APP2.  
   
-9. Sobre o **inicie** tela, digite**\\\App2\Files**, e pressione ENTER. Clique duas vezes no arquivo Novo Documento de Texto.  
+9. Sobre o **inicie** tela, digite<strong>\\\App2\Files</strong>, e pressione ENTER. Clique duas vezes no arquivo Novo Documento de Texto.  
   
     Isso demonstra que você conseguiu se conectar a um servidor de somente IPv4 usando SMB para obter um recurso no domínio de recurso.  
   
@@ -69,20 +69,20 @@ CLIENT1 agora está pronto para teste do DirectAccess.
   
 ## <a name="test-directaccess-client-connectivity-through-the-cluster"></a>Testar a conectividade de cliente do DirectAccess por meio do cluster  
   
-1.  Execute um desligamento normal em EDGE2.  
+1. Execute um desligamento normal em EDGE2.  
   
-    Você pode usar o Gerenciador de balanceamento de carga de rede para exibir o status dos servidores ao executar esses testes.  
+   Você pode usar o Gerenciador de balanceamento de carga de rede para exibir o status dos servidores ao executar esses testes.  
   
-2.  Em CLIENT1, na janela do Windows PowerShell, digite **ipconfig /flushdns** e pressione ENTER. Isso libera as entradas de resolução de nome que ainda podem existir no cliente de cache do DNS.  
+2. Em CLIENT1, na janela do Windows PowerShell, digite **ipconfig /flushdns** e pressione ENTER. Isso libera as entradas de resolução de nome que ainda podem existir no cliente de cache do DNS.  
   
-3.  Na janela do Windows PowerShell, execute ping APP1 e APP2. Você deve receber respostas de ambos esses recursos.  
+3. Na janela do Windows PowerShell, execute ping APP1 e APP2. Você deve receber respostas de ambos esses recursos.  
   
-4.  Sobre o **inicie** tela, digite**\\\app2\files**. Você deve ver a pasta compartilhada no computador APP2. A capacidade de abrir o compartilhamento de arquivos no APP2 indica que o segundo túnel, o que requer autenticação Kerberos para o usuário, está funcionando corretamente.  
+4. Sobre o **inicie** tela, digite<strong>\\\app2\files</strong>. Você deve ver a pasta compartilhada no computador APP2. A capacidade de abrir o compartilhamento de arquivos no APP2 indica que o segundo túnel, o que requer autenticação Kerberos para o usuário, está funcionando corretamente.  
   
-5.  Abra o Internet Explorer e, em seguida, abra os sites da Web https://app1/ e https://app2/. A capacidade de abrir os dois sites confirma que os túneis primeiros e segundo estão funcionando e funcionando. Feche o Internet Explorer.  
+5. Abra o Internet Explorer e, em seguida, abra os sites da Web https://app1/ e https://app2/. A capacidade de abrir os dois sites confirma que os túneis primeiros e segundo estão funcionando e funcionando. Feche o Internet Explorer.  
   
-6.  Inicie o computador EDGE2.  
+6. Inicie o computador EDGE2.  
   
-7.  Em EDGE1 execute um desligamento normal.  
+7. Em EDGE1 execute um desligamento normal.  
   
-8.  Aguarde 5 minutos e, em seguida, retornar ao CLIENT1. Execute as etapas 2 a 5. Isso confirma que o CLIENT1 não conseguiu failover transparente para EDGE2 depois EDGE1 tornaram-se indisponível.
+8. Aguarde 5 minutos e, em seguida, retornar ao CLIENT1. Execute as etapas 2 a 5. Isso confirma que o CLIENT1 não conseguiu failover transparente para EDGE2 depois EDGE1 tornaram-se indisponível.

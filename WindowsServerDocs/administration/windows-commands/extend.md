@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 84047c690006bf727bc12855576960bbf67d1617
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6fdf070a733392d89bafe5bed5a1bf23d8e24d57
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857927"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439356"
 ---
 # <a name="extend"></a>extend
 
@@ -37,12 +37,12 @@ extend filesystem [noerr]
   
 ## <a name="parameters"></a>Parâmetros  
   
-|Parâmetro|Descrição|  
-|-------|--------|  
-|size\=<n>|Especifica a quantidade de espaço em megabytes \(MB\) para adicionar ao volume atual ou partição. Se nenhum tamanho for especificado, todo o espaço livre contíguo disponível no disco será usado.|  
-|disco\=<n>|Especifica o disco no qual o volume ou partição é estendida. Se nenhum for especificado, o volume ou partição é estendida no disco atual.|  
-|sistema de arquivos|estende o sistema de arquivos do volume com o foco. Para uso somente em discos em que o sistema de arquivos não foi estendido com o volume.|  
-|noerr|Somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro.|  
+| Parâmetro  |                                                                                             Descrição                                                                                              |
+|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| size\=<n>  |      Especifica a quantidade de espaço em megabytes \(MB\) para adicionar ao volume atual ou partição. Se nenhum tamanho for especificado, todo o espaço livre contíguo disponível no disco será usado.       |
+| disco\=<n>  |                          Especifica o disco no qual o volume ou partição é estendida. Se nenhum for especificado, o volume ou partição é estendida no disco atual.                          |
+| sistema de arquivos |                                   estende o sistema de arquivos do volume com o foco. Para uso somente em discos em que o sistema de arquivos não foi estendido com o volume.                                    |
+|   noerr    | Somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro. |
   
 ## <a name="remarks"></a>Comentários  
   
@@ -72,7 +72,7 @@ extend filesystem
 ```  
   
 #### <a name="additional-references"></a>Referências adicionais  
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 
   

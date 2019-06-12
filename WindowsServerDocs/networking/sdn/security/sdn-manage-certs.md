@@ -9,12 +9,12 @@ ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: pashort
 author: shortpatti
 ms.date: 08/22/2018
-ms.openlocfilehash: 618c2c4da60decc94f84c2a40cd4d2aa80d5f26b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d29a98e24b475c38fee61972bf9efbd5a2528974
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827567"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446265"
 ---
 # <a name="manage-certificates-for-software-defined-networking"></a>Gerenciar certificados para a rede definida pelo Software
 
@@ -128,13 +128,13 @@ Você pode usar o snap-in de certificados para solicitar certificados. Você pod
 **Os usuários** ou local **administradores** é a associação de grupo mínima necessária para concluir este procedimento.
 
 1. Abra o snap-in de certificados para um computador.
-2. Na árvore de console, clique em **certificados \(computador Local\)**. Selecione o **pessoais** repositório de certificados.
-3. Sobre o **ação** , aponte para * * todas as tarefas * * e clique **Solicitar novo certificado** para iniciar o Assistente de registro de certificado. Clique em **Avançar**.
+2. Na árvore de console, clique em **certificados \(computador Local\)** . Selecione o **pessoais** repositório de certificados.
+3. Sobre o **ação** , aponte para * * todas as tarefas<strong>e, em seguida, clique em * * Solicitar novo certificado</strong> para iniciar o Assistente de registro de certificado. Clique em **Avançar**.
 4. Selecione o **configurado pelo seu administrador** política de registro de certificado e clique em **próxima**.
 5. Selecione o **política de registro do Active Directory** \(com base no modelo de autoridade de certificação que você configurou na seção anterior\).
 6. Expanda o **detalhes** seção e configurar os itens a seguir.
-    1. Certifique-se de que **uso de chave** inclui tanto * * Assinatura Digital * * e **codificação de chave**.
-    2. Certifique-se de que **políticas de aplicativo** inclui tanto **autenticação do servidor** \(1.3.6.1.5.5.7.3.1\) e **autenticação de cliente** \(1.3.6.1.5.5.7.3.2\).
+   1. Certifique-se de que **uso de chave** inclui tanto <strong>Assinatura Digital * * e * * codificação de chave</strong>.
+   2. Certifique-se de que **políticas de aplicativo** inclui tanto **autenticação do servidor** \(1.3.6.1.5.5.7.3.1\) e **autenticação de cliente** \(1.3.6.1.5.5.7.3.2\).
 7. Clique em **Propriedades**.
 8. Sobre o **assunto** guia **nome da entidade**, na **tipo**, selecione **nome comum**. Em valor, especifique **ponto de extremidade de REST de controlador de rede**.
 9. Clique em **Aplicar**e clique em **OK**.

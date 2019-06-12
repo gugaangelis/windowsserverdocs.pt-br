@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 09708c239b5399f3284c42877970443cc2605cbe
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bcbbbf80f25f77d1feb83f358401e4d14da3d354
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817147"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439225"
 ---
 # <a name="fondue"></a>fondue
 
@@ -30,11 +30,13 @@ Permite que os recursos opcionais do Windows, baixando os arquivos necessários 
 fondue.exe /enable-feature:<feature_name> [/caller-name:<program_name>] [/hide-ux:{all | rebootRequest}]
 ```
 ### <a name="parameters"></a>Parâmetros
-|Parâmetro|Descrição|
-|-------|--------|
-|/Enable-Feature: <*nome_do_recurso*>|Especifica o nome do recurso opcional do Windows que você deseja habilitar. Só é possível habilitar um recurso por linha de comando. Para habilitar vários recursos, use fondue.exe para cada recurso.|
-|/caller-name:<*program_name*>|Especifica o nome do programa ou processo quando você chama fondue.exe de um arquivo de script ou lote. Você pode usar essa opção para adicionar o nome do programa para o relatório SQM, se houver um erro.|
-|/hide-ux:{all &#124; rebootRequest}|Use **todos os** para ocultar todas as mensagens para o usuário, incluindo solicitações de andamento e a permissão para acessar o Windows Update. Se a permissão é necessária, a operação falhará.<br /><br />Use **rebootRequest** apenas ocultar mensagens de usuário solicitando permissão para reinicializar o computador. Use esta opção se você tiver um script que controles reinicialize as solicitações.|
+
+|              Parâmetro              |                                                                                                                                                                     Descrição                                                                                                                                                                     |
+|-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  /Enable-Feature: <*nome_do_recurso*>   |                                                                               Especifica o nome do recurso opcional do Windows que você deseja habilitar. Só é possível habilitar um recurso por linha de comando. Para habilitar vários recursos, use fondue.exe para cada recurso.                                                                                |
+|    /caller-name:<*program_name*>    |                                                                                 Especifica o nome do programa ou processo quando você chama fondue.exe de um arquivo de script ou lote. Você pode usar essa opção para adicionar o nome do programa para o relatório SQM, se houver um erro.                                                                                 |
+| /hide-ux:{all &#124; rebootRequest} | Use **todos os** para ocultar todas as mensagens para o usuário, incluindo solicitações de andamento e a permissão para acessar o Windows Update. Se a permissão é necessária, a operação falhará.<br /><br />Use **rebootRequest** apenas ocultar mensagens de usuário solicitando permissão para reinicializar o computador. Use esta opção se você tiver um script que controles reinicialize as solicitações. |
+
 ## <a name="BKMK_Examples"></a>Exemplos
 Para habilitar o Microsoft .NET Framework 3.5, digite:
 ```
@@ -45,6 +47,6 @@ Para habilitar o Microsoft .NET Framework 3.5, adicione o nome do programa para 
 fondue.exe /enable-feature:NETFX3 /caller-name:Admin.bat /hide-ux:all
 ```
 ## <a name="additional-references"></a>Referências adicionais
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-## <a name="see-also"></a>Consulte também
-[Considerações de implantação do Microsoft .NET Framework 3.5](https://go.microsoft.com/fwlink/?LinkId=248869)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+  ## <a name="see-also"></a>Consulte também
+  [Considerações de implantação do Microsoft .NET Framework 3.5](https://go.microsoft.com/fwlink/?LinkId=248869)

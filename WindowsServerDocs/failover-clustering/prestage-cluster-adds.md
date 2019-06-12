@@ -9,12 +9,12 @@ ms.manager: daveba
 ms.technology: storage-failover-clustering
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 151f02572d7595776539af163831b4a7a060c1c7
-ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
+ms.openlocfilehash: fa240ba5fedd98f16639dd19fb8f22c10bfdd9ac
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65613171"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442463"
 ---
 # <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>Pré-configurar os objetos de computador do cluster nos serviços de domínio do Active Directory
 
@@ -48,14 +48,14 @@ Como melhor prática, recomendamos a criação de uma OU para os objetos de clus
 3. Na árvore de console, clique com botão direito a UO em que você deseja criar o CNO, aponte para **New**e, em seguida, selecione **computador**.
 4. No **nome do computador** , digite o nome que será usado para o cluster de failover e, em seguida, selecione **Okey**.
 
-  >[!NOTE]
-  >Este será o nome do cluster que o usuário que o cria especificará na página **Ponto de Acesso para Administrar o Cluster** no Assistente de Criação de Cluster ou como o valor do parâmetro *–Name* para o cmdlet do Windows PowerShell **New-Cluster** .
+   >[!NOTE]
+   >Este será o nome do cluster que o usuário que o cria especificará na página **Ponto de Acesso para Administrar o Cluster** no Assistente de Criação de Cluster ou como o valor do parâmetro *–Name* para o cmdlet do Windows PowerShell **New-Cluster** .
 
 5. Como prática recomendada, clique com botão direito a conta de computador que você acabou de criar, selecione **propriedades**e, em seguida, selecione o **objeto** guia. Sobre o **objeto** guia, selecione o **proteger objeto contra exclusão acidental** caixa de seleção e, em seguida, selecione **Okey**.
 6. A conta de computador que você acabou criado e, em seguida, selecione **desabilitar conta**. Selecione **Yes** para confirmar e, em seguida, selecione **Okey**.
 
-  >[!NOTE]
-  >É necessário desabilitar a conta, de modo que durante a criação do cluster, o processo de criação do cluster possa confirmar que a conta não está sendo usada no momento por um computador ou cluster existentes no domínio.
+   >[!NOTE]
+   >É necessário desabilitar a conta, de modo que durante a criação do cluster, o processo de criação do cluster possa confirmar que a conta não está sendo usada no momento por um computador ou cluster existentes no domínio.
 
 ![CNO desabilitado no exemplo da OU dos Clusters](media/prestage-cluster-adds/disabled-cno-in-the-example-clusters-ou.png)
 
@@ -75,9 +75,9 @@ Aqui está como conceder as permissões de usuário para criar o cluster:
 4. No **selecionar usuários, computadores ou grupos** diálogo caixa, especifique a conta de usuário ou grupo que você deseja conceder permissões e, em seguida, selecione **Okey**.
 5. Selecione a conta de usuário ou grupo que acabou de adicionar e, em seguida, ao lado de **Controle total**, marque a caixa de seleção **Permitir** .
   
-  ![Concedendo Controle Total ao usuário ou grupo que criará o cluster](media/prestage-cluster-adds/granting-full-control-to-the-user-create-the-cluster.png)
+   ![Concedendo Controle Total ao usuário ou grupo que criará o cluster](media/prestage-cluster-adds/granting-full-control-to-the-user-create-the-cluster.png)
   
-  **Figura 2. Conceder controle total para o usuário ou grupo que criará o cluster**
+   **Figura 2. Conceder controle total para o usuário ou grupo que criará o cluster**
 6. Selecione **OK**.
 
 Após concluir essa etapa, o usuário para o qual você concedeu as permissões poderá criar o cluster de failover. No entanto, se o CNO estiver localizado em uma OU, o usuário não poderá criar funções clusterizadas que exijam um ponto de acesso de cliente até que você conclua a Etapa 3.
@@ -113,9 +113,9 @@ Caso tenha pré-configurado o CNO em AD DS, será possível escolher uma das op�
 8. Na caixa de diálogo **Entrada de Permissão**, verifique se a lista **Tipo** está configurada para **Permitir** e se a lista **Aplicável a** está configurada para **Este objeto e todos os objetos descendentes**.
 9. Em **Permissões**, marque a caixa de seleção **Criar objetos de computador**.
 
-  ![Concedendo a permissão para Criar objetos de computador ao CNO](media/prestage-cluster-adds/granting-create-computer-objects-permission-to-the-cno.png)
+   ![Concedendo a permissão para Criar objetos de computador ao CNO](media/prestage-cluster-adds/granting-create-computer-objects-permission-to-the-cno.png)
 
-  **Figura 3. Concedendo a permissão de objetos Create Computer para o CNO**
+   **Figura 3. Concedendo a permissão de objetos Create Computer para o CNO**
 10. Selecione **Okey** até retornar para os usuários do Active Directory e o snap-in computadores.
 
 Um administrador no cluster de failover poderá agora criar funções clusterizadas com pontos de acesso de cliente e colocar os recursos online.

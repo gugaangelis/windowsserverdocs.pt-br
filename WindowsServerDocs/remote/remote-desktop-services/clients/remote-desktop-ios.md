@@ -14,16 +14,16 @@ manager: dongill
 ms.author: elizapo
 date: 01/13/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a1939c7fd6d25d756369c85e4adaa6c15195b37
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 71fe969de4d21f7fa3c134b0f80fc7f69e5b2da8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889627"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446700"
 ---
 # <a name="get-started-with-remote-desktop-on-ios"></a>Comece com a área de trabalho remota no iOS
 
->Aplica-se a: Windows 10, Windows 8.1, Windows Server 2012 R2, Windows Server 2016
+>Aplica-se a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
 
 Você pode usar o cliente de área de trabalho remota para iOS para trabalhar com aplicativos, recursos e áreas de trabalho do Windows do seu dispositivo iOS (iPhones e iPads).
 
@@ -50,14 +50,14 @@ Em seu dispositivo iOS, siga [estas instruções](https://aka.ms/rdiosbeta) para
 Para criar uma conexão de área de trabalho remota: 
 1. No tap Centro de Conexão **+** e, em seguida, toque em **adicionar PC ou servidor**.
 2. Insira as seguintes informações para a conexão de área de trabalho remota:
-  - **Nome do PC** – o nome do computador. Isso pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode anexar informações de porta ao nome do computador (por exemplo, **MyDesktop:3389** ou **10.0.0.1:3389**).
-  - **Nome de usuário** – o nome de usuário a ser usada para acessar o computador remoto. Você pode usar os seguintes formatos: *user_name*, *domain\user_name*, ou *user_name@domain.com*. Você também pode especificar se é solicitar um nome de usuário e senha.
+   - **Nome do PC** – o nome do computador. Isso pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode anexar informações de porta ao nome do computador (por exemplo, **MyDesktop:3389** ou **10.0.0.1:3389**).
+   - **Nome de usuário** – o nome de usuário a ser usada para acessar o computador remoto. Você pode usar os seguintes formatos: *user_name*, *domain\user_name*, ou <em>user_name@domain.com</em>. Você também pode especificar se é solicitar um nome de usuário e senha.
 3. Você também pode definir as seguintes opções adicionais:
-  - **Nome amigável (opcional)** – um nome fácil de lembrar para o PC que você está se conectando. Você pode usar qualquer cadeia de caracteres, mas se você não especificar um nome amigável, o nome do computador é exibido.
-  - **(Opcional) do gateway** – gateway de área de trabalho remota a que você deseja usar para se conectar a áreas de trabalho virtuais, programas RemoteApp e áreas de trabalho baseadas em sessão em uma rede corporativa interna. Obtenha as informações sobre o gateway do administrador do sistema.
-  - **Som** – selecione o dispositivo a ser usado para áudio durante sua sessão remota. Você pode optar por reproduzir som nos dispositivos locais, o dispositivo remoto, ou não de forma alguma.
-  - **Trocar os botões do mouse** – sempre que um gesto de mouse enviaria um comando com o botão esquerdo do mouse, ele envia o mesmo comando com o botão direito do mouse em vez disso. Isso é necessário se o computador remoto está configurado para o modo de mouse canhoto.
-  - **Modo de administrador** -conectar-se a uma sessão de administração em um servidor executando o Windows Server 2003 ou posterior.
+   - **Nome amigável (opcional)** – um nome fácil de lembrar para o PC que você está se conectando. Você pode usar qualquer cadeia de caracteres, mas se você não especificar um nome amigável, o nome do computador é exibido.
+   - **(Opcional) do gateway** – gateway de área de trabalho remota a que você deseja usar para se conectar a áreas de trabalho virtuais, programas RemoteApp e áreas de trabalho baseadas em sessão em uma rede corporativa interna. Obtenha as informações sobre o gateway do administrador do sistema.
+   - **Som** – selecione o dispositivo a ser usado para áudio durante sua sessão remota. Você pode optar por reproduzir som nos dispositivos locais, o dispositivo remoto, ou não de forma alguma.
+   - **Trocar os botões do mouse** – sempre que um gesto de mouse enviaria um comando com o botão esquerdo do mouse, ele envia o mesmo comando com o botão direito do mouse em vez disso. Isso é necessário se o computador remoto está configurado para o modo de mouse canhoto.
+   - **Modo de administrador** -conectar-se a uma sessão de administração em um servidor executando o Windows Server 2003 ou posterior.
 4. Toque **salvar**.
 
 É necessário editar essas configurações? Pressione e mantenha a área de trabalho que você deseja editar e, em seguida, toque no ícone de configurações. 
@@ -89,8 +89,8 @@ Para configurar um novo gateway:
 1. No Centro de Conexão, toque em **Configurações > Gateways**. 
 2. Toque **gateway de área de trabalho remota adicionar**.
 3. Insira as seguintes informações:
-  - **Nome do servidor** – o nome do computador que você deseja usar como um gateway. Isso pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode adicionar informações de porta ao nome do servidor (por exemplo: **RDGateway:443** ou **10.0.0.1:443**).
-  - **Nome de usuário** -o nome de usuário e a senha a ser usada para o gateway de área de trabalho remota que você está se conectando. Você também pode selecionar **usar credenciais de conexão** para usar o mesmo nome de usuário e senha usadas para a conexão de área de trabalho remota.
+   - **Nome do servidor** – o nome do computador que você deseja usar como um gateway. Isso pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode adicionar informações de porta ao nome do servidor (por exemplo: **RDGateway:443** ou **10.0.0.1:443**).
+   - **Nome de usuário** -o nome de usuário e a senha a ser usada para o gateway de área de trabalho remota que você está se conectando. Você também pode selecionar **usar credenciais de conexão** para usar o mesmo nome de usuário e senha usadas para a conexão de área de trabalho remota.
 
 
 ## <a name="manage-your-user-accounts"></a>Gerenciar suas contas de usuário 

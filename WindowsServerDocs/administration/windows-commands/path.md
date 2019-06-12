@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65ccaf23b0e19319383952f3a1ca436aaf4d06fd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a637abc91dd3342afb3a2723d1b3a835be149122
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856457"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436323"
 ---
 # <a name="path"></a>path
 
@@ -37,12 +37,12 @@ path ;
 
 ## <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|[\<Drive>:]<Path>|Especifica a unidade e diretório para definir o caminho de comando.|
-|;|Separa os diretórios no caminho de comando. Se usado sem outros parâmetros, **;** limpa os caminhos de comando existente da variável de ambiente PATH e direciona Cmd.exe para pesquisar somente no diretório atual.|
-|% PATH %|Acrescenta o caminho de comando para o conjunto existente de diretórios listados na variável de ambiente PATH.|
-|/?|Exibe a ajuda no prompt de comando.|
+|     Parâmetro     |                                                                                                     Descrição                                                                                                      |
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [\<Drive>:]<Path> |                                                                            Especifica a unidade e diretório para definir o caminho de comando.                                                                             |
+|         ;         | Separa os diretórios no caminho de comando. Se usado sem outros parâmetros, **;** limpa os caminhos de comando existente da variável de ambiente PATH e direciona Cmd.exe para pesquisar somente no diretório atual. |
+|      % PATH %       |                                                         Acrescenta o caminho de comando para o conjunto existente de diretórios listados na variável de ambiente PATH.                                                         |
+|        /?         |                                                                                         Exibe a ajuda no prompt de comando.                                                                                         |
 
 ## <a name="remarks"></a>Comentários
 
@@ -62,4 +62,4 @@ Para pesquisar os caminhos C:\User\Taxes, B:\User\Invest e B:\Bin para comandos 
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

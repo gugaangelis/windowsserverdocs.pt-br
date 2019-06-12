@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: ed2a1616-30c6-482a-9a02-4a5023621f58
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 1f79eece13f473e2dd7773a72e10e87612b9cc2f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0fe096bcf697e5131eeefc2fa72e61e0096e2f94
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861767"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446913"
 ---
 # <a name="step-7-test-directaccess-connectivity-from-the-internet"></a>ETAPA 7 testar a conectividade do DirectAccess da Internet
 
@@ -28,23 +28,23 @@ A implantação do DirectAccess senha única (OTP) foi testada da sub-rede da re
   
 ### <a name="to-test-otp-functionality-from-the-internet-on-client1"></a>Para testar a funcionalidade OTP da Internet em CLIENT1  
   
-1.  Em CLIENT1, certifique-se de que você efetuou logon como **User1**. Conecte CLIENT1 à sub-rede Corpnet.  
+1. Em CLIENT1, certifique-se de que você efetuou logon como **User1**. Conecte CLIENT1 à sub-rede Corpnet.  
   
-2.  No **inicie** tela, digite**powershell.exe**, clique com botão direito **powershell**, clique em **avançado**e, em seguida, clique em **executar como administrador**. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
+2. No **inicie** tela, digite**powershell.exe**, clique com botão direito **powershell**, clique em **avançado**e, em seguida, clique em **executar como administrador**. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
   
-3.  Na janela do Windows PowerShell, digite **gpupdate /force** e pressione ENTER.  
+3. Na janela do Windows PowerShell, digite **gpupdate /force** e pressione ENTER.  
   
-4.  Desconecte CLIENT1 da sub-rede da rede doméstica, conecte-se à Internet e reinicie o computador.  
+4. Desconecte CLIENT1 da sub-rede da rede doméstica, conecte-se à Internet e reinicie o computador.  
   
-5.  Em CLIENT1, abra o Internet Explorer e, na barra de endereços, digite **https://app1.corp.contoso.com/** e pressione ENTER. Pressione F5.  
+5. Em CLIENT1, abra o Internet Explorer e, na barra de endereços, digite **https://app1.corp.contoso.com/** e pressione ENTER. Pressione F5.  
   
-    Não deve abrir o site.  
+   Não deve abrir o site.  
   
-6.  Sobre o **inicie** tela, digite**RSA**e clique em **RSA SecurID Token**.  
+6. Sobre o **inicie** tela, digite**RSA**e clique em **RSA SecurID Token**.  
   
-7.  Aguarde até que o token RSA SecurID altera a senha de uso única e, em seguida, clique em **cópia**.  
+7. Aguarde até que o token RSA SecurID altera a senha de uso única e, em seguida, clique em **cópia**.  
   
-8.  Clique no ícone **Conexões de rede** na área de notificação para acessar o Gerenciador de Mídia do DA.  
+8. Clique no ícone **Conexões de rede** na área de notificação para acessar o Gerenciador de Mídia do DA.  
   
 9. Clique em **Conexão de área de trabalho**e clique em **continuar**.  
   
@@ -56,11 +56,11 @@ A implantação do DirectAccess senha única (OTP) foi testada da sub-rede da re
   
 13. Na barra de endereços do Internet Explorer, digite **https://app2.corp.contoso.com/** e pressione ENTER. Pressione F5. Você verá o site do IIS padrão no APP2.  
   
-14. Sobre o **inicie** tela, digite**\\\app1\files**, e pressione ENTER.  
+14. Sobre o **inicie** tela, digite<strong>\\\app1\files</strong>, e pressione ENTER.  
   
 15. No **arquivos** janela de pasta compartilhada, clique duas vezes o **example** arquivo. Você verá o conteúdo do arquivo example.  
   
-16. Sobre o **inicie** tela, digite**\\\app2\files**, e pressione ENTER.  
+16. Sobre o **inicie** tela, digite<strong>\\\app2\files</strong>, e pressione ENTER.  
   
 17. No **arquivos** janela de pasta compartilhada, clique duas vezes o **Document. txt de texto novo** arquivo. Você verá o conteúdo do arquivo Document. txt de texto novo.  
   

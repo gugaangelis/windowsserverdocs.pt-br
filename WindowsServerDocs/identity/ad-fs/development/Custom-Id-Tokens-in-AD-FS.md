@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.reviewer: anandy
 ms.technology: identity-adfs
-ms.openlocfilehash: c4f9a2880aa91b7a600cdb40238bead7d565e6bc
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: 04573aa13689a0e6744b01a0fbf8b11b622b2706
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976972"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445475"
 ---
 # <a name="customize-claims-to-be-emitted-in-idtoken-when-using-openid-connect-or-oauth-with-ad-fs-2016-or-later"></a>Personalizar declarações a ser emitido no id_token ao usar o OAuth ou OpenID Connect com o AD FS 2016 ou posterior
 
@@ -57,29 +57,29 @@ Siga as etapas abaixo para criar e configurar o aplicativo no AD FS para receber
 
 2. No Assistente de grupo do aplicativo, para o nome, digite **ADFSSSO** e em cliente-servidor de aplicativos, selecione o **aplicativo nativo acessando um aplicativo web** modelo. Clique em **Avançar**.
 
-  ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap1.png)
+   ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap1.png)
 
 3. Cópia de **identificador de cliente** valor.  Ele será usado posteriormente como o valor para ida: ClientId no arquivo de Web. config do aplicativo.
 
 4. Insira o seguinte para **URI de redirecionamento:**  -  **https://localhost:44320/** .  Clique em **Adicionar**. Clique em **Avançar**.
 
-  ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap2.png)
+   ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap2.png)
 
 5. Sobre o **configurar a API da Web** tela, insira o seguinte para **identificador** -  **https://contoso.com/WebApp** .  Clique em **Adicionar**. Clique em **Avançar**.  Esse valor será usado posteriormente para **ida: ResourceID** no arquivo de Web. config do aplicativo.
 
-  ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap3.png)
+   ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap3.png)
 
 6. Sobre o **escolher política de controle de acesso** tela, selecione **permitir todos** e clique em **próxima**.
 
-  ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap4.png)
+   ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap4.png)
 
 7. No **configurar permissões do aplicativo** tela, verifique se **openid** e **allatclaims** estão selecionadas e clique em **Avançar**.
 
-  ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap5.png)
+   ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap5.png)
 
 8. Sobre o **resumo** tela, clique em **próxima**.  
 
-  ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap6.png)
+   ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap6.png)
 
 9. Sobre o **Complete** tela, clique em **fechar**.
 
@@ -89,20 +89,20 @@ Siga as etapas abaixo para criar e configurar o aplicativo no AD FS para receber
 
 11. Na **ADFSSSO - propriedades da API Web** tela, selecione **regras de transformação de emissão** guia e clique em **Adicionar regra...**
 
-  ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap8.png)
+    ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap8.png)
 
 12. Na **Adicionar Assistente de regra de declaração de transformação** tela, selecione **enviar declarações usando uma regra personalizada** na lista suspensa e clique em **Avançar**
 
-  ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap9.png)
+    ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap9.png)
 
 13. Na **transformação de declaração assistente Adicionar regra** tela, insira **ForCustomIDToken** na **nome da regra de declaração** e a seguinte declaração de regra no **regra personalizada**. Clique em **concluir**
 
-  ```  
-  x:[]
-  => issue(claim=x);  
-  ```
+    ```  
+    x:[]
+    => issue(claim=x);  
+    ```
 
-  ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap10.png)
+    ![Remota](media/Custom-Id-Tokens-in-AD-FS/clientsnap10.png)
 
 ```
 

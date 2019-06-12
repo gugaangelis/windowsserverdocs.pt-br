@@ -9,12 +9,12 @@ ms.assetid: ''
 ms.author: pashort
 author: shortpatti
 ms.date: 08/08/2018
-ms.openlocfilehash: 58596387d79f3f212a472f00c2785bacc278e855
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: aab4ec7c69ec5b52eae926cd1065d777415b1124
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821907"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446214"
 ---
 # <a name="virtual-network-peering"></a>Emparelhamento de rede virtual
 
@@ -36,20 +36,20 @@ Os benefícios do uso do emparelhamento de rede virtual incluem:
 
 Emparelhamento de rede virtual tem alguns requisitos e restrições:
 
--   Redes virtuais emparelhadas devem:
+- Redes virtuais emparelhadas devem:
 
-    -   Ter espaços de endereço IP não sobrepostos
+  -   Ter espaços de endereço IP não sobrepostos
 
-    -   Ser gerenciado pelo mesmo controlador de rede
+  -   Ser gerenciado pelo mesmo controlador de rede
 
--   Depois que você emparelhar uma rede virtual com outra rede virtual, é possível adicionar ou excluir intervalos de endereços no espaço de endereço.
+- Depois que você emparelhar uma rede virtual com outra rede virtual, é possível adicionar ou excluir intervalos de endereços no espaço de endereço.
 
-   >[!TIP]
-   >Se você precisar adicionar intervalos de endereços:<ol><li>Remova o emparelhamento.</li><li>Adicione o espaço de endereço.</li><li>Adicione o emparelhamento.</li></ol>
+  >[!TIP]
+  >Se você precisar adicionar intervalos de endereços:<ol><li>Remova o emparelhamento.</li><li>Adicione o espaço de endereço.</li><li>Adicione o emparelhamento.</li></ol>
 
--   Como o emparelhamento de rede virtual é entre duas redes virtuais, não há nenhuma relação transitiva derivada entre emparelhamentos. Por exemplo, se você emparelhar virtualNetworkA com virtualNetworkB e virtualNetworkB com virtualNetworkC, em seguida, virtualNetworkA não obter emparelhada com virtualNetworkC.
+- Como o emparelhamento de rede virtual é entre duas redes virtuais, não há nenhuma relação transitiva derivada entre emparelhamentos. Por exemplo, se você emparelhar virtualNetworkA com virtualNetworkB e virtualNetworkB com virtualNetworkC, em seguida, virtualNetworkA não obter emparelhada com virtualNetworkC.
 
-    [imagem aqui]
+  [imagem aqui]
 
 ## <a name="connectivity"></a>Conectividade
 

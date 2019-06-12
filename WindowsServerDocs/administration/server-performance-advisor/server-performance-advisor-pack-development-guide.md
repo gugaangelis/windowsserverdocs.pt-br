@@ -5,12 +5,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c647e8a335aac924067d92dcb41ab4d17e0cceef
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c27dd0602c5993fd84e6956c2f50f6e2bfec8691
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884857"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435477"
 ---
 # <a name="server-performance-advisor-pack-development-guide"></a>Guia de desenvolvimento do Pacote do Server Performance Advisor
 
@@ -55,7 +55,7 @@ Um pacote de Supervisor inclui os seguintes elementos:
 
 ### <a name="advisor-pack-workflow"></a>Fluxo de trabalho de pacote de Supervisor
 
-![fluxo de trabalho de pacote de Supervisor](../media/server-performance-advisor/spa-dev-guide-workflow.png)
+![Fluxo de trabalho de pacote de Supervisor](../media/server-performance-advisor/spa-dev-guide-workflow.png)
 
 Este fluxograma, círculos verdes representam pacotes de Supervisor. Todos os outros círculos representam as fases que estão em execução no processo de estrutura do SPA. SPA usa um pacote de Supervisor para coletar dados, importar os dados para o banco de dados, inicializar o ambiente de execução e executar scripts SQL.
 
@@ -276,11 +276,12 @@ KeytypeId | smallint não NULL | Id de tipo interno
 Valor | Nvarchar(4000) NOT NULL | Todos os valores
 
 O **KeytypeID** coluna pode ter um dos seguintes tipos:
+
 ID | Tipo
 --- | ---
 1 | String
 2 | expandString
-3 | Binário
+3 | Binary
 4 | DWord
 5 | DWordBigEndian
 6 | Link
@@ -363,7 +364,7 @@ O **intervalo** atributo é uma configuração global necessária para todos os 
 
 No exemplo anterior, contador \\PhysicalDisk (\*)\\média Disco s/transferência será consultada por segundo.
 
-Pode haver duas instâncias: **\_Total** e **0 c: Unidade d:**, e a saída pode ser da seguinte maneira:
+Pode haver duas instâncias: **\_Total** e **0 c: Unidade d:** , e a saída pode ser da seguinte maneira:
 
 carimbo de hora | CategoryName | CounterName | Valor da instância do total | Valor da instância de c: 0 D:
 ---- | ---- | ---- | ---- | ----
@@ -449,7 +450,7 @@ Veja um exemplo de uma regra simples:
 
 ``` syntax
 <advisorPack>
-   
+
   <reportDefinition>
     <thresholds>
       <threshold  />
@@ -589,7 +590,7 @@ O seguinte grupo de valor único tem um atributo **seção**, e ele pode apontar
 
 Um grupo de valor único e uma lista de tabela de valor contêm diferentes tipos de dados, como string, int e float. Como esses valores são armazenados no banco de dados do SQL Server, você pode definir um tipo de dados SQL para cada propriedade de dados. No entanto, a definição de um tipo de dados SQL é bastante complicado. Você precisa especificar o comprimento ou precisão, que pode estar sujeito a alteração.
 
-Para definir tipos de dados lógicos, você pode usar o primeiro filho do  **&lt;reportDefinition /&gt;**, que é onde você pode definir um mapeamento de tipo de dados SQL e o tipo de lógico.
+Para definir tipos de dados lógicos, você pode usar o primeiro filho do  **&lt;reportDefinition /&gt;** , que é onde você pode definir um mapeamento de tipo de dados SQL e o tipo de lógico.
 
 O exemplo a seguir define dois tipos de dados. Uma é **cadeia de caracteres** e a outra é **companyCode**.
 
@@ -618,7 +619,7 @@ Um nome de tipo de dados pode ser qualquer cadeia de caracteres válida. Aqui es
 
 * decimal
 
-* flutuante
+* float
 
 * int
 
@@ -668,7 +669,7 @@ Um único valor deve ter um atributo de nome global exclusivo. Neste exemplo, é
 
 Embora você possa definir vários grupos de valor único, nenhum dois nomes de valor único podem ser o mesmo, mesmo se eles estão em grupos diferentes. O nome de valor único é usado pelo relatório de script SQL para definir o valor correspondente.
 
-Você pode definir um tipo de dados para cada valor único. A entrada permitida **tipo** é definida no  **&lt;datatype /&gt;**. O relatório final poderia ter esta aparência:
+Você pode definir um tipo de dados para cada valor único. A entrada permitida **tipo** é definida no  **&lt;datatype /&gt;** . O relatório final poderia ter esta aparência:
 
 **fatos**
 
@@ -941,7 +942,7 @@ DECLARE @freediskSize FLOat
 exec dbo.GetThreshold N freediskSize , @freediskSize output
 
 if (@freediskSizeInGB < @freediskSize)
- 
+
 ```
 
 ### <a name="set-or-remove-the-single-value"></a>Definir ou remover o único valor
@@ -1033,7 +1034,7 @@ INSERT INTO #NetworkAdapterInformation (
   MACaddress
 )
 VALUES (
-   
+
 )
 ```
 
@@ -1091,7 +1092,7 @@ O console do SPA pode ser executado em dois modos, depuração ou versão. Modo 
 
     **Observação** você também pode pressionar F11 para entrar na instrução anterior e a depuração.
 
-     
+
 
 Executando \[dbo\].\[ DebugReportScript\] retorna vários conjuntos de resultados, incluindo:
 
@@ -1109,9 +1110,9 @@ Executando \[dbo\].\[ DebugReportScript\] retorna vários conjuntos de resultado
 
 ### <a name="naming-convention-and-styles"></a>Estilos e a convenção de nomenclatura
 
-Pascal casing | Concatenação com maiusculas e minúsculas | letras maiusculas
---- | ---- | ---
-<ul><li>Nomes em Provisionmetadata</li><li>Procedimentos armazenados</li><li>Funções</li><li>Nomes de exibição</li><li>Nomes de tabelas temporárias</li></ul> | <ul><li>Nomes de parâmetro</li><li>Variáveis locais</li></ul> | Use para todas as palavras-chave SQL reservada
+|                                                                 Pascal casing                                                                 |                       Concatenação com maiusculas e minúsculas                        |             letras maiusculas             |
+|-----------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------------|
+| <ul><li>Nomes em Provisionmetadata</li><li>Procedimentos armazenados</li><li>Funções</li><li>Nomes de exibição</li><li>Nomes de tabelas temporárias</li></ul> | <ul><li>Nomes de parâmetro</li><li>Variáveis locais</li></ul> | Use para todas as palavras-chave SQL reservada |
 
 ### <a name="other-recommendations"></a>Outras recomendações
 
@@ -1143,13 +1144,13 @@ O exemplo a seguir mostra o fluxo de trabalho para executar dois pacotes de Supe
 
 O conjunto de Coletores de dados de mesclagem é somente para coletar o contador de desempenho e fontes de dados ETW. As seguintes regras de mesclagem se aplicam:
 
-1.  SPA usa a maior duração como a nova duração.
+1. SPA usa a maior duração como a nova duração.
 
-2.  Onde há conflitos de mesclagem, as seguintes regras são seguidas:
+2. Onde há conflitos de mesclagem, as seguintes regras são seguidas:
 
-    1.  Veja o intervalo mínimo de como o novo intervalo.
+   1. Veja o intervalo mínimo de como o novo intervalo.
 
-    2.  Usar o conjunto de super dos contadores de desempenho. Por exemplo, com **processo (\*)\\% tempo do processador** e **processo (\*)\\\*,\\processo (\*)\\ \***  retorna mais dados, portanto **processo (\*)\\% tempo do processador** e **processo (\*)\\ \***  é removido do conjunto de Coletores de dados mesclados.
+   2. Usar o conjunto de super dos contadores de desempenho. Por exemplo, com **processo (\*)\\% tempo do processador** e **processo (\*)\\\*,\\processo (\*)\\ \\** * retorna mais dados, portanto **processo (\*)\\% tempo do processador** e **processo (\*)\\ \\** * é removido do conjunto de Coletores de dados mesclados.
 
 ### <a name="collect-dynamic-data"></a>Coletar dados dinâmicos
 
@@ -1169,7 +1170,7 @@ Retorna uma lista de objetos de adaptador de rede. Cada objeto tem uma proprieda
 ROOT\*ISatAP\0001
 PCI\VEN_8086&DEV_4238&SUBSYS_11118086&REV_35\4&372A6B86&0&00E4
 ROOT\*IPHTTPS\0000
- 
+
 ```
 
 Para localizar o **FriendlyName** valor, abra o editor do registro e navegue até configuração do registro combinando **HKEY\_LOCAL\_máquina\\sistema\\ CurrentControlSet\\Enum\\**  com cada linha no exemplo anterior. , por exemplo: **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Enum\\ ROOT\\\*IPHTTPS\\0000**.
@@ -1188,7 +1189,7 @@ Para converter as etapas anteriores em metadados de provisão do SPA, adicione o
 </managementpaths>
 ```
 
-Neste exemplo, você primeiro adicionar uma consulta WMI em managementpaths e definir o nome da chave **adaptador de rede**. Em seguida, adicione uma chave do registro e consultem **adaptador de rede** usando a sintaxe **$(NetworkAdapter.PNPDeviceID)**.
+Neste exemplo, você primeiro adicionar uma consulta WMI em managementpaths e definir o nome da chave **adaptador de rede**. Em seguida, adicione uma chave do registro e consultem **adaptador de rede** usando a sintaxe **$(NetworkAdapter.PNPDeviceID)** .
 
 A tabela a seguir define se um coletor de dados em SPA oferece suporte a dados dinâmicos e se ele pode ser referenciado por outros coletores de dados:
 
@@ -1216,7 +1217,7 @@ E um exemplo para o WMI:
 <path name="wmi">Root\Cimv2:select PNPDeviceID FROM Win32_NetworkAdapter</path>
 ```
 
-Para definir um coletor de dados dependentes, a sintaxe a seguir é usada: $(*{name}*.*{atributo}*).
+Para definir um coletor de dados dependentes, a sintaxe a seguir é usada: $( *{name}* . *{atributo}* ).
 
 *{name}*  e *{atributo}* são espaços reservados.
 

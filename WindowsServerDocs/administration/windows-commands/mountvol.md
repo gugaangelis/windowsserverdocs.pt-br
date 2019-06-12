@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e31a167d98203b684917aceee2603a29dd478a3e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 03e7cefc7c7a00338972fc365b7c25d9c795c83e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846317"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437285"
 ---
 # <a name="mountvol"></a>mountvol
 
@@ -42,18 +42,18 @@ mountvol <Drive>: /s
 
 ## <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|[\<Drive>:]<Path>|Especifica a pasta NTFS existente em que o ponto de montagem residirá.|
-|\<VolumeName>|Especifica o nome do volume que é o destino do ponto de montagem. O nome do volume usa a sintaxe a seguir, onde *GUID* é um identificador globalmente exclusivo:</br>`\\\\?\Volume\{GUID}\`</br>O {} colchetes são necessários.|
-|/d|Remove o ponto de montagem do volume da pasta especificada.|
-|/l|Lista o nome do volume montado para a pasta especificada.|
-|/p|Remove o ponto de montagem de volume do diretório especificado, desmonta o volume básico e coloca o volume básico off-line, tornando-o não montado. Se outros processos estão usando o volume **mountvol** fecha os identificadores abertos antes de desmontar o volume.|
-|/r|Remove os diretórios de ponto de montagem de volume e configurações do registro para volumes que não estão mais no sistema, impedindo que sejam montados automaticamente e recebam seu antigo montagem de volume (s) quando adicionado de volta ao sistema.|
-|/n|Desabilita a montagem automática de novos volumes básicos. Novos volumes não são montados automaticamente quando adicionados ao sistema.|
-|/e|Habilita novamente a montagem automática de novos volumes básicos.|
-|/s|Monta a partição do sistema EFI na unidade especificada. Disponível em apenas a computadores baseados em Itanium.|
-|/?|Exibe a ajuda no prompt de comando.|
+|     Parâmetro     |                                                                                                                           Descrição                                                                                                                            |
+|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [\<Drive>:]<Path> |                                                                                             Especifica a pasta NTFS existente em que o ponto de montagem residirá.                                                                                             |
+|   \<VolumeName>   |                     Especifica o nome do volume que é o destino do ponto de montagem. O nome do volume usa a sintaxe a seguir, onde *GUID* é um identificador globalmente exclusivo:</br>`\\\\?\Volume\{GUID}\`</br>O {} colchetes são necessários.                      |
+|        /d         |                                                                                                    Remove o ponto de montagem do volume da pasta especificada.                                                                                                     |
+|        /l         |                                                                                                     Lista o nome do volume montado para a pasta especificada.                                                                                                      |
+|        /p         | Remove o ponto de montagem de volume do diretório especificado, desmonta o volume básico e coloca o volume básico off-line, tornando-o não montado. Se outros processos estão usando o volume **mountvol** fecha os identificadores abertos antes de desmontar o volume. |
+|        /r         |             Remove os diretórios de ponto de montagem de volume e configurações do registro para volumes que não estão mais no sistema, impedindo que sejam montados automaticamente e recebam seu antigo montagem de volume (s) quando adicionado de volta ao sistema.              |
+|        /n         |                                                                      Desabilita a montagem automática de novos volumes básicos. Novos volumes não são montados automaticamente quando adicionados ao sistema.                                                                       |
+|        /e         |                                                                                                       Habilita novamente a montagem automática de novos volumes básicos.                                                                                                        |
+|        /s         |                                                                                Monta a partição do sistema EFI na unidade especificada. Disponível em apenas a computadores baseados em Itanium.                                                                                |
+|        /?         |                                                                                                               Exibe a ajuda no prompt de comando.                                                                                                               |
 
 ## <a name="remarks"></a>Comentários
 
@@ -70,4 +70,4 @@ mountvol \sysmount \\?\Volume\{2eca078d-5cbc-43d3-aff8-7e8511f60d0e}\
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

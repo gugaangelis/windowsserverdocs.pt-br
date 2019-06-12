@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 18ba3517f6533a85fe7cb24f24a7f4ffdfad6991
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 526acaadc257d5e8b1dea342756cdeeec240c1dd
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222979"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435460"
 ---
 # <a name="install-or-uninstall-roles-role-services-or-features"></a>Instalar ou desinstalar funções, serviços de função ou recursos
 
@@ -100,53 +100,53 @@ Os cmdlets de implantação do Gerenciador do servidor para a função do Window
   
 #### <a name="to-install-roles-and-features-by-using-the-install-windowsfeature-cmdlet"></a>Para instalar funções e recursos usando o cmdlet Install-WindowsFeature  
   
-1.  Execute uma das ações a seguir para abrir uma sessão do Windows PowerShell com direitos de usuário elevados.  
+1. Execute uma das ações a seguir para abrir uma sessão do Windows PowerShell com direitos de usuário elevados.  
   
-    > [!NOTE]  
-    > Se você estiver instalando funções e recursos em um servidor remoto, você precisa executar o Windows PowerShell com direitos de usuário elevados.  
+   > [!NOTE]  
+   > Se você estiver instalando funções e recursos em um servidor remoto, você precisa executar o Windows PowerShell com direitos de usuário elevados.  
   
-    -   Na área de trabalho do Windows, clique com o botão direito do mouse no **Windows PowerShell** na barra de tarefas e clique em **Executar como Administrador**.  
+   -   Na área de trabalho do Windows, clique com o botão direito do mouse no **Windows PowerShell** na barra de tarefas e clique em **Executar como Administrador**.  
   
-    -   Sobre o Windows **inicie** tela, clique com botão direito no bloco para o Windows PowerShell e, em seguida, na barra de aplicativos, clique em **executar como administrador**.  
+   -   Sobre o Windows **inicie** tela, clique com botão direito no bloco para o Windows PowerShell e, em seguida, na barra de aplicativos, clique em **executar como administrador**.  
   
-2.  Digite **Get-WindowsFeature** e pressione **Enter** para exibir uma lista de funções e recursos disponíveis e instalados no servidor local. Se o computador local não é um servidor, ou se desejar obter informações sobre um servidor remoto, execute **Get-WindowsFeature - computerName <***computer_name***>** , em que  *nome_do_computador* representa o nome de um computador remoto que esteja executando o Windows Server 2016. Os resultados do cmdlet contêm os nomes de comando das funções e recursos que você adiciona ao cmdlet na etapa 4.  
+2. Digite **Get-WindowsFeature** e pressione **Enter** para exibir uma lista de funções e recursos disponíveis e instalados no servidor local. Se o computador local não é um servidor, ou se desejar obter informações sobre um servidor remoto, execute **Get-WindowsFeature - computerName <** <em>computer_name</em> **>** , no qual *nome_do_computador* representa o nome de um computador remoto que esteja executando o Windows Server 2016. Os resultados do cmdlet contêm os nomes de comando das funções e recursos que você adiciona ao cmdlet na etapa 4.  
   
-    > [!NOTE]  
-    > No Windows PowerShell 3.0 e versões posteriores do Windows PowerShell, não é necessário para importar o módulo de cmdlet do Gerenciador do servidor para a sessão do Windows PowerShell antes de executar os cmdlets que fazem parte do módulo. Um módulo é importado automaticamente durante a primeira execução de um cmdlet que faça parte do módulo. Além disso, nem cmdlets do Windows PowerShell, nem os nomes de recurso usados com os cmdlets diferenciam maiusculas de minúsculas.  
+   > [!NOTE]  
+   > No Windows PowerShell 3.0 e versões posteriores do Windows PowerShell, não é necessário para importar o módulo de cmdlet do Gerenciador do servidor para a sessão do Windows PowerShell antes de executar os cmdlets que fazem parte do módulo. Um módulo é importado automaticamente durante a primeira execução de um cmdlet que faça parte do módulo. Além disso, nem cmdlets do Windows PowerShell, nem os nomes de recurso usados com os cmdlets diferenciam maiusculas de minúsculas.  
   
-3.  tipo de **Get-help Install-WindowsFeature**, em seguida, pressione **Enter** para exibir a sintaxe e os parâmetros aceitos para o `Install-WindowsFeature` cmdlet.  
+3. tipo de **Get-help Install-WindowsFeature**, em seguida, pressione **Enter** para exibir a sintaxe e os parâmetros aceitos para o `Install-WindowsFeature` cmdlet.  
   
-4.  Digite o seguinte e, em seguida, pressione **Enter**, onde *nome_do_recurso* representa o nome do comando de uma função ou recurso que você deseja instalar (obtido na etapa 2), e *nome_do_computador* representa um computador remoto no qual você deseja instalar funções e recursos. Separe vários valores para *nome_do_recurso* usando vírgulas. O parâmetro `Restart` reiniciará o servidor de destino automaticamente se for exigido pela instalação da função ou do recurso.  
+4. Digite o seguinte e, em seguida, pressione **Enter**, onde *nome_do_recurso* representa o nome do comando de uma função ou recurso que você deseja instalar (obtido na etapa 2), e *nome_do_computador* representa um computador remoto no qual você deseja instalar funções e recursos. Separe vários valores para *nome_do_recurso* usando vírgulas. O parâmetro `Restart` reiniciará o servidor de destino automaticamente se for exigido pela instalação da função ou do recurso.  
   
-    ```  
-    Install-WindowsFeature -Name <feature_name> -computerName <computer_name> -Restart  
-    ```  
+   ```  
+   Install-WindowsFeature -Name <feature_name> -computerName <computer_name> -Restart  
+   ```  
   
-    Para instalar funções e recursos em um VHD offline, adicione os dois parâmetros `computerName` e `VHD` . Se você não adicionar o parâmetro `computerName`, o cmdlet vai considerar que o computador local está montado para acessar o VHD. O parâmetro `computerName` contém o nome do servidor em que será montado o VHD, e o parâmetro `VHD` contém o caminho para o arquivo VHD no servidor especificado.  
+   Para instalar funções e recursos em um VHD offline, adicione os dois parâmetros `computerName` e `VHD` . Se você não adicionar o parâmetro `computerName`, o cmdlet vai considerar que o computador local está montado para acessar o VHD. O parâmetro `computerName` contém o nome do servidor em que será montado o VHD, e o parâmetro `VHD` contém o caminho para o arquivo VHD no servidor especificado.  
   
-    > [!NOTE]  
-    > Você deve adicionar o `computerName` parâmetro se você estiver executando o cmdlet em um computador que está executando um sistema operacional cliente do Windows.  
-    >   
-    > Para instalar funções e recursos em VHDs offline, os VHDs de destino devem atender aos requisitos a seguir.  
-    >   
-    > -   VHDs devem estar executando a versão do Windows Server que corresponde à versão do Gerenciador do servidor estiver executando. Consulte a observação no início da [instalar funções, serviços de função e recursos usando o Assistente de recursos e adicionar funções](#install-roles-role-services-and-features-by-using-the-add-roles-and-features-wizard).  
-    > -   Os VHDs não podem ter mais de um volume ou partição do sistema.  
-    > -   A pasta compartilhada de rede na qual o arquivo VHD é armazenado deve conceder os seguintes direitos de acesso à conta do computador (ou sistema local) do servidor selecionado para montagem do VHD. O acesso à conta somente do usuário não é suficiente. O compartilhamento pode fornecer permissões de **Leitura** e **Gravação** ao grupo **Todos** para conceder acesso ao VHD. Porém, por motivos de segurança, isso não é recomendado.  
-    >   
-    >     -   Acesso de **leitura/gravação** na caixa de diálogo **Compartilhamento de Arquivos**.  
-    >     -   **Controle total** acessar na **Security** guia, arquivo ou pasta **propriedades** caixa de diálogo.  
+   > [!NOTE]  
+   > Você deve adicionar o `computerName` parâmetro se você estiver executando o cmdlet em um computador que está executando um sistema operacional cliente do Windows.  
+   >   
+   > Para instalar funções e recursos em VHDs offline, os VHDs de destino devem atender aos requisitos a seguir.  
+   >   
+   > -   VHDs devem estar executando a versão do Windows Server que corresponde à versão do Gerenciador do servidor estiver executando. Consulte a observação no início da [instalar funções, serviços de função e recursos usando o Assistente de recursos e adicionar funções](#install-roles-role-services-and-features-by-using-the-add-roles-and-features-wizard).  
+   > -   Os VHDs não podem ter mais de um volume ou partição do sistema.  
+   > -   A pasta compartilhada de rede na qual o arquivo VHD é armazenado deve conceder os seguintes direitos de acesso à conta do computador (ou sistema local) do servidor selecionado para montagem do VHD. O acesso à conta somente do usuário não é suficiente. O compartilhamento pode fornecer permissões de **Leitura** e **Gravação** ao grupo **Todos** para conceder acesso ao VHD. Porém, por motivos de segurança, isso não é recomendado.  
+   >   
+   >     -   Acesso de **leitura/gravação** na caixa de diálogo **Compartilhamento de Arquivos**.  
+   >     -   **Controle total** acessar na **Security** guia, arquivo ou pasta **propriedades** caixa de diálogo.  
   
-    ```  
-    Install-WindowsFeature -Name <feature_name> -VHD <path> -computerName <computer_name> -Restart  
-    ```  
+   ```  
+   Install-WindowsFeature -Name <feature_name> -VHD <path> -computerName <computer_name> -Restart  
+   ```  
   
-    **Exemplo:** O seguinte cmdlet instala a função Serviços de domínio active directory e o recurso Gerenciamento de diretiva de grupo em um servidor remoto, ContosoDC1. As ferramentas de gerenciamento e os snap-ins são adicionados usando o parâmetro `IncludeManagementTools`, e o servidor de destino é reiniciado automaticamente quando a instalação exige a reinicialização dos servidores.  
+   **Exemplo:** O seguinte cmdlet instala a função Serviços de domínio active directory e o recurso Gerenciamento de diretiva de grupo em um servidor remoto, ContosoDC1. As ferramentas de gerenciamento e os snap-ins são adicionados usando o parâmetro `IncludeManagementTools`, e o servidor de destino é reiniciado automaticamente quando a instalação exige a reinicialização dos servidores.  
   
-    ```  
-    Install-WindowsFeature -Name AD-Domain-Services,GPMC -computerName ContosoDC1 -IncludeManagementTools -Restart  
-    ```  
+   ```  
+   Install-WindowsFeature -Name AD-Domain-Services,GPMC -computerName ContosoDC1 -IncludeManagementTools -Restart  
+   ```  
   
-5.  Quando a instalação for concluída, verifique a instalação abrindo a **todos os servidores** página no Gerenciador do servidor, selecionando um servidor no qual você instalou as funções e recursos e exibindo o **funções e recursos** lado a lado na página para o servidor selecionado. Você também pode executar o `Get-WindowsFeature` cmdlet do direcionado ao servidor selecionado (Get-WindowsFeature - computerName <*computer_name*>) para exibir uma lista de funções e recursos que estão instalados no servidor.  
+5. Quando a instalação for concluída, verifique a instalação abrindo a **todos os servidores** página no Gerenciador do servidor, selecionando um servidor no qual você instalou as funções e recursos e exibindo o **funções e recursos** lado a lado na página para o servidor selecionado. Você também pode executar o `Get-WindowsFeature` cmdlet do direcionado ao servidor selecionado (Get-WindowsFeature - computerName <*computer_name*>) para exibir uma lista de funções e recursos que estão instalados no servidor.  
   
 ## <a name="remove-roles-role-services-and-features-by-using-the-remove-roles-and-features-wizard"></a>remover funções, serviços de função e recursos usando o remover Assistente de funções e recursos  
 Você deve fazer logon em um servidor como administrador para desinstalar funções, serviços de função e recursos. Caso esteja conectado ao computador remoto com uma conta sem direitos de administrador no servidor de destino de desinstalação, clique com o botão direito no servidor de destino, no bloco **Servidores** , e clique em **Gerenciar como** para fornecer uma conta com direitos de administrador. O servidor no qual você deseja montar o VHD offline deve ser adicionado ao Gerenciador do Servidor, e você deve ter direitos de Administrador nesse servidor.  
@@ -191,49 +191,49 @@ Os cmdlets de implantação do Gerenciador do servidor para a função do Window
   
 #### <a name="to-remove-roles-and-features-by-using-the-uninstall-windowsfeature-cmdlet"></a>Para remover funções e recursos usando o cmdlet Uninstall-WindowsFeature  
   
-1.  Execute uma das ações a seguir para abrir uma sessão do Windows PowerShell com direitos de usuário elevados.  
+1. Execute uma das ações a seguir para abrir uma sessão do Windows PowerShell com direitos de usuário elevados.  
   
-    > [!NOTE]  
-    > Se você estiver desinstalando funções e recursos de um servidor remoto, você precisa executar o Windows PowerShell com direitos de usuário elevados.  
+   > [!NOTE]  
+   > Se você estiver desinstalando funções e recursos de um servidor remoto, você precisa executar o Windows PowerShell com direitos de usuário elevados.  
   
-    -   Na área de trabalho do Windows, clique com o botão direito do mouse no **Windows PowerShell** na barra de tarefas e clique em **Executar como Administrador**.  
+   -   Na área de trabalho do Windows, clique com o botão direito do mouse no **Windows PowerShell** na barra de tarefas e clique em **Executar como Administrador**.  
   
-    -   Sobre o Windows **inicie** tela, clique com botão direito no bloco do Windows PowerShell e, em seguida, na barra de aplicativos, clique em **executar como administrador**.  
+   -   Sobre o Windows **inicie** tela, clique com botão direito no bloco do Windows PowerShell e, em seguida, na barra de aplicativos, clique em **executar como administrador**.  
   
-2.  Digite **Get-WindowsFeature** e pressione **Enter** para exibir uma lista de funções e recursos disponíveis e instalados no servidor local. Se o computador local não é um servidor, ou se desejar obter informações sobre um servidor remoto, execute **Get-WindowsFeature - computerName <***computer_name***>** , em que  *nome_do_computador* representa o nome de um computador remoto que esteja executando o Windows Server 2016. Os resultados do cmdlet contêm os nomes de comando das funções e recursos que você adiciona ao cmdlet na etapa 4.  
+2. Digite **Get-WindowsFeature** e pressione **Enter** para exibir uma lista de funções e recursos disponíveis e instalados no servidor local. Se o computador local não é um servidor, ou se desejar obter informações sobre um servidor remoto, execute **Get-WindowsFeature - computerName <** <em>computer_name</em> **>** , no qual *nome_do_computador* representa o nome de um computador remoto que esteja executando o Windows Server 2016. Os resultados do cmdlet contêm os nomes de comando das funções e recursos que você adiciona ao cmdlet na etapa 4.  
   
-    > [!NOTE]  
-    > No Windows PowerShell 3.0 e versões posteriores do Windows PowerShell, não é necessário para importar o módulo de cmdlet do Gerenciador do servidor para a sessão do Windows PowerShell antes de executar os cmdlets que fazem parte do módulo. Um módulo é importado automaticamente durante a primeira execução de um cmdlet que faça parte do módulo. Além disso, nem cmdlets do Windows PowerShell, nem os nomes de recurso usados com os cmdlets diferenciam maiusculas de minúsculas.  
+   > [!NOTE]  
+   > No Windows PowerShell 3.0 e versões posteriores do Windows PowerShell, não é necessário para importar o módulo de cmdlet do Gerenciador do servidor para a sessão do Windows PowerShell antes de executar os cmdlets que fazem parte do módulo. Um módulo é importado automaticamente durante a primeira execução de um cmdlet que faça parte do módulo. Além disso, nem cmdlets do Windows PowerShell, nem os nomes de recurso usados com os cmdlets diferenciam maiusculas de minúsculas.  
   
-3.  tipo de **Get-help Uninstall-WindowsFeature**, em seguida, pressione **Enter** para exibir a sintaxe e os parâmetros aceitos para o `Uninstall-WindowsFeature` cmdlet.  
+3. tipo de **Get-help Uninstall-WindowsFeature**, em seguida, pressione **Enter** para exibir a sintaxe e os parâmetros aceitos para o `Uninstall-WindowsFeature` cmdlet.  
   
-4.  Digite o seguinte e pressione **Enter**, em que *nome_do_recurso* representa o nome do comando de uma função ou recurso que deseja remover (obtido na etapa 2) e *nome_do_computador* representa o computador remoto do qual as funções e os recursos serão removidos. Separe vários valores para *nome_do_recurso* usando vírgulas. O parâmetro `Restart` reiniciará os servidores de destino automaticamente se for exigido pela remoção da função ou do recurso.  
+4. Digite o seguinte e pressione **Enter**, em que *nome_do_recurso* representa o nome do comando de uma função ou recurso que deseja remover (obtido na etapa 2) e *nome_do_computador* representa o computador remoto do qual as funções e os recursos serão removidos. Separe vários valores para *nome_do_recurso* usando vírgulas. O parâmetro `Restart` reiniciará os servidores de destino automaticamente se for exigido pela remoção da função ou do recurso.  
   
-    ```  
-    Uninstall-WindowsFeature -Name <feature_name> -computerName <computer_name> -Restart  
-    ```  
+   ```  
+   Uninstall-WindowsFeature -Name <feature_name> -computerName <computer_name> -Restart  
+   ```  
   
-    Para remover funções e recursos de um VHD offline, adicione os dois parâmetros `computerName` e `VHD`. Se você não adicionar o parâmetro `computerName`, o cmdlet vai considerar que o computador local está montado para acessar o VHD. O parâmetro `computerName` contém o nome do servidor em que será montado o VHD, e o parâmetro `VHD` contém o caminho para o arquivo VHD no servidor especificado.  
+   Para remover funções e recursos de um VHD offline, adicione os dois parâmetros `computerName` e `VHD`. Se você não adicionar o parâmetro `computerName`, o cmdlet vai considerar que o computador local está montado para acessar o VHD. O parâmetro `computerName` contém o nome do servidor em que será montado o VHD, e o parâmetro `VHD` contém o caminho para o arquivo VHD no servidor especificado.  
   
-    > [!NOTE]  
-    > Você deve adicionar o `computerName` parâmetro se você estiver executando o cmdlet em um computador que está executando um sistema operacional cliente do Windows.  
-    >   
-    > A pasta compartilhada de rede na qual o arquivo VHD é armazenado deve conceder os seguintes direitos de acesso à conta do computador (ou sistema local) do servidor selecionado para montagem do VHD. O acesso à conta somente do usuário não é suficiente. O compartilhamento pode fornecer permissões de **Leitura** e **Gravação** ao grupo **Todos** para conceder acesso ao VHD. Porém, por motivos de segurança, isso não é recomendado.  
-    >   
-    > -   Acesso de **leitura/gravação** na caixa de diálogo **Compartilhamento de Arquivos**.  
-    > -   **Controle total** acessar na **Security** guia, arquivo ou pasta **propriedades** caixa de diálogo.  
+   > [!NOTE]  
+   > Você deve adicionar o `computerName` parâmetro se você estiver executando o cmdlet em um computador que está executando um sistema operacional cliente do Windows.  
+   >   
+   > A pasta compartilhada de rede na qual o arquivo VHD é armazenado deve conceder os seguintes direitos de acesso à conta do computador (ou sistema local) do servidor selecionado para montagem do VHD. O acesso à conta somente do usuário não é suficiente. O compartilhamento pode fornecer permissões de **Leitura** e **Gravação** ao grupo **Todos** para conceder acesso ao VHD. Porém, por motivos de segurança, isso não é recomendado.  
+   >   
+   > -   Acesso de **leitura/gravação** na caixa de diálogo **Compartilhamento de Arquivos**.  
+   > -   **Controle total** acessar na **Security** guia, arquivo ou pasta **propriedades** caixa de diálogo.  
   
-    ```  
-    Uninstall-WindowsFeature -Name <feature_name> -VHD <path> -computerName <computer_name> -Restart  
-    ```  
+   ```  
+   Uninstall-WindowsFeature -Name <feature_name> -VHD <path> -computerName <computer_name> -Restart  
+   ```  
   
-    **Exemplo:** O cmdlet a seguir remove a função Serviços de domínio active directory e o recurso Gerenciamento de diretiva de grupo de um servidor remoto, ContosoDC1. As ferramentas de gerenciamento e os snap-ins também são removidos, e o servidor de destino é reiniciado automaticamente quando a remoção exige a reinicialização dos servidores.  
+   **Exemplo:** O cmdlet a seguir remove a função Serviços de domínio active directory e o recurso Gerenciamento de diretiva de grupo de um servidor remoto, ContosoDC1. As ferramentas de gerenciamento e os snap-ins também são removidos, e o servidor de destino é reiniciado automaticamente quando a remoção exige a reinicialização dos servidores.  
   
-    ```  
-    Uninstall-WindowsFeature -Name AD-Domain-Services,GPMC -computerName ContosoDC1 -IncludeManagementTools -Restart  
-    ```  
+   ```  
+   Uninstall-WindowsFeature -Name AD-Domain-Services,GPMC -computerName ContosoDC1 -IncludeManagementTools -Restart  
+   ```  
   
-5.  Concluída a remoção, verifique se que as funções e recursos foram removidos abrindo a **todos os servidores** página no Gerenciador do servidor, selecionando o servidor do qual você removeu as funções e recursos e exibindo o **funções e Recursos** lado a lado na página para o servidor selecionado. Você também pode executar o `Get-WindowsFeature` cmdlet do direcionado ao servidor selecionado (Get-WindowsFeature - computerName <*computer_name*>) para exibir uma lista de funções e recursos que estão instalados no servidor.  
+5. Concluída a remoção, verifique se que as funções e recursos foram removidos abrindo a **todos os servidores** página no Gerenciador do servidor, selecionando o servidor do qual você removeu as funções e recursos e exibindo o **funções e Recursos** lado a lado na página para o servidor selecionado. Você também pode executar o `Get-WindowsFeature` cmdlet do direcionado ao servidor selecionado (Get-WindowsFeature - computerName <*computer_name*>) para exibir uma lista de funções e recursos que estão instalados no servidor.  
   
 ## <a name="install-roles-and-features-on-multiple-servers-by-running-a-windows-powershell-script"></a>Instalar funções e recursos em vários servidores executando um script do Windows PowerShell  
 Embora você não pode usar o Assistente de recursos e adicionar funções para instalar funções, serviços de função e recursos em mais de um servidor de destino em uma única sessão de assistente, você pode usar um script do Windows PowerShell para instalar funções, serviços de função e recursos em múltiplos de destino servidores que você está gerenciando usando o Gerenciador do servidor. O script utilizado para realizar implantação em lote, como esse processo é chamado, aponta para um arquivo de configuração XML que você pode criar facilmente usando o Assistente de recursos e adicionar funções e, em seguida, clicando em **exportar definições de configuração** depois aprimorando o Assistente para o **confirmar seleções de instalação** página do Assistente de recursos e adicionar funções.  
@@ -337,25 +337,25 @@ começando com o Windows Server 2012 e Windows 8, os arquivos de recursos do .NE
   
 ### <a name="to-install-net-framework-35-by-using-the-add-roles-and-features-wizard"></a>Para instalar o .NET Framework 3.5 usando o Assistente de recursos e adicionar funções  
   
-1.  Sobre o **Manage** menu no Gerenciador do servidor, clique em **adicionar funções e recursos**.  
+1. Sobre o **Manage** menu no Gerenciador do servidor, clique em **adicionar funções e recursos**.  
   
-2.  Selecione um servidor de destino que está executando o Windows Server 2016.  
+2. Selecione um servidor de destino que está executando o Windows Server 2016.  
   
-3.  Sobre o **selecionar recursos** página de adicionar funções e recursos do assistente, selecione **.NET Framework 3.5**.  
+3. Sobre o **selecionar recursos** página de adicionar funções e recursos do assistente, selecione **.NET Framework 3.5**.  
   
-4.  Se o computador local tiver permissão para fazer isso usando as configurações de Política de Grupo, o processo de instalação tentará obter os arquivos de recursos ausentes através do Windows Update. Clique em **Instalar**; não é preciso avançar para a próxima etapa.  
+4. Se o computador local tiver permissão para fazer isso usando as configurações de Política de Grupo, o processo de instalação tentará obter os arquivos de recursos ausentes através do Windows Update. Clique em **Instalar**; não é preciso avançar para a próxima etapa.  
   
-    Se as configurações de diretiva de grupo não derem permissão para isso, ou você deseja usar outra fonte para os arquivos de recursos do .NET Framework 3.5 na **confirmar seleções de instalação** página do assistente, clique em **especificar um caminho de origem alternativo** .  
+   Se as configurações de diretiva de grupo não derem permissão para isso, ou você deseja usar outra fonte para os arquivos de recursos do .NET Framework 3.5 na **confirmar seleções de instalação** página do assistente, clique em **especificar um caminho de origem alternativo** .  
   
-5.  Indique o caminho para o repositório lado a lado (chamado de **SxS**) na mídia de instalação ou para um arquivo WIM. No seguinte exemplo, a mídia de instalação está localizada na unidade D.  
+5. Indique o caminho para o repositório lado a lado (chamado de **SxS**) na mídia de instalação ou para um arquivo WIM. No seguinte exemplo, a mídia de instalação está localizada na unidade D.  
   
-    **D:\Sources\SxS\\**  
+   **D:\Sources\SxS\\**  
   
-    Para especificar um arquivo WIM, adicione o prefixo **WIM:** e acrescente o índice da imagem para usar no arquivo WIM como um sufixo, conforme mostrado no exemplo a seguir.  
+   Para especificar um arquivo WIM, adicione o prefixo **WIM:** e acrescente o índice da imagem para usar no arquivo WIM como um sufixo, conforme mostrado no exemplo a seguir.  
   
-    **WIM:\\\\***server_name***\share\install.wim:3**  
+   **WIM:\\\\** <em>server_name</em> **\share\install.wim:3**  
   
-6.  Clique em **OK**e em **Instalar**.  
+6. Clique em **OK**e em **Instalar**.  
   
 ### <a name="to-install-net-framework-35-by-using-dism"></a>Para instalar o .NET Framework 3.5 usando o DISM  
   
@@ -395,23 +395,23 @@ A configuração de Política de Grupo descrita nesta seção especifica os loca
   
 ##### <a name="to-configure-a-default-alternate-source-path-in-group-policy"></a>Para configurar um caminho de origem alternativo padrão na Política de Grupo  
   
-1.  No editor de diretiva de Grupo Local ou o Console de gerenciamento de diretiva de grupo, abra a seguinte configuração de política.  
+1. No editor de diretiva de Grupo Local ou o Console de gerenciamento de diretiva de grupo, abra a seguinte configuração de política.  
   
-    **configuração do computador\Modelos administrativos\sistema\especificar configurações para instalação de componentes opcionais e reparo de componentes**  
+   **configuração do computador\Modelos administrativos\sistema\especificar configurações para instalação de componentes opcionais e reparo de componentes**  
   
 2. Sselect **Enabled** para habilitar a configuração de política, se já não estiver habilitado.  
   
-3.  Na caixa de texto **Caminho de arquivo de origem alternativo** da área **Opções**, especifique o caminho totalmente qualificado para uma pasta compartilhada ou um arquivo WIM. Para especificar um arquivo WIM como um local de arquivo de origem alternativo, adicione o prefixo **WIM:** ao caminho e acrescente o índice da imagem para usar no arquivo WIM como um sufixo. Veja a seguir exemplos de valores que você pode especificar.  
+3. Na caixa de texto **Caminho de arquivo de origem alternativo** da área **Opções**, especifique o caminho totalmente qualificado para uma pasta compartilhada ou um arquivo WIM. Para especificar um arquivo WIM como um local de arquivo de origem alternativo, adicione o prefixo **WIM:** ao caminho e acrescente o índice da imagem para usar no arquivo WIM como um sufixo. Veja a seguir exemplos de valores que você pode especificar.  
   
-    -   caminho para uma pasta compartilhada: * *\\\\***nome_do_servidor***\share\\* * * nome_da_pasta*  
+   - caminho para uma pasta compartilhada: **\\ \\** <em>nome_do_servidor</em> **\share\\** <em>nome_da_pasta</em>  
   
-    -   caminho para um arquivo WIM, em que **3** representa o índice da imagem na qual os arquivos de recursos se encontram:  **WIM:\\\\***server_name***\share\install.wim:3**  
+   - caminho para um arquivo WIM, em que **3** representa o índice da imagem na qual os arquivos de recursos se encontram:  **WIM:\\\\** <em>server_name</em> **\share\install.wim:3**  
   
-4.  Se você não quiser que os computadores controlados por essa configuração de política para pesquisar arquivos de recurso ausente no Windows Update, selecione **nunca tentar baixar carga do Windows Update**.  
+4. Se você não quiser que os computadores controlados por essa configuração de política para pesquisar arquivos de recurso ausente no Windows Update, selecione **nunca tentar baixar carga do Windows Update**.  
   
-5.  Se os computadores controlados por essa configuração de política normalmente recebem atualizações pelo WSUS, mas você prefere usar o Windows Update em vez do WSUS para localizar os arquivos de recursos ausentes, selecione **Contatar diretamente o Windows Update para baixar conteúdo de reparo em vez do WSUS (Windows Server Update Services)** .  
+5. Se os computadores controlados por essa configuração de política normalmente recebem atualizações pelo WSUS, mas você prefere usar o Windows Update em vez do WSUS para localizar os arquivos de recursos ausentes, selecione **Contatar diretamente o Windows Update para baixar conteúdo de reparo em vez do WSUS (Windows Server Update Services)** .  
   
-6.  Clique em **OK** quando terminar de alterar essa configuração de política e feche o Editor de Política de Grupo.  
+6. Clique em **OK** quando terminar de alterar essa configuração de política e feche o Editor de Política de Grupo.  
   
 ## <a name="see-also"></a>Consulte também  
 [Opções de instalação do Windows Server](https://go.microsoft.com/fwlink/p/?LinkId=241573)  

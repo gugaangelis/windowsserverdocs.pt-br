@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b3490c6bc95a762bf2cb1da70f389fb8f583344f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4e599f84389b23e527e3718a620d5fdfefe24edb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819487"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439466"
 ---
 # <a name="exit"></a>exit
 
@@ -31,16 +31,18 @@ Para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_example
 exit [/b] [<exitCode>]  
 ```  
 ## <a name="parameters"></a>Parâmetros  
-|Parâmetro|Descrição|  
-|-------|--------|  
-|/b|sai do script em lotes atual em vez de fechar Cmd.exe. Se executado fora de um script em lotes, será fechado Cmd.exe.|  
-|<exitCode>|Especifica um número. Se **/b** for especificado, a variável de ambiente ERRORLEVEL é definida para esse número. Se você estiver saindo **Cmd.exe**, o código de saída do processo é definido para esse número.|  
-|/?|Exibe a ajuda no prompt de comando.|  
+
+| Parâmetro  |                                                                                         Descrição                                                                                          |
+|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|     /b     |                                      sai do script em lotes atual em vez de fechar Cmd.exe. Se executado fora de um script em lotes, será fechado Cmd.exe.                                      |
+| <exitCode> | Especifica um número. Se **/b** for especificado, a variável de ambiente ERRORLEVEL é definida para esse número. Se você estiver saindo **Cmd.exe**, o código de saída do processo é definido para esse número. |
+|     /?     |                                                                             Exibe a ajuda no prompt de comando.                                                                             |
+
 ## <a name="BKMK_examples"></a>Exemplos  
 Para fechar o interpretador de comandos, Cmd.exe, digite:  
 ```  
 exit  
 ```  
 ## <a name="additional-references"></a>Referências adicionais  
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
-  
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+

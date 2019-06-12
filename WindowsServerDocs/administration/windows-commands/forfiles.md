@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: 127f715620321354792d46f024ee12a06925d866
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d5ac95b795d1c5a59f8917bf851ab08fb4d7c1e7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881307"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439185"
 ---
 # <a name="forfiles"></a>forfiles
 
@@ -37,14 +37,14 @@ forfiles [/p <Path>] [/m <SearchMask>] [/s] [/c "<Command>"] [/d [{+|-}][{<Date>
 
 ## <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|/p \<Path>|Especifica o caminho do qual iniciar a pesquisa. Por padrão, a pesquisa começa no diretório de trabalho atual.|
-|/m \<SearchMask>|Pesquisa arquivos de acordo com a máscara de pesquisa especificado. A máscara de pesquisa padrão é **\*.\***.|
-|/s|Instrui o **forfiles** comando para pesquisar em subdiretórios, recursivamente.|
-|/c "\<Command>"|Executa o comando especificado em cada arquivo. Cadeias de caracteres de comando devem ser colocadas entre aspas. O comando padrão é **"cmd /c echo @file"**.|
-|/d&nbsp;[{+\|-}]&#8288;[{\<Date>\|&#8288;\<Days>}]|Seleciona os arquivos com uma data da última modificação no período de tempo especificado.</br>– Seleciona arquivos com uma data da última modificação posterior ou igual a (**+**) ou anterior ou igual a (**-**) da data especificada, onde *data* está no formato MM/DD/AAAA.</br>– Seleciona arquivos com uma data da última modificação posterior ou igual a (**+**) a data atual mais o número de dias especificado, ou anterior ou igual a (**-**) a data atual menos o número de dias especificado.</br>-Os valores válidos para *dias* incluir qualquer número no intervalo 0 – 32, 768. Se nenhuma entrada for especificada, **+** é usado por padrão.|
-|/?|Exibe a ajuda no prompt de comando.|
+|                     Parâmetro                      |                                                                                                                                                                                                                                                                                                    Descrição                                                                                                                                                                                                                                                                                                     |
+|----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|                     /p \<Path>                     |                                                                                                                                                                                                                                                 Especifica o caminho do qual iniciar a pesquisa. Por padrão, a pesquisa começa no diretório de trabalho atual.                                                                                                                                                                                                                                                  |
+|                  /m \<SearchMask>                  |                                                                                                                                                                                                                                                           Pesquisa arquivos de acordo com a máscara de pesquisa especificado. A máscara de pesquisa padrão é **\*.\\** \*.                                                                                                                                                                                                                                                           |
+|                         /s                         |                                                                                                                                                                                                                                                                   Instrui o **forfiles** comando para pesquisar em subdiretórios, recursivamente.                                                                                                                                                                                                                                                                    |
+|                  /c "\<Command>"                   |                                                                                                                                                                                                                                  Executa o comando especificado em cada arquivo. Cadeias de caracteres de comando devem ser colocadas entre aspas. O comando padrão é **"cmd /c echo @file"** .                                                                                                                                                                                                                                   |
+| /d&nbsp;[{+\|-}]&#8288;[{\<Date>\|&#8288;\<Days>}] | Seleciona os arquivos com uma data da última modificação no período de tempo especificado.</br>– Seleciona arquivos com uma data da última modificação posterior ou igual a ( **+** ) ou anterior ou igual a ( **-** ) da data especificada, onde *data* está no formato MM/DD/AAAA.</br>– Seleciona arquivos com uma data da última modificação posterior ou igual a ( **+** ) a data atual mais o número de dias especificado, ou anterior ou igual a ( **-** ) a data atual menos o número de dias especificado.</br>-Os valores válidos para *dias* incluir qualquer número no intervalo 0 – 32, 768. Se nenhuma entrada for especificada, **+** é usado por padrão. |
+|                         /?                         |                                                                                                                                                                                                                                                                                        Exibe a ajuda no prompt de comando.                                                                                                                                                                                                                                                                                        |
 
 ## <a name="remarks"></a>Comentários
 
@@ -97,4 +97,4 @@ forfiles /s /m *.* /c "cmd /c echo The extension of @file is 0x09@ext"
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

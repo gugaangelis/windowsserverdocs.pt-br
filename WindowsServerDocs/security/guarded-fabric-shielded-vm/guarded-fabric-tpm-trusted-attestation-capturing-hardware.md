@@ -7,13 +7,13 @@ ms.assetid: 915b1338-5085-481b-8904-75d29e609e93
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 12/12/2018
-ms.openlocfilehash: 82171eee10a06cad6bb3ac30e8f771086975c242
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.date: 04/01/2019
+ms.openlocfilehash: 61f56eea59d11264047a9c7b8b6734617ad1802f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841657"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447332"
 ---
 # <a name="authorize-guarded-hosts-using-tpm-based-attestation"></a>Autorizar hosts protegidos usando o atestado de TPM
 
@@ -99,8 +99,11 @@ Para obter mais informações sobre os níveis de regra de política de CI dispo
 
 3.  Aplica a política de CI para seu host de referência:
 
-    1.  Copie o arquivo de política de CI binário (HW1CodeIntegrity.p7b) no seguinte local no seu host de referência (o nome do arquivo deve corresponder exatamente ao):<br>
-        **C:\\Windows\\System32\\CodeIntegrity\\SIPolicy.p7b**
+    1.  Execute o seguinte comando para configurar o computador para usar sua política de CI. Você também pode implantar a política de CI com [política de grupo](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy) ou [System Center Virtual Machine Manager](https://docs.microsoft.com/en-us/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#manage-and-deploy-code-integrity-policies-with-vmm).
+
+        ```powershell
+        Invoke-CimMethod -Namespace root/Microsoft/Windows/CI -ClassName PS_UpdateAndCompareCIPolicy -MethodName Update -Arguments @{ FilePath = "C:\temp\HW1CodeIntegrity.p7b" }
+        ```
 
     2.  Reinicie o host para aplicar a política.
 
@@ -117,8 +120,8 @@ Para obter mais informações sobre os níveis de regra de política de CI dispo
 5.  Aplica a política de CI para todos os seus hosts (com configuração de hardware e software idêntica) usando os seguintes comandos:
 
     ```powershell
-    Copy-Item -Path '<Path to HW1CodeIntegrity\_enforced.p7b>' -Destination 'C:\Windows\System32\CodeIntegrity\SIPolicy.p7b'
-
+    Invoke-CimMethod -Namespace root/Microsoft/Windows/CI -ClassName PS_UpdateAndCompareCIPolicy -MethodName Update -Arguments @{ FilePath = "C:\temp\HW1CodeIntegrity.p7b" }
+    
     Restart-Computer
     ```
 
@@ -167,5 +170,5 @@ Uma linha de base do TPM é necessária para cada classe exclusiva de hardware e
 
 ## <a name="next-step"></a>Próximas etapas
 
->[!div class="nextstepaction"]
-[Confirmar Atestado](guarded-fabric-confirm-hosts-can-attest-successfully.md)
+> [!div class="nextstepaction"]
+> [Confirmar atestado](guarded-fabric-confirm-hosts-can-attest-successfully.md)

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5868a73b3720d83b39ba581c809aec6bcf009300
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5825a398d43f1a615ba0146ef2681558b7f23108
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851567"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438863"
 ---
 # <a name="ftp-rmdir1"></a>ftp: rmdir_1
 
@@ -30,13 +30,15 @@ Exclui um diretório remoto.
 rmdir <directory>  
 ```  
 ### <a name="parameters"></a>Parâmetros  
-|Parâmetro|Descrição|  
-|-------|--------|  
-|<directory>|Especifica o nome do diretório remoto para excluir.|  
+
+|  Parâmetro  |                      Descrição                      |
+|-------------|-------------------------------------------------------|
+| <directory> | Especifica o nome do diretório remoto para excluir. |
+
 ## <a name="BKMK_Examples"></a>Exemplos  
 excluir o **imagens** diretório remoto.  
 ```  
 rmdir Pictures  
 ```  
 ## <a name="additional-references"></a>Referências adicionais  
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  

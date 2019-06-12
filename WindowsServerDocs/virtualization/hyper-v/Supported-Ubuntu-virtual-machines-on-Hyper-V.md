@@ -11,12 +11,12 @@ ms.assetid: 95ea5f7c-25c6-494b-8ffd-2a77f631ee94
 author: shirgall
 ms.author: shirgall
 ms.date: 11/19/2018
-ms.openlocfilehash: b58193ec570cf0d94b6c95018b8c00c813331986
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 662541658fe6e7b99e66fe31344450e0a1cbd201
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222639"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447833"
 ---
 # <a name="supported-ubuntu-virtual-machines-on-hyper-v"></a>Máquinas virtuais do Ubuntu com suporte no Hyper-V
 
@@ -91,7 +91,6 @@ O mapa de distribuição de recurso a seguir indica os recursos em cada versão.
    ```bash
    # apt-get update
    # apt-get install linux-azure
-
    ```
 
    12.04 não tem um kernel virtual separado. Para instalar o kernel HWE genérico em 12.04, execute os seguintes comandos como raiz (ou sudo):
@@ -99,7 +98,6 @@ O mapa de distribuição de recurso a seguir indica os recursos em cada versão.
    ```bash
    # apt-get update
    # apt-get install linux-generic-lts-trusty
-
    ```
 
    Ubuntu 12.04 os seguintes daemons do Hyper-V estão em um pacote instalado separadamente:
@@ -112,7 +110,6 @@ O mapa de distribuição de recurso a seguir indica os recursos em cada versão.
 
    ```bash
    # apt-get install hv-kvp-daemon-init linux-tools-lts-trusty linux-cloud-tools-generic-lts-trusty
-
    ```
 
    Sempre que o kernel é atualizado, a máquina virtual deve ser reinicializada para usá-lo.
@@ -124,7 +121,6 @@ O mapa de distribuição de recurso a seguir indica os recursos em cada versão.
    ```bash
    # apt-get update
    # apt-get install linux-azure
-
    ```
 
    Sempre que o kernel é atualizado, a máquina virtual deve ser reinicializada para usá-lo.
@@ -143,42 +139,37 @@ O mapa de distribuição de recurso a seguir indica os recursos em cada versão.
 
 11. No Windows Server 2012 R2, as máquinas virtuais de geração 2 têm inicialização segura habilitada por padrão e algumas Linux máquinas virtuais não será inicializado, a menos que a opção de inicialização segura está desabilitada. Você pode desabilitar a inicialização segura na **Firmware** seção das configurações para a máquina virtual na **Gerenciador do Hyper-V** ou você pode desabilitá-lo usando o Powershell:
 
-   ```Powershell
-   Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off
-
-   ```
+    ```Powershell
+    Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off
+    ```
 
 12. Antes de tentar copiar o VHD de uma máquina virtual de geração 2 VHD existente para criar novas máquinas virtuais de geração 2, siga estas etapas:
 
-   1. Faça logon máquina de virtual de geração 2 existente.
+    1. Faça logon máquina de virtual de geração 2 existente.
 
-   2. Altere o diretório para o diretório de inicialização EFI:
+    2. Altere o diretório para o diretório de inicialização EFI:
 
-      ```bash
-      # cd /boot/efi/EFI
+       ```bash
+       # cd /boot/efi/EFI
+       ```
 
-      ```
+    3. Copie o diretório de ubuntu para um novo diretório chamado inicialização:
 
-   3. Copie o diretório de ubuntu para um novo diretório chamado inicialização:
+       ```bash
+       # sudo cp -r ubuntu/ boot
+       ```
 
-      ```bash
-      # sudo cp -r ubuntu/ boot
+    4. Altere o diretório para o diretório de inicialização recém-criada:
 
-      ```
+       ```bash
+       # cd boot
+       ```
 
-   4. Altere o diretório para o diretório de inicialização recém-criada:
+    5. Renomear o arquivo shimx64.efi:
 
-      ```bash
-      # cd boot
-
-      ```
-
-   5. Renomear o arquivo shimx64.efi:
-
-      ```bash
-      # sudo mv shimx64.efi bootx64.efi
-
-      ```
+       ```bash
+       # sudo mv shimx64.efi bootx64.efi
+       ```
 
 ## <a name="see-also"></a>Consulte também
 

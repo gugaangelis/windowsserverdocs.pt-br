@@ -8,12 +8,12 @@ ms.date: 01/12/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: a4b7a568200bee7c2696c57f1dd964dd4e84ec21
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4b09094b6e305bc85b38e94d11fbc8845d555437
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820257"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443928"
 ---
 # <a name="ad-fs-troubleshooting---sql-connectivity"></a>Solucionando problemas do AD FS - conectividade do SQL
 O AD FS fornece a capacidade de usar o remote SQL Server para os dados do farm do AD FS.  Você verá problemas se os servidores do AD FS no farm não podem se comunicar com os servidores SQL de back-end.  O seguinte documento fornecerá algumas etapas básicas para testar a comunicação com os servidores de back-end.
@@ -44,7 +44,7 @@ Um arquivo de Link de dados Universal ou um arquivo UDL é basicamente um arquiv
 ## <a name="use-sql-server-management-studio-to-test-connectivity"></a>Use o SQL Server Management Studio para testar a conectividade
 Você também pode [baixar](https://go.microsoft.com/fwlink/?linkid=864329) e instale o SSMS para testar a conectividade de banco de dados.
 
-###<a name="to-test-connectivity-with-ssms"></a>Para testar a conectividade com o SSMS
+### <a name="to-test-connectivity-with-ssms"></a>Para testar a conectividade com o SSMS
 1. Baixe e instale o SQL Server Management Studio.
 ![Instalar](media/ad-fs-tshoot-sql/sql5.png)
 1. Abra o SSMS, insira o nome do servidor.  A fonte de dados acima.

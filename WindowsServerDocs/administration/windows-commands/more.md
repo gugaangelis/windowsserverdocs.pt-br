@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d4957f9455c6caed027331a939db0c2fefbe1961
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 93ba6c696c509ea20ffe8f680d4416d24d202b89
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857567"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437326"
 ---
 # <a name="more"></a>more
 
@@ -38,17 +38,17 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 
 ## <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|\<Comando >|Especifica um comando para o qual você deseja exibir a saída.|
-|/c|Limpa a tela antes de exibir uma página.|
-|/p|Expande os caracteres de avanço.|
-|/s|Exibe várias linhas em branco como uma única linha em branco.|
-|/t\<N>|Exibe as guias como o número de espaços especificado por *N*.|
-|+\<N>|Exibe o primeiro arquivo começando na linha especificada por *N*.|
-|[\<Drive>:] [<Path>]<FileName>|Especifica o local e o nome do arquivo a ser exibido.|
-|\<Arquivos >|Especifica uma lista de arquivos a serem exibidos. Separe os nomes de arquivo com um espaço.|
-|/?|Exibe a ajuda no prompt de comando.|
+|           Parâmetro            |                               Descrição                               |
+|--------------------------------|-------------------------------------------------------------------------|
+|           \<Comando >           |      Especifica um comando para o qual você deseja exibir a saída.      |
+|               /c               |               Limpa a tela antes de exibir uma página.               |
+|               /p               |                      Expande os caracteres de avanço.                      |
+|               /s               |          Exibe várias linhas em branco como uma única linha em branco.          |
+|             /t\<N>             |         Exibe as guias como o número de espaços especificado por *N*.         |
+|             +\<N>              |     Exibe o primeiro arquivo começando na linha especificada por *N*.     |
+| [\<Drive>:] [<Path>]<FileName> |          Especifica o local e o nome do arquivo a ser exibido.          |
+|            \<Arquivos >            | Especifica uma lista de arquivos a serem exibidos. Separe os nomes de arquivo com um espaço. |
+|               /?               |                  Exibe a ajuda no prompt de comando.                   |
 
 ## <a name="remarks"></a>Comentários
 
@@ -63,7 +63,7 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
     |p \<N>|Exibe a próxima *N* linhas.|
     |s \<N>|Ignora a próxima *N* linhas.|
     |?|Mostra os comandos que estão disponíveis na **mais** prompt.|
--Ao usar o caractere de redirecionamento (**<**), você deve especificar um nome de arquivo como a origem. Ao usar o pipe (* *|*), você pode usar esses comandos como **dir**, **classificação**, e **tipo**.
+-Ao usar o caractere de redirecionamento ( **<** ), você deve especificar um nome de arquivo como a origem. Ao usar o pipe (* *|*), você pode usar esses comandos como **dir**, **classificação**, e **tipo**.
 -   O **mais** comando com parâmetros diferentes, está disponível no Console de recuperação.
 
 ## <a name="BKMK_examples"></a>Exemplos
@@ -92,26 +92,26 @@ O **mais** comando exibe a primeira tela de informações de Nov e, em seguida, 
 ### <a name="using-more-subcommands"></a>Usando subcomandos mais
 
 Os exemplos a seguir podem ser usados com o **mais** prompt (`-- More --`).
--   Para exibir a arquivo uma linha por vez, pressione ENTER na **mais** prompt.
--   Para exibir a próxima tela, pressione a barra de espaços na **mais** prompt.
--   Para exibir o próximo arquivo listado na linha de comando, digite **f** com o **mais** prompt.
--   Para mostrar os comandos disponíveis, digite **?** com o **mais** prompt.
--   Para encerrar **mais**, tipo **q** no **mais** prompt.
--   Para exibir o número da linha atual, digite **=** com o **mais** prompt. O número da linha atual é adicionado para o **mais** prompt da seguinte maneira:  
-    ```
-    -- More [Line: 24] --
-    ```  
--   Para exibir um número específico de linhas, digite **p** com o **mais** prompt. **Mais** solicitará que o número de linhas a serem exibidas da seguinte maneira:  
-    ```
-    -- More -- Lines:
-    ```  
-    Digite o número de linhas a serem exibidas e, em seguida, pressione ENTER. **Mais** exibe o número de linhas especificado.
--   Para ignorar um número específico de linhas, digite **s** com o **mais** prompt. **Mais** solicitará que o número de linhas a serem ignoradas da seguinte maneira:  
-    ```
-    -- More -- Lines:
-    ```  
-    Digite o número de linhas a serem ignoradas e, em seguida, pressione ENTER. **Mais** ignora o número de linhas especificado e exibe a próxima tela de informações.
+- Para exibir a arquivo uma linha por vez, pressione ENTER na **mais** prompt.
+- Para exibir a próxima tela, pressione a barra de espaços na **mais** prompt.
+- Para exibir o próximo arquivo listado na linha de comando, digite **f** com o **mais** prompt.
+- Para mostrar os comandos disponíveis, digite **?** com o **mais** prompt.
+- Para encerrar **mais**, tipo **q** no **mais** prompt.
+- Para exibir o número da linha atual, digite **=** com o **mais** prompt. O número da linha atual é adicionado para o **mais** prompt da seguinte maneira:  
+  ```
+  -- More [Line: 24] --
+  ```  
+- Para exibir um número específico de linhas, digite **p** com o **mais** prompt. **Mais** solicitará que o número de linhas a serem exibidas da seguinte maneira:  
+  ```
+  -- More -- Lines:
+  ```  
+  Digite o número de linhas a serem exibidas e, em seguida, pressione ENTER. **Mais** exibe o número de linhas especificado.
+- Para ignorar um número específico de linhas, digite **s** com o **mais** prompt. **Mais** solicitará que o número de linhas a serem ignoradas da seguinte maneira:  
+  ```
+  -- More -- Lines:
+  ```  
+  Digite o número de linhas a serem ignoradas e, em seguida, pressione ENTER. **Mais** ignora o número de linhas especificado e exibe a próxima tela de informações.
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

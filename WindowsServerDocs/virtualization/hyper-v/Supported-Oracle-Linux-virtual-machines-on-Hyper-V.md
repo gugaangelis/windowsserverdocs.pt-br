@@ -11,12 +11,12 @@ ms.assetid: c02fdb5b-62f3-43cb-a190-ab74b3ebcf77
 author: shirgall
 ms.author: kathydav
 ms.date: 06/01/2017
-ms.openlocfilehash: c72fd2c3a72a304fe8372afb93468fc451b3f2bc
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: e353ea0b444c07557de99db4472f565decb37349
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222662"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447755"
 ---
 # <a name="supported-oracle-linux-virtual-machines-on-hyper-v"></a>Máquinas de virtuais do Oracle Linux com suporte no Hyper-V
 
@@ -167,10 +167,9 @@ O Oracle Linux Unbreakable Enterprise Kernel (UEK) tem apenas 64 bits e tem o LI
 
 13. As máquinas virtuais das plataformas Windows Server 2012 R2Generation 2 tem inicialização segura habilitada por padrão e algumas máquinas virtuais do Linux não será inicializado, a menos que a opção de inicialização segura está desabilitada. Você pode desabilitar a inicialização segura na **Firmware** seção das configurações para a máquina virtual na **Gerenciador do Hyper-V** ou você pode desabilitá-lo usando o Powershell:
 
-   ```Powershell
-   Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off
-
-   ```
+    ```Powershell
+    Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off
+    ```
 
     O download do Integration Services do Linux pode ser aplicado a VMs da geração 2 existente, mas não é demonstrar o recurso de geração 2.
 

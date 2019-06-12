@@ -9,12 +9,12 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 48099ad15465b885ccaf562bcf94b4bafdeff388
-ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
+ms.openlocfilehash: 44bcf48f3e4a3b4b49ff027d3aa3e5704865e7b5
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64772631"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447885"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>Solucionar problemas de espaços de armazenamento diretos
 
@@ -35,7 +35,7 @@ Se você ainda estiver tendo problemas, examine os cenários a seguir.
 
 ## <a name="virtual-disk-resources-are-in-no-redundancy-state"></a>Recursos de disco virtual estão em estado de redundância não
 Os nós de um sistema de espaços de armazenamento diretos reiniciar inesperadamente devido a uma falha ou queda de energia. Em seguida, um ou mais dos discos virtuais podem não ficar online, e você ver a descrição "não há informações de redundância."
-    
+
 |FriendlyName|ResiliencySettingName| OperationalStatus| HealthStatus| IsManualAttach|Tamanho| PSComputerName|
 |------------|---------------------| -----------------| ------------| --------------|-----| --------------|
 |Disk4| Mirror| OK|  Íntegro| True|  10 TB|  Nó-01.conto...|
@@ -52,7 +52,7 @@ Além disso, após uma tentativa de colocar o disco virtual online, as informaç
 ``` 
 
 O **nenhuma redundância operacional Status** pode ocorrer se um disco com falha ou se o sistema não puder acessar dados no disco virtual. Esse problema pode ocorrer se uma reinicialização ocorre em um nó durante a manutenção em nós.
-    
+
 Para corrigir esse problema, siga estas etapas:
 
 1. Remova os discos virtuais afetados do CSV. Isso os coloca no grupo de "Armazenamento disponível" do cluster e começar a mostrar como um tipo de recurso de "Disco físico."
@@ -91,8 +91,8 @@ Para corrigir esse problema, siga estas etapas:
    ```
 
 **DiskRecoveryAction** é uma opção de substituição que permite anexar o volume de espaço no modo de leitura / gravação sem nenhuma verificação. A propriedade permite que você faça o diagnóstico em um volume por que não fica online. É muito semelhante ao modo de manutenção, mas você pode invocá-lo em um recurso em um estado de falha. Ele também permite que você acesse os dados, que podem ser útil em situações como "Sem redundância", onde você pode obter acesso a quaisquer dados que você pode e copiá-lo. A propriedade DiskRecoveryAction foi adicionada na 22 de fevereiro de 2018, atualização, 4077525 KB.
-    
-    
+
+
 ## <a name="detached-status-in-a-cluster"></a>Status desanexado em um cluster 
 
 Quando você executa o **Get-VirtualDisk** cmdlet, o OperationalStatus para um ou mais espaços de armazenamento diretos discos virtuais é desanexado. No entanto, o HealthStatus relatada pelo **Get-PhysicalDisk** cmdlet indica que todos os discos físicos estão em um estado íntegro.
@@ -122,7 +122,7 @@ Data on the disk is out-of-sync and a data integrity scan is required.
 
 To start the scan, run the following command:   
 Get-ScheduledTask -TaskName "Data Integrity Scan for Crash Recovery" | Start-ScheduledTask                
-             
+
 Once you have resolved the condition listed above, you can online the disk by using the following commands in PowerShell:   
 
 Get-VirtualDisk | ?{ $_.ObjectId -Match "{GUID}" } | Get-Disk | Set-Disk -IsReadOnly $false 
@@ -152,7 +152,7 @@ Volume Name:
 ``` 
 
 O **desanexado Status operacional** pode ocorrer se a região suja DRT (rastreamento) em que o log está cheio. Espaços de armazenamento usam DRT (rastreamento) para espaços de espelhados de região suja para certificar-se de que, quando ocorre uma falha de energia, todas as atualizações em andamento para os metadados são registradas para certificar-se de que o espaço de armazenamento pode refazer ou desfazer operações para trazer de volta o espaço de armazenamento em um flexível e o estado consistente quando a energia for restaurada e o sistema volta a funcionar. Se o log DRT estiver cheio, o disco virtual não pode ficar online até que os metadados DRT são sincronizados e liberados. Esse processo requer executar uma verificação completa, que pode levar várias horas para ser concluída.
-    
+
 Para corrigir esse problema, siga estas etapas:
 1. Remova os discos virtuais afetados do CSV.
 
@@ -172,9 +172,9 @@ Para corrigir esse problema, siga estas etapas:
    ```
    Essa tarefa deve ser iniciada em todos os nós no qual o volume desanexado está online. Um reparo deve iniciar automaticamente. Aguarde até que o reparo concluir. Ele pode entrar em um estado suspenso e inicie novamente. Para monitorar o progresso: 
    - Execute **Get-StorageJob** para monitorar o status do reparo e ver quando ele for concluído.
-   -  Execute **Get-VirtualDisk** e verifique se o espaço retorna um HealthStatus de Íntegro.
-    - Os "dados integridade verificação para recuperação de pane" é uma tarefa que não aparece como um trabalho de armazenamento, e há um indicador de progresso. Se a tarefa está mostrando como em execução, ele está em execução. Quando ele for concluído, ele mostrará concluído.
-    
+   - Execute **Get-VirtualDisk** e verifique se o espaço retorna um HealthStatus de Íntegro.
+     - Os "dados integridade verificação para recuperação de pane" é uma tarefa que não aparece como um trabalho de armazenamento, e há um indicador de progresso. Se a tarefa está mostrando como em execução, ele está em execução. Quando ele for concluído, ele mostrará concluído.
+
        Além disso, você pode exibir o status de uma tarefa agendada em execução usando o seguinte cmdlet: 
        ```powershell
        Get-ScheduledTask | ? State -eq running
@@ -189,12 +189,12 @@ Para corrigir esse problema, siga estas etapas:
    ```powershell
    Add-ClusterSharedVolume -name "VdiskName"
    ```  
-**O valor de DiskRunChkdsk 7** é usado para anexar o volume de espaço e ter a partição no modo somente leitura. Isso permite que os espaços para descobrir por conta própria e auto-recuperação ao disparar um reparo. Reparo executará automaticamente uma vez montado. Ele também permite acessar os dados, que podem ser útil para obter acesso a quaisquer dados que você pode para copiar. Para algumas condições de falha, como um log DRT completo, você precisa executar a verificação de integridade de dados para a tarefa agendada de recuperação de pane.
-    
+   **O valor de DiskRunChkdsk 7** é usado para anexar o volume de espaço e ter a partição no modo somente leitura. Isso permite que os espaços para descobrir por conta própria e auto-recuperação ao disparar um reparo. Reparo executará automaticamente uma vez montado. Ele também permite acessar os dados, que podem ser útil para obter acesso a quaisquer dados que você pode para copiar. Para algumas condições de falha, como um log DRT completo, você precisa executar a verificação de integridade de dados para a tarefa agendada de recuperação de pane.
+
 **Verificação de integridade de dados para a tarefa de recuperação de pane** é usado para sincronizar e limpar um log de região suja completo DRT (rastreamento). Essa tarefa pode levar várias horas para ser concluída. Os "dados integridade verificação para recuperação de pane" é uma tarefa que não aparece como um trabalho de armazenamento, e há um indicador de progresso. Se a tarefa está mostrando como em execução, ele está em execução. Quando ele for concluído, ele mostrará como concluído. Se você cancelar a tarefa ou reiniciar um nó enquanto essa tarefa está em execução, a tarefa será necessário recomeçar desde o início.
 
 Para obter mais informações, consulte [integridade de solução de problemas de espaços de armazenamento diretos e estados operacionais](storage-spaces-states.md).
-    
+
 ## <a name="event-5120-with-statusiotimeout-c00000b5"></a>Evento 5120 com STATUS_IO_TIMEOUT c00000b5 
 
 > [!Important]
@@ -223,7 +223,7 @@ Description: Cluster node 'NODENAME'was removed from the active failover cluster
 Uma alteração foi introduzida no dia 8 de maio de 2018, para o Windows Server 2016, que era uma atualização cumulativa para adicionar o SMB resiliente manipula para as sessões de rede SMB dentro do cluster espaços de armazenamento diretos. Isso foi feito para melhorar a resiliência a falhas de rede transitórios e melhorar como RoCE trata o congestionamento da rede. Esses aprimoramentos também inadvertidamente aumentado tempos limite quando conexões SMB tentam reconectar-se e espera para tempo limite quando um nó é reiniciado. Esses problemas podem afetar um sistema que está sob carga excessiva. Durante o tempo de inatividade não planejado, pausa e/s de até 60 segundos também foram observada enquanto o sistema aguarda para conexões com o tempo limite. Para corrigir esse problema, instale o [18 de outubro de 2018, a atualização cumulativa para o Windows Server 2016](https://support.microsoft.com/help/4462928) ou uma versão posterior.
 
 *Observação* essa atualização alinha os tempos limite CSV com tempos limite de conexão de SMB para corrigir esse problema. Ele não implementa as alterações para desabilitar a geração do despejo ao vivo mencionada na seção de solução alternativa.
-    
+
 ### <a name="shutdown-process-flow"></a>Fluxo do processo de desligamento:
 
 1. Execute o cmdlet Get-VirtualDisk e certifique-se de que o valor de HealthStatus é íntegro.
@@ -293,14 +293,14 @@ Para desabilitar a geração de cluster de despejos de memória dinâmicas (por 
 (Get-Cluster).DumpPolicy = ((Get-Cluster).DumpPolicy -band 0xFFFFFFFFFFFFFFFE)
 ```
 Esse cmdlet tem efeito imediato em todos os nós de cluster sem a reinicialização do computador.
-    
+
 ## <a name="slow-io-performance"></a>Desempenho lento de e/s
 
 Se você estiver vendo o desempenho de e/s lento, verifique se o cache está habilitado em sua configuração de espaços de armazenamento diretos. 
 
 Há duas maneiras de verificar: 
-     
- 
+
+
 1. Usando o log do cluster. Abra o log do cluster no editor de texto de escolha e pesquise por "[= = = SBL discos = = =]." Isso será uma lista do disco no nó em que o log foi gerado em. 
 
      Cache habilitado discos exemplo: Observe aqui que o estado é CacheDiskStateInitializedAndBound e há um GUID presente aqui. 
@@ -338,7 +338,7 @@ Há duas maneiras de verificar:
    |NVMe INTEL SSDPE7KX02 |PHLF7330001J2P0LGN |SSD| False| OK| Íntegro| Seleção automática| 1,82 TB|
    |NVMe INTEL SSDPE7KX02| PHLF733000302P0LGN |SSD| False| OK|Íntegro| Seleção automática| 1,82 TB|
    |NVMe INTEL SSDPE7KX02| PHLF7330004D2P0LGN |SSD| False| OK| Íntegro| Seleção automática |1,82 TB|
-    
+
 ## <a name="how-to-destroy-an-existing-cluster-so-you-can-use-the-same-disks-again"></a>Como destruir um cluster existente para que você possa usar os mesmos discos novamente
 
 Em um cluster de espaços de armazenamento diretos, uma vez você desabilitar a espaços de armazenamento diretos e usar o processo de limpeza, descrito em [limpar unidades](deploy-storage-spaces-direct.md#step-31-clean-drives), o pool de armazenamento em cluster ainda estiver no estado Offline e o serviço de integridade é removido do cluster.
@@ -370,7 +370,7 @@ Agora, se você executar **Get-PhysicalDisk** em qualquer um de nós, você ver�
 ||Msft Virtu... ||Íntegro| Offline| 100 GB| RAW|
 ||Msft Virtu... ||Íntegro| Offline| 100 GB| RAW|
 
-    
+
 ## <a name="error-message-about-unsupported-media-type-when-you-create-an-storage-spaces-direct-cluster-using-enable-clusters2d"></a>Mensagem de erro sobre "tipo de mídia sem suporte" ao criar um cluster de espaços de armazenamento diretos usando o Enable-ClusterS2D  
 
 Você poderá ver erros semelhantes a este quando você executa o **Enable-ClusterS2D** cmdlet:
@@ -378,32 +378,33 @@ Você poderá ver erros semelhantes a este quando você executa o **Enable-Clust
 ![Mensagem de erro de cenário 6](media/troubleshooting/scenario-error-message.png)
 
 Para corrigir esse problema, verifique se que o adaptador HBA está configurado no modo HBA. Não há HBA deve ser configurado no modo RAID.  
-    
+
 ## <a name="enable-clusterstoragespacesdirect-hangs-at-waiting-until-sbl-disks-are-surfaced-or-at-27"></a>Enable-ClusterStorageSpacesDirect trava em 'Aguardando até SBL discos são exibidos' ou em 27%
 
 Você verá as seguintes informações no relatório de validação:
 
     Disk <identifier> connected to node <nodename> returned a SCSI Port Association and the corresponding enclosure device could not be found. The hardware is not compatible with Storage Spaces Direct (S2D), contact the hardware vendor to verify support for SCSI Enclosure Services (SES). 
-    
-  
+
+
 O problema é com o cartão de expansor SAS HPE que se encontra entre os discos e a placa HBA. Expansor SAS cria uma ID duplicada entre a primeira unidade conectada no expansor e Expansor em si.  Isso foi resolvido no [HPE inteligente matriz controladores SAS expansor Firmware: 4.02](https://support.hpe.com/hpsc/swd/public/detail?sp4ts.oid=7304566&swItemId=MTX_ef8d0bf4006542e194854eea6a&swEnvOid=4184#tab3).
-    
+
 ## <a name="intel-ssd-dc-p4600-series-has-a-non-unique-nguid"></a>Intel SSD DC P4600 série tem um NGUID não exclusivo
 Você pode encontrar um problema em que um dispositivo da série Intel SSD DC P4600 parece estar relatando semelhante 16 bytes NGUID para vários namespaces, como 0100000001000000E4D25C000014E214 ou 0100000001000000E4D25C0000EEE214 no exemplo a seguir.
 
-|ID exclusiva| DeviceID |MediaType| BusType| SerialNumber| size|canpool| nome amigável| OperationalStatus|
-|-|-|-|-|-|-|-|-|-
-|5000CCA251D12E30| 0| HDD| SAS| 7PKR197G|                  10000831348736 |False|HGST| HUH721010AL4200| OK|
-|eui.0100000001000000E4D25C000014E214 |4|SSD| NVMe|   0100_0000_0100_0000_E4D2_5C00_0014_E214.|1600321314816|True| INTEL| SSDPE2KE016T7|  OK|
-|eui.0100000001000000E4D25C000014E214 |5|        SSD|       NVMe|    0100_0000_0100_0000_E4D2_5C00_0014_E214.|  1600321314816|    True| INTEL| SSDPE2KE016T7|  OK|
-|eui.0100000001000000E4D25C0000EEE214| 6|        SSD|       NVMe|    0100_0000_0100_0000_E4D2_5C00_00EE_E214.|  1600321314816|    True| INTEL| SSDPE2KE016T7|  OK|
-|eui.0100000001000000E4D25C0000EEE214| 7|        SSD|       NVMe|    0100_0000_0100_0000_E4D2_5C00_00EE_E214.|  1600321314816|    True| INTEL| SSDPE2KE016T7|  OK|
+
+|               ID exclusiva               | DeviceID | MediaType | BusType |               SerialNumber               |      size      | canpool | nome amigável | OperationalStatus |
+|--------------------------------------|----------|-----------|---------|------------------------------------------|----------------|---------|--------------|-------------------|
+|           5000CCA251D12E30           |    0     |    HDD    |   SAS   |                 7PKR197G                 | 10000831348736 |  False  |     HGST     |  HUH721010AL4200  |
+| eui.0100000001000000E4D25C000014E214 |    4     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214. | 1600321314816  |  True   |    INTEL     |   SSDPE2KE016T7   |
+| eui.0100000001000000E4D25C000014E214 |    5     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214. | 1600321314816  |  True   |    INTEL     |   SSDPE2KE016T7   |
+| eui.0100000001000000E4D25C0000EEE214 |    6     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214. | 1600321314816  |  True   |    INTEL     |   SSDPE2KE016T7   |
+| eui.0100000001000000E4D25C0000EEE214 |    7     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214. | 1600321314816  |  True   |    INTEL     |   SSDPE2KE016T7   |
 
 Para corrigir esse problema, atualize o firmware nas unidades Intel para a versão mais recente.  Versão do firmware QDV101B1 de maio de 2018 é conhecido para resolver esse problema.
 
 O [maio de 2018 versão da ferramenta Intel SSD Data Center](https://downloadmirror.intel.com/27778/eng/Intel_SSD_Data_Center_Tool_3_0_12_Release_Notes_330715-026.pdf) inclui uma atualização de firmware, QDV101B1, para a série Intel SSD DC P4600.
 
-    
+
 ## <a name="physical-disk-healthy-and-operational-status-is-removing-from-pool"></a>Físico disco "Íntegro" e o Status operacional é "Remover do Pool" 
 
 Em um cluster do Windows Server 2016 espaços de armazenamento diretos, você poderá ver o HealthStatus de discos físicos de um ou mais como "Íntegro", enquanto o OperationalStatus é "(remoção do Pool, Okey)". 
@@ -416,7 +417,7 @@ Em um cluster do Windows Server 2016 espaços de armazenamento diretos, você po
 Aqui estão alguns exemplos que mostram como executar o script:
 
 - Use o **SerialNumber** parâmetro para especificar o disco que você precisa definir para íntegro. Você pode obter o número de série **WMI MSFT_PhysicalDisk** ou **Get-PhysicalDIsk**. (Estamos simplesmente usando 0s para o número de série abaixo.)
-   
+
    ```powershell
    Clear-PhysicalDiskHealthData -Intent -Policy -SerialNumber 000000000000000 -Verbose -Force
     ```
@@ -446,7 +447,7 @@ Se você quiser testar o desempenho de espaços de armazenamento diretos, é rec
 Se você estiver executando máquinas virtuais do Azure, você pode ignorar esse evento:
 
     Event ID 32: The driver detected that the device \Device\Harddisk5\DR5 has its write cache enabled. Data corruption may occur. 
-    
+
 ## <a name="slow-performance-or-lost-communication-io-error-detached-or-no-redundancy-errors-for-deployments-that-use-intel-p3x00-nvme-devices"></a>Desempenho lento ou "Comunicação perdida," "Erro de e/s", "Desanexada", ou erros de "Sem redundância" para implantações que usam dispositivos Intel P3x00 NVMe
 
 Nós identificamos um problema crítico que afeta alguns espaços de armazenamento diretos usuários que estão usando o hardware com base na família Intel P3x00 de NVM Express (NVMe) os dispositivos com versões de firmware antes de "Manutenção versão 8". 

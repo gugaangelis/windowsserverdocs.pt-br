@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: ''
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b86726fd6e9ee37dbfd43357d8040b43b8dfb200
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7fb7b5f7ae6e10d1007317949a42c48b4765f35c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853337"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446064"
 ---
-#<a name="step-1-plan-the-basic-directaccess-infrastructure"></a>Etapa 1 de plano a infraestrutura básica do DirectAccess
+# <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>Etapa 1 de plano a infraestrutura básica do DirectAccess
 A primeira etapa para uma implantação básica do DirectAccess em um único servidor é executar o planejamento da infraestrutura necessária para a implantação. Este tópico descreve as etapas de planejamento de infraestrutura:  
   
 |Tarefa|Descrição|  
@@ -253,5 +253,5 @@ Se um servidor do DirectAccess, cliente ou GPO do servidor de aplicativo foi exc
   
 ### <a name="BKMK_Links"></a>Próxima etapa  
   
--   [Etapa 2: Planejar a implantação básica do DirectAccess](da-basic-plan-s2-deployment.md)  
+-   [Etapa 2: Planejar a implantação do DirectAccess Básico](da-basic-plan-s2-deployment.md)  
   

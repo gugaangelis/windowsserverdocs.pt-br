@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 23fa04b86d9c26fb30b74eebe8caef8498b90a12
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9580d725120bb32a9b915d37cdbc173bfb17b859
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879027"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438848"
 ---
 # <a name="ftp-append"></a>FTP: append
 
@@ -30,10 +30,12 @@ acrescenta um arquivo local em um arquivo no computador remoto usando a configur
 append <LocalFile> [remoteFile]  
 ```  
 ### <a name="parameters"></a>Parâmetros  
-|Parâmetro|Descrição|  
-|-------|--------|  
-|<LocalFile>|Especifica o arquivo local para adicionar.|  
-|[remoteFile]|Especifica o arquivo no computador remoto para o qual <LocalFile> é adicionado.|  
+
+|  Parâmetro   |                               Descrição                                |
+|--------------|--------------------------------------------------------------------------|
+| <LocalFile>  |                     Especifica o arquivo local para adicionar.                     |
+| [remoteFile] | Especifica o arquivo no computador remoto para o qual <LocalFile> é adicionado. |
+
 ## <a name="remarks"></a>Comentários  
 Se *Arquivo_remoto* for omitido, o *LocalFile* nome é usado no lugar do nome de arquivo remoto.  
 ## <a name="BKMK_Examples"></a>Exemplos  
@@ -46,4 +48,4 @@ acrescente a file1.txt local em um arquivo chamado file1.txt no computador remot
 append file1.txt  
 ```  
 ## <a name="additional-references"></a>Referências adicionais  
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  

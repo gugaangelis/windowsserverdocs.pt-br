@@ -7,12 +7,12 @@ ms.assetid: 07691d5b-046c-45ea-8570-a0a85c3f2d22
 manager: dongill
 author: huu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: c102fa0503e6aac279235e1243b55e0e3cf81e1d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0fb257f693cc27c0bc6dd18fc89e8dc6328ee638
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812407"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447345"
 ---
 # <a name="troubleshooting-using-the-guarded-fabric-diagnostic-tool"></a>Solução de problemas usando a ferramenta de diagnóstico de malha protegida
 
@@ -154,11 +154,11 @@ Antes de executar o Diagnóstico manual, você precisará garantir que os admini
 
 Etapas para executar um diagnóstico manual são da seguinte maneira:
 
-1. Solicitação que executam cada administrador de host `Get-HgsTrace` especificando um conhecido `-Path` e a lista de diagnóstico que você pretende executar em relação os rastreamentos resultantes.  Por exemplo: 
+1. Solicitação que executam cada administrador de host `Get-HgsTrace` especificando um conhecido `-Path` e a lista de diagnóstico que você pretende executar em relação os rastreamentos resultantes.  Por exemplo:
 
- ```PowerShell
- Get-HgsTrace -Path C:\Traces -Diagnostic Networking,BestPractices
- ```
+   ```PowerShell
+   Get-HgsTrace -Path C:\Traces -Diagnostic Networking,BestPractices
+   ```
 2. Solicite que cada administrador de host a pasta resultante de rastreamentos de pacote e enviá-lo para você.  Esse processo pode ser acionado por email, por meio de compartilhamentos de arquivos ou qualquer outro mecanismo com base nas políticas de operação e procedimentos estabelecidos pela sua organização.
 
 3. Mescle todos os rastreamentos recebidos em uma única pasta, com nenhum outro conteúdo ou pastas.
@@ -179,11 +179,11 @@ Etapas para executar um diagnóstico manual são da seguinte maneira:
          |- [..]
       ```
 
-4. Execute diagnósticos, fornecendo o caminho para a pasta de rastreamento montado sobre o `-Path` parâmetro e especificando o `-RunDiagnostics` alternar, bem como esse para os quais você solicitado seus administradores para coletar rastreamentos de diagnóstico.  Diagnóstico assumirá que ele não é possível acessar os hosts encontrados dentro do caminho e, portanto, tentar usar apenas os rastreamentos previamente coletados.  Se os rastreamentos estiverem faltando ou danificado, diagnóstico falhará somente os testes afetados e prosseguir normalmente.  Por exemplo: 
+4. Execute diagnósticos, fornecendo o caminho para a pasta de rastreamento montado sobre o `-Path` parâmetro e especificando o `-RunDiagnostics` alternar, bem como esse para os quais você solicitado seus administradores para coletar rastreamentos de diagnóstico.  Diagnóstico assumirá que ele não é possível acessar os hosts encontrados dentro do caminho e, portanto, tentar usar apenas os rastreamentos previamente coletados.  Se os rastreamentos estiverem faltando ou danificado, diagnóstico falhará somente os testes afetados e prosseguir normalmente.  Por exemplo:
 
- ```PowerShell
- Get-HgsTrace -RunDiagnostics -Diagnostic Networking,BestPractices -Path ".\FabricTraces"
- ```
+   ```PowerShell
+   Get-HgsTrace -RunDiagnostics -Diagnostic Networking,BestPractices -Path ".\FabricTraces"
+   ```
 
 ### <a name="mixing-saved-traces-with-additional-targets"></a>Misturar salvo rastreamentos com destinos adicionais
 

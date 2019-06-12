@@ -13,15 +13,15 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 744c2d7ff2965474b90686f88c21f7e6d87deced
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f5f78d3d2387d3b95177a6a8a40fb9b16d8ed8e2
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813657"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446126"
 ---
 # <a name="manage-client-access-licenses"></a>Gerenciar licenças de acesso para cliente
-Cada estação que se conecta a um sistema MultiPoint Services, incluindo o computador executando o MultiPoint Services que é usado como uma estação, deve ter uma área de trabalho remota por usuário válido *licença de acesso para cliente (CAL)*.
+Cada estação que se conecta a um sistema MultiPoint Services, incluindo o computador executando o MultiPoint Services que é usado como uma estação, deve ter uma área de trabalho remota por usuário válido *licença de acesso para cliente (CAL)* .
 
 Se você estiver usando áreas de trabalho virtuais estação em vez de estações físicas, você deve instalar uma CAL para cada área de trabalho virtual estação.  
   
@@ -39,15 +39,15 @@ Se não estiver configurado corretamente a configuração do MultiPoint Services
 2. No painel esquerdo, navegue até **política do computador Local -> Configuração do computador - > modelos administrativos -> Windows Components -> remoto dos serviços de área de trabalho - > Host da sessão da área de trabalho remota -> licenciamento**.
 
 3. No painel direito, clique com botão direito **usar os servidores de licenças de área de trabalho remota especificados** e selecione **editar**:
-  - No diálogo de editor de diretiva de grupo, selecione **habilitado**
-  - Insira o nome do computador local na **licenciar servidores para usar** campo.
-  - Selecione **Okey**
+   - No diálogo de editor de diretiva de grupo, selecione **habilitado**
+   - Insira o nome do computador local na **licenciar servidores para usar** campo.
+   - Selecione **Okey**
   
 4. No painel direito, clique com botão direito **definir o modo de licenciamento de área de trabalho remota** e selecione **editar**
- - No diálogo de editor de diretiva de grupo, selecione **habilitado**
- - Defina as **Licensing mode** para por dispositivo / usuário
- - Selecione **Okey** 
+   - No diálogo de editor de diretiva de grupo, selecione **habilitado**
+   - Defina as **Licensing mode** para por dispositivo / usuário
+   - Selecione **Okey** 
 
-  
+  
 ## <a name="see-also"></a>Consulte também  
 [Gerenciar tarefas de sistema usando o MultiPoint Manager](Manage-System-Tasks-Using-MultiPoint-Manager.md)

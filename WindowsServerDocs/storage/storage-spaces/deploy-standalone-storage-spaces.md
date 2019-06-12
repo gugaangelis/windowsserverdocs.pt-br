@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage-spaces
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7090657a0936aed0f4b2e79007f69d7b082b0b8f
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: f9b5d2b0d5acfcbde52131c29704e38d835d048e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63750655"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447556"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>Implantar espaços de armazenamento em um servidor autônomo
 
@@ -150,16 +150,16 @@ Em seguida, você deverá criar um ou mais discos virtuais no pool de armazename
 
 8. Sobre o **especificar o tipo de provisionamento** página, selecione uma das opções a seguir e selecione **próxima**.
     
-      - **Dinâmico**
+   - **Dinâmico**
         
-        Com o provisionamento dinâmico, o espaço é alocado conforme a necessidade. Isso otimiza o uso do armazenamento disponível. Contudo, como isso permite a alocação excessiva do armazenamento, é necessário monitorar atentamente quanto espaço em disco está disponível.
+     Com o provisionamento dinâmico, o espaço é alocado conforme a necessidade. Isso otimiza o uso do armazenamento disponível. Contudo, como isso permite a alocação excessiva do armazenamento, é necessário monitorar atentamente quanto espaço em disco está disponível.
     
-      - **corrigido**
+   - **corrigido**
         
-        Com o provisionamento fixo, a capacidade de armazenamento é alocada imediatamente, no momento da criação do disco virtual. Portanto o provisionamento fixo usa espaço do pool de armazenamento igual ao tamanho do disco virtual.
+     Com o provisionamento fixo, a capacidade de armazenamento é alocada imediatamente, no momento da criação do disco virtual. Portanto o provisionamento fixo usa espaço do pool de armazenamento igual ao tamanho do disco virtual.
     
-    >[!TIP]
-    >Com os Espaços de Armazenamento, você pode criar discos virtuais com ambos os provisionamentos dinâmico e fixo no mesmo pool de armazenamento. Por exemplo, você poderia usar um disco virtual com provisionamento dinâmico para hospedar um banco de dados e outro com provisionamento fixo para hospedar os arquivos de log associados.
+     >[!TIP]
+     >Com os Espaços de Armazenamento, você pode criar discos virtuais com ambos os provisionamentos dinâmico e fixo no mesmo pool de armazenamento. Por exemplo, você poderia usar um disco virtual com provisionamento dinâmico para hospedar um banco de dados e outro com provisionamento fixo para hospedar os arquivos de log associados.
 
 9. Na página **Especificar o tamanho do disco virtual**, execute o seguinte procedimento:
     

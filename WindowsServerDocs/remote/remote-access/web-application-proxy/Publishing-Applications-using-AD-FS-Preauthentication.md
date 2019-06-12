@@ -8,12 +8,12 @@ ms.date: 07/13/2016
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: web-app-proxy
-ms.openlocfilehash: c7dab1dbf97d2dcbda1fe0375e61300f2a1cc373
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ca4d8661f8f0252334bdecbde85603d8af5e2d2a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862237"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446815"
 ---
 # <a name="publishing-applications-using-ad-fs-preauthentication"></a>Publicar aplicativos usando a Pré-autenticação do AD FS
 
@@ -128,7 +128,7 @@ Este procedimento descreve como publicar um aplicativo baseado em declarações,
   
 8.  Na página **Resultados**, verifique se o aplicativo foi publicado com êxito e clique em **Fechar**.  
   
-![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
+![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)***<em>Comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -210,7 +210,7 @@ Este procedimento descreve como publicar um aplicativo que usa a autenticação 
   
 8.  Na página **Resultados**, verifique se o aplicativo foi publicado com êxito e clique em **Fechar**.  
   
-![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
+![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)***<em>Comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -310,7 +310,7 @@ O procedimento a seguir explica como publicar aplicativos básicos de HTTP.
   
 8.  Na página **Resultados**, verifique se o aplicativo foi publicado com êxito e clique em **Fechar**.  
   
-![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
+![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)***<em>Comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -441,7 +441,7 @@ Add-WebApplicationProxyApplication
   
 ## <a name="BKMK_Links"></a>Consulte também  
   
--   [Solução de problemas de Proxy de aplicativo Web](https://technet.microsoft.com/library/dn770156.aspx)  
+-   [Como solucionar problemas de proxy de aplicativo Web](https://technet.microsoft.com/library/dn770156.aspx)  
   
 -   [Publicar aplicativos por meio do Proxy de aplicativo Web](https://technet.microsoft.com/library/dn383659.aspx)  
   

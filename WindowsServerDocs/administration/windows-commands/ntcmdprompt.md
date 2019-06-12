@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65804f99095d0c0a56537b1d155ac26e768f61a7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 583f56c294e66542a75efca09e97d57ae54a8cea
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827657"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436419"
 ---
 # <a name="ntcmdprompt"></a>ntcmdprompt
 
@@ -30,13 +30,15 @@ Executa o interpretador de comandos **Cmd.exe**, em vez de **Command.com**, depo
 ntcmdprompt
 ```
 ### <a name="parameters"></a>Parâmetros
-|Parâmetro|Descrição|
-|-------|--------|
-|/?|Exibe a ajuda no prompt de comando.|
+
+| Parâmetro |             Descrição              |
+|-----------|--------------------------------------|
+|    /?     | Exibe a ajuda no prompt de comando. |
+
 ## <a name="remarks"></a>Comentários
--   Quando **Command.com** estiver em execução, alguns recursos do **Cmd.exe**, como o **doskey** a exibição de histórico de comandos, não estão disponíveis. Se você preferir executar o **Cmd.exe** interpretador de comando depois de você ter iniciado um encerramento e fique residente TSR () ou o prompt de comando dentro de um aplicativo baseado no MS-DOS, você pode usar o **ntcmdprompt**  comando. No entanto, tenha em mente que o TSR pode não estar disponível para uso quando você estiver executando **Cmd.exe**. Você pode incluir a **ntcmdprompt** no seu **config** arquivo ou o arquivo de inicialização personalizado equivalente no arquivo de informações do programa do aplicativo (Pif).
-## <a name="examples"></a>Exemplos
-Para incluir **ntcmdprompt** no seu **config** arquivo ou o arquivo de inicialização de configuração especificado no Pif, tipo: **ntcmdprompt**
-## <a name="additional-references"></a>Referências adicionais
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+- Quando **Command.com** estiver em execução, alguns recursos do **Cmd.exe**, como o **doskey** a exibição de histórico de comandos, não estão disponíveis. Se você preferir executar o **Cmd.exe** interpretador de comando depois de você ter iniciado um encerramento e fique residente TSR () ou o prompt de comando dentro de um aplicativo baseado no MS-DOS, você pode usar o **ntcmdprompt**  comando. No entanto, tenha em mente que o TSR pode não estar disponível para uso quando você estiver executando **Cmd.exe**. Você pode incluir a **ntcmdprompt** no seu **config** arquivo ou o arquivo de inicialização personalizado equivalente no arquivo de informações do programa do aplicativo (Pif).
+  ## <a name="examples"></a>Exemplos
+  Para incluir **ntcmdprompt** no seu **config** arquivo ou o arquivo de inicialização de configuração especificado no Pif, tipo: **ntcmdprompt**
+  ## <a name="additional-references"></a>Referências adicionais
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 

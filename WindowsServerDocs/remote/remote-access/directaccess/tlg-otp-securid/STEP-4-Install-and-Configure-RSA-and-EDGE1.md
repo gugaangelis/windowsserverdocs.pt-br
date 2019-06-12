@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: d46ede6f-1a21-414d-b8c3-6b5c87344b9d
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 5bb28ff6131c371e4b2f668fd20ec0a6133a0099
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: db0318f1306102bf19c82012f57e78ce2852d288
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859997"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446609"
 ---
 # <a name="step-4-install-and-configure-rsa-and-edge1"></a>Etapa 4 instalar e configurar RSA e EDGE1
 
@@ -180,11 +180,11 @@ Você executará as seguintes etapas para configurar a implantação de RSA:
   
     3.  Sob o **número de série** título, clique no primeiro número listado e clique em **atribuir**.  
   
-    4.  Clique o token atribuído e, em seguida, clique em **editar**. No **gerenciamento de PIN SecurID** seção para o **requisito de autenticação de usuário**, selecione **não exigem o PIN (somente código de token)**.  
+    4.  Clique o token atribuído e, em seguida, clique em **editar**. No **gerenciamento de PIN SecurID** seção para o **requisito de autenticação de usuário**, selecione **não exigem o PIN (somente código de token)** .  
   
     5.  Clique em **salvar e distribuir o Token**.  
   
-    6.  No **distribuir Software Token** página na **Noções básicas** seção, clique em **arquivo de Token do problema (SDTID)**.  
+    6.  No **distribuir Software Token** página na **Noções básicas** seção, clique em **arquivo de Token do problema (SDTID)** .  
   
     7.  No **distribuir Software Token** página na **opções de arquivo de Token** seção, desmarque o **Habilitar proteção contra cópia** caixa de seleção. Clique em **nenhuma senha** e **próxima**.  
   
@@ -194,7 +194,7 @@ Você executará as seguintes etapas para configurar a implantação de RSA:
   
 8.  Configure o Gerenciador de autenticação como servidor RADIUS.  
   
-    1.  A RSA computador desktop clicar duas vezes **"Console de operações de segurança do RSA"**.  
+    1.  A RSA computador desktop clicar duas vezes **"Console de operações de segurança do RSA"** .  
   
     2.  Se a segurança de certificado aviso / alerta de segurança for exibida, clique em **continuar neste site** ou clique em **Sim** para prosseguir e adicionar este site aos sites confiáveis se solicitado.  
   
@@ -208,7 +208,7 @@ Você executará as seguintes etapas para configurar a implantação de RSA:
   
     7.  Verifique a mensagem **'servidor RADIUS configurado com êxito'** é exibida. Clique em **Concluído**. Fechar o **Console de operações de RSA**.  
   
-    8.  Volte para o **"Console de segurança do RSA"**.  
+    8.  Volte para o **"Console de segurança do RSA"** .  
   
     9. Sobre o **RADIUS** guia, clique em **servidores RADIUS**. Verifique se que esse rsa.corp.contoso.com está listado.  
   
@@ -294,23 +294,23 @@ Use este procedimento para configurar EDGE1 para realizar a autenticação de RS
   
 #### <a name="configure-the-rsa-authentication-agent"></a>Configurar o agente de autenticação RSA  
   
-1.  Em EDGE1 abra o Windows Explorer e crie a pasta arquivos de C:\RSA. Navegue até a mídia de instalação do RSA ACE.  
+1. Em EDGE1 abra o Windows Explorer e crie a pasta arquivos de C:\RSA. Navegue até a mídia de instalação do RSA ACE.  
   
-2.  Cópia agent_nsload.exe arquivos, AM_Config.zip e EDGE1_NodeSecret.zip da mídia de RSA para C:\RSA arquivos.  
+2. Cópia agent_nsload.exe arquivos, AM_Config.zip e EDGE1_NodeSecret.zip da mídia de RSA para C:\RSA arquivos.  
   
-3.  Extraia o conteúdo dos dois arquivos zip nos seguintes locais:  
+3. Extraia o conteúdo dos dois arquivos zip nos seguintes locais:  
   
-    1.  C:\Windows\system32\  
+   1.  C:\Windows\system32\  
   
-    2.  C:\Windows\SysWOW64\  
+   2.  C:\Windows\SysWOW64\  
   
-4.  Copiar agent_nsload.exe para C:\Windows\SysWOW64\\.  
+4. Copiar agent_nsload.exe para C:\Windows\SysWOW64\\.  
   
-5.  Abra um prompt de comando com privilégios elevados e navegue para C:\Windows\SysWOW64.  
+5. Abra um prompt de comando com privilégios elevados e navegue para C:\Windows\SysWOW64.  
   
-6.  Tipo de **nodesecret.rec do agent_nsload.exe -f -p <password>**  onde <password> é a senha forte que você criou durante a configuração inicial do RSA. Pressione Enter.  
+6. Tipo de **nodesecret.rec do agent_nsload.exe -f -p <password>**  onde <password> é a senha forte que você criou durante a configuração inicial do RSA. Pressione Enter.  
   
-7.  Copie C:\Windows\SysWOW64\securid C:\Windows\System32.  
+7. Copie C:\Windows\SysWOW64\securid C:\Windows\System32.  
   
 ## <a name="configOTP"></a>Configurar EDGE1 para dar suporte à autenticação de OTP  
 Use este procedimento para configurar a OTP do DirectAccess e verifique a configuração.  

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a76ea6ede1237b05a7f7dd95fdb9f7c1560a922
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 13eb4e45b3fdc17fd48fa9793abaaf05925b56a2
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858247"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436964"
 ---
 # <a name="nslookup-finger-command"></a>nslookup finger Command
 
@@ -34,12 +34,12 @@ finger [<UserName>] [{[>] <FileName>|[>>] <FileName>}]
 
 ## <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|\<UserName>|Especifica o nome do usuário para pesquisar.|
-|\<FileName>|Especifica um nome de arquivo no qual salvar a saída. Você pode usar o maior que (>) e double maior que (>>) caracteres para redirecionar a saída da maneira usual.|
-|{Ajuda | ?}|Exibe um resumo breve dos **nslookup** subcomandos.|
+|  Parâmetro  |                                                                               Descrição                                                                               |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| \<UserName> |                                                               Especifica o nome do usuário para pesquisar.                                                                |
+| \<FileName> | Especifica um nome de arquivo no qual salvar a saída. Você pode usar o maior que (>) e double maior que (>>) caracteres para redirecionar a saída da maneira usual. |
+|    {Ajuda    |                                                                                   ?}                                                                                    |
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

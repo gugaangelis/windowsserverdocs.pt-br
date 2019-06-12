@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 15b69e723af3a30375beae73782ab122c68f8880
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 681939409b9b8b952179992a2a86415e737ee675
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879717"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447703"
 ---
 # <a name="schedule-a-set-of-reports"></a>Agende um conjunto de relatórios
 
@@ -28,50 +28,50 @@ Relatórios agendados são salvos em um local padrão, que você pode especifica
 
 ## <a name="to-schedule-a-report-task"></a>Para agendar uma Tarefa de relatório
 
-1.  Clique no nó **Gerenciamento de relatórios de armazenamento**.
+1. Clique no nó **Gerenciamento de relatórios de armazenamento**.
 
-2.  Clique com botão direito **Gerenciamento de relatórios de armazenamento** e clique em **Agendar uma nova tarefa de relatório** (ou selecione **Agendar uma nova tarefa de relatório** no painel **Ações**). Isso abre a caixa de diálogo **Propriedades da Tarefa de Relatórios de Armazenamento**.
+2. Clique com botão direito **Gerenciamento de relatórios de armazenamento** e clique em **Agendar uma nova tarefa de relatório** (ou selecione **Agendar uma nova tarefa de relatório** no painel **Ações**). Isso abre a caixa de diálogo **Propriedades da Tarefa de Relatórios de Armazenamento**.
 
-3.  Para selecionar volumes ou pastas para gerar relatórios:
+3. Para selecionar volumes ou pastas para gerar relatórios:
 
-    -   Em **Escopo**, clique em **Adicionar**.
-    -   Navegue até o volume ou pasta em que você deseja gerar os relatórios, selecione-a e, em seguida, clique em **OK** para adicionar o caminho à lista.
-    -   Adicione quantos volumes ou pastas que você deseja incluir nos relatórios. (Para remover um volume ou pasta, clique no demarcador e depois clique em **Remover**).
+   -   Em **Escopo**, clique em **Adicionar**.
+   -   Navegue até o volume ou pasta em que você deseja gerar os relatórios, selecione-a e, em seguida, clique em **OK** para adicionar o caminho à lista.
+   -   Adicione quantos volumes ou pastas que você deseja incluir nos relatórios. (Para remover um volume ou pasta, clique no demarcador e depois clique em **Remover**).
 
-4.  Para especificar quais relatórios gerar:
+4. Para especificar quais relatórios gerar:
 
-    -  Em **Relatar dados**, selecione cada relatório que você deseja incluir. Por padrão, todos os relatórios são gerados para uma tarefa agendada de relatório.
+   -  Em **Relatar dados**, selecione cada relatório que você deseja incluir. Por padrão, todos os relatórios são gerados para uma tarefa agendada de relatório.
 
-    Para editar os parâmetros de um relatório:
+   Para editar os parâmetros de um relatório:
 
-    -   Clique no rótulo do relatório e em **Editar parâmetros**.
-    -   Na caixa de diálogo **Parâmetros de relatório**, edite os parâmetros conforme necessário e clique em **OK**.
+   -   Clique no rótulo do relatório e em **Editar parâmetros**.
+   -   Na caixa de diálogo **Parâmetros de relatório**, edite os parâmetros conforme necessário e clique em **OK**.
 
-    -   Para ver uma lista de parâmetros de todos relatórios selecionados, clique em **Rever relatórios selecionados**. Em seguida, clique em **Fechar**.
+   -   Para ver uma lista de parâmetros de todos relatórios selecionados, clique em **Rever relatórios selecionados**. Em seguida, clique em **Fechar**.
 
-5.  Para especificar os formatos para salvar os relatórios:
+5. Para especificar os formatos para salvar os relatórios:
 
-    -  Em **Relatar formatos**, selecione um ou mais formatos para os relatórios agendados. Por padrão, os relatórios são gerados em HTML dinâmico (DHTML). Você também pode selecionar formatos de texto, HTML, XML e CSV. Os relatórios são salvos no local padrão para relatórios programados.
+   -  Em **Relatar formatos**, selecione um ou mais formatos para os relatórios agendados. Por padrão, os relatórios são gerados em HTML dinâmico (DHTML). Você também pode selecionar formatos de texto, HTML, XML e CSV. Os relatórios são salvos no local padrão para relatórios programados.
 
-6.  Para fornecer cópias dos relatórios aos administradores por email:
+6. Para fornecer cópias dos relatórios aos administradores por email:
 
-    - Na guia **Entrega**, marque a caixa de seleção **Enviar relatórios para os seguintes administradores** e, em seguida, digite os nomes das contas administrativas que receberão relatórios. 
-    - Use o formato *account@domain* e use ponto e vírgula para separar várias contas.
+   - Na guia **Entrega**, marque a caixa de seleção **Enviar relatórios para os seguintes administradores** e, em seguida, digite os nomes das contas administrativas que receberão relatórios. 
+   - Use o formato <em>account@domain</em> e use ponto e vírgula para separar várias contas.
 
-7.  Para agendar os relatórios:
+7. Para agendar os relatórios:
 
-    Na guia **Programação**, clique em **Criar programação**, e depois na caixa de diálogo **Agendar**, clique em **Novo**. Isso exibe um agendamento padrão para 9:00. diariamente, mas você pode modificar o agendamento padrão.
+   Na guia **Programação**, clique em **Criar programação**, e depois na caixa de diálogo **Agendar**, clique em **Novo**. Isso exibe um agendamento padrão para 9:00. diariamente, mas você pode modificar o agendamento padrão.
 
-    -   Para especificar uma frequência para gerar relatórios, selecione um intervalo na lista suspensa **Agendar tarefas**.
-        Você pode agendar diariamente, semanalmente ou mensalmente os relatórios ou gera-los apenas uma vez. Você também pode gerar relatórios na inicialização do sistema ou login ou quando o computador estiver ocioso por um tempo especificado.
-    -   Para fornecer informações adicionais sobre agendamento para o intervalo escolhido, modificar ou definir os valores nas opções **Agendar tarefas**.
-        Essas opções são alteradas com base no intervalo que você escolher. Por exemplo, para um relatório semanal, você pode especificar o número de semanas entre os relatórios e em quais dias da semana eles serão gerados.
-    -   Para especificar a hora do dia quando você deseja gerar o relatório, digite ou selecione o valor na caixa **Hora de início**.
-    -   Para acessar opções de agendamento adicionais (incluindo uma data de início e final para a tarefa), clique em **Avançado**.
-    -   Para salvar a programação, clique em **OK**.
-    -  Para criar um agendamento adicional para uma tarefa (ou modificar um agendamento existente), na guia **Agendamento**, clique em **Editar agendamento**.
+   -   Para especificar uma frequência para gerar relatórios, selecione um intervalo na lista suspensa **Agendar tarefas**.
+       Você pode agendar diariamente, semanalmente ou mensalmente os relatórios ou gera-los apenas uma vez. Você também pode gerar relatórios na inicialização do sistema ou login ou quando o computador estiver ocioso por um tempo especificado.
+   -   Para fornecer informações adicionais sobre agendamento para o intervalo escolhido, modificar ou definir os valores nas opções **Agendar tarefas**.
+       Essas opções são alteradas com base no intervalo que você escolher. Por exemplo, para um relatório semanal, você pode especificar o número de semanas entre os relatórios e em quais dias da semana eles serão gerados.
+   -   Para especificar a hora do dia quando você deseja gerar o relatório, digite ou selecione o valor na caixa **Hora de início**.
+   -   Para acessar opções de agendamento adicionais (incluindo uma data de início e final para a tarefa), clique em **Avançado**.
+   -   Para salvar a programação, clique em **OK**.
+   -  Para criar um agendamento adicional para uma tarefa (ou modificar um agendamento existente), na guia **Agendamento**, clique em **Editar agendamento**.
 
-8.  Para salvar uma tarefa de relatório, clique em **OK**.
+8. Para salvar uma tarefa de relatório, clique em **OK**.
 
 A tarefa de relatório é adicionada ao nó **Gerenciamento de relatórios de armazenamento**. Tarefas são identificadas pelos relatórios a serem gerado, o namespace a ser relatado no e o agendamento de relatório.
 
@@ -80,6 +80,6 @@ Além disso, você pode exibir o status atual do relatório (esteja o relatório
 ## <a name="see-also"></a>Consulte também
 
 -   [Gerenciamento de relatórios de armazenamento](storage-reports-management.md)
--   [Opções do Gerenciador de recursos de servidor de arquivos de configuração](setting-file-server-resource-manager-options.md)
+-   [Definir opções do Gerenciador de Recursos de Servidor de Arquivos](setting-file-server-resource-manager-options.md)
 
 

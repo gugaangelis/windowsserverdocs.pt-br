@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 29ec2da9d383985d62931ce1cee9bd4a83a0fb1d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 078c779e7813d2aa7499e515d9729edf92452237
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869587"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438206"
 ---
 # <a name="help"></a>ajuda
 
@@ -36,9 +36,9 @@ help [<command>]
   
 ## <a name="parameters"></a>Parâmetros  
   
-|Parâmetro|Descrição|  
-|-------|--------|  
-|<command>|Especifica o comando para o qual exibir informações de ajuda detalhadas.|  
+| Parâmetro |                              Descrição                              |
+|-----------|-----------------------------------------------------------------------|
+| <command> | Especifica o comando para o qual exibir informações de ajuda detalhadas. |
   
 ## <a name="remarks"></a>Comentários  
   
@@ -58,7 +58,7 @@ help create partition primary
 ```  
   
 #### <a name="additional-references"></a>Referências adicionais  
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 
   

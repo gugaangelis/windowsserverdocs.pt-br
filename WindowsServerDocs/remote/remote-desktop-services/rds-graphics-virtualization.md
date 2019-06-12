@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: d6ff5b22-7695-4fee-b1bd-6c9dce5bd0e8
 author: lizap
 manager: scottman
-ms.openlocfilehash: 7cf7fdf3510fcaaa955bd0031fb3564fe4372472
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: af5d5ce89561c89d8468627e20dfdb6f35eca5ef
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875797"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447116"
 ---
 # <a name="which-graphics-virtualization-technology-is-right-for-you"></a>Qual tecnologia de virtualização de gráficos é ideal para você?
 
@@ -43,12 +43,12 @@ Para obter mais informações sobre DDA, fazer check-out [planejar a implantaç�
 ## <a name="remotefx-vgpu"></a>VGPU RemoteFX 
 VGPU do RemoteFX é uma tecnologia de virtualização de elementos gráficos que permite que o poder de processamento de uma GPU ser divididos em vários sistemas operacionais de convidados para habilitar cenários de trabalhador de Conhecimento (consulte o primeiro gráfico acima). Os avanços no Windows Server 2016 permitem que os outros aprimoramentos para cenários de intermitência GPU, por exemplo, para visualização de aplicativos e dados de designer. Outros aprimoramentos incluem:
 
--   Suporte para VMs convidadas de geração 2, Windows Server 2016 convidado VMs e hosts do Hyper-V do cliente Windows.
-   >[!NOTE] 
-   > Não há suporte para o Host de sessão de área de trabalho remota em um convidado do Windows Server 2016 VM; sessão apenas 1 pode ser hospedado por VM de convidado do Windows Server 2016.
+- Suporte para VMs convidadas de geração 2, Windows Server 2016 convidado VMs e hosts do Hyper-V do cliente Windows.
+  >[!NOTE] 
+  > Não há suporte para o Host de sessão de área de trabalho remota em um convidado do Windows Server 2016 VM; sessão apenas 1 pode ser hospedado por VM de convidado do Windows Server 2016.
 
--   Compatibilidade de aplicativo aprimorada e estabilidade.
--   VM Connect modo de sessão avançado, permitindo que o redirecionamento de USB e área de transferência por meio de VM se conectar a uma VM que está habilitada para vGPU do RemoteFX.
+- Compatibilidade de aplicativo aprimorada e estabilidade.
+- VM Connect modo de sessão avançado, permitindo que o redirecionamento de USB e área de transferência por meio de VM se conectar a uma VM que está habilitada para vGPU do RemoteFX.
 
 Para obter mais informações, confira [definir e configurar vGPU do RemoteFX para serviços de área de trabalho remota](rds-remotefx-vgpu.md).
 

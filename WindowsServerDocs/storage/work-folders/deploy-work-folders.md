@@ -9,12 +9,12 @@ manager: dongill
 ms.author: jgerend
 ms.date: 6/24/2017
 description: Como implantar Pastas de Trabalho, incluindo a instalação da função de servidor, a criação de compartilhamentos de sincronização e a criação de registros DNS.
-ms.openlocfilehash: 1f7a0aa0b7e08a1dd444cd6b488a1ced6ee3d9d7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 1ed26c9949fa3f4b53b9f650ca5a3649d5261d65
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812537"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447856"
 ---
 # <a name="deploying-work-folders"></a>Implantando Pastas de Trabalho
 
@@ -36,17 +36,17 @@ Este tópico aborda as etapas necessárias à implantação de Pastas de Trabalh
 ## <a name="step-1-obtain-ssl-certificates"></a>Etapa 1: Obter certificados SSL  
  Pastas de Trabalho usam HTTPS para sincronizar arquivos de forma segura entre os clientes de Pastas de Trabalho e o servidor de Pastas de Trabalho. Os requisitos para certificados SSL usados por Pastas de Trabalho são como a seguir:  
   
--   O certificado deve ser emitido por uma autoridade de certificação confiável. Para a maioria das implementações de Pastas de Trabalho, uma autoridade de certificação publicamente confiável é recomendada, uma vez que os certificados serão usados por dispositivos baseados na Internet, não ingressados no domínio.  
+- O certificado deve ser emitido por uma autoridade de certificação confiável. Para a maioria das implementações de Pastas de Trabalho, uma autoridade de certificação publicamente confiável é recomendada, uma vez que os certificados serão usados por dispositivos baseados na Internet, não ingressados no domínio.  
   
--   O certificado deve ser válido.  
+- O certificado deve ser válido.  
   
--   A chave privada do certificado deve ser exportável (pois você precisará instalar o certificado em vários servidores).  
+- A chave privada do certificado deve ser exportável (pois você precisará instalar o certificado em vários servidores).  
   
--   O nome da entidade do certificado deve conter a URL pública de Pastas de Trabalho usada para descoberta do serviço de Pastas de Trabalho pela Internet; esse nome deve estar no formato `workfolders.`*<nome do domínio>*.  
+- O nome da entidade do certificado deve conter a URL pública de Pastas de Trabalho usada para descoberta do serviço de Pastas de Trabalho pela Internet; esse nome deve estar no formato `workfolders.` *<nome do domínio>* .  
   
--   SANs (nomes alternativos de entidade) devem estar presentes no servidor que lista o nome do servidor para cada servidor de sincronização em uso.
+- SANs (nomes alternativos de entidade) devem estar presentes no servidor que lista o nome do servidor para cada servidor de sincronização em uso.
 
- O gerenciamento de certificados de pastas de trabalho [blog](https://blogs.technet.microsoft.com/filecab/2013/08/09/work-folders-certificate-management/) fornece informações adicionais sobre como usar certificados com Pastas de Trabalho.
+  O gerenciamento de certificados de pastas de trabalho [blog](https://blogs.technet.microsoft.com/filecab/2013/08/09/work-folders-certificate-management/) fornece informações adicionais sobre como usar certificados com Pastas de Trabalho.
   
 ## <a name="step-2-create-dns-records"></a>Etapa 2: Criar registros DNS  
  Para permitir que os usuários sincronizem na Internet, você deve criar um registro Host (A) no DNS público para permitir que clientes da Internet resolvam sua URL de Pastas de Trabalho. Esse registro de DNS deve resolver para a interface externa do servidor proxy reverso.  
@@ -96,9 +96,9 @@ Add-WindowsFeature FS-SyncShareService
 
 - Um grupo para todos os administradores de Pastas de Trabalho, de forma que possam editar um atributo em cada objeto de usuário que vincula o usuário ao servidor de sincronização correto (caso você pretenda usar vários servidores de sincronização)
 
- Os grupos devem seguir uma convenção de nomenclatura padrão e devem ser usados para Pastas de Trabalho para evitar possíveis conflitos com outros requisitos de segurança.
+  Os grupos devem seguir uma convenção de nomenclatura padrão e devem ser usados para Pastas de Trabalho para evitar possíveis conflitos com outros requisitos de segurança.
 
- Para criar os grupos de segurança apropriados, use os vários tempos de procedimento a seguir – um para cada compartilhamento de sincronização e uma vez para criar opcionalmente um grupo para administradores do servidor de arquivos.
+  Para criar os grupos de segurança apropriados, use os vários tempos de procedimento a seguir – um para cada compartilhamento de sincronização e uma vez para criar opcionalmente um grupo para administradores do servidor de arquivos.
 
 #### <a name="to-create-security-groups-for-work-folders"></a>Para criar grupos de segurança para Pastas de Trabalho
 
@@ -141,7 +141,7 @@ Set-ADGroup -Add:@{'Member'=$Members} -Identity:$GroupName -Server:$DC
   
 2.  No menu **Ferramentas**, clique em **Usuários e Computadores do Active Directory**. Usuários e Computadores do Active Directory é exibido.  
   
-3.  Clique com o botão direito do mouse na unidade organizacional em que todos os objetos de usuário existem para Pastas de Trabalho (se os usuários estiverem armazenados em várias unidades organizacionais ou domínios, clique com o botão direito do mouse no contêiner que é comum para todos os usuários) e clique em **Delegar Controle…**. O Assistente de Delegação de Controle é exibido.  
+3.  Clique com o botão direito do mouse na unidade organizacional em que todos os objetos de usuário existem para Pastas de Trabalho (se os usuários estiverem armazenados em várias unidades organizacionais ou domínios, clique com o botão direito do mouse no contêiner que é comum para todos os usuários) e clique em **Delegar Controle…** . O Assistente de Delegação de Controle é exibido.  
   
 4.  Na página **Usuários ou Grupos** , clique em **Adicionar…** e especifique o grupo criado para administradores de Pastas de Trabalho (por exemplo, **Administradores de pastas de trabalho**).  
   
@@ -166,38 +166,38 @@ DsAcls $ADGroupPath /I:S /G ""$GroupName":RPWP;msDS-SyncServerUrl;user"
 ## <a name="step-7-create-sync-shares-for-user-data"></a>Etapa 7: Criar compartilhamentos de sincronização para dados de usuário  
  Neste ponto, você está pronto para designar uma pasta no servidor de sincronização para armazenar arquivos do usuário. Essa pasta é chamada compartilhamento de sincronização e você pode usar o procedimento a seguir para criar um.  
   
-1.  Se você ainda não tiver um volume de NTFS com espaço livre para o compartilhamento de sincronização e os arquivos de usuário que ele contiver, crie um novo volume e formate-o com o sistema de arquivos NTFS.  
+1. Se você ainda não tiver um volume de NTFS com espaço livre para o compartilhamento de sincronização e os arquivos de usuário que ele contiver, crie um novo volume e formate-o com o sistema de arquivos NTFS.  
   
-2.  No Gerenciador de Servidores, clique em **Serviços de Arquivo e Armazenamento**e, em seguida, clique em **Pastas de Trabalho**.  
+2. No Gerenciador de Servidores, clique em **Serviços de Arquivo e Armazenamento**e, em seguida, clique em **Pastas de Trabalho**.  
   
-3.  Uma lista de todos os compartilhamento de sincronização existentes é visível na parte superior do painel de detalhes. Para criar um novo compartilhamento de sincronização, no menu **Tarefas**, escolha **Novo Compartilhamento de Sincronização…**. O Assistente de Novo Compartilhamento de Sincronização é exibido.  
+3. Uma lista de todos os compartilhamento de sincronização existentes é visível na parte superior do painel de detalhes. Para criar um novo compartilhamento de sincronização, no menu **Tarefas**, escolha **Novo Compartilhamento de Sincronização…** . O Assistente de Novo Compartilhamento de Sincronização é exibido.  
   
-4.  Na página **Selecionar o servidor e o caminho** , especifique onde armazenar o compartilhamento de sincronização. Se você já tiver um compartilhamento de arquivos criado para esses dados de usuário, será possível escolher esse compartilhamento. Alternativamente, é possível criar uma nova pasta.  
+4. Na página **Selecionar o servidor e o caminho** , especifique onde armazenar o compartilhamento de sincronização. Se você já tiver um compartilhamento de arquivos criado para esses dados de usuário, será possível escolher esse compartilhamento. Alternativamente, é possível criar uma nova pasta.  
   
-    > [!NOTE]
-    >  Por padrão, os compartilhamentos de sincronização não são diretamente acessíveis via compartilhamento de arquivos (a menos que você selecione um compartilhamento de arquivos existente). Se você desejar tornar um compartilhamento de sincronização acessível por meio de um compartilhamento de arquivos, use o bloco **Compartilhamentos** do Gerenciador de Servidores ou o cmdlet [New-SmbShare](https://technet.microsoft.com/library/jj635722.aspx) para criar um compartilhamento de arquivos, preferencialmente com a enumeração baseada em acesso habilitada.  
+   > [!NOTE]
+   >  Por padrão, os compartilhamentos de sincronização não são diretamente acessíveis via compartilhamento de arquivos (a menos que você selecione um compartilhamento de arquivos existente). Se você desejar tornar um compartilhamento de sincronização acessível por meio de um compartilhamento de arquivos, use o bloco **Compartilhamentos** do Gerenciador de Servidores ou o cmdlet [New-SmbShare](https://technet.microsoft.com/library/jj635722.aspx) para criar um compartilhamento de arquivos, preferencialmente com a enumeração baseada em acesso habilitada.  
   
-5.  Na página **Especificar a estrutura de pastas do usuário**, escolha uma convenção de nomenclatura para pastas de usuário no compartilhamento de sincronização. Há duas opções disponíveis:  
+5. Na página **Especificar a estrutura de pastas do usuário**, escolha uma convenção de nomenclatura para pastas de usuário no compartilhamento de sincronização. Há duas opções disponíveis:  
   
-    -   **Alias de usuário** cria pastas de usuário que não incluem um nome de domínio. Se você estiver usando um compartilhamento de arquivos que já está em uso com Redirecionamento de Pasta ou outra solução de dados do usuário, selecione essa convenção de nomenclatura. Opcionalmente, você pode marcar a caixa de seleção **Sincronizar apenas a subpasta a seguir** para sincronizar apenas uma subpasta específica, como a pasta Documentos.  
+   - **Alias de usuário** cria pastas de usuário que não incluem um nome de domínio. Se você estiver usando um compartilhamento de arquivos que já está em uso com Redirecionamento de Pasta ou outra solução de dados do usuário, selecione essa convenção de nomenclatura. Opcionalmente, você pode marcar a caixa de seleção **Sincronizar apenas a subpasta a seguir** para sincronizar apenas uma subpasta específica, como a pasta Documentos.  
   
-    -   **alias@domain de usuário** cria pastas de usuário que incluem um nome de domínio. Se você não estiver usando um compartilhamento de arquivos em uso com Redirecionamento de Pasta ou outra solução de dados do usuário, selecione essa convenção de nomenclatura para eliminar os conflitos de nomenclatura de pastas quando vários usuários do compartilhamento tiverem alias idênticos (o que pode ocorrer se os usuários pertencerem a domínios diferentes).  
+   - <strong>alias@domain de usuário</strong> cria pastas de usuário que incluem um nome de domínio. Se você não estiver usando um compartilhamento de arquivos em uso com Redirecionamento de Pasta ou outra solução de dados do usuário, selecione essa convenção de nomenclatura para eliminar os conflitos de nomenclatura de pastas quando vários usuários do compartilhamento tiverem alias idênticos (o que pode ocorrer se os usuários pertencerem a domínios diferentes).  
   
-6.  Na página **Inserir o nome de compartilhamento da sincronização**, especifique um nome e uma descrição para o compartilhamento de sincronização. Isso não é anunciado na rede, mas está visível no Gerenciador de Servidores e no Windows Powershell para ajudar a distinguir um compartilhamento de sincronização do outro.  
+6. Na página **Inserir o nome de compartilhamento da sincronização**, especifique um nome e uma descrição para o compartilhamento de sincronização. Isso não é anunciado na rede, mas está visível no Gerenciador de Servidores e no Windows Powershell para ajudar a distinguir um compartilhamento de sincronização do outro.  
   
-7.  Na página **Conceder acesso de sincronização a grupos** , especifique o grupo criado que lista os usuários permitidos para usar esse compartilhamento de sincronização.  
+7. Na página **Conceder acesso de sincronização a grupos** , especifique o grupo criado que lista os usuários permitidos para usar esse compartilhamento de sincronização.  
   
-    > [!IMPORTANT]
-    >  Para melhorar o desempenho e a segurança, conceda o acesso a grupos, em vez de usuários individuais e seja o mais específico possível, evitando grupos genéricos, como Usuários Autenticados e Usuários do Domínio. A concessão de acesso a grupos com uma grande quantidade de usuários aumenta o tempo que as Pastas de Trabalho levam para consultar o AD DS. Se você tiver um grande número de usuários, crie vários compartilhamentos de sincronização para ajudar a dispersar a carga.  
+   > [!IMPORTANT]
+   >  Para melhorar o desempenho e a segurança, conceda o acesso a grupos, em vez de usuários individuais e seja o mais específico possível, evitando grupos genéricos, como Usuários Autenticados e Usuários do Domínio. A concessão de acesso a grupos com uma grande quantidade de usuários aumenta o tempo que as Pastas de Trabalho levam para consultar o AD DS. Se você tiver um grande número de usuários, crie vários compartilhamentos de sincronização para ajudar a dispersar a carga.  
   
-8.  Na página **Especificar políticas de dispositivo** , especifique se deve solicitar qualquer restrição de segurança em computadores e dispositivos clientes. Existem duas políticas de dispositivo que podem ser selecionadas individualmente:  
+8. Na página **Especificar políticas de dispositivo** , especifique se deve solicitar qualquer restrição de segurança em computadores e dispositivos clientes. Existem duas políticas de dispositivo que podem ser selecionadas individualmente:  
   
-    -   **Criptografar Pastas de Trabalho** Solicita que as Pastas de Trabalho sejam criptografadas em computadores e dispositivos clientes  
+   -   **Criptografar Pastas de Trabalho** Solicita que as Pastas de Trabalho sejam criptografadas em computadores e dispositivos clientes  
   
-    -   **Bloquear a tela automaticamente e solicitar uma senha** Solicita que os computadores e dispositivos clientes bloqueiem automaticamente suas telas após 15 minutos, exijam uma senha de seis ou mais caracteres para desbloquear a tela e ativem um modo de bloqueio de dispositivo após 10 tentativas com falha  
+   -   **Bloquear a tela automaticamente e solicitar uma senha** Solicita que os computadores e dispositivos clientes bloqueiem automaticamente suas telas após 15 minutos, exijam uma senha de seis ou mais caracteres para desbloquear a tela e ativem um modo de bloqueio de dispositivo após 10 tentativas com falha  
   
-        > [!IMPORTANT]
-        >  Para impor as políticas de senha para PCs co Windows 7 e para não administradores em computadores ingressados no domínio, use as políticas de senha da Política de Grupo para os domínios de usuário e/ou computador e exclua esses domínios das políticas de senha de Pastas de Trabalho. Você pode excluir domínios usando o cmdlet [Set-Syncshare -PasswordAutoExcludeDomain](https://technet.microsoft.com/library/dn296649\(v=wps.630\).aspx) depois de criar o compartilhamento de sincronização. Para obter informações sobre como definir políticas de senha de Política de Grupo, consulte [Política de Senha](https://technet.microsoft.com/library/hh994572(v=ws.11).aspx).  
+       > [!IMPORTANT]
+       >  Para impor as políticas de senha para PCs co Windows 7 e para não administradores em computadores ingressados no domínio, use as políticas de senha da Política de Grupo para os domínios de usuário e/ou computador e exclua esses domínios das políticas de senha de Pastas de Trabalho. Você pode excluir domínios usando o cmdlet [Set-Syncshare -PasswordAutoExcludeDomain](https://technet.microsoft.com/library/dn296649\(v=wps.630\).aspx) depois de criar o compartilhamento de sincronização. Para obter informações sobre como definir políticas de senha de Política de Grupo, consulte [Política de Senha](https://technet.microsoft.com/library/hh994572(v=ws.11).aspx).  
   
 9. Revise suas seleções e conclua o assistente para criar o compartilhamento de sincronização.
 
@@ -251,7 +251,7 @@ O exemplo acima cria um novo compartilhamento de sincronização chamado *Share0
 6.  Na caixa **Valor a ser adicionado**, digite a URL do servidor de sincronização com o qual você deseja sincronizar esse usuário, clique em **Adicionar**, em **OK** e em **OK** novamente.  
   
     > [!NOTE]
-    >  A URL do servidor de sincronização é apenas `https://` ou `http://` (dependendo se você deseja exigir uma conexão segura) seguida pelo nome de domínio totalmente qualificado do servidor de sincronização. Por exemplo, **https://sync1.contoso.com**.
+    >  A URL do servidor de sincronização é apenas `https://` ou `http://` (dependendo se você deseja exigir uma conexão segura) seguida pelo nome de domínio totalmente qualificado do servidor de sincronização. Por exemplo, **https://sync1.contoso.com** .
 
 Para preencher o atributo de vários usuários, use o Active Directory PowerShell. Abaixo está um exemplo que preenche o atributo para todos os membros do grupo *Usuários de Compartilhamento de Sincronização de RH* , abordado na Etapa 5.
   
@@ -276,15 +276,15 @@ Para configurar o acesso das Pastas de Trabalho usando o Proxy de aplicativo do 
 
 Se você tiver um grande número de computadores ingressados no domínio ao qual deseja implantar Pastas de Trabalho, pode usar a Política de Grupo para executar as seguintes tarefas de configuração do computador cliente:  
   
--   Especificar com quais usuários de servidor de sincronização deverá sincronizar  
+- Especificar com quais usuários de servidor de sincronização deverá sincronizar  
   
--   Forçar as Pastas de Trabalho a serem configuradas automaticamente, usando as configurações padrão (revise a discussão da Política de Grupo em [Projetando uma implementação de Pastas de Trabalho](plan-work-folders.md) antes de fazer isso)  
+- Forçar as Pastas de Trabalho a serem configuradas automaticamente, usando as configurações padrão (revise a discussão da Política de Grupo em [Projetando uma implementação de Pastas de Trabalho](plan-work-folders.md) antes de fazer isso)  
   
- Para controlar essas configurações, crie um novo GPO (objeto de Política de Grupo) para Pastas de Trabalho e defina as seguintes configurações de Política de Grupo conforme apropriado:  
+  Para controlar essas configurações, crie um novo GPO (objeto de Política de Grupo) para Pastas de Trabalho e defina as seguintes configurações de Política de Grupo conforme apropriado:  
   
--   Configuração de política "Especificar configurações de Pastas de Trabalho" em Configuração do Usuário\Políticas\Modelos Administrativos\Componentes do Windows\WorkFolders  
+- Configuração de política "Especificar configurações de Pastas de Trabalho" em Configuração do Usuário\Políticas\Modelos Administrativos\Componentes do Windows\WorkFolders  
   
--   Configuração de política "Forçar configuração automática para todos os usuários" em Configuração do Computador\Políticas\Modelos Administrativos\Componentes do Windows\WorkFolders  
+- Configuração de política "Forçar configuração automática para todos os usuários" em Configuração do Computador\Políticas\Modelos Administrativos\Componentes do Windows\WorkFolders  
   
 > [!NOTE]
 >  Essas configurações de política estão disponíveis somente ao editar a Política de Grupo de um computador que executa o Gerenciamento de Política de Grupo no Windows 8.1, no Windows Server 2012 R2 ou posterior. Versões de Gerenciamento de Política de Grupo de sistemas operacionais anteriores não têm essa configuração disponível. Essas configurações de política são aplicadas aos PCs com Windows 7 no qual o aplicativo de [Pastas de trabalho para o Windows 7](http://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx) foi instalado.  

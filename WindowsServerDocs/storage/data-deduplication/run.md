@@ -8,12 +8,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: 0421faaa910a1d679d809b88c0b4d2c94ba694b3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2e2e4975c4ab9ebb7ec68834f380255292426393
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852467"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447220"
 ---
 # <a name="running-data-deduplication"></a>Executar a Eliminação de Duplicação de Dados
 
@@ -49,10 +49,10 @@ Como a Eliminação de Duplicação de Dados usa um modelo de pós-processamento
 
 Um indicador de falha do [Trabalho de otimização](understand.md#job-info-optimization) é uma taxa de otimização com tendência para baixo, que pode indicar que os Trabalhos de otimização não estão acompanhando a taxa de alterações ou variação. Você pode verificar a taxa de otimização usando o cmdlet do PowerShell [`Get-DedupStatus`](https://technet.microsoft.com/library/hh848437.aspx).
 
-> [!Important]  
+> [!Important]
 > `Get-DedupStatus` tem dois campos que são relevantes para a taxa de otimização: `OptimizedFilesSavingsRate` e `SavingsRate`. Esses são dois valores importantes para rastrear, mas cada um tem um significado exclusivo.
-- `OptimizedFilesSavingsRate` aplica-se somente aos arquivos que estão 'na política' para otimização (`space used by optimized files after optimization / logical size of optimized files`).
-- `SavingsRate` aplica-se ao volume inteiro (`space used by optimized files after optimization / total logical size of the optimization`).
+> - `OptimizedFilesSavingsRate` aplica-se somente aos arquivos que estão 'na política' para otimização (`space used by optimized files after optimization / logical size of optimized files`).
+> - `SavingsRate` aplica-se ao volume inteiro (`space used by optimized files after optimization / total logical size of the optimization`).
 
 ## <a id="disabling-dedup"></a>Desabilitando a eliminação de duplicação de dados
 Para desligar a Eliminação de Duplicação de Dados, execute o [Trabalho de cancelamento da otimização](understand.md#job-info-unoptimization). Para desfazer a otimização de volume, execute o seguinte comando:

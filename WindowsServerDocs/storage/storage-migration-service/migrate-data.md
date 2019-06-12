@@ -8,12 +8,12 @@ ms.date: 02/13/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 966f25eb0bd43513b3c544fb3dc97115ed668b28
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 856eb7c2c2dfe0e0e3300fcf826e75b56258dc1b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872747"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447653"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>Use o serviço de migração de armazenamento para migrar um servidor
 
@@ -55,18 +55,18 @@ Nesta etapa, você deve especificar quais servidores para migrar e, em seguida, 
 
 Nesta etapa você transferir dados depois de especificar onde colocá-lo nos servidores de destino.
 
- 1. Sobre o **transferir dados** > **inserir credenciais** página, digite as credenciais de administrador que funcionam nos servidores de destino que você deseja migrar para o e, em seguida, selecione **próximo**.
- 1. Sobre o **adicionar um dispositivo de destino e mapeamentos** é listada a página, o primeiro servidor de origem. Digite o nome do servidor ao qual você deseja migrar e, em seguida, selecione **verificar dispositivo**.
- 1. Mapeie os volumes de origem para volumes de destino, desmarque a **Include** caixa de seleção para quaisquer outros compartilhamentos você não quiser transferir (incluindo qualquer compartilhamentos administrativos localizados na pasta de sistema do Windows) e, em seguida, selecione **Avançar** .
-    ![Captura de tela mostrando um servidor de origem com volumes e compartilhamentos e onde eles serão transferidos no destino](media/migrate/transfer.png) **Figura 3: Um servidor de origem e de onde seu armazenamento será transferido para**
- 1. Adicionar um servidor de destino e os mapeamentos para qualquer mais servidores de origem e, em seguida, selecione **próxima**.
- 1. Opcionalmente, ajuste as configurações de transferência e, em seguida, selecione **próxima**.
- 1. Selecione **Validate** e, em seguida, selecione **próxima**.
- 1. Selecione **inicie a transferência** para iniciar a transferência de dados.<br>Na primeira vez que você transfere, podemos moverá todos os arquivos existentes em um destino para uma pasta de backup. Em transferências subsequentes, por padrão vamos atualizá o destino sem fazer o backup primeiro. <br>Além disso, o serviço de migração de armazenamento é inteligente o suficiente para lidar com a sobreposição de compartilhamentos — não copiamos as mesmas pastas duas vezes no mesmo trabalho.
- 1. Após a transferência, confira o servidor de destino para garantir que tudo transferido corretamente. Selecione **log de erros apenas** se você quiser baixar um log de todos os arquivos que não foi transferida.
+1. Sobre o **transferir dados** > **inserir credenciais** página, digite as credenciais de administrador que funcionam nos servidores de destino que você deseja migrar para o e, em seguida, selecione **próximo**.
+2. Sobre o **adicionar um dispositivo de destino e mapeamentos** é listada a página, o primeiro servidor de origem. Digite o nome do servidor ao qual você deseja migrar e, em seguida, selecione **verificar dispositivo**.
+3. Mapeie os volumes de origem para volumes de destino, desmarque a **Include** caixa de seleção para quaisquer outros compartilhamentos você não quiser transferir (incluindo qualquer compartilhamentos administrativos localizados na pasta de sistema do Windows) e, em seguida, selecione **Avançar** .
+   ![Captura de tela mostrando um servidor de origem com volumes e compartilhamentos e onde eles serão transferidos no destino](media/migrate/transfer.png) **Figura 3: Um servidor de origem e de onde seu armazenamento será transferido para**
+4. Adicionar um servidor de destino e os mapeamentos para qualquer mais servidores de origem e, em seguida, selecione **próxima**.
+5. Opcionalmente, ajuste as configurações de transferência e, em seguida, selecione **próxima**.
+6. Selecione **Validate** e, em seguida, selecione **próxima**.
+7. Selecione **inicie a transferência** para iniciar a transferência de dados.<br>Na primeira vez que você transfere, podemos moverá todos os arquivos existentes em um destino para uma pasta de backup. Em transferências subsequentes, por padrão vamos atualizá o destino sem fazer o backup primeiro. <br>Além disso, o serviço de migração de armazenamento é inteligente o suficiente para lidar com a sobreposição de compartilhamentos — não copiamos as mesmas pastas duas vezes no mesmo trabalho.
+8. Após a transferência, confira o servidor de destino para garantir que tudo transferido corretamente. Selecione **log de erros apenas** se você quiser baixar um log de todos os arquivos que não foi transferida.
 
-  > [!NOTE]
-  > Se você quiser manter uma trilha de auditoria de transferências ou estiver planejando executar mais de uma transferência em um trabalho, clique em **log de transferência** para salvar uma cópia CSV. Todas as transferências subsequentes substitui as informações de banco de dados de uma execução anterior. 
+   > [!NOTE]
+   > Se você quiser manter uma trilha de auditoria de transferências ou estiver planejando executar mais de uma transferência em um trabalho, clique em **log de transferência** para salvar uma cópia CSV. Todas as transferências subsequentes substitui as informações de banco de dados de uma execução anterior. 
 
 Neste ponto, você tem três opções:
 

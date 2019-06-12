@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 077a3a64-2fa3-4994-9711-ec1fbdc081ba
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 83d12826bd8128bc38d84c252045d74cf416457e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7f4c7e1418e541e1f913c8a20cbda3456c1c3802
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882877"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446604"
 ---
 # <a name="monitor-the-operations-status-of-the-remote-access-server-and-its-components"></a>Monitorar o status da operação do servidor de acesso Remoto e seus componentes
 
@@ -41,7 +41,7 @@ O console de gerenciamento no servidor de acesso remoto pode ser usado para moni
   
 4.  Clique em **Refresh** sob **tarefas** no painel direito para recarregar o status de operações. O status de operações é atualizado automaticamente a cada cinco minutos, que é o intervalo de atualização padrão. Para alterar o intervalo de atualização padrão, clique em **configurar o intervalo de atualização**.  
   
-![Windows PowerShell](../../../media/Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
+![Windows PowerShell](../../../media/Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   

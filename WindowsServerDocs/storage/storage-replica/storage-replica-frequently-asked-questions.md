@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: e832dce3eed7d0e5103254fb48683726b82af2e6
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: d03407292a797b1cd511937ba40fc0fa373f5dc0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65475942"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447576"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>Perguntas frequentes sobre Réplica de Armazenamento
 
@@ -83,7 +83,7 @@ Para configurar restrições de rede em um cluster estendido:
 Não, a réplica de armazenamento dá suporte à replicação de apenas um para cada um de um servidor, cluster ou nó de cluster estendido. Isso pode mudar em uma versão posterior. Você pode, claro, configurar a replicação entre vários servidores de um par de volumes específico, em qualquer direção. Por exemplo, o Servidor 1 pode replicar seu volume D no Servidor 2, e seu volume E do Servidor 3.
 
 ## <a name="FAQ5"></a> Pode aumentar ou reduzir os volumes replicados pela réplica de armazenamento?  
-Você pode aumentar (expandir) os volumes, mas não pode reduzi-los. Por padrão, a Réplica de Armazenamento impede que os administradores estendam os volumes replicados; use a opção `Set-SRGroup -AllowVolumeResize $TRUE` no grupo de origem, antes do redimensionamento. Por exemplo: 
+Você pode aumentar (expandir) os volumes, mas não pode reduzi-los. Por padrão, a Réplica de Armazenamento impede que os administradores estendam os volumes replicados; use a opção `Set-SRGroup -AllowVolumeResize $TRUE` no grupo de origem, antes do redimensionamento. Por exemplo:
 
 1. Use em relação ao computador de origem: `Set-SRGroup -Name YourRG -AllowVolumeResize $TRUE`
 2. Aumentar o volume usando qualquer técnica de sua preferência
@@ -141,7 +141,7 @@ Você pode também usar volumes de dados propagados para reduzir o uso de largur
 
 ## <a name="FAQ13"></a> Eu posso delegar usuários para administrar a replicação?  
 
-Você pode usar o `Grant-SRDelegation` cmdlet. Isso permite que você defina usuários específicos em cenários de replicação de servidor para servidor, cluster para cluster e cluster estendido com as permissões para criar, alterar ou remover a replicação, sem serem membros do grupo de administradores locais. Por exemplo:   
+Você pode usar o `Grant-SRDelegation` cmdlet. Isso permite que você defina usuários específicos em cenários de replicação de servidor para servidor, cluster para cluster e cluster estendido com as permissões para criar, alterar ou remover a replicação, sem serem membros do grupo de administradores locais. Por exemplo:  
 
     Grant-SRDelegation -UserName contso\tonywang  
 
@@ -227,7 +227,7 @@ Infelizmente, não damos suporte a criação de um *novo* parceria entre 2019 do
 No entanto, para obter o melhor desempenho do Windows Server 2019, todos os membros da parceria devem executar o Windows Server 2019 e você deve excluir parcerias existentes e associadas a grupos de replicação e, em seguida, recriá-los com os dados propagados (seja ao criar a parceria no Windows Admin Center ou com o cmdlet New-SRPartnership).
 
 ## <a name="FAQ17"></a> Como faço para relatar um problema com a réplica de armazenamento ou este guia?  
-Para obter assistência técnica para a Réplica de Armazenamento, poste nos [fóruns do Microsoft TechNet](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home?forum=WinServerPreview). Você também pode enviar um email a srfeed@microsoft.com perguntas sobre a Réplica de Armazenamento ou problemas com esta documentação. O https://windowsserver.uservoice.com site é preferencial para solicitações de alteração de design, pois permite que seus clientes fornecer suporte e comentários sobre suas ideias.
+Para obter assistência técnica para a Réplica de Armazenamento, poste nos [fóruns do Microsoft TechNet](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home?forum=WinServerPreview). Você também pode enviar um email a srfeed@microsoft.com perguntas sobre a Réplica de Armazenamento ou problemas com esta documentação. O <https://windowsserver.uservoice.com> site é preferencial para solicitações de alteração de design, pois permite que seus clientes fornecer suporte e comentários sobre suas ideias.
 
 
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: f51c9e38-98bb-49c1-9d39-427d07021499
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ef4f10a6ac1998850758f2c9db86bfd950c1ad70
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 15da16094a47a2492dc9054e0671c3709fe23362
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833277"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446449"
 ---
 # <a name="install-the-web-server-web1"></a>Instalar o servidor Web WEB1
 
@@ -40,8 +40,8 @@ Para concluir este procedimento, é preciso ser um membro do grupo **Administrad
 **Observação**   
 O **antes de começar** página do assistente Adicionar funções e recursos não será exibida se você tiver executado o assistente Adicionar funções e recursos anteriormente e você selecionou **pular esta página por padrão** nesse momento.  
 
-3.  Na página **Tipo de Instalação**, clique em **Avançar**.  
-4.  Sobre o **seleção de servidor** , clique em **próxima**.  
-5.  Sobre o **funções de servidor** página, selecione **servidor Web (IIS)** e, em seguida, clique em **próxima**.  
-6.  Clique em **Avançar** até ter aceitado todas as configurações padrão do servidor Web e clique em **Instalar**.  
-7.  Confirme se todas as instalações tiveram êxito e clique em **Fechar**.
+3. Na página **Tipo de Instalação**, clique em **Avançar**.  
+4. Sobre o **seleção de servidor** , clique em **próxima**.  
+5. Sobre o **funções de servidor** página, selecione **servidor Web (IIS)** e, em seguida, clique em **próxima**.  
+6. Clique em **Avançar** até ter aceitado todas as configurações padrão do servidor Web e clique em **Instalar**.  
+7. Confirme se todas as instalações tiveram êxito e clique em **Fechar**.

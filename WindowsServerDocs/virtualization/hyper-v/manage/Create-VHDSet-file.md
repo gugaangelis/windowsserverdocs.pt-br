@@ -11,12 +11,12 @@ ms.technology: compute-hyper-v
 ms.assetid: 444e1496-9e5a-41cf-bfbc-306e2ed8e00a
 audience: IT Pros
 ms.reviewer: kathydav
-ms.openlocfilehash: 61f2450857cbeaffd7f75f7b259e9f9de06ba5c6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a5a6f79d362b9058ca29d979457a1dcdfc0c9f82
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870397"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445695"
 ---
 # <a name="create-hyper-v-vhd-set-files"></a>Criar arquivos de conjunto de VHD do Hyper-V
 Arquivos VHD definido são um novo modelo de disco Virtual compartilhado para clusters de convidado no Windows Server 2016. Arquivos VHD definido dão suporte ao redimensionamento online de discos virtuais compartilhados, dão suporte a réplica do Hyper-V e podem ser incluídos em pontos de verificação consistente com o aplicativo. 
@@ -45,20 +45,20 @@ PS c:\>New-VHD -Path c:\base.vhds -SizeBytes 10GB
 
 Migrando um VHDX compartilhado existente para um VHDS requer colocar a VM offline. Isso é o processo recomendado usando o Windows PowerShell:
 
-1.  Remova o VHDX da VM. Por exemplo, execute: 
-  ``` PowerShell
-  PS c:\>Remove-VMHardDiskDrive existing.vhdx
-  ```
+1. Remova o VHDX da VM. Por exemplo, execute: 
+   ``` PowerShell
+   PS c:\>Remove-VMHardDiskDrive existing.vhdx
+   ```
   
-2.  Converta o VHDX em um VHDS. Por exemplo, execute:
-  ``` PowerShell
-  PS c:\>Convert-VHD existing.vhdx new.vhds
-  ```
+2. Converta o VHDX em um VHDS. Por exemplo, execute:
+   ``` PowerShell
+   PS c:\>Convert-VHD existing.vhdx new.vhds
+   ```
   
-3.  Adicione os VHDS à VM. Por exemplo, execute:
-  ``` PowerShell
-  PS c:\>Add-VMHardDiskDrive new.vhds
-  ```
+3. Adicione os VHDS à VM. Por exemplo, execute:
+   ``` PowerShell
+   PS c:\>Add-VMHardDiskDrive new.vhds
+   ```
   
 
 

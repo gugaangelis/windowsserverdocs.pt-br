@@ -13,12 +13,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic-msft
 ms.date: 05/16/2018
-ms.openlocfilehash: 48dabb5ad83b82f0a93992ad8c24456a8a8e7ef5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b1af556200c9dd497bac835f1480479cca075dab
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873087"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447287"
 ---
 # <a name="overview-of-tls---ssl-schannel-ssp"></a>Visão geral do TLS / SSL (Schannel SSP)
 
@@ -31,7 +31,7 @@ Schannel é um SSP (Provedor de Suporte de Segurança) que implementa os protoco
 Para obter mais informações sobre a implementação da Microsoft de TLS e SSL no SSP Schannel, consulte o [referência técnica de TLS/SSL (2003)](https://technet.microsoft.com/library/cc784149(v=ws.10).aspx).
 
 
-##<a name="tlsssl-schannel-ssp-features"></a>Recursos TLS/SSL (Schannel SSP)
+## <a name="tlsssl-schannel-ssp-features"></a>Recursos TLS/SSL (Schannel SSP)
 O exemplo a seguir descreve os recursos do TLS em SSP. o Schannel
 
 ### <a name="tls-session-resumption"></a>Retomada da sessão TLS

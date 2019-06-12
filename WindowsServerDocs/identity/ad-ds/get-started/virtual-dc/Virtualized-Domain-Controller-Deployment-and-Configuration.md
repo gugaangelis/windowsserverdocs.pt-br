@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: d692e58d616376149e62fbce611fe2a9ac80c743
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 4af0f96b0af3a547ab7d509d031a9e23cce8b654
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863247"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443209"
 ---
 # <a name="virtualized-domain-controller-deployment-and-configuration"></a>Implantação e configuração do controlador de domínio virtualizado
 
@@ -280,7 +280,7 @@ Execute o cmdlet no controlador de domínio de origem proposto que você pretend
 ||-PreferredWINSServer|Especifica o endereço IPv4 estático do servidor WINS primário. Tipo de dados String.|  
 ||-AlternateWINSServer|Especifica o endereço IPv4 estático do servidor WINS secundário. Tipo de dados String.|  
 ||-IPv6DNSResolver|Especifica as entradas DNS do IPv6 estático do computador clonado em uma lista separada por vírgulas. Não há maneiras de configurar informações estáticas do Ipv6 em uma clonagem do controlador de domínio virtualizado. Tipo de dados Array.|  
-||-Offline|Não executa os testes de validação e substitui qualquer dccloneconfig.xml existente. Não possui parâmetros. Para obter mais informações, consulte [Executando New-ADDCCloneConfigFile em modo offline](../../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md#BKMK_OfflineMode).|  
+||-Offline|Não executa os testes de validação e substitui qualquer dccloneconfig.xml existente. Não possui parâmetros.|  
 ||*-Static*|Necessário se especificar argumentos IP estáticos IPv4SubnetMask, IPv4SubnetMask ou IPv4DefaultGateway. Não possui parâmetros.|  
   
 Testes feitos ao se executar no modo online:  
@@ -546,7 +546,7 @@ copy-item <xml file path><destination path>\dccloneconfig.xml
 dismount-vhd <disk path>  
 ```  
   
-Por exemplo:   
+Por exemplo:  
   
 ![Implantação do controlador de domínio virtualizado](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSMountVHD.png)  
   
@@ -604,7 +604,7 @@ Para importar usando o snap-in do Gerenciador Hyper-V:
   
 3.  Na página **Selecionar Máquina Virtual**, clique no computador de origem.  
   
-4.  Na página **Escolher Tipo de Importação** , clique em **Copiar a máquina virtual (criar uma nova ID exclusiva)**, e clique em **Concluir**.  
+4.  Na página **Escolher Tipo de Importação** , clique em **Copiar a máquina virtual (criar uma nova ID exclusiva)** , e clique em **Concluir**.  
   
 5.  Renomeie a VM importada se estiver importando no mesmo host Hyper-V, ela terá o mesmo nome que o controlador de domínio de origem exportado.  
   
@@ -644,11 +644,11 @@ Por exemplo:
   
 ![Implantação do controlador de domínio virtualizado](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSGetVMSnap.png)  
   
-> [!WARNING]  
+> [!WARNING]
 > Certifique-se de que, ao importar o computador, os endereços MAC estáticos não foram designados para o controlador de domínio de origem. Se um computador de origem com um MAC estático for clonado, aqueles computadores copiados não enviarão ou receberão corretamente qualquer tráfego de rede. Defina um novo endereço MAC estático ou dinâmico exclusivo, se esse for o caso. Você pode ver se uma VM usa endereços MAC estáticos com o comando:  
->   
+> 
 > **Get-VM -VMName**   
->  ***test-vm* | Get-VMNetworkAdapter | fl \***  
+>  ***test-vm* | Get-VMNetworkAdapter | fl \\** *  
   
 ### <a name="step-9---clone-the-new-virtual-machine"></a>Etapa 9 — Clonar a nova máquina virtual  
 Uma opção antes de iniciar a clonagem é reiniciar o controlador de domínio de origem do clone offline. Independente de qualquer coisa. verifique se o emulador PDC está online.  

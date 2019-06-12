@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3b3d0591f9feb12782d0c77b6c786cfe17656ab2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d0b77aed5970c74181ba03da5e57e9b230313a15
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831157"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438117"
 ---
 # <a name="klist"></a>klist
 
@@ -120,53 +120,52 @@ Os parâmetros de exibem as informações a seguir:
 
 ## <a name="BKMK_Examples"></a>Exemplos
 
-1.  Quando estiver diagnosticando um 27 de ID de evento durante o processamento de um serviço de concessão de tíquete (TGS) solicitação para o servidor de destino, a conta não tem uma chave adequada para gerar um tíquete Kerberos. Você pode usar Klist para consultar o cache de tíquete Kerberos para determinar se qualquer tíquetes estão ausentes, se o servidor de destino ou a conta é um erro ou se não há suporte para o tipo de criptografia.  
-    ```
-    klist 
-    ```  
-    ```
-    klist –li 0x3e7
-    ```  
-2.  Quando você diagnosticar erros de e para conhecer as especificidades de cada tíquete--tíquete de concessão que é armazenado em cache no computador para uma sessão de logon, você pode usar Klist para exibir as informações de TGT.  
-    ```
-    klist tgt
-    ```  
-3.  Se não for possível estabelecer uma conexão e o diagnóstico poderá levar muito tempo, limpar o cache de tíquete Kerberos, faça logoff e logon novamente.  
-    ```
-    klist purge
-    ```  
-    ```
-    klist purge –li 0x3e7
-    ```  
-4.  Quando você deseja diagnosticar uma sessão de logon para um usuário ou um serviço, você pode usar o comando a seguir para localizar a identificação de logon que é usada em outros comandos Klist.  
-    ```
-    klist sessions
-    ```  
-5.  Quando você deseja diagnosticar uma falha de delegação restrita de Kerberos, você pode usar o comando a seguir para localizar o último erro foi encontrado.  
-    ```
-    klist kcd_cache
-    ```  
-6.  Quando você deseja diagnosticar se um usuário ou um serviço pode obter um tíquete em um servidor, você pode usar esse comando para solicitar um tíquete para um SPN específico.  
-    ```
-    klist get host/%computername%
-    ```  
-7.  Ao diagnosticar problemas de replicação entre controladores de domínio, você normalmente precisa o computador cliente para ter como destino um controlador de domínio específico. Nesses casos, você pode usar o comando a seguir para ter como destino o computador cliente para esse controlador de domínio específico.  
-    ```
-    klist add_bind CONTOSO KDC.CONTOSO.COM
-    
-    ```  
-    ```
-    klist add_bind CONTOSO.COM KDC.CONTOSO.COM
-    ```  
-8.  Para consultar quais controladores de domínio deste computador contatado recentemente, você pode usar o comando a seguir.  
-    ```
-    klist query_bind
-    ```  
-9.  Quando desejar que o Kerberos para redescobrir os controladores de domínio, você pode usar o comando a seguir. Este comando também pode ser usado para liberar o cache antes de criar novas associações de controlador de domínio com add_bind klist.  
-    ```
-    klist purge_bind
-    ```
+1. Quando estiver diagnosticando um 27 de ID de evento durante o processamento de um serviço de concessão de tíquete (TGS) solicitação para o servidor de destino, a conta não tem uma chave adequada para gerar um tíquete Kerberos. Você pode usar Klist para consultar o cache de tíquete Kerberos para determinar se qualquer tíquetes estão ausentes, se o servidor de destino ou a conta é um erro ou se não há suporte para o tipo de criptografia.  
+   ```
+   klist 
+   ```  
+   ```
+   klist –li 0x3e7
+   ```  
+2. Quando você diagnosticar erros de e para conhecer as especificidades de cada tíquete--tíquete de concessão que é armazenado em cache no computador para uma sessão de logon, você pode usar Klist para exibir as informações de TGT.  
+   ```
+   klist tgt
+   ```  
+3. Se não for possível estabelecer uma conexão e o diagnóstico poderá levar muito tempo, limpar o cache de tíquete Kerberos, faça logoff e logon novamente.  
+   ```
+   klist purge
+   ```  
+   ```
+   klist purge –li 0x3e7
+   ```  
+4. Quando você deseja diagnosticar uma sessão de logon para um usuário ou um serviço, você pode usar o comando a seguir para localizar a identificação de logon que é usada em outros comandos Klist.  
+   ```
+   klist sessions
+   ```  
+5. Quando você deseja diagnosticar uma falha de delegação restrita de Kerberos, você pode usar o comando a seguir para localizar o último erro foi encontrado.  
+   ```
+   klist kcd_cache
+   ```  
+6. Quando você deseja diagnosticar se um usuário ou um serviço pode obter um tíquete em um servidor, você pode usar esse comando para solicitar um tíquete para um SPN específico.  
+   ```
+   klist get host/%computername%
+   ```  
+7. Ao diagnosticar problemas de replicação entre controladores de domínio, você normalmente precisa o computador cliente para ter como destino um controlador de domínio específico. Nesses casos, você pode usar o comando a seguir para ter como destino o computador cliente para esse controlador de domínio específico.  
+   ```
+   klist add_bind CONTOSO KDC.CONTOSO.COM
+   ```  
+   ```
+   klist add_bind CONTOSO.COM KDC.CONTOSO.COM
+   ```  
+8. Para consultar quais controladores de domínio deste computador contatado recentemente, você pode usar o comando a seguir.  
+   ```
+   klist query_bind
+   ```  
+9. Quando desejar que o Kerberos para redescobrir os controladores de domínio, você pode usar o comando a seguir. Este comando também pode ser usado para liberar o cache antes de criar novas associações de controlador de domínio com add_bind klist.  
+   ```
+   klist purge_bind
+   ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

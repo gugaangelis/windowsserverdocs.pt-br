@@ -8,12 +8,12 @@ ms.assetid: ''
 manager: dougkim
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: daecc6a385d7aa2c02d1bea02eb0a585a9b33185
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3c5f3927abf1a2394c2dd5b8ea664c7de8d5f614
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881787"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446197"
 ---
 # <a name="netsh-http-commands"></a>Comandos Netsh http
 
@@ -55,9 +55,11 @@ add iplisten [ ipaddress= ] IPAddress
 ```
 
 **Parâmetros**
-| | | |
-|---|---|---|
+
+|               |                                                                                                                                                                                                                          |          |
+|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | **ipaddress** | O endereço IPv4 ou IPv6 a ser adicionado para o IP de lista de escuta. A lista de escuta IP é usada para definir o escopo a lista de endereços para o qual associa o serviço HTTP. "0.0.0.0" significa qualquer endereço IPv4 e "::" significa qualquer endereço IPv6. | Obrigatório |
+
 ---
 
 **Exemplos**
@@ -83,21 +85,23 @@ add sslcert [ ipport= ] IPAddress:port [ certhash= ] CertHash [ appid= ] GUID [ 
 
 **Parâmetros**
 
-| | | |
-|---|---|---|
-| **ipport**                                   | Especifica o endereço IP e porta para a associação. Um caractere de dois-pontos (:) é usado como um delimitador entre o endereço IP e o número da porta.                                              | Obrigatório |
-| **certhash**                                 | Especifica o hash SHA do certificado. O hash é de 20 bytes de comprimento e é especificado como uma cadeia de caracteres hexadecimal.                                                                          | Obrigatório |
-| **appid**                                    | Especifica o GUID para identificar o aplicativo proprietário.                                                                                                                                   | Obrigatório |
-| **certstorename**                            | Especifica o nome do repositório para o certificado. O padrão é MY. Certificado deve ser armazenado no contexto do computador local.                                                                   | Opcional |
-| **verifyclientcertrevocation**               | Especifica o ativa ativar/desativar a verificação de revogação de certificados de cliente.                                                                                                            | Opcional |
-| **verifyrevocationwithcachedclientcertonly** | Especifica se o uso do certificado de cliente armazenadas em cache apenas para verificação de revogação está habilitado ou desabilitado.                                                                            | Opcional |
-| **usagecheck**                               | Especifica se a verificação de uso está habilitada ou desabilitada. Padrão está habilitado.                                                                                                            | Opcional |
-| **revocationfreshnesstime**                  | Especifica o intervalo de tempo em segundos, para verificar se há uma lista de revogação de certificados atualizada (CRL). Se esse valor for zero, a nova CRL é atualizada apenas se anterior expirar. | Opcional |
-| **urlretrievaltimeout**                      | Especifica o intervalo de tempo limite (em milissegundos) após a tentativa de recuperar a lista de revogação de certificado para a URL remota.                                                       | Opcional |
-| **sslctlidentifier**                         | Especifica a lista de emissores de certificado que podem ser confiáveis. Essa lista pode ser um subconjunto dos emissores de certificado confiável para o computador.                                | Opcional |
-| **sslctlstorename**                          | Especifica o nome do repositório de certificados em Computador_Local onde SslCtlIdentifier está armazenado.                                                                                               | Opcional |
-| **dsmapperusage**                            | Especifica se os mapeadores de DS está habilitado ou desabilitado. Padrão é disabled.                                                                                                                | Opcional |
-| **clientcertnegotiation**                    | Especifica se a negociação do certificado está habilitada ou desabilitada. Padrão é disabled.                                                                                            | Opcional |
+
+|                                              |                                                                                                                                                                                          |          |
+|----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+|                  **ipport**                  |                       Especifica o endereço IP e porta para a associação. Um caractere de dois-pontos (:) é usado como um delimitador entre o endereço IP e o número da porta.                        | Obrigatório |
+|                 **certhash**                 |                                     Especifica o hash SHA do certificado. O hash é de 20 bytes de comprimento e é especificado como uma cadeia de caracteres hexadecimal.                                      | Obrigatório |
+|                  **appid**                   |                                                                  Especifica o GUID para identificar o aplicativo proprietário.                                                                  | Obrigatório |
+|              **certstorename**               |                                  Especifica o nome do repositório para o certificado. O padrão é MY. Certificado deve ser armazenado no contexto do computador local.                                  | Opcional |
+|        **verifyclientcertrevocation**        |                                                      Especifica o ativa ativar/desativar a verificação de revogação de certificados de cliente.                                                       | Opcional |
+| **verifyrevocationwithcachedclientcertonly** |                                      Especifica se o uso do certificado de cliente armazenadas em cache apenas para verificação de revogação está habilitado ou desabilitado.                                       | Opcional |
+|                **usagecheck**                |                                                      Especifica se a verificação de uso está habilitada ou desabilitada. Padrão está habilitado.                                                       | Opcional |
+|         **revocationfreshnesstime**          | Especifica o intervalo de tempo em segundos, para verificar se há uma lista de revogação de certificados atualizada (CRL). Se esse valor for zero, a nova CRL é atualizada apenas se anterior expirar. | Opcional |
+|           **urlretrievaltimeout**            |                            Especifica o intervalo de tempo limite (em milissegundos) após a tentativa de recuperar a lista de revogação de certificado para a URL remota.                            | Opcional |
+|             **sslctlidentifier**             |                Especifica a lista de emissores de certificado que podem ser confiáveis. Essa lista pode ser um subconjunto dos emissores de certificado confiável para o computador.                 | Opcional |
+|             **sslctlstorename**              |                                                Especifica o nome do repositório de certificados em Computador_Local onde SslCtlIdentifier está armazenado.                                                | Opcional |
+|              **dsmapperusage**               |                                                        Especifica se os mapeadores de DS está habilitado ou desabilitado. Padrão é disabled.                                                         | Opcional |
+|          **clientcertnegotiation**           |                                              Especifica se a negociação do certificado está habilitada ou desabilitada. Padrão é disabled.                                               | Opcional |
+
 ---
 
 **Exemplos**
@@ -119,10 +123,12 @@ add timeout [ timeouttype= ] IdleConnectionTimeout | HeaderWaitTimeout [ value=]
 ```
 
 **Parâmetros**
-| | |
-|---|---|
-| **timeouttype** | Tipo de tempo limite para a configuração.                                                                        |
-| **Valor**       | Valor do tempo limite (em segundos). Se o valor é em notação hexadecimal, em seguida, adicione o prefixo 0 x. |
+
+|                 |                                                                                                     |
+|-----------------|-----------------------------------------------------------------------------------------------------|
+| **timeouttype** |                                    Tipo de tempo limite para a configuração.                                     |
+|    **Valor**    | Valor do tempo limite (em segundos). Se o valor é em notação hexadecimal, em seguida, adicione o prefixo 0 x. |
+
 ---
 
 **Exemplos**
@@ -145,23 +151,25 @@ add urlacl [ url= ] URL [ [user=] User [ [ listen= ] yes | no [ delegate= ] yes 
 ```
 
 **Parâmetros**
-| | | |
-|---|---|---|
-| **url**       | Especifica a URL totalmente qualificada Uniform Resource Locator ().                                                                                    | Obrigatório |
-| **user**      | Especifica o nome de usuário ou grupo de usuários                                                                                                            | Obrigatório |
-| **listen**    | Especifica um dos seguintes valores: Sim: Permitir que o usuário registre URLs. Este é o valor padrão. Não: Nega ao usuário de registro de URLs. | Opcional |
-| **delegate**  | Especifica um dos seguintes valores: Sim: Permitir ao usuário delegar URLs não: Nega ao usuário da delegação de URLs. Este é o valor padrão.   | Opcional |
-| **sddl**      | Especifica uma cadeia de caracteres SDDL que descreve a DACL.                                                                                                | Opcional |
+
+|              |                                                                                                                                                  |          |
+|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+|   **url**    |                                          Especifica a URL totalmente qualificada Uniform Resource Locator ().                                           | Obrigatório |
+|   **user**   |                                                      Especifica o nome de usuário ou grupo de usuários                                                       | Obrigatório |
+|  **listen**  | Especifica um dos seguintes valores: Sim: Permitir que o usuário registre URLs. Este é o valor padrão. Não: Nega ao usuário de registro de URLs. | Opcional |
+| **delegate** |  Especifica um dos seguintes valores: Sim: Permitir ao usuário delegar URLs não: Nega ao usuário da delegação de URLs. Este é o valor padrão.  | Opcional |
+|   **sddl**   |                                                Especifica uma cadeia de caracteres SDDL que descreve a DACL.                                                 | Opcional |
+
 ---
 
 **Exemplos**
 
 Estes são exemplos de quatro do **adicionar urlacl** comando.
 
--   add urlacl url=https://+:80/MyUri user=DOMAIN\\user
--   Adicionar url urlacl =https://www.contoso.com:80/MyUri usuário = DOMAIN\\escuta de usuário = Sim
--   Adicionar url urlacl =https://www.contoso.com:80/MyUri usuário = DOMAIN\\delegado do usuário = não
--   Adicionar url urlacl =https://+:80/MyUri sddl =...
+- add urlacl url=https://+:80/MyUri user=DOMAIN\\user
+- Adicionar url urlacl =<https://www.contoso.com:80/MyUri> usuário = DOMAIN\\escuta de usuário = Sim
+- Adicionar url urlacl =<https://www.contoso.com:80/MyUri> usuário = DOMAIN\\delegado do usuário = não
+- Adicionar url urlacl =https://+:80/MyUri sddl =...
 
 ---
 
@@ -176,18 +184,20 @@ delete cache [ [ url= ] URL [ [recursive= ] yes | no ]
 ```
 
 **Parâmetros**
-| | | |
-|---|---|---|
-| **url**       | Especifica a URL totalmente qualificada Uniform Resource localizador () que você deseja excluir.                                        | Opcional |
+
+|               |                                                                                                                              |          |
+|---------------|------------------------------------------------------------------------------------------------------------------------------|----------|
+|    **url**    |                    Especifica a URL totalmente qualificada Uniform Resource localizador () que você deseja excluir.                     | Opcional |
 | **recursive** | Especifica se todas as entradas em cache de url são removidas. **Sim**: Remova todas as entradas **nenhuma**: não remover todas as entradas | Opcional |
+
 ---
 
 **Exemplos**
 
 Estes são dois exemplos do **excluir cache** comando.
 
--   Excluir cache url =https://www.contoso.com:80/myresource/ recursiva = Sim
--   Excluir cache
+- Excluir cache url =<https://www.contoso.com:80/myresource/> recursiva = Sim
+- Excluir cache
 
 ---
 
@@ -202,9 +212,11 @@ delete iplisten [ ipaddress= ] IPAddress
 ```
 
 **Parâmetros**
-| | | |
-|---|---|---|
+
+|               |                                                                                                                                                                                                                                                                     |          |
+|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | **ipaddress** | O endereço IPv4 ou IPv6 a ser excluído do IP de lista de escuta. A lista de escuta IP é usada para definir o escopo a lista de endereços para o qual associa o serviço HTTP. "0.0.0.0" significa qualquer endereço IPv4 e "::" significa qualquer endereço IPv6. Isso não inclui o número da porta. | Obrigatório |
+
 ---
 
 
@@ -231,9 +243,11 @@ delete sslcert [ ipport= ] IPAddress:port
 ```
 
 **Parâmetros**
-| | | |
-|---|---|---|
+
+|            |                                                                                                                                                                                          |          |
+|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | **ipport** | Especifica o endereço IPv4 ou IPv6 e a porta para o qual as associações de certificado SSL são excluídas. Um caractere de dois-pontos (:) é usado como um delimitador entre o endereço IP e o número da porta. | Obrigatório |
+
 ---
 
 
@@ -258,9 +272,11 @@ delete timeout [ timeouttype= ] idleconnectiontimeout | headerwaittimeout
 ```
 
 **Parâmetros**
-| | | |
-|---|---|---|
+
+|                 |                                        |          |
+|-----------------|----------------------------------------|----------|
 | **timeouttype** | Especifica o tipo de configuração de tempo limite. | Obrigatório |
+
 ---
 
 
@@ -284,9 +300,11 @@ delete urlacl [ url= ] URL
 ```
 
 **Parâmetros**
-| | | |
-|---|---|---|
+
+|         |                                                                                       |          |
+|---------|---------------------------------------------------------------------------------------|----------|
 | **url** | Especifica a URL totalmente qualificada Uniform Resource localizador () que você deseja excluir. | Obrigatório |
+
 ---
 
 
@@ -294,8 +312,8 @@ delete urlacl [ url= ] URL
 
 Estes são dois exemplos do **excluir urlacl** comando.
 
--   Excluir urlacl url =https://+:80/MyUri
--   Excluir urlacl url =https://www.contoso.com:80/MyUri
+- Excluir urlacl url =https://+:80/MyUri
+- Excluir urlacl url =<https://www.contoso.com:80/MyUri>
 
 ---
 
@@ -322,9 +340,11 @@ show cachestate [ [url= ] URL]
 ```
 
 **Parâmetros**
-| | | |
-|---|---|---|
+
+|         |                                                                                                                                                    |          |
+|---------|----------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | **url** | Especifica a URL totalmente qualificada que você deseja exibir. Se não for especificado, exiba todas as URLs. A URL também pode ser um prefixo para URLs registradas. | Opcional |
+
 ---
 
 
@@ -332,8 +352,8 @@ show cachestate [ [url= ] URL]
 
 Estes são dois exemplos do **Mostrar cachestate** comando:
 
--   Mostrar url cachestate =https://www.contoso.com:80/myresource
--   Mostrar cachestate
+- Mostrar url cachestate =<https://www.contoso.com:80/myresource>
+- Mostrar cachestate
 
 ---
 
@@ -359,10 +379,12 @@ show servicestate [ [ view= ] session | requestq ] [ [ verbose= ] yes | no ]
 ```
 
 **Parâmetros**
-| | | |
-|---|---|---|
-| **Exibir**    | Especifica se deve exibir um instantâneo do estado do serviço HTTP com base em sessão do servidor ou em filas de solicitação. | Opcional |
-| **Verbose** | Especifica se deve exibir informações detalhadas que também mostra informações de propriedade.                               | Opcional |
+
+|             |                                                                                                                      |          |
+|-------------|----------------------------------------------------------------------------------------------------------------------|----------|
+|  **Exibir**   | Especifica se deve exibir um instantâneo do estado do serviço HTTP com base em sessão do servidor ou em filas de solicitação. | Opcional |
+| **Verbose** |                Especifica se deve exibir informações detalhadas que também mostra informações de propriedade.                | Opcional |
+
 ---
 
 **Exemplos**
@@ -385,9 +407,11 @@ show sslcert [ ipport= ] IPAddress:port
 ```
 
 **Parâmetros**
-| | | |
-|---|---|---|
+
+|            |                                                                                                                                                                                                                                                |          |
+|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | **ipport** | Especifica o endereço IPv4 ou IPv6 e a porta para o qual o SSL exibir associações de certificado. Um caractere de dois-pontos (:) é usado como um delimitador entre o endereço IP e o número da porta. Se você não especificar ipport, todas as associações são exibidas. | Obrigatório |
+
 ---
 
 
@@ -426,9 +450,11 @@ show urlacl [ [url= ] URL]
 ```
 
 **Parâmetros**
-| | | |
-|---|---|---|
+
+|         |                                                                                                |          |
+|---------|------------------------------------------------------------------------------------------------|----------|
 | **url** | Especifica a URL totalmente qualificada que você deseja exibir. Se não especificado, exiba todas as URLs. | Opcional |
+
 ---
 
 
@@ -436,8 +462,8 @@ show urlacl [ [url= ] URL]
 
 Estes são os três exemplos do **Mostrar urlacl** comando.
 
--   show urlacl url=https://+:80/MyUri
--   show urlacl url=https://www.contoso.com:80/MyUri
--   Mostrar urlacl
+- show urlacl url=https://+:80/MyUri
+- show urlacl url=<https://www.contoso.com:80/MyUri>
+- Mostrar urlacl
 
 ---

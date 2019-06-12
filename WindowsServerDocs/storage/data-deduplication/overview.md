@@ -8,12 +8,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 05/09/2017
-ms.openlocfilehash: 4376dbb2c172a82c4ab64dc63acefbc37457110f
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: bf346844337740f7585070ff78de4e7f61f25624
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476039"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447264"
 ---
 # <a name="data-deduplication-overview"></a>Visão geral de eliminação de duplicação de dados
 
@@ -69,7 +69,7 @@ Servidores VDI, como <a href="https://technet.microsoft.com/library/cc725560.asp
                     <li><b>Acesso remoto</b>: Os usuários podem acessar aplicativos corporativos de dispositivos como computadores domésticos, quiosques, hardware de baixa potência e sistemas operacionais diferentes do Windows.</li>
                     <li><b>Acesso a filial</b>: Implantações de VDI podem fornecer melhor desempenho do aplicativo para o branch funcionários do escritório que precisam de acesso a armazenamentos de dados centralizado. Às vezes, aplicativos que fazem uso intensivo de dados não têm protocolos de cliente/servidor que são otimizados para conexões de baixa velocidade.</li>
                 </ul>
-As implantações de VDI são ótimas candidatas para Eliminação de Duplicação de Dados, porque os discos rígidos virtuais que controlam as áreas de trabalho remotas para os usuários são essencialmente idênticos. Além disso, a Eliminação de Duplicação de Dados pode ajudar com os *problemas de inicialização de VDI*, a queda no desempenho de armazenamento quando muitos usuários fazem logon simultaneamente em suas áreas de trabalho para começar o dia.
+As implantações de VDI são ótimas candidatas para Eliminação de Duplicação de Dados, porque os discos rígidos virtuais que controlam as áreas de trabalho remotas para os usuários são essencialmente idênticos. Além disso, a Eliminação de Duplicação de Dados pode ajudar com os <em>problemas de inicialização de VDI</em>, a queda no desempenho de armazenamento quando muitos usuários fazem logon simultaneamente em suas áreas de trabalho para começar o dia.
             </td>
         </tr>
         <tr>
@@ -83,7 +83,7 @@ Aplicativos de backup, como o <a href="https://technet.microsoft.com/library/hh7
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-other.png" alt="Illustration of other workloads" /></td>
             <td style="vertical-align:top">
                 <b>Outras cargas de trabalho</b><br />
-                [Outras cargas de trabalho também podem ser excelentes candidatos para a Eliminação de Duplicação de Dados](install-enable.md#enable-dedup-candidate-workloads).
+                <a href="install-enable.md#enable-dedup-candidate-workloads" data-raw-source="[Other workloads may also be excellent candidates for Data Deduplication](install-enable.md#enable-dedup-candidate-workloads)">Outras cargas de trabalho também podem ser excelentes candidatos para a Eliminação de Duplicação de Dados</a>.
             </td>
         </tr>
     </tbody>

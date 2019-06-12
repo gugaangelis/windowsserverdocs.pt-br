@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: d011eaad-f72a-4a83-8099-8589c4ee8994
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 0257c4d15db4fc54e55ef430f6f2eea9cea2ec4d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 65a272873a60d74efcf417a16fdc84670f5878da
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882817"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447006"
 ---
 # <a name="realm-names"></a>Nomes de realm
 
@@ -28,7 +28,7 @@ Em outro exemplo, se o atributo RADIUS de nome de usuário contém o nome de usu
 
 - **Example\user1**. Neste exemplo, o nome de realm **exemplo** é um prefixo; e também é o nome de um Active Directory&reg; serviços de domínio \(AD DS\) domínio.
 
-- **user1@example.com**. Neste exemplo, o nome de realm **exemplo.com** é um sufixo; e é um nome de domínio DNS ou o nome de um domínio AD DS.
+- <strong>user1@example.com</strong>. Neste exemplo, o nome de realm **exemplo.com** é um sufixo; e é um nome de domínio DNS ou o nome de um domínio AD DS.
 
 Você pode usar nomes de realm configurados em diretivas de solicitação de conexão durante a criação e implantação de sua infraestrutura RADIUS para garantir que as solicitações de conexão sejam roteadas de clientes RADIUS, também chamados de servidores de acesso de rede para servidores RADIUS que pode autenticar e autorizar a solicitação de conexão.
 

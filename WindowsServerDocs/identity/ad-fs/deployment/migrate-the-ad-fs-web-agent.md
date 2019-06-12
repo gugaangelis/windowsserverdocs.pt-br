@@ -8,12 +8,12 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 945a5f4cf0e6c491479b095671ff5e77416c6fa3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7cde62cb23c69a425522e40ed65ee2d40ef28268
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877587"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445605"
 ---
 # <a name="migrate-the-ad-fs-web-agent"></a>Migrar o agente web do AD FS
 
@@ -21,14 +21,14 @@ Para migrar o AD FS 1.1 agente baseado em token do Windows ou o AD FS 1.1 o agen
   
 > [!IMPORTANT]
 >  O agente baseado em token do Windows no AD FS 1.1 só funciona um serviço de federação do AD FS 1.1 instalado no Windows Server 2008 R2 ou Windows Server 2008. Para obter mais informações, consulte [Interoperating with AD FS 1.x](Interoperating-with-AD-FS-1.x.md).  
->   
+> 
 >  O agente Web com reconhecimento de declarações do AD FS 1.1 só funciona com o seguinte:  
->   
->  -   Serviço de federação do AD FS 1.1 instalado com Windows Server 2008 R2 ou Windows Server 2008  
-> -   Serviço de federação do AD FS 2.0 instalado com Windows Server 2008 R2 ou Windows Server 2008  
-> -   Serviço de Federação do AD FS instalado com o Windows Server 2012  
->   
->  Para obter mais informações, consulte [Interoperating with AD FS 1.x](Interoperating-with-AD-FS-1.x.md).  
+> 
+> - Serviço de federação do AD FS 1.1 instalado com Windows Server 2008 R2 ou Windows Server 2008  
+>   -   Serviço de federação do AD FS 2.0 instalado com Windows Server 2008 R2 ou Windows Server 2008  
+>   -   Serviço de Federação do AD FS instalado com o Windows Server 2012  
+> 
+>   Para obter mais informações, consulte [Interoperating with AD FS 1.x](Interoperating-with-AD-FS-1.x.md).  
   
   
 ## <a name="next-steps"></a>Próximas etapas
@@ -36,4 +36,4 @@ Para migrar o AD FS 1.1 agente baseado em token do Windows ou o AD FS 1.1 o agen
  [Preparar para migrar o Proxy do AD FS 2.0 Federation Server](prepare-to-migrate-ad-fs-fed-proxy.md)   
  [Migrar o servidor do AD FS 2.0 Federation](migrate-the-ad-fs-fed-server.md)   
  [Migrar o Proxy do AD FS 2.0 Federation Server](migrate-the-ad-fs-2-fed-server-proxy.md)   
- [Migrar os AD FS agentes Web 1.1](migrate-the-ad-fs-web-agent.md)
+ [Migrar os Agentes Web do AD FS 1.1](migrate-the-ad-fs-web-agent.md)

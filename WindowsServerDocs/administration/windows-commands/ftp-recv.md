@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4979010c13d78c89c9a3e4965b567f7eef1f2ede
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5bfd68dcb745ebf7ef239883aa1c5322241b32df
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841097"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438436"
 ---
 # <a name="ftp-recv"></a>ftp: recv
 
@@ -30,24 +30,26 @@ Copia um arquivo remoto no computador local usando o tipo de transferência de a
 recv <remoteFile> [<LocalFile>]  
 ```  
 ### <a name="parameters"></a>Parâmetros  
-|Parâmetro|Descrição|  
-|-------|--------|  
-|<remoteFile>|Especifica o arquivo remoto a ser copiado.|  
-|[<LocalFile>]|Especifica o nome a ser usado no computador local.|  
+
+|   Parâmetro   |                   Descrição                    |
+|---------------|--------------------------------------------------|
+| <remoteFile>  |        Especifica o arquivo remoto a ser copiado.        |
+| [<LocalFile>] | Especifica o nome a ser usado no computador local. |
+
 ## <a name="remarks"></a>Comentários  
--   O **recv** comando é idêntico de **obter** comando.  
--   Se *LocalFile* não for especificado, o arquivo é fornecido o *Arquivo_remoto* nome.  
-## <a name="BKMK_Examples"></a>Exemplos  
-cópia **Test. txt** no computador local usando o tipo de transferência de arquivo atual.  
-```  
-recv test.txt  
-```  
-cópia **Test. txt** no computador local como **test1.txt** tipo de transferência usando o arquivo atual.  
-```  
-recv test.txt test1.txt  
-```  
-## <a name="additional-references"></a>Referências adicionais  
--   [ftp: ascii](ftp-ascii.md)  
--   [ftp: binary](ftp-binary.md)  
--   [ftp: get](ftp-get.md)  
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+- O **recv** comando é idêntico de **obter** comando.  
+- Se *LocalFile* não for especificado, o arquivo é fornecido o *Arquivo_remoto* nome.  
+  ## <a name="BKMK_Examples"></a>Exemplos  
+  cópia **Test. txt** no computador local usando o tipo de transferência de arquivo atual.  
+  ```  
+  recv test.txt  
+  ```  
+  cópia **Test. txt** no computador local como **test1.txt** tipo de transferência usando o arquivo atual.  
+  ```  
+  recv test.txt test1.txt  
+  ```  
+  ## <a name="additional-references"></a>Referências adicionais  
+- [ftp: ascii](ftp-ascii.md)  
+- [ftp: binary](ftp-binary.md)  
+- [ftp: get](ftp-get.md)  
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  

@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: e0372cb5b1f891bb724f246a3f8a7931619ce7ba
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 600ccd74c379daa281f438b1200179dcae210817
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847187"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447355"
 ---
 # <a name="shielded-vms--for-tenants---deploying-a-shielded-vm-by-using-windows-azure-pack"></a>VMs blindadas para locatários – Implantando uma VM blindada usando o Windows Azure Pack
 
@@ -31,20 +31,20 @@ Conclua as seguintes etapas:
 
     [Máquinas virtuais blindadas de uso](https://technet.microsoft.com/library/mt720674.aspx), que é descrito nos tópicos a seguir:
 
-    - [Criar dados de blindagem](https://technet.microsoft.com/library/mt720672.aspx) (e carregue o arquivo de dados de blindagem, conforme descrito no segundo procedimento no tópico).
+   - [Criar dados de blindagem](https://technet.microsoft.com/library/mt720672.aspx) (e carregue o arquivo de dados de blindagem, conforme descrito no segundo procedimento no tópico).
     
-    > [!NOTE]
-    > Como parte da criação de dados de blindagem, você baixará o arquivo de chave de guardião, que será um arquivo XML em formato UTF-8. Não altere o arquivo como UTF-16.
+     > [!NOTE]
+     > Como parte da criação de dados de blindagem, você baixará o arquivo de chave de guardião, que será um arquivo XML em formato UTF-8. Não altere o arquivo como UTF-16.
     
-    - [Criar uma máquina virtual blindada](https://technet.microsoft.com/library/mt720673.aspx) - com **criação rápida**, por meio de um modelo blindado ou por meio de um modelo regular.
+   - [Criar uma máquina virtual blindada](https://technet.microsoft.com/library/mt720673.aspx) - com **criação rápida**, por meio de um modelo blindado ou por meio de um modelo regular.
     
-        > [!WARNING]
-        > Se você [criar uma máquina virtual blindada usando um modelo regular](https://technet.microsoft.com/library/mt720673.aspx#Anchor_2), é importante observar que a VM é provisionada *não blindado*. Isso significa que o disco de modelo não é verificado em relação à lista de discos confiáveis em seu arquivo de dados de blindagem, nem os segredos em seu arquivo de dados de blindagem que são usados para provisionar a VM. Se um modelo blindado estiver disponível, é preferível implantar uma VM blindada com um modelo blindado para fornecer proteção de ponta a ponta de seus segredos.
+       > [!WARNING]
+       > Se você [criar uma máquina virtual blindada usando um modelo regular](https://technet.microsoft.com/library/mt720673.aspx#Anchor_2), é importante observar que a VM é provisionada *não blindado*. Isso significa que o disco de modelo não é verificado em relação à lista de discos confiáveis em seu arquivo de dados de blindagem, nem os segredos em seu arquivo de dados de blindagem que são usados para provisionar a VM. Se um modelo blindado estiver disponível, é preferível implantar uma VM blindada com um modelo blindado para fornecer proteção de ponta a ponta de seus segredos.
     
-    - [Converter uma máquina virtual de geração 2 em uma máquina virtual blindada](https://technet.microsoft.com/library/mt720670.aspx)
+   - [Converter uma máquina virtual de geração 2 em uma máquina virtual blindada](https://technet.microsoft.com/library/mt720670.aspx)
     
-        > [!NOTE]
-        > Se você converter uma máquina virtual em uma máquina virtual blindada, backups e pontos de verificação existentes não são criptografados. Você deve excluir o antigos pontos de verificação sempre que possível para impedir o acesso aos seus dados antigos, descriptografados.
+       > [!NOTE]
+       > Se você converter uma máquina virtual em uma máquina virtual blindada, backups e pontos de verificação existentes não são criptografados. Você deve excluir o antigos pontos de verificação sempre que possível para impedir o acesso aos seus dados antigos, descriptografados.
 
 ## <a name="see-also"></a>Consulte também
 

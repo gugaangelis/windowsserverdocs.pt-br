@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 661afb0f74f72784577aff28f9171b581f616030
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: af0d028e3886e6743f402c2c9aa934d6046abf9b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883537"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436747"
 ---
 # <a name="nslookup-set-debug"></a>nslookup set debug
 
@@ -34,11 +34,11 @@ set [no]debug
 
 ## <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|**NODEBUG**|Desativa o modo de depuração. A sintaxe padrão é **nodebug**.|
-|**debug**|Ativa o modo de depuração.|
-|* * {Ajuda | ?}**|Exibe um resumo breve dos **nslookup** subcomandos.|
+|  Parâmetro  |                         Descrição                          |
+|-------------|--------------------------------------------------------------|
+| **NODEBUG** | Desativa o modo de depuração. A sintaxe padrão é **nodebug**. |
+|  **debug**  |                   Ativa o modo de depuração.                   |
+|  \*\*{Ajuda  |                            ?}\*\*                            |
 
 ## <a name="remarks"></a>Comentários
 
@@ -46,4 +46,4 @@ set [no]debug
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

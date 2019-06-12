@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 5454f91394dbdc659db85a675d1c8bfac18b2a86
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d56bc89189c3b17367549aeb076633a6ea0e1007
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853917"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442747"
 ---
 # <a name="advanced-active-directory-replication-and-topology-management-using-windows-powershell-level-200"></a>Gerenciamento avançado de replicação e topologia do Active Directory com o Windows PowerShell (nível 200)
 
@@ -228,7 +228,7 @@ Enquanto o Repadmin.exe é bom para retornar informações sobre topologia de re
   
 Por exemplo, depois de uma rápida expansão de novas filiais, em conjunto com a consolidação de outras, você pode ter uma centena de alterações de site por fazer com base em locais físicos, mudanças de rede e novos requisitos de capacidade. Em vez de usar Dssites.msc e Adsiedit.msc para fazer alterações, você pode automatizar. Isso é especialmente atraente quando você começa com uma planilha de dados fornecida pela rede e pelas equipes.  
   
-O **Get-Adreplication\***  cmdlets retornam informações sobre a topologia de replicação e são úteis para a canalização no **Set-Adreplication\***  cmdlets em massa. **Obtenha** cmdlets não alteram os dados, eles só mostram os dados ou do Windows PowerShell de criar objetos de sessão que podem ser canalizados para **Set-Adreplication\***  cmdlets. Os cmdlets **New** e **Remove** são úteis para criar ou remover objetos de topologia do Active Directory.  
+O **Get-Adreplication\\** * cmdlets retornam informações sobre a topologia de replicação e são úteis para a canalização no **Set-Adreplication\\** * cmdlets em massa. **Obtenha** cmdlets não alteram os dados, eles só mostram os dados ou do Windows PowerShell de criar objetos de sessão que podem ser canalizados para **Set-Adreplication\\** * cmdlets. Os cmdlets **New** e **Remove** são úteis para criar ou remover objetos de topologia do Active Directory.  
   
 Por exemplo, você pode criar novos sites usando um arquivo CSV:  
   

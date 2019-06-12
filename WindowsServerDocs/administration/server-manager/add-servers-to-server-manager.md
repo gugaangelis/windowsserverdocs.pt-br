@@ -14,12 +14,12 @@ ms.author: coreyp
 manager: dongill
 ms.localizationpriority: medium
 ms.date: 02/01/2018
-ms.openlocfilehash: a663e7dbb3ee84c09fc14ba23a50e6de16c4c7b5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a47ecbc0c7359438ed60ed34c94adf0096b14967
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840687"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435454"
 ---
 # <a name="add-servers-to-server-manager"></a>Add Servers to Server Manager
 
@@ -31,9 +31,9 @@ Este tópico descreve como adicionar servidores ao pool de servidores do Gerenci
 
 > [!NOTE]
 > Em nossos testes, o Server Manager no Windows Server 2012 e versões posteriores do Windows Server podem ser usados para gerenciar até 100 servidores que estão configurados com uma carga de trabalho típica. O número de servidores que podem ser gerenciadas usando um único console do Gerenciador de servidores pode variar dependendo da quantidade de dados que você solicita do servidores gerenciados e recursos de hardware e rede disponíveis para o computador que executa o Gerenciador de servidores. Conforme a quantidade de dados que você deseja exibir se aproxima de capacidade do recurso desse computador, você pode enfrentar respostas lentas do Gerenciador de servidores e atrasos na finalização de atualizações. Para ajudar a aumentar o número de servidores que você pode gerenciar usando o Gerenciador de servidores, é recomendável limitar os dados de evento que o Gerenciador do servidor obtém dos seus servidores gerenciados usando as configurações na caixa de diálogo **Configurar dados de eventos** . É possível abrir Configurar Dados do Evento no menu **Tarefas** do bloco **Eventos** . Se você precisar gerenciar um número de nível empresarial de servidores em sua organização, é recomendável avaliar produtos da [Microsoft System Center suite](https://go.microsoft.com/fwlink/p/?LinkId=239437).
->
+> 
 > Gerenciador de servidores podem receber status apenas online ou offline dos servidores que estão executando o Windows Server 2003. Embora você possa usar o Gerenciador de servidores para executar tarefas de gerenciamento em servidores que estão executando o Windows Server 2008 R2 ou Windows Server 2008, você não pode adicionar funções e recursos para servidores que estão executando o Windows Server 2008 R2, Windows Server 2008 ou Windows Server 2003 .
-
+> 
 > Gerenciador de servidores não podem ser usados para gerenciar uma versão mais recente do sistema operacional Windows Server. Gerenciador de servidores executando o Windows Server 2012 R2, Windows Server 2012, Windows 8 ou Windows 8.1 não pode ser usado para gerenciar os servidores que estão executando o Windows Server 2016.
 
 Este tópico contém as seguintes seções.

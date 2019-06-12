@@ -9,12 +9,12 @@ author: eldenchristensen
 ms.date: 10/25/2017
 description: Como implantar espaços de armazenamento diretos em um cluster de convidado da máquina virtual - por exemplo, no Microsoft Azure.
 ms.localizationpriority: medium
-ms.openlocfilehash: a741475d09ab7f7ab29f158ef55378ca9a37beac
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b99e750b78654df48ad3b412269511d047e3057c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841017"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447815"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>Usando espaços de armazenamento diretos em clusters convidados da máquina virtual
 
@@ -81,4 +81,4 @@ As seguintes considerações se aplicam ao implantar espaços de armazenamento d
 
 [Modelos de VM Iaas do Azure adicionais para a implantação de espaços de armazenamento diretos, vídeos e guias passo a passo](https://blogs.msdn.microsoft.com/clustering/2017/02/14/deploying-an-iaas-vm-guest-clusters-in-microsoft-azure/).
 
-[Visão geral de direcionar a espaços de armazenamento adicionais] (https://docs.microsoft.com/en-us/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
+[Visão geral de espaços de armazenamento adicional diretos](https://docs.microsoft.com/en-us/windows-server/storage/storage-spaces/storage-spaces-direct-overview)

@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4ec4bc8e77e8411101b9a2b83a85ad5e1a0765b2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c74bb2ee2f1647716c8c38e392434a5b7f01805f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873497"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446396"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>Usar a política DNS para divisão\-cérebro implantação de DNS
 
@@ -33,7 +33,7 @@ Este tópico contém as seguintes seções.
 - [Exemplo de implantação de DNS com partição de rede](#bkmk_sbexample)
 - [Exemplo de controle de recursão seletiva de DNS](#bkmk_recursion)
 
-##<a name="bkmk_sbexample"></a>Exemplo de implantação de DNS com partição de rede
+## <a name="bkmk_sbexample"></a>Exemplo de implantação de DNS com partição de rede
 A seguir está um exemplo de como você pode usar a política de DNS para realizar o cenário descrito anteriormente do DNS com partição de rede.
 
 Esta seção contém os seguintes tópicos.
@@ -57,7 +57,7 @@ A ilustração a seguir ilustra esse cenário.
 ![Implantação de DNS com partição de rede](../../media/DNS-Split-Brain/Dns-Split-Brain-01.jpg)  
 
 
-##<a name="bkmk_sbhow"></a>Como funciona a implantação de DNS com partição de rede
+## <a name="bkmk_sbhow"></a>Como funciona a implantação de DNS com partição de rede
 
 Quando o servidor DNS é configurado com as políticas DNS necessárias, cada solicitação de resolução de nome é avaliada em relação as políticas no servidor DNS.
 
@@ -67,7 +67,7 @@ Se a interface de servidor no qual a consulta é recebida corresponde a qualquer
 
 Portanto, em nosso exemplo, as consultas DNS para www.career.contoso.com que são recebidas no IP privado (10.0.0.56) recebem uma resposta DNS que contém um endereço IP interno; e as consultas DNS que são recebidas na interface de rede pública recebem uma resposta DNS que contém o endereço IP público no escopo de zona padrão (Isso é o mesmo que a resolução de consulta normal).  
 
-##<a name="bkmk_sbconfigure"></a>Como configurar a implantação de DNS com partição de rede
+## <a name="bkmk_sbconfigure"></a>Como configurar a implantação de DNS com partição de rede
 Para configurar o DNS Split-Brain implantação por meio da política de DNS, você deve usar as etapas a seguir.
 
 - [Criar os escopos de zona](#bkmk_zscopes)  
@@ -79,12 +79,12 @@ As seções a seguir fornecem instruções de configuração detalhadas.
 >[!IMPORTANT]
 >As seções a seguir incluem comandos do Windows PowerShell de exemplo que contêm valores de exemplo para muitos parâmetros. Certifique-se de que você substitua os valores de exemplo nesses comandos com os valores que são apropriadas para sua implantação antes de executar esses comandos. 
 
-###<a name="bkmk_zscopes"></a>Criar os escopos de zona
+### <a name="bkmk_zscopes"></a>Criar os escopos de zona
 
 Um escopo de zona é uma instância exclusiva da zona. Uma zona DNS pode ter vários escopos de zona, com cada escopo de zona que contém seu próprio conjunto de registros DNS. O mesmo registro pode estar presente em vários escopos, com diferentes endereços IP ou os mesmos endereços IP. 
 
->[!NOTE]
->Por padrão, um escopo de zona existe nas zonas DNS. Esse escopo de zona tem o mesmo nome que a zona e operações de DNS herdadas funcionam neste escopo. Esse escopo de zona padrão hospedará a versão externa do www.career.contoso.com.
+> [!NOTE]
+> Por padrão, um escopo de zona existe nas zonas DNS. Esse escopo de zona tem o mesmo nome que a zona e operações de DNS herdadas funcionam neste escopo. Esse escopo de zona padrão hospedará a versão externa do www.career.contoso.com.
 
 Você pode usar o comando de exemplo a seguir para particionar o escopo de zona contoso.com para criar um escopo interno de zona. O escopo da região interno será usado para manter a versão interna do www.career.contoso.com.
 
@@ -92,11 +92,11 @@ Você pode usar o comando de exemplo a seguir para particionar o escopo de zona 
 
 Para obter mais informações, consulte [DnsServerZoneScope adicionar](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-###<a name="bkmk_records"></a>Adicionar registros para os escopos de zona
+### <a name="bkmk_records"></a>Adicionar registros para os escopos de zona
 
 A próxima etapa é adicionar os registros que representa o host do servidor Web para os escopos de duas zona - internos e padrão (para clientes externos). 
 
-No escopo interno de zona, o registro **www.career.contoso.com** é adicionado com o endereço IP 10.0.0.39, que é um endereço IP privado; e no escopo de zona padrão mesmo registro **www.career.contoso.com**, é adicionado com o endereço IP 65.55.39.10.
+No escopo interno de zona, o registro <strong>www.career.contoso.com</strong> é adicionado com o endereço IP 10.0.0.39, que é um endereço IP privado; e no escopo de zona padrão mesmo registro <strong>www.career.contoso.com</strong>, é adicionado com o endereço IP 65.55.39.10.
 
 Não **ZoneScope –** parâmetro é fornecido nos comandos de exemplo a seguir, quando o registro está sendo adicionado ao escopo de zona padrão. Isso é semelhante para adicionar registros a uma zona de baunilha.
 
@@ -109,7 +109,7 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 
 Para obter mais informações, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
 
-###<a name="bkmk_policies"></a>Crie as políticas de DNS
+### <a name="bkmk_policies"></a>Crie as políticas de DNS
 
 Depois que você identificou as interfaces de servidor para a rede externa e a rede interna e você tiver criado os escopos de zona, você deve criar políticas DNS que conectam os escopos de zona internos e externos.
 

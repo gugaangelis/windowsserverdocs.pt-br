@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 63d72a45c33da099c5936d625b27aa71ef002280
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 876d8332e778aa0b3049354a21fbe01adb883729
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857657"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436655"
 ---
 # <a name="nslookup-set-retry"></a>nslookup set retry
 
@@ -30,12 +30,14 @@ Define o número de repetições.
 set retry=<Number>
 ```
 ## <a name="parameters"></a>Parâmetros
-|Parâmetro|Descrição|
-|-------|--------|
-|<Number>|Especifica o novo valor para o número de repetições. O número de repetições padrão é 4.|
-|{Ajuda &#124; ?}|Exibe um resumo breve dos **nslookup** subcomandos.|
+
+|    Parâmetro    |                                      Descrição                                       |
+|-----------------|----------------------------------------------------------------------------------------|
+|    <Number>     | Especifica o novo valor para o número de repetições. O número de repetições padrão é 4. |
+| {Ajuda &#124; ?} |                 Exibe um resumo breve dos **nslookup** subcomandos.                  |
+
 ## <a name="remarks"></a>Comentários
--   Quando uma resposta a uma solicitação não for recebida dentro de um determinado período de tempo, o período de tempo limite é duplicado e a solicitação é enviada novamente. O valor de repetição controla quantas vezes uma solicitação é enviada novamente antes de desistir. Você pode alterar o período de tempo limite com o **definir tempo limite** subcomando.
-## <a name="additional-references"></a>Referências adicionais
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[nslookup definir tempo limite](nslookup-set-timeout.md)
+- Quando uma resposta a uma solicitação não for recebida dentro de um determinado período de tempo, o período de tempo limite é duplicado e a solicitação é enviada novamente. O valor de repetição controla quantas vezes uma solicitação é enviada novamente antes de desistir. Você pode alterar o período de tempo limite com o **definir tempo limite** subcomando.
+  ## <a name="additional-references"></a>Referências adicionais
+  [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+  [nslookup definir tempo limite](nslookup-set-timeout.md)

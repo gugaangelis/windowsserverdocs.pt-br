@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 13c89b78ba177362cb9bf1d6a1e601eefb4f4ce3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: edf27852c13566ba8c7ca8c16d789d586e749160
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882117"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436215"
 ---
 # <a name="prndrvr"></a>prndrvr
 
@@ -34,6 +34,7 @@ cscript prndrvr {-a | -d | -l | -x | -?} [-m <model>] [-v {0|1|2|3}]
 ```
 
 ## <a name="parameters"></a>Parâmetros
+
 |Parâmetro|Descrição|
 |-------|--------|
 |-a|Instala um driver.|
@@ -42,7 +43,7 @@ cscript prndrvr {-a | -d | -l | -x | -?} [-m <model>] [-v {0|1|2|3}]
 |-x|Exclui todos os drivers de impressora e drivers de impressora adicionais não está em uso por uma impressora lógica no servidor especificado o **-s** parâmetro. Se você não especificar um servidor a ser removido da lista, o Windows exclui todos os drivers de impressora não usados no computador local.|
 |-m \<DrivermodelName\>|Especifica o driver que você deseja instalar (por nome). Drivers geralmente são nomeados para o modelo de impressora para que dar suporte a eles. Consulte a documentação da impressora para obter mais informações.|
 |-v {0 &#124; 1 &#124; 2 &#124; 3}|Especifica a versão do driver que você deseja instalar. Consulte a descrição do **-e**parâmetro para obter informações sobre quais versões estão disponíveis para cada ambiente. Se você não especificar uma versão, a versão do driver apropriado para a versão do Windows em execução no computador onde você está instalando o driver está instalada.<br /><br />-versão **0** dá suporte ao Windows 95, Windows 98 e Windows Millennium edition.<br />-versão **1** dá suporte ao Windows NT 3.51.<br />-versão **2** dá suporte ao Windows NT 4.0.<br />-versão **3** dá suporte ao Windows Vista, Windows XP, Windows 2000 e os sistemas operacionais Windows Server 2003. Observe que isso é a única versão de driver de impressora que dá suporte ao Windows Vista.|
-|-e \<Environment>|Especifica o ambiente para o driver que você deseja instalar. Se você não especificar um ambiente, o ambiente do computador onde você está instalando o driver será usado. Os parâmetros de ambiente com suporte são:<br /><br />-   **"Windows NT x86"**<br />-   **"Windows x64"**<br />-   **"Windows IA64"**|
+|-e \<Environment>|Especifica o ambiente para o driver que você deseja instalar. Se você não especificar um ambiente, o ambiente do computador onde você está instalando o driver será usado. Os parâmetros de ambiente com suporte são:<br /><br />-    **"Windows NT x86"**<br />-    **"Windows x64"**<br />-    **"Windows IA64"**|
 |-s \<ServerName>|Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado.|
 |-u \<nome de usuário > -w \<senha >|Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores local do computador de destino têm essas permissões, mas também podem ser concedidas as permissões a outros usuários. Se você não especificar uma conta, você deve fazer logon em uma conta com essas permissões para o comando funcione.|
 |-h \<path>|Especifica o caminho para o arquivo de driver. Se você não especificar um caminho, o caminho para o local em que o Windows foi instalado será usado.|
@@ -50,15 +51,15 @@ cscript prndrvr {-a | -d | -l | -x | -?} [-m <model>] [-v {0|1|2|3}]
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
--   O **prndrvr** comando é um script do Visual Basic localizado no %WINdir%\System32\printing_Admin_Scripts\\ <language> directory. Para usar este comando no prompt de comando, digite **cscript** seguido pelo caminho completo do arquivo prndrvr ou altere os diretórios para a pasta apropriada.
-   
-   Por exemplo: 
-    ```
-    cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prndrvr
-    ```
--   Se as informações que você fornece contiverem espaços, use aspas ao redor do texto (por exemplo, `"computer Name"`).
--   O x - opção exclui todos os drivers de impressora adicionais (drivers instalados para uso em clientes alternativas executando versões do Windows), mesmo se o driver primário está em uso. Se o componente de fax é instalado, essa opção também exclui os drivers de fax. O driver de fax primário é excluído se não estiver em uso (ou seja, se não houver nenhuma fila usá-lo). Se o driver de fax primário for excluído, a única maneira de habilitar novamente o fax é reinstalar o componente de fax.
--   Usado sem parâmetros, **prndrvr** exibe a Ajuda de linha de comando para o **prndrvr** comando.
+- O **prndrvr** comando é um script do Visual Basic localizado no %WINdir%\System32\printing_Admin_Scripts\\ <language> directory. Para usar este comando no prompt de comando, digite **cscript** seguido pelo caminho completo do arquivo prndrvr ou altere os diretórios para a pasta apropriada.
+
+  Por exemplo:
+  ```
+  cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prndrvr
+  ```
+- Se as informações que você fornece contiverem espaços, use aspas ao redor do texto (por exemplo, `"computer Name"`).
+- O x - opção exclui todos os drivers de impressora adicionais (drivers instalados para uso em clientes alternativas executando versões do Windows), mesmo se o driver primário está em uso. Se o componente de fax é instalado, essa opção também exclui os drivers de fax. O driver de fax primário é excluído se não estiver em uso (ou seja, se não houver nenhuma fila usá-lo). Se o driver de fax primário for excluído, a única maneira de habilitar novamente o fax é reinstalar o componente de fax.
+- Usado sem parâmetros, **prndrvr** exibe a Ajuda de linha de comando para o **prndrvr** comando.
 
 ## <a name="BKMK_examples"></a>Exemplos
 

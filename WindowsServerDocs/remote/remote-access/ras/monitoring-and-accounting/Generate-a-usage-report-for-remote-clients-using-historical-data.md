@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 0305467b-ce39-4532-a05a-2cc5ff946f55
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: bb122990c1baf1db8a2edbbbecba8b8cdf8a264d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fa82ba8e2fc3fe19b9e73f602605d3ef76f4b9a5
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833757"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446906"
 ---
 # <a name="generate-a-usage-report-for-remote-clients-using-historical-data"></a>Gerar um relatório de uso para clientes remotos usando dados históricos
 
@@ -60,7 +60,7 @@ O console de gerenciamento no servidor de acesso remoto pode ser usado para gera
 >   
 > Estatísticas de acesso remota baseia-se no conceito de **sessões**. Em contraste com um **conexão**, um **sessão** é identificada exclusivamente por uma combinação de nome de usuário e endereço IP de cliente remoto. Por exemplo, se o túnel de um computador é formado por cliente remoto, chamado Client1, uma sessão será ser criada e armazenada no banco de dados de estatísticas. Quando um usuário nomeado Usuário1 conecta-se de que o cliente após algum tempo passa (mas o túnel do computador ainda está ativo), a sessão é registrada como uma sessão separada. A distinção de sessões é manter a distinção entre o túnel de computador e o túnel do usuário.  
   
-![Windows PowerShell](../../../media/Generate-a-usage-report-for-remote-clients-using-historical-data/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos * * *  
+![Windows PowerShell](../../../media/Generate-a-usage-report-for-remote-clients-using-historical-data/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
