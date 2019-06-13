@@ -6,12 +6,12 @@ ms.technology: storage-failover-clustering
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 454783a13b834ef705bd896155195750de2b183c
-ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
+ms.openlocfilehash: c15c33e31bf0bf7261097fbea110f2a0a788dab2
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64772716"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439749"
 ---
 # <a name="configuring-cluster-accounts-in-active-directory"></a>Configuração de contas de cluster no Active Directory
 
@@ -60,12 +60,12 @@ A tabela a seguir descreve as permissões necessárias para essas contas.
 <tr class="even">
 <td><p>Conta de nome do cluster (conta de computador do próprio cluster)</p></td>
 <td><p>Quando o assistente para Criação de Clusters é executado, ele cria a conta de nome do cluster no contêiner padrão que é usado para contas de computador no domínio. Por padrão, a conta de nome do cluster (assim como outras contas de computador) pode criar até dez contas de computador no domínio.</p>
-<p>Se você criar a conta de nome do cluster (objeto de nome do cluster) antes de criar o cluster, isto é, pré-preparar a conta, será preciso fornecer a ela as permissões <strong>Criar Objetos de computador</strong> e <strong>Ler Todas as Propriedades</strong> no contêiner que é usado para contas de computador no domínio. Também será preciso desabilitar a conta e fornecer <strong>Controle Total</strong> dela à conta que será usada pelo administrador que instalará o cluster. Para obter mais informações, consulte [Etapas para pré-preparar a conta de nome do cluster](#steps-for-prestaging-the-cluster-name-account), mais adiante neste guia.</p></td>
+<p>Se você criar a conta de nome do cluster (objeto de nome do cluster) antes de criar o cluster, isto é, pré-preparar a conta, será preciso fornecer a ela as permissões <strong>Criar Objetos de computador</strong> e <strong>Ler Todas as Propriedades</strong> no contêiner que é usado para contas de computador no domínio. Também será preciso desabilitar a conta e fornecer <strong>Controle Total</strong> dela à conta que será usada pelo administrador que instalará o cluster. Para obter mais informações, consulte <a href="#steps-for-prestaging-the-cluster-name-account" data-raw-source="[Steps for prestaging the cluster name account](#steps-for-prestaging-the-cluster-name-account)">Etapas para pré-preparar a conta de nome do cluster</a>, mais adiante neste guia.</p></td>
 </tr>
 <tr class="odd">
 <td><p>Conta de computador de um aplicativo ou serviço clusterizado</p></td>
 <td><p>Quando o Assistente de alta disponibilidade for execução (para criar um novo serviço ou aplicativo clusterizado), na maioria dos casos, uma conta de computador para o serviço clusterizado ou aplicativo é criado no Active Directory. A conta de nome de cluster tem as permissões necessárias para controlar essa conta. A exceção é uma máquina virtual de Hyper-V clusterizada: nenhuma conta de computador é criada para ela.</p>
-<p>Se você pré-preparar a conta de computador para um aplicativo ou serviço clusterizado, você deve configurá-lo com as permissões necessárias. Para obter mais informações, consulte [Etapas para pré-preparar uma conta para um aplicativo ou serviço clusterizado](#steps-for-prestaging-an-account-for-a-clustered-service-or-application), mais adiante neste guia.</p></td>
+<p>Se você pré-preparar a conta de computador para um aplicativo ou serviço clusterizado, você deve configurá-lo com as permissões necessárias. Para obter mais informações, consulte <a href="#steps-for-prestaging-an-account-for-a-clustered-service-or-application" data-raw-source="[Steps for prestaging an account for a clustered service or application](#steps-for-prestaging-an-account-for-a-clustered-service-or-application)">Etapas para pré-preparar uma conta para um aplicativo ou serviço clusterizado</a>, mais adiante neste guia.</p></td>
 </tr>
 </tbody>
 </table>
@@ -144,23 +144,23 @@ A associação de grupo mínima exigida para concluir o procedimento a seguir de
 <br>
 
 
-3.  Se a conta que foi criada ou obtida na etapa 1 for uma conta de administrador de domínio, ignore o restante deste procedimento. Caso contrário, forneça à conta as permissões **Criar Objetos de computador** e **Ler Todas as Propriedades** no contêiner que é usado para contas de computador no domínio:
+3. Se a conta que foi criada ou obtida na etapa 1 for uma conta de administrador de domínio, ignore o restante deste procedimento. Caso contrário, forneça à conta as permissões **Criar Objetos de computador** e **Ler Todas as Propriedades** no contêiner que é usado para contas de computador no domínio:
     
-    1.  Em um controlador de domínio, clique em **Iniciar**, **Ferramentas Administrativas** e em **Usuários e Computadores do Active Directory**. Se a caixa de diálogo **Controle de Conta de Usuário** for exibida, confirme se a ação exibida é a desejada e clique em **Continuar**.  
+   1.  Em um controlador de domínio, clique em **Iniciar**, **Ferramentas Administrativas** e em **Usuários e Computadores do Active Directory**. Se a caixa de diálogo **Controle de Conta de Usuário** for exibida, confirme se a ação exibida é a desejada e clique em **Continuar**.  
           
-    2.  No menu **Exibir**, verifique se a opção **Recursos Avançados** está selecionada.  
+   2.  No menu **Exibir**, verifique se a opção **Recursos Avançados** está selecionada.  
           
-        Quando **Recursos Avançados** estiver selecionada, você poderá ver a guia **Segurança** nas propriedades de contas (objetos) em **Usuários e Computadores do Active Directory**.  
+       Quando **Recursos Avançados** estiver selecionada, você poderá ver a guia **Segurança** nas propriedades de contas (objetos) em **Usuários e Computadores do Active Directory**.  
           
-    3.  Clique com o botão direito do mouse no contêiner padrão **Computadores** ou no contêiner padrão no qual as contas de computador são criadas no seu domínio e clique em **Propriedades**. **Computadores** está localizado na <b>computadores e usuários do Active Directory /</b><i>nó do domínio</i><b>/Computers</b>.  
+   3.  Clique com o botão direito do mouse no contêiner padrão **Computadores** ou no contêiner padrão no qual as contas de computador são criadas no seu domínio e clique em **Propriedades**. **Computadores** está localizado na <b>computadores e usuários do Active Directory /</b><i>nó do domínio</i><b>/Computers.</b>.  
           
-    4.  Na guia **Segurança** , clique em **Avançado**.  
+   4.  Na guia **Segurança** , clique em **Avançado**.  
           
-    5.  Clique em **Adicionar**, digite o nome da conta que foi criada ou obtida na etapa 1 e clique em **OK**.  
+   5.  Clique em **Adicionar**, digite o nome da conta que foi criada ou obtida na etapa 1 e clique em **OK**.  
           
-    6.  No **entrada de permissão para * * * recipiente* diálogo caixa, localize a **criar objetos de computador** e **ler todas as propriedades** permissões e certifique-se de que o **Permitir** caixa de seleção é marcada para cada uma delas.  
+   6.  No **entrada de permissão para * * * recipiente* diálogo caixa, localize a **criar objetos de computador** e **ler todas as propriedades** permissões e certifique-se de que o **Permitir** caixa de seleção é marcada para cada uma delas.  
           
-        ![](media/configure-ad-accounts/Cc731002.0a863ac5-2024-4f9f-8a4d-a419aff32fa0(WS.10).gif)
+       ![](media/configure-ad-accounts/Cc731002.0a863ac5-2024-4f9f-8a4d-a419aff32fa0(WS.10).gif)
 
 ## <a name="steps-for-prestaging-the-cluster-name-account"></a>Etapas para pré-preparar a conta de nome do cluster
 
@@ -174,7 +174,7 @@ A associação ao grupo **Admins. do Domínio** , ou equivalente, é o mínimo n
 
 2.  Em um controlador de domínio, clique em **Iniciar**, **Ferramentas Administrativas** e em **Usuários e Computadores do Active Directory**. Se a caixa de diálogo **Controle de Conta de Usuário** for exibida, confirme se a ação exibida é a desejada e clique em **Continuar**.
 
-3.  Na árvore de console, clique com o botão direito do mouse em **Computadores** ou no contêiner padrão no qual as contas de computador são criadas no seu domínio. **Computadores** está localizado na <b>computadores e usuários do Active Directory /</b><i>nó do domínio</i><b>/Computers</b>.
+3.  Na árvore de console, clique com o botão direito do mouse em **Computadores** ou no contêiner padrão no qual as contas de computador são criadas no seu domínio. **Computadores** está localizado na <b>computadores e usuários do Active Directory /</b><i>nó do domínio</i><b>/Computers.</b>.
 
 4.  Clique em **Novo** e em **Computador**.
 
@@ -226,7 +226,7 @@ A associação ao grupo **Operadores de Conta**, ou equivalente, é o mínimo ne
 
 2.  Em um controlador de domínio, clique em **Iniciar**, **Ferramentas Administrativas** e em **Usuários e Computadores do Active Directory**. Se a caixa de diálogo **Controle de Conta de Usuário** for exibida, confirme se a ação exibida é a desejada e clique em **Continuar**.
 
-3.  Na árvore de console, clique com o botão direito do mouse em **Computadores** ou no contêiner padrão no qual as contas de computador são criadas no seu domínio. **Computadores** está localizado na <b>computadores e usuários do Active Directory /</b><i>nó do domínio</i><b>/Computers</b>.
+3.  Na árvore de console, clique com o botão direito do mouse em **Computadores** ou no contêiner padrão no qual as contas de computador são criadas no seu domínio. **Computadores** está localizado na <b>computadores e usuários do Active Directory /</b><i>nó do domínio</i><b>/Computers.</b>.
 
 4.  Clique em **Novo** e em **Computador**.
 
@@ -287,7 +287,7 @@ A associação ao grupo **Admins. do Domínio** , ou equivalente, é o mínimo n
 
 1.  Em um controlador de domínio, clique em **Iniciar**, **Ferramentas Administrativas** e em **Usuários e Computadores do Active Directory**. Se a caixa de diálogo **Controle de Conta de Usuário** for exibida, confirme se a ação exibida é a desejada e clique em **Continuar**.
 
-2.  Expanda o contêiner padrão **Computadores** ou a pasta na qual a conta de nome do cluster (a conta de computador para o cluster) está localizada. **Computadores** está localizado na <b>computadores e usuários do Active Directory /</b><i>nó do domínio</i><b>/Computers</b>.
+2.  Expanda o contêiner padrão **Computadores** ou a pasta na qual a conta de nome do cluster (a conta de computador para o cluster) está localizada. **Computadores** está localizado na <b>computadores e usuários do Active Directory /</b><i>nó do domínio</i><b>/Computers.</b>.
 
 3.  Examine o ícone da conta de nome do cluster. Ele não deve ter uma seta apontando para baixo, isto é, a conta não deve estar desabilitada. Se ela aparecer como desabilitada, clique nela com o botão direito do mouse e procure o comando **Habilitar Conta**. Ao visualizar o comando, clique nele.
 
@@ -309,9 +309,9 @@ A associação ao grupo **Admins. do Domínio** , ou equivalente, é o mínimo n
 <br>
 
 
-9.  Para a conta de nome do cluster (também conhecida como o objeto de nome do cluster ou CNO), verifique se a opção **Permitir** está selecionada para as permissões **Criar Objetos de computador** e **Ler Todas as Propriedades**.
+9. Para a conta de nome do cluster (também conhecida como o objeto de nome do cluster ou CNO), verifique se a opção **Permitir** está selecionada para as permissões **Criar Objetos de computador** e **Ler Todas as Propriedades**.
     
-    ![](media/configure-ad-accounts/Cc731002.f5977c4d-a62e-4b17-81e3-8c19ddca2078(WS.10).gif)
+   ![](media/configure-ad-accounts/Cc731002.f5977c4d-a62e-4b17-81e3-8c19ddca2078(WS.10).gif)
 
 10. Clique em **OK** até retornar ao snap-in **Usuários e Computadores do Active Directory**.
 
@@ -323,17 +323,17 @@ A associação ao grupo **Admins. do Domínio** , ou equivalente, é o mínimo n
 
 14. Na guia **Segurança**, verifique se a conta de nome do cluster está listada entre as contas que têm permissões e selecione-a. Verifique se a conta de nome do cluster possui a permissão **Controle Total** (a caixa de seleção **Permitir** é marcada). Se não tiver, adicione a conta de nome do cluster à lista e forneça a ela a permissão **Controle Total**.
     
-    ![](media/configure-ad-accounts/Cc731002.2e614376-87a6-453a-81ba-90ff7ebc3fa2(WS.10).gif)
+   ![](media/configure-ad-accounts/Cc731002.2e614376-87a6-453a-81ba-90ff7ebc3fa2(WS.10).gif)
 
 15. Repita as etapas 13 e 14 para cada aplicativo ou serviço clusterizado configurado no cluster.
 
 16. Verifique se a cota de todo o domínio para criação de objetos de computador (por padrão, 10) não foi atingida (consultando um administrador de domínio, se possível). Se todos os itens anteriores neste procedimento tiverem sido revisados e corrigidos, e se a cota tiver sido atingida, pense na possibilidade de aumenta a cota. Para alterar a cota:
     
-    1.  Abra um prompt de comando como administrador e execute **ADSIEdit.msc**.  
+   1.  Abra um prompt de comando como administrador e execute **ADSIEdit.msc**.  
           
-    2.  Clique com o botão direito do mouse em **ADSI Edit**, clique em **Conectar-se a** e em **OK**. O **Contexto de nomenclatura padrão** é adicionado à árvore de console.  
+   2.  Clique com o botão direito do mouse em **ADSI Edit**, clique em **Conectar-se a** e em **OK**. O **Contexto de nomenclatura padrão** é adicionado à árvore de console.  
           
-    3.  Clique duas vezes em **Contexto de nomenclatura padrão**, clique com o botão direito do mouse no objeto de domínio abaixo dele e clique em **Propriedades**.  
+   3.  Clique duas vezes em **Contexto de nomenclatura padrão**, clique com o botão direito do mouse no objeto de domínio abaixo dele e clique em **Propriedades**.  
           
-    4.  Role até **ms-DS-MachineAccountQuota**, selecione-o, clique em **Editar**, altere o valor e clique em **OK**.
+   4.  Role até **ms-DS-MachineAccountQuota**, selecione-o, clique em **Editar**, altere o valor e clique em **OK**.
 
