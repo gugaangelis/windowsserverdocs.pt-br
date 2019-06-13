@@ -6,12 +6,12 @@ author: msmbaldwin
 ms.author: esaggese
 ms.date: 05/30/2019
 ms.topic: article
-ms.openlocfilehash: ce058a2885315c84d2c1c6701ad2801790d3c590
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: HT
+ms.openlocfilehash: f5d621a0ba06f5b1beb97ccdbffb8376b5503168
+ms.sourcegitcommit: 927adf32faa6052234ad08f21125906362e593dc
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66814069"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67033347"
 ---
 # <a name="upgrading-ad-rms-to-windows-server-2016"></a>Atualizar o AD RMS para Windows Server 2016
 
@@ -257,7 +257,7 @@ Se seu cluster AD RMS estiver usando um módulo de segurança de Hardware, em ve
 
 13. Depois que o logon back, abra **Gerenciador de servidores** selecionar **ferramentas** e, em seguida, **Active Directory Rights Management**. A janela de gerenciamento deve aparecer e indicar que o cluster tem o servidor adicional no cluster.
 
-14. 14. Se a extensão de dispositivos móveis AD RMS foi instalada no cluster original do AD RMS, você precisa instalar também o MDE em nós de cluster atualizado. Siga as instruções na documentação do MDE adicionar MDE ao seu cluster AD RMS. Neste ponto, você pode realocar todos os nós preexistentes ou atualizá-los para o Windows Server 2016 e novamente uni-las para o cluster AD RMS usando o mesmo processo descrito acima. 
+14. Se a extensão de dispositivos móveis AD RMS foi instalada no cluster original do AD RMS, você precisa instalar também o MDE em nós de cluster atualizado. Siga as instruções na documentação do MDE adicionar MDE ao seu cluster AD RMS. Neste ponto, você pode realocar todos os nós preexistentes ou atualizá-los para o Windows Server 2016 e novamente uni-las para o cluster AD RMS usando o mesmo processo descrito acima. 
 
 ### <a name="configuring-windows-server-2016-web-application-proxy-wap"></a>Configurando o Proxy de aplicativo do Windows Server 2016 Web (WAP)
 
