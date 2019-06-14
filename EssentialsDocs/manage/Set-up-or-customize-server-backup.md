@@ -12,12 +12,12 @@ ms.assetid: 441c2d6c-435a-42cb-90f2-6d680d279d34
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 4fb34e05b00c35156a8451ffb0d8b914fcc73cf5
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 5bd36db4f61b990c3864828370607158df4803a3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63720295"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433043"
 ---
 # <a name="set-up-or-customize-server-backup"></a>Configurar ou personalizar o backup do servidor
 
@@ -55,12 +55,12 @@ ms.locfileid: "63720295"
   
 > [!NOTE]
 >  Na instalação padrão do Windows Server Essentials, o servidor está configurado para executar automaticamente uma desfragmentação uma vez por semana. Isso pode resultar em backups maiores que o normal se você usar um software de imagem que não for da Microsoft. Se não for necessário desfragmentar o servidor regularmente, você pode seguir estas etapas para desativar o agendamento de desfragmentação:  
->   
->  1.  Pressione a tecla Windows + W para abrir a **Pesquisa**.  
-> 2.  Na caixa de texto Pesquisar, digite **Defragment**.  
-> 3.  Na seção resultados, clique em **Desfragmentar e otimizar suas unidades**.  
-> 4.  Na página **Otimizar Unidades**, selecione uma unidade e, em seguida, clique em **Alterar configurações**.  
-> 5.  Na janela **Agendamento de otimização** , desmarque a caixa de seleção **Executar seguindo um agendamento (recomendado)** e clique em **OK** para salvar a alteração.  
+> 
+> 1. Pressione a tecla Windows + W para abrir a **Pesquisa**.  
+>    2. Na caixa de texto Pesquisar, digite **Defragment**.  
+>    3. Na seção resultados, clique em **Desfragmentar e otimizar suas unidades**.  
+>    4. Na página **Otimizar Unidades**, selecione uma unidade e, em seguida, clique em **Alterar configurações**.  
+>    5. Na janela **Agendamento de otimização** , desmarque a caixa de seleção **Executar seguindo um agendamento (recomendado)** e clique em **OK** para salvar a alteração.  
   
 ##  <a name="BKMK_2"></a> Agendamento de backup do servidor  
  Quando você usa o Assistente Configurar Backup do Servidor ou o Assistente Personalizar o Backup do Servidor, você pode optar por fazer backup de dados do servidor várias vezes durante o dia. Como os assistentes agendam backups baseados em incrementos, os backups são executados rapidamente e o desempenho do servidor não é afetado significativamente. Por padrão, os assistentes agendam um backup para executar diariamente às 12h e às 23h. No entanto, você pode ajustar o cronograma de backup de acordo com as necessidades da sua organização. Ocasionalmente, você deve avaliar a eficácia do seu plano de backup e alterar o plano conforme necessário.  
@@ -106,32 +106,32 @@ ms.locfileid: "63720295"
   
 > [!NOTE]
 >  Se um backup falhar porque a unidade de backup tinha espaço insuficiente, a letra da unidade para a unidade de destino de backup é removida do banco de dados do Windows Server Essentials e o painel não exibirá a unidade. Se você deseja usar a unidade em backups futuros, você deve reatribuir a letra de unidade usando uma ferramenta nativa.  
->   
+> 
 >  **Para reatribuir uma letra de unidade para um volume existente**  
->   
->  1.  No Painel de Controle, abra **Sistemas e Segurança**.  
-> 2.  Em **Ferramentas Administrativas**, clique em **Criar e formatar partições de disco rígido**.  
-> 3.  Clique com botão direito na unidade e clique em **Alterar a letra da unidade e caminhos**.  
-> 4.  Clique em **Adicionar**.  
-> 5.  Na caixa de diálogo Adicionar letra de unidade ou caminho, selecione uma letra de unidade para atribuir. (Você pode reatribuir a mesma letra de unidade). Em seguida, clique em **OK**.  
->   
->      A unidade será exibida no Painel imediatamente.  
+> 
+> 1. No Painel de Controle, abra **Sistemas e Segurança**.  
+>    2. Em **Ferramentas Administrativas**, clique em **Criar e formatar partições de disco rígido**.  
+>    3. Clique com botão direito na unidade e clique em **Alterar a letra da unidade e caminhos**.  
+>    4. Clique em **Adicionar**.  
+>    5. Na caixa de diálogo Adicionar letra de unidade ou caminho, selecione uma letra de unidade para atribuir. (Você pode reatribuir a mesma letra de unidade). Em seguida, clique em **OK**.  
+> 
+>    A unidade será exibida no Painel imediatamente.  
   
 ##  <a name="BKMK_4"></a> Itens de backup  
  Você pode optar por fazer backup de todas as unidades, arquivos e pastas no servidor ou selecionar apenas unidades, arquivos ou pastas individuais para backup.  
   
  Quando você adicionar ou remove uma unidade ou pastas e arquivos compartilhados, você deve verificar a configuração de backup do servidor para certificar-se de que esses itens sejam adicionados ou removidos da configuração de backup. Para adicionar ou remover itens para backup, siga um destes procedimentos:  
   
--   Para incluir uma unidade de dados no backup do servidor, marque a caixa de seleção adjacente  
+- Para incluir uma unidade de dados no backup do servidor, marque a caixa de seleção adjacente  
   
--   Para excluir uma unidade de dados do backup do servidor, desmarque a caixa de seleção adjacente  
+- Para excluir uma unidade de dados do backup do servidor, desmarque a caixa de seleção adjacente  
   
-    > [!NOTE]
-    >  Se deseja excluir o item **Sistema Operacional** do backup, você deve primeiro desmarcar a caixa de seleção **Backup de sistema (recomendado)** .  
+  > [!NOTE]
+  >  Se deseja excluir o item **Sistema Operacional** do backup, você deve primeiro desmarcar a caixa de seleção **Backup de sistema (recomendado)** .  
   
- Para minimizar a quantidade de armazenamento do servidor que os backups do servidor usam, convém excluir todas as pastas que contenham arquivos que você não considere valiosos ou particularmente importantes.  
+  Para minimizar a quantidade de armazenamento do servidor que os backups do servidor usam, convém excluir todas as pastas que contenham arquivos que você não considere valiosos ou particularmente importantes.  
   
- Por exemplo, você pode ter uma pasta que contém programas de TV gravados que usam muito espaço em disco rígido. Você pode optar por não fazer backup desses arquivos porque normalmente eles são excluídos após serem assistidos. Ou você pode ter uma pasta que contém os arquivos temporários que você não deseja manter.  
+  Por exemplo, você pode ter uma pasta que contém programas de TV gravados que usam muito espaço em disco rígido. Você pode optar por não fazer backup desses arquivos porque normalmente eles são excluídos após serem assistidos. Ou você pode ter uma pasta que contém os arquivos temporários que você não deseja manter.  
   
 ## <a name="see-also"></a>Consulte também  
   

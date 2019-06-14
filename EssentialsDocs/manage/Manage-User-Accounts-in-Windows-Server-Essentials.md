@@ -12,12 +12,12 @@ ms.assetid: 0d115697-532b-48c2-a659-9f889e235326
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 008e614ca7ae202d575d2c3e5976ed3d5544b6ea
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 1cce047c45279f7116e0e8a256633df06344e13c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63720699"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433145"
 ---
 # <a name="manage-user-accounts-in-windows-server-essentials"></a>Gerenciar contas de usuário no Windows Server Essentials
 
@@ -63,8 +63,8 @@ A página Usuários do Painel do Windows Server Essentials centraliza informaç�
 -   Atribua grupos de usuários (Windows Server Essentials apenas).  
   
 > [!NOTE]
->  -   Caracteres não ASCII não têm suporte no Microsoft Azure Active Directory (Azure AD). Não use caracteres não ASCII em sua senha, se o servidor estiver integrado com o Azure AD.  
-> -   As opções de email só estarão disponíveis se você instalar um suplemento que fornece o serviço de email.  
+> - Caracteres não ASCII não têm suporte no Microsoft Azure Active Directory (Azure AD). Não use caracteres não ASCII em sua senha, se o servidor estiver integrado com o Azure AD.  
+>   -   As opções de email só estarão disponíveis se você instalar um suplemento que fornece o serviço de email.  
   
 ##### <a name="to-add-a-user-account"></a>Para adicionar uma conta de usuário  
   
@@ -200,38 +200,38 @@ A página Usuários do Painel do Windows Server Essentials centraliza informaç�
  O Windows Server Essentials torna possível executar tarefas administrativas comuns usando o Painel do Windows Server Essentials. Por padrão, o **os usuários** página do painel inclui duas guias **usuários** e **grupos de usuários**.  
   
 > [!NOTE]
->  -   Se você integrar seu servidor que está executando o Windows Server Essentials com o Office 365, uma nova guia chamada **grupos de distribuição** também será adicionada a **usuários** página do painel.  
-> -   No Windows Server Essentials, o **os usuários** página do painel contém apenas uma guia - **usuários**.  
+> - Se você integrar seu servidor que está executando o Windows Server Essentials com o Office 365, uma nova guia chamada **grupos de distribuição** também será adicionada a **usuários** página do painel.  
+>   -   No Windows Server Essentials, o **os usuários** página do painel contém apenas uma guia - **usuários**.  
   
  A guia **Usuários** inclui o seguinte:  
   
--   Uma lista de contas de usuário, que exibe:  
+- Uma lista de contas de usuário, que exibe:  
   
-    -   O nome do usuário.  
+  -   O nome do usuário.  
   
-    -   O nome de Logon da conta de usuário.  
+  -   O nome de Logon da conta de usuário.  
   
-    -   Se a conta de usuário tem permissão de Acesso em qualquer lugar. A permissão de Acesso em qualquer lugar para uma conta de usuário é **Permitido** ou **Não permitido**.  
+  -   Se a conta de usuário tem permissão de Acesso em qualquer lugar. A permissão de Acesso em qualquer lugar para uma conta de usuário é **Permitido** ou **Não permitido**.  
   
-    -   Se o histórico de arquivos para esta conta de usuário é gerenciado pelo servidor que executa o Windows Server Essentials. O status do histórico de arquivos para uma conta de usuário é **Gerenciado** ou **Não gerenciado**.  
+  -   Se o histórico de arquivos para esta conta de usuário é gerenciado pelo servidor que executa o Windows Server Essentials. O status do histórico de arquivos para uma conta de usuário é **Gerenciado** ou **Não gerenciado**.  
   
-    -   O nível de acesso que é atribuído à conta de usuário. Você pode atribuir o acesso de **Usuário padrão** ou **Administrador** a uma conta de usuário.  
+  -   O nível de acesso que é atribuído à conta de usuário. Você pode atribuir o acesso de **Usuário padrão** ou **Administrador** a uma conta de usuário.  
   
-    -   O status da conta de usuário. Uma conta de usuário pode ser **Ativa**, **Inativa**ou **Incompleta**.  
+  -   O status da conta de usuário. Uma conta de usuário pode ser **Ativa**, **Inativa**ou **Incompleta**.  
   
-    -   No Windows Server Essentials, se o servidor estiver integrado ao Office 365 ou Windows Intune, a conta online da Microsoft é exibida.  
+  -   No Windows Server Essentials, se o servidor estiver integrado ao Office 365 ou Windows Intune, a conta online da Microsoft é exibida.  
   
-    -   No Windows Server Essentials, se o servidor estiver integrado com o Microsoft Office 365, o status da conta do Office 365 (conhecido no Windows Server Essentials como conta online da Microsoft) para a conta de usuário é exibido.  
+  -   No Windows Server Essentials, se o servidor estiver integrado com o Microsoft Office 365, o status da conta do Office 365 (conhecido no Windows Server Essentials como conta online da Microsoft) para a conta de usuário é exibido.  
   
--   Um painel de detalhes com informações adicionais sobre uma conta de usuário selecionada.  
+- Um painel de detalhes com informações adicionais sobre uma conta de usuário selecionada.  
   
--   Um painel de tarefas que inclui:  
+- Um painel de tarefas que inclui:  
   
-    -   Um conjunto de tarefas administrativas de conta de usuário, como exibir e remover as contas de usuário e alterar senhas.  
+  -   Um conjunto de tarefas administrativas de conta de usuário, como exibir e remover as contas de usuário e alterar senhas.  
   
-    -   Tarefas que permitem definir globalmente ou alterar as configurações para todas as contas de usuário na rede.  
+  -   Tarefas que permitem definir globalmente ou alterar as configurações para todas as contas de usuário na rede.  
   
- A tabela a seguir descreve as diversas tarefas de conta de usuário que estão disponíveis a partir da guia **Usuários** . Algumas das tarefas são específicas de conta de usuário, e são visíveis apenas quando você seleciona uma conta de usuário na lista.  
+  A tabela a seguir descreve as diversas tarefas de conta de usuário que estão disponíveis a partir da guia **Usuários** . Algumas das tarefas são específicas de conta de usuário, e são visíveis apenas quando você seleciona uma conta de usuário na lista.  
   
 > [!NOTE]
 >  Se você integrar o Office 365 com o Windows Server Essentials, tarefas adicionais serão disponibilizadas. Para obter mais informações, consulte [gerenciar contas Online para usuários](Manage-Online-Accounts-for-Users.md).  
@@ -286,55 +286,55 @@ A página Usuários do Painel do Windows Server Essentials centraliza informaç�
   
 ##### <a name="to-reset-the-password-for-a-user-account"></a>Para redefinir a senha de uma conta de usuário  
   
-1.  Abra o Painel do Windows Server Essentials.  
+1. Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação, clique em **Usuários**.  
+2. Na barra de navegação, clique em **Usuários**.  
   
-3.  Na lista de contas de usuário, selecione a conta de usuário que você deseja redefinir.  
+3. Na lista de contas de usuário, selecione a conta de usuário que você deseja redefinir.  
   
-4.  No **< Conta_de_usuário\> tarefas** painel, clique em **alterar a senha da conta de usuário**. O Assistente de Alteração de Senha de Conta de Usuário é exibido.  
+4. No **< Conta_de_usuário\> tarefas** painel, clique em **alterar a senha da conta de usuário**. O Assistente de Alteração de Senha de Conta de Usuário é exibido.  
   
-5.  Digite uma nova senha para a conta de usuário e, em seguida, digite a senha novamente para confirmá-la.  
+5. Digite uma nova senha para a conta de usuário e, em seguida, digite a senha novamente para confirmá-la.  
   
-6.  Clique em **Alterar senha**.  
+6. Clique em **Alterar senha**.  
   
-7.  Fornece a nova senha do usuário.  
+7. Fornece a nova senha do usuário.  
   
-    > [!IMPORTANT]
-    >  -   Você não poderá alterar sua senha se a política de senha para a sua conta tiver sido definida como **As senhas nunca expiram**.  
-    > -   Caracteres não ASCII não têm suporte no Azure AD. Portanto, se seu servidor estiver integrado com o Azure AD, não use caracteres não ASCII em sua senha.  
-    > -   Se uma conta online da Microsoft (conhecida no Windows Server Essentials como uma conta do Office 365) é atribuída ao usuário, a senha é sincronizada com a senha da conta online. O usuário usará a nova senha para entrar no servidor ou no Office 365. Para obter mais informações, consulte [gerenciar contas Online para usuários](Manage-Online-Accounts-for-Users.md).  
+   > [!IMPORTANT]
+   > - Você não poderá alterar sua senha se a política de senha para a sua conta tiver sido definida como **As senhas nunca expiram**.  
+   >   -   Caracteres não ASCII não têm suporte no Azure AD. Portanto, se seu servidor estiver integrado com o Azure AD, não use caracteres não ASCII em sua senha.  
+   >   -   Se uma conta online da Microsoft (conhecida no Windows Server Essentials como uma conta do Office 365) é atribuída ao usuário, a senha é sincronizada com a senha da conta online. O usuário usará a nova senha para entrar no servidor ou no Office 365. Para obter mais informações, consulte [gerenciar contas Online para usuários](Manage-Online-Accounts-for-Users.md).  
   
 ###  <a name="BKMK_Access3"></a> O que você deve saber sobre as políticas de senha  
  A política de senha é um conjunto de regras que definem como os usuários criam e usam senhas. A política ajuda a evitar acesso não autorizado aos dados do usuário e a outras informações armazenadas no servidor. A política de senha é aplicada a todas as contas de usuário que acessam a rede.  
   
  A política de senha do Windows Server Essentials consiste em três elementos principais, da seguinte maneira:  
   
--   **Comprimento da senha**.  Quanto maior é de uma senha, mais segura. Senhas em branco não são seguras.  
+- **Comprimento da senha**.  Quanto maior é de uma senha, mais segura. Senhas em branco não são seguras.  
   
--   **Complexidade de senha**.  Senhas complexas contêm uma mistura de letras maiúsculas e minúsculas (a-z, A-Z), números básicos (0-9) e símbolos não alfabéticos (como;!, @, #, _,-). Senhas complexas são muito menos suscetíveis a acesso não autorizado. As senhas que contêm nomes de usuário, datas de nascimento ou outras informações pessoais não fornecem segurança adequada.  
+- **Complexidade de senha**.  Senhas complexas contêm uma mistura de letras maiúsculas e minúsculas (a-z, A-Z), números básicos (0-9) e símbolos não alfabéticos (como;!, @, #, _,-). Senhas complexas são muito menos suscetíveis a acesso não autorizado. As senhas que contêm nomes de usuário, datas de nascimento ou outras informações pessoais não fornecem segurança adequada.  
   
--   **Duração da senha**.  O Windows Server Essentials exige que os usuários alterem suas senhas pelo menos uma vez a cada 180 dias. Como opção, você pode optar por ter senhas nunca expirar.  
+- **Duração da senha**.  O Windows Server Essentials exige que os usuários alterem suas senhas pelo menos uma vez a cada 180 dias. Como opção, você pode optar por ter senhas nunca expirar.  
   
- Para tornar mais fácil implementar uma política de senha no computador da rede, o Windows Server Essentials fornece uma ferramenta simples que permite que você defina ou altere a política de senha para qualquer um dos seguintes quatro perfis predefinidos de política:  
+  Para tornar mais fácil implementar uma política de senha no computador da rede, o Windows Server Essentials fornece uma ferramenta simples que permite que você defina ou altere a política de senha para qualquer um dos seguintes quatro perfis predefinidos de política:  
   
--   **Fraca**.  Os usuários podem especificar qualquer senha que não esteja em branco.  
+- **Fraca**.  Os usuários podem especificar qualquer senha que não esteja em branco.  
   
--   **Média**.  Essas senhas devem conter pelo menos 5 caracteres. Uma senha complexa não é obrigatória.  
+- **Média**.  Essas senhas devem conter pelo menos 5 caracteres. Uma senha complexa não é obrigatória.  
   
--   **Média Forte**.  As senhas devem conter pelo menos 5 caracteres e devem incluir letras, números e símbolos.  
+- **Média Forte**.  As senhas devem conter pelo menos 5 caracteres e devem incluir letras, números e símbolos.  
   
--   **Forte**.  As senhas devem conter pelo menos 7 caracteres e devem incluir letras, números e símbolos. Essas senhas são mais seguras, mas podem ser mais difíceis para os usuários memorizarem.  
+- **Forte**.  As senhas devem conter pelo menos 7 caracteres e devem incluir letras, números e símbolos. Essas senhas são mais seguras, mas podem ser mais difíceis para os usuários memorizarem.  
   
-    > [!NOTE]
-    >  A senhas não podem conter o endereço de email ou o nome de usuário.  
-    >   
-    >  Se você integrar com o Office 365, a integração impõe a política de senha **Forte** e atualiza a política para incluir os seguintes requisitos:  
-    >   
-    >  -   As senhas devem conter 8 16 caracteres.  
-    > -   As senhas não podem conter espaços ou o nome de email do Office 365.  
+  > [!NOTE]
+  >  A senhas não podem conter o endereço de email ou o nome de usuário.  
+  > 
+  >  Se você integrar com o Office 365, a integração impõe a política de senha **Forte** e atualiza a política para incluir os seguintes requisitos:  
+  > 
+  > - As senhas devem conter 8 16 caracteres.  
+  >   -   As senhas não podem conter espaços ou o nome de email do Office 365.  
   
- Por padrão, a instalação do servidor define a política de senha padrão a opção **Forte**.  
+  Por padrão, a instalação do servidor define a política de senha padrão a opção **Forte**.  
   
 ###  <a name="BKMK_Access4"></a> Alterar a política de senha  
  Use o procedimento a seguir para definir ou alterar a política de senha para qualquer um dos quatro perfis predefinidos de política.  
@@ -373,21 +373,21 @@ A página Usuários do Painel do Windows Server Essentials centraliza informaç�
   
 ##### <a name="to-remove-a-user-account-but-retain-access-to-the-user-s-files"></a>Para remover uma conta de usuário, mas manter o acesso aos arquivos de usuário s  
   
-1.  Abra o Painel do Windows Server Essentials.  
+1. Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação, clique em **Usuários**.  
+2. Na barra de navegação, clique em **Usuários**.  
   
-3.  Na lista de contas de usuário, selecione a conta de usuário que deseja remover.  
+3. Na lista de contas de usuário, selecione a conta de usuário que deseja remover.  
   
-4.  No **< Conta_de_usuário\> tarefas** painel, clique em **remover a conta de usuário**. O Assistente de Exclusão de Conta de Usuário é exibido.  
+4. No **< Conta_de_usuário\> tarefas** painel, clique em **remover a conta de usuário**. O Assistente de Exclusão de Conta de Usuário é exibido.  
   
-5.  Na página **Deseja manter os arquivos?** , certifique-se de que a caixa de seleção **Excluir os arquivos, incluindo os backups do Histórico de Arquivos e a pasta redirecionada, desta conta de usuário** não esteja marcada e clique em **Avançar**.  
+5. Na página **Deseja manter os arquivos?** , certifique-se de que a caixa de seleção **Excluir os arquivos, incluindo os backups do Histórico de Arquivos e a pasta redirecionada, desta conta de usuário** não esteja marcada e clique em **Avançar**.  
   
-     Uma página de confirmação aparece, informando que você está excluindo a conta e mantendo os arquivos.  
+    Uma página de confirmação aparece, informando que você está excluindo a conta e mantendo os arquivos.  
   
-6.  Clique em **Excluir conta** para remover a conta de usuário.  
+6. Clique em **Excluir conta** para remover a conta de usuário.  
   
- Depois que a conta de usuário for removida, o administrador pode fornecer a outra conta de usuário acesso à pasta compartilhada.  
+   Depois que a conta de usuário for removida, o administrador pode fornecer a outra conta de usuário acesso à pasta compartilhada.  
   
 ##### <a name="to-give-a-user-account-permission-to-access-a-shared-folder"></a>Para dar a uma conta de usuário permissão para acessar uma pasta compartilhada  
   
@@ -414,15 +414,15 @@ A página Usuários do Painel do Windows Server Essentials centraliza informaç�
   
 ##### <a name="to-manually-synchronize-the-dsrm-password-to-a-network-administrator-account"></a>Para sincronizar manualmente a senha do DSRM com uma conta de administrador de rede  
   
-1.  Em um prompt de comando, execute `ntdsutil.exe` para abrir a ferramenta ntdsutil.  
+1. Em um prompt de comando, execute `ntdsutil.exe` para abrir a ferramenta ntdsutil.  
   
-2.  Para redefinir a senha do DSRM, digite **set dsrm password**.  
+2. Para redefinir a senha do DSRM, digite **set dsrm password**.  
   
-3.  Para sincronizar a senha do DSRM em um controlador de domínio com a conta de s de administrador de rede atual, digite:  
+3. Para sincronizar a senha do DSRM em um controlador de domínio com a conta de s de administrador de rede atual, digite:  
   
-     **sincronização da conta de domínio** *< current_network_administrator_account >* , e pressione Enter.  
+    **sincronização da conta de domínio** *< current_network_administrator_account >* , e pressione Enter.  
   
- Como você alterará periodicamente a senha da conta de administrador de rede, para garantir que a senha do DSRM seja sempre igual à senha atual do administrador de rede, recomendamos que você crie uma tarefa agendada para sincronizar automaticamente a senha do DSRM com a senha do administrador de rede diariamente.  
+   Como você alterará periodicamente a senha da conta de administrador de rede, para garantir que a senha do DSRM seja sempre igual à senha atual do administrador de rede, recomendamos que você crie uma tarefa agendada para sincronizar automaticamente a senha do DSRM com a senha do administrador de rede diariamente.  
   
 ##### <a name="to-automatically-synchronize-the-dsrm-password-to-a-network-administrator-account"></a>Para sincronizar automaticamente a senha do DSRM com uma conta de administrador de rede  
   
@@ -460,15 +460,15 @@ A página Usuários do Painel do Windows Server Essentials centraliza informaç�
   
  O Assistente de Acesso em Qualquer Local permite habilitar dois métodos de acesso remoto:  
   
--   VPN (rede privada virtual)  
+- VPN (rede privada virtual)  
   
--   Acesso Remoto via Web  
+- Acesso Remoto via Web  
   
- Quando você executa o assistente, também é possível permitir acesso em qualquer lugar para todas as contas de usuário atuais e recém-adicionada.  
+  Quando você executa o assistente, também é possível permitir acesso em qualquer lugar para todas as contas de usuário atuais e recém-adicionada.  
   
- Para configurar o Acesso em qualquer lugar, abra a página de **Início** do Painel, clique em **INSTALAÇÃO**e clique em **Configurar Acesso em Qualquer Local**.  
+  Para configurar o Acesso em qualquer lugar, abra a página de **Início** do Painel, clique em **INSTALAÇÃO**e clique em **Configurar Acesso em Qualquer Local**.  
   
- Para obter mais informações sobre o acesso em qualquer lugar, consulte [Manage Anywhere Access](Manage-Anywhere-Access-in-Windows-Server-Essentials.md).  
+  Para obter mais informações sobre o acesso em qualquer lugar, consulte [Manage Anywhere Access](Manage-Anywhere-Access-in-Windows-Server-Essentials.md).  
   
 ###  <a name="BKMK_Access9"></a> Permitir que usuários acessem recursos do servidor  
   Esta seção se aplica a um servidor executando o Windows Server Essentials ou Windows Server Essentials, ou para um servidor que executa o Windows Server 2012 R2 Standard ou Windows Server 2012 R2 Datacenter com a função experiência Windows Server Essentials instalada.  

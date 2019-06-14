@@ -12,12 +12,12 @@ ms.assetid: ed062945-27e9-4572-b1bb-6c8cf1b9c2f4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 12a9ba285757a37a8fc32a73e52ac3003db80a6d
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: f080bed5714ae4426cc6d0ca8edb5fab2d3c65b2
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63721019"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432477"
 ---
 # <a name="troubleshoot-file-history-in-windows-server-essentials"></a>Histórico de arquivos de solução de problemas no Windows Server Essentials
 
@@ -29,11 +29,11 @@ ms.locfileid: "63721019"
 ### <a name="file-history-data-is-not-automatically-deleted"></a>Os dados de Histórico de Arquivos não são excluídos automaticamente  
  Os dados de Histórico de arquivos podem não ser excluídos automaticamente se:  
   
--   Ao excluir uma conta de usuário, você opta por não excluir a conta de usuário s dados de histórico de arquivos e optar por excluir manualmente os dados.  
+- Ao excluir uma conta de usuário, você opta por não excluir a conta de usuário s dados de histórico de arquivos e optar por excluir manualmente os dados.  
   
--   Quando você tenta excluir os dados de Histórico de Arquivos, esses dados estão em uso por outro processo.  
+- Quando você tenta excluir os dados de Histórico de Arquivos, esses dados estão em uso por outro processo.  
   
- Para resolver esse problema, você deve excluir o Histórico de Arquivos manualmente usando o procedimento a seguir:  
+  Para resolver esse problema, você deve excluir o Histórico de Arquivos manualmente usando o procedimento a seguir:  
   
 ####  <a name="BKMK_manuallyDelete"></a> Para excluir manualmente os backups de histórico de arquivos para um usuário ou um computador  
   
@@ -78,7 +78,7 @@ ms.locfileid: "63721019"
 ### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>Uma conta de usuário foi removida, mas o histórico de arquivos do usuário permanece  
  Em alguns casos, o administrador de rede pode escolher remover um usuário ou computador do servidor, mas manter o backup de Histórico de Arquivos para uso futuro. Quando você não precisar mais do histórico de arquivos, remova a pasta File History Backups para esse usuário ou computador das pastas compartilhadas no servidor. Para fazer isso, consulte [To manually delete File History backups for a user or a computer](Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete).  
 
-5.  Agora, você pode adicionar o novo usuário. Para obter instruções, consulte Adicionar uma conta de usuário? na [gerenciar contas de usuário](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md).  
+5. Agora, você pode adicionar o novo usuário. Para obter instruções, consulte Adicionar uma conta de usuário? na [gerenciar contas de usuário](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md).  
   
 ### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>Uma conta de usuário foi removida, mas o histórico de arquivos do usuário permanece  
  Em alguns casos, o administrador de rede pode escolher remover um usuário ou computador do servidor, mas manter o backup de Histórico de Arquivos para uso futuro. Quando você não precisar mais do histórico de arquivos, remova a pasta File History Backups para esse usuário ou computador das pastas compartilhadas no servidor. Para fazer isso, consulte [To manually delete File History backups for a user or a computer](../support/Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete).  

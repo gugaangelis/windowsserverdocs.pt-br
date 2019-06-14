@@ -9,12 +9,12 @@ ms.assetid: 244a4b48-06e5-4796-8750-a50e4f88ac72
 ms.author: pashort
 author: shortpatti
 ms.date: 09/13/2018
-ms.openlocfilehash: d0cf1e1d6b1681a0f18908b08cd17572159e0462
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 0ea129fe2230332c0099d735f064768bce9fc50c
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881747"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812281"
 ---
 # <a name="network-load-balancing"></a>Balanceamento de Carga de Rede
 
@@ -22,8 +22,8 @@ ms.locfileid: "59881747"
 
 Neste tópico, nós fornecemos uma visão geral do balanceamento de carga de rede \(NLB\) recurso no Windows Server 2016. Você pode usar o NLB para gerenciar dois ou mais servidores como um único cluster virtual. NLB melhora a disponibilidade e escalabilidade de aplicativos de servidor de Internet, como aqueles usados na web, FTP, firewall, proxy, rede virtual privada \(VPN\)e a outro missão\-servidores críticos.  
 
->[!NOTE]
->Windows Server 2016 inclui um novo balanceador de carga de Software inspirada no Azure \(SLB\) como um componente da rede definida pelo Software \(SDN\) infraestrutura. Use SLB, em vez de NLB se você estiver usando a SDN, usando cargas de trabalho não Windows, precisa de conversão de endereços de rede de saída \(NAT\), ou precisar de camada 3 \(L3\) ou balanceamento de carga não-com base em TCP. Você pode continuar a usar o NLB com o Windows Server 2016 para implantações não SDN. Para obter mais informações sobre o SLB, consulte [Software SLB balanceamento de carga () para SDN](../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md).
+> [!NOTE]
+> Windows Server 2016 inclui um novo balanceador de carga de Software inspirada no Azure \(SLB\) como um componente da rede definida pelo Software \(SDN\) infraestrutura. Use SLB, em vez de NLB se você estiver usando a SDN, usando cargas de trabalho não Windows, precisa de conversão de endereços de rede de saída \(NAT\), ou precisar de camada 3 \(L3\) ou balanceamento de carga não-com base em TCP. Você pode continuar a usar o NLB com o Windows Server 2016 para implantações não SDN. Para obter mais informações sobre o SLB, consulte [Software SLB balanceamento de carga () para SDN](../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md).
 
 O balanceamento de carga de rede \(NLB\) recurso distribui o tráfego entre vários servidores usando o TCP\/protocolo de rede IP. Combinando dois ou mais computadores que executam aplicativos em um único cluster virtual, o NLB proporciona confiabilidade e desempenho para servidores web e outro missão\-servidores críticos.  
   

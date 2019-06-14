@@ -12,12 +12,12 @@ manager: ''
 ms.author: kaushika; rklemen; josh.bender; v-tea
 ms.date: 02/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bbdd17f5e6e2b161e0dda0e172ea862a9107841
-ms.sourcegitcommit: 564158d760f902ced7f18e6d63a9daafa2a92bd4
+ms.openlocfilehash: 43e40f8442600dfc66dafd6b8b210274908b4595
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64988332"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446725"
 ---
 # <a name="troubleshooting-remote-desktop-connections"></a>Solucionando problemas de conexões de área de trabalho remota
 Para obter explicações breves de vários dos problemas mais comuns dos serviços de área de trabalho remota (RDS), consulte [perguntas frequentes sobre os clientes de área de trabalho remota](https://review.docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-client-faq). Este artigo descreve várias abordagens mais avançadas para solução de problemas de conexão. Muitos desses procedimentos se aplicam se você estiver solucionando problemas de uma configuração simple, como um computador físico para se conectar a outro computador físico ou uma configuração mais complicada. Alguns procedimentos abordam problemas que ocorrem apenas em cenários mais complicados de multiusuários. Para obter mais informações sobre os componentes da área de trabalho remota e como eles funcionam juntos, consulte [arquitetura dos serviços de área de trabalho remota](https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/desktop-hosting-logical-architecture).
@@ -68,7 +68,7 @@ Para verificar e alterar o status do protocolo RDP em um computador remoto, use 
 2. No Editor do registro, selecione **arquivo**e, em seguida, selecione **conectar registro da rede**.
 3. No **Selecionar computador** diálogo caixa, digite o nome do computador remoto, selecione **verificar nomes**e, em seguida, selecione **Okey**.
 4. Navegue até **HKEY\_LOCAL\_MACHINE\\sistema\\CurrentControlSet\\controle\\Terminal Server**.  
-   ![Editor do registro, que mostra a entrada fDenyTSConnections](..\media\troubleshoot-remote-desktop-connections\RegEntry_fDenyTSConnections.png)
+   ![Editor do registro, que mostra a entrada fDenyTSConnections](../media/troubleshoot-remote-desktop-connections/RegEntry_fDenyTSConnections.png)
    - Se o valor da **fDenyTSConnections** chave é **0**, em seguida, o RDP está habilitado
    - Se o valor da **fDenyTSConnections** chave é **1**, em seguida, o RDP está desabilitado
 5. Para habilitar o RDP, altere o valor de **fDenyTSConnections** partir **1** para **0**.
@@ -85,9 +85,9 @@ Após a conclusão desse comando, abra gpresult.html. Na **configuração do com
 
 - Se a configuração para essa política está **Enabled**, diretiva de grupo não está bloqueando as conexões de RDP.
 - Se a configuração para essa política está **desabilitados**, verifique **GPO vencedor**. Este é o GPO que está bloqueando as conexões de RDP.
-![Um segmento de exemplo do gpresult.html, em que o GPO de nível de domínio * * bloco RDP * * está desabilitando RDP.](..\media\troubleshoot-remote-desktop-connections\GPResult_RDSH_Connections_GP.png)
+  ![Um segmento de exemplo do gpresult.html, em que o GPO de nível de domínio * * bloco RDP * * está desabilitando RDP.](../media/troubleshoot-remote-desktop-connections/GPResult_RDSH_Connections_GP.png)
    
-  ![Um segmento de exemplo do gpresult.html, em que * * Local diretiva de grupo * está desabilitando RDP.](..\media\troubleshoot-remote-desktop-connections\GPResult_RDSH_Connections_LGP.png)
+  ![Um segmento de exemplo do gpresult.html, em que * * Local diretiva de grupo * está desabilitando RDP.](../media/troubleshoot-remote-desktop-connections/GPResult_RDSH_Connections_LGP.png)
 
 #### <a name="check-whether-a-gpo-is-blocking-rdp-on-a-remote-computer"></a>Verifique se um GPO está bloqueando o RDP em um computador remoto
 
@@ -117,7 +117,7 @@ No computador local (cliente) e o computador remoto (destino), devem estar execu
 
 Você pode usar o snap-in MMC de serviços para gerenciar os serviços localmente ou remotamente. Você também pode usar o PowerShell localmente ou remotamente (se o computador remoto está configurado para aceitar comandos do PowerShell remotos).
 
-![Serviços de área de trabalho remota no snap-in de MMC de serviços. Não modifique as configurações de serviço padrão.](..\media\troubleshoot-remote-desktop-connections\RDSServiceStatus.png)
+![Serviços de área de trabalho remota no snap-in de MMC de serviços. Não modifique as configurações de serviço padrão.](../media/troubleshoot-remote-desktop-connections/RDSServiceStatus.png)
 
 Em qualquer computador, se um ou ambos os serviços não estão em execução, iniciá-los.
 
@@ -135,7 +135,7 @@ Para este procedimento, use uma instância do PowerShell que tenha permissões a
 
 1. Abra uma janela do PowerShell. Para se conectar a um computador remoto, digite **Enter-PSSession - ComputerName \<nome do computador\>** .
 2. Enter **qwinsta**. 
-    ![O comando qwinsta lista os processos escutando nas portas do computador.](..\media\troubleshoot-remote-desktop-connections\WPS_qwinsta.png)
+    ![O comando qwinsta lista os processos escutando nas portas do computador.](../media/troubleshoot-remote-desktop-connections/WPS_qwinsta.png)
 3. Se a lista inclui **rdp-tcp** com um status de **escutar**, o ouvinte do RDP está funcionando. Vá para [verificar a porta do ouvinte RDP](#check-the-rdp-listener-port). Caso contrário, continue na etapa 4.
 4. Exporte a configuração de ouvinte do RDP de um computador de trabalho.
     1. Entre em um computador que tem a mesma versão do sistema operacional que tenha o computador afetado e acessar o registro do computador (por exemplo, usando o Editor do registro).
@@ -171,7 +171,7 @@ Para este procedimento, use uma instância do PowerShell que tenha permissões a
 
 1. Se você ainda não conseguir conectar, abra o snap-in MMC de certificados. Quando solicitado para selecionar o repositório de certificados para gerenciar, selecione **conta de computador**e, em seguida, selecione o computador afetado.
 2. No **certificados** pasta sob **área de trabalho remota**, exclua o certificado autoassinado do RDP. 
-    ![Certificados da área de trabalho remotos no snap-in de certificados do MMC.](..\media\troubleshoot-remote-desktop-connections\MMCCert_Delete.png)
+    ![Certificados da área de trabalho remotos no snap-in de certificados do MMC.](../media/troubleshoot-remote-desktop-connections/MMCCert_Delete.png)
 3. No computador afetado, reinicie o serviço de serviços de área de trabalho remota.
 4. Atualize o snap-in de certificados.
 5. Se não tiver sido recriado, o certificado autoassinado do RDP [verificar as permissões da pasta MachineKeys](#check-the-permissions-of-the-machinekeys-folder).
@@ -197,7 +197,7 @@ Para verificar ou alterar a porta do RDP, use o Editor do registro:
       - Para se conectar a um computador remoto, selecione **arquivo**e, em seguida, selecione **conectar registro da rede**.
       - No **Selecionar computador** diálogo caixa, digite o nome do computador remoto, selecione **verificar nomes**e, em seguida, selecione **Okey**.
 2. Abra o registro e navegue até **HKEY\_LOCAL\_MACHINE\\sistema\\CurrentControlSet\\controle\\Terminal Server\\WinStations\\ \<ouvinte\>** . 
-    ![A subchave PortNumber para o protocolo RDP.](..\media\troubleshoot-remote-desktop-connections\RegEntry_PortNumber.png)
+    ![A subchave PortNumber para o protocolo RDP.](../media/troubleshoot-remote-desktop-connections/RegEntry_PortNumber.png)
 3. Se **PortNumber** tem um valor diferente de **3389**, altere-a para **3389**. 
    > [!IMPORTANT]  
     > Você pode operar os serviços de área de trabalho remota usando outra porta. No entanto, não recomendamos que você faça isso. Essa configuração de solução de problemas está além do escopo deste artigo.
@@ -214,19 +214,19 @@ Para este procedimento, use uma instância do PowerShell que tenha permissões a
     cmd /c 'netstat -ano | find "3389"'  
     ```
   
-    ![O comando netstat produz uma lista de portas e serviços de escuta a eles.](..\media\troubleshoot-remote-desktop-connections\WPS_netstat.png)
-1. Procure uma entrada para a porta TCP 3389 (ou para a porta RDP atribuída) com o status **Escutando**. 
+    ![O comando netstat produz uma lista de portas e serviços de escuta a eles.](../media/troubleshoot-remote-desktop-connections/WPS_netstat.png)
+3. Procure uma entrada para a porta TCP 3389 (ou para a porta RDP atribuída) com o status **Escutando**. 
     > [!NOTE]  
    > O PID (identificador do processo) do processo ou serviço que está usando aquela porta aparece na coluna PID.
-1. Para determinar qual aplicativo está usando a porta 3389 (ou a porta do RDP atribuída), digite o seguinte comando:  
+4. Para determinar qual aplicativo está usando a porta 3389 (ou a porta do RDP atribuída), digite o seguinte comando:  
    
      ```powershell  
     cmd /c 'tasklist /svc | find "<pid listening on 3389>"'  
     ```  
   
-    ![O comando tasklist relata detalhes de um processo específico.](..\media\troubleshoot-remote-desktop-connections\WPS_tasklist.png)
-1. Procure uma entrada para o número do PID que está associado com a porta (da **netstat** saída). Os serviços ou processos que estão associados esse PID aparecerão à direita.
-1. Se um aplicativo ou serviço que não seja o Remote Desktop Services (TermServ.exe) está usando a porta, você pode resolver o conflito usando um dos seguintes métodos:
+    ![O comando tasklist relata detalhes de um processo específico.](../media/troubleshoot-remote-desktop-connections/WPS_tasklist.png)
+5. Procure uma entrada para o número do PID que está associado com a porta (da **netstat** saída). Os serviços ou processos que estão associados esse PID aparecerão à direita.
+6. Se um aplicativo ou serviço que não seja o Remote Desktop Services (TermServ.exe) está usando a porta, você pode resolver o conflito usando um dos seguintes métodos:
       - Configure o outro aplicativo ou serviço para usar uma porta diferente (recomendada).
       - Desinstale o aplicativo ou serviço.
       - Configurar o RDP para usar uma porta diferente e, em seguida, reinicie o serviço de serviços de área de trabalho remota (não recomendado).
@@ -295,7 +295,7 @@ O procedimento a seguir usa o Gerenciador do servidor para fazer as alterações
 3. Selecione **licenciamento de área de trabalho remota**e, em seguida, selecione o modo de licenciamento apropriado para sua implantação (**por dispositivo** ou **por usuário**).
 4. Insira o nome de domínio totalmente qualificado (FQDN) do seu servidor de licenças de área de trabalho remota e, em seguida, selecione **adicionar**.
 5. Se você tiver mais de um servidor de licenças de área de trabalho remota, repita a etapa 4 para cada servidor. 
-    ![Opções de configuração de servidor das licenças de área de trabalho remota no Gerenciador do servidor.](..\media\troubleshoot-remote-desktop-connections\RDLicensing_Configure.png)
+    ![Opções de configuração de servidor das licenças de área de trabalho remota no Gerenciador do servidor.](../media/troubleshoot-remote-desktop-connections/RDLicensing_Configure.png)
 
 ### <a name="refresh-the-x509-certificate-registry-keys"></a>Chaves de registro de certificado X509 de atualização
 
@@ -440,12 +440,12 @@ Para resolver esse problema, certifique-se de que todos os sistemas estão atual
 
 Para contornar esse problema até que as atualizações forem concluídas, verifique 4093492 KB tipos permitidos de conexões. Se não houver nenhum alternativas viáveis, você pode considerar um dos seguintes métodos:
 
-  - Para computadores clientes afetados, defina as **criptografia Oracle remediação** política de volta para **vulnerável**.
-  - Modificar as políticas a seguir na **configuração do computador\\modelos administrativos\\componentes do Windows\\Remote Desktop Services\\Host da sessão da área de trabalho remota\\ Segurança** pasta de diretiva de grupo:  
-      - **Exigir o uso de camada de segurança específica para conexões remotas (RDP)** : definido como **Enabled** e selecione **RDP**.
-      - **Exigir autenticação do usuário para conexões remotas usando a autenticação de nível de rede**: definido como **desabilitado**.
-      > [!IMPORTANT]  
-      > Essas modificações reduzem a segurança da sua implantação. Eles só devem ser temporários, se você usá-los em todos os.
+- Para computadores clientes afetados, defina as **criptografia Oracle remediação** política de volta para **vulnerável**.
+- Modificar as políticas a seguir na **configuração do computador\\modelos administrativos\\componentes do Windows\\Remote Desktop Services\\Host da sessão da área de trabalho remota\\ Segurança** pasta de diretiva de grupo:  
+  - **Exigir o uso de camada de segurança específica para conexões remotas (RDP)** : definido como **Enabled** e selecione **RDP**.
+  - **Exigir autenticação do usuário para conexões remotas usando a autenticação de nível de rede**: definido como **desabilitado**.
+    > [!IMPORTANT]  
+    > Essas modificações reduzem a segurança da sua implantação. Eles só devem ser temporários, se você usá-los em todos os.
 
 Para obter mais informações sobre como trabalhar com a diretiva de grupo, consulte [modificando um GPO de bloqueio](#modifying-a-blocking-gpo).
 
@@ -493,7 +493,7 @@ Clientes de desktop remotos tentando se conectar também param de responder.
 
 Para contornar esse problema, reinicie o servidor RDSH.
 
-Para resolver esse problema, aplique 4093114 KB, [10 de abril de 2018 – KB4093114 (acúmulo mensal)] (file:///c:\\usuários\\v-jesits\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Outlook\\FUB8OO45\\% de abril de 2010, % 202018 — KB4093114% 20\(20Rollup de % mensal\)), para os servidores RDSH.
+Para resolver esse problema, aplique 4093114 KB, [10 de abril de 2018 – KB4093114 (Rollup)](file:///C:/Users/v-jesits/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/FUB8OO45/April%2010,%202018—KB4093114%20(Monthly%20Rollup)) mensal, para o Servidores RDSH.
 
 ### <a name="rd-listener-issue"></a>Problema de ouvinte de área de trabalho remota
 

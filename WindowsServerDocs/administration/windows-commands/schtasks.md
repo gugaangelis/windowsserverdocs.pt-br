@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7aed2b88823c117a7424a4d90edd86829a53f786
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 76ae264ded3cd0611c06b56c1074a2d916513da4
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822877"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441609"
 ---
 # <a name="schtasks"></a>schtasks
 
@@ -36,20 +36,20 @@ Para exibir a sintaxe de comando, clique em um dos seguintes comandos:
 
 ## <a name="remarks"></a>Comentários
 
--   **SchTasks.exe** executa as mesmas operações **tarefas agendadas** na **painel de controle**. Você pode usar essas ferramentas juntos e alternadamente.
--   **SCHTASKS** substitui **At.exe**, uma ferramenta incluída em versões anteriores do Windows. Embora **At.exe** ainda está incluída na família Windows Server 2003, **schtasks** é a tarefa de linha de comando recomendada ferramenta de agendamento.
--   Os parâmetros em uma **schtasks** comando pode aparecer em qualquer ordem. Digitação **schtasks** sem quaisquer parâmetros executa uma consulta.
--   Permissões para **schtasks**  
-    -   Você deve ter permissão para executar o comando. Qualquer usuário pode agendar uma tarefa no computador local, e eles podem exibir e alterar as tarefas agendadas por eles. Os membros do grupo Administradores podem agendar, exibir e alterar todas as tarefas no computador local.
-    -   Para agendar, exibir ou alterar uma tarefa em um computador remoto, você deve ser membro do grupo Administradores no computador remoto, ou você deve usar o **/u** parâmetro para fornecer as credenciais de administrador do computador remoto.
-    -   Você pode usar o **/u** parâmetro em uma **/ criar** ou **/altere** operação somente quando os computadores locais e remotos estão no mesmo domínio ou computador local está em um domínio que as relações de confiança de domínio do computador remoto. Caso contrário, o computador remoto não é possível autenticar a conta de usuário especificada e não é possível verificar que a conta é um membro do grupo Administradores.
-    -   A tarefa deve ter permissão para executar. As permissões necessárias variam de acordo com a tarefa. Por padrão, as tarefas executadas com as permissões do usuário atual do computador local ou com as permissões do usuário especificado pela **/u** parâmetro, se uma é incluída. Para executar uma tarefa com permissões de uma conta de usuário diferente ou com permissões do sistema, use o **/ru** parâmetro.
--   Para verificar que foi executado em uma tarefa agendada ou para descobrir por que uma tarefa agendada não foi executado, consulte o log de transações de serviço do Agendador de tarefas, *SystemRoot*\SchedLgU.txt. Esse log registra as tentativas execuções iniciadas por todas as ferramentas que usam o serviço, incluindo **tarefas agendadas** e **SchTasks.exe**.
--   Em raras ocasiões, arquivos de tarefas estão corrompidos. Não execute tarefas corrompidas. Quando você tenta executar uma operação em tarefas corrompidas, **SchTasks.exe** exibe a seguinte mensagem de erro:  
-    ```
-    ERROR: The data is invalid.
-    ```  
-    Não é possível recuperar tarefas corrompidas. Para restaurar as recursos do sistema de agendamento de tarefas, use **SchTasks.exe** ou **tarefas agendadas** para excluir as tarefas do sistema e reagendá-los.
+- **SchTasks.exe** executa as mesmas operações **tarefas agendadas** na **painel de controle**. Você pode usar essas ferramentas juntos e alternadamente.
+- **SCHTASKS** substitui **At.exe**, uma ferramenta incluída em versões anteriores do Windows. Embora **At.exe** ainda está incluída na família Windows Server 2003, **schtasks** é a tarefa de linha de comando recomendada ferramenta de agendamento.
+- Os parâmetros em uma **schtasks** comando pode aparecer em qualquer ordem. Digitação **schtasks** sem quaisquer parâmetros executa uma consulta.
+- Permissões para **schtasks**  
+  -   Você deve ter permissão para executar o comando. Qualquer usuário pode agendar uma tarefa no computador local, e eles podem exibir e alterar as tarefas agendadas por eles. Os membros do grupo Administradores podem agendar, exibir e alterar todas as tarefas no computador local.
+  -   Para agendar, exibir ou alterar uma tarefa em um computador remoto, você deve ser membro do grupo Administradores no computador remoto, ou você deve usar o **/u** parâmetro para fornecer as credenciais de administrador do computador remoto.
+  -   Você pode usar o **/u** parâmetro em uma **/ criar** ou **/altere** operação somente quando os computadores locais e remotos estão no mesmo domínio ou computador local está em um domínio que as relações de confiança de domínio do computador remoto. Caso contrário, o computador remoto não é possível autenticar a conta de usuário especificada e não é possível verificar que a conta é um membro do grupo Administradores.
+  -   A tarefa deve ter permissão para executar. As permissões necessárias variam de acordo com a tarefa. Por padrão, as tarefas executadas com as permissões do usuário atual do computador local ou com as permissões do usuário especificado pela **/u** parâmetro, se uma é incluída. Para executar uma tarefa com permissões de uma conta de usuário diferente ou com permissões do sistema, use o **/ru** parâmetro.
+- Para verificar que foi executado em uma tarefa agendada ou para descobrir por que uma tarefa agendada não foi executado, consulte o log de transações de serviço do Agendador de tarefas, *SystemRoot*\SchedLgU.txt. Esse log registra as tentativas execuções iniciadas por todas as ferramentas que usam o serviço, incluindo **tarefas agendadas** e **SchTasks.exe**.
+- Em raras ocasiões, arquivos de tarefas estão corrompidos. Não execute tarefas corrompidas. Quando você tenta executar uma operação em tarefas corrompidas, **SchTasks.exe** exibe a seguinte mensagem de erro:  
+  ```
+  ERROR: The data is invalid.
+  ```  
+  Não é possível recuperar tarefas corrompidas. Para restaurar as recursos do sistema de agendamento de tarefas, use **SchTasks.exe** ou **tarefas agendadas** para excluir as tarefas do sistema e reagendá-los.
 
 ## <a name="BKMK_create"></a>Criar Schtasks
 
@@ -112,7 +112,7 @@ Agenda uma tarefa no computador remoto especificado. Digite o nome ou endereço 
 
 ##### <a name="u-domainuser"></a>/u [\<Domain>\]<User>
 
-Executa este comando com as permissões da conta de usuário especificada. O padrão é que as permissões do usuário atual do computador local. O **/u** e **/p** parâmetros são válidos somente para agendar uma tarefa em um computador remoto (**/s**).
+Executa este comando com as permissões da conta de usuário especificada. O padrão é que as permissões do usuário atual do computador local. O **/u** e **/p** parâmetros são válidos somente para agendar uma tarefa em um computador remoto ( **/s**).
 
 As permissões da conta especificada são usadas para agendar a tarefa e para executar a tarefa. Para executar a tarefa com as permissões de um usuário diferente, use o **/ru** parâmetro.
 
@@ -122,22 +122,23 @@ A conta de usuário deve ser um membro do grupo Administradores no computador re
 
 Fornece a senha para a conta de usuário especificado na **/u** parâmetro. Se você usar o **/u** parâmetro, mas omita a **/p** parâmetro ou o argumento de senha, **schtasks** solicita uma senha e obscurece o texto digitado.
 
-O **/u** e **/p** parâmetros são válidos somente para agendar uma tarefa em um computador remoto (**/s**).
+O **/u** e **/p** parâmetros são válidos somente para agendar uma tarefa em um computador remoto ( **/s**).
 
 ##### <a name="ru-domainuser--system"></a>/ru {[\<Domain>\]<User> | System}
 
 Executa a tarefa com permissões de conta de usuário especificada. Por padrão, a tarefa é executada com as permissões do usuário atual do computador local ou com a permissão do usuário especificado pela **/u** parâmetro, se uma é incluída. O **/ru** parâmetro é válido quando o agendamento de tarefas em computadores locais ou remotos.
 
-|Valor|Descrição|
-|-----|-----------|
-|[\<Domain>\]<User>|Especifica uma conta de usuário alternativas.|
-|Sistema ou ""|Especifica a conta sistema local, uma conta altamente privilegiada usada pelo sistema operacional e dos serviços do sistema.|
+
+|       Valor        |                                                    Descrição                                                    |
+|--------------------|-------------------------------------------------------------------------------------------------------------------|
+| [\<Domain>\]<User> |                                       Especifica uma conta de usuário alternativas.                                        |
+|    Sistema ou ""    | Especifica a conta sistema local, uma conta altamente privilegiada usada pelo sistema operacional e dos serviços do sistema. |
 
 ##### <a name="rp-password"></a>/RP \<senha >
 
 Fornece a senha da conta de usuário que é especificada na **/ru** parâmetro. Se você omitir esse parâmetro ao especificar uma conta de usuário **SchTasks.exe** solicita a senha e obscurece o texto digitado.
 
-Não use o **/rp** parâmetro para tarefas de execução com credenciais de conta do sistema (**/ru System**). A conta do sistema não tem uma senha e **SchTasks.exe** não solicitará um.
+Não use o **/rp** parâmetro para tarefas de execução com credenciais de conta do sistema ( **/ru System**). A conta do sistema não tem uma senha e **SchTasks.exe** não solicitará um.
 
 ##### <a name="mo-modifier"></a>/mo \<Modifier>
 
@@ -161,11 +162,12 @@ Especifica a frequência com que a tarefa é executada dentro de seu tipo de age
 
 Especifica um dia (ou dias) da semana ou um dia (ou dias) de um mês. Válido somente com um agendamento SEMANAL ou mensal.
 
-|Tipo de agenda|Modificador|Os valores de dia (/ d)|Descrição|
-|-------------|--------|---------------|-----------|
-|SEMANAL|1 - 52|MON - SUN [, MON - SUN...] | *|Opcional. Segunda-feira é o padrão. O valor do caractere curinga (*) significa que todos os dias.|
-|MENSAL|FIRST, SECOND, THIRD, FOURTH, LAST|MON - SUN|Necessário para o agendamento de uma semana específica.|
-|MENSAL|Nenhum ou {1-12}|1 - 31|Opcional e válido apenas com nenhum modificador (**/mês**) parâmetro (uma agenda de datas específico) ou quando o **/mês** é de 1 a 12 (um "cada \<N > meses" agenda). O padrão é dia 1 (o primeiro dia do mês).|
+
+| Tipo de agenda |              Modificador              |     Os valores de dia (/ d)      |                                                                                                 Descrição                                                                                                 |
+|---------------|------------------------------------|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    SEMANAL     |               1 - 52               | MON - SUN [, MON - SUN...] |                                                                                                     \*                                                                                                      |
+|    MENSAL    | FIRST, SECOND, THIRD, FOURTH, LAST |        MON - SUN         |                                                                                   Necessário para o agendamento de uma semana específica.                                                                                    |
+|    MENSAL    |          Nenhum ou {1-12}          |          1 - 31          | Opcional e válido apenas com nenhum modificador ( **/mês**) parâmetro (uma agenda de datas específico) ou quando o **/mês** é de 1 a 12 (um "cada \<N > meses" agenda). O padrão é dia 1 (o primeiro dia do mês). |
 
 ##### <a name="m-monthmonth"></a>/m mês [,... mês]
 
@@ -212,11 +214,12 @@ O formato para *StartDate* varia de acordo com o local selecionado para o comput
 
 Os formatos de data válida são listados na tabela a seguir. Use o formato mais semelhante ao formato selecionado para **data abreviada** na **opções regionais e idioma** na **painel de controle** no computador local.
 
-|Valor|Descrição|
-|-----|-----------|
-|\<MM>/<DD>/<YYYY>|Usar para o primeiro mês de formatos, como **inglês (Estados Unidos)** e **Espanhol (Panamá)**.|
-|\<DD>/<MM>/<YYYY>|Usar para o primeiro dia de formatos, como **búlgaro** e **holandês (países baixos)**.|
-|\<AAAA &GT; /<MM>/<DD>|Usar para o primeiro ano formatos, como **sueco** e **francês (Canadá)**.|
+
+|       Valor       |                                        Descrição                                         |
+|-------------------|--------------------------------------------------------------------------------------------|
+| \<MM>/<DD>/<YYYY> | Usar para o primeiro mês de formatos, como **inglês (Estados Unidos)** e **Espanhol (Panamá)** . |
+| \<DD>/<MM>/<YYYY> |       Usar para o primeiro dia de formatos, como **búlgaro** e **holandês (países baixos)** .        |
+| \<AAAA &GT; /<MM>/<DD> |          Usar para o primeiro ano formatos, como **sueco** e **francês (Canadá)** .          |
 
 /ED \<EndDate >
 
@@ -226,11 +229,12 @@ O formato para *EndDate* varia de acordo com o local selecionado para o computad
 
 Os formatos de data válida são listados na tabela a seguir. Use o formato mais semelhante ao formato selecionado para **data abreviada** na **opções regionais e idioma** na **painel de controle** no computador local.
 
-|Valor|Descrição|
-|-----|-----------|
-|\<MM>/<DD>/<YYYY>|Usar para o primeiro mês de formatos, como **inglês (Estados Unidos)** e **Espanhol (Panamá)**.|
-|\<DD>/<MM>/<YYYY>|Usar para o primeiro dia de formatos, como **búlgaro** e **holandês (países baixos)**.|
-|\<AAAA &GT; /<MM>/<DD>|Usar para o primeiro ano formatos, como **sueco** e **francês (Canadá)**.|
+
+|       Valor       |                                        Descrição                                         |
+|-------------------|--------------------------------------------------------------------------------------------|
+| \<MM>/<DD>/<YYYY> | Usar para o primeiro mês de formatos, como **inglês (Estados Unidos)** e **Espanhol (Panamá)** . |
+| \<DD>/<MM>/<YYYY> |       Usar para o primeiro dia de formatos, como **búlgaro** e **holandês (países baixos)** .        |
+| \<AAAA &GT; /<MM>/<DD> |          Usar para o primeiro ano formatos, como **sueco** e **francês (Canadá)** .          |
 
 ##### <a name="it"></a>/it
 
@@ -364,7 +368,7 @@ schtasks /create /tn "Security Script" /tr sec.vbs /sc daily /mo 70 /it
 ```
 
 > [!NOTE]
-> Para identificar as tarefas com o interativo somente (**/it**) propriedade, use uma consulta detalhada **(/ consulta /v**). Em uma exibição de consulta detalhada de uma tarefa com **/it**, o **modo de Logon** campo tem um valor de **interativo apenas**.
+> Para identificar as tarefas com o interativo somente ( **/it**) propriedade, use uma consulta detalhada **(/ consulta /v**). Em uma exibição de consulta detalhada de uma tarefa com **/it**, o **modo de Logon** campo tem um valor de **interativo apenas**.
 
 ### <a name="BKMK_weeks"></a>Para agendar uma tarefa que executa cada N semanas
 
@@ -378,7 +382,7 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc weekly [/mo {1 - 52}] [/d {<MO
 
 Em um agendamento semanal, o **/sc semanalmente** parâmetro é obrigatório. O **/mês** parâmetro (modificador) é opcional e especifica o número de semanas entre cada execução da tarefa. O valor padrão para **/mês** é 1 (todas as semanas).
 
-Agendamentos semanais também tem um recurso opcional **/d** parâmetro para agendar a tarefa seja executada em dias específicos da semana ou em todos os dias (*). O padrão é MON (segunda-feira). O cada dia (*) opção é equivalente ao agendamento de uma tarefa diária.
+Agendamentos semanais também tem um recurso opcional **/d** parâmetro para agendar a tarefa seja executada em dias específicos da semana ou em todos os dias ( *). O padrão é MON (segunda-feira). O cada dia (* ) opção é equivalente ao agendamento de uma tarefa diária.
 
 #### <a name="examples"></a>Exemplos
 
@@ -447,7 +451,7 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc weekly [/d {<MON - SUN>[,MON -
 
 #### <a name="remarks"></a>Comentários
 
-O agendamento de "dia da semana" é uma variação do agendamento semanal. Em um agendamento semanal, o **/sc semanalmente** parâmetro é obrigatório. O **/mês** parâmetro (modificador) é opcional e especifica o número de semanas entre cada execução da tarefa. O valor padrão para **/mês** é 1 (todas as semanas). O **/d** parâmetro, que é opcional, agenda a tarefa seja executada em dias específicos da semana ou em todos os dias (*). O padrão é MON (segunda-feira). A opção a cada dia (**/d \*** ) é equivalente ao agendamento de uma tarefa diária.
+O agendamento de "dia da semana" é uma variação do agendamento semanal. Em um agendamento semanal, o **/sc semanalmente** parâmetro é obrigatório. O **/mês** parâmetro (modificador) é opcional e especifica o número de semanas entre cada execução da tarefa. O valor padrão para **/mês** é 1 (todas as semanas). O **/d** parâmetro, que é opcional, agenda a tarefa seja executada em dias específicos da semana ou em todos os dias (<em>). O padrão é MON (segunda-feira). A opção a cada dia (</em>* /d \** *) é equivalente ao agendamento de uma tarefa diária.
 
 #### <a name="examples"></a>Exemplos
 
@@ -475,7 +479,7 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly /mo {FIRST | SECOND | 
 
 #### <a name="remarks"></a>Comentários
 
-Nesse tipo de agenda, o **/sc mensalmente** parâmetro, o **/mês** parâmetro (modificador) e o **/d** parâmetro (dia) são necessários. O **/mês** parâmetro (modificador) Especifica a semana no qual a tarefa é executada. O **/d** parâmetro especifica o dia da semana. (Você pode especificar apenas um dia da semana para esse tipo de agendamento). Esse agendamento também tem um recurso opcional **/m** parâmetro (mês) que permite que você agende a tarefa para determinados meses ou todos os meses (*). O padrão para o **/m** parâmetro é a cada mês (*).
+Nesse tipo de agenda, o **/sc mensalmente** parâmetro, o **/mês** parâmetro (modificador) e o **/d** parâmetro (dia) são necessários. O **/mês** parâmetro (modificador) Especifica a semana no qual a tarefa é executada. O **/d** parâmetro especifica o dia da semana. (Você pode especificar apenas um dia da semana para esse tipo de agendamento). Esse agendamento também tem um recurso opcional **/m** parâmetro (mês) que permite que você agende a tarefa para determinados meses ou todos os meses (<em>). O padrão para o * */m</em>* parâmetro é a cada mês (* ).
 
 #### <a name="examples"></a>Exemplos
 
@@ -505,7 +509,7 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly /d {1 - 31} [/m {JAN -
 
 No tipo de agendamento data específica, o **/sc mensalmente** parâmetro e o **/d** parâmetro (dia) são necessários. O **/d** parâmetro especifica uma data do mês (31-1), não há um dia da semana. Você pode especificar apenas um dia na agenda. O **/mês** parâmetro (modificador) não é válido com esse tipo de agendamento.
 
-O **/m** parâmetro (mês) é opcional para esse tipo de agendamento e o padrão é a cada mês (*). **SCHTASKS** não permite que você agendar uma tarefa para uma data que não ocorre em um mês especificado pelo **/m** parâmetro. No entanto, se omitir as **/m** parâmetro e o agendamento de uma tarefa para uma data que não aparece em cada mês, como o dia 31, em seguida, a tarefa não é executado nos meses menores. Para agendar uma tarefa para o último dia do mês, use o último tipo de agenda do dia.
+O **/m** parâmetro (mês) é opcional para esse tipo de agendamento e o padrão é a cada mês (<em>). **Schtasks</em>*  não lhe permite agendar uma tarefa para uma data que não ocorra em um mês especificado o **/m** parâmetro. No entanto, se omitir as **/m** parâmetro e o agendamento de uma tarefa para uma data que não aparece em cada mês, como o dia 31, em seguida, a tarefa não é executado nos meses menores. Para agendar uma tarefa para o último dia do mês, use o último tipo de agenda do dia.
 
 #### <a name="examples"></a>Exemplos
 
@@ -697,7 +701,6 @@ Type the password for Marketing\Admin01:********
 Please enter the run as password for Reskits\User01: ********
 
 SUCCESS: The scheduled task "My App" has successfully been created.
-
 ```
 
 #### <a name="to-run-a-task-only-when-a-particular-user-is-logged-on"></a>Para executar uma tarefa apenas quando um determinado usuário fizer logon
@@ -711,11 +714,11 @@ O comando usa o **/s** parâmetro para fornecer o nome do computador remoto e o 
 schtasks /create /tn "Check Admin" /tr AdminCheck.exe /sc weekly /d FRI /st 04:00 /s Public /u Domain3\Admin06 /ru Public\Admin01 /it
 ```
 **Observação**
--   Para identificar as tarefas com o interativo somente (**/it**) propriedade, use uma consulta detalhada **(/ consulta /v**). Em uma exibição de consulta detalhada de uma tarefa com **/it**, o **modo de Logon** campo tem um valor de **interativo apenas**.
+-   Para identificar as tarefas com o interativo somente ( **/it**) propriedade, use uma consulta detalhada **(/ consulta /v**). Em uma exibição de consulta detalhada de uma tarefa com **/it**, o **modo de Logon** campo tem um valor de **interativo apenas**.
 
 ### <a name="BKMK_sys_perms"></a>Para agendar uma tarefa executada com permissões do sistema
 
-Tarefas de todos os tipos podem executar com permissões da conta do sistema em um computador remoto e o local. Além dos parâmetros necessários para o tipo de agendamento em particular, o **sistema /ru** (ou **/ru ""**) o parâmetro é obrigatório e o **/rp** parâmetro não é válido.
+Tarefas de todos os tipos podem executar com permissões da conta do sistema em um computador remoto e o local. Além dos parâmetros necessários para o tipo de agendamento em particular, o **sistema /ru** (ou **/ru ""** ) o parâmetro é obrigatório e o **/rp** parâmetro não é válido.
 
 **Importante**
 -   A conta do sistema não tem direitos de logon interativo. Os usuários não podem ver ou interajam com programas ou tarefas executadas com permissões do sistema.
@@ -723,7 +726,7 @@ Tarefas de todos os tipos podem executar com permissões da conta do sistema em 
 
 **Observação**
 
-Para identificar as tarefas que são executados com permissões do sistema, use uma consulta detalhada (**/consultar** **/v**). Em uma exibição de consulta detalhada de uma tarefa de execução do sistema, o **executar como usuário** campo tem um valor de **NT AUTHORITY\SYSTEM** e o **modo de Logon** campo tem um valor de  **Em segundo plano somente**.
+Para identificar as tarefas que são executados com permissões do sistema, use uma consulta detalhada ( **/consultar** **/v**). Em uma exibição de consulta detalhada de uma tarefa de execução do sistema, o **executar como usuário** campo tem um valor de **NT AUTHORITY\SYSTEM** e o **modo de Logon** campo tem um valor de  **Em segundo plano somente**.
 
 #### <a name="examples"></a>Exemplos
 
@@ -739,7 +742,6 @@ Em resposta, **SchTasks.exe** exibe uma mensagem informativa e uma mensagem de �
 ```
 INFO: The task will be created under user name ("NT AUTHORITY\SYSTEM").
 SUCCESS: The Scheduled task "My App" has successfully been created.
-
 ```
 
 #### <a name="to-run-a-task-with-system-permissions-on-a-remote-computer"></a>Para executar uma tarefa com permissões do sistema em um computador remoto
@@ -759,29 +761,28 @@ Type the password for Admin01:**********
 INFO: The Schedule Task "My App" will be created under user name ("NT AUTHORITY\
 SYSTEM").
 SUCCESS: The scheduled task "My App" has successfully been created.
-
 ```
 
 ### <a name="BKMK_multi_progs"></a>Para agendar uma tarefa que executa mais de um programa
 
 Cada tarefa executa somente um programa. No entanto, você pode criar um arquivo em lotes que executa vários programas e, em seguida, agendar uma tarefa para executar o arquivo em lotes. O procedimento a seguir demonstra esse método:
-1.  Crie um arquivo em lotes que inicia os programas que você deseja executar.
+1. Crie um arquivo em lotes que inicia os programas que você deseja executar.
 
-    Neste exemplo, você criará um arquivo em lotes que inicia o Visualizador de eventos (Eventvwr.exe) e o Monitor do sistema (Perfmon.exe).  
-    -   Abra um editor de texto, como o Bloco de Notas.
-    -   Digite o nome e o caminho totalmente qualificado para o arquivo executável para cada programa. Nesse caso, o arquivo inclui as instruções a seguir.  
-        ```
-        C:\Windows\System32\Eventvwr.exe 
-        C:\Windows\System32\Perfmon.exe
-        ```  
-    -   Salve o arquivo como Meus_apls.
-2.  Use **Schtasks.exe** para criar uma tarefa que executa Meus_apls.
+   Neste exemplo, você criará um arquivo em lotes que inicia o Visualizador de eventos (Eventvwr.exe) e o Monitor do sistema (Perfmon.exe).  
+   - Abra um editor de texto, como o Bloco de Notas.
+   - Digite o nome e o caminho totalmente qualificado para o arquivo executável para cada programa. Nesse caso, o arquivo inclui as instruções a seguir.  
+     ```
+     C:\Windows\System32\Eventvwr.exe 
+     C:\Windows\System32\Perfmon.exe
+     ```  
+   - Salve o arquivo como Meus_apls.
+2. Use **Schtasks.exe** para criar uma tarefa que executa Meus_apls.
 
-    O comando a seguir cria a tarefa de monitoramento, que é executado sempre que um usuário faz logon. Ele usa o **/tn** parâmetro para nomear a tarefa e o **/TR** parâmetro para executar Meus_apls. Ele usa o **/sc** parâmetro para indicar o tipo de agenda no login e a **/ru** parâmetro para executar a tarefa com as permissões do usuário conta de administrador.  
-    ```
-    schtasks /create /tn Monitor /tr C:\MyApps.bat /sc onlogon /ru Reskit\Administrator
-    ```  
-    Como resultado desse comando, sempre que um usuário faz logon no computador, a tarefa inicia o Visualizador de eventos e Monitor do sistema.
+   O comando a seguir cria a tarefa de monitoramento, que é executado sempre que um usuário faz logon. Ele usa o **/tn** parâmetro para nomear a tarefa e o **/TR** parâmetro para executar Meus_apls. Ele usa o **/sc** parâmetro para indicar o tipo de agenda no login e a **/ru** parâmetro para executar a tarefa com as permissões do usuário conta de administrador.  
+   ```
+   schtasks /create /tn Monitor /tr C:\MyApps.bat /sc onlogon /ru Reskit\Administrator
+   ```  
+   Como resultado desse comando, sempre que um usuário faz logon no computador, a tarefa inicia o Visualizador de eventos e Monitor do sistema.
 
 ### <a name="BKMK_remote"></a>Para agendar uma tarefa que é executado em um computador remoto
 
@@ -824,7 +825,6 @@ SUCCESS: The scheduled task "My App" has successfully been created.
 
 WARNING: The Scheduled task "My App" has been created, but may not run because
 the account information could not be set.
-
 ```
 Este aviso indica que o domínio remoto não foi possível autenticar a conta especificada o **/u** parâmetro. Nesse caso, o domínio remoto não foi possível autenticar a conta de usuário porque o computador local não é um membro de um domínio que confia no domínio do computador remoto. Quando isso ocorrer, o trabalho aparece na lista de tarefas agendadas, mas a tarefa está vazia, na verdade, e ele não será executado.
 
@@ -863,7 +863,6 @@ Repeat: Until: Duration: Disabled
 Repeat: Stop If Still Running: Disabled
 Idle Time: Disabled
 Power Management: Disabled
-
 ```
 
 #### <a name="remarks"></a>Comentários
@@ -881,10 +880,10 @@ Power Management: Disabled
 ## <a name="BKMK_change"></a>Alterar Schtasks
 
 Altera um ou mais das seguintes propriedades de uma tarefa.
--   O programa que a tarefa é executada (**/TR**).
--   A conta de usuário sob a qual a tarefa é executada (**/ru**).
--   A senha da conta de usuário (**/rp**).
--   Adiciona a propriedade interativa apenas à tarefa (**/it**).
+-   O programa que a tarefa é executada ( **/TR**).
+-   A conta de usuário sob a qual a tarefa é executada ( **/ru**).
+-   A senha da conta de usuário ( **/rp**).
+-   Adiciona a propriedade interativa apenas à tarefa ( **/it**).
 
 ### <a name="syntax"></a>Sintaxe
 
@@ -894,36 +893,36 @@ schtasks /change /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Passwo
 
 ### <a name="parameters"></a>Parâmetros
 
-|Termo|Definição|
-|----|----------|
-|/tn \<TaskName>|Identifica a tarefa a ser alterado. Insira o nome da tarefa.|
-|/s \<Computer>|Especifica o nome ou endereço IP de um computador remoto (com ou sem barras invertidas). O padrão é o computador local.|
-|/u [\<Domain>\]<User>|Executa este comando com as permissões da conta de usuário especificada. O padrão é que as permissões do usuário atual do computador local. A conta de usuário especificado deve ser um membro do grupo Administradores no computador remoto. O **/u** e **/p** parâmetros são válidos somente para alterar uma tarefa em um computador remoto (**/s**).|
-|/p \<Password>|Especifica a senha da conta de usuário especificada na **/u** parâmetro. Se você usar o **/u** parâmetro, mas omita a **/p** parâmetro ou o argumento de senha, **schtasks** solicitará uma senha.</br>O **/u** e **/p** parâmetros são válidos somente quando você usa **/s**.|
-|/ru {[\<Domain>\]<User> | Sistema}|Especifica para alterar a conta de usuário sob a qual a tarefa é executada. Para especificar a conta sistema local, as entradas válidas são "", "NT AUTHORITY\SYSTEM" ou "SYSTEM".</br>Quando você altera a conta de usuário, você também deve alterar a senha do usuário. Se um comando tiver um **/ru** parâmetro, mas não um **/rp** parâmetro **schtasks** solicita uma nova senha.</br>As tarefas executadas com permissões da conta sistema local não precisam ou solicitar uma senha.|
-|/RP \<senha >|Especifica uma nova senha para a conta de usuário existente ou a conta de usuário especificada pela **/ru** parâmetro. Esse parâmetro é ignorado quando usado com a conta sistema local.|
-|/tr \<TaskRun>|Altera o programa executado pela tarefa. Insira o nome de arquivo e caminho totalmente qualificado de um arquivo executável, arquivo de script ou arquivo em lotes. Se você omitir o caminho **schtasks** supõe que o arquivo está no \<systemroot > diretório \System32. O programa especificado substitui o programa original executado pela tarefa.|
-|/ST \<Starttime >|Especifica a hora de início da tarefa, usando o formato de 24 horas, hh: mm. Por exemplo, um valor de 14:30 é equivalente à hora de 12 horas da 2:30 PM.|
-|/RI \<intervalo >|Especifica o intervalo de repetição para a tarefa agendada, em minutos. Intervalo válido é de 1-599940 (599940 minutos = 9999 horas).|
-|/et \<EndTime>|Especifica a hora de término da tarefa, usando o formato de 24 horas, hh: mm. Por exemplo, um valor de 14:30 é equivalente à hora de 12 horas da 2:30 PM.|
-|/du \<Duration>|Especifica para fechar a tarefa durante o \<EndTime > ou <Duration>, se especificado.|
-|/k|Interrompe o programa que a tarefa é executada no momento especificado por **/et** ou **/du**. Sem **/k**, **schtasks** não inicia o programa novamente depois que ele atinge o tempo especificado por **/et** ou **/du**, mas não interrompe o programa se ele ainda está em execução. Esse parâmetro é opcional e é válido somente com um agendamento por hora ou minutos.|
-|/SD \<StartDate >|Especifica a primeira data em que a tarefa deve ser executada. O formato de data é MM/DD/AAAA.|
-|/ED \<EndDate >|Especifica a última data na qual a tarefa deve ser executada. O formato é MM/DD/AAAA.|
-|/ HABILITAR|Especifica para habilitar a tarefa agendada.|
-|/ DESABILITAR|Especifica para desabilitar a tarefa agendada.|
-|/it|Especifica para executar a tarefa agendada somente quando o usuário "Executar como" (a conta de usuário sob a qual a tarefa é executada) fizer logon no computador.</br>Esse parâmetro não tem nenhum efeito nas tarefas que são executados com permissões do sistema ou tarefas que já têm a propriedade interativa apenas definida. Você não pode usar um comando de alteração para remover a propriedade interativa apenas de uma tarefa.</br>Por padrão, o usuário "Executar como" é o usuário atual do computador local quando a tarefa é agendada ou a conta especificada pela **/u** parâmetro, se um for usado. No entanto, se o comando inclui o **/ru** parâmetro, o usuário, em seguida, o "Executar como" é a conta especificada pela **/ru** parâmetro.|
-|/z|Especifica para excluir a tarefa após a conclusão da sua agenda.|
-|/?|Exibe a ajuda no prompt de comando.|
+|          Termo           |                                                                                                                                                                                                                                                                                                                                     Definição                                                                                                                                                                                                                                                                                                                                      |
+|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|     /tn \<TaskName>     |                                                                                                                                                                                                                                                                                                               Identifica a tarefa a ser alterado. Insira o nome da tarefa.                                                                                                                                                                                                                                                                                                               |
+|     /s \<Computer>      |                                                                                                                                                                                                                                                                               Especifica o nome ou endereço IP de um computador remoto (com ou sem barras invertidas). O padrão é o computador local.                                                                                                                                                                                                                                                                               |
+|  /u [\<Domain>\]<User>  |                                                                                                                                                                 Executa este comando com as permissões da conta de usuário especificada. O padrão é que as permissões do usuário atual do computador local. A conta de usuário especificado deve ser um membro do grupo Administradores no computador remoto. O **/u** e **/p** parâmetros são válidos somente para alterar uma tarefa em um computador remoto ( **/s**).                                                                                                                                                                  |
+|     /p \<Password>      |                                                                                                                                                                                              Especifica a senha da conta de usuário especificada na **/u** parâmetro. Se você usar o **/u** parâmetro, mas omita a **/p** parâmetro ou o argumento de senha, **schtasks** solicitará uma senha.</br>O **/u** e **/p** parâmetros são válidos somente quando você usa **/s**.                                                                                                                                                                                               |
+| /ru {[\<Domain>\]<User> |                                                                                                                                                                                                                                                                                                                                       Sistema}                                                                                                                                                                                                                                                                                                                                       |
+|     /RP \<senha >     |                                                                                                                                                                                                                                                 Especifica uma nova senha para a conta de usuário existente ou a conta de usuário especificada pela **/ru** parâmetro. Esse parâmetro é ignorado quando usado com a conta sistema local.                                                                                                                                                                                                                                                  |
+|     /tr \<TaskRun>      |                                                                                                                                                                                  Altera o programa executado pela tarefa. Insira o nome de arquivo e caminho totalmente qualificado de um arquivo executável, arquivo de script ou arquivo em lotes. Se você omitir o caminho **schtasks** supõe que o arquivo está no \<systemroot > diretório \System32. O programa especificado substitui o programa original executado pela tarefa.                                                                                                                                                                                  |
+|    /ST \<Starttime >     |                                                                                                                                                                                                                                                              Especifica a hora de início da tarefa, usando o formato de 24 horas, hh: mm. Por exemplo, um valor de 14:30 é equivalente à hora de 12 horas da 2:30 PM.                                                                                                                                                                                                                                                               |
+|     /RI \<intervalo >     |                                                                                                                                                                                                                                                                           Especifica o intervalo de repetição para a tarefa agendada, em minutos. Intervalo válido é de 1-599940 (599940 minutos = 9999 horas).                                                                                                                                                                                                                                                                            |
+|     /et \<EndTime>      |                                                                                                                                                                                                                                                               Especifica a hora de término da tarefa, usando o formato de 24 horas, hh: mm. Por exemplo, um valor de 14:30 é equivalente à hora de 12 horas da 2:30 PM.                                                                                                                                                                                                                                                                |
+|     /du \<Duration>     |                                                                                                                                                                                                                                                                                                     Especifica para fechar a tarefa durante o \<EndTime > ou <Duration>, se especificado.                                                                                                                                                                                                                                                                                                      |
+|           /k            |                                                                                                                                                                   Interrompe o programa que a tarefa é executada no momento especificado por **/et** ou **/du**. Sem **/k**, **schtasks** não inicia o programa novamente depois que ele atinge o tempo especificado por **/et** ou **/du**, mas não interrompe o programa se ele ainda está em execução. Esse parâmetro é opcional e é válido somente com um agendamento por hora ou minutos.                                                                                                                                                                   |
+|    /SD \<StartDate >     |                                                                                                                                                                                                                                                                                              Especifica a primeira data em que a tarefa deve ser executada. O formato de data é MM/DD/AAAA.                                                                                                                                                                                                                                                                                               |
+|     /ED \<EndDate >      |                                                                                                                                                                                                                                                                                                 Especifica a última data na qual a tarefa deve ser executada. O formato é MM/DD/AAAA.                                                                                                                                                                                                                                                                                                  |
+|         / HABILITAR         |                                                                                                                                                                                                                                                                                                                       Especifica para habilitar a tarefa agendada.                                                                                                                                                                                                                                                                                                                       |
+|        / DESABILITAR         |                                                                                                                                                                                                                                                                                                                      Especifica para desabilitar a tarefa agendada.                                                                                                                                                                                                                                                                                                                       |
+|           /it           | Especifica para executar a tarefa agendada somente quando o usuário "Executar como" (a conta de usuário sob a qual a tarefa é executada) fizer logon no computador.</br>Esse parâmetro não tem nenhum efeito nas tarefas que são executados com permissões do sistema ou tarefas que já têm a propriedade interativa apenas definida. Você não pode usar um comando de alteração para remover a propriedade interativa apenas de uma tarefa.</br>Por padrão, o usuário "Executar como" é o usuário atual do computador local quando a tarefa é agendada ou a conta especificada pela **/u** parâmetro, se um for usado. No entanto, se o comando inclui o **/ru** parâmetro, o usuário, em seguida, o "Executar como" é a conta especificada pela **/ru** parâmetro. |
+|           /z            |                                                                                                                                                                                                                                                                                                          Especifica para excluir a tarefa após a conclusão da sua agenda.                                                                                                                                                                                                                                                                                                          |
+|           /?            |                                                                                                                                                                                                                                                                                                                        Exibe a ajuda no prompt de comando.                                                                                                                                                                                                                                                                                                                         |
 
 ### <a name="remarks"></a>Comentários
 
 -   O **/tn** e **/s** parâmetros identificam a tarefa. O **/TR**, **/ru**, e **/rp** os parâmetros especificam as propriedades da tarefa que você pode alterar.
 -   O **/ru**, e **/rp** parâmetros especificam as permissões sob a qual a tarefa é executada. O **/u** e **p** os parâmetros especificam as permissões usadas para alterar a tarefa.
 -   Para alterar as tarefas em um computador remoto, o usuário deve fazer logon no computador local com uma conta que seja membro do grupo Administradores no computador remoto.
--   Para executar uma **/alterar** comando com as permissões de um usuário diferente (**/u**, **/p**), o computador local deve estar no mesmo domínio que o computador remoto ou deve estar em um domínio que confia no domínio do computador remoto.
+-   Para executar uma **/alterar** comando com as permissões de um usuário diferente ( **/u**, **/p**), o computador local deve estar no mesmo domínio que o computador remoto ou deve estar em um domínio que confia no domínio do computador remoto.
 -   A conta do sistema não tem direitos de logon interativo. Os usuários não aparecerem e não podem interagir com programas executados com permissões do sistema.
--   Para identificar as tarefas com o **/it** propriedade, use uma consulta detalhada (**/consulta /v**). Em uma exibição de consulta detalhada de uma tarefa com **/it**, o **modo de Logon** campo tem um valor de **interativo apenas**.
+-   Para identificar as tarefas com o **/it** propriedade, use uma consulta detalhada ( **/consulta /v**). Em uma exibição de consulta detalhada de uma tarefa com **/it**, o **modo de Logon** campo tem um valor de **interativo apenas**.
 
 ### <a name="examples"></a>Exemplos
 
@@ -1013,13 +1012,13 @@ schtasks /run /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>
 
 ### <a name="parameters"></a>Parâmetros
 
-|Termo|Definição|
-|----|----------|
-|/tn \<TaskName>|Obrigatório. Identifica a tarefa.|
-|/s \<Computer>|Especifica o nome ou endereço IP de um computador remoto (com ou sem barras invertidas). O padrão é o computador local.|
-|/u [\<Domain>\]<User>|Executa este comando com as permissões da conta de usuário especificada. Por padrão, o comando é executado com as permissões do usuário atual do computador local.</br>A conta de usuário especificado deve ser um membro do grupo Administradores no computador remoto. O **/u** e **/p** parâmetros são válidos somente quando você usa **/s**.|
-|/p \<Password>|Especifica a senha da conta de usuário especificada na **/u** parâmetro. Se você usar o **/u** parâmetro, mas omita a **/p** parâmetro ou o argumento de senha, **schtasks** solicitará uma senha.</br>O **/u** e **/p** parâmetros são válidos somente quando você usa **/s**.|
-|/?|Exibe a ajuda no prompt de comando.|
+|         Termo          |                                                                                                                                                                 Definição                                                                                                                                                                  |
+|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    /tn \<TaskName>    |                                                                                                                                                       Obrigatório. Identifica a tarefa.                                                                                                                                                        |
+|    /s \<Computer>     |                                                                                                           Especifica o nome ou endereço IP de um computador remoto (com ou sem barras invertidas). O padrão é o computador local.                                                                                                           |
+| /u [\<Domain>\]<User> | Executa este comando com as permissões da conta de usuário especificada. Por padrão, o comando é executado com as permissões do usuário atual do computador local.</br>A conta de usuário especificado deve ser um membro do grupo Administradores no computador remoto. O **/u** e **/p** parâmetros são válidos somente quando você usa **/s**. |
+|    /p \<Password>     |                          Especifica a senha da conta de usuário especificada na **/u** parâmetro. Se você usar o **/u** parâmetro, mas omita a **/p** parâmetro ou o argumento de senha, **schtasks** solicitará uma senha.</br>O **/u** e **/p** parâmetros são válidos somente quando você usa **/s**.                           |
+|          /?           |                                                                                                                                                    Exibe a ajuda no prompt de comando.                                                                                                                                                     |
 
 ### <a name="remarks"></a>Comentários
 
@@ -1058,7 +1057,6 @@ The attempt to log on to the account associated with the task failed, therefore,
 The specific error is:
 0x8007052e: Logon failure: unknown user name or bad password.
 Verify that the task's Run-as name and password are valid and try again.
-
 ```
 Aparentemente, o nome de usuário ou senha na tarefa não é válida no sistema. O seguinte **schtasks /change** comando atualiza o nome de usuário e senha para a tarefa de atualização no Serv01:
 ```
@@ -1082,13 +1080,13 @@ schtasks /end /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>
 
 ### <a name="parameters"></a>Parâmetros
 
-|Termo|Definição|
-|----|----------|
-|/tn \<TaskName>|Obrigatório. Identifica a tarefa que iniciou o programa.|
-|/s \<Computer>|Especifica o nome ou endereço IP de um computador remoto. O padrão é o computador local.|
-|/u [\<Domain>\]<User>|Executa este comando com as permissões da conta de usuário especificada. Por padrão, o comando é executado com as permissões do usuário atual do computador local. A conta de usuário especificado deve ser um membro do grupo Administradores no computador remoto. O **/u** e **/p** parâmetros são válidos somente quando você usa **/s**.|
-|/p \<Password>|Especifica a senha da conta de usuário especificada na **/u** parâmetro. Se você usar o **/u** parâmetro, mas omita a **/p** parâmetro ou o argumento de senha, **schtasks** solicitará uma senha.</br>O **/u** e **/p** parâmetros são válidos somente quando você usa **/s**.|
-|/?|Exibe a Ajuda.|
+|         Termo          |                                                                                                                                                               Definição                                                                                                                                                                |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    /tn \<TaskName>    |                                                                                                                                         Obrigatório. Identifica a tarefa que iniciou o programa.                                                                                                                                         |
+|    /s \<Computer>     |                                                                                                                        Especifica o nome ou endereço IP de um computador remoto. O padrão é o computador local.                                                                                                                        |
+| /u [\<Domain>\]<User> | Executa este comando com as permissões da conta de usuário especificada. Por padrão, o comando é executado com as permissões do usuário atual do computador local. A conta de usuário especificado deve ser um membro do grupo Administradores no computador remoto. O **/u** e **/p** parâmetros são válidos somente quando você usa **/s**. |
+|    /p \<Password>     |                        Especifica a senha da conta de usuário especificada na **/u** parâmetro. Se você usar o **/u** parâmetro, mas omita a **/p** parâmetro ou o argumento de senha, **schtasks** solicitará uma senha.</br>O **/u** e **/p** parâmetros são válidos somente quando você usa **/s**.                         |
+|          /?           |                                                                                                                                                             Exibe a Ajuda.                                                                                                                                                              |
 
 ### <a name="remarks"></a>Comentários
 
@@ -1130,19 +1128,19 @@ schtasks /delete /tn {<TaskName> | *} [/f] [/s <Computer> [/u [<Domain>\]<User> 
 
 ### <a name="parameters"></a>Parâmetros
 
-|Termo|Definição|
-|----|----------|
-|/tn {\<TaskName>| *}|Obrigatório. Identifica a tarefa que está sendo excluída.</br>**\<TaskName >** -exclui a tarefa nomeada.</br>**<\*>** -Exclui todas as tarefas agendadas no computador.|
-|/f|Suprime a mensagem de confirmação. A tarefa é excluída sem aviso.|
-|/s \<Computer>|Especifica o nome ou endereço IP de um computador remoto (com ou sem barras invertidas). O padrão é o computador local.|
-|/u [\<Domain>\]<User>|Executa este comando com as permissões da conta de usuário especificada. Por padrão, o comando é executado com as permissões do usuário atual do computador local.</br>A conta de usuário especificado deve ser um membro do grupo Administradores no computador remoto. O **/u** e **/p** parâmetros são válidos somente quando você usa **/s**.|
-|/p \<Password>|Especifica a senha da conta de usuário especificada na **/u** parâmetro. Se você usar o **/u** parâmetro, mas omita a **/p** parâmetro ou o argumento de senha, **schtasks** solicitará uma senha.</br>O **/u** e **/p** parâmetros são válidos somente quando você usa **/s**.|
-|/?|Exibe a ajuda no prompt de comando.|
+|         Termo          |                                                                                                                                                                 Definição                                                                                                                                                                  |
+|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   /tn {\<TaskName>    |                                                                                                                                                                     \*}                                                                                                                                                                     |
+|          /f           |                                                                                                                                  Suprime a mensagem de confirmação. A tarefa é excluída sem aviso.                                                                                                                                  |
+|    /s \<Computer>     |                                                                                                           Especifica o nome ou endereço IP de um computador remoto (com ou sem barras invertidas). O padrão é o computador local.                                                                                                           |
+| /u [\<Domain>\]<User> | Executa este comando com as permissões da conta de usuário especificada. Por padrão, o comando é executado com as permissões do usuário atual do computador local.</br>A conta de usuário especificado deve ser um membro do grupo Administradores no computador remoto. O **/u** e **/p** parâmetros são válidos somente quando você usa **/s**. |
+|    /p \<Password>     |                          Especifica a senha da conta de usuário especificada na **/u** parâmetro. Se você usar o **/u** parâmetro, mas omita a **/p** parâmetro ou o argumento de senha, **schtasks** solicitará uma senha.</br>O **/u** e **/p** parâmetros são válidos somente quando você usa **/s**.                           |
+|          /?           |                                                                                                                                                    Exibe a ajuda no prompt de comando.                                                                                                                                                     |
 
 ### <a name="remarks"></a>Comentários
 
--   O **excluir** operação exclui a tarefa do agendamento. Ele não exclui o programa executado pela tarefa nem interrompe um programa em execução.
--   O **exclua \***  comando exclui todas as tarefas agendadas no computador, não apenas as tarefas agendadas pelo usuário atual.
+- O **excluir** operação exclui a tarefa do agendamento. Ele não exclui o programa executado pela tarefa nem interrompe um programa em execução.
+- O **exclua \\** * comando exclui todas as tarefas agendadas no computador, não apenas as tarefas agendadas pelo usuário atual.
 
 ### <a name="examples"></a>Exemplos
 
@@ -1152,7 +1150,7 @@ O comando a seguir exclui a tarefa "Iniciar email" do agendamento de um computad
 ```
 schtasks /delete /tn "Start Mail" /s Svr16
 ```
-Em resposta, **SchTasks.exe** exibe a seguinte mensagem de confirmação. Para excluir a tarefa, pressione Y **.** Para cancelar o comando, digite **n**:
+Em resposta, **SchTasks.exe** exibe a seguinte mensagem de confirmação. Para excluir a tarefa, pressione Y<strong>.</strong> Para cancelar o comando, digite **n**:
 ```
 WARNING: Are you sure you want to remove the task "Start Mail" (Y/N )? 
 SUCCESS: The scheduled task "Start Mail" was successfully deleted.
@@ -1160,7 +1158,7 @@ SUCCESS: The scheduled task "Start Mail" was successfully deleted.
 
 ### <a name="to-delete-all-tasks-scheduled-for-the-local-computer"></a>Para excluir todas as tarefas agendadas para o computador local
 
-O comando a seguir exclui todas as tarefas do agendamento do computador local, incluindo tarefas agendadas por outros usuários. Ele usa o **/tn \***  parâmetro para representar todas as tarefas no computador e o **/f** parâmetro para suprimir a mensagem de confirmação.
+O comando a seguir exclui todas as tarefas do agendamento do computador local, incluindo tarefas agendadas por outros usuários. Ele usa o **/tn \\** * parâmetro para representar todas as tarefas no computador e o **/f** parâmetro para suprimir a mensagem de confirmação.
 ```
 schtasks /delete /tn * /f
 ```
@@ -1180,16 +1178,16 @@ schtasks [/query] [/fo {TABLE | LIST | CSV}] [/nh] [/v] [/s <Computer> [/u [<Dom
 
 ### <a name="parameters"></a>Parâmetros
 
-|Termo|Definição|
-|----|----------|
-|[/query]|O nome da operação é opcional. Digitação **schtasks** sem quaisquer parâmetros executa uma consulta.|
-|/FO {tabela| LISTA| CSV}|Especifica o formato de saída. **TABELA** é o padrão.|
-|/nh|Omite os cabeçalhos de coluna da exibição de tabela. Esse parâmetro é válido com o **tabela** e **CSV** formatos de saída.|
-|/v|Adiciona propriedades avançadas de tarefas à exibição.</br>Consultas usando **/v** deve ser formatado como **lista** ou **CSV**.|
-|/s \<Computer>|Especifica o nome ou endereço IP de um computador remoto (com ou sem barras invertidas). O padrão é o computador local.|
-|/u [\<Domain>\]<User>|Executa este comando com as permissões da conta de usuário especificada. Por padrão, o comando é executado com as permissões do usuário atual do computador local.</br>A conta de usuário especificado deve ser um membro do grupo Administradores no computador remoto. O **/u** e **/p** parâmetros são válidos somente quando você usa **/s**.|
-|/p \<Password>|Especifica a senha da conta de usuário especificada na **/u** parâmetro. Se você usar **/u**, mas omita **/p** ou o argumento de senha **schtasks** solicitará uma senha.</br>O **/u** e **/p** parâmetros são válidos somente quando você usa **/s**.|
-|/?|Exibe a ajuda no prompt de comando.|
+|         Termo          |                                                                                                                                                                 Definição                                                                                                                                                                  |
+|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|       [/query]        |                                                                                                                        O nome da operação é opcional. Digitação **schtasks** sem quaisquer parâmetros executa uma consulta.                                                                                                                         |
+|      /FO {tabela       |                                                                                                                                                                    LISTA                                                                                                                                                                     |
+|          /nh          |                                                                                                            Omite os cabeçalhos de coluna da exibição de tabela. Esse parâmetro é válido com o **tabela** e **CSV** formatos de saída.                                                                                                             |
+|          /v           |                                                                                                         Adiciona propriedades avançadas de tarefas à exibição.</br>Consultas usando **/v** deve ser formatado como **lista** ou **CSV**.                                                                                                          |
+|    /s \<Computer>     |                                                                                                           Especifica o nome ou endereço IP de um computador remoto (com ou sem barras invertidas). O padrão é o computador local.                                                                                                           |
+| /u [\<Domain>\]<User> | Executa este comando com as permissões da conta de usuário especificada. Por padrão, o comando é executado com as permissões do usuário atual do computador local.</br>A conta de usuário especificado deve ser um membro do grupo Administradores no computador remoto. O **/u** e **/p** parâmetros são válidos somente quando você usa **/s**. |
+|    /p \<Password>     |                                        Especifica a senha da conta de usuário especificada na **/u** parâmetro. Se você usar **/u**, mas omita **/p** ou o argumento de senha **schtasks** solicitará uma senha.</br>O **/u** e **/p** parâmetros são válidos somente quando você usa **/s**.                                         |
+|          /?           |                                                                                                                                                    Exibe a ajuda no prompt de comando.                                                                                                                                                     |
 
 ### <a name="remarks"></a>Comentários
 
@@ -1210,7 +1208,6 @@ TaskName Next Run Time Status
 ========================= ======================== ==============
 Microsoft Outlook At logon time
 SecureScript 14:42:00 PM , 2/4/2001
-
 ```
 
 ### <a name="to-display-advanced-properties-of-scheduled-tasks"></a>Para exibir as propriedades avançadas de tarefas agendadas
@@ -1253,7 +1250,6 @@ Idle: If Not Idle Retry For X Minutes: Disabled
 Idle: Stop Task If Idle State End: Disabled
 Power Mgmt: No Start On Batteries: Disabled
 Power Mgmt: Stop On Battery Mode: Disabled
-
 ```
 
 ### <a name="to-log-tasks-scheduled-for-a-remote-computer"></a>Para registrar tarefas agendadas em um computador remoto
@@ -1268,4 +1264,4 @@ Em resposta, **SchTasks.exe** adiciona as tarefas agendadas no computador Reskit
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
