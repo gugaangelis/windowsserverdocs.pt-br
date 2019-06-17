@@ -15,11 +15,11 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f8310baf659810d5d51587bafcc868c59ace61a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852047"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63687271"
 ---
 # <a name="server-role-upgrade-and-migration-matrix-for-windows-server-2016"></a>Matriz de atualização e migração da função de servidor para Windows Server 2016
 
@@ -31,7 +31,7 @@ A grade desta página explica suas opções de migração e atualização de fun
 |-------------------|----------|--------------|--------------|----------|  
 |Serviços de Certificados do Active Directory| Sim|    Sim|    Sim|    Não|
 |Active Directory Domain Services|  Sim|    Sim|    Sim|    Sim|
-|Serviços de Federação do Active Directory (AD FS)|  Não| Não| Sim|    Não (os novos nós precisam ser adicionados ao farm)|
+|Serviços de Federação do Active Directory|  Não| Não| Sim|    Não (os novos nós precisam ser adicionados ao farm)|
 |Active Directory Lightweight Directory Services|   Sim|    Sim|    Sim|    Sim|
 |Active Directory Rights Management Services|   Sim|    Sim|    Sim|    Não|
 |Servidor DHCP|   Sim|    Sim|    Sim|    Sim|
