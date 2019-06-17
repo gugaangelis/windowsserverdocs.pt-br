@@ -11,19 +11,18 @@
 ## Planeje
 ### [Que tipo de instalação é ideal para você?](plan/installation-options.md)
 ### [Opções de acesso de usuário](plan/user-access-options.md)
-### [Opções de integração do Azure](plan/azure-integration-options.md)
 
 ## Implantar
 ### [Preparar o ambiente](deploy/prepare-environment.md)
 ### [Instalar o Windows Admin Center](deploy/install.md)
 ### [Alta disponibilidade](deploy/high-availability.md)
 
+
 ## Configurar
 ### [Configurações do Windows Admin Center](configure/settings.md)
 ### [Controle de acesso de usuário e permissões](configure/user-access-control.md)
 ### [Como usar extensões](configure/using-extensions.md)
-### [Configurar a integração do Azure](configure/azure-integration.md)
-### [Gerenciar VMs do Azure com o Windows Admin Center](configure/manage-azure-vms.md)
+### [Conexões compartilhadas](configure/shared-connections.md)
 
 ## Uso
 ### [Introdução](use/get-started.md)
@@ -31,12 +30,25 @@
 ### [Gerenciar a infraestrutura hiperconvergente](use/manage-hyper-converged.md)
 ### [Gerenciar clusters de failover](use/manage-failover-clusters.md)
 ### [Gerenciar máquinas virtuais Hyper-V](use/manage-virtual-machines.md)
-### [Configurar serviços do Azure](use/azure-services.md)
-#### [Proteger suas VMs Hyper-V com o Azure Site Recovery](use/azure-site-recovery.md)
-#### [Atualizar seus servidores com Gerenciamento de Atualizações do Azure](use/azure-update-management.md)
 ### [Registro em log](use/logging.md)
-### [Etapas de solução de problemas comuns](use/troubleshooting.md)
-### [Problemas conhecidos](use/known-issues.md)
+
+
+## Conecte-se ao Azure
+### [Serviços híbridos do Azure](azure/index.md)
+#### [Backup do Azure](azure/azure-backup.md)
+#### [Azure Site Recovery](azure/azure-site-recovery.md)
+#### [Sincronização de Arquivos do Azure](azure/azure-file-sync.md)
+#### [Azure Monitor](azure/azure-monitor.md)
+#### [Gerenciamento de Atualizações do Azure](azure/azure-update-management.md)
+### [Conectar o Windows Admin Center ao Azure](azure/azure-integration.md)
+### [Implantar o Windows Admin Center no Azure](azure/deploy-wac-in-azure.md)
+### [Gerenciar VMs do Azure com o Windows Admin Center](azure/manage-azure-vms.md)
+
+## Suporte
+### [Política de suporte](support/index.md)
+### [Etapas de solução de problemas comuns](support/troubleshooting.md)
+### [Problemas conhecidos](support/known-issues.md)
+
 
 ## Extend
 ### [Visão geral das extensões](extend/extensibility-overview.md)
@@ -59,10 +71,14 @@
 #### [Como usar o PowerShell em sua extensão](extend/guides/powershell.md)
 #### [Guia de ícone CSS](extend/guides/cssicons.md)
 #### [Migrar para o SDK mais recente](extend/guides/migration-guide-0_1-1_0.md)
+#### [Habilitar a faixa de descoberta da extensão](extend/guides/extension-discovery-banner.md)
 ### [Extensões de publicação](extend/publish-extensions.md)
 ### Estudos de caso
 #### [DataON](extend/case-studies/dataon.md)
 #### [Fujitsu](extend/case-studies/fujitsu.md)
 #### [Lenovo](extend/case-studies/lenovo.md)
+#### [NEC](extend/case-studies/nec.md)
 #### [Pure Storage](extend/case-studies/purestorage.md)
 #### [Squared Up](extend/case-studies/squared-up.md)
+
+

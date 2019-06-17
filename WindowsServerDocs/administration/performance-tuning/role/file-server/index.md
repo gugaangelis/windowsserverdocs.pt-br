@@ -7,19 +7,18 @@ ms.topic: article
 author: phstee
 ms.author: NedPyle; Danlo; DKruse
 ms.date: 4/14/2017
-ms.openlocfilehash: ed9e9c6e2280aa69408455a111eddb3af7f88750
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: dc8a845a6d352fa03517e2a092c44b6d1c1def4b
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266693"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811470"
 ---
 # <a name="performance-tuning-for-file-servers"></a>Ajuste de desempenho para servidores de arquivos
 
 Você deve selecionar o hardware adequado para atender à carga esperada do servidor de arquivos, considerando a carga média, a carga de pico, a capacidade, os planos de crescimento e os tempos de resposta. Os gargalos de hardware limitam a eficiência do ajuste do software.
 
 ## <a name="general-tuning-parameters-for-clients"></a>Parâmetros de ajustes gerais para clientes
-
 
 As seguintes configurações do Registro REG\_DWORD podem afetar o desempenho dos computadores cliente que interagem com os servidores de arquivos SMB:
 
@@ -94,9 +93,9 @@ As seguintes configurações do Registro REG\_DWORD podem afetar o desempenho do
 
     O padrão é 10 segundos. Esse é o tempo limite do cache do diretório.
 
-    > [!Note]   Esse parâmetro controla o cache de metadados de diretório na ausência de concessões de diretório.
-
-     
+    > [!NOTE]
+    > Esse parâmetro controla o cache de metadados de diretório na ausência de concessões de diretório.
+     
 
 -   **DirectoryCacheEntrySizeMax**
 
@@ -222,7 +221,7 @@ Os parâmetros de ajustes gerais para computadores cliente podem otimizar um com
 | FileNotFoundCacheEntriesMax | 32768 | 128     |
 | MaxCmds                     | 32768 | 15      |
 
- 
+ 
 
 Começando com o Windows 8, é possível definir muitas configurações SMB usando os cmdlets **Set-SmbClientConfiguration** e **Set-SmbServerConfiguration** do Windows PowerShell. Configurações somente de Registro podem ser definidas usando o Windows PowerShell também.
 

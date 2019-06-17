@@ -84,6 +84,7 @@
 ### [Autenticação de chave pública de dispositivo ingressado no domínio](kerberos/domain-joined-device-public-key-authentication.md)
 ### [Delegação restrita de Kerberos](kerberos/kerberos-constrained-delegation-overview.md)
 ### [Evitar que o Kerberos altere senhas que usam chaves secretas RC4](kerberos/preventing-kerberos-change-password-that-uses-rc4-secret-keys.md)
+### [Como configurar o Kerberos para endereços IP](kerberos/configuring-kerberos-over-ip.md)
 ## [NTLM](kerberos/ntlm-overview.md)
 ## [Senhas](kerberos/passwords-overview.md)
 ## [TLS/SSL (SSP Schannel)](tls/tls-ssl-schannel-ssp-overview.md)

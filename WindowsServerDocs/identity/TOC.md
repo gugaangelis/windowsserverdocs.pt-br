@@ -462,6 +462,10 @@
 #### [Proteção contra ataques de senha do AD FS](ad-fs/technical-reference/ad-fs-password-protection.md)
 ### [Perguntas frequentes sobre o AD FS 2016](ad-fs/overview/AD-FS-FAQ.md)
 
+## Active Directory Rights Management Services
+### [Como atualizar o AD RMS para o Windows Server 2016](ad-rms/adrms-deploy.md)
+
+
 ## [Como proteger o acesso privilegiado](securing-privileged-access/securing-privileged-access.md)
 ### [Estações de trabalho com acesso privilegiado](securing-privileged-access/privileged-access-workstations.md)
 ### [Material de referência sobre como proteger o acesso privilegiado](securing-privileged-access/securing-privileged-access-reference-material.md)
