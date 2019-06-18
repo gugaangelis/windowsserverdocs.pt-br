@@ -8,12 +8,12 @@ ms.date: 02/13/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 856eb7c2c2dfe0e0e3300fcf826e75b56258dc1b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 879a87d4383d07e37227ecf6fffa5d002a77bbc0
+ms.sourcegitcommit: 214e827934e7b3e8987e9e0ab2cf00047d332c89
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447653"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67153316"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>Use o serviço de migração de armazenamento para migrar um servidor
 
@@ -35,7 +35,7 @@ Antes de começar, instale o serviço de migração de armazenamento e certifiqu
     - Instrumentação de Gerenciamento do Windows (WMI-In)
 
    > [!NOTE]
-   > Se você estiver usando firewalls de terceiros, os intervalos de porta de entrada para abrir são TCP/445 (SMB), TCP/135 (Mapeador de ponto de extremidade RPC/DCOM) e TCP 1025 e 65535 (portas efêmeras do RPC/DCOM).
+   > Se você estiver usando firewalls de terceiros, os intervalos de porta de entrada para abrir são TCP/445 (SMB), TCP/135 (Mapeador de ponto de extremidade RPC/DCOM) e TCP 1025 e 65535 (portas efêmeras do RPC/DCOM). As portas de serviço de migração de armazenamento são o TCP/28940 (Orchestrator) e TCP/28941 (Proxy).
 
 1. Se você estiver usando um servidor do orchestrator para gerenciar a migração e você deseja baixar um log de quais dados você transfere ou eventos, verifique que a regra de firewall (SMB-entrada) de compartilhamento de arquivo e impressora está habilitada no servidor também.
 
