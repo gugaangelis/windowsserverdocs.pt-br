@@ -10,12 +10,12 @@ ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 7534f631cf0ac3f8230ea12e790dcd946da0ffbd
-ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
+ms.openlocfilehash: 5f43d64dc7642ef67da03fec989909bc4f2f14ae
+ms.sourcegitcommit: a3c9a7718502de723e8c156288017de465daaf6b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66749516"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67263032"
 ---
 # <a name="advanced-features-of-always-on-vpn"></a>Recursos avançados de VPN Always On
 
@@ -54,6 +54,88 @@ A seguir estão as opções adicionais para recursos avançados.
 |VPN disparada por aplicativo     |Você pode configurar perfis VPN para se conectar automaticamente quando começa a certos aplicativos ou os tipos de aplicativos.<p>Para obter mais informações sobre esta e outras opções de disparo, consulte [opções disparada automaticamente o perfil VPN](https://docs.microsoft.com/windows/access-protection/vpn/vpn-auto-trigger-profile).         |
 |Acesso condicional do VPN   |Conformidade de dispositivo e acesso condicional pode exigir que os dispositivos gerenciados para atender aos padrões antes que eles possam se conectar à VPN. Um dos recursos avançados para acesso condicional do VPN permite restringir as conexões VPN a apenas aqueles em que o certificado de autenticação de cliente contém o 'da organização de acesso condicional da AAD OID de 1.3.6.1.4.1.311.87'.<p>Para restringir as conexões VPN, você precisa:<ol><li>No servidor NPS, abra o **Network Policy Server** snap-in.</li><li>Expandir **diretivas** > **políticas de rede**.</li><li>Clique com botão direito do **conexões de rede Virtual privada (VPN)** política de rede e selecione **propriedades**.</li><li>Selecione o **configurações** guia.</li><li>Selecione **específicas de fornecedor** e selecione **Add**.</li><li>Selecione o **OID de certificado permitido** opção e, em seguida, selecione **Add**.</li><li>Cole o OID de acesso condicional do AAD da **1.3.6.1.4.1.311.87** como o valor do atributo e, em seguida, selecione **Okey** duas vezes.</li><li>Selecione **feche** e, em seguida **aplicar**.<p>Agora, quando os clientes VPN tentam se conectar usando qualquer certificado que não seja o certificado de nuvem e de curta duração, a conexão falhará.</li></ol>Para obter mais informações sobre o acesso condicional, consulte [VPN e acesso condicional](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access).   |
 
+
+---
+## <a name="blocking-vpn-clients-that-use-revoked-certificates"></a>Bloqueio de clientes VPN que usam certificados revogados
+  
+Depois de instalar atualizações, o servidor RRAS pode impor a revogação de certificado para as VPNs que usam o IKEv2 e certificados de máquina para autenticação, como o dispositivo de túnel sempre em VPNs. Isso significa que, para essas VPNs, o servidor RRAS pode negar conexões VPN para clientes que tentam usar um certificado revogado.
+
+**Disponibilidade**
+
+A tabela a seguir lista as datas de lançamento aproximado das correções para cada versão do Windows.
+
+|Versão do sistema operacional |Data de lançamento * |
+|---------|---------|
+|Windows Server, versão 1903  |Q2, 2019  |
+|Windows Server 2019<br />Windows Server, versão 1809  |Q3, 2019  |
+|Windows Server, versão 1803  |Q3, 2019  |
+|Windows Server, versão 1709  |Q3, 2019  |
+|Windows Server 2016, versão 1607  |Q2, 2019  |
+  
+\* Todas as datas de lançamento estão listadas nos trimestres do calendário. As datas são aproximadas e podem ser alteradas sem aviso prévio.
+
+**Como configurar pré-requisitos** 
+
+1. Instale as atualizações do Windows como eles se tornam disponíveis.
+1. Certifique-se de que todos os certificados de servidor RRAS que você usa e do cliente VPN tem entradas de CPD e que o servidor RRAS pode alcançar os respectivos CRLs.
+1. No servidor RRAS, use o **Set-VpnAuthProtocol** cmdlet do PowerShell para configurar a **RootCertificateNameToAccept** parâmetro.<br /><br />
+   O exemplo a seguir lista os comandos para fazer isso. No exemplo, **CN = autoridade de certificação de raiz de Contoso** representa o nome diferenciado da autoridade de certificação raiz. 
+   ``` powershell
+   $cert1 = ( Get-ChildItem -Path cert:LocalMachine\root | Where-Object -FilterScript { $_.Subject -Like "*CN=Contoso Root Certification Authority,*" } )
+   Set-VpnAuthProtocol -RootCertificateNameToAccept $cert1 -PassThru
+   ```
+**Como configurar o servidor RRAS para impor a revogação de certificados para conexões VPN com base em certificados do computador IKEv2**
+
+1. Em uma janela de Prompt de comando, execute o seguinte comando: 
+   ```
+   reg add HKLM\SYSTEM\CurrentControlSet\Services\RemoteAccess\Parameters\Ikev2 /f /v CertAuthFlags /t REG_DWORD /d "4"
+   ```
+
+1. Reinicie o **roteamento e acesso remoto** service.
+  
+Para desabilitar a revogação de certificado para essas conexões VPN, defina **CertAuthFlags = 2** ou remova o **CertAuthFlags** valor e, em seguida, reinicie o **roteamento e acesso remoto**service. 
+
+**Como revogar um certificado de cliente VPN para uma conexão VPN com base em um certificado do computador IKEv2**
+1. Revogar o certificado do cliente VPN da autoridade de certificação.
+1. Publica uma nova CRL da autoridade de certificação.
+1. No servidor RRAS, abra uma janela de Prompt de comando administrativa e, em seguida, execute os seguintes comandos:
+   ```
+   certutil -urlcache * delete
+   certutil -setreg chain\ChainCacheResyncFiletime @now
+   ```
+
+**Como verificar que a revogação de certificado para conexões de VPN baseada em certificado do IKEv2 máquina está funcionando**  
+>[!Note]  
+> Antes de usar este procedimento, certifique-se de que você habilite o log de eventos operacional CAPI2.
+1. Siga as etapas anteriores para revogar um certificado de cliente VPN.
+1. Tente se conectar à VPN usando um cliente que tem o certificado revogado. O servidor RRAS deve se recusar a conexão e exibir uma mensagem, como "credenciais de autenticação IKE são inaceitáveis."
+1. No servidor RRAS, abra o Visualizador de eventos e navegue até **aplicativos e serviços Logs/Microsoft/Windows/CAPI2**. 
+1. Procure um evento que tem as seguintes informações:
+   * Nome do Log: **Microsoft-Windows-CAPI2/Operational Microsoft-Windows-CAPI2/Operational**
+   * ID de Evento: **41** 
+   * O evento contém o seguinte texto: **assunto = "*FQDN do cliente*"** (*FQDN do cliente* representa o nome de domínio totalmente qualificado do cliente que tem o revogado certificado). 
+
+   O **<Result>** campo dos dados do evento deve incluir **o certificado é revogado**. Por exemplo, consulte os seguintes trechos de um evento:
+   ```xml
+   Log Name:      Microsoft-Windows-CAPI2/Operational Microsoft-Windows-CAPI2/Operational  
+   Source:        Microsoft-Windows-CAPI2  
+   Date:          5/20/2019 1:33:24 PM  
+   Event ID:      41  
+   ...  
+   Event Xml:
+   <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+    <UserData>  
+     <CertVerifyRevocation>  
+      <Certificate fileRef="C97AE73E9823E8179903E81107E089497C77A720.cer" subjectName="client01.corp.contoso.com" />  
+      <IssuerCertificate fileRef="34B1AE2BD868FE4F8BFDCA96E47C87C12BC01E3A.cer" subjectName="Contoso Root Certification Authority" />
+      ...
+      <Result value="80092010">The certificate is revoked.</Result>
+     </CertVerifyRevocation>
+    </UserData>
+   </Event>
+   ```
+
+---
 ## <a name="additional-protection"></a>Proteção adicional
 
 ### <a name="trusted-platform-module-tpm-key-attestation"></a>Atestado de chaves do Trusted Platform Module (TPM)
