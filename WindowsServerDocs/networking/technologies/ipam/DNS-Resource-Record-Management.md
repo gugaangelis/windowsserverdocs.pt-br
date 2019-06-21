@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ipam
+ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7b66c09d-e401-4f70-9a2a-6047dd629bfa
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2edf0fef80cfcfb2c754cacd53df3b38c3881733
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a2db802fa928a4051fbe409fc0ba60d774bb0428
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844607"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284049"
 ---
 # <a name="dns-resource-record-management"></a>Gerenciamento de registro de recursos de DNS
 
@@ -80,7 +79,7 @@ A seguir está uma lista de tipos de registro de recurso DNS que são coletados 
   
 -   SRV  
   
--   Texto  
+-   Text  
   
 -   Serviços conhecidos  
   
@@ -115,7 +114,7 @@ O IPAM permite que você realize as seguintes operações em registros de recurs
 IPAM registra automaticamente todas as alterações de configuração de DNS que você faça usando o console do IPAM.  
   
 ## <a name="see-also"></a>Consulte também  
-[Gerenciar o IPAM](Manage-IPAM.md)  
+[Gerenciar IPAM](Manage-IPAM.md)  
   
 
 
