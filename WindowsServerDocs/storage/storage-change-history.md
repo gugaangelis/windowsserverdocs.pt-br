@@ -9,16 +9,16 @@ manager: brianlic
 ms.author: jgerend
 ms.date: 06/04/2019
 description: Tópicos novos e atualizados na documentação do armazenamento local para o Windows Server para profissionais de TI.
-ms.openlocfilehash: 3245e6bc5320cc0ffae01817a8f7b9caeaa6c685
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: 442d640809d3ae9cf4a11feb646fbbd566e6e3fa
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501493"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284455"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Histórico de alterações dos tópicos de armazenamento no Windows Server
 
-> Aplica-se a: 2019, Windows Server 2016, Windows Server (canal semestral) do Windows Server
+> Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server (canal semestral)
 
 Este tópico lista os tópicos novos e atualizados a [armazenamento](storage.md) documentação do Windows Server.
 
@@ -73,10 +73,10 @@ Este tópico lista os tópicos novos e atualizados a [armazenamento](storage.md)
 |---                                                         |---           |
 |[Resiliência aninhada](storage-spaces/nested-resiliency.md)    | Novo tópico    |
 |[Problemas conhecidos do serviço de migração de armazenamento](storage-migration-service/known-issues.md)   | Novo tópico    |
-|[Replicação do DFS: perguntas frequentes (FAQ)](dfs-replication/dfsr-faq.md)|Migrado do [versões anteriores](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/) biblioteca|
-|[Migrar a replicação do SYSVOL para a replicação do DFS](dfs-replication/migrate-sysvol-to-dfsr.md)|Migrado do [versões anteriores](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/) biblioteca|
-|[SMB: portas de compartilhamento de arquivo e impressora devem estar abertas](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|Migrado do [versões anteriores](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/) biblioteca|
-|[Serviço de Cópias de Sombra de Volume](file-server/volume-shadow-copy-service.md)|Migrado do [versões anteriores](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/) biblioteca|
+|[Replicação do DFS: perguntas frequentes (FAQ)](dfs-replication/dfsr-faq.md)|Migrado do [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/) biblioteca|
+|[Migrar a replicação do SYSVOL para a replicação do DFS](dfs-replication/migrate-sysvol-to-dfsr.md)|Migrado do [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/) biblioteca|
+|[SMB: portas de compartilhamento de arquivo e impressora devem estar abertas](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|Migrado do [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/) biblioteca|
+|[Serviço de Cópias de Sombra de Volume](file-server/volume-shadow-copy-service.md)|Migrado do [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/) biblioteca|
 
 ## <a name="october-2018"></a>Outubro de 2018
 

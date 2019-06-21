@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 846307e19324ab18f8bbfd84971108871b677aeb
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9ac591d65fb84f3c0a8bbd33ca71c93daf892ced
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445883"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280725"
 ---
 # <a name="privileged-access-workstations"></a>Estações de trabalho com acesso privilegiado
 
@@ -96,7 +96,7 @@ Nessa configuração, o trabalho diário que não exige privilégios administrat
 
 Para configurar isso, siga as instruções neste guia para o host da PAW, adicione recursos do Hyper-V do cliente, crie uma VM de usuário e instale uma imagem corporativa do Windows 10 na VM do usuário.
 
-Leia o artigo [Cliente Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/index) para saber mais sobre esse recurso. Observe que o sistema operacional em máquinas virtuais de convidado precisará ser licenciado por [Licenciamento de produtos da Microsoft](https://www.microsoft.com/en-us/Licensing/product-licensing/products.aspx), também descrito [aqui](https://download.microsoft.com/download/9/8/D/98D6A56C-4D79-40F4-8462-DA3ECBA2DC2C/Licensing_Windows_Desktop_OS_for_Virtual_Machines.pdf).
+Leia o artigo [Cliente Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index) para saber mais sobre esse recurso. Observe que o sistema operacional em máquinas virtuais de convidado precisará ser licenciado por [Licenciamento de produtos da Microsoft](https://www.microsoft.com/en-us/Licensing/product-licensing/products.aspx), também descrito [aqui](https://download.microsoft.com/download/9/8/D/98D6A56C-4D79-40F4-8462-DA3ECBA2DC2C/Licensing_Windows_Desktop_OS_for_Virtual_Machines.pdf).
 
 #### <a name="simultaneous-use---adding-remoteapp-rdp-or-a-vdi"></a>Uso simultâneo: Adicionar RemoteApp, RDP ou uma VDI
 
@@ -138,7 +138,7 @@ Essa metodologia é apropriada para contas que têm acesso a ativos de alto valo
 * **Os operadores de informações de confidencialidade alta** -a abordagem usada em uma PAW também pode fornecer proteção para tarefas do trabalhador de informações altamente confidenciais e a equipe de como as que envolvem atividades de fusão e aquisição pré-lançamento, pré-lançamento relatórios financeiros, presença organizacional mídias sociais, comunicações executivas, segredos de comerciais executivas, pesquisa confidencial ou outros dados confidenciais ou proprietários. Este guia não discute detalhadamente as configurações desses cenários de trabalhador de informações, nem inclui esse cenário nas instruções técnicas.
 
     > [!NOTE]
-    > A TI da Microsoft usa PAWs (chamadas internamente de "estações de trabalho de administração seguras" ou SAWs) para gerenciar o acesso seguro aos sistemas internos de alto valor dentro da Microsoft. Este guia oferece detalhes adicionais sobre o uso de PAW na Microsoft na seção "Como a Microsoft usa as estações de trabalho de administração". Para saber mais sobre essa abordagem de ambiente com ativos de alto valor, consulte o artigo [Proteger ativos de alto valor com estações de trabalho de administração seguras](https://msdn.microsoft.com/en-us/library/mt186538.aspx).
+    > A TI da Microsoft usa PAWs (chamadas internamente de "estações de trabalho de administração seguras" ou SAWs) para gerenciar o acesso seguro aos sistemas internos de alto valor dentro da Microsoft. Este guia oferece detalhes adicionais sobre o uso de PAW na Microsoft na seção "Como a Microsoft usa as estações de trabalho de administração". Para saber mais sobre essa abordagem de ambiente com ativos de alto valor, consulte o artigo [Proteger ativos de alto valor com estações de trabalho de administração seguras](https://msdn.microsoft.com/library/mt186538.aspx).
 
 Este documento descreverá o motivo de essa prática ser recomendada para proteger contas privilegiadas de alto impacto, a aparência dessas soluções de PAW para proteção de privilégios administrativos e como implantar rapidamente uma solução de PAW para administração de domínio e serviços de nuvem.
 
@@ -857,7 +857,7 @@ Execute as etapas abaixo para configurar essa fase:
 2. **Inclua aplicativos usando o Windows Defender Application Control e/ou AppLocker confiáveis**.  Ao limitar a capacidade do código não confiável ou não assinado executar em uma PAW, você reduz ainda mais a probabilidade de atividade mal-intencionada e comprometimento.  O Windows inclui duas opções principais para controle de aplicativo:
 
    * **AppLocker**:  O AppLocker ajuda os administradores a controlar quais aplicativos podem ser executados em um determinado sistema.  O AppLocker pode ser controlado centralmente pela política de grupo, e aplicado a usuários ou grupos específicos (para aplicativos direcionados a usuários de PAWs).  Para saber mais sobre como o AppLocker, consulte o artigo da TechNet [Visão geral do AppLocker](https://technet.microsoft.com/library/hh831440.aspx).
-   * **Windows Defender Application Control**: o novo recurso do Windows Defender Application Control fornece controle aprimorado de aplicativos com base em hardware que, ao contrário do AppLocker, não pode ser substituído no dispositivo afetado.  Como o AppLocker, o Windows Defender Application Control pode ser controlado por meio da diretiva de grupo e direcionado a usuários específicos.  Para obter mais informações sobre como restringir o uso do aplicativo com o Windows Defender Application Control, consulte [guia de implantação do controle de aplicativos do Windows Defender](https://docs.microsoft.com/en-gb/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide).
+   * **Windows Defender Application Control**: o novo recurso do Windows Defender Application Control fornece controle aprimorado de aplicativos com base em hardware que, ao contrário do AppLocker, não pode ser substituído no dispositivo afetado.  Como o AppLocker, o Windows Defender Application Control pode ser controlado por meio da diretiva de grupo e direcionado a usuários específicos.  Para obter mais informações sobre como restringir o uso do aplicativo com o Windows Defender Application Control, consulte [guia de implantação do controle de aplicativos do Windows Defender](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide).
 
 3. **Use Usuários Protegidos, Políticas de Autenticação e Silos de Autenticação para proteger ainda mais as contas privilegiadas**.  Os membros de Usuários Protegidos estão sujeitos a políticas de segurança adicionais que protegem as credenciais armazenadas no agente de segurança local (LSA) e reduz bastante o risco de roubo e reutilização de credenciais.  Políticas e silos de autenticação controlam como os usuários privilegiados podem acessar recursos no domínio.  Coletivamente, essas proteções fortalecem consideravelmente a segurança da conta desses usuários privilegiados.  Para saber mais sobre esses recursos, consulte o artigo da Web [Como configurar contas protegidas](https://technet.microsoft.com/library/dn518179.aspx).
 
@@ -912,7 +912,7 @@ Ao usar blindadas baseadas em VM PAWs, o [configurações de GPO recomendadas](#
 ### <a name="set-up-the-host-guardian-service"></a>Configurar o serviço guardião de Host
 
 Serviço guardião de Host é responsável por atestar a identidade e a integridade de um dispositivo físico da PAW.
-Somente as máquinas que são conhecidas por HGS e executando um confiável [política de integridade de código](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control) têm permissão para iniciar o backup de VMs blindadas.
+Somente as máquinas que são conhecidas por HGS e executando um confiável [política de integridade de código](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control) têm permissão para iniciar o backup de VMs blindadas.
 Isso ajuda a proteger as VMs blindadas, o qual executam cargas de trabalho confiáveis para gerenciar seus recursos em camadas, contra ameaças do ambiente de desktop de usuário.
 
 Como o HGS é responsável por determinar quais dispositivos podem executar VMs da PAW, ele é considerado um recurso de nível 0.
@@ -1010,7 +1010,7 @@ Depois que o disco de modelo e o arquivo de dados de blindagem estiverem prontos
 
 [Visão geral de proteção do dispositivo](https://technet.microsoft.com/library/dn986865(v=vs.85).aspx)
 
-[Proteger ativos de alto valor com estações de trabalho de administração seguras](https://msdn.microsoft.com/en-us/library/mt186538.aspx)
+[Proteger ativos de alto valor com estações de trabalho de administração seguras](https://msdn.microsoft.com/library/mt186538.aspx)
 
 [Modo de usuário isolado no Windows 10 com Dave Probert (Channel 9)](https://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-in-Windows-10-with-Dave-Probert)
 

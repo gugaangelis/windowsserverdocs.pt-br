@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 78cc2ce3-a48e-45db-b402-e480b493fab1
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 65af14e3adfacd96334e2326f8dd0b346e27034a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 655a7b02468db4246b85b495289806a3f9735a95
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850177"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282000"
 ---
 # <a name="border-gateway-protocol-bgp"></a>BGP (Border Gateway Protocol)
 
@@ -29,7 +28,7 @@ Você pode usar este tópico para obter uma compreensão do Border Gateway Proto
 > [!NOTE]  
 > Além deste tópico, a seguinte documentação de BGP está disponível.  
 >   
-> -   [Referência de comando do PowerShell do Windows via protocolo BGP](../../remote-access/bgp/BGP-Windows-PowerShell-Command-Reference.md)  
+> -   [Referência de comando do Windows PowerShell BGP](../../remote-access/bgp/BGP-Windows-PowerShell-Command-Reference.md)  
   
 Este tópico contém as seguintes seções.  
   
@@ -150,9 +149,9 @@ A seguir estão os recursos do roteador de BGP do Gateway RAS.
   
 **Roteamento de BGP como um serviço de função de acesso remoto**. Agora você pode instalar o **roteamento** serviço de função da função de servidor de acesso remoto sem instalar o **serviço de acesso remoto (RAS)** serviço de função quando quiser usar o acesso remoto como um roteador BGP LAN.  Isso reduz o volume de memória do roteador BGP e instala apenas os componentes necessários para roteamento dinâmico do BGP. O serviço de função de roteamento é útil quando apenas uma VM do roteador BGP é necessária, e não exigem o uso do DirectAccess ou VPN. Além disso, usando o acesso remoto como um roteador de LAN com BGP fornece as vantagens de roteamentos dinâmicas do BGP em sua rede interna.  
   
-**Estatísticas de BGP (contadores de mensagens, contadores de rota)**. O roteador BGP dá suporte à exibição das mensagens e estatísticas de rota, se necessário, usando o comando **Get-BgpStatistics** do Windows PowerShell.  
+**Estatísticas de BGP (contadores de mensagens, contadores de rota)** . O roteador BGP dá suporte à exibição das mensagens e estatísticas de rota, se necessário, usando o comando **Get-BgpStatistics** do Windows PowerShell.  
   
-**Suporte a Equal Cost Multi Path Routing (ECMP)**. O roteador BGP dá suporte à ECMP e pode ter mais de uma rota de custo igual inseridas na tabela e na pilha de roteamento do BGP. A seleção de roteador BGP da rota para a transmissão de pacotes de dados é aleatória com ECMP habilitado.  
+**Suporte a Equal Cost Multi Path Routing (ECMP)** . O roteador BGP dá suporte à ECMP e pode ter mais de uma rota de custo igual inseridas na tabela e na pilha de roteamento do BGP. A seleção de roteador BGP da rota para a transmissão de pacotes de dados é aleatória com ECMP habilitado.  
   
 **Configuração de HoldTime**. O roteador BGP dá suporte à configuração do valor HoldTimer de acordo com seus requisitos de rede. O temporizador pode ser alterado dinamicamente para acomodar a interoperabilidade com dispositivos de terceiros ou para manter um horário máximo específico de tempo limite da sessão de emparelhamento via protocolo BGP.  
   
@@ -162,7 +161,7 @@ A seguir estão os recursos do roteador de BGP do Gateway RAS.
   
 **Suporte a emparelhamento de transporte de IPv4 e IPv6**. O roteador BGP dá suporte ao emparelhamento de IPv4 e IPv6. No entanto, você deve configurar o identificador de BGP como o endereço IPv4 do roteador BGP. Para todas as topologias de implantação do roteador BGP, qualquer um dos dois tipos de emparelhamento (IPV4 / IPv6) pode ser usado.  
   
-**Funcionalidade de aprendizagem e anúncio do roteamento unicast de IPv4 e IPv6 (Multiprotocol Network Layer Reachability Information [NLRI])**. Não importa qual transporte você use, o roteador BGP pode trocar rotas IPv4 e IPv6 se a funcionalidade apropriada for anunciado por outros roteadores BGP durante o estabelecimento da sessão. Para configurar o roteamento IPv6, o parâmetro IPv6Routing deve estar habilitado e um endereço IPv6 Global Local deve ser configurado no nível do roteador.  
+**Funcionalidade de aprendizagem e anúncio do roteamento unicast de IPv4 e IPv6 (Multiprotocol Network Layer Reachability Information [NLRI])** . Não importa qual transporte você use, o roteador BGP pode trocar rotas IPv4 e IPv6 se a funcionalidade apropriada for anunciado por outros roteadores BGP durante o estabelecimento da sessão. Para configurar o roteamento IPv6, o parâmetro IPv6Routing deve estar habilitado e um endereço IPv6 Global Local deve ser configurado no nível do roteador.  
   
 **Emparelhamento de modo misto e de modo passivo**. Você pode configurar sessões de emparelhamento via protocolo BGP no modo misto - onde o roteador BGP atua como iniciador e Respondente, ou no modo passivo, em que o roteador BGP não inicia o emparelhamento, mas responder às solicitações de entrada. O modo misto é o padrão e é recomendado para emparelhamento via protocolo BGP. Isso se aplica, a menos que você queira usar o modo passivo para fins de depuração e diagnóstico. Para todas as topologias de implantação do roteador BGP, o emparelhamento de modo misto é necessário para permitir reinícios automáticos no caso de eventos de falha.  
   

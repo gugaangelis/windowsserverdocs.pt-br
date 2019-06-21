@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 06/13/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f6b93b55d8685180de8eafff5e8a3d5ca33e5fb5
-ms.sourcegitcommit: 3fe551f99c58ac232a9df72aaca55187118eac3b
+ms.openlocfilehash: 7fa4560e0c050c8decbcb4e9456a884976e447e2
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67132932"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284414"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>Requisitos de hardware dos Espaços de Armazenamento Diretos
 
@@ -22,7 +22,7 @@ ms.locfileid: "67132932"
 
 Este tópico descreve os requisitos mínimos de hardware para espaços de armazenamento diretos.
 
-Para a produção, a Microsoft recomenda a compra de uma solução de hardware/software validado de nossos parceiros, quais incluem procedimentos e ferramentas de implantação. Essas soluções são projetadas, reunimos e validadas em relação a nossa arquitetura de referência para garantir a compatibilidade e confiabilidade, para que você começar a trabalhar em funcionamento rapidamente. Para soluções do Windows Server 2019, visite o [site de soluções do Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci). Para soluções do Windows Server 2016, saiba mais em [definida pelo Software do Windows Server](https://microsoft.com/wssd).
+Para a produção, a Microsoft recomenda a compra de uma solução de hardware/software validado de nossos parceiros, que incluem procedimentos e ferramentas de implantação. Essas soluções são projetadas, reunimos e validadas em relação a nossa arquitetura de referência para garantir a compatibilidade e confiabilidade, para que você começar a trabalhar em funcionamento rapidamente. Para soluções do Windows Server 2019, visite o [site de soluções do Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci). Para soluções do Windows Server 2016, saiba mais em [definida pelo Software do Windows Server](https://microsoft.com/wssd).
 
    > [!TIP]
    > Para avaliar a espaços de armazenamento diretos, mas não tiver o hardware? Usar máquinas virtuais do Hyper-V ou Azure conforme descrito em [usando espaços de armazenamento diretos em clusters de máquinas virtuais de convidados](storage-spaces-direct-in-vm.md).

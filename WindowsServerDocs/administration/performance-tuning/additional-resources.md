@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: c7ac20da7e8508b824fdd000f6a9dde6e807cdf2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e09363eae005114b73bedac084f5ab0745c237ee
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835827"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280067"
 ---
 # <a name="additional-performance-tuning-resources"></a>Recursos de ajuste de desempenho adicionais
 
@@ -29,7 +29,7 @@ Use os links neste tópico para saber mais sobre os conceitos discutidos neste g
 
 ## <a name="power-management-tuning-resources"></a>Recursos de otimização do gerenciamento de energia
 
--   [Configuração de política de energia e a implantação no Windows](https://msdn.microsoft.com/en-us/library/windows/hardware/mt422910.aspx)
+-   [Configuração de política de energia e a implantação no Windows](https://msdn.microsoft.com/library/windows/hardware/mt422910.aspx)
 
 -   [Usando a PowerCfg para avaliar a eficiência energética do sistema](https://technet.microsoft.com/library/cc748940.aspx)
 
@@ -56,7 +56,7 @@ Use os links neste tópico para saber mais sobre os conceitos discutidos neste g
 -   [Como desabilitar a ferramenta de diagnóstico autotuning TCP](https://support.microsoft.com/kb/967475)
 
 ## <a name="active-directory-server-tuning-resources"></a>Recursos de ajuste do servidor do Active Directory
--   [Desempenho do Active Directory](https://msdn.microsoft.com/en-us/library/windows/hardware/dn567654(v=vs.85).aspx)
+-   [Desempenho do Active Directory](https://msdn.microsoft.com/library/windows/hardware/dn567654(v=vs.85).aspx)
 -   [Como configurar o log de eventos de diagnóstico do Active Directory no Windows Server 2003 e no Windows 2000 Server](https://support.microsoft.com/kb/314980)
 
 ## <a name="virtualization-server-tuning-resources"></a>Recursos de ajuste do servidor de virtualização
@@ -83,19 +83,19 @@ Use os links neste tópico para saber mais sobre os conceitos discutidos neste g
 
 ## <a name="server-workload-tuning-resources"></a>Recursos de ajuste de carga de trabalho do servidor
 
--   [Ajuste de desempenho para o NTttcp](https://msdn.microsoft.com/en-us/library/windows/hardware/dn567663(v=vs.85).aspx)
+-   [Ajuste de desempenho para o NTttcp](https://msdn.microsoft.com/library/windows/hardware/dn567663(v=vs.85).aspx)
 
 -   [Ttcp](http://en.wikipedia.org/wiki/Ttcp)
 
 -   [Como usar o NTttcp no teste de desempenho da rede](https://msdn.microsoft.com/windows/hardware/gg463264.aspx)
 
--   [Usando a ferramenta de Capactiy do servidor de arquivo](https://msdn.microsoft.com/en-us/library/windows/hardware/dn567658(v=vs.85).aspx)
+-   [Usando a ferramenta de Capactiy do servidor de arquivo](https://msdn.microsoft.com/library/windows/hardware/dn567658(v=vs.85).aspx)
 
--   [Usando o servidor de arquivos SPECsfs2008](https://msdn.microsoft.com/en-us/library/windows/hardware/dn567653(v=vs.85).aspx)
+-   [Usando o servidor de arquivos SPECsfs2008](https://msdn.microsoft.com/library/windows/hardware/dn567653(v=vs.85).aspx)
 
--   [Ajuste de desempenho para as vendas e distribuição de carga de trabalho](https://msdn.microsoft.com/en-us/library/windows/hardware/dn567646(v=vs.85).aspx)
+-   [Ajuste de desempenho para as vendas e distribuição de carga de trabalho](https://msdn.microsoft.com/library/windows/hardware/dn567646(v=vs.85).aspx)
 
--   [Ajuste de desempenho para transações Online (OLTP) de processamento](https://msdn.microsoft.com/en-us/library/windows/hardware/dn567642(v=vs.85).aspx)
+-   [Ajuste de desempenho para transações Online (OLTP) de processamento](https://msdn.microsoft.com/library/windows/hardware/dn567642(v=vs.85).aspx)
 
 -   [Como: Configurar o SQL Server para usar o Soft-NUMA](https://go.microsoft.com/fwlink/?LinkId=98292)
 
@@ -106,7 +106,7 @@ Use os links neste tópico para saber mais sobre os conceitos discutidos neste g
 
 ## <a name="server-tuning-tools"></a>Ferramentas de ajuste do servidor
 
--   [Microsoft Server Performance Advisor](https://msdn.microsoft.com/en-us/library/windows/hardware/dn481522(v=vs.85).aspx)
+-   [Microsoft Server Performance Advisor](https://msdn.microsoft.com/library/windows/hardware/dn481522(v=vs.85).aspx)
 
 ## <a name="performance-tuning-guidelines-for-previous-versions-of-windows-server"></a>Diretrizes de ajuste de desempenho para as versões anteriores do Windows Server
 

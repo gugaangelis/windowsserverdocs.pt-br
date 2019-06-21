@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3d66901a-c40b-474c-9948-f989f399cfea
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4f31c0e1d36ff458fb4807ab6856a56498f449ab
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8c3e12f9d64619ce00e578c7a8096c764e68ff7d
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838177"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283164"
 ---
 # <a name="step-6-install-and-configure-2-dc1"></a>ETAPA 6 instalar e configurar o DC1 2
 
@@ -121,7 +120,7 @@ Configure 2-DC1 como controlador de domínio para o domínio corp2.corp.contoso.
   
 8.  Sob **fornecer as credenciais para executar essa operação**, clique em **alteração**. Sobre o **segurança do Windows** na caixa **nome de usuário**, tipo **corp.contoso.com\Administrator**e, na **senha**, insira o corp \ Senha do administrador, clique em **Okey**e, em seguida, clique em **próxima**.  
   
-9. Sobre o **opções do controlador de domínio** página, certifique-se de que o **nome do Site** é **segundo Site**. Sob **digite a senha do modo de restauração dos serviços de diretório (DSRM)**, na **senha** e **Confirmar senha**, digite uma senha forte duas vezes e, em seguida, clique em  **Próxima** cinco vezes.  
+9. Sobre o **opções do controlador de domínio** página, certifique-se de que o **nome do Site** é **segundo Site**. Sob **digite a senha do modo de restauração dos serviços de diretório (DSRM)** , na **senha** e **Confirmar senha**, digite uma senha forte duas vezes e, em seguida, clique em  **Próxima** cinco vezes.  
   
 10. Sobre o **verificação de pré-requisitos** página, depois que os pré-requisitos forem validados, clique em **instalar**.  
   
@@ -201,7 +200,7 @@ Antes de poder registrar para certificados em EDGE1 2, você deve forçar a repl
   
 4.  Sobre o **DEFAULTIPSITELINK propriedades** na caixa **custo**, tipo **1**, no **replicar cada**, tipo **15**e, em seguida, clique em **Okey**. Aguarde de 15 minutos para a conclusão da replicação.  
   
-5.  Para forçar a replicação agora na árvore de console, expanda **configurações Sites\Site padrão-First-Site-name\Servers\DC1\NTDS**, no painel de detalhes, clique com botão direito **<automatically generated>**, clique em  **Replicate Now**e, em seguida, o **Replicate Now** caixa de diálogo, clique em **Okey**.  
+5.  Para forçar a replicação agora na árvore de console, expanda **configurações Sites\Site padrão-First-Site-name\Servers\DC1\NTDS**, no painel de detalhes, clique com botão direito **<automatically generated>** , clique em  **Replicate Now**e, em seguida, o **Replicate Now** caixa de diálogo, clique em **Okey**.  
   
 6.  Para garantir que a replicação foi concluída com êxito, faça o seguinte:  
   

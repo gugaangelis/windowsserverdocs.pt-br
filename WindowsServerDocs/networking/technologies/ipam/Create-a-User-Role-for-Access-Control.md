@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ipam
+ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ae6a42db-a104-401b-a8e6-b85c47d30b46
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 69d7acec19a460b51819bdc30ce40e21089c7bcf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3798b074a0ca7e20602da7986fe6b54e81da5495
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823577"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284093"
 ---
 # <a name="create-a-user-role-for-access-control"></a>Criar uma função de usuário para controle de acesso
 
@@ -61,7 +60,7 @@ A associação em **Administradores**, ou equivalente, é o requisito mínimo pa
   
 ## <a name="see-also"></a>Consulte também  
 [Controle de acesso baseado em função](Role-based-Access-Control.md)  
-[Gerenciar o IPAM](Manage-IPAM.md)  
+[Gerenciar IPAM](Manage-IPAM.md)  
   
 
 

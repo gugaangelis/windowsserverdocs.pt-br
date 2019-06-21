@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: de285d13-9e54-4c46-88f0-607182e5e3dc
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3171eb9e9c90d0688fa413b80d9dbbf162e77fe8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ab5deea9d594d6e9570d2472b5628a3d5fb8d616
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818417"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282722"
 ---
 # <a name="monitor-the-configuration-distribution-status-of-the-remote-access-server"></a>Monitorar o status de distribuição da configuração do servidor de acesso remoto
 
@@ -40,7 +39,7 @@ A tabela a seguir mostra as mensagens geradas pelo bloco **Status de Configuraç
   
 |||||  
 |-|-|-|-|  
-|Gravidade|Mensagem|Significado|O que fazer?|  
+|Gravidade|Message|Significado|O que fazer?|  
 |Êxito|A configuração foi distribuída com êxito.|A configuração no GPO foi aplicada com êxito no servidor.|Nenhuma ação é necessária.|  
 |Aviso|Configuração para o servidor [*nome do servidor*] não recuperada do controlador de domínio. O GPO não está vinculado.|A configuração no GPO ainda não atingiu o servidor. Isso pode ser devido ao fato de o GPO não estar vinculado ao servidor.|Vincule o GPO a um escopo de gerenciamento que é aplicado ao servidor ou em um cenário GPO de preparação, exporte manualmente as configurações do GPO de preparação e importe-as para o GPO de produção. Para obter mais informações sobre GPOs de preparo, consulte **Gerenciando GPOs de acesso remoto com permissões limitadas** na [Step-1-Plan-the-DirectAccess-Infrastructure](../../directaccess/single-server-advanced/Step-1-Plan-the-DirectAccess-Infrastructure.md). Para etapas de preparação de GPO, consulte **configurando GPOs de acesso remoto com permissões limitadas** em [etapa 1: Configurar a infraestrutura do DirectAccess](../../directaccess/single-server-advanced/Step-1-Configuring-DirectAccess-Infrastructure.md).|  
 |Aviso|A configuração para o servidor [*nome do servidor*] ainda não foi recuperada do controlador de domínio.|A configuração no GPO ainda não atingiu o servidor.<br /><br />Pode levar até 10 minutos para propagar uma nova configuração.|Permitir mais tempo para que as políticas sejam atualizadas no servidor.|  

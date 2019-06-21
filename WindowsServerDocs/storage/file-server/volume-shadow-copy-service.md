@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: d67f15d65feb28fb05fc056fd3c34c04cee80d09
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 0a4af25723c6d1e796cd3255875c15faf21fb8be
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447760"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284382"
 ---
 # <a name="volume-shadow-copy-service"></a>Serviço de Cópias de Sombra de Volume
 
@@ -380,7 +380,7 @@ Para excluir arquivos específicos de cópias de sombra, use a seguinte chave do
 > <UL>
 > <LI>Ele não é possível excluir arquivos de uma cópia de sombra foi criada em um servidor Windows usando o recurso de versões anteriores.<BR><BR>
 > <LI>Ele não é possível excluir arquivos de cópias de sombra para pastas compartilhadas.<BR><BR>
-> <LI>Ele pode excluir arquivos de uma cópia de sombra foi criada usando o <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskshadow)">Diskshadow</a> utilitário, mas ele não é possível excluir arquivos de uma cópia de sombra foi criada usando o <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/vssadmin)">Vssadmin</a> utilitário.<BR><BR>
+> <LI>Ele pode excluir arquivos de uma cópia de sombra foi criada usando o <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow)">Diskshadow</a> utilitário, mas ele não é possível excluir arquivos de uma cópia de sombra foi criada usando o <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin)">Vssadmin</a> utilitário.<BR><BR>
 > <LI>Arquivos são excluídos de uma cópia de sombra em uma base de melhor esforço. Isso significa que eles não são garantidos para ser excluído.<BR><BR></LI></UL>
 
 

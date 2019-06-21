@@ -8,15 +8,15 @@ ms.topic: article
 ms.assetid: ''
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 31a38eacea3af3c0a288d61a77a24b4fa45a1932
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 72b1593503db75aa275b9eb45c8342cee6724001
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843367"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280395"
 ---
 # <a name="health-service-faults"></a>Falhas de serviço de integridade
-> Aplica-se ao Windows Server 2016
+> Aplica-se a: Windows Server 2019, Windows Server 2016
 
 ## <a name="what-are-faults"></a>Quais são as falhas
 
@@ -136,7 +136,7 @@ public void DiscoverObjects(CimSession Session)
 
 Esses são os mesmos objetos de obter no PowerShell usando os cmdlets como **Get-StorageSubSystem**, **Get-StorageNode**, e **Get-Volume**.
 
-Você pode acessar as mesmas propriedades, documentadas em [Classes de API de gerenciamento de armazenamento](https://msdn.microsoft.com/en-us/library/windows/desktop/hh830612(v=vs.85).aspx).
+Você pode acessar as mesmas propriedades, documentadas em [Classes de API de gerenciamento de armazenamento](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx).
 
 ```
 ...
@@ -291,7 +291,7 @@ Esta tabela apresenta várias propriedades importantes do objeto falha. Para o e
 |---------------------------|-----------------------------------------------------------------|
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | Microsoft.Health.FaultType.Volume.Capacity                      |
-| Motivo                    | "O volume está ficando sem espaço disponível."                 |
+| Reason                    | "O volume está ficando sem espaço disponível."                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | Contoso XYZ9000 S.N. 123456789                                  |
 | FaultingObjectLocation    | Montar em rack A06, RU 25, Slot 11                                        |
@@ -318,7 +318,7 @@ Observe a **ChangeType**, que indica se uma falha está sendo criada, removido o
 | ChangeType                | 0                                                               |
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | Microsoft.Health.FaultType.Volume.Capacity                      |
-| Motivo                    | "O volume está ficando sem espaço disponível."                 |
+| Reason                    | "O volume está ficando sem espaço disponível."                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | Contoso XYZ9000 S.N. 123456789                                  |
 | FaultingObjectLocation    | Montar em rack A06, RU 25, Slot 11                                        |
@@ -391,7 +391,7 @@ No Windows Server 2016, o serviço de integridade fornece a seguinte cobertura d
 * Motivo: *"O pool de armazenamento não tem a capacidade de reserva recomendada mínimo. Isso pode limitar sua capacidade de restaurar a resiliência de dados no caso de falha de unidade (s)."*
 * RecommendedAction: *"Adicionar capacidade adicional para o pool de armazenamento ou libere a capacidade. O mínimo recomendado reserva varia de acordo com a implantação, mas é a importância dos aproximadamente 2 unidades de capacidade."*
 
-### <a name="volume-capacity-2sup1sup"></a>**A capacidade de volume (2)**<sup>1</sup>
+### <a name="volume-capacity-2sup1sup"></a>**A capacidade de volume (2)** <sup>1</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType: Microsoft.Health.FaultType.Volume.Capacity
 * Gravidade: Aviso
@@ -498,7 +498,7 @@ No Windows Server 2016, o serviço de integridade fornece a seguinte cobertura d
 * Motivo: *"O firmware de lançamento foi cancelado devido a muitos discos físicos com falha de uma tentativa de atualização de firmware."*
 * RecommendedAction: *"Reinicialização firmware distribuir depois que o firmware foi resolvido."*
 
-### <a name="storage-qos-3sup2sup"></a>**QoS de armazenamento (3)**<sup>2</sup>
+### <a name="storage-qos-3sup2sup"></a>**QoS de armazenamento (3)** <sup>2</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypestorqosinsufficientthroughput"></a>FaultType: Microsoft.Health.FaultType.StorQos.InsufficientThroughput
 * Gravidade: Aviso

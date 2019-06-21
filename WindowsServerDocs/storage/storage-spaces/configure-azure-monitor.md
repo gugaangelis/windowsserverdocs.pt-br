@@ -10,12 +10,12 @@ ms.topic: article
 author: adagashe
 ms.date: 3/26/2019
 ms.localizationpriority: ''
-ms.openlocfilehash: 908e4a7a75606905caebfa4b79168b3976982e6d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6b229696e796f176fe89ab250ab48f1d9f0d5666
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447597"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280200"
 ---
 ---
 # <a name="use-azure-monitor-to-send-emails-for-health-service-faults"></a>Use o Monitor do Azure para enviar emails para falhas de serviço de integridade
@@ -31,11 +31,11 @@ Isso é particularmente útil para seu cluster hiperconvergente do local. Com o 
 
 Todos os dados coletados pelo Azure Monitor se adapta a um dos dois tipos fundamentais: logs e métricas.
 
-1. [Métricas](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/data-collection#metrics) são valores numéricos que descrevem alguns aspectos de um sistema em um ponto específico no tempo. Eles são leves e capaz de dar suporte a cenários em tempo real quase. Você verá os dados coletados pelo direito de Azure Monitor em sua página de visão geral no portal do Azure.
+1. [Métricas](https://docs.microsoft.com/azure/azure-monitor/platform/data-collection#metrics) são valores numéricos que descrevem alguns aspectos de um sistema em um ponto específico no tempo. Eles são leves e capaz de dar suporte a cenários em tempo real quase. Você verá os dados coletados pelo direito de Azure Monitor em sua página de visão geral no portal do Azure.
 
 ![imagem da ingestão de métricas no metrics explorer](media/configure-azure-monitor/metrics.png)
 
-2. [Logs](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/data-collection#logs) conter diferentes tipos de dados organizados em registros com diferentes conjuntos de propriedades para cada tipo. Telemetria, como eventos e rastreamentos são armazenados como logs além para dados de desempenho, de modo que ele pode todos ser combinado para análise. Dados de logs coletados pelo Azure Monitor podem ser analisados com [consultas](https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/log-query-overview) rapidamente recuperar, consolidar e analisar os dados coletados. Você pode criar e testar consultas usando [do Log Analytics](https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/portals) no portal do Azure e analisar os dados usando essas ferramentas ou salvar consultas para uso com [visualizações](https://docs.microsoft.com/en-us/azure/azure-monitor/visualizations) ou [alerta regras](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-overview).
+2. [Logs](https://docs.microsoft.com/azure/azure-monitor/platform/data-collection#logs) conter diferentes tipos de dados organizados em registros com diferentes conjuntos de propriedades para cada tipo. Telemetria, como eventos e rastreamentos são armazenados como logs além para dados de desempenho, de modo que ele pode todos ser combinado para análise. Dados de logs coletados pelo Azure Monitor podem ser analisados com [consultas](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview) rapidamente recuperar, consolidar e analisar os dados coletados. Você pode criar e testar consultas usando [do Log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/portals) no portal do Azure e analisar os dados usando essas ferramentas ou salvar consultas para uso com [visualizações](https://docs.microsoft.com/azure/azure-monitor/visualizations) ou [alerta regras](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview).
 
 ![imagem dos logs de ingestão no log analytics](media/configure-azure-monitor/logs.png)
 
@@ -64,9 +64,9 @@ Quando você executa o cmdlet acima para definir as configurações de integrida
 
 Agora que você configurou o registro em log adequado em seu cluster, a próxima etapa é configurar corretamente o log analytics.
 
-Para fornecer uma visão geral, [Azure Log Analytics](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/agent-windows) pode coletar dados diretamente de seus computadores Windows físicos ou virtuais no datacenter ou em outro ambiente de nuvem em um único repositório para correlação e análise detalhadas.
+Para fornecer uma visão geral, [Azure Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/agent-windows) pode coletar dados diretamente de seus computadores Windows físicos ou virtuais no datacenter ou em outro ambiente de nuvem em um único repositório para correlação e análise detalhadas.
 
-Para entender a configuração com suporte, revise [sistemas operacionais do Windows suportados](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems) e [configuração de firewall de rede](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements).
+Para entender a configuração com suporte, revise [sistemas operacionais do Windows suportados](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems) e [configuração de firewall de rede](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements).
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
@@ -76,7 +76,7 @@ Faça logon no portal do Azure em [ https://portal.azure.com ](https://azure.mic
 
 ### <a name="create-a-workspace"></a>Criar um espaço de trabalho
 
-Para obter mais detalhes sobre as etapas listadas abaixo, consulte a [documentação do Azure Monitor](https://docs.microsoft.com/en-us/azure/azure-monitor/learn/quick-collect-windows-computer).
+Para obter mais detalhes sobre as etapas listadas abaixo, consulte a [documentação do Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/learn/quick-collect-windows-computer).
 
 1. No portal do Azure, clique em **todos os serviços**. Na lista de recursos, digite **do Log Analytics**. Conforme você começa a digitar, a lista filtra com base na sua entrada. Selecione **Log Analytics**.<br><br> 
 
@@ -123,7 +123,7 @@ Ao concluir, o **Microsoft Monitoring Agent** aparece na **painel de controle**.
 
 ![Status de conexão do MMA ao Log Analytics](media/configure-azure-monitor/log-analytics-mma-laworkspace-status.png)
 
-Para entender a configuração com suporte, revise [sistemas operacionais do Windows suportados](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems) e [configuração de firewall de rede](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements).
+Para entender a configuração com suporte, revise [sistemas operacionais do Windows suportados](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems) e [configuração de firewall de rede](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements).
 
 ## <a name="collecting-event-and-performance-data"></a>Coletando dados de desempenho e eventos
 
@@ -212,4 +212,4 @@ Para referência, isso é um exemplo de alerta semelhante ao seguinte:
 ## <a name="see-also"></a>Consulte também
 
 - [Visão geral direta de espaços de armazenamento](storage-spaces-direct-overview.md)
-- Para obter mais informações, leia as [documentação do Azure Monitor](https://docs.microsoft.com/en-us/azure/azure-monitor/learn/tutorial-viewdata).
+- Para obter mais informações, leia as [documentação do Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-viewdata).

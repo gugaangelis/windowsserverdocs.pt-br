@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ''
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7fb7b5f7ae6e10d1007317949a42c48b4765f35c
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d518be944ef57d1f26d1bdab8984155863c98630
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446064"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283408"
 ---
 # <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>Etapa 1 de plano a infraestrutura básica do DirectAccess
 A primeira etapa para uma implantação básica do DirectAccess em um único servidor é executar o planejamento da infraestrutura necessária para a implantação. Este tópico descreve as etapas de planejamento de infraestrutura:  

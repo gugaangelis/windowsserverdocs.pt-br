@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6b71d18e-1939-4fc0-bb42-29e0e5ffc8da
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 608d6b4dd3d5e894b28e767164b9370de9cb59ec
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 11c5aa093ddd5aa4777e88c536195bb70bd846db
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869567"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281927"
 ---
 # <a name="directaccess"></a>DirectAccess
 
@@ -31,15 +30,15 @@ Você pode usar este tópico para obter uma visão geral do DirectAccess, inclui
 >   
 > -   [Caminhos de implantação do DirectAccess no Windows Server](DirectAccess-Deployment-Paths-in-Windows-Server.md)  
 > -   [Pré-requisitos para implantação do DirectAccess](Prerequisites-for-Deploying-DirectAccess.md)  
-> -   [Configurações sem suporte do DirectAccess](DirectAccess-Unsupported-Configurations.md)  
+> -   [Configurações do DirectAccess sem suporte](DirectAccess-Unsupported-Configurations.md)  
 > -   [Guias de laboratório de teste do DirectAccess](DirectAccess-Test-Lab-Guides.md)  
-> -   [Questões conhecidas do DirectAccess](DirectAccess-Known-Issues.md)  
+> -   [Problemas conhecidos do DirectAccess](DirectAccess-Known-Issues.md)  
 > -   [Planejamento de capacidade do DirectAccess](DirectAccess-Capacity-Planning.md) 
 > -   [Ingresso no domínio Offline do DirectAccess](DirectAccess-Offline-Domain-Join.md)  
-> -   [Solucionar problemas do DirectAccess](Troubleshooting-DirectAccess.md)  
+> -   [Como solucionar problemas do DirectAccess](Troubleshooting-DirectAccess.md)  
 > -   [Implantar um único servidor DirectAccess usando o Assistente de Introdução](single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)  
-> -   [Implantar um único servidor DirectAccess com configurações avançadas](single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)  
-> -   [Adicionar DirectAccess a uma implantação existente do acesso remoto (VPN)](add-to-existing-vpn/Add-DirectAccess-to-an-Existing-Remote-Access-VPN-Deployment.md)  
+> -   [Implantar um único servidor do DirectAccess com configurações avançadas](single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)  
+> -   [Adicionar o DirectAccess a uma implantação de acesso remoto existente (VPN)](add-to-existing-vpn/Add-DirectAccess-to-an-Existing-Remote-Access-VPN-Deployment.md)  
   
 O DirectAccess permite que a conectividade para usuários remotos a recursos de rede da organização sem a necessidade de conexões de rede Virtual privada (VPN) tradicionais. Com conexões do DirectAccess, computadores cliente remotos sempre estão conectados à sua organização – não é necessário para usuários remotos iniciar e parar de conexões, que é necessária para conexões VPN. Além disso, seus administradores de TI podem gerenciar computadores cliente do DirectAccess sempre que estiverem em execução e conectado à Internet.
 

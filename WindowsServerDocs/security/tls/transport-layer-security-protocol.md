@@ -13,12 +13,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic-msft
 ms.date: 05/16/2018
-ms.openlocfilehash: 77e3ee9d89bff7ab6e95ea47ffa141e6e1004ba4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0a3b241fe0d2a61361d551b7f515507ad55d71cd
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853017"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284235"
 ---
 # <a name="transport-layer-security-protocol"></a>Protocolo TLS
 
@@ -41,7 +41,7 @@ Os protocolos TLS e SSL podem ser divididos em duas camadas. A primeira camada c
 **Camadas de protocolo TLS e SSL**
 
 
-O SSP Schannel implementa os protocolos TLS e SSL sem modificação. O protocolo SSL é proprietário, mas a Internet Engineering Task Force produz as especificações de TLS públicas. Para obter informações sobre quais TLS ou SSL versão é suportada em versões do Windows, consulte [protocolos em TLS/SSL (Schannel SSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/mt808159(v=vs.85).aspx). A tabela a seguir lista as especificações para cada versão do TLS. Cada especificação contém informações sobre:
+O SSP Schannel implementa os protocolos TLS e SSL sem modificação. O protocolo SSL é proprietário, mas a Internet Engineering Task Force produz as especificações de TLS públicas. Para obter informações sobre quais TLS ou SSL versão é suportada em versões do Windows, consulte [protocolos em TLS/SSL (Schannel SSP)](https://msdn.microsoft.com/library/windows/desktop/mt808159(v=vs.85).aspx). A tabela a seguir lista as especificações para cada versão do TLS. Cada especificação contém informações sobre:
 
 -   O protocolo de registro de TLS
 

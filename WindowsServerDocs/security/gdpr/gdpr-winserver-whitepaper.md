@@ -5,18 +5,17 @@ keywords: privacidade, GDPR
 ms.custom: na
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- techgroup-security
+ms.technology: techgroup-security
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 09/25/2017
 ms.author: nirb
-ms.openlocfilehash: be9509de0291924bb95733f995b447230bb75214
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1c374c00573e87594eeeab620face9ea9acaa531
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870127"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284198"
 ---
 # <a name="beginning-your-general-data-protection-regulation-gdpr-journey-for-windows-server"></a>Comece sua jornada de regulamentação de proteção geral de dados (GDPR) para o Windows Server 
 
@@ -362,7 +361,7 @@ Você pode usar o ATA para ajudar a detectar os invasores tentando comprometer i
 
 - **Windows Defender Credential Guard de:** https://www.youtube.com/watch?v=F-pTkesjkhI e https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard
 
-- **Proteção de fluxo de controle:** https://msdn.microsoft.com/en-us/library/windows/desktop/mt637065(v=vs.85).aspx
+- **Proteção de fluxo de controle:** https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx
 
 - **Garantia e segurança:** https://docs.microsoft.com/windows-server/security/security-and-assurance
 

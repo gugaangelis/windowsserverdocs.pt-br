@@ -9,12 +9,12 @@ ms.author: pashort
 author: shortpatti
 ms.date: 11/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b4dd78e0e88678d4570d408b3dcd472bddc88ba
-ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
+ms.openlocfilehash: e7cbe64609e30b042df70020896aebd85b7d22b9
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66749665"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280783"
 ---
 # <a name="always-on-vpn-enhancements"></a>Aprimoramentos de VPN Always On
 
@@ -27,7 +27,7 @@ VPN Always On traz muitos benefícios em relação às soluções de VPN do Wind
 
 - **Integração de plataforma:** VPN Always On tem integração aprimorada com o sistema de operacional Windows e soluções de terceiros para fornecer uma plataforma robusta para inúmeros cenários de conexão avançada.
 
-- **Segurança:** VPN Always On tem recursos de segurança novos e avançados para restringir o tipo de tráfego, quais aplicativos podem usar a conexão VPN, e quais métodos de autenticação que você pode usar para iniciar a conexão. Quando a conexão está ativa na maioria das vezes, é especialmente importante proteger a conexão. Para obter mais detalhes, consulte [opções de autenticação VPN](https://docs.microsoft.com/en-us/windows/security/identity-protection/vpn/vpn-authentication).
+- **Segurança:** VPN Always On tem recursos de segurança novos e avançados para restringir o tipo de tráfego, quais aplicativos podem usar a conexão VPN, e quais métodos de autenticação que você pode usar para iniciar a conexão. Quando a conexão está ativa na maioria das vezes, é especialmente importante proteger a conexão. Para obter mais detalhes, consulte [opções de autenticação VPN](https://docs.microsoft.com/windows/security/identity-protection/vpn/vpn-authentication).
 
 - **Conectividade VPN:** VPN Always On, com ou sem o túnel de dispositivo fornece a capacidade de disparo automático. Antes de VPN Always On, a capacidade de disparar uma conexão automática por meio do usuário ou autenticação de dispositivo não foi possível.  
 

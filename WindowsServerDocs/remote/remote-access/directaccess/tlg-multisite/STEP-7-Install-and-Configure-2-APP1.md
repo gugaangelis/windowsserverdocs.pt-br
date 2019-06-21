@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1cc0abc6-be4d-4cbe-bd0c-cc448bf294f6
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 8b0f91b4d2b876cb7b22dc8614e7ea5dcce6da2d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4746ff5118814506d20983d3570881366297322f
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833557"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283176"
 ---
 # <a name="step-7-install-and-configure-2-app1"></a>ETAPA 7 instalar e configurar o APP1 2
 
@@ -123,7 +122,7 @@ Crie uma pasta compartilhada e um arquivo de texto dentro da pasta em APP1 2.
   
 1.  Sobre o **inicie** tela, digite**explorer.exe**, e pressione ENTER.  
   
-2.  Clique em **computador**, em seguida, clique duas vezes em **disco Local (c)**.  
+2.  Clique em **computador**, em seguida, clique duas vezes em **disco Local (c)** .  
   
 3.  Clique em **nova pasta**, digite **arquivos**, e pressione ENTER. Deixe o **disco Local** janela aberta.  
   

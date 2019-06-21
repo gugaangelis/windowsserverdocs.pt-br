@@ -8,12 +8,12 @@ ms.date: 06/04/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 258f25a7e1ec5c796c15450625397e96db25d693
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: 8f0f16f14ccf9099af8ff8bb8b27209c75c87cfc
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501518"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284466"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>Perguntas frequentes (FAQ) do serviço de migração de armazenamento
 
@@ -131,7 +131,7 @@ O serviço de migração de armazenamento contém um mecanismo de cópia chamado
 
 - **Habilite o processamento de alto desempenho.** Verifique se as configurações de BIOS/UEFI para servidores permitem o alto desempenho, como desabilitar C-State, definir a velocidade de QPI, habilitar NUMA e definir a frequência de memória mais alta. Certifique-se de que o gerenciamento de energia no Windows Server é definido como de alto desempenho. Reinicie conforme necessário. Não se esqueça de retornar esses estados apropriado depois de concluir a migração. 
 
-- **Ajustar o hardware** examine as [desempenho ajustando as diretrizes para o Windows Server 2016](https://docs.microsoft.com/en-us/windows-server/administration/performance-tuning/) para ajustar o orchestrator e computadores de destino executando o Windows Server 2019 e Windows Server 2016. O [ajuste de desempenho do subsistema de rede](https://docs.microsoft.com/en-us/windows-server/networking/technologies/network-subsystem/net-sub-performance-tuning-nics) seção contém informações especialmente valiosas.
+- **Ajustar o hardware** examine as [desempenho ajustando as diretrizes para o Windows Server 2016](https://docs.microsoft.com/windows-server/administration/performance-tuning/) para ajustar o orchestrator e computadores de destino executando o Windows Server 2019 e Windows Server 2016. O [ajuste de desempenho do subsistema de rede](https://docs.microsoft.com/windows-server/networking/technologies/network-subsystem/net-sub-performance-tuning-nics) seção contém informações especialmente valiosas.
 
 - **Use o armazenamento mais rápido.** Embora seja difícil atualizar a velocidade de armazenamento do computador de origem, verifique se que o armazenamento de destino seja pelo menos tão rápido em desempenho de e/s de gravação como a fonte está em desempenho de e/s de leitura para garantir que não há nenhum gargalo desnecessário em transferências. Se o destino for uma máquina virtual, certifique-se de que, pelo menos para fins de migração, ele é executado na camada de armazenamento mais rápida dos seus hosts de hipervisor, como na camada de flash ou com clusters HCI direta de espaços de armazenamento utilizando todos os flash espelhado ou espaços híbrido. Quando a migração de SMS é concluída a VM pode ser migrada dinamicamente para um host ou a camada mais lento.
 

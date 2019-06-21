@@ -9,12 +9,12 @@ ms.assetid: acaa46b7-09b1-4707-9562-116df8db17eb
 ms.author: pashort
 author: shortpatti
 ms.date: 05/23/2018
-ms.openlocfilehash: 8fc1c97d7c2a8694e56cc36b5501a82081b3db23
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d61dcdbb61449bd2af57b8e2c99ced6235c4deca
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812337"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281260"
 ---
 # <a name="ras-gateway"></a>Gateway de RAS
 
@@ -109,7 +109,7 @@ Gateway de RAS inclui os seguintes recursos.
   
 -   **VPN ponto a site**. Esse recurso de Gateway de RAS permite que os funcionários da organização ou os administradores para se conectar à rede da sua organização de locais remotos. Para implantações de único locatário do Gateway de RAS, funcionários remotos podem se conectar à rede da organização, usando uma conexão VPN. Essa conexão permite que eles usem os recursos de rede interna, como sites da intranet e servidores de arquivos. Para implantações de multilocatários, os administradores de rede do locatário podem usar conexões de VPN ponto a site para acessar recursos de rede virtual no datacenter do CSP.  
   
--   **Roteamento dinâmico com o Border Gateway Protocol (BGP)**. O BGP reduz a necessidade de configuração de roteamento manual em roteadores, porque ele é um protocolo de roteamento dinâmico e aprende rotas entre sites conectados usando conexões VPN site a site automaticamente. Se sua organização tiver vários sites que estão conectados por meio de roteadores BGP habilitado, como o Gateway de RAS, o BGP permite que os roteadores calcular automaticamente e usar as rotas válidas entre si em caso de interrupção de rede ou a falha. Para obter mais informações, consulte [4271 RFC](https://tools.ietf.org/html/rfc4271).  
+-   **Roteamento dinâmico com o Border Gateway Protocol (BGP)** . O BGP reduz a necessidade de configuração de roteamento manual em roteadores, porque ele é um protocolo de roteamento dinâmico e aprende rotas entre sites conectados usando conexões VPN site a site automaticamente. Se sua organização tiver vários sites que estão conectados por meio de roteadores BGP habilitado, como o Gateway de RAS, o BGP permite que os roteadores calcular automaticamente e usar as rotas válidas entre si em caso de interrupção de rede ou a falha. Para obter mais informações, consulte [4271 RFC](https://tools.ietf.org/html/rfc4271).  
   
 -   **Conversão de endereço (NAT) de rede**. Conversão de endereços de rede (NAT) permite que você compartilhe uma conexão à Internet pública por meio de uma única interface com um único endereço IP público. Os computadores na rede privada usam endereços privados e não roteável. NAT mapeia os endereços privados para o endereço público. Esse recurso de Gateway de RAS permite que os funcionários da organização com implantações de único locatário acessar recursos da Internet por trás do gateway. Para os CSPs, esse recurso permite que aplicativos que estão em execução em VMs para acessar a Internet do locatário. Por exemplo, um VM que está configurado como um servidor Web de locatário pode contatar os recursos financeiros externos para processar transações de cartão de crédito.  
 
@@ -124,11 +124,11 @@ A seguir estão os cenários de implantação recomendada para o Gateway de RAS.
 ## <a name="bkmk_manage"></a>Ferramentas de gerenciamento de Gateway RAS  
 A seguir estão as ferramentas de gerenciamento para o Gateway de RAS.  
   
--   No Windows Server 2016, para implantar um roteador de Gateway de RAS, você deve usar comandos do Windows PowerShell. Para obter mais informações, consulte [Cmdlets de acesso remoto](https://technet.microsoft.com/library/hh918399.aspx) para Windows Server 2016 e Windows 10.  
+-   No Windows Server 2016, para implantar um roteador de Gateway de RAS, você deve usar comandos do Windows PowerShell. Para obter mais informações, consulte [Cmdlets de acesso remoto](https://docs.microsoft.com/powershell/module/remoteaccess) para Windows Server 2016 e Windows 10.  
   
--   No System Center 2012 R2 Virtual Machine Manager (VMM), o Gateway de RAS é chamado de Gateway do Windows Server. Um conjunto limitado de opções de configuração do Border Gateway Protocol (BGP) estão disponíveis na interface de software do VMM, incluindo **endereço IP do BGP Local** e **números de sistema autônomo (ASN)**,  **Lista de endereços de IP de par de BGP**, e **valores ASN**. No entanto, você pode usar os comandos BGP do Windows PowerShell de Acesso Remoto para configurar todos os outros recursos do Gateway do Windows Server. Para obter mais informações, consulte [Virtual Machine Manager (VMM)](https://technet.microsoft.com/system-center-docs/vmm/vmm) e [Cmdlets de acesso remoto](https://technet.microsoft.com/library/hh918399.aspx) para Windows Server 2016 e Windows 10.  
+-   No System Center 2012 R2 Virtual Machine Manager (VMM), o Gateway de RAS é chamado de Gateway do Windows Server. Um conjunto limitado de opções de configuração do Border Gateway Protocol (BGP) estão disponíveis na interface de software do VMM, incluindo **endereço IP do BGP Local** e **números de sistema autônomo (ASN)** ,  **Lista de endereços de IP de par de BGP**, e **valores ASN**. No entanto, você pode usar os comandos BGP do Windows PowerShell de Acesso Remoto para configurar todos os outros recursos do Gateway do Windows Server. Para obter mais informações, consulte [Virtual Machine Manager (VMM)](https://technet.microsoft.com/system-center-docs/vmm/vmm) e [Cmdlets de acesso remoto](https://technet.microsoft.com/library/hh918399.aspx) para Windows Server 2016 e Windows 10.  
   
 ## <a name="related-topics"></a>Tópicos relacionados
 - [Alta disponibilidade do Gateway RAS](../../../networking/sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)  
 - [Túnel de GRE no Windows Server](gre-tunneling-windows-server.md)
-- [Desempenho e taxa de transferência túnel GRE de Gateway RAS](RAS-Gateway-GRE-Perf.md)
+- [Desempenho e taxa de transferência do túnel de GRE do Gateway de RAS](RAS-Gateway-GRE-Perf.md)

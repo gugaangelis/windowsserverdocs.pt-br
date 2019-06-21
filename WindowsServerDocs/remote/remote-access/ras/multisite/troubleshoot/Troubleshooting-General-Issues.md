@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 354ae5e3-bae1-44f9-afd7-7eaba70f2346
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fe1fdc4fb5aff2e34555b08d3b2c4347e643085e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 87614ac3b83eaacefb4ac5f9fddef238ed500953
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831077"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282550"
 ---
 # <a name="troubleshooting-general-issues"></a>Solução de problemas gerais
 
@@ -44,7 +43,7 @@ Como alternativa, use os cmdlets de configuração em vez de usar o console de g
 > [!NOTE]  
 > Esse cenário não ocorre quando o GPO do servidor do ponto de entrada atual não está disponível.  
   
-Você pode usar o `Get-DAEntryPointDC` cmdlet para listar todos os controladores de domínio que armazenam os GPOs de servidor e `Get-DAMultiSite` em conjunto com `Get-RemoteAccess` para recuperar uma lista completa dos GPOs de servidor na implantação. Por exemplo:   
+Você pode usar o `Get-DAEntryPointDC` cmdlet para listar todos os controladores de domínio que armazenam os GPOs de servidor e `Get-DAMultiSite` em conjunto com `Get-RemoteAccess` para recuperar uma lista completa dos GPOs de servidor na implantação. Por exemplo:  
   
 ```  
 $ServerGpos = Get-DAEntryPointDC | ForEach-Object {   

@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7ddcb162-dd92-406c-acab-d3de7239c644
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 8c21b7fa62246170caeb07cb5865c1ff311e0f09
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c82d5e48f26d9defceb3b7583e06eeedbc71a082
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848747"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281658"
 ---
 # <a name="step-2-plan-the-basic-directaccess-deployment"></a>Etapa 2 planejar a implantação básica do DirectAccess
 
@@ -63,7 +62,7 @@ Há uma série de decisões a serem tomadas ao planejar a implantação de seu s
   
 ## <a name="BKMK_Links"></a>Etapa anterior  
   
--   [Etapa 1: Planejar a infraestrutura básica do DirectAccess](da-basic-plan-s1-infrastructure.md)  
+-   [Etapa 1: Planejar a infraestrutura do DirectAccess Básico](da-basic-plan-s1-infrastructure.md)  
   
 
 

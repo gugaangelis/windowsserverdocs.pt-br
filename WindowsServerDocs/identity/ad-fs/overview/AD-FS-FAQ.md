@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f3f84a5c18589d38606825ee064cfb729003a05d
-ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
+ms.openlocfilehash: fc92e8b30d6b4c0c765333d3e22311e551d3365d
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66719689"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280488"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>Perguntas frequentes (FAQ) do AD FS
 
@@ -138,9 +138,9 @@ Com o AD FS no servidor de 2019, você agora pode passar o valor do recurso inse
 AD FS no servidor de 2019 dá suporte a chave de prova para código de câmbio (PKCE) para o fluxo de concessão de código de autorização do OAuth
 
 ### <a name="what-permitted-scopes-are-supported-by-ad-fs"></a>Quais escopos permitidos são suportados pelo AD FS?
-- aza - se usando [extensões do protocolo OAuth 2.0 para clientes de Broker](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) e se o parâmetro de escopo contém o escopo "aza", o servidor emite um novo token de atualização primários e define-o no campo refresh_token da resposta, bem como a configuração o campo refresh_token_expires_in ao tempo de vida do token de atualização primários novos se um é imposto.
+- aza - se usando [extensões do protocolo OAuth 2.0 para clientes de Broker](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) e se o parâmetro de escopo contém o escopo "aza", o servidor emite um novo token de atualização primários e define-o no campo refresh_token da resposta, bem como a configuração o campo refresh_token_expires_in ao tempo de vida do token de atualização primários novos se um é imposto.
 - OpenID - permite que o aplicativo solicitar o uso do protocolo de autorização do OpenID Connect.
-- logon_cert - logon_cert escopo permite que um aplicativo para solicitar certificados de logon, que pode ser usado ao fazer logon interativamente a usuários autenticados. Servidor do AD FS omite o parâmetro access_token da resposta e em vez disso, fornece uma cadeia de certificados CMS codificada em base64 ou uma resposta PKI completa CMC. Mais detalhes disponíveis [aqui](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e). 
+- logon_cert - logon_cert escopo permite que um aplicativo para solicitar certificados de logon, que pode ser usado ao fazer logon interativamente a usuários autenticados. Servidor do AD FS omite o parâmetro access_token da resposta e em vez disso, fornece uma cadeia de certificados CMS codificada em base64 ou uma resposta PKI completa CMC. Mais detalhes disponíveis [aqui](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e). 
 - user_impersonation - o escopo user_impersonation é necessário para solicitar com êxito um token de acesso em nome do AD FS. Para obter detalhes sobre como usar este escopo, consulte [compilar um aplicativo de várias camadas usando em nome (OBO) usando o OAuth com o AD FS 2016](../../ad-fs/development/ad-fs-on-behalf-of-authentication-in-windows-server.md).
 - vpn_cert - vpn_cert escopo permite que um aplicativo para solicitar certificados de VPN, o que pode ser usado para estabelecer conexões de VPN usando a autenticação EAP-TLS. Isso não é tem mais suporte.
 - email – permite que o aplicativo solicitar a declaração de email para o usuário conectado. Isso não é tem mais suporte. 

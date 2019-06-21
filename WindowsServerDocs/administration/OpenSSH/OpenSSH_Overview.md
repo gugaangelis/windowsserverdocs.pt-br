@@ -5,12 +5,12 @@ author: maertendMSFT
 keywords: OpenSSH, SSH, Win32-OpenSSH
 title: OpenSSH no Windows
 ms.product: w10
-ms.openlocfilehash: 68ced1ff133495d7658e486e7e72321e18857b21
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c6563fbe4fe69acad4d295a3f7fe166e92d38444
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843357"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280058"
 ---
 # <a name="openssh-in-windows"></a>OpenSSH no Windows
 
@@ -32,5 +32,5 @@ Documentação nesta seção se concentra em como o OpenSSH é usado no Windows,
 
 Mais documentação detalhada de recursos comuns do OpenSSH está disponível online no [OpenSSH.com](https://www.openssh.com/manual.html). 
 
-O mestre [projeto de software livre do OpenSSH](https://www.openssh.com) é gerenciada pelos desenvolvedores no projeto OpenBSD. A bifurcação Microsoft deste projeto está em [Github](https://github.com/PowerShell/openssh-portable).
-Comentários sobre o Windows OpenSSH é bem-vinda e pode ser fornecido com a criação de problemas do Github em nosso [repositório Github do OpenSSH](https://github.com/PowerShell/openssh-portable). 
+O mestre [projeto de software livre do OpenSSH](https://www.openssh.com) é gerenciada pelos desenvolvedores no projeto OpenBSD. A bifurcação Microsoft deste projeto está em [GitHub](https://github.com/PowerShell/openssh-portable).
+Comentários sobre o Windows OpenSSH é bem-vinda e pode ser fornecido com a criação de problemas do GitHub em nosso [repositório GitHub do OpenSSH](https://github.com/PowerShell/openssh-portable). 

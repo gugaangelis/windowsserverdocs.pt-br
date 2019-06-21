@@ -11,12 +11,12 @@ ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
 author: shirgall
 ms.author: kathydav
 ms.date: 3/1/2019
-ms.openlocfilehash: 190a5e5d32140d6fa688bb9de98d05ec2f9783c3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a24e2b1a1d79d52c1cc16f9e7c1b253d9b477aae
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838677"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284448"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>Práticas recomendadas para executar o Linux no Hyper-V
 
@@ -45,7 +45,7 @@ PS > New-VHD -Path C:\MyVHDs\test.vhdx -SizeBytes 127GB -Dynamic -BlockSizeBytes
 
 ## <a name="grub-menu-timeout-on-generation-2-virtual-machines"></a>Tempo limite do Menu GRUB em máquinas virtuais de geração 2
 
-Devido ao hardware herdado que está sendo removido da emulação em máquinas virtuais de geração 2, o temporizador de contagem regressiva de menu grub contagem regressiva muito rapidamente para o menu grub a serem exibidos, carregando imediatamente a entrada padrão. Até que o grub é fixo para usar o timer de suporte para EFI, modifique **/boot/grub/grub.conf.**, /**padrão/etc/grub**, ou equivalente a ter "tempo limite = 100000" em vez do padrão "tempo limite = 5".
+Devido ao hardware herdado que está sendo removido da emulação em máquinas virtuais de geração 2, o temporizador de contagem regressiva de menu grub contagem regressiva muito rapidamente para o menu grub a serem exibidos, carregando imediatamente a entrada padrão. Até que o grub é fixo para usar o timer de suporte para EFI, modifique **/boot/grub/grub.conf.** , /**padrão/etc/grub**, ou equivalente a ter "tempo limite = 100000" em vez do padrão "tempo limite = 5".
 
 ## <a name="pxe-boot-on-generation-2-virtual-machines"></a>Inicialização de PxE em máquinas virtuais de geração 2
 
@@ -102,6 +102,6 @@ Depois de redimensionar um VHD ou VHDX, os administradores devem usar um utilit�
 
 * [Implantar um Cluster do Hyper-V](https://technet.microsoft.com/library/jj863389.aspx)
 
-* [Criar imagens do Linux para o Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/create-upload-generic)
+* [Criar imagens do Linux para o Azure](https://docs.microsoft.com/azure/virtual-machines/linux/create-upload-generic)
 
-* [Otimizar sua VM Linux no Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/optimization)
+* [Otimizar sua VM Linux no Azure](https://docs.microsoft.com/azure/virtual-machines/linux/optimization)

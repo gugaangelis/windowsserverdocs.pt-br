@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ''
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ab2b0731a5673e14fb130d539324701a336f30ac
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 853788f20c452391c802f0681fa23978b4892c6a
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863627"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281227"
 ---
 # <a name="deploy-remote-access-in-a-cluster"></a>Implantar o acesso remoto em um cluster
 
@@ -114,7 +113,7 @@ Os problemas a seguir são conhecidos quando se configura um cenário de cluster
 
     3.  Tente habilitar o balanceamento de carga até a etapa em que ocorre a falha. Na caixa de diálogo Habilitar balanceamento de carga, expanda a área de detalhes, à direita\-clique na área de detalhes e, em seguida, clique em **copiar Script**.  
 
-    4.  Abra o Bloco de Notas e cole o conteúdo da área de transferência. Por exemplo:   
+    4.  Abra o Bloco de Notas e cole o conteúdo da área de transferência. Por exemplo:  
 
         ```  
         Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress @('10.244.4.19 /255.255.255.0','fdc4:29bd:abde:3333::2/128') -InternetVirtualIPAddress @('fdc4:29bd:abde:3333::1/128', '10.244.4.21 /255.255.255.0') -ComputerName 'DA1.domain1.corp.contoso.com' -Verbose  

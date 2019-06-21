@@ -8,12 +8,12 @@ ms.date: 03/06/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage-spaces
-ms.openlocfilehash: 9db92aa33cde9b2beed11149dae06bb3af2b5a03
-ms.sourcegitcommit: fe621b72d45d0259bac1d5b9031deed3dcbed29d
+ms.openlocfilehash: 54be649cc1753fe07c94105a31a0b738fb030ee0
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66455415"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284359"
 ---
 # <a name="upgrade-a-storage-spaces-direct-cluster-to-windows-server-2019"></a>Atualizar um cluster de espaços de armazenamento diretos para o Windows Server 2019
 
@@ -84,7 +84,7 @@ Essa opção resulta em nenhum tempo de inatividade da VM, mas você precisará 
        Enable-StorageMaintenanceMode
        ```
 
-   4. Execute o seguinte cmdlet para verificar se que o **OperationalStatus** valor estiver **no modo de manutenção**:
+   4. Execute o seguinte cmdlet para verificar que o **OperationalStatus** valor estiver **no modo de manutenção**:
 
        ```PowerShell
        Get-PhysicalDisk
@@ -176,7 +176,7 @@ Essa opção resulta em nenhum tempo de inatividade da VM, mas você precisará 
        Enable-StorageMaintenanceMode
        ```
 
-   4. Execute o seguinte cmdlet para verificar se que o **OperationalStatus** valor estiver **no modo de manutenção**:
+   4. Execute o seguinte cmdlet para verificar que o **OperationalStatus** valor estiver **no modo de manutenção**:
 
        ```PowerShell
        Get-PhysicalDisk
@@ -271,7 +271,7 @@ Essa opção resulta em tempo de inatividade da VM, mas pode levar menos tempo d
        Enable-StorageMaintenanceMode
        ```
 
-   3. Execute o seguinte cmdlet para verificar se que o **OperationalStatus** valor estiver **no modo de manutenção**:
+   3. Execute o seguinte cmdlet para verificar que o **OperationalStatus** valor estiver **no modo de manutenção**:
 
        ```PowerShell
        Get-PhysicalDisk
@@ -359,7 +359,7 @@ Essa opção resulta em tempo de inatividade da VM, mas pode levar menos tempo d
       Enable-StorageMaintenanceMode
       ```
 
-   4. Execute o seguinte cmdlet para verificar se que o **OperationalStatus** valor estiver **no modo de manutenção**:
+   4. Execute o seguinte cmdlet para verificar que o **OperationalStatus** valor estiver **no modo de manutenção**:
 
       ```PowerShell
       Get-PhysicalDisk

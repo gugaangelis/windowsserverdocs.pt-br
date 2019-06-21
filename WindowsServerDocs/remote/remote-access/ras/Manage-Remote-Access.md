@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1459819a-b1b6-4800-8770-4a85d02c7a2b
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b992f302378c103b242537c97e5d4b41e382b9cd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3b2c251f99be455ec11e3ea3ef25ca14c8399de2
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876227"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282976"
 ---
 # <a name="manage-remote-access"></a>Gerenciar Acesso Remoto
 
@@ -31,8 +30,8 @@ Windows Server 2016 e Windows Server 2012 combinam o DirectAccess e o roteamento
 > [!NOTE]  
 > Além deste tópico, estão disponíveis os seguintes tópicos de gerenciamento de acesso remoto.  
 >   
-> -   [Usar monitoramento e contabilidade de acesso remoto](monitoring-and-accounting/Use-Remote-Access-Monitoring-and-Accounting.md)  
-> -   [Gerenciar clientes DirectAccess remotamente](manage-remote-clients/Manage-DirectAccess-Clients-Remotely.md)  
+> -   [Usar o monitoramento e contabilização do acesso remoto](monitoring-and-accounting/Use-Remote-Access-Monitoring-and-Accounting.md)  
+> -   [Gerenciar clientes do DirectAccess remotamente](manage-remote-clients/Manage-DirectAccess-Clients-Remotely.md)  
   
 ## <a name="BKMK_OVER"></a>Descrição do cenário  
 Os computadores cliente DirectAccess estão conectados à intranet sempre que estiverem conectados à Internet, independentemente de se o usuário efetuou logon no computador. Eles podem ser gerenciados como recursos de intranet e mantidos atualizados com alterações à Política de Grupo, atualizações do sistema operacional, atualizações de antimalware e outras alterações organizacionais.  

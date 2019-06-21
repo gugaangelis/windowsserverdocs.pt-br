@@ -10,12 +10,12 @@ ms.assetid: eea9e996-bfec-4065-b70b-d8f66e7134ac
 author: KBDAzure
 ms.author: kathydav
 ms.date: 10/10/2016
-ms.openlocfilehash: 04066c5b645c0be641c2ba76fadac032d5a91420
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b8dcf23946d99509aafba0f8af58bf633bedd069
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843207"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280232"
 ---
 # <a name="set-up-hyper-v-replica"></a>Configurar a Réplica do Hyper-V
 
@@ -27,7 +27,7 @@ A Réplica do Hyper-V é uma parte integrante da função do Hyper-V. Ele contri
 
 -   **Replicação e controle de alterações**: Quando você habilita a réplica do Hyper-V para uma máquina virtual específica, a replicação inicial cria uma máquina virtual de réplica idêntico em um servidor de host secundário. Depois que isso acontece, o controle de alterações de réplica do Hyper-V cria e mantém um arquivo de log que captura alterações em um VHD de máquina virtual. O arquivo de log é reproduzido na ordem inversa para a réplica de que VHD com base nas configurações de frequência de replicação. Isso significa que as alterações mais recentes são armazenadas e replicadas de forma assíncrona. A replicação pode ser via HTTP ou HTTPS.  
 
--   **Estendidos de replicação (encadeada)**: Isso lhe permite replicar uma máquina virtual de um host primário para um host secundário e replicar o secundário de host para hospedar um terceiro. Observe que você não pode replicar do host primário diretamente para o segundo e o terceiro.  
+-   **Estendidos de replicação (encadeada)** : Isso lhe permite replicar uma máquina virtual de um host primário para um host secundário e replicar o secundário de host para hospedar um terceiro. Observe que você não pode replicar do host primário diretamente para o segundo e o terceiro.  
 
     Esse recurso torna mais robusta para recuperação de desastres réplica do Hyper-V, pois se ocorrer uma interrupção permite a recuperação da réplica primária e estendida.  Você pode fazer failover para a réplica estendida se os locais primários e secundários ficam inativos. Observe que a réplica estendida não dá suporte a replicação consistente com o aplicativo e deve usar os mesmos VHDs que a réplica secundária está usando.  
 
@@ -80,7 +80,7 @@ Para permitir a replicação entre os servidores primários e secundários, o tr
 
     1. Abra o Firewall do Windows com segurança avançada e clique em **regras de entrada**.  
 
-    2. Para habilitar a autenticação HTTP (Kerberos), clique com botão direito **ouvinte HTTP da réplica do Hyper-V (TCP-In)** >**Habilitar regra.** Para habilitar a autenticação baseada em certificado HTTPS, clique com botão direito **Ouvinte HTTPS da réplica do Hyper-V (TCP-In)** > eletrônico**Habilitar regra**.  
+    2. Para habilitar a autenticação HTTP (Kerberos), clique com botão direito **ouvinte HTTP da réplica do Hyper-V (TCP-In)**  >**Habilitar regra.** Para habilitar a autenticação baseada em certificado HTTPS, clique com botão direito **Ouvinte HTTPS da réplica do Hyper-V (TCP-In)** > eletrônico**Habilitar regra**.  
 
 -  Para habilitar as regras em um cluster do Hyper-V, abra uma sessão do Windows PowerShell usando **executar como administrador**, em seguida, execute um destes comandos:  
 
@@ -110,14 +110,14 @@ Faça o seguinte em cada máquina virtual que você deseja replicar:
 
     Se você fizer a replicação offline será de transporte a cópia inicial para o servidor secundário, usando uma mídia de armazenamento externo, como um disco rígido ou unidade USB. Para fazer isso, que você precisará conectar o externo armazenamento para o servidor primário (ou em um cluster de nó do proprietário) e, em seguida, quando você seleciona enviam cópia inicial usando a mídia externa, que você pode especificar um local localmente ou em sua mídia externa em que a cópia inicial pode ser armazenada.  Uma máquina virtual do espaço reservado é criada no site de réplica. Após a conclusão de replicação inicial de armazenamento externo pode ser enviado ao site de réplica. Lá, você conectará a mídia externa para o servidor secundário ou para o nó do proprietário do cluster secundário. Em seguida, você vai importar a réplica inicial para um local especificado e mesclá-lo para a máquina virtual de espaço reservado.  
 
-9. Sobre o **Concluindo habilitar replicação** página, examine as informações no resumo e, em seguida, clique em **concluir.**. Os dados da máquina virtual serão transferidos de acordo com as configurações escolhidas. e uma caixa de diálogo é exibida indicando que a replicação foi habilitada com êxito.  
+9. Sobre o **Concluindo habilitar replicação** página, examine as informações no resumo e, em seguida, clique em **concluir.** . Os dados da máquina virtual serão transferidos de acordo com as configurações escolhidas. e uma caixa de diálogo é exibida indicando que a replicação foi habilitada com êxito.  
 
 10. Se você quiser configurar a replicação estendida (encadeada), abra o servidor de réplica e a máquina virtual que você deseja replicar com o botão direito. Clique em **replicação** > **replicação estendida** e especifique as configurações de replicação.  
 
 ## <a name="run-a-failover"></a>Executar um failover  
 Depois de concluir essas etapas de implantação a seu ambiente replicado está em execução. Agora você pode executar failovers conforme necessário.  
 
-**Failover de teste**:  Se você quiser executar a máquina virtual primária de um failover de teste de clique com botão direito e selecione **replicação** > **Failover de teste**. Escolha o ponto de recuperação mais recente ou, se configurado. Uma nova máquina virtual de teste será criada e iniciada no site secundário. Depois de concluir o teste, selecione **parar Failover de teste** na máquina de virtual de réplica para limpar. Observe que para uma máquina virtual que você só pode executar um failover de teste por vez. [Leia mais](https://blogs.technet.com/b/virtualization/archive/2012/07/26/types-of-failover-operations-in-hyper-v-replica.aspx).  
+**Failover de teste**:  Se você quiser executar a máquina virtual primária de um failover de teste de clique com botão direito e selecione **replicação** > **Failover de teste**. Escolha o ponto de recuperação mais recente ou, se configurado. Uma nova máquina virtual de teste será criada e iniciada no site secundário. Depois de concluir o teste, selecione **parar Failover de teste** na máquina de virtual de réplica para limpá-los. Observe que para uma máquina virtual que você só pode executar um failover de teste por vez. [Leia mais](https://blogs.technet.com/b/virtualization/archive/2012/07/26/types-of-failover-operations-in-hyper-v-replica.aspx).  
 
 **Failover planejado**: Para executar o botão direito do mouse um failover planejado da máquina virtual primária e selecione **replicação** > **Failover planejado**. Failover planejado executa verificações de pré-requisitos para garantir que a perda de dados. Ele verifica se a máquina virtual primária está desligada antes de iniciar o failover. Após o failover da máquina virtual, ele começa a replicar as alterações de volta para o site primário quando ele estiver disponível. Observe que, para este trabalho de servidor primário, deve ser configurado para replicação recebida do servidor secundário ou do agente de réplica do Hyper-V no caso de um cluster primário. Planejado envios de failover, o último conjunto de alterações controladas. [Leia mais](https://blogs.technet.com/b/virtualization/archive/2012/07/31/types-of-failover-operations-in-hyper-v-replica-part-ii-planned-failover.aspx).  
 

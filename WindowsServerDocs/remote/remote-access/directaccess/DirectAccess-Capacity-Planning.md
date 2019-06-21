@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 456e5971-3aa7-4a24-bc5d-0c21fec7687e
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 37fd165b5a943be15eda007bf22c3081e27b799a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d6f0f4a089dd8e99bb9f9815f0900a3c53c9d1ba
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843617"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281992"
 ---
 # <a name="directaccess-capacity-planning"></a>Planejamento da capacidade do DirectAccess
 
@@ -38,7 +37,7 @@ A tabela a seguir mostra os resultados do ambiente de teste de desempenho de har
 ||||  
 |-|-|-|  
 |Configuração - Hardware|Hardware de baixa gama (4 GB de RAM, 4 núcleos)|Hardware de alta gama (8 GB, 8 núcleos)|  
-|Túnel Duplo<br /><br />– A PKI<br /><br />-Incluindo dns64/nat64|750 conexões simultâneas a 50% da CPU, 50% da Memória com produtividade da Corpnet NIC de 75 Mbps. O destino de ampliação é 1000 usuários a 50% da CPU.|1.500 conexões simultâneas a 50% da CPU, 50% a memória com produtividade da Corpnet NIC 150 Mbps.|  
+|Túnel Duplo<br /><br />– A PKI<br /><br />-Incluindo dns64/nat64|750 conexões simultâneas a 50% da CPU, 50% da Memória com produtividade da Corpnet NIC de 75 Mbps. O destino de ampliação é 1000 usuários a 50% da CPU.|1\.500 conexões simultâneas a 50% da CPU, 50% a memória com produtividade da Corpnet NIC 150 Mbps.|  
 ## <a name="test-environment"></a>Ambiente de Teste
 
 **Topologia de banco de Perf**  

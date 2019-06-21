@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64c10107-cb03-41f3-92c6-ac249966f574
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 771df80fc3130b5c4c03bf628a95d67b7df04b36
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a2655f4de83576ef62b113419a69badaacc868f9
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888197"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281003"
 ---
 # <a name="step-2-plan-the-multisite-infrastructure"></a>Etapa 2 de plano a infraestrutura de multissite
 
@@ -64,7 +63,7 @@ Grupos de segurança necessários são da seguinte maneira:
   
 -   Um grupo de segurança para todos os computadores de cliente do Windows 8. É recomendável criar um grupo de segurança exclusivos para esses clientes para cada domínio.  
   
--   Um grupo de segurança exclusivo que contém os computadores de cliente do Windows 7 para cada ponto de entrada. É recomendável criar um grupo exclusivo para cada domínio. Por exemplo: Domain1\DA_Clients_Europe; Domain2\DA_Clients_Europe; Domain1\DA_Clients_US; Domain2\DA_Clients_US.  
+-   Um grupo de segurança exclusivo que contém os computadores de cliente do Windows 7 para cada ponto de entrada. É recomendável criar um grupo exclusivo para cada domínio. Por exemplo:  Domain1\DA_Clients_Europe; Domain2\DA_Clients_Europe; Domain1\DA_Clients_US; Domain2\DA_Clients_US.  
   
 ## <a name="bkmk_2_3_GPO"></a>2.3 objetos de diretiva de grupo do plano  
 Configurações do DirectAccess configuradas durante a implantação do acesso remoto são coletadas nos GPOs. Sua implantação de servidor único já usa GPOs para clientes do DirectAccess, o servidor de acesso remoto e, opcionalmente, para servidores de aplicativos. Uma implantação multissite requer os seguintes GPOs:  

@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e834c50965c3af569dbe3756d677ec4cb2372542
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c1153cd81185dcfe83d291161a85481e5a7d0700
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883917"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280545"
 ---
 # <a name="managing-ssltls-protocols-and-cipher-suites-for-ad-fs"></a>Gerenciando conjuntos de codificação e de protocolos SSL/TLS para o AD FS
 A documentação a seguir fornece informações sobre como desabilitar e habilitar determinados protocolos TLS/SSL e cipher suites usados pelo AD FS
@@ -256,7 +256,7 @@ Você pode desabilitar certas codificações específicas removendo-os do HKEY_L
 
 Para habilitar um conjunto de codificação, adicione seu valor de cadeia de caracteres para a chave do valor de cadeia de caracteres múltipla de funções.  Por exemplo, se quisermos ativar TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P521, em seguida, podemos seria adicioná-lo à cadeia de caracteres.
 
-Para obter uma lista completa de criptografia com suporte consulte conjuntos [conjuntos de codificação no TLS/SSL (Schannel SSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa374757.aspx).  Este documento fornece uma tabela de conjuntos que são habilitadas por padrão e aqueles que têm suporte, mas não habilitado por padrão.  Para priorizar os conjuntos de codificação, consulte [priorizando pacotes de criptografia do Schannel](https://msdn.microsoft.com/en-us/library/windows/desktop/bb870930.aspx).
+Para obter uma lista completa de criptografia com suporte consulte conjuntos [conjuntos de codificação no TLS/SSL (Schannel SSP)](https://msdn.microsoft.com/library/windows/desktop/aa374757.aspx).  Este documento fornece uma tabela de conjuntos que são habilitadas por padrão e aqueles que têm suporte, mas não habilitado por padrão.  Para priorizar os conjuntos de codificação, consulte [priorizando pacotes de criptografia do Schannel](https://msdn.microsoft.com/library/windows/desktop/bb870930.aspx).
 
 ## <a name="enabling-strong-authentication-for-net-applications"></a>Habilitar a autenticação forte para aplicativos .NET
 Os aplicativos do .NET Framework 3.5/4.0/4.5.x podem alternar o protocolo padrão para TLS 1.2, permitindo que a chave do registro SchUseStrongCrypto.  Essa chave do registro forçará a aplicativos .NET para usar o TLS 1.2.
@@ -280,7 +280,7 @@ Para o .NET Framework 4.0/4.5 use a seguinte chave do registro: HKEY_LOCAL_MACHI
 
 ## <a name="additional-information"></a>Informações adicionais
 
-- [Conjuntos de codificação no TLS/SSL (Schannel SSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa374757.aspx)
-- [Pacotes de criptografia TLS no Windows 8.1](https://msdn.microsoft.com/en-us/library/windows/desktop/mt767781.aspx)
-- [Priorizando os conjuntos de criptografia do Schannel](https://msdn.microsoft.com/en-us/library/windows/desktop/bb870930.aspx)
+- [Conjuntos de codificação no TLS/SSL (Schannel SSP)](https://msdn.microsoft.com/library/windows/desktop/aa374757.aspx)
+- [Pacotes de criptografia TLS no Windows 8.1](https://msdn.microsoft.com/library/windows/desktop/mt767781.aspx)
+- [Priorizando os conjuntos de criptografia do Schannel](https://msdn.microsoft.com/library/windows/desktop/bb870930.aspx)
 - [Falando em codificações e outros tongues enigmático](https://blogs.technet.microsoft.com/askds/2015/12/08/speaking-in-ciphers-and-other-enigmatic-tonguesupdate/)

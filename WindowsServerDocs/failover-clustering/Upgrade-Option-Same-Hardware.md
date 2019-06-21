@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 02/28/2019
 description: Este artigo descreve como atualizar um Cluster de Failover de 2 nós usando o mesmo hardware
 ms.localizationpriority: medium
-ms.openlocfilehash: 77cde9e64fda385facd91d86483f4d7f749f30a1
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.openlocfilehash: 6787d852cc5075e306373a163814135190f27fd6
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66453055"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280240"
 ---
 # <a name="upgrading-failover-clusters-on-the-same-hardware"></a>Atualizando Clusters de Failover no mesmo hardware
 
@@ -25,7 +25,7 @@ Este guia descreve as etapas para atualizar os nós de cluster para o Windows Se
 
 ## <a name="overview"></a>Visão geral
 
-Atualização do sistema operacional em um failover existente cluster tem suporte apenas ao passar de Windows Server 2016 para Windows de 2019.  Se o cluster de failover estiver executando uma versão anterior, tal como o Windows Server 2012 R2 e versões anteriores, enquanto os serviços de cluster estão em execução de atualização não permitirá que unir nós.  Se usar o mesmo hardware, etapas podem ser executadas para obtê-lo para a versão mais recente.  
+Atualização do sistema operacional em um failover existente cluster tem suporte apenas ao passar de Windows Server 2016 para Windows de 2019.  Se o cluster de failover está em execução em uma versão anterior, como o Windows Server 2012 R2 e versões anteriores, atualizando enquanto os serviços de cluster estão em execução não permitirá que unir nós.  Se usar o mesmo hardware, etapas podem ser executadas para obtê-lo para a versão mais recente.  
 
 Antes de qualquer atualização do seu cluster de failover, consulte a [Centro de atualização do Windows](https://www.microsoft.com/upgradecenter).  Quando você atualiza um Windows Server no local, você move de uma versão de sistema operacional existente para uma versão mais recente, mantendo o mesmo hardware. Windows Server pode ser atualizado in-loco pelo menos um e, às vezes, duas versões para frente. Por exemplo, Windows Server 2012 R2 e Windows Server 2016 podem ser atualizados no local para o Windows Server 2019.  Além disso, tenha em mente que o [Assistente de migração de Cluster](https://blogs.msdn.microsoft.com/clustering/2012/06/25/how-to-move-highly-available-clustered-vms-to-windows-server-2012-with-the-cluster-migration-wizard/) pode ser usado, mas só há suporte para até duas versões de volta. O gráfico a seguir mostra os caminhos de atualização para o Windows Server. Setas apontando para baixo representam o caminho de atualização com suporte, movimentação de versões anteriores até 2019 do Windows Server.
 

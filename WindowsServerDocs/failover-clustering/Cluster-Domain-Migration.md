@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 01/18/2019
 description: Este artigo descreve a movimentação de um cluster do Windows Server 2019 de um domínio para outro
 ms.localizationpriority: medium
-ms.openlocfilehash: 1054de942e807f00586903683faeaf695ec2f033
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.openlocfilehash: 5d5aaa333d2e20fa25e4738e343f326d63f75c6b
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66452933"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280219"
 ---
 # <a name="failover-cluster-domain-migration"></a>Migração de domínio do Cluster de failover
 
@@ -61,7 +61,7 @@ A segunda opção é menos destrutiva, mas requer hardware adicional, como um no
 Como mostra a animação, essa opção não é destrutiva, mas exige um hardware diferente ou um nó do cluster existente que foi removido.
 
 1. Crie um novo clusterin o novo domínio ao mesmo tempo, o cluster antigo disponível.
-2. Use o [Assistente de migração de Cluster](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10)) para migrar todos os recursos para o novo cluster. Como lembrete, isso não copia dados, portanto, precisará ser feito separadamente.
+2. Use o [Assistente de migração de Cluster](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10)) para migrar todos os recursos para o novo cluster. Como lembrete, isso não copia dados, portanto, precisará ser feito separadamente.
 3. Encerrar ou destrua o cluster antigo.
 
 Em ambas as opções, o novo cluster precisaria ter todos os [aplicativos com reconhecimento de cluster](https://technet.microsoft.com/aa369082(v=vs.90)) instalado drivers atualizadas, e possivelmente testes para garantir que tudo serão executado corretamente.  Isso é um processo demorado se também precisam de dados a ser movido.

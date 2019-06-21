@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: 25ed17d964f12c2f497ccde443dad9f8bc253b20
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: 3c36eff8aabd1fa1c6456dce1d08ebe504102e8c
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034678"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284161"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>VMs blindadas para locatários – criando dados de blindagem para definir uma VM blindada
 
@@ -199,7 +199,7 @@ Execute o Assistente de arquivo de dados de blindagem para criar um arquivo de b
 Como uma alternativa para o Assistente de arquivo de dados de blindagem, você pode executar [New-ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/new-shieldingdatafile?view=win10-ps) para criar um arquivo de dados de blindagem.
 
 Todos os arquivos de dados de blindagem precisam ser configurado com o proprietário correto e os certificados de guardião para autorizar a suas VMs blindadas para ser executado em uma malha protegida.
-Você pode verificar se você tiver qualquer guardiões instalados localmente, executando [Get-HgsGuardian](https://docs.microsoft.com/en-us/powershell/module/hgsclient/get-hgsguardian?view=win10-ps). Guardiões proprietário têm chaves privadas ao guardiões para seu datacenter normalmente não.
+Você pode verificar se você tiver qualquer guardiões instalados localmente, executando [Get-HgsGuardian](https://docs.microsoft.com/powershell/module/hgsclient/get-hgsguardian?view=win10-ps). Guardiões proprietário têm chaves privadas ao guardiões para seu datacenter normalmente não.
 
 Se você precisar criar um guardião do proprietário, execute o seguinte comando:
 
@@ -238,7 +238,7 @@ O nome do disco e o certificado de assinatura devem corresponder exatamente para
 Você pode confiar em mais de um disco de modelo, fornecendo uma lista separada por vírgulas de volume qualificadores de ID para o `-VolumeIDQualifier` parâmetro.
 Por fim, se você tiver outros arquivos que precisam para acompanhar o arquivo de resposta com a VM, use o `-OtherFile` parâmetro e fornece uma lista separada por vírgulas de caminhos de arquivo.
 
-Consulte a documentação de cmdlet do [New-ShieldingDataFile](https://docs.microsoft.com/en-us/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps) e [New VolumeIDQualifier](https://docs.microsoft.com/en-us/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps) para saber mais sobre outras maneiras de configurar seu arquivo de dados de blindagem.
+Consulte a documentação de cmdlet do [New-ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps) e [New VolumeIDQualifier](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps) para saber mais sobre outras maneiras de configurar seu arquivo de dados de blindagem.
 
 ## <a name="see-also"></a>Consulte também
 

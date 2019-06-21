@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 92519b49-0df4-43c1-9717-f13570644212
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 454bc8dc5a9cbf8dc4e759196a13e7920de2eaf7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c794d4b8169c81c63162f119467f5f03d10ce756
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823517"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282650"
 ---
 # <a name="use-remote-access-monitoring-and-accounting"></a>Usar monitoramento e contabilidade de Acesso Remoto
 
@@ -35,8 +34,8 @@ O monitoramento de Acesso Remoto relata a atividade e o status do usuário remot
 > -   [Monitorar o status de distribuição de configuração de servidor de acesso remoto](Monitor-the-configuration-distribution-status-of-the-Remote-Access-server.md)  
 > -   [Monitorar o Status de operações do servidor de acesso remoto e seus componentes](Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components.md)  
 > -   [Identificar e resolver problemas de operações do servidor de acesso remoto](Identify-and-resolve-Remote-Access-server-operations-problems.md)  
-> -   [Monitorar clientes remotos conectados para a atividade e o status](Monitor-connected-remote-clients-for-activity-and-status.md)  
-> -   [Gerar um relatório de uso para clientes remotos usando dados históricos](Generate-a-usage-report-for-remote-clients-using-historical-data.md)  
+> -   [Monitorar a atividade e o status dos clientes remotos conectados](Monitor-connected-remote-clients-for-activity-and-status.md)  
+> -   [Gerar um relatório de uso para os clientes remotos usando dados históricos](Generate-a-usage-report-for-remote-clients-using-historical-data.md)  
 
 ## <a name="in-this-guide"></a>Neste guia  
 Este documento contém instruções para você aproveitar os recursos de monitoramento do Acesso Remoto usando o console de gerenciamento do DirectAccess e os cmdlets correspondentes do Windows PowerShell, que são fornecidos como parte da função de servidor de Acesso Remoto.  

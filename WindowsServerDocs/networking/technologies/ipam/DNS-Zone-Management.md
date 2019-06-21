@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ipam
+ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: de3dc14b-164a-49f1-8a57-b9e788046c23
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 188de3884a31e1da977257fde6c5f8be905891f2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 52df71dc3662d08704bd746b529201cf30cf9e58
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824887"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282161"
 ---
 # <a name="dns-zone-management"></a>Gerenciamento de zonas DNS
 
@@ -39,7 +38,7 @@ Quando você implanta o IPAM no Windows Server 2016, você pode usar o IPAM para
 No console do IPAM, você pode exibir os registros de recurso DNS para uma zona DNS específica e filtrar os registros com base no tipo, endereço IP, os dados de registro de recursos e outras opções de filtragem. Além disso, você pode editar os registros de recurso DNS para regiões específicas  
   
 ## <a name="see-also"></a>Consulte também  
-[Gerenciar o IPAM](Manage-IPAM.md)  
+[Gerenciar IPAM](Manage-IPAM.md)  
   
 
 

@@ -1,12 +1,12 @@
 ---
 title: Configurando o Kerberos para o endereço IP
 description: Suporte a Kerberos para SPNs baseado em IP
-ms.openlocfilehash: 30741f7a0f1978fcaa6ac83c98a54c07e1ef25c5
-ms.sourcegitcommit: c6acac3622e5d34714ca5c569805931681f98779
+ms.openlocfilehash: aa2685fcff2fdf231e5e5884d25885585f0bd6c9
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66391517"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67279966"
 ---
 # <a name="kerberos-clients-allow-ipv4-and-ipv6-address-hostnames-in-service-principal-names-spns"></a>Os clientes do Kerberos permitem nomes de host de endereço de IPv4 e IPv6 em nomes de entidade de serviço (SPNs)
 
@@ -30,7 +30,7 @@ Um nome de entidade de serviço é um identificador exclusivo usado durante a au
 
 Endereços IP não são normalmente usados no lugar de nomes de host como endereços IP costumam ser temporários. Isso pode levar a conflitos e falhas de autenticação, como as concessões de endereço expiraram e renovar. Portanto, registrar um SPN com base no endereço IP é um processo manual e só deve ser usado quando não é possível alternar para um nome de host com base em DNS.
 
-A abordagem recomendada é usar o [Setspn.exe](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc731241(v=ws.11)) ferramenta. Observe que um SPN só pode ser registrado para uma única conta no Active Directory por vez portanto é recomendável que os endereços IP têm concessões estáticas se o DHCP é usado.
+A abordagem recomendada é usar o [Setspn.exe](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc731241(v=ws.11)) ferramenta. Observe que um SPN só pode ser registrado para uma única conta no Active Directory por vez portanto é recomendável que os endereços IP têm concessões estáticas se o DHCP é usado.
 
 ```
 Setspn -s <service>/ip.address> <domain-user-account>  

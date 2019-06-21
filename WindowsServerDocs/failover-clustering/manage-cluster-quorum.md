@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 85b75d0039fec1b2ad9982d6ae9bf83fa8da2fdf
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: bf854418e9efb7dbb5bd07ba86f29d84ba54d68a
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66810991"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280383"
 ---
 # <a name="configure-and-manage-quorum"></a>Configurar e gerenciar o quorum
 
@@ -67,7 +67,7 @@ Como uma opção de configuração de quorum avançada, você pode escolher Atri
 
 Você pode desejar remover votos dos nós em determinadas configurações de recuperação de desastre. Por exemplo, em um cluster multissite, você pode remover votos dos nós em um site de backup de forma que aqueles nós não afetem os cálculos de quorum. Essa configuração é recomendada somente para failover manual nos sites. Para obter mais informações, consulte [Considerações de quorum para configurações de recuperação de desastre](#quorum-considerations-for-disaster-recovery-configurations) posteriormente neste tópico.
 
-O voto configurado de um nó pode ser verificado procurando a **NodeWeight** propriedade comum do nó de cluster usando o [Get-ClusterNode](http://technet.microsoft.com/library/hh847268.aspx)cmdlet do Windows PowerShell. Um valor de 0 indica que o nó não tem um voto de quorum configurado. Um valor de 1 indica que o voto de quorum do nó está atribuído e é gerenciado pelo cluster. Para obter mais informações sobre o gerenciamento de votos de nó, consulte [Gerenciamento dinâmico de quorum](#dynamic-quorum-management) posteriormente nesse tópico.
+O voto configurado de um nó pode ser verificado procurando a **NodeWeight** propriedade comum do nó de cluster usando o [Get-ClusterNode](https://technet.microsoft.com/library/hh847268.aspx)cmdlet do Windows PowerShell. Um valor de 0 indica que o nó não tem um voto de quorum configurado. Um valor de 1 indica que o voto de quorum do nó está atribuído e é gerenciado pelo cluster. Para obter mais informações sobre o gerenciamento de votos de nó, consulte [Gerenciamento dinâmico de quorum](#dynamic-quorum-management) posteriormente nesse tópico.
 
 A atribuição de voto para todos os nós de cluster pode ser verificada usando o teste de validação **Validar Quorum de Cluster** .
 
