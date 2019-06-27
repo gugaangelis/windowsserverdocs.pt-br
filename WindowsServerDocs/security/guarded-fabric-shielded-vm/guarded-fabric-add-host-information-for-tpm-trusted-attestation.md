@@ -7,13 +7,13 @@ ms.assetid: f0aa575b-b34e-4f6c-8416-ed3e398e0ad2
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 08/29/2018
-ms.openlocfilehash: 3647c9708ad68dec0ac13c85fced2b12150ccf60
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.date: 06/21/2019
+ms.openlocfilehash: 99be11bfec02924f93d9f759676e1eea364daa18
+ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447194"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67407633"
 ---
 >Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016
 
@@ -27,7 +27,7 @@ Para o modo TPM, o administrador de malha captura três tipos de informações d
 
 Depois de malha do administrador captura as informações, adicione-o à configuração do HGS, conforme descrito no procedimento a seguir.
 
-1.  Obtém os arquivos XML que contêm as informações de EKpub e copiá-los para um servidor HGS. Haverá um arquivo XML por host. Em seguida, em um console do Windows PowerShell com privilégios elevados em um servidor HGS, execute o comando a seguir. Repita o comando para cada um dos arquivos XML.
+1. Obtém os arquivos XML que contêm as informações de EKpub e copiá-los para um servidor HGS. Haverá um arquivo XML por host. Em seguida, em um console do Windows PowerShell com privilégios elevados em um servidor HGS, execute o comando a seguir. Repita o comando para cada um dos arquivos XML.
 
     ```powershell
     Add-HgsAttestationTpmHost -Path <Path><Filename>.xml -Name <HostName>
@@ -39,13 +39,17 @@ Depois de malha do administrador captura as informações, adicione-o à configu
     > Você pode verificar se um EKCert está ausente, abrindo o arquivo XML em um editor como o bloco de notas e verificando uma mensagem de erro que indica nenhuma EKCert foi encontrado.
     > Se esse for o caso e você confia que o TPM no seu computador é autêntico, você pode usar o `-Force` sinalizador para substituir essa verificação de segurança e adicionar o identificador do host ao HGS.
 
-2. Obter a política de integridade de código criado pelo administrador de malha para hosts, no formato binário (p7b). Copie-o para um servidor HGS. Em seguida, execute o comando a seguir.
+2. Obter a política de integridade de código criado pelo administrador de malha para hosts, no formato binário (\*. p7b). Copie-o para um servidor HGS. Em seguida, execute o comando a seguir.
 
     Para `<PolicyName>`, especifique um nome para a política de CI que descreve o tipo de host que ele se aplica ao. Uma prática recomendada é nomeá-lo após o marca/modelo do seu computador e qualquer configuração especial de software em execução nele.<br>Para `<Path>`, especifique o caminho e nome de arquivo de política de integridade de código.
 
     ```powershell
     Add-HgsAttestationCIPolicy -Path <Path> -Name '<PolicyName>'
     ```
+    
+    > [!NOTE]
+    > Se você estiver usando uma política de integridade de código assinado, registre uma cópia não assinada da política de mesma com HGS.
+    > A assinatura nas políticas de integridade de código é usada para controlar as atualizações para a política, mas não é medida no host do TPM e, portanto, não pode ser atestada por HGS.
 
 3. Obtenha o arquivo de TCGlog que o administrador de malha capturado de um host de referência. Copie o arquivo para um servidor HGS. Em seguida, execute o comando a seguir. Normalmente, será nomear a política após a classe de hardware, que ele representa (por exemplo, "Revisão de modelo do fabricante").
 

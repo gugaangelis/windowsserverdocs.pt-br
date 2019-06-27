@@ -8,12 +8,12 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: b479697366239144e5ca9d3486b84191eb51dc4d
-ms.sourcegitcommit: 078304c4b92bb57eb85ba29634afc92cc028c644
+ms.openlocfilehash: fbec7cd2b8312f03998cfb27b739d0866d3a47c5
+ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67301595"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67407662"
 ---
 # <a name="using-disk-cleanup-on-windows-server"></a>Usando a limpeza de disco no Windows Server
 
@@ -23,7 +23,7 @@ A ferramenta de limpeza de disco limpa arquivos desnecessários em um ambiente d
 
 Para iniciar a ferramenta de limpeza de disco, execute o comando Cleanmgr.exe ou selecione **inicie**, selecione **ferramentas administrativas do Windows**e, em seguida, selecione **limpeza de disco**.
 
-Você também pode executar a limpeza de disco usando o [cleanmgr comando Windows](../../administration/windows-commands/clean-mgr.md) e use opções de linha de comando para especificar que a limpeza de disco limpa determinados arquivos.
+Você também pode executar a limpeza de disco usando o [cleanmgr comando Windows](../../administration/windows-commands/cleanmgr.md) e use opções de linha de comando para especificar que a limpeza de disco limpa determinados arquivos.
 
 ## <a name="enable-disk-cleanup-on-an-earlier-version-of-windows-server-by-installing-the-desktop-experience"></a>Habilitar a limpeza de disco em uma versão anterior do Windows Server, instalando a experiência de área de trabalho
 
@@ -78,4 +78,4 @@ Para fazer com que o botão de limpeza de disco são exibidos na caixa de diálo
 
 [Libere espaço em disco no Windows 10](https://support.microsoft.com/en-us/help/12425/windows-10-free-up-drive-space)
 
-[cleanmgr](../../administration/windows-commands/clean-mgr.md)
+[cleanmgr](../../administration/windows-commands/cleanmgr.md)

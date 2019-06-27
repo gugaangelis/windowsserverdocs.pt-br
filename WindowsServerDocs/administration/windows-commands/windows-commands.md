@@ -1,24 +1,20 @@
 ---
 title: Comandos do Windows
 description: Comandos do Windows
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c703d07c-8227-4e86-94a6-8ef390f94cdc
-author: coreyp-at-msft
-ms.author: coreyp
+author: jasongerend
+ms.author: jgerend
 manager: dongill
-ms.date: 05/22/2018
+ms.date: 06/26/2019
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 861c8f35cf57fc7c8d03914dba2d971d50b66fc5
-ms.sourcegitcommit: 078304c4b92bb57eb85ba29634afc92cc028c644
+ms.openlocfilehash: d0cf58ea8d37efccf80ce262b64e604218bd8d0b
+ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67298172"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67407654"
 ---
 # <a name="windows-commands"></a>Comandos do Windows
 
@@ -54,7 +50,8 @@ Para obter informações sobre um comando específico, no menu de A-Z da seguint
 [X](#x) | Y | Z
 
 ## <a name="prerequisites"></a>Pré-requisitos
-As informações que estão contidas nesse PDF se aplica a:
+
+As informações contidas neste tópico se aplica a:
 
 -   Windows Server 2019
 -   Windows Server (canal semestral)
@@ -67,6 +64,7 @@ As informações que estão contidas nesse PDF se aplica a:
 -   Windows 8.1
 
 ### <a name="command-shell-overview"></a>Visão geral do shell de comando
+
 O shell de comando era o shell primeiro embutido no Windows para automatizar tarefas de rotina, como gerenciamento de conta de usuário ou backups noturnos, com arquivos em lotes (. bat). Com o Windows Script Host, você pode executar scripts mais sofisticados no shell de comando. Para obter mais informações, consulte [cscript](cscript.md) ou [wscript](wscript.md). Você pode executar operações com mais eficiência por meio de scripts que você pode, por meio da interface do usuário. Scripts de aceitam todos os comandos que estão disponíveis na linha de comando.
 
 Windows tem dois shells de comando: O shell de comando e [PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6). Cada shell é um programa de software que fornece comunicação direta entre você e o sistema operacional ou aplicativo, fornecendo um ambiente para automatizar operações de TI.
@@ -88,6 +86,7 @@ Para mais robusta e atualizada Windows automação, é recomendável usar o Powe
 > Para definir a **reg_DWOrd** valor, use o valor hexadecimal de um caractere de controle para uma função específica (por exemplo, **0 9** é o guia e **0 08** é Backspace). Configurações especificadas pelo usuário têm precedência sobre configurações de computador e opções de linha de comando têm precedência sobre as configurações do registro.
 
 ## <a name="command-line-reference-a-z"></a>Referência de linha de comando A-Z
+
 Para obter informações sobre um comando específico do Windows, no menu de A-Z da seguinte, clique na letra que o comando inicia com e, em seguida, clique no nome do comando.
 
 [UM](#a) |
@@ -225,7 +224,7 @@ Para obter informações sobre um comando específico do Windows, no menu de A-Z
 - [chkntfs](chkntfs.md)
 - [choice](choice.md)
 - [cipher](cipher.md)
-- [cleanmgr](clean-mgr.md)
+- [cleanmgr](cleanmgr.md)
 - [clip](clip.md)
 - [cls](cls.md)
 - [Cmd](Cmd.md)
