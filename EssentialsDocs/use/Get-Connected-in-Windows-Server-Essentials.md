@@ -483,7 +483,7 @@ ms.locfileid: "66435969"
     -    Windows 7 Professional (x86 e x64), Windows 7 Enterprise (x86 e x64), Windows 7 Ultimate (x86 e x64)  
 
 
--   O computador deve atender a todos os outros requisitos para computadores cliente no Windows Server Essentials. Para obter mais informações, consulte [Prerequisites for connecting a computer to the server](Get-Connected-in-Windows-Server-Essentials.md#BKMK_2).  
+-   O computador deve atender a todos os outros requisitos para computadores cliente no Windows Server Essentials. Para obter mais informações, consulte [pré-requisitos para conectar um computador ao servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_2).  
 
 
 -   Para habilitar uma conexão sem ingressar no domínio, você deve fazer logon no computador com uma conta que seja membro do grupo Administradores local.  
