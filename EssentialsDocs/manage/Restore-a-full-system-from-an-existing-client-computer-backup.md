@@ -145,7 +145,7 @@ ms.locfileid: "66433094"
   
      Para obter informações sobre como localizar os drivers do seu computador, consulte [Onde encontrar os drivers para meu hardware?](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_FindDrivers)  
   
--   Para o Windows Server Essentials: Se você não puder localizar o CD de restauração do Windows Server Essentials, você pode criar uma unidade de flash USB inicializável. Para obter mais informações, consulte [Create a bootable USB flash drive to restore a client computer](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_CreateBootable).  
+-   Para o Windows Server Essentials: Se você não puder localizar o CD de restauração do Windows Server Essentials, você pode criar uma unidade de flash USB inicializável. Para obter mais informações, consulte [criar uma unidade flash USB inicializável para restaurar um computador cliente](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_CreateBootable).  
   
 #### <a name="to-use-the-full-system-restore-wizard"></a>Para usar o Assistente de Restauração Completa do Sistema  
   

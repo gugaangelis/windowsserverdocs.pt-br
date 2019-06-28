@@ -72,7 +72,7 @@ Uma política de autenticação global se aplica a todas as terceiras partes con
 
 -   Definições e métodos para a MFA
 
--   Se a autenticação de dispositivo está habilitada. Para obter mais informações, consulte [Join to Workplace from Any Device for SSO and Seamless Second Factor Authentication Across Company Applications](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
+-   Se a autenticação de dispositivo está habilitada. Para obter mais informações, consulte [ingresse no local de trabalho de qualquer dispositivo para SSO e contínuo segundo fator de autenticação em aplicativos da empresa](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
 
 As políticas de autenticação por objeto de confiança da terceira parte confiável aplicam-se especificamente às tentativas de acessar esse objeto de confiança da terceira parte confiável (aplicativo ou serviço). É possível configurar as seguintes definições como parte da política de autenticação por objeto de confiança da terceira parte confiável:
 
