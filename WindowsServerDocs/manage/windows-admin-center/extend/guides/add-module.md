@@ -27,7 +27,7 @@ Se você ainda não fez isso, siga as instruções em desenvolver uma [ferrament
 
 ## <a name="use-the-angular-cli-to-create-a-module-and-component"></a>Usar a CLI do Angular para criar um módulo (e componente)
 
-Se você ainda não conhece a angulares, é altamente recomendável que você leia a documentação sobre o site Angular.Io para conhecer angulares e NgModule. Para obter mais informações sobre NgModule, acesse:https://angular.io/guide/ngmodule
+Se você ainda não conhece a angulares, é altamente recomendável que você leia a documentação sobre o site Angular.Io para conhecer angulares e NgModule. Para obter mais informações sobre NgModule, acesse: [https://angular.io/guide/ngmodule](https://angular.io/guide/ngmodule )
 
 * Mais informações sobre como gerar um novo módulo no CLI angular: https://github.com/angular/angular-cli/wiki/generate-module
 * Mais informações sobre como gerar um novo componente no CLI angular: https://github.com/angular/angular-cli/wiki/generate-component
@@ -55,7 +55,7 @@ ng generate component ManageFooWorksPortal
 
 ## <a name="add-routing-information"></a>Adicionar informações de roteamento
 
-Se você ainda não conhece o Angular, é altamente recomendável que aprender sobre o Roteamento e a navegação angular. As seções a seguir definem os elementos de roteamento necessários que permitem o Windows Admin Center navegar até sua extensão e entre os modos de exibição dela em resposta a atividade do usuário. Para saber mais, acesse:https://angular.io/guide/router
+Se você ainda não conhece o Angular, é altamente recomendável que aprender sobre o Roteamento e a navegação angular. As seções a seguir definem os elementos de roteamento necessários que permitem o Windows Admin Center navegar até sua extensão e entre os modos de exibição dela em resposta a atividade do usuário. Para saber mais, acesse: [https://angular.io/guide/router](https://angular.io/guide/router )
 
 Use o mesmo nome do módulo que você usou na etapa anterior.
 
