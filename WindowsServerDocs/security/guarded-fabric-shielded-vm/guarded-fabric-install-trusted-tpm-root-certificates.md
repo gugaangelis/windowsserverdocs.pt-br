@@ -6,13 +6,13 @@ ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 06/21/2019
-ms.openlocfilehash: 211d2f24b01d1e308f012df681f9e16a2190449f
-ms.sourcegitcommit: 260b1d78cb28b88b876579e1ac9a41a74e8752fd
+ms.date: 06/27/2019
+ms.openlocfilehash: 0d42befcfacfffd302cfcb27f9f3c2c973534398
+ms.sourcegitcommit: 2c2c37170c65434179bcf2989d557f97dcbe1b9f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67398805"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67419231"
 ---
 # <a name="install-trusted-tpm-root-certificates"></a>Instalar certificados de raiz confiáveis do TPM
 
@@ -35,7 +35,23 @@ Se seus certificados TPM não estão incluídos no pacote abaixo, entre em conta
 
 Repita as etapas a seguir em **cada servidor HGS**:
 
-1.  Baixe o pacote mais recente do [ https://tpmsec.microsoft.com/TPMCerts/TrustedTPM.cab ](https://tpmsec.microsoft.com/TPMCerts/TrustedTPM.cab).
+1.  Baixe o pacote mais recente do [ https://go.microsoft.com/fwlink/?linkid=2097925 ](https://go.microsoft.com/fwlink/?linkid=2097925).
+
+2.  Verifique se a assinatura do arquivo cab para garantir que sua autenticidade. Não continue se a assinatura não é válida.
+
+    ```powershell
+    Get-AuthenticodeSignature .\TrustedTpm.cab
+    ```
+    
+    Veja a seguir um exemplo de saída:
+    
+    ```
+    Directory: C:\Users\Administrator\Downloads
+        
+    SignerCertificate                         Status                                 Path
+    -----------------                         ------                                 ----
+    0DD6D4D4F46C0C7C2671962C4D361D607E370940  Valid                                  TrustedTpm.cab
+    ```
 
 2.  Expanda o arquivo cab.
 

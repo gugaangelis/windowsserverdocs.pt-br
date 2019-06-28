@@ -9,12 +9,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 609ea0bd796a4d3696e14c7499be047ebdd83183
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 01113b957c6b0be4e18955b5ddc78be3f463abe4
+ms.sourcegitcommit: 236a8ae1da12cea1acfff3f306246db0f022354d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868847"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67412206"
 ---
 # <a name="implementing-least-privilege-administrative-models"></a>Implementar modelos administrativos com menos privilégios
 
@@ -37,7 +37,7 @@ Princípios descritos os trechos anteriores não foram alterados, mas na avalia�
 
 Infelizmente, o caminho de menor resistência em muitos ambientes provou para ser o uso excessivo de contas com privilégios de amplo e profundo. Privilégios amplos são direitos e permissões que permitem que uma conta executar atividades específicas em uma grande parte dos ambiente - por exemplo, a equipe de suporte técnico pode ser concedida permissões que permitem a eles redefinir as senhas em várias contas de usuário.  
 
-Privilégios profunda privilégios avançados que são aplicados a um segmento estreito da população, tal dar um engenheiro de direitos de administrador em um servidor para que eles possam executar reparos. Nem o privilégio amplo nem o privilégio profunda é necessariamente perigoso, mas quando muitas contas no domínio permanentemente recebem privilégios amplo e profundo, se apenas uma das contas for comprometida, ela rapidamente pode ser usada para reconfigurar o ambiente para o finalidades do invasor ou até mesmo para destruir grandes segmentos da infraestrutura.  
+Privilégios profundos são os privilégios avançados que são aplicados a um segmento estreito da população, como a concessão de um engenheiro de direitos de administrador em um servidor para que eles possam executar reparos. Nem o privilégio amplo nem o privilégio profunda é necessariamente perigoso, mas quando muitas contas no domínio permanentemente recebem privilégios amplo e profundo, se apenas uma das contas for comprometida, ela rapidamente pode ser usada para reconfigurar o ambiente para o finalidades do invasor ou até mesmo para destruir grandes segmentos da infraestrutura.  
 
 Ataques Pass-the-hash, que são um tipo de ataque de roubo de credencial, são todos os lugares, porque as ferramentas para realizá-las estão livremente disponível e fácil de usar e porque muitos ambientes são vulneráveis a ataques. Ataques Pass-the-hash, no entanto, não são o problema real. O xis do problema é dupla:  
 
@@ -276,7 +276,7 @@ Com privilégios de gerenciamento de identidade (PIM), às vezes, conhecido como
 
 Um dos desafios no gerenciamento de contas com privilégios é que, por padrão, as contas que pode gerenciar contas com privilégios e protegidas e grupos são privilegiados e contas protegidas. Se você implementar soluções RBAC e PIM apropriadas para sua instalação do Active Directory, as soluções podem incluir as abordagens que permitem que você efetivamente depopulate a associação de grupos mais privilegiadas no diretório, preenchendo apenas os grupos temporariamente e quando necessário.  
 
-Se você implementar o RBAC e PIM nativo, no entanto, você deve considerar a criação de contas que não têm nenhum privilégio e com a única função de preenchimento e depopulating com privilégios de grupos no Active Directory quando necessário. [Apêndice i: Criar contas de gerenciamento para contas e grupos no Active Directory protegidos](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md) fornece instruções passo a passo que você pode usar para criar contas para essa finalidade.  
+Se você implementar o RBAC e PIM nativo, no entanto, você deve considerar a criação de contas que não têm nenhum privilégio e com a única função de preenchimento e depopulating com privilégios de grupos no Active Directory quando necessário. [Apêndice I: Criar contas de gerenciamento para contas e grupos no Active Directory protegidos](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md) fornece instruções passo a passo que você pode usar para criar contas para essa finalidade.  
 
 ### <a name="implementing-robust-authentication-controls"></a>Implementar controles de autenticação robusta
 
