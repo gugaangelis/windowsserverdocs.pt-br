@@ -8,12 +8,12 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: b68e6b915d029e53d47c6cffe214ec6e11bba6ea
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 75465aad45fc1b5e360fa1153a6530a771731f66
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812389"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469441"
 ---
 # <a name="accurate-time-for-windows-server-2016"></a>Hora precisa do Windows Server 2016
 
@@ -24,7 +24,6 @@ O serviço de tempo do Windows é um componente que usa um modelo de plug-in par
 > [!NOTE]
 > Para obter uma visão geral do serviço de tempo do Windows, dê uma olhada neste [vídeo de visão geral](https://aka.ms/WS2016TimeVideo).
 
-<!-- Not sure what to do with the following -->
 Neste tópico, discutiremos... Esses tópicos como eles se relacionam permitir tempo preciso: 
 
 - Melhorias

@@ -9,21 +9,16 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: dd9b89f34a3b4af8bb98d2399a524790aa65de0e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9601145048b8798cfb102757384da49bed16a538
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447480"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469631"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-new-shielded-vm-on-premises-and-moving-it-to-a-guarded-fabric"></a>Blindado de VMs blindadas para locatários – criando uma nova VM no local e movê-lo para uma malha protegida
 
 >Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016
-
-
-<!-- NOTE THAT THIS FILE HAS A "redirect_url" LINE IN THE METADATA. EVENTUALLY WE WILL PROBABLY STRIP OUT THE DETAILED METADATA AND THE CONTENT BELOW, SO IT'S PURELY A REDIRECTED TOPIC. However, as of mid-November 2016, we're still deciding. -->
-
-
 
 Este tópico descreve as etapas para criar uma VM blindada usando somente Hyper-V; ou seja, sem Virtual Machine Manager, discos de modelo ou um arquivo de dados de blindagem. Isso é um cenário incomum para a nuvem pública mais ambientes de hospedagem, mas pode ser útil ao testar uma malha protegida ou no enterprise cenários em que uma máquina virtual está sendo movida de uma malha departamental para compartilhado de infraestrutura de TI em devem ser criptografados antes da migração.
 
@@ -33,7 +28,7 @@ Para entender como este tópico se encaixa no processo geral de implantação de
 
 1.  Antes de começar o procedimento, verifique se que você está em um host Hyper-V executando o Windows Server 2016 com as seguintes funções e recursos instalados:
 
-    - Função
+    - Role
 
         - Hyper-V
 

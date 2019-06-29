@@ -16,12 +16,12 @@ ms.date: 10/28/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 588bc3f87c78feccac47d18d31d37be3b1a02d2f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f075f91e97f806555507bfc0e0c5f3d1589a71e6
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835097"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469647"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>Implantando serviços de Federação do Active Directory no Azure
 O AD FS fornece federação de identidade simplificada e segura e recursos de logon único (SSO) da Web. Federação com o Azure AD ou o O365 habilita os usuários a autenticar usando credenciais locais e acessar todos os recursos na nuvem. Como resultado, é importante ter uma infra-estrutura altamente disponível do AD FS para garantir o acesso aos recursos locais e na nuvem. Implantar o AD FS no Azure pode ajudar a atingir a alta disponibilidade necessária com esforço mínimo.
@@ -63,7 +63,7 @@ A próxima etapa é adicionar outra sub-rede na rede, ou seja, a sub-rede de Per
 * Na sub-rede do painel, clique no botão Adicionar
 * Forneça os nome e endereço espaço informações de sub-rede para criar a sub-rede
 
-![Sub-rede](./media/how-to-connect-fed-azure-adfs/deploynetwork2.png)
+![Subnet](./media/how-to-connect-fed-azure-adfs/deploynetwork2.png)
 
 ![Subnet DMZ](./media/how-to-connect-fed-azure-adfs/deploynetwork3.png)
 
@@ -115,7 +115,7 @@ Para cada função (DC/AD FS e WAP), crie conjuntos de disponibilidade que conte
 
 Criar os seguintes conjuntos de disponibilidade
 
-| Conjunto de disponibilidade | Função | Domínios de falhas | Domínios de atualização |
+| Conjunto de disponibilidade | Role | Domínios de falhas | Domínios de atualização |
 |:---:|:---:|:---:|:--- |
 | contosodcset |DC/ADFS |3 |5 |
 | contosowapset |WAP |3 |5 |
@@ -123,7 +123,7 @@ Criar os seguintes conjuntos de disponibilidade
 ### <a name="4-deploy-virtual-machines"></a>4. Implantar máquinas virtuais
 A próxima etapa é implantar máquinas virtuais que hospedam as diferentes funções na sua infraestrutura. Um mínimo de duas máquinas são recomendadas em cada conjunto de disponibilidade. Crie quatro máquinas virtuais para a implantação básica.
 
-| Computador | Função | Sub-rede | Conjunto de disponibilidade | Conta de armazenamento | Endereço IP |
+| Machine | Role | Subnet | Conjunto de disponibilidade | Conta de armazenamento | Endereço IP |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | contosodc1 |DC/ADFS |INT |contosodcset |contososac1 |Estático |
 | contosodc2 |DC/ADFS |INT |contosodcset |contososac2 |Estático |
@@ -139,7 +139,7 @@ O painel da máquina virtual deve ter aparência abaixo após a conclusão da im
 ### <a name="5-configuring-the-domain-controller--ad-fs-servers"></a>5. Configurar o controlador de domínio / servidores do AD FS
  Para autenticar qualquer solicitação de entrada, será necessário contatar o controlador de domínio do AD FS. Para evitar a viagem dispendiosa do Azure para o controlador de domínio local para autenticação, é recomendável implantar uma réplica do controlador de domínio no Azure. Para alcançar alta disponibilidade, é recomendável criar um conjunto de disponibilidade pelo menos 2 controladores de domínio.
 
-| Controlador de domínio | Função | Conta de armazenamento |
+| Controlador de domínio | Role | Conta de armazenamento |
 |:---:|:---:|:---:|
 | contosodc1 |Réplica |contososac1 |
 | contosodc2 |Réplica |contososac2 |
@@ -277,11 +277,6 @@ Em geral, você precisa de regras a seguir para proteger com eficiência sua sub
 
 ![Regras de acesso INT (entrada)](./media/how-to-connect-fed-azure-adfs/nsg_int.png)
 
-<!--
-[comment]: <> (![INT access rules (inbound)](./media/how-to-connect-fed-azure-adfs/nsgintinbound.png))
-[comment]: <> (![INT access rules (outbound)](./media/how-to-connect-fed-azure-adfs/nsgintoutbound.png))
--->
-
 **9.2. Proteger a sub-rede de rede de Perímetro**
 
 | Regra | Descrição | Fluxo |
@@ -290,11 +285,6 @@ Em geral, você precisa de regras a seguir para proteger com eficiência sua sub
 | DenyInternetOutbound |Qualquer coisa, exceto HTTPS para a internet está bloqueada |Saída |
 
 ![Regras de acesso EXT (entrada)](./media/how-to-connect-fed-azure-adfs/nsg_dmz.png)
-
-<!--
-[comment]: <> (![EXT access rules (inbound)](./media/how-to-connect-fed-azure-adfs/nsgdmzinbound.png))
-[comment]: <> (![EXT access rules (outbound)](./media/how-to-connect-fed-azure-adfs/nsgdmzoutbound.png))
--->
 
 > [!NOTE]
 > Se a autenticação de certificado de usuário do cliente (autenticação do clientTLS usando X509 certificados de usuário) for necessária, o AD FS requer TCP porta 49443 seja habilitada para acesso de entrada.

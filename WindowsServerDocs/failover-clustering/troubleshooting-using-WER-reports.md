@@ -9,12 +9,12 @@ ms.topic: article
 author: vpetter
 ms.date: 03/27/2018
 ms.localizationpriority: ''
-ms.openlocfilehash: 6e301b8c46041f107739bbcdb09c2eb0c8252ebb
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.openlocfilehash: 0b0c75f8e2d09a1fc17374428c48fb856465bb5a
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66452899"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469543"
 ---
 # <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>Solução de problemas de um Cluster de Failover usando o relatório de erros do Windows 
 
@@ -75,13 +75,6 @@ Se você quiser manter ambos os **nível de log** e o **máscara de palavra-chav
 ```
 
 Esses canais de evento serão habilitados em cada nó de cluster quando o serviço de cluster é iniciado ou sempre que o **EnabledEventLogs** propriedade é alterada.
-
-
-<!--
-## Collecting live dumps
-
-Windows will trigger the collection of a ``` LiveDump ``` when there are known resources that are hanging in kernel calls. ``` RHS ``` will trigger ```LiveDump``` collection if both the resource type and cluster ``` DumpPolicy ``` are set to 1. For physical disk it is set out of the box
--->
 
 ## <a name="gathering-logs"></a>Coletando Logs
 
@@ -167,20 +160,6 @@ Directory of c:\ProgramData\Microsoft\Windows\WER\ReportArchive
                3 Dir(s)  23,291,658,240 bytes free
 
 ```
-
-<!--
-If your report has been uploaded to Watson, a Microsoft Employee might be able to get your reports from [https://watson/](https://watson) by searching for your report ID and/or bucket ID (these can be found in Report.wer).
-
-```
-OriginalFilename=PowerShell.EXE.MUI
-Response.BucketId=f4bbb1850ee0c2c8ad7231a4f1c7aa8a
-Response.BucketTable=5
-Response.LegacyBucketId=2121812958945716874
-Response.type=4
-Response.CabId=2154498584323680636
-Response.CabGuid=1701c157-8fe6-4c22-9de6-510c23b1e97c 
-```
--->
 
 Relatório de erros do Windows fornece várias configurações para personalizar o experiência de relatório de problema. Para obter mais informações, consulte o relatório de erros do Windows [documentação](https://msdn.microsoft.com/library/windows/desktop/bb513638(v=vs.85).aspx).
 

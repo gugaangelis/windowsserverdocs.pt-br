@@ -6,12 +6,12 @@ ms.author: joflore
 ms.date: 04/19/2018
 ms.topic: article
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 8a1775a40761e4a489cc39535514d75174edffa5
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 297c2a26f10503cb68ae241576a72e08aa4e55a0
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66442993"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469564"
 ---
 # <a name="virtualizing-domain-controllers-using-hyper-v"></a>Virtualizando controladores de domínio usando o Hyper-V
 
@@ -82,7 +82,6 @@ Um arquivo VHD de um controlador de domínio virtual é equivalente ao disco rí
 ## <a name="rodcs"></a>RODCs
 
 Um benefício dos RODCs é a capacidade de colocá-los em locais onde a segurança física não pode ser garantida, como em filiais. Você pode usar a criptografia de unidade de disco BitLocker do Windows para proteger os próprios arquivos VHD (não os sistemas de arquivos contido nele) contra o comprometimento no host pelo roubo do disco físico. 
-<!-- Removed link to Windows Server 2008 Hyper-V and BitLocker Drive Encryption (http://go.microsoft.com/fwlink/?linkid=123534). Link is dead. -->
 
 ## <a name="performance"></a>Desempenho
 
@@ -176,10 +175,8 @@ Para garantir um desempenho satisfatório, os componentes de integração (IC) f
 Ao monitorar o desempenho de máquinas virtuais com o Monitor de Desempenho e Confiança (Perfmon.msc), dentro da máquina virtual as informações da CPU não serão totalmente precisas como resultado do modo como a CPU virtual é programada no processador físico. Quando você quiser obter informações da CPU de uma máquina virtual executada em um servidor Hyper-V, use os contadores do Processador Lógico Hypervisor do Hyper-V na partição host.
 
 Para obter mais informações sobre o desempenho de ajuste do AD DS e do Hyper-V, consulte [desempenho ajustando as diretrizes para o Windows Server 2016](../../../../administration/performance-tuning/index.md).
-<!-- Updated to 2016 perf guidance -->
 
 Além disso, não planeje usar um VHD de disco diferente em uma máquina virtual configurada como um controlador de domínio porque ele pode reduzir o desempenho. Para saber mais sobre os tipos de disco do Hyper-V, incluindo discos diferentes, consulte [Assistente novo disco rígido Virtual](http://go.microsoft.com/fwlink/?linkid=137279).
-<!-- Couldn't find an equivalent WS 2016 Hyper-V article. -->
 
 Para obter informações adicionais sobre o AD DS em ambientes de hospedagem virtual, consulte [coisas a considerar quando você hospeda controladores de domínio do Active Directory em ambientes de hospedagem virtuais](https://go.microsoft.com/fwlink/?linkid=141292) na Base de dados de Conhecimento Microsoft.
 
@@ -384,8 +381,6 @@ Se você não tiver um backup de dados de estado do sistema que pré-date a falh
 ## <a name="usn-and-usn-rollback"></a>USN e reversão de USN
 
 Esta seção descreve problemas de replicação que podem ocorrer como resultado de uma restauração incorreta do banco de dados do Active Directory com uma versão mais antiga de uma máquina virtual. Para obter mais detalhes sobre o processo de replicação do Active Directory, consulte [conceitos de replicação do Active Directory](../replication/active-directory-replication-concepts.md)
-
-<!-- Replaced this link with 2016 article: [How the Active Directory Replication Model Works](http://go.microsoft.com/fwlink/?linkid=27636) (http://go.microsoft.com/fwlink/?LinkID=27636). -->
 
 ## <a name="usns"></a>USNs
 

@@ -9,12 +9,12 @@ ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: e25217feba45516cd0e9a3aa2bf1a2581d2087f5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3256ff55ec8f293cd37acbea6122584a63847284
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838037"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469582"
 ---
 # <a name="windows-time-for-traceability"></a>Tempo do Windows para rastreamento
 >Aplica-se a: Windows Server 2016 versão 1709 ou posterior e Windows 10 versão 1703 ou posterior
@@ -41,7 +41,6 @@ Nenhuma configuração é necessária para realizar esse recurso.  Esses logs de
 
 A seção a seguir descreve os eventos registrados para uso em cenários de rastreabilidade.
 
-<!-- use tabs like the group policies -->
 # <a name="257tab257"></a>[257](#tab/257)
 Esse evento é registrado quando o serviço de tempo do Windows (W32Time) é iniciado e registra informações sobre a hora atual, a contagem de tiques atual, configuração de tempo de execução, provedores de tempo e taxa atual de relógio.
 
@@ -82,7 +81,7 @@ Esse evento é registrado quando o serviço de tempo do Windows (W32Time) está 
 |Dados registrados |<ul><li>Hora atual em UTC</li><li>Contagem de tiques atual</li></ul> |
 |Mecanismo de limitação  |Nenhum. Esse evento é acionado sempre que o serviço é interrompido. |
 
-**Texto de exemplo:**
+**Texto de exemplo:** 
 `W32time service is stopping at 2018-03-01T05:42:13.944Z (UTC), System Tick Count 6370250.`
 
 # <a name="259tab259"></a>[259](#tab/259)

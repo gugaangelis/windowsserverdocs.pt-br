@@ -9,12 +9,12 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: a86c2bdde9c65878b228f153009734da8f03960d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3233434403594ef9e2555c0329c4791d1fb99709
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856827"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469584"
 ---
 # <a name="windows-time-service-w32time"></a>Serviço de tempo do Windows (W32Time)
 
@@ -40,17 +40,3 @@ Para obter mais informações sobre a hierarquia de domínio e o sistema de pont
 Um adendo mencionado no artigo de tempo do Windows 2016 precisos pode ser baixado [aqui](https://windocs.blob.core.windows.net/windocs/WindowsTimeSyncAccuracy_Addendum.pdf)
 
 Para obter uma visão geral do serviço de tempo do Windows, dê uma olhada neste [vídeo de visão geral](https://aka.ms/WS2016TimeVideo).
-
-<!-- In this guide
-In this guide:
-Windows Accurate Time
-High Accuracy
-Support Boundary
-Configuration for High Accuracy
-Traceability for Compliance
-Best Practices
-Technical Reference
-How the Windows Time Service Works
-Windows Time Service Tools and Settings
--->
-

@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: 3c36eff8aabd1fa1c6456dce1d08ebe504102e8c
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: d1d269ecdbfd4803c51da4817b62caf01d2091ae
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284161"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469621"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>VMs blindadas para locatários – criando dados de blindagem para definir uma VM blindada
 
@@ -43,8 +43,6 @@ Em seguida, você pode criar o arquivo de dados de blindagem:
 Como locatários só são capazes de se conectar às suas VMs blindadas usando Conexão de área de trabalho remota ou outras ferramentas de gerenciamento remoto, é importante garantir que os locatários podem verificar a conexão ao ponto de extremidade à direita (ou seja, não há um "homem no meio" interceptando a conexão).
 
 É uma maneira de verificar se que você estiver se conectando com o servidor pretendido instalar e configurar um certificado para os serviços de área de trabalho remota apresentar quando você iniciar uma conexão. O computador cliente se conectar ao servidor verificará se ele confia o certificado e mostrar um aviso se não existir. Em geral, para garantir que o cliente está se conectando confia no certificado, RDP são emitidos de PKI do locatário. Para obter mais informações sobre [uso de certificados nos serviços de área de trabalho remota](https://technet.microsoft.com/library/dn781533.aspx) podem ser encontradas no TechNet.
-
-<!-- The previous link comes from Windows 2012 R2 content, but as of Sept 2016, there isn't a more recent link that covers the same information. -->
 
 > [!NOTE]
 > Ao selecionar um certificado RDP para incluir em seu arquivo de dados de blindagem, certifique-se de usar um certificado curinga. Um arquivo de dados de blindagem pode ser usado para criar um número ilimitado de máquinas virtuais. Desde que cada VM compartilharão o mesmo certificado, um certificado curinga garantirá que o certificado seja válido, independentemente do nome de host da VM.
@@ -142,8 +140,6 @@ Você ou seu provedor de serviços de hospedagem pode obter os metadados do guar
         $relecloudmetadata = Get-SCGuardianConfiguration
 
         $relecloudmetadata.InnerXml | Out-File .\RelecloudGuardian.xml -Encoding UTF8
-
-<!-- Note that the VMM PowerShell cmdlets aren't Windows PowerShell, so "VMM PowerShell" is the correct terminology for them. -->
 
 Obter guardião de arquivos de metadados para cada malha protegida, que você deseja autorizar suas VMs blindadas para executar em antes de continuar.
 
