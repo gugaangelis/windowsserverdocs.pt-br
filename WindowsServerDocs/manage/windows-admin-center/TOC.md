@@ -48,7 +48,7 @@
 ### [Política de suporte](support/index.md)
 ### [Etapas de solução de problemas comuns](support/troubleshooting.md)
 ### [Problemas conhecidos](support/known-issues.md)
-
+### [Termos de licença do Windows Admin Center](../../windows-server-licensing/windows-admin-center-licensing.md)
 
 ## Extend
 ### [Visão geral das extensões](extend/extensibility-overview.md)
@@ -74,6 +74,7 @@
 #### [Habilitar a faixa de descoberta da extensão](extend/guides/extension-discovery-banner.md)
 ### [Extensões de publicação](extend/publish-extensions.md)
 ### Estudos de caso
+#### [BiitOps](extend/case-studies/biitops.md)
 #### [DataON](extend/case-studies/dataon.md)
 #### [Fujitsu](extend/case-studies/fujitsu.md)
 #### [Lenovo](extend/case-studies/lenovo.md)
@@ -81,5 +82,6 @@
 #### [Pure Storage](extend/case-studies/purestorage.md)
 #### [QCT](extend/case-studies/qct.md)
 #### [Squared Up](extend/case-studies/squared-up.md)
+#### [Thomas-Krenn](extend/case-studies/thomas-krenn.md)
 
 

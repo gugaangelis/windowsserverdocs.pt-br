@@ -40,6 +40,7 @@
 ### [Implantar o Network File System](nfs/deploy-nfs.md)
 ### [Visão geral do NTFS](file-server/ntfs-overview.md)
 ### [Serviço de Cópias de Sombra de Volume](file-server/volume-shadow-copy-service.md)
+### [Usando a limpeza de disco](file-server/disk-cleanup.md)
 ## [Gerenciador de Recursos de Servidor de Arquivos](fsrm/fsrm-overview.md)
 ### [Lista de verificação: aplicar uma cota a um volume ou uma pasta](fsrm/checklist-apply-quota-to-volume-or-folder.md)
 ### [Lista de verificação: aplicar uma triagem de arquivo a um volume ou uma pasta](fsrm/checklist-apply-file-screen-to-volume-or-folder.md)
@@ -128,7 +129,9 @@
 #### [Criar volumes](storage-spaces/create-volumes.md)
 #### [Resiliência aninhada](storage-spaces/nested-resiliency.md)
 #### [Configurar quorum](../failover-clustering/manage-cluster-quorum.md)
-#### [Atualizar um cluster de Espaços de Armazenamento Diretos para o Windows Server 2019](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)
+#### [Atualizar um cluster de Espaços de Armazenamento Diretos](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)
+#### [Compreender e implantar memória persistente](storage-spaces/deploy-pmem.md)
+
 ### Gerenciar
 #### [Gerenciar com o Centro de Administração do Windows](../manage/windows-admin-center/use/manage-hyper-converged.md)
 #### [Adicionar servidores ou unidades](storage-spaces/add-nodes.md)
@@ -148,11 +151,14 @@
 ##### [Exemplos de scripts](storage-spaces/performance-history-scripting.md)
 #### [Delimitar a alocação de volumes](storage-spaces/delimit-volume-allocation.md)
 #### [Monitorar com o Azure Monitor](storage-spaces/configure-azure-monitor.md)
+
 ### Solução de problemas
 #### [Cenários de solução de problemas](storage-spaces/troubleshooting-storage-spaces.md)
 #### [Integridade e estados operacionais](storage-spaces/storage-spaces-states.md)
 #### [Coletar dados](storage-spaces/data-collection.md)
 #### [Perguntas frequentes](storage-spaces/storage-spaces-direct-faq.md)
+#### [Gerenciamento de integridade de memória da classe de armazenamento](storage-spaces/Storage-class-memory-health.md)
+
 ## [Pastas de trabalho](work-folders/work-folders-overview.md)
 ### [Projetar uma implementação de pastas de trabalho](work-folders/plan-work-folders.md)
 ### [Implantar pastas de trabalho](work-folders/deploy-work-folders.md)
@@ -163,6 +169,5 @@
 #### [Etapa 4: Configurar WAP](work-folders/deploy-work-folders-adfs-step4.md)
 #### [Etapa 5: Configurar clientes](work-folders/deploy-work-folders-adfs-step5.md)
 ## [QoS de armazenamento](storage-qos/storage-qos-overview.md)
-## [Gerenciamento de integridade de memória da classe de armazenamento](storage-spaces/Storage-class-memory-health.md)
 ## [Histórico de alterações dos tópicos de armazenamento](storage-change-history.md)
 
