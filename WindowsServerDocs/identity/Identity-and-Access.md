@@ -11,20 +11,20 @@ ms.topic: landing-page
 ms.author: billmath
 ms.localizationpriority: high
 ms.openlocfilehash: 161840d86cae6b688e3e7a877c7c44b17aefd432
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824237"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63684222"
 ---
 # <a name="identity--access"></a>Identidade | Acesso
 
 >[!TIP]
-> Procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obter informações específicas.
+> Está procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar informações específicas neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions).
 
 <hr />
 
-Tecnologias de acesso e identidade habilitam segura do Active Directory ambientes locais e em apenas na nuvem e implantações híbridas, onde alguns aplicativos e serviços são hospedados na nuvem e outros são hospedados no local.
+Tecnologias de acesso e identidade habilitam segura do Active Directory ambientes locais e em apenas na nuvem e implantações híbridas, onde alguns aplicativos e serviços são hospedados na nuvem e outros são hospedados localmente.
 
 <hr />
 <ul class="cardsF panelContent">
@@ -61,8 +61,8 @@ Tecnologias de acesso e identidade habilitam segura do Active Directory ambiente
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Privileged Access Management para Active Directory Domain Services e do AD DS</h3><hr />
-                        <p>Gerenciamento de acesso privilegiado (PAM) para os Active Directory Domain Services (AD DS) é uma solução que se baseia no Microsoft Identity Manager (MIM) e Windows Server.</p>
+                        <h3>Privileged Access Management para Active Directory Domain Services e AD DS</h3><hr />
+                        <p>O PAM (Privileged Access Management) para os AD DS (Active Directory Domain Services) é uma solução que se baseia no MIM (Microsoft Identity Manager) e no Windows Server.</p>
                     </div>
                 </div>
             </div>
@@ -81,7 +81,7 @@ Tecnologias de acesso e identidade habilitam segura do Active Directory ambiente
                     </div>
                     <div class="cardText">
                         <h3>Windows 10 para a empresa: Maneiras de usar dispositivos para trabalho</h3><hr />
-                        <p>O Windows 10 oferece a capacidade de aproveitar o Azure Active Directory. Os dispositivos Windows 10 podem ser conectados ao Azure AD e os usuários podem fazer logon no Windows com contas do Azure AD ou adicionar sua ID do Azure para obter acesso aos recursos e aplicativos de negócios.</p>
+                        <p>O Windows 10 oferece a capacidade de aproveitar o Azure Active Directory. Os dispositivos Windows 10 podem ser conectados ao Azure AD e os usuários podem entrar no Windows com contas do Azure AD ou adicionar sua ID do Azure para obter acesso aos recursos e aplicativos de negócios.</p>
                     </div>
                 </div>
             </div>
@@ -131,7 +131,7 @@ Tecnologias de acesso e identidade habilitam segura do Active Directory ambiente
 ---
 
 ## <a name="solutions-and-scenario-guides"></a>Guias de soluções e cenário  
-* [Proteger o acesso aos recursos da empresa de qualquer local em qualquer dispositivo](https://technet.microsoft.com/library/dn550982.aspx)  
-*  [Ingresse no local de trabalho de qualquer dispositivo de SSO contínuo e fatores de autenticação em aplicativos da empresa](https://technet.microsoft.com/library/dn280945.aspx)  
-* [Gerencie riscos com autenticação multifator adicional para aplicativos confidenciais](https://technet.microsoft.com/library/dn280949.aspx)  
-* [Gerencie riscos com controle de acesso condicional](https://technet.microsoft.com/library/dn280937.aspx)
+* [Acesso seguro aos recursos corporativos de qualquer local e em qualquer dispositivo](https://technet.microsoft.com/library/dn550982.aspx)  
+*  [Ingresso no Local de Trabalho em qualquer dispositivo de SSO e autenticação de dois fatores contínua em aplicativos da empresa](https://technet.microsoft.com/library/dn280945.aspx)  
+* [Gerenciar riscos com Autenticação Multifator adicional para aplicativos confidenciais](https://technet.microsoft.com/library/dn280949.aspx)  
+* [Gerenciar risco com o Controle de Acesso Condicional](https://technet.microsoft.com/library/dn280937.aspx)

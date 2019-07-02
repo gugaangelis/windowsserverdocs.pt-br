@@ -1,6 +1,6 @@
 ---
 title: Novidades no Windows Server 2019
-description: Uma visão geral dos novos recursos no Windows Server 2019, incluindo a Experiência Desktop, o Serviço de Migração do Armazenamento, os Insights do Sistema, o Adaptador de Rede do Azure, aprimoramentos para Espaços de Armazenamento Diretos e outras alterações.
+description: Uma visão geral dos novos recursos no Windows Server 2019, incluindo a Experiência Desktop, o Serviço de Migração do Armazenamento, os Insights do Sistema, o Adaptador de Rede do Azure, melhorias para Espaços de Armazenamento Diretos e outras alterações.
 ms.prod: windows-server-threshold
 ms.technology: server-general
 ms.topic: article
@@ -9,214 +9,214 @@ ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
 ms.openlocfilehash: 7110fe78982fec616174a93514d86fb2e1cf9fa5
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66810769"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Novidades no Windows Server 2019
 
 > Aplica-se a: Windows Server 2019
 
-Este tópico descreve alguns dos novos recursos no Windows Server 2019. Windows Server 2019 baseia-se a base sólida de Windows Server 2016 e traz diversas inovações em quatro temas principais: Nuvem híbrida, segurança, plataforma de aplicativos e infraestrutura Hiperconvergida (HCI).
+Este tópico descreve alguns dos novos recursos do Windows Server 2019. O Windows Server 2019 foi criado sobre a base sólida do Windows Server 2016 e traz diversas inovações em quatro temas chave: nuvem híbrida, segurança, plataforma de aplicativos e HCI (infraestrutura hiperconvergente).
 
-Para descobrir o que há de novo nas versões de canal semestral do Windows Server, consulte [o que há de novo no Windows Server](../get-started/whats-new-in-windows-server.md).
+Para conhecer as novidades nos lançamentos do Canal Semestral do Windows Server, consulte [Novidades do Windows Server](../get-started/whats-new-in-windows-server.md).
 
 ## <a name="general"></a>Geral
 
 ### <a name="windows-admin-center"></a>Windows Admin Center
 
-Windows Admin Center é um aplicativo com base em navegador e implantado localmente para o gerenciamento de servidores, clusters, infraestrutura hiperconvergente e computadores Windows 10. Ele vem sem custo adicional além do Windows e está pronto para uso na produção.
+O Windows Admin Center é um aplicativo baseado em navegador e implantado localmente destinado a gerenciar servidores, clusters, infraestrutura hiperconvergente e computadores Windows 10. Ele é fornecido sem custo adicional além do Windows e vem pronto para uso no ambiente de produção.
 
-Você pode instalar o Windows Admin Center no Windows Server 2019, bem como o Windows 10 e versões anteriores do Windows e Windows Server e usá-lo para gerenciar servidores e clusters que executam o Windows Server 2008 R2 e versões posteriores.
+Você pode instalar o Windows Admin Center no Windows Server 2019, bem como no Windows 10 e em versões anteriores do Windows e Windows Server e usá-lo para gerenciar servidores e clusters que executam o Windows Server 2008 R2 e versões mais recentes.
 
 Para obter mais informações, consulte [Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md).
 
-### <a name="desktop-experience"></a>Experiência Desktop
+### <a name="desktop-experience"></a>Experiência desktop
 
-Como o Windows Server 2019 é uma versão do Canal de Manutenção a Longo Prazo (LTSC), ele inclui a <b>Experiência Desktop</b>. (Canal semestral \(SAC\) versões não incluem a experiência de área de trabalho por design; eles são estritamente o Server Core e versões de imagem de contêiner do Nano Server.) Assim como acontece com o Windows Server 2016, durante a instalação do sistema operacional você pode escolher entre as instalações Server Core ou Server com instalações de experiência de área de trabalho.
+Como o Windows Server 2019 é uma versão do LTSC (Canal de Manutenção em Longo Prazo), ele inclui a <b>Experiência Desktop</b>. (Versões do SAC \(Canal Semestral\) não incluem a Experiência Desktop por padrão; elas são estritamente versões da imagem de contêiner Server Core e Nano Server.) Assim como acontece com o Windows Server 2016, durante a configuração do sistema operacional você pode escolher entre instalações do Server Core ou do Windows Server com Experiência Desktop.
 
 ### <a name="system-insights"></a>Insights do Sistema
 
-Insights do sistema é um novo recurso disponível no Windows Server 2019 que reúne recursos locais de análise de previsão nativamente para o Windows Server. Esses recursos de previsão, cada apoiadas por um modelo de aprendizado de máquina, localmente analisar dados de sistema do Windows Server, como contadores de desempenho e eventos, fornecendo percepção o funcionamento de seus servidores e ajudando você reduzir as despesas operacionais associado ao gerenciamento reativamente problemas em suas implantações do Windows Server.
+O Insights do Sistema é um novo recurso disponível no Windows Server 2019 que reúne funcionalidades locais de análise de previsão de modo nativo no Windows Server. Essas funcionalidades de previsão, cada qual apoiada por um modelo de aprendizado de máquina, analisam localmente os dados de sistema do Windows Server (como contadores de desempenho e eventos), fornecendo insights sobre o funcionamento de seus servidores e ajudando a reduzir as despesas operacionais associadas ao gerenciamento reativo dos problemas em suas implantações do Windows Server.
 
-## <a name="hybrid-cloud"></a>Nuvem híbrida
+## <a name="hybrid-cloud"></a>Nuvem Híbrida
 
-### <a name="server-core-app-compatibility-feature-on-demand"></a>Recurso de compatibilidade de aplicativo do Server Core sob demanda
+### <a name="server-core-app-compatibility-feature-on-demand"></a>Recurso sob demanda de compatibilidade de aplicativos do Server Core
 
-O [recurso de compatibilidade de aplicativo do Server Core sob demanda (FOD)](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19) melhora significativamente a compatibilidade de aplicativo a opção de instalação Server Core do Windows, incluindo um subconjunto de binários e componentes do Windows Server com experiência Desktop, sem adicionar o ambiente de gráfico de experiência de área de trabalho do Windows Server em si.  Isso é feito para aumentar a funcionalidade e a compatibilidade do Server Core, o mantendo o mais enxuto possível.  
+O [FOD (recurso sob demanda) de compatibilidade de aplicativos do Server Core](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19) melhora significativamente a compatibilidade de aplicativos da opção de instalação do Windows Server Core, incluindo um subconjunto de binários e componentes do Windows Server com a Experiência Desktop, sem adicionar o ambiente gráfico da Experiência Desktop do Windows Server, em si.  Isso é feito para aumentar a funcionalidade e a compatibilidade do Server Core, mantendo-no o mais enxuto possível.  
 
-Esse recurso opcional sob demanda está disponível em um ISO separado e pode ser adicionado a imagens somente e instalações Server Core do Windows usando o DISM. 
+Esse recurso opcional sob demanda está disponível em um ISO separado e pode ser adicionado somente a imagens e instalações do Windows Server Core, usando o DISM. 
 
 ## <a name="security"></a>Segurança
 
 ### <a name="windows-defender-advanced-threat-protection-atp"></a>Proteção Avançada contra Ameaças do Windows Defender (ATP)
 
-Os sensores de plataforma profunda e as ações de resposta do ATP expõem ataques no nível do kernel e de memória e respondem ao eliminar arquivos mal-intencionados e encerrar processos mal-intencionados.
+Os sensores de plataforma avançada e as ações de resposta do ATP expõem ataques no nível do kernel e da memória e respondem suprimindo arquivos maliciosos e encerrando processos mal-intencionados.
 
--   Para obter mais informações sobre o Windows Defender ATP, consulte [Visão geral dos recursos do Windows Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/overview).
+-   Para obter mais informações sobre o Windows Defender ATP, consulte [Visão geral das funcionalidades do Windows Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/overview).
 
--   Para obter mais informações em servidores de integração, ver [servidores integrados ao serviço Windows Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/configure-server-endpoints-windows-defender-advanced-threat-protection).
+-   Para obter mais informações sobre a integração de servidores, consulte [Integrar servidores ao serviço do Windows Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/configure-server-endpoints-windows-defender-advanced-threat-protection).
 
-**Windows Defender ATP Exploit Guard** é um novo conjunto de recursos de prevenção contra invasões de host. Os quatro componentes do Windows Defender Exploit Guard são projetados para bloquear o dispositivo em relação a uma ampla variedade de vetores de ataque e comportamentos de bloco costuma ser usados em ataques de malware, enquanto você a riscos de segurança de equilíbrio e requisitos de produtividade.
+O **Windows Defender ATP Exploit Guard** é um novo conjunto de funcionalidades para prevenção contra invasões de host. Os quatro componentes do Windows Defender Exploit Guard foram projetados para bloquear o dispositivo diante de uma ampla variedade de vetores de ataque e bloquear comportamentos usados com frequência em ataques de malware, ao mesmo tempo permitindo que você mantenha o equilíbrio entre os riscos de segurança e os requisitos de produtividade.
 
--   [Redução da Superfície de Ataque (ASR)](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard?ocid=cx-blog-mmpc) é um conjunto de controles que as empresas podem habilitar para impedir que malware atinja o computador, bloqueando arquivos suspeitos mal-intencionados (por exemplo, arquivos do Office), scripts, movimento lateral, comportamento de ransomware e ameaças baseadas em email.
+-   A [ASR (Redução da Superfície de Ataque)](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard?ocid=cx-blog-mmpc) é um conjunto de controles que as empresas podem habilitar para impedir que malwares alcancem o computador, bloqueando arquivos suspeitos de serem mal-intencionados (por exemplo, arquivos do Office), scripts, movimentos laterais, comportamentos de ransomware e ameaças baseadas em email.
 
--   [Proteção de rede](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/network-protection-exploit-guard?ocid=cx-blog-mmpc) protege o ponto de extremidade contra ameaças baseadas na web, bloqueando qualquer processo de saída no dispositivo para endereços IP/hosts não confiáveis por meio do Windows Defender SmartScreen.
+-   A [Proteção de rede](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/network-protection-exploit-guard?ocid=cx-blog-mmpc) protege o ponto de extremidade contra ameaças baseadas na Web, bloqueando qualquer processo de saída no dispositivo para endereços IP/hosts não confiáveis por meio do Windows Defender SmartScreen.
 
--   [Acesso controlado a pastas](https://cloudblogs.microsoft.com/microsoftsecure/2017/10/23/stopping-ransomware-where-it-counts-protecting-your-data-with-controlled-folder-access/?ocid=cx-blog-mmpc?source=mmpc) protege dados confidenciais contra ransomware bloqueando processos não confiáveis acessem suas pastas protegidas.
+-   O [Acesso controlado a pastas](https://cloudblogs.microsoft.com/microsoftsecure/2017/10/23/stopping-ransomware-where-it-counts-protecting-your-data-with-controlled-folder-access/?ocid=cx-blog-mmpc?source=mmpc) protege dados confidenciais contra ransomware impedindo que processos não confiáveis acessem suas pastas protegidas.
 
--   [Exploit protection](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/exploit-protection-exploit-guard) é um conjunto de mitigações de explorações de vulnerabilidade (substituindo EMET) que podem ser facilmente configuradas para proteger seu sistema e aplicativos.
+-   O [Exploit Protection](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/exploit-protection-exploit-guard) é um conjunto de mitigações para explorações de vulnerabilidade (em substituição ao EMET) que pode ser facilmente configurado para proteger o sistema e seus aplicativos.
 
-[Controle de Aplicativos do Windows Defender](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control) (também conhecido como a política de integridade de código (CI)) foi lançada no Windows Server 2016.
+O [Controle de Aplicativos do Windows Defender](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control) (também conhecido como a política de CI [integridade de código]) foi lançado no Windows Server 2016.
 De acordo com os comentários dos clientes, este é um excelente conceito, mas difícil de implantar.
-Para resolver isso, criamos políticas de CI padrão, que aceitam todos os arquivos de caixa de entrada do Windows e aplicativos da Microsoft, como o SQL Server, e bloqueiam arquivos executáveis conhecidos que podem ignorar a CI. 
+Para resolver isso, criamos políticas de CI padrão que aceitam todos os arquivos de caixa de entrada do Windows e aplicativos da Microsoft, como o SQL Server, e bloqueiam executáveis conhecidos que podem ignorar a CI. 
 
-### <a name="security-with-software-defined-networking-sdn"></a>Segurança com o Software de rede definida (SDN)
+### <a name="security-with-software-defined-networking-sdn"></a>Segurança com SDN (Rede Definida pelo Software)
 
-[Segurança com SDN](https://docs.microsoft.com/windows-server/networking/sdn/security/sdn-security-top) oferece vários recursos para aumentar a confiança do cliente em execução cargas de trabalho, localmente, ou como um provedor de serviços na nuvem. 
+A [Segurança com SDN](https://docs.microsoft.com/windows-server/networking/sdn/security/sdn-security-top) oferece vários recursos para aumentar a confiança do cliente na execução de cargas de trabalho, seja localmente ou como um provedor de serviços na nuvem. 
 
-Esses aprimoramentos de segurança estão integrados à plataforma SDN abrangente introduzida no Windows Server 2016.
+Essas melhorias de segurança estão integradas à plataforma SDN abrangente introduzida no Windows Server 2016.
 
-Para obter uma lista completa do que há de nova na, consulte SDN [Novidades no SDN para o Windows Server 2019](https://docs.microsoft.com/windows-server/networking/sdn/sdn-whats-new).
+Para obter uma lista completa das novidades na SDN, consulte [Novidades na SDN do Windows Server 2019](https://docs.microsoft.com/windows-server/networking/sdn/sdn-whats-new).
 
-### <a name="shielded-virtual-machines-improvements"></a>Melhorias de máquinas virtuais blindadas
+### <a name="shielded-virtual-machines-improvements"></a>Melhorias nas máquinas virtuais blindadas
 
-- **Melhorias do Branch office**
+- **Melhorias nas filiais**
 
-    Agora você pode executar máquinas virtuais blindadas em computadores com conectividade intermitente para o serviço de guardião de Host, aproveitando os novos recursos de [fallback HGS](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#fallback-configuration) e [modo off-line](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#offline-mode) . HGS fallback permite que você configure um segundo conjunto de URLs do Hyper-V tentar se ele não puder acessar o servidor principal do HGS.
+    Agora você pode executar máquinas virtuais blindadas em computadores com conectividade intermitente ao Serviço Guardião de Host, aproveitando os novos recursos de [HGS de fallback](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#fallback-configuration) e [modo offline](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#offline-mode) . O HGS de fallback permite que você configure um segundo conjunto de URLs para o Hyper-V tentar caso não consiga acessar seu servidor HGS principal.
 
-    Modo offline permite que você continue a iniciar suas VMs blindadas, mesmo se HGS não puder ser atingido, desde que a VM foi iniciado com êxito uma vez, e a configuração de segurança do host não foi alterada.
+    O modo offline permite que você continue a iniciar suas VMs blindadas, mesmo se o HGS não puder ser alcançado, contato que a VM tenha sido iniciada com êxito pelo menos uma vez e as configurações de segurança do host não tenham sido alteradas desde então.
 
-- **Aprimoramentos de solução de problemas**
+- **Melhorias na solução de problemas**
 
-    Podemos tiver também facilitou o processo para [Solucionar problemas de suas máquinas virtuais protegidas](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms) habilitando suporte para o modo de sessão avançado VMConnect e PowerShell Direct. Essas ferramentas são particularmente úteis se você tiver perdido a conectividade de rede com a VM e precisar atualizar a configuração dela para restaurar o acesso. 
+    Também facilitamos o processo para [solucionar problemas de suas máquinas virtuais blindadas](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms) habilitando o suporte para o modo de sessão avançado VMConnect e o PowerShell Direct. Essas ferramentas são particularmente úteis se você tiver perdido a conectividade de rede com sua VM e precisar atualizar a configuração dela para restaurar o acesso. 
 
-    Esses recursos não precisam ser configurados e são disponibilizados automaticamente quando uma VM protegida é colocada em um host Hyper-V que estiver executando o Windows Server versão 1803 ou posterior.
+    Esses recursos não precisam ser configurados e são disponibilizados automaticamente quando uma VM blindada é posta em um host Hyper-V que executa o Windows Server versão 1803 ou mais recente.
 
-- **Suporte para Linux**
+- **Suporte a Linux**
 
-    Se você executar ambientes Mistos, Windows Server 2019 agora oferece suporte ao Ubuntu, Red Hat Enterprise Linux e SUSE Linux Enterprise Server em execução dentro de máquinas virtuais blindadas.
+    Se você executa ambientes com múltiplos sistemas operacionais, agora o Windows Server 2019 oferece suporte para executar o Ubuntu, o Red Hat Enterprise Linux e o SUSE Linux Enterprise Server em máquinas virtuais blindadas.
 
 ### <a name="http2-for-a-faster-and-safer-web"></a>HTTP/2 para uma Web mais rápida e mais segura
 
-- Aprimorada a concentração de conexões para oferecer uma experiência de navegação sem interrupções e criptografada corretamente.
+- Melhorada a concentração de conexões para oferecer uma experiência de navegação sem interrupções e devidamente criptografada.
 
-- Atualizado negociação do conjunto de codificação do lado do servidor do HTTP/2 para redução automática de falhas de conexão e a facilidade de implantação.
+- Negociação do conjunto de criptografia do lado do servidor do HTTP/2 atualizado para mitigação automática de falhas de conexão e facilidade de implantação.
 
-- Alterado nosso provedor de congestionamento TCP padrão para cúbica para oferecer a você mais taxa de transferência!
+- Alterado nosso provedor de congestionamento TCP padrão para cúbico para oferecer maior taxa de transferência!
 
 ## <a name="storage"></a>Armazenamento
 
-Aqui estão algumas das alterações que fizemos para armazenamento no Windows Server 2019. Para obter detalhes, consulte [o que há de novo no armazenamento](../storage/whats-new-in-storage.md).
+Eis algumas das alterações que fizemos no armazenamento do Windows Server 2019. Para obter detalhes, consulte [Novidades no armazenamento](../storage/whats-new-in-storage.md).
 
-### <a name="storage-migration-service"></a>Serviço de Migração do Armazenamento
+### <a name="storage-migration-service"></a>Serviço de Migração de Armazenamento
 
-O Serviço de Migração do Armazenamento é uma nova tecnologia que facilita migrar servidores para uma versão mais recente do Windows Server. Ele fornece uma ferramenta gráfica que faz o inventário de dados em servidores, transfere os dados e a configuração para servidores mais recentes e, em seguida, opcionalmente, move as identidades dos servidores antigos para os novos servidores para que aplicativos e usuários não precisem alterar nada. Para obter mais informações, consulte o [Serviço de Migração do Armazenamento](../storage/storage-migration-service/overview.md).
+O Serviço de Migração de Armazenamento é uma nova tecnologia que facilita a migração dos servidores para uma versão mais recente do Windows Server. Ele fornece uma ferramenta gráfica que faz o inventário dos dados em servidores, transfere os dados e a configuração para servidores mais recentes e, em seguida, opcionalmente, move as identidades dos servidores antigos para os novos servidores para que os aplicativos e usuários não precisem alterar nada. Para obter mais informações, consulte [Serviço de Migração de Armazenamento](../storage/storage-migration-service/overview.md).
 
 ### <a name="storage-spaces-direct"></a>Espaços de Armazenamento Diretos
 
-Aqui está uma lista das novidades nos Espaços de Armazenamento Diretos. Para obter detalhes, consulte [o que há de novo nos Espaços de Armazenamento Diretos](../storage/whats-new-in-storage.md#storage-spaces-direct). Consulte também [do Azure Stack HCI](https://docs.microsoft.com/azure-stack/operator/azure-stack-hci-overview) para informações sobre a aquisição de validada sistemas espaços de armazenamento diretos.
+Eis uma lista das novidades nos Espaços de Armazenamento Diretos. Para obter detalhes, consulte [Novidades nos Espaços de Armazenamento Diretos](../storage/whats-new-in-storage.md#storage-spaces-direct). Consulte também o [Azure Stack HCI](https://docs.microsoft.com/azure-stack/operator/azure-stack-hci-overview) para obter informações sobre a aquisição de sistemas validados de Espaços de Armazenamento Diretos.
 
-- **Eliminação de duplicação e compactação para volumes de ReFS**
+- **Eliminação de duplicação e compactação para volumes do ReFS**
 - **Suporte nativo para memória persistente**
-- **Resiliência aninhada para dois nós de infraestrutura hiperconvergida na borda**
-- **Clusters de dois servidores usando um USB flash drive como uma testemunha**
-- **Suporte do Windows Admin Center**
+- **Resiliência aninhada para a infraestrutura hiperconvergente de dois nós na borda**
+- **Clusters de dois servidores usando um pen drive como testemunha**
+- **Suporte para o Windows Admin Center**
 - **Histórico de desempenho**
 - **Dimensionar até 4 PB por cluster**
-- **Paridade de aceleração de espelho é 2 X mais rápido**
-- **Unidade de detecção de exceções de latência**
+- **A paridade acelerada por espelho é duas vezes mais rápida**
+- **Detecção de exceções de latência da unidade**
 - **Delimitar manualmente a alocação de volumes para aumentar a tolerância a falhas**
 
 ### <a name="storage-replica"></a>Réplica de Armazenamento
 
-Aqui está o que há de novo na Réplica de Armazenamento. Para obter detalhes, consulte [o que há de novo na Réplica de Armazenamento](../storage/whats-new-in-storage.md#storage-replica).
+Eis as novidades na Réplica de Armazenamento. Para obter detalhes, consulte [Novidades na Réplica de Armazenamento](../storage/whats-new-in-storage.md#storage-replica).
 
 - A Réplica de Armazenamento agora está disponível no Windows Server 2019 Standard Edition.
-- O Failover de teste é um novo recurso que permite a montagem de armazenamento de destino para validar os dados de backup ou a replicação. Para obter mais informações, consulte [Perguntas Frequentes sobre a Réplica de Armazenamento](../storage/storage-replica/storage-replica-frequently-asked-questions.md).
-- Melhorias de desempenho de log da Réplica de Armazenamento
-- Suporte do Windows Admin Center
+- O Failover de teste é um novo recurso que permite a montagem de armazenamento de destino para validar a replicação ou os dados de backup. Para obter mais informações, consulte [Perguntas Frequentes sobre a Réplica de Armazenamento](../storage/storage-replica/storage-replica-frequently-asked-questions.md).
+- Melhorias de desempenho do log da Réplica de Armazenamento
+- Suporte para o Windows Admin Center
 
 ## <a name="failover-clustering"></a>Clustering de failover
 
-Veja a seguir uma lista das novidades no Clustering de Failover. Para obter detalhes, consulte [o que há de novo no Clustering de Failover](../failover-clustering/whats-new-in-failover-clustering.md).
+Eis a lista de Novidades no Clustering de Failover. Para obter detalhes, consulte [Novidades no Clustering de Failover](../failover-clustering/whats-new-in-failover-clustering.md).
 
 - **Conjuntos de cluster**
-- **Clusters com suporte do Azure**
+- **Clusters com suporte ao Azure**
 - **Migração de cluster entre domínios**
 - **Testemunha USB**
-- **Aprimoramentos da infraestrutura de cluster**
-- **Atualização com suporte de cluster dá suporte a espaços de armazenamento diretos**
-- **Aprimoramentos de testemunha de compartilhamento de arquivos**
-- **Proteção do cluster**
-- **Cluster de failover não usa mais a autenticação NTLM**
+- **Melhorias de infraestrutura de cluster**
+- **A atualização com suporte a cluster é compatível com os Espaços de Armazenamento Diretos**
+- **Melhorias da testemunha do compartilhamento de arquivo**
+- **Proteção de cluster**
+- **O Cluster de Failover não usa mais a autenticação NTLM**
 
-## <a name="application-platform"></a>Plataforma de aplicativos
+## <a name="application-platform"></a>Plataformas de aplicativos
 
 ### <a name="linux-containers-on-windows"></a>Contêineres do Linux no Windows
 
-Agora é possível executar o Windows e contêineres do Linux no mesmo host do contêiner, usando o mesmo daemon do docker. Isso permite que você tenha um ambiente de host do contêiner heterogêneos enquanto fornece flexibilidade para desenvolvedores de aplicativos.
+Agora é possível executar contêineres baseados no Windows e no Linux no mesmo host de contêineres, usando o mesmo daemon do docker. Isso permite que você tenha um ambiente heterogêneo de host de contêineres e, ao mesmo tempo, forneça flexibilidade aos desenvolvedores de aplicativos.
 
 ### <a name="built-in-support-for-kubernetes"></a>Suporte interno para Kubernetes
 
-O Windows Server 2019 mantém as melhorias de computação, rede e armazenamento das versões de canal semestral necessárias para dar suporte a plataforma Kubernetes no Windows. Mais detalhes estarão disponíveis em versões futuras da Kubernetes.
+O Windows Server 2019 dá continuidade às melhorias de computação, redes e armazenamento das versões de canal semestral necessárias para dar suporte a Kubernetes no Windows. Mais detalhes estarão disponíveis em versões futuras do Kubernetes.
 
-- [Rede de contêineres](https://docs.microsoft.com/windows-server/networking/sdn/technologies/containers/container-networking-overview) no Windows Server 2019 melhora significativamente a usabilidade do Kubernetes no Windows ao aprimorar a resiliência de rede de plataforma e oferecer suporte a plug-ins de rede de contêineres.
+- A [Rede de contêineres](https://docs.microsoft.com/windows-server/networking/sdn/technologies/containers/container-networking-overview) do Windows Server 2019 melhora significativamente a usabilidade do Kubernetes no Windows por meio da melhoria da resiliência de rede da plataforma e do suporte a plug-ins de rede de contêineres.
 
-- As cargas de trabalho implantadas na Kubernetes são capazes de usar a segurança de rede para proteger serviços Linux e Windows usando ferramentas incorporada.
+- As cargas de trabalho implantadas em Kubernetes são capazes de usar a segurança de rede para proteger serviços do Linux e do Windows usando ferramentas inseridas.
 
 ### <a name="container-improvements"></a>Melhorias de contêiner
     
-- **Integrado de identidades aperfeiçoado**
+- **Identidade integrada melhorada**
 
-    Fizemos a autenticação integrada do Windows em contêineres mais fácil e mais confiáveis, endereçamento várias limitações de versões anteriores do Windows Server.
+    Tornamos a autenticação integrada do Windows em contêineres mais fácil e mais confiáveis, corrigindo várias limitações de versões anteriores do Windows Server.
 
-- **Melhor compatibilidade de aplicativos**
+- **Melhor compatibilidade do aplicativo**
 
-    Colocar em contêineres de aplicativos baseados em Windows apenas ficou mais fácil: A compatibilidade de aplicativo existentes *windowsservercore* imagem foi aumentada. Para aplicativos com dependências adicionais de API, agora há uma imagem de base do terceiro: *windows*.
+    Colocar aplicativos baseados no Windows em contêineres acaba de ficar ainda mais fácil: A compatibilidade com aplicativos da imagem existente do *windowsservercore* foi aumentada. Para aplicativos com dependências adicionais de API, agora há uma terceira imagem de base: *Windows*.
 
 - **Tamanho reduzido e melhor desempenho**
 
-    Os tamanhos de download de imagem do contêiner base, tamanho em disco e inicialização foram aprimorados. Isso acelera a fluxos de trabalho do contêiner
+    Os tamanhos de download da imagem de contêiner de base, o tamanho em disco e os horários de inicialização foram melhorados. Isso acelera os fluxos de trabalho do contêiner
 
-- **Experiência de gerenciamento usando o Windows Admin Center \(visualização\)**
+- **Experiência de gerenciamento usando o Windows Admin Center \(versão prévia\)**
 
-    Que fizemos mais fácil do que nunca para ver quais contêineres estão em execução em seu computador e gerenciar contêineres individuais com uma nova extensão para o Windows Admin Center. Procure a extensão "Contêineres" no [feed público do Windows Admin Center](https://docs.microsoft.com/windows-server/manage/windows-admin-center/configure/using-extensions).
+    Nós tornamos mais fácil que nunca ver quais contêineres estão em execução em seu computador e gerenciar contêineres individuais com uma nova extensão para o Windows Admin Center. Procure a extensão "Contêineres" no [feed público do Windows Admin Center](https://docs.microsoft.com/windows-server/manage/windows-admin-center/configure/using-extensions).
 
-### <a name="encrypted-networks"></a>Redes criptografadas
+### <a name="encrypted-networks"></a>Redes Criptografadas
 
-[Redes criptografados](https://docs.microsoft.com/windows-server/networking/sdn/sdn-whats-new) - criptografia de rede Virtual permite a criptografia de tráfego de rede virtual entre máquinas virtuais que se comunicam entre si em sub-redes marcadas como **Criptografia ativada**. Ele também utiliza datagrama Transport Layer Security (DTLS) na sub-rede virtual para criptografar pacotes. O DTLS oferece proteção contra interceptações, falsificação e falsificação por qualquer pessoa com acesso à rede física.
+[Redes Criptografadas](https://docs.microsoft.com/windows-server/networking/sdn/sdn-whats-new) – A criptografia de rede Virtual permite a criptografia do tráfego de rede virtual entre máquinas virtuais que se comunicam entre si dentro de sub-redes marcadas como **Criptografia Habilitada**. Ela também utiliza o DTLS (Datagrama do protocolo TLS) na sub-rede virtual para criptografar os pacotes. O DTLS protege contra interceptações, falsificação e adulteração por qualquer pessoa com acesso à rede física.
 
-### <a name="network-performance-improvements-for-virtual-workloads"></a>Melhorias de desempenho de rede para cargas de trabalho virtuais
+### <a name="network-performance-improvements-for-virtual-workloads"></a>Melhorias no desempenho de rede para cargas de trabalho virtuais
 
-As [Melhorias de desempenho de rede para cargas de trabalho virtuais](https://docs.microsoft.com/windows-server/networking/technologies/hpn/hpn-insider-preview) maximizam a taxa de transferência de rede para máquinas virtuais sem a necessidade de você ajustar constantemente ou fazer um provisionamento excessivo de seu host. Isso reduz o custo de manutenção e operações aumentando a densidade disponível dos hosts seu. Esses novos recursos são:
+As [Melhorias no desempenho de rede para cargas de trabalho virtuais](https://docs.microsoft.com/windows-server/networking/technologies/hpn/hpn-insider-preview) maximizam a taxa de transferência de rede para as máquinas virtuais, sem exigir que você ajuste constantemente ou faça um provisionamento excessivo em seu host. Isso reduz os custos de manutenção e das operações, aumentando a densidade disponível de seus hosts. Esses novos recursos são:
 
-* Receber o segmento concentração no vSwitch
+* Receber concentração de segmentos no vSwitch
 
-* Fila de vários de máquina Virtual dinâmica (d.VMMQ)
+* Fila com várias máquinas virtuais dinâmicas (d.VMMQ)
 
-### <a name="low-extra-delay-background-transport"></a>Atraso Extra baixa em segundo plano transporte
+### <a name="low-extra-delay-background-transport"></a>Transporte em segundo plano com baixo atraso extra
 
-Baixa Extra atraso em segundo plano transporte (LEDBAT) é uma latência otimizada, provedor de controle de congestionamento de rede projetado para gerar automaticamente largura de banda para usuários e aplicativos, consumindo a toda largura de banda disponível quando a rede não estiver em uso.   
-Essa tecnologia destina-se para uso na implantação de atualizações críticas de grandes em um ambiente de TI sem afetar o atendimento ao cliente frontal e largura de banda associada.
+O LEDBAT (Transporte em segundo plano com baixo atraso extra) é um provedor de controle de congestionamento de rede com latência otimizada projetado para conceder automaticamente largura de banda para usuários e aplicativos, consumindo toda a largura de banda disponível quando a rede não estiver em uso.   
+Essa tecnologia destina-se ao uso na implantação de grandes atualizações críticas em um ambiente de TI, sem afetar os serviços diretamente ligados ao cliente e a largura de banda associada.
 
 ### <a name="windows-time-service"></a>Serviço de Tempo do Windows
 
-O [Serviço Horário do Windows](https://docs.microsoft.com/windows-server/networking/windows-time-service/insider-preview) inclui true suporte compatível com UTC fração de segundo, um protocolo de novo horário chamado protocolo de tempo de precisão e o rastreamento de ponta a ponta.
+O [Serviço de Tempo do Windows](https://docs.microsoft.com/windows-server/networking/windows-time-service/insider-preview) inclui suporte real compatível com UTC a frações de segundos, um novo protocolo de tempo chamado de Protocolo de Tempo de Precisão e rastreabilidade de ponta a ponta.
 
 
 ### <a name="high-performance-sdn-gateways"></a>Gateways SDN de alto desempenho
 
-[Gateways SDN de alto desempenho](https://docs.microsoft.com/windows-server/networking/sdn/gateway-performance) no Windows Server 2019 melhora significativamente o desempenho para conexões IPsec e GRE, fornecendo a taxa de transferência de alto desempenho com muito menos utilização da CPU.
+Os [Gateways SDN de alto desempenho](https://docs.microsoft.com/windows-server/networking/sdn/gateway-performance) no Windows Server 2019 melhoram significativamente o desempenho das conexões IPsec e GRE, fornecendo uma taxa de transferência de altíssimo desempenho com muito menos utilização da CPU.
 <br/>
 
-### <a name="new-deployment-ui-and-windows-admin-center-extension-for-sdn"></a>Nova extensão de interface do usuário de implantação e o Windows Admin Center para SDN
+### <a name="new-deployment-ui-and-windows-admin-center-extension-for-sdn"></a>Nova extensão da interface do usuário de implantação e do Windows Admin Center para SDN
 
-Agora, com o Windows Server 2019, é fácil realizar a implantação e o gerenciamento por meio de uma nova interface do usuário da implantação e da extensão do Windows Admin Center que permitem a qualquer pessoa aproveitar o poder do SDN. 
+Agora, com o Windows Server 2019, ficou fácil realizar implantação e gerenciamento por meio de uma nova extensão da interface do usuário de implantação e do Windows Admin Center que permitem a qualquer pessoa aproveitar o poder do SDN. 
 
-### <a name="persistent-memory-support-for-hyper-v-vms"></a>Suporte de Memória Persistente para VMs Hyper-V
+### <a name="persistent-memory-support-for-hyper-v-vms"></a>Suporte de Memória Persistente para VMs do Hyper-V
 
-Para aproveitar a alta taxa de transferência e baixa latência de memória persistente (ou seja memória de classe de armazenamento) em máquinas virtuais, ele agora pode ser projetado diretamente nas VMs. Isso pode ajudar a reduzir drasticamente a latência de transação do banco de dados ou reduzir o tempo de recuperação para bancos de dados de baixa latência de memória em caso de falha.
+Para aproveitar a alta taxa de transferência e a baixa latência da memória persistente (também conhecida como memória de classe de armazenamento) nas máquinas virtuais, agora ela pode ser projetada diretamente nas VMs. Isso pode ajudar a reduzir drasticamente a latência das transações de banco de dados ou reduzir o tempo de recuperação para bancos de dados em memória de baixa latência em caso de falha.
 

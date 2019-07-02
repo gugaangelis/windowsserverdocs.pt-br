@@ -9,11 +9,11 @@ author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.openlocfilehash: 62821abc6c9eec660fa6af832bb1aba151708021
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884077"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63686410"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>Benefício Híbrido do Azure para Windows Server
 
@@ -21,7 +21,7 @@ ms.locfileid: "59884077"
 
 ## <a name="benefit-description-rules-and-use-cases"></a>Descrição, regras e casos de uso do benefício
 
-O Benefício Híbrido do Azure para Windows Server permite que você economize até 40% em VMs do Windows Server no Azure utilizando suas licenças do Windows Server local com o Software Assurance.  Com esse benefício, os clientes precisam apenas pagar os custos de infraestrutura da máquina virtual porque o licenciamento para o Windows Server está coberto pelo benefício do programa Software Assurance.  O benefício é aplicável às edições Standard e Datacenter do Windows Server para as versões 2008R2, 2012, 2012R2 e 2016.  Esse benefício está disponível em todas as regiões e nuvens soberanas.
+O Benefício Híbrido do Azure para Windows Server permite que você economize até 40% em VMs do Windows Server no Azure utilizando suas licenças do Windows Server local com o Software Assurance.  Com esse benefício, os clientes precisam apenas pagar os custos de infraestrutura da máquina virtual porque o licenciamento para o Windows Server está coberto pelos benefícios do Software Assurance.  O benefício é aplicável às edições Standard e Datacenter do Windows Server para as versões 2008R2, 2012, 2012R2 e 2016.  Esse benefício está disponível em todas as regiões e nuvens soberanas.
 
 
 ![imagem 1](media/ahb01.png)
@@ -32,8 +32,8 @@ Cada licença de 2 processadores do Windows Server com um SA/Assinatura ativa e 
 
 | Licença com SA/Assinatura            | VMs e núcleos concedidos            | Como eles podem ser usados                                |
 |-----------------------------------------|----------------------------------|-----------------------------------------------------|
-| WS Datacenter (16 núcleos ou um L de 2 processadores)  | Até duas VMs e até 16 núcleos | Executar máquinas virtuais no local e no Azure  |
-| WS Standard (16 núcleos ou um L de 2 processadores)    | Até duas VMs e até 16 núcleos | Executar máquinas virtuais no local ou no Azure |
+| WS Datacenter (16 núcleos ou um L de 2 processadores)  | Até duas VMs e até 16 núcleos | Executar máquinas virtuais localmente e no Azure  |
+| WS Standard (16 núcleos ou um L de 2 processadores)    | Até duas VMs e até 16 núcleos | Executar máquinas virtuais localmente ou no Azure |
 
 As VMs que utilizam o Benefício Híbrido do Azure só podem ser executadas durante o termo do SA/Assinatura. Quando a hora de expiração do SA/Assinatura estiver se aproximando, o cliente terá a opção de renovar o SA/Assinatura, desativar a funcionalidade de benefício híbrido dessa VM ou desprovisionar a VM usando o benefício híbrido. 
 
@@ -51,15 +51,15 @@ O Benefício Híbrido do Azure para Windows Server também permite a flexibilida
 
 Configurações de exemplo para várias posições de licenciamento:
 
-![Imagem 4](media/ahb04.png)
-![5 da imagem](media/ahb05.png)
+![imagem 4](media/ahb04.png)
+![imagem 5](media/ahb05.png)
 
  
-Se você quiser saber mais sobre o Benefício de Híbrido do Azure para o Windows Server, vá para o site do Benefício Híbrido do Azure.
+Se você quiser saber mais sobre o Benefício Híbrido do Azure para o Windows Server, vá para o site do Benefício Híbrido do Azure.
 
 ## <a name="how-to-maintain-compliance"></a>Como manter a conformidade
 
-Os clientes que procuram aplicar o Benefício Híbrido do Azure às suas VMs do Windows Server precisam verificar o número de licenças qualificadas e o respectivo período de cobertura de seu SA/Assinatura antes de qualquer ativação desse benefício e aplicar as diretrizes acima para implantar o número correto de VMs com o benefício. Se você já tiver VMs com o Benefício Híbrido do Azure, você precisará executar um inventário de quantas unidades estão em execução e verificar em relação às licenças do SA ativas que você tem.  Entre em contato com a especialista em licenciamento do Microsoft Enterprise Agreement para validar sua posição de licenciamento SA.
+Os clientes que procuram aplicar o Benefício Híbrido do Azure às suas VMs do Windows Server precisam verificar o número de licenças qualificadas e o respectivo período de cobertura de seu SA/Assinatura antes de qualquer ativação desse benefício e aplicar as diretrizes acima para implantar o número correto de VMs com o benefício. Se já tiver VMs com o Benefício Híbrido do Azure, você precisará executar um inventário de quantas unidades estão em execução e verificar em relação às licenças do SA ativas que você tem.  Entre em contato com a especialista em licenciamento do Contrato Enterprise da Microsoft para validar sua posição de licenciamento SA.
 Para ver e contar todas as máquinas virtuais implantadas com o Benefício Híbrido do Azure para Windows Server em uma assinatura, você poderá executar um destes procedimentos:
 
 1. Configure o Portal do Microsoft Azure para mostrar o Benefício Híbrido do Azure para utilização do Windows Server. Adicione a coluna "Benefício Híbrido do Azure" ao modo de exibição de lista da seção de máquinas virtuais no Portal do Microsoft Azure. 
@@ -82,11 +82,11 @@ Para ver e contar todas as máquinas virtuais implantadas com o Benefício Híbr
 Observe que a cobrança não se aplica em tempo real, ou seja, haverá um atraso de algumas horas desde a hora em que você ativou a VM com o benefício híbrido antes que ele fosse mostrado na conta.
 Em seguida, você pode preencher os resultados na **Ferramenta do SA de Contagem do Benefício Híbrido do Azure para Windows Server** abaixo para obter o número de licenças WS cobertas pelo SA ou pelas Assinaturas necessários.
 
-Execute um inventário em cada assinatura que você possui para gerar uma visão abrangente da sua posição de licenciamento.
+Execute um inventário em cada assinatura que você tem para gerar uma visão abrangente da sua posição de licenciamento.
 
-[Ferramenta de contagem de SA de WS de benefício híbrido do Azure](http://download.microsoft.com/download/7/1/2/712FEFF0-155C-4ABF-96C0-CE4EC4DB0516/Azure_Hybrid_Benefit_Windows_Server_SA_Count_Tool.xlsx)
+[Ferramenta do SA de Contagem de Benefício Híbrido do Azure para o WS](http://download.microsoft.com/download/7/1/2/712FEFF0-155C-4ABF-96C0-CE4EC4DB0516/Azure_Hybrid_Benefit_Windows_Server_SA_Count_Tool.xlsx)
 
-Se você tiver realizado o que foi realizado acima e confirmado que você está totalmente licenciado para o número de instâncias do Benefício Híbrido do Azure que você está executando, não haverá necessidade de outras ações. Se você tiver descoberto que pode cobrir VMs incrementais com o benefício, convém otimizar seus custos ainda mais alternando para instâncias em execução com o benefício versus custo total.
+Se tiver realizado o que foi realizado acima e confirmado que você está totalmente licenciado para o número de instâncias do Benefício Híbrido do Azure que você está executando, não haverá necessidade de outras ações. Se você tiver descoberto que pode cobrir VMs incrementais com o benefício, convém otimizar seus custos ainda mais alternando para instâncias em execução com o benefício versus custo total.
 
 Se você não tiver licenças do Windows Server suficientes qualificadas para o número de VMs já implantadas, será necessário comprar licenças locais do Windows Server adicionais cobertas com o Software Assurance por meio de um dos canais listados abaixo, comprar VMs do Windows Server a taxas por hora regulares ou desativar a funcionalidade Benefício Híbrido para algumas VMs. Observe que você pode comprar licenças de núcleo no incremento de oito núcleos para se qualificar para cada VM do Benefício Híbrido do Azure adicional. 
 
@@ -94,14 +94,14 @@ O Software Assurance e/ou as Assinaturas do Windows Server estão disponíveis p
 
 | Canal                      | Abrir     | OVS      | Select/ Select Plus  | MPSA       | EA/EAS   |
 |------------------------------|----------|----------|-----------------------|-----------|----------|
-| Tamanho típico (nº de dispositivos)  | 5 a 250    | 5 a 250    | Mais de 250                  | Mais de 250      | Mais de 500     |
+| Tamanho típico (nº de dispositivos)  | 5-250    | 5-250    | >250                  | >250      | >500     |
 | SA/Assinatura            | Opcional | Incluído | Opcional              | Opcional  | Incluído |
 
 A Microsoft se reserva o direito de auditar o cliente final a qualquer momento para verificar a qualificação para a utilização do Benefício Híbrido do Azure. 
 
 ## <a name="deployment-guidance"></a>Diretrizes de implantação 
 
-Habilitamos a disponibilidade de imagens da galeria de pré-fabricados para todos os nossos clientes com licenças qualificadas, independentemente de onde eles os compraram, bem como parceiros habilitados para ser capaz de executar as implantações em nome dos clientes. 
+Habilitamos a disponibilidade de imagens da galeria pré-fabricadas para todos os nossos clientes com licenças qualificadas, independentemente de onde eles as compraram, bem como a parceiros habilitados, para que sejam capazes de executar as implantações em nome dos clientes. 
 
 Veja as instruções para todas as opções de implantação disponíveis [aqui](https://azure.microsoft.com/pricing/hybrid-use-benefit/), incluindo: 
 -   Vídeo detalhado realçando a nova experiência de implantação utilizando imagens pré-fabricadas da galeria
