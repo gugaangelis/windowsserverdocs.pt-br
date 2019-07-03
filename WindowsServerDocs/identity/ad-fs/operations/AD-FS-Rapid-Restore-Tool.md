@@ -5,16 +5,16 @@ description: ''
 author: billmath
 ms.author: billmath
 manager: femila
-ms.date: 04/01/2019
+ms.date: 07/02/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: a831154a8b1e84f5ed879375980882e208c33d73
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 525ba403473a9de522d9ab30662adc868b17b88d
+ms.sourcegitcommit: c02756b7f5c92bf5018e17192f6fffb4754b0f06
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190355"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67533504"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>Ferramenta de restauração rápida do AD FS
 
@@ -213,6 +213,13 @@ Sempre que um backup ou restauração é executada, um arquivo de log é criado.
 > Quando executar uma restauração de que um arquivo de PostRestore_Instructions pode ser criado que contém uma visão geral dos provedores de autenticação adicional, repositórios de atributos e relações de confiança de provedor de declarações local para ser instalado manualmente antes de iniciar o serviço AD FS.
 
 ## <a name="version-release-history"></a>Histórico de versão
+
+### <a name="version-10820"></a>Versão 1.0.82.0
+Versão: Julho de 2019
+
+**Problemas corrigidos:**
+- Nomes de conta que contêm caracteres de escape LDAP de serviço de correção de bug para o AD FS
+
 
 ### <a name="version-10810"></a>Versão: 1.0.81.0
 Versão: Abril de 2019
