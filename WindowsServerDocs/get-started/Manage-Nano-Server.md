@@ -12,19 +12,19 @@ ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: cc535934705878c7f2b7fdc4e655ab5c853e4f96
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.openlocfilehash: 165b7e7aea7a7d0bb56d21f350f6ee646d5fa973
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66443532"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280406"
 ---
 # <a name="manage-nano-server"></a>Gerenciar o Nano Server
 
 >Aplica-se a: Windows Server 2016
 
 > [!IMPORTANT]
-> A partir do Windows Server, versão 1709, o Nano Server estará disponível somente como uma [imagem de sistema operacional base do contêiner](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Confira [Mudanças no Nano Server](nano-in-semi-annual-channel.md) para saber o que isso significa.   
+> Começando com o Windows Server, versão 1709, o Nano Server estará disponível somente como uma [imagem de sistema operacional base do contêiner](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Confira [Mudanças no Nano Server](nano-in-semi-annual-channel.md) para saber o que isso significa.   
 
 O Nano Server é gerenciado remotamente. Não há nenhum recurso de logon local, nem suporte aos Serviços de Terminal. No entanto, há diversas opções de gerenciamento do Nano Server remotamente, incluindo o Windows PowerShell, WMI (Instrumentação de Gerenciamento do Windows), Gerenciamento Remoto do Windows e EMS (serviços de gerenciamento de emergência).  
 
@@ -40,7 +40,7 @@ Para usar qualquer ferramenta de gerenciamento remoto, você provavelmente preci
 Para gerenciar o Nano Server com a comunicação remota do Windows PowerShell, é necessário adicionar o endereço IP do Nano Server à lista de hosts confiáveis do seu computador de gerenciamento, adicionar a conta que você está usando para os administradores do Nano Server e ativar o CredSSP se quiser usar esse recurso.  
 
 > [!NOTE]
-> Se o destino do Nano Server e o computador de gerenciamento estiverem na mesma floresta do AD DS (ou em florestas com uma relação de confiança), você não deve adicionar o Nano Server à lista de hosts confiáveis – você pode se conectar ao Nano Server usando seu nome de domínio totalmente qualificado , por exemplo: PS C:\> Enter-PSSession -ComputerName nanoserver.contoso.com -Credential (Get-Credential)
+> Se o Nano Server de destino e o computador de gerenciamento estiverem na mesma floresta do AD DS (ou em florestas com uma relação de confiança), você não deverá adicionar o Nano Server à lista de hosts confiáveis, você pode se conectar ao Nano Server usando seu nome de domínio totalmente qualificado, por exemplo: PS C:\> Enter-PSSession -ComputerName nanoserver.contoso.com -Credential (Get-Credential)
   
   
 Para adicionar o Nano Server à lista de hosts confiáveis, execute este comando em um prompt com privilégios elevados do Windows PowerShell:  
@@ -124,9 +124,9 @@ Se você quiser instalar pacotes de serviço, use o parâmetro -ServicingPackage
   
 Geralmente, um pacote de serviço ou hotfix é baixado como um item de KB que contém um arquivo .cab. Execute estas etapas para extrair o arquivo .cab, que pode ser instalado com o parâmetro -ServicingPackagePath:  
   
-1.  Baixe o pacote de serviço (do artigo da Base de Dados de Conhecimento associado ou do [Catálogo do Microsoft Update](https://catalog.update.microsoft.com/v7/site/home.aspx). Salvá-lo em um compartilhamento de rede ou diretório local, por exemplo: C:\ServicingPackages  
+1.  Baixe o pacote de serviço (do artigo da Base de Dados de Conhecimento associado ou do [Catálogo do Microsoft Update](https://catalog.update.microsoft.com/v7/site/home.aspx). Salve-o em um compartilhamento de rede ou diretório local, por exemplo: C:\ServicingPackages  
 2.  Crie uma pasta na qual você salvará o pacote de serviço extraído.  Exemplo: c:\KB3157663_expanded  
-3.  Abra um console do Windows PowerShell e use o comando `Expand` especificando o caminho até o arquivo .msu do pacote de serviço, incluindo o parâmetro `-f:*` e o caminho onde você deseja que o pacote serviço seja extraído.  Por exemplo:  `Expand "C:\ServicingPackages\Windows10.0-KB3157663-x64.msu" -f:* "C:\KB3157663_expanded"`  
+3.  Abra um console do Windows PowerShell e use o comando `Expand` especificando o caminho até o arquivo .msu do pacote de serviço, incluindo o parâmetro `-f:*` e o caminho onde você deseja que o pacote serviço seja extraído.  Por exemplo: `Expand "C:\ServicingPackages\Windows10.0-KB3157663-x64.msu" -f:* "C:\KB3157663_expanded"`  
   
     Os arquivos expandidos devem ser semelhantes a este:  
 C:>dir C:\KB3157663_expanded   
@@ -143,7 +143,7 @@ O Número de série do volume é B05B-CC3D
 04/17/2016  12:36 AM           185,818 WSUSSCAN.cab  
                4 File(s)     94,073,136 bytes  
                2 Dir(s)  328,559,427,584 bytes free  
-4.  Executar `New-NanoServerImage` com o parâmetro - ServicingPackagePath apontando para o arquivo. cab nesse diretório, por exemplo: `New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -ServicingPackagePath C:\KB3157663_expanded\Windows10.0-KB3157663-x64.cab`  
+4.  Execute `New-NanoServerImage` com o parâmetro -ServicingPackagePath apontando para o arquivo .cab nesse diretório, por exemplo: `New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -ServicingPackagePath C:\KB3157663_expanded\Windows10.0-KB3157663-x64.cab`  
 
 ## <a name="managing-updates-in-nano-server"></a>Gerenciar atualizações no Nano Server
 
@@ -237,7 +237,7 @@ O fluxo de trabalho de alto nível permanece o mesmo em qualquer instalação do
 As seções a seguir listam as atividades de coleta de dados de desempenho mais comuns, juntamente com uma forma com suporte de realizá-las no Nano Server.
 
 ### <a name="query-available-event-providers"></a>Consultar os provedores de eventos disponíveis
-[Windows Performance Recorder](https://msdn.microsoft.com/en-us/library/hh448229.aspx) é a ferramenta para consultar os provedores de eventos disponíveis da seguinte maneira:
+[Windows Performance Recorder](https://msdn.microsoft.com/library/hh448229.aspx) é a ferramenta para consultar os provedores de eventos disponíveis da seguinte maneira:
 ```
 wpr.exe -providers
 ```
