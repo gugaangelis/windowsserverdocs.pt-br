@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 06/07/2019
 ms.prod: windows-server-threshold
-ms.openlocfilehash: d0e57a1ef3f1b84fbdf4ebf0b3d2d205dc7a1987
-ms.sourcegitcommit: 078304c4b92bb57eb85ba29634afc92cc028c644
+ms.openlocfilehash: 53f34992b875730be80ba479f387095aebbc8132
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67298159"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469558"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Perguntas frequentes sobre o Windows Admin Center
 
@@ -148,10 +148,6 @@ Há duas versões do Windows Admin Center disponíveis para download:
 * Para obter a versão mais recente, [baixe-a aqui](https://aka.ms/WACDownload).
 
 ### <a name="windows-admin-center-preview"></a>Windows Admin Center Preview
-<!--
-> [!NOTE]
-> The current GA version (Windows Admin Center 1904) contains all previous preview functionality.
-> The Insider Preview will return in the coming months. -->
 
 * Para administradores de TI que desejam os melhores e mais recentes recursos em uma cadência regular, esta versão é para você. Nosso objetivo é fornecer lançamentos de atualização subsequentes todos os meses ou com frequência próxima disso. A plataforma principal continua pronta para produção e a licença fornece os direitos de uso de produção. No entanto, observe que você vê a introdução das novas ferramentas e recursos que estão marcados claramente como VERSÃO PRÉVIA e são adequados para avaliação e teste.
 * Para obter a versão mais recente do Insider Preview, os participantes registrados do Insider podem baixar o Windows Admin Center Preview diretamente da [página de download do Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver), no menu suspenso Downloads Adicionais. Caso ainda não tenha se registrado como um Insider, confira o [Guia de Introdução ao Windows Server](https://insider.windows.com/en-us/for-business-getting-started-server/) no portal Windows Insider para Empresas.
