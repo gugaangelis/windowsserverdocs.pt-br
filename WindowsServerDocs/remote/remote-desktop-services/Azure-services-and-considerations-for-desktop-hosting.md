@@ -1,6 +1,6 @@
 ---
 title: Serviços do Azure e considerações para a hospedagem de área de trabalho
-description: Saiba mais sobre as considerações de exclusivas para o Azure com uma área de trabalho remota, solução de hospedagem.
+description: Saiba mais sobre as considerações exclusivas para o Azure com uma solução de hospedagem de Área de Trabalho Remota.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,65 +13,65 @@ ms.topic: article
 ms.assetid: 0f402ae3-5391-4c7d-afea-2c5c9044de46
 author: heidilohr
 manager: dougkim
-ms.openlocfilehash: 37210a5d75399309c53364f5b8ee9e06d26d6f32
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c07a86c8168d323cf6e2af373ad51dc6a6b640b5
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849797"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63749246"
 ---
 # <a name="azure-services-and-considerations-for-desktop-hosting"></a>Serviços do Azure e considerações para a hospedagem de área de trabalho
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016
 
-As seções a seguir descrevem os serviços de infraestrutura do Azure.
+As seções a seguir descrevem os Serviços de Infraestrutura do Azure.
   
 ## <a name="azure-portal"></a>Portal do Azure
 
-Depois que o provedor cria uma assinatura do Azure, o portal do Azure pode ser usado para criar manualmente o ambiente de cada locatário. Esse processo também pode ser automatizado usando scripts do PowerShell.  
+Depois que o provedor cria uma assinatura do Azure, é possível usar o portal do Azure para criar manualmente o ambiente de cada locatário. Esse processo também pode ser automatizado usando scripts do PowerShell.  
 
-Para obter mais informações, visite o [Microsoft Azure](https://www.azure.microsoft.com) site.
+Para obter mais informações, visite o site da Web [Microsoft Azure](https://www.azure.microsoft.com).
   
 ## <a name="azure-load-balancer"></a>Azure Load Balancer
 
-Componentes do locatário executados em máquinas virtuais que se comunicam entre si em uma rede isolada. Durante o processo de implantação, você pode acessar externamente essas máquinas virtuais por meio do balanceador de carga do Azure usando pontos de extremidade do protocolo de área de trabalho remota ou um ponto de extremidade remoto do PowerShell. Quando uma implantação for concluída, esses pontos de extremidade normalmente serão excluídos para reduzir a área de superfície de ataque. Os pontos de extremidade somente serão os pontos de extremidade HTTPS e UDP criados para a máquina virtual executando a Web da área de trabalho remota e os componentes do Gateway de área de trabalho remota. Isso permite que os clientes na internet para se conectar a sessões em execução no serviço de hospedagem da área de trabalho do locatário. Se um usuário abre um aplicativo que se conecta à internet, como um navegador da web, as conexões serão passadas por meio do balanceador de carga do Azure.  
+Os componentes do locatário são executados em máquinas virtuais que se comunicam entre si em uma rede isolada. Durante o processo de implantação, é possível acessar externamente essas máquinas virtuais por meio do Azure Load Balancer usando pontos de extremidade do protocolo RDP ou um ponto de extremidade do PowerShell Remoto. Quando uma implantação for concluída, esses pontos de extremidade normalmente serão excluídos para reduzir a área da superfície de ataque. Os únicos pontos de extremidade serão os pontos de extremidade HTTPS e UDP criados para a máquina virtual executando os componentes da Web da Área de Trabalho Remota e do Gateway de Área de Trabalho Remota. Isso permite que os clientes na Internet conectem às sessões em execução no serviço de hospedagem de área de trabalho do locatário. Se um usuário abre um aplicativo que conecta à Internet, como um navegador da Web, as conexões serão passadas pelo Azure Load Balancer.  
   
-Para obter mais informações, consulte [o que é o balanceador de carga do Azure?](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-load-balance/)
+Para obter mais informações, consulte [O que é o Azure Load Balancer?](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-load-balance/)
   
-## <a name="security-considerations"></a>Considerações sobre segurança
+## <a name="security-considerations"></a>Considerações de segurança
 
-Este guia do Azure da área de trabalho de hospedagem referência arquitetura foi projetado para fornecer um ambiente altamente seguro e isolado para cada locatário. Segurança do sistema também depende de garantias executadas pelo provedor durante a implantação e operação do serviço hospedado. A lista a seguir descreve algumas considerações sobre que o provedor deve tomar para manter sua solução de hospedagem da área de trabalho com base nessa arquitetura de referência segura.
+Este Guia de Arquitetura de Referência de Hospedagem de Área de Trabalho do Azure serve para fornecer um ambiente altamente seguro e isolado para cada locatário. A segurança do sistema também depende das medidas de proteção tomadas pelo provedor durante a implantação e a operação do serviço hospedado. A lista a seguir descreve algumas considerações que o provedor deve levar em conta para manter segura a solução de hospedagem de área de trabalho com base nessa arquitetura de referência.
 
-- Todas as senhas administrativas devem ser fortes, idealmente aleatoriamente geradas, alterado com frequência e salvo em um local central seguro somente acessível aos poucos administradores de provedor select.  
-- Ao replicar o ambiente de locatário para novos locatários, evite usar senhas administrativas mesmas ou fracas.
-- A URL do site de acesso via Web RD, nome e certificados devem ser reconhecível para cada locatário para evitar ataques de falsificação e exclusivos.  
-- Durante a operação normal do serviço de hospedagem da área de trabalho, todos os endereços IP públicos devem ser excluídos para todas as máquinas virtuais, exceto a máquina virtual Web da área de trabalho remota e Gateway de área de trabalho remota que permite aos usuários a se conectar com segurança para o serviço nuvem de hospedagem da área de trabalho do locatário. Endereços IP públicos podem ser adicionados temporariamente quando necessário para tarefas de gerenciamento, mas sempre devem ser excluídos posteriormente.  
+- Todas as senhas administrativas devem ser fortes, de preferência geradas aleatoriamente, alteradas com frequência e salvas em um local centralizado seguro que seja acessível a administradores de provedor especialmente selecionados.  
+- Ao replicar o ambiente de locatário para novos locatários, evite usar senhas administrativas iguais ou fracas.
+- A URL do site de Acesso via Web à Área de Trabalho Remota, nome e certificados devem ser exclusivos e reconhecíveis para cada locatário de modo a prevenir ataques de falsificação.  
+- Durante a operação normal do serviço de hospedagem da área de trabalho, todos os endereços IP públicos devem ser excluídos de todas as máquinas virtuais, exceto a máquina virtual da Web da Área de Trabalho Remota e do Gateway de Área de Trabalho Remota, as quais permitem aos usuários conectar com segurança ao serviço de nuvem de hospedagem de área de trabalho do locatário. Endereços IP públicos podem ser adicionados temporariamente quando necessário para tarefas de gerenciamento, mas sempre devem ser excluídos posteriormente.  
   
 Para obter mais informações, consulte os seguintes artigos:
 
 - [Segurança e proteção](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831778(v=ws.11))  
-- [Práticas recomendadas de segurança para o IIS 8](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj635855(v=ws.11))  
+- [Práticas recomendadas de segurança para IIS 8](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj635855(v=ws.11))  
 - [Proteger o Windows Server 2012 R2](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831360(v=ws.11))  
   
 ## <a name="design-considerations"></a>Considerações de design
 
-É importante levar em consideração as restrições dos serviços de infraestrutura do Microsoft Azure durante a criação de uma área de trabalho multilocatária, serviço de hospedagem. A lista a seguir descreve as considerações sobre que o provedor deve tomar para realizar uma funcional e econômica da área de trabalho solução de hospedagem com base nessa arquitetura de referência.  
+É importante levar em consideração as restrições dos Serviços de Infraestrutura do Microsoft Azure durante a criação de um serviço de hospedagem de área de trabalho de multilocatário. A lista a seguir descreve algumas considerações que o provedor deve levar em conta para obter uma solução de hospedagem de área de trabalho funcional e econômica com base nessa arquitetura de referência.  
   
-- Uma assinatura do Azure tem um número máximo de redes virtuais, núcleos de VMs e serviços de nuvem que pode ser usado. Se um provedor precisa de mais recursos do que isso, precisará criar várias assinaturas.
-- Um serviço de nuvem do Azure tem um número máximo de máquinas virtuais que podem ser usados. O provedor talvez precise criar vários serviços de nuvem para locatários maiores que excedem o máximo.  
-- Os custos de implantação do Azure baseiam-se parcialmente o número e tamanho das máquinas virtuais. O provedor deve otimizar o número e tamanho das máquinas virtuais para cada locatário para fornecer um funcional e altamente seguro o ambiente de hospedagem de área de trabalho com o menor custo.  
-- Os recursos de computador físico no data center do Azure são virtualizados usando o Hyper-V. Hosts Hyper-V não estão configuradas em clusters de host, portanto, a disponibilidade das máquinas virtuais é dependente da disponibilidade dos servidores individuais usados na infraestrutura do Azure. Para fornecer maior disponibilidade, várias instâncias de cada máquina de virtual do serviço de função podem ser criadas em um conjunto de disponibilidade, em seguida, o clustering de convidado pode ser implementado dentro das máquinas virtuais.  
-- Em uma configuração típica de armazenamento, um provedor de serviços terá uma única conta de armazenamento com vários contêineres (por exemplo, um para cada Locatário) e vários discos de dentro de cada contêiner. No entanto, há um limite para o armazenamento total e o desempenho pode ser obtido para uma única conta de armazenamento. Para provedores de serviços que dão suporte a grandes números de locatários ou locatários com requisitos de armazenamento de alta capacidade ou desempenho, o provedor de serviços talvez precise criar várias contas de armazenamento.  
+- Uma assinatura do Azure tem um número máximo de redes virtuais, núcleos de VM e Serviços de Nuvem que pode ser usado. Se um provedor necessitar de mais recursos do que isso, ele precisará criar várias assinaturas.
+- Um Serviço de Nuvem do Azure tem um número máximo de máquinas virtuais que podem ser usadas. O provedor talvez precise criar vários Serviços de Nuvem para locatários maiores que excedam o máximo.  
+- Os custos de implantação do Azure baseiam-se parcialmente no número e tamanho das máquinas virtuais. O provedor deve otimizar o número e tamanho das máquinas virtuais para cada locatário, visando fornecer um ambiente de hospedagem de área de trabalho funcional e altamente seguro com o menor custo.  
+- Os recursos de computadores físicos no data center do Azure são virtualizados usando o Hyper-V. Os hosts Hyper-V não são configurados em clusters de hosts, portanto, a disponibilidade das máquinas virtuais é dependente da disponibilidade dos servidores individuais usados na infraestrutura do Azure. Para fornecer maior disponibilidade, várias instâncias de cada máquina virtual do serviço de função podem ser criadas em um conjunto de disponibilidade e, em seguida, o clustering de convidado pode ser implementado dentro das máquinas virtuais.  
+- Em uma configuração de armazenamento típica, um provedor de serviços terá uma única conta de armazenamento com vários contêineres (por exemplo, um para cada locatário) e vários discos dentro de cada contêiner. No entanto, há um limite para o armazenamento total e o desempenho que pode ser alcançado para uma única conta de armazenamento. Para provedores de serviços que dão suporte a grandes números de locatários ou locatários com requisitos de alta capacidade de armazenamento ou alto desempenho, o provedor de serviços talvez precise criar várias contas de armazenamento.  
   
 Para obter mais informações, consulte os seguintes artigos:
 
-- [Tamanhos para serviços de nuvem](https://docs.microsoft.com/azure/cloud-services/cloud-services-sizes-specs)  
-- [Máquina de virtual do Microsoft Azure os detalhes de preços](https://azure.microsoft.com/pricing/details/virtual-machines/)  
+- [Tamanhos para Serviços de Nuvem](https://docs.microsoft.com/azure/cloud-services/cloud-services-sizes-specs)  
+- [Detalhes de preços de máquinas de virtuais do Microsoft Azure](https://azure.microsoft.com/pricing/details/virtual-machines/)  
 - [Visão geral do Hyper-V](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11))  
-- [Destinos de escalabilidade e desempenho de armazenamento do Azure](https://docs.microsoft.com/azure/storage/common/storage-scalability-targets)  
+- [Metas de desempenho e escalabilidade do Armazenamento do Azure](https://docs.microsoft.com/azure/storage/common/storage-scalability-targets)  
 
-## <a name="azure-active-directory-application-proxy"></a>Proxy de aplicativo do Azure Active Directory
+## <a name="azure-active-directory-application-proxy"></a>Proxy de Aplicativo do Azure Active Directory
 
-Proxy de aplicativo do Azure Active Directory (AD) é um serviço fornecido em SKUs do Azure AD pagos que permitem que os usuários se conectem a aplicativos internos por meio do serviço de proxy reverso do Azure. Isso permite que os pontos de extremidade da Web da área de trabalho remota e Gateway de área de trabalho remota a ser escondido dentro da rede virtual, eliminando a necessidade de ser exposta à internet por um endereço IP público. Hosters podem usar o Proxy de aplicativo do Azure AD para condensar o número de máquinas virtuais no ambiente do locatário e ainda manter uma implantação completa. O Proxy de aplicativo do Azure AD também permite que muitos dos benefícios que o AD do Azure fornece, como acesso condicional e autenticação multifator.
+O Proxy de Aplicativo do Azure AD (Active Directory) é um serviço fornecido em SKUs pagas do Azure AD que permite aos usuários conectarem a aplicativos internos por meio do serviço de proxy reverso do próprio Azure. Isso permite que os pontos de extremidade da Web da Área de Trabalho Remota e do Gateway de Área de Trabalho Remota sejam ocultados dentro da rede virtual, eliminando a necessidade de serem expostos à internet por meio de um endereço IP público. Os hosters podem usar o Proxy de Aplicativo do Azure AD para condensar o número de máquinas virtuais no ambiente do locatário, enquanto continuam mantendo uma implantação completa. O Proxy de Aplicativo do Azure AD também oferece muitos dos benefícios que o AD do Azure fornece, como acesso condicional e autenticação multifator.
 
-Para obter mais informações, consulte [Introdução ao Proxy de aplicativo e instalar o conector](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-enable).
+Para obter mais informações, consulte [Introdução ao Proxy de Aplicativo e instalação do conector](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-enable).

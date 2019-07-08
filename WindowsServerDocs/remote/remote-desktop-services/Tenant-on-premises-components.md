@@ -1,6 +1,6 @@
 ---
 title: Componentes locais do locatário
-description: Descreve os componentes no local em sua implantação do RDS.
+description: Descreve os componentes locais na implantação do RDS.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,36 +13,36 @@ ms.topic: article
 ms.assetid: b3eebb38-a835-4fa6-9e41-1966014bf2cb
 author: lizap
 manager: dongill
-ms.openlocfilehash: a01dbd12d76b1efa84e38f2ded38cfd613fb2ac4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ff584533eef70144e3bb6ba595fd0f8db89697e9
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857397"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63744046"
 ---
 # <a name="tenant-on-premises-components"></a>Componentes locais do locatário
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016
 
-As informações a seguir descrevem os componentes locais que compõem a implantação de hospedagem de área de trabalho.  
+As informações a seguir descrevem os componentes locais que compõem a implantação da hospedagem de área de trabalho.  
   
 ##  <a name="clients"></a>Clientes  
-Para acessar a aplicativos e áreas de trabalho hospedadas, os usuários devem usar clientes de área de trabalho remota que dão suporte ao protocolo RDP (Remote Desktop) 7.1 ou posterior. Em particular, o cliente deve oferecer suporte de Gateway de área de trabalho remota e o agente de Conexão de área de trabalho remota. Para entregar aplicativos para área de trabalho local, o cliente também deve suportar o recurso de RemoteApp. Para alcançar a escala mais alta do gateway, o cliente deve oferecer suporte as conexões de transporte HTTP puras ao Gateway de área de trabalho remota.  
+Para acessar as áreas de trabalho e aplicativos hospedados, os usuários devem usar clientes de Área de Trabalho Remota que dão suporte a RDP (Protocolo de Área de Trabalho Remota) 7.1 ou posterior. Em particular, o cliente deve ter suporte para o Gateway de Área de Trabalho Remota e o Agente de Conexão de Área de Trabalho Remota. Para entregar aplicativos para área de trabalho local, o cliente também deve ter suporte para o recurso RemoteApp. Para alcançar a escala mais alta do gateway, o cliente deve oferecer ter suporte para conexões de transporte HTTP puras ao Gateway de Área de Trabalho Remota.  
   
 Informações adicionais:  
 [Dispositivos habilitados para RemoteFX](https://social.technet.microsoft.com/wiki/contents/articles/14534.remotefx-enabled-devices.aspx)  
-[O que há de novo no Windows Server 2012 R2 Remote Desktop Gateway](https://blogs.technet.microsoft.com/enterprisemobility/2013/03/14/whats-new-in-windows-server-2012-remote-desktop-gateway/#transport)  
-[Clientes de área de trabalho remota da Microsoft](https://technet.microsoft.com/library/dn473009.aspx)  
-[Aplicativo de área de trabalho remota para Windows na Microsoft Store](https://apps.microsoft.com/windows/app/remote-desktop/051f560e-5e9b-4dad-8b2e-fa5e0b05a480)  
-[Área de trabalho remota da Microsoft - aplicativos Android no Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android)  
-[Mac App Store - área de trabalho remota da Microsoft](https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417?mt=12)  
-[Área de trabalho remota da Microsoft na Store do aplicativo](https://itunes.apple.com/us/app/microsoft-remote-desktop/id714464092?mt=8)  
+[Novidades no Gateway de Área de Trabalho Remota do Windows Server 2012 R2](https://blogs.technet.microsoft.com/enterprisemobility/2013/03/14/whats-new-in-windows-server-2012-remote-desktop-gateway/#transport)  
+[Clientes de Área de Trabalho Remota da Microsoft](https://technet.microsoft.com/library/dn473009.aspx)  
+[Aplicativo de Área de Trabalho Remota para Windows na Microsoft Store](https://apps.microsoft.com/windows/app/remote-desktop/051f560e-5e9b-4dad-8b2e-fa5e0b05a480)  
+[Área de Trabalho Remota da Microsoft - Aplicativos Android no Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android)  
+[Mac App Store - Área de Trabalho Remota da Microsoft](https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417?mt=12)  
+[Área de Trabalho Remota da Microsoft na App Store](https://itunes.apple.com/us/app/microsoft-remote-desktop/id714464092?mt=8)  
   
 ##  <a name="active-directory-domain-services"></a>Active Directory Domain Services  
-Alguns locatários maiores e mais sofisticados podem optar por hospedar um servidor de serviços de domínio Active Directory (AD DS) em suas instalações. Nesse caso, o servidor do AD DS no ambiente do locatário geralmente será uma réplica do servidor do AD DS que está no local do locatário. Isso é suportado, criando uma rede virtual no ambiente do locatário e usando a VPN do Azure para criar uma conexão site a site de rede do local do locatário para a rede virtual do locatário no data center do Azure.  
+Alguns locatários maiores e mais sofisticados podem optar por hospedar um servidor AD DS (Active Directory Domain Services) em suas locais. Nesse caso, o servidor AD DS no ambiente do locatário normalmente será uma réplica do servidor do AD DS que está no local do locatário. Há suporte para isso criando uma rede virtual no ambiente do locatário e usando a VPN do Azure para criar uma conexão site a site da rede local do locatário para a rede virtual do locatário no data center do Azure.  
   
 Informações adicionais:  
-[Visão geral de rede Virtual do Microsoft Azure](https://azure.microsoft.com/documentation/articles/virtual-networks-overview/)  
-[Criar um recurso de Gerenciador de rede virtual com uma conexão VPN Site a Site usando o Portal do Azure](https://azure.microsoft.com/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)  
+[Visão geral da rede virtual do Microsoft Azure](https://azure.microsoft.com/documentation/articles/virtual-networks-overview/)  
+[Criar um uma VNet do gerenciador de recursos com uma conexão VPN Site a Site usando o portal do Azure](https://azure.microsoft.com/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)  
 
 

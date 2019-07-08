@@ -12,19 +12,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: ba7487a7e063775219182645a273d49c473f52e2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e6ec6934b5c2cfcc33a95a0336e22a20dbd60d82
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854127"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "64772400"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2019"></a>Comparação das edições Standard e Datacenter do Windows Server 2019
 
 > Aplica-se a: Windows Server 2019
   
 ## <a name="locks-and-limits"></a>Bloqueios e limites
-|Bloqueios e limites|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
+|Bloqueios e limites|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
 |-------------------|----------|---------------------------|  
 |Número máximo de usuários|Com base em CALs|Com base em CALs|
 |Máximo de conexões SMB|16777216|16777216|
@@ -41,7 +41,7 @@ ms.locfileid: "59854127"
 |Codecs DLNA e streaming de mídia Web|Sim, se instalado como servidor com Experiência Desktop|Sim, se instalado como servidor com Experiência Desktop|
 
 ## <a name="server-roles"></a>Funções de servidor
-|Funções do Windows Server disponíveis|Serviços de função|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
+|Funções do Windows Server disponíveis|Serviços de função|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
 |-------------------|----------|----------|---------------------------|  
 |Serviços de Certificados do Active Directory| |Sim|Sim|
 |Active Directory Domain Services| |Sim|Sim|
@@ -66,7 +66,6 @@ ms.locfileid: "59854127"
 |Serviços de Arquivo e Armazenamento|Serviços de armazenamento|Sim|Sim|
 |Serviço Guardião de Host| |Sim|Sim|
 |Hyper-V| |Sim|Sim; inclusive máquinas virtuais blindadas|
-|MultiPoint Services| |Sim|Sim|
 |Controlador de rede| |Não|Sim|
 |Network Policy and Access Services| |Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
 |Serviços de impressão e documentos| |Sim|Sim|
@@ -78,12 +77,12 @@ ms.locfileid: "59854127"
 |Experiência do Windows Server Essentials| |Sim|Sim|
 |Windows Server Update Services| |Sim|Sim|
 
-* Servidor de transporte do WDS é novo para instalações do Server Core no Windows Server 2019 (também no canal semestral começando com o Windows Server, versão 1803)
+*O Servidor de Transporte WDS é novo para instalações do Server Core no Windows Server 2019 (também no canal semestral a partir do Windows Server, versão 1803)
 
 
 ## <a name="features"></a>Recursos
 
-|Recursos do Windows Server instaláveis com Gerenciador de Servidores (ou PowerShell)|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
+|Recursos do Windows Server instaláveis com Gerenciador de Servidores (ou PowerShell)|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
 |-------------------|----------|---------------------------|  
 |.NET Framework 3.5|Sim|Sim|
 |.NET Framework 4.6|Sim|Sim|
@@ -92,7 +91,7 @@ ms.locfileid: "59854127"
 |Desbloqueio pela rede do BitLocker|Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
 |BranchCache|Sim|Sim|
 |Cliente NFS|Sim|Sim|
-|Contêineres|Sim (contêineres do Windows ilimitados; Hyper-V contêineres até 2)|Sim (todos os tipos de contêineres ilimitados)|
+|Contêineres|Sim (contêineres do Windows ilimitados; até 2 contêineres do Hyper-V)|Sim (todos os tipos de contêineres ilimitados)|
 |Data Center Bridging|Sim|Sim|
 |Direct Play|Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
 |Armazenamento Avançado|Sim|Sim|
@@ -125,7 +124,7 @@ ms.locfileid: "59854127"
 |Servidor SMTP|Sim|Sim|
 |Serviço SNMP|Sim|Sim|
 |Balanceador de Carga de Software|Sim|Sim|
-|Réplica de Armazenamento|Não|Sim|
+|Réplica de Armazenamento|Sim|Sim|
 |Cliente Telnet|Sim|Sim|
 |Cliente TFTP|Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
 |Ferramentas de Blindagem de VM para Gerenciamento de Malha|Sim|Sim|
@@ -147,10 +146,10 @@ ms.locfileid: "59854127"
 |Suporte a WoW64|Instalado|Instalado|
 |Visualizador XPS|Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
 
-|Recursos disponíveis em geral|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
+|Recursos disponíveis em geral|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
 |-------------------|----------|---------------------------|  
 |Analisador de Práticas Recomendadas|Sim|Sim|
-|Réplica de armazenamento restrita|Sim, (1 parceria e 1 grupo de recursos com volume único de 2TB)|Sim, ilimitado|
+|Réplica de Armazenamento restrita|Sim, (1 Parceria e 1 Grupo de Recursos com volume único de 2TB)|Sim, ilimitado|
 |Direct Access|Sim|Sim|
 |Memória Dinâmica (em virtualização)|Sim|Sim|
 |Adicionar/Substituir RAM a quente|Sim|Sim|
@@ -162,7 +161,7 @@ ms.locfileid: "59854127"
 |Opção de instalação do Nano Server|Sim|Sim|
 |Gerenciador do Servidor|Sim|Sim|
 |SMB Direct e SMB sobre RDMA|Sim|Sim|
-|Rede definida por software|Não|Sim|
+|Redes definidas por software|Não|Sim|
 |Serviço de Gerenciamento de Armazenamento|Sim|Sim|
 |Espaços de Armazenamento|Sim|Sim|
 |Espaços de Armazenamento Diretos|Não|Sim|

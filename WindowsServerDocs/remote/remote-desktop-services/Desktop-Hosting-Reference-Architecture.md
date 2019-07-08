@@ -1,6 +1,6 @@
 ---
 title: Arquitetura de referência de hospedagem de área de trabalho
-description: Diretrizes de arquitetura para a criação de uma solução com o RDS e o Azure de hospedagem de área de trabalho.
+description: Diretrizes de arquitetura para criação de uma solução de hospedagem de área de trabalho com o RDS e o Azure.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,46 +13,46 @@ ms.topic: article
 ms.assetid: 1bac5dd3-8430-46ee-8bef-10cc4b7cc437
 author: lizap
 manager: dongill
-ms.openlocfilehash: 6f235fd89c34c00601c802f4ea71e440af630169
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 01560a3758963c17c4ea0cb94b806c3b99193464
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890237"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63749240"
 ---
 # <a name="desktop-hosting-reference-architecture"></a>Arquitetura de referência de hospedagem de área de trabalho
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016
 
-Este artigo define um conjunto de blocos arquitetônicos para usar os serviços de área de trabalho remota (RDS) e máquinas virtuais do Microsoft Azure para criar multilocatário, hospedados área de trabalho do Windows e o aplicativo serviços, o que chamamos de "hospedagem da área de trabalho". Você pode usar essa referência de arquitetura para criar soluções para empresas de pequeno e médio porte com usuários de 5 a 5000 de hospedagem de desktop altamente seguro, escalonável e confiável.    
+Este artigo define um conjunto de blocos arquitetônicos para usar RDS (Serviços de Área de Trabalho Remota) e máquinas virtuais do Microsoft Azure para criar serviços de aplicativos e áreas de trabalho hospedadas de multilocatário do Windows, o que chamamos de "hospedagem de área de trabalho". É possível usar essa referência de arquitetura para criar soluções de hospedagem de área de trabalho altamente seguras, escalonáveis e confiáveis para empresas de pequeno e médio porte com 5 a 5000 usuários.    
   
-O principal público-alvo para essa arquitetura de referência é provedores de hospedagem que desejam aproveitar os serviços de infraestrutura do Microsoft Azure para fornecer serviços de hospedagem da área de trabalho e licenças de acesso de assinante (SALs) para vários locatários por meio de [ O contrato de licença de provedor do Microsoft Service](https://www.microsoft.com/hosting/en/us/licensing/splabenefits.aspx) programa (SPLA). Um segundo público para essa arquitetura de referência são clientes finais que desejam criar e gerenciar soluções de hospedagem da área de trabalho nos serviços de infraestrutura do Microsoft Azure para seus próprios funcionários usando [RDS CALs de usuário estendido direitos por meio do Software Garantia](https://download.microsoft.com/download/6/B/A/6BA3215A-C8B5-4AD1-AA8E-6C93606A4CFB/Windows_Server_2012_R2_Remote_Desktop_Services_Licensing_Datasheet.pdf) (SA).   
+O público-alvo primário dessa arquitetura de referência são provedores de hospedagem que desejam aproveitar os Serviços de Infraestrutura do Microsoft Azure para fornecer serviços de hospedagem de área de trabalho e SALs (Licenças de Acesso ao Assinante) para vários locatários por meio do programa [SPLA (Contrato de Licenciamento do Provedor de Serviços) da Microsoft](https://www.microsoft.com/hosting/en/us/licensing/splabenefits.aspx). Um público secundário para essa arquitetura de referência são clientes finais que desejam criar e gerenciar soluções de hospedagem da área de trabalho nos Serviços de Infraestrutura do Microsoft Azure para seus próprios funcionários usando [direitos estendidos de CALs de Usuário RDS por meio do SA (Software Assurance)](https://download.microsoft.com/download/6/B/A/6BA3215A-C8B5-4AD1-AA8E-6C93606A4CFB/Windows_Server_2012_R2_Remote_Desktop_Services_Licensing_Datasheet.pdf).   
   
-Para fornecer uma hospedagem de soluções, hospedagem de área de trabalho parceiros e clientes do SA aproveitam o Windows Server para oferecer uma experiência de aplicativo que é familiar aos usuários comerciais e consumidores de usuários do Windows. Criado nos fundamentos do Windows 10, Windows Server 2016 fornece suporte a aplicativos familiares e o usuário enfrentar.    
+Para fornecer soluções de hospedagem, os parceiros de hospedagem e os clientes SA aproveitam o Windows Server para oferecer aos usuários do Windows uma experiência de aplicativo que seja familiar aos usuários comerciais e consumidores. Criado com base no Windows 10, o Windows Server 2016 oferece suporte a aplicativos e experiência de usuário familiares.    
   
 O escopo deste documento é limitado a:   
   
-* Diretrizes de design de arquitetura para uma serviço de hospedagem de área de trabalho. Informações detalhadas, como planejamento de capacidade, desempenho e procedimentos de implantação são explicadas em documentos separados. Para obter mais informações sobre serviços de infraestrutura do Azure, consulte [máquinas virtuais do Microsoft Azure](https://azure.microsoft.com/documentation/services/virtual-machines/).   
+* Diretrizes de design de arquitetura para um serviço de hospedagem de área de trabalho. Informações detalhadas, como procedimentos de implantação, desempenho e planejamento da capacidade são explicadas em documentos separados. Para obter mais informações sobre Serviços de Infraestrutura do Azure, consulte [Máquinas virtuais do Microsoft Azure](https://azure.microsoft.com/documentation/services/virtual-machines/).   
   
-* Áreas de trabalho baseadas em sessão, os aplicativos do RemoteApp e desktops pessoais baseada em servidor que usam o Windows Server 2016 Desktop Host da sessão remota (Host de sessão de área de trabalho remota). Windows com base no cliente da área de trabalho infraestruturas virtuais não são cobertos porque não há nenhum contrato de licença de provedor (SPLA) da serviço para sistemas operacionais Windows. Infraestruturas de área de trabalho virtual baseada em servidor do Windows é permitido sob o SPLA e Windows baseados em cliente da área de trabalho infraestruturas virtuais são permitidas em hardware dedicado com licenças de cliente final em determinados cenários. No entanto, infra-estruturas de desktop virtuais baseada em cliente estão fora do escopo deste documento.   
+* Áreas de trabalho baseadas em sessão, aplicativos RemoteApp e áreas de trabalho pessoais baseadas em servidor que usam Host da Sessão RD (Host da Sessão de Área de Trabalho Remota) do Windows Server 2016. Infraestruturas de área de trabalho virtual baseadas no cliente Windows não são cobertos porque não há nenhum SPLA (Contrato de Licença do Provedor de Serviço) para sistemas operacionais de cliente Windows. Infraestruturas de área de trabalho virtual baseadas no Windows Server são permitidas sob o SPLA e infraestruturas de área de trabalho virtual baseadas no cliente Windows são permitidas em hardware dedicado com licenças de cliente final em determinados cenários. No entanto, infraestruturas de área de trabalho virtual baseadas em cliente estão fora do escopo deste documento.   
   
-* Produtos e recursos, principalmente o Windows Server 2016 e os serviços de infraestrutura do Microsoft Azure.   
+* Produtos e recursos da Microsoft, principalmente o Windows Server 2016 e os Serviços de Infraestrutura do Microsoft Azure.   
   
-* Hospedagem de serviços para locatários que variam em tamanho de 5 até 5.000 usuários de área de trabalho.   Para locatários maiores, talvez você precise modificar essa arquitetura para fornecer um desempenho adequado. A interface gráfica do usuário do Gerenciador do servidor RDS (GUI) não é recomendada para implantações mais de 500 usuários. PowerShell é recomendado para gerenciar implantações de RDS entre 500 e 5000 usuários.   
+* Serviços de hospedagem de área de trabalho para locatários com tamanho variando de 5 até 5.000 usuários.   Para locatários maiores, talvez seja necessário modificar essa arquitetura para fornecer um desempenho adequado. A GUI (interface gráfica do usuário) do RDS do Gerenciador de Servidores não é recomendada para implantações com mais de 500 usuários. PowerShell é recomendado para gerenciar implantações de RDS entre 500 e 5000 usuários.   
   
-* O conjunto mínimo de componentes e serviços necessários para uma serviço de hospedagem de área de trabalho. Há vários componentes opcionais e serviços que podem ser adicionados para melhorar a uma serviço de hospedagem de área de trabalho, mas eles estão fora do escopo deste documento.    
+* O conjunto mínimo de componentes e serviços exigidos para um serviço de hospedagem de área de trabalho. Há vários componentes e serviços opcionais que podem ser adicionados para melhorar um serviço de hospedagem de área de trabalho, mas eles estão fora do escopo deste documento.    
   
 Depois de ler este documento, o leitor deve compreender:   
-- Os blocos de construção que são necessários para fornecer uma área de trabalho segura, confiável e multilocatária solução de hospedagem baseada em serviços do Microsoft Azure.  
-- A finalidade de cada bloco de construção e como elas se encaixam.  
+- Os blocos de construção que são necessários para fornecer uma solução de hospedagem de área de trabalho segura, confiável e de multilocatário baseada nos Serviços do Microsoft Azure.  
+- A finalidade de cada bloco de construção e como eles se encaixam.  
   
-Há várias maneiras de criar uma solução baseada nessa arquitetura de hospedagem de área de trabalho. Essa arquitetura descreve a integração e melhorias no Azure com o Windows Server 2016. Outras opções de implantação estão disponíveis com o [guia de arquitetura de referência de hospedagem de área de trabalho](https://go.microsoft.com/fwlink/p/?LinkId=517389) para Windows Server 2012 R2.    
+Há várias maneiras de criar uma solução de hospedagem de área de trabalho com base nessa arquitetura. Essa arquitetura descreve a integração e as melhorias no Azure com o Windows Server 2016. Outras opções de implantação estão disponíveis com o [Guia de arquitetura de referência de hospedagem de área de trabalho](https://go.microsoft.com/fwlink/p/?LinkId=517389) para Windows Server 2012 R2.    
   
 Os seguintes tópicos são abordados:  
-- [Arquitetura lógica de hospedagem da área de trabalho](Desktop-hosting-logical-architecture.md)  
-- [Entender as funções RDS](Understanding-RDS-roles.md)
-- [Compreender o ambiente de hospedagem da área de trabalho](Understanding-the-desktop-hosting-environment.md)  
-- [Considerações sobre a hospedagem de área de trabalho e serviços do Azure](Azure-services-and-considerations-for-desktop-hosting.md)
+- [Arquitetura lógica de hospedagem de área de trabalho](Desktop-hosting-logical-architecture.md)  
+- [Noções básicas sobre as funções RDS](Understanding-RDS-roles.md)
+- [Noções básicas sobre o ambiente de hospedagem de área de trabalho](Understanding-the-desktop-hosting-environment.md)  
+- [Serviços do Azure e considerações para a hospedagem de área de trabalho](Azure-services-and-considerations-for-desktop-hosting.md)
   
  
 

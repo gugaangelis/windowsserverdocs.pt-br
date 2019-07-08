@@ -1,6 +1,6 @@
 ---
 title: Recursos removidos ou preteridos no Windows Server 2016
-description: Uma lista de recursos e funcionalidades no Windows Server 2016 que foram removidas do produto na versão atual ou estão previstas para possível remoção em versões futuras (preteridos). Essa lista é direcionada para profissionais de TI que estão atualizando sistemas operacionais em um ambiente comercial.
+description: Uma lista de funcionalidades e recursos no Windows Server 2016 que foram removidos do produto na versão atual ou estão previstos para possível remoção em versões futuras (preterido). Essa lista é direcionada para profissionais de TI que estão atualizando sistemas operacionais em um ambiente comercial.
 ms.prod: windows-server-threshold
 ms.technology: server-general
 ms.topic: article
@@ -11,10 +11,10 @@ ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
 ms.openlocfilehash: 83855cf7e4fa86a932298dd15735dc5bf7277dfb
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "65976602"
 ---
 # <a name="features-removed-or-deprecated-in--windows-server-2016"></a>Recursos removidos ou preteridos no Windows Server 2016
@@ -23,7 +23,7 @@ ms.locfileid: "65976602"
 
 Veja a seguir uma lista de recursos e funcionalidades do Windows Server 2016 que foram removidos do produto na versão atual ou estão previstos para possível remoção em versões futuras (preteridos). Essa lista é direcionada para profissionais de TI que estão atualizando sistemas operacionais em um ambiente comercial. Esta lista está sujeita à alteração nas versões subsequentes e pode não incluir todos os recursos ou funcionalidades preteridas. Para obter mais detalhes sobre determinado recurso ou funcionalidade e sua substituição, consulte a documentação desse recurso.
 
-Para obter informações sobre o que foi removido ou preterido nas versões mais recentes, consulte [recursos removidos ou planejados para substituição iniciando o Windows Server 2019](../get-started-19/removed-features-19.md).
+Para obter informações sobre o que foi removido ou preterido nas versões mais recentes, consulte [Recursos removidos ou com substituição planejada a partir do Windows Server 2019](../get-started-19/removed-features-19.md).
 
 ## <a name="features-removed-from-windows-server-2016"></a>Recursos removidos do Windows Server 2016
 
@@ -46,13 +46,13 @@ O snap-in de Gerenciamento de Compartilhamento e Armazenamento para o Microsoft 
 Journal.dll foi removido do Windows Server 2016. Não há nenhum substituto.  
 
 ### <a name="security-configuration-wizard"></a>Assistente de Configuração de Segurança  
-O Assistente de Configuração de Segurança foi removido. Em vez disso, os recursos são protegidos por padrão. Se você precisar controlar configurações específicas de segurança, pode usar a Política de Grupo ou [Microsoft Security Compliance Manager](https://technet.microsoft.com/solutionaccelerators/cc835245.aspx).  
+O Assistente de Configuração de Segurança foi removido. Em vez disso, os recursos são protegidos por padrão. Se você precisar controlar configurações específicas de segurança, pode usar a Política de Grupo ou o [Microsoft Security Compliance Manager](https://technet.microsoft.com/solutionaccelerators/cc835245.aspx).  
 
 ### <a name="sqm"></a>SQM  
 Os componentes de aceitação que gerenciam a participação no Programa de Aperfeiçoamento da Experiência do Usuário foram removidos. 
 
 ### <a name="windows-update"></a>Windows Update
-O comando **wuauclt.exe /detectnow** foi removido e não é mais compatível. Para disparar uma verificação de atualizações, siga um destes procedimentos:
+O comando **wuauclt.exe /detectnow** foi removido e não conta mais com suporte. Para disparar uma verificação de atualizações, siga um destes procedimentos:
 
 - Execute estes comandos do PowerShell:
     ````powershell

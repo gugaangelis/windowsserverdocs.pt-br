@@ -15,15 +15,15 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: d089af3562467aa1c222b17d9a1ad69d9c1b5008
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66810590"
 ---
 # <a name="system-requirements"></a>Requisitos do sistema
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016 
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016 
 
 Este tópico aborda os requisitos mínimos de sistema para executar o Windows Server&reg; 2016 ou o Windows Server, versão 1709.
 
@@ -53,7 +53,7 @@ O desempenho do processador depende não apenas da frequência do relógio do pr
 - Oferece suporte a CMPXCHG16b, LAHF/SAHF e PrefetchW  
 - Oferece suporte à Conversão de endereços de segundo nível (EPT ou NPT)  
 
-[Coreinfo](https://technet.microsoft.com/sysinternals/cc835722.aspx) é uma ferramenta que você pode usar para confirmar quais desses recursos sua CPU possui.
+[Coreinfo](https://technet.microsoft.com/sysinternals/cc835722.aspx) é uma ferramenta que você pode usar para confirmar quais destes recursos a CPU tem.
 
 ## <a name="ram"></a>RAM  
 Os requisitos estimados de RAM para este produto são:  
@@ -117,8 +117,8 @@ Os itens a seguir não são rigorosamente exigidos, mas são necessários para d
 > Um chip Trusted Platform Module (TPM) não é estritamente necessário para instalar esta versão, embora seja necessário para usar determinados recursos, como Criptografia de Unidade de Disco BitLocker. Se o computador usar TPM, ele deverá atender a estes requisitos:  
 >  
 > - Os TPMs baseados em hardware devem implementar a versão 2.0 da especificação de TPM.  
-> - Os TPMs que implementam a versão 2.0 devem ter um certificado EK previamente provisionado ao TPM pelo fornecedor de hardware ou ser capazes de serem recuperados pelo dispositivo durante a primeira inicialização.  
-> - Os TPMs que implementam a versão 2.0 devem acompanhar os bancos PCR SHA-256 e implemente os PCRs 0 a 23 para SHA-256. É aceitável enviar os TPMs com um único banco de PCR de alternância que pode ser usado para as medições de SHA-1 e SHA-256.  
+> - Os TPMs que implementam a versão 2.0 devem ter um certificado EK que seja previamente provisionado para o TPM pelo fornecedor de hardware ou seja capaz de ser recuperado pelo dispositivo durante a primeira inicialização.  
+> - Os TPMs que implementam a versão 2.0 devem ser enviados com bancos de PCR SHA-256 e implementar PCRs de 0 a 23 para SHA-256. É aceitável enviar os TPMs com um único banco de PCR alternável que possa ser usado para medidas SHA-1 e SHA-256.  
 > - Uma opção de UEFI para desativar o TPM não é um requisito.  
 
 ## <a name="installation-of-nano-server"></a>Instalação do Nano Server  
@@ -126,6 +126,6 @@ Para etapas detalhadas para instalar o Windows Server 2016 como um Nano Server, 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 - [Requisitos de processador do Windows](https://docs.microsoft.com/windows-hardware/design/minimum/windows-processor-requirements)
-- [Comparação de edições Standard e Datacenter do Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/2016-edition-comparison)
-- [Requisitos de sistema do Windows 10](https://www.microsoft.com/windows/windows-10-specifications#system-specifications)
-- [Baixe a folha de dados de licenciamento do Windows Server 2016](http://download.microsoft.com/download/7/2/9/7290EA05-DC56-4BED-9400-138C5701F174/WS2016LicensingDatasheet.pdf)
+- [Comparação das edições Standard e Datacenter do Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/2016-edition-comparison)
+- [Requisitos do sistema Windows 10](https://www.microsoft.com/windows/windows-10-specifications#system-specifications)
+- [Baixar a folha de dados de licenciamento do Windows Server 2016](http://download.microsoft.com/download/7/2/9/7290EA05-DC56-4BED-9400-138C5701F174/WS2016LicensingDatasheet.pdf)
