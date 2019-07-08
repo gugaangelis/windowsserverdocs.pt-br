@@ -1,5 +1,5 @@
 ---
-title: Serviços de área de trabalho remota - compilação em qualquer lugar
+title: Serviços de Área de Trabalho Remota – Compilar em qualquer lugar
 description: Informações de planejamento para ajudá-lo a determinar onde hospedar sua implantação do RDS.
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,26 +13,26 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/07/2016
 manager: dongill
-ms.openlocfilehash: cbb8e73d753b1fe4f0293cf4427c634020a23a42
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4563108d2efa9cd864fbe75fa82349d21659a941
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869507"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63712331"
 ---
-# <a name="remote-desktop-services---build-anywhere"></a>Serviços de área de trabalho remota - compilação em qualquer lugar
+# <a name="remote-desktop-services---build-anywhere"></a>Serviços de Área de Trabalho Remota – Compilar em qualquer lugar
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016
 
-Implante no local, na nuvem ou uma mistura de ambos. Modificar sua implantação conforme suas necessidades comerciais mudarem.
+Implante localmente, na nuvem ou uma combinação de ambos. Modifique sua implantação conforme suas necessidades empresariais mudam.
 
-Independentemente de onde estão, subjacente [arquitetura](desktop-hosting-logical-architecture.md) dos serviços de área de trabalho remota ambiente permanece o mesmo:
-- Você deve ter um servidor de Internet para utilizar o acesso via Web RD e o Gateway de área de trabalho remota para usuários externos
-- Você deve ter um Active Directory e --para ambientes altamente disponíveis, um banco de dados SQL para o usuário de casa e propriedades de área de trabalho remota
-- Você ainda deve ter acesso de comunicação entre as funções de infraestrutura de área de trabalho remota (agente de Conexão de área de trabalho remota, Gateway de área de trabalho remota, licenciamento de área de trabalho remota e acesso via Web RD) e a extremidade RDSH ou hosts RDVH para ser capaz de conectar os usuários finais a suas áreas de trabalho ou aplicativos.
+Onde quer que você esteja, a [arquitetura](desktop-hosting-logical-architecture.md) subjacente do ambiente dos Serviços de Área de Trabalho Remota permanece o mesmo:
+- Você ainda precisa ter um servidor voltado para a Internet para utilizar o Acesso via Web da Área de Trabalho Remota e o Gateway de Área de Trabalho Remota para usuários externos
+- Você ainda precisa ter um Active Directory e, para ambientes altamente disponíveis, um Banco de Dados SQL para conter propriedades de Área de Trabalho Remota
+- Você ainda precisa ter acesso de comunicação entre as funções de infraestrutura de RD (Agente de Conexão de Área de Trabalho Remota, Gateway de Área de Trabalho Remota, Licenciamento de Área de Trabalho Remota e Acesso via Web da Área de Trabalho Remota) e os hosts finais de RDSH ou RDVH para conseguir conectar os usuários finais a suas áreas de trabalho ou aplicativos.
 
 Essa flexibilidade permite que você obtenha o melhor dos dois mundos:
-- Os métodos de simplicidade e pago pelo uso associados com a nuvem e o mundo online.
-- A familiaridade e sem complicações forma de aproveitamento de recursos pesados que já existem no local.
+- A simplicidade os métodos pagos conforme o uso associados à nuvem e ao mundo online.
+- A familiaridade e a forma descomplicada de aproveitar recursos pesados que já existem localmente.
 
-Para obter mais informações, veja como [compilar e implantar sua implantação de serviços de área de trabalho remota](rds-build-and-deploy.md).
+Para obter mais informações, confira [Crie e implante sua implantação de Serviços de Área de Trabalho Remota](rds-build-and-deploy.md).

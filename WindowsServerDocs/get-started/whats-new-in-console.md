@@ -15,11 +15,11 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f05bcffa7c8c4f9e74f3699b9838b8a627af1b1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837717"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63688671"
 ---
 # <a name="whats-new-in-the-windows-console-in-windows-server-2016"></a>Novidades no Console do Windows no Windows Server 2016
 >Aplica-se a: Windows Server 2016
@@ -66,7 +66,7 @@ Janelas do console agora podem ser semitransparentes (para uma transparência m�
 ## <a name="selection"></a>Seleção  
 Há muitas opções novas para a seleção de texto e linhas, além de marcar texto e usar o histórico de buffer. O console tenta evitar conflitos com aplicativos que possam estar usando as mesmas teclas.  
 
-**Para desenvolvedores:** Se ocorrer um conflito, você normalmente pode controlar o comportamento de uso do aplicativo de linha de entrada, entrada processada e modos de eco de entrada com a API setconsolemode (). Se você executar em modo de entrada processada, os atalhos abaixo se aplicarão, mas em outros modos, seu aplicativo deverá lidar com eles. As combinações de teclas não listadas aqui funcionam como nas versões anteriores do console. Você também pode tentar resolver conflitos com diversas configurações na guia **Opções**. Se tudo o mais falhar, você sempre poderá reverter para o console original.  
+**Para desenvolvedores**: se ocorrer um conflito, geralmente você poderá controlar o comportamento de uso da linha de entrada, a entrada processada e os modos de entrada de eco do aplicativo com a API SetConsoleMode(). Se você executar em modo de entrada processada, os atalhos abaixo se aplicarão, mas em outros modos, seu aplicativo deverá lidar com eles. As combinações de teclas não listadas aqui funcionam como nas versões anteriores do console. Você também pode tentar resolver conflitos com diversas configurações na guia **Opções**. Se tudo o mais falhar, você sempre poderá reverter para o console original.  
 
 Agora você pode usar a seleção de "clicar e arrastar" fora do modo de Edição Rápida e isso poderá selecionar texto em linhas como no Bloco de Notas, em vez de apenas um bloco retangular. As operações de cópia não exigem mais remover quebras de linha. Além da seleção "clicar e arrastar", essas combinações de teclas estão disponíveis:  
 

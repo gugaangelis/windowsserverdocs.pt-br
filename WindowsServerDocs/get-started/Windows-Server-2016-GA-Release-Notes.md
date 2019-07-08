@@ -13,27 +13,27 @@ ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
 ms.openlocfilehash: dec1ec184a147ef4fae64e9cc4384c0b6e4510b6
-ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66749537"
 ---
 # <a name="release-notes-important-issues-in-windows-server-2016"></a>Notas de versão: Problemas importantes no Windows Server 2016
 
 >Aplica-se a: Windows Server 2016
 
-Essas notas de versão resumem os problemas mais importantes no sistema operacional Windows Server 2016, inclusive maneiras de evitar ou solucionar os problemas, se conhecido. Para saber mais sobre alterações planejadas, novos recursos e correções desta versão, confira [Novidades no Windows Server 2016](whats-new-in-windows-server-2016.md) e os comunicados das equipes de recursos específicos. Salvo indicação em contrário, cada problema reportado aplica-se a todas as edições e opções de instalação do Windows Server 2016.
+Essas notas sobre a versão resumem os problemas mais críticos no sistema operacional Windows Server 2016, incluindo formas de evitar ou solucionar os problemas, se conhecidos. Para saber mais sobre alterações planejadas, novos recursos e correções desta versão, confira [Novidades no Windows Server 2016](whats-new-in-windows-server-2016.md) e os comunicados das equipes de recursos específicos. Salvo indicação em contrário, cada problema reportado aplica-se a todas as edições e opções de instalação do Windows Server 2016.
 
 Este documento é atualizado continuamente. À medida que são descobertas questões críticas que exijam uma solução alternativa, elas são adicionadas, assim como novas soluções e correções assim que estiverem disponíveis.
 
-## <a name="express-updates-available-starting-in-november-2018-new"></a>Express atualizações disponíveis a partir de novembro de 2018 (novo)
+## <a name="express-updates-available-starting-in-november-2018-new"></a>Atualizações Expressas disponíveis a partir de novembro de 2018 (NOVO)
 
-A partir de novembro de 2018 update "Atualizar terça-feira", Windows novamente publicará [atualizações expressas](express-updates.md) para Windows Server 2016. Se você estiver usando o WSUS e o System Center Configuration Manager (SCCM) mais uma vez você verá dois pacotes para a atualização do Windows Server 2016: uma atualização completa e uma atualização do Express. Se você quiser usar o Express em seus ambientes de servidor, você precisa confirmar que o servidor foi uma atualização completa desde novembro de 2017 (KB # 4048953) para garantir que a atualização do Express foi instalado corretamente. Se você tentar uma atualização do Express em um servidor que ainda não foram atualizado desde a atualização de 11B 2017 (KB # 4048953), você verá falhas repetidas que consomem largura de banda e recursos de CPU em um loop infinito. Se você receber esse cenário, parar de enviar por push a atualização do Express e, em vez disso, enviar por push uma recente atualização completa para interromper o loop de falha.
+Na "atualização das terças-feiras" de novembro de 2018 em diante, o Windows publicará as [Atualizações expressas](express-updates.md) novamente para o Windows Server 2016. Se estiver usando o WSUS e o SCCM (System Center Configuration Manager), você verá mais uma vez dois pacotes para a atualização do Windows Server 2016: uma atualização Completa e uma atualização Expressa. Caso deseje usar a Expressa nos ambientes de servidor, você precisará confirmar que o servidor fez uma atualização completa desde novembro de 2017 (KB nº 4048953) para garantir que a atualização Expressa seja instalada corretamente. Se você tentar fazer uma atualização Expressa em um servidor que ainda não foi atualizado desde a atualização 11B de 2017 (KB nº 4048953), verá falhas repetidas que consomem a largura de banda e os recursos da CPU em um loop infinito. Caso você experimente esse cenário, pare de enviar a atualização Expressa por push e, em vez disso, envie uma atualização Completa recente por push para interromper o loop de falha.
 
 ## <a name="server-core-installation-option"></a>Opção de instalação do Server Core
 
-[comment]: # (ID: 370; Emissor: amason; estado: aprovou)
+[comment]: # (ID: 370; Remetente: amason; estado: aprovado)
 
 Ao instalar o Windows Server 2016 usando a opção de instalação Server Core, o spooler de impressão é instalado e iniciado por padrão, mesmo quando a função de servidor de impressão não é instalada.
 
@@ -41,48 +41,48 @@ Para evitar isso, após a primeira inicialização, desabilite o spooler de impr
 
 ## <a name="containers"></a>Contêineres
 
-[comment]: # (ID: 371; Emissor: taylorb; estado: aprovou)
-- Antes de você usar contêineres, instale o [atualização da pilha de manutenção para Windows 10 versão 1607: 23 de agosto de 2016](https://support.microsoft.com/en-us/kb/3176936) ou quaisquer atualizações mais recentes que estão disponíveis. Caso contrário, uma série de problemas pode ocorrer, inclusive falhas de criação, inicialização ou execução de contêineres e erros semelhantes a "Falha de CreateProcess no Win32: O servidor RPC não está disponível."
+[comment]: # (ID: 371; Remetente: taylorb; estado: aprovado)
+- Antes de usar contêineres, instale a [Atualização da pilha de manutenção para o Windows 10 versão 1607: 23 de agosto de 2016](https://support.microsoft.com/en-us/kb/3176936) ou as atualizações mais recentes que estiverem disponíveis. Caso contrário, vários problemas poderão ocorrer, incluindo falhas na criação, na inicialização ou na execução de contêineres, bem como erros semelhantes a "Falha de CreateProcess no Win32: O servidor RPC não está disponível."
 
-[comment]: # (ID: 373; Emissor: plang; estado: aprovou)
+[comment]: # (ID: 373; Remetente: plang; estado: aprovado)
 - O provedor NanoServerPackage OneGet não funciona em contêineres do Windows. Para solucionar esse problema, use Find-NanoServerPackage e Save-NanoServerPackage em um computador diferente (não um contêiner) para baixar o pacote necessário. Em seguida, copie os pacotes no contêiner e instale-os.
 
 ## <a name="device-guard"></a>Device Guard
 
-[comment]: # (ID: 369; Emissor: nirb; estado: aprovou)
+[comment]: # (ID: 369; Remetente: nirb; estado: aprovado)
 Se você usar a proteção baseada em virtualização de integridade de código ou máquinas virtuais blindadas (que usam a proteção baseada em virtualização de integridade de código), fique ciente de que essas tecnologias podem ser incompatíveis com alguns dispositivos e aplicativos. Você deve testar essas configurações no laboratório antes de habilitar os recursos em sistemas de produção. Deixar de fazer isso pode resultar em erros de perda ou parar de dados inesperados.
 
 ## <a name="microsoft-exchange"></a>Microsoft Exchange
 
-[comment]: # (ID: 375; Emissor: wgries; estado: aprovou)
+[comment]: # (ID: 375; Remetente: wgries; estado: aprovado)
 Se você tentar executar o Microsoft Exchange 2016 CU3 no Windows Server 2016, terá erros no processo de host do IIS W3WP.exe. No momento, não há uma solução alternativa para esse problema. Você deve adiar a implantação do Exchange 2016 CU3 no Windows Server 2016 até que uma correção com suporte esteja disponível.
 
 ## <a name="remote-server-administration-tools-rsat"></a>Ferramentas de Administração de Servidor Remoto (RSAT)
 
-[comment]: # (ID: 374; Emissor: ryanpu; estado: aprovou)
-Se você estiver executando uma versão do mais antigo que a atualização de aniversário do Windows 10 usando o Hyper-V e máquinas virtuais com um habilitado virtual Trusted Platform Module (incluindo máquinas virtuais blindadas) e, em seguida, instale a versão do RSAT fornecida para Windows Server 2016, tentativas de iniciar essas máquinas virtuais falharão.
+[comment]: # (ID: 374; Remetente: ryanpu; estado: aprovado)
+Se você estiver executando uma versão do Windows 10 mais antiga do que a Atualização de Aniversário e estiver usando o Hyper-V e máquinas virtuais com um Trusted Platform Module virtual habilitado (incluindo máquinas virtuais blindadas) e, em seguida, instalar a versão das Ferramentas de Administração de Servidor Remoto fornecidas para o Windows Server 2016, as tentativas de iniciar as máquinas virtuais falharão.
 
 Para evitar isso, atualize o computador cliente para a Atualização de Aniversário do Windows 10 (ou posterior) antes de instalar o RSAT. Se isso já tiver ocorrido, desinstale o RSAT, atualize o cliente para a Atualização de Aniversário do Windows 10 e, em seguida, reinstale o RSAT.
 
 ## <a name="shielded-virtual-machines"></a>Máquinas virtuais blindadas
 
-[comment]: # (ID: 369; Emissor: nirb; estado: aprovou)  
+[comment]: # (ID: 369; Remetente: nirb; estado: aprovado)  
 - Certifique-se de que você instalou todas as atualizações disponíveis antes de implantar máquinas de virtuais blindadas em produção.
 
 - Se você usar a proteção baseada em virtualização de integridade de código ou máquinas virtuais blindadas (que usam a proteção baseada em virtualização de integridade de código), fique ciente de que essas tecnologias podem ser incompatíveis com alguns dispositivos e aplicativos. Você deve testar essas configurações no laboratório antes de habilitar os recursos em sistemas de produção. Deixar de fazer isso pode resultar em erros de perda ou parar de dados inesperados.
 
 ## <a name="start-menu"></a>Menu Iniciar
 
-[comment]: # (ID: 372; Emissor: samli; estado: aprovou)
+[comment]: # (ID: 372; Remetente: samli; estado: aprovado)
 Esse problema afeta o Windows Server 2016 instalado com a opção de Servidor com Experiência Desktop.
 
-Se você instalar qualquer aplicativo que adicione itens de atalho em uma pasta na **iniciar** menu, os atalhos não funcionarão até que você faça logoff e logon novamente.
+Se você instalar qualquer aplicativo que adicione itens de atalho em uma pasta no menu **Iniciar**, os atalhos não funcionarão enquanto você não fizer logoff e logon novamente.
 
 Volte para a página principal do [Windows Server 2016](Windows-Server-2016.md).
 
 ## <a name="storport-performance"></a>Desempenho do Storport
 
-Alguns sistemas podem apresentar um desempenho de armazenamento reduzido ao executar uma nova instalação do Windows Server 2016 em comparação ao Windows Server 2012 R2.  Foram feitas algumas alterações durante o desenvolvimento do Windows Server 2016 para melhorar a segurança e a confiabilidade da plataforma. Algumas dessas alterações, como habilitar o Windows Defender por padrão, resultam em caminhos mais longos de E/S que podem reduzir o desempenho de E/S em determinadas cargas de trabalho e padrões. A Microsoft não recomenda desabilitar o Windows Defender, já que ele é uma importante camada de proteção para seus sistemas.  
+Alguns sistemas podem apresentar um desempenho de armazenamento reduzido ao executar uma nova instalação do Windows Server 2016 em comparação com o Windows Server 2012 R2.  Foram feitas várias alterações durante o desenvolvimento do Windows Server 2016 para melhorar a segurança e a confiabilidade da plataforma. Algumas dessas alterações, como a habilitação do Windows Defender por padrão, resultam em caminhos mais longos de E/S que podem reduzir o desempenho de E/S em determinadas cargas de trabalho e padrões. A Microsoft não recomenda que o Windows Defender seja desabilitado porque ele é uma camada importante de proteção para os sistemas.  
 
 ## <a name="copyright"></a>Copyright
 
@@ -90,7 +90,7 @@ Este documento é fornecido "na condição em que se encontra". As informações
 
 Este documento não fornece direitos legais e nenhuma propriedade intelectual sobre qualquer produto da Microsoft. Você pode copiar e usar este documento para fins de referência interna.  
 
-&copy;2016 Microsoft Corporation. Todos os direitos reservados.  
+&copy; 2016 Microsoft Corporation. Todos os direitos reservados.  
 
 Microsoft, Active Directory, Hyper-V, Windows e Windows Server são marcas registradas ou marcas comerciais da Microsoft Corporation nos Estados Unidos e/ou em outros países.  
 

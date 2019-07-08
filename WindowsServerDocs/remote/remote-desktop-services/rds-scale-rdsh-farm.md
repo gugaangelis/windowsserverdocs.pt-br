@@ -1,6 +1,6 @@
 ---
-title: Escalar horizontalmente sua implantação do RDS com a adição de um farm de Host de sessão de área de trabalho remota
-description: Adicione um segundo Host de sessão de área de trabalho remota para seu ambiente de RDS.
+title: Expandir sua implantação do RDS adicionando um farm de Host da Sessão RD
+description: Adicione um segundo Host da Sessão RD ao seu ambiente de RDS.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,55 +13,55 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.openlocfilehash: 0e3852b4ea5f1080a3798c0806e5c87ca808c3be
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66446525"
 ---
-# <a name="scale-out-your-remote-desktop-services-deployment-by-adding-an-rd-session-host-farm"></a>Escalar horizontalmente sua implantação de serviços de área de trabalho remota com a adição de um farm de Host de sessão de área de trabalho remota
+# <a name="scale-out-your-remote-desktop-services-deployment-by-adding-an-rd-session-host-farm"></a>Expandir sua implantação de Serviços de Área de Trabalho Remota adicionando um farm de Host da Sessão RD
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016
 
-Você pode melhorar a disponibilidade e escala de sua implantação do RDS com a adição de um farm de Host de sessão de área de trabalho remota (RDSH).   
+Você pode melhorar a disponibilidade e a escala de sua implantação do RDS adicionando um farm do RDSH (Host da Sessão da Área de Trabalho Remota).   
   
  
-Use as etapas a seguir para adicionar outro Host de sessão de área de trabalho remota para sua implantação:  
+Use as etapas a seguir para adicionar outro Host da Sessão RD à sua implantação:  
   
-1. Crie um servidor para hospedar o segundo Host de sessão de área de trabalho remota. Se você estiver usando máquinas virtuais do Azure, certifique-se de incluir a nova VM no mesmo conjunto de disponibilidade que contém seu Host de sessão de área de trabalho remota primeiro.
+1. Crie um servidor para hospedar o segundo Host da Sessão RD. Se estiver usando máquinas virtuais do Azure, certifique-se de incluir a nova VM no mesmo conjunto de disponibilidade que contém o primeiro Host da Sessão RD.
 2. Habilite o gerenciamento remoto no novo servidor ou máquina virtual:
-   1. No Gerenciador do servidor, clique em **servidor Local > configuração atual do gerenciamento remoto (desabilitada)** . 
-   2. Selecione **habilitar o gerenciamento remoto para este servidor**e, em seguida, clique em **Okey**. 
-   3. Opcional: Você pode definir temporariamente o Windows Update para baixar e instalar as atualizações não automaticamente. Isso ajuda a impedir alterações e reinicializações do sistema, enquanto você implanta o servidor de RDSH. No Gerenciador do servidor, clique em **servidor Local > configuração atual do Windows Update**. Clique em **Advanced options > Adiar atualizações**. 
-3. Adicione o servidor ou vm no domínio:
-   1. No Gerenciador do servidor, clique em **servidor Local > configuração atual do grupo de trabalho**. 
-   2. Clique em **alteração > domínio**e, em seguida, insira o nome de domínio (por exemplo, Contoso.com). 
-   3. Insira as credenciais de administrador de domínio. 
-   4. Reinicie o servidor ou vm.
-4. Adicione novo Host de sessão RD no farm:
+   1. No Gerenciador do Servidor, clique em **Servidor Local > Configuração atual do gerenciamento remoto (desabilitado)** . 
+   2. Selecione **Habilitar o gerenciamento remoto para este servidor** e, em seguida, clique em **OK**. 
+   3. Opcional: você pode configurar temporariamente o Windows Update para não baixar e instalar as atualizações automaticamente. Isso ajuda a impedir alterações e reinicializações do sistema enquanto você implanta o servidor de RDSH. No Gerenciador do Servidor, clique em **Servidor Local > Configuração atual do Windows Update**. Clique em **Opções avançadas > Adiar atualizações**. 
+3. Adicione o servidor ou VM ao domínio:
+   1. No Gerenciador do Servidor, clique em **Servidor Local > Configuração atual do grupo de trabalho**. 
+   2. Clique em **Alterar > Domínio** e, em seguida, insira o nome de domínio (por exemplo, Contoso.com). 
+   3. Insira as credenciais do administrador de domínio. 
+   4. Reinicie o servidor ou VM.
+4. Adicione novo Host da Sessão RD ao farm:
    >[!NOTE] 
-   > Etapa 1, criar um endereço IP público para a máquina virtual RDMS, só é necessário se você estiver usando uma vm para os RDMS e se ele ainda não tiver um endereço IP atribuído.
+   > A Etapa 1, criar um endereço IP público para a máquina virtual RDMS, só é necessária quando você está usando uma VM para o RDMS e ela ainda não tem um endereço IP atribuído.
    
-   1. Crie um endereço IP público para a máquina virtual executando serviços de gerenciamento de área de trabalho remota (RDMS). A máquina virtual RDMS normalmente será a máquina virtual executando a primeira instância da função de agente de Conexão de área de trabalho.  
-       1. No portal do Azure, clique em **procurar > grupos de recursos**, clique no grupo de recursos para a implantação e, em seguida, clique na máquina de virtual RDMS (por exemplo, Contoso-Cb1).  
-       2. Clique em **Configurações > interfaces de rede**e, em seguida, clique em interface de rede correspondente.   
-       3. Clique em **Configurações > endereço IP**.
-       4. Para **endereço IP público**, selecione **Enabled**e, em seguida, clique em **endereço IP**.   
-       5. Se você tiver um endereço IP público existente que você deseja usar, selecione-o na lista. Caso contrário, clique em **criar novo**, insira um nome e, em seguida, clique em **Okey** e, em seguida, **salvar**.   
-   2. Logon nos RDMS.
-   3. Adicione o novo servidor RDSH ao Gerenciador do servidor:   
-       1. Inicie o Gerenciador do servidor, clique em **Gerenciar > Adicionar servidores**.   
-       2. Na caixa de diálogo Adicionar servidores, clique em **Localizar agora**.   
-       3. Selecione o servidor que você deseja usar para o Host de sessão de área de trabalho remota ou a máquina virtual recém-criada (por exemplo, Contoso-Sh2) e clique em **Okey**.
-   4. Adicionar o servidor de RDSH à implantação
-       1. Inicie o Gerenciador do servidor.  
-       2. Clique em **dos serviços de área de trabalho remota > Visão geral > servidores de implantação > tarefas > Adicionar servidores de Host de sessão de área de trabalho remota**.   
-       3. Selecione o novo servidor (por exemplo, Contoso-Sh2) e, em seguida, clique em **próxima**.  
-       4. Na página de confirmação, selecione **reiniciar computadores remotos, conforme a necessidade**e, em seguida, clique em **Add**.   
-   5. Adicione servidor de RDSH ao farm da coleção:
+   1. Crie um endereço IP público para a máquina virtual executando o RDMS (Serviços de Gerenciamento da Área de Trabalho Remota). A máquina virtual do RDMS normalmente será a máquina virtual executando a primeira instância da função do Agente de Conexão de Área de Trabalho Remota.  
+       1. No portal do Azure, clique em **Procurar > Grupos de recursos**, clique no grupo de recursos para a implantação e, em seguida, clique na máquina virtual do RDMS (por exemplo, Contoso-Cb1).  
+       2. Clique em **Configurações > Interfaces de rede** e, em seguida, clique no adaptador de rede correspondente.   
+       3. Clique em **Configurações > Endereço IP**.
+       4. Para **Endereço IP público**, selecione **Habilitado** e, em seguida, clique em **Endereço IP**.   
+       5. Se tiver um endereço IP público que deseja usar, selecione-o na lista. Caso contrário, clique em **Criar novo**, insira um nome e, em seguida, clique em **OK** e em **Salvar**.   
+   2. Entre no RDMS.
+   3. Adicione o novo servidor do RDSH ao Gerenciador do Servidor:   
+       1. Inicie o Gerenciador do Servidor, clique em **Gerenciar > Adicionar Servidores**.   
+       2. Na caixa de diálogo Adicionar Servidores, clique em **Localizar Agora**.   
+       3. Selecione o servidor que você deseja usar para o Host da Sessão RD ou a máquina virtual recém-criada (por exemplo, Contoso-Sh2) e clique em **OK**.
+   4. Adicione o servidor de RDSH à implantação
+       1. Inicie o Gerenciador do Servidor.  
+       2. Clique em **Serviços de Área de Trabalho Remota > Visão Geral > Servidores de Implantação > Tarefas > Adicionar servidores Host da Sessão RD**.   
+       3. Selecione o novo servidor (por exemplo, Contoso-Sh2) e, em seguida, clique em **Avançar**.  
+       4. Na página de confirmação, selecione **Reiniciar computadores remotos, conforme o necessário** e, em seguida, clique em **Adicionar**.   
+   5. Adicione o servidor de RDSH ao farm da coleção:
        1. Inicie o Gerenciador do Servidor.   
-       2. Clique em **Remote Desktop Services** e, em seguida, clique na coleção à qual você deseja adicionar o servidor RDSH (por exemplo, ContosoDesktop) recém-criado.   
-       3. Sob **servidores de Host**, clique em **tarefas > Adicionar servidores de Host de sessão de área de trabalho remota**.   
-       4. Selecione o servidor criado recentemente (por exemplo, Contoso-Sh2) e, em seguida, clique em **próxima**.   
-       5. Na página de confirmação, clique em **adicionar**.   
+       2. Clique em **Serviços de Área de Trabalho Remota** e, em seguida, clique na coleção à qual você deseja adicionar o servidor RDSH (por exemplo, ContosoDesktop) recém-criado.   
+       3. Em **Servidores de Host**, clique em **Tarefas > Adicionar servidores Host da Sessão RD**.   
+       4. Selecione o servidor recém-criado (por exemplo, Contoso-Sh2) e, em seguida, clique em **Avançar**.   
+       5. Na página de confirmação, clique em **Adicionar**.   
 

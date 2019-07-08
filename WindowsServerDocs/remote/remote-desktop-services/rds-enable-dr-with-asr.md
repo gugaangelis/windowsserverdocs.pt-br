@@ -1,6 +1,6 @@
 ---
-title: Habilitar a recuperação de desastres do RDS usando o Azure Site Recovery
-description: Saiba como habilitar a recuperação de desastres do RDS usando o Azure Site Recovery.
+title: Habilitar a recuperação de desastre do RDS usando o Azure Site Recovery
+description: Saiba como habilitar a recuperação de desastre do RDS usando o Azure Site Recovery.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,44 +13,44 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.openlocfilehash: 7aa25602c71e5d114be7ae59c5e3ce168844d700
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66446552"
 ---
-# <a name="enable-disaster-recovery-of-rds-using-azure-site-recovery"></a>Habilitar a recuperação de desastres do RDS usando o Azure Site Recovery
+# <a name="enable-disaster-recovery-of-rds-using-azure-site-recovery"></a>Habilitar a recuperação de desastre do RDS usando o Azure Site Recovery
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016
 
-Para garantir que sua implantação do RDS está adequadamente configurada para recuperação de desastres, você precisa proteger todos os componentes que compõem sua implantação do RDS:
+Para garantir que sua implantação do RDS esteja configurada adequadamente para a recuperação de desastres, você precisa proteger todos os componentes que compõem sua implantação do RDS:
 
 - Active Directory
-- SQL Server tier
-- Componentes RDS
+- Nível do SQL Server
+- Componentes do RDS
 - Componentes de rede
 
-## <a name="configure-active-directory-and-dns-replication"></a>Configurar a replicação do Active Directory e DNS
+## <a name="configure-active-directory-and-dns-replication"></a>Configurar o Active Directory e a replicação DNS
 
-Você precisa do Active Directory no site de recuperação de desastre para sua implantação do RDS para trabalhar. Você tem duas opções com base em sua implantação do RDS quão complexo é:
+Você precisa do Active Directory no site de recuperação de desastre para que sua implantação do RDS funcione. Você tem duas opções com base na complexidade da implantação de RDS:
 
-- Opção 1 – se você tiver um número pequeno de aplicativos e um único controlador de domínio para todo o seu site local e você será estar falhando ao longo de todo o site conjuntamente, use a replicação do ASR para replicar o controlador de domínio para o site secundário (verdadeiro para ambos cenários site a site e site para o Azure).
-- Opção 2: se você tiver um grande número de aplicativos e você estiver executando uma floresta do Active Directory e você vai failover de alguns aplicativos por vez, configure um controlador de domínio adicional no site de recuperação de desastres (em um site secundário ou no Azure).
+- Opção 1 – se você tiver um número pequeno de aplicativos e um único controlador de domínio para todo seu site local e quiser fazer o failover de todo o site em conjunto, use a replicação de ASR para replicar o controlador de domínio para o site secundário (válido para cenários site a site e site ao Azure).
+- Opção 2 – se você tiver um grande número de aplicativos, estiver executando uma floresta do Active Directory e quiser fazer failover de alguns aplicativos por vez, configure um controlador de domínio adicional no site de recuperação de desastre (um site secundário ou no Azure).
 
-Ver [proteger o Active Directory e DNS com o Azure Site Recovery](/azure/site-recovery/site-recovery-active-directory) para obter detalhes sobre como disponibilizar um controlador de domínio no site de recuperação de desastre. Para o restante deste guia, presumimos que você seguiu essas etapas e tem o controlador de domínio disponível.
+Consulte [Proteger o Active Directory e o DNS com o Azure Site Recovery](/azure/site-recovery/site-recovery-active-directory) para obter detalhes sobre como disponibilizar um controlador de domínio no site de recuperação de desastre. Para o restante deste guia, presumimos que você seguiu essas etapas e tem o controlador de domínio disponível.
 
-## <a name="set-up-sql-server-replication"></a>Configurar a replicação do SQL Server
+## <a name="set-up-sql-server-replication"></a>Configurar a Replicação do SQL Server
 
-Ver [proteger o SQL Server usando a recuperação de desastres do SQL Server e o Azure Site Recovery](/azure/site-recovery/site-recovery-sql) para obter as etapas configurar a replicação do SQL Server.
+Consulte [Proteger o SQL Server usando a recuperação de desastre do SQL Server e o Azure Site Recovery](/azure/site-recovery/site-recovery-sql) para obter as etapas para configurar a Replicação do SQL Server.
 
-## <a name="enable-protection-for-the-rds-application-components"></a>Habilitar a proteção para os componentes de aplicativo do RDS
+## <a name="enable-protection-for-the-rds-application-components"></a>Habilitar a proteção para componentes de aplicativo do RDS
 
-Dependendo do seu tipo de implantação do RDS, você pode habilitar proteção para VMs de componente diferentes (conforme listado na tabela a seguir) no Azure Site Recovery. Configure os elementos relevantes do Azure Site Recovery com base em se suas VMs são implantadas no Hyper-V ou VMWare.
+Dependendo do tipo de implantação do RDS, você pode habilitar a proteção para VMs de componentes diferentes (conforme listado na tabela a seguir) no Azure Site Recovery. Configure os elementos relevantes do Azure Site Recovery com base em suas VMs estarem implantadas no Hyper-V ou no VMWare.
 
 
 |               Tipo de implantação                |                                                                                                     Etapas de proteção                                                                                                     |
 |----------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     Área de trabalho virtual (não gerenciada)     | 1. Verifique se que todos os hosts de virtualização estão prontos com a função RDVH instalada.    </br>2. Agente de Conexão.  </br>3. Áreas de trabalho pessoais. </br>4. VM do modelo Gold. </br>5. Web Access, servidor de licença e o servidor de Gateway |
-| Com o pool de área de trabalho virtual (gerenciada com nenhuma UPD) |                    1. Todos os hosts de virtualização estão prontos com a função RDVH instalada.  </br>2. Agente de Conexão.  </br>3. VM do modelo Gold. </br>4. Web Access, servidor de licença e o servidor de Gateway.                    |
-|   Aplicativos remotos e sessões da área de trabalho (sem UDP)   |                                                          1. Hosts de sessão.  </br>2. Agente de Conexão. </br>3. Web Access, servidor de licença e o servidor de Gateway.                                                           |
+|     Área de trabalho virtual pessoal (não gerenciada)     | 1. Verifique se todos os hosts de virtualização estão prontos com a função de RDVH instalada.    </br>2. Agente de Conexão.  </br>3. Áreas de trabalho pessoais. </br>4. VM modelo Gold. </br>5. Acesso via Web, servidor de licença e Servidor de gateway |
+| Área de trabalho virtual em pool (gerenciada, sem UPD) |                    1. Todos os hosts de virtualização estão prontos com a função de RDVH instalada.  </br>2. Agente de Conexão.  </br>3. VM modelo Gold. </br>4. Acesso via Web, servidor de licença e servidor de gateway.                    |
+|   Sessões de RemoteApps e área de trabalho (sem UPD)   |                                                          1. Hosts de sessão.  </br>2. Agente de Conexão. </br>3. Acesso via Web, servidor de licença e servidor de gateway.                                                           |
 

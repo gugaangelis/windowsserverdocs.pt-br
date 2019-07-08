@@ -9,31 +9,31 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e19c7a51ef1f50f974dc380e00315f9980da560
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66501361"
 ---
-# <a name="whats-new-in-windows-server"></a>O que há de novo no Windows Server
+# <a name="whats-new-in-windows-server"></a>Novidades no Windows Server
 
->Aplica-se a: 2019, Windows Server 2016, Windows Server (canal semestral) do Windows Server
+>Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server (canal semestral)
 
 Você pode encontrar os novos recursos para cada uma dessas versões do Windows Server.  
 
-Versões de longo prazo de manutenção LTSC (canal):
+Versões do LTSC (Canal de Manutenção em Longo Prazo):
 
 - [Novidades no Windows Server 2019](../get-started-19/whats-new-19.md)
 - [Novidades no Windows Server 2016](whats-new-in-windows-server-2016.md)
 
-Versões de canal semestral:
+Versões do Canal Semestral:
 
-- [O que há de novo no Windows Server, versão 1903](../get-started-19/whats-new-in-windows-server-1903.md)
+- [Novidades no Windows Server, versão 1903](../get-started-19/whats-new-in-windows-server-1903.md)
 - [Novidades no Windows Server, versão 1809](whats-new-in-windows-server-1809.md)
 - [Novidades no Windows Server, versão 1803](whats-new-in-windows-server-1803.md)
-- [O que há de novo no Windows Server, versão 1709](whats-new-in-windows-server-1709.md) (sem suporte a partir de 9 de abril de 2019)
+- [Novidades no Windows Server, versão 1709](whats-new-in-windows-server-1709.md) (sem suporte a partir de 9 de abril de 2019)
 
-Canal semestral do Windows Server versões fornecem novos recursos de sistema operacional em um ritmo mais rápido. Uma nova versão for lançada a cada seis meses e tem suporte por 18 meses. Verifique [informações de versão do Windows Server](windows-server-release-info.md) e [página de suporte do ciclo de vida](https://support.microsoft.com/lifecycle) para dar suporte a datas e use sempre a versão mais recente, se possível.
+As versões do Canal semestral do Windows Server fornecem novos recursos de sistema operacional em um ritmo mais rápido. Uma nova versão é lançada a cada seis meses e tem suporte por 18 meses. Verifique as [Informações sobre versão do Windows Server](windows-server-release-info.md) e a [Página de suporte do ciclo de vida](https://support.microsoft.com/lifecycle) para datas de suporte e use sempre a versão mais recente, se possível.
 
 ## <a name="see-also"></a>Consulte também
 

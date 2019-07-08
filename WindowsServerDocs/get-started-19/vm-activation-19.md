@@ -1,7 +1,7 @@
 ---
 title: Ativação automática de máquina virtual
 TOCTitle: Automatic VM Activation
-description: Como ativar VMs no Windows Server 2012 R2, Windows Server 2016 e Windows Server 2019
+description: Como ativar VMs no Windows Server 2019, Windows Server 2016 e Windows Server 2012 R2
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,15 +13,15 @@ author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
 ms.openlocfilehash: 18e20433050371dc02782fb8630a885e53ae31ad
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "63688700"
 ---
 # <a name="automatic-virtual-machine-activation"></a>Ativação automática de máquina virtual
 
-> Aplica-se a: Windows Server 2019, canal semestral do Windows Server, Windows Server 2016, Windows Server 2012 R2
+> Aplica-se a: Windows Server 2019, Canal Semestral do Windows Server, Windows Server 2016, Windows Server 2012 R2
 
 AVMA (Ativação Automática da Máquina Virtual) funciona como um mecanismo de comprovante de compra, ajudando a garantir que os produtos Windows sejam usados de acordo com os Direitos de Uso do Produto e os Termos de Licença de Software da Microsoft.
 
@@ -45,25 +45,25 @@ Os parceiros de SPLA (Contrato de Licença do Provedor de Serviços) e outros pr
 
 ## <a name="system-requirements"></a>Requisitos de sistema
 
-A AVMA requer um servidor de virtualização da Microsoft executando o Windows Server 2012 R2, Windows Server 2016 Datacenter ou Windows Server Datacenter de 2019. 
+A AVMA requer um servidor de virtualização da Microsoft executando o Windows Server 2019 Datacenter, Windows Server 2016 Datacenter ou Windows Server 2012 R2. 
 
 Aqui estão os convidados que os hosts de versão diferentes podem ativar:
 
-|Versão do servidor host|Windows Server 2019|Windows Server 2016|Windows Server 2012 R2|
+|Versão do host do servidor|Windows Server 2019|Windows Server 2016|Windows Server 2012 R2|
 |-|-|-|-|
 |Windows Server 2019|X|X|X|
 |Windows Server 2016| |X|X|
 |Windows Server 2012 R2| ||X|
 
-Observe que esses ativar todas as edições (Datacenter, Standard ou Essentials).
+Observe que estas ativam todas as edições (Datacenter, Standard ou Essentials).
 
-Essa ferramenta não funciona com outras tecnologias de virtualização de servidor.
+Essa ferramenta não funciona com outras tecnologias do Servidor de Virtualização.
 
 ## <a name="how-to-implement-avma"></a>Como implementar a AVMA
 
-1.  Em um servidor de virtualização do Windows Server Datacenter, instale e configure a função de servidor do Microsoft Hyper-V. Para obter mais informações, consulte [instalar o Hyper-V Server](../virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server.md).
+1.  Em um servidor de virtualização com o Windows Server Datacenter, instale e configure a função do Microsoft Hyper-V Server. Para obter mais informações, confira [Instalar o Hyper-V Server](../virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server.md).
 
-2.  [Criar uma máquina virtual](../virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v.md) e instalar um sistema operacional com suporte nele.
+2.  [Crie uma máquina virtual](../virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v.md) e instale um sistema operacional de servidor com suporte nele.
 
 3.  Instale a chave AVMA na máquina virtual. Em um prompt de comando elevado, execute o seguinte comando:
     
@@ -120,7 +120,7 @@ As chaves AVMA a seguir podem ser usadas para o Windows Server 2012 R2.
 |Standard|DBGBW-NPF86-BJVTX-K3WKJ-MTB6V|
 |Essentials|K2XGM-NMBT3-2R6Q8-WF2FK-P36R2|
 
-## <a name="reporting-and-tracking"></a>Emissão de relatórios e acompanhamento
+## <a name="reporting-and-tracking"></a>Geração de relatórios e acompanhamento
 
 O Registro (KVP) no servidor de virtualização fornece dados de rastreamento em tempo real para os sistemas operacionais convidados. Como a chave de Registro é movida com a máquina virtual, você também pode obter informações sobre a licença. Por padrão, o KVP retorna informações sobre a máquina virtual, incluindo o seguinte:
 
@@ -134,7 +134,7 @@ O Registro (KVP) no servidor de virtualização fornece dados de rastreamento em
 
   - Endereços de RDP
 
-Para obter mais informações sobre como obter essas informações, consulte [Script do Hyper-V: Procurando KVP guestintrinsicexchangeitems](http://blogs.msdn.com/b/virtual_pc_guy/archive/2008/11/18/hyper-v-script-looking-at-kvp-guestintrinsicexchangeitems.aspx).
+Para saber como obter essas informações, confira [Script do Hyper-V: Procurando KVP GuestIntrinsicExchangeItems](http://blogs.msdn.com/b/virtual_pc_guy/archive/2008/11/18/hyper-v-script-looking-at-kvp-guestintrinsicexchangeitems.aspx).
 
 
 > [!NOTE]
@@ -153,7 +153,7 @@ Como o processo de ativação da AVMA é transparente, não são exibidas mensag
 |Notificação|Descrição|
 |-|-|
 |Sucesso da AVMA|A máquina virtual foi ativada.|
-|Host inválido|O servidor de virtualização não está respondendo. Isso pode acontecer quando o servidor não está executando uma versão suportada do Windows.|
+|Host inválido|O servidor de virtualização não está respondendo. Isso pode ocorrer quando o servidor não está executando uma versão com suporte do Windows.|
 |Dados inválidos|Isso geralmente é resultante de uma falha na comunicação entre o servidor de virtualização e a máquina virtual, geralmente causada por corrupção, criptografia ou incompatibilidade de dados.|
 |Ativação Negada|O servidor de virtualização poderá não ativar o sistema operacional convidado porque a ID da AVMA não foi correspondente.|
 

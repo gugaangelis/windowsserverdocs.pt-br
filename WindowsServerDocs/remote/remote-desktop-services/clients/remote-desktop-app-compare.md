@@ -1,6 +1,6 @@
 ---
-title: Área de trabalho remota - comparar os aplicativos cliente
-description: Saiba como se comparam os diferentes aplicativos de área de trabalho remota quando se trata de funções e recursos com suporte.
+title: Área de Trabalho Remota – comparar os aplicativos cliente
+description: Saiba como se comparam os diferentes aplicativos de área de trabalho remota quando se trata de funções e recursos compatíveis.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -15,58 +15,58 @@ ms.author: elizapo
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e001b590f524711185e3dd70db3bc52a9b8d9af
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66447118"
 ---
-# <a name="compare-the-client-apps"></a>Compare os aplicativos cliente
+# <a name="compare-the-client-apps"></a>Comparar os aplicativos cliente
 
 >Aplica-se a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
 
-Muitas vezes, serão solicitados que como os diferentes aplicativos de cliente de área de trabalho remota se comparam uns aos outros. Todos eles fazem a mesma coisa? Aqui estão as respostas a essas perguntas.
+Muitas vezes nos é perguntado como os diferentes aplicativos cliente de Área de Trabalho Remota se comparam uns aos outros. Todos eles fazem a mesma coisa? Aqui estão as respostas a essas perguntas.
 
 ## <a name="redirection-support"></a>Suporte a redirecionamento
 
-As tabelas a seguir comparam o suporte para o dispositivo e outros redirecionamentos no aplicativo de Conexão de área de trabalho remota, aplicativo Universal, aplicativo Android, aplicativo iOS, macOS cliente de aplicativo e a web. Essas tabelas abordam os redirecionamentos que você pode acessar uma vez em uma sessão remota. 
+As tabelas a seguir comparam o suporte para redirecionamento de dispositivo e outros redirecionamentos no aplicativo de Conexão de Área de Trabalho Remota, aplicativo Universal, aplicativo Android, aplicativo iOS, aplicativo macOS e cliente Web. Essas tabelas englobam os redirecionamentos que você pode acessar uma vez em uma sessão remota. 
 
-Se você remoto em sua área de trabalho pessoal, há redirecionamentos adicionais que você pode configurar o **configurações adicionais** para a sessão. Se seus aplicativos ou a área de trabalho remota são gerenciados pela sua organização, o administrador pode habilitar ou desabilitar o redirecionamentos por meio das configurações de diretiva de grupo.
+Se você acessar sua área de trabalho pessoal remotamente, haverá vários redirecionamentos adicionais que você poderá configurar nas **Configurações Adicionais** para a sessão. Se os aplicativos ou Área de Trabalho Remota são gerenciados pela sua organização, o administrador pode habilitar ou desabilitar os redirecionamentos por meio das configurações de Política de Grupo.
 
 ### <a name="input-redirection"></a>Redirecionamento de entrada
 
-| Redirecionamento | Área de Trabalho Remota<br> Conexão | Universal | Android | iOS | macOS |          cliente Web           |
+| Redirecionamento | Área de Trabalho Remota<br> Conexão | Universal | Android | iOS | macOS |          Cliente Web           |
 |-------------|-------------------------------|-----------|---------|-----|-------|-------------------------------|
 |  Teclado   |               X               |     X     |    X    |  X  |   X   |               X               |
 |    Mouse    |               X               |     X     |    X    | X\* |   X   |               X               |
-|    Touch    |               X               |     X     |    X    |  X  |       | X (Edge e IE sem suporte) |
+|    Touch    |               X               |     X     |    X    |  X  |       | X (Edge e IE não compatíveis) |
 |    Outro    |              Caneta              |           |         |     |       |                               |
 
-* Exibir o [lista de dispositivos de entrada com suporte para o cliente de versão Beta do iOS de área de trabalho remota](remote-desktop-ios.md#supported-input-devices).
+*Exiba a [lista de dispositivos de entrada compatíveis para a versão Beta do cliente iOS da Área de Trabalho Remota](remote-desktop-ios.md#supported-input-devices).
 
 ### <a name="port-redirection"></a>Redirecionamento de porta   
 
-| Redirecionamento | Área de Trabalho Remota <br>Conexão | Universal | Android | iOS | macOS | cliente Web |
+| Redirecionamento | Área de Trabalho Remota <br>Conexão | Universal | Android | iOS | macOS | Cliente Web |
 |-------------|-------------------------------|-----------|---------|-----|-------|------------|
 | Porta serial | X                             |           |         |     |       |            |
 | USB         | X                             |           |         |     |       |            |
 
-Quando você habilita o redirecionamento de porta USB, qualquer dispositivo USB conectado à porta USB é reconhecido automaticamente na sessão remota.
+Quando você habilita o redirecionamento de porta USB, quaisquer dispositivos USB conectados à porta USB são reconhecidos automaticamente na sessão remota.
 
 ### <a name="other-redirection-devices-etc"></a>Outros redirecionamentos (dispositivos, etc.)
 
 
 
-| Redirecionamento         | Conexão de Área de Trabalho Remota | Universal   | Android | iOS         | macOS                                    | cliente Web    |
+| Redirecionamento         | Conexão de Área de Trabalho Remota | Universal   | Android | iOS         | macOS                                    | Cliente Web    |
 |---------------------|---------------------------|-------------|---------|-------------|------------------------------------------|---------------|
 | Câmeras             | X                         |             |         |             |                                          |               |
 | Área de Transferência           | X                         | texto, imagem | texto    | texto, imagem | X                                        | texto          |
-| Local de armazenamento/unidade | X                         |             | X       |             | x                                        |               |
+| Unidade local/armazenamento | X                         |             | X       |             | x                                        |               |
 | Location            | X                         |             |         |             |                                          |               |
 | Microfones         | X                         |X            |         |             | X                                        |               |
-| Impressoras            | X                         |             |         |             | X CUPS (somente)                            | Impressão PDF     |
+| Impressoras            | X                         |             |         |             | X (somente CUPS)                            | Impressão PDF     |
 | Scanners            | X                         |             |         |             |                                          |               |
-| Cartões inteligentes         | X                         |             |         |             | X (autenticação do Windows não tem suportada) |               |
+| Cartões inteligentes         | X                         |             |         |             | X (autenticação do Windows não compatível) |               |
 | Alto-falantes            | X                         | X           | X       | X           | X                                        | X (exceto o IE) |
 
-* Para redirecionamento de impressora – o aplicativo macOS dá suporte ao driver de impressora fotocompositora Publisher por padrão. Eles não dá suporte ao redirecionamento de drivers de impressora nativo.
+*Para redirecionamento de impressora – o aplicativo macOS dá suporte ao driver de impressora Publisher Imagesetter por padrão. Eles não dão suporte ao redirecionamento de drivers de impressora nativos.

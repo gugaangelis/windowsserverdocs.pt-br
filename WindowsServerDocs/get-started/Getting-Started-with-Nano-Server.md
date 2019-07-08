@@ -13,20 +13,20 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 295402a3bcdcec07025ad1f803cddd47127baa8d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878947"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63688591"
 ---
 # <a name="install-nano-server"></a>Instalar o Nano Server
 
 >Aplica-se a: Windows Server 2016
 
 > [!IMPORTANT]
-> A partir do Windows Server, versão 1709, o Nano Server estará disponível somente como uma [imagem de sistema operacional base do contêiner](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Confira [Mudanças no Nano Server](nano-in-semi-annual-channel.md) para saber o que isso significa. 
+> Começando com o Windows Server, versão 1709, o Nano Server estará disponível somente como uma [imagem de sistema operacional base do contêiner](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Confira [Mudanças no Nano Server](nano-in-semi-annual-channel.md) para saber o que isso significa. 
 
-Windows Server 2016 oferece uma nova opção de instalação: Nano Server. O Nano Server é um sistema operacional de servidor administrado remotamente e otimizado para data centers e nuvens privadas. É semelhante ao Windows Server no modo Server Core, mas significativamente menor, não tem nenhum recurso de logon local e só oferece suporte a agentes, ferramentas e aplicativos de 64 bits. Ele ocupa bem menos espaço em disco, configura consideravelmente mais rápido e exige muito menos atualizações e reinicializações que o Windows Server. Quando ele reinicia, é muito mais rápido. A opção de instalação Nano Server está disponível para as edições Standard e Datacenter do Windows Server 2016.  
+O Windows Server 2016 oferece uma nova opção de instalação: Nano Server. O Nano Server é um sistema operacional de servidor administrado remotamente e otimizado para data centers e nuvens privadas. É semelhante ao Windows Server no modo Server Core, mas significativamente menor, não tem nenhum recurso de logon local e só oferece suporte a agentes, ferramentas e aplicativos de 64 bits. Ele ocupa bem menos espaço em disco, configura consideravelmente mais rápido e exige muito menos atualizações e reinicializações que o Windows Server. Quando ele reinicia, é muito mais rápido. A opção de instalação Nano Server está disponível para as edições Standard e Datacenter do Windows Server 2016.  
 
 O Nano Server é ideal para vários cenários:  
   
@@ -52,8 +52,8 @@ Como o Nano Server é otimizado como um sistema operacional leve para execução
 - O Agrupamento NIC (especificamente, balanceamento de carga e failover ou LBFO) não é permitido. Ao invés disso, é oferecido suporte ao Agrupamento incorporado do comutador (SET).
 - Não há suporte para o System Center Configuration Manager e o System Center Data Protection Manager.
 - Não há suporte para cmdlets do BPA (Analisador de Práticas Recomendadas) nem para a integração do BPA com o Gerenciador do Servidor.
-- O Servidor Nano não dá suporte a HBAs (adaptadores de barramento do host) virtuais.
-- O Servidor Nano não precisa ser ativado com uma chave do produto (Product Key). Ao funcionar como um host do Hyper-V, o Nano Server não é compatível com a [Ativação Automática de Máquina Virtual](https://technet.microsoft.com/library/dn303421%28v=ws.11%29.aspx) (AVMA). Máquinas virtuais em execução em um host do Nano Server podem ser ativadas usando o [Serviço de Gerenciamento de Chaves](https://technet.microsoft.com/library/jj612867(v=ws.11).aspx) (KMS) com uma chave de licença de volume genérico ou usando a [ativação baseada no Active Directory](https://technet.microsoft.com/library/dn502534(v=ws.11).aspx).
+- O Nano Server não dá suporte a HBAs (adaptadores de barramento do host) virtuais.
+- O Nano Server não precisa ser ativado com uma chave do produto (Product Key). Ao funcionar como um host do Hyper-V, o Nano Server não é compatível com a AVMA [(ativação automática de máquina virtual)](https://technet.microsoft.com/library/dn303421%28v=ws.11%29.aspx). Máquinas virtuais em execução em um host do Nano Server podem ser ativadas usando o KMS [(Serviço de Gerenciamento de Chaves)](https://technet.microsoft.com/library/jj612867(v=ws.11).aspx) com uma chave de licença de volume genérico ou usando a [ativação baseada no Active Directory](https://technet.microsoft.com/library/dn502534(v=ws.11).aspx).
 - A versão do Windows PowerShell fornecida com o Nano Server tem diferenças importantes. Para obter detalhes, consulte [PowerShell on Nano Server](PowerShell-on-Nano-Server.md) (PowerShell on Nano Server).
 - Há suporte para o Nano Server apenas no modelo CBB (Branch Atual para Negócios) – não há versão de LTSB (Branch de Manutenção em Longo Prazo) para o Nano Server neste momento. Consulte a subseção a seguir para obter mais informações.
 
@@ -65,7 +65,7 @@ As opções de instalação Server Core e Servidor com Experiência Desktop aind
 ## <a name="installation-scenarios"></a>Cenários de instalação
 
 ### <a name="evaluation"></a>Avaliação
-Você pode obter uma cópia de avaliação de 180 dias licenciada do Windows Server em [Avaliações do Windows Server](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016). Para experimentar o Nano Server, escolha o **Nano Server | opção EXE de 64 bits**e, em seguida, volte para o [início rápido do Nano Server](Nano-Server-Quick-Start.md) ou [implantar o Nano Server](Deploy-Nano-Server.md) para começar a usar.
+Você pode obter uma cópia de avaliação de 180 dias licenciada do Windows Server em [Avaliações do Windows Server](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016). Para testar o Nano Server, escolha **Nano Server | Opção EXE de 64 bits** e, em seguida, volte para o [Início Rápido do Nano Server](Nano-Server-Quick-Start.md) ou [Implantar o Nano Server](Deploy-Nano-Server.md) para começar.
 
 ### <a name="clean-installation"></a>Instalação limpa
 Como você instala o Nano Server configurando um VHD, uma instalação limpa é o método de implantação mais simples e rápido.

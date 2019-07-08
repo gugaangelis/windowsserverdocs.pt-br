@@ -15,11 +15,11 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c26d6d0c4c4465b5f9073dbcac951fc0adce1d5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882047"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63688538"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2016"></a>Comparação das edições Standard e Datacenter do Windows Server 2016
 
@@ -91,7 +91,7 @@ ms.locfileid: "59882047"
 |Desbloqueio pela rede do BitLocker|Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
 |BranchCache|Sim|Sim|
 |Cliente NFS|Sim|Sim|
-|Contêineres|Sim (contêineres do Windows ilimitados; Hyper-V contêineres até 2)|Sim (todos os tipos de contêineres ilimitados)|
+|Contêineres|Sim (contêineres do Windows ilimitados; até 2 contêineres do Hyper-V)|Sim (todos os tipos de contêineres ilimitados)|
 |Data Center Bridging|Sim|Sim|
 |Direct Play|Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
 |Armazenamento Avançado|Sim|Sim|
@@ -160,7 +160,7 @@ ms.locfileid: "59882047"
 |Opção de instalação do Nano Server|Sim|Sim|
 |Gerenciador do Servidor|Sim|Sim|
 |SMB Direct e SMB sobre RDMA|Sim|Sim|
-|Rede definida por software|Não|Sim|
+|Rede definida pelo software|Não|Sim|
 |Serviço de Gerenciamento de Armazenamento|Sim|Sim|
 |Espaços de Armazenamento|Sim|Sim|
 |Espaços de Armazenamento Diretos|Não|Sim|

@@ -1,6 +1,6 @@
 ---
-title: Introdução aos serviços de área de trabalho remota
-description: Fornece informações para ajudá-lo a começar a usar RDS no Windows Server 2016.
+title: Introdução aos Serviços de Área de Trabalho Remota
+description: Fornece informações para que você possa começar a usar o RDS no Windows Server 2016.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,21 +13,21 @@ ms.topic: article
 ms.assetid: e8f8cfd2-c62e-4f9b-b843-099fd37c6d58
 author: lizap
 manager: dongill
-ms.openlocfilehash: 3e7dd00e9c5e0c15d8d7ab229e1383ad7051b3cc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.openlocfilehash: 6b429cf5e0313c061b4e3718146f9aa69544692e
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814757"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63713061"
 ---
-# <a name="get-started-with-remote-desktop-services-in-windows-server-2016"></a>Começar com os serviços de área de trabalho remota no Windows Server 2016
+# <a name="get-started-with-remote-desktop-services-in-windows-server-2016"></a>Introdução aos Serviços de Área de Trabalho Remota no Windows Server 2016
 
 > Aplica-se a: Windows Server 2016
 
-Use as seguintes informações para começar a explorar e usar serviços de área de trabalho remota no Windows Server 2016.
+Use as seguintes informações para começar a explorar e usar os Serviços de Área de Trabalho Remota no Windows Server 2016.
 
-- [O que há de novo nos serviços de área de trabalho remota?](rds-whats-new.md) -Check-out de novos recursos adicionados no Windows Server 2016, bem como melhorias para recursos e cenários existentes.
-- [Cartaz de planejamento dos serviços de área de trabalho remota](rds-poster.md) -, criamos um pôster que orienta você durante todas as considerações para planejar a implantação de área de trabalho remota.
-- [Áreas de trabalho do Windows e aplicativos – roteiro de aprendizagem de host](rds-hosting-partners.md) -precisa criar uma solução em máquinas virtuais de hospedagem de área de trabalho? Saiba mais sobre o novo caminho de aprendizagem dos serviços de área de trabalho remota, bem como identificar parceiros que podem ajudar você a criar seu ambiente.
+- [Novidades nos Serviços de Área de Trabalho Remota.](rds-whats-new.md) – Confira os novos recursos adicionados ao Windows Server 2016, bem como melhorias de recursos e cenários existentes.
+- [Cartaz sobre planejamento dos Serviços de Área de Trabalho Remota](rds-poster.md) – criamos um cartaz que percorre todas as considerações para planejar sua implantação da Área de Trabalho Remota.
+- [Hospedar áreas de trabalho e aplicativos do Windows – roteiro de aprendizagem](rds-hosting-partners.md) – precisa criar uma solução de hospedagem de área de trabalho em máquinas virtuais? Saiba mais sobre o novo roteiro de aprendizagem dos Serviços de Área de Trabalho Remota e identifique parceiros que podem ajudar você a criar seu ambiente.
 
-Quando você tiver revisado as informações sobre, dê o próximo passo e [começar a planejar sua implantação](rds-plan-and-design.md).
+Após examinar as informações, dê o próximo passo e [comece a planejar sua implantação](rds-plan-and-design.md).

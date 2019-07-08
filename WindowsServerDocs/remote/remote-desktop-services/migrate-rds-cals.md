@@ -1,6 +1,6 @@
 ---
 title: Migrar suas Licenças de Acesso para Cliente de Serviços de Área de Trabalho Remota (RDS CALs)
-description: Este artigo descreve como migrar suas licenças de acesso do cliente de serviços da área de trabalho remota para novos servidores de licença do Windows Server 2016.
+description: Este artigo descreve como migrar suas Licenças de Acesso para Cliente dos Serviços de Área de Trabalho Remota para novos servidores de licença do Windows Server 2016.
 ms.custom: na
 ms.prod: windows-server-threshold
 msreviewer: ''
@@ -14,91 +14,91 @@ ms.assetid: 91bdedce-6145-469f-b72e-7e113c4391e9
 author: christianmontoya
 manager: scottman
 ms.openlocfilehash: c947375b58c0ad88781335b799055e101bd2a193
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66447102"
 ---
 # <a name="migrate-your-remote-desktop-services-client-access-licenses-rds-cals"></a>Migrar suas Licenças de Acesso para Cliente de Serviços de Área de Trabalho Remota (RDS CALs)
 
-Você tem três opções para migrar as RDS CALs:
-1. Método de conexão automática: Este método recomendado se comunica por meio da internet diretamente para a Microsoft Clearinghouse saída pela porta TCP 443.  
-2. Usando um navegador da web: Esse método permite a migração quando o servidor que executa a ferramenta Gerenciador de licenciamento de área de trabalho remota não tem conectividade com a internet, mas o administrador tem conectividade com a internet em um dispositivo separado. A URL para o método de migração da Web é exibida no Assistente de gerenciamento de RDS CALs. 
-3. Usando um telefone: Esse método permite ao administrador concluir o processo de migração por telefone com um representante da Microsoft. O número de telefone apropriado é determinado por país/região que você escolheu no Assistente para ativação do servidor e é exibido no Assistente de gerenciamento de RDS CALs.
+Você tem três opções para migrar as CALs para Serviços de Área de Trabalho Remota:
+1. Método de conexão automática: Este método recomendado comunica-se por meio da Internet diretamente à Microsoft Clearinghouse, com saída pela porta TCP 443.  
+2. Usar um navegador da Web: Esse método permite a migração quando o servidor que executa a ferramenta de Gerenciador de Licenciamento de Área de Trabalho Remota não tem conectividade com a Internet, mas o administrador tem conectividade com a Internet em um dispositivo separado. A URL para o método de migração da Web é exibida no Assistente de Gerenciamento de CALs para Serviços de Área de Trabalho Remota. 
+3. Usar um telefone: Esse método permite ao administrador concluir o processo de migração por telefone com um representante da Microsoft. O número de telefone apropriado é determinado pelo país/região que você escolheu no Assistente para Ativação do Servidor e é exibido no Assistente de Gerenciamento de CALs para Serviços de Área de Trabalho Remota.
 
-Neste artigo, o [método de migração de estabelecer o RDS CAL](#establish-rds-cal-migration-method) destaca as etapas gerais comuns em qualquer método de migração de RDS CAL, enquanto [migrar RDS CALs](#migrate-rds-cals) destaca as etapas específicas para cada migração método.
+Neste artigo, [Estabelecer método de migração de CAL para Serviços de Área de Trabalho Remota](#establish-rds-cal-migration-method) destaca as etapas gerais comuns em qualquer método de migração de CAL para Serviços de Área de Trabalho Remota, enquanto [Migrar CALs para Serviços de Área de Trabalho Remota](#migrate-rds-cals) destaca as etapas específicas a cada método de migração.
 
 Independentemente do método de migração, você deve, no mínimo, ser um membro do grupo Administradores local para executar as etapas de migração.
 
-## <a name="establish-rds-cal-migration-method"></a>Estabelecer o método de migração de RDS CAL
+## <a name="establish-rds-cal-migration-method"></a>Estabelecer o método de migração de CAL para Serviços de Área de Trabalho Remota
 
-1. No servidor de licença, abra **o Gerenciador de licenciamento de área de trabalho remota**. (Clique em **Iniciar > Ferramentas administrativas**. Insira o **dos serviços de área de trabalho remota** diretório e inicie **Gerenciador de licenciamento de área de trabalho remota**.)
-2. Verifique se o método de conexão para o servidor de licenças de área de trabalho remota: o servidor de licenças ao qual você deseja migrar as RDS CALs e, em seguida, clique com o botão direito **propriedades**. No **método de Conexão** guia, verifique se o **método de Conexão** -você pode alterá-lo no menu suspenso. Clique em **OK**.
-3. O servidor de licenças ao qual você deseja migrar as RDS CALs e, em seguida, clique com o botão direito **Gerenciar RDS CALs**.
-4. Siga as etapas no Assistente para o **seleção de ação** página. Clique em **migrar do RDS CALs de outro servidor de licença para este servidor de licença**.
-6. Escolha o motivo para migrar as RDS CALs e, em seguida, clique em **próxima**. Você tem as seguintes opções:
+1. No servidor de licença, abra o **Gerenciador de Licenciamento de Área de Trabalho Remota**. Clique em **Iniciar > Ferramentas Administrativas**. Insira o diretório dos **Serviços de Área de Trabalho Remota** e inicie o **Gerenciador de Licenciamento de Área de Trabalho Remota**.)
+2. Verifique o método de conexão para o servidor de licenças de Área de Trabalho Remota: clique com o botão direito do mouse no servidor de licenças para o qual você deseja migrar as CALs para Serviços de Área de Trabalho Remota e, em seguida, clique em **Propriedades**. Na guia **Método de Conexão**, verifique o **Método de conexão** – você pode alterá-lo no menu suspenso. Clique em **OK**.
+3. Clique com o botão direito do mouse no servidor de licença para o qual deseja migrar as CALs para Serviços de Área de Trabalho Remota e clique em **Gerenciar CALs para Serviços de Área de Trabalho Remota**.
+4. Siga as etapas no assistente para a página **Seleção de Ação**. Clique em **Migrar CALs para Serviços de Área de Trabalho Remota de outro servidor de licença para este servidor de licença**.
+6. Escolha o motivo para migrar as CALs para Serviços de Área de Trabalho Remota e clique em **Avançar**. Você tem as seguintes opções:
     - O servidor de licença de origem está sendo substituído por este servidor de licença.
-    - O servidor de licença de origem não está mais funcionando.
+    - O servidor de licença de origem não está mais em funcionamento.
 7. A próxima página do assistente depende do motivo de migração que você escolheu.
-    - Se você escolheu **o servidor de licença de origem está sendo substituído por este servidor de licença** como o motivo para migrar as RDS CALs, o **informações do servidor de licença de origem** página é exibida.
+    - Se você escolheu **o servidor de licença de origem está sendo substituído por este servidor de licença** como o motivo para migrar as CALs para Serviços de Área de Trabalho Remota, a página **Informações do servidor de licença de origem** é exibida.
     
-       Na página de informações do servidor de licença de origem, insira o nome ou endereço IP do servidor de licença de origem.
+       Na página de Informações do servidor de licença de origem, insira o nome ou endereço IP do servidor de licença de origem.
 
-       Se o servidor de licença de origem está disponível na rede, clique em **próxima**. O assistente entra em contato com o servidor de licença de origem. Se o servidor de licença de origem estiver executando um sistema operacional anterior ao Windows Server 2008 R2 ou o servidor de licença de origem é desativado, será exibido um lembrete que você deve remover as RDS CALs manualmente do servidor de licença de origem após a conclusão do assistente. Depois de confirmar que você entenda a esse requisito, o **obter pacote de chaves de licença de cliente** página será exibida.
+       Se o servidor de licença de origem está disponível na rede, clique em **Avançar**. O assistente entra em contato com o servidor de licença de origem. Se o servidor de licença de origem estiver executando um sistema operacional anterior ao Windows Server 2008 R2 ou o estiver desativado, será exibido um lembrete de que você deve remover as CALs para Serviços de Área de Trabalho Remota manualmente do servidor de licença de origem após a conclusão do assistente. Depois de confirmar que você compreende esse requisito, a página **Obter pacote de chaves de licença do cliente** será exibida.
 
-       Se o servidor de licença de origem não está disponível na rede, selecione **o servidor de licença de origem especificado não está disponível na rede**. Especifique o sistema operacional que está executando o servidor de licença de origem e, em seguida, forneça a ID do servidor de licença para o servidor de licença de origem. Depois de clicar em **próxima**, será exibido um lembrete que você deve remover as RDS CALs manualmente do servidor de licença de origem após a conclusão do assistente. Depois de confirmar que você entenda a esse requisito, o **obter pacote de chaves de licença de cliente** página será exibida.
+       Se o servidor de licença de origem não está disponível na rede, selecione **O servidor de licença de origem especificado não está disponível na rede**. Especifique o sistema operacional que o servidor de licença de origem está executando e, em seguida, forneça a ID do servidor de licença para o servidor de licença de origem. Depois de clicar em **Avançar**, será exibido um lembrete de que você deve remover as CALs para Serviços de Área de Trabalho Remota manualmente do servidor de licença de origem após a conclusão do assistente. Depois de confirmar que você compreende esse requisito, a página **Obter pacote de chaves de licença do cliente** será exibida.
 
-    - Se você escolheu **o servidor de licença de origem não está mais funcionando** como o motivo para migrar as RDS CALs, será exibido um lembrete que você deve remover as RDS CALs manualmente do servidor de licença de origem após a conclusão do assistente. Depois de confirmar que você entenda a esse requisito, o **obter pacote de chaves de licença de cliente** página será exibida.
+    - Se você escolher **O servidor de licença de origem não está mais funcionando** como o motivo para migrar as CALs para Serviços de Área de Trabalho Remota, será exibido um lembrete de que você deve remover as CALs para Serviços de Área de Trabalho Remota manualmente do servidor de licença de origem após a conclusão do assistente. Depois de confirmar que você compreende esse requisito, a página **Obter pacote de chaves de licença do cliente** será exibida.
 
-A próxima etapa é migrar as CALs - use as informações abaixo para concluir o assistente. Observe que o que você vê no assistente depende do método de conexão que você identificou na etapa 2 acima.
+A próxima etapa é migrar as CALs – use as informações abaixo para concluir o assistente. Observe que o que você vê no assistente depende do método de conexão que você identificou na etapa 2 acima.
 
-## <a name="migrate-rds-cals"></a>Migrar RDS CALs
+## <a name="migrate-rds-cals"></a>Migrar CALs para Serviços de Área de Trabalho Remota
 
-Existem três mecanismos para migrar licenças para o servidor de licença de destino. Continue as etapas correspondentes para o **método de Conexão** verificados na etapa 2:
+Existem três mecanismos para migrar licenças para o servidor de licença de destino. Continue as etapas correspondentes ao **Método de conexão** verificado na etapa 2:
   - [Método de conexão automática](#automatic-connection-method)
-  - [Usando um navegador da web](#using-a-web-browser)
-  - [Usando um telefone](#using-a-telephone)
+  - [Usar um navegador da Web](#using-a-web-browser)
+  - [Usar um telefone](#using-a-telephone)
 
 ### <a name="automatic-connection-method"></a>Método de conexão automática
 
-1. No **License Program** página, selecione o programa apropriado por meio do qual você adquiriu as RDS CALs e clique em **próxima**.
-2. Insira as informações necessárias (normalmente um código de licença ou um número de contrato, dependendo do **License program**) e, em seguida, clique em **próxima**. Consulte a documentação fornecida quando você adquiriu as RDS CALs.
-4. Selecione a versão apropriada do produto, o tipo de licença e a quantidade de RDS CALs para seu ambiente com base no seu contrato de compra de RDS CAL e, em seguida, clique em **próxima**.
-5. A Microsoft Clearinghouse é contatada automaticamente e processa sua solicitação. As RDS CALs são migradas, em seguida, no servidor de licenças.
-6. Clique em **concluir** para concluir o processo de migração de RDS CAL.
+1. Na página **Programa de Licenciamento**, selecione o programa apropriado através do qual as Licenças de Acesso do Cliente para Serviços de Área de Trabalho Remota foram adquiridas e clique em **Avançar**.
+2. Insira as informações necessárias (normalmente um código de licença ou um número de contrato, dependendo do **Programa de licenciamento**) e, em seguida, clique em **Avançar**. Consulte a documentação fornecida quando as CALs para Serviços de Área de Trabalho Remota foram compradas.
+4. Selecione a versão do produto apropriada, o tipo de licença e a quantidade de CALs para Serviços de Área de Trabalho Remota para o seu ambiente baseado no contrato de compra destas e clique em **Avançar**.
+5. A Microsoft Clearinghouse é contatada automaticamente e processa sua solicitação. As CALs para Serviços de Área de Trabalho Remota são então migradas para o servidor de licença.
+6. Clique em **Concluir** para concluir o primeiro processo de migração de CAL para Serviços de Área de Trabalho Remota.
 
-### <a name="using-a-web-browser"></a>Usando um navegador da web
-1. Sobre o **obter pacote de chaves de licença de cliente** página, clique no hiperlink para se conectar ao site do licenciamento dos serviços de área de trabalho remota.
-   Se você estiver executando o Gerenciador de licenciamento de área de trabalho remota em um computador que não tem conectividade com a Internet, anote o endereço do site do licenciamento dos serviços de área de trabalho remota e, em seguida, conecte-se ao site da Web de um computador que tenha conectividade com a Internet. 
-2. Na página de Web de licenciamento do serviços de área de trabalho remota, sob **opção de selecionar**, selecione **Gerenciar CALs**e, em seguida, clique em **próxima**.
-3. Forneça as seguintes informações obrigatórias, e clique em **próxima**:
-    - **ID do servidor de licença de destino**: Um número de dígitos de 35, em grupos de 5 algarismos, que é exibido na **obter pacote de chaves de licença de cliente** página no Assistente de gerenciamento de RDS CALs.
-    - **Motivo para a recuperação**: Escolha o motivo para migrar as RDS CALs.
-    - **Programa de licença**: Escolha o programa por meio do qual você adquiriu as RDS CALs.
-4. Forneça as seguintes informações obrigatórias, e clique em **próxima**:
+### <a name="using-a-web-browser"></a>Usar um navegador da Web
+1. Na página **Obter pacote de chaves de licença de cliente**, clique no hiperlink para se conectar ao site Licenciamento de Serviços de Área de Trabalho Remota.
+   Se você estiver executando o Gerenciador de Licenciamento de Área de Trabalho Remota em um computador que não tem conectividade com a Internet, anote o endereço do site Licenciamento de Serviços de Área de Trabalho Remota e, em seguida, conecte-se ao site da Web por meio de um computador que tenha conectividade com a Internet. 
+2. Na página da Web de Licenciamento do Serviços de Área de Trabalho Remota, em **Selecionar Opção**, selecione **Gerenciar CALs** e, em seguida, clique em **Avançar**.
+3. Forneça as seguintes informações obrigatórias e depois clique em **Avançar**:
+    - **ID do servidor de licença de destino**: Um número de 35 dígitos, em grupos de 5 algarismos, que é exibido na página **Obter pacote de chaves de licença do cliente** no Assistente de Gerenciamento de CALs para Serviços de Área de Trabalho Remota.
+    - **Motivo para a recuperação**: Escolha o motivo para migrar as CALs para Serviços de Área de Trabalho Remota.
+    - **Programa de licenciamento**: Escolha o programa por meio do qual você adquiriu as CALs para Serviços de Área de Trabalho Remota.
+4. Forneça as seguintes informações obrigatórias e depois clique em **Avançar**:
    - Sobrenome
-   - Nome ou o nome fornecido
+   - Nome
    - Nome da empresa
    - País/região
 
-     Você também pode fornecer as informações opcionais solicitadas, como endereço da empresa, endereço de email e número de telefone. No campo unidade organizacional, você pode descrever a unidade de sua organização que serve este servidor de licença.
+     Você também pode fornecer as informações opcionais solicitadas, tais como endereço, endereço de email e número de telefone da empresa. No campo unidade organizacional, você pode descrever a unidade de sua organização que é atendida por este servidor de licença.
 
-5. O programa de licença que você selecionou na página anterior determina quais informações você precisa fornecer na próxima página. Na maioria dos casos, você deve fornecer um código de licença ou um número de contrato. Consulte a documentação fornecida quando você adquiriu as RDS CALs. Além disso, você precisa especificar o tipo de RDS CAL e a quantidade que você deseja migrar para o servidor de licença.
+5. O programa de licenciamento selecionado na página anterior determina quais informações devem ser fornecidas na próxima página. Na maioria dos casos, será necessário fornecer um código de licença ou um número de contrato. Consulte a documentação fornecida quando as CALs para Serviços de Área de Trabalho Remota foram compradas. Além disso, você precisa especificar o tipo de CAL para Serviços de Área de Trabalho Remota e a quantidade que você deseja migrar para o servidor de licença.
 6. Depois de inserir as informações necessárias, clique em **Avançar**.
-7. Verificar se todas as informações que você inseriu está correta e, em seguida, clique em **próxima** para enviar sua solicitação para a Microsoft Clearinghouse. A página da web, em seguida, exibe uma ID de pacote de chaves de licença gerada pela Microsoft Clearinghouse.
+7. Verificar se todas as informações que você inseriu estão corretas e, em seguida, clique em **Avançar** para enviar sua solicitação para a Microsoft Clearinghouse. A página da Web exibe então uma ID de pacote de chaves de licença gerada pela Microsoft Clearinghouse.
 
    > [!IMPORTANT] 
-   > Mantenha uma cópia da ID do pacote de chaves da licença. Ter essas informações com você facilita a comunicação com a Microsoft Clearinghouse, devem precisar de ajuda para recuperar as RDS CALs.
+   > Mantenha uma cópia da ID do pacote de chaves de licença. A posse dessas informações facilita a comunicação com a Microsoft Clearinghouse caso você necessite de assistência para recuperar as CALs para Serviços de Área de Trabalho Remota.
 
-8. No mesmo **obter pacote de chaves de licença do cliente** página, insira a ID do pacote de chaves de licença e, em seguida, clique em **próxima** para migrar as RDS CALs para o servidor de licenças.
-9. Clique em **concluir** para concluir o processo de migração de RDS CAL.
+8. Na mesma página **Obter pacote de chaves de licença do cliente**, insira a ID do pacote de chaves de licença e, em seguida, clique em **Avançar** para migrar as CALs para Serviços de Área de Trabalho Remota para o servidor de licença.
+9. Clique em **Concluir** para concluir o primeiro processo de migração de CAL para Serviços de Área de Trabalho Remota.
 
-### <a name="using-a-telephone"></a>Usando um telefone
-1. Sobre o **obter pacote de chaves de licença de cliente** página, use o número de telefone exibido para chamar a Microsoft Clearinghouse. Forneça ao representante sua ID de servidor de licença de área de trabalho remota e as informações necessárias para o programa de licenciamento por meio do qual você adquiriu as RDS CALs. O representante processará sua solicitação para migrar as RDS CALs e lhe dá uma ID exclusiva para as RDS CALs. Essa identificação exclusiva é conhecida como o **ID do pacote de chaves de licença**.
+### <a name="using-a-telephone"></a>Usar um telefone
+1. Na página **Obter pacote de chaves de licença do cliente**, use o número de telefone exibido para chamar a Microsoft Clearinghouse. Forneça ao representante sua ID de servidor de licenças de Área de Trabalho Remota e as informações necessárias para o programa de licenciamento por meio do qual você adquiriu as CALs para Serviços de Área de Trabalho Remota. O representante processará sua solicitação para migrar as CALs para Serviços de Área de Trabalho Remota e fornecerá a você uma ID exclusiva para elas. Essa ID exclusiva é conhecida como a **ID do pacote de chaves de licença**.
 
    > [!IMPORTANT]
-   > Mantenha uma cópia da ID do pacote de chaves da licença. Ter essas informações com você facilita a comunicação com a Microsoft Clearinghouse devem precisar de ajuda para recuperar as RDS CALs.
+   > Mantenha uma cópia da ID do pacote de chaves de licença. A posse dessas informações facilita a comunicação com a Microsoft Clearinghouse caso você necessite de assistência para recuperar as CALs para Serviços de Área de Trabalho Remota.
 
-2. No mesmo **obter pacote de chaves de licença do cliente** página, insira a ID do pacote de chaves de licença e, em seguida, clique em **próxima** para migrar as RDS CALs para o servidor de licenças.
-3. Clique em **concluir** para concluir o processo de migração de RDS CAL.
+2. Na mesma página **Obter pacote de chaves de licença do cliente**, insira a ID do pacote de chaves de licença e, em seguida, clique em **Avançar** para migrar as CALs para Serviços de Área de Trabalho Remota para o servidor de licença.
+3. Clique em **Concluir** para concluir o primeiro processo de migração de CAL para Serviços de Área de Trabalho Remota.
