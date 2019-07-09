@@ -1,6 +1,6 @@
 ---
-title: Alterar um disco de Tabela de Partição de GUID (GPT) para um disco de Registro Mestre de Inicialização (MBR)
-description: Descreve como alterar um disco de Tabela de Partição de GUID (GPT) para um disco de estilo de partição de Registro Mestre de Inicialização (MBR).
+title: Transformar um disco GPT (Tabela de Partição GUID) em um disco MBR (Registro Mestre de Inicialização)
+description: Descreve como converter um disco GUID (Tabela de Partição GUID) em um disco do estilo de partição MBR (Registro Mestre de Inicialização).
 ms.date: 06/19/2018
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,59 +9,59 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 5cd345230ce5c0fc556bfd8b421d866bd827507b
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66812448"
 ---
-# <a name="convert-a-gpt-disk-into-an-mbr-disk"></a>Converter um disco GPT em um disco MBR
+# <a name="convert-a-gpt-disk-into-an-mbr-disk"></a>Transformar um disco GPT em um disco MBR
 
-> **Aplica-se a:** Windows 10, Windows 8.1, Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> **Aplicável a:** Windows 10, Windows 8.1, Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Os discos de Registro Mestre de Inicialização (MBR) usam a tabela de partição padrão da BIOS. Os discos de Tabela de Partição de GUID (GPT) usam a Unified Extensible Firmware Interface (UEFI). Os discos MBR não oferecem suporte a mais de quatro partições em cada disco. O método de partição MBR não é recomendado para discos com mais de 2 terabytes (TB).
+Os discos MBR (Registro Mestre de Inicialização) usam a tabela de partição padrão do BIOS. Os discos GPT (Tabela de Partição GUID) usam UEFI (Unified Extensible Firmware Interface). Os discos MBR não dão suporte a mais de quatro partições em cada disco. O método de partição MBR não é recomendado para discos com mais de 2 TB (terabytes).
 
-Você pode alterar um estilo de partição de disco de GPT para MBR desde que o disco esteja vazio e não contenha nenhum volume.
-
-> [!NOTE]
-> Antes de converter um disco, faça backup dos dados nele e feche os programas que estão acessando o disco.
+É possível mudar um disco de um estilo de partição GPT para MBR desde que o disco esteja vazio e não contenha nenhum volume.
 
 > [!NOTE]
-> No mínimo, você deve ser um membro do grupo **Operadores de backup** ou **Administradores** para concluir estas etapas.
+> Antes de converter um disco, faça backup dos dados contidos nele e feche todos os programas que estão acessando o disco.
+
+> [!NOTE]
+> Para concluir estas etapas, no mínimo, você deve ser um membro do grupo **Operadores de backup** ou **Administradores**.
 
 ## <a name="converting-using-the-windows-interface"></a>Converter usando a interface do Windows
 
-1.  Faça backup ou mova todos os volumes no disco GPT básico que você deseja converter em MBR.
+1.  Faça backup ou mova todos os volumes no disco GPT básico que você quer converter em disco MBR.
 
-2.  Se o disco tiver partições ou volumes, clique com botão direito do mouse em cada uma e, em seguida, clique em **Excluir volume**.
+2.  Se o disco tiver partições ou volumes, clique com botão direito do mouse em cada partição ou volume e, em seguida, clique em **Excluir volume**.
 
-3.  Clique com botão direito do mouse no disco GPT que você deseja transformar em um disco MBR e, em seguida, clique em **Converter em disco MBR**.
+3.  Clique com botão direito do mouse no disco GPT que você quer transformar em um disco MBR e, em seguida, clique em **Converter em disco MBR**.
 
-## <a name="converting-using-a-command-line"></a>Converter a linha de comando
+## <a name="converting-using-a-command-line"></a>Converter usando uma linha de comando
 
-1.  Faça backup ou mova todos os volumes no disco GPT básico que você deseja converter em MBR.
+1.  Faça backup ou mova todos os volumes no disco GPT básico que você quer converter em disco MBR.
 
-2.  Abra um prompt de comando com privilégios elevados ao clicar com o botão direito do mouse em **Prompt de comando** e selecione **Executar como administrador**.
+2.  Abra um prompt de comando com privilégios elevados clicando com o botão direito do mouse em **Prompt de comando** e selecione **Executar como administrador**.
 
 3. Digite `diskpart`. Se o disco não contém partições ou volumes, vá para a etapa 6.
 
-4.  No prompt de comando **DISKPART**, digite `list disk`. Observe o número do disco que você deseja excluir.
+4.  No prompt **DISKPART**, digite `list disk`. Observe o número do disco que você quer excluir.
 
-5.  No prompt de comando **DISKPART**, digite `select disk <disknumber>`.
+5.  No prompt **DISKPART**, digite `select disk <disknumber>`.
 
-6.  No prompt de comando **DISKPART**, digite `clean`.
+6.  No prompt **DISKPART**, digite `clean`.
 
     > [!IMPORTANT]
     > A execução do comando **clean** excluirá todas as partições ou volumes no disco.
 
-7.  No prompt de comando **DISKPART**, digite `convert mbr`.
+7.  No prompt **DISKPART**, digite `convert mbr`.
 
 |                Valor                  |      Descrição   |
 | ------------------------------------- | -----------------  |
-|  <strong>disco de lista</strong>  | Exibe uma lista de discos e informações sobre eles, como o tamanho, a quantidade de espaço livre disponível, se o disco é Básico ou Dinâmico, e se o disco usa o estilo de partição Registro Mestre de Inicialização (MBR) ou a Tabela de Partição de GUID (GPT). O disco marcado com um asterisco (\*) tem o foco. |
-| <strong>Selecione o disco</strong> |                                                                                                          Seleciona o disco especificado, onde <em>disknumber</em> é o número do disco e concede foco a ele.                                                                                                           |
-| <strong>convert mbr</strong> |                                                                               Converte um disco básico vazio com o estilo de partição da Tabela de Partição de GUID (GPT) em um disco básico com o estilo de partição de Registro Mestre de Inicialização (MBR).                                                                                |
+|  <strong>list disk</strong>  | Exibe uma lista de discos e informações sobre eles, como o tamanho, a quantidade de espaço livre disponível, se o disco é Básico ou Dinâmico e se o disco usa o estilo de partição MBR (Registro Mestre de Inicialização) ou GPT (Tabela de Partição GUID). O disco marcado com um asterisco (\*) tem foco. |
+| <strong>select disk</strong> |                                                                                                          Seleciona o disco especificado, onde <em>disknumber</em> é o número do disco e concede foco a ele.                                                                                                           |
+| <strong>convert mbr</strong> |                                                                               Converte um disco básico vazio com o estilo de partição GPT (Tabela de Partição GUID) em um disco básico com o estilo de partição MBR (Registro Mestre de Inicialização).                                                                                |
 
 ## <a name="see-also"></a>Consulte também
 
--   [Notação de sintaxe de linha de comando](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
+-   [Notação da sintaxe de linha de comando](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)

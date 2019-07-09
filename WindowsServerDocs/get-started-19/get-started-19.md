@@ -1,6 +1,6 @@
 ---
 title: Introdução
-description: 'Noções básicas para servidor: requisitos de sistema, notas de versão'
+description: 'Noções básicas para o Server: requisitos do sistema, notas de versão'
 ms.prod: windows-server-threshold
 ms.service: na
 manager: jasgroce
@@ -11,22 +11,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a2786806d71e6086fd31fbfd27f3e6d7139c10e
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66810872"
 ---
-# <a name="get-started-with-windows-server-2019"></a>Introdução ao Windows Server de 2019
+# <a name="get-started-with-windows-server-2019"></a>Introdução ao Windows Server 2019
 
 >Aplica-se a: Windows Server 2019
 
 |       |       |
 |   -   |   -   |
-| ![Novidades](./media/i-whats-new.svg) | [**O que há de novo?**  <br>Descubra o que há de novo no Windows Server 2019](whats-new-19.md)|
+| ![Quais são as novidades?](./media/i-whats-new.svg) | [**Quais são as novidades?** <br>Descubra as novidades no Windows Server 2019](whats-new-19.md)|
 
 |       |        |        |     |       |        |
 |   -   |   -    |   -    |  -  |  -    |   -    |
-| ![Canais de manutenção](./media/i-get-started.svg)  | [**Canais de manutenção**<br>melhor planejar sua implantação e cronogramas de aplicação de patch ao entender a diferença entre o nosso canal de manutenção de prazo longo (LTSB) e o canal semestral (SAC) libera.](servicing-channels-19.md)  | ![Migrar de atualização de instalação](./media/i-get-started.svg) | [**Instalação, atualização, as migrações** <br>você pode mover para o Windows Server 2019 várias maneiras. Se você recentemente é instalação, atualização in-loco ou migrar aplicativos e funções de servidor, descobrir a melhor abordagem.](install-upgrade-migrate-19.md)  | ![Notas de versão](./media/i-get-started.svg) |[**Notas de versão**<br>problemas que podem causar sérios problemas se você não forem evitados ou solucionados.](rel-notes-19.md)   |
-| ![Requisitos de sistema](./media/i-get-started.svg) | [**Requisitos do sistema**<br>requisitos mínimos de hardware para instalar e executar o Windows Server 2019.](sys-reqs-19.md) |  ![Ativação](./media/i-get-started.svg)|[**Ativação**<br>informações básicas sobre a ativação do Windows Server de 2019 em si e outros sistemas operacionais, usando o Windows Server 2019.](activation-19.md)  |  ![Compatibilidade de aplicativos](./media/i-get-started.svg)|[**Compatibilidade de aplicativos do Windows Server 2019 e Microsoft Server**<br>precisa obter SQL trabalhando no Windows Server 2019 ou encontrar as etapas para executar o Exchange? Este tópico fornece links para documentação de aplicativos compatíveis com o Microsoft.](app-compat-19.md) |
-| ![Recursos sob demanda <](./media/i-get-started.svg) | [**Recursos sob demanda**<br>recursos sob demanda (FODs) são pacotes de recursos do Windows Server que podem ser adicionados a qualquer momento.](install-fod-19.md) |  ![Standard / comparação de edições do Datacenter](./media/i-get-started.svg) | [**Standard / comparação Datacenter Editions**<br>Windows Server Standard e Datacenter Editions têm recursos diferentes. Descubra qual deles você precisa.](editions-comparison-19.md) |
+| ![Canais de manutenção](./media/i-get-started.svg)  | [**Canais de manutenção**<br> Planeje melhor sua implantação e cronogramas de aplicação de patch entendendo a diferença entre nossas versões LTSB (Canal de Manutenção em Longo Prazo) e SAC (Canal Semestral).](servicing-channels-19.md)  | ![Instalar, Atualizar, Migrar](./media/i-get-started.svg) | [**Instalar, Atualizar, Migrar** <br>É possível mudar para o Windows Server 2019 de várias maneiras. Se você está instalando pela primeira vez, atualizando no local ou migrando aplicativos e funções de servidor, saiba aqui a melhor abordagem.](install-upgrade-migrate-19.md)  | ![Notas de versão](./media/i-get-started.svg) |[**Notas de versão**<br>Pontos que podem causar sérios problemas se não forem evitados ou solucionados.](rel-notes-19.md)   |
+| ![Requisitos de sistema](./media/i-get-started.svg) | [**Requisitos de sistema**<br>Descubra os requisitos mínimos de hardware para instalar e executar o Windows Server 2019.](sys-reqs-19.md) |  ![Ativação](./media/i-get-started.svg)|[**Ativação**<br>Informações básicas sobre a ativação do próprio Windows Server 2019, incluindo outros sistemas operacionais, usando o Windows Server 2019.](activation-19.md)  |  ![Compatibilidade de aplicativos](./media/i-get-started.svg)|[**Compatibilidade de aplicativos do Microsoft Server e do Windows Server 2019**<br>É necessário ter o SQL funcionando no Windows Server 2019 ou encontrar as etapas para executar o Exchange? Este tópico fornece links para documentação de aplicativos da Microsoft compatíveis.](app-compat-19.md) |
+| ![Recursos Sob Demanda<](./media/i-get-started.svg) | [**Recursos Sob Demanda**<br>FODs (Recursos sob Demanda) são pacotes de recursos do Windows Server que podem ser adicionados a qualquer momento.](install-fod-19.md) |  ![Comparação entre Edições Standard e Datacenter](./media/i-get-started.svg) | [**Comparação entre Edições Standard e Datacenter**<br>As Edições Standard e Datacenter do Windows Server têm recursos diferentes. Saiba qual delas você precisa.](editions-comparison-19.md) |

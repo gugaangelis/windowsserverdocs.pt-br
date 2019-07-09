@@ -1,6 +1,6 @@
 ---
-title: Visão geral do Gerenciamento de Disco
-description: Gerenciamento de disco é um utilitário do sistema no Windows que permite que você execute tarefas de armazenamento avançado, como inicializar uma nova unidade, extensão dos volumes, reduzindo as partições e alterar as letras de unidade.
+title: Visão geral do Gerenciamento de disco
+description: Gerenciamento de disco é um utilitário do sistema no Windows que permite a você executar tarefas avançadas de armazenamento, como inicializar uma nova unidade, estender volumes, reduzir partições e alterar letras da unidade.
 ms.date: 06/07/2019
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,45 +9,45 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: a3885ae6b09ad431fd1ea5e4c593e02c7bb274d9
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66812552"
 ---
-# <a name="overview-of-disk-management"></a>Visão geral do Gerenciamento de Disco
+# <a name="overview-of-disk-management"></a>Visão geral do Gerenciamento de disco
 
-> **Aplica-se a:** Windows 10, Windows 8.1, Windows 7, Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> **Aplica-se a:** Windows 10, Windows 8.1, Windows 7, Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Gerenciamento de disco é um utilitário do sistema no Windows que permite que você execute tarefas de armazenamento avançado. Aqui estão algumas coisas que o gerenciamento de disco é bom para:
+Gerenciamento de disco é um utilitário do sistema no Windows que permite executar tarefas avançadas de armazenamento. Aqui estão algumas boas utilidades do Gerenciamento de disco:
 
-- Para configurar uma nova unidade, consulte [inicializar uma nova unidade](initialize-new-disks.md).
-- Para estender um volume para o espaço que não ainda faz parte de um volume na mesma unidade, consulte [estender um volume básico](extend-a-basic-volume.md).
-- Para reduzir uma partição, geralmente, de modo que você pode estender uma partição de vizinha, consulte [encolher um volume básico](shrink-a-basic-volume.md).
-- Para alterar uma letra de unidade ou atribuir uma nova letra de unidade, consulte [alterar uma letra de unidade](change-a-drive-letter.md).
+- Configurar uma nova unidade, consulte [Inicializar uma nova unidade](initialize-new-disks.md).
+- Estender um volume para o espaço que não ainda faz parte de um volume na mesma unidade, consulte [Estender um volume básico](extend-a-basic-volume.md).
+- Reduzir uma partição, geralmente, para que você possa estender uma partição vizinha, consulte [Reduzir um volume básico](shrink-a-basic-volume.md).
+- Alterar uma letra da unidade ou atribuir uma nova letra da unidade, consulte [Alterar a letra da unidade](change-a-drive-letter.md).
 
-![Gerenciamento de disco mostrando uma unidade típica com três partições - uma partição de sistema 499 MB, uma maior unidade C para Windows e outra partição 499 MB para a recuperação](media/disk-management.png)
+![Gerenciamento de disco mostrando uma unidade típica com três partições: uma partição de sistema de 499 MB, uma unidade C maior para o Windows e outra partição de 499 MB para recuperação](media/disk-management.png)
 
 > [!TIP]
->  Se você receber um erro ou se algo não funciona ao executar estes procedimentos, dê uma espiada na [solução de problemas de gerenciamento de disco](troubleshooting-disk-management.md) tópico. Se isso não ajudar - não entre em pânico! Há uma tonelada de informações o [comunidade da Microsoft](https://answers.microsoft.com/en-us/windows) do site - tente pesquisar o [arquivos, pastas e armazenamento](https://answers.microsoft.com/en-us/windows/forum/windows_10-files?sort=lastreplydate&dir=desc&tab=All&status=all&mod=&modAge=&advFil=&postedAfter=&postedBefore=&threadType=all&isFilterExpanded=true&tm=1514405359639) seção e, se você ainda precisar de Ajuda, poste uma pergunta lá e a Microsoft ou outros membros do comunidade tentará ajudar. Se você tiver comentários sobre como melhorar esses tópicos, adoraríamos ouvir sua opinião! Responder apenas a *esta página é útil?* prompt e deixar comentários lá ou no thread de comentários público na parte inferior deste tópico.
+>  Se você receber um erro ou se algo não funcionar ao executar estes procedimentos, dê uma olhada no tópico [Solução de problemas de gerenciamento de disco](troubleshooting-disk-management.md). Se nada disso ajudar, não se desespere! Há uma tonelada de informações no site [Microsoft Community](https://answers.microsoft.com/en-us/windows): tente pesquisar a seção [Arquivos, pastas e armazenamento](https://answers.microsoft.com/en-us/windows/forum/windows_10-files?sort=lastreplydate&dir=desc&tab=All&status=all&mod=&modAge=&advFil=&postedAfter=&postedBefore=&threadType=all&isFilterExpanded=true&tm=1514405359639) e, se você ainda precisar de ajuda, publique uma pergunta lá e a Microsoft ou outros membros da comunidade tentarão ajudar. Se você tiver comentários sobre como melhorar esses tópicos, queremos muito ouvir sua opinião! Apenas responda à solicitação *Esta página foi útil?* e deixe comentários lá ou no thread de comentários públicos na parte inferior deste tópico.
 
-Aqui estão algumas tarefas comuns que você talvez queira fazer, mas que usam outras ferramentas no Windows:
+Seguem algumas tarefas comuns que você talvez queira executar, mas que usam outras ferramentas no Windows:
 
-- Para liberar espaço em disco, consulte [liberar espaço de unidade no Windows 10](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space).
-- Para desfragmentar unidades, consulte [desfragmente seu PC com Windows 10](https://support.microsoft.com/help/4026701/windows-defragment-your-windows-10-pc).
-- Para levar a vários discos rígidos e pool-los juntos, como em um RAID, consulte [espaços de armazenamento](https://support.microsoft.com/help/12438/windows-10-storage-spaces).
+- Para liberar espaço em disco, consulte [Liberar espaço da unidade no Windows 10](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space).
+- Para desfragmentar as unidades, consulte [Desfragmentar o PC com Windows 10](https://support.microsoft.com/help/4026701/windows-defragment-your-windows-10-pc).
+- Para selecionar vários discos rígidos e reuni-los em um pool, como em um RAID, consulte [Espaços de armazenamento](https://support.microsoft.com/help/12438/windows-10-storage-spaces).
 
 ## <a name="about-those-extra-recovery-partitions"></a>Sobre essas partições de recuperação adicionais
 
-Se você estiver curioso (estamos leu seus comentários!), o Windows normalmente incluem três partições na unidade principal (normalmente C:\ unidade):
+Caso esteja curioso (lemos os seus comentários!), o Windows normalmente inclui três partições na unidade principal (normalmente a unidade C:\):
 
-![Disco 0 mostrando três partições - uma partição do sistema EFI, a partição do Windows e uma partição de recuperação](media/windows-partitions.png)
+![Disco 0 mostrando três partições - uma partição de sistema EFI, a partição do Windows e uma partição de recuperação](media/windows-partitions.png)
 
-- **Partição do sistema EFI** -isso é usado por PCs modernos para iniciar (Inicializar) seu PC e seu sistema operacional.
-- **Unidade do sistema operacional Windows (c)** -isso é onde o Windows está instalado e, geralmente onde você colocou o restante dos seus aplicativos e arquivos.
-- **Partição de recuperação** -isso é onde as ferramentas especiais são armazenadas para ajudar a recuperar o Windows, caso tenha problemas ao iniciar ou de outros problemas graves.
+- **Partição de sistema EFI** - Usada por PCs modernos para iniciar (boot) o PC e o sistema operacional.
+- **Unidade do sistema operacional Windows (C:)** - Onde o Windows está instalado e geralmente o local em que você armazena o restante dos aplicativos e arquivos.
+- **Partição de recuperação** - Onde as ferramentas especiais são armazenadas para ajudar a recuperar o Windows, caso ocorram problemas de inicialização ou outros problemas graves.
 
-Embora o gerenciamento de disco pode mostrar a partição do sistema EFI e a partição de recuperação como 100% livre, ele reside. Essas partições são geralmente muito cheia com arquivos realmente importantes, que seu PC precisa para operar corretamente. É melhor deixá-las sozinho para realizar seus trabalhos Iniciando seu PC e ajudando você a se recuperar de problemas.
+Embora o gerenciamento de disco possa mostrar a partição de sistema EFI e a partição de recuperação como 100% livre, isso não é verdade. Essas partições ficam geralmente bem cheias de arquivos realmente importantes que o PC precisa para operar corretamente. É melhor deixá-las como estão para realizar os trabalhos delas, iniciando seu PC e ajudando você a se recuperar de problemas.
 
 ## <a name="see-also"></a>Consulte também
 

@@ -1,6 +1,6 @@
 ---
 title: Solução de problemas do Gerenciamento de Disco
-description: Este artigo descreve como solucionar problemas de Gerenciamento de disco
+description: Este artigo descreve como solucionar problemas do Gerenciamento de Disco
 ms.date: 06/07/2019
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,137 +9,137 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 4d9448cc642ef522fa129dcfe97e2286f16bad1b
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66812537"
 ---
 # <a name="troubleshooting-disk-management"></a>Solução de problemas do Gerenciamento de Disco
 
-> **Aplica-se a:** Windows 10, Windows 8.1, Windows 7, Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> **Aplica-se a:** Windows 10, Windows 8.1, Windows 7, Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este tópico lista alguns dos problemas comuns que você poderá encontrar ao usar o Gerenciamento de disco.
+Este tópico lista alguns dos problemas comuns que você poderá enfrentar ao usar o Gerenciamento de Disco.
 
 > [!TIP]
-> Se você receber um erro ou se algo não funciona ao executar estes procedimentos - não entre em pânico! Há uma tonelada de informações o [comunidade da Microsoft](https://answers.microsoft.com/en-us/windows) do site - tente pesquisar o [arquivos, pastas e armazenamento](https://answers.microsoft.com/en-us/windows/forum/windows_10-files?sort=lastreplydate&dir=desc&tab=All&status=all&mod=&modAge=&advFil=&postedAfter=&postedBefore=&threadType=all&isFilterExpanded=true&tm=1514405359639) seção e, se você ainda precisar de Ajuda, poste uma pergunta lá e a Microsoft ou outros membros do comunidade tentará ajudar. Se você tiver comentários sobre como melhorar esses tópicos, adoraríamos ouvir sua opinião! Responder apenas a *esta página é útil?* prompt e deixar comentários lá ou no thread de comentários público na parte inferior deste tópico.
+> Se você receber um erro ou se algo não funcionar ao seguir estes procedimentos, não se desespere! Há uma tonelada de informações no site [Microsoft Community](https://answers.microsoft.com/en-us/windows): tente pesquisar a seção [Arquivos, pastas e armazenamento](https://answers.microsoft.com/en-us/windows/forum/windows_10-files?sort=lastreplydate&dir=desc&tab=All&status=all&mod=&modAge=&advFil=&postedAfter=&postedBefore=&threadType=all&isFilterExpanded=true&tm=1514405359639) e, se você ainda precisar de ajuda, publique uma pergunta lá e a Microsoft ou outros membros da comunidade tentarão ajudar. Se você tiver comentários sobre como melhorar esses tópicos, queremos muito ouvir sua opinião! Apenas responda à solicitação *Esta página foi útil?* e deixe comentários lá ou no thread de comentários públicos na parte inferior deste tópico.
 
-## <a name="a-disks-status-is-not-initialized-or-the-disk-is-missing"></a>Status de um disco não é inicializado ou o disco está ausente
+## <a name="a-disks-status-is-not-initialized-or-the-disk-is-missing"></a>Status de um disco é Não inicializado ou o disco está ausente
 
-![Gerenciamento de disco mostrando um disco desconhecido que deve ser inicializado.](media/uninitialized-disk.PNG)
+![Gerenciamento de Disco mostra um disco desconhecido que deve ser inicializado.](media/uninitialized-disk.PNG)
 
-**Causa:** Se você tiver um disco que não aparece no Explorador de arquivos e é listado no gerenciamento de disco como *não inicializada*, pode ser porque o disco não tem uma assinatura de disco válido. Basicamente, isso significa que o disco nunca foi inicializado e formatado ou a formatação da unidade se tornaram corrompida alguma forma. 
+**Causa**: Se você tem um disco que não aparece no Explorador de arquivos e está listado no Gerenciamento de Disco como *Não inicializado*, é possível que o disco não tenha uma assinatura de disco válida. Basicamente, isso significa que o disco nunca foi inicializado e formatado ou a formatação da unidade foi corrompida de alguma forma. 
 
-Também é possível que o disco está tendo problemas de hardware ou de conectar, mas falaremos sobre que em apenas alguns parágrafos.
+Também é possível que o disco esteja tendo problemas de hardware ou de conexão, mas falaremos sobre isso nos parágrafos seguintes.
 
-**Solução:**   se a unidade é completamente nova e apenas precisa ser inicializado, apagando todos os dados nele, a solução é fácil – veja [inicializar novos discos](initialize-new-disks.md). No entanto, há uma boa chance de que você já tentou isso e não funcionou. Ou talvez você tenha um disco cheio de arquivos importantes, e você não deseja apagar o disco pelo inicializá-la.
+**Solução:**   se a unidade for totalmente nova e apenas precisar ser inicializada, apagando todos os dados nela, a solução é fácil - consulte [Inicializar novos discos](initialize-new-disks.md). No entanto, há uma boa chance de que você já tentou isso e não funcionou. Ou talvez você tem um disco cheio de arquivos importantes e não quer apagar o disco ao inicializá-lo.
 
-Há vários motivos, um disco pode estar faltando ou não seja inicializado com um sendo comuns de razão porque o disco está falhando. Há somente muito mais você pode fazer para corrigir o tipo de disco, mas aqui estão algumas etapas para testar ver se podemos pode fazê-lo funcionar novamente. Se o disco funciona depois de uma destas etapas, não se preocupar com as próximas etapas, basta voltar, celebrar e atualizar talvez seus backups.
+Há uma série de motivos pelos quais um disco pode estar ausente ou não ser inicializado, sendo um causa comum para a falha do disco. Não há muitos procedimentos para corrigir um disco com falha, mas aqui estão algumas etapas para tentar ver se é possível fazê-lo funcionar novamente. Se o disco funcionar após uma destas etapas, não se preocupe com as próximas etapas, apenas relaxe, comemore e até atualize seus backups.
 
-1. Examinar o disco no gerenciamento de disco. Se ela aparecer *Offline* conforme mostrado aqui, tente direito do mouse e selecionando **Online**.
+1. Examine o disco no Gerenciamento de Disco. Se ele aparecer *Offline* conforme mostrado aqui, tente clicar com o botão direito do mouse e selecionar **Online**.
 
     ![Disco mostrado como offline](media/offline-disk.png)
-2. Se o disco aparece no gerenciamento de disco como *Online*, e tem uma partição primária que está listada como *Íntegro*, conforme mostrado aqui, que é um bom sinal.
+2. Se o disco aparecer no Gerenciamento de Disco como *Online* e tiver uma partição primária listada como *Íntegra*, conforme mostrado aqui, isso é um bom sinal.
 
-    ![Disco mostrado como online com um volume Íntegro](media/healthy-volume.png)
-    - Se a partição tiver um sistema de arquivos, mas sem letra de unidade (por exemplo, e:), consulte [alterar uma letra de unidade](change-a-drive-letter.md) para adicionar uma letra de unidade manualmente.
-    - Se ele não tem um sistema de arquivos (NTFS, ReFS, FAT32 ou exFAT) e você souber que o disco estiver vazio, a partição com o botão direito e selecione **formato**. Formatação de um disco apaga todos os dados nele, portanto, não faça isso se você está tentando recuperar arquivos do disco - em vez disso, pule para a próxima etapa.
-3. Se você tiver um externo de disco, desconecte o disco, conectá-lo de volta e, em seguida, selecione **ação** > **examinar discos**. 
-4. Desligar o PC, desligar o disco rígido externo (se for um disco externo com um cabo de alimentação) e, em seguida, ativar seu PC e o disco novamente.
-    Para desativar seu PC no Windows 10, selecione o botão Iniciar, selecione o botão de energia e, em seguida, selecione **desligar**.
-5. Conecte o disco uma porta USB diferente que está diretamente em seu computador (não em um hub).
-    Às vezes, os discos USB não obter capacidade suficiente de algumas portas ou ter outros problemas com as portas específicas. Isso é especialmente comum com hubs USB, mas às vezes, há diferenças entre portas em um PC, portanto, tente algumas portas diferentes se você os tiver.
+    ![Disco mostrado como online com um volume íntegro](media/healthy-volume.png)
+    - Se a partição tiver um sistema de arquivos, mas sem letra de unidade (por exemplo, E:), consulte [Alterar a letra de uma unidade](change-a-drive-letter.md) para adicionar uma letra de unidade manualmente.
+    - Se a partição não tiver um sistema de arquivos (NTFS, ReFS, FAT32 ou exFAT) e você souber que o disco está vazio, clique com o botão direito do mouse na partição e selecione **Formatar**. A formatação de um disco apaga todos os dados contidos nele, portanto, não faça isso se você estiver tentando recuperar arquivos do disco. Em vez disso, pule para a próxima etapa.
+3. Se você tiver um disco externo, desconecte o disco, reconecte-o e, em seguida, selecione **Ação** > **Examinar novamente os discos**. 
+4. Desligue o PC, desligue o disco rígido externo (se for um disco externo com cabo de alimentação) e, em seguida, religue o PC e o disco.
+    Para desligar o PC no Windows 10, selecione o botão Iniciar, selecione o botão de Energia e, em seguida, selecione **Desligar**.
+5. Conecte o disco uma porta USB diferente que está diretamente no computador (não em um hub).
+    Às vezes, os discos USB não recebem energia suficiente de algumas portas ou há outros problemas com portas específicas. Isso é especialmente comum com hubs USB, mas às vezes, há diferenças entre portas em um PC, portanto, tente algumas portas diferentes se houver.
 6. Tente um cabo diferente.
-    Ele pode parecer uma louco, mas cabos falhar muito, tente usar um cabo diferente para conectar o disco. Se você tiver um disco interno em um PC desktop, você provavelmente precisará desligar seu computador antes de alternar os cabos - consulte o manual do seu PC para obter detalhes.
-7. Verifique o Gerenciador de dispositivos para problemas.
-    Pressione e mantenha (ou clique com botão direito) no botão Iniciar, em seguida, selecione Gerenciador de dispositivos no menu de contexto. Procurar por todos os dispositivos com um ponto de exclamação ao lado de-lo ou outros problemas, duas vezes no dispositivo e, em seguida, ler seu status.
+    Pode parecer inútil, mas como cabos falham muito, tente usar um cabo diferente para conectar o disco. Se você tiver um disco interno em um PC desktop, provavelmente será necessário desligar o computador antes de trocar os cabos. Consulte o manual do seu PC para obter detalhes.
+7. Verifique o Gerenciador de Dispositivos para detectar a problemas.
+    Pressione e segure (ou clique com botão direito) o botão Iniciar e, em seguida, selecione Gerenciador de Dispositivos no menu de contexto. Localize todos os dispositivos com um ponto de exclamação ao lado ou outros problemas, clique duas vezes no dispositivo e leia o status dele.
 
-    Aqui está uma lista de [códigos de erro no Gerenciador de dispositivos](https://support.microsoft.com/help/310123/error-codes-in-device-manager-in-windows), mas uma abordagem, às vezes, funciona é com o botão direito do dispositivo problemático, selecione **dispositivo desinstalar**e, em seguida, **ação**  >  **Examinar alterações de hardware**.
+    Aqui está uma lista de [Códigos de erro no Gerenciador de Dispositivos](https://support.microsoft.com/help/310123/error-codes-in-device-manager-in-windows), mas uma abordagem que às vezes funciona é clicar com o botão direito do mouse no dispositivo problemático, selecionar **Desinstalar dispositivo** e, em seguida, **Ação** > **Verificar se há alterações de hardware**.
 
-    ![Gerenciador de dispositivos mostrando um dispositivo USB desconhecido](media/device-manager.PNG)
-8. Conecte o disco em um computador diferente.
+    ![Gerenciador de Dispositivos mostrando um dispositivo USB desconhecido](media/device-manager.PNG)
+8. Conecte o disco em um PC diferente.
     
-    Se o disco não funciona em outro PC, é um bom sinal de que há algo ruim acontecendo com o disco e não em seu computador. Nenhum diversão, nós sabemos. Há mais algumas etapas que você pode testar em [externa USB drive erro "Você deve inicializar o disco antes que o Gerenciador de discos lógicos pode acessá-lo"](https://social.technet.microsoft.com/Forums/windows/en-US/2b069948-82e9-49ef-bbb7-e44ec7bfebdb/forum-faq-external-usb-drive-error-you-must-initialize-the-disk-before-logical-disk-manager-can?forum=w7itprohardware), mas, talvez seja hora para procurar e solicitar ajuda no [Microsoft community](https://answers.microsoft.com/en-us/windows) do site ou entre em contato com o fabricante do disco.
+    Se o disco não funcionar em outro PC, é um bom sinal de que há algum mau funcionamento com o disco e não com seu PC. Sabemos que não é nada agradável. Há mais algumas etapas que você pode tentar em [Erro de unidade USB externa "Você deve inicializar o disco para que o Gerenciador de Discos Lógicos possa acessá-lo"](https://social.technet.microsoft.com/Forums/windows/en-US/2b069948-82e9-49ef-bbb7-e44ec7bfebdb/forum-faq-external-usb-drive-error-you-must-initialize-the-disk-before-logical-disk-manager-can?forum=w7itprohardware), mas talvez seja hora de pesquisar e pedir ajuda no site [Microsoft Community](https://answers.microsoft.com/en-us/windows) ou entrar em contato com o fabricante do disco.
 
-    Se você apenas não é possível fazê-lo funcionar, também há aplicativos que podem tentar recuperar dados de um disco com defeito ou se os arquivos são realmente importantes, você pode pagar um laboratório de recuperação de dados para tentar recuperá-los. Se você encontrar algo que funciona para você, fale na seção de comentários abaixo.
+    Se você simplesmente não conseguir fazer o disco funcionar, também existem aplicativos que podem tentar recuperar dados de um disco com falha ou, se os arquivos forem realmente importantes, é possível pagar um laboratório de recuperação de dados para tentar recuperá-los. Se você encontrar algo que funcione para você, nos informe na seção de comentários abaixo.
 
 > [!IMPORTANT]
-> Discos falharem com bastante frequência, portanto, é importante fazer backup regularmente de todos os arquivos que importantes para você. Se você tiver um disco não aparece, às vezes, ou em erros, considere isso um lembrete para verificar seus métodos de backup. Ele é Okey se você estiver um pouco behind - Todos somos lá. A melhor solução de backup é aquele usado, portanto, é recomendável que você encontrar um que funciona para você e permanecer fiel a ele.
+> Discos falham com bastante frequência, portanto, é importante fazer backup regularmente de todos os arquivos importantes para você. Se você tiver um disco que às vezes não aparece, ou dá erros, considere isso um lembrete para verificar novamente seus métodos de backup. Tudo bem se você estiver um pouco perdido, pois todos nós já estivemos. A melhor solução de backup é aquela adotada por você, portanto, encorajamos a encontrar uma solução que funcione para você e permaneça fiel a ela.
 > 
 > [!TIP]
-> Para obter informações sobre como usar aplicativos criados no Windows para arquivos de backup para uma unidade externa, como uma unidade USB, consulte [fazer backup e restaurar os arquivos](https://support.microsoft.com/help/17143/windows-10-back-up-your-files). Você também pode salvar arquivos no OneDrive da Microsoft, que sincroniza arquivos do seu computador para a nuvem. Se o disco rígido falhar, você ainda poderá obter todos os arquivos que armazena no OneDrive do OneDrive.com. Para obter mais informações, consulte [OneDrive em seu PC](https://support.microsoft.com/help/17184/windows-10-onedrive).
+> Para obter informações sobre como usar aplicativos criados no Windows para fazer backup de arquivos para uma unidade externa, como uma unidade USB, consulte [Fazer backup e restaurar os arquivos](https://support.microsoft.com/help/17143/windows-10-back-up-your-files). Também é possível salvar arquivos no Microsoft OneDrive, que sincroniza arquivos do PC para a nuvem. Se o disco rígido falhar, ainda será possível obter todos os arquivos que você armazena no OneDrive em OneDrive.com. Para obter mais informações, consulte [OneDrive em seu PC](https://support.microsoft.com/help/17184/windows-10-onedrive).
 
-## <a name="a-basic-or-dynamic-disks-status-is-unreadable"></a>O status de um disco básico ou dinâmico é ilegível
+## <a name="a-basic-or-dynamic-disks-status-is-unreadable"></a>O status de um disco básico ou dinâmico é Ilegível
 
-**Causa:**  o disco básico ou dinâmico não está acessível e pode estar com uma falha de hardware, corrupção ou erros de e/s. A cópia do disco do banco de dados de configuração de disco do sistema pode estar corrompida. Um ícone de erro aparece nos discos com o status **Ilegível**.
+**Causa:**  o disco básico ou dinâmico não está acessível e pode ter uma falha de hardware, dados corrompidos ou erros de E/S. A cópia do disco do banco de dados de configuração de disco do sistema pode estar corrompida. Um ícone de erro aparece nos discos com o status **Ilegível**.
 
-Os discos também podem exibir o status **Ilegível** enquanto estão girando ou quando o Gerenciamento de disco verifica todos os discos no sistema. Em alguns casos, a falha do disco ilegível não é recuperável. Para discos dinâmicos, o status **Ilegível** normalmente resulta de danos ou erros de E/S em parte do disco, em vez de falha no disco inteiro.
+Os discos também podem exibir o status **Ilegível** enquanto estão girando ou quando o Gerenciamento de Disco está examinando novamente todos os discos no sistema. Em alguns casos, um disco ilegível falhou e não é recuperável. Para discos dinâmicos, o status **Ilegível** normalmente resulta de dados corrompidos ou erros de E/S em parte do disco, e não de falha do disco inteiro.
 
-**Solução:**  examinar novamente os discos ou reinicie o computador para ver se o status do disco é alterado. Além disso, tente as etapas de solução de problemas descritas [é de status de um disco não inicializado ou o disco está ausente inteiramente](#a-disks-status-is-not-initialized-or-the-disk-is-missing).
+**Solução:**  examine novamente os discos ou reinicie o computador para ver se o status do disco é alterado. Além disso, tente as etapas de solução de problemas descritas em [O status de um disco é Não inicializado ou o disco está inteiramente ausente](#a-disks-status-is-not-initialized-or-the-disk-is-missing).
 
-## <a name="a-dynamic-disks-status-is-foreign"></a>O status de um disco dinâmico é externo
+## <a name="a-dynamic-disks-status-is-foreign"></a>O status de um disco dinâmico é Externo
 
-**Causa:**  as **Foreign** status ocorre quando você move um disco dinâmico no computador local de outro computador PC. Um ícone de aviso aparece nos discos com o status **Externo**.
+**Causa:**  o status **Externo** ocorre quando você move um disco dinâmico de outro computador PC para o computador local. Um ícone de aviso aparece nos discos com o status **Externo**.
 
-Em alguns casos, um disco que foi previamente conectado ao sistema pode exibir o status **Externo**. Os dados de configuração para discos dinâmicos são armazenados em todos os discos dinâmicos, portanto, as informações sobre quais discos são de propriedade do sistema são perdidas quando ocorre falha neles.
+Em alguns casos, um disco que foi previamente conectado ao sistema pode exibir o status **Externo**. Os dados de configuração para discos dinâmicos são armazenados em todos os discos dinâmicos, portanto, as informações sobre quais discos são de propriedade do sistema são perdidas quando todos os discos dinâmicos falham.
 
-**Solução:**  adicionar o disco à configuração de sistema do computador para que você pode acessar dados no disco. Para adicionar um disco à configuração do sistema do computador, importe o disco externo (clique com botão direito do mouse no disco e, em seguida, clique em **Importar discos externos**). Todos os volumes existentes no disco externo ficam visíveis e acessíveis quando você importa o disco. 
+**Solução:**  adicione o disco à configuração de sistema do computador para que você possa acessar os dados no disco. Para adicionar um disco à configuração do sistema do computador, importe o disco externo (clique com botão direito do mouse no disco e, em seguida, clique em **Importar discos externos**). Todos os volumes existentes no disco externo ficam visíveis e acessíveis quando você importa o disco. 
 
-## <a name="a-dynamic-disks-status-is-online-errors"></a>Status de um disco dinâmico é Online (erros)
+## <a name="a-dynamic-disks-status-is-online-errors"></a>O status de um disco dinâmico é Online (Erros)
 
-**Causa:**  o disco dinâmico tem erros de e/s em uma região do disco. Um ícone de aviso é exibido no disco dinâmico com erros.
+**Causa:**  o disco dinâmico tem erros de E/S em uma região dele. Um ícone de aviso é exibido no disco dinâmico com erros.
 
-**Solução:**   se os erros de e/s são temporários, reative o disco para retorná-lo a **Online** status.
+**Solução:**   se os erros de E/S forem temporários, reative o disco para retorná-lo ao status **Online**.
 
-## <a name="a-dynamic-disks-status-is-offline-or-missing"></a>Status de um disco dinâmico é Offline ou ausente
+## <a name="a-dynamic-disks-status-is-offline-or-missing"></a>O status de um disco dinâmico é Offline ou Ausente
 
-**Causa:**  um **Offline** disco dinâmico pode estar corrompido ou temporariamente não disponível. Um ícone de erro aparece no disco dinâmico offline.
+**Causa:**  um disco dinâmico **Offline** pode estar corrompido ou não disponível de forma intermitente. Um ícone de erro aparece no disco dinâmico offline.
 
-Se o status do disco for **Offline** e o nome do disco mudar para **Ausente**, o disco esteve disponível recentemente no sistema, mas não pode ser localizado ou identificado. O disco ausente pode estar corrompido, desligado ou desconectado.
+Se o status do disco for **Offline** e o nome do disco mudar para **Ausente**, o disco esteve recentemente disponível no sistema, mas não pode ser localizado ou identificado. O disco ausente pode estar corrompido, desligado ou desconectado.
 
-**Solução:** Para colocar um disco que está Offline e ausente novamente online:
+**Solução:** Recoloque online um disco que está Offline e Ausente:
 
-1. Repare qualquer disco, controlador ou problema de cabo. 
+1. Repare qualquer problema no cabo, disco ou controlador. 
 2. Verifique se o disco físico está ligado e conectado ao computador. 
 3. Em seguida, use o comando **Reativar disco** para colocar o disco novamente online.
-4. Repita as etapas de solução de problemas descritas [é de status de um disco não inicializado ou o disco está ausente inteiramente](#a-disks-status-is-not-initialized-or-the-disk-is-missing).
-5. Se o status do disco permanecer **Offline** e o nome do disco permanecer **Ausente**, e você determinar que o disco tem um problema que não pode ser reparado, é possível remover o disco do sistema ao clicar no disco e, em seguida, clicar em **Remover disco**). No entanto, antes de remover o disco, você deve excluir todos os volumes (ou espelhamentos) no disco. Você pode salvar todos os volumes espelhados no disco removendo o espelhamento em vez do volume inteiro. A exclusão de um volume destrói os dados nele, portanto, você deve remover um disco somente você tiver certeza de que está danificado ou inutilizável permanentemente.
+4. Tente as etapas de solução de problemas descritas em [O status de um disco é Não inicializado ou o disco está inteiramente ausente](#a-disks-status-is-not-initialized-or-the-disk-is-missing).
+5. Se o status do disco permanecer **Offline** e o nome do disco permanecer **Ausente**, e você determinar que o disco tem um problema que não pode ser reparado, é possível remover o disco do sistema ao clicar no disco e, em seguida, clicar em **Remover disco**). No entanto, antes de remover o disco, você deve excluir todos os volumes (ou espelhamentos) no disco. É possível salvar todos os volumes espelhados no disco removendo o espelhamento em vez do volume inteiro. A exclusão de um volume destrói os dados nele, portanto, somente remova um disco se você tiver certeza absoluta de que ele está permanentemente danificado ou inutilizável.
 
-**Para colocar um disco que está Offline e ainda é chamado de disco \# (não ausente) novamente online, tente uma ou mais dos procedimentos a seguir:**
+**Para recolocar online um disco que está Offline e ainda nomeado como Disco \# (Não ausente), tente um ou mais dos procedimentos a seguir:**
 
-1. No Gerenciamento de disco, clique com o botão direito do mouse no disco e, em seguida, clique em **Reativar disco** para ativá-lo. Se o status do disco permanecer **Offline**, verifique os cabos e o controlador do disco e certifique-se de que o disco físico está íntegro. Corrija os problemas e tente reativar o disco novamente. Se o disco for reativado com sucesso, todos os volumes no disco devem retornar automaticamente o status **Íntegro**.
-2. No Visualizador de Eventos, verifique os logs de eventos para quaisquer erros relacionados ao disco, como "Cópias de configuração inadequadas". Se os logs de evento contêm esse erro, entre em contato com o [Atendimento Microsoft](https://msdn.microsoft.com/library/aa263468(v=vs.60).aspx).
+1. No Gerenciamento de Disco, clique com o botão direito do mouse no disco e, em seguida, clique em **Reativar disco** para recolocá-lo online. Se o status do disco permanecer **Offline**, verifique os cabos e o controlador do disco e verifique se o disco físico está íntegro. Corrija quaisquer problemas e tente reativar o disco novamente. Se o disco for reativado com sucesso, todos os volumes no disco devem retornar automaticamente ao status **Íntegro**.
+2. No Visualizador de Eventos, verifique os logs de eventos para ver todos os erros relacionados ao disco, como "Cópias de configuração inadequadas". Se os logs de evento contêm esse erro, contate o [Microsoft Product Support Services](https://msdn.microsoft.com/library/aa263468(v=vs.60).aspx).
 
-3. Tente mover o disco para outro computador. Se o disco ficar **Online** em outro computador, o problema pode ocorrer devido à configuração do computador em que o disco não fica **Online**.
+3. Tente mover o disco para outro computador. Se o disco ficar **Online** em outro computador, o problema ocorreu provavelmente devido à configuração do computador em que o disco não fica **Online**.
 
-4. Tente mover o disco para outro computador com discos dinâmicos. Importe o disco nesse computador e, em seguida, mova o disco para o computador no qual ele não fica **Online**. 
+4. Tente mover o disco para outro computador que tenha discos dinâmicos. Importe o disco nesse computador e, em seguida, mova o disco de volta para o computador no qual ele não fica **Online**. 
 
-## <a name="a-basic-or-dynamic-volumes-status-is-failed"></a>O status de um volume básico ou dinâmico é falha
+## <a name="a-basic-or-dynamic-volumes-status-is-failed"></a>O status de um volume básico ou dinâmico é Falha
 
 **Causa:**   o volume básico ou dinâmico não pode ser iniciado automaticamente, o disco está danificado ou o sistema de arquivos está corrompido. A menos que o sistema de arquivos ou o disco possa ser reparado, o status **Falha** indica a perda de dados.
 
 **Solução:**
 
-Se o volume for um volume básico com **Failed** status:
+Se o volume for básico com o status **Falha**:
 
 - Verifique se o disco físico subjacente está ligado e conectado ao computador.
-- Repita as etapas de solução de problemas descritas [é de status de um disco não inicializado ou o disco está ausente inteiramente](#a-disks-status-is-not-initialized-or-the-disk-is-missing).
+- Tente as etapas de solução de problemas descritas em [O status de um disco é Não inicializado ou o disco está inteiramente ausente](#a-disks-status-is-not-initialized-or-the-disk-is-missing).
 
 Se o volume for dinâmico com o status **Falha**:
 
--   Verifique se os discos subjacentes estão online. Caso contrário, retorne o status do disco para **Online**. Se a ação for bem sucedida, o volume é reiniciado automaticamente e retorna ao status **Íntegro**. Se o disco dinâmico retornar para o status **Online**, mas o volume dinâmico não retornar para o status **Íntegro**, você poderá reativar o volume manualmente.
--   Se o volume dinâmico for um volume espelhado ou RAID-5 com dados antigos, colocar o disco subjacente online não reinicia automaticamente o volume. Se os discos com dados atuais são desconectados, coloque esses discos online pela primeira vez (para permitir que os dados sejam sincronizados). Caso contrário, reinicie o volume espelhado ou RAID-5 manualmente e, em seguida, execute a ferramenta de verificação de erro ou Chkdsk.exe.
-- Repita as etapas de solução de problemas descritas [é de status de um disco não inicializado ou o disco está ausente inteiramente](#a-disks-status-is-not-initialized-or-the-disk-is-missing).
+-   Verifique se os discos subjacentes estão online. Caso contrário, retorne os discos para o status **Online**. Se a ação for bem sucedida, o volume é reiniciado automaticamente e retorna ao status **Íntegro**. Se o disco dinâmico retornar para o status **Online**, mas o volume dinâmico não retornar para o status **Íntegro**, é possível reativar o volume manualmente.
+-   Se o volume dinâmico for um volume espelhado ou RAID-5 com dados antigos, colocar o disco subjacente online não reiniciará o volume automaticamente. Se os discos contendo dados atuais forem desconectados, primeiro coloque esses discos online (para permitir que os dados sejam sincronizados). Caso contrário, reinicie manualmente o volume espelhado ou RAID-5 e, em seguida, execute a ferramenta de verificação de erros ou Chkdsk.exe.
+- Tente as etapas de solução de problemas descritas em [O status de um disco é Não inicializado ou o disco está inteiramente ausente](#a-disks-status-is-not-initialized-or-the-disk-is-missing).
 
-## <a name="a-basic-or-dynamic-volumes-status-is-unknown"></a>Status de um volume básico ou dinâmico é desconhecido
+## <a name="a-basic-or-dynamic-volumes-status-is-unknown"></a>O status de um volume básico ou dinâmico é Desconhecido
 
-**Causa:**   as **desconhecido** status ocorre quando o setor de inicialização para o volume está corrompido (possivelmente devido a um vírus) e você não pode acessar dados no volume. O status **Desconhecido** também ocorre quando você instala um novo disco, mas não conclui com êxito o assistente para criar uma assinatura de disco.
+**Causa:**   o status **Desconhecido** ocorre quando o setor de inicialização do volume está corrompido (possivelmente por causa de um vírus) e não é possível acessar os dados no volume. O status **Desconhecido** também ocorre quando você instala um novo disco, mas não conclui com êxito o assistente para criar uma assinatura de disco.
 
-**Solução**  inicializar o disco. Para obter instruções, consulte [Inicializar novos discos](initialize-new-disks.md).
+**Solução:**   Inicialize o disco. Para obter instruções, consulte [Inicializar novos discos](initialize-new-disks.md).
 
-## <a name="a-dynamic-volumes-status-is-data-incomplete"></a>Status de um volume dinâmico é dados incompletos
+## <a name="a-dynamic-volumes-status-is-data-incomplete"></a>O status de um volume dinâmico é Dados incompletos
 
-**Causa:** Você moveu alguns, mas não todos os discos em um volume em vários discos. Os dados nesse volume serão destruídos, a menos que você mova e importe os discos restantes contendo esse volume.
+**Causa**: Você moveu alguns, mas não todos os discos em um volume de vários discos. Os dados nesse volume serão destruídos, a menos que você mova e importe os discos restantes contendo esse volume.
 
 **Solução:**
 
@@ -148,38 +148,38 @@ Se o volume for dinâmico com o status **Falha**:
 
 Se você não precisar mais do volume de vários discos, é possível importar o disco e criar novos volumes nele. Para fazer isso:
 
-1. Clique com botão direito do mouse no volume com status **Falha** ou **Falha de redundância** e clique em **Excluir volume**.
-2. Clique com o botão direito do mouse no disco e, em seguida, clique em **Novo volume**.
+1. Clique com botão direito do mouse no volume com status **Falha** ou **Falha de redundância** e, em seguida, clique em **Excluir volume**.
+2. Clique com o botão direito do mouse no disco e clique em **Novo volume**.
 
-## <a name="a-dynamic-volumes-status-is-healthy-at-risk"></a>Status de um volume dinâmico é Íntegro (em risco)
+## <a name="a-dynamic-volumes-status-is-healthy-at-risk"></a>O status de um volume dinâmico é Íntegro (em risco)
 
-**Causa:**   indica que o volume dinâmico está acessível no momento, mas foram detectados erros de e/s no disco dinâmico subjacente. Se um erro de E/S for detectado em qualquer parte de um disco dinâmico, todos os volumes no disco exibem o status **Íntegro (em risco)** e um ícone de aviso aparece no volume.
+**Causa:**   indica que o volume dinâmico está acessível atualmente, mas foram detectados erros de E/S no disco dinâmico subjacente. Se um erro de E/S for detectado em qualquer parte de um disco dinâmico, todos os volumes no disco exibem o status **Íntegro (em risco)** e um ícone de aviso aparece no volume.
 
 Quando o status do volume é **Íntegro (em risco)** , o status de um disco subjacente é geralmente **Online (erros)** .
 
 **Solução:**  
-1. Reverta o status do disco subjacente para **Online**. Depois que o status do disco é revertido para **Online**, o volume deve reverter para o status **Íntegro**. Se o status **Íntegro (em risco)** continuar, o disco pode estar falhando. 
+1. Retorne o status do disco subjacente para **Online**. Depois que o status do disco é revertido para **Online**, o volume deve retornar para o status **Íntegro**. Se o status **Íntegro (em risco)** persistir, o disco pode estar falhando. 
 
-2. Faça o backup dos dados e substitua o disco assim que for possível. 
+2. Faça o backup dos dados e substitua o disco assim que possível. 
 
-## <a name="cannot-manage-striped-volumes-using-disk-management-or-diskpart"></a>Não é possível gerenciar volumes distribuídos usando o gerenciamento de disco ou DiskPart
+## <a name="cannot-manage-striped-volumes-using-disk-management-or-diskpart"></a>Não é possível gerenciar volumes distribuídos usando o Gerenciamento de Disco ou DiskPart
 
-**Causa:**   alguns produtos de gerenciamento de disco não-Microsoft substituir o Gerenciador de discos lógicos (LDM) Microsoft avançados para gerenciamento de disco, que pode desabilitar o LDM.
+**Causa:**   alguns produtos de gerenciamento de disco não Microsoft substituem o LDM (Gerenciador de Discos Lógicos) da Microsoft para o gerenciamento de disco avançado, o que pode desabilitar o LDM.
 
-**Solução:**   se você estiver usando software de gerenciamento de disco não são da Microsoft que tenha desabilitado o LDM, você deve contatar o fornecedor no software de gerenciamento de disco não são da Microsoft para obter assistência na solução de problemas com o disco ou de suporte configuração.
+**Solução:**   se você estiver usando software de gerenciamento de disco não Microsoft que desabilitaram o LDM, é necessário contatar o suporte ou a assistência do fornecedor do software de gerenciamento de disco para solucionar problemas de configuração de disco.
 
-## <a name="disk-management-cannot-start-the-virtual-disk-service"></a>Gerenciamento de disco não é possível iniciar o serviço de disco Virtual
+## <a name="disk-management-cannot-start-the-virtual-disk-service"></a>O Gerenciamento de Disco não pode iniciar o Serviço de Disco Virtual
 
-**Causa:**   se um computador remoto não suporta o serviço de disco Virtual (VDS) ou se você não puder estabelecer uma conexão com o computador remoto porque ele é bloqueado pelo Firewall do Windows, você poderá receber esse erro.
+**Causa:**   se um computador remoto não dá suporte para VDS (Serviço de Disco Virtual) ou se não for possível estabelecer uma conexão com o computador remoto porque ele está bloqueado pelo Firewall do Windows, você pode receber esse erro.
 
 **Solução:**
 
-1. Se o computador remoto oferecer suporte para VDS, você pode configurar o Windows Defender Firewall para permitir conexões VDS. Se o computador remoto não oferecer suporte a VDS, você pode usar a Conexão de Área de Trabalho Remota para se conectar a ela e, em seguida, executar o Gerenciamento de disco diretamente no computador remoto.
-2. Para gerenciar discos em computadores remotos que oferecem suporte a VDS, você deve configurar o Windows Defender Firewall no computador local (no qual você está executando o Gerenciamento de disco) e o computador remoto.
-3. No computador local, configure o Windows Defender Firewall para habilitar a Exceção de gerenciamento remoto do volume.
+1. Se o computador remoto oferecer suporte para VDS, é possível configurar o Windows Defender Firewall para permitir conexões VDS. Se o computador remoto não oferecer suporte para VDS, você pode usar a Conexão de Área de Trabalho Remota para se conectar a ele e, em seguida, executar o Gerenciamento de Disco diretamente no computador remoto.
+2. Para gerenciar discos em computadores remotos que oferecem suporte para VDS, é necessário configurar o Windows Defender Firewall no computador local (no qual está executando o Gerenciamento de Disco) e no computador remoto.
+3. No computador local, configure o Windows Defender Firewall para habilitar a Exceção de Gerenciamento de Volume Remoto.
 
 > [!NOTE]
-> A Exceção de gerenciamento remoto do volume inclui exceções para Vds.exe, Vdsldr.exe e a porta TCP 135.
+> A Exceção de Gerenciamento de Volume Remoto inclui exceções para Vds.exe, Vdsldr.exe e a porta TCP 135.
 
 > [!NOTE]
 > Não há suporte para conexões remotas em grupos de trabalho. O computador local e o computador remoto devem ser membros de um domínio.
