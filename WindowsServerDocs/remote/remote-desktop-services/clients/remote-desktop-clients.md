@@ -15,28 +15,28 @@ ms.author: helohr
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 341262243b5bbe8ed046382d7490a6e5c39b8965
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66188126"
 ---
 # <a name="remote-desktop-clients"></a>Clientes de área de trabalho remota
 
 >Aplica-se a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
 
-Você pode usar um cliente de Área de Trabalho Remota da Microsoft para se conectar a um computador remoto e aos seus recursos de trabalho de praticamente qualquer lugar, usando quase qualquer tipo de dispositivo. Você pode se conectar ao seu computador de trabalho e ter acesso a todos os aplicativos, arquivos e recursos de rede como se estivesse em sua mesa de trabalho. Você pode deixar os aplicativos abertos no trabalho e ver esses mesmos aplicativos em casa ao usar o cliente da área de trabalho remota.
+Você pode usar um cliente de Área de Trabalho Remota da Microsoft para se conectar a um computador remoto e aos seus recursos de trabalho em praticamente qualquer lugar, usando quase qualquer tipo de dispositivo. Você pode se conectar ao seu computador de trabalho e ter acesso a todos os aplicativos, arquivos e recursos de rede como se estivesse em sua mesa de trabalho. Você pode deixar os aplicativos abertos no trabalho e ver esses mesmos aplicativos em casa ao usar o cliente da área de trabalho remota.
 
-Antes de começar, confira o artigo sobre a [configuração com suporte](remote-desktop-supported-config.md), que aborda os computadores aos quais você pode se conectar usando os clientes da Área de Trabalho Remota. Confira também as [perguntas frequentes sobre clientes](remote-desktop-client-faq.md).
+***Antes de começar, confira o artigo sobre a [configuração compatível](remote-desktop-supported-config.md), que aborda os computadores aos quais você pode se conectar usando os clientes da Área de Trabalho Remota. ***Confira também as [perguntas frequentes sobre clientes](remote-desktop-client-faq.md).
 
-Os apps de cliente a seguir estão disponíveis:
+Os seguintes aplicativos de cliente estão disponíveis:
 
 | Dispositivo   | Baixar o aplicativo                                                                                                     | Instruções de configuração                                                                |
 |----------|-----------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| Windows  | [Cliente do Windows 10 em que a Microsoft Store](https://go.microsoft.com/fwlink/?LinkID=616709)                      | [Introdução ao cliente de área de trabalho remota no Windows](windows.md)                |
-| Android  | [Cliente Android no Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android)        | [Introdução ao cliente de área de trabalho remota no Android](remote-desktop-android.md) |
-| iOS      | [cliente do iOS na iTunes store](https://itunes.apple.com/us/app/microsoft-remote-desktop/id714464092?mt=8)     | [Introdução ao cliente de área de trabalho remota no iOS](remote-desktop-ios.md)         |
-| macOS    | [cliente do macOS na iTunes store](https://itunes.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12) | [Introdução ao cliente de área de trabalho remota no Mac](remote-desktop-mac.md)         |
+| Windows  | [Cliente Windows 10 na Microsoft Store](https://go.microsoft.com/fwlink/?LinkID=616709)                      | [Introdução ao cliente de Área de Trabalho Remota no Windows](windows.md)                |
+| Android  | [Cliente Android no Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android)        | [Introdução ao cliente de Área de Trabalho Remota no Android](remote-desktop-android.md) |
+| iOS      | [Cliente iOS na iTunes Store](https://itunes.apple.com/us/app/microsoft-remote-desktop/id714464092?mt=8)     | [Introdução ao cliente de Área de Trabalho Remota no iOS](remote-desktop-ios.md)         |
+| macOS    | [Cliente macOS na iTunes Store](https://itunes.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12) | [Introdução ao cliente de Área de Trabalho Remota no Mac](remote-desktop-mac.md)         |
 
 ## <a name="configuring-the-remote-pc"></a>Configuração do computador remoto
 
@@ -44,4 +44,4 @@ Para configurar seu computador remoto antes de acessá-lo remotamente, [Permita 
 
 ## <a name="remote-desktop-client-uri-scheme"></a>Esquema de URI de cliente da Área de trabalho remota
 
-Você pode integrar recursos de clientes de Área de Trabalho Remota entre plataformas habilitando um esquema de URI (Uniform Resource Identifier). Confira os [atributos de URI com suporte](remote-desktop-uri.md) que você pode usar com os clientes iOS, Mac e Android.
+Você pode integrar recursos de clientes de Área de Trabalho Remota entre plataformas habilitando um esquema de URI (Uniform Resource Identifier). ***Confira os [atributos de URI compatíveis](remote-desktop-uri.md) que podem ser usados com os clientes iOS, Mac e Android.

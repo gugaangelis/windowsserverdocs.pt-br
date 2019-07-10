@@ -1,5 +1,5 @@
 ---
-title: Instalar o Server com a Experiência Desktop
+title: Instalar o Servidor com Experiência Desktop
 description: 'Explica como obter e instalar uma instalação de Servidor com Experiência Desktop '
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -15,10 +15,10 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: cf67a1c9675191936a6150bb950c59e6f99b54ad
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66810698"
 ---
 # <a name="install-server-with-desktop-experience"></a>Instalar o Server com a Experiência Desktop
@@ -39,7 +39,7 @@ A opção Servidor com Experiência Desktop instala a interface de usuário padr
 
 **Instale, configure, desinstale funções de servidor remotamente:** com o Gerenciador do Servidor, com o Servidor Remoto, com as RSAT ou com o Windows PowerShell.
 
-**Microsoft Management Console: instalado**
+**Console de Gerenciamento Microsoft: instalado**
 
 ## <a name="installation-scenarios"></a>Cenários de instalação
 
@@ -47,7 +47,7 @@ A opção Servidor com Experiência Desktop instala a interface de usuário padr
 Você pode obter uma cópia de avaliação de 180 dias licenciada do Windows Server em [Avaliações do Windows Server](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016). Escolha **Windows Server 2016 | Opção ISO de 64 bits** para download, ou visite **Windows Server 2016 | Laboratório virtual**.
 
 > [!IMPORTANT]  
-> Para versões do Windows Server 2016 anteriores a 14393.0.161119-1705.RS1_REFRESH, você só pode executar essa conversão de avaliação para Retail com o Windows Server 2016 que foi instalado usando a opção de Experiência Desktop (não a opção Server Core). A partir da versão 14393.0.161119-1705. RS1_REFRESH e versões posteriores, você pode converter edições de avaliação em Retail, independentemente da opção de instalação usada.
+> Para versões do Windows Server 2016 anteriores a 14393.0.161119-1705.RS1_REFRESH, somente é possível executar essa conversão de avaliação para versão comercial com o Windows Server 2016 que foi instalado usando a opção de Experiência Desktop (não a opção Server Core). A partir da versão 14393.0.161119-1705. RS1_REFRESH e versões posteriores, é possível converter edições de avaliação em versão comercial, independentemente da opção de instalação usada.
 
 
 ### <a name="clean-installation"></a>Instalação limpa
@@ -95,7 +95,7 @@ A capacidade de migrar varia entre as diferentes funções de servidor. A grade 
 |-------------------|----------|--------------|--------------|----------|  
 |Serviços de Certificados do Active Directory| Sim|    Sim|    Sim|    Não|
 |Active Directory Domain Services|  Sim|    Sim|    Sim|    Sim|
-|Serviços de Federação do Active Directory (AD FS)|  Não| Não| Sim|    Não (os novos nós precisam ser adicionados ao farm)|
+|Serviços de Federação do Active Directory|  Não| Não| Sim|    Não (os novos nós precisam ser adicionados ao farm)|
 |Active Directory Lightweight Directory Services|   Sim|    Sim|    Sim|    Sim|
 |Active Directory Rights Management Services|   Sim|    Sim|    Sim|    Não|
 |Cluster de failover|Sim com o processo [Atualização sem interrupção do sistema operacional do cluster](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)contém o nó Pause-Drain, Evict, atualização para o Windows Server 2016 e o reingresso no cluster original. Sim, quando o servidor é removido pelo cluster para atualização e adicionado a um cluster diferente.|Não enquanto o servidor fizer parte de um cluster. Sim, quando o servidor é removido pelo cluster para atualização e adicionado a um cluster diferente.  |Sim|Não para Clusters de Failover no Windows Server 2012. Sim para Clusters de Failover do Windows Server 2012 R2 com máquinas virtuais do Hyper-V ou Clusters de Failover do Windows Server 2012 R2 executando a função Servidor de Arquivos de Escalabilidade Horizontal. confira [Atualização sem interrupção do sistema operacional do cluster](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade).|

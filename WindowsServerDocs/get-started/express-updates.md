@@ -1,6 +1,6 @@
 ---
-title: Atualizações expressas do Windows Server 2016 habilitado novamente para novembro de 2018 atualizar
-description: Fornece informações sobre as atualizações do Express no Windows Server 2016
+title: Atualizações expressas para o Windows Server 2016 ativadas novamente para a atualização de novembro de 2018
+description: Fornece informações sobre as Atualizações expressas no Windows Server 2016
 ms.prod: windows-server-threshold
 ms.technology: server-general
 ms.topic: article
@@ -8,20 +8,20 @@ author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
 ms.openlocfilehash: 1644a61c87953e465895e23c3c8454bae7f3a056
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66443378"
 ---
-# <a name="express-updates-for-windows-server-2016-re-enabled-for-november-2018-update"></a>Atualizações expressas do Windows Server 2016 habilitado novamente para novembro de 2018 atualizar
+# <a name="express-updates-for-windows-server-2016-re-enabled-for-november-2018-update"></a>Atualizações expressas para o Windows Server 2016 ativadas novamente para a atualização de novembro de 2018
 
 > Por Joel Frauenheim
 > 
 > Aplica-se a: Windows Server 2016
 
-Começando com 13 de novembro de 2018 Update terça-feira, o Windows novamente publicará as atualizações do Express para Windows Server 2016. Atualizações expressas do Windows Server 2016 interrompido em meados de 2017, depois que um problema significativo foi encontrado que mantidas as atualizações de instalação correta. Enquanto o problema foi corrigido em novembro de 2017, a equipe de atualização demorou uma abordagem conservadora para publicação dos pacotes do Express para garantir que a maioria dos clientes teria a atualização de 14 de novembro de 2017 ([4048953 KB](https://support.microsoft.com/help/4048953/windows-10-update-kb4048953)) instalados em seu servidor ambientes e não ser afetados pelo problema.
+Nas atualizações das terças-feiras de 13 de novembro de 2018 em diante, o Windows publicará as Atualizações expressas novamente para o Windows Server 2016. As Atualizações expressas do Windows Server 2016 foram interrompidas em meados de 2017, depois que foi encontrado um problema significativo que impedia que as atualizações fossem instaladas corretamente. Embora o problema foi corrigido em novembro de 2017, a equipe de atualização adotou uma abordagem conservadora para publicação dos pacotes expressos para garantir que a maioria dos clientes teria a atualização de 14 de novembro de 2017 ([KB 4048953](https://support.microsoft.com/help/4048953/windows-10-update-kb4048953)) instalada em seu ambientes de servidores e não seriam afetados pelo problema.
 
-Os administradores de sistema do WSUS e o System Center Configuration Manager (SCCM) precisam estar ciente de que em novembro de 2018 elas mais uma vez verá dois pacotes para a atualização do Windows Server 2016: uma atualização completa e uma atualização do Express. Os administradores do sistema que desejam usar a expressa para seus ambientes de servidor precisam confirmar que o dispositivo foi uma atualização completa desde 14 de novembro de 2017 ([4048953 KB](https://support.microsoft.com/help/4048953/windows-10-update-kb4048953)) para garantir que a atualização do Express foi instalado corretamente. Qualquer dispositivo que não tenha sido atualizado desde que a atualização de 14 de novembro de 2017 ([4048953 KB](https://support.microsoft.com/help/4048953/windows-10-update-kb4048953)) verão falhas repetidas que consomem largura de banda e recursos de CPU em um loop infinito se a atualização expressa é tentada.  Correção para esse estado seria para o administrador do sistema interromper o envio por push a atualização do Express e enviar por push uma recente atualização completa para interromper o loop de falha.
+Os administradores de sistema do WSUS e do SCCM (System Center Configuration Manager) precisam estar cientes de que em novembro de 2018, mais uma vez, terão dois pacotes para a atualização do Windows Server 2016: uma atualização completa e uma atualização expressa. Os administradores de sistema que desejam usar a expressa em seus ambientes de servidor precisam confirmar que o dispositivo recebeu uma atualização completa desde 14 de novembro de 2017 ([KB 4048953](https://support.microsoft.com/help/4048953/windows-10-update-kb4048953)) para garantir que a instalação expressa seja instalada corretamente. Qualquer dispositivo que não foi atualizado desde a atualização de 14 de novembro de 2017 ([KB 4048953](https://support.microsoft.com/help/4048953/windows-10-update-kb4048953)) verão falhas repetidas que consomem largura de banda e recursos de CPU em um loop infinito, caso seja tentado realizar a atualização expressa.  A correção para esse estado seria o administrador do sistema interromper o envio por push da atualização expressa e enviar por push uma atualização completa recente para interromper o loop de falha.
 
-Com 13 de novembro de 2018, os clientes de atualização do Express verá uma redução imediata de tamanho de pacote entre o seu sistema de gerenciamento e os pontos de extremidade do Windows Server 2016.  
+Em 13 de novembro de 2018, os clientes de atualização expressa verão uma redução imediata de tamanho de pacote entre o seu sistema de gerenciamento e os pontos de extremidade do Windows Server 2016.  

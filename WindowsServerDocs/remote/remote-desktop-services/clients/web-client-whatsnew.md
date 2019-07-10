@@ -1,6 +1,6 @@
 ---
-title: O que há de novo para o cliente da web de área de trabalho remota?
-description: Saiba mais sobre as alterações recentes para o cliente da web de área de trabalho remota
+title: O que há de novo para o cliente Web da Área de Trabalho Remota?
+description: Saiba mais sobre as recentes alterações no cliente da Web da Área de Trabalho Remota
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,95 +14,95 @@ ms.author: elizapo
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 5be9b05da1e78cc54e12254f43d0f44f7ff65c5d
-ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66804886"
 ---
-# <a name="whats-new-for-the-remote-desktop-web-client"></a>O que há de novo para o cliente da web de área de trabalho remota?
+# <a name="whats-new-for-the-remote-desktop-web-client"></a>O que há de novo no cliente da Web da Área de Trabalho Remota?
 
-Podemos atualizar regularmente o [cliente da web de área de trabalho remota](remote-desktop-web-client.md), adição de novos recursos e corrigir problemas. Confira as últimas atualizações abaixo.
+Atualizamos regularmente o [cliente da Web da Área de Trabalho Remota](remote-desktop-web-client.md) adicionando novos recursos e corrigindo problemas. Confira as últimas atualizações abaixo.
 
 > [!NOTE]
-> Alteramos o sistema de controle de versão para o cliente web. Começando com a versão 1.0.18.0, todas as versões de lançamento do cliente da web irá conter números (no formato de "W.x.y. z"). Números de versão para o cliente da web de área de trabalho remota sempre terminará com um 0 (por exemplo, W.X.Y.0). Cada versão do cliente de área de trabalho Virtual do Windows web alterará o último dígito até a próxima versão da área de trabalho remoto da web cliente (por exemplo, 1.0.18.1).
+> Alteramos o sistema de controle de versão para o cliente da Web. Começando com a versão 1.0.18.0, todas as versões de lançamento do cliente da Web irão conter números (no formato "W.X.Y.Z"). Os números de versão para o cliente Web de Área de Trabalho Remota sempre terminarão com um 0 (por exemplo, W.X.Y.0). Cada versão do cliente Web de Área de Trabalho Remota Virtual do Windows alterará o último dígito até a próxima versão do cliente Web da Área de Trabalho Remota (por exemplo, 1.0.18.1).
 
 ## <a name="updates-for-version-10180"></a>Atualizações para a versão 1.0.18.0
-*Data de publicação: 5/14/2019*
+*Data de publicação: 14/5/2019*
 
-- Configuração do método de inicialização de recurso adicionada na guia Configurações, permitindo que os usuários abrir recursos no navegador ou baixar um arquivo. rdp para tratar com outro cliente. Essa configuração pode ser configurada pelo seu administrador. Fornece detalhes sobre as configurações de administrador para esse recurso pode ser encontrado na [documentação de instalação do cliente web](remote-desktop-web-client-admin.md).
-- Cor fixa mais vivas de renderização de problemas, permitindo que as cores em sua sessão remota.
-- Mensagens de erro revisado relacionadas a erros de feed de recurso remoto. 
-- Adicionado suporte para mais atalhos do office, como Colar especial (Ctrl + Alt + V).
-- Atalho de teclado adicionados para os usuários o invoquem a chave do Windows na sessão remota (Alt+F3)
-- Mensagem de erro atualizado para os usuários que tentarem autenticar usando uma senha expirada.
-- Feed atualizado da interface do usuário na página de todos os recursos.
-- Reconecte resolvidos diálogos sobrepostos que ocorreram durante a sessão.
+- Configuração do Método de Inicialização de Recursos adicionada à guia Configurações, permitindo que os usuários abram recursos no navegador ou baixem um arquivo .rdp para lidar com outro cliente. Essa configuração pode ser definida pelo seu administrador. Os detalhes adicionais relacionados às configurações de administrador desse recurso podem ser encontrados na [documentação de configuração do cliente Web](remote-desktop-web-client-admin.md).
+- Corrigidos os problemas de processamento de cor, possibilitando cores mais vivas em sua sessão remota.
+- Revisadas as mensagens de erro relacionadas a erros de feed de recurso remoto. 
+- Adicionado suporte para mais atalhos do office, como colar especial (Ctrl+Alt+V).
+- Adicionado o atalho de teclado para os usuários chamarem a tecla Windows na sessão remota (Alt+F3)
+- Atualizadas as mensagens de erro para usuários que tentavam a autenticação usando uma senha expirada.
+- Atualizada a interface do feed na página Todos os Recursos.
+- Resolvido o problema das caixas de diálogo que se sobrepunham durante a reconexão da sessão.
 - Corrigido o dimensionamento do ícone de recurso remoto na barra de tarefas do recurso.
 
 ## <a name="updates-for-version-1011"></a>Atualizações para a versão 1.0.11
-*Data de publicação: 2/22/2019*
+*Data de publicação: 22/02/2019*
 
-- Conexão habilitada para o agente de área de trabalho sem um Gateway de área de trabalho remota no Windows Server 2019.
-- Em ordem alfabética feeds (ou seja, os RemoteApps primeiro, áreas de trabalho segundo).
-- Corrigido vários bugs de acessibilidade, melhorando a compatibilidade de leitor de tela.
+- Conexão habilitada para o Agente de Área de Trabalho Remota sem um Gateway de Área de Trabalho Remota no Windows Server 2019.
+- Classificou os feeds alfabeticamente (por exemplo, RemoteApps primeiro, Desktops em segundo).
+- Corrigidos vários bugs de acessibilidade melhorando a compatibilidade de leitor de tela.
 - Atualizadas as nossas ferramentas de compilação.
 - Várias correções de bugs.
 
 ## <a name="updates-for-version-107"></a>Atualizações para a versão 1.0.7
-*Data de publicação: 1/24/2019*
+*Data de publicação: 24/01/2019*
 
 - Agora há suporte para uso offline em redes internas.
-- Melhor renderização nos navegadores não - Microsoft Edge.
-- Limite implementado para repetição de feed de recuperação tenta evitar DoS.
-- Bugs de acessibilidade fixo, permitindo que os usuários com deficiência visual usar o cliente da web.
-- Aprimorada a mensagens de erro exibidas ao usuário para erros de feed.
-- Adicionado Ctrl + Alt + End (Windows) e fn + controle + opção + atalhos de exclusão (Mac) para invocar o Ctrl + Alt + Del no computador remoto.
+- Melhor renderização nos navegadores diferentes do Microsoft Edge.
+- Limite implementado para repetição de tentativas de recuperação de feed para evitar DoS.
+- Corrigidos bugs de acessibilidade, permitindo que os usuários com deficiência visual usem o cliente da Web.
+- Aprimoradas as mensagens de erro exibidas para o usuário nos erros de feed.
+- Adicionados os atalhos Ctrl+Alt+End (Windows) e fn+control+option+delete (Mac) para chamar Ctrl+Alt+Del no computador remoto.
 - Telemetria aprimorada para eventos de falha.
-- Aprimorado o nosso pipeline de build e as ferramentas de compilação.
+- Aprimorado o pipeline e as ferramentas de build.
 - Várias correções de bugs.
 
 ## <a name="updates-for-version-101"></a>Atualizações para a versão 1.0.1
-*Data de publicação: 10/29/2018*
+*Data de publicação: 29/10/2018*
 
-- Adicionada uma opção para **captura informações de suporte** na página sobre para diagnosticar problemas.
-- Agora há suporte para o modo inPrivate.
-- Suporte aprimorado para teclados inglês.
-- Corrigido um problema em que as dicas de ferramenta com caracteres estendidos mostraram incorretamente.
-- Problema de renderização de gráficos fixa que Chrome usuários afetados.
-- Atualizado o redirecionamento de fuso horário com suporte total do horário de verão.
+- Adicionada uma opção para **Capturar informações de suporte** na página Sobre para diagnosticar problemas.
+- Agora há suporte para o modo InPrivate.
+- Suporte aprimorado para teclados diferentes do inglês.
+- Corrigido um problema em que as dicas de ferramenta com caracteres diferentes do inglês apareciam de forma incorreta.
+- Corrigido o problema de renderização de gráficos que afetava os usuários do Chrome.
+- Atualizado o redirecionamento de fuso horário com suporte total ao horário de verão.
 - Aprimorada a mensagem de erro para o erro de falta de memória.
 - Várias correções de bugs.
 
 ## <a name="updates-for-version-100"></a>Atualizações para a versão 1.0.0
-*Data de publicação: 07/16/2018*
+*Data de publicação: 16/07/2018*
 
-- Cliente da Web da área de trabalho remota agora está geralmente disponível.
-- Os administradores podem desligar globalmente ao telemetria para o cliente web.
+- O Cliente da Web da Área de Trabalho Remota agora está disponível em geral.
+- Os administradores podem desligar globalmente a telemetria para o cliente da Web.
 - Várias correções de bugs.
 
 ## <a name="updates-for-version-090"></a>Atualizações para a versão 0.9.0
-*Data de publicação: 07/05/2018*
+*Data de publicação: 05/07/2018*
 
-- Nova entrada na experiência do cliente da web.
-- Não há mais solicitado a fornecer credenciais ao iniciar uma conexão de área de trabalho ou aplicativo (logon único).
-- Movido o cliente da web para uma nova URL: <https://server_FQDN/RDWeb/webclient/index.html>
-- Redirecionamento de zona de tempo adicionadas.
+- Nova experiência de entrada no cliente da Web.
+- Não há mais solicitação do fornecimento de credenciais ao iniciar uma conexão de Área de Trabalho Remota ou de aplicativo (Logon único).
+- O cliente da Web foi movido para uma nova URL: <https://server_FQDN/RDWeb/webclient/index.html>
+- Adicionado o redirecionamento de fuso horário.
 - Várias correções de bugs.
 
 ## <a name="updates-for-version-081"></a>Atualizações para a versão 0.8.1
-*Data de publicação: 05/17/2018*
+*Data de publicação: 17/05/2018*
 
-- Atualizações para tratar de correção de oracle criptografia CredSSP descrita em 0886 de CVE-2018.
-- Correção de falhas de conexão para algumas linguagens quando a impressão é habilitada.
-- Mensagem de erro aprimorada quando um gateway não é parte da implantação.
-- **Ajudar** e **comentários** opções foram adicionadas.
+- Atualizações para solucionar a correção de criptografia Oracle CredSSP descrita em CVE-2018-0886.
+- Corrigidas falhas de conexão para alguns idiomas quando a impressão está habilitada.
+- Aprimorada a mensagem de erro quando um gateway não faz parte da implantação.
+- Adicionadas opções de **Ajuda** e **Comentários**.
 
 ## <a name="updates-for-version-080"></a>Atualizações para a versão 0.8.0
-*Data de publicação: 03/28/2018*
+*Data de publicação: 28/03/2018*
 
-- Versão prévia pública inicial do cliente web.
-- Copiar/colar o texto por meio da área de transferência com **CTRL + C** e **CTRL + V**.
+- Versão prévia pública inicial do cliente da Web.
+- Copiar/colar o texto da área de transferência com **Ctrl+C** e **Ctrl+V**.
 - Imprimir em um arquivo PDF.
 - Localizado em 18 idiomas.
  

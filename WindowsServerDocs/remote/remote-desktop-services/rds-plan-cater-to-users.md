@@ -1,5 +1,5 @@
 ---
-title: Serviços de área de trabalho remota - atenda às necessidades de diferentes tipos de usuários
+title: 'Serviços de Área de Trabalho Remota: atenda a tipos diferentes de usuários'
 description: Descreve os diferentes tipos de usuários para RDS.
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,18 +13,18 @@ author: spatnaik
 ms.author: spatnaik
 ms.date: 09/23/2016
 manager: scottman
-ms.openlocfilehash: e602f41c19f38878925552a4bf173b7f3e36e796
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9d16989cc3ecbf0170081bb8cb52a9103f979741
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848117"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63743465"
 ---
-# <a name="remote-desktop-services---cater-to-different-kinds-of-users"></a>Serviços de área de trabalho remota - atenda às necessidades de diferentes tipos de usuários
+# <a name="remote-desktop-services---cater-to-different-kinds-of-users"></a>Serviços de Área de Trabalho Remota: atenda a tipos diferentes de usuários
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016
 
 Escale sua implantação dependendo da necessidade esperada de cada tipo de usuário.
-Por exemplo, usuários podem realizar a entrada de dados em aplicativos leves, manipular grandes conjuntos de dados com aplicativos de produtividade, como o Office ou trabalhar com aplicativos pesados de engenharia ou elementos gráficos.
+Por exemplo, os usuários podem realizar a entrada de dados em aplicativos leves, manipular grandes conjuntos de dados com aplicativos de produtividade, como o Office, ou trabalhar com aplicativos pesados de engenharia ou elementos gráficos.
 
-É recomendável carregar testar a implantação com testes de estresse e simulação de uso reais. Varie o tamanho de carga para evitar surpresas! Certifique-se de que a capacidade de resposta atende aos requisitos de usuário e que todo o sistema seja resiliente. Crie testes de carga com ferramentas de simulação, como LoginVSI, que verificar a capacidade da implantação para atender às necessidades dos usuários. 
+Recomendamos carregar um teste de implantação com testes de estresse e simulação do uso na vida real. Varie o tamanho da carga para evitar surpresas. Verifique se a capacidade de resposta atende aos requisitos do usuário e se todo o sistema é resiliente. Crie testes de carga com ferramentas de simulação, como LoginVSI, que verifica a capacidade da implantação para atender às necessidades dos usuários. 

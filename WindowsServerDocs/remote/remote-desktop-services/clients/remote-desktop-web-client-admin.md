@@ -1,6 +1,6 @@
 ---
-title: Configurar o cliente da web de Área de Trabalho Remota para seus usuários
-description: Descreve como um administrador pode configurar o cliente de web da área de trabalho remota.
+title: Configurar o cliente Web da Área de Trabalho Remota para seus usuários
+description: Descreve como um administrador pode configurar o cliente de Web da Área de Trabalho Remota.
 ms.prod: windows-server-threshold
 ms.technology: remote-desktop-services
 ms.author: helohr
@@ -9,199 +9,199 @@ ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
 ms.openlocfilehash: 45164e9eca0873c82148aa3b7baa179a3f626dd7
-ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66804967"
 ---
-# <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>Configurar o cliente da web de Área de Trabalho Remota para seus usuários
+# <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>Configurar o cliente Web da Área de Trabalho Remota para seus usuários
 
-O cliente da web de área de trabalho remota permite que os usuários a acessar a infraestrutura de área de trabalho remota da sua organização por meio de um navegador da web compatível com. Ele poderá interagir com aplicativos remotos ou áreas de trabalho, como faria com um computador local, independentemente de onde estiverem. Depois que você configurar seu cliente de web da área de trabalho remota, todos os usuários precisam para começar é a URL onde poderão acessar o cliente, suas credenciais e um navegador da web com suporte.
+O cliente da Web de Área de Trabalho Remota permite que os usuários acessem a infraestrutura de Área de Trabalho Remota da sua organização por um navegador da Web compatível. Eles poderão interagir com aplicativos remotos ou áreas de trabalho, como fariam com um computador local, independentemente de onde estiverem. Depois que você configurar seu cliente de Web da Área de Trabalho Remota, tudo que seus usuários precisam para começar é a URL pela qual poderão acessar o cliente, as credenciais e um navegador da Web com suporte.
 
 >[!IMPORTANT]
->O cliente da web não oferece suporte a usar o Proxy de aplicativo do Azure e não oferece suporte a Proxy de aplicativo Web em todos os. Ver [usando o RDS com serviços de proxy de aplicativo](../rds-supported-config.md#using-remote-desktop-services-with-application-proxy-services) para obter detalhes.
+>O cliente da Web não dá suporte a usar ao Proxy de Aplicativo do Azure e não dá suporte a Proxy de Aplicativo Web. Confira [Usando o RDS com serviços de proxy de aplicativo](../rds-supported-config.md#using-remote-desktop-services-with-application-proxy-services) para obter detalhes.
 
-## <a name="what-youll-need-to-set-up-the-web-client"></a>O que você precisará configurar o cliente da web
+## <a name="what-youll-need-to-set-up-the-web-client"></a>O que você precisará para configurar o cliente Web
 
 Antes de começar, tenha o seguinte em mente:
 
-* Certifique-se de sua [implantação de área de trabalho remota](../rds-deploy-infrastructure.md) tem um Gateway de área de trabalho remota, um agente de Conexão de área de trabalho remota e acesso via Web RD em execução no Windows Server 2016 ou de 2019.
-* Verifique se sua implantação é configurada para [licenças de acesso para cliente por usuário](../rds-client-access-license.md) (CALs) em vez de por dispositivo, caso contrário, todas as licenças serão consumidas.
-* Instalar o [atualização do Windows 10 KB4025334](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334) no Gateway de área de trabalho remota. Mais tarde as atualizações cumulativas talvez já contém este KB.
-* Certifique-se de certificados confiáveis públicos são configurados para as funções de Gateway de área de trabalho remota e acesso via Web RD.
-* Verifique se todos os seus usuários se conectarão os computadores estão executando uma das seguintes versões do sistema operacional:
+* Certifique-se de sua [Implantação de Área de Trabalho Remota](../rds-deploy-infrastructure.md) tenha um Gateway de Área de Trabalho Remota, um Agente de Conexão de Área de Trabalho Remota e acesso à Área de Trabalho Remota pela Web em execução no Windows Server 2016 ou 2019.
+* Verifique se sua implantação está configurada para [licenças de acesso para cliente por usuário](../rds-client-access-license.md) (CALs) em vez de por dispositivo, caso contrário, todas as licenças serão consumidas.
+* Instale a [Atualização do Windows 10 KB4025334](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334) no Gateway de Área de Trabalho Remota. Atualizações cumulativas posteriores já podem conter esta KB.
+* Certifique-se de que certificados confiáveis públicos estejam configurados para as funções de Gateway de Área de Trabalho Remota e Acesso pela Web à Área de Trabalho Remota.
+* Verifique se todos os computadores usados por seus usuários para se conectar estão executando uma das seguintes versões de sistema operacional:
   * Windows 10
-  * Windows Server 2008 R2 ou posterior
+  * Windows Server 2008R2 ou posterior
 
-Os usuários verão um melhor desempenho se conectar ao Windows Server 2016 (ou posterior) e Windows 10 (versão 1611 ou posterior).
+Os usuários terão um melhor desempenho se conectando ao Windows Server 2016 (ou posterior) e Windows 10 (versão 1611 ou posterior).
 
 >[!IMPORTANT]
->Se você usou o cliente da web durante o período de visualização e instalada uma versão anterior à 1.0.0, você deve primeiro desinstalar o cliente antigo antes de passar para a nova versão. Se você receber um erro que diz "o cliente da web foi instalado usando uma versão mais antiga do RDWebClientManagement e deve ser removido antes de implantar a nova versão", siga estas etapas:
+>Se você usou o cliente da Web durante o período de teste e instalou uma versão anterior à 1.0.0, será necessário primeiro desinstalar o cliente antigo antes de passar para a nova versão. Caso receba um erro com a mensagem "O cliente da Web foi instalado usando uma verão do RDWebClientManagement e precisa ser removido antes da implantação de uma nova versão", siga estas etapas:
 >
->1. Abra um prompt elevado do PowerShell.
->2. Execute **RDWebClientManagement Uninstall-Module** para desinstalar o novo módulo.
+>1. Abra um prompt do PowerShell elevado.
+>2. Execute **Uninstall-Module RDWebClientManagement** para desinstalar o novo módulo.
 >3. Feche e reabra o prompt do PowerShell com privilégios elevados.
->4. Execute **RDWebClientManagement Install-Module - RequiredVersion \<versão antiga > para instalar o módulo antigo.**
->5. Execute **RDWebClient desinstalação** para desinstalar o cliente web antigo.
->6. Execute **RDWebClientManagement Uninstall-Module** para desinstalar o módulo antigo.
+>4. Execute **Install-Module RDWebClientManagement -RequiredVersion \<old version> para instalar o módulo antigo.**
+>5. Execute **Uninstall-RDWebClient** para desinstalar o cliente da Web antigo.
+>6. Execute **Uninstall-Module RDWebClientManagement** para desinstalar o módulo antigo.
 >7. Feche e reabra o prompt do PowerShell com privilégios elevados.
->8. Continue com as etapas de instalação normal da seguinte maneira.
+>8. Continue com as etapas de instalação normais da seguinte maneira.
 
-## <a name="how-to-publish-the-remote-desktop-web-client"></a>Como publicar o cliente da web de área de trabalho remota
+## <a name="how-to-publish-the-remote-desktop-web-client"></a>Como publicar o cliente Web de Área de Trabalho Remota
 
-Para instalar o cliente web pela primeira vez, siga estas etapas:
+Para instalar o cliente da Web pela primeira vez, siga estas etapas:
 
-1. No servidor do agente de Conexão de área de trabalho remota, obtenha o certificado usado para conexões de área de trabalho remota e exportá-lo como um arquivo. cer. Copie o arquivo. cer do agente de Conexão de área de trabalho remota para o servidor que executa a função Web da área de trabalho remota.
+1. No servidor do Agente de Conexão de Área de Trabalho Remota, obtenha o certificado usado para conexões de Área de Trabalho Remota e exporte-o como um arquivo .cer. Copie o arquivo. cer do Agente de Conexão de Área de Trabalho Remota para o servidor que executa a função Web da Área de Trabalho Remota.
 2. No servidor de acesso via Web RD, abra um prompt elevado do PowerShell.
-3. No Windows Server 2016, atualize o módulo PowerShellGet, pois a versão da caixa de entrada não dá suporte a instalar o módulo de gerenciamento de cliente da web. Para atualizar o PowerShellGet, execute o seguinte cmdlet:
+3. No Windows Server 2016, atualize o módulo PowerShellGet, pois a versão da caixa de entrada não dá suporte à instalação do módulo de gerenciamento de cliente da Web. Para atualizar o PowerShellGet, execute o seguinte cmdlet:
     ```PowerShell
     Install-Module -Name PowerShellGet -Force
     ```
 
     >[!IMPORTANT]
-    >Você precisará reiniciar o PowerShell antes da atualização entre em vigor, caso contrário, que o módulo pode não funcionar.
+    >Você precisará reiniciar o PowerShell para a atualização entrar em vigor, caso contrário, o módulo poderá não funcionar.
 
-4. Instale o módulo do PowerShell do gerenciamento de cliente da web de área de trabalho remota da Galeria do PowerShell com este cmdlet:
+4. Instale o módulo do PowerShell do gerenciamento de cliente da Web de Área de Trabalho Remota da galeria do PowerShell com este cmdlet:
     ```PowerShell
     Install-Module -Name RDWebClientManagement
     ```
 
-5. Depois disso, execute o seguinte cmdlet para baixar a versão mais recente do cliente da web da área de trabalho remota:
+5. Depois disso, execute o seguinte cmdlet para baixar a versão mais recente do cliente da Web da Área de Trabalho Remota:
     ```PowerShell
     Install-RDWebClientPackage
     ```
 
-6. Em seguida, execute este cmdlet com o valor entre colchetes substituído com o caminho do arquivo. cer que você copiou do agente de área de trabalho remota:
+6. Execute este cmdlet com o valor entre colchetes substituído pelo caminho do arquivo .cer que você copiou do Agente de Área de Trabalho Remota:
     ```PowerShell
     Import-RDWebClientBrokerCert <.cer file path>
     ```
 
-7. Por fim, execute este cmdlet para publicar o cliente da web de área de trabalho remota:
+7. Por fim, execute este cmdlet para publicar o cliente da Web de Área de Trabalho Remota:
     ```PowerShell
     Publish-RDWebClientPackage -Type Production -Latest
     ```
-    Verifique se você pode acessar o cliente da web na URL de cliente da web com o nome do servidor, formatado como <https://server_FQDN/RDWeb/webclient/index.html>. É importante usar o nome do servidor que corresponde ao certificado público de acesso via Web RD na URL (normalmente o FQDN do servidor).
+    Verifique se você pode acessar o cliente da Web na URL de cliente da Web com o nome do servidor, formatado como <https://server_FQDN/RDWeb/webclient/index.html>. É importante usar o nome do servidor que corresponde ao certificado público de Acesso via Web à Área de Trabalho Remota na URL (normalmente o FQDN do servidor).
 
     >[!NOTE]
-    >Ao executar o **RDWebClientPackage publicar** cmdlet, você poderá ver um aviso que diz CALs por dispositivo sem suporte, mesmo se sua implantação estiver configurada para CALs por usuário. Se sua implantação usar CALs por usuário, você pode ignorar este aviso. Vamos exibi-lo para se certificar de que você esteja ciente de que a limitação de configuração.
-8. Quando você estiver pronto para os usuários acessarem o cliente da web, basta envie a URL do cliente web criado por você.
+    >Ao executar o cmdlet **Publish-RDWebClientPackage**, você poderá ver um aviso que informa que CALs por dispositivo não são compatíveis, mesmo se a implantação estiver configurada para CALs por usuário. Se sua implantação usa CALs por usuário, você pode ignorar este aviso. Vamos exibi-lo para garantir que você esteja ciente da limitação de configuração.
+8. Quando você estiver pronto para que os usuários acessem o cliente da Web, basta enviar para eles a URL do cliente Web criada por você.
 
 >[!NOTE]
->Para ver uma lista de todos os cmdlets com suporte para o módulo RDWebClientManagement, execute o seguinte cmdlet do PowerShell:
+>Para ver uma lista de todos os cmdlets com suporte no módulo RDWebClientManagement, execute o seguinte cmdlet do PowerShell:
 >```PowerShell
 >Get-Command -Module RDWebClientManagement
 >```
 
-## <a name="how-to-update-the-remote-desktop-web-client"></a>Como atualizar o cliente da web de área de trabalho remota
+## <a name="how-to-update-the-remote-desktop-web-client"></a>Como atualizar o cliente Web de Área de Trabalho Remota
 
-Quando uma nova versão do cliente da web da área de trabalho remota estiver disponível, siga estas etapas para atualizar a implantação com o novo cliente:
+Quando uma nova versão do cliente da Web da Área de Trabalho Remota estiver disponível, siga estas etapas para atualizar a implantação com o novo cliente:
 
-1. Abra um prompt elevado do PowerShell no servidor de acesso via Web RD e execute o seguinte cmdlet para baixar a versão mais recente do cliente da web:
+1. Abra um prompt elevado do PowerShell no servidor de Acesso via Web da Área de Trabalho Remota e execute o seguinte cmdlet para baixar a versão mais recente do cliente da Web:
     ```PowerShell
     Install-RDWebClientPackage
     ```
 
-2. Opcionalmente, você pode publicar o cliente para teste antes do lançamento oficial executando este cmdlet:
+2. Como alternativa, você pode publicar o cliente para teste antes do lançamento oficial executando este cmdlet:
     ```PowerShell
     Publish-RDWebClientPackage -Type Test -Latest
     ```
 
-    O cliente deve aparecer na URL do teste que corresponde à URL do seu cliente web (por exemplo, <https://server_FQDN/RDWeb/webclient-test/index.html>).
-3. Publica o cliente para usuários executando o seguinte cmdlet:
+    O cliente deve aparecer na URL de teste que corresponde à URL do seu cliente Web (por exemplo, <https://server_FQDN/RDWeb/webclient-test/index.html>).
+3. Publique o cliente para usuários executando o seguinte cmdlet:
     ```PowerShell
     Publish-RDWebClientPackage -Type Production -Latest
     ```
 
-    Isso substituirá o cliente para todos os usuários quando eles reiniciar a página da web.
+    Isso substituirá o cliente para todos os usuários quando eles reiniciarem a página da Web.
 
-## <a name="how-to-uninstall-the-remote-desktop-web-client"></a>Como desinstalar o cliente de web da área de trabalho remota
+## <a name="how-to-uninstall-the-remote-desktop-web-client"></a>Como desinstalar o cliente Web de Área de Trabalho Remota
 
-Para remover todos os vestígios do cliente da web, siga estas etapas:
+Para remover todos os vestígios do cliente da Web, siga estas etapas:
 
 1. No servidor de acesso via Web RD, abra um prompt elevado do PowerShell.
-2. Cancelar a publicação dos clientes de teste e produção, desinstale todos os pacotes de locais e remover as configurações do cliente da web:
+2. Cancele a publicação dos clientes de Teste e Produção, desinstale todos os pacotes locais e remova as configurações do cliente da Web:
 
    ```PowerShell
    Uninstall-RDWebClient
    ```
 
-3. Desinstale o módulo do PowerShell do gerenciamento de cliente da web de área de trabalho remota:
+3. Desinstale o módulo do PowerShell do gerenciamento de cliente da Web de Área de Trabalho Remota:
 
    ```PowerShell
    Uninstall-Module -Name RDWebClientManagement
    ```
 
-## <a name="how-to-install-the-remote-desktop-web-client-without-an-internet-connection"></a>Como instalar o cliente da web de área de trabalho remota sem uma conexão de internet
+## <a name="how-to-install-the-remote-desktop-web-client-without-an-internet-connection"></a>Como instalar o cliente da Web de Área de Trabalho Remota sem uma conexão de internet
 
-Siga estas etapas para implantar o cliente da web em um servidor de acesso via Web RD que não tem uma conexão de internet.
-
-> [!NOTE]
-> Instalando sem uma conexão de internet está disponível na versão 1.0.1 e posterior do módulo do RDWebClientManagement PowerShell.
+Siga estas etapas para implantar o cliente da Web em um servidor de Acesso pela Web à Área de Trabalho Remota que não tem uma conexão de internet.
 
 > [!NOTE]
-> Você ainda precisa de um PC do administrador com acesso à internet para baixar os arquivos necessários antes de transferi-los para o servidor offline.
+> A instalação sem uma conexão com a internet está disponível na versão 1.0.1 e posterior do módulo RDWebClientManagement do PowerShell.
 
 > [!NOTE]
-> O PC do usuário final precisa de uma conexão de internet por enquanto. Isso será corrigido em uma versão futura do cliente para fornecer um cenário offline completo.
+> Você ainda precisa de um computador de administrador com acesso à internet para baixar os arquivos necessários antes de transferi-los para o servidor offline.
+
+> [!NOTE]
+> O computador do usuário final precisa de uma conexão de internet por enquanto. Isso será corrigido em uma versão futura do cliente para fornecer um cenário offline completo.
 
 ### <a name="from-a-device-with-internet-access"></a>De um dispositivo com acesso à internet
 
 1. Abra um prompt do PowerShell.
 
-2. Importe o módulo do PowerShell do gerenciamento de cliente da web de área de trabalho remota da Galeria do PowerShell:
+2. Importe o módulo do PowerShell do gerenciamento de cliente da Web de Área de Trabalho Remota da galeria do PowerShell:
     ```PowerShell
     Import-Module -Name RDWebClientManagement
     ```
 
-3. Baixe a versão mais recente do cliente de web de área de trabalho remota para instalação em um dispositivo diferente:
+3. Baixe a versão mais recente do cliente da Web de Área de Trabalho Remota para instalação em um dispositivo diferente:
     ```PowerShell
     Save-RDWebClientPackage "C:\WebClient\"
     ```
 
-4. Baixe a versão mais recente do módulo do RDWebClientManagement PowerShell:
+4. Baixe a versão mais recente do módulo RDWebClientManagement do PowerShell:
     ```PowerShell
     Find-Module -Name "RDWebClientManagement" -Repository "PSGallery" | Save-Module -Path "C:\WebClient\"
     ```
 
-5. Copie o conteúdo de "C:\WebClient\" para o servidor de acesso via Web RD.
+5. Copie o conteúdo de "C:\WebClient\" para o servidor de acesso via Web à Área de Trabalho Remota.
 
-### <a name="from-the-rd-web-access-server"></a>O servidor de acesso de Web de área de trabalho remota
+### <a name="from-the-rd-web-access-server"></a>No servidor de Acesso via Web da Área de Trabalho Remota
 
-Siga as instruções em [como publicar o cliente da web de área de trabalho remota](remote-desktop-web-client-admin.md#how-to-publish-the-remote-desktop-web-client), substituindo as etapas 4 e 5 com o seguinte.
+Siga as instruções em [Como publicar o cliente da Web de Área de Trabalho Remota](remote-desktop-web-client-admin.md#how-to-publish-the-remote-desktop-web-client), substituindo as etapas 4 e 5 pelo seguinte.
 
-4. Importe o módulo do PowerShell do gerenciamento de cliente da web de área de trabalho remota na pasta local:
+4. Importe o módulo do PowerShell do gerenciamento de cliente da Web de Área de Trabalho Remota da pasta local:
     ```PowerShell
     Import-Module -Name "C:\WebClient\"
     ```
 
-5. Implante a versão mais recente do cliente web da área de trabalho remota na pasta local (Substituir pelo arquivo zip apropriado):
+5. Implante a versão mais recente do cliente da Web da Área de Trabalho Remota pela pasta local (substituir pelo arquivo zip apropriado):
     ```PowerShell
     Install-RDWebClientPackage -Source "C:\WebClient\rdwebclient-1.0.1.zip"
     ```
 
-## <a name="connecting-to-rd-broker-without-rd-gateway-in-windows-server-2019"></a>Conectar-se ao agente de área de trabalho sem o Gateway de área de trabalho remota no Windows Server de 2019
-Esta seção descreve como habilitar uma conexão de cliente da web com um agente de área de trabalho remota sem um Gateway de área de trabalho remota no Windows Server 2019.
+## <a name="connecting-to-rd-broker-without-rd-gateway-in-windows-server-2019"></a>Conecte-se ao Agente de Área de Trabalho Remota sem o Gateway de Área de Trabalho Remota no Windows Server de 2019
+Esta seção descreve como habilitar uma conexão de cliente da Web com um Agente de Área de Trabalho Remota sem um Gateway de Área de Trabalho Remota no Windows Server 2019.
 
-### <a name="setting-up-the-rd-broker-server"></a>Como configurar o servidor do agente de área de trabalho remota
+### <a name="setting-up-the-rd-broker-server"></a>Como configurar o servidor do Agente de Área de Trabalho Remota
 
-#### <a name="follow-these-steps-if-there-is-no-certificate-bound-to-the-rd-broker-server"></a>Siga estas etapas se não houver nenhum certificado associado ao servidor do agente de área de trabalho remota
+#### <a name="follow-these-steps-if-there-is-no-certificate-bound-to-the-rd-broker-server"></a>Siga estas etapas se não houver nenhum certificado associado ao servidor do Agente de Área de Trabalho Remota
 
-1. Abra **Gerenciador de servidores** > **dos serviços de área de trabalho remota**.
+1. Abra **Gerenciador de Servidores** > **Serviços de Área de Trabalho Remota**.
 
-2. Na **visão geral da implantação** seção, selecione a **tarefas** menu suspenso.
+2. Na seção **Visão Geral da Implantação**, selecione o menu suspenso **Tarefas**.
 
-3. Selecione **editar propriedades de implantação**, uma nova janela intitulada **propriedades de implantação** será aberta.
+3. Selecione **Editar Propriedades de Implantação**, uma nova janela intitulada **Propriedades de Implantação** será aberta.
 
-4. No **propriedades de implantação** janela, selecione **certificados** no menu à esquerda.
+4. Na janela **Propriedades de Implantação**, selecione **Certificados** no menu à esquerda.
 
-5. Na lista de níveis de certificado, selecione **agente de Conexão de área de trabalho - habilitar logon único**. Você tem duas opções: (1) crie um novo certificado ou (2) um certificado existente.
+5. Na lista de Níveis de Certificado, selecione **Agente de Conexão de Área de Trabalho Remota – Habilitar Logon Único**. Você tem duas opções: (1) crie um novo certificado ou (2) um certificado existente.
 
-#### <a name="follow-these-steps-if-there-is-a-certificate-previously-bound-to-the-rd-broker-server"></a>Siga estas etapas se houver um certificado associado anteriormente ao servidor do agente de área de trabalho remota
+#### <a name="follow-these-steps-if-there-is-a-certificate-previously-bound-to-the-rd-broker-server"></a>Siga estas etapas se houver um certificado anteriormente associado ao servidor do Agente de Área de Trabalho Remota
 
-1. Abra o certificado associado ao agente e copie a **impressão digital** valor.
+1. Abra o certificado associado ao Agente e copie o valor de **Impressão Digital**.
 
-2. Para associar esse certificado para a porta segura 3392, abra uma janela do PowerShell com privilégios elevados e execute o seguinte comando, substituindo **"< impressão digital >"** com o valor copiado na etapa anterior:
+2. Para associar esse certificado à porta segura 3392, abra uma janela do PowerShell com privilégios elevados e execute o seguinte comando, substituindo **"< thumbprint >"** pelo valor copiado na etapa anterior:
 
     ```PowerShell
     netsh http add sslcert ipport=0.0.0.0:3392 certhash="<thumbprint>" certstorename="Remote Desktop" appid="{00000000-0000-0000-0000-000000000000}"
@@ -216,14 +216,14 @@ Esta seção descreve como habilitar uma conexão de cliente da web com um agent
     >
     > Na lista de associações do certificado SSL, certifique-se de que o certificado correto está associado à porta 3392.
 
-3. Abra o registro do Windows (regedit) e nagivate para ```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp``` e localize a chave **WebSocketURI**. O valor deve ser definido como <strong>https://+:3392/rdp/</strong>.
+3. Abra o registro do Windows (regedit), navegue até ```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp``` e localize a chave **WebSocketURI**. O valor deve ser definido como <strong>https://+:3392/rdp/</strong>.
 
-### <a name="setting-up-the-rd-session-host"></a>Como configurar o Host de sessão de área de trabalho remota
-Se o servidor de Host de sessão de área de trabalho remota é diferente do servidor do agente de área de trabalho remota, siga estas etapas:
+### <a name="setting-up-the-rd-session-host"></a>Como configurar o Host de Sessão de Área de Trabalho Remota
+Siga estas etapas se o servidor de Host da Sessão de Área de Trabalho Remota for diferente do servidor do Agente de Área de Trabalho Remota:
 
-1. Criar um certificado para a máquina de Host de sessão de área de trabalho remota, abri-lo e copiar o **impressão digital** valor.
+1. Crie um certificado para a máquina do Host de Sessão de Área de Trabalho Remota, abra e copie o valor de **Impressão Digital**.
 
-2. Para associar esse certificado para a porta segura 3392, abra uma janela do PowerShell com privilégios elevados e execute o seguinte comando, substituindo **"< impressão digital >"** com o valor copiado na etapa anterior:
+2. Para associar esse certificado à porta segura 3392, abra uma janela do PowerShell com privilégios elevados e execute o seguinte comando, substituindo **"< thumbprint >"** pelo valor copiado na etapa anterior:
 
     ```PowerShell
     netsh http add sslcert ipport=0.0.0.0:3392 certhash="<thumbprint>" appid="{00000000-0000-0000-0000-000000000000}"
@@ -238,23 +238,23 @@ Se o servidor de Host de sessão de área de trabalho remota é diferente do ser
     >
     > Na lista de associações do certificado SSL, certifique-se de que o certificado correto está associado à porta 3392.
 
-3. Abra o registro do Windows (regedit) e nagivate para ```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp``` e localize a chave **WebSocketURI**. O valor deve ser definido como <https://+:3392/rdp/>.
+3. Abra o registro do Windows (regedit), navegue até ```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp``` e localize a chave **WebSocketURI**. O valor deve ser definido como <https://+:3392/rdp/>.
 
 ### <a name="general-observations"></a>Observações gerais
 
-* Certifique-se de que o do Host de sessão de área de trabalho remota e o agente de área de trabalho remota no servidor esteja executando Windows Server 2019.
+* Certifique-se de que o Host de Sessão de Área de Trabalho Remota e o servidor do Agente de Área de Trabalho Remota estejam executando o Windows Server 2019.
 
-* Certifique-se de que pública confiável certificados são configurados do Host de sessão de área de trabalho remota e o agente de área de trabalho remota no servidor.
+* Certifique-se de que certificados públicos confiáveis estejam configurados tanto no Host de Sessão de Área de Trabalho Remota quanto no servidor do Agente de Área de Trabalho Remota.
     > [!NOTE]
-    > Se o Host de sessão de área de trabalho remota e o servidor do agente de área de trabalho remota compartilham o mesmo computador, defina o certificado do servidor de agente de área de trabalho remota apenas. Se o servidor Host de sessão de área de trabalho remota e área de trabalho remota Broker usar computadores diferentes, ambos devem ser configuradas com certificados exclusivos.
+    > Caso o Host de Sessão de Área de Trabalho Remota e o servidor de Agente Área de Trabalho Remota compartilhem a mesma máquina, defina apenas o certificado do servidor do Agente de Área de Trabalho Remota. Se o Host da Sessão de Área de Trabalho Remota e o servidor do Agente de Área de Trabalho Remota usarem máquinas diferentes, ambos precisam ser configurados com certificados exclusivos.
 
-* O **nome alternativo da entidade (SAN)** para cada certificado deve ser definido para a máquina **totalmente o nome de domínio qualificado (FQDN)** . O **CN (nome comum)** deve coincidir com a SAN para cada certificado.
+* O **Nome Alternativo da Entidade (SAN)** para cada certificado deve ser definido para o **Nome de Domínio Totalmente Qualificado (FQDN)** da máquina. O **Nome Comum (CN)** precisa corresponder ao SAN de cada certificado.
 
-## <a name="how-to-pre-configure-settings-for-remote-desktop-web-client-users"></a>Como predefinir as configurações para usuários de cliente da web da área de trabalho remota
-Esta seção informa como usar o PowerShell para definir configurações para a implantação do cliente da web da área de trabalho remota. Esses cmdlets de PowerShell controlam a capacidade do usuário para alterar as configurações com base em questões de segurança da sua organização ou se destina o fluxo de trabalho. As configurações a seguir estão todas localizadas na **configurações** painel do lado do cliente web. 
+## <a name="how-to-pre-configure-settings-for-remote-desktop-web-client-users"></a>Como predefinir as configurações para usuários de cliente da Web da Área de Trabalho Remota
+Esta seção informa como usar o PowerShell para definir configurações da implantação do cliente da Web da Área de Trabalho Remota. Esses cmdlets do PowerShell controlam a capacidade do usuário de alterar as configurações com base em questões de segurança da organização ou ao fluxo de trabalho pretendido. As configurações a seguir estão todas localizadas no painel lateral **Configurações** cliente da Web. 
 
-### <a name="suppress-telemetry"></a>Suprimir a Telemetria
-Por padrão, os usuários podem optar por habilitar ou desabilitar a coleta de dados de telemetria são enviadas à Microsoft. Para obter informações sobre os dados de telemetria a Microsoft coleta, consulte a declaração de privacidade por meio do link na **sobre** painel lateral.
+### <a name="suppress-telemetry"></a>Suprimir a telemetria
+Por padrão, os usuários podem optar por habilitar ou desabilitar a coleta de dados de telemetria que são enviados à Microsoft. Para saber mais sobre os dados de telemetria que a Microsoft coleta, confira a Declaração de Privacidade no link no painel lateral **Sobre**.
 
 Como administrador, você pode escolher suprimir a coleta de telemetria para sua implantação usando o seguinte cmdlet do PowerShell:
 
@@ -262,18 +262,18 @@ Como administrador, você pode escolher suprimir a coleta de telemetria para sua
     Set-RDWebClientDeploymentSetting -SuppressTelemetry $true
    ```
 
-Por padrão, o usuário pode selecionar para habilitar ou desabilitar a telemetria. Um valor booliano **$false** corresponderá o comportamento do cliente padrão. Um valor booliano **$true** desabilita a telemetria e restringe o usuário habilite a telemetria.
+Por padrão, o usuário pode optar por habilitar ou desabilitar a telemetria. Um valor booliano **$false** corresponderá ao comportamento do cliente padrão. Um valor booliano **$true** desabilita a telemetria e restringe a habilitação da telemetria por parte do usuário.
 
 ### <a name="remote-resource-launch-method"></a>Método de inicialização do recurso remoto
-Por padrão, os usuários podem optar por iniciar recursos remotos (1) no navegador ou (2) baixando um arquivo. rdp para tratar com outro cliente instalado em seu computador. Como administrador, você pode optar por restringir o método de inicialização do recurso remoto para sua implantação com o seguinte comando do Powershell:
+Por padrão, os usuários podem optar por iniciar recursos remotos (1) no navegador ou (2) baixando um arquivo .rdp para lidar com outro cliente instalado em seu computador. Como administrador, você pode optar por restringir o método de inicialização do recurso remoto para sua implantação com o seguinte comando do Powershell:
 
    ```PowerShell
     Set-RDWebClientDeploymentSetting -LaunchResourceInBrowser ($true|$false)
    ```
- Por padrão, o usuário pode selecionar qualquer um dos métodos de inicialização. Um valor booliano **$true** forçará o usuário para iniciar os recursos no navegador. Um valor booliano **$false** forçará o usuário inicie recursos baixando um arquivo. rdp para tratar com um cliente RDP instalado localmente.
+ Por padrão, o usuário pode selecionar qualquer um dos métodos de inicialização. Um valor booliano **$true** forçará o usuário a iniciar os recursos no navegador. Um valor booliano **$false** forçará o usuário a iniciar os recursos baixando um arquivo .rdp para lidar com um cliente RDP instalado localmente.
 
-### <a name="reset-rdwebclientdeploymentsetting-configurations-to-default"></a>Redefinir configurações RDWebClientDeploymentSetting para padrão
-Para redefinir todas as configurações de cliente web de nível de implantação para as configurações padrão, execute o seguinte cmdlet do PowerShell:
+### <a name="reset-rdwebclientdeploymentsetting-configurations-to-default"></a>Redefinir configurações de RDWebClientDeploymentSetting para o padrão
+Para redefinir todas as configurações de cliente Web no nível da implantação para as configurações padrão, execute o seguinte cmdlet do PowerShell:
 
    ```PowerShell
     Reset-RDWebClientDeploymentSetting 
@@ -281,22 +281,22 @@ Para redefinir todas as configurações de cliente web de nível de implantaçã
 
 ## <a name="troubleshooting"></a>Solução de problemas
 
-Se um usuário relata qualquer um dos seguintes problemas ao abrir o cliente web pela primeira vez, as seções a seguir informará o que fazer para corrigi-los.
+Se um usuário relatar qualquer um dos seguintes problemas ao abrir o cliente Web pela primeira vez, as seções a seguir informarão o que fazer para corrigi-los.
 
-### <a name="what-to-do-if-the-users-browser-shows-a-security-warning-when-they-try-to-access-the-web-client"></a>O que fazer se o navegador do usuário mostra um aviso de segurança quando tentarem acessar o cliente da web
+### <a name="what-to-do-if-the-users-browser-shows-a-security-warning-when-they-try-to-access-the-web-client"></a>O que fazer se o navegador do usuário mostra um aviso de segurança quando ele tenta acessar o cliente da Web
 
-A função acesso via Web RD talvez não estejam usando um certificado confiável. Verifique se que a função acesso via Web RD é configurada com um certificado confiável publicamente.
+A função Acesso via Web à Área de Trabalho Remota talvez não esteja usando um certificado confiável. Verifique se a função Acesso via Web à Área de Trabalho Remota está configurada com um certificado confiável publicamente.
 
-Se isso não funcionar, o nome do servidor da web URL do cliente pode não corresponder ao nome fornecido pelo certificado da Web da área de trabalho remota. Verifique se que a URL usa o FQDN do servidor que hospeda a função Web da área de trabalho remota.
+Se isso não funcionar, o nome do servidor na URL do cliente da Web pode não corresponder ao nome fornecido pelo certificado da Web da Área de Trabalho Remota. Verifique se que a URL usa o FQDN do servidor que hospeda a função Web da Área de Trabalho Remota.
 
-### <a name="what-to-do-if-the-user-cant-connect-to-a-resource-with-the-web-client-even-though-they-can-see-the-items-under-all-resources"></a>O que fazer se o usuário não pode se conectar a um recurso com o cliente da web, embora eles podem ver os itens em todos os recursos
+### <a name="what-to-do-if-the-user-cant-connect-to-a-resource-with-the-web-client-even-though-they-can-see-the-items-under-all-resources"></a>O que fazer se o usuário não conseguir se conectar a um recurso com o cliente da Web, mesmo que consigam ver os itens em Todos os Recursos
 
-Se o usuário relata que eles não é possível conectar com o cliente da web, mesmo que eles podem ver os recursos listados, verifique os seguintes itens:
+Se o usuário relata que não consegue se conectar ao cliente da Web, mesmo que consiga ver os recursos listados, verifique os seguintes itens:
 
-* A função do Gateway de área de trabalho remota está configurada corretamente para usar um certificado público?
-* O servidor de Gateway de área de trabalho remota tem as atualizações necessárias instaladas? Certifique-se de que o servidor tem [a atualização KB4025334](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334) instalado.
+* A função do Gateway de Área de Trabalho Remota está configurada corretamente para usar um certificado público confiável?
+* O servidor de Gateway de Área de Trabalho Remota tem as atualizações necessárias instaladas? Certifique-se de que o servidor tem [a atualização KB4025334](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334) instalada.
 
-Se o usuário recebe um erro "o certificado de autenticação de servidor inesperado foi recebido" ao tentar conectar-se, em seguida, a mensagem mostrará a impressão digital do certificado da mensagem. Pesquise Gerenciador de certificados do servidor do agente de área de trabalho remota usando essa impressão digital para localizar o certificado correto. Verifique se o certificado é configurado para ser usado para a função de agente de área de trabalho remota na página de propriedades de implantação de área de trabalho remota. Depois de verificar se o certificado ainda não tiver expirado, copie o certificado no formato de arquivo. cer para o servidor de acesso via Web RD e execute o seguinte comando no servidor de acesso via Web RD com o valor entre colchetes substituído pelo caminho do arquivo do certificado:
+Se o usuário receber um erro "certificado de autenticação de servidor inesperado recebido" ao tentar se conectar, a mensagem mostrará a impressão digital do certificado. Pesquise o gerenciador de certificados do servidor do agente de Área de Trabalho Remota usando essa impressão digital para localizar o certificado correto. Verifique se o certificado está configurado para ser usado para a função de Agente de Área de Trabalho Remota na página de propriedades da implantação de Área de Trabalho Remota. Depois de verificar se o certificado não expirou, copie o certificado no formato de arquivo .cer para o servidor de Acesso via Web à Área de Trabalho Remota e execute o seguinte comando no servidor de Acesso via Web RD à Área de Trabalho Remota com o valor entre colchetes substituído pelo caminho do arquivo do certificado:
 
 ```PowerShell
 Import-RDWebClientBrokerCert <certificate file path>
@@ -304,16 +304,16 @@ Import-RDWebClientBrokerCert <certificate file path>
 
 ### <a name="diagnose-issues-with-the-console-log"></a>Diagnosticar problemas com o log de console
 
-Se você não conseguir resolver o problema com base nas instruções para solução de problemas neste artigo, você pode tentar diagnosticar a origem do problema observando o console de log no navegador. O cliente da web fornece um método para registrar a atividade de log de console do navegador ao usar o cliente da web para ajudar a diagnosticar problemas.
+Se não conseguir resolver o problema com base nas instruções de solução de problemas neste artigo, você pode tentar diagnosticar a origem do problema observando o log do console no navegador. O cliente da Web fornece um método para registrar a atividade de log de console do navegador ao usar o cliente da Web para ajudar a diagnosticar problemas.
 
-* Selecione as reticências no canto superior direito e navegue até a **sobre** página no menu suspenso.
-* Sob **informações de suporte de captura** selecionar a **inicie a gravação** botão.
-* Execute as operações no cliente web que produziu o problema que você está tentando diagnosticar.
-* Navegue até a **sobre** página e selecione **Parar gravação**.
-* O navegador baixará automaticamente um arquivo. txt intitulado **logs de Console da área de trabalho remota**. Esse arquivo conterá a atividade de log de console completo gerada ao reproduzir o problema de destino.
+* Selecione as reticências no canto superior direito e navegue até a página **Sobre** no menu suspenso.
+* Em **Capturar informações de suporte**, selecione o botão **Iniciar gravação**.
+* Execute as operações que produziram o problema que você está tentando diagnosticar no cliente Web.
+* Navegue até a página **Sobre** e selecione **Parar gravação**.
+* O navegador baixará automaticamente um arquivo .txt intitulado **RD Console Logs.txt**. Esse arquivo conterá a atividade de log completa do console gerada ao reproduzir o problema em questão.
 
-O console também pode ser acessado diretamente por meio de seu navegador. O console geralmente está localizado em ferramentas de desenvolvedor. Por exemplo, você pode acessar o log no Microsoft Edge pressionando a **F12** chave ou selecionando as reticências, navegando para **mais ferramentas** > **Ferramentasdedesenvolvedor**.
+O console também pode ser acessado diretamente pelo navegador. O console geralmente está localizado nas ferramentas de desenvolvedor. Por exemplo, você pode acessar o log no Microsoft Edge pressionando a tecla **F12** ou selecionando as reticências e navegando até **Mais ferramentas** > **Ferramentas de Desenvolvedor**.
 
-## <a name="get-help-with-the-web-client"></a>Obtenha ajuda com o cliente da web
+## <a name="get-help-with-the-web-client"></a>Obter ajuda com o cliente Web
 
-Se você tiver encontrado um problema que não pode ser resolvido com as informações neste artigo, você pode [-em um email](mailto:rdwbclnt@microsoft.com) para relatá-lo. Você também pode solicitar ou votar em novos recursos no nosso [caixa de sugestões](https://aka.ms/rdwebfbk).
+Se você tiver encontrado um problema que não pode ser resolvido com as informações neste artigo, é possível enviar [um e-mail](mailto:rdwbclnt@microsoft.com) para relatá-lo. Você também pode solicitar ou votar em novos recursos em nossa [caixa de sugestões](https://aka.ms/rdwebfbk).
