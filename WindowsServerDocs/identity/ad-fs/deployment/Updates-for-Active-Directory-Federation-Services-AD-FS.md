@@ -9,12 +9,12 @@ ms.date: 3/29/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 071017d05b288a70592af9203fedc72f699d18e0
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 2336847825cfb3f232674a1e39d3bab7953a32c0
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191941"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792297"
 ---
 # <a name="required-updates-for-active-directory-federation-services-ad-fs-and-web-application-proxy-wap"></a>Atualizações necessárias para os serviços de Federação do Active Directory (AD FS) e o Proxy de aplicativo Web (WAP)
 
@@ -29,6 +29,7 @@ Atualizações para o Windows Server 2016 são distribuídas mensalmente via Win
 
 |KB # |Descrição|Data de lançamento
 |----- | ----- |-----
+|[CVE-2019-1126](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2019-1126) | Esta atualização de segurança resolve uma vulnerabilidade nos serviços de Federação do Active Directory (AD FS) que pode permitir que um invasor ignorar a política de bloqueio de extranet. |Julho de 2019|
 |[4489889 (Build do sistema operacional 14393.2879)](https://support.microsoft.com/help/4489889/windows-10-update-kb4489889) | Resolve um problema nos serviços de Federação do Active Directory (AD FS) que faz com que uma duplicata para aparecer no console de gerenciamento do AD FS de confiança de terceira parte confiável. Isso ocorre quando você criar ou exibir relações de confiança de terceira parte confiável usando o console de gerenciamento do AD FS. |Março de 2019|
 |[4487006 (Build do sistema operacional 14393.2828)](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) | Resolve um problema que faz com que as atualizações para uma terceira parte confiável para falhar ao usar o PowerShell ou o console de gerenciamento de serviços de Federação do Active Directory (AD FS). Esse problema ocorre se você configurar uma terceira parte confiável para usar uma URL de metadados online que publicam PassiveRequestorEndpoint mais de um. O erro é, "MSIS7615: Os pontos de extremidade confiáveis especificados em uma terceira parte confiável devem ser exclusivos para essa terceira parte confiável."  </br></br>Resolve um problema que exibe uma mensagem de erro específico para alterações de senha de complexidade externo devido às políticas de proteção por senha do Azure. |Fevereiro de 2019|
 |[4462928 (Build do sistema operacional 14393.2580)](https://support.microsoft.com/help/4462928/windows-10-update-kb4462928)|Aborda problemas de interoperabilidade entre serviços de Federação do Active Directory (ADFS) Extranet inteligente bloqueio (ESL) e a ID de logon alternativo. Quando a ID de logon alternativo é habilitada, chamadas para cmdlets do Powershell do AD FS, Get-AdfsAccountActivity e Reset-AdfsAccountLockout, retornam erros "Conta não encontrada". Quando Set AdfsAccountActivity é chamado, uma nova entrada é adicionada, em vez de editar uma já existente.|Outubro de 2018|
@@ -50,11 +51,12 @@ Abaixo está a lista de hotfixes e atualização de pacotes cumulativos de atual
 
 |KB # |Descrição|Data de lançamento
 |----- | ----- |-----
-|[4041685](https://support.microsoft.com/kb/4041685)|Abordou um problema do AD FS onde MSISConext cookies nos cabeçalhos de solicitação podem, eventualmente, o limite de tamanho de cabeçalhos de estouro e causar falha ao autenticar com o código de status HTTP 400 "Ruim solicitação – cabeçalho muito longo".</br></br>Corrigido um problema em que o ADFS não podem mais ignorar "prompt = login" durante a autenticação. Uma opção "Desabilitada" foi adicionada para restaurar cenários em que a autenticação de senha e não é usada.|Visualização de outubro de 2017 do pacote cumulativo de atualizações|
-|[4019217](https://support.microsoft.com/kb/4019217)|Os clientes que usam o agente de token não funcionam ao usar um servidor do Server 2012 R2 AD FS de pastas de trabalho|Pacote cumulativo de atualizações de versão prévia de maio de 2017|
-|[4015550](https://support.microsoft.com/kb/4015550)|Corrigido um problema com o AD FS não autenticar usuários externos e falhando aleatoriamente encaminhar a solicitação de WAP do AD FS|Pacote cumulativo de atualizações de abril de 2017|
-|[4015547](https://support.microsoft.com/kb/4015547)|Corrigido um problema com o AD FS não autenticar usuários externos e falhando aleatoriamente encaminhar a solicitação de WAP do AD FS|Atualização de segurança de abril de 2017|
-|[4012216](https://support.microsoft.com/kb/4009970)|019 MS17 esta atualização de segurança resolve uma vulnerabilidade no Active Directory Federation Services (ADFS). A vulnerabilidade poderia permitir a divulgação de informações se um invasor envia uma solicitação específica a um servidor do AD FS, permitindo que o invasor leia informações confidenciais sobre o sistema de destino.|Pacote cumulativo de atualizações de março de 2017|
+|[4507448](https://support.microsoft.com/help/4507448/windows-8-1-update-kb4507448)| Esta atualização de segurança resolve uma vulnerabilidade nos serviços de Federação do Active Directory (AD FS) que pode permitir que um invasor ignorar a política de bloqueio de extranet. |Julho de 2019
+|[4041685](https://support.microsoft.com/kb/4041685)|Abordou um problema do AD FS onde MSISConext cookies nos cabeçalhos de solicitação podem, eventualmente, o limite de tamanho de cabeçalhos de estouro e causar falha ao autenticar com o código de status HTTP 400 "Ruim solicitação – cabeçalho muito longo".</br></br>Corrigido um problema em que o ADFS não podem mais ignorar "prompt = login" durante a autenticação. Uma opção "Desabilitada" foi adicionada para restaurar cenários em que a autenticação de senha e não é usada.|Visualização de outubro de 2017 do pacote cumulativo de atualizações
+|[4019217](https://support.microsoft.com/kb/4019217)|Os clientes que usam o agente de token não funcionam ao usar um servidor do Server 2012 R2 AD FS de pastas de trabalho|Pacote cumulativo de atualizações de versão prévia de maio de 2017
+|[4015550](https://support.microsoft.com/kb/4015550)|Corrigido um problema com o AD FS não autenticar usuários externos e falhando aleatoriamente encaminhar a solicitação de WAP do AD FS|Pacote cumulativo de atualizações de abril de 2017
+|[4015547](https://support.microsoft.com/kb/4015547)|Corrigido um problema com o AD FS não autenticar usuários externos e falhando aleatoriamente encaminhar a solicitação de WAP do AD FS|Atualização de segurança de abril de 2017
+|[4012216](https://support.microsoft.com/kb/4009970)|019 MS17 esta atualização de segurança resolve uma vulnerabilidade no Active Directory Federation Services (ADFS). A vulnerabilidade poderia permitir a divulgação de informações se um invasor envia uma solicitação específica a um servidor do AD FS, permitindo que o invasor leia informações confidenciais sobre o sistema de destino.|Pacote cumulativo de atualizações de março de 2017
 |[3179574](https://support.microsoft.com/kb/3179574)|Corrigido o problema com a atualização da senha de extranet do AD FS. |Pacote cumulativo de atualizações de agosto de 2016
 |[3172614](https://support.microsoft.com/kb/3172614)|Introduzida prompt = logon [suporte](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/overview/ad-fs-faq#BKMK_7), correção de problema com o console de gerenciamento do AD FS e a configuração de AlwaysRequireAuthentication. |Pacote cumulativo de atualizações de julho de 2016
 |[3163306](https://support.microsoft.com/kb/3163306)|Os serviços de Federação do Active Directory (AD FS) 3.0 não é possível se conectar a repositórios de atributo de Lightweight Directory Access Protocol (LDAP) que são configurados para usar Secure Sockets Layer (SSL) porta 636 ou 3269 na cadeia de caracteres de conexão. |Atualização cumulativa de junho de 2016
@@ -93,7 +95,7 @@ Abaixo está a lista de hotfixes e atualização de pacotes cumulativos de atual
 |[3197878](https://support.microsoft.com/kb/3197878)|Falha de autenticação por meio do proxy no Windows Server 2012 (Esta é a versão geral de hotfix 3094446)|Pacote cumulativo de qualidade de novembro de 2016|AD FS 2.1
 |[3197869](https://support.microsoft.com/kb/3197869)|Falha de autenticação por meio do proxy no Windows Server 2008 R2 SP1 (Esta é a versão geral de hotfix 3094446)|Pacote cumulativo de qualidade de novembro de 2016|AD FS 2.0
 |[3094446](https://support.microsoft.com/kb/3094446)|Falha de autenticação por meio do proxy no Windows Server 2012 ou Windows Server 2008 R2 SP1|Setembro de 2015|O AD FS 2.0 e 2.1
-|[3070078](https://support.microsoft.com/kb/3070078)|2.1 do AD FS gera uma exceção ao autenticar em um certificado de criptografia no Windows Server 2012|Julho de 2015|AD FS 2.1
+|[3070078](https://support.microsoft.com/kb/3070078)|2\.1 do AD FS gera uma exceção ao autenticar em um certificado de criptografia no Windows Server 2012|Julho de 2015|AD FS 2.1
 |[3062577](https://support.microsoft.com/kb/3062577)|MS15-062: Vulnerabilidade nos serviços de Federação do Active Directory poderia permitir elevação de privilégio|Junho de 2015|AD FS 2.0 / 2.1
 |[3003381](https://support.microsoft.com/kb/3003381)|MS14-077: Vulnerabilidade nos serviços de Federação do Active Directory poderia permitir a divulgação de informações: 14 de abril de 2015|Novembro de 2014|AD FS 2.0 / 2.1
 |[2987843](https://support.microsoft.com/kb/2987843)|Uso de memória do servidor de Federação do AD FS crescendo quando muitos usuários fazem logon em um aplicativo web no Windows Server 2012|Julho de 2014|AD FS 2.1

@@ -9,12 +9,12 @@ manager: dongill
 ms.author: jgerend
 ms.date: 6/24/2017
 description: Como implantar Pastas de Trabalho, incluindo a instalação da função de servidor, a criação de compartilhamentos de sincronização e a criação de registros DNS.
-ms.openlocfilehash: 1ed26c9949fa3f4b53b9f650ca5a3649d5261d65
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d2ba117a021cfc7361c0f7c8df2ed9f3c4bc9d94
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447856"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792337"
 ---
 # <a name="deploying-work-folders"></a>Implantando Pastas de Trabalho
 
@@ -51,7 +51,7 @@ Este tópico aborda as etapas necessárias à implantação de Pastas de Trabalh
 ## <a name="step-2-create-dns-records"></a>Etapa 2: Criar registros DNS  
  Para permitir que os usuários sincronizem na Internet, você deve criar um registro Host (A) no DNS público para permitir que clientes da Internet resolvam sua URL de Pastas de Trabalho. Esse registro de DNS deve resolver para a interface externa do servidor proxy reverso.  
   
- Na rede interna, crie um registro CNAME no DNS denominado workfolders que retornará o FDQN de um servidor de Pastas de Trabalho. Quando os clientes de pastas de trabalho usam descoberta automática, a URL usada para descobrir o servidor de pastas de trabalho é https://workfolders.domain.com. Se você pretende usar a descoberta automática, o registro CNAME workfolders deve constar no DNS.  
+ Na rede interna, crie um registro CNAME no DNS denominado workfolders que retornará o FDQN de um servidor de Pastas de Trabalho. Quando os clientes de pastas de trabalho usam descoberta automática, a URL usada para descobrir o servidor de pastas de trabalho é https:\//workfolders.domain.com. Se você pretende usar a descoberta automática, o registro CNAME workfolders deve constar no DNS.  
   
 ## <a name="step-3-install-work-folders-on-file-servers"></a>Etapa 3: Instalar Pastas de Trabalho em servidores de arquivos  
  Você pode instalar Pastas de Trabalho em um servidor ingressado no domínio usando o Gerenciador de Servidores ou usando o Windows PowerShell, local ou remotamente em uma rede. Isso será útil se você estiver configurando vários servidores de sincronização na rede.  
@@ -251,7 +251,7 @@ O exemplo acima cria um novo compartilhamento de sincronização chamado *Share0
 6.  Na caixa **Valor a ser adicionado**, digite a URL do servidor de sincronização com o qual você deseja sincronizar esse usuário, clique em **Adicionar**, em **OK** e em **OK** novamente.  
   
     > [!NOTE]
-    >  A URL do servidor de sincronização é apenas `https://` ou `http://` (dependendo se você deseja exigir uma conexão segura) seguida pelo nome de domínio totalmente qualificado do servidor de sincronização. Por exemplo, **https://sync1.contoso.com** .
+    >  A URL do servidor de sincronização é apenas `https://` ou `http://` (dependendo se você deseja exigir uma conexão segura) seguida pelo nome de domínio totalmente qualificado do servidor de sincronização. Por exemplo, **https:\//sync1.contoso.com**.
 
 Para preencher o atributo de vários usuários, use o Active Directory PowerShell. Abaixo está um exemplo que preenche o atributo para todos os membros do grupo *Usuários de Compartilhamento de Sincronização de RH* , abordado na Etapa 5.
   

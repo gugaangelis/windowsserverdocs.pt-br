@@ -12,16 +12,16 @@ ms.topic: article
 ms.assetid: a1ce7af5-f3fe-4fc9-82e8-926800e37bc1
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 9a3ee39736fb4ee2eb41162db27fed2299c204e5
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: f3b1837145dee5767741052c548a4b44da56659b
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281194"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792326"
 ---
 # <a name="step-1-plan-the-remote-access-infrastructure"></a>Etapa 1 planejar a infraestrutura de acesso remoto
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 > [!NOTE]
 > Windows Server 2016 combina o DirectAccess e o roteamento e acesso remoto (RRAS) em uma única função de acesso remoto.  
@@ -270,7 +270,7 @@ DNS com partição de rede refere-se ao uso do mesmo domínio DNS para resoluç�
   
 Para implantações de DNS com partição de rede, você deve listar os FQDNs duplicados na Internet e intranet e decidir quais recursos o cliente DirectAccess deve alcance a intranet ou a versão de Internet. Quando desejar que os clientes DirectAccess acessem a versão de Internet, você deve adicionar o FQDN correspondente como uma regra de isenção à NRPT para cada recurso.  
   
-Em um ambiente DNS com partição de rede, se você quiser que as duas versões do recurso esteja disponível, configure os recursos de intranet com nomes que não duplicam os nomes que são usados na Internet. Em seguida, instrua os usuários a usar o nome alternativo quando eles acessarem os recursos na intranet. Por exemplo, configure www.internal.contoso.com para o nome interno de www.contoso.com.  
+Em um ambiente DNS com partição de rede, se você quiser que as duas versões do recurso esteja disponível, configure os recursos de intranet com nomes que não duplicam os nomes que são usados na Internet. Em seguida, instrua os usuários a usar o nome alternativo quando eles acessarem os recursos na intranet. Por exemplo, configurar www\.internal.contoso.com para o nome interno da www\.contoso.com.  
   
 Em um ambiente de DNS sem partição de rede, o namespace da Internet é diferente do namespace da intranet. Por exemplo, a Contoso Corporation usa contoso.com na Internet e corp.contoso.com na intranet. Como todos os recursos da intranet usam o sufixo DNS corp.contoso.com, a regra da NRPT para corp.contoso.com roteia todas as consultas de nome DNS por recursos de intranet para servidores DNS da intranet. Consultas DNS para nomes com o sufixo contoso.com não correspondem a regra de namespace corp.contoso.com da intranet na NRPT, e elas são enviadas para os servidores DNS da Internet. Com uma implantação de DNS com partição de rede, não é necessário fazer configurações adicionais na NRPT, pois não há duplicação dos FQDNs dos recursos da Internet e da intranet. Os clientes DirectAccess podem acessar os recursos da Internet e da intranet da organização.  
   

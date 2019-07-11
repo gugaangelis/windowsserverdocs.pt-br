@@ -8,16 +8,16 @@ ms.author: harowl
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 96d09b25ddb2f473fb4fe22c0cf716bfcf8becaa
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: ef87a3bcc5bd0b924a938f055307a0a87cb60d0b
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811932"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792325"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>Configurar as permissões e controle de acesso do usuário
 
-> Aplica-se a: Windows Admin Center, Windows Admin Center Preview
+> Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
 
 Se você ainda não fez isso, você se familiarizar com o [opções de controle de acesso do usuário no Windows Admin Center](../plan/user-access-options.md)
 
@@ -111,7 +111,7 @@ Um dos benefícios de usar o Azure AD como uma camada adicional de segurança pa
 
 Quando você instala o Windows Admin Center no Windows 10, está pronto para usar o logon único. No entanto, se você pretende usar o Windows Admin Center no Windows Server, você precisará configurar alguma forma de delegação de Kerberos em seu ambiente antes de poder usar o logon único. A delegação configura o computador do gateway como confiáveis para delegar ao nó de destino. 
 
-Para configurar [delegação restrita baseada em recursos](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1) em seu ambiente, execute os seguintes cmdlets do PowerShell. (Estar ciente de que isso exige um controlador de domínio executando o Windows Server 2012 ou posterior).
+Para configurar [delegação restrita baseada em recursos](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview) em seu ambiente, execute os seguintes cmdlets do PowerShell. (Estar ciente de que isso exige um controlador de domínio executando o Windows Server 2012 ou posterior).
 
 ```powershell
      $gateway = "WindowsAdminCenterGW" # Machine where Windows Admin Center is installed

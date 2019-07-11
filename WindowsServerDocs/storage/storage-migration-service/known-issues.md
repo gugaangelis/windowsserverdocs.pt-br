@@ -4,16 +4,16 @@ description: Problemas conhecidos e solução de problemas de suporte para servi
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
-ms.date: 05/14/2019
+ms.date: 07/09/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: e1cfd2b0ea3bc4d7802cb4a6d2a8c1493d5511a1
-ms.sourcegitcommit: 0099873d69bd23495d275d7bcb464594de09ee3c
+ms.openlocfilehash: 08156a09491d66016b5fcfe6056ed318d682b987
+ms.sourcegitcommit: 514d659c3bcbdd60d1e66d3964ede87b85d79ca9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65699692"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735162"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conhecidos do serviço de migração de armazenamento
 
@@ -36,7 +36,7 @@ Examine o arquivo Leiame para uso.
 
 Ao usar a versão de 1809 do Windows Admin Center para gerenciar um orquestrador de 2019 do Windows Server, você não vir a opção de ferramenta para o serviço de migração de armazenamento. 
 
-A extensão de serviço de migração de armazenamento do Windows Admin Center é associado com a versão para gerenciar somente a versão do Windows Server 2019 1809 ou sistemas operacionais posteriores. Se você usá-lo para gerenciar sistemas de operacionais mais antigos do Windows Server ou visualizações insider, a ferramenta não será exibida. Esse comportamento é previsto no design. 
+A extensão de serviço de migração de armazenamento do Windows Admin Center é associado com a versão para gerenciar somente a versão do Windows Server 2019 1809 ou sistemas operacionais posteriores. Se você usá-lo para gerenciar sistemas de operacionais mais antigos do Windows Server ou visualizações insider, a ferramenta não será exibida. Esse comportamento é padrão. 
 
 Para resolver, usar ou atualizar para o Windows Server 2019 build 1809 ou posterior.
 
@@ -173,12 +173,39 @@ Esse erro será esperado se você não tiver habilitado a regra de firewall "Com
 
 ## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transfering-from-windows-server-2008-r2"></a>Erro "não foi possível transferi-armazenamento em qualquer um dos pontos de extremidade" quando a transferência do Windows Server 2008 R2
 
-Ao tentar transferir dados de um computador de origem do Windows Server 2008 R2, nenhuma trasnfers de dados e você recebe o erro:  
+Ao tentar transferir dados de um computador de origem do Windows Server 2008 R2, não há transferências de dados e você recebe o erro:  
 
   Não foi possível transferir o armazenamento em qualquer um dos pontos de extremidade.
 0x9044
 
 Esse erro será esperado se o computador do Windows Server 2008 R2 não é totalmente corrigido com as atualizações de todas as críticas e importantes do Windows Update. Independentemente do serviço de migração de armazenamento, é sempre recomendável aplicação de patch um computador Windows Server 2008 R2 para fins de segurança, como o sistema operacional não contém as melhorias de segurança de versões mais recentes do Windows Server.
+
+## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-and-check-if-the-source-device-is-online---we-couldnt-access-it"></a>Erro "não foi possível transferi-armazenamento em qualquer um dos pontos de extremidade" e "Verificar se o dispositivo de origem está online - nós não foi possível acessá-lo."
+
+Ao tentar transferir dados de um computador de origem, alguns ou todos os compartilhamentos não são transferidas, com o resumo de erro:
+
+   Não foi possível transferir o armazenamento em qualquer um dos pontos de extremidade.
+0x9044
+
+Examinando os detalhes da transferência SMB mostra o erro:
+
+   Verifique se o dispositivo de origem está online - nós não foi possível acessá-lo.
+
+Examinar o log de eventos do administrador/StorageMigrationService mostra:
+
+   Não foi possível transferir o armazenamento.
+
+   Trabalho: ID do Job1:  
+   Estado: Erro com falha: Mensagem de erro 36931: 
+
+   Diretrizes: Verifique o erro detalhado e verifique se que os requisitos de transferência são atendidos. O trabalho de transferência não foi possível transferir nenhum computador de origem e de destino. Isso pode ocorrer porque o computador do orchestrator não foi possível acessar qualquer computador de origem ou destino, possivelmente devido a uma regra de firewall, ou falta de permissões.
+
+Examinando a StorageMigrationService-Proxy/Debug log mostra:
+
+   Falha na validação de transferência 07/02/2019-13:35:57.231 [Erro]. Código de erro: 40961, ponto de extremidade de origem não está acessível ou não existe, ou as credenciais da fonte são inválidas ou usuário autenticado não tem permissões suficientes para acessá-lo.
+em Microsoft.StorageMigration.Proxy.Service.Transfer.TransferOperation.Validate() em Microsoft.StorageMigration.Proxy.Service.Transfer.TransferRequestHandler.ProcessRequest (FileTransferRequest fileTransferRequest, operationId de Guid)    [d:\os\src\base\dms\proxy\transfer\transferproxy\TransferRequestHandler.cs::
+
+Esse erro será esperado se sua conta de migração não tem pelo menos permissões de acesso de leitura para os compartilhamentos SMB. Para solucionar esse erro, adicione um grupo de segurança que contém a conta de migração de código-fonte para os compartilhamentos do SMB no computador de origem e conceda a ela controle total, alterar ou leitura. Após a migração for concluída, você pode remover esse grupo. Uma versão futura do Windows Server pode alterar esse comportamento para não precisar de permissões explícitas para compartilhamentos de origem.
 
 ## <a name="see-also"></a>Consulte também
 

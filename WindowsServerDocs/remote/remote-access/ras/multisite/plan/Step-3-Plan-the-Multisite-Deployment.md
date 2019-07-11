@@ -12,16 +12,16 @@ ms.topic: article
 ms.assetid: e5ea9d22-a503-4ed4-96b3-0ee2ccf4fd17
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 16a2dcdc573fac2631b5a9890ee04f2efb08d90a
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 973ef70614f056adac1463918cc425d82b21ac62
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282535"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792307"
 ---
 # <a name="step-3-plan-the-multisite-deployment"></a>Etapa 3 plano implantação multissite
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Após planejar a infraestrutura de multissite, planejar quaisquer requisitos de certificado adicionais, como computadores cliente selecionar pontos de entrada e endereços IPv6 atribuídos em sua implantação.  
 
@@ -162,11 +162,11 @@ Em uma implantação multissite o roteamento simétrico é imposto usando Teredo
   
    3. Prefixo de Teredo (opcional). Esse prefixo é relevante apenas se o servidor de acesso remoto está configurado com dois endereços consecutivos sejam públicos IPv4 no adaptador externo. O prefixo baseia-se o primeiro endereço IPv4 público do par de endereço. Por exemplo, se os endereços externos são:  
   
-      1. www.xxx.yyy.zzz  
+      1. www\.xxx.yyy.zzz  
   
-      2. www.xxx.yyy.zzz+1  
+      2. www\.xxx.yyy.zzz+1  
   
-      Em seguida, o prefixo de Teredo para configurar é 2001:0:WWXX:YYZZ::/ 64, onde WWXX: YYZZ é a representação hexadecimal do IPv4 endereço www.xxx.yyy.zzz.  
+      Em seguida, o prefixo de Teredo para configurar é 2001:0:WWXX:YYZZ::/ 64, onde WWXX: YYZZ é a representação hexadecimal de www endereço IPv4\.xxx.yyy.zzz.  
   
       Observe que você pode usar o script a seguir para calcular o prefixo de Teredo:  
   
