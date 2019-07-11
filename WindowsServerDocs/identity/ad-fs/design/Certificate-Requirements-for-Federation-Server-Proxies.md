@@ -22,7 +22,7 @@ Servidores que executam na função de proxy de servidor de federação nos serv
   
 Proxies de servidor de Federação geralmente são expostos a computadores na Internet que não estão incluídos na sua infraestrutura de chave pública do enterprise \(PKI\). Portanto, usar um certificado de autenticação de servidor emitido por um público \(terceiro\-terceiros\) autoridade de certificação \(autoridade de certificação\), por exemplo, VeriSign.  
   
-Quando você tiver um farm de proxy do servidor de federação, todos os computadores de proxy de servidor de Federação devem usar o mesmo certificado de autenticação de servidor. Para obter mais informações, consulte [When to Create a Federation Server Proxy Farm](When-to-Create-a-Federation-Server-Proxy-Farm.md).  
+Quando você tiver um farm de proxy do servidor de federação, todos os computadores de proxy de servidor de Federação devem usar o mesmo certificado de autenticação de servidor. Para obter mais informações, consulte [Quando criar um Farm de Proxy do Servidor de Federação](When-to-Create-a-Federation-Server-Proxy-Farm.md).  
   
 É importante verificar se o nome do assunto nas correspondências de certificado de autenticação de servidor o nome do serviço de federação que é o valor especificado no snap do gerenciamento do AD FS\-no. Para localizar esse valor, abra o snap\-, com o botão direito\-clique em **Service**, clique em **editar propriedades do serviço de Federação**e, em seguida, localize o valor na **federação Nome do serviço** caixa de texto.  
   

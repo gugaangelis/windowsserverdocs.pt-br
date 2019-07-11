@@ -45,7 +45,7 @@ Quando você usa enviar atributos LDAP como modelo de regra de declarações, vo
   
 Usando esse modelo, você pode adicionar vários atributos, que serão enviados como várias declarações, de uma única regra. Por exemplo, você pode usar esse modelo de regra para criar uma regra que pesquisará valores de atributo para os usuários autenticados por meio dos atributos do Active Directory **company** e **department** e enviará esses valores como duas declarações de saída diferentes.  
   
-Você também pode usar essa regra para enviar todas as associações de grupo do usuário. Se você desejar enviar apenas as associações de grupo individuais, use o modelo de regra Enviar Associação de Grupo como uma Declaração. Para obter mais informações, consulte [When to Use a Send Group Membership as a Claim Rule](When-to-Use-a-Send-Group-Membership-as-a-Claim-Rule.md).  
+Você também pode usar essa regra para enviar todas as associações de grupo do usuário. Se você desejar enviar apenas as associações de grupo individuais, use o modelo de regra Enviar Associação de Grupo como uma Declaração. Para obter mais informações, consulte [quando usar uma associação de grupo Enviar como uma regra de declaração](When-to-Use-a-Send-Group-Membership-as-a-Claim-Rule.md).  
   
 ## <a name="how-to-create-this-rule"></a>Como criar essa regra  
 Você pode criar essa regra usando a linguagem de regra de declaração ou usando enviar atributos LDAP como modelo de regra de declarações no gerenciamento do AD FS snap\-no. Esse modelo de regra fornece as seguintes opções de configuração:  

@@ -69,7 +69,7 @@ Antes do Windows 8, Windows Server 2012, os usuários precisavam alternar entre 
 
 Com o modo sempre Offline, os computadores nunca alternam para o modo Online quando o **configurar o modo de vínculos lentos** configuração de diretiva de grupo está configurada e o **latência** parâmetro de limite é definido como 1 milissegundo. As alterações são sincronizadas em segundo plano a cada 120 minutos, por padrão, mas a sincronização é configurável usando a configuração de Política de Grupo do **Configure Background Sync** .
 
-Para obter mais informações, consulte [Enable the Always Offline Mode to Provide Faster Access to Files](enable-always-offline.md).
+Para obter mais informações, consulte [Habilitar o modo Sempre Offline para fornecer acesso mais rápido aos arquivos](enable-always-offline.md).
 
 ## <a name="cost-aware-synchronization"></a>Sincronização com reconhecimento de custo
 
@@ -112,7 +112,7 @@ Para limitar o download de dados particulares do usuário para os computadores p
     1. Se o computador é um dos computadores primários do usuário, o Windows aplica as configurações de Perfis de Usuário Móvel e de Redirecionamento de Pastas.
     2. Se o computador não é um dos computadores primários do usuário, o Windows carrega o perfil em cache local do usuário, quando presente, ou ele cria um novo perfil local. O Windows também remove todas pastas redirecionadas existentes de acordo com a ação de remoção que foi especificada pela configuração da Política de Grupo aplicada anteriormente, que é retida na configuração do Redirecionamento de Pastas local.
 
-Para obter mais informações, consulte [Deploy Primary Computers for Folder Redirection and Roaming User Profiles](deploy-primary-computers.md).
+Para obter mais informações, consulte [implantar computadores primários para redirecionamento de pasta e perfis de usuário móvel](deploy-primary-computers.md)
 
 ## <a name="hardware-requirements"></a>Requisitos de hardware
 
