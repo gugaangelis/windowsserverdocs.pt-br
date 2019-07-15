@@ -24,7 +24,7 @@ ms.locfileid: "66433646"
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
 ##  <a name="BKMK_AddIns"></a> Automatizar instalados suplementos durante a instalação  
- Para instalar suplemento durante a instalação, use o método PostIC.cmd descrito na seção [Create the PostIC.cmd File for Running Post Initial Configuration Tasks](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md) deste documento.  
+ Para instalar suplemento durante a instalação, use o método PostIC.cmd descrito na seção [Criar o Arquivo PostIC.cmd para Execução de Tarefas após a Configuração Inicial](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md) deste documento.  
   
  Adicione a seguinte entrada ao PostIC.cmd:  
   
