@@ -4,22 +4,29 @@ description: Seu aplicativo está executando lentamente no RDS? Saiba mais sobre
 ms.prod: windows-server-threshold
 ms.technology: remote-desktop-services
 ms.author: elizapo
-ms.date: 09/19/2018
+ms.date: 07/11/2019
 ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: f9aafaa34d5c16e45681e88b1ce60e99a9ad2842
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: a302e775d3304db9304cc51e09ede19fa2eba802
+ms.sourcegitcommit: f75d9496f345d73fdda88037617763e7a2f614b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66447097"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67863112"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>Use contadores de desempenho para diagnosticar os problemas de desempenho do aplicativo nos Hosts da Sessão da Área de Trabalho Remota
 
-Um dos problemas mais difíceis de diagnosticar é o desempenho insatisfatório do aplicativo – quando os aplicativos estão lentos ou não respondem. Tradicionalmente, você pode iniciar o seu diagnóstico pela coleta de CPU, memória, entrada/saída de disco e outras métricas e, em seguida, usar ferramentas como o Windows Performance Analyzer para tentar descobrir o que está causando o problema. Infelizmente, na maioria das situações, esses dados não o ajudarão a identificar a causa raiz, porque contadores de consumo de recursos têm variações grandes e frequentes. Isso torna difícil ler os dados e correlacioná-los com o problema relatado. Para ajudá-lo mais rapidamente resolver seus problemas de desempenho do aplicativo, adicionamos alguns novos contadores de desempenho (disponíveis [para download](#download-windows-server-insider-software) por meio do [Programa Windows Insider](https://insider.windows.com)) que medem os fluxos de entrada do usuário.
+> Aplica-se a: Windows Server 2019, Windows 10
+
+Um dos problemas mais difíceis de diagnosticar é o desempenho insatisfatório do aplicativo – quando os aplicativos estão lentos ou não respondem. Tradicionalmente, você pode iniciar o seu diagnóstico pela coleta de CPU, memória, entrada/saída de disco e outras métricas e, em seguida, usar ferramentas como o Windows Performance Analyzer para tentar descobrir o que está causando o problema. Na maioria das situações, esses dados não o ajudarão a identificar a causa raiz, porque contadores de consumo de recursos têm variações grandes e frequentes. Isso torna difícil ler os dados e correlacioná-los com o problema relatado. Para ajudá-lo a resolver seus problemas de desempenho do aplicativo rapidamente, adicionamos alguns novos contadores de desempenho (disponíveis [para download](#download-windows-server-insider-software) por meio do [Programa Windows Insider](https://insider.windows.com)) que medem os fluxos de entrada do usuário.
+
+>[!NOTE]
+>O contador de Atraso de Entrada do Usuário só é compatível com:
+> - Windows Server 2019 ou posterior
+> - Windows 10, versão 1809 ou posterior
 
 O contador de Atraso de Entrada do Usuário pode ajudá-lo a identificar rapidamente a causa raiz de experiências de RDP ruins do usuário final. Esse contador mede por quanto tempo qualquer entrada do usuário (por exemplo, uso de mouse ou teclado) permanece na fila antes de ser captada por um processo. O contador funciona em sessões locais e remotas.
 
@@ -37,7 +44,7 @@ Por exemplo, na tabela a seguir, o atraso de entrada do usuário seria informado
 
 |Número| 0 | 1 | 2 |
 |------|---|---|---|
-|Atraso |16 ms| 20 ms| 1\.000 ms|
+|Atraso |16 ms| 20 ms| 1.000 ms|
 
 ## <a name="enable-and-use-the-new-performance-counters"></a>Habilitar e usar os novos contadores de desempenho
 
