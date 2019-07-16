@@ -36,4 +36,4 @@ A alta disponibilidade é estabelecida duplicando cada um dos serviços de funç
 
 Com os conjuntos de disponibilidade, agora é possível aproveitar o poder do banco de dados SQL do Azure e seu SLA com suporte do Azure para garantir que você sempre tenha as informações de conexão e possa redirecionar usuários para suas áreas de trabalho remotas e aplicativos.
 
-***Para acessar as práticas recomendadas sobre a criação de seu ambiente de RDS, confira a [arquitetura de hospedagem da área de trabalho](desktop-hosting-reference-architecture.md).
+Para acessar as práticas recomendadas sobre a criação de seu ambiente de RDS, confira a [arquitetura de hospedagem da área de trabalho](desktop-hosting-reference-architecture.md).
