@@ -37,7 +37,7 @@ O Windows Admin Center é um aplicativo baseado em navegador implantado localmen
 
 |     |     |
 | --- | --- |
-| ![](../media/simple-icon.png)| **Simples e leve** <br/> As ferramentas familiares são simplificadas para facilitar as tarefas de gerenciamento. Instale em menos de cinco minutos e gerencie os servidores no seu ambiente imediatamente, sem precisar de configuração de destino. |
+| ![](../media/simple-icon.png)| **Simples e leve** <br/> As ferramentas familiares são simplificadas para facilitar as tarefas de gerenciamento. Instale em menos de dez minutos e gerencie os servidores no seu ambiente imediatamente, sem precisar de configuração de destino. |
 | ![](../media/future-icon.png)| **Criado para durar** <br/> A integração com serviços do Azure ajuda você a aproveitar o potencial do mundo híbrido. Gerencie clusters hiperconvergentes com ferramentas eficientes e simples. |
 | ![](../media/secure-icon.png)| **Gerenciamento seguro** <br/> Controle quem pode gerenciar servidores e obtenha insights sobre as ações que os administradores executam no ambiente. |
 
