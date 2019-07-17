@@ -123,7 +123,7 @@ Os contadores de desempenho a seguir são relevantes para possíveis problemas d
 
 Os contadores de desempenho a seguir são relevantes para o desempenho de RSC.  
   
--   Adaptador de rede  
+-   Adaptador de rede(*)  
   
     -   Conexões TCP RSC Active Directory  
   
