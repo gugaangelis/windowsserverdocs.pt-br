@@ -1,6 +1,6 @@
 ---
 title: certutil
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,27 +13,27 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7a602472d30f19cb2d4a802423635e5788e78a43
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 3bc1e544c0e0684678bc168f286b52e5573f3ac2
+ms.sourcegitcommit: 286e3181ebd2cb9d7dc7fe651858a4e0d61d153f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434556"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68300681"
 ---
 # <a name="certutil"></a>certutil
 
-Certutil.exe é um programa de linha de comando que é instalado como parte dos serviços de certificados. Você pode usar Certutil.exe para despejar e exibir informações de configuração de autoridade de certificação, configure os serviços de certificados, backup e restaurar os componentes de autoridade de certificação e verificar certificados, pares de chaves e cadeias de certificados.
+O Certutil. exe é um programa de linha de comando instalado como parte dos serviços de certificados. Você pode usar o Certutil. exe para despejar e exibir as informações de configuração da AC (autoridade de certificação), configurar os serviços de certificados, fazer backup e restaurar os componentes da AC e verificar certificados, pares de chaves e cadeias de certificados.
 
-Quando certutil é executado em uma autoridade de certificação sem parâmetros adicionais, ele exibe a configuração de autoridade de certificação atual. Quando cerutil é executado em uma autoridade de certificação não, o comando padrão é executar o certutil [-despejo](#-dump) verbo.
+Quando o Certutil é executado em uma autoridade de certificação sem parâmetros adicionais, ele exibe a configuração da autoridade de certificação atual. Quando cerutil é executado em uma autoridade que não é de certificação, o padrão do comando é executar o verbo certutil [-dump](#-dump) .
 
 > [!WARNING]
-> Versões anteriores do certutil podem não fornecer todas as opções descritas neste documento. Você pode ver todas as opções que uma versão específica do certutil fornece executando os comandos mostrados na [notações de sintaxe](#syntax-notations) seção.
+> As versões anteriores do certutil podem não fornecer todas as opções descritas neste documento. Você pode ver todas as opções que uma versão específica do certutil fornece executando os comandos mostrados na seção de [notações de sintaxe](#syntax-notations) .
 
 ## <a name="menu"></a>Menu
 
-As seções principais neste documento são:
+As principais seções deste documento são:
 
-- [Verbs](#verbs)
+- [Verbos](#verbs)
 - [Notações de sintaxe](#syntax-notations)
 - [Opções](#options)
 - [Exemplos adicionais de certutil](#additional-certutil-examples)
@@ -44,777 +44,777 @@ A tabela a seguir descreve os verbos que podem ser usados com o comando certutil
 
 |Verbos|Descrição|
 |-----|-----------|
-|[-dump](#-dump)|Informações de configuração ou arquivos de despejo|
-|[-asn](#-asn)|Analisar o arquivo de ASN. 1|
-|[-decodehex](#-decodehex)|Decodificar o arquivo codificado em hexadecimal|
-|[-decode](#-decode)|Decodificar um arquivo codificado na Base64|
-|[-encode](#-encode)|Codificar um arquivo em Base64|
-|[-deny](#-deny)|Negar uma solicitação de certificado pendente|
-|[-resubmit](#-resubmit)|Reenviar a solicitação de certificado pendente|
-|[-setattributes](#-setattributes)|Definir atributos para uma solicitação de certificado pendente|
+|[-despejo](#-dump)|Despejar arquivos ou informações de configuração|
+|[-ASN](#-asn)|Analisar arquivo ASN. 1|
+|[-decodehex](#-decodehex)|Decodificar arquivo codificado em hexadecimal|
+|[-decodificar](#-decode)|Decodificar um arquivo codificado em base64|
+|[-codificar](#-encode)|Codificar um arquivo em base64|
+|[-negar](#-deny)|Negar uma solicitação de certificado pendente|
+|[-reenviar](#-resubmit)|Reenviar uma solicitação de certificado pendente|
+|[-SetAttributes](#-setattributes)|Definir atributos para uma solicitação de certificado pendente|
 |[-setextension](#-setextension)|Definir uma extensão para uma solicitação de certificado pendente|
-|[-revoke](#-revoke)|Revogar um certificado|
-|[-isvalid](#-isvalid)|Exibir a disposição do certificado atual|
-|[-getconfig](#-getconfig)|Obter a cadeia de caracteres de configuração padrão|
-|[-ping](#-ping)|Tentativa de entrar em contato com a interface de solicitação de serviços de certificados de diretório Active Directory|
-|-pingadmin|Tentativa de entrar em contato com a interface de administrador de serviços de certificados do Active Directory|
+|[-REVOKE](#-revoke)|Revogar um certificado|
+|[-IsValid](#-isvalid)|Exibir a disposição do certificado atual|
+|[-GetConfig](#-getconfig)|Obter a cadeia de caracteres de configuração padrão|
+|[-ping](#-ping)|Tentativa de entrar em contato com a interface de solicitação de serviços de certificados Active Directory|
+|-pingadmin|Tente entrar em contato com a interface do administrador dos serviços de certificados Active Directory|
 |[-CAInfo](#-cainfo)|Exibir informações sobre a autoridade de certificação|
-|[-ca.cert](#-cacert)|Recuperar o certificado da autoridade de certificação|
-|[-ca.chain](#-cachain)|Recuperar a cadeia de certificados da autoridade de certificação|
-|[-GetCRL](#-getcrl)|Obter uma lista de certificados revogados (CRL)|
-|[-CRL](#-crl)|Publicar novas listas de certificados revogados (CRLs) [ou apenas as CRLs delta]|
-|[-shutdown](#-shutdown)|Serviços de certificados do Active Directory de desligamento|
+|[-ca. cert](#-cacert)|Recuperar o certificado para a autoridade de certificação|
+|[-ca. Chain](#-cachain)|Recuperar a cadeia de certificados para a autoridade de certificação|
+|[-GetCRL](#-getcrl)|Obter uma CRL (lista de certificados revogados)|
+|[-CRL](#-crl)|Publicar novas listas de certificados revogados (CRLs) [ou somente CRLs delta]|
+|[-desligar](#-shutdown)|Desligar Active Directory serviços de certificados|
 |[-installCert](#-installcert)|Instalar um certificado de autoridade de certificação|
 |[-renewCert](#-renewcert)|Renovar um certificado de autoridade de certificação|
-|[-schema](#-schema)|O esquema para o certificado de despejo|
-|[-view](#-view)|O modo de exibição do certificado de despejo|
-|[-db](#-db)|O banco de dados bruto de despejo|
-|[-deleterow](#-deleterow)|Excluir uma linha do banco de dados do servidor|
-|[-backup](#-backup)|Serviços de certificados de backup do Active Directory|
-|[-backupDB](#-backupdb)|Fazer backup de banco de dados de serviços de certificados do Active Directory|
-|[-backupKey](#-backupkey)|O certificado de serviços de certificados do Active Directory e a chave privada de backup|
-|[-restore](#-restore)|Restaurar os serviços de certificados do Active Directory|
-|[-restoreDB](#-restoredb)|Restaurar o banco de dados de serviços de certificados do Active Directory|
-|[-restoreKey](#-restorekey)|Restaurar a chave privada e certificado de serviços de certificados do Active Directory|
-|[-importPFX](#-importpfx)|Importar o certificado e a chave privada|
-|[-dynamicfilelist](#-dynamicfilelist)|Exibir uma lista dinâmica de arquivos|
-|[-databaselocations](#-databaselocations)|Exibir os locais do banco de dados|
-|[-hashfile](#-hashfile)|Gerar e exibir um hash criptográfico ao longo de um arquivo|
-|[-store](#-store)|O repositório de certificados de despejo|
+|[-esquema](#-schema)|Despejar o esquema para o certificado|
+|[-exibição](#-view)|Despejar a exibição do certificado|
+|[-DB](#-db)|Despejar o banco de dados bruto|
+|[-deleteRow](#-deleterow)|Excluir uma linha do banco de dados do servidor|
+|[-backup](#-backup)|Serviços de certificados de Active Directory de backup|
+|[-backupDB](#-backupdb)|Fazer backup do banco de dados de serviços de certificados Active Directory|
+|[-backupKey](#-backupkey)|Fazer backup do certificado de serviços de certificados Active Directory e da chave privada|
+|[-restaurar](#-restore)|Restaurar Active Directory serviços de certificados|
+|[-restoreDB](#-restoredb)|Restaurar o banco de dados de serviços de certificados Active Directory|
+|[-restoreKey](#-restorekey)|Restaurar o certificado de serviços de certificados Active Directory e a chave privada|
+|[-importPFX](#-importpfx)|Importar certificado e chave privada|
+|[-dynamicfilelist](#-dynamicfilelist)|Exibir uma lista de arquivos dinâmicos|
+|[-databaselocations](#-databaselocations)|Exibir locais de banco de dados|
+|[-hashfile](#-hashfile)|Gerar e exibir um hash criptográfico em um arquivo|
+|[-Store](#-store)|Despejar o repositório de certificados|
 |[-addstore](#-addstore)|Adicionar um certificado ao repositório|
-|[-delstore](#-delstore)|Excluir um certificado do armazenamento|
-|[-verifystore](#-verifystore)|Verifique se um certificado no repositório|
-|[-repairstore](#-repairstore)|Reparar uma associação de chave ou atualizar propriedades do certificado ou o descritor de segurança de chave|
-|[-viewstore](#-viewstore)|O repositório de certificados de despejo|
-|[-viewdelstore](#-viewdelstore)|Excluir um certificado do armazenamento|
-|[-dsPublish](#-dspublish)|Publicar um certificado ou uma lista de certificados revogados (CRL) no Active Directory|
+|[-delstore](#-delstore)|Excluir um certificado da loja|
+|[-verifystore](#-verifystore)|Verificar um certificado no repositório|
+|[-repairstore](#-repairstore)|Reparar uma associação de chave ou atualizar as propriedades do certificado ou o descritor de segurança da chave|
+|[-viewstore](#-viewstore)|Despejar o armazenamento de certificados|
+|[-viewdelstore](#-viewdelstore)|Excluir um certificado da loja|
+|[-dsPublish](#-dspublish)|Publicar um certificado ou CRL (lista de certificados revogados) para Active Directory|
 |[-ADTemplate](#-adtemplate)|Exibir modelos do AD|
-|[-Template](#-template)|Exibir modelos de certificado|
-|[-TemplateCAs](#-templatecas)|Exibir as autoridades de certificação (CAs) para um modelo de certificado|
-|[-CATemplates](#-catemplates)|Exibir modelos de autoridade de certificação|
-|[-SetCASites](#-setcasites)|Gerenciar nomes de Site para autoridades de certificação|
-|[-enrollmentServerURL](#-enrollmentserverurl)|Exibir, adicionar ou excluir URLs de servidor de registro associadas com uma autoridade de certificação|
-|[-ADCA](#-adca)|Exibir autoridades de certificação do AD|
-|[-CA](#-ca)|Exibir CAs de política de registro|
-|[-Policy](#-policy)|Exibir política de registro|
-|[-PolicyCache](#-policycache)|Exibir ou excluir as entradas de Cache de política de registro|
-|[-CredStore](#-credstore)|Exibir, adicionar ou excluir as entradas de Store de credencial|
-|[-InstallDefaultTemplates](#-installdefaulttemplates)|Instalar os modelos de certificado padrão|
-|[-URLCache](#-urlcache)|Exibir ou excluir as entradas de cache de URL|
-|[-pulse](#-pulse)|Eventos de inscrição automática de pulso|
-|[-MachineInfo](#-machineinfo)|Exibir informações sobre o objeto de computador do Active Directory|
+|[-Modelo](#-template)|Exibir modelos de certificado|
+|[-TemplateCAs](#-templatecas)|Exibir as CAs (autoridades de certificação) de um modelo de certificado|
+|[-CATemplates](#-catemplates)|Exibir modelos para CA|
+|[-SetCASites](#-setcasites)|Gerenciar nomes de site para CAs|
+|[-enrollmentServerURL](#-enrollmentserverurl)|Exibir, adicionar ou excluir as URLs de servidor de registro associadas a uma AC|
+|[-ADCA](#-adca)|Exibir CAs do AD|
+|[-CA](#-ca)|Exibir CAs da política de registro|
+|[-Política](#-policy)|Exibir política de registro|
+|[-PolicyCache](#-policycache)|Exibir ou excluir entradas do cache da política de registro|
+|[-CredStore](#-credstore)|Exibir, adicionar ou excluir entradas de repositório de credenciais|
+|[-InstallDefaultTemplates](#-installdefaulttemplates)|Instalar modelos de certificado padrão|
+|[-URLCache](#-urlcache)|Exibir ou excluir entradas de cache de URL|
+|[-Pulse](#-pulse)|Eventos de registro automático de pulso|
+|[-MachineInfo](#-machineinfo)|Exibir informações sobre o objeto de computador Active Directory|
 |[-DCInfo](#-dcinfo)|Exibir informações sobre o controlador de domínio|
-|[-EntInfo](#-entinfo)|Exibir informações sobre uma autoridade de certificação corporativa|
+|[-EntInfo](#-entinfo)|Exibir informações sobre uma AC corporativa|
 |[-TCAInfo](#-tcainfo)|Exibir informações sobre a autoridade de certificação|
 |[-SCInfo](#-scinfo)|Exibir informações sobre o cartão inteligente|
-|[-SCRoots](#-scroots)|Gerenciar certificados de raiz do cartão inteligente|
-|[-verifykeys](#-verifykeys)|Verifique se um conjunto de chaves público ou privado|
-|[-verify](#-verify)|Verifique se um certificado, uma lista de certificados revogados (CRL) ou uma cadeia de certificados|
-|[-verifyCTL](#-verifyctl)|Verificar AuthRoot ou lista de certificados confiáveis de certificados não permitidos|
-|[-sign](#-sign)|Assinar novamente um certificado ou uma lista de certificados revogados (CRL)|
-|[-vroot](#-vroot)|Criar ou excluir compartilhamentos de arquivos e raízes virtuais web|
-|[-vocsproot](#-vocsproot)|Criar ou excluir raízes virtuais web para um proxy da web OCSP|
+|[-SCRoots](#-scroots)|Gerenciar certificados raiz do cartão inteligente|
+|[-verifykeys](#-verifykeys)|Verificar um conjunto de chaves pública ou privada|
+|[-verificar](#-verify)|Verificar um certificado, CRL (lista de certificados revogados) ou cadeia de certificados|
+|[-verifyCTL](#-verifyctl)|Verificar CTL de certificados AuthRoot ou não permitido|
+|[-assinar](#-sign)|Assinar novamente uma CRL (lista de certificados revogados) ou certificado|
+|[-vroot](#-vroot)|Criar ou excluir compartilhamentos de arquivos e raízes virtuais da Web|
+|[-vocsproot](#-vocsproot)|Criar ou excluir raízes virtuais da Web para um proxy Web OCSP|
 |[-addEnrollmentServer](#-addenrollmentserver)|Adicionar um aplicativo de servidor de registro|
 |[-deleteEnrollmentServer](#-deleteenrollmentserver)|Excluir um aplicativo de servidor de registro|
-|[-addPolicyServer](#-addpolicyserver)|Adicionar um aplicativo de servidor de políticas|
-|[-deletePolicyServer](#-deletepolicyserver)|Excluir um aplicativo de servidor de políticas|
-|[-oid](#-oid)|Exibir o identificador de objeto ou definir um nome de exibição|
-|[-error](#-error)|Exibir o texto da mensagem associado com um código de erro|
+|[-addPolicyServer](#-addpolicyserver)|Adicionar um aplicativo de servidor de política|
+|[-deletePolicyServer](#-deletepolicyserver)|Excluir um aplicativo de servidor de política|
+|[-OID](#-oid)|Exibir o identificador de objeto ou definir um nome de exibição|
+|[-erro](#-error)|Exibir o texto da mensagem associado a um código de erro|
 |[-getreg](#-getreg)|Exibir um valor de registro|
 |[-setreg](#-setreg)|Definir um valor de registro|
-|[-delreg](#-delreg)|Excluir um valor do registro|
-|[-ImportKMS](#-importkms)|Importar certificados e chaves de usuário para o banco de dados para arquivamento de chaves|
+|[-delreg](#-delreg)|Excluir um valor de registro|
+|[-ImportKMS](#-importkms)|Importar chaves de usuário e certificados para o banco de dados do servidor para arquivamento de chaves|
 |[-ImportCert](#-importcert)|Importar um arquivo de certificado para o banco de dados|
-|[-GetKey](#-getkey)|Recuperar um blob de recuperação de chave privada arquivados|
+|[-GetKey](#-getkey)|Recuperar um blob de recuperação de chave privada arquivada|
 |[-RecoverKey](#-recoverkey)|Recuperar uma chave privada arquivada|
 |[-MergePFX](#-mergepfx)|Mesclar arquivos PFX|
 |[-ConvertEPF](#-convertepf)|Converter um arquivo PFX em um arquivo EPF|
 |-?|Exibe a lista de verbos|
-|- *\<verb>* -?|Exibe a Ajuda para o verbo especificado.|
+|-> de verbo-?  *\<*|Exibe a ajuda para o verbo especificado.|
 |-? -v|Exibe uma lista completa de verbos e|
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="syntax-notations"></a>Notações de sintaxe
 
-- Para obter a sintaxe de linha de comando básica, execute `certutil -?`
-- Para obter a sintaxe sobre como usar certutil com um verbo específico, execute **certutil**  *\<verbo >* **-?**
-- Para enviar todas as sintaxes certutil em um arquivo de texto, execute os seguintes comandos:  
+- Para obter a sintaxe básica de linha de comando, execute`certutil -?`
+- Para obter a sintaxe sobre como usar o Certutil com um verbo específico, execute o verbo **certutil**  *\<>* **-?**
+- Para enviar toda a sintaxe de certutil para um arquivo de texto, execute os seguintes comandos:  
   - `certutil -v -? > certutilhelp.txt`
   - `notepad certutilhelp.txt`
 
-A tabela a seguir descreve a notação usada para indicar a sintaxe de linha de comando.
+A tabela a seguir descreve a notação usada para indicar a sintaxe da linha de comando.
 
 
-|            Notação             |                  Descrição                  |
+|            Notation             |                  Descrição                  |
 |---------------------------------|-----------------------------------------------|
-| Texto sem colchetes ou entre chaves |         Itens que você deve digitar conforme mostrado          |
+| Texto sem colchetes ou chaves |         Itens que você deve digitar, conforme mostrado          |
 |  \<Texto dentro de colchetes angulares >  | Espaço reservado para o qual você deve fornecer um valor |
-|  [Texto dentro dos colchetes]  |                Itens opcionais                 |
-|      {Texto entre chaves}       |       Conjunto de itens necessários; Escolha uma       |
-|         Barra (vertical          |                       ) simples                       |
+|  [Texto dentro de colchetes]  |                Itens opcionais                 |
+|      {Texto dentro de chaves}       |       Conjunto de itens necessários; Escolha um       |
+|         Barra vertical (          |                       )                       |
 |          Reticências (…)           |          Itens que podem ser repetidos           |
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-dump"></a>-despejo
 
-CertUtil [Opções] [-despejo]
+CertUtil [opções] [-dump]
 
-CertUtil [Opções] [-despejo] arquivo
+CertUtil [opções] [-dump] arquivo
 
-Informações de configuração ou arquivos de despejo
+Despejar arquivos ou informações de configuração
 
-[-f]. [-silenciosa] [-Dividir] [-p senha] [-t tempo limite]
+[-f] [-Silent] [-divisão] [-p senha] [-t tempo limite]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
-## <a name="-asn"></a>-asn
+## <a name="-asn"></a>-ASN
 
-CertUtil [Opções] - asn arquivo [tipo]
+CertUtil [opções]-arquivo ASN [tipo]
 
-Analisar o arquivo de ASN. 1
+Analisar arquivo ASN. 1
 
-tipo: numérico CRYPT\_cadeia de caracteres\_ \* decodificação de tipo
+tipo: tipo de\_decodificação de cadeia de caracteres\_ \* cifrada numérica
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-decodehex"></a>-decodehex
 
-CertUtil [Opções] - decodehex InFile OutFile [tipo]
+CertUtil [opções]-decodehex InFile outfile [tipo]
 
-tipo: numérico CRYPT\_cadeia de caracteres\_ \* tipo de codificação
+tipo: tipo de\_codificação\_ de cadeia de caracteres\* cifrada numérica
 
 [-f]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-decode"></a>-decodificar
 
-CertUtil [Opções] - decodificar InFile OutFile
+CertUtil [opções] – decodificar outfile InFile
 
-Decodificar o arquivo codificado na Base64
+Decodificar arquivo codificado em base64
 
 [-f]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-encode"></a>-codificar
 
-CertUtil [Opções] - codificar InFile OutFile
+CertUtil [opções] – codificar outfile InFile
 
-Codificar o arquivo em Base64
+Codificar arquivo em base64
 
-[-f]. [-UnicodeText]
+[-f] [-UnicodeText]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
-## <a name="-deny"></a>-deny
+## <a name="-deny"></a>-negar
 
-CertUtil [Opções] - negar RequestId
+CertUtil [opções] – negar RequestId
 
-Negar a solicitação pendente
+Negar solicitação pendente
 
 [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
-## <a name="-resubmit"></a>-resubmit
+## <a name="-resubmit"></a>-reenviar
 
-CertUtil [Opções] - reenviar RequestId
+CertUtil [opções] – reenviar RequestId
 
 Reenviar solicitação pendente
 
 [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
-## <a name="-setattributes"></a>-setattributes
+## <a name="-setattributes"></a>-SetAttributes
 
-CertUtil [Opções] - setattributes RequestId Sequência_do_atributo
+CertUtil [opções]-SetAttributes RequestId atributoString
 
-Definir os atributos da solicitação pendente
+Definir atributos para solicitação pendente
 
-RequestId-- Id numérica da solicitação pendente
+RequestId--ID de solicitação numérica de solicitação pendente
 
-AttributeString-- Pares de nome e valor do atributo de solicitação
+AttributeString--nomes de atributo de solicitação e pares de valor
 
-- Nomes e valores são separados de dois-pontos.
-- Nome de vários pares de valor são separados por novas linhas.
+- Os nomes e valores são separados por dois-pontos.
+- Vários pares nome, valor são separados por nova linha.
 - Exemplo: "CertificateTemplate:User\nEMail:User@Domain.com"
 - Cada sequência "\n" é convertida em um separador de nova linha.
 
 [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-setextension"></a>-setextension
 
-CertUtil [Opções] - setextension RequestId Nome_da_extensão Sinalizadores {Long | Data | Cadeia de caracteres | @InFile}
+CertUtil [opções]-setextension RequestIdid sinalizadores {Long | Data | Cadeia de caracteres | \@INFILE}
 
-Definir a extensão da solicitação pendente
+Definir a extensão para a solicitação pendente
 
-RequestId-- Id numérica de uma solicitação pendente
+RequestId--ID de solicitação numérica de uma solicitação pendente
 
-ExtensionName-- Cadeia de caracteres de ObjectId da extensão
+ExtensionName--cadeia de caracteres ObjectId da extensão
 
-Sinalizadores-- 0 é recomendado.  1 torna a extensão como crítica, desabilita o 2, 3 faz isso.
+Sinalizadores--0 é recomendado.  1 faz com que a extensão seja crítica, 2 a desativa, e 3 faz as duas.
 
-Se o último parâmetro for numérico, ele será considerado um longo período.
+Se o último parâmetro for numérico, ele será obtido como um longo.
 
-Se ele puder ser analisado como uma data, ele será interpretado como uma data.
+Se ele puder ser analisado como uma data, ele será levado como uma data.
 
-Se ele começa com ' @', o restante do token é o nome do arquivo que contém dados binários ou um despejo hexadecimal de texto ascii.
+Se começar com '\@', o restante do token será o nome de arquivo que contém dados binários ou um despejo hexadecimal de texto ASCII.
 
-Qualquer outra coisa é interpretada como uma cadeia de caracteres.
+Qualquer outra coisa é executada como uma cadeia de caracteres.
 
 [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
-## <a name="-revoke"></a>-revoke
+## <a name="-revoke"></a>-REVOKE
 
-CertUtil [Opções] - revogar SerialNumber [motivo]
+CertUtil [opções]-revogar SerialNumber [motivo]
 
-Revogar Certificado
+Revogar certificado
 
-SerialNumber: Lista de números de série do certificado para revogar separada por vírgulas
+SerialNumber Lista separada por vírgulas de números de série do certificado para revogar
 
-Motivo: motivo da revogação numérico ou simbólico
+Motivo: razão de revogação numérica ou simbólica
 
 - 0: CRL_REASON_UNSPECIFIED: Não especificado (padrão)
-- 1: CRL_REASON_KEY_COMPROMISE: Comprometimento da chave
-- 2: CRL_REASON_CA_COMPROMISE: Comprometimento de autoridade de certificação
-- 3: CRL_REASON_AFFILIATION_CHANGED: Afiliação alterada
+- 1: CRL_REASON_KEY_COMPROMISE: Comprometimento de chave
+- 2: CRL_REASON_CA_COMPROMISE: Comprometimento da CA
+- 3: CRL_REASON_AFFILIATION_CHANGED: associação alterada
 - 4: CRL_REASON_SUPERSEDED: Substituída
-- 5: CRL_REASON_CESSATION_OF_OPERATION: Cessação da operação
-- 6: CRL_REASON_CERTIFICATE_HOLD: Posse de certificado
-- 8: CRL_REASON_REMOVE_FROM_CRL: Remover da lista de certificados Revogados
-- -1: Unrevoke: Unrevoke
+- 5: CRL_REASON_CESSATION_OF_OPERATION: Cessação de operação
+- 6: CRL_REASON_CERTIFICATE_HOLD: Retenção de certificado
+- 8 CRL_REASON_REMOVE_FROM_CRL: Remover da CRL
+- -1: Cancelar revogação Cancelar revogação
 
 [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
-## <a name="-isvalid"></a>-isvalid
+## <a name="-isvalid"></a>-IsValid
 
-CertUtil [Opções] - isvalid SerialNumber | CertHash
+CertUtil [opções]-IsValid SerialNumber | CertHash
 
-Disposição do certificado atual exibição
-
-[-config Machine\CAName]
-
-Retorne ao [Menu](#menu)
-
-## <a name="-getconfig"></a>-getconfig
-
-Getconfig - CertUtil [Opções]
-
-Obter a cadeia de caracteres de configuração padrão
+Exibir disposição do certificado atual
 
 [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
+
+## <a name="-getconfig"></a>-GetConfig
+
+CertUtil [opções]-GetConfig
+
+Obter cadeia de caracteres de configuração padrão
+
+[-config Machine\CAName]
+
+Retornar ao [menu](#menu)
 
 ## <a name="-ping"></a>-ping
 
-CertUtil [Opções] - ping [MaxSecondsToWait | CAMachineList]
+CertUtil [opções]-Ping [MaxSecondsToWait | CAMachineList]
 
-Interface ping Active Directory Services solicitação de certificado
+Executar ping Active Directory interface de solicitação de serviços de certificados
 
-CAMachineList – Lista de nomes de máquina separados por vírgula da autoridade de certificação
+CAMachineList--lista de nome da máquina CA separada por vírgulas
 
 1. Para um único computador, use uma vírgula de terminação
-2. Exibe o custo do site para cada computador da autoridade de certificação
+2. Exibe o custo do site para cada computador de autoridade de certificação
 
 [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-cainfo"></a>-CAInfo
 
--Informações_sobre_ca CertUtil [Opções] [InfoName [índice | Código de erro]]
+CertUtil [opções]-CAInfo [InfoName [índice | ErrorCode]]
 
-Informações de autoridade de certificação de exibição
+Exibir informações de AC
 
-InfoName-- indica que a propriedade de autoridade de certificação para exibir (veja abaixo). Use "\*" para todas as propriedades.
+InfoName – indica a propriedade de autoridade de certificação a ser exibida (veja abaixo). Use "\*" para todas as propriedades.
 
-Índice – índice de propriedade opcional de base zero
+Índice--índice de propriedades com base em zero opcional
 
-ErrorCode – código de erro numérico
+ErrorCode--código de erro numérico
 
-[-f]. [-Dividir] [-config Machine\CAName]
+[-f] [-divisão] [-config Machine\CAName]
 
 Sintaxe do argumento InfoName:
 
-- Arquivo: Versão do arquivo
-- produto: Versão do produto
-- exitcount: Contagem de módulo de saída
-- saída [Index]: Descrição do módulo de saída
-- política: Descrição do módulo de política
-- name: Nome da autoridade de certificação
-- sanitizedname: Nome da autoridade de certificação corrigido
-- dsname: Nome curto de autoridade de certificação corrigido (nome do DS)
+- Grupo Versão do arquivo
+- remessa Versão do produto
+- exitcount: Sair da contagem de módulos
+- sair [índice]: Sair da descrição do módulo
+- regras Descrição do módulo de política
+- nomes Nome da autoridade de certificação
+- sanitizedname: Nome de autoridade de certificação limpo
+- dsname Nome curto da AC corrigido (nome DS)
 - sharedfolder: Pasta compartilhada
-- código de erro Error1: Texto da mensagem de erro
-- código de erro error2: Texto da mensagem de erro e o código de erro
-- Tipo: Tipo de CA
-- info: Informações de autoridade de certificação
-- Pai: Autoridade de certificação pai
-- certcount: Contagem de certificado de autoridade de certificação
-- xchgcount: Contagem de certificado do exchange de autoridade de certificação
-- kracount: Contagem de certificado KRA
-- kraused: Contagem de certificado KRA usados
-- propidmax: Máximo de autoridade de certificação PropId
-- certstate [Index]: Certificado de autoridade de certificação
-- certversion [Index]: Versão do certificado de autoridade de certificação
-- certstatuscode [Index]: Certificado de autoridade de certificação verificar status
-- crlstate [Index]: CRL
-- krastate [Index]: Certificado KRA
-- crossstate + [Index]: Encaminhar certificado cruzado
-- crossstate-[Index]: Certificado cruzado com versões anteriores
-- CERT [Index]: Certificado de autoridade de certificação
-- certchain [Index]: Cadeia de certificados de autoridade de certificação
-- certcrlchain [Index]: Cadeia de certificados de autoridade de certificação com listas de certificados revogados
-- xchg [Index]: Certificado de intercâmbio de autoridade de certificação
-- xchgchain [Index]: Cadeia de certificado de troca de autoridade de certificação
-- xchgcrlchain [Index]: Cadeia de certificado do exchange de autoridade de certificação com listas de certificados revogados
-- kra [Index]: Certificado KRA
-- cross+ [Index]: Encaminhar certificado cruzado
-- Cross-[Index]: Certificado cruzado com versões anteriores
-- CRL [Index]: CRL base
-- deltacrl [Index]: Delta CRL
-- crlstatus [Index]: Status de publicação de CRL
-- deltacrlstatus [Index]: Status de publicação de CRL delta
-- DNS: Nome DNS
-- Função: Separação de funções
-- ads: Advanced Server
-- Modelos: Modelos
-- csp [Index]: URLs OCSP
-- aia [Index]: URLs AIA
-- cdp [Index]: URLs CDP
-- localename: Nome da localidade da autoridade de certificação
-- subjecttemplateoids: OIDs de modelo da entidade
+- ErrorCode error1: Texto da mensagem de erro
+- ErrorCode error2: Texto da mensagem de erro e código de erro
+- Escreva Tipo de CA
+- detalhes Informações de CA
+- primária Autoridade de certificação pai
+- certcount: Contagem de certificados de autoridade de certificação
+- xchgcount: Contagem de certificados de troca de AC
+- kracount: Contagem de certificados de KRA
+- kraused: Contagem usada de certificado KRA
+- propidmax: PropId de autoridade de certificação máxima
+- certstate [índice]: Certificado de autoridade de certificação
+- certversion [índice]: Versão do certificado de autoridade de certificação
+- certstatuscode [índice]: Status de verificação de certificado de autoridade de certificação
+- crlstate [índice]: REVOGA
+- krastate [índice]: Certificado de KRA
+- crossstate + [índice]: Encaminhar certificado cruzado
+- crossstate-[índice]: Certificado cruzado para trás
+- CERT [índice]: Certificado de autoridade de certificação
+- certchain [índice]: Cadeia de certificados de autoridade de certificação
+- certcrlchain [índice]: Cadeia de certificados de autoridade de certificação com CRLs
+- xchg [índice]: Certificado de troca de AC
+- xchgchain [índice]: Cadeia de certificados de troca de AC
+- xchgcrlchain [índice]: Cadeia de certificados de troca de AC com CRLs
+- kra [índice]: Certificado de KRA
+- cruzada + [índice]: Encaminhar certificado cruzado
+- Cross-[index]: Certificado cruzado para trás
+- CRL [índice]: CRL base
+- deltacrl [índice]: CRL delta
+- crlstatus [índice]: Status de publicação da CRL
+- deltacrlstatus [índice]: Status de publicação de CRL delta
+- DNS Nome DNS
+- cargo Separação de funções
+- Banner Advanced Server
+- modelo Modelos
+- CSP [índice]: URLs OCSP
+- AIA [índice]: URLs de AIA
+- CDP [índice]: URLs de CDP
+- localename Nome da localidade da AC
+- subjecttemplateoids: OIDs do modelo de assunto
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
-## <a name="-cacert"></a>-ca.cert
+## <a name="-cacert"></a>-ca. cert
 
-CertUtil [Opções] - ca.cert OutCACertFile [Index]
+CertUtil [opções]-ca. cert OutCACertFile [índice]
 
 Recuperar o certificado da autoridade de certificação
 
 OutCACertFile: arquivo de saída
 
-Índice: Índice de renovação de certificado de autoridade de certificação (o padrão é a mais recente)
+Index Índice de renovação de certificado de CA (o padrão é o mais recente)
 
-[-f]. [-Dividir] [-config Machine\CAName]
+[-f] [-divisão] [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
-## <a name="-cachain"></a>-ca.chain
+## <a name="-cachain"></a>-ca. Chain
 
-CertUtil [Opções] - ca.chain OutCACertChainFile [Index]
+CertUtil [opções]-ca. Chain OutCACertChainFile [índice]
 
 Recuperar a cadeia de certificados da autoridade de certificação
 
 OutCACertChainFile: arquivo de saída
 
-Índice: Índice de renovação de certificado de autoridade de certificação (o padrão é a mais recente)
+Index Índice de renovação de certificado de CA (o padrão é o mais recente)
 
-[-f]. [-Dividir] [-config Machine\CAName]
+[-f] [-divisão] [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-getcrl"></a>-GetCRL
 
-CertUtil [Opções] - GetCRL OutFile [Index] [delta]
+CertUtil [opções]-GetCRL outfile [índice] [Delta]
 
-Obter lista de certificados Revogados
+Obter CRL
 
-Índice: Lista de certificados Revogados índice ou chave de índice (o padrão é a CRL para a chave mais recente)
+Index Índice de CRL ou índice de chave (o padrão é CRL para a chave mais recente)
 
-delta: CRL delta (o padrão é CRL base)
+Delta: CRL delta (o padrão é CRL base)
 
-[-f]. [-Dividir] [-config Machine\CAName]
+[-f] [-divisão] [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-crl"></a>-CRL
 
-[Opções] do CertUtil - CRL [DD: hh | republicar] [delta]
+CertUtil [opções]-CRL [DD: hh | republicar] [Delta]
 
-Publicar CRLs novo [ou apenas delta]
+Publicar novas CRLs [ou somente CRLs delta]
 
-dd: hh – novo período de validade da CRL em dias e horas
+DD: hh--novo período de validade da CRL em dias e horas
 
-Republique - republicar as CRLs mais recentes
+republicar--republicar as CRLs mais recentes
 
-– delta CRLs delta somente (o padrão é CRLs base e delta)
+Delta--somente CRLs delta (o padrão é CRLs de base e Delta)
 
-[-Dividir] [-config Machine\CAName]
+[-divisão] [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
-## <a name="-shutdown"></a>-shutdown
+## <a name="-shutdown"></a>-desligar
 
-CertUtil [Opções] - desligamento
+CertUtil [opções] – desligar
 
-Serviços de certificados do Active Directory de desligamento
+Desligar Active Directory serviços de certificados
 
 [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-installcert"></a>-installCert
 
-CertUtil [Opções] - installCert [CACertFile]
+CertUtil [opções]-installCert [CACertFile]
 
-Instalar o certificado de autoridade de certificação
+Instalar certificado de autoridade de certificação
 
-[-f]. [-silenciosa] [-config Machine\CAName]
+[-f] [-Silent] [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-renewcert"></a>-renewCert
 
-CertUtil [Opções] - renewCert [ReuseKeys] [Machine\ParentCAName]
+CertUtil [opções]-renewCert [ReuseKeys] [Machine\ParentCAName]
 
-Renovar o certificado de autoridade de certificação
+Renovar certificado de autoridade de certificação
 
-Use -f para ignorar uma solicitação de renovação pendente e gerar uma nova solicitação.
+Use-f para ignorar uma solicitação de renovação pendente e gerar uma nova solicitação.
 
-[-f]. [-silenciosa] [-config Machine\CAName]
+[-f] [-Silent] [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
-## <a name="-schema"></a>-schema
+## <a name="-schema"></a>-esquema
 
-CertUtil [Opções] - esquema [Ext | Attrib | LISTA DE CERTIFICADOS REVOGADOS]
+CertUtil [opções]-esquema [ext | Atrib | REVOGA
 
-Esquema de certificado de despejo
+Despejar esquema de certificado
 
-Padrões à tabela de solicitação e o certificado
+O padrão é a tabela de solicitação e certificado
 
-Ext: Tabela de extensão
+Externa Tabela de extensão
 
-Attrib: Tabela de atributos
+Atributos Tabela de atributos
 
-CRL: Tabela CRL
+REVOGA Tabela de CRL
 
-[-Dividir] [-config Machine\CAName]
+[-divisão] [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
-## <a name="-view"></a>-modo de exibição
+## <a name="-view"></a>-exibição
 
-CertUtil [Opções] - modo de exibição [fila | Log | LogFail | Revogado | Ext | Attrib | Lista de certificados Revogados] [csv]
+CertUtil [opções]-exibir [fila | Log | LogFail | Revogado | Ext | Atrib | CRL] [CSV]
 
-Exibição do certificado de despejo
+Despejar exibição de certificado
 
 Fila: Fila de solicitações
 
-Log: Os certificados emitidos ou revogados, além de solicitações com falha
+Log: Certificados emitidos ou revogados, além de solicitações com falha
 
 LogFail: Solicitações com falha
 
-Revogado: Certificados revogados
+Revogado Certificados revogados
 
-Ext: Tabela de extensão
+Externa Tabela de extensão
 
-Attrib: Tabela de atributos
+Atributos Tabela de atributos
 
-CRL: Tabela CRL
+REVOGA Tabela de CRL
 
-csv: Saída como valores separados por vírgula
+CSV Saída como valores separados por vírgula
 
 Para exibir a coluna StatusCode para todas as entradas:-out StatusCode
 
-Para exibir todas as colunas para a última entrada:-restringir "RequestId = = $"
+Para exibir todas as colunas da última entrada:-restringir "RequestId = = $"
 
-Para exibir RequestId e o descarte do três solicitações:-restringir "RequestId > = 37, RequestId\<40"-out "RequestId, descarte"
+Para exibir RequestId e disposição para três solicitações:-Restrict "RequestId > = 37,\<RequestId 40"-out "RequestId, disposição"
 
-Para exibir as Ids de linha e números de CRL para todas as CRLs Base:-restringir "CRLMinBase = 0"-out "CRLRowId CRLNumber" lista de certificados Revogados
+Para exibir IDs de linha e números de CRL para todas as CRLs base:-restringir "CRLMinBase = 0"-out "CRLRowId, CRLNumber" CRL
 
-Para exibir a base de dados de lista de certificados Revogados número 3: - v-restringir "CRLMinBase = 0, CRLNumber = 3"-out "CRLRawCRL" lista de certificados Revogados
+Para exibir o número de CRL base 3:-v-restringir "CRLMinBase = 0, CRLNumber = 3"-out "CRLRawCRL" CRL
 
-Para exibir a tabela inteira da lista de certificados Revogados: CRL
+Para exibir a tabela de CRL inteira: REVOGA
 
-Use "Data [+ |-DD: hh]" para restrições de data
+Use "Date [+ |-DD: hh]" para restrições de data
 
-Use "agora + DD: hh" para uma data em relação à hora atual
+Use "Now + DD: hh" para uma data relativa à hora atual
 
-[-silenciosa] [-Dividir] [-config Machine\CAName] [-restringir RestrictionList] [-out ColumnList]
+[-Silent] [-divisão] [-config Machine\CAName] [-restringir restrição] [-out ColumnList]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
-## <a name="-db"></a>-db
+## <a name="-db"></a>-DB
 
-CertUtil [Opções] - db
+CertUtil [opções]-BD
 
-Banco de dados brutos do despejo
+Despejar banco de dados bruto
 
-[-config Machine\CAName] [-restringir RestrictionList] [-out ColumnList]
+[-config Machine\CAName] [-restringir restrição] [-out ColumnList]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
-## <a name="-deleterow"></a>-deleterow
+## <a name="-deleterow"></a>-deleteRow
 
-CertUtil [Opções] - deleterow RowId | Data [solicitação | Cert. | Ext | Attrib | LISTA DE CERTIFICADOS REVOGADOS]
+CertUtil [opções]-deleteRow RowId | Data [solicitação | Certificado | Ext | Atrib | REVOGA
 
 Excluir linha de banco de dados do servidor
 
-Solicitação: Falha e (data de envio) de solicitações pendentes
+Quest Solicitações com falha e pendentes (data de envio)
 
-Cert: Certificados revogados e expirados (data de expiração)
+Cert: Certificados expirados e revogados (data de expiração)
 
-Ext: Tabela de extensão
+Externa Tabela de extensão
 
-Attrib: Tabela de atributos
+Atributos Tabela de atributos
 
-CRL: Tabela da lista de certificados Revogados (data de expiração)
+REVOGA Tabela de CRL (data de expiração)
 
-Para excluir com falha e solicitações pendentes enviados por 22 de janeiro de 2001: 22/1/2001 solicitação
+Para excluir solicitações com falha e pendentes enviadas por 22 de janeiro de 2001: 1/22/2001 solicitação
 
-Para excluir todos os certificados expiraram por 22 de janeiro de 2001: 22/1/2001 cert
+Para excluir todos os certificados que expiraram em 22 de janeiro de 2001: certificado 1/22/2001
 
-Para excluir a linha de certificado, atributos e extensões de RequestId 37: 37
+Para excluir a linha, os atributos e as extensões do certificado para RequestId 37: 37
 
-Para excluir as CRLs expiraram por 22 de janeiro de 2001: LISTA DE CERTIFICADOS REVOGADOS 22/1/2001
+Para excluir CRLs que expiraram em 22 de janeiro de 2001: CRL 1/22/2001
 
-[-f]. [-config Machine\CAName]
+[-f] [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-backup"></a>-backup
 
-CertUtil [Opções] - backup BackupDirectory [Incremental] [KeepLog]
+CertUtil [opções]-backup BackupDirectory [incremental] [KeepLog]
 
-Serviços de certificados de backup do Active Directory
+Serviços de certificados de Active Directory de backup
 
 BackupDirectory: diretório para armazenar dados de backup
 
-Incremental: executar somente backup incremental (o padrão é o backup completo)
+Incremental: executar backup incremental somente (o padrão é backup completo)
 
-KeepLog: preservar arquivos de log do banco de dados (o padrão é truncar os arquivos de log)
+KeepLog: preservar arquivos de log de banco de dados (o padrão é truncar arquivos de log)
 
-[-f]. [-config Machine\CAName] [-p senha]
+[-f] [-config Machine\CAName] [-p senha]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-backupdb"></a>-backupDB
 
-[Opções] do CertUtil – backupDB BackupDirectory [Incremental] [KeepLog]
+CertUtil [opções]-backupDB BackupDirectory [incremental] [KeepLog]
 
-Banco de dados de serviços de certificados do Active Directory backup
+Backup Active Directory banco de dados de serviços de certificados
 
-BackupDirectory: diretório para armazenar arquivos de backup banco de dados
+BackupDirectory: diretório para armazenar arquivos de banco de dados de backup
 
-Incremental: executar somente backup incremental (o padrão é o backup completo)
+Incremental: executar backup incremental somente (o padrão é backup completo)
 
-KeepLog: preservar arquivos de log do banco de dados (o padrão é truncar os arquivos de log)
+KeepLog: preservar arquivos de log de banco de dados (o padrão é truncar arquivos de log)
 
-[-f]. [-config Machine\CAName]
+[-f] [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-backupkey"></a>-backupKey
 
-CertUtil [Opções] – backupKey BackupDirectory
+CertUtil [opções]-backupKey BackupDirectory
 
-Certificado de serviços de certificados do Active Directory backup e a chave privada
+Backup Active Directory certificado de serviços de certificados e chave privada
 
-BackupDirectory: diretório para armazenar o backup arquivo PFX
+BackupDirectory: diretório para armazenar o arquivo PFX de backup
 
-[-f]. [-config Machine\CAName] [-p senha] [-t tempo limite]
+[-f] [-config Machine\CAName] [-p senha] [-t tempo limite]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-restore"></a>-restaurar
 
-CertUtil [Opções] - restaurar BackupDirectory
+CertUtil [opções] – restaurar BackupDirectory
 
-Restaurar os serviços de certificados do Active Directory
+Restaurar Active Directory serviços de certificados
 
-BackupDirectory: o diretório que contém dados a serem restaurados
+BackupDirectory: diretório que contém os dados a serem restaurados
 
-[-f]. [-config Machine\CAName] [-p senha]
+[-f] [-config Machine\CAName] [-p senha]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-restoredb"></a>-restoreDB
 
-CertUtil [Opções] - restoreDB BackupDirectory
+CertUtil [opções]-restoreDB BackupDirectory
 
-Restaurar banco de dados de serviços de certificados do Active Directory
+Restaurar Active Directory banco de dados de serviços de certificados
 
-BackupDirectory: o diretório que contém os arquivos de banco de dados a serem restaurados
+BackupDirectory: diretório que contém os arquivos de banco de dados a serem restaurados
 
-[-f]. [-config Machine\CAName]
+[-f] [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-restorekey"></a>-restoreKey
 
-CertUtil [Opções] - restoreKey BackupDirectory | PFXFile
+CertUtil [opções]-restoreKey BackupDirectory | PFXFile
 
-Restaurar a chave particular e certificado de serviços de certificados do Active Directory
+Restaurar Active Directory certificado de serviços de certificados e chave privada
 
-BackupDirectory: o diretório que contém o arquivo PFX a ser restaurado
+BackupDirectory: diretório que contém o arquivo PFX a ser restaurado
 
-PFXFile: Arquivo PFX a ser restaurado
+PFXFile Arquivo PFX a ser restaurado
 
-[-f]. [-config Machine\CAName] [-p senha]
+[-f] [-config Machine\CAName] [-p senha]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-importpfx"></a>-importPFX
 
-CertUtil [Opções] [CertificateStoreName] - importPFX PFXFile [modificadores]
+CertUtil [opções]-importPFX [CertificateStoreName] PFXFile [modificadores]
 
-Importar o certificado e a chave privada
+Importar certificado e chave privada
 
-CertificateStoreName: Nome do repositório de certificados.  Ver [-armazenar](#-store).
+CertificateStoreName: Nome do repositório de certificados.  Consulte [-Store](#-store).
 
-PFXFile: Arquivo PFX a ser importado
+PFXFile Arquivo PFX a ser importado
 
-Modificadores de: Lista separada por vírgulas de uma ou mais das seguintes opções:
+Modificadores Lista separada por vírgulas de um ou mais dos seguintes:
 
-1. AT_SIGNATURE: Alterar KeySpec para assinatura
-2. AT_KEYEXCHANGE: Alterar KeySpec para troca de chaves
-3. NoExport: Verifique a chave privada não exportável
-4. NoCert: Não importar o certificado
-5. NoChain: Não importar a cadeia de certificados
-6. NoRoot: Não importe o certificado raiz
-7. Protege: Proteger as chaves com senha
-8. NoProtect: Senha não proteger as chaves
+1. AT_SIGNATURE: Alterar a KeySpec para assinatura
+2. AT_KEYEXCHANGE: Alterar a KeySpec para a troca de chaves
+3. Noexporte: Tornar a chave privada não exportável
+4. Nocert: Não importar o certificado
+5. Nochain: Não importar a cadeia de certificados
+6. Noroot: Não importar o certificado raiz
+7. Protegendo Proteger chaves com senha
+8. Noprotect: Não proteger chaves por senha
 
-Padrão do repositório de computador pessoal.
+O padrão é o repositório de computador pessoal.
 
-[-f]. [-usuário] [-p senha] [-csp provedor]
+[-f] [-usuário] [-p senha] [-provedor CSP]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-dynamicfilelist"></a>-dynamicfilelist
 
-Dynamicfilelist - CertUtil [Opções]
+CertUtil [opções]-dynamicfilelist
 
-Exibir a lista de arquivos dinâmica
+Exibir lista de arquivos dinâmicos
 
 [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-databaselocations"></a>-databaselocations
 
-Databaselocations - CertUtil [Opções]
+CertUtil [opções]-databaselocations
 
-Exibir os locais do banco de dados
+Exibir locais de banco de dados
 
 [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-hashfile"></a>-hashfile
 
-[Opções] do CertUtil - hashfile InFile [HashAlgorithm]
+CertUtil [opções]-hashfile InFile [HashAlgorithm]
 
 Gerar e exibir o hash criptográfico em um arquivo
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
-## <a name="-store"></a>-store
+## <a name="-store"></a>-Store
 
-CertUtil [Options] -store [CertificateStoreName [CertId [OutputFile]]]
+CertUtil [opções]-Store [CertificateStoreName [certid [arquivo_de_saída]]]
 
-Repositório de certificados do despejo
+Despejar repositório de certificados
 
 CertificateStoreName: Nome do repositório de certificados. Exemplos:
 
-- "Meu", "CA" (padrão), "Root",
-- "ldap: / / / CN = autoridades de certificação, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? cACertificate? uma? objectClass = certificationAuthority" (Exibir certificados de raiz)
-- "ldap: / / / CN = CAName, CN = autoridades de certificação, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? cACertificate? base? objectClass = certificationAuthority" (modificar certificados de raiz)
-- "ldap: / / / CN = CAName, CN = MachineName, CN = CDP, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? certificateRevocationList? base? objectClass = cRLDistributionPoint" (exibição de listas de certificados revogados)
-- "ldap: / / / CN = NTAuthCertificates, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? cACertificate? base? objectClass = certificationAuthority" (certificados de AC corporativa)
-- LDAP: (Certificados de objeto de computador do AD)
-- -usuário ldap: (Certificados de objeto de usuário do AD)
+- "My", "CA" (padrão), "root",
+- "ldap:///CN=Certification autoridades, CN = Public Key Services, CN = Services, CN = Configuration, DC = CPANDL, DC = com? cACertificate? One? objectClass = certificationAuthority" (exibir certificados raiz)
+- "ldap:///CN=CAName,CN=Certification autoridades, CN = Public Key Services, CN = Services, CN = Configuration, DC = CPANDL, DC = com? cACertificate? base? objectClass = certificationAuthority" (modificar certificados raiz)
+- "ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services, CN = Services, CN = Configuration, DC = CPANDL, DC = com? certificateRevocationList? base? objectClass = cRLDistributionPoint" (Exibir CRLs)
+- "ldap:///CN=NTAuthCertificates,CN=Public Key Services, CN = Services, CN = Configuration, DC = CPANDL, DC = com? cACertificate? base? objectClass = certificationAuthority" (certificados de AC corporativa)
+- LDAP (Certificados de objeto de computador do AD)
+- -LDAP do usuário: (Certificados de objeto de usuário do AD)
 
-CertId: O certificado ou token de correspondência CRL.  Isso pode ser um número de série, um SHA-1 certificado, lista de certificados Revogados, CTL ou hash da chave pública, um índice numérico cert (0, 1 e assim por diante), um índice numérico de CRL (. 0,.1 e assim por diante), um índice numérico de lista de certificados confiáveis (... 0,... 1 e assim por diante), uma chave pública, assinatura ou extensão ObjectId, uma entidade do certificado nome comum, um endereço de email, UPN ou nome DNS, um nome de contêiner de chave ou nome do CSP, um nome de modelo ou ObjectId, um EKU ou ObjectId de políticas de aplicativo ou um nome comum do emissor CRL. Muitos deles podem resultar em várias correspondências.
+CertId Token de correspondência de certificado ou CRL.  Pode ser um número de série, um certificado SHA-1, CRL, CTL ou hash de chave pública, um índice de certificado numérico (0, 1 e assim por diante), um índice de CRL numérico (. 0, 0,1 e assim por diante), um índice de CTL numérico (.. 0,.. 1 e assim por diante), uma chave pública, uma assinatura ou um ObjectId de extensão, um nome comum de entidade de certificado, um endereço de email, nome DNS ou UPN, um nome de contêiner de chave ou nome CSP, um nome de modelo ou ObjectId, um EKU ou ObjectId de políticas de aplicativo ou um nome comum de emissor de CRL. Muitas delas podem resultar em várias correspondências.
 
-Arquivo de saída: o arquivo para salvar o certificado correspondente
+Arquivo_de_saída: arquivo para salvar o certificado correspondente
 
-Use - o usuário para acessar um repositório de usuário em vez de um armazenamento de máquina.
+Use-User para acessar um repositório de usuários em vez de um repositório de computador.
 
-Use - enterprise para acessar um repositório do computador corporativo.
+Use-Enterprise para acessar um computador Enterprise Store.
 
-Use - o serviço para acessar um repositório do serviço de máquina.
+Use-Service para acessar um repositório de serviços de máquina.
 
-Use - grouppolicy para acessar um armazenamento de diretiva de grupo do computador.
+Use-GroupPolicy para acessar um repositório de política de grupo de computadores.
 
 Exemplos:
 
-- -enterprise NTAuth
-- -enterprise Root 37
-- -user My 26e0aaaf000000000004
-- AUTORIDADE DE CERTIFICAÇÃO.11
+- -NTAuth corporativo
+- -Raiz da empresa 37
+- -Meu 26e0aaaf000000000004 de usuário
+- CA. 11
 
-[-f] [-enterprise] [-user] [-GroupPolicy] [-silent] [-split] [-dc DCName]
+[-f] [-Enterprise] [-usuário] [-GroupPolicy] [-Silent] [-divisão] [-DC DCName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-addstore"></a>-addstore
 
-CertUtil [Opções] - addstore CertificateStoreName InFile
+CertUtil [opções]-addstore CertificateStoreName InFile
 
-Adicionar certificado ao armazenamento
+Adicionar certificado ao repositório
 
-CertificateStoreName: Nome do repositório de certificados.  Ver [-armazenar](#-store).
+CertificateStoreName: Nome do repositório de certificados.  Consulte [-Store](#-store).
 
-InFile: Arquivo de certificado ou CRL a ser adicionado para armazenar.
+INFILE Arquivo de certificado ou CRL a ser adicionado ao repositório.
 
-[-f] [-enterprise] [-user] [-GroupPolicy] [-dc DCName]
+[-f] [-Enterprise] [-usuário] [-GroupPolicy] [-DC DCName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-delstore"></a>-delstore
 
-CertUtil [Opções] - delstore CertificateStoreName CertId
+CertUtil [opções]-delstore CertificateStoreName certid
 
-Excluir certificado do armazenamento
+Excluir certificado do repositório
 
-CertificateStoreName: Nome do repositório de certificados.  Ver [-armazenar](#-store).
+CertificateStoreName: Nome do repositório de certificados.  Consulte [-Store](#-store).
 
-CertId: O certificado ou token de correspondência CRL.  Ver [-armazenar](#-store).
+CertId Token de correspondência de certificado ou CRL.  Consulte [-Store](#-store).
 
-[-enterprise] [-user] [-GroupPolicy] [-dc DCName]
+[-Enterprise] [-usuário] [-GroupPolicy] [-DC DCName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-verifystore"></a>-verifystore
 
-CertUtil [Opções] - verifystore CertificateStoreName [CertId]
+CertUtil [opções]-verifystore CertificateStoreName [certid]
 
-Verifique se o certificado no repositório
+Verificar o certificado no repositório
 
-CertificateStoreName: Nome do repositório de certificados.  Ver [-armazenar](#-store).
+CertificateStoreName: Nome do repositório de certificados.  Consulte [-Store](#-store).
 
-CertId: O certificado ou token de correspondência CRL.  Ver [-armazenar](#-store).
+CertId Token de correspondência de certificado ou CRL.  Consulte [-Store](#-store).
 
-[-enterprise] [-user] [-GroupPolicy] [-silent] [-split] [-dc DCName] [-t Timeout]
+[-Enterprise] [-usuário] [-GroupPolicy] [-Silent] [-divisão] [-DC DCName] [-t tempo limite]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-repairstore"></a>-repairstore
 
-[Opções] do CertUtil – repairstore CertificateStoreName CertIdList [PropertyInfFile | SDDLSecurityDescriptor]
+CertUtil [opções]-repairstore CertificateStoreName CertIdList [PropertyInfFile | SDDLSecurityDescriptor]
 
-Associação de chave de reparar ou atualizar o descritor de segurança de propriedades ou a chave de certificado
+Reparar Associação de chave ou atualizar propriedades de certificado ou descritor de segurança de chave
 
-CertificateStoreName: Nome do repositório de certificados.  Ver [-armazenar](#-store).
+CertificateStoreName: Nome do repositório de certificados.  Consulte [-Store](#-store).
 
-CertIdList: lista separada por vírgulas de tokens de correspondência de certificado ou CRL. Ver [-armazenar](#-store) CertId descrição.
+CertIdList: lista separada por vírgulas de tokens de correspondência de certificado ou CRL. Consulte [a descrição de](#-store) certid da Store.
 
-PropertyInfFile – O arquivo INF que contém propriedades externos:
+PropertyInfFile--arquivo INF contendo Propriedades externas:
 
 ```
 [Properties]
@@ -839,496 +839,496 @@ PropertyInfFile – O arquivo INF que contém propriedades externos:
        _continue_ = "1.3.6.1.5.5.7.3.1,"
 ```
 
-[-f] [-enterprise] [-user] [-GroupPolicy] [-silent] [-split] [-csp Provider]
+[-f] [-Enterprise] [-usuário] [-GroupPolicy] [-Silent] [-divisão] [-provedor CSP]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-viewstore"></a>-viewstore
 
-[Opções] do CertUtil - viewstore [CertificateStoreName [CertId [OutputFile]]]
+CertUtil [opções]-viewstore [CertificateStoreName [certid [arquivo_de_saída]]]
 
-Repositório de certificados do despejo
+Despejar repositório de certificados
 
 CertificateStoreName: Nome do repositório de certificados. Exemplos:
 
-- "Meu", "CA" (padrão), "Root",
-- "ldap: / / / CN = autoridades de certificação, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? cACertificate? uma? objectClass = certificationAuthority" (Exibir certificados de raiz)
-- "ldap: / / / CN = CAName, CN = autoridades de certificação, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? cACertificate? base? objectClass = certificationAuthority" (modificar certificados de raiz)
-- "ldap: / / / CN = CAName, CN = MachineName, CN = CDP, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? certificateRevocationList? base? objectClass = cRLDistributionPoint" (exibição de listas de certificados revogados)
-- "ldap: / / / CN = NTAuthCertificates, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? cACertificate? base? objectClass = certificationAuthority" (certificados de AC corporativa)
-- LDAP: (Certificados de objeto do computador do AD)
-- -usuário ldap: (Certificados de objeto de usuário do AD)
+- "My", "CA" (padrão), "root",
+- "ldap:///CN=Certification autoridades, CN = Public Key Services, CN = Services, CN = Configuration, DC = CPANDL, DC = com? cACertificate? One? objectClass = certificationAuthority" (exibir certificados raiz)
+- "ldap:///CN=CAName,CN=Certification autoridades, CN = Public Key Services, CN = Services, CN = Configuration, DC = CPANDL, DC = com? cACertificate? base? objectClass = certificationAuthority" (modificar certificados raiz)
+- "ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services, CN = Services, CN = Configuration, DC = CPANDL, DC = com? certificateRevocationList? base? objectClass = cRLDistributionPoint" (Exibir CRLs)
+- "ldap:///CN=NTAuthCertificates,CN=Public Key Services, CN = Services, CN = Configuration, DC = CPANDL, DC = com? cACertificate? base? objectClass = certificationAuthority" (certificados de AC corporativa)
+- LDAP (Certificados de objeto de máquina do AD)
+- -LDAP do usuário: (Certificados de objeto de usuário do AD)
 
-CertId: O certificado ou token de correspondência CRL. Isso pode ser um número de série, um SHA-1 certificado, lista de certificados Revogados, CTL ou hash da chave pública, um índice numérico cert (0, 1 e assim por diante), um índice numérico de CRL (. 0,.1 e assim por diante), um índice numérico de lista de certificados confiáveis (... 0,... 1 e assim por diante), uma chave pública, assinatura ou extensão ObjectId, uma entidade do certificado nome comum, um endereço de email, UPN ou nome DNS, um nome de contêiner de chave ou nome do CSP, um nome de modelo ou ObjectId, um EKU ou ObjectId de políticas de aplicativo ou um nome comum do emissor CRL. Muitos deles podem resultar em várias correspondências.
+CertId Token de correspondência de certificado ou CRL. Pode ser um número de série, um certificado SHA-1, CRL, CTL ou hash de chave pública, um índice de certificado numérico (0, 1 e assim por diante), um índice de CRL numérico (. 0, 0,1 e assim por diante), um índice de CTL numérico (.. 0,.. 1 e assim por diante), uma chave pública, uma assinatura ou um ObjectId de extensão, um nome comum de entidade de certificado, um endereço de email, nome DNS ou UPN, um nome de contêiner de chave ou nome CSP, um nome de modelo ou ObjectId, um EKU ou ObjectId de políticas de aplicativo ou um nome comum de emissor de CRL. Muitas delas podem resultar em várias correspondências.
 
-Arquivo de saída: o arquivo para salvar o certificado correspondente
+Arquivo_de_saída: arquivo para salvar o certificado correspondente
 
-Use - o usuário para acessar um repositório de usuário em vez de um armazenamento de máquina.
+Use-User para acessar um repositório de usuários em vez de um repositório de computador.
 
-Use - enterprise para acessar um repositório do computador corporativo.
+Use-Enterprise para acessar um computador Enterprise Store.
 
-Use - o serviço para acessar um repositório do serviço de máquina.
+Use-Service para acessar um repositório de serviços de máquina.
 
-Use - grouppolicy para acessar um armazenamento de diretiva de grupo do computador.
+Use-GroupPolicy para acessar um repositório de política de grupo de computadores.
 
 Exemplos:
 
-1. -enterprise NTAuth
-2. -enterprise Root 37
-3. -user My 26e0aaaf000000000004
-4. AUTORIDADE DE CERTIFICAÇÃO.11
+1. -NTAuth corporativo
+2. -Raiz da empresa 37
+3. -Meu 26e0aaaf000000000004 de usuário
+4. CA. 11
 
-[-f] [-enterprise] [-user] [-GroupPolicy] [-dc DCName]
+[-f] [-Enterprise] [-usuário] [-GroupPolicy] [-DC DCName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-viewdelstore"></a>-viewdelstore
 
-CertUtil [Options] -viewdelstore [CertificateStoreName [CertId [OutputFile]]]
+CertUtil [opções]-viewdelstore [CertificateStoreName [certid [arquivo_de_saída]]]
 
-Excluir certificado do armazenamento
+Excluir certificado do repositório
 
 CertificateStoreName: Nome do repositório de certificados. Exemplos:
 
-- "Meu", "CA" (padrão), "Root",
-- "ldap: / / / CN = autoridades de certificação, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? cACertificate? uma? objectClass = certificationAuthority" (Exibir certificados de raiz)
-- "ldap: / / / CN = CAName, CN = autoridades de certificação, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? cACertificate? base? objectClass = certificationAuthority" (modificar certificados de raiz)
-- "ldap: / / / CN = CAName, CN = MachineName, CN = CDP, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? certificateRevocationList? base? objectClass = cRLDistributionPoint" (exibição de listas de certificados revogados)
-- "ldap: / / / CN = NTAuthCertificates, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? cACertificate? base? objectClass = certificationAuthority" (certificados de AC corporativa)
-- LDAP: (Certificados de objeto do computador do AD)
-- -usuário ldap: (Certificados de objeto de usuário do AD)
+- "My", "CA" (padrão), "root",
+- "ldap:///CN=Certification autoridades, CN = Public Key Services, CN = Services, CN = Configuration, DC = CPANDL, DC = com? cACertificate? One? objectClass = certificationAuthority" (exibir certificados raiz)
+- "ldap:///CN=CAName,CN=Certification autoridades, CN = Public Key Services, CN = Services, CN = Configuration, DC = CPANDL, DC = com? cACertificate? base? objectClass = certificationAuthority" (modificar certificados raiz)
+- "ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services, CN = Services, CN = Configuration, DC = CPANDL, DC = com? certificateRevocationList? base? objectClass = cRLDistributionPoint" (Exibir CRLs)
+- "ldap:///CN=NTAuthCertificates,CN=Public Key Services, CN = Services, CN = Configuration, DC = CPANDL, DC = com? cACertificate? base? objectClass = certificationAuthority" (certificados de AC corporativa)
+- LDAP (Certificados de objeto de máquina do AD)
+- -LDAP do usuário: (Certificados de objeto de usuário do AD)
 
-CertId: O certificado ou token de correspondência CRL. Isso pode ser um número de série, um SHA-1 certificado, lista de certificados Revogados, CTL ou hash da chave pública, um índice numérico cert (0, 1 e assim por diante), um índice numérico de CRL (. 0,.1 e assim por diante), um índice numérico de lista de certificados confiáveis (... 0,... 1 e assim por diante), uma chave pública, assinatura ou extensão ObjectId, uma entidade do certificado nome comum, um endereço de email, UPN ou nome DNS, um nome de contêiner de chave ou nome do CSP, um nome de modelo ou ObjectId, um EKU ou ObjectId de políticas de aplicativo ou um nome comum do emissor CRL. Muitos deles podem resultar em várias correspondências.
+CertId Token de correspondência de certificado ou CRL. Pode ser um número de série, um certificado SHA-1, CRL, CTL ou hash de chave pública, um índice de certificado numérico (0, 1 e assim por diante), um índice de CRL numérico (. 0, 0,1 e assim por diante), um índice de CTL numérico (.. 0,.. 1 e assim por diante), uma chave pública, uma assinatura ou um ObjectId de extensão, um nome comum de entidade de certificado, um endereço de email, nome DNS ou UPN, um nome de contêiner de chave ou nome CSP, um nome de modelo ou ObjectId, um EKU ou ObjectId de políticas de aplicativo ou um nome comum de emissor de CRL. Muitas delas podem resultar em várias correspondências.
 
-Arquivo de saída: o arquivo para salvar o certificado correspondente
+Arquivo_de_saída: arquivo para salvar o certificado correspondente
 
-Use - o usuário para acessar um repositório de usuário em vez de um armazenamento de máquina.
+Use-User para acessar um repositório de usuários em vez de um repositório de computador.
 
-Use - enterprise para acessar um repositório do computador corporativo.
+Use-Enterprise para acessar um computador Enterprise Store.
 
-Use - o serviço para acessar um repositório do serviço de máquina.
+Use-Service para acessar um repositório de serviços de máquina.
 
-Use - grouppolicy para acessar um armazenamento de diretiva de grupo do computador.
+Use-GroupPolicy para acessar um repositório de política de grupo de computadores.
 
 Exemplos:
 
-1. -enterprise NTAuth
-2. -enterprise Root 37
-3. -user My 26e0aaaf000000000004
-4. AUTORIDADE DE CERTIFICAÇÃO.11
+1. -NTAuth corporativo
+2. -Raiz da empresa 37
+3. -Meu 26e0aaaf000000000004 de usuário
+4. CA. 11
 
-[-f] [-enterprise] [-user] [-GroupPolicy] [-dc DCName]
+[-f] [-Enterprise] [-usuário] [-GroupPolicy] [-DC DCName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-dspublish"></a>-dsPublish
 
-[Opções] do CertUtil - dsPublish CertFile [NTAuthCA | RootCA | SubCA | CrossCA | KRA | Usuário | Máquina]
+CertUtil [opções]-dsPublish CertFile [NTAuthCA | RootCA | SubCA | CrossCA | KRA | Usuário | Tradução
 
-Relação a - dsPublish CRLFile CertUtil [Opções] [DSCDPContainer [DSCDPCN]]
+CertUtil [opções]-dsPublish CRLFile [DSCDPContainer [DSCDPCN]]
 
-Publicar o certificado ou CRL no Active Directory
+Publicar certificado ou CRL para Active Directory
 
-CertFile: arquivo de certificado publicar
+CertFile: arquivo de certificado a ser publicado
 
-NTAuthCA: Publicar certificados para armazenamento de DS Enterprise
+NTAuthCA: Publicar o certificado na Enterprise Store do DS
 
-RootCA: Publicar certificado no repositório raiz confiável do DS
+RootCA Publicar certificado no repositório de raiz confiável do DS
 
-SubCA: Publicar o certificado de autoridade de certificação no objeto DS CA
+SubCA Publicar certificado de autoridade de certificação em objeto de AC DS
 
-CrossCA: Publicar cruzada cert ao objeto de autoridade de certificação do DS
+CrossCA: Publicar o certificado cruzado para o objeto de AC DS
 
-KRA: Publicar o certificado ao objeto de agente de recuperação de chave do DS
+KRA Publicar certificado no objeto agente de recuperação de chave DS
 
-Usuário: Publicar o certificado ao objeto de usuário DS
+Usuário: Publicar certificado no objeto DS do usuário
 
-Computador: Publicar o certificado ao objeto de máquina DS
+Tradução Publicar certificado no objeto DS do computador
 
-Relação a CRLFile: Arquivo da CRL para publicar
+CRLFile: Arquivo de CRL a ser publicado
 
-DSCDPContainer: Contêiner CDP DS CN, geralmente o nome do computador da autoridade de certificação
+DSCDPContainer: CN do contêiner de CDP do DS, geralmente o nome do computador da autoridade de certificação
 
-DSCDPCN: DS CDP normalmente objeto CN, com base no índice de chave e nome curto de autoridade de certificação corrigido
+DSCDPCN: Objeto CN de CDP do DS, geralmente com base no nome curto e índice de chave da AC corrigido
 
-Use -f para criar o objeto DS.
+Use-f para criar o objeto DS.
 
-[-f]. [-usuário] [-dc DCName]
+[-f] [-usuário] [-DC DCName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-adtemplate"></a>-ADTemplate
 
-CertUtil [Opções] - ADTemplate [modelo]
+CertUtil [opções]-ADTemplate [modelo]
 
 Exibir modelos do AD
 
-[-f]. [-usuário] [-ut] [-mt] [-dc DCName]
+[-f] [-usuário] [-ut] [-MT] [-DC DCName]
 
 ## <a name="-template"></a>-Modelo
 
-CertUtil [Opções] - modelo [modelo]
+CertUtil [opções] – modelo [modelo]
 
 Exibir modelos de política de registro
 
-[-f] [-user] [-silent] [-PolicyServer URLOrId] [-Anonymous] [-Kerberos] [-ClientCertificate ClientCertId] [-UserName UserName] [-p Password]
+[-f] [-usuário] [-Silent] [-PolicyServer URLOrId] [-Anônimo] [-Kerberos] [-ClientCertificate ClientCertId] [-UserName nome de usuário] [-p senha]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-templatecas"></a>-TemplateCAs
 
-Modelo de - TemplateCAs CertUtil [Opções]
+CertUtil [opções] – modelo TemplateCAs
 
-Autoridades de certificação de exibição de modelo
+Exibir CAs para o modelo
 
-[-f]. [-usuário] [-dc DCName]
+[-f] [-usuário] [-DC DCName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-catemplates"></a>-CATemplates
 
-CertUtil [Opções] - CATemplates [modelo]
+CertUtil [opções]-CATemplates [modelo]
 
-Exibir modelos de autoridade de certificação
+Exibir modelos para CA
 
-[-f]. [-usuário] [-ut] [-mt] [-config Machine\CAName] [-dc DCName]
+[-f] [-usuário] [-ut] [-MT] [-config Machine\CAName] [-DC DCName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-setcasites"></a>-SetCASites
 
-CertUtil [Opções] - SetCASites [conjunto] [NomeDoSite]
+CertUtil [opções]-SetCASites [conjunto] [SiteName]
 
-Verificar a SetCASites - CertUtil [Opções] [NomeDoSite]
+CertUtil [opções]-SetCASites verificar [SiteName]
 
-Excluir SetCASites - CertUtil [Opções]
+CertUtil [opções] – exclusão de SetCASites
 
-Nomes de site do conjunto, verifique se ou excluir da autoridade de certificação
+Definir, verificar ou excluir nomes de site da AC
 
-- Use a opção - config para uma única CA de destino (o padrão é todas as CAs)
-- *SiteName* é permitido somente quando destinada para uma única CA
-- Use -f para substituir os erros de validação especificado *SiteName*
-- Use -f para excluir todos os nomes de site da autoridade de certificação
+- Use a opção-config para direcionar uma única AC (o padrão é todas as CAs)
+- *SiteName* só é permitido quando direcionado a uma única AC
+- Use-f para substituir erros de validação para o *SiteName* especificado
+- Use-f para excluir todos os nomes de site da AC
 
-[-f]. [-config Machine\CAName] [-dc DCName]
+[-f] [-config Machine\CAName] [-DC DCName]
 
 > [!NOTE]
-> Para obter mais informações sobre como configurar autoridades de certificação para o reconhecimento de sites de serviços de domínio Active Directory (AD DS), consulte [reconhecimento de sites do AD DS para AD CS e clientes PKI](https://social.technet.microsoft.com/wiki/contents/articles/14106.ad-ds-site-awareness-for-ad-cs-and-pki-clients.aspx).
+> Para obter mais informações sobre como configurar o reconhecimento de site de CAs para Active Directory Domain Services (AD DS), consulte [AD DS reconhecimento de site para clientes do AD CS e PKI](https://social.technet.microsoft.com/wiki/contents/articles/14106.ad-ds-site-awareness-for-ad-cs-and-pki-clients.aspx).
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-enrollmentserverurl"></a>-enrollmentServerURL
 
-CertUtil [Opções] - enrollmentServerURL [URL AuthenticationType [prioridade] [modificadores]]
+CertUtil [opções]-enrollmentServerURL [URL AuthenticationType [prioridade] [modificadores]]
 
-Exclusão de URL - enrollmentServerURL CertUtil [Opções]
+CertUtil [opções]-enrollmentServerURL de exclusão de URL
 
-Exibir, adicionar ou excluir URLs de servidor de registro associadas com uma autoridade de certificação
+Exibir, adicionar ou excluir as URLs de servidor de registro associadas a uma AC
 
-AuthenticationType: Especifique um dos seguintes métodos de autenticação de cliente durante a adição de uma URL
+AuthenticationType Especifique um dos seguintes métodos de autenticação de cliente ao adicionar uma URL
 
-1. Kerberos: Usar credenciais Kerberos SSL
-2. UserName: Use a conta nomeada para credenciais SSL
-3. ClientCertificate: Usar credenciais de x. 509 certificado SSL
-4. Anonymous: Use credenciais anônimas do SSL
+1. Kerberos Usar credenciais SSL Kerberos
+2. Usu Usar conta nomeada para credenciais SSL
+3. ClientCertificate Usar credenciais SSL do certificado X. 509
+4. Anonymous: Usar credenciais SSL anônimas
 
-Excluir: exclui a URL especificada associada com a autoridade de certificação
+excluir: exclui a URL especificada associada à autoridade de certificação
 
-Prioridade: o padrão é '1' se não for especificado ao adicionar uma URL
+Prioridade: o padrão é ' 1 ' se não for especificado ao adicionar uma URL
 
-Modificadores – Lista separada por vírgulas de uma ou mais das seguintes opções:
+Modificadores – lista separada por vírgulas de um ou mais dos seguintes:
 
-1. AllowRenewalsOnly: Somente as solicitações de renovação podem ser enviadas para via essa URL da autoridade de certificação
-2. AllowKeyBasedRenewal: Permite o uso de um certificado que não tenha a nenhuma conta associada no AD. Isso se aplica apenas com ClientCertificate e modo AllowRenewalsOnly
+1. AllowRenewalsOnly: Somente solicitações de renovação podem ser enviadas para esta AC por meio desta URL
+2. AllowKeyBasedRenewal: Permite o uso de um certificado que não tem nenhuma conta associada no AD. Isso se aplica somente ao modo ClientCertificate e AllowRenewalsOnly
 
-[-config Machine\CAName] [-dc DCName]
+[-config Machine\CAName] [-DC DCName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-adca"></a>-ADCA
 
-CertUtil [Opções] [CAName] - ADCA
+CertUtil [opções]-ADCA [CAName]
 
-Exibir autoridades de certificação do AD
+Exibir CAs do AD
 
-[-f]. [-Dividir] [-dc DCName]
+[-f] [-divisão] [-DC DCName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-ca"></a>-CA
 
-AC - CertUtil [Opções] [CAName | TemplateName]
+CertUtil [opções]-AC [CAName | TemplateName
 
-Exibir CAs de política de registro
+Exibir CAs da política de registro
 
-[-f] [-user] [-silent] [-split] [-PolicyServer URLOrId] [-Anonymous] [-Kerberos] [-ClientCertificate ClientCertId] [-UserName UserName] [-p Password]
+[-f] [-usuário] [-Silent] [-divisão] [-PolicyServer URLOrId] [-Anônimo] [-Kerberos] [-ClientCertificate ClientCertId] [-UserName nome de usuário] [-p senha]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
-## <a name="-policy"></a>-Policy
+## <a name="-policy"></a>-Política
 
 Exibir política de registro
 
-[-f] [-user] [-silent] [-split] [-PolicyServer URLOrId] [-Anonymous] [-Kerberos] [-ClientCertificate ClientCertId] [-UserName UserName] [-p Password]
+[-f] [-usuário] [-Silent] [-divisão] [-PolicyServer URLOrId] [-Anônimo] [-Kerberos] [-ClientCertificate ClientCertId] [-UserName nome de usuário] [-p senha]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-policycache"></a>-PolicyCache
 
-CertUtil [Opções] - PolicyCache [excluir]
+CertUtil [opções]-PolicyCache [excluir]
 
-Exibir ou excluir as entradas de Cache de política de registro
+Exibir ou excluir entradas do cache da política de registro
 
-Excluir: excluir as entradas de cache do servidor de políticas
+excluir: Excluir entradas de cache do servidor de política
 
--f: use -f para excluir todas as entradas de cache
+-f: Use-f para excluir todas as entradas de cache
 
-[-f] [-user] [-PolicyServer URLOrId]
+[-f] [-usuário] [-PolicyServer URLOrId]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-credstore"></a>-CredStore
 
-CertUtil [Opções] - CredStore [URL]
+CertUtil [opções]-CredStore [URL]
 
-Adicionar de URL - CredStore CertUtil [Opções]
+CertUtil [opções]-CredStore URL Add
 
-Excluir de URL - CredStore CertUtil [Opções]
+CertUtil [opções]-CredStore de exclusão de URL
 
-Exibir, adicionar ou excluir as entradas de Store de credencial
+Exibir, adicionar ou excluir entradas de repositório de credenciais
 
-URL: URL de destino.  Use \* para corresponder a todas as entradas. Use https://machine\* para corresponder a um prefixo de URL.
+URL: URL de destino.  Use \* para corresponder a todas as entradas. Use https://machine\ * para corresponder a um prefixo de URL.
 
-Adicionar: adicionar uma entrada de Store de credencial. As credenciais de SSL também devem ser especificadas.
+Adicionar: adicionar uma entrada de repositório de credenciais. As credenciais SSL também devem ser especificadas.
 
-Excluir: excluir as entradas de Store de credencial
+excluir: Excluir entradas do repositório de credenciais
 
--f: use -f para substituir uma entrada ou para excluir várias entradas.
+-f: Use-f para substituir uma entrada ou excluir várias entradas.
 
-[-f]. [-usuário] [-silenciosa] [-Anônimo] [-Kerberos] [-ClientCertificate ClientCertId] [-Nome de usuário de nome de usuário] [-p senha]
+[-f] [-usuário] [-Silent] [-Anônimo] [-Kerberos] [-ClientCertificate ClientCertId] [-UserName nome de usuário] [-p senha]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-installdefaulttemplates"></a>-InstallDefaultTemplates
 
-[Opções] do CertUtil – InstallDefaultTemplates
+CertUtil [opções]-InstallDefaultTemplates
 
-Instalar os modelos de certificado padrão
+Instalar modelos de certificado padrão
 
-[-dc DCName]
+[-DC DCName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-urlcache"></a>-URLCache
 
-[Opções] do CertUtil - URLCache [URL | LISTA DE CERTIFICADOS REVOGADOS | \* [excluir]]
+CertUtil [opções]-URLCache [URL | CRL | \* [excluir]]
 
-Exibir ou excluir as entradas de cache de URL
+Exibir ou excluir entradas de cache de URL
 
 URL: URL armazenada em cache
 
-Lista de certificados Revogados: operam em todas as URLs armazenadas em cache da CRL somente
+CRL: operar em todas as URLs de CRL em cache somente
 
-\*: operam em URLs todos armazenados em cache
+\*: operar em todas as URLs em cache
 
-Excluir: Excluir URLs relevantes do cache local do usuário atual
+excluir: excluir URLs relevantes do cache local do usuário atual
 
-Use -f para forçar uma URL específica de buscar e atualizar o cache.
+Use-f para forçar a busca de uma URL específica e a atualização do cache.
 
-[-f] [-split]
+[-f] [-divisão]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
-## <a name="-pulse"></a>-pulse
+## <a name="-pulse"></a>-Pulse
 
-CertUtil [Opções] - pulse
+CertUtil [opções]-pulso
 
 Eventos de registro automático de pulso
 
 [-usuário]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-machineinfo"></a>-MachineInfo
 
-CertUtil [Opções] - MachineInfo NomeDoDomínio \ NomeDoComputador$
+CertUtil [opções]-MachineInfo DomainName\MachineName $
 
-Exibir informações do objeto de computador do Active Directory
+Exibir informações do objeto de computador Active Directory
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-dcinfo"></a>-DCInfo
 
-CertUtil [Opções] - DCInfo [domínio] [verificar | DeleteBad | DeleteAll]
+CertUtil [opções]-DCInfo [domínio] [verificar | DeleteBad | DeleteAll
 
-Exibir informações de controlador de domínio
+Exibir informações do controlador de domínio
 
-O padrão é exibir certificados de controlador de domínio sem a verificação
+O padrão é exibir certificados DC sem verificação
 
-[-f]. [-usuário] [-urlfetch] [-dc DCName] [-t tempo limite]
+[-f] [-usuário] [-urlfetch] [-DC DCName] [-t tempo limite]
 
 > [!TIP]
-> A capacidade de especificar um domínio Active Directory Domain Services (AD DS) **[domínio]** e para especificar um controlador de domínio ( **-dc**) foi adicionado no Windows Server 2012. Para poder executar o comando, você deve usar uma conta que seja membro da **Admins. do domínio** ou **administradores de empresa**. As modificações de comportamento deste comando é o seguinte:</br>> 1.  Se um domínio não for especificado e um controlador de domínio específico não for especificado, essa opção retorna uma lista de controladores de domínio para processar do controlador de domínio padrão.</br>> 2.  Se um domínio não for especificado, mas um controlador de domínio for especificado, um relatório dos certificados no controlador de domínio especificado é gerado.</br>> 3.  Se um domínio for especificado, mas um controlador de domínio não for especificado, uma lista de controladores de domínio é gerada, juntamente com relatórios sobre os certificados para cada controlador de domínio na lista.</br>> 4.  Se o domínio e o controlador de domínio for especificados, uma lista de controladores de domínio é gerada do controlador de domínio de destino. Também é gerado um relatório dos certificados para cada controlador de domínio na lista.
+> A capacidade de especificar um domínio de Active Directory Domain Services (AD DS) **[domain]** e especificar um controlador de domínio ( **-DC**) foi adicionada ao Windows Server 2012. Para executar o comando com êxito, você deve usar uma conta que seja membro de **Administradores de domínio** ou **Administradores de empresa**. As modificações de comportamento desse comando são as seguintes:</br>> 1.  Se um domínio não for especificado e um controlador de domínio específico não for especificado, essa opção retornará uma lista de controladores de domínio a serem processados a partir do controlador de domínio padrão.</br>> 2.  Se um domínio não for especificado, mas um controlador de domínio for especificado, um relatório dos certificados no controlador de domínio especificado será gerado.</br>> 3.  Se um domínio for especificado, mas um controlador de domínio não for especificado, uma lista de controladores de domínio será gerada juntamente com os relatórios nos certificados para cada controlador de domínio na lista.</br>> 4.  Se o domínio e o controlador de domínio forem especificados, uma lista de controladores de domínio será gerada a partir do controlador de domínio de destino. Um relatório dos certificados para cada controlador de domínio na lista também é gerado.
 
-Por exemplo, suponha que há em um domínio denominado CPANDL com um controlador de domínio denominado DC1 CPANDL. Você pode executar o comando a seguir um recuperar uma lista de controladores de domínio e seus certificados que do DC1 CPANDL: certutil -dc cpandl-dc1 - dcinfo cpandl
+Por exemplo, suponha que haja um domínio chamado CPANDL com um controlador de domínio chamado CPANDL-DC1. Você pode executar o seguinte comando para recuperar uma lista de controladores de domínio e seus certificados de CPANDL-DC1: certutil-DC CPANDL-DC1-dcinfo cpandl
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-entinfo"></a>-EntInfo
 
-CertUtil [Opções] - EntInfo NomeDoDomínio \ NomeDoComputador$
+CertUtil [opções]-EntInfo DomainName\MachineName $
 
-[-f]. [-usuário]
+[-f] [-usuário]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-tcainfo"></a>-TCAInfo
 
-TCAInfo - CertUtil [Opções] [DomainDN |-]
+CertUtil [opções]-TCAInfo [DomainDN |-]
 
-Informações de autoridade de certificação de exibição
+Exibir informações de AC
 
-[-f] [-enterprise] [-user] [-urlfetch] [-dc DCName] [-t Timeout]
+[-f] [-Enterprise] [-usuário] [-urlfetch] [-DC DCName] [-t tempo limite]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-scinfo"></a>-SCInfo
 
-CertUtil [Options] -SCInfo [ReaderName [CRYPT_DELETEKEYSET]]
+CertUtil [opções]-SCInfo [Readername [CRYPT_DELETEKEYSET]]
 
 Exibir informações de cartão inteligente
 
 CRYPT_DELETEKEYSET: Excluir todas as chaves no cartão inteligente
 
-[-silent] [-split] [-urlfetch] [-t Timeout]
+[-Silent] [-divisão] [-urlfetch] [-t tempo limite]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-scroots"></a>-SCRoots
 
-Atualizar o SCRoots - CertUtil [Opções] [+] [InputRootFile] [ReaderName]
+CertUtil [opções]-SCRoots atualização [+] [InputRootFile] [Readername]
 
-Salvar CertUtil [Opções] - SCRoots @OutputRootFile [ReaderName]
+CertUtil [opções]-SCRoots salvar \@OutputRootFile [readername]
 
-Modo de exibição de - SCRoots CertUtil [Opções] [InputRootFile | ReaderName]
+CertUtil [opções]-exibição de SCRoots [InputRootFile | Readername]
 
-CertUtil [Opções] - SCRoots excluir [ReaderName]
+CertUtil [opções]-SCRoots excluir [Readername]
 
-Gerenciar certificados de raiz do cartão inteligente
+Gerenciar certificados raiz do cartão inteligente
 
-[-f]. [-Dividir] [-p senha]
+[-f] [-divisão] [-p senha]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-verifykeys"></a>-verifykeys
 
-CertUtil [Opções] - verifykeys [KeyContainerName CACertFile]
+CertUtil [opções]-verifykeys [KeyContainerName cacertde]
 
-Verifique se o conjunto de chaves pública/privada
+Verificar conjunto de chaves pública/privada
 
-KeyContainerName: nome do contêiner de chave da chave para verificar. Padrões para as chaves do computador.  Use - o usuário para chaves do usuário.
+KeyContainerName: nome do contêiner de chave da chave a ser verificada. O padrão é as chaves do computador.  Use-User para chaves de usuário.
 
-CACertFile: arquivo de certificado de assinatura ou criptografia
+Cacertm: arquivo de certificado de autenticação ou criptografia
 
-Se nenhum argumento for especificado, cada certificado de autoridade de certificação de assinatura é verificado em relação a sua chave privada.
+Se nenhum argumento for especificado, cada certificado de autoridade de certificação de assinatura será verificado em relação à sua chave privada.
 
-Esta operação só pode ser executada em relação a uma autoridade de certificação local ou chaves locais.
+Esta operação só pode ser executada em uma autoridade de certificação local ou em chaves locais.
 
-[-f]. [-usuário] [-silenciosa] [-config Machine\CAName]
+[-f] [-usuário] [-Silent] [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
-## <a name="-verify"></a>-Verifique se
+## <a name="-verify"></a>-verificar
 
-CertUtil [Opções] - Verificar CertFile [ApplicationPolicyList |-[IssuancePolicyList]]
+CertUtil [opções]-verificar CertFile [ApplicationPolicyList |-[IssuancePolicyList]]
 
-CertUtil [Opções] - Verificar CertFile [CACertFile [CrossedCACertFile]]
+CertUtil [opções]-verificar CertFile [CACertFile [CrossedCACertFile]]
 
-CertUtil [Opções] – Verifique se a relação a CRLFile CACertFile [IssuedCertFile]
+CertUtil [opções]-verificar o cacertde CRLFile [IssuedCertFile]
 
-CertUtil [Opções] – Verifique se a relação a CRLFile CACertFile [DeltaCRLFile]
+CertUtil [opções]-verificar o cacertde CRLFile [DeltaCRLFile]
 
-Verifique se o certificado, a lista de certificados Revogados ou cadeia
+Verificar certificado, CRL ou cadeia
 
-CertFile: Certificado para verificar
+Arquivo CertFile Certificado a ser verificado
 
-ApplicationPolicyList: lista de opcional separada por vírgulas de ObjectIds de política de aplicativo necessário
+ApplicationPolicyList: lista separada por vírgulas opcional de ObjectIds de política de aplicativo necessárias
 
-IssuancePolicyList: lista de opcional separada por vírgulas de ObjectIds necessária de política de emissão
+IssuancePolicyList: lista separada por vírgulas opcional de ObjectIds de política de emissão necessárias
 
-CACertFile: opcional certificado da CA emissora para verificar em relação a
+CAcert: certificado de AC emissor opcional para verificação
 
-CrossedCACertFile: certificado opcional certificação cruzada por CertFile
+CrossedCACertFile: certificado opcional entre certificados por CertFile
 
-Relação a CRLFile: Lista de certificados Revogados para verificar
+CRLFile: CRL a ser verificada
 
-IssuedCertFile: certificado emitido opcional coberto por relação a CRLFile
+IssuedCertFile: certificado emitido opcional coberto por CRLFile
 
 DeltaCRLFile: CRL delta opcional
 
-Se ApplicationPolicyList for especificado, a criação da cadeia é restrita a cadeias válidas para as políticas de aplicativo especificado.
+Se ApplicationPolicyList for especificado, a criação de cadeia será restrita às cadeias válidas para as políticas de aplicativo especificadas.
 
-Se IssuancePolicyList for especificado, a criação da cadeia é restrita a cadeias válidas para as diretivas de emissão especificado.
+Se IssuancePolicyList for especificado, a criação de cadeia será restrita às cadeias válidas para as políticas de emissão especificadas.
 
-Se CACertFile for especificado, os campos em CACertFile serão verificados em relação a CertFile ou CRLFile.
+Se o CACertFile for especificado, os campos no cacertm serão verificados em relação a CertFile ou CRLFile.
 
-Se CACertFile não for especificado, CertFile será usado para criar e verificar uma cadeia completa.
+Se o CACertFile não for especificado, CertFile será usado para criar e verificar uma cadeia completa.
 
-Se CACertFile e CrossedCACertFile forem especificados, os campos em CACertFile e CrossedCACertFile serão verificados em relação a CertFile.
+Se cacertvalue e CrossedCACertFile forem especificados, os campos em cacertde e CrossedCACertFile serão verificados em relação a CertFile.
 
 Se IssuedCertFile for especificado, os campos em IssuedCertFile serão verificados em relação a CRLFile.
 
 Se DeltaCRLFile for especificado, os campos em DeltaCRLFile serão verificados em relação a CRLFile.
 
-[-f] [-enterprise] [-user] [-silent] [-split] [-urlfetch] [-t Timeout]
+[-f] [-Enterprise] [-usuário] [-Silent] [-divisão] [-urlfetch] [-t tempo limite]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-verifyctl"></a>-verifyCTL
 
-CertUtil [Opções] - verifyCTL CTLObject [CertDir] [CertFile]
+CertUtil [opções]-verifyCTL CTLObject [CertDir] [CertFile]
 
-Verificar AuthRoot ou lista de certificados confiáveis de certificados não permitidos
+Verificar CTL de certificados AuthRoot ou não permitido
 
-CTLObject: Identifica a lista de certificados confiáveis para verificar:
+CTLObject: Identifica a CTL a ser verificada:
 
-- AuthRootWU: ler AuthRoot CAB e certificados correspondentes do cache de URL. Use -f para fazer o download do Windows Update em vez disso.
-- DisallowedWU: leitura CAB de certificados não permitidos e não permitido o arquivo de repositório de certificados do cache de URL.  Use -f para fazer o download do Windows Update em vez disso.
-- AuthRoot: leitura de registro armazenadas em cache AuthRoot CTL.  Use com -f e um CertFile que já não é confiável para forçar a atualização do registro armazenado em cache AuthRoot e CTLs de certificados não permitidos.
-- Não permitido: leitura de registro armazenadas em cache a CTL de certificados não permitidos. -f tem o mesmo comportamento assim como acontece com AuthRoot.
-- CTLFileName: arquivo ou http: caminho para a lista de certificados confiáveis ou CAB
+- AuthRootWU: ler AuthRoot CAB e certificados correspondentes do cache de URL. Use-f para baixar de Windows Update em vez disso.
+- DisallowedWU: ler os certificados não permitidos CAB e o arquivo de repositório de certificados não permitido do cache de URL.  Use-f para baixar de Windows Update em vez disso.
+- AuthRoot: ler registro em cache AuthRoot CTL.  Use with-f e um CertFile que ainda não é confiável para forçar a atualização do registro AuthRoot armazenado em cache e de certificados confiáveis não permitidos.
+- Não permitido: ler CTL de certificados não permitidos armazenados em cache do registro. -f tem o mesmo comportamento que com AuthRoot.
+- CTLFileName: File ou http: caminho para CTL ou CAB
 
-CertDir: a pasta que contém os certificados CTL entradas correspondentes. Http: caminho de pasta deve terminar com um separador de caminho. Se uma pasta não for especificada com AuthRoot ou não permitido, vários locais serão pesquisados para correspondência de certificados: repositórios de certificados local, crypt32.dll recursos e o cache local de URL. Use -f para fazer o download do Windows Update quando necessário. Caso contrário, o padrão será a mesma pasta ou site da web como o CTLObject.
+CertDir: pasta que contém certificados que correspondem a entradas de CTL. Um caminho http: Folder deve terminar com um separador de caminho. Se uma pasta não for especificada com AuthRoot ou não permitido, vários locais serão pesquisados para certificados correspondentes: repositórios de certificados locais, recursos crypt32. dll e o cache de URL local. Use-f para baixar de Windows Update quando necessário. Caso contrário, o padrão será a mesma pasta ou site da CTLObject.
 
-CertFile: o arquivo que contém os certificados para verificar. Certificados serão comparados com as entradas da lista de certificados confiáveis e corresponderem aos resultados exibidos. Suprime a maior parte da saída padrão.
+CertFile: arquivo que contém certificado (s) para verificar. Os certificados serão correspondidos em relação a entradas de CTL e resultados de correspondência serão exibidos. Suprime a maior parte da saída padrão.
 
-[-f]. [-usuário] [-Dividir]
+[-f] [-usuário] [-divisão]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
-## <a name="-sign"></a>-sign
+## <a name="-sign"></a>-assinar
 
-CertUtil [Opções] - Assinar InFileList | SerialNumber | Lista de certificados Revogados OutFileList [StartDate + DD: hh] [+ SerialNumberList | SerialNumberList-| - ObjectIdList | @ExtensionFile]
+CertUtil [opções]-assinar FileList | SerialNumber | Corfilelist da CRL [StartDate + DD: hh] [+ SerialNumberlist |-SerialNumberlist |-ObjectIdlist | \@Extensãofile]
 
-CertUtil [Opções] - Assinar InFileList | SerialNumber | Lista de certificados Revogados OutFileList [#HashAlgorithm] [+ Alternatesignaturealgorithm=1 | - Alternatesignaturealgorithm=1]
+CertUtil [opções]-assinar FileList | SerialNumber | Lista de arquivos da CRL [#HashAlgorithm] [+ AlternateSignatureAlgorithm |-AlternateSignatureAlgorithm]
 
-Assine novamente o certificado ou CRL
+Assinar novamente a CRL ou o certificado
 
-InFileList: lista de separada por vírgulas de arquivos de certificado ou CRL para modificar e assinar novamente
+Infilelist: lista separada por vírgulas de certificados ou arquivos CRL para modificar e assinar novamente
 
-SerialNumber: Número de série do certificado para criar. Período de validade e outras opções não devem estar presentes.
+SerialNumber Número de série do certificado a ser criado. O período de validade e outras opções não devem estar presentes.
 
-CRL: Crie uma lista de certificados Revogados vazia. Período de validade e outras opções não devem estar presentes.
+REVOGA Crie uma CRL vazia. O período de validade e outras opções não devem estar presentes.
 
-OutFileList: lista separada por vírgulas de arquivos de saída de certificado ou CRL modificados. O número de arquivos deve corresponder ao InFileList.
+Outfilelist: lista separada por vírgulas de certificados modificados ou arquivos de saída de CRL. O número de arquivos deve corresponder a FileList.
 
-StartDate + DD: hh: novo período de validade: data opcional adição; dias opcionais e o período de validade de horas. Se ambos forem especificados, use um separador de sinal de adição (+). Use "agora [+ DD: hh]" para iniciar no momento atual. Use "nunca" para não fazer com nenhuma data de expiração (CRLs).
+StartDate + DD: hh: novo período de validade: data adicional opcional; período de validade de dias e horas opcionais; Se ambos forem especificados, use um separador de sinal de adição (+). Use "Now [+ DD: hh]" para iniciar na hora atual. Use "Never" para não ter nenhuma data de expiração (somente para CRLs).
 
-SerialNumberList: lista de número de série para adicionar ou remover separados por vírgula
+SerialNumberlist: lista de números de série separados por vírgula para adicionar ou remover
 
-ObjectIdList: lista de ObjectId de extensão separada por vírgulas a ser removido
+ObjectIdlist: lista de ObjectId da extensão separada por vírgula a ser removida
 
-@ExtensionFile: Arquivo INF que contém as extensões para atualizar ou remover:
+\@Extensão do: Arquivo INF contendo extensões para atualizar ou remover:
 
 ```
 [Extensions]
@@ -1337,363 +1337,363 @@ ObjectIdList: lista de ObjectId de extensão separada por vírgulas a ser removi
      _continue_="03 02 01 86"
 ```
 
-HashAlgorithm: Nome do algoritmo de hash precedido por um sinal de #
+HashAlgorithm Nome do algoritmo de hash precedido por um # Sign
 
-Alternatesignaturealgorithm=1: especificador de algoritmo de assinatura alternativo
+AlternateSignatureAlgorithm: especificador de algoritmo de assinatura alternativo
 
-Um sinal de subtração faz com que números de série e as extensões a serem removidos. Um sinal de adição faz com que números de série a ser adicionado a uma CRL. Ao remover itens de uma CRL, a lista pode conter números de série e ObjectIds. Um sinal de subtração antes Alternatesignaturealgorithm=1 faz com que o formato de assinatura herdados a ser usado. Um sinal de mais antes de Alternatesignaturealgorithm=1 faz com que o formato de assinatura alternature a ser usado. Se Alternatesignaturealgorithm=1 não for especificado, em seguida, o formato de assinatura no certificado ou CRL é usado.
+Um sinal de subtração faz com que os números de série e extensões sejam removidos. Um sinal de adição faz com que os números de série sejam adicionados a uma CRL. Ao remover itens de uma CRL, a lista pode conter tanto números de série quanto ObjectIds. Um sinal de subtração antes de AlternateSignatureAlgorithm faz com que o formato de assinatura herdado seja usado. Um sinal de adição antes de AlternateSignatureAlgorithm faz com que o formato de assinatura Alternature seja usado. Se AlternateSignatureAlgorithm não for especificado, o formato de assinatura no certificado ou CRL será usado.
 
-[-nullsign] [-f] [-silent] [-Cert CertId]
+[-nullsign] [-f] [-Silent] [-Certid do certificado]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-vroot"></a>-vroot
 
-CertUtil [Opções] - vroot [excluir]
+CertUtil [opções]-vroot [excluir]
 
-Criar/excluir raízes virtuais web e compartilhamentos de arquivos
+Criar/excluir compartilhamentos de arquivos e raízes virtuais da Web
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-vocsproot"></a>-vocsproot
 
-CertUtil [Opções] - vocsproot [excluir]
+CertUtil [opções]-vocsproot [excluir]
 
-Criar/excluir raízes virtuais de web de proxy da web OCSP
+Criar/excluir raízes virtuais da Web para o proxy Web OCSP
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-addenrollmentserver"></a>-addEnrollmentServer
 
-CertUtil [Opções] - addEnrollmentServer Kerberos | Nome de usuário | ClientCertificate [AllowRenewalsOnly] [AllowKeyBasedRenewal]
+CertUtil [opções]-addEnrollmentServer Kerberos | Nome de usuário | ClientCertificate [AllowRenewalsOnly] [AllowKeyBasedRenewal]
 
 Adicionar um aplicativo de servidor de registro
 
-Adicione um aplicativo de servidor de registro e o pool de aplicativos, se necessário, para a autoridade de certificação especificada. Esse comando não instala pacotes ou binários. Um dos seguintes métodos de autenticação com o qual o cliente se conecta a um servidor de registro de certificado.
+Adicione um aplicativo de servidor de registro e um pool de aplicativos, se necessário, para a autoridade de certificação especificada. Esse comando não instala binários ou pacotes. Um dos métodos de autenticação a seguir com os quais o cliente se conecta a um servidor de registro de certificado.
 
-- Kerberos: Usar credenciais Kerberos SSL
-- UserName: Use a conta nomeada para credenciais SSL
-- ClientCertificate: Usar credenciais de x. 509 certificado SSL
-- AllowRenewalsOnly: Somente as solicitações de renovação podem ser enviadas para via essa URL da autoridade de certificação
-- AllowKeyBasedRenewal – Permite o uso de um certificado que não tenha a nenhuma conta associada no AD. Isso se aplica somente com o modo ClientCertificate e AllowRenewalsOnly.
+- Kerberos Usar credenciais SSL Kerberos
+- Usu Usar conta nomeada para credenciais SSL
+- ClientCertificate Usar credenciais SSL do certificado X. 509
+- AllowRenewalsOnly: Somente solicitações de renovação podem ser enviadas para esta AC por meio desta URL
+- AllowKeyBasedRenewal – permite o uso de um certificado que não tem nenhuma conta associada no AD. Isso se aplica somente ao modo ClientCertificate e AllowRenewalsOnly.
 
 [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-deleteenrollmentserver"></a>-deleteEnrollmentServer
 
-CertUtil [Opções] - deleteEnrollmentServer Kerberos | Nome de usuário | ClientCertificate
+CertUtil [opções]-deleteEnrollmentServer Kerberos | Nome de usuário | ClientCertificate
 
 Excluir um aplicativo de servidor de registro
 
-Exclua um aplicativo de servidor de registro e o pool de aplicativos, se necessário, para a autoridade de certificação especificada. Esse comando não remove os binários ou pacotes. Um dos seguintes métodos de autenticação com o qual o cliente se conecta a um servidor de registro de certificado.
+Exclua um aplicativo de servidor de registro e um pool de aplicativos, se necessário, para a autoridade de certificação especificada. Esse comando não remove binários ou pacotes. Um dos métodos de autenticação a seguir com os quais o cliente se conecta a um servidor de registro de certificado.
 
-1. Kerberos: Usar credenciais Kerberos SSL
-2. UserName: Use a conta nomeada para credenciais SSL
-3. ClientCertificate: Usar credenciais de x. 509 certificado SSL
+1. Kerberos Usar credenciais SSL Kerberos
+2. Usu Usar conta nomeada para credenciais SSL
+3. ClientCertificate Usar credenciais SSL do certificado X. 509
 
 [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-addpolicyserver"></a>-addPolicyServer
 
-CertUtil [Opções] - addPolicyServer Kerberos | Nome de usuário | ClientCertificate [KeyBasedRenewal]
+CertUtil [opções]-addPolicyServer Kerberos | Nome de usuário | ClientCertificate [KeyBasedRenewal]
 
-Adicionar um aplicativo de servidor de políticas
+Adicionar um aplicativo de servidor de política
 
-Adicione um aplicativo de servidor de políticas e o pool de aplicativos, se necessário. Esse comando não instala pacotes ou binários. Um dos seguintes métodos de autenticação com o qual o cliente se conecta a um servidor de política de certificado:
+Adicione um aplicativo de servidor de política e um pool de aplicativos, se necessário. Esse comando não instala binários ou pacotes. Um dos seguintes métodos de autenticação com os quais o cliente se conecta a um servidor de política de certificado:
 
-- Kerberos: Usar credenciais Kerberos SSL
-- UserName: Use a conta nomeada para credenciais SSL
-- ClientCertificate: Usar credenciais de x. 509 certificado SSL
-- KeyBasedRenewal: Somente as políticas que contêm modelos KeyBasedRenewal são retornadas ao cliente. Esse sinalizador aplica-se apenas para autenticação de nome de usuário e ClientCertificate.
+- Kerberos Usar credenciais SSL Kerberos
+- Usu Usar conta nomeada para credenciais SSL
+- ClientCertificate Usar credenciais SSL do certificado X. 509
+- KeyBasedRenewal: Somente as políticas que contêm modelos KeyBasedRenewal são retornadas ao cliente. Esse sinalizador se aplica somente à autenticação de nome de usuário e ClientCertificate.
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-deletepolicyserver"></a>-deletePolicyServer
 
-CertUtil [Opções] - deletePolicyServer Kerberos | Nome de usuário | ClientCertificate [KeyBasedRenewal]
+CertUtil [opções]-deletePolicyServer Kerberos | Nome de usuário | ClientCertificate [KeyBasedRenewal]
 
-Excluir um aplicativo de servidor de políticas
+Excluir um aplicativo de servidor de política
 
-Exclua um aplicativo de servidor de políticas e o pool de aplicativos, se necessário. Esse comando não remove os binários ou pacotes. Um dos seguintes métodos de autenticação com o qual o cliente se conecta a um servidor de política de certificado:
+Exclua um aplicativo de servidor de política e um pool de aplicativos, se necessário. Esse comando não remove binários ou pacotes. Um dos seguintes métodos de autenticação com os quais o cliente se conecta a um servidor de política de certificado:
 
-1. Kerberos: Usar credenciais Kerberos SSL
-2. UserName: Use a conta nomeada para credenciais SSL
-3. ClientCertificate: Usar credenciais de x. 509 certificado SSL
-4. KeyBasedRenewal: Servidor de políticas de KeyBasedRenewal
+1. Kerberos Usar credenciais SSL Kerberos
+2. Usu Usar conta nomeada para credenciais SSL
+3. ClientCertificate Usar credenciais SSL do certificado X. 509
+4. KeyBasedRenewal: Servidor de políticas KeyBasedRenewal
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
-## <a name="-oid"></a>-oid
+## <a name="-oid"></a>-OID
 
-CertUtil [Options] -oid ObjectId [DisplayName | delete [LanguageId [Type]]]
+CertUtil [opções]-OID ObjectId [DisplayName | excluir [LanguageID [tipo]]]
 
-GroupId do oid - CertUtil [Opções]
+CertUtil [opções]-OID GroupId
 
-CertUtil [Opções] - oid AlgId | AlgorithmName [GroupId]
+CertUtil [opções]-OID AlgId | AlgorithmName [GroupId]
 
-Exibir ObjectId ou definir o nome de exibição
+Exibir ObjectId ou definir nome de exibição
 
-- ObjectId – ObjectId para exibir ou adicionar o nome de exibição
-- GroupId – número decimal de GroupId para ObjectIds enumerar
-- AlgId – AlgId de hexadecimal para a ObjectId pesquisar
-- AlgorithmName – Nome do algoritmo para a ObjectId pesquisar
-- DisplayName - O nome de exibição para armazenar no DS
-- Excluir – excluir o nome de exibição
-- LanguageId – Id de idioma (segue o padrão atual: 1033)
-- Tipo – Tipo a ser criado do objeto DS: 1 para o modelo (padrão), 2 para a política de emissão, 3 para a política de aplicativo
-- Use -f para criar o objeto DS.
+- ObjectId--ObjectId a exibir ou adicionar nome de exibição
+- GroupId--número decimal de GroupId para ObjectIds a serem enumeradas
+- AlgId--AlgId hexadecimal para ObjectId a ser pesquisada
+- AlgorithmName--nome do algoritmo para o ObjectId a ser pesquisado
+- DisplayName--nome de exibição para armazenar no DS
+- excluir--excluir nome de exibição
+- LanguageID--ID do idioma (o padrão é atual: 1033)
+- Tipo--tipo de objeto do DS a ser criado: 1 para modelo (padrão), 2 para política de emissão, 3 para política de aplicativo
+- Use-f para criar o objeto DS.
 
 [-f]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
-## <a name="-error"></a>-Erro
+## <a name="-error"></a>-erro
 
-CertUtil [Opções] - Erro ErrorCode
+CertUtil [opções]-erro ErrorCode
 
-Exibir o texto de mensagem do código de erro
+Exibir texto da mensagem de código de erro
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-getreg"></a>-getreg
 
-[Opções] do CertUtil - getreg [{autoridade de certificação | restaurar | diretivas | sair | modelo | registrar | cadeia | PolicyServers}\[ProgId\]] [Nome_do_valor_do_registro]
+CertUtil [opções]-getreg [{Ca | restaurar | política | sair | modelo | registrar | cadeia | PolicyServers}\[ProgID\]] [RegistryValueName]
 
-Exibir o valor do registro
+Exibir valor do registro
 
-ca: Chave do registro da autoridade de certificação Use
+AC Usar chave do registro da autoridade de certificação
 
-Restaure: Chave do registro da autoridade de certificação Use restauração
+recuperar Usar a chave de registro de restauração da autoridade de certificação
 
-política: Use a chave do registro do módulo de política
+regras Usar chave do registro do módulo de política
 
-saída: Use primeiro sair da chave do registro do módulo
+sido Usar a chave do registro do primeiro módulo de saída
 
-Modelo: Use a chave do registro de modelo (use - usuário dos modelos do usuário)
+modelos Usar chave do registro de modelo (use-User para modelos de usuário)
 
-enroll: Use a chave de registro de inscrição (use - o usuário para o contexto de usuário)
+Registr Usar chave do registro de registro (use-User para contexto de usuário)
 
-cadeia: Use a chave do registro de configuração de cadeia
+cadeia Usar chave do registro de configuração da cadeia
 
-PolicyServers: Chave do registro de servidores de diretiva de uso
+PolicyServers: Usar chave do registro de servidores de política
 
-ProgId: Usar a política ou sair ProgId do módulo (nome da subchave do registro)
+ProgID Usar ProgId do módulo de política ou saída (nome da subchave do registro)
 
-Nome_do_valor_do_registro: nome do valor de registro (use "nome\*" para correspondência de prefixo)
+RegistryValueName: nome do valor do registro (use\*"Name" para corresponder ao prefixo)
 
-Valor: novo numérico, valor de registro de data ou de cadeia de caracteres ou nome de arquivo. Se um valor numérico começa com "+" ou "-", os bits especificados em que o novo valor são definidos ou desmarcados no valor do registro existente.
+Valor: novo valor de registro numérico, de cadeia de caracteres ou de data ou nome de arquivo. Se um valor numérico começar com "+" ou "-", os bits especificados no novo valor serão definidos ou apagados no valor do registro existente.
 
-Se um valor de cadeia de caracteres começa com "+" ou "-" e o valor existente for um valor REG_MULTI_SZ, a cadeia de caracteres é adicionada ou removida do valor do registro existente. Para forçar a criação de um valor REG_MULTI_SZ, adicione "\n" para o final do valor de cadeia de caracteres.
+Se um valor de cadeia de caracteres começar com "+" ou "-" e o valor existente for um valor REG_MULTI_SZ, a cadeia de caracteres será adicionada ou removida do valor de registro existente. Para forçar a criação de um valor REG_MULTI_SZ, adicione um "\n" ao final do valor da cadeia de caracteres.
 
-Se o valor começa com "@", o restante do valor é o nome do arquivo que contém a representação hexadecimal de um valor binário. Se ele não faz referência a um arquivo válido, em vez disso, é analisado como [Date] [+ |-] [DD: hh] – uma data opcional de mais ou menos opcional de dias e horas. Se ambos forem especificados, use um sinal de adição (+) ou o separador de sinal de subtração (-). Use "agora + DD: hh" para uma data em relação à hora atual.
+Se o valor começar com "\@", o restante do valor será o nome do arquivo que contém a representação de texto hexadecimal de um valor binário. Se não se referir a um arquivo válido, ele será analisado como [data] [+ |-] [DD: hh]--uma data opcional mais ou menos dias e horas opcionais. Se ambos forem especificados, use um separador de sinal de adição (+) ou sinal de subtração (-). Use "Now + DD: hh" para uma data relativa à hora atual.
 
-Use "chain\ChainCacheResyncFiletime @now" liberar efetivamente CRLs armazenado em cache.
+Use "chain\ChainCacheResyncFiletime \@Now" para liberar com eficiência as CRLs em cache.
 
-[-f]. [-usuário] [-GroupPolicy] [-config Machine\CAName]
+[-f] [-usuário] [-GroupPolicy] [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-setreg"></a>-setreg
 
-[Opções] do CertUtil - setreg [{autoridade de certificação | restaurar | diretivas | sair | modelo | registrar | cadeia | PolicyServers}\[ProgId\]] Nome_do_valor_do_registro valor
+CertUtil [opções]-setreg [{Ca | restaurar | política | sair | modelo | registrar | cadeia | PolicyServers}\[ProgID\]] RegistryValueName valor
 
 Definir valor do registro
 
-ca: Chave do registro da autoridade de certificação Use
+AC Usar chave do registro da autoridade de certificação
 
-Restaure: Chave do registro da autoridade de certificação Use restauração
+recuperar Usar a chave de registro de restauração da autoridade de certificação
 
-política: Use a chave do registro do módulo de política
+regras Usar chave do registro do módulo de política
 
-saída: Use primeiro sair da chave do registro do módulo
+sido Usar a chave do registro do primeiro módulo de saída
 
-Modelo: Use a chave do registro de modelo (use - usuário dos modelos do usuário)
+modelos Usar chave do registro de modelo (use-User para modelos de usuário)
 
-enroll: Use a chave de registro de inscrição (use - o usuário para o contexto de usuário)
+Registr Usar chave do registro de registro (use-User para contexto de usuário)
 
-cadeia: Use a chave do registro de configuração de cadeia
+cadeia Usar chave do registro de configuração da cadeia
 
-PolicyServers: Chave do registro de servidores de diretiva de uso
+PolicyServers: Usar chave do registro de servidores de política
 
-ProgId: Usar a política ou sair ProgId do módulo (nome da subchave do registro)
+ProgID Usar ProgId do módulo de política ou saída (nome da subchave do registro)
 
-Nome_do_valor_do_registro: nome do valor de registro (use "nome\*" para correspondência de prefixo)
+RegistryValueName: nome do valor do registro (use\*"Name" para corresponder ao prefixo)
 
-Valor: novo numérico, valor de registro de data ou de cadeia de caracteres ou nome de arquivo. Se um valor numérico começa com "+" ou "-", os bits especificados em que o novo valor são definidos ou desmarcados no valor do registro existente.
+Valor: novo valor de registro numérico, de cadeia de caracteres ou de data ou nome de arquivo. Se um valor numérico começar com "+" ou "-", os bits especificados no novo valor serão definidos ou apagados no valor do registro existente.
 
-Se um valor de cadeia de caracteres começa com "+" ou "-" e o valor existente for um valor REG_MULTI_SZ, a cadeia de caracteres é adicionada ou removida do valor do registro existente. Para forçar a criação de um valor REG_MULTI_SZ, adicione "\n" para o final do valor de cadeia de caracteres.
+Se um valor de cadeia de caracteres começar com "+" ou "-" e o valor existente for um valor REG_MULTI_SZ, a cadeia de caracteres será adicionada ou removida do valor de registro existente. Para forçar a criação de um valor REG_MULTI_SZ, adicione um "\n" ao final do valor da cadeia de caracteres.
 
-Se o valor começa com "@", o restante do valor é o nome do arquivo que contém a representação hexadecimal de um valor binário. Se ele não faz referência a um arquivo válido, em vez disso, é analisado como [Date] [+ |-] [DD: hh] – uma data opcional de mais ou menos opcional de dias e horas. Se ambos forem especificados, use um sinal de adição (+) ou o separador de sinal de subtração (-). Use "agora + DD: hh" para uma data em relação à hora atual.
+Se o valor começar com "\@", o restante do valor será o nome do arquivo que contém a representação de texto hexadecimal de um valor binário. Se não se referir a um arquivo válido, ele será analisado como [data] [+ |-] [DD: hh]--uma data opcional mais ou menos dias e horas opcionais. Se ambos forem especificados, use um separador de sinal de adição (+) ou sinal de subtração (-). Use "Now + DD: hh" para uma data relativa à hora atual.
 
-Use "chain\ChainCacheResyncFiletime @now" liberar efetivamente CRLs armazenado em cache.
+Use "chain\ChainCacheResyncFiletime \@Now" para liberar com eficiência as CRLs em cache.
 
-[-f]. [-usuário] [-GroupPolicy] [-config Machine\CAName]
+[-f] [-usuário] [-GroupPolicy] [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-delreg"></a>-delreg
 
--Delreg CertUtil [Opções] [{autoridade de certificação | restaurar | diretiva | sair | modelo | registrar | cadeia | PolicyServers}\[ProgId\]] [Nome_do_valor_do_registro]
+CertUtil [opções]-delreg [{Ca | restaurar | política | sair | modelo | registrar | cadeia | PolicyServers}\[ProgID\]] [RegistryValueName]
 
 Excluir valor do registro
 
-ca: Chave do registro da autoridade de certificação Use
+AC Usar chave do registro da autoridade de certificação
 
-Restaure: Chave do registro da autoridade de certificação Use restauração
+recuperar Usar a chave de registro de restauração da autoridade de certificação
 
-política: Use a chave do registro do módulo de política
+regras Usar chave do registro do módulo de política
 
-saída: Use primeiro sair da chave do registro do módulo
+sido Usar a chave do registro do primeiro módulo de saída
 
-Modelo: Use a chave do registro de modelo (use - usuário dos modelos do usuário)
+modelos Usar chave do registro de modelo (use-User para modelos de usuário)
 
-enroll: Use a chave de registro de inscrição (use - o usuário para o contexto de usuário)
+Registr Usar chave do registro de registro (use-User para contexto de usuário)
 
-cadeia: Use a chave do registro de configuração de cadeia
+cadeia Usar chave do registro de configuração da cadeia
 
-PolicyServers: Chave do registro de servidores de diretiva de uso
+PolicyServers: Usar chave do registro de servidores de política
 
-ProgId: Usar a política ou sair ProgId do módulo (nome da subchave do registro)
+ProgID Usar ProgId do módulo de política ou saída (nome da subchave do registro)
 
-Nome_do_valor_do_registro: nome do valor de registro (use "nome\*" para correspondência de prefixo)
+RegistryValueName: nome do valor do registro (use\*"Name" para corresponder ao prefixo)
 
-Valor: novo numérico, valor de registro de data ou de cadeia de caracteres ou nome de arquivo. Se um valor numérico começa com "+" ou "-", os bits especificados em que o novo valor são definidos ou desmarcados no valor do registro existente.
+Valor: novo valor de registro numérico, de cadeia de caracteres ou de data ou nome de arquivo. Se um valor numérico começar com "+" ou "-", os bits especificados no novo valor serão definidos ou apagados no valor do registro existente.
 
-Se um valor de cadeia de caracteres começa com "+" ou "-" e o valor existente for um valor REG_MULTI_SZ, a cadeia de caracteres é adicionada ou removida do valor do registro existente. Para forçar a criação de um valor REG_MULTI_SZ, adicione "\n" para o final do valor de cadeia de caracteres.
+Se um valor de cadeia de caracteres começar com "+" ou "-" e o valor existente for um valor REG_MULTI_SZ, a cadeia de caracteres será adicionada ou removida do valor de registro existente. Para forçar a criação de um valor REG_MULTI_SZ, adicione um "\n" ao final do valor da cadeia de caracteres.
 
-Se o valor começa com "@", o restante do valor é o nome do arquivo que contém a representação hexadecimal de um valor binário. Se ele não faz referência a um arquivo válido, em vez disso, é analisado como [Date] [+ |-] [DD: hh] – uma data opcional de mais ou menos opcional de dias e horas. Se ambos forem especificados, use um sinal de adição (+) ou o separador de sinal de subtração (-). Use "agora + DD: hh" para uma data em relação à hora atual.
+Se o valor começar com "\@", o restante do valor será o nome do arquivo que contém a representação de texto hexadecimal de um valor binário. Se não se referir a um arquivo válido, ele será analisado como [data] [+ |-] [DD: hh]--uma data opcional mais ou menos dias e horas opcionais. Se ambos forem especificados, use um separador de sinal de adição (+) ou sinal de subtração (-). Use "Now + DD: hh" para uma data relativa à hora atual.
 
-Use "chain\ChainCacheResyncFiletime @now" liberar efetivamente CRLs armazenado em cache.
+Use "chain\ChainCacheResyncFiletime \@Now" para liberar com eficiência as CRLs em cache.
 
-[-f]. [-usuário] [-GroupPolicy] [-config Machine\CAName]
+[-f] [-usuário] [-GroupPolicy] [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-importkms"></a>-ImportKMS
 
-CertUtil [Opções] - ImportKMS UserKeyAndCertFile [CertId]
+CertUtil [opções]-ImportKMS UserKeyAndCertFile [certid]
 
-Importar certificados e chaves de usuário para o banco de dados do servidor para o arquivamento de chave
+Importar chaves de usuário e certificados no banco de dados do servidor para arquivamento de chaves
 
-UserKeyAndCertFile-- Arquivo de dados que contém as chaves privadas do usuário e certificados a serem arquivados.  Isso pode ser qualquer um dos seguintes:
+UserKeyAndCertFile--arquivo de dados que contém chaves privadas do usuário e certificados a serem arquivados.  Isso pode ser qualquer um dos seguintes:
 
-- Arquivo de exportação do Exchange Key Management Server (KMS)
+- Arquivo de exportação do servidor de gerenciamento de chaves do Exchange (KMS)
 - Arquivo PFX
 
-CertId: Token de correspondência de certificado de descriptografia de arquivo de exportação do KMS.  Ver [-armazenar](#-store).
+CertId Token de correspondência do certificado de descriptografia do arquivo de exportação KMS.  Consulte [-Store](#-store).
 
-Use -f para importar certificados não emitidos pela autoridade de certificação.
+Use-f para importar certificados não emitidos pela autoridade de certificação.
 
-[-f]. [-silenciosa] [-Dividir] [-config Machine\CAName] [-p senha] [-symkeyalg SymmetricKeyAlgorithm [, KeyLength]]
+[-f] [-Silent] [-divisão] [-config Machine\CAName] [-p senha] [-symkeyalg SymmetricKeyAlgorithm [, KeyLength]]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-importcert"></a>-ImportCert
 
-CertUtil [Opções] - ImportCert Certfile [ExistingRow]
+CertUtil [opções]-ImportCert CertFile [ExistingRow]
 
 Importar um arquivo de certificado para o banco de dados
 
 Use ExistingRow para importar o certificado no lugar de uma solicitação pendente para a mesma chave.
 
-Use -f para importar certificados não emitidos pela autoridade de certificação.
+Use-f para importar certificados não emitidos pela autoridade de certificação.
 
-A autoridade de certificação pode também precisam ser configurados para dar suporte à importação de certificados externos: certutil - setreg ca\KRAFlags + KRAF_ENABLEFOREIGN
+A CA também pode precisar ser configurada para dar suporte à importação de certificado estrangeiro: certutil-setreg ca\KRAFlags + KRAF_ENABLEFOREIGN
 
-[-f]. [-config Machine\CAName]
+[-f] [-config Machine\CAName]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-getkey"></a>-GetKey
 
-SearchToken - GetKey de CertUtil [Opções] [RecoveryBlobOutFile]
+CertUtil [opções]-GetKey SearchToken [RecoveryBlobOutFile]
 
-CertUtil [Opções] - GetKey SearchToken script OutputScriptFile
+CertUtil [opções]-GetKey SearchToken script OutputScriptFile
 
-Recuperar CertUtil [Opções] - GetKey SearchToken | recuperar OutputFileBaseName
+CertUtil [opções]-GetKey SearchToken recuperar | recuperar OutputFileBaseName
 
-Recuperar o blob de recuperação de chave privada arquivados, gerar um script de recuperação ou recuperar chaves arquivadas
+Recuperar BLOB de recuperação de chave privada arquivada, gerar um script de recuperação ou recuperar chaves arquivadas
 
-script: gerar um script para recuperar e recuperar chaves (comportamento padrão se vários candidatos de recuperação correspondente for encontrados, ou se o arquivo de saída não for especificado).
+script: gerar um script para recuperar e recuperar chaves (comportamento padrão se vários candidatos à recuperação correspondentes forem encontrados ou se o arquivo de saída não for especificado).
 
-recuperar: recuperar um ou mais Blobs de recuperação de chave (comportamento padrão se exatamente um candidato de recuperação correspondente for encontrado e se o arquivo de saída for especificado)
+recuperar: recuperar um ou mais blobs de recuperação de chave (comportamento padrão se exatamente um candidato de recuperação correspondente for encontrado e se o arquivo de saída for especificado)
 
-recuperar: recuperar e recuperar as chaves privadas em uma única etapa (requer certificados de agente de recuperação de chave e chaves privadas)
+recuperar: recuperar e recuperar chaves privadas em uma única etapa (requer certificados e chaves privadas do agente de recuperação de chave)
 
-SearchToken: Usado para selecionar as chaves e certificados a serem recuperados.
+SearchToken: Usado para selecionar as chaves e os certificados a serem recuperados.
 
-pode ser qualquer um dos seguintes:
+Pode ser qualquer um dos seguintes:
 
 1. Nome comum do certificado
 2. Número de série do certificado
-3. Hash de SHA-1 do certificado (impressão digital)
-4. Hash de KeyId SHA-1 do certificado (identificador de chave da entidade)
+3. Hash de SHA-1 de certificado (impressão digital)
+4. Hash KeyId SHA-1 de certificado (identificador de chave da entidade)
 5. Nome do solicitante (domínio \ usuário)
-6. UPN (user@domain)
+6. UPN (domínio\@de usuário)
 
-RecoveryBlobOutFile: arquivo de saída que contém uma cadeia de certificados e uma chave privada associada, ainda criptografada para um ou mais certificados de agente de recuperação de chave.
+RecoveryBlobOutFile: o arquivo de saída que contém uma cadeia de certificados e uma chave privada associada ainda é criptografado para um ou mais certificados de agente de recuperação de chave.
 
-OutputScriptFile: arquivo de saída que contém um script em lotes para recuperar e recuperar as chaves privadas.
+OutputScriptFile: arquivo de saída que contém um script em lotes para recuperar e recuperar chaves privadas.
 
-OutputFileBaseName: base nome do arquivo. Para recuperar, qualquer extensão será truncado e uma cadeia de caracteres do certificado específico e a extensão. rec são acrescentados para cada blob de recuperação de chave.  Cada arquivo contém uma cadeia de certificados e uma chave privada associada, ainda criptografada para um ou mais certificados de agente de recuperação de chave. Para recuperar, qualquer extensão é truncada e a extensão. p12 é acrescentada.  Contém as cadeias de certificados recuperados e chaves privadas associadas, armazenadas como um arquivo PFX.
+OutputFileBaseName: nome base do arquivo de saída. Para recuperar, qualquer extensão é truncada e uma cadeia de caracteres específica de certificado e a extensão. rec são acrescentadas para cada blob de recuperação de chave.  Cada arquivo contém uma cadeia de certificados e uma chave privada associada, ainda criptografada para um ou mais certificados de agente de recuperação de chave. Para a recuperação, qualquer extensão é truncada e a extensão. p12 é anexada.  Contém as cadeias de certificados recuperadas e as chaves privadas associadas, armazenadas como um arquivo PFX.
 
-[-f]. [-UnicodeText] [-silenciosa] [-config Machine\CAName] [-p senha] [-ProtectTo SAMNameAndSIDList] [-csp provedor]
+[-f] [-UnicodeText] [-Silent] [-config Machine\CAName] [-p senha] [-Proteger para SAMNameAndSIDList] [-provedor CSP]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-recoverkey"></a>-RecoverKey
 
-CertUtil [Opções] - RecoverKey RecoveryBlobInFile [PFXOutFile [RecipientIndex]]
+CertUtil [opções]-RecoverKey RecoveryBlobInFile [PFXOutFile [RecipientIndex]]
 
-Recuperar a chave privada arquivado
+Recuperar chave privada arquivada
 
-[-f]. [-usuário] [-silenciosa] [-Dividir] [-p senha] [-ProtectTo SAMNameAndSIDList] [-csp provedor] [-t tempo limite]
+[-f] [-usuário] [-Silent] [-divisão] [-p senha] [-Proteger para SAMNameAndSIDList] [-provedor CSP] [-t tempo limite]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-mergepfx"></a>-MergePFX
 
-CertUtil [Opções] - MergePFX PFXInFileList PFXOutFile [ExtendedProperties]
+CertUtil [opções]-MergePFX PFXInFileList PFXOutFile [ExtendedProperties]
 
-PFXInFileList: Lista de entrada do arquivo PFX separada por vírgulas
+PFXInFileList: Lista de arquivos de entrada PFX separados por vírgula
 
 PFXOutFile: Arquivo de saída PFX
 
-Propriedades estendidas: Incluir propriedades estendidas
+ExtendedProperties Incluir propriedades estendidas
 
-A senha especificada na linha de comando é uma lista de senha separados por vírgula.  Se mais de uma senha for especificada, a última senha é usada para o arquivo de saída.  Se apenas uma senha for fornecida ou se a última senha é "\*", o usuário será solicitado a senha do arquivo de saída.
+A senha especificada na linha de comando é uma lista de senhas separadas por vírgula.  Se mais de uma senha for especificada, a última senha será usada para o arquivo de saída.  Se apenas uma senha for fornecida ou se a última senha for "\*", o usuário será solicitado a fornecer a senha do arquivo de saída.
 
-[-f]. [-usuário] [-Dividir] [-p senha] [-ProtectTo SAMNameAndSIDList] [-csp provedor]
+[-f] [-usuário] [-divisão] [-p senha] [-Proteger para SAMNameAndSIDList] [-provedor CSP]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="-convertepf"></a>-ConvertEPF
 
-ConvertEPF EPFOutFile PFXInFileList CertUtil [Opções]-[cast | cast-] [V3CACertId] [, Salt]
+CertUtil [opções]-ConvertEPF PFXInFileList EPFOutFile [Cast | Cast-] [V3CACertId] [, Salt]
 
-Converter arquivos PFX para arquivo EPF
+Converter arquivos PFX em arquivo EPF
 
-PFXInFileList: Lista de entrada do arquivo PFX separada por vírgulas
+PFXInFileList: Lista de arquivos de entrada PFX separados por vírgula
 
-EPF: Arquivo de saída EPF
+EPF Arquivo de saída EPF
 
-conversão: Usar criptografia CAST 64
+vertida Usar criptografia 64 de conversão
 
-cast-: Usar criptografia CAST 64 (exportação)
+conversão-: Usar criptografia 64 de conversão (exportação)
 
-V3CACertId: Token de correspondência de certificado de autoridade de certificação V3.  Ver [-armazenar](#-store) CertId descrição.
+V3CACertId: Token de correspondência de certificado de autoridade de certificação v3.  Consulte [a descrição de](#-store) certid da Store.
 
-Salt: EPF sequência de salt de arquivo de saída
+Salt Cadeia de caracteres de Salt do arquivo de saída EPF
 
-A senha especificada na linha de comando é uma lista de senha separados por vírgula. Se mais de uma senha for especificada, a última senha é usada para o arquivo de saída.  Se apenas uma senha for fornecida ou se a última senha é "\*", o usuário será solicitado a senha do arquivo de saída.
+A senha especificada na linha de comando é uma lista de senhas separadas por vírgula. Se mais de uma senha for especificada, a última senha será usada para o arquivo de saída.  Se apenas uma senha for fornecida ou se a última senha for "\*", o usuário será solicitado a fornecer a senha do arquivo de saída.
 
-[-f]. [-silenciosa] [-Dividir] [-dc DCName] [-p senha] [-csp provedor]
+[-f] [-Silent] [-divisão] [-DC DCName] [-p senha] [-provedor CSP]
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="options"></a>Opções
 
@@ -1701,49 +1701,49 @@ Esta seção define as opções que você pode especificar com o comando.
 
 |Opções|Descrição|
 |-------|-----------|
-|-nullsign|Usar o hash dos dados como assinatura|
+|-nullsign|Usar hash de dados como assinatura|
 |-f|Forçar substituição|
-|-enterprise|Usar o armazenamento de certificado de registro de empresa do computador local|
-|-usuário|Use chaves HKEY_CURRENT_USER ou repositório de certificados|
-|-GroupPolicy|Repositório de certificados de diretiva de grupo de uso|
-|-ut|Modelos de exibição do usuário|
-|-mt|Exibir modelos de máquina|
-|-Unicode|Gravar a saída redirecionada em Unicode|
+|-Enterprise|Usar o repositório de certificados do registro empresarial do computador local|
+|-usuário|Usar chaves HKEY_CURRENT_USER ou repositório de certificados|
+|-GroupPolicy|Usar Política de Grupo repositório de certificados|
+|-UT|Exibir modelos do usuário|
+|-MT|Exibir modelos de máquina|
+|-Unicode|Gravar saída redirecionada em Unicode|
 |-UnicodeText|Gravar arquivo de saída em Unicode|
-|-gmt|Exibir horas como GMT|
-|-segundos|Tempos de exibição com segundos e milissegundos|
-|-silent|Use o sinalizador silencioso para adquirir contexto cript|
-|-split|Dividir os elementos de ASN. 1 incorporados e salvar arquivos|
+|-GMT|Exibir horários como GMT|
+|-segundos|Exibir tempos com segundos e milissegundos|
+|-silencioso|Usar sinalizador silencioso para adquirir contexto cript|
+|-Divisão|Dividir elementos ASN internos. 1 e salvar em arquivos|
 |-v|Operação detalhada|
-|-privatekey|Exibir dados de chave privados e a senha|
-|-Fixar o PIN|PIN do cartão inteligente|
-|-urlfetch|Recuperar e verificar certificados AIA e CDP CRLs|
-|-config Machine\CAName|Cadeia de caracteres de nome de autoridade de certificação e computador|
-|-PolicyServer URLOrId|URL do servidor de política ou ID. Para a seleção de U /, usei - PolicyServer. Para todos os servidores de política, use - PolicyServer \*|
-|-Anônima|Use credenciais anônimas do SSL|
-|-Kerberos|Usar credenciais Kerberos SSL|
-|– ClientCertificate ClientCertId|Use as credenciais de SSL de certificado x. 509. Para a seleção de U / I, use - clientCertificate.|
-|Nome de usuário - UserName|Use conta nomeada credenciais SSL. Para a seleção de U /, use - o nome de usuário.|
-|-CertId cert|Certificado de autenticação|
-|-dc DCName|Destino de um controlador de domínio específico|
-|-restringir RestrictionList|Lista de restrições separada por vírgulas. Cada restrição consiste em um nome de coluna, um operador relacional e um inteiro constante, cadeia de caracteres ou data. Um nome de coluna pode ser precedido por um sinal de adição ou subtração para indicar a ordem de classificação. Exemplos:</br>"RequestId = 47"</br>"+ RequesterName > = a, RequesterName < b"</br>"-RequesterName > DOMAIN, Disposition = 21"|
-|-out ColumnList|Lista de colunas separada por vírgulas|
+|-PrivateKey|Exibir dados de senha e de chave privada|
+|-fixar PIN|PIN do cartão inteligente|
+|-urlfetch|Recuperar e verificar certificados AIA e CRLs de CDP|
+|-config Machine\CAName|Cadeia de caracteres de nome de computador e CA|
+|-PolicyServer URLOrId|URL ou ID do servidor de política. Para a seleção U/I, use-PolicyServer. Para todos os servidores de política, use-PolicyServer\*|
+|-Anônimo|Usar credenciais SSL anônimas|
+|-Kerberos|Usar credenciais SSL Kerberos|
+|-ClientCertificate ClientCertId|Use as credenciais SSL do certificado X. 509. Para a seleção U/I, use-clientCertificate.|
+|-Nome de usuário UserName|Use a conta nomeada para credenciais SSL. Para a seleção U/I, use-UserName.|
+|-Certid do certificado|Certificado de autenticação|
+|-DC DCName|Direcionar um controlador de domínio específico|
+|-restringir restrição|Lista de restrições separadas por vírgula. Cada restrição consiste em um nome de coluna, um operador relacional e um inteiro constante, uma cadeia de caracteres ou uma data. Um nome de coluna pode ser precedido por um sinal de mais ou menos para indicar a ordem de classificação. Exemplos:</br>"RequestId = 47"</br>"+ RequesterName > = a, RequesterName < b"</br>"-RequesterName > domínio, disposição = 21"|
+|-saída da coluna|Lista de colunas separadas por vírgula|
 |-p senha|Senha|
-|-ProtectTo SAMNameAndSIDList|SAM nome/SID lista separada por vírgulas|
-|-Provedor de csp|Provedor|
+|-Protectto SAMNameAndSIDList|Lista de nome/SID do SAM separados por vírgula|
+|-Provedor CSP|Provedor|
 |-t tempo limite|Tempo limite de busca de URL em milissegundos|
-|-symkeyalg SymmetricKeyAlgorithm[,KeyLength]|Nome do algoritmo de chave simétrica com comprimento de chave opcional, exemplo: AES 128 ou 3DES|
+|-symkeyalg SymmetricKeyAlgorithm [, KeyLength]|Nome do algoritmo de chave simétrica com comprimento de chave opcional, exemplo: AES, 128 ou 3DES|
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
 
 ## <a name="additional-certutil-examples"></a>Exemplos adicionais de certutil
 
 Para obter alguns exemplos de como usar esse comando, consulte
 
-1. [Exemplos de Certutil para gerenciar os serviços de certificados do Active Directory (AD CS) da linha de comando](https://social.technet.microsoft.com/wiki/contents/articles/3063.certutil-examples-for-managing-active-directory-certificate-services-ad-cs-from-the-command-line.aspx)
-2. [Tarefas do Certutil para gerenciar certificados](https://technet.microsoft.com/library/cc772898.aspx)
-3. [Exportação de binários de solicitação usando a ferramenta de linha de comando de CertUtil.exe passo a passo](https://social.technet.microsoft.com/wiki/contents/articles/7573.active-directory-certificate-services-pki-key-archival-and-management.aspx)
-4. [Renovação de certificado de autoridade de certificação raiz](https://social.technet.microsoft.com/wiki/contents/articles/2016.root-ca-certificate-renewal.aspx)
+1. [Exemplos de certutil para gerenciar Active Directory serviços de certificados (AD CS) na linha de comando](https://social.technet.microsoft.com/wiki/contents/articles/3063.certutil-examples-for-managing-active-directory-certificate-services-ad-cs-from-the-command-line.aspx)
+2. [Tarefas de certutil para gerenciar certificados](https://technet.microsoft.com/library/cc772898.aspx)
+3. [A exportação de solicitação binária usando a ferramenta de linha de comando CertUtil. exe](https://social.technet.microsoft.com/wiki/contents/articles/7573.active-directory-certificate-services-pki-key-archival-and-management.aspx)
+4. [Renovação de certificado de AC raiz](https://social.technet.microsoft.com/wiki/contents/articles/2016.root-ca-certificate-renewal.aspx)
 5. [Certutil](https://msdn.microsoft.com/subscriptions/cc773087.aspx)
 
-Retorne ao [Menu](#menu)
+Retornar ao [menu](#menu)
