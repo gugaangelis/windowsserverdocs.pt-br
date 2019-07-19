@@ -9,12 +9,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bdce646c631b56309f86292f0895fe80b0adf31
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: eb19e7ecf89f02200d3393dc1a4a9e5cd85cf598
+ms.sourcegitcommit: 1bc3c229e9688ac741838005ec4b88e8f9533e8a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284506"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68314991"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>Escolher unidades para Espaços de Armazenamento Diretos
 
@@ -67,11 +67,11 @@ Atualmente, há três maneiras de fazer isso:
 
 ![All-Flash-Deployment-Possibilities](media/choosing-drives-and-resiliency-types/All-Flash-Deployment-Possibilities.png)
 
-1. **Todos NVMe.** Usar tudo NVMe oferece um desempenho incomparável, incluindo a baixa latência mais previsível. Se todas as unidades forem do mesmo modelo, não haverá cache. Você também pode combinar modelos NVMe de resistência superior e resistência inferior e configurar o primeiro para armazenar em cache as gravações do último ([requer configuração](understand-the-cache.md#manual)).
+1. **Todos os NVMe.** Usar tudo NVMe oferece um desempenho incomparável, incluindo a baixa latência mais previsível. Se todas as unidades forem do mesmo modelo, não haverá cache. Você também pode combinar modelos NVMe de resistência superior e resistência inferior e configurar o primeiro para armazenar em cache as gravações do último ([requer configuração](understand-the-cache.md#manual-configuration)).
 
 2. **NVMe + SSD.** Ao usar o NVMe com SSDs, o NVMe armazenará automaticamente as gravações em cache nos SSDs. Isso permite que as gravações sejam agrupadas em cache e desescalonadas somente conforme necessário, para reduzir o desgaste nos SSDs. Isso fornece características de gravação estilo NVMe, enquanto as leituras são fornecidas diretamente dos SSDs igualmente rápidos.
 
-3. **Todos SSD.** Como na opção Tudo NVMe, não existe cache quando todas as unidades são do mesmo modelo. Combinando modelos de resistência superior e resistência inferior, você pode configurar o primeiro para armazenar em cache as gravações do último ([requer configuração](understand-the-cache.md#manual)).
+3. **Toda SSD.** Como na opção Tudo NVMe, não existe cache quando todas as unidades são do mesmo modelo. Combinando modelos de resistência superior e resistência inferior, você pode configurar o primeiro para armazenar em cache as gravações do último ([requer configuração](understand-the-cache.md#manual-configuration)).
 
    >[!NOTE]
    > Uma vantagem de usar tudo NVMe ou tudo SSD sem cache é que você obtém capacidade de armazenamento utilizável de cada unidade. Não há capacidade "gasta" no armazenamento em cache, o que pode ser atraente em menor escala.
@@ -102,7 +102,7 @@ Para cargas de trabalho que exijam grande capacidade e gravem com pouca frequên
 1. **SSD + HDD**. O SSDs armazenam leituras e gravações em cache para absorver picos e oferecer um desempenho de gravação estilo SSD, com desescalonamento otimizado posterior para os HDDs.
 
 >[!IMPORTANT]
->Configuração com HDDs apenas não é suportada. Não é aconselhável SSDs alta resistência de cache para durabilidade baixa SSDs.
+>Não há suporte para a configuração com HDDs somente. Não é recomendável o cache SSDs de endurance alto para SSDs Endurance baixo.
 
 ## <a name="sizing-considerations"></a>Considerações sobre o dimensionamento
 
@@ -110,18 +110,18 @@ Para cargas de trabalho que exijam grande capacidade e gravem com pouca frequên
 
 Cada servidor deve ter pelo menos duas unidades de cache (o mínimo necessário para redundância). É recomendável que o número de unidades de capacidade seja um múltiplo do número de unidades de cache. Por exemplo, se você tiver 4 unidades de cache, terá um desempenho mais consistente com 8 unidades de capacidade (proporção 1:2) do que com 7 ou 9.
 
-O cache deve ser dimensionado para acomodar o conjunto de trabalho de seus aplicativos e cargas de trabalho, ou seja, todos os dados ativamente, eles estão lendo e gravando em um determinado momento. Não há qualquer requisito de dimensionamento de cache além desse. Para implantações com HDDs, um ponto de partida razoável é 10% da capacidade – por exemplo, se cada servidor tem 4 x 4 TB HDD = 16 TB de capacidade, em seguida, 2 x 800 GB SSD = 1,6 TB do cache por servidor. Para todos os flash implantações, especialmente com muito [alta resistência](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/) SSDs, talvez seja razoável para iniciar mais perto de 5% da capacidade – por exemplo, se cada servidor tem 24 x 1,2 TB SSD = 28,8 TB de capacidade, em seguida, 2 x NVMe de 750 GB = 1,5 TB de cache por servidor. Você pode adicionar ou remover unidades de cache posteriormente para ajustar.
+O cache deve ser dimensionado para acomodar o conjunto de trabalho de seus aplicativos e cargas de trabalho, ou seja, todos os dados que eles estão lendo e gravando ativamente em um determinado momento. Não há qualquer requisito de dimensionamento de cache além desse. Para implantações com HDDs, um local de início justo é de 10% da capacidade, por exemplo, se cada servidor tiver 4 x 4 TB HDD = 16 TB de capacidade, então 2 x 800 GB SSD = 1,6 TB de cache por servidor. Para todas as implantações-flash, especialmente com SSDs [Endurance muito alto](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/) , pode ser justo começar mais perto de 5% da capacidade – por exemplo, se cada servidor tiver 24 x 1,2 TB SSD = 28,8 TB de capacidade, então 2 x 750 GB NVMe = 1,5 TB de cache por servidor. Você pode adicionar ou remover unidades de cache posteriormente para ajustar.
 
 ### <a name="general"></a>Geral
 
 É recomendável limitar a capacidade de armazenamento total por servidor a aproximadamente 100 TB. Quanto maior a capacidade de armazenamento por servidor, mais tempo é necessário para ressincronizar os dados após a inatividade ou reinicialização, como na aplicação de atualizações de software.
 
-O tamanho máximo atual por pool de armazenamento é 4 petabytes (PB) (4.000 TB) para Windows Server 2019 ou 1 petabyte para Windows Server 2016.
+O tamanho máximo atual por pool de armazenamento é de 4 petabyte (PB) (4.000 TB) para o Windows Server 2019 ou 1 petabyte para Windows Server 2016.
 
 ## <a name="see-also"></a>Consulte também
 
-- [Visão geral direta de espaços de armazenamento](storage-spaces-direct-overview.md)
-- [Entender o cache em espaços de armazenamento diretos](understand-the-cache.md)
-- [Requisitos de hardware de espaços diretos de armazenamento](storage-spaces-direct-hardware-requirements.md)
-- [Planejando volumes em espaços de armazenamento diretos](plan-volumes.md)
+- [Visão geral de Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md)
+- [Entender o cache em Espaços de Armazenamento Diretos](understand-the-cache.md)
+- [Requisitos de hardware Espaços de Armazenamento Diretos](storage-spaces-direct-hardware-requirements.md)
+- [Planejando volumes no Espaços de Armazenamento Diretos](plan-volumes.md)
 - [Tolerância a falhas e eficiência de armazenamento](storage-spaces-fault-tolerance.md)

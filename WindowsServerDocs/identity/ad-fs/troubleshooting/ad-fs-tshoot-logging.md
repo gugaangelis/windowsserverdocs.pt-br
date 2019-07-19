@@ -1,6 +1,6 @@
 ---
-title: Solução de problemas - eventos de auditoria do AD FS e registro em log
-description: Este documento descreve como usar os vários logs do AD FS para solucionar problemas
+title: AD FS solução de problemas-eventos e log de auditoria
+description: Este documento descreve como usar os vários logs de AD FS para solucionar problemas
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -8,46 +8,46 @@ ms.date: 02/21/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1acc00ca376c48f7fb34214cef3a92961d355ae4
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bfa305103e81f316dc5ad5df22cd238f6fb5ec31
+ms.sourcegitcommit: 1bc3c229e9688ac741838005ec4b88e8f9533e8a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444026"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68314340"
 ---
-# <a name="ad-fs-troubleshooting---events-and-logging"></a>Solucionando problemas do AD FS - eventos e registro em log
-O AD FS fornece dois logs principais que podem ser usados na solução de problemas.  São eles:
+# <a name="ad-fs-troubleshooting---events-and-logging"></a>Solução de problemas de AD FS-eventos e log
+AD FS fornece dois logs principais que podem ser usados na solução de problemas.  São eles:
 
-- o logon de administrador
-- o Log de rastreamento  
+- o log do administrador
+- o log de rastreamento  
  
 Cada um desses logs será explicado abaixo.
 
 ## <a name="admin-log"></a>Log do administrador
-O log do administrador fornece informações de alto nível sobre os problemas que estão ocorrendo e são habilitados por padrão.
+O log de administração fornece informações de alto nível sobre problemas que estão ocorrendo e é habilitado por padrão.
 
 ### <a name="to-view-the-admin-log"></a>Para exibir o log do administrador
 1.  Abra o Visualizador de Eventos
-2.  Expandir **logs de serviços e aplicativos**.
-3.  Expandir **do AD FS**.
-4.  Clique em **Admin**.
+2.  Expanda **log de aplicativos e serviços**.
+3.  Expanda **AD FS**.
+4.  Clique em **admin**.
 
-![aprimoramentos de auditoria](media/ad-fs-tshoot-logging/event1.PNG)  
+![Aprimoramentos de auditoria](media/ad-fs-tshoot-logging/event1.PNG)  
 
 ## <a name="trace-log"></a>Log de rastreamento
-O log de rastreamento é onde as mensagens detalhadas são registradas e serão o log mais úteis ao solucionar o problema. Uma vez que muitas informações de log de rastreamento podem ser geradas em um curto período de tempo, o que pode afetar o desempenho do sistema, os logs de rastreamento são desabilitados por padrão. 
+O log de rastreamento é onde as mensagens detalhadas são registradas e serão o log mais útil ao solucionar problemas. Como muitas informações de log de rastreamento podem ser geradas em um curto período de tempo, o que pode afetar o desempenho do sistema, os logs de rastreamento são desabilitados por padrão. 
 
 ### <a name="to-enable-and-view-the-trace-log"></a>Para habilitar e exibir o log de rastreamento
 1.  Abra o Visualizador de Eventos
-2.  Clique duas vezes em **logs de serviços e aplicativos** e selecione o modo de exibição e clique em **Mostrar Logs analíticos e depuração**.  Isso mostrará nós adicionais à esquerda.
-![aprimoramentos de auditoria](media/ad-fs-tshoot-logging/event2.PNG)  
-3.  Expanda o rastreamento do AD FS
-4.  Clique com botão direito na depuração e selecione **Habilitar Log**.
-![aprimoramentos de auditoria](media/ad-fs-tshoot-logging/event3.PNG)  
+2.  Clique com o botão direito do mouse no **log de aplicativos e serviços** e selecione Exibir e clique em **Mostrar logs analíticos e de depuração**.  Isso mostrará nós adicionais à esquerda.
+![Aprimoramentos de auditoria](media/ad-fs-tshoot-logging/event2.PNG)  
+3.  Expandir rastreamento de AD FS
+4.  Clique com o botão direito do mouse em Depurar e selecione **habilitar log**.
+![Aprimoramentos de auditoria](media/ad-fs-tshoot-logging/event3.PNG)  
 
 
-## <a name="event-auditing-information-for-ad-fs-on-windows-server-2016"></a>Informações de auditoria eventos para o AD FS no Windows Server 2016  
-Por padrão, o AD FS no Windows Server 2016 tem um nível básico de auditoria habilitado.  Com a auditoria básica, os administradores verão eventos 5 ou para uma única solicitação.  Isso marca uma redução significativa no número de eventos, os administradores têm a analisar, para ver uma única solicitação.   O nível de auditoria pode ser aumentado ou diminuído a usando o cmdlet do PowerShell:  
+## <a name="event-auditing-information-for-ad-fs-on-windows-server-2016"></a>Informações de auditoria de eventos para AD FS no Windows Server 2016  
+Por padrão, AD FS no Windows Server 2016 tem um nível básico de auditoria habilitado.  Com a auditoria básica, os administradores verão 5 ou menos eventos para uma única solicitação.  Isso marca uma diminuição significativa no número de eventos que os administradores precisam examinar para ver uma única solicitação.   O nível de auditoria pode ser gerado ou reduzido usando o cmdlt do PowerShell:  
 
 ```PowerShell
 Set-AdfsProperties -AuditLevel 
@@ -57,60 +57,60 @@ A tabela a seguir explica os níveis de auditoria disponíveis.
 
 |Nível de Auditoria|Sintaxe do PowerShell|Descrição|  
 |----- | ----- | ----- |
-|Nenhuma|Set-AdfsProperties - AuditLevel None|A auditoria está desabilitada e nenhum evento será registrado.|  
-|Básico (padrão)|Set-AdfsProperties - AuditLevel Basic|Não mais de 5 eventos serão registrados para uma única solicitação|  
-|Verbose|Set-AdfsProperties - AuditLevel detalhado|Todos os eventos serão registrados.  Isso registrará uma quantidade significativa de informações por solicitação.|  
+|Nenhum|Set-Adfsproperties-AuditLevel None|A auditoria está desabilitada e nenhum evento será registrado.|  
+|Básico (padrão)|Set-Adfsproperties-AuditLevel básico|Não mais de 5 eventos serão registrados em log para uma única solicitação|  
+|Verbose|Set-Adfsproperties-AuditLevel Verbose|Todos os eventos serão registrados em log.  Isso registrará uma quantidade significativa de informações por solicitação.|  
   
-Para exibir o nível de auditoria atual, você pode usar o cmdlet do PowerShell:  Get-AdfsProperties.  
+Para exibir o nível de auditoria atual, você pode usar o cmdlt do PowerShell:  Get-Adfsproperties.  
   
-![aprimoramentos de auditoria](media/ad-fs-tshoot-logging/ADFS_Audit_1.PNG)  
+![Aprimoramentos de auditoria](media/ad-fs-tshoot-logging/ADFS_Audit_1.PNG)  
   
-O nível de auditoria pode ser aumentado ou diminuído a usando o cmdlet do PowerShell:  Set-AdfsProperties - AuditLevel.  
+O nível de auditoria pode ser gerado ou reduzido usando o cmdlt do PowerShell:  Set-Adfsproperties-AuditLevel.  
   
-![aprimoramentos de auditoria](media/ad-fs-tshoot-logging/ADFS_Audit_2.png)  
+![Aprimoramentos de auditoria](media/ad-fs-tshoot-logging/ADFS_Audit_2.png)  
   
 ## <a name="types-of-events"></a>Tipos de eventos  
-Eventos do AD FS podem ser de tipos diferentes, com base em diferentes tipos de solicitações processadas pelo AD FS. Cada tipo de evento tem dados específicos associados a ele.  O tipo de eventos pode ser diferenciado entre as solicitações de logon (ou seja, solicitações de token) em vez de solicitações do sistema (chamadas de servidores como buscar informações de configuração).    
+AD FS eventos podem ser de tipos diferentes, com base nos diferentes tipos de solicitações processadas pelo AD FS. Cada tipo de evento tem dados específicos associados a ele.  O tipo de eventos pode ser diferenciado entre solicitações de logon (ou seja, solicitações de token) versus solicitações do sistema (chamadas de servidor-Server, incluindo a busca de informações de configuração).    
 
 A tabela a seguir descreve os tipos básicos de eventos.  
   
 |Tipo de Evento|ID de evento|Descrição| 
 |----- | ----- | ----- | 
-|Sucesso da validação de credencial atualizada|1202|Uma solicitação em que as novas credenciais são validadas com êxito pelo serviço de Federação. Isso inclui o WS-Trust, WS-Federation, SAML-P (primeira ramificação para gerar SSO) e pontos de extremidade OAuth autorizar.|  
-|Erro de validação de credencial atualizada|1203|Uma solicitação em que a validação de credenciais atualizado falhou no serviço de Federação. Isso inclui o WS-Trust, WS-Fed, SAML-P (primeira ramificação para gerar SSO) e pontos de extremidade OAuth autorizar.|  
-|Êxito de Token de aplicativo|1200|Uma solicitação em que um token de segurança é emitido com êxito pelo serviço de Federação. Para WS-Federation, isso é registrado quando a solicitação é processada com o artefato de SSO do SAML-P. (por exemplo, o cookie SSO).|  
-|Falha de Token de aplicativo|1201|Uma solicitação em que a emissão de token de segurança falha no serviço de Federação. Para WS-Federation, isso é registrado quando a solicitação foi processada com o artefato de SSO do SAML-P. (por exemplo, o cookie SSO).|  
-|Êxito na solicitação de alteração de senha|1204|Uma transação em que a alteração de senha solicitação foi processada com êxito pelo serviço de Federação.|  
-|Erro de solicitação de alteração de senha|1205|Falha de uma transação em que a senha de solicitação de alteração a ser processado pelo serviço de Federação.| 
-|Sair com êxito|1206|Descreve uma solicitação de saída com êxito.|  
-|Sair com falha|1207|Descreve uma solicitação de saída com falha.|  
+|Êxito na validação da credencial|1202|Uma solicitação em que as novas credenciais são validadas com êxito pelo Serviço de Federação. Isso inclui WS-Trust, WS-Federation, SAML-P (primeiro trecho para gerar SSO) e os pontos de extremidade de autorização OAuth.|  
+|Novo erro de validação de credencial|1203|Uma solicitação na qual a nova validação de credencial falhou no Serviço de Federação. Isso inclui WS-Trust, WS-enalimentate, SAML-P (primeiro segmento para gerar SSO) e os pontos de extremidade de autorização do OAuth.|  
+|Êxito do token de aplicativo|1200|Uma solicitação em que um token de segurança é emitido com êxito pelo Serviço de Federação. Para o WS-Federation, SAML-P isso é registrado quando a solicitação é processada com o artefato de SSO. (como o cookie de SSO).|  
+|Falha no token do aplicativo|1201|Uma solicitação em que a emissão de token de segurança falhou na Serviço de Federação. Para o WS-Federation, SAML-P isso é registrado quando a solicitação foi processada com o artefato de SSO. (como o cookie de SSO).|  
+|Êxito na solicitação de alteração de senha|1204|Uma transação em que a solicitação de alteração de senha foi processada com êxito pelo Serviço de Federação.|  
+|Erro de solicitação de alteração de senha|1205|Uma transação em que a solicitação de alteração de senha não pôde ser processada pelo Serviço de Federação.| 
+|Sair do sucesso|1206|Descreve uma solicitação de saída bem-sucedida.|  
+|Falha ao sair|1207|Descreve uma solicitação de saída com falha.|  
 
 ## <a name="security-auditing"></a>Auditoria de segurança
-Auditoria de segurança da conta de serviço do AD FS, às vezes, pode ajudar no rastreamento de problemas com atualizações de senha, registro em log de solicitação/resposta, os cabeçalhos de solicitação contect e resultados de registro do dispositivo.  Auditoria da conta de serviço do AD FS está desabilitada por padrão.
+Às vezes, a auditoria de segurança da conta de serviço AD FS pode ajudar a rastrear problemas com atualizações de senha, registro em log de solicitação/resposta, cabeçalhos de contect de solicitação e resultados de registro do dispositivo.  Por padrão, a auditoria da conta de serviço de AD FS está desabilitada.
 
 ### <a name="to-enable-security-auditing"></a>Para habilitar a auditoria de segurança
-1. Clique em Iniciar, aponte para **programas**, aponte para **ferramentas administrativas**e, em seguida, clique em **política de segurança Local**.
+1. Clique em Iniciar, aponte para **programas**, aponte para **Ferramentas administrativas**e clique em **política de segurança local**.
 2. Navegue até a pasta **Configurações de Segurança\Políticas Locais\Gerenciamento de Direitos do Usuário** e clique duas vezes em **Gerar Auditorias de Segurança**.
-3. Sobre o **configuração de segurança Local** guia, verifique se a conta de serviço do AD FS está listada. Se não estiver presente, clique em Adicionar usuário ou grupo e adicioná-lo à lista e clique em Okey.
-4. Abra um prompt de comando com privilégios elevados e execute o seguinte comando para habilitar a auditoria auditpol.exe /Set /subcategory: "Aplicativo gerado" /failure:enable /Success
-5. Fechar **política de segurança Local**e, em seguida, abra o snap-in de gerenciamento do AD FS.
+3. Na guia **configuração de segurança local** , verifique se a conta de serviço do AD FS está listada. Se não estiver presente, clique em Adicionar usuário ou grupo e adicione-o à lista e, em seguida, clique em OK.
+4. Abra um prompt de comando com privilégios elevados e execute o comando a seguir para habilitar a auditoria Auditpol. exe/set/SubCategory: "gerado pelo aplicativo"/Failure: habilitar/Success: habilitar
+5. Feche a **política de segurança local**e abra o snap-in de gerenciamento de AD FS.
  
-Para abrir o snap-in de gerenciamento do AD FS, clique em Iniciar, aponte para programas, aponte para ferramentas administrativas e, em seguida, clique em gerenciamento do AD FS.
+Para abrir o snap-in Gerenciamento de AD FS, clique em Iniciar, aponte para programas, aponte para ferramentas administrativas e clique em gerenciamento de AD FS.
  
-6. No painel de ações, clique em Editar propriedades do serviço de Federação
-7. Na caixa de diálogo Propriedades do serviço de federação, clique na guia eventos.
-8. Selecione o **auditorias com êxito** e **auditorias com falha** caixas de seleção.
+6. No painel Ações, clique em Editar propriedades de Serviço de Federação
+7. Na caixa de diálogo Propriedades do Serviço de Federação, clique na guia eventos.
+8. Marque as caixas de seleção auditorias com **êxito** e auditorias com **falha** .
 9. Clique em OK.
 
-![aprimoramentos de auditoria](media/ad-fs-tshoot-logging/event4.PNG)  
+![Aprimoramentos de auditoria](media/ad-fs-tshoot-logging/event4.PNG)  
  
 >[!NOTE]
->As instruções acima são usadas somente quando o AD FS está em um servidor autônomo do membro.  Se o AD FS está em execução em um controlador de domínio, em vez de diretiva de segurança Local, use o **política de controlador de domínio padrão** localizado em **controladores de gerenciamento/floresta/domínios/domínio de diretiva de grupo**.  Clique em Editar e navegue até **computador \ Diretivas \ Configurações de segurança locais \ Atribuição Rights Management**
+>As instruções acima são usadas somente quando AD FS está em um servidor membro autônomo.  Se AD FS estiver em execução em um controlador de domínio, em vez da política de segurança local, use a **política de controlador de domínio padrão** localizada em **política de grupo Gerenciamento/floresta/domínios/controladores de domínio**.  Clique em Editar e navegue até **computador Rights Management \** \ \ \ \ \ \ \ \ \ \ \
 
-## <a name="windows-communication-foundation-and-windows-identity-foundation-messages"></a>Mensagens do Windows Communication Foundation e o Windows Identity Foundation
-Além do log de rastreamento, às vezes, você talvez precise exibir mensagens do Windows Communication Foundation (WCF) e o Windows Identity Foundation (WIF) para solucionar um problema. Isso pode ser feito modificando o **Microsoft.IdentityServer.ServiceHost.Exe.Config** arquivo no servidor do AD FS. 
+## <a name="windows-communication-foundation-and-windows-identity-foundation-messages"></a>Windows Communication Foundation e mensagens do Windows Identity Foundation
+Além do registro em log de rastreamento, às vezes, talvez seja necessário exibir as mensagens Windows Communication Foundation (WCF) e Windows Identity Foundation (WIF) para solucionar um problema. Isso pode ser feito modificando o arquivo **Microsoft. IdentityServer. ServiceHost. exe. config** no servidor de AD FS. 
 
-Esse arquivo está localizado em **\Windows\ADFS < % % de raiz do sistema >** e está no formato XML. As partes relevantes do arquivo são mostradas abaixo: 
+Esse arquivo está localizado na **<% System raiz% > \Windows\ADFS** e está em formato XML. As partes relevantes do arquivo são mostradas abaixo: 
 ```
 <!-- To enable WIF tracing, change the switchValue below to desired trace level - Verbose, Information, Warning, Error, Critical -->
 
@@ -122,23 +122,23 @@ Esse arquivo está localizado em **\Windows\ADFS < % % de raiz do sistema >** e 
 ```
 
 
-Depois de aplicar essas alterações, salve a configuração e reinicie o serviço do AD FS. Depois de habilitar esses rastreamentos Configurando as opções apropriadas, eles aparecerão no log de rastreamento do AD FS no Visualizador de eventos do Windows.
+Depois de aplicar essas alterações, salve a configuração e reinicie o serviço de AD FS. Depois de habilitar esses rastreamentos definindo as opções apropriadas, elas aparecerão no log de rastreamento AD FS na Visualizador de Eventos do Windows.
 
-## <a name="correlating-events"></a>Correlação de eventos
-Uma das coisas mais difíceis de solucionar problemas é problemas de acesso que geram muita erro ou eventos de depuração.
+## <a name="correlating-events"></a>Correlacionando eventos
+Uma das coisas mais difíceis de solucionar problemas é o acesso a problemas que geram muitos eventos de erro ou de depuração.
 
-Para ajudar com isso, o AD FS correlaciona todos os eventos que são registrados no Visualizador de eventos, na administração e os logs de depuração, que correspondem a uma determinada solicitação usando um globalmente exclusivo GUID (identificador exclusivo) chamado a ID da atividade. Essa ID é gerada quando a solicitação de emissão de token é inicialmente apresentada para o aplicativo web (para aplicativos usando o perfil do solicitador passivo) ou as solicitações enviadas diretamente para o provedor de declarações (para aplicativos usando o WS-Trust). 
+Para ajudar com isso, AD FS correlaciona todos os eventos que são registrados no Visualizador de Eventos, tanto no administrador quanto nos logs de depuração, que correspondem a uma determinada solicitação usando um GUID (identificador global exclusivo) exclusivo chamado de ID da atividade. Essa ID é gerada quando a solicitação de emissão de token é inicialmente apresentada ao aplicativo Web (para aplicativos que usam o perfil solicitante passivo) ou solicitações enviadas diretamente para o provedor de declarações (para aplicativos que usam WS-Trust). 
 
 ![ActivityId](media/ad-fs-tshoot-logging/activityid1.png)
 
-Essa ID de atividade permanece o mesmo para a duração inteira da solicitação e é registrado como parte de cada evento de eventos registrados visualizador para a solicitação. Isso quer dizer que:
- - que filtrando ou pesquisando o Visualizador de eventos usando essa ID pode ajudar a manter o controle de todos os eventos relacionados que correspondem à solicitação de token de atividade
- - a mesma ID de atividade é registrada em máquinas diferentes, que permite a solução de problemas de uma solicitação de usuário em vários computadores, como o proxy do servidor de Federação (FSP)
- - a ID de atividade também aparecerá no navegador do usuário se a solicitação do AD FS falhar de forma alguma, permitindo que o usuário para se comunicar essa ID ao suporte técnico ou suporte de TI.
+Essa ID de atividade permanece a mesma para toda a duração da solicitação e é registrada como parte de cada evento registrado no Visualizador de Eventos para essa solicitação. Isso quer dizer que:
+ - a filtragem ou a pesquisa do Visualizador de Eventos usando essa ID de atividade pode ajudar a manter o controle de todos os eventos relacionados que correspondem à solicitação de token
+ - a mesma ID de atividade é registrada em máquinas diferentes, o que permite solucionar problemas de uma solicitação de usuário em vários computadores, como o proxy do servidor de Federação (FSP)
+ - a ID da atividade também será exibida no navegador do usuário se a solicitação de AD FS falhar de alguma forma, permitindo que o usuário comunique essa ID ao suporte técnico ou a ti.
 
 ![ActivityId](media/ad-fs-tshoot-logging/activityid2.png)
 
-Para auxiliar no processo de solução de problemas, o AD FS também registra o evento de ID do chamador sempre que o processo de emissão de token falhar em um servidor do AD FS. Esse evento contém o tipo de declaração e o valor de um dos seguintes tipos de declaração, supondo que essa informação foi passada para o serviço de federação como parte de uma solicitação de token:
+Para auxiliar no processo de solução de problemas, AD FS também registra o evento de ID do chamador sempre que o processo de emissão de token falha em um servidor AD FS. Esse evento contém o tipo de declaração e o valor de um dos tipos de declaração a seguir, supondo que essas informações foram passadas para o Serviço de Federação como parte de uma solicitação de token:
 - http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountnameh
 - http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier
 - http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upnh
@@ -151,7 +151,7 @@ Para auxiliar no processo de solução de problemas, o AD FS também registra o 
 - http://schemas.microsoft.com/ws/2008/06/identity/claims/name
 - http://schemas.xmlsoap.org/ws/2005/05/identity/claims/privatepersonalidentifier 
 
-O evento de ID do chamador também registra a ID de atividade para permitir que você use a ID da atividade para filtrar ou pesquisar os logs de eventos para uma determinada solicitação.
+O evento ID do chamador também registra a ID da atividade para permitir que você use essa ID de atividade para filtrar ou Pesquisar os logs de eventos em busca de uma solicitação específica.
 
 
 

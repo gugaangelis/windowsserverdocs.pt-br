@@ -1,6 +1,6 @@
 ---
 title: Configurar políticas de grupo para uma implantação de domínio
-description: Saiba como configurar políticas de grupo no MultiPoint Services
+description: Saiba como configurar políticas de grupo nos serviços do MultiPoint
 ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server-threshold
@@ -13,59 +13,59 @@ ms.assetid: 13e5fa90-d330-4155-a6b8-78eb650cbbfa
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: f661fbdc40fd7dd2562d51756bc7642c8e9a4a82
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5c9d8efc1ed4a2f498ffce6c69d443ae819dced9
+ms.sourcegitcommit: 1bc3c229e9688ac741838005ec4b88e8f9533e8a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888037"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68314317"
 ---
 # <a name="configure-group-policies-for-a-domain-deployment"></a>Configurar políticas de grupo para uma implantação de domínio
-Para garantir que sua implantação do domínio do MultiPoint Services funcione corretamente, aplique as seguintes configurações de política de grupo para a conta de usuário WMSshell em um sistema MultiPoint Services.  
+Para garantir que a implantação de domínio dos serviços do MultiPoint funcione corretamente, aplique as seguintes configurações de política de grupo à conta de usuário WMSshell em um sistema MultiPoint Services.  
   
 > [!IMPORTANT]  
-> Algumas configurações de diretiva de grupo podem impedir que as definições de configuração necessárias sejam aplicados aos MultiPoint Services. Certifique-se de que você compreenda e define as configurações de diretiva de grupo para que eles funcionem corretamente no MultiPoint Services. Por exemplo, uma configuração de diretiva de grupo que impede o logon automático pode apresentar problemas com o comportamento de logon do MultiPoint Services.  
+> Algumas configurações de diretiva de grupo podem impedir que as definições de configuração necessárias sejam aplicadas aos serviços do MultiPoint. Certifique-se de entender e definir as configurações da política de grupo para que elas funcionem corretamente nos serviços do MultiPoint. Por exemplo, uma configuração Política de Grupo que impede que o logon automático possa apresentar problemas com o comportamento de login dos serviços do MultiPoint.  
   
-## <a name="update-group-policies-for-the-wmsshell-user-account"></a>Atualizar as políticas de grupo para a conta de usuário WMSshell 
-A conta de usuário WMSshell é uma conta de sistema quais serviços MultiPoint usa para entrar no console onde as estações actuall são criadas. Essa conta não é mento ser gerenciado pelo Gerenciador do MultiPoint.
+## <a name="update-group-policies-for-the-wmsshell-user-account"></a>Atualizar políticas de grupo para a conta de usuário do WMSshell 
+A conta de usuário do WMSshell é uma conta do sistema que o MultiPoint Services usa para entrar no console do, em que as estações reais são criadas. Essa conta não deve ser gerenciada pelo MultiPoint Manager.
   
 > [!NOTE]  
-> Para saber como atualizar as diretivas de grupo, consulte [Editor de diretiva de Grupo Local](https://technet.microsoft.com/library/dn265982.aspx).  
+> Para saber como atualizar as políticas de grupo, consulte [Editor de política de grupo local](https://technet.microsoft.com/library/dn265982.aspx).  
   
-**POLÍTICA:** Configuração do usuário > modelos administrativos > Painel de controle > **personalização**  
+**REGRAS** Configuração do usuário > modelos administrativos > painel de controle > **personalização**  
   
-Atribua valores a seguir:  
+Atribua os seguintes valores:  
   
 |Configuração|Valores|  
 |-----------|----------|  
-|Habilitar a proteção de tela|Desabilitada|  
+|Habilitar proteção de tela|Desabilitada|  
 |Tempo limite de Proteção de Tela|Desabilitada<br /><br />Segundos: xxx|  
 |Proteger com senha a proteção de tela|Desabilitada|  
   
-**POLÍTICA:** Configuração do computador > configurações do Windows > configurações de segurança > políticas locais > atribuição de direitos de usuário > **permitir logon localmente**  
+**REGRAS** Configuração do computador > configurações do Windows > configurações de segurança > políticas locais > atribuição de direitos de usuário > **Permitir logon local**  
   
 |Configuração|Valores|  
 |-----------|----------|  
-|Permitir logon localmente|Certifique-se de que a lista de contas inclui a conta WMSshell.<br /><br />**Observação:** Por padrão, a conta de WMSshell é um membro do grupo de usuários. Se o grupo de usuários está na lista e WMSshell é um membro do grupo de usuários, você precisa adicionar a conta WMSshell à lista.|  
+|Permitir logon localmente|Verifique se a lista de contas inclui a conta WMSshell.<br /><br />**Observação:** Por padrão, a conta WMSshell é um membro do grupo usuários. Se o grupo usuários estiver na lista e WMSshell for um membro do grupo usuários, você não precisará adicionar a conta WMSshell à lista.|  
   
 > [!IMPORTANT]  
-> Quando você define políticas de grupo, certifique-se de que as políticas não interfiram com atualizações automáticas e erro do Windows erro reporting no servidor do MultiPoint. Elas são definidas **instalar atualizações automaticamente** e **relatório de erros do Windows automáticas** configurações que foram selecionadas durante a instalação do Windows MultiPoint Server, configurada no MultiPoint Usando o Gerenciador **editar configurações de servidor**, ou configurado em atualizações agendadas para a proteção de disco.  
+> Ao definir qualquer política de grupo, verifique se as políticas não interferem nas atualizações automáticas e no relatório de erros do Windows no MultiPoint Server. Elas são definidas pelas configurações **instalar atualizações automaticamente** e **automáticas do relatório de erros do Windows** que foram selecionadas durante a instalação do Windows MultiPoint Server, configuradas no MultiPoint Manager usando **Editar configurações do servidor**ou configurado em atualizações agendadas para proteção de disco.  
   
 ## <a name="update-the-registry"></a>Atualizar o registro  
-Para uma implantação do domínio do MultiPoint Services, você deve atualizar as seguintes subchaves do registro.  
+Para uma implantação de domínio dos serviços do MultiPoint, você deve atualizar as seguintes subchaves do registro.  
   
 > [!IMPORTANT]  
 > A edição incorreta do Registro pode causar danos graves ao sistema. Antes de alterar o Registro, faça backup de todos os dados importantes do computador.  
   
-#### <a name="to-update-registry-subkeys-for-a-domain-deployment-of-multipoint-services"></a>Para atualizar as subchaves do registro para uma implantação do domínio do MultiPoint Services  
+#### <a name="to-update-registry-subkeys-for-a-domain-deployment-of-multipoint-services"></a>Para atualizar as subchaves do registro para uma implantação de domínio dos serviços do MultiPoint  
   
-1.  Abra o editor do registro. (Em um prompt de comando, digite **regedit.exe**, e pressione ENTER.)  
+1.  Abra o editor do registro. (Em um prompt de comando, digite **regedit. exe**e pressione Enter.)  
   
-2.  No painel esquerdo, localize e, em seguida, selecione a seguinte subchave do registro:  
+2.  No painel esquerdo, localize e selecione a seguinte subchave do registro:  
   
     HKEY_USERS\<SIDofWMSshell > \Software\Policies\Microsoft\Windows\Control Panel\Desktop  
   
-    onde '<SIDofWMSshell>' é o identificador de segurança (SID) para a conta WMSshell. Para saber como identificar o SID, consulte [como associar um nome de usuário com um identificador de segurança (SID)](https://support.microsoft.com/kb/154599).  
+    onde '<SIDofWMSshell>' é o identificador de segurança (SID) da conta WMSshell. Para descobrir como identificar o SID, consulte [como associar um nome de usuário a um SID (identificador de segurança)](https://support.microsoft.com/kb/154599).  
   
 3.  Na lista à direita, atualize as seguintes subchaves.  
   
@@ -77,8 +77,8 @@ Para uma implantação do domínio do MultiPoint Services, você deve atualizar 
   
     Para atualizar uma subchave do registro:  
   
-    1.  Com a chave do registro selecionada no painel esquerdo, clique com botão direito na subchave no painel direito e, em seguida, clique em **modificar**.  
+    1.  Com a chave do registro selecionada no painel esquerdo, clique com o botão direito do mouse na subchave no painel direito e clique em **Modificar**.  
   
-    2.  Na caixa de diálogo Editar cadeia de caracteres, digite um novo valor na **dados do valor**e, em seguida, clique em **Okey**.  
+    2.  Na caixa de diálogo Editar Cadeia de caracteres, digite um novo valor em **dados de valor**e clique em **OK**.  
   
-4.  Depois de concluir a atualização de subchaves do registro, reinicie o computador para ativar as alterações. 
+4.  Depois de concluir a atualização das subchaves do registro, reinicie o computador para ativar as alterações. 

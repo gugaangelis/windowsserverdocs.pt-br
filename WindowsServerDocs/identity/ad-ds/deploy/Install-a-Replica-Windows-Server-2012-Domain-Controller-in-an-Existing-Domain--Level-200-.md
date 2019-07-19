@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: cb4432084386cb3296163f24c801be1c74b379df
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: a7fec85301e2b70fb64f35f0b6e345adde29eed0
+ms.sourcegitcommit: 67833e36b8b2c6194a1426a974c5ad9c859fa4c9
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883037"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68329651"
 ---
 # <a name="install-a-replica-windows-server-2012-domain-controller-in-an-existing-domain-level-200"></a>Instalar uma réplica de controlador de domínio do Windows Server 2012 em um domínio existente (nível 200)
 
@@ -22,28 +22,28 @@ ms.locfileid: "59883037"
 
 Este tópico aborda as etapas necessárias para atualizar uma floresta ou um domínio existente no Windows Server 2012 usando o Gerenciador do Servidor ou o Windows PowerShell. Ele aborda como adicionar controladores de domínio que executam o Windows Server 2012 a um domínio existente.  
   
--   [Atualização e o fluxo de trabalho da réplica](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md#BKMK_Workflow)  
+-   [Fluxo de trabalho de atualização e réplica](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md#BKMK_Workflow)  
   
--   [Atualização e réplica Windows PowerShell](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md#BKMK_PS)  
+-   [Atualização e réplica do Windows PowerShell](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md#BKMK_PS)  
   
 -   [Implantação](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md#BKMK_Dep)  
   
-## <a name="BKMK_Workflow"></a>Atualização e o fluxo de trabalho da réplica  
+## <a name="BKMK_Workflow"></a>Fluxo de trabalho de atualização e réplica  
 O diagrama a seguir ilustra o processo de configuração dos Serviços de Domínio Active Directory, quando você instalou anteriormente a função AD DS e iniciou o Assistente de Configuração de Serviços de Domínio Active Directory usando o Gerenciador do Servidor para criar um novo controlador de domínio em um domínio existente.  
   
 ![Instalar uma réplica](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/adds_forestupgrade.png)  
   
-## <a name="BKMK_PS"></a>Atualização e réplica Windows PowerShell  
+## <a name="BKMK_PS"></a>Atualização e réplica do Windows PowerShell  
   
 |||  
 |-|-|  
-|**ADDSDeployment Cmdlet**|Argumentos (os argumentos em **Negrito** são necessários. Os argumentos em*Itálico* podem ser especificados usando o Windows PowerShell ou o Assistente de Configuração do AD DS.)|  
-|Install-AddsDomainController|-SkipPreChecks<br /><br />***-DomainName***<br /><br />*-SafeModeAdministratorPassword*<br /><br />*-SiteName*<br /><br />*-ADPrepCredential*<br /><br />-ApplicationPartitionsToReplicate<br /><br />*-AllowDomainControllerReinstall*<br /><br />-Confirm<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />-CriticalReplicationOnly<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />-Force<br /><br />*-InstallationMediaPath*<br /><br />*-InstallDNS*<br /><br />*-LogPath*<br /><br />-MoveInfrastructureOperationMasterRoleIfNecessary<br /><br />-NoDnsOnNetwork<br /><br />*-NoGlobalCatalog*<br /><br />-Norebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />-SkipAutoConfigureDNS<br /><br />-SiteName<br /><br />*-SystemKey*<br /><br />*-SYSVOLPath*<br /><br />*-UseExistingAccount*<br /><br />*-Whatif*|  
+|**Cmdlet ADDSDeployment**|Argumentos (os argumentos em **Negrito** são necessários. Os argumentos em*Itálico* podem ser especificados usando o Windows PowerShell ou o Assistente de Configuração do AD DS.)|  
+|Install-AddsDomainController|-SkipPreChecks<br /><br />***-Nome_do_domínio***<br /><br />*-SafeModeAdministratorPassword*<br /><br />*-SiteName*<br /><br />*-ADPrepCredential*<br /><br />-ApplicationPartitionsToReplicate<br /><br />*-AllowDomainControllerReinstall*<br /><br />-Confirm<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />-CriticalReplicationOnly<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />-Force<br /><br />*-InstallationMediaPath*<br /><br />*-InstallDNS*<br /><br />*-LogPath*<br /><br />-MoveInfrastructureOperationMasterRoleIfNecessary<br /><br />-NoDnsOnNetwork<br /><br />*-NoGlobalCatalog*<br /><br />-Norebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />-SkipAutoConfigureDNS<br /><br />-SiteName<br /><br />*-SystemKey*<br /><br />*-SYSVOLPath*<br /><br />*-UseExistingAccount*<br /><br />*-WhatIf*|  
   
 > [!NOTE]  
 > O argumento **-credential** somente é requerido se você ainda não tiver entrado como membro dos grupos Administradores de Empresa e Administradores de Esquema (se você estiver atualizando a floresta) ou o grupo Admins. do Domínio (se você estiver adicionando um novo controlador de domínio a um domínio existente).  
   
-## <a name="BKMK_Dep"></a>Implantação  
+## <a name="BKMK_Dep"></a>Planta  
   
 ### <a name="deployment-configuration"></a>Configuração de Implantação  
 ![Instalar uma réplica](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeDeployConfig.png)  
@@ -122,7 +122,7 @@ Você também pode fornecer uma cadeia de caracteres segura como uma variável d
   
 ```  
   
-Finalmente, você pode armazenar a senha ofuscada em um arquivo e depois reutilizá-la mais tarde, sem a senha com texto não criptografado aparecendo. Por exemplo:   
+Finalmente, você pode armazenar a senha ofuscada em um arquivo e depois reutilizá-la mais tarde, sem a senha com texto não criptografado aparecendo. Por exemplo:  
   
 ```  
 $file = "c:\pw.txt"  
@@ -221,7 +221,7 @@ A página **Opções de revisão** permite que você valide suas configurações
   
 A página **Opções de revisão** do Gerenciador do Servidor também oferece um botão **Exibir Script** para criar um arquivo de texto Unicode contendo a configuração atual de ADDSDeployment como um script simples do Windows PowerShell. Isso permite que você use a interface gráfica do Gerenciador do Servidor como um estúdio de implantação do Windows PowerShell. Use o Assistente de Configuração dos Serviços de Domínio do Active Directory para configurar opções, exportar a configuração e então cancelar o assistente.  Esse processo cria um exemplo válido e sintaticamente correto para modificações adicionais ou uso direto.  
   
-Por exemplo:   
+Por exemplo:  
   
 ```  
 #  
@@ -306,13 +306,13 @@ Observe que, assim como o Gerenciador do Servidor, o **Install-ADDSDomainControl
   
 ![Instalar uma réplica](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSUpgradeProgress.png)  
   
-Para configurar um controlador de domínio remotamente usando o Windows PowerShell, encapsule o cmdlet **install-adddomaincontroller** *dentro* do cmdlet **invoke-command**. Isso requer o uso de chaves.  
+Para configurar um controlador de domínio remotamente usando o Windows PowerShell, empacote o cmdlet **install-addsdomaincontroller** *dentro* do cmdlet **Invoke-Command** . Isso requer o uso de chaves.  
   
 ```  
 invoke-command {install-addsdomaincontroller "domainname <domain> -credential (get-credential)} -computername <dc name>  
 ```  
   
-Por exemplo:   
+Por exemplo:  
   
 ![Instalar uma réplica](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSUpgradeExample.gif)  
   
