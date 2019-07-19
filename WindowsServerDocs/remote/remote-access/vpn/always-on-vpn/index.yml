@@ -17,7 +17,7 @@ sections:
   - title: Saiba mais sobre...
   - items:
       - type: markdown
-        text: 'Prepare-se para implantar o acesso remoto como um Gateway RAS de VPN de um único locatário para conexões de VPN ponto a site, usando qualquer um dos quatro cenários mencionados a seguir, em computadores cliente remotos que executam o Windows 10.  Se você está usando o DirectAccess, é recomendável investigar a funcionalidade da VPN Always On com cuidado para determinar se ela resolve todas as necessidades de acesso remoto antes de migrar do DirectAccess para a VPN Always On.'
+        text: 'Prepare-se para implantar o acesso remoto como um Gateway RAS de VPN de um único locatário para conexões de VPN ponto a site, usando qualquer um dos quatro cenários mencionados a seguir, em computadores cliente remotos que executam o Windows 10.  Se você usa atualmente o DirectAccess, recomendamos que investigue com atenção a funcionalidade de VPN Always On para determinar se ela atende a todas as suas necessidades de acesso remoto antes de migrar do DirectAccess para a VPN Always On.'
   - items:
       - type: list
         style: cards
