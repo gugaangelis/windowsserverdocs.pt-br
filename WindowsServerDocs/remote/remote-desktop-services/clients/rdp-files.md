@@ -13,16 +13,18 @@ manager: dongill
 ms.author: helohr
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: fbec5c27b7cb3ef0ef750a5ebd7d7ea2654c47b3
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 37ba3ca343eadf1bde5f75993ac2dbbb0ec05bad
+ms.sourcegitcommit: 286e3181ebd2cb9d7dc7fe651858a4e0d61d153f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "65983456"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68300701"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>Configurações do arquivo RDP com suporte da Área de Trabalho Remota
 
 A tabela a seguir inclui a lista de configurações do arquivo RDP com suporte que são possíveis usar com os clientes HTML e Windows. Um "x" na coluna de plataforma indica que há suporte para a configuração. No entanto, essa não é uma lista completa das configurações com suporte para os clientes HTML5 e Windows. Continuaremos a atualizar essa tabela para incluir mais configurações de RDP com suporte para os clientes HTML5 e Windows, assim como clientes macOS, iOS e Android.
+
+Para saber mais sobre como usar o PowerShell para personalizar as propriedades do RDP, consulte [Personalizar propriedades do protocolo RDP para um pool de hosts](https://docs.microsoft.com/azure/virtual-desktop/customize-rdp-properties).
 
 | Configuração de RDP                        | Descrição            | Valores                 | Valor padrão          | Área de Trabalho Virtual do Windows | Windows | HTML5   |
 |------------------------------------|------------------------|------------------------|:----------------------:|:-----------------------:|:-------:|:-------:|
