@@ -63,7 +63,7 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
     |p \<N>|Exibe a próxima *N* linhas.|
     |s \<N>|Ignora a próxima *N* linhas.|
     |?|Mostra os comandos que estão disponíveis na **mais** prompt.|
--Ao usar o caractere de redirecionamento ( **<** ), você deve especificar um nome de arquivo como a origem. Ao usar o pipe (* *|*), você pode usar esses comandos como **dir**, **classificação**, e **tipo**.
+-Ao usar o caractere de redirecionamento ( **<** ), você deve especificar um nome de arquivo como a origem. Ao usar o pipe (**|**), você pode usar esses comandos como **dir**, **classificação**, e **tipo**.
 -   O **mais** comando com parâmetros diferentes, está disponível no Console de recuperação.
 
 ## <a name="BKMK_examples"></a>Exemplos

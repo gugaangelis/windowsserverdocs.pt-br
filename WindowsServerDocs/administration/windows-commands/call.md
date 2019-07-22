@@ -78,7 +78,7 @@ A tabela a seguir mostra como você pode combinar os modificadores com os parâm
 |%~dp$PATH:1|Pesquisa as pastas listadas na variável de ambiente PATH **%1**e, em seguida, expande para a letra da unidade e caminho do diretório a primeira encontrado.|
 |%~ftza1|Expande **%1** para exibir a saída semelhante ao **dir** comando.|
 
-Nos exemplos acima, **%1** e o caminho pode ser substituído por outros valores válidos. O <strong>%~</strong> sintaxe é terminada por um número de argumento válido. O <strong>%~</strong> modificadores não podem ser usados com * * %\\* * *.
+Nos exemplos acima, **%1** e o caminho pode ser substituído por outros valores válidos. O <strong>%~</strong> sintaxe é terminada por um número de argumento válido. O <strong>%~</strong> modificadores não podem ser usados com **%\\** *.
 
 ## <a name="remarks"></a>Comentários
 

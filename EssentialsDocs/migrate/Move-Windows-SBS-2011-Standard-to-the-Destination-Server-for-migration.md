@@ -131,7 +131,7 @@ Mova as configurações e os dados para o servidor de destino da seguinte maneir
  
 2. Clique em **Iniciar** e, em seguida, em **Gerenciamento de servidor**. 
  
-3. No painel de navegação, clique em **avançadas de gerenciamento**, clique em **gerenciamento de política de grupo**e, em seguida, clique em **floresta: * * * < nome_do_domínio\>* . 
+3. No painel de navegação, clique em **avançadas de gerenciamento**, clique em **gerenciamento de política de grupo**e, em seguida, clique em **floresta:** *<nome_do_domínio\>* . 
  
 4. Clique em **domínios**, clique em *< nome_do_domínio\>* e, em seguida, clique em **os objetos de diretiva de grupo**. 
  
@@ -161,7 +161,7 @@ Mova as configurações e os dados para o servidor de destino da seguinte maneir
  
 2. Clique em **Iniciar** e, em seguida, em **Gerenciamento de servidor**. 
  
-3. No painel de navegação, clique em **recursos**, clique em **gerenciamento de política de grupo**e, em seguida, clique em **floresta: * * * < YourNetworkDomainName\>* 
+3. No painel de navegação, clique em **recursos**, clique em **gerenciamento de política de grupo**e, em seguida, clique em **floresta:** *<YourNetworkDomainName\>* 
  
 4. Clique em **domínios**, clique em *< YourNetworkDomainName\>* e, em seguida, clique em **filtros WMI**. 
  

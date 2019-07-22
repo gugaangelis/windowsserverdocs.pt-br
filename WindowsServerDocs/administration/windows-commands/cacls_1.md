@@ -63,7 +63,7 @@ cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user 
   |     (OI) (E/S)      |                             Somente os arquivos.                             |
 
 
-- Você pode usar curingas ( **?** e * *\\* * *) para especificar vários arquivos.  
+- Você pode usar curingas ( **?** e **\\** *) para especificar vários arquivos.  
 - Você pode especificar mais de um usuário.  
 
 #### <a name="additional-references"></a>Referências adicionais  
