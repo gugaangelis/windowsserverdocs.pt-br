@@ -44,7 +44,7 @@ Para habilitar o modo sempre Offline, use a diretiva de grupo para habilitar o *
 6. Selecione **Habilitado**.
 7. No **opções** caixa, selecione **Mostrar**. O **janela Mostrar conteúdo** será exibida.
 8. No **nome do valor** , especifique o compartilhamento de arquivos para o qual você deseja habilitar o modo sempre Offline.
-9. Para habilitar o modo sempre Offline em todos os compartilhamentos de arquivos, digite * *\\* * *.
+9. Para habilitar o modo sempre Offline em todos os compartilhamentos de arquivos, digite **\\** *.
 10. No **valor** , digite **latência = 1** para definir o limite de latência de um milissegundo e, em seguida, selecione **Okey**.
 
 >[!NOTE]
