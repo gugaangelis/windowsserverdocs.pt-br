@@ -24,7 +24,7 @@ Para que os computadores cliente podem acessar diretamente os aplicativos federa
   
 -   Configure o Internet Explorer em cada computador cliente para confiar no servidor de federação de conta.  
   
-    Para obter mais informações, consulte [Configure Client Computers to Trust the Account Federation Server](../../ad-fs/deployment/Configure-Client-Computers-to-Trust-the-Account-Federation-Server.md).  
+    Para obter mais informações, consulte [configurar computadores de cliente para confiar no servidor de federação de conta](../../ad-fs/deployment/Configure-Client-Computers-to-Trust-the-Account-Federation-Server.md).  
   
 -   Instalar o servidor de federação de conta apropriado, o servidor de federação de recurso e o servidor Web Secure Sockets Layer \(SSL\) certificados \(ou o equivalente em certificados vinculados a uma raiz confiável\) em cada computador cliente.  
   
