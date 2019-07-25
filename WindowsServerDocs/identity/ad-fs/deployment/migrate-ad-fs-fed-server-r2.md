@@ -43,7 +43,7 @@ Para localizar o certificado SSL, abra o console de gerenciamento do IIS (Servi�
 É preciso exportar o certificado SSL usado pelo serviço de federação e sua chave privada para um arquivo .pfx. Para obter mais informações, consulte [Exportar a parte da chave privada de um Certificado de Autenticação de Servidor](export-the-private-key-portion-of-a-server-authentication-certificate.md).  
   
 > [!NOTE]
->  Se você planeja implantar o serviço de registro de dispositivo como parte da execução do AD FS no Windows Server 2012 R2, você deve obter um novo certificado SSL. Para obter mais informações, consulte [Enroll an SSL Certificate for AD FS](enroll-an-ssl-certificate-for-ad-fs.md) e [Configure a federation server with Device Registration Service](configure-a-federation-server-with-device-registration-service.md).  
+>  Se você planeja implantar o serviço de registro de dispositivo como parte da execução do AD FS no Windows Server 2012 R2, você deve obter um novo certificado SSL. Para obter mais informações, consulte [Enroll an SSL Certificate for AD FS](enroll-an-ssl-certificate-for-ad-fs.md) e [Configurar um servidor de federação com o Serviço de Registro de Dispositivos](configure-a-federation-server-with-device-registration-service.md).  
   
 Para exibir os certificados de assinatura de token, descriptografia de token e comunicação de serviços que são utilizados, execute o seguinte comando do Windows PowerShell para criar uma lista com todos os certificados em uso em um arquivo:  
   
