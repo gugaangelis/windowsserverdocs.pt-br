@@ -1,6 +1,6 @@
 ---
 ms.assetid: 25f5aff1-6abf-4dea-b531-f1d9943bc181
-title: Personalização do AD FS no Windows Server 2016
+title: AD FS personalização no Windows Server 2016
 description: ''
 author: billmath
 ms.author: billmath
@@ -9,31 +9,31 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: b5aa22ad99529d99e2d7381a434916e8e749f185
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 7f990c3412707e38a00110ac4d3cb3787fa18ee3
+ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188758"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68476539"
 ---
-# <a name="ad-fs-customization-in-windows-server-2016"></a>Personalização do AD FS no Windows Server 2016
+# <a name="ad-fs-customization-in-windows-server-2016"></a>AD FS personalização no Windows Server 2016
 
 
-Em resposta a comentários de organizações que usam o AD FS, adicionamos ferramentas adicionais para personalizar o usuário entrar na experiência de aplicativos individuais protegidos pelo AD FS.  
-Além de especificar o conteúdo por aplicativo web, como texto de descrição e links, agora você pode especificar temas da web inteira por aplicativo.  Isso inclui o logotipo, ilustração, folhas de estilo ou um arquivo onload.js inteira.  
+Em resposta a comentários de organizações que usam AD FS, adicionamos ferramentas adicionais para personalizar a experiência de entrada do usuário para aplicativos individuais protegidos pelo AD FS.  
+Além de especificar conteúdo da Web por aplicativo, como texto de descrição e links, agora você pode especificar temas inteiros da Web por aplicativo.  Isso inclui o logotipo, a ilustração, as folhas de estilo ou um arquivo OnLoad. js inteiro.  
   
 ## <a name="global-settings"></a>Configurações globais    
-Para configurações globais gerais você pode consultar [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx) fornecidos com o AD FS no Windows Server 2012 R2.  
+Para configurações globais gerais, você pode consultar [a personalização das páginas de entrada AD FS](https://technet.microsoft.com/library/dn280950.aspx) fornecidas com o AD FS no Windows Server 2012 R2.  
   
 ## <a name="pre-requisites"></a>Pré-requisitos  
-Os seguintes pré-requisitos são necessários antes de tentar os procedimentos descritos neste documento.  
+Os pré-requisitos a seguir são necessários antes de tentar os procedimentos descritos neste documento.  
   
--   O AD FS no Windows Server 2016 TP4 ou posterior  
+-   AD FS no Windows Server 2016 TP4 ou posterior  
   
-## <a name="configure-ad-fs-relying-parties"></a>Configurar partes confiáveis do AD FS  
-Por terceira parte da web de entrada elementos e os temas podem ser configurados usando os exemplos do PowerShell abaixo:  
+## <a name="configure-ad-fs-relying-parties"></a>Configurar AD FS terceiras partes confiáveis  
+Por elementos da Web de entrada de terceira parte confiável, os temas podem ser configurados usando os exemplos do PowerShell abaixo:  
   
-### <a name="customize-messages"></a>Personalizar as mensagens  
+### <a name="customize-messages"></a>Personalizar mensagens  
   
 ```  
 PS C:\>Set-AdfsRelyingPartyWebContent  
@@ -43,7 +43,7 @@ PS C:\>Set-AdfsRelyingPartyWebContent
     -SignInPageDescription "This text appears below the credential prompt"  
 ```  
   
-### <a name="customize-company-name-logo-and-image"></a>Personalizar a imagem, o logotipo e o nome da empresa  
+### <a name="customize-company-name-logo-and-image"></a>Personalizar o nome da empresa, o logotipo e a imagem  
   
 ```  
 PS C:\>Set-AdfsRelyingPartyWebTheme  
@@ -52,7 +52,7 @@ PS C:\>Set-AdfsRelyingPartyWebTheme
     -Illustration @{path="C:\Images\appillustration.jpg"}  
 ```  
   
-### <a name="customize-entire-page"></a>Personalizar a página inteira  
+### <a name="customize-entire-page"></a>Personalizar página inteira  
   
 ```  
 PS C:\>Set-AdfsRelyingPartyWebTheme  
@@ -62,29 +62,29 @@ PS C:\>Set-AdfsRelyingPartyWebTheme
   
 ## <a name="custom-themes-and-advanced-custom-themes"></a>Temas personalizados e temas personalizados avançados  
   
-Para temas personalizados, consulte [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx) e [Advanced Customization of AD FS Sign-in Pages.](https://technet.microsoft.com/library/dn636121.aspx)  
+Para temas personalizados, consulte [Personalizando as páginas de entrada AD FS](https://technet.microsoft.com/library/dn280950.aspx) e a [personalização avançada de AD FS páginas de entrada.](https://technet.microsoft.com/library/dn636121.aspx)  
   
-## <a name="assigning-custom-web-themes-per-rp"></a>Atribuição de temas da web personalizado por RP  
+## <a name="assigning-custom-web-themes-per-rp"></a>Atribuindo temas da Web personalizados por RP  
   
-Para atribuir um tema personalizado por RP use o procedimento a seguir:  
+Para atribuir um tema personalizado por RP, use o seguinte procedimento:  
   
-1. Criar um novo tema como uma cópia para o tema global no AD FS padrão  
-<code>New-AdfsWebTheme -Name AppSpecificTheme -SourceName default</code> 2.  Exportar o tema de personalização <code>Export-AdfsWebTheme -Name AppSpecificTheme -DirectoryPath c:\appspecifictheme</code>  
-3. Personalizar arquivos de tema (imagens, css, onload.js) - a em seu editor favorito ou substituir o arquivo 4. Importar arquivos personalizados do sistema de arquivos para o AD FS (objetivando o novo tema) <code>Set-AdfsWebTheme -TargetName AppSpecificTheme -AdditionalFileResource @{Uri='/adfs/portal/script/onload.js';Path="c:\appspecifictheme\script\onload.js"}</code>  
-5. Aplicar o tema novo e personalizado para a RP específico (ou da RP) <code>Set-AdfsRelyingPartyWebTheme -TargetRelyingPartyName urn:app1 -SourceWebThemeName AppSpecificTheme</code>  
+1. Crie um novo tema como uma cópia para o tema padrão, global no AD FS  
+<code>New-AdfsWebTheme -Name AppSpecificTheme -SourceName default</code>2. Exportar o tema para personalização<code>Export-AdfsWebTheme -Name AppSpecificTheme -DirectoryPath c:\appspecifictheme</code>  
+3.Personalizar arquivos de tema (imagens, CSS, OnLoad. js)-em seu editor favorito ou substituir o 4. arquivo importar arquivos personalizados do sistema de arquivos para AD FS (direcionamento para o novo tema)<code>Set-AdfsWebTheme -TargetName AppSpecificTheme -AdditionalFileResource @{Uri='/adfs/portal/script/onload.js';Path="c:\appspecifictheme\script\onload.js"}</code>  
+5.Aplicar o novo tema personalizado ao RP específico (ou ao RP)<code>Set-AdfsRelyingPartyWebTheme -TargetRelyingPartyName urn:app1 -SourceWebThemeName AppSpecificTheme</code>  
   
 ## <a name="home-realm-discovery"></a>Descoberta de realm inicial  
-Para descoberta de realm inicial consulte personalização [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx).  
+Para a personalização da capa de realm inicial, consulte [Personalizando as páginas de entrada do AD FS](https://technet.microsoft.com/library/dn280950.aspx).  
   
-## <a name="updated-password-page"></a>Página de senha atualizada  
-Para obter informações sobre como personalizar a página de atualização de senha, consulte [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx).  
+## <a name="updated-password-page"></a>Página senha atualizada  
+Para obter informações sobre como personalizar a página de atualização de senha, consulte [Personalizando o AD FS páginas de entrada](https://technet.microsoft.com/library/dn280950.aspx).  
   
-## <a name="customizing-and-alternate-ids"></a>IDs de personalização e alternativas  
-Os usuários podem entrar serviços de Federação do Active Directory (AD FS)-habilitado aplicativos usando qualquer forma de identificador de usuário que é aceito pelos serviços de domínio Active Directory (AD DS). Isso inclui os nomes de entidade de usuário (UPNs) (johndoe@contoso.com) ou de domínio qualificado de nomes de conta do sam (contoso\johndoe ou contoso.com\johndoe).  Para obter mais informações sobre isso, consulte [ID de configuração de logon alternativo.](Configuring-Alternate-Login-ID.md)  
+## <a name="customizing-and-alternate-ids"></a>Personalizando e identificando IDs alternativas  
+Os usuários podem entrar em aplicativos habilitados para Serviços de Federação do Active Directory (AD FS) (AD FS) usando qualquer forma de identificador de usuário aceita pelo Active Directory Domain Services (AD DS). Isso inclui nomes de entidade de usuário (UPNsjohndoe@contoso.com) () ou nomes de conta Sam qualificados de domínio (contoso\johndoe ou contoso. com\johndoe).  Para obter mais informações sobre isso, consulte Configurando a [ID de logon alternativa.](Configuring-Alternate-Login-ID.md)  
   
-Além disso você queira personalizar a página de entrada do AD FS para dar aos usuários finais alguma dica sobre a ID de logon alternativo. Você pode fazer isso adicionando a descrição de página de logon personalizada para obter mais informações, consulte [Customizing the AD FS Sign-in Pages.](https://technet.microsoft.com/library/dn280950.aspx)   
+Além disso, você pode querer personalizar a página de entrada AD FS para dar aos usuários finais alguma dica sobre a ID de logon alternativa. Você pode fazer isso adicionando a descrição da página de entrada personalizada para obter mais informações consulte [Personalizando o AD FS páginas de entrada.](https://technet.microsoft.com/library/dn280950.aspx)   
   
-Você também pode fazer isso ao personalizar a cadeia de caracteres "Entrar com conta organizacional" acima do campo de nome de usuário.  Para obter informações sobre isso, consulte [Advanced Customization of AD FS Sign-in Pages](https://technet.microsoft.com/library/dn636121.aspx).  
+Você também pode fazer isso Personalizando a cadeia de caracteres "entrar com a conta institucional" acima do campo nome de usuário.  Para obter informações sobre isso, consulte [personalização avançada de AD FS páginas de entrada](https://technet.microsoft.com/library/dn636121.aspx).  
 
 ## <a name="additional-references"></a>Referências adicionais 
-[AD FS Sign-personalização de usuário](AD-FS-user-sign-in-customization.md)  
+[AD FS a personalização de entrada do usuário](AD-FS-user-sign-in-customization.md)  
