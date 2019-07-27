@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c26d6d0c4c4465b5f9073dbcac951fc0adce1d5
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 4a305141b839772bb024140bd803073a67e266b2
+ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63688538"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68544576"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2016"></a>Comparação das edições Standard e Datacenter do Windows Server 2016
 
@@ -123,7 +123,7 @@ ms.locfileid: "63688538"
 |Limite de Largura de Banda do SMB|Sim|Sim|
 |Servidor SMTP|Sim|Sim|
 |Serviço SNMP|Sim|Sim|
-|Balanceador de Carga de Software|Sim|Sim|
+|Balanceador de Carga de Software|Não|Sim|
 |Réplica de Armazenamento|Não|Sim|
 |Cliente Telnet|Sim|Sim|
 |Cliente TFTP|Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
@@ -160,7 +160,7 @@ ms.locfileid: "63688538"
 |Opção de instalação do Nano Server|Sim|Sim|
 |Gerenciador do Servidor|Sim|Sim|
 |SMB Direct e SMB sobre RDMA|Sim|Sim|
-|Rede definida pelo software|Não|Sim|
+|Redes definidas por software|Não|Sim|
 |Serviço de Gerenciamento de Armazenamento|Sim|Sim|
 |Espaços de Armazenamento|Sim|Sim|
 |Espaços de Armazenamento Diretos|Não|Sim|
