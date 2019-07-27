@@ -1,6 +1,6 @@
 ---
 ms.assetid: d44d4430-41e2-483a-9685-92610cdef32a
-title: Como funcionam os plug-ins de atualização com suporte a Cluster
+title: Como funcionam os plug-ins de atualização com suporte a cluster
 ms.topic: article
 ms.prod: windows-server-threshold
 manager: dongill
@@ -8,158 +8,158 @@ ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
 ms.technology: storage-failover-clustering
-description: Como usar o plug-ins para coordenar as atualizações ao usar o Cluster-Aware Updating no Windows Server para instalar atualizações em um cluster.
-ms.openlocfilehash: d09addb5e6787a8386d50570c0d27640646aa587
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+description: Como usar plug-ins para coordenar atualizações ao usar a atualização com suporte a cluster no Windows Server para instalar atualizações em um cluster.
+ms.openlocfilehash: bd31a6056376b04fcb5a4a941b81a363548a2209
+ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854557"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68544504"
 ---
-# <a name="how-cluster-aware-updating-plug-ins-work"></a>Como funcionam os plug-ins de atualização com suporte a Cluster
+# <a name="how-cluster-aware-updating-plug-ins-work"></a>Como funcionam os plug-ins de atualização com suporte a cluster
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-[Cluster-Aware Updating](cluster-aware-updating.md) (CAU) usa o plug-ins para coordenar a instalação das atualizações em nós em um cluster de failover. Este tópico fornece informações sobre como usar a compilação\-plug CAU\-ins ou outro plug\-ins que você instala para CAU.
+[Atualização com suporte a cluster](cluster-aware-updating.md) O (CAU) usa plug-ins para coordenar a instalação de atualizações em nós em um cluster de failover. Este tópico fornece informações sobre como usar os\-plug\--ins de Cau internos ou\-outros plug-ins que você instala para a cau.
 
-## <a name="BKMK_INSTALL"></a>Instalar um plug-\-em  
-Um plug\-na diferente do padrão conecta\-ins que são instalados com o CAU \( **windowsupdateplugin** e **Microsoft. hotfixplugin** \)deve ser instalado separadamente. Se o CAU for usado no próprio\-atualizando modo, o plugue\-em deve ser instalado em todos os nós de cluster. Se for usado CAU no remoto\-atualizando modo, o plug\-em deve ser instalado no computador remoto do coordenador de atualização. Um plug\-na qual você instala pode ter requisitos adicionais de instalação em cada nó.  
+## <a name="BKMK_INSTALL"></a>Instalar um plug\--in  
+Um plug\--in diferente dos\-plug-ins padrão instalados com a cau \( **Microsoft. WindowsUpdatePlugin** e **Microsoft. HotfixPlugin** \) deve ser instalado separadamente. Se a cau for usada no\-modo de autoatualização\-, o plug-in deverá ser instalado em todos os nós de cluster. Se a cau for usada no\-modo de atualização remota,\-o plug-in deverá ser instalado no computador do coordenador de atualização remota. Um plug\--in que você instala pode ter requisitos de instalação adicionais em cada nó.  
   
-Para instalar um plug\-, siga as instruções do plugue\-no publicador. Para registrar manualmente um plug\-com CAU, execute o [Register-CauPlugin](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/register-cauplugin) cmdlet em cada computador em que o plugue\-é instalado.  
+Para instalar um plug\--in, siga as instruções do editor\-do plug-in. Para registrar manualmente um plug\--in com a cau, execute o cmdlet [Register-CauPlugin](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/register-cauplugin) em cada computador em\-que o plug-in está instalado.  
   
-## <a name="specify-a-plug-in-and-plug-in-arguments"></a>Especificar um plug\-em e conecte\-argumentos de entrada  
+## <a name="specify-a-plug-in-and-plug-in-arguments"></a>Especificar um plug\--in e\-os argumentos de plug-in  
   
-### <a name="specify-a-cau-plug-in"></a>Especificar um plug CAU\-em
+### <a name="specify-a-cau-plug-in"></a>Especificar um plug\--in Cau
 
-Na UI CAU, você seleciona um plug\-em de uma operação de soltar\-para baixo na lista de plugue disponível\-ins quando você usa o CAU para executar as seguintes ações:  
+Na interface do usuário da cau, você seleciona\-um plug-in\-em uma lista suspensa de\-plug-ins disponíveis quando usa a cau para executar as seguintes ações:  
   
 -   Aplicar atualizações ao cluster  
   
 -   Visualizar atualizações para o cluster  
   
--   Configurar o cluster self\-opções de atualização  
+-   Configurar opções de\-autoatualização de cluster  
   
-Por padrão, a CAU seleciona o plugue\-na **windowsupdateplugin**. No entanto, você pode especificar qualquer plug\-em que está instalado e registrado com o CAU.
+Por padrão, a cau seleciona o\-plug-in **Microsoft. WindowsUpdatePlugin**. No entanto, você pode especificar\-qualquer plug-in instalado e registrado com a cau.
 
 > [!TIP]  
-> Na UI CAU, você só pode especificar um único plug\-na Cau usar para visualizar ou aplicar atualizações durante uma execução de atualização. Usando os cmdlets do PowerShell do CAU, você pode especificar um ou mais plug\-ins. Se você precisar instalar vários tipos de atualizações no cluster, ele normalmente é mais eficiente especificar vários plug\-ins em uma execução de atualização, em vez de usar uma execução atualizando separado para cada plug\-no. Por exemplo, normalmente ocorrerá um número menor de reinicializações de nós.
+> Na interface do usuário da cau, você só pode especificar um\-único plug-in para a cau usar para visualizar ou aplicar atualizações durante uma execução de atualização. Usando os cmdlets do PowerShell da cau, você pode especificar um ou mais\-plug-ins. Se você precisar instalar vários tipos de atualizações no cluster, normalmente será mais eficiente especificar vários plug\--ins em uma execução de atualização, em vez de usar uma execução de atualização separada para cada plug\--in. Por exemplo, normalmente ocorrerá um número menor de reinicializações de nós.
 
-Usando os cmdlets do PowerShell de CAU que estão listados na tabela a seguir, você pode especificar um ou mais plug\-ins para uma execução de atualização ou examinar passando o **– CauPluginName** parâmetro. Você pode especificar vários plug\-em nomes, separando-as com vírgulas. Se você especificar vários plug\-ins, você também pode controlar como o plugue\-ins influenciam uns aos outros durante uma execução de atualização, especificando as  **\-RunPluginsSerially**,  **\- StopOnPluginFailure**, e **– SeparateReboots** parâmetros. Para obter mais informações sobre como usar vários plug\-ins, use os links fornecidos para a documentação de cmdlet na tabela a seguir.  
+Usando os cmdlets do PowerShell da cau listados na tabela a seguir, você pode especificar um ou mais plug\--ins para uma execução ou verificação de atualização passando o parâmetro **– CauPluginName** . Você pode especificar vários nomes\-de plug-in separando-os com vírgulas. Se você especificar vários plug\--ins, também poderá controlar como os plug\--ins influenciam uns aos outros durante uma execução de atualização especificando o  **\-RunPluginsSerially**,  **\-o StopOnPluginFailure**, o e **– parâmetros SeparateReboots** . Para obter mais informações sobre como usar\-vários plug-ins, use os links fornecidos para a documentação do cmdlet na tabela a seguir.  
   
 |Cmdlet|Descrição|  
 |----------|---------------|  
-|[Add-CauClusterRole](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/add-cauclusterrole)|Adiciona a função clusterizada de CAU que fornece o self\-atualizando funcionalidade ao cluster especificado.|  
-|[Invoke-CauRun](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/invoke-caurun)|Executa uma varredura de nós do cluster quanto às atualizações aplicáveis ​​e instala essas atualizações através de uma Execução de Atualização no cluster especificado.|  
-|[Invoke-CauScan](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/invoke-causcan)|Executa uma varredura de nós do cluster quanto às atualizações aplicáveis ​​e retorna uma lista do conjunto inicial de atualizações que seriam aplicadas a cada nó no cluster especificado.|  
-|[Set-CauClusterRole](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/set-cauclusterrole)|Define as propriedades de configuração para a função clusterizada do CAU no cluster especificado.|  
+|[Add-CauClusterRole](https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating/add-cauclusterrole)|Adiciona a função clusterizada Cau que fornece a\-funcionalidade de autoatualização para o cluster especificado.|  
+|[Invoke-CauRun](https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating/invoke-caurun)|Executa uma varredura de nós do cluster quanto às atualizações aplicáveis ​​e instala essas atualizações através de uma Execução de Atualização no cluster especificado.|  
+|[Invoke-CauScan](https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating/invoke-causcan)|Executa uma varredura de nós do cluster quanto às atualizações aplicáveis ​​e retorna uma lista do conjunto inicial de atualizações que seriam aplicadas a cada nó no cluster especificado.|  
+|[Set-CauClusterRole](https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating/set-cauclusterrole)|Define as propriedades de configuração para a função clusterizada do CAU no cluster especificado.|  
   
-Se você não especificar um plug CAU\-no parâmetro usando esses cmdlets, o padrão é o plugue\-na **windowsupdateplugin**.  
+Se você não especificar um parâmetro de plug\--in Cau usando esses cmdlets, o padrão será o plug\--in **Microsoft. WindowsUpdatePlugin**.  
   
-### <a name="specify-cau-plug-in-arguments"></a>Especifique a CAU conecte\-argumentos de entrada  
-Quando você configura as opções de execução de atualização, você pode especificar um ou mais *nome\=valor* pares \(argumentos\) para o plugue selecionado\-para usar. Por exemplo, na IU do CAU, é possível especificar vários argumentos, da seguinte forma:  
+### <a name="specify-cau-plug-in-arguments"></a>Especificar argumentos de\-plug-in Cau  
+Ao configurar as opções de execução de atualização, você pode especificar um ou mais argumentos\) de \(pares de *valor de nome\=* para o plug\--in selecionado a ser usado. Por exemplo, na IU do CAU, é possível especificar vários argumentos, da seguinte forma:  
   
-**Name1\=Value1;Name2\=Value2;Name3\=Value3**  
+**Nome1\=value1; Nome2\=value2; Name3\=Value3**  
   
-Eles *nome\=valor* pares devem ser significativos para o plugue\-em que você especifica. Para alguns plug\-ins os argumentos são opcionais.  
+Esses pares de *valor de nome\=* devem ser significativos para\-o plug-in que você especificar. Para alguns plug\--ins, os argumentos são opcionais.  
   
-A sintaxe de plugue o CAU\-nos argumentos segue estas regras gerais:  
+A sintaxe dos argumentos do plug\--in Cau segue estas regras gerais:  
   
--   Vários *nome\=valor* pares são separados por ponto e vírgula.  
+-   Vários pares de *valores de nome\=* são separados por ponto e vírgula.  
   
--   Um valor que contém espaços fica entre aspas, por exemplo: **Nome1\="Valor com espaços"**.  
+-   Um valor que contém espaços fica entre aspas, por exemplo: **Nome1\="valor com espaços"** .  
   
--   A sintaxe exata do *valor* depende o plugue\-no.  
+-   A sintaxe exata do *valor* depende do plug\--in.  
   
-Para especificar o plug\-argumentos de entrada usando os cmdlets do PowerShell de CAU que dão suporte a **– CauPluginParameters** parâmetro, passe um parâmetro do formulário:  
+Para especificar argumentos\-de plug-in usando os cmdlets do PowerShell da cau que dão suporte ao parâmetro **– CauPluginParameters** , passe um parâmetro do formulário:  
   
-**\-CauPluginArguments @{Name1\=Value1;Name2\=Value2;Name3\=Value3}**  
+**\-CauPluginArguments @ {Nome1\=value1; Nome2\=value2; Name3\=Value3}**  
   
-Você também pode usar uma tabela de hash do PowerShell predefinida. Para especificar plug\-argumentos de entrada para mais de um plug\-, passe várias tabelas de hash de argumentos, separados por vírgulas. Passe o plugue\-nos argumentos de plug\-que é especificado em **CauPluginName**.  
+Você também pode usar uma tabela de hash predefinida do PowerShell. Para especificar argumentos\-de plug-in para mais de\-um plug-in, passe várias tabelas de hash de argumentos, separados por vírgulas. Passe os argumentos\-do plug-in na\-ordem do plug-in especificada em **CauPluginName**.  
   
-### <a name="specify-optional-plug-in-arguments"></a>Especificar plug opcional\-argumentos de entrada  
-O plugue\-ins CAU instala \( **windowsupdateplugin** e **Microsoft. hotfixplugin** \) fornecem opções adicionais que você pode selecionar. Na UI do CAU, elas aparecem em uma **opções adicionais** página depois de configurar opções de execução de atualização para o plugue\-no. Se você estiver usando os cmdlets do PowerShell do CAU, essas opções são configuradas como opcional plug\-argumentos de entrada. Para obter mais informações, consulte [Use o Microsoft.WindowsUpdatePlugin](#BKMK_WUP) e [Usar o Microsoft.HotfixPlugin](#BKMK_HFP) mais adiante neste tópico.  
+### <a name="specify-optional-plug-in-arguments"></a>Especificar argumentos plug\--in opcionais  
+Os plug\--ins que o \(Cau instala **Microsoft. WindowsUpdatePlugin** e **Microsoft. HotfixPlugin** \) fornecem opções adicionais que você pode selecionar. Na interface do usuário da cau, eles aparecem em uma página de **Opções adicionais** depois de configurar as opções de\-execução de atualização para o plug-in. Se você estiver usando os cmdlets do PowerShell da cau, essas opções serão configuradas como argumentos plug\--in opcionais. Para obter mais informações, consulte [Use o Microsoft.WindowsUpdatePlugin](#BKMK_WUP) e [Usar o Microsoft.HotfixPlugin](#BKMK_HFP) mais adiante neste tópico.  
   
-## <a name="manage-plug-ins-using-windows-powershell-cmdlets"></a>Gerenciar plug\-ins usando cmdlets do Windows PowerShell  
+## <a name="manage-plug-ins-using-windows-powershell-cmdlets"></a>Gerenciar plug\--ins usando cmdlets do Windows PowerShell  
   
 |Cmdlet|Descrição|  
 |----------|---------------|  
-|[Get-CauPlugin](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/get-cauplugin)|Recupera informações sobre um ou mais plug de atualização de software\-ins registrados no computador local.|  
-|[Register-CauPlugin]((https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/register-cauplugin))|Registra um plug de atualização de software do CAU\-no computador local.|  
-|[Unregister-CauPlugin](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/unregister-cauplugin)|Remove um plug de atualização de software\-na lista de plug\-ins que podem ser usados pelo CAU. **Observação:** O plugue\-ins que são instalados com o CAU \( **windowsupdateplugin** e o **Microsoft. hotfixplugin** \) não pode ser cancelado.|  
+|[Get-CauPlugin](https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating/get-cauplugin)|Recupera informações sobre um ou mais plug\--ins de atualização de software registrados no computador local.|  
+|[Registrar-CauPlugin]((https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating/register-cauplugin))|Registra um plug\--in de atualização de software cau no computador local.|  
+|[Cancelar registro-CauPlugin](https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating/unregister-cauplugin)|Remove um plug\--in de atualização de software da lista\-de plug-ins que podem ser usados pela Cau. **Observação:** Os plug\--ins instalados com a cau \( **Microsoft. WindowsUpdatePlugin** e **Microsoft. HotfixPlugin** \) não podem ter o registro cancelado.|  
   
-## <a name="BKMK_WUP"></a>Usando o Microsoft. windowsupdateplugin  
+## <a name="BKMK_WUP"></a>Usando o Microsoft. WindowsUpdatePlugin  
 
-O padrão de plugue\-na Cau, **Microsoft. windowsupdateplugin**, executa as seguintes ações:
+O plug\--in padrão para cau, **Microsoft. WindowsUpdatePlugin**, executa as seguintes ações:
 - Comunica-se com o Windows Update Agent em cada nó do cluster de failover para aplicar atualizações necessárias aos produtos da Microsoft que estão sendo executados em cada nó.
-- Instalações de cluster diretamente as atualizações do Windows Update ou Microsoft Update ou de na\-local do Windows Server Update Services \(WSUS\) server.
-- Instala somente os selecionados, versão de distribuição geral \(GDR\) atualizações. Por padrão, o plugue\-em se aplica apenas atualizações de software importantes. Nenhuma configuração é necessária. A configuração padrão baixa e instala atualizações importantes de GDR em cada nó. 
+- Instala atualizações de cluster diretamente do Windows Update ou Microsoft Update, ou de um\-servidor Windows Server Update Services \(WSUS\) local.
+- Instala apenas as atualizações de versão \(de distribuição geral selecionadas, GDR.\) Por padrão, o plug\--in aplica-se apenas a atualizações de software importantes. Nenhuma configuração é necessária. A configuração padrão baixa e instala atualizações importantes de GDR em cada nó. 
 
 > [!NOTE]
-> Para aplicar as atualizações que não sejam as atualizações de software importantes selecionadas por padrão \(por exemplo, atualizações de driver\), você pode configurar um plug opcional\-no parâmetro. Para mais informações, consulte [Configurar a cadeia de caracteres de consulta do Windows Update Agent](#BKMK_QUERY).
+> Para aplicar atualizações diferentes das atualizações de software importantes que são selecionadas por padrão \(, por exemplo, atualizações\)de driver, você pode configurar um\-parâmetro de plug-in opcional. Para mais informações, consulte [Configurar a cadeia de caracteres de consulta do Windows Update Agent](#BKMK_QUERY).
 
 ### <a name="requirements"></a>Requisitos
 
-- O cluster de failover e o computador de coordenador de atualização remoto \(se usado\) deve cumprir os requisitos para a CAU e a configuração necessária para o gerenciamento remoto listado em [requisitos e práticas recomendadas da CAU ](cluster-aware-updating-requirements.md).
+- O cluster de failover e o computador \(coordenador de atualização remota se usados\) devem atender aos requisitos para a Cau e à configuração necessária para o gerenciamento remoto listado em [requisitos e práticas recomendadas para a cau](cluster-aware-updating-requirements.md).
 - Examine as [Recomendações para aplicação de atualizações da Microsoft](cluster-aware-updating-requirements.md#BKMK_BP_WUA) e faça as alterações necessárias à configuração do Microsoft Update para os nós do cluster de failover.
-- Para obter melhores resultados, recomendamos que você execute o analisador de práticas recomendadas do CAU \(BPA\) para garantir que o ambiente de cluster e as atualizações estejam configurados corretamente para aplicar atualizações usando CAU. Para mais informações, consulte [Testar a prontidão de atualização do CAU](cluster-aware-updating-requirements.md#BKMK_BPA).
+- Para obter melhores resultados, recomendamos que você execute a cau \(analisador de práticas recomendadas\) BPA para garantir que o cluster e o ambiente de atualização estejam configurados corretamente para aplicar atualizações usando a cau. Para mais informações, consulte [Testar a prontidão de atualização do CAU](cluster-aware-updating-requirements.md#BKMK_BPA).
 
 > [!NOTE]
 > As atualizações que exigem aceitação de termos de licença da Microsoft ou interação do usuário são excluídas, e devem ser instaladas manualmente.
 
 ### <a name="additional-options"></a>Opções Adicionais
 
-Opcionalmente, você pode especificar os seguinte plug\-argumentos de entrada para aumentar ou restringir o conjunto de atualizações aplicadas pelo plugue\-em:
-- Para configurar o plug\-para aplicar as atualizações recomendadas além das atualizações importantes em cada nó, da UI CAU, em de **opções adicionais** página, selecione o **Dê-me recomendado atualiza a mesma forma que Eu recebo atualizações importantes** caixa de seleção.
-<br>Como alternativa, configure a **'IncludeRecommendedUpdates'\='True'** conecte\-no argumento.
-- Para configurar o plugue\-para filtrar os tipos de atualizações GDR que são aplicados a cada nó de cluster, especifique uma cadeia de caracteres de consulta do Windows Update Agent usando um **QueryString** conecte\-no argumento. Para mais informações, consulte [Configurar a cadeia de caracteres de consulta do Windows Update Agent](#BKMK_QUERY).
+Opcionalmente, você pode especificar os seguintes argumentos\-de plug-in para aumentar ou restringir o conjunto de atualizações que são aplicadas pelo\-plug-in:
+- Para configurar o plug\--in para aplicar as atualizações recomendadas, além de atualizações importantes em cada nó, na interface do usuário da cau, na página **Opções adicionais** , selecione as **atualizações recomendadas para mim da mesma forma que recebo atualizações importantes** caixa de seleção.
+<br>Como alternativa, configure o argumento **' true\='** do plug\--in ' IncludeRecommendedUpdates '.
+- Para configurar o plug\--in para filtrar os tipos de atualizações GDR que são aplicadas a cada nó de cluster, especifique uma cadeia de consulta de agente de\-Windows Update usando um argumento de plug-in de **QueryString** . Para mais informações, consulte [Configurar a cadeia de caracteres de consulta do Windows Update Agent](#BKMK_QUERY).
 
-### <a name="BKMK_QUERY"></a>Configurar a cadeia de caracteres de consulta do Windows Update Agent  
-Você pode configurar um plug\-no argumento para o padrão conecte\-no, **windowsupdateplugin**, que consiste em um Windows Update Agent \(WUA\) cadeia de caracteres de consulta. Essa instrução usa a API do WUA para identificar um ou mais grupos de atualizações da Microsoft para aplicar a cada nó, com base em critérios de seleção específicos. Você pode combinar vários critérios, usando um AND ou um OR lógico. A cadeia de caracteres de consulta do WUA é especificada em um plug\-no argumento da seguinte maneira:  
+### <a name="BKMK_QUERY"></a>Configurar a cadeia de consulta do agente de Windows Update  
+Você pode configurar um argumento\-de plug-in para o\-plug-in padrão, **Microsoft. WindowsUpdatePlugin**,\) que consiste em \(uma cadeia de caracteres de consulta do Windows Update Agent. Essa instrução usa a API do WUA para identificar um ou mais grupos de atualizações da Microsoft para aplicar a cada nó, com base em critérios de seleção específicos. Você pode combinar vários critérios, usando um AND ou um OR lógico. A cadeia de caracteres de consulta do WUA é\-especificada em um argumento de plug-in da seguinte maneira:  
   
-**QueryString\="critérion1\=Value1 e\/ou critérion2\=Value2 e\/ou..."**  
+**QueryString\="critérion1\=value1 e\/or Criterion2\=value2 e\/or..."**  
   
 Por exemplo, o **Microsoft.WindowsUpdatePlugin** seleciona automaticamente as atualizações importantes, usando um argumento padrão **QueryString** que é construído usando os critérios **IsInstalled**, **Type**, **IsHidden** e **IsAssigned**:  
   
-**QueryString\="IsInstalled\=0 e o tipo\='Software' e IsHidden\=0 e IsAssigned\=1"**  
+**QueryString\=\="\=IsInstalled\=0 e Type ' software ' e IsHidden 0 e isassigned\=1"**  
   
-Se você especificar um **QueryString** argumento, ele é usado em vez do padrão **QueryString** que está configurado para o plugue\-no.  
+Se você especificar um argumento **QueryString** , ele será usado no lugar da **QueryString** padrão configurada para o plug\--in.  
   
 #### <a name="example-1"></a>Exemplo 1
   
-Para configurar uma **QueryString** argumento que instala uma atualização específica conforme identificado pela ID *f6ce46c1\-971c\-43f9\-a2aa\-783df125f003*:  
+Para configurar um **argumento QueryString** que instala uma atualização específica, conforme identificado pela *ID\-f6ce46c1\-971c\-43f9\-a2aa 783df125f003*:  
   
-**QueryString\="UpdateID\=' f6ce46c1\-971c\-43f9\-a2aa\-783df125f003' e IsInstalled\=0"**  
+**QueryString\=\-\-"\=UpdateId\=" f6ce46c1 971c43f9\-a2aa\-783df125f003 e IsInstalled 0 "**  
   
 > [!NOTE]  
-> O exemplo anterior é válido para aplicar atualizações usando o Cluster\-Assistente de atualização com suporte. Se você deseja instalar uma atualização específica configurando self\-opções de atualização, a UI do CAU ou usando o **Add\-CauClusterRole** ou **definir\-CauClusterRole**Cmdlet do PowerShell, é necessário formatar o valor UpdateID com dois único\-caracteres de aspas:  
+> O exemplo anterior é válido para aplicar atualizações usando o assistente para\-atualização com suporte de cluster. Se você quiser instalar uma atualização específica Configurando opções\-de atualização automática com a interface do usuário da cau ou usando o cmdlet **Add\-CauClusterRole** ou **set\-CauClusterRole**do PowerShell, deverá formatar o Valor de UpdateId com dois caracteres\-de aspas simples:  
 >   
-> **QueryString\="UpdateID\=' f6ce46c1\-971c\-43f9\-a2aa\-783df125f003 ' e IsInstalled\=0"**  
+> **QueryString\="\-\-UpdateId\-' ' f6ce46c1 971c 43f9\=a2aa\-783df125f003 ' ' e IsInstalled 0"\=**  
   
 #### <a name="example-2"></a>Exemplo 2
   
 Para configurar um argumento **QueryString** que instala somente drivers:  
   
-**QueryString\="IsInstalled\=0 e o tipo\='Driver' e IsHidden\=0"**  
+**QueryString\="\=\=IsInstalled 0 e Type ' Driver ' e IsHidden 0"\=**  
   
-Para obter mais informações sobre cadeias de caracteres de consulta para o padrão conecte\-no, **windowsupdateplugin**, os critérios de pesquisa \(como **IsInstalled**\), e a sintaxe que você pode incluir nas cadeias de caracteres de consulta, consulte a seção sobre critérios de pesquisa a [referência de API do Windows Update Agent (WUA)](https://go.microsoft.com/fwlink/p/?LinkId=223304).  
+Para obter mais informações sobre cadeias de caracteres de\-consulta para o plug-in padrão, **Microsoft. WindowsUpdatePlugin**, os critérios \(de pesquisa, como IsInstalled \), e a sintaxe que você pode incluir na consulta cadeias de caracteres, consulte a seção sobre critérios de pesquisa na [referência da API do WUA (agente de Windows Update)](https://go.microsoft.com/fwlink/p/?LinkId=223304).  
   
-## <a name="BKMK_HFP"></a>Usar o Microsoft. hotfixplugin  
-O plugue\-na **Microsoft. hotfixplugin** pode ser usado para aplicar a versão de distribuição limitada \(LDR\) atualizações \(também chamado de hotfixes e chamados de QFEs\) que você baixar de forma independente para abordar problemas específicos de software Microsoft. O plug-in instala as atualizações de uma pasta raiz em um compartilhamento de arquivo SMB e também podem ser personalizado para aplicar não\-driver da Microsoft, firmware e atualizações de BIOS.
+## <a name="BKMK_HFP"></a>Use o Microsoft. HotfixPlugin  
+O plug\--in **Microsoft. HotfixPlugin** pode ser usado para aplicar a \(versão de distribuição limitada da Microsoft, as atualizações \(de LDR\) também são\) chamadas de hotfixes e, anteriormente, chamadas de QFEs que você Baixe de forma independente para resolver problemas específicos de software da Microsoft. O plug-in instala atualizações de uma pasta raiz em um compartilhamento de arquivos SMB e também pode ser personalizado para aplicar\-atualizações de BIOS, firmware e driver não Microsoft.
 
 > [!NOTE]
-> Hotfixes, às vezes, estão disponíveis para download da Microsoft nos artigos da Base de dados de Conhecimento, mas eles também são fornecidos aos clientes que\-base necessária.
+> Os hotfixes às vezes estão disponíveis para download da Microsoft nos artigos da base de dados de conhecimento, mas também são fornecidos\-aos clientes de acordo com a necessidade.
 
 ### <a name="requirements"></a>Requisitos
 
-- O cluster de failover e o computador de coordenador de atualização remoto \(se usado\) deve cumprir os requisitos para a CAU e a configuração necessária para o gerenciamento remoto listado em [requisitos e práticas recomendadas da CAU ](cluster-aware-updating-requirements.md).
+- O cluster de failover e o computador \(coordenador de atualização remota se usados\) devem atender aos requisitos para a Cau e à configuração necessária para o gerenciamento remoto listado em [requisitos e práticas recomendadas para a cau](cluster-aware-updating-requirements.md).
 - Examine as [Recomendações para uso do Microsoft.HotfixPlugin](cluster-aware-updating-requirements.md#BKMK_BP_HF).
-- Para obter melhores resultados, recomendamos que você execute o analisador de práticas recomendadas do CAU \(BPA\) modelo para garantir que o ambiente de cluster e as atualizações estejam configurados corretamente para aplicar atualizações usando CAU. Para mais informações, consulte [Testar a prontidão de atualização do CAU](cluster-aware-updating-requirements.md#BKMK_BPA).
-- Obter as atualizações do publicador e copiá-los ou extraia-os em um Server Message Block \(SMB\) compartilhamento de arquivos \(pasta raiz de hotfix\) que dá suporte a pelo menos SMB 2.0 e que é acessível por todos os do cluster nós e o computador de coordenador de atualização remoto \(se for usado CAU no remoto\-modo de atualização\). Para mais informações, consulte [Configurar uma estrutura de pastas raiz de hotfix](#BKMK_HF_ROOT) mais adiante neste tópico. 
+- Para obter melhores resultados, recomendamos que você execute o modelo \(de\) BPA analisador de práticas recomendadas do Cau para garantir que o cluster e o ambiente de atualização estejam configurados corretamente para aplicar atualizações usando a cau. Para mais informações, consulte [Testar a prontidão de atualização do CAU](cluster-aware-updating-requirements.md#BKMK_BPA).
+- Obtenha as atualizações do Publicador e copie-as ou extraia-as para uma pasta \(\) raiz\) de hotfix \(de compartilhamento de mensagens do servidor SMB que suporte pelo menos SMB 2,0 e que seja acessível por todo o cluster nós e o computador \(do coordenador de atualização remota se a cau é usada no modo\)de atualização remota\-. Para mais informações, consulte [Configurar uma estrutura de pastas raiz de hotfix](#BKMK_HF_ROOT) mais adiante neste tópico. 
 
     > [!NOTE]
-    > Por padrão, esse plug-\-só instala hotfixes com as seguintes extensões de nome de arquivo:. msu,. msi e. msp.
+    > Por padrão, esse plug\--in instala apenas hotfixes com as seguintes extensões de nome de arquivo:. msu,. msi e. msp.
 
-- Copie o arquivo Defaulthotfixconfig \(que é fornecido na **% systemroot %\\System32\\WindowsPowerShell\\v1.0\\módulos\\ ClusterAwareUpdating** pasta em um computador em que as ferramentas da CAU são instaladas\) para a pasta raiz de hotfix que você criou e sob a qual você extraiu os hotfixes. Por exemplo, copie o arquivo de configuração para  *\\ \\MyFileServer\\Hotfixes\\raiz\\*. 
+- Copie \(o arquivo DefaultHotfixConfig. XML que é fornecido na pasta **% systemroot%\\system32\\WindowsPowerShell\\v 1.0\\modules\\ClusterAwareUpdating** em um computador em que as ferramentas Cau estão\) instaladas na pasta raiz do hotfix que você criou e sob a qual você extraiu os hotfixes. Por exemplo, copie o arquivo de configuração para a  *\\\\ \\raiz\\de\\hotfixes do MyFileServer*. 
 
     > [!NOTE]
     > Para instalar a maioria dos hotfixes fornecidos pela Microsoft e outras atualizações, o arquivo de configuração padrão de hotfix pode ser usado sem modificação. Se o cenário exigir, você pode personalizar o arquivo de configuração como uma tarefa avançada. O arquivo de configuração pode incluir regras personalizadas, por exemplo, para processar arquivos de hotfix com extensões específicas ou definir comportamentos para condições de saída específicas. Para mais informações, consulte [Personalizar o arquivo de configuração de hotfix](#BKMK_CONFIG_FILE) mais adiante neste tópico.
@@ -167,28 +167,28 @@ O plugue\-na **Microsoft. hotfixplugin** pode ser usado para aplicar a versão d
 ### <a name="configuration"></a>Configuração
 
 Defina as configurações a seguir. Para mais informações, consulte os links para as seções mais adiante neste tópico.
-- O caminho para a pasta raiz compartilhada de hotfix que contém as atualizações a serem aplicadas e o arquivo de configuração do hotfix. Você pode digitar este caminho na UI do CAU ou configurar o **HotfixRootFolderPath\=\<caminho >** PowerShell plug\-no argumento. 
+- O caminho para a pasta raiz compartilhada de hotfix que contém as atualizações a serem aplicadas e o arquivo de configuração do hotfix. Você pode digitar esse caminho na interface do usuário da cau ou configurar o **caminho do HotfixRootFolderPath\=\<>** argumento do plug\--in do PowerShell. 
 
    > [!NOTE]
-   > Você pode especificar a pasta raiz de hotfix como um caminho de pasta local ou um caminho UNC no formato  *\\ \\ServerName\\compartilhamento\\RootFolderName*. Um domínio\-com base ou caminho de Namespace de DFS autônomo pode ser usado. No entanto, o plugue\-em recursos que verificar o acesso a permissões no arquivo de configuração de hotfix são incompatíveis com um caminho de Namespace do DFS, assim, se você configurar um, você deverá desabilitar a verificação de permissões de acesso por meio da UI CAU ou configurando o **DisableAclChecks\='True'** conecte\-no argumento.
-- Pasta compartilhada de configurações no servidor que hospeda a pasta raiz de hotfix para verificar se há permissões adequadas para acessar a pasta e garantir a integridade dos dados acessados a partir do SMB \(assinatura SMB ou criptografia SMB\). Para obter mais informações, consulte [Restringir o acesso à pasta raiz de hotfix](#BKMK_ACL).
+   > Você pode especificar a pasta raiz do hotfix como um caminho de pasta local ou como um caminho UNC do  *\\formulário\\ \\\\ServerName share RootFolderName*. Um caminho\-de namespace DFS autônomo ou baseado em domínio pode ser usado. No entanto,\-os recursos de plug-in que verificam as permissões de acesso no arquivo de configuração do hotfix são incompatíveis com um caminho de namespace do DFS, portanto, se você configurar um, deverá desabilitar a verificação de permissões de acesso usando a interface do usuário da cau ou configurando o Argumento deplug\--in **DisableAclChecks\=' true '** .
+- Configurações no servidor que hospeda a pasta raiz do hotfix para verificar as permissões apropriadas para acessar a pasta e garantir a integridade dos dados acessados da assinatura SMB da \(pasta compartilhada SMB ou da\)criptografia SMB. Para obter mais informações, consulte [Restringir o acesso à pasta raiz de hotfix](#BKMK_ACL).
 
 ### <a name="additional-options"></a>Opções Adicionais
 
-- Opcionalmente, configure o plugue\-assim que a criptografia SMB é imposta ao acessar dados do compartilhamento de arquivos de hotfix. Na UI CAU, sobre o **opções adicionais** página, selecione o **exigir criptografia SMB para acessar a pasta raiz de hotfix** ou configure a **RequireSMBEncryption\= 'True'** PowerShell plug\-no argumento. 
+- Opcionalmente, configure o plug\--in para que a criptografia SMB seja imposta ao acessar dados do compartilhamento de arquivos do hotfix. Na interface do usuário da cau, na página **Opções adicionais** , selecione a opção **exigir criptografia SMB no acesso à pasta raiz do hotfix** ou configure o argumento do plug\--in do PowerShell **' true ' do RequireSMBEncryption\=** . 
   > [!IMPORTANT]
   > Você deve executar etapas adicionais de configuração no servidor SMB para habilitar a integridade dos dados SMB com assinatura ou criptografia SMB. Para mais informações, consulte a Etapa 4 em [Restringir o acesso à pasta raiz de hotfix](#BKMK_ACL). Se você selecionar a opção para impor o uso da Criptografia SMB, e a pasta raiz de hotfix não estiver configurada para acesso com o uso dessa criptografia SMB, ocorrerá falha na Execução de Atualização.
-- Opcionalmente, desabilite as verificações padrão quanto a permissões suficientes para a pasta raiz de hotfix e o arquivo de configuração do hotfix. Na UI CAU, selecione **desabilitar a verificação de acesso de administrador para o arquivo de pasta e a configuração de raiz do hotfix**, ou configurar o **DisableAclChecks\='True'** conecte\-em argumento.
-- Opcionalmente, configure a **HotfixInstallerTimeoutMinutes\= <Integer>**  argumento para especificar quanto tempo o hotfix conecte\-em aguarda o retorno do processo de instalador de hotfix. \(O padrão é 30 minutos.\) Por exemplo, para especificar um período de tempo limite de duas horas, defina **HotfixInstallerTimeoutMinutes\=120**.
-- Opcionalmente, configure a **HotfixConfigFileName \= <name>**  conecte\-no argumento para especificar um nome para o arquivo de configuração de hotfix que está localizado na pasta raiz de hotfix. Se não for especificado, o nome padrão DefaultHotfixConfig.xml será usado.
+- Opcionalmente, desabilite as verificações padrão quanto a permissões suficientes para a pasta raiz de hotfix e o arquivo de configuração do hotfix. Na interface do usuário da cau, selecione **Desabilitar verificação de acesso de administrador para a pasta raiz de hotfix e o arquivo de configuração**, ou configure\-o argumento de plug-in **DisableAclChecks\=' true '** .
+- Opcionalmente, configure o **argumento\= HotfixInstallerTimeoutMinutes<Integer>**  para especificar por quanto tempo o plug\--in do hotfix aguarda o processo do instalador do hotfix retornar. \(O padrão é 30 minutos.\) Por exemplo, para especificar um período de tempo limite de duas horas, defina **HotfixInstallerTimeoutMinutes\=120**.
+- Opcionalmente, configure o **argumento \= HotfixConfigFileName <name>**  plug\-in para especificar um nome para o arquivo de configuração de hotfix localizado na pasta raiz do hotfix. Se não for especificado, o nome padrão DefaultHotfixConfig.xml será usado.
   
 ### <a name="BKMK_HF_ROOT"></a>Configurar uma estrutura de pasta raiz de hotfix
 
-Para que o hotfix conecte\-na solução, hotfixes devem ser armazenados em um bem\-definido a estrutura em um compartilhamento de arquivos SMB \(pasta raiz de hotfix\), e você deve configurar o plugue hotfix\-com o caminho para o pasta raiz de hotfix por meio da UI CAU ou os cmdlets do PowerShell do CAU. Esse caminho é passado para o plugue\-em como o **HotfixRootFolderPath** argumento. Você pode escolher uma das várias estruturas para a pasta raiz de hotfix, de acordo com as suas necessidades de atualização, como mostrado nos exemplos a seguir. Arquivos ou pastas que não aderem à estrutura são ignorados.  
+Para que o plug\--in do hotfix funcione, os hotfixes devem ser armazenados\-em uma estrutura bem definida em uma \(pasta\)raiz de hotfix de compartilhamento de arquivos SMB e você\-deve configurar o plug-in do hotfix com o caminho para o pasta raiz do hotfix usando a interface do usuário da CAU ou os cmdlets do PowerShell da CAU. Esse caminho é passado para o plug\--in como o argumento **HotfixRootFolderPath** . Você pode escolher uma das várias estruturas para a pasta raiz de hotfix, de acordo com as suas necessidades de atualização, como mostrado nos exemplos a seguir. Arquivos ou pastas que não aderem à estrutura são ignorados.  
   
-#### <a name="example-1---folder-structure-used-to-apply-hotfixes-to-all-cluster-nodes"></a>Exemplo 1: estrutura de pastas usado para aplicar hotfixes a todos os nós de cluster
+#### <a name="example-1---folder-structure-used-to-apply-hotfixes-to-all-cluster-nodes"></a>Exemplo 1-estrutura de pasta usada para aplicar hotfixes a todos os nós de cluster
   
-Para especificar que os hotfixes sejam aplicados a todos os nós de cluster, copie-os para uma pasta chamada **CAUHotfix\_todos os** sob a pasta raiz de hotfix. Neste exemplo, o **HotfixRootFolderPath** conecte\-argumento é definido como *\\ \\MyFileServer\\Hotfixes\\raiz\\*. O **CAUHotfix\_todos os** pasta contém três atualizações com as extensões. msu,. msi e. msp que serão aplicadas a todos os nós de cluster. Os nomes dos arquivos de atualização são apenas para fins de ilustração.  
+Para especificar que os hotfixes se apliquem a todos os nós de cluster, copie-os para uma pasta chamada **CAUHotfix\_All** na pasta raiz do hotfix. Neste exemplo, o argumento **HotfixRootFolderPath** plug\-in é definido  *\\ \\\\\\comoraiz\\de hotfixes MyFileServer*. A **pasta\_CAUHotfix All** contém três atualizações com as extensões. msu,. msi e. msp que serão aplicadas a todos os nós de cluster. Os nomes dos arquivos de atualização são apenas para fins de ilustração.  
   
 > [!NOTE]  
 > Neste e nos exemplos a seguir, o arquivo de configuração do hotfix com seu nome padrão DefaultHotfixConfig.xml é mostrado em seu local exigido na pasta raiz de hotfix.  
@@ -203,9 +203,9 @@ Para especificar que os hotfixes sejam aplicados a todos os nós de cluster, cop
       ...  
 ```  
   
-#### <a name="example-2---folder-structure-used-to-apply-certain-updates-only-to-a-specific-node"></a>Exemplo 2 - estrutura de pastas usado para aplicar determinadas atualizações apenas a um nó específico
+#### <a name="example-2---folder-structure-used-to-apply-certain-updates-only-to-a-specific-node"></a>Exemplo 2-estrutura de pasta usada para aplicar determinadas atualizações apenas a um nó específico
   
-Para especificar hotfixes que se aplicam apenas a um nó específico, use uma subpasta da pasta raiz de hotfix com o nome do nó. Use o nome NetBIOS do nó de cluster, por exemplo, *ContosoNode1*. Em seguida, mova as atualizações que se aplicam apenas a esse nó para essa subpasta. No exemplo a seguir, o **HotfixRootFolderPath** conecte\-argumento é definido como  *\\ \\MyFileServer\\Hotfixes\\raiz\\*. Atualizações na **CAUHotfix\_todas as** pasta será aplicada a todos os nós de cluster, e *Node1\_específicos\_Update.msu* serão aplicadas somente a *ContosoNode1*.  
+Para especificar hotfixes que se aplicam apenas a um nó específico, use uma subpasta da pasta raiz de hotfix com o nome do nó. Use o nome NetBIOS do nó de cluster, por exemplo, *ContosoNode1*. Em seguida, mova as atualizações que se aplicam apenas a esse nó para essa subpasta. No exemplo a seguir, o  argumento HotfixRootFolderPath\-plug in é definido  *\\\\como \\raiz\\\\de hotfixes MyFileServer*. As atualizações na **pasta\_CAUHotfix All** serão aplicadas a todos os nós de cluster, *e\_Node1\_specific Update. msu* será aplicada somente ao *ContosoNode1*.  
   
 ```
 \\MyFileServer\Hotfixes\Root\   
@@ -220,11 +220,11 @@ Para especificar hotfixes que se aplicam apenas a um nó específico, use uma su
       ...  
 ```  
   
-#### <a name="example-3---folder-structure-used-to-apply-updates-other-than-msu-msi-and-msp-files"></a>Exemplo 3 - estrutura de pastas usada para aplicar as atualizações que não sejam arquivos. msu,. msi e. msp
+#### <a name="example-3---folder-structure-used-to-apply-updates-other-than-msu-msi-and-msp-files"></a>Exemplo 3-estrutura de pasta usada para aplicar atualizações diferentes de arquivos. msu,. msi e. msp
   
-Por padrão, o **Microsoft.HotfixPlugin** só aplica atualizações com as extensões .msu, .msi ou .msp. No entanto, algumas atualizações podem ter extensões diferentes e exigem diferentes comandos de instalação. Por exemplo, você pode precisar aplicar uma atualização de firmware com a extensão .exe a um nó em um cluster. Você pode configurar a pasta raiz de hotfix com uma subpasta que indique uma versão específica, não\-tipo de atualização padrão deve ser instalado. Você também deve configurar uma regra de instalação de pasta correspondente que especifica o comando de instalação no elemento `<FolderRules>` no arquivo XML de configuração de hotfix.  
+Por padrão, o **Microsoft.HotfixPlugin** só aplica atualizações com as extensões .msu, .msi ou .msp. No entanto, algumas atualizações podem ter extensões diferentes e exigem diferentes comandos de instalação. Por exemplo, você pode precisar aplicar uma atualização de firmware com a extensão .exe a um nó em um cluster. Você pode configurar a pasta raiz do hotfix com uma subpasta que indica que um\-tipo de atualização específico e não padrão deve ser instalado. Você também deve configurar uma regra de instalação de pasta correspondente que especifica o comando de instalação no elemento `<FolderRules>` no arquivo XML de configuração de hotfix.  
   
-No exemplo a seguir, o **HotfixRootFolderPath** conecte\-argumento é definido como  *\\ \\MyFileServer\\Hotfixes\\raiz\\*. Várias atualizações serão aplicadas a todos os nós do cluster e uma atualização de firmware *SpecialHotfix1.exe* será aplicada ao *ContosoNode1* usando *FolderRule1*. Para obter informações sobre como configurar *FolderRule1* no arquivo de configuração de hotfix, consulte [Personalizar o arquivo de configuração de hotfix](#BKMK_CONFIG_FILE) mais adiante neste tópico.  
+No exemplo a seguir, o  argumento HotfixRootFolderPath\-plug in é definido  *\\\\como \\raiz\\\\de hotfixes MyFileServer*. Várias atualizações serão aplicadas a todos os nós do cluster e uma atualização de firmware *SpecialHotfix1.exe* será aplicada ao *ContosoNode1* usando *FolderRule1*. Para obter informações sobre como configurar *FolderRule1* no arquivo de configuração de hotfix, consulte [Personalizar o arquivo de configuração de hotfix](#BKMK_CONFIG_FILE) mais adiante neste tópico.  
   
 ```
 \\MyFileServer\Hotfixes\Root\   
@@ -244,7 +244,7 @@ No exemplo a seguir, o **HotfixRootFolderPath** conecte\-argumento é definido c
 ### <a name="BKMK_CONFIG_FILE"></a>Personalizar o arquivo de configuração de hotfix  
 O arquivo de configuração de hotfix controla como o **Microsoft.HotfixPlugin** instala tipos de arquivo de hotfix específicos em um cluster de failover. O esquema XML do arquivo de configuração é definido no HotfixConfigSchema.xsd, que está localizado na seguinte pasta em um computador onde as ferramentas do CAU estão instaladas:  
   
-**% systemroot %\\System32\\WindowsPowerShell\\v1.0\\módulos\\ClusterAwareUpdating pasta**  
+**% SystemRoot%\\system32\\WindowsPowerShell\\v 1.0\\modules\\ClusterAwareUpdating Folder**  
   
 Para personalizar o arquivo de configuração de hotfix, copie o arquivo de configuração de amostra DefaultHotfixConfig.xml deste local para a pasta raiz do hotfix e faça as modificações apropriadas para o seu cenário.  
   
@@ -253,7 +253,7 @@ Para personalizar o arquivo de configuração de hotfix, copie o arquivo de conf
   
 Por padrão, o arquivo XML de configuração de hotfix define regras de instalação e condições de saída para as duas categorias de hotfixes a seguir:  
   
--   Arquivos de hotfix com extensões que o plugue\-pode instalar por padrão \(arquivos. msu,. msi e. msp\).  
+-   Arquivos de hotfix com extensões que o\-plug-in pode instalar \(por padrão. msu,. msi e arquivos\). msp.  
   
     Eles são definidos como elementos `<ExtensionRules>` no elemento `<DefaultRules>`. Há um elemento `<Extension>` para cada um dos tipos de arquivos padrão suportados. A estrutura XML geral é a seguinte:  
   
@@ -279,9 +279,9 @@ Por padrão, o arquivo XML de configuração de hotfix define regras de instala�
   
     Se você precisar aplicar determinados tipos de atualização a todos os nós do cluster em seu ambiente, poderá definir elementos `<Extension>` adicionais.  
   
--   Atualizar o hotfix ou outros arquivos que não são. msi,. msu ou. msp, por exemplo, não\-drivers da Microsoft, firmware e atualizações de BIOS.  
+-   Hotfix ou outros arquivos de atualização que não são arquivos. msi,. msu ou. msp, por exemplo, drivers\-não Microsoft, firmware e atualizações do BIOS.  
   
-    Cada não\-tipo de arquivo padrão está configurado como um `<Folder>` elemento o `<FolderRules>` elemento. O atributo de nome do elemento `<Folder>` deve ser idêntico ao nome de uma pasta na pasta raiz do hotfix que conterá as atualizações do tipo correspondente. A pasta pode estar na **CAUHotfix\_todas as** pasta ou em um nó\-pasta específica. Por exemplo, se *FolderRule1* estiver configurado na pasta raiz de hotfix, configure o seguinte elemento no arquivo XML para definir um modelo de instalação e condições de saída para as atualizações dessa pasta:  
+    Cada tipo\-de arquivo não padrão é configurado como `<Folder>` um elemento no `<FolderRules>` elemento. O atributo de nome do elemento `<Folder>` deve ser idêntico ao nome de uma pasta na pasta raiz do hotfix que conterá as atualizações do tipo correspondente. A pasta pode estar na pasta **CAUHotfix\_All** ou em um nó\-específico. Por exemplo, se *FolderRule1* estiver configurado na pasta raiz de hotfix, configure o seguinte elemento no arquivo XML para definir um modelo de instalação e condições de saída para as atualizações dessa pasta:  
   
     ```xml  
     <FolderRules>  
@@ -311,12 +311,12 @@ As tabelas a seguir descrevem os atributos `<Template>` e os possíveis subeleme
 > [!IMPORTANT]  
 > Qualquer código de saída que não seja explicitamente definido em `<ExitConditions>` é interpretado como falha na atualização e o nó não reinicia.  
   
-### <a name="BKMK_ACL"></a>Restringir o acesso à pasta raiz de hotfix  
+### <a name="BKMK_ACL"></a>Restringir o acesso à pasta raiz do hotfix  
 Você deve executar várias etapas para configurar o servidor de arquivos SMB e o compartilhamento de arquivos para ajudar a proteger os arquivos da pasta raiz de hotfix e o arquivo de configuração de hotfix para acesso somente no contexto do **Microsoft.HotfixPlugin**. Essas etapas habilitam vários recursos que ajudam a evitar possíveis violações dos arquivos de hotfix que podem comprometer o cluster de failover.  
   
 As etapas gerais são as seguintes:  
   
-1.  Identificar a conta de usuário que é usada para execuções de atualização usando o plug\-em  
+1.  Identificar a conta de usuário usada para a atualização de execuções usando o\-plug-in  
   
 2.  Configurar a conta do usuário nos grupos necessários em um servidor de arquivos SMB  
   
@@ -326,13 +326,13 @@ As etapas gerais são as seguintes:
   
 5.  Habilitar uma regra de Firewall do Windows no servidor SMB  
   
-#### <a name="step-1-identify-the-user-account-that-is-used-for-updating-runs-by-using-the-hotfix-plug-in"></a>Etapa 1. Identificar a conta de usuário que é usada para execuções de atualização usando o plugue hotfix\-em
+#### <a name="step-1-identify-the-user-account-that-is-used-for-updating-runs-by-using-the-hotfix-plug-in"></a>Etapa 1. Identificar a conta de usuário usada para a atualização de execuções usando o plug\--in de hotfix
   
-A conta que é usada na CAU para verificar as configurações de segurança ao realizar uma execução de atualização usando **Microsoft. hotfixplugin** depende se a CAU é usada no remoto\-atualizando modo ou self\-atualização modo, como a seguir:  
+A conta usada na Cau para verificar as configurações de segurança durante a execução de uma execução de atualização usando **o Microsoft. HotfixPlugin** depende se a cau\-é usada no modo\-de atualização remota ou no modo de autoatualização, da seguinte maneira:  
   
--   **Remoto\-modo de atualização** a conta que tenha privilégios administrativos no cluster para visualizar e aplicar atualizações.  
+-   **Modo\-de atualização remota** a conta que tem privilégios administrativos no cluster para visualizar e aplicar atualizações.  
   
--   **Self\-modo de atualização** o nome do objeto de computador virtual configurado no Active Directory para o CAU função clusterizada. Esse é o nome de um objeto de computador virtual de pré-teste no Active Directory para a função clusterizada do CAU ou o nome gerado pelo CAU para a função clusterizada. Para obter o nome se ele for gerado pelo CAU, execute as **Obtenha\-CauClusterRole** cmdlet do PowerShell de CAU. Na saída, **ResourceGroupName** é o nome da conta do objeto de computador virtual gerado.  
+-   Modo de autoatualização o nome do objeto de computador virtual configurado no Active Directory para a função clusterizada Cau. **\-** Esse é o nome de um objeto de computador virtual de pré-teste no Active Directory para a função clusterizada do CAU ou o nome gerado pelo CAU para a função clusterizada. Para obter o nome, se for gerado pela cau, execute o **cmdlet\-Get CauClusterRole** Cau PowerShell. Na saída, **ResourceGroupName** é o nome da conta do objeto de computador virtual gerado.  
   
 #### <a name="step-2-configure-this-user-account-in-the-necessary-groups-on-an-smb-file-server"></a>Etapa 2. Configurar a conta do usuário nos grupos necessários em um servidor de arquivos SMB
   
@@ -343,13 +343,13 @@ A conta que é usada na CAU para verificar as configurações de segurança ao r
   
 1.  Adicione a conta usada para as Execuções de Atualização ao grupo Distributed COM - Usuários e a um dos seguintes grupos: Usuário Avançado, Operação do Servidor ou Operador de Impressão.  
   
-2.  Para habilitar as permissões WMI necessárias para a conta, inicie o Console de Gerenciamento de WMI no servidor SMB. Inicie o PowerShell e, em seguida, digite o seguinte comando:  
+2.  Para habilitar as permissões WMI necessárias para a conta, inicie o Console de Gerenciamento de WMI no servidor SMB. Inicie o PowerShell e digite o seguinte comando:  
   
     ```  
     wmimgmt.msc  
     ```  
   
-3.  Na árvore de console, com o botão direito\-clique em **Controle WMI \(Local\)** e, em seguida, clique em **propriedades**.  
+3.  Na árvore de console, clique\-com o botão direito do mouse em **controle \(de WMI local\)** e clique em **Propriedades**.  
   
 4.  Clique em **Segurança** e expanda **Raiz**.  
   
@@ -361,19 +361,19 @@ A conta que é usada na CAU para verificar as configurações de segurança ao r
   
 #### <a name="step-3-configure-permissions-to-access-the-hotfix-root-folder"></a>Etapa 3. Configurar permissões para acessar a pasta raiz de hotfix
   
-Por padrão, quando você tenta aplicar as atualizações, o hotfix conecte\-em verifica a configuração das permissões do sistema de arquivos NTFS para o acesso à pasta raiz de hotfix. Se as permissões de acesso da pasta não estiverem configuradas corretamente, uma execução de atualização usando o plugue hotfix\-em pode falhar.  
+Por padrão, quando você tenta aplicar atualizações, o plug\--in do hotfix verifica a configuração das permissões do sistema de arquivos NTFS para acessar a pasta raiz do hotfix. Se as permissões de acesso à pasta não estiverem configuradas corretamente, uma execução de\-atualização usando o plug-in de hotfix poderá falhar.  
   
-Se você usar a configuração padrão de plugue o hotfix\-, certifique-se de que as permissões de acesso da pasta atendam aos requisitos a seguir.  
+Se você usar a configuração padrão do plug\--in de hotfix, verifique se as permissões de acesso à pasta atendem aos seguintes requisitos.  
   
 -   O grupo de Usuários tem permissão de Leitura.  
   
--   Se o plugue\-na aplicará atualizações com a extensão .exe, o grupo de usuários tem permissão Execute.  
+-   Se o plug\--in aplicar atualizações com a extensão. exe, o grupo usuários terá a permissão executar.  
   
--   Somente determinadas entidades de segurança são permitidas \(, mas não são necessárias\) para gravar ou modificar permissões. As entidades permitidas são o grupo local de Administradores, SISTEMA, PROPRIETÁRIO CRIADOR e TrustedInstaller. Outras contas ou grupos não têm permissão para Gravar ou Modificar na pasta raiz de hotfix.  
+-   Somente determinadas entidades de segurança são permitidas \(, mas não precisam\) ter permissão para gravar ou modificar. As entidades permitidas são o grupo local de Administradores, SISTEMA, PROPRIETÁRIO CRIADOR e TrustedInstaller. Outras contas ou grupos não têm permissão para Gravar ou Modificar na pasta raiz de hotfix.  
   
-Opcionalmente, você pode desabilitar as verificações anteriores que o plugue\-executa por padrão. É possível fazer isso de duas maneiras:  
+Opcionalmente, você pode desabilitar as verificações anteriores que o plug\--in executa por padrão. Você pode fazer isso de duas maneiras:  
   
--   Se você estiver usando os cmdlets do PowerShell do CAU, configure a **DisableAclChecks\='True'** argumento no **CauPluginArguments** parâmetro para o plugue hotfix\-no.  
+-   Se você estiver usando os cmdlets do PowerShell da cau, configure o argumento **' true ' do\=DisableAclChecks** no parâmetro **CauPluginArguments** para o\-plug-in do hotfix.  
   
 -   Se você estiver usando a IU do CAU, selecione a opção **Desabilitar verificação para acesso de administrador à pasta raiz de hotfix e ao arquivo de configuração** na página **Opções Adicionais de Atualização** do assistente usado para configurar as opções de Execução de Atualização.  
   
@@ -381,11 +381,11 @@ No entanto, como melhor prática em muitos ambientes, é recomendável usar a co
   
 #### <a name="step-4-configure-settings-for-smb-data-integrity"></a>Etapa 4. Definir configurações para a integridade dos dados SMB
   
-Para verificar a integridade de dados em que as conexões entre os nós do cluster e o compartilhamento de arquivos SMB, conecte o hotfix\-em requer que você habilite as configurações de compartilhamento de arquivos SMB para a assinatura SMB ou criptografia SMB. Criptografia SMB, que fornece segurança aprimorada e melhor desempenho em muitos ambientes, há suporte para a partir do Windows Server 2012. É possível habilitar uma ou ambas as configurações, da seguinte forma:  
+Para verificar a integridade dos dados nas conexões entre os nós de cluster e o compartilhamento de arquivos SMB, o\-plug-in de hotfix requer que você habilite as configurações no compartilhamento de arquivos SMB para assinatura SMB ou criptografia SMB. A criptografia SMB, que fornece segurança aprimorada e melhor desempenho em vários ambientes, tem suporte a partir do Windows Server 2012. É possível habilitar uma ou ambas as configurações, da seguinte forma:  
   
 -   Para habilitar assinatura SMB, consulte o procedimento no [artigo 887429](https://support.microsoft.com/kb/887429) na Base de Dados de Conhecimento Microsoft.  
   
--   Para habilitar a criptografia SMB para a pasta compartilhada de SMB, execute o seguinte cmdlet do PowerShell no servidor SMB:  
+-   Para habilitar a criptografia SMB para a pasta compartilhada SMB, execute o seguinte cmdlet do PowerShell no servidor SMB:  
   
     ```PowerShell  
     Set-SmbShare <ShareName> -EncryptData $true  
@@ -393,20 +393,20 @@ Para verificar a integridade de dados em que as conexões entre os nós do clust
   
     Em que <*ShareName*> é o nome da pasta compartilhada de SMB.  
   
-Opcionalmente, para impor o uso da criptografia SMB nas conexões com o servidor SMB, selecione a **exigir criptografia SMB para acessar a pasta raiz de hotfix** da UI do CAU ou configure o **RequireSMBEncryption \='True'** conecte\-no argumento usando os cmdlets do PowerShell do CAU.  
+Opcionalmente, para impor o uso da criptografia SMB nas conexões com o servidor SMB, selecione a opção **exigir criptografia SMB no acesso à pasta raiz do hotfix** na interface do usuário da cau ou configure o plug-in **RequireSMBEncryption\=' true '** \-em argumento, usando os cmdlets do PowerShell da cau.  
   
 > [!IMPORTANT]  
 > Se você selecionar a opção para impor o uso da Criptografia SMB, e a pasta raiz de hotfix não estiver configurada para conexões que usam criptografia SMB, a Execução de Atualização falhará.  
   
 #### <a name="step-5-enable-a-windows-firewall-rule-on-the-smb-server"></a>Etapa 5. Habilitar uma regra de Firewall do Windows no servidor SMB
   
-Você deve habilitar o **gerenciamento remoto do servidor de arquivos \(SMB\-na\)**  regra no Firewall do Windows no servidor de arquivos SMB. Isso é habilitado por padrão no Windows Server 2016, Windows Server 2012 R2 e Windows Server 2012.  
+Você deve habilitar o **SMB \(\-de gerenciamento remoto do servidor\) de arquivos em** regra no firewall do Windows no servidor de arquivos SMB. Isso é habilitado por padrão no Windows Server 2016, no Windows Server 2012 R2 e no Windows Server 2012.  
   
 ## <a name="see-also"></a>Consulte também  
   
 -   [Visão geral da atualização com suporte a cluster](cluster-aware-updating.md)
   
--   [Cluster-Aware atualização Cmdlets do Windows PowerShell](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating)  
+-   [Cmdlets de atualização do Windows PowerShell com suporte a cluster](https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating)  
   
--   [Cluster-Aware referência do plug-in de atualização](https://msdn.microsoft.com/library/hh418084.aspx)  
+-   [Referência de plug-in de atualização com suporte a cluster](https://msdn.microsoft.com/library/hh418084.aspx)  
   

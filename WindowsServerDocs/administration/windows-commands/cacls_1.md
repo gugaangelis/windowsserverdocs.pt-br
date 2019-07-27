@@ -1,6 +1,6 @@
 ---
 title: cacls
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 42f620a417f9d7bd06f779802e684e0196efc6a7
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d3c2ba6dca1797cda3851b3c270938d47828ed7a
+ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434595"
+ms.lasthandoff: 07/27/2019
+ms.locfileid: "68590395"
 ---
 # <a name="cacls"></a>cacls
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Exibe ou modifica listas de controle de acesso discricionário (DACL) em arquivos especificados.  
+Exibe ou modifica as listas de controle de acesso discricional (DACL) nos arquivos especificados.  
 ## <a name="syntax"></a>Sintaxe  
 ```  
 cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user [...]] [/p user:<perm> [...]] [/d user [...]]  
@@ -33,39 +33,39 @@ cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user 
 
 |        Parâmetro        |                                                                                            Descrição                                                                                             |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      \<filename\>       |                                                                            Obrigatório. Exibe as Acls de arquivos especificados.                                                                             |
-|           /t            |                                                          Altera as Acls de arquivos especificados no diretório atual e todos os subdiretórios.                                                          |
-|           /m            |                                                                          alterações de Acls de volumes montados em um diretório.                                                                           |
-|           /l            |                                                                        Trabalhar em um Link simbólico em si em comparação com o destino.                                                                         |
-|         /s:sddl         |                                       substitui as Acls com os especificados na cadeia de caracteres SDDL (não é válido com **/e**, **/g**, **/r**, **p**, ou **/d**).                                        |
-|           /e            |                                                                                 Edite a ACL em vez de substituí-lo.                                                                                  |
-|           /c            |                                                                                 Continue em erros de acesso negado.                                                                                  |
-|    /g user:\<perm\>     |   Concessão especificada direitos de acesso do usuário.<br /><br />Valores válidos para a permissão:<br /><br />-n - none<br />-r - leitura<br />-w - gravação<br />-c - alteração (gravação)<br />-f - controle total   |
-|      usuário /r [...]      |                                                                  Revogue os direitos de acesso do usuário especificado (válido somente com **/e**).                                                                   |
-| [usuário /p:\<perm\> [...] | Substitua os direitos de acesso do usuário especificado.<br /><br />Valores válidos para a permissão:<br /><br />-n - none<br />-r - leitura<br />-w - gravação<br />-c - alteração (gravação)<br />-f - controle total |
-|     [/d usuário [...]      |                                                                                    Nega acesso de usuário especificado.                                                                                     |
+|      \<filename\>       |                                                                            Obrigatório. Exibe ACLs de arquivos especificados.                                                                             |
+|           /t            |                                                          altera as ACLs de arquivos especificados no diretório atual e em todos os subdiretórios.                                                          |
+|           /m            |                                                                          altera as ACLs de volumes montados em um diretório.                                                                           |
+|           /l            |                                                                        Trabalhe no próprio link simbólico em relação ao destino.                                                                         |
+|         /s: SDDL         |                                       Substitui as ACLs pelas especificadas na cadeia de caracteres SDDL (não é válida com **/e**, **/g**, **/r**, **/p**ou **/d**).                                        |
+|           /e            |                                                                                 Edite a ACL em vez de substituí-la.                                                                                  |
+|           /c            |                                                                                 Continuar nos erros de acesso negado.                                                                                  |
+|    /g usuário:\<Perm\>     |   Conceda direitos de acesso de usuário especificados.<br /><br />Valores válidos para a permissão:<br /><br />-n-nenhum<br />-r-leitura<br />-w-gravação<br />-c-alterar (gravação)<br />-f-controle total   |
+|      /r usuário [...]      |                                                                  Revogar os direitos de acesso do usuário especificado (válido somente com **/e**).                                                                   |
+| [/p usuário:\<Perm\> [...] | substituir os direitos de acesso do usuário especificado.<br /><br />Valores válidos para a permissão:<br /><br />-n-nenhum<br />-r-leitura<br />-w-gravação<br />-c-alterar (gravação)<br />-f-controle total |
+|     [/d usuário [...]      |                                                                                    Negar acesso de usuário especificado.                                                                                     |
 |           /?            |                                                                                Exibe a ajuda no prompt de comando.                                                                                |
 
 ## <a name="remarks"></a>Comentários  
-- Esse comando foi preterido. Use [icacls](icacls.md) em vez disso.  
+- Este comando foi preterido. Em vez disso, use o [icacls](icacls.md) .  
 - Use a tabela a seguir para interpretar os resultados:  
 
 
-  |      Saída       |                Entrada de controle de acesso (ACE) aplica-se a                |
+  |      Output       |                A ACE (entrada de controle de acesso) aplica-se a                |
   |-------------------|---------------------------------------------------------------------|
-  |        OI         |               Herdar do objeto. Esta pasta e arquivos.                |
-  |        CI         |           Herdar do contêiner. Esta pasta e subpastas.            |
-  |        E/S         | Somente a herança. A ACE não se aplica ao arquivo/diretório atual. |
-  | Nenhuma mensagem de saída |                          Esta pasta somente.                          |
-  |     (OI) (CI)      |                 Essa pasta, subpastas e arquivos.                 |
-  |   (OI) (CI) (E/S)    |                     Apenas subpastas e arquivos.                      |
-  |     (CI) (E/S)      |                          Apenas subpastas.                           |
-  |     (OI) (E/S)      |                             Somente os arquivos.                             |
+  |        OI         |               Herança de objeto. Esta pasta e arquivos.                |
+  |        CI         |           Herança de contêiner. Esta pasta e subpastas.            |
+  |        E/S         | Herdar somente. A ACE não se aplica ao arquivo/diretório atual. |
+  | Nenhuma mensagem de saída |                          Somente esta pasta.                          |
+  |     OI CIS      |                 Esta pasta, subpastas e arquivos.                 |
+  |   OI CIS I    |                     Somente subpastas e arquivos.                      |
+  |     CIS I      |                          Somente subpastas.                           |
+  |     OI I      |                             Somente arquivos.                             |
 
 
-- Você pode usar curingas ( **?** e **\\** *) para especificar vários arquivos.  
+- Você pode usar curingas ( **?** **e\\) paraespecificarváriosarquivos.\***  
 - Você pode especificar mais de um usuário.  
 
-#### <a name="additional-references"></a>Referências adicionais  
+#### <a name="additional-references"></a>referências adicionais  
 -   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)   
 -   [icacls](icacls.md)  

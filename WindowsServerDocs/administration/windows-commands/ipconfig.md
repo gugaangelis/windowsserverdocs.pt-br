@@ -1,6 +1,6 @@
 ---
 title: ipconfig
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fff4e5088e3e08cf2e9e742d8fb6aa2187bb9e83
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 755daa246c62b7c58a130f151993cc4b070c387d
+ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438136"
+ms.lasthandoff: 07/27/2019
+ms.locfileid: "68590358"
 ---
 # <a name="ipconfig"></a>ipconfig
 
 
 
-Exibe todos os valores de configuração de rede TCP/IP e atualiza as configurações de protocolo de configuração de Host dinâmico (DHCP) e o sistema de nome de domínio (DNS). Usado sem parâmetros, **ipconfig** exibe o protocolo IP versão 4 (IPv4) e IPv6 endereços, máscara de sub-rede e gateway padrão para todos os adaptadores.
+Exibe todos os valores atuais de configuração de rede TCP/IP e atualiza as configurações de protocolo DHCP e DNS (sistema de nomes de domínio). Usado sem parâmetros, o **ipconfig** exibe endereços IPv4 (protocolo IP versão 4) e IPv6, máscara de sub-rede e gateway padrão para todos os adaptadores.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,28 +36,28 @@ ipconfig [/allcompartments] [/all] [/renew [<Adapter>]] [/release [<Adapter>]] [
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/all|Exibe a configuração de TCP/IP completa para todos os adaptadores. Os adaptadores podem representar interfaces físicas, como adaptadores de rede instalados, ou interfaces lógicas, como conexões dial-up.|
+|/All|Exibe a configuração de TCP/IP completa para todos os adaptadores. Os adaptadores podem representar interfaces físicas, como adaptadores de rede instalados, ou interfaces lógicas, como conexões dial-up.|
 |/allcompartments|Exibe a configuração de TCP/IP completa para todos os compartimentos.|
-|/displaydns|Exibe o conteúdo do cache do resolvedor DNS client, que inclui entradas pré-carregadas a partir do arquivo Hosts local e qualquer adquiriu recentemente a registros de recursos para consultas de nome resolvidos pelo computador. O serviço cliente DNS usa essas informações para resolver nomes consultados com frequência rapidamente, antes de consultar os servidores DNS configurados.|
-|/flushdns|Libera e redefine o conteúdo do cache do resolvedor de cliente DNS. Durante a solução de problemas de DNS, você pode usar este procedimento para descartar entradas de cache negativo do cache, bem como quaisquer outras entradas que foram adicionadas dinamicamente.|
-|/registerdns|Inicia o registro dinâmico manual de nomes DNS e endereços IP que são configurados em um computador. Você pode usar esse parâmetro para solucionar problemas de registro de nome DNS com falha ou resolver um problema de atualização dinâmica entre um cliente e o servidor DNS sem reinicializar o computador cliente. As configurações de DNS nas propriedades avançadas do protocolo TCP/IP determinam quais nomes estão registrados no DNS.|
-|/ versão [\<adaptador >]|Envia uma mensagem DHCPRELEASE ao servidor DHCP para liberar a configuração DHCP atual e descartar a configuração do endereço IP para todos os adaptadores (se um adaptador não for especificado) ou para um adaptador específico se o *adaptador* parâmetro seja incluído. Esse parâmetro desabilita o TCP/IP para adaptadores configurados para obter um endereço IP automaticamente. Para especificar um nome de adaptador, digite o nome do adaptador que aparece quando você usa **ipconfig** sem parâmetros.|
-|/release6[\<Adapter>]|Envia uma mensagem DHCPRELEASE para o servidor DHCPv6 para liberar a configuração DHCP atual e descartar a configuração do endereço IPv6 para todos os adaptadores (se um adaptador não for especificado) ou para um adaptador específico se o *adaptador* parâmetro seja incluído. Esse parâmetro desabilita o TCP/IP para adaptadores configurados para obter um endereço IP automaticamente. Para especificar um nome de adaptador, digite o nome do adaptador que aparece quando você usa **ipconfig** sem parâmetros.|
-|/ Renovar [\<adaptador >]|Atualiza a configuração de DHCP para todos os adaptadores (se um adaptador não for especificado) ou para um adaptador específico se o *adaptador* parâmetro seja incluído. Esse parâmetro está disponível somente em computadores com adaptadores configurados para obter um endereço IP automaticamente. Para especificar um nome de adaptador, digite o nome do adaptador que aparece quando você usa **ipconfig** sem parâmetros.|
-|/renew6 [\<adaptador >]|Renova a configuração de DHCPv6 para todos os adaptadores (se um adaptador não for especificado) ou para um adaptador específico se o *adaptador* parâmetro seja incluído. Esse parâmetro está disponível somente em computadores com adaptadores configurados para obter um endereço IPv6 automaticamente. Para especificar um nome de adaptador, digite o nome do adaptador que aparece quando você usa **ipconfig** sem parâmetros.|
-|/setclassid \<Adapter>[ <ClassID>]|Configura a identificação de classe do DHCP para um adaptador especificado. Para definir a ID de classe do DHCP para todos os adaptadores, use o asterisco ( **&#42;** ) o caractere curinga no lugar de *adaptador*. Esse parâmetro está disponível somente em computadores com adaptadores configurados para obter um endereço IP automaticamente. Se uma ID de classe do DHCP não for especificada, a ID de classe atual é removida.|
-|/showclassid \<adaptador >|Exibe a ID de classe do DHCP para um adaptador especificado. Para ver a ID de classe do DHCP para todos os adaptadores, use o asterisco ( **&#42;** ) o caractere curinga no lugar de *adaptador*. Esse parâmetro está disponível somente em computadores com adaptadores configurados para obter um endereço IP automaticamente.|
+|/displaydns|Exibe o conteúdo do cache do resolvedor de cliente DNS, que inclui as entradas pré-carregadas a partir do arquivo hosts local e quaisquer registros de recursos obtidos recentemente para consultas de nome resolvidas pelo computador. O serviço cliente DNS usa essas informações para resolver rapidamente nomes consultados com frequência, antes de consultar seus servidores DNS configurados.|
+|/flushdns|Libera e redefine o conteúdo do cache do resolvedor de cliente DNS. Durante a solução de problemas de DNS, você pode usar este procedimento para descartar entradas de cache negativas do cache, bem como quaisquer outras entradas que foram adicionadas dinamicamente.|
+|/registerdns|Inicia o registro dinâmico manual para os nomes DNS e endereços IP configurados em um computador. Você pode usar esse parâmetro para solucionar problemas de um registro de nome DNS com falha ou resolver um problema de atualização dinâmica entre um cliente e o servidor DNS sem reinicializar o computador cliente. As configurações de DNS nas propriedades avançadas do protocolo TCP/IP determinam quais nomes são registrados no DNS.|
+|/Release [\<adaptador >]|Envia uma mensagem DHCPRELEASE ao servidor DHCP para liberar a configuração do DHCP atual e descartar a configuração do endereço IP para todos os adaptadores (se um adaptador não for especificado) ou para um adaptador específico se o parâmetro do *adaptador* estiver incluído. Esse parâmetro desabilita o TCP/IP para adaptadores configurados para obter um endereço IP automaticamente. Para especificar um nome de adaptador, digite o nome do adaptador que aparece quando você usa **ipconfig** sem parâmetros.|
+|/release6 [\<adaptador >]|Envia uma mensagem DHCPRELEASE ao servidor DHCPv6 para liberar a configuração do DHCP atual e descartar a configuração do endereço IPv6 para todos os adaptadores (se um adaptador não for especificado) ou para um adaptador específico se o parâmetro do *adaptador* estiver incluído. Esse parâmetro desabilita o TCP/IP para adaptadores configurados para obter um endereço IP automaticamente. Para especificar um nome de adaptador, digite o nome do adaptador que aparece quando você usa **ipconfig** sem parâmetros.|
+|/Renew [\<adaptador >]|Renova a configuração do DHCP para todos os adaptadores (se um adaptador não for especificado) ou para um adaptador específico se o parâmetro do *adaptador* estiver incluído. Esse parâmetro está disponível somente em computadores com adaptadores configurados para obter um endereço IP automaticamente. Para especificar um nome de adaptador, digite o nome do adaptador que aparece quando você usa **ipconfig** sem parâmetros.|
+|/renew6 [\<adaptador >]|Renova a configuração de DHCPv6 para todos os adaptadores (se um adaptador não for especificado) ou para um adaptador específico se o parâmetro do *adaptador* estiver incluído. Esse parâmetro está disponível somente em computadores com adaptadores configurados para obter um endereço IPv6 automaticamente. Para especificar um nome de adaptador, digite o nome do adaptador que aparece quando você usa **ipconfig** sem parâmetros.|
+|> \<do adaptador/setclassid <ClassID>[]|Configura a ID de classe DHCP para um adaptador especificado. Para definir a ID de classe DHCP para todos os adaptadores, use **&#42;** o caractere curinga asterisco () no lugar do *adaptador*. Esse parâmetro está disponível somente em computadores com adaptadores configurados para obter um endereço IP automaticamente. Se uma ID de classe DHCP não for especificada, a ID de classe atual será removida.|
+|> \<do adaptador/showclassid|Exibe a ID de classe DHCP para um adaptador especificado. Para ver a ID de classe DHCP para todos os adaptadores, use **&#42;** o caractere curinga asterisco () no lugar do *adaptador*. Esse parâmetro está disponível somente em computadores com adaptadores configurados para obter um endereço IP automaticamente.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
-- Esse comando é muito útil em computadores que estão configurados para obter um endereço IP automaticamente. Isso permite que os usuários determinar quais valores de configuração de TCP/IP foram configurados pelo DHCP, o endereçamento IP privado automático (APIPA) ou uma configuração alternativa.
-- Se o nome que você fornecer para *adaptador* contiver espaços, use aspas ao redor do nome do adaptador (exemplo: **"** <em>Nome do adaptador</em> **"** ).
-- Para nomes de adaptador **ipconfig** oferece suporte ao uso do asterisco ( *) caractere curinga para especificar qualquer um dos adaptadores com nomes que começam com uma cadeia de caracteres especificada ou adaptadores com nomes que contêm uma cadeia de caracteres especificada. Por exemplo, **Local\\** *   corresponde a todos os adaptadores que começam com a cadeia de caracteres Local e  **\*Con\\** * corresponde a todos os adaptadores que contêm o cadeia de caracteres de Con.
+- Esse comando é mais útil em computadores configurados para obter um endereço IP automaticamente. Isso permite que os usuários determinem quais valores de configuração de TCP/IP foram configurados pelo DHCP, pelo APIPA (endereçamento IP privado automático) ou por uma configuração alternativa.
+- Se o nome que você fornecer para o *adaptador* contiver espaços, use aspas em volta do nome do adaptador (exemplo: **"** <em>Nome do adaptador</em> **"** ).
+- Para nomes de adaptador, o **ipconfig** dá suporte ao uso do\*caractere curinga asterisco () para especificar os adaptadores com nomes que começam com uma cadeia de caracteres especificada ou adaptadores com nomes que contêm uma cadeia de caracteres especificada. Por exemplo, **local\***  corresponde a todos os adaptadores que começam com a cadeia de caracteres local e **\*con\*** corresponde a todos os adaptadores que contêm a cadeia de caracteres con.
 
 ## <a name="examples"></a>Exemplos
 
-Para exibir a configuração básica do TCP/IP para todos os adaptadores, digite:
+Para exibir a configuração básica de TCP/IP para todos os adaptadores, digite:
 ```
 ipconfig
 ```
@@ -65,19 +65,19 @@ Para exibir a configuração de TCP/IP completa para todos os adaptadores, digit
 ```
 ipconfig /all
 ```
-Para renovar uma configuração de endereço IP atribuído pelo DHCP para apenas o adaptador de Conexão de área Local, digite:
+Para renovar uma configuração de endereço IP atribuída pelo DHCP somente para o adaptador de conexão de área local, digite:
 ```
 ipconfig /renew "Local Area Connection"
 ```
-Para liberar o cache do resolvedor DNS ao solucionar problemas de resolução de nomes DNS, digite:
+Para liberar o cache do resolvedor de DNS ao solucionar problemas de resolução de nomes DNS, digite:
 ```
 ipconfig /flushdns
 ```
-Para exibir a ID de classe do DHCP para todos os adaptadores com nomes que começam com o Local, digite:
+Para exibir a ID de classe DHCP para todos os adaptadores com nomes que começam com local, digite:
 ```
 ipconfig /showclassid Local*
 ```
-Para definir a ID de classe do DHCP para o adaptador de Conexão de área Local para teste, digite:
+Para definir a ID de classe DHCP para o adaptador de conexão de área local a ser TESTada, digite:
 ```
 ipconfig /setclassid "Local Area Connection" TEST
 ```

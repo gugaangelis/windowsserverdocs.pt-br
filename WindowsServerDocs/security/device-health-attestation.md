@@ -10,12 +10,12 @@ ms.topic: article
 ms.assetid: 8e7b77a4-1c6a-4c21-8844-0df89b63f68d
 author: brianlic-msft
 ms.date: 10/12/2016
-ms.openlocfilehash: 4ee77fba1e82179f6998959b494628e97ac23390
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 888992366f8a722c4834f23e08a393c829b47a26
+ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284223"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68544630"
 ---
 # <a name="device-health-attestation"></a>Atestado de integridade de dispositivo
 
@@ -35,7 +35,7 @@ A partir do Windows Server 2016, é possível executar o serviço de DHA como um
 
 Você pode usar o DHA para avaliar a integridade do dispositivo para:
   
--   Dispositivos Windows 10 e Windows 10 Mobile que oferecem suporte a TPM 1.2 ou 2.0.  
+-   Dispositivos Windows 10 e Windows 10 Mobile que dão suporte ao TPM 1,2 ou 2,0.  
 -   Dispositivos locais que são gerenciados por meio do Active Directory com acesso à Internet, dispositivos que são gerenciados por meio do Active Directory sem acesso à Internet, dispositivos gerenciados pelo Azure Active Directory ou uma implantação híbrida usando o Active Directory e o Azure Active Directory.
 
 
@@ -98,7 +98,7 @@ Quando o DHA está em execução no modo de validação EKCert, ele depende de u
 
 A Microsoft publica pacotes agregados de raízes confiáveis e autoridade de certificação intermediárias para fabricantes de TPM aprovados (quando estiverem disponíveis) em um arquivo morto acessível publicamente no arquivo .cab. Você precisa baixar o feed, validar sua integridade e instalá-lo no servidor que executa o Atestado de Integridade do Dispositivo.
 
-Um arquivo de exemplo [ https://tpmsec.microsoft.com/OnPremisesDHA/TrustedTPM.cab ](https://tpmsec.microsoft.com/OnPremisesDHA/TrustedTPM.cab).
+Um arquivo morto de [https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)exemplo é.
 
 #### <a name="aikcert-validation-mode"></a>Modos de validação de AIKCert
 
@@ -147,7 +147,7 @@ Depois de instalar o Windows Server 2016, o dispositivo é reiniciado e abre o G
 
 ### <a name="install-the-signing-and-encryption-certificates"></a>Instalar os certificados de autenticação e criptografia
 
-Use o seguinte script do Windows PowerShell para instalar os certificados de autenticação e criptografia. Para obter mais informações sobre a impressão digital, consulte [como: Recuperar a impressão digital de um certificado](https://msdn.microsoft.com/library/ms734695.aspx).
+Use o seguinte script do Windows PowerShell para instalar os certificados de autenticação e criptografia. Para obter mais informações sobre a impressão digital [, consulte Como: Recupere a impressão digital de um](https://msdn.microsoft.com/library/ms734695.aspx)certificado.
 
 ```
 $key = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Thumbprint -like "<thumbprint>"}
@@ -165,9 +165,9 @@ Para instalar o pacote de certificado raiz confiável de TPM, é preciso extraí
 
 #### <a name="download-the-trusted-tpm-roots-certificate-package"></a>Baixar o pacote de certificado raiz confiável de TPM
 
-Antes de instalar o pacote de certificado, você pode baixar a lista mais recente de raízes confiáveis de TPM [ https://tpmsec.microsoft.com/OnPremisesDHA/TrustedTPM.cab ](https://tpmsec.microsoft.com/OnPremisesDHA/TrustedTPM.cab).
+Antes de instalar o pacote de certificado, você pode baixar a lista mais recente de raízes TPM [https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)confiáveis do.
 
-> **Importante:** Antes de instalar o pacote, verifique se que ele é assinado digitalmente pela Microsoft.
+> **Importante:** Antes de instalar o pacote, verifique se ele foi assinado digitalmente pela Microsoft.
 
 #### <a name="extract-the-trusted-certificate-package"></a>Extrair o pacote de certificado confiável
 Extraia o pacote de certificado confiável executando os comandos a seguir.
@@ -180,7 +180,7 @@ expand -F:* .\TrustedTpm.cab .\TrustedTpm
 
 Exclua as pastas de quaisquer cadeias de confiança de fornecedor de TPM que não são confiáveis para sua organização.
 
-> **Observação:** Se usar o modo de certificado AIK, a pasta Microsoft é necessária para validar certificados AIK emitidos pela Microsoft.
+> **Observação:** Se estiver usando o modo de certificado do AIK, a pasta da Microsoft será necessária para validar os certificados do AIK emitidos pela Microsoft.
 
 #### <a name="install-the-trusted-certificate-package"></a>Instalar o pacote de certificado confiável
 Instale o pacote de certificado confiável executando o script de instalação do arquivo .cab.
@@ -238,7 +238,7 @@ Get-DHASActiveSigningCertificate
 Set-DHASActiveSigningCertificate -Thumbprint "<hex>" -Force
 ```
 
-> **Observação:** Esse certificado deve ser implantado no servidor que executa o serviço DHA **LocalMachine\My** repositório de certificados. Quando o certificado de autenticação ativo estiver definido, o certificado de autenticação ativo existente será movido para a lista de certificados de autenticação inativos.
+> **Observação:** Esse certificado deve ser implantado no servidor que executa o serviço do DHA no repositório de certificados do **LocalMachine\My** . Quando o certificado de autenticação ativo estiver definido, o certificado de autenticação ativo existente será movido para a lista de certificados de autenticação inativos.
 
 ### <a name="list-the-inactive-signing-certificates"></a>Listar os certificados de autenticação inativos
 ```

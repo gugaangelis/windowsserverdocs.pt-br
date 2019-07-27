@@ -1,6 +1,6 @@
 ---
 title: mountvol
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 03e7cefc7c7a00338972fc365b7c25d9c795c83e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 07c57f7ab9c41d6155e4a8d38322176aabf3868f
+ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437285"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68544599"
 ---
 # <a name="mountvol"></a>mountvol
 
@@ -42,26 +42,26 @@ mountvol <Drive>: /s
 
 ## <a name="parameters"></a>Parâmetros
 
-|     Parâmetro     |                                                                                                                           Descrição                                                                                                                            |
-|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [\<Drive>:]<Path> |                                                                                             Especifica a pasta NTFS existente em que o ponto de montagem residirá.                                                                                             |
-|   \<VolumeName>   |                     Especifica o nome do volume que é o destino do ponto de montagem. O nome do volume usa a sintaxe a seguir, onde *GUID* é um identificador globalmente exclusivo:</br>`\\\\?\Volume\{GUID}\`</br>O {} colchetes são necessários.                      |
-|        /d         |                                                                                                    Remove o ponto de montagem do volume da pasta especificada.                                                                                                     |
-|        /l         |                                                                                                     Lista o nome do volume montado para a pasta especificada.                                                                                                      |
-|        /p         | Remove o ponto de montagem de volume do diretório especificado, desmonta o volume básico e coloca o volume básico off-line, tornando-o não montado. Se outros processos estão usando o volume **mountvol** fecha os identificadores abertos antes de desmontar o volume. |
-|        /r         |             Remove os diretórios de ponto de montagem de volume e configurações do registro para volumes que não estão mais no sistema, impedindo que sejam montados automaticamente e recebam seu antigo montagem de volume (s) quando adicionado de volta ao sistema.              |
-|        /n         |                                                                      Desabilita a montagem automática de novos volumes básicos. Novos volumes não são montados automaticamente quando adicionados ao sistema.                                                                       |
-|        /e         |                                                                                                       Habilita novamente a montagem automática de novos volumes básicos.                                                                                                        |
-|        /s         |                                                                                Monta a partição do sistema EFI na unidade especificada. Disponível em apenas a computadores baseados em Itanium.                                                                                |
-|        /?         |                                                                                                               Exibe a ajuda no prompt de comando.                                                                                                               |
+|Parâmetro|Descrição|
+|---------|-----------|
+|[\<Unidade >:]<Path>|Especifica o diretório NTFS existente no qual o ponto de montagem residirá.|
+|\<VolumeName >|Especifica o nome do volume que é o destino do ponto de montagem. O nome do volume usa a seguinte sintaxe, em que *GUID* é um identificador globalmente exclusivo:</br>`\\\\?\Volume\{GUID}\`</br>Os colchetes {} são necessários.|
+|/d|Remove o ponto de montagem de volume da pasta especificada.|
+|/l|Lista o nome do volume montado para a pasta especificada.|
+|/p|Remove o ponto de montagem de volume do diretório especificado, desmonta o volume básico e coloca o volume básico offline, tornando-o não montável. Se outros processos estiverem usando o volume, o **Mountvol** fechará qualquer identificador aberto antes de desmontar o volume.|
+|/r|Remove os diretórios de ponto de montagem de volume e configurações de registro para volumes que não estão mais no sistema, impedindo que eles sejam montados automaticamente e recebam seus antigos pontos de montagem de volume quando forem adicionados de volta ao sistema.|
+|opção|Desabilita a montagem automática de novos volumes básicos. Novos volumes não são montados automaticamente quando adicionados ao sistema.|
+|/e|Habilita novamente a montagem automática de novos volumes básicos.|
+|/s|Monta a partição do sistema EFI na unidade especificada.|
+|/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
--   **Mountvol** permite que você vincule volumes sem a necessidade de uma letra de unidade.
--   Volumes que são desmontados por meio **/p** são listados na lista de volumes, como "Não MOUNTED até um VOLUME de ponto de montagem é criado." Se o volume tiver mais de uma montagem de ponto, use **/d** para remover os pontos de montagem adicionais antes de usar **p**. Você pode tornar o volume básico montável novamente atribuindo um ponto de montagem de volume.
--   Se você precisar expandir o espaço do volume sem reformatar ou substituir um disco rígido, você pode adicionar um caminho de montagem para outro volume. A vantagem de usar um volume com vários caminhos de montagem é que você pode acessar todos os volumes locais usando uma única letra de unidade (como `C:`). Você não precisa se lembrar que volume corresponde a qual letra de unidade — Embora você ainda pode montar volumes locais e atribuí-los em letras de unidade.
+-   O **Mountvol** permite vincular volumes sem a necessidade de uma letra de unidade.
+-   Os volumes desmontados usando **/p** são listados na lista volumes como "não montado até que um ponto de montagem de volume seja criado". Se o volume tiver mais de um ponto de montagem, use **/d** para remover os pontos de montagem adicionais antes de usar **/p**. Você pode tornar o volume básico montável novamente atribuindo um ponto de montagem de volume.
+-   Se você precisar expandir o espaço do volume sem reformatar ou substituir um disco rígido, poderá adicionar um caminho de montagem a outro volume. O benefício de usar um volume com vários caminhos de montagem é que você pode acessar todos os volumes locais usando uma única letra de unidade ( `C:`como). Você não precisa se lembrar de qual volume corresponde a qual letra de unidade — embora ainda possa montar volumes locais e atribuir a eles letras de unidade.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 Para criar um ponto de montagem, digite:
 ```

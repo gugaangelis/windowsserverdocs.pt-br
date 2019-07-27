@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 5ef487ce9799c1f09660cdfcd6fba71336fc4d9a
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8371a67ba1b8dc7d5f02272c809f916aae3df584
+ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66442142"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68544556"
 ---
 # <a name="prompt"></a>prompt
 
 
 
-Altera o prompt de comando Cmd.exe. Se usado sem parâmetros, **prompt** redefine o prompt de comando para a configuração padrão, que é a letra da unidade atual e o diretório seguido pelo maior que o símbolo ( **>** ).
+Altera o prompt de comando cmd. exe. Se usado sem parâmetros, **prompt** redefine o prompt de comando para a configuração padrão, que é a letra da unidade e o diretório atuais seguidos pelo símbolo **>** maior que ().
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -38,60 +38,60 @@ prompt [<Text>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Text>|Especifica o texto e as informações que você deseja incluir no prompt de comando.|
+|\<> De texto|Especifica o texto e as informações que você deseja incluir no prompt de comando.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
-Você pode personalizar o prompt de comando para exibir qualquer texto que você deseja, incluindo informações como o nome da pasta atual, a hora e data e o número de versão do Microsoft Windows.
+Você pode personalizar o prompt de comando para exibir qualquer texto desejado, incluindo informações como o nome do diretório atual, a hora e a data e o número de versão do Microsoft Windows.
 
-A tabela a seguir lista as combinações de caracteres que podem ser incluídas em vez de ou além dele, um ou mais cadeias de caracteres na *texto* parâmetro. A lista inclui uma breve descrição do texto ou informações que cada combinação de caracteres adiciona ao prompt de comando.  
+A tabela a seguir lista as combinações de caracteres que você pode incluir em vez de, ou além, uma ou mais cadeias de caracteres no parâmetro de *texto* . A lista inclui uma breve descrição do texto ou das informações que cada combinação de caracteres adiciona ao seu prompt de comando.  
 
-| Caractere |                                 Descrição                                 |
+| Espaço |                                 Descrição                                 |
 |-----------|-----------------------------------------------------------------------------|
 |    $q     |                               = (sinal de igual)                                |
 |    $$     |                               $ (cifrão)                               |
 |    $t     |                                Hora atual                                 |
 |    $d     |                                Data atual                                 |
-|    $p     |                           Caminho e a unidade atual                            |
+|    $p     |                           Unidade e caminho atuais                            |
 |    $v     |                           Número de versão do Windows                            |
 |    $n     |                                Unidade atual                                |
 |    $g     |                            > (sinal de maior que)                            |
 |    $l     |                             < (sinal de menor que)                              |
-|    $b     |                                                                             |
-|    $_     |                               INSIRA E AVANÇO DE LINHA                                |
+|    $b     |                              \|(símbolo de pipe)                               |
+|    $_     |                               INSERIR ALIMENTAÇÃO DE DISCAGEM                                |
 |    $e     |                         Código de escape ANSI (código 27)                          |
-|    $h     | Backspace (para excluir um caractere que foi escrito para a linha de comando) |
+|    $h     | Backspace (para excluir um caractere que foi gravado na linha de comando) |
 |    $a     |                                & (e comercial)                                |
-|    $c     |                            ((parêntese esquerdo)                             |
+|    $c     |                            (parêntese esquerdo)                             |
 |    $f     |                            ) (parêntese direito)                            |
-|    $s     |                                    Espaço                                    |
+|    $s     |                                    disco                                    |
 
-Quando as extensões de comando estão habilitadas (ou seja, o padrão) a **prompt** comando dá suporte a caracteres de formatação a seguir:  
+Quando as extensões de comando são habilitadas (ou seja, o padrão), o comando de **prompt** dá suporte aos seguintes caracteres de formatação:  
 
-|Caractere|Descrição|
+|Espaço|Descrição|
 |---------|-----------|
-|$+|Sinal de adição de zero ou mais ( **+** ) caracteres, dependendo da profundidade do **pushd** pilha de diretório (um caractere para cada nível enviados por push).|
-|$m|O nome remoto associado com a letra da unidade atual ou a cadeia de caracteres vazia se a unidade atual não é uma unidade de rede.|
+|$+|Zero ou mais caracteres de sinal **+** de adição (), dependendo da profundidade da pilha de diretórios **PUSHD** (um caractere para cada nível enviado).|
+|$m|O nome remoto associado à letra da unidade atual ou à cadeia de caracteres vazia se a unidade atual não for uma unidade de rede.|
 
-Se você incluir a **$p** caracteres no parâmetro de texto, o disco será lido depois que você insere cada comando (para determinar a unidade atual e o caminho). Isso pode levar mais tempo, especialmente para unidades de disquete.
+Se você incluir o caractere de **$p** no parâmetro de texto, o disco será lido depois que você inserir cada comando (para determinar a unidade e o caminho atuais). Isso pode levar mais tempo, especialmente para unidades de disquete.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para definir um prompt de comando de duas linhas com a data e hora atual na primeira linha e o sinal maior que na próxima linha, digite:
+Para definir um prompt de comando de duas linhas com a hora e a data atuais na primeira linha e o sinal de maior que na próxima linha, digite:
 ```
 prompt $d$s$s$t$_$g 
 ```
-O prompt é alterado da seguinte maneira, em que a data e hora são atuais:
+O prompt é alterado da seguinte maneira, em que a data e a hora são atuais:
 ```
 Fri 06/01/2007  13:53:28.91
 >
 ```
-Para definir o prompt de comando para exibir como uma seta (`-->`), digite:
+Para definir o prompt de comando para exibir como uma seta`-->`(), digite:
 ```
 prompt --$g
 ```
-Para alterar manualmente o prompt de comando para a configuração padrão (a unidade atual e o caminho seguido o sinal maior que), digite:
+Para alterar manualmente o prompt de comando para a configuração padrão (a unidade e o caminho atuais seguidos pelo sinal de maior que), digite:
 ```
 prompt $p$g
 ```
