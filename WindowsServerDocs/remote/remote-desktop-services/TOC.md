@@ -66,13 +66,21 @@
 
 ## [Suporte adicional para Área de Trabalho Remota](rds-get-support.md)
 ## [Clientes da Área de Trabalho Remota](clients/remote-desktop-clients.md)
+### Problemas conhecidos da Área de Trabalho Remota
+#### [Solução de problemas gerais de conexão de Área de Trabalho Remota](troubleshoot/rdp-error-general-troubleshooting.md)
+#### [Os clientes não podem se conectar e recebem o erro "Classe não registrada"](troubleshoot/rdp-error-class-not-registered.md).
+#### [Os clientes não podem se conectar e veem o erro "Nenhuma licença disponível"](troubleshoot/rdp-error-no-licenses-available.md)
+#### [O usuário não pode se autenticar ou deve se autenticar duas vezes](troubleshoot/cannot-authenticate-or-must-authenticate-twice.md)
+#### [Erro "O serviço de Área de Trabalho Remota está ocupado no momento" ao se conectar](troubleshoot/remote-desktop-service-currently-busy.md)
+#### [O cliente de Área de Trabalho Remota se desconecta e não pode se reconectar à mesma sessão](troubleshoot/rdp-client-disconnects-cannot-reconnect-same-session.md)
+#### [Um laptop remoto se desconecta da rede sem fio](troubleshoot/remote-laptop-disconnects-wireless-network.md)
+#### [Desempenho ruim ou problemas com o aplicativo durante a conexão de área de trabalho remota](troubleshoot/poor-performance-or-application-problems.md)
 ### Informações gerais
 #### [Qual cliente funciona melhor para você?](clients/remote-desktop-app-compare.md)
 #### [Configurações de arquivo RDP da Área de Trabalho Remota](clients/rdp-files.md)
 #### [Esquema de URI de Área de Trabalho Remota](clients/remote-desktop-uri.md)
 #### [Perguntas frequentes sobre o cliente da Área de Trabalho Remota](clients/remote-desktop-client-faq.md)
 #### [Configurações de privacidade para aplicativos gerenciados e áreas de trabalho](clients/remote-privacy-settings.md)
-#### [Como solucionar problemas de Conexões de Área de Trabalho Remota](clients/troubleshoot-remote-desktop-connections.md)
 ### Cliente de Área de Trabalho Remota para Windows
 #### [Introdução](clients/windows.md)
 #### [Novidades do cliente do Windows](clients/windows-whatsnew.md)
