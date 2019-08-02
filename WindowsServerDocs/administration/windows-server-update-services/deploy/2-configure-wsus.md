@@ -301,7 +301,7 @@ Vincule esse GPO do WSUS a um contêiner do Active Directory apropriado para seu
 
 8.  No painel de detalhes do **Windows Update** , clique duas vezes em **Especificar o local do serviço de atualização na intranet da Microsoft**.
 
-9. Clique em **Habilitado** e, em seguida, no servidor nas caixas de texto **Definir o serviço intranet de atualização para detectar atualizações** e **Definir o servidor de estatísticas da intranet** Por exemplo, digite *http://servername* as duas caixas (em  que ServerName é o nome do servidor do WSUS).
+9. Clique em **Habilitado** e, em seguida, no servidor nas caixas de texto **Definir o serviço intranet de atualização para detectar atualizações** e **Definir o servidor de estatísticas da intranet** Por exemplo, digite *http://servername* as duas caixas (em que ServerName é o nome do servidor do WSUS).
 
     > [!WARNING]
     > Ao digitar o endereço da intranet do servidor do WSUS, verifique se especificou qual porta será usada. Por padrão, o WSUS usará a porta 8530 para HTTP, e 8531 para HTTPS. Por exemplo, se você estiver usando HTTP, deverá digitar **http://servername:8530** .
@@ -389,7 +389,7 @@ O WSUS requer duas portas para o SSL: uma porta que usa HTTPS para enviar metada
 
 2.  Vá para **Iniciar**, digite **cmd**, clique com o botão direito do mouse em **prompt de comando**e clique em **Executar como administrador**.
 
-3.  Navegue até a *%ProgramFiles%* **\Update services\tools.\\* * pasta.
+3.  Navegue até a *%ProgramFiles%* **\Update services\tools\\* * pasta.
 
 4.  Na janela do prompt de comando, digite o seguinte comando:
 
