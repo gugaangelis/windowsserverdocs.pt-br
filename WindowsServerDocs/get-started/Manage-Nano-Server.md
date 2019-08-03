@@ -13,10 +13,10 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 165b7e7aea7a7d0bb56d21f350f6ee646d5fa973
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
+ms.lasthandoff: 07/31/2019
 ms.locfileid: "67280406"
 ---
 # <a name="manage-nano-server"></a>Gerenciar o Nano Server
@@ -24,7 +24,7 @@ ms.locfileid: "67280406"
 >Aplica-se a: Windows Server 2016
 
 > [!IMPORTANT]
-> Começando com o Windows Server, versão 1709, o Nano Server estará disponível somente como uma [imagem de sistema operacional base do contêiner](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Confira [Mudanças no Nano Server](nano-in-semi-annual-channel.md) para saber o que isso significa.   
+> A partir do Windows Server, versão 1709, o Nano Server estará disponível somente como uma [imagem do sistema operacional de base de contêiner](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Confira [Mudanças no Nano Server](nano-in-semi-annual-channel.md) para saber o que isso significa.   
 
 O Nano Server é gerenciado remotamente. Não há nenhum recurso de logon local, nem suporte aos Serviços de Terminal. No entanto, há diversas opções de gerenciamento do Nano Server remotamente, incluindo o Windows PowerShell, WMI (Instrumentação de Gerenciamento do Windows), Gerenciamento Remoto do Windows e EMS (serviços de gerenciamento de emergência).  
 
@@ -40,7 +40,7 @@ Para usar qualquer ferramenta de gerenciamento remoto, você provavelmente preci
 Para gerenciar o Nano Server com a comunicação remota do Windows PowerShell, é necessário adicionar o endereço IP do Nano Server à lista de hosts confiáveis do seu computador de gerenciamento, adicionar a conta que você está usando para os administradores do Nano Server e ativar o CredSSP se quiser usar esse recurso.  
 
 > [!NOTE]
-> Se o Nano Server de destino e o computador de gerenciamento estiverem na mesma floresta do AD DS (ou em florestas com uma relação de confiança), você não deverá adicionar o Nano Server à lista de hosts confiáveis, você pode se conectar ao Nano Server usando seu nome de domínio totalmente qualificado, por exemplo: PS C:\> Enter-PSSession -ComputerName nanoserver.contoso.com -Credential (Get-Credential)
+> Se o Nano Server de destino e o computador de gerenciamento estiverem na mesma floresta de AD DS (ou em florestas com uma relação de confiança), você não deverá adicionar o Nano Server à lista de hosts confiáveis. É possível conectar ao Nano Server usando o nome de domínio totalmente qualificado, por exemplo: PS C:\> Enter-PSSession -ComputerName nanoserver.contoso.com -Credential (Get-Credential)
   
   
 Para adicionar o Nano Server à lista de hosts confiáveis, execute este comando em um prompt com privilégios elevados do Windows PowerShell:  
