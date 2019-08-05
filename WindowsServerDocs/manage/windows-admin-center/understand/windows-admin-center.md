@@ -8,12 +8,12 @@ ms.author: harowl
 ms.date: 06/20/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: ca845e527d2469921c6248552f003c51bbc790a6
-ms.sourcegitcommit: 078304c4b92bb57eb85ba29634afc92cc028c644
+ms.openlocfilehash: 59668e548f2e61cc7497e807dd93aae5c16798ca
+ms.sourcegitcommit: bd5f82f1e534dbb01b8e19e83a23759ebc92b81a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67298151"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68757459"
 ---
 # <a name="hello-windows-admin-center"></a>Olá, Windows Admin Center!
 
@@ -25,7 +25,7 @@ O Windows Admin Center é um aplicativo baseado em navegador implantado localmen
 
 [Qual versão é a certa para mim?](faq.md#what-is-windows-admin-center-preview-which-version-is-right-for-me)
 
-[Windows Admin Center **Versão Prévia** 1906](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) – Inclui as atualizações de recurso mais recentes.
+[**Versão prévia**do Windows Admin Center 1907](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) – Inclui as atualizações de recursos mais recentes.
 
 [Windows Admin Center (versão 1904.1)](https://aka.ms/WACDownload) – Amplamente validado e em disponibilidade geral.
 
@@ -37,7 +37,7 @@ O Windows Admin Center é um aplicativo baseado em navegador implantado localmen
 
 |     |     |
 | --- | --- |
-| ![](../media/simple-icon.png)| **Simples e leve** <br/> As ferramentas familiares são simplificadas para facilitar as tarefas de gerenciamento. Instale em menos de dez minutos e gerencie os servidores no seu ambiente imediatamente, sem precisar de configuração de destino. |
+| ![](../media/simple-icon.png)| **Simples e leve** <br/> As ferramentas familiares são simplificadas para facilitar as tarefas de gerenciamento. Instale em menos de cinco minutos e gerencie os servidores no seu ambiente imediatamente, sem precisar de configuração de destino. |
 | ![](../media/future-icon.png)| **Criado para durar** <br/> A integração com serviços do Azure ajuda você a aproveitar o potencial do mundo híbrido. Gerencie clusters hiperconvergentes com ferramentas eficientes e simples. |
 | ![](../media/secure-icon.png)| **Gerenciamento seguro** <br/> Controle quem pode gerenciar servidores e obtenha insights sobre as ações que os administradores executam no ambiente. |
 
