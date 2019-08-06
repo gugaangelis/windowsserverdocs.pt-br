@@ -12,12 +12,12 @@ ms.assetid: 27bf6f24-30c4-4935-9b24-069eb43e22f4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 5618eb95fb8afcff2057575191699da05612a542
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bb3cc834e0ab6641c14f5e9fbb6afe5c9f187c7c
+ms.sourcegitcommit: e40fce7b8b4bc0bef278e676435306f14078cf00
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433060"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68787173"
 ---
 # <a name="restore-or-repair-your-server-running-windows-server-essentials"></a>Restaurar ou reparar o servidor que executa o Windows Server Essentials
 
@@ -25,13 +25,13 @@ ms.locfileid: "66433060"
  
  Este tópico fornece uma visão geral e procedimentos de suporte para restaurar ou reparar um servidor que executa o Windows Server Essentials e inclui as seguintes seções:  
   
--   [Visão geral das restaurações de sistema do servidor](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Overview)  
+-   [Visão geral das restaurações do sistema de servidor](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Overview)  
   
 -   [Restaurar ou reparar a unidade do sistema](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Restore)  
   
 -   [Restaurar arquivos e pastas no servidor](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_RestoreFilesAndFolders)  
   
-##  <a name="BKMK_Overview"></a> Visão geral das restaurações de sistema do servidor  
+##  <a name="BKMK_Overview"></a>Visão geral das restaurações do sistema de servidor  
  O estado do servidor quando você executa uma restauração afeta o método de restauração que está disponível e a abrangência de uma restauração que você pode executar.  
   
  Os motivos mais comuns para restaurar um servidor são:  
@@ -46,14 +46,14 @@ ms.locfileid: "66433060"
   
   Você pode restaurar o servidor de um backup ou restaurar o servidor para as configurações padrão de fábrica.  
   
-- [Restaurar o servidor a partir de um backup](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_RestoreFromBackup)  
+- [Restaurando o servidor a partir de um backup](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_RestoreFromBackup)  
   
-- [Redefinindo o servidor para configurações padrão de fábrica](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_FactoryReset)  
+- [Redefinindo o servidor para as configurações padrão de fábrica](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_FactoryReset)  
   
-###  <a name="BKMK_RestoreFromBackup"></a> Restaurar o servidor a partir de um backup  
+###  <a name="BKMK_RestoreFromBackup"></a>Restaurando o servidor a partir de um backup  
  Esta seção fornece orientação sobre que tipo de backup escolher.  
   
- Se um backup estiver disponível, a melhor opção para restaurar o servidor é usar a mídia de instalação do fabricante s para restaurar a partir de um backup externo. A restauração irá recuperar pastas e configurações do servidor do backup que você escolher. Você somente precisa definir as configurações e restaurar os dados criados após o backup.  
+ Se um backup estiver disponível, sua melhor opção para restaurar o servidor será usar a mídia de instalação do fabricante para restaurar a partir de um backup externo. A restauração irá recuperar pastas e configurações do servidor do backup que você escolher. Você somente precisa definir as configurações e restaurar os dados criados após o backup.  
   
  Quando você escolhe recuperar o servidor por meio da restauração de um backup anterior, você deve escolher o backup específico que você deseja restaurar e você deve ter um arquivo de backup válido em um disco rígido externo que está conectado diretamente ao servidor:  
   
@@ -73,7 +73,7 @@ ms.locfileid: "66433060"
   
 - **Se o servidor tiver vários discos rígidos e a unidade 0 (contém o volume do sistema) for substituída**, o volume do sistema é restaurado e, em seguida, você deve restaurar manualmente as pastas compartilhadas que foram armazenadas anteriormente no disco 0.  
   
-###  <a name="BKMK_FactoryReset"></a> Redefinindo o servidor para configurações padrão de fábrica  
+###  <a name="BKMK_FactoryReset"></a>Redefinindo o servidor para as configurações padrão de fábrica  
  Se você não tiver um backup que possa restaurar ou por algum outro motivo queira ou precise executar uma restauração completa do sistema sem restaurar a configuração anterior do servidor, você pode realizar uma restauração que redefina o servidor para as configurações padrão de fábrica usando a instalação ou a mídia de recuperação a partir do fabricante do hardware de servidor.  
   
  Quando você restaurar o servidor reconfigurando-o com as configurações padrão de fábrica, todas as configurações existentes e aplicativos instalados no servidor serão excluídos e você deve configurar seu servidor novamente. Depois de redefinição de fábrica, o servidor é reinicializado.  
@@ -83,7 +83,7 @@ ms.locfileid: "66433060"
 -   Se você optar por manter todos os seus dados, todos os dados no volume do sistema serão excluídos, mas os dados em outros volumes serão mantidos.  
   
     > [!CAUTION]
-    >  Se as configurações de disco não corresponderem às configurações padrão, todos os dados em um disco serão excluídos. Se você substituiu o disco do sistema, o novo disco deve ser maior que o volume de sistema de s de disco original.  
+    >  Se as configurações de disco não corresponderem às configurações padrão, todos os dados em um disco serão excluídos. Se você substituiu o disco do sistema, o novo disco deve ser maior do que o volume do sistema do disco original.  
     >   
     >  Se as informações da partição para uma unidade do sistema forem ilegíveis ou se você substituir a unidade do sistema, todos os dados na unidade do sistema serão removidos, mesmo se você optar por manter todos os seus dados.  
   
@@ -94,11 +94,11 @@ ms.locfileid: "66433060"
   
  Depois da redefinição de fábrica, você precisará executar as seguintes tarefas:  
   
--   **Reconfigure o servidor.** No servidor, use o Assistente Configurar o Servidor para redigitar as definições de configuração. Para configurar um servidor Windows Server Essentials gerenciado remotamente de um computador cliente, abra um navegador da web e, em seguida, digite **http://***<YourServerName\>*  na barra de endereços.  
+-   **Reconfigure o servidor.** No servidor, use o Assistente Configurar o Servidor para redigitar as definições de configuração. Para configurar um servidor do Windows Server Essentials gerenciado remotamente de um computador cliente, abra um navegador da Web e digite **http://** _< nomedoservidor\>_  na barra de endereços.  
   
--   **Reconecte computadores cliente ao servidor.** Se um computador tiver sido conectado anteriormente ao servidor, você deve desinstalar o software do Windows Server Essentials Connector do computador antes de conectar o computador ao servidor novamente. Para obter mais informações, consulte [Uninstall the Connector software](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13) e [Connect computers to the server](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).  
+-   **Reconecte computadores cliente ao servidor.** Se um computador tiver sido conectado anteriormente ao servidor, você deverá desinstalar o software do conector do Windows Server Essentials do computador antes de conectar o computador ao servidor novamente. Para obter mais informações, consulte [Uninstall the Connector software](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13) e [Connect computers to the server](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).  
   
-##  <a name="BKMK_Restore"></a> Restaurar ou reparar a unidade do sistema  
+##  <a name="BKMK_Restore"></a>Restaurar ou reparar a unidade do sistema  
  A primeira etapa da restauração do servidor é restaurar ou reparar a unidade de sistema do servidor. Depois que você restaurar a unidade do sistema, você fará o que for necessário para restaurar as unidades de dados no servidor e qualquer compartilhamento que foi perdido na restauração.  
   
  Três métodos estão disponíveis para executar a restauração:  
@@ -107,17 +107,17 @@ ms.locfileid: "66433060"
   
 -   **Usar a mídia de instalação para restaurar o servidor para configurações padrão de fábrica**. Para saber como fazer isso no seu servidor, consulte a documentação do fabricante do servidor.  
   
--   [Restaurar ou redefinir o servidor a partir de um computador cliente usando o DVD de recuperação](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Restore_2). Se você precisar restaurar um servidor administrado remotamente que esteja executando o Windows Server Essentials, você deve executar a restauração de um computador cliente usando o DVD de restauração do fabricante do servidor.  
+-   [Restaurar ou redefinir o servidor a partir de um computador cliente usando o DVD de recuperação](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Restore_2). Se precisar restaurar um servidor administrado remotamente que esteja executando o Windows Server Essentials, você deverá executar a restauração de um computador cliente usando o DVD de restauração do fabricante do servidor.  
   
-###  <a name="BKMK_Restore_1"></a> Restaurar ou reparar seu servidor usando a mídia de instalação  
- O procedimento a seguir descreve como restaurar sua unidade de sistema do servidor de um backup usando a mídia de instalação do Windows Server Essentials. (Para saber como usar a mídia de instalação para restaurar as configurações padrão de fábrica, consulte a documentação do fabricante do servidor).  
+###  <a name="BKMK_Restore_1"></a>Restaurar ou reparar o servidor usando a mídia de instalação  
+ O procedimento a seguir descreve como restaurar a unidade do sistema do servidor de um backup usando a mídia de instalação do Windows Server Essentials. (Para saber como usar a mídia de instalação para restaurar as configurações padrão de fábrica, consulte a documentação do fabricante do servidor).  
   
 > [!NOTE]
->  Se o servidor usa espaços de armazenamento, e você está restaurando os dados para um novo servidor, você deve recuperar a unidade do sistema pela primeira vez e, em seguida, faça logon no painel do Windows Server Essentials, configurar espaços de armazenamento de maneira semelhante como no antigo servidor e, em seguida, recuperar a dat um volumes.  
+>  Se o servidor usar espaços de armazenamento e você estiver restaurando os dados para um novo servidor, você deverá recuperar a unidade do sistema primeiro e, em seguida, fazer logon no painel do Windows Server Essentials, configurar os espaços de armazenamento de forma semelhante ao servidor antigo e, em seguida, recuperar o dat um volume.  
   
 ##### <a name="to-restore-the-server-system-drive-from-a-backup-using-installation-media"></a>Para restaurar a unidade de sistema do servidor de um backup usando a mídia de instalação  
   
-1.  Insira o DVD de instalação do Windows Server Essentials na unidade de DVD do servidor, reinicie o servidor e, em seguida, pressione qualquer tecla para iniciar a partir do DVD.  
+1.  Insira o DVD de instalação do Windows Server Essentials na unidade de DVD do servidor, reinicie o servidor e pressione qualquer tecla para iniciar a partir do DVD.  
   
     > [!NOTE]
     >  Se o processo de restauração não for iniciado automaticamente, verifique as configurações de BIOS para o seu servidor para garantir que a unidade de DVD apareça primeiro no menu de inicialização.  
@@ -135,7 +135,7 @@ ms.locfileid: "66433060"
   
 4.  Na página **Escolher uma opção**, clique em **Solucionar**.  
   
-5.  Sobre o **recuperação da imagem do sistema** , selecione o sistema atual? qualquer **Windows Server Essentials** ou **Windows Server Essentials**.  
+5.  Na página **recuperação de imagem do sistema** , selecione o sistema atual? o **Windows Server Essentials** ou o **Windows Server Essentials**.  
   
      O Assistente para Recriar a Imagem do Computador é aberto.  
   
@@ -156,19 +156,19 @@ ms.locfileid: "66433060"
   
 7.  Siga as instruções do assistente para concluir a restauração do sistema.  
   
-8.  Depois que o servidor for restaurado com êxito, remova o DVD de instalação se você tiver usado um e, em seguida, reinicie o servidor.  
+8.  Depois que o servidor for restaurado com êxito, remova o DVD de instalação, se você usou um, e reinicie o servidor.  
   
 > [!NOTE]
 >  Para restaurar e compartilhar pastas no servidor, talvez seja necessário executar etapas adicionais. Para obter mais informações, consulte [Restore files and folders on the server](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_RestoreFilesAndFolders).  
   
-###  <a name="BKMK_Restore_2"></a> Restaurar ou redefinir o servidor a partir de um computador cliente usando o DVD de recuperação  
- No Windows Server Essentials, você pode iniciar o servidor de uma unidade de flash USB inicializável que você cria e, em seguida, recuperar o servidor de um computador cliente usando o DVD de recuperação que você recebeu do fabricante do servidor. O computador cliente deve estar na mesma rede que o servidor. Esse método não está disponível no Windows Server Essentials.  
+###  <a name="BKMK_Restore_2"></a>Restaurar ou redefinir o servidor de um computador cliente usando o DVD de recuperação  
+ No Windows Server Essentials, você pode iniciar o servidor a partir de uma unidade flash USB inicializável que você cria e, em seguida, recuperar o servidor de um computador cliente usando o DVD de recuperação que você recebeu do fabricante do servidor. O computador cliente deve estar na mesma rede que o servidor. Esse método não está disponível no Windows Server Essentials.  
   
  O procedimento a seguir fornece etapas gerais para executar uma restauração de servidor. As etapas são igualmente aplicáveis para restaurar a partir de um backup ou restaurar para as configurações padrão de fábrica. Para obter instruções mais específicas, consulte a documentação do fabricante do servidor.  
   
 ##### <a name="to-restore-or-reset-the-server-from-a-client-computer-using-the-recovery-dvd"></a>Para restaurar ou redefinir o servidor a partir de um computador cliente usando o DVD de recuperação  
   
-1.  Insira a mídia de recuperação do Windows Server Essentials server que você recebeu do fabricante do servidor em um computador cliente.  
+1.  Insira a mídia de recuperação do Windows Server Essentials Server que você recebeu do fabricante do servidor em um computador cliente.  
   
      O Assistente para recuperar o servidor é aberto.  
   
@@ -181,12 +181,12 @@ ms.locfileid: "66433060"
 4.  Siga as instruções no Assistente para concluir a restauração do servidor.  
   
 > [!NOTE]
->  Esse método de recuperação de servidor ignora os dispositivos de armazenamento externo conectados ao servidor durante a recuperação. Se você deseja apagar os dados em um dispositivo de armazenamento externo, você deve fazer isso manualmente.  
+>  Esse método de recuperação de servidor ignora os dispositivos de armazenamento externo conectados ao servidor durante a recuperação. Se você quiser apagar os dados em um dispositivo de armazenamento externo, deverá fazê-lo manualmente.  
   
 > [!NOTE]
 >  Se você tiver criado pastas compartilhadas adicionais no servidor, depois que você restaurar os dados a partir do backup, as pastas compartilhadas adicionais não poderão ser reconhecidas pelo servidor. Você deve compartilhar essas pastas novamente. Para obter mais informações, consulte [Restore files and folders on the server](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_RestoreFilesAndFolders).  
   
-##  <a name="BKMK_RestoreFilesAndFolders"></a> Restaurar arquivos e pastas no servidor  
+##  <a name="BKMK_RestoreFilesAndFolders"></a>Restaurar arquivos e pastas no servidor  
  Dependendo do método que você usou para restaurar ou reparar o servidor e o tipo de armazenamento que o servidor usa, poderá ser necessário recuperar os volumes de dados depois que você restaurar a unidade do sistema. Em alguns casos, você talvez precise compartilhar pastas existentes novamente para que o servidor as reconheça.  
   
  A seguir estão alguns exemplos de quando você precisará restaurar arquivos e pastas:  
@@ -195,17 +195,17 @@ ms.locfileid: "66433060"
   
 -   [Restore shared folders on the server](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_ConfigreSharedFolders). Se você tiver criado pastas compartilhadas adicionais no servidor, depois que você restaurar a unidade do sistema do backup, as pastas compartilhadas ainda estarão na partição de dados ou foram restauradas para a partição de dados, mas não poderão ser reconhecidas pelo servidor. Você deve compartilhar essas pastas novamente.  
   
-###  <a name="BKMK_RestoreFilesFromBackup"></a> Restaurar arquivos e pastas de um backup do servidor  
- O Assistente para restauração de arquivos e pastas ajuda a proteger seus dados caso o disco rígido falhe ou os arquivos sejam apagados acidentalmente. Com o Backup do Windows Server Essentials, você pode criar uma cópia de todos os dados no disco rígido e armazenar os dados em um dispositivo de armazenamento externo. Se os dados originais no disco rígido forem acidentalmente apagados, substituídos ou ficarem inacessíveis devido a falhas, você poderá restaurar os dados a partir do backup. O assistente para restauração de arquivos ou pastas ajuda a restaurar um único arquivo ou pasta, vários arquivos ou pastas ou todo o disco rígido de um backup existente.  
+###  <a name="BKMK_RestoreFilesFromBackup"></a>Restaurar arquivos e pastas de um backup do servidor  
+ O Assistente para restauração de arquivos e pastas ajuda a proteger seus dados caso o disco rígido falhe ou os arquivos sejam apagados acidentalmente. Com o backup do Windows Server Essentials, você pode criar uma cópia de todos os dados no disco rígido e armazenar os dados em um dispositivo de armazenamento externo. Se os dados originais no disco rígido forem acidentalmente apagados, substituídos ou ficarem inacessíveis devido a falhas, você poderá restaurar os dados a partir do backup. O assistente para restauração de arquivos ou pastas ajuda a restaurar um único arquivo ou pasta, vários arquivos ou pastas ou todo o disco rígido de um backup existente.  
   
  Após uma restauração do sistema, você talvez precise usar o Assistente para restaurar arquivos e pastas para restaurar arquivos e pastas que não foram mantidas durante a restauração. Por exemplo, se você substituiu o disco do sistema ou não é possível ler as informações da partição no disco do sistema, você não poderá restaurar os dados de outros volumes do disco do sistema.  
   
 > [!NOTE]
->  Não é possível usar o Assistente para restaurar arquivos e pastas para restaurar a unidade do sistema completo. Para obter informações sobre como restaurar o sistema completo, consulte [Restore or repair your server using installation media](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Restore_1) ou [Restore or reset your server from a client computer using the recovery DVD](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Restore_2).  
+>  Não é possível usar o Assistente para restaurar arquivos e pastas para restaurar a unidade do sistema completo. Para obter informações sobre como restaurar o sistema completo, consulte [restaurar ou reparar seu servidor usando a mídia de instalação](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Restore_1) ou [restaurar ou redefinir o servidor de um computador cliente usando o DVD de recuperação](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Restore_2).  
   
 ##### <a name="to-restore-files-and-folders-from-a-server-backup"></a>Para restaurar arquivos e pastas de um backup do servidor  
   
-1.  Abra o painel do Windows Server Essentials e, em seguida, clique no **dispositivos** guia.  
+1.  Abra o painel do Windows Server Essentials e, em seguida, clique na guia **dispositivos** .  
   
 2.  Clique no nome do servidor e, em seguida, clique em **Restaurar arquivos ou pastas do servidor** no painel **Tarefas**.  
   
@@ -214,10 +214,10 @@ ms.locfileid: "66433060"
 3.  Siga as instruções no assistente para restaurar os arquivos ou pastas.  
   
 > [!WARNING]
->  Para obter mais informações sobre backup e restauração de arquivos e pastas, consulte [Manage Backup and Restore](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md).  
+>  Para obter mais informações sobre como fazer backup e restaurar arquivos e pastas, consulte [gerenciar backup e restauração](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md).  
   
-###  <a name="BKMK_ConfigreSharedFolders"></a> Restaurar pastas compartilhadas no servidor  
- Depois de restaurar a unidade do sistema de servidor s, se as pastas compartilhadas ainda estão na partição de dados ou foram restauradas para a partição de dados, você precisa configurar as pastas compartilhadas novamente para o servidor reconheça as pastas. O procedimento a seguir descreve como adicionar pastas compartilhadas que foram compartilhadas antes.  
+###  <a name="BKMK_ConfigreSharedFolders"></a>Restaurar pastas compartilhadas no servidor  
+ Depois de restaurar a unidade do sistema do servidor, se as pastas compartilhadas ainda estiverem na partição de dados ou forem restauradas para a partição de dados, talvez seja necessário configurar as pastas compartilhadas novamente para que o servidor reconheça as pastas. O procedimento a seguir descreve como adicionar pastas compartilhadas que foram compartilhadas antes.  
   
 ##### <a name="to-add-an-existing-folder-to-the-server-shared-folders"></a>Para adicionar uma pasta existente no servidor de pastas compartilhadas  
   
@@ -225,27 +225,27 @@ ms.locfileid: "66433060"
   
 2.  Clique com o botão direito na pasta compartilhada, clique em **Propriedades**, clique na guia **Compartilhamento** e, em seguida, anote as permissões da pasta.  
   
-3.  Faça logon no painel do Windows Server Essentials, clique o **armazenamento** guia e, em seguida, clique em **adicionar uma pasta** no **tarefas de pastas do servidor** painel.  
+3.  Faça logon no painel do Windows Server Essentials, clique na guia **armazenamento** e, em seguida, clique em **Adicionar uma pasta** no painel de **tarefas pastas de servidor** .  
   
      O Assistente Adicionar uma pasta é aberto.  
   
 4.  Digite um nome para o compartilhamento na caixa **Nome**.  
   
-5.  Clique em **navegue**, navegue até *< unidade\>\\< ServerName\>* \ServerFolders (por exemplo *d:\Contoso\ServerFolders*), selecione a pasta que você deseja compartilhar e, em seguida, clique em **Okey**.  
+5.  Clique em **procurar**, navegue até *<\>unidade\\<\>ServerName*\ServerFolders (por exemplo, *d:\Contoso\ServerFolders*), selecione a pasta que deseja compartilhar e clique em **OK**.  
   
 6.  Clique em **Avançar**.  
   
 7.  Especifique as permissões que você anotou na etapa 2 e clique em **Adicionar pasta**.  
   
     > [!IMPORTANT]
-    >  Essas permissões substituirão quaisquer permissões existentes que não foram adicionados à pasta usando o painel do Windows Server Essentials.  
+    >  Essas permissões substituirão as permissões existentes que não foram adicionadas à pasta usando o painel do Windows Server Essentials.  
   
 > [!IMPORTANT]
 >  Depois de concluir a adição de pastas à lista de pastas compartilhadas, certifique-se de que as pastas estejam incluídas no backup do servidor. Para obter informações sobre como adicionar pastas ao backup do servidor, consulte [Definir ou personalizar o backup do servidor](Set-up-or-customize-server-backup.md).  
   
 ## <a name="see-also"></a>Consulte também  
   
--   [Gerenciar o Backup e restauração](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)  
+-   [Gerenciar backup e restauração](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)  
   
 -   [Gerenciar o Windows Server Essentials](Manage-Windows-Server-Essentials.md)  
   

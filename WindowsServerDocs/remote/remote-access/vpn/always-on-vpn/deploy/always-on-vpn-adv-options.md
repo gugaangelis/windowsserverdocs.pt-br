@@ -10,12 +10,12 @@ ms.author: pashort, v-tea
 author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: ae3c088122a0100f94b4d9bca41078d901487237
-ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
+ms.openlocfilehash: e09a23b6f1c14c4c14b00fd19d84d0abb71d0163
+ms.sourcegitcommit: e40fce7b8b4bc0bef278e676435306f14078cf00
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590404"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68787211"
 ---
 # <a name="advanced-features-of-always-on-vpn"></a>Recursos avançados do Always On VPN
 
@@ -62,17 +62,15 @@ Depois de instalar as atualizações, o servidor RRAS pode impor a revogação d
 
 **Disponibilidade**
 
-A tabela a seguir lista as datas de lançamento aproximadas das correções para cada versão do Windows.
+A tabela a seguir lista as versões que contêm as correções para cada versão do Windows.
 
-|Versão do sistema operacional |Data de lançamento ou versão * |
+|Versão do sistema operacional |Versão  |
 |---------|---------|
 |Windows Server, versão 1903  |[KB4501375](https://support.microsoft.com/help/4501375/windows-10-update-kb4501375) |
-|Windows Server 2019<br />Windows Server, versão 1809  |Q3, 2019  |
-|Windows Server, versão 1803  |Q3, 2019  |
-|Windows Server, versão 1709  |Q3, 2019  |
+|Windows Server 2019<br />Windows Server, versão 1809  |[KB4505658](https://support.microsoft.com/help/4505658/windows-10-update-kb4505658)  |
+|Windows Server, versão 1803  |[KB4507466](https://support.microsoft.com/help/4507466/windows-10-update-kb4507466)  |
+|Windows Server, versão 1709  |[KB4507465](https://support.microsoft.com/help/4507465/windows-10-update-kb4507465)  |
 |Windows Server 2016, versão 1607  |[KB4503294](https://support.microsoft.com/help/4503294/windows-10-update-kb4503294) |
-  
-\*Todas as datas de lançamento são listadas em trimestres de calendário. As datas são aproximadas e podem ser alteradas sem aviso prévio. Quando uma atualização é liberada, um link para a versão substitui a data de lançamento.
 
 **Como configurar os pré-requisitos** 
 
@@ -81,7 +79,7 @@ A tabela a seguir lista as datas de lançamento aproximadas das correções para
 1. No servidor RRAS, use o cmdlet **set-VpnAuthProtocol** do PowerShell para configurar o parâmetro **RootCertificateNameToAccept** .<br /><br />
    O exemplo a seguir lista os comandos para fazer isso. No exemplo, **CN = Contoso Root Certification Authority** representa o nome distinto da autoridade de certificação raiz. 
    ``` powershell
-   $cert1 = ( Get-ChildItem -Path cert:LocalMachine\root | Where-Object -FilterScript { $_.Subject -Like "*CN=Contoso Root Certification Authority,*" } )
+   $cert1 = ( Get-ChildItem -Path cert:LocalMachine\root | Where-Object -FilterScript { $_.Subject -Like "*CN=Contoso Root Certification Authority*" } )
    Set-VpnAuthProtocol -RootCertificateNameToAccept $cert1 -PassThru
    ```
 **Como configurar o servidor RRAS para impor a revogação de certificado para conexões VPN baseadas em certificados de computador IKEv2**
