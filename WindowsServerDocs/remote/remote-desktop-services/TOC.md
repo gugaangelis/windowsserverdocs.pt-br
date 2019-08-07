@@ -68,7 +68,7 @@
 ## [Clientes da Área de Trabalho Remota](clients/remote-desktop-clients.md)
 ### Problemas conhecidos da Área de Trabalho Remota
 #### [Solução de problemas gerais de conexão de Área de Trabalho Remota](troubleshoot/rdp-error-general-troubleshooting.md)
-#### [Os clientes não podem se conectar e recebem o erro "Classe não registrada"](troubleshoot/rdp-error-class-not-registered.md).
+#### [Os clientes não conseguem se conectar e recebem o erro "Classe não registrada"](troubleshoot/rdp-error-class-not-registered.md)
 #### [Os clientes não podem se conectar e veem o erro "Nenhuma licença disponível"](troubleshoot/rdp-error-no-licenses-available.md)
 #### [O usuário não pode se autenticar ou deve se autenticar duas vezes](troubleshoot/cannot-authenticate-or-must-authenticate-twice.md)
 #### [Erro "O serviço de Área de Trabalho Remota está ocupado no momento" ao se conectar](troubleshoot/remote-desktop-service-currently-busy.md)
