@@ -8,12 +8,12 @@ ms.date: 11/2/2018
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 02c7098c8e3f93ce315e7d9a881613a03924e78b
-ms.sourcegitcommit: 286e3181ebd2cb9d7dc7fe651858a4e0d61d153f
+ms.openlocfilehash: d6761c43eefe04430603a1a16e9e8d256176a736
+ms.sourcegitcommit: 25376e261ebd5e85355c298cfd0bbd6b578a6a0c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68300691"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68729534"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>Configurar o cliente Web da Área de Trabalho Remota para seus usuários
 
@@ -251,7 +251,7 @@ Siga estas etapas se o servidor de Host da Sessão de Área de Trabalho Remota f
 * O **Nome Alternativo da Entidade (SAN)** para cada certificado deve ser definido para o **Nome de Domínio Totalmente Qualificado (FQDN)** da máquina. O **Nome Comum (CN)** precisa corresponder ao SAN de cada certificado.
 
 ## <a name="how-to-pre-configure-settings-for-remote-desktop-web-client-users"></a>Como predefinir as configurações para usuários de cliente da Web da Área de Trabalho Remota
-Esta seção informa como usar o PowerShell para definir configurações da implantação do cliente da Web da Área de Trabalho Remota. Esses cmdlets do PowerShell controlam a capacidade do usuário de alterar as configurações com base em questões de segurança da organização ou ao fluxo de trabalho pretendido. As configurações a seguir estão todas localizadas no painel lateral **Configurações** cliente da Web. 
+Esta seção informa como usar o PowerShell para definir configurações da implantação do cliente da Web da Área de Trabalho Remota. Esses cmdlets do PowerShell controlam a capacidade do usuário de alterar as configurações com base em questões de segurança da organização ou ao fluxo de trabalho pretendido. As configurações a seguir estão todas localizadas no painel lateral **Configurações** cliente da Web.
 
 ### <a name="suppress-telemetry"></a>Suprimir a telemetria
 Por padrão, os usuários podem optar por habilitar ou desabilitar a coleta de dados de telemetria que são enviados à Microsoft. Para saber mais sobre os dados de telemetria que a Microsoft coleta, confira a Declaração de Privacidade no link no painel lateral **Sobre**.
@@ -274,7 +274,8 @@ Por padrão, os usuários podem optar por iniciar recursos remotos (1) no navega
 
 ### <a name="reset-rdwebclientdeploymentsetting-configurations-to-default"></a>Redefinir configurações de RDWebClientDeploymentSetting para o padrão
 Para redefinir uma configuração de cliente Web no nível de implantação para a configuração padrão, execute o seguinte cmdlet do PowerShell e use o parâmetro --Name para especificar a configuração que você deseja redefinir:
-   ```PowerShell
+  
+  ```PowerShell
     Reset-RDWebClientDeploymentSetting -Name "LaunchResourceInBrowser"
     Reset-RDWebClientDeploymentSetting -Name "SuppressTelemetry"
    ```
@@ -316,4 +317,4 @@ O console também pode ser acessado diretamente pelo navegador. O console geralm
 
 ## <a name="get-help-with-the-web-client"></a>Obter ajuda com o cliente Web
 
-Se você tiver encontrado um problema que não pode ser resolvido com as informações neste artigo, é possível enviar [um e-mail](mailto:rdwbclnt@microsoft.com) para relatá-lo. Você também pode solicitar ou votar em novos recursos em nossa [caixa de sugestões](https://aka.ms/rdwebfbk).
+Caso tenha encontrado um problema que não possa ser resolvido com as informações descritas neste artigo, relate-o na [Tech Community](https://aka.ms/wvdtc). Você também pode solicitar ou votar em novos recursos em nossa [caixa de sugestões](https://remotedesktop.uservoice.com/forums/911494-remote-desktop-web-client).
