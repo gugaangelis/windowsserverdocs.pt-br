@@ -1,6 +1,6 @@
 ---
 title: MultiPoint Stations
-description: Saiba mais sobre estações no MultiPoint Services, incluindo as diferentes opções para os usuários
+description: Saiba mais sobre as estações nos serviços do MultiPoint, incluindo as diferentes opções para os usuários
 ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server-threshold
@@ -13,116 +13,116 @@ ms.assetid: f9f9d618-ccfe-41ea-a52c-00c3c7adb51a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: e747826a7cd84521bc62e48abedf3092bf6d844c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 43386f0f4d4020d5e127e7b7cbd918e4c48cec6e
+ms.sourcegitcommit: 02f1e11ba37a83e12d8ffa3372e3b64b20d90d00
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855647"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863462"
 ---
-# <a name="multipoint--stations"></a>Estações do multiPoint
-Em um ambiente de sistema MultiPoint Services, *estações* são os pontos de extremidade do usuário para se conectar ao computador executando o MultiPoint Services. Cada estação fornece ao usuário uma experiência independente do Windows 10. Há suporte para os seguintes tipos de estação:  
+# <a name="multipoint--stations"></a>Estações multiponto
+Em um ambiente de sistema de serviços do MultiPoint, as *estações* são os pontos de extremidade do usuário para se conectarem ao computador que executa os serviços do MultiPoint. Cada estação fornece ao usuário uma experiência independente do Windows 10. Há suporte para os seguintes tipos de estação:  
   
--   Estações de vídeo diretamente conectados  
+-   Estações conectadas diretamente a vídeo  
   
--   Estações zero-client-conexão USB (incluindo clientes de USB over Ethernet zero)  
+-   USB-nenhuma estação conectada a cliente (incluindo clientes USB over-Ethernet)  
   
--   Estações RDP-over-conectados à rede local (para o cliente avançado ou computadores cliente fino)  
+-   Estações conectadas por RDP via LAN (para computadores cliente avançados ou cliente fino)  
   
-PCs completos com o conector do MultiPoint instalado também podem ser monitorados e controlado usando o MultiPoint Dashboard. No Windows 10, o conector do MultiPoint pode ser habilitado por meio do painel de controle para recursos do Windows. 
+Computadores completos que têm o conector do MultiPoint instalado também podem ser monitorados e controlados usando o painel do MultiPoint. No Windows 10, o conector do MultiPoint pode ser habilitado por meio do painel de controle para recursos do Windows. 
 
-MultiPoint Services dá suporte a qualquer combinação desses tipos de estação, mas é recomendável que uma estação seja uma estação de vídeo diretamente conectados, que pode servir como a estação principal. O motivo para essa recomendação é ser capaz de antecipar os cenários de suporte. Por exemplo interagir com o sistema 's BIOS antes do MultiPoint Services está em execução.  
+Os serviços do MultiPoint oferecem suporte a qualquer combinação desses tipos de estação, mas é recomendável que uma estação seja uma estação conectada por vídeo direto, que possa servir como a estação principal. A razão para essa recomendação é poder prever os cenários de suporte. Por exemplo, para interagir com o BIOS do sistema antes de os serviços do MultiPoint serem executados.  
   
 ## <a name="primary-stations-and-standard-stations"></a>Estações primárias e estações padrão  
-Uma estação de vídeo diretamente conectados é definida como o *estação principal*. As estações restantes são denominadas *estações padrão*.  
+Uma estação conectada diretamente ao vídeo é definida como a *estação principal*. As estações restantes são chamadas de *estações padrão*.  
   
-A estação principal exibe as telas de inicialização quando o computador é ligado. Ele fornece acesso à configuração do sistema e informações que está disponíveis apenas durante a inicialização de solução de problemas. A estação principal deve ser uma estação de vídeo diretamente conectados. Após a inicialização, você pode usar a estação principal, como qualquer outra estação do MultiPoint.  
+A estação principal exibe as telas de inicialização quando o computador está ligado. Ele fornece acesso à configuração do sistema e às informações de solução de problemas disponíveis somente durante a inicialização. A estação principal deve ser uma estação conectada diretamente ao vídeo. Após a inicialização, você pode usar a estação primária como qualquer outra estação do MultiPoint.  
   
-## <a name="direct-video-connected-stations"></a>Estações de vídeo diretamente conectados  
-O computador executando o MultiPoint Services pode conter várias placas de vídeo, cada um deles pode ter uma ou mais portas de vídeos. Isso permite que você conecte monitora várias estações diretamente no computador. Teclados e mouses são conectados por meio de hubs USB que estão associados com cada monitor. Esses hubs são denominados *hubs de estação*. Outros dispositivos periféricos, como dispositivos de armazenamento USB, fones de ouvido ou alto-falantes também podem ser conectados a um hub de estação, e eles estão disponíveis somente para o usuário dessa estação.  
+## <a name="direct-video-connected-stations"></a>Estações conectadas diretamente a vídeo  
+O computador que executa os serviços do MultiPoint pode conter várias placas de vídeo, cada uma delas pode ter uma ou mais portas de vídeo. Isso permite que você conecte monitores para várias estações diretamente no computador. Teclados e mouses são conectados por meio de hubs USB associados a cada monitor. Esses hubs são chamados de *hubs de estação*. Outros dispositivos periféricos, como alto-falantes, fones de ouvido ou dispositivos de armazenamento USB também podem ser conectados a um hub de estação e estão disponíveis somente para o usuário dessa estação.  
   
 > [!IMPORTANT]  
-> Deve haver pelo menos um *estação vídeo diretamente conectados* por servidor para atuar como a estação principal para exibir o processo de inicialização, quando o computador é ligado.  
+> Deve haver pelo menos uma *estação conectada por vídeo direto* por servidor para atuar como a estação principal para exibir o processo de inicialização quando o computador é ligado.  
   
-![Imagem do layout do sistema com base em USB do MultiPoint Services](./media/WMSMultiPointServerUSBSystemLayout.gif)  
+![Imagem do layout do sistema baseado em USB dos serviços do MultiPoint](./media/WMSMultiPointServerUSBSystemLayout.gif)  
   
-**Figura 1** MultiPoint services sistema com quatro estações vídeo diretamente conectados  
+**Figura 1** Sistema de serviços do MultiPoint com quatro estações conectadas diretamente ao vídeo  
   
-### <a name="BKMK_PS2stations"></a>Estações de PS/2  
-Com o MultiPoint Services, você pode mapear o PS/teclado e mouse 2 na placa-mãe para um monitor conectado de vídeo direto para criar uma estação de PS/2. Áudio analógico na placa-mãe de alta definição é o áudio associado com esse tipo de estação. Isso não se aplica a computadores em que não há nenhum pinos PS/2 na placa-mãe.  
+### <a name="BKMK_PS2stations"></a>Estações PS/2  
+Com os serviços do MultiPoint, você pode mapear o teclado e o mouse do PS/2 na motherboard para um monitor de vídeo conectado diretamente para criar uma estação PS/2. Áudio analógico de alta definição na placa-mãe é o áudio associado a esse tipo de estação. Isso não se aplica a computadores nos quais não há conectores PS/2 na placa-mãe.  
   
-## <a name="usb-zero-client-connected-stations"></a>Estações com zero-client-conexão USB  
-Estações conectados por USB zero-client utilizam uma *zero cliente USB* como um hub de estação. Os clientes USB zero, às vezes, são chamados de um hub multifuncional com vídeo. Eles são um hub que se conecta ao computador por meio de um cabo USB, e esses hubs normalmente dão suporte a um vídeo monitor, um mouse e teclado (PS/2 ou USB), áudio e mais dispositivos USB. Este guia se refere a esses hubs especializadas como USB zero clientes.  
+## <a name="usb-zero-client-connected-stations"></a>USB-nenhuma estação conectada ao cliente  
+USB-as estações conectadas a cliente com zero utilizam um *cliente USB zero* como um hub de estação. Os clientes USB com zero, às vezes, são chamados de um hub multifuncional com vídeo. Eles são um Hub que se conecta ao computador por meio de um cabo USB, e geralmente esses hubs dão suporte a um monitor de vídeo, um mouse e um teclado (PS/2 ou USB), áudio e dispositivos USB adicionais. Este guia refere-se a esses hubs especializados como clientes USB zero.  
   
-O diagrama a seguir mostra um sistema MultiPoint server com uma estação principal (vídeo direto conectado estação) e dois adicionais zero cliente USB conectado estações.  
+O diagrama a seguir mostra um sistema do MultiPoint Server com uma estação primária (estação conectada ao vídeo direto) e duas estações conectadas de cliente USB zero adicionais.  
   
-![Estações conectadas do zero cliente USB](./media/WMS11_diagram7.gif)  
+![USB zero-estações conectadas ao cliente](./media/WMS11_diagram7.gif)  
   
-**Figura 2** sistema MultiPoint Services com uma estação principal e duas estações conectada com zero cliente USB  
+**Figura 2** Sistema de serviços do MultiPoint com uma estação primária e duas estações conectadas a cliente com USB zero  
   
-### <a name="usb-over-ethernet-zero-clients"></a>Clientes de USB over Ethernet zero  
-Clientes de USB over Ethernet zero são uma variação de clientes USB zero que enviam USB através de LAN para o sistema MultiPoint Services. Esses tipos de clientes USB zero funcionam da mesma forma outro USB zero clientes, mas não são limitados por limites máximos de comprimento de cabo USB. Clientes de USB over Ethernet zero não são clientes finos tradicionais, e eles são exibidos como dispositivos virtuais de USB no sistema MultiPoint Services. Ao usar esses dispositivos, consulte o fabricante do dispositivo para específicos de desempenho e recomendações de planejamento do site. A maioria dos dispositivos têm um plug-in de terceiros para o MultiPoint Manager que permite que você associar e conectar dispositivos ao sistema MultiPoint Services.  
+### <a name="usb-over-ethernet-zero-clients"></a>Clientes USB over-Ethernet nulos  
+Clientes USB over-Ethernet são uma variação de clientes USB de zero que enviam USB por LAN para o sistema de serviços do MultiPoint. Esses tipos de clientes USB zero funcionam de forma semelhante a outros clientes USB zero, mas não são limitados por máximos de comprimento de cabo USB. Clientes USB over-Ethernet não são clientes finos tradicionais e aparecem como dispositivos USB virtuais no sistema MultiPoint Services. Ao usar esses dispositivos, consulte o fabricante do dispositivo para obter recomendações específicas de planejamento de desempenho e site. A maioria dos dispositivos tem um plug-in de terceiros para o MultiPoint Manager que permite associar e conectar dispositivos ao sistema MultiPoint Services.  
   
-## <a name="rdp-over-lan-connected-stations"></a>Estações conectadas à RDP através de LAN  
-Clientes finos e tradicionais para desktop, laptop ou tablet PCs, podem se conectar ao computador executando o MultiPoint Services por meio da rede de área local (LAN) usando o protocolo de área de trabalho remota (RDP) ou um protocolo proprietário e o protocolo de área de trabalho remota Provedor. Conexões RDP fornecem uma experiência de usuário final que é muito semelhante a qualquer outra estação do MultiPoint, mas faz uso de hardware do computador cliente local. Saiba mais sobre nossa área de trabalho aplicativos remotos disponíveis para o Android, iOS, Mac e Windows no [clientes de área de trabalho remota](../remote-desktop-services/clients/remote-desktop-clients.md). 
+## <a name="rdp-over-lan-connected-stations"></a>Estações conectadas RDP via LAN  
+Clientes finos e computadores desktop, laptop ou Tablet tradicionais podem se conectar ao computador que executa os serviços do MultiPoint por meio da LAN (rede local) usando protocolo RDP (RDP) ou um protocolo proprietário e o protocolo RDP Operador. As conexões RDP fornecem uma experiência do usuário final muito semelhante a qualquer outra estação do MultiPoint, mas utiliza o hardware do computador cliente local. Saiba mais sobre nossos aplicativos de área de trabalho remota disponíveis para Android, iOS, Mac e Windows em [clientes área de trabalho remota](../remote-desktop-services/clients/remote-desktop-clients.md). 
   
-Os clientes e dispositivos que estão executando o Microsoft RemoteFX podem fornecer uma experiência multimídia avançada ao aproveitar os processador e o vídeo de recursos de hardware do cliente fino local ou do computador para fornecer o vídeo de alta definição através da rede.  
+Os clientes e dispositivos que estão executando o Microsoft RemoteFX podem fornecer uma experiência de multimídia avançada aproveitando os recursos de hardware do processador e do vídeo do cliente fino local ou do computador para fornecer vídeo de alta definição na rede.  
   
-Se você tiver clientes de rede local existentes do MultiPoint Services pode fornecer uma maneira rápida e econômica para atualizar simultaneamente todos os seus usuários uma experiência do Windows 10.  
+Se você tiver clientes de LAN existentes, os serviços do MultiPoint poderão fornecer uma maneira rápida e econômica de atualizar simultaneamente todos os seus usuários para uma experiência do Windows 10.  
   
-De uma perspectiva de implantação e administração, as seguintes diferenças existem ao usar estações RDP-over-conectados à rede local:  
+Do ponto de vista da implantação e da administração, existem as seguintes diferenças quando você usa estações conectadas por RDP em LAN:  
   
--   Não limitado a físicas distâncias de conexão USB  
+-   Não limitado a distâncias de conexão USB física  
   
--   Potencial para reutilizar o hardware mais antigos como estações  
+-   Potencial para reutilizar o hardware de computador mais antigo como estações  
   
--   Mais fácil de ser dimensionado para um número maior de estações. Qualquer cliente na sua rede potencialmente pode ser usado como uma estação remota  
+-   Mais fácil de dimensionar para um número maior de estações. Qualquer cliente em sua rede pode potencialmente ser usado como uma estação remota  
   
--   Nenhum hardware de solução de problemas por meio do console do Gerenciador do MultiPoint  
+-   Sem solução de problemas de hardware por meio do console do MultiPoint Manager  
   
--   Nenhuma funcionalidade de tela dividida.  
+-   Nenhuma funcionalidade de tela de divisão.  
   
-    Para obter mais informações, consulte [estações com tela dividida](#a-namebkmksplitscreenstationsasplit-screen-stations) mais adiante neste tópico  
+    Para obter mais informações, consulte [estações de tela de divisão](#split-screen-stations) mais adiante neste tópico  
   
--   Nenhuma estação renomeação ou configurar o logon automático por meio do console do Gerenciador do MultiPoint  
+-   Nenhuma estação renomeie ou configure o logon automático por meio do console do MultiPoint Manager  
   
 ![Estação conectada com zero cliente USB](./media/Diagram1.gif)  
   
-**Figura 3** sistema MultiPoint Services com estações RDP-over-conectados à rede local  
+**Figura 3** Sistema de serviços do MultiPoint com estações conectadas por RDP via LAN  
   
 ## <a name="additional-configuration-options"></a>Opções de configuração adicionais  
   
-### <a name="BKMK_SplitscreenStations"></a>Estações com tela dividida  
-MultiPoint Services oferece uma opção de tela de divisão em computadores com estações de vídeo-conectados diretamente ou conectados por USB zero-client estações. Uma tela dividida fornece a capacidade de criar uma estação adicional por monitor. Em vez de exigir dois monitores, você pode usar um monitor com duas configurações de hub de estação para criar duas estações com um monitor. Você pode aumentar o número de estações disponíveis rapidamente sem precisar adquirir monitores adicionais, os clientes de USB de zero ou placas de vídeo.  
+### <a name="split-screen-stations"></a>Estações de tela dividida  
+Os serviços do MultiPoint oferecem uma opção de tela dividida em computadores com estações conectadas diretamente a vídeo ou estações USB-zero-conexão com o cliente. Uma tela dividida fornece a capacidade de criar uma estação adicional por monitor. Em vez de exigir dois monitores, você pode usar um monitor com duas configurações de Hub de estação para criar duas estações com um monitor. Você pode aumentar rapidamente o número de estações disponíveis sem comprar monitores adicionais, clientes USB-zero ou placas de vídeo.  
   
-Os benefícios do uso de uma estação de tela dividida podem incluir:  
+Os benefícios de usar uma estação de tela de divisão podem incluir:  
   
--   Reduzindo o custo e espaço ao acomodar mais usuários em um sistema MultiPoint Services.  
+-   Reduzir o custo e o espaço acomodando mais usuários em um sistema de serviços do MultiPoint.  
   
--   Permitindo que dois usuários colaborem lado a lado em um projeto.  
+-   Permitir que dois usuários colaborem lado a lado em um projeto.  
   
--   Permitindo que um professor demonstrar um procedimento em uma estação enquanto um aluno acompanha na outra estação.  
+-   Permitir que um professor demonstre um procedimento em uma estação enquanto o aluno segue na outra estação.  
   
-Monitor que tem uma resolução 1024 x 768 ou posteriores podem ser divididos em duas telas de estação de estação de quaisquer serviços do MultiPoint. Para obter a melhor experiência de usuário de tela divisão, recomenda-se uma tela ampla com uma resolução mínima de 1600 x 900. Um teclado mini sem um teclado numérico também é recomendável para permitir que os dois teclados caber na frente do monitor.  
+Qualquer monitor de estação de serviços do MultiPoint que tenha uma resolução de 1024x768 ou superior pode ser dividido em duas telas de estação. Para obter a melhor experiência de usuário de tela dividida, é recomendável uma tela larga com uma resolução mínima de 1600. Também é recomendável um mini Keyboard sem um teclado numérico para permitir que os dois teclados caibam na frente do monitor.  
   
-Para criar estações com tela dividida, configurar uma estação de vídeo-conectados diretamente ou conectados por USB zero-client. Em seguida, adiciona um hub de estação adicionais conectando um teclado e mouse para um hub USB que está conectado ao servidor. Em seguida, você pode converter a estação de em duas estações usando o Gerenciador do MultiPoint para dividir a tela e mapear o novo hub a metade do monitor. A metade esquerda da tela torna-se em uma estação e metade direita se torna uma segunda estação.  
+Para criar estações de tela de divisão, você configura uma estação conectada por um vídeo direto ou USB-zero-conexão com o cliente. Em seguida, você adiciona um hub de estação adicional conectando um teclado e um mouse a um hub USB que está conectado ao servidor. Em seguida, você pode converter a estação em duas estações usando o MultiPoint Manager para dividir a tela e mapear o novo hub para metade do monitor. A metade esquerda da tela se torna uma estação e a metade direita se torna uma segunda.  
   
-Depois que uma estação é dividida, um usuário pode fazer logon na estação esquerda enquanto outro usuário faz logon na estação direita.  
+Depois que uma estação é dividida, um usuário pode fazer logon na estação esquerda enquanto outro usuário faz logon na estação à direita.  
   
 ![Estações de tela dividida](./media/WMS_diagram3.gif)  
   
-**Figura 4** sistema MultiPoint Services com estações com tela dividida  
+**Figura 4** Sistema de serviços do MultiPoint com estações de tela dividida  
   
 ## <a name="BKMK_StationTypeComparison"></a>Comparação de tipo de estação  
   
-||Vídeo direto conectado|Zero cliente USB conectado|RDP através de LAN conectada|  
+||Vídeo direto conectado|Cliente USB zero conectado|RDP via LAN conectada|  
 |-|--------------------------|-----------------------------|----------------------------|  
-|Desempenho do vídeo|Recomendado para melhor desempenho de vídeo||Usar clientes finos compatíveis com RemoteFX para melhor qualidade de vídeo em menos largura de banda de rede|  
-|Limitações físicas|Limitado pelo tamanho do vídeo cabo e hub USB e comprimento de cabo (tamanho máximo recomendado 15 medidor)|Limitado pelo hub USB e o comprimento de cabo (tamanho máximo recomendado 15 medidor)|Limitado pela distribuição de LAN|  
-|Número de estações permitidas |Limitado pelo número de slots de PCIe disponíveis na placa-mãe vezes as portas de vídeo por placa de vídeo|Número total pode ser limitado pelo fabricante do cliente USB zero (para obter mais informações, consulte a observação após esta tabela).|Limitado por portas disponíveis no comutador de rede|  
-|Tela dividida|Sim|Sim|Não|  
-|Estação de status de periféricos de estação do multiPoint Manager, configuração de logon automático, renomeando|Sim|Sim|Não|  
+|Desempenho de vídeo|Recomendado para melhor desempenho de vídeo||Usar clientes finos que dão suporte ao RemoteFX para melhor qualidade de vídeo em largura de banda de rede menor|  
+|Limitações físicas|Limitado pelo comprimento do cabo de vídeo e pelo hub USB e comprimento do cabo (recomendado, 15 metros de comprimento máximo)|Limitado pelo hub USB e comprimento do cabo (recomendado, 15 metros de comprimento máximo)|Limitado pela distribuição de LAN|  
+|Número de estações permitidas |Limitado pelo número de slots PCIe disponíveis na motherboard vezes as portas de vídeo por placa de vídeo|O número total pode ser limitado pelo fabricante do cliente USB zero (para obter mais informações, consulte a observação que segue esta tabela.)|Limitado por portas disponíveis no comutador de rede|  
+|Tela de divisão|Sim|Sim|Não|  
+|Status de periférico de estação do MultiPoint Manager, configuração de logon automático, renomeação de estação|Sim|Sim|Não|  
 |Acesso aos menus de inicialização do servidor|Sim|Não|Não|  
   
 > [!NOTE]  
-> O número total de clientes USB zero que estão conectados ao servidor pode ser limitado pelo fabricante ou a capacidade de hardware do computador executando o MultiPoint Services.
+> O número total de clientes USB zero que estão conectados ao servidor pode ser limitado pelo fabricante ou pelo recurso de hardware do computador que executa os serviços do MultiPoint.

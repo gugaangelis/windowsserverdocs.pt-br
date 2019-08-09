@@ -12,12 +12,12 @@ ms.assetid: 4950469d-d800-430d-8d10-53bafc4a9932
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2e393f184f1abfa79647432bd592975cae3fdc6c
-ms.sourcegitcommit: 9a4ab3a0d00b06ff16173aed616624c857589459
+ms.openlocfilehash: 82a7a5b3ce3662574260379bc893da484baf1caa
+ms.sourcegitcommit: 02f1e11ba37a83e12d8ffa3372e3b64b20d90d00
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828530"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863405"
 ---
 # <a name="move-windows-sbs-2008-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Mover configurações e dados do Windows SBS 2008 para o servidor de destino para migração para o Windows Server Essentials
 
@@ -27,15 +27,15 @@ Mova as configurações e os dados para o servidor de destino da seguinte maneir
 
 1. [Copiar dados para o servidor de destino](#copy-data-to-the-destination-server)
 
-2. [Importar contas de usuário do Active Directory para o painel do Windows Server Essentials (opcional)](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
+2. [Importar Active Directory contas de usuário para o painel do Windows Server Essentials (opcional)](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
 
 3. [Mover a função de servidor DHCP do servidor de origem para o roteador](#move-the-dhcp-server-role-from-the-source-server-to-the-router)
 
 4. [Configurar a rede](#configure-the-network)
 
-5. [Remover objetos de diretiva de grupo do Active Directory herdados (opcionais)](#remove-legacy-active-directory-group-policy-objects)
+5. [Remover objetos de Política de Grupo de Active Directory herdados (opcional)](#remove-legacy-active-directory-group-policy-objects)
 
-6. [Mapear os computadores permitidos para contas de usuário](#map-permitted-computers-to-user-accounts)
+6. [Mapear computadores permitidos para contas de usuário](#map-permitted-computers-to-user-accounts)
 
 ## <a name="copy-data-to-the-destination-server"></a>Copie os dados para o servidor de destino
 Antes de copiar os dados do servidor de origem para o servidor de destino, execute as seguintes tarefas:
@@ -54,18 +54,18 @@ Antes de copiar os dados do servidor de origem para o servidor de destino, execu
 
     `robocopy \\<SourceServerName> \<SharedSourceFolderName> \\<DestinationServerName> \<SharedDestinationFolderName> /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt` 
 
- Onde:
+ Sendo que:
  - \<SourceServerName\> é o nome do servidor de origem
- - \<Nomedapastacompartilhadadeorigem\> é o nome da pasta compartilhada no servidor de origem
- - \<Nomeservidordestino\> é o nome do servidor de destino,
- - \<Nomedapastacompartilhadadedestino\> é a pasta compartilhada no servidor de destino para o qual os dados serão copiados. 
+ - \<SharedSourceFolderName\> é o nome da pasta compartilhada no servidor de origem
+ - \<DestinationServerName\> é o nome do servidor de destino,
+ - \<SharedDestinationFolderName\> é a pasta compartilhada no servidor de destino para o qual os dados serão copiados. 
 
 3. Repita a etapa anterior para cada pasta compartilhada que você está migrando do servidor de origem. 
 
-## <a name="import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard"></a>Importar contas de usuário do Active Directory para o painel do Windows Server Essentials
+## <a name="import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard"></a>Importar Active Directory contas de usuário para o painel do Windows Server Essentials
  Por padrão, todas as contas de usuário criadas no servidor de origem são migradas automaticamente para o painel no Windows Server Essentials. No entanto, a migração automática de uma conta de usuário do Active Directory falhará se algumas propriedades não atenderem aos requisitos de migração. Você pode usar o seguinte cmdlet do Windows PowerShell para importar usuários do Active Directory. 
 
-#### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>Para importar uma conta de usuário do Active Directory para o painel do Windows Server Essentials 
+#### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>Para importar uma conta de usuário Active Directory para o painel do Windows Server Essentials 
  
 1. Faça logon no servidor de destino como um administrador de domínio. 
  
@@ -76,7 +76,7 @@ Antes de copiar os dados do servidor de origem para o servidor de destino, execu
  `Import-WssUser SamAccountName [AD username]` 
  
 ## <a name="move-the-dhcp-server-role-from-the-source-server-to-the-router"></a>Transfira a função de servidor DHCP do servidor de origem para o roteador
- Se o servidor de origem estiver executando a função de DHCP, execute as seguintes etapas para mover a função DHCP para o roteador. 
+ Se o servidor de origem estiver executando a função DHCP, execute as etapas a seguir para mover a função DHCP para o roteador. 
  
 #### <a name="to-move-the-dhcp-role-from-the-source-server-to-the-router"></a>Para mover a função DHCP do servidor de origem para o roteador 
  
@@ -119,8 +119,8 @@ Antes de copiar os dados do servidor de origem para o servidor de destino, execu
 > [!NOTE]
 > Se você tiver configurado um servidor do Exchange local em um segundo servidor, deve garantir que a porta 25 (SMTP) também esteja aberta e que seja redirecionada para o endereço IP do servidor do Exchange local.
  
-## <a name="remove-legacy-active-directory-group-policy-objects"></a>Remover objetos de diretiva de grupo do Active Directory herdados
-Os objetos de diretiva de grupo (GPOs) são atualizados para o Windows Server Essentials. Eles são um subconjunto dos GPOs Windows SBS 2008. Para o Windows Server Essentials, um número de filtros de GPOs do Windows SBS 2008 e Windows Management Instrumentation (WMI) deve ser excluído para evitar conflitos com os filtros WMI e GPOs do Windows Server Essentials. 
+## <a name="remove-legacy-active-directory-group-policy-objects"></a>Remover objetos Política de Grupo de Active Directory herdados
+Os objetos de Política de Grupo (GPOs) são atualizados para o Windows Server Essentials. Eles são um subconjunto dos GPOs Windows SBS 2008. Para o Windows Server Essentials, vários dos GPOs do Windows SBS 2008 e os filtros de Instrumentação de Gerenciamento do Windows (WMI) devem ser excluídos manualmente para evitar conflitos com os GPOs do Windows Server Essentials e os filtros WMI. 
  
 > [!NOTE]
 > Se você tiver modificado os Objetos de Política de Grupo do Windows SBS 2008 originais, salve uma cópia em um local diferente e, em seguida, exclua-os do Windows SBS 2008. 
@@ -131,9 +131,9 @@ Os objetos de diretiva de grupo (GPOs) são atualizados para o Windows Server Es
  
 2. Clique em **Iniciar** e, em seguida, em **Gerenciamento de servidor**. 
  
-3. No painel de navegação, clique em **avançadas de gerenciamento**, clique em **gerenciamento de política de grupo**e, em seguida, clique em **floresta:** *<nome_do_domínio\>* . 
+3. No painel de navegação, clique em **gerenciamento avançado**, clique em **Gerenciamento de política de grupo**e, em seguida, clique em **floresta:** _< YourDomainName\>_ . 
  
-4. Clique em **domínios**, clique em *< nome_do_domínio\>* e, em seguida, clique em **os objetos de diretiva de grupo**. 
+4. Clique em **domínios**, clique em *<\>YourDomainName*e, em seguida, clique em **objetos política de grupo**. 
  
 5. Clique com o botão direito do mouse em **Política de auditoria do Small Business Server**, clique em **Excluir** e, em seguida, clique em **OK**. 
  
@@ -143,7 +143,7 @@ Os objetos de diretiva de grupo (GPOs) são atualizados para o Windows Server Es
  
  - Política de senha de domínio do Small Business Server 
  
-É recomendável que você configure a política de senha no Windows Server Essentials para impor senhas fortes. Para configurar a política de senha, use o painel, que grava a configuração de política de domínio padrão. A configuração de política de senha não é gravada no Objeto de Política de Senha do Domínio do Small Business Server, como ocorria no Windows SBS 2008. 
+Recomendamos que você configure a política de senha no Windows Server Essentials para impor senhas fortes. Para configurar a política de senha, use o painel, que grava a configuração de política de domínio padrão. A configuração de política de senha não é gravada no Objeto de Política de Senha do Domínio do Small Business Server, como ocorria no Windows SBS 2008. 
  
  - Firewall de conexão de Internet do Small Business Server 
  
@@ -173,9 +173,9 @@ Os objetos de diretiva de grupo (GPOs) são atualizados para o Windows Server Es
  
 2. Clique em **Iniciar** e, em seguida, em **Gerenciamento de servidor**. 
  
-3. No painel de navegação, clique em **avançadas de gerenciamento**, clique em **gerenciamento de política de grupo**e, em seguida, clique em **floresta:** *<YourNetworkDomainName\>* 
+3. No painel de navegação, clique em **gerenciamento avançado**, clique em **Gerenciamento de política de grupo**e, em seguida, clique em **floresta:** _< YourNetworkDomainName\>_ 
  
-4. Clique em **domínios**, clique em *< YourNetworkDomainName\>* e, em seguida, clique em **filtros WMI**. 
+4. Clique em **domínios**, clique em *<\>YourNetworkDomainName*e, em seguida, clique em **filtros WMI**. 
  
 5. Clique com o botão direito em **PostSP2**, clique em **Excluir** e, em seguida, clique em **Sim**. 
  
@@ -184,7 +184,7 @@ Os objetos de diretiva de grupo (GPOs) são atualizados para o Windows Server Es
 7. Confirme se esses três filtros WMI foram excluídos. 
  
 ## <a name="map-permitted-computers-to-user-accounts"></a>Mapeie os computadores permitidos para as contas de usuário
-No Windows SBS 2008, se um usuário se conecta ao Acesso Remoto via Web, todos os computadores da rede são exibidos. Isso pode incluir computadores que o usuário não tem permissão para acessar. No Windows Server Essentials, um usuário deve ser explicitamente atribuído a um computador para que ele seja exibido no acesso via Web remoto. Cada conta de usuário que for migrada do Windows SBS 2008 deve ser mapeada para um ou mais computadores. 
+No Windows SBS 2008, se um usuário se conecta ao Acesso Remoto via Web, todos os computadores da rede são exibidos. Isso pode incluir computadores que o usuário não tem permissão para acessar. No Windows Server Essentials, um usuário deve ser explicitamente atribuído a um computador para que ele seja exibido no Acesso via Web remoto. Cada conta de usuário que for migrada do Windows SBS 2008 deve ser mapeada para um ou mais computadores. 
  
 #### <a name="to-map-user-accounts-to-computers"></a>Para mapear contas de usuário para computadores 
  
