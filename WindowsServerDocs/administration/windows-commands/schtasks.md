@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f898c67755fb8e7874932ea06a7cdf461d1e4bd
-ms.sourcegitcommit: e40fce7b8b4bc0bef278e676435306f14078cf00
+ms.openlocfilehash: fdda956a5da9ec50e44002cd8ab38373396d5713
+ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68787191"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68914647"
 ---
 # <a name="schtasks"></a>schtasks
 
@@ -479,7 +479,7 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly /mo {FIRST | SECOND | 
 
 #### <a name="remarks"></a>Comentários
 
-Nesse tipo de agendamento, o parâmetro **/SC mensal** , o parâmetro **/mo** (modificador) e o parâmetro **/d** (Day) são necessários. O parâmetro **/mo** (modificador) especifica a semana em que a tarefa é executada. O parâmetro **/d** especifica o dia da semana. (Você pode especificar apenas um dia da semana para esse tipo de agendamento.) Esse agendamento também tem um parâmetro **/m** (mês) opcional que permite agendar a tarefa para determinados meses ou a cada mês<em>(). O padrão para o parâmetro **/m</em>* é todos os meses*().
+Nesse tipo de agendamento, o parâmetro **/SC mensal** , o parâmetro **/mo** (modificador) e o parâmetro **/d** (Day) são necessários. O parâmetro **/mo** (modificador) especifica a semana em que a tarefa é executada. O parâmetro **/d** especifica o dia da semana. (Você pode especificar apenas um dia da semana para esse tipo de agendamento.) Esse agendamento também tem um parâmetro **/m** (mês) opcional que permite agendar a tarefa para determinados meses ou a cada mês\*(). O padrão para o parâmetro **/m** é todos os meses\*().
 
 #### <a name="examples"></a>Exemplos
 

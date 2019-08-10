@@ -12,72 +12,72 @@ ms.assetid: 47ea21a0-5e05-4b4b-8fa4-338c82601276
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b78d6abbaf287fc56336ff8d16127ce249b97519
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: f6a5d6fd42c5cd7e92821e1157748054c741ef04
+ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435917"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68914680"
 ---
 # <a name="use-remote-web-access-in-windows-server-essentials"></a>Utilizar o acesso remoto via Web no Windows Server Essentials
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
   
-  Acesso via Web remoto é um recurso do Essentials de servidores Windows que permite que você acessar arquivos/pastas e computadores na sua rede por meio de um navegador da web de qualquer lugar com conectividade com a Internet. 
+  O Acesso via Web remoto é um recurso do Windows Servers Essentials que permite que você acesse arquivos/pastas e computadores na rede por meio de um navegador da Web de qualquer lugar com conectividade com a Internet. 
   
-  O Acesso via Web remoto  ajuda você a permanecer conectado à sua rede do Windows Server Essentials quando estiver ausente. Ao fazer logon acesso via Web remoto, conecte-se aos computadores na sua rede do Windows Server Essentials, abrir o painel para gerenciar a rede do Windows Server Essentials e acessar todos os arquivos de mídia e pastas compartilhados no servidor.  
+  O Acesso via Web remoto  ajuda você a permanecer conectado à sua rede do Windows Server Essentials quando estiver ausente. Ao fazer logon no Acesso via Web remoto, você pode se conectar aos computadores na rede do Windows Server Essentials, abrir o painel para gerenciar sua rede do Windows Server Essentials e acessar todas as pastas compartilhadas e arquivos de mídia no servidor.  
   
  Este tópico inclui as seções a seguir:  
   
 
--   [Conectar-se ao acesso via Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)  
+-   [Conectar-se ao Acesso via Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)  
   
--   [Compartilhamento de arquivos e pastas](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SharedFolders)  
+-   [Compartilhar arquivos e pastas](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SharedFolders)  
   
 -   [Conectar-se de um dispositivo móvel](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ConnectMobile)  
   
-##  <a name="BKMK_Connect"></a> Conectar-se ao acesso via Web remoto  
+##  <a name="BKMK_Connect"></a>Conectar-se ao Acesso via Web remoto  
   
--   [Faça logon no acesso via Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)  
+-   [Fazer logon no Acesso via Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)  
   
--   [Acessar remotamente o computador](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1.5)  
+-   [Acessar remotamente seu computador](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1.5)  
 
--   [Conectar-se ao acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)  
+-   [Conectar-se ao Acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)  
   
--   [Compartilhamento de arquivos e pastas](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SharedFolders)  
+-   [Compartilhar arquivos e pastas](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SharedFolders)  
   
 -   [Conectar-se de um dispositivo móvel](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ConnectMobile)  
   
-##  <a name="BKMK_Connect"></a> Conectar-se ao acesso via Web remoto  
+##  <a name="BKMK_Connect"></a>Conectar-se ao Acesso via Web remoto  
   
--   [Faça logon no acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)  
+-   [Fazer logon no Acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)  
   
--   [Acessar remotamente o computador](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1.5)  
+-   [Acessar remotamente seu computador](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1.5)  
 
   
-###  <a name="BKMK_1"></a> Faça logon no acesso via Web remoto  
- Ao fazer logon acesso via Web remoto de um computador local ou remoto, você pode acessar os recursos do servidor que executa o Windows Server Essentials e computadores em sua rede.  
+###  <a name="BKMK_1"></a>Fazer logon no Acesso via Web remoto  
+ Ao fazer logon no Acesso via Web remoto de um computador local ou remoto, você pode acessar recursos em seu servidor que executa o Windows Server Essentials e computadores na sua rede.  
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-network-computer"></a>Para fazer logon no Acesso via Web Remoto de um computador da rede  
   
-1.  Abra um navegador da Web, digite **https://***< nomedoservidor\>***/remota** na barra de endereços e pressione Enter.  
+1.  Abra um navegador da Web, digite **https://** _<\>nomedoservidor_ **/Remote** na barra de endereços e pressione Enter.  
   
     > [!NOTE]
-    >  Certifique-se de que você incluir o s em https.  
+    >  Certifique-se de incluir os s em https.  
   
-2.  Na página de logon do acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto e, em seguida, clique na seta.  
+2.  Na página logon Acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto e clique na seta.  
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-remote-computer"></a>Para fazer logon no Acesso via Web Remoto de um computador remoto  
   
-1.  Abra um navegador da Web, digite **https://***< nome_do_domínio\>***/remota** na barra de endereços e pressione Enter.  
+1.  Abra um navegador da Web, digite **https://** _<\>YourDomainName_ **/Remote** na barra de endereços e pressione Enter.  
   
     > [!NOTE]
-    >  Você pode obter as informações de nome de domínio do administrador da rede. Certifique-se de que você incluir o s em https.  
+    >  Você pode obter as informações de nome de domínio do administrador da rede. Certifique-se de incluir os s em https.  
   
-2.  Na página de logon do acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto e, em seguida, clique na seta.  
+2.  Na página logon Acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto e clique na seta.  
   
-###  <a name="BKMK_1.5"></a> Acessar remotamente o computador  
- Quando você estiver fora do escritório, você pode usar seu navegador da Web de logon para o site de acesso via Web remoto para acessar remotamente o painel do Windows Server Essentials, pastas compartilhadas e computadores na sua rede.  
+###  <a name="BKMK_1.5"></a>Acessar remotamente seu computador  
+ Quando estiver fora do seu escritório, você poderá usar seu navegador da Web para fazer logon no site de Acesso via Web remoto para acessar remotamente seu painel do Windows Server Essentials, pastas compartilhadas e computadores em sua rede.  
   
  Quando você se conecta ao painel, você pode gerenciar o Windows Server Essentials exatamente como você faria se estivesse no office. Você pode executar todas as tarefas administrativas comuns, como a adição de contas de usuário, a adição de pastas compartilhadas, definindo o acesso à pasta compartilhada e assim por diante. Quando você se conectar a computadores na sua rede, você pode acessar suas áreas de trabalho como se estivesse na frente no office.  
   
@@ -87,7 +87,7 @@ ms.locfileid: "66435917"
   
      O computador está ligado e está disponível para uma conexão remota. Mesmo se status aparecer, você ainda pode não será capaz de se conectar a esse computador se um firewall de terceiros bloquear a conexão.  
   
--   **Offline ou em espera**  
+-   **Offline ou em suspensão**  
   
      O computador está desligado ou no modo de suspensão ou de hibernação. Se um computador estiver offline ou em espera, o status é atualizado em tempo real para que você possa saber quando o computador estará disponível.  
   
@@ -95,7 +95,7 @@ ms.locfileid: "66435917"
   
      O sistema operacional no computador não oferece suporte a área de trabalho remota. Pode levar até 6 horas para esse status ser atualizado no servidor, se houver uma alteração.  
   
--   **Conexão está desabilitado**  
+-   **A conexão está desabilitada**  
   
      A conexão de computador está bloqueada por um firewall ou a área de trabalho remota está desabilitada no computador ou pela política de grupo. Pode levar até 6 horas para esse status ser atualizado no servidor, se houver uma alteração.  
   
@@ -105,19 +105,19 @@ ms.locfileid: "66435917"
 #### <a name="to-connect-to-the-server-dashboard"></a>Para se conectar ao painel do servidor  
  Sobre a guia **dispositivos**, clique no nome do seu servidor. Você pode selecionar somente os computadores com o status **disponível** . Você deve ser capaz de fornecer uma conta de usuário administrador e senha em seu servidor para usar o Painel.  
   
-##  <a name="BKMK_SharedFolders"></a> Compartilhamento de arquivos e pastas  
+##  <a name="BKMK_SharedFolders"></a>Compartilhar arquivos e pastas  
   
 
--   [Carregar e baixar arquivos no acesso via Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_UploadRWA)  
+-   [Carregar e baixar arquivos no Acesso via Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_UploadRWA)  
   
--   [Criar, renomear, mover, excluir ou copiar arquivos e pastas no acesso via Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)  
+-   [Criar, renomear, mover, excluir ou copiar arquivos e pastas no Acesso via Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)  
 
--   [Carregar e baixar arquivos no acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_UploadRWA)  
+-   [Carregar e baixar arquivos no Acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_UploadRWA)  
   
--   [Criar, renomear, mover, excluir ou copiar arquivos e pastas no acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)  
+-   [Criar, renomear, mover, excluir ou copiar arquivos e pastas no Acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)  
 
   
-###  <a name="BKMK_UploadRWA"></a> Carregar e baixar arquivos no acesso via Web remoto  
+###  <a name="BKMK_UploadRWA"></a>Carregar e baixar arquivos no Acesso via Web remoto  
  Sobre o acesso remoto via Web **pastas compartilhadas** guia, você pode fazer o seguinte:  
   
 -   Carrega arquivos (envio) do seu computador para o Windows Server Essentials.  
@@ -130,9 +130,9 @@ ms.locfileid: "66435917"
 -   Crie uma pasta dentro de uma pasta compartilhada no Windows Server Essentials.  
   
 
--   Mover, excluir e renomear arquivos e pastas no Windows Server Essentials. Para obter mais informações, consulte [criar, renomear, mover, excluir, ou copiar arquivos e pastas no acesso via Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2).  
+-   Mover, excluir e renomear arquivos e pastas no Windows Server Essentials. Para obter mais informações, consulte [criar, renomear, mover, excluir ou copiar arquivos e pastas no acesso via Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2).  
 
--   Mover, excluir e renomear arquivos e pastas no Windows Server Essentials. Para obter mais informações, consulte [criar, renomear, mover, excluir, ou copiar arquivos e pastas no acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2).  
+-   Mover, excluir e renomear arquivos e pastas no Windows Server Essentials. Para obter mais informações, consulte [criar, renomear, mover, excluir ou copiar arquivos e pastas no acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2).  
 
   
 #### <a name="upload-files"></a>Carregar arquivos  
@@ -193,7 +193,7 @@ ms.locfileid: "66435917"
 > [!NOTE]
 >  Essas opções estão disponíveis somente quando você baixar vários arquivos ou pastas para o computador.  
   
-- **Arquivo executável auto-extraível (.exe)**  
+- **Arquivo executável de extração automática (. exe)**  
   
   > [!NOTE]
   >   Esta seção se aplica a um servidor que executa o Windows Server Essentials.  
@@ -203,9 +203,9 @@ ms.locfileid: "66435917"
   > [!NOTE]
   >  Essa opção oferece suporte a caracteres Unicode.  
   
-- **Pasta compactada Windows (. zip)**  
+- **Pasta compactada do Windows (. zip)**  
   
-   Ao compactar um arquivo cria uma versão compactada do arquivo que é menor do que o arquivo original. A versão compactada do arquivo tem uma extensão de nome de arquivo .zip. Tipos de arquivos que são reduzidos em mais compactados são tipos de arquivo de texto, .txt, .doc, .xls e arquivos de elementos gráficos que usam tipos de arquivo não compactado, como .bmp. Alguns arquivos gráficos, como arquivos. jpg e. gif, já usam compressão, o tamanho do arquivo reduz muito pouco ao ser compactado. Além disso, um documento do Word que contém muitos elementos gráficos não é reduzido quanto um documento é de texto.  
+   O compactar um arquivo cria uma versão compactada do arquivo que é menor do que o arquivo original. A versão compactada do arquivo tem uma extensão de nome de arquivo .zip. Tipos de arquivos que são reduzidos em mais compactados são tipos de arquivo de texto, .txt, .doc, .xls e arquivos de elementos gráficos que usam tipos de arquivo não compactado, como .bmp. Alguns arquivos gráficos, como arquivos. jpg e. gif, já usam compressão, o tamanho do arquivo reduz muito pouco ao ser compactado. Além disso, um documento do Word que contém muitos elementos gráficos não é reduzido quanto um documento é de texto.  
   
   > [!NOTE]
   >  Essa opção fornece suporte limitado para nomes de arquivo internacionais no Windows Server Essentials.  
@@ -248,7 +248,7 @@ ms.locfileid: "66435917"
     > [!NOTE]
     >  Se você usar um programa de compactação de terceiros, siga os procedimentos para o programa extrair os arquivos do arquivo compactado.  
   
-###  <a name="BKMK_2"></a> Criar, renomear, mover, excluir ou copiar arquivos e pastas no acesso via Web remoto  
+###  <a name="BKMK_2"></a>Criar, renomear, mover, excluir ou copiar arquivos e pastas no Acesso via Web remoto  
  Você pode usar o acesso remoto via Web para criar novas pastas em uma pasta compartilhada existente para renomear os arquivos e pastas, mover e copiar arquivos e pastas e excluir arquivos e pastas no servidor.  
   
 > [!NOTE]
@@ -294,19 +294,19 @@ ms.locfileid: "66435917"
   
 3.  Clique na pasta que você deseja copiar os arquivos ou pastas e, em seguida, clique em **colar**.  
   
-##  <a name="BKMK_ConnectMobile"></a> Conectar-se de um dispositivo móvel  
+##  <a name="BKMK_ConnectMobile"></a>Conectar-se de um dispositivo móvel  
   
 
--   [Use Remote Web Access de um dispositivo móvel](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)  
+-   [Usar o Acesso via Web remoto de um dispositivo móvel](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)  
   
--   [Suporte a navegadores da Web para dispositivos móveis](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_9)  
+-   [Navegadores da Web com suporte para dispositivos móveis](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_9)  
 
--   [Use Remote Web Access de um dispositivo móvel](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)  
+-   [Usar o Acesso via Web remoto de um dispositivo móvel](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)  
   
--   [Suporte a navegadores da Web para dispositivos móveis](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_9)  
+-   [Navegadores da Web com suporte para dispositivos móveis](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_9)  
 
   
-###  <a name="BKMK_8"></a> Use Remote Web Access de um dispositivo móvel  
+###  <a name="BKMK_8"></a>Usar o Acesso via Web remoto de um dispositivo móvel  
  Você pode fazer logon no Acesso via Web Remoto de seu smartphone para exibir os arquivos e pastas nas pastas compartilhadas no servidor.  
   
 > [!NOTE]
@@ -314,27 +314,27 @@ ms.locfileid: "66435917"
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-mobile-device"></a>Para fazer logon no Acesso via Web Remoto de um dispositivo móvel  
   
-1.  Abra um navegador da Web e digite **https://***<nome_do_domínio\>***/remota** na barra de endereços.  Certifique-se de que você incluir o s em https.  
+1.  Abra um navegador da Web e digite **https://** _<\>YourDomainName_ **/Remote** na barra de endereços.  Certifique-se de incluir os s em https.  
   
-2.  Na página de logon do acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto e, em seguida, clique na seta. Você está conectado à versão móvel do Acesso Remoto via Web .  
+2.  Na página logon Acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto e clique na seta. Você está conectado à versão móvel do Acesso Remoto via Web .  
   
 ##### <a name="to-switch-to-the-desktop-version-of-remote-web-access"></a>Alternar para a versão da área de trabalho do acesso via Web Remoto  
   
-1.  Abra um navegador da Web e digite **https://***<nome_do_domínio\>***/remota** na barra de endereços.  Certifique-se de que você incluir o s em https.  
+1.  Abra um navegador da Web e digite **https://** _<\>YourDomainName_ **/Remote** na barra de endereços.  Certifique-se de incluir os s em https.  
   
-2.  Na página de logon do acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto, clique em **exibir a versão da área de trabalho**e, em seguida, clique na seta. Você está conectado à versão da área de trabalho do acesso remoto via Web .  
+2.  Na página logon Acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto, clique em **Exibir versão da área de trabalho**e clique na seta. Você está conectado à versão da área de trabalho do acesso remoto via Web .  
   
 ##### <a name="to-return-to-the-mobile-version-of-remote-web-access"></a>Para voltar para a versão móvel do acesso via Web Remoto  
   
 1. Faça logoff.  
   
-2. Abra um navegador da Web e digite **https://***<nome_do_domínio\>*** m/remoto/** na barra de endereços. Certifique-se de que você incluir o s em https.  
+2. Abra um navegador da Web e digite **https://** _<\>YourDomainName_ **/Remote/m** na barra de endereços. Certifique-se de incluir os s em https.  
   
-3. A versão móvel do acesso via Web remoto é exibida. Na página de logon do acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto e, em seguida, clique na seta. Você efetuou logon para a versão móvel do acesso via Web remoto.  
+3. A versão móvel do Acesso via Web remoto é exibida. Na página logon Acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto e clique na seta. Você está conectado à versão móvel do Acesso via Web remoto.  
   
    Você pode procurar arquivos e pastas em pastas compartilhadas no servidor.  
   
-###  <a name="BKMK_9"></a> Suporte a navegadores da Web para dispositivos móveis  
+###  <a name="BKMK_9"></a>Navegadores da Web com suporte para dispositivos móveis  
  Os navegadores web compatíveis com dispositivos móveis incluem:  
   
 -   Internet Explorer Mobile 6.0 ou posterior  
@@ -353,7 +353,7 @@ ms.locfileid: "66435917"
   
 ## <a name="see-also"></a>Consulte também  
   
--   [Gerenciar o acesso via Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Gerenciar Acesso via Web remotos](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
 
 -   [Trabalhar remotamente](Work-Remotely-in-Windows-Server-Essentials.md)  
