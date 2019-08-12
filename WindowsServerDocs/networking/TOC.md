@@ -83,6 +83,10 @@
 #### [Usar a política DNS para a aplicação de filtros em consultas DNS](dns/deploy/apply-filters-on-dns-queries.md)
 #### [Usar a política DNS para balanceamento de carga do aplicativo](dns/deploy/app-lb.md)
 #### [Usar a política DNS para balanceamento de carga de aplicativo com reconhecimento de localização geográfica](dns/deploy/app-lb-geo.md)
+### [Solução de problemas de DNS](dns/troubleshoot/troubleshoot-dns-data-collection.md)
+#### [Solução de problemas de clientes DNS](dns/troubleshoot/troubleshoot-dns-client.md)
+##### [Desabilitar o cache do DNS do lado do cliente em clientes DNS](dns/troubleshoot/disable-dns-client-side-caching.md)
+#### [Solução de problemas de servidores DNS](dns/troubleshoot/troubleshoot-dns-server.md)
 
 ## [Protocolo DHCP](technologies/dhcp/dhcp-top.md)
 ### [Novidades no DHCP](technologies/dhcp/What-s-New-in-DHCP.md)
