@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: bc22d29c-678c-462d-88b3-1c737dceca75
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3182ce1d0e856b06b143719c488864e9a58fbc0a
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 34488a7f1a9d8ccd04de0aae35cbe98ec162c93f
+ms.sourcegitcommit: 107b801af9603be9268a8f459478e212319f7f06
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476572"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68995261"
 ---
 # <a name="use-regular-expressions-in-nps"></a>Use expressões regulares no NPS
 
@@ -82,7 +82,7 @@ Em um cenário de dial-up terceirizado no qual um ISP \(\) do provedor de servi�
 
 - Substitua:
 
-**Para substituir <em>user@example.microsoft.com</em> por *example. Microsoft. com\user***
+**Para substituir <em>user@example.microsoft.com</em> por _example. Microsoft. com\user_**
 
 - Considerar`(.*)@(.*)`
 
@@ -90,7 +90,7 @@ Em um cenário de dial-up terceirizado no qual um ISP \(\) do provedor de servi�
 
 
 
-**Para substituir o *domínio \ usuário* por *specific_domain\user***
+**Para substituir o *domínio \ usuário* por _specific_domain\user_**
 
 - Considerar`(.*)\\(.*)`
 
