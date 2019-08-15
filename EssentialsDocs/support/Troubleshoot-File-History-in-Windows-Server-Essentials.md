@@ -76,12 +76,12 @@ ms.locfileid: "68807878"
 5.  Agora, você pode adicionar o novo usuário. Para obter instruções, consulte Adicionar uma conta de usuário? em [gerenciar contas de usuário](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md).  
   
 ### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>Uma conta de usuário foi removida, mas o histórico de arquivos do usuário permanece  
- Em alguns casos, o administrador de rede pode escolher remover um usuário ou computador do servidor, mas manter o backup de Histórico de Arquivos para uso futuro. Quando você não precisar mais do histórico de arquivos, remova a pasta File History Backups para esse usuário ou computador das pastas compartilhadas no servidor. Para fazer isso, consulte [To manually delete File History backups for a user or a computer](Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete).  
+ Em alguns casos, o administrador de rede pode escolher remover um usuário ou computador do servidor, mas manter o backup de Histórico de Arquivos para uso futuro. Quando você não precisar mais do histórico de arquivos, remova a pasta File History Backups para esse usuário ou computador das pastas compartilhadas no servidor. Para fazer isso, consulte [Para excluir manualmente os backups de histórico de arquivos para um usuário ou um computador](Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete).  
 
 5. Agora, você pode adicionar o novo usuário. Para obter instruções, consulte Adicionar uma conta de usuário? em [gerenciar contas de usuário](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md).  
   
 ### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>Uma conta de usuário foi removida, mas o histórico de arquivos do usuário permanece  
- Em alguns casos, o administrador de rede pode escolher remover um usuário ou computador do servidor, mas manter o backup de Histórico de Arquivos para uso futuro. Quando você não precisar mais do histórico de arquivos, remova a pasta File History Backups para esse usuário ou computador das pastas compartilhadas no servidor. Para fazer isso, consulte [To manually delete File History backups for a user or a computer](../support/Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete).  
+ Em alguns casos, o administrador de rede pode escolher remover um usuário ou computador do servidor, mas manter o backup de Histórico de Arquivos para uso futuro. Quando você não precisar mais do histórico de arquivos, remova a pasta File History Backups para esse usuário ou computador das pastas compartilhadas no servidor. Para fazer isso, consulte [Para excluir manualmente os backups de histórico de arquivos para um usuário ou um computador](../support/Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete).  
 
   
 ## <a name="see-also"></a>Consulte também  
