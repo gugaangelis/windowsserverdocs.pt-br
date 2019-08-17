@@ -1,5 +1,5 @@
 ---
-Title: Implantando perfis de usuário de roaming
+title: Implantando perfis de usuário de roaming
 TOCTitle: Deploying Roaming User Profiles
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,12 +8,12 @@ author: JasonGerend
 manager: brianlic
 ms.date: 06/07/2019
 ms.author: jgerend
-ms.openlocfilehash: e6e2e32ff9aeb1b3bcfc8fed9027c7e92e13b118
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: 1fcabf890c0c54e12c1650c31a072d17a33e292f
+ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "66812490"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69560547"
 ---
 # <a name="deploying-roaming-user-profiles"></a>Implantando perfis de usuário de roaming
 
@@ -141,7 +141,7 @@ Veja como criar um compartilhamento de arquivos no Windows Server:
 
 ### <a name="required-permissions-for-the-file-share-hosting-roaming-user-profiles"></a>Permissões necessárias para o compartilhamento de arquivos que hospeda perfis de usuário móvel
 
-| Conta de Usuário | Acesso | Aplica-se a |
+| Conta de Usuário | Access | Aplica-se a |
 |   -   |   -   |   -   |
 |   Sistema    |  Controle total     |  Essa pasta, subpastas e arquivos     |
 |  Administradores     |  Controle total     |  Apenas essa pasta     |
@@ -231,7 +231,7 @@ Para especificar um layout de início, faça o seguinte:
 3. Use Política de Grupo para aplicar o layout de início personalizado ao GPO que você criou para perfis de usuário de roaming. Para fazer isso, consulte [usar política de grupo para aplicar um layout de início personalizado em um domínio](https://docs.microsoft.com/windows/configuration/customize-windows-10-start-screens-by-using-group-policy#bkmk-domaingpodeployment).
 4. Use Política de Grupo para definir o valor do registro a seguir em seus PCs com Windows 10. Para fazer isso, consulte [configurar um item de registro](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753092(v=ws.11)>).
 
-| **Ação**   | **Cumulativo**                  |
+| **Ação**   | **Atualização**                  |
 | ------------ | ------------                |
 | Sessão         | **HKEY_LOCAL_MACHINE**      |
 | Caminho da chave     | **Software\Microsoft\Windows\CurrentVersion\Explorer** |

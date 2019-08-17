@@ -8,12 +8,12 @@ author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
 ms.date: 12/18/2018
-ms.openlocfilehash: b144127de2ceea99e36549974101d190154aaeaf
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 78006dbbd2bdc569c15ac9967d8c5c542664312c
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476521"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546283"
 ---
 # <a name="administer-a-server-core-server"></a>Administrar um servidor Server Core
 
@@ -90,8 +90,8 @@ Execute **slmgr. vbs – ipk\<ProductKey\>** . Em seguida, execute **slmgr. vbs 
 > [!NOTE]
 > Você também pode ativar o servidor por telefone, usando um [servidor kms (serviço de gerenciamento de chaves)](../../get-started/server-2016-activation.md)ou remotamente. Para ativar remotamente, execute o seguinte cmdlet em um computador remoto: 
 > 
-> ```powershell
-> **cscript windows\system32\slmgr.vbs <ServerName> <UserName> <password>:-ato**
+> ```
+> cscript windows\system32\slmgr.vbs <ServerName> <UserName> <password>:-ato
 > ```
  
 ### <a name="configure-windows-firewall"></a>Configurar o Firewall do Windows
@@ -136,7 +136,7 @@ Use as informações de referência a seguir para executar tarefas administrativ
 |Tarefa|Comando| 
 |----|-------|
 |Configurar o servidor para usar um servidor proxy|**netsh WinHTTP Set proxy \<ServerName\<\>: número da porta\>** <br>**Observação:** As instalações do Server Core não podem acessar a Internet por meio de um proxy que requer uma senha para permitir conexões.|
-|Configurar o servidor para ignorar o proxy para endereços da Internet|**netsh winttp Set proxy \<ServerName\<\>: número\> da porta bypass-List\<=\>"local"**| 
+|Configurar o servidor para ignorar o proxy para endereços da Internet|**netsh WinHTTP Set proxy \<ServerName\<\>: número\> da porta bypass-List\<=\>"local"**| 
 |Exibir ou modificar a configuração de IPSEC|**netsh ipsec**| 
 |Exibir ou modificar a configuração de NAP|**netsh nap**| 
 |Exibir ou modificar o IP para conversão de endereço físico|**arp**| 
@@ -147,7 +147,7 @@ Use as informações de referência a seguir para executar tarefas administrativ
 |Exibir saltos para conexões de rede|**pathping**| 
 |Saltos de rastreamento para conexões de rede|**tracert**| 
 |Exibir a configuração do roteador multicast|**mrinfo**| 
-|Habilitar a administração remota do firewall|**netsh advfirewall firewall set rule Group = "gerenciamento remoto do firewall do Windows" novo habilitar = Sim**| 
+|Habilitar a administração remota do firewall|**netsh advfirewall firewall set rule Group = "gerenciamento remoto do Windows Defender firewall" novo habilitar = Sim**| 
  
 
 ### <a name="updates-error-reporting-and-feedback"></a>Atualizações, relatório de erros e comentários

@@ -1,61 +1,61 @@
 ---
 ms.date: 09/27/2018
 ms.topic: conceptual
-keywords: OpenSSH, SSH, SSHD, instalar, configurar
+keywords: OpenSSH, SSH, SSHD, instalar, instalação
 contributor: maertendMSFT
 ms.product: w10
 author: maertendMSFT
-title: Configuração do servidor do OpenSSH para Windows
-ms.openlocfilehash: 7eff3d3e1af67c9daf7a68c67c3609c0ee89fc93
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+title: Configuração do servidor OpenSSH para Windows
+ms.openlocfilehash: ed424c33c4cd2c19a9b5e985ab6083bcbcb9fbdc
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280031"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546267"
 ---
-# <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>Configuração do servidor do OpenSSH para Windows 10 1809 e Server # 2019
+# <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>Configuração do servidor OpenSSH para Windows 10 1809 e Server 2019
 
-Este tópico aborda a configuração do Windows específica para OpenSSH Server (sshd). 
+Este tópico aborda a configuração específica do Windows para o servidor OpenSSH (sshd). 
 
-OpenSSH mantém a documentação detalhada de opções de configuração on-line na [OpenSSH.com](https://www.openssh.com/manual.html), que não é ser duplicado neste conjunto de documentação. 
+A OpenSSH mantém a documentação detalhada das opções de configuração online em [OpenSSH.com](https://www.openssh.com/manual.html), que não está duplicada neste conjunto de documentação. 
 
 ## <a name="configuring-the-default-shell-for-openssh-in-windows"></a>Configurando o shell padrão para OpenSSH no Windows
 
-O shell de comando padrão fornece a experiência de que um usuário vê ao se conectar ao servidor usando o SSH. O padrão inicial do Windows é o shell de comando do Windows (cmd.exe). Windows também incluem o PowerShell e Bash e shells de comando de terceiros também estão disponíveis para Windows e podem ser configurados como o shell padrão para um servidor.
+O Shell de comando padrão fornece a experiência que um usuário vê ao se conectar ao servidor usando SSH. O Windows padrão inicial é o Shell de comando do Windows (cmd. exe). O Windows também inclui o PowerShell e o bash, e os shells de comando de terceiros também estão disponíveis para o Windows e podem ser configurados como o shell padrão para um servidor.
 
-Para definir o padrão de shell de comando, confirme que a pasta de instalação do OpenSSH está no caminho do sistema. Para Windows, a pasta de instalação padrão é SystemDrive:WindowsDirectory\System32\openssh. Os comandos a seguir mostra a configuração atual do caminho e adicione a pasta de instalação padrão OpenSSH a ele. 
+Para definir o Shell de comando padrão, primeiro confirme se a pasta de instalação do OpenSSH está no caminho do sistema. Para o Windows, a pasta de instalação padrão é SystemDrive: WindowsDirectory\System32\openssh. Os comandos a seguir mostram a configuração de caminho atual e adicionam a pasta de instalação padrão do OpenSSH a ela. 
 
 Shell de comando | Comando a ser usado
 ------------- | -------------- 
 Comando | path
-PowerShell | $env:path
+PowerShell | $env:p Ho
 
-Configurando o padrão ssh shell é feita no registro do Windows, adicionando o caminho completo para o executável para Computer\HKEY_LOCAL_MACHINE\SOFTWARE\OpenSSH no valor de cadeia de caracteres DefaultShell do shell. 
+Configurar o shell ssh padrão é feito no registro do Windows adicionando o caminho completo ao executável do Shell para Computer\HKEY_LOCAL_MACHINE\SOFTWARE\OpenSSH no valor da cadeia de caracteres DefaultShell. 
 
-Por exemplo, o seguinte comando do Powershell define o shell padrão ser PowerShell.exe:
+Por exemplo, o seguinte comando do PowerShell define o shell padrão como PowerShell. exe:
 
 ```powershell
 New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -PropertyType String -Force
 ```
 
-## <a name="windows-configurations-in-sshdconfig"></a>Configurações do Windows em sshd_config 
+## <a name="windows-configurations-in-sshd_config"></a>Configurações do Windows no sshd_config 
 
-No Windows, sshd lê dados de configuração de %programdata%\ssh\sshd_config por padrão, ou um arquivo de configuração diferente pode ser especificado por iniciando sshd.exe com o parâmetro -f.
-Se o arquivo estiver ausente, sshd irá gerar um com a configuração padrão quando o serviço é iniciado.
+No Windows, o sshd lê os dados de configuração do%ProgramData%\ssh\sshd_config por padrão ou um arquivo de configuração diferente pode ser especificado Iniciando sshd. exe com o parâmetro-f.
+Se o arquivo estiver ausente, o sshd gerará um com a configuração padrão quando o serviço for iniciado.
 
-Os elementos listados abaixo fornecem possíveis de configuração específicas do Windows por meio de entradas no sshd_config. Há outras definições de configuração possíveis em que não estão listadas aqui, pois eles serão discutidos em detalhes no online [OpenSSH Win32 documentação](https://github.com/powershell/win32-openssh/wiki). 
+Os elementos listados abaixo fornecem a configuração específica do Windows possível por meio de entradas no sshd_config. Há outras definições de configuração possíveis no que não estão listadas aqui, pois elas são abordadas em detalhes na [documentação do Win32 OpenSSH](https://github.com/powershell/win32-openssh/wiki)online. 
 
 
 ### <a name="allowgroups-allowusers-denygroups-denyusers"></a>AllowGroups, AllowUsers, DenyGroups, DenyUsers 
 
-Controlar quais usuários e grupos podem se conectar ao servidor é feita usando as diretivas AllowGroups, AllowUsers, DenyGroups e DenyUsers. As diretivas de permitir/negar são processadas na seguinte ordem: DenyUsers, AllowUsers, DenyGroups e finalmente AllowGroups. Todos os nomes de conta devem ser especificados em letras minúsculas. Veja os padrões no ssh_config para obter mais informações sobre padrões para caracteres curinga.
+O controle de quais usuários e grupos podem se conectar ao servidor é feito usando as diretivas AllowGroups, AllowUsers, DenyGroups e DenyUsers. As diretivas de permissão/negação são processadas na seguinte ordem: DenyUsers, AllowUsers, DenyGroups e finalmente AllowGroups. Todos os nomes de conta devem ser especificados em letras minúsculas. Consulte padrões em ssh_config para obter mais informações sobre padrões para curingas.
 
-Quando a configuração de usuário/grupo com base em regras com um usuário de domínio ou grupo, use o seguinte formato: ``` user?domain* ```.
-Windows permite que vários formatos para especificar as entidades de domínio, mas muitos entram em conflito com os padrões de Linux padrão. Por esse motivo, * é adicionado para cobrir os FQDNs. Além disso, essa abordagem usa "?", em vez de @, para evitar conflitos com o username@host formato. 
+Ao configurar regras baseadas em usuário/grupo com um usuário ou grupo de domínio, use o seguinte ``` user?domain* ```formato:.
+O Windows permite vários formatos para especificar entidades de segurança de domínio, mas muitos estão em conflito com padrões padrão do Linux. Por esse motivo, * é adicionado para cobrir FQDNs. Além disso, essa abordagem usa "?", em vez de @, para evitar conflitos username@host com o formato. 
 
-Grupo de trabalho que os usuários/grupos e contas conectado à internet sempre são resolvidas ao seu nome de conta local (nenhuma parte do domínio, semelhante aos nomes padrão do Unix). Os usuários do domínio e grupos são estritamente resolvidos para [NameSamCompatible](https://docs.microsoft.com/windows/desktop/api/secext/ne-secext-extended_name_format) formato - domain_short_name\user_name. Todos os usuário/grupo com base em regras precisam atender a esse formato de configuração.
+Os usuários/grupos do grupo de trabalho e as contas conectadas à Internet são sempre resolvidos para o nome da conta local (sem parte do domínio, semelhante a nomes Unix padrão). Os usuários e grupos de domínio são estritamente resolvidos para [NameSamCompatible](https://docs.microsoft.com/windows/desktop/api/secext/ne-secext-extended_name_format) Format-domain_short_name\user_name. Todas as regras de configuração baseadas em usuário/grupo precisam aderir a esse formato.
 
-Exemplos para usuários de domínio e grupos 
+Exemplos de usuários e grupos de domínio 
 
 ```
 DenyUsers contoso\admin@192.168.2.23 : blocks contoso\admin from 192.168.2.23
@@ -72,36 +72,36 @@ AllowGroups sshusers
 
 ### <a name="authenticationmethods"></a>AuthenticationMethods 
 
-Para Windows OpenSSH, os métodos de autenticação apenas disponíveis são "senha" e "publickey".
+Para o Windows OpenSSH, os únicos métodos de autenticação disponíveis são "password" e "PublicKey".
 
 ### <a name="authorizedkeysfile"></a>AuthorizedKeysFile 
 
-O padrão é ". SSH/authorized_keys. SSH/authorized_keys2". Se o caminho não é absoluto, ele será executado em relação ao diretório base do usuário (ou caminho de imagem de perfil). Ex. c:\users\user.
+O padrão é ". ssh/authorized_keys. ssh/authorized_keys2". Se o caminho não for absoluto, ele será levado em relação ao diretório base do usuário (ou caminho da imagem do perfil). Estendi. c:\users\user.
 
-### <a name="chrootdirectory-support-added-in-v7700"></a>ChrootDirectory (suporte adicionado à v7.7.0.0)
+### <a name="chrootdirectory-support-added-in-v7700"></a>ChrootDirectory (suporte adicionado em v 7.7.0.0)
 
-Essa diretiva só é compatível com sessões de sftp. Uma sessão remota para cmd.exe não honra isso. Para configurar um servidor chroot somente sftp, defina ForceCommand como interno sftp. Você também pode configurar scp com chroot, Implementando um shell personalizado que permite somente scp e sftp.
+Essa diretiva só tem suporte com sessões SFTP. Uma sessão remota em cmd. exe não honraria isso. Para configurar um servidor chroot somente SFTP, defina ForceCommand como interno-SFTP. Você também pode configurar o SCP com chroot, implementando um shell personalizado que permitia apenas o SCP e o SFTP.
 
 ### <a name="hostkey"></a>HostKey
 
-Os padrões são % programdata%/ssh/ssh_host_ecdsa_key, %programdata%/ssh/ssh_host_ed25519_key e % programdata%/ssh/ssh_host_rsa_key. Se os padrões não estiverem presentes, sshd gera automaticamente no início de um serviço.
+Os padrões são% ProgramData%/SSH/ssh_host_ecdsa_key,% ProgramData%/SSH/ssh_host_ed25519_key e% ProgramData%/SSH/ssh_host_rsa_key. Se os padrões não estiverem presentes, o sshd os gerará automaticamente em um início de serviço.
 
 ### <a name="match"></a>Correspondência
 
-Observe que o padrão de regras nesta seção. Nomes de usuário e grupo devem estar em letra minúscula.
+Observe que as regras de padrão nesta seção. Os nomes de usuários e grupos devem estar em letras minúsculas.
 
 ### <a name="permitrootlogin"></a>PermitRootLogin
 
-Não é aplicável no Windows. Para evitar o logon de administrador, use os administradores com DenyGroups diretiva.
+Não aplicável no Windows. Para impedir o logon de administrador, use administradores com a diretiva DenyGroups.
 
 ### <a name="syslogfacility"></a>SyslogFacility
 
-Se você precisar de registro em log com base em arquivo, use LOCAL0. Os logs são gerados sob % programdata%\ssh\logs.
-Qualquer outro valor, incluindo o valor padrão AUTH direciona o registro em log para o ETW. Para obter mais informações, consulte recursos de registro em log no Windows.
+Se você precisar de log baseado em arquivo, use LOCAL0. Os logs são gerados em%ProgramData%\ssh\logs.
+Qualquer outro valor, incluindo o valor padrão AUTH, direciona o log para o ETW. Para obter mais informações, consulte recursos de log no Windows.
 
 ### <a name="not-supported"></a>Sem suporte 
 
-As opções de configuração a seguir não estão disponíveis na versão OpenSSH que acompanha o Windows Server 2019 e Windows 10 1809:
+As seguintes opções de configuração não estão disponíveis na versão OpenSSH fornecida no Windows Server 2019 e no Windows 10 1809:
 
 * AcceptEnv
 * AllowStreamLocalForwarding

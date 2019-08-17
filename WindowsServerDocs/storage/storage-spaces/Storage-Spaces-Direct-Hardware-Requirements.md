@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 08/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 59c04a858ceae44ee51c1de10fc40b27dc22ef90
-ms.sourcegitcommit: e04565e4a1fb7aaed04addd2bc87cc6ec4c82e81
+ms.openlocfilehash: 2f3f8bff39550108b0417b9513bee4a248dca432
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529887"
+ms.locfileid: "69546375"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>Requisitos de hardware dos Espaços de Armazenamento Diretos
 
@@ -86,7 +86,7 @@ Espaços de Armazenamento Diretos funciona com unidades SATA, SAS ou NVMe com co
 - Mesmo número e tipos de unidades em cada servidor – consulte [considerações de simetria da unidade](drive-symmetry-considerations.md)
 - Os dispositivos de cache devem ter 32 GB ou mais
 - Ao usar dispositivos de memória persistentes como dispositivos de cache, você deve usar dispositivos de capacidade NVMe ou SSD (não é possível usar HDDs)
-- O driver NVMe é o driver NVMe in box ou atualizado da Microsoft.
+- O driver NVMe é fornecido pela Microsoft, incluído no Windows. (stornvme. sys)
 - Recomendado: O número de unidades de capacidade é um múltiplo inteiro do número de unidades de cache
 - Recomendado: As unidades de cache devem ter alta Endurance de gravação: pelo menos 3 unidades-gravações por dia (DWPD) ou pelo menos 4 terabytes gravados (TBW) por dia – consulte [noções básicas sobre gravações de unidade por dia (DWPD), terabytes gravados (TBW) e o mínimo recomendado para espaços de armazenamento diretos ](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
 
