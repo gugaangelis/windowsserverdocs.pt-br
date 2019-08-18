@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 10/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a54ffd3d5596ba8c71deab668e4952da445ca12e
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 17df3ca3b88404a2775790d7a4a8206b7aa5befa
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66804944"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546349"
 ---
 # <a name="get-started-with-remote-desktop-on-mac"></a>Introdução à Área de Trabalho Remota no Mac
 
@@ -35,7 +35,7 @@ Você pode usar o cliente da Área de Trabalho Remota para Mac para trabalhar co
 ## <a name="get-the-remote-desktop-client"></a>Obtenha o cliente de Área de Trabalho Remota
 Siga estas etapas para começar a usar a Área de Trabalho Remota em seu dispositivo Mac:
 
-1. Baixar o cliente da Área de Trabalho Remota da Microsoft da [Mac App Store](https://itunes.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12).
+1. Baixar o cliente da Área de Trabalho Remota da Microsoft da [Mac App Store](https://itunes.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12).
 2. [Configure seu computador para aceitar conexões remotas](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop). Se você ignorar esta etapa, não poderá se conectar ao seu computador.
 3. Adicione uma conexão de Área de Trabalho Remota ou um recurso remoto. Você usa uma conexão para se conectar diretamente a um computador Windows e um recurso remoto para usar um programa RemoteApp, uma área de trabalho baseada em sessão ou uma área de trabalho virtual publicada localmente usando conexões de RemoteApp e área de trabalho. Normalmente, esse recurso está disponível em ambientes corporativos.
 

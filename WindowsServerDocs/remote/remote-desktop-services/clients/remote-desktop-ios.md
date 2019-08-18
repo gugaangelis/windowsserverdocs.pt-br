@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 date: 01/13/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71fe969de4d21f7fa3c134b0f80fc7f69e5b2da8
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: ebb169ee3b733bd5e7aade6636e078d54a6f09b3
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66446700"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546402"
 ---
 # <a name="get-started-with-remote-desktop-on-ios"></a>Introdução à Área de Trabalho Remota no iOS
 
@@ -38,7 +38,7 @@ Use as informações a seguir para começar. Não se esqueça de conferir as [Pe
 ### <a name="download-the-remote-desktop-client-from-the-ios-store"></a>Baixar o cliente da Área de Trabalho Remota da loja do iOS
 Siga estas etapas para começar a usar a Área de Trabalho Remota em seu dispositivo iOS:
 
-1. Baixar o cliente da Área de Trabalho Remota da Microsoft do [iTunes](https://itunes.apple.com/us/app/microsoft-remote-desktop/id714464092?mt=8).
+1. Baixar o cliente da Área de Trabalho Remota da Microsoft do [iTunes](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8).
 2. [Configure seu computador para aceitar conexões remotas](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop).
 3. Adicione uma [conexão de Área de Trabalho Remota](#add-a-remote-desktop-connection) ou um [recurso remoto](#add-a-remote-resource). Você usa uma conexão para se conectar diretamente a um computador Windows e um recurso remoto para usar um programa RemoteApp, uma área de trabalho baseada em sessão ou uma área de trabalho virtual publicada localmente usando conexões de RemoteApp e área de trabalho. Normalmente, esse recurso está disponível em ambientes corporativos.
 
@@ -63,17 +63,17 @@ Para criar uma conexão de área de trabalho remota:
 É necessário editar essas configurações? Pressione e mantenha pressionada a área de trabalho que deseja editar e, em seguida, toque no ícone de configurações. 
 
 ### <a name="add-a-remote-resource"></a>Adicionar um recurso remoto
-Recursos remotos são programas RemoteApp, áreas de trabalho baseadas em sessão e áreas de trabalho virtuais publicadas usando conexões RemoteApp e de Área de Trabalho.
+Os recursos remotos são programas RemoteApp, áreas de trabalho baseadas em sessão e áreas de trabalho virtuais publicadas usando conexões RemoteApp e de Área de Trabalho.
 
-- A URL exibe o link para o servidor de Acesso via Web da Área de Trabalho Remota, que fornece acesso a conexões de RemoteApp e Área de Trabalho.
+- A URL exibe o link para o servidor de Acesso via Web à Área de Trabalho Remota, que fornece acesso a conexões de RemoteApp e Área de Trabalho.
 - As Conexões de RemoteApp e Área de Trabalho são listadas.
 
 Para adicionar um recurso remoto:
 
 1. Na tela da Central de Conexão, toque em **+** e, em seguida, toque em **Adicionar Recursos Remotos**. 
 2. Insira informações para o recurso remoto:
-   - **URL do Feed** – a URL do servidor de Acesso via Web da Área de Trabalho Remota. Você também pode inserir sua conta de email corporativo nesse campo – isso informa ao cliente para pesquisar pelo servidor de Acesso via Web da Área de Trabalho Remota associado com seu endereço de email.
-   - **Nome de usuário** – o nome de usuário a ser usado para o servidor de Acesso via Web da Área de Trabalho Remota ao qual você está se conectando.
+   - **URL do Feed** – a URL do servidor de Acesso via Web à Área de Trabalho Remota. Você também pode inserir sua conta de email corporativo nesse campo – isso instrui o cliente a pesquisar pelo servidor de Acesso via Web à Área de Trabalho Remota associado com seu endereço de email.
+   - **Nome de usuário** – o nome de usuário a ser usado para o servidor de Acesso via Web à Área de Trabalho Remota ao qual você está se conectando.
    - **Senha** – a senha a ser usada para o servidor de Acesso via Web da Área de Trabalho Remota ao qual você está se conectando.
 3. Toque em **Salvar**.
 
@@ -89,8 +89,8 @@ Para configurar um novo gateway:
 1. Na Central de Conexão, toque em **Configurações > Gateways**. 
 2. Toque em **Adicionar Gateway de Área de Trabalho Remota**.
 3. Insira as seguintes informações:
-   - **Nome do servidor** – o nome do computador que você deseja usar como um gateway. Pode ser um nome do computador Windows, um nome de domínio da Internet ou um endereço IP. Você também pode adicionar informações de porta ao nome do servidor (por exemplo: **RDGateway:443** ou **10.0.0.1:443**).
-   - **Nome de usuário** – o nome de usuário e a senha a serem usados para o Gateway de Área de Trabalho Remota ao qual você está se conectando. Você também pode selecionar **Usar credenciais de conexão** para usar o mesmo nome de usuário e senha usados para a conexão de área de trabalho remota.
+   - **Nome do servidor** – o nome do computador que você deseja usar como um gateway. Pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode adicionar informações de porta ao nome do servidor (por exemplo: **RDGateway:443** ou **10.0.0.1:443**).
+   - **Nome de usuário** – o nome de usuário e a senha a serem usados para o Gateway de Área de Trabalho Remota ao qual você está se conectando. Você também pode selecionar **Usar credenciais de conexão** para usar o mesmo nome de usuário e senha usados para a conexão à área de trabalho remota.
 
 
 ## <a name="manage-your-user-accounts"></a>Gerenciar suas contas de usuário 
@@ -201,5 +201,5 @@ Observe que, devido a limitações do sistema operacional, teclas especiais, com
 - Símbolos: Alt + Teclas alfanuméricas produzirá símbolos diferentes dependendo do idioma configurado
 
 > [!TIP]
-> Perguntas e comentários são sempre bem-vindos. No entanto, NÃO poste uma solicitação de ajuda com solução de problemas usando o recurso de comentários no final deste artigo. Em vez disso, vá para o [Fórum de cliente da Área de Trabalho Remota](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e inicie um novo thread. Tem alguma sugestão de recurso? Conte-nos no [Fórum de voz do usuário cliente](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).
+> Perguntas e comentários são sempre bem-vindos. No entanto, NÃO publique uma solicitação de ajuda com solução de problemas usando o recurso de comentários no final deste artigo. Em vez disso, vá para o [Fórum de cliente da Área de Trabalho Remota](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e inicie uma nova conversa. Tem alguma sugestão de recurso? Conte-nos no [Fórum de voz do usuário cliente](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).
 
