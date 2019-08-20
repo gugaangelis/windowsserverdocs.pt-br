@@ -8,12 +8,12 @@ ms.date: 11/2/2018
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: d6761c43eefe04430603a1a16e9e8d256176a736
-ms.sourcegitcommit: 25376e261ebd5e85355c298cfd0bbd6b578a6a0c
+ms.openlocfilehash: d167fb5dfdfbb2a302c2b0fca9286dc034b730e3
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68729534"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546337"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>Configurar o cliente Web da Área de Trabalho Remota para seus usuários
 
@@ -273,9 +273,10 @@ Por padrão, os usuários podem optar por iniciar recursos remotos (1) no navega
  Por padrão, o usuário pode selecionar qualquer um dos métodos de inicialização. Um valor booliano **$true** forçará o usuário a iniciar os recursos no navegador. Um valor booliano **$false** forçará o usuário a iniciar os recursos baixando um arquivo .rdp para lidar com um cliente RDP instalado localmente.
 
 ### <a name="reset-rdwebclientdeploymentsetting-configurations-to-default"></a>Redefinir configurações de RDWebClientDeploymentSetting para o padrão
-Para redefinir uma configuração de cliente Web no nível de implantação para a configuração padrão, execute o seguinte cmdlet do PowerShell e use o parâmetro --Name para especificar a configuração que você deseja redefinir:
-  
-  ```PowerShell
+
+Para redefinir uma configuração de cliente Web no nível de implantação para a configuração padrão, execute o seguinte cmdlet do PowerShell e use o parâmetro -name para especificar a configuração que você deseja redefinir:
+
+   ```PowerShell
     Reset-RDWebClientDeploymentSetting -Name "LaunchResourceInBrowser"
     Reset-RDWebClientDeploymentSetting -Name "SuppressTelemetry"
    ```
