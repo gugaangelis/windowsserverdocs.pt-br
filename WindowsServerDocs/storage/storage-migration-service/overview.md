@@ -1,19 +1,19 @@
 ---
-Title: Visão geral do serviço de migração de armazenamento
+title: Visão geral do serviço de migração de armazenamento
 description: O Serviço de Migração de Armazenamento facilita a migração dos servidores para uma versão mais recente do Windows Server. Ele fornece uma ferramenta gráfica que faz o inventário de dados nos servidores e, em seguida, transfere os dados e a configuração para servidores mais recentes — tudo sem aplicativos ou usuários precisando mudar tudo.
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
-ms.date: 05/21/2019
+ms.date: 08/16/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 8118b58268e88a173a6219631e109ed1c436fea0
-ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
+ms.openlocfilehash: dae64b81c48b9ae6bf84c3558066ebbdf9c06ace
+ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560559"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69584828"
 ---
 # <a name="storage-migration-service-overview"></a>Visão geral do serviço de migração de armazenamento
 
@@ -58,7 +58,7 @@ Para usar o serviço de migração de armazenamento, você precisa do seguinte:
 
 É altamente recomendável que os computadores Orchestrator e de destino tenham pelo menos dois núcleos ou dois vCPUs, e pelo menos 2 GB de memória. As operações de inventário e transferência são significativamente mais rápidas com mais processadores e memória.
 
-### <a name="security-requirements"></a>Requisitos de segurança
+### <a name="security-requirements-the-storage-migration-service-proxy-service-and-firewall-ports"></a>Requisitos de segurança, o serviço de proxy de serviço de migração de armazenamento e as portas de firewall
 
 - Uma conta de migração que é um administrador nos computadores de origem e no computador do Orchestrator.
 - Uma conta de migração que é um administrador nos computadores de destino e no computador Orchestrator.
@@ -70,7 +70,9 @@ Para usar o serviço de migração de armazenamento, você precisa do seguinte:
   - Instrumentação de Gerenciamento do Windows (WMI-In)
   
   > [!TIP]
-  > A instalação do serviço de proxy de serviço de migração de armazenamento em um computador com Windows Server 2019 abre automaticamente as portas de firewall necessárias nesse computador.
+  > A instalação do serviço de proxy de serviço de migração de armazenamento em um computador com Windows Server 2019 abre automaticamente as portas de firewall necessárias nesse computador. Para fazer isso, conecte-se ao servidor de destino no centro de administração do Windows e vá para **Gerenciador do servidor** (no centro de administração do windows) > **funções e recursos**, selecione **proxy de serviço de migração de armazenamento**e, em seguida, selecione **instalar**.
+
+
 - Se os computadores pertencerem a um domínio Active Directory Domain Services, todos deverão pertencer à mesma floresta. O servidor de destino também deve estar no mesmo domínio que o servidor de origem se você quiser transferir o nome de domínio da origem para o destino ao recortar. A transferência tecnicamente funciona entre domínios, mas o nome de domínio totalmente qualificado do destino será diferente da origem...
 
 ### <a name="requirements-for-source-servers"></a>Requisitos para servidores de origem

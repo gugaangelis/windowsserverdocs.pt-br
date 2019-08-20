@@ -1,34 +1,34 @@
 ---
 title: Use expressões regulares no NPS
-description: Este tópico explica o uso de expressões regulares para correspondência de padrões no NPS no Windows Server 2016. Você pode usar essa sintaxe para especificar as condições de atributos de diretiva de rede e territórios RADIUS.
+description: Este tópico explica o uso de expressões regulares para correspondência de padrões no NPS no Windows Server. Você pode usar essa sintaxe para especificar as condições de atributos de diretiva de rede e territórios RADIUS.
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
 ms.assetid: bc22d29c-678c-462d-88b3-1c737dceca75
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2a47403d4f88d5487fb4ffb0e35c46438aadcd8a
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.author: jgerend
+author: jasongerend
+msdate: 08/16/2019
+ms.openlocfilehash: 76615fcccfe06333a76f872b52d2e88182fd60e5
+ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546528"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69584792"
 ---
 # <a name="use-regular-expressions-in-nps"></a>Use expressões regulares no NPS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+> Aplica-se a:  Windows Server 2019, Windows Server 2016, Windows Server (canal semestral)
 
-Este tópico explica o uso de expressões regulares para correspondência de padrões no NPS no Windows Server 2016. Você pode usar essa sintaxe para especificar as condições de atributos de diretiva de rede e territórios RADIUS.
+Este tópico explica o uso de expressões regulares para correspondência de padrões no NPS no Windows Server. Você pode usar essa sintaxe para especificar as condições de atributos de diretiva de rede e territórios RADIUS.
 
 ## <a name="pattern-matching-reference"></a>Referência de correspondência de padrões
 
-Você pode usar a tabela a seguir como uma origem de referência ao criar expressões regulares com a sintaxe de correspondência de padrões.
+Você pode usar a tabela a seguir como uma origem de referência ao criar expressões regulares com a sintaxe de correspondência de padrões. Observe que os padrões de expressão regular geralmente são circundados por barras (/).
 
-
-|  Espaço  |                                                                                 Descrição                                                                                  |                                                                 Exemplo                                                                 |
-|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-|     `\ `     |                                                              Marca o próximo caractere como um caractere a ser correspondido.                                                               |                      `/n/ matches the character "n". The sequence /\n/ matches a line feed or newline character.`                       |
+|  Espaço  |  Descrição  |   Exemplo                                                                 |
+| ----------- | ------------- | ------------------------------------------------------------------------  |
+|     `\ `     | Indica que o caractere a seguir é um caractere especial ou deve ser interpretado literalmente.  | `/n/ matches the character "n" while the sequence /\n/ matches a line feed or newline character.`  |
 |     `^`     |                                                                 Corresponde ao início da entrada ou linha.                                                                  |                                                                 &nbsp;                                                                  |
 |     `$`     |                                                                    Corresponde ao fim da entrada ou linha.                                                                     |                                                                 &nbsp;                                                                  |
 |     `*`     |                                                             Corresponde ao caractere anterior zero ou mais vezes.                                                              |                                                  `/zo*/ matches either "z" or "zoo."`                                                   |
