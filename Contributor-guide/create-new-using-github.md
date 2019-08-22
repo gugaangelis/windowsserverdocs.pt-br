@@ -1,59 +1,59 @@
 ---
-title: Criar novos artigos do Windows Server usando o GitHub e Visual Studio Code
-description: Como criar novos artigos relacionados ao Windows Server, usando o GitHub e Visual Studio Code, como um funcionário da Microsoft.
+title: Criar novos artigos do Windows Server usando o GitHub e o Visual Studio Code
+description: Como criar novos artigos relacionados ao Windows Server, usando o GitHub e o Visual Studio Code, como um funcionário da Microsoft.
 author: eross-msft
 ms.author: lizross
 ms.date: 05/02/2019
-ms.openlocfilehash: d75bf135266a4783ab2617977b344782cea679ef
-ms.sourcegitcommit: 29ad32b9dea298a7fe81dcc33d2a42d383018e82
+ms.openlocfilehash: f5e7e3d0cd17c64175fddaaac73c12daa2c2a32c
+ms.sourcegitcommit: ffd9c42374c7448deb5f53f7a865cb427b5e4e9e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65624567"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887954"
 ---
-# <a name="create-new-windows-server-articles-using-github-and-visual-studio-code"></a>Criar novos artigos do Windows Server usando o GitHub e Visual Studio Code
+# <a name="create-new-windows-server-articles-using-github-and-visual-studio-code"></a>Criar novos artigos do Windows Server usando o GitHub e o Visual Studio Code
 
-Há dois locais separados, onde podemos manter conteúdo técnico do Windows Server. Um dos locais é público (windowsserverdocs) enquanto a outra é privada (pr windowsserverdocs). Quem é você determina qual local contribuem para:
+Há dois locais separados onde mantemos o conteúdo técnico do Windows Server. Um dos locais é público (windowsserverdocs) enquanto o outro é privado (windowsserverdocs-PR). Quem você está determina em qual local você contribui:
 
-- **Eu sou um funcionário da Microsoft.** Como funcionário da Microsoft, você tem opções, com base no qual você está tentando fazer:
+- **Sou um funcionário da Microsoft.** Como funcionário da Microsoft, você tem opções, com base no que está tentando fazer:
 
-    - **Crie um artigo inteiramente novo.** Para criar um novo artigo, você deve criar e configurar sua conta do GitHub e ferramentas, bifurcar e clonar o repositório windowsserverdocs-pr, configurar seu branch remoto, criar o artigo e, finalmente, crie uma nova solicitação de pull para aprovação e publicação. Para obter essas instruções, continue lendo este artigo.
+    - **Crie um artigo novo.** Para criar um novo artigo, você deve criar e configurar sua conta e ferramentas do GitHub, bifurcar e clonar o repositório windowsserverdocs-PR, configurar sua ramificação remota, criar o artigo e, finalmente, criar uma nova solicitação de pull para aprovação e publicação. Para essas instruções, continue lendo este artigo.
 
-    - **Fazer grandes alterações em um artigo existente.** Para fazer alterações significativas em um artigo existente, você pode seguir as instruções de [editar um artigo existente do Windows Server usando o GitHub e Visual Studio Code](edit-existing-using-github.md) artigo.
+    - **Faça grandes alterações em um artigo existente.** Para fazer alterações substanciais em um artigo existente, você pode seguir as instruções no artigo [Editar um servidor do Windows existente usando o GitHub e Visual Studio Code](edit-existing-using-github.md) .
 
-    - **Fazer pequenas alterações em um artigo existente.** Para fazer pequenas alterações em um artigo existente, você pode seguir as instruções de [atualizam os artigos existentes do Windows Server usando um navegador da web e o GitHub](github-browser-updates.md) artigo.
+    - **Faça alterações secundárias em um artigo existente.** Para fazer alterações secundárias em um artigo existente, você pode seguir as instruções contidas no artigo [atualizar artigos existentes do Windows Server usando um navegador da Web e o GitHub](github-browser-updates.md) .
 
-- **Eu não sou um funcionário da Microsoft.** Como um funcionário não são da Microsoft, você deve contribuir para o local público. Para obter informações sobre como fazer isso, consulte a [contribuindo para a documentação técnica do Windows Server](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/CONTRIBUTING.md) artigo.
+- **Não sou um funcionário da Microsoft.** Como funcionário que não seja da Microsoft, você deve contribuir para o local público. Para obter informações sobre como fazer isso, consulte o artigo [contribuindo para a documentação técnica do Windows Server](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/CONTRIBUTING.md) .
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Antes de começar a trabalhar no repositório, você deve criar e configurar sua conta do GitHub, configurar a verificação de dois fatores e instalar e configurar todas as ferramentas necessárias. Se você tiver feito isso, você pode pular para a [bifurcar a seção de repositório](#fork-the-repository) deste artigo.
+Antes de começar a trabalhar no repositório, você deve criar e configurar sua conta do GitHub, configurar a verificação de dois fatores e instalar e configurar todas as ferramentas necessárias. Se você já fez isso, pode pular para a [seção bifurcar o repositório](#fork-the-repository) deste artigo.
 
-1. [Criar um perfil e conta do GitHub](https://review.docs.microsoft.com/help/contribute/contribute-get-started-setup-github?branch=master#create-a-github-account-and-set-up-your-profile)
+1. [Criar uma conta e um perfil do GitHub](https://review.docs.microsoft.com/help/contribute/contribute-get-started-setup-github?branch=master#create-a-github-account-and-set-up-your-profile)
 
-2. [Vincular sua conta de sua conta da Microsoft e as organizações da Microsoft e MicrosoftDocs](https://review.docs.microsoft.com/help/contribute/contribute-get-started-setup-github?branch=master#link-your-github-and-microsoft-accounts)
+2. [Vincule sua conta ao seu conta Microsoft e às organizações Microsoft e MicrosoftDocs](https://review.docs.microsoft.com/help/contribute/contribute-get-started-setup-github?branch=master#link-your-github-and-microsoft-accounts)
 
-3. [Ativar a verificação de dois fatores em](https://review.docs.microsoft.com/help/contribute/contribute-get-started-setup-github?branch=master#enable-two-factor-authentication-and-create-an-access-token)
+3. [Ativar a verificação de dois fatores](https://review.docs.microsoft.com/help/contribute/contribute-get-started-setup-github?branch=master#enable-two-factor-authentication-and-create-an-access-token)
 
-4. [Autorizar o sistema de compilação para acessar sua conta do GitHub](https://review.docs.microsoft.com/help/contribute/contribute-get-started-setup-github?branch=master#authorize-the-ops-build-system-to-access-your-github-account)
+4. [Autorizar o sistema de compilação a acessar sua conta do GitHub](https://review.docs.microsoft.com/help/contribute/contribute-get-started-setup-github?branch=master#authorize-the-ops-build-system-to-access-your-github-account)
 
-5. [Instalar o Visual Studio Code](https://review.docs.microsoft.com/help/contribute/contribute-get-started-setup-tools?branch=master#install-visual-studio-code)
+5. [Instalar Visual Studio Code](https://review.docs.microsoft.com/help/contribute/contribute-get-started-setup-tools?branch=master#install-visual-studio-code)
 
-6. [Instale o GitHub e suas ferramentas](https://review.docs.microsoft.com/help/contribute/contribute-get-started-setup-tools?branch=master#install-git-client-tools)
+6. [Instalar o GitHub e suas ferramentas](https://review.docs.microsoft.com/help/contribute/contribute-get-started-setup-tools?branch=master#install-git-client-tools)
 
-7. [Instalar o pacote de criação do Docs](https://review.docs.microsoft.com/help/contribute/contribute-get-started-setup-tools?branch=master#install-the-docs-authoring-pack)
+7. [Instalar o pacote de criação do docs](https://review.docs.microsoft.com/help/contribute/contribute-get-started-setup-tools?branch=master#install-the-docs-authoring-pack)
 
 ## <a name="set-up-your-own-version-of-the-repo"></a>Configurar sua própria versão do repositório
 
-Depois que você criou e configurar sua conta do GitHub e ferramentas, você pode criar uma versão pessoal do repositório. Isso é onde você criará suas ramificações e fazer todas as suas alterações.
+Depois de criar e configurar sua conta e ferramentas do GitHub, você pode criar uma versão pessoal do seu repositório. É aqui que você criará seus branches e fará todas as alterações.
 
 ### <a name="fork-the-repository"></a>Divida o repositório
 
-Você precisa de uma cópia local dos arquivos de origem, portanto, você pode criar solicitações de pull da bifurcação para o repositório de produção.
+Você precisa de uma cópia local dos arquivos de origem, para que possa criar solicitações de pull de sua bifurcação para o repositório de produção.
 
-#### <a name="to-fork-the-repository"></a>Para criar fork do repositório
+#### <a name="to-fork-the-repository"></a>Para bifurcar o repositório
 
-1. Entre sua conta do GitHub e vá para https://github.com/microsoftdocs/windowsserverdocs-pr.
+1. Entre em sua conta do GitHub e vá para https://github.com/microsoftdocs/windowsserverdocs-pr.
 
 2. Selecione **bifurcação**.
 
@@ -65,19 +65,19 @@ Você precisa de uma cópia local dos arquivos de origem, portanto, você pode c
 
 ### <a name="clone-the-repository"></a>Clone o repositório
 
-Você precisa clonar uma cópia local do repositório logon em seu dispositivo local do get de repositório.
+Você precisa clonar o repositório para obter uma cópia local do repositório em seu dispositivo local.
 
 #### <a name="to-clone-the-repository"></a>Para clonar o repositório
 
-1. Vá para https://github.com/settings/developerse, em seguida, selecione **tokens de acesso pessoal** no painel esquerdo.
+1. Vá para https://github.com/settings/developers e selecione tokens de **acesso pessoal** no painel esquerdo.
 
-2. Selecione **gerar novo token**, dê um nome exclusivo e significativo ao seu token, selecione todos os escopos disponíveis e, em seguida, selecione **gerar token**.
+2. Selecione **gerar novo token**, dê ao token um nome significativo e exclusivo, selecione todos os escopos disponíveis e, em seguida, selecione **gerar token**.
 
-3. Copie o token e colocá-lo em um lugar seguro. Você precisará dela para o restante do processo e depois que você sair da página, você não poderá voltar a ela.
+3. Copie o token e coloque-o em algum lugar seguro. Você precisará disso para o restante do processo e, depois de sair da página, não conseguirá voltar a ele.
 
-4. Abra um comando do Git Bash e altere os diretórios para onde você deseja armazenar seu repositório. Recomendamos o uso, `C:\users\<your_name>\GitHub`.
+4. Abra um comando do git bash e altere os diretórios para onde você deseja armazenar o repositório. É recomendável usar `C:\users\<your_name>\GitHub`o,.
 
-5. Digite os comandos a seguir usando as informações específicas, um de cada vez, clonar seu repositório e configurar seus branches remotos:
+5. Digite os comandos a seguir usando suas informações específicas, uma de cada vez, para clonar seu repositório e configurar suas ramificações remotas:
 
     ```markdown
 
@@ -90,11 +90,11 @@ Você precisa clonar uma cópia local do repositório logon em seu dispositivo l
     git fetch upstream master
     ```
 
-6. Execute este comando para verificar se que as referências remotas está configurada corretamente:
+6. Execute este comando para verificar se o seu remoto está configurado corretamente:
 
     `git remote -v`
 
-7. Você deverá ver algo parecido com esta saída:
+7. Você verá algo semelhante a esta saída:
 
     ```markdown
     $ git remote -v
@@ -105,7 +105,7 @@ Você precisa clonar uma cópia local do repositório logon em seu dispositivo l
     upstream https://github.com/MicrosoftDocs/windowsserverdocs-pr.git (push)
     ```
 
-    Se sua saída remota não ter esta aparência, você pode tentar novamente pela primeira execução `git remote remove upstream`.
+    Se a saída remota não tiver esta aparência, você poderá tentar novamente executando `git remote remove upstream`a primeira vez.
 
 ## <a name="create-a-branch-and-a-new-article"></a>Criar uma ramificação e um novo artigo
 
@@ -113,11 +113,11 @@ Siga estas etapas para criar um artigo.
 
 ### <a name="create-a-new-branch-and-a-new-file"></a>Criar uma nova ramificação e um novo arquivo
 
-Antes de você pode começar a trabalhar em seu conteúdo, você deve criar um novo branch no repositório local.
+Antes de começar a trabalhar em seu conteúdo, você deve criar uma nova ramificação em seu repositório local.
 
-#### <a name="to-create-a-new-branch-in-git-bash"></a>Para criar um novo branch no Git Bash
+#### <a name="to-create-a-new-branch-in-git-bash"></a>Para criar uma nova ramificação no git bash
 
-- Abra o Git Bash e digite os comandos (um por vez):
+- Abra o Git bash e digite os comandos (um de cada vez):
 
     ```markdown
     cd windowsserverdocs-pr
@@ -128,45 +128,47 @@ Antes de você pode começar a trabalhar em seu conteúdo, você deve criar um n
     ```
 
     >[!Note]
-    >É altamente recomendável nomear sua ramificação algo óbvio e exclusivo para que possa localizá-lo novamente mais tarde.
+    >É altamente recomendável nomear seu Branch como algo óbvio e exclusivo para que você possa encontrá-lo novamente mais tarde.
 
-    Depois de concluir os comandos, você usará em seu novo branch e pronto para criar o novo arquivo. Você só precisará alterar para o repositório de pr windowsserverdocs uma vez por instância de seu Git Bash. Se você fechar o Git Bash, você precisará alterar diretórios novamente depois de abri-lo.
+    Após a conclusão dos comandos, você estará em seu novo Branch e estará pronto para criar o novo arquivo. Você só precisa alterar para o repositório windowsserverdocs-PR uma vez por instância de seu git bash. Se você fechar o Git bash, será necessário alterar os diretórios novamente depois de abri-lo.
 
-#### <a name="to-create-a-new-file-in-your-branch"></a>Para criar um novo arquivo na sua ramificação
+#### <a name="to-create-a-new-file-in-your-branch"></a>Para criar um novo arquivo em sua ramificação
 
-1. Abra o Windows Explorer, vá para seu diretório do GitHub e criar um novo arquivo de texto na estrutura de pastas. O nome do arquivo deve ser todas as letras minúsculas e são separados por hifens. Por exemplo, _what-for-windows-server.md_.
+1. Abra o Windows Explorer, vá para o diretório do GitHub e crie um novo arquivo de texto na estrutura de pastas. O nome do arquivo deve estar em letras minúsculas e separados por hifens. Por exemplo, _What-is-Windows-Server.MD_.
 
-     Você também deve alterar a extensão de arquivo de. txt para. md. Na mensagem de erro que aparece, selecione **Sim** para salvar o arquivo com a nova extensão de arquivo.
+     Você também deve alterar a extensão de arquivo de. txt para. MD. Na mensagem de erro exibida, selecione **Sim** para salvar o arquivo com a nova extensão de arquivo.
 
-2. Abra o Visual Studio Code e vá para **arquivo**, selecione **Abrir pasta**e, em seguida, vá para o local do GitHub do arquivo criado na etapa 1.
+2. Abra Visual Studio Code e vá para **arquivo**, selecione **abrir pasta**e, em seguida, vá para o local do GitHub do arquivo criado na etapa 1.
 
-3. Dos **Explorer** painel, selecione o novo arquivo.
+3. No painel do **Explorer** , selecione o novo arquivo.
 
-4. Adicionar texto à página e, em seguida, selecione **arquivo** > **salvar**.
+4. Adicione o texto à página. Se você estiver criando um novo artigo, certifique-se [de adicionar as marcas de metadados necessárias ao seu artigo relacionado ao Windows Server](metadata-requirements-for-articles.md).
+
+5. Selecione **arquivo** > **salvar**.
 
 ### <a name="preview-your-text"></a>Visualizar seu texto
 
-Depois de adicionar o texto para o novo arquivo, você deve visualizar as alterações para garantir que eles sejam exibidos corretamente.
+Depois de adicionar o texto ao novo arquivo, você deve Visualizar as alterações para ter certeza de que elas aparecem corretamente.
 
-#### <a name="to-preview-your-text"></a>Para visualizar seu texto
+#### <a name="to-preview-your-text"></a>Para visualizar o texto
 
-1. No Visual Studio Code, selecione qualquer uma da **visualização** botões no canto superior direito.
+1. Em Visual Studio Code, selecione um dos botões de **Visualização** no canto superior direito.
 
-    ![ícone do botão de visualização](media/create-new-using-github/preview-button-full-page.png): Alterna para uma visualização de página inteira do seu conteúdo.
+    ![ícone do botão Visualizar](media/create-new-using-github/preview-button-full-page.png): Alterna para uma visualização de página inteira do seu conteúdo.
 
-    ![ícone do botão de visualização](media/create-new-using-github/preview-button-side-by-side.png): Abre a página de visualização ao lado de sua página de trabalho, lado a lado.
+    ![ícone do botão Visualizar](media/create-new-using-github/preview-button-side-by-side.png): Abre a página de visualização próxima à sua página de trabalho, lado a lado.
 
-2. Verifique se que o artigo aborda como você espera que ela para procurar.
+2. Verifique se o artigo tem a aparência esperada.
 
-    Depois que você tiver certeza se parece certo, você pode confirmar suas alterações e criar uma solicitação de pull para publicação.
+    Depois de ter certeza de que está certo, você pode confirmar suas alterações e criar uma solicitação de pull para publicação.
 
-### <a name="commit-your-changes"></a>Confirme suas alterações
+### <a name="commit-your-changes"></a>Confirmar suas alterações
 
-Depois de verificar se que o texto está correto, você pode confirmar suas alterações para a versão local do seu repositório.
+Depois de verificar se o texto está correto, você pode confirmar suas alterações na versão local do seu repositório.
 
-#### <a name="to-commit-your-changes"></a>Para confirmar as alterações
+#### <a name="to-commit-your-changes"></a>Para confirmar suas alterações
 
-- Abra o Git Bash e digite os comandos (um por vez, removendo as marcas opcionais):
+- Abra o Git bash e digite os comandos (um de cada vez, removendo as marcas OPCIONais):
 
     ```markdown
     OPTIONAL: git status
@@ -181,49 +183,49 @@ Depois de verificar se que o texto está correto, você pode confirmar suas alte
 
     ```
 
-    O comando de status do git opcional mostra quais arquivos foram modificados como parte dessa confirmação. O opcional git pull pulls de mestres de upstream para baixo as alterações de conteúdo mais recente do MicrosoftDocs branch mestre, sincronizando o conteúdo local com o conteúdo mestre primário. Isso ajuda a mostrar possíveis conflitos de mesclagem antecipadamente para que possa corrigi-los antes de chegar ao estágio de PR.
+    O comando opcional de status do git mostra quais arquivos foram modificados como parte dessa confirmação. O mestre pull de upstream extra do git extrai as alterações de conteúdo mais recentes do Branch mestre MicrosoftDocs, sincronizando seu conteúdo local com o conteúdo mestre primário. Isso ajuda a mostrar todos os conflitos potenciais de mesclagem antecipadamente para que você possa corrigi-los antes de chegar ao estágio de PR.
 
-### <a name="submit-a-pull-request-for-review-and-publication"></a>Enviar uma solicitação de pull para análise e publicação
+### <a name="submit-a-pull-request-for-review-and-publication"></a>Enviar uma solicitação de pull para revisão e publicação
 
-Depois de concluir seu artigo, você deve obter aprovação do seu gravador (permitir algum tempo para isso) para publicação.
+Depois de concluir seu artigo, você deve obter aprovação do seu gravador (Aguarde algum tempo para isso) para publicação.
 
 #### <a name="to-submit-your-pull-request"></a>Para enviar sua solicitação de pull
 
-1. Vá para https://github.com/MicrosoftDocs/windowsserverdocs-pr e selecione o **solicitações Pull** guia.
+1. Vá para https://github.com/MicrosoftDocs/windowsserverdocs-pr e selecione a guia **solicitações de pull** .
 
-2. No **revisores** área do painel direito, selecione o ícone de engrenagem e, em seguida, insira o _windowsservercontent_ alias para revisão.
+2. Na área revisores do painel direito, selecione o ícone de engrenagem e, em seguida, insira o alias _windowsservercontent_ para revisão.
 
-    Um membro do _windowsservercontent_ alias irá examinar suas alterações ou adicionar comentários sobre as coisas que devem ser alterados antes de mesclar pode acontecer.
+    Um membro do alias _windowsservercontent_ revisará suas alterações ou adicionará comentários sobre as coisas que devem ser alteradas antes que a mesclagem possa ocorrer.
 
-3. Tipo de **#sign-off** em comentários para que os revisores saibam estiver entregando para revisão e publicação. O **#sign-off** comentário:
+3. Digite **#sign** nos comentários para que os revisores saibam que você está entregando para revisão e publicação. O comentário de **#sign** :
 
-    - Atualiza o rótulo para a sua solicitação de pull de **fazer não mesclar** à **pronto para mesclagem**.
+    - Atualiza o rótulo de sua solicitação de pull de não Mesclar para **pronto para mesclar**.
 
-    - Permite que o alias e gravadores de saber o que você está pronto para ter seu conteúdo revisado.
+    - Permite que o alias e os gravadores saibam que você está pronto para que seu conteúdo seja revisado.
 
-    - Permite que os administradores Saiba que, após a aprovação, seu conteúdo está pronto ir ao vivo.
+    - Permite que os administradores saibam que, após a aprovação, seu conteúdo está pronto para uso.
 
     >[!Important]
-    >Depois de adicionar o comentário #sign-off, um membro da equipe windowsservercontent Revise o texto e enviá-los para dominar, portanto, ele sairá com o próximo agendado publicar vivos (10h30 e dias da semana de 3:30 pm).
+    >Depois de adicionar o comentário de #sign, um membro da equipe do windowsservercontent examinará o texto e o enviará por push para o mestre para que ele vá para a próxima publicação agendada ao vivo (10: às 9h30 e 3: às 16h30 dias da semana).
     >
-    >Se você não adicionar #sign-off como um comentário de final na sua PR, seu conteúdo permanecerão na fila sem que está sendo enviada por push ao mestre e, finalmente, útil.
+    >Se você não adicionar #sign como um comentário final à sua PR, seu conteúdo permanecerá na fila sem ser enviado por push ao mestre e, por fim, ao vivo.
 
 ## <a name="related-information"></a>Informações relacionadas
 
-Para obter mais informações sobre o GitHub e a linguagem markdown, consulte:
+Para obter mais informações sobre o GitHub e a linguagem de redução, consulte:
 
-### <a name="git-concepts"></a>Conceitos do Git
+### <a name="git-concepts"></a>Conceitos do git
 
-- [Introdução do manual Git guias do GitHub](https://guides.github.com/introduction/git-handbook/)
+- [Guias do GitHub-introdução ao manual do git](https://guides.github.com/introduction/git-handbook/)
 
-- [Projetos de bifurcação de guias do GitHub](https://guides.github.com/activities/forking/)
+- [Guias do GitHub – projetos de bifurcação](https://guides.github.com/activities/forking/)
 
-- [Guias do GitHub-Compreendendo o fluxo do GitHub](https://guides.github.com/introduction/flow/)
+- [Guias do GitHub-noções básicas sobre o fluxo do GitHub](https://guides.github.com/introduction/flow/)
 
-- [Aprenda a ramificação de Git](https://learngitbranching.js.org/ (excelente para aprendizes visual!))
+- [Aprenda] a ramificação do git (https://learngitbranching.js.org/ (Ótimo para aprendizes visuais!))
 
 ### <a name="markdown"></a>Markdown
 
-- [Nossas diretrizes de markdown interno](https://review.docs.microsoft.com/help/contribute/markdown-reference?branch=master)
+- [Nossas diretrizes de redução interna](https://review.docs.microsoft.com/help/contribute/markdown-reference?branch=master)
 
-- [Tutorial do GitHub externo,](https://www.markdowntutorial.com/)
+- [External, tutorial do GitHub](https://www.markdowntutorial.com/)
