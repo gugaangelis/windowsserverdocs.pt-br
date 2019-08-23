@@ -27,7 +27,7 @@ ms.locfileid: "69546415"
 
 Você pode usar um cliente de Área de Trabalho Remota da Microsoft para se conectar a um computador remoto e aos seus recursos de trabalho em praticamente qualquer lugar, usando quase qualquer tipo de dispositivo. Você pode se conectar ao seu computador de trabalho e ter acesso a todos os aplicativos, arquivos e recursos de rede como se estivesse em sua mesa de trabalho. Você pode deixar os aplicativos abertos no trabalho e ver esses mesmos aplicativos em casa ao usar o cliente da área de trabalho remota.
 
-***Antes de começar, confira o artigo sobre a [configuração compatível](remote-desktop-supported-config.md), que aborda os computadores aos quais você pode se conectar usando os clientes da Área de Trabalho Remota. ***Confira também as [perguntas frequentes sobre clientes](remote-desktop-client-faq.md).
+Antes de começar, confira o artigo sobre a [configuração compatível](remote-desktop-supported-config.md), que aborda os computadores aos quais você pode se conectar usando os clientes da Área de Trabalho Remota. Confira também as [perguntas frequentes sobre clientes](remote-desktop-client-faq.md).
 
 Os seguintes aplicativos de cliente estão disponíveis:
 
@@ -44,4 +44,4 @@ Para configurar seu computador remoto antes de acessá-lo remotamente, [Permita 
 
 ## <a name="remote-desktop-client-uri-scheme"></a>Esquema de URI de cliente da Área de trabalho remota
 
-Você pode integrar recursos de clientes de Área de Trabalho Remota entre plataformas habilitando um esquema de URI (Uniform Resource Identifier). ***Confira os [atributos de URI compatíveis](remote-desktop-uri.md) que podem ser usados com os clientes iOS, Mac e Android.
+Você pode integrar recursos de clientes de Área de Trabalho Remota entre plataformas habilitando um esquema de URI (Uniform Resource Identifier). Confira os [atributos de URI compatíveis](remote-desktop-uri.md) que podem ser usados com os clientes iOS, Mac e Android.
