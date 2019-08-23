@@ -8,16 +8,16 @@ ms.author: niwashbu
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: d018ea65ce61cab67fe2041b9ef885d32de51b17
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 5924a6a2304bd8e883c43628e3c6c05b69cbd46c
+ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811921"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69980323"
 ---
 # <a name="prepare-your-environment-for-windows-admin-center"></a>Preparar seu ambiente para o Windows Admin Center
 
-> Aplica-se a: Windows Admin Center, Windows Admin Center Preview
+> Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
 
 Há algumas versões de servidor que precisam de preparação adicional antes de serem prontos para gerenciar com o Windows Admin Center:
 
@@ -25,6 +25,8 @@ Há algumas versões de servidor que precisam de preparação adicional antes de
 - [Windows Server 2008 R2](#prepare-windows-server-2008-r2)
 - [Microsoft Hyper-V Server 2016](#prepare-microsoft-hyper-v-server-2016)
 - [Microsoft Hyper-V Server 2012 R2](#prepare-microsoft-hyper-v-server-2012-r2)
+
+Também há alguns cenários em que a [configuração de porta no servidor de destino](#port-configuration-on-the-target-server) pode precisar ser modificada antes de gerenciar com o centro de administração do Windows.
 
 ## <a name="prepare-windows-server-2012-and-2012-r2"></a>Preparar o Windows Server 2012 e 2012 R2
 
@@ -42,7 +44,7 @@ Se não estiver instalado, você pode [baixar e instalar 5.1 WMF](https://docs.m
 
 O Windows Admin Center exige recursos do PowerShell que não estão incluídos por padrão no Windows Server 2008 R2. Para gerenciar o Windows Server 2008 R2 com o Windows Admin Center, você precisará instalar o WMF versão 5.1 ou posterior nesses servidores. 
 
-Certifique-se de que [.NET Framework 4.5.2 ou posterior](https://docs.microsoft.com/dotnet/framework/install/on-windows-7) já está instalado no seu computador.
+Verifique se o [.NET Framework 4.5.2 ou posterior](https://docs.microsoft.com/dotnet/framework/install/on-windows-7) já está instalado no computador.
 
 Digite `$PSVersiontable` no PowerShell para verificar se o WMF está instalado e se a versão é 5.1 ou superior.
 
@@ -82,7 +84,7 @@ Para habilitar a função de servidor de arquivos para o gerenciamento remoto e 
 1. Clique em **Funções e recursos** no menu **Ferramentas** .
 2. Em **Funções e recursos**, encontre **Arquivo e Serviços de armazenamento** e marque **Arquivo e serviços de iSCSI** e **Servidor de arquivos**:
 
-![Captura de tela de funções e recursos que mostra o arquivo e iSCSI função dos serviços selecionado](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
+![Captura de tela de funções e recursos mostrando a função de serviços de arquivo e iSCSI selecionada](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
 
 ### <a name="step-3-enable-hyper-v-module-for-powershell"></a>**Etapa 3:** Habilitar o módulo do Hyper-V para o PowerShell
 
@@ -91,7 +93,7 @@ Para habilitar o módulo do Hyper-V para recursos do PowerShell:
 1. Clique em **Funções e recursos** no menu **Ferramentas** .
 2. Em **Funções e recursos**, encontre as **Ferramentas de administração de servidor remoto** e marque **Ferramentas de administração de função** e **Módulo do Hyper-V para PowerShell**:
 
-![Captura de tela de funções e recursos que mostra as funções do Hyper-V selecionadas](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
+![Captura de tela de funções e recursos mostrando funções do Hyper-V selecionadas](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
 
 O Microsoft Hyper-V Server 2016 agora está pronto para o gerenciamento com o Windows Admin Center.
 
@@ -106,7 +108,7 @@ Para gerenciar o Microsoft Hyper-V Server 2012 R2 com o Windows Admin Center, h�
 3. Habilitar a função de servidor de arquivo
 4. Habilitar o módulo do Hyper-V para o PowerShell
 
-### <a name="step-1-install-windows-management-framework-51"></a>Etapa 1: Instale o Windows Management Framework 5.1
+### <a name="step-1-install-windows-management-framework-51"></a>Etapa 1: Instalar o Windows Management Framework 5,1
 
 Requer o Windows Admin Center PowerShell recursos que não estão incluídos por padrão no Microsoft Hyper-V Server 2012 R2. Para gerenciar o Microsoft Hyper-V Server 2012 R2 com o Windows Admin Center, você precisará instalar WMF versão 5.1 ou posterior.
 
@@ -130,7 +132,7 @@ Para habilitar a função de servidor de arquivos para o gerenciamento remoto e 
 1. Clique em **Funções e recursos** no menu **Ferramentas** .
 2. Em **Funções e recursos**, encontre **Arquivo e serviços de armazenamento** e marque **Arquivo e serviços de iSCSI** e **Servidor de arquivos**:
 
-![Captura de tela de funções e recursos que mostra o arquivo e iSCSI função dos serviços selecionado](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
+![Captura de tela de funções e recursos mostrando a função de serviços de arquivo e iSCSI selecionada](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
 
 ### <a name="step-4-enable-hyper-v-module-for-powershell"></a>Etapa 4: Habilitar o módulo do Hyper-V para o PowerShell
 
@@ -142,6 +144,10 @@ Para habilitar o módulo do Hyper-V para recursos do PowerShell:
 ![Captura de tela de funções e recursos mostrando as ferramentas de administração de servidor remoto do Hyper-V selecionadas](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
 
 O Microsoft Hyper-V Server 2012 R2 agora está pronto para o gerenciamento com o Windows Admin Center.
+
+## <a name="port-configuration-on-the-target-server"></a>Configuração de porta no servidor de destino
+
+O centro de administração do Windows usa o protocolo de compartilhamento de arquivos SMB para algumas tarefas de cópia de arquivos, como ao importar um certificado em um servidor remoto. Para que essas operações de cópia de arquivo tenham sucesso, o firewall no servidor remoto deve permitir conexões de entrada na porta 445.  Você pode usar a ferramenta de firewall no centro de administração do Windows para verificar se a regra de entrada para ' gerenciamento remoto de servidor de arquivos (SMB-in) ' está definida para permitir o acesso nesta porta.
 
 > [!Tip]
 > Pronto para instalar o Windows Admin Center? [Baixar agora](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center#download-now)

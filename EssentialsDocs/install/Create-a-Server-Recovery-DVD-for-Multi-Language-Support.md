@@ -1,32 +1,27 @@
 ---
 title: Criar um DVD de recuperação de servidor para suporte a vários idiomas
 description: Descreve como usar o Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c7da0f6c-9732-4784-9c28-7dad72c4071d
-4author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: e2bbc7bf7af71c671153bf7ba3356ddc08dcc38b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+author: daveba
+ms.author: daveba
+ms.openlocfilehash: 59d8d41e5836ba88b405a058c8340f454b081c06
+ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433637"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69980233"
 ---
 # <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>Criar um DVD de recuperação de servidor para suporte a vários idiomas
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-##  <a name="BKMK_MLHeadedRecovery"></a> Criar uma instalação de servidor e DVD de recuperação de servidor para suporte a vários idiomas em servidores administrados localmente  
+##  <a name="BKMK_MLHeadedRecovery"></a>Criar um DVD de instalação do servidor e de recuperação do servidor para suporte a vários idiomas em servidores administrados localmente  
   
 > [!NOTE]
->  Você deve primeiro criar uma imagem multilíngue do Windows, conforme descrito no [passo a passo: Criação de imagem multilíngue do Windows](https://technet.microsoft.com/library/jj126995) antes de adicionar o pacote de idiomas do Windows Server Essentials em Install. wim.  
+>  Primeiro, você deve criar uma imagem multilíngue do Windows, conforme descrito [no Walkthrough: Criação](https://technet.microsoft.com/library/jj126995) de imagem multilíngüe do Windows antes de adicionar o Windows Server Essentials langauage Pack ao install. wim.  
   
  Há duas fases de instalação: o Ambiente de Pré-Instalação do Windows (Windows PE) e a configuração inicial. Por padrão, a página de seleção de idioma na configuração inicial não será exibida.  
   
@@ -60,21 +55,21 @@ ms.locfileid: "66433637"
   
 -   Um DVD do Windows Server Essentials.  
   
--   Um Windows Server Essentials Language Pack DVD.  
+-   Um DVD do pacote de idiomas do Windows Server Essentials.  
   
-###  <a name="BKMK_Steps"></a> Adicionando suporte a vários idiomas  
- Para adicionar suporte a vários idiomas à instalação do Windows, você atualiza o Install. wim adicionando-se o Windows Server 2012 e pacotes de idioma do Windows Server Essentials.  
+###  <a name="BKMK_Steps"></a>Adicionando suporte a vários idiomas  
+ Para adicionar suporte a vários idiomas ao Instalação do Windows você atualiza o install. wim adicionando os pacotes de idiomas do Windows Server 2012 e do Windows Server Essentials a ele.  
   
 #### <a name="update-installwim"></a>Atualizar Install.wim  
- Nesta etapa, você adiciona o Windows Server 2012 e pacotes de idiomas do Windows Server Essentials em Install. wim.  
+ Nesta etapa, você adiciona os pacotes de idiomas do Windows Server 2012 e do Windows Server Essentials ao install. wim.  
   
 > [!NOTE]
->  Verifique se que você instale pacotes de idiomas para o Windows Server 2012. Isso garante que você obtenha a identidade visual correta. O Windows Server 2012 Multilingual User Interface Language Packs estão disponíveis no [Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx). Siga as instruções conforme descrito no [passo a passo: Criação de imagem multilíngue do Windows sobre como criar um multilíngue](https://technet.microsoft.com/library/jj126995.aspx) sobre como criar uma imagem multilíngue do Windows antes de adicionar o pacote de idiomas do Windows Server Essentials ao Install. wim.  
+>  Verifique se você instalou os pacotes de idiomas para o Windows Server 2012. Isso garante que você obtenha a identidade visual correta. Os pacotes de idiomas da interface do usuário multilíngüe do Windows Server 2012 estão disponíveis no [Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx). Siga as instruções descritas no [passo a passos: Criação de imagem multilíngüe do Windows na criação de um](https://technet.microsoft.com/library/jj126995.aspx) multilíngue ao criar uma imagem multilíngue do Windows antes de adicionar o pacote de idiomas do Windows Server Essentials ao install. wim.  
 >   
->  Pacotes de idiomas do Windows Server Essentials estão disponíveis na mídia de pacote de idiomas em \Language Packs\\< CultureName\>.  
+>  Os pacotes de idiomas do Windows Server Essentials estão disponíveis na mídia do pacote de\\idiomas em\>\Language packs < CultureName.  
   
 > [!NOTE]
->  Nem todos os pacotes de idioma talvez não está disponível antes do lançamento do Windows Server 2012.  
+>  Nem todos os pacotes de idiomas podem não estar disponíveis antes do lançamento do Windows Server 2012.  
   
 ###### <a name="to-add-language-packs-to-installwim"></a>Para adicionar pacotes de idioma a Install.wim  
   
@@ -89,9 +84,9 @@ ms.locfileid: "66433637"
     ```  
   
 
-2.  Adicione arquivos específicos do idioma ao suporte criando USB de restauração de Backup do cliente unidade flash, usando o procedimento descrito em [criar mídia de restauração de cliente de vários idiomas](Build-Multi-Language-Client-Restore-Media.md).  
+2.  Adicione arquivos específicos de idioma para dar suporte à criação da unidade flash USB de restauração de backup do cliente, usando o procedimento descrito em [criar mídia de restauração de cliente em vários idiomas](Build-Multi-Language-Client-Restore-Media.md).  
 
-2.  Adicione arquivos específicos do idioma ao suporte criando USB de restauração de Backup do cliente unidade flash, usando o procedimento descrito em [criar mídia de restauração de cliente de vários idiomas](../install/Build-Multi-Language-Client-Restore-Media.md).  
+2.  Adicione arquivos específicos de idioma para dar suporte à criação da unidade flash USB de restauração de backup do cliente, usando o procedimento descrito em [criar mídia de restauração de cliente em vários idiomas](../install/Build-Multi-Language-Client-Restore-Media.md).  
 
   
 3.  Recrie o arquivo Lang.ini na mídia separada para refletir o suporte a idiomas adicional usando o comando `DISM /Gen-LangINI` , por exemplo:  
