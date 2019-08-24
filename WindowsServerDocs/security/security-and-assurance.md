@@ -11,12 +11,12 @@ ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: high
-ms.openlocfilehash: bd9df9cc9836b15ec22c11b3413aa778192307f9
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: b788aa85bcc2df7c96baaf591b224788e6e6f487
+ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63752190"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70000738"
 ---
 # <a name="security--assurance"></a>Segurança | Garantia
 
@@ -251,7 +251,7 @@ A segurança do Windows Server fornece camadas de proteção integradas ao siste
 <HR />
                         <p><h3><a href="https://www.youtube.com/watch?v=_SaDw1dRy2k">Microsoft OMS (Operations Management Suite)</a></h3>A solução de segurança e auditoria do Microsoft Operations Management Suite (OMS) processa logs de segurança e eventos de firewall de ambientes locais e de nuvem para analisar e detectar comportamentos mal-intencionados.</p>
 <HR />
-                        <p><h3><a href="https://www.youtube.com/watch?v=_SaDw1dRy2k">OMS e Windows Server</a></h3>Este vídeo de 3 minutos mostra como o OMS pode ajudar a detectar comportamentos possivelmente mal-intencionados que são bloqueado pelo Windows Server. Suporte</p>
+                        <p><h3><a href="https://www.youtube.com/watch?v=_SaDw1dRy2k">OMS e Windows Server</a></h3>Este vídeo de 3 minutos mostra como o OMS pode ajudar a detectar comportamentos possivelmente mal-intencionados que são bloqueado pelo Windows Server.</p>
 <HR />
                         <p><h3><a href="http://blogs.technet.com/b/ad/archive/2015/07/22/microsoft-advanced-threat-analytics-coming-next-month.aspx">Microsoft Advanced Threat Analytics</a></h3>Esta postagem do blog aborda Microsoft Advanced ameaça Analytics, um produto no local que usa dados SIEM e tráfego de rede do Active Directory para descobrir e alerta contra ameaças potenciais.</p>
                     </div>
