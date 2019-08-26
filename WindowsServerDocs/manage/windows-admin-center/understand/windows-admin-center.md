@@ -5,15 +5,15 @@ ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
-ms.date: 06/20/2019
+ms.date: 08/22/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 59668e548f2e61cc7497e807dd93aae5c16798ca
-ms.sourcegitcommit: bd5f82f1e534dbb01b8e19e83a23759ebc92b81a
+ms.openlocfilehash: 47dc8e86fd29f4011c205f296439fda4155b27f3
+ms.sourcegitcommit: 4fa147d552481d8279a5390f458a9f7788061977
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68757459"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70009057"
 ---
 # <a name="hello-windows-admin-center"></a>Olá, Windows Admin Center!
 
@@ -25,7 +25,7 @@ O Windows Admin Center é um aplicativo baseado em navegador implantado localmen
 
 [Qual versão é a certa para mim?](faq.md#what-is-windows-admin-center-preview-which-version-is-right-for-me)
 
-[**Versão prévia**do Windows Admin Center 1907](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) – Inclui as atualizações de recursos mais recentes.
+[**Versão prévia** do Windows Admin Center 1908](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) – Inclui as atualizações de recursos mais recentes.
 
 [Windows Admin Center (versão 1904.1)](https://aka.ms/WACDownload) – Amplamente validado e em disponibilidade geral.
 
@@ -64,4 +64,4 @@ O Windows Admin Center foi projetado para gerenciar um servidor único ou cluste
 
 ![](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR)[Siga-nos no Twitter](https://twitter.com/servermgmt)
 
-![](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw)[Leia nossos blogs](https://blogs.technet.microsoft.com/servermanagement/)
+![](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw)[Leia os nossos blogs](https://blogs.technet.microsoft.com/servermanagement/)
