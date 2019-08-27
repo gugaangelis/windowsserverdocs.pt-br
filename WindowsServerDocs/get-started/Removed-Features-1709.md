@@ -1,24 +1,20 @@
 ---
 title: Recursos removidos ou com substituição planejada do Windows Server versão 1709 em diante
 description: Recursos e funcionalidades removidos ou planejados para remoção nas versões.
-ms.custom: na
 ms.prod: windows-server-threshold
-ms.reviewer: na
-ms.suite: na
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 06/05/2018
-author: jaimeo
-ms.author: jaimeo
+ms.date: 08/22/2019
+author: jasongerend
+ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 37970f3bee2070cffc77bff855a8f28641196b24
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: b4303d05a87fe06e84df0cc55e2c1af8b34047e6
+ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66452863"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70000630"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1709"></a>Recursos removidos ou com substituição planejada do Windows Server versão 1709 em diante
 
@@ -26,7 +22,12 @@ ms.locfileid: "66452863"
 
 Veja a seguir uma lista de recursos e funcionalidades do Windows Server versão 1709, que foram removidos do produto nessa versão ou estão sendo considerados para possível substituição em versões futuras. Essa lista é direcionada para profissionais de TI que estão atualizando sistemas operacionais em um ambiente comercial. **Esta lista está sujeita a alteração nas versões subsequentes e pode não incluir todos os recursos ou as funcionalidades afetados.** 
 
+> [!TIP]
+> - Você pode obter acesso antecipado a builds do Windows Server ao ingressar no [Programa Windows Insider](https://insider.windows.com). Essa é uma ótima maneira de testar as alterações de recurso.
+> - Tem dúvidas sobre outras versões? Confira [Recursos removidos ou com substituição planejada no Windows Server](../get-started-19/removed-features.md).
+
 ## <a name="features-removed-from-windows-server-version-1709"></a>Recursos removidos do Windows Server versão 1709
+
 O Windows Server versão 1709 contém os mesmos recursos presentes no Windows Server 2016. Entretanto, essa versão oferece opções de instalação diferentes do Windows Server 2016:
 
 - Como uma versão de Canal semestral, o Windows Server versão 1709 oferece somente a opção de instalação Server Core. Para ver detalhes, confira [Comparação dos canais de manutenção](../get-started-19/servicing-channels-19.md).

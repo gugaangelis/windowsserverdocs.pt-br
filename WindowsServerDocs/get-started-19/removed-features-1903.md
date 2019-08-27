@@ -4,24 +4,24 @@ description: Veja a seguir uma lista de recursos e funcionalidades do Windows Se
 ms.prod: windows-server-threshold
 ms.technology: server-general
 ms.topic: article
-ms.date: 06/11/2019
+ms.date: 08/22/2019
 author: jasongerend
 ms.author: jgerend
 manager: daveba
-ms.openlocfilehash: 9c79b6da3f9aace55b9464f252f97f19e50cc584
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 079f1a6544aac606358a741ecb3fffae791a4985
+ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280189"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70000670"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1903"></a>Recursos removidos ou com substituição planejada começando no Windows Server, versão 1903
 
 >Aplica-se a: Windows Server, versão 1903
 
-Veja a seguir uma lista de recursos e funcionalidades do Windows Server, versão 1903, que foram removidos do produto nessa versão ou estão sendo considerados para remoção em potencial nas versões futuras. Essa lista é direcionada para profissionais de TI que estão atualizando sistemas operacionais em um ambiente comercial. **Esta lista está sujeita a alteração nas versões subsequentes e pode não incluir todos os recursos ou funcionalidades afetados.**
+Veja a seguir uma lista de recursos e funcionalidades do Windows Server, versão 1903, que foram removidos do produto nessa versão ou estão sendo considerados para remoção em potencial nas versões futuras. Essa lista é direcionada para profissionais de TI que estão atualizando sistemas operacionais em um ambiente comercial. **Esta lista está sujeita a alteração nas versões subsequentes e pode não incluir todos os recursos ou as funcionalidades afetados.**
 
-Veja também [Recursos removidos ou planejados para substituição começando no Windows Server 2019](removed-features-19.md).
+Confira também [Recursos removidos ou com substituição planejada no Windows Server](removed-features.md).
 
 ## <a name="features-were-no-longer-developing"></a>Recursos que não desenvolvemos mais
 
