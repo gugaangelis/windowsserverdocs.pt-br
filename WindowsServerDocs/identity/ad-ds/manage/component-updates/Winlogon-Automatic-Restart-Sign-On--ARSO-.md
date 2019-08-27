@@ -1,148 +1,175 @@
 ---
 ms.assetid: cb834273-828a-4141-9387-37dd8270e932
-title: ARSO (Logon de Reinicialização Automática) de Winlogon
-description: ''
+title: Logon automático de reinício do Winlogon (ARSO)
+description: Como o logon automático de reinicialização do Windows pode ajudar a tornar seus usuários mais produtivos.
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
-ms.date: 05/31/2017
+ms.reviewer: cahick
+ms.date: 08/20/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 4024a00c6c186aa929e88cb2aa86b0ec04a731b3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 180ffbd1e96448d7a7ea12c5e08e9fc5b35f7f8b
+ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883617"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70031604"
 ---
-# <a name="winlogon-automatic-restart-sign-on-arso"></a>ARSO (Logon de Reinicialização Automática) de Winlogon
+# <a name="winlogon-automatic-restart-sign-on-arso"></a>Logon automático de reinício do Winlogon (ARSO)
 
->Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+Durante uma Windows Update, há processos específicos do usuário que devem acontecer para que a atualização seja concluída. Esses processos exigem que o usuário esteja conectado ao seu dispositivo. No primeiro logon após a inicialização de uma atualização, os usuários devem aguardar até que esses processos específicos do usuário sejam concluídos antes que possam começar a usar seu dispositivo.
 
-**Autor**: Engenheiro de escalonamento de suporte sênior Justin Turner com o grupo do Windows
+## <a name="how-does-it-work"></a>Como isso funciona?
+
+Quando Windows Update inicia uma reinicialização automática, o ARSO extrai as credenciais derivadas do usuário conectado no momento, persiste-as em disco e configura o logon automático para o usuário. Windows Update em execução como sistema com privilégio TCB iniciará a chamada RPC para fazer isso.
+
+Após a reinicialização final do Windows Update, o usuário será automaticamente conectado por meio do mecanismo de logon automático e a sessão do usuário será alimentada com os segredos persistentes. Além disso, o dispositivo está bloqueado para proteger a sessão do usuário. O bloqueio será iniciado por meio do Winlogon, enquanto o gerenciamento de credenciais é feito pela autoridade de segurança local (LSA). Após uma configuração de ARSO e um logon bem-sucedidos, as credenciais salvas são excluídas imediatamente do disco.
+
+Ao fazer logon automaticamente e bloquear o usuário no console do, Windows Update pode concluir os processos específicos do usuário antes que o usuário retorne ao dispositivo. Dessa forma, o usuário pode começar imediatamente a usar seu dispositivo.
+
+O ARSO trata de forma diferente os dispositivos gerenciados e não. Para dispositivos não gerenciados, a criptografia do dispositivo é usada, mas não é necessária para que o usuário obtenha ARSO. Para dispositivos gerenciados, o TPM 2,0, o SecureBoot e o BitLocker são necessários para a configuração do ARSO. Os administradores de ti podem substituir esse requisito por meio de Política de Grupo. O ARSO para dispositivos gerenciados está disponível no momento somente para dispositivos que ingressaram em Azure Active Directory.
+
+|   | Windows Update| Shutdown-g-t 0  | Reinicializações iniciadas pelo usuário | APIs com sinalizadores SHUTDOWN_ARSO/EWX_ARSO |
+| --- | :---: | :---: | :---: | :---: |
+| Dispositivos gerenciados | :heavy_check_mark:  | :heavy_check_mark: |   | :heavy_check_mark: |
+| Dispositivos não gerenciados | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 
 > [!NOTE]
-> Este documento foi criado por um engenheiro de atendimento ao cliente da Microsoft e é destinado a administradores e arquitetos de sistemas experientes que procuram explicações técnicas mais profundas para recursos e soluções no Windows Server 2012 R2 do que aquelas geralmente oferecidas em tópicos do TechNet. No entanto, ele não passou pelas mesmas etapas de edição que eles, por isso a linguagem pode parecer que menos refinada do que a geralmente encontrada no TechNet.
+> Após uma reinicialização Windows Update induzida, o último usuário interativo é conectado automaticamente e a sessão é bloqueada. Isso permite que os aplicativos da tela de bloqueio de um usuário ainda sejam executados apesar da Windows Update reinicialização.
 
-## <a name="overview"></a>Visão geral
-Aplicativos de tela de bloqueio do Windows 8 introduziu.  Esses são os aplicativos que executam o e exibam as notificações enquanto a sessão do usuário está bloqueada (calendário compromissos, email e mensagens, etc.).  Os dispositivos são reiniciados devido ao processo de atualização do Windows não conseguem exibir essas notificações da tela de bloqueio na reinicialização.  Alguns usuários dependem desses aplicativos de tela de bloqueio.
+![Página de configurações](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/gtr-adds-lockscreenapp.png)
 
-## <a name="whats-changed"></a>O que mudou?
-Quando um usuário faz logon em um dispositivo Windows 8.1, a LSA salvará as credenciais do usuário na memória criptografada acessível somente por lsass.exe. Quando a atualização do Windows inicia uma reinicialização automática sem a presença do usuário, essas credenciais serão usadas para configurar o logon automático para o usuário. Atualização do Windows em execução como system com privilégio TCB iniciará a chamada RPC para fazer isso.
+## <a name="policy-1"></a>#1 de política
 
-Na reinicialização, o usuário será automaticamente ser conectado por meio do mecanismo de logon automático e, em seguida, adicionalmente bloqueado para proteger a sessão do usuário. O bloqueio será iniciado por meio do Winlogon, enquanto o gerenciamento de credenciais é feito pela LSA.  Assinando automaticamente e bloqueio de usuário no console, aplicativos de tela de bloqueio do usuário será reiniciada e está disponível.
+### <a name="sign-in-and-lock-last-interactive-user-automatically-after-a-restart"></a>Entrar e bloquear o último usuário interativo automaticamente após uma reinicialização
 
-> [!NOTE]
-> Depois que uma atualização do Windows induzida reinicialização, o último usuário interativo é conectado automaticamente e a sessão estiver bloqueada assim podem executar aplicativos de tela de bloqueio do usuário.
+No Windows 10, o ARSO está desabilitado para SKUs de servidor e recusa-se para SKUs de cliente.
 
-![Winlogon](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/GTR_ADDS_LockScreenApp.gif)
+**Local da política de Grupo:** Configuração do computador > Modelos Administrativos > componentes do Windows > opções de logon do Windows
 
-![Winlogon](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/GTR_ADDS_LockScreen.gif)
+**Política do Intune:**
 
-**Visão geral rápida**
+- Plataforma Windows 10 e posterior
+- Tipo de perfil: Modelos Administrativos
+- Caminho: \Windows do Windows\windows opções de logon
 
--   Atualização do Windows exige reinicialização
+**Com suporte em:** Pelo menos Windows 10 versão 1903
 
--   É possível reiniciar do computador (*não há aplicativos em execução que pode perder dados*)?
+**Descrição:**
 
-    -   Reinicialização para você
+Essa configuração de política controla se um dispositivo fará logon automaticamente e bloqueará o último usuário interativo após a reinicialização do sistema ou após um desligamento e uma inicialização a frio.
 
-    -   Faça logon no
+Isso só ocorrerá se o último usuário interativo não tiver se desconectado antes da reinicialização ou desligamento.
 
-    -   Máquina de bloqueio
+Se o dispositivo tiver ingressado em Active Directory ou Azure Active Directory, essa política só se aplicará a Windows Update reinicializações. Caso contrário, isso se aplicará a reinicializações Windows Updates e reinicializações iniciadas pelo usuário e desligamentos.
 
--   Habilitada ou desabilitada pela diretiva de grupo
+Se você não definir essa configuração de política, ela será habilitada por padrão. Quando a política está habilitada, o usuário é automaticamente conectado e a sessão é bloqueada automaticamente com todos os aplicativos de tela de bloqueio configurados para esse usuário após a inicialização do dispositivo.
 
-    -   Desabilitado por padrão em SKUs de servidor
+Depois de habilitar essa política, você pode definir suas configurações por meio da política ConfigAutomaticRestartSignOn, que configura o modo de entrar automaticamente e bloquear o último usuário interativo após uma reinicialização ou inicialização a frio.
 
--   Por quê?
+Se você desabilitar essa configuração de política, o dispositivo não configurará a conexão automática. Os aplicativos da tela de bloqueio do usuário não são reiniciados após a reinicialização do sistema.
 
-    -   Algumas atualizações não podem concluir até que o usuário faz logon novamente.
+**Editor do registro:**
 
-    -   Melhor experiência do usuário: não precisa esperar 15 minutos para que as atualizações concluir a instalação
+| Nome do valor | Tipo | Dados |
+| --- | --- | --- |
+| DisableAutomaticRestartSignOn | DWORD | 0 (habilitar ARSO) |
+|   |   | 1 (desabilitar ARSO) |
 
--   Como? AutoLogon
-
-    -   armazena a senha, usa essa credencial para fazer o logon
-
-    -   credencial salva como um segredo LSA em memória paginável
-
-    -   Só pode ser habilitada se o BitLocker está habilitado
-
-## <a name="group-policy-sign-in-last-interactive-user-automatically-after-a-system-initiated-restart"></a>Política de grupo: Entrar no último usuário interativo automaticamente após uma reinicialização iniciada pelo sistema
-No Windows 8.1 / Windows Server 2012 R2, o logon automático do usuário bloqueio de tela após uma reinicialização do Windows Update é aceitar para SKUs de servidor e recusar para SKUs de cliente.
-
-**Local da política:** Configuração do computador > Políticas > modelos administrativos > componentes do Windows > opção de Logon do Windows
-
-**Nome da política:** Entrar no último usuário interativo automaticamente após uma reinicialização iniciada pelo sistema
-
-**Suporte para:** Pelo menos o Windows Server 2012 R2, Windows 8.1 ou Windows RT 8.1
-
-**Descrição/ajuda:**
-
-Essa configuração de política controla se um dispositivo será automaticamente entrar o último usuário interativo após a atualização do Windows reinicia o sistema.
-
-Se você habilitar ou não definir essa configuração de política, o dispositivo salva com segurança as credenciais do usuário (incluindo o nome de usuário, domínio e senha criptografada) para configurar a entrada automática após a reinicialização de uma atualização do Windows. Após a reinicialização do Windows Update, o usuário está conectado no automaticamente e a sessão seja bloqueada automaticamente com todos os aplicativos de tela de bloqueio configurados para esse usuário.
-
-Se você desabilitar essa configuração de política, o dispositivo não armazena as credenciais do usuário para entrar automática após a reinicialização de uma atualização do Windows. Aplicativos de tela de bloqueio dos usuários não são reiniciados depois que o sistema for reiniciado.
-
-**Editor do registro**
-
-|Nome do valor|Tipo|Dados|
-|--------------|--------|--------|
-|DisableAutomaticRestartSignOn|DWORD|0<br /><br />**Exemplo:**<br /><br />0 (ativado)<br /><br />1 (desabilitado)|
-
-**Política local do registro:** HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+**Local do registro de política:** HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 
 **Tipo:** DWORD
 
-**Nome do registro:** DisableAutomaticRestartSignOn
+![Winlogon](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/gtr-adds-signinpolicy.png)
 
-Valor: 0 ou 1
+## <a name="policy-2"></a>#2 de política
 
-0 = Enabled
+### <a name="configure-the-mode-of-automatically-signing-in-and-locking-last-interactive-user-after-a-restart-or-cold-boot"></a>Configurar o modo de entrar automaticamente e bloquear o último usuário interativo após uma reinicialização ou inicialização a frio
 
-1 = desabilitado
+**Local da política de Grupo:** Configuração do computador > Modelos Administrativos > componentes do Windows > opções de logon do Windows
 
-![Winlogon](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/GTR_ADDS_SignInPolicy.gif)
+**Política do Intune:**
+
+- Plataforma Windows 10 e posterior
+- Tipo de perfil: Modelos Administrativos
+- Caminho: \Windows do Windows\windows opções de logon
+
+**Com suporte em:** Pelo menos Windows 10 versão 1903
+
+**Descrição:**
+
+Essa configuração de política controla a configuração sob a qual uma reinicialização automática e logon e bloqueio ocorre após uma reinicialização ou inicialização a frio. Se você escolher "desabilitado" na política "entrar e bloquear o último usuário interativo automaticamente após uma reinicialização", o logon automático não ocorrerá e essa política não precisará ser configurada.
+
+Se você habilitar essa configuração de política, poderá escolher uma das duas opções a seguir:
+
+1. "Habilitado se o BitLocker estiver ativado e não suspenso" especifica que o logon automático e o bloqueio só ocorrerão se o BitLocker estiver ativo e não for suspenso durante a reinicialização ou o desligamento. Os dados pessoais podem ser acessados no disco rígido do dispositivo no momento se o BitLocker não estiver ativado ou suspenso durante uma atualização. A suspensão do BitLocker remove temporariamente a proteção de componentes e dados do sistema, mas pode ser necessária em determinadas circunstâncias para atualizar com êxito os componentes críticos de inicialização.
+   - O BitLocker será suspenso durante as atualizações se:
+      - O dispositivo não tem o TPM 2,0 e o PCR7, ou
+      - O dispositivo não usa um protetor somente TPM
+2. "Always Enabled" especifica que o logon automático ocorrerá mesmo se o BitLocker estiver desativado ou suspenso durante a reinicialização ou o desligamento. Quando o BitLocker não está habilitado, os dados pessoais ficam acessíveis no disco rígido. A reinicialização automática e o logon só devem ser executados sob essa condição se você tiver certeza de que o dispositivo configurado está em um local físico seguro.
+
+Se você desabilitar ou não definir essa configuração, o logon automático usará como padrão o comportamento "habilitado se o BitLocker estiver ligado e não suspenso".
+
+**Editor do registro**
+
+| Nome do valor | type | Dados |
+| --- | --- | --- |
+| AutomaticRestartSignOnConfig | DWORD | 0 (habilitar ARSO se seguro) |
+|   |   | 1 (habilitar ARSO Always) |
+
+**Local do registro de política:** HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+
+**Tipo:** DWORD
+
+![Winlogon](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/arso-policy-setting.png)
 
 ## <a name="troubleshooting"></a>Solução de problemas
-Quando o WinLogon bloqueia automaticamente, rastreamento de estado do WinLogon será armazenado no log de eventos do WinLogon.
+
+Quando o WinLogon é bloqueado automaticamente, o rastreamento de estado do WinLogon será armazenado no log de eventos do WinLogon.
 
 O status de uma tentativa de configuração de logon automático é registrado
 
--   Se for bem-sucedido
+- Se for bem-sucedido
+   - registra-o como tal
+- Se for uma falha:
+   - registra o que a falha foi
+- Quando o estado do BitLocker é alterado:
+   - a remoção das credenciais será registrada
+   - Eles serão armazenados no log operacional LSA.
 
-    -   records it as such
+### <a name="reasons-why-autologon-might-fail"></a>Motivos pelos quais o logon automático pode falhar
 
--   Se uma falha:
+Há vários casos em que um logon automático do usuário não pode ser obtido.  Esta seção destina-se a capturar os cenários conhecidos nos quais isso pode ocorrer.
 
-    -   registra a falha ocorreu
+### <a name="user-must-change-password-at-next-login"></a>O usuário deve alterar a senha no próximo logon
 
--   Quando altera o estado do BitLocker:
+O logon do usuário pode entrar em um estado bloqueado quando a alteração de senha no próximo logon for necessária.  Isso pode ser detectado antes da reinicialização na maioria dos casos, mas nem todos (por exemplo, expiração de senha podem ser alcançados entre o desligamento e o próximo logon.
 
-    -   a remoção de credenciais será registrada em log
+### <a name="user-account-disabled"></a>Conta de usuário desabilitada
 
-        -   Eles serão armazenados no log operacional de LSA.
-
-### <a name="reasons-why-autologon-might-fail"></a>Razões autologon falhar
-Há vários casos em que um logon automático de usuário não pode ser obtido.  Esta seção destina-se para capturar os conhecidos cenários em que isso pode ocorrer.
-
-### <a name="user-must-change-password-at-next-login"></a>Usuário deve alterar a senha no próximo logon.
-Logon de usuário pode entrar em um estado bloqueado quando a alteração de senha no próximo logon é necessária.  Isso pode ser detectado antes da reinicialização, na maioria dos casos, mas não todos (por exemplo, expiração de senha pode ser acessada entre o desligamento e no próximo logon.
-
-### <a name="user-account-disabled"></a>Conta de usuário desativada
-Uma sessão de usuário existente pode ser mantida mesmo se desabilitado.  Reinicialização de uma conta que está desabilitada pode ser detectada localmente na maioria dos casos com antecedência, dependendo da política de grupo pode não ser para contas de domínio (algum domínio em cache trabalho de cenários de logon, mesmo se a conta está desabilitada no controlador de domínio).
+Uma sessão de usuário existente pode ser mantida mesmo se estiver desabilitada.  A reinicialização de uma conta desabilitada pode ser detectada localmente na maioria dos casos com antecedência, dependendo da GP, ela pode não ser para contas de domínio (alguns cenários de logon em cache de domínio funcionam mesmo que a conta esteja desabilitada no DC).
 
 ### <a name="logon-hours-and-parental-controls"></a>Horas de logon e controles dos pais
-As horas de Logon e os controles dos pais podem impedir que uma nova sessão de usuário do que está sendo criado.  Se a reinicialização ocorrer durante essa janela, o usuário não seria permitido a fazer logon.  Não há políticas adicionais que faz com que o bloqueio ou logoff como uma ação de conformidade.  Isso pode ser problemático em muitos casos filho em que o bloqueio de conta pode ocorrer entre a hora de base e wake-up, especialmente se a janela de manutenção é comumente durante esse tempo.
+
+O horário de logon e os controles dos pais podem proibir a criação de uma nova sessão de usuário.  Se uma reinicialização fosse executada durante essa janela, o usuário não teria permissão para fazer logon.  Há uma política adicional que causa o bloqueio ou logout como uma ação de conformidade. O status de uma tentativa de configuração de logon automático é registrado.
+
+## <a name="security-details"></a>Detalhes de segurança
+
+### <a name="credentials-stored"></a>Credenciais armazenadas
+
+|   | Hash de senha | Chave de credencial | Tíquete de concessão de tíquete | Token de atualização primário |
+| --- | :---: | :---: | :---: | :---: |
+| Conta local | :heavy_check_mark: | :heavy_check_mark: |   |   |
+| Conta MSA | :heavy_check_mark: | :heavy_check_mark: |   |   |
+| Conta unida do Azure AD | :heavy_check_mark: | :heavy_check_mark: | : heavy_check_mark: (se híbrido) | :heavy_check_mark: |
+| Conta ingressada no domínio | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | : heavy_check_mark: (se híbrido) |
+
+### <a name="credential-guard-interaction"></a>Interação do Credential Guard
+
+Se um dispositivo tiver o Credential Guard habilitado, os segredos derivados de um usuário serão criptografados com uma chave específica para a sessão de inicialização atual. Portanto, o ARSO não tem suporte atualmente em dispositivos com o Credential Guard habilitado.
 
 ## <a name="additional-resources"></a>Recursos adicionais
-**Tabela tabela SEQ \\ \* árabe 3: ARSO Glossário**
 
-|Termo|Definição|
-|--------|--------------|
-|Autologon|Logon automático é um recurso que está presente no Windows para lançamentos.  É um recurso documentado do Windows que tem até mesmo ferramentas como o v logon automático para Windows 3.01  *[http:/technet.microsoft.com/sysinternals/bb963905.aspx](https://technet.microsoft.com/sysinternals/bb963905.aspx)*<br /><br />Ele permite que um único usuário do dispositivo para entrar automaticamente sem inserir as credenciais. As credenciais estão configuradas e armazenadas no registro como um segredo LSA criptografado.|
-
-
+O logon automático é um recurso que está presente no Windows para várias versões. É um recurso documentado do Windows que até mesmo tem ferramentas como o logon automático para Windows [http:/technet. Microsoft. com/Sysinternals/bb963905. aspx](https://technet.microsoft.com/sysinternals/bb963905.aspx). Ele permite que um único usuário do dispositivo se conecte automaticamente sem inserir as credenciais. As credenciais são configuradas e armazenadas no registro como um segredo de LSA criptografado. Isso pode ser problemático para muitos casos filho em que o bloqueio de conta pode ocorrer entre o tempo e a ativação, especialmente se a janela de manutenção for normalmente durante esse tempo.

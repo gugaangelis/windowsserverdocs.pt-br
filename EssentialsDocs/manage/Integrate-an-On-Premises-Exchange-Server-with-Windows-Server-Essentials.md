@@ -12,12 +12,12 @@ ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 142ae8514a6a480f8181ce193c2f437e2f286e2d
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.openlocfilehash: 689f293acf1e87e135f6f8cf5c7eac2a7d8033b9
+ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68914604"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70031514"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>Integrar um Exchange Server local com o Windows Server Essentials [fwlink_WSE_OPE]
 
@@ -375,7 +375,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
       **ARRConfig config-CERT** _caminho para o arquivo de certificado_ **-nomes de host** _nomes de host para o Exchange Server_ **-TargetServer** _nome do servidor do Exchange Server_  
 
-      Por exemplo; **ARRConfig config-CERT** _c:\temp\certificate.pfx_ **-nomes de host** _mail.contoso.com_ * *-TargetServer * * _ExchangeSvr_  
+      Por exemplo; **ARRConfig config-CERT** _c:\temp\certificate.pfx_ **-nomes de host** _mail.contoso.com_ **-TargetServer** _ExchangeSvr_  
 
       Substitua *mail.contoso.com* pelo nome de seu domínio. Substitua *ExchangeSvr* pelo nome do servidor que executa o Exchange Server.  
 

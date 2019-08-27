@@ -1,65 +1,65 @@
 ---
-title: Hospedar a API do serviço de rede de computação (HCN) para VMs e contêineres
-description: Host de API do serviço de rede de computação (HCN) é uma API do Win32 para o público que fornece acesso de nível de plataforma para gerenciar as redes virtuais, pontos de extremidade de rede virtual e as políticas associadas. Juntos isso fornece a conectividade e segurança para máquinas virtuais (VMs) e contêineres em execução em um host do Windows.
+title: API de serviço HCN (rede de computação de host) para VMs e contêineres
+description: A API de serviço HCN (rede de computação de host) é uma API Win32 voltada para o público que fornece acesso em nível de plataforma para gerenciar redes virtuais, pontos de extremidade de rede virtual e políticas associadas. Juntos, isso fornece conectividade e segurança para VMs (máquinas virtuais) e contêineres em execução em um host do Windows.
 ms.author: jmesser
 author: jmesser81
 ms.date: 11/05/2018
-ms.openlocfilehash: 50af0dab69633aa6e07ded68e9246aa0315377f0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e30a778d661fa7c6d2e248234218eb25fba007a1
+ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844977"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70031547"
 ---
-# <a name="host-compute-network-hcn-service-api-for-vms-and-containers"></a>Hospedar a API do serviço de rede de computação (HCN) para VMs e contêineres
+# <a name="host-compute-network-hcn-service-api-for-vms-and-containers"></a>API de serviço HCN (rede de computação de host) para VMs e contêineres
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2019
 
-Host de API do serviço de rede de computação (HCN) é uma API do Win32 para o público que fornece acesso de nível de plataforma para gerenciar as redes virtuais, pontos de extremidade de rede virtual e as políticas associadas. Juntos isso fornece a conectividade e segurança para máquinas virtuais (VMs) e contêineres em execução em um host do Windows. 
+A API de serviço HCN (rede de computação de host) é uma API Win32 voltada para o público que fornece acesso em nível de plataforma para gerenciar redes virtuais, pontos de extremidade de rede virtual e políticas associadas. Juntos, isso fornece conectividade e segurança para VMs (máquinas virtuais) e contêineres em execução em um host do Windows. 
 
-Os desenvolvedores usam a API do serviço HCN para gerenciar a rede para VMs e contêineres em seus fluxos de trabalho do aplicativo. A API HCN foi projetada para fornecer a melhor experiência para os desenvolvedores. Os usuários finais não interagem diretamente com essas APIs.  
+Os desenvolvedores usam a API de serviço HCN para gerenciar a rede para VMs e contêineres em seus fluxos de trabalho de aplicativo. A API HCN foi projetada para fornecer a melhor experiência para os desenvolvedores. Os usuários finais não interagem diretamente com essas APIs.  
 
 ## <a name="features-of-the-hcn-service-api"></a>Recursos da API do serviço HCN
--   Implementado como C API hospedada pelo Host de rede HNS (serviço) na VM/OnCore.
+-   Implementada como C API hospedada pelo serviço de rede do host (HNS) no Oncore/VM.
 
--   Fornece a capacidade de criar, modificar, excluir e enumerar objetos HCN como redes, pontos de extremidade, namespaces e as políticas. Operações são realizadas em identificadores de objetos (por exemplo, um identificador de rede) e internamente esses identificadores são implementados usando identificadores de contexto RPC.
+-   Fornece a capacidade de criar, modificar, excluir e enumerar objetos HCN, como redes, pontos de extremidade, namespaces e políticas. As operações são executadas em identificadores para os objetos (por exemplo, um identificador de rede) e internamente esses identificadores são implementados usando identificadores de contexto RPC.
 
--   Com base no esquema. A maioria das funções da API de definir a entrada e parâmetros, como cadeias de caracteres que contém os argumentos da chamada de função como documentos JSON de saída. Os documentos JSON se baseiam nos esquemas de controle de versão e fortemente tipados, esses esquemas são parte da documentação do pública. 
+-   Baseado em esquema. A maioria das funções da API definem parâmetros de entrada e saída como cadeias de caracteres que contêm os argumentos da chamada de função como documentos JSON. Os documentos JSON são baseados em esquemas com controle de versão e fortemente tipados, esses esquemas fazem parte da documentação pública. 
 
--   Um assinatura/retorno de chamada de API é fornecido para permitir que os clientes para se registrar para notificações de eventos de todo o serviço como uma rede de criações e exclusões.
+-   Uma API de assinatura/retorno de chamada é fornecida para permitir que os clientes se registrem para notificações de eventos de todo o serviço, como as exclusões e criações de rede.
 
--   API de HCN funciona na ponte de Desktop (também conhecido como Aplicativos de centennial) em execução nos serviços do sistema. A API verifica a ACL, recuperar o token de usuário do chamador.
+-   A API do HCN funciona na ponte de desktop (também conhecido como Centennial) aplicativos em execução nos serviços do sistema. A API verifica a ACL recuperando o token do usuário do chamador.
 
 >[!TIP]
->Há suporte para a API do serviço HCN tarefas em segundo plano e o windows não em primeiro plano. 
+>A API do serviço HCN tem suporte em tarefas em segundo plano e em janelas que não são de primeiro plano. 
 
-## <a name="terminology-host-vs-compute"></a>Terminologia: Host vs. Computação
-O serviço de computação do host permite que os chamadores criar e gerenciar máquinas virtuais e contêineres em um único computador físico. Ele é chamado para seguir a terminologia do setor. 
+## <a name="terminology-host-vs-compute"></a>Terminologia: Host versus Computação
+O serviço de computação do host permite que os chamadores criem e gerenciem máquinas virtuais e contêineres em um único computador físico. Ele é nomeado para seguir a terminologia do setor. 
 
-- **Host** é amplamente usado no setor de virtualização para referir-se ao sistema operacional que fornece recursos virtualizados.
+- O **host** é amplamente usado no setor de virtualização para se referir ao sistema operacional que fornece recursos virtualizados.
 
-- **Computação** é usado para se referir a métodos de virtualização que são mais amplos do que apenas máquinas de virtuais. Serviço de rede do host de computação permite que os chamadores criar e gerenciar a rede para máquinas virtuais e o contêiner em um único computador físico.
+- A **computação** é usada para se referir a métodos de virtualização mais amplos do que apenas máquinas virtuais. O serviço de rede de computação do host permite que os chamadores criem e gerenciem a rede para máquinas virtuais e contêineres em um único computador físico.
 
-## <a name="schema-based-configuration-documents"></a>Documentos de configuração com base em esquema
-Documentos de configuração com base em esquemas bem definidas é um padrão da indústria estabelecido no espaço de virtualização. A maioria das soluções de virtualização, como Docker e Kubernetes, fornecem que APIs com base em documentos de configuração. Unidade de várias iniciativas de mercado, com a participação da Microsoft, um ecossistema para definir e validar esses esquemas, como [OpenAPI](https://www.openapis.org/).  A padronização de definições de esquema específico para os esquemas usados para contêineres, como também levam a essas iniciativas [abrir contêiner OCI (iniciativa)](https://www.opencontainers.org/).
+## <a name="schema-based-configuration-documents"></a>Documentos de configuração baseados em esquema
+Os documentos de configuração baseados em esquemas bem definidos são um padrão industrial estabelecido no espaço de virtualização. A maioria das soluções de virtualização, como Docker e kubernetes, fornece APIs baseadas em documentos de configuração. Várias iniciativas do setor, com a participação da Microsoft, orientam um ecossistema para definir e validar esses esquemas, como [openapi](https://www.openapis.org/).  Essas iniciativas também orientam a padronização de definições de esquema específicas para os esquemas usados para contêineres, como o [OCI (Open container Initiative)](https://www.opencontainers.org/).
 
-É o idioma usado para a criação de documentos de configuração [JSON](https://tools.ietf.org/html/rfc8259), que você usa em combinação com:
+O idioma usado para criar documentos de configuração é [JSON](https://tools.ietf.org/html/rfc8259), que você usa em combinação com:
 -   Definições de esquema que definem um modelo de objeto para o documento
 -   Validação de se um documento JSON está em conformidade com um esquema
--   Conversão de documentos JSON e para representações nativas desses esquemas nas linguagens de programação usadas por chamadores das APIs de automatizada 
+-   Conversão automatizada de documentos JSON de e para representações nativas desses esquemas nas linguagens de programação usadas pelos chamadores das APIs 
 
-Definições de esquema usados com frequência são [OpenAPI](https://www.openapis.org/) e [esquema JSON](http://json-schema.org/), que permite especificar as definições detalhadas das propriedades em um documento, por exemplo:
--   O conjunto válido de valores para uma propriedade, como 0 e 100 para uma propriedade que representa uma porcentagem.
--   A definição de enumerações, que são representados como um conjunto de cadeias de caracteres válidas para uma propriedade.
+As definições de esquema usadas com frequência são [openapi](https://www.openapis.org/) e [esquema JSON](http://json-schema.org/), que permite especificar as definições detalhadas das propriedades em um documento, por exemplo:
+-   O conjunto válido de valores para uma propriedade, como 0-100 para uma propriedade que representa uma porcentagem.
+-   A definição de enumerações, que são representadas como um conjunto de cadeias de caracteres válidas para uma propriedade.
 -   Uma expressão regular para o formato esperado de uma cadeia de caracteres. 
 
-Como parte de documentar as APIs HCN, estamos planejando publicar o esquema de nossos documentos JSON como uma especificação de OpenAPI. Com base nessa especificação, representações de linguagem específica do esquema podem permitir uso fortemente tipada dos objetos de esquema na linguagem de programação usada pelo cliente. 
+Como parte da documentação das APIs do HCN, estamos planejando publicar o esquema de nossos documentos JSON como uma especificação OpenAPI. Com base nessa especificação, representações específicas de idioma do esquema podem permitir o uso seguro de tipo dos objetos de esquema na linguagem de programação usada pelo cliente. 
 
 ### <a name="example"></a>Exemplo 
 
-O exemplo a seguir é um exemplo desse fluxo de trabalho para o objeto que representa um controlador SCSI no documento de configuração de uma VM. 
+Veja a seguir um exemplo desse fluxo de trabalho para o objeto que representa um controlador SCSI no documento de configuração de uma VM. 
 
-No código-fonte do Windows, podemos definir esquemas usando arquivos .mars: onecore/vm/dv/net/hns/schema/mars/Schema/HCN.Schema.Network.mars
+No código-fonte do Windows, definimos esquemas usando arquivos. Mars: onecore/VM/DV/net/HNS/Schema/Mars/esquema/HCN. Schema. Network. Mars
 
 ```
 enum IpamType
@@ -114,9 +114,9 @@ class Route
 ```
 
 >[!TIP]
->O [NewIn("2.0") anotações fazem parte do suporte do controle de versão para as definições de esquema.
+>As anotações [NewIn ("2.0") fazem parte do suporte de controle de versão para as definições de esquema.
 
-Dessa definição interna, podemos gerar as especificações de OpenAPI para o esquema:
+A partir desta definição interna, geramos as especificações de OpenAPI para o esquema:
 
 ```
 { 
@@ -223,16 +223,16 @@ Dessa definição interna, podemos gerar as especificações de OpenAPI para o e
 } 
 ```
 
-Você pode usar ferramentas, tais como [Swagger](https://swagger.io/), para gerar representações de linguagem específica do esquema de linguagem de programação usada por um cliente. Swagger dá suporte a uma variedade de linguagens, como C#, Go, Javascript e Python).
+Você pode usar ferramentas, como o [Swagger](https://swagger.io/), para gerar representações específicas de idioma da linguagem de programação de esquema usada por um cliente. O Swagger dá suporte a uma variedade de C#linguagens como, go, JavaScript e Python.
 
-- [Gerado do exemplo de C# código](example-c-sharp.md) para o IPAM de nível superior e a sub-rede do objeto.
+- [Exemplo de código C# gerado](example-c-sharp.md) para o objeto de sub-rede & o IPAM de nível superior.
 
-- [Exemplo de código gerado do Go](example-go.md) para o IPAM de nível superior e a sub-rede do objeto. Go é usado com o Docker e Kubernetes, que são dois dos consumidores das APIs de serviço de rede de computação do Host. Go tem suporte interno de marshaling de tipos de ir para e de documentos JSON.
+- [Exemplo de código go gerado](example-go.md) para o objeto de sub-rede & de nível superior do IPAM. Go é usado pelo Docker e kubernetes, que são dois dos consumidores das APIs de serviço de rede de computação do host. O Go tem suporte interno para empacotamento de tipos Go de e para documentos JSON.
 
-Além de geração de código e validação, você pode usar ferramentas para simplificar o trabalho com documentos JSON — ou seja, [Visual Studio Code](https://code.visualstudio.com/Docs/languages/json).
+Além da geração de código e da validação, você pode usar ferramentas para simplificar o trabalho com documentos JSON, ou seja, [Visual Studio Code](https://code.visualstudio.com/Docs/languages/json).
 
-### <a name="top-level-objects-defined-in-the-hcnschemasmars-file"></a>Objetos de nível superior definidos no HCN. Arquivo schemas.MARS
-Conforme mencionado acima, você pode encontrar o esquema do documento para documentos usados pelas APIs em um conjunto de arquivos .mars sob HCN: onecore/vm/dv/net/hns / / mars/de esquema
+### <a name="top-level-objects-defined-in-the-hcnschemasmars-file"></a>Objetos de nível superior definidos no HCN. Arquivo schemas. Mars
+Conforme mencionado acima, você pode encontrar o esquema do documento para documentos usados pelas APIs HCN em um conjunto de arquivos. Mars em: onecore/VM/DV/net/HNS/Schema/Mars/esquema
 
 Os objetos de nível superior são:
 - [HostComputeNetwork](hcn-scenarios.md#scenario-hcn)
@@ -279,8 +279,8 @@ class HostComputeLoadBalancer : HCN.Schema.Common.Base
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Saiba mais sobre o [cenários comuns de HCN](hcn-scenarios.md).
+- Saiba mais sobre os [cenários comuns de HCN](hcn-scenarios.md).
 
-- Saiba mais sobre o [cuida de contexto RPC para HCN](hcn-declaration-handles.md).
+- Saiba mais sobre os [identificadores de contexto RPC para HCN](hcn-declaration-handles.md).
 
-- Saiba mais sobre o [esquemas de documentos JSON HCN](hcn-json-document-schemas.md).
+- Saiba mais sobre os [esquemas de documento JSON HCN](hcn-json-document-schemas.md).

@@ -1,26 +1,26 @@
 ---
-title: Cenários de computação de rede (HCN) do host
+title: Cenários de rede de computação de host (HCN)
 description: ''
 ms.author: jmesser
 author: jmesser81
 ms.date: 11/05/2018
-ms.openlocfilehash: 2a81b09c41c3b665d6a026da4b63a6119fbe202d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 91cdafa9699cd213156d872090034dd4ea67108e
+ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816297"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70031530"
 ---
 # <a name="common-scenarios"></a>Cenários comuns
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2019
 
 ## <a name="scenario-hcn"></a>Cenário: HCN 
 
 
 ### <a name="create-an-hcn"></a>Criar um HCN
 
-Este exemplo mostra como usar a API do serviço de rede de computação do Host para criar uma rede de computação do Host no host que pode ser usado para se conectar a NICS virtuais para máquinas virtuais ou contêineres.
+Este exemplo mostra como usar a API de serviço de rede de computação de host para criar uma rede de computação de host no host que pode ser usada para conectar NICS virtuais a máquinas virtuais ou contêineres.
 
 ```C++
 using unique_hcn_network = wil::unique_any< 
@@ -119,7 +119,7 @@ void CreateHcnNetwork()
 
 ### <a name="delete-an-hcn"></a>Excluir um HCN
 
-Este exemplo mostra como usar a API do serviço de rede de computação do Host para abrir e excluir uma rede de Host de computação 
+Este exemplo mostra como usar a API de serviço de rede de computação do host para abrir & excluir uma rede de computação de host 
 
 ```C++
     wil::unique_cotaskmem_string errorRecord;
@@ -136,7 +136,7 @@ Este exemplo mostra como usar a API do serviço de rede de computação do Host 
 
 ### <a name="enumerate-all-networks"></a>Enumerar todas as redes
 
-Este exemplo mostra como usar a API do serviço de rede de computação do Host para enumerar todas as redes de computação do host.
+Este exemplo mostra como usar a API de serviço de rede de computação do host para enumerar todas as redes de computação do host.
 
 ```C++
      wil::unique_cotaskmem_string resultNetworks;
@@ -157,9 +157,9 @@ Este exemplo mostra como usar a API do serviço de rede de computação do Host 
 ```
 
 
-### <a name="query-network-properties"></a>Propriedades de rede de consulta
+### <a name="query-network-properties"></a>Propriedades da rede de consulta
 
-Este exemplo mostra como usar a API do serviço de rede de computação do Host ao consultar as propriedades de rede.
+Este exemplo mostra como usar a API de serviço de rede de computação do host para consultar as propriedades de rede.
 
 ```C++
     unique_hcn_network hcnnetwork;
@@ -189,11 +189,11 @@ Este exemplo mostra como usar a API do serviço de rede de computação do Host 
 ```
 
 
-## <a name="scenario-hcn-endpoint"></a>Cenário: HCN endpoint
+## <a name="scenario-hcn-endpoint"></a>Cenário: Ponto de extremidade HCN
 
 ### <a name="create-an-hcn-endpoint"></a>Criar um ponto de extremidade HCN
 
-Este exemplo mostra como usar a API do serviço de rede de computação do Host para criar uma empresa de rede do Host de computação e, em seguida, adicioná-lo quente para a máquina Virtual ou um contêiner.
+Este exemplo mostra como usar a API de serviço de rede de computação do host para criar um ponto de extremidade de rede de computação do host e, em seguida, adicioná-lo à máquina virtual ou a um contêiner.
 
 ```C++
 using unique_hcn_endpoint = wil::unique_any< 
@@ -268,7 +268,7 @@ void CreateAndHotAddEndpoint()
 
 ### <a name="delete-an-endpoint"></a>Excluir um ponto de extremidade
 
-Este exemplo mostra como usar a API do serviço de rede de computação do Host para excluir um Host de computação rede ponto de extremidade.
+Este exemplo mostra como usar a API de serviço de rede de computação do host para excluir um ponto de extremidade de rede de computação do host.
 
 ```C++
     wil::unique_cotaskmem_string errorRecord;
@@ -285,7 +285,7 @@ Este exemplo mostra como usar a API do serviço de rede de computação do Host 
 
 ### <a name="modify-and-endpoint"></a>Modificar e ponto de extremidade
 
-Este exemplo mostra como usar a API do serviço de rede de computação do Host para modificar um Host de computação rede ponto de extremidade.
+Este exemplo mostra como usar a API de serviço de rede de computação do host para modificar um ponto de extremidade de rede de computação do host.
 
 ```C++
     unique_hcn_endpoint hcnendpoint;
@@ -323,9 +323,9 @@ Este exemplo mostra como usar a API do serviço de rede de computação do Host 
 ```
 
 
-### <a name="enumerate-all-enpoints"></a>Enumerar todos os enpoints
+### <a name="enumerate-all-enpoints"></a>Enumerar todos os pontos
 
-Este exemplo mostra como usar a API do serviço de rede de computação do Host para enumerar todos os hosts de computação rede pontos de extremidade.
+Este exemplo mostra como usar a API de serviço de rede de computação do host para enumerar todos os pontos de extremidade de rede de computação do host.
 
 ```C++
     wil::unique_cotaskmem_string errorRecord;
@@ -346,9 +346,9 @@ Este exemplo mostra como usar a API do serviço de rede de computação do Host 
 ```
 
 
-### <a name="query-endpoint-properties"></a>Propriedades do ponto de extremidade de consulta
+### <a name="query-endpoint-properties"></a>Propriedades do ponto de extremidade da consulta
 
-Este exemplo mostra como usar a API do serviço de rede de computação do Host para consultar todas as propriedades do ponto de extremidade de rede de computação um Host.
+Este exemplo mostra como usar a API de serviço de rede de computação do host para consultar todas as propriedades de um ponto de extremidade de rede de computação do host.
 
 ```C++
     unique_hcn_endpoint hcnendpoint;
@@ -381,11 +381,11 @@ Este exemplo mostra como usar a API do serviço de rede de computação do Host 
 ```
 
 
-## <a name="scenario-hcn-namespace"></a>Cenário: HCN namespace
+## <a name="scenario-hcn-namespace"></a>Cenário: Namespace HCN
 
 ### <a name="create-an-hcn-namespace"></a>Criar um namespace HCN
 
-Este exemplo mostra como usar a API do serviço de rede de computação do Host para criar um Namespace de rede do Host de computação no host que pode ser usado para conectar-se o ponto de extremidade e contêineres.
+Este exemplo mostra como usar a API de serviço de rede de computação de host para criar um namespace de rede de computação de host no host que pode ser usado para conectar o ponto de extremidade e contêineres.
 
 ```C++
 using unique_hcn_namespace = wil::unique_any< 
@@ -447,7 +447,7 @@ void CreateHcnNamespace()
 
 ### <a name="delete-an-hcn-namespace"></a>Excluir um namespace HCN
 
-Este exemplo mostra como usar a API do serviço de rede de computação do Host para excluir um Namespace de rede do Host de computação.
+Este exemplo mostra como usar a API de serviço de rede de computação do host para excluir um namespace de rede de computação do host.
 
 ```C++
     wil::unique_cotaskmem_string errorRecord;
@@ -465,7 +465,7 @@ Este exemplo mostra como usar a API do serviço de rede de computação do Host 
 
 ### <a name="modify-an-hcn-namespace"></a>Modificar um namespace HCN
 
-Este exemplo mostra como usar a API do serviço de rede de computação do Host para modificar um Namespace de rede do Host de computação.
+Este exemplo mostra como usar a API de serviço de rede de computação do host para modificar um namespace de rede de computação do host.
 
 ```C++
     unique_hcn_namespace handle;
@@ -510,7 +510,7 @@ Este exemplo mostra como usar a API do serviço de rede de computação do Host 
 
 ### <a name="enumerate-all-namespaces"></a>Enumerar todos os namespaces
 
-Este exemplo mostra como usar a API do serviço de rede de computação do Host para enumerar todos os hosts de computação Namespaces de rede.
+Este exemplo mostra como usar a API de serviço de rede de computação do host para enumerar todos os namespaces de rede de computação do host.
 
 ```C++
     wil::unique_cotaskmem_string resultNamespaces;
@@ -530,9 +530,9 @@ Este exemplo mostra como usar a API do serviço de rede de computação do Host 
 ```
 
 
-### <a name="query-namespace-properties"></a>Propriedades de namespace de consulta
+### <a name="query-namespace-properties"></a>Propriedades do namespace de consulta
 
-Este exemplo mostra como usar a API do serviço de rede de computação do Host para propriedades de Namespace de rede do Host de computação de consulta
+Este exemplo mostra como usar a API de serviço de rede de computação do host para consultar Propriedades de namespace de rede de computação do host
 
 ```C++
     unique_hcn_namespace handle;
@@ -568,7 +568,7 @@ Este exemplo mostra como usar a API do serviço de rede de computação do Host 
 
 ### <a name="create-an-hcn-load-balancer"></a>Criar um balanceador de carga HCN
 
-Este exemplo mostra como usar a API do serviço de rede de computação do Host para criar um Host de computação rede balanceador de carga no host que pode ser usado para balancear carga de ponto de extremidade entre computação.
+Este exemplo mostra como usar a API de serviço de rede de computação do host para criar uma rede de computação de host Load Balancer no host que pode ser usado para balancear a carga do ponto de extremidade na computação.
 
 ```C++
 using unique_hcn_loadbalancer = wil::unique_any< 
@@ -643,7 +643,7 @@ void CreateHcnLoadBalancer()
 
 ### <a name="delete-an-hcn-load-balancer"></a>Excluir um balanceador de carga HCN
 
-Este exemplo mostra como usar a API do serviço de rede de computação do Host para excluir um LoadBalancer de rede do Host de computação.
+Este exemplo mostra como usar a API de serviço de rede de computação do host para excluir um balanceador de rede de computação de host.
 
 ```C++
     wil::unique_cotaskmem_string errorRecord;
@@ -660,7 +660,7 @@ Este exemplo mostra como usar a API do serviço de rede de computação do Host 
 
 ### <a name="modify-an-hcn-load-balancer"></a>Modificar um balanceador de carga HCN
 
-Este exemplo mostra como usar a API do serviço de rede de computação do Host para modificar um Namespace de rede do Host de computação.
+Este exemplo mostra como usar a API de serviço de rede de computação do host para modificar um namespace de rede de computação do host.
 
 ```C++
     unique_hcn_loadbalancer handle;
@@ -705,7 +705,7 @@ Este exemplo mostra como usar a API do serviço de rede de computação do Host 
 
 ### <a name="enumerate-all-load-balancers"></a>Enumerar todos os balanceadores de carga
 
-Este exemplo mostra como usar a API do serviço de rede de computação do Host para enumerar todos os hosts de computação rede balanceador de carga.
+Este exemplo mostra como usar a API de serviço de rede de computação do host para enumerar todos os Load Balancer de rede de computação do host.
 
 ```C++
     wil::unique_cotaskmem_string resultLoadBalancers;
@@ -728,7 +728,7 @@ Este exemplo mostra como usar a API do serviço de rede de computação do Host 
 
 ### <a name="query-load-balancer-properties"></a>Propriedades do balanceador de carga de consulta
 
-Este exemplo mostra como usar a API do serviço de rede de computação do Host ao consultar as propriedades do balanceador de carga do Host de computação rede.
+Este exemplo mostra como usar a API de serviço de rede de computação do host para consultar Propriedades do balanceador de rede de computação do host.
 
 ```C++
     unique_hcn_loadbalancer handle;
@@ -761,11 +761,11 @@ Este exemplo mostra como usar a API do serviço de rede de computação do Host 
 ```
 
 
-## <a name="scenario-hcn-notifications"></a>Cenário: Notificações de HCN
+## <a name="scenario-hcn-notifications"></a>Cenário: Notificações do HCN
 
 ### <a name="register-and-unregister-service-wide-notifications"></a>Registrar e cancelar o registro de notificações de todo o serviço
 
-Este exemplo demonstra como usar a API de serviço de rede de computação do Host para registrar e cancelar o registro para notificações de todo o serviço. Isso permite que o chamador receber uma notificação (por meio da função de retorno de chamada que eles especificado durante o registro) sempre que uma operação de todo o serviço como um novo evento de criação de rede tenha ocorrido.
+Este exemplo demonstra como usar a API de serviço de rede de computação do host para registrar e cancelar o registro para notificações de todo o serviço. Isso permite que o chamador receba uma notificação (por meio da função de chamada de retorno especificada durante o registro) sempre que uma operação de todo o serviço, como um novo evento de criação de rede, ocorreu.
 
 ```C++
 using unique_hcn_callback = wil::unique_any< 
@@ -834,6 +834,6 @@ void UnregisterForServiceNotifications()
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Saiba mais sobre o [cuida de contexto RPC para HCN](hcn-declaration-handles.md).
+- Saiba mais sobre os [identificadores de contexto RPC para HCN](hcn-declaration-handles.md).
 
-- Saiba mais sobre o [esquemas de documentos JSON HCN](hcn-json-document-schemas.md).
+- Saiba mais sobre os [esquemas de documento JSON HCN](hcn-json-document-schemas.md).
