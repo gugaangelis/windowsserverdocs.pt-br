@@ -1,6 +1,6 @@
 ---
 title: Personalizar o título "Recursos de trabalho" do RDS usando o PowerShell no Windows Server
-description: Fornece a descrição de como alterar o nome do espaço de trabalho no Windows Server.
+description: Fornece a descrição de como alterar o nome do workspace no Windows Server.
 ms.prod: windows-server-threshold
 ms.technology: remote-desktop-services
 ms.author: helohr
