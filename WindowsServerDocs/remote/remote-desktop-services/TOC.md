@@ -64,9 +64,35 @@
 ### [Personalizar o título "recursos de trabalho" do RDS usando o PowerShell no Windows Server](rds-work-resources.md)
 ### [Diagnosticar problemas de desempenho do aplicativo com contadores de desempenho](rds-rdsh-performance-counters.md)
 
-## [Suporte adicional para Área de Trabalho Remota](rds-get-support.md)
-## [Clientes da Área de Trabalho Remota](clients/remote-desktop-clients.md)
-### Problemas conhecidos da Área de Trabalho Remota
+## Acessar seus recursos da Área de Trabalho Remota
+### [Clientes disponíveis da Área de Trabalho Remota](clients/remote-desktop-clients.md)
+### Cliente para Microsoft Store
+#### [Introdução ao cliente para Microsoft Store](clients/windows.md)
+#### [Novidades do cliente para Microsoft Store](clients/windows-whatsnew.md)
+### Cliente para Android
+#### [Introdução ao cliente para Android](clients/remote-desktop-android.md)
+#### [Novidades do cliente para Android](clients/android-whatsnew.md)
+### Cliente para iOS
+#### [Introdução ao cliente para iOS](clients/remote-desktop-ios.md)
+#### [Novidades do cliente para iOS](clients/ios-whatsnew.md)
+### Cliente para macOS
+#### [Introdução ao cliente para macOS](clients/remote-desktop-mac.md)
+#### [Novidades do cliente para macOS](clients/mac-whatsnew.md)
+### Cliente Web
+#### [Introdução ao cliente Web](clients/remote-desktop-web-client.md)
+#### [Novidades do cliente Web](clients/web-client-whatsnew.md)
+### Como configurar seu PC para Área de Trabalho Remota
+#### [PCs compatíveis](clients/remote-desktop-supported-config.md)
+#### [Conceder acesso de Área de Trabalho Remota ao seu computador](clients/remote-desktop-allow-access.md)
+#### [Conceder acesso ao seu computador de fora da rede](clients/remote-desktop-allow-outside-access.md)
+#### [Alterar a porta de escuta da Área de Trabalho Remota em seu computador](clients/change-listening-port.md)
+### Informações avançadas
+#### [Qual cliente funciona melhor para você?](clients/remote-desktop-app-compare.md)
+#### [Configurações de arquivo RDP da Área de Trabalho Remota](clients/rdp-files.md)
+#### [Esquema de URI de Área de Trabalho Remota](clients/remote-desktop-uri.md)
+#### [Perguntas frequentes sobre o cliente da Área de Trabalho Remota](clients/remote-desktop-client-faq.md)
+#### [Configurações de privacidade para aplicativos gerenciados e áreas de trabalho](clients/remote-privacy-settings.md)
+### Problemas conhecidos
 #### [Solução de problemas gerais de conexão de Área de Trabalho Remota](troubleshoot/rdp-error-general-troubleshooting.md)
 #### [Os clientes não conseguem se conectar e recebem o erro "Classe não registrada"](troubleshoot/rdp-error-class-not-registered.md)
 #### [Os clientes não podem se conectar e veem o erro "Nenhuma licença disponível"](troubleshoot/rdp-error-no-licenses-available.md)
@@ -75,29 +101,5 @@
 #### [O cliente de Área de Trabalho Remota se desconecta e não pode se reconectar à mesma sessão](troubleshoot/rdp-client-disconnects-cannot-reconnect-same-session.md)
 #### [Um laptop remoto se desconecta da rede sem fio](troubleshoot/remote-laptop-disconnects-wireless-network.md)
 #### [Desempenho ruim ou problemas com o aplicativo durante a conexão de área de trabalho remota](troubleshoot/poor-performance-or-application-problems.md)
-### Informações gerais
-#### [Qual cliente funciona melhor para você?](clients/remote-desktop-app-compare.md)
-#### [Configurações de arquivo RDP da Área de Trabalho Remota](clients/rdp-files.md)
-#### [Esquema de URI de Área de Trabalho Remota](clients/remote-desktop-uri.md)
-#### [Perguntas frequentes sobre o cliente da Área de Trabalho Remota](clients/remote-desktop-client-faq.md)
-#### [Configurações de privacidade para aplicativos gerenciados e áreas de trabalho](clients/remote-privacy-settings.md)
-### Cliente de Área de Trabalho Remota para Windows
-#### [Introdução](clients/windows.md)
-#### [Novidades do cliente do Windows](clients/windows-whatsnew.md)
-### Cliente de Área de Trabalho Remota para Android
-#### [Introdução](clients/remote-desktop-android.md)
-#### [Novidades do cliente do Android](clients/android-whatsnew.md)
-### Cliente de Área de Trabalho Remota para iOS
-#### [Introdução](clients/remote-desktop-ios.md)
-#### [Novidades do cliente do iOS](clients/ios-whatsnew.md)
-### Cliente da Área de Trabalho Remota para Mac
-#### [Introdução](clients/remote-desktop-mac.md)
-#### [Novidades do cliente MacOS](clients/mac-whatsnew.md)
-### Cliente Web da Área de Trabalho Remota
-#### [Acessar o cliente Web de Área de Trabalho Remota](clients/remote-desktop-web-client.md)
-#### [Novidades do cliente Web](clients/web-client-whatsnew.md)
-### Como configurar seu PC para Área de Trabalho Remota
-#### [PCs compatíveis](clients/remote-desktop-supported-config.md)
-#### [Conceder acesso de Área de Trabalho Remota ao seu computador](clients/remote-desktop-allow-access.md)
-#### [Conceder acesso ao seu computador de fora da rede](clients/remote-desktop-allow-outside-access.md)
-#### [Alterar a porta de escuta da Área de Trabalho Remota em seu computador](clients/change-listening-port.md)
+
+## [Recursos adicionais](rds-get-support.md)
