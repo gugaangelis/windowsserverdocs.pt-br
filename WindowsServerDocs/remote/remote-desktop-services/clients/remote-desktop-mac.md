@@ -1,5 +1,5 @@
 ---
-title: Introdução à Área de Trabalho Remota no Mac
+title: Introdução ao cliente para macOS
 description: Saiba como configurar o cliente da Área de Trabalho Remota para Mac
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -12,16 +12,16 @@ ms.assetid: 7afc65f8-3158-49c9-9d48-4dab1c69afba
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 10/09/2018
+ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 17df3ca3b88404a2775790d7a4a8206b7aa5befa
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 8836ab500e97b68efbcdd0cd1ca5bcbe39d79334
+ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546349"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70150919"
 ---
-# <a name="get-started-with-remote-desktop-on-mac"></a>Introdução à Área de Trabalho Remota no Mac
+# <a name="get-started-with-the-macos-client"></a>Introdução ao cliente para macOS
 
 >Aplica-se a: Windows 10, Windows 8.1, Windows Server 2012 R2, Windows Server 2016
 

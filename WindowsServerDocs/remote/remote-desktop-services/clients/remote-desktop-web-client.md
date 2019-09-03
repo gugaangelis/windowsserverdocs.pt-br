@@ -1,21 +1,21 @@
 ---
-title: Acessar o cliente Web da Área de Trabalho Remota
+title: Introdução ao cliente Web
 description: Descreve como entrar no cliente Web da Área de Trabalho Remota.
 ms.prod: windows-server-threshold
 ms.technology: remote-desktop-services
 ms.author: helohr
-ms.date: 07/20/2018
+ms.date: 08/27/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: f4433ad592219d6ed15b28fd0514790b078525fd
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 11e68821fb095617cea19ee83c057d247a909604
+ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743836"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70150970"
 ---
-# <a name="access-the-remote-desktop-web-client"></a>Acessar o cliente Web da Área de Trabalho Remota
+# <a name="get-started-with-the-web-client"></a>Introdução ao cliente Web
 
 O cliente Web da Área de Trabalho Remota permite usar um navegador da Web compatível para acessar recursos remotos da sua organização (aplicativos e áreas de trabalho) publicados pelo administrador. Será possível interagir com áreas de trabalho e aplicativos remotos, da mesma forma que com um PC local, independentemente da sua localização, sem precisar alternar para um PC desktop diferente. Após o administrador configurar os recursos remotos, para estar pronto para começar, será necessário apenas o domínio, nome de usuário, senha, a URL do seu administrador enviada a você e um navegador da Web com suporte.
 

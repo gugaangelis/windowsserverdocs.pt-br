@@ -1,5 +1,5 @@
 ---
-title: Novidades da Área de Trabalho Remota no Android
+title: Novidades do cliente para Android
 description: Saiba mais sobre as alterações recentes no cliente da Área de Trabalho Remota para Android
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -11,16 +11,16 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 06/05/2019
+ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7730790495babf4a70fb5a70ce93464faa86f1e3
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 6ee224cd5bf7ccdeb3b0d55d091a5d322583c101
+ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66736536"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70150989"
 ---
-# <a name="whats-new-for-the-remote-desktop-client-on-android"></a>Novidades do cliente da Área de Trabalho Remota no Android
+# <a name="whats-new-in-the-android-client"></a>Novidades do cliente para Android
 
 Atualizamos regularmente o [cliente da Área de Trabalho Remota para Android](remote-desktop-android.md), adicionando novos recursos e corrigindo problemas. Confira as últimas atualizações abaixo.
 

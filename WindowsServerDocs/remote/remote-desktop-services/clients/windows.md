@@ -1,6 +1,6 @@
 ---
-title: Introdução à Área de Trabalho Remota no Windows
-description: Etapas básicas de configuração para o cliente de Área de Trabalho Remota para Windows.
+title: Introdução ao cliente para Microsoft Store
+description: Etapas básicas de configuração para o cliente de Área de Trabalho Remota para Microsoft Store.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,18 +12,18 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 05/07/2018
+ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b2141a6a57629ccbb585b2f74c581eba5ba2b1b1
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 03927cd531617c6e0c9572fc4ce74768e10bc66a
+ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66446679"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70150926"
 ---
-# <a name="get-started-with-remote-desktop-on-windows"></a>Introdução à Área de Trabalho Remota no Windows
+# <a name="get-started-with-the-windows-store-client"></a>Introdução ao cliente para Microsoft Store
 
->Aplica-se a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
+>Aplica-se a: Windows 10
 
 Você pode usar o cliente de Área de Trabalho Remota para o Windows para trabalhar remotamente com áreas de trabalho e aplicativos do Windows usando outro dispositivo Windows.
 
@@ -69,16 +69,16 @@ Para criar uma conexão de Área de Trabalho Remota:
 Deseja excluir a conexão? Novamente, toque no menu de estouro ( **...** ) e, em seguida, toque em **Remover**.
 
 ### <a name="add-a-remote-resource"></a>Adicionar um recurso remoto
+
 Recursos remotos são programas RemoteApp, áreas de trabalho baseadas em sessão e áreas de trabalho virtuais publicadas por seu administrador usando os Serviços de Área de Trabalho Remota.
 
 Para adicionar um recurso remoto:
 
-1. Na tela da Central de Conexão, toque em **+Adicionar** e, em seguida, toque em **Recursos remotos**. 
+1. Na tela da Central de Conexão, toque em **+Adicionar** e, em seguida, toque em **Recursos remotos**.
 2. Insira a **URL do Feed** fornecida por seu administrador e toque em **Encontrar feeds**.
 3. Quando solicitado, forneça as credenciais a serem usadas para assinar o feed.
 
 Os recursos remotos serão exibidos na Central de Conexão.
-
 
 Para excluir os recursos remotos:
 
@@ -100,7 +100,7 @@ Para configurar um novo gateway:
 1. Na Central de Conexão, toque em **Configurações**.
 2. Ao lado de Gateway, toque em **+** para adicionar um novo gateway. Observação: também é possível adicionar um gateway ao adicionar uma nova conexão.
 3. Insira as seguintes informações:
-   - **Nome do servidor** – o nome do computador que você deseja usar como um gateway. Pode ser um nome do computador Windows, um nome de domínio da Internet ou um endereço IP. Você também pode adicionar informações de porta ao nome do servidor (por exemplo: **RDGateway:443** ou **10.0.0.1:443**).
+   - **Nome do servidor** – o nome do computador que você deseja usar como um gateway. Pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode adicionar informações de porta ao nome do servidor (por exemplo: **RDGateway:443** ou **10.0.0.1:443**).
    - **Conta de usuário** – selecione ou adicione uma conta de usuário a ser usada com o Gateway de Área de Trabalho Remota a que está se conectando. Você também pode selecionar **Usar conta de usuário da área de trabalho** para usar as mesmas credenciais usadas para a conexão de área de trabalho remota.
 4. Toque em **Salvar**.  
 
@@ -109,11 +109,13 @@ Para configurar um novo gateway:
 Você pode definir as seguintes configurações globais em seu cliente tocando em **Configurações**:
 
 ITENS GERENCIADOS
+
 - **Conta de usuário** – permite Adicionar, editar e excluir contas de usuário salvas no cliente. É uma boa maneira de atualizar a senha de uma conta após ela ter sido alterada.
 - **Gateway** – permite Adicionar, editar e excluir servidores de gateway salvos no cliente.
 - **Grupo** – permite Adicionar, editar e excluir grupos salvos no cliente. Permite agrupar conexões facilmente.
 
 CONFIGURAÇÕES DE SESSÃO
+
 - **Iniciar conexões em tela inteira** – quando habilitado, sempre que uma conexão é iniciada, o cliente usa toda a tela do monitor atual.
 - **Iniciar cada conexão em uma nova janela** – quando habilitado, cada conexão é iniciada em uma janela separada, permitindo que você as coloque em monitores diferentes e alterne entre elas usando a barra de tarefas.
 - **Ao redimensionar o aplicativo:** – permite controlar o que acontece quando a janela do cliente é redimensionada. O padrão é **Alongar o conteúdo, preservando a taxa de proporção**.
@@ -121,6 +123,7 @@ CONFIGURAÇÕES DE SESSÃO
 - **Impedir que a tela atinja o tempo limite** – impede que a tela atinja o tempo limite quando uma sessão está ativa. É útil quando a conexão não exige interação por longos períodos.
 
 CONFIGURAÇÕES DE APLICATIVO
+
 - **Mostrar versão prévia da área de trabalho** – permite que você veja uma versão prévia de uma área de trabalho na Central de Conexão antes de se conectar a ela. Por padrão, isso é definido como **ativado**.
 - **Ajudar a melhorar a Área de Trabalho Remota** – envia dados anônimos à Microsoft. Usamos esses dados para melhorar o cliente. Para saber mais sobre como tratamos esses dados anônimos e privados consultando a [Política de Privacidade da Microsoft](https://privacy.microsoft.com/en-us/privacystatement). Por padrão, essa configuração fica **ativada**.
 
@@ -181,13 +184,14 @@ Toque em **...** na barra de conexão para exibir a barra de comandos no lado di
 ### <a name="use-direct-touch-gestures-and-mouse-modes-in-a-remote-session"></a>Usar gestos de toque direto e modos de mouse em uma sessão remota
 
 Dois modos de mouse estão disponíveis para interagir com a sessão.
+
 - **Toque direto**: passa todos os contatos de toque para a sessão para que sejam interpretados remotamente.
   - Usado da mesma forma que você usaria o Windows com uma tela sensível ao toque.
 - **Ponteiro do mouse**: transforma sua tela sensível ao toque local em um grande touchpad, permitindo mover um ponteiro do mouse na sessão.
   - Usado da mesma forma que você usaria o Windows com um touchpad.
 
 > [!NOTE]
-> Ao interagir com o Windows 8 ou mais recente, gestos de toque nativos são compatíveis no modo de toque direto. 
+> Ao interagir com o Windows 8 ou mais recente, gestos de toque nativos são compatíveis no modo de toque direto.
 
 | Modo de mouse    | Operação do mouse      | Gesto                                                               |
 |---------------|----------------------|-----------------------------------------------------------------------|
@@ -201,4 +205,4 @@ Dois modos de mouse estão disponíveis para interagir com a sessão.
 | Ponteiro do mouse | Zoom                 | Usar dois dedos e fazer movimento de pinça para aplicar zoom ou aumentar o espaço entre os dedos para reduzir o zoom. |
 
 > [!TIP]
-> Perguntas e comentários são sempre bem-vindos. No entanto, NÃO poste uma solicitação de ajuda com solução de problemas usando o recurso de comentários no final deste artigo. Em vez disso, vá para o [Fórum de cliente da Área de Trabalho Remota](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e inicie um novo thread. Tem alguma sugestão de recurso? Conte-nos usando o [Hub de Comentários](feedback-hub://?tabid=2&contextid=605).
+> Perguntas e comentários são sempre bem-vindos. No entanto, NÃO publique uma solicitação de ajuda com solução de problemas usando o recurso de comentários no final deste artigo. Em vez disso, vá para o [Fórum de cliente da Área de Trabalho Remota](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e inicie uma nova conversa. Tem alguma sugestão de recurso? Conte-nos usando o [Hub de Comentários](feedback-hub://?tabid=2&contextid=605).

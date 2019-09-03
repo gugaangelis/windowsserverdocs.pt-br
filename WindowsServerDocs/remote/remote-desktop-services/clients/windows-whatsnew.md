@@ -1,6 +1,6 @@
 ---
-title: O que há de novo para a Área de Trabalho Remota no Windows?
-description: Saiba mais sobre as recentes alterações no cliente da Área de Trabalho Remota para Windows
+title: Novidades do cliente para Microsoft Store
+description: Saiba mais sobre as recentes alterações no cliente da Área de Trabalho Remota para Microsoft Store
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -11,20 +11,21 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 03/19/2019
+ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 18c14da5b5b16ed20005515fde46235e4cf27331
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: a8ecdf217f847f495b2cb90dd3511a8db9e72c95
+ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63748836"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70150982"
 ---
-# <a name="whats-new-for-the-remote-desktop-client-on-windows"></a>O que há de novo para o cliente da Área de Trabalho Remota no Windows?
+# <a name="whats-new-in-the-windows-store-client"></a>Novidades do cliente para Microsoft Store
 
 Atualizamos regularmente o [cliente da Área de Trabalho Remota para Windows](windows.md), adicionando novos recursos e corrigindo problemas. Confira as últimas atualizações abaixo.
 
 ## <a name="updates-for-version-1011098"></a>Atualizações para a versão 10.1.1098
+
 *Data de publicação: 15/03/2019*
 
 - Agora é possível definir um nome de exibição para contas de usuário de modo que você possa salvar o mesmo nome de usuário com senhas diferentes.
@@ -34,6 +35,7 @@ Atualizamos regularmente o [cliente da Área de Trabalho Remota para Windows](wi
 - Correções de bug adicionais.
 
 ## <a name="updates-for-version-1011088"></a>Atualizações para a versão 10.1.1088
+
 *Data de publicação: 06/11/2018*
 
 - Nome de exibição da conexão agora é mais detectável.
@@ -44,20 +46,23 @@ Atualizamos regularmente o [cliente da Área de Trabalho Remota para Windows](wi
 - Correções de bug adicionais.
 
 ## <a name="updates-for-version-1011060"></a>Atualizações para a versão 10.1.1060
+
 *Data de publicação: 14/09/2018*
 
 - Correção de um problema em que clicar duas vezes em uma conexão de área de trabalho iniciava duas sessões.
 - Correção de uma falha ao alternar entre áreas de trabalho virtuais localmente.
-- Mover uma sessão para um monitor diferente agora também atualiza o fator de escala da sessão. 
+- Mover uma sessão para um monitor diferente agora também atualiza o fator de escala da sessão.
 - Suporte a teclas de sistema adicionais, como AltGr.
 - Correções de bug adicionais.
 
 ## <a name="updates-for-version-1011046"></a>Atualizações para a versão 10.1.1046
+
 *Data de publicação: 20/06/2018*
 
 - Correções de bug.
 
 ## <a name="updates-for-version-1011042"></a>Atualizações para a versão 10.1.1042
+
 *Data de publicação: 02/04/2018*
 
 - Atualizações para solucionar a correção de criptografia Oracle CredSSP descrita em CVE-2018-0886.

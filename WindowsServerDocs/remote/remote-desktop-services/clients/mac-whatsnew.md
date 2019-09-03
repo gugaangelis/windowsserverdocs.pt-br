@@ -1,5 +1,5 @@
 ---
-title: O que há de novo para a Área de Trabalho Remota no Mac?
+title: Novidades do cliente para macOS
 description: Saiba mais sobre as recentes alterações no cliente da Área de Trabalho Remota para MAC
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -11,29 +11,49 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 04/29/2019
+ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cfd8a6338d283b7ff42b091e686a31b044a6b7b
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 9ae58103b00941bb71d447641b1cdab7c02fa20b
+ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "65564757"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70151027"
 ---
-# <a name="whats-new-for-the-remote-desktop-client-on-macos"></a>O que há de novo para o cliente da Área de Trabalho Remota no MacOS?
+# <a name="whats-new-in-the-macos-client"></a>Novidades do cliente para macOS
 
 Atualizamos regularmente o [cliente da Área de Trabalho Remota para macOS](remote-desktop-mac.md), adicionando novos recursos e corrigindo problemas. Confira as últimas atualizações abaixo.
 
 Caso tenha problemas, você sempre pode entrar em contato por meio de **Ajuda > Relatar um problema**.
 
+## <a name="updates-for-version-1030"></a>Atualizações para a versão 10.3.0
+*Data de publicação: 27/08/2019*
+
+Há algumas semanas desde a última atualização, mas trabalhamos duro durante esse período. A versão 10.3.0 traz alguns recursos novos e muitas correções subjacentes.
+
+ - Agora é possível redirecionar a câmera ao se conectar ao Windows 10 1809, Windows Server 2019 e posterior.
+ - No Mojave e no Catalina, adicionamos uma nova caixa de diálogo que solicita sua permissão para usar o microfone e a câmera para redirecionamento de dispositivo.
+ - O fluxo de assinatura do feed foi reescrito para ser mais simples e mais rápido.
+ - O redirecionamento da área de transferência agora inclui RTF (Rich Text Format).
+ - Ao inserir sua senha, você tem a opção de revelá-la com uma caixa de seleção "Mostrar senha".
+ - Cenários abordados em que a janela de sessão passava de um monitor ao outro.
+ - A Central de Conexão exibe ícones de aplicativos remotos de alta resolução (quando disponíveis).
+ - Cmd + A é mapeado para Ctrl + A quando os atalhos da área de transferência do Mac estão sendo usados.
+ - Cmd + R agora atualiza todos os feeds assinados.
+ - Novas opções de clique secundário foram adicionadas para expandir ou recolher todos os grupos ou feeds na Central de Conexão.
+ - Adicionada uma nova opção de clique secundário para alterar o tamanho do ícone na guia Feeds da Central de Conexão.
+ - Um novo ícone de aplicativo simplificado e mais limpo.
+
 ## <a name="updates-for-version-10213"></a>Atualizações para a versão 10.2.13
+
 *Data de publicação: 8/5/2019*
 
 - Correção de um travamento que ocorria ao conectar por meio de um Gateway de Área de Trabalho Remota.
 - Inclusão de um aviso de privacidade para a caixa de diálogo "Adicionar Feed".
 
 ## <a name="updates-for-version-10212"></a>Atualizações para a versão 10.2.12
-*Data de publicação: 16/4/2019* 
+
+*Data de publicação: 16/4/2019*
 
 - Resolução de desconexões aleatórias (com código de erro 0x904) que ocorriam ao conectar por meio de um Gateway de Área de Trabalho Remota.
 - Correção de um bug que esvaziava a lista de resoluções nas preferências após a instalação.
@@ -41,17 +61,20 @@ Caso tenha problemas, você sempre pode entrar em contato por meio de **Ajuda > 
 - Solução de um loop de prompt de autenticação ADAL ao conectar para implantações de Área de Trabalho Virtual do Windows.
 
 ## <a name="updates-for-version-10210"></a>Atualizações para a versão 10.2.10
+
 *Data de publicação: 30/3/2019*
 
 - Nesta versão, abordamos a instabilidade causada pela recente atualização do macOS 10.14.4. Também corrigimos imagens incorretas que apareciam ao decodificar dados de codec de AVC codificados por um servidor usando o hardware da NVIDIA.
 
 ## <a name="updates-for-version-1029"></a>Atualizações para a versão 10.2.9
+
 *Data de publicação: 6/3/2019*
 
 - Nesta versão, corrigimos um problema de conectividade de gateway de área de trabalho remota que pode ocorrer durante o redirecionamento do servidor.
 - Também resolvemos uma regressão de gateway de área de trabalho remota causada pela atualização 10.2.8.
 
 ## <a name="updates-for-version-1028"></a>Atualizações para a versão 10.2.8
+
 *Data de publicação: 1/3/2019*
 
 - Foram resolvidos problemas de conectividade que surgiram ao usar um Gateway de Área de Trabalho Remota.
@@ -61,11 +84,13 @@ Caso tenha problemas, você sempre pode entrar em contato por meio de **Ajuda > 
 - Foi corrigido um bug que causava desnecessariamente a rolagem do Connection Center o ao iniciar uma conexão.
 
 ## <a name="updates-for-version-1027"></a>Atualizações para a versão 10.2.7
+
 *Data de publicação: 6/2/2019*
 
 - Nesta versão, abordamos imagens incorretas em gráficos (causados por um bug de codificação do servidor) que apareciam ao usar o modo de AVC444.
 
 ## <a name="updates-for-version-1026"></a>Atualizações para a versão 10.2.6
+
 *Data de publicação: 28/1/2019*
 
 - Foi adicionado suporte para o codec AVC (420 e 444), disponível ao conectar às versões atuais do Windows 10.
@@ -79,6 +104,7 @@ Caso tenha problemas, você sempre pode entrar em contato por meio de **Ajuda > 
 >Há um bug no macOS 10.14.0 e 10.14.1 que pode fazer com que a pasta ".com.microsoft.rdc.application-data_SUPPORT/_EXTERNAL_DATA" (aninhada profundamente na pasta ~/Library) consuma uma grande quantidade de espaço em disco. Para resolver esse problema, exclua o conteúdo da pasta e atualize para o macOS 10.14.2. Observe que um efeito colateral de excluir o conteúdo da pasta é a posterior exclusão das imagens de instantâneo atribuídas a indicadores. Essas imagens serão regeneradas ao reconectar ao PC remoto.
 
 ## <a name="updates-for-version-1024"></a>Atualizações para a versão 10.2.4
+
 *Data de publicação: 18/12/2018*
 
 - Inclusão de suporte ao modo escuro para macOS Mojave 10.14.
@@ -90,6 +116,7 @@ Caso tenha problemas, você sempre pode entrar em contato por meio de **Ajuda > 
 - Aprimoramento da rolagem com base no mouse para deltas de rolagem pequena.
 
 ## <a name="updates-for-version-1023"></a>Atualizações para a versão 10.2.3
+
 *Data de publicação: 06/11/2018*
 
 - Inclusão de suporte para a configuração do arquivo RDP "remoteapplicationcmdline" para cenários de aplicativo remoto.
@@ -100,11 +127,12 @@ Caso tenha problemas, você sempre pode entrar em contato por meio de **Ajuda > 
 - Melhor tratamento de aplicativos remotos de tela inteira, inteligentemente ocultando a barra de menus e o encaixe.
 - Correção de cenários em que os aplicativos remotos permaneciam ocultos após serem iniciados.
 - Resolução de atualizações de processamento lento ao usar "Ajustar à janela" com aceleração de hardware desabilitada.
-- Tratamento de erros de criação de banco de dados causados por permissões incorretas quando o cliente é inicializado. 
+- Tratamento de erros de criação de banco de dados causados por permissões incorretas quando o cliente é inicializado.
 - Correção de um problema em que o cliente estava falhando consistentemente na inicialização e não iniciava para alguns usuários.
 - Correção de um cenário em que as conexões eram importadas incorretamente como de tela inteira da Área de Trabalho Remota 8.
 
 ## <a name="updates-for-version-1022"></a>Atualizações para a versão 10.2.2
+
 *Data de publicação: 09/10/2018*
 
 - Um Connection Center totalmente novo que dá suporte a arrastar e soltar, organização manual das áreas de trabalho, colunas redimensionáveis no modo de exibição de lista, classificação e gerenciamento com base em coluna e a gerenciamento de grupo simplificado.
@@ -133,12 +161,14 @@ Caso tenha problemas, você sempre pode entrar em contato por meio de **Ajuda > 
 - Corrigido um problema que impedia o download de recursos de feed que têm espaços na URL.
 
 ## <a name="updates-for-version-1021"></a>Atualizações para a versão 10.2.1
+
 *Data de publicação: 06/08/2018*
 
 - Habilitação de conectividade para PCs associados ao AAD (Azure Active Directory). Para conectar um computador associado ao AAD, o nome de usuário deve estar em um dos seguintes formatos: "AzureAD\usuário" ou "AzureAD\user@domain".
 - Solução de alguns bugs que afetavam o uso de cartões inteligentes em uma sessão remota.
 
 ## <a name="updates-for-version-1020"></a>Atualizações para a versão 10.2.0
+
 *Data de publicação: 24/07/2018*
 
 - Atualizações incorporadas para conformidade com GDPR.
@@ -167,6 +197,7 @@ Caso tenha problemas, você sempre pode entrar em contato por meio de **Ajuda > 
 - Correção de alguns problemas de alinhamento no Connection Center durante a execução no Mojave.
 
 ## <a name="updates-for-version-1018"></a>Atualizações para a versão 10.1.8
+
 *Data de publicação: 04/05/2018*
 
 - Inclusão de suporte para alterar a resolução remota redimensionando a janela da sessão!
@@ -174,6 +205,7 @@ Caso tenha problemas, você sempre pode entrar em contato por meio de **Ajuda > 
 - Resolução de um erro 0x207 que poderia ocorrer ao conectar a servidores não corrigidos com a atualização de correção Oracle de criptografia CredSSP (CVE-2018 0886).
 
 ## <a name="updates-for-version-1017"></a>Atualizações para a versão 10.1.7
+
 *Data de publicação: 05/04/2018*
 
 - Correções de segurança feitas para incorporar as atualizações de correção Oracle de criptografia CredSSP conforme descrito em CVE-2018-0886.
@@ -185,8 +217,9 @@ Caso tenha problemas, você sempre pode entrar em contato por meio de **Ajuda > 
 - O Connection Center, as Preferências e Sobre o Windows agora respondem a CMD+M.
 - Agora é possível começar a descobrir feeds pressionando ENTER na página **Adicionar Recursos Remotos**.
 - Correção de um problema em que um novo feed de recursos remotos aparecia vazio no Connection Center até que você atualizasse.
- 
+
 ## <a name="updates-for-version-1016"></a>Atualizações para a versão 10.1.6
+
 *Data de publicação: 26/03/2018*
 
 - Correção de um problema em que as janelas do RemoteApp se reordenavam sozinhas.

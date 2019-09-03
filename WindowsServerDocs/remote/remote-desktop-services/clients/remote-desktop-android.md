@@ -1,5 +1,5 @@
 ---
-title: Introdução à Área de Trabalho Remota no Android
+title: Introdução ao cliente para Android
 description: Etapas básicas de configuração para o cliente de Área de Trabalho Remota para Android.
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -12,16 +12,16 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 07/24/2018
+ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b4b188eb8148b2f4e5c6672b07884af8fdcd0c60
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: ccc96013efb71a2403f9be2df03461eba5ff1fc1
+ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66446743"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70151014"
 ---
-# <a name="get-started-with-remote-desktop-on-android"></a>Introdução à Área de Trabalho Remota no Android
+# <a name="get-started-with-the-android-client"></a>Introdução ao cliente para Android
 
 >Aplica-se a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
 
@@ -79,7 +79,7 @@ Para adicionar um recurso remoto:
 1. Na tela da Central de Conexão, toque em **+** e, em seguida, toque em **Feed de Recursos Remotos**. 
 2. Insira informações para o recurso remoto:
    - **Email ou URL** –a URL do servidor de Acesso via Web da Área de Trabalho Remota. Você também pode inserir sua conta de email corporativo nesse campo – isso informa ao cliente para pesquisar pelo servidor de Acesso via Web da Área de Trabalho Remota associado com seu endereço de email.
-   - **Nome de usuário** – o nome de usuário a ser usado para o servidor de Acesso via Web da Área de Trabalho Remota ao qual você está se conectando.
+   - **Nome de usuário** – o nome de usuário a ser usado para o servidor de Acesso via Web à Área de Trabalho Remota ao qual você está se conectando.
    - **Senha** – a senha a ser usada para o servidor de Acesso via Web da Área de Trabalho Remota ao qual você está se conectando.
 3. Toque em **Salvar**.
 
@@ -115,7 +115,7 @@ Para configurar um novo gateway:
 
 1. Na Central de Conexão, toque em **Configurações > Gateways**. Toque em **+** para adicionar um novo gateway.
 2. Insira as seguintes informações:
-   - **Nome do servidor** – o nome do computador que você deseja usar como um gateway. Pode ser um nome do computador Windows, um nome de domínio da Internet ou um endereço IP. Você também pode adicionar informações de porta ao nome do servidor (por exemplo: **RDGateway:443** ou **10.0.0.1:443**).
+   - **Nome do servidor** – o nome do computador que você deseja usar como um gateway. Pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode adicionar informações de porta ao nome do servidor (por exemplo: **RDGateway:443** ou **10.0.0.1:443**).
    - **Nome de usuário** – o nome de usuário e a senha a serem usados para o Gateway de Área de Trabalho Remota ao qual você está se conectando. Você também pode selecionar **Usar conta de usuário da área de trabalho** para usar as mesmas credenciais usadas para a conexão de área de trabalho remota.
 
 ## <a name="manage-your-user-accounts"></a>Gerenciar suas contas de usuário
@@ -198,4 +198,4 @@ O cliente usa gestos de toque padrão. Você também pode usar gestos de toque p
 | Ponteiro do mouse | Botão de rolagem do mouse          | Tocar com dois dedos e segurar, depois arrastar para cima ou baixo                           |
 
 > [!TIP]
-> Perguntas e comentários são sempre bem-vindos. No entanto, NÃO poste uma solicitação de ajuda com solução de problemas usando o recurso de comentários no final deste artigo. Em vez disso, vá para o [Fórum de cliente da Área de Trabalho Remota](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e inicie um novo thread. Tem alguma sugestão de recurso? Conte-nos no [Fórum de voz do usuário cliente](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).
+> Perguntas e comentários são sempre bem-vindos. No entanto, NÃO publique uma solicitação de ajuda com solução de problemas usando o recurso de comentários no final deste artigo. Em vez disso, vá para o [Fórum de cliente da Área de Trabalho Remota](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e inicie uma nova conversa. Tem alguma sugestão de recurso? Conte-nos no [Fórum de voz do usuário cliente](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).

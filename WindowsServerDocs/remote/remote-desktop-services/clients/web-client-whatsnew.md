@@ -1,5 +1,5 @@
 ---
-title: O que há de novo para o cliente Web da Área de Trabalho Remota?
+title: Novidades do cliente Web
 description: Saiba mais sobre as recentes alterações no cliente da Web da Área de Trabalho Remota
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -11,16 +11,16 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 05/20/2019
+ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5be9b05da1e78cc54e12254f43d0f44f7ff65c5d
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 4eaa9a187b4a8f7879cabf15724bfcfe3f625939
+ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66804886"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70150954"
 ---
-# <a name="whats-new-for-the-remote-desktop-web-client"></a>O que há de novo no cliente da Web da Área de Trabalho Remota?
+# <a name="whats-new-in-the-web-client"></a>Novidades do cliente Web
 
 Atualizamos regularmente o [cliente da Web da Área de Trabalho Remota](remote-desktop-web-client.md) adicionando novos recursos e corrigindo problemas. Confira as últimas atualizações abaixo.
 
