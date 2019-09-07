@@ -1,6 +1,6 @@
 ---
-title: Configurar a criptografia para uma rede Virtual
-description: Criptografia de rede virtual permite a criptografia de tráfego de rede virtual entre máquinas virtuais que se comunicam entre si em sub-redes marcadas como 'A criptografia habilitada.'
+title: Configurar a criptografia para uma rede virtual
+description: A criptografia de rede virtual permite a criptografia do tráfego de rede virtual entre máquinas virtuais que se comunicam entre si em sub-redes marcadas como ' criptografia habilitada '.
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-hv-switch
@@ -9,31 +9,31 @@ ms.assetid: 378213f5-2d59-4c9b-9607-1fc83f8072f1
 ms.author: pashort
 author: shortpatti
 ms.date: 08/08/2018
-ms.openlocfilehash: d2c09c83a227c5a75ff5b1b39b2ef6d1286bbfc8
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: 1d61748e4cc5eac2d656e61c1f1ecc30dfe8672c
+ms.sourcegitcommit: f3b61dcd8aa0aa744db4ea938aac633c19217b0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501559"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70746326"
 ---
-# <a name="configure-encryption-for-a-virtual-subnet"></a>Configurar a criptografia para uma sub-rede Virtual
+# <a name="configure-encryption-for-a-virtual-subnet"></a>Configurar a criptografia para uma sub-rede virtual
 
 >Aplica-se a: Windows Server
 
-Permite a criptografia de rede virtual para a criptografia de tráfego de rede virtual entre as VMs que se comunicam entre si em sub-redes marcadas como 'A criptografia habilitada.' Ele também utiliza datagrama Transport Layer Security (DTLS) na sub-rede virtual para criptografar pacotes. O DTLS oferece proteção contra interceptações, falsificação e falsificação por qualquer pessoa com acesso à rede física.
+A criptografia de rede virtual permite a criptografia de tráfego de rede virtual entre VMs que se comunicam entre si em sub-redes marcadas como ' criptografia habilitada '. Ele também utiliza datagrama Transport Layer Security (DTLS) na sub-rede virtual para criptografar pacotes. O DTLS oferece proteção contra interceptações, falsificação e falsificação por qualquer pessoa com acesso à rede física.
 
-Requer criptografia de rede virtual:
-- Certificados de criptografia instalados em cada um dos hosts Hyper-V SDN habilitado.
-- Um objeto de credencial no controlador de rede, fazendo referência a impressão digital do certificado.
-- A configuração em cada uma das redes virtuais contém sub-redes que exigem criptografia.
+A criptografia de rede virtual requer:
+- Certificados de criptografia instalados em cada um dos hosts Hyper-V habilitados para SDN.
+- Um objeto de credencial no controlador de rede que faz referência à impressão digital desse certificado.
+- A configuração em cada uma das redes virtuais contém sub-redes que exigem Criptografia.
 
-Depois que você habilitar a criptografia em uma sub-rede, todo o tráfego de rede dentro dessa sub-rede é criptografado automaticamente, além de qualquer criptografia no nível do aplicativo que pode ocorrer também.  Tráfego que atravessa entre sub-redes, mesmo se marcado como criptografadas, é automaticamente enviado descriptografado. Qualquer tráfego que cruza o limite de rede virtual também obtém enviado descriptografado.
+Depois de habilitar a criptografia em uma sub-rede, todo o tráfego de rede dentro dessa sub-rede é criptografado automaticamente, além de qualquer criptografia no nível do aplicativo que também possa ocorrer.  O tráfego que cruza entre sub-redes, mesmo se marcado como criptografado, é enviado sem criptografia automaticamente. Qualquer tráfego que cruzar o limite de rede virtual também é enviado sem criptografia.
 
 >[!NOTE]
->Ao se comunicar com outra VM na mesma sub-rede, se seu atualmente conectada ou conectado em um momento posterior, o tráfego é criptografado automaticamente.
+>Ao se comunicar com outra VM na mesma sub-rede, se estiver conectada ou conectada posteriormente, o tráfego será criptografado automaticamente.
 
 >[!TIP]
->Se você deve restringir os aplicativos se comuniquem apenas na sub-rede criptografada, você pode usar listas de controle de acesso (ACLs) apenas para permitir a comunicação dentro da sub-rede atual. Para obter mais informações, consulte [uso Access Control Lists (ACLs) para gerenciar o data center rede tráfego fluir](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow).
+>Se você precisar restringir os aplicativos para se comunicar apenas na sub-rede criptografada, poderá usar ACLs (listas de controle de acesso) somente para permitir a comunicação dentro da sub-rede atual. Para obter mais informações, consulte [usar ACLs (listas de controle de acesso) para gerenciar o fluxo de tráfego de rede do datacenter](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow).
 
 
 ## <a name="step-1-create-the-encryption-certificate"></a>Etapa 1. Criar o certificado de criptografia
@@ -95,7 +95,7 @@ Cada host deve ter um certificado de criptografia instalado. Você pode usar o m
     $enrollment.InstallResponse(2, $certdata, 0, "")
 ```
 
-Depois de executar o script, um novo certificado aparece no meu repositório:
+Depois de executar o script, um novo certificado aparecerá no meu repositório:
 
     PS D:\> dir cert:\\localmachine\my
 
@@ -116,9 +116,9 @@ Depois de executar o script, um novo certificado aparece no meu repositório:
    Export-Certificate -Type CERT -FilePath "c:\$subjectName.cer" -cert $cert
 ```
 
-3. Instalar os certificados em cada um dos seus hosts hyper-v 
+3. Instalar os certificados em cada um de seus hosts Hyper-v 
 
-   PS c:\> dir c:\$subjectname.*
+   PS c:\> dir c:\$SubjectName. *
 
 
 ~~~
@@ -171,11 +171,11 @@ Mode                LastWriteTime         Length Name
    }
 ```
 
-5. Repita para cada servidor em seu ambiente.<p>Depois de repetição para cada servidor, você deve ter um certificado instalado na raiz e meu repositório de cada host Hyper-V. 
+5. Repita para cada servidor em seu ambiente.<p>Depois de repetir para cada servidor, você deve ter um certificado instalado na raiz e meu repositório de cada host Hyper-V. 
 
-6. Verifique se a instalação do certificado.<p>Verificar os certificados, verificando o conteúdo do meu e repositórios de certificados de raiz:
+6. Verifique a instalação do certificado.<p>Verifique os certificados verificando o conteúdo dos meus repositórios de certificados My e root:
 
-   PS C:\> pssession insira Server1
+   PS C:\> Enter-PSSession Server1
 
 ~~~
 [Server1]: PS C:\> get-childitem cert://localmachine/my,cert://localmachine/root | ? {$_.Subject -eq "CN=EncryptedVirtualNetworks"}
@@ -194,13 +194,13 @@ Thumbprint                                Subject
 5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6  CN=EncryptedVirtualNetworks
 ~~~
 
-7. Anote a impressão digital.<p>Você deve Anote a impressão digital pois você precisará dela para criar o objeto de credencial de certificado no controlador de rede.
+7. Anote a impressão digital.<p>Você deve anotar a impressão digital porque precisa dela para criar o objeto de credencial do certificado no controlador de rede.
 
-## <a name="step-2-create-the-certificate-credential"></a>Etapa 2. Criar a credencial de certificado
+## <a name="step-2-create-the-certificate-credential"></a>Etapa 2. Criar a credencial do certificado
 
-Depois de instalar o certificado em cada um dos hosts do Hyper-V conectados ao controlador de rede, agora você deve configurar o controlador de rede para usá-lo.  Para fazer isso, você deve criar um objeto de credencial que contém a impressão digital do certificado do computador com os módulos do PowerShell no controlador de rede instalados. 
+Depois de instalar o certificado em cada um dos hosts Hyper-V conectados ao controlador de rede, agora você deve configurar o controlador de rede para usá-lo.  Para fazer isso, você deve criar um objeto de credencial contendo a impressão digital do certificado do computador com os módulos do PowerShell do controlador de rede instalados. 
 
-
+```
     # Replace with thumbprint from your certificate
     $thumbprint = "5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6"  
 
@@ -213,36 +213,37 @@ Depois de instalar o certificado em cada um dos hosts do Hyper-V conectados ao c
     $credproperties.Type = "X509Certificate"
     $credproperties.Value = $thumbprint
     New-networkcontrollercredential -connectionuri $uri -resourceid "EncryptedNetworkCertificate" -properties $credproperties -force
-
+```
 >[!TIP]
->Você pode reutilizar essa credencial para cada rede virtual criptografada, ou você pode implantar e usar um certificado exclusivo para cada locatário.
+>Você pode reutilizar essa credencial para cada rede virtual criptografada ou pode implantar e usar um certificado exclusivo para cada locatário.
 
 
-## <a name="step-3-configuring-a-virtual-network-for-encryption"></a>Etapa 3. Configurar uma rede Virtual para criptografia
+## <a name="step-3-configuring-a-virtual-network-for-encryption"></a>Etapa 3. Configurando uma rede virtual para criptografia
 
-Essa etapa pressupõe que você já tiver criado um nome de rede virtual "Minha rede" e contém pelo menos uma sub-rede virtual.  Para obter informações sobre como criar redes virtuais, consulte [Create, Delete ou Update redes virtuais de locatário](../Manage/Create,-Delete,-or-Update-Tenant-Virtual-Networks.md).
+Esta etapa pressupõe que você já criou um nome de rede virtual "minha rede" e que ele contém pelo menos uma sub-rede virtual.  Para obter informações sobre como criar redes virtuais, consulte [criar, excluir ou atualizar redes virtuais de locatário](../Manage/Create,-Delete,-or-Update-Tenant-Virtual-Networks.md).
 
 >[!NOTE]
->Ao se comunicar com outra VM na mesma sub-rede, se seu atualmente conectada ou conectado em um momento posterior, o tráfego é criptografado automaticamente.
+>Ao se comunicar com outra VM na mesma sub-rede, se estiver conectada ou conectada posteriormente, o tráfego será criptografado automaticamente.
 
-1.  Recuperar os objetos de rede Virtual e as credenciais do controlador de rede
-
-    $vnet = Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId "MyNetwork" $certcred = Get-NetworkControllerCredential -ConnectionUri $uri -ResourceId "EncryptedNetworkCertificate"
-
-2.  Adicione uma referência para as credenciais de certificado e habilitar a criptografia em sub-redes individuais
-
+1.  Recuperar a rede virtual e os objetos de credencial do controlador de rede
+```
+    $vnet = Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId "MyNetwork"
+    $certcred = Get-NetworkControllerCredential -ConnectionUri $uri -ResourceId "EncryptedNetworkCertificate"
+```
+2.  Adicionar uma referência à credencial de certificado e habilitar a criptografia em sub-redes individuais
+```
     $vnet.properties.EncryptionCredential = $certcred
 
-    # <a name="replace-the-subnets-index-with-the-value-corresponding-to-the-subnet-you-want-encrypted"></a>Substitua o índice de sub-redes com o valor correspondente para a sub-rede que você deseja que seja criptografado.  
-    # <a name="repeat-for-each-subnet-where-encryption-is-needed"></a>Repita para cada sub-rede em que a criptografia é necessária
+    # Replace the Subnets index with the value corresponding to the subnet you want encrypted.  
+    # Repeat for each subnet where encryption is needed
     $vnet.properties.Subnets[0].properties.EncryptionEnabled = $true
-
-3.  Colocar o objeto de rede Virtual atualizado no controlador de rede
-
+```
+3.  Colocar o objeto de rede virtual atualizado no controlador de rede
+```
     New-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId $vnet.ResourceId -Properties $vnet.Properties -force
+```
 
-
-_**Parabéns!** _ Quando terminar depois de concluir essas etapas. 
+_**Congratula!**_ Quando concluir essas etapas, você terá concluído. 
 
 
 ## <a name="next-steps"></a>Próximas etapas
