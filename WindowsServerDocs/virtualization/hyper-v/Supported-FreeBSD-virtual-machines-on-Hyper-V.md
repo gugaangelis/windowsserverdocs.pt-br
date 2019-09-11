@@ -11,12 +11,12 @@ ms.assetid: 930e758f-bd50-46b4-a3a4-9857110f17b4
 author: shirgall
 ms.author: kathydav
 ms.date: 08/30/2017
-ms.openlocfilehash: a6e9c6e3bec2001c73254ffd813954f04a37a714
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 3ca1de87469c30a8cadbf047e77aff441145a499
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544718"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869475"
 ---
 # <a name="supported-freebsd-virtual-machines-on-hyper-v"></a>Máquinas virtuais FreeBSD com suporte no Hyper-V
 
@@ -77,7 +77,7 @@ O mapa de distribuição de recursos a seguir indica os recursos em cada versão
 
 2. A unidade de DVD virtual pode não ser reconhecida quando os drivers do BIS são carregados no FreeBSD 8. x e 9. x, a menos que você habilite o driver do ATA herdado por meio do comando a seguir.
     ```sh
-    # echo ‘hw.ata.disk_enable=1’ >> /boot/loader.conf
+    # echo ‘hw.ata.disk_enable=1' >> /boot/loader.conf
     # shutdown -r now
     ```
 

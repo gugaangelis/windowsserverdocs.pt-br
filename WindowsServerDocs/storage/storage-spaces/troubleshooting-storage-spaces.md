@@ -9,12 +9,12 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cc5709723b300f46ce108b36501e7ace272cd45
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 30fdda5ada01510027100efce1e95f310f69c6a1
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544565"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865100"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>Solucionar problemas Espaços de Armazenamento Diretos
 
@@ -38,10 +38,10 @@ Os nós de um Espaços de Armazenamento Diretos sistema são reiniciados inesper
 
 |FriendlyName|ResiliencySettingName| OperationalStatus| HealthStatus| IsManualAttach|Size| PSComputerName|
 |------------|---------------------| -----------------| ------------| --------------|-----| --------------|
-|Disk4| Mirror| OK|  Íntegro| verdadeiro|  10 TB|  Nó-01. cont...|
-|Disk3         |Mirror                 |OK                          |Íntegro       |verdadeiro            |10 TB | Nó-01. cont...|
-|Disco 2         |Mirror                 |Sem redundância               |Unhealthy     |verdadeiro            |10 TB | Nó-01. cont...|
-|DISK1         |Mirror                 |{Sem redundância, InService}  |Unhealthy     |verdadeiro            |10 TB | Nó-01. cont...| 
+|Disk4| Mirror| OK|  Íntegro| True|  10 TB|  Nó-01. cont...|
+|Disk3         |Mirror                 |OK                          |Íntegro       |True            |10 TB | Nó-01. cont...|
+|Disco 2         |Mirror                 |Sem redundância               |Unhealthy     |True            |10 TB | Nó-01. cont...|
+|DISK1         |Mirror                 |{Sem redundância, InService}  |Unhealthy     |True            |10 TB | Nó-01. cont...| 
 
 Além disso, após uma tentativa de colocar o disco virtual online, as informações a seguir são registradas no log de cluster (DiskRecoveryAction).  
 
@@ -101,10 +101,10 @@ Veja a seguir um exemplo da saída do cmdlet **Get-VirtualDisk** .
 
 |FriendlyName|  ResiliencySettingName|  OperationalStatus|   HealthStatus|  IsManualAttach|  Size|   PSComputerName|
 |-|-|-|-|-|-|-|
-|Disk4|         Mirror|                 OK|                  Íntegro|       verdadeiro|            10 TB|  Nó-01. cont...|
-|Disk3|         Mirror|                 OK|                  Íntegro|       verdadeiro|            10 TB|  Nó-01. cont...|
-|Disco 2|         Mirror|                 “Desanexado”|            Unknown|       verdadeiro|            10 TB|  Nó-01. cont...|
-|DISK1|         Mirror|                 “Desanexado”|            Unknown|       verdadeiro|            10 TB|  Nó-01. cont...| 
+|Disk4|         Mirror|                 OK|                  Íntegro|       True|            10 TB|  Nó-01. cont...|
+|Disk3|         Mirror|                 OK|                  Íntegro|       True|            10 TB|  Nó-01. cont...|
+|Disco 2|         Mirror|                 “Desanexado”|            Unknown|       True|            10 TB|  Nó-01. cont...|
+|DISK1|         Mirror|                 “Desanexado”|            Unknown|       True|            10 TB|  Nó-01. cont...| 
 
 
 Além disso, os seguintes eventos podem ser registrados nos nós:
@@ -203,7 +203,7 @@ Para corrigir esse problema, siga estas etapas:
 
 Para obter mais informações, consulte [solução de problemas espaços de armazenamento diretos integridade e Estados operacionais](storage-spaces-states.md).
 
-## <a name="event-5120-with-statusiotimeout-c00000b5"></a>Evento 5120 com STATUS_IO_TIMEOUT c00000b5 
+## <a name="event-5120-with-status_io_timeout-c00000b5"></a>Evento 5120 com STATUS_IO_TIMEOUT c00000b5 
 
 > [!Important]
 > **Para o Windows Server 2016:** Para reduzir a chance de ocorrer esses sintomas ao aplicar a atualização com a correção, é recomendável usar o procedimento do modo de manutenção de armazenamento abaixo para instalar a [atualização cumulativa de 18 de outubro de 2018 para o Windows Server 2016](https://support.microsoft.com/help/4462928) ou uma versão posterior Quando os nós instalaram atualmente uma atualização cumulativa do Windows Server 2016 lançada de [8 de maio de 2018](https://support.microsoft.com/help/4103723) a [9 de outubro de 2018](https://support.microsoft.com/help/KB4462917).
@@ -217,7 +217,7 @@ Event Source: Microsoft-Windows-FailoverClustering
 Event ID: 5120
 Description:    Cluster Shared Volume 'CSVName' ('Cluster Virtual Disk (CSVName)') has entered a paused state because of 'STATUS_IO_TIMEOUT(c00000b5)'. All I/O will temporarily be queued until a path to the volume is reestablished. 
 
-Cluster Shared Volume ‘CSVName’ ('Cluster Virtual Disk (CSVName)') has entered a paused state because of 'STATUS_CONNECTION_DISCONNECTED(c000020c)'. All I/O will temporarily be queued until a path to the volume is reestablished.    
+Cluster Shared Volume ‘CSVName' ('Cluster Virtual Disk (CSVName)') has entered a paused state because of 'STATUS_CONNECTION_DISCONNECTED(c000020c)'. All I/O will temporarily be queued until a path to the volume is reestablished.    
 ```
 
 Quando um evento 5120 é registrado, um despejo ao vivo é gerado para coletar informações de depuração que podem causar sintomas adicionais ou ter um efeito de desempenho. A geração do despejo ao vivo cria uma breve pausa para habilitar a criação de um instantâneo da memória para gravar o arquivo de despejo. Os sistemas que têm muita memória e que estão sob estresse podem fazer com que os nós removam a associação do cluster e também façam com que o evento 1135 a seguir seja registrado.
@@ -246,7 +246,7 @@ Uma alteração introduzida em 8 de maio de 2018 para o Windows Server 2016, que
    Get-StorageFaultDomain -type StorageScaleUnit | Where-Object {$_.FriendlyName -eq "<NodeName>"} | Enable-StorageMaintenanceMode
    ```
 4. Execute o cmdlet **Get-PhysicalDisk** e verifique se o valor de OperationalStatus está no modo de manutenção.
-5. Execute o cmdlet Restart **-Computer** para reiniciar o nó.
+5. Execute o cmdlet **Restart-Computer** para reiniciar o nó.
 6. Após a reinicialização do nó, remova os discos nesse nó do modo de manutenção de armazenamento executando o seguinte cmdlet:
 
    ```powershell
@@ -361,22 +361,22 @@ Agora, se você executar **Get-PhysicalDisk** em qualquer um dos nós, verá tod
 |Number| Nome Amigável| Número de Série|HealthStatus|OperationalStatus|Tamanho total| Estilo de partição|
 |-|-|-|-|-|-|-|-|
 |0|Virtu MSFT...  ||Íntegro | Online|  127 GB| GPT|
-||Virtu MSFT... ||Íntegro| Offline| 100 GB| RECEBEM|
-||Virtu MSFT... ||Íntegro| Offline| 100 GB| RECEBEM|
-||Virtu MSFT... ||Íntegro| Offline| 100 GB| RECEBEM|
-||Virtu MSFT... ||Íntegro| Offline| 100 GB| RECEBEM|
-|1|Virtu MSFT...||Íntegro| Offline| 100 GB| RECEBEM|
-||Virtu MSFT... ||Íntegro| Offline| 100 GB| RECEBEM|
-|2|Virtu MSFT...||Íntegro| Offline| 100 GB| RECEBEM|
-||Virtu MSFT... ||Íntegro| Offline| 100 GB| RECEBEM|
-||Virtu MSFT... ||Íntegro| Offline| 100 GB| RECEBEM|
-||Virtu MSFT... ||Íntegro| Offline| 100 GB| RECEBEM|
-||Virtu MSFT... ||Íntegro| Offline| 100 GB| RECEBEM|
-|4|Virtu MSFT...||Íntegro| Offline| 100 GB| RECEBEM|
-|3|Virtu MSFT...||Íntegro| Offline| 100 GB| RECEBEM|
-||Virtu MSFT... ||Íntegro| Offline| 100 GB| RECEBEM|
-||Virtu MSFT... ||Íntegro| Offline| 100 GB| RECEBEM|
-||Virtu MSFT... ||Íntegro| Offline| 100 GB| RECEBEM|
+||Virtu MSFT... ||Íntegro| Offline| 100 GB| RAW|
+||Virtu MSFT... ||Íntegro| Offline| 100 GB| RAW|
+||Virtu MSFT... ||Íntegro| Offline| 100 GB| RAW|
+||Virtu MSFT... ||Íntegro| Offline| 100 GB| RAW|
+|1|Virtu MSFT...||Íntegro| Offline| 100 GB| RAW|
+||Virtu MSFT... ||Íntegro| Offline| 100 GB| RAW|
+|2|Virtu MSFT...||Íntegro| Offline| 100 GB| RAW|
+||Virtu MSFT... ||Íntegro| Offline| 100 GB| RAW|
+||Virtu MSFT... ||Íntegro| Offline| 100 GB| RAW|
+||Virtu MSFT... ||Íntegro| Offline| 100 GB| RAW|
+||Virtu MSFT... ||Íntegro| Offline| 100 GB| RAW|
+|4|Virtu MSFT...||Íntegro| Offline| 100 GB| RAW|
+|3|Virtu MSFT...||Íntegro| Offline| 100 GB| RAW|
+||Virtu MSFT... ||Íntegro| Offline| 100 GB| RAW|
+||Virtu MSFT... ||Íntegro| Offline| 100 GB| RAW|
+||Virtu MSFT... ||Íntegro| Offline| 100 GB| RAW|
 
 
 ## <a name="error-message-about-unsupported-media-type-when-you-create-an-storage-spaces-direct-cluster-using-enable-clusters2d"></a>Mensagem de erro sobre "tipo de mídia sem suporte" quando você cria um cluster de Espaços de Armazenamento Diretos usando enable-ClusterS2D  
@@ -403,10 +403,10 @@ Você pode ver um problema em que um dispositivo Intel SSD DC série P4600 parec
 |               UniqueId               | DeviceID | MediaType | BusType |               SerialNumber               |      size      | canpool | FriendlyName | OperationalStatus |
 |--------------------------------------|----------|-----------|---------|------------------------------------------|----------------|---------|--------------|-------------------|
 |           5000CCA251D12E30           |    0     |    HDD    |   SAS   |                 7PKR197G                 | 10000831348736 |  False  |     HGST     |  HUH721010AL4200  |
-| EUI. 0100000001000000E4D25C000014E214 |    4     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214. | 1600321314816  |  verdadeiro   |    PROCESSADOR     |   SSDPE2KE016T7   |
-| EUI. 0100000001000000E4D25C000014E214 |    5     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214. | 1600321314816  |  verdadeiro   |    PROCESSADOR     |   SSDPE2KE016T7   |
-| EUI. 0100000001000000E4D25C0000EEE214 |    6     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214. | 1600321314816  |  verdadeiro   |    PROCESSADOR     |   SSDPE2KE016T7   |
-| EUI. 0100000001000000E4D25C0000EEE214 |    7     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214. | 1600321314816  |  verdadeiro   |    PROCESSADOR     |   SSDPE2KE016T7   |
+| EUI. 0100000001000000E4D25C000014E214 |    4     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214. | 1600321314816  |  True   |    PROCESSADOR     |   SSDPE2KE016T7   |
+| EUI. 0100000001000000E4D25C000014E214 |    5     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214. | 1600321314816  |  True   |    PROCESSADOR     |   SSDPE2KE016T7   |
+| EUI. 0100000001000000E4D25C0000EEE214 |    6     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214. | 1600321314816  |  True   |    PROCESSADOR     |   SSDPE2KE016T7   |
+| EUI. 0100000001000000E4D25C0000EEE214 |    7     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214. | 1600321314816  |  True   |    PROCESSADOR     |   SSDPE2KE016T7   |
 
 Para corrigir esse problema, atualize o firmware nas unidades Intel para a versão mais recente.  A versão de firmware QDV101B1 de maio de 2018 é conhecida por resolver esse problema.
 

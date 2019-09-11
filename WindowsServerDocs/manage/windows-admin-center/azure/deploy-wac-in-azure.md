@@ -1,6 +1,6 @@
 ---
-title: Implantar um gateway do Windows Admin Center no Azure
-description: Como implantar um gateway do Windows Admin Center no Azure
+title: Implantar um gateway do centro de administração do Windows no Azure
+description: Como implantar um gateway do centro de administração do Windows no Azure
 ms.technology: manage
 ms.topic: article
 author: jwwool
@@ -8,68 +8,68 @@ ms.author: jeffrew
 ms.date: 04/12/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: a3fa1838096d910505faf9a2c5bd819b3a256fe2
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: d0ebc957715f88898a9c14d2841d8b820f862a0d
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280417"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869143"
 ---
-# <a name="deploy-windows-admin-center-in-azure"></a>Implantar o Windows Admin Center no Azure
+# <a name="deploy-windows-admin-center-in-azure"></a>Implantar o centro de administração do Windows no Azure
 
-## <a name="deploy-using-script"></a>Implantar usando o script
+## <a name="deploy-using-script"></a>Implantar usando script
 
-Você pode baixar [Deploy WACAzVM.ps1](https://aka.ms/deploy-wacazvm) será executado a partir [Azure Cloud Shell](https://shell.azure.com) para configurar um gateway do Windows Admin Center no Azure. Esse script pode criar todo o ambiente, incluindo o grupo de recursos.
+Você pode baixar [Deploy-WACAzVM. ps1](https://aka.ms/deploy-wacazvm) , que será executado de [Azure cloud Shell](https://shell.azure.com) para configurar um gateway do centro de administração do Windows no Azure. Esse script pode criar todo o ambiente, incluindo o grupo de recursos.
 
-[Saltar para etapas de implantação manual](#deploy-manually-on-an-existing-azure-virtual-machine)
+[Ir para etapas de implantação manual](#deploy-manually-on-an-existing-azure-virtual-machine)
 
 ### <a name="prerequisites"></a>Pré-requisitos
 
-* Configurar sua conta no [Azure Cloud Shell](https://shell.azure.com). Se essa for sua primeira vez usando o Cloud Shell, você deverá associar ou criar uma conta de armazenamento do Azure com o Cloud Shell.
-* Em um **PowerShell** Cloud Shell, navegue até seu diretório base: ```PS Azure:\> cd ~```
-* Para carregar o ```Deploy-WACAzVM.ps1``` de arquivo, arraste e solte-o em seu computador local em qualquer lugar na janela do Cloud Shell.
+* Configure sua conta no [Azure cloud Shell](https://shell.azure.com). Se esta for a primeira vez que você usa Cloud Shell, você será solicitado a associar ou criar uma conta de armazenamento do Azure com Cloud Shell.
+* Em um Cloud Shell do **PowerShell** , navegue até seu diretório base:```PS Azure:\> cd ~```
+* Para carregar o ```Deploy-WACAzVM.ps1``` arquivo, arraste-o e solte-o do computador local para qualquer lugar na janela de Cloud Shell.
 
 Se especificar seu próprio certificado:
 
-* Carregar o certificado [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-whatis). Primeiro, crie um cofre de chaves no Portal do Azure e carregar o certificado no cofre de chaves. Como alternativa, você pode usar o Portal do Azure para gerar um certificado para você.
+* Carregue o certificado para [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-whatis). Primeiro, crie um cofre de chaves no portal do Azure e, em seguida, carregue o certificado no cofre de chaves. Como alternativa, você pode usar o portal do Azure para gerar um certificado para você.
 
-### <a name="script-parameters"></a>Parâmetros do script
+### <a name="script-parameters"></a>Parâmetros de script
 
-* **ResourceGroupName** -[String] Especifica o nome do grupo de recursos onde a VM será criada.
+* **ResourceGroupName** -[String] Especifica o nome do grupo de recursos em que a VM será criada.
 
-* **Nome** -[String] Especifica o nome da VM.
+* **Name** -[cadeia de caracteres] Especifica o nome da VM.
 
-* **Credencial** -[PSCredential] Especifica as credenciais para a VM.
+* **Credential** -[PSCredential] Especifica as credenciais para a VM.
 
-* **MsiPath** -[String] Especifica o caminho local do Windows Admin Center MSI durante a implantação do Windows Admin Center em uma VM existente. O padrão é a versão de http://aka.ms/WACDownload se ele for omitido.
+* **MsiPath** -[cadeia de caracteres] Especifica o caminho local do MSI do centro de administração do Windows ao implantar o centro de administração do Windows em uma VM existente. O padrão é a versão de http://aka.ms/WACDownload se omitida.
 
-* **VaultName** -[String] Especifica o nome do Cofre de chaves que contém o certificado.
+* **Vaultname** -[cadeia de caracteres] Especifica o nome do cofre de chaves que contém o certificado.
 
-* **CertName** -[String] Especifica o nome do certificado a ser usado para a instalação do MSI.
+* **CertName** -[cadeia de caracteres] Especifica o nome do certificado a ser usado para a instalação do MSI.
 
-* **GenerateSslCert** -[Switch] True se o MSI deve gerar um certificado ssl assinado self.
+* **GenerateSslCert** -[opção] true se o MSI deve gerar um certificado SSL autoassinado.
 
-* **PortNumber** -[int] Especifica o número da porta ssl para o serviço Windows Admin Center. O padrão é 443 se ele for omitido.
+* **PortNumber** -[int] Especifica o número da porta SSL para o serviço do centro de administração do Windows. O padrão é 443 se omitido.
 
-* **OpenPorts** -[int []] Especifica as portas abertas para a VM.
+* **Openports** -[int []] Especifica as portas abertas para a VM.
 
-* **Local** -[String] Especifica o local da VM.
+* **Location** -[cadeia de caracteres] Especifica o local da VM.
 
-* **Tamanho** -[String] Especifica o tamanho da VM. O padrão é "Standard_DS1_v2" se ele for omitido.
+* **Size** -[cadeia de caracteres] Especifica o tamanho da VM. O padrão é "Standard_DS1_v2" se omitido.
 
-* **Imagem** -[String] Especifica a imagem da VM. O padrão é "Win2016Datacenter" se ele for omitido.
+* **Image** -[String] Especifica a imagem da VM. O padrão é "Win2016Datacenter" se omitido.
 
 * **VirtualNetworkName** -[String] Especifica o nome da rede virtual para a VM.
 
-* **SubnetName** -[String] Especifica o nome da sub-rede para a VM.
+* **SubnetName** -[cadeia de caracteres] Especifica o nome da sub-rede para a VM.
 
-* **SecurityGroupName** -[String] Especifica o nome do grupo de segurança para a VM.
+* **SecurityGroupName** -[cadeia de caracteres] Especifica o nome do grupo de segurança para a VM.
 
-* **PublicIpAddressName** -[String] Especifica o nome do endereço IP público da VM.
+* **PublicIpAddressName** -[String] Especifica o nome do endereço IP público para a VM.
 
-* **InstallWACOnly** -[Switch] definido como True se WAC deve ser instalado em uma VM do Azure já existente.
+* **InstallWACOnly** -[switch] definido como true se WAC deve ser instalado em uma VM do Azure pré-existente.
 
-Há 2 opções diferentes para o MSI para implantar e o certificado usado para a instalação do MSI. O MSI também pode ser baixado do aka.ms/WACDownload ou, se implantar uma VM existente, o caminho do arquivo de um MSI localmente na VM pode ser fornecido. O certificado pode ser encontrado em um cofre de chaves do Azure ou um certificado autoassinado será gerado pelo MSI.
+Há duas opções diferentes para o MSI implantar e o certificado usado para a instalação do MSI. O MSI pode ser baixado de aka.ms/WACDownload ou, se estiver implantando em uma VM existente, o FilePath de um MSI localmente na VM pode ser fornecido. O certificado pode ser encontrado em um Azure Key Vault ou um certificado autoassinado será gerado pelo MSI.
 
 ### <a name="script-examples"></a>Exemplos de script
 
@@ -89,7 +89,7 @@ $Image = "Win2016Datacenter"
 $Credential = Get-Credential
 ```
 
-#### <a name="example-1-use-the-script-to-deploy-wac-gateway-on-a-new-vm-in-a-new-virtual-network-and-resource-group-use-the-msi-from-akamswacdownload-and-a-self-signed-cert-from-the-msi"></a>Exemplo 1: Use o script para implantar o gateway WAC em uma nova VM em um novo grupo de recursos e rede de virtual. Use o MSI de aka.ms/WACDownload e um certificado autoassinado do MSI.
+#### <a name="example-1-use-the-script-to-deploy-wac-gateway-on-a-new-vm-in-a-new-virtual-network-and-resource-group-use-the-msi-from-akamswacdownload-and-a-self-signed-cert-from-the-msi"></a>Exemplo 1: Use o script para implantar o gateway WAC em uma nova VM em uma nova rede virtual e grupo de recursos. Use o MSI do aka.ms/WACDownload e um certificado autoassinado do MSI.
 
 ```PowerShell
 $scriptParams = @{
@@ -103,7 +103,7 @@ $scriptParams = @{
 ./Deploy-WACAzVM.ps1 @scriptParams
 ```
 
-#### <a name="example-2-same-as-1-but-using-a-certificate-from-azure-key-vault"></a>Exemplo 2: Mesmo que o #1, mas usando um certificado do Azure Key Vault.
+#### <a name="example-2-same-as-1-but-using-a-certificate-from-azure-key-vault"></a>Exemplo 2: O mesmo que #1, mas usando um certificado de Azure Key Vault.
 
 ```PowerShell
 $scriptParams = @{
@@ -118,7 +118,7 @@ $scriptParams = @{
 ./Deploy-WACAzVM.ps1 @scriptParams
 ```
 
-#### <a name="example-3-using-a-local-msi-on-an-existing-vm-to-deploy-wac"></a>Exemplo 3: Usando um MSI local em uma VM existente para implantar WAC.
+#### <a name="example-3-using-a-local-msi-on-an-existing-vm-to-deploy-wac"></a>Exemplo 3: Usando um MSI local em uma VM existente para implantar o WAC.
 
 ```PowerShell
 $MsiPath = "C:\Users\<username>\Downloads\WindowsAdminCenter<version>.msi"
@@ -133,10 +133,10 @@ $scriptParams = @{
 ./Deploy-WACAzVM.ps1 @scriptParams
 ```
 
-### <a name="requirements-for-vm-running-the-windows-admin-center-gateway"></a>Requisitos de VM que executa o gateway do Windows Admin Center
+### <a name="requirements-for-vm-running-the-windows-admin-center-gateway"></a>Requisitos para a VM que executa o gateway do centro de administração do Windows
 
 A porta 443 (HTTPS) deve estar aberta.
-Usando as mesmas variáveis definidas para o script, você pode usar o código a seguir no Azure Cloud Shell para atualizar o grupo de segurança de rede:
+Usando as mesmas variáveis definidas para script, você pode usar o código abaixo em Azure Cloud Shell para atualizar o grupo de segurança de rede:
 
 ```powershell
 $nsg = Get-AzNetworkSecurityGroup -Name $SecurityGroupName -ResourceGroupName $ResourceGroupName
@@ -144,10 +144,10 @@ $newNSG = Add-AzNetworkSecurityRuleConfig -NetworkSecurityGroup $nsg -Name ssl-r
 Set-AzNetworkSecurityGroup -NetworkSecurityGroup $newNSG
 ```
 
-### <a name="requirements-for-managed-azure-vms"></a>Requisitos para VM do Azure gerenciado
+### <a name="requirements-for-managed-azure-vms"></a>Requisitos para VMs gerenciadas do Azure
 
-Porta 5985 (WinRM sobre HTTP) deve estar aberta e tem um ouvinte ativo.
-Você pode usar o código a seguir no Azure Cloud Shell para atualizar os nós gerenciados. ```$ResourceGroupName``` e ```$Name``` usar as mesmas variáveis como o script de implantação, mas você precisará usar o ```$Credential``` específico para a máquina virtual que você está gerenciando.
+A porta 5985 (WinRM sobre HTTP) deve estar aberta e ter um ouvinte ativo.
+Você pode usar o código abaixo em Azure Cloud Shell para atualizar os nós gerenciados. ```$ResourceGroupName```e ```$Name``` usar as mesmas variáveis que o script de implantação, mas será necessário usar o ```$Credential``` específico para a VM que você está gerenciando.
 
 ```powershell
 Enable-AzVMPSRemoting -ResourceGroupName $ResourceGroupName -Name $Name
@@ -157,43 +157,43 @@ Invoke-AzVMCommand -ResourceGroupName $ResourceGroupName -Name $Name -ScriptBloc
 
 ## <a name="deploy-manually-on-an-existing-azure-virtual-machine"></a>Implantar manualmente em uma máquina virtual do Azure existente
 
-Antes de instalar o Windows Admin Center em seu gateway desejado da VM, instale um certificado SSL a ser usado para comunicação HTTPS, ou você pode optar por usar um certificado autoassinado gerado pelo Windows Admin Center. No entanto, você receberá um aviso ao tentar se conectar de um navegador, se você escolher a última opção. Você pode ignorar este aviso no Edge, clicando em **detalhes > Ir para a página da Web** ou, no Chrome, selecionando **Avançado > vá para [página da Web]** . É recomendável que você use somente os certificados autoassinados para ambientes de teste.
+Antes de instalar o centro de administração do Windows em sua VM de gateway desejada, instale um certificado SSL a ser usado para comunicação HTTPS ou você pode optar por usar um certificado autoassinado gerado pelo centro de administração do Windows. No entanto, você receberá um aviso ao tentar se conectar a partir de um navegador se escolher a última opção. Você pode ignorar esse aviso no Edge clicando em **detalhes > ir para a página da Web** ou, no Chrome, selecionando **> avançado vá para [página da Web]** . Recomendamos que você use somente certificados autoassinados para ambientes de teste.
 
 > [!NOTE]
-> Essas instruções são para a instalação no Windows Server com experiência Desktop e não em uma instalação Server Core. 
+> Essas instruções são para instalação no Windows Server com experiência desktop, não em uma instalação Server Core. 
 
-1. [Download Windows Admin Center](https://aka.ms/windowsadmincenter) em seu computador local.
+1. [Baixe o centro de administração do Windows](https://aka.ms/windowsadmincenter) no computador local.
 
-2. Estabelecer uma conexão de área de trabalho remota à VM, em seguida, copie o MSI em seu computador local e cole na VM.
+2. Estabeleça uma conexão de área de trabalho remota com a VM e copie a MSI do computador local e cole-a na VM.
 
-3. Clique duas vezes no MSI para iniciar a instalação e siga as instruções no assistente. Esteja ciente das seguintes opções:
+3. Clique duas vezes no MSI para iniciar a instalação e siga as instruções no assistente. Lembre-se do seguinte:
 
-   - Por padrão, o instalador usa a porta recomendada 443 (HTTPS). Se você deseja selecionar uma porta diferente, observe que você precisa abrir essa porta no firewall também. 
+   - Por padrão, o instalador usa a porta recomendada 443 (HTTPS). Se você quiser selecionar uma porta diferente, observe que também precisará abrir essa porta no firewall. 
 
-   - Se você já tiver instalado um certificado SSL na VM, verifique se você selecionar essa opção e digite a impressão digital.
+   - Se você já tiver instalado um certificado SSL na VM, certifique-se de selecionar essa opção e insira a impressão digital.
 
-4. Iniciar o serviço Windows Admin Center (executar o programa de c: / Windows/arquivos Admin Center/sme.exe)
+4. Iniciar o serviço do centro de administração do Windows (executar C:/Arquivos de programas/centro de administração do Windows/SME. exe)
 
-[Saiba mais sobre a implantação do Windows Admin Center.](../deploy/install.md)
+[Saiba mais sobre a implantação do centro de administração do Windows.](../deploy/install.md)
 
-### <a name="configure-the-gateway-vm-to-enable-https-port-access"></a>Configure o gateway de VM para habilitar o acesso de porta HTTPS: 
+### <a name="configure-the-gateway-vm-to-enable-https-port-access"></a>Configure a VM do gateway para habilitar o acesso à porta HTTPS: 
 
 1. Navegue até sua VM no portal do Azure e selecione **rede**. 
 
-2. Selecione **Adicionar regra de porta de entrada** e selecione **HTTPS** sob **serviço**. 
+2. Selecione **Adicionar regra de porta de entrada** e selecione **https** em **serviço**. 
 
 > [!NOTE]
-> Se você escolher uma porta diferente do padrão de 443, escolha **personalizado** no serviço e insira a porta que você escolheu na etapa 3 abaixo **intervalos de porta**. 
+> Se você escolher uma porta diferente do padrão 443, escolha **personalizado** em serviço e insira a porta escolhida na etapa 3 em intervalos de **porta**. 
 
-### <a name="accessing-a-windows-admin-center-gateway-installed-on-an-azure-vm"></a>Acessando um gateway do Windows Admin Center instalado em uma VM do Azure
+### <a name="accessing-a-windows-admin-center-gateway-installed-on-an-azure-vm"></a>Acessando um gateway do centro de administração do Windows instalado em uma VM do Azure
 
-Neste ponto, você deve ser capaz de acessar o Windows Admin Center em um navegador moderno (Edge ou Chrome) no computador local, navegando até o nome DNS do seu gateway de VM. 
+Neste ponto, você deve ser capaz de acessar o centro de administração do Windows de um navegador moderno (Edge ou Chrome) em seu computador local, navegando até o nome DNS da sua VM de gateway. 
 
 > [!NOTE]
-> Se você tiver selecionado uma porta diferente de 443, você pode acessar o Windows Admin Center, navegando até https://\<nome DNS da sua VM\>:\<porta personalizada\>
+> Se você selecionou uma porta diferente de 443, poderá acessar o centro de administração do Windows navegando até https://\<nome DNS da sua VM\>:\<porta personalizada\>
 
-Quando você tenta acessar o Windows Admin Center, o navegador solicitará as credenciais acessar a máquina virtual em que o Windows Admin Center está instalado. Aqui, você precisará inserir credenciais que estão no grupo de administradores locais da máquina virtual ou usuários locais. 
+Quando você tentar acessar o centro de administração do Windows, o navegador solicitará credenciais para acessar a máquina virtual na qual o centro de administração do Windows está instalado. Aqui, você precisará inserir as credenciais que estão no grupo usuários locais ou administradores locais da máquina virtual. 
 
-Para adicionar outras VMs na rede virtual, verifique se que o WinRM está em execução no destino VMs executando o seguinte no prompt de comando ou do PowerShell na VM de destino: `winrm quickconfig`
+Para adicionar outras VMs na VNet, verifique se o WinRM está em execução nas VMs de destino executando o seguinte no PowerShell ou no prompt de comando na VM de destino:`winrm quickconfig`
 
-Se você ainda não tiver ingressado no domínio na VM do Azure, a VM se comporta como um servidor no grupo de trabalho, portanto, você precisará certificar-se de que você é responsável [usando o Windows Admin Center em um grupo de trabalho](../support/troubleshooting.md#using-windows-admin-center-in-a-workgroup).
+Se você não ingressou no domínio na VM do Azure, a VM se comporta como um servidor no grupo de trabalho, portanto, você precisará se certificar de [usar o centro de administração do Windows em um grupo de trabalho](../support/troubleshooting.md#using-windows-admin-center-in-a-workgroup).

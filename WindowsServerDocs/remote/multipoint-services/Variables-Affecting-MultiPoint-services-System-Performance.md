@@ -1,6 +1,6 @@
 ---
 title: Variáveis que afetam o desempenho do sistema MultiPoint Services
-description: Informações de desempenho para o MultiPoint Services
+description: Informações de desempenho para serviços do MultiPoint
 ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server-threshold
@@ -13,36 +13,36 @@ ms.assetid: 0f3e8875-1b5e-4789-b16c-d06d6e31f38e
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 7a06fcc763283114dc12ad106aa7ec146502dbd9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 23bde4a65e3bf41d8968d55bf9641ca6a44b7d96
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867577"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871495"
 ---
 # <a name="variables-affecting-multipoint-services-system-performance"></a>Variáveis que afetam o desempenho do sistema MultiPoint Services
-Há muitas variáveis que podem afetar o desempenho geral do seu sistema MultiPoint Services. Você poderá considerar esses ao projetar seu sistema.  
+Há muitas variáveis que podem afetar o desempenho geral do seu sistema de serviços do MultiPoint. Talvez você queira considerar isso ao criar seu sistema.  
   
 ## <a name="usage"></a>Uso  
   
--   **Aplicativos** o tipo e o número de aplicativos em execução ao mesmo tempo, especialmente gráfico\-pesado ou aplicativos com uso intenso afetará o desempenho geral do seu sistema de memória. Para obter mais informações, consulte [aplicativos e conteúdo de Internet](hardware-and-performance-recommendations.md#applications-and-internet-content).  
+-   **Aplicativos** do O tipo e o número de aplicativos em execução ao mesmo tempo, especialmente\-os aplicativos gráficos pesados ou com uso intensivo de memória afetarão o desempenho geral do seu sistema. Para obter mais informações, consulte [aplicativos e conteúdo da Internet](hardware-and-performance-recommendations.md#applications-and-internet-content).  
   
--   **Uso da Internet** considerar se seus usuários irão ver conteúdo multimídia ou páginas da web que use vídeos de movimento completo. Esse tipo de conteúdo pode sobrecarregar o sistema se muitos usuários estão exibindo simultaneamente.  
+-   **Uso da Internet** Considere se os usuários exibirão conteúdo multimídia ou páginas da Web que usam vídeos de movimento completo. Esse tipo de conteúdo pode sobrecarregar o sistema se muitos usuários estiverem exibindo simultaneamente.  
   
     > [!NOTE]  
-    > O recurso de projeção no MultiPoint Services, que permite aos professores projetar suas telas em seus monitores de aluno, não foi projetado para vídeo full-motion do projeto. O recurso de projeção foi projetado para fins de demonstração, como mostrar um procedimento.  
+    > O recurso de projeção nos serviços do MultiPoint, que permite que os professores projetem suas telas em seus monitores de alunos, não foi projetado para projetar vídeo de movimento completo. O recurso de projeção é projetado para fins de demonstração, como mostrar um procedimento.  
   
--   **Dispositivos de alta velocidade** se muitos usuários simultaneamente estiver usando um dispositivo de alta velocidade, como uma webcam ou um DVD player, isso afeta o desempenho geral do sistema.  
+-   **Dispositivos de alta velocidade** Se muitos usuários estiverem usando simultaneamente um dispositivo de alta velocidade, como uma câmara da Web ou um DVD Player, isso afetará o desempenho geral do sistema.  
   
 ## <a name="configuration"></a>Configuração  
   
--   **CPU, GPU e RAM** ver [otimizar o desempenho do sistema MultiPoint Services](hardware-and-performance-recommendations.md#optimize-multipoint-services-system-performance) neste guia para obter recomendações de RAM, CPU e GPU.  
--   **Largura de banda de rede** para RDP através de LAN estações conectadas, a largura de banda de rede e a capacidade do cliente (por exemplo, um cliente fino, desktop PC ou laptop) é importante, especialmente se o vídeo está em execução na sessão do usuário. Se você estiver usando clientes USB over Ethernet zero, a largura de banda de rede também deve ser uma consideração. Dados de vídeo para todos os dispositivos são enviados pela mesma conexão de Ethernet, portanto, você talvez queira considerar como configurar uma rede Gigabit Ethernet separada ao usar esses dispositivos.  
--   **RemoteFX** para estações de RDP através de LAN conectada, você poderá usar o RemoteFX para melhorar consideravelmente a entrega de conteúdo multimídia de alta definição.  
--   **Resolução de vídeo** se você tiver o uso intenso de vídeo em tela inteira, você talvez queira considerar a reduzir a resolução de monitor para maximizar o desempenho.  
--   **Número de clientes USB zero** o número total de clientes de zero USB em um hub de raiz única no servidor irá afetar diretamente o desempenho do vídeo. Para obter mais informações, consulte [Layout para USB Zero cliente conectado estações](MultiPoint-services-Site-Planning.md#layout-for-usb-zero-client-connected-stations). O número de estações de cliente de USB over Ethernet zero com suporte pode ser um pouco menor que o número de clientes USB zero.  
--   **Largura de banda USB** considerar a largura de banda USB durante a criação de seu sistema.  Isso é especialmente importante para clientes USB zero, que enviam dados de vídeo sobre a conexão USB. Para otimizar a largura de banda, minimize o número de dispositivos que estão conectados a uma única porta USB no servidor. Isso se aplica a estações com corrente margarida encadeada e hubs de intermediários. Para obter mais informações, consulte [hubs de estação](MultiPoint-services-Site-Planning.md#station-hubs) e [intermediária hubs](MultiPoint-services-Site-Planning.md#intermediate-hubs).  
+-   **CPU, GPU e RAM** Consulte [otimizar o desempenho do sistema dos serviços do MultiPoint](hardware-and-performance-recommendations.md#optimize-multipoint-services-system-performance) neste guia para obter recomendações de CPU, GPU e RAM.  
+-   **Largura de banda da rede** Para estações conectadas RDP via LAN, a largura de banda de rede e a capacidade do cliente (por exemplo, um cliente fino, PC desktop ou laptop) são importantes, especialmente se o vídeo estiver em execução na sessão do usuário. Se você estiver usando clientes USB over-Ethernet zero, a largura de banda de rede também deverá ser uma consideração. Os dados de vídeo de todos os dispositivos são enviados pela mesma conexão Ethernet, portanto, talvez você queira considerar a configuração de uma rede Gigabit Ethernet separada ao usar esses dispositivos.  
+-   **RemoteFX** Para estações conectadas RDP via LAN, você poderá usar o RemoteFX para melhorar muito a entrega de conteúdo multimídia de alta definição.  
+-   **Resolução de vídeo** Se você tiver muita utilização de vídeo de tela inteira, convém considerar a redução da resolução do monitor para maximizar o desempenho.  
+-   **Número de clientes USB zero** O número total de clientes USB zero em um único hub raiz no servidor afetará diretamente o desempenho do vídeo. Para obter mais informações, consulte [layout para estações conectadas a clientes USB com zero](MultiPoint-services-Site-Planning.md#layout-for-usb-zero-client-connected-stations). O número de estações de cliente USB via Ethernet com suporte pode ser um pouco menor do que o número de clientes USB zero.  
+-   **Largura de banda USB** Considere a largura de banda USB quando estiver projetando seu sistema.  Isso é especialmente importante para clientes USB com zero, que enviam dados de vídeo pela conexão USB. Para otimizar a largura de banda, minimize o número de dispositivos que estão conectados a uma única porta USB no servidor. Isso se aplica a estações encadeadas e hubs intermediários. Para obter mais informações, consulte [hubs de estação](MultiPoint-services-Site-Planning.md#station-hubs) e [hubs intermediários](MultiPoint-services-Site-Planning.md#intermediate-hubs).  
   
--   **Tipo USB** usando USB 3.0 em vez de USB 2.0 aumenta a largura de banda disponível entre o servidor e o hub intermediário, se você estiver se conectando a mais de três clientes USB zero para o hub ou se você estiver usando dispositivos USB de alta largura de banda.  
+-   **Tipo USB** Usar USB 3,0 em vez de USB 2,0 aumenta a largura de banda disponível entre o servidor e o hub intermediário se você estiver conectando mais de três clientes USB zero ao Hub ou se estiver usando dispositivos USB de alta largura de banda.  
   
--   **Estações** o número total de estações afeta o desempenho. Se você tiver necessidades de vídeos, processamento ou gráficos pesados, você talvez queira limitar o número total de estações. Para obter mais informações, consulte [desempenho do sistema do MultiPoint Services otimizar](hardware-and-performance-recommendations.md#optimize-multipoint-services-system-performance).
+-   **Estações** O número total de estações afeta o desempenho. Se você tiver gráficos pesados, processamento ou necessidades de vídeo, talvez queira limitar o número total de estações. Para obter mais informações, consulte [otimizar o desempenho do sistema dos serviços do MultiPoint](hardware-and-performance-recommendations.md#optimize-multipoint-services-system-performance).

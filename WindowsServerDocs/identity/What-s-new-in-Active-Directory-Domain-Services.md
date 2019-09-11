@@ -1,6 +1,6 @@
 ---
 ms.assetid: 9a06cd41-426f-4cb9-89cf-f5be730e0b79
-title: O que&#39;s novo nos serviços de domínio do Active Directory
+title: O&#39;que há de novo no Active Directory Domain Services
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,103 +12,103 @@ ms.topic: article
 author: Femila
 ms.author: billmath
 ms.date: 05/31/2017
-ms.openlocfilehash: ffa8bcb43b17ae8779c70d499bff27a8f77cce75
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3fc45782af7aaaccf87569c59f936abd8cbc5d08
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841327"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868271"
 ---
-# <a name="what39s-new-in-active-directory-domain-services"></a>O que&#39;s novo nos serviços de domínio do Active Directory 
+# <a name="what39s-new-in-active-directory-domain-services"></a>O&#39;que há de novo no Active Directory Domain Services 
 
 >Aplica-se a: Windows Server 2016
 
-Os seguintes novos recursos nos serviços de domínio Active Directory (AD DS) melhoram a capacidade para as organizações a proteger ambientes do Active Directory e ajuda a migrar para implantações somente em nuvem e implantações híbridas, onde alguns aplicativos e serviços são hospedado na nuvem e outros são hospedados no local. As melhorias incluem:  
+Os novos recursos a seguir no Active Directory Domain Services (AD DS) melhoram a capacidade das organizações de protegerem os ambientes Active Directory e os ajudam a migrar para implantações e implantações híbridas somente na nuvem, em que alguns aplicativos e serviços são hospedado na nuvem e outros são hospedados localmente. Os aprimoramentos incluem:  
   
--   [Gerenciamento de acesso privilegiado](https://technet.microsoft.com/library/mt150258.aspx   
+-   [Privileged Access Management](https://technet.microsoft.com/library/mt150258.aspx   
 )  
   
-- [Estendendo os recursos de nuvem para dispositivos Windows 10 por meio do ingresso do Active Directory do Azure](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)   
+- [Estendendo recursos de nuvem para dispositivos Windows 10 por meio do Azure Active Directory Join](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)   
   
-- [Experiências de conectar dispositivos ingressados no domínio ao AD do Azure para Windows 10](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)   
+- [Conectando dispositivos ingressados no domínio ao Azure AD para experiências com o Windows 10](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)   
   
-- [Habilitar o Microsoft Passport for Work em sua organização](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport-deployment/)    
+- [Habilitar Microsoft Passport for Work em sua organização](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport-deployment/)    
   
--  [Substituição dos níveis funcionais de replicação FRS (serviço) e Windows Server 2003](ad-ds/active-directory-functional-levels.md)  
+-  [Substituição do FRS (serviço de replicação de arquivo) e dos níveis funcionais do Windows Server 2003](ad-ds/active-directory-functional-levels.md)  
   
   
-## <a name="BKMK_PAM"></a>Gerenciamento de acesso privilegiado  
-Gerenciamento de acesso privilegiado (PAM) ajuda a reduzir a segurança preocupações para os ambientes do Active Directory que são causados por tais pass-the-hash, spear phishing e tipos semelhantes de ataques de técnicas de roubo de credenciais. Ele fornece uma nova solução de acesso administrativo, o que é configurada usando o Microsoft Identity Manager (MIM). Apresenta o PAM:  
+## <a name="BKMK_PAM"></a>Privileged Access Management  
+O PAM (Privileged Access Management) ajuda a reduzir as preocupações de segurança de Active Directory ambientes causados por técnicas de roubo de credenciais, como Pass-the-hash, spear phishing e tipos de ataques semelhantes. Ele fornece uma nova solução de acesso administrativo que é configurada usando o Microsoft Identity Manager (MIM). O PAM apresenta:  
   
--   Um novo bastiões floresta do Active Directory, o que é provisionado por MIM. A floresta de bastiões tem uma relação de confiança do PAM especial com uma floresta existente. Ele fornece um novo ambiente do Active Directory que é conhecido esteja livre de qualquer atividade mal-intencionada e isolamento de uma floresta existente para o uso de contas privilegiadas.  
+-   Uma nova floresta Active Directory de bastiões, que é provisionada pelo MIM. A floresta de bastiões tem uma relação de confiança especial do PAM com uma floresta existente. Ele fornece um novo ambiente de Active Directory que é conhecido como livre de qualquer atividade mal-intencionada e isolamento de uma floresta existente para o uso de contas com privilégios.  
   
--   Novos processos em MIM para solicitar privilégios administrativos, junto com novos fluxos de trabalho com base na aprovação de solicitações.  
+-   Novos processos no MIM para solicitar privilégios administrativos, juntamente com novos fluxos de trabalho com base na aprovação de solicitações.  
   
--   Novo sombra entidades de segurança (grupos) que são provisionadas na floresta de bastiões por MIM em resposta a solicitações de privilégio administrativo. As entidades de segurança de sombra tem um atributo que referencia o SID de um grupo administrativo em uma floresta existente. Isso permite que o grupo de sombras para acessar os recursos em uma floresta existente sem alterar quaisquer listas de controle de acesso (ACLs).  
+-   Novas entidades de segurança de sombra (grupos) que são provisionadas na floresta de bastiões pelo MIM em resposta a solicitações de privilégio administrativo. As entidades de segurança de sombra têm um atributo que faz referência ao SID de um grupo administrativo em uma floresta existente. Isso permite que o grupo de sombra acesse recursos em uma floresta existente sem alterar nenhuma lista de controle de acesso (ACLs).  
   
--   Um recurso de links expirando, que permite a associação de limite de tempo em um grupo de sombra. Um usuário pode ser adicionado ao grupo para o tempo necessário para executar uma tarefa administrativa. A associação de limite de tempo é expresso por um valor time-to-live (TTL) que é propagado para um tempo de vida do tíquete Kerberos.  
+-   Um recurso de links de expiração, que habilita a associação de limite de tempo em um grupo de sombra. Um usuário pode ser adicionado ao grupo por apenas tempo suficiente necessário para executar uma tarefa administrativa. A associação de limite de tempo é expressa por um valor de vida útil (TTL) que é propagado para um tempo de vida de tíquete Kerberos.  
   
     > [!NOTE]  
-    > Expirando links estão disponíveis em todos os atributos vinculados. Mas o atributo de membro/memberOf vinculado a relação entre um grupo e um usuário é o exemplo de somente onde uma solução completa, como o PAM é pré-configurado para usar o recurso de links prestes a expirar.  
+    > Os links de expiração estão disponíveis em todos os atributos vinculados. Mas a relação de atributo vinculado member/memberOf entre um grupo e um usuário é o único exemplo em que uma solução completa, como o PAM, é pré-configurada para usar o recurso de links de expiração.  
   
--   Aprimoramentos do KDC são feitos em controladores de domínio do Active Directory para restringir a vida útil do tíquete Kerberos para o valor mais baixo possível time-to-live (TTL) em casos em que um usuário tem várias associações de limite de tempo em grupos administrativos. Por exemplo, se você for adicionado A um grupo de limite de tempo, em seguida, quando você faz logon, a vida útil tíquete (TGT) de concessão de tíquete Kerberos é igual ao tempo ter restantes na grupo. Se você também for um membro de outro grupo de limite de tempo B, que tem uma TTL menor que um grupo, em seguida, o tempo de vida TGT é igual ao tempo que restante no grupo B.  
+-   Os aprimoramentos do KDC são internos para Active Directory controladores de domínio para restringir o tempo de vida do tíquete Kerberos para o valor de TTL (vida útil) mais baixo nos casos em que um usuário tem várias associações de limite de tempo em grupos administrativos. Por exemplo, se você for adicionado a um grupo de limite de tempo A e, quando fizer logon, o tempo de vida do tíquete de concessão de tíquete (TGT) do Kerberos será igual ao horário restante no grupo A. Se você também for um membro de outro grupo de limite de tempo B, que tem um TTL menor do que o grupo A, o tempo de vida de TGT será igual ao horário restante no grupo B.  
   
--   Novos recursos de monitoramento para ajudá-lo facilmente identificam quem solicitou acesso, o que o acesso foi concedido e quais atividades foram executadas.  
+-   Novos recursos de monitoramento para ajudá-lo a identificar facilmente quem solicitou acesso, qual acesso foi concedido e quais atividades foram executadas.  
   
 **Requisitos**  
   
 -   Microsoft Identity Manager  
   
--   Nível funcional do Windows Server 2012 R2 ou superior de floresta do Active Directory.  
+-   Active Directory nível funcional de floresta do Windows Server 2012 R2 ou superior.  
   
 ## <a name="BKMK_AzureADJoin"></a>Ingresso no Azure AD  
-Ingresso no Active Directory do Azure aprimora a experiências de identidade para enterprise, business e EDU clientes – com recursos aprimorados para dispositivos corporativos e pessoais.  
+O Azure Active Directory Join aprimora as experiências de identidade para clientes corporativos, empresariais e EDU-com recursos aprimorados para dispositivos corporativos e pessoais.  
   
 Benefícios:  
   
--   **Disponibilidade das configurações modernos** em dispositivos Windows corp. Serviços de oxigênio não exigem uma conta pessoal da Microsoft: eles agora executarem desativar contas de trabalho existentes dos usuários para garantir a conformidade. Serviços de oxigênio funcionará em computadores que ingressaram em um domínio do Windows no local, e PCs e dispositivos que são "ingressar" em seu locatário do AD do Azure ("domínio de nuvem"). Essas configurações incluem:  
+-   **Disponibilidade de configurações modernas** em dispositivos Windows de propriedade corporativa. Os serviços oxigênios não exigem mais um conta Microsoft pessoal: agora eles executam as contas de trabalho existentes dos usuários para garantir a conformidade. Os serviços oxigênios funcionarão em computadores que ingressaram em um domínio local do Windows, e computadores e dispositivos que estão "Unidos" ao seu locatário do Azure AD ("domínio de nuvem"). Essas configurações incluem:  
   
     -   Roaming ou personalização, configurações de acessibilidade e credenciais  
   
     -   Backup e restauração  
   
-    -   Acesso ao Microsoft Store com conta de trabalho  
+    -   Acesso a Microsoft Store com a conta corporativa  
   
-    -   Notificações e blocos dinâmicos  
+    -   Blocos dinâmicos e notificações  
   
--   **Acessar recursos organizacionais** em dispositivos móveis (celulares, phablets) que não podem ser unidos a um domínio do Windows, independentemente de estarem corporativo ou de BYOD  
+-   **Acesse recursos organizacionais** em dispositivos móveis (telefones, phablets) que não podem ser adicionados a um domínio do Windows, sejam de propriedade corporativa ou BYOD  
   
--   **Logon único** para Office 365 e outros aplicativos, sites e recursos organizacionais.  
+-   **Logon único no** Office 365 e em outros aplicativos, sites e recursos organizacionais.  
   
--   **Em dispositivos BYOD**, adicione uma conta de trabalho (de um domínio local ou do Azure AD) para um dispositivo pessoal e aproveitam o SSO para recursos de trabalho, por meio de aplicativos e na web, de forma que ajuda a garantir a conformidade com os novos recursos, como a conta condicional Atestado de integridade do dispositivo e de controle.  
+-   **Em dispositivos BYOD**, adicione uma conta de trabalho (de um domínio local ou do Azure AD) a um dispositivo de propriedade pessoal e aproveite o SSO para trabalhar com recursos, por meio de aplicativos e na Web, de forma a garantir a conformidade com novos recursos, como controle de conta condicional e Integridade do Dispositivo atestado.  
   
--   **Integração do MDM** lhe permite registrar automaticamente dispositivos para o MDM (Intune ou terceiros)  
+-   A **integração de MDM** permite que você registre automaticamente os dispositivos no MDM (Intune ou de terceiros)  
   
--   **Configurar o modo de "quiosque" e dispositivos compartilhados** para vários usuários em sua organização  
+-   **Configurar o modo "quiosque" e os dispositivos compartilhados** para vários usuários em sua organização  
   
--   **Experiência do desenvolvedor** permite que você crie aplicativos que atenda às necessidades empresariais e contextos pessoais com uma pilha de programação compartilhado.  
+-   A **experiência do desenvolvedor** permite que você crie aplicativos que atendem a contextos corporativos e pessoais com uma pilha de programa compartilhada.  
   
--   **Geração de imagens** opção permite que você escolha entre a geração de imagens e permitir que os usuários para configurar dispositivos de propriedade corp diretamente durante a experiência de primeira execução.  
+-   A opção de **geração de imagens** permite escolher entre imagens e permitir que os usuários configurem dispositivos corporativos diretamente durante a experiência de primeira execução.  
   
-Para obter mais informações, consulte [Windows 10 para a empresa: Maneiras de usar dispositivos para trabalho](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/?rnd=1).  
+Para obter mais informações, [consulte Windows 10 para a empresa: Maneiras de usar dispositivos para o](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/?rnd=1)trabalho.  
   
-## <a name="BKMK_IDLocker"></a>O Microsoft Passport  
-O Microsoft Passport é uma nova autenticação baseada em chave abordar a empresas e consumidores, que vai além de senhas. Essa forma de autenticação se baseia em violação, roubo e credenciais pescam resistente.  
+## <a name="BKMK_IDLocker"></a>Microsoft Passport  
+Microsoft Passport é uma nova abordagem de autenticação baseada em chave que as organizações e os consumidores, que vão além das senhas. Essa forma de autenticação depende de violações, roubos e credenciais resistentes a Phish.  
   
-O usuário faz logon no dispositivo com uma biometria ou PIN informações de logon que esteja vinculadas a um certificado ou um par de chaves assimétrica. Os provedores de identidade (IDPs) validar o usuário mapeando a chave pública do usuário para IDLocker e fornece log de informações por meio de um tempo de OTP (senha), Phonefactor ou um mecanismo de notificação diferente.  
+O usuário faz logon no dispositivo com um registro biométrico ou PIN em informações vinculadas a um certificado ou a um par de chaves assimétricas. Os provedores de identidade (IDPs) validam o usuário mapeando a chave pública do usuário para IDLocker e fornecem informações de logon por meio de senha de uso único (OTP), PhoneFactor ou um mecanismo de notificação diferente.  
   
-Para obter mais informações, consulte [autenticando identidades sem senhas por meio do Microsoft Passport](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport/)  
+Para obter mais informações, consulte [Autenticando identidades sem senhas por meio de Microsoft Passport](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport/)  
   
-## <a name="BKMK_FRSDeprecation"></a>Substituição dos níveis funcionais de replicação FRS (serviço) e Windows Server 2003  
-Embora a replicação FRS (serviço) e os níveis funcionais do Windows Server 2003 foram preteridos em versões anteriores do Windows Server, é importante lembrar a que o sistema operacional Windows Server 2003 não é mais suportado. Como resultado, qualquer controlador de domínio que executa o Windows Server 2003 deve ser removido do domínio. O nível funcional de domínio e floresta deve ser aumentado para pelo menos Windows Server 2008 para impedir que um controlador de domínio que executa uma versão anterior do Windows Server do que está sendo adicionado ao ambiente.  
+## <a name="BKMK_FRSDeprecation"></a>Substituição do FRS (serviço de replicação de arquivo) e dos níveis funcionais do Windows Server 2003  
+Embora o FRS (serviço de replicação de arquivo) e os níveis funcionais do Windows Server 2003 tenham sido preteridos em versões anteriores do Windows Server, ele deixa repetindo que o sistema operacional Windows Server 2003 não é mais suportado. Como resultado, qualquer controlador de domínio que executa o Windows Server 2003 deve ser removido do domínio. O nível funcional de domínio e floresta deve ser elevado ao mínimo do Windows Server 2008 para impedir que um controlador de domínio que executa uma versão anterior do Windows Server seja adicionado ao ambiente.  
   
-No Windows Server 2008 e superiores níveis funcionais de domínio, replicação do serviço de arquivos distribuído (DFS) é usada para replicar o conteúdo da pasta SYSVOL entre controladores de domínio. Se você criar um novo domínio no nível funcional de domínio do Windows Server 2008 ou superior, a replicação DFS é automaticamente usada para replicar o SYSVOL. Se você criou o domínio em um nível funcional mais baixo, você precisará migrar do uso de FRS para replicação do DFS do SYSVOL. Para obter as etapas de migração, você pode a seguir a [procedimentos no TechNet](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx) ou você pode consultar a [simplificada do conjunto de etapas no blog do gabinete do arquivo de equipe de armazenamento](http://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx).  
+Nos níveis funcionais de domínio do Windows Server 2008 e superior, a replicação do serviço de arquivos distribuído (DFS) é usada para replicar o conteúdo da pasta SYSVOL entre controladores de domínio. Se você criar um novo domínio no nível funcional de domínio do Windows Server 2008 ou superior, Replicação do DFS será usado automaticamente para replicar o SYSVOL. Se você criou o domínio em um nível funcional inferior, será necessário migrar do usando o FRS para a Replicação DFS para SYSVOL. Para obter as etapas de migração, você pode seguir os [procedimentos no TechNet](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx) ou pode consultar o [conjunto simplificado de etapas no blog do gabinete de arquivo da equipe de armazenamento](http://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx).  
   
-Os Windows Server 2003 domínios e florestas níveis funcionais de continuam a ter suporte, mas as organizações devem aumentar o nível funcional para o Windows Server 2008 (ou superior, se possível) para garantir a compatibilidade de replicação do SYSVOL e suporte no futuro. Além disso, há muitos outros benefícios e recursos disponíveis em níveis mais altos funcionais superiores. Confira os recursos a seguir para saber mais:  
+Os níveis funcionais de domínio e floresta do Windows Server 2003 continuam com suporte, mas as organizações devem aumentar o nível funcional para o Windows Server 2008 (ou superior, se possível) para garantir a compatibilidade e o suporte à replicação do SYSVOL no futuro. Além disso, há muitos outros benefícios e recursos disponíveis nos níveis funcionais mais altos. Confira os recursos a seguir para saber mais:  
   
--   [Noções básicas sobre o domínio do Active Directory (AD DS) os níveis funcionais de serviços](ad-ds/active-directory-functional-levels.md)  
+-   [Noções básicas sobre níveis funcionais de Active Directory Domain Services (AD DS)](ad-ds/active-directory-functional-levels.md)  
   
 -   [Aumentar o nível funcional do domínio](https://technet.microsoft.com/library/cc753104.aspx)  
   
--   [Aumentar o nível funcional de floresta](https://technet.microsoft.com/library/cc730985.aspx)  
+-   [Aumentar o nível funcional da floresta](https://technet.microsoft.com/library/cc730985.aspx)  
   

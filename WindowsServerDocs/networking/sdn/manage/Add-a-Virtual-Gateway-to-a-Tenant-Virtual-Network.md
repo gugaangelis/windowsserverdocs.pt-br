@@ -1,6 +1,6 @@
 ---
 title: Adicionar um gateway virtual a uma rede virtual de locatário
-description: Saiba como usar cmdlets do Windows PowerShell e scripts para fornecer conectividade site a site para redes virtuais do seu locatário.
+description: Saiba como usar os cmdlets e scripts do Windows PowerShell para fornecer conectividade site a site para as redes virtuais do seu locatário.
 manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,37 +13,37 @@ ms.assetid: b9552054-4eb9-48db-a6ce-f36ae55addcd
 ms.author: pashort
 author: shortpatti
 ms.date: 08/23/2018
-ms.openlocfilehash: 768a25c8c452a8c4bc85b38736b4241fa2570b32
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 39199a96b1f3cd5a62e60f676e8ab47ad4acb4a8
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446363"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869952"
 ---
 # <a name="add-a-virtual-gateway-to-a-tenant-virtual-network"></a>Adicionar um gateway virtual a uma rede virtual de locatário 
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016 
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016 
 
-Saiba como usar cmdlets do Windows PowerShell e scripts para fornecer conectividade site a site para redes virtuais do seu locatário. Neste tópico, você deve adicionar gateways de virtual de locatário para instâncias do gateway RAS que são membros dos pools de gateways, usando o controlador de rede. Gateway de RAS dá suporte a até 100 locatários, dependendo da largura de banda usada por cada locatário. Controlador de rede determina automaticamente o Gateway de RAS recomendadas para usar ao implantar um novo gateway virtual para seus locatários.  
+Saiba como usar os cmdlets e scripts do Windows PowerShell para fornecer conectividade site a site para as redes virtuais do seu locatário. Neste tópico, você adiciona gateways virtuais de locatário a instâncias do gateway de RAS que são membros de pools de gateways, usando o controlador de rede. O gateway RAS dá suporte a até 100 locatários, dependendo da largura de banda usada por cada locatário. O controlador de rede determina automaticamente o melhor gateway de RAS a ser usado quando você implanta um novo gateway virtual para seus locatários.  
 
-Cada gateway virtual corresponde a um locatário específico e consiste em um ou mais conexões de rede (túneis de VPN site a site) e, opcionalmente, as conexões do Border Gateway Protocol (BGP). Quando você fornece conectividade site a site, os clientes podem se conectar sua rede virtual do locatário a uma rede externa, como uma rede de empresa do locatário, uma rede de provedor de serviço ou a Internet.
+Cada gateway virtual corresponde a um locatário específico e consiste em uma ou mais conexões de rede (túneis de VPN site a site) e, opcionalmente, conexões Border Gateway Protocol (BGP). Quando você fornece conectividade site a site, seus clientes podem conectar sua rede virtual de locatário a uma rede externa, como uma rede corporativa de locatário, uma rede de provedor de serviços ou a Internet.
 
-**Quando você implanta um Gateway Virtual do locatário, você tem as seguintes opções de configuração:**  
+**Ao implantar um gateway virtual de locatário, você tem as seguintes opções de configuração:**  
 
 
 |                                                        Opções de conexão de rede                                                         |                                              Opções de configuração de BGP                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| <ul><li>IPSec site a site, na rede virtual privada (VPN)</li><li>Encapsulamento de roteamento genérico (GRE)</li><li>Encaminhamento de camada 3</li></ul> | <ul><li>Configuração do roteador BGP</li><li>Configuração de par BGP</li><li>Configuração de políticas de roteamento de BGP</li></ul> |
+| <ul><li>VPN (rede virtual privada) site a site do IPSec</li><li>Encapsulamento de roteamento genérico (GRE)</li><li>Encaminhamento de camada 3</li></ul> | <ul><li>Configuração do roteador BGP</li><li>Configuração de par BGP</li><li>Configuração de políticas de roteamento BGP</li></ul> |
 
 ---
 
-Os scripts de exemplo do Windows PowerShell e os comandos neste tópico demonstram como implantar um gateway virtual do locatário em um Gateway de RAS com cada uma dessas opções.  
+Os scripts e comandos de exemplo do Windows PowerShell neste tópico demonstram como implantar um gateway virtual de locatário em um gateway RAS com cada uma dessas opções.  
 
 
 >[!IMPORTANT]  
->Antes de executar qualquer um dos comandos do Windows PowerShell de exemplo e scripts fornecidos, você deve alterar todos os valores de variáveis para que os valores são apropriados para sua implantação.  
+>Antes de executar qualquer um dos comandos e scripts do Windows PowerShell de exemplo fornecidos, você deve alterar todos os valores de variáveis para que os valores sejam apropriados para sua implantação.  
 
-1.  Verifique se o objeto de pool de gateway existe no controlador de rede. 
+1.  Verifique se o objeto do pool de gateway existe no controlador de rede. 
 
     ```PowerShell
     $uri = "https://ncrest.contoso.com"   
@@ -56,7 +56,7 @@ Os scripts de exemplo do Windows PowerShell e os comandos neste tópico demonstr
 
     ```  
 
-2.  Verifique se a sub-rede usada para roteamento de pacotes para fora da rede virtual do locatário existe no controlador de rede. Você também pode recuperar a sub-rede virtual usada para roteamento entre o gateway do locatário e a rede virtual.  
+2.  Verifique se a sub-rede usada para rotear pacotes da rede virtual do locatário existe no controlador de rede. Você também recupera a sub-rede virtual usada para roteamento entre o gateway de locatário e a rede virtual.  
 
     ```PowerShell 
     $uri = "https://ncrest.contoso.com"   
@@ -75,7 +75,7 @@ Os scripts de exemplo do Windows PowerShell e os comandos neste tópico demonstr
 
     ```  
 
-3.  Crie um novo objeto para o gateway virtual do locatário e, em seguida, atualize a referência de pool de gateway.  Você também pode especificar a sub-rede virtual usada para roteamento entre o gateway e a rede virtual.  Depois de especificar a sub-rede virtual que você atualizar o restante das propriedades do objeto de gateway virtual e, em seguida, adicione o novo gateway virtual para o locatário.
+3.  Crie um novo objeto para o gateway virtual de locatário e, em seguida, atualize a referência de pool de gateway.  Você também especifica a sub-rede virtual usada para roteamento entre o gateway e a rede virtual.  Depois de especificar a sub-rede virtual, você atualiza o restante das propriedades do objeto de gateway virtual e, em seguida, adiciona o novo gateway virtual para o locatário.
 
     ```PowerShell  
     # Create a new object for Tenant Virtual Gateway  
@@ -99,10 +99,10 @@ Os scripts de exemplo do Windows PowerShell e os comandos neste tópico demonstr
 
     ```  
 
-4. Criar uma conexão de VPN site a site com IPsec, GRE, ou camada 3 encaminhamento de (L3).  
+4. Crie uma conexão VPN site a site com o encaminhamento de IPsec, GRE ou camada 3 (L3).  
 
    >[!TIP]
-   >Opcionalmente, você pode combinar todas as etapas anteriores e configurar um gateway virtual do locatário com todas as opções de conexão de três.  Para obter mais detalhes, consulte [configurar um gateway com todos os tipos de conexão de três (IPsec, GRE, L3) e BGP](#optional-step-configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp).
+   >Opcionalmente, você pode combinar todas as etapas anteriores e configurar um gateway virtual de locatário com todas as três opções de conexão.  Para obter mais detalhes, consulte [configurar um gateway com todos os três tipos de conexão (IPSec, GRE, L3) e BGP](#optional-step-configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp).
 
    **Conexão de rede site a site VPN IPsec**
 
@@ -154,7 +154,7 @@ Os scripts de exemplo do Windows PowerShell e os comandos neste tópico demonstr
 
    ```  
 
-   **Conexão de rede site a site VPN GRE**
+   **Conexão de rede site a site de VPN GRE**
 
    ```PowerShell  
    # Create a new object for the Tenant Network Connection  
@@ -190,9 +190,9 @@ Os scripts de exemplo do Windows PowerShell e os comandos neste tópico demonstr
    ```  
 
    **Conexão de rede de encaminhamento L3**<p>
-   Para um L3 encaminhamento de conexão de rede funcione corretamente, você deve configurar uma rede lógica correspondente.   
+   Para que uma conexão de rede de encaminhamento L3 funcione corretamente, você deve configurar uma rede lógica correspondente.   
 
-   1. Configure uma rede lógica para o L3 encaminhamento de Conexão de rede.  <br>
+   1. Configure uma rede lógica para a conexão de rede de encaminhamento L3.  <br>
 
       ```PowerShell  
       # Create a new object for the Logical Network to be used for L3 Forwarding  
@@ -216,7 +216,7 @@ Os scripts de exemplo do Windows PowerShell e os comandos neste tópico demonstr
 
       ```  
 
-   2. Crie um objeto de JSON de Conexão de rede e adicioná-lo ao controlador de rede.  
+   2. Crie um objeto JSON de conexão de rede e adicione-o ao controlador de rede.  
 
       ```PowerShell 
       # Create a new object for the Tenant Network Connection  
@@ -254,7 +254,7 @@ Os scripts de exemplo do Windows PowerShell e os comandos neste tópico demonstr
 
       ```  
 
-5. Configurar o gateway como um roteador BGP e adicioná-lo ao controlador de rede. 
+5. Configure o gateway como um roteador BGP e adicione-o ao controlador de rede. 
 
    1. Adicione um roteador BGP para o locatário.  
 
@@ -272,7 +272,7 @@ Os scripts de exemplo do Windows PowerShell e os comandos neste tópico demonstr
 
       ```  
 
-   2. Adicione um par de BGP para esse locatário correspondente para a Conexão de rede de VPN site a site adicionadas acima.  
+   2. Adicione um par de BGP para esse locatário, que corresponde à conexão de rede VPN site a site adicionada acima.  
 
       ```PowerShell
       # Create a new object for Tenant BGP Peer  
@@ -288,8 +288,8 @@ Os scripts de exemplo do Windows PowerShell e os comandos neste tópico demonstr
 
       ```  
 
-## <a name="optional-step-configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp"></a>(Etapa opcional) Configurar um gateway com todos os tipos de conexão de três (IPsec, GRE, L3) e BGP  
-Opcionalmente, você pode combinar todas as etapas anteriores e configurar um gateway virtual do locatário com todas as opções de conexão de três:   
+## <a name="optional-step-configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp"></a>(Etapa opcional) Configurar um gateway com todos os três tipos de conexão (IPsec, GRE, L3) e BGP  
+Opcionalmente, você pode combinar todas as etapas anteriores e configurar um gateway virtual de locatário com todas as três opções de conexão:   
 
 ```PowerShell  
 # Create a new Virtual Gateway Properties type object  
@@ -461,13 +461,13 @@ New-NetworkControllerVirtualGateway -ConnectionUri $uri  -ResourceId "Contoso_Vi
 ## <a name="modify-a-gateway-for-a-virtual-network"></a>Modificar um gateway para uma rede virtual  
 
 
-**Recuperar a configuração do componente e armazená-lo em uma variável**
+**Recuperar a configuração do componente e armazená-la em uma variável**
 
 ```PowerShell  
 $nwConnection = Get-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -ResourceId "Contoso_IPSecGW"  
 ```  
 
-**Navegar na estrutura de variável para acessar a propriedade necessária e defina-o como o valor de atualizações**
+**Navegar pela estrutura de variável para alcançar a propriedade necessária e defini-la para o valor de atualizações**
 
 ```PowerShell  
 $nwConnection.properties.IpSecConfiguration.SharedSecret = "C0mplexP@ssW0rd"  

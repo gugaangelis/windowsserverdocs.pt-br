@@ -9,40 +9,40 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1023ca7da02d2a1f6af42f68892dc4c5c8f1a2bf
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 00ae720a933289e3cd4bde5fe9d20610e38ae726
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444372"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866041"
 ---
 # <a name="add-a-claim-description"></a>Adicionar uma descrição da declaração
 
 
-Em uma organização do parceiro de conta, os administradores criam declarações para representar a associação de um usuário em um grupo ou uma função ou para representar alguns dados sobre um usuário, por exemplo, um usuário funcionário número de identificação.
+Em uma organização de parceiro de conta, os administradores criam declarações para representar a associação de um usuário em um grupo ou função ou para representar alguns dados sobre um usuário, por exemplo, o número de identificação de funcionário de um usuário.
 
-Em uma organização de parceiro de recurso, os administradores criam declarações correspondentes para representar grupos e usuários que podem ser reconhecidos como usuários de recursos. Porque a saída de declarações no mapa de organização do parceiro de conta para declarações de entrada na organização do parceiro de recurso, o parceiro de recurso é capaz de aceitar as credenciais que o parceiro de conta fornece. 
+Em uma organização de parceiro de recurso, os administradores criam declarações correspondentes para representar grupos e usuários que podem ser reconhecidos como usuários de recursos. Como as declarações de saída na organização do parceiro de conta mapeiam para declarações de entrada na organização do parceiro de recurso, o parceiro de recurso é capaz de aceitar as credenciais que o parceiro de conta fornece. 
 
 Você pode usar o procedimento a seguir para adicionar uma declaração.
 
-A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e associações de grupos em [domínio grupos padrão Local e](https://go.microsoft.com/fwlink/?LinkId=83477).
+A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).
 
 ## <a name="to-add-a-claim-description"></a>Para adicionar uma descrição de declaração
 
-1. No Gerenciador do servidor, clique em **ferramentas**e, em seguida, selecione **gerenciamento do AD FS**. 
+1. Em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, selecione **Gerenciamento de AD FS**. 
 
-2. Expandir **Service** e, em que o botão direito do mouse **adicionar descrição de declaração**.
-   ![Adicionar descrição de declaração](media/Add-a-Claim-Description/claimdesc1.png)
+2. Expanda **serviço** e clique com o botão direito do mouse em **Adicionar Descrição da declaração**.
+   ![Adicionar Descrição da declaração](media/Add-a-Claim-Description/claimdesc1.png)
 
-3. Na caixa Adicionar uma descrição de declaração na caixa **nome de exibição**, digite um nome exclusivo que identifica o grupo ou função para esta declaração.
+3. Na caixa de diálogo Adicionar uma descrição de declaração, em **nome de exibição**, digite um nome exclusivo que identifique o grupo ou a função dessa declaração.
 
-4. Adicionar um **abreviada nome**.
+4. Adicione um **nome curto**.
 
-5. Na **identificador de declaração**, digite um URI que é associado um grupo ou função da declaração que você usará.
+5. Em **identificador de declaração**, digite um URI que esteja associado ao grupo ou função da declaração que você usará.
 
-6. Sob **descrição**, digite o texto que melhor descreve a finalidade dessa declaração.
+6. Em **Descrição**, digite o texto que melhor descreve a finalidade dessa declaração.
 
-7. Dependendo das necessidades da sua organização, selecione qualquer uma das seguintes caixas de seleção, conforme apropriado, para publicar esta declaração nos metadados de Federação:
+7. Dependendo das necessidades da sua organização, marque uma das seguintes caixas de seleção, conforme apropriado, para publicar essa declaração em metadados de Federação:
 
 
 ~~~
@@ -52,7 +52,7 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
 
 8. Clique em **OK**.
 
-![Adicionar descrição de declaração](media/Add-a-Claim-Description/claimdesc2.png)
+![Adicionar Descrição da declaração](media/Add-a-Claim-Description/claimdesc2.png)
 
 
 ## <a name="see-also"></a>Consulte também  

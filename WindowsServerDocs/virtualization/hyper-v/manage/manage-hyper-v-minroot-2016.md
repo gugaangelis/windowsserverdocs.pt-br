@@ -1,6 +1,6 @@
 ---
 title: Minroot
-description: Configurando controles de recursos de CPU do Host
+description: Configurando controles de recurso de CPU do host
 keywords: windows 10, hyper-v
 author: allenma
 ms.date: 12/15/2017
@@ -8,64 +8,64 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: ''
-ms.openlocfilehash: e1269c11df32c8ce95cc7455d47d7170e9d0b1c8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 92de899a39aed05e2f598fcb3aae3fbae3f1cb67
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844327"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70872043"
 ---
-# <a name="hyper-v-host-cpu-resource-management"></a>Gerenciamento de recursos de CPU do Host do Hyper-V
+# <a name="hyper-v-host-cpu-resource-management"></a>Gerenciamento de recursos de CPU do host Hyper-V
 
-Controles de recursos de CPU do host Hyper-V introduzido no Windows Server 2016 ou posterior permitem que os administradores do Hyper-V gerenciar melhor e alocar recursos de CPU entre a "raiz", ou partição de gerenciamento e as VMs convidadas de servidor de host. Usando esses controles, os administradores podem dedicar um subconjunto dos processadores de um sistema de host para a partição raiz. Isso pode separar o trabalho realizado em um host Hyper-V das cargas de trabalho em execução em máquinas virtuais convidadas, executá-los em separado subconjuntos dos processadores do sistema.
+Os controles de recurso de CPU do host Hyper-V introduzidos no Windows Server 2016 ou posterior permitem que os administradores do Hyper-V gerenciem e aloquem melhor os recursos de CPU do servidor host entre a partição de gerenciamento e a "raiz", bem como as VMs convidadas. Usando esses controles, os administradores podem dedicar um subconjunto dos processadores de um sistema host à partição raiz. Isso pode separar o trabalho feito em um host Hyper-V das cargas de trabalhos em execução em máquinas virtuais convidadas executando-as em subconjuntos separados dos processadores do sistema.
 
-Para obter detalhes sobre o hardware para hosts Hyper-V, consulte [requisitos de sistema do Windows 10 Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements).
+Para obter detalhes sobre o hardware para hosts Hyper-V, consulte [requisitos do sistema do Hyper-v do Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements).
 
-## <a name="background"></a>Histórico
+## <a name="background"></a>Informações preliminares
 
-Antes de recursos de CPU de host de controles de configuração do Hyper-V, é útil para examinar os conceitos básicos da arquitetura do Hyper-V.  
-Você pode encontrar um resumo geral no console do [arquitetura do Hyper-V](https://docs.microsoft.com/windows-server/administration/performance-tuning/role/hyper-v-server/architecture) seção.
-Estes são os conceitos importantes para este artigo:
+Antes de definir controles para recursos de CPU do host Hyper-V, é útil examinar os conceitos básicos da arquitetura do Hyper-V.  
+Você pode encontrar um resumo geral na seção [arquitetura do Hyper-V](https://docs.microsoft.com/windows-server/administration/performance-tuning/role/hyper-v-server/architecture) .
+Estes são conceitos importantes para este artigo:
 
-* Hyper-V cria e gerencia as partições de máquina virtual, em qual computação recursos são alocados e compartilhados, sob o controle do hipervisor.  Partições fornecem limites de isolamento forte entre todas as máquinas virtuais convidadas e entre VMs convidadas e na partição raiz.
+* O Hyper-V cria e gerencia partições de máquina virtual, entre as quais os recursos de computação são alocados e compartilhados, sob o controle do hipervisor.  As partições fornecem limites de isolamento fortes entre todas as máquinas virtuais convidadas e entre as VMs convidadas e a partição raiz.
 
-* A partição de raiz em si é uma partição de máquina virtual, embora ele tenha privilégios muito maiores do que as máquinas virtuais de convidado e propriedades exclusivas.  A partição raiz fornece os serviços de gerenciamento que controlam todas as máquinas virtuais de convidado, fornece suporte a dispositivos virtuais para convidados e gerencia todos os dispositivos e/s para máquinas virtuais convidadas.  Microsoft recomenda não executando qualquer carga de trabalho do aplicativo em uma partição de host.
+* A partição raiz é, em si, uma partição de máquina virtual, embora tenha propriedades exclusivas e privilégios muito maiores do que as máquinas virtuais convidadas.  A partição raiz fornece os serviços de gerenciamento que controlam todas as máquinas virtuais convidadas, fornece suporte a dispositivos virtuais para convidados e gerencia todas as e/s de dispositivo para máquinas virtuais convidadas.  A Microsoft recomenda enfaticamente não executar cargas de trabalho de aplicativo em uma partição de host.
 
-* Cada processador virtual (VP) da partição raiz é mapeada 1:1 para um processador lógico subjacente (LP).  Um host VP sempre será executado sobre o LP subjacente mesmo – não há nenhuma migração dos vice-presidentes da partição raiz.  
+* Cada processador virtual (VP) da partição raiz é mapeado 1:1 para um processador lógico subjacente (LP).  Um VP de host sempre será executado no mesmo LP subjacente – não há nenhuma migração do VPSs da partição raiz.  
 
-* Por padrão, os LPs no qual executar vice-presidentes host também podem executar vice-presidentes de convidado.
+* Por padrão, o LPs em que o host VPSs executado também pode executar o convidado VPSs.
 
-* Uma VICE-PRESIDENTE de convidado pode ser agendado pelo hipervisor para ser executado em qualquer processador lógico disponível.  Enquanto o Agendador de hipervisor se encarrega de considerar a localidade do cache temporal, topologia NUMA e muitos outros fatores ao agendar uma VP de convidado, por fim, o vice-Presidente pudessem ser agendada em qualquer host LP.
+* Um vice-presidente convidado pode ser agendado pelo hipervisor para ser executado em qualquer processador lógico disponível.  Enquanto o Agendador de hipervisor se preocupa em considerar a localidade do cache temporal, a topologia NUMA e muitos outros fatores ao programar um vice-presidente convidado, por fim, o VP pode ser agendado em qualquer host LP.
 
-## <a name="the-minimum-root-or-minroot-configuration"></a>A raiz mínima ou configuração de "Minroot"
+## <a name="the-minimum-root-or-minroot-configuration"></a>A configuração de raiz mínima ou "Minroot"
 
-As versões anteriores do Hyper-V tinham um limite máximo da arquitetura dos 64 vice-presidentes por partição.  Isso seja aplicado às partições raiz e convidado.  Como apareceram sistemas com mais de 64 processadores lógicos em servidores high-end, o Hyper-V também evoluiu seus limites de escala do host para dar suporte a esses sistemas maiores, em um ponto que dão suporte a um host com até 320 LPs.  No entanto, quebrando a 64 VP de limite de partição no momento por apresentados vários desafios e introduziu complexidades que fez a dar suporte a mais de 64 vice-presidentes por partição proibitiva.  Para resolver isso, o Hyper-V limita o número de vice-presidentes fornecido para a partição raiz 64, mesmo se a máquina subjacente tinha o número de processadores lógico mais disponível.  O hipervisor, continuará a utilizar todos os LPs disponíveis para execução pelo VP de convidado, mas limitado artificialmente a partição raiz a 64.  Essa configuração se tornou conhecida como "mínimo" raiz"ou"minroot"configuration.  Teste de desempenho confirmado que, até mesmo em sistemas de grande escala com mais de 64 LPs, a raiz não precisam mais de 64 vice-presidentes raiz para fornecer suporte suficiente para um grande número de VMs convidadas e vice-presidentes convidado – na verdade, muito menos de 64 raiz vice-presidentes geralmente era adequado , dependendo do curso o número e tamanho das VMs convidadas, as cargas de trabalho específicas que estão sendo executadas, etc.
+As versões anteriores do Hyper-V tinham um limite máximo de arquitetura de 64 VPSs por partição.  Isso se aplica às partições raiz e de convidado.  Como sistemas com mais de 64 processadores lógicos apareciam em servidores high-end, o Hyper-V também evoluiu seus limites de escala de host para dar suporte a esses sistemas maiores, em um ponto dando suporte a um host com até 320 LPs.  No entanto, a interrupção do limite de 64 por partição nesse momento apresentou vários desafios e introduziu complexidades que tornaram o suporte a mais de 64 VPSs por partição, proibitiva.  Para resolver isso, o Hyper-V limitou o número de VPSs dadas à partição raiz para 64, mesmo que a máquina subjacente tivesse muito mais processadores lógicos disponíveis.  O hipervisor continuará a utilizar todos os LPs disponíveis para a execução de VPSs de convidado, mas, artificialmente, a partição raiz em 64.  Essa configuração se tornou conhecida como a configuração "raiz mínima" ou "minroot".  Os testes de desempenho confirmaram que, mesmo em sistemas de grande escala com mais de 64 LPs, a raiz não precisou de mais de 64 VPSs raiz para fornecer suporte suficiente a um grande número de VMs convidadas e VPSs de convidado – na verdade, muito menos que 64 raiz VPSs era geralmente adequado , dependendo do número e do tamanho das VMs convidadas, das cargas de trabalho específicas sendo executadas, etc.
 
-Esse conceito de "minroot" continua a ser utilizado hoje em dia.  Na verdade, mesmo que o Windows Server 2016 Hyper-V aumentado seu limite máximo de suporte de arquitetura para o host LPs 512 LPs, a partição raiz ainda será limitada a um máximo de 320 LPs.
+Esse conceito de "minroot" continua sendo utilizado hoje.  Na verdade, mesmo que o Windows Server 2016 Hyper-V tenha aumentado seu limite máximo de suporte arquitetônico para o host LPs a 512 LPs, a partição raiz ainda será limitada a um máximo de 320 LPs.
 
-## <a name="using-minroot-to-constrain-and-isolate-host-compute-resources"></a>Usando Minroot para restringir e isolar recursos de computação do Host
-Com o limite de alto padrão de 320 LPs no Windows Server 2016 Hyper-V, a configuração de minroot só será utilizada nos sistemas de servidor muito maiores.  No entanto, essa funcionalidade pode ser configurada com um limite muito inferior pelo administrador do host do Hyper-V e, portanto, é utilizada para restringir significativamente a quantidade de recursos de CPU do host disponíveis na partição raiz.  O número específico de raiz LPs utilizar obviamente deve ser escolhido cuidadosamente para atender às demandas máximo de VMs e as cargas de trabalho alocadas para o host.  No entanto, valores razoáveis para o número de host LPs podem ser determinado por meio da avaliação cuidadosa e monitoramento de cargas de trabalho de produção e validado em ambientes de não produção antes da implantação ampla.
+## <a name="using-minroot-to-constrain-and-isolate-host-compute-resources"></a>Usando o Minroot para restringir e isolar recursos de computação do host
+Com o limite padrão alto de 320 LPs no Windows Server 2016 Hyper-V, a configuração do minroot só será utilizada nos maiores sistemas de servidor.  No entanto, esse recurso pode ser configurado para um limite muito menor pelo administrador de host do Hyper-V e, portanto, utilizado para restringir bastante a quantidade de recursos de CPU do host disponíveis para a partição raiz.  É claro que o número específico de LPs raiz a ser utilizado deve ser escolhido com cuidado para dar suporte às demandas máximas das VMs e cargas de trabalho alocadas para o host.  No entanto, valores razoáveis para o número de LPs do host podem ser determinados por meio da avaliação cuidadosa e do monitoramento de cargas de trabalho de produção e validados em ambientes de não produção antes da ampla implantação.
 
-## <a name="enabling-and-configuring-minroot"></a>Habilitando e configurando o Minroot
+## <a name="enabling-and-configuring-minroot"></a>Habilitando e Configurando o Minroot
 
-A configuração minroot é controlada por meio de entradas de BCD do hipervisor. Para habilitar minroot, em um prompt de comando com privilégios de administrador:
+A configuração minroot é controlada por meio de entradas BCD do hipervisor. Para habilitar o minroot, em um prompt de comando com privilégios de administrador:
 
 ```
     bcdedit /set hypervisorrootproc n
 ```
-Onde n é o número de raiz vice-presidentes. 
+Em que n é o número de VPSs raiz. 
 
-O sistema deve ser reinicializado, e o novo número de processadores de raiz será mantido pelo tempo de vida da inicialização do sistema operacional.  A configuração minroot não pode ser alterada dinamicamente em tempo de execução.
+O sistema deve ser reinicializado e o novo número de processadores raiz continuará durante o tempo de vida da inicialização do sistema operacional.  A configuração minroot não pode ser alterada dinamicamente no tempo de execução.
 
-Se houver vários nós NUMA, cada nó receberá `n/NumaNodeCount` processadores.
+Se houver vários nós numa, cada nó `n/NumaNodeCount` receberá processadores.
 
-Observe que com vários nós NUMA, você deve garantir que topologia da VM é o modo que haja suficiente LPs livres (ou seja, LPs sem raiz vice-presidentes) em cada nó para executar o nó da VM correspondente vice-presidentes.
+Observe que, com vários nós NUMA, você deve garantir que a topologia da VM esteja de modo que haja LPs livres suficientes (ou seja, LPs sem o VPSs raiz) em cada nó NUMA para executar o VPSs do nó NUMA da VM correspondente.
 
-## <a name="verifying-the-minroot-configuration"></a>Verificando a configuração de Minroot
+## <a name="verifying-the-minroot-configuration"></a>Verificando a configuração do Minroot
 
-Você pode verificar a configuração do host minroot usando o Gerenciador de tarefas, conforme mostrado abaixo.
+Você pode verificar a configuração do minroot do host usando o Gerenciador de tarefas, conforme mostrado abaixo.
 
 ![](./media/minroot-taskman.png)
 
-Quando Minroot está ativa, o Gerenciador de tarefas exibirá o número de processadores lógicos atualmente alocado para o host, além do número total de processadores lógicos no sistema.
+Quando Minroot estiver ativo, o Gerenciador de tarefas exibirá o número de processadores lógicos atualmente alocados para o host, além do número total de processadores lógicos no sistema.
  

@@ -9,48 +9,48 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 585d0195b096056ba769f4e9a08d5c4d2156b96a
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: c6c37b6f98b3ac80179b0ae3b7e2a0c1e34a4975
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191454"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867876"
 ---
 # <a name="federation-server-farm-using-sql-server"></a>Farm de servidores de federação usando SQL Server
 
-Essa topologia para os serviços de Federação do Active Directory \(do AD FS\) difere do farm de servidor de Federação usando o banco de dados interno do Windows \(WID\) topologia de implantação em que ele não replica os dados para cada servidor de federação no farm. Em vez disso, todos os servidores de federação no farm podem ler e gravar dados em um banco de dados comum que é armazenado em um servidor executando o Microsoft SQL Server que está localizado na rede corporativa.  
+Essa topologia para serviços de Federação do Active Directory (AD FS) \(AD FS\) difere do farm de servidores de Federação usando a topologia \(de\) implantação wid do banco de dados interno do Windows, pois ela não replica os dados para cada servidor de Federação no farm. Em vez disso, todos os servidores de Federação no farm podem ler e gravar dados em um banco de dado comum que é armazenado em um servidor que executa Microsoft SQL Server que está localizado na rede corporativa.  
   
 > [!IMPORTANT]  
-> Se você quiser criar um farm do AD FS e usar o SQL Server para armazenar os dados de configuração, você pode usar o SQL Server 2008 e versões mais recentes, incluindo o SQL Server 2012 e SQL Server 2014.  
+> Se você quiser criar um farm de AD FS e usar SQL Server para armazenar seus dados de configuração, poderá usar SQL Server 2008 e versões mais recentes, incluindo SQL Server 2012 e SQL Server 2014.  
   
 ## <a name="deployment-considerations"></a>Considerações sobre a implantação  
-Esta seção descreve várias considerações sobre o público-alvo, benefícios e limitações que estão associadas essa topologia de implantação.  
+Esta seção descreve as várias considerações sobre o público-alvo, os benefícios e as limitações associados a essa topologia de implantação.  
   
 ### <a name="who-should-use-this-topology"></a>Quem deve usar essa topologia?  
   
--   Organizações de grandes porte com mais de 100 relações de confiança que precisa fornecer a seus usuários internos e usuários externos com logon único\-na \(SSO\) acesso a aplicativos federados ou serviços  
+-   Grandes organizações com mais de 100 relações de confiança que precisam fornecer os usuários internos e usuários externos com acesso\- \(SSO\) de logon único a aplicativos ou serviços federados  
   
--   As organizações que já usam o SQL Server e quiser tirar proveito de suas ferramentas existentes e experiência  
+-   Organizações que já usam SQL Server e desejam aproveitar suas ferramentas e especialistas existentes  
   
 ### <a name="what-are-the-benefits-of-using-this-topology"></a>Quais são os benefícios de usar essa topologia?  
   
--   Suporte para números maiores de relações de confiança \(mais de 100\)  
+-   Suporte para números maiores de relações \(de confiança mais de 100\)  
   
--   Suporte para a detecção de reprodução de token \(um recurso de segurança\) e a resolução de artefato \(fazem parte do Security Assertion Markup Language \(SAML\) protocolo 2.0\)  
+-   \(Suporte para detecção de token de reprodução um recurso\) de segurança e \(uma parte de resolução \(do\) artefato do Security Assertion Markup Language protocolo SAML 2,0\)  
   
--   Ferramentas de suporte para todos os benefícios do SQL Server, como espelhamento de banco de dados, clustering de failover, relatórios e gerenciamento  
+-   Suporte para todos os benefícios do SQL Server, como espelhamento de banco de dados, clustering de failover, relatórios e ferramentas de gerenciamento  
   
 ### <a name="what-are-the-limitations-of-using-this-topology"></a>Quais são as limitações do uso dessa topologia?  
   
--   Essa topologia fornece redundância de banco de dados por padrão. Embora um farm de servidores de federação com topologia WID replica automaticamente o banco de dados em cada servidor de federação no farm de WID, o farm de servidores de federação com topologia de SQL Server contém apenas uma cópia do banco de dados  
+-   Essa topologia não fornece redundância de banco de dados por padrão. Embora um farm de servidores de Federação com topologia de WID replique automaticamente o banco de dados WID em cada servidor de Federação no farm, o farm de servidores de Federação com SQL Server topologia contém apenas uma cópia do banco de dados  
   
 > [!NOTE]  
-> SQL Server dá suporte a muitos dados diferentes e opções de redundância de aplicativos, incluindo o clustering de failover, espelhamento de banco de dados e vários tipos diferentes de replicação do SQL Server.  
+> O SQL Server dá suporte a muitos dados e opções de redundância de aplicativo diferentes, incluindo clustering de failover, espelhamento de banco de dado e vários tipos diferentes de replicação de SQL Server.  
   
-A tecnologia da informação \(IT\) departamento usa espelhamento de banco de dados do SQL Server em alta\-safety \(síncrona\) modo e o clustering de failover para fornecer alta\- suporte de disponibilidade para a instância do SQL Server. Transacional do SQL Server \(par\-à\-par\) e replicação de mesclagem não foi testado pela equipe de produto do AD FS na Microsoft. Para obter mais informações sobre o SQL Server, consulte [visão geral de soluções de alta disponibilidade](https://go.microsoft.com/fwlink/?LinkId=179853) ou [selecionando o tipo de replicação apropriada](https://go.microsoft.com/fwlink/?LinkId=214648).  
+O departamento de ti \(\) da tecnologia de informações da Microsoft usa SQL Server espelhamento \(de\) banco de dados no modo síncrono de alta\- \-segurança e clustering de failover para fornecer alto suporte de disponibilidade para a instância de SQL Server. SQL Server \(ponto\-transacional para\-ponto\) e replicação de mesclagem não foram testados pela equipe de produto do AD FS na Microsoft. Para obter mais informações sobre SQL Server, consulte [visão geral das soluções de alta disponibilidade](https://go.microsoft.com/fwlink/?LinkId=179853) ou [selecionando o tipo apropriado de replicação](https://go.microsoft.com/fwlink/?LinkId=214648).  
   
-### <a name="supported-sql-server-versions"></a>Versões com suporte do SQL Server  
-As seguintes versões do SQL server são compatíveis com o AD FS no Windows Server 2012 R2:  
+### <a name="supported-sql-server-versions"></a>Versões SQL Server com suporte  
+As seguintes versões do SQL Server têm suporte com o AD FS no Windows Server 2012 R2:  
   
 -   SQL Server 2008 \/ R2  
   
@@ -58,74 +58,74 @@ As seguintes versões do SQL server são compatíveis com o AD FS no Windows Ser
   
 -   SQL Server 2014  
   
-## <a name="server-placement-and-network-layout-recommendations"></a>Recomendações de layout de posicionamento e a rede de servidor  
-Semelhante ao farm de servidores de federação com topologia WID, todos os servidores de federação no farm estão configurados para usar o sistema de nomes de domínio de um cluster \(DNS\) nome \(que representa o nome do serviço de Federação\)e o endereço IP de um cluster como parte do balanceamento de carga de rede \(NLB\) configuração de cluster. Isso ajuda a host NLB alocar solicitações de cliente para os servidores de Federação individuais. Proxies de servidor de federação podem ser usado para solicitações de cliente de proxy para o farm de servidores de Federação.  
+## <a name="server-placement-and-network-layout-recommendations"></a>Recomendações de layout de rede e posicionamento do servidor  
+Semelhante ao farm de servidores de Federação com a topologia wid, todos os servidores de Federação no farm são configurados para usar um nome \( \(DNS\) do sistema de nome de domínio de cluster que representa o nome\)doserviçodeFederaçãoe um endereço IP de cluster como parte da configuração de cluster \(NLB\) de balanceamento de carga de rede. Isso ajuda o host NLB a alocar solicitações de cliente para os servidores de Federação individuais. Os proxies de servidor de Federação podem ser usados para fazer proxy de solicitações de cliente para o farm de servidores de Federação.  
   
-A ilustração a seguir mostra como a empresa fictícia Contoso Pharmaceuticals implantados seu farm de servidores de federação com topologia de SQL Server na rede corporativa. Ele também mostra como essa empresa configurou a rede de perímetro com acesso a um servidor DNS, um host NLB adicional que usa o mesmo nome DNS de cluster \(fs.contoso.com\) que é usado no cluster NLB de rede corporativa e com dois web proxies de aplicativo \(wap1 e wap2\).  
+A ilustração a seguir mostra como a empresa fictícia Contoso farmacêuticas implantou seu farm de servidores de Federação com SQL Server topologia na rede corporativa. Ele também mostra como essa empresa configurou a rede de perímetro com acesso a um servidor DNS, um host NLB adicional que usa o mesmo nome \(DNS\) de cluster FS.contoso.com que é usado no cluster NLB de rede corporativa e com duas Web proxies \(de aplicativo wap1 e\)WAP2.  
   
-![farm de servidores usando o SQL](media/SQLFarmADFSBlue.gif)  
+![farm de servidores usando SQL](media/SQLFarmADFSBlue.gif)  
   
-Para obter mais informações sobre como configurar seu ambiente de rede para uso com servidores de Federação ou proxies do aplicativo web, consulte "Requisitos de resolução de nome" seção [requisitos do AD FS](AD-FS-Requirements.md) e [plano da Web Infraestrutura do Proxy de aplicativo (WAP)](https://technet.microsoft.com/library/dn383648.aspx).  
+Para obter mais informações sobre como configurar seu ambiente de rede para uso com servidores de Federação ou proxies de aplicativo Web, consulte a seção "requisitos de resolução de nomes" em [AD FS requisitos](AD-FS-Requirements.md) e [planejar a infraestrutura de proxy de aplicativo Web (WAP)](https://technet.microsoft.com/library/dn383648.aspx).  
   
-## <a name="high-availability-options-for-sql-server-farms"></a>Opções de alta disponibilidade para Farms de servidores SQL  
-No Windows Server 2012 R2, o AD FS há são duas novas opções para oferecer suporte a alta disponibilidade em farms de servidores do AD FS usando o SQL Server.  
+## <a name="high-availability-options-for-sql-server-farms"></a>Opções de alta disponibilidade para farms de SQL Server  
+No Windows Server 2012 R2, AD FS há duas novas opções para dar suporte à alta disponibilidade em farms de AD FS usando o SQL Server.  
   
--   Suporte para grupos de disponibilidade do AlwaysOn do SQL Server  
+-   Suporte para SQL Server Grupos de Disponibilidade AlwaysOn  
   
--   Suporte para alta disponibilidade distribuído geograficamente, usando a replicação de mesclagem do SQL Server  
+-   Suporte para alta disponibilidade distribuída geograficamente usando replicação de mesclagem SQL Server  
   
-Esta seção descreve cada uma dessas opções, quais problemas eles solucionar, respectivamente e algumas considerações importantes para decidir quais opções para implantar.  
+Esta seção descreve cada uma dessas opções, quais problemas eles resolvem respectivamente e algumas considerações importantes para decidir quais opções implantar.  
   
 > [!NOTE]  
-> Farms do AD FS que usam o banco de dados interno do Windows \(WID\) fornecer redundância de dados básicos com leitura\/acesso de gravação no nó do servidor de Federação primário e leitura\-só acessar em nós secundários.  Isso pode ser usado em um local geograficamente ou em uma topologia distribuída geograficamente.  
+> Os farms de AD FS que usam \(o\) wid do banco de dados interno do\/Windows fornecem redundância básica de dado com acesso de leitura\-/gravação no nó do servidor de Federação primário e acesso somente leitura em nós secundários.  Isso pode ser usado em uma topologia geograficamente local ou distribuída geograficamente.  
 >   
-> Ao usar o WID esteja ciente das seguintes limitações:  
+> Ao usar o WID, lembre-se das seguintes limitações:  
 >   
-> -   Um farm de WID tem um limite de 30 servidores de federação, se você tiver 100 ou menos objetos de confiança.  
-> -   Um farm de WID não oferece suporte a resolução de artefato ou de detecção de reprodução de token \(faz parte do Security Assertion Markup Language \(SAML\) protocolo\).  
+> -   Um farm WID tem um limite de 30 servidores de Federação se você tiver 100 ou menos confianças de terceira parte confiável.  
+> -   Um farm wid não dá suporte à detecção de reprodução de token ou \(parte da resolução de \(artefatos\)do protocolo SAML\) Security Assertion Markup Language.  
   
-A tabela a seguir fornece um resumo para o uso de um farm de WID.  
+A tabela a seguir fornece um resumo para usar um farm WID.  
   
 ||||  
 |-|-|-|  
-||1 \- 100 relações de confiança RP|Relações de confiança RP mais de 100|  
-|1 \- 30 AD FS nós|Suportada de WID|Não há suportada usando o WID \- SQL é necessário|  
-|Mais de 30 AD FS nós|Não há suportada usando o WID \- SQL é necessário|Não há suportada usando o WID \- SQL é necessário|  
+||1 \- a 100 de confianças RP|Mais de 100 RP relações de confiança|  
+|1 \- 30 nós AD FS|WID com suporte|Sem suporte usando o \- SQL wid necessário|  
+|Mais de 30 nós AD FS|Sem suporte usando o \- SQL wid necessário|Sem suporte usando o \- SQL wid necessário|  
   
 ### <a name="alwayson-availability-groups"></a>Grupos de disponibilidade AlwaysOn  
 **Visão geral**  
   
-Grupos de disponibilidade AlwaysOn introduzidos no SQL Server 2012 e fornecem uma nova maneira de criar uma instância do SQL Server de alta disponibilidade.  Grupos de disponibilidade AlwaysOn combinam elementos de clustering e espelhamento de banco de dados para redundância e failover na camada de instância de SQL e a camada de banco de dados.  Ao contrário das opções anteriores de alta disponibilidade, grupos de disponibilidade AlwaysOn não exigem um armazenamento comum \(ou de rede de área de armazenamento\) na camada de banco de dados.  
+Os grupos de disponibilidade AlwaysOn foram introduzidos no SQL Server 2012 e fornecem uma nova maneira de criar uma instância de SQL Server de alta disponibilidade.  Os grupos de disponibilidade AlwaysOn combinam elementos de clustering e espelhamento de banco de dados para redundância e failover na camada de instância do SQL e na camada de banco de dados.  Ao contrário das opções de alta disponibilidade anteriores, os grupos de disponibilidade AlwaysOn não \(exigem uma rede\) de armazenamento comum ou de área de armazenamento na camada de banco de dados.  
   
-Um grupo de disponibilidade é composto de uma réplica primária \(um conjunto de leitura\-gravar bancos de dados primários\) e uma a quatro réplicas de disponibilidade \(os conjuntos de bancos de dados secundários correspondentes\).  O grupo de disponibilidade dá suporte a uma única leitura\-gravar cópia \(a réplica primária\), e uma a quatro leitura\-somente as réplicas de disponibilidade.  Cada réplica de disponibilidade deve residir em um nó diferente de um único Windows Server Failover Clustering \(WSFC\) cluster.  Para obter mais informações sobre a disponibilidade do AlwaysOn grupos, consulte [visão geral dos grupos de disponibilidade AlwaysOn \(SQL Server\)](https://technet.microsoft.com/library/ff877884.aspx).  
+Um grupo de disponibilidade é composto \(de uma réplica primária um conjunto de bancos de dados primários de\) gravação de leitura\-e de um a \(quatro conjuntos de réplicas de disponibilidade\)de bancos de dados secundários correspondentes.  O grupo de disponibilidade dá suporte a\-uma única \(cópia de leitura\)de gravação da réplica primária e\-de uma a quatro réplicas de disponibilidade somente leitura.  Cada réplica de disponibilidade deve residir em um nó diferente de um único cluster \(WSFC\) do clustering de failover do Windows Server.  Para obter mais informações sobre grupos de disponibilidade AlwaysOn, consulte [visão\)geral do grupos de disponibilidade AlwaysOn \(SQL Server](https://technet.microsoft.com/library/ff877884.aspx).  
   
-Da perspectiva de nós de um farm do SQL Server do AD FS, o grupo de disponibilidade do AlwaysOn substitui a instância única do SQL Server como a diretiva \/ banco de dados de artefato.  O ouvinte do grupo de disponibilidade é que o cliente \(o serviço de token de segurança do AD FS\) usa para se conectar ao SQL.  
+Da perspectiva dos nós de um farm de AD FS SQL Server, o grupo de disponibilidade AlwaysOn substitui a instância de SQL Server única como o \/ banco de dados de artefato de política.  O ouvinte do grupo de disponibilidade é \(o que o cliente que\) o serviço de token de segurança AD FS usa para se conectar ao SQL.  
   
-O diagrama a seguir mostra um Farm de servidores do AD FS SQL com o grupo de disponibilidade AlwaysOn.  
+O diagrama a seguir mostra um farm AD FS SQL Server com o grupo de disponibilidade AlwaysOn.  
   
-![farm de servidores usando o SQL](media/alwaysonavailabilitygroups.jpg)  
-  
-> [!NOTE]  
-> Grupos de disponibilidade AlwaysOn exigem que instâncias do SQL Server residem no Windows Server Failover Clustering \(WSFC\) nós.  
+![farm de servidores usando SQL](media/alwaysonavailabilitygroups.jpg)  
   
 > [!NOTE]  
-> Apenas uma réplica de disponibilidade pode agir como um destino de failover automático, o outro três se baseia em failovers manuais.  
+> Os grupos de disponibilidade AlwaysOn exigem que as instâncias de SQL Server residam nos nós \(WSFC\) do clustering de failover do Windows Server.  
   
-**Principais considerações de implantação**  
+> [!NOTE]  
+> Somente uma réplica de disponibilidade pode atuar como um destino de failover automático, as outras três dependem de failovers manuais.  
   
-Se você planeja usar grupos de disponibilidade AlwaysOn em combinação com a replicação de mesclagem do SQL Server, por favor, anote os problemas descritos em "Considerações de implantação de chave para uso do AD FS com a replicação de mesclagem do SQL Server" abaixo.  Em particular, quando um grupo de disponibilidade AlwaysOn contendo um banco de dados que é um assinante de replicação executar failover, a assinatura de replicação falha. Para continuar a replicação, um administrador de replicação deve reconfigurar o assinante manualmente.  Consulte a descrição do SQL Server de um problema específico no [assinantes de replicação e grupos de disponibilidade AlwaysOn \(SQL Server\) ](https://technet.microsoft.com/library/hh882436.aspx) e suporte a instruções gerais para grupos de disponibilidade do AlwaysOn com Opções de replicação no [replicação, controle de alterações, Change Data Capture e grupos de disponibilidade AlwaysOn \(SQL Server\)](https://technet.microsoft.com/library/hh403414.aspx).  
+**Principais considerações sobre implantação**  
   
-**Configurando o AD FS para usar um grupo de disponibilidade do AlwaysOn**  
+Se você planeja usar grupos de disponibilidade AlwaysOn em combinação com SQL Server replicação de mesclagem, anote os problemas descritos em "principais considerações de implantação para usar AD FS com replicação de mesclagem SQL Server" abaixo.  Em particular, quando um grupo de disponibilidade AlwaysOn contendo um banco de dados que é um assinante de replicação falha, a assinatura de replicação falha. Para retomar a replicação, um administrador de replicação deve reconfigurar o assinante manualmente.  Consulte a SQL Server descrição do problema específico em [assinantes de replicação \(e\) grupos de disponibilidade AlwaysOn SQL Server](https://technet.microsoft.com/library/hh882436.aspx) e instruções de suporte geral para grupos de disponibilidade AlwaysOn com opções de replicação em [ Replicação, controle de alterações, captura de dados de alteração e \(grupos de disponibilidade AlwaysOn\)SQL Server](https://technet.microsoft.com/library/hh403414.aspx).  
   
-A configuração de um farm do AD FS com grupos de disponibilidade AlwaysOn requer uma leve modificação para o procedimento de implantação do AD FS:  
+**Configurando AD FS para usar um grupo de disponibilidade AlwaysOn**  
   
-1.  Os bancos de dados que você deseja fazer backup devem ser criados antes que os grupos de disponibilidade do AlwaysOn podem ser configurados.  O AD FS cria seus bancos de dados como parte da instalação e configuração inicial do primeiro nó de serviço de federação de um novo farm do SQL Server do AD FS.  Como parte da configuração do AD FS, você deve especificar uma cadeia de caracteres de conexão do SQL, portanto, você terá que configurar o primeiro nó do farm do AD FS para se conectar diretamente a uma instância do SQL \(isso é apenas temporário\).   Para obter orientações específicas sobre como configurar um farm do AD FS, incluindo a configuração de um nó do farm do AD FS com uma cadeia de conexão do SQL server, consulte [configurar um servidor de Federação](../../ad-fs/deployment/Configure-a-Federation-Server.md).  
+A configuração de um farm de AD FS com grupos de disponibilidade AlwaysOn requer uma ligeira modificação no procedimento de implantação de AD FS:  
   
-2.  Depois que os bancos de dados do AD FS tiveram sido criados, atribuí-los a grupos de disponibilidade AlwaysOn e criar o ouvinte de TCP/IP comuns usando ferramentas do SQL Server e processar cada [criação e configuração dos grupos de disponibilidade \(doSQLServer\) ](https://technet.microsoft.com/library/ff878265.aspx).  
+1.  Os bancos de dados que você deseja fazer backup devem ser criados antes que os grupos de disponibilidade AlwaysOn possam ser configurados.  AD FS cria seus bancos de dados como parte da instalação e configuração inicial do primeiro nó de serviço de Federação de um novo farm de SQL Server de AD FS.  Como parte da configuração de AD FS, você deve especificar uma cadeia de conexão SQL, portanto, você precisará configurar o primeiro nó de farm de AD FS para se conectar a \(uma instância do SQL\)diretamente isso é apenas temporário.   Para obter diretrizes específicas sobre como configurar um farm de AD FS, incluindo a configuração de um nó de farm de AD FS com uma cadeia de conexão do SQL Server, consulte [configurar um servidor de Federação](../../ad-fs/deployment/Configure-a-Federation-Server.md).  
   
-3.  Por fim, use o PowerShell para editar as propriedades do AD FS para atualizar a cadeia de conexão SQL para usar o endereço DNS do ouvinte do grupo de disponibilidade do AlwaysOn.  
+2.  Depois que os bancos de dados do AD FS tiverem sido criados, atribua-os aos grupos de disponibilidade AlwaysOn e crie o ouvinte de tcpip comum usando ferramentas de SQL Server e processo na [criação e configuração de grupos \(de\) disponibilidade SQL Server ](https://technet.microsoft.com/library/ff878265.aspx).  
   
-    Comandos de PSH de exemplo para atualizar a cadeia de conexão do SQL para o banco de dados de configuração do AD FS:  
+3.  Por fim, use o PowerShell para editar as propriedades de AD FS para atualizar a cadeia de conexão SQL para usar o endereço DNS do ouvinte do grupo de disponibilidade AlwaysOn.  
+  
+    Exemplo de comandos PSH para atualizar a cadeia de conexão SQL para o banco de dados de configuração de AD FS:  
   
     ```  
     PS:\>$temp= Get-WmiObject -namespace root/ADFS -class SecurityTokenService  
@@ -134,30 +134,30 @@ A configuração de um farm do AD FS com grupos de disponibilidade AlwaysOn requ
   
     ```  
   
-4.  Comandos de PSH de exemplo para atualizar a cadeia de conexão do SQL para o banco de dados de serviço de resolução de artefato de AD FS:  
+4.  Exemplo de comandos PSH para atualizar a cadeia de conexão SQL para o banco de dados do serviço de resolução de artefatos AD FS:  
   
     ```  
     PS:\> Set-AdfsProperties –artifactdbconnection ”Data source=<SQLCluster\SQLInstance >;Initial Catalog=AdfsArtifactStore;Integrated Security=True”  
     ```  
   
-### <a name="sql-server-merge-replication"></a>Replicação de mesclagem do SQL Server  
-A replicação de mesclagem também introduzido no SQL Server 2012, permite a redundância de dados de política do AD FS com as seguintes características:  
+### <a name="sql-server-merge-replication"></a>Replicação de mesclagem SQL Server  
+Também introduzido no SQL Server 2012, a replicação de mesclagem permite a redundância de dados de AD FS política com as seguintes características:  
   
--   Ler e gravar o recurso em todos os nós \(não apenas o primário\)  
+-   Capacidade de leitura e gravação em todos \(os nós não apenas o primário\)  
   
--   Pequenas quantidades de dados replicados de forma assíncrona para evitar a introdução de latência para o sistema  
+-   Quantidades menores de dados replicadas assincronamente para evitar a introdução da latência ao sistema  
   
-O diagrama a seguir mostra um farms de servidores do SQL Server do AD FS com redundância geográfica com replicação de mesclagem \(1 publicador, 2 assinantes\):  
+O diagrama a seguir mostra um AD FS geograficamente redundante SQL Server farms com replicação \(de mesclagem 1 Publicador, 2 assinantes:\)  
   
-![farm de servidores usando o SQL](media/ADFSSQLGeoRedundancy3.png)  
+![farm de servidores usando SQL](media/ADFSSQLGeoRedundancy3.png)  
   
-**Considerações de implantação de chave para usar o AD FS com replicação de mesclagem do SQL Server \(Observe os números no diagrama acima\)**  
+**Principais considerações de implantação para usar AD FS com SQL Server números \(de anotação de replicação de mesclagem no diagrama acima\)**  
   
--   Não há suporte para o banco de dados do distribuidor para uso com grupos de disponibilidade AlwaysOn ou espelhamento de banco de dados.  Consulte SQL Server oferece suporte a instruções para grupos de disponibilidade do AlwaysOn com as opções de replicação no [replicação, controle de alterações, Change Data Capture e grupos de disponibilidade AlwaysOn \(SQL Server\)](https://technet.microsoft.com/library/hh403414.aspx).  
+-   O banco de dados distribuidor não tem suporte para uso com Grupos de Disponibilidade AlwaysOn ou espelhamento de banco de dados.  Consulte SQL Server instruções de suporte para grupos de disponibilidade AlwaysOn com opções de replicação em [replicação, controle de alterações, Change Data Capture \(e\)grupos de disponibilidade AlwaysOn SQL Server](https://technet.microsoft.com/library/hh403414.aspx).  
   
--   Quando um grupo de disponibilidade AlwaysOn contendo um banco de dados que é um assinante de replicação executar failover, a assinatura de replicação falha. Para continuar a replicação, um administrador de replicação deve reconfigurar o assinante manualmente.  Consulte a descrição do SQL Server de um problema específico no [assinantes de replicação e grupos de disponibilidade AlwaysOn \(SQL Server\) ](https://technet.microsoft.com/library/hh882436.aspx) e suporte a instruções gerais para grupos de disponibilidade do AlwaysOn com Opções de replicação [replicação, controle de alterações, Change Data Capture e grupos de disponibilidade AlwaysOn \(SQL Server\)](https://technet.microsoft.com/library/hh403414.aspx).  
+-   Quando um grupo de disponibilidade AlwaysOn que contém um banco de dados que é um assinante de replicação falha, a assinatura de replicação falha. Para retomar a replicação, um administrador de replicação deve reconfigurar o assinante manualmente.  Consulte a descrição SQL Server de um problema específico em [assinantes de \(replicação\) e grupos de disponibilidade AlwaysOn SQL Server](https://technet.microsoft.com/library/hh882436.aspx) e instruções de suporte geral para grupos de disponibilidade AlwaysOn com opções [de replicação Replicação, controle de alterações, captura de dados de alteração e \(grupos de disponibilidade AlwaysOn\)SQL Server](https://technet.microsoft.com/library/hh403414.aspx).  
   
-Para obter instruções mais detalhadas sobre como configurar o AD FS para usar uma replicação de mesclagem do SQL Server, consulte [instalação de redundância geográfica com replicação do SQL Server](https://technet.microsoft.com/library/dn632406.aspx).  
+Para obter instruções mais detalhadas sobre como configurar AD FS para usar uma replicação de mesclagem SQL Server, consulte [Configurar a redundância geográfica com replicação do SQL Server](https://technet.microsoft.com/library/dn632406.aspx).  
   
 ## <a name="see-also"></a>Consulte também  
 [Planejar a topologia de implantação do AD FS](Plan-Your-AD-FS-Deployment-Topology.md)  

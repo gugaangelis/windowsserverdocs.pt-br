@@ -1,7 +1,7 @@
 ---
-title: Noções básicas sobre cluster e pool de quorum
-description: Noções básicas sobre Cluster e Pool de Quorum, com exemplos específicos para falar sobre as complicações.
-keywords: Espaços de armazenamento diretos, Quorum, a testemunha, S2D, Cluster de Quorum, o Quorum do Pool, Pool de Cluster
+title: Noções básicas sobre quorum de cluster e pool
+description: Compreender o quorum do cluster e do pool, com exemplos específicos para percorrer as complicações.
+keywords: Espaços de Armazenamento Diretos, quorum, testemunha, S2D, quorum de cluster, quorum de pool, cluster, pool
 ms.prod: windows-server-threshold
 ms.author: adagashe
 ms.manager: eldenc
@@ -10,33 +10,33 @@ ms.topic: article
 author: adagashe
 ms.date: 01/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 30958b8b1e8b0009626509409d1f031611c76a20
-ms.sourcegitcommit: fe621b72d45d0259bac1d5b9031deed3dcbed29d
+ms.openlocfilehash: 962a4edc1a171167a6af336d4fb32188a526f455
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66455429"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70872127"
 ---
-# <a name="understanding-cluster-and-pool-quorum"></a>Noções básicas sobre cluster e pool de quorum
+# <a name="understanding-cluster-and-pool-quorum"></a>Noções básicas sobre quorum de cluster e pool
 
 >Aplica-se a: Windows Server 2019, Windows Server 2016
 
-[Windows Server Failover Clustering](../../failover-clustering/failover-clustering-overview.md) fornece alta disponibilidade para cargas de trabalho. Esses recursos são considerados altamente disponíveis se os nós que hospedam recursos estejam funcionando; No entanto, o cluster geralmente requer mais de metade de nós em execução, que é conhecido como tendo *quorum*.
+O [Windows Server failover clustering](../../failover-clustering/failover-clustering-overview.md) fornece alta disponibilidade para cargas de trabalho. Esses recursos serão considerados altamente disponíveis se os nós que hospedam recursos estiverem ativos; no entanto, o cluster geralmente requer mais da metade dos nós em execução, o que é conhecido como tendo *Quorum*.
 
-Quorum é projetado para evitar *separação* cenários que podem acontecer quando há uma partição na rede e subconjuntos de nós não podem se comunicar entre si. Isso pode causar os dois subconjuntos de nós para tentar possui a carga de trabalho e gravar no mesmo disco que pode levar a diversos problemas. No entanto, isso não é possível com conceito do cluster de Failover de quorum que força a apenas um desses grupos de nós para continuar em execução, portanto, apenas um desses grupos permanecerá online.
+O quorum foi projetado para evitar cenários de *divisão-Brain* que podem ocorrer quando há uma partição na rede e subconjuntos de nós não podem se comunicar entre si. Isso pode fazer com que subconjuntos de nós tentem possuir a carga de trabalho e gravar no mesmo disco, o que pode levar a vários problemas. No entanto, isso é evitado com o conceito de quorum do clustering de failover que força apenas um desses grupos de nós a continuar em execução, de modo que apenas um desses grupos permanecerá online.
 
-Quorum determina o número de falhas que o cluster pode sustentar enquanto ainda permanecem online. Quorum é projetado para lidar com o cenário quando há um problema com a comunicação entre os subconjuntos de nós de cluster, para que vários servidores não tentam simultaneamente um grupo de recursos de host e gravar no mesmo disco ao mesmo tempo. Fazendo com que esse conceito de quorum, o cluster será forçar o serviço de cluster para parar em um dos subconjuntos de nós para garantir que haja apenas um verdadeiro proprietário de um determinado grupo de recursos. Depois que nós que tenham sido interrompidos mais uma vez podem se comunicar com o grupo principal de nós, eles serão automaticamente reingresso no cluster e iniciar seu serviço de cluster.
+O quorum determina o número de falhas que o cluster pode sustentar enquanto ainda permanece online. O quorum foi projetado para lidar com o cenário quando há um problema com a comunicação entre subconjuntos de nós de cluster, para que vários servidores não tentem hospedar um grupo de recursos simultaneamente e gravem no mesmo disco ao mesmo tempo. Ao ter esse conceito de quorum, o cluster forçará o serviço de cluster a parar em um dos subconjuntos de nós para garantir que haja apenas um verdadeiro proprietário de um determinado grupo de recursos. Depois que os nós que foram interrompidos puderem se comunicar novamente com o grupo principal de nós, eles reingressarão automaticamente no cluster e iniciarão o serviço de cluster.
 
 No Windows Server 2019 e no Windows Server 2016, há dois componentes do sistema que têm seus próprios mecanismos de quorum:
 
-- **Quorum de cluster**: Isso funciona no nível do cluster (ou seja, você pode perder a nós e fazer com que o cluster permaneça backup)
-- **Pool de Quorum**: Isso funciona no nível do pool quando espaços de armazenamento diretos está habilitado (ou seja, você pode perder a nós e unidades e fazer com que o pool de manter). Pools de armazenamento foram projetados para ser usado em cenários clusterizados e não clusterizados, que é o motivo pelo qual eles têm um mecanismo de quorum diferentes.
+- **Quorum do cluster**: Isso opera no nível do cluster (ou seja, você pode perder os nós e fazer com que o cluster fique ativo)
+- **Quorum do pool**: Isso opera no nível do pool quando Espaços de Armazenamento Diretos está habilitado (ou seja, você pode perder nós e unidades e fazer com que o pool fique ativo). Os pools de armazenamento foram projetados para serem usados em cenários clusterizados e não clusterizados, motivo pelo qual eles têm um mecanismo de quorum diferente.
 
-## <a name="cluster-quorum-overview"></a>Visão geral sobre o quorum de cluster
+## <a name="cluster-quorum-overview"></a>Visão geral do quorum do cluster
 
-A tabela a seguir fornece uma visão geral dos resultados de Quorum do Cluster por cenário:
+A tabela a seguir fornece uma visão geral dos resultados de quorum do cluster por cenário:
 
-| Nós de servidor | Pode sobreviver a uma falha de nó de servidor | Pode sobreviver a falha de nó de um servidor, em seguida, outro | Pode sobreviver a duas falhas de nó simultâneas do servidor |
+| Nós de servidor | Pode sobreviver a uma falha de nó de servidor | Pode sobreviver a uma falha de nó de servidor e, em seguida, a outra | Pode sobreviver a duas falhas de nó de servidor simultâneas |
 |--------------|-------------------------------------|---------------------------------------------------|----------------------------------------------------|
 | 2            | 50/50                               | Não                                                | Não                                                 |
 | 2 + testemunha  | Sim                                 | Não                                                | Não                                                 |
@@ -44,135 +44,135 @@ A tabela a seguir fornece uma visão geral dos resultados de Quorum do Cluster p
 | 3 + testemunha  | Sim                                 | Sim                                               | Não                                                 |
 | 4            | Sim                                 | Sim                                               | 50/50                                              |
 | 4 + testemunha  | Sim                                 | Sim                                               | Sim                                                |
-| 5 e superior  | Sim                                 | Sim                                               | Sim                                                |
+| 5 e acima  | Sim                                 | Sim                                               | Sim                                                |
 
-### <a name="cluster-quorum-recommendations"></a>Recomendações de quorum do cluster
+### <a name="cluster-quorum-recommendations"></a>Recomendações de quorum de cluster
 
-- Se você tiver dois nós, uma testemunha estiver **necessária**.
-- Se você tiver três ou quatro nós, a testemunha está **altamente recomendável**.
-- Se você tiver acesso à Internet, use uma  **[testemunha em nuvem](../../failover-clustering/deploy-cloud-witness.md)**
-- Se você estiver em um ambiente de TI com outras máquinas e compartilhamentos de arquivos, use uma testemunha de compartilhamento de arquivo
+- Se você tiver dois nós, uma testemunha será **necessária**.
+- Se você tiver três ou quatro nós, a testemunha é **altamente recomendável**.
+- Se você tiver acesso à Internet, use uma  **[testemunha de nuvem](../../failover-clustering/deploy-cloud-witness.md)**
+- Se você estiver em um ambiente de ti com outros computadores e compartilhamentos de arquivos, use uma testemunha de compartilhamento de arquivos
 
-## <a name="how-cluster-quorum-works"></a>Como funciona o quorum do cluster
+## <a name="how-cluster-quorum-works"></a>Como o quorum de cluster funciona
 
-Quando nós falharem, ou quando algum subconjunto de nós perde o contato com outro subconjunto, nós sobreviventes precisam verificar que eles constituem a *maioria* do cluster permaneçam online. Se eles não é possível verificar que, eles irão offline.
+Quando os nós falham ou quando algum subconjunto de nós perde o contato com outro subconjunto, os nós restantes precisam verificar se constituem a *maioria* do cluster para permanecer online. Se eles não conseguirem verificar, eles ficarão offline.
 
-Mas o conceito de *maioria* funciona apenas corretamente quando o número total de nós no cluster é ímpar (por exemplo, três nós em um cluster de cinco nós). Dessa forma, e clusters com um número par de nós (digamos, um cluster de quatro nós)?
+Mas o conceito de *maioria* só funciona corretamente quando o número total de nós no cluster é estranho (por exemplo, três nós em um cluster de cinco nós). Então, e quanto aos clusters com um número par de nós (digamos, um cluster de quatro nós)?
 
-Há duas maneiras do cluster pode tornar o *o número total de votos* ímpar:
+Há duas maneiras pelas quais o cluster pode tornar o *número total de votos* ímpares:
 
-1. Primeiro, ele pode passar *para cima* um, adicione uma *testemunha* com um voto extra. Isso exige a configuração do usuário.
-2.  Ou, ele pode passar *para baixo* um zerando voto do nó sorte (ocorre automaticamente, conforme necessário).
+1. Primeiro, ele *pode subir um* adicionando uma *testemunha* com um voto extra. Isso requer a configuração do usuário.
+2.  Ou então, ele pode ficar *abaixo* de um voto de um nó diferente de sorte (ocorre automaticamente conforme necessário).
 
-Verificar sempre que nós sobreviventes com êxito são as *maioria*, a definição da *maioria* é atualizada para estar entre apenas os sobreviventes. Isso permite que o cluster perder um nó, em seguida, outro e outro e assim por diante. Esse conceito do *o número total de votos* adaptando após falhas sucessivas é conhecido como ***dinâmico de quorum***.  
+Sempre que os nós restantes verificarem com êxito se forem a *maioria*, a definição da *maioria* será atualizada para estar entre apenas o os sobreviventes. Isso permite que o cluster perca um nó, então outro, então outro, e assim por diante. Esse conceito do *número total de votos* se adaptando após falhas sucessivas é conhecido como ***Quorum dinâmico***.  
 
 ### <a name="dynamic-witness"></a>Testemunha dinâmica
 
-Testemunha dinâmica alterna o voto de testemunha para certificar-se de que o *o número total de votos* é ímpar. Se houver um número ímpar de votos, a testemunha não tem um voto. Se houver um número par de votos, a testemunha tem um voto. Testemunha dinâmica reduz significativamente o risco de que o cluster ficará inativo devido a falha de testemunha. O cluster decide se deseja usar o voto de testemunha com base no número de nós de votação que estão disponíveis no cluster.
+A testemunha dinâmica alterna o voto da testemunha para garantir que o *número total de votos* seja ímpar. Se houver um número ímpar de votos, a testemunha não terá um voto. Se houver um número par de votos, a testemunha terá um voto. A testemunha dinâmica reduz significativamente o risco de o cluster ficar inativo devido a uma falha de testemunha. O cluster decide se o voto de testemunha deve ser usado com base no número de nós de votação disponíveis no cluster.
 
-Quorum dinâmico funciona com testemunha dinâmica no modo descrito abaixo.
+O quorum dinâmico funciona com a testemunha dinâmica da maneira descrita abaixo.
 
 ### <a name="dynamic-quorum-behavior"></a>Comportamento de quorum dinâmico
 
-- Se você tiver um **ainda** número de nós e nenhuma testemunha *um nó obtém seu voto zerado*. Por exemplo, apenas três dos quatro nós obtém votos, portanto, o *o número total de votos* é três e dois sobreviventes com votos são considerados uma maioria.
-- Se você tiver um **ímpar** número de nós e nenhuma testemunha *recebem votos*.
-- Se você tiver um **ainda** número de nós e a testemunha, *votos a testemunha*, portanto, o total é ímpar.
-- Se você tiver um **ímpar** número de nós e a testemunha, *a testemunha não votar*.
+- Se você tiver um número **par** de nós e nenhuma testemunha, *um nó obterá seu voto zerado*. Por exemplo, apenas três dos quatro nós recebem votos, portanto, o *número total de votos* é três e dois os sobreviventes com votos são considerados uma maioria.
+- Se você tiver um número **ímpar** de nós e nenhuma testemunha, *todos eles receberão votos*.
+- Se você tiver um número **par** de nós, mais testemunha, *os votos de testemunha*, o total será ímpar.
+- Se você tiver um número **ímpar** de nós mais testemunha, *a testemunha não votará*.
 
-Quorum dinâmico permite que a capacidade de atribuir um voto para um nó dinamicamente para evitar perder a maioria dos votos e para permitir que o cluster seja executado com um nó (conhecido como permanente de última-man). Vamos tomar um cluster de quatro nós como um exemplo. Suponha que o quorum requer 3 votos. 
+O quorum dinâmico habilita a capacidade de atribuir um voto a um nó dinamicamente para evitar perder a maioria dos votos e permitir que o cluster seja executado com um nó (conhecido como última posição no último homem). Vamos pegar um cluster de quatro nós como exemplo. Suponha que o quorum exija 3 votos. 
 
-Nesse caso, o cluster teria ido para baixo se você perdeu os dois nós.
+Nesse caso, o cluster terá ficado inativo se você tiver perdido dois nós.
 
-![Diagrama mostrando quatro nós de cluster, cada um dos quais obtém um voto](media/understand-quorum/dynamic-quorum-base.png)
+![Diagrama mostrando quatro nós de cluster, cada um deles recebe um voto](media/understand-quorum/dynamic-quorum-base.png)
 
-No entanto, o quorum dinâmico impede que isso ocorra. O *o número total de votos* necessária para quorum agora é determinado com base no número de nós disponíveis. Assim, com o quorum dinâmico, o cluster permanecerá ativo mesmo se você perder a três nós.
+No entanto, o quorum dinâmico impede que isso aconteça. O *número total de votos* necessários para o quorum agora é determinado com base no número de nós disponíveis. Portanto, com o quorum dinâmico, o cluster ficará ativo mesmo se você perder três nós.
 
-![Diagrama mostrando quatro nós de cluster conosco falhar um de cada vez e o número de votos necessários ajustando após cada falha.](media/understand-quorum/dynamic-quorum-step-through.png)
+![Diagrama mostrando quatro nós de cluster, com nós falhando um de cada vez e o número de votos necessários que se ajustam após cada falha.](media/understand-quorum/dynamic-quorum-step-through.png)
 
-O cenário acima aplica-se a um cluster geral que não tem espaços de armazenamento diretos habilitados. No entanto, quando espaços de armazenamento diretos está habilitado, o cluster pode suportar apenas duas falhas de nó. Isso será explicado mais a [seção de quorum do pool](#pool-quorum-overview).
+O cenário acima se aplica a um cluster geral que não tem Espaços de Armazenamento Diretos habilitado. No entanto, quando Espaços de Armazenamento Diretos está habilitado, o cluster só pode dar suporte a duas falhas de nó. Isso é explicado mais na [seção quorum do pool](#pool-quorum-overview).
 
 ### <a name="examples"></a>Exemplos
 
 #### <a name="two-nodes-without-a-witness"></a>Dois nós sem uma testemunha. 
-Voto do nó de um é zerado, portanto, o *maioria* voto é determinado de um total de **1 voto**. Se o nó não votação falhar inesperadamente, o sobrevivente tem 1/1 e o cluster sobrevive. Se o nó de votação falhar inesperadamente, o sobrevivente tem 0/1 e o cluster ficar inativo. Se o nó de votação é desligado normalmente, o voto é transferido para outro nó e sobrevive a cluster. ***É por isso é essencial para configurar uma testemunha.***
+O voto de um nó é zerado, portanto, o voto da *maioria* é determinado por um total de **1 voto**. Se o nó não votante ficar inativo inesperadamente, o sobrevivente terá 1/1 e o cluster sobreviver. Se o nó de votação ficar inativo inesperadamente, o sobrevivente terá 0/1 e o cluster ficará inativo. Se o nó de votação estiver normalmente desligado, o voto será transferido para o outro nó e o cluster sobreviver. ***É por isso que é essencial configurar uma testemunha.***
 
-![Explicado o caso com dois nós sem uma testemunha de quorum](media/understand-quorum/2-node-no-witness.png)
+![Quorum explicado no caso de dois nós sem uma testemunha](media/understand-quorum/2-node-no-witness.png)
 
-- Pode sobreviver a uma falha do servidor: **Cinquenta por cento de chance**.
-- Pode sobreviver a falha de um servidor, em seguida, outro: **Não**.
-- Ao mesmo tempo, você pode sobreviver a duas falhas de servidor: **Não**. 
+- Pode sobreviver a uma falha do servidor: **50 por cento de chance**.
+- Pode sobreviver a uma falha do servidor e, em seguida, a outra: **Não**.
+- Pode sobreviver a duas falhas de servidor ao mesmo tempo: **Não**. 
 
 #### <a name="two-nodes-with-a-witness"></a>Dois nós com uma testemunha. 
-Ambos os nós de votação, além de votos a testemunha, portanto, o *maioria* é determinado de um total de **3 votos**. Se qualquer nó falhar, o sobrevivente tem 2/3 e o cluster sobrevive.
+Ambos os nós votam, além dos votos de testemunha, portanto, a *maioria* é determinada em um total de **três votos**. Se um dos nós ficar inativo, o sobrevivente terá 2/3 e o cluster sobreviver.
 
-![Explicado o caso com dois nós com uma testemunha de quorum](media/understand-quorum/2-node-witness.png)
+![Quorum explicado no caso de dois nós com uma testemunha](media/understand-quorum/2-node-witness.png)
 
 - Pode sobreviver a uma falha do servidor: **Sim**.
-- Pode sobreviver a falha de um servidor, em seguida, outro: **Não**.
-- Ao mesmo tempo, você pode sobreviver a duas falhas de servidor: **Não**. 
+- Pode sobreviver a uma falha do servidor e, em seguida, a outra: **Não**.
+- Pode sobreviver a duas falhas de servidor ao mesmo tempo: **Não**. 
 
 #### <a name="three-nodes-without-a-witness"></a>Três nós sem uma testemunha.
-Votam em todos os nós, portanto, o *maioria* é determinado de um total de **3 votos**. Se qualquer nó falhar, os sobreviventes são 2/3 e o cluster sobrevive. O cluster de dois nós sem uma testemunha se tornar – nesse ponto, você está no cenário 1.
+Todos os nós votam, portanto, a *maioria* é determinada em um total de **três votos**. Se algum nó falhar, o os sobreviventes será 2/3 e o cluster sobreviver. O cluster se torna dois nós sem uma testemunha – nesse ponto, você está no cenário 1.
 
-![Explicado o caso com três nós sem uma testemunha de quorum](media/understand-quorum/3-node-no-witness.png)
+![Quorum explicado no caso de três nós sem uma testemunha](media/understand-quorum/3-node-no-witness.png)
 
 - Pode sobreviver a uma falha do servidor: **Sim**.
-- Pode sobreviver a falha de um servidor, em seguida, outro: **Cinquenta por cento de chance**.
-- Ao mesmo tempo, você pode sobreviver a duas falhas de servidor: **Não**. 
+- Pode sobreviver a uma falha do servidor e, em seguida, a outra: **50 por cento de chance**.
+- Pode sobreviver a duas falhas de servidor ao mesmo tempo: **Não**. 
 
 #### <a name="three-nodes-with-a-witness"></a>Três nós com uma testemunha.
-Todos os nós votam, portanto, a testemunha não votar inicialmente. O *maioria* é determinado de um total de **3 votos**. Depois de uma falha, o cluster tem dois nós com uma testemunha – o que está de volta para o cenário 2. Portanto, agora os dois nós e a testemunha votam.
+Todos os nós votam, portanto, a testemunha não votará inicialmente. A *maioria* é determinada em um total de **três votos**. Após uma falha, o cluster tem dois nós com uma testemunha – que está de volta para o cenário 2. Então, agora os dois nós e a testemunha votam.
 
-![Explicado o caso com três nós com uma testemunha de quorum](media/understand-quorum/3-node-witness.png)
+![Quorum explicado no caso com três nós com uma testemunha](media/understand-quorum/3-node-witness.png)
 
 - Pode sobreviver a uma falha do servidor: **Sim**.
-- Pode sobreviver a falha de um servidor, em seguida, outro: **Sim**.
-- Ao mesmo tempo, você pode sobreviver a duas falhas de servidor: **Não**. 
+- Pode sobreviver a uma falha do servidor e, em seguida, a outra: **Sim**.
+- Pode sobreviver a duas falhas de servidor ao mesmo tempo: **Não**. 
 
 #### <a name="four-nodes-without-a-witness"></a>Quatro nós sem uma testemunha
-Voto do nó de um é zerado, portanto, o *maioria* é determinado de um total de **3 votos**. Depois de uma falha, o cluster se tornar a três nós e você está no cenário 3.
+O voto de um nó é zerado, portanto, a *maioria* é determinada em um total de **três votos**. Após uma falha, o cluster se torna três nós e você está no cenário 3.
 
-![Explicado o caso com quatro nós sem uma testemunha de quorum](media/understand-quorum/4-node-no-witness.png)
+![Quorum explicado no caso de quatro nós sem uma testemunha](media/understand-quorum/4-node-no-witness.png)
 
 - Pode sobreviver a uma falha do servidor: **Sim**.
-- Pode sobreviver a falha de um servidor, em seguida, outro: **Sim**.
-- Ao mesmo tempo, você pode sobreviver a duas falhas de servidor: **Cinquenta por cento de chance**. 
+- Pode sobreviver a uma falha do servidor e, em seguida, a outra: **Sim**.
+- Pode sobreviver a duas falhas de servidor ao mesmo tempo: **50 por cento de chance**. 
 
 #### <a name="four-nodes-with-a-witness"></a>Quatro nós com uma testemunha.
-Todos os votos de nós e os votos de testemunha, portanto, o *maioria* é determinado de um total de **5 votos**. Depois de uma falha, você está no cenário 4. Após duas falhas simultâneas, pule para baixo para o cenário 2.
+Todos os nós e votos e os votos de testemunha, portanto, a *maioria* é determinada em um total de **5 votos**. Após uma falha, você estará no cenário 4. Após duas falhas simultâneas, você passa para o cenário 2.
 
-![Explicado o caso com quatro nós com uma testemunha de quorum](media/understand-quorum/4-node-witness.png)
-
-- Pode sobreviver a uma falha do servidor: **Sim**.
-- Pode sobreviver a falha de um servidor, em seguida, outro: **Sim**.
-- Ao mesmo tempo, você pode sobreviver a duas falhas de servidor: **Sim**. 
-
-#### <a name="five-nodes-and-beyond"></a>Cinco nós e muito mais.
-Todos os nós de votação ou apenas um voto, seja qual for cria total ímpar. Espaços de armazenamento diretos não pode lidar com mais de dois nós para baixo de qualquer forma, portanto, neste ponto, nenhuma testemunha é necessária ou útil.
-
-![Quorum explicado em casos com cinco nós e além](media/understand-quorum/5-nodes.png)
+![Quorum explicado no caso de quatro nós com uma testemunha](media/understand-quorum/4-node-witness.png)
 
 - Pode sobreviver a uma falha do servidor: **Sim**.
-- Pode sobreviver a falha de um servidor, em seguida, outro: **Sim**.
-- Ao mesmo tempo, você pode sobreviver a duas falhas de servidor: **Sim**. 
+- Pode sobreviver a uma falha do servidor e, em seguida, a outra: **Sim**.
+- Pode sobreviver a duas falhas de servidor ao mesmo tempo: **Sim**. 
+
+#### <a name="five-nodes-and-beyond"></a>Cinco nós e além.
+Todos os nós votam, ou todos, exceto um voto, o que torna o total estranho. Espaços de Armazenamento Diretos não pode manipular mais de dois nós de qualquer forma, portanto, neste ponto, nenhuma testemunha é necessária ou útil.
+
+![O quorum explicou no caso com cinco nós e além](media/understand-quorum/5-nodes.png)
+
+- Pode sobreviver a uma falha do servidor: **Sim**.
+- Pode sobreviver a uma falha do servidor e, em seguida, a outra: **Sim**.
+- Pode sobreviver a duas falhas de servidor ao mesmo tempo: **Sim**. 
 
 Agora que compreendemos como o quorum funciona, vamos examinar os tipos de testemunhas de quorum.
 
 ### <a name="quorum-witness-types"></a>Tipos de testemunha de quorum
 
-Clustering de failover oferece suporte a três tipos de testemunhas de Quorum:
+O clustering de failover dá suporte a três tipos de testemunhas de quorum:
 
-- **[Testemunha de nuvem](../../failover-clustering/deploy-cloud-witness.md)**  -armazenamento de BLOBs no Azure acessível por todos os nós do cluster. Ele mantém informações de clusters em um arquivo WITNESS log, mas não armazena uma cópia do banco de dados do cluster.
-- **Testemunha de compartilhamento de arquivos** – compartilhamento de arquivos SMB de um configurado em um servidor de arquivos executando o Windows Server. Ele mantém informações de clusters em um arquivo WITNESS log, mas não armazena uma cópia do banco de dados do cluster.
-- **Testemunha de disco** -um disco de cluster pequeno que está no grupo de armazenamento de Cluster disponível. Esse disco está altamente disponível e poderá realizar failover entre nós. Ele contém uma cópia do banco de dados do cluster.  ***Uma testemunha de disco não é suportada com espaços de armazenamento diretos***.
+- **[Testemunha em nuvem](../../failover-clustering/deploy-cloud-witness.md)** -armazenamento de BLOBs no Azure acessível por todos os nós do cluster. Ele mantém informações de clustering em um arquivo testemunha. log, mas não armazena uma cópia do banco de dados do cluster.
+- **Testemunha de compartilhamento de arquivos** – um compartilhamento de arquivos SMB configurado em um servidor de arquivos que executa o Windows Server. Ele mantém informações de clustering em um arquivo testemunha. log, mas não armazena uma cópia do banco de dados do cluster.
+- **Testemunha de disco** -um pequeno disco clusterizado que está no grupo de armazenamento disponível do cluster. Esse disco é altamente disponível e pode fazer failover entre nós. Ele contém uma cópia do banco de dados do cluster.  ***Não há suporte para uma testemunha de disco com espaços de armazenamento diretos***.
 
-## <a name="pool-quorum-overview"></a>Visão geral de quorum do pool
+## <a name="pool-quorum-overview"></a>Visão geral do quorum do pool
 
-Acabamos de falar sobre o Quorum do Cluster, que opera no nível do cluster. Agora, vamos nos aprofundar no Pool de Quorum, que opera em nível do pool (ou seja, você pode perder a nós e unidades e têm o pool de manter). Pools de armazenamento foram projetados para ser usado em cenários clusterizados e não clusterizados, que é o motivo pelo qual eles têm um mecanismo de quorum diferentes.
+Acabamos de falar sobre quorum de cluster, que opera no nível do cluster. Agora, vamos nos aprofundar no quorum do pool, que opera no nível do pool (ou seja, você pode perder nós e unidades e fazer com que o pool fique ativo). Os pools de armazenamento foram projetados para serem usados em cenários clusterizados e não clusterizados, motivo pelo qual eles têm um mecanismo de quorum diferente.
 
-A tabela a seguir fornece uma visão geral dos resultados de Quorum do Pool por cenário:
+A tabela a seguir fornece uma visão geral dos resultados de quorum do pool por cenário:
 
-| Nós de servidor | Pode sobreviver a uma falha de nó de servidor | Pode sobreviver a falha de nó de um servidor, em seguida, outro | Pode sobreviver a duas falhas de nó simultâneas do servidor |
+| Nós de servidor | Pode sobreviver a uma falha de nó de servidor | Pode sobreviver a uma falha de nó de servidor e, em seguida, a outra | Pode sobreviver a duas falhas de nó de servidor simultâneas |
 |--------------|-------------------------------------|---------------------------------------------------|----------------------------------------------------|
 | 2            | Não                                  | Não                                                | Não                                                 |
 | 2 + testemunha  | Sim                                 | Não                                                | Não                                                 |
@@ -180,52 +180,52 @@ A tabela a seguir fornece uma visão geral dos resultados de Quorum do Pool por 
 | 3 + testemunha  | Sim                                 | Não                                                | Não                                                 |
 | 4            | Sim                                 | Não                                                | Não                                                 |
 | 4 + testemunha  | Sim                                 | Sim                                               | Sim                                                |
-| 5 e superior  | Sim                                 | Sim                                               | Sim                                                |
+| 5 e acima  | Sim                                 | Sim                                               | Sim                                                |
 
-## <a name="how-pool-quorum-works"></a>Como funciona o quorum do pool
+## <a name="how-pool-quorum-works"></a>Como funciona o quorum de pool
 
-Quando os drives falham ou quando algum subconjunto das unidades perde o contato com outro subconjunto, unidades sobreviventes precisam verificar que eles constituem a *maioria* do pool permaneçam online. Se eles não é possível verificar que, eles irão offline. O pool é a entidade que fica offline ou permanece online com base em se ele tem discos suficientes para o quorum (50% + 1). O proprietário do recurso de pool (nó de cluster ativo) pode ser o + 1.
+Quando as unidades falham ou quando algum subconjunto de unidades perde contato com outro subconjunto, as unidades restantes precisam verificar se constituem a *maioria* do pool para permanecer online. Se eles não conseguirem verificar, eles ficarão offline. O pool é a entidade que fica offline ou permanece online com base no fato de ter discos suficientes para quorum (50% + 1). O proprietário do recurso de pool (nó de cluster ativo) pode ser o + 1.
 
-Mas o quorum do pool funciona de maneira diferente de quorum do cluster, das seguintes maneiras:
+Mas o quorum do pool funciona de modo diferente do quorum do cluster das seguintes maneiras:
 
-- o pool usa um nó no cluster como uma testemunha como um separador de ligações para resistir a metade das unidades passadas (esse nó é o proprietário do recurso de pool)
+- o pool usa um nó no cluster como uma testemunha como um disjuntor para sobreviver à metade das unidades (esse nó que é o proprietário do recurso do pool)
 - o pool não tem quorum dinâmico
-- o pool não implementa sua própria versão da remoção de um voto
+- o pool não implementa sua própria versão de remover um voto
 
 ### <a name="examples"></a>Exemplos
 
 #### <a name="four-nodes-with-a-symmetrical-layout"></a>Quatro nós com um layout simétrico. 
-Cada uma das 16 unidades tem um voto e nó dois também tem um voto (já que é o proprietário do recurso de pool). O *maioria* é determinado de um total de **16 votos**. Se nós três e quatro ficam inativos, o subconjunto sobrevivente tem 8 unidades e o proprietário do recurso de pool, que é 9/16 votos. Portanto, o pool sobrevive.
+Cada uma das 16 unidades tem um voto e o nó dois também tem um voto (já que é o proprietário do recurso do pool). A *maioria* é determinada em um total de **16 votos**. Se os nós três e quatro ficarem inativos, o subconjunto sobrevivente terá 8 unidades e o proprietário do recurso do pool, que será de 9/16 votos. Portanto, o pool sobreviver.
 
-![Quorum pool 1](media/understand-quorum/pool-1.png)
-
-- Pode sobreviver a uma falha do servidor: **Sim**.
-- Pode sobreviver a falha de um servidor, em seguida, outro: **Sim**.
-- Ao mesmo tempo, você pode sobreviver a duas falhas de servidor: **Sim**. 
-
-#### <a name="four-nodes-with-a-symmetrical-layout-and-drive-failure"></a>Quatro nós com uma falha de layout e a unidade simétrico. 
-Cada uma das 16 unidades tem um voto e nó 2 também tem um voto (já que é o proprietário do recurso de pool). O *maioria* é determinado de um total de **16 votos**. Em primeiro lugar, a unidade 7 fica inoperante. Se nós três e quatro ficam inativos, o subconjunto sobrevivente tem unidades de 7 e o proprietário do recurso de pool, que é 8/16 votos. Assim, o pool não tem a maioria e fica inativo.
-
-![Quorum do pool 2](media/understand-quorum/pool-2.png)
+![Quorum de pool 1](media/understand-quorum/pool-1.png)
 
 - Pode sobreviver a uma falha do servidor: **Sim**.
-- Pode sobreviver a falha de um servidor, em seguida, outro: **Não**.
-- Ao mesmo tempo, você pode sobreviver a duas falhas de servidor: **Não**. 
+- Pode sobreviver a uma falha do servidor e, em seguida, a outra: **Sim**.
+- Pode sobreviver a duas falhas de servidor ao mesmo tempo: **Sim**. 
 
-#### <a name="four-nodes-with-a-non-symmetrical-layout"></a>Quatro nós com um layout não simétricos. 
-Cada uma das 24 unidades tem um voto e nó dois também tem um voto (já que é o proprietário do recurso de pool). O *maioria* é determinado de um total de **24 votos**. Se nós três e quatro ficam inativos, o subconjunto sobrevivente tem 8 unidades e o proprietário do recurso de pool, que é votos 9/24. Assim, o pool não tem a maioria e fica inativo.
+#### <a name="four-nodes-with-a-symmetrical-layout-and-drive-failure"></a>Quatro nós com um layout simétrico e uma falha de unidade. 
+Cada uma das 16 unidades tem um voto e o nó 2 também tem um voto (já que é o proprietário do recurso do pool). A *maioria* é determinada em um total de **16 votos**. Primeiro, a unidade 7 fica inativa. Se os nós três e quatro ficarem inativos, o subconjunto sobrevivente terá 7 unidades e o proprietário do recurso do pool, que será de 8/16 votos. Portanto, o pool não tem a maioria e fica inativo.
 
-![3 de Quorum do pool](media/understand-quorum/pool-3.png)
+![Quorum de Pool 2](media/understand-quorum/pool-2.png)
 
 - Pode sobreviver a uma falha do servidor: **Sim**.
-- Pode sobreviver a falha de um servidor, em seguida, outro: * * Depends * * (não pode sobreviver se ambos os nós, três e quatro ficam inativos, mas podem sobreviver a todos os outros cenários.
-- Pode sobreviver a duas falhas de servidor ao mesmo tempo: * * Depends * * (não pode sobreviver se ambos os nós, três e quatro ficam inativos, mas podem sobreviver a todos os outros cenários.
+- Pode sobreviver a uma falha do servidor e, em seguida, a outra: **Não**.
+- Pode sobreviver a duas falhas de servidor ao mesmo tempo: **Não**. 
 
-### <a name="pool-quorum-recommendations"></a>Recomendações de quorum do pool
+#### <a name="four-nodes-with-a-non-symmetrical-layout"></a>Quatro nós com um layout não simétrico. 
+Cada uma das 24 unidades tem um voto e o nó dois também tem um voto (já que é o proprietário do recurso do pool). A *maioria* é determinada em um total de **24 votos**. Se os nós três e quatro ficarem inativos, o subconjunto sobrevivente terá 8 unidades e o proprietário do recurso do pool, que será de 9/24 votos. Portanto, o pool não tem a maioria e fica inativo.
 
-- Certifique-se de que cada nó no cluster é simétrico (cada nó tem o mesmo número de unidades)
-- Habilite espelho triplo ou paridade dupla para que você possa tolerar falhas de um nó e manter os discos virtuais on-line. Consulte nosso [página de orientação de volume](plan-volumes.md) para obter mais detalhes.
-- Se mais de dois nós estão inativos ou dois nós e um disco em outro nó estiverem inativo, volumes podem não ter acesso a todas as três cópias de seus dados e, portanto, ser colocados offline e indisponível. É recomendável para trazer de volta os servidores ou substituir os discos rapidamente para garantir a resiliência a maioria para todos os dados no volume.
+![Quorum de pool 3](media/understand-quorum/pool-3.png)
+
+- Pode sobreviver a uma falha do servidor: **Sim**.
+- Pode sobreviver a uma falha de servidor e, em seguida, outra: * * depende de * * (não é possível sobreviver se ambos os nós três e quatro ficarem inativos, mas puderem sobreviver a todos os outros cenários.
+- Pode sobreviver a duas falhas de servidor ao mesmo tempo: * * depende de * * (não é possível sobreviver se os nós três e quatro ficarem inativos, mas puderem sobreviver a todos os outros cenários.
+
+### <a name="pool-quorum-recommendations"></a>Recomendações de quorum de pool
+
+- Garantir que cada nó em seu cluster seja simétrico (cada nó tem o mesmo número de unidades)
+- Habilite o espelho de três vias ou a paridade dupla para que você possa tolerar falhas de nó e manter os discos virtuais online. Consulte nossa [página de diretrizes de volume](plan-volumes.md) para obter mais detalhes.
+- Se mais de dois nós estiverem inativos ou se dois nós e um disco em outro nó estiverem inativos, os volumes poderão não ter acesso a todas as três cópias de seus dados e, portanto, ficar offline e ficar indisponíveis. É recomendável colocar os servidores novamente ou substituir os discos rapidamente para garantir a maior resiliência para todos os dados no volume.
 
 ## <a name="more-information"></a>Mais informações
 

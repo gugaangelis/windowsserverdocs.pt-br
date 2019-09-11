@@ -1,6 +1,6 @@
 ---
 title: Ver opções para miniaturas de sessão no MultiPoint Dashboard
-description: Saiba como personalizar suas opções de exibição para os serviços do MultiPoint
+description: Saiba como personalizar suas opções de exibição para serviços do MultiPoint
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -13,19 +13,19 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: febd5c4a5d5fdcf5ad2a27eec13bb7439ea0ee4f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a11f2f2bbafe4d21e1cd5d56d66a97e08cf35b11
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875487"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871473"
 ---
 # <a name="view-options-for-session-thumbnails-in-multipoint-dashboard"></a>Ver opções para miniaturas de sessão no MultiPoint Dashboard
-Uma maneira fácil de monitorar as atividades de usuário em computadores individuais é exibir imagens em miniatura de cada área de trabalho ativa no seu sistema MultiPoint Services. Por padrão, imagens de áreas de trabalho são exibidas no MultiPoint Dashboard na **Home** guia.  
+Uma maneira fácil de monitorar as atividades de usuário em computadores individuais é exibir imagens em miniatura de cada área de trabalho ativa no seu sistema MultiPoint Services. Por padrão, as imagens de áreas de trabalho são exibidas no painel do MultiPoint na guia **início** .  
   
-Usando o MultiPoint Dashboard, você pode fazer o seguinte:  
+Usando o painel do MultiPoint, você pode fazer o seguinte:  
   
-- Veja a área de trabalho de um usuário mais de perto aumentando sua exibição no painel.  
+- Exiba a área de trabalho de um usuário mais próxima aumentando sua exibição no painel.  
 - Altere o tamanho das imagens em miniatura exibidas no painel de controle. Três tamanhos estão disponíveis para exibição: pequeno, médio ou grande. Médio é a configuração padrão.  
 - Veja todas as áreas de trabalho no sistema MultiPoint Services ou escolha uma exibição filtrada que mostre as áreas de trabalho ativas.  
   
@@ -33,7 +33,7 @@ Usando o MultiPoint Dashboard, você pode fazer o seguinte:
   
 1.  Clique na guia **início** e, em seguida, clique na área de trabalho que você deseja ampliar.  
   
-2.  Na guia **Início**, clique em **Enlarge Selected (Ampliar Selecionado)**. A área de trabalho de usuário é aberta no painel de controle.  
+2.  Na guia **Início**, clique em **Enlarge Selected (Ampliar Selecionado)** . A área de trabalho do usuário é aberta no painel.  
   
 3.  Quando tiver terminado de usar a exibição ampliada, clique em Retornar ao modo de exibição de áreas de trabalho.  
   
@@ -41,9 +41,9 @@ Usando o MultiPoint Dashboard, você pode fazer o seguinte:
   
 1.  Clique na guia **Início** e, em seguida, selecione a miniatura da área de trabalho que você deseja ampliar.  
   
-2.  Na guia **Início**, clique em **Enlarge Selected (Ampliar Selecionado)**. A página **Alterar tamanho da área de trabalho** é aberta.  
+2.  Na guia **Início**, clique em **Enlarge Selected (Ampliar Selecionado)** . A página **Alterar tamanho da área de trabalho** é aberta.  
   
-3.  Clique no tamanho desejado (**pequena**, **médio**, ou **grande**) e, em seguida, clique em **Okey**.  
+3.  Clique no tamanho desejado (**pequeno**, **médio**ou **grande**) e, em seguida, clique em **OK**.  
   
 ## <a name="to-show-all-desktops-in-multipoint-dashboard"></a>Para mostrar todas as áreas de trabalho no MultiPoint Dashboard  
   

@@ -1,64 +1,64 @@
 ---
-title: Considerações das filiais
+title: Considerações sobre filiais
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: d93c37227af1eb62368fbcd4ec5d6a48374b45ff
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 93bf1f8993827ab737c95abad1335317d4e9b599
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877057"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870437"
 ---
 # <a name="branch-office-considerations"></a>Considerações das filiais
 
-> Aplica-se a: Windows Server do Windows Server (canal semestral), de 2019 
+> Aplica-se a: Windows Server 2019, Windows Server (canal semestral), 
 
-Este artigo descreve as práticas recomendadas para executar máquinas virtuais blindadas em filiais e outros cenários remotos em que os hosts Hyper-V podem ter períodos de tempo com conectividade limitada para HGS.
+Este artigo descreve as práticas recomendadas para executar máquinas virtuais blindadas em filiais e outros cenários remotos em que os hosts do Hyper-V podem ter períodos de tempo com conectividade limitada com o HGS.
 
 ## <a name="fallback-configuration"></a>Configuração de fallback
 
-Começando com o Windows Server versão 1709, você pode configurar um conjunto adicional de URLs de serviço guardião de Host nos hosts do Hyper-V para uso quando o HGS primário não está respondendo.
-Isso permite que você execute um cluster HGS local que é usado como um servidor primário para melhorar o desempenho com a capacidade de voltar para HGS do seu datacenter corporativo se os servidores locais estão inativos.
+A partir do Windows Server versão 1709, você pode configurar um conjunto adicional de URLs de serviço guardião de host em hosts Hyper-V para uso quando o HGS primário não responde.
+Isso permite que você execute um cluster HGS local que é usado como um servidor primário para melhorar o desempenho com a capacidade de voltar para o HGS do datacenter corporativo se os servidores locais estiverem inativos.
 
-Para usar a opção de fallback, você precisará configurar dois servidores HGS. Eles podem executar o Windows Server 2019 ou Windows Server 2016 e o fazer parte dos mesmos ou em diferentes clusters. Se eles forem diferentes clusters, você desejará estabelecer práticas operacionais para garantir que as políticas de Atestado estão em sincronia entre os dois servidores. Ambos precisam ser capaz de autorizar corretamente o host do Hyper-V para executar VMs blindadas e fazer o material da chave necessário para iniciar o backup de VMs blindadas. Você pode optar por ter um par de criptografia compartilhada e certificados entre os dois clusters, de assinatura ou use certificados separados e configurar o HGS blindado VM para autorizar a ambos os guardiões (pares de certificado de criptografia/assinatura) nos dados de blindagem arquivo.
+Para usar a opção de fallback, você precisará configurar dois servidores HGS. Eles podem executar o Windows Server 2019 ou o Windows Server 2016 e fazer parte dos mesmos ou de clusters diferentes. Se forem clusters diferentes, você desejará estabelecer práticas operacionais para garantir que as políticas de atestado estejam em sincronia entre os dois servidores. Ambas precisam ser capazes de autorizar corretamente o host Hyper-V a executar VMs blindadas e ter o material de chave necessário para iniciar as VMs blindadas. Você pode optar por ter um par de certificados de criptografia compartilhada e de autenticação entre os dois clusters ou usar certificados separados e configurar a VM blindada de HGS para autorizar os guardiões (pares de certificado de criptografia/autenticação) nos dados de blindagem Grupo.
 
-Em seguida, atualizar seus hosts do Hyper-V para Windows Server versão 1709 ou Windows Server 2019 e execute o seguinte comando:
+Em seguida, atualize seus hosts Hyper-V para o Windows Server versão 1709 ou o Windows Server 2019 e execute o seguinte comando:
 ```powershell
 # Replace https://hgs.primary.com and https://hgs.backup.com with your own domain names and protocols
 Set-HgsClientConfiguration -KeyProtectionServerUrl 'https://hgs.primary.com/KeyProtection' -AttestationServerUrl 'https://hgs.primary.com/Attestation' -FallbackKeyProtectionServerUrl 'https://hgs.backup.com/KeyProtection' -FallbackAttestationServerUrl 'https://hgs.backup.com/Attestation'
 ```
 
-Para cancelar um servidor de fallback, basta omita os dois parâmetros de fallback:
+Para desconfigurar um servidor de fallback, basta omitir os dois parâmetros de fallback:
 ```powershell
 Set-HgsClientConfiguration -KeyProtectionServerUrl 'https://hgs.primary.com/KeyProtection' -AttestationServerUrl 'https://hgs.primary.com/Attestation'
 ```
 
-Na ordem do host do Hyper-V passar o Atestado com os servidores primários e de fallback, você precisará garantir que suas informações de Atestado são atualizadas com os dois clusters HGS.
-Além disso, os certificados usados para descriptografar o TPM da máquina virtual precisam estar disponível em ambos os clusters HGS.
-Você pode configurar cada HGS com certificados diferentes e configurar a VM para confiar em ambos ou adicionar um conjunto compartilhado de certificados para ambos os clusters HGS.
+Para que o host Hyper-V transmita o atestado com os servidores primário e de fallback, você precisará garantir que suas informações de atestado estejam atualizadas com ambos os clusters HGS.
+Além disso, os certificados usados para descriptografar o TPM da máquina virtual precisam estar disponíveis em ambos os clusters HGS.
+Você pode configurar cada HGS com certificados diferentes e configurar a VM para confiar em ambos ou adicionar um conjunto compartilhado de certificados a ambos os clusters HGS.
 
-Para obter informações adicionais sobre como configurar o HGS em uma filial usando URLs de fallback, consulte o postagem no blog [melhor suporte a filiais para VMs blindadas no Windows Server, versão 1709](https://blogs.technet.microsoft.com/datacentersecurity/2017/11/15/improved-branch-office-support-for-shielded-vms-in-windows-server-version-1709/).
+Para obter informações adicionais sobre como configurar o HGS em uma filial usando URLs de fallback, consulte a postagem de blog [melhorou o suporte de filial para VMs blindadas no Windows Server, versão 1709](https://blogs.technet.microsoft.com/datacentersecurity/2017/11/15/improved-branch-office-support-for-shielded-vms-in-windows-server-version-1709/).
 
 
 ## <a name="offline-mode"></a>Modo offline
 
-O modo offline permite que sua VM blindada Ativar quando HGS não pode ser alcançado, desde que a configuração de segurança do host do Hyper-V não foi alterado.
-O modo offline funciona armazenando em cache uma versão especial do protetor de chave TPM VM no host Hyper-V.
+O modo offline permite que a VM blindada seja ativada quando o HGS não puder ser acessado, desde que a configuração de segurança do host do Hyper-V não tenha sido alterada.
+O modo offline funciona armazenando em cache uma versão especial do protetor de chave de TPM de VM no host Hyper-V.
 O protetor de chave é criptografado para a configuração de segurança atual do host (usando a chave de identidade de segurança baseada em virtualização).
-Se seu host é capaz de se comunicar com o HGS e sua configuração de segurança não foi alterado, ele poderá usar o protetor de chave em cache para iniciar a VM blindada.
-Quando alterar as configurações de segurança no sistema, como uma nova política de integridade de código que está sendo aplicada ou a inicialização segura que está sendo desativado, os protetores de chave em cache serão invalidados e o host terá atestar com um HGS antes de qualquer VMs blindadas podem ser iniciadas off-line novamente.
+Se o host não puder se comunicar com o HGS e sua configuração de segurança não tiver sido alterada, ele poderá usar o protetor de chave em cache para iniciar a VM blindada.
+Quando as configurações de segurança são alteradas no sistema, como uma nova política de integridade de código aplicada ou inicialização segura sendo desabilitada, os protetores de chave em cache serão invalidados e o host terá que atestar um HGS antes que qualquer VM blindada possa ser iniciada offline novamente.
 
-O modo offline requer a compilação do Windows Server Insider Preview 17609 ou mais recente para o cluster do serviço guardião de Host e o host Hyper-V.
-Ele é controlado por uma política de HGS, que é desabilitado por padrão.
+O modo offline requer o Windows Server Insider Preview versão 17609 ou mais recente para o cluster do serviço guardião de host e para o host Hyper-V.
+Ele é controlado por uma política no HGS, que é desabilitada por padrão.
 Para habilitar o suporte para o modo offline, execute o seguinte comando em um nó HGS:
 
 ```powershell
 Set-HgsKeyProtectionConfiguration -AllowKeyMaterialCaching:$true
 ```
 
-Como os protetores de chave armazenáveis em cache são exclusivos para cada máquina virtual blindada, você precisará totalmente desligado (não reiniciar) e iniciar o backup de VMs blindadas para obter um protetor de chave armazenáveis em cache depois que essa configuração está habilitada no HGS.
-Se sua máquina virtual blindada migra para um host Hyper-V executando uma versão anterior do Windows Server, ou obtém um novo protetor de chave de uma versão mais antiga do HGS, ele não poderão iniciar em si em modo offline, mas pode continuar em execução no modo online quando o acesso ao HGS for disp é possível.
+Como os protetores de chave armazenáveis em cache são exclusivos para cada VM blindada, você precisará desligar completamente (não reiniciar) e iniciar suas VMs blindadas para obter um protetor de chave armazenável em cache depois que essa configuração estiver habilitada no HGS.
+Se a sua VM blindada migrar para um host Hyper-V executando uma versão mais antiga do Windows Server ou obtiver um novo protetor de chave de uma versão mais antiga do HGS, ela não poderá ser iniciada no modo offline, mas poderá continuar sendo executada no modo online quando o acesso ao HGS estiver disponível poderá.

@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: d4eb2ad65f436db28264650b8c8d7b0cf69b2cee
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 89676ba821b99d44865bc6f45c34c05edb771d9d
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544679"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865261"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>Perguntas frequentes sobre Réplica de Armazenamento
 
@@ -112,7 +112,7 @@ Embora tecnicamente possível, essa não é uma configuração recomendada devid
 Se for configurada a replicação de cluster para cluster, a Réplica de Armazenamento dará suporte completo a Servidores de Arquivos de Escalabilidade Horizontal, incluindo o uso de Espaços de Armazenamento Direto, ao replicar entre dois clusters.  
 
 ## <a name="FAQ7.5"></a>O CSV é necessário para replicar em um cluster de ampliação ou entre clusters?  
-Não. Você pode replicar com o CSV ou a reserva de disco persistente (Laos) de propriedade de um recurso de cluster, como uma função de servidor de arquivos. 
+Nº Você pode replicar com o CSV ou a reserva de disco persistente (Laos) de propriedade de um recurso de cluster, como uma função de servidor de arquivos. 
 
 Se for configurada a replicação de cluster para cluster, a Réplica de Armazenamento dará suporte completo a Servidores de Arquivos de Escalabilidade Horizontal, incluindo o uso de Espaços de Armazenamento Direto, ao replicar entre dois clusters.  
 
@@ -188,8 +188,8 @@ Observação: O cmdlet Test-SRTopology requer ICMPv4/ICMPv6, mas não para repli
 ## <a name="FAQ15.5"></a>Quais são as práticas recomendadas de volume de log?
 O tamanho ideal do log varia muito por ambiente e carga de trabalho e é determinado pela quantidade de e/s de gravação que sua carga de trabalho realiza. 
 
-1.  Um log maior ou menor não faz você qualquer mais rápida ou mais lenta
-2.  Um log maior ou menor não tem qualquer que ostentam em um volume de dados de 10GB versus um volume de dados de 10TB, por exemplo
+1.  Um log maior ou menor não torna você mais rápido ou mais lento
+2.  Um log maior ou menor não tem nenhuma relação em um volume de dados de 10 GB em comparação com um volume de dados de 10 TB, por exemplo
 
 Um log maior simplesmente coleta e retém gravação mais IOs antes que eles são encapsulados-out. Isso permite que uma interrupção no serviço entre o computador de origem e destino – como uma interrupção na rede ou de destino sendo offline - para ir mais tempo. Se o log palpáveis 10 horas de gravações, e a rede cai para 2 horas, quando a rede retorna que a origem pode simplesmente reproduzir o delta das alterações de volta para o destino muito rápido e você está protegido novamente muito rapidamente. Se o log contém 10 horas e a interrupção é 2 dias, a fonte agora tem a reprodução de um log de diferente chamado o bitmap – e provavelmente será mais lenta entrar novamente em sincronizar. Depois que em sincronia retorna para usar o log.
 
@@ -218,7 +218,7 @@ Armazenamento réplica também tem um modo de servidor-para-self, onde você apo
 
 Sim, o Deduplcation de dados tem suporte com a réplica de armazenamento. Habilitar a eliminação de duplicação de dados em um volume no servidor de origem e, durante a replicação, o servidor de destino recebe uma cópia com eliminação de duplicação do volume.
 
-Embora você deva *instalar* a eliminação de duplicação de dados nos servidores de origem e de destino (consulte [Instalando e habilitando a eliminação](../data-deduplication/install-enable.md)de duplicação de dados), é importante não *habilitar* a eliminação de duplicação de dados no servidor de destino. A réplica de armazenamento permite gravações somente no servidor de origem. Como a eliminação de duplicação de dados faz gravações no volume, ele deve ser executado somente no servidor de origem. 
+Embora você deva *instalar* a eliminação de duplicação de dados nos servidores de origem e de destino (consulte [Instalando e habilitando a eliminação de duplicação de dados](../data-deduplication/install-enable.md)), é importante não *habilitar* a eliminação de duplicação de dados no servidor de destino. A réplica de armazenamento permite gravações somente no servidor de origem. Como a eliminação de duplicação de dados faz gravações no volume, ele deve ser executado somente no servidor de origem. 
 
 ## <a name="FAQ19"></a>Posso replicar entre o Windows Server 2019 e o Windows Server 2016?
 

@@ -1,6 +1,6 @@
 ---
 title: Assumir o controle de uma sessão de usuário
-description: Saiba como acessar e assumir o controle de estação de outro usuário no MultiPoint Services
+description: Saiba como acessar e assumir o controle da estação de outro usuário nos serviços do MultiPoint
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -13,24 +13,24 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 6cf72bea861f391241b66656ec062455a2004a81
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fbf50d2a30bdae1665fed2ed4f1b223c6505c699
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862327"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871537"
 ---
 # <a name="take-control-of-a-user-session"></a>Assumir o controle de uma sessão de usuário
 Como um usuário do MultiPoint Dashboard, você pode ajudar outro usuário acessando remotamente sua área de trabalho com o recurso Assumir o controle.  
   
-1.  No MultiPoint Dashboard, sobre o **Home** guia, clique na imagem em miniatura da área de trabalho para o usuário que você deseja ajudar.  
+1.  No painel do MultiPoint, na guia **início** , clique na imagem em miniatura da área de trabalho do usuário que você deseja auxiliar.  
   
-2.  Na guia **Ajudar**, clique em **Assumir Controle**. A área de trabalho do usuário é aberta na sua área de trabalho e você pode navegar na área de trabalho dele usando seu teclado e mouse.  
+2.  Na guia **Ajudar**, clique em **Assumir Controle**. A área de trabalho do usuário é aberta na área de trabalho e você pode navegar na área de trabalho usando o teclado e o mouse.  
   
-3.  Quando tiver terminado de ajudar o usuário, clique em **parar**.  
+3.  Quando você terminar de auxiliar o usuário, clique em **parar**.  
   
     > [!NOTE]  
-    > Talvez seja necessário minimizar a área de trabalho para ver seu painel do MultiPoint.  
+    > Talvez seja necessário minimizar a área de trabalho do usuário para ver seu painel do MultiPoint.  
   
 ## <a name="see-also"></a>Consulte também  
 [Gerenciar áreas de trabalho do usuário usando o MultiPoint Dashboard](Manage-User-Desktops-Using-MultiPoint-Dashboard.md)  

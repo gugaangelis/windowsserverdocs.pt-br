@@ -1,6 +1,6 @@
 ---
 title: Implantação do MultiPoint Services
-description: Visão geral do processo de implantação do MultiPoint Services
+description: Visão geral do processo de implantação de serviços do MultiPoint
 ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server-threshold
@@ -13,38 +13,38 @@ ms.assetid: 594bc09e-5d2d-4984-a9de-79d40b1308d6
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: e2d71d691c61f5e1208d97ad77d3a5ba9c207c0a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 19e1b52c79e0d87804a76ec8963662b96c82b41b
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830707"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871725"
 ---
 # <a name="deploying-multipoint-services"></a>Implantação do MultiPoint Services
-Este guia descreve como implantar um servidor executando o MultiPoint Services e configurar estações do MultiPoint, instalar e configurar o seu sistema, configurar contas de usuário e executar algumas tarefas administrativas básicas, como ativar a proteção de disco e a configuração de backups, antes de começar a usar o sistema.  
+Este guia descreve como implantar um servidor que executa os serviços do MultiPoint e configurar estações do MultiPoint, instalar e configurar seu sistema, configurar contas de usuário e executar algumas tarefas básicas de administração, como ativar a proteção de disco e configurar backups, antes de começar a usar o sistema.  
   
 > [!NOTE]  
-> Para obter suporte adicional, consulte a Ajuda do MultiPoint Services, que pode ser aberta clicando no ícone de Ajuda ou F1 em qualquer tela MultiPoint Manager ou do MultiPoint Dashboard.  
+> Para obter suporte adicional, consulte a ajuda dos serviços do MultiPoint, que pode ser aberta clicando no ícone de ajuda ou F1 em qualquer tela do MultiPoint Manager ou do painel do MultiPoint.  
   
-As informações de implantação são organizadas da seguinte maneira. No mínimo, você precisará concluir as tarefas para implantar o seu sistema e Preparando seu ambiente para os usuários. Outras tarefas podem ou não podem se aplicar ao seu ambiente. 
+As informações de implantação são organizadas da seguinte maneira. No mínimo, você precisa concluir as tarefas para implantar seu sistema e preparar seu ambiente para os usuários. Outras tarefas podem ou não se aplicar ao seu ambiente. 
 -   [Implantar um novo sistema MultiPoint Services](Deploy-a-new-MultiPoint-services-system.md)  
   
-    Configure seu computador do MultiPoint Services e estações. Instalar e configurar o MultiPoint Services; configurar suas estações; instalar drivers, atualizações e software; Opcionalmente, ingressar em um domínio; Adicione licenças de cliente (CALs) para cada estação.  
+    Configure o computador e as estações dos serviços do MultiPoint. Instalar e configurar os serviços do MultiPoint; configurar suas estações; instalar drivers, atualizações e software; Opcionalmente, ingresse em um domínio; adicionar licenças de cliente (CALs) para cada estação.  
   
--   [Tarefas de configuração opcionais para uma implantação de MultiPoint Services](Optional-configuration-tasks-for-a-MultiPoint-services-deployment.md)  
+-   [Tarefas de configuração opcionais para uma implantação do MultiPoint Services](Optional-configuration-tasks-for-a-MultiPoint-services-deployment.md)  
   
-    Execute tarefas de configuração opcionais. Configurar uma estação de tela dividida; adicionar impressoras; Habilitar o acesso por meio de uma LAN sem fio; criar áreas de trabalho virtuais para estações com o Windows 10, o Windows 8 ou o sistema de operacional Windows 7; Altere o idioma de exibição para o sistema ou para usuários individuais.  
+    Executar tarefas de configuração opcionais. Configurar uma estação de tela de divisão; Adicionar impressoras; habilitar o acesso em uma LAN sem fio; Crie áreas de trabalho virtuais para estações com o sistema operacional Windows 10, Windows 8 ou Windows 7; Altere o idioma de exibição para o sistema ou para usuários individuais.  
   
--   [Preparar seu sistema MultiPoint Services para usuários](Prepare-your-MultiPoint-services-system-for-users.md)  
+-   [Preparar o sistema de serviços do MultiPoint para usuários](Prepare-your-MultiPoint-services-system-for-users.md)  
   
-    Planejar e criar contas de usuário; restringir o acesso dos usuários para o servidor. Para obter acesso aberto, configurar estações para logon automático; Permitir várias sessões para contas de usuário compartilhadas; Implemente o compartilhamento de arquivos para os usuários.  
+    Planejar e criar contas de usuário; restringir o acesso dos usuários ao servidor; para acesso aberto, configure estações para logon automático; permitir várias sessões para contas de usuário compartilhadas; Implemente o compartilhamento de arquivos para usuários.  
   
 -   [Administração do sistema no MultiPoint Services](System-administration-in-MultiPoint-services.md)  
   
-    Execute algumas tarefas de administração de servidor básico antes de você começar a usar o servidor. Ativar a proteção de disco; instalar o servidor de Backup; para economizar energia, configurar as configurações de suspensão; Configure políticas de grupo e o registro para uma implantação do domínio.  
+    Execute algumas tarefas básicas de administração de servidor antes de começar a usar o servidor. Ativar a proteção de disco; instalar o backup do servidor; para economizar energia, defina as configurações de suspensão; configurar políticas de grupo e o registro para uma implantação de domínio.  
   
 ## <a name="see-also"></a>Consulte também  
   
-- [Serviços do multiPoint](MultiPoint-Services.md)
--   [Fórum do multiPoint Services](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=windowsmultipointserver&filter=alltypes&sort=lastpostdesc)  
+- [MultiPoint Services](MultiPoint-Services.md)
+-   [Fórum de serviços do MultiPoint](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=windowsmultipointserver&filter=alltypes&sort=lastpostdesc)  
   

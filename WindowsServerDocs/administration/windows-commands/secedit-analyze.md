@@ -1,6 +1,6 @@
 ---
-title: 'Secedit: analisar'
-description: 'Tópico de comandos do Windows para * * *- '
+title: 'secedit: analisar'
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9122c5c0fa8c42b0ccfc77ceb3f2d337b44ee5dc
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 83f9e977a059e1a1f1b882d5a968054dacf6b3be
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441565"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868871"
 ---
-# <a name="seceditanalyze"></a>Secedit: analisar
+# <a name="seceditanalyze"></a>secedit: analisar
 
 
 
-Permite que você analise as configurações de sistemas atuais em relação a configurações de linha de base que são armazenadas em um banco de dados. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+Permite que você analise as configurações atuais de sistemas em relação às configurações de linha de base que são armazenadas em um banco de dados. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,32 +36,32 @@ Secedit /analyze /db <database file name> [/cfg <configuration file name>] [/ove
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|db|Obrigatório.</br>Especifica o nome de arquivo e caminho de um banco de dados que contém a configuração armazenada em relação ao qual a análise será executada.</br>Se o nome do arquivo Especifica um banco de dados que não tenha um modelo de segurança (conforme representado pelo arquivo de configuração) associado a ele, o `/cfg \<configuration file name>` também deve ser especificada a opção de linha de comando.|
-|cfg|Opcional.</br>Especifica o nome de arquivo e caminho para o modelo de segurança que será importado para o banco de dados para análise.</br>Essa opção /cfg só é válida quando usado com o `/db \<database file name>` parâmetro. Se não for especificado, a análise é executada em relação a qualquer configuração já armazenada no banco de dados.|
-|overwrite|Opcional.</br>Especifica se o modelo de segurança no parâmetro /cfg deve substituir qualquer modelo ou modelo de composição que é armazenado no banco de dados, em vez de acrescentar os resultados ao modelo armazenado.</br>Essa opção de linha de comando é válido somente quando o `/cfg \<configuration file name>` parâmetro também é usado. Se não for especificado, o modelo no parâmetro /cfg é acrescentado ao modelo armazenado.|
-|log|Opcional.</br>Especifica o nome de arquivo e caminho do arquivo de log a ser usado no processo.|
-|Silencioso|Opcional.</br>Suprime a saída de tela. Você ainda pode exibir resultados da análise, usando a configuração de segurança e análise de snap-in para o Microsoft Management Console (MMC).|
+|db|Obrigatório.</br>Especifica o caminho e o nome de arquivo de um banco de dados que contém a configuração armazenada na qual a análise será executada.</br>Se o nome do arquivo especificar um banco de dados que não tenha um modelo de segurança (como representado pelo arquivo de configuração) associado `/cfg \<configuration file name>` a ele, a opção de linha de comando também deverá ser especificada.|
+|cfg|Opcional.</br>Especifica o caminho e o nome do arquivo para o modelo de segurança que será importado para o banco de dados para análise.</br>Essa opção de/cfg só é válida quando usada com `/db \<database file name>` o parâmetro. Se isso não for especificado, a análise será executada em qualquer configuração já armazenada no banco de dados.|
+|overwrite|Opcional.</br>Especifica se o modelo de segurança no parâmetro/cfg deve substituir qualquer modelo ou modelo composto armazenado no banco de dados em vez de acrescentar os resultados ao modelo armazenado.</br>Essa opção de linha de comando só é válida quando `/cfg \<configuration file name>` o parâmetro também é usado. Se não for especificado, o modelo no parâmetro/cfg será anexado ao modelo armazenado.|
+|Façam|Opcional.</br>Especifica o caminho e o nome do arquivo de log a ser usado no processo.|
+|Tranqüilo|Opcional.</br>Suprime a saída da tela. Você ainda pode exibir os resultados da análise usando o snap-in configuração e análise de segurança no console de gerenciamento Microsoft (MMC).|
 
 ## <a name="remarks"></a>Comentários
 
-Os resultados da análise são armazenados em uma área separada do banco de dados e podem ser exibidos na configuração de segurança e análise snap-in do MMC.
+Os resultados da análise são armazenados em uma área separada do banco de dados e podem ser exibidos no snap-in configuração de segurança e análise no MMC.
 
-Se o caminho para o arquivo de log não for fornecido, o arquivo de log padrão (*systemroot*\Documents and Settings\*UserAccount<em>\My Documents\Security\Logs\*DatabaseName</em>. log) é usado.
+Se o caminho para o arquivo de log não for fornecido, o arquivo de log padrão, (*raiz_do_sistema*\Documents\*and Settings USERACCOUNT<em>\*\Meus Documents\Security\Logs DatabaseName</em>. log) será usado.
 
-No Windows Server 2008, `Secedit /refreshpolicy` foi substituído por `gpupdate`. Para obter informações sobre como atualizar as configurações de segurança, consulte [Gpupdate](gpupdate.md).
+No Windows Server 2008, `Secedit /refreshpolicy` foi substituído por. `gpupdate` Para obter informações sobre como atualizar as configurações de segurança, consulte [gpupdate](gpupdate.md).
 
-## <a name="BKMK_Examples"></a>Exemplos
+## <a name="BKMK_Examples"></a>Disso
 
-Execute a análise para os parâmetros de segurança do banco de dados de segurança, SecDbContoso.sdb, você criou usando o snap-in de análise e configuração de segurança. Direcione a saída para o arquivo SecAnalysisContosoFY11 com solicitar para que você possa verificar o comando foi executado corretamente.
+Execute a análise dos parâmetros de segurança no banco de dados de segurança, SecDbContoso. sdb, criado usando o snap-in configuração e análise de segurança. Direcione a saída para o arquivo SecAnalysisContosoFY11 com a solicitação para que você possa verificar se o comando foi executado corretamente.
 ```
 Secedit /analyze /db C:\Security\FY11\SecDbContoso.sdb /log C:\Security\FY11\SecAnalysisContosoFY11.log
 ```
-Digamos que a análise revelou alguns inadequações para que o modelo de segurança, SecContoso.inf, foi modificado. Execute o comando novamente para incorporar as alterações, direcionando a saída para o arquivo existente SecAnalysisContosoFY11 com nenhum aviso.
+Digamos que a análise revelou alguns inadequacies para que o modelo de segurança, SecContoso. inf, tenha sido modificado. Execute o comando novamente para incorporar as alterações, direcionando a saída para o arquivo existente SecAnalysisContosoFY11 sem aviso.
 ```
 Secedit /analyze /db C:\Security\FY11\SecDbContoso.sdb /cfg SecContoso.inf /overwrite /log C:\Security\FY11\SecAnalysisContosoFY11.xml /quiet
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
--   [Secedit](secedit.md)
+-   [Utilitário](secedit.md)
 -   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

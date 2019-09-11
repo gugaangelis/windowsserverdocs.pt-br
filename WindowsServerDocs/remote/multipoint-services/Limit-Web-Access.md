@@ -13,12 +13,12 @@ ms.assetid: 044f2fd5-5b87-42bb-ba0d-c06516ac48c8
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: cb91914608110d26ff2db8eff1cd28d26d04669b
-ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
+ms.openlocfilehash: 97d9e671823dade9e488922561c4c6a925719830
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590347"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871664"
 ---
 # <a name="limit-web-access"></a>Limitar Acesso via Web
 Além de monitorar as atividades do usuário em áreas de trabalho individuais, você, como um usuário administrativo, pode limitar o acesso do usuário a sites especificados indicando sites e sites permitidos aos quais você deseja bloquear o acesso do usuário.  
@@ -46,7 +46,7 @@ Além de monitorar as atividades do usuário em áreas de trabalho individuais, 
   
 2. Para adicionar um site permitido, clique em **Permitir apenas esses sites**, digite o endereço Web permitido e, em seguida, clique em **Adicionar**.  
   
-   Para adicionar um site que deseja que os usuários visitem, clique em **Não permitir apenas esses sites**, digite o endereço Web que não deseja que os usuários visitem e clique em **Adicionar**.  
+   Para adicionar um site que você não deseja que os usuários visitem, clique em não **Permitir somente esses sites**, digite o endereço da Web que você não deseja que os usuários visitem e clique em **Adicionar**.  
   
    > [!NOTE]
    > Por exemplo, inserir "Contoso.com" permite ou bloqueia sites que são relativos a www.contoso.com (por exemplo, www.newpage.contoso.com). A inserção de "contoso" permitirá ou limitará todos os sites relacionados à contoso (incluindo contoso.com, contoso.uk e assim por diante).  

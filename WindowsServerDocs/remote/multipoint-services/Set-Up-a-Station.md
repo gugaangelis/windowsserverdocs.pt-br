@@ -1,6 +1,6 @@
 ---
 title: Configurar uma estação
-description: Saiba como configurar uma estação de no MultiPoint Services
+description: Saiba como configurar uma estação em serviços do MultiPoint
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -13,24 +13,24 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 2bba32f27ae01052a693d78f152d4487a04bd9bd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 043b0d8dba844f40569a854a4f4f2a2efb38a870
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880677"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871614"
 ---
 # <a name="set-up-a-station"></a>Configurar uma estação
 Uma *estação* do MultiPoint Services normalmente consiste em um *hub de estação*, mouse, teclado e monitor de vídeo. Este tópico descreve como conectar os dispositivos de hardware ao hub de estação para criar uma estação do MultiPoint Services.  
   
 O hub de estação é um dispositivo de hardware que conecta dispositivos periféricos a um computador em um sistema MultiPoint Services. O MultiPoint Services dá suporte a dois tipos de hubs de estação:  
   
--   **Hub USB:** Um genérico multiporta expansão hub USB que está em conformidade com as especificações de barramento serial universal 2.0 ou posterior. Tais hubs normalmente têm duas, quatro ou mais portas USB que permitem que vários dispositivos USB sejam conectados a uma única porta USB no computador. Hubs USB são comumente separada de dispositivos que podem ser ativados ou barramento externamente. Quando usado como um hub de estação com o MultiPoint Services, recomendamos que você use um hub com quatro ou mais portas.  
+-   **Hub USB:** Um hub de expansão USB multiporta genérico que está em conformidade com as especificações do barramento serial universal 2,0 ou posteriores. Tais hubs normalmente têm duas, quatro ou mais portas USB que permitem que vários dispositivos USB sejam conectados a uma única porta USB no computador. Hubs USB são comumente separada de dispositivos que podem ser ativados ou barramento externamente. Quando usado como um hub de estação com o MultiPoint Services, recomendamos que você use um hub com quatro ou mais portas.  
   
     > [!IMPORTANT]  
     > Se você pretende conectar dispositivos USB que não sejam um teclado e mouse ao hub, recomendamos o uso de um hub alimentado externamente para obter o melhor desempenho.  
   
--   **Hub multifuncional:** Um hub de expansão que se conecta ao computador por meio de uma porta USB e permite a conexão de uma variedade de dispositivos USB não para o hub, incluindo um monitor de vídeo. Hubs multifuncionais produzidos pelos fabricantes de hardware específico e podem exigir a instalação de um driver de dispositivo específico.  
+-   **Hub multifuncional:** Um hub de expansão que se conecta ao computador por meio de uma porta USB e habilita a conexão de uma variedade de dispositivos não USB ao Hub, incluindo um monitor de vídeo. Hubs multifuncionais produzidos pelos fabricantes de hardware específico e podem exigir a instalação de um driver de dispositivo específico.  
   
 Se você deseja adicionar uma estação ao MultiPoint Services, primeiro certifique-se de que você tem portas de conexão suficientes disponíveis para o hardware da estação que deseja usar. Além disso, você deve proteger o número apropriado de *licenças de acesso para cliente (CALs)* para o seu sistema de serviços do MultiPoint.  
   
@@ -57,7 +57,7 @@ Os procedimentos desta seção descrevem como conectar o hardware da estação d
   
 6.  Ligue o computador.  
   
-7.  O MultiPoint Services é iniciado. Siga as instruções exibidas no monitor de vídeo da nova estação para associar os dispositivos à nova estação.  
+7.  O MultiPoint Services é iniciado. Siga as instruções que aparecem no monitor de vídeo da nova estação para associar os dispositivos à nova estação.  
   
 ### <a name="to-set-up-a-station-with-a-multifunction-hub"></a>Para configurar uma estação com um hub multifuncional  
   
@@ -79,10 +79,10 @@ Os procedimentos desta seção descrevem como conectar o hardware da estação d
   
 6.  Ligue o computador.  
   
-7.  O MultiPoint Services é iniciado. Se solicitado, siga as instruções exibidas no monitor de vídeo da nova estação para *associar* os dispositivos à nova estação.  
+7.  O MultiPoint Services é iniciado. Se solicitado, siga as instruções que aparecem no monitor de vídeo da nova estação para *associar* os dispositivos à nova estação.  
   
 ## <a name="see-also"></a>Consulte também  
-[Encerrar uma sessão de usuário](End-a-User-Session.md)  
+[Encerrar uma sessão do usuário](End-a-User-Session.md)  
 [Reiniciar ou desligar](Restart-or-Shut-Down.md)  
-[Gerenciar Hardware da estação](Manage-Station-Hardware.md)  
+[Gerenciar o hardware da estação](Manage-Station-Hardware.md)  
 [Trabalhar com dispositivos USB](Work-with-USB-Devices.md)

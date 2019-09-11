@@ -9,12 +9,12 @@ manager: dongill
 ms.author: jgerend
 ms.date: 6/24/2017
 description: Como implantar Pastas de Trabalho, incluindo a instalação da função de servidor, a criação de compartilhamentos de sincronização e a criação de registros DNS.
-ms.openlocfilehash: d2ba117a021cfc7361c0f7c8df2ed9f3c4bc9d94
-ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
+ms.openlocfilehash: 45b25befcde328e38f694b64fa7536a2b5c7f232
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67792337"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867031"
 ---
 # <a name="deploying-work-folders"></a>Implantando Pastas de Trabalho
 
@@ -31,7 +31,7 @@ Este tópico aborda as etapas necessárias à implantação de Pastas de Trabalh
 >  -   Etapa 3: Instalar Pastas de Trabalho em servidores de arquivos  
 >  -   Etapa 4: Associando o certificado SSL nos servidores de sincronização
 >  -   Etapa 5: Criar grupos de segurança para Pastas de Trabalho  
->  -   Etapa 7: Criar compartilhamentos de sincronização para dados de usuário  
+>  -   Etapa 7: Criar compartilhamentos de sincronização para dados do usuário  
   
 ## <a name="step-1-obtain-ssl-certificates"></a>Etapa 1: Obter certificados SSL  
  Pastas de Trabalho usam HTTPS para sincronizar arquivos de forma segura entre os clientes de Pastas de Trabalho e o servidor de Pastas de Trabalho. Os requisitos para certificados SSL usados por Pastas de Trabalho são como a seguir:  
@@ -51,7 +51,7 @@ Este tópico aborda as etapas necessárias à implantação de Pastas de Trabalh
 ## <a name="step-2-create-dns-records"></a>Etapa 2: Criar registros DNS  
  Para permitir que os usuários sincronizem na Internet, você deve criar um registro Host (A) no DNS público para permitir que clientes da Internet resolvam sua URL de Pastas de Trabalho. Esse registro de DNS deve resolver para a interface externa do servidor proxy reverso.  
   
- Na rede interna, crie um registro CNAME no DNS denominado workfolders que retornará o FDQN de um servidor de Pastas de Trabalho. Quando os clientes de pastas de trabalho usam descoberta automática, a URL usada para descobrir o servidor de pastas de trabalho é https:\//workfolders.domain.com. Se você pretende usar a descoberta automática, o registro CNAME workfolders deve constar no DNS.  
+ Na rede interna, crie um registro CNAME no DNS denominado workfolders que retornará o FDQN de um servidor de Pastas de Trabalho. Quando os clientes de pastas de trabalho usam a descoberta automática, a URL usada para descobrir o servidor de\/pastas de trabalho é https:/workfolders.domain.com. Se você pretende usar a descoberta automática, o registro CNAME workfolders deve constar no DNS.  
   
 ## <a name="step-3-install-work-folders-on-file-servers"></a>Etapa 3: Instalar Pastas de Trabalho em servidores de arquivos  
  Você pode instalar Pastas de Trabalho em um servidor ingressado no domínio usando o Gerenciador de Servidores ou usando o Windows PowerShell, local ou remotamente em uma rede. Isso será útil se você estiver configurando vários servidores de sincronização na rede.  
@@ -163,7 +163,7 @@ DsAcls $ADGroupPath /I:S /G ""$GroupName":RPWP;msDS-SyncServerUrl;user"
 > [!NOTE]
 >  A operação de delegação pode levar algum tempo para executar em domínios com um grande número de usuários.  
   
-## <a name="step-7-create-sync-shares-for-user-data"></a>Etapa 7: Criar compartilhamentos de sincronização para dados de usuário  
+## <a name="step-7-create-sync-shares-for-user-data"></a>Etapa 7: Criar compartilhamentos de sincronização para dados do usuário  
  Neste ponto, você está pronto para designar uma pasta no servidor de sincronização para armazenar arquivos do usuário. Essa pasta é chamada compartilhamento de sincronização e você pode usar o procedimento a seguir para criar um.  
   
 1. Se você ainda não tiver um volume de NTFS com espaço livre para o compartilhamento de sincronização e os arquivos de usuário que ele contiver, crie um novo volume e formate-o com o sistema de arquivos NTFS.  
@@ -229,7 +229,7 @@ O exemplo acima cria um novo compartilhamento de sincronização chamado *Share0
  Se você estiver hospedando vários servidores de sincronização em seu ambiente, será necessário configurar a descoberta automática de servidor preenchendo a propriedade **msDS-SyncServerURL** em contas de usuário no AD DS.  
   
 >[!NOTE]
->A propriedade msDS-SyncServerURL no Active Directory não deve ser definida para usuários remotos que estão acessando Pastas de Trabalho por meio de uma solução de proxy reversa como Proxy de aplicativo Web ou Proxy de aplicativo do Azure AD. Se a propriedade msDS-SyncServerURL estiver definida, o cliente das Pastas de Trabalho tentam acessar uma URL interna que não é acessível por meio da solução de proxy inverso. Ao usar o Proxy de aplicativo Web ou Proxy de aplicativo do Azure AD, você precisa criar aplicativos de proxy exclusivos para cada servidor de Pastas de Trabalho. Para obter mais detalhes, consulte [Implantando pastas de trabalho com o AD FS e Proxy de aplicativo Web: Visão geral](deploy-work-folders-adfs-overview.md) ou [Implantando pastas de trabalho com o Proxy de aplicativo do Azure AD](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/).
+>A propriedade msDS-SyncServerURL no Active Directory não deve ser definida para usuários remotos que estão acessando Pastas de Trabalho por meio de uma solução de proxy reversa como Proxy de aplicativo Web ou Proxy de aplicativo do Azure AD. Se a propriedade msDS-SyncServerURL for definida, o cliente de pastas de trabalho tentará acessar uma URL interna que não está acessível por meio da solução de proxy reverso. Ao usar o Proxy de aplicativo Web ou Proxy de aplicativo do Azure AD, você precisa criar aplicativos de proxy exclusivos para cada servidor de Pastas de Trabalho. Para obter mais detalhes, [consulte Implantando Pastas de trabalho com o AD FS e o proxy de aplicativo Web: Visão](deploy-work-folders-adfs-overview.md) geral ou [implantação de pastas de trabalho com o Azure proxy de aplicativo do AD](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/).
 
 
  Para que você possa fazer isso, é necessário instalar um controlador de domínio do Windows Server 2012 R2 ou atualizar esquemas de floresta e domínio usando os comandos `Adprep /forestprep` e `Adprep /domainprep`. Para obter informações sobre como executar com segurança esses comandos, consulte [Executando Adprep](https://technet.microsoft.com/library/dd464018.aspx).  
@@ -264,7 +264,7 @@ Set-ADUser –Add @{"msDS-SyncServerURL"=$SyncServerURL}
   
 ```  
   
-## <a name="step-10-optionally-configure-web-application-proxy-azure-ad-application-proxy-or-another-reverse-proxy"></a>Etapa 10: Opcionalmente, configure o Proxy de aplicativo Web, o Proxy de aplicativo do Azure AD ou outro proxy reverso  
+## <a name="step-10-optionally-configure-web-application-proxy-azure-ad-application-proxy-or-another-reverse-proxy"></a>Etapa 10: Opcionalmente, configurar o proxy de aplicativo Web, o Proxy de Aplicativo do AD do Azure ou outro proxy reverso  
 
 Para habilitar usuários remotos para acessar seus arquivos, você precisa publicar o servidor de Pastas de Trabalho por meio de um proxy reverso, tornando as Pastas de Trabalho disponíveis externamente na Internet. Você pode usar o Proxy de aplicativo Web, Proxy de aplicativo do Azure Active Directory ou outra solução de proxy reverso.  
   
@@ -289,12 +289,12 @@ Se você tiver um grande número de computadores ingressados no domínio ao qual
 > [!NOTE]
 >  Essas configurações de política estão disponíveis somente ao editar a Política de Grupo de um computador que executa o Gerenciamento de Política de Grupo no Windows 8.1, no Windows Server 2012 R2 ou posterior. Versões de Gerenciamento de Política de Grupo de sistemas operacionais anteriores não têm essa configuração disponível. Essas configurações de política são aplicadas aos PCs com Windows 7 no qual o aplicativo de [Pastas de trabalho para o Windows 7](http://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx) foi instalado.  
   
-##  <a name="BKMK_LINKS"></a> Consulte também  
+##  <a name="BKMK_LINKS"></a>Consulte também  
  Para obter informações adicionais relacionadas, consulte os seguintes recursos.  
   
 |Tipo de conteúdo|Referências|  
 |------------------|----------------|  
-|**Noções básicas sobre**|-   [Pastas de trabalho](work-folders-overview.md)|  
-|**Planejamento**|-   [Projetando uma implementação de pastas de trabalho](plan-work-folders.md)|
-|**Implantação**|-   [Implantando pastas de trabalho com o AD FS e Proxy de aplicativo Web (WAP)](deploy-work-folders-adfs-overview.md)<br />-   [Implantação de laboratório de teste de pastas de trabalho](http://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx) (postagem de blog)<br />-   [Um novo atributo de usuário para a Url do servidor de pastas de trabalho](http://blogs.technet.com/b/filecab/archive/2013/10/09/a-new-user-attribute-for-work-folders-server-url.aspx) (postagem de blog)|  
-|**Referência Técnica**|-   [Logon interativo: Limite de bloqueio de conta de computador](https://technet.microsoft.com/library/jj966264(v=ws.11).aspx)<br />-   [Cmdlets de compartilhamento de sincronização](https://docs.microsoft.com/powershell/module/syncshare/?view=win10-ps)|
+|**Básicas**|-   [Pastas de trabalho](work-folders-overview.md)|  
+|**Planejamento**|-   [Criando uma implementação de pastas de trabalho](plan-work-folders.md)|
+|**Implantação**|-   [Implantando Pastas de trabalho com o AD FS e o proxy de aplicativo Web (WAP)](deploy-work-folders-adfs-overview.md)<br />-   [Implantação do laboratório de teste de pastas de trabalho](http://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx) (postagem de blog)<br />-   [Um novo atributo de usuário para a URL do servidor de pastas de trabalho](http://blogs.technet.com/b/filecab/archive/2013/10/09/a-new-user-attribute-for-work-folders-server-url.aspx) (postagem de blog)|  
+|**Referência Técnica**|-   [Logon interativo: Limite de bloqueio de conta de computador](https://technet.microsoft.com/library/jj966264(v=ws.11).aspx)<br />-   [Sincronizar cmdlets de compartilhamento](https://docs.microsoft.com/powershell/module/syncshare/?view=win10-ps)|

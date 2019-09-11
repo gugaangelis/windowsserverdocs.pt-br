@@ -1,6 +1,6 @@
 ---
-title: Atualizar um cluster de espaços de armazenamento diretos para o Windows Server 2019
-description: Como atualizar um cluster de espaços de armazenamento diretos para o Windows Server 2019, enquanto mantém as VMs em execução ou enquanto ele estiverem interrompidos.
+title: Atualizar um cluster Espaços de Armazenamento Diretos para o Windows Server 2019
+description: Como atualizar um cluster Espaços de Armazenamento Diretos para o Windows Server 2019-ao mesmo tempo em que mantém as VMs em execução ou enquanto elas são interrompidas.
 author: robhindman
 ms.author: robhind
 manager: eldenc
@@ -8,75 +8,75 @@ ms.date: 03/06/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage-spaces
-ms.openlocfilehash: 54be649cc1753fe07c94105a31a0b738fb030ee0
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 9966ee0fd3c0a2d1df0180bf177dec03343efc14
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284359"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867192"
 ---
-# <a name="upgrade-a-storage-spaces-direct-cluster-to-windows-server-2019"></a>Atualizar um cluster de espaços de armazenamento diretos para o Windows Server 2019
+# <a name="upgrade-a-storage-spaces-direct-cluster-to-windows-server-2019"></a>Atualizar um cluster Espaços de Armazenamento Diretos para o Windows Server 2019
 
-Este tópico descreve como atualizar um cluster de espaços de armazenamento diretos para o Windows Server 2019. Há quatro abordagens para atualizar um cluster de espaços de armazenamento diretos do Windows Server 2016 para Windows Server 2019, usando o [execução do processo de atualização do sistema operacional do cluster](../../failover-clustering/Cluster-Operating-System-Rolling-Upgrade.md) — duas que envolvem manter as VMs em execução e duas que envolvem parar todas as VMs. Cada abordagem tem diferentes pontos fortes e fracos, portanto, selecione que um que melhor atenda às necessidades da sua organização:
+Este tópico descreve como atualizar um cluster Espaços de Armazenamento Diretos para o Windows Server 2019. Há quatro abordagens para atualizar um cluster Espaços de Armazenamento Diretos do Windows Server 2016 para o Windows Server 2019, usando o [processo de atualização sem interrupção do sistema operacional do cluster](../../failover-clustering/Cluster-Operating-System-Rolling-Upgrade.md) — dois que envolvem manter as VMs em execução e duas que envolvem a interrupção de todas as VMs. Cada abordagem tem pontos fortes e pontos fracos diferentes, portanto, selecione aquele que melhor atenda às necessidades da sua organização:
 
-- **Atualização in-loco durante a execução de VMs** em cada servidor no cluster — essa opção resulta em nenhum tempo de inatividade da VM, mas você precisará aguardar trabalhos de armazenamento (reparo espelho) ser concluído depois que cada servidor é atualizado.
+- **Atualização in-loco enquanto as VMs estão em execução** em cada servidor do cluster — essa opção não provoca nenhum tempo de inatividade da VM, mas você precisará aguardar que os trabalhos de armazenamento (reparo de espelho) sejam concluídos após a atualização de cada servidor.
 
-- **Instalação limpa do sistema operacional durante a execução de VMs** em cada servidor no cluster — essa opção resulta em nenhum tempo de inatividade da VM, mas você precisará aguardar trabalhos de armazenamento (reparo espelho) concluir depois de cada servidor é atualizado, e você terá que definir cada servidor e todos os seus aplicativos e funções novamente.
+- **Instalação limpa do sistema operacional enquanto as VMs estão em execução** em cada servidor do cluster — essa opção não provoca nenhum tempo de inatividade da VM, mas você precisará aguardar que os trabalhos de armazenamento (reparo de espelho) sejam concluídos após a atualização de cada servidor e precisará configurar cada servidor e todos os seus aplicativos e funções novamente.
 
-- **Atualização in-loco enquanto as VMs são interrompidas** em cada servidor no cluster — essa opção resulta em tempo de inatividade da VM, mas você não precisa esperar para trabalhos de armazenamento (reparo espelho), portanto, é mais rápido.
+- **Atualização in-loco enquanto as VMs são interrompidas** em cada servidor no cluster — essa opção incorre em tempo de inatividade da VM, mas você não precisa esperar por trabalhos de armazenamento (reparo de espelho), portanto, é mais rápido.
 
-- **Limpar-instalação do sistema operacional enquanto as VMs são interrompidas** em cada servidor no cluster — essa opção resulta em tempo de inatividade da VM, mas você não precisa esperar para armazenamento trabalhos (reparo espelho), portanto, é mais rápido.
+- **Instalação limpa do sistema operacional enquanto as VMs são interrompidas** em cada servidor no cluster — essa opção incorre em tempo de inatividade da VM, mas você não precisa esperar por trabalhos de armazenamento (reparo de espelho) para que ele seja mais rápido.
 
 ## <a name="prerequisites-and-limitations"></a>Pré-requisitos e limitações
 
-Antes de prosseguir com a atualização:
+Antes de prosseguir com uma atualização:
 
-- Verifique se você tem backups utilizáveis, caso haja problemas durante o processo de atualização.
+- Verifique se você tem backups utilizáveis caso haja algum problema durante o processo de atualização.
 
-- Verifique se o fornecedor do hardware tem um BIOS, firmware e drivers para os servidores que eles oferecerá suporte no Windows Server 2019.
+- Verifique se o seu fornecedor de hardware tem BIOS, firmware e drivers para seus servidores para os quais eles terão suporte no Windows Server 2019.
 
-Existem algumas limitações com o processo de atualização a serem consideradas:
+Há algumas limitações com o processo de atualização a ser considerado:
 
-- Para habilitar espaços de armazenamento diretos com compilações de 2019 do Windows Server anteriores ao 176693.292, os clientes talvez seja necessário entrar em contato com o suporte da Microsoft para chaves do registro que habilita a funcionalidade espaços de armazenamento diretos e rede definida pelo Software. Para obter mais informações, consulte Microsoft Knowledge Base [4464776 do artigo](https://support.microsoft.com/help/4464776/software-defined-data-center-and-software-defined-networking).
+- Para habilitar Espaços de Armazenamento Diretos com compilações do Windows Server 2019 anteriores a 176693,292, os clientes talvez precisem entrar em contato com o suporte da Microsoft para chaves do registro que habilitam a funcionalidade de rede definida pelo Espaços de Armazenamento Diretos e pelo software. Para obter mais informações, consulte o [artigo 4464776](https://support.microsoft.com/help/4464776/software-defined-data-center-and-software-defined-networking)da base de dados de conhecimento Microsoft.
 
 - Ao atualizar um cluster com volumes ReFS, há algumas limitações:
 
-- A atualização é totalmente suportada em volumes ReFS, no entanto, os volumes atualizados não se beneficiar de ReFS aprimoramentos no Windows Server 2019. Esses benefícios, como melhorar o desempenho de paridade de aceleração de espelho, exigem um volume do Windows Server 2019 ReFS recém-criado. Em outras palavras, você precisaria criar novos volumes usando o `New-Volume` cmdlet ou o Gerenciador do servidor. Aqui estão alguns dos aprimoramentos do ReFS obtém novos volumes:
+- A atualização tem suporte total em volumes ReFS, no entanto, os volumes atualizados não se beneficiarão dos aprimoramentos do ReFS no Windows Server 2019. Esses benefícios, como o aumento do desempenho da paridade acelerada por espelhamento, exigem um volume ReFS do Windows Server 2019 criado recentemente. Em outras palavras, você teria que criar novos volumes usando o `New-Volume` cmdlet ou Gerenciador do servidor. Aqui estão alguns dos aprimoramentos de ReFS que novos volumes obterão:
 
-    - **Bypass de mapa log**: uma melhoria de desempenho no ReFS que só se aplica aos sistemas (espaços de armazenamento diretos) clusterizados e não se aplica a pools de armazenamento autônomo.
+    - **Log-bypass do mapa**: uma melhoria de desempenho no ReFS que só se aplica a sistemas clusterizados (espaços de armazenamento diretos) e não se aplica a pools de armazenamento autônomos.
 
-    - **A compactação** melhorias na eficiência no Windows Server 2019 resiliente com vários volumes específicos.
+    - Melhorias de eficiência de **compactação** no Windows Server 2019 que são específicas para volumes de várias resilientes.
 
-- Antes de atualizar um servidor Windows Server 2016 espaços de armazenamento diretos do cluster, é recomendável colocar o servidor para o modo de manutenção do armazenamento. Para obter mais informações, consulte a seção eventos 5120 [solucionar problemas de espaços de armazenamento diretos](troubleshooting-storage-spaces.md). Embora esse problema foi corrigido no Windows Server 2016, é recomendável colocar cada servidor de espaços de armazenamento diretos no modo de manutenção de armazenamento durante a atualização como uma prática recomendada.
+- Antes de atualizar um servidor de cluster Espaços de Armazenamento Diretos do Windows Server 2016, é recomendável colocar o servidor no modo de manutenção de armazenamento. Para obter mais informações, consulte a seção evento 5120 de [solucionar problemas espaços de armazenamento diretos](troubleshooting-storage-spaces.md). Embora esse problema tenha sido corrigido no Windows Server 2016, recomendamos colocar cada servidor de Espaços de Armazenamento Diretos no modo de manutenção de armazenamento durante a atualização como uma prática recomendada.
 
-- Há um problema conhecido com os ambientes de rede definida pelo Software que usam o conjunto de opções. Esse problema envolve migrações ao vivo de VM do Hyper-V do Windows Server 2019 para o Windows Server 2016 (migração ao vivo para um sistema operacional anterior). Para garantir que as migrações ao vivo bem-sucedidas, é recomendável alterar uma configuração de rede VM em VMs que estão sendo migradas ao vivo de 2019 do Windows Server para o Windows Server 2016. Esse problema foi corrigido para Windows Server 2019 no pacote cumulativo de hotfix do D 2019-01, também conhecido como 17763.292 de compilação. Para obter mais informações, consulte Microsoft Knowledge Base [4476976 do artigo](https://support.microsoft.com/help/4476976/windows-10-update-kb4476976).
+- Há um problema conhecido com ambientes de rede definidos pelo software que usam opções SET. Esse problema envolve migrações dinâmicas de VM do Hyper-V do Windows Server 2019 para o Windows Server 2016 (migração ao vivo para um sistema operacional anterior). Para garantir migrações dinâmicas bem-sucedidas, é recomendável alterar uma configuração de rede VM em VMs que estão sendo migradas ao vivo do Windows Server 2019 para o Windows Server 2016. Esse problema é corrigido para o Windows Server 2019 no pacote de rollup do hotfix 2019-01D, também conhecido como Build 17763,292. Para obter mais informações, consulte o [artigo 4476976](https://support.microsoft.com/help/4476976/windows-10-update-kb4476976)da base de dados de conhecimento Microsoft.
 
-Por causa dos problemas conhecidos acima, alguns clientes podem considerar a criação de um novo cluster do Windows Server 2019 e copiar dados do cluster antigo, em vez de atualizar seus clusters do Windows Server 2016 usando um dos quatro processos descritos abaixo.
+Devido aos problemas conhecidos acima, alguns clientes podem considerar a criação de um novo cluster do Windows Server 2019 e a cópia de dados do cluster antigo, em vez de atualizar seus clusters do Windows Server 2016 usando um dos quatro processos descritos abaixo.
 
-## <a name="performing-an-in-place-upgrade-while-vms-are-running"></a>Executar uma atualização in-loco, enquanto as VMs estão em execução
+## <a name="performing-an-in-place-upgrade-while-vms-are-running"></a>Executando uma atualização in-loco enquanto as VMs estão em execução
 
-Essa opção resulta em nenhum tempo de inatividade da VM, mas você precisará aguardar trabalhos de armazenamento (reparo espelho) ser concluído depois que cada servidor é atualizado. Embora os servidores individuais serão reiniciados em sequência durante o processo de atualização, os servidores restantes no cluster, bem como todas as VMs, permanecerão em execução.
+Essa opção não provoca nenhum tempo de inatividade da VM, mas você precisará aguardar a conclusão dos trabalhos de armazenamento (reparo de espelho) após a atualização de cada servidor. Embora os servidores individuais sejam reiniciados sequencialmente durante o processo de atualização, os servidores restantes no cluster, bem como todas as VMs, permanecerão em execução.
 
-1. Verifique se todos os servidores no cluster tiveram instalado as atualizações mais recentes do Windows. Para obter mais informações, consulte [histórico de atualizações do Windows 10 e Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history). No mínimo, instale o Microsoft Knowledge Base [4487006 do artigo](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) (19 de fevereiro de 2019). O número de build (consulte `ver` comando) deve ser 14393.2828 ou posterior.
+1. Verifique se todos os servidores no cluster instalaram as atualizações mais recentes do Windows. Para obter mais informações, consulte histórico de atualização do Windows [10 e do Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history). No mínimo, instale o [artigo 4487006](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) da base de dados de conhecimento Microsoft (19 de fevereiro de 2019). O número de Build ( `ver` consulte o comando) deve ser 14393,2828 ou superior.
 
-2. Se você estiver usando a rede definida pelo Software com o conjunto de opções, abra uma sessão do PowerShell com privilégios elevados e execute o seguinte comando para desabilitar verificações de verificação de migração ao vivo de VM em todas as VMs no cluster:
+2. Se você estiver usando a rede definida pelo software com opções SET, abra uma sessão do PowerShell com privilégios elevados e execute o seguinte comando para desabilitar as verificações de verificação da migração dinâmica da VM em todas as VMs no cluster:
 
    ```PowerShell
    Get-ClusterResourceType -Cluster {clusterName} -Name "Virtual Machine" |
    Set-ClusterParameter -Create SkipMigrationDestinationCheck -Value 1
    ```
 
-3. Execute as seguintes etapas em um servidor de cluster por vez:
+3. Execute as seguintes etapas em um servidor de cluster de cada vez:
 
-   1. Use migração ao vivo de VM do Hyper-V para mover VMs em execução fora do servidor que você está prestes a atualizar.
+   1. Use a migração dinâmica de VM do Hyper-V para mover VMs em execução do servidor que você está prestes a atualizar.
 
-   2. Pausar o servidor de cluster usando o seguinte comando do PowerShell — Observe que alguns grupos internos estão ocultas. É recomendável que essa etapa ser cuidadoso — se você já não mora migrar VMs fora do servidor, esse cmdlet fará que para você, portanto, você pode ignorar a etapa anterior se você preferir.
+   2. Pause o servidor de cluster usando o seguinte comando do PowerShell — Observe que alguns grupos internos estão ocultos. É recomendável que essa etapa seja cuidadosa — se você não migrar VMs ao vivo do servidor, esse cmdlet fará isso para você, portanto, você poderá ignorar a etapa anterior se preferir.
 
         ```PowerShell
        Suspend-ClusterNode -Drain
        ```
 
-   3. Coloque o servidor no modo de manutenção do armazenamento, executando os seguintes comandos do PowerShell:
+   3. Coloque o servidor no modo de manutenção de armazenamento executando os seguintes comandos do PowerShell:
 
        ```PowerShell
        Get-StorageFaultDomain -type StorageScaleUnit | 
@@ -84,17 +84,17 @@ Essa opção resulta em nenhum tempo de inatividade da VM, mas você precisará 
        Enable-StorageMaintenanceMode
        ```
 
-   4. Execute o seguinte cmdlet para verificar que o **OperationalStatus** valor estiver **no modo de manutenção**:
+   4. Execute o seguinte cmdlet para verificar se o valor de **OperationalStatus** está **no modo de manutenção**:
 
        ```PowerShell
        Get-PhysicalDisk
        ```
 
-   5. Executar uma instalação de atualização do Windows Server 2019 no servidor executando **setup.exe** e usando a opção "Manter aplicativos e arquivos pessoais". Após a instalação for concluída, o servidor permanecerá no cluster e o cluster de serviço é iniciado automaticamente.
+   5. Execute uma instalação de atualização do Windows Server 2019 no servidor executando **Setup. exe** e usando a opção "manter arquivos pessoais e aplicativos". Após a conclusão da instalação, o servidor permanece no cluster e o serviço de cluster é iniciado automaticamente.
 
-   6. Verifique se o servidor recém-atualizado tem as atualizações mais recentes do Windows Server 2019. Para obter mais informações, consulte [histórico de atualizações do Windows 10 e Windows Server 2019](https://support.microsoft.com/help/4464619/windows-10-update-history). O número de build (consulte `ver` comando) deve ser 17763.292 ou posterior.
+   6. Verifique se o servidor recentemente atualizado tem as atualizações mais recentes do Windows Server 2019. Para obter mais informações, consulte histórico de atualização do Windows [10 e do Windows Server 2019](https://support.microsoft.com/help/4464619/windows-10-update-history). O número de Build ( `ver` consulte o comando) deve ser 17763,292 ou superior.
 
-   7. Remova o servidor de modo de manutenção do armazenamento usando o seguinte comando do PowerShell:
+   7. Remova o servidor do modo de manutenção de armazenamento usando o seguinte comando do PowerShell:
 
        ```PowerShell
        Get-StorageFaultDomain -type StorageScaleUnit | 
@@ -108,7 +108,7 @@ Essa opção resulta em nenhum tempo de inatividade da VM, mas você precisará 
        Resume-ClusterNode
        ```
 
-   9. Aguarde para trabalhos de reparo de armazenamento para concluir e todos os discos retornar ao estado íntegro. Isso pode levar um tempo considerável, dependendo do número de VMs em execução durante a atualização do servidor. Aqui estão os comandos para executar:
+   9. Aguarde a conclusão dos trabalhos de reparo de armazenamento e para que todos os discos retornem a um estado íntegro. Isso pode levar um tempo considerável, dependendo do número de VMs em execução durante a atualização do servidor. Estes são os comandos a serem executados:
 
        ```PowerShell
        Get-StorageJob
@@ -117,58 +117,58 @@ Essa opção resulta em nenhum tempo de inatividade da VM, mas você precisará 
 
 4. Atualize o próximo servidor no cluster.
 
-5. Depois que todos os servidores foram atualizados para o Windows Server 2019, use o seguinte cmdlet do PowerShell para atualizar o nível funcional do cluster.
+5. Depois que todos os servidores tiverem sido atualizados para o Windows Server 2019, use o seguinte cmdlet do PowerShell para atualizar o nível funcional do cluster.
 
    ```PowerShell
    Update-ClusterFunctionalLevel
    ```
 
    > [!NOTE]
-   > É recomendável atualizar o nível funcional do cluster assim que possível, embora tecnicamente tenha até quatro semanas para fazê-lo.
+   > É recomendável atualizar o nível funcional do cluster assim que possível, embora tecnicamente você tenha até quatro semanas para fazer isso.
 
-6. Depois que o nível funcional do cluster tiver sido atualizado, use o seguinte cmdlet para atualizar o pool de armazenamento. Nesse ponto, novos cmdlets, como `Get-ClusterPerf` será totalmente operacional em qualquer servidor no cluster.
+6. Depois que o nível funcional do cluster tiver sido atualizado, use o cmdlet a seguir para atualizar o pool de armazenamento. Neste ponto, novos cmdlets como `Get-ClusterPerf` estarão totalmente operacionais em qualquer servidor no cluster.
 
    ```PowerShell
    Update-StoragePool
    ```
 
-7. Opcionalmente, atualizar os níveis de configuração de VM, interrompendo a cada VM, usando o `Update-VMVersion` cmdlet e, em seguida, reiniciando as máquinas virtuais.
+7. Opcionalmente, atualize os níveis de configuração da VM interrompendo `Update-VMVersion` cada VM, usando o cmdlet e, em seguida, iniciando as VMs novamente.
 
-8. Se você estiver usando a rede definida pelo Software com o conjunto de opções e verificações de migração ao vivo de VM desativadas conforme instruído a acima, usam o seguinte cmdlet para habilitar novamente as verificações de VM ao vivo:
+8. Se você estiver usando a rede definida pelo software com opções SET e desabilitada as verificações de migração dinâmica ao vivo conforme instruído acima, use o seguinte cmdlet para reabilitar as verificações de verificação dinâmicas de VM:
 
    ```PowerShell
    Get-ClusterResourceType -Cluster {clusterName} -Name "Virtual Machine" |
    Set-ClusterParameter  SkipMigrationDestinationCheck -Value 0
    ```
 
-9. Verifique se o cluster atualizado funciona conforme o esperado. As funções devem fazer o failover corretamente e se a migração ao vivo da VM é usada no cluster, VMs devem migrar com êxito ao vivo.
+9. Verifique se o cluster atualizado funciona conforme o esperado. As funções devem fazer failover corretamente e se a migração dinâmica da VM for usada no cluster, as VMs devem migrar ao vivo com êxito.
 
-10. Validar o cluster executando a validação de Cluster (`Test-Cluster`) e examinando o relatório de validação de cluster.
+10. Valide o cluster executando a validação de cluster`Test-Cluster`() e examinando o relatório de validação de cluster.
 
-## <a name="performing-a-clean-os-installation-while-vms-are-running"></a>Executar uma instalação limpa do sistema operacional, enquanto as VMs estão em execução
+## <a name="performing-a-clean-os-installation-while-vms-are-running"></a>Executando uma instalação limpa do sistema operacional enquanto as VMs estão em execução
 
-Essa opção resulta em nenhum tempo de inatividade da VM, mas você precisará aguardar trabalhos de armazenamento (reparo espelho) ser concluído depois que cada servidor é atualizado. Embora os servidores individuais serão reiniciados em sequência durante o processo de atualização, os servidores restantes no cluster, bem como todas as VMs, permanecerão em execução.
+Essa opção não provoca nenhum tempo de inatividade da VM, mas você precisará aguardar a conclusão dos trabalhos de armazenamento (reparo de espelho) após a atualização de cada servidor. Embora os servidores individuais sejam reiniciados sequencialmente durante o processo de atualização, os servidores restantes no cluster, bem como todas as VMs, permanecerão em execução.
 
-1. Verifique se todos os servidores no cluster estão funcionando as atualizações mais recentes. Para obter mais informações, consulte [histórico de atualizações do Windows 10 e Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history). No mínimo, instale o Microsoft Knowledge Base [4487006 do artigo](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) (19 de fevereiro de 2019). O número de build (consulte `ver` comando) deve ser 14393.2828 ou posterior.
+1. Verifique se todos os servidores no cluster estão executando as atualizações mais recentes. Para obter mais informações, consulte histórico de atualização do Windows [10 e do Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history). No mínimo, instale o [artigo 4487006](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) da base de dados de conhecimento Microsoft (19 de fevereiro de 2019). O número de Build ( `ver` consulte o comando) deve ser 14393,2828 ou superior.
 
-2. Se você estiver usando a rede definida pelo Software com o conjunto de opções, abra uma sessão do PowerShell com privilégios elevados e execute o seguinte comando para desabilitar verificações de verificação de migração ao vivo de VM em todas as VMs no cluster:
+2. Se você estiver usando a rede definida pelo software com opções SET, abra uma sessão do PowerShell com privilégios elevados e execute o seguinte comando para desabilitar as verificações de verificação da migração dinâmica da VM em todas as VMs no cluster:
 
    ```PowerShell
    Get-ClusterResourceType -Cluster {clusterName} -Name "Virtual Machine" |
    Set-ClusterParameter -Create SkipMigrationDestinationCheck -Value 1
    ```
 
-3. Execute as seguintes etapas em um servidor de cluster por vez:
+3. Execute as seguintes etapas em um servidor de cluster de cada vez:
 
-   1. Use migração ao vivo de VM do Hyper-V para mover VMs em execução fora do servidor que você está prestes a atualizar.
+   1. Use a migração dinâmica de VM do Hyper-V para mover VMs em execução do servidor que você está prestes a atualizar.
 
-   2. Pausar o servidor de cluster usando o seguinte comando do PowerShell — Observe que alguns grupos internos estão ocultas. É recomendável que essa etapa ser cuidadoso — se você já não mora migrar VMs fora do servidor, esse cmdlet fará que para você, portanto, você pode ignorar a etapa anterior se você preferir.
+   2. Pause o servidor de cluster usando o seguinte comando do PowerShell — Observe que alguns grupos internos estão ocultos. É recomendável que essa etapa seja cuidadosa — se você não migrar VMs ao vivo do servidor, esse cmdlet fará isso para você, portanto, você poderá ignorar a etapa anterior se preferir.
 
         ```PowerShell
        Suspend-ClusterNode -Drain
        ```
 
-   3. Coloque o servidor no modo de manutenção do armazenamento, executando os seguintes comandos do PowerShell:
+   3. Coloque o servidor no modo de manutenção de armazenamento executando os seguintes comandos do PowerShell:
 
        ```PowerShell
        Get-StorageFaultDomain -type StorageScaleUnit | 
@@ -176,7 +176,7 @@ Essa opção resulta em nenhum tempo de inatividade da VM, mas você precisará 
        Enable-StorageMaintenanceMode
        ```
 
-   4. Execute o seguinte cmdlet para verificar que o **OperationalStatus** valor estiver **no modo de manutenção**:
+   4. Execute o seguinte cmdlet para verificar se o valor de **OperationalStatus** está **no modo de manutenção**:
 
        ```PowerShell
        Get-PhysicalDisk
@@ -188,21 +188,21 @@ Essa opção resulta em nenhum tempo de inatividade da VM, mas você precisará 
        Remove-ClusterNode <ServerName>
        ```
 
-   4. Executar uma instalação limpa do Windows Server 2019 no servidor: Formatar a unidade de sistema, execute **setup.exe** e usar o "Nothing" opção. Você terá que configurar a identidade do servidor, funções, recursos e aplicativos após a conclusão da instalação e o servidor for reiniciado.
+   4. Execute uma instalação limpa do Windows Server 2019 no servidor: formate a unidade do sistema, execute **Setup. exe** e use a opção "Nothing". Você precisará configurar a identidade do servidor, as funções, os recursos e os aplicativos após a conclusão da instalação e a reinicialização do servidor.
 
-   5. Instale a função Hyper-V e o recurso de Clustering de Failover no servidor (você pode usar o `Install-WindowsFeature` cmdlet).
+   5. Instale a função Hyper-V e o recurso de clustering de failover no servidor (você pode usar `Install-WindowsFeature` o cmdlet).
 
-   6. Instale os drivers mais recentes armazenamento e rede para o hardware que foram aprovados pelo fabricante do servidor para uso com espaços de armazenamento diretos.
+   6. Instale os drivers de armazenamento e de rede mais recentes para o hardware que foram aprovados pelo fabricante do servidor para uso com o Espaços de Armazenamento Diretos.
 
-   7. Verifique se o servidor recém-atualizado tem as atualizações mais recentes do Windows Server 2019. Para obter mais informações, consulte [histórico de atualizações do Windows 10 e Windows Server 2019](https://support.microsoft.com/help/4464619/windows-10-update-history). O número de build (consulte `ver` comando) deve ser 17763.292 ou posterior.
+   7. Verifique se o servidor recentemente atualizado tem as atualizações mais recentes do Windows Server 2019. Para obter mais informações, consulte histórico de atualização do Windows [10 e do Windows Server 2019](https://support.microsoft.com/help/4464619/windows-10-update-history). O número de Build ( `ver` consulte o comando) deve ser 17763,292 ou superior.
 
-   8. Ingresse novamente o servidor ao cluster usando o seguinte comando do PowerShell:
+   8. Reingresse o servidor no cluster usando o seguinte comando do PowerShell:
 
        ```PowerShell
        Add-ClusterNode
        ```
 
-   9. Remova o servidor de modo de manutenção de armazenamento usando os seguintes comandos do PowerShell:
+   9. Remova o servidor do modo de manutenção de armazenamento usando os seguintes comandos do PowerShell:
 
        ```PowerShell
        Get-StorageFaultDomain -type StorageScaleUnit | 
@@ -210,7 +210,7 @@ Essa opção resulta em nenhum tempo de inatividade da VM, mas você precisará 
        Disable-StorageMaintenanceMode
        ```
 
-   10. Aguarde para trabalhos de reparo de armazenamento para concluir e todos os discos retornar ao estado íntegro. Isso pode levar um tempo considerável, dependendo do número de VMs em execução durante a atualização do servidor. Aqui estão os comandos para executar:
+   10. Aguarde a conclusão dos trabalhos de reparo de armazenamento e para que todos os discos retornem a um estado íntegro. Isso pode levar um tempo considerável, dependendo do número de VMs em execução durante a atualização do servidor. Estes são os comandos a serem executados:
 
         ```PowerShell
         Get-StorageJob
@@ -219,51 +219,51 @@ Essa opção resulta em nenhum tempo de inatividade da VM, mas você precisará 
 
 4. Atualize o próximo servidor no cluster.
 
-5. Depois que todos os servidores foram atualizados para o Windows Server 2019, use o seguinte cmdlet do PowerShell para atualizar o nível funcional do cluster.
+5. Depois que todos os servidores tiverem sido atualizados para o Windows Server 2019, use o seguinte cmdlet do PowerShell para atualizar o nível funcional do cluster.
     
    ```PowerShell
    Update-ClusterFunctionalLevel
    ```
 
    > [!NOTE]
-   > É recomendável atualizar o nível funcional do cluster assim que possível, embora tecnicamente tenha até quatro semanas para fazê-lo.
+   > É recomendável atualizar o nível funcional do cluster assim que possível, embora tecnicamente você tenha até quatro semanas para fazer isso.
 
-6. Depois que o nível funcional do cluster tiver sido atualizado, use o seguinte cmdlet para atualizar o pool de armazenamento. Nesse ponto, novos cmdlets, como `Get-ClusterPerf` será totalmente operacional em qualquer servidor no cluster.
+6. Depois que o nível funcional do cluster tiver sido atualizado, use o cmdlet a seguir para atualizar o pool de armazenamento. Neste ponto, novos cmdlets como `Get-ClusterPerf` estarão totalmente operacionais em qualquer servidor no cluster.
 
    ```PowerShell
    Update-StoragePool
    ```
 
-7. Opcionalmente, atualizar os níveis de configuração de VM parando cada VM e usando o `Update-VMVersion` cmdlet e, em seguida, reiniciando as máquinas virtuais.
+7. Opcionalmente, atualize os níveis de configuração da VM interrompendo `Update-VMVersion` cada VM e usando o cmdlet e, em seguida, iniciando as VMs novamente.
 
-8. Se você estiver usando a rede definida pelo Software com o conjunto de opções e verificações de migração ao vivo de VM desativadas conforme instruído a acima, usam o seguinte cmdlet para habilitar novamente as verificações de VM ao vivo:
+8. Se você estiver usando a rede definida pelo software com opções SET e desabilitada as verificações de migração dinâmica ao vivo conforme instruído acima, use o seguinte cmdlet para reabilitar as verificações de verificação dinâmicas de VM:
 
    ```PowerShell
    Get-ClusterResourceType -Cluster {clusterName} -Name "Virtual Machine" | 
    Set-ClusterParameter SkipMigrationDestinationCheck -Value 0
    ```
 
-9. Verifique se o cluster atualizado funciona conforme o esperado. As funções devem fazer o failover corretamente e se a migração ao vivo da VM é usada no cluster, VMs devem migrar com êxito ao vivo.
+9. Verifique se o cluster atualizado funciona conforme o esperado. As funções devem fazer failover corretamente e se a migração dinâmica da VM for usada no cluster, as VMs devem migrar ao vivo com êxito.
 
-10. Validar o cluster executando a validação de Cluster (`Test-Cluster`) e examinando o relatório de validação de cluster.
+10. Valide o cluster executando a validação de cluster`Test-Cluster`() e examinando o relatório de validação de cluster.
 
-## <a name="performing-an-in-place-upgrade-while-vms-are-stopped"></a>Realizar uma atualização in-loco, enquanto as VMs são interrompidas
+## <a name="performing-an-in-place-upgrade-while-vms-are-stopped"></a>Executando uma atualização in-loco enquanto as VMs são interrompidas
 
-Essa opção resulta em tempo de inatividade da VM, mas pode levar menos tempo do que se você manteve as VMs em execução durante a atualização, porque você não precisa esperar para trabalhos de armazenamento (reparo espelho) ser concluído depois que cada servidor é atualizado. Embora os servidores individuais serão reiniciados em sequência durante o processo de atualização, os servidores restantes no cluster continuam em execução.
+Essa opção incorre em tempo de inatividade da VM, mas pode demorar menos do que se você mantiver as VMs em execução durante a atualização, pois não precisa esperar que os trabalhos de armazenamento (reparo de espelho) sejam concluídos após a atualização de cada servidor. Embora os servidores individuais sejam reiniciados sequencialmente durante o processo de atualização, os servidores restantes no cluster permanecem em execução.
 
-1. Verifique se todos os servidores no cluster estão funcionando as atualizações mais recentes. Para obter mais informações, consulte [histórico de atualizações do Windows 10 e Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history). No mínimo, instale o Microsoft Knowledge Base [4487006 do artigo](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) (19 de fevereiro de 2019). O número de build (consulte `ver` comando) deve ser 14393.2828 ou posterior.
+1. Verifique se todos os servidores no cluster estão executando as atualizações mais recentes. Para obter mais informações, consulte histórico de atualização do Windows [10 e do Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history). No mínimo, instale o [artigo 4487006](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) da base de dados de conhecimento Microsoft (19 de fevereiro de 2019). O número de Build ( `ver` consulte o comando) deve ser 14393,2828 ou superior.
 
 2. Pare as VMs em execução no cluster.
 
-3. Execute as seguintes etapas em um servidor de cluster por vez:
+3. Execute as seguintes etapas em um servidor de cluster de cada vez:
 
-   1. Pausar o servidor de cluster usando o seguinte comando do PowerShell — Observe que alguns grupos internos estão ocultas. É recomendável que essa etapa ser cuidadoso.
+   1. Pause o servidor de cluster usando o seguinte comando do PowerShell — Observe que alguns grupos internos estão ocultos. É recomendável que essa etapa seja cuidadosa.
 
         ```PowerShell
        Suspend-ClusterNode -Drain
        ```
 
-   2. Coloque o servidor no modo de manutenção do armazenamento, executando os seguintes comandos do PowerShell:
+   2. Coloque o servidor no modo de manutenção de armazenamento executando os seguintes comandos do PowerShell:
 
        ```PowerShell
        Get-StorageFaultDomain -type StorageScaleUnit | 
@@ -271,20 +271,20 @@ Essa opção resulta em tempo de inatividade da VM, mas pode levar menos tempo d
        Enable-StorageMaintenanceMode
        ```
 
-   3. Execute o seguinte cmdlet para verificar que o **OperationalStatus** valor estiver **no modo de manutenção**:
+   3. Execute o seguinte cmdlet para verificar se o valor de **OperationalStatus** está **no modo de manutenção**:
 
        ```PowerShell
        Get-PhysicalDisk
        ```
 
-   4. Executar uma instalação de atualização do Windows Server 2019 no servidor executando **setup.exe** e usando a opção "Manter aplicativos e arquivos pessoais".  
-   Após a instalação for concluída, o servidor permanecerá no cluster e o cluster de serviço é iniciado automaticamente.
+   4. Execute uma instalação de atualização do Windows Server 2019 no servidor executando **Setup. exe** e usando a opção "manter arquivos pessoais e aplicativos".  
+   Após a conclusão da instalação, o servidor permanece no cluster e o serviço de cluster é iniciado automaticamente.
 
-   5.  Verifique se o servidor recém-atualizado tem as atualizações mais recentes do Windows Server 2019.  
-   Para obter mais informações, consulte [histórico de atualizações do Windows 10 e Windows Server 2019](https://support.microsoft.com/help/4464619/windows-10-update-history).
-   O número de build (consulte `ver` comando) deve ser 17763.292 ou posterior.
+   5.  Verifique se o servidor recentemente atualizado tem as atualizações mais recentes do Windows Server 2019.  
+   Para obter mais informações, consulte histórico de atualização do Windows [10 e do Windows Server 2019](https://support.microsoft.com/help/4464619/windows-10-update-history).
+   O número de Build ( `ver` consulte o comando) deve ser 17763,292 ou superior.
 
-   6.  Remova o servidor de modo de manutenção de armazenamento usando os seguintes comandos do PowerShell:
+   6.  Remova o servidor do modo de manutenção de armazenamento usando os seguintes comandos do PowerShell:
 
        ```PowerShell
        Get-StorageFaultDomain -type StorageScaleUnit | 
@@ -298,8 +298,8 @@ Essa opção resulta em tempo de inatividade da VM, mas pode levar menos tempo d
        Resume-ClusterNode
        ```
 
-   8.  Aguarde para trabalhos de reparo de armazenamento para concluir e todos os discos retornar ao estado íntegro.  
-   Isso deve ser relativamente rápido, já que as VMs não estão em execução. Aqui estão os comandos para executar:
+   8.  Aguarde a conclusão dos trabalhos de reparo de armazenamento e para que todos os discos retornem a um estado íntegro.  
+   Isso deve ser relativamente rápido, pois as VMs não estão em execução. Estes são os comandos a serem executados:
 
        ```PowerShell
        Get-StorageJob
@@ -307,51 +307,51 @@ Essa opção resulta em tempo de inatividade da VM, mas pode levar menos tempo d
        ```
 
 4. Atualize o próximo servidor no cluster.
-5. Depois que todos os servidores foram atualizados para o Windows Server 2019, use o seguinte cmdlet do PowerShell para atualizar o nível funcional do cluster.
+5. Depois que todos os servidores tiverem sido atualizados para o Windows Server 2019, use o seguinte cmdlet do PowerShell para atualizar o nível funcional do cluster.
     
    ```PowerShell
    Update-ClusterFunctionalLevel
    ```
 
    > [!NOTE]
-   >   É recomendável atualizar o nível funcional do cluster assim que possível, embora tecnicamente tenha até quatro semanas para fazê-lo.
+   >   É recomendável atualizar o nível funcional do cluster assim que possível, embora tecnicamente você tenha até quatro semanas para fazer isso.
 
-6. Depois que o nível funcional do cluster tiver sido atualizado, use o seguinte cmdlet para atualizar o pool de armazenamento.  
-   Nesse ponto, novos cmdlets, como `Get-ClusterPerf` será totalmente operacional em qualquer servidor no cluster.
+6. Depois que o nível funcional do cluster tiver sido atualizado, use o cmdlet a seguir para atualizar o pool de armazenamento.  
+   Neste ponto, novos cmdlets como `Get-ClusterPerf` estarão totalmente operacionais em qualquer servidor no cluster.
 
    ```PowerShell
    Update-StoragePool
    ```
 
-7. Iniciar as máquinas virtuais no cluster e verifique se está funcionando corretamente.
+7. Inicie as VMs no cluster e verifique se elas estão funcionando corretamente.
 
-8. Opcionalmente, atualizar os níveis de configuração de VM parando cada VM e usando o `Update-VMVersion` cmdlet e, em seguida, reiniciando as máquinas virtuais.
+8. Opcionalmente, atualize os níveis de configuração da VM interrompendo `Update-VMVersion` cada VM e usando o cmdlet e, em seguida, iniciando as VMs novamente.
 
 9. Verifique se o cluster atualizado funciona conforme o esperado.  
-   As funções devem fazer o failover corretamente e se a migração ao vivo da VM é usada no cluster, VMs devem migrar com êxito ao vivo.
+   As funções devem fazer failover corretamente e se a migração dinâmica da VM for usada no cluster, as VMs devem migrar ao vivo com êxito.
 
-10. Validar o cluster executando a validação de Cluster (`Test-Cluster`) e examinando o relatório de validação de cluster.
+10. Valide o cluster executando a validação de cluster`Test-Cluster`() e examinando o relatório de validação de cluster.
 
-## <a name="performing-a-clean-os-installation-while-vms-are-stopped"></a>A execução de uma instalação limpa do sistema operacional enquanto as VMs são interrompidas
+## <a name="performing-a-clean-os-installation-while-vms-are-stopped"></a>Executando uma instalação limpa do sistema operacional enquanto as VMs são interrompidas
 
-Essa opção resulta em tempo de inatividade da VM, mas pode levar menos tempo do que se você manteve as VMs em execução durante a atualização, porque você não precisa esperar para trabalhos de armazenamento (reparo espelho) ser concluído depois que cada servidor é atualizado. Embora os servidores individuais serão reiniciados em sequência durante o processo de atualização, os servidores restantes no cluster continuam em execução.
+Essa opção incorre em tempo de inatividade da VM, mas pode demorar menos do que se você mantiver as VMs em execução durante a atualização, pois não precisa esperar que os trabalhos de armazenamento (reparo de espelho) sejam concluídos após a atualização de cada servidor. Embora os servidores individuais sejam reiniciados sequencialmente durante o processo de atualização, os servidores restantes no cluster permanecem em execução.
 
-1. Verifique se todos os servidores no cluster estão funcionando as atualizações mais recentes.  
-   Para obter mais informações, consulte [histórico de atualizações do Windows 10 e Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history).
-   No mínimo, instale o Microsoft Knowledge Base [4487006 do artigo](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) (19 de fevereiro de 2019). O número de build (consulte `ver` comando) deve ser 14393.2828 ou posterior.
+1. Verifique se todos os servidores no cluster estão executando as atualizações mais recentes.  
+   Para obter mais informações, consulte histórico de atualização do Windows [10 e do Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history).
+   No mínimo, instale o [artigo 4487006](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) da base de dados de conhecimento Microsoft (19 de fevereiro de 2019). O número de Build ( `ver` consulte o comando) deve ser 14393,2828 ou superior.
 
 2. Pare as VMs em execução no cluster.
 
-3. Execute as seguintes etapas em um servidor de cluster por vez:
+3. Execute as seguintes etapas em um servidor de cluster de cada vez:
 
-   2. Pausar o servidor de cluster usando o seguinte comando do PowerShell — Observe que alguns grupos internos estão ocultas.  
-      É recomendável que essa etapa ser cuidadoso.
+   2. Pause o servidor de cluster usando o seguinte comando do PowerShell — Observe que alguns grupos internos estão ocultos.  
+      É recomendável que essa etapa seja cuidadosa.
 
        ```PowerShell
       Suspend-ClusterNode -Drain
       ```
 
-   3. Coloque o servidor no modo de manutenção do armazenamento, executando os seguintes comandos do PowerShell:
+   3. Coloque o servidor no modo de manutenção de armazenamento executando os seguintes comandos do PowerShell:
 
       ```PowerShell
       Get-StorageFaultDomain -type StorageScaleUnit | 
@@ -359,7 +359,7 @@ Essa opção resulta em tempo de inatividade da VM, mas pode levar menos tempo d
       Enable-StorageMaintenanceMode
       ```
 
-   4. Execute o seguinte cmdlet para verificar que o **OperationalStatus** valor estiver **no modo de manutenção**:
+   4. Execute o seguinte cmdlet para verificar se o valor de **OperationalStatus** está **no modo de manutenção**:
 
       ```PowerShell
       Get-PhysicalDisk
@@ -371,24 +371,24 @@ Essa opção resulta em tempo de inatividade da VM, mas pode levar menos tempo d
       Remove-ClusterNode <ServerName>
       ```
 
-   6. Executar uma instalação limpa do Windows Server 2019 no servidor: Formatar a unidade de sistema, execute **setup.exe** e usar o "Nothing" opção.  
-      Você terá que configurar a identidade do servidor, funções, recursos e aplicativos após a conclusão da instalação e o servidor for reiniciado.
+   6. Execute uma instalação limpa do Windows Server 2019 no servidor: formate a unidade do sistema, execute **Setup. exe** e use a opção "Nothing".  
+      Você precisará configurar a identidade do servidor, as funções, os recursos e os aplicativos após a conclusão da instalação e a reinicialização do servidor.
 
-   7. Instale a função Hyper-V e o recurso de Clustering de Failover no servidor (você pode usar o `Install-WindowsFeature` cmdlet).
+   7. Instale a função Hyper-V e o recurso de clustering de failover no servidor (você pode usar `Install-WindowsFeature` o cmdlet).
 
-   8. Instale os drivers mais recentes armazenamento e rede para o hardware que foram aprovados pelo fabricante do servidor para uso com espaços de armazenamento diretos.
+   8. Instale os drivers de armazenamento e de rede mais recentes para o hardware que foram aprovados pelo fabricante do servidor para uso com o Espaços de Armazenamento Diretos.
 
-   9. Verifique se o servidor recém-atualizado tem as atualizações mais recentes do Windows Server 2019.  
-      Para obter mais informações, consulte [histórico de atualizações do Windows 10 e Windows Server 2019](https://support.microsoft.com/help/4464619/windows-10-update-history).
-      O número de build (consulte `ver` comando) deve ser 17763.292 ou posterior.
+   9. Verifique se o servidor recentemente atualizado tem as atualizações mais recentes do Windows Server 2019.  
+      Para obter mais informações, consulte histórico de atualização do Windows [10 e do Windows Server 2019](https://support.microsoft.com/help/4464619/windows-10-update-history).
+      O número de Build ( `ver` consulte o comando) deve ser 17763,292 ou superior.
 
-   10. Ingresse novamente o servidor ao cluster usando o seguinte comando do PowerShell:
+   10. Reingresse o servidor no cluster usando o seguinte comando do PowerShell:
 
       ```PowerShell
       Add-ClusterNode
       ```
 
-   11. Remova o servidor de modo de manutenção do armazenamento usando o seguinte comando do PowerShell:
+   11. Remova o servidor do modo de manutenção de armazenamento usando o seguinte comando do PowerShell:
 
        ```PowerShell
        Get-StorageFaultDomain -type StorageScaleUnit | 
@@ -396,8 +396,8 @@ Essa opção resulta em tempo de inatividade da VM, mas pode levar menos tempo d
        Disable-StorageMaintenanceMode
        ```
 
-   12. Aguarde para trabalhos de reparo de armazenamento para concluir e todos os discos retornar ao estado íntegro.  
-       Isso pode levar um tempo considerável, dependendo do número de VMs em execução durante a atualização do servidor. Aqui estão os comandos para executar:
+   12. Aguarde a conclusão dos trabalhos de reparo de armazenamento e para que todos os discos retornem a um estado íntegro.  
+       Isso pode levar um tempo considerável, dependendo do número de VMs em execução durante a atualização do servidor. Estes são os comandos a serem executados:
 
        ```PowerShell
        Get-StorageJob
@@ -406,27 +406,27 @@ Essa opção resulta em tempo de inatividade da VM, mas pode levar menos tempo d
 
 4. Atualize o próximo servidor no cluster.
 
-5. Depois que todos os servidores foram atualizados para o Windows Server 2019, use o seguinte cmdlet do PowerShell para atualizar o nível funcional do cluster.
+5. Depois que todos os servidores tiverem sido atualizados para o Windows Server 2019, use o seguinte cmdlet do PowerShell para atualizar o nível funcional do cluster.
     
    ```PowerShell
    Update-ClusterFunctionalLevel
    ```
 
    > [!NOTE]
-   >   É recomendável atualizar o nível funcional do cluster assim que possível, embora tecnicamente tenha até quatro semanas para fazê-lo.
+   >   É recomendável atualizar o nível funcional do cluster assim que possível, embora tecnicamente você tenha até quatro semanas para fazer isso.
 
-6. Depois que o nível funcional do cluster tiver sido atualizado, use o seguinte cmdlet para atualizar o pool de armazenamento.  
-   Nesse ponto, novos cmdlets, como `Get-ClusterPerf` será totalmente operacional em qualquer servidor no cluster.
+6. Depois que o nível funcional do cluster tiver sido atualizado, use o cmdlet a seguir para atualizar o pool de armazenamento.  
+   Neste ponto, novos cmdlets como `Get-ClusterPerf` estarão totalmente operacionais em qualquer servidor no cluster.
 
    ```PowerShell
    Update-StoragePool
    ```
 
-7. Iniciar as máquinas virtuais no cluster e verifique se está funcionando corretamente.
+7. Inicie as VMs no cluster e verifique se elas estão funcionando corretamente.
 
-8. Opcionalmente, atualizar os níveis de configuração de VM parando cada VM e usando o `Update-VMVersion` cmdlet e, em seguida, reiniciando as máquinas virtuais.
+8. Opcionalmente, atualize os níveis de configuração da VM interrompendo `Update-VMVersion` cada VM e usando o cmdlet e, em seguida, iniciando as VMs novamente.
 
 9. Verifique se o cluster atualizado funciona conforme o esperado.  
-   As funções devem fazer o failover corretamente e se a migração ao vivo da VM é usada no cluster, VMs devem migrar com êxito ao vivo.
+   As funções devem fazer failover corretamente e se a migração dinâmica da VM for usada no cluster, as VMs devem migrar ao vivo com êxito.
 
-10. Validar o cluster executando a validação de Cluster (`Test-Cluster`) e examinando o relatório de validação de cluster.
+10. Valide o cluster executando a validação de cluster`Test-Cluster`() e examinando o relatório de validação de cluster.

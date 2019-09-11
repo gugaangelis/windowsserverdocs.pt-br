@@ -1,6 +1,6 @@
 ---
 title: nslookup lserver
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f2f787915f2b941d6c098d44de1bb0e04dbd491
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 30c5ba8b7fef9b09d854aca998948f7891d99a02
+ms.sourcegitcommit: ee8e0b217be6f6b2532ee7265fb4be00c106e124
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436915"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70878122"
 ---
 # <a name="nslookup-lserver"></a>nslookup lserver
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Altera o servidor padrão para o domínio especificado do sistema de nome de domínio (DNS).
+Altera o servidor padrão para o domínio DNS (sistema de nomes de domínio) especificado.
 ## <a name="syntax"></a>Sintaxe
 ```
 lserver <DNSDomain> 
@@ -34,10 +34,10 @@ lserver <DNSDomain>
 |    Parâmetro    |                      Descrição                      |
 |-----------------|-------------------------------------------------------|
 |   <DNSDomain>   | Especifica o novo domínio DNS para o servidor padrão.  |
-| {Ajuda &#124; ?} | Exibe um resumo breve dos **nslookup** subcomandos. |
+| {ajuda &#124; ?} | Exibe um breve resumo dos subcomandos **nslookup** . |
 
 ## <a name="remarks"></a>Comentários
-- O **lserver** comando usa o servidor inicial para pesquisar as informações sobre o domínio DNS especificado. Isso está em contraste com o **server** comando, que usa o servidor padrão atual.
+- O comando **lserver** usa o servidor inicial para pesquisar as informações sobre o domínio DNS especificado. Isso é diferente do comando de **servidor** , que usa o servidor padrão atual.
   ## <a name="additional-references"></a>Referências adicionais
-  [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-  [server nslookup](nslookup-server.md)
+  [Chave de sintaxe de linha de comando](command-line-syntax-key.md)[servidor nslookup](nslookup-server.md) 
+  

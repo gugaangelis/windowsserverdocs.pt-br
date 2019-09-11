@@ -1,6 +1,6 @@
 ---
-title: Use o Windows Admin Center para gerenciar atualizações de sistema operacional com o gerenciamento de atualizações do Azure
-description: Use o Windows Admin Center (projeto Paulo) para configurar o gerenciamento de atualizações do Azure para gerenciar o sistema operacional de atualizações.
+title: Usar o centro de administração do Windows para gerenciar atualizações do sistema operacional com o Azure Gerenciamento de Atualizações
+description: Use o centro de administração do Windows (projeto Honolulu) para configurar o Azure Gerenciamento de Atualizações para gerenciar atualizações do sistema operacional.
 ms.technology: manage
 ms.topic: article
 author: haley-rowland
@@ -8,26 +8,26 @@ ms.author: harowl
 ms.date: 07/17/2018
 ms.localizationpriority: low
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 79b18e9963fba0993a7f34b1409edba6abfd48f0
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.openlocfilehash: ff67355697051a6c36a5143de96a6aec44bf35ca
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66452545"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865418"
 ---
-# <a name="use-windows-admin-center-to-manage-operating-system-updates-with-azure-update-management"></a>Use o Windows Admin Center para gerenciar atualizações de sistema operacional com o gerenciamento de atualizações do Azure
+# <a name="use-windows-admin-center-to-manage-operating-system-updates-with-azure-update-management"></a>Usar o centro de administração do Windows para gerenciar atualizações do sistema operacional com o Azure Gerenciamento de Atualizações
 
-[Saiba mais sobre a integração do Azure com Windows Admin Center.](../plan/azure-integration-options.md)
+[Saiba mais sobre a integração do Azure com o centro de administração do Windows.](../plan/azure-integration-options.md)
 
-Gerenciamento de atualizações do Azure é uma solução de automação do Azure que permite que você gerencie atualizações e patches para várias máquinas de um único local, em vez de em uma base por servidor. Gerenciamento de atualizações do Azure, rapidamente avaliar o status de atualizações disponíveis, agendar a instalação de atualizações necessárias e examinar os resultados de implantação para verificar se as atualizações que foram aplicadas com sucesso. Isso é possível se suas máquinas são VMs do Azure, hospedado por outros provedores de nuvem ou no local. [Saiba mais sobre o gerenciamento de atualizações do Azure.](https://docs.microsoft.com/azure/automation/automation-update-management)
+O Azure Gerenciamento de Atualizações é uma solução na automação do Azure que permite que você gerencie atualizações e patches para vários computadores de um único local, em vez de por servidor. Com o Gerenciamento de Atualizações do Azure, é possível avaliar rapidamente o status de atualizações disponíveis, agendar a instalação de atualizações necessárias e examinar os resultados de implantação para verificar atualizações que foram aplicadas com êxito. Isso é possível se seus computadores forem VMs do Azure, hospedados por outros provedores de nuvem ou no local. [Saiba mais sobre o Azure Gerenciamento de Atualizações.](https://docs.microsoft.com/azure/automation/automation-update-management)
 
-Com do Windows Admin Center, você pode facilmente configurar e usar o gerenciamento de atualizações do Azure para manter seus servidores gerenciados atualizados. Se você ainda não tiver um espaço de trabalho do Log Analytics em sua assinatura do Azure, o Windows Admin Center automaticamente configurar seu servidor e criar recursos do Azure necessários na assinatura e local que você especificar. Se você tiver um espaço de trabalho do Log Analytics existente, o Windows Admin Center pode configurar automaticamente seu servidor para consumir as atualizações do gerenciamento de atualização do Azure.  
+Com o centro de administração do Windows, você pode facilmente configurar e usar o Gerenciamento de Atualizações do Azure para manter seus servidores gerenciados atualizados. Se você ainda não tiver um espaço de trabalho Log Analytics em sua assinatura do Azure, o centro de administração do Windows configurará automaticamente seu servidor e criará os recursos do Azure necessários na assinatura e no local que você especificar. Se você tiver um espaço de trabalho Log Analytics existente, o centro de administração do Windows poderá configurar automaticamente seu servidor para consumir atualizações do Gerenciamento de Atualizações do Azure.  
 
-Para começar, vá para a ferramenta de atualizações em uma conexão de servidor e selecione "Configurar agora" e fornecer suas preferências para os recursos relacionados do Azure. 
+Para começar, vá para a ferramenta atualizações em uma conexão de servidor e selecione "configurar agora" e forneça suas preferências para os recursos do Azure relacionados. 
 
-Depois que você configurou seu servidor para ser gerenciado pelo gerenciamento de atualizações do Azure, você pode acessar o gerenciamento de atualizações do Azure usando o hiperlink fornecido na ferramenta de atualizações. 
+Depois de configurar o servidor para ser gerenciado pelo Azure Gerenciamento de Atualizações, você poderá acessar o Azure Gerenciamento de Atualizações usando o hiperlink fornecido na ferramenta de atualizações. 
 
-[Saiba como parar de usar o gerenciamento de atualizações do Azure para atualizar seu servidor.](azure-monitor.md#disabling-monitoring)
+[Saiba como parar de usar o Azure Gerenciamento de Atualizações para atualizar o servidor.](azure-monitor.md#disabling-monitoring)
 
-Observe que você deve [registrar seu gateway do Windows Admin Center com o Azure](../configure/azure-integration.md) antes de configurar o gerenciamento de atualizações do Azure.
+Observe que você deve [registrar o gateway do centro de administração do Windows com o Azure](../configure/azure-integration.md) antes de configurar o Azure gerenciamento de atualizações.
 

@@ -1,6 +1,6 @@
 ---
-title: Tema da Web de experiência do usuário do Azure AD no AD FS
-description: O documento a seguir descreve como alterar o sign-in de formulários do AD FS para que ele fique parecido com a experiência do usuário do Azure AD.
+title: Tema da Web do Azure AD UX no AD FS
+description: O documento a seguir descreve como alterar a entrada do AD FS Forms para que ele se assemelhe à experiência do usuário do Azure AD.
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,53 +8,53 @@ ms.date: 10/24/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1064084fe357e54d7230f58e486aa4e62958f6ae
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 25ba9505f3f93fb236d6e60e49efc4206482f977
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445015"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866010"
 ---
-# <a name="using-an-azure-ad-ux-web-theme-in-active-directory-federation-services"></a>Usando um tema da Web de experiência do usuário do Azure AD nos serviços de Federação do Active Directory
-Logon de formulários do AD FS no atualmente não refletem a experiência de logon do Azure/O365.  Para fornecer uma experiência mais uniforme e perfeita para os usuários finais, lançamos o seguir em cascata tema folha de estilos da web que pode ser aplicado aos servidores do AD FS.  Atualmente, formulários na entrada do AD FS no Windows Server 2016 aparência a seguir:
+# <a name="using-an-azure-ad-ux-web-theme-in-active-directory-federation-services"></a>Usando um tema da Web do Azure AD UX no Serviços de Federação do Active Directory (AD FS)
+Atualmente, a entrada de formulários AD FS não espelha a experiência de entrada do Azure/O365.  Para fornecer uma experiência mais uniforme e simples para os usuários finais, lançamos o seguinte tema da Web de folha de estilos em cascata que pode ser aplicado aos seus servidores de AD FS.  Atualmente, a entrada de formulários para AD FS no Windows Server 2016 é semelhante ao seguinte:
 
-![Entrar atual](media/Azure-UX-Web-Theme-in-AD-FS/one.png)
-
-
-Com a nova folha de estilos, a experiência do usuário ficará mais parecido com os Azure e Office 365 experiências de conexão.
-
-## <a name="download-the-css-style-sheet"></a>Baixe a folha de estilos CSS
-Você pode baixar o tema da web do Github a seguir [local](https://github.com/Microsoft/adfsWebCustomization/tree/master/centeredUi).
+![Entrada atual](media/Azure-UX-Web-Theme-in-AD-FS/one.png)
 
 
-## <a name="enabling-the-new-web-theme"></a>Habilitando o novo tema da web
-Para habilitar o novo tema da web use o procedimento a seguir:
+Com a nova folha de estilos, a experiência do usuário se parecerá mais com as experiências de entrada do Azure e do Office 365.
 
-### <a name="to-enable-the-new-azure-ad-ux-web-theme-in-ad-fs"></a>Para habilitar o novo tema da web do Azure AD experiência do usuário no AD FS
-1. Inicie o PowerShell como administrador
-2. Crie um novo tema da web usando o PowerShell:  `New-AdfsWebTheme –Name custom –StyleSheet @{path="c:\NewTheme.css"}`
+## <a name="download-the-css-style-sheet"></a>Baixar a folha de estilos CSS
+Você pode baixar o tema da Web no seguinte [local](https://github.com/Microsoft/adfsWebCustomization/tree/master/centeredUi)do github.
+
+
+## <a name="enabling-the-new-web-theme"></a>Habilitando o novo tema da Web
+Para habilitar o novo tema da Web, use o seguinte procedimento:
+
+### <a name="to-enable-the-new-azure-ad-ux-web-theme-in-ad-fs"></a>Para habilitar o novo tema da Web do Azure AD UX no AD FS
+1. Iniciar o PowerShell como administrador
+2. Criar um novo tema da Web usando o PowerShell:`New-AdfsWebTheme –Name custom –StyleSheet @{path="c:\NewTheme.css"}`
 3. Defina o novo tema como o tema ativo usando o PowerShell:  `Set-AdfsWebConfig -ActiveThemeName custom`
    ![PowerShell](media/Azure-UX-Web-Theme-in-AD-FS/two.png)
-4. Testar a entrar, vá para https://<AD FS name.domain>/adfs/ls/idpinitiatedsignon.htm ![Sign-on](media/Azure-UX-Web-Theme-in-AD-FS/three.png)
+4. Teste a entrada acessando o logon https://<AD FS name.domain>/adfs/ls/idpinitiatedsignon.htm ![](media/Azure-UX-Web-Theme-in-AD-FS/three.png)
 
-> ! [OBSERVAÇÃO] Você precisa garantir que idpinitiatedsignon tiver sido habilitado.  Ele não está habilitado por padrão.  Para habilitar idpinitiatedsignon use o seguinte comando do PowerShell:  `Set-AdfsProperties –EnableIdpInitiatedSignonPage $True`
+> ! ANOTAÇÕES Você precisa garantir que o idpinitiatedsignon tenha sido habilitado.  Ele não está habilitado por padrão.  Para habilitar o idpinitiatedsignon, use o seguinte comando do PowerShell:`Set-AdfsProperties –EnableIdpInitiatedSignonPage $True`
 
 ## <a name="image-recommendations"></a>Recomendações de imagem
-Habilitando a interface do usuário centralizado permite que você use as mesmas imagens de plano de fundo e logotipo que você já pode ter para a marca da empresa do Active Directory do Azure. Em geral, as mesmas recomendações de tamanho, taxa e formato se aplicam.
+Habilitar a interface do usuário centralizada permite que você use as mesmas imagens para o plano de fundo e o logotipo que você já tem para Azure Active Directory identidade visual da empresa. Em geral, as mesmas recomendações para tamanho, proporção e formato se aplicam.
 
 ### <a name="logo"></a>Logotipo
 
 Descrição | Restrições | Recomendações
 ------- | ------- | ----------
-O logotipo é exibido na parte superior do painel de logon. | JPG ou PNG transparente<br>Altura máxima: 36 px<br>Largura máxima: 245 px | Use o logotipo da sua organização aqui.<br>Use uma imagem transparente. Não presuma que a tela de fundo será branca.<br>Não adicione preenchimento ao redor de seu logotipo na imagem ou seu logotipo parecerá desproporcionalmente pequeno.
+O logotipo é exibido na parte superior do painel de logon. | JPG transparente ou PNG<br>Altura máxima: 36 px<br>Largura máxima: 245 px | Use o logotipo da sua organização aqui.<br>Use uma imagem transparente. Não presuma que o plano de fundo será branco.<br>Não adicione preenchimento ao seu logotipo na imagem ou seu logotipo parecerá desproporcionalmente pequeno.
 
-### <a name="background"></a>Histórico
+### <a name="background"></a>Informações preliminares
 
 Descrição | Restrições | Recomendações
 ------- | ------- | ----------
-Essa opção é exibida na tela de fundo da página de entrada, é ancorada no centro do espaço visível e escalas e cortada para preencher a janela do navegador.    <br>Em telas estreitas, como celulares, essa imagem não é mostrada.<br>Uma máscara preta com opacidade de 0,55 é aplicada sobre essa imagem quando a página é carregada. | JPG ou PNG<br>Dimensões da imagem: 1920x1080 px<br>Tamanho do arquivo: &lt; 300 KB | <br>Use imagens que não tem um foco forte no assunto. O formulário de entrada opaco aparece sobre o centro da imagem e pode abranger qualquer parte da imagem, dependendo do tamanho da janela do navegador.<br>Mantenha o tamanho de arquivo pequeno para garantir tempos de carregamento rápido.
+Essa opção aparece no plano de fundo da página de entrada, é ancorada no centro do espaço visível e é dimensionada e cortada para preencher a janela do navegador.    <br>Em telas estreitas, como telefones celulares, essa imagem não é mostrada.<br>Uma máscara preta com opacidade de 0,55 é aplicada nessa imagem quando a página é carregada. | JPG ou PNG<br>Dimensões da imagem: 1920 x 1080 px<br>Tamanho do arquivo: &lt;300 KB | <br>Use imagens em que não há um foco forte no assunto. O formulário de entrada opaco aparece no centro dessa imagem e pode abranger qualquer parte da imagem, dependendo do tamanho da janela do navegador.<br>Mantenha o tamanho do arquivo pequeno para garantir tempos de carregamento rápidos.
 
 ## <a name="next-steps"></a>Próximas etapas
-- [Personalização do AD FS no Windows Server 2016](AD-FS-Customization-in-Windows-Server-2016.md)
+- [AD FS personalização no Windows Server 2016](AD-FS-Customization-in-Windows-Server-2016.md)
 - [Personalização avançada](Advanced-Customization-of-AD-FS-Sign-in-Pages.md)
-- [Temas da web personalizado](Custom-Web-Themes-in-AD-FS.md)
+- [Temas da Web personalizados](Custom-Web-Themes-in-AD-FS.md)

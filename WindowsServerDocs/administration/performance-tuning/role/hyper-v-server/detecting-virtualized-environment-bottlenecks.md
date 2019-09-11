@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: cdad5f0cc3b0e49ae46e975e3acc2c48a18e5f70
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: a0d6d263b344cde412ee4dd3caa80305742d56e7
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "63722878"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866601"
 ---
 # <a name="detecting-bottlenecks-in-a-virtualized-environment"></a>Detectando afunilamentos em um ambiente virtualizado
 
@@ -74,9 +74,9 @@ Você pode usar os seguintes contadores de desempenho da máquina virtual:
 
 -   MB\\de memória disponível
 
-Se os contadores de memória **\\disponíveis** de Mbytes e de **memória dinâmica do\*Hyper\\-V () disponíveis** estiverem insuficientes no host, você deverá parar os serviços não essenciais e migrar um ou mais virtuais computadores para outro host.
+Se os contadores de memória **\\disponíveis de Mbytes** e de **memória dinâmica do\*Hyper\\-V () disponíveis** estiverem insuficientes no host, você deverá parar os serviços não essenciais e migrar um ou mais virtuais computadores para outro host.
 
-Se o **contador\\memória disponível** em Mbytes estiver baixo na máquina virtual, você deverá atribuir mais memória à máquina virtual. Se você estiver usando Memória Dinâmica, deverá aumentar a configuração de memória máxima.
+Se o **contador\\memória disponível em Mbytes** estiver baixo na máquina virtual, você deverá atribuir mais memória à máquina virtual. Se você estiver usando Memória Dinâmica, deverá aumentar a configuração de memória máxima.
 
 ## <a name="network-bottlenecks"></a>Afunilamentos de rede
 

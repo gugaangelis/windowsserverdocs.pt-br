@@ -1,5 +1,5 @@
 ---
-title: O que há de novo na autenticação Kerberos
+title: What's New in Kerberos Authentication
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.topic: article
@@ -8,63 +8,63 @@ manager: alanth
 author: justinha
 ms.technology: security-authentication
 ms.date: 11/09/2016
-ms.openlocfilehash: 90107bd49268f232fd6d532c304c2fdd050bcbf5
-ms.sourcegitcommit: c6acac3622e5d34714ca5c569805931681f98779
+ms.openlocfilehash: 35274147dcee9d31751d8ca61033244bd37a1759
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66391502"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870266"
 ---
 # <a name="whats-new-in-kerberos-authentication"></a>What's New in Kerberos Authentication
 
 >Aplica-se a: Windows Server 2016 e Windows 10
 
-## <a name="kdc-support-for-public-key-trust-based-client-authentication"></a>Suporte para autenticação de cliente com base na chave pública de confiança do KDC
+## <a name="kdc-support-for-public-key-trust-based-client-authentication"></a>Suporte de KDC para autenticação de cliente baseada em confiança de chave pública
 
-Começando com o Windows Server 2016, os KDCs dão suporte a uma forma de mapeamento de chave pública. Se a chave pública é provisionada para uma conta, o KDC dá suporte a Kerberos PKInit explicitamente usando essa chave. Como não há nenhuma validação de certificado, os certificados autoassinados têm suporte e não há suporte para a garantia do mecanismo de autenticação.
+A partir do Windows Server 2016, o KDCs dá suporte a uma maneira de mapeamento de chave pública. Se a chave pública for provisionada para uma conta, o KDC oferecerá suporte ao Kerberos PKInit explicitamente usando essa chave. Como não há nenhuma validação de certificado, há suporte para certificados autoassinados e a garantia de mecanismo de autenticação não é suportada.
 
-Chave de confiança é preferível quando configurado para uma conta, independentemente da configuração UseSubjectAltName.
+A relação de confiança de chave é preferida quando configurada para uma conta, independentemente da configuração UseSubjectAltName.
 
-## <a name="kerberos-client-and-kdc-support-for-rfc-8070-pkinit-freshness-extension"></a>Cliente Kerberos e o KDC oferecem suporte para RFC 8070 PKInit atualização de extensão
+## <a name="kerberos-client-and-kdc-support-for-rfc-8070-pkinit-freshness-extension"></a>Suporte a cliente Kerberos e KDC para a extensão de atualização do RFC 8070 PKInit
 
-Começando com o Windows 10, versão 1607 e Windows Server 2016, a tentativa de clientes Kerberos com o [extensão de atualização de RFC 8070 PKInit](https://datatracker.ietf.org/doc/draft-ietf-kitten-pkinit-freshness/) para chave pública baseados em logons. 
+A partir do Windows 10, versão 1607 e Windows Server 2016, os clientes Kerberos tentam a [extensão de atualização do RFC 8070 PKInit](https://datatracker.ietf.org/doc/draft-ietf-kitten-pkinit-freshness/) para os logons baseados em chave pública. 
 
-Começando com o Windows Server 2016, os KDCs podem dar suporte a extensão de atualização de PKInit. Por padrão, os KDCs não oferecem a extensão de atualização de PKInit. Para habilitá-lo, use o novo suporte KDC para configuração de diretiva de modelo administrativo KDC de extensão de atualização de PKInit em todos os DCs no domínio. Quando configurado, as opções a seguir têm suporte quando o domínio é o nível funcional de domínio do Windows Server 2016 (DFL):
+A partir do Windows Server 2016, o KDCs pode dar suporte à extensão de atualização PKInit. Por padrão, KDCs não oferecem a extensão de atualização PKInit. Para habilitá-lo, use a configuração de política de modelo administrativo do novo suporte do KDC para a extensão de atualização PKInit em todos os DCs no domínio. Quando configurado, as seguintes opções têm suporte quando o domínio é o nível funcional de domínio do Windows Server 2016 (DFL):
 
-- **Desabilitado**: O KDC nunca oferece a extensão de atualização de PKInit e aceita as solicitações de autenticação válido sem verificação para atualização. Os usuários nunca receberá a identidade de chave pública nova SID.
-- **Suporte para**: Extensão de atualização de PKInit é compatível com a solicitação. Os clientes do Kerberos autenticar com êxito com a extensão de atualização de PKInit recebem a identidade de chave pública nova SID.
-- **Necessário**: Extensão de atualização de PKInit é necessária para a autenticação bem-sucedida. Os clientes do Kerberos que não dão suporte a extensão de atualização de PKInit sempre irá falhar ao usar as credenciais de chave públicas.
+- **Desabilitado**: O KDC nunca oferece a extensão de atualização PKInit e aceita solicitações de autenticação válidas sem verificar a atualização. Os usuários nunca receberão o novo SID de identidade de chave pública.
+- **Com suporte**: A extensão de atualização de PKInit tem suporte na solicitação. Os clientes Kerberos autenticados com êxito com a extensão de atualização PKInit recebem o novo SID de identidade de chave pública.
+- **Necessário**: A extensão de atualização PKInit é necessária para a autenticação bem-sucedida. Os clientes Kerberos que não suportam a extensão de atualização PKInit sempre falharão ao usar credenciais de chave pública.
 
-## <a name="domain-joined-device-support-for-authentication-using-public-key"></a>Suporte a dispositivos ingressados no domínio para autenticação usando a chave pública
+## <a name="domain-joined-device-support-for-authentication-using-public-key"></a>Suporte a dispositivos ingressados no domínio para autenticação usando chave pública
 
-Começando com o Windows 10 versão 1507 e Windows Server 2016, se um dispositivo ingressado no domínio é capaz de registrar sua chave pública associado um controlador de domínio (DC) do Windows Server 2016, em seguida, o dispositivo pode autenticar com a chave pública usando a autenticação Kerberos um controlador de domínio Windows Server 2016. Para obter mais informações, consulte [ingressado no domínio público chave de autenticação de dispositivo](Domain-joined-Device-Public-Key-Authentication.md)
+A partir do Windows 10 versão 1507 e do Windows Server 2016, se um dispositivo ingressado no domínio for capaz de registrar sua chave pública vinculada com um controlador de domínio do Windows Server 2016 (DC), o dispositivo poderá autenticar com a chave pública usando a autenticação Kerberos para um Windows Server 2016 DC. Para obter mais informações, consulte [autenticação de chave pública do dispositivo ingressado no domínio](Domain-joined-Device-Public-Key-Authentication.md)
 
-## <a name="kerberos-clients-allow-ipv4-and-ipv6-address-hostnames-in-service-principal-names-spns"></a>Os clientes do Kerberos permitem nomes de host de endereço de IPv4 e IPv6 em nomes de entidade de serviço (SPNs)
+## <a name="kerberos-clients-allow-ipv4-and-ipv6-address-hostnames-in-service-principal-names-spns"></a>Os clientes Kerberos permitem nomes de host de endereço IPv4 e IPv6 em SPNs (nome da entidade de serviço)
 
-Começando com o Windows 10 versão 1507 e Windows Server 2016, clientes Kerberos podem ser configurados para dar suporte a nomes de host de IPv4 e IPv6 no SPNs. 
+A partir do Windows 10 versão 1507 e do Windows Server 2016, os clientes Kerberos podem ser configurados para dar suporte a nomes de host IPv4 e IPv6 em SPNs. 
 
 Caminho do registro:
 
 HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Kerberos\Parameters
 
-Para configurar o suporte para nomes de host de endereço IP no SPNs, crie uma entrada de TryIPSPN. Essa entrada não existe no Registro por padrão. Depois de criar a entrada, altere o valor DWORD para 1. Se não configurado, os nomes de host de endereço IP não serão tentadas.
+Para configurar o suporte para nomes de host de endereço IP em SPNs, crie uma entrada TryIPSPN. Essa entrada não existe no Registro por padrão. Depois de criar a entrada, altere o valor DWORD para 1. Se não estiver configurado, os nomes de host de endereço IP não serão tentados.
 
-Se o SPN é registrado no Active Directory, autenticação foi bem-sucedida com o Kerberos. 
+Se o SPN estiver registrado no Active Directory, a autenticação terá sucesso com o Kerberos. 
 
-Para obter mais informações Confira o documento [Configurando o Kerberos para endereços IP](configuring-kerberos-over-ip.md).
+Para obter mais informações, confira o documento [Configurando o Kerberos para endereços IP](configuring-kerberos-over-ip.md).
 
-## <a name="kdc-support-for-key-trust-account-mapping"></a>Suporte KDC para mapeamento de conta de confiança de chave
+## <a name="kdc-support-for-key-trust-account-mapping"></a>Suporte de KDC para mapeamento de conta de confiança de chave
 
-Começando com o Windows Server 2016, os controladores de domínio têm suporte para mapeamento de conta de confiança de chave, bem como fallback para o nome Principal do usuário (UPN) e AltSecID existentes no comportamento de SAN. Quando UseSubjectAltName é definida como:
+A partir do Windows Server 2016, os controladores de domínio têm suporte para mapeamento de conta de confiança de chave, bem como fallback para AltSecID existentes e UPN (nome principal de usuário) no comportamento de SAN. Quando UseSubjectAltName é definido como:
 
-- 0: Mapeamento explícito é necessário. Em seguida, deve haver um:
-    - Chave de confiança (novo no Windows Server 2016)
+- 0: É necessário um mapeamento explícito. Em seguida, deve haver:
+    - Confiança de chave (novidade com o Windows Server 2016)
     - ExplicitAltSecID
-- 1: Mapeamento implícito é permitido (padrão):
-    1. Se confiar em chave estiver configurado para a conta, em seguida, ele é usado para mapear (novo com o Windows Server 2016).
-    2. Se não houver nenhum UPN no SAN, AltSecID é tentada para mapeamento.
-    3. Se houver um UPN na SAN, o UPN é tentada para mapeamento.
+- 1: O mapeamento implícito é permitido (padrão):
+    1. Se a confiança de chave estiver configurada para a conta, ela será usada para mapeamento (novo com o Windows Server 2016).
+    2. Se não houver nenhum UPN na SAN, a AltSecID será tentada para o mapeamento.
+    3. Se houver um UPN na SAN, a UPN será tentada para o mapeamento.
 
 ## <a name="see-also"></a>Consulte também
 
-- [Visão geral da autenticação do Kerberos](kerberos-authentication-overview.md)
+- [Visão geral da autenticação Kerberos](kerberos-authentication-overview.md)

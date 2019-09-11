@@ -10,12 +10,12 @@ ms.author: pashort
 author: shortpatti
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: b954419904f97102cef14fbd4a7a68496e8730af
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 260d5c6273d877386dc1cd8833b2f226533127c3
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546516"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871301"
 ---
 # <a name="step-2-configure-the-server-infrastructure"></a>Etapa 2. Configurar a infraestrutura do servidor
 
@@ -249,7 +249,7 @@ Neste procedimento, você configura um modelo de autenticação cliente-servidor
 
    4. Na caixa de diálogo **alterações resultantes** , selecione **OK**.
 
-7. Na guia **tratamento de solicitação** , desmarque a caixa de seleção **permitir que a chave privada seja** exportada.
+7. Na guia **tratamento de solicitação** , desmarque a caixa de seleção **permitir que a chave privada seja exportada** .
 
 8. Na guia **criptografia** , conclua as seguintes etapas:
 
@@ -322,7 +322,7 @@ Servidores VPN ingressados no domínio
 
     2. Na caixa de diálogo aviso de **modelos de certificado** , selecione **OK**.
 
-8. Adicional Se você estiver configurando o acesso condicional para conectividade VPN, selecione a guia **tratamento de solicitação** e, em seguida, selecione **permitir que a chave privada seja**exportada.
+8. Adicional Se você estiver configurando o acesso condicional para conectividade VPN, selecione a guia **tratamento de solicitação** e, em seguida, selecione **permitir que a chave privada seja exportada**.
 
 9. Selecione **OK** para salvar o modelo de certificado do servidor VPN.
 

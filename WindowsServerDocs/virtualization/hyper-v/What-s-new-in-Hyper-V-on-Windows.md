@@ -11,248 +11,248 @@ ms.assetid: 1a65a98e-54b6-4c41-9732-1e3d32fe3a5f
 author: KBDAzure
 ms.author: kathydav
 ms.date: 09/21/2017
-ms.openlocfilehash: 6ec5db82ecae2fb74731f3c52b9113325837a2fb
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 9ee621813917ce2b267d552a17dbbc499a5f77de
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280013"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869460"
 ---
 # <a name="whats-new-in-hyper-v-on-windows-server"></a>O que há de novo no Hyper-V no Windows Server
 
 >Aplica-se a: Windows Server 2019, Microsoft Hyper-V Server 2016, Windows Server 2016
   
-Este artigo explica as funcionalidades novas e alteradas do Hyper-V no Windows Server 2019, Windows Server 2016 e Microsoft Hyper-V Server 2016. Para usar os novos recursos em máquinas virtuais criadas com o Windows Server 2012 R2 e movida ou importado para um servidor que executa o Hyper-V no Windows Server 2019 ou Windows Server 2016, você precisará atualizar manualmente a versão de configuração de máquina virtual. Para obter instruções, consulte [máquinas virtuais de atualização de versão](deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md).  
+Este artigo explica as funcionalidades novas e alteradas do Hyper-V no Windows Server 2019, no Windows Server 2016 e no Microsoft Hyper-V Server 2016. Para usar novos recursos em máquinas virtuais criadas com o Windows Server 2012 R2 e movido ou importado para um servidor que executa o Hyper-V no Windows Server 2019 ou no Windows Server 2016, você precisará atualizar manualmente a versão de configuração da máquina virtual. Para obter instruções, consulte [atualizar a versão da máquina virtual](deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md).  
   
-Aqui está o que está incluído neste artigo e se a funcionalidade é nova ou atualizada.  
+Aqui estão as novidades incluídas neste artigo e se a funcionalidade é nova ou atualizada.  
 
 ## <a name="windows-server-version-1903"></a>Windows Server, versão 1903
 
-### <a name="add-hyper-v-manager-to-server-core-installations-updated"></a>Adicionar o Gerenciador do Hyper-V em instalações Server Core (atualizadas)
+### <a name="add-hyper-v-manager-to-server-core-installations-updated"></a>Adicionar o Gerenciador do Hyper-V às instalações do Server Core (atualizado)
 
-Como você deve saber, é recomendável usar a opção de instalação Server Core, ao usar o Windows Server, o canal semestral em produção. No entanto, Server Core por padrão omite uma série de ferramentas de gerenciamento bastante úteis. Você pode adicionar muitos dos mais comumente usados ferramentas instalando o recurso de compatibilidade de aplicativos, mas ainda ter havido algumas ferramentas ausentes.
+Como você deve saber, é recomendável usar a opção de instalação Server Core ao usar o Windows Server, Canal Semestral, na produção. No entanto, o Server Core por padrão omite uma série de ferramentas de gerenciamento úteis. Você pode adicionar muitas das ferramentas normalmente mais usadas instalando o recurso de compatibilidade de aplicativos, mas há algumas ferramentas ausentes.
 
-Portanto, com base nos comentários dos clientes, adicionamos uma ou mais ferramentas para o recurso de compatibilidade de aplicativos nesta versão: Gerenciador do Hyper-V (virtmgmt.msc).
+Portanto, com base nos comentários dos clientes, adicionamos mais uma ferramenta ao recurso de compatibilidade de aplicativos nesta versão: Gerenciador do Hyper-V (virtmgmt. msc).
 
-Para obter mais informações, consulte [recurso de compatibilidade de aplicativo do Server Core](../../get-started-19/install-fod-19.md).
+Para obter mais informações, confira [Recurso de compatibilidade de aplicativos do Server Core](../../get-started-19/install-fod-19.md).
 
 ## <a name="windows-server-2019"></a>Windows Server 2019
 
-### <a name="security-shielded-virtual-machines-improvements-new"></a>Segurança: Aprimoramentos de máquinas virtuais blindados (novos)
+### <a name="security-shielded-virtual-machines-improvements-new"></a>Segurança: Aprimoramentos de máquinas virtuais blindadas (novas)
 
-- **Melhorias do Branch office**
+- **Melhorias nas filiais**
 
-    Agora você pode executar máquinas virtuais blindadas em computadores com conectividade intermitente para o serviço de guardião de Host, aproveitando os novos recursos de [fallback HGS](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#fallback-configuration) e [modo off-line](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#offline-mode) . HGS fallback permite que você configure um segundo conjunto de URLs do Hyper-V tentar se ele não puder acessar o servidor principal do HGS.
+    Agora você pode executar máquinas virtuais blindadas em computadores com conectividade intermitente ao Serviço Guardião de Host, aproveitando os novos recursos de [HGS de fallback](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#fallback-configuration) e [modo offline](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#offline-mode) . O HGS de fallback permite que você configure um segundo conjunto de URLs para o Hyper-V tentar caso não consiga acessar seu servidor HGS principal.
 
-    Modo offline permite que você continue a iniciar suas VMs blindadas, mesmo se HGS não puder ser atingido, desde que a VM foi iniciado com êxito uma vez, e a configuração de segurança do host não foi alterada.
+    O modo offline permite que você continue a iniciar suas VMs blindadas, mesmo se o HGS não puder ser alcançado, contato que a VM tenha sido iniciada com êxito pelo menos uma vez e as configurações de segurança do host não tenham sido alteradas desde então.
 
-- **Aprimoramentos de solução de problemas**
+- **Melhorias na solução de problemas**
 
-    Podemos tiver também facilitou o processo para [Solucionar problemas de suas máquinas virtuais protegidas](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms) habilitando suporte para o modo de sessão avançado VMConnect e PowerShell Direct. Essas ferramentas são particularmente úteis se você tiver perdido a conectividade de rede com a VM e precisar atualizar a configuração dela para restaurar o acesso.
+    Também facilitamos o processo para [solucionar problemas de suas máquinas virtuais blindadas](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms) habilitando o suporte para o modo de sessão avançado VMConnect e o PowerShell Direct. Essas ferramentas são particularmente úteis se você tiver perdido a conectividade de rede com sua VM e precisar atualizar a configuração dela para restaurar o acesso.
 
-    Esses recursos não precisam ser configurados e são disponibilizados automaticamente quando uma VM protegida é colocada em um host Hyper-V que estiver executando o Windows Server versão 1803 ou posterior.
+    Esses recursos não precisam ser configurados e são disponibilizados automaticamente quando uma VM blindada é posta em um host Hyper-V que executa o Windows Server versão 1803 ou mais recente.
 
-- **Suporte para Linux**
+- **Suporte a Linux**
 
     Se você executar ambientes Mistos, Windows Server 2019 agora oferece suporte ao Ubuntu, Red Hat Enterprise Linux e SUSE Linux Enterprise Server em execução dentro de máquinas virtuais blindadas.
 
 ## <a name="windows-server-2016"></a>Windows Server 2016
 
-### <a name="compatible-with-connected-standby-new"></a>Compatível com o modo de espera conectado \(novo\)
+### <a name="compatible-with-connected-standby-new"></a>Compatível com a nova \(em espera conectada\)
 
-Quando a função Hyper-V é instalada em um computador que usa o modelo de energia AOAC sempre ativo / conectado (), o **modo de espera conectado** estado de energia agora está disponível.  
+Quando a função Hyper-V é instalada em um computador que usa o modelo de energia Sempre ativo/conectado (AOAC), o estado de energia em **espera conectado** agora está disponível.  
   
-### <a name="discrete-device-assignment-new"></a>Atribuição de dispositivo discretos \(novo\)
+### <a name="discrete-device-assignment-new"></a>Nova atribuição \(de dispositivo discreta\)
 
-Esse recurso permite que você fornecer um acesso direto e exclusivos de máquina virtual para alguns dispositivos de hardware PCIe. Usando um dispositivo dessa maneira ignora a pilha de virtualização Hyper-V, que resulta em um acesso mais rápido. Para obter detalhes sobre o hardware com suporte, consulte "atribuição de dispositivo discretos" na [requisitos de sistema do Hyper-V no Windows Server 2016](System-requirements-for-Hyper-V-on-Windows.md). Para obter detalhes, incluindo como usar esse recurso e considerações, consulte a postagem "[atribuição de dispositivo discretos — descrição e o plano de fundo](https://blogs.technet.microsoft.com/virtualization/2015/11/19/discrete-device-assignment-description-and-background/)" no blog de virtualização.
+Esse recurso permite dar a uma máquina virtual acesso direto e exclusivo a alguns dispositivos de hardware PCIe. Usar um dispositivo dessa maneira ignora a pilha de virtualização do Hyper-V, o que resulta em um acesso mais rápido. Para obter detalhes sobre o hardware com suporte, consulte "atribuição de dispositivo discreta" em [requisitos de sistema para o Hyper-V no Windows Server 2016](System-requirements-for-Hyper-V-on-Windows.md). Para obter detalhes, incluindo como usar esse recurso e considerações, consulte a postagem "[atribuição de dispositivo discreta — descrição e plano de fundo](https://blogs.technet.microsoft.com/virtualization/2015/11/19/discrete-device-assignment-description-and-background/)" no blog de virtualização.
 
-### <a name="encryption-support-for-the-operating-system-disk-in-generation-1-virtual-machines-new"></a>Suporte à criptografia para o disco do sistema operacional em máquinas virtuais de geração 1 \(novo)
+### <a name="encryption-support-for-the-operating-system-disk-in-generation-1-virtual-machines-new"></a>Suporte de criptografia para o disco do sistema operacional em máquinas \(virtuais de geração 1 novo)
 
-Agora você pode proteger o disco do sistema operacional usando a criptografia de unidade de disco BitLocker em máquinas virtuais de geração 1. Um novo recurso, o armazenamento de chaves, cria uma unidade pequena e dedicada para armazenar a chave do BitLocker da unidade do sistema. Isso é feito em vez de usar um virtual Trusted Platform Module (TPM), que está disponível somente em máquinas virtuais de geração 2. Para descriptografar o disco e iniciar a máquina virtual, o host Hyper-V deve ser parte de uma malha protegida autorizada ou tem a chave privada de um dos guardiões da máquina virtual. Armazenamento de chaves requer uma máquina de virtual versão 8. Para obter informações sobre a versão da máquina virtual, consulte [máquinas virtuais de atualização de versão no Hyper-V no Windows 10 ou Windows Server 2016](./deploy/upgrade-virtual-machine-version-in-hyper-v-on-windows-or-windows-server.md).  
+Agora você pode proteger o disco do sistema operacional usando a criptografia de unidade de disco BitLocker em máquinas virtuais de geração 1. Um novo recurso, armazenamento de chaves, cria uma unidade pequena e dedicada para armazenar a chave do BitLocker da unidade do sistema. Isso é feito em vez de usar um Trusted Platform Module virtual (TPM), que está disponível somente em máquinas virtuais de geração 2. Para descriptografar o disco e iniciar a máquina virtual, o host Hyper-V deve fazer parte de uma malha protegida autorizada ou ter a chave privada de um dos Guardiões da máquina virtual. O armazenamento de chaves requer uma máquina virtual de versão 8. Para obter informações sobre a versão da máquina virtual, consulte [atualizar a versão da máquina virtual no Hyper-V no Windows 10 ou no Windows Server 2016](./deploy/upgrade-virtual-machine-version-in-hyper-v-on-windows-or-windows-server.md).  
   
-### <a name="host-resource-protection-new"></a>Proteção de recursos de host \(novo\)
+### <a name="host-resource-protection-new"></a>Nova proteção \(de recurso de host\)
 
-Esse recurso ajuda a impedir que uma máquina virtual usando mais do que o seu compartilhamento de recursos do sistema procurando por níveis de excesso de atividade. Isso pode ajudar a impedir que uma atividade excessiva da máquina virtual degradar o desempenho do host ou de outras máquinas virtuais. Quando o monitoramento detecta uma máquina virtual com uma atividade excessiva, a máquina virtual recebe menos recursos. Esse monitoramento e a imposição está desativado por padrão. Use o Windows PowerShell para ativar ou desativar a ele. Para ativá-lo, execute este comando:  
+Esse recurso ajuda a impedir que uma máquina virtual use mais do que sua participação de recursos do sistema, procurando níveis excessivos de atividade. Isso pode ajudar a impedir que a atividade excessiva de uma máquina virtual prejudique o desempenho do host ou de outras máquinas virtuais. Quando o monitoramento detecta uma máquina virtual com atividade excessiva, a máquina virtual recebe menos recursos. Esse monitoramento e imposição estão desativados por padrão. Use o Windows PowerShell para ativar ou desativar. Para ativá-lo, execute este comando:  
   
 ```
 Set-VMProcessor TestVM -EnableHostResourceProtection $true
 ```
 
-Para obter detalhes sobre esse cmdlet, consulte [Set-VMProcessor](https://docs.microsoft.com/powershell/module/hyper-v/set-vmprocessor).
+Para obter detalhes sobre esse cmdlet, consulte [set-VMProcessor](https://docs.microsoft.com/powershell/module/hyper-v/set-vmprocessor).
 
-### <a name="hot-add-and-remove-for-network-adapters-and-memory-new"></a>Adição e remoção de adaptadores de rede e memória ativa \(novo\)
+### <a name="hot-add-and-remove-for-network-adapters-and-memory-new"></a>Adição e remoção ativas para adaptadores de \(rede e nova memória\)
 
 Agora você pode adicionar ou remover um adaptador de rede enquanto a máquina virtual está em execução, sem incorrer em tempo de inatividade. Isso funciona para máquinas virtuais de geração 2 que executam sistemas operacionais Windows ou Linux.  
   
-Você também pode ajustar a quantidade de memória atribuída a uma máquina virtual enquanto estiver em execução, mesmo se você não tiver habilitado a memória dinâmica. Isso funciona para a geração 1 e máquinas virtuais de geração 2, executando o Windows Server 2016 ou Windows 10.  
+Você também pode ajustar a quantidade de memória atribuída a uma máquina virtual enquanto ela está em execução, mesmo que você não tenha habilitado Memória Dinâmica. Isso funciona para máquinas virtuais de geração 1 e de geração 2, executando o Windows Server 2016 ou o Windows 10.  
 
-### <a name="hyper-v-manager-improvements-updated"></a>Melhorias do Gerenciador do Hyper-V \(atualizado\) 
+### <a name="hyper-v-manager-improvements-updated"></a>Melhorias \(do Gerenciador do Hyper-V atualizadas\) 
   
--   **Suporte a credenciais alternativas** -agora você pode usar um conjunto diferente de credenciais no Gerenciador do Hyper-V quando você se conecta a outro host remoto do Windows Server 2016 ou Windows 10. Você também pode salvar essas credenciais para torná-lo mais fácil de fazer logon novamente.  
+-   **Suporte a credenciais alternativas** -agora você pode usar um conjunto diferente de credenciais no Gerenciador do Hyper-V ao conectar-se a outro host remoto do windows Server 2016 ou do Windows 10. Você também pode salvar essas credenciais para facilitar o logon novamente.  
   
--   **Gerenciar versões anteriores** -com o Gerenciador de Hyper-V no Windows Server 2019, Windows Server 2016 e Windows 10, você pode gerenciar computadores que executam o Hyper-V no Windows Server 2012, Windows 8, Windows Server 2012 R2 e Windows 8.1.  
+-   **Gerenciar versões anteriores** – com o Gerenciador do Hyper-V no windows Server 2019, windows Server 2016 e Windows 10, você pode gerenciar computadores que executam o Hyper-v no windows Server 2012, Windows 8, windows Server 2012 R2 e Windows 8.1.  
   
--   **Protocolo de gerenciamento atualizado** -Gerenciador Hyper-V agora se comunica com hosts remotos do Hyper-V usando o protocolo WS-MAN, que permite que a autenticação CredSSP, Kerberos ou NTLM. Quando você usa o CredSSP para se conectar a um host remoto do Hyper-V, você pode fazer uma migração ao vivo sem habilitar a delegação restrita no Active Directory. A infraestrutura baseados em WS-MAN também torna mais fácil habilitar um host para o gerenciamento remoto. O WS-MAN se conecta pela porta 80, que é aberta por padrão.  
+-   **Protocolo de gerenciamento atualizado** – o Gerenciador do Hyper-v agora se comunica com hosts remotos do Hyper-v usando o protocolo WS-Man, que permite a autenticação CredSSP, Kerberos ou NTLM. Ao usar o CredSSP para se conectar a um host remoto do Hyper-V, você pode fazer uma migração ao vivo sem habilitar a delegação restrita no Active Directory. A infraestrutura baseada no WS-MAN também facilita a habilitação de um host para o gerenciamento remoto. O WS-MAN se conecta pela porta 80, que é aberta por padrão.  
   
-### <a name="integration-services-delivered-through-windows-update-updated"></a>Serviços de integração fornecidos por meio do Windows Update \(atualizado\) 
+### <a name="integration-services-delivered-through-windows-update-updated"></a>Serviços de integração fornecidos por \(Windows Update atualizados\) 
 
-Atualizações de serviços de integração para convidados do Windows são distribuídas por meio do Windows Update. Para provedores de serviço e aos hosters em nuvem privada, isso faz com que o controle de aplicação de atualizações nas mãos de locatários que possuem as máquinas virtuais. Locatários podem agora atualizar suas máquinas de virtuais do Windows com todas as atualizações, incluindo os serviços de integração, usando um único método. Para obter detalhes sobre os serviços de integração para convidados do Linux, consulte [FreeBSD máquinas virtuais Linux e no Hyper-V](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md).  
+As atualizações do Integration Services para convidados do Windows são distribuídas por meio de Windows Update. Para provedores de serviços e hosts de nuvem privada, isso coloca o controle da aplicação de atualizações nas mãos dos locatários que possuem as máquinas virtuais. Os locatários agora podem atualizar suas máquinas virtuais do Windows com todas as atualizações, incluindo o Integration Services, usando um único método. Para obter detalhes sobre o Integration Services para convidados do Linux, consulte [máquinas virtuais Linux e FreeBSD no Hyper-V](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md).  
   
 > [!IMPORTANT]  
-> O arquivo de imagem de vmguest não é necessário, para que ele não está incluído com o Hyper-V no Windows Server 2016.  
+> O arquivo de imagem vmguest. ISO não é mais necessário, portanto não está incluído no Hyper-V no Windows Server 2016.  
   
-### <a name="linux-secure-boot-new"></a>Inicialização segura do Linux \(novo\) 
+### <a name="linux-secure-boot-new"></a>Nova inicialização \(segura do Linux\) 
 
-Sistemas operacionais Linux em máquinas virtuais de geração 2 agora podem ser inicializados com a opção de inicialização segura habilitada. Ubuntu 14.04 e versões posterior, SUSE Linux Enterprise Server 12 e posterior, o Red Hat Enterprise Linux 7.0 e posterior e CentOS 7.0 e versões posteriores estão habilitados para inicialização segura em hosts que executam o Windows Server 2016. Antes de inicializar a máquina virtual pela primeira vez, você deve configurar a máquina virtual para usar a autoridade de certificação Microsoft UEFI. Você pode fazer isso do Gerenciador do Hyper-V, Virtual Machine Manager ou uma sessão do Windows Powershell com privilégios elevados. Para o Windows PowerShell, execute este comando:  
+Os sistemas operacionais Linux em execução em máquinas virtuais de geração 2 agora podem ser inicializados com a opção de inicialização segura habilitada. Ubuntu 14, 4 e posterior, SUSE Linux Enterprise Server 12 e posterior, Red Hat Enterprise Linux 7,0 e posterior e CentOS 7,0 e posterior são habilitados para inicialização segura em hosts que executam o Windows Server 2016. Antes de inicializar a máquina virtual pela primeira vez, você deve configurar a máquina virtual para usar a autoridade de certificação UEFI da Microsoft. Você pode fazer isso no Gerenciador do Hyper-V, Virtual Machine Manager ou em uma sessão elevada do Windows PowerShell. Para o Windows PowerShell, execute este comando:  
   
 ```  
 Set-VMFirmware TestVM -SecureBootTemplate MicrosoftUEFICertificateAuthority  
 ```  
   
-Para obter mais informações sobre as máquinas virtuais Linux no Hyper-V, consulte [FreeBSD máquinas virtuais Linux e no Hyper-V](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md). Para obter mais informações sobre o cmdlet, consulte [Set-VMFirmware](https://docs.microsoft.com/powershell/module/hyper-v/set-vmfirmware).
+Para obter mais informações sobre máquinas virtuais do Linux no Hyper-V, consulte [máquinas virtuais Linux e FreeBSD no Hyper-v](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md). Para obter mais informações sobre o cmdlet, consulte [set-VMFirmware](https://docs.microsoft.com/powershell/module/hyper-v/set-vmfirmware).
 
-### <a name="more-memory-and-processors-for-generation-2-virtual-machines-and-hyper-v-hosts-updated"></a>Mais memória e processadores para máquinas virtuais de geração 2 e hosts Hyper-V \(atualizado\)
+### <a name="more-memory-and-processors-for-generation-2-virtual-machines-and-hyper-v-hosts-updated"></a>Mais memória e processadores para máquinas virtuais de geração 2 e hosts \(do Hyper-V atualizados\)
 
-Começando com a versão 8, as máquinas virtuais de geração 2 pode usar significativamente mais memória e processadores virtuais. Hosts também podem ser configurados com significativamente mais memória e processadores virtuais que anteriormente tinham suporte. Essas alterações dão suporte a novos cenários como a execução de comércio eletrônico grandes bancos de dados na memória para processamento de transações online (OLTP) e data warehousing (DW). Blog do Windows Server publicadas recentemente os resultados de desempenho de uma máquina virtual com 5.5 terabytes de memória e 128 processadores virtuais executando o banco de dados do 4 TB de memória. Desempenho era maior que 95% do desempenho de um servidor físico. Para obter detalhes, consulte [desempenho em larga escala de VM do Windows Server 2016 Hyper-V para o processamento de transações na memória](https://blogs.technet.microsoft.com/windowsserver/2016/09/28/windows-server-2016-hyper-v-large-scale-vm-performance-for-in-memory-transaction-processing/). Para obter detalhes sobre as versões de máquina virtual, consulte [máquinas virtuais de atualização de versão no Hyper-V no Windows 10 ou Windows Server 2016](./deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md). Para obter a lista completa de configurações de máximo com suporte, consulte [planejar a escalabilidade do Hyper-V no Windows Server 2016](./plan/plan-hyper-v-scalability-in-windows-server.md). 
+A partir da versão 8, as máquinas virtuais de geração 2 podem usar significativamente mais memória e processadores virtuais. Os hosts também podem ser configurados com significativamente mais memória e processadores virtuais do que o suportado anteriormente. Essas alterações dão suporte a novos cenários, como a execução de grandes bancos de dados na memória de comércio eletrônico para OLTP (processamento de transações online) e data warehousing (DW). O blog do Windows Server publicou recentemente os resultados de desempenho de uma máquina virtual com 5,5 terabytes de memória e 128 processadores virtuais que executam 4 TB de banco de dados na memória. O desempenho foi maior que 95% do desempenho de um servidor físico. Para obter detalhes, consulte [desempenho da VM em grande escala do Windows Server 2016 Hyper-V para processamento de transações na memória](https://blogs.technet.microsoft.com/windowsserver/2016/09/28/windows-server-2016-hyper-v-large-scale-vm-performance-for-in-memory-transaction-processing/). Para obter detalhes sobre as versões da máquina virtual, consulte [atualizar a versão da máquina virtual no Hyper-V no Windows 10 ou no Windows Server 2016](./deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md). Para obter a lista completa de configurações máximas com suporte, consulte [planejar a escalabilidade do Hyper-V no Windows Server 2016](./plan/plan-hyper-v-scalability-in-windows-server.md). 
 
-### <a name="nested-virtualization-new"></a>A virtualização aninhada \(novo\)
+### <a name="nested-virtualization-new"></a>Nova virtualização \(aninhada\)
 
-Esse recurso permite usar uma máquina virtual como um host Hyper-V e criar máquinas virtuais no host virtualizado. Isso pode ser especialmente útil para ambientes de desenvolvimento e teste. Para usar a virtualização aninhada, você precisará de:  
+Esse recurso permite que você use uma máquina virtual como um host Hyper-V e crie máquinas virtuais dentro desse host virtualizado. Isso pode ser especialmente útil para ambientes de desenvolvimento e teste. Para usar a virtualização aninhada, você precisará de:  
   
--   Para executar pelo menos Windows Server 2019, Windows Server 2016 ou Windows 10 no host físico do Hyper-V e o host virtualizado.  
+-   Para executar pelo menos o Windows Server 2019, o Windows Server 2016 ou o Windows 10 no host do Hyper-V físico e no host virtualizado.  
   
--   Um processador com Intel VT-x (virtualização aninhada está disponível somente para os processadores Intel neste momento).  
+-   Um processador com Intel VT-x (a virtualização aninhada está disponível apenas para processadores Intel neste momento).  
   
-Para obter detalhes e instruções, consulte [executar Hyper-V em uma máquina Virtual com a virtualização aninhada](https://docs.microsoft.com/virtualization/hyper-v-on-windows/user-guide/nested-virtualization).  
+Para obter detalhes e instruções, consulte [executar o Hyper-V em uma máquina virtual com virtualização aninhada](https://docs.microsoft.com/virtualization/hyper-v-on-windows/user-guide/nested-virtualization).  
   
-### <a name="networking-features-new"></a>Recursos de rede \(novo\)
+### <a name="networking-features-new"></a>Novos recursos \(de rede\)
 
-Novos recursos de rede incluem:  
+Os novos recursos de rede incluem:  
   
--   **Remote direcionar o acesso à memória (RDMA) e switch embedded agrupamento (SET)** . Você pode configurar o RDMA nos adaptadores de rede associados a um comutador virtual Hyper-V, independentemente de conjunto também é usado. CONJUNTO de fornece um comutador virtual com alguns dos mesmos recursos que o agrupamento NIC. Para obter detalhes, consulte [acesso direto à memória remoto (RDMA) e Switch Embedded Teaming (SET)](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming).  
+-   **Acesso remoto direto à memória (RDMA) e Comutador incorporado (conjunto)** . Você pode configurar o RDMA em adaptadores de rede vinculados a um comutador virtual do Hyper-V, independentemente de o conjunto também ser usado. SET fornece um comutador virtual com alguns dos mesmos recursos que o agrupamento NIC. Para obter detalhes, consulte [acesso remoto direto à memória (RDMA) e comutador inserido de equipe (Set)](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming).  
   
--   **Máquina virtual com várias filas (VMMQ)** . Melhora a taxa de transferência VMQ alocando várias filas de hardware por máquina virtual.  A fila padrão torna-se um conjunto de filas para uma máquina virtual e o tráfego é distribuído entre as filas.  
+-   **VMMQ (várias filas de máquina virtual)** . Melhora a taxa de transferência de VMQ alocando várias filas de hardware por máquina virtual.  A fila padrão torna-se um conjunto de filas para uma máquina virtual e o tráfego é distribuído entre as filas.  
   
--   **Qualidade de serviço (QoS) para redes definidas por software**. Gerencia a classe padrão de tráfego através do comutador virtual dentro da largura de banda de classe padrão.  
+-   **QoS (qualidade de serviço) para redes definidas por software**. Gerencia a classe padrão de tráfego por meio do comutador virtual dentro da largura de banda de classe padrão.  
   
-Para obter mais informações sobre novos recursos de rede, consulte [o que há de novo no sistema de rede](../../networking/What-s-New-in-Networking.md).  
+Para obter mais informações sobre novos recursos de rede, consulte [novidades na rede](../../networking/What-s-New-in-Networking.md).  
   
-### <a name="production-checkpoints-new"></a>Pontos de verificação de produção \(novo\)
+### <a name="production-checkpoints-new"></a>\(Novos pontos de verificação de produção\)
 
-Pontos de verificação de produção são imagens de "point-in-time" de uma máquina virtual. Eles oferecem uma maneira de aplicar um ponto de verificação está em conformidade com as políticas de suporte quando a máquina virtual executa uma carga de trabalho de produção. Pontos de verificação de produção são baseados na tecnologia de backup no convidado em vez de um estado salvo. Para as máquinas virtuais do Windows, o serviço de instantâneo de Volume (VSS) é usado. Para máquinas virtuais Linux, os buffers do sistema de arquivos são liberados para criar um ponto de verificação consistente com o sistema de arquivos. Se você preferir usar pontos de verificação com base em estados salvos, em vez disso, a escolha de pontos de verificação padrão. Para obter detalhes, consulte [escolha entre pontos de verificação padrão ou de produção no Hyper-V](manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md).  
+Os pontos de verificação de produção são imagens "point-in-time" de uma máquina virtual. Eles fornecem uma maneira de aplicar um ponto de verificação que esteja em conformidade com as políticas de suporte quando uma máquina virtual executar uma carga de trabalho de produção. Os pontos de verificação de produção são baseados na tecnologia de backup dentro do convidado, em vez de um estado salvo. Para máquinas virtuais do Windows, o VSS (serviço de instantâneo de volume) é usado. Para máquinas virtuais do Linux, os buffers do sistema de arquivos são liberados para criar um ponto de verificação consistente com o sistema de arquivos. Se você preferir usar pontos de verificação com base em Estados salvos, escolha pontos de verificação padrão em vez disso. Para obter detalhes, consulte [escolher entre pontos de verificação padrão ou de produção no Hyper-V](manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md).  
   
 > [!IMPORTANT]  
-> Novas máquinas virtuais usam pontos de verificação de produção como o padrão.  
+> As novas máquinas virtuais usam pontos de verificação de produção como padrão.  
   
-### <a name="rolling-hyper-v-cluster-upgrade-new"></a>Atualização do Cluster Hyper-V sem interrupção \(novo\)
+### <a name="rolling-hyper-v-cluster-upgrade-new"></a>Nova atualização \(de cluster do Hyper-V\)
 
-Agora você pode adicionar um nó que executa o Windows Server 2019 ou Windows Server 2016 em um Cluster do Hyper-V conosco que executam o Windows Server 2012 R2. Isso permite que você atualize o cluster sem tempo de inatividade. O cluster é executado em um nível de recurso do Windows Server 2012 R2, até que você atualize todos os nós no cluster e atualize o nível funcional do cluster com o cmdlet do Windows PowerShell [Update-ClusterFunctionalLevel](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel).  
+Agora você pode adicionar um nó que executa o Windows Server 2019 ou o Windows Server 2016 a um cluster Hyper-V com nós que executam o Windows Server 2012 R2. Isso permite que você atualize o cluster sem tempo de inatividade. O cluster é executado em um nível de recurso do Windows Server 2012 R2 até que você atualize todos os nós no cluster e atualize o nível funcional do cluster com o cmdlet do Windows PowerShell, [Update-ClusterFunctionalLevel](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel).  
   
 > [!IMPORTANT]  
-> Depois de atualizar o nível funcional do cluster, você não pode retorná-lo para o Windows Server 2012 R2.  
+> Depois de atualizar o nível funcional do cluster, você não poderá retorná-lo ao Windows Server 2012 R2.  
   
-Para um cluster do Hyper-V com um nível funcional do Windows Server 2012 R2 conosco que executam o Windows Server 2012 R2, Windows Server 2019 e Windows Server 2016, observe o seguinte:  
+Para um cluster Hyper-V com um nível funcional do Windows Server 2012 R2 com nós que executam o Windows Server 2012 R2, o Windows Server 2019 e o Windows Server 2016, observe o seguinte:  
   
--   Gerencie o cluster, Hyper-V e máquinas virtuais de um nó que executa o Windows Server 2016 ou Windows 10.  
+-   Gerencie o cluster, o Hyper-V e as máquinas virtuais de um nó que executa o Windows Server 2016 ou o Windows 10.  
   
--   Você pode mover as máquinas virtuais entre todos os nós no cluster do Hyper-V.  
+-   Você pode mover máquinas virtuais entre todos os nós no cluster do Hyper-V.  
   
--   Para usar os novos recursos do Hyper-V, todos os nós devem executar o Windows Server 2016 ou e o nível funcional do cluster deve ser atualizado.  
+-   Para usar os novos recursos do Hyper-V, todos os nós devem executar o Windows Server 2016 ou o nível funcional do cluster deve ser atualizado.  
   
--   A versão de configuração de máquina virtual para máquinas virtuais existentes não é atualizada. Você pode atualizar a versão de configuração somente depois de atualizar o nível funcional do cluster.  
+-   A versão de configuração de máquina virtual para máquinas virtuais existentes não está atualizada. Você pode atualizar a versão de configuração somente depois de atualizar o nível funcional do cluster.  
   
--   Máquinas virtuais que você cria são compatíveis com o Windows Server 2012 R2, o nível de configuração de máquina virtual 5.  
+-   As máquinas virtuais que você cria são compatíveis com o Windows Server 2012 R2, nível de configuração de máquina virtual 5.  
   
-Depois que você atualize o nível funcional do cluster:  
+Depois de atualizar o nível funcional do cluster:  
   
 -   Você pode habilitar novos recursos do Hyper-V.  
   
--   Para disponibilizar novos recursos de máquina virtual, use o cmdlet Update-VmConfigurationVersion para atualizar manualmente o nível de configuração de máquina virtual. Para obter instruções, consulte [máquinas virtuais de atualização de versão](deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md).    
--   Você não pode adicionar um nó ao Cluster do Hyper-V que executa o Windows Server 2012 R2.  
+-   Para disponibilizar novos recursos de máquina virtual, use o cmdlet Update-VmConfigurationVersion para atualizar manualmente o nível de configuração da máquina virtual. Para obter instruções, consulte [atualizar a versão da máquina virtual](deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md).    
+-   Você não pode adicionar um nó ao cluster Hyper-V que executa o Windows Server 2012 R2.  
   
 > [!NOTE]  
-> Hyper-V no Windows 10 não oferece suporte a clustering de failover.  
+> O Hyper-V no Windows 10 não dá suporte ao clustering de failover.  
   
-Para obter detalhes e instruções, consulte a [atualização sem interrupção do Cluster de sistema operacional](https://technet.microsoft.com/library/dn850430.aspx).  
+Para obter detalhes e instruções, consulte a [atualização sem interrupção do sistema operacional do cluster](https://technet.microsoft.com/library/dn850430.aspx).  
 
-### <a name="shared-virtual-hard-disks-updated"></a>Discos rígidos virtuais compartilhados \(atualizado\)
-Agora você pode redimensionar os discos rígidos virtuais compartilhados (arquivos. vhdx) usados para o cluster convidado, sem tempo de inatividade. Discos rígidos virtuais compartilhados pode ser aumentados ou reduzidos enquanto a máquina virtual está online. Clusters de convidado também agora podem proteger discos rígidos virtuais compartilhados usando a réplica do Hyper-V para recuperação de desastres.
+### <a name="shared-virtual-hard-disks-updated"></a>Discos \(rígidos virtuais compartilhados atualizados\)
+Agora você pode redimensionar os discos rígidos virtuais compartilhados (arquivos. vhdx) usados para clustering de convidado, sem tempo de inatividade. Os discos rígidos virtuais compartilhados podem ser expandidos ou reduzidos enquanto a máquina virtual está online. Os clusters convidados agora também podem proteger discos rígidos virtuais compartilhados usando a réplica do Hyper-V para recuperação de desastre.
 
-Habilite a replicação na coleção. Habilitar a replicação em uma coleção é **só são expostas por meio da interface WMI**. Consulte a documentação para [Msvm_CollectionReplicationService classe](https://msdn.microsoft.com/library/mt167787%28v=vs.85%29.aspx) para obter mais detalhes. **Você não pode gerenciar a replicação de uma coleção por meio do cmdlet do PowerShell ou da interface do usuário.** As VMs devem estar em hosts que fazem parte de um cluster do Hyper-V para acessar os recursos que são específicos a uma coleção. Isso inclui o VHD compartilhado - compartilhadas VHDs em hosts autônomos não são compatíveis com a réplica do Hyper-V.
+Habilite a replicação na coleção. Habilitar a replicação em uma coleção **só é exposto por meio da interface WMI**. Consulte a documentação da [classe Msvm_CollectionReplicationService](https://msdn.microsoft.com/library/mt167787%28v=vs.85%29.aspx) para obter mais detalhes. **Você não pode gerenciar a replicação de uma coleção por meio do cmdlet do PowerShell ou da interface do usuário.** As VMs devem estar em hosts que fazem parte de um cluster Hyper-V para acessar recursos que são específicos de uma coleção. Isso inclui VHDs compartilhados de VHD compartilhados em hosts autônomos não são suportados pela réplica do Hyper-V.
 
-Siga as diretrizes para VHDs compartilhados no [Virtual Hard Disk Sharing Overview](https://technet.microsoft.com/library/dn281956.aspx)e certifique-se de que seus VHDs compartilhadas fazem parte de um cluster de convidado. 
+Siga as diretrizes para VHDs compartilhados em [visão geral do compartilhamento de disco rígido virtual](https://technet.microsoft.com/library/dn281956.aspx)e certifique-se de que seus VHDs compartilhados façam parte de um cluster de convidado. 
 
-Uma coleção com um VHD compartilhado, mas nenhum cluster de convidado associado não é possível criar pontos de referência para a coleção (independentemente se o VHD compartilhado é incluído na criação de ponto de referência ou não). 
+Uma coleção com um VHD compartilhado, mas nenhum cluster convidado associado não pode criar pontos de referência para a coleção (independentemente de o VHD compartilhado estar incluído na criação do ponto de referência ou não). 
 
-### <a name="virtual-machine-backupnew"></a>Backup de máquinas virtuais\(novo\)
+### <a name="virtual-machine-backupnew"></a>Novo backup\(de máquina virtual\)
 
-Se você estiver fazendo backup de uma única máquina virtual (independentemente se o host está clusterizado ou não), você não deve usar um grupo VM.  Nem você deve usar uma coleção de instantâneo. Grupos VM e coleta de instantâneo destinam-se a ser usada exclusivamente para fazer backup de clusters de convidados que estão usando o vhdx compartilhado. Em vez disso, você deve tirar um instantâneo usando o [provedor do WMI do Hyper-V v2](https://msdn.microsoft.com/library/windows/desktop/hh850319(v=vs.85).aspx). Da mesma forma, não use o [provedor WMI do Cluster de Failover](https://msdn.microsoft.com/library/windows/desktop/mt167750(v=vs.85).aspx).
+Se você estiver fazendo backup de uma única máquina virtual (independentemente de o host estar clusterizado ou não), não deverá usar um grupo de VMs.  Nem você deve usar uma coleção de instantâneos. Os grupos de VMs e a coleção de instantâneos devem ser usados exclusivamente para fazer backup de clusters convidados que estejam usando vhdx compartilhado. Em vez disso, você deve fazer um instantâneo usando o [provedor de WMI v2 do Hyper-V](https://msdn.microsoft.com/library/windows/desktop/hh850319(v=vs.85).aspx). Da mesma forma, não use o [provedor WMI do cluster de failover](https://msdn.microsoft.com/library/windows/desktop/mt167750(v=vs.85).aspx).
 
-### <a name="shielded-virtual-machines-new"></a>Máquinas virtuais blindadas \(novo\)
+### <a name="shielded-virtual-machines-new"></a>Novas máquinas \(virtuais blindadas\)
 
-Blindado uso de máquinas virtuais com vários recursos para tornar mais difícil para os administradores do Hyper-V e o malware no host inspecionar, violar ou roubar dados do estado de uma máquina virtual blindada. Dados e o estado é criptografado, os administradores do Hyper-V não conseguir ver a saída de vídeo e os discos e as máquinas virtuais podem ser restritas a serem executados somente em hosts conhecidos, íntegros, conforme determinado por um servidor de guardião de Host. Para obter detalhes, consulte [malha protegida e VMs Blindadas](../../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md).
+As máquinas virtuais blindadas usam vários recursos para tornar mais difícil para os administradores do Hyper-V e o malware no host inspecionar, adulterar ou roubar dados do estado de uma máquina virtual blindada. Dados e estado são criptografados, os administradores do Hyper-V não podem ver a saída e os discos de vídeo, e as máquinas virtuais podem ser restritas para serem executadas somente em hosts íntegros conhecidos, conforme determinado por um servidor guardião de host. Para obter detalhes, consulte [malha protegida e VMs blindadas](../../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md).
   
 > [!NOTE]  
-> Máquinas virtuais blindadas são compatíveis com a réplica do Hyper-V. Para replicar uma máquina virtual blindada, o host que você deseja replicar para deve ser autorizado a executar essa máquina virtual blindada.  
+> As máquinas virtuais blindadas são compatíveis com a réplica do Hyper-V. Para replicar uma máquina virtual blindada, o host no qual você deseja replicar deve ser autorizado a executar essa máquina virtual blindada.  
 
-### <a name="start-order-priority-for-clustered-virtual-machines-new"></a>Iniciar a prioridade de ordem para máquinas virtuais em cluster \(novo\)
+### <a name="start-order-priority-for-clustered-virtual-machines-new"></a>Prioridade da ordem de início para máquinas \(virtuais clusterizadas novo\)
 
-Esse recurso oferece a você mais controle sobre o qual as máquinas virtuais em cluster são iniciadas ou reiniciadas pela primeira vez. Isso torna mais fácil de iniciar as máquinas virtuais que fornecem serviços antes de máquinas virtuais que usam esses serviços. Definir conjuntos, colocar as máquinas virtuais em conjuntos e especificar dependências. Usar cmdlets do Windows PowerShell para gerenciar os conjuntos, tais como [New-ClusterGroupSet](https://docs.microsoft.com/powershell/module/failoverclusters/new-clustergroupset), [Get-ClusterGroupSet](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustergroupset), e [ClusterGroupSetDependency adicionar](https://docs.microsoft.com/powershell/module/failoverclusters/add-clustergroupsetdependency).
+Esse recurso oferece mais controle sobre quais máquinas virtuais clusterizadas são iniciadas ou reiniciadas primeiro. Isso torna mais fácil iniciar as máquinas virtuais que fornecem serviços antes das máquinas virtuais que usam esses serviços. Defina conjuntos, coloque máquinas virtuais em conjuntos e especifique dependências. Use os cmdlets do Windows PowerShell para gerenciar os conjuntos, como [New-ClusterGroupSet](https://docs.microsoft.com/powershell/module/failoverclusters/new-clustergroupset), [Get-ClusterGroupSet](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustergroupset)e [Add-ClusterGroupSetDependency](https://docs.microsoft.com/powershell/module/failoverclusters/add-clustergroupsetdependency).
 .  
-### <a name="storage-quality-of-service-qos-updated"></a>Qualidade de serviço (QoS) de armazenamento \(atualizado\)
+### <a name="storage-quality-of-service-qos-updated"></a>Qualidade de serviço (QoS) \(de armazenamento atualizada\)
 
-Agora você pode criar políticas de QoS de armazenamento em um Servidor de Arquivos de Escalabilidade Horizontal e atribuí-las a um ou mais discos virtuais em máquinas virtuais Hyper-V. O desempenho de armazenamento será reajustado automaticamente para atender às políticas à medida que a carga de armazenamento flutua. Para obter detalhes, consulte [qualidade de serviço do armazenamento](../../storage/storage-qos/storage-qos-overview.md).  
+Agora você pode criar políticas de QoS de armazenamento em um Servidor de Arquivos de Escalabilidade Horizontal e atribuí-las a um ou mais discos virtuais em máquinas virtuais Hyper-V. O desempenho de armazenamento será reajustado automaticamente para atender às políticas à medida que a carga de armazenamento flutua. Para obter detalhes, consulte [qualidade de serviço de armazenamento](../../storage/storage-qos/storage-qos-overview.md).  
   
-### <a name="virtual-machine-configuration-file-format-updated"></a>Formato de arquivo de configuração de máquina virtual \(atualizado\)
+### <a name="virtual-machine-configuration-file-format-updated"></a>Formato \(de arquivo de configuração de máquina virtual atualizado\)
 
-Arquivos de configuração de máquina virtual usam um novo formato que torna a leitura e gravação de dados de configuração mais eficientes. O formato também torna a corrupção de dados menor probabilidade de se ocorrer uma falha de armazenamento. Arquivos de dados de configuração de máquina virtual usam uma extensão de nome de arquivo. vmcx e arquivos de dados de estado de tempo de execução usar uma extensão de nome de arquivo. vmrs.  
-  
-> [!IMPORTANT]  
-> A extensão de nome de arquivo. vmcx indica um arquivo binário. Não há suporte a edição de arquivos. vmcx ou. vmrs.  
-  
-### <a name="virtual-machine-configuration-version-updated"></a>Versão de configuração de máquina virtual \(atualizado\)
-
-A versão representa a compatibilidade da configuração da máquina virtual, salva o estado e os arquivos de instantâneo com a versão do Hyper-V. Máquinas virtuais com a versão 5 são compatíveis com o Windows Server 2012 R2 e pode executar no Windows Server 2012 R2 e Windows Server 2016. Máquinas virtuais com as versões introduzidas no Windows Server 2016 e Windows Server 2019 não será executado no Hyper-V no Windows Server 2012 R2.   
-  
-Se você mover ou importa uma máquina virtual em um servidor que executa o Hyper-V no Windows Server 2016 ou Windows Server 2019 do Windows Server 2012 R2, a configuração de máquina virtual não será atualizada automaticamente. Isso significa que você pode mover a máquina virtual de volta para um servidor que executa o Windows Server 2012 R2. Mas, isso também significa que você não pode usar os novos recursos de máquina virtual até atualizar manualmente a versão da configuração da máquina virtual.  
-  
-Para obter instruções sobre como verificar e atualizar a versão, consulte [máquinas virtuais de atualização de versão](deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md). Este artigo também lista a versão em que alguns recursos foram introduzidos.   
+Os arquivos de configuração de máquina virtual usam um novo formato que torna mais eficiente a leitura e gravação de dados de configuração. O formato também torna a corrupção de dados menos provável se ocorrer uma falha de armazenamento. Os arquivos de dados de configuração de máquina virtual usam uma extensão de nome de arquivo. vmcx e arquivos de dados de estado de tempo de execução usam uma extensão de nome de arquivo. VMRS  
   
 > [!IMPORTANT]  
-> -   Depois de atualizar a versão, é possível mover a máquina virtual a um servidor que executa o Windows Server 2012 R2.  
-> -   Você não pode reverter a configuração para uma versão anterior.  
-> -   O [VMVersion atualização](https://docs.microsoft.com/powershell/module/hyper-v/update-vmversion) cmdlet é bloqueado em um Cluster do Hyper-V quando o nível funcional do cluster é o Windows Server 2012 R2.  
+> A extensão de nome de arquivo. vmcx indica um arquivo binário. Não há suporte para a edição de arquivos. vmcx ou. VMRS.  
+  
+### <a name="virtual-machine-configuration-version-updated"></a>Versão \(de configuração de máquina virtual atualizada\)
 
-### <a name="virtualization-based-security-for-generation-2-virtual-machines-new"></a>Segurança Virtualization-based para máquinas virtuais de geração 2 \(novo)
+A versão representa a compatibilidade da configuração da máquina virtual, do estado salvo e dos arquivos de instantâneo com a versão do Hyper-V. As máquinas virtuais com a versão 5 são compatíveis com o Windows Server 2012 R2 e podem ser executadas no Windows Server 2012 R2 e no Windows Server 2016. As máquinas virtuais com versões introduzidas no Windows Server 2016 e no Windows Server 2019 não serão executadas no Hyper-V no Windows Server 2012 R2.   
+  
+Se você mover ou importar uma máquina virtual para um servidor que executa o Hyper-V no Windows Server 2016 ou no Windows Server 2019 do Windows Server 2012 R2, a configuração da máquina virtual não será atualizada automaticamente. Isso significa que você pode mover a máquina virtual de volta para um servidor que executa o Windows Server 2012 R2. Mas isso também significa que você não pode usar os novos recursos de máquina virtual até atualizar manualmente a versão da configuração da máquina virtual.  
+  
+Para obter instruções sobre como verificar e atualizar a versão, consulte [atualizar a versão da máquina virtual](deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md). Este artigo também lista a versão na qual alguns recursos foram introduzidos.   
+  
+> [!IMPORTANT]  
+> -   Depois de atualizar a versão, você não pode mover a máquina virtual para um servidor que executa o Windows Server 2012 R2.  
+> -   Não é possível fazer downgrade da configuração para uma versão anterior.  
+> -   O cmdlet [Update-VMVersion](https://docs.microsoft.com/powershell/module/hyper-v/update-vmversion) é bloqueado em um cluster do Hyper-V quando o nível funcional do cluster é o Windows Server 2012 R2.  
 
-Segurança baseada em virtualização habilita recursos como o Device Guard e Credential Guard, oferecendo maior proteção do sistema operacional contra explorações de malware. Segurança baseada em virtualização está disponível em máquinas virtuais da geração 2 convidados começando com a versão 8. Para obter informações sobre a versão da máquina virtual, consulte [máquinas virtuais de atualização de versão no Hyper-V no Windows 10 ou Windows Server 2016](./deploy/upgrade-virtual-machine-version-in-hyper-v-on-windows-or-windows-server.md).
+### <a name="virtualization-based-security-for-generation-2-virtual-machines-new"></a>Segurança baseada em virtualização para máquinas \(virtuais de geração 2 novas)
 
-### <a name="windows-containers-new"></a>Contêineres do Windows \(novo\)
+A segurança baseada em virtualização capacita recursos como o Device Guard e o Credential Guard, oferecendo maior proteção do sistema operacional contra explorações de malware. Com base na virtualização, a segurança está disponível em máquinas virtuais de convidado da geração 2 a partir da versão 8. Para obter informações sobre a versão da máquina virtual, consulte [atualizar a versão da máquina virtual no Hyper-V no Windows 10 ou no Windows Server 2016](./deploy/upgrade-virtual-machine-version-in-hyper-v-on-windows-or-windows-server.md).
 
-Contêineres do Windows permitem que vários aplicativos isolados executar em um sistema de computador. Eles são rápidos criar e são altamente escalonáveis e portátil. Dois tipos de tempo de execução do contêiner estão disponíveis, cada um com um grau de isolamento de aplicativo diferente. Contêineres do Windows Server usar o isolamento de processo e de namespace. Contêineres de Hyper-V usam uma máquina virtual de leve para cada contêiner.  
+### <a name="windows-containers-new"></a>Novos contêineres \(do Windows\)
+
+Os contêineres do Windows permitem que muitos aplicativos isolados sejam executados em um sistema de computador. Eles são rápidos de criar e são altamente escalonáveis e portáteis. Dois tipos de tempo de execução de contêiner estão disponíveis, cada um com um grau diferente de isolamento de aplicativo. Os contêineres do Windows Server usam o isolamento de namespace e de processo. Os contêineres do Hyper-V usam uma máquina virtual leve para cada contêiner.  
   
 Os principais recursos incluem:  
   
 -   Suporte para sites e aplicativos usando HTTPS  
   
--   Nano server pode hospedar o Windows Server e contêineres do Hyper-V  
+-   O nano Server pode hospedar os contêineres do Windows Server e do Hyper-V  
   
--   Capacidade de gerenciar dados em pastas de contêiner compartilhadas  
+-   Capacidade de gerenciar dados por meio de pastas compartilhadas de contêiner  
   
 -   Capacidade de restringir os recursos do contêiner  
   
-Para obter detalhes, incluindo guias de início rápido, consulte o [documentação de contêineres do Windows](https://docs.microsoft.com/virtualization/windowscontainers/index).  
+Para obter detalhes, incluindo guias de início rápido, consulte a [documentação dos contêineres do Windows](https://docs.microsoft.com/virtualization/windowscontainers/index).  
   
-### <a name="windows-powershell-direct-new"></a>Windows PowerShell Direct \(novo\)
+### <a name="windows-powershell-direct-new"></a>Novo Windows PowerShell \(Direct\)
 
-Isso lhe dá uma maneira para executar comandos do Windows PowerShell em uma máquina virtual do host. Windows PowerShell Direct é executado entre o host e a máquina virtual. Isso significa que ele não requer requisitos de firewall ou de rede, e ele funciona independentemente de sua configuração de gerenciamento remoto.  
+Isso lhe dá uma maneira de executar comandos do Windows PowerShell em uma máquina virtual a partir do host. O Windows PowerShell Direct é executado entre o host e a máquina virtual. Isso significa que ele não requer requisitos de rede ou firewall e funciona independentemente da sua configuração de gerenciamento remoto.  
   
-Direto do Windows PowerShell é uma alternativa para as ferramentas existentes que os administradores do Hyper-V usam para se conectar a uma máquina virtual em um host Hyper-V:  
+O Windows PowerShell Direct é uma alternativa para as ferramentas existentes que os administradores do Hyper-V usam para se conectar a uma máquina virtual em um host Hyper-V:  
   
 -   Ferramentas de gerenciamento remoto como o PowerShell ou a Área de Trabalho Remota  
   
--   Conexão de máquina Virtual Hyper-V (VMConnect)  
+-   Conexão de máquina virtual do Hyper-V (VMConnect)  
   
-Essas ferramentas funcionam bem, mas têm vantagens e desvantagens: VMConnect é confiável, mas pode ser difícil de automatizar. PowerShell remoto é eficiente, mas pode ser difícil de configurar e manter. Essas compensações podem se tornar mais importantes à medida que aumenta sua implantação do Hyper-V. Direto do Windows PowerShell lida com isso ao oferecer uma experiência de scripts e automação poderosa que é tão simple quanto usar o VMConnect.
+Essas ferramentas funcionam bem, mas têm compensações: O VMConnect é confiável, mas pode ser difícil de automatizar. O PowerShell remoto é poderoso, mas pode ser difícil de configurar e manter. Essas compensações podem se tornar mais importantes à medida que sua implantação do Hyper-V cresce. O Windows PowerShell Direct aborda isso fornecendo uma experiência avançada de script e automação que é tão simples quanto usar o VMConnect.
   
-Para requisitos e instruções, consulte [máquinas virtuais de gerenciar o Windows com o PowerShell Direct](manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md).  
+Para obter os requisitos e as instruções, consulte [gerenciar máquinas virtuais do Windows com o PowerShell Direct](manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md).  

@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: baea091482818c581414ba1d9c1c01db2a52e3d7
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: 0c608d3762c45a0b1478bcb3303159feef963291
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "66435659"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866614"
 ---
 # <a name="hyper-v-configuration"></a>Configuração do Hyper-V
 
@@ -44,9 +44,9 @@ Em um ambiente de datacenter ideal, o consumo de energia é gerenciado por meio 
 
 As técnicas de gerenciamento de energia do servidor vêm com um custo, especialmente porque as cargas de trabalho de locatário não são confiáveis para ditar a política sobre a infraestrutura física do hoster. O software da camada do host é deixado em inferir como maximizar a taxa de transferência e minimizar o consumo de energia. Em máquinas quase ociosas, isso pode fazer com que a infraestrutura física conclua que o consumo de energia moderado é apropriado, resultando em cargas de trabalho de locatário individuais em execução mais lenta do que de outra forma.
 
-O Windows Server usa a virtualização em uma ampla variedade de cenários. De um servidor IIS levemente carregado a um SQL Server de ocupação moderada, em um host de nuvem com o Hyper-V executando centenas de máquinas virtuais por servidor. Cada um desses cenários pode ter requisitos de hardware, software e desempenho exclusivos. Por padrão, o Windows Server usa e recomenda o plano de energia equilibrado que permite a conservação de energia, dimensionando o desempenho do processador com base na utilização da CPU.
+O Windows Server usa a virtualização em uma ampla variedade de cenários. De um servidor IIS levemente carregado a um SQL Server de ocupação moderada, em um host de nuvem com o Hyper-V executando centenas de máquinas virtuais por servidor. Cada um desses cenários pode ter requisitos de hardware, software e desempenho exclusivos. Por padrão, o Windows Server usa e recomenda o plano de energia **equilibrado** que permite a conservação de energia, dimensionando o desempenho do processador com base na utilização da CPU.
 
-Com o plano de energia equilibrado, os mais altos Estados de energia (e as latências de resposta mais baixas em cargas de trabalho de locatário) são aplicados somente quando o host físico está relativamente ocupado. Se você valor de uma resposta determinística e de baixa latência para todas as cargas de trabalho de locatário, considere alternar do plano de energia equilibrado padrão para o plano de energia de **alto desempenho** . O plano de energia de **alto desempenho** executará os processadores em plena velocidade o tempo todo, desabilitando efetivamente a alternância baseada em demanda juntamente com outras técnicas de gerenciamento de energia e otimizando o desempenho em relação à economia de energia.
+Com o plano de energia **equilibrado** , os mais altos Estados de energia (e as latências de resposta mais baixas em cargas de trabalho de locatário) são aplicados somente quando o host físico está relativamente ocupado. Se você valor de uma resposta determinística e de baixa latência para todas as cargas de trabalho de locatário, considere alternar do plano de energia **equilibrado** padrão para o plano de energia de **alto desempenho** . O plano de energia de **alto desempenho** executará os processadores em plena velocidade o tempo todo, desabilitando efetivamente a alternância baseada em demanda juntamente com outras técnicas de gerenciamento de energia e otimizando o desempenho em relação à economia de energia.
 
 Para os clientes que estão satisfeitos com a economia de custos com a redução do número de servidores físicos e desejam garantir que eles atinjam o desempenho máximo para suas cargas de trabalho virtualizadas, você deve considerar o uso do plano de energia de **alto desempenho** .
 

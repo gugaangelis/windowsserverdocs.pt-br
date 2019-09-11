@@ -1,28 +1,28 @@
 ---
-title: Adicione as marcas de metadados necessários para seu artigo relacionado ao Windows Server
-description: Uma lista das informações você deve adicionar como marcas de metadados na parte superior do seus artigos relacionados ao Windows Server. As marcas necessárias estão sujeitos a alterações, com base nos requisitos de seu relatório e equipe.
+title: Adicionar as marcas de metadados necessárias ao seu artigo relacionado ao Windows Server
+description: Uma lista das informações que você deve adicionar como marcas de metadados à parte superior dos artigos relacionados ao Windows Server. As marcas necessárias estão sujeitas a alterações, com base nos requisitos de relatório e de equipe.
 author: eross-msft
 ms.author: lizross
 ms.date: 05/06/2019
-ms.openlocfilehash: f7c514def1353d44386b1bc53c8cabffe1e31fda
-ms.sourcegitcommit: 7e54a1bcd31cd2c6b18fd1f21b03f5cfb6165bf3
+ms.openlocfilehash: f0af6b48cd3fd28ae0a15752cb21bfe9a4abf14f
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65461642"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865084"
 ---
-# <a name="add-the-required-metadata-tags-to-your-windows-server-related-article"></a>Adicione as marcas de metadados necessários para seu artigo relacionado ao Windows Server
+# <a name="add-the-required-metadata-tags-to-your-windows-server-related-article"></a>Adicionar as marcas de metadados necessárias ao seu artigo relacionado ao Windows Server
 
-Na parte superior de cada artigo, não há metadados específicos do que devem ser incluído para fins SEO e acompanhamento. As marcas necessárias estão sujeitos a alterações, com base em requisitos de relatórios. No entanto, você deve ser notificado se você precisar adicionar ou remover todos os campos.
+Na parte superior de cada artigo, há metadados específicos que devem ser incluídos para fins de rastreamento e SEO. As marcas necessárias estão sujeitas a alterações, com base nos requisitos de relatório. No entanto, você deve ser notificado se precisar adicionar ou remover qualquer campo.
 
-Ele deve ser semelhante isso, incluindo os três hifens (-) na parte superior e inferior:
+Ele deve ter esta aparência, incluindo os três hifens (---) na parte superior e inferior:
 
 ```markdown
 
 ---
 title: The title of the article should go here. This is used in SEO and search results.
 
-description: A description for the article should go here. This is used in search results, to provide users with information about whether the article has the information they’re looking for.
+description: A description for the article should go here. This is used in search results, to provide users with information about whether the article has the information they're looking for.
 
 ms.prod: Use this specific text, windows-server-threshold
 
@@ -32,7 +32,7 @@ author: Your GitHub alias
 
 ms.author: Your Microsoft alias
 
-manager: Your manager’s Microsoft alias
+manager: Your manager's Microsoft alias
 
 ms.topic: Type of article, including article, landing-page, get-started-article, or reference
 

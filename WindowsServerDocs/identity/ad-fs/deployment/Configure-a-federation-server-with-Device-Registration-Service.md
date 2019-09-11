@@ -9,70 +9,70 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f1367f03ea8a9ba96bfe4bae1c324deff92576f0
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 12676d40d52046ae4ff2fe83c199ad21db4cf8ab
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192263"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868074"
 ---
 # <a name="configure-a-federation-server-with-device-registration-service"></a>Configurar um servidor de federação com o Serviço de Registro de Dispositivos
 
-Você pode habilitar o serviço de registro de dispositivo \(DRS\) no servidor de Federação depois de concluir os procedimentos [etapa 4: Configurar um servidor de Federação](https://technet.microsoft.com/library/dn303424.aspx). O serviço de registro de dispositivo fornece um mecanismo de integração contínua autenticação multifator, o logon único persistente\-na \(SSO\)e o acesso condicional para os consumidores que necessitam de acesso à empresa recursos. Para obter mais informações sobre o DRS, consulte [ingresse no local de trabalho de qualquer dispositivo para SSO e contínuo segundo fator de autenticação em aplicativos da empresa](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)  
+Você pode habilitar o serviço \(de registro de dispositivo DRS\) no servidor de Federação depois de concluir [os procedimentos na etapa 4: Configure um servidor](https://technet.microsoft.com/library/dn303424.aspx)de Federação. O serviço de registro de dispositivo fornece um mecanismo de integração para autenticação de segundo fator contínua, SSO\-\)de \(logon único persistente e acesso condicional aos consumidores que exigem acesso à empresa os. Para obter mais informações sobre o DRS, consulte [ingressar no local de trabalho de qualquer dispositivo para SSO e autenticação de segundo fator direta entre aplicativos da empresa](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)  
   
-## <a name="prepare-your-active-directory-forest-to-support-devices"></a>Preparar a floresta do Active Directory para dar suporte a dispositivos  
+## <a name="prepare-your-active-directory-forest-to-support-devices"></a>Preparar sua floresta Active Directory para dar suporte a dispositivos  
   
 > [!NOTE]  
-> Isso é um arquivo\-tempo a operação que você deve executar para preparar a floresta do Active Directory para dar suporte a dispositivos. Você deve estar conectado com permissões de administrador corporativo e sua floresta do Active Directory deve ter o esquema do Windows Server 2012 R2 para concluir este procedimento.  
+> Essa é uma operação\-única que você deve executar para preparar sua floresta Active Directory para dar suporte a dispositivos. Você deve estar conectado com permissões de administrador corporativo e sua floresta de Active Directory deve ter o esquema do Windows Server 2012 R2 para concluir este procedimento.  
 >   
-> Além disso, o DRS requer que você tenha pelo menos um servidor de catálogo global no domínio raiz da floresta. O servidor de catálogo global é necessário para executar inicialização\-ADDeviceRegistration e durante a autenticação do AD FS. AD FS inicializa no\-representação de memória da configuração DRS do objeto em cada solicitação de autenticação e se o objeto de configuração DRS não pode ser encontrado em um controlador de domínio no domínio atual, a solicitação é tentada contra o GC no qual os objetos do DRS foram provisionado durante a inicialização\-ADDeviceRegistration.  
+> Além disso, o DRS requer que você tenha pelo menos um servidor de catálogo global no domínio raiz da floresta. O servidor de catálogo global é necessário para executar o ADDeviceRegistration\-de inicialização e durante a autenticação AD FS. AD FS Inicializa uma representação\-na memória do objeto de configuração do DRS em cada solicitação de autenticação e se o objeto de configuração do DRS não puder ser encontrado em um DC no domínio atual, a solicitação será tentada em relação ao GC no qual os objetos do DRS foram provisionado durante a inicialização\-ADDeviceRegistration.  
   
-#### <a name="to-prepare-the-active-directory-forest"></a>Para preparar a floresta do Active Directory  
+#### <a name="to-prepare-the-active-directory-forest"></a>Para preparar a floresta Active Directory  
   
-1.  No servidor de federação, abra uma janela de comando do Windows PowerShell e digite:  
+1.  No servidor de Federação, abra uma janela de comando do Windows PowerShell e digite:  
   
     ```  
     Initialize-ADDeviceRegistration  
     ```  
   
-2.  Quando for ServiceAccountName solicitado, insira o nome da conta de serviço que você selecionou como a conta de serviço do AD FS.  Se for uma conta gMSA, insira a conta de **domínio\\accountname$** formato. Para uma conta de domínio, use o formato **domínio\\accountname**.  
+2.  Quando solicitado por ServiceName, insira o nome da conta de serviço que você selecionou como a conta de serviço para AD FS.  Se for uma conta do gMSA, insira a conta no formato **de\\domínio AccountName $** . Para uma conta de domínio, use o **formato\\domínio AccountName**.  
   
-## <a name="enable-device-registration-service-on-a-federation-server-farm-node"></a>Habilitar o serviço de registro de dispositivo em um nó de farm de servidor de Federação  
+## <a name="enable-device-registration-service-on-a-federation-server-farm-node"></a>Habilitar o serviço de registro de dispositivo em um nó de farm de servidores de Federação  
   
 > [!NOTE]  
-> Você deve fazer logon com permissões de administrador de domínio para concluir este procedimento.  
+> Você deve estar conectado com permissões de administrador de domínio para concluir este procedimento.  
   
 #### <a name="to-enable-device-registration-service"></a>Para habilitar o serviço de registro de dispositivo  
   
-1.  No servidor de federação, abra uma janela de comando do Windows PowerShell e digite:  
+1.  No servidor de Federação, abra uma janela de comando do Windows PowerShell e digite:  
   
     ```  
     Enable-AdfsDeviceRegistration  
     ```  
   
-2.  Repita essa etapa em cada nó do farm de federação no farm do AD FS...  
+2.  Repita essa etapa em cada nó de farm de Federação no farm de AD FS..  
   
-## <a name="enable-seamless-second-factor-authentication"></a>Habilitar contínuo autenticação de dois fatores  
-Contínuo autenticação de dois fatores é um aprimoramento no AD FS que fornece um nível adicional de proteção de acesso a recursos corporativos e aplicativos de dispositivos externos que estão tentando para acessá-los. Quando um dispositivo pessoal é ingressado no local de trabalho, ele se torna um dispositivo 'conhecido' e os administradores podem usar essas informações para conduzir acesso condicional e o acesso aos recursos.  
+## <a name="enable-seamless-second-factor-authentication"></a>Habilitar a autenticação de segundo fator direta  
+A autenticação de segundo fator direta é um aprimoramento no AD FS que fornece um nível adicional de proteção de acesso a recursos corporativos e aplicativos de dispositivos externos que estão tentando acessá-los. Quando um dispositivo pessoal é associado ao local de trabalho, ele se torna um dispositivo "conhecido" e os administradores podem usar essas informações para direcionar o acesso condicional e o acesso à porta para recursos.  
   
-#### <a name="to-enable-seamless-second-factor-authentication-persistent-single-sign-on-sso-and-conditional-access-for-workplace-joined-devices"></a>Para habilitar o segundo contínuo autenticação multifator, persistente SSO\-na \(SSO\) e acesso condicional para dispositivos ingressados no local de trabalho  
+#### <a name="to-enable-seamless-second-factor-authentication-persistent-single-sign-on-sso-and-conditional-access-for-workplace-joined-devices"></a>Para habilitar a autenticação de segundo fator contínua, SSO\-\) persistente \(de logon único e acesso condicional para dispositivos ingressados no local de trabalho  
   
-1.  No console de gerenciamento do AD FS, navegue até as políticas de autenticação. Selecione Editar autenticação primária Global. Marque a caixa de seleção ao lado de habilitar a autenticação de dispositivo e, em seguida, clique em Okey.  
+1.  No console de gerenciamento do AD FS, navegue até políticas de autenticação. Selecione Editar Autenticação global primária. Marque a caixa de seleção ao lado de habilitar a autenticação de dispositivo e clique em OK.  
   
-## <a name="update-the-web-application-proxy-configuration"></a>Atualizar a configuração de Proxy de aplicativo Web  
+## <a name="update-the-web-application-proxy-configuration"></a>Atualizar a configuração do proxy de aplicativo Web  
   
 > [!IMPORTANT]  
-> Não é preciso publicar o serviço de registro de dispositivo para o Proxy de aplicativo Web.  O serviço de registro de dispositivo estará disponível por meio do Proxy de aplicativo Web depois de ter habilitado em um servidor de Federação.  Você talvez precise concluir este procedimento para atualizar a configuração de Proxy de aplicativo Web se ele tiver sido implantado antes de habilitar o serviço de registro do dispositivo.  
+> Você não precisa publicar o serviço de registro de dispositivo no proxy de aplicativo Web.  O serviço de registro de dispositivo estará disponível por meio do proxy de aplicativo Web quando ele estiver habilitado em um servidor de Federação.  Talvez seja necessário concluir este procedimento para atualizar a configuração do proxy de aplicativo Web se ela tiver sido implantada antes de habilitar o serviço de registro de dispositivo.  
   
-#### <a name="to-update-the-web-application-proxy-configuration"></a>Para atualizar a configuração de Proxy de aplicativo Web  
+#### <a name="to-update-the-web-application-proxy-configuration"></a>Para atualizar a configuração do proxy de aplicativo Web  
   
-1.  No servidor de Proxy de aplicativo Web, abra uma janela de comando do Windows PowerShell e digite  
+1.  No servidor proxy de aplicativo Web, abra uma janela de comando do Windows PowerShell e digite  
   
     ```  
     Update-WebApplicationProxyDeviceRegistration  
     ```  
   
-2.  Quando solicitado a fornecer credenciais, insira as credenciais de uma conta que tenha direitos administrativos aos servidores de Federação.  
+2.  Quando solicitado a fornecer credenciais, insira as credenciais de uma conta que tenha direitos administrativos em seus servidores de Federação.  
   
 ## <a name="see-also"></a>Consulte também 
 

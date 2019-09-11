@@ -1,6 +1,6 @@
 ---
 title: Configurar o emparelhamento de rede virtual
-description: Configurar o emparelhamento de rede virtual envolve a criação de duas redes virtuais que obterem emparelhadas.
+description: A configuração do emparelhamento de rede virtual envolve a criação de duas redes virtuais que são emparelhadas.
 manager: dougkim
 ms.prod: windows-server-threshold
 ms.technology: networking-hv-switch
@@ -9,18 +9,18 @@ ms.assetid: ''
 ms.author: pashort
 author: shortpatti
 ms.date: 08/08/2018
-ms.openlocfilehash: 3ef3db879080e3372e7b287dcc55ae052c1fe109
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 417585ffbe1e8374be1560073d5636659eaf4332
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816387"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869881"
 ---
 # <a name="configure-virtual-network-peering"></a>Configurar o emparelhamento de rede virtual
 
 >Aplica-se a: Windows Server
 
-Neste procedimento, você pode usar Windows PowerShell para criar duas redes virtuais, cada um com uma sub-rede. Em seguida, você configure o emparelhamento entre duas redes virtuais para habilitar a conectividade entre eles.
+Neste procedimento, você usa o Windows PowerShell para criar duas redes virtuais, cada uma com uma sub-rede. Em seguida, você configura o emparelhamento entre as duas redes virtuais para habilitar a conectividade entre elas.
 
 - [Etapa 1. Criar a primeira rede virtual](#step-1-create-the-first-virtual-network)
 
@@ -28,15 +28,15 @@ Neste procedimento, você pode usar Windows PowerShell para criar duas redes vir
 
 - [Etapa 3. Configurar o emparelhamento da primeira rede virtual para a segunda rede virtual](#step-3-configure-peering-from-the-first-virtual-network-to-the-second-virtual-network)
 
-- [Etapa 4. Configurar o emparelhamento a partir da segunda rede virtual para a primeira rede virtual](#step-4-configure-peering-from-the-second-virtual-network-to-the-first-virtual-network)
+- [Etapa 4. Configurar o emparelhamento da segunda rede virtual para a primeira rede virtual](#step-4-configure-peering-from-the-second-virtual-network-to-the-first-virtual-network)
 
 
 >[!IMPORTANT]
->Lembre-se de atualizar as propriedades para o seu ambiente.
+>Lembre-se de atualizar as propriedades do seu ambiente.
 
 ## <a name="step-1-create-the-first-virtual-network"></a>Etapa 1. Criar a primeira rede virtual
 
-Nesta etapa, você use Windows PowerShell localizar a rede lógica do provedor HNV para criar a primeira rede virtual com uma sub-rede. O script de exemplo a seguir cria a rede virtual da Contoso com uma sub-rede.
+Nesta etapa, você usa o Windows PowerShell para encontrar a rede lógica do provedor HNV para criar a primeira rede virtual com uma sub-rede. O script de exemplo a seguir cria a rede virtual da contoso com uma sub-rede.
 
 ``` PowerShell
 #Find the HNV Provider Logical Network  
@@ -68,7 +68,7 @@ New-NetworkControllerVirtualNetwork -ResourceId "Contoso_VNet1" -ConnectionUri $
 
 ## <a name="step-2-create-the-second-virtual-network"></a>Etapa 2. Criar a segunda rede virtual
 
-Nesta etapa, você pode criar uma segunda rede virtual com uma sub-rede. O script de exemplo a seguir cria a rede virtual do Woodgrove com uma sub-rede.
+Nesta etapa, você cria uma segunda rede virtual com uma sub-rede. O script de exemplo a seguir cria a rede virtual do Woodgrove com uma sub-rede.
 
 ``` PowerShell
 
@@ -92,7 +92,7 @@ New-NetworkControllerVirtualNetwork -ResourceId "Woodgrove_VNet1" -ConnectionUri
 
 ## <a name="step-3-configure-peering-from-the-first-virtual-network-to-the-second-virtual-network"></a>Etapa 3. Configurar o emparelhamento da primeira rede virtual para a segunda rede virtual
 
-Nesta etapa, você configura o emparelhamento entre a primeira rede virtual e a segunda rede virtual que você criou nas etapas anteriores duas. O script de exemplo a seguir estabelece a rede virtual emparelhamento a partir **Contoso_vnet1** à **Woodgrove_vnet1**.
+Nesta etapa, você configura o emparelhamento entre a primeira rede virtual e a segunda rede virtual criada nas duas etapas anteriores. O script de exemplo a seguir estabelece o emparelhamento de rede virtual de **Contoso_vnet1** para **Woodgrove_vnet1**.
 
 ```PowerShell
 $peeringProperties = New-Object Microsoft.Windows.NetworkController.VirtualNetworkPeeringProperties
@@ -116,11 +116,11 @@ New-NetworkControllerVirtualNetworkPeering -ConnectionUri $uri -VirtualNetworkId
 ```
 
 >[!IMPORTANT]
->Depois de criar esse emparelhamento, mostra o status da rede virtual **iniciado**.
+>Depois de criar esse emparelhamento, o status da vnet mostrará **iniciado**.
 
-## <a name="step-4-configure-peering-from-the-second-virtual-network-to-the-first-virtual-network"></a>Etapa 4. Configurar o emparelhamento a partir da segunda rede virtual para a primeira rede virtual
+## <a name="step-4-configure-peering-from-the-second-virtual-network-to-the-first-virtual-network"></a>Etapa 4. Configurar o emparelhamento da segunda rede virtual para a primeira rede virtual
 
-Nesta etapa, você configura o emparelhamento entre a segunda rede virtual e a primeira rede virtual que você criou nas etapas 1 e 2 acima. O script de exemplo a seguir estabelece a rede virtual emparelhamento a partir **Woodgrove_vnet1** à **Contoso_vnet1**.
+Nesta etapa, você configura o emparelhamento entre a segunda rede virtual e a primeira rede virtual criada nas etapas 1 e 2 acima. O script de exemplo a seguir estabelece o emparelhamento de rede virtual de **Woodgrove_vnet1** para **Contoso_vnet1**.
 
 ```PowerShell
 $peeringProperties = New-Object Microsoft.Windows.NetworkController.VirtualNetworkPeeringProperties 
@@ -133,16 +133,16 @@ $peeringProperties.allowVirtualnetworkAccess = $true
 # Indicates whether forwarded traffic will be allowed across the vnets
 $peeringProperties.allowForwardedTraffic = $true 
 
-# Indicates whether the peer virtual network can access this virtual network’s gateway
+# Indicates whether the peer virtual network can access this virtual network's gateway
 $peeringProperties.allowGatewayTransit = $false 
 
-# Indicates whether this virtual network will use peer virtual network’s gateway
+# Indicates whether this virtual network will use peer virtual network's gateway
 $peeringProperties.useRemoteGateways =$false 
 
 New-NetworkControllerVirtualNetworkPeering -ConnectionUri $uri -VirtualNetworkId “Woodgrove_vnet1” -ResourceId “WoodgrovetoContoso” -Properties $peeringProperties 
 
 ```
 
-Depois de criar esse emparelhamento, o status de emparelhamento vnet mostra **Connected** para ambos os pares. Agora, máquinas virtuais em uma rede virtual podem se comunicar com máquinas virtuais na rede virtual emparelhada.
+Depois de criar esse emparelhamento, o status de emparelhamento vnet mostra **conectado** para ambos os pares. Agora, as máquinas virtuais em uma rede virtual podem se comunicar com máquinas virtuais na rede virtual emparelhada.
 
 ---

@@ -1,6 +1,6 @@
 ---
 title: Agregador de Log de Inventário de Software
-description: Descreve como instalar e gerenciar o agregador do log de inventário de Software
+description: Descreve como instalar e gerenciar o agregador de log de inventário de software
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: manage-software-inventory-logging
@@ -13,23 +13,23 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4414f3faca020ffa7169fb006bc1cea2988ea434
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 0edecb86c7d5afa7d267c75ec858ded9af36e4c0
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835457"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866314"
 ---
 # <a name="software-inventory-logging-aggregator"></a>Agregador de Log de Inventário de Software
 
 >Aplica-se a: Windows Server 2012 R2
 
-## <a name="what-is-software-inventory-logging-aggregator"></a>O que é o agregador do log de inventário de Software?
+## <a name="what-is-software-inventory-logging-aggregator"></a>O que é agregador de log de inventário de software?
 O SILA (Agregador do Log de Inventário de Software) recebe, faz agregações e produz relatórios básicos da quantidade e dos tipos de software corporativo da Microsoft instalados em Windows Servers em um datacenter.
 
-Ele é um software que você instala no Windows Server, mas que não está incluído em sua instalação. Para instalar o software, primeiro baixá-lo gratuitamente no Centro de Download do Windows: [Agregador do log de inventário software 1.0 para Windows Server](https://www.microsoft.com/en-us/download/details.aspx?id=49046)
+Ele é um software que você instala no Windows Server, mas que não está incluído em sua instalação. Para instalar o software, primeiro Baixe-o gratuitamente no centro de download do Windows: [Agregador de log de inventário de software 1,0 para Windows Server](https://www.microsoft.com/en-us/download/details.aspx?id=49046)
 
-A estrutura do Log de Inventário de Software destina-se a reduzir os custos operacionais do inventário de software da Microsoft implantado em vários servidores em um ambiente de TI. Essa estrutura consiste em dois componentes, o agregador do SIL e o recurso do Windows Server, introduzido no Windows Server 2012 R2, o registro em log de inventário de Software (SIL). Este Software Inventory agregador do log 1.0 instalará em um servidor e receber dados de inventário de qualquer Windows Server configurado para encaminhar os dados a ele por meio do SIL. O design permite que os administradores do datacenter habilitem o SIL nas imagens mestre do Windows Server destinadas à ampla distribuição em todo o seu ambiente.  Este pacote de software é o ponto de destino e destina-se a ser instalado pelos clientes em seus locais para um log fácil dos dados de inventário com o tempo. Este software também permite a criação periódica de relatórios de inventário básico no Microsoft Excel. Os relatórios do Agregador do Log de Inventário de Software 1.0 incluem contagens de instalações do Windows Server, System Center e SQL Server.
+A estrutura do Log de Inventário de Software destina-se a reduzir os custos operacionais do inventário de software da Microsoft implantado em vários servidores em um ambiente de TI. Essa estrutura consiste em dois componentes, esse agregador SIL e o recurso do Windows Server, introduzidos no Windows Server 2012 R2, o log de inventário de software (SIL). Esse agregador de log de inventário de software 1,0 será instalado em um servidor e receberá dados de inventário de qualquer Windows Server configurado para encaminhar dados para ele por meio de SIL. O design permite que os administradores do datacenter habilitem o SIL nas imagens mestre do Windows Server destinadas à ampla distribuição em todo o seu ambiente.  Este pacote de software é o ponto de destino e destina-se a ser instalado pelos clientes em seus locais para um log fácil dos dados de inventário com o tempo. Este software também permite a criação periódica de relatórios de inventário básico no Microsoft Excel. Os relatórios do Agregador do Log de Inventário de Software 1.0 incluem contagens de instalações do Windows Server, System Center e SQL Server.
 
 > [!IMPORTANT]
 > Nenhum dado é enviado à Microsoft com o uso deste software.
@@ -55,21 +55,21 @@ Depois de implantados corretamente, os seguintes dados podem ser exibidos no Agr
 
 -   Contagem de marca d'água alta e identidade de VMs com execução simultânea do Windows Server (no caso de um host que executa um hipervisor) em cada host, com o tempo
 
--   Contagem de marca d'água alta e nome do host de simultaneamente em execução gerenciada \(agente do System Center presente\) VMs do Windows Server em cada host, ao longo do tempo
+-   A contagem de marcas de alta água e o nome do host, de \(execução simultânea do agente\) do System Center gerenciado, apresentam VMs do Windows Server em cada host, ao longo do tempo
 
--   Nome de agentes do System Center instalado nas VMs contadas em alta gerenciada\-marca d'água
+-   Nome dos agentes do System Center instalados em VMs contadas em\-marca d' água alta gerenciada
 
--   Contagem e o local de instalações do SQL Server ao longo do tempo \(somente SKUs e edições que exigem uma licença\)
+-   Contagem e localização de instalações de SQL Server ao \(longo do tempo apenas SKUs e edições que exigem uma licença\)
 
--   Lista de softwares instalados em Adicionar\/remover programas
+-   Listas de softwares instalados em Adicionar\/ou remover programas
 
 ### <a name="who-will-use-sil"></a>Quem usará o SIL?
 
 -   **Profissionais de TI ou administradores de datacenter** que buscam um método de baixo custo para coletar dados de inventário de software valiosos, de forma automática e que abrangem um período de tempo.
 
--   **CIOs e Controladores de Finanças**, que precisam relatar o uso do software corporativo da Microsoft nas implantações de TI de suas organizações.
+-   **Cios e controladores de finanças**, que precisam relatar o uso do software corporativo da Microsoft nas implantações de ti de suas organizações.
 
-## <a name="getting-started"></a>Introdução
+## <a name="getting-started"></a>Guia de Introdução
 **Pré-requisitos**
 
 Agregador do SIL (Agregador do Log de Inventário de Software) em, no mínimo, um servidor para agregação e relatórios (em uma VM ou no hardware físico):
@@ -85,11 +85,11 @@ Agregador do SIL (Agregador do Log de Inventário de Software) em, no mínimo, u
 -   Opcional: **VMware PowerCLI 5.5.0.5836** (necessário em ambientes VMware)
 
 >[!Note]
->Ao usar o Windows Management Framework, há um problema de compatibilidade conhecido com a versão do WMF 5.1, somente do agregador do SIL.  Não é necessário exceder WMF versão 4.0 em servidores com o agregador do SIL instalado.
+>Ao usar o Windows Management Framework, há um problema de compatibilidade conhecido com a versão 5,1 do WMF, somente no agregador SIL.  Não é necessário exceder a versão 4,0 do WMF em servidores com o agregador SIL instalado.
 
 O SIL (Log de Inventário de Software) está disponível nas versões do Windows Server com as seguintes atualizações instaladas:
 
--   **Windows Server 2016**, ou superior
+-   **Windows Server 2016**ou superior
 
 -   **Windows Server 2012 R2** (Standard ou Datacenter Edition)
 
@@ -100,10 +100,10 @@ O SIL (Log de Inventário de Software) está disponível nas versões do Windows
 ### <a name="security-and-account-types"></a>Segurança e tipos de conta
 **Requisito de certificado**
 
-O SIL e o Agregador do SIL dependem de certificados SSL para a comunicação autenticada. A implementação comum disso será a instalação do Agregador do SIL com um certificado (correspondência entre nome do servidor e nome do certificado) para hospedar o serviço Web que recebe os dados de inventário. Em seguida, os Windows Servers a serem inventariados com o recurso SIL usarão um certificado de cliente diferente, para enviar dados por push para o Agregador do SIL. Deve-se usar um cmdlet do PowerShell (Set-SilAggregator, veja mais detalhes abaixo) para adicionar impressões digitais de certificado à lista do Agregador do SIL de certificados aprovados dos quais o Agregador aceitará dados associados. O Agregador do SIL continua com o processamento e a inserção em seu banco de dados após a autenticação de cada carga de dados com um certificado. Veja a seção **Detalhes de cmdlets do Agregador do SIL** para obter detalhes mais específicos sobre como isso funciona.
+O SIL e o Agregador do SIL dependem de certificados SSL para a comunicação autenticada. A implementação comum disso será a instalação do Agregador do SIL com um certificado (correspondência entre nome do servidor e nome do certificado) para hospedar o serviço Web que recebe os dados de inventário. Em seguida, os Windows Servers a serem inventariados com o recurso SIL usarão um certificado de cliente diferente, para enviar dados por push para o Agregador do SIL. Um cmdlet do PowerShell (Set-SilAggregator, mais detalhes abaixo) precisa ser usado para adicionar impressões digitais de certificado à lista de certificados aprovados do agregador SIL da qual o agregador aceitará os dados associados. O Agregador do SIL continua com o processamento e a inserção em seu banco de dados após a autenticação de cada carga de dados com um certificado. Veja a seção **Detalhes de cmdlets do Agregador do SIL** para obter detalhes mais específicos sobre como isso funciona.
 
 ### <a name="polling-account-setup"></a>Configuração da conta de sondagem
-Ao adicionar credenciais ao Agregador do SIL para permitir operações de sondagem, você deve usar uma abordagem de conta com menos privilégios. Além disso, como uma melhor prática de segurança, você não deve usar as mesmas credenciais para todos ou vários dos hosts em um datacenter ou em outra implantação de TI.
+Ao adicionar credenciais ao Agregador do SIL para permitir operações de sondagem, você deve usar uma abordagem de conta com menos privilégios. Além disso, como prática recomendada de segurança, você não deve usar as mesmas credenciais para todos os hosts, ou muitos, em um data center ou em outra implantação de ti.
 
 Em um host do Windows Server que você deseja configurar para sondagem pelo Agregador do SIL, e para evitar o uso de um usuário no grupo de administradores, siga estas etapas para fornecer acesso suficiente a uma conta de usuário:
 
@@ -131,7 +131,7 @@ Em um host do Windows Server que você deseja configurar para sondagem pelo Agre
 
 11. De volta em Segurança na janela **root\cimv2**, selecione os **Usuários do Gerenciamento Remoto**.
 
-12. Na seção permissões na parte inferior, certifique-se de que o **habilitação remota** é verificada.
+12. Na seção permissões na parte inferior, verifique se a opção **habilitar remotamente** está marcada.
 
 13. Clique em **Aplicar** e em **OK**.
 
@@ -140,7 +140,7 @@ Em um host do Windows Server que você deseja configurar para sondagem pelo Agre
 ### <a name="installing-sil-aggregator"></a>Instalando o Agregador do SIL
 Há algumas coisas de que você precisa ter certeza antes de instalar o Agregador do SIL em um Windows Server:
 
--   **Você tem um certificado SSL válido** que deseja usar para hospedar o serviço Web deste software.
+-   **Você tem um certificado SSL válido** que deseja usar para hospedar o serviço Web desse software.
 
     -   O certificado deve estar no formato **.pfx**
 
@@ -182,11 +182,11 @@ Há algumas coisas de que você precisa ter certeza antes de instalar o Agregado
 
 6.  Em **Escolher um Tipo de Conta**, selecione **usuário local** ou **gMSA**, dependendo de sua preferência.
 
-    A escolha da opção de conta de usuário local criará um usuário local com uma senha forte gerada automaticamente. Essa conta será usada para todos os serviços do Agregador do SIL e operações de tarefa no servidor local.  É recomendado usar a gMSA (Contas de Serviço Gerenciado de Grupo) se o Agregador fizer parte de um domínio do Active Directory (Windows Server 2012 e posterior). Para obter mais informações sobre a gMSA, consulte: [Visão geral das contas de serviço gerenciado de grupo](https://technet.microsoft.com/library/hh831782.aspx)
+    A escolha da opção de conta de usuário local criará um usuário local com uma senha forte gerada automaticamente. Essa conta será usada para todos os serviços do Agregador do SIL e operações de tarefa no servidor local.  É recomendado usar a gMSA (Contas de Serviço Gerenciado de Grupo) se o Agregador fizer parte de um domínio do Active Directory (Windows Server 2012 e posterior). Para obter mais informações sobre o gMSA, consulte: [Visão geral de contas de serviço gerenciado de grupo](https://technet.microsoft.com/library/hh831782.aspx)
 
     -   A opção de conta gMSA deve ser usada se você pretende executar o banco de dados SQL Server em um servidor separado do Agregador do SIL.
 
-    -   Não se esqueça de reinicializar o servidor depois de adicionar a conta de computador para o grupo de segurança habilitado para gMSA no Active Directory.
+    -   Não se esqueça de reinicializar o servidor depois de adicionar a conta de computador ao grupo de segurança habilitado para gMSA no Active Directory.
 
 7.  Em **Escolher um SQL Server**, insira o SQL Server em que a sua instância do SQL está instalada ou **localhost**, se ele estiver instalado no servidor local.
 
@@ -198,7 +198,7 @@ Há algumas coisas de que você precisa ter certeza antes de instalar o Agregado
 
 10. Procure o local do arquivo **.pfx**, digite a senha para o arquivo .pfx e clique em **Avançar**.
 
-11. A última tela mostrará o progresso da instalação. Depois de concluído com êxito, clique em **Concluir**.
+11. A tela final mostrará o progresso da instalação. Depois de concluído com êxito, clique em **Concluir**.
 
 ### <a name="uninstalling-sil-aggregator"></a>Desinstalando o Agregador do SIL
 
@@ -206,7 +206,7 @@ Há algumas coisas de que você precisa ter certeza antes de instalar o Agregado
 
 1.  Abra o **PowerShell** como administrador e digite `Stop-SilAggregator`. Quando o prompt retornar, isso significa que o Agregador do SIL foi interrompido.
 
-    Por design, o Agregador do SIL processará arquivos após 20 minutos ou depois que 100 arquivos forem recebidos.  Em ambientes de alta escala nunca ocorrerá nesse cenário, mas em escala baixa, alguns arquivos podem permanecer para ser processado antes que o agregador possa ser interrompido. Use o parâmetro `–Force` se esses arquivos forem mantidos e os dados não forem necessários.
+    Por design, o Agregador do SIL processará arquivos após 20 minutos ou depois que 100 arquivos forem recebidos.  Em ambientes de alta escala, esse cenário nunca ocorrerá, mas em escala baixa, alguns arquivos podem permanecer para serem processados antes que o agregador possa ser interrompido. Use o parâmetro `–Force` se esses arquivos forem mantidos e os dados não forem necessários.
 
 2.  Vá para **Painel de Controle**, clique em **Programas e Recursos**, em **Desinstalar Programas**, em **Agregador do Log de Inventário de Software** e em **Desinstalar**.
 
@@ -226,7 +226,7 @@ Os comandos a seguir podem ser executados no console do Windows PowerShell como 
 |`Start-SilAggregator`|Inicia todos os serviços e tarefas do Agregador do Log de Inventário de Software. Isso é necessário para que o Agregador receba dados via HTTPS de servidores com o Log do SIL iniciado.|
 |`Stop-SilAggregator`|Interrompe todos os serviços e tarefas do Agregador do Log de Inventário de Software. Se alguma tarefa ou serviço estiver no meio das operações, pode haver um atraso para a conclusão desse comando.|
 |`Set-SilAggregator`|Permite que o administrador altere a configuração do Agregador do Log de Inventário de Software.|
-|`Add-SilVmHost`|Usado para adicionar nomes de host específicos, ou uma matriz de nomes de host, a serem pesquisadas em um intervalo regular \(intervalos de uma hora para o padrão é\).|
+|`Add-SilVmHost`|Usado para adicionar nomes de host específicos, ou uma matriz de nomes de host, a ser sondada em um \(intervalo regular padrão é de\)uma hora.|
 |`Remove-SilVmHost`|Usado para remover nomes de host específicos, ou uma matriz de nomes de host, a serem pesquisadas em um intervalo regular.|
 |`Get-SilVMHost`|Usado para recuperar a lista de hosts físicos que o Agregador do Log de Inventário de Software é configurado para pesquisar em relação aos dados contínuos de estado de execução de VM.|
 |`Get-SILAggregatorData`|Usado para recuperar dados do banco de dados para o console do PowerShell.|
@@ -239,7 +239,7 @@ Depois de instalar o Agregador do Log de Inventário de Software no servidor, ab
 
     -   Execute `Start-SilAggregator`
 
-        Isso é necessário para que o Agregador receba ativamente os dados que são encaminhados a ele via HTTPS dos servidores que você configurou (ou que configurará) a serem inventariados. Observe que mesmo se você tiver habilitado seus servidores para encaminhar para esse Agregador primeiro, não há problema algum, já que eles armazenarão em cache suas cargas de dados localmente por até 30 dias. Uma vez o agregador, seu "targeturi? está ativo e em execução, todos os dados armazenados em cache serão encaminhados ao mesmo tempo para o agregador e todos os dados serão processados.
+        Isso é necessário para que o Agregador receba ativamente os dados que são encaminhados a ele via HTTPS dos servidores que você configurou (ou que configurará) a serem inventariados. Observe que mesmo se você tiver habilitado seus servidores para encaminhar para esse Agregador primeiro, não há problema algum, já que eles armazenarão em cache suas cargas de dados localmente por até 30 dias. Depois que o agregador, seu "targetUri" estiver em execução, todos os dados armazenados em cache serão encaminhados de uma vez ao agregador e todos os dados serão processados.
 
     -   Execute `Add-SilVMHost`
 
@@ -251,18 +251,18 @@ Depois de instalar o Agregador do Log de Inventário de Software no servidor, ab
 
         -   Esse cmdlet detectará automaticamente de uma lista predefinida de opções (veja a seção **Detalhes de cmdlets do Agregador do SIL**) e indicará qual HostType e HyperVisorType são corretos para o host que você está adicionando. Se não for possível reconhecê-los ou se as credenciais fornecidas forem incorretas, um prompt será exibido. Se você aceitar com uma entrada **Y**, o host será adicionado e listado como **Desconhecido**, mas não será pesquisado.
 
-    -   Executar `Set-SilAggregator –AddCertificateThumbprint` "impressão digital do seu certificado cliente?
+    -   Execute `Set-SilAggregator –AddCertificateThumbprint` "a impressão digital do seu certificado de cliente"
 
-        Isso é necessário para receber dados via HTTPS de Windows Servers com o Log do SIL habilitado. A impressão digital será adicionada à lista de impressões digitais da qual o Agregador do SIL aceitará dados. O Agregador do SIL foi projetado para aceitar certificados de autenticação de cliente corporativo válidos. O certificado usado precisará ser instalado na  **\\localmachine\MY (computador Local -> pessoal**) armazenar no servidor que encaminhamento os dados.
+        Isso é necessário para receber dados via HTTPS de Windows Servers com o Log do SIL habilitado. A impressão digital será adicionada à lista de impressões digitais da qual o Agregador do SIL aceitará dados. O Agregador do SIL foi projetado para aceitar certificados de autenticação de cliente corporativo válidos. O certificado usado precisará ser instalado no  **\\armazenamento localmachine\MY (computador local > pessoal**) no servidor que encaminha os dados.
 
 -   Nos Windows Servers a serem inventariados, abra o PowerShell como administrador e execute estes comandos:
 
-    -   Execute `Set-SilLogging –TargetUri “https://contososilaggregator�? –CertificateThumbprint “your client certificate’s thumbprint�?`
+    -   Execute `Set-SilLogging –TargetUri "https://contososilaggregator" –CertificateThumbprint "your client certificate's thumbprint"`
 
         -   Isso informará o SIL no Windows Server para qual local se deve enviar os dados de inventário e qual certificado deve ser usado para a autenticação.
 
             > [!IMPORTANT]
-            > Verifique se “https://” está no valor de TargetUri.
+            > Verifique se "https://" está no valor de TargetUri.
 
         -   O certificado de cliente corporativo com essa impressão digital deve ser instalado em **\localmachine\MY** ou use **certmgr.msc** para instalar o certificado no repositório **Computador Local -> Pessoal**.
 
@@ -271,7 +271,7 @@ Depois de instalar o Agregador do Log de Inventário de Software no servidor, ab
 
     -   Execute `Start-SilLogging`
 
-        Isso inicia o Log do SIL. A cada hora, em intervalos aleatórios dentro da mesma hora, o SIL encaminhará seus dados de inventário para o Agregador especificado com o parâmetro `–targeturi` . O primeiro encaminhamento será um conjunto completo de dados. Cada encaminhamento subsequente será mais uma "pulsação? com apenas os dados de identificação que nada foi alterado. Se houver alguma alteração ao conjunto de dados, outro conjunto completo de dados será encaminhado.
+        Isso inicia o Log do SIL. A cada hora, em intervalos aleatórios dentro da mesma hora, o SIL encaminhará seus dados de inventário para o Agregador especificado com o parâmetro `–targeturi` . O primeiro encaminhamento será um conjunto completo de dados. Cada encaminhamento subsequente será mais de uma "pulsação" com apenas a identificação de dados que nada mudou. Se houver alguma alteração ao conjunto de dados, outro conjunto completo de dados será encaminhado.
 
     -   Execute `Publish-SilData`
 
@@ -284,7 +284,7 @@ Depois de instalar o Agregador do Log de Inventário de Software no servidor, ab
 Depois de seguir estas etapas para adicionar hosts físicos que executam máquinas virtuais do Windows Server E depois de habilitar o Log de Inventário de Software (ou o Log do SIL) nesses Windows Servers, é possível executar o `Publish-SilReport –OpenReport` a qualquer momento no Agregador do SIL (exige o Excel 2013). No entanto, observe que o SQL Server Analysis Services realiza processos do cubo uma vez por dia; portanto, os dados não estão disponíveis nos relatórios no mesmo dia.
 
 ## <a name="architectural-overview"></a>Visão geral da arquitetura
-O SIL funciona nos modos push e pull e consiste em dois componentes que funcionam em paralelo: O recurso de registro em log de inventário de Software (SIL) no Windows Server e o MSI que pode ser baixado do Software Inventory Logging SILA (agregador). Os servidores a serem inventariados enviam por push os dados de inventário do software via HTTPS, com o SIL, para o Agregador do SIL (a cada hora em momentos aleatórios dentro de cada hora). Por sua vez, o Agregador sonda, ou consulta, os hosts do hipervisor físico para enviar por push os dados de inventário de hardware a cada hora. O envio por push e o pull precisam ser configurados corretamente para habilitar a funcionalidade completa do SIL. Eles podem ser configurados em qualquer ordem. No entanto, o processamento do cubo do Agregador ocorre uma vez por dia; portanto, os dados capturados no agregador, por meio do envio por push ou pull, não aparecerão nos relatórios até o dia seguinte.
+O SIL funciona nos modos de push e pull e consiste em dois componentes trabalhando em paralelo: O recurso de log de inventário de software (SIL) no Windows Server e o MSI de log de inventário de software (SILA) para download. Os servidores a serem inventariados enviam por push os dados de inventário do software via HTTPS, com o SIL, para o Agregador do SIL (a cada hora em momentos aleatórios dentro de cada hora). Por sua vez, o Agregador sonda, ou consulta, os hosts do hipervisor físico para enviar por push os dados de inventário de hardware a cada hora. O envio por push e o pull precisam ser configurados corretamente para habilitar a funcionalidade completa do SIL. Eles podem ser configurados em qualquer ordem. No entanto, o processamento do cubo do Agregador ocorre uma vez por dia; portanto, os dados capturados no agregador, por meio do envio por push ou pull, não aparecerão nos relatórios até o dia seguinte.
 
 ![](../media/software-inventory-logging/SILA_Architecture.png)
 
@@ -310,20 +310,20 @@ Você precisará de um certificado SSL de cliente válido no formato. pfx usar e
 
 -   `$firstAvailableDriveLetter = $availableDriveLetters[0]`
 
--   `New-PSDrive -Name $firstAvailableDriveLetter -PSProvider filesystem -root` **<\\server\path compartilhar que contém o arquivo pfx de certificado >** `-credential $mycreds`
+-   `New-PSDrive -Name $firstAvailableDriveLetter -PSProvider filesystem -root`**server\path para compartilhar que contém o arquivo de certificado pfx > < \\** `-credential $mycreds`
 
--   `Copy-Item ${firstAvailableDriveLetter}:\`**< arquivo certificatename. pfx no diretório da unidade nova > c\<local de sua escolha >**
+-   `Copy-Item ${firstAvailableDriveLetter}:\` **< arquivo CertificateName. pfx no diretório da nova unidade > c:\<local de sua escolha >**
 
 -   `Remove-PSDrive –Name $firstAvailableDriveLetter`
 
 -   `$mypwd = ConvertTo-SecureString -String "`**<password for the certificate pfx file>**`" -Force –AsPlainText`
 
--   `Import-PfxCertificate -FilePath c:\`**<location\\certificatename.pfx>** `cert:\localMachine\my -Password $mypwd`
+-   `Import-PfxCertificate -FilePath c:\` **< local\\CertificateName. pfx >** `cert:\localMachine\my -Password $mypwd`
 
--   `Set-sillogging –targeturi “https://`**<machinename of your SIL Aggregator>** `–certificatethumbprint`
+-   `Set-sillogging –targeturi "https://` **<machinename of your SIL Aggregator>** `–certificatethumbprint`
 
 > [!NOTE] 
-> Usar a impressão digital do arquivo pfx cliente e adicionado ao seu agregador SIL usando o **Set-SilAggregator '-AddCertificateThumbprint** cmdlet.
+> Use a impressão digital do certificado do seu arquivo PFX do cliente e adicionado ao agregador SIL usando o cmdlet **set-SilAggregator '-AddCertificateThumbprint '** .
 
 -   `Start-sillogging`
 
@@ -338,15 +338,15 @@ Adicione `Publish-SilData` à lista acima em caso de envio por push dos dados do
 No Agregador do Log de Inventário de Software, o cubo do SQL Server Analysis Services será processado uma vez por dia às 3h00min00s no horário do sistema local. Os relatórios refletirão todos os dados até aquele horário, mas nada após esse horário, no mesmo dia.
 
 ### <a name="high-water-mark"></a>Marca d'água alta
-Um aspecto fundamental dos relatórios do agregador do log de inventário do Software é a captura do que é conhecido como uma "– marca d'água alta? da execução de servidores do Windows simultaneamente. Isso se aplica às contagens do Windows Server e do System Center nesses relatórios. Em relação ao Windows Server, cada host físico tem um ponto no tempo (independentemente do tipo de SO no host), ao longo de um mês, quando a maioria das VMs do Windows Server é executada simultaneamente. Essa é a marca d'água alta do mês. Além disso, em relação ao System Center, há um ponto no tempo no mês em que a maioria dos Windows Servers gerenciados é executada simultaneamente por host físico (um servidor gerenciado é identificado quando houver um ou mais agentes do System Center presentes). Somente a marca d'água alta mais recente para qualquer host físico será mostrada no relatório. Nenhum dado após a marca d'água alta será mostrado. e é possível pressupor que o número de VMs do Windows Server (guias WS) ou de VMs gerenciadas do Windows Server (guias SC) tenha ficado abaixo da marca d'água alta após esse ponto. Essa maneira de acompanhar e representar o uso destina-se a ajudar na capacidade de planejamento, bem como no alinhamento com modelos de licença para esses produtos.
+Um aspecto fundamental dos relatórios de agregador de log de inventário de software é a captura do que é comumente chamado de "marca de alta água" de execução simultânea de servidores Windows. Isso se aplica às contagens do Windows Server e do System Center nesses relatórios. Em relação ao Windows Server, cada host físico tem um ponto no tempo (independentemente do tipo de SO no host), ao longo de um mês, quando a maioria das VMs do Windows Server é executada simultaneamente. Essa é a marca d'água alta do mês. Além disso, em relação ao System Center, há um ponto no tempo no mês em que a maioria dos Windows Servers gerenciados é executada simultaneamente por host físico (um servidor gerenciado é identificado quando houver um ou mais agentes do System Center presentes). Somente a marca d'água alta mais recente para qualquer host físico será mostrada no relatório. Nenhum dado após a marca d'água alta será mostrado. e é possível pressupor que o número de VMs do Windows Server (guias WS) ou de VMs gerenciadas do Windows Server (guias SC) tenha ficado abaixo da marca d'água alta após esse ponto. Essa maneira de acompanhar e representar o uso destina-se a ajudar na capacidade de planejamento, bem como no alinhamento com modelos de licença para esses produtos.
 
-No SQL relacionados guias no relatório, o SQL Server instala é contadas de maneira cumulativa; não por marca d'água hig. O total é que uma contagem contínua das instalações do SQL Server.
+Nas guias relacionadas ao SQL no relatório, SQL Server instalações são contadas de forma cumulativa; Não por hig-marca d' água. O total é que uma contagem contínua das instalações do SQL Server.
 
 > [!NOTE]
 > O uso do Log de Inventário de Software não substitui a obrigação de relatar com precisão o uso do software da Microsoft de acordo com os termos de licença aplicáveis.
 
 ### <a name="poll-date-time"></a>Data e hora da sondagem
-Ao usar o Agregador do Log de Inventário de Software, é importante entender que a agregação para contagens de marca d'água alta é controlada por sondagem. Em outras palavras, uma marca d'água alta pode ser capturada somente por uma sondagem do host físico subjacente. Assim, contagens de marca d'água alta estão diretamente associadas com um correspondente "Poll data hora.? Embora o intervalo de sondagem seja ajustável, a fidelidade das marcas d'água alta capturadas será afetada se for usado um valor mais alto do intervalo. Quanto maior o intervalo, menos representativos de uso real serão os dados.
+Ao usar o Agregador do Log de Inventário de Software, é importante entender que a agregação para contagens de marca d'água alta é controlada por sondagem. Em outras palavras, uma marca d'água alta pode ser capturada somente por uma sondagem do host físico subjacente. Assim, as contagens de marcas de água alta são diretamente associadas a uma "data e hora de sondagem" correspondente. Embora o intervalo de sondagem seja ajustável, a fidelidade das marcas d'água alta capturadas será afetada se for usado um valor mais alto do intervalo. Quanto maior o intervalo, menos representativos de uso real serão os dados.
 
 ### <a name="reports-are-month-by-month"></a>Os relatórios são gerados a cada mês
 Todos os relatórios, mesmo relatórios anuais, são representados como relatórios gerados a cada mês. O total das marcas d'água alta, bem como os dados do computador, são redefinidos no início de cada mês corrido.
@@ -363,26 +363,26 @@ Os dados de relatório afetados pela troca para um novo mês incluem:
 
 -   Ignore todos os valores que estão em cinza ou esmaecidos. Esses são os artefatos da criação de relatório do cubo de SSAS.
 
--   Se uma VM está listada com "SO desconhecido? Isso significa que o agregador não recebeu uma carga de dados completa dessa VM por meio do SIL via HTTPS.
+-   Se uma VM estiver listada com "so desconhecido", significa que o agregador não recebeu uma carga de dados completa dessa VM via SIL sobre HTTPS.
 
--   VMs listadas em "Host desconhecido? encaminhamento de dados de inventário com êxito via HTTPS para o agregador, mas o agregador não está ativamente ou com êxito de VMs do Windows Server estão sondando o host subjacente para a VM. As contagens sempre serão zero para essas entradas, uma vez que o host subjacente é desconhecido. Use o cmdlet `Add-SilVMHost`, com as credenciais corretas, para adicionar o host (ou todos os hosts) ao Agregador do SIL para sondagem. Depois de pesquisados com êxito, os dados da VM e do host serão associados em relatórios que são encaminhados.
+-   As VMs listadas em "host desconhecido" são VMs do Windows Server que encaminham com êxito os dados de inventário por HTTPS para o agregador, mas o agregador não está ativamente ou sondando o host subjacente com êxito para essa VM. As contagens sempre serão zero para essas entradas, uma vez que o host subjacente é desconhecido. Use o cmdlet `Add-SilVMHost`, com as credenciais corretas, para adicionar o host (ou todos os hosts) ao Agregador do SIL para sondagem. Depois de pesquisados com êxito, os dados da VM e do host serão associados em relatórios que são encaminhados.
 
 -   Todas as datas e horas são locais em relação à hora do sistema e à localidade do Agregador do SIL. Isso inclui os dados de inventário recebidos via HTTPS dos sistemas habilitados para SIL. Quando esses arquivos são processados (não mais de 20 minutos após o recebimento), os dados são inseridos no banco de dados com a hora do sistema local.
 
--   "Agregador do SIL? será indicado em qualquer computador de servidor que tenha o agregador de log de inventário de Software instalado.
+-   O "agregador SIL" será indicado em qualquer computador servidor que tenha o agregador de log de inventário de software instalado.
 
 -   Se um host físico altera o número de processadores ou a quantidade de memória física, uma nova linha aparecerá no relatório junto com a linha antiga. As atualizações de sondagem serão interrompidas na linha antiga e continuarão na nova linha como se fosse um host recém-adicionado.
 
--   Nas guias **Resumo** e **Detalhes** , o total listado nas colunas para Windows Servers em execução simultânea ou Windows Servers gerenciados indica um total de todas as marcas d'água alta de todos os hosts abaixo. Isso inclui servidores Windows que não são hosts de hipervisor e não ter nenhuma VM em execução, bem como servidores que podem ter as VMs em execução, mas que são "desconhecidas? como nenhum dado está sendo recebido de dentro da VM do SIL via HTTPS. Eles são somados para sua conveniência.
+-   Nas guias **Resumo** e **Detalhes** , o total listado nas colunas para Windows Servers em execução simultânea ou Windows Servers gerenciados indica um total de todas as marcas d'água alta de todos os hosts abaixo. Isso inclui servidores Windows que não são hosts do hipervisor e não têm VMs em execução, bem como servidores que podem ter VMs em execução, mas são "desconhecidos", pois nenhum dado está sendo recebido de dentro da VM de SIL via HTTPS. Eles são somados para sua conveniência.
 
 -   Na seção **SQL Server** da guia **Painel** , a contagem total de instalações do SQL Server é um resumo de todos os totais de edição no Painel.  Isso pode levar a uma discrepância entre o total visto na guia **Detalhes do SQL** nos casos em que várias edições do SQL estão instaladas em um único servidor.  O Painel as contaria separadamente em cada servidor, a guia **Detalhes** não.  Várias edições do SQL instaladas em um Windows Server sempre são contados como uma contagem de um, de acordo com os termos de licenciamento.
 
 -   Na seção **Windows Server** da guia **Painel**, as linhas de **Outros Hosts de Hipervisor** e **Total de Hosts de Hipervisor** incluem hosts físicos do Windows Server que podem ou NÃO estar executando o Hyper-V.
 
 ### <a name="column-descriptions"></a>Descrições de coluna
-Veja a seguir as descrições de cada coluna na guia **Detalhes do Windows Server** do relatório baseado no Excel criado pelo Agregador do SIL. Outras guias de dados são as mesmas ou um subconjunto dessas colunas. A única exceção seria "contagem de instalação? nas guias do SQL Server (consulte **marca d'água alta** seção).
+Veja a seguir as descrições de cada coluna na guia **Detalhes do Windows Server** do relatório baseado no Excel criado pelo Agregador do SIL. Outras guias de dados são as mesmas ou um subconjunto dessas colunas. A única exceção seria a "contagem de instalação" nas guias de SQL Server (consulte a seção **marca d' água alta** ).
 
-|Cabeçalho de coluna|Descrição|
+|Cabeçalho da coluna|Descrição|
 |-----------------|---------------|
 |Mês calendário|Os dados em relatórios são agrupados por mês, com os mais recentes em primeiro lugar. Os dados no mês não estão listados em uma ordem específica.|
 |Nome do host|O nome da rede, ou o FQDN, do host físico que o Agregador do SIL está sondando com êxito.<br /><br />Use o cmdlet Get-SilVMHost para localizar os hosts que foram adicionados, mas que não são, ou que não estão mais, sendo pesquisados com êxito. A última sondagem bem-sucedida será exibida.|
@@ -401,11 +401,11 @@ Veja a seguir as descrições de cada coluna na guia **Detalhes do Windows Serve
 |Data hora do host vista pela última vez|Data e hora do último recebimento pelo Agregador do inventário de dados via HTTPS desse host físico do Windows Server.<br /><br />Há suporte para hosts físicos, que executam o Windows Server e o HyperV, para habilitar o SIL e encaminhar dados de inventário via HTTPS para um Agregador do SIL.|
 
 ## <a name="sil-aggregator-cmdlets-detail"></a>Detalhes de cmdlets do Agregador do SIL
-Veja a seguir os detalhes de cmdlets do Agregador do SIL. Para obter a documentação completa de cmdlets, consulte: [Cmdlets do PowerShell do agregador do SIL](https://technet.microsoft.com/library/mt548455.aspx)
+Veja a seguir os detalhes de cmdlets do Agregador do SIL. Para obter a documentação completa do cmdlet, consulte: [Cmdlets do PowerShell do agregador SIL](https://technet.microsoft.com/library/mt548455.aspx)
 
 ### <a name="publish-silreport"></a>Publish-SilReport
 
--   Esse cmdlet, usado como está, criará um Relatório do Log de Inventário de Software e o colocará no diretório de Documentos do usuário conectado (é necessário ter o Excel 2013 no computador em que o cmdlet é executado).
+-   Esse cmdlet, usado como está, criará um relatório de log de inventário de software e o posicionará no diretório de documentos do usuário conectado (o Excel 2013 é necessário no computador em que o cmdlet é executado).
 
 -   Usado com o parâmetro `–OpenReport` , ele criará o relatório e vai abri-lo no Excel para exibição.
 
@@ -418,7 +418,7 @@ Veja a seguir os detalhes de cmdlets do Agregador do SIL. Para obter a documenta
     -   Antes de se conectar pela primeira vez, na maioria dos casos, você precisará abrir uma porta no firewall do servidor de banco de dados do Agregador do SIL para permitir conexões. Os profissionais de TI desejarão configurá-la antecipadamente para permitir o acesso aos controladores de finanças ou a outros gerentes de inventário para que eles criem seus próprios relatórios. Para obter as etapas para fazer isso, veja o link abaixo. Uma porta padrão típica para o SQL Server Analysis Services é 2383.
 
 ### <a name="add-silvmhost"></a>Add-SilVMHost
-Há suporte para os seguintes tipos de host e versões de hipervisor ao usar o cmdlet `Add-SilVMHost` . Observe que não é necessário especificá-los. O cmdlet `Add-SilVMHost` detectará automaticamente uma combinação com suporte. Se não for possível detectá-la ou se as credenciais fornecidas forem incorretas, um prompt será exibido. Se o usuário aceitar com "Y? entrada, o host será adicionado, mas ele não será pesquisado. Ele será adicionado como "desconhecido?.
+Há suporte para os seguintes tipos de host e versões de hipervisor ao usar o cmdlet `Add-SilVMHost` . Observe que não é necessário especificá-los. O cmdlet `Add-SilVMHost` detectará automaticamente uma combinação com suporte. Se não for possível detectá-la ou se as credenciais fornecidas forem incorretas, um prompt será exibido. Se o usuário aceitar com uma entrada "Y", o host será adicionado, mas não será sondado. Ele será adicionado como "desconhecido".
 
 |Versão do hipervisor|Agregador do SIL         Valor de HostType|Valor HypervisorType do Agregador do SIL|
 |----------------------|-----------------------------------------|---------------------------------------|
@@ -506,7 +506,7 @@ Com o cmdlet `Set-SilAggregator` , você pode:
 
     -   Verifique se o **targeturi** tem **https://** na entrada.
 
-    -   Certifique-se de que todas as atualizações necessárias para o Windows Server estão instaladas (veja os Pré-requisitos para o SIL).  Uma maneira rápida de verificar é procurar por elas usando o seguinte cmdlet:   `Get-SilWindowsUpdate *3060*, *3000*`
+    -   Certifique-se de que todas as atualizações necessárias para o Windows Server estão instaladas (veja os Pré-requisitos para o SIL).  Uma maneira rápida de verificar é procurar por eles usando o seguinte cmdlet:`Get-SilWindowsUpdate *3060*, *3000*`
 
     -   Verifique se o certificado usado para autenticar no agregador está instalado no repositório correto no servidor local a ser inventariado com o SilLogging (veja a seção Introdução).
 
@@ -516,13 +516,13 @@ Com o cmdlet `Set-SilAggregator` , você pode:
 
     -   Se todos os itens acima foram verificados, é possível verificar se o certificado usado para instalar o Agregador do SIL está íntegro e corresponde ao próprio nome do servidor do Agregador do SIL (essa etapa será necessária se outros computadores estiverem encaminhando com êxito para o mesmo Agregador do SIL).
 
-    -   Você pode verificar o seguinte local para arquivos do SIL armazenados em cache no servidor que está tentando encaminhar/enviar por push, \Windows\System32\\Logfiles\\SIL. Se o `SilLogging` foi iniciado e está em execução há mais de uma hora, ou se o `Publish-SilData` foi executado recentemente, e não existem arquivos neste diretório, isso significa que o log no agregador foi bem-sucedido.
+    -   Você pode verificar o seguinte local para arquivos Sil armazenados em cache no servidor que está tentando encaminhar/enviar por\\Push,\\\Windows\System32 LogFiles Sil. Se o `SilLogging` foi iniciado e está em execução há mais de uma hora, ou se o `Publish-SilData` foi executado recentemente, e não existem arquivos neste diretório, isso significa que o log no agregador foi bem-sucedido.
 
 -   Confirme se o usuário conectado tem o banco de dados SQL e acesso ao Analysis Services.
 
     -   Isso é necessário ao instalar o Agregador do SIL.
 
-    -   Isso é necessário ao usar o PowerShell para gerenciar o agregador do SIL remotamente.
+    -   Isso é necessário ao usar o PowerShell remotamente para gerenciar o agregador SIL.
 
 -   Para publicar relatórios do Agregador do SIL de um SO da área de trabalho do cliente.
 
@@ -532,13 +532,13 @@ Com o cmdlet `Set-SilAggregator` , você pode:
 
 -   Ao usar a opção gMSA:
 
-    -   Não se esqueça de reinicializar o servidor depois de ingressá-lo ao grupo de computadores habilitados para gMSA no Active Directory.
+    -   Não se esqueça de reinicializar o servidor depois de ingressar no grupo de computadores habilitado para gMSA em Active Directory.
 
-    -   No processo de instalação, não use o domínio totalmente qualificado ao digitar domínio\usuário. Por exemplo, use **meudomínio \ contagmsa**. Não insira **mydomain.<i> </i>com\gmsaaccount**.
+    -   No processo de instalação, não use o domínio totalmente qualificado ao inserir Domain\User. Por exemplo, use **mydomain\gmsaaccount**. Não insira **mydomain.<i> </i> com\gmsaaccount**.
 
 -   Ao usar o Windows Management Framework em seu ambiente:
 
-    -   Certifique-se de que os servidores com o SILA instalado não tem o WMF 5.1 instalado.  É possível receber um erro no log de eventos em relação à DLL **'mpunits.dll'**.  Isso impedirá que a operação apropriada.  SILA só requer o WMF 4.0.
+    -   Verifique se o (s) servidor (es) com SILA instalado não têm o WMF 5,1 instalado.  É possível chegar a um erro no log de eventos referente à DLL **' mpunits. dll '** .  Isso impedirá a operação adequada.  SILA requer apenas o WMF 4,0.
 
 ## <a name="managing-sil-over-time"></a>Gerenciando o SIL com o tempo
 
@@ -557,7 +557,7 @@ Depois de executar essa operação, é necessário atualizar as credenciais usan
 Quando você desejar iniciar o inventário de servidores em seu ambiente com um Agregador do SIL diferente, basta usar o cmdlet do SIL nesses servidores para alterar o targeturi (e a impressão digital de certificado, se necessário), `Set-SilLogging –TargetUri`. Observe que depois de fazer isso é necessário usar o cmdlet `Publish-SilData` pelo menos uma vez para encaminhar um inventário completo para o Agregador do SIL especificado mais recentemente.
 
 ### <a name="changing-or-updating-certificates"></a>Alterando ou atualizando certificados
-**ETAPAS IMPORTANTES PARA EVITAR A PERDA DE DADOS:** Se for necessário alterar o certificado que os servidores estão usando para encaminhar dados para um agregador do SIL, mas o agregador de destino permanece o mesmo, siga estas etapas para evitar a perda de dados em trânsito para o agregador:
+**ETAPAS IMPORTANTES PARA EVITAR A PERDA DE DADOS:** Se for necessário alterar o certificado que os servidores estão usando para encaminhar dados para um agregador SIL, mas o agregador de destino permanecerá o mesmo, use estas etapas para evitar possíveis perdas de dados em trânsito para o agregador:
 
 -   No Agregador do SIL, use o cmdlet `Set-SilAggregator –AddCertificateThumbprint` para adicionar a nova impressão digital ao Agregador do SIL.
 
@@ -565,7 +565,7 @@ Quando você desejar iniciar o inventário de servidores em seu ambiente com um 
 
 -   Em TODOS os servidores que encaminham dados, use o cmdlet `Set-SilLogging –CertificateThumbprint` para atualizar para a impressão digital do novo certificado.
 
--   **CRÍTICO: Somente depois que todos os servidores que encaminham dados forem atualizados, remova a impressão digital antiga** do agregador do SIL usando `Set-SilAggregator –RemoveCertificateThumbprint` cmdlet. Se um servidor que encaminha dados continuar encaminhando com um certificado antigo que foi removido do Agregador do SIL, **os dados serão perdidos** e não são inseridos no banco de dados do Agregador. Isso só afeta cenários em que um servidor tenha encaminhado os dados anteriormente com êxito para um Agregador do SIL e o certificado é então removido da lista de impressões digitais do Agregador do SIL da qual serão aceitos dados.
+-   **DRASTICAMENTE Somente depois que todos os servidores que encaminham dados tiverem sido atualizados, remova** a impressão digital antiga do agregador Sil usando `Set-SilAggregator –RemoveCertificateThumbprint` o cmdlet. Se um servidor que encaminha dados continuar encaminhando com um certificado antigo que foi removido do Agregador do SIL, **os dados serão perdidos** e não são inseridos no banco de dados do Agregador. Isso afeta apenas os cenários em que um servidor encaminhou com êxito os dados para um agregador SIL e o certificado é removido da lista de impressões digitais do agregador SIL para aceitar dados.
 
 ## <a name="release-notes"></a>Notas de versão
 
@@ -577,9 +577,9 @@ Quando você desejar iniciar o inventário de servidores em seu ambiente com um 
 
     3.  Expanda o banco de dados SoftwareInventoryLogging e Tabelas, na árvore de seleção.
 
-    4.  Clique com botão direito em **dbo.SqlServerEdition**, e, em seguida, selecione '**Editar 200 Linhas Principais**'.
+    4.  Clique com o botão direito em **dbo. SqlServerEdition**e selecione "editar as**200 linhas superiores**".
 
-    5.  Altere PropertyNumValue ao lado de "Standard Edition? para **2760240536** (de 1534726760).
+    5.  Altere o PropertyNumValue ao lado de "Standard Edition" para **2760240536** (de-1534726760).
 
     6.  Feche a consulta para salvar a alteração.
 
@@ -587,16 +587,16 @@ Quando você desejar iniciar o inventário de servidores em seu ambiente com um 
 
 -   Nos relatórios gerados pelo SIL, todas as contagens de núcleos de processador incluem a contagem de threads se o hyper-threading estiver habilitado no servidor físico.  Para obter as contagens reais de núcleos físicos em servidores com o hyper-threading habilitado, é necessário reduzir essas contagens pela metade.
 
--   Total nas linhas (em **Dashboard** guia) e colunas (no **resumido e detalhado** guias) rotuladas "**em execução simultânea**... ?, para o Windows Server e o System Center não exatamente correspondem entre os dois locais. Sobre o **Dashboard** guia, é necessário adicionar "**dispositivos do Windows Server (sem VMs conhecidas**)? valor para o "**em execução simultânea**... ? para igualar esse número nas guias **Resumo e Detalhes** .
+-   Os totais nas linhas (na guia **painel** ) e colunas (nas guias **Resumo e detalhes** ) rotulados como "**executando simultaneamente**...", para o Windows Server e o System Center, não correspondem exatamente aos dois locais. Na guia **painel** , é necessário adicionar o valor "**dispositivos do Windows Server (sem VMs conhecidas**)" ao "**executando simultaneamente**..." valor para igual a esse número nas guias **Resumo e detalhes** .
 
 -   Veja **ETAPAS IMPORTANTES PARA EVITAR PERDA DE DADOS** ao alterar ou atualizar certificados de acordo com a seção **Gerenciando o SIL com o tempo** desta documentação.
 
 -   Embora seja possível adicionar hosts do Windows Server 2008 R2 e do Windows Server 2012 à lista de hosts de sondagem, esta versão (1.0) do Agregador do SIL dá suporte apenas à sondagem do Windows Server 2012 R2, para hosts baseados no Windows/Hyper-V, para ter êxito com todos os recursos e funcionalidades.  Em particular, é comum que durante a sondagem de hosts do Windows Server 2008 R2, as máquinas virtuais e os hosts talvez não sejam correspondentes nos relatórios do Agregador do SIL.
 
 ## <a name="see-also"></a>Consulte também
-[Agregador do log de inventário software 1.0 para Windows Server](https://www.microsoft.com/en-us/download/details.aspx?id=49046)<br>
-[Cmdlets do PowerShell do agregador do SIL](https://technet.microsoft.com/library/mt548455.aspx)<br>
+[Agregador de log de inventário de software 1,0 para Windows Server](https://www.microsoft.com/en-us/download/details.aspx?id=49046)<br>
+[Cmdlets do PowerShell do agregador SIL](https://technet.microsoft.com/library/mt548455.aspx)<br>
 [Cmdlets do PowerShell do SIL](https://technet.microsoft.com/library/dn283390.aspx)<br>
 [Uma visão geral do SIL](https://technet.microsoft.com/library/dn268301.aspx)<br>
-[Gerenciando o SIL](https://technet.microsoft.com/library/dn383584.aspx)
+[Gerenciando SIL](https://technet.microsoft.com/library/dn383584.aspx)
 

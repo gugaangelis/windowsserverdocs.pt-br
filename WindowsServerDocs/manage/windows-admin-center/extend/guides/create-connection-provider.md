@@ -1,6 +1,6 @@
 ---
-title: Criar um provedor de conexão para uma extensão da solução
-description: Desenvolver uma extensão da solução (projeto Paulo) do SDK do Windows Admin Center - criar um provedor de conexão
+title: Criar um provedor de conexão para uma extensão de solução
+description: Desenvolver uma extensão de solução SDK do centro de administração do Windows (projeto Honolulu) – criar um provedor de conexão
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -8,41 +8,41 @@ ms.author: niwashbu
 ms.date: 06/06/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: b79e832ee45990d18baf4c211ab68b907134ceb7
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: c1f3a7f7004b573fece71cdaf2f43661c13ad496
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811840"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869631"
 ---
-# <a name="create-a-connection-provider-for-a-solution-extension"></a>Criar um provedor de conexão para uma extensão da solução
+# <a name="create-a-connection-provider-for-a-solution-extension"></a>Criar um provedor de conexão para uma extensão de solução
 
->Aplica-se a: Windows Admin Center, Windows Admin Center Preview
+>Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
 
-Provedores de Conexão desempenham um papel importante na maneira como o Windows Admin Center define e se comunica com os objetos conectáveis ou destinos. Basicamente, um provedor de Conexão executa ações enquanto está sendo feita uma conexão, como garantir que o destino está online e disponível e também garantir que o usuário conectado tem permissão para acessar o destino.
+Os provedores de conexão desempenham um papel importante no modo como o centro de administração do Windows define e se comunica com objetos conectáveis ou destinos. Principalmente, um provedor de conexão executa ações enquanto uma conexão está sendo feita, como garantir que o destino esteja online e disponível, e também garantir que o usuário que está se conectando tenha permissão para acessar o destino.
 
-Por padrão, o Windows Admin Center é fornecido com os seguintes provedores de Conexão:
+Por padrão, o centro de administração do Windows é fornecido com os seguintes provedores de conexão:
 
 * Servidor
 * Windows Client
 * Cluster de failover
 * Cluster HCI
 
-Para criar seu próprio provedor de Conexão personalizada, siga estas etapas:
+Para criar seu próprio provedor de conexão personalizado, siga estas etapas:
 
-* Adicionar detalhes do provedor de Conexão para ```manifest.json```
-* Definir provedor de Status de Conexão
-* Implementar o provedor de Conexão na camada de aplicativo
+* Adicionar detalhes do provedor de conexão a```manifest.json```
+* Definir provedor de status de conexão
+* Implementar o provedor de conexão na camada de aplicativo
 
-## <a name="add-connection-provider-details-to-manifestjson"></a>Adicionar detalhes do provedor de Conexão ao manifest. JSON
+## <a name="add-connection-provider-details-to-manifestjson"></a>Adicionar detalhes do provedor de conexão ao manifest. JSON
 
-Agora vamos examinar o que você precisa saber para definir um provedor de Conexão em seu projeto ```manifest.json``` arquivo.
+Agora vamos examinar o que você precisa saber para definir um provedor de conexão no arquivo do ```manifest.json``` seu projeto.
 
 ### <a name="create-entry-in-manifestjson"></a>Criar entrada no manifest. JSON
 
-O ```manifest.json``` arquivo está localizado na pasta \src. e contém, entre outras coisas, definições de pontos de entrada em seu projeto. Tipos de pontos de entrada incluem ferramentas, soluções e provedores de Conexão. Podemos estarei definindo um provedor de Conexão.
+O ```manifest.json``` arquivo está localizado na pasta \src e contém, entre outras coisas, definições de pontos de entrada em seu projeto. Os tipos de pontos de entrada incluem ferramentas, soluções e provedores de conexão. Vamos definir um provedor de conexão.
 
-Um exemplo de uma entrada de provedor de Conexão no manifest. JSON está abaixo:
+Um exemplo de uma entrada de provedor de conexão no manifest. JSON está abaixo:
 
 ``` json
     {
@@ -71,33 +71,33 @@ Um exemplo de uma entrada de provedor de Conexão no manifest. JSON está abaixo
     },
 ```
 
-Um ponto de entrada do tipo "connnectionProvider" indica para o shell do Windows Admin Center que o item que está sendo configurado é um provedor que será usado por uma solução para validar um estado de conexão. Pontos de entrada do provedor de Conexão contém um número de propriedades importantes, como definido abaixo:
+Um ponto de entrada do tipo "connnectionProvider" indica para o Shell do centro de administração do Windows que o item que está sendo configurado é um provedor que será usado por uma solução para validar um estado de conexão. Os pontos de entrada do provedor de conexão contêm várias propriedades importantes, definidas abaixo:
 
 | Propriedade | Descrição |
 | -------- | ----------- |
-| entryPointType | Esta é uma propriedade necessária. Há três valores válidos: "tool", "solução" e "connectionProvider". | 
-| name | Identifica o provedor de Conexão dentro do escopo de uma solução. Esse valor deve ser exclusivo dentro de uma instância completa do Windows Admin Center (não apenas uma solução). |
-| path | Representa o caminho da URL para o "Adicionar Conexão" da interface do usuário, se ele estará configurado pela solução. Esse valor deve mapear para uma rota que é configurada no arquivo de aplicativo routing.module.ts. Quando o ponto de entrada de solução é configurado para usar o rootNavigationBehavior conexões, essa rota carregará o módulo que é usado pelo Shell para exibir a interface do usuário adicionar de Conexão. Mais informações disponíveis na seção sobre rootNavigationBehavior. |
-| displayName | O valor digitado aqui é exibido no lado direito do shell, abaixo da barra preta do Windows Admin Center quando um usuário carrega a página de conexões da solução. |
-| ícone | Representa o ícone usado no menu suspenso de soluções para representar a solução. |
+| entryPointType | Essa é uma propriedade necessária. Há três valores válidos: "ferramenta", "solução" e "ConnectionProvider". | 
+| name | Identifica o provedor de conexão dentro do escopo de uma solução. Esse valor deve ser exclusivo dentro de uma instância completa do centro de administração do Windows (não apenas uma solução). |
+| path | Representa o caminho da URL para a interface do usuário "Adicionar conexão", caso ela seja configurada pela solução. Esse valor deve mapear para uma rota configurada no arquivo de roteamento de aplicativo. Module. TS. Quando o ponto de entrada da solução estiver configurado para usar as conexões rootNavigationBehavior, essa rota carregará o módulo usado pelo shell para exibir a interface do usuário Adicionar conexão. Mais informações estão disponíveis na seção sobre rootNavigationBehavior. |
+| displayName | O valor digitado aqui é exibido no lado direito do Shell, abaixo da barra preta do centro de administração do Windows quando um usuário carrega a página de conexões de uma solução. |
+| ícone | Representa o ícone usado no menu suspenso soluções para representar a solução. |
 | description | Insira uma breve descrição do ponto de entrada. |
-| connectionType | Representa o tipo de conexão que o provedor será carregado. O valor digitado aqui também será usado no ponto de entrada de solução para especificar que a solução pode carregar essas conexões. O valor digitado aqui também será usado no ponto (s) de entrada de ferramenta para indicar que a ferramenta é compatível com esse tipo. Esse valor digitado aqui também será usado no objeto de conexão que é enviado para o RPC chamar em "Adicionar janela", na etapa de implementação de camada de aplicativo. |
-| connectionTypeName | Usado na tabela de conexões para representar uma conexão que usa o provedor de Conexão. Isso é esperado para ser o nome no plural do tipo. |
-| connectionTypeUrlName | Usado na criação de URL para representar a solução carregada, depois que o Windows Admin Center se conectou a uma instância. Essa entrada é usada depois de conexões e antes do destino. Neste exemplo, "connectionexample" é onde esse valor aparece na URL: `http://localhost:6516/solutionexample/connections/connectionexample/con-fake1.corp.contoso.com` |
-| connectionTypeDefaultSolution | Representa o componente padrão que deve ser carregado pelo provedor de Conexão. Esse valor é uma combinação de: <br>[a] o nome do pacote de extensão definido na parte superior do manifesto; <br>[b] ponto de exclamação (!); <br>[c] nome do ponto de entrada a solução.    <br>Para um projeto com "msft.sme.mySample-extensão de nome" e um ponto de entrada de solução com o nome "exemplo", esse valor seria "extensão msft.sme.solutionExample! exemplo". |
-| connectionTypeDefaultTool | Representa o padrão de ferramenta que deve ser carregado em uma conexão bem-sucedida. Esse valor da propriedade é composto de duas partes, semelhantes ao connectionTypeDefaultSolution. Esse valor é uma combinação de: <br>[a] o nome do pacote de extensão definido na parte superior do manifesto; <br>[b] ponto de exclamação (!); <br>[c] o nome de ponto de entrada de ferramenta para a ferramenta que deve ser carregado inicialmente. <br>Para um projeto com "msft.sme.solutionExample-extensão de nome" e um ponto de entrada de solução com o nome "exemplo", esse valor seria "extensão msft.sme.solutionExample! exemplo". |
-| connectionStatusProvider | Consulte a seção "Definir o provedor de Status de Conexão" |
+| connectionType | Representa o tipo de conexão que o provedor carregará. O valor inserido aqui também será usado no ponto de entrada da solução para especificar que a solução pode carregar essas conexões. O valor inserido aqui também será usado em ponto (s) de entrada de ferramenta para indicar que a ferramenta é compatível com esse tipo. Esse valor inserido aqui também será usado no objeto de conexão que é enviado para a chamada RPC em "Adicionar janela", na etapa de implementação da camada de aplicativo. |
+| ConnectionName | Usado na tabela de conexões para representar uma conexão que usa seu provedor de conexão. Espera-se que seja o nome do plural do tipo. |
+| connectionTypeUrlName | Usado na criação da URL para representar a solução carregada, depois que o centro de administração do Windows tiver se conectado a uma instância do. Essa entrada é usada após as conexões e antes do destino. Neste exemplo, "connectionexample" é onde esse valor aparece na URL:`http://localhost:6516/solutionexample/connections/connectionexample/con-fake1.corp.contoso.com` |
+| connectionTypeDefaultSolution | Representa o componente padrão que deve ser carregado pelo provedor de conexão. Esse valor é uma combinação de: <br>[a] o nome do pacote de extensão definido na parte superior do manifesto; <br>[b] ponto de exclamação (!); <br>[c] o nome do ponto de entrada da solução.    <br>Para um projeto com o nome "MSFT. SME. MySample-Extension" e um ponto de entrada de solução com o nome "example", esse valor seria "MSFT. SME. solutionExample-Extension! example". |
+| connectionTypeDefaultTool | Representa a ferramenta padrão que deve ser carregada em uma conexão bem-sucedida. Esse valor de propriedade é composto de duas partes, semelhante ao connectionTypeDefaultSolution. Esse valor é uma combinação de: <br>[a] o nome do pacote de extensão definido na parte superior do manifesto; <br>[b] ponto de exclamação (!); <br>[c] o nome do ponto de entrada da ferramenta para a ferramenta que deve ser carregada inicialmente. <br>Para um projeto com o nome "MSFT. SME. solutionExample-Extension" e um ponto de entrada de solução com o nome "example", esse valor seria "MSFT. SME. solutionExample-Extension! example". |
+| connectionStatusProvider | Consulte a seção "definir provedor de status de conexão" |
 
-## <a name="define-connection-status-provider"></a>Definir provedor de Status de Conexão
+## <a name="define-connection-status-provider"></a>Definir provedor de status de conexão
 
-Provedor de Status de Conexão é o mecanismo pelo qual um destino é validado para estar online e disponível, garantindo que o usuário conectado tem permissão para acessar o destino. Atualmente, há dois tipos de provedores de Status de Conexão:  PowerShell e RelativeGatewayUrl.
+O provedor de status de conexão é o mecanismo pelo qual um destino é validado para estar online e disponível, garantindo também que o usuário que está se conectando tenha permissão para acessar o destino. Atualmente, há dois tipos de provedores de status de conexão:  PowerShell e RelativeGatewayUrl.
 
-*   <strong>Provedor de Status de Conexão do PowerShell</strong> -determina se um destino está online e acessível com um script do PowerShell. O resultado deve ser retornado em um objeto com uma única propriedade "status" definida abaixo.
-*   <strong>Provedor de Status de Conexão RelativeGatewayUrl</strong> -determina se um destino está online e acessível com uma chamada rest. O resultado deve ser retornado em um objeto com uma única propriedade "status" definida abaixo.
+*   <strong>Provedor de status de conexão do PowerShell</strong> – determina se um destino está online e acessível com um script do PowerShell. O resultado deve ser retornado em um objeto com uma única propriedade "status", definida abaixo.
+*   <strong>Provedor de status de conexão do RelativeGatewayUrl</strong> – determina se um destino está online e acessível com uma chamada REST. O resultado deve ser retornado em um objeto com uma única propriedade "status", definida abaixo.
 
 ### <a name="define-status"></a>Definir status
 
-Provedores de Status de Conexão são necessárias para retornar um objeto com uma única propriedade ```status``` que esteja de acordo com o seguinte formato:
+Provedores de status de conexão são necessários para retornar um objeto com uma ```status``` única propriedade que esteja de acordo com o seguinte formato:
 
 ``` json
 {
@@ -111,11 +111,11 @@ Provedores de Status de Conexão são necessárias para retornar um objeto com u
 
 Propriedades de status:
 
-* <strong>Rótulo</strong> – um rótulo que descreve o tipo de retorno de status. Observe que os valores para o rótulo podem ser mapeados no tempo de execução. Consulte a entrada abaixo para mapear valores no tempo de execução.
+* <strong>Rótulo</strong> -um rótulo que descreve o tipo de retorno de status. Observe que os valores para rótulo podem ser mapeados em tempo de execução. Consulte a entrada abaixo para mapear valores em tempo de execução.
 
-* <strong>Tipo</strong> -o status do tipo de retorno. Tipo tem os seguintes valores de enumeração. Para qualquer valor 2 ou superior, a plataforma não navegará para o objeto conectado, e um erro será exibido na interface do usuário.
+* <strong>Tipo</strong> -o tipo de retorno de status. O tipo tem os seguintes valores de enumeração. Para qualquer valor 2 ou superior, a plataforma não navegará até o objeto conectado e um erro será exibido na interface do usuário.
 
-   Tipos:
+   Digita
 
   | Valor | Descrição |
   | ----- | ----------- |
@@ -123,14 +123,14 @@ Propriedades de status:
   | 1 | Aviso |
   | 2 | Não autorizado |
   | 3 | Erro |
-  | 4 | Fatal |
-  | 5 | Desconhecido |
+  | 4 | Fatais |
+  | 5 | Unknown |
 
-* <strong>Detalhes</strong> – detalhes adicionais que descrevem o tipo de retorno de status.
+* <strong>Detalhes</strong> -detalhes adicionais que descrevem o tipo de retorno de status.
 
-### <a name="powershell-connection-status-provider-script"></a>Script de provedor de Status de Conexão do PowerShell
+### <a name="powershell-connection-status-provider-script"></a>Script do provedor de status de conexão do PowerShell
 
-O script do PowerShell de provedor de Status de Conexão determina se um destino está online e acessível com um script do PowerShell. O resultado deve ser retornado em um objeto com uma única propriedade "status". Abaixo está um exemplo de script.
+O script do PowerShell do provedor de status de conexão determina se um destino está online e acessível com um script do PowerShell. O resultado deve ser retornado em um objeto com uma única propriedade "status". Um exemplo de script é mostrado abaixo.
 
 Exemplo de script do PowerShell:
 
@@ -160,9 +160,9 @@ function Get-Status()
 Get-Status
 ```
 
-### <a name="define-relativegatewayurl-connection-status-provider-method"></a>Definir método de provedor de Status de Conexão RelativeGatewayUrl
+### <a name="define-relativegatewayurl-connection-status-provider-method"></a>Definir o método do provedor de status de conexão RelativeGatewayUrl
 
-O provedor de Status de Conexão ```RelativeGatewayUrl``` método chama uma rest API para determinar se um destino está online e acessível. O resultado deve ser retornado em um objeto com uma única propriedade "status". Abaixo está um exemplo de entrada do provedor de Conexão no manifest. JSON de um RelativeGatewayUrl.
+O método de provedor ```RelativeGatewayUrl``` de status de conexão chama uma API REST para determinar se um destino está online e acessível. O resultado deve ser retornado em um objeto com uma única propriedade "status". Uma entrada de provedor de conexão de exemplo no manifest. JSON de um RelativeGatewayUrl é mostrada abaixo.
 
 ``` json
     {
@@ -189,35 +189,35 @@ O provedor de Status de Conexão ```RelativeGatewayUrl``` método chama uma rest
     },
 ```
 
-Observações sobre o uso de RelativeGatewayUrl:
+Observações sobre como usar o RelativeGatewayUrl:
 
-* "relativeGatewayUrl" Especifica onde obter o status de conexão de uma URL de gateway. Esse URI é relativo da/API. Se $connectionName for encontrado na URL, ele será substituído pelo nome da conexão.
-* Todas as propriedades de relativeGatewayUrl devem ser executadas no gateway de host, que pode ser feito criando uma extensão de gateway
+* "relativeGatewayUrl" especifica onde obter o status da conexão de uma URL de gateway. Esse URI é relativo de/API. Se $connectionName for encontrado na URL, ele será substituído pelo nome da conexão.
+* Todas as propriedades relativeGatewayUrl devem ser executadas no gateway de host, o que pode ser feito pela criação de uma extensão de gateway
 
-### <a name="map-values-in-runtime"></a>Mapear valores no tempo de execução
+### <a name="map-values-in-runtime"></a>Mapear valores em tempo de execução
 
-Os valores de rótulo e os detalhes no status do objeto de retorno pode ser formatado em ajustar o tempo, incluindo chaves e valores na propriedade "defaultValueMap" do provedor.
+Os valores de rótulo e detalhes no objeto de retorno de status podem ser formatados em tempo de ajuste, incluindo chaves e valores na propriedade "defaultValueMap" do provedor.
 
-Por exemplo, se você adicionar o valor abaixo, sempre que "defaultConnection_test" apareceu como um valor para o rótulo ou obter detalhes, Windows Admin Center substituirá automaticamente a chave com o valor de cadeia de caracteres de recurso configurado.
+Por exemplo, se você adicionar o valor abaixo, sempre que "defaultConnection_test" for mostrado como um valor para o rótulo ou detalhes, o centro de administração do Windows substituirá automaticamente a chave pelo valor da cadeia de caracteres do recurso configurado.
 
 ``` json
     "defaultConnection_test": "resources:strings:addServer_status_defaultConnection_label"
 ```
 
-## <a name="implement-connection-provider-in-application-layer"></a>Implementar o provedor de Conexão na camada de aplicativo
+## <a name="implement-connection-provider-in-application-layer"></a>Implementar o provedor de conexão na camada de aplicativo
 
-Agora, vamos implementar o provedor de Conexão na camada de aplicativo, criando uma classe do TypeScript que implementa o OnInit. A classe tem as seguintes funções:
+Agora vamos implementar o provedor de conexão na camada de aplicativo, criando uma classe TypeScript que implementa OnInit. A classe tem as seguintes funções:
 
 | Função | Descrição |
 | -------- | ----------- |
-| Constructor(Private appContextService: AppContextService, rota privada: ActivatedRoute) |  |
-| public ngOnInit() |  |
-| onSubmit() pública | Contém a lógica para atualizar o shell quando é feita uma tentativa de conexão de adicionar |
-| onCancel() pública | Contém a lógica para atualizar o shell quando é cancelada uma tentativa de conexão de adicionar |
+| Construtor (appContextService particular: AppContextService, rota privada: ActivatedRoute) |  |
+| ngOnInit público () |  |
+| público-enviado por envio () | Contém a lógica para atualizar o shell quando uma tentativa de Adicionar conexão é feita |
+| público OnCancel () | Contém a lógica para atualizar o shell quando uma tentativa de Adicionar conexão é cancelada |
 
-### <a name="define-onsubmit"></a>Definir onSubmit
+### <a name="define-onsubmit"></a>Definir onsubmit
 
-```onSubmit``` problemas de uma RPC retorno de chamada para o contexto de aplicativo para notificar o shell de um "Adicionar Conexão". A chamada básica usa "updateData" como esta:
+```onSubmit```emite uma chamada RPC de volta para o contexto do aplicativo para notificar o Shell de uma "Adicionar conexão". A chamada básica usa "updateData" como esta:
 
 ``` ts
 this.appContextService.rpc.updateData(
@@ -301,17 +301,17 @@ export const connectionTypeConstants = {
 };
 ```
 
-### <a name="define-oncancel"></a>Definir onCancel
+### <a name="define-oncancel"></a>Definir OnCancel
 
-```onCancel``` Cancela uma tentativa de "Adicionar Conexão", passando uma matriz vazia de conexões:
+```onCancel```Cancela uma tentativa de "Adicionar conexão" passando uma matriz de conexões vazia:
 
 ``` ts
 this.appContextService.rpc.updateData(EnvironmentModule.nameOfShell, '##', <RpcUpdateData>{ results: { connections: [] } });
 ```
 
-## <a name="connection-provider-example"></a>Exemplo de provedor de Conexão
+## <a name="connection-provider-example"></a>Exemplo de provedor de conexão
 
-A classe completa de TypeScript para implementar um provedor de conexão está abaixo. Observe que a cadeia de caracteres "connectionType" corresponde a "connectionType conforme definido no provedor de conexão no manifest. JSON.
+A classe TypeScript completa para implementar um provedor de conexão está abaixo. Observe que a cadeia de caracteres "ConnectionType" corresponde ao "ConnectionType conforme definido no provedor de conexão em Manifest. JSON.
 
 ``` ts
 import { Component, OnInit } from '@angular/core';

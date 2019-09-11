@@ -8,125 +8,125 @@ ms.assetid: a6615411-83d9-495f-8a6a-1ebc8b12f164
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2b50f4b286e90a450278243c0294ea0aa7f221bc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 19318bfa9807d209bd9a195b668c1787bd3aff25
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875847"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871921"
 ---
 # <a name="choosing-a-network-adapter"></a>Escolhendo um adaptador de rede
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Você pode usar este tópico para aprender alguns dos recursos dos adaptadores de rede que podem afetar suas opções de compras.
+Você pode usar este tópico para aprender alguns dos recursos dos adaptadores de rede que podem afetar suas opções de compra.
 
-Aplicativos com uso intenso de rede requerem adaptadores de rede de alto desempenho. Essa seção explora algumas considerações para escolher os adaptadores de rede, bem como definir as configurações de adaptador de rede diferente para obter o melhor desempenho de rede.
+Aplicativos com uso intensivo de rede exigem Adaptadores de rede de alto desempenho. Esta seção explora algumas considerações sobre como escolher adaptadores de rede, bem como definir configurações de adaptador de rede diferentes para obter o melhor desempenho de rede.
 
 > [!TIP]
->  Você pode configurar as configurações do adaptador de rede usando o Windows PowerShell. Para obter mais informações, consulte [Cmdlets do adaptador de rede no Windows PowerShell](https://technet.microsoft.com/library/jj134956.aspx).
+>  Você pode definir as configurações do adaptador de rede usando o Windows PowerShell. Para obter mais informações, consulte [cmdlets do adaptador de rede no Windows PowerShell](https://technet.microsoft.com/library/jj134956.aspx).
 
-##  <a name="bkmk_offload"></a> Recursos de descarregamento
+##  <a name="bkmk_offload"></a>Recursos de descarga
 
-Descarregar tarefas da unidade de processamento central \(CPU\) à rede, adaptador pode reduzir o uso da CPU no servidor, o que melhora o desempenho geral do sistema.
+O descarregamento de tarefas da CPU \(\) da unidade de processamento central para o adaptador de rede pode reduzir o uso da CPU no servidor, o que melhora o desempenho geral do sistema.
 
-A pilha de rede nos produtos da Microsoft pode descarregar uma ou mais tarefas a um adaptador de rede, se você selecionar um adaptador de rede que tenha apropriado de recursos de descarregamento. A tabela a seguir fornece uma visão geral dos recursos de descarregamento diferentes que estão disponíveis no Windows Server 2016.
+A pilha de rede nos produtos da Microsoft pode descarregar uma ou mais tarefas em um adaptador de rede se você selecionar um adaptador de rede que tenha os recursos de descarregamento apropriados. A tabela a seguir fornece uma breve visão geral de diferentes recursos de descarregamento que estão disponíveis no Windows Server 2016.
   
 |Tipo de descarregamento|Descrição|
 |------------------|-----------------|  
-|Cálculo de soma de verificação para TCP|A pilha de rede pode descarregar o cálculo e a validação de protocolo TCP \(TCP\) somas de verificação em enviar e receber caminhos de código. Ele também pode descarregar o cálculo e a validação do IPv4 e IPv6 as somas de verificação em enviar e recebem caminhos de código.|  
-|Cálculo de soma de verificação para UDP |A pilha de rede pode descarregar o cálculo e a validação do protocolo de datagrama de usuário \(UDP\) somas de verificação em enviar e receber caminhos de código.|
-|Cálculo de soma de verificação para IPv4 |A pilha de rede pode descarregar o cálculo e a validação do IPv4, as somas de verificação em enviar e recebem caminhos de código. |
-|Cálculo de soma de verificação para IPv6 |A pilha de rede pode descarregar o cálculo e a validação do IPv6 as somas de verificação em enviar e recebem caminhos de código. | 
-|Segmentação de grandes pacotes TCP|A camada de transporte TCP/IP oferece suporte ao descarregamento de envio grande v2 (LSOv2). Com LSOv2, a camada de transporte TCP/IP pode descarregar a segmentação de grandes pacotes TCP para o adaptador de rede.|  
-|O Receive Side Scaling \(RSS\)|O RSS é uma tecnologia de driver de rede que permite a distribuição eficiente de rede de processamento de recebimento entre várias CPUs em sistemas multiprocessadores. Mais detalhes sobre o RSS é fornecido neste tópico.|  
-|Receber união de segmentos \(RSC\)|A RSC é a capacidade de pacotes de grupo em conjunto para minimizar o cabeçalho de processamento que é necessária para o host executar. Um máximo de 64 KB de conteúdo recebido pode ser Unido em um único pacote maior para processamento. Mais detalhes sobre a RSC é fornecido neste tópico.|  
+|Cálculo da soma de verificação para TCP|A pilha de rede pode descarregar o cálculo e a validação das somas\) de verificação TCP do protocolo \(de controle de transmissão nos caminhos de código de envio e recebimento. Ele também pode descarregar o cálculo e a validação de somas de verificação de IPv4 e IPv6 em caminhos de código de envio e recebimento.|  
+|Cálculo da soma de verificação para UDP |A pilha de rede pode descarregar o cálculo e a validação de somas\) de verificação UDP do protocolo \(de datagrama de usuário em caminhos de código de envio e recebimento.|
+|Cálculo da soma de verificação para IPv4 |A pilha de rede pode descarregar o cálculo e a validação de somas de verificação de IPv4 em caminhos de código de envio e recebimento. |
+|Cálculo da soma de verificação para IPv6 |A pilha de rede pode descarregar o cálculo e a validação de somas de verificação do IPv6 em caminhos de código de envio e recebimento. | 
+|Segmentação de pacotes TCP grandes|A camada de transporte TCP/IP dá suporte ao LSOv2 (carregamento de envio grande) v2. Com o LSOv2, a camada de transporte TCP/IP pode descarregar a segmentação de pacotes TCP grandes no adaptador de rede.|  
+|RSS de escala \(lateral de recebimento\)|O RSS é uma tecnologia de driver de rede que permite a distribuição eficiente de processamento de recebimento de rede em várias CPUs em sistemas multiprocessadores. Mais detalhes sobre o RSS são fornecidos posteriormente neste tópico.|  
+|União de segmento de \(recebimento RSC\)|O RSC é a capacidade de agrupar pacotes para minimizar o processamento de cabeçalho necessário para que o host seja executado. Um máximo de 64 KB de carga recebida pode ser agrupado em um único pacote maior para processamento. Mais detalhes sobre o RSC são fornecidos posteriormente neste tópico.|  
   
-###  <a name="bkmk_rss"></a> O Receive Side Scaling
+###  <a name="bkmk_rss"></a>Receber dimensionamento lateral
 
-Windows Server 2016, Windows Server 2012, Windows Server 2012 R2, Windows Server 2008 R2 e Windows Server 2008, suporte para RSS \(RSS\). 
+O Windows Server 2016, o Windows Server 2012, o Windows Server 2012 R2, o Windows Server 2008 R2 e o Windows Server 2008 \(dão\)suporte ao RSS de dimensionamento lateral de recebimento. 
 
-Alguns servidores são configurados com vários processadores lógicos que compartilham recursos de hardware \(como um núcleo físico\) e que é tratado como simultâneo de multithreading \(SMT\) pares. A tecnologia hyperthreading Intel é um exemplo. RSS direciona o processamento de rede para até um processador lógico por núcleo. Por exemplo, em um servidor com Intel Hyper-Threading, 4 núcleos e 8 processadores lógicos, o RSS usa não mais do que 4 processadores lógicos para processamento de rede.  
+Alguns servidores são configurados com vários processadores lógicos que \(compartilham recursos de hardware como\) um núcleo físico e que são tratados como Peers \(de\) SMT de vários threads simultâneos. A tecnologia Intel Hyper-Threading é um exemplo. O RSS direciona o processamento de rede para até um processador lógico por núcleo. Por exemplo, em um servidor com Intel Hyper-Threading, 4 núcleos e 8 processadores lógicos, o RSS usa no máximo 4 processadores lógicos para processamento de rede.  
 
-RSS distribui os pacotes recebidos de e/s de rede entre os processadores lógicos para que os pacotes que pertencem à mesma conexão TCP são processados sob o mesmo processador lógico, que preserva a ordenação. 
+O RSS distribui pacotes de e/s de rede de entrada entre processadores lógicos para que os pacotes que pertencem à mesma conexão TCP sejam processados no mesmo processador lógico, que preserva a ordenação. 
 
-RSS também carregar o tráfego multicast e saldos UDP unicast, e ele encaminha os fluxos relacionados \(que é determinado pelo hash os endereços de origem e destino\) para o mesmo processador lógico, preservando a ordem das entradas relacionadas. Isso ajuda a melhorar a escalabilidade e desempenho em cenários com recepção intensa para servidores que têm adaptadores de rede menos do que processadores lógicos qualificados. 
+O RSS também equilibra o tráfego de difusão e unicast UDP e roteia os fluxos \(relacionados que são determinados pelo hash dos endereços\) de origem e de destino para o mesmo processador lógico, preservando a ordem das entradas relacionadas. Isso ajuda a melhorar a escalabilidade e o desempenho para cenários de uso intensivo de recebimento para servidores que têm menos adaptadores de rede do que os processadores lógicos qualificados. 
 
-#### <a name="configuring-rss"></a>Configurar o RSS
+#### <a name="configuring-rss"></a>Configurando RSS
 
-No Windows Server 2016, você pode configurar o RSS usando cmdlets do Windows PowerShell e perfis RSS. 
+No Windows Server 2016, você pode configurar o RSS usando os cmdlets do Windows PowerShell e os perfis RSS. 
 
-Você pode definir perfis RSS usando o **– perfil** parâmetro do **Set-NetAdapterRss** cmdlet do Windows PowerShell.
+Você pode definir perfis RSS usando o parâmetro **– Profile** do cmdlet **set-NetAdapterRss** do Windows PowerShell.
 
-**Comandos do Windows PowerShell para configuração do RSS**
+**Comandos do Windows PowerShell para configuração de RSS**
 
-Os cmdlets a seguir permitem que você consulte e modificar parâmetros do RSS por adaptador de rede.
+Os cmdlets a seguir permitem ver e modificar os parâmetros RSS por adaptador de rede.
   
 >[!NOTE]
->Para obter uma referência de comando detalhadas de cada cmdlet, incluindo sintaxe e parâmetros, você pode clicar em links a seguir. Além disso, você pode passar o nome do cmdlet **Get-Help** prompt do Windows PowerShell para obter detalhes sobre cada comando.  
+>Para obter uma referência de comando detalhada para cada cmdlet, incluindo sintaxe e parâmetros, você pode clicar nos links a seguir. Além disso, você pode passar o nome do cmdlet para **Get-Help** no prompt do Windows PowerShell para obter detalhes sobre cada comando.  
 
-- [Disable-NetAdapterRss](https://technet.microsoft.com/library/jj130892). Este comando desabilita o RSS no adaptador de rede que você especificar.
+- [Disable-NetAdapterRss](https://technet.microsoft.com/library/jj130892). Esse comando desabilita o RSS no adaptador de rede que você especificar.
 
-- [Enable-NetAdapterRss](https://technet.microsoft.com/library/jj130859). Este comando habilita o RSS no adaptador de rede que você especificar.
+- [Enable-NetAdapterRss](https://technet.microsoft.com/library/jj130859). Esse comando habilita o RSS no adaptador de rede que você especificar.
   
-- [Get-NetAdapterRss](https://technet.microsoft.com/library/jj130912). Esse comando recupera as propriedades RSS do adaptador de rede que você especificar.
+- [Get-NetAdapterRss](https://technet.microsoft.com/library/jj130912). Esse comando recupera as propriedades de RSS do adaptador de rede que você especificar.
   
-- [Set-NetAdapterRss](https://technet.microsoft.com/library/jj130863). Este comando define as propriedades RSS no adaptador de rede que você especificar.  
+- [Set-NetAdapterRss](https://technet.microsoft.com/library/jj130863). Esse comando define as propriedades de RSS no adaptador de rede que você especificar.  
 
-#### <a name="rss-profiles"></a>Perfis RSS
+#### <a name="rss-profiles"></a>Perfis de RSS
 
-Você pode usar o **– perfil** parâmetro do cmdlet Set-NetAdapterRss para especificar quais processadores lógicos são atribuídos a qual adaptador de rede. Os valores disponíveis para esse parâmetro são:
+Você pode usar o parâmetro **– Profile** do cmdlet Set-NetAdapterRss para especificar quais processadores lógicos são atribuídos a qual adaptador de rede. Os valores disponíveis para esse parâmetro são:
 
-- **Mais próximo**. Números de processador lógico que estão próximo processador RSS da base do adaptador de rede são preferenciais. Com esse perfil, o sistema operacional pode reequilibrar dinamicamente com base na carga de processadores lógicos.
+- **Mais próximo**. Os números de processador lógicos próximos ao processador RSS base do adaptador de rede são preferenciais. Com esse perfil, o sistema operacional pode reequilibrar os processadores lógicos dinamicamente com base na carga.
   
-- **ClosestStatic**. Números de processador lógico próximo processador RSS da base do adaptador de rede são preferenciais. Com esse perfil, o sistema operacional não reequilibrar dinamicamente com base na carga de processadores lógicos.
+- **ClosestStatic**. Os números de processador lógico próximo ao processador RSS de base do adaptador de rede são preferenciais. Com esse perfil, o sistema operacional não reequilibra dinamicamente os processadores lógicos com base na carga.
   
-- **NUMA**. Números de processadores lógicos em geral são selecionados em diferentes nós para distribuir a carga. Com esse perfil, o sistema operacional pode reequilibrar dinamicamente com base na carga de processadores lógicos.
+- **NUMA**. Os números de processador lógicos geralmente são selecionados em diferentes nós NUMA para distribuir a carga. Com esse perfil, o sistema operacional pode reequilibrar os processadores lógicos dinamicamente com base na carga.
   
-- **NUMAStatic**. Esse é o **perfil padrão**. Números de processadores lógicos em geral são selecionados em diferentes nós para distribuir a carga. Com esse perfil, o sistema operacional não irá rebalancear dinamicamente com base na carga de processadores lógicos.
+- **NUMAStatic**. Esse é o **perfil padrão**. Os números de processador lógicos geralmente são selecionados em diferentes nós NUMA para distribuir a carga. Com esse perfil, o sistema operacional não reequilibrará os processadores lógicos dinamicamente com base na carga.
 
-- **Conservadora**. RSS usa o mínimo de processadores suficientes para sustentar a carga. Essa opção ajuda a reduzir o número de interrupções.
+- **Conservador**. O RSS usa o menor número possível de processadores para sustentar a carga. Essa opção ajuda a reduzir o número de interrupções.
 
-Dependendo do cenário e as características de carga de trabalho, você também pode usar outros parâmetros do **Set-NetAdapterRss** cmdlet do Windows PowerShell para especificar o seguinte:
+Dependendo do cenário e das características de carga de trabalho, você também pode usar outros parâmetros do cmdlet **set-NetAdapterRss** do Windows PowerShell para especificar o seguinte:
 
-- Em uma base de adaptador por rede, como número de processadores lógicos pode ser usado para RSS.
+- Em uma base de adaptador por rede, quantos processadores lógicos podem ser usados para RSS.
 - O deslocamento inicial para o intervalo de processadores lógicos.
 - O nó do qual o adaptador de rede aloca memória.
 
-A seguir é adicionais **Set-NetAdapterRss** parâmetros que você pode usar para configurar o RSS:
+A seguir estão os parâmetros **set-NetAdapterRss** adicionais que você pode usar para configurar o RSS:
 
 >[!NOTE]
->Na sintaxe de exemplo para cada parâmetro abaixo, o nome do adaptador de rede **Ethernet** é usado como um valor de exemplo para o **– nome** parâmetro do **Set-NetAdapterRss** comando. Quando você executa o cmdlet, certifique-se de que o nome do adaptador de rede que você usa é apropriado para seu ambiente.
+>Na sintaxe de exemplo para cada parâmetro abaixo, o nome do adaptador de rede **Ethernet** é usado como um valor de exemplo para o parâmetro **– Name** do comando **set-NetAdapterRss** . Ao executar o cmdlet, verifique se o nome do adaptador de rede que você usa é apropriado para seu ambiente.
 
-- **\* MaxProcessors**: Define o número máximo de processadores RSS a ser usado. Isso garante que o tráfego de aplicativo está associado a um número máximo de processadores em uma determinada interface. Exemplo de sintaxe:
+- **MaxProcessors\*** : Define o número máximo de processadores RSS a serem usados. Isso garante que o tráfego do aplicativo esteja associado a um número máximo de processadores em uma determinada interface. Exemplo de sintaxe:
 
      `Set-NetAdapterRss –Name “Ethernet” –MaxProcessors <value>`
 
-- **\* BaseProcessorGroup**: Define o grupo de processador de base de um nó NUMA. Isso afeta a matriz de processador que é usada pelo RSS. Exemplo de sintaxe:
+- **BaseProcessorGroup\*** : Define o grupo de processadores base de um nó NUMA. Isso afeta a matriz do processador usada pelo RSS. Exemplo de sintaxe:
 
      `Set-NetAdapterRss –Name “Ethernet” –BaseProcessorGroup <value>`
   
-- **\* MaxProcessorGroup**: Define o grupo de processador de máximo de um nó NUMA. Isso afeta a matriz de processador que é usada pelo RSS. Essa configuração restringe um grupo de processador máximo para que o balanceamento de carga é alinhado dentro de um grupo de k. Exemplo de sintaxe:
+- **MaxProcessorGroup\*** : Define o grupo de processador máximo de um nó NUMA. Isso afeta a matriz do processador usada pelo RSS. Definir isso restringiria um grupo de processadores máximo para que o balanceamento de carga seja alinhado em um grupo k. Exemplo de sintaxe:
 
      `Set-NetAdapterRss –Name “Ethernet” –MaxProcessorGroup <value>`
 
-- **\* BaseProcessorNumber**: Define o número de processador de base de um nó NUMA. Isso afeta a matriz de processador que é usada pelo RSS. Isso permite que o particionamento de processadores em adaptadores de rede. Isso é o primeiro processador lógico nos processadores de intervalo de RSS que é atribuído a cada adaptador. Exemplo de sintaxe:
+- **BaseProcessorNumber\*** : Define o número de processador base de um nó NUMA. Isso afeta a matriz do processador usada pelo RSS. Isso permite o particionamento de processadores entre adaptadores de rede. Esse é o primeiro processador lógico no intervalo de processadores RSS que é atribuído a cada adaptador. Exemplo de sintaxe:
 
      `Set-NetAdapterRss –Name “Ethernet” –BaseProcessorNumber <Byte Value>`
 
-- **\* NumaNode**: O nó NUMA que cada adaptador de rede pode alocar memória do. Isso pode ser dentro de um grupo de k ou de grupos diferentes de k. Exemplo de sintaxe:
+- **NumaNode\*** : O nó NUMA do qual cada adaptador de rede pode alocar memória. Isso pode estar dentro de um grupo k ou de diferentes grupos k. Exemplo de sintaxe:
 
      `Set-NetAdapterRss –Name “Ethernet” –NumaNodeID <value>`
 
-- **\* NumberofReceiveQueues**: Se os processadores lógicos parecerem subutilizados para receber tráfego \(por exemplo, como exibido no Gerenciador de tarefas\), você pode tentar aumentar o número de filas RSS do padrão de 2 para o máximo que é compatível com o adaptador de rede . O adaptador de rede pode ter opções para alterar o número de filas RSS como parte do driver. Exemplo de sintaxe:
+- **NumberofReceiveQueues\*** : Se os processadores lógicos parecem estar subutilizados para receber tráfego \(, por exemplo, como exibido no Gerenciador\)de tarefas, você pode tentar aumentar o número de filas RSS do padrão de 2 para o máximo com suporte no seu adaptador de rede . O adaptador de rede pode ter opções para alterar o número de filas RSS como parte do driver. Exemplo de sintaxe:
 
      `Set-NetAdapterRss –Name “Ethernet” –NumberOfReceiveQueues <value>`
 
-Para obter mais informações, clique no seguinte link para baixar [Scalable Networking: Eliminando o gargalo de processamento de recebimento — Introdução ao RSS](https://download.microsoft.com/download/5/D/6/5D6EAF2B-7DDF-476B-93DC-7CF0072878E6/NDIS_RSS.doc) no formato Word.
+Para obter mais informações, clique no link a seguir [para baixar a rede escalonável: Eliminando o afunilamento de processamento de](https://download.microsoft.com/download/5/D/6/5D6EAF2B-7DDF-476B-93DC-7CF0072878E6/NDIS_RSS.doc) recebimento, apresentando o RSS no formato Word.
   
-#### <a name="understanding-rss-performance"></a>Noções básicas sobre o desempenho de RSS
+#### <a name="understanding-rss-performance"></a>Noções básicas sobre o desempenho do RSS
 
-O ajuste de RSS exige noções básicas sobre a configuração e a lógica de balanceamento de carga. Para verificar se as configurações de RSS entraram em vigor, você pode examinar a saída quando você executa o **Get-NetAdapterRss** cmdlet do Windows PowerShell. A seguir está um exemplo de saída deste cmdlet.
+O ajuste do RSS requer a compreensão da configuração e da lógica de balanceamento de carga. Para verificar se as configurações de RSS entraram em vigor, você pode examinar a saída ao executar o cmdlet **Get-NetAdapterRss** do Windows PowerShell. Veja a seguir um exemplo de saída desse cmdlet.
   
 ```
 
@@ -148,29 +148,29 @@ IndirectionTable: [Group:Number]:
                           0:0    0:4    0:0    0:4    0:0    0:4    0:0    0:4  
 ```  
 
-Além de ecoar os parâmetros que foram definidos, o principal aspecto da saída é a saída de tabela de indireção. A tabela de indireção exibe os buckets de tabela de hash são usados para distribuir o tráfego de entrada. Neste exemplo, a notação n:c designa Numa K-par de índice do grupo: CPU que é usado para direcionar o tráfego de entrada. Podemos ver exatamente 2 entradas exclusivas (0:0 e 0:4), que representam 0/cpu0 grupo k e grupo k 0/cpu 4, respectivamente.
+Além dos parâmetros de eco que foram definidos, o aspecto principal da saída é a saída da tabela de indireção. A tabela de indireção exibe os buckets de tabela de hash que são usados para distribuir o tráfego de entrada. Neste exemplo, a notação n:c designa o par de índice K-Group: CPU de numa que é usado para direcionar o tráfego de entrada. Vemos exatamente duas entradas exclusivas (0:0 e 0:4), que representam k-Group 0/CPU0 e k-Group 0/CPU 4, respectivamente.
 
-Há apenas um grupo de k para esse sistema (k-grupo 0) e um n (em que n < = 128) entrada da tabela de indireção. Como o número de filas de recebimento é definido como 2, somente 2 processadores (0:0, 0:4) são escolhidos - mesmo que processadores máximas é definida como 8. Na verdade, a tabela de indireção é hash de tráfego de entrada para usar somente 2 CPUs fora a 8, que estão disponíveis.
+Há apenas um grupo k para este sistema (k-Group 0) e uma entrada de tabela de indireção n (em que n < = 128). Como o número de filas de recebimento está definido como 2, somente 2 processadores (0:0, 0:4) são escolhidos, embora os processadores máximos estejam definidos como 8. Na verdade, a tabela de indireção está aplicando hash ao tráfego de entrada para usar apenas 2 CPUs dos 8 que estão disponíveis.
 
-Para utilizar totalmente as CPUs, o número de filas de recebimento de RSS deve ser igual ou maior que o máximo de processadores. No exemplo anterior, a fila de recebimento deve ser definida como 8 ou maior.
+Para utilizar totalmente as CPUs, o número de filas de recebimento RSS deve ser igual ou maior que os processadores máximos. No exemplo anterior, a fila de recebimento deve ser definida como 8 ou superior.
 
 #### <a name="nic-teaming-and-rss"></a>Agrupamento NIC e RSS
 
-RSS pode ser habilitada em um adaptador de rede é agrupado com outra placa de interface de rede usando o agrupamento NIC. Nesse cenário, somente o adaptador de rede física subjacente pode ser configurado para usar o RSS. Um usuário não é possível definir os cmdlets RSS no adaptador de rede agrupados.
+O RSS pode ser habilitado em um adaptador de rede que está agrupado com outra placa de interface de rede usando o agrupamento NIC. Nesse cenário, somente o adaptador de rede física subjacente pode ser configurado para usar o RSS. Um usuário não pode definir os cmdlets RSS no adaptador de rede agrupado.
   
-###  <a name="bkmk_rsc"></a> Receber união de segmentos (RSC)
+###  <a name="bkmk_rsc"></a>União de segmento de recebimento (RSC)
 
-Receber união de segmentos \(RSC\) ajuda no desempenho, reduzindo o número de cabeçalhos de IP que serão processados para uma determinada quantidade de dados recebidos. Ele deve ser usado para ajudar a dimensionar o desempenho de dados recebidos pelo agrupamento \(ou de união\) os pacotes menores em unidades maiores.
+A União \(de segmento de\) recebimento RSC ajuda o desempenho, reduzindo o número de cabeçalhos IP que são processados para uma determinada quantidade de dados recebidos. Ele deve ser usado para ajudar a dimensionar o desempenho de dados recebidos agrupando \(ou\) unindo os pacotes menores em unidades maiores.
 
-Essa abordagem pode afetar a latência com benefícios principalmente vistos em ganhos de taxa de transferência. A RSC é recomendável aumentar a taxa de transferência para cargas de trabalho pesadas recebidas. Considere a implantação de adaptadores de rede que dão suporte a RSC. 
+Essa abordagem pode afetar a latência com os benefícios vistos principalmente nos ganhos da produtividade. O RSC é recomendado para aumentar a taxa de transferência para cargas de trabalho pesadas recebidas. Considere a implantação de adaptadores de rede que dão suporte a RSC. 
 
-Esses adaptadores de rede, verifique se a RSC na \(essa é a configuração padrão\), a menos que você tiver cargas de trabalho específicas \(por exemplo, baixa latência, a rede de taxa de transferência de baixa\) que se beneficiam de apresentação de RSC que está sendo desativado .
+Nesses adaptadores de rede, verifique se o RSC \(está nessa configuração\)padrão, a menos que \(você tenha cargas de trabalho específicas, por exemplo, baixa latência,\) rede de baixa taxa de transferência que mostre os benefícios do RSC sendo desativado .
 
-#### <a name="understanding-rsc-diagnostics"></a>Noções básicas de diagnóstico RSC
+#### <a name="understanding-rsc-diagnostics"></a>Compreendendo o diagnóstico de RSC
 
-Você pode diagnosticar RSC usando os cmdlets do Windows PowerShell **Get-NetAdapterRsc** e **Get-NetAdapterStatistics**.
+Você pode diagnosticar o RSC usando os cmdlets do Windows PowerShell **Get-NetAdapterRsc** e **Get-NetAdapterStatistics**.
 
-A seguir está o exemplo de saída quando você executar o cmdlet Get-NetAdapterRsc.
+A seguir, há um exemplo de saída quando você executa o cmdlet Get-NetAdapterRsc.
 
 ```  
 
@@ -183,11 +183,11 @@ Ethernet                       True         False        True            False  
   
 ```  
 
-O **obter** cmdlet mostra se a RSC é habilitada na interface e se o TCP permite que a RSC estar em um estado operacional. O motivo da falha fornece detalhes sobre a falha ao habilitar a RSC nessa interface.
+O cmdlet **Get** mostra se o RSC está habilitado na interface e se o TCP permite que o RSC esteja em um estado operacional. O motivo da falha fornece detalhes sobre a falha ao habilitar o RSC nessa interface.
 
-No cenário anterior, a RSC IPv4 é suportados e operacionais na interface. Para entender as falhas de diagnóstico, é possível ver os bytes conciliados ou exceções causadas. Isso fornece uma indicação dos problemas de união.
+No cenário anterior, o IPv4 RSC tem suporte e está operacional na interface. Para entender as falhas de diagnóstico, é possível ver os bytes ou as exceções Unidas causadas. Isso fornece uma indicação dos problemas de União.
 
-A seguir está o exemplo de saída quando você executar o cmdlet Get-NetAdapterStatistics.
+A seguir, há um exemplo de saída quando você executa o cmdlet Get-NetAdapterStatistics.
 
 ```  
 PS C:\Users\Administrator> $x = Get-NetAdapterStatistics “myAdapter”   
@@ -200,40 +200,40 @@ CoalescingExceptions : 0
   
 ```  
 
-#### <a name="rsc-and-virtualization"></a>A RSC e virtualização
+#### <a name="rsc-and-virtualization"></a>RSC e virtualização
 
-A RSC é suportada apenas no host físico quando o adaptador de rede do host não está associado ao comutador Virtual Hyper-V. A RSC é desabilitada pelo sistema operacional quando o host está associado ao comutador Virtual Hyper-V. Além disso, as máquinas virtuais não se beneficiarão da RSC porque os adaptadores de rede virtual não dão suporte a RSC.
+Somente há suporte para RSC no host físico quando o adaptador de rede do host não está associado ao comutador virtual do Hyper-V. O RSC é desabilitado pelo sistema operacional quando o host está associado ao comutador virtual do Hyper-V. Além disso, as máquinas virtuais não têm o benefício de RSC porque os adaptadores de rede virtual não dão suporte a RSC.
 
-A RSC pode ser habilitada para uma máquina virtual quando único Root Input/Output Virtualization \(SR-IOV\) está habilitado. Nesse caso, a funções virtuais dão suporte a funcionalidade da RSC; Portanto, as máquinas virtuais também recebem o benefício da RSC.
+O RSC pode ser habilitado para uma máquina virtual quando o Sr-IOV \(\) de virtualização de entrada/saída de raiz única estiver habilitado. Nesse caso, as funções virtuais dão suporte ao recurso RSC; Portanto, as máquinas virtuais também recebem o benefício do RSC.
 
-##  <a name="bkmk_resources"></a> Recursos do adaptador de rede
+##  <a name="bkmk_resources"></a>Recursos do adaptador de rede
 
-Alguns adaptadores de rede gerenciar ativamente os seus recursos para obter o melhor desempenho. Vários adaptadores de rede permitem que você configurar manualmente os recursos usando o **Advanced Networking** guia para o adaptador. Para esses adaptadores, você pode definir os valores de um número de parâmetros, incluindo o número de buffers de recepção e buffers de envio.
+Alguns adaptadores de rede gerenciam ativamente seus recursos para obter um desempenho ideal. Vários adaptadores de rede permitem configurar manualmente os recursos usando a guia **rede avançada** para o adaptador. Para esses adaptadores, você pode definir os valores de um número de parâmetros, incluindo o número de buffers de recebimento e buffers de envio.
 
-Configurando recursos de adaptador de rede é simplificada pelo uso dos cmdlets do Windows PowerShell a seguir.
+A configuração de recursos do adaptador de rede é simplificada pelo uso dos seguintes cmdlets do Windows PowerShell.
 
 - [Get-NetAdapterAdvancedProperty](https://technet.microsoft.com/library/jj130901.aspx)
 
 - [Set-NetAdapterAdvancedProperty](https://technet.microsoft.com/library/jj130894.aspx)
 
-- [Enable-NetAdapter](https://technet.microsoft.com/library/jj130876.aspx)
+- [Habilitar-netadapter](https://technet.microsoft.com/library/jj130876.aspx)
 
-- [Enable-NetAdapterBinding](https://technet.microsoft.com/library/jj130913.aspx)
+- [Habilitar-netadaptadorbinding](https://technet.microsoft.com/library/jj130913.aspx)
 
-- [Enable-NetAdapterChecksumOffload](https://technet.microsoft.com/library/jj130918.aspx)
+- [Habilitar-NetAdapterChecksumOffload](https://technet.microsoft.com/library/jj130918.aspx)
 
-- [Enable-NetAdapterIPSecOffload](https://technet.microsoft.com/library/jj130890.aspx)
+- [Habilitar-NetAdapterIPSecOffload](https://technet.microsoft.com/library/jj130890.aspx)
 
-- [Enable-NetAdapterLso](https://technet.microsoft.com/library/jj130922.aspx)
+- [Habilitar-NetAdapterLso](https://technet.microsoft.com/library/jj130922.aspx)
 
-- [Enable-NetAdapterPowerManagement](https://technet.microsoft.com/library/jj130907.aspx)
+- [Habilitar-NetAdapterPowerManagement](https://technet.microsoft.com/library/jj130907.aspx)
 
-- [Enable-NetAdapterQos](https://technet.microsoft.com/library/jj130866.aspx)
+- [Habilitar-NetAdapterQos](https://technet.microsoft.com/library/jj130866.aspx)
 
-- [Enable-NetAdapterRDMA](https://technet.microsoft.com/library/jj130909.aspx)
+- [Habilitar-NetAdapterRDMA](https://technet.microsoft.com/library/jj130909.aspx)
 
-- [Enable-NetAdapterSriov](https://technet.microsoft.com/library/jj130899.aspx)
+- [Habilitar-NetAdapterSriov](https://technet.microsoft.com/library/jj130899.aspx)
 
-Para obter mais informações, consulte [Cmdlets do adaptador de rede no Windows PowerShell](https://technet.microsoft.com/library/jj134956.aspx).
+Para obter mais informações, consulte [cmdlets do adaptador de rede no Windows PowerShell](https://technet.microsoft.com/library/jj134956.aspx).
 
-Para obter links para todos os tópicos neste guia, consulte [ajuste de desempenho do subsistema de rede](net-sub-performance-top.md).
+Para obter links para todos os tópicos deste guia, consulte [ajuste de desempenho do subsistema de rede](net-sub-performance-top.md).

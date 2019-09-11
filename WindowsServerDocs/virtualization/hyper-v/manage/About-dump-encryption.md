@@ -8,54 +8,54 @@ author: larsiwer
 ms.asset: b78ab493-e7c3-41f5-ab36-29397f086f32
 ms.author: kathydav
 ms.date: 11/03/2016
-ms.openlocfilehash: e0ca8829aa8f93e7543b4183539beade3b4aeb47
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d46deee7fc9d911de2a6ee44ae097affe1d658a3
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812387"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70872145"
 ---
 # <a name="about-dump-encryption"></a>Sobre a criptografia de despejo
-Criptografia de despejo pode ser usada para criptografar os despejos de memória e despejos de memória em tempo real gerados para um sistema. Os despejos são criptografados usando uma chave de criptografia simétrica que é gerada para cada despejo. Essa chave em si é criptografada usando a chave pública especificada pelo administrador confiável do host (falha despejo criptografia protetor de chave). Isso garante que somente alguém com a chave privada correspondente pode descriptografar e, portanto, acessar o conteúdo do despejo. Esse recurso é utilizado em uma malha protegida.
-Observação: Se você configurar a criptografia de despejo, também desabilite relatório de erros do Windows. WER não é possível ler criptografado os despejos de memória.
+A criptografia de despejo pode ser usada para criptografar despejos de memória e despejos dinâmicos gerados para um sistema. Os despejos são criptografados usando uma chave de criptografia simétrica que é gerada para cada despejo. Em seguida, essa chave é criptografada usando a chave pública especificada pelo administrador confiável do host (protetor de chave de criptografia de despejo de memória). Isso garante que apenas alguém que tenha a chave privada correspondente possa descriptografar e, portanto, acessar o conteúdo do despejo. Esse recurso é utilizado em uma malha protegida.
+Observação: Se você configurar a criptografia de despejo, também desabilite Relatório de Erros do Windows. O WER não pode ler despejos de memória criptografados.
 
 # <a name="configuring-dump-encryption"></a>Configurando a criptografia de despejo
 ## <a name="manual-configuration"></a>Configuração manual
-Para ativar a criptografia de despejo de memória usando o registro, configure os seguintes valores de registro em `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl`
+Para ativar a criptografia de despejo usando o registro, configure os seguintes valores de registro em`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl`
 
-| Nome do valor | Tipo | Valor |
+| Nome do valor | type | Valor |
 | ---------- | ---- | ----- |
 | DumpEncryptionEnabled | DWORD | 1 para habilitar a criptografia de despejo, 0 para desabilitar a criptografia de despejo |
-| EncryptionCertificates\Certificate.1::PublicKey | Binário | Chave pública (RSA, 2048 bits) que deve ser usado para criptografar os despejos de memória. Isso deve ser formatado como [BCRYPT_RSAKEY_BLOB](https://msdn.microsoft.com/library/windows/desktop/aa375531(v=vs.85).aspx). |
-| EncryptionCertificates\Certificate.1::Thumbprint | String | Impressão digital do certificado para permitir uma pesquisa automática de chave privada no repositório de certificados local ao descriptografar um despejo de memória. |
+| EncryptionCertificates\Certificate.1::P ublicKey | Binary | Chave pública (RSA, 2048 bits) que deve ser usada para criptografar despejos. Isso deve ser formatado como [BCRYPT_RSAKEY_BLOB](https://msdn.microsoft.com/library/windows/desktop/aa375531(v=vs.85).aspx). |
+| EncryptionCertificates\Certificate.1:: impressão digital | String | Impressão digital do certificado para permitir a pesquisa automática de chave privada no repositório de certificados local ao descriptografar um despejo de memória. |
 
 
-## <a name="configuration-using-script"></a>Usando o script de configuração
-Para simplificar a configuração, uma [exemplo de script](https://github.com/Microsoft/Virtualization-Documentation/tree/live/hyperv-tools/DumpEncryption) está disponível para habilitar a criptografia de despejo com base em uma chave pública de um certificado.
+## <a name="configuration-using-script"></a>Configuração usando script
+Para simplificar a configuração, um [script de exemplo](https://github.com/Microsoft/Virtualization-Documentation/tree/live/hyperv-tools/DumpEncryption) está disponível para habilitar a criptografia de despejo com base em uma chave pública de um certificado.
 
-1. Em um ambiente confiável: Criar um certificado com uma chave RSA de 2048 bits e exporte o certificado público
+1. Em um ambiente confiável: Criar um certificado com uma chave RSA de 2048 bits e exportar o certificado público
 2. Em hosts de destino: Importar o certificado público para o repositório de certificados local
-3. Execute o script de configuração de exemplo 
+3. Executar o script de configuração de exemplo 
     ```
     .\Set-DumpEncryptionConfiguration.ps1 -Certificate (Cert:\CurrentUser\My\093568AB328DF385544FAFD57EE53D73EFAAF519) -Force
     ```
 
-# <a name="decrypting-encrypted-dumps"></a>Descriptografando criptografados despejos de memória
-Para descriptografar um arquivo de despejo criptografado existente, você precisa baixar e instalar as ferramentas de depuração para Windows. Esse conjunto de ferramentas contém KernelDumpDecrypt.exe que pode ser usado para descriptografar um arquivo de despejo criptografado.
-Se o certificado, incluindo a chave privada está presente no repositório de certificados do usuário atual, o arquivo de despejo pode ser descriptografado por meio da chamada
+# <a name="decrypting-encrypted-dumps"></a>Descriptografando despejos criptografados
+Para descriptografar um arquivo de despejo criptografado existente, você precisa baixar e instalar as ferramentas de depuração para Windows. Esse conjunto de ferramentas contém KernelDumpDecrypt. exe, que pode ser usado para descriptografar um arquivo de despejo criptografado.
+Se o certificado que inclui a chave privada estiver presente no repositório de certificados do usuário atual, o arquivo de despejo poderá ser descriptografado chamando
 
 ```
     KernelDumpDecrypt.exe memory.dmp memory_decr.dmp
 ```
-Após a descriptografia, ferramentas como o WinDbg podem abrir o arquivo de despejo descriptografada.
+Após a descriptografia, ferramentas como o WinDbg podem abrir o arquivo de despejo descriptografado.
 
-# <a name="troubleshooting-dump-encryption"></a>Solução de problemas de criptografia de despejo
-Se a criptografia de despejo está habilitada em um sistema, mas nenhum despejos são gerados, verifique se o sistema `System` log de eventos para `Kernel-IO` 1207 do evento. Quando não é possível inicializar a criptografia de despejo, esse evento é criado e despejos de memória são desabilitados.
+# <a name="troubleshooting-dump-encryption"></a>Solucionando problemas de criptografia de despejo
+Se a criptografia de despejo estiver habilitada em um sistema, mas nenhum despejo estiver sendo gerado, verifique o `System` log de eventos `Kernel-IO` do sistema para o evento 1207. Quando a criptografia de despejo não puder ser inicializada, esse evento será criado e os despejos serão desabilitados.
 
-| Mensagem de erro detalhada | Etapas para reduzir |
+| Mensagem de erro detalhada | Etapas para mitigar |
 | ---------------------- | ----------------- |
-| Público impressão digital ou a chave do registro ausente | Verifique se ambos os valores do Registro existirem no local esperado |
-| Chave pública inválida | Certifique-se de que a chave pública armazenada no valor do registro PublicKey é armazenada como [BCRYPT_RSAKEY_BLOB](https://msdn.microsoft.com/library/windows/desktop/aa375531(v=vs.85).aspx). |
-| Tamanho da chave pública sem suporte | Atualmente, há suporte para apenas chaves RSA de 2048 bits. Configurar uma chave que corresponda a esse requisito |
+| Registro de chave pública ou impressão digital ausente | Verificar se ambos os valores do registro existem no local esperado |
+| Chave pública inválida | Verifique se a chave pública armazenada no valor do registro PublicKey está armazenada como [BCRYPT_RSAKEY_BLOB](https://msdn.microsoft.com/library/windows/desktop/aa375531(v=vs.85).aspx). |
+| Tamanho de chave pública sem suporte | Atualmente, há suporte apenas para chaves RSA de 2048 bits. Configurar uma chave que corresponda a esse requisito |
 
-Verifique também se o valor `GuardedHost` sob `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl\ForceDumpsDisabled` é definido como um valor diferente de 0. Isso desabilita os despejos de memória completamente. Se esse for o caso, defina-o como 0.
+Verifique também se o valor `GuardedHost` em `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl\ForceDumpsDisabled` está definido com um valor diferente de 0. Isso desabilita completamente os despejos de memória. Se esse for o caso, defina-o como 0.

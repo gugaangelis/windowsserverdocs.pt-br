@@ -1,6 +1,6 @@
 ---
-title: Configurar uma estação de vídeo diretamente conectados no MultiPoint Services
-description: Saiba como criar uma estação de vídeo diretamente conectados no MultiPoint Services
+title: Configurar uma estação conectada diretamente ao vídeo nos serviços do MultiPoint
+description: Saiba como criar uma estação conectada diretamente ao vídeo nos serviços do MultiPoint
 ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server-threshold
@@ -13,59 +13,59 @@ ms.assetid: 82ba3517-9743-4cde-8eea-63a17edb016f
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 58197164c91ab6b69b0ef331c025287f593f94c2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: eda8d5eee0635370873adec5b1fde2d65fc9fd9c
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850737"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871598"
 ---
-# <a name="set-up-a-direct-video-connected-station-in-multipoint-services"></a>Configurar uma estação de vídeo diretamente conectados no MultiPoint Services
-Em uma estação de vídeo conectado direta, o monitor está conectado diretamente a uma porta de vídeo no computador do MultiPoint Server. Um teclado e mouse são conectados a um hub USB e estão associadas com o monitor.  
+# <a name="set-up-a-direct-video-connected-station-in-multipoint-services"></a>Configurar uma estação conectada diretamente ao vídeo nos serviços do MultiPoint
+Em uma estação conectada direta por vídeo, o monitor é conectado diretamente a uma porta de vídeo no computador do MultiPoint Server. Um teclado e um mouse são conectados a um hub USB e estão associados ao monitor.  
   
-A ilustração a seguir mostra um ambiente do MultiPoint Server que tem um único computador do MultiPoint Server e quatro estações vídeo diretamente conectados. Para obter mais informações, consulte [estações do MultiPoint Server](MultiPoint-services-Stations.md).  
+A ilustração a seguir mostra um ambiente do MultiPoint Server que tem um único computador MultiPoint Server e quatro estações conectadas diretamente ao vídeo. Para obter mais informações, consulte [estações do MultiPoint Server](MultiPoint-services-Stations.md).  
   
-**Sistema multiPoint Services com quatro conexões diretas de vídeos**  
+**Sistema de serviços do MultiPoint com quatro conexões de vídeo diretas**  
   
-![Imagem do layout do sistema com base em USB do MultiPoint Services](./media/WMSMultiPointServerUSBSystemLayout.gif)  
+![Imagem do layout do sistema baseado em USB dos serviços do MultiPoint](./media/WMSMultiPointServerUSBSystemLayout.gif)  
   
 > [!NOTE]  
-> Para configurar uma estação de vídeo diretamente conectados, você deve usar um teclado latino (por exemplo, um teclado de idioma inglês ou espanhol).  
+> Para configurar uma estação conectada diretamente ao vídeo, você deve usar um teclado latino (como um teclado inglês ou espanhol).  
   
-## <a name="to-set-up-a-direct-video-connected-station"></a>Para configurar uma estação direta de vídeo conectado  
+## <a name="to-set-up-a-direct-video-connected-station"></a>Para configurar uma estação conectada direta por vídeo  
   
-1.  Conecte o cabo do monitor para a porta de vídeo no computador, conforme mostrado abaixo.  
+1.  Conecte o cabo do monitor à porta de exibição do vídeo no computador, conforme mostrado abaixo.  
   
     ![Imagem de conexão de vídeo para sistema com base em hub USB](./media/WMSVideoConnection.gif) 
   
 2.  Conecte o cabo de alimentação do monitor de vídeo a uma tomada.  
   
-3.  Conecte-se um hub USB a uma porta USB aberta no computador, conforme mostrado abaixo.  
+3.  Conecte um hub USB a uma porta USB aberta no computador, conforme mostrado abaixo.  
   
-    ![Imagem de conexão de hub USB do MultiPoint Services](./media/WMSUSBHubConnection.gif)  
+    ![Imagem da conexão do hub USB dos serviços do MultiPoint](./media/WMSUSBHubConnection.gif)  
   
-4.  Conecte um teclado e mouse ao hub de estação USB.  
+4.  Conecte um teclado e um mouse ao Hub de estação USB.  
   
     ![Imagem de conexões de dispositivo de entrada de hub USB](./media/WMSUSBDeviceConnection.gif)  
   
-5.  Conecte-se todos os periféricos adicionais, como fones de ouvido, para o hub USB.  
+5.  Conecte quaisquer periféricos adicionais, como fones de ouvido, ao hub USB.  
   
-6.  Se você estiver usando um hub alimentado externamente, conecte o cabo de alimentação do hub a uma tomada elétrica.  
+6.  Se você estiver usando um hub com energia externa, conecte o cabo de alimentação do hub a uma tomada de energia.  
   
     > [!IMPORTANT]  
-    > É altamente recomendável o uso de um hub alimentado. Comportamento imprevisível do sistema pode resultar de condições corrigiremos atual.  
+    > É altamente recomendável o uso de um hub equipado. Comportamentos incorretos do sistema podem resultar de condições sob medida atuais.  
     >   
-    > Os usuários não devem anexar mouses e teclados diretamente às portas USB do computador. Isso provavelmente causará a associação incorreta de vários teclados e mouses a mesma estação ou a nenhuma estação em todos os.  
+    > Os usuários não devem anexar mouses e teclados diretamente às portas USB do computador. Isso provavelmente causará a associação incorreta de vários teclados e mouses à mesma estação, ou não a nenhuma estação.  
   
-7.  Siga as instruções exibidas no monitor para criar a estação.  
+7.  Siga as instruções que aparecem no monitor para criar a estação.  
   
-Se você adicionar mais de uma estação direta de vídeo conectado ao seu ambiente do MultiPoint Services, a estação principal pode mudar. Você pode facilmente descobrir qual direcionar o vídeo estação conectada é sua principal estação.  
+Se você adicionar mais de uma estação conectada ao vídeo direta ao seu ambiente de serviços do MultiPoint, a estação principal poderá ser alterada. Você pode descobrir facilmente qual estação conectada ao vídeo direta é sua estação principal.  
   
-## <a name="to-find-out-which-direct-video-connected-station-is-the-primary-station"></a>Para descobrir qual direcionar estação vídeo conectado é a estação principal  
+## <a name="to-find-out-which-direct-video-connected-station-is-the-primary-station"></a>Para descobrir qual estação conectada ao vídeo direta é a estação principal  
   
-1.  Ative todos os monitores conectados diretamente a adaptadores de vídeo do computador (placas de vídeo).  
+1.  Ative todos os monitores que estão conectados diretamente aos adaptadores de vídeo do computador (placas de vídeo).  
   
-2.  Iniciar (ou reiniciar) do computador do MultiPoint Services e veja qual monitor exibirá as telas de inicialização. Essa estação é a estação principal.  
+2.  Inicie (ou reinicie) o computador dos serviços do MultiPoint e veja qual Monitor exibe as telas de inicialização. Essa estação é a estação principal.  
   
     > [!NOTE]  
-    > Em alguns casos, informações de inicialização do BIOS são exibidas em vários monitores simultaneamente. Nesse caso, qualquer um dos monitores pode ser considerado "estação principal" com a finalidade de acessar o BIOS.
+    > Em alguns casos, as informações de inicialização do BIOS são exibidas simultaneamente em vários monitores. Nesse caso, qualquer um dos monitores pode ser considerado a "estação principal" com a finalidade de acessar o BIOS.

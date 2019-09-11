@@ -1,6 +1,6 @@
 ---
 title: Coletar drivers de hardware e dispositivos necessários à instalação
-description: Informações sobre drivers que você precisa instalar o MultiPoint Services
+description: Informações sobre os drivers que você precisa instalar para os serviços do MultiPoint
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -13,25 +13,25 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: a9d902e2599cdcd69e156d1fabec87a067b1d8ea
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f7fec373bc62c93fbf31bbb24bf1a11a42c0736d
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833417"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871433"
 ---
 # <a name="collect-hardware-and-device-drivers-needed-for-the-installation"></a>Coletar drivers de hardware e dispositivos necessários à instalação
-Antes de iniciar a implantação de seu sistema MultiPoint Services, será necessário:  
+Antes de começar a implantar o sistema MultiPoint Services, você precisará de:  
   
--   **Componentes de hardware para o servidor** -instalar as placas de vídeo adicionais ou outros componentes do sistema no momento.  
+-   **Componentes de hardware para o servidor** -instale quaisquer placas de vídeo adicionais ou outros componentes do sistema no momento.  
   
--   **Componentes de hardware para as estações** - para obter informações sobre planejamento de estações para seu ambiente, consulte [selecionando o Hardware para o sistema do MultiPoint Services](Selecting-Hardware-for-Your-MultiPoint-services-System.md).
--   **Os drivers mais recentes para as placas de vídeos** -se o fabricante do dispositivo ou OEM não forneceu a eles, você precisará baixá-los do site do fabricante do dispositivo.  
+-   **Componentes de hardware para as estações** – para obter informações sobre as estações de planejamento para seu ambiente, consulte [selecionando hardware para o sistema MultiPoint Services](Selecting-Hardware-for-Your-MultiPoint-services-System.md).
+-   **Os drivers mais recentes para suas placas de vídeo** -se o fabricante do seu OEM ou do dispositivo não fornecesse essas informações, você precisará baixá-las no site do fabricante do dispositivo.  
   
--   **Os drivers de cliente mais recentes do USB zero** -se você estiver usando estações de cliente USB zero, você deve instalar os drivers de cliente mais recentes do USB zero.  
+-   **Os drivers de cliente USB mais recentes** -se você estiver usando estações de cliente USB zero, deverá instalar os drivers de cliente USB mais recentes.  
   
     > [!IMPORTANT]  
-    > Para uma instalação do MultiPoint Services, você deve instalar a versão de 64 bits de todos os drivers.  
+    > Para uma instalação de serviços do MultiPoint, você deve instalar a versão de 64 bits de qualquer driver.  
   
 > [!TIP]  
-> Se você estiver instalando o MultiPoint Services em um computador com uma versão diferente do Windows já instalado, você deve encontrar a marca de placa de vídeo e o modelo no Gerenciador de dispositivos antes de iniciar a instalação do Windows Server e certifique-se de que você pode obter os drivers que são disponível para Windows Server 2016. Abrir Gerenciador de dispositivos, abra **gerenciamento do computador** da **iniciar** tela. Em seguida, na árvore de console, clique em **Gerenciador de dispositivos**.
+> Se você estiver instalando os serviços do MultiPoint em um computador com uma versão diferente do Windows já instalada, você deverá descobrir a marca e o modelo da placa de vídeo no Device Manager antes de iniciar a instalação do Windows Server e garantir que você possa obter drivers que são disponível para o Windows Server 2016. Abra Device Manager, abra **Gerenciamento do computador** na tela **inicial** . Em seguida, na árvore de console, clique em **Device Manager**.

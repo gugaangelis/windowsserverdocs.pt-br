@@ -10,12 +10,12 @@ ms.localizationpriority: medium
 ms.author: pashort
 author: shortpatti
 ms.reviewer: deverette
-ms.openlocfilehash: eab81443ba91b229495a124aae642570608c6bba
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: c3ac8295d048c599a1cb6d1ed141cd63a7a73f47
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68658885"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871341"
 ---
 # <a name="step-6-configure-windows-10-client-always-on-vpn-connections"></a>Etapa 6. Configurar conexões VPN Always On cliente do Windows 10
 
@@ -318,7 +318,7 @@ $ProfileXML = @("
 ")
 ```
 
-### <a name="output-vpnprofilexml-for-intune"></a>Saída de VPN_Profile. xml para o Intune
+### <a name="output-vpn_profilexml-for-intune"></a>Saída de VPN_Profile. xml para o Intune
 
 Você pode usar o seguinte comando de exemplo para salvar o arquivo XML do perfil:
 
@@ -326,7 +326,7 @@ Você pode usar o seguinte comando de exemplo para salvar o arquivo XML do perfi
 $ProfileXML | Out-File -FilePath ($env:USERPROFILE + '\desktop\VPN_Profile.xml')
 ```
 
-### <a name="output-vpnprofileps1-for-the-desktop-and-system-center-configuration-manager"></a>Saída de VPN_Profile. ps1 para desktop e System Center Configuration Manager
+### <a name="output-vpn_profileps1-for-the-desktop-and-system-center-configuration-manager"></a>Saída de VPN_Profile. ps1 para desktop e System Center Configuration Manager
 
 O código de exemplo a seguir configura uma conexão VPN IKEv2 do AlwaysOn usando o nó ProfileXML no CSP VPNv2.
 
@@ -867,7 +867,7 @@ Crie a política de configuração de dispositivo VPN para configurar os computa
 
 ### <a name="create-the-always-on-vpn-configuration-policy"></a>Criar a política de configuração de VPN Always On
 
-1.  Entre no [portal do Azure](https://portal.azure.com/).
+1.  Faça logon no [Portal do Azure](https://portal.azure.com/).
 
 2.  Vá para**perfis**de**configuração** > de dispositivo do **Intune** > .
 

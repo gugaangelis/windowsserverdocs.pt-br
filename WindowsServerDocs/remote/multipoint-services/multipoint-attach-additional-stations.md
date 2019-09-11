@@ -1,6 +1,6 @@
 ---
-title: Anexar estações adicionais ao seu servidor MultiPoint
-description: Adicionar mais estações para sua implantação de MultiPoint Services
+title: Anexar estações adicionais ao servidor do MultiPoint
+description: Adicionar mais estações à sua implantação do MultiPoint Services
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -13,39 +13,39 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: 57fc8ed6774c3266298ecd98e8f609ec01f63ef6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 70609d491f5eb60daf89df219c06c8b9d4c3cd3e
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889257"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871406"
 ---
-# <a name="attach-additional-stations-to-multipoint-services"></a>Anexar estações adicionais ao MultiPoint Services
-Em seu ambiente do MultiPoint Services, os usuários usar estações para se conectar aos serviços do MultiPoint e fazer seu trabalho. As estações são os pontos de extremidade do usuário para se conectar ao computador executando o Multipoint Services.  
+# <a name="attach-additional-stations-to-multipoint-services"></a>Anexar estações adicionais aos serviços do MultiPoint
+Em seu ambiente de serviços do MultiPoint, os usuários usam estações para se conectarem aos serviços do MultiPoint e realizarem seu trabalho. As estações são os pontos de extremidade do usuário para se conectarem ao computador que executa os serviços do MultiPoint.  
   
-MultiPoint services dá suporte a três tipos de estação:  
+Os serviços do MultiPoint dão suporte a três tipos de estação:  
   
--   Estações de vídeo diretamente conectados  
+-   Estações conectadas diretamente a vídeo  
   
--   USB zero cliente conectado estações (e USB em estações de cliente conectado Ethernet zero)  
+-   Estações conectadas ao cliente USB zero (e USB em estações conectadas a cliente Ethernet zero)  
   
--   Estações conectadas à RDP através de LAN  
+-   Estações conectadas RDP via LAN  
   
-As classificações são baseadas em hardware de uma estação e o tipo de conexão que ele usa. Você pode misturar e combinar tipos de conexão para suas estações. O único requisito é que a estação principal (o que você instalou anteriormente) deve ser uma estação de vídeo diretamente conectados. Para obter mais informações sobre configurações de estação, consulte [estações do MultiPoint](MultiPoint-services-Stations.md).  
+As classificações são baseadas no hardware de uma estação e no tipo de conexão que ela usa. Você pode misturar e corresponder tipos de conexão para suas estações. O único requisito é que a estação primária (que você instalou anteriormente) deve ser uma estação conectada por vídeo direto. Para obter mais informações sobre as configurações de estação, consulte [MultiPoint stations](MultiPoint-services-Stations.md).  
   
 Para obter instruções que explicam como configurar cada tipo de estação, consulte o seguinte:  
   
--   [Configurar uma estação de vídeo diretamente conectados](Set-up-a-direct-video-connected-station-in-MultiPoint-services.md)  
+-   [Configurar uma estação conectada diretamente ao vídeo](Set-up-a-direct-video-connected-station-in-MultiPoint-services.md)  
   
--   [Configurar um USB zero estação cliente conectado](Set-up-a-USB-zero-client-connected-station-in-MultiPoint-services.md)  
+-   [Configurar uma estação conectada ao cliente USB zero](Set-up-a-USB-zero-client-connected-station-in-MultiPoint-services.md)  
   
--   [Configurar uma estação de RDP através de LAN conectada](Set-up-an-RDP-over-LAN-connected-station-in-MultiPoint-services.md)  
+-   [Configurar uma estação conectada usando RDP na LAN](Set-up-an-RDP-over-LAN-connected-station-in-MultiPoint-services.md)  
   
 Para obter uma comparação detalhada dos tipos de estação, consulte [comparação de tipo de estação](multipoint-services-stations.md#BKMK_StationTypeComparison).  
   
 > [!NOTE]  
-> -   Os procedimentos para anexar estações não descrevem como configurar hubs intermediários ou hubs downstream. Para obter informações sobre onde instalar esses hubs, consulte [estações do MultiPoint](MultiPoint-services-Stations.md).  
-> -   Em alguns casos, talvez você precise criar áreas de trabalho virtuais que são executados em máquinas virtuais de estação. Por exemplo, você usar aplicativos que não podem ser instalados no Windows Server ou aplicativos que não executará várias instâncias no mesmo computador host. Para obter mais informações, consulte [áreas de trabalho virtuais para estações de criar o Windows 10 Enterprise](Create-Windows-10-Enterprise-virtual-desktops-for-stations.md).  
+> -   Os procedimentos para anexar estações não descrevem como configurar hubs intermediários ou hubs downstream. Para obter informações sobre onde instalar esses hubs, consulte [MultiPoint stations](MultiPoint-services-Stations.md).  
+> -   Em alguns casos, talvez seja necessário criar áreas de trabalho virtuais de estação, que são executadas em máquinas virtuais. Por exemplo, você usa aplicativos que não podem ser instalados no Windows Server ou em aplicativos que não executarão várias instâncias no mesmo computador host. Para obter mais informações, consulte [criar áreas de trabalho virtuais do Windows 10 Enterprise para estações](Create-Windows-10-Enterprise-virtual-desktops-for-stations.md).  
   
 > [!TIP]  
-> É útil criar suas estações na ordem de seus respectivos locais físicos, para que eles são identificados em sequência no MultiPoint Server. Se posteriormente você desejar alterar o nome de uma estação, você pode fazer isso no Gerenciador do MultiPoint. Para obter mais informações, consulte remapear todas as estações na Ajuda do MultiPoint Server e suporte.
+> É útil criar suas estações na ordem de seus locais físicos para que eles sejam identificados em sequência no MultiPoint Server. Se posteriormente você quiser alterar o nome de uma estação, poderá fazer isso no MultiPoint Manager. Para obter mais informações, consulte remapear todas as estações na ajuda e suporte do MultiPoint Server.

@@ -4,12 +4,12 @@ description: Como criar novos artigos relacionados ao Windows Server, usando o G
 author: eross-msft
 ms.author: lizross
 ms.date: 05/02/2019
-ms.openlocfilehash: f5e7e3d0cd17c64175fddaaac73c12daa2c2a32c
-ms.sourcegitcommit: ffd9c42374c7448deb5f53f7a865cb427b5e4e9e
+ms.openlocfilehash: 3f09c36c1e3960728ff016f5801deb854e3d3c96
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887954"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865070"
 ---
 # <a name="create-new-windows-server-articles-using-github-and-visual-studio-code"></a>Criar novos artigos do Windows Server usando o GitHub e o Visual Studio Code
 
@@ -69,7 +69,7 @@ Você precisa clonar o repositório para obter uma cópia local do repositório 
 
 #### <a name="to-clone-the-repository"></a>Para clonar o repositório
 
-1. Vá para https://github.com/settings/developers e selecione tokens de **acesso pessoal** no painel esquerdo.
+1. Vá para https://github.com/settings/developers e selecione **tokens de acesso pessoal** no painel esquerdo.
 
 2. Selecione **gerar novo token**, dê ao token um nome significativo e exclusivo, selecione todos os escopos disponíveis e, em seguida, selecione **gerar token**.
 
@@ -193,13 +193,13 @@ Depois de concluir seu artigo, você deve obter aprovação do seu gravador (Agu
 
 1. Vá para https://github.com/MicrosoftDocs/windowsserverdocs-pr e selecione a guia **solicitações de pull** .
 
-2. Na área revisores do painel direito, selecione o ícone de engrenagem e, em seguida, insira o alias _windowsservercontent_ para revisão.
+2. Na área **revisores** do painel direito, selecione o ícone de engrenagem e, em seguida, insira o alias _windowsservercontent_ para revisão.
 
     Um membro do alias _windowsservercontent_ revisará suas alterações ou adicionará comentários sobre as coisas que devem ser alteradas antes que a mesclagem possa ocorrer.
 
 3. Digite **#sign** nos comentários para que os revisores saibam que você está entregando para revisão e publicação. O comentário de **#sign** :
 
-    - Atualiza o rótulo de sua solicitação de pull de não Mesclar para **pronto para mesclar**.
+    - Atualiza o rótulo de sua solicitação de pull de não **mesclar** para **pronto para mesclar**.
 
     - Permite que o alias e os gravadores saibam que você está pronto para que seu conteúdo seja revisado.
 
@@ -222,7 +222,7 @@ Para obter mais informações sobre o GitHub e a linguagem de redução, consult
 
 - [Guias do GitHub-noções básicas sobre o fluxo do GitHub](https://guides.github.com/introduction/flow/)
 
-- [Aprenda] a ramificação do git (https://learngitbranching.js.org/ (Ótimo para aprendizes visuais!))
+- [Aprenda a ramificação do git] (https://learngitbranching.js.org/ (Ótimo para aprendizes visuais!))
 
 ### <a name="markdown"></a>Markdown
 

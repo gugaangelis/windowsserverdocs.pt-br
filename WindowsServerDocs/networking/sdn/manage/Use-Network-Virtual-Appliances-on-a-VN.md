@@ -1,6 +1,6 @@
 ---
 title: Usar dispositivos virtuais de rede em uma rede virtual
-description: Neste tópico, você aprenderá como implantar soluções de virtualização de rede em redes virtuais de locatário. Você pode adicionar dispositivos de rede virtual para redes que executam o roteamento definido pelo usuário e funções de espelhamento de porta.
+description: Neste tópico, você aprenderá a implantar dispositivos de rede virtual em redes virtuais de locatário. Você pode adicionar soluções de virtualização de rede a redes que executam funções de espelhamento de porta e roteamento definidas pelo usuário.
 manager: dougkim
 ms.custom: na
 ms.reviewer: na
@@ -13,57 +13,57 @@ ms.assetid: 3c361575-1050-46f4-ac94-fa42102f83c1
 ms.author: pashort
 author: shortpatti
 ms.date: 08/30/2018
-ms.openlocfilehash: e715a782651a5b9867f3b45251fd6ea6e4a9e4f7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 21f8698236e5358e0909ad0ac43a6a220013fee4
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847367"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869933"
 ---
 # <a name="use-network-virtual-appliances-on-a-virtual-network"></a>Usar dispositivos virtuais de rede em uma rede virtual
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Neste tópico, você aprenderá como implantar soluções de virtualização de rede em redes virtuais de locatário. Você pode adicionar dispositivos de rede virtual para redes que executam o roteamento definido pelo usuário e funções de espelhamento de porta.
+Neste tópico, você aprenderá a implantar dispositivos de rede virtual em redes virtuais de locatário. Você pode adicionar soluções de virtualização de rede a redes que executam funções de espelhamento de porta e roteamento definidas pelo usuário.
 
 ## <a name="types-of-network-virtual-appliances"></a>Tipos de dispositivos de rede virtual
 
-Você pode usar um dos dois tipos de soluções de virtualização:
+Você pode usar um dos dois tipos de dispositivos virtuais:
 
-1. **Roteamento definido pelo usuário** -substitui distribuídos roteadores na rede virtual com os recursos de roteamento do dispositivo virtual.  Com o roteamento definido pelo usuário, a solução de virtualização é usada como um roteador entre as sub-redes virtuais na rede virtual.
+1. **Roteamento definido pelo usuário** – substitui os roteadores distribuídos na rede virtual pelos recursos de roteamento do dispositivo virtual.  Com o roteamento definido pelo usuário, a solução de virtualização é usada como um roteador entre as sub-redes virtuais na rede virtual.
 
-2. **Espelhamento de porta** - todos tráfego de rede que está entrando ou deixar a porta monitorada é duplicado e enviada para um dispositivo virtual para análise. 
+2. **Espelhamento de porta** – todo o tráfego de rede que está entrando ou saindo da porta monitorada é duplicado e enviado a um dispositivo virtual para análise. 
 
 
 ## <a name="deploying-a-network-virtual-appliance"></a>Implantando uma solução de virtualização de rede
 
-Para implantar uma solução de virtualização de rede, você deve primeiro criar uma VM que contém o dispositivo e, em seguida, conecte-se a VM para as sub-redes da rede virtual apropriada. Para obter mais detalhes, consulte [criar uma VM de locatário e conectar-se a uma rede Virtual do locatário ou VLAN](Create-a-Tenant-VM.md).
+Para implantar uma solução de virtualização de rede, você deve primeiro criar uma VM que contenha o dispositivo e, em seguida, conectar a VM às sub-redes de rede virtual apropriadas. Para obter mais detalhes, consulte [criar uma VM de locatário e conectar-se a uma rede virtual de locatário ou VLAN](Create-a-Tenant-VM.md).
 
-Algumas soluções exigem vários adaptadores de rede virtual. Normalmente, um adaptador de rede dedicado para o gerenciamento de dispositivo, enquanto outros adaptadores processam o tráfego.  Se seu dispositivo requer vários adaptadores de rede, você deve criar cada interface de rede no controlador de rede. Você também deve atribuir uma ID de interface em cada host para cada um dos adaptadores adicionais que estão em diferentes sub-redes virtuais.
+Alguns dispositivos exigem vários adaptadores de rede virtual. Normalmente, um adaptador de rede dedicado ao gerenciamento de dispositivo, enquanto adaptadores adicionais processam o tráfego.  Se seu dispositivo exigir vários adaptadores de rede, você deverá criar cada interface de rede no controlador de rede. Você também deve atribuir uma ID de interface em cada host para cada um dos adaptadores adicionais que estão em sub-redes virtuais diferentes.
 
-Depois de implantar a solução de virtualização de rede, você pode usar o dispositivo de roteamento definidas, portabilidade de espelhamento, ou ambos. 
+Depois de implantar a solução de virtualização de rede, você pode usar o dispositivo para roteamento definido, portamento de espelhamento ou ambos. 
 
 
 ## <a name="example-user-defined-routing"></a>Exemplo: Roteamento definido pelo usuário
 
-Para a maioria dos ambientes, você precisa apenas as rotas de sistema já definidas pelo roteador de distribuído da rede virtual. No entanto, talvez você precise criar uma tabela de roteamento e adicionar uma ou mais rotas em casos específicos, como:
+Para a maioria dos ambientes, você só precisa das rotas do sistema já definidas pelo roteador distribuído da rede virtual. No entanto, talvez seja necessário criar uma tabela de roteamento e adicionar uma ou mais rotas em casos específicos, como:
 
-- Túnel à força para a Internet através de sua rede local.
+- Forçar o túnel para a Internet por meio de sua rede local.
 - Uso de dispositivos virtuais em seu ambiente.
 
-Para esses cenários, você deve criar uma tabela de roteamento e adicionar as rotas definidas pelo usuário à tabela. Você pode ter várias tabelas de roteamentos, e você pode associar a mesma tabela de roteamento para uma ou mais sub-redes. Você só pode associar a cada sub-rede para uma única tabela de roteamento. Todas as VMs em uma sub-rede usam a tabela de roteamento associada à sub-rede.
+Para esses cenários, você deve criar uma tabela de roteamento e adicionar rotas definidas pelo usuário à tabela. Você pode ter várias tabelas de roteamento e associar a mesma tabela de roteamento a uma ou mais sub-redes. Você só pode associar cada sub-rede a uma única tabela de roteamento. Todas as VMs em uma sub-rede usam a tabela de roteamento associada à sub-rede.
 
-As sub-redes contam com rotas de sistema até que uma tabela de roteamento obtém associada à sub-rede. Depois que houver uma associação, o roteamento é feito com base na correspondência de prefixo mais longo (LPM) entre as rotas definidas pelo usuário e as rotas do sistema. Se houver mais de uma rota com a mesma correspondência LPM, em seguida, a rota de definida pelo usuário está selecionada primeiro - antes da rota do sistema.
+As sub-redes dependem de rotas do sistema até que uma tabela de roteamento seja associada à sub-rede. Após a existência de uma associação, o roteamento é feito com base na maior correspondência de prefixo (LPM) entre as rotas definidas pelo usuário e as rotas do sistema. Se houver mais de uma rota com a mesma correspondência de LPM, a rota definida pelo usuário será selecionada primeiro-antes da rota do sistema.
  
-**Procedimento:**
+**Procedure**
 
-1. Crie a rota as propriedades da tabela que contém todas as rotas definidas pelo usuário.<p>Rotas de sistema ainda se aplicam acordo com as regras definidas anteriormente.
+1. Crie as propriedades da tabela de rotas, que contém todas as rotas definidas pelo usuário.<p>As rotas do sistema ainda se aplicam de acordo com as regras definidas acima.
 
    ```PowerShell
     $routetableproperties = new-object Microsoft.Windows.NetworkController.RouteTableProperties
    ```
 
-2. Adicione uma rota para as propriedades da tabela de roteamento.<p>Nenhuma rota de destino para a sub-rede 12.0.0.0/8 seja roteada para a solução de virtualização 192.168.1.10. O dispositivo deve ter um adaptador de rede virtual conectado à rede virtual com esse IP atribuído a um adaptador de rede.
+2. Adicione uma rota às propriedades da tabela de roteamento.<p>Qualquer rota destinada à sub-rede 12.0.0.0/8 é roteada para a solução de virtualização em 192.168.1.10. O dispositivo deve ter um adaptador de rede virtual conectado à rede virtual com esse IP atribuído a uma interface de rede.
 
    ```PowerShell
     $route = new-object Microsoft.Windows.NetworkController.Route
@@ -83,7 +83,7 @@ As sub-redes contam com rotas de sistema até que uma tabela de roteamento obté
     $routetable = New-NetworkControllerRouteTable -ConnectionUri $uri -ResourceId "Route1" -Properties $routetableproperties
    ```
 
-4. Aplica a tabela de roteamento para a sub-rede virtual.<p>Quando você aplica a tabela de rotas à sub-rede virtual, a primeira sub-rede virtual na rede Tenant1_Vnet1 usa a tabela de rotas. Você pode atribuir a tabela de rotas para o mesmo número de sub-redes na rede virtual, como você deseja.
+4. Aplique a tabela de roteamento à sub-rede virtual.<p>Quando você aplica a tabela de rotas à sub-rede virtual, a primeira sub-rede virtual na rede Tenant1_Vnet1 usa a tabela de rotas. Você pode atribuir a tabela de rotas para o máximo de sub-redes na rede virtual que desejar.
 
    ```PowerShell
     $vnet = Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId "Tenant1_VNet1"
@@ -91,38 +91,38 @@ As sub-redes contam com rotas de sistema até que uma tabela de roteamento obté
     new-networkcontrollervirtualnetwork -connectionuri $uri -properties $vnet.properties -resourceId $vnet.resourceid
    ```
 
-Assim que você aplicar a tabela de roteamento na rede virtual, o tráfego é encaminhado para a solução de virtualização. Você deve configurar a tabela de roteamento em que o dispositivo virtual para encaminhar o tráfego, de forma que seja apropriado para seu ambiente.
+Assim que você aplicar a tabela de roteamento à rede virtual, o tráfego será encaminhado para o dispositivo virtual. Você deve configurar a tabela de roteamento no dispositivo virtual para encaminhar o tráfego de uma maneira apropriada para o seu ambiente.
 
 ## <a name="example-port-mirroring"></a>Exemplo: Espelhamento de porta
 
-Neste exemplo, você configura o tráfego para MyVM_Ethernet1 Appliance_Ethernet1 de espelho.  Vamos supor que você implantou duas VMs, como o dispositivo e a outra VM para monitorar com o espelhamento. 
+Neste exemplo, você configura o tráfego para MyVM_Ethernet1 para espelhar Appliance_Ethernet1.  Presumimos que você tenha implantado duas VMs, uma como o dispositivo e a outra como a VM a ser monitorada com o espelhamento. 
 
-O dispositivo deve ter um segundo adaptador de rede para o gerenciamento. Depois de habilitar o espelhamento como um destino na Appliciance_Ethernet1, ele não receba mais o tráfego destinado para a interface IP configurada lá.
+O dispositivo deve ter uma segunda interface de rede para gerenciamento. Depois de habilitar o espelhamento como um destino no Appliciance_Ethernet1, ele não recebe mais o tráfego destinado à interface IP configurada lá.
 
 
-**Procedimento:**
+**Procedure**
 
-1. Obtenha a rede virtual em que suas VMs estão localizadas.
+1. Obtenha a rede virtual na qual suas VMs estão localizadas.
 
    ```PowerShell
    $vnet = Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId "Tenant1_VNet1"
    ```
 
-2. Obtenha as interfaces de rede do controlador de rede para o espelhamento de origem e destino.
+2. Obtenha as interfaces de rede do controlador de rede para a origem e o destino do espelhamento.
 
    ```PowerShell
    $dstNic = get-networkcontrollernetworkinterface -ConnectionUri $uri -ResourceId "Appliance_Ethernet1"
    $srcNic = get-networkcontrollernetworkinterface -ConnectionUri $uri -ResourceId "MyVM_Ethernet1"
    ```
 
-3. Crie um objeto serviceinsertionproperties para conter a regras e o elemento que representa a interface de destino de espelhamento de porta.
+3. Crie um objeto iminsertproperties para conter as regras de espelhamento de porta e o elemento que representa a interface de destino.
 
    ```PowerShell
    $portmirror = [Microsoft.Windows.NetworkController.ServiceInsertionProperties]::new()
    $portMirror.Priority = 1
    ```
 
-4. Crie um objeto serviceinsertionrules para conter as regras que devem ser atendidas para que o tráfego seja enviado para o dispositivo.<p>As regras definidas abaixo correspondência todo o tráfego, entrado e saído, que representa um espelho tradicional.  Você pode ajustar essas regras, se você estiver interessado em uma porta específica ou origem/destinos específicos de espelhamento.
+4. Crie um objeto serviceinsertionrules para conter as regras que devem ser correspondidas para que o tráfego seja enviado para o dispositivo.<p>As regras definidas abaixo correspondem a todo o tráfego, tanto de entrada quanto de saída, que representa um espelho tradicional.  Você pode ajustar essas regras se estiver interessado em espelhar uma porta específica ou origem/destinos específicos.
 
    ```PowerShell
    $portmirror.ServiceInsertionRules = [Microsoft.Windows.NetworkController.ServiceInsertionRule[]]::new(1)
@@ -141,7 +141,7 @@ O dispositivo deve ter um segundo adaptador de rede para o gerenciamento. Depois
    $portmirror.ServiceInsertionRules[0].Properties.DestinationSubnets = "*"
    ```
 
-5. Crie um objeto serviceinsertionelements para conter o adaptador de rede do dispositivo espelhado.
+5. Crie um objeto serviceinsertionelements para conter a interface de rede do dispositivo espelhado.
 
    ```PowerShell
    $portmirror.ServiceInsertionElements = [Microsoft.Windows.NetworkController.ServiceInsertionElement[]]::new(1)
@@ -155,13 +155,13 @@ O dispositivo deve ter um segundo adaptador de rede para o gerenciamento. Depois
    $portmirror.ServiceInsertionElements[0].Properties.Order = 1
    ```
 
-6. Adicione o objeto de inserção de serviço no controlador de rede.<p>Quando você emitir esse comando, todo o tráfego para o dispositivo de rede interface especificada nas paradas de etapa anterior.
+6. Adicione o objeto de inserção de serviço no controlador de rede.<p>Quando você emite esse comando, todo o tráfego para a interface de rede do dispositivo especificado na etapa anterior é interrompido.
 
    ```PowerShell
    $portMirror = New-NetworkControllerServiceInsertion -ConnectionUri $uri -Properties $portmirror -ResourceId "MirrorAll"
    ```
 
-7. Atualize a interface de rede da fonte a ser espelhado.
+7. Atualize a interface de rede da origem a ser espelhada.
 
    ```PowerShell
    $srcNic.Properties.IpConfigurations[0].Properties.ServiceInsertion = $portMirror

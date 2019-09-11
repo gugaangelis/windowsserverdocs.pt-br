@@ -8,82 +8,82 @@ ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: f72156b050aa943cfafaf1fa2539911d6d1e089e
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: 3548d6c239c81deb50ce698767db5eb287046f17
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501477"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867039"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>O que há de novo no armazenamento no Windows Server
 
->Aplica-se a: 2019, Windows Server 2016, Windows Server (canal semestral) do Windows Server
+>Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server (canal semestral)
 
-Este tópico explica as funcionalidades novas e alteradas no armazenamento no Windows Server 2019, Windows Server 2016, e versões de canal semestral do Windows Server.
+Este tópico explica as funcionalidades novas e alteradas no armazenamento nas versões de canal semestral do Windows Server 2019, do Windows Server 2016 e do Windows Server.
 
 ## <a name="whats-new-in-storage-in-windows-server-version-1903"></a>O que há de novo no armazenamento no Windows Server, versão 1903
 
 Esta versão do Windows Server adiciona as seguintes alterações e tecnologias.
 
-### <a name="storage-migration-service-now-migrates-local-accounts-clusters-and-linux-servers"></a>Serviço de migração de armazenamento agora migra contas locais, clusters e servidores Linux
+### <a name="storage-migration-service-now-migrates-local-accounts-clusters-and-linux-servers"></a>Agora, o serviço de migração de armazenamento migra contas locais, clusters e servidores Linux
 
-Serviço de migração de armazenamento facilita a migração de servidores para uma versão mais recente do Windows Server. Ele fornece uma ferramenta gráfica que faz o inventário de dados em servidores e, em seguida, transfere os dados e a configuração para servidores mais recentes — tudo sem aplicativos ou usuários que têm alterar nada.
+O Serviço de Migração de Armazenamento facilita a migração dos servidores para uma versão mais recente do Windows Server. Ele fornece uma ferramenta gráfica que faz o inventário de dados nos servidores e, em seguida, transfere os dados e a configuração para servidores mais recentes — tudo sem aplicativos ou usuários precisando mudar tudo.
 
-Ao usar esta versão do Windows Server para orquestrar as migrações, adicionamos as seguintes capacidades:
+Ao usar essa versão do Windows Server para orquestrar as migrações, adicionamos as seguintes capacidades:
 
 - Migrar usuários e grupos locais para o novo servidor
-- Migrar o armazenamento de clusters de failover
+- Migrar o armazenamento dos clusters de failover
 - Migrar o armazenamento de um servidor Linux que usa o Samba
-- Mais facilmente migrados compartilhamentos de sincronização no Azure usando a sincronização de arquivos do Azure
+- Sincronização mais fácil de compartilhamentos integrados no Azure usando a Sincronização de Arquivos do Azure
 - Migrar para novas redes, como o Azure
 
-Para obter mais informações sobre o serviço de migração de armazenamento, consulte [visão geral do serviço de migração de armazenamento](storage-migration-service/overview.md).
+Para obter mais informações sobre o serviço de migração de armazenamento, confira [Visão geral do Serviço de Migração de Armazenamento](storage-migration-service/overview.md).
 
-### <a name="system-insights-disk-anomaly-detection"></a>Detecção de anomalias de disco do sistema Insights
+### <a name="system-insights-disk-anomaly-detection"></a>Detecção de anomalias de disco de insights do sistema
 
-[Insights de sistema](../manage/system-insights/overview.md) é um recurso de análise preditiva que analisa dados de sistema do Windows Server localmente e fornece informações sobre o funcionamento do servidor. Ele vem com um número de recursos internos, mas nós adicionamos a capacidade de instalar recursos adicionais por meio do Windows Admin Center, começando com a detecção de anomalias de disco.
+Os [insights do sistema](../manage/system-insights/overview.md) são um recurso de análise preditiva que analisa localmente os dados do sistema do Windows Server e fornece insights sobre o funcionamento do servidor. Eles vêm com vários recursos internos, mas adicionamos a capacidade de instalar funcionalidades por meio do Windows Admin Center, começando com a detecção de anomalias de disco.
 
-Detecção de anomalias de disco é um novo recurso que destaca quando discos estão se comportando *diferentemente* que o normal. Embora diferentes não necessariamente uma coisa ruim, vendo esses momentos anormais pode ser útil ao solucionar problemas em seus sistemas.
+A detecção de anomalias de disco é uma nova funcionalidade que destaca quando discos estão se comportando *de forma diferente* da normal. Embora diferente não necessariamente uma seja uma coisa ruim, ver esses momentos anormais pode ser útil ao solucionar problemas em seus sistemas.
 
 Essa funcionalidade também está disponível para servidores que executam o Windows Server 2019.
 
 ### <a name="windows-admin-center-enhancements"></a>Aprimoramentos do Windows Admin Center
 
-Uma nova versão do Windows Admin Center é horizontalmente, adicionando novas funcionalidades para o Windows Server. Para obter informações sobre os recursos mais recentes, consulte [Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md).
+Uma nova versão do Windows Admin Center foi lançada, adicionando novas funcionalidades ao Windows Server. Para obter informações sobre os recursos mais recentes, confira [Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md).
 
-## <a name="whats-new-in-storage-in-windows-server-2019-and-windows-server-version-1809"></a>O que há de novo no armazenamento no Windows Server 2019 e Windows Server, versão 1809
+## <a name="whats-new-in-storage-in-windows-server-2019-and-windows-server-version-1809"></a>O que há de novo no armazenamento no Windows Server 2019 e no Windows Server, versão 1809
 
 Esta versão do Windows Server adiciona as seguintes alterações e tecnologias.
 
-### <a name="manage-storage-with-windows-admin-center"></a>Gerenciar o armazenamento com Windows Admin Center
+### <a name="manage-storage-with-windows-admin-center"></a>Gerenciar o armazenamento com o centro de administração do Windows
 
-[Windows Admin Center](../manage/windows-admin-center/overview.md) é um novo aplicativo implantado localmente, com base em navegador para gerenciar servidores, clusters, infraestrutura hiperconvergente com espaços de armazenamento diretos e PCs com Windows 10. Ele é fornecido sem custo adicional além do Windows e está pronto para uso em produção.
+O [centro de administração do Windows](../manage/windows-admin-center/overview.md) é um novo aplicativo baseado em navegador, implantado localmente para gerenciar servidores, clusters, infraestrutura hiperconvergente com espaços de armazenamento diretos e computadores com Windows 10. Ele não tem nenhum custo adicional além do Windows e está pronto para uso em produção.
 
-Para ser honesto, o Windows Admin Center é um download separado que é executado no Windows Server 2019 e outras versões do Windows, mas ele é novo e não queremos que você pode perder...
+Para ser justo, o centro de administração do Windows é um download separado que é executado no Windows Server 2019 e em outras versões do Windows, mas é novo e não queremos que você perca...
 
 ### <a name="storage-migration-service"></a>Serviço de Migração do Armazenamento
 
-O Serviço de Migração do Armazenamento é uma nova tecnologia que facilita migrar servidores para uma versão mais recente do Windows Server. Ele fornece uma ferramenta gráfica que faz o inventário de dados em servidores, transfere os dados e a configuração para servidores mais recentes e, em seguida, opcionalmente, move as identidades dos servidores antigos para os novos servidores para que aplicativos e usuários não precisem alterar nada. Para obter mais informações, consulte o [Serviço de Migração do Armazenamento](storage-migration-service/overview.md).
+O Serviço de Migração de Armazenamento é uma nova tecnologia que facilita a migração dos servidores para uma versão mais recente do Windows Server. Ele fornece uma ferramenta gráfica que faz o inventário dos dados em servidores, transfere os dados e a configuração para servidores mais recentes e, em seguida, opcionalmente, move as identidades dos servidores antigos para os novos servidores para que os aplicativos e usuários não precisem alterar nada. Para obter mais informações, consulte o [Serviço de Migração do Armazenamento](storage-migration-service/overview.md).
 
-### <a id="storage-spaces-direct"></a>Espaços de armazenamento diretos (somente Windows Server 2019)
+### <a id="storage-spaces-direct"></a>Espaços de Armazenamento Diretos (somente Windows Server 2019)
 
-Há vários aprimoramentos para espaços de armazenamento diretos no Windows Server 2019 (espaços de armazenamento diretos não está incluído no Windows Server, o canal semestral):
+Há uma série de aprimoramentos para Espaços de Armazenamento Diretos no Windows Server 2019 (Espaços de Armazenamento Diretos não está incluído no Windows Server, canal semestral):
 
-- **Eliminação de duplicação e compactação para volumes de ReFS**
+- **Eliminação de duplicação e compactação para volumes do ReFS**
 
-    Store até dez vezes mais dados no mesmo volume com eliminação de duplicação e compactação para o sistema de arquivos ReFS. (Ele tem [apenas um clique](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be) ativar com Windows Admin Center.) O repositório de partes de tamanho variável com a compactação opcional maximiza a taxas de economia, enquanto a arquitetura de pós-processamento multi-threaded mantém mínimo de impacto no desempenho. Dá suporte a volumes de até 64 TB e será eliminar os primeiros 4 TB de cada arquivo.
+    Armazene até dez vezes mais dados no mesmo volume com eliminação de duplicação e compactação para o sistema de arquivos ReFS. (É [apenas um clique](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be) para ativar com o centro de administração do Windows.) O repositório de partes de tamanho variável com compactação opcional maximiza as taxas de economia, enquanto a arquitetura de pós-processamento multi-threaded mantém o impacto do desempenho mínimo. Dá suporte a volumes de até 64 TB e eliminará a duplicação dos primeiros 4 TB de cada arquivo.
 
 - **Suporte nativo para memória persistente**
 
     Desbloquear desempenho incomparável com suporte nativo de espaços de armazenamento diretos para módulos de memória persistente, incluindo Intel® Optane™ DC PM e NVDIMM-N. Use memória persistente como cache para acelerar o conjunto de trabalho ativo ou capacidade para garantir a baixa latência consistente na ordem microssegundos. Gerencie a memória persistente assim como faria com qualquer outra unidade no PowerShell ou o Windows Admin Center.
 
-- **Resiliência aninhada para dois nós de infraestrutura hiperconvergida na borda**
+- **Resiliência aninhada para a infraestrutura hiperconvergente de dois nós na borda**
 
     Sobreviver a duas falhas de hardware em uma vez com a resiliência de um software novo opção inspirada RAID 5 + 1. Com resiliência aninhada, um cluster de espaços de armazenamento diretos de dois nós pode fornecer armazenamento continuamente acessível para aplicativos e máquinas virtuais, mesmo se um nó de servidor falhar e uma unidade falha no nó do servidor.
 
-- **Clusters de dois servidores usando um USB flash drive como uma testemunha**
+- **Clusters de dois servidores usando um pen drive como testemunha**
 
-    Use uma unidade flash de baixo custo USB conectada ao seu roteador para atuar como uma testemunha em clusters de dois servidores. Se um servidor falhar e, em seguida, fazer backup, o cluster de unidade USB sabe qual servidor tem os dados mais atualizados. Para obter mais informações, consulte o [armazenamento no blog Microsoft](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap/).
+    Use uma unidade flash USB de baixo custo conectada ao seu roteador para atuar como uma testemunha em clusters de dois servidores. Se um servidor ficar inativo e, em seguida, fazer backup, o cluster da unidade USB saberá qual servidor tem os dados mais atualizados. Para obter mais informações, consulte o [blog armazenamento na Microsoft](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap/).
 
 - **Windows Admin Center**
 
@@ -91,109 +91,109 @@ Há vários aprimoramentos para espaços de armazenamento diretos no Windows Ser
 
 - **Histórico de desempenho**
 
-    Obtenha visibilidade sem esforço para utilização de recursos e desempenho com [histórico interno](storage-spaces/performance-history.md). Mais de 50 contadores essenciais abrangendo computação, memória, rede e armazenamento automaticamente sejam coletadas e armazenadas no cluster por até um ano. O melhor de tudo, não há nada para instalar, configurar ou iniciar – simplesmente funciona. Visualizar no Windows Admin Center ou consulta e processe no PowerShell.
+    Obtenha visibilidade sem esforço para utilização de recursos e desempenho com [histórico interno](storage-spaces/performance-history.md). Mais de 50 contadores essenciais abrangendo computação, memória, rede e armazenamento automaticamente sejam coletadas e armazenadas no cluster por até um ano. O melhor de tudo: não há nada a ser instalado, configurado ou iniciado – ele simplesmente funciona. Visualizar no Windows Admin Center ou consulta e processe no PowerShell.
 
 - **Dimensionar até 4 PB por cluster**
 
-    Obter vários petabytes escala – muito bem para mídia, casos de uso de backup e arquivamento. No Windows Server 2019, espaços de armazenamento diretos dá suporte a até 4 petabytes (PB) = 4.000 terabytes de capacidade bruta por pool de armazenamento. Relacionados diretrizes de capacidade aumentam bem: por exemplo, você pode criar duas vezes mais volumes (64 em vez de 32), cada duas vezes maior que antes (64 TB em vez de 32 TB). Colar vários clusters em uma [configuração de cluster](storage-spaces/cluster-sets.md) ainda maior dimensionamento dentro de um armazenamento de namespace. Para obter mais informações, consulte o [armazenamento no blog Microsoft](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap/).
+    Obter vários petabytes escala – muito bem para mídia, casos de uso de backup e arquivamento. No Windows Server 2019, espaços de armazenamento diretos dá suporte a até 4 petabytes (PB) = 4.000 terabytes de capacidade bruta por pool de armazenamento. Relacionados diretrizes de capacidade aumentam bem: por exemplo, você pode criar duas vezes mais volumes (64 em vez de 32), cada duas vezes maior que antes (64 TB em vez de 32 TB). Junte vários clusters em um [conjunto de clusters](storage-spaces/cluster-sets.md) para uma escala ainda maior em um namespace de armazenamento. Para obter mais informações, consulte o [blog armazenamento na Microsoft](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap/).
 
-- **Paridade de aceleração de espelho é 2 X mais rápido**
+- **A paridade acelerada por espelho é duas vezes mais rápida**
 
-    Com paridade acelerada por espelho, você pode criar volumes espaços de armazenamento diretos que são parte espelho e parte paridade, como misturando RAID-1 e RAID-5/6 para obter o melhor dos dois. (Ele tem [mais fácil do que você imagina](https://www.youtube.com/watch?v=R72QHudqWpE) no Windows Admin Center.) No Windows Server de 2019, o desempenho de paridade de aceleração de espelho é mais que o dobro em relação ao Windows Server 2016 graças ao otimizações.
+    Com paridade acelerada por espelho, você pode criar volumes espaços de armazenamento diretos que são parte espelho e parte paridade, como misturando RAID-1 e RAID-5/6 para obter o melhor dos dois. (É [mais fácil do que você imagina](https://www.youtube.com/watch?v=R72QHudqWpE) no centro de administração do Windows.) No Windows Server 2019, o desempenho da paridade acelerada por espelhamento é mais do que dobrar em relação ao Windows Server 2016 graças às otimizações.
 
-- **Unidade de detecção de exceções de latência**
+- **Detecção de exceções de latência da unidade**
 
-    Identificar facilmente unidades com latência anormal com monitoração proativa e detecção excepcionais interno, inspirada por abordagem de já estabelecida e bem-sucedida do Microsoft Azure. Seja latência média ou algo mais sutil como uma latência do 99º percentil que se destaque, as unidades lentas são identificadas automaticamente no PowerShell e no Windows Admin Center com o status 'Latência Anormal'.
+    Identifique facilmente unidades com latência anormal com monitoramento proativo e detecção de exceção interna, inspirado pela abordagem de longo prazo e com êxito da Microsoft Azure. Seja a latência média ou algo mais sutil, como a latência de 99 º percentil que se destaca, unidades lentas são rotuladas automaticamente no PowerShell e no centro de administração do Windows com o status ' latência anormal '.
 
 - **Delimitar manualmente a alocação de volumes para aumentar a tolerância a falhas**
 
-    Isso permite que os administradores delimitar manualmente a alocação de volumes em espaços de armazenamento diretos. Fazer para que pode aumentar significativamente a tolerância a falhas em determinadas condições, mas impõe algumas considerações de gerenciamento e a complexidade. Para obter mais informações, consulte [delimitar a alocação de volumes](storage-spaces/delimit-volume-allocation.md).
+    Isso permite que os administradores delimitem manualmente a alocação de volumes em Espaços de Armazenamento Diretos. Isso pode aumentar significativamente a tolerância a falhas sob determinadas condições, mas impõe algumas considerações e complexidade de gerenciamento adicionais. Para obter mais informações, consulte [delimitar a alocação de volumes](storage-spaces/delimit-volume-allocation.md).
 
 ### <a name="storage-replica2019"></a>Réplica de armazenamento
 
-Há vários aprimoramentos à [a réplica de armazenamento](storage-replica/storage-replica-overview.md) nesta versão:
+Há várias melhorias na [réplica de armazenamento](storage-replica/storage-replica-overview.md) nesta versão:
 
 #### <a name="storage-replica-in-windows-server-standard-edition"></a>Réplica de armazenamento no Windows Server, Standard Edition
 
-Agora você pode usar a réplica de armazenamento com o Windows Server, Standard Edition, além de Datacenter Edition. Em execução no Windows Server, Standard Edition, a réplica de armazenamento tem as seguintes limitações:
+Agora você pode usar a réplica de armazenamento com o Windows Server, Standard Edition, além do Datacenter Edition. A réplica de armazenamento em execução no Windows Server, Standard Edition, tem as seguintes limitações:
 
 - A réplica de armazenamento replica um único volume em vez de um número ilimitado de volumes.
-- Volumes podem ter um tamanho de até 2 TB, em vez de um tamanho ilimitado.
+- Os volumes podem ter um tamanho de até 2 TB em vez de um tamanho ilimitado.
 
 #### <a name="storage-replica-log-performance-improvements"></a>Melhorias de desempenho de log da Réplica de Armazenamento
 
-Também fizemos aprimoramentos para como o log de réplica de armazenamento controla a replicação, melhorando a taxa de transferência de replicação e latência, especialmente no armazenamento de todos os flash, bem como clusters de espaços de armazenamento diretos que replicam entre si.
+Também fizemos melhorias no modo como o log da réplica de armazenamento rastreia a replicação, melhorando a taxa de transferência e a latência da replicação, especialmente em todo o armazenamento flash, bem como Espaços de Armazenamento Diretos clusters que são replicados entre si.
 
-Para obter o melhor desempenho, todos os membros do grupo de replicação devem executar o Windows Server 2019.
+Para obter o aumento de desempenho, todos os membros do grupo de replicação devem executar o Windows Server 2019.
 
 #### <a name="test-failover"></a>Failover de teste
 
-Você pode agora temporariamente montar um instantâneo de armazenamento replicado em um servidor de destino para teste ou fazer backup de finalidades. Para obter mais informações, consulte [Perguntas Frequentes sobre a Réplica de Armazenamento](https://aka.ms/srfaq).
+Agora você pode montar temporariamente um instantâneo do armazenamento replicado em um servidor de destino para fins de teste ou backup. Para obter mais informações, consulte [Perguntas Frequentes sobre a Réplica de Armazenamento](https://aka.ms/srfaq).
 
 #### <a name="windows-admin-center-support"></a>Suporte do Windows Admin Center
 
-Suporte para gerenciamento de gráfico de replicação agora está disponível no Windows Admin Center por meio da ferramenta Gerenciador do servidor. Isso inclui a replicação de servidor para servidor, replicação de cluster do cluster para cluster, bem como o stretch.
+O suporte para o gerenciamento gráfico da replicação agora está disponível no centro de administração do Windows por meio da ferramenta de Gerenciador do Servidor. Isso inclui a replicação de servidor para servidor, cluster para cluster, bem como a replicação de cluster de ampliação.
 
-#### <a name="miscellaneous-improvements"></a>Diversas melhorias
+#### <a name="miscellaneous-improvements"></a>Aprimoramentos diversos
 
 A réplica de armazenamento também contém os seguintes aprimoramentos:
 
--   Altera assíncrona Alongar comportamentos de cluster para que agora ocorrer failovers automáticos
+-   Altera comportamentos assíncronos do cluster de ampliação para que ocorram failovers automáticos agora
 -   Várias correções de bugs
 
 ### <a name="smb"></a>SMB
 
-- **Remoção de autenticação SMB1 e convidado**: Windows Server não instala mais SMB1 cliente e no servidor por padrão. Além disso, a capacidade de autenticar como um convidado no SMB2 e posterior está desativada por padrão. Para obter mais informações, consulte [o SMBv1 não é instalado por padrão no Windows 10, versão 1709, e no Windows Server, versão 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server). 
+- **SMB1 e remoção de autenticação de convidado**: O Windows Server não instala mais o cliente e o servidor do SMB1 por padrão. Além disso, a capacidade de autenticar como um convidado no SMB2 e posterior está desativada por padrão. Para obter mais informações, confira [o SMBv1 não é instalado por padrão no Windows 10 versão 1709 e no Windows Server versão 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server). 
 
-- **Compatibilidade e segurança SMB2/SMB3**: Opções adicionais para segurança e compatibilidade de aplicativos foram adicionadas, incluindo a capacidade de desabilitar oplocks em SMB2 + para aplicativos herdados, bem como exigir a assinatura ou criptografia cada per-conexão de um cliente. Para obter mais informações, consulte a ajuda do módulo SMBShare PowerShell.
+- **Compatibilidade e segurança de SMB2/SMB3**: foram adicionadas mais opções de compatibilidade e segurança do aplicativo, incluindo a capacidade de desabilitar os bloqueios em SMB2+ para aplicativos herdados, bem como exigir assinatura ou criptografia de um cliente para cada conexão. Para obter mais informações, consulte a ajuda do módulo SMBShare PowerShell.
 
 ### <a name="data-deduplication"></a>Eliminação de Duplicação de Dados
 
-- **Eliminação de duplicação de dados agora dá suporte a ReFS**: Você deve escolher entre as vantagens de um sistema de arquivos modernos com o ReFS e eliminação de duplicação de dados não é mais: agora, você pode habilitar a eliminação de duplicação sempre que você pode habilitar o ReFS. Aumente a eficiência do armazenamento em mais de 95% com ReFS.
-- **Da API para entrada/saída otimizada para volumes com eliminação de duplicação**: Os desenvolvedores podem aproveitar o conhecimento de eliminação de duplicação de dados tem sobre como armazenar dados com eficiência para mover dados entre servidores, volumes e clusters com eficiência.
+- **A eliminação de duplicação de dados agora dá suporte a ReFS**: você não precisa mais escolher entre as vantagens de um sistema de arquivos moderno com o ReFS e a eliminação de duplicação de dados: agora, você pode habilitar a eliminação de duplicação de dados, na qual você pode habilitar o ReFS. Aumente a eficiência do armazenamento em mais de 95% com o ReFS.
+- **API de DataPort para entrada/saída otimizada para volumes com eliminação de duplicação**: os desenvolvedores agora podem aproveitar o conhecimento que a eliminação de duplicação de dados tem sobre como armazenar dados de modo eficaz para mover os dados entre volumes, servidores e clusters de forma eficiente.
 
 ### <a name="file-server-resource-manager"></a>Gerenciador de Recursos de Servidor de Arquivos
 
-Windows Server 2019 inclui a capacidade de impedir que o serviço de Gerenciador de recursos de servidor de arquivos desde a criação de um diário de alterações (também conhecido como um diário de USN) em todos os volumes quando o serviço é iniciado. Isso pode economizar espaço em cada volume, mas desabilitará a classificação de arquivos em tempo real. Para obter mais informações, consulte a [visão geral do Gerenciador de Recursos de Servidor de Arquivos](fsrm/fsrm-overview.md).
+O Windows Server 2019 inclui a capacidade de impedir que o serviço do Gerenciador de recursos de servidor de arquivos crie um diário de alterações (também conhecido como um diário de USN) em todos os volumes quando o serviço é iniciado. Isso pode economizar espaço em cada volume, mas desabilitará a classificação de arquivos em tempo real. Para obter mais informações, consulte a [visão geral do Gerenciador de Recursos de Servidor de Arquivos](fsrm/fsrm-overview.md).
 
 ## <a name="whats-new-in-storage-in-windows-server-version-1803"></a>O que há de novo no armazenamento no Windows Server, versão 1803
 
 ### <a name="file-server-resource-manager"></a>Gerenciador de Recursos de Servidor de Arquivos
 
-Windows Server, versão 1803 inclui a capacidade de impedir que o serviço de Gerenciador de recursos de servidor de arquivos desde a criação de um diário de alterações (também conhecido como um diário de USN) em todos os volumes quando o serviço é iniciado. Isso pode economizar espaço em cada volume, mas desabilitará a classificação de arquivos em tempo real. Para obter mais informações, consulte a [visão geral do Gerenciador de Recursos de Servidor de Arquivos](fsrm/fsrm-overview.md).
+O Windows Server, versão 1803 inclui a capacidade de impedir que o serviço do Gerenciador de recursos de servidor de arquivos crie um diário de alterações (também conhecido como um diário de USN) em todos os volumes quando o serviço é iniciado. Isso pode economizar espaço em cada volume, mas desabilitará a classificação de arquivos em tempo real. Para obter mais informações, consulte a [visão geral do Gerenciador de Recursos de Servidor de Arquivos](fsrm/fsrm-overview.md).
 
 ## <a name="whats-new-in-storage-in-windows-server-version-1709"></a>O que há de novo no armazenamento no Windows Server, versão 1709
 
-Windows Server, versão 1709 é a primeira versão do Windows Server no canal semestral. Canal semestral é um benefício do Software Assurance e é totalmente suportado em produção por 18 meses, com uma nova versão a cada seis meses.
+O Windows Server, versão 1709, é a primeira versão do Windows Server no canal semestral. O canal semestral é um benefício do Software Assurance e tem suporte total na produção por 18 meses, com uma nova versão a cada seis meses.
 
 Para obter mais informações, consulte a [Visão geral do canal semestral do Windows Server](../get-started/semi-annual-channel-overview.md).
 
 ### <a name="storage-replica"></a>Réplica de Armazenamento
 
-A proteção de recuperação de desastres adicionada pela réplica de armazenamento agora é expandida para incluir:
+A proteção de recuperação de desastre adicionada pela réplica de armazenamento agora está expandida para incluir:
 
 - **Failover de teste**: a opção para montar o armazenamento de destino agora é possível por meio do recurso de failover de teste. Você pode montar um instantâneo do armazenamento replicado em nós de destino temporariamente para fins de teste ou backup. Para obter mais informações, consulte [Perguntas Frequentes sobre a Réplica de Armazenamento](https://aka.ms/srfaq).
-- **Suporte do Windows Admin Center**: Suporte para gerenciamento de gráfico de replicação agora está disponível no Windows Admin Center por meio da ferramenta Gerenciador do servidor. Isso inclui a replicação de servidor para servidor, replicação de cluster do cluster para cluster, bem como o stretch.
+- **Suporte do centro de administração do Windows**: O suporte para o gerenciamento gráfico da replicação agora está disponível no centro de administração do Windows por meio da ferramenta de Gerenciador do Servidor. Isso inclui a replicação de servidor para servidor, cluster para cluster, bem como a replicação de cluster de ampliação.
 
 A réplica de armazenamento também contém os seguintes aprimoramentos:
 
--   Altera assíncrona Alongar comportamentos de cluster para que agora ocorrer failovers automáticos
+-   Altera comportamentos assíncronos do cluster de ampliação para que ocorram failovers automáticos agora
 -   Várias correções de bugs
 
 ### <a name="smb"></a>SMB
 
-- **Remoção de autenticação SMB1 e convidado**: Windows Server, versão 1709 não instala o cliente do SMB1 e o servidor por padrão. Além disso, a capacidade de autenticar como um convidado no SMB2 e posterior está desativada por padrão. Para obter mais informações, consulte [o SMBv1 não é instalado por padrão no Windows 10, versão 1709, e no Windows Server, versão 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server). 
+- **SMB1 e remoção de autenticação de convidado**: o Windows Server versão 1709 não instala mais o cliente SMB1 e o servidor por padrão. Além disso, a capacidade de autenticar como um convidado no SMB2 e posterior está desativada por padrão. Para obter mais informações, confira [o SMBv1 não é instalado por padrão no Windows 10 versão 1709 e no Windows Server versão 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server). 
 
-- **Compatibilidade e segurança SMB2/SMB3**: Opções adicionais para segurança e compatibilidade de aplicativos foram adicionadas, incluindo a capacidade de desabilitar oplocks em SMB2 + para aplicativos herdados, bem como exigir a assinatura ou criptografia cada per-conexão de um cliente. Para obter mais informações, consulte a ajuda do módulo SMBShare PowerShell.
+- **Compatibilidade e segurança de SMB2/SMB3**: foram adicionadas mais opções de compatibilidade e segurança do aplicativo, incluindo a capacidade de desabilitar os bloqueios em SMB2+ para aplicativos herdados, bem como exigir assinatura ou criptografia de um cliente para cada conexão. Para obter mais informações, consulte a ajuda do módulo SMBShare PowerShell.
 
 ### <a name="data-deduplication"></a>Eliminação de Duplicação de Dados
 
-- **Eliminação de duplicação de dados agora dá suporte a ReFS**: Você deve escolher entre as vantagens de um sistema de arquivos modernos com o ReFS e eliminação de duplicação de dados não é mais: agora, você pode habilitar a eliminação de duplicação sempre que você pode habilitar o ReFS. Aumente a eficiência do armazenamento em mais de 95% com ReFS.
-- **Da API para entrada/saída otimizada para volumes com eliminação de duplicação**: Os desenvolvedores podem aproveitar o conhecimento de eliminação de duplicação de dados tem sobre como armazenar dados com eficiência para mover dados entre servidores, volumes e clusters com eficiência.
+- **A eliminação de duplicação de dados agora dá suporte a ReFS**: você não precisa mais escolher entre as vantagens de um sistema de arquivos moderno com o ReFS e a eliminação de duplicação de dados: agora, você pode habilitar a eliminação de duplicação de dados, na qual você pode habilitar o ReFS. Aumente a eficiência do armazenamento em mais de 95% com o ReFS.
+- **API de DataPort para entrada/saída otimizada para volumes com eliminação de duplicação**: os desenvolvedores agora podem aproveitar o conhecimento que a eliminação de duplicação de dados tem sobre como armazenar dados de modo eficaz para mover os dados entre volumes, servidores e clusters de forma eficiente.
 
 ## <a name="whats-new-in-storage-in-windows-server-2016"></a>Novidades no armazenamento no Windows Server 2016
 
-### <a name="s2d"></a>Espaços de armazenamento diretos  
+### <a name="s2d"></a>Espaços de Armazenamento Diretos  
 Os Espaços de Armazenamento Direto habilitam a criação de armazenamento altamente disponível e escalonável usando servidores com armazenamento local. Ele simplifica a implantação e o gerenciamento de sistemas de armazenamento definidos por software e desbloqueia o uso de novas classes de dispositivos de disco, como dispositivos de disco SATA SSD e NVMe, que anteriormente não eram possíveis com Espaços de Armazenamento clusterizados com discos compartilhados.  
 
 **Qual é o valor agregado desta alteração?**  
@@ -251,13 +251,13 @@ Para saber mais, consulte [Qualidade de serviço do armazenamento](storage-qos/s
 ### <a name="dedup"></a>Eliminação de duplicação de dados  
 | Funcionalidade | Novo ou atualizado | Descrição |
 |---------------|----------------|-------------|
-| [Suporte a Volumes grandes](data-deduplication/whats-new.md#large-volume-support) | Atualizado | Antes do Windows Server 2016, os volumes tinham que ser dimensionados especificamente para a variação esperada e tamanhos de volume acima de 10 TB não eram bons candidatos para eliminação de duplicação. No Windows Server 2016, a Eliminação de Duplicação de Dados dá suporte a tamanhos de volume de **até 64 TB**. |
+| [Suporte para grandes volumes](data-deduplication/whats-new.md#large-volume-support) | Atualizado | Antes do Windows Server 2016, os volumes tinham que ser dimensionados especificamente para a variação esperada e tamanhos de volume acima de 10 TB não eram bons candidatos para eliminação de duplicação. No Windows Server 2016, a Eliminação de Duplicação de Dados dá suporte a tamanhos de volume de **até 64 TB**. |
 | [Suporte para arquivos grandes](data-deduplication/whats-new.md#large-file-support) | Atualizado | Antes do Windows Server 2016, arquivos com tamanho próximo a 1 TB não eram bons candidatos para eliminação de duplicação. No Windows Server 2016, arquivos com **até 1 TB** têm suporte completo. |
-| [Suporte para Nano Server](data-deduplication/whats-new.md#nano-server-support) | Novo | A Eliminação de Duplicação de Dados está disponível e tem suporte completo na nova opção de implantação do Nano Server para Windows Server 2016. |
-| [Suporte de Backup simplificado](data-deduplication/whats-new.md#simple-backup-support) | Novo | No Windows Server 2012 R2, Aplicativos de Backup Virtualizado, como o [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx), tinham suporte por meio de uma série de etapas de configuração manual. No Windows Server 2016, um novo "Backup" de tipo de uso padrão foi adicionado para implantação perfeita da Eliminação de Duplicação de Dados para aplicativos de backup virtualizado. |
-| [Suporte para atualizações sem interrupção do sistema de operacional do Cluster](data-deduplication/whats-new.md#cluster-upgrade-support) | Novo | A Eliminação de Duplicação de Dados dá suporte completo ao novo recurso [Atualização sem Interrupção do SO de Cluster](..//failover-clustering/cluster-operating-system-rolling-upgrade.md) do Windows Server 2016. |
+| [Suporte para nano Server](data-deduplication/whats-new.md#nano-server-support) | Novo | A Eliminação de Duplicação de Dados está disponível e tem suporte completo na nova opção de implantação do Nano Server para Windows Server 2016. |
+| [Suporte de backup simplificado](data-deduplication/whats-new.md#simple-backup-support) | Novo | No Windows Server 2012 R2, Aplicativos de Backup Virtualizado, como o [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx), tinham suporte por meio de uma série de etapas de configuração manual. No Windows Server 2016, um novo "Backup" de tipo de uso padrão foi adicionado para implantação perfeita da Eliminação de Duplicação de Dados para aplicativos de backup virtualizado. |
+| [Suporte para atualizações sem interrupção do sistema operacional do cluster](data-deduplication/whats-new.md#cluster-upgrade-support) | Novo | A Eliminação de Duplicação de Dados dá suporte completo ao novo recurso [Atualização sem Interrupção do SO de Cluster](..//failover-clustering/cluster-operating-system-rolling-upgrade.md) do Windows Server 2016. |
 
-### <a name="smb-hardening-improvements"></a>Melhorias para conexões SYSVOL e NETLOGON em proteção de SMB  
+### <a name="smb-hardening-improvements"></a>Melhorias de proteção SMB para conexões SYSVOL e NETLOGON  
 No Windows 10 e no Windows Server 2016, conexões de cliente para os compartilhamentos padrão SYSVOL e NETLOGON do Active Directory Domain Services em controladores de domínio agora exigem assinatura SMB e autenticação mútua (como Kerberos).   
 
 **Qual é o valor agregado desta alteração?**  
@@ -269,10 +269,10 @@ Se a assinatura SMB e a autenticação mútua não estiverem disponíveis, um co
 > [!NOTE]  
 > Os valores do Registro para essas configurações não estão presentes por padrão, mas as regras de proteção ainda se aplicam até serem substituídas pela Política de Grupo ou outros valores do Registro.  
 
-Para obter mais informações sobre esses aprimoramentos de segurança - também conhecido como proteção UNC, consulte o artigo Microsoft Knowledge Base [3000483](https://support.microsoft.com/kb/3000483) e [MS15 011 & MS15 014: Política de grupo de proteção](https://blogs.technet.microsoft.com/srd/2015/02/10/ms15-011-ms15-014-hardening-group-policy).  
+Para obter mais informações sobre esses aprimoramentos de segurança – também conhecidos como proteção UNC, consulte o artigo [3000483](https://support.microsoft.com/kb/3000483) da base [de dados de conhecimento Microsoft e MS15-011 & MS15-014: Protegendo Política de Grupo](https://blogs.technet.microsoft.com/srd/2015/02/10/ms15-011-ms15-014-hardening-group-policy).  
 
 ### <a name="work-folders"></a>Pastas de trabalho
-Melhor notificação de alteração quando o servidor de pastas de trabalho estiver executando o Windows Server 2016 e o cliente de pastas de trabalho é o Windows 10.
+Notificação de alteração aprimorada quando o servidor de pastas de trabalho está executando o Windows Server 2016 e o cliente de pastas de trabalho é o Windows 10.
 
 **Qual é o valor agregado desta alteração?**<br>
 Para o Windows Server 2012 R2, quando as alterações do arquivo são sincronizadas com o servidor de pastas de trabalho, os clientes não são notificados sobre a alteração e aguardam até 10 minutos para receber a atualização.  Ao usar o Windows Server 2016, o servidor de pastas de trabalho notifica imediatamente os clientes do Windows 10 e as alterações de arquivo são sincronizadas imediatamente.

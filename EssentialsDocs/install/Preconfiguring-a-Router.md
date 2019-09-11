@@ -12,12 +12,12 @@ ms.assetid: 9153ac90-bb0c-4b8d-93b2-e2121ed13636
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 7dc66c8a439552c2087d0348b0115adba04027ee
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bbff22c03b7bf4310b86048848ded276547b911f
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433505"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865194"
 ---
 # <a name="preconfiguring-a-router"></a>Pré-configurando um Roteador
 
@@ -32,8 +32,8 @@ Em geral, uma nova instalação do sistema operacional requer um roteador habili
 |Definição da configuração|Detalhes|  
 |---------------------------|-------------|  
 |DHCP|Ativado|  
-|Encaminhamento de porta|Encaminhe as portas a seguir para o endereço do servidor:<br /><br /> -80 (para configuração hospedada, use somente 443)<br />-   443|  
-|Suporte UPnP|Você deve habilitar o suporte do relatório de UPnP fornecer configuração facilitada do roteador para o cliente e melhor experiência do cliente durante a instalação.<br /><br /> **Aviso:** A arquitetura UPnP pode representar um risco à segurança se permanecer habilitada.|  
+|Encaminhamento de porta|Encaminhe as portas a seguir para o endereço do servidor:<br /><br /> -80 (para a configuração hospedada, use apenas 443)<br />-443|  
+|Suporte UPnP|Você deve habilitar o suporte a UPnP para fornecer a configuração de roteador mais fácil para o cliente e a melhor experiência do cliente durante a instalação.<br /><br /> **Aviso:** A arquitetura UPnP pode representar um risco à segurança se permanecer habilitada.|  
   
  Além das configurações básicas de pré-configuração do roteador, é possível realizar as seguintes tarefas para fornecer uma experiência do usuário mais integrada para gerenciar o roteador:  
   
@@ -43,13 +43,13 @@ Em geral, uma nova instalação do sistema operacional requer um roteador habili
   
 -   Se o roteador suportar diversas sub-redes, o endereço IP do servidor deverá ser enviado como um servidor DNS até DHCP.  
   
--   Se o roteador tiver um recurso de controle de acesso integrado para serviços de domínio do Active Directory DirectoryÂ®, você pode automatizar a integração do Active Directory durante a configuração inicial do servidor. Você também deve expor esse recurso através do suplemento de gerenciamento do roteador no Dashboard.  
+-   Se o roteador tiver um recurso de controle de acesso integrado para Active Directory® Domain Services, você poderá automatizar a integração de Active Directory durante a configuração inicial do servidor. Você também deve expor esse recurso através do suplemento de gerenciamento do roteador no Dashboard.  
   
 > [!NOTE]
 >  Para obter mais informações sobre conexões sem fio, consulte [Configure Support for a Wireless Network](Configure-Support-for-a-Wireless-Network.md).  
   
 ## <a name="see-also"></a>Consulte também  
- [Introdução ao Windows Server Essentials ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [Introdução com o Windows Server Essentials ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   

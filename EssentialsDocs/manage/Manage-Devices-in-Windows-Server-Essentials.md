@@ -12,12 +12,12 @@ ms.assetid: f5fe1088-ebe7-4799-a47d-075b0048dea1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a66f98b0896e706f520aa057b91cce2fe662d22d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 48eb7009215e484fb00e704c7b328340240321d2
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433322"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865160"
 ---
 # <a name="manage-devices-in-windows-server-essentials"></a>Gerenciar Dispositivos no Windows Server Essentials
 
@@ -27,17 +27,17 @@ ms.locfileid: "66433322"
   
 -   [Gerenciar dispositivos usando o painel](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_1)  
   
--   [Atribuir contas de usuário permissão para fazer logon nos computadores de rede específicos](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_2)  
+-   [Permissão atribuir contas de usuário para fazer logon em computadores de rede específicos](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_2)  
   
 -   [Remover um computador do servidor](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_3)  
   
--   [Configurar configurações de diretiva de grupo para redirecionamento de pasta e segurança](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_5)  
+-   [Definir configurações de Política de Grupo para redirecionamento de pasta e segurança](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_5)  
   
--   [Conectar a um computador da rede por meio de uma sessão de área de trabalho remota](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_7)  
+-   [Conectar-se a um computador de rede usando uma sessão de Área de Trabalho Remota](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_7)  
   
--   [Exibir propriedades do computador](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_8)  
+-   [Exibir Propriedades do computador](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_8)  
   
-##  <a name="BKMK_1"></a> Gerenciar dispositivos usando o painel  
+##  <a name="BKMK_1"></a>Gerenciar dispositivos usando o painel  
  O Windows Server Essentials torna possível executar tarefas administrativas comuns usando o Painel do Windows Server Essentials. A página **Dispositivos** do Painel fornece o seguinte:  
   
 -   Uma lista de computadores da rede, que exibe:  
@@ -89,7 +89,7 @@ ms.locfileid: "66433322"
 |Como conecto computadores ao servidor?|Abre um tópico da Ajuda que descreve as etapas para executar o ingresso de um computador à rede.|  
 |Implementar Política de Grupo|Aplica as configurações de política para os computadores Windows 8 e Windows 7 que ingressaram no domínio.|  
   
-##  <a name="BKMK_2"></a> Atribuir contas de usuário permissão para fazer logon nos computadores de rede específicos  
+##  <a name="BKMK_2"></a>Permissão atribuir contas de usuário para fazer logon em computadores de rede específicos  
  Você pode atribuir permissões a contas de usuário para que os usuários possam fazer logon somente em determinados computadores da rede ao acessar a rede do Windows Server Essentials em um local remoto.  
   
 #### <a name="to-change-the-computer-access-for-a-user-account"></a>Para alterar o acesso do computador para uma conta de usuário  
@@ -100,15 +100,15 @@ ms.locfileid: "66433322"
   
 3.  Na lista de contas de usuário, selecione a conta de usuário que você deseja alterar.  
   
-4.  No **< conta de usuário\> tarefas** painel, clique em **exibir propriedades da conta**. A página **Propriedades** da conta de usuário é exibida.  
+4.  No painel **tarefas da conta\> de usuário do <** , clique em **exibir as propriedades da conta**. A página **Propriedades** da conta de usuário é exibida.  
   
 5.  Na guia **Acesso ao computador**, selecione o computador que o usuário pode acessar remotamente e clique em **OK**.  
   
-##  <a name="BKMK_3"></a> Remover um computador do servidor  
+##  <a name="BKMK_3"></a>Remover um computador do servidor  
  Quando você remove um computador de um servidor que esteja executando o Windows Server Essentials usando o Painel, ele não é gerenciado pelo servidor. Como resultado, o servidor irá parar de criar backups de computador ou monitorar sua integridade após sua remoção da rede.  
   
 > [!NOTE]
->  A remoção de um computador do servidor não desconecte o computador da rede. O computador ainda pode acessar recursos na rede da mesma forma que era possível antes de ser conectado ao servidor. Para impedir que o computador acesse recursos do servidor e para desconectá-lo do servidor, você deve remover o computador do domínio. Além disso, a remoção do computador do servidor não desinstala automaticamente o software Connector ou a barra inicial do computador que está sendo removido. Remova manualmente o software Connector do computador. Para obter mais informações, consulte a seção de desinstalar o software Connector no [conecte-se](../use/Get-Connected-in-Windows-Server-Essentials.md).  
+>  A remoção de um computador do servidor não desconecte o computador da rede. O computador ainda pode acessar recursos na rede da mesma forma que era possível antes de ser conectado ao servidor. Para impedir que o computador acesse recursos do servidor e para desconectá-lo do servidor, você deve remover o computador do domínio. Além disso, a remoção do computador do servidor não desinstala automaticamente o software Connector ou a barra inicial do computador que está sendo removido. Remova manualmente o software Connector do computador. Para obter mais informações, consulte a seção desinstalar o software do [conector em conectar](../use/Get-Connected-in-Windows-Server-Essentials.md)-se.  
   
 #### <a name="to-remove-a-computer-from-the-network-by-using-the-dashboard"></a>Para remover um computador da rede usando o Painel  
   
@@ -118,7 +118,7 @@ ms.locfileid: "66433322"
   
 3.  Na lista de computadores, clique com o botão direito do mouse no computador que você deseja remover da rede e, em seguida, clique em **Remover o computador**.  
   
-##  <a name="BKMK_5"></a> Configurar configurações de diretiva de grupo para redirecionamento de pasta e segurança  
+##  <a name="BKMK_5"></a>Definir configurações de Política de Grupo para redirecionamento de pasta e segurança  
  Você pode configurar a política de grupo e implantá-la em computadores na rede do Windows Server Essentials usando o Painel do Windows Server Essentials. A política de grupo no Windows Server Essentials inclui configurações de redirecionamento de pasta e segurança que influenciam o Windows Update, o Windows Defender e o firewall de rede.  
   
 #### <a name="to-configure-group-policy-in-windows-server-essentials"></a>Para configurar a política de grupo no Windows Server Essentials  
@@ -139,8 +139,8 @@ ms.locfileid: "66433322"
   
 7.  Clique em **Concluir** para implementar as configurações de política de grupo.  
   
-##  <a name="BKMK_7"></a> Conectar a um computador da rede por meio de uma sessão de área de trabalho remota  
- Para acessar remotamente o computador de rede do Windows Server Essentials quando estiver fora do escritório, use seu navegador da Web para fazer logon no seu site de acesso via Web remoto de s da organização e na **computadores** guia, clique no nome das computador.  
+##  <a name="BKMK_7"></a>Conectar-se a um computador de rede usando uma sessão de Área de Trabalho Remota  
+ Para acessar remotamente seu computador de rede do Windows Server Essentials quando você estiver fora do seu escritório, use o navegador da Web para fazer logon no site de Acesso via Web remoto da sua organização e, na guia **computadores** , clique no nome do computador.  
   
  A coluna **Status** mostra se você pode se conectar a um computador na sua rede e se pode incluir os seguintes valores:  
   
@@ -148,7 +148,7 @@ ms.locfileid: "66433322"
   
      O computador está ligado e está disponível para uma conexão remota. Mesmo se status aparecer, você ainda pode não será capaz de se conectar a esse computador se um firewall de terceiros bloquear a conexão.  
   
--   **Offline ou em espera**  
+-   **Offline ou em suspensão**  
   
      O computador está desligado ou no modo de suspensão ou de hibernação. Se um computador estiver offline ou em espera, o status é atualizado em tempo real para que você possa saber quando o computador estará disponível.  
   
@@ -156,11 +156,11 @@ ms.locfileid: "66433322"
   
      O sistema operacional no computador não oferece suporte a área de trabalho remota. Pode levar até 6 horas para esse status ser atualizado no servidor, se houver uma alteração.  
   
--   **Conexão está desabilitado**  
+-   **A conexão está desabilitada**  
   
      A conexão de computador está bloqueada por um firewall ou a área de trabalho remota está desabilitada no computador ou pela política de grupo. Pode levar até 6 horas para esse status ser atualizado no servidor, se houver uma alteração.  
   
-##  <a name="BKMK_8"></a> Exibir propriedades do computador  
+##  <a name="BKMK_8"></a>Exibir Propriedades do computador  
  A seção **Dispositivos** do Painel do Windows Server Essentials exibe uma lista de computadores da rede. A lista também fornece informações adicionais sobre cada computador.  
   
 #### <a name="to-view-a-list-of-computers"></a>Para exibir uma lista de computadores  
@@ -175,7 +175,7 @@ ms.locfileid: "66433322"
   
 1.  Na lista de computadores, selecione a conta na qual você deseja exibir ou alterar as propriedades.  
   
-2.  No **< NomeDoComputador\> tarefas** painel, clique em **exibir as propriedades do computador**. A página **Propriedades** aparecerá para os computadores.  
+2.  No painel **\> tarefas do < ComputerName** , clique em **exibir as propriedades do computador**. A página **Propriedades** aparecerá para os computadores.  
   
 3.  Clique na guia para exibir as propriedades para esse computador.  
   
@@ -183,9 +183,9 @@ ms.locfileid: "66433322"
   
 ## <a name="see-also"></a>Consulte também  
   
--   [Gerenciar o acesso via Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Gerenciar Acesso via Web remotos](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
--   [Usar o acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Usar Acesso via Web remotos](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
 -   [Gerenciar contas de usuário usando o painel](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage8)  
   

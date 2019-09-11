@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: bd5863a46f77fd4ac53c8559ff17279271dc5c46
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 90efc49b0d7ff6edd8367cece42bf7f2950de952
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849687"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870563"
 ---
 # <a name="configuring-additional-lsa-protection"></a>Configurando a proteção LSA adicional
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico para o profissional de TI explica como configurar proteção adicional para o processo de LSA (Autoridade de Segurança Local), a fim de impedir a injeção de código que poderá comprometer credenciais.
 
-A LSA, que inclui o processo LSASS (Serviço do Servidor de Autoridade de Segurança Local), valida usuários para entradas remotas e locais e força as políticas de segurança local. O sistema operacional Windows 8.1 fornece proteção adicional ao LSA impedir a leitura da memória e injeção de código por processos não protegidos. Isso proporciona mais segurança para as credenciais que a LSA armazena e gerencia. A configuração de processo protegida para LSA pode ser configurada no Windows 8.1, mas ele não pode ser configurado no Windows RT 8.1. Quando essa configuração é usada em conjunto com a Inicialização Segura, proteção adicional é obtida, pois a desabilitação da chave de Registro HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa não tem efeito.
+A LSA, que inclui o processo LSASS (Serviço do Servidor de Autoridade de Segurança Local), valida usuários para entradas remotas e locais e força as políticas de segurança local. O sistema operacional Windows 8.1 fornece proteção adicional para a LSA para evitar a leitura de memória e injeção de código por processos não protegidos. Isso proporciona mais segurança para as credenciais que a LSA armazena e gerencia. A configuração de processo protegido para LSA pode ser configurada no Windows 8.1, mas não pode ser configurada no Windows RT 8,1. Quando essa configuração é usada em conjunto com a Inicialização Segura, proteção adicional é obtida, pois a desabilitação da chave de Registro HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa não tem efeito.
 
 ### <a name="protected-process-requirements-for-plug-ins-or-drivers"></a>Requisitos do processo protegido para plug-ins ou drivers
 Para um plug-in ou driver de LSA carregar com êxito como um processo protegido, ele deve atender aos seguintes critérios:
@@ -35,7 +35,7 @@ Para um plug-in ou driver de LSA carregar com êxito como um processo protegido,
 
     O modo protegido exige que qualquer plug-in carregado na LSA tenha uma assinatura digital da Microsoft. Portanto, os plug-ins não assinados ou não assinados com uma assinatura da Microsoft não carregarão na LSA. Exemplos desses plug-ins são os drivers de cartão inteligente, os plug-ins criptográficos e os filtros de senha.
 
-    Os plug-ins de LSA que são drivers, como os drivers de cartão inteligente, precisam ser assinados usando a Certificação WHQL. Para obter mais informações, consulte [WHQL Release Signature](https://msdn.microsoft.com/library/windows/hardware/ff553976%28v=vs.85%29.aspx).
+    Os plug-ins de LSA que são drivers, como os drivers de cartão inteligente, precisam ser assinados usando a Certificação WHQL. Para obter mais informações, consulte [assinatura de versão do WHQL](https://msdn.microsoft.com/library/windows/hardware/ff553976%28v=vs.85%29.aspx).
 
     Os plug-ins de LSA que não têm um processo de Certificação de WHQL devem ser assinados usando o [serviço de assinatura de arquivo para LSA](https://go.microsoft.com/fwlink/?LinkId=392590).
 
@@ -57,10 +57,10 @@ Use a lista a seguir para testar completamente se essa proteção LSA está habi
 
 -   Use os logs de auditoria para identificar plug-ins e drivers de LSA que não são executados como um processo protegido.
 
-#### <a name="limitations-introduced-with-enabled-lsa-protection"></a>Limitações introduzidas com a proteção de LSA habilitada
+#### <a name="limitations-introduced-with-enabled-lsa-protection"></a>Limitações introduzidas com a proteção LSA habilitada
 
-Se a proteção de LSA estiver habilitada, você não pode depurar um plug-in personalizado do LSA.
-Não é possível anexar um depurador para o serviço LSASS, quando ele é um processo protegido.
+Se a proteção de LSA estiver habilitada, você não poderá depurar um plug-in LSA personalizado.
+Não é possível anexar um depurador ao LSASs quando ele é um processo protegido.
 Em geral, não há nenhuma maneira com suporte para depurar um processo protegido em execução.
 
 ## <a name="how-to-identify-lsa-plug-ins-and-drivers-that-fail-to-run-as-a-protected-process"></a>Como identificar plug-ins e drivers de LSA que não são executados como um processo protegido
@@ -79,7 +79,7 @@ Você pode usar o modo de auditoria para identificar plug-ins e drivers de LSA q
 
 Analise os resultados dos eventos 3065 e 3066.
 
-Depois disso, você poderá ver esses eventos no Visualizador de eventos: Microsoft-Windows-Codeintegrity/Operational:
+Depois disso, você poderá ver esses eventos em Visualizador de Eventos: Microsoft-Windows-CodeIntegrity/operacional:
 
 -   **Evento 3065**: Este evento registra que uma verificação de integridade de código determinou que um processo (geralmente, lsass.exe) tentou carregar um driver específico que não atendeu aos requisitos de segurança para Seções Compartilhadas. No entanto, devido à política de sistema definida, foi permitido o carregamento da imagem.
 
@@ -126,7 +126,7 @@ Você pode usar o registro de eventos para identificar plug-ins e drivers de LSA
 
 Analise os resultados dos Eventos 3033 e 3063.
 
-Depois disso, você poderá ver esses eventos no Visualizador de eventos: Microsoft-Windows-Codeintegrity/Operational:
+Depois disso, você poderá ver esses eventos em Visualizador de Eventos: Microsoft-Windows-CodeIntegrity/operacional:
 
 -   **Evento 3033**: Este evento registra que uma verificação de integridade de código determinou que um processo (geralmente, lsass.exe) tentou carregar um driver que não atendeu aos requisitos de nível de assinatura da Microsoft.
 
@@ -134,8 +134,8 @@ Depois disso, você poderá ver esses eventos no Visualizador de eventos: Micros
 
 As Seções Compartilhadas geralmente são o resultado de técnicas de programação que permitem que os dados da instância interajam com outros processos que usam o mesmo contexto de segurança. Isso pode criar vulnerabilidades de segurança.
 
-## <a name="BKMK_HowToConfigure"></a>Como configurar a proteção de LSA adicional de credenciais
-Em dispositivos que executam o Windows 8.1 (com ou sem inicialização segura ou UEFI), configuração é possível executando os procedimentos descritos nesta seção. Para dispositivos que executam Windows RT 8.1, lsass.exe protection sempre esteja habilitado e não pode ser desativada.
+## <a name="BKMK_HowToConfigure"></a>Como configurar a proteção de credenciais de LSA adicional
+Em dispositivos que executam o Windows 8.1 (com ou sem inicialização segura ou UEFI), a configuração é possível executando os procedimentos descritos nesta seção. Para dispositivos que executam o Windows RT 8,1, a proteção LSASS. exe está sempre habilitada e não pode ser desativada.
 
 ### <a name="on-x86-based-or-x64-based-devices-using-secure-boot-and-uefi-or-not"></a>Nos dispositivos baseados em x86 ou x64 que usam Inicialização Segura e UEFI ou não
 Nos dispositivos baseados em x86 ou x64 que usam a Inicialização Segura e UEFI, uma variável de UEFI é definida no firmware da UEFI quando a proteção de LSA é habilitada usando a chave de Registro. Quando a configuração está armazenada no firmware, a variável de UEFI não pode ser excluída ou alterada na chave de Registro. A variável de UEFI deve ser redefinida.
@@ -199,6 +199,6 @@ Para descobrir se a LSA foi iniciada no modo protegido quando o Windows foi inic
 ## <a name="additional-resources"></a>Recursos adicionais
 [Proteção e gerenciamento de credenciais](credentials-protection-and-management.md)
 
-[Arquivo de serviço de assinatura para LSA](https://go.microsoft.com/fwlink/?LinkId=392590)
+[Serviço de assinatura de arquivo para LSA](https://go.microsoft.com/fwlink/?LinkId=392590)
 
 

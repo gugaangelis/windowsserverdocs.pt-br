@@ -8,18 +8,18 @@ author: JasonGerend
 manager: brianlic
 ms.date: 06/07/2019
 ms.author: jgerend
-ms.openlocfilehash: 1fcabf890c0c54e12c1650c31a072d17a33e292f
-ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
+ms.openlocfilehash: 3442ad46590add695fb3fed607c6f728e2bc5ee1
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560547"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867284"
 ---
 # <a name="deploying-roaming-user-profiles"></a>Implantando perfis de usuário de roaming
 
 >Aplica-se a: Windows 10, Windows 8.1, Windows 8, Windows 7, Windows Server 2019, Windows Server 2016, Windows Server (canal semestral), Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
-Este tópico descreve como usar o Windows Server para implantar [perfis de usuário](folder-redirection-rup-overview.md) de roaming em computadores cliente Windows. Perfis de usuário de roaming redireciona perfis de usuário para um compartilhamento de arquivos para que os usuários recebam as mesmas configurações de sistema operacional e aplicativo em vários computadores.
+Este tópico descreve como usar o Windows Server para implantar [perfis de usuário de roaming](folder-redirection-rup-overview.md) em computadores cliente Windows. Perfis de usuário de roaming redireciona perfis de usuário para um compartilhamento de arquivos para que os usuários recebam as mesmas configurações de sistema operacional e aplicativo em vários computadores.
 
 Para obter uma lista de alterações recentes neste tópico, consulte a seção [histórico de alterações](#change-history) deste tópico.
 
@@ -73,7 +73,7 @@ Se você estiver implantando perfis de usuário móvel em computadores que execu
 
 Para fazer essas alterações, use o procedimento a seguir.
 
-1. Baixe e instale a atualização de software apropriada em todos os computadores nos quais usará perfis móvel, obrigatório, superobrigatório ou padrão de domínio:
+1. Baixe e instale a atualização de software apropriada em todos os computadores nos quais você vai usar perfis de roaming, obrigatório, superobrigatórios ou de domínio padrão:
 
     - Windows 8.1 ou Windows Server 2012 R2: Instale a atualização de software descrita no artigo [2887595](http://support.microsoft.com/kb/2887595) na base de dados de conhecimento Microsoft (quando lançado).
     - Windows 8 ou o Windows Server 2012: instale a atualização de software descrita no artigo [2887239](http://support.microsoft.com/kb/2887239) na Base de Dados de Conhecimento Microsoft.
@@ -118,7 +118,7 @@ Se você ainda não tiver um compartilhamento de arquivos separado para perfis d
 
 Veja como criar um compartilhamento de arquivos no Windows Server:
 
-1. No painel de navegação Gerenciador do Servidor, selecione **serviços de arquivo e armazenamento**e, em seguida, selecione compartilhamentos para exibir a página compartilhamentos.
+1. No painel de navegação Gerenciador do Servidor, selecione **serviços de arquivo e armazenamento**e, em seguida, selecione **compartilhamentos** para exibir a página compartilhamentos.
 2. No bloco compartilhamentos, selecione **tarefas**e, em seguida, selecione **novo compartilhamento**. O Assistente Novo Compartilhamento é exibido.
 3. Na página **selecionar perfil** , selecione **compartilhamento SMB – rápido**. Se você tiver o Gerenciador de recursos de servidor de arquivos instalado e estiver usando as propriedades de gerenciamento de pastas, selecione **compartilhamento SMB – avançado**.
 4. Na página **Compartilhar Local**, selecione o servidor e o volume nos quais deseja criar o compartilhamento.
@@ -168,7 +168,7 @@ Veja como criar um GPO para perfis de usuário de roaming:
     Esta etapa é necessária devido a alterações de segurança feitas em [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016).
 
 >[!IMPORTANT]
->Devido às alterações de segurança feitas no [MS16-072A](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016), agora você deve conceder permissões de leitura delegadas ao grupo de usuários autenticados para o GPO-caso contrário, o GPO não será aplicado aos usuários ou, se já estiver aplicado, o GPO será removido, redirecionando os perfis de usuário de volta para o PC local. Para obter mais informações, consulte Implantando [política de grupo atualização de segurança MS16-072](https://blogs.technet.microsoft.com/askds/2016/06/22/deploying-group-policy-security-update-ms16-072-kb3163622/).
+>Devido às alterações de segurança feitas no [MS16-072A](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016), agora você deve conceder permissões de leitura delegadas ao grupo de usuários autenticados para o GPO-caso contrário, o GPO não será aplicado aos usuários ou, se já estiver aplicado, o GPO será removido, redirecionando os perfis de usuário de volta para o PC local. Para obter mais informações, consulte [Implantando política de grupo atualização de segurança MS16-072](https://blogs.technet.microsoft.com/askds/2016/06/22/deploying-group-policy-security-update-ms16-072-kb3163622/).
 
 ## <a name="step-5-optionally-set-up-roaming-user-profiles-on-user-accounts"></a>Etapa 5: Opcionalmente, configurar perfis de usuário móvel em contas de usuários
 
@@ -210,7 +210,7 @@ Veja como configurar perfis de usuário móveis em computadores:
 4. Na janela Editor de Gerenciamento de Política de Grupo, navegue até **Configuração do Computador**, em seguida, **Políticas**, **Modelos Administrativos**, **Sistema** e **Perfis de Usuário**.
 5. Clique com o botão direito do mouse em **Definir caminho de perfil móvel para todos os usuários que fazem logon neste computador** e selecione **Editar**.
     > [!TIP]
-    > Uma pasta base do usuário, se configurada, é a pasta padrão usada por alguns programas como o Windows PowerShell. É possível configurar um local alternativo ou local de rede por usuário usando a seção **Pasta base** das propriedades de conta do usuário em AD DS. Para configurar o local da pasta base para todos os usuários de um computador executando o Windows 8.1, o Windows 8, o Windows Server 2019, o Windows Server 2016, o Windows Server 2012 R2 ou o Windows Server 2012 em um ambiente de área de trabalho virtual, habilite a **pasta base do usuário definido** configuração de política e, em seguida, especifique o compartilhamento de arquivos e a letra da unidade para mapear (ou especificar uma pasta local). Não use elipses ou variáveis de ambiente. O alias do usuário é anexado ao final do caminho especificado durante o registro do usuário.
+    > Uma pasta base do usuário, se configurada, é a pasta padrão usada por alguns programas como o Windows PowerShell. É possível configurar um local alternativo ou local de rede por usuário usando a seção **Pasta base** das propriedades de conta do usuário em AD DS. Para configurar o local da pasta base para todos os usuários de um computador executando o Windows 8.1, o Windows 8, o Windows Server 2019, o Windows Server 2016, o Windows Server 2012 R2 ou o Windows Server 2012 em um ambiente de área de trabalho virtual, habilite a **pasta base do usuário definido** configuração de política e, em seguida, especifique o compartilhamento de arquivos e a letra da unidade para mapear (ou especificar uma pasta local). Não use elipses ou variáveis de ambiente. O alias do usuário é acrescentado ao final do caminho especificado durante o logon do usuário.
 6. Na caixa de diálogo **Propriedades** , selecione **habilitado**
 7. Na caixa **os usuários fazendo logon neste computador devem usar este caminho de perfil móvel** , insira o caminho para o compartilhamento de arquivos em que você deseja armazenar o perfil de usuário móvel do usuário, seguido `%username%` de (que é substituído automaticamente pelo nome de usuário que o primeira vez que o usuário entrar). Por exemplo:
 
@@ -264,7 +264,7 @@ Para especificar um layout de início, faça o seguinte:
 Se você configurou os Perfis de Usuário Móvel em computadores usando a Política de Grupo ou se você personalizou outras configurações de Perfis de Usuário Móvel usando a Política de Grupo, a próxima etapa será habilitar o GPO, permitindo que ele seja aplicado aos usuários afetados.
 
 >[!TIP]
->Se você planeja implementar o suporte de computador primário, faça isso agora, antes de habilitar o GPO. Isso evita que os dados do usuário sejam copiados para computadores não primários antes de o suporte de computador primário ser habilitado. Para obter as configurações de política específicas, consulte [implantar computadores primários para redirecionamento de pasta e perfis de usuário](deploy-primary-computers.md)de roaming.
+>Se você planeja implementar o suporte de computador primário, faça isso agora, antes de habilitar o GPO. Isso evita que os dados do usuário sejam copiados para computadores não primários antes de o suporte de computador primário ser habilitado. Para obter as configurações de política específicas, consulte [implantar computadores primários para redirecionamento de pasta e perfis de usuário de roaming](deploy-primary-computers.md).
 
 Veja como habilitar o GPO de perfil de usuário móvel:
 

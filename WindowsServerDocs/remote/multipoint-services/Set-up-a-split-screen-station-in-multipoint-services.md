@@ -1,6 +1,6 @@
 ---
 title: Configurar uma estação de tela dividida
-description: Descreve como configurar o MultiPoint Services para que dois usuários possam compartilhar um único sistema
+description: Descreve como configurar os serviços do MultiPoint para que dois usuários possam compartilhar um único sistema
 ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server-threshold
@@ -13,75 +13,75 @@ ms.assetid: 35d1d434-79b2-4e0a-835f-d94ed8ee6b21
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: b2d01df6175eee99fd1374cd5af270cbcc764ca8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a0f1ea32112865c7120a3fe0af0c9f413032a32e
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849937"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871586"
 ---
 # <a name="set-up-a-split-screen-station"></a>Configurar uma estação de tela dividida
-Você pode configurar uma estação de tela dividida para que dois usuários simultaneamente podem usar o sistema.
+Você pode configurar uma estação de tela de divisão para que dois usuários possam usar o sistema simultaneamente.
 
-Qualquer monitor que tem uma resolução de mínimo 1200 x 720, quando conectado a uma estação que suporta o recurso o split screen, pode ser dividido em duas estações. Depois que uma estação é dividida, a área de trabalho que o monitor teve exibido move para a metade esquerda da tela, e uma nova estação é exibida na metade direita da tela. Para concluir a criação da nova estação, você precisará mapear um teclado, mouse e hub USB para a estação. Depois que uma estação é dividida, um usuário pode fazer logon na estação esquerda enquanto outro usuário faz logon na estação direita.  
+Qualquer monitor que tenha uma resolução de, no mínimo, 1200 x720, quando conectado a uma estação que ofereça suporte ao recurso de tela de divisão, pode ser dividido em duas estações. Depois que uma estação é dividida, a área de trabalho exibida pelo monitor muda para a metade esquerda da tela e uma nova estação é exibida na metade direita da tela. Para concluir a criação da nova estação, será necessário mapear um teclado, um mouse e um hub USB para a estação. Depois que uma estação é dividida, um usuário pode fazer logon na estação esquerda enquanto outro usuário faz logon na estação direita.  
   
-Estações com tela dividida tem vários benefícios:  
+As estações de tela de divisão têm vários benefícios:  
   
--   Você pode reduzir o custo e espaço ao acomodar mais usuários em um sistema MultiPoint Services.  
+-   Você pode reduzir o custo e o espaço acomodando mais usuários em um sistema de serviços do MultiPoint.  
   
 -   Dois usuários podem colaborar juntos, lado a lado, em um projeto.  
   
--   Um usuário do MultiPoint Dashboard pode demonstrar um procedimento em uma estação enquanto um aluno acompanha na outra estação.  
+-   Um usuário do painel do MultiPoint pode demonstrar um procedimento em uma estação enquanto o aluno segue na outra estação.  
   
-A ilustração a seguir mostra um sistema MultiPoint Services com uma estação de tela de divisão (à direita).  
+A ilustração a seguir mostra um sistema de serviços do MultiPoint com uma estação de tela dividida (à direita).  
   
 ![Estações de tela dividida](./media/WMS_diagram3.gif)  
    
 ## <a name="requirements-for-a-split-screen-station"></a>Requisitos para uma estação de tela dividida  
-Para criar uma estação de tela dividida, o monitor e a estação devem satisfazer estes requisitos:  
+Para criar uma estação de tela de divisão, o monitor e a estação devem atender a estes requisitos:  
   
 -   O monitor deve ter uma resolução de 1200 x720 ou superior.  
   
--   Se você estiver usando um cliente de USB over Ethernet zero, verifique com seu fornecedor de hardware para descobrir se o split screen estações têm suporte. Muitos dispositivos de cliente de USB over Ethernet zero têm limitações que impedem sua configuração como estações com tela dividida.  
+-   Se você estiver usando um cliente USB over-Ethernet zero, verifique com seu fornecedor de hardware para descobrir se há suporte para estações de tela de divisão. Muitos dispositivos cliente USB over-Ethernet têm limitações que impedem sua configuração como estações de tela de divisão.  
   
-## <a name="setting-up-a-split-screen-station"></a>Como configurar uma estação de tela dividida  
-Use os procedimentos a seguir para adicionar um segundo hub para uma tela dividida estação e, em seguida, dividir a existência da estação do MultiPoint Services. O último procedimento explica como retornar uma estação de tela dividida para uma única estação.  
+## <a name="setting-up-a-split-screen-station"></a>Configurando uma estação de tela de divisão  
+Use os procedimentos a seguir para adicionar um segundo Hub para uma estação de tela de divisão e, em seguida, dividir a estação nos serviços do MultiPoint. O procedimento final explica como retornar uma estação de tela de divisão para uma única estação.  
   
 > [!NOTE]  
-> Quando você divide uma estação, a sessão ativa na estação é suspensa. O usuário deve fazer logon estação novamente para retomar o trabalho após a divisão ocorre.  
+> Quando você divide uma estação, a sessão ativa na estação é suspensa. O usuário deve fazer logon na estação novamente para retomar o trabalho após a divisão ocorrer.  
   
-**Para adicionar um segundo hub com o teclado e mouse:**  
+**Para adicionar um segundo Hub com teclado e mouse:**  
   
-1.  Conecte-se um hub USB a uma porta USB aberta no computador, conforme mostrado na ilustração a seguir.  
+1.  Conecte um hub USB a uma porta USB aberta no computador, conforme mostrado na ilustração a seguir.  
   
-    ![Imagem do MultiPoint server conexão de hub USB](./media/WMSUSBHubConnection.gif)  
+    ![Imagem da conexão do hub USB do MultiPoint Server](./media/WMSUSBHubConnection.gif)  
   
-2.  Conecte um teclado e mouse ao hub USB.  
+2.  Conecte um teclado e um mouse ao hub USB.  
   
     ![Imagem de conexões de dispositivo de entrada de hub USB](./media/WMSUSBDeviceConnection.gif)  
   
-3.  Conecte-se todos os periféricos adicionais, como fones de ouvido ao hub USB.  
+3.  Conecte quaisquer periféricos adicionais, como fones de ouvido ao hub USB.  
   
-4.  Se você estiver usando um hub alimentado externamente, conecte o cabo de alimentação do hub a uma tomada elétrica.  
+4.  Se você estiver usando um hub com energia externa, conecte o cabo de alimentação do hub a uma tomada de energia.  
   
 **Para dividir uma estação:**  
   
-1.  No Gerenciador do MultiPoint, clique o **estações** guia.  
+1.  No Gerenciador do MultiPoint, clique na guia **estações** .  
   
-2.  Sob **estação**, clique no nome da estação que deseja dividir.  
+2.  Em **estação**, clique no nome da estação que você deseja dividir.  
   
-3.  Sob **tarefas do Item selecionado**, clique em **dividir estação**.  
+3.  Em **tarefas do item selecionado**, clique em **dividir estação**.  
   
-    A tela original se move para a metade esquerda do monitor e tela de uma nova estação é criada na metade direita do mesmo monitor.  
+    A tela original é movida para a metade esquerda do monitor e a tela de uma nova estação é criada na metade direita do mesmo monitor.  
   
-4.  Criar nova estação pressionando a letra especificada no teclado recém-adicionada, conforme indicado quando o **criar uma estação do MultiPoint Server** tela é exibida na metade direita do monitor.  
+4.  Crie a nova estação pressionando a letra especificada no teclado recém-adicionado, conforme indicado quando a tela **criar uma estação do MultiPoint Server** aparece na metade direita do monitor.  
   
-Depois que uma estação é dividida, um usuário pode fazer logon na estação esquerda enquanto outro usuário faz logon na estação direita.  
+Depois que uma estação é dividida, um usuário pode fazer logon na estação esquerda enquanto outro usuário faz logon na estação à direita.  
   
-**Para retornar uma estação dividida para uma única estação:**  
+**Para retornar uma estação de divisão para uma única estação:**  
   
-1.  No Gerenciador do MultiPoint, clique o **estações** guia.  
+1.  No Gerenciador do MultiPoint, clique na guia **estações** .  
   
-2.  Sob **estação**, clique no nome da estação que deseja dividido.  
+2.  Em **estação**, clique no nome da estação que você deseja redividir.  
   
-3.  Sob **tarefas do Item selecionado**, clique em **reverter divisão da estação**.
+3.  Em **tarefas do item selecionado**, clique em **estação de divisão**.

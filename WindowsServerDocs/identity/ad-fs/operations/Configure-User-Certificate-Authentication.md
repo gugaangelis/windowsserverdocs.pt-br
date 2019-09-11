@@ -9,12 +9,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 058433f98d986c0daa720dd19f283135763cfe30
-ms.sourcegitcommit: c307886e96622e9595700c94128103b84f5722ce
+ms.openlocfilehash: 1616a1fe2e28534cc30c8955b0309c233555fa14
+ms.sourcegitcommit: ee8e0b217be6f6b2532ee7265fb4be00c106e124
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70108761"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70878146"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>Configurando AD FS para autenticação de certificado de usuário
 
@@ -54,7 +54,7 @@ Para obter mais informações sobre como configurar isso para o Chrome, consulte
 Este documento se concentra em problemas comuns de solução de problema quando AD FS está configurado para autenticação de certificado para usuários. 
 
 ### <a name="check-if-certificate-trusted-issuers-is-configured-properly-in-all-the-ad-fswap-servers"></a>Verificar se os emissores confiáveis do certificado estão configurados corretamente em todos os servidores AD FS/WAP
-*Sintoma comum: HTTP 204 "nenhum conteúdo de https://certuath.adfs.contoso.com "*
+*Sintoma comum: HTTP 204 "nenhum conteúdo de HTTPS\://certuath.ADFS.contoso.com"*
 
 AD FS usa o sistema operacional Windows subjacente para provar a posse do certificado de usuário e garantir que ele corresponda a um emissor confiável fazendo a validação da cadeia de certificados confiáveis. Para corresponder ao emissor confiável, você precisará garantir que todas as autoridades raiz e intermediárias sejam configuradas como emissores confiáveis no repositório de autoridades de certificação do computador local. Para validar isso automaticamente, use a [ferramenta AD FS Diagnostic Analyzer](https://adfshelp.microsoft.com/DiagnosticsAnalyzer/Analyze). A ferramenta consulta todos os servidores e garante que os certificados corretos sejam provisionados corretamente. 
 1)  Baixe e execute a ferramenta de acordo com as instruções fornecidas no link acima
@@ -76,7 +76,7 @@ Cada AD FS e servidor WAP precisarão acessar o ponto de extremidade da CRL para
 2)  Em cada servidor AD FS/WAP, verifique se os pontos de extremidade da CRL estão acessíveis por meio do protocolo usado (normalmente HTTPS ou HTTP)
 3)  Para validação avançada, [habilite o log de eventos CAPI2](https://blogs.msdn.microsoft.com/benjaminperkins/2013/09/30/enable-capi2-event-logging-to-troubleshoot-pki-and-ssl-certificate-issues/) em cada servidor AD FS/WAP
 4) Verificar a ID do evento 41 (verificar revogação) nos logs operacionais do CAPI2
-5) Verificar`‘\<Result value="80092013"\>The revocation function was unable to check revocation because the revocation server was offline.\</Result\>’`
+5) Verificar`‘\<Result value="80092013"\>The revocation function was unable to check revocation because the revocation server was offline.\</Result\>'`
 
 ***Dica***: Você pode direcionar um único AD FS ou servidor WAP para facilitar a solução de problemas Configurando a resolução DNS (arquivo HOSTs no Windows) para apontar para um servidor específico. Isso permite que você habilite o rastreamento direcionado a um servidor. 
 

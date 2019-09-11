@@ -8,12 +8,12 @@ ms.technology: storage
 ms.topic: article
 author: toklima
 ms.date: 04/18/2017
-ms.openlocfilehash: 7ee5c57839f32d71053e983fc14f76c481236779
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8283b87e9505b1d3f47ddc823016fbcc7c0c29e6
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884157"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867052"
 ---
 # <a name="troubleshooting-drive-firmware-updates"></a>Solução de problemas de atualizações de firmware de unidade
 
@@ -24,7 +24,7 @@ O Windows 10, versão 1703, e o novo Windows Server (canal semestral) incluem a 
 Você pode encontrar mais informações sobre esse recurso aqui:
 
 - [Atualizando o firmware da unidade no Windows Server 2016](update-firmware.md)
-- [Atualizar o Firmware da unidade sem tempo de inatividade nos espaços de armazenamento diretos](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
+- [Atualizar o firmware da unidade sem tempo de inatividade no Espaços de Armazenamento Diretos](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
 
 As atualizações de firmware podem falhar por vários motivos. O objetivo deste artigo é ajudar na solução de problemas avançada.
 
@@ -41,7 +41,7 @@ Em termos de arquitetura, esse novo recurso depende de APIs implementadas na pil
 As seções a seguir descrevem informações de solução de problemas, dependendo se drivers da Microsoft ou de terceiros são usados.
 
 ## <a name="identifying-inappropriate-hardware"></a>Identificando hardware inadequado
-A maneira mais rápida para identificar se um dispositivo dá suporte ao conjunto correto de comandos é simplesmente iniciar o PowerShell e passar um objeto do disco que representa PhysicalDisk para o cmdlet Get-StorageFirmwareInfo. Aqui está um exemplo:
+A maneira mais rápida para identificar se um dispositivo dá suporte ao conjunto correto de comandos é simplesmente iniciar o PowerShell e passar um objeto do disco que representa PhysicalDisk para o cmdlet Get-StorageFirmwareInfo. Veja um exemplo:
 
 ```powershell
 Get-PhysicalDisk -SerialNumber 15140F55976D | Get-StorageFirmwareInformation
@@ -64,7 +64,7 @@ O campo SupportsUpdate sempre relatará "True" para dispositivos conectados a SA
 
 Para validar se um dispositivo SAS aceita o conjunto de comandos necessários, existem duas opções:
 1.  Testar via cmdlet Update-StorageFirmware com uma imagem do firmware apropriada, ou
-2.  Consulte o catálogo de servidor Windows para identificar quais dispositivos SAS passaram com êxito o AQ de atualização de firmware (https://www.windowsservercatalog.com/)
+2.  Consulte o catálogo do Windows Server para identificar quais dispositivos SAS obtiveram com êxito a atualização do FW AQ (https://www.windowsservercatalog.com/)
 
 ### <a name="remediation-options"></a>Opções de correção
 Se um determinado dispositivo que você está testando não der suporte ao conjunto de comandos apropriado, consulte seu fornecedor para ver se um firmware atualizado que fornece o conjunto de comandos necessário está disponível ou consulte o catálogo do Windows Server para identificar dispositivos de origem que implementam o conjunto de comandos apropriado.
@@ -119,7 +119,7 @@ CdbBytes    3B0E0000000001000000
 NumberOfRetriesDone 0
 ```
 
-O evento 507 de ETW do canal mostra que uma solicitação de SCSI SRB falhou e fornece informações adicionais indicando que SenseKey foi '5' (solicitação ilegal), e que as informações AdditionalSense foram '36' (campo ilegal em CDB).
+O evento 507 do ETW do canal mostra que uma solicitação SRB SCSI falhou e fornece as informações adicionais que SenseKey era ' 5 ' (solicitação inválida) e que AdditionalSense Information era ' 36 ' (campo inválido em CDB).
 
    > [!Note]
    > Essas informações são fornecidas diretamente pela miniporta em questão e a precisão dessas informações depende da implementação e da sofisticação do driver de miniporta.
@@ -134,7 +134,7 @@ Se o driver de terceiros for identificado como não implementando as APIs ou con
 ## <a name="additional-troubleshooting-with-microsoft-drivers-satanvme"></a>Solução de problemas adicional com drivers da Microsoft (SATA/NVMe)
 Quando os drivers nativos do Windows, como StorAHCI.sys ou StorNVMe.sys, são usados para dispositivos de armazenamento de energia, é possível obter informações adicionais sobre casos de falha possíveis durante operações de atualização de firmware.
 
-Além do canal de ClassPnP operacional, StorAHCI e StorNVMe registrarão os códigos de retorno específicos do protocolo do dispositivo no seguinte canal ETW:
+Além do canal operacional ClassPnP, StorAHCI e StorNVMe registrarão em log os códigos de retorno específicos do protocolo do dispositivo no seguinte canal do ETW:
 
 Visualizador de Eventos - Logs de aplicativos e serviços - Microsoft - Windows - StorDiag - **Microsoft-Windows-Storage-StorPort/Diagnose**
 
@@ -142,7 +142,7 @@ Os logs de diagnóstico não são mostrados por padrão e podem ser ativados/mos
 
 Para coletar essas entradas avançadas do log, habilite o log, reproduza a falha de atualização de firmware e salve o log de diagnóstico.
 
-Aqui está um exemplo de uma atualização de firmware de uma falha de dispositivo SATA, porque a imagem a ser baixado era inválida (ID do evento: 258):
+Aqui está um exemplo de uma atualização de firmware em um dispositivo SATA falhando, porque a imagem a ser baixada era inválida (ID do evento: 258):
 
 ``` 
 EventData
@@ -174,11 +174,11 @@ Parameter8Value 0
 ```
 
 O evento acima contém informações detalhadas de dispositivo nos valores de parâmetro 2 a 6. Aqui estamos olhando vários valores do registro ATA. A especificação ATA ACS pode ser usada para decodificar os valores abaixo pela falha de um comando Download Microcode:
-- Código de retorno: 0 (0000 0000) (n/d - sem sentido, pois nenhum conteúdo foi transferido)
-- Recursos: 15 (0000 1111) (1 bit é definido como '1' e indica "Cancelar")
+- Código de retorno: 0 (0000 0000) (N/A-sem sentido porque nenhuma carga foi transferida)
+- Recursos: 15 (0000 1111) (bit 1 é definido como "1" e indica "Abort")
 - SectorCount: 0 (0000 0000) (N/A)
-- DriveHead: 160 (1010 0000) (n/d, apenas os bits obsoletos definidos)
-- Comando: 146 (1001 0010) (1 bit é definido como '1', que indica a disponibilidade dos dados de sensor)
+- DriveHead: 160 (1010 0000) (N/A – somente bits obsoletos são definidos)
+- Linha 146 (1001 0010) (bit 1 é definido como "1" indicando a disponibilidade dos dados de detecção)
 
 Isso informa que a operação de atualização de firmware foi cancelada pelo dispositivo.
 

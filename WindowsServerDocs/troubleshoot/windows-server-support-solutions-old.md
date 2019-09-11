@@ -9,12 +9,12 @@ ms.date: 03/16/2018
 ms.topic: article
 author: kaushika-msft
 ms.author: elizapo
-ms.openlocfilehash: 1eb52f28fcd5afe62df33cd56208f2ab506e7194
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.openlocfilehash: 29dd518ce7634a1cf8b3b7a84d8c7a4388d6027f
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66453153"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866976"
 ---
 # <a name="top-support-solutions-for-windows-server-2016"></a>Principais soluções de suporte do Windows Server 2016
 
@@ -27,33 +27,33 @@ Essas são as principais soluções do Suporte da Microsoft para a maioria dos p
 
 ## <a name="solutions-for-installing-or-upgrading-windows-server"></a>Soluções para instalar ou atualizar o Windows Server
 
-- [Resolva erros de atualização do Windows 10: Informações técnicas para profissionais de TI](https://docs.microsoft.com/windows/deployment/upgrade/resolve-windows-10-upgrade-errors)
-- [Atualização da pilha para Windows 10 versão 1607 e Windows Server 2016 de manutenção: 8 de agosto de 2017](https://support.microsoft.com/en-US/help/4035631)
-- [Atualização de compatibilidade de atualização para Windows 10 versão 1607 e Windows Server 2016: 3 de agosto de 2017](https://support.microsoft.com/en-US/help/4033524)
-- [Não há suporte para uma atualização do sistema no local em VMs do Azure com base em Windows](https://support.microsoft.com/en-US/help/4014997)
+- [Resolver erros de atualização do Windows 10: Informações técnicas para profissionais de ti](https://docs.microsoft.com/windows/deployment/upgrade/resolve-windows-10-upgrade-errors)
+- [Atualização da pilha de manutenção para Windows 10 versão 1607 e Windows Server 2016: 8 de agosto de 2017](https://support.microsoft.com/en-US/help/4035631)
+- [Atualização de compatibilidade para atualização para o Windows 10 versão 1607 e Windows Server 2016: 3 de agosto de 2017](https://support.microsoft.com/en-US/help/4033524)
+- [Não há suporte para a atualização do sistema in-loco em VMs do Azure baseadas no Windows](https://support.microsoft.com/en-US/help/4014997)
 - [Opções de atualização e conversão para o Windows Server 2016](../get-started/supported-upgrade-paths.md)
 - [Matriz de atualização e migração de função de servidor para o Windows Server 2016](../get-started/server-role-upgradeability-table.md)
-- [Atualização e instalação do Windows Server](../get-started/installation-and-upgrade.md)
+- [Instalação e atualização do Windows Server](../get-started/installation-and-upgrade.md)
 - [Notas de versão: Problemas importantes no Windows Server 2016](../get-started/windows-server-2016-ga-release-notes.md)
 - [Recomendações para mudar para o Windows Server 2016](../get-started/recommendations-moving-to-server2016.md)
 
 ## <a name="solutions-for-volume-activation"></a>Soluções de ativação de volume
 - [Ativação do Windows Server 2016](../get-started/server-2016-activation.md)
-- [Revisar e selecionar métodos de ativação](https://technet.microsoft.com/library/jj134256(ws.11).aspx)
-- [Códigos de erro de ativação para ativação de Volume](https://technet.microsoft.com/library/dn502528.aspx)
-- [Como solucionar o serviço de gerenciamento de chaves (KMS)](https://technet.microsoft.com/library/ee939272.aspx)
+- [Examinar e selecionar métodos de ativação](https://technet.microsoft.com/library/jj134256(ws.11).aspx)
+- [Códigos de erro de ativação para ativação de volume](https://technet.microsoft.com/library/dn502528.aspx)
+- [Como solucionar problemas do serviço de gerenciamento de chaves (KMS)](https://technet.microsoft.com/library/ee939272.aspx)
 - [Solução de problemas de ativação de volume](https://technet.microsoft.com/library/ff793439.aspx)
 - [Códigos de erro de ativação](https://technet.microsoft.com/library/ff793399.aspx)
-- [Instalação do Windows pode falhar com o erro "a chave do produto inserida não corresponde a nenhum das imagens do Windows disponíveis para instalação. Insira uma chave de produto diferente"](https://support.microsoft.com/help/2796988/windows-8-or-windows-server-2012-installation-may-fail-with-error-mess)
+- [A instalação do Windows pode falhar com o erro "a chave do produto inserida não corresponde a nenhuma das imagens do Windows disponíveis para instalação. Insira uma chave de produto diferente "](https://support.microsoft.com/help/2796988/windows-8-or-windows-server-2012-installation-may-fail-with-error-mess)
 
 ## <a name="solutions-related-to-dcpromo-and-installing-domain-controllers"></a>Soluções relacionados à DCPromo e à instalação de controladores de domínio
-- [Requisitos de porta de serviços de domínio de diretório Active Directory e do Active Directory](https://technet.microsoft.com/library/dd772723(v=ws.10).aspx)
-- [Portas de Firewall do Active Directory – vamos tentar tornar isso simples](http://blogs.msmvps.com/acefekay/2011/11/01/active-directory-firewall-ports-let-s-try-to-make-this-simple/)
+- [Requisitos de porta de Active Directory e Active Directory Domain Services](https://technet.microsoft.com/library/dd772723(v=ws.10).aspx)
+- [Active Directory portas de firewall – vamos tentar tornar isso simples](http://blogs.msmvps.com/acefekay/2011/11/01/active-directory-firewall-ports-let-s-try-to-make-this-simple/)
 - [Suporte do Exchange Server para Windows Server 2016](https://technet.microsoft.com/library/ff728623(v=exchg.150).aspx)
-- [Usando Ntdsutil.exe para executar ou transferir funções FSMO para um controlador de domínio](https://support.microsoft.com/kb/255504)
+- [Usando o Ntdsutil. exe para transferir ou capturar funções FSMO para um controlador de domínio](https://support.microsoft.com/kb/255504)
 - [Solução de problemas de implantação de controlador de domínio](../identity/ad-ds/deploy/troubleshooting-domain-controller-deployment.md)
-- [Solucionando problemas de Assistente de instalação do Active Directory](https://msdn.microsoft.com/library/bb727058.aspx)
-- [Problemas conhecidos para a instalação e remoção do AD DS](https://technet.microsoft.com/library/cc754463(v=ws.10).aspx)
+- [Solucionando problemas do assistente de instalação Active Directory](https://msdn.microsoft.com/library/bb727058.aspx)
+- [Problemas conhecidos para instalar e remover AD DS](https://technet.microsoft.com/library/cc754463(v=ws.10).aspx)
 
 ## <a name="solutions-for-active-directory-federation-services-ad-fs"></a>Soluções para Serviços de Federação do Active Directory (AD FS)
 - [Como configurar o registro automático de dispositivos ingressados no domínio do Windows com o Azure Active Directory](/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup)
@@ -62,17 +62,17 @@ Essas são as principais soluções do Suporte da Microsoft para a maioria dos p
 - [Suporte do AD FS para associação de nome de host alternativo para autenticação de certificado](../identity/ad-fs/operations/ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)
 - [Proteger contra ataques de senha](https://blogs.technet.microsoft.com/tspring/2017/01/20/federated-to-microsoft-cloud-and-account-lockouts/)
 - [Como atualizar para o AD FS no Windows Server 2016 por meio de um banco de dados WID](../identity/ad-fs/deployment/upgrading-to-ad-fs-in-windows-server-2016.md)
-- [Windows 10 com logon – habilitando a autenticação de dispositivo com o AD FS](../identity/ad-fs/operations/configure-device-based-conditional-access-on-premises.md)
-- [Gerenciamento de certificados SSL em AD FS e WAP no Windows Server 2016](../identity/ad-fs/operations/manage-ssl-certificates-ad-fs-wap-2016.md)
+- [Logon do Windows 10 – habilitando a autenticação do dispositivo com o AD FS](../identity/ad-fs/operations/configure-device-based-conditional-access-on-premises.md)
+- [Gerenciando certificados SSL em AD FS e WAP no Windows Server 2016](../identity/ad-fs/operations/manage-ssl-certificates-ad-fs-wap-2016.md)
 - [Políticas de controle de acesso no Windows Server 2016 AD FS](../identity/ad-fs/operations/access-control-policies-in-ad-fs.md)
 
 ## <a name="solutions-related-to-active-directory-replication"></a>Soluções relacionadas à replicação do Active Directory
 
 - [Como solucionar problemas de replicação do Active Directory](../identity/ad-ds/manage/troubleshoot/troubleshooting-active-directory-replication-problems.md)
-- [Baixe a ferramenta de Status de replicação do Active Directory do Centro de Download da Microsoft](https://www.microsoft.com/en-in/download/details.aspx?id=30005)
-- [e2e: Como solucionar erros comuns de replicação do Active Directory](https://support.microsoft.com/kb/3108513)
-- [Solucionando problemas de erro de replicação do AD 8606: Foram dados atributos insuficientes para criar um objeto](https://support.microsoft.com/kb/2028495)
-- [Evento 2108 e 1084 ocorrem durante a replicação de entrada do Active Directory no Windows 2000 Server e no Windows Server 2003](https://support.microsoft.com/kb/837932)
-- [Erro de replicação do AD 8451 de solução de problemas: A operação de replicação encontrou um erro de banco de dados](https://support.microsoft.com/kb/2645996)
-- [Erro de solução de problemas de replicação do AD 1127: Ao acessar o disco rígido, uma operação de disco falhou mesmo após várias tentativas](https://support.microsoft.com/kb/2025726)
-- [Limpeza de metadados do servidor](https://technet.microsoft.com/library/cc816907.aspx)
+- [Baixar a ferramenta Status de Replicação do Active Directory do centro de download da Microsoft](https://www.microsoft.com/en-in/download/details.aspx?id=30005)
+- [E2E Como solucionar erros comuns de replicação de Active Directory](https://support.microsoft.com/kb/3108513)
+- [Solução de problemas do erro de replicação do AD 8606: Atributos insuficientes foram fornecidos para criar um objeto](https://support.microsoft.com/kb/2028495)
+- [A ID de evento 2108 e a ID de evento 1084 ocorrem durante a replicação de entrada de Active Directory no Windows 2000 Server e no Windows Server 2003](https://support.microsoft.com/kb/837932)
+- [Solução de problemas do erro de replicação do AD 8451: A operação de replicação encontrou um erro de banco de dados](https://support.microsoft.com/kb/2645996)
+- [Solução de problemas do erro de replicação do AD 1127: Ao acessar o disco rígido, uma operação de disco falhou mesmo após novas tentativas](https://support.microsoft.com/kb/2025726)
+- [Limpar metadados do servidor](https://technet.microsoft.com/library/cc816907.aspx)

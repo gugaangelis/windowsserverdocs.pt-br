@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: b83cc7c4c9062c68298e52f6f3b366e6953cb442
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: d7ed8f7976116ab245fa730a5a050e7ec46cebea
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69983504"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869494"
 ---
 # <a name="ad-fs-openid-connectoauth-flows-and-application-scenarios"></a>AD FS os fluxos do OpenID Connect/OAuth e cenários de aplicativos
 Aplica-se ao AD FS 2016 e posterior

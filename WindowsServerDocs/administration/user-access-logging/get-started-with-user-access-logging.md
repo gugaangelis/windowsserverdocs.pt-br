@@ -1,5 +1,5 @@
 ---
-title: Introdução ao usuário acessar o registro em log
+title: Introdução ao log de acesso do usuário
 desctription: Describes the User Access Logging feature and how to start using it.
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,26 +13,26 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8656bf278519b48f8d26008fd98e46428106e511
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a1706756b52777f5dd3bf1db59fb2ed087ca8648
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861497"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866258"
 ---
-# <a name="get-started-with-user-access-logging"></a>Introdução ao usuário acessar o registro em log
+# <a name="get-started-with-user-access-logging"></a>Introdução ao log de acesso do usuário
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Usuário acesso UAL (log) é um recurso no Windows Server que agrega dados de uso do cliente por função e produtos em um servidor local. Ele ajuda os administradores de servidor do Windows a quantificar solicitações de computadores cliente para funções e serviços em um servidor local.  
+O registro de acesso do usuário (UAL) é um recurso no Windows Server que agrega dados de uso do cliente por função e produtos em um servidor local. Ele ajuda os administradores do Windows Server a quantificar as solicitações de computadores cliente para funções e serviços em um servidor local.  
   
-O UAL é instalado e habilitado por padrão e coleta de dados em quase em tempo real. Nenhuma configuração de Administrador é necessária, embora o UAL possa ser desabilitado ou habilitado. Para obter mais informações, consulte [Manage User Access Logging](Manage-User-Access-Logging.md). O serviço de registro de acesso do usuário agrega dados de uso do cliente por funções e produtos em arquivos de banco de dados local.  Os administradores de TI podem fazer uso de WMIx (Instrumentação de Gerenciamento do Windows) posterior ou dos cmdlets do Windows PowerShell para recuperar quantidades e instâncias por função de servidor (ou produto de software), por usuário, dispositivo, servidor local e data.  
+O UAL é instalado e habilitado por padrão e coleta dados em quase tempo real. Nenhuma configuração de Administrador é necessária, embora o UAL possa ser desabilitado ou habilitado. Para obter mais informações, consulte [Manage User Access Logging](Manage-User-Access-Logging.md). O serviço de log de acesso do usuário agrega dados de uso do cliente por funções e produtos em arquivos de banco de dados local.  Os administradores de TI podem fazer uso de WMIx (Instrumentação de Gerenciamento do Windows) posterior ou dos cmdlets do Windows PowerShell para recuperar quantidades e instâncias por função de servidor (ou produto de software), por usuário, dispositivo, servidor local e data.  
   
 > [!NOTE]  
 > O UAL dá suporte ao [Microsoft Assessment and Planning Toolkit](https://go.microsoft.com/fwlink/?LinkID=111000).  
   
 ## <a name="BKMK_APP"></a>Aplicativos práticos  
-O UAL agrega cliente exclusivo dispositivo e usuário solicitação eventos que são registrados em um banco de dados local. Esses registros são disponibilizados (através de uma consulta por um administrador de servidor) para recuperar quantidades e instâncias por função de servidor, usuário, dispositivo, servidor local e data.  Além disso, o UAL foi aprimorado para permitir que os desenvolvedores de software não Microsoft instrumentem os eventos do UAL para serem agregados pelo Windows Server.  
+O UAL agrega os eventos de solicitação de usuário e de dispositivo de cliente exclusivos que são registrados em um banco de dados local. Esses registros são disponibilizados (através de uma consulta por um administrador de servidor) para recuperar quantidades e instâncias por função de servidor, usuário, dispositivo, servidor local e data.  Além disso, o UAL foi estendido para permitir que desenvolvedores de software não Microsoft instrumentem seus eventos UAL a serem agregados pelo Windows Server.  
   
 O UAL pode executar as seguintes tarefas:  
   
@@ -44,7 +44,7 @@ O UAL pode executar as seguintes tarefas:
   
 -   Recuperar dados do UAL de vários servidores remotos.  
   
-Além disso, os desenvolvedores de software podem instrumentar eventos do UAL que podem ser agregados e recuperados pelas interfaces do WMI e do Windows PowerShell.  
+Além disso, os desenvolvedores de software podem instrumentar eventos UAL que podem ser agregados e recuperados usando as interfaces WMI e Windows PowerShell.  
   
 As seguintes funções de servidor e serviços podem ter suporte no UAL:  
   
@@ -90,14 +90,14 @@ As seguintes funções de servidor e serviços podem ter suporte no UAL:
 -   Windows Server Update Services (WSUS)  
   
 > [!IMPORTANT]  
-> O UAL não é recomendado para uso em servidores conectados diretamente na Internet, como servidores Web em um espaço de endereço acessível pela Internet, ou nos cenários em que um desempenho extremamente alto é a principal função do servidor (como nos ambientes de carga de trabalho HPC). O UAL é destina principalmente a pequeno, médio e cenários de intranet corporativo em que o volume elevado é esperado, mas não tão altas quanto implantações que servem o volume de tráfego da Internet regularmente.  
+> O UAL não é recomendado para uso em servidores conectados diretamente na Internet, como servidores Web em um espaço de endereço acessível pela Internet, ou nos cenários em que um desempenho extremamente alto é a principal função do servidor (como nos ambientes de carga de trabalho HPC). O UAL destina-se principalmente a cenários de intranet pequenos, médios e empresariais em que o alto volume é esperado, mas não tão alto quanto as implantações que servem o volume de tráfego voltado para a Internet regularmente.  
   
 ## <a name="BKMK_NEW"></a>Funcionalidade importante  
 A tabela a seguir descreve as funções chave do UAL e seus possíveis valores.  
   
 |Funcionalidade|Valor|  
 |-----------------|---------|  
-|Coletar e agregar dados do evento de solicitação de cliente quase em tempo real.|Até três anos de dados podem ser salvos. **Importante:** Os administradores precisam forçar a conformidade dos dados coletados e dos períodos de retenção de dados com a política de privacidade da organização e regulamentos locais.|  
+|Coletar e agregar dados do evento de solicitação de cliente quase em tempo real.|Até três anos de dados podem ser salvos. **Importante:** Os administradores precisam impor a conformidade dos dados coletados e os períodos de retenção de dados com a política de privacidade e as normas locais da organização.|  
 |Consulte o UAL usando interfaces WMI ou do Windows PowerShell para recuperar dados de solicitação de cliente em um servidor local ou remoto.|O UAL permite um único modo de exibição de dados de uso contínuo. Administradores corporativos e de servidor podem recuperar esses dados e coordenar com os administradores de negócios para otimizar o uso de suas licenças de software por volume.|  
 |Habilitado por padrão.|Os administradores de servidor não precisam configurar ou, de alguma forma, instalar esse recurso para todas as funcionalidades principais ficarem disponíveis e funcionando.|  
   
@@ -106,33 +106,33 @@ Os seguintes dados relacionados ao usuário são registrados no UAL.
   
 |Dados|Descrição|  
 |--------|---------------|  
-|**UserName**|Se aplicável, o nome de usuário do cliente acompanha as entradas do UAL de produtos e funções instaladas.|  
+|**Usu**|Se aplicável, o nome de usuário do cliente acompanha as entradas do UAL de produtos e funções instaladas.|  
 |**ActivityCount**|O número de vezes que um usuário específico acessa uma função ou um serviço.|  
 |**FirstSeen**|A data e hora em que um usuário acessa primeiro uma função ou um serviço.|  
 |**LastSeen**|A data e hora em que um usuário acessou pela última vez uma função ou um serviço.|  
-|**ProductName**|O nome do produto de software principal, como o Windows, que está fornecendo os dados do UAL.|  
+|**NomeDoProduto**|O nome do produto de software principal, como o Windows, que está fornecendo os dados do UAL.|  
 |**RoleGUID**|O GUID atribuído ou registrado do UAL que representa a função de servidor ou o produto instalado.|  
 |**RoleName**|O nome da função, do componente ou do subproduto que está fornecendo os dados do UAL. Também é associado a um ProductName e a um RoleGUID.|  
 |**TenantIdentifier**|Um GUID exclusivo de um cliente locatário de uma função instalada ou de um produto que acompanha os dados do UAL, se aplicável.|  
   
-Os seguintes dados relacionados ao dispositivo são registrados no UAL.  
+Os seguintes dados relacionados ao dispositivo são registrados com UAL.  
   
 |Dados|Descrição|  
 |--------|---------------|  
-|**IPAddress**|O endereço IP de um dispositivo cliente que é usado para acessar uma função ou um serviço.|  
+|**IP**|O endereço IP de um dispositivo cliente que é usado para acessar uma função ou um serviço.|  
 |**ActivityCount**|O número de vezes que um determinado dispositivo acessou a função ou um serviço.|  
 |**FirstSeen**|A data e hora em que um endereço IP foi usado pela primeira vez para acessar uma função ou um serviço.|  
 |**LastSeen**|A data e hora em que um endereço IP foi usado pela última vez para acessar uma função ou um serviço.|  
-|**ProductName**|O nome do produto de software principal, como o Windows, que está fornecendo os dados do UAL.|  
+|**NomeDoProduto**|O nome do produto de software principal, como o Windows, que está fornecendo os dados do UAL.|  
 |**RoleGUID**|O GUID registrado ou UAL atribuído que representa a função de servidor ou o produto instalado.|  
 |**RoleName**|O nome da função, do componente ou do subproduto que está fornecendo os dados do UAL. Também é associado a um ProductName e a um RoleGUID.|  
 |**TenantIdentifier**|Um GUID exclusivo de um cliente locatário de uma função instalada ou de um produto que acompanha os dados do UAL, se aplicável.|  
   
 ## <a name="BKMK_SOFT"></a>Requisitos de software  
-O UAL pode ser usado em qualquer computador executando versões do Windows Server após o Windows Server 2012.  
+O UAL pode ser usado em qualquer computador que esteja executando versões do Windows Server após o Windows Server 2012.  
   
 ## <a name="see-also"></a>Consulte também  
 [Usuário acessar o registro em log](https://msdn.microsoft.com/library/windows/desktop/hh437528(v=vs.85).aspx) no MSDN.  
-[Gerenciar usuário acessar o registro em log](Manage-User-Access-Logging.md)  
+[Gerenciar o registro em log de acesso do usuário](Manage-User-Access-Logging.md)  
   
 

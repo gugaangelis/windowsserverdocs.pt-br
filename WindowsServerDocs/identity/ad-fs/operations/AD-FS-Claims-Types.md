@@ -1,6 +1,6 @@
 ---
 ms.assetid: ''
-title: Acesso para cliente tipos de declarações no AD FS
+title: Tipos de declaração de acesso de cliente no AD FS
 description: ''
 author: billmath
 ms.author: billmath
@@ -9,68 +9,68 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0ffa4273a2c776a16f3ea0ce77d1b3a528481468
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 0b309dfe3c4c13629144342198197f382a2f25c2
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445164"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866204"
 ---
-# <a name="client-access-policy-claim-types-in-ad-fs"></a>Política de acesso de cliente tipos de declarações no AD FS
+# <a name="client-access-policy-claim-types-in-ad-fs"></a>Tipos de declaração de política de acesso de cliente no AD FS
 
-Para fornecer informações de contexto de solicitação adicionais, as políticas de acesso do cliente use os seguintes tipos de declaração, o AD FS gera de informações de cabeçalho de solicitação de processamento.  Para obter mais informações, consulte [a função do mecanismo de declarações](../technical-reference/the-role-of-the-claims-engine.md).
+Para fornecer informações adicionais de contexto de solicitação, as políticas de acesso para cliente usam os seguintes tipos de declaração, que AD FS gera a partir de informações de cabeçalho de solicitação para processamento.  Para obter mais informações, consulte [a função do mecanismo de declarações](../technical-reference/the-role-of-the-claims-engine.md).
 
-## <a name="x-ms-forwarded-client-ip"></a>X-MS-Forwarded-Client-IP
+## <a name="x-ms-forwarded-client-ip"></a>X-MS-encaminhar-Client-IP
 
-Tipo de declaração: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`
+Tipo de declaração:`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`
 
-Essa declaração do AD FS representa uma "melhor tentativa" atestar o endereço IP do usuário (por exemplo, o cliente Outlook) que está fazendo a solicitação. Essa declaração pode conter vários endereços IP, incluindo o endereço de cada proxy que encaminhou a solicitação.  Essa declaração é preenchida com um cabeçalho HTTP que está atualmente só definidas pelo Exchange Online, que preenche o cabeçalho ao passar a solicitação de autenticação para AD FS. O valor da declaração pode ser um dos seguintes:
+Essa declaração de AD FS representa uma "melhor tentativa" ao garantir o endereço IP do usuário (por exemplo, o cliente Outlook) fazendo a solicitação. Essa declaração pode conter vários endereços IP, incluindo o endereço de cada proxy que encaminhou a solicitação.  Essa declaração é populada a partir de um cabeçalho HTTP que atualmente só é definido pelo Exchange Online, que popula o cabeçalho ao passar a solicitação de autenticação para AD FS. O valor da declaração pode ser um dos seguintes:
 
 
-- Um único endereço IP – endereço IP do cliente que está conectado diretamente ao Exchange Online
+- Um único endereço IP-o endereço IP do cliente que está conectado diretamente ao Exchange Online
 
-    >! [Observação] O endereço IP de um cliente na rede corporativa será exibido como o endereço IP de interface externa do gateway ou proxy de saída da organização.
+    >! Anotações O endereço IP de um cliente na rede corporativa será exibido como o endereço IP da interface externa do proxy ou gateway de saída da organização.
 
 - Um ou mais endereços IP
-  - Se o Exchange Online não puder determinar o endereço IP do cliente conectado, ele definirá o valor com base no valor do cabeçalho x-forwarded-for, um cabeçalho não padrão que pode ser incluído em HTTP com base em solicitações e é compatível com muitos clientes, balanceadores de carga, e proxies do mercado.
-  - Vários endereços IP que indica o endereço IP do cliente e o endereço de cada proxy que passou a solicitação serão ser separados por uma vírgula.
+  - Se o Exchange Online não puder determinar o endereço IP do cliente que está se conectando, ele definirá o valor com base no valor do cabeçalho x-Forwarded-for, um cabeçalho não padrão que pode ser incluído em solicitações baseadas em HTTP e tem suporte de muitos clientes, balanceadores de carga e proxies no mercado.
+  - Vários endereços IP que indicam o endereço IP do cliente e o endereço de cada proxy que passou na solicitação serão separados por uma vírgula.
 
-    >! [Observação] Endereços IP relacionados à infraestrutura do Exchange Online não estarão presentes na lista.
-
-
->! [Aviso] O Exchange Online atualmente suporta apenas a endereços IPV4; ele não oferece suporte a endereços IPV6. 
+    >! Anotações Os endereços IP relacionados à infraestrutura do Exchange Online não estarão presentes na lista.
 
 
-## <a name="x-ms-client-application"></a>X-MS-aplicativo de cliente
-
-Tipo de declaração: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`
-
-Essa declaração do AD FS representa o protocolo usado pelo cliente final, que corresponde livremente ao aplicativo que está sendo usado.  Essa declaração é preenchida com um cabeçalho HTTP que está atualmente só definidas pelo Exchange Online, que preenche o cabeçalho ao passar a solicitação de autenticação para AD FS. Dependendo do aplicativo, o valor da declaração será um dos seguintes:
+>! Alerta Atualmente, o Exchange Online dá suporte apenas a endereços IPV4; Ele não dá suporte a endereços IPV6. 
 
 
+## <a name="x-ms-client-application"></a>X-MS-cliente-aplicativo
 
-- No caso de dispositivos que usam o Exchange Active Sync, o valor é Microsoft.Exchange.ActiveSync. 
-- Uso do cliente Microsoft Outlook pode resultar em qualquer um dos seguintes valores:
-    - Microsoft.Exchange.Autodiscover
-    - Microsoft.Exchange.OfflineAddressBook
-    - Microsoft.Exchange.RPC
-    - Microsoft.Exchange.WebServices
-    - Microsoft.Exchange.Mapi
+Tipo de declaração:`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`
+
+Essa declaração de AD FS representa o protocolo usado pelo cliente final, que corresponde livremente ao aplicativo que está sendo usado.  Essa declaração é populada a partir de um cabeçalho HTTP que atualmente só é definido pelo Exchange Online, que popula o cabeçalho ao passar a solicitação de autenticação para AD FS. Dependendo do aplicativo, o valor dessa declaração será um dos seguintes:
+
+
+
+- No caso de dispositivos que usam Exchange Active Sync, o valor é Microsoft. Exchange. ActiveSync. 
+- O uso do cliente do Microsoft Outlook pode resultar em qualquer um dos seguintes valores:
+    - Microsoft. Exchange. autodiscover
+    - Microsoft. Exchange. OfflineAddressBook
+    - Microsoft. Exchange. RPC
+    - Microsoft. Exchange. WebServices
+    - Microsoft. Exchange. MAPI
 - Outros valores possíveis para esse cabeçalho incluem o seguinte:
-    - Microsoft.Exchange.Powershell
-    - Microsoft.Exchange.SMTP
-    - Microsoft.Exchange.PopImap
-    - Microsoft.Exchange.Pop
-    - Microsoft.Exchange.Imap
+    - Microsoft. Exchange. PowerShell
+    - Microsoft. Exchange. SMTP
+    - Microsoft. Exchange. PopImap
+    - Microsoft. Exchange. pop
+    - Microsoft. Exchange. IMAP
 
 ## <a name="x-ms-client-user-agent"></a>X-MS-Client-User-Agent
 
-Tipo de declaração: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`
+Tipo de declaração:`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`
 
-Essa declaração do AD FS fornece uma cadeia de caracteres para representar o tipo de dispositivo que o cliente está usando para acessar o serviço. Isso pode ser usado quando os clientes desejarem impedir o acesso para determinados dispositivos (como tipos específicos de Smartphones).  Essa declaração é preenchida com um cabeçalho HTTP que está atualmente só definidas pelo Exchange Online, que preenche o cabeçalho ao passar a solicitação de autenticação para AD FS. Valores de exemplo para essa declaração incluem (mas não estão limitados a) os valores a seguir.
->! [Observação] A seguir estão exemplos de um cliente cujo x-ms-client-aplicativo é "Microsoft.Exchange.ActiveSync" pode conter o valor de x-ms-user-agent
+Essa declaração de AD FS fornece uma cadeia de caracteres para representar o tipo de dispositivo que o cliente está usando para acessar o serviço. Isso pode ser usado quando os clientes desejarem impedir o acesso a determinados dispositivos (como tipos específicos de Smart Phone).  Essa declaração é populada a partir de um cabeçalho HTTP que atualmente só é definido pelo Exchange Online, que popula o cabeçalho ao passar a solicitação de autenticação para AD FS. Os valores de exemplo para essa declaração incluem (mas não estão limitados a) os valores abaixo.
+>! Anotações Veja a seguir exemplos de o que o valor x-MS-User-Agent pode conter para um cliente cujo x-MS-Client-Application seja "Microsoft. Exchange. ActiveSync"
 
-- Vortex 1.0
+- Vortex/1.0
 - Apple-iPad1C1/812.1
 - Apple-iPhone3C1/811.2
 - Apple-iPhone/704.11
@@ -78,21 +78,21 @@ Essa declaração do AD FS fornece uma cadeia de caracteres para representar o t
 - SAMSUNGSPHD700/100.202
 - Android/0.3
 
->! [Observação] Também é possível que esse valor está vazio.
+>! Anotações Também é possível que esse valor esteja vazio.
 
 
-## <a name="x-ms-proxy"></a>X-MS-Proxy
+## <a name="x-ms-proxy"></a>X-MS-proxy
 
-Tipo de declaração: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`
+Tipo de declaração:`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`
 
-Essa declaração do AD FS indica que a solicitação tiver passado por meio do proxy de servidor de Federação.  Essa declaração é preenchida com o proxy de servidor de federação, que preenche o cabeçalho ao passar a solicitação de autenticação para o serviço de federação de back-end. O AD FS, em seguida, o converte em uma declaração. 
+Essa declaração de AD FS indica que a solicitação passou pelo proxy do servidor de Federação.  Essa declaração é preenchida pelo proxy do servidor de Federação, que popula o cabeçalho ao passar a solicitação de autenticação para o back-end Serviço de Federação. AD FS, em seguida, converte-o em uma declaração. 
 
-O valor da declaração é o nome DNS do proxy do servidor de federação que passou a solicitação.
+O valor da declaração é o nome DNS do proxy do servidor de Federação que passou na solicitação.
 
-## <a name="x-ms-endpoint-absolute-path-active-vs-passive"></a>X-MS-ponto de extremidade-Absolute-Path (ativo vs passivo)
+## <a name="x-ms-endpoint-absolute-path-active-vs-passive"></a>X-MS-Endpoint-Absolute-Path (ativo vs passivo)
 
-Tipo de declaração: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`
+Tipo de declaração:`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`
 
-Esse tipo de declaração pode ser usado para determinar as solicitações provenientes de clientes (avançados) "ativos" versus "passivos" (browser-clientes baseados na web). Isso permite que as solicitações externas de aplicativos baseados em navegador, como o Outlook Web Access, o SharePoint Online ou o portal do Office 365 a serem permitidos enquanto as solicitações provenientes de clientes avançados, como o Microsoft Outlook são bloqueadas.
+Esse tipo de declaração pode ser usado para determinar solicitações originadas de clientes "ativos" (ricos) versus clientes "passivos" (baseados em navegador da Web). Isso permite que solicitações externas de aplicativos baseados em navegador, como o Outlook Acesso via Web, o SharePoint Online ou o portal do Office 365, sejam permitidas enquanto as solicitações originadas de clientes avançados, como o Microsoft Outlook, são bloqueadas.
 
-O valor da declaração é o nome do serviço do AD FS que recebeu a solicitação.
+O valor da declaração é o nome do serviço de AD FS que recebeu a solicitação.

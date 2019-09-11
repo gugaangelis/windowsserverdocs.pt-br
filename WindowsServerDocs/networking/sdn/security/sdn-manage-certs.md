@@ -1,6 +1,6 @@
 ---
-title: Gerenciar certificados para a rede definida pelo Software
-description: Você pode usar este tópico para saber como gerenciar certificados para o controlador de rede Northbound e comunicação Southbound, quando você implanta Software Defined Networking (SDN) no Windows Server 2016 Datacenter.
+title: Gerenciar certificados para rede definida pelo software
+description: Você pode usar este tópico para aprender a gerenciar certificados para as comunicações Northbound e Southbound do controlador de rede ao implantar SDN (rede definida pelo software) no Windows Server 2016 datacenter.
 manager: dougkim
 ms.prod: windows-server-threshold
 ms.technology: networking-sdn
@@ -9,56 +9,56 @@ ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: pashort
 author: shortpatti
 ms.date: 08/22/2018
-ms.openlocfilehash: d29a98e24b475c38fee61972bf9efbd5a2528974
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8e2feba8232ae87d59478d3522c4e6f02baf27b8
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446265"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870103"
 ---
-# <a name="manage-certificates-for-software-defined-networking"></a>Gerenciar certificados para a rede definida pelo Software
+# <a name="manage-certificates-for-software-defined-networking"></a>Gerenciar certificados para rede definida pelo software
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Você pode usar este tópico para saber como gerenciar certificados para comunicação Northbound de controlador de rede e Southbound quando você implanta a rede definida pelo Software \(SDN\) no Windows Server 2016 Datacenter e você estiver usando o sistema Center Virtual Machine Manager \(SCVMM\) como seu cliente de gerenciamento de SDN.
+Você pode usar este tópico para aprender a gerenciar certificados para as comunicações Northbound e Southbound do controlador de rede ao implantar o Sdn \(\) de rede definido pelo software no Windows Server 2016 datacenter e estiver usando o sistema Central Virtual Machine Manager \(SCVMM\) como seu cliente de gerenciamento de Sdn.
 
 >[!NOTE]
 >Para obter informações gerais sobre o controlador de rede, consulte [controlador de rede](../technologies/network-controller/Network-Controller.md).
 
-Se você não estiver usando o Kerberos para proteger a comunicação de controlador de rede, você pode usar certificados X.509 para autenticação, autorização e criptografia.
+Se você não estiver usando o Kerberos para proteger a comunicação do controlador de rede, poderá usar certificados X. 509 para autenticação, autorização e criptografia.
 
-A SDN no Windows Server 2016 Datacenter dá suporte a ambas as self\-assinado e autoridade de certificação \(autoridade de certificação\)-x. 509 certificados autoassinados. Este tópico fornece instruções passo a passo para criar esses certificados e aplicá-las para proteger o controlador de rede Northbound canais de comunicação com clientes de gerenciamento e comunicação Southbound com dispositivos de rede, como o Software Balanceador de carga \(SLB\).
+O\-Sdn no Windows Server 2016 datacenter dá suporte a certificados autoassinados\)e de autoridade \(de certificação X. 509 assinados por AC. Este tópico fornece instruções passo a passo para criar esses certificados e aplicá-los para proteger os canais de comunicação Northbound do controlador de rede com clientes de gerenciamento e comunicações Southbound com dispositivos de rede, como o software Load Balancer \(SLB\).
 .
-Quando você estiver usando o certificado\-com base em autenticação, você deve registrar um certificado em nós de controlador de rede que é usado das seguintes maneiras.
+Ao usar a autenticação baseada\-em certificado, você deve registrar um certificado em nós do controlador de rede que é usado das seguintes maneiras.
 
-1. Criptografar a comunicação Northbound com Secure Sockets Layer \(SSL\) entre nós de controlador de rede e clientes de gerenciamento, como o System Center Virtual Machine Manager.
-2. Autenticação entre nós de controlador de rede e Southbound dispositivos e serviços, como hosts Hyper-V e balanceadores de carga de Software \(SLBs\).
+1. Criptografar a comunicação Northbound com \(o\) SSL protocolo SSL entre os nós do controlador de rede e os clientes de gerenciamento, como System Center Virtual Machine Manager.
+2. Autenticação entre nós do controlador de rede e dispositivos e serviços Southbound, como hosts Hyper-V e balanceadores \(de\)carga de software SLBs.
 
-## <a name="creating-and-enrolling-an-x509-certificate"></a>Criando e registrando um certificado X.509
+## <a name="creating-and-enrolling-an-x509-certificate"></a>Criando e registrando um certificado X. 509
 
-Você pode criar e registrar qualquer um self\-assinada do certificado ou um certificado emitido por uma autoridade de certificação.
+Você pode criar e registrar um\-certificado autoassinado ou um certificado emitido por uma autoridade de certificação.
 
 >[!NOTE]
->Quando você estiver usando o SCVMM para implantar o controlador de rede, você deve especificar o certificado X.509 que é usado para criptografar a comunicação Northbound durante a configuração do modelo de serviço do controlador de rede.
+>Ao usar o SCVMM para implantar o controlador de rede, você deve especificar o certificado X. 509 que é usado para criptografar as comunicações do Northbound durante a configuração do modelo de serviço do controlador de rede.
 
-A configuração do certificado deve incluir os seguintes valores.
+A configuração do certificado deve incluir os valores a seguir.
 
-- O valor para o **RestEndPoint** caixa de texto deve ser a rede controlador nome totalmente qualificado \(FQDN\) ou o endereço IP. 
-- O **RestEndPoint** valor deve corresponder ao nome da entidade \(Common Name, CN\) do certificado X.509.
+- O valor da caixa de texto **RestEndPoint** deve ser o nome \(\) de domínio totalmente qualificado ou o endereço IP do controlador de rede. 
+- O valor **RestEndPoint** deve corresponder ao nome da \(entidade nome comum,\) CN do certificado X. 509.
 
-### <a name="creating-a-self-signed-x509-certificate"></a>Criando um Self\-certificado X.509 assinado
+### <a name="creating-a-self-signed-x509-certificate"></a>Criando um\-certificado X. 509 autoassinado
 
-Você pode criar um certificado X.509 autoassinado e exportá-lo com a chave privada \(protegida por senha\) seguindo estas etapas para única\-nó e vários\-implantações de nó do controlador de rede .
+Você pode criar um certificado X. 509 autoassinado e exportá-lo com a \(chave privada protegida por\) uma senha seguindo estas etapas para\-implantações\-de nó único e de vários nós do controlador de rede .
 
-Quando você cria self\-assinado certificados, você pode usar as diretrizes a seguir.
+Ao criar\-certificados autoassinados, você pode usar as diretrizes a seguir.
 
-- Você pode usar o endereço IP do ponto de extremidade de REST do controlador de rede para o parâmetro DnsName - mas isso não é recomendado porque ele requer que os nós de controlador de rede estão todas localizados em uma sub-rede de gerenciamento único \(, por exemplo, em um único rack\)
-- Para várias implantações de nó NC, o nome DNS que você especifique se tornará o FQDN do Cluster de controlador de rede \(Host DNS de registros são criados automaticamente.\) 
-- Para implantações de controlador de rede de nó único, o nome DNS pode ser o nome do host do controlador de rede seguido do nome de domínio completo.
+- Você pode usar o endereço IP do ponto de extremidade REST do controlador de rede para o parâmetro DnsName, mas isso não é recomendável porque ele requer que os nós do controlador de rede estejam todos \(localizados em uma única sub-rede de gerenciamento, por exemplo, em um único rack\)
+- Para implantações de NC de vários nós, o nome DNS que você especificar se tornará o FQDN do \(host do controlador de rede de cluster de DNS que os registros são criados automaticamente.\) 
+- Para implantações de controlador de rede de nó único, o nome DNS pode ser o nome de host do controlador de rede seguido pelo nome de domínio completo.
 
-#### <a name="multiple-node"></a>De vários nós
+#### <a name="multiple-node"></a>Vários nós
 
-Você pode usar o [New-SelfSignedCertificate](https://technet.microsoft.com/itpro/powershell/windows/pkiclient/new-selfsignedcertificate) comando do Windows PowerShell para criar um\-certificado autoassinado.
+Você pode usar o comando [New-SelfSignedCertificate](https://technet.microsoft.com/itpro/powershell/windows/pkiclient/new-selfsignedcertificate) do Windows PowerShell para criar um\-certificado autoassinado.
 
 **Sintaxe**
 
@@ -70,7 +70,7 @@ Você pode usar o [New-SelfSignedCertificate](https://technet.microsoft.com/itpr
 
 #### <a name="single-node"></a>Nó único
 
-Você pode usar o [New-SelfSignedCertificate](https://technet.microsoft.com/itpro/powershell/windows/pkiclient/new-selfsignedcertificate) comando do Windows PowerShell para criar um\-certificado autoassinado.
+Você pode usar o comando [New-SelfSignedCertificate](https://technet.microsoft.com/itpro/powershell/windows/pkiclient/new-selfsignedcertificate) do Windows PowerShell para criar um\-certificado autoassinado.
 
 **Sintaxe**
 
@@ -80,97 +80,97 @@ Você pode usar o [New-SelfSignedCertificate](https://technet.microsoft.com/itpr
 
     New-SelfSignedCertificate -KeyUsageProperty All -Provider "Microsoft Strong Cryptographic Provider" -FriendlyName "SingleNodeNC" -DnsName @("SingleNodeNC.Contoso.com")
 
-### <a name="creating-a-ca-signed-x509-certificate"></a>Criação de uma autoridade de certificação\-certificado X.509 assinado
+### <a name="creating-a-ca-signed-x509-certificate"></a>Criando um certificado\-X. 509 assinado por CA
 
-Para criar um certificado usando uma autoridade de certificação, você já deve ter implantado uma infraestrutura de chave pública \(PKI\) com o Active Directory Certificate Services \(AD CS\). 
+Para criar um certificado usando uma AC, você \(já deve ter implantado uma PKI\) de infraestrutura de chave pública com \(Active Directory serviços\)de certificados AD CS. 
 
 >[!NOTE]
->Você pode usar autoridades de certificação de terceiros ou ferramentas, como openssl, para criar um certificado para uso com o controlador de rede, no entanto, as instruções neste tópico são específicas ao AD CS. Para saber como usar uma autoridade de certificação de terceiros ou a ferramenta, consulte a documentação do software que você está usando.
+>Você pode usar CAs ou ferramentas de terceiros, como OpenSSL, para criar um certificado para uso com o controlador de rede, no entanto, as instruções neste tópico são específicas para o AD CS. Para saber como usar uma CA ou ferramenta de terceiros, consulte a documentação do software que você está usando.
 
-Criar um certificado com uma autoridade de certificação inclui as etapas a seguir.
+A criação de um certificado com uma AC inclui as etapas a seguir.
 
-1. Você ou sua organização domínio ou administrador de segurança configura o modelo de certificado
-2. Você ou sua organização administrador de controlador de rede ou administrador do SCVMM solicita um novo certificado de autoridade de certificação.
+1. Você ou o domínio ou administrador de segurança de sua organização configura o modelo de certificado
+2. Você ou o administrador do controlador de rede da sua organização ou o administrador do SCVMM solicita um novo certificado da autoridade de certificação.
 
 #### <a name="certificate-configuration-requirements"></a>Requisitos de configuração de certificado
 
-Quando você estiver configurando um modelo de certificado na próxima etapa, certifique-se de que o modelo que você configure inclui os seguintes elementos necessários.
+Enquanto você estiver configurando um modelo de certificado na próxima etapa, certifique-se de que o modelo configurado inclui os seguintes elementos necessários.
 
-1. O nome de assunto do certificado deve ser o FQDN do host do Hyper-V
-2. O certificado deve ser colocado no repositório pessoal do computador local (Meu – cert: \localmachine\my.)
-3. O certificado deve ter tanto a servidor de autenticação (EKU: 1.3.6.1.5.5.7.3.1) e autenticação de cliente (EKU: 1.3.6.1.5.5.7.3.2) as políticas de aplicativo.
+1. O nome da entidade do certificado deve ser o FQDN do host do Hyper-V
+2. O certificado deve ser colocado no repositório pessoal do computador local (meu – CERT: \ localmachine\my)
+3. O certificado deve ter a autenticação do servidor (EKU: 1.3.6.1.5.5.7.3.1) e autenticação de cliente (EKU: 1.3.6.1.5.5.7.3.2) políticas de aplicativo.
 
 >[!NOTE]
->Se o pessoal \(meu – cert: \localmachine\my.\) repositório de certificados a Hyper\-host V tem mais de um certificado X.509 com o nome da entidade (CN) como o nome de domínio totalmente qualificado do host \(FQDN\), Certifique-se de que o certificado que será usado por SDN tem uma propriedade de uso avançado de chave personalizada adicional com o OID 1.3.6.1.4.1.311.95.1.1.1. Caso contrário, a comunicação entre o controlador de rede e o host pode não funcionar.
+>Se o repositório \(de certificados pessoal My-CERT\) : \ localmachine\my no host\-Hyper-V tiver mais de um certificado X. 509 com o nome da entidade (CN) como o FQDN\)do \(nome de domínio totalmente qualificado do host, Verifique se o certificado que será usado pelo SDN tem uma propriedade de uso avançado de chave personalizada adicional com o OID 1.3.6.1.4.1.311.95.1.1.1. Caso contrário, a comunicação entre o controlador de rede e o host pode não funcionar.
 
 #### <a name="to-configure-the-certificate-template"></a>Para configurar o modelo de certificado
   
 >[!NOTE]
->Antes de executar este procedimento, você deve examinar os requisitos de certificado e os modelos de certificado disponíveis no console de modelos de certificado. Você pode modificar um modelo existente ou criar uma duplicata de um modelo existente e, em seguida, modifique sua cópia do modelo. É recomendável criar uma cópia de um modelo existente.
+>Antes de executar esse procedimento, você deve examinar os requisitos de certificado e os modelos de certificado disponíveis no console de modelos de certificado. Você pode modificar um modelo existente ou criar uma duplicata de um modelo existente e, em seguida, modificar sua cópia do modelo. É recomendável criar uma cópia de um modelo existente.
 
-1. No servidor onde o AD CS está instalado, no Gerenciador do servidor, clique em **ferramentas**e, em seguida, clique em **autoridade de certificação**. Console de gerenciamento da Microsoft de autoridade de certificação \(MMC\) é aberta. 
-2. No MMC, clique duas vezes o nome da autoridade de certificação, clique com botão direito **modelos de certificado**e, em seguida, clique em **gerenciar**.
-3. Abre o console de modelos de certificado. Todos os modelos de certificado são exibidos no painel de detalhes.
+1. No servidor em que o AD CS está instalado, em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, clique em **autoridade de certificação**. O MMC \(\) do console de gerenciamento Microsoft Management da autoridade de certificação é aberto. 
+2. No MMC, clique duas vezes no nome da autoridade de certificação, clique com o botão direito do mouse em **modelos de certificado**e clique em **gerenciar**.
+3. O console modelos de certificado é aberto. Todos os modelos de certificado são exibidos no painel de detalhes.
 4. No painel de detalhes, clique no modelo que você deseja duplicar.
-5.  Clique o **ação** menu e clique **Duplicar modelo**. O modelo **propriedades** caixa de diálogo é aberta.
-6.  No modelo **propriedades** caixa de diálogo do **nome da entidade** , clique em **fornecer na solicitação**. \(Essa configuração é necessária para certificados SSL de controlador de rede.\)
-7.  No modelo **propriedades** caixa de diálogo do **tratamento de solicitação** guia, certifique-se de que **permitir que a chave privada seja exportada** está selecionado. Além disso, verifique as **assinatura e criptografia** finalidade foi selecionada.
-8.  No modelo **propriedades** caixa de diálogo do **extensões** guia, selecione **uso chave**e, em seguida, clique em **editar**.
-9.  Na **assinatura**, certifique-se de que **Assinatura Digital** está selecionado.
-10.  No modelo **propriedades** caixa de diálogo do **extensões** guia, selecione **políticas de aplicativo**e, em seguida, clique em **editar**.
-11.  Na **políticas de aplicativo**, certifique-se de que **autenticação do cliente** e **autenticação de servidor** estão listados.
-12.  Salvar a cópia do modelo de certificado com um nome exclusivo, como **modelo de controlador de rede**.
+5.  Clique no menu **ação** e, em seguida, clique em **duplicar modelo**. A caixa de diálogo **Propriedades** do modelo é aberta.
+6.  Na caixa de diálogo **Propriedades** do modelo, na guia **nome da entidade** , clique em **fornecer na solicitação**. \(Essa configuração é necessária para certificados SSL do controlador de rede.\)
+7.  Na caixa de diálogo **Propriedades** do modelo, na guia **tratamento de solicitação** , certifique-se de que permitir que **a chave privada seja exportada** esteja selecionada. Verifique também se a **assinatura e** a finalidade da criptografia estão selecionadas.
+8.  Na caixa de diálogo **Propriedades** do modelo, na guia **extensões** , selecione **uso da chave**e clique em **Editar**.
+9.  Em **assinatura**, verifique se a **assinatura digital** está selecionada.
+10.  Na caixa de diálogo **Propriedades** do modelo, na guia **extensões** , selecione **políticas de aplicativo**e clique em **Editar**.
+11.  Em **políticas de aplicativo**, verifique se a **autenticação de cliente** e a **autenticação de servidor** estão listadas.
+12.  Salve a cópia do modelo de certificado com um nome exclusivo, como o **modelo de controlador de rede**.
 
 #### <a name="to-request-a-certificate-from-the-ca"></a>Para solicitar um certificado da autoridade de certificação
 
 Você pode usar o snap-in de certificados para solicitar certificados. Você pode solicitar qualquer tipo de certificado que tenha sido pré-configurado e disponibilizado por um administrador da autoridade de certificação que processa a solicitação de certificado.
 
-**Os usuários** ou local **administradores** é a associação de grupo mínima necessária para concluir este procedimento.
+**Usuários** ou **Administradores** locais é a associação de grupo mínima necessária para concluir este procedimento.
 
 1. Abra o snap-in de certificados para um computador.
-2. Na árvore de console, clique em **certificados \(computador Local\)** . Selecione o **pessoais** repositório de certificados.
-3. Sobre o **ação** , aponte para * * todas as tarefas<strong>e, em seguida, clique em * * Solicitar novo certificado</strong> para iniciar o Assistente de registro de certificado. Clique em **Avançar**.
-4. Selecione o **configurado pelo seu administrador** política de registro de certificado e clique em **próxima**.
-5. Selecione o **política de registro do Active Directory** \(com base no modelo de autoridade de certificação que você configurou na seção anterior\).
-6. Expanda o **detalhes** seção e configurar os itens a seguir.
-   1. Certifique-se de que **uso de chave** inclui tanto <strong>Assinatura Digital * * e * * codificação de chave</strong>.
-   2. Certifique-se de que **políticas de aplicativo** inclui tanto **autenticação do servidor** \(1.3.6.1.5.5.7.3.1\) e **autenticação de cliente** \(1.3.6.1.5.5.7.3.2\).
+2. Na árvore de console, clique **em \(certificados computador\)local**. Selecione o repositório de certificados **pessoal** .
+3. No menu **ação** , aponte para * * todas as tarefas<strong>e, em seguida, clique em * * solicitar novo certificado</strong> para iniciar o assistente de registro de certificado. Clique em **Avançar**.
+4. Selecione o **configurado pela** política de registro de certificado de administrador e clique em **Avançar**.
+5. Selecione a **política** \(de registro de Active Directory com base no modelo de autoridade de certificação que você\)configurou na seção anterior.
+6. Expanda a seção **detalhes** e configure os itens a seguir.
+   1. Verifique se o **uso da chave** inclui <strong>assinatura digital * * e * * codificação de chave</strong>.
+   2. Verifique se **as políticas de aplicativo** incluem 1.3.6.1.5.5.7.3.1\) de **autenticação** \(de servidor e\)1.3.6.1.5.5.7.3.2 de **autenticação** \(de cliente.
 7. Clique em **Propriedades**.
-8. Sobre o **assunto** guia **nome da entidade**, na **tipo**, selecione **nome comum**. Em valor, especifique **ponto de extremidade de REST de controlador de rede**.
+8. Na guia **assunto** , em **nome da entidade**, em **tipo**, selecione **nome comum**. Em valor, especifique **ponto de extremidade REST do controlador de rede**.
 9. Clique em **Aplicar**e clique em **OK**.
 10. Clique em **Registrar**.
 
-No MMC de certificados, clique no repositório pessoal para ver o certificado que você registrou da autoridade de certificação.
+No MMC certificados, clique no repositório pessoal para exibir o certificado que você registrou da autoridade de certificação.
 
-## <a name="exporting-and-copying-the-certificate-to-the-scvmm-library"></a>Exportar e copiar o certificado para a biblioteca SCVMM
+## <a name="exporting-and-copying-the-certificate-to-the-scvmm-library"></a>Exportando e copiando o certificado para a biblioteca do SCVMM
 
-Depois de criar qualquer um self\-assinado ou a autoridade de certificação\-assinou o certificado, você deve exportar o certificado com a chave privada \(no formato. pfx\) e sem a chave privada \(no formato. cer de Base 64\) o snap-in de certificados. 
+Depois de criar um certificado\-autoassinado ou\-assinado por uma autoridade de certificação, você deve exportar o certificado \(com a chave privada\) no formato. pfx e \(sem a chave privada no formatobase-64.cer\) do snap-in de certificados. 
 
-Você deve copiar os dois arquivos exportados para o **ServerCertificate.cr** e **NCCertificate.cr** pastas que você especificou no momento em que você importou o modelo de serviço do NC.
+Em seguida, você deve copiar os dois arquivos exportados para as pastas **serverCertificate.CR** e **NCCertificate.CR** que você especificou no momento em que você importou o modelo de serviço NC.
 
-1. Abra o snap-in de certificados (certlm) e localize o certificado no repositório de certificados pessoal do computador local.
-2. À direita\-clique no certificado, clique em **todas as tarefas**e, em seguida, clique em **exportar**. O Assistente para Exportação de Certificados é aberto. Clique em **Avançar**.
-3. Selecione **Yes**, exportar a opção de chave privada e clique em **próxima**.
-4. Escolha **troca de informações pessoais - PKCS #12 (. PFX)** e aceite o padrão **incluem todos os certificados no caminho de certificação** se possível.
-5. Atribuir os usuários/grupos e uma senha para o certificado que você está exportando, clique em **próxima**.
-6. No arquivo para a página de exportação, procure o local onde você deseja colocar o arquivo exportado e nomeá-lo.
-7. Da mesma forma, exporte o certificado no. Formato CER. Observação: Para exportar para o. Formato CER, desmarque a opção Sim, exportar a opção de chave privada.
-8. Copiar o. PFX para a pasta ServerCertificate.cr.
-9. Copiar o. Arquivo CER para a pasta NCCertificate.cr.
+1. Abra o snap-in de certificados (certlm. msc) e localize o certificado no repositório de certificados pessoal do computador local.
+2. Clique\-com o botão direito do mouse no certificado, clique em **todas as tarefas**e clique em **Exportar**. O Assistente para Exportação de Certificados é aberto. Clique em **Avançar**.
+3. Selecione **Sim**, exportar a opção chave privada e clique em **Avançar**.
+4. Escolha **troca de informações pessoais-#12 PKCS (. PFX)** e aceite o padrão para **incluir todos os certificados no caminho de certificação** , se possível.
+5. Atribua os usuários/grupos e uma senha para o certificado que você está exportando, clique em **Avançar**.
+6. Na página arquivo a ser exportado, procure o local onde você deseja colocar o arquivo exportado e dê um nome a ele.
+7. Da mesma forma, exporte o certificado no. Formato CER. Observação: Para exportar para o. Formato CER, desmarque a opção Sim, exportar a chave privada.
+8. Copie o. PFX para a pasta ServerCertificate.cr.
+9. Copie o. Arquivo CER para a pasta NCCertificate.cr
 
-Quando você terminar, atualize essas pastas na biblioteca do SCVMM e certifique-se de que você tem esses certificados copiados. Continue com a configuração do modelo de serviço de controlador de rede e a implantação.
+Quando terminar, atualize essas pastas na biblioteca do SCVMM e verifique se você tem esses certificados copiados. Continue com a configuração e a implantação do modelo de serviço do controlador de rede.
 
-## <a name="authenticating-southbound-devices-and-services"></a>Autenticação de serviços e dispositivos Southbound 
+## <a name="authenticating-southbound-devices-and-services"></a>Autenticando dispositivos e serviços Southbound 
 
-Comunicação de controlador de rede com hosts e dispositivos de SLB MUX usa certificados para autenticação. A comunicação com os hosts é através do protocolo OVSDB enquanto a comunicação com os dispositivos de SLB MUX é através do protocolo do WCF.
+A comunicação do controlador de rede com hosts e dispositivos SLB MUX usa certificados para autenticação. A comunicação com os hosts está acima do protocolo OVSDB enquanto a comunicação com os dispositivos SLB MUX está sobre o protocolo WCF.
 
-### <a name="hyper-v-host-communication-with-network-controller"></a>Comunicação de Host Hyper-V com o controlador de rede
+### <a name="hyper-v-host-communication-with-network-controller"></a>Comunicação de host do Hyper-V com o controlador de rede
 
-Para comunicação com os hosts do Hyper-V sobre OVSDB, controlador de rede precisa apresentar um certificado para as máquinas de host. Por padrão, o SCVMM selecionará o certificado SSL configurado no controlador de rede e usa-o para a comunicação southbound com hosts.
+Para a comunicação com os hosts Hyper-V em OVSDB, o controlador de rede precisa apresentar um certificado para os computadores host. Por padrão, o SCVMM escolhe o certificado SSL configurado no controlador de rede e o utiliza para comunicação Southbound com os hosts.
 
-Que é o motivo por que o certificado SSL deve ter o EKU de autenticação de cliente configurado. Esse certificado é configurado em "Servidores" REST resource \(hosts Hyper-V são representados no controlador de rede como um recurso de servidor\)e podem ser exibidas ao executar o comando do Windows PowerShell  **Get-NetworkControllerServer**.
+Esse é o motivo pelo qual o certificado SSL deve ter a EKU de autenticação de cliente configurada. Esse certificado é configurado nos hosts do Hyper-V \(recursos REST de "servidores" são representados no controlador de rede\)como um recurso de servidor e podem ser exibidos executando o comando **Get-NetworkControllerServer do Windows PowerShell** .
 
-A seguir está um exemplo parcial do recurso REST do servidor.
+Veja a seguir um exemplo parcial do recurso REST do servidor.
 
       "resourceId": "host31.fabrikam.com",
       "properties": {
@@ -186,23 +186,23 @@ A seguir está um exemplo parcial do recurso REST do servidor.
           }
         ],
 
-Para autenticação mútua, o host Hyper-V também deve ter um certificado para se comunicar com o controlador de rede. 
+Para a autenticação mútua, o host Hyper-V também deve ter um certificado para se comunicar com o controlador de rede. 
 
-Você pode registrar o certificado de uma autoridade de certificação \(autoridade de certificação\). Se um certificado de autoridade de certificação com base não for encontrado no computador host, o SCVMM cria um certificado autoassinado e provisiona a ele na máquina host.
+Você pode registrar o certificado de uma AC \(\)de autoridade de certificação. Se um certificado baseado em AC não for encontrado no computador host, o SCVMM criará um certificado autoassinado e o provisionará no computador host.
 
-Controlador de rede e os certificados de host do Hyper-V devem ser de confiança entre si. Certificado de raiz do certificado de host do Hyper-V deve estar presente no repositório de rede controlador raiz autoridades de certificação confiáveis para o computador Local e vice-versa. 
+O controlador de rede e os certificados de host do Hyper-V devem ser confiáveis entre si. O certificado raiz do certificado de host Hyper-V deve estar presente no repositório de autoridades de certificação raiz confiáveis do controlador de rede para o computador local e vice-versa. 
 
-Quando você estiver usando self\-assinado certificados, SCVMM garante que os certificados necessários estão presentes no repositório de autoridades de certificação raiz confiáveis para o computador Local. 
+Quando você estiver usando\-certificados autoassinados, o SCVMM garantirá que os certificados necessários estejam presentes no repositório de autoridades de certificação raiz confiáveis para o computador local. 
 
-Se você estiver usando certificados de autoridade de certificação com base para os hosts do Hyper-V, você precisa garantir que o certificado da AC raiz está presente no repositório de autoridades de certificação raiz confiáveis do controlador de rede para o computador Local.
+Se você estiver usando certificados baseados em AC para os hosts do Hyper-V, precisará garantir que o certificado raiz da autoridade de certificação esteja presente no repositório de autoridades de certificação raiz confiáveis do controlador de rede para o computador local.
 
-### <a name="software-load-balancer-mux-communication-with-network-controller"></a>Software de Balanceador de carga MUX a comunicação com o controlador de rede
+### <a name="software-load-balancer-mux-communication-with-network-controller"></a>Software Load Balancer a comunicação MUX com o controlador de rede
 
-O Multiplexador de Balanceador de carga de Software \(MUX\) e controlador de rede se comunicar através do protocolo do WCF, usando certificados para autenticação.
+O software Load Balancer multiplexador \(MUX\) e o controlador de rede se comunicam pelo protocolo WCF, usando certificados para autenticação.
 
-Por padrão, o SCVMM selecionará o certificado SSL configurado no controlador de rede e usa para comunicação southbound com os dispositivos de Mux. Esse certificado é configurado em "NetworkControllerLoadBalancerMux" REST de recursos e podem ser exibidas ao executar o cmdlet do Powershell **Get-NetworkControllerLoadBalancerMux**.
+Por padrão, o SCVMM escolhe o certificado SSL configurado no controlador de rede e o utiliza para a comunicação Southbound com os dispositivos Mux. Esse certificado é configurado no recurso REST "NetworkControllerLoadBalancerMux" e pode ser exibido executando o cmdlet **Get-NetworkControllerLoadBalancerMux**do PowerShell.
 
-Exemplo de recurso REST MUX \(parcial\):
+Exemplo de recurso \(do MUX REST\)parcial:
 
       "resourceId": "slbmux1.fabrikam.com",
       "properties": {
@@ -218,12 +218,12 @@ Exemplo de recurso REST MUX \(parcial\):
           }
         ],
 
-Para autenticação mútua, você também deve ter um certificado nos dispositivos SLB MUX. Esse certificado é automaticamente configurado pelo SCVMM, quando você implanta o balanceador de carga de software usando o SCVMM.
+Para autenticação mútua, você também deve ter um certificado nos dispositivos SLB MUX. Esse certificado é configurado automaticamente pelo SCVMM quando você implanta o balanceador de carga de software usando o SCVMM.
 
 >[!IMPORTANT]
->No host e nós SLB, é essencial que o repositório de certificados de autoridades de certificação raiz confiáveis não inclui qualquer certificado onde "Emitido para" não é igual a "Emitido por". Se isso ocorrer, a comunicação entre o controlador de rede e o dispositivo southbound falhará.
+>Nos nós host e SLB, é essencial que o repositório de certificados das autoridades de certificação raiz confiáveis não inclua nenhum certificado no qual "emitido para" não seja o mesmo que "emitido por". Se isso ocorrer, a comunicação entre o controlador de rede e o dispositivo Southbound falhará.
 
-Controlador de rede e os certificados de SLB MUX devem ser de confiança entre si \(certificado de raiz do certificado SLB MUX deve estar presente no computador do controlador de rede de repositório de autoridades de certificação raiz confiáveis e vice-versa\). Quando você estiver usando self\-assinado certificados, SCVMM garante que os certificados necessários estão presentes no em autoridades de certificação raiz confiáveis armazenar para o computador Local.
+O controlador de rede e os certificados SLB MUX devem ser confiáveis entre \(si o certificado raiz do certificado MUX SLB deve estar presente no repositório de autoridades de certificação raiz confiáveis do computador do controlador de\)rede e vice-versa. Quando você estiver usando\-certificados autoassinados, o SCVMM garantirá que os certificados necessários estejam presentes no repositório de autoridades de certificação raiz confiáveis do computador local.
 
 
 

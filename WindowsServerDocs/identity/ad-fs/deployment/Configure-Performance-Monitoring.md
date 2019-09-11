@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 19f0bd019fcfc683de2c554ceadeb0bed3896a71
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.openlocfilehash: 82added5018d83aeb9fe7d8033204a0d19bd047a
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68914632"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868103"
 ---
 # <a name="configure-performance-monitoring"></a>Configurar monitoramento de desempenho
   
@@ -25,11 +25,11 @@ O AD FS inclui seus próprios contadores de desempenho dedicados para ajudá-lo 
   
 1. Na tela **Iniciar** , digite **Monitor de desempenho**e pressione Enter.  
   
-2. Na árvore de console, expanda **conjuntos**de coletores\-de dados, clique com o botão direito do mouse em **definido pelo usuário**, aponte para **novo**e clique em **conjunto do coletor de dados**.  
+2. Na árvore de console, expanda **conjuntos de coletores de dados**, clique com o botão\-direito do mouse em **definido pelo usuário**, aponte para **novo**e clique em conjunto do **coletor de dados**.  
   
    O assistente para criar novo conjunto de coletores de dados é exibido.  
   
-3. Em **criar novo conjunto**de coletores de dados, para **nome** , digite um nome para o \(novo conjunto de coletores de\)dados, como "AD FS desempenho  **\(\)** ", clique em criar manualmente e, em seguida, clique em  **Em seguida**.  
+3. Em **criar novo conjunto de coletores de dados**, para **nome** , digite um nome para o \(novo conjunto de coletores de\)dados, como "AD FS desempenho  **\(\)** ", clique em criar manualmente e, em seguida, clique em  **Em seguida**.  
   
 4. Para o tipo de dados a ser incluído, verifique se **criar logs de dados** está selecionado e, em seguida, clique nas caixas de seleção para os seguintes tipos de dados: **Contador de desempenho**, **dados de rastreamento de eventos**, informações de configuração do **sistema**.  
   

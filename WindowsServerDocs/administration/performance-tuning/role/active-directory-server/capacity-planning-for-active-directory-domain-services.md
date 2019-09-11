@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: v-tea; kenbrunf
 author: Teresa-Motiv
 ms.date: 7/3/2019
-ms.openlocfilehash: 5a9e2d39d4eedd1e8fdb4bfeaf267ad4cb4c596a
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: dac13ac94e38cf671239d35507e07d7ac3a0c1ab
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "67799828"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866732"
 ---
 # <a name="capacity-planning-for-active-directory-domain-services"></a>Planejamento de capacidade para Active Directory Domain Services
 
@@ -700,7 +700,7 @@ Para ajustar as estimativas para processadores diferentes, ele costumava ser seg
 
 1. Localize as pontuações de SPECint_rate2006 para o processador que estão em uso e o plano a ser usado.
     1. No site da empresa de avaliação de desempenho padrão, selecione **resultados**, realce **CPU2006**e selecione **Pesquisar todos os resultados do SPECint_rate2006**.
-    1. Em **solicitação simples**, insira os critérios de pesquisa para o processador de destino, por exemplo, as correspondências de **processador E5-2630 (baselinetarget)** e as correspondências de **processador E5-2650 (linha de base)** .
+    1. Em **solicitação simples**, insira os critérios de pesquisa para o processador de destino, por exemplo, as **correspondências de processador E5-2630 (baselinetarget)** e as **correspondências de processador E5-2650 (linha de base)** .
     1. Localize a configuração do servidor e do processador a ser usada (ou algo próximo, se uma correspondência exata não estiver disponível) e observe o valor nas colunas **resultado** e **n º núcleos** .
 1. Para determinar o modificador, use a seguinte equação:
    >((*Plataforma de destino por valor de Pontuação*de &times; núcleo) (*MHz por núcleo de plataforma de linha de base* &divide; )) ((*linha de base por valor de Pontuação de núcleo*) &times; (*MHz por núcleo de plataforma de destino*))  
@@ -816,7 +816,7 @@ No RAID 0, os dados são distribuídos em todos os discos no conjunto de RAID. I
 
 No RAID 1, os dados são espelhados (duplicados) em um par de eixos para redundância. Assim, quando uma operação de leitura de e/s é executada, os dados podem ser lidos de ambos os eixos no conjunto. Isso efetivamente torna a capacidade de e/s de ambos os discos disponíveis durante uma operação de leitura. A limitação é que as operações de gravação não têm vantagem de desempenho em um RAID 1. Isso ocorre porque os mesmos dados precisam ser gravados em ambas as unidades para fins de redundância. Embora não demore mais, pois a gravação de dados ocorre simultaneamente em ambos os eixos, porque ambos os eixos estão ocupados duplicando os dados, uma operação de e/s de gravação em essência impede que duas operações de leitura ocorram. Portanto, cada e/s de gravação custa duas e/s de leitura. Uma fórmula pode ser criada com base nessas informações para determinar o número total de operações de e/s que estão ocorrendo:  
 
-> *Ler e/s* + 2 &times; *gravar e/s* = total de e/s de*disco disponível* consumida  
+> *Ler e/s* + 2 &times; *gravar e/s* = total de e/s de*disco disponível consumida*  
 
 Quando a taxa de leituras para gravações e o número de eixos são conhecidos, a equação a seguir pode ser derivada da equação acima para identificar a e/s máxima que pode ser suportada pela matriz:  
 

@@ -9,12 +9,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 220b409b2e0bcc5e5a01aeb9f244ebaa55ac0e1e
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 586f2d7b73c6017f8b69103a09f6b38bb31f542d
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544609"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865797"
 ---
 # <a name="configuring-alternate-login-id"></a>Configurar a ID de logon alternativa
 
@@ -145,7 +145,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 
 ![Fluxo de autenticação](media/Configure-Alternate-Login-ID/alt1a.png)
 
-1. um O usuário é provisionado no Azure AD usando a ID alternativa
+1. Um O usuário é provisionado no Azure AD usando a ID alternativa
    </br>b O administrador de diretório envia configurações de RegKey necessárias para computadores cliente impactados
 2. O usuário é autenticado no computador local e abre um aplicativo do Office
 3. O aplicativo do Office usa as credenciais da sessão local
@@ -158,21 +158,21 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 
 |Cliente|Instrução de suporte|Comentários|
 | ----- | -----|-----|
-|Microsoft Teams|Com suporte|<li>O Microsoft Teams dá suporte a AD FS (SAML-P, WS-enalimentate, WS-Trust e OAuth) e à autenticação moderna.</li><li> As principais equipes da Microsoft, como canais, chats e arquivos funcionais, funcionam com a ID de logon alternativa.</li><li>os aplicativos de primeira e de terceiros devem ser investigados separadamente pelo cliente. Isso ocorre porque cada aplicativo tem seus próprios protocolos de autenticação de suporte.</li>|     
+|Microsoft Teams|Suportado|<li>O Microsoft Teams dá suporte a AD FS (SAML-P, WS-enalimentate, WS-Trust e OAuth) e à autenticação moderna.</li><li> As principais equipes da Microsoft, como canais, chats e arquivos funcionais, funcionam com a ID de logon alternativa.</li><li>os aplicativos de primeira e de terceiros devem ser investigados separadamente pelo cliente. Isso ocorre porque cada aplicativo tem seus próprios protocolos de autenticação de suporte.</li>|     
 |OneDrive for Business|Com suporte-chave do registro do lado do cliente recomendada |Com a ID alternativa configurada, você vê que o UPN local é preenchido previamente no campo de verificação. Isso precisa ser alterado para a identidade alternativa que está sendo usada. É recomendável usar a chave do registro do lado do cliente indicada neste artigo: O Office 2013 e o Lync 2013 solicitam periodicamente credenciais para o SharePoint Online, OneDrive e Lync Online.|
-|Cliente móvel do OneDrive for Business|Com suporte|| 
+|Cliente móvel do OneDrive for Business|Suportado|| 
 |Página de ativação do Office 365 Pro Plus|Com suporte-chave do registro do lado do cliente recomendada|Com a ID alternativa configurada, você vê que o UPN local é preenchido previamente no campo de verificação. Isso precisa ser alterado para a identidade alternativa que está sendo usada. É recomendável usar a chave do registro do lado do cliente mencionada neste artigo: O Office 2013 e o Lync 2013 solicitam periodicamente credenciais para o SharePoint Online, OneDrive e Lync Online.|
 
 ### <a name="exchange-and-skype-for-business-clients"></a>Clientes do Exchange e Skype for Business
 
 |Cliente|Instrução de suporte-com HMA|Instrução de suporte-sem HMA|
 | ----- |----- | ----- |
-|Outlook|Com suporte, sem prompts extras|Com suporte</br></br>Com a **autenticação moderna** para o Exchange Online: Com suporte</br></br>Com a **autenticação regular** para o Exchange Online: Com suporte com as seguintes advertências:</br><li>Você deve estar em um computador ingressado no domínio e conectado à rede corporativa </li><li>Você só pode usar a ID alternativa em ambientes que não permitem acesso externo para usuários de caixa de correio. Isso significa que os usuários só podem se autenticar em sua caixa de correio de forma compatível quando estão conectados e ingressados na rede corporativa, em uma VPN ou conectados por meio de máquinas de acesso direto, mas você obtém alguns prompts adicionais ao configurar seu perfil do Outlook.| 
-|Pastas públicas híbridas|Com suporte, sem prompts adicionais.|Com a **autenticação moderna** para o Exchange Online: Com suporte</br></br>Com a **autenticação regular** para o Exchange Online: Sem suporte</br></br><li>As pastas públicas híbridas não poderão ser expandidas se forem usadas IDs alternativas e, portanto, não deverão ser usadas hoje com métodos de autenticação regulares.|
+|Outlook|Com suporte, sem prompts extras|Suportado</br></br>Com a **autenticação moderna** para o Exchange Online: Suportado</br></br>Com a **autenticação regular** para o Exchange Online: Com suporte com as seguintes advertências:</br><li>Você deve estar em um computador ingressado no domínio e conectado à rede corporativa </li><li>Você só pode usar a ID alternativa em ambientes que não permitem acesso externo para usuários de caixa de correio. Isso significa que os usuários só podem se autenticar em sua caixa de correio de forma compatível quando estão conectados e ingressados na rede corporativa, em uma VPN ou conectados por meio de máquinas de acesso direto, mas você obtém alguns prompts adicionais ao configurar seu perfil do Outlook.| 
+|Pastas públicas híbridas|Com suporte, sem prompts adicionais.|Com a **autenticação moderna** para o Exchange Online: Suportado</br></br>Com a **autenticação regular** para o Exchange Online: Sem Suporte</br></br><li>As pastas públicas híbridas não poderão ser expandidas se forem usadas IDs alternativas e, portanto, não deverão ser usadas hoje com métodos de autenticação regulares.|
 |Delegação entre locais|Consulte [Configurar o Exchange para dar suporte a permissões de caixa de correio delegadas em uma implantação híbrida](https://technet.microsoft.com/library/mt784505.aspx)|Consulte [Configurar o Exchange para dar suporte a permissões de caixa de correio delegadas em uma implantação híbrida](https://technet.microsoft.com/library/mt784505.aspx)|
 |Arquivar o acesso à caixa de correio (caixa de correio local-arquivo na nuvem)|Com suporte, sem prompts extras|Com suporte-os usuários recebem um prompt extra para as credenciais ao acessar o arquivo morto, eles precisam fornecer sua ID alternativa quando solicitado.| 
-|Outlook Web Access|Com suporte|Com suporte|
-|Aplicativos móveis do Outlook para Android, IOS e Windows Phone|Com suporte|Com suporte|
+|Outlook Web Access|Suportado|Suportado|
+|Aplicativos móveis do Outlook para Android, IOS e Windows Phone|Suportado|Suportado|
 |Skype for Business/Lync|Com suporte, sem prompts extras|Com suporte (exceto conforme observado), mas há um potencial para confusão do usuário.</br></br>Em clientes móveis, há suporte para a ID alternativa somente se o endereço SIP = email address = ID alternativo.</br></br> Os usuários podem precisar entrar duas vezes no cliente do Skype for Business Desktop, primeiro usando o UPN local e, em seguida, usando a ID alternativa. (Observe que o "endereço de entrada" é, na verdade, o endereço SIP que pode não ser o mesmo que o "nome de usuário", embora geralmente seja). Quando um nome de usuário é solicitado pela primeira vez, o usuário deve inserir o UPN, mesmo que ele esteja previamente preenchido com a ID alternativa ou o endereço SIP. Depois que o usuário clicar em entrar com o UPN, o prompt de nome de usuário reaparecerá, desta vez com o UPN. Desta vez, o usuário deve substituir isso pela ID alternativa e clicar em entrar para concluir o processo de entrada. Em clientes móveis, os usuários devem inserir a ID de usuário local na página avançado, usando o formato de estilo SAM (domínio \ nomedeusuário), não o formato UPN.</br></br>Após a entrada bem-sucedida, se o Skype for Business ou o Lync disser "o Exchange precisa de suas credenciais", você precisará fornecer as credenciais que são válidas para onde a caixa de correio está localizada. Se a caixa de correio estiver na nuvem, você precisará fornecer a ID alternativa. Se a caixa de correio for local, você precisará fornecer o UPN local.| 
 
 ## <a name="additional-details--considerations"></a>Detalhes adicionais & considerações

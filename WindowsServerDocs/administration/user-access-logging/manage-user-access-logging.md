@@ -1,6 +1,6 @@
 ---
 title: Gerenciar o Log de Acesso do Usuário
-description: Descreve como gerenciar o log de acesso do usuário
+description: Descreve como gerenciar o registro em log de acesso do usuário
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: manage-user-access-logging
@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 03bad9864f81cf75be13b4ca391fdcbc5f9dcb5c
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: c3a172f37d491cb37d897c586312107fe62a4c55
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435350"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866240"
 ---
 # <a name="manage-user-access-logging"></a>Gerenciar o Log de Acesso do Usuário
 
@@ -30,7 +30,7 @@ O UAL é um recurso que pode ajudar os administradores de servidor a quantificar
   
 O UAL é instalado e habilitado por padrão e coleta dados quase em tempo real. Existem apenas algumas opções de configuração para o UAL. Este documento descreve essas opções e sua finalidade.  
   
-Para saber mais sobre as vantagens do UAL, consulte o [Introdução ao log de acesso do usuário](get-started-with-user-access-logging.md).  
+Para saber mais sobre os benefícios do UAL, consulte [introdução ao log de acesso do usuário](get-started-with-user-access-logging.md).  
   
 **Neste documento**  
   
@@ -49,7 +49,7 @@ As opções de configuração abordadas neste documento incluem:
 -   Habilitar rastreamento de licenças de uso de pastas de trabalho   
   
 ## <a name="BKMK_Step1"></a>Desabilitando e habilitando o serviço UAL  
-UAL é habilitado e executado por padrão quando um computador executando o Windows Server 2012, ou posterior, é instalado e iniciado pela primeira vez. Os administradores podem achar recomendável desativar e desabilitar o UAL para cumprir requisitos de privacidade ou outras necessidades operacionais. Você pode desativar o UAL usando o console de serviços, a partir da linha de comando ou usando cmdlets do PowerShell. No entanto, para garantir que o UAL não é executado novamente na próxima vez em que o computador for iniciado, você também precisa desabilitar o serviço. Os procedimentos a seguir descreve como desativar e desabilitar o UAL.  
+O UAL é habilitado e é executado por padrão quando um computador executando o Windows Server 2012, ou posterior, é instalado e iniciado pela primeira vez. Os administradores podem achar recomendável desativar e desabilitar o UAL para cumprir requisitos de privacidade ou outras necessidades operacionais. Você pode desativar o UAL usando o console de serviços, na linha de comando ou usando cmdlets do PowerShell. No entanto, para garantir que o UAL não seja executado novamente na próxima vez em que o computador for iniciado, você também precisará desabilitar o serviço. Os procedimentos a seguir descrevem como desativar e desabilitar o UAL.  
   
 > [!NOTE]  
 > Você pode usar o cmdlet `Get-Service UALSVC` do PowerShell para recuperar informações sobre o serviço UAL, inclusive para saber se ele está em execução ou não e se está habilitado ou desabilitado.  
@@ -62,7 +62,7 @@ UAL é habilitado e executado por padrão quando um computador executando o Wind
   
 3.  Role a tela para baixo e selecione **Serviço de Log para Acesso de Usuário**. Clique em **Finalizar o serviço**.  
   
-4.  À direita\-clique no nome do serviço e selecione **propriedades**. Na guia **Geral** , mude o **Tipo de inicialização** para **Desabilitado**e clique em **OK**.  
+4.  Clique\-com o botão direito do mouse no nome do serviço e selecione **Propriedades**. Na guia **Geral** , mude o **Tipo de inicialização** para **Desabilitado**e clique em **OK**.  
   
 #### <a name="to-stop-and-disable-ual-from-the-command-line"></a>Para interromper e desabilitar o UAL pela linha de comando  
   
@@ -89,7 +89,7 @@ Stop-service ualsvc
 Disable-ual  
 ```  
   
-Se posteriormente você deseja reiniciar e reabilitar o UAL pode fazer isso com os procedimentos a seguir.  
+Se, em uma data posterior, você quiser reiniciar e reabilitar o UAL, poderá fazer isso com os procedimentos a seguir.  
   
 #### <a name="to-start-and-enable-the-ual-service-by-using-the-services-console"></a>Para iniciar e habilitar o serviço UAL pelo console de serviços  
   
@@ -126,8 +126,8 @@ Enable-ual
 Start-service ualsvc  
 ```  
   
-## <a name="BKMK_Step2"></a>Coletando dados do UAL  
-Além dos cmdlets do PowerShell descritos na seção anterior, 12 cmdlets adicionais pode ser usados para coletar dados do UAL:  
+## <a name="BKMK_Step2"></a>Coletando dados UAL  
+Além dos cmdlets do PowerShell descritos na seção anterior, 12 cmdlets adicionais podem ser usados para coletar dados UAL:  
   
 -   **Get-UalOverview**: fornece detalhes relacionados ao UAL e o histórico das funções e dos produtos instalados.  
   
@@ -151,10 +151,10 @@ Além dos cmdlets do PowerShell descritos na seção anterior, 12 cmdlets adicio
   
 -   **Get-UalSystemId**: fornece dados específicos ao sistema para identificar o servidor local ou de destino de forma exclusiva.  
   
-`Get-UalSystemId` visa fornecer um perfil exclusivo de um servidor para correlação com todos os outros dados desse servidor.  Se um servidor ocorra alguma alteração em um dos parâmetros do `Get-UalSystemId` é criado um novo perfil.  `Get-UalOverview` visa fornecer ao administrador uma lista das funções instaladas e em uso no servidor.  
+`Get-UalSystemId` visa fornecer um perfil exclusivo de um servidor para correlação com todos os outros dados desse servidor.  Se um servidor apresentar qualquer alteração no em um dos parâmetros de `Get-UalSystemId` um novo perfil, será criado.  `Get-UalOverview` visa fornecer ao administrador uma lista das funções instaladas e em uso no servidor.  
   
 > [!NOTE]  
-> Recursos básicos de serviços de impressão e documento de serviços e arquivos são instalados por padrão. Assim, os administradores podem esperar que as informações sobre eles sejam sempre exibidas como se as funções completas estivessem instaladas. Cmdlets do UAL separados são incluídos para o Hyper-V e o DNS devido aos dados exclusivos que o UAL coleta para essas funções de servidor.  
+> Os recursos básicos de Serviços de Impressão e Documentos e serviços de arquivo são instalados por padrão. Assim, os administradores podem esperar que as informações sobre eles sejam sempre exibidas como se as funções completas estivessem instaladas. Cmdlets do UAL separados são incluídos para o Hyper-V e o DNS devido aos dados exclusivos que o UAL coleta para essas funções de servidor.  
   
 Um cenário típico de uso dos cmdlets do UAL seria quando um administrador consulta o UAL sobre acessos de cliente exclusivos durante um intervalo de datas. Isso pode ser feito de várias maneiras. O método a seguir é recomendado para consultar acessos de dispositivo exclusivos durante um intervalo de datas.  
   
@@ -165,7 +165,7 @@ PS C:\Windows\system32>Gwmi -Namespace "root\AccessLogging" -query "SELECT * FRO
   
 Isso retorna uma lista detalhada de todos os dispositivos cliente exclusivos, por endereço IP, que fizeram solicitações ao servidor nesse intervalo de datas.  
   
-Para cada cliente exclusivo, ‘ActivityCount’ está limitado a 65.535 por dia. Além disso, só é necessário fazer uma chamada do PowerShell para a WMI quando você consulta por data.  Todos os outros parâmetros de cmdlets do UAL podem ser usados em consultas do PS conforme esperado, como mostra este exemplo:  
+' ActivityCount ' para cada cliente exclusivo é limitado a 65.535 por dia. Além disso, só é necessário fazer uma chamada do PowerShell para a WMI quando você consulta por data.  Todos os outros parâmetros de cmdlets do UAL podem ser usados em consultas do PS conforme esperado, como mostra este exemplo:  
   
 ```  
 PS C:\Windows\system32> Get-UalDeviceAccess -IPAddress "10.36.206.112"  
@@ -182,9 +182,9 @@ PSComputerName
   
 ```  
   
-O UAL guarda um histórico de até dois anos. Para permitir que um administrador recupere dados do UAL quando o serviço estiver em execução, o UAL faz uma cópia do arquivo de banco de dados ativo, current.mdb, para um arquivo chamado *GUID.mdb* a cada 24 horas, para ser usado pelo provedor WMI.  
+A UAL retém até dois anos de história. Para permitir a recuperação de dados UAL por um administrador quando o serviço está em execução, o UAL faz uma cópia do arquivo de banco de dado ativo, Current. mdb, para um arquivo chamado *GUID. mdb* a cada 24 horas para uso do provedor de WMI.  
   
-No primeiro dia do ano, o UAL cria um novo *GUID.mdb*. O *GUID.mdb* antigo é guardado como arquivo morto para uso pelo provedor.  Passados dois anos, o *GUID.mdb* original é substituído.  
+No primeiro dia do ano, o UAL cria um novo *GUID.mdb*. O *GUID. mdb* antigo é mantido como um arquivo morto para uso do provedor.  Passados dois anos, o *GUID.mdb* original é substituído.  
   
 > [!IMPORTANT]  
 > O procedimento a seguir só deve ser realizado por um usuário avançado. Normalmente, ele seria utilizado por um desenvolvedor durante o teste de sua própria instrumentação das interfaces de programação de aplicativo do UAL.  
@@ -200,14 +200,14 @@ No primeiro dia do ano, o UAL cria um novo *GUID.mdb*. O *GUID.mdb* antigo é gu
     > [!WARNING]  
     > A edição incorreta do Registro pode causar danos graves ao sistema. Antes de alterar o Registro, faça backup de todos os dados importantes no computador.  
   
-    O exemplo a seguir mostra como adicionar um intervalo de dois minutos (não recomendado como um estado de execução a longo prazo): **REG ADD HKLM\System\CurrentControlSet\Control\WMI\\AutoLogger\Sum /v PollingInterval /t REG\_DWORD /d 120000 /F**  
+    O exemplo a seguir mostra como adicionar um intervalo de dois minutos (não recomendado como um estado de execução a longo prazo): **REG add HKLM\System\CurrentControlSet\Control\WMI\\AutoLogger\Sum/v PollingInterval/t reg\_DWORD/d 120000/f**  
   
-    Valores de hora estão em milissegundos. O valor mínimo é 60 segundos, o máximo é sete dias e o padrão é 24 horas.  
+    Os valores de hora estão em milissegundos. O valor mínimo é 60 segundos, o máximo é sete dias e o padrão é 24 horas.  
   
 4.  Use o console de serviços para interromper e reiniciar o Serviço de Log para Acesso de Usuário.  
   
 ## <a name="deleting-data-logged-by-ual"></a>Excluindo dados registrados pelo UAL  
-O UAL não tem a finalidade de ser um componente crítico. Seu design destina-se a afetar as operações do sistema local o mínimo possível, mantendo um alto nível de confiabilidade. Isso também permite que o administrador exclua manualmente o banco de dados do UAL e arquivos (todos os arquivos no diretório \Windows\System32\LogFilesSUM\) de suporte para atender às necessidades operacionais.  
+O UAL não tem a finalidade de ser um componente crítico. Seu design destina-se a afetar as operações do sistema local o mínimo possível, mantendo um alto nível de confiabilidade. Isso também permite que o administrador exclua manualmente o banco de dados UAL e os arquivos de suporte (todos os arquivos no diretório \Windows\System32\LogFilesSUM\) para atender às necessidades operacionais.  
   
 #### <a name="to-delete-data-logged-by-ual"></a>Para excluir dados registrados pelo UAL  
   
@@ -222,11 +222,11 @@ O UAL não tem a finalidade de ser um componente crítico. Seu design destina-se
 ## <a name="managing-ual-in-high-volume-environments"></a>Gerenciando o UAL em ambientes de volumes elevados  
 Esta seção descreve o que um administrador pode esperar quando o UAL é usado em um servidor com elevado volume de clientes.  
   
-O número máximo de acessos que podem ser registrados com o UAL é de 65.535 por dia.  Não se recomenda o uso do UAL em servidores conectados diretamente à Internet, como os servidores Web conectados diretamente à Internet, ou nos cenários em que um desempenho extremamente alto é a principal função do servidor (como nos ambientes de carga de trabalho HPC). O UAL é destina principalmente a pequeno, médio e cenários de intranet corporativo em que o volume elevado é esperado, mas não tão altas quanto muitas deployment que servem o volume de tráfego da Internet regularmente.  
+O número máximo de acessos que podem ser registrados com o UAL é de 65.535 por dia.  Não se recomenda o uso do UAL em servidores conectados diretamente à Internet, como os servidores Web conectados diretamente à Internet, ou nos cenários em que um desempenho extremamente alto é a principal função do servidor (como nos ambientes de carga de trabalho HPC). O UAL destina-se principalmente a cenários de intranet pequenos, médios e empresariais em que o alto volume é esperado, mas não tão alto quanto muitas implantações que servem o volume de tráfego voltado para a Internet regularmente.  
   
-**UAL na memória**: uma vez que o UAL utiliza o ESE (Mecanismo de Armazenamento Extensível), seus requisitos de memória aumentam ao longo do tempo (ou conforme a quantidade de solicitações de cliente). Mas a memória será liberada à medida que o sistema precisar dela para minimizar o impacto no desempenho.  
+**UAL na memória**: Como o UAL usa o ESE (mecanismo de armazenamento extensível), os requisitos de memória de UAL aumentarão ao longo do tempo (ou por quantidade de solicitações de cliente). Mas a memória será liberada à medida que o sistema precisar dela para minimizar o impacto no desempenho.  
   
-**UAL no disco**: os requisitos de disco rígido do UAL são aproximadamente estes:  
+**UAL no disco**: Os requisitos de disco rígido da UAL são aproximadamente conforme mostrado abaixo:  
   
 -   0 registro de cliente exclusivo: 22 MB  
   
@@ -234,10 +234,10 @@ O número máximo de acessos que podem ser registrados com o UAL é de 65.535 po
   
 -   500.000 registros de cliente exclusivos: 384 MB  
   
--   1.000.000 registros de cliente exclusivos: 729M  
+-   1\.000.000 registros de cliente exclusivos: 729M  
   
 ## <a name="recovering-from-a-corrupt-state"></a>Recuperando de um estado corrompido  
-Esta seção discute o uso que o UAL faz do ESE (Mecanismo de Armazenamento Extensível) em alto nível e o que um administrador pode fazer se os dados do UAL ficarem corrompidos ou não puderem ser recuperados.  
+Esta seção aborda o uso da UAL do mecanismo de armazenamento extensível (ESE) em um alto nível e o que um administrador pode fazer se os dados de UAL estiverem corrompidos ou irrecuperáveis.  
   
 O UAL emprega o ESE para otimizar o uso dos recursos do sistema e por sua resistência a danos.  Para saber mais sobre as vantagens do ESE, consulte o tópico sobre [Mecanismo de Armazenamento Extensível](https://msdn.microsoft.com/library/windows/desktop/gg269259(v=exchg.10).aspx) no MSDN.  
   
@@ -259,10 +259,10 @@ Reg add HKLM\Software\Microsoft\Windows\CurrentVersion\SyncShareSrv /v EnableWor
   
 Depois de adicionar a regkey, reinicie o serviço SyncShareSvc no servidor para habilitar o log.  
   
-Depois que o log estiver habilitado, dois eventos informativos são registrados no canal de Log\Aplicativos do Windows sempre que um cliente se conecta ao servidor. Para pastas de trabalho, cada usuário pode ter um ou mais dispositivos de cliente que se conectam ao servidor e verificar se há atualizações de dados a cada 10 minutos. Se o servidor estiver enfrentando 1.000 usuários, cada um com dois dispositivos, os logs de aplicativo farão a substituição a cada 70 minutos, tornando difícil a solução de problemas não relacionados. Para evitar isso, você pode desabilitar temporariamente o serviço de log de acesso do usuário ou aumentar o tamanho do canal de log\aplicativos do Windows do servidor.  
+Depois que o log estiver habilitado, dois eventos informativos são registrados no canal de Log\Aplicativos do Windows sempre que um cliente se conecta ao servidor. Para pastas de trabalho, cada usuário pode ter um ou mais dispositivos de cliente que se conectam ao servidor e verificar se há atualizações de dados a cada 10 minutos. Se o servidor estiver enfrentando 1.000 usuários, cada um com dois dispositivos, os logs de aplicativo farão a substituição a cada 70 minutos, tornando difícil a solução de problemas não relacionados. Para evitar isso, você pode desabilitar o serviço de log de acesso do usuário temporariamente ou aumentar o tamanho do canal do Windows Logs\Application do servidor.  
   
 ## <a name="BKMK_Links"></a>Consulte também  
 
-- [Introdução ao usuário acessar o registro em log](get-started-with-user-access-logging.md)
+- [Introdução ao log de acesso do usuário](get-started-with-user-access-logging.md)
   
 

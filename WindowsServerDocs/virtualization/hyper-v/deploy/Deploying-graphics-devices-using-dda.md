@@ -9,12 +9,12 @@ ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 67a01889-fa36-4bc6-841d-363d76df6a66
-ms.openlocfilehash: 2f9d283f5f80d6bb0851b2abd93be0f4c10899c8
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 94ba561f35ea257a897f51cb3522196f7988eb71
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476583"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70872103"
 ---
 # <a name="deploy-graphics-devices-using-discrete-device-assignment"></a>Implantar dispositivos gráficos usando a atribuição de dispositivo discreta
 
@@ -40,7 +40,7 @@ Set-VM -Name VMName -AutomaticStopAction TurnOff
 
 ### <a name="some-additional-vm-preparation-is-required-for-graphics-devices"></a>Uma preparação adicional de VM é necessária para dispositivos gráficos
 
-Alguns hardwares têm melhor desempenho se a VM estiver configurada de uma determinada maneira.  Para obter detalhes sobre se você precisa ou não das seguintes configurações para seu hardware, entre em contato com o fornecedor do hardware. Detalhes adicionais podem ser encontrados em [planejar a implantação de dispositivos usando a atribuição de dispositivo discreta](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md) e nesta postagem de [blog.](https://techcommunity.microsoft.com/t5/Virtualization/Discrete-Device-Assignment-GPUs/ba-p/382266)
+Alguns hardwares têm melhor desempenho se a VM estiver configurada de uma determinada maneira.  Para obter detalhes sobre se você precisa ou não das seguintes configurações para seu hardware, entre em contato com o fornecedor do hardware. Detalhes adicionais podem ser encontrados em [planejar a implantação de dispositivos usando a atribuição de dispositivo discreta](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md) e nesta [postagem de blog.](https://techcommunity.microsoft.com/t5/Virtualization/Discrete-Device-Assignment-GPUs/ba-p/382266)
 
 1. Habilitar a combinação de gravação na CPU
    ```
@@ -86,7 +86,7 @@ A etapa final é informar ao Hyper-V que uma VM deve ter acesso ao dispositivo. 
 Add-VMAssignableDevice -LocationPath $locationPath -VMName VMName
 ```
 
-## <a name="whats-next"></a>O que vem a seguir
+## <a name="whats-next"></a>Novidades
 Depois que um dispositivo é montado com êxito em uma VM, agora você pode iniciar essa VM e interagir com o dispositivo como faria normalmente se estivesse executando em um sistema bare-metal.  Isso significa que agora você pode instalar os drivers do fornecedor de hardware na VM e os aplicativos poderão ver o hardware presente.  Você pode verificar isso abrindo o Gerenciador de dispositivos na VM convidada e vendo que o hardware agora aparece.
 
 ## <a name="removing-a-device-and-returning-it-to-the-host"></a>Removendo um dispositivo e retornando-o para o host

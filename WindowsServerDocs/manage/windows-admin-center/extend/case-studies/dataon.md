@@ -1,6 +1,6 @@
 ---
-title: Estudo de caso SDK do Windows Admin Center - dados
-description: Estudo de caso SDK do Windows Admin Center - dados
+title: Estudo de caso do SDK do centro de administração do Windows – dados
+description: Estudo de caso do SDK do centro de administração do Windows – dados
 ms.technology: extend
 ms.topic: article
 author: daniellee-msft
@@ -8,41 +8,41 @@ ms.author: jol
 ms.date: 01/11/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 1adf538792763bf05a43d431d9751d275a6fcd04
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 12de939aa451ba75b4bafed85cd57bdd8280bc81
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858217"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70864939"
 ---
-# <a name="dataon-must-extension"></a>Dados devem extensão
+# <a name="dataon-must-extension"></a>O dataize deve ser uma extensão
 
-## <a name="integrated-monitoring-and-management-for-microsoft-hyper-converged-infrastructure"></a>Integrado de monitoramento e gerenciamento de infraestrutura hiperconvergente da Microsoft
+## <a name="integrated-monitoring-and-management-for-microsoft-hyper-converged-infrastructure"></a>Monitoramento e gerenciamento integrados para a infraestrutura hiperconvergente da Microsoft
 
-[Dados](http://www.dataonstorage.com/) é o provedor líder do setor de sistemas de armazenamento e infraestrutura hiperconvergente, otimizado para ambientes do Microsoft Windows Server. Exclusivamente com foco no fornecimento de serviços de nuvem híbrida, virtualização, proteção de dados e aplicativos da Microsoft, ele tem mais de 650 implantações empresariais e 120PB acima das implantações de espaços de armazenamento diretos.
+[Dataize](http://www.dataonstorage.com/) é o provedor líder do setor de infraestrutura hiperconvergente e sistemas de armazenamento otimizados para ambientes do Microsoft Windows Server. Com foco exclusivo na entrega de aplicativos, virtualização, proteção de dados e serviços de nuvem híbridos da Microsoft, ele tem mais de 650 implantações corporativas e mais de 120PB de implantações de Espaços de Armazenamento Diretos.
 
-[Dados devem](http://www.dataonstorage.com/must) extensão para o Windows Admin Center é um excelente exemplo do valor que pode oferecer aos clientes, trazendo as informações de monitoramento, gerenciamento e ponta a ponta sobre hardware e software juntos integrando os dois produtos complementares em um cluster inteiro em uma experiência unificada.
+O [dataize deve](http://www.dataonstorage.com/must) ser a extensão do centro de administração do Windows é um exemplo primo do valor que a integração de dois produtos complementares pode fornecer aos clientes, trazendo monitoramento e gerenciamento e informações de ponta a ponta sobre hardware e software juntos um cluster inteiro em uma experiência unificada.
 
-> <cite>"Podemos fazer nossa ferramenta autônoma deve visibilidade, monitoramento e gerenciamento e habilitado para funcionar no Windows Admin Center. Os recursos expandidos que deve fornece benefícios aos clientes, e a combinação de deve e Windows Admin Center em um único console fornecerá a experiência de gerenciamento ultimate para infraestrutura baseada em Windows Server."</cite>
+> <cite>"Nós desenvolvemos nossa ferramenta autônoma de visibilidade, monitoramento e gerenciamento e a permitia para funcionar no centro de administração do Windows. Os clientes se beneficiarão dos recursos expandidos que devem ser fornecidos, e a combinação entre o e o centro de administração do Windows a partir de um único console fornecerá a experiência de gerenciamento definitiva para a infraestrutura baseada no Windows Server.</cite>
 >
-> -Howard Lo, positivo-presidente de vendas e Marketing, dados
+> --Howard lo, vice-presidente de vendas e marketing, dados
 
-A extensão deve estende a funcionalidade do Windows Admin Center, fornecendo recursos como:
-- **Relatórios de dados históricos** – oferece painéis em tempo real e mensais de seus dados de desempenho do sistema incluindo IOPS, latência, taxa de transferência no seu cluster, pool de armazenamento, volume e nós.
-- **Mapeamento de disco** – deve exibe os tipos de dispositivo e componentes em cada um de nós, fornecendo um mapa de disco não criptografado de todo o nó. Ele mostra o número de discos, o tipo de disco, o local e o slot de cada unidade e o status de integridade do disco.
-- **Alertas do sistema** – falhas de serviço de integridade do Windows usa para identificar falhas de hardware, problemas de configuração e saturação de recurso. Ele também fornece uma avaliação de vários nível de locais específicos, descrições de falhas e as ações de recuperação. Você também pode aproveitar os produtos de terceiros de monitoramento SNMP traps para alertar você quando você precisar de substituições de disco ou hardware.
-- **SAN como página inicial serviço chamada** – solicitado pelos alertas do sistema, os administradores podem ter automatizadas alertas de email enviados para os contatos principais.
+A extensão deve estender a funcionalidade do centro de administração do Windows fornecendo recursos como:
+- **Relatórios de dados históricos** – fornece painéis em tempo real e mensais de seus dados de desempenho do sistema, incluindo IOPS, latência, taxa de transferência no cluster, pool de armazenamento, volume e nós.
+- **Mapeamento de disco** – deve exibir os tipos de dispositivo e componentes em cada um dos nós, fornecendo um mapa de disco claro de todo o seu nó. Ele mostra o número de discos, o tipo de disco, o local e o slot de cada unidade e o status de integridade do disco.
+- **Alertas do sistema** – aproveita as falhas do Windows serviço de integridade para identificar falhas de hardware, problemas de configuração e saturação de recursos. Ele também fornece uma avaliação de vários níveis de locais específicos, descrições de falhas e ações de recuperação. Você também pode aproveitar as interceptações de monitoramento SNMP de terceiros para alertá-lo quando precisar de substituições de disco ou de hardware.
+- **Serviço de chamada do tipo San** – solicitado por alertas do sistema, os administradores podem ter alertas de email automatizados enviados aos principais contatos.
 
-![Extensão de dados](../../media/extend-case-study-dataon/dataon-1.png)
-*mapeamento de disco na extensão de dados necessário para Windows Admin Center*
+![O mapeamento de](../../media/extend-case-study-dataon/dataon-1.png)
+disco de extensão de dados*na dataize deve ser a extensão do centro de administração do Windows*
 
-> <cite>"É ótimo que Windows Admin Center permite extensões como dados deve, de modo que posso usar ambas as ferramentas dentro do mesmo console e eu como perfeita como essa integração é. Windows Admin Center e os dados devem juntos realmente nos permitem ser mais eficiente e salva uma tonelada de nossa equipe de tempo. Ele nos permite obter nossas tarefas de administrador muito mais rápidas do que o que tínhamos antes."</cite>
+> <cite>"É ótimo que o centro de administração do Windows permita extensões como Dataize, de modo que eu possa usar ambas as ferramentas no mesmo console e gosto de quão direta essa integração é. O centro de administração do Windows e o Dataize devem, em grande medida, permitir que possamos ser mais eficientes e economizar nossa equipe uma infinidade de tempo. Ele nos permite atingir nossas tarefas de administrador muito mais rápido do que antes. "</cite>
 >
-> – Distrito de estudante Matt Roper, facilitador dos serviços de suporte de tecnologia, Condado de Cheroqui (GA)
+> --Matt Roper, facilitador de serviços de suporte de tecnologia, distrito escolar (GA)
 
-![Extensão de dados](../../media/extend-case-study-dataon/dataon-2.png)
-*serviços alerta na extensão de dados necessário para Windows Admin Center*
+![Os serviços de](../../media/extend-case-study-dataon/dataon-2.png)
+alerta de extensão de dados*na data de entrada devem ser a extensão do centro de administração do Windows*
 
-> <cite>"Deve tem sido muito valioso e foi um grande ponto de venda. Para nós, ele demonstrou um compromisso de dados para dar suporte à infraestrutura hiperconvergente da Microsoft. A inclusão de deve com seu dispositivo de S2D é o que conclui a solução com espaços de armazenamento diretos como uma substituição de SAN viável." </cite>
+> <cite>"Deve ter sido muito valioso e foi um grande ponto de venda. Para nós, ele demonstrou um compromisso de dados para dar suporte à infraestrutura hiperconvergente da Microsoft. A inclusão de deve com seu dispositivo S2D é o que conclui a solução com Espaços de Armazenamento Diretos como uma substituição de SAN viável ".</cite>
 >
-> – Benjamin Clements, presidente, estratégico Online Systems, Inc.
+> --Benjamin Clements, Presidente, sistemas online estratégicos, Inc.

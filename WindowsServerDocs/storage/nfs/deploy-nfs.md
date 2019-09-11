@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cc02f0a82b4143b80fc1107a63d234b117502d2d
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 761394f3190f02eedfea27a7d873c4c36535f23b
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544645"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865119"
 ---
 # <a name="deploy-network-file-system"></a>Implantar o sistema de arquivos de rede
 
@@ -35,8 +35,8 @@ Aqui está o que mudou para o NFS no Windows Server 2012:
 - **Módulo NFS para Windows PowerShell**. A disponibilidade de cmdlets NFS internos facilita a automatização de várias operações. Os nomes de cmdlet são consistentes com outros cmdlets do Windows PowerShell (usando verbos como "Get" e "set"), tornando mais fácil para os usuários familiarizados com o Windows PowerShell aprenderem a usar novos cmdlets.
 - **Aprimoramentos de gerenciamento de NFS**. Um novo console de gerenciamento baseado em interface do usuário centralizado simplifica a configuração e o gerenciamento de compartilhamentos de SMB e NFS, cotas, triagens de arquivos e classificação, além de gerenciar servidores de arquivos clusterizados.
 - **Aprimoramentos de mapeamento de identidade**. Novo suporte de interface do usuário e cmdlets do Windows PowerShell baseados em tarefas para configurar o mapeamento de identidade, que permite aos administradores configurar rapidamente uma origem de mapeamento de identidade e, em seguida, criar identidades mapeadas individuais para os usuários. Os aprimoramentos facilitam para os administradores a configuração de um compartilhamento para o acesso de vários protocolos no NFS e no SMB.
-- Reestruturação do **modelo de recurso de cluster**. Essa melhoria traz a consistência entre o modelo de recurso de cluster para os servidores de protocolo NFS e SMB do Windows e simplifica a administração. Para servidores NFS que têm muitos compartilhamentos, a rede de recursos e o número de chamadas WMI exigiam failover de um volume contendo um grande número de compartilhamentos NFS são reduzidos.
-- **Integração com o Gerenciador de chaves de**retomada. O Gerenciador de chaves de retomada é um componente que rastreia o servidor de arquivos e o estado do sistema de arquivos e permite que os servidores de protocolo Windows SMB e NFS executem failover sem interromper os clientes ou aplicativos de servidor que armazenam seus dados no servidor de arquivos. Essa melhoria é um componente fundamental da capacidade de disponibilidade contínua do servidor de arquivos que executa o Windows Server 2012.
+- **Reestruturação do modelo de recurso de cluster**. Essa melhoria traz a consistência entre o modelo de recurso de cluster para os servidores de protocolo NFS e SMB do Windows e simplifica a administração. Para servidores NFS que têm muitos compartilhamentos, a rede de recursos e o número de chamadas WMI exigiam failover de um volume contendo um grande número de compartilhamentos NFS são reduzidos.
+- **Integração com o Gerenciador de chaves de retomada**. O Gerenciador de chaves de retomada é um componente que rastreia o servidor de arquivos e o estado do sistema de arquivos e permite que os servidores de protocolo Windows SMB e NFS executem failover sem interromper os clientes ou aplicativos de servidor que armazenam seus dados no servidor de arquivos. Essa melhoria é um componente fundamental da capacidade de disponibilidade contínua do servidor de arquivos que executa o Windows Server 2012.
 
 ## <a name="scenarios-for-using-network-file-system"></a>Cenários para usar o sistema de arquivos de rede
 
@@ -113,7 +113,7 @@ Você pode criar um compartilhamento de arquivos NFS usando cmdlets do Gerenciad
 
 1. Faça logon no servidor como membro do grupo Administradores local.
 2. O Gerenciador do Servidor será iniciado automaticamente. Se não for iniciado automaticamente, selecione **Iniciar**, digite **ServerManager. exe**e, em seguida, selecione **Gerenciador do servidor**.
-3. À esquerda, selecione **serviços de arquivo e armazenamento**e, em seguida , selecione compartilhamentos.
+3. À esquerda, selecione **serviços de arquivo e armazenamento**e, em seguida, selecione **compartilhamentos**.
 4. Selecione **para criar um compartilhamento de arquivos, inicie o assistente de novo compartilhamento**.
 5. Na página **selecionar perfil** , selecione **compartilhamento NFS – compartilhamento rápido** ou **NFS-avançado**e, em seguida, selecione **Avançar**.
 6. Na página **local do compartilhamento** , selecione um servidor e um volume e selecione **Avançar**.

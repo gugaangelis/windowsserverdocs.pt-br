@@ -1,25 +1,25 @@
 ---
-title: Hosts de virtualização de área de trabalho remota de ajuste de desempenho
-description: Ajuste de desempenho para Hosts de virtualização de área de trabalho remota
+title: Ajuste de desempenho Área de Trabalho Remota hosts de virtualização
+description: Ajuste de desempenho para hosts de virtualização Área de Trabalho Remota
 ms.prod: windows-server-threshold
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: da528a742a7f49513c50b22a25970d65b9e1885f
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 24e3243d4e9791c8941729d396e0a96cd8b11a7d
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811378"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866434"
 ---
-# <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>Hosts de virtualização de área de trabalho remota de ajuste de desempenho
+# <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>Ajuste de desempenho Área de Trabalho Remota hosts de virtualização
 
 
-Host de virtualização de área de trabalho remota (Host de virtualização de área de trabalho remota) é um serviço de função que dá suporte a cenários de Virtual Desktop Infrastructure (VDI) e permite que vários usuários simultâneos execute aplicativos baseados em Windows em máquinas virtuais que são hospedadas em um servidor executando Windows Server 2016 e do Hyper-V.
+Host de Virtualização de Área de Trabalho Remota (host de Virtualização RD) é um serviço de função que dá suporte a cenários de VDI (Virtual Desktop Infrastructure) e permite que vários usuários simultâneos executem aplicativos baseados no Windows em máquinas virtuais hospedadas em um servidor que executa o Windows Server 2016 e Hyper-V.
 
-Windows Server 2016 dá suporte a dois tipos de áreas de trabalho virtuais, áreas de trabalho virtuais pessoais e áreas de trabalho virtuais.
+O Windows Server 2016 dá suporte a dois tipos de áreas de trabalho virtuais, áreas de trabalho virtuais pessoais e áreas de trabalho virtuais em pool.
 
 **Neste tópico:**
 
@@ -32,198 +32,198 @@ Windows Server 2016 dá suporte a dois tipos de áreas de trabalho virtuais, ár
 
 ### <a name="storage"></a>Armazenamento
 
-O armazenamento é o gargalo de desempenho mais provável, e é importante dimensionar o armazenamento para lidar adequadamente com a carga de e/s gerada por alterações de estado da máquina virtual. Se um piloto ou uma simulação não for viável, uma boa diretriz é provisionar um eixo de disco para quatro máquinas virtuais ativas. Use as configurações de disco com bom desempenho de gravação (como RAID 1 + 0).
+O armazenamento é o afunilamento de desempenho mais provável, e é importante dimensionar o armazenamento para lidar corretamente com a carga de e/s gerada pelas alterações de estado da máquina virtual. Se um piloto ou uma simulação não for viável, uma boa diretriz é provisionar um eixo de disco para quatro máquinas virtuais ativas. Use configurações de disco com bom desempenho de gravação (como RAID 1 + 0).
 
-Quando apropriado, use eliminação de duplicação de disco e armazenamento em cache para reduzir o carga de leitura de disco e habilitar sua solução de armazenamento acelerar o desempenho armazenando em cache uma parte significativa da imagem.
+Quando apropriado, use a eliminação de duplicação de disco e o cache para reduzir a carga de leitura de disco e para permitir que sua solução de armazenamento acelere o desempenho armazenando em cache uma parte significativa da imagem.
 
-### <a name="data-deduplication-and-vdi"></a>VDI e eliminação de duplicação de dados
+### <a name="data-deduplication-and-vdi"></a>Eliminação de duplicação de dados e VDI
 
-Introduzido no Windows Server 2012 R2, a eliminação de duplicação dá suporte à otimização de arquivos abertos. Para usar máquinas virtuais em execução em um volume com eliminação de duplicação, os arquivos de máquina virtual precisam ser armazenado em um host separado do host do Hyper-V. Se estiver executando o Hyper-V e a eliminação de duplicação no mesmo computador, os dois recursos serão disputam os recursos do sistema e afetar negativamente o desempenho geral.
+Introduzido no Windows Server 2012 R2, a eliminação de duplicação de dados dá suporte à otimização de arquivos abertos. Para usar máquinas virtuais em execução em um volume com eliminação de duplicação, os arquivos de máquina virtual precisam ser armazenados em um host separado do host do Hyper-V. Se o Hyper-V e a eliminação de duplicação estiverem em execução no mesmo computador, os dois recursos irão competir com os recursos do sistema e impactar negativamente o desempenho geral.
 
-O volume também deve ser configurado para usar o tipo de otimização da eliminação de duplicação de "Virtual Desktop Infrastructure (VDI)". Você pode configurar isso usando o Gerenciador do servidor (**serviços de arquivo e armazenamento**  - &gt; **Volumes**  - &gt; **deconfiguraçõesdeeliminaçãodeduplicação**) ou, usando o Windows PowerShell a seguir de comando:
+O volume também deve ser configurado para usar o tipo de otimização de eliminação de duplicação de "Virtual Desktop Infrastructure (VDI)". Você pode configurar isso usando Gerenciador do servidor ( **configurações de eliminação de duplicatas**de **volumes**  -  - &gt; &gt; **de serviços de arquivo e armazenamento** ) ou usando o seguinte comando do Windows PowerShell:
 
 ``` syntax
 Enable-DedupVolume <volume> -UsageType HyperV
 ```
 
 > [!NOTE]
-> Otimização da eliminação de duplicação de dados de arquivos abertos tem suporte apenas para cenários de VDI com Hyper-V usando armazenamento remoto em SMB 3.0.
+> A otimização de eliminação de duplicação de dados de arquivos abertos tem suporte apenas para cenários de VDI com o Hyper-V usando o armazenamento remoto via SMB 3,0.
 
 ### <a name="memory"></a>Memória
 
-Uso de memória do servidor é orientado por três fatores principais:
+O uso de memória do servidor é orientado por três fatores principais:
 
 -   Sobrecarga do sistema operacional
 
--   Serviço do Hyper-V sobrecarga por máquina virtual
+-   Sobrecarga de serviço do Hyper-V por máquina virtual
 
 -   Memória alocada para cada máquina virtual
 
-Uma carga de trabalho de trabalhador de Conhecimento típico, o convidado virtual máquinas x86 executando Windows 8 ou Windows 8.1 deve ser dada ~ 512 MB de memória como a linha de base. No entanto, a memória dinâmica provavelmente aumentará a memória da máquina virtual convidada para aproximadamente 800 MB, dependendo da carga de trabalho. Para x64, podemos ver sobre 800 MB iniciando, aumentando a 1024 MB.
+Para uma carga de trabalho típica de trabalhador de conhecimento, as máquinas virtuais convidadas que executam o x86 Window 8 ou Windows 8.1 devem receber aproximadamente 512 MB de memória como a linha de base. No entanto, Memória Dinâmica provavelmente aumentará a memória da máquina virtual convidada para cerca de 800 MB, dependendo da carga de trabalho. Para x64, vemos cerca de 800 MB, aumentando para 1024 MB.
 
-Portanto, é importante fornecer memória suficiente server para satisfazer a memória necessária para o número esperado de máquinas virtuais convidadas, além de permitir uma quantidade suficiente de memória para o servidor.
+Portanto, é importante fornecer memória de servidor suficiente para atender à memória exigida pelo número esperado de máquinas virtuais convidadas, além de permitir uma quantidade suficiente de memória para o servidor.
 
 ### <a name="cpu"></a>CPU
 
-Quando você planejar a capacidade do servidor para um servidor de Host de virtualização de área de trabalho remota, o número de máquinas virtuais por núcleo físico dependerá da natureza da carga de trabalho. Como ponto de partida, é razoável planejar 12 máquinas virtuais por núcleo físico e, em seguida, execute os cenários apropriados para validar o desempenho e a densidade. Maior densidade pode ser alcançada dependendo das especificações da carga de trabalho.
+Quando você planeja a capacidade do servidor para um servidor de host de virtualização de área de trabalho remota, o número de máquinas virtuais por núcleo físico dependerá da natureza da carga de trabalho. Como ponto de partida, é razoável planejar 12 máquinas virtuais por núcleo físico e, em seguida, executar os cenários apropriados para validar o desempenho e a densidade. A maior densidade pode ser alcançada dependendo das especificidades da carga de trabalho.
 
-É recomendável habilitar o hyper-threading, mas não se esqueça de calcular a taxa de excesso de assinatura com base no número de núcleos físicos e não o número de processadores lógicos. Isso garante que o nível esperado de desempenho em uma base por CPU.
+É recomendável habilitar o Hyper-Threading, mas não se esqueça de calcular a taxa de assinatura em excesso com base no número de núcleos físicos e não no número de processadores lógicos. Isso garante o nível de desempenho esperado por CPU.
 
-### <a name="virtual-gpu"></a>Virtual GPU
+### <a name="virtual-gpu"></a>GPU virtual
 
-Microsoft RemoteFX para Host de virtualização de área de trabalho remota oferece uma experiência de gráficos sofisticados para codificar Virtual Desktop Infrastructure (VDI) por meio de comunicação remota do lado do host, um pipeline de renderização-captura-codificação, altamente eficiente baseada em GPU, a limitação com base no cliente atividade e uma GPU virtual habilitada para DirectX. RemoteFX para o Host de virtualização de área de trabalho remota atualiza a GPU virtual de DirectX9 para DirectX11. Ele também melhora a experiência do usuário, oferecendo suporte a mais monitores em resoluções mais altas.
+O Microsoft RemoteFX para o host de virtualização de área de trabalho remota oferece uma rica experiência gráfica para VDI (Virtual Desktop Infrastructure) por meio de comunicação remota do lado do host, um pipeline de processamento de captura e alta eficiência, com base no cliente atividade e uma GPU virtual habilitada para DirectX. RemoteFX para Host de Virtualização de Área de Trabalho Remota atualiza a GPU virtual de DirectX9 para DirectX11. Ele também melhora a experiência do usuário ao dar suporte a mais monitores em resoluções mais altas.
 
-A experiência do RemoteFX DirectX11 está disponível sem um hardware GPU, por meio de um driver emuladas pelo software. Embora esse software GPU fornece uma boa experiência, a unidade de processamento de gráficos virtual do RemoteFX (VGPU) adiciona uma experiência de aceleradas por hardware para áreas de trabalho virtuais.
+A experiência DirectX11 do RemoteFX está disponível sem uma GPU de hardware, por meio de um driver emulado por software. Embora essa GPU de software ofereça uma boa experiência, a VGPU (unidade de processamento gráfico virtual) do RemoteFX adiciona uma experiência acelerada de hardware a áreas de trabalho virtuais.
 
-Para tirar proveito da experiência do VGPU do RemoteFX em um servidor executando o Windows Server 2016, você precisa de um driver da GPU (como DirectX11.1 ou WDDM 1.2) no servidor host. Para obter mais informações sobre as ofertas de GPU a ser usado com o RemoteFX para o Host de virtualização de área de trabalho remota, entre em contato com seu provedor GPU.
+Para aproveitar a experiência de VGPU do RemoteFX em um servidor que executa o Windows Server 2016, você precisa de um driver de GPU (como DirectX 11.1 ou WDDM 1,2) no servidor host. Para obter mais informações sobre as ofertas de GPU a serem usadas com o RemoteFX para Host de Virtualização de Área de Trabalho Remota, entre em contato com seu provedor de GPU.
 
-Se você usar a GPU virtual do RemoteFX em sua implantação de VDI, a capacidade de implantação variará com base em cenários de uso e configuração de hardware. Ao planejar sua implantação, considere o seguinte:
+Se você usar a GPU virtual do RemoteFX em sua implantação do VDI, a capacidade de implantação variará com base nos cenários de uso e na configuração de hardware. Ao planejar sua implantação, considere o seguinte:
 
--   Número de GPUs no seu sistema
+-   Número de GPUs em seu sistema
 
--   Capacidade de memória de vídeo sobre as GPUs
+-   Capacidade de memória de vídeo nas GPUs
 
--   Recursos de processador e de hardware em seu sistema
+-   Recursos de processador e hardware no seu sistema
 
-### <a name="remotefx-server-system-memory"></a>Memória do sistema de servidor RemoteFX
+### <a name="remotefx-server-system-memory"></a>Memória do sistema do servidor RemoteFX
 
-Para cada área de trabalho virtual habilitada com uma GPU virtual, o RemoteFX usa memória do sistema no sistema operacional convidado e no servidor habilitadas para RemoteFX. O hipervisor garante a disponibilidade de memória do sistema para um sistema operacional convidado. No servidor, cada virtual habilitada para GPU de área de trabalho virtual precisa anunciar seu requisito de memória do sistema para o hipervisor. Quando habilitadas para GPU virtual área de trabalho virtual é iniciado, o hipervisor reserva memória adicional do sistema no servidor para o desktop virtual habilitado para VGPU habilitadas para RemoteFX.
+Para cada área de trabalho virtual habilitada com uma GPU virtual, o RemoteFX usa a memória do sistema no sistema operacional convidado e no servidor habilitado para RemoteFX. O hipervisor garante a disponibilidade da memória do sistema para um sistema operacional convidado. No servidor, cada área de trabalho virtual habilitada para GPU virtual precisa anunciar seu requisito de memória do sistema para o hipervisor. Quando a área de trabalho virtual habilitada para a GPU virtual está iniciando, o hipervisor reserva memória do sistema adicional no servidor habilitado para RemoteFX para a área de trabalho virtual habilitada para VGPU.
 
-O requisito de memória para o servidor habilitadas para RemoteFX é dinâmico porque a quantidade de memória consumida no servidor habilitadas para RemoteFX é dependente do número de monitores que estão associados com habilitado para VGPU áreas de trabalho virtuais e a resolução máxima para esses monitores.
+O requisito de memória para o servidor habilitado para RemoteFX é dinâmico porque a quantidade de memória consumida no servidor habilitado para RemoteFX depende do número de monitores associados às áreas de trabalho virtuais habilitadas para VGPU e à resolução máxima de esses monitores.
 
-### <a name="remotefx-server-gpu-video-memory"></a>Servidor RemoteFX memória de vídeo de GPU
+### <a name="remotefx-server-gpu-video-memory"></a>Memória de vídeo da GPU do servidor RemoteFX
 
-Cada virtual habilitada para GPU de área de trabalho virtual usa a memória de vídeo no hardware da GPU no servidor de host para renderizar a área de trabalho. Além de renderização, a memória de vídeo é usada por um codec para compactar a tela renderizada. A quantidade de memória necessária é diretamente com base na quantidade de monitores que são provisionados para a máquina virtual.
+Cada área de trabalho virtual habilitada para GPU virtual usa a memória de vídeo no hardware de GPU no servidor de host para renderizar a área de trabalho. Além da renderização, a memória de vídeo é usada por um codec para compactar a tela renderizada. A quantidade de memória necessária é diretamente baseada na quantidade de monitores provisionados para a máquina virtual.
 
-A memória de vídeo é reservada varia de acordo com o número de monitores e a resolução de tela do sistema. Alguns usuários podem exigir uma tela com resolução superior para tarefas específicas. Há maior escalabilidade com as configurações de resolução mais baixos se todas as outras configurações permanecem constantes.
+A memória de vídeo reservada varia de acordo com o número de monitores e a resolução da tela do sistema. Alguns usuários podem exigir uma resolução de tela mais alta para tarefas específicas. Haverá maior escalabilidade com configurações de resolução mais baixa se todas as outras configurações permanecerem constantes.
 
-### <a name="remotefx-processor"></a>Processador do RemoteFX
+### <a name="remotefx-processor"></a>Processador RemoteFX
 
-O hipervisor agenda habilitadas para GPU virtuais áreas de trabalho virtuais na CPU e de servidor habilitadas para RemoteFX. Ao contrário de memória do sistema, não existe informações relacionadas aos recursos adicionais que precisa do RemoteFX para compartilhar com o hipervisor. A adicional sobrecarga da CPU que traz os RemoteFX para virtual habilitada para GPU de área de trabalho virtual relacionada à execução do driver GPU virtual e uma pilha de protocolo de área de trabalho remota do modo de usuário.
+O hipervisor agenda o servidor habilitado para RemoteFX e as áreas de trabalho virtuais habilitadas para a GPU virtual na CPU. Diferentemente da memória do sistema, não há informações relacionadas a recursos adicionais que o RemoteFX precisa compartilhar com o hipervisor. A sobrecarga de CPU adicional que o RemoteFX traz para a área de trabalho virtual habilitada para a GPU virtual está relacionada à execução do driver de GPU virtual e a uma pilha de protocolo RDP de modo de usuário.
 
-No servidor habilitadas para RemoteFX, a sobrecarga é aumentada, pois o sistema é executado em um processo adicional (rdvgm.exe) por virtual habilitada para GPU de área de trabalho virtual. Esse processo usa o driver de dispositivo de gráficos para executar comandos na GPU. O codec também usa as CPUs para compactar os dados da tela que precisa ser enviada de volta ao cliente.
+No servidor habilitado para RemoteFX, a sobrecarga é aumentada, pois o sistema executa um processo adicional (rdvgm. exe) por área de trabalho virtual habilitada para GPU virtual. Esse processo usa o driver de dispositivo de gráficos para executar comandos na GPU. O codec também usa as CPUs para compactar os dados da tela que precisam ser enviados de volta ao cliente.
 
-Mais processadores virtuais significam uma melhor experiência do usuário. É recomendável alocar pelo menos duas CPUs virtuais por virtual habilitada para GPU de área de trabalho virtual. Também recomendamos o uso de x64 arquitetura áreas de trabalho virtuais habilitadas para GPU virtual porque o desempenho em máquinas virtuais é melhor em comparação com x86 de x64 máquinas virtuais.
+Mais processadores virtuais significam uma melhor experiência do usuário. É recomendável alocar pelo menos duas CPUs virtuais por área de trabalho virtual habilitada para GPU virtual. Também é recomendável usar a arquitetura x64 para áreas de trabalho virtuais habilitadas para GPU virtual porque o desempenho em máquinas virtuais x64 é melhor em comparação com as máquinas virtuais x86.
 
-### <a name="remotefx-gpu-processing-power"></a>Capacidade de processamento da GPU RemoteFX
+### <a name="remotefx-gpu-processing-power"></a>Potência de processamento de GPU do RemoteFX
 
-Para cada virtual habilitada para GPU de área de trabalho virtual, há um processo correspondente do DirectX em execução no servidor habilitadas para RemoteFX. Esse processo repete todos os comandos de elementos gráficos que ele recebe do RemoteFX área de trabalho virtual em física GPU. Para a GPU física, é equivalente a executar simultaneamente vários aplicativos de DirectX.
+Para cada área de trabalho virtual habilitada para GPU virtual, há um processo do DirectX correspondente em execução no servidor habilitado para RemoteFX. Esse processo repete todos os comandos gráficos que ele recebe da área de trabalho virtual do RemoteFX para a GPU física. Para a GPU física, é equivalente a executar simultaneamente vários aplicativos do DirectX.
 
-Normalmente, os drivers e dispositivos de gráficos são ajustados para executar alguns aplicativos na área de trabalho. RemoteFX alonga as GPUs a ser usado de maneira exclusiva. Para medir o desempenho do GPU em um servidor RemoteFX, contadores de desempenho foram adicionados para medir a resposta GPU para solicitações do RemoteFX.
+Normalmente, os drivers e dispositivos gráficos são ajustados para executar alguns aplicativos na área de trabalho. O RemoteFX amplia as GPUs a serem usadas de maneira exclusiva. Para medir como a GPU está sendo executada em um servidor RemoteFX, os contadores de desempenho foram adicionados para medir a resposta de GPU às solicitações do RemoteFX.
 
-Normalmente, quando um recurso GPU é pouco recursos, leia e operações de gravação das leva GPU muito tempo para ser concluída. Usando contadores de desempenho, os administradores podem assumir medidas preventivas, eliminando a possibilidade de qualquer tempo de inatividade para seus usuários finais.
+Geralmente, quando um recurso de GPU está com poucos recursos, as operações de leitura e gravação na GPU levam muito tempo para serem concluídas. Usando contadores de desempenho, os administradores podem tomar ações preventivas, eliminando a possibilidade de qualquer tempo de inatividade para seus usuários finais.
 
-Os seguintes contadores de desempenho estão disponíveis no servidor RemoteFX para medir o desempenho de GPU virtual:
+Os seguintes contadores de desempenho estão disponíveis no servidor do RemoteFX para medir o desempenho da GPU virtual:
 
 **Elementos gráficos do RemoteFX**
 
--   **Quadros ignorados/segundo - recursos insuficientes do cliente** número de quadros ignorados por segundo devido a recursos insuficientes do cliente
+-   **Quadros ignorados/segundo-recursos insuficientes do cliente** Número de quadros ignorados por segundo devido a recursos de cliente insuficientes
 
--   **Taxa de compactação de elementos gráficos** proporção do número de bytes codificado para o número de bytes de entrada
+-   **Taxa de compactação de gráficos** Taxa do número de bytes codificados para o número de bytes de entrada
 
-**Raiz do RemoteFX gerenciamento de GPU**
+**Gerenciamento de GPU raiz do RemoteFX**
 
--   **Recursos: TDRs em GPUs Server** Número Total de vezes que a TDR expira a GPU no servidor
+-   **Os TDRs em GPUs** de servidor número total de vezes que o TdR atinge o tempo limite na GPU no servidor
 
--   **Recursos: Máquinas virtuais em execução RemoteFX** Número Total de máquinas virtuais que têm o adaptador de vídeo 3D RemoteFX instalado
+-   **Os Máquinas virtuais executando o** número total de máquinas virtuais do RemoteFX que têm o adaptador de vídeo 3D RemoteFX instalado
 
--   **VRAM: MB disponível por GPU** quantidade de memória de vídeo dedicada que não está sendo usada
+-   **VRAM MB disponíveis por valor** de GPU de memória de vídeo dedicada que não está sendo usada
 
--   **VRAM: % Reservada por GPU** porcentagem de memória de vídeo dedicada que foi reservada para o RemoteFX
+-   **VRAM % Reservada por** percentual de GPU de memória de vídeo dedicada que foi reservada para o RemoteFX
 
 **Software do RemoteFX**
 
--   **Taxa de captura para o monitor** \[1-4\] exibe a taxa de captura do RemoteFX para monitores de 1 a 4
+-   **Taxa de captura para o monitor** \[1-4\] exibe a taxa de captura do RemoteFX para monitores 1-4
 
--   **Taxa de compactação** preteridos no Windows 8 e substituída por **taxa de compactação de gráficos**
+-   **Taxa de compactação** Preterido no Windows 8 e substituído pela **taxa de compactação de gráficos**
 
--   **Quadros por segundo de atraso** número de quadros por segundo em que os dados de gráficos não foi enviados dentro de um determinado período de tempo
+-   **Quadros atrasados/s** Número de quadros por segundo em que os dados gráficos não foram enviados dentro de um determinado período de tempo
 
--   **Tempo de resposta GPU de captura** latência medido de captura do RemoteFX (em microssegundos) para a conclusão das operações de GPU
+-   **Tempo de resposta de GPU da captura** Latência medida na captura do RemoteFX (em microssegundos) para que as operações de GPU sejam concluídas
 
--   **Tempo de resposta GPU de renderização** latência medida dentro de renderização do RemoteFX (em microssegundos) para a conclusão das operações de GPU
+-   **Tempo de resposta da GPU do processamento** Latência medida dentro da renderização do RemoteFX (em microssegundos) para que as operações de GPU sejam concluídas
 
--   **Bytes de saída** bytes de saída do número Total de RemoteFX
+-   **Bytes de saída** Número total de bytes de saída do RemoteFX
 
--   **Aguardando a contagem de cliente/s** preteridos no Windows 8 e substituída por **quadros ignorados/segundo - recursos insuficientes do cliente**
+-   **Aguardando contagem de cliente/s** Preterido no Windows 8 e substituído por **quadros ignorados/segundo-recursos insuficientes do cliente**
 
 **Gerenciamento de vGPU do RemoteFX**
 
--   **Recursos: TDRs locais às máquinas virtuais** Número Total de TDRs que ocorreram nessa máquina virtual (TDRs servidor propagado para as máquinas virtuais não estão incluídos)
+-   **Os TDRs local para máquinas** virtuais número total de TDRs que ocorreram nesta máquina virtual (TDRs que o servidor propagado para as máquinas virtuais não estão incluídos)
 
--   **Recursos: TDRs propagados pelo servidor** Número Total de TDRs que ocorreu no servidor e que foram propagadas para a máquina virtual
+-   **Os TDRs propagado pelo** servidor número total de TDRs que ocorreram no servidor e que foram propagadas para a máquina virtual
 
-**Desempenho de vGPU do RemoteFX máquina virtual**
+**Desempenho de vGPU de máquina virtual do RemoteFX**
 
--   **Dados: Invocado apresenta/s** Número Total (em segundos) de operações presentes a ser renderizado para a área de trabalho da máquina virtual por segundo
+-   **Dado Número total de presentes** /s invocados (em segundos) de operações presentes a serem processadas para a área de trabalho da máquina virtual por segundo
 
--   **Dados: Apresenta/s de saída** Número Total de operações presentes enviados pela máquina virtual para o servidor de GPU por segundo
+-   **Dado Número total de presentes de** saída/s de operações atuais enviadas pela máquina virtual para a GPU do servidor por segundo
 
--   **Dados: Bytes lidos/s** Número Total de bytes lidos do servidor habilitadas para RemoteFX por segundo
+-   **Dado Bytes de leitura/** s-número total de bytes de leitura do servidor habilitado para RemoteFX por segundo
 
--   **Dados: Bytes/s de envio** Número Total de bytes enviados para o servidor habilitadas para RemoteFX GPU por segundo
+-   **Dado Bytes de envio/** s-número total de bytes enviados à GPU do servidor habilitada para RemoteFX por segundo
 
--   **DMA: Latência (s) de média de buffers de comunicação** quantidade média de tempo (em segundos) gasto nos buffers de comunicação
+-   **DMA Média de buffers de comunicação (s** ) tempo médio (em segundos) gasto nos buffers de comunicação
 
--   **DMA: Latência de buffer DMA (s)** período de tempo (em segundos) entre quando o DMA é enviado até concluída
+-   **DMA Tempo de latência do buffer de** DMA (s) (em segundos) desde quando o DMA é enviado até ser concluído
 
--   **DMA: Comprimento da fila** comprimento da fila de DMA para um adaptador de vídeo 3D RemoteFX
+-   **DMA Comprimento da** fila DMA de comprimento da fila para um adaptador de vídeo 3D RemoteFX
 
--   **Recursos: Tempos limite de TDR por GPU** tempos limite de contagem de TDR que ocorreu por GPU na máquina virtual
+-   **Os Tempos limite de TDR por** contagem de GPU de tempos limite de TDR que ocorreram por GPU na máquina virtual
 
--   **Recursos: Tempos limite de TDR por mecanismo de GPU** do mecanismo de tempos limite de contagem de TDR que ocorreu por GPU na máquina virtual
+-   **Os Tempos limite de TDR por contagem** de mecanismo de GPU de tempos limite de TDR que ocorreram por mecanismo de GPU na máquina virtual
 
-Além dos RemoteFX virtual GPU contadores de desempenho também é possível medir a utilização de GPU usando o Process Explorer, que mostra o uso de memória de vídeo e a utilização de GPU.
+Além dos contadores de desempenho de GPU virtual do RemoteFX, você também pode medir a utilização de GPU usando o Process Explorer, que mostra o uso de memória de vídeo e a utilização de GPU.
 
 ## <a name="performance-optimizations"></a>Otimizações de desempenho
 
 ### <a name="dynamic-memory"></a>Memória Dinâmica
 
-Memória dinâmica com mais eficiência permite a utilização dos recursos de memória do servidor que executa o Hyper-V, equilibrando como a memória é distribuída entre máquinas virtuais em execução. Memória pode ser dinamicamente realocada entre máquinas virtuais em resposta às suas cargas de trabalho de alteração.
+O Memória Dinâmica permite uma utilização mais eficiente dos recursos de memória do servidor que executa o Hyper-V, equilibrando como a memória é distribuída entre as máquinas virtuais em execução. A memória pode ser realocada dinamicamente entre máquinas virtuais em resposta às suas cargas de trabalho em alteração.
 
-Memória dinâmica permite aumentar a densidade de máquina virtual com os recursos que você já tiver sem sacrificar o desempenho e escalabilidade. O resultado é um uso mais eficiente de recursos de hardware de servidor caros, que podem ser traduzidos em gerenciamento mais fácil e reduzir os custos.
+Memória Dinâmica permite aumentar a densidade da máquina virtual com os recursos que você já tem sem sacrificar o desempenho ou a escalabilidade. O resultado é um uso mais eficiente de recursos de hardware de servidor caros, que podem ser convertidos em um gerenciamento mais fácil e custos menores.
 
-Em sistemas operacionais convidados executando o Windows 8 e acima com processadores virtuais que se estendem por vários processadores lógicos, considere a compensação entre executando com memória dinâmica para ajudar a minimizar o uso de memória e desabilitar a memória dinâmica para melhorar o desempenho de um aplicativo que está ciente de topologia computadores. Esse aplicativo pode aproveitar as informações de topologia para tornar o agendamento e a memória decisões de alocação.
+Em sistemas operacionais convidados que executam o Windows 8 e superior com processadores virtuais que abrangem vários processadores lógicos, considere a compensação entre executar com Memória Dinâmica para ajudar a minimizar o uso de memória e desabilitar o Memória Dinâmica para melhorar o desempenho de um aplicativo que reconhece a topologia de computador. Esse aplicativo pode aproveitar as informações de topologia para tomar decisões de agendamento e alocação de memória.
 
 ### <a name="tiered-storage"></a>Armazenamento em camadas
 
-Host de virtualização de área de trabalho remota oferece suporte a armazenamento em camadas para pools de área de trabalho virtual. O computador físico que é compartilhado por todas as áreas de trabalho virtuais dentro de uma coleção pode usar uma solução de armazenamento de alto desempenho, de tamanho pequeno, como uma unidade de estado sólida (SSD) espelhada. As áreas de trabalho virtuais podem ser colocados em armazenamento mais barato, tradicional como RAID 1 + 0.
+O host de Virtualização RD dá suporte ao armazenamento em camadas para pools de área de trabalho virtual O computador físico compartilhado por todas as áreas de trabalho virtuais em pool em uma coleção pode usar uma solução de armazenamento de alto desempenho, de pequeno porte, como uma SSD (unidade de estado sólido) espelhada. As áreas de trabalho virtuais em pool podem ser colocadas em armazenamento tradicional e mais barato, como RAID 1 + 0.
 
-O computador físico deve ser colocado em um SSD é porque a maioria do leitura-eu/sistema operacional de áreas de trabalho virtuais vai para o sistema operacional de gerenciamento. Portanto, o armazenamento que é usado pelo computador físico deve manter muito mais altos de leitura e/Ss por segundo.
+O computador físico deve ser colocado em um SSD porque a maioria das e/SS de leitura de áreas de trabalho virtuais em pool vai para o sistema operacional de gerenciamento. Portanto, o armazenamento usado pelo computador físico deve sustentar um e/SS de leitura muito maior por segundo.
 
-Essa configuração de implantação garante desempenho econômico, em que o desempenho é necessário. O SSD proporciona um desempenho superior em um disco de tamanho menor (aproximadamente 20 GB por coleção, dependendo da configuração). Armazenamento tradicional para áreas de trabalho virtuais (RAID 1 + 0) usa cerca de 3 GB por máquina virtual.
+Essa configuração de implantação garante um desempenho econômico em que o desempenho é necessário. O SSD fornece um desempenho mais alto em um disco de tamanho menor (cerca de 20 GB por coleção, dependendo da configuração). O armazenamento tradicional para áreas de trabalho virtuais em pool (RAID 1 + 0) usa cerca de 3 GB por máquina virtual.
 
-### <a name="csv-cache"></a>Cache do CSV
+### <a name="csv-cache"></a>Cache CSV
 
-Clustering de failover no Windows Server 2012 e superior fornece o armazenamento em cache no Cluster Shared Volumes (CSV). Isso é extremamente benéfico para coleções de área de trabalho virtuais em pool em que a maioria da leitura e/SS provenientes de sistema operacional de gerenciamento. O cache do CSV fornece um melhor desempenho em várias ordens de magnitude porque ele armazena em cache os blocos que são lidas por mais de uma vez e os entrega da memória do sistema, o que reduz a e/s. Para obter mais informações sobre o cache do CSV, consulte [como habilitar o Cache de CSV](http://blogs.msdn.com/b/clustering/archive/2012/03/22/10286676.aspx).
+O clustering de failover no Windows Server 2012 e superior fornece cache em CSV (volumes compartilhados do cluster). Isso é extremamente benéfico para coleções de área de trabalho virtual em pool em que a maioria das e/SS de leitura são provenientes do sistema operacional de gerenciamento. O cache CSV fornece um desempenho mais alto por várias ordens de magnitude, pois ele armazena em cache os blocos que são lidos mais de uma vez e os entrega da memória do sistema, o que reduz a e/s. Para obter mais informações sobre o cache CSV, consulte [como habilitar o cache CSV](http://blogs.msdn.com/b/clustering/archive/2012/03/22/10286676.aspx).
 
-### <a name="pooled-virtual-desktops"></a>Áreas de trabalho virtuais
+### <a name="pooled-virtual-desktops"></a>Áreas de trabalho virtuais em pool
 
-Por padrão, áreas de trabalho virtuais serão revertidas para o estado original depois que um usuário sai, portanto, todas as alterações feitas ao sistema operacional Windows, desde a última entrada do usuário são abandonados.
+Por padrão, as áreas de trabalho virtuais em pool são revertidas para o estado original após o usuário sair, portanto, quaisquer alterações feitas no sistema operacional Windows desde a última entrada do usuário são abandonadas.
 
-Embora seja possível desabilitar a reversão, ainda é uma condição temporária porque normalmente uma coleção de área de trabalho virtuais em pool é recriada devido a várias atualizações para o modelo de área de trabalho virtual.
+Embora seja possível desabilitar a reversão, ela ainda é uma condição temporária porque normalmente uma coleção de áreas de trabalho virtuais em pool é recriada devido a várias atualizações no modelo de área de trabalho virtual.
 
-Faz sentido para desativar recursos do Windows e serviços que dependem do estado persistente. Além disso, faz sentido para desativar os serviços que são principalmente para cenários não empresariais.
+Faz sentido desativar os recursos e serviços do Windows que dependem do estado persistente. Além disso, faz sentido desativar os serviços que são basicamente para cenários não empresariais.
 
-Cada serviço específico deve ser avaliado adequadamente antes de qualquer implantação ampla. Estes são alguns pontos iniciais a serem considerados:
+Cada serviço específico deve ser avaliado adequadamente antes de qualquer implantação ampla. Veja a seguir algumas coisas iniciais a serem consideradas:
 
-| Fornecer manutenção                                      | Por quê?                                                                                                                                                                                                      |
+| Serviço                                      | Por quê?                                                                                                                                                                                                      |
 |----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Atualização automática                                  | Áreas de trabalho virtuais são atualizadas, recriando o modelo de área de trabalho virtual.                                                                                                                          |
-| Arquivos offline                                | Áreas de trabalho virtuais estão sempre online e conectado de um ponto de vista rede.                                                                                                                         |
-| Desfragmentação de plano de fundo                            | Alterações no sistema de arquivos são descartadas depois que um usuário faz (devido a uma reversão para o estado original ou para recriar o modelo de área de trabalho virtual, o que resulta na recriação de todas as áreas de trabalho virtuais). |
-| Modo de hibernação ou suspensão                           | Sem esse conceito para VDI                                                                                                                                                                                   |
-| Despejo de memória de verificação de bug                        | Sem esse conceito para áreas de trabalho virtuais. Um desktop virtual em pool de verificação de bug será desde o estado original.                                                                                       |
-| Configuração automática de WLAN                              | Não há nenhuma interface de dispositivo de Wi-Fi para VDI                                                                                                                                                                 |
-| Serviço de compartilhamento de rede do Windows Media Player | Centralizado no serviço do consumidor                                                                                                                                                                                  |
-| Provedor do grupo doméstico                          | Centralizado no serviço do consumidor                                                                                                                                                                                  |
-| Compartilhamento de conexão com a Internet                  | Centralizado no serviço do consumidor                                                                                                                                                                                  |
-| Media Center serviços estendidos               | Centralizado no serviço do consumidor                                                                                                                                                                                  |
+| Atualização automática                                  | As áreas de trabalho virtuais em pool são atualizadas recriando o modelo de área de trabalho virtual.                                                                                                                          |
+| Arquivos offline                                | As áreas de trabalho virtuais estão sempre online e conectadas de um ponto de vista de rede.                                                                                                                         |
+| Desfragmentação em segundo plano                            | As alterações do sistema de arquivos são descartadas depois que um usuário é desligado (devido a uma reversão para o estado original ou recriação do modelo de área de trabalho virtual, o que resulta na recriação de todas as áreas de trabalho virtuais em pool). |
+| Hibernação ou suspensão                           | Não há tal conceito para VDI                                                                                                                                                                                   |
+| Despejo de memória de verificação de bug                        | Não há tal conceito para áreas de trabalho virtuais em pool. Um bug-verificar a área de trabalho virtual em pool será iniciada no estado original.                                                                                       |
+| Configuração automática de WLAN                              | Não há nenhuma interface de dispositivo WiFi para VDI                                                                                                                                                                 |
+| Serviço de compartilhamento de rede do Windows Media Player | Serviço centrado no consumidor                                                                                                                                                                                  |
+| Provedor de grupo base                          | Serviço centrado no consumidor                                                                                                                                                                                  |
+| Compartilhamento de conexão com a Internet                  | Serviço centrado no consumidor                                                                                                                                                                                  |
+| Serviços estendidos do Media Center               | Serviço centrado no consumidor                                                                                                                                                                                  |
 > [!NOTE]
-> Essa lista não deve ser uma lista completa, pois qualquer alteração afetará as metas pretendidas e os cenários. Para obter mais informações, consulte [quente desativar o pressiona obtê-lo agora, o script de otimização do Windows 8 VDI, cortesia do PFE!](http://blogs.technet.com/b/jeff_stokes/archive/2013/04/09/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe.aspx).
+> Esta lista não deve ser uma lista completa, pois as alterações afetarão as metas e os cenários pretendidos. Para obter mais informações, consulte [Hot off the Presss, obter agora, o script de otimização do VDI do Windows 8, cortesia de PFE!](http://blogs.technet.com/b/jeff_stokes/archive/2013/04/09/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe.aspx).
 
  
 > [!NOTE]
-> O superFetch no Windows 8 é habilitado por padrão. Ele está ciente de VDI e não deve ser desabilitado. O superFetch pode reduzir ainda mais o consumo de memória por meio do compartilhamento de página de memória, que é muito bom para VDI. Áreas de trabalho virtuais que executam o Windows 7, o SuperFetch deve ser desabilitado, mas para áreas de trabalho virtuais que executam o Windows 7, ele deve ser deixado no.
+> O SuperFetch no Windows 8 está habilitado por padrão. Ele reconhece VDI e não deve ser desabilitado. O SuperFetch pode reduzir ainda mais o consumo de memória por meio do compartilhamento de página de memória, o que é benéfico para VDI. Áreas de trabalho virtuais em pool que executam o Windows 7, o SuperFetch deve ser desabilitado, mas para desktops virtuais pessoais que executam o Windows 7, deve ser deixado em diante.
 
  

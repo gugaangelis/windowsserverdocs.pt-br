@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 46e8548e24f0d0991f69427741b0e04da6398334
-ms.sourcegitcommit: 4fa147d552481d8279a5390f458a9f7788061977
+ms.openlocfilehash: 8444e417fe089c1a3cf2acc2648b222ec5c9774c
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70009101"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865464"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>Perguntas frequentes sobre o AD FS (FAQ)
 
@@ -50,7 +50,7 @@ Sim, essa configuração tem suporte, no entanto, não há suporte para novos re
 ### <a name="is-it-possible-to-deploy-ad-fs-for-office-365-without-publishing-a-proxy-to-office-365"></a>É possível implantar AD FS para o Office 365 sem publicar um proxy no Office 365?
 Sim, há suporte para isso. No entanto, como um efeito colateral
 
-1. Você precisará gerenciar manualmente os certificados de assinatura de token de atualização porque o Azure AD não poderá acessar os metadados de Federação. Para obter mais informações sobre como atualizar manualmente o certificado de assinatura de token, leia renovar [certificados de Federação para o Office 365 e Azure Active Directory](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-o365-certs)
+1. Você precisará gerenciar manualmente os certificados de assinatura de token de atualização porque o Azure AD não poderá acessar os metadados de Federação. Para obter mais informações sobre como atualizar manualmente o certificado de assinatura de token, leia [renovar certificados de Federação para o Office 365 e Azure Active Directory](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-o365-certs)
 2. Você não poderá aproveitar os fluxos de autenticação herdados (por exemplo, o fluxo de autenticação de proxy ExO)
 
 ### <a name="what-are-load-balancing-requirements-for-ad-fs-and-wap-servers"></a>Quais são os requisitos de balanceamento de carga para servidores AD FS e WAP?
@@ -223,7 +223,7 @@ Não é recomendável fazer terminação SSL antes de WAP. Caso o encerramento d
  Além disso, no AD FS 2016 (com os patches mais atualizados) e versões posteriores também dão suporte à captura do cabeçalho x-forwardd-for. Qualquer balanceador de carga ou dispositivo de rede que não encaminhar na camada 3 (o IP é preservado) deve adicionar o IP do cliente de entrada ao cabeçalho x-forwardd-for padrão do setor. 
 
 ### <a name="i-am-trying-to-get-additional-claims-on-the-user-info-endpoint-but-its-only-returning-subject-how-can-i-get-additional-claims"></a>Estou tentando obter declarações adicionais no ponto de extremidade de informações do usuário, mas seu único retorno de assunto. Como posso obter declarações adicionais?
-O ponto de extremidade AD FS UserInfo sempre retorna a declaração da entidade conforme especificado nos padrões de OpenID. AD FS não fornece declarações adicionais solicitadas por meio do ponto de extremidade de UserInfo. Se você precisar de declarações adicionais no token de ID, consulte tokens de [ID personalizados em AD FS](../development/custom-id-tokens-in-ad-fs.md).
+O ponto de extremidade AD FS UserInfo sempre retorna a declaração da entidade conforme especificado nos padrões de OpenID. AD FS não fornece declarações adicionais solicitadas por meio do ponto de extremidade de UserInfo. Se você precisar de declarações adicionais no token de ID, consulte [tokens de ID personalizados em AD FS](../development/custom-id-tokens-in-ad-fs.md).
 
 ### <a name="why-do-i-see-a-lot-of-1021-errors-on-my-ad-fs-servers"></a>Por que vejo muitos erros 1021 em meus servidores AD FS?
 Esse evento é registrado normalmente para um acesso de recurso inválido em AD FS para o recurso 00000003-0000-0000-C000-000000000000. Esse erro é causado por um comportamento errado do cliente em que ele tenta obter um token de acesso para o serviço do Azure AD Graph. Como o recurso não está presente no AD FS, isso resulta na ID de evento 1021 nos servidores AD FS. É seguro ignorar quaisquer avisos ou erros para o recurso 00000003-0000-0000-C000-000000000000 no AD FS.

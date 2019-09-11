@@ -1,6 +1,6 @@
 ---
 title: Iniciar ou fechar aplicativos em uma estação
-description: Saiba como trabalhar com aplicativos no MultiPoint Services
+description: Saiba como trabalhar com aplicativos nos serviços do MultiPoint
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -13,19 +13,19 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 4b11d71f5a34fa4b5127b62544945655b6703f15
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 14c0c6ad7605453bdf97b52c59a1299b1aed533f
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845177"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871668"
 ---
 # <a name="launch-or-close-applications-on-a-station"></a>Iniciar ou fechar aplicativos em uma estação
-Como um usuário do MultiPoint Dashboard, você pode abrir ou fechar um aplicativo no desktop, áreas de trabalho selecionadas ou todas as áreas de trabalho do usuário.  
+Como um usuário do painel do MultiPoint, você pode abrir ou fechar um aplicativo na área de trabalho de um usuário, áreas de trabalho selecionadas ou todas as áreas de trabalho.  
   
 ## <a name="launch-an-application-on-a-user-station"></a>Iniciar um aplicativo em uma estação de usuário  
   
-1.  No MultiPoint Dashboard, clique na imagem em miniatura da área de trabalho de usuário no qual você deseja iniciar o aplicativo e, em seguida, clique no menu suspenso **inicie** na faixa de opções sob **aplicativos**.  
+1.  No painel do MultiPoint, clique na imagem em miniatura da área de trabalho do usuário na qual você deseja iniciar o aplicativo e, em seguida, clique no menu suspenso para **Iniciar** na faixa de lista em **aplicativos**.  
   
 2.  Clique em **Iniciar um aplicativo em Áreas de Trabalho Selecionadas**. A página **Iniciar Aplicativo** é aberta.  
   
@@ -33,7 +33,7 @@ Como um usuário do MultiPoint Dashboard, você pode abrir ou fechar um aplicati
   
 ## <a name="launch-an-application-on-all-user-stations"></a>Iniciar um aplicativo em todas as estações de usuário  
   
-1.  No MultiPoint Dashboard, clique no menu suspenso **inicie** (na faixa de opções sob **aplicativos**).  
+1.  No painel do MultiPoint, clique no menu suspenso para **Iniciar** (na faixa de faixas em **aplicativos**).  
   
 2.  Clique em **Iniciar um Aplicativo em Todas as Áreas de Trabalho**. A página **Iniciar Aplicativo** é aberta.  
   
@@ -41,12 +41,12 @@ Como um usuário do MultiPoint Dashboard, você pode abrir ou fechar um aplicati
   
 ## <a name="close-an-application-on-a-user-station"></a>Fechar um aplicativo em uma estação de usuário  
   
-1.  No MultiPoint Dashboard, clique na imagem em miniatura da área de trabalho no qual você deseja fechar um aplicativo.  
+1.  No painel do MultiPoint, clique na imagem em miniatura da área de trabalho na qual você deseja fechar um aplicativo.  
   
 2.  Clique em **Fechar** na faixa de opções em **Aplicativos** para abrir a página **Fechar Aplicativo**.  
   
 3.  Selecione o nome do aplicativo, pasta, documento ou recurso da Internet que deseja fechar e, em seguida, clique em **Fechar Aplicativo**.  
   
 ## <a name="see-also"></a>Consulte também  
-[Gerenciar áreas de trabalho do usuário](manage-user-desktops-using-multipoint-dashboard.md)  
+[Gerenciar áreas de trabalho de usuários](manage-user-desktops-using-multipoint-dashboard.md)  
   

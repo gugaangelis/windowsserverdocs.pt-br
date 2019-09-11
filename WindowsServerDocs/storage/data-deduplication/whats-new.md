@@ -8,36 +8,36 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 04/17/2019
-ms.openlocfilehash: 44a08443312d4e48b8fa518755e2a9b7aa50643c
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: ab32f6bec44b69b70c9e8cca2dadb4dff752cf88
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476092"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870243"
 ---
 # <a name="whats-new-in-data-deduplication"></a>Novidades na Eliminação de Duplicação de Dados
 
-> Aplica-se a: 2019, Windows Server 2016, Windows Server (canal semestral) do Windows Server
+> Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server (canal semestral)
 
-[Eliminação de duplicação de dados](overview.md) no Windows Server foi otimizada para ser altamente funcional, flexível e gerenciável em escala de nuvem privada. Para obter mais informações sobre a pilha de armazenamento definida por software no Windows Server, consulte [o que há de novo no armazenamento no Windows Server](../whats-new-in-storage.md).
+A [eliminação de duplicação de dados](overview.md) no Windows Server foi otimizada para ser altamente funcional, flexível e gerenciável em escala de nuvem privada. Para obter mais informações sobre a pilha de armazenamento definida pelo software no Windows Server, consulte [o que há de novo no armazenamento no Windows Server](../whats-new-in-storage.md).
 
-Eliminação de duplicação de dados tem os seguintes aprimoramentos no Windows Server 2019:
-
-| Funcionalidade | Novo ou atualizado | Descrição |
-|---------------|----------------|-------------|
-| Suporte a reFS  | Novo            | Store até 10 vezes mais dados no mesmo volume com eliminação de duplicação e compactação para o sistema de arquivos ReFS. (Ele tem [apenas um clique](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be) ativar com Windows Admin Center.) O repositório de partes de tamanho variável com a compactação opcional maximiza a taxas de economia, enquanto a arquitetura de pós-processamento multi-threaded mantém mínimo de impacto no desempenho. Dá suporte a volumes de até 64 TB e será eliminar os primeiros 4 TB de cada arquivo.|
-
-Eliminação de duplicação de dados tem as seguintes melhorias a partir do Windows Server 2016:
+A eliminação de duplicação de dados tem os seguintes aprimoramentos no Windows Server 2019:
 
 | Funcionalidade | Novo ou atualizado | Descrição |
 |---------------|----------------|-------------|
-| [Suporte a volumes grandes](whats-new.md#large-volume-support) | Atualizado | Antes do Windows Server 2016, os volumes tinham que ser dimensionados especificamente para a variação esperada e os tamanhos de volume acima de 10 TB não eram bons candidatos para eliminação de duplicação. No Windows Server 2016, a Eliminação de Duplicação de Dados dá suporte a tamanhos de volume de até 64 TB. |
+| Suporte a ReFS  | Novo            | Armazene até 10 vezes mais dados no mesmo volume com eliminação de duplicação e compactação para o sistema de arquivos ReFS. (É [apenas um clique](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be) para ativar com o centro de administração do Windows.) O repositório de partes de tamanho variável com compactação opcional maximiza as taxas de economia, enquanto a arquitetura de pós-processamento multi-threaded mantém o impacto do desempenho mínimo. Dá suporte a volumes de até 64 TB e eliminará a duplicação dos primeiros 4 TB de cada arquivo.|
+
+A eliminação de duplicação de dados tem os seguintes aprimoramentos a partir do Windows Server 2016:
+
+| Funcionalidade | Novo ou atualizado | Descrição |
+|---------------|----------------|-------------|
+| [Suporte para grandes volumes](whats-new.md#large-volume-support) | Atualizado | Antes do Windows Server 2016, os volumes tinham que ser dimensionados especificamente para a variação esperada e os tamanhos de volume acima de 10 TB não eram bons candidatos para eliminação de duplicação. No Windows Server 2016, a Eliminação de Duplicação de Dados dá suporte a tamanhos de volume de até 64 TB. |
 | [Suporte para arquivos grandes](whats-new.md#large-file-support) | Atualizado | Antes do Windows Server 2016, arquivos com tamanho próximo a 1 TB não eram bons candidatos para eliminação de duplicação. No Windows Server 2016, arquivos com até 1 TB têm suporte completo. |
-| [Suporte para Nano Server](whats-new.md#nano-server-support) | Novo | A Eliminação de Duplicação de Dados está disponível e tem suporte completo na nova opção de implantação do Nano Server para Windows Server 2016. |
+| [Suporte para nano Server](whats-new.md#nano-server-support) | Novo | A Eliminação de Duplicação de Dados está disponível e tem suporte completo na nova opção de implantação do Nano Server para Windows Server 2016. |
 | [Suporte de backup simplificado](whats-new.md#simple-backup-support) | Novo | O Windows Server 2012 R2 dava suporte a Aplicativos de Backup Virtualizado, como o [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx) da Microsoft por meio de uma série de etapas de configuração manual. O Windows Server 2016 adicionou um novo tipo de uso padrão (backup) para implantação perfeita da Eliminação de Duplicação de Dados para Aplicativos de Backup Virtualizado.|
 | [Suporte a upgrades do sistema operacional de cluster sem interrupção](whats-new.md#cluster-upgrade-support) | Novo | A Eliminação de Duplicação de Dados dá suporte completo ao novo recurso [Atualização sem Interrupção do SO de Cluster](../..//failover-clustering/cluster-operating-system-rolling-upgrade.md) do Windows Server 2016. |
 
-## <a name="large-volume-support"></a>Suporte a volumes grandes
+## <a name="large-volume-support"></a>Suporte para grandes volumes
 
 **Qual é o valor agregado desta alteração?**  
 Para obter o melhor desempenho da Eliminação de Duplicação de Dados no Windows Server 2012 R2, os volumes devem ser dimensionados adequadamente para garantir que o trabalho de Otimização possa acompanhar a taxa de alterações de dados ou “variação”. Normalmente, isso significa que a Eliminação de Duplicação de Dados é eficaz somente em volumes de até 10 TB, dependendo dos padrões de gravação da carga de trabalho.
@@ -60,7 +60,7 @@ No Windows Server 2012 R2, arquivos muito grandes não são bons candidatos para
 **O que passou a funcionar de maneira diferente?**  
 No Windows Server 2016, a Eliminação de Duplicação de Dados usa novas estruturas de mapa de fluxo e outros aprimoramentos "de bastidores" para aumentar a produtividade da otimização e o desempenho de acesso. Além disso, o pipeline de processamento da Eliminação de Duplicação pode agora retomar a otimização após um failover em vez de reiniciar. Essas alterações tornam a eliminação de duplicação em arquivos de até 1 TB altamente eficaz.
 
-## <a name="nano-server-support"></a>Suporte para Nano Server
+## <a name="nano-server-support"></a>Suporte para nano Server
 **Qual é o valor agregado desta alteração?**  
 O Nano Server é uma nova opção de implantação sem periféricos no Windows Server 2016 que requer uma superfície de recursos de sistema bem menor, inicializa bem mais rapidamente e exige menos atualizações e reinicializações do que a opção de implantação do Windows Server Core. A Eliminação de Duplicação de Dados tem suporte total no Nano Server. Para saber mais sobre o Nano Server, confira [Introdução ao Nano Server](../../get-started/getting-started-with-nano-server.md).
 

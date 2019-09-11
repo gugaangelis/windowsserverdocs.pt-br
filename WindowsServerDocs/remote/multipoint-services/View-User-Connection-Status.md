@@ -1,6 +1,6 @@
 ---
 title: Exibir status de conexão do usuário
-description: Saiba como exibir o status do usuário no MultiPoint Services
+description: Saiba como exibir o status do usuário nos serviços do MultiPoint
 ms.custom: na
 ms.date: 07/08/2016
 ms.prod: windows-server-threshold
@@ -13,26 +13,26 @@ ms.assetid: 426df382-07a0-4be1-a87a-12e63bd8157b
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 8ac5d18d9e85680861f48b4ce215f0abd411a122
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ea162c24dd9fe68e9492dea007583a6b1293da2d
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850417"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871464"
 ---
 # <a name="view-user-connection-status"></a>Exibir status de conexão do usuário
-Use o **estações** guia para determinar o status de conexão do outro usuário administrativo a uma estação do MultiPoint Services ou de um padrão.  
+Use a guia **estações** para determinar o status de uma conexão padrão ou de outro usuário administrativo com uma estação de serviços do MultiPoint.  
   
 Os valores de status incluem os seguintes:  
   
 -   **Conectado**: Uma sessão de usuário que está ativa em uma estação  
   
--   **Suspenso**: Uma sessão de usuário que está suspenso, mas ainda está ativa no computador. A sessão da área de trabalho do usuário é mantida até o usuário fazer logon novamente  
+-   **Suspenso**: Uma sessão de usuário que é suspensa, mas ainda está ativa no computador. A sessão de área de trabalho do usuário é preservada até que o usuário faça logon novamente  
   
--   **Conectado off**: Um usuário que foi desconectado não é exibido na **estações** guia  
+-   **Desconectado**: Um usuário que está desconectado não é exibido na guia **estações**  
   
-Para exibir o status da estação, abra o MultiPoint Manager no modo de estações e, em seguida, clique em **estações**.
+Para exibir o status da estação, abra o Gerenciador do MultiPoint no modo estações e clique em **estações**.
 
 ## <a name="see-also"></a>Consulte também  
-[Gerenciar áreas de trabalho do usuário](manage-user-desktops-using-multipoint-dashboard.md)  
-[Alternar entre modos](Switch-Between-Modes.md)
+[Gerenciar áreas de trabalho de usuários](manage-user-desktops-using-multipoint-dashboard.md)  
+[Alternar entre os modos](Switch-Between-Modes.md)

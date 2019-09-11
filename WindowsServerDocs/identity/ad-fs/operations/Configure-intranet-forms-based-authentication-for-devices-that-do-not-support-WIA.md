@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 6a730483f99e1c937c3618853ee6d3dbd175356b
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 010315796c6f6328dde661ce79947898f95a80c4
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544584"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865820"
 ---
 # <a name="configuring-intranet-forms-based-authentication-for-devices-that-do-not-support-wia"></a>Configurando a autenticação baseada em formulários de intranet para dispositivos que não dão suporte a WIA
 
@@ -27,7 +27,7 @@ AD FS no Windows Server 2016 e no Windows Server 2012 R2 fornece aos administrad
 - A propriedade **WIASupportedUserAgentStrings** do `Set-ADFSProperties` commandlet
 - A propriedade **WindowsIntegratedFallbackEnabled** do `Set-AdfsGlobalAuthenticationPolicy` commandlet
 
-O **WIASupportedUserAgentStrings** define os agentes de usuário que dão suporte a WIA. AD FS analisa a cadeia de caracteres do agente do usuário ao executar logons em um navegador ou controle de navegador. Se o componente da cadeia de caracteres do agente do usuário não corresponder a nenhum dos componentes das cadeias de caracteres do agente do usuário configurados na propriedade **WIASupportedUserAgentStrings** , o AD FS voltará a fornecer autenticação baseada em formulários, desde que o O sinalizador WindowsIntegratedFallbackEnabled está definido como true.
+O **WIASupportedUserAgentStrings** define os agentes de usuário que dão suporte a WIA. AD FS analisa a cadeia de caracteres do agente do usuário ao executar logons em um navegador ou controle de navegador. Se o componente da cadeia de caracteres do agente do usuário não corresponder a nenhum dos componentes das cadeias de caracteres do agente do usuário configurados na propriedade **WIASupportedUserAgentStrings** , o AD FS voltará a fornecer autenticação baseada em formulários, desde que oO sinalizador WindowsIntegratedFallbackEnabled está definido como true.
 
 Por padrão, uma nova instalação do AD FS tem um conjunto de correspondências de cadeias de caracteres do agente do usuário criado. No entanto, elas podem estar desatualizadas com base nas alterações feitas em navegadores e dispositivos. Particularmente, os dispositivos Windows têm cadeias de caracteres de agente do usuário semelhantes com pequenas variações nos tokens. O exemplo do Windows PowerShell a seguir fornece a melhor orientação para o conjunto atual de dispositivos que estão no mercado atualmente que dão suporte a WIA contínuo:
 

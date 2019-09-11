@@ -1,78 +1,78 @@
 ---
 ms.assetid: 72a90d00-56ee-48a9-9fae-64cbad29556c
-title: Hora precisa do Windows Server 2016
-description: Precisão de sincronização de hora no Windows Server 2016 melhorou substancialmente, mantendo de modo completo com versões anteriores NTP compatibilidade com versões mais antigas do Windows.
+title: Tempo preciso para o Windows Server 2016
+description: A precisão da sincronização de tempo no Windows Server 2016 foi aprimorada substancialmente, mantendo a compatibilidade de NTP completa com versões mais antigas do Windows.
 author: shortpatti
 ms.author: dacuo
 ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: 75465aad45fc1b5e360fa1153a6530a771731f66
-ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
+ms.openlocfilehash: acc46dacdf1d8b11aaa45b3665e8d11ee75635cf
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67469441"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871839"
 ---
-# <a name="accurate-time-for-windows-server-2016"></a>Hora precisa do Windows Server 2016
+# <a name="accurate-time-for-windows-server-2016"></a>Tempo preciso para o Windows Server 2016
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows 10 ou posterior
 
-O serviço de tempo do Windows é um componente que usa um modelo de plug-in para provedores de sincronização de hora do cliente e servidor.  Há dois provedores de cliente interno no Windows e plug-ins de terceiros estão disponíveis. Usa um provedor [NTP (RFC 1305)](https://tools.ietf.org/html/rfc1305) ou [MS NTP](https://msdn.microsoft.com/library/cc246877.aspx) para sincronizar a hora do sistema local para um servidor de referência em conformidade NTP e/ou MS-NTP. O outro provedor é para o Hyper-V e sincroniza as máquinas virtuais (VM) para o host do Hyper-V.  Quando existem vários provedores, o Windows escolhe o melhor provedor usando o nível de camada em primeiro lugar, seguido por um atraso de raiz, dispersão de raiz e, por fim, o deslocamento de tempo.
+O serviço de tempo do Windows é um componente que usa um modelo de plug-in para provedores de sincronização de cliente e servidor.  Há dois provedores de cliente internos no Windows e há plug-ins de terceiros disponíveis. Um provedor usa [NTP (RFC 1305)](https://tools.ietf.org/html/rfc1305) ou [MS-NTP](https://msdn.microsoft.com/library/cc246877.aspx) para sincronizar a hora do sistema local com um servidor de referência compatível com NTP e/ou MS-NTP. O outro provedor é para Hyper-V e sincroniza máquinas virtuais (VM) para o host do Hyper-V.  Quando houver vários provedores, o Windows escolherá o melhor provedor usando o nível de estrato primeiro, seguido por atraso raiz, dispersão de raiz e, por fim, o deslocamento de tempo.
 
 > [!NOTE]
-> Para obter uma visão geral do serviço de tempo do Windows, dê uma olhada neste [vídeo de visão geral](https://aka.ms/WS2016TimeVideo).
+> Para obter uma visão geral rápida do serviço de tempo do Windows, veja este [vídeo de visão geral de alto nível](https://aka.ms/WS2016TimeVideo).
 
-Neste tópico, discutiremos... Esses tópicos como eles se relacionam permitir tempo preciso: 
+Neste tópico, discutiremos... Estes tópicos estão relacionados para habilitar o tempo preciso: 
 
-- Melhorias
+- Na
 - Medidas
 - Práticas recomendadas
 
 > [!IMPORTANT]
-> Um adendo mencionado no artigo do Windows 2016 precisos tempo pode ser baixado [aqui](https://windocs.blob.core.windows.net/windocs/WindowsTimeSyncAccuracy_Addendum.pdf).  Este documento fornece mais detalhes sobre as metodologias de nossos testes e medidas.
+> Um adendo referenciado pelo artigo de tempo preciso do Windows 2016 pode ser baixado [aqui](https://windocs.blob.core.windows.net/windocs/WindowsTimeSyncAccuracy_Addendum.pdf).  Este documento fornece mais detalhes sobre nossas metodologias de teste e medição.
 
 > [!NOTE] 
-> É o modelo de plug-in de provedor de tempo do windows [documentadas no TechNet](https://msdn.microsoft.com/library/windows/desktop/ms725475%28v=vs.85%29.aspx).
+> O modelo de plug-in do provedor de tempo do Windows está [documentado no TechNet](https://msdn.microsoft.com/library/windows/desktop/ms725475%28v=vs.85%29.aspx).
 
 ## <a name="domain-hierarchy"></a>Hierarquia de domínio
-Configurações de domínio e autônomo funcionam de forma diferente.
+Configurações autônomas e de domínio funcionam de maneira diferente.
 
-- Membros do domínio usam um protocolo NTP seguro, que usa a autenticação para garantir a segurança e a autenticidade da referência de tempo.  Membros do domínio sincronizar com um relógio mestre determinado pela hierarquia de domínio e um sistema de pontuação.  Em um domínio, há uma camada hierárquica de stratums de tempo, no qual cada controlador de domínio aponta para um controlador de domínio pai com uma camada de tempo mais preciso.  A hierarquia é resolvido para o controlador de domínio primário ou um controlador de domínio na floresta de raiz ou um controlador de domínio com o sinalizador de domínio GTIMESERV, que denota um bom tempo de servidor para o domínio.  Consulte a [especificar um Local confiável tempo de serviço usando GTIMESERV](#GTIMESERV) seção abaixo.
+- Os membros do domínio usam um protocolo NTP seguro, que usa a autenticação para garantir a segurança e a autenticidade da referência de tempo.  Os membros do domínio sincronizam com um relógio mestre determinado pela hierarquia de domínio e um sistema de pontuação.  Em um domínio, há uma camada hierárquica de imposições de tempo, na qual cada DC aponta para um controlador de domínio pai com um estrato de tempo mais preciso.  A hierarquia é resolvida para o PDC ou um DC na floresta raiz ou um DC com o sinalizador de domínio GTIMESERV, que denota um bom servidor de horário para o domínio.  Consulte a seção [especificar um serviço de horário confiável local usando o GTIMESERV](#GTIMESERV) abaixo.
 
-- As máquinas autônomas são configuradas para usar time.windows.com por padrão.  Esse nome é resolvido pelo servidor DNS, que deve apontar para um recurso de propriedade da Microsoft.  Como todas as referências de hora localizado remotamente, interrupções de rede, pode impedir a sincronização.  Cargas de tráfego de rede e caminhos de rede assimétrica poderão reduzir a precisão da sincronização de tempo.  Para precisão de 1 ms, você não pode depender de uma fonte de tempo remoto.
+- Os computadores autônomos são configurados para usar o time.windows.com por padrão.  Esse nome é resolvido pelo servidor DNS, que deve apontar para um recurso de propriedade da Microsoft.  Como todas as referências de horário localizadas remotamente, as interrupções de rede podem impedir a sincronização.  Cargas de tráfego de rede e caminhos de rede assimétrica podem reduzir a precisão da sincronização de tempo.  Para uma precisão de 1 ms, você não pode depender de fontes de tempo remotas.
 
-Como convidados Hyper-V terá pelo menos dois provedores de tempo do Windows para sua escolha, a hora do host e o NTP, você poderá ver diferentes comportamentos com o domínio ou autônomo quando em execução como convidado.
+Como os convidados do Hyper-V terão pelo menos dois provedores de tempo do Windows para escolher, o tempo de host e o NTP, você poderá ver comportamentos diferentes com o domínio ou autônomo ao executar como convidado.
 
 > [!NOTE] 
-> Para obter mais informações sobre a hierarquia de domínio e o sistema de pontuação, consulte o ["Qual é o serviço de tempo do Windows?"](https://blogs.msdn.microsoft.com/w32time/2007/07/07/what-is-windows-time-service/) .
+> Para obter mais informações sobre a hierarquia de domínio e o sistema de pontuação, consulte o ["o que é o serviço de tempo do Windows?"](https://blogs.msdn.microsoft.com/w32time/2007/07/07/what-is-windows-time-service/) .
 
 > [!NOTE]
-> Stratum é um conceito usado em provedores de NTP e o Hyper-V e seu valor indica o local de relógios na hierarquia.  Camada 1 é reservada para o relógio do nível mais alto e a camada 0 é reservada para o hardware considerado precisos e tem pouco ou nenhum atraso associado a ele.  Camada 2 se comunicar com servidores de camada 1, a camada 3 para a camada 2 e assim por diante.  Enquanto uma camada inferior geralmente indica um relógio mais preciso, é possível encontrar discrepâncias.  Além disso, W32time aceita apenas o tempo de stratum 15 ou abaixo.  Para ver a camada de um cliente, use *w32tm /query /status*.
+> O estrato é um conceito usado nos provedores NTP e Hyper-V, e seu valor indica o local dos relógios na hierarquia.  O estrato 1 é reservado para o clock de nível mais alto e o estrato 0 é reservado para que o hardware tenha sido considerado preciso e tenha pouco ou nenhum atraso associado a ele.  O estrato 2 conversa com servidores de estrato 1, o estrato 3 para o estrato 2 e assim por diante.  Embora uma camada mais baixa geralmente indique um relógio mais preciso, é possível encontrar discrepâncias.  Além disso, o W32time aceita apenas o tempo do estrato 15 ou abaixo.  Para ver o estrato de um cliente, use *w32tm/Query/status*.
 
 ## <a name="critical-factors-for-accurate-time"></a>Fatores críticos para o tempo preciso
-Em todos os casos para o tempo preciso, há três fatores críticos:
+Em cada caso, para um tempo preciso, há três fatores críticos:
 
-1. **Relógio sólida de origem** -o relógio do código-fonte no seu domínio precisa estar estável e precisas. Isso geralmente significa instalar um dispositivo GPS ou apontando para uma fonte de camada 1, considerando #3. A analogia vai, se você tiver dois barcos sobre a água e você está tentando medir a altitude de um em comparação com os outros, a precisão é melhor se o cruzeiro de origem é muito estável e não movendo. O mesmo vale para o tempo e, se o relógio do seu código-fonte não é estável, em seguida, toda a cadeia de relógios sincronizados é afetada e aumentada em cada estágio. Ele também deve ser acessível porque interrupções na conexão irá interferir com a sincronização de hora. E, finalmente, ele deve ser seguro. Se o tempo de referência não está corretamente mantidas ou operados por usuários possivelmente mal-intencionados, você poderia expor seu domínio para ataques de tempo com base.
-2. **O relógio de cliente estável** -relógios um cliente estável garante que o descompasso natural do oscilador é containable.  O NTP usa várias amostras de potencialmente vários servidores NTP a condição e o relógio de computadores locais de disciplina.  Ele não entra as alterações de tempo, mas em vez disso, reduz o ou acelera o relógio local para que você aborda o tempo preciso rapidamente e permanecer precisas entre as solicitações NTP.  No entanto, se o oscilador de relógio computador do cliente não é estável, flutuações mais entre os ajustes podem ocorrer, e os algoritmos que usa o Windows para o relógio de condição não funcionam com precisão.  Em alguns casos, as atualizações de firmware podem ser necessário tempo preciso.
-3. **A comunicação de NTP simétrica** -é essencial que a conexão para a comunicação de NTP é simétrica.  NTP usa cálculos para ajustar o tempo que assumem que o patch de rede é simétrico.  Se o caminho do pacote NTP se vão para o servidor leva uma quantidade diferente de tempo para retornar, a precisão é afetada.  Por exemplo, o caminho pode alterar devido a alterações na topologia de rede ou pacotes serem roteados por meio de dispositivos que têm velocidades de interface diferente.
+1. **Relógio de origem sólido** -o relógio de origem em seu domínio precisa ser estável e preciso. Isso geralmente significa instalar um dispositivo GPS ou apontar para uma origem de estrato 1, levando #3 em conta. A analogia vai, se você tiver duas Boats na água e estiver tentando medir a altitude de uma em comparação com a outra, sua precisão será melhor se o barco de origem for muito estável e não estiver se movendo. O mesmo acontece com o tempo e, se o relógio de origem não estiver estável, a cadeia inteira de relógios sincronizados será afetada e ampliada em cada estágio. Ele também deve estar acessível porque as interrupções na conexão interferirão na sincronização de tempo. E, finalmente, deve ser seguro. Se a referência de tempo não for mantida corretamente ou operada por uma parte potencialmente mal-intencionada, você poderá expor seu domínio a ataques baseados em tempo.
+2. **Relógio de cliente estável** -um relógio de cliente estável garante que a descompasso natural do Oscillator seja confinada.  O NTP usa várias amostras de potencialmente vários servidores NTP para condição e disciplina do relógio de seus computadores locais.  Ele não aborda as alterações de horário, mas, em vez disso, reduz ou acelera o relógio local para que você se aproximar do tempo exato rapidamente e fique preciso entre as solicitações de NTP.  No entanto, se o Oscillator do relógio do computador cliente não for estável, mais flutuações entre os ajustes poderão ocorrer e os algoritmos que o Windows usa para a condição de que o relógio não funcione com precisão.  Em alguns casos, as atualizações de firmware podem ser necessárias para o tempo preciso.
+3. **Comunicação de NTP simétrico** – é essencial que a conexão para comunicação de NTP seja simétrica.  O NTP usa cálculos para ajustar o tempo que pressupõe que o patch de rede seja simétrico.  Se o caminho que o pacote NTP leva para o servidor levar um período de tempo diferente para retornar, a precisão será afetada.  Por exemplo, o caminho pode ser alterado devido a alterações na topologia de rede, ou os pacotes que estão sendo roteados por meio de dispositivos com velocidades de interface diferentes.
 
-Para dispositivos alimentado por bateria, móveis e portátil, você deve considerar estratégias diferentes.  De acordo com a nossa recomendação, manter o horário com precisão requer o relógio para ser disciplinada uma vez por segundo, que se correlaciona com a frequência de atualização do relógio. Essas configurações serão consumir a bateria mais que o esperado e pode interferir com energia salvando modos disponíveis no Windows para esses dispositivos. Dispositivos alimentado por bateria também tem alguns modos de energia que pararem todos os aplicativos sejam executados, o que interfere capacidade da W32time para o relógio de disciplina e manter o horário com precisão. Além disso, os relógios em dispositivos móveis podem não ser muito precisos para começar.  Ambientes condições ambientais afetam a precisão do relógio e um dispositivo móvel pode mover de uma condição de ambiente para a próxima que pode interferir em sua capacidade de manter o tempo com precisão.  Portanto, a Microsoft não recomenda que você configure dispositivos portáteis de alimentado por bateria com configurações de alta precisão. 
+Para dispositivos com bateria, móveis e portáteis, você deve considerar estratégias diferentes.  De acordo com nossa recomendação, manter o tempo preciso exige que o relógio seja disciplinado uma vez por segundo, que se correlaciona com a frequência de atualização do relógio. Essas configurações consumirão mais energia da bateria do que o esperado e podem interferir nos modos de economia de energia disponíveis no Windows para tais dispositivos. Os dispositivos com bateria também têm determinados modos de energia que interrompem a execução de todos os aplicativos, o que interfere na capacidade de W32time's de disciplinar o relógio e manter o tempo preciso. Além disso, os relógios em dispositivos móveis podem não ser muito precisos para começar.  As condições ambientais de ambiente afetam a precisão do relógio e um dispositivo móvel pode passar de uma condição de ambiente para a seguinte, o que pode interferir em sua capacidade de manter o tempo preciso.  Portanto, a Microsoft não recomenda que você configure dispositivos portáteis alimentados pela bateria com configurações de alta precisão. 
 
 ## <a name="why-is-time-important"></a>Por que o tempo é importante?  
-Há vários motivos diferentes, que talvez seja necessário horário com precisão.  O caso típico para Windows é Kerberos, que exige que 5 minutos de precisão entre o cliente e servidor.  No entanto, há muitas outras áreas que podem ser afetadas pela precisão de tempo incluindo:
+Há muitas razões diferentes pelas quais você pode precisar de tempo preciso.  O caso típico do Windows é o Kerberos, que exige 5 minutos de precisão entre o cliente e o servidor.  No entanto, há muitas outras áreas que podem ser afetadas pela precisão do tempo, incluindo:
 
 
-- As normas governamentais, como:
-    - precisão de 50 ms para FINRA nos EUA
-    - 1 ms ESMA (MiFID II) na UE.
+- Regulamentos do governo como:
+    - 50 ms de precisão para FINRA nos EUA
+    - 1 MS ESMA (MiFID II) na UE.
 - Algoritmos de criptografia
-- Sistemas distribuídos, como Cluster/SQL/trocar e bancos de dados de documento
-- Estrutura de Blockchain para transações de bitcoin
+- Sistemas distribuídos, como cluster/SQL/Exchange e bancos de documentos
+- Estrutura Blockchain para transações Bitcoin
 - Logs distribuídos e análise de ameaças 
 - Replicação do AD
-- PCI (Payment Card Industry), a precisão de segundo atualmente 1
+- PCI (setor de cartão de pagamento), precisão de 1 segundo no momento
 
 
 

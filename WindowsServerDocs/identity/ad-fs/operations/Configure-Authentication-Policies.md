@@ -9,100 +9,100 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 2215f172128a533e0e0d4e10b72be53ad455a262
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 5bd53022646b554e4a6cc09925607c66cead21e9
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444964"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865899"
 ---
 # <a name="configure-authentication-policies"></a>Configurar políticas de autenticação
 
-No AD FS no Windows Server 2012 R2, controle de acesso e o mecanismo de autenticação são aprimoradas com vários fatores que incluem dados de usuário, dispositivo, localização e autenticação. Essas melhorias permitem que você, por meio da interface do usuário ou por meio do Windows PowerShell, para gerenciar o risco de conceder permissões de acesso para o AD FS\-protegidos aplicativos por meio de várias\-fatorar o controle de acesso e várias\-autenticação multifator com base em associação de grupo ou identidade de usuário, local de rede, dados de dispositivo que é o local de trabalho\-unidas, e a autenticação do estado quando várias\-autenticação multifator \(MFA\) foi executada.  
+No AD FS, no Windows Server 2012 R2, o controle de acesso e o mecanismo de autenticação são aprimorados com vários fatores que incluem dados de usuário, dispositivo, local e autenticação. Esses aprimoramentos permitem que você, por meio da interface do usuário ou do Windows PowerShell, gerencie o risco de conceder permissões de acesso\-para AD FS aplicativos protegidos\-por meio do controle de acesso de vários fatores e de vários\-autenticação do factor que se baseia na identidade do usuário ou na associação de grupo, no local de rede\-, nos dados do dispositivo que são ingressados no \(local de trabalho e no\-estado de autenticação quando a MFAdaautenticaçãomultifator\) foi executada.  
 
-Para obter mais informações sobre o MFA e multi-thread\-fatorar o controle de acesso nos serviços de Federação do Active Directory \(do AD FS\) no Windows Server 2012 R2, consulte os tópicos a seguir:  
+Para obter mais informações sobre MFA e\-controle de acesso de vários \(fatores\) no serviços de Federação do Active Directory (AD FS) AD FS no Windows Server 2012 R2, consulte os seguintes tópicos:  
 
 
--   [Ingresse no local de trabalho de qualquer dispositivo de SSO contínuo e fatores de autenticação em aplicativos da empresa](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
+-   [Ingresso no Local de Trabalho em qualquer dispositivo de SSO e autenticação de dois fatores contínua em aplicativos da empresa](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 
 -   [Gerenciar risco com o Controle de Acesso Condicional](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 
--   [Gerencie riscos com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
+-   [Gerenciar riscos com Autenticação Multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 
-## <a name="configure-authentication-policies-via-the-ad-fs-management-snap-in"></a>Configurar políticas de autenticação por meio do snap de gerenciamento do AD FS\-em  
-A associação ao grupo **Administradores** ou equivalente no computador local é o requisito mínimo para concluir esses procedimentos.  Examine os detalhes sobre como usar as contas apropriadas e associações de grupos em [domínio grupos padrão Local e](https://go.microsoft.com/fwlink/?LinkId=83477).   
+## <a name="configure-authentication-policies-via-the-ad-fs-management-snap-in"></a>Configurar políticas de autenticação por meio do snap\-in de gerenciamento de AD FS  
+A associação ao grupo **Administradores** ou equivalente no computador local é o requisito mínimo para concluir esses procedimentos.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
 
-No AD FS no Windows Server 2012 R2, você pode especificar uma política de autenticação em um escopo global que é aplicável a todos os aplicativos e serviços que são protegidos pelo AD FS. Você também pode definir políticas de autenticação para aplicativos e serviços que dependem de objetos de confiança e são protegidos pelo AD FS específicos. Especificando uma política de autenticação para um aplicativo específico por terceira parte confiável de confiança não substitui a política de autenticação global. Se global ou por terceira parte confiável de confiança da política de autenticação requer MFA, a MFA é disparada quando o usuário tenta autenticar para essa terceira parte confiável. A política de autenticação global é um fallback para objetos de confiança para aplicativos e serviços que não têm uma política específica de autenticação configurado. 
+No AD FS, no Windows Server 2012 R2, você pode especificar uma política de autenticação em um escopo global que seja aplicável a todos os aplicativos e serviços protegidos pelo AD FS. Você também pode definir políticas de autenticação para aplicativos e serviços específicos que dependem de relações de confiança de terceiros e são protegidos pelo AD FS. A especificação de uma política de autenticação para um aplicativo específico por confiança de terceira parte confiável não substitui a política de autenticação global. Se a política global ou de autenticação de confiança de terceira parte confiável exigir MFA, a MFA será disparada quando o usuário tentar se autenticar nessa terceira parte confiável. A política de autenticação global é um fallback para confianças de terceira parte confiável para aplicativos e serviços que não têm uma política de autenticação configurada específica. 
 
-## <a name="to-configure-primary-authentication-globally-in-windows-server-2012-r2"></a>Para configurar a autenticação primária global no Windows Server 2012 R2 
+## <a name="to-configure-primary-authentication-globally-in-windows-server-2012-r2"></a>Para configurar a autenticação primária globalmente no Windows Server 2012 R2 
 
-1.  No Gerenciador do servidor, clique em **ferramentas**e, em seguida, selecione **gerenciamento do AD FS**.  
+1.  Em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, selecione **Gerenciamento de AD FS**.  
 
-2.  No AD FS snap\-, clique em **políticas de autenticação**.  
+2.  Em AD FS snap\-in, clique em **políticas de autenticação**.  
 
-3.  No **autenticação primária** seção, clique em **editar** lado **configurações globais**. Você pode também com o botão direito\-clique em **políticas de autenticação**e selecione **Editar autenticação primária Global**, ou, sob o **ações** painel, selecione  **Editar autenticação primária Global**.  
+3.  Na seção **autenticação primária** , clique em **Editar** ao lado de **configurações globais**. Você também pode clicar\-com o botão direito do mouse em **políticas de autenticação**e selecionar **Editar Autenticação global primária**ou, no painel **ações** , selecionar **Editar Autenticação global primária**.  
 ![políticas de autenticação](media/Configure-Authentication-Policies/authpolicy1.png)
 
-4.  No **Editar política de autenticação Global** janela diante a **primário** guia, você pode configurar as configurações a seguir como parte da política de autenticação global:  
+4.  Na janela **Editar política de autenticação global** , na guia **primário** , você pode definir as seguintes configurações como parte da política de autenticação global:  
 
-    -   Métodos de autenticação a ser usado para autenticação primária. Você pode selecionar os métodos de autenticação disponíveis sob o **Extranet** e **Intranet**.  
+    -   Métodos de autenticação a serem usados para autenticação primária. Você pode selecionar os métodos de autenticação disponíveis na **extranet** e na **intranet**.  
 
-    -   Autenticação de dispositivo por meio de **habilitar autenticação de dispositivo** caixa de seleção. Para obter mais informações, consulte [Join to Workplace from Any Device for SSO and Seamless Second Factor Authentication Across Company Applications](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).  
+    -   Autenticação de dispositivo por meio da caixa de seleção **habilitar autenticação de dispositivo** . Para obter mais informações, consulte [ingresse no local de trabalho de qualquer dispositivo para SSO e contínuo segundo fator de autenticação em aplicativos da empresa](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).  
 ![políticas de autenticação](media/Configure-Authentication-Policies/authpolicy2.png)  
 
-## <a name="to-configure-primary-authentication-per-relying-party-trust"></a>Para configurar a autenticação primária por terceira parte confiável de confiança  
+## <a name="to-configure-primary-authentication-per-relying-party-trust"></a>Para configurar a autenticação primária por confiança de terceira parte confiável  
 
-1.  No Gerenciador do servidor, clique em **ferramentas**e, em seguida, selecione **gerenciamento do AD FS**.  
+1.  Em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, selecione **Gerenciamento de AD FS**.  
 
-2.  No AD FS snap\-, clique em **políticas de autenticação**\\**por confiança da terceira parte**e, em seguida, clique em de terceira parte confiável para o qual você deseja configurar a autenticação políticas.  
+2.  No AD FS snap\-in, clique em **políticas**\\de autenticação**por confiança de terceira parte confiável**e clique na confiança da terceira parte confiável para a qual você deseja configurar políticas de autenticação.  
 
-3.  Diretamente\-clique a terceira parte confiável para o qual você deseja configurar políticas de autenticação e, em seguida, selecione **Editar autenticação primária personalizada**, ou, sob o **ações** painel, Selecione **Editar autenticação primária personalizada**.  
+3.  Clique com\-o botão direito do mouse na terceira parte confiável para a qual você deseja configurar as políticas de autenticação e selecione **Editar Autenticação primária personalizada**ou, no painel **ações** , selecione **Editar primário personalizado Autenticação**do.  
 ![políticas de autenticação](media/Configure-Authentication-Policies/authpolicy5.png)   
 
-4.  No **editar a política de autenticação para < terceira parte confiável\_terceiros\_confiança\_nome >** janela, no **primário** guia, você pode definir a configuração a seguir como parte do **por terceira parte confiável** política de autenticação:  
+4.  Na janela **Editar política de autenticação para < nome\_de\_confiança\_de terceira parte confiável >** , na guia **primária** , você pode definir a seguinte configuração como parte da **confiança de terceira parte confiável** política de autenticação:  
 
-    -   Se os usuários são solicitados a fornecer suas credenciais cada vez na entrada\-no via o **os usuários precisarão fornecer suas credenciais cada vez na entrada\-em** caixa de seleção.  
+    -   Se os usuários precisam fornecer suas credenciais a cada vez ao entrar\-por meio do, os **usuários precisam fornecer\-suas credenciais a cada** vez na caixa de seleção entrar.  
 ![políticas de autenticação](media/Configure-Authentication-Policies/authpolicy6.png) 
 
 ## <a name="to-configure-multi-factor-authentication-globally"></a>Para configurar a autenticação multifator globalmente  
 
-1.  No Gerenciador do servidor, clique em **ferramentas**e, em seguida, selecione **gerenciamento do AD FS**.  
+1.  Em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, selecione **Gerenciamento de AD FS**.  
 
-2.  No AD FS snap\-, clique em **políticas de autenticação**.  
+2.  Em AD FS snap\-in, clique em **políticas de autenticação**.  
 
-3.  No **Multi\-autenticação fatores** seção, clique em **editar** próximo a **configurações globais**. Você pode também com o botão direito\-clique em **políticas de autenticação**e selecione **editar vários Global\-autenticação fatores**, ou, no **ações**painel, selecione **Editar Global Multi\-autenticação de fatores**.  
+3.  Na seção **autenticaçãomultifator,cliqueemEditaraoladodeconfigurações\-** **globais**. Você também pode clicar\- **\-** **comobotãodireitodomouseempolíticasdeautenticaçãoeselecionarEditarautenticaçãomultifatorglobalou,nopainelAções,selecionarEditarautenticaçãomultifatorglobal\-** .  
 ![políticas de autenticação](media/Configure-Authentication-Policies/authpolicy8.png)   
 
-4.  No **Editar política de autenticação Global** janela, sob o **Multi\-fator** guia, você pode configurar as configurações a seguir como parte do global com vários\-fator política de autenticação:  
+4.  Na janela **Editar política de autenticação global** , na guia **vários\-fatores** , você pode definir as seguintes configurações\-como parte da política de autenticação multifator global:  
 
-    -   As configurações ou condições para MFA por meio de opções disponíveis sob o **usuários\/grupos**, **dispositivos**, e **locais** seções.  
+    -   Configurações ou condições para MFA por meio de opções disponíveis nas seções **grupos de\/usuários**, **dispositivos**e **locais** .  
 
-    -   Para habilitar a MFA para qualquer uma dessas configurações, você deve selecionar pelo menos um método de autenticação adicional. **Autenticação de certificado** é a opção de padrão disponíveis. Você também pode configurar outros métodos adicionais de autenticação personalizada, por exemplo, Windows Azure Active Authentication. Para obter mais informações, consulte [guia passo a passo: Gerencie riscos com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md).  
+    -   Para habilitar a MFA para qualquer uma dessas configurações, você deve selecionar pelo menos um método de autenticação adicional. A **autenticação de certificado** é a opção padrão disponível. Você também pode configurar outros métodos de autenticação adicionais personalizados, por exemplo, autenticação ativa do Windows Azure. Para obter mais informações, [consulte Guia de instruções: Gerencie riscos com autenticação multifator adicional para aplicativos](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)confidenciais.  
 
 > [!WARNING]  
 > Você só pode configurar métodos de autenticação adicionais globalmente.  
 ![políticas de autenticação](media/Configure-Authentication-Policies/authpolicy9.png)  
 
-## <a name="to-configure-multi-factor-authentication-per-relying-party-trust"></a>Para configurar várias\-autenticação multifator por terceira parte confiável de confiança  
+## <a name="to-configure-multi-factor-authentication-per-relying-party-trust"></a>Para configurar a\-autenticação multifator por objeto de confiança de terceira parte confiável  
 
-1.  No Gerenciador do servidor, clique em **ferramentas**e, em seguida, selecione **gerenciamento do AD FS**.  
+1.  Em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, selecione **Gerenciamento de AD FS**.  
 
-2.  No AD FS snap\-, clique em **políticas de autenticação**\\**por confiança da terceira parte**e, em seguida, clique em de terceira parte confiável para o qual você deseja configurar a MFA.  
+2.  No AD FS snap\-in, clique em **políticas**\\de autenticação**por confiança de terceira parte confiável**e clique na confiança da terceira parte confiável para a qual você deseja configurar a MFA.  
 
-3.  Diretamente\-clique a terceira parte confiável para o qual você deseja configurar a MFA e, em seguida, selecione **Editar personalizado Multi\-autenticação fatores**, ou, nas **ações** painel, Selecione **Editar personalizado Multi\-autenticação fatores**.  
+3.  Clique com\-o botão direito do mouse na terceira parte confiável para a qual você deseja configurar a MFA e, em seguida, selecione **\-editar autenticação multifator personalizada**ou, no painel **ações** , selecione **Editar\- múltiplo personalizado Autenticação de fator**.  
 
-4.  No **editar a política de autenticação para < terceira parte confiável\_terceiros\_confiança\_nome >** janela, no **Multi\-fator** guia, você pode configurar as configurações a seguir como parte do por\-política de autenticação de confiança de terceira parte confiável terceiros:  
+4.  Na janela **Editar política de autenticação para < nome\_de\_confiança\_de terceira parte confiável >** , na guia **vários\-fatores** , você pode definir as seguintes configurações como parte do\-política de autenticação de confiança de terceira parte confiável:  
 
-    -   As configurações ou condições para MFA por meio de opções disponíveis sob o **usuários\/grupos**, **dispositivos**, e **locais** seções.  
+    -   Configurações ou condições para MFA por meio de opções disponíveis nas seções **grupos de\/usuários**, **dispositivos**e **locais** .  
 
 ## <a name="configure-authentication-policies-via-windows-powershell"></a>Configurar políticas de autenticação por meio do Windows PowerShell  
-Windows PowerShell permite maior flexibilidade no uso de vários fatores de controle de acesso e o mecanismo de autenticação que estão disponíveis no AD FS no Windows Server 2012 R2 para configurar as políticas de autenticação e autorização regras que são necessárias para implementar o acesso condicional para o AD FS \-recursos protegidos.  
+O Windows PowerShell permite maior flexibilidade no uso de vários fatores de controle de acesso e do mecanismo de autenticação que estão disponíveis em AD FS no Windows Server 2012 R2 para configurar políticas de autenticação e regras de autorização que são necessárias para Implemente o verdadeiro acesso condicional para \-seus AD FS recursos protegidos.  
 
-Associação de administradores ou equivalente, no computador local é o requisito mínimo para concluir esses procedimentos.  Examine os detalhes sobre como usar as contas apropriadas e associações de grupos em [domínio grupos padrão Local e](https://go.microsoft.com/fwlink/?LinkId=83477) \(http:\/\/go.microsoft.com\/fwlink\/? LinkId\=83477\).   
+A associação em administradores, ou equivalente, no computador local é o requisito mínimo para concluir esses procedimentos.  Examinar os detalhes sobre como usar as contas apropriadas e as associações de grupo em \( [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477) http:\/\/go.Microsoft.com\/fwlink\/? \=LinkId 83477.\)   
 
-### <a name="to-configure-an-additional-authentication-method-via-windows-powershell"></a>Para configurar um método de autenticação adicionais por meio do Windows PowerShell  
+### <a name="to-configure-an-additional-authentication-method-via-windows-powershell"></a>Para configurar um método de autenticação adicional por meio do Windows PowerShell  
 
-1.  No servidor de federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
+1.  No servidor de Federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
 
 
 ~~~
@@ -113,7 +113,7 @@ Associação de administradores ou equivalente, no computador local é o requisi
 > [!WARNING]  
 > Para verificar se esse comando foi executado com êxito, é possível executar o comando `Get-AdfsGlobalAuthenticationPolicy` .  
 
-### <a name="to-configure-mfa-per-relying-party-trust-that-is-based-on-a-users-group-membership-data"></a>Para configurar o MFA por\-terceira parte confiável que se baseia em dados de associação de grupo do usuário  
+### <a name="to-configure-mfa-per-relying-party-trust-that-is-based-on-a-users-group-membership-data"></a>Para configurar a MFA\-por confiança de terceira parte confiável com base nos dados de associação de grupo de um usuário  
 
 1.  No servidor de federação, abra a janela de comando do Windows PowerShell e execute o seguinte comando:  
 
@@ -124,45 +124,45 @@ Associação de administradores ou equivalente, no computador local é o requisi
 
 
 > [!WARNING]  
-> Certifique-se de substituir *< terceira parte confiável\_terceiros\_confiança >* com o nome da sua terceira parte confiável.  
+> Certifique-se de substituir *<\_relação\_de confiança de terceira parte confiável >* nome do seu confiável de terceira parte confiável.  
 
 2. Na mesma janela de comando do Windows PowerShell, execute o comando a seguir.  
 
 
 ~~~
-$MfaClaimRule = “c:[Type == ‘“https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid’”, Value =~ ‘“^(?i) <group_SID>$’”] => issue(Type = ‘“https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod’”, Value ‘“https://schemas.microsoft.com/claims/multipleauthn’”);” 
+$MfaClaimRule = “c:[Type == ‘“https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid'”, Value =~ ‘“^(?i) <group_SID>$'”] => issue(Type = ‘“https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod'”, Value ‘“https://schemas.microsoft.com/claims/multipleauthn'”);” 
 
 Set-AdfsRelyingPartyTrust –TargetRelyingParty $rp –AdditionalAuthenticationRules $MfaClaimRule
 ~~~
 
 
 > [!NOTE]  
-> Certifique-se de substituir < grupo\_SID > com o valor do identificador de segurança \(SID\) do Active Directory \(AD\) grupo.  
+> Certifique-se de substituir\_o > SID do grupo de < pelo valor \(do\) SID do identificador \(de\) segurança do seu grupo Active Directory AD.  
 
-### <a name="to-configure-mfa-globally-based-on-users-group-membership-data"></a>Para configurar a MFA globalmente com base em dados de associação de grupo de usuários  
+### <a name="to-configure-mfa-globally-based-on-users-group-membership-data"></a>Para configurar o MFA globalmente com base nos dados de associação de grupo dos usuários  
 
-1.  No servidor de federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
+1.  No servidor de Federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
 
 
 ~~~
-$MfaClaimRule = “c:[Type == ‘" https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid’", Value == ‘"group_SID’"]  
- => issue(Type = ‘"https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod’", Value = ‘"https://schemas.microsoft.com/claims/multipleauthn’");”  
+$MfaClaimRule = “c:[Type == ‘" https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid'", Value == ‘"group_SID'"]  
+ => issue(Type = ‘"https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod'", Value = ‘"https://schemas.microsoft.com/claims/multipleauthn'");”  
 
 Set-AdfsAdditionalAuthenticationRule $MfaClaimRule  
 ~~~
 
 
 > [!NOTE]  
-> Certifique-se de substituir *< grupo\_SID >* com o valor do SID do grupo do AD.  
+> Certifique-se de substituir o *> SID do grupo\_de <* pelo valor do SID do seu grupo do AD.  
 
-### <a name="to-configure-mfa-globally-based-on-users-location"></a>Para configurar a MFA globalmente com base no local do usuário  
+### <a name="to-configure-mfa-globally-based-on-users-location"></a>Para configurar o MFA globalmente com base no local do usuário  
 
-1.  No servidor de federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
+1.  No servidor de Federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
 
 
 ~~~
-$MfaClaimRule = “c:[Type == ‘" https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork’", Value == ‘"true_or_false’"]  
- => issue(Type = ‘"https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod’", Value = ‘"https://schemas.microsoft.com/claims/multipleauthn’");”  
+$MfaClaimRule = “c:[Type == ‘" https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork'", Value == ‘"true_or_false'"]  
+ => issue(Type = ‘"https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod'", Value = ‘"https://schemas.microsoft.com/claims/multipleauthn'");”  
 
 Set-AdfsAdditionalAuthenticationRule $MfaClaimRule  
 ~~~
@@ -170,27 +170,27 @@ Set-AdfsAdditionalAuthenticationRule $MfaClaimRule
 
 
 > [!NOTE]  
-> Certifique-se de substituir *< true\_ou\_false >* com um `true` ou `false`. O valor depende de sua condição de regra específica que baseia-se a solicitação de acesso é proveniente de extranet ou intranet.  
+> Certifique-se de substituir *<\_> true\_ou false* por `false`um `true` ou. O valor depende de sua condição de regra específica que se baseia se a solicitação de acesso é proveniente da extranet ou da intranet.  
 
-### <a name="to-configure-mfa-globally-based-on-users-device-data"></a>Para configurar a MFA globalmente com base em dados de dispositivo do usuário  
+### <a name="to-configure-mfa-globally-based-on-users-device-data"></a>Para configurar o MFA globalmente com base nos dados do dispositivo do usuário  
 
-1.  No servidor de federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
+1.  No servidor de Federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
 
 
 ~~~
-$MfaClaimRule = "c:[Type == ‘" https://schemas.microsoft.com/2012/01/devicecontext/claims/isregistereduser’", Value == ‘"true_or_false"']  
- => issue(Type = ‘"https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod’", Value = ‘"https://schemas.microsoft.com/claims/multipleauthn’");"  
+$MfaClaimRule = "c:[Type == ‘" https://schemas.microsoft.com/2012/01/devicecontext/claims/isregistereduser'", Value == ‘"true_or_false"']  
+ => issue(Type = ‘"https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod'", Value = ‘"https://schemas.microsoft.com/claims/multipleauthn'");"  
 
 Set-AdfsAdditionalAuthenticationRule $MfaClaimRule  
 ~~~
 
 
 > [!NOTE]  
-> Certifique-se de substituir *< true\_ou\_false >* com um `true` ou `false`. O valor depende de sua condição de regra específica que se baseia no fato do dispositivo no local de trabalho\-ingressou ou não.  
+> Certifique-se de substituir *<\_> true\_ou false* por `false`um `true` ou. O valor depende de sua condição de regra específica que se baseia se o dispositivo é associado\-ou não ao local de trabalho.  
 
-### <a name="to-configure-mfa-globally-if-the-access-request-comes-from-the-extranet-and-from-a-non-workplace-joined-device"></a>Para configurar a MFA globalmente se a solicitação de acesso provir da extranet e de não\-workplace\-dispositivo associado  
+### <a name="to-configure-mfa-globally-if-the-access-request-comes-from-the-extranet-and-from-a-non-workplace-joined-device"></a>Para configurar o MFA globalmente se a solicitação de acesso vier da extranet e de um\-dispositivo\-não ingressado no local de trabalho  
 
-1.  No servidor de federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
+1.  No servidor de Federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
 
 
 ~~~
@@ -199,11 +199,11 @@ Set-AdfsAdditionalAuthenticationRule $MfaClaimRule
 
 
 > [!NOTE]  
-> Certifique-se de substituir as duas instâncias de *< true\_ou\_false >* com um `true` ou `false`, que depende de suas condições de regra específica. As condições de regra são com base em se o dispositivo está no local de trabalho\-ingressou ou não e se a solicitação de acesso provir da extranet ou intranet.  
+> Certifique-se de substituir as duas instâncias de *< true\_\_ou false >* por `true` ou `false`, o que depende de suas condições de regra específicas. As condições de regra se baseiam no fato de o\-dispositivo ser ingressado no local de trabalho ou não e se a solicitação de acesso é proveniente da extranet ou da intranet.  
 
-### <a name="to-configure-mfa-globally-if-access-comes-from-an-extranet-user-that-belongs-to-a-certain-group"></a>Para configurar a MFA globalmente se trata de um usuário de extranet que pertence a um determinado grupo de acesso  
+### <a name="to-configure-mfa-globally-if-access-comes-from-an-extranet-user-that-belongs-to-a-certain-group"></a>Para configurar o MFA globalmente se o Access vier de um usuário de extranet que pertence a um determinado grupo  
 
-1.  No servidor de federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
+1.  No servidor de Federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
 
 
 ~~~
@@ -211,11 +211,11 @@ Set-AdfsAdditionalAuthenticationRule "c:[Type == `"https://schemas.microsoft.com
 ~~~
 
 > [!NOTE]  
-> Certifique-se de substituir *< grupo\_SID >* com o valor do SID do grupo e *< true\_ou\_false >* com um `true` ou `false`, que depende de sua condição de regra específica que baseia-se a solicitação de acesso provir da extranet ou intranet.  
+> Certifique-se de substituir o *> SID do grupo\_de <* pelo valor do SID do grupo e *< true\_ou\_false >* por `true` ou `false`, que depende de sua condição de regra específica que o se baseia em se a solicitação de acesso é proveniente da extranet ou da intranet.  
 
-### <a name="to-grant-access-to-an-application-based-on-user-data-via-windows-powershell"></a>Para conceder acesso a um aplicativo com base nos dados de usuário por meio do Windows PowerShell  
+### <a name="to-grant-access-to-an-application-based-on-user-data-via-windows-powershell"></a>Para conceder acesso a um aplicativo com base nos dados do usuário por meio do Windows PowerShell  
 
-1.  No servidor de federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
+1.  No servidor de Federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
 
     ```  
     $rp = Get-AdfsRelyingPartyTrust –Name relying_party_trust  
@@ -223,7 +223,7 @@ Set-AdfsAdditionalAuthenticationRule "c:[Type == `"https://schemas.microsoft.com
     ```  
 
 > [!NOTE]  
-> Certifique-se de substituir *< terceira parte confiável\_terceiros\_confiança >* com o valor de confiança de terceira parte confiável.  
+> Certifique-se de substituir *<\_relação\_de confiança de terceira parte confiável >* com o valor de sua terceira parte confiável.  
 
 2. Na mesma janela de comando do Windows PowerShell, execute o comando a seguir.  
 
@@ -234,11 +234,11 @@ Set-AdfsAdditionalAuthenticationRule "c:[Type == `"https://schemas.microsoft.com
    ```  
 
 > [!NOTE]  
-> > Certifique-se de substituir *< grupo\_SID >* com o valor do SID do grupo do AD.  
+> > Certifique-se de substituir o *> SID do grupo\_de <* pelo valor do SID do seu grupo do AD.  
 
-### <a name="to-grant-access-to-an-application-that-is-secured-by-ad-fs-only-if-this-users-identity-was-validated-with-mfa"></a>Para conceder acesso a um aplicativo que é protegido pelo somente se do AD FS, a identidade do usuário foi validada com MFA  
+### <a name="to-grant-access-to-an-application-that-is-secured-by-ad-fs-only-if-this-users-identity-was-validated-with-mfa"></a>Para conceder acesso a um aplicativo protegido por AD FS somente se a identidade desse usuário tiver sido validada com MFA  
 
-1.  No servidor de federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
+1.  No servidor de Federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
 
 
 ~~~
@@ -247,20 +247,20 @@ Set-AdfsAdditionalAuthenticationRule "c:[Type == `"https://schemas.microsoft.com
 
 
 > [!NOTE]  
-> Certifique-se de substituir *< terceira parte confiável\_terceiros\_confiança >* com o valor de confiança de terceira parte confiável.  
+> Certifique-se de substituir *<\_relação\_de confiança de terceira parte confiável >* com o valor de sua terceira parte confiável.  
 
 2. Na mesma janela de comando do Windows PowerShell, execute o comando a seguir.  
 
    ```  
    $GroupAuthzRule = "@RuleTemplate = `"Authorization`"  
    @RuleName = `"PermitAccessWithMFA`"  
-   c:[Type == `"https://schemas.microsoft.com/claims/authnmethodsreferences`", Value =~ `"^(?i)https://schemas\.microsoft\.com/claims/multipleauthn$`"] => issue(Type = `"https://schemas.microsoft.com/authorization/claims/permit`", Value = ‘“PermitUsersWithClaim’");"  
+   c:[Type == `"https://schemas.microsoft.com/claims/authnmethodsreferences`", Value =~ `"^(?i)https://schemas\.microsoft\.com/claims/multipleauthn$`"] => issue(Type = `"https://schemas.microsoft.com/authorization/claims/permit`", Value = ‘“PermitUsersWithClaim'");"  
 
    ```  
 
-### <a name="to-grant-access-to-an-application-that-is-secured-by-ad-fs-only-if-the-access-request-comes-from-a-workplace-joined-device-that-is-registered-to-the-user"></a>Para conceder acesso a um aplicativo que é protegido pelo somente se do AD FS, o acesso a solicitação vier de um local de trabalho\-ingressado no dispositivo que está registrado para o usuário  
+### <a name="to-grant-access-to-an-application-that-is-secured-by-ad-fs-only-if-the-access-request-comes-from-a-workplace-joined-device-that-is-registered-to-the-user"></a>Para conceder acesso a um aplicativo protegido por AD FS somente se a solicitação de acesso vier de um dispositivo ingressado no local de trabalho\-que está registrado para o usuário  
 
-1.  No servidor de federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
+1.  No servidor de Federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
 
     ```  
     $rp = Get-AdfsRelyingPartyTrust –Name relying_party_trust  
@@ -268,7 +268,7 @@ Set-AdfsAdditionalAuthenticationRule "c:[Type == `"https://schemas.microsoft.com
     ```  
 
 > [!NOTE]  
-> Certifique-se de substituir *< terceira parte confiável\_terceiros\_confiança >* com o valor de confiança de terceira parte confiável.  
+> Certifique-se de substituir *<\_relação\_de confiança de terceira parte confiável >* com o valor de sua terceira parte confiável.  
 
 2. Na mesma janela de comando do Windows PowerShell, execute o comando a seguir.  
 
@@ -281,9 +281,9 @@ c:[Type == `"https://schemas.microsoft.com/2012/01/devicecontext/claims/isregist
 
 
 
-### <a name="to-grant-access-to-an-application-that-is-secured-by-ad-fs-only-if-the-access-request-comes-from-a-workplace-joined-device-that-is-registered-to-a-user-whose-identity-has-been-validated-with-mfa"></a>Para conceder acesso a um aplicativo que é protegido pelo somente se do AD FS, o acesso a solicitação vier de um local de trabalho\-ingressado no dispositivo que está registrado para um usuário cuja identidade foi validada com MFA  
+### <a name="to-grant-access-to-an-application-that-is-secured-by-ad-fs-only-if-the-access-request-comes-from-a-workplace-joined-device-that-is-registered-to-a-user-whose-identity-has-been-validated-with-mfa"></a>Para conceder acesso a um aplicativo protegido por AD FS somente se a solicitação de acesso vier de um dispositivo ingressado no local de trabalho\-que está registrado para um usuário cuja identidade foi validada com MFA  
 
-1.  No servidor de federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
+1.  No servidor de Federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
 
 
 ~~~
@@ -292,7 +292,7 @@ c:[Type == `"https://schemas.microsoft.com/2012/01/devicecontext/claims/isregist
 
 
 > [!NOTE]  
-> Certifique-se de substituir *< terceira parte confiável\_terceiros\_confiança >* com o valor de confiança de terceira parte confiável.  
+> Certifique-se de substituir *<\_relação\_de confiança de terceira parte confiável >* com o valor de sua terceira parte confiável.  
 
 2. Na mesma janela de comando do Windows PowerShell, execute o comando a seguir.  
 
@@ -304,9 +304,9 @@ c:[Type == `"https://schemas.microsoft.com/2012/01/devicecontext/claims/isregist
 
    ```  
 
-### <a name="to-grant-extranet-access-to-an-application-secured-by-ad-fs-only-if-the-access-request-comes-from-a-user-whose-identity-has-been-validated-with-mfa"></a>Para conceder acesso à extranet a um aplicativo protegido pelo AD FS somente se a solicitação de acesso proveniente de um usuário cuja identidade foi validada com MFA  
+### <a name="to-grant-extranet-access-to-an-application-secured-by-ad-fs-only-if-the-access-request-comes-from-a-user-whose-identity-has-been-validated-with-mfa"></a>Para conceder acesso de extranet a um aplicativo protegido por AD FS somente se a solicitação de acesso vier de um usuário cuja identidade tenha sido validada com MFA  
 
-1.  No servidor de federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
+1.  No servidor de Federação, abra a janela de comando do Windows PowerShell e execute o comando a seguir.  
 
 
 ~~~
@@ -315,7 +315,7 @@ c:[Type == `"https://schemas.microsoft.com/2012/01/devicecontext/claims/isregist
 
 
 > [!NOTE]  
-> Certifique-se de substituir *< terceira parte confiável\_terceiros\_confiança >* com o valor de confiança de terceira parte confiável.  
+> Certifique-se de substituir *<\_relação\_de confiança de terceira parte confiável >* com o valor de sua terceira parte confiável.  
 
 2. Na mesma janela de comando do Windows PowerShell, execute o comando a seguir.  
 

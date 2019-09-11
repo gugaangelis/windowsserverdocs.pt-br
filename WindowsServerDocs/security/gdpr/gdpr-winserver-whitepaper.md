@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 09/25/2017
 ms.author: nirb
 author: nirb-ms
-ms.openlocfilehash: f196be152e339b229c4c476f73a2d4b0e7a644d5
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: 506cd5cb44d93c9d7d221917505f76a2c5625baa
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980312"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870552"
 ---
 # <a name="beginning-your-general-data-protection-regulation-gdpr-journey-for-windows-server"></a>Iniciando sua jornada de Regulamento Geral sobre a Proteção de Dados (GDPR) para o Windows Server 
 
@@ -48,7 +48,7 @@ Como parte de seus esforços para estar em conformidade com a GDPR, você precis
 
 O GDPR considera dados pessoais como quaisquer informações relacionadas a uma pessoa identificável ou identificada naturalmente. Que podem incluir identificação direta (como seu nome legal) e identificação indireta (como informações específicas que tornam claro que é você as referências de dados). O GDPR também deixa claro que o conceito de dados pessoais inclui identificadores online (como, endereços IP, IDs de dispositivo móvel) e dados de localização.
 
-O GDPR apresenta definições específicas para dados genéticos (como a sequência de gene de um indivíduo) e os dados biométricos. Dados de genética e biométricos juntamente com outras subcategorias de dados pessoais (dados pessoais, revelando origem racial ou étnica, opiniões políticas, religiosas ou filosóficas ou filiação: dados relativos a integridade; ou dados relativos a vida sexual ou orientação sexual da pessoa) são tratados como dados pessoais confidenciais sob o GDPR. Dados pessoais confidenciais recebem proteções avançadas e geralmente requerem o consentimento explícito de uma pessoa onde esses dados devem ser processados.
+O GDPR apresenta definições específicas para dados genéticos (como, a sequência de gene de um indivíduo) e dados biométricos. Dados genéticos e dados biométricos junto com outras subcategorias de dados pessoais (dados pessoais que revelam Racials ou étnicas, opiniões políticas, religiosas ou filosofia crenças ou associação de União comercial: dados relacionados à integridade; ou dados relacionados a um o sexo da vida útil da pessoa ou a orientação sexual) são tratados como dados pessoais confidenciais sob o GDPR. Os dados pessoais confidenciais são proteções aprimoradas e geralmente exigem o consentimento explícito de um indivíduo em que esses dados devem ser processados.
 
 ### <a name="examples-of-info-relating-to-an-identified-or-identifiable-natural-person-data-subject"></a>Exemplos de informações referentes a uma pessoa natural identificada ou identificável (dados sujeitos)
 Esta lista fornece exemplos de vários tipos de informações que serão controladas por meio de GDPR. Esta não é uma lista cansativa.
@@ -85,7 +85,7 @@ Para cada uma das etapas, criamos recursos em várias soluções da Microsoft, q
 ## <a name="windows-server-security-and-privacy"></a>Segurança e privacidade do Windows Server
 O GDPR exige que você implemente medidas de segurança técnicas e organizacionais apropriadas para proteger sistemas de processamento e dados pessoais. No contexto do GDPR, seus ambientes de servidor físico e virtual estão potencialmente processando dados pessoais e confidenciais. O processamento pode significar qualquer operação ou conjunto de operações, como a coleta de dados, o armazenamento e a recuperação.
 
-Sua capacidade de atender a esse requisito e implementar medidas de segurança técnicas apropriadas deve refletir as ameaças que você enfrenta no ambiente de ti cada vez mais hostil de hoje. O cenário de ameaças de segurança atual é de ameaças agressivas e obstinadas. Nos anos anteriores, invasores mal-intencionados se concentravam principalmente em receber o reconhecimento da comunidade por meio de seus ataques ou a emoção de colocar temporariamente um sistema offline. Desde então, a motivação dos invasores passou a ser ganhar dinheiro, o que inclui o sequestro de computadores e dados até os proprietários pagarem o resgate exigido.
+Sua capacidade de atender a esse requisito e implementar medidas de segurança técnicas apropriadas deve refletir as ameaças que você enfrenta no ambiente de ti cada vez mais hostil de hoje. O panorama de ameaças de segurança de hoje é uma das ameaças agressivas e tenaciouss. Nos anos anteriores, invasores mal-intencionados se concentravam principalmente em receber o reconhecimento da comunidade por meio de seus ataques ou a emoção de colocar temporariamente um sistema offline. Desde então, as motivaçãos do invasor mudaram para a criação de dinheiro, incluindo dispositivos de retenção e data Hostage até que o proprietário pague o resgate exigido.
 
 Ataques modernos cada vez mais se concentram no roubo de propriedade intelectual em grande escala; na degradação do sistema visado que pode resultar em perda financeira; e agora até mesmo o cyberterrorismo que ameaça a segurança de indivíduos, empresas e interesses nacionais em todo o mundo. Esses invasores são geralmente indivíduos altamente treinados e especialistas em segurança, alguns dos quais estão a serviço de nações que possuem grandes orçamentos e recursos humanos aparentemente ilimitados. Ameaças como essas exigem uma abordagem que pode superar esse desafio.
 
@@ -139,7 +139,7 @@ O chip inclui vários mecanismos de segurança física para torná-lo resistente
 
 -   Gerar, armazenar e limitar o uso de chaves de criptografia.
 
--   Usar a tecnologia TPM para autenticação de dispositivo de plataforma com a chave RSA de autogravação exclusiva do TPM.
+-   Use a tecnologia TPM para autenticação de dispositivo de plataforma usando a chave RSA exclusiva do TPM, que é gravada em si mesma.
 
 -   Ajuda a garantir a integridade da plataforma, executando e armazenando medidas de segurança.
 
@@ -187,7 +187,7 @@ Imagine este cenário se as credenciais do administrador do DNS fossem roubadas.
 
 Além disso, muitas organizações usam a [solução de senha de administrador local gratuita (LAPs)](http://aka.ms/laps) como um mecanismo de administração JIT simples, mas poderoso, para seus sistemas cliente e servidor. O recurso de LAPSos fornece gerenciamento de senhas de contas locais de computadores ingressados no domínio. As senhas são armazenadas em Active Directory (AD) e protegidas pelo e pela ACL (lista de controle de acesso) para que somente usuários qualificados possam lê-lo ou solicitar sua redefinição.
 
-Conforme observado no guia de mitigação de [roubo de credenciais do Windows](https://www.microsoft.com/en-us/download/confirmation.aspx?id=54095), 
+Conforme observado no [Guia de mitigação de roubo de credenciais do Windows](https://www.microsoft.com/en-us/download/confirmation.aspx?id=54095), 
 
 > "_as ferramentas e as técnicas que os criminosos usam para realizar o roubo de credenciais e reutilizar ataques aprimorados, invasores mal-intencionados estão encontrando mais fácil atingir suas metas. O roubo de credenciais geralmente se baseia em práticas operacionais ou exposição de credenciais de usuário, portanto, as atenuações efetivas exigem uma abordagem holística que atenda às pessoas, aos processos e à tecnologia. Além disso, esses ataques dependem do invasor roubar credenciais depois de comprometer um sistema para expandir ou manter o acesso, para que as organizações devam conter falhas rapidamente implementando estratégias que impedem que os invasores se movimentem livremente e não sejam detectados em um rede comprometida._ "
 
@@ -259,7 +259,7 @@ O Windows Defender AV é uma solução de antimalware interna que fornece gerenc
 
 - **Sensores globais extensivos** ajudam a manter o Windows Defender AV atual e a reconhecer até mesmo o malware mais recente. Isso é feito de duas maneiras: coletando os dados de contexto local avançado de pontos de extremidade e analisando centralmente esses dados.
 
-- A **prova** de adulteração ajuda a proteger o próprio Windows Defender antivírus contra ataques de malware. Por exemplo, o Windows Defender AV usa processos protegidos, o que impede que processos não confiáveis tentem violar os componentes do Windows Defender AV, suas chaves do registro e assim por diante.
+- A **prova de adulteração** ajuda a proteger o próprio Windows Defender antivírus contra ataques de malware. Por exemplo, o Windows Defender AV usa processos protegidos, o que impede que processos não confiáveis tentem violar os componentes do Windows Defender AV, suas chaves do registro e assim por diante.
 
 - Os **recursos de nível empresarial** fornecem aos profissionais de ti as ferramentas e as opções de configuração necessárias para tornar o Windows Defender AV uma solução antimalware de classe empresarial.
 
@@ -334,7 +334,7 @@ Entre os principais benefícios do Windows Defender ATP estão os seguintes:
 
 - **Poder do Microsoft Graph.** Aproveita o grafo de segurança do Microsoft Intelligence para integrar a detecção e exploração com a assinatura do Office 365 ATP, para rastrear e responder a ataques.
 
-Leia mais em [O que há de novo na prévia da atualização dos criadores do Windows Defender ATP](https://blogs.microsoft.com/microsoftsecure/2017/03/13/whats-new-in-the-windows-defender-atp-creators-update-preview/).
+Leia mais em [novidades na versão prévia do Windows Defender ATP Creators Update](https://blogs.microsoft.com/microsoftsecure/2017/03/13/whats-new-in-the-windows-defender-atp-creators-update-preview/).
 
 O ATA é um produto local que ajuda a detectar o comprometimento de identidade em uma organização. O ATA pode capturar e analisar o tráfego de rede para autenticação, autorização e protocolos de coleta de informações (como Kerberos, DNS, RPC, NTLM e outros protocolos). O ATA usa esses dados para criar um perfil comportamental sobre os usuários e outras entidades em uma rede para que ele possa detectar anomalias e padrões de ataque conhecidos. A tabela a seguir lista os tipos de ataque detectados pelo ATA.
 
@@ -362,7 +362,7 @@ Você pode usar o ATA para ajudar a detectar invasores tentando comprometer iden
 - **Segurança e garantia:** https://docs.microsoft.com/windows-server/security/security-and-assurance
 
 ## <a name="disclaimer"></a>Aviso de isenção de responsabilidade
-Este artigo é um comentário em GDPR, como Microsoft interpreta, a partir da data de publicação. Nós gastamos muito tempo com GDPR e deseja que fizemos pense sobre sua intenção e o significado. Mas a aplicação de GDPR é altamente específica de fato, e nem todos os aspectos e interpretações de GDPR são bem liquidadas.
+Este artigo é um comentário em GDPR, como Microsoft interpreta, a partir da data de publicação. Passamos muito tempo com GDPR e gostam de pensar que temos sido considerados uma consideração sobre sua intenção e significado. Mas a aplicação de GDPR é altamente específica de fato, e nem todos os aspectos e interpretações de GDPR são bem liquidadas.
 
 Como resultado, este artigo é fornecido apenas para fins informativos e não ser considerado como advogado ou para determinar como GDPR podem se aplicar a você e sua organização. Encorajamos você a trabalhar com um profissional legalmente qualificados para discutir GDPR, como ele se aplica especificamente para sua organização e como melhor garantir a conformidade.
 

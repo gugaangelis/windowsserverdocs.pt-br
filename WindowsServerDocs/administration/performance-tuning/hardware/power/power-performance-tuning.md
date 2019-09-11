@@ -1,125 +1,125 @@
 ---
-title: Capacidade e desempenho de ajuste
-description: Gerenciamento de energia do processador (PPM) de ajuste para o plano de energia Equilibrado do Windows Server
+title: Ajuste de energia e desempenho
+description: Ajuste do gerenciamento de energia do processador (PPM) para o plano de energia balanceado do Windows Server
 ms.prod: windows-server-threshold
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Qizha;TristanB
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 4ad58e9b477f61844dedd9f6638efb12f1a96500
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 4ffa39d50d7b4c8429485e7db35bb2c863b7a995
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811569"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866771"
 ---
-# <a name="power-and-performance-tuning"></a>Energia e ajuste de desempenho
+# <a name="power-and-performance-tuning"></a>Ajuste de energia e desempenho
 
-Eficiência de energia é cada vez mais importante em ambientes de centro de empresa e dados, e ele adiciona outro conjunto de vantagens e desvantagens na combinação de opções de configuração.
+A eficiência energética é cada vez mais importante em ambientes corporativos e data center e adiciona outro conjunto de compensações à combinação de opções de configuração.
 
-Windows Server 2016 é otimizado para eficiência de energia excelente com o impacto de desempenho mínimo em uma ampla variedade de cargas de trabalho do cliente. [Ajuste de gerenciamento de energia (PPM) do processador para o Windows Server com balanceamento de plano de energia](processor-power-management-tuning.md) descreve as cargas de trabalho usadas para ajustar os parâmetros padrão no Windows Server 2016 e fornece sugestões para tunings personalizado.
+O Windows Server 2016 é otimizado para uma excelente eficiência de energia com impacto mínimo no desempenho em uma ampla gama de cargas de trabalho do cliente. [O ajuste do gerenciamento de energia do processador (ppm) para o plano de energia equilibrado do Windows Server](processor-power-management-tuning.md) descreve as cargas de trabalho usadas para ajustar os parâmetros padrão no windows Server 2016 e fornece sugestões para ajustes personalizados.
 
-Esta seção expande as compensações de eficiência de energia para ajudá-lo a tomar decisões informadas, se você precisar ajustar as configurações de energia padrão em seu servidor. No entanto, a maioria das cargas de trabalho e hardware de servidor não deve exigir a otimização de energia administrador ao executar o Windows Server 2016.
+Esta seção expande as compensações de eficiência de energia para ajudá-lo a tomar decisões informadas se você precisar ajustar as configurações de energia padrão no servidor. No entanto, a maior parte do hardware e das cargas de trabalho do servidor não deve exigir o ajuste de energia do administrador ao executar o Windows Server 2016.
 
 ## <a name="calculating-server-energy-efficiency"></a>Calculando a eficiência de energia do servidor
 
-Quando você ajusta o servidor para economizar energia, você também deve considerar o desempenho. Ajuste afeta o desempenho e energia, às vezes, em valores desproporcional. Para cada ajuste possível, considere suas metas de desempenho e orçamento de energia para determinar se a compensação é aceitável.
+Ao ajustar seu servidor para economia de energia, você também deve considerar o desempenho. O ajuste afeta o desempenho e a potência, às vezes em valores desproporcionais. Para cada possível ajuste, considere a alocação de energia e as metas de desempenho para determinar se a compensação é aceitável.
 
-Você pode calcular a taxa de eficiência de energia do seu servidor de uma métrica útil que incorpora informações de capacidade e desempenho. Eficiência de energia é a proporção do trabalho realizado para o de energia médio que é necessário durante um período de tempo especificado.
+Você pode calcular a taxa de eficiência de energia do servidor para uma métrica útil que incorpora informações de energia e desempenho. A eficiência de energia é a taxa de trabalho feita para a média de energia necessária durante um período de tempo especificado.
 
 ![fórmula de eficiência de energia](../../media/perftune-guide-power-formula.png)
 
-Você pode usar essa métrica para definir os objetivos práticos que respeitam a compensação entre desempenho e energia. Em contraste, uma meta de 10 por cento de economia de energia no data center não pode capturar os efeitos correspondentes no desempenho e vice-versa.
+Você pode usar essa métrica para definir metas práticas que respeitam a compensação entre energia e desempenho. Por outro lado, uma meta de 10% de economia de energia no data center falha ao capturar os efeitos correspondentes no desempenho e vice-versa.
 
-Da mesma forma, se você ajustar o servidor para aumentar o desempenho por 5 por cento e que resulta em 10 por cento maior consumo de energia, o resultado total pode ou não pode ser aceitável para suas metas de negócios. Permite que a métrica de eficiência de energia para a tomada de decisão bem informada de métricas de desempenho ou de energia sozinhas.
+Da mesma forma, se você ajustar seu servidor para aumentar o desempenho em 5% e isso resultar em um consumo de energia superior a 10%, o resultado total poderá ou não ser aceitável para suas metas de negócios. A métrica de eficiência de energia permite uma tomada de decisão mais informada do que as métricas de energia ou de desempenho sozinhas.
 
-## <a name="measuring-system-energy-consumption"></a>Medir o consumo de energia do sistema
+## <a name="measuring-system-energy-consumption"></a>Medindo o consumo de energia do sistema
 
-Você deve estabelecer uma medida de alimentação de linha de base antes de você ajusta o servidor para a eficiência de energia.
+Você deve estabelecer uma medição de energia de linha de base antes de ajustar seu servidor para eficiência energética.
 
-Se o servidor tem o suporte necessário, você pode usar o poder de medição e orçamento de recursos no Windows Server 2016 para exibir o consumo de energia de nível de sistema usando o Monitor de desempenho.
+Se o seu servidor tiver o suporte necessário, você poderá usar os recursos de medição de energia e orçamento no Windows Server 2016 para exibir o consumo de energia no nível do sistema usando o monitor de desempenho.
 
-É uma maneira de determinar se o servidor tem suporte para a medição e orçamento é examinar o [catálogo do Windows Server](http://www.windowsservercatalog.com). Se seu modelo de servidor se qualificar para a qualificação de gerenciamento de energia aprimorado de novo no programa de certificação de Hardware do Windows, é garantido que ele oferece suporte à funcionalidade de medição e orçamento.
+Uma maneira de determinar se o seu servidor tem suporte para medição e orçamento é examinar o catálogo do [Windows Server](http://www.windowsservercatalog.com). Se o seu modelo de servidor se qualificar para a nova qualificação de gerenciamento de energia aprimorada no programa de certificação de hardware do Windows, será garantido que ele ofereça suporte à funcionalidade de medição e orçamento.
 
-Outra maneira de verificar se há suporte de medição é manualmente, procure os contadores no Monitor de desempenho. Abra o Monitor de desempenho, selecione **adicionar contadores**e, em seguida, localize o **medidor de energia** grupo de contadores.
+Outra maneira de verificar o suporte de medição é procurar manualmente os contadores no monitor de desempenho. Abra o monitor de desempenho, selecione **Adicionar contadores**e localize o grupo de contadores do **medidor de energia** .
 
-Se as instâncias nomeadas do medidores de energia são exibidos na caixa rotulada **instâncias de objeto selecionado**, sua plataforma dá suporte à medição. O **energia** contador que mostra a potência em watts aparece no grupo de contador selecionado. A derivação exata do valor de dados de energia não está especificada. Por exemplo, é possível um consumo de energia instantânea ou um desenho de energia médio por algum intervalo de tempo.
+Se as instâncias nomeadas de medidores de energia aparecerem na caixa rotulada **instâncias do objeto selecionado**, sua plataforma dará suporte à medição. O contador de **energia** que mostra a potência em watts aparece no grupo de contadores selecionado. A derivação exata do valor de dados de energia não foi especificada. Por exemplo, pode ser um desenho de energia instantânea ou uma potência média desenhada em um intervalo de tempo.
 
-Se sua plataforma de servidor não oferece suporte a medição, você pode usar um dispositivo de medição físico conectado à entrada de fornecimento de energia para medir o consumo de energia ou de desenho de energia do sistema.
+Se a sua plataforma de servidor não oferecer suporte à medição, você poderá usar um dispositivo de medição física conectado à entrada de fonte de alimentação para medir o consumo de energia ou energia do sistema.
 
-Para estabelecer uma linha de base, você deve medir o necessário em vários pontos de carga do sistema, do estado ocioso a 100 por cento (taxa de transferência máxima) para gerar uma linha de carga de energia médio. A figura a seguir mostra linhas de carga para três exemplos de configurações:
+Para estabelecer uma linha de base, você deve medir a potência média necessária em vários pontos de carga do sistema, de ocioso a 100 por cento (taxa de transferência máxima) para gerar uma linha de carga. A figura a seguir mostra as linhas de carga para três configurações de exemplo:
 
-![linhas de carga de exemplo](../../media/perftune-guide-sample-loadlines.png)
+![linhas de carregamento de exemplo](../../media/perftune-guide-sample-loadlines.png)
 
-Você pode usar linhas de carga para avaliar e comparar o desempenho e consumo de energia de configurações em todos os pontos de carga. Nesse exemplo específico, é fácil ver o que é a melhor configuração. No entanto, com facilidade pode haver situações em que uma configuração funciona melhor para cargas de trabalho pesadas e funciona melhor para cargas de trabalho leves.
+Você pode usar linhas de carga para avaliar e comparar o consumo de energia e desempenho de configurações em todos os pontos de carga. Neste exemplo específico, é fácil ver qual é a melhor configuração. No entanto, pode haver cenários facilmente em que uma configuração funciona melhor para cargas de trabalho pesadas e uma funciona melhor para cargas de trabalho leves.
 
-Você precisa compreender totalmente os requisitos de carga de trabalho para escolher uma configuração ideal. Não presuma que quando você encontrar uma configuração válida, ela sempre permanecerá ideal. Você deve medir o consumo de utilização de energia do sistema regularmente e depois das alterações em cargas de trabalho, os níveis de carga de trabalho ou hardware de servidor.
+Você precisa compreender totalmente seus requisitos de carga de trabalho para escolher uma configuração ideal. Não presuma que, quando você encontrar uma boa configuração, ela sempre permanecerá ideal. Você deve medir a utilização do sistema e o consumo de energia regularmente e depois de alterações em cargas de trabalho, níveis de carga de trabalho ou hardware de servidor.
 
 ## <a name="diagnosing-energy-efficiency-issues"></a>Diagnosticando problemas de eficiência de energia
 
-**PowerCfg.exe** dá suporte a uma opção de linha de comando que você pode usar para analisar a eficiência de energia ociosa do seu servidor. Quando você executa PowerCfg.exe com o **/energy** opção, a ferramenta executa um teste de 60 segundos para detectar problemas de eficiência de energia potencial. A ferramenta gera um relatório HTML simples no diretório atual.
+O **powercfg. exe** dá suporte a uma opção de linha de comando que você pode usar para analisar a eficiência de energia ociosa do seu servidor. Quando você executa o PowerCfg. exe com a opção **/Energy** , a ferramenta executa um teste de 60 segundos para detectar possíveis problemas de eficiência de energia. A ferramenta gera um relatório HTML simples no diretório atual.
 
 > [!Important]
-> Para garantir uma análise precisa, certifique-se de que todos os aplicativos locais estão fechados antes de executar **PowerCfg.exe**. 
+> Para garantir uma análise precisa, verifique se todos os aplicativos locais estão fechados antes de executar o **powercfg. exe**. 
 
-Reduzido a taxas de tique do temporizador, drivers que falta suporte ao gerenciamento de energia e utilização excessiva da CPU são alguns dos problemas de comportamento que são detectados pelo **/energy powercfg** comando. Essa ferramenta fornece uma maneira simples de identificar e corrigir problemas de gerenciamento de energia, possivelmente resultando em economia de custo significativa em um datacenter grande.
+As taxas de tiques do temporizador reduzidas, os drivers que não têm suporte ao gerenciamento de energia e a utilização excessiva da CPU são alguns dos problemas comportamentais detectados pelo comando **powercfg/Energy** . Essa ferramenta fornece uma maneira simples de identificar e corrigir problemas de gerenciamento de energia, potencialmente resultando em uma economia de custos significativa em um datacenter grande.
 
-Para obter mais informações sobre PowerCfg.exe, consulte [usando a PowerCfg para avaliar a eficiência de energia do sistema](https://msdn.microsoft.com/windows/hardware/gg463250.aspx).
+Para obter mais informações sobre o PowerCfg. exe, consulte [usando o Powercfg para avaliar a eficiência de energia do sistema](https://msdn.microsoft.com/windows/hardware/gg463250.aspx).
 
 ## <a name="using-power-plans-in-windows-server"></a>Usando planos de energia no Windows Server
 
-Windows Server 2016 tem três planos de energia internos, projetados para atender às diferentes conjuntos de necessidades de negócios. Esses planos fornecem uma maneira simple de personalizar um servidor para atender às metas de desempenho ou de energia. A tabela a seguir descreve os planos, lista os cenários comuns nos quais cada plano de usar e fornece alguns detalhes de implementação para cada plano.
+O Windows Server 2016 tem três planos de energia internos projetados para atender a diferentes conjuntos de necessidades comerciais. Esses planos fornecem uma maneira simples de personalizar um servidor para atender às metas de energia ou desempenho. A tabela a seguir descreve os planos, lista os cenários comuns nos quais usar cada plano e fornece alguns detalhes de implementação para cada plano.
 
-| **Plano** | **Descrição** | **Cenários aplicáveis comuns** | **Destaques da implementação** |
+| **Plano** | **Descrição** | **Cenários comuns aplicáveis** | **Destaques da implementação** |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Balanceamento (recomendado) | Configuração padrão. Eficiência de energia bons destinos com impacto mínimo no desempenho. | Geral de computação | Corresponde a capacidade à demanda. Recursos de economia de energia equilibrar o desempenho e energia. |
-| Alto desempenho | Aumenta o desempenho às custas de consumo de energia alta. Energia e térmicas limitações, considerações sobre a confiabilidade e despesas operacionais se aplicam. | Aplicativos de baixa latência e o código do aplicativo que é sensível às alterações de desempenho do processador | Processadores sempre estão bloqueados no estado de desempenho mais alto (incluindo frequências "turbo"). Todos os núcleos são unparked. Saída térmica poderá ser significativa. |
-| Economia de energia | Limita o desempenho de economizar energia e reduzir os custos operacionais. Não é recomendável sem um teste completo tornar-se de desempenho é adequado. | Implantações com orçamentos de energia limitado e restrições térmicas | Limita a frequência do processador em uma porcentagem de máximo (se houver suporte) e permite que outros recursos de economia de energia. |
+| Equilibrado (recomendado) | Configuração padrão. Tem como alvo uma boa eficiência de energia com impacto mínimo no desempenho. | Computação geral | Corresponde à capacidade de demanda. Recursos de economia de energia equilibram energia e desempenho. |
+| Alto Desempenho | Aumenta o desempenho ao custo de alto consumo de energia. As limitações de energia e térmica, as despesas operacionais e as considerações de confiabilidade se aplicam. | Aplicativos de baixa latência e código de aplicativo que são sensíveis a alterações de desempenho do processador | Os processadores são sempre bloqueados no estado de desempenho mais alto (incluindo frequências de "Turbo"). Todos os núcleos não são estacionados. A saída térmica pode ser significativa. |
+| Economia de energia | Limita o desempenho para economizar energia e reduzir o custo operacional. Não recomendado sem testes completos para garantir que o desempenho seja adequado. | Implantações com orçamentos de energia e restrições térmicas limitadas | A frequência do processador em uma porcentagem de máximo (se houver suporte) e habilita outros recursos de economia de energia. |
 
 
-Esses planos de energia existem no Windows corrente alternada (AC) e sistemas com fonte de alimentação de CC (corrente), mas vamos pressupor que servidores sempre estão usando uma fonte de alimentação de CA.
+Esses planos de energia existem no Windows para sistemas de corrente alternada (AC) e corrente direta (DC), mas vamos pressupor que os servidores estejam sempre usando uma fonte de energia CA.
 
-Para obter mais informações sobre planos de energia e configurações de política de energia, consulte [configuração de política de energia e a implantação no Windows](https://msdn.microsoft.com/windows/hardware/gg463243.aspx).
+Para obter mais informações sobre planos de energia e configurações de política de energia, consulte [configuração e implantação da política de energia no Windows](https://msdn.microsoft.com/windows/hardware/gg463243.aspx).
 
 > [!Note]
-> Alguns fabricantes de servidor têm suas próprias opções de gerenciamento de energia disponíveis por meio das configurações de BIOS. Se o sistema operacional não tem controle sobre o gerenciamento de energia, os planos de energia no Windows a alteração não afetará desempenho e energia do sistema.
+> Alguns fabricantes de servidor têm suas próprias opções de gerenciamento de energia disponíveis por meio das configurações do BIOS. Se o sistema operacional não tiver controle sobre o gerenciamento de energia, alterar os planos de energia no Windows não afetará a energia e o desempenho do sistema.
 
-## <a name="tuning-processor-power-management-parameters"></a>Ajuste os parâmetros de gerenciamento de energia do processador
+## <a name="tuning-processor-power-management-parameters"></a>Ajustando parâmetros de gerenciamento de energia do processador
 
-Cada plano de energia representa uma combinação de vários parâmetros de gerenciamento de energia subjacente. Os planos internos são três conjuntos de configurações recomendadas que abrangem uma ampla variedade de cenários e cargas de trabalho. No entanto, reconhecemos que esses planos não atendem às necessidades de cada cliente.
+Cada plano de energia representa uma combinação de vários parâmetros de gerenciamento de energia subjacentes. Os planos internos são três coleções de configurações recomendadas que abrangem uma ampla variedade de cargas de trabalho e cenários. No entanto, reconhecemos que esses planos não atenderão às necessidades de cada cliente.
 
-As seções a seguir descrevem as maneiras de ajustar alguns parâmetros de gerenciamento de energia processador específico para atender às metas a não solucionadas pela três planos internos. Se você precisa entender uma gama de parâmetros de energia, consulte [configuração de política de energia e a implantação no Windows](https://msdn.microsoft.com/windows/hardware/gg463243.aspx).
+As seções a seguir descrevem maneiras de ajustar alguns parâmetros específicos de gerenciamento de energia do processador para atender às metas não abordadas pelos três planos internos. Se você precisar entender uma matriz mais ampla de parâmetros de energia, consulte [configuração e implantação da política de energia no Windows](https://msdn.microsoft.com/windows/hardware/gg463243.aspx).
 
 ## <a name="processor-performance-boost-mode"></a>Modo de aumento de desempenho do processador
 
-Tecnologias Intel Turbo Boost e AMD Turbo CORE são recursos que permitem que os processadores alcançar desempenho adicionais quando ele é mais útil (ou seja, no sistema de alta carrega). No entanto, esse recurso aumenta o consumo de energia de núcleos de CPU, para que o Windows Server 2016 configura tecnologias Turbo com base na política de energia está em uso e a implementação de processador específico.
+As tecnologias Intel Turbo Boost e AMD Turbo CORE são recursos que permitem que os processadores alcancem o desempenho adicional quando ele é mais útil (ou seja, com altas cargas do sistema). No entanto, esse recurso aumenta o consumo de energia de núcleo da CPU, portanto, o Windows Server 2016 configura o Turbo Technologies com base na política de energia que está em uso e na implementação específica do processador.
 
-O Turbo está habilitado para planos de energia de alto desempenho em todos os processadores Intel e AMD e ele está desabilitado para planos de energia de economia de energia. Para planos de energia Equilibrado em sistemas que se baseiam no gerenciamento de frequência tradicional baseado em estado de P, Turbo é habilitado por padrão, somente se a plataforma oferece suporte o registro EPB.
+O Turbo está habilitado para planos de energia de alto desempenho em todos os processadores Intel e AMD e está desabilitado para planos de energia de economia de energia. Para planos de energia equilibrados em sistemas que dependem do gerenciamento tradicional de frequência baseado em estado P, o Turbo será habilitado por padrão somente se a plataforma der suporte ao registro EPB.
 
 > [!Note]
-> O registro EPB só é suportado no Intel Westmere e processadores mais adiante.
+> O registro EPB tem suporte apenas nos processadores Intel Westmere e posteriores.
 
-Para os processadores Intel Nehalem e AMD, Turbo está desabilitado por padrão em plataformas com base no estado P. No entanto, se um sistema der suporte ao controle do desempenho de processador colaborativa (CPPC), que é um novo modo alternativo de comunicação de desempenho entre o sistema operacional e o hardware (definido na versão 5.0 do ACPI), Turbo pode ser ativado se a operação do Windows dinamicamente, o sistema solicita o hardware para fornecer os mais altos níveis de desempenho possível.
+Para processadores Intel Nehalem e AMD, o Turbo está desabilitado por padrão nas plataformas baseadas em Estados P. No entanto, se um sistema oferecer suporte a CPPC (controle de desempenho de processador colaborativo), que é um novo modo alternativo de comunicação de desempenho entre o sistema operacional e o hardware (definido na ACPI 5,0), o Turbo poderá ser envolvido se o Windows Operating o sistema solicita dinamicamente o hardware para fornecer os níveis de desempenho mais altos possíveis.
 
-Para habilitar ou desabilitar o recurso Turbo Boost, o parâmetro de modo de aumento de desempenho do processador deve ser configurado pelo administrador ou pelas configurações de parâmetro padrão para o plano de energia escolhido. Modo de aumento de desempenho do processador tem cinco valores permitidos, conforme mostrado na tabela 5.
+Para habilitar ou desabilitar o recurso Turbo Boost, o parâmetro modo de aumento de desempenho do processador deve ser configurado pelo administrador ou pelas configurações de parâmetro padrão para o plano de energia escolhido. O modo de aumento de desempenho do processador tem cinco valores permitidos, conforme mostrado na tabela 5.
 
-Para um controle com base no estado P, as opções são desabilitadas, habilitado (Turbo está disponível para o hardware, sempre que for solicitado a desempenho nominal) e eficiente (Turbo está disponível somente se o registro EPB é implementado).
+Para o controle baseado em estado P, as opções são desabilitadas, habilitadas (o Turbo está disponível para o hardware sempre que o desempenho nominal é solicitado) e eficiente (o Turbo estará disponível somente se o registro do EPB for implementado).
 
-Para um controle com base em CPPC, as opções são desabilitadas, habilitado eficiente (Windows Especifica o valor exato do Turbo para fornecer) e agressivo (Windows solicita "desempenho máximo" para habilitar Turbo).
+Para o controle baseado em CPPC, as opções são desabilitadas, eficientemente habilitadas (o Windows especifica a quantidade exata de Turbo a fornecer) e agressiva (o Windows solicita "desempenho máximo" para habilitar o Turbo).
 
-No Windows Server 2016, o valor padrão para o modo de aumento é 3.
+No Windows Server 2016, o valor padrão para o modo Boost é 3.
 
-| **Nome** | **Comportamento com base no estado P** | **Comportamento CPPC** |
+| **Name** | **Comportamento baseado em estado P** | **Comportamento de CPPC** |
 |--------------------------|------------------------|-------------------|
-| 0 (desabilitado) | Desabilitada | Desabilitada |
-| 1 (habilitado) | Enabled | Eficiente habilitado |
-| 2 (agressiva) | Enabled | Agressiva |
-| 3 (eficiente habilitado) | Eficiente | Eficiente habilitado |
-| 4 (eficiente agressivo) | Eficiente | Agressiva |
+| 0 (desabilitado) | Desabilitado | Desabilitado |
+| 1 (habilitado) | Enabled | Habilitado com eficiência |
+| 2 (agressivo) | Enabled | Curtas |
+| 3 (eficiente habilitado) | Eficiente | Habilitado com eficiência |
+| 4 (agressivo eficiente) | Eficiente | Curtas |
 
  
-Os comandos a seguir habilitar o modo de aumento de desempenho do processador no plano de energia atual (especificar a política por meio de um alias GUID):
+Os comandos a seguir habilitam o modo de aumento de desempenho do processador no plano de energia atual (especifique a política usando um alias de GUID):
 
 ``` syntax
 Powercfg -setacvalueindex scheme_current sub_processor PERFBOOSTMODE 1
@@ -127,31 +127,31 @@ Powercfg -setactive scheme_current
 ```
 
 > [!Important]
-> Você deve executar o **powercfg - setactive** comando para habilitar as novas configurações. Não é necessário reinicializar o servidor.
+> Você deve executar o comando **powercfg-SetActive** para habilitar as novas configurações. Você não precisa reinicializar o servidor.
 
-Para definir esse valor para planos de energia que não seja o plano selecionado no momento, você pode usar aliases como esquema\_máximo (economia de energia), o esquema de\_MIN (alto desempenho) e o esquema\_EQUILIBRADO (equilibrado) no lugar do esquema\_Atual. Substitua "esquema atual" nos comandos powercfg - setactive mostrada anteriormente com o alias desejado para habilitar esse plano de energia.
+Para definir esse valor para planos de energia diferentes do plano selecionado no momento, você pode usar aliases como o esquema\_máximo (economia de energia),\_o esquema mínimo (alto desempenho) e\_o esquema balanceado (equilibrado) no lugar do esquema\_Atual. Substitua "esquema atual" nos comandos powercfg-SetActive anteriormente mostrados com o alias desejado para habilitar esse plano de energia.
 
-Por exemplo ajustar o modo de aumento no plano de economia de energia e fazer essa economia de energia é o plano atual, execute os seguintes comandos:
+Por exemplo, para ajustar o modo de aumento no plano de economia de energia e fazer com que a economia de energia seja o plano atual, execute os seguintes comandos:
 
 ``` syntax
 Powercfg -setacvalueindex scheme_max sub_processor PERFBOOSTMODE 1
 Powercfg -setactive scheme_max
 ```
 
-## <a name="minimum-and-maximum-processor-performance-state"></a>Mínimo e o estado de desempenho máximo do processador
+## <a name="minimum-and-maximum-processor-performance-state"></a>Estado mínimo e máximo de desempenho do processador
 
-Processadores mudam entre os estados de desempenho (P-states) muito rapidamente à fonte de correspondência para solicitar, fornecendo desempenho quando necessário e economia de energia quando possível. Se seu servidor tiver requisitos específicos de alto desempenho ou consumo de energia mínimo, você pode considerar a configuração do **estado de desempenho do processador mínimo** parâmetro ou o **máximo desempenho de processador Estado** parâmetro.
+Os processadores mudam de acordo com os Estados de desempenho (P-States) rapidamente para corresponder à demanda, fornecendo desempenho quando necessário e economizando energia quando possível. Se o seu servidor tiver requisitos específicos de alto desempenho ou consumo mínimo de energia, considere a possibilidade de configurar o parâmetro **mínimo de desempenho do processador** ou o parâmetro de estado de **desempenho máximo do processador** .
 
-Os valores para o **estado de desempenho do processador mínimo** e **estado de desempenho do processador máximo** os parâmetros são expressos como uma porcentagem de frequência máxima do processador, com um valor no intervalo 0 – 100.
+Os valores para o **estado mínimo de desempenho do processador** e os parâmetros de **estado de desempenho máximo do processador** são expressos como um percentual da frequência máxima do processador, com um valor no intervalo de 0 a 100.
 
-Se o servidor exigir latência extremamente baixa, frequência de CPU invariável (por exemplo, para testes repetíveis) ou os mais altos níveis de desempenho, você talvez não queira os processadores alternando para estados de desempenho inferior. Para o servidor, você pode limitar o estado de desempenho do processador mínimo 100 por cento, usando os comandos a seguir:
+Se o servidor exigir latência ultra baixa, frequência de CPU invariável (por exemplo, para teste repetível) ou os níveis de desempenho mais altos, talvez você não queira que os processadores alternem para Estados de desempenho inferior. Para esse servidor, você pode limitar o estado mínimo de desempenho do processador em 100% usando os seguintes comandos:
 
 ``` syntax
 Powercfg -setacvalueindex scheme_current sub_processor PROCTHROTTLEMIN 100
 Powercfg -setactive scheme_current
 ```
 
-Se o servidor exigir menor consumo de energia, você talvez queira limitar o estado de desempenho do processador em uma porcentagem de máximo. Por exemplo, você pode restringir o processador de até 75% de sua frequência máxima, usando os comandos a seguir:
+Se o servidor exigir um consumo de energia menor, talvez você queira limitar o estado de desempenho do processador a um percentual de máximo. Por exemplo, você pode restringir o processador a 75% de sua frequência máxima usando os seguintes comandos:
 
 ``` syntax
 Powercfg -setacvalueindex scheme_current sub_processor PROCTHROTTLEMAX 75
@@ -159,19 +159,19 @@ Powercfg -setactive scheme_current
 ```
 
 > [!Note]
-> Limitar o desempenho do processador em uma porcentagem de máximo requer suporte do processador. Consulte a documentação do processador para determinar se esse suporte existe, ou exibir o contador de desempenho do sistema **% de frequência máxima** na **processador** grupo para ver se qualquer caps frequência foram aplicado.
+> A limitação do desempenho do processador a um percentual do máximo exige suporte do processador. Verifique a documentação do processador para determinar se esse suporte existe ou exiba o contador do monitor de desempenho **% de frequência máxima** no grupo de **processadores** para ver se as maiúsculas e minúsculas foram aplicadas.
 
-## <a name="processor-performance-increase-and-decrease-of-thresholds-and-policies"></a>Desempenho do processador aumentam e diminuem de limites e políticas
+## <a name="processor-performance-increase-and-decrease-of-thresholds-and-policies"></a>Aumento e redução de desempenho do processador de limites e políticas
 
-A velocidade na qual um estado de desempenho do processador aumenta ou diminui é controlada por vários parâmetros. Os seguintes quatro parâmetros têm o impacto mais visível:
+A velocidade na qual um estado de desempenho do processador aumenta ou diminui é controlado por vários parâmetros. Os quatro parâmetros a seguir têm o impacto mais visível:
 
--   **Aumentar o limite de desempenho do processador** define o valor da utilização acima que aumentará o estado de desempenho do processador. Valores maiores diminuir a taxa de aumento para o estado de desempenho em resposta a atividades de aumento.
+-   O **limite de aumento de desempenho do processador** define o valor de utilização acima do qual o estado de desempenho do processador aumentará. Valores maiores diminuem a taxa de aumento para o estado de desempenho em resposta às atividades aumentadas.
 
--   **Limite de diminuir o desempenho do processador** define o valor da utilização abaixo que diminuirá o estado de desempenho do processador. Valores maiores aumentam a taxa de redução para o estado de desempenho durante períodos ociosos.
+-   O **limite de redução de desempenho do processador** define o valor de utilização abaixo do qual o estado de desempenho do processador será reduzido. Valores maiores aumentam a taxa de redução para o estado de desempenho durante períodos ociosos.
 
--   **Política de aumentar o desempenho de processador e diminuir o desempenho do processador** política determinar qual estado de desempenho deve ser definido quando ocorre uma alteração. Política de "Única" significa que ele escolhe o próximo estado. "Rocket" significa que o estado de desempenho de energia máximo ou mínimo. "Ideal" tenta encontrar um equilíbrio entre desempenho e energia.
+-   **Aumento de desempenho do processador e redução de** desempenho do processador A política determina qual estado de desempenho deve ser definido quando ocorre uma alteração. A política "única" significa que ele escolhe o estado seguinte. "Rocket" significa o estado de desempenho máximo ou mínimo de energia. "Ideal" tenta encontrar um equilíbrio entre energia e desempenho.
 
-Por exemplo, se o servidor exigir latência extremamente baixa, apesar de desejarem ainda se beneficiar de baixo consumo de energia durante períodos ociosos, poderia quicken o aumento de estado de desempenho para qualquer aumento de carga e lenta a diminuição quando carga fica inativo. Os comandos a seguir definir a política de aumento como "Rocket" para um aumento de estado mais rápido e definir a política de diminuição para "Único". Os limites de aumento e diminuição são definidos como 10 e 8, respectivamente.
+Por exemplo, se o servidor exigir latência ultra baixa e ainda quiser se beneficiar de baixo consumo de energia durante períodos ociosos, você poderá acelerar o aumento do estado de desempenho para qualquer aumento na carga e reduzir a redução quando o carregamento falhar. Os comandos a seguir definem a política de aumento para "Rocket" para um aumento de estado mais rápido e definem a política de redução como "única". Os limites aumentar e diminuir são definidos como 10 e 8, respectivamente.
 
 ``` syntax
 Powercfg.exe -setacvalueindex scheme_current sub_processor PERFINCPOL 2
@@ -181,39 +181,39 @@ Powercfg.exe -setacvalueindex scheme_current sub_processor PERFDECTHRESHOLD 8
 Powercfg.exe /setactive scheme_current
 ```
 
-## <a name="processor-performance-core-parking-maximum-and-minimum-cores"></a>Núcleo do processador desempenho mínimos e máximo de núcleos de estacionamento
+## <a name="processor-performance-core-parking-maximum-and-minimum-cores"></a>Núcleos máximos e mínimos de estacionamento do desempenho do processador
 
-Estacionamento do núcleo é um recurso que foi introduzido no Windows Server 2008 R2. O mecanismo PPM (gerenciamento) de energia do processador e o Agendador trabalham juntos para ajustar dinamicamente o número de núcleos que estão disponíveis para executar threads. O mecanismo de PPM escolhe um número mínimo de núcleos para os threads que serão agendados.
+O estacionamento principal é um recurso que foi introduzido no Windows Server 2008 R2. O mecanismo de gerenciamento de energia do processador (PPM) e o Agendador trabalham juntos para ajustar dinamicamente o número de núcleos disponíveis para execução de threads. O mecanismo PPM escolhe um número mínimo de núcleos para os threads que serão agendados.
 
-Núcleos estão estacionados geralmente não têm nenhum thread agendado, e eles descartará em estados de muito baixa energia quando eles não estão processando interrupções, DPCs ou outro trabalho estritamente afinidade. Os núcleos restantes são responsáveis pelo restante da carga de trabalho. Estacionamento do núcleo potencialmente pode aumentar a eficiência de energia durante o uso mais baixo.
+Os núcleos estacionados geralmente não têm nenhum thread agendado e serão descartados em Estados de energia muito baixos quando não estiverem processando interrupções, DPCs ou outro trabalho estritamente relacionados. Os núcleos restantes são responsáveis pelo restante da carga de trabalho. O estacionamento principal pode aumentar a eficiência de energia durante o uso mais baixo.
 
-Para a maioria dos servidores, o comportamento de estacionamento do núcleo padrão fornece um equilíbrio razoável de taxa de transferência e a eficiência energética. Em processadores onde estacionamento do núcleo pode não mostrar o máximo benefício em cargas de trabalho genéricas, ele pode ser desabilitado por padrão.
+Para a maioria dos servidores, o comportamento padrão de estacionamento de núcleo fornece um equilíbrio razoável de produtividade e eficiência de energia. Em processadores em que o estacionamento principal pode não mostrar o máximo de benefícios em cargas de trabalho genéricas, ele pode ser desabilitado por padrão.
 
-Se seu servidor tiver requisitos de estacionamento de núcleo específico, você pode controlar o número de núcleos que estão disponíveis para deixar usando o **desempenho Core estacionamento máximo núcleos de processador** parâmetro ou o **processador Desempenho Core estacionamento mínimo de núcleos de** parâmetro no Windows Server 2016.
+Se o seu servidor tiver requisitos de estacionamento de núcleo específicos, você poderá controlar o número de núcleos que estão disponíveis para estacionar usando o parâmetro núcleo de **desempenho do processador-máximo de núcleos de estacionamento** ou os **núcleos mínimos de estacionamento do núcleo de desempenho do processador** no Windows Server 2016.
 
-Um cenário que estacionamento do núcleo nem sempre é ideal para é quando há um ou mais threads ativos relacionados a um subconjunto não trivial de CPUs em um nó NUMA (ou seja, mais de 1 CPU, mas menor do que o conjunto inteiro de CPUs no nó). Quando o algoritmo de estacionamento do núcleo é de separação de núcleos para unpark (supondo um aumento na intensidade da carga de trabalho ocorre), ele não pode escolher os núcleos dentro do subconjunto de afinidade ativo (ou subconjuntos) unpark sempre e, portanto, talvez acaba unparking núcleos que, na verdade, não será utilizado.
+Um cenário que o estacionamento principal nem sempre é ideal para o é quando há um ou mais threads ativos relacionados a um subconjunto não trivial de CPUs em um nó NUMA (ou seja, mais de 1 CPU, mas menos do que o conjunto inteiro de CPUs no nó). Quando o algoritmo de estacionamento principal está escolhendo núcleos para desestacionar (supondo que ocorra um aumento na intensidade da carga de trabalho), ele nem sempre pode escolher os núcleos dentro do subconjunto (ou subconjuntos) relacionados ativo para desfazer o estacionamento e, portanto, pode acabar com o estacionamento de núcleos que não serão realmente utilizados.
 
-Os valores para esses parâmetros são percentuais no intervalo de 0 a 100. O **desempenho Core estacionamento máximo núcleos de processador** parâmetro controla o percentual máximo de núcleos que podem ser unparked (disponível para executar threads) a qualquer momento, enquanto o **principal de desempenho do processador de estacionamento Núcleos mínimos** parâmetro controla o percentual mínimo de núcleos que podem ser unparked. Para desativar estacionamento do núcleo, defina as **processador desempenho Core estacionamento mínimo de núcleos** parâmetro até 100 por cento, usando os comandos a seguir:
+Os valores para esses parâmetros são porcentagens no intervalo de 0 a 100. O parâmetro de **núcleos de estacionamento máximo de núcleos de desempenho do processador** controla o percentual máximo de núcleos que podem ser desestacionados (disponíveis para executar threads) a qualquer momento, enquanto o parâmetro **núcleos mínimos do estacionamento do núcleo de desempenho do processador** controla o percentual mínimo de núcleos que podem ter o estacionamento anulado. Para desativar o estacionamento principal, defina o parâmetro núcleos **mínimos de estacionamento do núcleo de desempenho do processador** como 100 por cento usando os seguintes comandos:
 
 ``` syntax
 Powercfg -setacvalueindex scheme_current sub_processor CPMINCORES 100
 Powercfg -setactive scheme_current
 ```
 
-Para reduzir o número de núcleos agendáveis para 50% da contagem máxima, defina as **desempenho Core estacionamento máximo núcleos de processador** parâmetro como 50, da seguinte maneira:
+Para reduzir o número de núcleos de agendáveis a 50% da contagem máxima, defina o parâmetro de **núcleos de estacionamento máximo de núcleos de desempenho do processador** como 50 da seguinte maneira:
 
 ``` syntax
 Powercfg -setacvalueindex scheme_current sub_processor CPMAXCORES 50
 Powercfg -setactive scheme_current
 ```
 
-## <a name="processor-performance-core-parking-utility-distribution"></a>Núcleo de desempenho de processador, distribuição de utilitário de estacionamento
+## <a name="processor-performance-core-parking-utility-distribution"></a>Distribuição do utilitário de estacionamento do núcleo de desempenho do processador
 
-Utilitário de distribuição é uma otimização algorítmica no Windows Server 2016 que foi projetado para melhorar a eficiência de energia para algumas cargas de trabalho. Ele rastreia imóvel atividade da CPU (ou seja, DPCs, interrupções ou estritamente afinidade de threads), e ele prevê o trabalho futuro em cada processador com base na suposição de que qualquer trabalho móvel pode ser distribuído igualmente entre todos os núcleos unparked.
+A distribuição de utilitários é uma otimização de algoritmo no Windows Server 2016 que foi projetada para melhorar a eficiência de energia para algumas cargas de trabalho. Ele acompanha a atividade de CPU não-móvel (ou seja, DPCs, interrupções ou rigorosamente relacionados threads) e prevê o trabalho futuro em cada processador com base na suposição de que qualquer trabalho móvel pode ser distribuído igualmente entre todos os núcleos sem estacionamento.
 
-Utilitário de distribuição é habilitado por padrão para o plano de energia Equilibrado para alguns processadores. Ela pode reduzir o consumo de energia do processador, reduzindo as frequências de CPU solicitadas de cargas de trabalho que estão em um estado razoavelmente estável. No entanto, o utilitário de distribuição não é necessariamente uma boa opção algorítmica para cargas de trabalho que estão sujeitos a picos de alta atividade ou para programas em que a carga de trabalho rápida e aleatoriamente desloca entre processadores.
+A distribuição do utilitário é habilitada por padrão para o plano de energia equilibrado para alguns processadores. Ele pode reduzir o consumo de energia do processador reduzindo as frequências de CPU solicitadas das cargas de trabalho que estão em um estado razoavelmente estável. No entanto, a distribuição do utilitário não é necessariamente uma boa opção de algoritmos para cargas de trabalho sujeitas a grandes picos de atividade ou para programas em que a carga de trabalho muda de forma rápida e aleatória entre os processadores.
 
-Para essas cargas de trabalho, é recomendável desabilitando a distribuição de utilitário, usando os comandos a seguir:
+Para essas cargas de trabalho, é recomendável desabilitar a distribuição do utilitário usando os seguintes comandos:
 
 ``` syntax
 Powercfg -setacvalueindex scheme_current sub_processor DISTRIBUTEUTIL 0
@@ -221,7 +221,7 @@ Powercfg -setactive scheme_current
 ```
 
 ## <a name="see-also"></a>Consulte também
-- [Considerações de desempenho de Hardware do servidor](../index.md)
+- [Considerações de desempenho de hardware do servidor](../index.md)
 - [Server Hardware Power Considerations](../power.md) (Considerações de energia de hardware do servidor)
 - [Processor Power Management Tuning](processor-power-management-tuning.md) (Ajuste de gerenciamento de energia do processador)
 - [Parâmetros de plano balanceado recomendados](recommended-balanced-plan-parameters.md)

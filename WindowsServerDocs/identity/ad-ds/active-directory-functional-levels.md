@@ -11,98 +11,98 @@ ms.prod: windows-server-threshold
 ms.custom: it-pro
 ms.reviewer: maheshu
 ms.technology: identity-adds
-ms.openlocfilehash: cb9b5b9448f364760c3d2a7e43edd01a5a9f7f9d
-ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
+ms.openlocfilehash: c1e2108084b03fabbf7c6a18c2ecbcaf3cbd1dd9
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66719670"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868259"
 ---
 # <a name="forest-and-domain-functional-levels"></a>Níveis funcionais de floresta e domínio
 
 >Aplica-se a: Windows Server
 
-Níveis funcionais de determinam os recursos de domínio ou floresta de serviços de domínio Active Directory (AD DS) disponíveis. Eles também determinam quais sistemas operacionais do Windows Server podem ser executados em controladores de domínio no domínio ou floresta. No entanto, os níveis funcionais não afetam quais sistemas operacionais que você pode executar em estações de trabalho e servidores de membro que ingressaram no domínio ou floresta.
+Os níveis funcionais determinam os recursos de domínio ou floresta Active Directory Domain Services (AD DS) disponíveis. Eles também determinam quais sistemas operacionais Windows Server você pode executar em controladores de domínio no domínio ou na floresta. No entanto, os níveis funcionais não afetam os sistemas operacionais que podem ser executados em estações de trabalho e servidores membro que ingressaram no domínio ou na floresta.
 
-Quando você implanta o AD DS, defina os níveis funcionais de domínio e floresta para o valor mais alto que pode dar suporte a seu ambiente. Dessa forma, você pode usar tantos recursos do AD DS quanto possível. Quando você implanta uma nova floresta, você precisará definir o nível funcional de floresta e, em seguida, defina o nível funcional do domínio. Você pode definir o nível funcional de domínio para um valor que é maior do que o nível funcional da floresta, mas não é possível definir o nível funcional de domínio para um valor que é menor do que o nível funcional da floresta.
+Ao implantar AD DS, defina os níveis funcionais de domínio e floresta para o valor mais alto com o qual seu ambiente pode dar suporte. Dessa forma, você pode usar o máximo de recursos de AD DS possível. Quando você implanta uma nova floresta, é solicitado que você defina o nível funcional da floresta e, em seguida, defina o nível funcional do domínio. Você pode definir o nível funcional do domínio para um valor maior que o nível funcional da floresta, mas não pode definir o nível funcional do domínio como um valor inferior ao nível funcional da floresta.
 
-Com o fim da vida útil do Windows 2003, controladores de domínio (DCs) do Windows 2003 precisam ser atualizados para o Windows Server 2008, 2008R2, 2012, 2012 R2, 2016 ou 2019. Como resultado, qualquer controlador de domínio que executa o Windows Server 2003 deve ser removido do domínio.
+Com o fim da vida útil do Windows 2003, os DCs (controladores de domínio) do Windows 2003 precisam ser atualizados para o Windows Server 2008, 2008R2, 2012, 2012R2, 2016 ou 2019. Como resultado, qualquer controlador de domínio que executa o Windows Server 2003 deve ser removido do domínio.
 
-No Windows Server 2008 e superiores níveis funcionais de domínio, replicação do serviço de arquivos distribuído (DFS) é usada para replicar o conteúdo da pasta SYSVOL entre controladores de domínio. Se você criar um novo domínio no nível funcional de domínio do Windows Server 2008 ou superior, a replicação DFS é automaticamente usada para replicar o SYSVOL. Se você criou o domínio em um nível funcional mais baixo, você precisará migrar do uso de FRS para replicação do DFS do SYSVOL. Para obter as etapas de migração, você pode a seguir a [procedimentos no TechNet](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx) ou você pode consultar a [simplificada do conjunto de etapas no blog do gabinete do arquivo de equipe de armazenamento](http://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx).
+Nos níveis funcionais de domínio do Windows Server 2008 e superior, a replicação do serviço de arquivos distribuído (DFS) é usada para replicar o conteúdo da pasta SYSVOL entre controladores de domínio. Se você criar um novo domínio no nível funcional de domínio do Windows Server 2008 ou superior, Replicação do DFS será usado automaticamente para replicar o SYSVOL. Se você criou o domínio em um nível funcional inferior, será necessário migrar do usando o FRS para a Replicação DFS para SYSVOL. Para obter as etapas de migração, você pode seguir os [procedimentos no TechNet](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx) ou pode consultar o [conjunto simplificado de etapas no blog do gabinete de arquivo da equipe de armazenamento](http://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx).
 
 ## <a name="windows-server-2019"></a>Windows Server 2019
 
-Não há nenhuma nova floresta ou níveis funcionais de domínio adicionados nesta versão.
+Não há novos níveis funcionais de floresta ou domínio adicionados nesta versão.
 
-O requisito mínimo para adicionar um controlador de domínio do Windows Server 2019 é um nível funcional do Windows Server 2008. O domínio também deve usar DFS-R como o mecanismo para replicar o SYSVOL.
+O requisito mínimo para adicionar um controlador de domínio do Windows Server 2019 é um nível funcional do Windows Server 2008. O domínio também precisa usar o DFS-R como o mecanismo para replicar o SYSVOL.
 
 ## <a name="windows-server-2016"></a>Windows Server 2016
 
-Sistema de operacional do controlador de domínio com suporte:
+Sistema operacional do controlador de domínio com suporte:
 
 * Windows Server 2019
 * Windows Server 2016
 
-### <a name="windows-server-2016-forest-functional-level-features"></a>Recursos de nível funcional de floresta Windows Server 2016
+### <a name="windows-server-2016-forest-functional-level-features"></a>Recursos de nível funcional de floresta do Windows Server 2016
 
-* Todos os recursos que estão disponíveis no Windows Server 2012 R2 nível funcional da floresta e os recursos a seguir, estão disponíveis:
-   * [Gerenciamento de acesso privilegiado (PAM) usando o Microsoft Identity Manager (MIM)](https://docs.microsoft.com/windows-server/identity/whats-new-active-directory-domain-services#a-namebkmkpamaprivileged-access-management)
+* Todos os recursos que estão disponíveis no nível funcional de floresta 2012R2 do Windows Server e os seguintes recursos estão disponíveis:
+   * [PAM (Privileged Access Management) usando o Microsoft Identity Manager (MIM)](https://docs.microsoft.com/windows-server/identity/whats-new-active-directory-domain-services#a-namebkmkpamaprivileged-access-management)
 
-### <a name="windows-server-2016-domain-functional-level-features"></a>Recursos de nível funcional de domínio Windows Server 2016
+### <a name="windows-server-2016-domain-functional-level-features"></a>Recursos de nível funcional de domínio do Windows Server 2016
 
-* Todos os recursos do Active Directory padrão, todos os recursos do nível funcional do Windows Server 2012 R2 domínio, além dos seguintes recursos:
-   * Controladores de domínio podem dar suporte a distribuição automática do NTLM e outros segredos baseado em senha em uma conta de usuário configurado para exigir autenticação PKI. Essa configuração também é conhecido como "Cartão inteligente necessário para logon interativo"
-   * Controladores de domínio podem dar suporte a rede, permitindo que NTLM quando um usuário é restrito a específicos de dispositivos ingressados no domínio.
-   * Os clientes do Kerberos autenticar com êxito com a extensão de atualização de PKInit obterá a identidade de chave pública nova SID.
+* Todos os recursos de Active Directory padrão, todos os recursos do nível funcional de domínio 2012R2 do Windows Server, além dos seguintes recursos:
+   * Os DCs podem dar suporte à distribuição automática de NTLM e a outros segredos baseados em senha em uma conta de usuário configurada para exigir autenticação PKI. Essa configuração também é conhecida como "cartão inteligente necessário para logon interativo"
+   * Os DCs podem dar suporte à permissão de NTLM de rede quando um usuário está restrito a dispositivos ingressados no domínio específico.
+   * Os clientes Kerberos que se autenticam com êxito com a extensão de atualização PKInit obterão o novo SID de identidade de chave pública.
 
-    Para obter mais informações, consulte [o que há de novo na autenticação Kerberos](https://docs.microsoft.com/windows-server/security/kerberos/whats-new-in-kerberos-authentication) e [Novidades na proteção de credenciais](https://docs.microsoft.com/windows-server/security/credentials-protection-and-management/whats-new-in-credential-protection)
+    Para obter mais informações, consulte [o que há de novo na autenticação Kerberos](https://docs.microsoft.com/windows-server/security/kerberos/whats-new-in-kerberos-authentication) e [o que há de novo na proteção de credenciais](https://docs.microsoft.com/windows-server/security/credentials-protection-and-management/whats-new-in-credential-protection)
 
-## <a name="windows-server-2012r2"></a>Windows Server 2012R2
+## <a name="windows-server-2012r2"></a>2012R2 do Windows Server
 
-Sistema de operacional do controlador de domínio com suporte:
+Sistema operacional do controlador de domínio com suporte:
 
 * Windows Server 2019
 * Windows Server 2016
 * Windows Server 2012 R2
 
-### <a name="windows-server-2012r2-forest-functional-level-features"></a>Windows Server 2012 R2 floresta recursos de nível funcional
+### <a name="windows-server-2012r2-forest-functional-level-features"></a>Recursos de nível funcional de floresta do Windows Server 2012R2
 
-* Todos os recursos que estão disponíveis no Windows Server 2012 recursos de nível, mas nenhum adicional funcionais da floresta.
+* Todos os recursos que estão disponíveis no nível funcional de floresta do Windows Server 2012, mas sem recursos adicionais.
 
-### <a name="windows-server-2012r2-domain-functional-level-features"></a>Windows Server 2012 R2 domínio recursos de nível funcional
+### <a name="windows-server-2012r2-domain-functional-level-features"></a>Recursos do nível funcional do domínio 2012R2 do Windows Server
 
-* Todos os recursos do Active Directory padrão, todos os recursos do nível funcional do domínio Windows Server 2012, além dos seguintes recursos:
-   * Proteções do lado do controlador de domínio para usuários protegidos. Protegido por autenticação dos usuários para um Windows Server 2012 R2 pode deixar de domínio:
-      * Autenticar com a autenticação NTLM
-      * Usar conjuntos de criptografia DES ou RC4 na pré-autenticação do Kerberos
-      * Ser delegadas com delegação restrita ou irrestrita
-      * Renovar tíquetes de usuário (TGTs) além do tempo de vida inicial de 4 horas
+* Todos os recursos de Active Directory padrão, todos os recursos do nível funcional de domínio do Windows Server 2012, além dos seguintes recursos:
+   * Proteções no lado do DC para usuários protegidos. Usuários protegidos que se autenticam em um domínio do Windows Server 2012 R2 não podem mais:
+      * Autenticar com autenticação NTLM
+      * Usar conjuntos de codificação DES ou RC4 na pré-autenticação Kerberos
+      * Ser delegado com delegação irrestrita ou restrita
+      * Renovar tíquetes de usuário (TGTs) Além do tempo de vida inicial de 4 horas
    * Políticas de autenticação
-      * Nova floresta do Active Directory políticas que podem ser aplicadas a contas em domínios do Windows Server 2012 R2 para controlar quais hosts uma conta pode logon do e aplicar condições de controle de acesso para autenticação para serviços em execução como uma conta.
+      * Novas políticas de Active Directory baseadas em floresta que podem ser aplicadas a contas em domínios do Windows Server 2012 R2 para controlar em quais hosts uma conta pode se conectar e aplicar condições de controle de acesso para autenticação em serviços em execução como uma conta.
    * Silos de política de autenticação
-      * Nova floresta com base no objeto de Active Directory, que pode criar uma relação entre contas de usuário, serviço gerenciado e computador, a ser usado para classificar as contas para as políticas de autenticação ou para o isolamento de autenticação.
+      * Novo objeto de Active Directory baseado em floresta, que pode criar uma relação entre usuário, serviço gerenciado e computador, contas a serem usadas para classificar contas para políticas de autenticação ou isolamento de autenticação.
 
 ## <a name="windows-server-2012"></a>Windows Server 2012
 
-Sistema de operacional do controlador de domínio com suporte:
+Sistema operacional do controlador de domínio com suporte:
 
 * Windows Server 2019
 * Windows Server 2016
 * Windows Server 2012 R2
 * Windows Server 2012
 
-### <a name="windows-server-2012-forest-functional-level-features"></a>Recursos de nível funcional de floresta Windows Server 2012
+### <a name="windows-server-2012-forest-functional-level-features"></a>Recursos de nível funcional de floresta do Windows Server 2012
 
-* Todos os recursos que estão disponíveis no Windows Server 2008 R2 recursos de nível, mas nenhum adicional funcionais da floresta.
+* Todos os recursos que estão disponíveis no nível funcional de floresta do Windows Server 2008 R2, mas sem recursos adicionais.
 
 ### <a name="windows-server-2012-domain-functional-level-features"></a>Recursos de nível funcional de domínio do Windows Server 2012
 
-* Todos os recursos do Active Directory padrão, todos os recursos do nível funcional do Windows Server 2008 R2 domínio, além dos seguintes recursos:
-   * Suporte do KDC para declarações, autenticação composta e proteção diretiva de modelo administrativo KDC tem duas configurações (sempre fornecer declarações e recusar solicitações de autenticação) que exigem o nível funcional de domínio do Windows Server 2012 do Kerberos. Para obter mais informações, consulte [que há de novo na autenticação Kerberos](https://technet.microsoft.com/library/hh831747.aspx)
+* Todos os recursos de Active Directory padrão, todos os recursos do nível funcional de domínio 2008R2 do Windows Server, além dos seguintes recursos:
+   * O suporte do KDC para declarações, autenticação composta e política de modelo administrativo do KDC de proteção Kerberos tem duas configurações (sempre fornecer declarações e falhas de solicitações de autenticação não protegidas) que exigem o nível funcional de domínio do Windows Server 2012. Para obter mais informações, consulte [novidades na autenticação Kerberos](https://technet.microsoft.com/library/hh831747.aspx)
 
-## <a name="windows-server-2008r2"></a>Windows Server 2008R2
+## <a name="windows-server-2008r2"></a>2008R2 do Windows Server
 
-Sistema de operacional do controlador de domínio com suporte:
+Sistema operacional do controlador de domínio com suporte:
 
 * Windows Server 2019
 * Windows Server 2016
@@ -110,20 +110,20 @@ Sistema de operacional do controlador de domínio com suporte:
 * Windows Server 2012
 * Windows Server 2008 R2
 
-### <a name="windows-server-2008r2-forest-functional-level-features"></a>Windows Server 2008 R2 floresta recursos de nível funcional
+### <a name="windows-server-2008r2-forest-functional-level-features"></a>Recursos de nível funcional de floresta do Windows Server 2008R2
 
 * Todos os recursos disponíveis no nível funcional de floresta do Windows Server 2003, além dos seguintes recursos.
    * Lixeira do Active Directory, que fornece a capacidade de restaurar totalmente os objetos excluídos durante a execução do AD DS.
 
-### <a name="windows-server-2008r2-domain-functional-level-features"></a>Windows Server 2008 R2 domínio recursos de nível funcional
+### <a name="windows-server-2008r2-domain-functional-level-features"></a>Recursos do nível funcional do domínio 2008R2 do Windows Server
 
-* Todos os recursos do Active Directory padrão, todos os recursos do nível funcional de domínio do Windows Server 2008, além dos seguintes recursos:
-   * Garantia do mecanismo de autenticação, que agrupa informações sobre o tipo do método de logon (cartão inteligente ou nome de usuário/senha) usado para autenticar os usuários de domínio dentro do token Kerberos de cada usuário. Quando esse recurso está habilitado em um ambiente de rede que implantou uma infraestrutura de gerenciamento de identidade federada, como os serviços de Federação do Active Directory (AD FS), as informações no token podem ser extraídas sempre que um usuário tenta acessar qualquer aplicativo com reconhecimento de declarações que foi desenvolvido para determinar a autorização com base no método de logon do usuário.
-   * Gerenciamento automático de SPN para serviços em execução em um determinado computador sob o contexto de uma conta de serviço gerenciado quando o nome ou host DNS das alterações de conta de computador. Para obter mais informações sobre as contas de serviço gerenciado, consulte [guia do passo a passo de contas de serviço](https://go.microsoft.com/fwlink/?LinkId=180401).
+* Todos os recursos de Active Directory padrão, todos os recursos do nível funcional de domínio do Windows Server 2008, além dos seguintes recursos:
+   * Garantia de mecanismo de autenticação, que empacota informações sobre o tipo de método de logon (cartão inteligente ou nome de usuário/senha) que é usado para autenticar usuários de domínio dentro do token Kerberos de cada usuário. Quando esse recurso é habilitado em um ambiente de rede que implantou uma infraestrutura de gerenciamento de identidades federadas, como o Serviços de Federação do Active Directory (AD FS) (AD FS), as informações no token podem ser extraídas sempre que um usuário tentar acessar qualquer um aplicativo com reconhecimento de declaração que foi desenvolvido para determinar a autorização com base no método de logon de um usuário.
+   * Gerenciamento automático de SPN para serviços em execução em um determinado computador sob o contexto de uma conta de serviço gerenciado quando o nome ou o nome de host DNS da conta da máquina é alterado. Para obter mais informações sobre contas de serviço gerenciado, consulte [guia passo a passo das contas de serviço](https://go.microsoft.com/fwlink/?LinkId=180401).
 
 ## <a name="windows-server-2008"></a>Windows Server 2008
 
-Sistema de operacional do controlador de domínio com suporte:
+Sistema operacional do controlador de domínio com suporte:
 
 * Windows Server 2019
 * Windows Server 2016
@@ -132,100 +132,100 @@ Sistema de operacional do controlador de domínio com suporte:
 * Windows Server 2008 R2
 * Windows Server 2008
 
-### <a name="windows-server-2008-forest-functional-level-features"></a>Recursos de nível funcional de floresta Windows Server 2008
+### <a name="windows-server-2008-forest-functional-level-features"></a>Recursos de nível funcional de floresta do Windows Server 2008
 
-* Todos os recursos que estão disponíveis no nível funcional de floresta Windows Server 2003, mas não há recursos adicionais estão disponíveis. 
+* Todos os recursos disponíveis no nível funcional de floresta do Windows Server 2003, mas não há recursos adicionais disponíveis. 
 
 ### <a name="windows-server-2008-domain-functional-level-features"></a>Recursos de nível funcional de domínio do Windows Server 2008
 
-* Todos os padrão do AD DS recursos, todos os recursos do que o nível funcional do domínio de Windows Server 2003, e os recursos a seguir estão disponíveis:
-  * Suporte de replicação Distributed File System (DFS) para o Windows Server 2003 Volume do sistema (SYSVOL)
-    * Suporte de replicação DFS fornece replicação mais robusta e detalhada do conteúdo de SYSVOL.
+* Todos os recursos de AD DS padrão, todos os recursos do nível funcional de domínio do Windows Server 2003 e os seguintes recursos estão disponíveis:
+  * Suporte à replicação do Sistema de Arquivos Distribuído (DFS) para o volume do sistema do Windows Server 2003 (SYSVOL)
+    * O suporte à Replicação DFS fornece replicação mais robusta e detalhada do conteúdo do SYSVOL.
 
       > [!NOTE]
-      > Começando com o Windows Server 2012 R2, a replicação FRS (serviço) foi preterido. Um novo domínio é criado em um controlador de domínio que executa pelo menos o Windows Server 2012 R2 deve ser definido para o nível funcional de domínio do Windows Server 2008 ou superior.
+      > A partir do Windows Server 2012 R2, o FRS (serviço de replicação de arquivo) foi preterido. Um novo domínio criado em um controlador de domínio que executa pelo menos o Windows Server 2012 R2 deve ser definido para o nível funcional do domínio do Windows Server 2008 ou superior.
 
-  * Baseado em domínio namespaces do DFS em execução no modo Windows Server 2008, que inclui suporte para a enumeração baseada em acesso e maior escalabilidade. Namespaces baseados em domínio no modo do Windows Server 2008 também exigem a floresta para usar o nível funcional de floresta do Windows Server 2003. Para obter mais informações, consulte [escolher um tipo de Namespace](https://go.microsoft.com/fwlink/?LinkId=180400).
-  * Suporte avançado de padrão de criptografia (AES 128 e AES 256) para o protocolo Kerberos. Em ordem para TGTs a ser emitido usando AES, o nível funcional do domínio deve ser Windows Server 2008 ou superior e a senha de domínio precisa ser alterado. 
-    * Para obter mais informações, consulte [aperfeiçoamentos de Kerberos](https://technet.microsoft.com/library/cc749438(ws.10).aspx).
+  * Namespaces do DFS baseados em domínio em execução no modo Windows Server 2008, que inclui suporte para a enumeração baseada em acesso e maior escalabilidade. Os namespaces baseados em domínio no modo Windows Server 2008 também exigem que a floresta use o nível funcional de floresta do Windows Server 2003. Para obter mais informações, consulte [escolher um tipo de namespace](https://go.microsoft.com/fwlink/?LinkId=180400).
+  * Suporte a criptografia AES (AES 128 e AES 256) para o protocolo Kerberos. Para que o TGTs seja emitido usando o AES, o nível funcional do domínio deve ser o Windows Server 2008 ou superior e a senha do domínio precisa ser alterada. 
+    * Para obter mais informações, consulte [aprimoramentos do Kerberos](https://technet.microsoft.com/library/cc749438(ws.10).aspx).
 
       > [!NOTE]
-      >Erros de autenticação podem ocorrer em um controlador de domínio depois que o nível funcional do domínio é gerado para o Windows Server 2008 ou superior se o controlador de domínio já replicou a alteração DFL, mas ainda não foi atualizado a senha de krbtgt. Nesse caso, uma reinicialização do serviço KDC no controlador de domínio irá disparar uma atualização na memória da nova senha krbtgt e resolva erros de autenticação relacionadas.
+      >Os erros de autenticação poderão ocorrer em um controlador de domínio depois que o nível funcional do domínio for gerado para o Windows Server 2008 ou superior se o controlador de domínio já tiver replicado a alteração DFL, mas ainda não tiver atualizado a senha krbtgt. Nesse caso, uma reinicialização do serviço KDC no controlador de domínio irá disparar uma atualização na memória da nova senha krbtgt e resolver os erros de autenticação relacionados.
 
-  * [Último Logon interativo](https://go.microsoft.com/fwlink/?LinkId=180387) informações exibe as seguintes informações:
-     * O número total de tentativas de logon com falha em um servidor do Windows Server 2008 ingressado no domínio ou uma estação de trabalho do Windows Vista
-     * O número total de tentativas de logon com falha após um logon bem-sucedido em um servidor Windows Server 2008 ou uma estação de trabalho do Windows Vista
-     * A hora da última tentativa de logon com falha em um Windows Server 2008 ou uma estação de trabalho do Windows Vista
-     * O horário do último logon bem-sucedido tentativa em um servidor Windows Server 2008 ou uma estação de trabalho do Windows Vista
-  * Políticas de senha refinada tornam possível para você especificar políticas de bloqueio de conta e senha para usuários e grupos de segurança global em um domínio. Para obter mais informações, consulte [guia passo a passo para configuração de política de bloqueio de conta e de senha refinada](https://go.microsoft.com/fwlink/?LinkID=91477).
+  * [Último logon interativo](https://go.microsoft.com/fwlink/?LinkId=180387) Informações exibe as seguintes informações:
+     * O número total de tentativas de logon com falha em um servidor Windows Server 2008 ingressado no domínio ou em uma estação de trabalho do Windows Vista
+     * O número total de tentativas de logon com falha após um logon bem-sucedido para um servidor do Windows Server 2008 ou uma estação de trabalho do Windows Vista
+     * A hora da última tentativa de logon com falha em uma estação de trabalho do Windows Server 2008 ou do Windows Vista
+     * A hora da última tentativa de logon bem-sucedida em um servidor Windows Server 2008 ou em uma estação de trabalho do Windows Vista
+  * As políticas de senha refinadas possibilitam que você especifique políticas de bloqueio de senha e conta para usuários e grupos de segurança globais em um domínio. Para obter mais informações, consulte [guia passo a passo para configuração de política de bloqueio de conta e senha refinada](https://go.microsoft.com/fwlink/?LinkID=91477).
   * Áreas de trabalho virtuais pessoais
-     * Para usar a funcionalidade adicional fornecida pela guia Área de trabalho Virtual Pessoal na caixa de diálogo Propriedades da conta de usuário no Active Directory Users and Computers, o esquema do AD DS deve ser estendido para o Windows Server 2008 R2 (versão do esquema do objeto = 47). Para obter mais informações, consulte [Implantando áreas de trabalho virtuais usando RemoteApp e guia de passo a passo de Conexão de área de trabalho](https://go.microsoft.com/fwlink/?LinkId=183552).
+     * Para usar a funcionalidade adicional fornecida pela guia área de trabalho virtual pessoal na caixa de diálogo Propriedades da conta de usuário em Active Directory usuários e computadores, seu esquema de AD DS deve ser estendido para o Windows Server 2008 R2 (versão do objeto de esquema = 47). Para obter mais informações, consulte [implantando áreas de trabalho virtuais pessoais usando conexão de RemoteApp e área de trabalho guia passo a passo](https://go.microsoft.com/fwlink/?LinkId=183552).
 
 ## <a name="windows-server-2003"></a>Windows Server 2003
 
-Sistema de operacional do controlador de domínio com suporte:
+Sistema operacional do controlador de domínio com suporte:
 
 * Windows Server 2012 R2
 * Windows Server 2012
 * Windows Server 2008 R2
 * Windows Server 2008
-* Windows Server 2003
+* Windows Server 2003
 
-### <a name="windows-server-2003-forest-functional-level-features"></a>Recursos de nível funcional de floresta Windows Server 2003
+### <a name="windows-server-2003-forest-functional-level-features"></a>Recursos de nível funcional de floresta do Windows Server 2003
 
-* Todos os recursos padrão AD DS e os recursos a seguir, estão disponíveis:
+* Todos os recursos de AD DS padrão e os seguintes recursos estão disponíveis:
    * Relação de confiança de floresta
    * Renomeação de domínio
    * Replicação de valor vinculado
-      - Replicação de valor vinculado torna possível para você alterar a associação de grupo para armazenar e replicar valores de membros individuais em vez de replicar a associação inteira como uma única unidade. Armazenando e replicando os valores dos membros individuais usa menos largura de banda de rede e menos ciclos do processador durante a replicação e impede a perda de atualizações quando você adicionar ou remover vários membros simultaneamente em diferentes controladores de domínio.
-   * A capacidade de implantar um controlador de domínio somente leitura (RODC)
-   * Algoritmos do Knowledge Consistency Checker (KCC) e a escalabilidade aprimorada
-      - O gerador de topologia entre sites (ISTG) usa algoritmos aprimorados que são dimensionados para dar suporte a florestas com um número maior de sites que pode dar suporte a AD DS no nível funcional de floresta do Windows 2000. O algoritmo de eleição do ISTG aprimorado é um mecanismo menos intrusiva para escolha do ISTG no nível funcional de floresta do Windows 2000.
-   * A capacidade de criar instâncias da classe auxiliar dinâmica chamada **dynamicObject** em uma partição de diretório de domínio
-   * A habilidade de converter um **inetOrgPerson** instância de objeto em um **usuário** instância de objeto e para concluir a conversão na direção oposta
+      - A replicação de valor vinculado possibilita alterar a associação de grupo para armazenar e replicar valores para membros individuais em vez de replicar toda a associação como uma única unidade. Armazenar e replicar os valores de membros individuais usa menos largura de banda de rede e menos ciclos de processador durante a replicação e impede que você perca atualizações ao adicionar ou remover vários membros simultaneamente em controladores de domínio diferentes.
+   * A capacidade de implantar um RODC (controlador de domínio somente leitura)
+   * Algoritmos e escalabilidade aprimorados do Knowledge Consistency Checker (KCC)
+      - O ISTG (gerador de topologia entre sites) usa algoritmos aprimorados que são dimensionados para oferecer suporte a florestas com um número maior de sites do que AD DS pode dar suporte no nível funcional de floresta do Windows 2000. O algoritmo de eleição do ISTG aprimorado é um mecanismo menos intrusivo para escolher o ISTG no nível funcional da floresta do Windows 2000.
+   * A capacidade de criar instâncias da classe auxiliar dinâmica chamada **DynamicObject** em uma partição de diretório de domínio
+   * A capacidade de converter uma instância de objeto **inetOrgPerson** em uma instância de objeto de **usuário** e para concluir a conversão na direção oposta
    * A capacidade de criar instâncias de novos tipos de grupo para dar suporte à autorização baseada em função. 
-      - Esses tipos são chamados de grupos de aplicativos básicos e grupos de consulta LDAP.
+      - Esses tipos são chamados de grupos básicos de aplicativos e grupos de consulta LDAP.
    * Desativação e redefinição de atributos e classes no esquema. Os seguintes atributos podem ser reutilizados: ldapDisplayName, schemaIdGuid, OID e mapiID.
-   * Baseado em domínio namespaces do DFS em execução no modo Windows Server 2008, que inclui suporte para a enumeração baseada em acesso e maior escalabilidade. Para obter mais informações, consulte [escolher um tipo de Namespace](https://go.microsoft.com/fwlink/?LinkId=180400).
+   * Namespaces do DFS baseados em domínio em execução no modo Windows Server 2008, que inclui suporte para a enumeração baseada em acesso e maior escalabilidade. Para obter mais informações, consulte [escolher um tipo de namespace](https://go.microsoft.com/fwlink/?LinkId=180400).
 
-### <a name="windows-server-2003-domain-functional-level-features"></a>Recursos de nível funcional de domínio Windows Server 2003
+### <a name="windows-server-2003-domain-functional-level-features"></a>Recursos de nível funcional de domínio do Windows Server 2003
 
-* Todos os recursos do AD DS do padrão, todos os recursos que estão disponíveis no nível funcional de domínio nativo do Windows 2000 e os recursos a seguir estão disponíveis:
-   * A ferramenta de gerenciamento de domínio, Netdom.exe, que torna possível a renomeação de controladores de domínio
-   * Atualizações do carimbo de data / hora de logon
+* Todos os recursos de AD DS padrão, todos os recursos disponíveis no nível funcional de domínio nativo do Windows 2000 e os seguintes recursos estão disponíveis:
+   * A ferramenta de gerenciamento de domínio, o Netdom. exe, que torna possível renomear controladores de domínio
+   * Atualizações de carimbo de data/hora de logon
       * O atributo **lastLogonTimestamp** é atualizado com o último horário de logon do usuário ou computador. Este atributo é replicado no domínio.
-   * A capacidade de definir a **userPassword** atributo como a senha efetiva **inetOrgPerson** e objetos de usuário
-   * A capacidade de redirecionar os usuários e computadores contêineres
-      * Por padrão, dois contêineres conhecidos são fornecidos para hospedar contas de usuário e computador, ou seja, cn = Computers,<domain root> e cn = Users,<domain root>. Esse recurso permite a definição de um novo local conhecido para essas contas.
-   * A capacidade de Gerenciador de autorização armazene diretivas de autorização no AD DS
+   * A capacidade de definir o atributo **userPassword** como a senha efetiva nos objetos **inetOrgPerson** e User
+   * A capacidade de redirecionar contêineres de usuários e computadores
+      * Por padrão, dois contêineres conhecidos são fornecidos para hospedagem de computadores e contas de usuário,<domain root> ou seja, CN = Computers e CN = Users,.<domain root> Esse recurso permite a definição de um local novo e conhecido para essas contas.
+   * A capacidade do Gerenciador de autorização de armazenar suas políticas de autorização no AD DS
    * Delegação restrita
-      * A delegação restrita possibilita aos aplicativos tirarem vantagem da delegação segura de credenciais de usuário por meio de autenticação baseada em Kerberos.
-      * Você pode restringir a delegação apenas a serviços de destino específico.
+      * A delegação restrita possibilita que os aplicativos tirem proveito da delegação segura de credenciais de usuário por meio da autenticação baseada em Kerberos.
+      * Você pode restringir a delegação somente a serviços de destino específicos.
    * Autenticação seletiva
-      * A autenticação seletiva tornam possível para que você possa especificar os usuários e grupos de uma floresta confiável que terão permissão para autenticar servidores de recursos em uma floresta confiante.
+      * A autenticação seletiva possibilita que você especifique os usuários e grupos de uma floresta confiável que têm permissão para se autenticar em servidores de recursos em uma floresta confiável.
 
 ## <a name="windows-2000"></a>Windows 2000
 
-Sistema de operacional do controlador de domínio com suporte:
+Sistema operacional do controlador de domínio com suporte:
 
 * Windows Server 2008 R2
 * Windows Server 2008
-* Windows Server 2003
+* Windows Server 2003
 * Windows 2000
 
-### <a name="windows-2000-native-forest-functional-level-features"></a>Recursos de nível funcional de floresta nativo Windows 2000
+### <a name="windows-2000-native-forest-functional-level-features"></a>Recursos de nível funcional de floresta nativa do Windows 2000
 
-* Todos os recursos padrão do AD DS estão disponíveis.
+* Todos os recursos de AD DS padrão estão disponíveis.
 
-### <a name="windows-2000-native-domain-functional-level-features"></a>Recursos de nível funcional de domínio nativo Windows 2000
+### <a name="windows-2000-native-domain-functional-level-features"></a>Recursos de nível funcional de domínio nativo do Windows 2000
 
-* Todos os recursos padrão AD DS e os seguintes recursos de diretório estiver disponível, incluindo:
-   * Grupos universais para grupos de distribuição e de segurança.
+* Todos os recursos de AD DS padrão e os seguintes recursos de diretório estão disponíveis, incluindo:
+   * Grupos universais para grupos de segurança e de distribuição.
    * Aninhamento de grupo
-   * Conversão de grupo, que permite a conversão entre grupos de segurança e distribuição
-   * Histórico de SID (identificador) de segurança
+   * Conversão de grupo, que permite a conversão entre grupos de segurança e de distribuição
+   * Histórico de SID (identificador de segurança)
 
 ## <a name="next-steps"></a>Próximas etapas
 
 * [Aumentar o nível funcional do domínio](https://technet.microsoft.com/library/cc753104.aspx)  
-* [Aumentar o nível funcional de floresta](https://technet.microsoft.com/library/cc730985.aspx)
+* [Aumentar o nível funcional da floresta](https://technet.microsoft.com/library/cc730985.aspx)

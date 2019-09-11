@@ -9,12 +9,12 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3c497cbafb8f9313f988a1b892d2b8fef68115eb
-ms.sourcegitcommit: f6503e503d8f08ba8000db9c5eda890551d4db37
+ms.openlocfilehash: 4fd1e62e67f66a217a1d4f3a26933723a4645a31
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68523910"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865570"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>Personalizar cabeçalhos de resposta de segurança HTTP com o AD FS 2019 
  
@@ -55,7 +55,7 @@ HSTS é um mecanismo de diretiva de segurança da Web que ajuda a mitigar ataque
  
 Todos os pontos de extremidade AD FS para o tráfego de autenticação na Web são abertos exclusivamente por HTTPS. Como resultado, AD FS atenua efetivamente as ameaças que o mecanismo de política de segurança de transporte estrito de HTTP fornece (por padrão, não há nenhum downgrade para HTTP, pois não há ouvintes em HTTP). O cabeçalho pode ser personalizado definindo os seguintes parâmetros 
  
-- **Max-age =&lt;tempo&gt;**  de expiração – o tempo de expiração (em segundos) especifica por quanto tempo o site só deve ser acessado usando HTTPS. O valor padrão e recomendado é 31536000 segundos (1 ano).  
+- **Max-age =&lt;tempo&gt; de expiração** – o tempo de expiração (em segundos) especifica por quanto tempo o site só deve ser acessado usando HTTPS. O valor padrão e recomendado é 31536000 segundos (1 ano).  
 - **includeSubDomains** – é um parâmetro opcional. Se especificado, a regra HSTS também se aplicará a todos os subdomínios.  
  
 #### <a name="hsts-customization"></a>Personalização de HSTS 
@@ -179,7 +179,7 @@ Esse cabeçalho de resposta de segurança HTTP é usado para impedir o script en
 #### <a name="csp-customization"></a>Personalização do CSP 
 A personalização do cabeçalho CSP envolve a modificação da política de segurança que define que o navegador de recursos tem permissão para carregar para a página da Web. A política de segurança padrão é  
  
-`Content-Security-Policy: default-src ‘self’ ‘unsafe-inline’ ‘’unsafe-eval’; img-src ‘self’ data:;` 
+`Content-Security-Policy: default-src ‘self' ‘unsafe-inline' ‘'unsafe-eval'; img-src ‘self' data:;` 
  
 A diretiva **Default-src** é usada para modificar as [diretivas-src](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/default-src) sem listar cada diretiva explicitamente. Por exemplo, no exemplo abaixo, a política 1 é a mesma que a política 2.  
 
@@ -190,14 +190,14 @@ Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue
  
 Política 2
 ```PowerShell 
-Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "script-src ‘self’; img-src ‘self’; font-src 'self';  
+Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "script-src ‘self'; img-src ‘self'; font-src 'self';  
 frame-src 'self'; manifest-src 'self'; media-src 'self';" 
 ```
 
 Se uma diretiva estiver explicitamente listada, o valor especificado substituirá o valor fornecido para Default-src. No exemplo a seguir, o img-src usará o valor como "*" (permitindo que as imagens sejam carregadas de qualquer origem) enquanto outras diretivas src usarão o valor como "self" (restringindo à mesma origem da página da Web).  
 
 ```PowerShell
-Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "default-src ‘self’; img-src *" 
+Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "default-src ‘self'; img-src *" 
 ```
 As fontes a seguir podem ser definidas para a política padrão-src 
  

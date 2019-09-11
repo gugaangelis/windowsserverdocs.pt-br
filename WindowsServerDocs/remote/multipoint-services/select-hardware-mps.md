@@ -1,6 +1,6 @@
 ---
 title: Selecionar o hardware para o sistema MultiPoint Services
-description: Considerações de hardware para o MultiPoint Services
+description: Considerações de hardware para serviços do MultiPoint
 ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server-threshold
@@ -13,194 +13,194 @@ ms.assetid: e74961a2-bd38-48ae-b1c0-4b3eff761b4a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 969ab0e97b5456c71a43cc14bd82204481bdcc42
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 697ab9a1f97eab399dafac4e0c5fa5b641ed841c
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835217"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871403"
 ---
 # <a name="selecting-hardware-for-your-multipoint-services-system"></a>Selecionar o hardware para o sistema MultiPoint Services
-Quando você cria um sistema MultiPoint Services, você deve selecionar um computador que atenda aos requisitos de sistema do Windows Server 2016. Se você estiver decidindo quais componentes para selecionar, considere o seguinte:  
+Ao criar um sistema de serviços do MultiPoint, você deve selecionar um computador que atenda aos requisitos de sistema do Windows Server 2016. Se você estiver decidindo quais componentes selecionar, considere o seguinte:  
   
--   O intervalo de preço de destino de sua solução completa.  
+-   A faixa de preço de destino de sua solução completa.  
   
--   Os tipos de cenários de uso que você pode esperar para o sistema MultiPoint Services, como se os usuários estão executando programas multimídia, usando o processamento de texto ou programas de produtividade ou navegação na Internet.  
+-   Os tipos de cenários de uso que você pode esperar para o sistema de serviços do MultiPoint, por exemplo, se os usuários estão executando programas multimídia, usando programas de processamento de texto ou produtividade, ou navegando na Internet.  
   
--   Se seu cenário tem demandas de processamento ou de memória grandes.  
+-   Se seu cenário tem grandes demandas de processamento ou memória.  
   
--   O número de usuários que pode estar usando o sistema ao mesmo tempo. Se você planeja ter vários usuários em seu sistema ao mesmo tempo, ou usuários que usam o sistema intensivo de programas, você deve planejar mais potência de computação para seu sistema.  
+-   O número de usuários que podem estar usando o sistema ao mesmo tempo. Se você planeja ter muitos usuários em seu sistema ao mesmo tempo ou usuários que usam programas com uso intensivo de sistema, você deve planejar mais poder de computação para seu sistema.  
   
--   O tipo de estações. Quantas portas USB ou portas de vídeo que você precisa?  
+-   O tipo de estação. Quantas portas USB ou portas de vídeo você precisa?  
   
--   Planos de expansão futura. Você planeja adicionar estações no sistema MultiPoint Services em uma data posterior? Você terá suficiente slots de placa de vídeo, portas USB ou toca em rede? Quantos usuários adicionais o hardware necessário dar suporte?  
+-   Planos de expansão futuros. Você planeja adicionar estações ao sistema de serviços do MultiPoint em uma data posterior? Você terá slots de placa de vídeo suficientes, portas USB ou toques de rede? A quantos usuários adicionais seu hardware precisará dar suporte?  
   
--   Layout físico. Para obter mais informações, consulte [planejamento do Site do MultiPoint Services](MultiPoint-services-Site-Planning.md).  
+-   Layout físico. Para obter mais informações, consulte [planejamento de site dos serviços do MultiPoint](MultiPoint-services-Site-Planning.md).  
   
-Normalmente, um sistema MultiPoint Services inclui os seguintes componentes:  
+Um sistema de serviços do MultiPoint normalmente inclui os seguintes componentes:  
   
--   Um computador que está executando o MultiPoint Services, que inclui uma CPU, RAM, discos rígidos e placas de vídeo.  
+-   Um computador que esteja executando os serviços do MultiPoint, que inclui CPU, RAM, unidades de disco rígido e placas de vídeo.  
   
--   Um monitor, hub de estação, teclado e mouse para cada estação.  
+-   Um monitor, Hub de estação, teclado e mouse para cada estação.  
   
--   Dispositivos periféricos opcionais para as estações do MultiPoint Services, incluindo alto-falantes, fones de ouvido, microfones ou dispositivos de armazenamento que estão disponíveis somente para o usuário da estação.  
+-   Dispositivos periféricos opcionais para estações de serviços do MultiPoint, incluindo alto-falantes, fones de ouvido, microfones ou dispositivos de armazenamento que estão disponíveis somente para o usuário da estação.  
   
--   Opcionais dispositivos periféricos que estão disponíveis para todos os usuários do sistema MultiPoint Services, conectado diretamente ao computador host, como impressoras, discos rígidos externos e dispositivos de armazenamento USB.  
+-   Dispositivos periféricos opcionais que estão disponíveis para todos os usuários do sistema MultiPoint Services, conectados diretamente ao computador host, como impressoras, unidades de disco rígido externas e dispositivos de armazenamento USB.  
   
-Use as seguintes informações para tomar decisões de hardware:  
+Use as informações a seguir para tomar decisões de hardware:  
   
 -   [Selecionando uma CPU](#selecting-a-cpu)  
--   [Selecionar os componentes de hardware](#selecting-hardware-components)  
+-   [Selecionando componentes de hardware](#selecting-hardware-components)  
   
 ## <a name="selecting-a-cpu"></a>Selecionando uma CPU  
-Um sistema MultiPoint Services é um múltiplo\-ambiente do usuário, com todos os usuários conectados a um único computador host. Isso aumenta o uso da CPU, porque todos os usuários compartilham o mesmo computador. Algumas tarefas, como programas multimídia \(por exemplo, players de mídia ou vídeo\-software de edição\), têm maior demanda de processamento. Portanto, certifique-se selecionar uma CPU que pode lidar com os requisitos de processamento para o número de usuários e tipos de cenários de usuário que ele será necessário para dar suporte.  
+Um sistema de serviços do MultiPoint é\-um ambiente de vários usuários, com todos os usuários conectados a um único computador host. Isso aumenta o uso da CPU porque todos os usuários compartilham o mesmo computador. Algumas tarefas, como programas \(multimídia, por exemplo, media players ou software\)de edição de vídeo\-, têm demandas de processamento maiores. Portanto, certifique-se de selecionar uma CPU que possa lidar com os requisitos de processamento para o número de usuários e tipos de cenários de usuário aos quais ele precisará dar suporte.  
   
-Requer o multiPoint Services x64\-com base em CPU e deve atender os requisitos de sistema para o computador, conforme descrito em [requisitos de Hardware e recomendações de desempenho](Hardware-Requirements-and-Performance-Recommendations.md).  
+Os serviços do MultiPoint exigem\-uma CPU baseada em x64 e devem atender aos requisitos do sistema para o computador, conforme descrito em [requisitos de hardware e recomendações de desempenho](Hardware-Requirements-and-Performance-Recommendations.md).  
   
-Os seguintes tipos de processadores foram testados para ser usado em um sistema MultiPoint Services com alta\-exigem programas de processamento, como programas multimídia:  
+Os seguintes tipos de processadores foram testados para serem usados em um sistema de serviços do MultiPoint\-com programas de processamento de alta demanda, como programas multimídia:  
   
--   **Dupla\-processador core:** Pode dar suporte a até 8 estações.  
--   **Quad\-processador core:** Pode dar suporte a até 16 estações.
--   **Quad\-núcleos de processador com multithreading:** Pode dar suporte a até 20 estações.      
--   **Seis\-núcleos de processador com multithreading:** Pode dar suporte a até 24 estações.  
+-   **Processador\-Dual Core:** O pode oferecer suporte a até 8 estações.  
+-   **Processador\-Quad Core:** O pode oferecer suporte a até 16 estações.
+-   **Processador\-quad core com multithreading:** O pode dar suporte a até 20 estações.      
+-   **Processador\-de seis núcleos com multithreading:** O pode oferecer suporte a até 24 estações.  
   
-Com essas informações, selecione uma CPU que atende aos requisitos de processamento para o seu sistema MultiPoint Services. 
+Com essas informações, selecione uma CPU que atenda aos requisitos de processamento do seu sistema de serviços do MultiPoint. 
 > [!NOTE] 
-> Se você estiver executando aplicativos com uso intensivo de vídeo a recomendação é pelo menos um núcleo por estação. 
+> Se você estiver executando aplicativos com uso intensivo de vídeo, a recomendação será pelo menos um núcleo por estação. 
   
-## <a name="selecting-hardware-components"></a>Selecionar os componentes de hardware  
-Quando você estiver criando um sistema MultiPoint Services, considere os seguintes componentes de hardware que podem ser necessários:  
+## <a name="selecting-hardware-components"></a>Selecionando componentes de hardware  
+Ao criar um sistema de serviços do MultiPoint, considere os seguintes componentes de hardware que você pode precisar:  
   
 -   Hardware de vídeo  
   
--   Hardware da estação do multiPoint Services  
+-   Hardware de estação dos serviços do MultiPoint  
   
     -   *Hubs USB*  
   
     -   Clientes USB zero  
   
-    -   Teclados e mouses  
+    -   Teclados e dispositivos de mouse  
   
     -   Monitores  
   
 -   Dispositivos periféricos  
   
-    -   Dispositivos de áudio como fones de ouvido e alto-falantes  
+    -   Dispositivos de áudio, como alto-falantes e fones de ouvido  
   
     -   Microfones  
   
     -   Dispositivos de armazenamento em massa USB  
   
-Quando você tiver selecionado os componentes de hardware para o seu sistema MultiPoint Services, certifique-se de que você obtenha atual, 64\-drivers para os componentes de bits.  
+Quando você tiver selecionado os componentes de hardware para seu sistema de serviços do MultiPoint, certifique-se de obter\-os drivers atuais de 64 bits para os componentes.  
   
-Os tópicos a seguir fornecem informações detalhadas para ajudá-lo a selecionar componentes para seu sistema MultiPoint Services:  
+Os tópicos a seguir fornecem informações detalhadas para ajudá-lo a selecionar componentes para seu sistema de serviços do MultiPoint:  
   
 [Selecionando hardware de vídeo](#selecting-video-hardware)  
-[Seleção direta\-vídeo\-conectado ou USB zero dispositivos de estação de cliente](#BKMK_Selectingdirect-video-connectedorUSBzeroclientstationdevices)   
+[Seleção de\-dispositivos\-de estação de cliente USB conectados ou de vídeo direto](#BKMK_Selectingdirect-video-connectedorUSBzeroclientstationdevices)   
 [Selecionando outros dispositivos periféricos de estação](#selecting-other-station-peripheral-devices)  
-[Selecionando o RDP\-pela\-LAN\-conectado hardware da estação](#BKMK_SelectingRDP-over-LAN-connectedstationhardware)  
-[Selecionar dispositivos de áudio](#selecting-audio-devices)  
+[Selecionando\-RDP\-por\-meio de hardware de estação conectada LAN](#BKMK_SelectingRDP-over-LAN-connectedstationhardware)  
+[Selecionando dispositivos de áudio](#selecting-audio-devices)  
   
 ## <a name="selecting-video-hardware"></a>Selecionando hardware de vídeo
-O hardware de vídeo que você selecionar deve dar suporte o vários monitores que serão necessárias para o número de usuários que você pretende ter trabalho em estações do MultiPoint Services. Além disso, os diferentes tipos de hardware de vídeo podem fornecer uma maior\-solução de desempenho para gráficos\-programas intensivos, como o conteúdo de multimídia.  
+O hardware de vídeo que você selecionar deve dar suporte ao número de monitores que será necessário para o número de usuários que você pretende ter trabalhando em estações de serviços do MultiPoint. Além disso, tipos diferentes de hardware de vídeo podem fornecer uma\-solução de desempenho mais\-alta para programas com uso intensivo de gráficos, como conteúdo multimídia.  
   
-Selecione o hardware de vídeo que dão suporte ao número máximo de monitores para o tipo de desempenho que requer que seu sistema MultiPoint Services. Certifique-se de que você valide o desempenho do hardware de vídeo que você escolher para garantir que ele atenda aos seus requisitos de desempenho.  
+Selecione o hardware de vídeo que pode dar suporte ao número máximo de monitores para o tipo de desempenho exigido pelo sistema de serviços do MultiPoint. Certifique-se de validar o desempenho do hardware de vídeo que você escolher para garantir que ele atenda aos seus requisitos de desempenho.  
   
 > [!NOTE]  
-> Você deve instalar um driver de vídeo que oferece suporte à extensão de sua área de trabalho em vários monitores.  
+> Você deve instalar um driver de vídeo que ofereça suporte à extensão da área de trabalho em vários monitores.  
   
-Opções de hardware de vídeo incluem:  
+As opções de hardware de vídeo incluem:  
   
--   Placas de vídeo internas que usam uma PCI ou uma interface de barramento PCIe  
+-   Placas de vídeo internas que usam uma interface de barramento PCI ou PCIe  
   
--   Controladores de vídeo externo conectado por USB  
+-   Controladores de vídeo externos conectados por USB  
   
-As seções a seguir descrevem os recursos de cada um desses tipos de hardware de vídeo. Você pode combinar as placas de vídeo internas e externo controladores de vídeo para criar o sistema que você deseja.  
+As seções a seguir descrevem os recursos de cada um desses tipos de hardware de vídeo. Você pode combinar placas de vídeo internas e controladores de vídeo externos para criar o sistema desejado.  
   
 ### <a name="internal-video-cards"></a>Placas de vídeo internas  
-Está conectada a uma placa de vídeo interna\-na placa-mãe no computador. A placa de vídeo interna é uma solução que pode ajudar no desempenho de gráficos\-programas multimídia com uso intensivo. No entanto, uma placa de vídeo interna requer um slot de PCI ou PCIe conectem\-na placa-mãe. Muitos alta\-placas de vídeo de desempenho exigem um slot de PCIe, mas há um número limitado de PCIe slots em uma placa-mãe. Você deve saber que tipo de slots de placa de vídeo estão disponíveis em seu computador para que você pode adquirir o tipo correto de placas de vídeo.  
+Uma placa de vídeo interna é conectada\-à placa-mãe no computador. A placa de vídeo interna é uma solução que pode ajudar o desempenho de\-programas multimídia com uso intensivo de gráficos. No entanto, uma placa de vídeo interna requer um slot PCI ou PCIe\-disponível para conectar-se à placa-mãe. Muitas placas\-de vídeo de alto desempenho exigem um slot PCIe, mas há um número limitado de slots PCIe em uma placa-mãe. Você deve saber que tipos de Slots de placa de vídeo estão disponíveis no seu computador para que você possa comprar o tipo correto de placas de vídeo.  
   
-O número de monitores que pode se conectar a cada placa de vídeo depende da GPU que é usada no cartão e o número de portas que ele suporta, que normalmente varia de 2 a 6.  
+O número de monitores que podem se conectar a cada placa de vídeo depende da GPU usada no cartão e do número de portas às quais ele dá suporte, que normalmente varia de 2 a 6.  
   
-Quando você seleciona as placas de vídeo internas, selecione as placas de vídeo que dão suporte o vários monitores necessários para criar o número desejado de diretos estações conectadas vídeos. O número máximo de monitores que podem ter suporte é igual ao número de placas de vídeo internas que estejam conectados\-na placa-mãe multiplicado pelo número de portas de monitor em cada um desses placas de vídeo. Por exemplo, se você tivesse duas placas de vídeo internas e cada cartão tinha duas portas de monitor, você poderia dar suporte até quatro monitores.    
+Ao selecionar placas de vídeo internas, selecione placas de vídeo que dão suporte ao número de monitores necessários para criar o número desejado de estações conectadas diretas ao vídeo. O número máximo de monitores que podem ter suporte é igual ao número de placas de vídeo internas que são conectadas\-à placa-mãe multiplicado pelo número de portas de monitor em cada uma dessas placas de vídeo. Por exemplo, se você tivesse duas placas de vídeo internas e cada placa tivesse duas portas de monitor, você poderia dar suporte a até quatro monitores.    
   
-### <a name="external-video-controllers"></a>Controladores de vídeo externo  
-Os clientes USB zero contêm um controlador de vídeo externo para um monitor de conexão para o cliente. O zero cliente USB também pode incluir conexões para fones de ouvido, alto-falantes, um microfone ou outros dispositivos periféricos.  
+### <a name="external-video-controllers"></a>Controladores de vídeo externos  
+Clientes USB zero contêm um controlador de vídeo externo para conectar um monitor ao cliente. O cliente USB zero também pode incluir conexões para fones de ouvido, alto-falantes, um microfone ou outros dispositivos periféricos.  
   
-Selecione um USB zero cliente se você quiser habilitar o suporte para monitores adicionais sem abrir o computador, ou se você quiser dar suporte a mais estações de saídas de vídeos disponíveis. Por exemplo, se você já tinha quatro monitores conectados\-em placas de vídeo internas, e você deseja adicionar dois monitores mais, você pode conectar\-em dois controladores de vídeos externos ao computador e ter espaço para dois monitores mais. Dessa forma, você pode combinar um zero cliente USB com o controlador de vídeo e usar slots PCI ou PCIe adicionais na placa-mãe.  
+Selecione um cliente USB zero se você quiser habilitar o suporte para monitores adicionais sem abrir o computador ou se quiser dar suporte a mais estações do que as saídas de vídeo disponíveis. Por exemplo, se anteriormente você tinha quatro monitores conectados\-a placas de vídeo internas e deseja adicionar mais dois monitores, você pode conectar\-dois controladores de vídeo externos ao computador e ter espaço para mais dois monitores. Dessa maneira, você pode combinar um cliente USB zero com o controlador de vídeo e não usar slots PCI ou PCIe adicionais na placa-mãe.  
   
-## <a name="BKMK_Selectingdirect-video-connectedorUSBzeroclientstationdevices"></a>Seleção direta\-vídeo\-conectado ou USB zero dispositivos de estação de cliente  
-Uma estação do MultiPoint Services consiste em um hub de estação ou USB zero cliente com um teclado e mouse conectados\-no e um monitor conectado\-no computador host ou para um zero cliente USB. Podem ser conectados a outros dispositivos periféricos\-na estação hub ou USB zero cliente, mas eles não são necessários para criar estação do MultiPoint. Esses outros dispositivos periféricos são descritos em [selecionando outros dispositivos periféricos de estação](#selecting-other-station-peripheral-devices).  
+## <a name="BKMK_Selectingdirect-video-connectedorUSBzeroclientstationdevices"></a>Seleção de\-dispositivos\-de estação de cliente USB conectados ou de vídeo direto  
+Uma estação de serviços do MultiPoint consiste em um hub de estação ou um cliente USB com um teclado e\-um mouse conectados, e um monitor que está\-conectado ao computador host ou em um cliente USB zero. Outros dispositivos periféricos podem ser conectados\-ao Hub de estação ou cliente USB zero, mas não são necessários para criar a estação do MultiPoint. Esses outros dispositivos periféricos são descritos em [selecionando outros dispositivos periféricos de estação](#selecting-other-station-peripheral-devices).  
   
-Os dispositivos que você selecionar para criar uma estação do MultiPoint Services devem atender aos requisitos mínimos para trabalhar com o MultiPoint Services. Detalhes sobre os requisitos para os seguintes dispositivos de estação do MultiPoint Services são fornecidos neste tópico:  
+Os dispositivos que você selecionar para criar uma estação de serviços do MultiPoint devem atender aos requisitos mínimos para trabalhar com os serviços do MultiPoint. Os detalhes sobre os requisitos para os seguintes dispositivos de estação de serviços do MultiPoint são fornecidos neste tópico:  
   
 -   [Selecionando hubs USB](#selecting-usb-hubs)  
--   [Selecionando USB zero clientes](#selecting-usb-zero-clients)  
--   [Selecionar dispositivos de mouse e teclados](#selecting-keyboards-and-mouse-devices)  
--   [Seleção de monitores](#selecting-monitors)  
+-   [Selecionando clientes USB zero](#selecting-usb-zero-clients)  
+-   [Selecionando teclados e dispositivos de mouse](#selecting-keyboards-and-mouse-devices)  
+-   [Selecionando monitores](#selecting-monitors)  
   
 ### <a name="selecting-usb-hubs"></a>Selecionando hubs USB  
-Os hubs USB que são usados em um sistema MultiPoint Services podem ser um hub USB genérico. Tais hubs normalmente têm quatro ou mais portas USB e permitem que vários dispositivos USB sejam conectados a uma única porta USB no computador. Alguns outros dispositivos, como teclados e monitores de vídeo, também podem incorporar um hub USB em seu design.  
+Os hubs USB usados em um sistema MultiPoint Services podem ser um hub USB genérico. Esses hubs normalmente têm quatro ou mais portas USB e permitem que vários dispositivos USB sejam conectados a uma única porta USB no computador. Alguns outros dispositivos, como teclados e monitores de vídeo, também podem incorporar um hub USB ao seu design.  
   
-Uma consideração adicional é o uso de um *alimentados externamente* hub, em vez de uma *barramento\-alimentado* hub. Com um barramento\-hub alimentado, a quantidade de atual que é fornecido pelo host do computador deve ser suficiente para fornecer a potência para todos os dispositivos periféricos são conectados\-para o hub, sem comprometer o desempenho do sistema. Um hub alimentado externamente permite que você se conecte dispositivos periféricos mais e fornecer energia suficiente para todos eles. O uso de hubs alimentados externamente pode ajudar a evitar problemas de desempenho, falhas de porta e outros problemas de intermitentes.  
+Uma consideração adicional é o uso de um hub com *energia externa* , em vez de um hub *\-alimentado por barramento* . Com um hub\-alimentado por barramento, a quantidade de corrente que é fornecida pelo computador host deve ser suficiente para fornecer energia a todos os dispositivos periféricos\-conectados ao Hub, sem degradar o desempenho do sistema. Um hub com alimentação externa permite que você conecte mais dispositivos periféricos e forneça energia suficiente a todos eles. O uso de hubs com energia externa pode ajudar a evitar problemas de desempenho, falhas de porta e outros problemas intermitentes.  
   
-Ao selecionar um hub USB para seu sistema MultiPoint Services, considere seu uso. O hub pode ser usado como um *hub de estação*, um *hub intermediário*, ou uma *hub downstream*. Consulte a tabela a seguir para obter descrições sobre cada tipo de hub. É recomendável que todos os dispositivos USB seja USB 2.0 ou posterior.
+Ao selecionar um hub USB para seu sistema de serviços do MultiPoint, considere seu uso. O Hub pode ser usado como um *Hub de estação*, um *hub intermediário*ou um *Hub downstream*. Consulte a tabela a seguir para obter descrições sobre cada tipo de Hub. Recomendamos que todos os dispositivos USB sejam USB 2,0 ou posterior.
   
-||Plataforma|  
+||Smartphone|  
 |-|-----------|  
-|Hub de estação|Pode ser barramento\-fornecida, a menos que alta\-dispositivos ligados serão conectados\-para ele ou um hub de downstream serão conectadas a ele|  
-|Hub intermediário |Devem ser alimentados externamente|  
-|Downstream Hub|Podem ser alimentados externamente ou barramento alimentado, dependendo dos dispositivos que estão conectados\-para o hub|  
-|Cabo extensor Active Directory|Cabos USB Active Directory que incluem um hub USB costumam ser alimentado pelo; barramento Portanto, eles não são recomendados para se conectar a hubs de estação para o computador.|  
+|Hub de estação|Pode ser alimentado por\-barramento\-, a menos que\-dispositivos com alta potência sejam conectados a ele ou um hub downstream esteja conectado a ele|  
+|Hub intermediário |Deve ser conectado externamente|  
+|Hub downstream|Pode ser de energia externa ou de barramento, dependendo dos dispositivos que estão conectados\-ao Hub|  
+|Cabo do extensor USB ativo|Os cabos USB ativos que incluem um hub USB normalmente são alimentados por barramento; Portanto, eles não são recomendados para conectar os hubs de estação ao computador.|  
   
-### <a name="selecting-usb-zero-clients"></a>Selecionando USB zero clientes  
-Um zero cliente USB é um hub USB que contém uma saída de vídeo. Portanto, ele permite que um monitor seja conectado ao computador por meio de uma conexão USB. Para obter mais informações sobre como usar clientes USB zero para vídeo, consulte [selecionando o hardware de vídeo](#selecting-video-hardware) neste documento. Um zero cliente USB também pode habilitar a conexão de uma variedade de USB e não\-dispositivos USB ao hub. Os clientes USB zero produzidos pelos fabricantes de hardware específico e eles exigem a instalação de um dispositivo\-driver específico.  
+### <a name="selecting-usb-zero-clients"></a>Selecionando clientes USB zero  
+Um cliente USB com zero é um hub USB que contém uma saída de vídeo. Portanto, ele permite que um monitor seja conectado ao computador por meio de uma conexão USB. Para obter mais informações sobre como usar clientes USB com zero para vídeo, consulte [selecionando hardware de vídeo](#selecting-video-hardware) neste documento. Um cliente USB zero também pode habilitar a conexão de uma variedade de dispositivos USB e\-não USB para o Hub. Clientes USB zero são produzidos por fabricantes de hardware específicos e exigem a instalação de um\-driver específico de dispositivo.  
   
-### <a name="selecting-keyboards-and-mouse-devices"></a>Selecionar dispositivos de mouse e teclados  
-Os dispositivos de teclado e mouse que você conecte\-em estação normalmente será dispositivos USB. Alguns USB zero clientes fornecem PS\/2 portas, caso em que o teclado e mouse deve usar PS\/2 para se conectar ao hub de estação. Você também pode usar um PS\/2 do teclado e mouse se você estiver configurando um PS\/2 direto\-vídeo\-estação conectada.  
+### <a name="selecting-keyboards-and-mouse-devices"></a>Selecionando teclados e dispositivos de mouse  
+Os dispositivos de teclado e mouse que você\-conectar à estação normalmente serão dispositivos USB. Alguns clientes USB de zero fornecem\/portas PS 2; nesse caso, o teclado e o mouse devem usar\/o PS 2 para se conectar ao Hub de estação. Você também pode usar um teclado\/e um mouse PS 2 se estiver configurando uma\/estação conectada\-via vídeo direto\-PS 2.  
   
-Um teclado com um hub interno pode ser usado como um hub de estação. No entanto, todos os outros dispositivos de estação devem se conectar ao hub interno por meio de portas no teclado. Se tal um teclado estiver conectado ao computador por meio do hub de outro, esse hub será tratado como um hub intermediário.  
+Um teclado com um Hub interno pode ser usado como um hub de estação. No entanto, todos os outros dispositivos de estação devem se conectar ao Hub interno usando portas no teclado. Se esse teclado estiver conectado ao computador por meio de outro hub, esse Hub será tratado como um hub intermediário.  
   
-Se você estiver usando divisão\-estações com tela, você talvez queira considerar usar um teclado minidespejos que não tem um teclado numérico para que os dois teclados podem caber na frente do monitor.  
+Se você estiver usando estações\-de tela divididas, convém considerar o uso de um mini teclado que não tenha um teclado numérico para que as duas teclas possam ser ajustadas na frente do monitor.  
   
-### <a name="selecting-monitors"></a>Seleção de monitores  
-Deve haver um monitor fornecido para cada estação do MultiPoint Services, a menos que uma divisão\-tela está planejada. Monitores são conectados a placa de vídeo no computador, o zero cliente USB ou LAN\-com base em cliente. Qualquer tipo de monitor que é compatível com a placa de vídeo, zero cliente USB ou LAN\-cliente baseado em pode ser usado, incluindo monitores CRT.  
+### <a name="selecting-monitors"></a>Selecionando monitores  
+Deve haver um monitor fornecido para cada estação de serviços do MultiPoint, a menos\-que uma tela de divisão esteja planejada. Os monitores são conectados à placa de vídeo no computador, o cliente USB zero ou o cliente baseado\-em LAN. Qualquer tipo de monitor com suporte na placa de vídeo, cliente USB zero ou cliente baseado em\-LAN pode ser usado, incluindo monitores CRT.  
   
-Alguns monitores especiais incluem uma LAN interna\-com base em zero cliente USB ou cliente. Esses monitores normalmente incluirão a entrada de áudio\/pinos e internos hubs USB para conectar-se de teclados e mouses de saída. Eles se conectam ao servidor por meio de um USB ou uma conexão de rede local.  
+Alguns monitores especiais incluem um cliente baseado\-em LAN interno ou um cliente USB zero. Esses monitores normalmente incluirão conectores\/de saída de entrada de áudio e hubs USB internos para conectar teclados e mouses. Eles se conectam ao servidor por meio de uma conexão de LAN ou USB.  
   
-#### <a name="display-resolution"></a>Resolução de vídeo  
-A resolução mínima com suporte para a área de exibição de uma estação é 512 x 768 pixels. Se o sistema MultiPoint Services é iniciado e descobre que a área de exibição de uma estação é menor que a resolução mínima, será exibida uma tela em branco nessa estação e estação não será utilizável.  
+#### <a name="display-resolution"></a>Resolução da tela  
+A resolução mínima com suporte para a área de exibição de uma estação é 512 x 768 pixels. Se o sistema de serviços do MultiPoint for iniciado e descobrir que a área de exibição de uma estação é menor que a resolução mínima, uma tela em branco será exibida nessa estação e a estação não poderá ser usada.  
   
-Se um monitor de vídeo vai ser compartilhado por duas estações como divisão\-tela estações, o requisito mínimo para a exibição é de 1024 x 768, para que as áreas da tela resultante estação individuais são pelo menos 512 x 768. Para obter a melhor dividir\-experiência de usuário da tela, uma tela ampla com um mínimo de resolução de 1600 x 900 é recomendada.  
+Se um monitor de exibição for compartilhado por duas estações como estações de tela\-dividida, o requisito mínimo para a exibição será 1024 x 768, para que as áreas de tela de estação individuais resultantes sejam pelo menos 512 x 768. Para obter a melhor\-experiência de usuário de tela dividida, é recomendável uma tela larga com um mínimo de resolução de 1600 x 900.  
   
 ## <a name="selecting-other-station-peripheral-devices"></a>Selecionando outros dispositivos periféricos de estação  
-MultiPoint Services dá suporte a dispositivos periféricos que estão conectados a um hub de estação, um zero cliente USB, ou diretamente ao computador. Conectado a um hub de estação de dispositivos será associados essa estação específica. Outros dispositivos estão disponíveis para cada estação quando conectado diretamente ao computador. Clientes de rede local também podem dar suporte a dispositivos periféricos.  
+Os serviços do MultiPoint dão suporte a dispositivos periféricos conectados a um hub de estação, um cliente USB zero ou diretamente ao computador. Os dispositivos conectados a um hub de estação serão associados a essa estação específica. Outros dispositivos estão disponíveis para todas as estações quando conectados diretamente ao computador. Os clientes de LAN também podem oferecer suporte a dispositivos periféricos.  
   
 > [!IMPORTANT]  
-> Um teclado não pode ser conectado a um hub de downstream \(por exemplo, um hub que estiver conectado a um hub de estação\). Se você conectar um teclado para um hub de downstream, todos os periféricos são conectados\-para o hub de downstream não estarão disponíveis para essa estação. Esse comportamento permite que o suporte de margarida\-encadeadas hubs de estação.  
+> Um teclado não pode ser conectado a um hub \(downstream, por exemplo, um Hub que está conectado a um hub\)de estação. Se você conectar um teclado a um hub downstream, todos os periféricos que estiverem conectados\-ao Hub downstream não estarão mais disponíveis para essa estação. Esse comportamento permite o suporte de hubs\-de estação em cascata.  
   
-**Disponível em todas as estações** dispositivo USB de um que é conectado ao computador \(por exemplo, não por meio de um hub de estação\) está disponível em todas as estações. Dependendo do dispositivo, ele pode ser usado por vários usuários ao mesmo tempo, ou apenas um usuário pode acessá-lo por vez. A tabela a seguir explica como os dispositivos USB podem ser acessados.  
+**Disponível para todas as estações** Um dispositivo USB que está conectado ao computador \(, por exemplo, não através de um hub\) de estação, está disponível para todas as estações. Dependendo do dispositivo, ele pode ser usado por vários usuários ao mesmo tempo ou apenas um usuário pode acessá-lo por vez. A tabela a seguir explica como os dispositivos USB podem ser acessados.  
   
 > [!NOTE]  
-> A coluna da tabela "Conectado ao computador Host" refere-se ao comportamento quando o computador executando o MultiPoint Services está em execução no modo de estação com estações. Se você estiver executando no modo de console, os periféricos que estão conectados em qualquer lugar se comportam da mesma maneira que um servidor padrão em uma sessão de console.  
+> A coluna "conectado ao computador host" na tabela refere-se ao comportamento quando o computador executando os serviços do MultiPoint está sendo executado no modo de estação com estações. Se você estiver executando no modo de console, os periféricos conectados em qualquer lugar se comportarão da mesma maneira que um servidor padrão em uma sessão de console.  
   
-||Conectado ao computador Host|Conectado ao Downstream ou Hub de estação|  
+||Conectado ao computador host|Conectado ao Hub de estação ou ao Hub downstream|  
 |-|------------------------------|----------------------------------------------|  
-|Teclado|Não funcional, a menos que ele seja parte de uma estação de PS/2. |Disponível para a estação individual<br /><br />Não pode ser conectado a um hub de downstream|  
-|Mouse|Não funcional, a menos que ele seja parte de uma estação de PS/2. |Disponível para a estação individual|  
-|Fones de ouvido/alto-falante|Não funcional, a menos que ele seja parte de uma estação de PS/2.|Disponível para a estação individual|  
-|Dispositivo de armazenamento USB|Disponível em todas as estações|Disponível para a estação individual|  
-|Controle do consumidor HID|Não é funcional|Disponível para a estação individual|  
-|Outros dispositivos USB, como câmeras, os leitores de documento e unidades de DVD|Disponível em todas as estações se compatível com o Windows Server 2012|Disponível em todas as estações se compatível com o Windows Server 2008 R2 Remote Desktop Services|  
+|Teclado|Não funcional, a menos que faça parte de uma estação PS/2. |Disponível para estação individual<br /><br />Não pode ser conectado a um hub downstream|  
+|Mouse|Não funcional, a menos que faça parte de uma estação PS/2. |Disponível para estação individual|  
+|Palestrante/fone de ouvido|Não funcional, a menos que faça parte de uma estação PS/2.|Disponível para estação individual|  
+|Dispositivo de armazenamento USB|Disponível para todas as estações|Disponível para estação individual|  
+|Controle de consumidor HID|Não funcional|Disponível para estação individual|  
+|Outros dispositivos USB, como câmeras, leitores de documentos e unidades de DVD|Disponível para todas as estações, se houver suporte no Windows Server 2012|Disponível para todas as estações, se houver suporte do Windows Server 2008 R2 Serviços de Área de Trabalho Remota|  
   
-## <a name="BKMK_SelectingRDP-over-LAN-connectedstationhardware"></a>Selecionando o RDP\-pela\-LAN\-conectado hardware da estação  
-Qualquer cliente de rede local que pode se conectar aos serviços de área de trabalho remota, usando o protocolo de área de trabalho remota, pode se tornar uma estação do MultiPoint Services.  
+## <a name="BKMK_SelectingRDP-over-LAN-connectedstationhardware"></a>Selecionando\-RDP\-por\-meio de hardware de estação conectada LAN  
+Qualquer cliente de LAN que possa se conectar a Serviços de Área de Trabalho Remota, usando protocolo RDP, pode se tornar uma estação de serviços de MultiPoint.  
   
-Se você quiser que o cliente de rede local para ser usado apenas como uma estação do MultiPoint, você talvez queira "bloquear" cliente de sua rede local. Por exemplo, configure seu cliente fino para que ele só pode se conectar a uma sessão do MultiPoint Services ou configurar seus computadores desktop, para que os itens que o acesso a ícones da área de trabalho e Menu Iniciar, como um navegador da web for removido para impedir o acesso direto à Internet. Você pode fazer essas configurações usando suas ferramentas de configuração de cliente de rede local ou grupo ou diretivas locais.  
+Se você quiser que o cliente de LAN seja usado apenas como uma estação de MultiPoint, convém "bloquear" o cliente de LAN. Por exemplo, configure seu cliente fino para que ele possa se conectar somente a uma sessão de serviços do MultiPoint ou Configure seus computadores desktop para que o acesso a ícones da área de trabalho e a itens do menu Iniciar, como um navegador da Web, seja removido para evitar acesso direto à Internet. Você pode fazer essas configurações usando suas ferramentas de configuração de cliente de LAN ou políticas locais ou de grupo.  
   
-## <a name="selecting-audio-devices"></a>Selecionar dispositivos de áudio  
-É importante certificar-se de que quando você selecionar dispositivos de áudio, eles podem ser conectados à hub de estação, zero cliente USB ou cliente de rede local. Alguns hubs USB, os clientes USB zero e clientes de LAN têm uma tomada de áudio analógica que pode ser usada com dispositivos de áudio analógicos tradicionais \(como fones de ouvido ou fones de ouvido\). Hubs de estação que não têm conectores analógicas podem usar dispositivos de áudio USB.  
+## <a name="selecting-audio-devices"></a>Selecionando dispositivos de áudio  
+É importante certificar-se de que, quando você selecionar dispositivos de áudio, eles possam ser conectados ao Hub de estação, cliente USB zero ou cliente de LAN. Alguns hubs USB, clientes USB zero e clientes de LAN têm uma tomada de áudio analógica que pode ser usada com dispositivos \(de áudio analógicos tradicionais, como fones de ouvido ou earbuds.\) Os hubs de estação que não têm conectores analógicos podem usar dispositivos de áudio USB.  
   
-Se você tiver configurado um PS\/2 direto\-vídeo\-estação conectada por meio de PS\/2 portas na placa-mãe do computador para o teclado e mouse, você deve usar o áudio analógico na placa-mãe do computador no ordem para o dispositivo de áudio estejam disponíveis para essa estação quando o sistema MultiPoint Services está em execução no modo de estação.  
+Se você tiver configurado uma estação\/conectada\-de\-vídeo direto PS 2 usando\/portas PS 2 na motherboard do computador para o teclado e o mouse, deverá usar o áudio analógico na placa-mãe do computador em para que o dispositivo de áudio esteja disponível para essa estação quando o sistema MultiPoint Services estiver em execução no modo de estação.  
   
-Se você não tiver um PS\/2 direto\-vídeo\-estação conectada, o dispositivo de áudio de host na placa-mãe do sistema estará disponível somente quando o sistema MultiPoint Services está em execução no modo de console.  
+Se você não tiver uma estação conectada de\-vídeo\-direto PS\/2, o dispositivo de áudio do host na placa-mãe do sistema estará disponível somente quando o sistema MultiPoint Services estiver sendo executado no modo de console.  

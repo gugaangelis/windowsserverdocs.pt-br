@@ -8,12 +8,12 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f1de6229d5360a4ea95d285f34ad32532762edca
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: 588d717b8f03987b86af7dc0576d537ebd88c4ba
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69983554"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867622"
 ---
 # <a name="scenario-native-app-calling-web-api"></a>Cenário: Aplicativo nativo chamando API Web 
 >Aplica-se a: AD FS 2019 e posterior 
@@ -85,7 +85,7 @@ Esta seção mostra como registrar o aplicativo nativo como um cliente público 
   
       ![Reg do aplicativo](media/adfs-msal-native-app-web-api/native10.png) 
 
-  13. Insira **NameID** no campo **nome da regra de declaração:** . Selecione o **nome** para o **tipo de declaração de entrada:** , **ID de nome** para tipo de **declaração de saída:** e **nome comum** para **formato de ID de nome de saída:** . clique em **concluir**.
+  13. Insira **NameID** no campo **nome da regra de declaração:** . Selecione o **nome** para o **tipo de declaração de entrada:** , **ID de nome** para tipo de **declaração de saída:** e **nome comum** para **formato de ID de nome de saída:** . Clique em **concluir**.
   
       ![Reg do aplicativo](media/adfs-msal-native-app-web-api/native11.png) 
 

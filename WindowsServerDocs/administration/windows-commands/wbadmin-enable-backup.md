@@ -1,6 +1,6 @@
 ---
-title: Wbadmin enable backup
-description: 'Tópico de comandos do Windows para * * *- '
+title: Wbadmin habilitar backup
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08a9754b6bb11c50e21ba0d30543761be1866326
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: c46a77f905960150c10048bc872aa1ea35e3f335
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440255"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868781"
 ---
-# <a name="wbadmin-enable-backup"></a>Wbadmin enable backup
+# <a name="wbadmin-enable-backup"></a>Wbadmin habilitar backup
 
 
 
-Cria e ativa um agendamento de backup diário ou modifica uma agenda de backup existente. Sem parâmetros especificados, ele exibe as configurações de backup agendadas no momento.
+Cria e habilita um agendamento de backup diário ou modifica um agendamento de backup existente. Sem parâmetros especificados, ele exibe as configurações de backup agendadas no momento.
 
-Para configurar ou modificar uma agenda de backup diária, você deve ser um membro de qualquer um de **administradores** ou **operadores de Backup** grupo. Além disso, você deve executar **wbadmin** em um prompt de comando elevado. (Para abrir um atalho de prompt de comando com privilégios elevados **Prompt de comando** e, em seguida, clique em **executar como administrador**.)
+Para configurar ou modificar um agendamento de backup diário, você deve ser membro do grupo **Administradores** ou **operadores de backup** . Além disso, você deve executar o **Wbadmin** em um prompt de comandos com privilégios elevados. (Para abrir um prompt de comando com privilégios elevados, clique com o botão direito do mouse em **prompt de comando** e clique em **Executar como administrador**.)
 
 Para obter exemplos de como usar esse subcomando, consulte [exemplos](#BKMK_examples).
 
@@ -58,7 +58,7 @@ wbadmin enable backup
 [-password:<Password>]
 [-quiet]
 ```
-Sintaxe do Windows Server 2012 e Windows Server 2012 R2:
+Sintaxe do Windows Server 2012 e do Windows Server 2012 R2:
 ```
 wbadmin enable backup
 [-addtarget:<BackupTarget>]
@@ -82,49 +82,49 @@ wbadmin enable backup
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|-addtarget|Para Windows Server 2008, especifica o local de armazenamento para backups. Você deve especificar um destino para backups como um identificador de disco (consulte comentários). O disco está formatado antes do uso e quaisquer dados existentes nele são apagados permanentemente.</br>Para o Windows Server 2008 R2 e posterior, especifica o local de armazenamento para backups. Exige que você especifique o local como um disco, o volume ou o caminho de convenção de nomenclatura Universal (UNC) para uma pasta compartilhada remota (\\\\\<servername >\<sharename >\). Por padrão, o backup será salvo em: \\ \\ <servername> \<sharename > \WindowsImageBackup\<ComputerBackedUp >\. Se você especificar um disco, o disco será formatado antes do uso e quaisquer dados existentes nele são apagados permanentemente. Se você especificar uma pasta compartilhada, você não pode adicionar mais locais. Você só pode especificar uma pasta compartilhada como local de armazenamento por vez.</br>Importante: Se você salvar um backup em uma pasta compartilhada remota, esse backup será substituído se você usar a mesma pasta para fazer backup do computador mesmo novamente. Além disso, se a operação de backup falhar, você pode acabar com nenhum backup porque o backup mais antigo será substituído, mas o backup mais recente não será utilizável. Você pode evitar isso, criando subpastas na pasta compartilhada remota para organizar seus backups. Se você fizer isso, as subpastas precisará de duas vezes o espaço da pasta pai.</br>Apenas um único local pode ser especificado em um único comando. Vários locais de armazenamento de backup de disco e volume podem ser adicionados ao executar o comando novamente.|
-|-removetarget|Especifica o local de armazenamento que você deseja remover da agenda de backup existente. Você deve especificar o local como um identificador de disco (consulte comentários).|
-|-agenda|Especifica as horas do dia para criar um backup, formatado como hh: mm e delimitado por vírgula.|
-|-incluem|Para Windows Server 2008, especifica a lista delimitada por vírgulas de letras de unidade do volume, pontos de montagem de volume ou nomes de volume baseada em GUID para incluir no backup.</br>Para Windows Server 2008 R2and mais tarde, especifica a lista delimitada por vírgulas de itens a serem incluídos no backup. Você pode incluir vários arquivos, pastas ou volumes. Os caminhos de volume podem ser especificados usando letras de drive de volume, pontos de montagem de volume ou nomes de volume com base em GUID. Se você usar um nome de volume baseada em GUID, ele deverá terminar com uma barra invertida (\). Você pode usar o caractere curinga (*) no nome do arquivo ao especificar um caminho para um arquivo.|
-|-nonRecurseInclude|Para o Windows Server 2008 R2 e posterior, especifica a não-recursivo, uma lista delimitada por vírgulas de itens a serem incluídos no backup. Você pode incluir vários arquivos, pastas ou volumes. Os caminhos de volume podem ser especificados usando letras de drive de volume, pontos de montagem de volume ou nomes de volume com base em GUID. Se você usar um nome de volume baseada em GUID, ele deverá terminar com uma barra invertida (\). Você pode usar o caractere curinga (*) no nome do arquivo ao especificar um caminho para um arquivo. Deve ser usado somente quando o parâmetro - backupTarget é usado.|
-|-exclude|Para o Windows Server 2008 R2 e posterior, especifica a lista delimitada por vírgulas de itens a serem excluídos do backup. Você pode excluir arquivos, pastas ou volumes. Os caminhos de volume podem ser especificados usando letras de drive de volume, pontos de montagem de volume ou nomes de volume com base em GUID. Se você usar um nome de volume baseada em GUID, ele deverá terminar com uma barra invertida (\). Você pode usar o caractere curinga (*) no nome do arquivo ao especificar um caminho para um arquivo.|
-|-nonRecurseExclude|Para o Windows Server 2008 R2 e posterior, especifica a não-recursivo, uma lista delimitada por vírgulas de itens a serem excluídos do backup. Você pode excluir arquivos, pastas ou volumes. Os caminhos de volume podem ser especificados usando letras de drive de volume, pontos de montagem de volume ou nomes de volume com base em GUID. Se você usar um nome de volume baseada em GUID, ele deverá terminar com uma barra invertida (\). Você pode usar o caractere curinga (*) no nome do arquivo ao especificar um caminho para um arquivo.|
-|-hyperv|Especifica a lista delimitada por vírgulas dos componentes a serem incluídos no backup. O identificador pode ser um nome do componente ou o GUID do componente (com ou sem as chaves).|
-|-systemState|Para o Windows ° 7 e Windows Server 2008 R2 e versões posteriores, cria um backup que inclui o estado do sistema, além de outros itens que você especificou com o **-incluem** parâmetro. O estado do sistema contém arquivos de inicialização (Boot. ini, NDTLDR, NTDetect.com), o registro de Windows, incluindo configurações de COM, o SYSVOL (diretivas de grupo e Scripts de Logon), o Active Directory e o NTDS. DIT nos controladores de domínio e, se o serviço de certificados estiver instalado, o certificado de Store. Se o servidor tem a função de servidor Web instalada, o IIS metadiretório serão incluído. Se o servidor for parte de um cluster, informações de serviço de Cluster também estão incluídas.|
-|-allCritical|Especifica que todos os volumes críticos (volumes que contêm o estado do sistema operacional) sejam incluídos nos backups. Esse parâmetro é útil se você estiver criando um backup completo do sistema ou recuperação de estado do sistema. Ele deve ser usado apenas quando - backupTarget é especificado, caso contrário, o comando falhará. Pode ser usado com o **-inclui** opção.</br>Dica: O volume de destino para um backup do volume crítico pode ser uma unidade local, mas ele não pode ser qualquer um dos volumes que estão incluídos no backup.|
-|-vssFull|Para o Windows Server 2008 R2 e posterior, realiza uma completa de fazer backup usando o Volume Shadow Copy Service (VSS). Todos os arquivos de backup, o histórico de cada arquivo é atualizado para refletir o que foi feito o backup e os logs dos backups anteriores podem ser truncados. Se esse parâmetro não for usado wbadmin Iniciar backup faz backup de uma cópia, mas o histórico de arquivos está sendo feito não é atualizado.</br>Cuidado: Não use esse parâmetro se você estiver usando um produto diferente de Backup do Windows Server para fazer backup de aplicativos que estão em volumes incluídos no backup atual. Fazer assim pode potencialmente quebrar o incremental, diferencial ou outro tipo de backups é a criação de outro produto de backup porque o histórico do que eles estão contando para determinar a quantidade de dados para backup pode estar ausente e eles podem realizar uma completa de backup desnecessariamente.|
-|-vssCopy|Para o Windows Server 2008 R2 e posterior, executa um backup de cópia usando o VSS. Todos os arquivos de backup, mas o histórico dos arquivos que estão sendo fazer backup não será atualizado para que você preserve todas as informações sobre quais arquivos onde for alterado, excluído e assim por diante, bem como arquivos de log de aplicativo. Usar esse tipo de backup não afeta a sequência de backups incrementais e diferenciais que possam ocorrer independentemente desse backup de cópia. Este é o valor padrão.</br>Aviso: Um backup de cópia não pode ser usado para backups incrementais ou diferenciais ou restaurações.|
-|-usuário|Para o Windows Server 2008 R2 e posterior, especifica o usuário com permissão de gravação para o destino de armazenamento de backup (se for uma pasta compartilhada remota). O usuário precisa ser um membro do grupo Administradores ou do grupo Operadores de Backup no computador que está sendo feito.|
-|-senha|Para o Windows Server 2008 R2 e posterior, especifica a senha para o nome de usuário fornecido pelo parâmetro-usuário.|
+|-AddTarget|Para o Windows Server 2008, especifica o local de armazenamento para backups. Exige que você especifique um destino para backups como um identificador de disco (consulte comentários). O disco é formatado antes do uso, e todos os dados existentes nele são apagados permanentemente.</br>Para o Windows Server 2008 R2 e posterior, especifica o local de armazenamento para backups. Exige que você especifique o local como um disco, volume ou caminho UNC (Convenção de nomenclatura universal) para uma pasta compartilhada remota (\\\\\<ServerName\<> ShareName\)>. Por padrão, o backup será salvo \\em: \\ <servername> \<ShareName > \WindowsImageBackup\<ComputerBackedUp >\. Se você especificar um disco, o disco será formatado antes do uso e todos os dados existentes nele serão apagados permanentemente. Se você especificar uma pasta compartilhada, não poderá adicionar mais locais. Você só pode especificar uma pasta compartilhada como um local de armazenamento de cada vez.</br>Importante: Se você salvar um backup em uma pasta compartilhada remota, esse backup será substituído se você usar a mesma pasta para fazer backup do mesmo computador novamente. Além disso, se a operação de backup falhar, você poderá acabar sem nenhum backup, pois o backup mais antigo será substituído, mas o backup mais recente não será utilizável. Você pode evitar isso criando subpastas na pasta compartilhada remota para organizar os backups. Se você fizer isso, as subpastas precisarão de duas vezes o espaço da pasta pai.</br>Apenas um local pode ser especificado em um único comando. Vários locais de armazenamento de backup de volume e disco podem ser adicionados executando o comando novamente.|
+|-removetarget|Especifica o local de armazenamento que você deseja remover do agendamento de backup existente. Exige que você especifique o local como um identificador de disco (consulte comentários).|
+|-agenda|Especifica as horas do dia para criar um backup, formatado como HH: MM e delimitado por vírgula.|
+|-incluir|Para o Windows Server 2008, especifica a lista delimitada por vírgulas de letras de unidade de volume, pontos de montagem de volume ou nomes de volume baseados em GUID a serem incluídos no backup.</br>Para o Windows Server 2008 R2and posterior, especifica a lista delimitada por vírgulas de itens a serem incluídos no backup. Você pode incluir vários arquivos, pastas ou volumes. Os caminhos de volume podem ser especificados usando letras de drive de volume, pontos de montagem de volume ou nomes de volume com base em GUID. Se você usar um nome de volume baseado em GUID, ele deverá ser encerrado com uma barra\)invertida (. Você pode usar o caractere curinga (*) no nome do arquivo ao especificar um caminho para um arquivo.|
+|-nonRecurseInclude|Para o Windows Server 2008 R2 e posterior, especifica a lista de itens não recursivos, delimitadas por vírgulas, a serem incluídos no backup. Você pode incluir vários arquivos, pastas ou volumes. Os caminhos de volume podem ser especificados usando letras de drive de volume, pontos de montagem de volume ou nomes de volume com base em GUID. Se você usar um nome de volume baseado em GUID, ele deverá ser encerrado com uma barra\)invertida (. Você pode usar o caractere curinga (*) no nome do arquivo ao especificar um caminho para um arquivo. Deve ser usado somente quando o parâmetro-backupTarget é usado.|
+|-excluir|Para o Windows Server 2008 R2 e posterior, especifica a lista delimitada por vírgulas de itens a serem excluídos do backup. Você pode excluir arquivos, pastas ou volumes. Os caminhos de volume podem ser especificados usando letras de drive de volume, pontos de montagem de volume ou nomes de volume com base em GUID. Se você usar um nome de volume baseado em GUID, ele deverá ser encerrado com uma barra\)invertida (. Você pode usar o caractere curinga (*) no nome do arquivo ao especificar um caminho para um arquivo.|
+|-nonRecurseExclude|Para o Windows Server 2008 R2 e posterior, especifica a lista de itens não recursivos, delimitadas por vírgulas, a serem excluídos do backup. Você pode excluir arquivos, pastas ou volumes. Os caminhos de volume podem ser especificados usando letras de drive de volume, pontos de montagem de volume ou nomes de volume com base em GUID. Se você usar um nome de volume baseado em GUID, ele deverá ser encerrado com uma barra\)invertida (. Você pode usar o caractere curinga (*) no nome do arquivo ao especificar um caminho para um arquivo.|
+|-HyperV|Especifica a lista delimitada por vírgulas de componentes a serem incluídos no backup. O identificador pode ser um nome de componente ou GUID de componente (com ou sem chaves).|
+|-SystemState|Para o Windows ° 7 e o Windows Server 2008 R2 e posterior, o cria um backup que inclui o estado do sistema, além de quaisquer outros itens que você especificou com o parâmetro **-include** . O estado do sistema contém arquivos de inicialização (boot. ini, NDTLDR, NTDetect.com), o registro do Windows, incluindo configurações COM, o SYSVOL (diretivas de grupo e scripts de logon), o Active Directory e o NTDS. DIT em controladores de domínio e, se o serviço de certificados estiver instalado, o repositório de certificados. Se o servidor tiver a função de servidor Web instalada, o metadiretório do IIS será incluído. Se o servidor fizer parte de um cluster, Serviço de cluster informações também serão incluídas.|
+|-missão crítica|Especifica que todos os volumes críticos (volumes que contêm o estado do sistema operacional) sejam incluídos nos backups. Esse parâmetro será útil se você estiver criando um backup para recuperação completa do sistema ou do estado do sistema. Ele deve ser usado somente quando-backupTarget for especificado, caso contrário, o comando falhará. Pode ser usado com a opção **-include** .</br>Dica: O volume de destino para um backup de volume crítico pode ser uma unidade local, mas não pode ser qualquer um dos volumes incluídos no backup.|
+|-vssFull|Para o Windows Server 2008 R2 e posterior, o executa um backup completo usando o Serviço de Cópias de Sombra de Volume (VSS). Todos os arquivos são submetidos a backup, o histórico de cada arquivo é atualizado para refletir que foi feito backup e os logs de backups anteriores podem estar truncados. Se esse parâmetro não for usado, o Wbadmin start backup fará um backup de cópia, mas o histórico de arquivos cujo backup está sendo feito não será atualizado.</br>Cuidado: Não use esse parâmetro se você estiver usando um produto que não seja Backup do Windows Server para fazer backup de aplicativos que estão nos volumes incluídos no backup atual. Isso pode potencialmente interromper o tipo de backup incremental, diferencial ou outro que o outro produto de backup está criando, pois o histórico do qual eles dependem para determinar a quantidade de dados para o backup pode estar ausente e pode executar um backup completo desnecessariamente.|
+|-vssCopy|Para o Windows Server 2008 R2 e posterior, o executa um backup de cópia usando o VSS. Todos os arquivos são submetidos a backup, mas o histórico dos arquivos que estão sendo atualizados não é atualizado, de modo que você preserva todas as informações em quais arquivos foram alterados, excluídos e assim por diante, bem como quaisquer arquivos de log do aplicativo. O uso desse tipo de backup não afeta a sequência de backups incrementais e diferenciais que podem ocorrer independentemente desse backup de cópia. Este é o valor padrão.</br>Aviso: Um backup de cópia não pode ser usado para backups ou restaurações incrementais ou diferenciais.|
+|-usuário|Para o Windows Server 2008 R2 e posterior, especifica o usuário com permissão de gravação para o destino de armazenamento de backup (se for uma pasta compartilhada remota). O usuário precisa ser um membro do grupo de administradores ou do grupo de operadores de backup no computador que está sendo submetido a backup.|
+|-senha|Para o Windows Server 2008 R2 e posterior, especifica a senha para o nome de usuário fornecido pelo parâmetro-User.|
 |-quiet|Executa o subcomando sem prompts para o usuário.|
-|-allowDeleteOldBackups|Substitui quaisquer backups feitos antes que o computador foi atualizado.|
+|-allowDeleteOldBackups|Substitui todos os backups feitos antes da atualização do computador.|
 
 ## <a name="remarks"></a>Comentários
 
-Para exibir o valor do identificador de disco para seus discos, digite **wbadmin obter discos**.
+Para exibir o valor do identificador de disco para seus discos, digite **Wbadmin Get disks**.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Os exemplos a seguir mostram como o **wbadmin habilitar backup** comando pode ser usado em cenários de backup diferentes:
+Os exemplos a seguir mostram como o comando **Wbadmin enable backup** pode ser usado em diferentes cenários de backup:
 
-Cenário 1 #
-- Agendar backups dos discos rígidos e:, d:\mountpoint, e \\ \\? \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
-- Salve os arquivos no disco DiskID
-- Executar backups diariamente às 9h00 e às 18h
+Cenário #1
+- Agendar backups de unidades de disco rígido e:, \\d:\mountpoint e \\? \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
+- Salvar os arquivos na DiskId do disco
+- Executar backups diariamente às 9:00 A.M. e 6:00 P.M.
   ```
   wbadmin enable backup -addtarget:DiskID -schedule:09:00,18:00 -include:e:,d:\mountpoint,\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
   ```
-  Cenário 2 #
-- Agendar backups de d:\documents a pasta para o local de rede \\ \\backupshare\backup1
-- Use as credenciais de rede para o administrador de backup Aaren Ekelund (aekel), que é um membro do domínio CONTOSOEAST para autenticar o acesso ao compartilhamento de rede. Senha do Aaren *US $3 hM 9 ^ 5lp*.
-- Executar backups diariamente à meia-noite e 7:00.
+  Cenário #2
+- Agendar backups da pasta d:\Documents para o local \\ \\de rede backupshare\backup1
+- Use as credenciais de rede para o aekel (administrador de backup aaren Ekelund), que é membro do domínio CONTOSOEAST para autenticar o acesso ao compartilhamento de rede. A senha do aaren é *$3hM9 ^ 5lp*.
+- Executar backups diariamente às 12:00 A.M. e 7:00 P.M.
   ```
   wbadmin enable backup –addtarget:\\backupshare\backup1 –include: d:\documents –user:CONTOSOEAST\aekel –password:$3hM9^5lp –schedule:00:00,19:00
   ```
-  Cenário 3 #
-- Agendar backups de volume a d:\documents t: e a pasta para a unidade de disco h:, mas exclua a pasta d:\documents\~tmp
-- Execute um backup completo usando o serviço de cópias de sombra de Volume.
-- Executar backups diariamente à 1h00
+  Cenário #3
+- Agendar backups do volume t: e da pasta d:\Documents para a unidade h:, mas excluir\~a pasta d:\Documents tmp
+- Execute um backup completo usando o Serviço de Cópias de Sombra de Volume.
+- Executar backups diariamente às 1:00 A.M.
   ```
   wbadmin enable backup –addtarget:H: –include T:,D:\documents –exclude D:\documents\~tmp –vssfull –schedule:01:00
   ```

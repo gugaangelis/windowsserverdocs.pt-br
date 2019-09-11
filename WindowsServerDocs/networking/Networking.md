@@ -10,12 +10,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b2b42c0a1878a2d9f5f9002dd36e0124e2101cc
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: fb36f0ff804b139149922596a05d1ff649884bdd
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546558"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868972"
 ---
 # <a name="networking"></a>Rede
 
@@ -26,7 +26,7 @@ ms.locfileid: "69546558"
 
 A rede é uma parte fundamental da plataforma data \(Center SDDC\) do software definido e o Windows Server 2016 fornece tecnologias de Sdn\) de rede \(definidas por software novas e aprimoradas para ajudá-lo a migrar para uma solução SDDC totalmente realizada para sua organização.
 
-Quando você gerencia redes como um recurso definido pelo software, você pode descrever os requisitos de infraestrutura de um aplicativo uma vez e, em seguida, escolher onde o aplicativo é executado – localmente ou na nuvem. 
+Ao gerenciar redes como um recurso de software definido, você pode descrever os requisitos de infraestrutura de um aplicativo uma vez e, em seguida, escolher onde o aplicativo é executado no local ou na nuvem. 
 
 Essa consistência significa que seus aplicativos agora são mais fáceis de serem escalados e você pode executar perfeitamente os aplicativos, em qualquer lugar, com a mesma confiança em relação à segurança, ao desempenho, à qualidade de serviço e à disponibilidade.
 
@@ -514,6 +514,7 @@ Você pode usar tecnologias de acesso remoto, como o DirectAccess e a VPN (rede 
                                         <h3><a href="https://docs.microsoft.com/virtualization/windowscontainers/container-networking/architecture">Sistema de rede de contêiner do Windows</a><hr /></h3>
                                         <p>
 A Rede de Contêineres do Windows permite que você crie e gerencie redes para a conexão de pontos de extremidade de contêiner em hosts do Windows 10 e do Windows Server usando fluxos de trabalho e ferramentas padrão do setor. As redes de contêineres do Windows dão suporte a várias topologias, incluindo privada, L2 plana e L3 roteada.</p>
+
                                         <p>Também há suporte para sobreposições que você pode criar localmente no host usando o Docker, o kubernetes ou o Windows PowerShell por meio de plug-ins que se comunicam com o serviço de rede de host do Windows (HNS). Você pode criar e gerenciar redes de cluster de vários nós por meio de sistemas de orquestração de nível superior comunicando-se por meio de um agente local para o HNS de cada nó.</p>
                     </div>
                 </div>

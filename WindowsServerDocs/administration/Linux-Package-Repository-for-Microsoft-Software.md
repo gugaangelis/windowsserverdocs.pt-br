@@ -1,5 +1,5 @@
 ---
-title: Repositório de Software do Linux para produtos da Microsoft
+title: Repositório de software do Linux para produtos da Microsoft
 description: Este documento descreve como usar e instalar pacotes de software do Linux para produtos da Microsoft.
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -11,32 +11,32 @@ ms.assetid: b5387444-595f-4f38-abb7-163a70ea1895
 author: szarkos
 ms.author: szark
 ms.date: 10/16/2017
-ms.openlocfilehash: 77b309739125a2114ef4ada4adb305f4dd169b06
-ms.sourcegitcommit: 927adf32faa6052234ad08f21125906362e593dc
+ms.openlocfilehash: bade9fff306272188ac8d2b91a3d9921c80fe036
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67033327"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866884"
 ---
-# <a name="linux-software-repository-for-microsoft-products"></a>Repositório de Software do Linux para produtos da Microsoft
+# <a name="linux-software-repository-for-microsoft-products"></a>Repositório de software do Linux para produtos da Microsoft
 
 ## <a name="overview"></a>Visão geral
-Microsoft compila e dá suporte a uma variedade de produtos de software para os sistemas Linux e disponibiliza-os por meio de repositórios de pacote padrão APT e YUM. Este documento descreve como configurar o repositório em seu sistema Linux, para que você pode, em seguida, instalar/atualizar usando ferramentas de gerenciamento de pacote padrão da distribuição de software do Linux da Microsoft.
+A Microsoft cria e dá suporte a uma variedade de produtos de software para sistemas Linux e os torna disponíveis por meio dos repositórios de pacote APT e YUM padrão. Este documento descreve como configurar o repositório em seu sistema Linux, para que você possa instalar/atualizar o software Linux da Microsoft usando as ferramentas de gerenciamento de pacotes padrão de sua distribuição.
 
-Repositório de Software do Linux da Microsoft é composto de vários repositórios de subpropriedades:
+O repositório de software do Linux da Microsoft é composto por vários repositórios:
 
- - Prod – produção o repositório sub é designado para os pacotes destinados a uso em produção. Esses pacotes comercialmente são suportados pela Microsoft sob os termos do contrato de suporte aplicável ou programa que você tem com a Microsoft.
+ - prod – o subrepositório de produção é designado para pacotes destinados para uso na produção. Esses pacotes têm suporte comercial da Microsoft sob os termos do contrato de suporte ou do programa aplicável que você tem com a Microsoft.
 
- - MSSQL-server - esses repositórios contêm pacotes para o Microsoft SQL Server no Linux – consulte também: [SQL Server no Linux](https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux).
+ - MSSQL-Server-esses repositórios contêm pacotes para Microsoft SQL Server em Linux-consulte também: [SQL Server em Linux](https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux).
 
 > [!Note]
-> Os pacotes nos repositórios de software Linux são sujeito aos termos de licença localizados nos pacotes. Leia os termos de licença antes de usar o pacote. Sua instalação e uso do pacote constitui a sua aceitação destes termos. Se você não concordar com os termos de licença, não use o pacote.
+> Os pacotes nos repositórios de software do Linux estão sujeitos aos termos de licença localizados nos pacotes. Leia os termos de licença antes de usar o pacote. A instalação e o uso do pacote constituem sua aceitação desses termos. Se você não concordar com os termos de licença, não use o pacote.
 
 
 ## <a name="configuring-the-repositories"></a>Configurando os repositórios
-Repositórios podem ser configurados automaticamente ao instalar o pacote do Linux que se aplica à sua distribuição do Linux e versão. O pacote instalará a configuração do repositório, juntamente com a chave pública do GPG usada por ferramentas como o apt/yum/zypper para validar os pacotes assinados e/ou metadados do repositório.
+Os repositórios podem ser configurados automaticamente instalando o pacote do Linux que se aplica à sua distribuição e versão do Linux. O pacote instalará a configuração do repositório junto com a chave pública GPG usada por ferramentas como apt/yum/zypper para validar os pacotes assinados e/ou os metadados do repositório.
 
-### <a name="enterprise-linux-rhel-and-variants"></a>Enterprise Linux (RHEL e variações)
+### <a name="enterprise-linux-rhel-and-variants"></a>Linux corporativo (RHEL e variantes)
 
  - Enterprise Linux 6 (EL6)
 
@@ -49,31 +49,31 @@ Repositórios podem ser configurados automaticamente ao instalar o pacote do Lin
 
 ### <a name="ubuntu"></a>Ubuntu
 
- - Ubuntu 14.04 (confiável)
+ - Ubuntu 14, 4 (confiança)
 
         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
         sudo apt-add-repository https://packages.microsoft.com/ubuntu/14.04/prod
         sudo apt-get update
 
- - Ubuntu 16.04 (Xenial)
+ - Ubuntu 16, 4 (Xenial)
 
         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
         sudo apt-add-repository https://packages.microsoft.com/ubuntu/16.04/prod
         sudo apt-get update
 
- - Ubuntu 18.04 (Bionic)
+ - Ubuntu 18, 4 (Bionic)
 
         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
         sudo apt-add-repository https://packages.microsoft.com/ubuntu/18.04/prod
         sudo apt-get update
 
- - Ubuntu 18.10 (cósmica)
+ - Ubuntu 18,10 (raios cósmicos)
 
         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
         sudo apt-add-repository https://packages.microsoft.com/ubuntu/18.10/prod
         sudo apt-get update
 
- - Ubuntu 19.04 (Disco)
+ - Ubuntu 19, 4 (disco)
 
         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
         sudo apt-add-repository https://packages.microsoft.com/ubuntu/19.04/prod
@@ -85,15 +85,15 @@ Repositórios podem ser configurados automaticamente ao instalar o pacote do Lin
 
 
 ## <a name="manual-configuration"></a>Configuração manual
-Os arquivos de configuração de repositório estão disponíveis no [packages.microsoft.com/config](https://packages.microsoft.com/config/). O nome e o local desses arquivos podem ser localizados usando a seguinte convenção de nomenclatura da URI:
+Os arquivos de configuração do repositório estão disponíveis em [Packages.Microsoft.com/config](https://packages.microsoft.com/config/). O nome e o local desses arquivos podem ser localizados usando a seguinte convenção de nomenclatura de URI:
 
         https://packages.microsoft.com/config/<Distribution>/<Version>/prod.(repo|list)
 
-**Pacote e assinatura do repositório de chave**
+**Chave de assinatura de pacote e repositório**
 
- - Chave pública da Microsoft GPG pode ser baixado aqui: [https://packages.microsoft.com/keys/microsoft.asc](https://packages.microsoft.com/keys/microsoft.asc)
- - ID da chave pública: Microsoft (assinatura de versão) <gpgsecurity@microsoft.com>
- - Impressão digital da chave pública: `BC52 8686 B50D 79E3 39D3 721C EB3E 94AD BE12 29CF`
+ - A chave pública do GPG da Microsoft pode ser baixada aqui:[https://packages.microsoft.com/keys/microsoft.asc](https://packages.microsoft.com/keys/microsoft.asc)
+ - ID da chave pública: Microsoft (assinatura de versão)<gpgsecurity@microsoft.com>
+ - Impressão digital da chave pública:`BC52 8686 B50D 79E3 39D3 721C EB3E 94AD BE12 29CF`
 
 ### <a name="examples"></a>Exemplos:
 

@@ -6,12 +6,12 @@ ms.author: joflore
 ms.date: 04/19/2018
 ms.topic: article
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 491f4f2e2526e7cff024779ee3ecf9f771e64af4
-ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
+ms.openlocfilehash: 287d7ef0b8645d8e808b8b8d9f195d05ffed1cc0
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560572"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868330"
 ---
 # <a name="virtualizing-domain-controllers-using-hyper-v"></a>Virtualizando controladores de domínio usando o Hyper-V
 
@@ -77,7 +77,7 @@ O uso de máquinas virtuais torna possível ter muitas configurações diferente
 
 ## <a name="security-of-vhd-files"></a>Segurança dos arquivos VHD
 
-Um arquivo VHD de um controlador de domínio virtual é equivalente ao disco rígido físico de um controlador de domínio físico. Como tal, ele deve ser protegido com o mesmo cuidado que se tem ao proteger o disco rígido de um controlador de domínio físico. Certifique-se de que apenas administradores confiáveis tenham acesso permitido aos arquivos VHD do controlador de domínio.
+Um arquivo VHD de um controlador de domínio virtual é equivalente ao disco rígido físico de um controlador de domínio físico. Como tal, ele deve ser protegido com o mesmo cuidado que se tem ao proteger o disco rígido de um controlador de domínio físico. Certifique-se de que apenas administradores confiáveis e confiáveis têm permissão para acessar os arquivos VHD do controlador de domínio.
 
 ## <a name="rodcs"></a>RODCs
 
@@ -328,11 +328,11 @@ Nos RODCs, o processo de restauração e as decisões são mais simples.
 Se um backup de estado do sistema válido existir na máquina virtual do controlador de domínio, você poderá restaurar de forma segura o backup seguindo o procedimento de restauração descrito pela ferramenta de backup usada para fazer backup do arquivo VHD.
 
 > [!IMPORTANT]
-> Para restaurar corretamente o controlador de domínio, você deve reiniciá-lo no DSRM. Você não deve permitir que o controlador de domínio inicie no modo normal. Se você perder a oportunidade de acessar o DSRM durante a inicialização do sistema, desligue a máquina virtual do controlador de domínio antes que ela possa iniciar completamente no modo normal. É importante iniciar o controlador de domínio no DSRM porque iniciá-lo no modo normal incrementará seus USNs, mesmo se o controlador de domínio estiver desconectado da rede. Para obter mais informações sobre a reversão de USN, consulte USN e reversão de USN. 
+> Para restaurar corretamente o controlador de domínio, você deve reiniciá-lo no DSRM. Você não deve permitir que o controlador de domínio inicie no modo normal. Se você perder a oportunidade de inserir o DSRM durante a inicialização do sistema, desative a máquina virtual do controlador de domínio antes que ela possa ser totalmente iniciada no modo normal. É importante iniciar o controlador de domínio no DSRM porque iniciá-lo no modo normal incrementará seus USNs, mesmo se o controlador de domínio estiver desconectado da rede. Para obter mais informações sobre a reversão de USN, consulte USN e reversão de USN. 
 
 ## <a name="to-restore-the-system-state-backup-of-a-virtual-domain-controller"></a>Para restaurar o backup de estado do sistema de um controlador de domínio virtual
 
-1. Inicie a máquina virtual do controlador de domínio e pressione F5 para acessar a tela do Gerenciador de Inicialização do Windows. Se você for solicitado a inserir as credenciais de conexão, imediatamente clique no botão **Pausar** na máquina virtual para que ela não continue a inicializar. Em seguida, insira suas credenciais de conexão e clique no botão **Reproduzir** na máquina virtual. Clique dentro da janela da máquina virtual e, em seguida, pressione F5.
+1. Inicie a máquina virtual do controlador de domínio e pressione F5 para acessar a tela do Gerenciador de inicialização do Windows. Se você for solicitado a inserir as credenciais de conexão, imediatamente clique no botão **Pausar** na máquina virtual para que ela não continue a inicializar. Em seguida, insira suas credenciais de conexão e clique no botão **Reproduzir** na máquina virtual. Clique dentro da janela da máquina virtual e, em seguida, pressione F5.
 
    Se você não vir a tela do Gerenciador de Inicialização do Windows e o controlador de domínio começar a inicializar no modo normal, desligue a máquina virtual para evitar que ela complete a inicialização. Repita essa etapa quantas vezes for necessário até que você possa acessar a tela do Gerenciador de Inicialização do Windows. Você não pode acessar DSRM no menu do Windows Error Recovery. Por isso, desative a máquina virtual e tente novamente se o menu do Windows Error Recovery aparecer.
 
@@ -352,7 +352,7 @@ Se você não tiver um backup de dados de estado do sistema que pré-date a falh
 ## <a name="to-restore-a-previous-version-of-a-virtual-domain-controller-vhd-without-system-state-data-backup"></a>Para restaurar uma versão anterior de um VHD de controlador de domínio virtual sem o backup de dados de estado do sistema
 
 1. Usando o VHD anterior, inicie o controlador de domínio virtual no DSRM, conforme descrito na seção anterior. Não permita que o controlador de domínio inicie no modo normal. Se você não vir a tela do Gerenciador de Inicialização do Windows e o controlador de domínio começar a inicializar no modo normal, desligue a máquina virtual para evitar que ela complete a inicialização. Consulte a seção anterior para obter instruções detalhadas para acessar o DSRM.
-2. Abra o Editor do Registro. Para abrir o Editor do Registro, clique em **Iniciar**, **Executar**, digite **regedit** e clique em OK. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**. No Editor do Registro, expanda o seguinte caminho: **HKEY\_localMachineSystem\\CurrentControlSetServices\\NTDSParameters\\.\\\_\\** Procure um valor chamado **Contagem da restauração anterior DSA**. Se existir um valor, anote a configuração. Se não houver o valor, a configuração será igual ao padrão, que é zero. Não adicione um valor se você não vir um lá.
+2. Abra o Editor do Registro. Para abrir o Editor do Registro, clique em **Iniciar**, **Executar**, digite **regedit** e clique em OK. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**. No Editor do Registro, expanda o seguinte caminho: **HKEY\_localMachineSystem\\CurrentControlSetServices\\NTDSParameters\\.\_\\\\** Procure um valor chamado **Contagem da restauração anterior DSA**. Se existir um valor, anote a configuração. Se não houver o valor, a configuração será igual ao padrão, que é zero. Não adicione um valor se você não vir um lá.
 3. Clique com o botão direito do mouse em **Parâmetros**, clique em **Novo** e, em seguida, clique em **Valor DWORD (32 bits)** .
 4. Digite o novo nome **Banco de dados restaurado do backup** e, em seguida, pressione ENTER.
 5. Clique duas vezes no valor que você acabou de criar para abrir a caixa de diálogo **Editar valor DWORD (32 bits)** e, em seguida, digite **1** na caixa **Dados do valor**. O **banco de dados restaurado da opção de entrada de backup** está disponível em controladores de domínio que executam o Windows 2000 Server com Service Pack 4 (SP4), windows Server 2003 com as atualizações incluídas em [como detectar e recuperar de uma reversão de USN no Windows Server 2003, Windows Server 2008 e Windows Server 2008 R2](https://go.microsoft.com/fwlink/?linkid=137182) na base de dados de conhecimento Microsoft instalada e Windows server 2008.
@@ -375,7 +375,7 @@ Se você não tiver um backup de dados de estado do sistema que pré-date a falh
     ```
 
 11. Feche o Visualizador de Eventos.
-12. Use o Editor do Registro para verificar se o valor em **Contagem da restauração anterior DSA** é igual ao valor anterior mais um. Se este não for o valor correto e você não puder encontrar uma entrada para a ID de Evento 1109 no Visualizador de Eventos, verifique se os service packs do controlador de domínio estão atualizados. Não é possível repetir este procedimento no mesmo VHD. Você pode tentar novamente em uma cópia do VHD ou em outro VHD que não tenha sido iniciado no modo normal repetindo a etapa 1.
+12. Use o Editor do Registro para verificar se o valor em **Contagem da restauração anterior DSA** é igual ao valor anterior mais um. Se esse não for o valor correto e você não encontrar uma entrada para a ID de evento 1109 em Visualizador de Eventos, verifique se os Service Packs do controlador de domínio estão atualizados. Não é possível repetir este procedimento no mesmo VHD. Você pode tentar novamente em uma cópia do VHD ou em outro VHD que não tenha sido iniciado no modo normal repetindo a etapa 1.
 13. Feche o Editor do Registro.
 
 ## <a name="usn-and-usn-rollback"></a>Reversão de USN e USN
@@ -395,7 +395,7 @@ As duas tabelas de metadados de replicação a seguir contêm USNs. Os controlad
 
 ## <a name="directory-database-identity"></a>Identidade do banco de dados do diretório
 
-Além dos USNs, os controladores de domínio acompanham o banco de dados do diretório dos parceiros de replicação de origem. A identidade do banco de dados do diretório executado no servidor é mantida separadamente da identidade do próprio objeto do servidor. A identidade do banco de dados de diretório em cada controlador de domínio é armazenada no atributo inrevocationid do objeto de configurações NTDS, localizado no seguinte caminho do protocolo LDAP: CN = NTDS Settings, CN = ServerName, CN = Servers, CN =*SiteName*, CN = sites, CN = Configuração, DC =*ForestRootDomain*. A identidade do objeto do servidor é armazenada no atributo **objectGUID** do objeto Configurações de NTDS. A identidade do objeto do servidor nunca muda. No entanto, a identidade do banco de dados de diretório é alterada quando ocorre um procedimento de restauração de estado do sistema no servidor ou quando uma partição de diretório de aplicativo é adicionada e, em seguida, removida e depois adicionada novamente do servidor. (outro cenário: quando uma instância do HyperV dispara seus gravadores VSS em uma partição que contém um VHD do DC virtual, o convidado, por sua vez, dispara seus próprios gravadores VSS (o mesmo mecanismo usado pelo backup/restauração acima), resultando em outro meio pelo qual a invocação é definido
+Além dos USNs, os controladores de domínio acompanham o banco de dados do diretório dos parceiros de replicação de origem. A identidade do banco de dados do diretório executado no servidor é mantida separadamente da identidade do próprio objeto do servidor. A identidade do banco de dados de diretório em cada controlador de domínio é armazenada no atributo **inrevocationid** do objeto de configurações NTDS, localizado no seguinte caminho do protocolo LDAP: CN = NTDS Settings, CN = ServerName, CN = Servers, CN =*SiteName*, CN = sites, CN = Configuração, DC =*ForestRootDomain*. A identidade do objeto do servidor é armazenada no atributo **objectGUID** do objeto Configurações de NTDS. A identidade do objeto do servidor nunca muda. No entanto, a identidade do banco de dados de diretório é alterada quando ocorre um procedimento de restauração de estado do sistema no servidor ou quando uma partição de diretório de aplicativo é adicionada e, em seguida, removida e depois adicionada novamente do servidor. (outro cenário: quando uma instância do HyperV dispara seus gravadores VSS em uma partição que contém um VHD do DC virtual, o convidado, por sua vez, dispara seus próprios gravadores VSS (o mesmo mecanismo usado pelo backup/restauração acima), resultando em outro meio pelo qual a invocação é definido
 
 Consequentemente, **invocationID** relaciona efetivamente um conjunto de atualizações de origem em um controlador específico a uma versão específica do banco de dados do diretório. O vetor de atualização e as tabelas de marca d' água alta usam o GUID de **invocação** e de DC, respectivamente, para que os controladores de domínio saibam de qual cópia do banco de dados de Active Directory as informações de replicação estão chegando.
 
@@ -409,7 +409,7 @@ O **invocationID** é um valor de GUID que pode ser visto próximo à parte supe
    DSA invocationID: b0d9208b-8eb6-4205-863d-d50801b325a9
    ```
 
-Quando AD DS é restaurado corretamente em um controlador de domínio , a invocaid é redefinida. Como resultado dessa alteração, você passará por um aumento no tráfego de replicação – a duração da qual é relativa ao tamanho da partição que está sendo replicada
+Quando AD DS é restaurado corretamente em um controlador de domínio, a **invocaid** é redefinida. Como resultado dessa alteração, você passará por um aumento no tráfego de replicação – a duração da qual é relativa ao tamanho da partição que está sendo replicada
 
 Por exemplo, suponha que VDC1 e DC2 são dois controladores de domínio no mesmo domínio. A figura a seguir mostra a percepção do DC2 sobre o VDC1 quando o valor invocationID é redefinido em uma situação de restauração adequada.
 
@@ -426,7 +426,7 @@ A reversão de USN pode ser causada de várias maneiras, por exemplo, quando arq
    - Quando o Windows Server 2012 ou mais recente não estiver em execução, não exporte a máquina virtual que está executando um controlador de domínio.  
    - Não restaure um controlador de domínio nem tente reverter o conteúdo de um banco de dados do Active Directory de outra forma que não seja uma solução de backup com suporte, como o Backup do Windows Server.  
 
-Em alguns casos, a reversão de USN pode não ser detectada. Em outros casos, ela pode causar outros erros de replicação. Nesses casos, é necessário identificar a extensão do problema e resolvê-lo em tempo hábil. Para obter informações sobre como remover objetos remanescentes que podem ocorrer como resultado da reversão de USN, consulte objetos de Active Directory desatualizados geram a [ID de evento 1988 no Windows Server 2003](https://go.microsoft.com/fwlink/?linkid=137185) na base de dados de conhecimento Microsoft.
+Em alguns casos, a reversão de USN pode não ser detectada. Em outros casos, ela pode causar outros erros de replicação. Nesses casos, é necessário identificar a extensão do problema e resolvê-lo em tempo hábil. Para obter informações sobre como remover objetos remanescentes que podem ocorrer como resultado da reversão de USN, consulte [objetos de Active Directory desatualizados geram a ID de evento 1988 no Windows Server 2003](https://go.microsoft.com/fwlink/?linkid=137185) na base de dados de conhecimento Microsoft.
 
 ## <a name="usn-rollback-detection"></a>Detecção de reversão de USN
 
@@ -438,7 +438,7 @@ No Windows Server 2008 e no Windows Server 2003 SP1, quando um controlador 
    - O AD DS desabilita a replicação de entrada e de saída do Active Directory.  
    - O AD DS gera a ID do evento 2095 no log de eventos do Serviço de Diretório para indicar a condição.  
 
-A ilustração a seguir mostra a sequência de eventos que ocorre quando a reversão de USN é detectada no VDC2, o controlador de domínio de destino executado em uma máquina virtual. Nesta ilustração, a detecção da reversão de USN ocorre no VDC2 quando um parceiro de replicação detecta que o VDC2 enviou um valor USN atual visto anteriormente pelo controlador de domínio de destino, que indica que o banco de dados do VDC2 foi revertido inadequadamente.
+A ilustração a seguir mostra a sequência de eventos que ocorre quando a reversão de USN é detectada no VDC2, o controlador de domínio de destino executado em uma máquina virtual. Nesta ilustração, a detecção de reversão de USN ocorre em VDC2 quando um parceiro de replicação detecta que o VDC2 enviou um valor USN atualizado que foi visto anteriormente pelo controlador de domínio de destino, que indica que o banco de dados VDC2's foi revertido em tempo inadequado.
 
 ![](media/virtualized-domain-controller-architecture/Dd363553.373b0504-43fc-40d0-9908-13fdeb7b3f14(WS.10).gif)
 
@@ -451,7 +451,7 @@ Se o log de eventos do Serviço de Diretório reportar uma ID do evento 2095, c
 
    Você pode usar a ferramenta Repadmin para criar essa determinação. Para obter informações sobre como usar repadmin, consulte [monitoramento e solução de problemas Active Directory replicação usando repadmin](https://go.microsoft.com/fwlink/?linkid=122830). Se você não conseguir determinar isso por conta própria, entre em contato com [suporte da Microsoft](https://support.microsoft.com) para obter assistência.
 
-3. Force o rebaixamento do controlador de domínio. Isso envolve limpar os metadados do controlador de domínio e executar as funções de mestre de operações (também conhecidas como FSMO (flexible single master operations)). Para obter mais informações, consulte a seção "recuperando de reversão de USN" de [como detectar e recuperar de uma reversão de USN no Windows server 2003, Windows server 2008 e Windows server 2008 R2](https://go.microsoft.com/fwlink/?linkid=137182) na base de dados de conhecimento Microsoft.
+3. Force o rebaixamento do controlador de domínio. Isso envolve a limpeza dos metadados do controlador de domínio e a captura das funções mestre de operações (também conhecidas como operações de mestre único flexíveis ou FSMO). Para obter mais informações, consulte a seção "recuperando de reversão de USN" de [como detectar e recuperar de uma reversão de USN no Windows server 2003, Windows server 2008 e Windows server 2008 R2](https://go.microsoft.com/fwlink/?linkid=137182) na base de dados de conhecimento Microsoft.
 4. Exclua todos os arquivos VHD antigos no controlador de domínio.
 
 ## <a name="undetected-usn-rollback"></a>Reversão de USN não detectada
