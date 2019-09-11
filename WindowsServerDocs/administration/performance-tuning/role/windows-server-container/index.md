@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: DavSo; Ericam; YaShi
 author: akino
 ms.date: 10/16/2017
-ms.openlocfilehash: 072d71a7825907ada7d4bc02eb5390722692e81d
-ms.sourcegitcommit: 02f1e11ba37a83e12d8ffa3372e3b64b20d90d00
+ms.openlocfilehash: 1318a023d827b9e7ade2c6f420ba1aa532dfffe3
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68863417"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866430"
 ---
 # <a name="performance-tuning-windows-server-containers"></a>Ajuste de desempenho de contêineres do Windows Server
 
@@ -45,7 +45,7 @@ O tempo de inicialização do contêiner é uma métrica fundamental em muitos d
 A Microsoft fornece uma imagem base para o Nano Server e o Server Core. A imagem base que é fornecida para o Server Core foi otimizada, removendo a sobrecarga de tempo de inicialização associada ao primeiro logon (OOBE). Isso não ocorre com a imagem base do Nano Server. No entanto, esse custo pode ser removido das imagens baseadas no Nano Server ao confirmar pelo menos uma camada para a imagem de contêiner. Os próximos inícios do contêiner usando a imagem não gerarão o custo do primeiro logon.
 ### <a name="scratch-space-location"></a>Local do espaço temporário
 
-Os contêineres, por padrão, usam um espaço temporário na mídia da unidade do sistema do host do contêiner para o armazenamento durante o tempo de vida do contêiner em execução. Isso funciona como a unidade do sistema do contêiner e, portanto, muitas das gravações e leituras feitas na operação de contêiner seguem esse caminho. Em sistemas host nos quais a unidade do sistema está na mídia magnética do disco de rotação (HDDs), mas há uma mídia de armazenamento mais rápida disponível (HDDs ou SSDs mais rápidos), é possível mover o espaço temporário do contêiner para uma unidade diferente. Isso é feito usando o comando dockerd –g. Esse comando é global e afetará todos os contêineres em execução no sistema.
+Por padrão, os contêineres usam um espaço temporário na mídia da unidade do sistema do host do contêiner para o armazenamento durante o tempo de vida do contêiner em execução. Isso funciona como a unidade do sistema do contêiner e, portanto, muitas das gravações e leituras feitas na operação de contêiner seguem esse caminho. Em sistemas host nos quais a unidade do sistema está na mídia magnética do disco de rotação (HDDs), mas há uma mídia de armazenamento mais rápida disponível (HDDs ou SSDs mais rápidos), é possível mover o espaço temporário do contêiner para uma unidade diferente. Isso é feito usando o comando dockerd –g. Esse comando é global e afetará todos os contêineres em execução no sistema.
 
 ### <a name="nested-hyper-v-containers"></a>Contêineres aninhados do Hyper-V
 O Hyper-V para Windows Server 2016 introduz o suporte para hipervisor aninhado. Ou seja, agora é possível executar uma máquina virtual de dentro de uma máquina virtual. Isso abre muitos cenários úteis, mas também exagera o impacto de desempenho que o hipervisor gera, pois há dois níveis de hipervisores executando acima do host físico.

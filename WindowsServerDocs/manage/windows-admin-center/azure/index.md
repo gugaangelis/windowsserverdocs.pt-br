@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.date: 05/31/2019
-ms.openlocfilehash: 460399a57bc229b44d37a9fdd1e4938bf9e7d6ac
-ms.sourcegitcommit: fe621b72d45d0259bac1d5b9031deed3dcbed29d
+ms.openlocfilehash: b4b1f42db7d80fabe2e3361f3ab9ebf41ad8bc29
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66455367"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865433"
 ---
 # <a name="connecting-windows-server-to-azure-hybrid-services"></a>Como conectar o Windows Server aos serviços híbridos do Azure
 
@@ -59,11 +59,11 @@ Esta é a lista completa dos serviços do Azure que oferecem uma funcionalidade 
 Sincronize arquivos neste servidor com os compartilhamentos de arquivo do Azure. Mantenha todos os seus arquivos locais ou use a camada de nuvem e armazene em cache apenas os arquivos usados com mais frequência no servidor, dispondo em camadas os dados frios na nuvem. O backup dos dados na nuvem pode ser realizado, acabando com a necessidade de se preocupar com o backup do servidor local. Além disso, a sincronização de vários sites pode manter um conjunto de arquivos em sincronia entre vários servidores.
 
 - **Adicionar uma camada de segurança ao Windows Admin Center adicionando a [autenticação do](https://azure.microsoft.com/services/active-directory/) Azure AD (Active Directory)**  
-É possível adicionar uma camada adicional de segurança ao Windows Admin Center exigindo que os usuários se autentiquem usando identidades do Azure AD (Active Directory) para acessar o gateway. A autenticação do Azure AD também permite que você aproveite os recursos de segurança do Azure AD, como acesso condicional e autenticação multifator.  
+É possível adicionar uma camada adicional de segurança ao Windows Admin Center exigindo que os usuários se autentiquem usando identidades do Azure AD (Active Directory) para acessar o gateway. A autenticação do Azure AD também permite aproveitar os recursos de segurança do Azure AD, como acesso condicional e autenticação multifator.  
 Para mais informações, confira [Configurar autenticação do Azure AD para o Windows Admin Center.](../configure/user-access-control.md#azure-active-directory)  
 
 - **Proteger suas máquinas virtuais Hyper-V com o [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview)**  
-É possível replicar cargas de trabalho em execução em VMs para que a infraestrutura crítica de negócios esteja protegida em caso de desastre. O Windows Admin Center simplifica a instalação e o processo de replicação de suas máquinas virtuais nos servidores Hyper-V ou clusters, tornando mais fácil reforçar a resiliência do seu ambiente com o serviço de recuperação de desastre do Azure Site Recovery.  
+É possível replicar cargas de trabalho em execução em VMs para que a infraestrutura crítica de negócios esteja protegida em caso de desastre. O Windows Admin Center simplifica a instalação e o processo de replicação de máquinas virtuais nos servidores Hyper-V ou clusters, tornando mais fácil reforçar a resiliência do ambiente com o serviço de recuperação de desastre do Azure Site Recovery.  
 Para mais informações, confira [Proteger suas VMs com o Azure Site Recovery e com o Windows Admin Center](azure-site-recovery.md).
 
 - **Fazer backup de seus servidores Windows com o [Backup do Azure](https://docs.microsoft.com/azure/backup/backup-overview)**  

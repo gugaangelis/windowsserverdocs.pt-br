@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: phstee
 author: phstee
 ms.date: 01/08/2018
-ms.openlocfilehash: d12a6c66c5e76852900828af04f4c6ec63a9a4f5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f9c7f0e589980f7d985f165e318667ebe2e5d5c5
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59891977"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866751"
 ---
 # <a name="server-hardware-performance-considerations"></a>Considerações sobre o desempenho de hardware
 
@@ -46,7 +46,7 @@ Escolha caches de processador L2 ou L3 grandes. Nas arquiteturas mais recentes, 
 Aumente a RAM para corresponder às suas necessidades de memória.
 Quando o computador fica com pouca memória e precisa de mais imediatamente, o Windows usa o espaço em disco rígido para complementar a RAM do sistema por meio de um procedimento chamado paginação. Uma quantidade excessiva de paginação degrada o desempenho geral do sistema.
 Você pode otimizar a paginação usando as seguintes diretrizes para o posicionamento de arquivo de paginação:
-- Isole o arquivo de paginação em seu próprio dispositivo de armazenamento ou, pelo menos, verifique se ele não compartilha os mesmos dispositivos de armazenamento que outros arquivos acessados com frequência. Por exemplo, coloque o arquivo de paginação e os arquivos do sistema operacional em unidades de disco físico separadas.
+- Isole o arquivo de paginação em seu próprio dispositivo de armazenamento ou pelo menos verifique se ele não compartilha os mesmos dispositivos de armazenamento que outros arquivos acessados com frequência. Por exemplo, coloque o arquivo de paginação e os arquivos do sistema operacional em unidades de disco físico separadas.
 
 - Coloque o arquivo de paginação em uma unidade que não seja tolerante a falhas. Se o disco falhar, será muito provável que ocorra uma falha do sistema. Se você colocar o arquivo de paginação em uma unidade tolerante a falhas, lembre-se de que os sistemas tolerantes a falhas geralmente são mais lentos para gravar dados porque os gravam em vários locais.
 
