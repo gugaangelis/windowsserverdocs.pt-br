@@ -1,6 +1,6 @@
 ---
-title: Configurar qualidade de serviço (QoS) para um adaptador de rede VM de locatário
-description: Quando você configura a QoS para um adaptador de rede VM de locatário, você tem uma opção entre o Data Center Bridging \(DCB\)ou a rede definida pelo Software \(SDN\) QoS.
+title: Configurar a QoS (qualidade de serviço) para um adaptador de rede de VM de locatário
+description: Ao configurar a QoS para um adaptador de rede de VM de locatário, você tem uma opção entre a ponte de data center DCB ou a rede definida pelo software QoS de Sdn.
 manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,36 +13,36 @@ ms.assetid: 6d783ff6-7dd5-496c-9ed9-5c36612c6859
 ms.author: pashort
 author: shortpatti
 ms.date: 08/23/2018
-ms.openlocfilehash: 0b9ce318c3d249b23d7560e0b6bb90a83e60d64d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 99ef286b91bec4bcb008bfd9f62003e75a5a5921
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880597"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870024"
 ---
-# <a name="configure-quality-of-service-qos-for-a-tenant-vm-network-adapter"></a>Configurar qualidade de serviço (QoS) para um adaptador de rede VM de locatário
+# <a name="configure-quality-of-service-qos-for-a-tenant-vm-network-adapter"></a>Configurar a QoS (qualidade de serviço) para um adaptador de rede de VM de locatário
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Quando você configura a QoS para um adaptador de rede VM de locatário, você tem uma opção entre o Data Center Bridging \(DCB\)ou a rede definida pelo Software \(SDN\) QoS.
+Ao configurar a QoS para um adaptador de rede de VM de locatário, você tem uma opção entre \(a\)ponte de data center \(DCB\) ou a rede definida pelo software QoS de Sdn.
 
-1.  **DCB**. Você pode configurar o DCB usando os cmdlets do Windows PowerShell NetQoS. Para obter um exemplo, consulte a seção "Habilitar ponte de Data Center" no tópico [acesso direto à memória remoto (RDMA) e Switch Embedded Teaming (SET)](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).
+1.  **DCB**. Você pode configurar o DCB usando os cmdlets do NetQoS do Windows PowerShell. Para obter um exemplo, consulte a seção "habilitar ponte do Data Center" no tópico [RDMA (acesso remoto direto à memória) e no conjunto inserido de equipe (Set)](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).
 
-2.  **QoS de SDN**. Você pode habilitar a QoS de SDN usando o controlador de rede, que pode ser definida para limitar a largura de banda em uma interface virtual para impedir que uma VM de alto tráfego bloqueando outros usuários.  Você também pode configurar o QoS de SDN para reservar uma quantidade específica de largura de banda para uma VM garantir que a VM está acessível independentemente da quantidade de tráfego de rede.  
+2.  **QoS de Sdn**. Você pode habilitar o QoS de SDN usando o controlador de rede, que pode ser definido para limitar a largura de banda em uma interface virtual para impedir que uma VM de tráfego alto bloqueie outros usuários.  Você também pode configurar o QoS de SDN para reservar uma quantidade específica de largura de banda para uma VM a fim de garantir que a VM esteja acessível, independentemente da quantidade de tráfego de rede.  
 
-Aplica todas as configurações de QoS de SDN por meio das configurações de porta das propriedades do adaptador de rede. Consulte a tabela abaixo para obter mais detalhes.
+Aplique todas as configurações de QoS de SDN pelas configurações de porta das propriedades da interface de rede. Consulte a tabela abaixo para obter mais detalhes.
 
 |Nome do elemento|Descrição|
 |------------|-----------| 
-|macSpoofing| Permite que as VMs alterar o controle de acesso de mídia de origem \(MAC\) endereço em pacotes de saída para um endereço MAC não está atribuído à VM.<p>Valores permitidos:<ul><li>Habilitado – Use um endereço MAC diferente.</li><li>Desabilitado – Use apenas o endereço MAC atribuído a ele.</li></ul>|
-|arpGuard| Permite que o protetor de ARP somente endereços especificados na ArpFilter passar através da porta.<p>Valores permitidos:<ul><li>Habilitado – permitido</li><li>Desativado – não permitido</li></ul>|
-|dhcpGuard| Permite ou descarta todas as mensagens DHCP de uma máquina virtual que alega ser um servidor DHCP. <p>Valores permitidos:<ul><li>Habilitado – descartes de mensagens DHCP porque o servidor DHCP virtualizado é considerado não confiável.</li><li>Desabilitado – permite que as mensagens sejam recebidas porque o servidor DHCP virtualizado é considerado confiável.</li></ul>|
-|stormLimit| O número de pacotes (unicast de difusão, multicast e desconhecido) por segundo de uma VM tem permissão para enviar por meio do adaptador de rede virtual. Pacotes além do limite durante esse intervalo de um segundo são descartados. Um valor de zero \(0\) significa que não há nenhum limite...|
-|portFlowLimit| O número máximo de fluxos permitido para execução para a porta. Um valor de espaço em branco ou zero \(0\) significa que não há nenhum limite. |
-|vmqWeight| O peso relativo descreve a afinidade do adaptador de rede virtual para usar a fila de máquina virtual (VMQ). O intervalo de valor é de 0 a 100.<p>Valores permitidos:<ul><li>0 – desabilita a VMQ no adaptador de rede virtual.</li><li>1 a 100 – habilita a VMQ no adaptador de rede virtual.</li></ul>|
-|iovWeight| O peso relativo define a afinidade do adaptador de rede virtual para a virtualização de e/s de raiz única atribuída \(SR-IOV\) função virtual. <p>Valores permitidos:<ul><li>0 – desabilita a SR-IOV no adaptador de rede virtual.</li><li>1 a 100 – permite SR-IOV no adaptador de rede virtual.</li></ul>|
-|iovInterruptModeration|<p>Valores permitidos:<ul><li>padrão – configuração do fornecedor de adaptador de rede física determina o valor.</li><li>adaptável- </li><li>configurações </li><li>Baixa</li><li>médio</li><li>Alta</li></ul><p>Se você escolher **padrão**, configuração do fornecedor de adaptador de rede física determina o valor.  Se você escolher, **adaptável**, o tráfego de tempo de execução padrão determins a taxa de moderação de interrupção.|
-|iovQueuePairsRequested| O número de pares de fila de hardware alocados para uma função virtual SR-IOV. Se o receive-side dimensionando \(RSS\) é necessária e se o adaptador de rede física que associa ao comutador virtual dá suporte a RSS em funções virtuais de SR-IOV, mais de um par de fila será necessário. <p>Valores permitidos: 1 a 4294967295.|
-|QosSettings| Defina as seguintes configurações de Qos, que são opcionais: <ul><li>**outboundReservedValue** - se outboundReservedMode for "absoluto", em seguida, o valor indica a largura de banda em Mbps, a garantia de porta virtual para transmissão (saída). Se outboundReservedMode é "peso", em seguida, o valor indica a parte ponderada da largura de banda garantida.</li><li>**outboundMaximumMbps** -indica que o máximo permitido envio largura de banda em Mbps, para a porta virtual (saída).</li><li>**InboundMaximumMbps** -indica que o máximo permitido de largura de banda do lado de recebimento para a porta virtual (entrada) em Mbps.</li></ul> |
+|macSpoofing| Permite que as VMs alterem o endereço MAC \(\) do controle de acesso à mídia de origem em pacotes de saída para um endereço MAC não atribuído à VM.<p>Valores permitidos:<ul><li>Habilitado – use um endereço MAC diferente.</li><li>Desabilitado – Use apenas o endereço MAC atribuído a ele.</li></ul>|
+|arpGuard| Permite que somente os endereços de proteção do ARP especificados em ArpFilter passem pela porta.<p>Valores permitidos:<ul><li>Habilitado-permitido</li><li>Desabilitado – não permitido</li></ul>|
+|dhcpGuard| Permite ou descarta todas as mensagens DHCP de uma VM que alega ser um servidor DHCP. <p>Valores permitidos:<ul><li>Habilitado – descarta mensagens DHCP porque o servidor DHCP virtualizado é considerado não confiável.</li><li>Disabled – permite que a mensagem seja recebida porque o servidor DHCP virtualizado é considerado confiável.</li></ul>|
+|stormLimit| O número de pacotes (difusão, multicast e unicast desconhecido) por segundo que uma VM tem permissão para enviar por meio do adaptador de rede virtual. Os pacotes além do limite durante esse intervalo de um segundo são removidos. Um valor igual A \(zero\) 0 significa que não há limite...|
+|portFlowLimit| O número máximo de fluxos que podem ser executados para a porta. Um valor de em branco ou \(zero\) 0 significa que não há limite. |
+|vmqWeight| O peso relativo descreve a afinidade do adaptador de rede virtual para usar a fila de máquina virtual (VMQ). O intervalo de valor é de 0 a 100.<p>Valores permitidos:<ul><li>0 – desabilita a VMQ no adaptador de rede virtual.</li><li>1-100 – habilita a VMQ no adaptador de rede virtual.</li></ul>|
+|iovWeight| O peso relativo define a afinidade do adaptador de rede virtual para a função virtual do Sr-IOV \(\) de virtualização de e/s de raiz única atribuída. <p>Valores permitidos:<ul><li>0 – desabilita o SR-IOV no adaptador de rede virtual.</li><li>1-100 – habilita o SR-IOV no adaptador de rede virtual.</li></ul>|
+|iovInterruptModeration|<p>Valores permitidos:<ul><li>padrão – a configuração do fornecedor do adaptador de rede física determina o valor.</li><li>adaptável </li><li>configurações </li><li>Pequena</li><li>médio</li><li>Elevada</li></ul><p>Se você escolher **padrão**, a configuração do fornecedor do adaptador de rede física determinará o valor.  Se você escolher, **adaptável**, o padrão de tráfego de tempo de execução determina a taxa de moderação de interrupção.|
+|iovQueuePairsRequested| O número de pares de fila de hardware alocados a uma função virtual SR-IOV. Se for necessário um RSS \(\) de dimensionamento no lado do recebimento e se o adaptador de rede física que se associar ao comutador virtual oferecer suporte a RSS em funções virtuais Sr-IOV, mais de um par de filas será necessário. <p>Valores permitidos: 1 a 4294967295.|
+|QosSettings| Defina as seguintes configurações de QoS, todas as quais são opcionais: <ul><li>**outboundReservedValue** -se outboundReservedMode for "Absolute", o valor indicará a largura de banda, em Mbps, garantida para a porta virtual para transmissão (Egresso). Se outboundReservedMode for "Weight", o valor indicará a parte ponderada da largura de banda garantida.</li><li>**outboundMaximumMbps** -indica o máximo permitido de largura de banda do lado do envio, em Mbps, para a porta virtual (Egresso).</li><li>**InboundMaximumMbps** -indica o máximo permitido de largura de banda do lado de recebimento para a porta virtual (entrada) em Mbps.</li></ul> |
 
 ---
