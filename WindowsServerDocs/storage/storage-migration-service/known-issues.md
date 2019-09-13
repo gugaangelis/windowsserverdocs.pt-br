@@ -8,12 +8,12 @@ ms.date: 07/09/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: efd92e9f6a199ad901e95b18718f3b448c3207e2
-ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
+ms.openlocfilehash: 2200c41bfc6f7e50d4f85f48591a12ad35720062
+ms.sourcegitcommit: 86350de764b89ebcac2a78ebf32631b7b5ce409a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560590"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70923358"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conhecidos do serviço de migração de armazenamento
 
@@ -89,7 +89,7 @@ Para contornar esse problema:
 3. No computador do Orchestrator, inicie regedit. exe
 4. Localize e clique na seguinte subchave do Registro: 
 
-   `HKEY_LOCAL_MACHINE\\Software\\Microsoft\\SMSPowershell`
+   `HKEY_LOCAL_MACHINE\Software\Microsoft\SMSPowershell`
 
 5. No menu Editar, aponte para Novo e clique em Valor DWORD. 
 6. Digite "WcfOperationTimeoutInMinutes" para o nome do DWORD e pressione ENTER.
@@ -206,6 +206,44 @@ Examinar o log StorageMigrationService-proxy/Debug mostra:
 em Microsoft. StorageMigration. proxy. Service. Transfer. TransferOperation. Validate () em Microsoft. StorageMigration. proxy. Service. Transfer. TransferRequestHandler. ProcessRequest (FileTransferRequest fileTransferRequest, GUID operationId)    [d:\os\src\base\dms\proxy\transfer\transferproxy\TransferRequestHandler.cs::
 
 Esse erro será esperado se sua conta de migração não tiver pelo menos permissões de acesso de leitura para os compartilhamentos SMB. Para solucionar esse erro, adicione um grupo de segurança que contém a conta de migração de origem aos compartilhamentos SMB no computador de origem e conceda a ele leitura, alteração ou controle total. Após a conclusão da migração, você poderá remover esse grupo. Uma versão futura do Windows Server pode alterar esse comportamento para não exigir mais permissões explícitas para os compartilhamentos de origem.
+
+## <a name="error-0x80005000-when-running-inventory"></a>Erro 0x80005000 ao executar o inventário
+
+Depois de instalar o [KB4512534](https://support.microsoft.com/en-us/help/4512534/windows-10-update-kb4512534) e tentar executar o inventário, o inventário falhará com erros:
+
+  EXCEÇÃO DE HRESULT: 0x80005000
+  
+  Nome do Log:      Origem Microsoft-Windows-StorageMigrationService/admin:        Microsoft-Windows-StorageMigrationService Data:          ID do evento 9/9/2019 5:21:42 PM:      2503 categoria da tarefa: Nível de nenhum:         Palavras-chave de erro:      
+  Usuário:          Computador do serviço de rede:      FS02. Descrição do TailwindTraders.net: Não foi possível inventariar os computadores.
+Trabalho: ID de Foo2: Estado de 20ac3f75-4945-41d1-9a79-d11dbb57798b: Erro com falha: 36934 mensagem de erro: Diretrizes de inventário com falha para todos os dispositivos: Verifique o erro detalhado e verifique se os requisitos de inventário foram atendidos. O trabalho não pôde inventariar nenhum dos computadores de origem especificados. Isso pode ocorrer porque o computador Orchestrator não conseguiu acessá-lo pela rede, possivelmente devido a uma regra de firewall ou a permissões ausentes.
+  
+  Nome do Log:      Origem Microsoft-Windows-StorageMigrationService/admin:        Microsoft-Windows-StorageMigrationService Data:          ID do evento 9/9/2019 5:21:42 PM:      2509 categoria da tarefa: Nível de nenhum:         Palavras-chave de erro:      
+  Usuário:          Computador do serviço de rede:      FS02. Descrição do TailwindTraders.net: Não foi possível inventariar um computador.
+Trabalho: computador Foo2: FS01. Estado de TailwindTraders.net: Erro com falha:-2147463168 mensagem de erro: Diretrizes: Verifique o erro detalhado e verifique se os requisitos de inventário foram atendidos. O inventário não pôde determinar os aspectos do computador de origem especificado. Isso pode ser devido à falta de permissões ou privilégios na origem ou em uma porta de firewall bloqueada.
+  
+Esse erro é causado por um defeito de código no serviço de migração de armazenamento quando você fornece credenciais de migração na forma de um UPN (nome principal do usuário)meghan@contoso.com, como ' '. O serviço Orchestrator do serviço de migração de armazenamento não analisa corretamente esse formato, o que leva a uma falha em uma pesquisa de domínio que foi adicionada para suporte de migração de cluster em KB4512534 e 19H1.
+
+Para solucionar esse problema, forneça credenciais no formato domínio \ usuário, como ' Contoso\Meghan '.
+
+## <a name="error-serviceerror0x9006-or-the-proxy-isnt-currently-available-when-migrating-to-a-windows-server-failover-cluster"></a>Erro "ServiceError0x9006" ou "o proxy não está disponível no momento". ao migrar para um cluster de failover do Windows Server
+
+Ao tentar transferir dados para um servidor de arquivos clusterizado, você recebe erros como: 
+
+   Verifique se o serviço de proxy está instalado e em execução e tente novamente. O proxy não está disponível no momento.
+0x9006 ServiceError0x9006, Microsoft. StorageMigration. Commands. UnregisterSmsProxyCommand
+
+Esse erro será esperado se o recurso de servidor de arquivos movido de seu nó original do proprietário do cluster do Windows Server 2019 para um novo nó e o recurso de proxy de serviço de migração de armazenamento não tiver sido instalado nesse nó.
+
+Como alternativa, mova o recurso de servidor de arquivos de destino de volta para o nó de cluster do proprietário original que estava em uso quando você configurou os emparelhamentos de transferência pela primeira vez.
+
+Como alternativa alternativa:
+
+1. Instale o recurso de proxy de serviço de migração de armazenamento em todos os nós em um cluster.
+2. Execute o seguinte comando do PowerShell do serviço de migração de armazenamento no computador do Orchestrator: 
+
+   ```PowerShell
+   Register-SMSProxy -ComputerName *destination server* -Force
+   ```
 
 ## <a name="see-also"></a>Consulte também
 

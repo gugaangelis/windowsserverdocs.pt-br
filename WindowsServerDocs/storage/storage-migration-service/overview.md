@@ -8,12 +8,12 @@ ms.date: 08/16/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: dae64b81c48b9ae6bf84c3558066ebbdf9c06ace
-ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
+ms.openlocfilehash: 50165f5e5dcb5e3fd83da8e6156869c61aeb68ca
+ms.sourcegitcommit: 825c2c17d227fec75335254edaa4efbb89ebcba2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69584828"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70905070"
 ---
 # <a name="storage-migration-service-overview"></a>Visão geral do serviço de migração de armazenamento
 
@@ -51,8 +51,8 @@ examinado**Figura 2: Servidores de inventário do serviço de migração de arma
 
 Para usar o serviço de migração de armazenamento, você precisa do seguinte:
 
-- Um **servidor de origem** para migrar arquivos e dados de
-- Um **servidor de destino** executando o windows Server 2019 para migrar para o, o windows Server 2016 e o windows Server 2012 R2 funcionam bem, mas estão em cerca de 50% mais lento
+- Um **servidor de origem** ou **cluster de failover** para migrar arquivos e dados de
+- Um **servidor de destino** que executa o Windows Server 2019 (clusterizado ou autônomo) para migrar para o. O Windows Server 2016 e o Windows Server 2012 R2 funcionam bem, mas estão em cerca de 50% mais lento
 - Um **servidor do Orchestrator** que executa o Windows Server 2019 para gerenciar a migração  <br>Se estiver migrando apenas alguns servidores e um dos servidores estiver executando o Windows Server 2019, você poderá usá-lo como o Orchestrator. Se você estiver migrando mais servidores, recomendamos o uso de um servidor Orchestrator separado.
 - Um **PC ou servidor que executa o [centro de administração do Windows](../../manage/windows-admin-center/understand/windows-admin-center.md)**  para executar a interface do usuário do serviço de migração de armazenamento, a menos que você prefira usar o PowerShell para gerenciar a migração. O centro de administração do Windows e a versão 2019 do Windows Server devem ter, no mínimo, a versão 1809.
 
@@ -62,7 +62,7 @@ Para usar o serviço de migração de armazenamento, você precisa do seguinte:
 
 - Uma conta de migração que é um administrador nos computadores de origem e no computador do Orchestrator.
 - Uma conta de migração que é um administrador nos computadores de destino e no computador Orchestrator.
-- O computador Orchestrator deve ter a regra de firewall de compartilhamento de arquivos e impressoras (SMB-in) habilitada.
+- O computador Orchestrator deve ter a regra de firewall de compartilhamento de arquivos e impressoras (SMB-in *) habilitada*.
 - Os computadores de origem e de destino devem ter as seguintes regras de firewall habilitadas para *entrada* (embora você já possa tê-las habilitadas):
   - Compartilhamento de arquivos e de impressora (SMB-Entrada)
   - Serviço Netlogon (NP-in)
@@ -98,7 +98,7 @@ O servidor de origem deve executar um dos seguintes sistemas operacionais:
 
 Observação: O Windows Small Business Server e o Windows Server Essentials são controladores de domínio. O serviço de migração de armazenamento ainda não pode ser reduzido dos controladores de domínio, mas pode inventariar e transferir arquivos deles.   
 
-Se o Orchestrator estiver executando o Windows Server, versão 1903 ou posterior, você poderá migrar os seguintes tipos de fonte adicionais:
+Você pode migrar os seguintes tipos de fonte adicionais se o Orchestrator estiver executando o Windows Server, versão 1903 ou posterior, ou se o orquestrador estiver executando uma versão anterior do Windows Server com o [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) instalado:
 
 - Clusters de failover
 - Servidores Linux que usam o samba. Testamos o seguinte:
@@ -115,14 +115,14 @@ O servidor de destino deve executar um dos seguintes sistemas operacionais:
 - Windows Server 2012 R2
 
 > [!TIP]
-> Os servidores de destino que executam o Windows Server 2019 ou o Windows Server, versão do canal semestral 1809 ou posterior, têm o dobro do desempenho de transferência de versões anteriores do Windows Server. Esse aumento de desempenho ocorre devido à inclusão de um serviço de proxy de serviço de migração de armazenamento interno, que também abre as portas de firewall necessárias, se ainda não estiverem abertas.
+> Os servidores de destino que executam o Windows Server 2019 ou o Windows Server, canal semestral ou posterior têm o dobro do desempenho de transferência de versões anteriores do Windows Server. Esse aumento de desempenho ocorre devido à inclusão de um serviço de proxy de serviço de migração de armazenamento interno, que também abre as portas de firewall necessárias, se ainda não estiverem abertas.
 
 ## <a name="whats-new-in-storage-migration-service"></a>O que há de novo no serviço de migração de armazenamento
 
-O Windows Server, versão 1903, adiciona os seguintes novos recursos, quando executados no servidor do Orchestrator:
+Os novos recursos a seguir estão disponíveis ao executar o Storage Migration Server Orchestrator no Windows Server, versão 1903 ou posterior, ou uma versão anterior do Windows Server com o [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) instalado:
 
 - Migrar usuários e grupos locais para o novo servidor
-- Migrar o armazenamento dos clusters de failover
+- Migrar o armazenamento de clusters de failover, migrar para clusters de failover e migrar entre servidores autônomos e clusters de failover
 - Migrar o armazenamento de um servidor Linux que usa o Samba
 - Sincronização mais fácil de compartilhamentos integrados no Azure usando a Sincronização de Arquivos do Azure
 - Migrar para novas redes, como o Azure

@@ -8,12 +8,12 @@ ms.date: 08/19/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: f086143ae2e02a2d049189ff248e02fc44fe3cb2
-ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
+ms.openlocfilehash: a1e195ab755dfd0b61cc4201f43373421ce51aa2
+ms.sourcegitcommit: 86350de764b89ebcac2a78ebf32631b7b5ce409a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69584804"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70923548"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>FAQ (perguntas frequentes) sobre o serviço de migração de armazenamento
 
@@ -89,11 +89,13 @@ O serviço de migração de armazenamento contém um mecanismo de leitura e cóp
 
 - **Use o Windows Server 2019 para o sistema operacional de destino.** O Windows Server 2019 contém o serviço de proxy de serviço de migração de armazenamento. Quando você instala esse recurso e migra para destinos do Windows Server 2019, todas as transferências funcionam como uma linha de visão direta entre a origem e o destino. Esse serviço é executado no Orchestrator durante a transferência se os computadores de destino forem Windows Server 2012 R2 ou Windows Server 2016, o que significa que o salto duplo de transferências e será muito mais lento. Se houver vários trabalhos em execução com destinos do Windows Server 2012 R2 ou do Windows Server 2016, o orquestrador se tornará um afunilamento. 
 
-- **Altere os threads de transferência padrão.** O serviço de proxy de serviço de migração de armazenamento copia 8 arquivos simultaneamente em um determinado trabalho. Você pode aumentar o número de threads de cópia simultâneas ajustando o seguinte nome de valor REG_DWORD do registro em decimal em cada nó que executa o proxy do SMS:
+- **Altere os threads de transferência padrão.** O serviço de proxy de serviço de migração de armazenamento copia 8 arquivos simultaneamente em um determinado trabalho. Você pode aumentar o número de threads de cópia simultâneas ajustando o seguinte nome de valor REG_DWORD do registro em decimal em cada nó que executa o proxy do serviço de migração de armazenamento:
 
-    HKEY_Local_Machine\Software\Microsoft\SMSProxy FileTransferThreadCount
+    HKEY_Local_Machine\Software\Microsoft\SMSProxy
+    
+    FileTransferThreadCount
 
-   O intervalo válido é de 1 a 128 no Windows Server 2019. Após a alteração, você deve reiniciar o serviço de proxy de serviço de migração de armazenamento em todos os computadores que participam de uma migração. Tome cuidado com essa configuração; a configuração mais alta pode exigir núcleos adicionais, desempenho de armazenamento e largura de banda de rede. Configurá-lo muito alto pode levar a um desempenho reduzido em comparação com as configurações padrão. A capacidade de alterar heurísticamente as configurações de thread com base na CPU, na memória, na rede e no armazenamento é planejada para uma versão mais recente do SMS.
+   O intervalo válido é de 1 a 128 no Windows Server 2019. Após a alteração, você deve reiniciar o serviço de proxy de serviço de migração de armazenamento em todos os computadores que participam de uma migração. Tome cuidado com essa configuração; a configuração mais alta pode exigir núcleos adicionais, desempenho de armazenamento e largura de banda de rede. Configurá-lo muito alto pode levar a um desempenho reduzido em comparação com as configurações padrão.
 
 - **Adicione núcleos e memória.**  É altamente recomendável que os computadores de origem, Orchestrator e de destino tenham pelo menos dois núcleos de processador ou dois vCPUs, e mais pode ajudar significativamente o desempenho de inventário e transferência, especialmente quando combinado com FileTransferThreadCount (acima). Ao transferir arquivos maiores do que os formatos usuais do Office (gigabytes ou superior), o desempenho de transferência se beneficiará de mais memória do que o mínimo de 2 GB padrão.
 
@@ -112,7 +114,7 @@ O serviço de migração de armazenamento contém um mecanismo de leitura e cóp
 
 - **Habilite o processamento de alto desempenho.** Verifique se as configurações de BIOS/UEFI para servidores permitem o alto desempenho, como desabilitar C-State, definir a velocidade de QPI, habilitar NUMA e definir a frequência de memória mais alta. Verifique se o gerenciamento de energia no Windows Server está definido como alto desempenho. Reinicie conforme necessário. Não se esqueça de retorná-los para os Estados apropriados depois de concluir a migração. 
 
-- **Ajustar o hardware** Examine as [diretrizes de ajuste de desempenho do Windows server 2016](https://docs.microsoft.com/windows-server/administration/performance-tuning/) para ajustar o Orchestrator e os computadores de destino que executam o windows Server 2019 e o windows Server 2016. A seção de [ajuste de desempenho](https://docs.microsoft.com/windows-server/networking/technologies/network-subsystem/net-sub-performance-tuning-nics) do subsistema de rede contém informações especialmente valiosas.
+- **Ajustar o hardware** Examine as [diretrizes de ajuste de desempenho do Windows server 2016](https://docs.microsoft.com/windows-server/administration/performance-tuning/) para ajustar o Orchestrator e os computadores de destino que executam o windows Server 2019 e o windows Server 2016. A seção de [ajuste de desempenho do subsistema de rede](https://docs.microsoft.com/windows-server/networking/technologies/network-subsystem/net-sub-performance-tuning-nics) contém informações especialmente valiosas.
 
 - **Use um armazenamento mais rápido.** Embora possa ser difícil atualizar a velocidade de armazenamento do computador de origem, você deve garantir que o armazenamento de destino seja pelo menos rápido no desempenho de e/s de gravação, pois a origem está em desempenho de e/s de leitura para garantir que não haja nenhum afunilamento desnecessário nas transferências. Se o destino for uma VM, certifique-se de que, pelo menos, para fins de migração, seja executado na camada de armazenamento mais rápida de seus hosts de hipervisor, como na camada flash ou com Espaços de Armazenamento Diretos clusters HCI utilizando espaços em Flash ou híbridos espelhados. Quando a migração do SMS é concluída, a VM pode ser migrada ao vivo para uma camada ou host mais lento.
 
@@ -142,7 +144,7 @@ O serviço de migração de armazenamento usa um banco de dados ESE (mecanismo d
 Para fornecer comentários sobre o serviço de migração de armazenamento:
 
 - Use a ferramenta de Hub de comentários incluída no Windows 10, clicando em "sugerir um recurso" e especificando a categoria do "Windows Server" e a subcategoria de "migração de armazenamento"
-- Usar o site UserVoice do [Windows Server](https://windowsserver.uservoice.com)
+- Usar o site [UserVoice do Windows Server](https://windowsserver.uservoice.com)
 - Emailsmsfeed@microsoft.com
 
 Para arquivar bugs:
