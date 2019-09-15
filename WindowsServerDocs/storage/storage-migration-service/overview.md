@@ -8,12 +8,12 @@ ms.date: 08/16/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 50165f5e5dcb5e3fd83da8e6156869c61aeb68ca
-ms.sourcegitcommit: 825c2c17d227fec75335254edaa4efbb89ebcba2
+ms.openlocfilehash: 0dab57bffe8b0963bb91d0f9c2752014c6746c87
+ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70905070"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70987395"
 ---
 # <a name="storage-migration-service-overview"></a>Visão geral do serviço de migração de armazenamento
 
@@ -102,8 +102,12 @@ Você pode migrar os seguintes tipos de fonte adicionais se o Orchestrator estiv
 
 - Clusters de failover
 - Servidores Linux que usam o samba. Testamos o seguinte:
-    - RedHat Enterprise Linux 7,6, CentOS 7, Debian 8, Ubuntu 16, 4 e 12.04.5, SUSE Linux Enterprise Server (SLES) 11 SP4
-    - Samba 4. x, 3.6. x
+    - CentOS 7
+    - Debian GNU/Linux 8
+    - RedHat Enterprise Linux 7,6
+    - SUSE Linux Enterprise Server (SLES) 11 SP4
+    - Ubuntu 16, 4 LTS e 12.04.5 LTS
+    - Samba 4,8, 4,7, 4,3, 4,2 e 3,6
 
 ### <a name="requirements-for-destination-servers"></a>Requisitos para servidores de destino
 

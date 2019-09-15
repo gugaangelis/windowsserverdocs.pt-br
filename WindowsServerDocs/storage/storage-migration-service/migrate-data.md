@@ -8,12 +8,12 @@ ms.date: 02/13/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: f90ffe5b6a81ab1b4c2616dce08c98cbd8c065b4
-ms.sourcegitcommit: a35ce5b166175c905edd09005b94e96ad48c57a7
+ms.openlocfilehash: c5a3012b989a16c8416a17460b87e197f7f6fc6a
+ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70936976"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70987409"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>Usar o serviço de migração de armazenamento para migrar um servidor
 
@@ -34,8 +34,7 @@ Antes de começar, instale o serviço de migração de armazenamento e verifique
     - Instrumentação de Gerenciamento do Windows (DCOM-in)
     - Instrumentação de Gerenciamento do Windows (WMI-In)
 
-   > [!NOTE]
-   > Se você estiver usando firewalls de terceiros, os intervalos de portas de entrada a serem abertos serão TCP/445 (SMB), TCP/135 (mapeador de ponto de extremidade RPC/DCOM) e TCP 1025-65535 (portas efêmeras RPC/DCOM). As portas do serviço de migração de armazenamento são TCP/28940 (Orchestrator) e TCP/28941 (proxy).
+   Se você estiver usando firewalls de terceiros, os intervalos de portas de entrada a serem abertos serão TCP/445 (SMB), TCP/135 (mapeador de ponto de extremidade RPC/DCOM) e TCP 1025-65535 (portas efêmeras RPC/DCOM). As portas do serviço de migração de armazenamento são TCP/28940 (Orchestrator) e TCP/28941 (proxy).
 
 1. Se você estiver usando um servidor Orchestrator para gerenciar a migração e desejar baixar eventos ou um log de quais dados você transfere, verifique se a regra de firewall de compartilhamento de arquivos e impressoras (SMB-in) está habilitada nesse servidor também.
 
@@ -43,16 +42,10 @@ Antes de começar, instale o serviço de migração de armazenamento e verifique
 
 Nesta etapa, você especifica quais servidores migrar e, em seguida, os verifica para coletar informações sobre seus arquivos e configurações.
 
-1. Selecione **novo trabalho**, nomeie o trabalho e, em seguida, selecione **OK**.
-2. Na página **Inserir credenciais** , digite as credenciais de administrador que funcionam nos servidores dos quais você deseja migrar e, em seguida, selecione **Avançar**.
+1. Selecione **novo trabalho**, nomeie o trabalho e, em seguida, selecione se deseja migrar servidores Windows e clusters ou servidores Linux que usam o samba. Em seguida, selecione **OK**.
+2. Na página **Inserir credenciais** , digite as credenciais de administrador que funcionam nos servidores dos quais você deseja migrar e, em seguida, selecione **Avançar**. <br>Se você estiver migrando de servidores Linux, insira as credenciais nas páginas **credenciais do samba** e credenciais do **Linux** , incluindo uma senha ssh ou uma chave privada. 
 
-   > [!NOTE]
-   > Se você optar por migrar de servidores do Linux Samba, haverá uma etapa adicional para fornecer a senha SSH ou a chave privada
-
-3. Selecione **Adicionar um dispositivo**, digite um nome do servidor de origem e, em seguida, selecione **OK**. <br>Repita esse procedimento para todos os outros servidores que você deseja inventariar.
-
-   > [!NOTE]
-   > Se você optar por migrar de um cluster de failover, forneça o nome do recurso de servidor de arquivos clusterizado.
+3. Selecione **Adicionar um dispositivo**, digite um nome do servidor de origem ou o nome de um servidor de arquivos clusterizado e, em seguida, selecione **OK**. <br>Repita esse procedimento para todos os outros servidores que você deseja inventariar.
 
 4. Selecione **Iniciar verificação**.<br>A página é atualizada para mostrar quando a verificação foi concluída.
     ![Captura de tela mostrando um servidor pronto para ser](media/migrate/inventory.png) examinado **Figura 2: Servidores de inventário**
@@ -64,15 +57,19 @@ Nesta etapa, você especifica quais servidores migrar e, em seguida, os verifica
 Nesta etapa, você transfere dados depois de especificar onde colocá-los nos servidores de destino.
 
 1. Na página **transferir dados** > **Insira as credenciais** , digite as credenciais de administrador que funcionam nos servidores de destino para os quais você deseja migrar e, em seguida, selecione **Avançar**.
-2. Na página **Adicionar um dispositivo de destino e mapeamentos** , o primeiro servidor de origem é listado. Digite o nome do servidor para o qual você deseja migrar e, em seguida, selecione **verificar dispositivo**.
-
-   > [!NOTE]
-   > Se você optar por migrar para um cluster de failover, forneça o nome do recurso de servidor de arquivos clusterizado.
-
+2. Na página **Adicionar um dispositivo de destino e mapeamentos** , o primeiro servidor de origem é listado. Digite o nome do servidor ou servidor de arquivos clusterizado para o qual você deseja migrar e, em seguida, selecione **verificar dispositivo**.
 3. Mapeie os volumes de origem para volumes de destino, desmarque a caixa de seleção **incluir** para todos os compartilhamentos que você não deseja transferir (incluindo quaisquer compartilhamentos administrativos localizados na pasta de sistema do Windows) e, em seguida, selecione **Avançar**.
    ![Captura de tela mostrando um servidor de origem e seus volumes e compartilhamentos e para onde eles serão](media/migrate/transfer.png) transferidos na Figura 3 de destino **: Um servidor de origem e para onde seu armazenamento será transferido**
 4. Adicione um servidor de destino e mapeamentos para mais servidores de origem e, em seguida, selecione **Avançar**.
-5. Se desejar, ajuste as configurações de transferência e, em seguida, selecione **Avançar**.
+5. Na página **ajustar configurações de transferência** , especifique se deseja migrar usuários e grupos locais nos servidores de origem e, em seguida, selecione **Avançar**. Isso permite recriar quaisquer usuários e grupos locais nos servidores de destino para que as permissões de arquivo ou compartilhamento definidas para usuários e grupos locais não sejam perdidas. Aqui estão as opções ao migrar usuários e grupos locais:
+
+    - **Renomear contas com o mesmo nome** é selecionado por padrão e migra todos os usuários e grupos locais no servidor de origem. Se ele encontrar usuários ou grupos locais com o mesmo nome na origem e no destino, ele os renomeará no destino, a menos que eles sejam internos (por exemplo, o usuário administrador e o grupo Administradores).
+    - **Reutilizar contas com o mesmo nome** mapeia usuários e grupos com nomes idênticos na origem e no destino.
+    - **Não transfira usuários e grupos** ignora a migração de usuários e grupos locais, o que é necessário ao propagar dados para replicação do DFS (o replicação do DFS não dá suporte a grupos e usuários locais).
+
+   > [!NOTE]
+   > As contas de usuário migradas são desabilitadas no destino e recebem uma senha de 127 caracteres que são complexas e aleatórias, portanto, você precisará habilitá-las e atribuir uma nova senha quando terminar de usá-las. Isso ajuda a garantir que contas antigas com senhas esquecidas e fracas na fonte não continuem a ser um problema de segurança no destino. Você também pode querer fazer check-out da [solução de senha de administrador local (LAPs)](https://www.microsoft.com/download/details.aspx?id=46899) como uma maneira de gerenciar senhas de administrador local.
+
 6. Selecione **validar** e, em seguida, **Avançar**.
 7. Selecione **Iniciar transferência** para iniciar a transferência de dados.<br>Na primeira vez que você transferir, moveremos todos os arquivos existentes em um destino para uma pasta de backup. Em transferências subsequentes, por padrão, atualizaremos o destino sem fazer o backup primeiro. <br>Além disso, o serviço de migração de armazenamento é inteligente o suficiente para lidar com compartilhamentos sobrepostos — não copiaremos as mesmas pastas duas vezes no mesmo trabalho.
 8. Depois que a transferência for concluída, verifique o servidor de destino para certificar-se de que tudo foi transferido corretamente. Selecione **log de erros somente** se desejar baixar um log de todos os arquivos que não foram transferidos.
@@ -92,13 +89,12 @@ Se seu objetivo for sincronizar os arquivos com o Azure, você poderá configura
 
 Nesta etapa, você reduz os servidores de origem para os servidores de destino, movendo os endereços IP e os nomes dos computadores para os servidores de destino. Depois que essa etapa for concluída, os aplicativos e usuários acessarão os novos servidores por meio dos nomes e endereços dos servidores dos quais você migrou.
 
-1. Se você navegou para fora do trabalho de migração, no centro de administração do Windows, acesse **Gerenciador do servidor** > **serviço de migração de armazenamento** e selecione o trabalho que deseja concluir. 
+1. Se você navegou para fora do trabalho de migração, no centro de administração do Windows, acesse **Gerenciador do servidor** > **serviço de migração de armazenamento** e selecione o trabalho que deseja concluir.
 2. Na página **recortar para os novos servidores** > **Insira as credenciais** , selecione **Avançar** para usar as credenciais digitadas anteriormente.
 
-    > [!NOTE]
-   > Se o destino for um servidor de arquivos clusterizado, talvez seja necessário fornecer credenciais com permissões para remover o cluster do domínio e, em seguida, adicioná-lo novamente com o novo nome. 
+   Se o destino for um servidor de arquivos clusterizado, talvez seja necessário fornecer credenciais com permissões para remover o cluster do domínio e, em seguida, adicioná-lo novamente com o novo nome.
 
-3. Na página **Configurar a transferência** , especifique quais adaptadores de rede assumirão as configurações de cada dispositivo de origem. Isso move o endereço IP da origem para o destino como parte da transferência. Você tem a opção de ignorar todas as migrações de rede ou determinadas interfaces. Você sempre deve especificar o DHCP ou um novo endereço IP estático para as interfaces de origem se estiver recortando o servidor.
+3. Na página **Configurar a transferência** , especifique qual adaptador de rede no destino deve assumir as configurações de cada adaptador na origem. Isso move o endereço IP da origem para o destino como parte da transferência, fornecendo ao servidor de origem um novo endereço IP estático ou DHCP. Você tem a opção de ignorar todas as migrações de rede ou determinadas interfaces. 
 4. Especifique o endereço IP a ser usado para o servidor de origem após a transferência mover seu endereço para o destino. Você pode usar o DHCP ou um endereço estático. Se você estiver usando um endereço estático, a nova sub-rede deverá ser a mesma que a sub-rede antiga ou a transferência falhará.
     ![Captura de tela mostrando um servidor de origem e seus endereços IP e nomes de computador e o que eles serão substituídos após a imagem de transferência](media/migrate/cutover.png) **4: Um servidor de origem e como sua configuração de rede será movida para o destino**
 5. Especifique como renomear o servidor de origem após o servidor de destino assumir seu nome. Você pode usar um nome gerado aleatoriamente ou digitar um por conta própria. Em seguida, selecione **Avançar**.

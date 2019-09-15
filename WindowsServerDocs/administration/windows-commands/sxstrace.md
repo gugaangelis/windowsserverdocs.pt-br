@@ -1,6 +1,6 @@
 ---
 title: sxstrace
-description: Saiba como diagnosticar problemas de lado a lado.
+description: Saiba como diagnosticar problemas lado a lado.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,49 +13,49 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 396d06bf079c0cfa8ba4864f71333eec39f7b255
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dbc8dad642e15dede1ce89105a501fd90224610b
+ms.sourcegitcommit: feec5cbe983c8c5800ccd4fc214914084fcceaba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814097"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70975313"
 ---
 # <a name="sxstrace"></a>sxstrace
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Diagnostica problemas de lado a lado.    
+Diagnostica problemas lado a lado.    
 
 ## <a name="syntax"></a>Sintaxe  
 ```  
-sxstrace [{[trace /logfile:<FileName> [/nostop]|[parse /logfile:<FileName> /outfile:<ParsedFile>  [/filter:<AppName>]}]  
+sxstrace [{[trace -logfile:<FileName> [-nostop]|[parse -logfile:<FileName> -outfile:<ParsedFile>  [-filter:<AppName>]}]  
 ```  
 
 ### <a name="parameters"></a>Parâmetros  
 |Parâmetro|Descrição|  
 |-------|--------|  
-|rastreamento|Habilitam o rastreamento de sxs (lado a lado)|  
-|/logfile|Especifica o arquivo de log bruto.|  
-|\<FileName>|Salva o log de rastreamento *FileName*.|  
-|/nostop|Não especifica que nenhum prompt para interromper o rastreamento.|  
-|Analisar|Converte o arquivo de rastreamento bruto.|  
-|/outfile|Especifica o nome do arquivo de saída.|  
-|\<ParsedFile>|Especifica o nome do arquivo do arquivo analisado.|  
-|/filter|Permite que a saída a ser filtrada.|  
-|\<AppName>|Especifica o nome do aplicativo.|  
-|stoptrace|Pare o rastreamento se ele não está parado antes.|  
-|/?|Exibe a ajuda no prompt de comando.|  
+|rastreamento|Habilita o rastreamento para SxS (lado a lado)|  
+|-Logfile|Especifica o arquivo de log bruto.|  
+|\<Nome de arquivo >|Salva o log de rastreamento em *filename*.|  
+|-nostop|Especifica que não há prompt para interromper o rastreamento.|  
+|Passar|Traduz o arquivo de rastreamento bruto.|  
+|-outfile|Especifica o nome de arquivo de saída.|  
+|\<> ParsedFile|Especifica o nome do arquivo analisado.|  
+|-filtro|Permite que a saída seja filtrada.|  
+|\<AppName >|Especifica o nome do aplicativo.|  
+|stoptrace|Pare o rastreamento se ele não for interrompido antes.|  
+|-?|Exibe a ajuda no prompt de comando.|  
 
-## <a name="BKMK_Examples"></a>Exemplos  
-Habilitar o rastreamento e salvar o arquivo de rastreamento para **sxstrace.etl**:  
+## <a name="BKMK_Examples"></a>Disso  
+Habilite o rastreamento e salve o arquivo de rastreamento em **sxstrace. etl**:  
 ```  
-sxstrace trace /logfile:sxstrace.etl  
+sxstrace trace -logfile:sxstrace.etl  
 ```  
-Converter o arquivo de rastreamento bruto em um formato legível e salvar o resultado para **sxstrace.txt**:  
+Traduza o arquivo de rastreamento bruto em um formato legível por humanos e salve o resultado em **sxstrace. txt**:  
 ```  
-sxstrace parse /logfile:sxstrace.etl /outfile:sxstrace.txt  
+sxstrace parse -logfile:sxstrace.etl -outfile:sxstrace.txt  
 ```  
 
 ## <a name="additional-references"></a>Referências adicionais  
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
