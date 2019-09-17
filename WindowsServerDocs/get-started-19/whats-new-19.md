@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: 7110fe78982fec616174a93514d86fb2e1cf9fa5
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 665363c17cf5cb8d8ad52872128f2f63c07ea683
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810769"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868553"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Novidades no Windows Server 2019
 
@@ -79,7 +79,7 @@ A [Segurança com SDN](https://docs.microsoft.com/windows-server/networking/sdn/
 
 Essas melhorias de segurança estão integradas à plataforma SDN abrangente introduzida no Windows Server 2016.
 
-Para obter uma lista completa das novidades na SDN, consulte [Novidades na SDN do Windows Server 2019](https://docs.microsoft.com/windows-server/networking/sdn/sdn-whats-new).
+Para ver uma lista completa das novidades na SDN, confira [Novidades na SDN para o Windows Server 2019](https://docs.microsoft.com/windows-server/networking/sdn/sdn-whats-new).
 
 ### <a name="shielded-virtual-machines-improvements"></a>Melhorias nas máquinas virtuais blindadas
 
@@ -214,7 +214,7 @@ Os [Gateways SDN de alto desempenho](https://docs.microsoft.com/windows-server/n
 
 ### <a name="new-deployment-ui-and-windows-admin-center-extension-for-sdn"></a>Nova extensão da interface do usuário de implantação e do Windows Admin Center para SDN
 
-Agora, com o Windows Server 2019, ficou fácil realizar implantação e gerenciamento por meio de uma nova extensão da interface do usuário de implantação e do Windows Admin Center que permitem a qualquer pessoa aproveitar o poder do SDN. 
+Agora, com o Windows Server 2019, ficou fácil realizar implantação e gerenciamento por meio de uma nova extensão da interface do usuário de implantação e do Windows Admin Center que permitem a qualquer pessoa aproveitar o poder da SDN. 
 
 ### <a name="persistent-memory-support-for-hyper-v-vms"></a>Suporte de Memória Persistente para VMs do Hyper-V
 

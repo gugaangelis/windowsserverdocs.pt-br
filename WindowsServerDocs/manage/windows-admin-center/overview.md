@@ -8,18 +8,18 @@ ms.author: niwashbu
 ms.date: 08/22/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 7af852ba934de2dd29a76972d7a7ec73606e9b4c
-ms.sourcegitcommit: 4fa147d552481d8279a5390f458a9f7788061977
+ms.openlocfilehash: cdd7986486fd3cad07f5e4577aaf0ab404bfb5d3
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70009117"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869589"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
-> Aplica-se a: Windows Admin Center, Versão Prévia do Windows Admin Center
+> Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
 
-O **Windows Admin Center** (conhecido anteriormente como **Project Honolulu**) é uma evolução das ferramentas de gerenciamento de caixa de entrada do Windows Server. É um único painel que consolida todos os aspectos do gerenciamento de servidores locais e remotos. Como uma experiência de gerenciamento com base em navegador implantado localmente, não requer uma conexão de Internet e o Azure. O Windows Admin Center oferece controle total sobre todos os aspectos da sua implantação, incluindo as redes privadas não conectadas à Internet.
+O **Windows Admin Center** (conhecido anteriormente como **Project Honolulu**) é uma evolução das ferramentas de gerenciamento de caixa de entrada do Windows Server. É um único painel que consolida todos os aspectos do gerenciamento de servidores locais e remotos. Como uma experiência de gerenciamento com base em navegador e implantada localmente, não requer uma conexão de Internet e o Azure. O Windows Admin Center oferece controle total sobre todos os aspectos da implantação, incluindo as redes privadas não conectadas à Internet.
 
 ## <a name="introduction"></a>Introdução
 

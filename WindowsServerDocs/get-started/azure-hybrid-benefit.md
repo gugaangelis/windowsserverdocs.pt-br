@@ -8,12 +8,12 @@ ms.topic: article
 author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
-ms.openlocfilehash: 62821abc6c9eec660fa6af832bb1aba151708021
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 187abe06b469abe511d4bbbfb0aac9237d3c650a
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63686410"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868515"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>Benefício Híbrido do Azure para Windows Server
 
@@ -73,7 +73,7 @@ Para ver e contar todas as máquinas virtuais implantadas com o Benefício Híbr
     foreach ($vm in $vms) {"VM Name: " + $vm.Name, "   Azure Hybrid Benefit for Windows Server: "+ $vm.LicenseType}
     ```
 
-3.  Examine sua conta do Microsoft Azure para determinar quantas máquinas virtuais com o Benefício Híbrido do Azure para Windows Server em execução. As informações sobre o número de instâncias com o benefício são mostradas em 'Informações adicionais':
+3.  Examine sua conta do Microsoft Azure para determinar quantas máquinas virtuais com o Benefício Híbrido do Azure para Windows Server em execução. As informações sobre o número de instâncias com o benefício são mostradas em "Informações adicionais":
 
     ```
     "{"ImageType":"WindowsServerBYOL","ServiceType":"Standard_A1","VMName":"","UsageType":"ComputeHR"}" 

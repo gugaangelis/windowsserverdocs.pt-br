@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: cdb831eb772114b86e6260063dff6ad881f2f37b
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 639623b4ebb21a4f6a0025a71721204cbfc4f496
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280338"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868601"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Canais de manutenção do Windows Server: LTSC e SAC
 
@@ -102,9 +102,9 @@ As versões do Canal Semestral lançadas antes do Windows Server 2019 usam o CSV
 
 ## <a name="why-do-semi-annual-channel-releases-offer-only-the-server-core-installation-option"></a>Por que as versões do Canal Semestral só oferecem a opção de instalação Server Core?
 
-Uma das etapas mais importantes no planejamento de cada versão do Windows Server é ouvir os comentários dos clientes, ou seja, como você está usando o Windows Server? Quais novos recursos afetarão mais as implantações do Windows Server e, consequentemente, suas atividades diárias? Seus comentários nos dizem que a disponibilização de inovações do modo mais rápido e eficiente possível é uma prioridade. Ao mesmo tempo, para os clientes que inovam mais rapidamente, fomos informados que você está usando principalmente scripts de linha de comando com o PowerShell para gerenciar seus datacenters e, dessa forma, não há uma grande necessidade de GUI de área de trabalho na instalação do Windows Server com Experiência Desktop, especialmente agora que o [Windows Admin Center](../manage/windows-admin-center/overview.md) está disponível para gerenciar remotamente os servidores.
+Uma das etapas mais importantes no planejamento de cada versão do Windows Server é ouvir os comentários dos clientes, ou seja, como você está usando o Windows Server? Quais novos recursos afetarão mais as implantações do Windows Server e, consequentemente, suas atividades diárias? Seus comentários nos dizem que a disponibilização de inovações do modo mais rápido e eficiente possível é uma prioridade. Ao mesmo tempo, para os clientes que inovam mais rapidamente, fomos informados que você está usando principalmente scripts de linha de comando com o PowerShell para gerenciar seus data centers e, dessa forma, não há uma grande necessidade de GUI de área de trabalho na instalação do Windows Server com Experiência Desktop, especialmente agora que o [Windows Admin Center](../manage/windows-admin-center/overview.md) está disponível para gerenciar remotamente os servidores.
 
-Ao se concentrar na opção de instalação Server Core, podemos dedicar mais recursos para mais inovações enquanto mantemos a funcionalidade e a compatibilidade do aplicativo tradicional da plataforma Windows Server. Caso tenha comentários sobre este ou outros problemas referentes ao Windows Server e às versões futuras, você pode fazer sugestões e comentários por meio do [Hub de Feedback](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app).
+Ao se concentrar na opção de instalação Server Core, é possível dedicar mais recursos para inovações e manter a funcionalidade e a compatibilidade do aplicativo tradicional da plataforma Windows Server. Caso tenha comentários sobre este ou outros problemas referentes ao Windows Server e às versões futuras, você pode fazer sugestões e comentários por meio do [Hub de Feedback](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app).
 
 ## <a name="what-about-nano-server"></a>E quanto ao Nano Server?
 

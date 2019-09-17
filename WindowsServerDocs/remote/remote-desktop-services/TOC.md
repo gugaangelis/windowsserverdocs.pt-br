@@ -66,6 +66,9 @@
 
 ## Acessar seus recursos da Área de Trabalho Remota
 ### [Clientes disponíveis da Área de Trabalho Remota](clients/remote-desktop-clients.md)
+### Cliente de Área de Trabalho do Windows
+#### [Introdução ao cliente de Área de Trabalho do Windows](clients/windowsdesktop.md)
+#### [Novidades do cliente de Área de Trabalho do Windows](clients/windowsdesktop-whatsnew.md)
 ### Cliente para Microsoft Store
 #### [Introdução ao cliente para Microsoft Store](clients/windows.md)
 #### [Novidades do cliente para Microsoft Store](clients/windows-whatsnew.md)
