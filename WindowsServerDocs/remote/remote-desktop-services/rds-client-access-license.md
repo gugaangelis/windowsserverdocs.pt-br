@@ -13,12 +13,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/20/2018
 manager: dongill
-ms.openlocfilehash: 0254c03396cba69a86eed021319ca2e2483ca625
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 7783fd19c3dedde81514512f0c81f54eada33dc4
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743868"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871064"
 ---
 # <a name="license-your-rds-deployment-with-client-access-licenses-cals"></a>Licenciar a implantação do RDS com CALs (Licenças de Acesso para Cliente)
 
@@ -56,7 +56,7 @@ A tabela a seguir descreve as diferenças entre os dois tipos de CALs:
 
 Quando você usa o modelo por dispositivo, uma licença temporária é emitida na primeira vez que um dispositivo conecta ao Host da Sessão RD. Na segunda vez que o dispositivo se conecta, contanto que o servidor de licença esteja ativado e existam CALs disponíveis, o servidor de licença emite uma CAL de RDS por dispositivo permanente.
 
-Quando você usa o modelo por usuário, licenciamento não é imposto e cada usuário recebe uma licença para conectar a um Host da Sessão RD em qualquer número de dispositivos. O servidor de licença emite licenças de pool de CAL disponível ou do pool de CAL Superutilizada. É sua responsabilidade garantir que todos os seus usuários tenham uma licença válida e nenhuma CAL Superutilizada, caso contrário, você estará violando os termos de licença dos Serviços de Área de Trabalho Remota.
+Quando você usa o modelo por usuário, licenciamento não é imposto e cada usuário recebe uma licença para conectar a um Host da Sessão RD em qualquer número de dispositivos. O servidor de licença emite licenças de pool de CAL disponível ou do pool de CAL Superutilizada. É sua responsabilidade verificar se todos os seus usuários têm uma licença válida e nenhuma CAL Superutilizada; caso contrário, você estará violando os termos de licença dos Serviços de Área de Trabalho Remota.
 
 Para garantir a conformidade com os termos de licença dos Serviços de Área de Trabalho Remota, rastreie o número de CALs de RDS por usuário usadas na sua organização e certifique-se de ter CALs por usuário suficientes instaladas no servidor de licença para todos os usuários.
 

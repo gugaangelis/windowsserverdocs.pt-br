@@ -14,12 +14,12 @@ ms.assetid: 52b9e09f-39e0-41a9-9d3b-4d5f4eacf3e0
 author: christianmontoya
 manager: scottman
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d148c99911be0cebfc29429d93241f24c2b9606
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 74ec3d9bfbdb435c5bcb93ea1ef2cd9cdf2dd9d2
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66453011"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871280"
 ---
 # <a name="welcome-to-remote-desktop-services"></a>Bem-vindo aos serviços de área de trabalho remota 
 
@@ -31,13 +31,13 @@ O RDS oferece flexibilidade de implantação, extensibilidade e economia – tud
 
 Dependendo do seu ambiente e preferências, você pode configurar a solução RDS para virtualização baseada em sessão, como uma VDI (infraestrutura de área de trabalho virtual) ou uma combinação dos dois:
 
-- **Virtualização baseada em sessão**: Aproveite o poder de computação do Windows Server para fornecer um ambiente de várias sessões econômico para conduzir as cargas de trabalho cotidianas dos usuários
+- **Virtualização baseada em sessão**: aproveite o poder de computação do Windows Server para fornecer um ambiente de várias sessões econômico para conduzir as cargas de trabalho cotidianas dos usuários
 - **VDI**: Aproveite o cliente do Windows para fornecer o alto desempenho, a compatibilidade de aplicativos e a familiaridade que seus usuários já passaram a esperar de sua experiência desktop do Windows.
 
 Dentro desses ambientes de virtualização, você tem flexibilidade adicional quanto ao que publicar para seus usuários:
 
 - **Áreas de trabalho**: Dê aos usuários uma experiência de área de trabalho completa com uma variedade de aplicativos que você instala e gerencia. Ideal para os usuários que se baseiam nesses computadores como suas estações de trabalho primárias ou que são provenientes de clientes finos, tais como os Serviços MultiPoint.
-- **RemoteApps**: Especifique aplicativos individuais que são hospedados/executados no computador virtualizado, mas parecem estar em execução na área de trabalho do usuário como aplicativos locais. Os aplicativos têm suas próprias entradas na barra de tarefas e podem ser redimensionados e movidos entre monitores. Ideal para implantar e gerenciar aplicativos-chave no ambiente remoto seguro, permitindo aos usuários trabalhar de suas próprias áreas de trabalho e personalizá-las.
+- **RemoteApps**: especifique aplicativos individuais hospedados/executados na máquina virtualizada, mas que são exibidos como se estivessem em execução na área de trabalho do usuário, como aplicativos locais. Os aplicativos têm suas próprias entradas na barra de tarefas e podem ser redimensionados e movidos entre monitores. Ideal para implantar e gerenciar aplicativos-chave no ambiente remoto seguro, permitindo aos usuários trabalhar de suas próprias áreas de trabalho e personalizá-las.
 
 Para ambientes em que o custo-benefício é crucial e em que você deseja estender os benefícios da implantação de áreas de trabalho completas em um ambiente de virtualização baseada em sessão, você pode usar os [Serviços MultiPoint](../multipoint-services/multipoint-services.md) para entregar o melhor valor. 
 

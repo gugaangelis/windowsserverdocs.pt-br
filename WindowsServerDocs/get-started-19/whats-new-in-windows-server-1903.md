@@ -7,12 +7,12 @@ ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.date: 05/21/2019
-ms.openlocfilehash: 0ec6a7ec624818b92fb306089f3dea3c786c0827
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: cde394cd4e626466f17a27a68660e85f9fe55553
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280313"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868525"
 ---
 # <a name="whats-new-in-windows-server-version-1903"></a>Novidades no Windows Server, versão 1903
 
@@ -38,7 +38,7 @@ Aprimoramos funcionalidades de plataforma para a compatibilidade de serviços de
 
 ## <a name="directx-hardware-acceleration-in-containers"></a>Aceleração de hardware do DirectX em contêineres
 
-Habilitamos a compatibilidade da aceleração de hardware de APIs do DirectX em cenários compatibilidade de tp de contêineres do Windows, como a inferência ML (Machine Learning) usando o hardware de GPU (unidade de processamento gráfico) local. Para obter mais informações, confira [Trazendo a aceleração de GPU para contêineres do Windows](https://techcommunity.microsoft.com/t5/Containers/Bringing-GPU-acceleration-to-Windows-containers/ba-p/393939).
+Estamos habilitando o suporte para aceleração de hardware de APIs do DirectX em contêineres do Windows para dar suporte a cenários como a inferência ML (Machine Learning) usando o hardware de GPU (unidade de processamento gráfico) local. Para obter mais informações, confira [Trazendo a aceleração de GPU para contêineres do Windows](https://techcommunity.microsoft.com/t5/Containers/Bringing-GPU-acceleration-to-Windows-containers/ba-p/393939).
 
 ## <a name="updated-container-identity-and-group-managed-service-account-documentation"></a>Documentação da conta de serviço gerenciado do grupo e identidade do contêiner atualizada
 

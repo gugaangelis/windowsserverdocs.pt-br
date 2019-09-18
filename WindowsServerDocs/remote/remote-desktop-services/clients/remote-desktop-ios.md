@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f5a0808148068282c218343a923b357267e724e5
-ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
+ms.openlocfilehash: 97f7c3e26a54b9170ebc65e0c48acd964d9e2429
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70150947"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871161"
 ---
 # <a name="get-started-with-the-ios-client"></a>Introdução ao cliente para iOS
 
@@ -163,7 +163,7 @@ Quando você inicia uma sessão de Área de Trabalho Remota, existem ferramentas
 ### <a name="start-a-remote-desktop-connection"></a>Iniciar uma Conexão de Área de Trabalho Remota
 
 1. Toque na conexão de área de trabalho remota para iniciar a sessão.
-2. Se for solicitado a você que verifique o certificado para a Área de Trabalho Remota, toque em **Aceitar**. Você pode optar por sempre aceitar deslizando o botão de alternância **Não me pergunte novamente para conexões com este computador** para **ATIVADO**.
+2. Se for solicitado a você que verifique o certificado para a Área de Trabalho Remota, toque em **Aceitar**. É possível optar por sempre aceitar deslizando o botão de alternância **Não me pergunte novamente para conexões com este computador** para **ATIVADO**.
 
 ### <a name="connection-bar"></a>Barra de Conexão
 

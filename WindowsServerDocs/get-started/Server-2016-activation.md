@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 88cab1965e299c7d25c177125cb504432bf987e8
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 746434884701ba1a8a6781b485b3f1540abe975e
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810645"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868417"
 ---
 # <a name="windows-server-2016-activation"></a>Ativação do Windows Server 2016
 
@@ -55,7 +55,7 @@ O KMS pode ativar computadores físicos e virtuais, mas, para se qualificar para
 
 Os hosts KMS contam as conexões mais recentes. Quando um cliente ou servidor contata o host KMS, o host adiciona a ID do computador à sua contagem e, em seguida, retorna o valor atual da contagem em sua resposta. O cliente ou servidor será ativado se a contagem for alta o suficiente. Os clientes serão ativados se a contagem for 25 ou maior. Os servidores e as edições de volume dos produtos do Microsoft Office serão ativado se a contagem for cinco ou maior. O KMS conta apenas conexões únicas dos últimos 30 dias e armazena apenas os 50 contatos mais recentes.
 
-As ativações KMS são válidas por 180 dias, um período conhecido como o intervalo de validade de ativação. Clientes KMS devem renovar suas ativações e, para isso, devem se conectar ao host KMS pelo menos uma vez a cada 180 dias para preservar a ativação. Por padrão, os computadores clientes KMS tentam renovar suas ativações a cada sete dias. Depois de renovada a ativação de um cliente, o intervalo de validade da ativação é reiniciado.
+As ativações KMS são válidas por 180 dias, um período conhecido como o intervalo de validade de ativação. Clientes KMS devem renovar suas ativações e, para isso, devem se conectar ao host KMS pelo menos uma vez a cada 180 dias para preservar a ativação. Por padrão, os computadores clientes KMS tentam renovar suas ativações a cada sete dias. Depois que a ativação de um cliente for renovada, o intervalo de validade da ativação será reiniciado.
 
 # <a name="addressing-kms-functional-requirements"></a>Lidando com os requisitos funcionais do KMS
 
@@ -63,7 +63,7 @@ A ativação de KMS exige conectividade TCP/IP. Hosts e clientes KMS são config
 
 Depois que o primeiro host KMS é ativado, é possível usar a chave KMS usada no primeiro host para ativar até cinco outros hosts KMS na rede. Após a ativação de um host KMS, os administradores podem usar a mesma chave para reativar o mesmo host nove vezes.
 
-Se a organização precisar de mais de seis hosts KMS, solicite ativações adicionais para a chave KMS da organização – por exemplo, quando dez locais físicos são regidos por um único contrato de licenciamento por volume e você quer um host KMS local em cada um deles.
+Se a organização precisar de mais de seis hosts KMS, você deverá solicitar ativações adicionais para a chave KMS da organização – por exemplo, se você tiver dez locais físicos em um contrato de licenciamento por volume e quiser que cada local tenha um host KMS local.
 
 > [!NOTE] 
 > Para solicitar essa exceção, contate o Call Center de Ativação. Para obter mais informações, consulte [Microsoft Volume Licensing]( https://www.microsoft.com/licensing).

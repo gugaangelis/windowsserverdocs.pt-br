@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 05/21/2019
 ms.topic: get-started-article
-ms.openlocfilehash: c0d85da8a51a43acd7765957b34220829a43b086
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 964139ac5fdaee4d580d29ab0f7543c7d5f15d0b
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810710"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868461"
 ---
 # <a name="kms-client-setup-keys"></a>Chaves de instalação de cliente KMS
 
@@ -25,13 +25,13 @@ Computadores que executam edições licenciadas do Windows Server, Windows 10, W
 > [!NOTE]
 > Nas tabelas a seguir, "LTSC" significa "Canal de Manutenção em Longo Prazo", enquanto "LTSB" refere-se a "Branch de Manutenção de Longo Prazo". 
 
-**Para usar as chaves listadas aqui (que são GVLKs), primeiro você deve ter um host KMS em execução na implantação.** Se você ainda não tiver configurado um host KMS, consulte [Deploy KMS Activation](https://technet.microsoft.com/library/dn502531(v=ws.11).aspx) para ver as etapas para configurá-lo.
+**Para usar as chaves listadas aqui (que são GVLKs), primeiro você deve ter um host KMS em execução na implantação.** Se você ainda não tiver configurado um host KMS, confira [Implantar Ativação do KMS](https://technet.microsoft.com/library/dn502531(v=ws.11).aspx) para ver as etapas para configurá-lo.
 
 Caso esteja convertendo um computador a partir de um host KMS, MAK ou edição comercial do Windows em um cliente KMS, instale a chave de instalação (GVLK) aplicável com base nas tabelas a seguir. Para instalar uma chave de instalação de cliente, abra um prompt de comando administrativo no cliente, digite **slmgr /ipk\<\>setup key** e, em seguida, pressione **Enter**.
 
 | Se você quiser...    | … usar esses recursos   |
 |--------------------|------------------------|
-| Se ativar o Windows fora de um cenário de ativação de volume (isto é, você está tentando ativar uma versão comercial do Windows), **essas chaves não funcionarão**. | Use esses links para versões de varejo do Windows: |
+| Ativar o Windows fora de um cenário de ativação de volume (isto é, você está tentando ativar uma versão comercial do Windows), **essas chaves não funcionarão**. | Use esses links para versões de varejo do Windows: |
 | Corrigir esse erro obtido na tentativa de ativar um sistema Windows 8.1, Windows Server 2012 R2 ou mais recente: “Erro: 0xC004F050 o Serviço de licenciamento de software relatou que a chave do produto é inválida”… | [Instale essa atualização](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2) no host KMS se ele estiver executando o Windows 8.1, o Windows Server 2012 R2, o Windows 8 ou o Windows Server 2012. |
 
 -   [Obter o Windows 10](https://www.microsoft.com/en-us/windows/get-windows-10)

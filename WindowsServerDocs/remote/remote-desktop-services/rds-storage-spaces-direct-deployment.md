@@ -13,18 +13,18 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 07/17/2018
 manager: scottman
-ms.openlocfilehash: 792c9320f6976a4fc7f2ccd235f66daa0cb19b19
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 30f2d97c93c3df72eaf21896d596a4a10666013c
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66805194"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870746"
 ---
 # <a name="deploy-a-two-node-storage-spaces-direct-scale-out-file-server-for-upd-storage-in-azure"></a>Implantar um servidor de arquivos de escalabilidade horizontal de dois nós para armazenamento UPD no Azure
 
 >Aplica-se a: Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016
 
-Os Serviços de Área de Trabalho Remota (RDS) requerem um servidor de arquivos associados ao domínio para discos de perfil do usuário (UPDs). Para implantar um SOFS (Servidor de Arquivos de Escalabilidade Horizontal) ingressado no domínio de alta disponibilidade no Azure, use Espaços de Armazenamento Diretos com o Windows Server 2016. ***Se você não está familiarizado com os UPDs ou os Serviços de Área de Trabalho Remota, confira [Bem-vindo aos Serviços de Área de Trabalho Remota](welcome-to-rds.md).
+Os Serviços de Área de Trabalho Remota (RDS) requerem um servidor de arquivos associados ao domínio para discos de perfil do usuário (UPDs). Para implantar um SOFS (Servidor de Arquivos de Escalabilidade Horizontal) ingressado no domínio de alta disponibilidade no Azure, use Espaços de Armazenamento Diretos com o Windows Server 2016. Se você não estiver familiarizado com os UPDs ou os Serviços de Área de Trabalho Remota, confira [Bem-vindo aos Serviços de Área de Trabalho Remota](welcome-to-rds.md).
 
 > [!NOTE] 
 > A Microsoft acabou de publicar um [modelo do Azure para implantar um servidor de arquivos de escalabilidade horizontal em Espaços de Armazenamento Diretos](https://azure.microsoft.com/documentation/templates/301-storage-spaces-direct/). Você pode usar o modelo para criar sua implantação ou usar as etapas neste artigo. 

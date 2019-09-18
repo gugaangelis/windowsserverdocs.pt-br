@@ -8,25 +8,25 @@ ms.suite: na
 ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
-author: lizap
-manager: dongill
-ms.author: elizapo
-ms.date: 08/27/2019
+author: heidilohr
+manager: daveba
+ms.author: helohr
+ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a8ecdf217f847f495b2cb90dd3511a8db9e72c95
-ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
+ms.openlocfilehash: 6a4a6ae860dc8eabc4856ff3aa66268ed8d588de
+ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70150982"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70987358"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Novidades do cliente para Microsoft Store
 
-Atualizamos regularmente o [cliente da Área de Trabalho Remota para Windows](windows.md), adicionando novos recursos e corrigindo problemas. Confira as últimas atualizações abaixo.
+Atualizamos regularmente o [cliente da Windows Store](windows.md) adicionando novos recursos e corrigindo problemas. Veja onde você encontrará as atualizações mais recentes.
 
 ## <a name="updates-for-version-1011098"></a>Atualizações para a versão 10.1.1098
 
-*Data de publicação: 15/03/2019*
+*Data da publicação: 15/03/2019*
 
 - Agora é possível definir um nome de exibição para contas de usuário de modo que você possa salvar o mesmo nome de usuário com senhas diferentes.
 - Agora é possível selecionar uma conta de usuário ao adicionar recursos remotos.
@@ -36,7 +36,7 @@ Atualizamos regularmente o [cliente da Área de Trabalho Remota para Windows](wi
 
 ## <a name="updates-for-version-1011088"></a>Atualizações para a versão 10.1.1088
 
-*Data de publicação: 06/11/2018*
+*Data da publicação: 06/11/2018*
 
 - Nome de exibição da conexão agora é mais detectável.
 - Correção de uma falha ao fechar a janela do cliente, enquanto uma conexão ainda está ativa.
@@ -47,7 +47,7 @@ Atualizamos regularmente o [cliente da Área de Trabalho Remota para Windows](wi
 
 ## <a name="updates-for-version-1011060"></a>Atualizações para a versão 10.1.1060
 
-*Data de publicação: 14/09/2018*
+*Data da publicação: 14/09/2018*
 
 - Correção de um problema em que clicar duas vezes em uma conexão de área de trabalho iniciava duas sessões.
 - Correção de uma falha ao alternar entre áreas de trabalho virtuais localmente.
@@ -57,13 +57,13 @@ Atualizamos regularmente o [cliente da Área de Trabalho Remota para Windows](wi
 
 ## <a name="updates-for-version-1011046"></a>Atualizações para a versão 10.1.1046
 
-*Data de publicação: 20/06/2018*
+*Data da publicação: 20/06/2018*
 
 - Correções de bug.
 
 ## <a name="updates-for-version-1011042"></a>Atualizações para a versão 10.1.1042
 
-*Data de publicação: 02/04/2018*
+*Data da publicação: 02/04/2018*
 
 - Atualizações para solucionar a correção de criptografia Oracle CredSSP descrita em CVE-2018-0886.
 - Correções de bug adicionais.

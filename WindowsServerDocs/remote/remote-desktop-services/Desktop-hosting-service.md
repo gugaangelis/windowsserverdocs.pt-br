@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
 manager: dougkim
-ms.openlocfilehash: 597016ecf10da0febb7ba1bb099da0c1dddf96ce
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 025b5d8791d0b847a38798d36ffa4bfa86e0b00c
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63749227"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871286"
 ---
 # <a name="desktop-hosting-service"></a>Serviço de hospedagem da área de trabalho
 
@@ -33,15 +33,15 @@ O serviço de hospedagem da área de trabalho do provedor é implementado como u
 
 ## <a name="active-directory-domain-services"></a>Active Directory Domain Services
 
-AD DS (Active Directory Domain Services) fornece as informações de domínio e floresta, de modo que os usuários do locatário possam entrar em áreas de trabalho desktops e aplicativos para executar as cargas de trabalho deles. Isso também permite que você configure ou conecte a compartilhamentos de arquivos e bancos de dados necessários que podem ser exigidos para aplicativos do Windows.
+O AD DS (Active Directory Domain Services) fornece as informações de domínio e floresta, de modo que os usuários do locatário possam entrar nas áreas de trabalho e nos aplicativos para executar as cargas de trabalho deles. Isso também permite que você configure ou conecte a compartilhamentos de arquivos e bancos de dados necessários que podem ser exigidos para aplicativos do Windows.
 
 A floresta do locatário não exige qualquer relação de confiança com a floresta de gerenciamento do provedor. Uma conta de administrador de domínio pode ser configurada no domínio do locatário para permitir que a equipe de suporte técnico do provedor execute tarefas administrativas no ambiente do locatário (tais como monitorar o status do sistema e aplicar atualizações de software) e para ajudar com solução de problemas e configuração.
 
 Há várias maneiras de implantar o AD DS:
 
-1. Habilitar o Active Directory Domain Services do Azure no ambiente de rede virtual do locatário. Isso criará uma instância gerenciada do AD DS para o locatário com base nos usuários e grupos que existem no Azure AD.
-2. Configure um servidor AD DS autônomo no ambiente de rede virtual do locatário. Isso fornece todo o controle completo da instância AD DS em execução nas máquinas virtuais.
-3. Crie uma conexão de VPN site a site para um servidor AD DS localizado no local do locatário. Isso permite ao locatário conectar à instância AD DS existente e reduzir a duplicação de usuários, grupos, unidades organizacionais e assim por diante.
+1. Habilitar o Azure Active Directory Domain Services no ambiente de rede virtual do locatário. Isso criará uma instância gerenciada do AD DS para o locatário com base nos usuários e grupos que existem no Azure AD.
+2. Configurar um servidor AD DS autônomo no ambiente de rede virtual do locatário. Isso fornece todo o controle completo da instância AD DS em execução nas máquinas virtuais.
+3. Criar uma conexão de VPN site a site com um servidor AD DS localizado no local do locatário. Isso permite ao locatário conectar à instância AD DS existente e reduzir a duplicação de usuários, grupos, unidades organizacionais e assim por diante.
 
 Para obter mais informações, consulte os seguintes artigos:
 
@@ -51,7 +51,7 @@ Para obter mais informações, consulte os seguintes artigos:
 
 ## <a name="sql-database"></a>Banco de dados SQL
 
-O Banco de Dados SQL do Azure é usado pelo Agente de Conexão da Área de Trabalho Remota para armazenar informações de implantação, como o mapeamento das conexões dos usuários atuais com os servidores host.
+Um banco de dados SQL altamente disponível é usado pelo Agente de Conexão da Área de Trabalho Remota para armazenar informações de implantação, como o mapeamento das conexões dos usuários atuais com os servidores host.
 
 Há várias maneiras de implantar um banco de dados SQL:
 

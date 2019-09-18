@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 79909767-a4c3-4ecf-8d3f-77d37a663153
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: 40f8dbd560da359e8764ed715e7776cc2d230a7f
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 0207a1d69eb62b5a7ea02416408b67d2f5a0be32
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63712095"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870764"
 ---
 # <a name="run-and-tune-your-remote-desktop-services-environment"></a>Executar e ajustar seu ambiente de Serviços de Área de Trabalho Remota
 
@@ -47,4 +47,4 @@ Manter um aplicativo em execução e altamente dimensionado envolve a repetiçã
 
 ## <a name="load-testing-avoid-surprises"></a>Teste de carga: Evitar surpresas
 
-Faça um teste de carga da implantação com testes de estresse e simulação do uso na vida real. Varie o tamanho da carga para evitar surpresas. Verifique se a capacidade de resposta atende aos requisitos do usuário e se todo o sistema é resiliente. Crie testes de carga com ferramentas de simulação, como LoginVSI, que verifica a capacidade da implantação em atender às necessidades dos usuários. 
+Faça um teste de carga da implantação com testes de estresse e simulação do uso na vida real. Varie o tamanho da carga para evitar surpresas. Verifique se a capacidade de resposta atende aos requisitos do usuário e se todo o sistema é resiliente. Crie testes de carga com ferramentas de simulação, como LoginVSI, que verifica a capacidade da implantação para atender às necessidades dos usuários. 

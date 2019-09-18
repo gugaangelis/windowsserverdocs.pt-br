@@ -13,12 +13,12 @@ ms.author: jgerend
 manager: jasgro
 ms.date: 08/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 59a31d01d1c5775c837010eca964c72fad8b5c92
-ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
+ms.openlocfilehash: 0f6b6ac42c096c6c80404c2d650905e73da8a97a
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70000698"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868651"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-windows-server-2019"></a>Recursos removidos ou planejados para substituição começando no Windows Server 2019
 
@@ -50,7 +50,7 @@ Se tiver comentários sobre a substituição proposta de qualquer um desses recu
 
 | Recurso     | Em vez disso, você pode usar... |
 | ----------- | --------------------- |
-| Unidade de armazenamento de chaves no Hyper-V|Não estamos mais trabalhando no recurso de unidade de armazenamento de chaves no Hyper-V. Se você estiver usando VMs da geração 1, confira [Segurança da virtualização de VM da geração 1](../virtualization/hyper-v/learn-more/generation-1-virtual-machine-security-settings-for-hyper-v.md) para obter informações sobre as opções no futuro. Se você estiver criando novas VMs, use máquinas virtuais da geração 2 com dispositivos TPM para uma solução mais segura. |
+| Unidade de armazenamento de chaves no Hyper-V|Não estamos mais trabalhando no recurso de Unidade de Armazenamento de Chaves no Hyper-V. Se você estiver usando VMs da geração 1, confira [Segurança da virtualização de VM da geração 1](../virtualization/hyper-v/learn-more/generation-1-virtual-machine-security-settings-for-hyper-v.md) para obter informações sobre as opções no futuro. Se você estiver criando VMs, use máquinas virtuais da geração 2 com dispositivos TPM para uma solução mais segura. |
 | Console de gerenciamento do TPM (Trusted Platform Module)|As informações disponíveis anteriormente no console de gerenciamento do TPM agora estão disponíveis na página [**Segurança do dispositivo**](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-security-center/wdsc-device-security) na [Central de Segurança do Windows Defender](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-security-center/windows-defender-security-center). |
 | Modo de atestado do Active Directory do Serviço Guardião de Host|Não estamos mais desenvolvendo o modo de atestado do Active Directory do Serviço Guardião de Host, em vez disso, adicionamos um novo modo de atestado, o [atestado de chaves de host](../security/guarded-fabric-shielded-vm/guarded-fabric-create-host-key.md), que é muito mais simples e igualmente compatível com o atestado baseado no Active Directory.  Esse novo modo fornece uma funcionalidade equivalente com uma experiência de instalação, gerenciamento mais simples e menos dependências de infraestrutura que o atestado do Active Directory. O atestado de chaves de host não tem nenhum requisito de hardware adicional além do que o atestado do Active Directory exigia, portanto, todos os sistemas existentes permanecerão compatíveis com o novo modo. Confira [Implantar hosts protegidos](../security/guarded-fabric-shielded-vm/guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md) para obter mais informações sobre suas opções de atestado. |
 | Serviço OneSync | O serviço OneSync sincroniza os dados para os aplicativos de Email, Calendário e Pessoas. Adicionamos um mecanismo de sincronização ao aplicativo do Outlook que fornece a mesma sincronização. |

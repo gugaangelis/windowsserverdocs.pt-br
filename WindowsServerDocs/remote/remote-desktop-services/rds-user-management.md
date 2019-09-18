@@ -13,12 +13,12 @@ author: christianmontoya
 ms.author: chrimo
 ms.date: 03/27/2018
 manager: scottman
-ms.openlocfilehash: 91d032d1a7131fd0bc84e33bd2806d807eb1dafe
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: ff782bc4d01709f56d19ee3e9a06a95267cf7a12
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63711990"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870741"
 ---
 # <a name="manage-users-in-your-rds-collection"></a>Gerenciar usuários na coleção de RDS
 
@@ -44,7 +44,7 @@ As etapas a seguir detalham como instalar as ferramentas do AD DS em um servidor
    3. Clique em **Conectar > Abrir** para abrir o cliente de Área de Trabalho Remota. Se a opção **Conectar** estiver esmaecida, a máquina virtual poderá não ter um endereço IP público. Para dar a ela um endereço, execute as etapas a seguir e, em seguida, tente novamente.
       1. Clique em **Configurações > Interfaces de rede** e, em seguida, clique no adaptador de rede correspondente.
       2. Clique em **Configurações > Endereço IP**.
-      3. Para **Endereço IP público**, selecione **Habilitado** e, em seguida, clique em **Endereço IP**.
+      3. Em **Endereço IP público**, selecione **Habilitado** e clique em **Endereço IP**.
       4. Se tiver um endereço IP público que deseja usar, selecione-o na lista. Caso contrário, clique em **Criar novo**, insira um nome e, em seguida, clique em **OK** e em **Salvar**.
    4. No cliente, clique em **Conectar**e, em seguida, clique em **Usar outra conta**. Insira o nome de usuário e a senha da conta de administrador de domínio.
    5. Clique em **Sim** quando for perguntado sobre o certificado.

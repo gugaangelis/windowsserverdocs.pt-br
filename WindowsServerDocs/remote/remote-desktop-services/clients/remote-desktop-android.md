@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ccc96013efb71a2403f9be2df03461eba5ff1fc1
-ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
+ms.openlocfilehash: 1099f1c8bb635ee1b4bb33c6483f128ee0ecdfb9
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70151014"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871242"
 ---
 # <a name="get-started-with-the-android-client"></a>Introdução ao cliente para Android
 
@@ -143,7 +143,7 @@ Quando você inicia uma conexão de Área de Trabalho Remota, existem ferramenta
 ### <a name="start-a-remote-desktop-connection"></a>Iniciar uma conexão de Área de Trabalho Remota
 
 1. Toque na conexão de Área de Trabalho Remota para iniciar a sessão. 
-2. Se for solicitado a você que verifique o certificado para a Área de Trabalho Remota, toque em **Conectar**. Você também pode selecionar **Não me pergunte novamente para conexões com este computador** para aceitar o certificado sempre.
+2. Se for solicitado a você que verifique o certificado para a Área de Trabalho Remota, toque em **Conectar**. Também é possível selecionar **Não me pergunte novamente para conexões com este computador** para aceitar o certificado sempre.
 
 ### <a name="manage-global-app-settings"></a>Gerenciar configurações globais do aplicativo
 

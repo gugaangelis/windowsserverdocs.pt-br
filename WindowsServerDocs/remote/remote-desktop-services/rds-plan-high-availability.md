@@ -13,18 +13,18 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/07/2016
 manager: dongill
-ms.openlocfilehash: 79fd05458d0d838e34402bf28ef83b9327bfcceb
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: ab9a6118641b49dfa971e66dc9ba75ef88bbd84a
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743451"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870882"
 ---
 # <a name="remote-desktop-services---high-availability"></a>Serviços de Área de Trabalho Remota – Alta disponibilidade
 
 >Aplica-se a: Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016
 
-Falhas e limitação são inevitáveis em sistemas de grande porte. É simples configurar funções de infraestrutura de área de trabalho remota para dar suporte à alta disponibilidade e permitir que os usuários finais se conectem toda vez com perfeição.
+Falhas e limitação são inevitáveis em sistemas de grande porte. É simples configurar funções de infraestrutura de Área de Trabalho Remota para dar suporte à alta disponibilidade e permitir que os usuários finais se conectem toda vez com perfeição.
 
 Nos Serviços de Área de Trabalho Remota, os itens a seguir representam as funções de infraestrutura de área de trabalho remota, com suas respectivas diretrizes para estabelecer a alta disponibilidade:
 - [Agente de Conexão de Área de Trabalho Remota](Deploy-a-Remote-Desktop-Connection-Broker-cluster.md)

@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: d6ff5b22-7695-4fee-b1bd-6c9dce5bd0e8
 author: lizap
 manager: scottman
-ms.openlocfilehash: af5d5ce89561c89d8468627e20dfdb6f35eca5ef
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: ce10575d38bccc0b22dadf55bd89156c6ce5ea7b
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66447116"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871053"
 ---
 # <a name="which-graphics-virtualization-technology-is-right-for-you"></a>Qual tecnologia de virtualização de gráficos é a certa para você?
 
@@ -36,7 +36,7 @@ A ilustração a seguir mostra as opções de virtualização de gráficos no Wi
 ![Opções de virtualização de gráficos no Windows Server 2016 com o RDS – mostra as três tecnologias disponíveis e como elas diferem em escala e desempenho](media/rds-graphics-virtualization.png)
 
 ## <a name="discrete-device-assignment"></a>Atribuição de dispositivo discreto
-A DDA (atribuição de dispositivo discreto) é uma solução de passagem de hardware que oferece o melhor desempenho, considerando que a VM tem acesso completo à GPU usando o driver nativo. O usuário da VM pode acessar os recursos completos do seu dispositivo, bem como o driver nativo desse dispositivo. Isso significa que os recursos e capacidades de executar o dispositivo em uma VM são os mesmos de executar o mesmo dispositivo em um computador físico.
+A DDA (atribuição de dispositivo discreto) é uma solução de passagem de hardware que oferece o melhor desempenho, considerando que a VM tem acesso completo à GPU usando o driver nativo. O usuário da VM pode acessar as funcionalidades completas do seu dispositivo, bem como o driver nativo desse dispositivo. Isso significa que os recursos e capacidades de executar o dispositivo em uma VM são os mesmos de executar o mesmo dispositivo em um computador físico.
 
 Para obter mais informações sobre DDA, confira [Planejar a implantação de Atribuição de Dispositivo Discreto](../../virtualization/hyper-v/plan/plan-for-deploying-devices-using-discrete-device-assignment.md).
 

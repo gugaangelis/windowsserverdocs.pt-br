@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 7f73bb0a-ce98-48a4-9d9f-cf7438936ca1
 author: lizap
 manager: dongill
-ms.openlocfilehash: 14c32831445b12b314c71e538320c2ce5a9b7ee4
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: f70cfbf7d65ee0a8fb4439ea51a995e6428ede5e
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63749440"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871362"
 ---
 # <a name="remote-desktop-services-architecture"></a>Arquitetura de Serviços de Área de Trabalho Remota
 
@@ -49,7 +49,7 @@ Embora as arquiteturas de implantação de RDS padrão se ajustem a maioria dos 
 
 ### <a name="rds-deployment-with-azure-ad-domain-services"></a>Implantação de RDS com o Azure AD Domain Services
 
-Os dois diagramas de arquitetura padrão acima se baseiam em um AD (Active Directory) tradicional implantado em uma VM do Windows Server. No entanto, se você não tem um AD tradicional e tem apenas um locatário do Azure AD, por meio de serviços como o Office 365, mas ainda quer aproveitar o RDS, você pode usar o [Azure AD Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-overview) para criar um domínio totalmente gerenciado no seu ambiente de IaaS do Azure ambiente que usa os mesmos usuários existentes no locatário do Azure AD. Isso elimina a complexidade de sincronizar usuários manualmente e gerenciar mais máquinas virtuais. O Azure AD Domain Services pode trabalhar em qualquer implantação: básica ou altamente disponível.
+Os dois diagramas de arquitetura padrão acima se baseiam em um AD (Active Directory) tradicional implantado em uma VM do Windows Server. No entanto, se você não tiver um AD tradicional e tiver apenas um locatário do Azure AD, por meio de serviços como o Office365, mas ainda quiser aproveitar o RDS, será possível usar o [Azure AD Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-overview) para criar um domínio totalmente gerenciado no seu ambiente de IaaS do Azure que usa os mesmos usuários existentes no locatário do Azure AD. Isso elimina a complexidade de sincronizar usuários manualmente e gerenciar mais máquinas virtuais. O Azure AD Domain Services pode trabalhar em qualquer implantação: básica ou altamente disponível.
 
 ![Implantação de RDS e Azure AD](./media/aadds-rds.png)
 

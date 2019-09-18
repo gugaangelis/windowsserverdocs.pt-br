@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 0263fa6b-2185-4cc3-99ef-3588e2f4ada5
 author: lizap
 manager: scottman
-ms.openlocfilehash: 3e7da1a70826dc720a96ceb3fe5d04868943f163
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 3e189d9ac059136b40d8ee5d93a4eea5b788cdd1
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63712132"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870853"
 ---
 # <a name="set-up-and-configure-remotefx-vgpu-for-remote-desktop-services"></a>Instalar e configurar o vGPU do RemoteFX para os Serviços de Área de Trabalho Remota
 
@@ -120,7 +120,7 @@ Para obter detalhes, confira [Get-VMRemoteFXPhysicalVideoAdapter](https://techne
 
 ## <a name="monitor-performance"></a>Monitorar o desempenho
 
-O desempenho e a escala de um sistema de VDI são determinados por uma variedade de fatores como a memória total da GPU, a quantidade de memória do sistema e a velocidade da memória, o número de núcleos de CPU e a frequência do relógio da CPU, a velocidade de armazenamento e a implementação de NUMA.
+O desempenho e a escala de um sistema de VDI são determinados por uma variedade de fatores, como a memória total da GPU, a quantidade de memória do sistema e a velocidade da memória, o número de núcleos de CPU e a frequência do relógio da CPU, a velocidade de armazenamento e a implementação de NUMA.
 
 O suporte a vGPU remoto no RDS inclui os seguintes contadores de desempenho, que podem ser exibidos no Monitor de Desempenho (perfmon.exe) para coletar informações sobre a taxa de transferência da taxa de quadros.
 

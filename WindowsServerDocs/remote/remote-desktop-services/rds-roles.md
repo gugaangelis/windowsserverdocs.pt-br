@@ -8,12 +8,12 @@ ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: dougkim
-ms.openlocfilehash: 717f6c714ce95793a9a7b5fcf0ddd304c77daa32
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: e8b5928db1acf00abdeac1b7bfd4d435bc8f0a17
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63753177"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870771"
 ---
 # <a name="remote-desktop-services-roles"></a>Funções de Serviços de Área de Trabalho Remota
 
@@ -74,7 +74,7 @@ Para obter mais informações, consulte os seguintes artigos:
 
 ## <a name="remote-desktop-web-access"></a>Acesso via Web à Área de Trabalho Remota
 
-O Acesso via Web RD (Acesso via Web à Área de Trabalho Remota) permite que os usuários acessem áreas de trabalho e aplicativos por meio de um portal da web e os inicie usando o aplicativo cliente Área de Trabalho Remota da Microsoft nativo do dispositivo. É possível usar o portal da Web para publicar áreas de trabalho e aplicativos para dispositivos clientes Windows e não Windows, sendo que também é possível publicar seletivamente áreas de trabalho ou aplicativos para usuários ou grupos específicos.
+O Acesso via Web à RD (Acesso via Web à Área de Trabalho Remota) permite que os usuários acessem áreas de trabalho e aplicativos por meio de um portal da Web e os inicie usando o aplicativo cliente da Área de Trabalho Remota da Microsoft nativo do dispositivo. É possível usar o portal da Web para publicar áreas de trabalho e aplicativos para dispositivos clientes Windows e não Windows, sendo que também é possível publicar seletivamente áreas de trabalho ou aplicativos para usuários ou grupos específicos.
 
 Acesso via Web à Área de Trabalho Remota precisa de IIS (Serviços de Informações da Internet) para funcionar corretamente. Uma conexão HTTPS (Hypertext Transfer Protocol Secure) fornece um canal de comunicações criptografadas entre os clientes e o servidor Web da Área de Trabalho Remota. A máquina virtual de Acesso via Web à Área de Trabalho Remota deve ser acessível por meio de um endereço IP público que permita conexões TCP de entrada na porta 443 para permitir que os usuários do locatário conectem a partir da internet usando o protocolo de transporte de comunicação HTTPS.
 

@@ -8,25 +8,25 @@ ms.suite: na
 ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
-author: lizap
-manager: dongill
-ms.author: elizapo
-ms.date: 08/27/2019
+author: heidilohr
+manager: daveba
+ms.author: helohr
+ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: df19f9f27b79f5549d487f6035eba2345dd87ea6
-ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
+ms.openlocfilehash: 3bdf50ed04e291014ed5b70b572b3123fa925d10
+ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70151004"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70987357"
 ---
 # <a name="whats-new-in-the-ios-client"></a>Novidades do cliente para iOS
 
-Atualizamos regularmente o [cliente da Área de Trabalho Remota para iOS](remote-desktop-ios.md), adicionando novos recursos e corrigindo problemas. Confira as últimas atualizações abaixo.
+Atualizamos regularmente o [cliente da Área de Trabalho Remota para iOS](remote-desktop-ios.md), adicionando novos recursos e corrigindo problemas. Veja onde você encontrará as atualizações mais recentes.
 
 ## <a name="remote-desktop-ios-beta-client"></a>Cliente Beta do iOS da Área de Trabalho Remota
 
-*Data de publicação: 20/02/2019*
+*Data da publicação: 20/02/2019*
 
 O [cliente iOS Beta da Área de Trabalho Remota](remote-desktop-ios.md#download-the-remote-desktop-ios-beta-client-from-apple-testflight) agora está disponível no TestFlight. Ao testar o cliente iOS Beta, tenha em mente que esta é uma versão de pré-lançamento do novo cliente iOS e não há garantia de que seja tão estável quanto as versões de produção. Continuaremos a atualizar esse cliente regularmente com correções e novos recursos. Vários recursos do cliente iOS Beta estão destacados abaixo:
 
@@ -39,12 +39,12 @@ O [cliente iOS Beta da Área de Trabalho Remota](remote-desktop-ios.md#download-
 
 ## <a name="updates-for-version-8142"></a>Atualizações para a versão 8.1.42
 
-*Data de publicação: 20/06/2018*
+*Data da publicação: 20/06/2018*
 
 - Correção de bugs e melhorias de desempenho.
 
 ## <a name="updates-for-version-8141"></a>Atualizações para a versão 8.1.41
 
-*Data de publicação: 28/03/2018*
+*Data da publicação: 28/03/2018*
 
 - Atualizações para solucionar a correção de criptografia Oracle CredSSP descrita em CVE-2018-0886.

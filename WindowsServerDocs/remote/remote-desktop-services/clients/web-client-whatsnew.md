@@ -8,27 +8,27 @@ ms.suite: na
 ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
-author: lizap
-manager: dongill
-ms.author: elizapo
-ms.date: 08/27/2019
+author: heidilohr
+manager: daveba
+ms.author: helohr
+ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4eaa9a187b4a8f7879cabf15724bfcfe3f625939
-ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
+ms.openlocfilehash: 14d5eab00271ea825bb84a2d8189a44c38fa5388
+ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70150954"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70987373"
 ---
 # <a name="whats-new-in-the-web-client"></a>Novidades do cliente Web
 
-Atualizamos regularmente o [cliente da Web da Área de Trabalho Remota](remote-desktop-web-client.md) adicionando novos recursos e corrigindo problemas. Confira as últimas atualizações abaixo.
+Atualizamos regularmente o [cliente da Web da Área de Trabalho Remota](remote-desktop-web-client.md) adicionando novos recursos e corrigindo problemas. Veja onde você encontrará as atualizações mais recentes.
 
 > [!NOTE]
 > Alteramos o sistema de controle de versão para o cliente da Web. Começando com a versão 1.0.18.0, todas as versões de lançamento do cliente da Web irão conter números (no formato "W.X.Y.Z"). Os números de versão para o cliente Web de Área de Trabalho Remota sempre terminarão com um 0 (por exemplo, W.X.Y.0). Cada versão do cliente Web de Área de Trabalho Remota Virtual do Windows alterará o último dígito até a próxima versão do cliente Web da Área de Trabalho Remota (por exemplo, 1.0.18.1).
 
 ## <a name="updates-for-version-10180"></a>Atualizações para a versão 1.0.18.0
-*Data de publicação: 14/5/2019*
+*Data da publicação: 14/5/2019*
 
 - Configuração do Método de Inicialização de Recursos adicionada à guia Configurações, permitindo que os usuários abram recursos no navegador ou baixem um arquivo .rdp para lidar com outro cliente. Essa configuração pode ser definida pelo seu administrador. Os detalhes adicionais relacionados às configurações de administrador desse recurso podem ser encontrados na [documentação de configuração do cliente Web](remote-desktop-web-client-admin.md).
 - Corrigidos os problemas de processamento de cor, possibilitando cores mais vivas em sua sessão remota.
@@ -41,7 +41,7 @@ Atualizamos regularmente o [cliente da Web da Área de Trabalho Remota](remote-d
 - Corrigido o dimensionamento do ícone de recurso remoto na barra de tarefas do recurso.
 
 ## <a name="updates-for-version-1011"></a>Atualizações para a versão 1.0.11
-*Data de publicação: 22/02/2019*
+*Data da publicação: 22/02/2019*
 
 - Conexão habilitada para o Agente de Área de Trabalho Remota sem um Gateway de Área de Trabalho Remota no Windows Server 2019.
 - Classificou os feeds alfabeticamente (por exemplo, RemoteApps primeiro, Desktops em segundo).
@@ -50,7 +50,7 @@ Atualizamos regularmente o [cliente da Web da Área de Trabalho Remota](remote-d
 - Várias correções de bugs.
 
 ## <a name="updates-for-version-107"></a>Atualizações para a versão 1.0.7
-*Data de publicação: 24/01/2019*
+*Data da publicação: 24/01/2019*
 
 - Agora há suporte para uso offline em redes internas.
 - Melhor renderização nos navegadores diferentes do Microsoft Edge.
@@ -63,7 +63,7 @@ Atualizamos regularmente o [cliente da Web da Área de Trabalho Remota](remote-d
 - Várias correções de bugs.
 
 ## <a name="updates-for-version-101"></a>Atualizações para a versão 1.0.1
-*Data de publicação: 29/10/2018*
+*Data da publicação: 29/10/2018*
 
 - Adicionada uma opção para **Capturar informações de suporte** na página Sobre para diagnosticar problemas.
 - Agora há suporte para o modo InPrivate.
@@ -75,14 +75,14 @@ Atualizamos regularmente o [cliente da Web da Área de Trabalho Remota](remote-d
 - Várias correções de bugs.
 
 ## <a name="updates-for-version-100"></a>Atualizações para a versão 1.0.0
-*Data de publicação: 16/07/2018*
+*Data da publicação: 16/07/2018*
 
 - O Cliente da Web da Área de Trabalho Remota agora está disponível em geral.
 - Os administradores podem desligar globalmente a telemetria para o cliente da Web.
 - Várias correções de bugs.
 
 ## <a name="updates-for-version-090"></a>Atualizações para a versão 0.9.0
-*Data de publicação: 05/07/2018*
+*Data da publicação: 05/07/2018*
 
 - Nova experiência de entrada no cliente da Web.
 - Não há mais solicitação do fornecimento de credenciais ao iniciar uma conexão de Área de Trabalho Remota ou de aplicativo (Logon único).
@@ -91,7 +91,7 @@ Atualizamos regularmente o [cliente da Web da Área de Trabalho Remota](remote-d
 - Várias correções de bugs.
 
 ## <a name="updates-for-version-081"></a>Atualizações para a versão 0.8.1
-*Data de publicação: 17/05/2018*
+*Data da publicação: 17/05/2018*
 
 - Atualizações para solucionar a correção de criptografia Oracle CredSSP descrita em CVE-2018-0886.
 - Corrigidas falhas de conexão para alguns idiomas quando a impressão está habilitada.
@@ -99,7 +99,7 @@ Atualizamos regularmente o [cliente da Web da Área de Trabalho Remota](remote-d
 - Adicionadas opções de **Ajuda** e **Comentários**.
 
 ## <a name="updates-for-version-080"></a>Atualizações para a versão 0.8.0
-*Data de publicação: 28/03/2018*
+*Data da publicação: 28/03/2018*
 
 - Versão prévia pública inicial do cliente da Web.
 - Copiar/colar o texto da área de transferência com **Ctrl+C** e **Ctrl+V**.

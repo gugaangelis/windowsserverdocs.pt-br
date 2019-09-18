@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 2a44dc9f-c221-4bf7-89c3-fb4c86a90f8c
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: 4f6e68ba1025e23e052d3c40535483ee90cb9b4b
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: ef13369fa325d136f9e3847db9872a80b650ca37
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63712259"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870628"
 ---
 # <a name="recommended-settings-for-vdi-desktops"></a>Configurações recomendadas para desktops de VDI
 
@@ -112,7 +112,7 @@ Essa configuração será aplicável somente se o aplicativo Mapas estiver insta
 |Configuração|Valor padrão|Valor recomendado para uso da VDI|  
 |-------------------|----------|--------------|
 |Quando eu entrar|    Usar o modo apropriado para o meu hardware|   Usar modo desktop|
-|Quando este dispositivo alternar automaticamente entre ligar ou desligar o modo tablet|    Sempre perguntar antes de alternar| Não perguntar e não alternar|
+|Quando este dispositivo alternar automaticamente entre ligar ou desligar o modo tablet|    Sempre perguntar antes de alternar| Não me perguntar e não alternar|
 |Ocultar ícones de aplicativos na barra de tarefas no modo tablet|  Ativado| Desativado|
 
 
@@ -398,7 +398,7 @@ Recolha **Sistema** e, em seguida, expanda **Componentes do Windows**. Ajuste ca
 ||Permitir passar o dedo na borda|     Desabilitada|
 ||Desabilitar dicas de ajuda|        Habilitado|
 |Explorador de Arquivos|||
-||Não mostrar a notificação de 'novo aplicativo instalado'|     Habilitado|
+||Não mostrar a notificação de ‘novo aplicativo instalado’|     Habilitado|
 |Navegador de Jogos|||
 ||Desligar download de informações de jogos|     Habilitado|
 ||Desligar atualizações de jogos|        Habilitado|

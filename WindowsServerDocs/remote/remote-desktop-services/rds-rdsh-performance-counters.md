@@ -10,12 +10,12 @@ ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: a302e775d3304db9304cc51e09ede19fa2eba802
-ms.sourcegitcommit: f75d9496f345d73fdda88037617763e7a2f614b7
+ms.openlocfilehash: 3eb1e4b6da971d788383b8facbf8bbcbe00a5953
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67863112"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870912"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>Use contadores de desempenho para diagnosticar os problemas de desempenho do aplicativo nos Hosts da Sessão da Área de Trabalho Remota
 
@@ -44,7 +44,7 @@ Por exemplo, na tabela a seguir, o atraso de entrada do usuário seria informado
 
 |Número| 0 | 1 | 2 |
 |------|---|---|---|
-|Atraso |16 ms| 20 ms| 1.000 ms|
+|Atraso |16 ms| 20 ms| 1\.000 ms|
 
 ## <a name="enable-and-use-the-new-performance-counters"></a>Habilitar e usar os novos contadores de desempenho
 

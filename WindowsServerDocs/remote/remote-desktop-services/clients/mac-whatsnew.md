@@ -8,26 +8,26 @@ ms.suite: na
 ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
-author: lizap
-manager: dongill
-ms.author: elizapo
-ms.date: 08/27/2019
+author: heidilohr
+manager: daveba
+ms.author: helohr
+ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ae58103b00941bb71d447641b1cdab7c02fa20b
-ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
+ms.openlocfilehash: 9fbd3e9c5f7938fbf6a80e9f5dc950a2c0a9a257
+ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70151027"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70987346"
 ---
 # <a name="whats-new-in-the-macos-client"></a>Novidades do cliente para macOS
 
-Atualizamos regularmente o [cliente da Área de Trabalho Remota para macOS](remote-desktop-mac.md), adicionando novos recursos e corrigindo problemas. Confira as últimas atualizações abaixo.
+Atualizamos regularmente o [cliente da Área de Trabalho Remota para macOS](remote-desktop-mac.md), adicionando novos recursos e corrigindo problemas. Veja onde você encontrará as atualizações mais recentes.
 
 Caso tenha problemas, você sempre pode entrar em contato por meio de **Ajuda > Relatar um problema**.
 
 ## <a name="updates-for-version-1030"></a>Atualizações para a versão 10.3.0
-*Data de publicação: 27/08/2019*
+*Data da publicação: 27/08/2019*
 
 Há algumas semanas desde a última atualização, mas trabalhamos duro durante esse período. A versão 10.3.0 traz alguns recursos novos e muitas correções subjacentes.
 
@@ -46,14 +46,14 @@ Há algumas semanas desde a última atualização, mas trabalhamos duro durante 
 
 ## <a name="updates-for-version-10213"></a>Atualizações para a versão 10.2.13
 
-*Data de publicação: 8/5/2019*
+*Data da publicação: 8/5/2019*
 
 - Correção de um travamento que ocorria ao conectar por meio de um Gateway de Área de Trabalho Remota.
 - Inclusão de um aviso de privacidade para a caixa de diálogo "Adicionar Feed".
 
 ## <a name="updates-for-version-10212"></a>Atualizações para a versão 10.2.12
 
-*Data de publicação: 16/4/2019*
+*Data da publicação: 16/4/2019*
 
 - Resolução de desconexões aleatórias (com código de erro 0x904) que ocorriam ao conectar por meio de um Gateway de Área de Trabalho Remota.
 - Correção de um bug que esvaziava a lista de resoluções nas preferências após a instalação.
@@ -62,20 +62,20 @@ Há algumas semanas desde a última atualização, mas trabalhamos duro durante 
 
 ## <a name="updates-for-version-10210"></a>Atualizações para a versão 10.2.10
 
-*Data de publicação: 30/3/2019*
+*Data da publicação: 30/3/2019*
 
 - Nesta versão, abordamos a instabilidade causada pela recente atualização do macOS 10.14.4. Também corrigimos imagens incorretas que apareciam ao decodificar dados de codec de AVC codificados por um servidor usando o hardware da NVIDIA.
 
 ## <a name="updates-for-version-1029"></a>Atualizações para a versão 10.2.9
 
-*Data de publicação: 6/3/2019*
+*Data da publicação: 6/3/2019*
 
 - Nesta versão, corrigimos um problema de conectividade de gateway de área de trabalho remota que pode ocorrer durante o redirecionamento do servidor.
 - Também resolvemos uma regressão de gateway de área de trabalho remota causada pela atualização 10.2.8.
 
 ## <a name="updates-for-version-1028"></a>Atualizações para a versão 10.2.8
 
-*Data de publicação: 1/3/2019*
+*Data da publicação: 1/3/2019*
 
 - Foram resolvidos problemas de conectividade que surgiram ao usar um Gateway de Área de Trabalho Remota.
 - Foram corrigidos avisos de certificado incorreto que eram exibidos ao conectar.
@@ -85,13 +85,13 @@ Há algumas semanas desde a última atualização, mas trabalhamos duro durante 
 
 ## <a name="updates-for-version-1027"></a>Atualizações para a versão 10.2.7
 
-*Data de publicação: 6/2/2019*
+*Data da publicação: 6/2/2019*
 
 - Nesta versão, abordamos imagens incorretas em gráficos (causados por um bug de codificação do servidor) que apareciam ao usar o modo de AVC444.
 
 ## <a name="updates-for-version-1026"></a>Atualizações para a versão 10.2.6
 
-*Data de publicação: 28/1/2019*
+*Data da publicação: 28/1/2019*
 
 - Foi adicionado suporte para o codec AVC (420 e 444), disponível ao conectar às versões atuais do Windows 10.
 - No modo Ajustar à janela, uma atualização de janela agora ocorre imediatamente após um redimensionamento para garantir que o conteúdo seja renderizado no nível de interpolação correto.
@@ -105,7 +105,7 @@ Há algumas semanas desde a última atualização, mas trabalhamos duro durante 
 
 ## <a name="updates-for-version-1024"></a>Atualizações para a versão 10.2.4
 
-*Data de publicação: 18/12/2018*
+*Data da publicação: 18/12/2018*
 
 - Inclusão de suporte ao modo escuro para macOS Mojave 10.14.
 - Uma opção para importar da Área de Trabalho Remota 8 da Microsoft agora aparece no Connection Center se ela estiver vazia.
@@ -117,7 +117,7 @@ Há algumas semanas desde a última atualização, mas trabalhamos duro durante 
 
 ## <a name="updates-for-version-1023"></a>Atualizações para a versão 10.2.3
 
-*Data de publicação: 06/11/2018*
+*Data da publicação: 06/11/2018*
 
 - Inclusão de suporte para a configuração do arquivo RDP "remoteapplicationcmdline" para cenários de aplicativo remoto.
 - O título da janela da sessão agora inclui o nome do arquivo RDP (e o nome do servidor) quando iniciado a partir de um arquivo RDP.
@@ -133,7 +133,7 @@ Há algumas semanas desde a última atualização, mas trabalhamos duro durante 
 
 ## <a name="updates-for-version-1022"></a>Atualizações para a versão 10.2.2
 
-*Data de publicação: 09/10/2018*
+*Data da publicação: 09/10/2018*
 
 - Um Connection Center totalmente novo que dá suporte a arrastar e soltar, organização manual das áreas de trabalho, colunas redimensionáveis no modo de exibição de lista, classificação e gerenciamento com base em coluna e a gerenciamento de grupo simplificado.
 - O Connection Center agora lembra o último pivô ativo (Áreas de Trabalho ou Feeds) ao fechar o aplicativo.
@@ -162,14 +162,14 @@ Há algumas semanas desde a última atualização, mas trabalhamos duro durante 
 
 ## <a name="updates-for-version-1021"></a>Atualizações para a versão 10.2.1
 
-*Data de publicação: 06/08/2018*
+*Data da publicação: 06/08/2018*
 
 - Habilitação de conectividade para PCs associados ao AAD (Azure Active Directory). Para conectar um computador associado ao AAD, o nome de usuário deve estar em um dos seguintes formatos: "AzureAD\usuário" ou "AzureAD\user@domain".
 - Solução de alguns bugs que afetavam o uso de cartões inteligentes em uma sessão remota.
 
 ## <a name="updates-for-version-1020"></a>Atualizações para a versão 10.2.0
 
-*Data de publicação: 24/07/2018*
+*Data da publicação: 24/07/2018*
 
 - Atualizações incorporadas para conformidade com GDPR.
 - MicrosoftAccount\username@domain agora é aceito como um nome de usuário válido.
@@ -198,7 +198,7 @@ Há algumas semanas desde a última atualização, mas trabalhamos duro durante 
 
 ## <a name="updates-for-version-1018"></a>Atualizações para a versão 10.1.8
 
-*Data de publicação: 04/05/2018*
+*Data da publicação: 04/05/2018*
 
 - Inclusão de suporte para alterar a resolução remota redimensionando a janela da sessão!
 - Correção de cenários em que o download de feed de recurso remoto levaria tempo excessivamente longo.
@@ -206,7 +206,7 @@ Há algumas semanas desde a última atualização, mas trabalhamos duro durante 
 
 ## <a name="updates-for-version-1017"></a>Atualizações para a versão 10.1.7
 
-*Data de publicação: 05/04/2018*
+*Data da publicação: 05/04/2018*
 
 - Correções de segurança feitas para incorporar as atualizações de correção Oracle de criptografia CredSSP conforme descrito em CVE-2018-0886.
 - Aperfeiçoamento da renderização do cursor do mouse e do ícone RemoteApp para tratar imagens incorretas relatadas.
@@ -220,7 +220,7 @@ Há algumas semanas desde a última atualização, mas trabalhamos duro durante 
 
 ## <a name="updates-for-version-1016"></a>Atualizações para a versão 10.1.6
 
-*Data de publicação: 26/03/2018*
+*Data da publicação: 26/03/2018*
 
 - Correção de um problema em que as janelas do RemoteApp se reordenavam sozinhas.
 - Resolução de um bug que fazia com que algumas janelas de RemoteApp ficassem presas atrás da janela pai.

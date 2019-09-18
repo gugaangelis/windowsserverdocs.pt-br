@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 5aed8ba7-f541-4416-b01c-4d3b1712e2b1
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: 9e624517e5e7910a32a68d1ebc38b3f8d5ab8459
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: a58231d908ff1ac32eca7d4ba3f1d5a6a18dd7fe
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66805214"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870572"
 ---
 # <a name="upgrading-your-remote-desktop-virtualization-host-to-windows-server-2016"></a>Atualização das suas implantações de Host de Área de Trabalho Remota para o Windows Server 2016
 
@@ -38,7 +38,7 @@ Esses servidores devem ser atualizados ao mesmo tempo. Siga as etapas a seguir p
 ## <a name="rd-virtualization-host-servers-in-the-deployment-where-vms-are-stored-in-cluster-shared-volumes-csv"></a>Servidores de Host de Virtualização de Área de Trabalho Remota na implantação em que as VMs são armazenadas nos Volumes Compartilhados de Cluster (CSV) 
 
 1. Determine uma estratégia de atualização em que alguns dos servidores RDVH serão atualizados e alguns continuarão a hospedar VMs no Windows Server 2012 R2.  
-2. Isole um ou mais dos servidores RDVH direcionados para a fase inicial de atualização, migrando todas as máquinas virtuais para outros servidores RDVH “que ainda não serão atualizados” que continuarão fazendo parte do cluster original do 2012 R2.
+2. Isole um ou mais servidores RDVH direcionados para a fase inicial de atualização, migrando todas as VMs para outros servidores RDVH “que ainda não serão atualizados” que continuarão fazendo parte do cluster original do 2012 R2.
     1. Abra o Gerenciador de Cluster de Failover. 
     1. Clique em **Funções**. 
     1. Selecione uma ou mais VMs. Clique com botão direito do mouse para abrir o menu de contexto. 
@@ -58,8 +58,8 @@ Esses servidores devem ser atualizados ao mesmo tempo. Siga as etapas a seguir p
     2. Selecione um dos servidores RDVH não atualizados. 
     3. Clique com o botão direito do mouse em uma das VMs a ser movida e clique em **Mover**. 
     4. Escolha **Mover a máquina virtual** e clique em **Avançar**. 
-    5. Forneça o nome do servidor RDVH de destino atualizado na página **Especificar Computador de Destino** e clique em **Próxima**. 
-    6. Escolha **Mover os dados da máquina virtual para um único local** e clique em **Próxima**. 
+    5. Forneça o nome do servidor RDVH atualizado direcionado na página **Especificar Computador de Destino** e clique em **Avançar**. 
+    6. Escolha **Mover os dados da máquina virtual para um único local** e clique em **Avançar**. 
     7. Navegue até o local de destino. 
        > [!IMPORTANT]
        > Verifique se esse caminho é para uma pasta vazia da VM específica. 

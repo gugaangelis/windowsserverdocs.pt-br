@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e6f91aa02cd0f19d480c24309be5797c273b0f2e
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: e0dbe709681cf679347ccad2677ff3cda6690f3d
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66804955"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871227"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>Perguntas frequentes sobre os clientes de área de trabalho remota
 
@@ -59,7 +59,7 @@ No Windows 10, faça o seguinte:
 3. Use o controle deslizante para habilitar a Área de Trabalho Remota.
 4. Em geral, é melhor manter o PC ativo e detectável para facilitar as conexões. Clique em **Mostrar configurações** para ir para as configurações de energia do computador onde é possível alterar essa configuração.
    > [!NOTE]
-   > Você não pode se conectar a um computador que está no estado de suspensão ou hibernação, portanto, verifique se as configurações de suspensão e hibernação no computador remoto estão definidas como **Nunca**. A hibernação não está disponível em todos os computadores.
+   > Não é possível se conectar a um computador que está no estado de suspensão ou hibernação; portanto, verifique se as configurações de suspensão e hibernação no computador remoto estão definidas como **Nunca**. A hibernação não está disponível em todos os computadores.
 
 
 Anote o nome deste computador em **Como se conectar a este computador**. Você precisará dele para configurar os clientes.
@@ -75,7 +75,7 @@ No Windows 8.1, siga as instruções para permitir conexões remotas em [Conecta
 
 ### <a name="why-cant-i-connect-using-remote-desktop"></a>Por que não consigo me conectar usando a Área de Trabalho Remota?
 
-Aqui estão algumas possíveis soluções para problemas comuns que podem ocorrer ao tentar se conectar a um computador remoto. Se essas soluções não funcionarem, você pode encontrar mais ajuda no site [Microsoft Community](https://go.microsoft.com/fwlink/p/?LinkId=242079).
+Aqui estão algumas possíveis soluções para problemas comuns que podem ocorrer ao tentar se conectar a um computador remoto. Se essas soluções não funcionarem, você poderá encontrar mais ajuda no [site da Microsoft Community](https://go.microsoft.com/fwlink/p/?LinkId=242079).
 
 - **O computador remoto não foi encontrado.** Verifique se o nome do computador está correto e, em seguida, verifique se inseriu o nome corretamente. Caso ainda não consiga se conectar, tente usar o endereço IP do computador remoto em vez do nome dele.
 - **Há um problema com a rede.** Verifique se você tem uma conexão de Internet. 
@@ -89,7 +89,7 @@ Aqui estão algumas possíveis soluções para problemas comuns que podem ocorre
      Se você estiver usando um firewall diferente, verifique se a porta para a Área de Trabalho Remota (normalmente 3389) é aberta.
 - **Conexões remotas não podem ser configuradas no computador remoto.** Para corrigir esse problema, role para cima até a pergunta [Como configurar um computador para a Área de Trabalho Remota?](#how-do-i-set-up-a-pc-for-remote-desktop) neste tópico.
 - **O computador remoto pode permitir apenas a conexão de computadores com a Autenticação no Nível da Rede configurada.** 
-- **O computador remoto pode ter sido desligado.** Você não pode se conectar a um computador que está desligado, no estado de suspensão ou hibernação, portanto, verifique se as configurações de suspensão e hibernação no computador remoto estão definidas como **Nunca** (A hibernação não está disponível em todos os computadores.)
+- **O computador remoto pode ter sido desligado.** Não é possível se conectar a um computador que está desligado, no estado de suspensão ou hibernação, portanto, verifique se as configurações de suspensão e hibernação no computador remoto estão definidas como **Nunca** (a hibernação não está disponível em todos os computadores).
 
 ### <a name="why-cant-i-find-or-connect-to-my-pc"></a>Por que não é possível localizar ou se conectar ao meu computador?
 
@@ -234,7 +234,7 @@ Caso haja um erro **RPC error 23014** ou **Error 0x59E6, tente novamente após a
 ### <a name="what-does-the-failed-to-parse-ntlm-challenge-error-mean"></a>O que significa o erro "Falha de análise do desafio NTLM"?
 Esse erro é causado por uma configuração incorreta no computador remoto. Verifique se a configuração de nível de segurança do protocolo RDP no computador remoto está definida como "Compatível com o Cliente". Converse com o administrador de sistema caso precise de ajuda para fazer isso.
 
-### <a name="what-does-tsrap-you-are-not-allowed-to-connect-to-the-given-host-mean"></a>O que significa "TS_RAP Você não tem permissão para se conectar ao host determinado"?
+### <a name="what-does-ts_rap-you-are-not-allowed-to-connect-to-the-given-host-mean"></a>O que significa "TS_RAP Você não tem permissão para se conectar ao host determinado"?
 Esse erro ocorre quando uma Política de Autorização de Recursos no servidor gateway impede que seu nome de usuário se conecte ao computador remoto. Isso pode acontecer nas seguintes instâncias:
 
 - O nome do computador remoto é igual ao nome do gateway. Então, quando você tenta se conectar ao computador remoto, a conexão vai para o gateway em vez disso e você provavelmente não tem permissão para acessá-lo. Se você precisar se conectar ao gateway, não use o nome do gateway externo como o nome do computador. Em vez disso, use "localhost", o endereço IP (127.0.0.1) ou o nome do servidor interno.

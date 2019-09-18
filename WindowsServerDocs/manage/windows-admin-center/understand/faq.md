@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 06/07/2019
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 53f34992b875730be80ba479f387095aebbc8132
-ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
+ms.openlocfilehash: d2a2acc9261ac1a25e140cc298cc58e4b0fb6e52
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67469558"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869052"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Perguntas frequentes sobre o Windows Admin Center
 
@@ -33,7 +33,7 @@ Sim. Em geral, o Windows Admin Center está em disponibilidade geral e pronto pa
 
 ## <a name="how-much-does-it-cost-to-use-windows-admin-center"></a>Quanto custa usar o Windows Admin Center?
 
-O Windows Admin Center não tem custo adicional além do Windows. Você pode usar o Windows Admin Center (disponível como um download separado) com licenças válidas do Windows Server ou Windows 10 sem custo adicional – ele é licenciado sob um EULA complementar do Windows.
+O Windows Admin Center não tem custo adicional além do Windows. É possível usar o Windows Admin Center (disponível como um download separado) com licenças válidas do Windows Server ou Windows 10 sem custo adicional – ele é licenciado sob um EULA complementar do Windows.
 
 ## <a name="what-versions-of-windows-server-can-i-manage-with-windows-admin-center"></a>Quais versões do Windows Server posso gerenciar com o Windows Admin Center?
 
@@ -86,7 +86,7 @@ Sim! o [recurso Showscript](../use/get-started.md#view-powershell-scripts-used-i
 
 ## <a name="are-there-any-plans-for-windows-admin-center-to-manage-windows-server-2008-r2-or-earlier"></a>Há planos para o Windows Admin Center gerenciar o Windows Server 2008 R2 ou anterior?
 
-O Windows Admin Center agora dá suporte à funcionalidade **limitada** para gerenciar o Windows Server 2008 R2. O Windows Admin Center depende dos recursos e das tecnologias de plataforma do PowerShell que não existem no Windows Server 2008 R2 e anteriores, tornando o suporte completo impraticável. O Windows Server 2008/2008 R2 está se aproximando do fim do suporte em janeiro de 2020, portanto, a Microsoft recomenda aos clientes [migrar par ao Azure ou atualizar para a versão mais recente do Windows Server](https://www.microsoft.com/en-us/cloud-platform/windows-server-2008).
+O Windows Admin Center agora dá suporte à funcionalidade **limitada** para gerenciar o Windows Server 2008 R2. O Windows Admin Center depende das funcionalidades e das tecnologias de plataforma do PowerShell que não existem no Windows Server 2008 R2 e anteriores, tornando o suporte completo impraticável. O Windows Server 2008/2008 R2 está se aproximando do fim do suporte em janeiro de 2020, portanto, a Microsoft recomenda aos clientes [migrar par ao Azure ou atualizar para a versão mais recente do Windows Server](https://www.microsoft.com/en-us/cloud-platform/windows-server-2008).
 
 ## <a name="are-there-any-plans-for-windows-admin-center-to-manage-linux-connections"></a>Há planos para o Windows Admin Center gerenciar conexões do Linux?
 
