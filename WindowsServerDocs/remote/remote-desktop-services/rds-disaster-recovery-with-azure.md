@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 24b5fdaa815b6d2e84606cd8e681634eb3d0f4e9
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 79e0364bcb9d2ed899568a6699c61b43d84044e5
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63713086"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871013"
 ---
 # <a name="set-up-disaster-recovery-for-rds-using-azure-site-recovery"></a>Configurar a recuperação de desastre para o RDS usando o Azure Site Recovery
 
@@ -25,7 +25,7 @@ ms.locfileid: "63713086"
 
 Você pode usar o Azure Site Recovery para criar uma solução de recuperação de desastre para sua implantação dos Serviços de Área de Trabalho Remota. 
 
-A [Azure Site Recovery](/azure/site-recovery/site-recovery-overview) é um serviço baseado no Azure que fornece recursos de recuperação de desastre orquestrando a replicação, o failover e a recuperação de máquinas virtuais. O Azure Site Recovery dá suporte a uma série de tecnologias de replicação para replicar de forma consistente, proteger e executar o failover contínuo de máquinas virtuais e aplicativos pata nuvens privadas/públicas do host. 
+A [Azure Site Recovery](/azure/site-recovery/site-recovery-overview) é um serviço baseado no Azure que fornece recursos de recuperação de desastre orquestrando a replicação, o failover e a recuperação de máquinas virtuais. O Azure Site Recovery dá suporte a uma série de tecnologias de replicação para replicar de forma consistente, proteger e executar o failover contínuo de máquinas virtuais e aplicativos para nuvens privadas/públicas do host. 
 
 Use as informações a seguir para criar e validar a solução de recuperação de desastre.
 
