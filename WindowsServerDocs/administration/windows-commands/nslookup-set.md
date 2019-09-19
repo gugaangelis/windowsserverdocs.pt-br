@@ -1,6 +1,6 @@
 ---
 title: nslookup set
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 99ac8736ca8223a1a444784c4cf605a973a9e4dd
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 928d222714bf01cac1585a25e8cac3ec6c8b0233
+ms.sourcegitcommit: 6423dfa9cecb3b06bdd563cae113c3e80a4ec330
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436547"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105049"
 ---
 # <a name="nslookup-set"></a>nslookup set
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Altera as configurações que afetam como função de pesquisas.
+Altera as definições de configuração que afetam o funcionamento das pesquisas.
 ## <a name="syntax"></a>Sintaxe
 ```
 set <KeyWord>[=<Value>]
@@ -33,12 +33,12 @@ set <KeyWord>[=<Value>]
 
 |    Parâmetro    |                                                                                                                    Descrição                                                                                                                    |
 |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    <KeyWord>    | Identifica subcomandos que derivam de **definir** subcomando. Por exemplo, o subcomando **set d2** tem uma palavra-chave do [**nenhuma**]**d2**. Para obter a lista de subcomandos que são derivados do **definir** subcomando, consulte Referências adicionais. |
-|     <Value>     |                                                                                      Especifica o valor de configuração nslookup para cada subcomando.                                                                                      |
-| {Ajuda &#124; ?} |                                                                                               Exibe um resumo breve dos **nslookup** subcomandos.                                                                                               |
+|    <KeyWord>    | Identifica subcomandos que são derivados do subcomando **set** . Por exemplo, o conjunto de subcomando **D2** tem uma palavra-chave [**no**]**D2**. Para obter a lista de subcomandos que são derivados do subcomando **set** , consulte referências adicionais. |
+|     <Value>     |                                                                                      Especifica o valor da definição de configuração do nslookup para cada subcomando.                                                                                      |
+| {ajuda &#124; ?} |                                                                                               Exibe um breve resumo dos subcomandos **nslookup** .                                                                                               |
 
 ## <a name="remarks"></a>Comentários
 Use **definir tudo** para ver uma lista das configurações atuais.
 ## <a name="additional-references"></a>Referências adicionais
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[nslookup definir todos](nslookup-set-all.md)
+[Chave de sintaxe de linha de comando](command-line-syntax-key.md)[nslookup Set All](nslookup-set-all.md) 
+
