@@ -24,7 +24,7 @@ O recurso Proteção de Disco permite que você redefina seu sistema MultiPoint 
   
 ## <a name="enable-disk-protection"></a>Habilitar proteção de disco  
   
-1.  No MultiPoint Manager, clique na guia **página inicial** e, em seguida, em * nome do computador ***tarefas**, clique em **habilitar proteção de disco**.  
+1.  No MultiPoint Manager, clique na guia **página inicial** e, em seguida, em *nome do computador* **tarefas**, clique em **habilitar proteção de disco**.  
   
 2.  Analise as informações e clique em **OK**.  
   
@@ -32,7 +32,7 @@ Depois que o sistema for reiniciado, serão descartadas quaisquer alterações f
   
 ## <a name="disable-disk-protection"></a>Desabilitar proteção de disco  
   
-1.  No MultiPoint Manager, clique na guia **página inicial** e, em seguida, em * nome do computador ***tarefas**, clique em **desabilitar proteção de disco**.  
+1.  No MultiPoint Manager, clique na guia **página inicial** e, em seguida, em *nome do computador* **tarefas**, clique em **desabilitar proteção de disco**.  
   
 2.  Analise as informações e clique em **OK**.  
   
