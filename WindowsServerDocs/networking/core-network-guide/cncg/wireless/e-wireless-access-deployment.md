@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 4b66f517-b17d-408c-828f-a3793086bc1f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: bd951f221f1cf1c5715e26830b7da644d685634a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 64098a152d9ba485cfed80e0d0541f0e5ea72bf2
+ms.sourcegitcommit: 47a9514a68e42ac236065fd6b641204b769223d1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868980"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71127676"
 ---
 # <a name="wireless-access-deployment"></a>Implantação de acesso sem fio
 
@@ -121,7 +121,7 @@ A associação a **Adminis. do Domínio** ou equivalente é o requisito mínimo 
 
 6. Clique em **OK**.
 
-Se você precisar de mais de um grupo de segurança para usuários sem fio, repita essas etapas para criar grupos de usuários sem fio adicionais. Posteriormente, você pode criar políticas de rede individuais no NPS para aplicar diferentes condições e contstraints a cada grupo, fornecendo a eles permissões de acesso e regras de conectividade diferentes.
+Se você precisar de mais de um grupo de segurança para usuários sem fio, repita essas etapas para criar grupos de usuários sem fio adicionais. Posteriormente, você pode criar políticas de rede individuais no NPS para aplicar diferentes condições e restrições a cada grupo, fornecendo a eles permissões de acesso e regras de conectividade diferentes.
 
 ### <a name="bkmk_addusers"></a>Adicionar usuários ao grupo de segurança usuários sem fio
 
@@ -179,7 +179,7 @@ A associação a **Adminis. do Domínio** ou equivalente é o requisito mínimo 
 
 3. No painel esquerdo, clique duas\-vezes em **domínios**e, em\-seguida, clique duas vezes no domínio para o qual você deseja gerenciar um objeto de política de grupo. Por exemplo, clique\-duas vezes em **example.com**.  
 
-4. Realize um dos seguintes procedimentos:
+4. Siga um destes procedimentos:
 
     -   **Para abrir um GPO de\-nível de domínio existente para edição**, clique duas vezes no domínio que contém o objeto de política de grupo que você deseja\-gerenciar, clique com o botão direito do mouse na diretiva de domínio que você deseja gerenciar, como a política de domínio padrão e, em seguida, clique em **Editar**. **Editor de gerenciamento de política de grupo** é aberto.
 
