@@ -8,12 +8,12 @@ ms.date: 02/13/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: c5a3012b989a16c8416a17460b87e197f7f6fc6a
-ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
+ms.openlocfilehash: 4b90f8c5713fbcefc1740b932e9a6f210901a974
+ms.sourcegitcommit: 45415ba58907d650cfda45f4c57f6ddf1255dcbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70987409"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206908"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>Usar o serviço de migração de armazenamento para migrar um servidor
 
@@ -23,7 +23,7 @@ Este tópico discute como migrar um servidor, incluindo seus arquivos e a config
 
 Antes de começar, instale o serviço de migração de armazenamento e verifique se as portas de firewall necessárias estão abertas.
 
-1. Verifique os [requisitos do serviço de migração de armazenamento](overview.md#requirements) e instale o [centro de administração do Windows](../../manage/windows-admin-center/understand/windows-admin-center.md) no computador ou em um servidor de gerenciamento, se ainda não tiver feito isso.
+1. Verifique os [requisitos do serviço de migração de armazenamento](overview.md#requirements) e instale o [centro de administração do Windows](../../manage/windows-admin-center/understand/windows-admin-center.md) no computador ou em um servidor de gerenciamento, se ainda não tiver feito isso. Se estiver migrando computadores de origem ingressados no domínio, você deverá instalar e executar o serviço de migração de armazenamento em um servidor ingressado no mesmo domínio ou floresta que os computadores de origem.
 2. No centro de administração do Windows, conecte-se ao servidor do Orchestrator que executa o Windows Server 2019. <br>Este é o servidor no qual você instalará o serviço de migração de armazenamento e usará o para gerenciar a migração. Se você estiver migrando apenas um servidor, poderá usar o servidor de destino contanto que ele esteja executando o Windows Server 2019. Recomendamos que você use um servidor de orquestração separado para qualquer migração de vários servidores.
 1. Vá para **Gerenciador do servidor** (no centro de administração do Windows) > **serviço de migração de armazenamento** e selecione **instalar** para instalar o serviço de migração de armazenamento e seus componentes necessários (mostrados na Figura 1).
     ![Captura de tela da página do serviço de migração de armazenamento](media/migrate/install.png) mostrando o botão **de instalação Figura 1: Instalando o serviço de migração de armazenamento**
@@ -57,7 +57,7 @@ Nesta etapa, você especifica quais servidores migrar e, em seguida, os verifica
 Nesta etapa, você transfere dados depois de especificar onde colocá-los nos servidores de destino.
 
 1. Na página **transferir dados** > **Insira as credenciais** , digite as credenciais de administrador que funcionam nos servidores de destino para os quais você deseja migrar e, em seguida, selecione **Avançar**.
-2. Na página **Adicionar um dispositivo de destino e mapeamentos** , o primeiro servidor de origem é listado. Digite o nome do servidor ou servidor de arquivos clusterizado para o qual você deseja migrar e, em seguida, selecione **verificar dispositivo**.
+2. Na página **Adicionar um dispositivo de destino e mapeamentos** , o primeiro servidor de origem é listado. Digite o nome do servidor ou servidor de arquivos clusterizado para o qual você deseja migrar e, em seguida, selecione **verificar dispositivo**. Se estiver migrando de um computador de origem ingressado no domínio, o servidor de destino deverá ingressar no mesmo domínio.
 3. Mapeie os volumes de origem para volumes de destino, desmarque a caixa de seleção **incluir** para todos os compartilhamentos que você não deseja transferir (incluindo quaisquer compartilhamentos administrativos localizados na pasta de sistema do Windows) e, em seguida, selecione **Avançar**.
    ![Captura de tela mostrando um servidor de origem e seus volumes e compartilhamentos e para onde eles serão](media/migrate/transfer.png) transferidos na Figura 3 de destino **: Um servidor de origem e para onde seu armazenamento será transferido**
 4. Adicione um servidor de destino e mapeamentos para mais servidores de origem e, em seguida, selecione **Avançar**.

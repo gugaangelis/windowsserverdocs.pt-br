@@ -8,12 +8,12 @@ ms.date: 07/09/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 16e62d9232d0ec1b01333d73bc5b4a1555ffbad0
-ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
+ms.openlocfilehash: d8437e0e33a370ab698d25f25b43fbbcbae97792
+ms.sourcegitcommit: 45415ba58907d650cfda45f4c57f6ddf1255dcbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70987401"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206915"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conhecidos do serviço de migração de armazenamento
 
@@ -40,7 +40,7 @@ Examine o LEIAme para uso.
 
 Ao usar a versão 1809 do centro de administração do Windows para gerenciar um Orchestrator do Windows Server 2019, você não vê a opção de ferramenta para o serviço de migração de armazenamento. 
 
-A extensão de serviço de migração de armazenamento do Windows Admin Center é associada à versão somente para gerenciar o Windows Server 2019 versão 1809 ou sistemas operacionais posteriores. Se você usá-lo para gerenciar sistemas operacionais Windows Server mais antigos ou visualizações Insider, a ferramenta não será exibida. Esse comportamento é padrão. 
+A extensão de serviço de migração de armazenamento do Windows Admin Center é associada à versão somente para gerenciar o Windows Server 2019 versão 1809 ou sistemas operacionais posteriores. Se você usá-lo para gerenciar sistemas operacionais Windows Server mais antigos ou visualizações Insider, a ferramenta não será exibida. Esse comportamento é previsto no design. 
 
 Para resolver, use ou atualize para o Windows Server 2019 Build 1809 ou posterior.
 
@@ -248,6 +248,15 @@ Como alternativa alternativa:
    ```PowerShell
    Register-SMSProxy -ComputerName *destination server* -Force
    ```
+## <a name="error-dll-was-not-found-when-running-inventory-from-a-cluster-node"></a>Erro "dll não encontrado" ao executar o inventário de um nó de cluster
+
+Ao tentar executar o inventário com o serviço de migração de armazenamento Orchestrator instalado em um nó de cluster de failover do Windows Server 2019 e direcionar a origem do servidor de arquivos de uso geral do cluster de failover do Windows Server, você receberá o seguinte erro:
+
+    DLL not found
+    [Error] Failed device discovery stage VolumeInfo with error: (0x80131524) Unable to load DLL 'Microsoft.FailoverClusters.FrameworkSupport.dll': The specified module could not be found. (Exception from HRESULT: 0x8007007E)   
+
+Para solucionar esse problema, instale o "ferramentas de gerenciamento de cluster de failover" (RSAT-clustering-MGMT) no servidor que executa o Orchestrator do serviço de migração de armazenamento. 
+
 
 ## <a name="see-also"></a>Consulte também
 
