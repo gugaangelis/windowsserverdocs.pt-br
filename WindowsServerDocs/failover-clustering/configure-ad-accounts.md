@@ -6,15 +6,14 @@ ms.technology: storage-failover-clustering
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 3cc7449c8fbbad2ed4a3cd27513fcbe74b617e36
-ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
+ms.openlocfilehash: 06fcb7ee7d05b85c1e7d1c6752268ea7e5dbbdb2
+ms.sourcegitcommit: 94ba5a33e783fdfb965c612943d0bfe35f9fcaa1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560520"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250224"
 ---
 # <a name="configuring-cluster-accounts-in-active-directory"></a>Configuração de contas de cluster no Active Directory
-
 
 Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 e Windows Server 2008
 
@@ -106,7 +105,7 @@ Conforme descrito nas três seções anteriores, determinados requisitos devem s
           
       - A conta deve ter permissões administrativas nos servidores que se tornarão nós do cluster. O modo mais simples de fazer isso é criar uma conta de usuário de domínio e adicioná-la ao grupo local Administradores em cada um dos servidores que se tornará nó do cluster. Para obter mais informações, consulte [Etapas para configurar a conta para a pessoa que instala o cluster](#steps-for-configuring-the-account-for-the-person-who-installs-the-cluster), mais adiante neste guia.  
           
-      - A conta (ou o grupo do qual a conta é um membro) deve receber as permissões **Criar Objetos de computador** e **Ler Todas as Propriedades** no contêiner que é usado para contas de computador no domínio. Outra alternativa é tornar a conta uma conta de administrador de domínio. Para obter mais informações, consulte [Etapas para configurar a conta para a pessoa que instala o cluster](#steps-for-configuring-the-account-for-the-person-who-installs-the-cluster), mais adiante neste guia.  
+      - A conta (ou o grupo do qual a conta é um membro) deve receber as permissões **Criar Objetos de computador** e **Ler Todas as Propriedades** no contêiner que é usado para contas de computador no domínio. Para obter mais informações, consulte [Etapas para configurar a conta para a pessoa que instala o cluster](#steps-for-configuring-the-account-for-the-person-who-installs-the-cluster), mais adiante neste guia.  
           
       - Se sua organização optar por pré-preparar a conta de nome do cluster (uma conta de computador com o mesmo nome do cluster), essa conta pré-preparada deverá fornecer a permissão "Controle Total" à conta da pessoa que instala o cluster. Para obter outros detalhes importantes sobre como pré-preparar a conta de nome do cluster, consulte [Etapas para pré-preparar a conta de nome do cluster](#steps-for-prestaging-the-cluster-name-account), mais adiante neste guia.  
           
@@ -119,13 +118,13 @@ Conforme descrito nas três seções anteriores, determinados requisitos devem s
 
 A conta da pessoa que instala o cluster é importante porque fornece a base na qual uma conta de computador é criada para o cluster em si.
 
-A associação de grupo mínima exigida para concluir o procedimento a seguir depende se você está criando a conta de domínio e cedendo a ela as permissões exigidas no domínio ou se você está apenas colocando a conta (criada por outra pessoa) no grupo local **Administradores** nos servidores que serão nós do cluster de failover. Se for a primeira opção, associação aos **Operadores de Conta** ou aos **Admins. de Domínio**, ou equivalente, é o mínimo necessário para concluir este procedimento. Se for a segunda o opção, é preciso apenas a associação ao grupo local **Administradores** nos servidores que serão nós no cluster de failover, ou equivalente. Examine os detalhes sobre como usar as contas e associações de [http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)grupo apropriadas em.
+A associação de grupo mínima exigida para concluir o procedimento a seguir depende se você está criando a conta de domínio e cedendo a ela as permissões exigidas no domínio ou se você está apenas colocando a conta (criada por outra pessoa) no grupo local **Administradores** nos servidores que serão nós do cluster de failover. Se o primeiro, a associação em **operadores de conta** ou equivalente, é o mínimo necessário para concluir este procedimento. Se for a segunda o opção, é preciso apenas a associação ao grupo local **Administradores** nos servidores que serão nós no cluster de failover, ou equivalente. Examine os detalhes sobre como usar as contas e associações de [http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)grupo apropriadas em.
 
 #### <a name="to-configure-the-account-for-the-person-who-installs-the-cluster"></a>Para configurar a conta para a pessoa que instala o cluster
 
-1.  Crie ou obtenha uma conta de domínio para a pessoa que instala o cluster. Essa conta pode ser uma conta de usuário de domínio ou uma conta de administrador de domínio (no grupo **Admins. do Domínio** ou grupo equivalente).
+1.  Crie ou obtenha uma conta de domínio para a pessoa que instala o cluster. Essa conta pode ser uma conta de usuário de domínio ou uma conta de **operadores de conta** . Se você usar uma conta de usuário padrão, terá que lhe dar algumas permissões adicionais posteriormente neste procedimento.
 
-2.  Se a conta que foi criada ou obtida na etapa 1 for uma conta de usuário de domínio, ou se as contas de administrador de domínio no seu domínio não foram incluídas automaticamente no grupo local **Administradores** nos computadores do domínio, adicione a conta ao grupo local **Administradores** nos servidores que serão nós do cluster de failover:
+2.  Se a conta que foi criada ou obtida na etapa 1 não for incluída automaticamente no grupo de **Administradores** locais em computadores no domínio, adicione a conta ao grupo de **Administradores** locais nos servidores que serão nós no failover em
     
     1.  Clique em **Iniciar**, clique em **Ferramentas Administrativas** e clique em **Gerenciador do Servidores**.  
           
@@ -133,11 +132,9 @@ A associação de grupo mínima exigida para concluir o procedimento a seguir de
           
     3.  No painel central, clique com o botão direito do mouse em **Administradores**, clique em **Adicionar ao Grupo** e em **Adicionar**.  
           
-    4.  Em **Inserir os nomes de objeto a serem selecionados**, digite o nome da conta de usuário que foi criada ou obtida na etapa 1. Se solicitado, insira um nome de conta e senha com permissões suficientes para esta ação. Clique em **OK**.  
+    4.  Em **Inserir os nomes de objeto a serem selecionados**, digite o nome da conta de usuário que foi criada ou obtida na etapa 1. Se solicitado, insira um nome de conta e senha com permissões suficientes para esta ação. Em seguida, clique em **OK**.  
           
     5.  Repita essas etapas em cada servidor que será um nó no cluster de failover.  
-          
-    
 
 > [!IMPORTANT]
 > Essas etapas devem ser repetidas em todos os servidores que serão nós no cluster. 
@@ -208,7 +205,7 @@ A associação ao grupo **Admins. do Domínio** , ou equivalente, é o mínimo n
           
     3.  Na guia **Segurança**, clique em **Adicionar**. Se a caixa de diálogo **Controle de Conta de Usuário** for exibida, confirme se a ação exibida é a desejada e clique em **Continuar**.  
           
-    4.  Use a caixa de diálogo **Selecionar Usuários, Computadores ou Grupos** para especificar a conta de usuário que será usada ao criar o cluster. Clique em **OK**.  
+    4.  Use a caixa de diálogo **Selecionar Usuários, Computadores ou Grupos** para especificar a conta de usuário que será usada ao criar o cluster. Em seguida, clique em **OK**.  
           
     5.  Verifique se a conta de usuário que você acabou adicionar está selecionada e, próximo a **Controle Total**, marque a caixa de seleção **Permitir**.  
           

@@ -1,37 +1,38 @@
 ---
-title: Gerenciar o Hyper-V no Windows Server 2016
+title: Gerenciar o Hyper-V no Windows Server
 description: Fornece links para artigos sobre como gerenciar o Hyper-V
 ms.prod: windows-server-threshold
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5c06b632-dd19-46ca-9f51-130c321963d8
-author: KBDAzure
-ms.author: kathydav
+author: jasongerend
+ms.author: jgerend
 ms.date: 01/08/2018
-ms.openlocfilehash: 0f5f7600dd47a97e6f49669426d32054e4ab847d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e8a9d4a894990c793c3725f93a51f04c93be41e3
+ms.sourcegitcommit: d12d9e6afd71d23e8a24682ad80d2cf3bc486588
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867417"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71226020"
 ---
 # <a name="manage-hyper-v-on-windows-server"></a>Gerenciar o Hyper-V no Windows Server
 
 >Aplica-se a: Windows Server 2016, Windows Server 2019
 
-Use os recursos nesta seção para ajudá-lo a gerenciar o Hyper-V no Windows Server 2016.
+Use os recursos desta seção para ajudá-lo a gerenciar o Hyper-V no Windows Server:
 
-- [Escolha entre pontos de verificação padrão ou de produção](Choose-between-standard-or-production-checkpoints-in-Hyper-V.md)  
-- [Habilitar ou desabilitar os pontos de verificação](Enable-or-disable-checkpoints-in-Hyper-V.md) 
+- [Configurar dispositivos de memória persistente para VMs do Hyper-V](persistent-memory-cmdlets.md)
+- [Escolher entre pontos de verificação padrão ou de produção](Choose-between-standard-or-production-checkpoints-in-Hyper-V.md)
+- [Criar um conjunto de VHD](Create-VHDSet-file.md)
+- [Habilitar ou desabilitar pontos de verificação](Enable-or-disable-checkpoints-in-Hyper-V.md)
 - [Gerenciar hosts com o Gerenciador do Hyper-V](Remotely-manage-Hyper-V-hosts.md)
 - [Gerenciar controles de recursos de CPU do host](manage-hyper-v-minroot-2016.md)
-- [Usando grupos de CPU da VM](manage-hyper-v-cpugroups.md)
-- [Gerenciar máquinas de virtuais do Windows com o PowerShell Direct](Manage-Windows-virtual-machines-with-PowerShell-Direct.md)  
-- [Configurar a réplica do Hyper-V](Set-up-Hyper-V-Replica.md)
-- [Use a migração ao vivo sem Clustering de Failover para mover uma máquina virtual](Use-live-migration-without-Failover-Clustering-to-move-a-virtual-machine.md)
-  
-
-
+- [Usar grupos de CPU de VM](manage-hyper-v-cpugroups.md)
+- [Gerenciar tipos de agendador do hipervisor](manage-hyper-v-scheduler-types.md)
+- [Sobre a seleção de tipo de agendador do Hyper-V](about-hyper-v-scheduler-type-selection.md)
+- [Gerenciar serviços de integração](Manage-Hyper-V-integration-services.md)
+- [Gerenciar VMs do Windows com o PowerShell Direct](Manage-Windows-virtual-machines-with-powershell-direct.md)
+- [Configurar a réplica do Hyper-V](Set-up-Hyper-V-Replica.md) 
+- [Habilitar o hardware de monitoramento de desempenho Intel](Performance-Monitoring-Hardware.md)
+- [Mover VMs com a migração dinâmica](Live-migration-overview.md)
