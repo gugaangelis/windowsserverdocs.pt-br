@@ -34,6 +34,7 @@
 #### [Atualizar a versão da máquina virtual](hyper-v/deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md)
 #### [Implantar dispositivos gráficos usando DDA](hyper-v/deploy/deploying-graphics-devices-using-dda.md)
 #### [Implantar dispositivos de armazenamento usando DDA](hyper-v/deploy/deploying-storage-devices-using-dda.md)
+
 ### [Gerenciar](hyper-v/manage/Manage-Hyper-V-on-Windows-Server.md)
 #### [Configurar dispositivos de memória persistente para VMs do Hyper-V](hyper-v/manage/persistent-memory-cmdlets.md)
 #### [Escolher entre pontos de verificação padrão ou de produção](hyper-v/manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md)
@@ -46,11 +47,14 @@
 #### [Sobre a seleção de tipo de agendador do Hyper-V](hyper-v/manage/about-hyper-v-scheduler-type-selection.md)
 #### [Gerenciar serviços de integração](hyper-v/manage/Manage-Hyper-V-integration-services.md)
 #### [Gerenciar VMs do Windows com o PowerShell Direct](hyper-v/manage/Manage-Windows-virtual-machines-with-powershell-direct.md)
-#### [Configurar a réplica do Hyper-V](hyper-v/manage/Set-up-Hyper-V-Replica.md) 
-#### [Mover VMs com a migração dinâmica](hyper-v/manage/Live-migration-overview.md) 
-##### [Visão geral da migração dinâmica](hyper-v/manage/Live-migration-overview.md) 
+#### [Configurar a réplica do Hyper-V](hyper-v/manage/Set-up-Hyper-V-Replica.md)
+#### [Habilitar o hardware de monitoramento de desempenho da Intel](hyper-v/manage/Performance-Monitoring-Hardware.md)
+#### [Mover VMs com a migração dinâmica](hyper-v/manage/Live-migration-overview.md)
+##### [Visão geral da migração dinâmica](hyper-v/manage/Live-migration-overview.md)
 ##### [Configurar hosts para migração dinâmica](hyper-v/deploy/Set-up-hosts-for-live-migration-without-Failover-Clustering.md) 
-##### [Usar a migração dinâmica sem clustering de failover](hyper-v/manage/Use-live-migration-without-Failover-Clustering-to-move-a-virtual-machine.md) 
+##### [Usar a migração dinâmica sem clustering de failover](hyper-v/manage/Use-live-migration-without-Failover-Clustering-to-move-a-virtual-machine.md)
+
+
 ### [Ajuste de desempenho do Hyper-V](../administration/performance-tuning/role/hyper-v-server/index.md)
 ## [Comutador Virtual do Hyper-V](hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md)
 ### [Acesso Remoto Direto à Memória (RDMA) e Agrupamento incorporado de comutador (SET)](hyper-v-virtual-switch/rdMA-and-Switch-Embedded-Teaming.md)
