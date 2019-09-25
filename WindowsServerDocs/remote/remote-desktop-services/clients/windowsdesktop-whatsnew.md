@@ -11,27 +11,34 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/13/2019
+ms.date: 09/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b51370a83fe6a49c29cc2557abd54e339c3b213
-ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
+ms.openlocfilehash: 587ad44509451497b253689238c3aef233a37153
+ms.sourcegitcommit: e210fce039452a9855353520c7f8698acd76ffce
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70988244"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71071291"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novidades no cliente da Área de Trabalho do Windows
 
-Atualizamos regularmente o [cliente da Área de Trabalho do Windows](windowsdesktop.md) adicionando novos recursos e corrigindo problemas. Veja onde você encontrará as atualizações mais recentes.
+É possível encontrar informações mais detalhadas sobre o cliente da Área de Trabalho do Windows em [Introdução ao cliente da Área de Trabalho do Windows](windowsdesktop.md). Você encontrará as atualizações mais recentes no cliente abaixo.
 
-## <a name="client-versions"></a>Versões de cliente
+## <a name="latest-client-versions"></a>Versões do cliente mais recentes
 
-O cliente pode ser configurado para usar versões diferentes para clientes Insider ou de Lançamento. A versão de Lançamento é a configuração padrão.
+O cliente pode ser configurado para diferentes [grupos de usuários](windowsdesktop-admin.md#configure-user-groups). A tabela a seguir lista as versões atuais disponíveis para cada grupo de usuários:
 
-|Cliente |Versão  |
-|---------|---------|
-|Versão  |1.2.246  |
-|Participante do Programa Windows Insider  |1.2.246  |
+|Grupo de usuários |Versão  |
+|-----------|---------|
+|Public     |1.2.246  |
+|Participante do Programa Windows Insider    |1.2.247  |
+
+## <a name="updates-for-version-12247"></a>Atualizações para a versão 1.2.247
+
+*Data da publicação: 17/09/2019*
+
+- Correção de uma falha que ocorreu ao autenticar durante uma conexão.
+- Correção de uma falha que ocorreu ao fechar o cliente.
 
 ## <a name="updates-for-version-12246"></a>Atualizações da versão 1.2.246
 

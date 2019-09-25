@@ -12,12 +12,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 11/08/2016
 manager: dongill
-ms.openlocfilehash: 4e185e51b09d2e2f8ac4527f9de339de27e02f24
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 869d47be73a39114ecc05080f8da16f460fb8198
+ms.sourcegitcommit: 6423dfa9cecb3b06bdd563cae113c3e80a4ec330
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66805143"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105037"
 ---
 # <a name="add-high-availability-to-the-rd-web-and-gateway-web-front"></a>Adicionar alta disponibilidade ao front-end de Gateway Web e Web da Área de Trabalho Remota
 
@@ -96,12 +96,13 @@ Se estiver usando a infraestrutura do Azure, você pode criar um balanceador ext
 1.  Crie um balanceador de carga do Azure:  
     1.  No portal do Azure, clique em **Procurar > Balanceadores de carga > Adicionar**.  
     2.  Insira um nome, por exemplo **WebGwLB**.  
-    3.  Selecione **Público** como o **Esquema**, **Endereço IP público** e um **Endereço IP Público**. Você pode selecionar um endereço IP público existente ou criar um novo. 
-    4.  Selecionar as opções apropriadas para **Assinatura**, **Grupo de Recursos** e **Local**.
-    5.  Clique em **Criar**.  
+    3.  Selecione **Público** para o **Esquema**.
+    4.  Em **Endereço IP público**, selecione **Escolher um endereço IP público** e um endereço IP público existente ou crie um.
+    5.  Selecionar as opções apropriadas para **Assinatura**, **Grupo de Recursos** e **Local**.
+    6.  Clique em **Criar**.  
 2. Crie uma [Investigação](https://azure.microsoft.com/documentation/articles/load-balancer-custom-probe-overview/) para monitorar os servidores que estão ativos:  
-    1.  No portal do Azure, clique em **Procurar > Balanceadores de carga** e no balanceador de carga recém-criado, por exemplo, WebGwLB, e Configurações  
-    2.  Clique em **Investigações > Adicionar**.  
+    1.  No portal do Azure, selecione **Procurar** > **Balanceadores de Carga** e, em seguida, escolha o balanceador de carga que você criou na etapa anterior.
+    2.  Selecione **Todas as configurações** > **Sondas** > **Adicionar**.  
     3.  Digite um nome para a investigação, como **HTTPS**. Selecione **TCP** como o **Protocolo** e insira **443** como a **Porta**, depois clique em **OK**.   
 3.  Crie regras de balanceamento de carga para HTTPS e UDP:  
     1.  Nas **Configurações**, clique em **Regras de balanceamento de carga**.  

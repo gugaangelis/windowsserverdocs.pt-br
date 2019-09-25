@@ -1,6 +1,6 @@
 ---
 title: Introdução ao cliente para Android
-description: Etapas básicas de configuração para o cliente de Área de Trabalho Remota para Android.
+description: Informações gerais sobre o cliente Android.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -9,95 +9,100 @@ ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
-author: lizap
-manager: dongill
-ms.author: elizapo
-ms.date: 08/27/2019
+author: heidilohr
+manager: daveba
+ms.author: helohr
+ms.date: 09/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1099f1c8bb635ee1b4bb33c6483f128ee0ecdfb9
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: f9e8eb861961dc714a964012960e8742b721d4de
+ms.sourcegitcommit: 081661f50d6dafb77180149956a02e679270c710
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871242"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71037596"
 ---
 # <a name="get-started-with-the-android-client"></a>Introdução ao cliente para Android
 
->Aplica-se a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
+>Aplica-se a: Android 4.1 e posterior
 
-Você pode usar o cliente de Área de Trabalho Remota para o Android para trabalhar com áreas de trabalho e aplicativos do Windows diretamente do seu dispositivo Android.
+É possível usar o cliente de Área de Trabalho Remota para o Android para trabalhar com áreas de trabalho e aplicativos do Windows diretamente do seu dispositivo Android ou do Chromebook que dá suporte à Google Play Store.
 
 Use as informações a seguir para começar. Não se esqueça de conferir as [Perguntas Frequentes](remote-desktop-client-faq.md) se tiver alguma dúvida.
 
 > [!NOTE]
-> - Curioso sobre novas versões para o cliente Android? Confira as [Novidades da Área de Trabalho Remota no Android.](android-whatsnew.md)
-> Você pode executar o cliente no Android 4.1 e dispositivos mais recentes, bem como em Chromebooks com ChromeOS 53 instalado. Saiba mais sobre aplicativos Android no Chrome [aqui](https://sites.google.com/a/chromium.org/dev/chromium-os/chrome-os-systems-supporting-android-apps).
+> - Curioso sobre novas versões para o cliente Android? Confira [Novidades do cliente Android](android-whatsnew.md)
+> - O cliente Android dá suporte a dispositivos que executam o Android 4.1 e posterior, bem como Chromebooks com ChromeOS 53 e posterior. Saiba mais sobre aplicativos Android no Chrome [aqui](https://sites.google.com/a/chromium.org/dev/chromium-os/chrome-os-systems-supporting-android-apps).
 
-## <a name="get-the-rd-client-and-start-using-it"></a>Obter o cliente de Área de Trabalho Remota e começar a usá-lo
+## <a name="get-the-remote-desktop-client-and-start-using-it"></a>Obter o cliente da Área de Trabalho Remota e começar a usá-lo
 
-Siga estas etapas para começar com a Área de Trabalho Remota em seu dispositivo Android:
+### <a name="download-the-remote-desktop-client-from-the-google-play-store"></a>Baixe o cliente da Área de Trabalho Remota da Google Play Store
 
-1. Baixe o cliente de Área de Trabalho Remota do [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android). 
-2. [Configure seu computador para aceitar conexões remotas](remote-desktop-allow-access.md).
-3. Adicione uma conexão de Área de Trabalho Remota ou um recurso remoto. Você usa uma conexão para se conectar diretamente a um computador Windows e um recurso remoto para usar um programa RemoteApp, área de trabalho baseada em sessão ou área de trabalho virtual publicada localmente. 
-4. Crie um widget para que você acessar a Área de Trabalho Remota rapidamente.
+Veja como configurar o cliente da Área de Trabalho Remota no dispositivo Android:
+
+1. Baixe o cliente da Área de Trabalho Remota da Microsoft do [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android).
+2. Inicie o **cliente da RD** na sua lista de aplicativos.
+3. Adicione uma [conexão de Área de Trabalho Remota](#add-a-remote-desktop-connection) ou [recursos remotos](#add-remote-resources). Use uma conexão para se conectar diretamente a um computador Windows e a recursos remotos para acessar aplicativos e áreas de trabalho publicados para você por um administrador.
 
 > [!NOTE]
-> Se você deseja disponibilizar uma versão piloto de novos recursos mais cedo, é recomendável baixar nosso aplicativo [Beta da Área de Trabalho Remota da Microsoft](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android.beta) da Google Play Store. 
+> Se você deseja disponibilizar uma versão piloto de novos recursos mais cedo, é recomendável baixar nosso cliente [Beta da Área de Trabalho Remota da Microsoft](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android.beta) da Google Play Store.
 
 ### <a name="add-a-remote-desktop-connection"></a>Adicionar uma conexão de Área de Trabalho Remota
 
+Caso ainda não tenha feito, [configure seu computador para aceitar conexões remotas](remote-desktop-allow-access.md).
+
 Para criar uma conexão de Área de Trabalho Remota:
 
-1. Na Central de Conexão, toque em **+** e, em seguida, toque em **Área de Trabalho**.
-2. Insira as informações a seguir para o computador com o qual você deseja se conectar:
-   - **Nome do PC** – o nome do computador. Pode ser um nome do computador Windows, um nome de domínio da Internet ou um endereço IP. Você também pode acrescentar informações de porta ao nome do computador (por exemplo, **MyDesktop:3389** ou **10.0.0.1:3389**).
-   - **Nome de usuário** – o nome de usuário a ser usado para acessar o computador remoto. Você pode usar os seguintes formatos: *nome_de_usuário*, *domínio\nome_de_usuário* ou <em>user_name@domain.com</em>. Você também pode especificar se um nome de usuário e senha devem ser solicitados.
-3. Você também pode definir as seguintes opções adicionais:
-   - **Nome amigável** – um nome fácil de lembrar para o PC ao qual você está se conectando. Você pode usar qualquer cadeia de caracteres, mas se você não especificar um nome amigável, o nome do computador será exibido.
-   - **Gateway** – o Gateway de Área de Trabalho Remota que você deseja usar para se conectar a áreas de trabalho virtuais, programas RemoteApp e áreas de trabalho baseadas em sessão em uma rede corporativa interna. Obtenha as informações sobre o gateway do administrador do sistema.
-    Precisa configurar um Gateway de Área de Trabalho Remota?
-   - **Som** – selecione o dispositivo a ser usado para áudio durante sua sessão remota. Você pode optar por reproduzir som nos dispositivos locais, no dispositivo remoto ou por não reproduzir som.
-   - **Personalizar a resolução de vídeo** – defina uma resolução personalizada para uma conexão habilitando essa configuração. Quando desativado, é aplicada a resolução que você definiu nas configurações globais do aplicativo.
-   - **Trocar os botões do mouse** – use essa opção para trocar as funções dos botões esquerdo do mouse por aquelas do botão direito do mouse. (Isso é especialmente útil se o computador remoto está configurado para um usuário canhoto, mas você usa um mouse para destros.)
-   - **Conectar-se à sessão de administrador** – use essa opção para se conectar a uma sessão de console para administrar um servidor Windows.
-   - **Redirecionar para o armazenamento local** – monta seu armazenamento local como um sistema de arquivos remoto no PC remoto.
-4. Toque em **Salvar**.
+1. Na Central de Conexão, toque em **+** e, em seguida, em **Área de Trabalho**.
+2. Insira o nome do computador remoto em **Nome do computador**. Pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Também é possível acrescentar informações de porta ao nome do computador (por exemplo, MyDesktop:3389 ou 10.0.0.1:3389). Esse é o único campo obrigatório.
+3. Selecione o **Nome de usuário** usado para acessar o computador remoto.
+   - Selecione **Entrar toda vez** para que o cliente solicite suas credenciais sempre que você se conectar ao computador remoto.
+   - Selecione **Adicionar conta de usuário** para salvar uma conta que você usa com frequência para que você não precise inserir as credenciais sempre que entrar. Confira [gerencie suas contas de usuário](#manage-your-user-accounts) para obter mais detalhes.
+4. Você também pode tocar em **Mostrar opções adicionais** para definir os seguintes parâmetros opcionais:
+   - Em **Nome amigável**, você pode inserir um nome fácil de lembrar para o computador ao qual você está se conectando. Se você não especificar um nome amigável, o nome do computador será exibido.
+   - **Gateway** é o gateway de Área de Trabalho Remota que você usará para se conectar a um computador por meio de uma rede externa. Para obter mais informações, entre em contato com o administrador do sistema.
+   - **Som** seleciona o dispositivo que sua sessão remota usa para áudio. Você pode optar por reproduzir som no dispositivo local, no dispositivo remoto ou por não reproduzir som.
+   - **Personalizar resolução de exibição** define a resolução da sessão remota. Quando desativada, a resolução especificada nas configurações globais é usada.
+   - **Trocar os botões do mouse** alterna os comandos enviados pelos gestos direito e esquerdo do mouse. Ideal para usuários canhotos.
+   - **Conectar-se à sessão de administrador** permite que você se conecte a uma sessão de administrador no computador remoto.
+   - **Redirecionar armazenamento local** permite o redirecionamento de armazenamento local. Por padrão, essa configuração é desabilitada.
+5. Quando terminar, toque em **Salvar**.
 
-É necessário editar essas configurações? Toque no menu de estouro ( **...** ) ao lado do nome da área de trabalho e, em seguida, toque em **editar**.
+É necessário editar essas configurações? Toque no menu de estouro ( **...** ) ao lado do nome da área de trabalho e, em seguida, toque em **Editar**.
 
-Deseja excluir a conexão? Novamente, toque no menu de estouro ( **...** ) e, em seguida, toque em **remover**.
+Deseja remover a conexão? Novamente, toque no menu de estouro ( **...** ) e, em seguida, toque em **Remover**.
 
 >[!TIP]
 > Se você receber o erro 0xf07 por uma senha incorreta ("Não foi possível conectar ao PC remoto porque a senha associada com a conta de usuário expirou"), altere sua senha e tente novamente.
 
-### <a name="add-a-remote-resource"></a>Adicionar um recurso remoto
-Recursos remotos são programas RemoteApp, áreas de trabalho baseadas em sessão e áreas de trabalho virtuais publicadas usando conexões RemoteApp e de Área de Trabalho.
+### <a name="add-remote-resources"></a>Adicionar recursos remotos
 
-Para adicionar um recurso remoto:
+Recursos remotos são programas RemoteApp, áreas de trabalho baseadas em sessão e áreas de trabalho virtuais publicadas por seu administrador. O cliente Android dá suporte a recursos publicados de implantações de **Serviços de Área de Trabalho Remota** e **Área de Trabalho Virtual do Windows**. Para adicionar recursos remotos:
 
-1. Na tela da Central de Conexão, toque em **+** e, em seguida, toque em **Feed de Recursos Remotos**. 
-2. Insira informações para o recurso remoto:
-   - **Email ou URL** –a URL do servidor de Acesso via Web da Área de Trabalho Remota. Você também pode inserir sua conta de email corporativo nesse campo – isso informa ao cliente para pesquisar pelo servidor de Acesso via Web da Área de Trabalho Remota associado com seu endereço de email.
-   - **Nome de usuário** – o nome de usuário a ser usado para o servidor de Acesso via Web à Área de Trabalho Remota ao qual você está se conectando.
-   - **Senha** – a senha a ser usada para o servidor de Acesso via Web da Área de Trabalho Remota ao qual você está se conectando.
-3. Toque em **Salvar**.
+1. Na Central de Conexão, toque em **+** e, em seguida, toque em **Feed de Recursos Remotos**.
+2. Insira a **URL do Feed**. Ela pode ser uma URL ou endereço de email:
+   - A **URL** é o servidor de Acesso via Web da RD fornecida a você por seu administrador. Se estiver acessando recursos da Área de Trabalho Virtual do Windows, você poderá usar `https://rdweb.wvd.microsoft.com`.
+   - Se você planeja usar **Email**, insira seu endereço de email nesse campo. Isso instrui o cliente a procurar um servidor de Acesso via Web da Área de Trabalho Remota associado ao endereço de email se ele foi configurado pelo administrador.
+3. Toque em **Avançar**.
+4. Forneça suas informações de entrada quando solicitado. Isso pode variar com base na implantação e pode incluir:
+   - O **Nome de usuário** que tem permissão para acessar os recursos.
+   - A **Senha** associada ao nome de usuário.
+   - **Fator adicional**, que poderá ser solicitado se a autenticação tiver sido configurada dessa forma pelo administrador.
+5. Quando terminar, toque em **Salvar**.
 
 Os recursos remotos serão exibidos na Central de Conexão.
 
-
-Para excluir os recursos remotos:
+Para remover os recursos remotos:
 
 1. Na Central de Conexão, toque no menu de estouro ( **...** ) ao lado do recurso remoto.
 2. Toque em **Remover**.
-3. Confirme a exclusão.
+3. Confirme a remoção.
 
 ### <a name="widgets--pin-a-saved-desktop-to-your-home-screen"></a>Widgets – fixe uma área de trabalho salva em sua tela inicial
 
-Os aplicativos de Área de Trabalho Remota dão suporte à fixação de conexões em sua tela inicial usando o recurso de widget do Android. A maneira em que você adiciona um widget depende do tipo de dispositivo Android que você está usando e do seu sistema operacional. Aqui está a maneira mais comum para adicionar um widget: 
+O cliente da Área de Trabalho Remota dá suporte à fixação de conexões em sua tela inicial usando o recurso de widget do Android. A maneira em que você adiciona um widget depende do tipo de dispositivo Android que você está usando e do seu sistema operacional. Aqui está a maneira mais comum para adicionar um widget:
 
-1. Toque em **aplicativos** para iniciar o menu de aplicativos.
-2. Toque em **widgets**.
+1. Toque em **Aplicativos** para iniciar o menu de aplicativos.
+2. Toque em **Widgets**.
 3. Passe o dedo pelos widgets e procure o ícone de Área de Trabalho Remota com a descrição "Fixar Área de Trabalho Remota".
 4. Toque nesse widget de Área de Trabalho Remota e segure, movendo-o em seguida para a tela inicial.
 5. Quando soltar o ícone, você verá as áreas de trabalho remotas salvas. Escolha a conexão que você deseja salvar em sua tela inicial.
@@ -105,97 +110,120 @@ Os aplicativos de Área de Trabalho Remota dão suporte à fixação de conexõe
 Agora você pode iniciar a conexão de área de trabalho remota tocando nela diretamente da sua tela inicial.
 
 > [!NOTE]
-> Se você renomear a conexão de área de trabalho no aplicativo de Área de Trabalho Remota, o rótulo dessa Área de Trabalho Remota fixada não será atualizado.
+> Se você renomear a conexão de área de trabalho no cliente da Área de Trabalho Remota, seu rótulo fixado não será atualizado.
 
-## <a name="connect-to-an-rd-gateway-to-access-internal-assets"></a>Conectar-se a um Gateway de Área de Trabalho Remota para acessar os ativos internos
+## <a name="manage-general-app-settings"></a>Gerenciar configurações gerais do aplicativo
 
-Um Gateway de Área de Trabalho Remota permite que você se conecte a um computador remoto em uma rede corporativa de qualquer lugar na Internet. Você pode criar e gerenciar seus gateways usando o cliente de Área de Trabalho Remota.
+Para alterar as configurações gerais do aplicativo, toque em **Configurações** e toque em **Geral** na Central de Conexão.
+
+É possível definir as seguintes configurações gerais:
+
+- **Mostrar versões prévias da área de trabalho** permite que você veja uma versão prévia de uma área de trabalho na Central de Conexão antes de se conectar a ela. Essa configuração é habilitada por padrão.
+- **Pinçar para aplicar zoom na seção remota** permite que você use gestos de pinçar para aplicar zoom. Se o aplicativo que você estiver usando por meio da Área de Trabalho Remota der suporte a multitoque (introduzido no Windows 8), desabilite esse recurso.
+- Habilite **Usar entrada de código de verificação quando disponível** se seu aplicativo remoto não responder devidamente à entrada do teclado enviada como código de verificação. A entrada é enviada como Unicode quando desabilitada.
+- **Ajudar a melhorar a Área de Trabalho Remota** envia dados anônimos à Microsoft. Usamos esses dados para melhorar o cliente. É possível saber mais sobre como tratamos esses dados anônimos e privados na [Política de Privacidade da Microsoft](https://privacy.microsoft.com/privacystatement). Essa configuração é habilitada por padrão.
+
+## <a name="manage-display-settings"></a>Gerenciar configurações de exibição
+
+Para alterar as configurações de exibição, toque em **Configurações** e, em seguida, toque em **Exibir** na Central de Conexão.
+
+É possível definir as seguintes configurações de exibição:
+
+- **Orientação** define a orientação preferida (paisagem ou retrato) para a sua sessão.
+  >[!NOTE]
+  > Se você se conectar a um computador executando o Windows 8 ou uma versão anterior do Windows, a sessão não será dimensionada corretamente se a orientação do dispositivo for alterada. Sua melhor saída é desconectar-se do computador e, em seguida, reconectar-se na orientação que você deseja usar. Uma opção ainda melhor é atualizar o computador para o Windows 10.
+
+- **Resolução** define a resolução remota que você deseja usar para conexões de área de trabalho globalmente. Se você já tiver definido uma resolução personalizada para uma conexão individual, essa configuração não a mudará.
+  >[!NOTE]
+  >Quando você altera uma das configurações de exibição, elas se aplicam apenas a novas conexões desse ponto em diante. Para ver a alteração em uma sessão à qual você já está conectado, desconecte-se e conecte-se novamente.
+
+## <a name="manage-your-rd-gateways"></a>Gerenciar seus Gateways de RD
+
+Um Gateway de Área de Trabalho Remota permite que você se conecte a um computador remoto em uma rede privada de qualquer lugar na Internet. Você pode criar e gerenciar seus gateways usando o cliente de Área de Trabalho Remota.
 
 Para configurar um novo gateway:
 
-1. Na Central de Conexão, toque em **Configurações > Gateways**. Toque em **+** para adicionar um novo gateway.
-2. Insira as seguintes informações:
-   - **Nome do servidor** – o nome do computador que você deseja usar como um gateway. Pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode adicionar informações de porta ao nome do servidor (por exemplo: **RDGateway:443** ou **10.0.0.1:443**).
-   - **Nome de usuário** – o nome de usuário e a senha a serem usados para o Gateway de Área de Trabalho Remota ao qual você está se conectando. Você também pode selecionar **Usar conta de usuário da área de trabalho** para usar as mesmas credenciais usadas para a conexão de área de trabalho remota.
+1. Na Central de Conexão, toque em **Configurações** e, em seguida, toque em **Gateways**.
+1. Toque em **+** para adicionar um novo gateway.
+1. Insira as seguintes informações:
+   - Insira o nome do computador que você deseja usar como um gateway em **Nome do servidor**. Pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode adicionar informações de porta ao nome do servidor (por exemplo: RDGateway:443 ou 10.0.0.1:443).
+   - Selecione a **Conta de Usuário** que você usará para acessar o Gateway de Área de Trabalho Remota.
+     - Selecione **Usar a conta de usuário de área de trabalho** para usar as mesmas credenciais que você especificar para o computador remoto.
+     - Selecione **Adicionar conta de usuário** para salvar uma conta que você usa com frequência para que você não precise inserir as credenciais sempre que entrar. Siga estas instruções para [gerenciar suas contas de usuário](#manage-your-user-accounts).
+
+Para excluir um gateway:
+
+1. Na Central de Conexão, toque em **Configurações** e, em seguida, toque em **Gateways**.
+2. Toque em um gateway na lista e segure para selecioná-la. É possível selecionar vários gateways de uma vez.
+3. Toque na lixeira para excluir o gateway selecionado.
 
 ## <a name="manage-your-user-accounts"></a>Gerenciar suas contas de usuário
 
-Quando você se conecta a uma área de trabalho ou a recursos remotos, você pode salvar as contas de usuário para selecioná-las novamente. Você também pode definir contas de usuário no cliente propriamente dito, em vez de salvar os dados de usuário quando você se conecta a uma área de trabalho.
+Quando você se conecta a uma área de trabalho ou a recursos remotos, você pode salvar as contas de usuário para selecioná-las novamente.
 
-Para criar uma conta de usuário:
+Para criar uma nova conta de usuário:
 
 1. Na Central de Conexão, toque em **Configurações** e, em seguida, toque em **Contas de usuário**.
 2. Toque em **+** para adicionar uma nova conta de usuário.
 3. Insira as seguintes informações:
-   - **Nome de usuário** – o nome do usuário a salvar para uso com uma conexão remota. Você pode inserir o nome de usuário em qualquer um dos seguintes formatos: nome_de_usuário, domínio\nome_de_usuário ou user_name@domain.com.
-   - **Senha** – a senha para o usuário que você especificou. Todas as contas de usuário que você deseja salvar para uso com conexões remotas precisam ter uma senha associada a elas.
-4. Toque em **Salvar**.
+   - O **Nome de usuário** a salvar para uso com uma conexão remota. Você pode inserir o nome de usuário em qualquer um dos seguintes formatos: nome_de_usuário, domínio\nome_de_usuário ou user_name@domain.com.
+   - A **Senha** para o usuário que você especificou. Todas as contas de usuário que você deseja salvar para uso com conexões remotas precisam ter uma senha associada a elas.
+4. Quando terminar, toque em **Salvar**.
 
 Para excluir uma conta de usuário:
 
-1. Na Central de Conexão, toque em **Configurações > Contas de usuário**.
+1. Na Central de Conexão, toque em **Configurações** e, em seguida, toque em **Contas de usuário**.
 2. Toque em uma conta de usuário na lista e segure para selecioná-la. Vários usuários podem ser selecionados.
 3. Toque na lixeira para excluir o usuário selecionado.
 
 ## <a name="navigate-the-remote-desktop-session"></a>Navegar pela sessão de Área de Trabalho Remota
+
 Quando você inicia uma conexão de Área de Trabalho Remota, existem ferramentas disponíveis que você pode usar para navegar pela sessão.
 
 ### <a name="start-a-remote-desktop-connection"></a>Iniciar uma conexão de Área de Trabalho Remota
 
-1. Toque na conexão de Área de Trabalho Remota para iniciar a sessão. 
-2. Se for solicitado a você que verifique o certificado para a Área de Trabalho Remota, toque em **Conectar**. Também é possível selecionar **Não me pergunte novamente para conexões com este computador** para aceitar o certificado sempre.
+1. Toque na conexão de Área de Trabalho Remota para iniciar a sessão.
+2. Se for solicitado que você verifique o certificado da área de trabalho remota, toque em **Conectar**. Você também pode selecionar **Não me pergunte novamente para conexões com este computador** para aceitar o certificado sempre.
 
-### <a name="manage-global-app-settings"></a>Gerenciar configurações globais do aplicativo
+### <a name="connection-bar"></a>Barra de conexão
 
-Você pode definir as seguintes configurações globais no seu cliente Android:
+A barra de conexão lhe dá acesso a controles de navegação adicionais. Por padrão, a barra de conexão é colocada no meio da parte superior da tela. Arraste a barra para a esquerda ou para a direita para movê-la.
 
-- **Mostrar versão prévia da área de trabalho** – permite que você veja uma versão prévia de uma área de trabalho na Central de Conexão antes de se conectar a ela. Por padrão, isso é definido como **ativado**.
-- **Pinçar Para Aplicar Zoom** – permite que você use gestos de pinçar para aplicar zoom. Se o aplicativo que você estiver usando por meio da Área de Trabalho Remota der suporte a multitoque (introduzido no Windows 8), **desative** essa configuração.
-- **Ajudar a melhorar a Área de Trabalho Remota** – envia dados anônimos à Microsoft. Usamos esses dados para melhorar o cliente. Você pode saber mais sobre como tratamos esses dados anônimos e privados consultando a [Política de privacidade do cliente da Área de Trabalho Remota](https://www.microsoft.com/privacystatement/RemoteApp/Default.aspx). Por padrão, essa configuração fica **ativada**.
-- **Tela** – há duas configurações globais para a tela:
-  - **Orientação** – define a orientação preferida (paisagem ou retrato) para a sua sessão. 
-    >[!NOTE]
-    > Se você se conectar a um computador executando o Windows 8 ou uma versão anterior do Windows, a sessão não será dimensionada corretamente. Sua melhor saída é desconectar-se do computador e, em seguida, reconectar-se na orientação que você deseja usar. Uma opção ainda melhor é atualizar o PC pelo menos para o Windows 8.1.
-
-  - **Resolução** – define a resolução que você deseja usar para conexões de área de trabalho globalmente. Se você já tiver definido uma resolução personalizada para um aplicativo ou conexão individual, esta configuração não a mudará.
-    >[!NOTE]
-    >Quando você altera uma das configurações de exibição, elas se aplicam apenas a novas conexões desse ponto em diante. Para ver a alteração em uma sessão à qual você já está conectado, desconecte-se e conecte-se novamente.
-
-### <a name="connection-bar"></a>Barra de Conexão
-
-A barra de conexão lhe dá acesso a controles de navegação adicionais. Por padrão, a barra de conexão é colocada no meio da parte superior da tela. Toque duas vezes na barra e arraste-a para a esquerda ou a direita para movê-la.
-
-- **Controle de movimento panorâmico**: o controle de movimento panorâmico permite que a tela seja ampliada e movida. Observe que o controle de movimento panorâmico só está disponível usando o toque direto.
-   - Habilitar/desabilitar o controle de movimento panorâmico: toque no ícone de bandeja na barra de conexão para exibir o controle de movimento panorâmico e ampliar a tela. Toque no ícone de movimento panorâmico na barra de conexão novamente para ocultar o controle e retornar a tela para a resolução original.
-   - Usar o controle de movimento panorâmico: toque no controle de movimento panorâmico e segure, depois arraste na direção em que você deseja mover a tela.
-   - Mover o controle de movimento panorâmico: dê um toque duplo no controle de movimento panorâmico e segure para mover o controle na tela.
-- **Opções adicionais**: toque no ícone de opções adicionais para exibir a barra de seleção de sessão e a barra de comandos (veja abaixo).
+- **Controle de movimento panorâmico**: o controle de movimento panorâmico permite que a tela seja ampliada e movida. O controle de movimento panorâmico só está disponível para toque direto.
+  - Para mostrar o controle de movimento panorâmico, toque no ícone de movimento panorâmico na barra de conexão para exibir o controle de movimento panorâmico e aplicar zoom na tela. Toque no ícone de movimento panorâmico novamente para ocultar o controle e retornar a tela para seu tamanho original.
+  - Para usar o controle de movimento panorâmico, toque e segure-o e arraste-o na direção desejada para mover a tela.
+  - Para mover o controle de movimento panorâmico, toque duas vezes e segure-o para mover o controle ao redor da tela.
+- **Opções adicionais**: toque no ícone de opções adicionais para exibir a barra de seleção de sessão e a barra de comandos.
 - **Teclado**: toque no ícone de teclado para exibir ou ocultar o teclado. O controle de movimento panorâmico é exibido automaticamente quando o teclado é exibido.
-- **Mover a barra de conexão**: toque na barra de conexão e segure e, em seguida, arraste e solte em uma nova localização na parte superior da tela.
 
+### <a name="session-selection-bar"></a>Barra de seleção de sessão
+
+Você pode ter várias conexões abertas em computadores diferentes ao mesmo tempo. Toque na barra de conexão para exibir a barra de seleção de sessão no lado esquerdo da tela. A barra de seleção de sessão permite exibir suas conexões abertas e alternar entre elas.
+
+Quando está conectado a recursos remotos, você pode alternar entre os aplicativos dentro dessa sessão tocando no menu do expansor **>** e escolhendo na lista de itens disponíveis.
+
+Para iniciar uma nova sessão em sua conexão atual, toque em **Iniciar Novo** e escolha na lista de itens disponíveis.
+
+Para desconectar uma sessão, toque em **X** no lado direito do bloco da sessão.
 
 ### <a name="command-bar"></a>Barra de comandos
 
-Toque na barra de conexão para exibir a barra de comandos no lado direito da tela. Você pode alternar entre os modos de mouse (toque direto e ponteiro do mouse). Use o botão de tela inicial para retornar à Central de Conexão da barra de comandos. Como alternativa, você pode usar o botão voltar para realizar a mesma ação. Sua sessão ativa não será desconectada. 
+Toque na barra de conexão para exibir a barra de comandos no lado direito da tela. Na barra de comandos, é possível alterar entre modos de mouse (toque direto e ponteiro do mouse) ou tocar no botão Página Inicial para retornar à Central de Conexão. Também é possível tocar no botão Voltar para retornar à Central de Conexão. Retornar à Central de Conexão não desconectará sua sessão ativa.
 
+### <a name="use-touch-gestures-and-mouse-modes-in-a-remote-session"></a>Usar gestos de toque e modos de mouse em uma sessão remota
 
-### <a name="use-direct-touch-gestures-and-mouse-modes-in-a-remote-session"></a>Usar gestos de toque direto e modos de mouse em uma sessão remota
-
-O cliente usa gestos de toque padrão. Você também pode usar gestos de toque para replicar as ações do mouse na área de trabalho remota. Os modos de mouse disponíveis são definidos na tabela a seguir.
+O cliente usa gestos de toque padrão. Você também pode usar gestos de toque para replicar as ações do mouse na área de trabalho remota. A tabela a seguir explica quais gestos correspondem a quais ações do mouse em cada modo de mouse.
 
 > [!NOTE]
-> Ao interagir com o Windows 8 ou mais recente, gestos de toque nativos são compatíveis no modo de toque direto. 
+> Há suporte para gestos de toque nativos no modo Toque Direto no Windows 8 ou posterior.
 
-| Modo de mouse    | Operação do mouse      | Gesto                                                               |
-|---------------|----------------------|-----------------------------------------------------------------------|
-| Toque direto  | Clicar com o botão esquerdo do mouse           | Tocar com um dedo                                                          |
-| Toque direto  | Clicar com o botão direito do mouse          | Tocar e segurar com um dedo                                                 |
-| Ponteiro do mouse | Zoom                 | Usar dois dedos e fazer movimento de pinça para aplicar zoom ou aumentar o espaço entre os dedos para reduzir o zoom. |
-| Ponteiro do mouse | Clicar com o botão esquerdo do mouse           | Tocar com um dedo                                                          |
-| Ponteiro do mouse | Clicar com o botão do mouse esquerdo e arrastar  | Dar um toque duplo com um dedo e segurar, depois arrastar                               |
-| Ponteiro do mouse | Clicar com o botão direito do mouse          | Tocar com dois dedos                                                          |
-| Ponteiro do mouse | Clicar com o botão direito do mouse e arrastar | Dar um toque duplo com dois dedos e segurar, depois arrastar                               |
-| Ponteiro do mouse | Botão de rolagem do mouse          | Tocar com dois dedos e segurar, depois arrastar para cima ou baixo                           |
-
-> [!TIP]
-> Perguntas e comentários são sempre bem-vindos. No entanto, NÃO publique uma solicitação de ajuda com solução de problemas usando o recurso de comentários no final deste artigo. Em vez disso, vá para o [Fórum de cliente da Área de Trabalho Remota](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e inicie uma nova conversa. Tem alguma sugestão de recurso? Conte-nos no [Fórum de voz do usuário cliente](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).
+| Modo de mouse    | Ação do mouse         | Gesto                                                                 |
+|---------------|----------------------|-------------------------------------------------------------------------|
+| Toque direto  | Clique com o botão esquerdo do mouse           | Toque com um dedo                                                     |
+| Toque direto  | Clique com o botão direito do mouse          | Tocar com um dedo e segurar e soltar                              |
+| Ponteiro do mouse | Zoom                 | Usar dois dedos e pinçar para aplicar zoom ou aumentar o espaço entre os dedos para reduzi-lo. |
+| Ponteiro do mouse | Clique com o botão esquerdo do mouse           | Toque com um dedo                                                     |
+| Ponteiro do mouse | Clique com o botão esquerdo do mouse e arraste  | Tocar duas vezes e segurar com um dedo e arrastar                          |
+| Ponteiro do mouse | Clique com o botão direito do mouse          | Tocar com dois dedos                                                    |
+| Ponteiro do mouse | Clicar com o botão direito do mouse e arrastar | Tocar duas vezes e segurar com dois dedos e arrastar                         |
+| Ponteiro do mouse | Botão de rolagem do mouse          | Fechar e abrir dedos indicador e polegar e manter com dois dedos e arrastar para cima ou para baixo                     |
