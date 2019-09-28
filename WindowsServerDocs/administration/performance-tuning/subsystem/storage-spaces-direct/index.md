@@ -1,19 +1,19 @@
 ---
 title: Ajuste de desempenho para Espaços de Armazenamento Diretos
 description: Os Espaços de Armazenamento Diretos ajustam automaticamente o próprio desempenho com base na configuração de cache do hardware que você usar, conforme descrito neste tópico.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.assetid: 15a519fa-37cc-4d84-a9fe-097d33bb71ea
 author: phstee
 ms.author: Vshankar; DanLo; clausjor; StevenEk
 ms.date: 4/14/2017
-ms.openlocfilehash: 280d0e298afe5c9628fe73872e0983f819f2a3b1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dabfadb30666ec93aa36985e2bc55a3f496e6d34
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59891297"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383472"
 ---
 # <a name="performance-tuning-for-storage-spaces-direct"></a>Ajuste de desempenho para Espaços de Armazenamento Diretos
 
