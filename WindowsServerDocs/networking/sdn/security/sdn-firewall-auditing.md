@@ -1,32 +1,32 @@
 ---
 title: Auditoria de firewall SDN
-description: Auditoria de firewall é um novo recurso para o firewall do SDN no Windows Server 2019. Quando você habilita o firewall do SDN, qualquer fluxo processado pelas regras de firewall SDN (ACLs) que têm o registro em log habilitado obtém gravado.
+description: A auditoria de firewall é uma nova funcionalidade para o firewall de SDN no Windows Server 2019. Quando você habilita o Firewall do SDN, qualquer fluxo processado por ACLs (regras de firewall do SDN) que tenham o log habilitado é registrado.
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: pashort
 author: shortpatti
 ms.date: 08/22/2018
-ms.openlocfilehash: a73cdc443dd55b16f6e6cb187e001581620ce771
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 246adc6b4fd3ea130196cf1786f7fa130703de1a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890897"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355759"
 ---
 # <a name="sdn-firewall-auditing"></a>Auditoria de firewall SDN
 
 >Aplica-se a: Windows Server 2019
 
-Auditoria de firewall é um novo recurso para o firewall do SDN no Windows Server 2019. Quando você habilita o firewall do SDN, qualquer fluxo processado pelas regras de firewall SDN (ACLs) que têm o registro em log habilitado obtém gravado. Os arquivos de log devem estar em uma sintaxe que é consistente com o [logs de fluxo do observador de rede](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview). Esses logs podem ser usados para diagnósticos ou arquivados para análise posterior. 
+A auditoria de firewall é uma nova funcionalidade para o firewall de SDN no Windows Server 2019. Quando você habilita o Firewall do SDN, qualquer fluxo processado por ACLs (regras de firewall do SDN) que tenham o log habilitado é registrado. Os arquivos de log devem estar em uma sintaxe consistente com os [logs de fluxo do observador de rede do Azure](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview). Esses logs podem ser usados para diagnósticos ou arquivados para análise posterior. 
 
-Em breve, forneceremos alguns exemplos de como processar esses arquivos usando ferramentas como o Power BI.
+Em breve, forneceremos alguns exemplos de como processar esses arquivos usando ferramentas como Power BI.
 
-_**Experimente e envie seus comentários!**_
+_**Experimente e nos forneça comentários!**_
 
-Aqui está um exemplo de script para habilitar o firewall, auditoria nos hosts do Hyper-V. Atualize as variáveis no início e executá-lo em um computador Windows Server 2019 com o recurso de NetworkController RSAT instalado:
+Aqui está um script de exemplo para habilitar a auditoria de firewall nos hosts Hyper-V. Atualize as variáveis no início e execute-as em um computador com Windows Server 2019 com o recurso RSAT-NetworkController instalado:
 
 ```PowerShell
 $logpath = "C:\test\log1"
@@ -54,7 +54,7 @@ foreach ($s in $servers) {
 }
 ```
 
-Uma vez habilitada a um novo arquivo é exibido no diretório especificado em cada host de uma vez por hora.  Periodicamente, você deve processar esses arquivos e removê-los dos hosts.  O arquivo atual tem comprimento zero e é bloqueado até que liberados na próxima marca de hora:
+Uma vez habilitado, um novo arquivo aparece no diretório especificado em cada host aproximadamente uma vez por hora.  Você deve processar esses arquivos periodicamente e removê-los dos hosts.  O arquivo atual tem comprimento zero e está bloqueado até ser liberado na próxima marca de hora:
 
 ```syntax
 PS C:\test\log1> dir
@@ -100,7 +100,7 @@ Esses arquivos contêm uma sequência de eventos de fluxo, por exemplo:
 ```
 
 
-Observe, registro em log ocorre somente para regras que tenham **registro em log** definido como **habilitado**, por exemplo:
+Observe que o registro em log ocorre apenas para as regras que têm o **log** definido como **habilitado**, por exemplo:
 
 ```syntax
 {

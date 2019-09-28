@@ -1,27 +1,27 @@
 ---
 ms.assetid: f7f6bac2-1100-4b00-a248-4ca3eb3cdbe9
-title: Alterar o logotipo da empresa na página de entrada do AD FS
+title: Alterando o logotipo da empresa na página de entrada AD FS
 description: ''
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 03/08/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: fe5c138466ea288b5dfb8c7c284603150ab9d874
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: b22c969e0113081e1ca8a662ae81a2ee24829835
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190032"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358299"
 ---
-# <a name="changing-the-company-logo-on-the-ad-fs-sign-in-page"></a>Alterar o logotipo da empresa na página de entrada do AD FS
+# <a name="changing-the-company-logo-on-the-ad-fs-sign-in-page"></a>Alterando o logotipo da empresa na página de entrada AD FS
 
 #### <a name="change-company-logo"></a>Altere o logotipo da empresa  
-Para alterar o logotipo da empresa que é exibido no sinal de\-na página, use o seguinte cmdlet do PowerShell do Windows PowerShell e a sintaxe.  
+Para alterar o logotipo da empresa que é exibido na página assinar @ no__t-0in, use o seguinte cmdlet e sintaxe do PowerShell do Windows PowerShell.  
 
-![Alterar logotipo](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
+![alterar logotipo](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
   
 > [!IMPORTANT]  
 > Recomendamos que as dimensões para o logotipo sejam de 260x35 a 96 DPI com um arquivo que não exceda o tamanho de 10 KB.  
@@ -31,7 +31,7 @@ Para alterar o logotipo da empresa que é exibido no sinal de\-na página, use o
 
   
 > [!NOTE]  
-> O parâmetro `TargetName` é necessário. O tema padrão liberado com o AD FS é denominado *padrão*.  
+> O parâmetro `TargetName` é necessário. O tema padrão que é liberado com AD FS é denominado *padrão*.  
 
 ## <a name="additional-references"></a>Referências adicionais 
-[AD FS Sign-personalização de usuário](AD-FS-user-sign-in-customization.md)  
+[AD FS a personalização de entrada do usuário](AD-FS-user-sign-in-customization.md)  

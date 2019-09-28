@@ -2,33 +2,33 @@
 title: Visão geral das políticas de DNS
 description: Este tópico faz parte do guia de cenário de política DNS do Windows Server 2016
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 566bc270-81c7-48c3-a904-3cba942ad463
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 687864619c981b3ab8d24ef540c759bc29314c90
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 613bb7f43b382389dc0db953a48668147cfaee88
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544668"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356047"
 ---
 # <a name="dns-policies-overview"></a>Visão geral das políticas de DNS
 
 >Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Você pode usar este tópico para saber mais sobre a política DNS, que é nova no Windows Server 2016. Você pode usar a política DNS para gerenciamento de tráfego baseado em localização geográfica, respostas de DNS inteligente com base na hora do dia, para gerenciar um único servidor DNS\-configurado para implantação de divisão Brain, aplicação de filtros em consultas DNS e muito mais. Os itens a seguir fornecem mais detalhes sobre esses recursos.
+Você pode usar este tópico para saber mais sobre a política DNS, que é nova no Windows Server 2016. Você pode usar a política DNS para o gerenciamento de tráfego baseado na localização geográfica, respostas de DNS inteligente com base na hora do dia, para gerenciar um único servidor DNS configurado para a implantação de Split @ no__t-0brain, aplicar filtros em consultas DNS e muito mais. Os itens a seguir fornecem mais detalhes sobre esses recursos.
 
 -   **Balanceamento de carga do aplicativo.** Quando você implantou várias instâncias de um aplicativo em locais diferentes, você pode usar a política DNS para balancear a carga de tráfego entre as diferentes instâncias de aplicativo, alocando dinamicamente a carga de tráfego para o aplicativo.
 
--   **Gerenciamento\-de tráfego baseado na localização geográfica.** Você pode usar a política DNS para permitir que servidores DNS primários e secundários respondam a consultas de cliente DNS com base na localização geográfica do cliente e do recurso ao qual o cliente está tentando se conectar, fornecendo ao cliente o endereço IP do mais próximo Kit. 
+-   **Gerenciamento de tráfego baseado em @ no__t-1Location geográfico.** Você pode usar a política DNS para permitir que servidores DNS primários e secundários respondam a consultas de cliente DNS com base na localização geográfica do cliente e do recurso ao qual o cliente está tentando se conectar, fornecendo ao cliente o endereço IP do mais próximo Kit. 
 
--   **DNS de divisão de cérebro.** Com o\-DNS de divisão Brain, os registros DNS são divididos em escopos de zona diferentes no mesmo servidor DNS, e os clientes DNS recebem uma resposta com base no fato de os clientes serem clientes internos ou externos. Você pode configurar o\-DNS de divisão de cérebro para Active Directory zonas integradas ou para zonas em servidores DNS autônomos.
+-   **DNS de divisão de cérebro.** Com o DNS de divisão @ no__t-0brain, os registros DNS são divididos em escopos de zona diferentes no mesmo servidor DNS, e os clientes DNS recebem uma resposta com base em se os clientes são clientes internos ou externos. Você pode configurar o DNS de divisão @ no__t-0brain para Active Directory zonas integradas ou para zonas em servidores DNS autônomos.
 
 -   **Aplica.** Você pode configurar a política DNS para criar filtros de consulta baseados em critérios fornecidos por você. Os filtros de consulta na política DNS permitem configurar o servidor DNS para responder de uma maneira personalizada com base na consulta DNS e no cliente DNS que envia a consulta DNS. 
--   **Análise forense.** Você pode usar a política DNS para redirecionar clientes DNS mal-intencionados\-para um endereço IP não existente em vez de direcioná-los para o computador que estão tentando acessar.
+-   **Análise forense.** Você pode usar a política DNS para redirecionar clientes DNS mal-intencionados para um endereço IP que não seja @ no__t-0existent em vez de direcioná-los para o computador que estão tentando acessar.
 
 -   **Hora do redirecionamento com base no dia.** Você pode usar a política DNS para distribuir o tráfego de aplicativos em diferentes instâncias distribuídas geograficamente de um aplicativo usando políticas de DNS com base na hora do dia.
 
@@ -39,7 +39,7 @@ Para criar políticas para dar suporte aos cenários listados acima, é necessá
 
 - **Escopo da recursão:** os escopos de recursão são instâncias exclusivas de um grupo de configurações que controlam a recursão em um servidor DNS. Um escopo de recursão contém uma lista de encaminhadores e especifica se a recursão está habilitada. Um servidor DNS pode ter muitos escopos de recursão. As políticas de recursão do servidor DNS permitem que você escolha um escopo de recursão para um conjunto de consultas. Se o servidor DNS não for autoritativo para determinadas consultas, as políticas de recursão do servidor DNS permitirão que você controle como resolver essas consultas. Você pode especificar quais encaminhadores devem ser usados e se a recursão deve ser usada.
 
-- Escopos de **zona:** uma zona DNS pode ter vários escopos de zona, com cada escopo de zona contendo seu próprio conjunto de registros DNS. O mesmo registro pode estar presente em vários escopos, com endereços IP diferentes. Além disso, as transferências de zona são feitas no nível de escopo da zona. Isso significa que os registros de um escopo de zona em uma zona primária serão transferidos para o mesmo escopo de zona em uma zona secundária.
+- **Escopos de zona:** uma zona DNS pode ter vários escopos de zona, com cada escopo de zona contendo seu próprio conjunto de registros DNS. O mesmo registro pode estar presente em vários escopos, com endereços IP diferentes. Além disso, as transferências de zona são feitas no nível de escopo da zona. Isso significa que os registros de um escopo de zona em uma zona primária serão transferidos para o mesmo escopo de zona em uma zona secundária.
 
 ## <a name="types-of-policy"></a>Tipos de política
 
@@ -67,13 +67,13 @@ O campo de critérios de política DNS é composto por dois elementos:
 
 |              Nome               |                                         Descrição                                          |                                                                                                                               Valores de exemplo                                                                                                                               |
 |---------------------------------|----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|        **Sub-rede do cliente**        | Nome de uma sub-rede de cliente predefinida. Usado para verificar a sub-rede da qual a consulta foi enviada. |                             -   **EQ, Espanha, França** -resolve para verdadeiro se a sub-rede for identificada como Espanha ou França<br />-   **Ne, Canadá, México** -resolve para verdadeiro se a sub-rede do cliente for qualquer sub-rede diferente do Canadá e do México                             |
+|        **Sub-rede do cliente**        | Nome de uma sub-rede de cliente predefinida. Usado para verificar a sub-rede da qual a consulta foi enviada. |                             -   **EQ, Espanha, França** -resolve para verdadeiro se a sub-rede for identificada como a Espanha ou a França<br />-   **ne, Canadá, México** -resolve para verdadeiro se a sub-rede do cliente for qualquer sub-rede diferente do Canadá e do México                             |
 |     **Protocolo de transporte**      |        Protocolo de transporte usado na consulta. As entradas possíveis são **UDP** e **TCP**        |                                                                                                                    -   **EQ, TCP**<br />-   **EQ, UDP**                                                                                                                     |
 |      **Protocolo de Internet**      |        Protocolo de rede usado na consulta. As entradas possíveis são **IPv4** e **IPv6**        |                                                                                                                   -   **EQ, IPv4**<br />-   **EQ, IPv6**                                                                                                                    |
 | **Endereço IP da interface do servidor** |                   Endereço IP para a interface de rede do servidor DNS de entrada                   |                                                                                                              -   **EQ, 10.0.0.1**<br />-   **EQ, 192.168.1.1**                                                                                                              |
-|            **FULLY**             |            FQDN do registro na consulta, com a possibilidade de usar um curinga            | -   **EQ, www. contoso. com** -resolve para verdadeiro somente se a consulta estiver tentando resolver o FQDN do <em>www.contoso.com</em><br />-   **EQ,\*. contoso.com,\*. Woodgrove.com** -resolve para verdadeiro se a consulta for para qualquer registro que termina em *contoso.com***ou***Woodgrove.com* |
+|            **FULLY**             |            FQDN do registro na consulta, com a possibilidade de usar um curinga            | -   **EQ, www. contoso. com** -resolve para verdadeiro somente se a consulta estiver tentando resolver o FQDN do <em>www.contoso.com</em><br />-   **EQ, \*.contoso.com, \*.Woodgrove.com** -resolve para verdadeiro se a consulta for para qualquer registro que termina em *contoso.com***ou***Woodgrove.com* |
 |         **Tipo de consulta**          |                          Tipo de registro que está sendo consultado (A, SRV, TXT)                          |                                                  -   **EQ, txt, SRV** -resolve para verdadeiro se a consulta estiver solicitando um registro txt **ou** SRV<br />-   **EQ, MX** -resolve para verdadeiro se a consulta estiver solicitando um registro MX                                                   |
-|         **Hora do dia**         |                              Hora do dia em que a consulta é recebida                               |                                                                    -   **EQ, 10:00-12:00, 22:00-23:00** -resolve para verdadeiro se a consulta for recebida entre 10 a.m. e meio-dia, **ou** entre 19:10 e 23h                                                                    |
+|         **Hora do dia**         |                              Hora do dia em que a consulta é recebida                               |                                                                    -   **EQ, 10:00-12:00, 22:00-23:00** -resolve para verdadeiro se a consulta for recebida entre 10 am e meio-dia, **ou** entre 19:10 e 23h                                                                    |
 
 Usando a tabela acima como ponto de partida, a tabela a seguir pode ser usada para definir um critério que é usado para fazer a correspondência de consultas para qualquer tipo de registro, mas os registros SRV no domínio contoso.com provenientes de um cliente na sub-rede 10.0.0.0/24 via TCP entre 8 e 10 horas por meio de i 10.0.0.3 nterface:  
 

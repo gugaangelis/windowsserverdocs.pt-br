@@ -4,17 +4,17 @@ description: Este tópico faz parte do guia implantar certificados de servidor p
 manager: dougkim
 ms.topic: article
 ms.assetid: a1b5fa23-9cb1-4c32-916f-2d75f48b42c7
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
 ms.date: 07/19/2018
-ms.openlocfilehash: 9dbe14bec1c39ab5b967276c4faf3e9fc5a9aae3
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 335efc4fae1f12f2af8443e91c67ff6ba936edb0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546539"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356205"
 ---
 # <a name="copy-the-ca-certificate-and-crl-to-the-virtual-directory"></a>Copiar o certificado de autoridade de certificação e a CRL para o diretório virtual
 
@@ -22,7 +22,7 @@ ms.locfileid: "69546539"
 
 Você pode usar este procedimento para copiar a lista de certificados revogados e o certificado de autoridade de certificação raiz corporativa de sua autoridade de certificado para um diretório virtual no servidor Web e para garantir que o AD CS esteja configurado corretamente. Antes de executar os comandos a seguir, certifique-se de substituir os nomes de diretório e servidor pelos que são apropriados para sua implantação.  
   
-Para executar este procedimento, você deve ser membro de admins. do **domínio**.  
+Para executar este procedimento, você deve ser membro de **Admins**. do domínio.  
   
 #### <a name="to-copy-the-certificate-revocation-list-from-ca1-to-web1"></a>Para copiar a lista de certificados revogados de CA1 para WEB1  
   
@@ -30,11 +30,11 @@ Para executar este procedimento, você deve ser membro de admins. do **domínio*
   
     - Digite `certutil -crl` e pressione ENTER.  
 
-    - Para copiar o certificado CA1 para o compartilhamento de arquivos no seu servidor Web, `copy C:\Windows\system32\certsrv\certenroll\*.crt \\WEB1\pki`digite e pressione Enter.  
+    - Para copiar o certificado CA1 para o compartilhamento de arquivos no seu servidor Web, digite `copy C:\Windows\system32\certsrv\certenroll\*.crt \\WEB1\pki` e pressione ENTER.  
     
-    - Para copiar as listas de certificados revogados para o compartilhamento de arquivos no servidor Web, `copy C:\Windows\system32\certsrv\certenroll\*.crl \\WEB1\pki`digite e pressione Enter.  
+    - Para copiar as listas de certificados revogados para o compartilhamento de arquivos no servidor Web, digite `copy C:\Windows\system32\certsrv\certenroll\*.crl \\WEB1\pki` e pressione ENTER.  
   
-2.  Para verificar se os locais de extensão de CDP e AIA estão configurados corretamente, digite `pkiview.msc`e pressione Enter. O PKIView Enterprise PKI MMC é aberto.  
+2.  Para verificar se os locais de extensão de CDP e AIA estão configurados corretamente, digite `pkiview.msc` e pressione ENTER. O PKIView Enterprise PKI MMC é aberto.  
   
 3.  No painel esquerdo, clique no nome da autoridade de certificação.<p>Por exemplo, se o nome da sua autoridade de certificação for Corp-CA1-CA, clique em **Corp-CA1-CA**. 
 

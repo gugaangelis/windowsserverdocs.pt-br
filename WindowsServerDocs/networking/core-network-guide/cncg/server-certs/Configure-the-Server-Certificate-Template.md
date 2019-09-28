@@ -1,56 +1,56 @@
 ---
 title: Configurar o modelo de certificado do servidor
-description: Este tópico faz parte do guia de certificados de servidor de implantação para 802.1 X com fio e implantações sem fio
+description: Este tópico faz parte do guia implantar certificados de servidor para implantações com e sem fio 802.1 X
 manager: brianlic
 ms.topic: article
 ms.assetid: 8ff610e2-43ca-407f-a828-06d9366e02f0
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 238579c945821d19e45dad7e623450d598830596
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 35d5875c78dcd92f3b40b919568dabcf0d45d673
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886117"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356762"
 ---
 # <a name="configure-the-server-certificate-template"></a>Configurar o modelo de certificado do servidor
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Você pode usar este procedimento para configurar o modelo de certificado que o Active Directory&reg; serviços de certificados (AD CS) usa como base para certificados de servidor que são registrados em servidores em sua rede.  
+Você pode usar este procedimento para configurar o modelo de certificado que Active Directory os serviços de certificados @ no__t-0 (AD CS) são usados como base para certificados de servidor registrados em servidores na sua rede.  
   
-Ao configurar este modelo, você pode especificar os servidores de grupo do Active Directory que devem receber automaticamente um certificado de servidor do AD CS.   
+Ao configurar esse modelo, você pode especificar os servidores por Active Directory grupo que deve receber automaticamente um certificado de servidor do AD CS.   
   
-O procedimento a seguir inclui instruções para configurar o modelo para emitir certificados para todos os tipos de servidor a seguir:  
+O procedimento a seguir inclui instruções para configurar o modelo para emitir certificados para todos os seguintes tipos de servidor:  
   
-- Servidores que estão executando o serviço de acesso remoto, incluindo servidores de Gateway de RAS, que são membros de **servidores RAS e IAS** grupo.  
-- Servidores que estão executando o serviço servidor de diretivas de rede (NPS) que são membros do **servidores RAS e IAS** grupo.  
+- Servidores que executam o serviço de acesso remoto, incluindo servidores de gateway de RAS, que são membros do grupo de **Servidores RAS e ias** .  
+- Servidores que executam o serviço de servidor de diretivas de rede (NPS) que são membros do grupo de **Servidores RAS e ias** .  
   
 A associação aos grupos **Administradores de Empresa** e **Admins. do Domínio** do domínio raiz é o mínimo exigido para executar este procedimento.  
   
 ### <a name="to-configure-the-certificate-template"></a>Para configurar o modelo de certificado  
   
-1.  No CA1, no Gerenciador do servidor, clique em **ferramentas**e, em seguida, clique em **autoridade de certificação**. A certificação autoridade Microsoft Management Console (MMC) é aberto.  
+1.  Em CA1, em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, clique em **autoridade de certificação**. O MMC (console de gerenciamento Microsoft) da autoridade de certificação é aberto.  
   
-2.  No MMC, clique duas vezes o nome da autoridade de certificação, clique com botão direito **modelos de certificado**e, em seguida, clique em **gerenciar**.  
+2.  No MMC, clique duas vezes no nome da autoridade de certificação, clique com o botão direito do mouse em **modelos de certificado**e clique em **gerenciar**.  
   
-3.  Abre o console de modelos de certificado. Todos os modelos de certificado são exibidos no painel de detalhes.  
+3.  O console modelos de certificado é aberto. Todos os modelos de certificado são exibidos no painel de detalhes.  
   
-4.  No painel de detalhes, clique no **servidores RAS e IAS** modelo.  
+4.  No painel de detalhes, clique no modelo de **servidor RAS e ias** .  
   
-5.  Clique o **ação** menu e clique **Duplicar modelo**. O modelo **propriedades** caixa de diálogo é aberta.  
+5.  Clique no menu **ação** e, em seguida, clique em **duplicar modelo**. A caixa de diálogo **Propriedades** do modelo é aberta.  
   
 6.  Clique na guia **Segurança**.   
   
-7.  Sobre o **segurança** guia **nomes de grupo ou usuário**, clique em **servidores RAS e IAS**.  
+7.  Na guia **segurança** , em **nomes de grupo ou de usuário**, clique em **Servidores RAS e ias**.  
   
-8.  Na **permissões para servidores RAS e IAS**, em **permitir**, certifique-se de que **registrar** está selecionado e, em seguida, selecione o **registrar automaticamente** verificar caixa. Clique em **Okey**e feche o MMC de modelos de certificado.  
+8.  Em **permissões para servidores RAS e ias**, em **permitir**, verifique se o **registro** está selecionado e marque a caixa de seleção **registro automático** . Clique em **OK**e feche o MMC modelos de certificado.  
   
-9.  No MMC de autoridade de certificação, clique em **modelos de certificado**. Sobre o **ação** , aponte para **New**e, em seguida, clique em **modelo de certificado a ser emitido**. A caixa de diálogo **Ativar Modelos de Certificado** é aberta.  
+9.  No MMC da autoridade de certificação, clique em **modelos de certificado**. No menu **ação** , aponte para **novo**e clique em **modelo de certificado a ser emitido**. A caixa de diálogo **Ativar Modelos de Certificado** é aberta.  
   
-10. Na **Ativar modelos de certificado**, clique no nome do modelo de certificado que você acabou a configurado e, em seguida, clique em **Okey**. Por exemplo, se você não alterou o nome padrão do modelo de certificado, clique em **cópia dos servidores RAS e IAS**e, em seguida, clique em **Okey**.  
+10. Em **habilitar modelos de certificado**, clique no nome do modelo de certificado que você acabou de configurar e, em seguida, clique em **OK**. Por exemplo, se você não alterou o nome do modelo de certificado padrão, clique em **cópia do servidor RAS e ias**e, em seguida, clique em **OK**.  
   
 
 

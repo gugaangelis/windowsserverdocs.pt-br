@@ -1,25 +1,25 @@
 ---
 title: Configurar um servidor de arquivos existente como um servidor de conteúdo
-description: Este tópico faz parte do BranchCache implantação guia para o Windows Server 2016, que demonstra como implantar o BranchCache nos modos de cache hospedado e distribuído para otimizar o uso de largura de banda WAN em filiais
+description: Este tópico faz parte do guia de implantação do BranchCache para o Windows Server 2016, que demonstra como implantar o BranchCache em modos de cache distribuídos e hospedados para otimizar o uso de largura de banda WAN em filiais
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: bdac7d2a-25b4-4f61-bed1-b290700c18f3
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: d031e8aa853849c322692552ca9107838cebb5e5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f675322c32db0816d5afb155d53fad9f096ad650
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866907"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356685"
 ---
 # <a name="configure-an-existing-file-server-as-a-content-server"></a>Configurar um servidor de arquivos existente como um servidor de conteúdo
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Você pode usar este procedimento para instalar o **BranchCache para arquivos de rede** serviço de função da função de servidor Serviços de arquivo em um computador executando o Windows Server 2016.  
+Você pode usar este procedimento para instalar o **BranchCache para** o serviço de função de arquivos de rede da função de servidor de serviços de arquivo em um computador que executa o Windows Server 2016.  
   
 > [!IMPORTANT]  
 > Se a função de servidor de Serviços de Arquivo ainda não estiver instalada, não execute este procedimento. Em vez disso, consulte [instalar um novo servidor de arquivos como um servidor de conteúdo](../../branchcache/deploy/Install-a-New-File-Server-as-a-Content-Server.md).  
@@ -31,30 +31,30 @@ A associação a **Administradores** ou equivalente é o requisito mínimo para 
 >   
 > `Install-WindowsFeature FS-BranchCache -IncludeManagementTools`  
 >   
-> Para instalar o serviço de função de eliminação de duplicação de dados, digite o seguinte comando e pressione ENTER.  
+> Para instalar o serviço de função eliminação de duplicação de dados, digite o comando a seguir e pressione ENTER.  
 >   
 > `Install-WindowsFeature FS-Data-Deduplication -IncludeManagementTools`  
   
-### <a name="to-install-the-branchcache-for-network-files-role-service"></a>Para instalar o BranchCache para arquivos de rede  
+### <a name="to-install-the-branchcache-for-network-files-role-service"></a>Para instalar o BranchCache para o serviço de função de arquivos de rede  
   
-1.  No Gerenciador do Servidor, clique em **Gerenciar**e depois em **Adicionar Funções e Recursos**. Abre o assistente Adicionar funções e recursos. Clique em **Avançar**.  
+1.  No Gerenciador do Servidor, clique em **Gerenciar**e depois em **Adicionar Funções e Recursos**. O assistente Adicionar funções e recursos é aberto. Clique em **Avançar**.  
   
-2.  Na **Selecionar tipo de instalação**, certifique-se de que **instalação baseada em função ou recurso** está selecionado e, em seguida, clique em **próxima**.  
+2.  Em **Selecionar tipo de instalação**, verifique se a instalação baseada em **função ou em recurso** está selecionada e clique em **Avançar**.  
   
-3.  Na **Selecionar servidor de destino**, certifique-se de que o servidor correto está selecionado e, em seguida, clique em **próxima**.  
+3.  Em **selecionar servidor de destino**, verifique se o servidor correto está selecionado e clique em **Avançar**.  
   
-4.  Na **selecionar funções de servidor**, na **funções**, observe que o **serviços de arquivo e armazenamento** função já está instalada e clique na seta à esquerda do nome da função para expandir o seleção de serviços de função e, em seguida, clique na seta à esquerda do **arquivo e iSCSI serviços**.  
+4.  Em **selecionar funções de servidor**, em **funções**, observe que a função **serviços de arquivo e armazenamento** já está instalada; Clique na seta à esquerda do nome da função para expandir a seleção de serviços de função e, em seguida, clique na seta à esquerda de **serviços de arquivo e iSCSI**.  
   
-5.  Marque a caixa de seleção **BranchCache para arquivos de rede**.  
+5.  Marque a caixa de seleção do **BranchCache para arquivos de rede**.  
   
     > [!TIP]  
-    > Se você ainda não fez isso, é recomendável que você também pode selecionar a caixa de seleção **eliminação de duplicação de dados**.  
+    > Se você ainda não tiver feito isso, é recomendável marcar também a caixa de seleção para **eliminação de duplicação de dados**.  
   
     Clique em **Avançar**.  
   
-6.  Na **selecionar recursos**, clique em **próxima**.  
+6.  Em **selecionar recursos**, clique em **Avançar**.  
   
-7.  Na **confirmar seleções de instalação**, examine suas seleções e, em seguida, clique em **instalar**. O **progresso da instalação** painel é exibido durante a instalação. Quando a instalação for concluída, clique em **fechar**.  
+7.  Em **confirmar seleções de instalação**, examine suas seleções e clique em **instalar**. O painel **progresso da instalação** é exibido durante a instalação. Quando a instalação for concluída, clique em **fechar**.  
   
 
 

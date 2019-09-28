@@ -1,9 +1,9 @@
 ---
 title: Agrupamento incorporado do comutador para SDN
-description: Você pode usar este tópico para obter uma visão geral de Switch Embedded Teaming no Windows Server 2016.
+description: Você pode usar este tópico para obter uma breve visão geral do conjunto de equipes inseridas no Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -12,19 +12,19 @@ ms.topic: article
 ms.assetid: aa5b5d11-3921-44f9-8e14-e378c75fca76
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ff59390b54adba42e677d73e559f2fd8dd42c571
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 32f35eccfe55b01a0f3326df2bda9db26a23abe2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832437"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355634"
 ---
 # <a name="switch-embedded-teaming-for-sdn"></a>Agrupamento incorporado do comutador para SDN
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-CONJUNTO é uma solução alternativa do agrupamento NIC que você pode usar em ambientes que incluem o Hyper-V e a pilha de Software Defined Networking (SDN) no Windows Server 2016. CONJUNTO integra algumas funcionalidades de agrupamento NIC no comutador Virtual do Hyper-V. 
+O conjunto é uma solução de agrupamento NIC alternativa que você pode usar em ambientes que incluem o Hyper-V e a pilha de SDN (rede definida pelo software) no Windows Server 2016. O conjunto integra algumas funcionalidades de agrupamento NIC ao comutador virtual Hyper-V. 
 
-CONJUNTO permite que você agrupe entre uma e oito Ethernet adaptadores de rede física em um ou mais adaptadores de rede virtual baseada em software. Esses adaptadores de rede virtual oferecem desempenho rápido e tolerância a falhas no caso de uma falha do adaptador de rede.
+SET permite que você agrupe entre um e oito adaptadores de rede Ethernet física em um ou mais adaptadores de rede virtual baseados em software. Esses adaptadores de rede virtual oferecem desempenho rápido e tolerância a falhas no caso de uma falha do adaptador de rede.
 
-Para obter mais informações, consulte [acesso direto à memória remoto (RDMA) e Switch Embedded Teaming (SET)](../../../virtualization//hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).
+Para obter mais informações, consulte [acesso remoto direto à memória (RDMA) e Comutador incorporado (Set)](../../../virtualization//hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).

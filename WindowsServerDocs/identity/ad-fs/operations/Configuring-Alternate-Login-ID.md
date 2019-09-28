@@ -7,14 +7,14 @@ ms.author: billmath
 manager: mtillman
 ms.date: 11/14/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 586f2d7b73c6017f8b69103a09f6b38bb31f542d
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 12c47f98af24331b25355178370cc4cd28c0aa10
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865797"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358048"
 ---
 # <a name="configuring-alternate-login-id"></a>Configurar a ID de logon alternativa
 
@@ -156,7 +156,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 
 ### <a name="non-exchange-and-skype-for-business-clients"></a>Clientes não Exchange e Skype for Business
 
-|Cliente|Instrução de suporte|Comentários|
+|Remota|Instrução de suporte|Comentários|
 | ----- | -----|-----|
 |Microsoft Teams|Suportado|<li>O Microsoft Teams dá suporte a AD FS (SAML-P, WS-enalimentate, WS-Trust e OAuth) e à autenticação moderna.</li><li> As principais equipes da Microsoft, como canais, chats e arquivos funcionais, funcionam com a ID de logon alternativa.</li><li>os aplicativos de primeira e de terceiros devem ser investigados separadamente pelo cliente. Isso ocorre porque cada aplicativo tem seus próprios protocolos de autenticação de suporte.</li>|     
 |OneDrive for Business|Com suporte-chave do registro do lado do cliente recomendada |Com a ID alternativa configurada, você vê que o UPN local é preenchido previamente no campo de verificação. Isso precisa ser alterado para a identidade alternativa que está sendo usada. É recomendável usar a chave do registro do lado do cliente indicada neste artigo: O Office 2013 e o Lync 2013 solicitam periodicamente credenciais para o SharePoint Online, OneDrive e Lync Online.|
@@ -165,7 +165,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 
 ### <a name="exchange-and-skype-for-business-clients"></a>Clientes do Exchange e Skype for Business
 
-|Cliente|Instrução de suporte-com HMA|Instrução de suporte-sem HMA|
+|Remota|Instrução de suporte-com HMA|Instrução de suporte-sem HMA|
 | ----- |----- | ----- |
 |Outlook|Com suporte, sem prompts extras|Suportado</br></br>Com a **autenticação moderna** para o Exchange Online: Suportado</br></br>Com a **autenticação regular** para o Exchange Online: Com suporte com as seguintes advertências:</br><li>Você deve estar em um computador ingressado no domínio e conectado à rede corporativa </li><li>Você só pode usar a ID alternativa em ambientes que não permitem acesso externo para usuários de caixa de correio. Isso significa que os usuários só podem se autenticar em sua caixa de correio de forma compatível quando estão conectados e ingressados na rede corporativa, em uma VPN ou conectados por meio de máquinas de acesso direto, mas você obtém alguns prompts adicionais ao configurar seu perfil do Outlook.| 
 |Pastas públicas híbridas|Com suporte, sem prompts adicionais.|Com a **autenticação moderna** para o Exchange Online: Suportado</br></br>Com a **autenticação regular** para o Exchange Online: Sem Suporte</br></br><li>As pastas públicas híbridas não poderão ser expandidas se forem usadas IDs alternativas e, portanto, não deverão ser usadas hoje com métodos de autenticação regulares.|
@@ -212,7 +212,7 @@ A seguir estão os vários casos de erro e o impacto correspondente na experiên
 
 
 
-|                       **Casos de erro**                        | **Impacto na experiência de entrada** |                                                              **Event**                                                              |
+|                       **Casos de erro**                        | **Impacto na experiência de entrada** |                                                              **Circunstância**                                                              |
 |--------------------------------------------------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | Não é possível obter um valor para SAMAccountName para o objeto de usuário |          Falha de logon           |                  ID do evento 364 com a mensagem de exceção MSIS8012: Não é possível localizar samAccountName para o usuário:{0}' '.                   |
 |        O atributo Canôniconame não está acessível         |          Falha de logon           |               ID do evento 364 com a mensagem de exceção MSIS8013: Canônicaname: '{0}' do usuário: '{1}' está em formato inadequado.                |

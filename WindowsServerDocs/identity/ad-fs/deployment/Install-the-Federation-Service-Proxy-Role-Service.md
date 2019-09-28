@@ -6,48 +6,48 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 6e78c52f1928a3401c0532ab7c25616b012a1d8b
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 1f66e863c28aea7c9214c8363328a103b0a92f06
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192104"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359572"
 ---
 # <a name="install-the-federation-service-proxy-role-service"></a>Instalar o serviço de função de proxy do Serviço de Federação
 
-Depois de configurar um computador com os aplicativos de pré-requisitos e os certificados, você está pronto para instalar o serviço de função Proxy do serviço de Federação dos serviços de Federação do Active Directory \(do AD FS\). Você pode usar o procedimento a seguir para instalar o serviço de função Proxy do serviço de Federação. Quando você instala o serviço de função Proxy do serviço de Federação em um computador, esse computador torna-se um proxy do servidor de Federação.  
+Depois de configurar um computador com os aplicativos e certificados de pré-requisito, você estará pronto para instalar o serviço de função Proxy do Serviço de Federação do Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1. Você pode usar o procedimento a seguir para instalar o serviço de função Proxy do Serviço de Federação. Quando você instala o serviço de função Proxy do Serviço de Federação em um computador, esse computador torna-se um proxy de servidor de Federação.  
   
-A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e associações de grupos em [domínio grupos padrão Local e](https://go.microsoft.com/fwlink/?LinkId=83477).   
+A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
-### <a name="to-install-the-federation-service-proxy-role-service-using-the-server-manager"></a>Para instalar o serviço de função Proxy do serviço de Federação usando o Gerenciador do servidor
+### <a name="to-install-the-federation-service-proxy-role-service-using-the-server-manager"></a>Para instalar o serviço de função Proxy do Serviço de Federação usando o Gerenciador do Servidor
   
-1.  Sobre o **inicie** tela, digite**Gerenciador do servidor**, e, em seguida, pressione ENTER.  
+1.  Na tela **Iniciar** , digite**Gerenciador do servidor**e pressione Enter.  
   
-2.  Clique em **Manage**e, em seguida, clique em **para adicionar funções e recursos** para iniciar o assistente Adicionar funções e recursos.  
+2.  Clique em **gerenciar**e em **adicionar funções e recursos** para iniciar o assistente para adicionar funções e recursos.  
   
 3.  Na página **Antes de começar** , clique em **Avançar**.  
   
-4.  Sobre o **Selecionar tipo de instalação** , clique em **função\-ou em recurso\-instalação baseada em**e clique em **Avançar**.  
+4.  Na página **Selecionar tipo de instalação** , clique em **função @ no__t-2based ou recurso @ no__t-3based instalação**e clique em **Avançar**.  
   
-5.  Sobre o **Selecionar servidor de destino** , clique em **selecione um servidor no pool de servidores**, verifique se o computador de destino é realçado e, em seguida, clique em **próxima**.  
+5.  Na página **selecionar servidor de destino** , clique em **selecionar um servidor no pool de servidores**, verifique se o computador de destino está realçado e clique em **Avançar**.  
   
-6.  Sobre o **selecionar funções de servidor** , clique em **acesso remoto**e, em seguida, clique em Avançar.  
+6.  Na página **selecionar funções de servidor** , clique em **acesso remoto**e, em seguida, clique em Avançar.  
   
     > [!NOTE]  
-    > Se você for solicitado a instalar recursos adicionais do .NET Framework ou o serviço de ativação de processos do Windows, clique em **adicionar recursos** instalá-los.  
+    > Se for solicitado que você instale .NET Framework adicionais ou recursos do serviço de ativação de processos do Windows, clique em **Adicionar recursos** para instalá-los.  
   
-7. Sobre o **selecionar serviços de função** , selecione o **Proxy do serviço de Federação** caixa de seleção e, em seguida, clique em **próxima**.  
+7. Na página **selecionar serviços de função** , marque a caixa de seleção **proxy do serviço de Federação** e clique em **Avançar**.  
 
 8. Depois de verificar as informações na página **Confirmar seleções de instalação** , marque a caixa de seleção **Reiniciar cada servidor de destino automaticamente, se necessário** e clique em **Instalar**.  
   
 13. Na página **Progresso da instalação**, verifique se tudo foi instalado corretamente e clique em **Fechar**.  
 
-### <a name="to-install-the-federation-service-proxy-role-service-using-powershell"></a>Para instalar o serviço de função Proxy do serviço de Federação usando o PowerShell
+### <a name="to-install-the-federation-service-proxy-role-service-using-powershell"></a>Para instalar o serviço de função de Proxy do Serviço de Federação usando o PowerShell
 
-1. Abra o Windows PowerShell (Executar como administrador)
+1. Abrir o Windows PowerShell (executar como administrador)
 
 2. Digite o seguinte comando e pressione **Enter**:
 

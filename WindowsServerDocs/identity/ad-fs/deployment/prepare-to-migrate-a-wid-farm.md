@@ -1,30 +1,30 @@
 ---
-title: Preparar para migrar um farm WID do AD FS 2.0
-description: Fornece informações sobre a preparação migrar um farm WID do AD FS 2.0 server para o Windows Server 2012.
+title: Preparar para migrar um farm WID AD FS 2,0
+description: Fornece informações sobre como preparar-se para migrar um farm de WID do servidor AD FS 2,0 para o Windows Server 2012.
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 06/28/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a0e4bb77003ab24e0e31268509fb8667a671bea6
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: e6612856a2e00c47e9cc87c75c802ff86697b781
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445528"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359263"
 ---
-# <a name="prepare-to-migrate-an-ad-fs-20-wid-farm"></a>Preparar para migrar um farm WID do AD FS 2.0  
- Para preparar a migração do AD FS servidores de Federação 2.0 que pertencem a um farm de banco de dados interno do Windows (WID) para o Windows Server 2012, você deve exportar e fazer backup dos dados de configuração do AD FS desses servidores.  
+# <a name="prepare-to-migrate-an-ad-fs-20-wid-farm"></a>Preparar para migrar um farm WID AD FS 2,0  
+ Para se preparar para migrar AD FS servidores de Federação 2,0 que pertencem a um farm do banco de dados interno do Windows (WID) para o Windows Server 2012, você deve exportar e fazer backup dos dados de configuração do AD FS desses servidores.  
   
  Para exportar os dados de configuração do AD FS, realize as seguintes tarefas:  
   
--   [Etapa 1: - exportar configurações de serviço](#step-1-export-service-settings)  
+-   [Etapa 1:-exportar configurações de serviço](#step-1-export-service-settings)  
   
--   [Etapa 2: Fazer backup de repositórios de atributos personalizados](#step-2-back-up-custom-attribute-stores)  
+-   [Etapa 2: Fazer backup de repositórios de atributos personalizados @ no__t-0  
   
--   [Etapa 3: Fazer backup de personalizações de página da Web](#step-3-back-up-webpage-customizations)  
+-   [Etapa 3: Fazer backup de personalizações de página da Web @ no__t-0  
   
 ## <a name="step-1-export-service-settings"></a>Etapa 1: Exportar configurações do serviço  
  Para exportar configurações de serviço, realize o seguinte procedimento:  
@@ -56,8 +56,8 @@ Para encontrar o valor da identidade, examine a coluna **Fazer logon como** do *
  Para fazer backup de todas as personalizações de página da Web, copie as páginas da Web do AD FS e o arquivo **web.config** do diretório mapeado para o caminho virtual **“/adfs/ls”** no IIS. Por padrão, ele fica no diretório **%systemdrive%\inetpub\adfs\ls**.  
 
 ## <a name="next-steps"></a>Próximas etapas
- [Preparar para migrar o servidor do AD FS 2.0 Federation](prepare-to-migrate-ad-fs-fed-server.md)   
- [Preparar para migrar o Proxy do AD FS 2.0 Federation Server](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [Migrar o servidor do AD FS 2.0 Federation](migrate-the-ad-fs-fed-server.md)   
- [Migrar o Proxy do AD FS 2.0 Federation Server](migrate-the-ad-fs-2-fed-server-proxy.md)   
+ [Preparar para migrar o servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
+ [Preparar para migrar o proxy do servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-proxy.md)   
+ [Migrar o servidor de federação AD FS 2,0](migrate-the-ad-fs-fed-server.md)   
+ [Migrar o proxy do servidor de federação AD FS 2,0](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [Migrar os Agentes Web do AD FS 1.1](migrate-the-ad-fs-web-agent.md)

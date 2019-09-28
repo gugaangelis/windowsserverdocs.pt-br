@@ -6,14 +6,14 @@ ms.author: billmath
 manager: femila
 ms.date: 07/10/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: d72217d9e8dc3b0f47382e08346dca977ac14b67
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9e947f1894516de232a0db50bcbb56c7452098cd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867925"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359424"
 ---
 # <a name="migrate-the-ad-fs-20-federation-server-to-ad-fs-on-windows-server-2012-r2"></a>Migrar o servidor de Federação AD FS 2,0 para AD FS no Windows Server 2012 R2
 
@@ -103,14 +103,14 @@ Get-ADFSClaimDescription | Out-File “.\claimtypes.txt”`.
   
 ###  <a name="to-export-claims-provider-trusts-and-relying-party-trusts"></a>Para exportar os objetos de confiança do provedor de declarações e da terceira parte confiável  
   
-1.  Para exportar AD FS relações de confiança de provedor de declarações e confianças de terceira parte confiável, você deve fazer logon como administrador (no entanto, não como o administrador de domínio) em seu servidor de Federação e executar o seguinte script do Windows PowerShell que está localizado na **mídia/server_support pasta/ADFS** do CD de instalação do Windows Server 2012 R2 `export-federationconfiguration.ps1`:.  
+1.  Para exportar AD FS relações de confiança de provedor de declarações e confianças de terceira parte confiável, você deve fazer logon como administrador (no entanto, não como o administrador de domínio) em seu servidor de Federação e executar o seguinte script do Windows PowerShell que está localizado na **mídia/server_support pasta/ADFS** do CD de instalação do Windows Server 2012 R2: `export-federationconfiguration.ps1`.  
   
 > [!IMPORTANT]
 >  O script de exportação usa os seguintes parâmetros:  
 > 
-> - Export-FederationConfiguration. ps1-Path < String\> [-ComputerName < String\>] [-Credential < PSCredential\>] [-force] [-CertificatePassword < SecureString\>]  
->   -   Export-FederationConfiguration. ps1-Path < String\> [-ComputerName < String\>] [-Credential < PSCredential\>] [-force] [-CertificatePassword < SecureString\>] [- RelyingPartyTrustIdentifier < String [] >] [-ClaimsProviderTrustIdentifier < String [] >]  
->   -   Export-FederationConfiguration. ps1-Path < String\> [-ComputerName < String\>] [-Credential < PSCredential\>] [-force] [-CertificatePassword < SecureString\>] [- RelyingPartyTrustName < String [] >] [-ClaimsProviderTrustName < String [] >]  
+> - Export-FederationConfiguration. ps1-Path < String @ no__t-0 [-ComputerName < String @ no__t-1] [-Credential < PSCredential @ no__t-2] [-force] [-CertificatePassword < SecureString @ no__t-3]  
+>   -   Export-FederationConfiguration. ps1-Path < String @ no__t-0 [-ComputerName < String @ no__t-1] [-Credential < PSCredential @ no__t-2] [-force] [-CertificatePassword < SecureString @ no__t-3] [-RelyingPartyTrustIdentifier < String [] >] [-ClaimsProviderTrustIdentifier < String [] >]  
+>   -   Export-FederationConfiguration. ps1-Path < String @ no__t-0 [-ComputerName < String @ no__t-1] [-Credential < PSCredential @ no__t-2] [-force] [-CertificatePassword < SecureString @ no__t-3] [-RelyingPartyTrustName < String [] >] [- ClaimsProviderTrustName < String [] >]  
 > 
 >   **-RelyingPartyTrustIdentifier <string[]>** - o cmdlet só exporta objetos de confiança da terceira parte confiável cujos identificadores estão especificados na matriz de cadeia de caracteres. O padrão é não exportar NENHUM dos objetos de confiança da terceira parte confiável. Se RelyingPartyTrustIdentifier, ClaimsProviderTrustIdentifier, RelyingPartyTrustName e ClaimsProviderTrustName não estiverem especificados, o script exportará todos os objetos de confiança da terceira parte confiável e do provedor de declarações.  
 > 
@@ -130,7 +130,7 @@ Get-ADFSClaimDescription | Out-File “.\claimtypes.txt”`.
 > 
 >   **-CertificatePassword < SecureString\>**  -especifica uma senha para exportar chaves privadas de certificados AD FS. Se não estiver especificado, o script solicitará uma senha se um certificado do AD FS com chave privada precisar ser exportado.  
 > 
->   **Inputs**: Nenhum  
+>   **Inputs**: Nenhuma  
 > 
 >   **Outputs**: string - este cmdlet retorna o caminho da pasta de exportação. É possível canalizar o objeto retornado para Import-FederationConfiguration.  
   
@@ -193,9 +193,9 @@ import-federationconfiguration.ps1
 > [!IMPORTANT]
 >  O script de importação usa os seguintes parâmetros:  
 > 
-> - Import-FederationConfiguration. ps1-Path < String\> [-ComputerName < String\>] [-Credential < PSCredential\>] [-force] [-logPath < String\>] [-CertificatePassword < SecureString \>]  
->   -   Import-FederationConfiguration. ps1-Path < String\> [-ComputerName < String\>] [-Credential < PSCredential\>] [-force] [-logPath < String\>] [-CertificatePassword < SecureString \>] [-RelyingPartyTrustIdentifier < String [] >] [-ClaimsProviderTrustIdentifier < String [] >  
->   -   Import-FederationConfiguration. ps1-Path < String\> [-ComputerName < String\>] [-Credential < PSCredential\>] [-force] [-logPath < String\>] [-CertificatePassword < SecureString \>] [-RelyingPartyTrustName < String [] >] [-ClaimsProviderTrustName < String [] >]  
+> - Import-FederationConfiguration. ps1-Path < String @ no__t-0 [-ComputerName < String @ no__t-1] [-Credential < PSCredential @ no__t-2] [-force] [-LogPath < String @ no__t-3] [-CertificatePassword < SecureString @ no__t-4]  
+>   -   Import-FederationConfiguration. ps1-Path < String @ no__t-0 [-ComputerName < String @ no__t-1] [-Credential < PSCredential @ no__t-2] [-force] [-LogPath < String @ no__t-3] [-CertificatePassword < SecureString @ no__t-4] [- RelyingPartyTrustIdentifier < String [] >] [-ClaimsProviderTrustIdentifier < String [] >  
+>   -   Import-FederationConfiguration. ps1-Path < String @ no__t-0 [-ComputerName < String @ no__t-1] [-Credential < PSCredential @ no__t-2] [-force] [-LogPath < String @ no__t-3] [-CertificatePassword < SecureString @ no__t-4] [- RelyingPartyTrustName < String [] >] [-ClaimsProviderTrustName < String [] >]  
 > 
 >   **-RelyingPartyTrustIdentifier <string[]>** - o cmdlet só importa objetos de confiança da terceira parte confiável cujos identificadores estão especificados na matriz de cadeia de caracteres. O padrão é não importar NENHUM dos objetos de confiança da terceira parte confiável. Se RelyingPartyTrustIdentifier, ClaimsProviderTrustIdentifier, RelyingPartyTrustName e ClaimsProviderTrustName não estiverem especificados, o script importará todos os objetos de confiança da terceira parte confiável e do provedor de declarações.  
 > 

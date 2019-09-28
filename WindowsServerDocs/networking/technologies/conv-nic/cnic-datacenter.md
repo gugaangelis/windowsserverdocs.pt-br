@@ -1,7 +1,7 @@
 ---
 title: NIC convergida em uma configuração de NIC agrupada (Datacenter)
 description: Neste tópico, fornecemos instruções para implantar a NIC convergida em uma configuração de NIC agrupada com o switch Embedded Integration (SET).
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: f01546f8-c495-4055-8492-8806eee99862
@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 09/17/2018
-ms.openlocfilehash: 8229b72d69968d3690ece87d5116b215bdf78a08
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: e4c305a7c8c4c4618b0df1e1b2a646356d8f821f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869875"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356115"
 ---
 # <a name="converged-nic-in-a-teamed-nic-configuration-datacenter"></a>NIC convergida em uma configuração de NIC agrupada (Datacenter)
 
@@ -39,7 +39,7 @@ Verifique se a NIC física pode se conectar ao host de destino.  Esse teste demo
    _**Da**_
 
 
-   |    Nome    |           InterfaceDescription           | ifIndex | Status |    macAddress     | LinkSpeed |
+   |    Nome    |           InterfaceDescription           | IfIndex | Status |    macAddress     | LinkSpeed |
    |------------|------------------------------------------|---------|--------|-------------------|-----------|
    | Test-40G-1 | Adaptador Mellanox ConnectX-3 pro Ethernet |   11    |   Para cima   | E4-1D-2D-07-43-D0 |  40 Gbps  |
 
@@ -61,7 +61,7 @@ Verifique se a NIC física pode se conectar ao host de destino.  Esse teste demo
    | InterfaceIndex |     11      |
    | Aliasdeinterface | Test-40G-1  |
    | AddressFamily  |    IPv6     |
-   |      type      |   Unicast   |
+   |      Tipo      |   Unicast   |
    |  PrefixLength  |     24      |
 
    ---
@@ -75,7 +75,7 @@ Verifique se a NIC física pode se conectar ao host de destino.  Esse teste demo
    _**Da**_
 
 
-   |    Nome    |          InterfaceDescription           | ifIndex | Status |    macAddress     | LinkSpeed |
+   |    Nome    |          InterfaceDescription           | IfIndex | Status |    macAddress     | LinkSpeed |
    |------------|-----------------------------------------|---------|--------|-------------------|-----------|
    | TESTE-40G-2 | Mellanox ConnectX-3 pro Ethernet A... #2 |   13    |   Para cima   | E4-1D-2D-07-40-70 |  40 Gbps  |
 
@@ -97,7 +97,7 @@ Verifique se a NIC física pode se conectar ao host de destino.  Esse teste demo
    | InterfaceIndex |     13      |
    | Aliasdeinterface | TESTE-40G-2  |
    | AddressFamily  |    IPv6     |
-   |      Tipo      |   Unicast   |
+   |      type      |   Unicast   |
    |  PrefixLength  |     24      |
 
    ---
@@ -228,7 +228,7 @@ A imagem a seguir mostra dois hosts Hyper-V com dois adaptadores de rede cada um
    _**Da**_
 
 
-   |    Nome    |          InterfaceDescription           | ifIndex | Status |    macAddress     | LinkSpeed |
+   |    Nome    |          InterfaceDescription           | IfIndex | Status |    macAddress     | LinkSpeed |
    |------------|-----------------------------------------|---------|--------|-------------------|-----------|
    | Test-40G-1 | Mellanox ConnectX-3 pro Ethernet Ada... |   11    |   Para cima   | E4-1D-2D-07-43-D0 |  40 Gbps  |
 
@@ -265,7 +265,7 @@ A imagem a seguir mostra dois hosts Hyper-V com dois adaptadores de rede cada um
    _**Da**_
 
 
-   |    Nome    |          InterfaceDescription           | ifIndex | Status |    macAddress     | LinkSpeed |
+   |    Nome    |          InterfaceDescription           | IfIndex | Status |    macAddress     | LinkSpeed |
    |------------|-----------------------------------------|---------|--------|-------------------|-----------|
    | Teste-40G-2 | Mellanox ConnectX-3 pro Ethernet Ada... |   11    |   Para cima   | E4-1D-2D-07-43-D1 |  40 Gbps  |
 
@@ -442,7 +442,7 @@ A imagem a seguir mostra dois hosts Hyper-V com dois adaptadores de rede cada um
    |      Parâmetro      |   Hardware   |   Atual    |
    |---------------------|--------------|--------------|
    |    MacSecBypass     | Sem suporte | Sem suporte |
-   |     DcbxSupport     |     Nenhum     |     Nenhum     |
+   |     DcbxSupport     |     Nenhuma     |     Nenhuma     |
    | NumTCs (Max/ETS/PFC) |    8/8/8     |    8/8/8     |
 
    ---
@@ -486,7 +486,7 @@ A imagem a seguir mostra dois hosts Hyper-V com dois adaptadores de rede cada um
    |      Parâmetro      |   Hardware   |   Atual    |
    |---------------------|--------------|--------------|
    |    MacSecBypass     | Sem suporte | Sem suporte |
-   |     DcbxSupport     |     Nenhum     |     Nenhum     |
+   |     DcbxSupport     |     Nenhuma     |     Nenhuma     |
    | NumTCs (Max/ETS/PFC) |    8/8/8     |    8/8/8     |
 
    ---

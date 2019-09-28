@@ -7,13 +7,13 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 5df035b448b80aa147067004c6a2f14aa03a9684
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: d692251e1ba0fef43e4eeee6f259f26f4347f3c0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869092"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356879"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Gerenciar a infraestrutura hiperconvergente com o centro de administração do Windows
 
@@ -157,7 +157,7 @@ O centro de administração do Windows para infraestrutura hiperconvergente depe
 
 O Windows Admin Center não tem custo adicional além do Windows.
 
-Você pode usar o centro de administração do Windows (disponível como um download separado) com licenças válidas do Windows Server ou do Windows 10 sem custo adicional; ele é licenciado sob um EULA complementar do Windows.
+É possível usar o Windows Admin Center (disponível como um download separado) com licenças válidas do Windows Server ou Windows 10 sem custo adicional – ele é licenciado sob um EULA complementar do Windows.
 
 ### <a name="does-windows-admin-center-require-system-center"></a>O Windows Admin Center requer o System Center?
 
@@ -278,7 +278,7 @@ Você também pode configurar a rede virtual ao criar uma máquina virtual.
 
 ![Monitorar a infraestrutura de SDN](../media/manage-hyper-converged/sdn-monitoring.png)
 
-## <a name="feedback"></a>Comentários
+## <a name="feedback"></a>Privacidade Jurídica
 
 Isso é tudo sobre seus comentários! O benefício mais importante das atualizações frequentes é ouvir o que está funcionando e o que precisa ser melhorado. Aqui estão algumas maneiras de nos informar o que você está pensando:
 

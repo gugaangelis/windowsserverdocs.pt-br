@@ -1,5 +1,5 @@
 ---
-title: Proteger suas máquinas de virtuais do Hyper-V com o Azure Site Recovery e o Windows Admin Center
+title: Proteger suas máquinas virtuais do Hyper-V com o Azure Site Recovery e o centro de administração do Windows
 description: Use o Windows Admin Center (Project Honolulu) para proteger as máquinas virtuais do Hyper-V com o Azure Site Recovery.
 ms.technology: manage
 ms.topic: article
@@ -7,19 +7,19 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 07/17/2018
 ms.localizationpriority: low
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 66e9b2e23a60d1e4725321e88fc1ac262b9c31fa
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.prod: windows-server
+ms.openlocfilehash: 4995ed433d34fddfa91548fa42d67eea3a319c1f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445924"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357346"
 ---
-# <a name="protect-your-hyper-v-virtual-machines-with-azure-site-recovery-and-windows-admin-center"></a>Proteger suas máquinas de virtuais do Hyper-V com o Azure Site Recovery e o Windows Admin Center
+# <a name="protect-your-hyper-v-virtual-machines-with-azure-site-recovery-and-windows-admin-center"></a>Proteger suas máquinas virtuais do Hyper-V com o Azure Site Recovery e o centro de administração do Windows
 
->Aplica-se a: Visualização do Windows Admin Center, Windows Admin Center
+>Aplica-se a: Versão prévia do centro de administração do Windows, centro de administração do Windows
 
-[Saiba mais sobre a integração do Azure com Windows Admin Center.](../plan/azure-integration-options.md)
+[Saiba mais sobre a integração do Azure com o centro de administração do Windows.](../plan/azure-integration-options.md)
 
 O Windows Admin Center simplifica o processo de replicação de suas máquinas virtuais nos servidores do Hyper-V ou clusters, tornando mais fácil aproveitar os recursos do Windows Azure do seu próprio datacenter. Para automatizar a instalação, você pode conectar o gateway do Windows Admin Center no Azure.
 
@@ -40,7 +40,7 @@ A conclusão da instalação para o componente de replicação é suficiente par
 - [Conectar seu gateway do Windows Admin Center para Azure](azure-integration.md).
 - [Revisar a ferramenta de planejamento de capacidade para avaliar os requisitos de replicação com êxito e failover](https://docs.microsoft.com/azure/site-recovery/hyper-v-site-walkthrough-capacity).
 
-## <a name="step-1-set-up-vm-protection-on-your-target-host"></a>Etapa 1: Configurar a proteção de VM em seu host de destino
+## <a name="step-1-set-up-vm-protection-on-your-target-host"></a>Etapa 1: Configurar a proteção da VM no host de destino
 
 > [!NOTE] 
 > Você precisará executar esta etapa uma vez por servidor host ou cluster contendo VMs direcionado para proteção.
@@ -52,20 +52,20 @@ A conclusão da instalação para o componente de replicação é suficiente par
 5. Logon na conta do Azure.
 6. Insira as informações necessárias:
 
-   - **Assinatura:** A assinatura do Azure que você deseja usar para replicação de máquinas virtuais nesse host.
-   - **Local:** A região do Azure onde os recursos de ASR devem ser criados.
-   - **Conta de armazenamento:** A conta de armazenamento onde replicadas cargas de trabalho VM nesse host serão salvo.
-   - **Cofre:** Escolha um nome para o cofre do Azure Site Recovery para VMs protegidas neste host.
+   - **Scriçõe** A assinatura do Azure que você deseja usar para a replicação de VMs neste host.
+   - **Local:** A região do Azure em que os recursos de ASR devem ser criados.
+   - **Conta de armazenamento:** A conta de armazenamento em que as cargas de trabalho de VM replicadas neste host serão salvas.
+   - **Armazenadas** Escolha um nome para o cofre de Azure Site Recovery para VMs protegidas neste host.
 
 7. Selecione a **ASR de instalação**.
-8. Aguarde até que você veja a notificação: **Site Recovery definindo concluído**.
+8. Aguarde até que você veja a notificação: **Configuração de site Recovery concluída**.
  
 Isso pode levar até 10 minutos. Você pode observar o andamento em **Notificações** (o ícone de sino no canto superior direito).
 
 >[!NOTE]
 > Esta etapa automaticamente instala o agente de ASR no servidor de destino ou nós (se a configuração em um cluster), cria um **Grupo de recursos** com a **Conta de armazenamento** e o **Cofre** especificado, no **Local** especificado. Isso também registrar o host de destino com o serviço de ASR e configurar uma política de replicação padrão.
 
-## <a name="step-2-select-virtual-machines-to-protect"></a>Etapa 2: Selecione as máquinas virtuais para proteger
+## <a name="step-2-select-virtual-machines-to-protect"></a>Etapa 2: Selecionar máquinas virtuais para proteger
 
 1. Navegue de volta para o servidor ou cluster que você configurou na etapa 2 acima e vá para **Máquinas virtuais > Inventário**.
 2. Selecione a máquina virtual que você queira proteger.

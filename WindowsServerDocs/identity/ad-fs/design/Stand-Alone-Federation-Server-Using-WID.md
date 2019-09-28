@@ -7,29 +7,29 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 31e2e1b04383adc8bec12e7290a7acec80e0402f
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 5fa89a4a57c618fd711234b8770a35750f3099bd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190793"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358957"
 ---
 # <a name="stand-alone-federation-server-using-wid"></a>Servidor de federação autônomo usando WID
 
-Um modo de espera\-servidor de Federação autônomo nos serviços de Federação do Active Directory \(do AD FS\) consiste em um único servidor que hospeda um serviço de Federação configurados para usar o banco de dados interno do Windows \(WID\). Essa topologia do AD FS é para laboratórios de teste. Não recomendamos-lo para ambientes de produção porque ela tem um limite de apenas um servidor de federação, e ele não pode ser usado para escalar verticalmente para mais servidores.  
+Um servidor de Federação do stand @ no__t-0alone no Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-2 consiste em um único servidor que hospeda um Serviço de Federação configurado para usar o banco de dados interno do Windows \(WID @ no__t-4. Essa AD FS topologia é para os laboratórios de teste. Não é recomendável para ambientes de produção porque ele tem um limite de apenas um servidor de Federação e não pode ser usado para escalar verticalmente para mais servidores.  
   
-Se você quiser adicionar servidores de Federação adicionais ao seu laboratório de teste, você deve recompilar o serviço de Federação do zero com a implantação de qualquer uma das outras topologias mencionadas posteriormente nesta seção. Portanto, é recomendável que você use essa topologia para um laboratório de teste ou uma prova\-de\-ambiente conceito em sua rede privada de teste no qual um servidor de Federação único é adequado, conforme mostrado na ilustração a seguir.  
+Se desejar adicionar servidores de Federação adicionais ao laboratório de teste, você deverá recriar o Serviço de Federação do zero implantando qualquer uma das outras topologias mencionadas mais adiante nesta seção. Portanto, recomendamos que você use essa topologia para um laboratório de teste ou um ambiente de prova de @ no__t-0of @ no__t-1concept em sua rede de teste privada, na qual um único servidor de Federação é adequado, conforme mostrado na ilustração a seguir.  
   
-![servidor usando o WID](media/FedServerWID.gif)  
+![servidor usando WID](media/FedServerWID.gif)  
   
-## <a name="test-lab-considerations"></a>Considerações sobre o laboratório de teste  
-Esta seção descreve várias considerações sobre o público-alvo, benefícios e limitações que estão associadas com esta topologia para ambientes de laboratório de teste.  
+## <a name="test-lab-considerations"></a>Considerações de laboratório de teste  
+Esta seção descreve as várias considerações sobre o público-alvo, os benefícios e as limitações associados a essa topologia para ambientes de laboratório de teste.  
   
 ### <a name="who-should-use-this-topology"></a>Quem deve usar essa topologia?  
   
--   Tecnologia da informação \(IT\) profissionais ou arquitetos de TI que desejam avaliar ou desenvolver uma prova de conceito para esta tecnologia  
+-   Tecnologia da informação \(IT @ no__t-1 profissionais ou arquitetos de ti que desejam avaliar ou desenvolver uma prova de conceito para essa tecnologia  
   
 ### <a name="what-are-the-benefits-of-using-this-topology"></a>Quais são os benefícios de usar essa topologia?  
   
@@ -37,9 +37,9 @@ Esta seção descreve várias considerações sobre o público-alvo, benefícios
   
 ### <a name="what-are-the-limitations-of-using-this-topology"></a>Quais são as limitações do uso dessa topologia?  
   
--   Apenas um servidor de federação por serviço de Federação \(nenhuma capacidade de escalar verticalmente para um farm\)  
+-   Somente um servidor de Federação por Serviço de Federação recurso de \(no para escalar verticalmente para um farm @ no__t-1  
   
--   Não redundantes \(existe apenas uma única instância do banco de dados de configuração do AD FS\)  
+-   Não redundante \(only uma única instância do banco de dados de configuração AD FS existe @ no__t-1  
   
 
 ## <a name="see-also"></a>Consulte também

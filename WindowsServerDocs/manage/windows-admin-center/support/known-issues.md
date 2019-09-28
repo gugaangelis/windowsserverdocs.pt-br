@@ -6,14 +6,14 @@ ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: b222cd4b97beecd25c14b9f8f39627bf46cb7716
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: a579d0274ff4b53a72c17760a6d53ef796625d3a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869542"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356905"
 ---
 # <a name="windows-admin-center-known-issues"></a>Problemas conhecidos do Windows Admin Center
 
@@ -146,7 +146,7 @@ Se não estiver instalado, você pode [baixar e instalar 5.1 WMF](https://www.mi
 
 ### <a name="files"></a>Arquivos
 
-- Carregar ou baixar arquivos grandes que ainda não são suportados. (\~limite de 100 MB) [12524234]
+- Carregar ou baixar arquivos grandes que ainda não são suportados. (limite de @no__t 0100mb) [12524234]
 
 ### <a name="powershell"></a>PowerShell
 

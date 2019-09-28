@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5cf74042c9b511abb1fbeb88224dea0c7f2c8706
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 343e51f113f54c3965ef45d49f5d8fd64c260991
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812047"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357515"
 ---
 # <a name="dynamic-access-control-overview"></a>Visão geral do Controle de Acesso Dinâmico
 
@@ -24,7 +24,7 @@ Este tópico de visão geral para profissionais de TI descreve o Controle de Ace
   
 O Controle de Acesso Dinâmico baseado em domínio permite que os administradores apliquem permissões de controle de acesso e restrições baseadas em regras bem definidas que podem incluir a sensibilidade dos recursos, o emprego ou a função do usuário e a configuração do dispositivo que é usado para acessar esses recursos.  
   
-Por exemplo, um usuário podem ter permissões diferentes ao acessar um recurso de seu escritório diferentes de quando ele usa um computador portátil de uma rede privada virtual. Ou o acesso pode ser permitido somente quando um dispositivo atende aos requisitos de segurança definidos pelos administradores da rede. Quando o controle de acesso dinâmico for usado, permissões do usuário são alteradas dinamicamente sem intervenção adicional do administrador se o trabalho ou a função do usuário é alterado (resultando em alterações de atributos de conta do usuário no AD DS).  
+Por exemplo, um usuário podem ter permissões diferentes ao acessar um recurso de seu escritório diferentes de quando ele usa um computador portátil de uma rede privada virtual. Ou o acesso pode ser permitido somente quando um dispositivo atende aos requisitos de segurança definidos pelos administradores da rede. Quando o controle de acesso dinâmico é usado, as permissões de um usuário são alteradas dinamicamente sem intervenção adicional do administrador se o trabalho ou a função do usuário mudar (resultando em alterações nos atributos da conta do usuário no AD DS).  
   
 Não há suporte para o Controle de Acesso Dinâmico em sistemas operacionais anteriores ao Windows Server 2012 e ao Windows 8. Quando o Controle de Acesso Dinâmico é configurado em ambientes com versões do Windows com suporte e sem suporte, somente as versões com suporte implementarão as alterações.  
   
@@ -34,7 +34,7 @@ Recursos e conceitos associados ao Controle de Acesso Dinâmico incluem:
   
 -   [Políticas de acesso central](#BKMK_Policies)  
   
--   [declarações](#BKMK_Claims)  
+-   [Declarações](#BKMK_Claims)  
   
 -   [Expressões](#BKMK_Expressions2)  
   
@@ -46,7 +46,7 @@ Uma regra de acesso central é uma expressão de regras de autorização que pod
 Se uma ou mais regras de acesso central foram definidas para um domínio, os administradores de compartilhamento de arquivos podem corresponder regras específicas a requisitos específicos de recursos e negócios.  
   
 ### <a name="BKMK_Policies"></a>Políticas de acesso central  
-As políticas de acesso central são políticas de autorização que incluem expressões condicionais. Por exemplo, digamos que uma organização tem um requisito de negócios para restringir o acesso a informações de identificação pessoal (PII) em arquivos a apenas o proprietário do arquivo e os membros do departamento de RH (recursos humanos) que têm permissão para exibir informações PII. Isso representa uma política em toda a organização que se aplica a todos os arquivos PII onde estiverem localizados em servidores de arquivos em toda a organização. Para implementar esta política, uma empresa precisa ser capaz de:  
+As políticas de acesso central são políticas de autorização que incluem expressões condicionais. Por exemplo, digamos que uma organização tenha um requisito de negócios para restringir o acesso a PII (informações de identificação pessoal) em arquivos apenas ao proprietário do arquivo e aos membros do departamento de RH (recursos humanos) que têm permissão para exibir informações de PII. Isso representa uma política em toda a organização que se aplica a todos os arquivos PII onde estiverem localizados em servidores de arquivos em toda a organização. Para implementar esta política, uma empresa precisa ser capaz de:  
   
 -   Identificar e marcar os arquivos que contêm o PII.  
   
@@ -56,8 +56,8 @@ As políticas de acesso central são políticas de autorização que incluem exp
   
 As políticas de acesso central atuam como protetores de segurança que uma organização aplica em seus servidores. Essas políticas complementam (mas não substituem) as políticas de acesso local ou as listas de controle de acesso discricionário (DACLs) que são aplicadas a arquivos e pastas.  
   
-### <a name="BKMK_Claims"></a>declarações  
-Uma declaração é uma peça única de informação sobre um usuário, dispositivo ou recurso é publicada por um controlador de domínio. O cargo do usuário, a classificação de departamento de um arquivo ou o estado de integridade de um computador são exemplos válidos de uma declaração. Uma entidade pode envolver mais de uma declaração e qualquer combinação de declarações pode ser usada para autorizar o acesso a recursos. Os seguintes tipos de declarações estão disponíveis nas versões do Windows com suporte:  
+### <a name="BKMK_Claims"></a>Declarações  
+Uma declaração é uma peça única de informação sobre um usuário, dispositivo ou recurso é publicada por um controlador de domínio. O título do usuário, a classificação de departamento de um arquivo ou o estado de integridade de um computador são exemplos válidos de uma declaração. Uma entidade pode envolver mais de uma declaração e qualquer combinação de declarações pode ser usada para autorizar o acesso a recursos. Os seguintes tipos de declarações estão disponíveis nas versões do Windows com suporte:  
   
 -   **Declarações de usuário** Atributos do Active Directory que estão associados a um usuário específico.  
   
@@ -92,7 +92,7 @@ Todo controlador de domínio precisa ter a mesma configuração de política de 
 ### <a name="support-in-active-directory-to-store-user-and-device-claims-resource-properties-and-central-access-policy-objects"></a>Suporte no Active Directory para armazenar as declarações de usuários e dispositivos, as propriedades de recursos e os objetos de política de acesso central.  
   
 ### <a name="support-for-using-group-policy-to-deploy-central-access-policy-objects"></a>Suporte para usar a Política de Grupo para implantar os objetos de política de acesso central.  
-A seguinte configuração de diretiva de grupo permite que você implante os objetos de política de acesso central aos servidores de arquivos em sua organização: **Computador em tecnologia Windows de Configuration\Policies\ políticas Settings\File \ política de acesso**.  
+A configuração de Política de Grupo a seguir permite que você implante objetos de política de acesso central em servidores de arquivos em sua organização: **Computer Configuration\Policies\ Windows \ Settings\File System\Central Access Policy**.  
   
 ### <a name="support-for-claims-based-file-authorization-and-auditing-for-file-systems-by-using-group-policy-and-global-object-access-auditing"></a>Suporte à autorização de arquivo baseada em declarações e à auditoria de sistemas de arquivos usando a Política de Grupo e a Auditoria de Acesso a Objeto Global  
 Você deve habilitar a auditoria de políticas de acesso central de preparo para fazer auditoria do acesso efetivo da política de acesso central usando as permissões propostas. Defina essa configuração para o computador em **Configuração Avançada de Política de Auditoria** nas **Configurações de Segurança** de um objeto de Política de Grupo (GPO). Depois de definir a configuração de segurança no GPO, você poderá implantar o GPO nos computadores em sua rede.  
@@ -119,16 +119,16 @@ Para domínios que oferecem suporte a declarações de usuário, cada controlado
   
 -   **Com Suporte** Quando você usa esta configuração, monitore os controladores de domínio para garantir que o número de controladores de domínio que executa as versões do Windows Server com suporte é suficiente para o número de computadores clientes que precisam acessar os recursos protegidos pelo Controle de Acesso Dinâmico.  
   
-Se o domínio do usuário e domínio do servidor de arquivos estiverem em florestas diferentes, todos os controladores de domínio na raiz da floresta do servidor de arquivos devem ser definidos no Windows Server 2012 ou no nível funcional mais alto.  
+Se o domínio de usuário e o domínio do servidor de arquivos estiverem em florestas diferentes, todos os controladores de domínio na raiz da floresta do servidor de arquivos deverão ser definidos no nível funcional do Windows Server 2012 ou superior.  
   
 Se os clientes não reconhecerem o Controle de Acesso Dinâmico, deverá haver uma relação de confiança bidirecional entre duas florestas.  
   
-Se as declarações forem transformadas quando saem de uma floresta, todos os controladores de domínio na raiz da floresta do usuário devem ser definidos no Windows Server 2012 ou no nível funcional mais alto.  
+Se as declarações forem transformadas quando saírem de uma floresta, todos os controladores de domínio na raiz da floresta do usuário deverão ser definidos no nível funcional do Windows Server 2012 ou superior.  
   
 Um servidor de arquivos que executa o Windows Server 2012 ou Windows Server 2012 R2 deve ter uma configuração de Política de Grupo que especifica se é preciso obter declarações de usuário para tokens de usuário que não carregam declarações. Esta configuração é definida por padrão como **Automático**, o que resulta na **Habilitação** da configuração da Política de Grupo quando há uma política central que contém as declarações de usuário ou dispositivo para esse servidor de arquivos. Se o servidor de arquivos tiver ACLs discricionárias que incluem declarações de usuário, você precisará definir essa Política de Grupo como **Habilitada** para que o servidor saiba solicitar declarações em nome dos usuários que não as fornecem quando acessam o servidor.  
   
-## <a name="additional-resource"></a>Recursos adicionais  
-Para obter informações sobre como implementar soluções com base nessa tecnologia, consulte [controle de acesso dinâmico: Visão geral do cenário](Dynamic-Access-Control--Scenario-Overview.md).  
+## <a name="additional-resource"></a>Recurso adicional  
+Para obter informações sobre como implementar soluções baseadas nessa tecnologia, consulte controle de acesso [Dynamic: Visão geral do cenário @ no__t-0.  
   
 
 

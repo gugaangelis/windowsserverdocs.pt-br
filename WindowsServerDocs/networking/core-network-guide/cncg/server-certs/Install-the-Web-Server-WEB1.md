@@ -1,47 +1,47 @@
 ---
 title: Instalar o servidor Web WEB1
-description: Este tópico faz parte do guia de certificados de servidor de implantação para 802.1 X com fio e implantações sem fio
+description: Este tópico faz parte do guia implantar certificados de servidor para implantações com e sem fio 802.1 X
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: f51c9e38-98bb-49c1-9d39-427d07021499
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 15da16094a47a2492dc9054e0671c3709fe23362
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6ad8106c9c8330dd1b8632b3672d6413c1a1faaf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446449"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356222"
 ---
 # <a name="install-the-web-server-web1"></a>Instalar o servidor Web WEB1
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-A função de servidor Web (IIS) no Windows Server 2016 fornece uma plataforma segura, fácil de gerenciar, modular e extensível para a hospedagem confiável de sites, serviços e aplicativos. Com o IIS, você pode compartilhar informações com usuários na Internet, intranet ou extranet. O IIS é uma plataforma web unificada que integra IIS, ASP.NET, serviços FTP, PHP e Windows Communication Foundation (WCF).  
+A função do servidor Web (IIS) no Windows Server 2016 fornece uma plataforma segura, fácil de gerenciar, modular e extensível para hospedagem confiável de sites, serviços e aplicativos. Com o IIS, você pode compartilhar informações com usuários na Internet, em uma intranet ou em uma extranet. O IIS é uma plataforma Web unificada que integra IIS, ASP.NET, serviços FTP, PHP e Windows Communication Foundation (WCF).  
 
-Quando você implantar certificados de servidor, o seu servidor Web fornece um local onde você pode publicar a lista de certificados revogados (CRL) para sua autoridade de certificação (CA). Após a publicação, a CRL é acessível a todos os computadores em sua rede para que eles podem usar essa lista durante o processo de autenticação para verificar que os certificados apresentados pelos outros computadores não são revogados.   
+Quando você implanta certificados de servidor, seu servidor Web fornece um local onde você pode publicar a CRL (lista de certificados revogados) para sua autoridade de certificação (CA). Após a publicação, a CRL pode ser acessada por todos os computadores em sua rede para que eles possam usar essa lista durante o processo de autenticação para verificar se os certificados apresentados por outros computadores não estão revogados.   
 
-Se for um certificado da CRL como revogado, o esforço de autenticação falhará e o computador estiver protegido de confiar em uma entidade que tem um certificado que não é mais válido.  
+Se um certificado estiver na CRL como revogado, o esforço de autenticação falhará e o computador estará protegido da confiança de uma entidade que tem um certificado que não é mais válido.  
 
-Antes de instalar a função de servidor Web (IIS), certifique-se de que você configurou o endereço IP e o nome do servidor e ingressar o computador no domínio.  
+Antes de instalar a função do servidor Web (IIS), verifique se você configurou o nome do servidor e o endereço IP e se ingressou no computador no domínio.  
 
 ## <a name="to-install-the-web-server-iis-server-role"></a>Para instalar a função de servidor Servidor Web (IIS)  
 Para concluir este procedimento, é preciso ser um membro do grupo **Administradores**.  
 
 >[!NOTE]  
->Para executar esse procedimento usando o Windows PowerShell, abra o PowerShell, digite o seguinte comando e pressione ENTER.  
+>Para executar esse procedimento usando o Windows PowerShell, abra o PowerShell, digite o comando a seguir e pressione ENTER.  
 `Install-WindowsFeature Web-Server -IncludeManagementTools`  
 
 1.  No Gerenciador do Servidor, clique em **Gerenciar**e depois em **Adicionar Funções e Recursos**. O Assistente para Adicionar Funções e Recursos é aberto.  
 2.  Em **Antes de Começar**, clique em **Avançar**.  
 
 **Observação**   
-O **antes de começar** página do assistente Adicionar funções e recursos não será exibida se você tiver executado o assistente Adicionar funções e recursos anteriormente e você selecionou **pular esta página por padrão** nesse momento.  
+A página **antes de começar** do assistente para adicionar funções e recursos não será exibida se você tiver executado anteriormente o assistente para adicionar funções e recursos e tiver selecionado **ignorar esta página por padrão** no momento.  
 
 3. Na página **Tipo de Instalação**, clique em **Avançar**.  
-4. Sobre o **seleção de servidor** , clique em **próxima**.  
-5. Sobre o **funções de servidor** página, selecione **servidor Web (IIS)** e, em seguida, clique em **próxima**.  
+4. Na página **seleção de servidor** , clique em **Avançar**.  
+5. Na página **funções de servidor** , selecione **servidor Web (IIS)** e clique em **Avançar**.  
 6. Clique em **Avançar** até ter aceitado todas as configurações padrão do servidor Web e clique em **Instalar**.  
 7. Confirme se todas as instalações tiveram êxito e clique em **Fechar**.

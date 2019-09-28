@@ -1,7 +1,7 @@
 ---
 title: Configuração de comutador físico para NIC convergida
-description: Neste tópico, nós fornecemos você com diretrizes para configurar seus comutadores físicos.
-ms.prod: windows-server-threshold
+description: Neste tópico, fornecemos diretrizes para configurar seus comutadores físicos.
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 6d53c797-fb67-4b9e-9066-1c9a8b76d2aa
@@ -9,52 +9,52 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 09/14/2018
-ms.openlocfilehash: e31d7b83fee84d9055d938f77b49389205786244
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d10e8ca6e4689b89a8b9532f77613f17280282b1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829397"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355479"
 ---
 # <a name="physical-switch-configuration-for-converged-nic"></a>Configuração de comutador físico para NIC convergida
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Neste tópico, nós fornecemos você com diretrizes para configurar seus comutadores físicos. 
+Neste tópico, fornecemos diretrizes para configurar seus comutadores físicos. 
 
 
-Esses são apenas os comandos e seus usos; Você deve determinar as portas para o qual as NICs estão conectadas em seu ambiente. 
+Esses são apenas comandos e seus usos; Você deve determinar as portas às quais as NICs estão conectadas em seu ambiente. 
 
 >[!IMPORTANT]
->Certifique-se de que a VLAN e a política de cancelamento não está definido para a prioridade sobre o qual o SMB é configurado.
+>Verifique se a VLAN e a política não-drop estão definidas para a prioridade sobre a qual o SMB está configurado.
 
-## <a name="arista-switch-dcs-7050s-64-eos-4137m"></a>Comutador arista \(dcs\-7050s\-EOS 64,\-4.13.7M\)
+## <a name="arista-switch-dcs-7050s-64-eos-4137m"></a>Arista switch \(dcs @ no__t-17050s @ no__t-264, EOS @ no__t-34.13.7 M @ no__t-4
 
-1.  en \(ir para o modo de administrador, geralmente solicita uma senha\)
-2.  config \(para entrar no modo de configuração\)
-3.  Mostrar execução \(mostra a configuração de execução atual\)
-4.  Descubra as portas de comutador ao qual seu NICs estão conectadas. Esses exemplo, eles são 14/1,15/1,16/1,17/1.
-5.  int eth 14/1,15/1,16/1,17/1 \(entrar no modo de configuração para essas portas\)
-6.  modo de dcbx ieee
-7.  modo de controle de fluxo de prioridade em
-8.  vlan nativa do tronco de porta de switch 225
-9.  tronco da porta de switch permitido vlan 100 e 225
-10. tronco de modo de porta de switch
-11. prioridade de controle de fluxo de prioridade 3 não soltar
-12. QoS de confiança cos
-13. Mostrar execução \(verificar que a configuração está configurada corretamente nas portas\)
-14. wr \(tornar as configurações de persiste entre a opção de reinicialização\)
+1.  EN \(go no modo admin, geralmente solicita uma senha @ no__t-1
+2.  config \(to entrar no modo de configuração @ no__t-1
+3.  Mostrar execução \(shows configuração em execução atual @ no__t-1
+4.  Descubra portas de comutador às quais suas NICs estão conectadas. Neste exemplo, eles são 14/1, 15/1, 16/1, 17/1.
+5.  int ETH 14/1, 15/1, 16/1, 17/1 \(enter no modo de configuração para essas portas @ no__t-1
+6.  modo dcbx IEEE
+7.  prioridade – modo de controle de fluxo ativado
+8.  VLAN nativa de switchport trunk 225
+9.  VLAN do switchport com permissão 100-225
+10. tronco do modo switchport
+11. prioridade-controle de fluxo-prioridade 3 não-soltar
+12. QoS confiável cos
+13. Mostrar execução \(verify que a configuração está configurada corretamente nas portas @ no__t-1
+14. WR \(to faz com que as configurações persistam na reinicialização do comutador @ no__t-1
 
-### <a name="tips"></a>Dicas:
-1.  Não há command # # nega um comando
-2.  Como adicionar uma nova VLAN: int vlan 100 \(se a rede de armazenamento está na VLAN 100\)
-3.  Como verificar VLANs existentes: Mostrar vlan
-4.  Para obter mais informações sobre como configurar o comutador Arista, pesquise online por: Arista EOS Manual
-5.  Use este comando para verificar as configurações de PFC: Mostrar detalhes de contadores de prioridade de fluxo de controle
+### <a name="tips"></a>Sobre
+1.  Nenhum #command # nega um comando
+2.  Como adicionar uma nova VLAN: int VLAN 100 @no__t-a rede de armazenamento 0If está na VLAN 100 @ no__t-1
+3.  Como verificar VLANs existentes: mostrar VLAN
+4.  Para obter mais informações sobre como configurar o comutador Arista, pesquise online para: Manual do Arista EOS
+5.  Use este comando para verificar as configurações de PFC: mostrar detalhes de contadores de fluxo de controle de prioridade
 
 --- 
 
-## <a name="dell-switch-s4810-ftos-99-00"></a>Comutador Dell \(S4810, 9.9 FTOS \(0,0\)\)
+## <a name="dell-switch-s4810-ftos-99-00"></a>Dell switch \(S4810, FTOS 9,9 \(0.0 @ no__t-2 @ no__t-3
 
     
     !
@@ -74,7 +74,7 @@ Esses são apenas os comandos e seus usos; Você deve determinar as portas para 
     
 --- 
 
-## <a name="cisco-switch-nexus-3132-version-602u61"></a>Switch da Cisco \(Nexus 3132, versão 6.0\(2\)U6\(1\)\)
+## <a name="cisco-switch-nexus-3132-version-602u61"></a>Cisco Switch \(Nexus 3132, versão 6.0 @ no__t-12 @ no__t-2U6 @ no__t-31 @ no__t-4 @ no__t-5
 
 ### <a name="global"></a>Global
     
@@ -105,7 +105,7 @@ Esses são apenas os comandos e seus usos; Você deve determinar as portas para 
     service-policy type network-qos QOS_NETWORK
     
 
-### <a name="port-specific"></a>Porta específica
+### <a name="port-specific"></a>Específico da porta
 
     
     switchport mode trunk
@@ -122,7 +122,7 @@ Esses são apenas os comandos e seus usos; Você deve determinar as portas para 
 ## <a name="related-topics"></a>Tópicos relacionados
 
 - [Configuração de NIC convergida com um único adaptador de rede](cnic-single.md)
-- [Configuração do NIC agrupado NIC convergida](cnic-datacenter.md)
-- [Solução de problemas convergido configurações de NIC](cnic-app-troubleshoot.md)
+- [Configuração NIC agrupada NIC convergida](cnic-datacenter.md)
+- [Solucionando problemas de configurações de NIC convergida](cnic-app-troubleshoot.md)
 
 --- 

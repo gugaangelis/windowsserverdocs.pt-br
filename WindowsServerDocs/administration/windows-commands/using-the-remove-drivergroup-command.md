@@ -1,8 +1,8 @@
 ---
-title: Usando o comando remove-DriverGroup
-description: 'Tópico de comandos do Windows para * * *- '
+title: Usando o comando remove-the driver
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b56f162861caf4493550f9e063065e9544e52eae
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d22ae4e191c2110a0b8d4cc50c24c2f3ec4a7e60
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885747"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362933"
 ---
-# <a name="using-the-remove-drivergroup-command"></a>Usando o comando remove-DriverGroup
+# <a name="using-the-remove-drivergroup-command"></a>Usando o comando remove-the driver
 
 
 
-Remove um grupo de drivers do servidor.
+Remove um grupo de drivers de um servidor.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,10 +36,10 @@ WDSUTIL /Remove-DriverGroup /DriverGroup:<Group Name> [/Server:<Server name>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/DriverGroup:\<Group Name>|Especifica o nome do grupo de drivers a ser removido.|
-|[/Server:\<Server name>]|Especifica o nome do servidor. Isso pode ser o nome NetBIOS ou FQDN. Se não for especificado um nome de servidor, o servidor local será usado.|
+|/DriverGroup: nome de \<Group >|Especifica o nome do grupo de drivers a ser removido.|
+|[/Server: \<Server nome >]|Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se um nome de servidor não for especificado, o servidor local será usado.|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 Para remover um grupo de drivers, digite um dos seguintes:
 ```
@@ -51,4 +51,4 @@ WDSUTIL /Remove-DriverGroup /DriverGroup:PrinterDrivers /Server:MyWdsServer
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

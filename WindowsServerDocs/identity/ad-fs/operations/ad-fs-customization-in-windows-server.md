@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b8832e7e53e94761a489e850726bbd206b8be62b
-ms.sourcegitcommit: 02f1e11ba37a83e12d8ffa3372e3b64b20d90d00
+ms.openlocfilehash: 4b0ea70bd9346bf8abee4e0d96a8915e29cac462
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68863428"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357784"
 ---
 # <a name="ad-fs-customization-in-windows-server-2016"></a>AD FS personalização no Windows Server 2016
 
@@ -85,7 +85,7 @@ Para a personalização da capa de realm inicial, consulte [Personalizando as p�
 Para obter informações sobre como personalizar a página de atualização de senha, consulte [Personalizando o AD FS páginas de entrada](https://technet.microsoft.com/library/dn280950.aspx).  
   
 ## <a name="customizing-and-alternate-ids"></a>Personalizando e identificando IDs alternativas  
-Os usuários podem entrar em aplicativos habilitados para Serviços de Federação do Active Directory (AD FS) (AD FS) usando qualquer forma de identificador de usuário aceita pelo Active Directory Domain Services (AD DS). Isso inclui nomes de entidade de usuário (UPNsjohndoe@contoso.com) () ou nomes de conta Sam qualificados de domínio (contoso\johndoe ou contoso. com\johndoe).  Para obter mais informações sobre isso, consulte Configurando a [ID de logon alternativa.](Configuring-Alternate-Login-ID.md)  
+Os usuários podem entrar em aplicativos habilitados para Serviços de Federação do Active Directory (AD FS) (AD FS) usando qualquer forma de identificador de usuário aceita pelo Active Directory Domain Services (AD DS). Isso inclui nomes de entidade de usuário (UPNs) (johndoe@contoso.com) ou nomes de conta Sam qualificados para domínio (contoso\johndoe ou contoso. com\johndoe).  Para obter mais informações sobre isso, consulte [Configurando a ID de logon alternativa.](Configuring-Alternate-Login-ID.md)  
   
 Além disso, você pode querer personalizar a página de entrada AD FS para dar aos usuários finais alguma dica sobre a ID de logon alternativa. Você pode fazer isso adicionando a descrição da página de entrada personalizada para obter mais informações consulte [Personalizando o AD FS páginas de entrada.](https://technet.microsoft.com/library/dn280950.aspx)   
   

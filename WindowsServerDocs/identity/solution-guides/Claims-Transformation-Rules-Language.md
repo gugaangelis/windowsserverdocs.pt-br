@@ -7,54 +7,54 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a1f5c724d041a9f64c3b2697a8b5acd17a2a7bd9
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 200d592bc68562856bbdee623e70d73d41457c15
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445815"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357579"
 ---
 # <a name="claims-transformation-rules-language"></a>Linguagem de regras de transformação de declarações
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-A entre as florestas declarações transformação recurso permite que a ponte de declarações para o controle de acesso dinâmico entre limites de florestas, definindo políticas de transformação de declarações em relações de confiança entre as florestas. O componente principal de todas as políticas é regras que são escritas na linguagem de regras de transformação de declarações. Este tópico fornece detalhes sobre essa linguagem e fornece orientação sobre a criação de regras de transformação de declarações.  
+O recurso de transformação de declarações entre florestas permite a ponte de declarações para controle de acesso dinâmico entre limites de floresta definindo políticas de transformação de declarações em relações de confiança entre florestas. O componente principal de todas as políticas são regras que são escritas em linguagem de regras de transformação de declarações. Este tópico fornece detalhes sobre essa linguagem e fornece orientação sobre a criação de regras de transformação de declarações.  
   
-Os cmdlets do Windows PowerShell para políticas de transformação em entre as florestas confia tem opções para definir diretivas simples que são necessárias em comum cenários. Esses cmdlets traduzir a entrada do usuário em políticas e regras na linguagem de regras de transformação de declarações e, em seguida, armazená-las no Active Directory no formato prescrito. Para obter mais informações sobre os cmdlets para transformação de declarações, consulte a [Cmdlets do AD DS para controle de acesso dinâmico](https://go.microsoft.com/fwlink/?LinkId=243150).  
+Os cmdlets do Windows PowerShell para políticas de transformação em relações de confiança entre florestas têm opções para definir políticas simples que são necessárias em cenários comuns. Esses cmdlets convertem a entrada do usuário em políticas e regras no idioma das regras de transformação de declarações e, em seguida, as armazenam em Active Directory no formato prescrito. Para obter mais informações sobre cmdlets para transformação de declarações, consulte os [cmdlets AD DS para o controle de acesso dinâmico](https://go.microsoft.com/fwlink/?LinkId=243150).  
   
-Dependendo da configuração de declarações e os requisitos estabelecidos para a relação de confiança entre as florestas em suas florestas do Active Directory, suas políticas de transformação de declarações talvez precise ser mais complexo do que as políticas de suporte para os cmdlets do Windows PowerShell para Active Directory Diretório. Para criar efetivamente dessas políticas, é essencial para entender a sintaxe de linguagem de regras de transformação de declarações e a semântica. Isso de declarações da linguagem de regras de transformação ("idioma") no Active Directory é um subconjunto da linguagem que é usado pelo [serviços de Federação do Active Directory](https://go.microsoft.com/fwlink/?LinkId=243982) para semelhantes fins e ele tem uma sintaxe muito semelhante e a semântica. No entanto, há menos operações permitidas e restrições de sintaxe adicionais são colocadas na versão do idioma do Active Directory.  
+Dependendo da configuração de declarações e dos requisitos colocados na relação de confiança entre florestas em suas florestas de Active Directory, suas políticas de transformação de declarações podem precisar ser mais complexas do que as políticas com suporte dos cmdlets do Windows PowerShell para Active Active. Para criar efetivamente essas políticas, é essencial compreender a semântica e a sintaxe da linguagem de regras de transformação de declarações. Essa linguagem de regras de transformação de declarações ("a linguagem") em Active Directory é um subconjunto do idioma usado pelo [serviços de Federação do Active Directory (AD FS)](https://go.microsoft.com/fwlink/?LinkId=243982) para fins semelhantes, e tem uma sintaxe e semântica muito semelhantes. No entanto, há menos operações permitidas e restrições de sintaxe adicionais são colocadas na versão Active Directory da linguagem.  
   
-Este tópico explica rapidamente a sintaxe e semântica da linguagem de regras de transformação de declarações no Active Directory e as considerações para ser feita durante a criação de políticas. Ele fornece vários conjuntos de regras de exemplo para você começar e exemplos de sintaxe incorreta e as mensagens que eles geram, para ajudá-lo a decifrar as mensagens de erro quando você criar regras.  
+Este tópico explica brevemente a sintaxe e a semântica da linguagem de regras de transformação de declarações no Active Directory e considerações a serem feitas durante a criação de políticas. Ele fornece vários conjuntos de regras de exemplo para você começar, bem como exemplos de sintaxe incorreta e as mensagens que elas geram, para ajudá-lo a decifrar mensagens de erro ao criar as regras.  
   
 ## <a name="tools-for-authoring-claims-transformation-policies"></a>Ferramentas para criação de políticas de transformação de declarações  
-**Cmdlets do Windows PowerShell para Active Directory**: Essa é a maneira preferencial e recomendada para criar e definir políticas de transformação de declarações. Esses cmdlets fornecem opções para políticas simples e verificar as regras que são definidas para diretivas mais complexas.  
+**Cmdlets do Windows PowerShell para Active Directory**: Essa é a maneira preferida e recomendada para criar e definir políticas de transformação de declarações. Esses cmdlets fornecem opções para políticas simples e verificam regras que são definidas para políticas mais complexas.  
   
-**LDAP**: Políticas de transformação de declarações podem ser editadas no Active Directory por meio de LDAP Lightweight Directory Access Protocol (). No entanto, isso não é recomendado porque as políticas têm vários componentes complexos, e as ferramentas que você usa não podem validar a política antes de gravar no Active Directory. Subsequentemente, isso pode exigir uma quantidade considerável de tempo para diagnosticar problemas.  
+**LDAP**: As políticas de transformação de declarações podem ser editadas em Active Directory por meio de LDAP (Lightweight Directory Access Protocol). No entanto, isso não é recomendado porque as políticas têm vários componentes complexos, e as ferramentas usadas podem não validar a política antes de gravá-la no Active Directory. Isso pode exigir uma quantidade considerável de tempo para diagnosticar problemas.  
   
-## <a name="active-directory-claims-transformation-rules-language"></a>Linguagem de regras de transformação de declarações do Active Directory  
+## <a name="active-directory-claims-transformation-rules-language"></a>Linguagem de regras de transformação de declarações Active Directory  
   
 ### <a name="syntax-overview"></a>Visão geral da sintaxe  
-Aqui está uma breve visão geral da sintaxe e semântica da linguagem:  
+Aqui está uma breve visão geral da sintaxe e da semântica da linguagem:  
   
--   O conjunto de regras de transformação de declarações consiste em zero ou mais regras. Cada regra tem duas partes de Active Directory: **Selecione a lista de condições** e **Rule Action**. Se o **selecione a lista de condições** for avaliada como TRUE, a ação de regra correspondente é executada.  
+-   O conjunto de regras de transformação de declarações consiste em zero ou mais regras. Cada regra tem duas partes ativas: **Selecione a lista de condições** e a **ação da regra**. Se a **lista de condição de seleção** for avaliada como true, a ação de regra correspondente será executada.  
   
--   **Selecione a lista de condições** tem zero ou mais **selecionar condições**. Todos os **selecionar condições** deve ser avaliada como TRUE para o **selecione lista de condições** ser avaliada como TRUE.  
+-   **Selecionar a lista de condições** tem zero ou mais **condições selecionadas**. Todas as **condições selecionadas** devem ser avaliadas como true para que a **lista de condição Select** seja avaliada como true.  
   
--   Cada **Selecionar condição** tem um conjunto de zero ou mais **condições de correspondência de**. Todos os **condições de correspondência de** deve ser avaliada como TRUE para selecionar condição ser avaliada como TRUE. Todas essas condições são avaliadas em relação a uma única declaração. Uma declaração que corresponde a um **Selecionar condição** podem ser marcados por um **identificador** e refere-se aos **ação de regra**.  
+-   Cada **condição Select** tem um conjunto de zero ou mais **condições correspondentes**. Todas as **condições de correspondência** devem ser avaliadas como true para que a condição Select seja avaliada como true. Todas essas condições são avaliadas em uma única declaração. Uma declaração que corresponde a uma **condição Select** pode ser marcada por um **identificador** e referenciada na **ação de regra**.  
   
--   Cada **condição de correspondência** Especifica a condição para corresponder a **tipo** ou **valor** ou **ValueType** de uma declaração por meio de diferentes  **Operadores de condição** e **literais de cadeia de caracteres**.  
+-   Cada **condição de correspondência** especifica a condição para corresponder ao **tipo** ou **valor** ou **ValueType** de uma declaração usando diferentes **operadores de condição** e **literais de cadeia de caracteres**.  
   
-    -   Quando você especifica um **condição de correspondência** para um **valor**, você também deve especificar um **condição de correspondência** para um determinado **ValueType** e vice versa. Essas condições devem ser próximos uns dos outros na sintaxe.  
+    -   Quando você especifica uma **condição de correspondência** para um **valor**, também deve especificar uma **condição de correspondência** para um **ValueType** específico e vice-versa. Essas condições devem ser próximas umas às outras na sintaxe.  
   
-    -   **ValueType** condições de correspondência deve usar específicos **ValueType** apenas literais.  
+    -   As condições de correspondência **ValueType** devem usar somente literais **ValueType** específicos.  
   
--   Um **ação de regra** pode copiar uma declaração que é marcada com um **identificador** ou emitir uma declaração com base em uma declaração que é marcada com um identificador de e/ou dado literais de cadeia de caracteres.  
+-   Uma **ação de regra** pode copiar uma declaração que está marcada com um **identificador** ou emitir uma declaração com base em uma declaração que está marcada com um identificador e/ou literais de cadeia de caracteres especificados.  
   
 **Regra de exemplo**  
   
-Este exemplo mostra uma regra que pode ser usada para converter as tipo de declarações entre duas florestas, desde que eles usam as mesmas declarações ValueTypes e tem as mesmas interpretações para valores de declarações para esse tipo. A regra tem uma condição de correspondência e uma instrução de problema que use literais de cadeia de caracteres e uma referência de declarações correspondente.  
+Este exemplo mostra uma regra que pode ser usada para converter o tipo de declarações entre duas florestas, desde que elas usem os mesmos ValueTypes de declarações e tenham as mesmas interpretações para valores de declarações para esse tipo. A regra tem uma condição de correspondência e uma instrução Issue que usa literais de cadeia de caracteres e uma referência de declarações correspondente.  
   
 ```  
 C1: [TYPE=="EmployeeType"]    
@@ -65,33 +65,33 @@ ISSUE (TYPE= "EmpType", VALUE = C1.VALUE, VALUETYPE = C1.VALUETYPE) == Rule Acti
 ```  
   
 ### <a name="runtime-operation"></a>Operação de tempo de execução  
-É importante entender a operação de tempo de execução de transformações de declarações para criar regras com eficiência. A operação de tempo de execução usa três conjuntos de declarações:  
+É importante entender a operação de tempo de execução das transformações de declarações para criar as regras com eficiência. A operação de tempo de execução usa três conjuntos de declarações:  
   
-1.  **Conjunto de declarações de entrada**: O conjunto de entrada de declarações que são fornecidos para a operação de transformação de declarações.  
+1.  **Conjunto de declarações de entrada**: O conjunto de entrada de declarações que são dadas à operação de transformação de declarações.  
   
-2.  **Conjunto de declarações de trabalho**: Declarações intermediárias que são lidos do e gravadas durante a transformação de declarações.  
+2.  **Conjunto de declarações de trabalho**: Declarações intermediárias que são lidas e gravadas durante a transformação de declarações.  
   
 3.  **Conjunto de declarações de saída**: Saída da operação de transformação de declarações.  
   
-Aqui está uma visão geral sobre a operação de transformação de declarações de tempo de execução:  
+Aqui está uma breve visão geral da operação de transformação de declarações de tempo de execução:  
   
 1.  Declarações de entrada para transformação de declarações são usadas para inicializar o conjunto de declarações de trabalho.  
   
-    1.  Durante o processamento de cada regra, o conjunto de declarações de trabalho é usado para declarações de entrada.  
+    1.  Ao processar cada regra, o conjunto de declarações de trabalho é usado para as declarações de entrada.  
   
-    2.  A lista de condições de seleção em uma regra é comparada com todos os possíveis conjuntos de declarações do conjunto de declarações de trabalho.  
+    2.  A lista de condição de seleção em uma regra é correspondida em todos os conjuntos de declarações possíveis do conjunto de declarações de trabalho.  
   
-    3.  Cada conjunto de declarações de correspondência é usado para executar a ação na regra.  
+    3.  Cada conjunto de declarações de correspondência é usado para executar a ação nessa regra.  
   
-    4.  Executando uma regra de resultados de ação em uma declaração, que é acrescentado à saída de declarações conjunto e o conjunto de declarações de trabalho. Assim, a saída de uma regra é usada como entrada para regras subsequentes no conjunto de regras.  
+    4.  A execução de uma ação de regra resulta em uma declaração, que é anexada ao conjunto de declarações de saída e ao conjunto de declarações de trabalho. Assim, a saída de uma regra é usada como entrada para as regras subsequentes no conjunto de regras.  
   
 2.  As regras no conjunto de regras são processadas em ordem sequencial, começando com a primeira regra.  
   
-3.  Quando o conjunto de regras inteiro é processado, o conjunto de declarações de saída é processado para remover declarações duplicadas e para outros problemas de segurança. As declarações resultantes são a saída do processo de transformação de declarações.  
+3.  Quando o conjunto de regras inteiro é processado, o conjunto de declarações de saída é processado para remover declarações duplicadas e outros problemas de segurança. As declarações resultantes são a saída do processo de transformação de declarações.  
   
 É possível escrever transformações de declarações complexas com base no comportamento de tempo de execução anterior.  
   
-**Exemplo: Operação de tempo de execução**  
+**Exemplo Operação em tempo de execução @ no__t-0  
   
 Este exemplo mostra a operação de tempo de execução de uma transformação de declarações que usa duas regras.  
   
@@ -129,13 +129,13 @@ Final Output:
 ```  
   
 ### <a name="special-rules-semantics"></a>Semântica de regras especiais  
-Veja a seguir a sintaxe especial para regras:  
+Veja a seguir uma sintaxe especial para regras:  
   
-1.  Esvaziar o conjunto de regras de = = nenhuma declaração de saída  
+1.  Conjunto de regras vazio = = sem declarações de saída  
   
-2.  Selecione lista de condições de esvaziar = = correspondências de cada declaração Select condição List  
+2.  Vazio Selecionar condição List = = cada declaração corresponde à lista de condições selecionadas  
   
-    **Exemplo: Selecione a condição vazia lista**  
+    **Exemplo Selecionar lista de condição selecionada @ no__t-0  
   
     A regra a seguir corresponde a cada declaração no conjunto de trabalho.  
   
@@ -143,55 +143,55 @@ Veja a seguir a sintaxe especial para regras:
     => Issue (Type = "UserType", Value = "External", ValueType = "string")  
     ```  
   
-3.  Esvaziar selecione lista de correspondência de = = todas as correspondências de declaração lista Selecionar condição  
+3.  Vazio selecionar lista de correspondência = = cada declaração corresponde à lista de condições selecionadas  
   
-    **Exemplo: Condições de correspondência vazia**  
+    **Exemplo Condições de correspondência vazias @ no__t-0  
   
-    A regra a seguir corresponde a cada declaração no conjunto de trabalho. Isso é a regra básica "Allow-all", se ele for usado sozinho.  
+    A regra a seguir corresponde a cada declaração no conjunto de trabalho. Essa é a regra básica "permitir todos" se for usada sozinha.  
   
     ```  
     C1:[] => Issule (claim = C1);  
     ```  
   
 ## <a name="security-considerations"></a>Considerações sobre segurança  
-**Declarações que inserir uma floresta**  
+**Declarações que entram em uma floresta**  
   
-As declarações apresentadas por entidades de segurança de entrada para uma floresta precisará ser inspecionada cuidadosamente para garantir que podemos permitir ou emitir apenas as declarações corretas. Declarações inadequadas podem comprometer a segurança de floresta, e isso deve ser uma consideração importante ao criar políticas de transformação de declarações que inserir uma floresta.  
+As declarações apresentadas por entidades de entrada para uma floresta precisam ser cuidadosamente inspecionadas para garantir que permitimos ou emitimos apenas as declarações corretas. As declarações inadequadas podem comprometer a segurança da floresta, e essa deve ser uma das principais considerações ao criar políticas de transformação para declarações que entram em uma floresta.  
   
-Active Directory tem os seguintes recursos para impedir que uma configuração incorreta de declarações que inserir uma floresta:  
+Active Directory tem os seguintes recursos para impedir a configuração incorreta de declarações que entram em uma floresta:  
   
--   Se uma relação de confiança de floresta não tem nenhuma política de transformação de declarações definidas para as declarações que insira uma floresta, para fins de segurança do Active Directory descarta todas as declarações UPN que insere a floresta.  
+-   Se uma relação de confiança de floresta não tiver uma política de transformação de declarações definida para as declarações que entram em uma floresta, para fins de segurança, Active Directory descartará todas as declarações principais que entram na floresta.  
   
--   Se executar a regra definida em declarações que insere os resultados de uma floresta em declarações que não estão definidas na floresta, as declarações indefinidas são descartadas de declarações de saída.  
+-   Se a execução do conjunto de regras em declarações que entra em uma floresta resultar em declarações que não estão definidas na floresta, as declarações indefinidas serão removidas das declarações de saída.  
   
 **Declarações que deixam uma floresta**  
   
-Declarações que deixam uma floresta apresentam uma preocupação de segurança menor para a floresta que as declarações que insira a floresta. Declarações são permitidas para deixar a floresta como-está mesmo quando não há nenhuma declaração correspondente a política de transformação em vigor. Também é possível emitir declarações que não estão definidas na floresta como parte de transformação de declarações que deixam a floresta. Isso é facilmente configurar relações de confiança entre as florestas com declarações. Um administrador pode determinar se as declarações que insere a floresta precisam ser transformados e configurar a política apropriada. Por exemplo, um administrador pode definir uma política, se houver uma necessidade para ocultar uma declaração para evitar a divulgação de informações.  
+As declarações que deixam uma floresta apresentam uma preocupação de segurança menor para a floresta do que as declarações que entram na floresta. As declarações têm permissão para deixar a floresta como estão, mesmo quando não há nenhuma política de transformação de declarações correspondente em vigor. Também é possível emitir declarações que não são definidas na floresta como parte da transformação de declarações que deixam a floresta. Isso é para configurar facilmente relações de confiança entre florestas com declarações. Um administrador pode determinar se as declarações que entram na floresta precisam ser transformadas e configurar a política apropriada. Por exemplo, um administrador poderia definir uma política se houver a necessidade de ocultar uma declaração para evitar a divulgação de informações.  
   
-**Erros de sintaxe nas regras de transformação de declarações**  
+**Erros de sintaxe em regras de transformação de declarações**  
   
-Se uma política de transformação de declarações fornecido tem um conjunto de regras está sintaticamente incorreto ou se há outros problemas de sintaxe ou de armazenamento, a política é considerada inválida. Isso é tratado de forma diferente do que as condições padrão mencionadas anteriormente.  
+Se uma determinada política de transformação de declarações tiver um conjunto de regras que está sintaticamente incorreto ou se houver outra sintaxe ou problemas de armazenamento, a política será considerada inválida. Isso é tratado de maneira diferente das condições padrão mencionadas anteriormente.  
   
-Active Directory não pode determinar a intenção nesse caso e entra em um modo à prova de falhas, onde nenhuma declaração de saída é geradas nessa relação de confiança + a direção da passagem. Intervenção do administrador é necessária para corrigir o problema. Isso pode acontecer se o LDAP é usado para editar a política de transformação de declarações. Cmdlets do Windows PowerShell para Active Directory tem validação em vigor para impedir que escrever uma política com problemas de sintaxe.  
+Active Directory não é capaz de determinar a intenção nesse caso e entra em um modo à prova de falhas, em que nenhuma declaração de saída é gerada nessa relação de confiança + direção de passagem. A intervenção do administrador é necessária para corrigir o problema. Isso pode acontecer se o LDAP for usado para editar a política de transformação de declarações. Os cmdlets do Windows PowerShell para Active Directory têm validação in-loco para evitar a gravação de uma política com problemas de sintaxe.  
   
-## <a name="other-language-considerations"></a>Outras considerações sobre idioma  
+## <a name="other-language-considerations"></a>Outras considerações sobre linguagem  
   
-1.  Há várias palavras-chave ou caracteres que são especiais neste idioma (conhecido como terminais). Eles são apresentados na [terminais de linguagem](Claims-Transformation-Rules-Language.md#BKMK_LT) tabela mais adiante neste tópico. As mensagens de erro usam as marcas para os terminais de Desambiguidade.  
+1.  Há várias palavras-chave ou caracteres que são especiais nesse idioma (chamados de terminais). Eles são apresentados na tabela de [terminais de idioma](Claims-Transformation-Rules-Language.md#BKMK_LT) mais adiante neste tópico. As mensagens de erro usam as marcas para esses terminais para desambigüidade.  
   
-2.  Terminais, às vezes, podem ser usados como literais de cadeia de caracteres. No entanto, esse uso pode entrar em conflito com a definição de linguagem ou ter consequências não intencionais. Esse tipo de uso não é recomendado.  
+2.  Às vezes, os terminais podem ser usados como literais de cadeia de caracteres. No entanto, esse uso pode entrar em conflito com a definição de linguagem ou ter consequências indesejadas. Esse tipo de uso não é recomendado.  
   
-3.  A ação de regra não pode executar as conversões de tipo em valores de declaração e um conjunto de regras que contém tal uma ação de regra é considerado inválido. Isso causaria um erro de tempo de execução e nenhuma declaração de saída é produzidas.  
+3.  A ação de regra não pode executar nenhuma conversões de tipo em valores de declaração e um conjunto de regras que contém essa ação de regra é considerado inválido. Isso causaria um erro de tempo de execução e nenhuma declaração de saída será produzida.  
   
-4.  Se uma ação de regra refere-se a um identificador que não foi usado na parte Select List de condição da regra, é um uso inválido. Isso causaria um erro de sintaxe.  
+4.  Se uma ação de regra se referir a um identificador que não foi usado na parte da lista de condições Select da regra, será um uso inválido. Isso causaria um erro de sintaxe.  
   
-    **Exemplo: Referência incorreta do identificador**  
+    **Exemplo Referência de identificador incorreta @ no__t-0  
     A regra a seguir ilustra um identificador incorreto usado na ação de regra.  
   
     ```  
     C1:[] => Issue (claim = C2);  
     ```  
   
-## <a name="sample-transformation-rules"></a>Exemplos de regras de transformação  
+## <a name="sample-transformation-rules"></a>Regras de transformação de exemplo  
   
 -   **Permitir todas as declarações de um determinado tipo**  
   
@@ -201,29 +201,29 @@ Active Directory não pode determinar a intenção nesse caso e entra em um modo
     C1:[type=="XYZ"] => Issue (claim = C1);  
     ```  
   
-    Usar Regex  
+    Usando Regex  
   
     ```  
     C1: [type =~ "XYZ*"] => Issue (claim = C1);  
     ```  
   
--   **Não permitir a um determinado tipo de declaração**  
+-   **Não permitir um determinado tipo de declaração**  
     Tipo exato  
   
     ```  
     C1:[type != "XYZ"] => Issue (claim=C1);  
     ```  
   
-    Usar Regex  
+    Usando Regex  
   
     ```  
     C1:[Type !~ "XYZ?"] => Issue (claim=C1);  
     ```  
   
 ## <a name="examples-of-rules-parser-errors"></a>Exemplos de erros do analisador de regras  
-As regras de transformação de declarações são analisadas por um analisador personalizado para verificar se há erros de sintaxe. Esse analisador é executado pelos cmdlets do Windows PowerShell relacionados antes de armazenar as regras no Active Directory. Quaisquer erros ao analisar as regras, incluindo erros de sintaxe, são impressas no console. Controladores de domínio também executam o analisador antes de usar as regras para transformar declarações, e eles registrar erros no log de eventos (Adicionar números de log de eventos).  
+As regras de transformação de declarações são analisadas por um analisador personalizado para verificar erros de sintaxe. Esse analisador é executado por cmdlets do Windows PowerShell relacionados antes de armazenar regras no Active Directory. Quaisquer erros na análise das regras, incluindo erros de sintaxe, são impressos no console do. Os controladores de domínio também executam o analisador antes de usar as regras para transformar declarações e registram erros no log de eventos (adicionar números de log de eventos).  
   
-Esta seção ilustra alguns exemplos de regras que são escritos com sintaxe incorreta e a sintaxe correspondente erros gerados pelo analisador.  
+Esta seção ilustra alguns exemplos de regras que são escritas com sintaxe incorreta e os erros de sintaxe correspondentes gerados pelo analisador.  
   
 1. Exemplo:  
   
@@ -231,11 +231,11 @@ Esta seção ilustra alguns exemplos de regras que são escritos com sintaxe inc
    c1;[]=>Issue(claim=c1);  
    ```  
   
-   Este exemplo tem uma ponto e vírgula incorretamente usada no lugar de dois-pontos.   
+   Este exemplo tem um ponto e vírgula usado incorretamente no lugar de dois-pontos.   
    **Mensagem de erro:**  
-   *POLICY0002: Não foi possível analisar os dados de política.*  
-   *Número da linha: 1, número de coluna: Erro token 2,:;. Linha: ' c1; [] = > Issue(claim=c1);'.*  
-   *Erro do analisador: 'POLICY0030: Erro de sintaxe inesperado ';', esperando um dos seguintes: ':'.'*  
+   *POLICY0002: Não foi possível analisar os dados da política.*  
+   número de @no__t 0Line: 1, número da coluna: 2, token de erro:;. Linha: ' C1; [] = > problema (declaração = C1); '. *  
+   erro de @no__t 0Parser: 'POLICY0030: Erro de sintaxe, '; ' inesperado, esperando um dos seguintes: ': '. ' *  
   
 2. Exemplo:  
   
@@ -245,7 +245,7 @@ Esta seção ilustra alguns exemplos de regras que são escritos com sintaxe inc
   
    Neste exemplo, a marca de identificador na instrução de emissão de cópia é indefinida.   
    **Mensagem de erro**:   
-   *POLICY0011: Nenhuma das condições na regra de declaração corresponde à marca de condição especificada no CopyIssuanceStatement: 'c2'.*  
+   *POLICY0011: Nenhuma condição na regra de declaração corresponde à marca de condição especificada em CopyIssuanceStatement: ' C2 '.*  
   
 3. Exemplo:  
   
@@ -253,11 +253,11 @@ Esta seção ilustra alguns exemplos de regras que são escritos com sintaxe inc
    c1:[type=="x1", value=="1", valuetype=="bool"]=>Issue(claim=c1)  
    ```  
   
-   "bool" não é um Terminal no idioma e não é um ValueType válido. Terminais válidos são listados na seguinte mensagem de erro.   
+   "bool" não é um terminal no idioma e não é um ValueType válido. Os terminais válidos são listados na seguinte mensagem de erro.   
    **Mensagem de erro:**  
-   *POLICY0002: Não foi possível analisar os dados de política.*  
-   Número da linha: 1, número de coluna: 39, token de erro: "bool". Line: 'c1:[type=="x1", value=="1",valuetype=="bool"]=>Issue(claim=c1);'.   
-   *Erro do analisador: 'POLICY0030: Erro de sintaxe, inesperado 'STRING', esperando um dos seguintes: 'INT64_TYPE' 'UINT64_TYPE' 'STRING_TYPE' 'BOOLEAN_TYPE' 'IDENTIFIER'*  
+   *POLICY0002: Não foi possível analisar os dados da política.*  
+   Número da linha: 1, número da coluna: 39, token de erro: "bool". Linha: ' C1: [tipo = = "x1", valor = = "1", ValueType = = "bool"] = > problema (declaração = C1); '.   
+   erro de @no__t 0Parser: 'POLICY0030: Erro de sintaxe, ' STRING ' inesperado, esperando um dos seguintes: ' INT64_TYPE ' ' UINT64_TYPE ' ' STRING_TYPE ' ' BOOLEAN_TYPE ' ' IDENTIFIER ' *  
   
 4. Exemplo:  
   
@@ -265,10 +265,10 @@ Esta seção ilustra alguns exemplos de regras que são escritos com sintaxe inc
    c1:[type=="x1", value==1, valuetype=="boolean"]=>Issue(claim=c1);  
    ```  
   
-   O numeral **1** neste exemplo não é um token válido no idioma, e tal uso não é permitido em uma condição de correspondência. Ele deve ser colocado entre aspas duplas para torná-lo em uma cadeia de caracteres.   
+   O número **1** neste exemplo não é um token válido no idioma e esse uso não é permitido em uma condição de correspondência. Ele precisa ser colocado entre aspas duplas para torná-la uma cadeia de caracteres.   
    **Mensagem de erro:**  
-   *POLICY0002: Não foi possível analisar os dados de política.*  
-   *Número da linha: 1, número de coluna: 23, token de erro: 1. Line: 'c1:[type=="x1", value==1, valuetype=="bool"]=>Issue(claim=c1);'.* <em>Parser error: 'POLICY0029: Entrada inesperada.</em>  
+   *POLICY0002: Não foi possível analisar os dados da política.*  
+   número de @no__t 0Line: 1, número da coluna: 23, token de erro: 1. Linha: ' C1: [type = = "x1", valor = = 1, ValueType = = "bool"] = > problema (declaração = C1); '. erro de * @ no__t-1Parser: 'POLICY0029: Entrada inesperada. </em>  
   
 5. Exemplo:  
   
@@ -278,12 +278,12 @@ Esta seção ilustra alguns exemplos de regras que são escritos com sintaxe inc
         Issue(type = c1.type, value="0", valuetype == "boolean");  
    ```  
   
-   Este exemplo usou um sinal de igualdade duplo (= =), em vez de um único sinal de igual (=).   
+   Este exemplo usou um sinal de igualdade duplo (= =) em vez de um único sinal de igual (=).   
    **Mensagem de erro:**  
-   *POLICY0002: Não foi possível analisar os dados de política.*  
-   *Número da linha: 1, número de coluna: 91, token de erro: = =. Line: 'c1:[type=="x1", value=="1",*  
-   *valuetype=="boolean"]=>Issue(type=c1.type, value="0", valuetype=="boolean");'.*  
-   *Erro do analisador: 'POLICY0030: Erro de sintaxe, inesperado '= =', esperando um dos seguintes: '='*  
+   *POLICY0002: Não foi possível analisar os dados da política.*  
+   número de @no__t 0Line: 1, número da coluna: 91, token de erro: = =. Linha: ' C1: [type = = "x1", valor = = "1", *  
+   *ValueType = = "booliano"] = > problema (tipo = C1. Type, valor = "0", ValueType = = "booliano"); ".*  
+   erro de @no__t 0Parser: 'POLICY0030: Erro de sintaxe, ' = = ' inesperado, esperando um dos seguintes: ' = ' *  
   
 6. Exemplo:  
   
@@ -293,18 +293,18 @@ Esta seção ilustra alguns exemplos de regras que são escritos com sintaxe inc
          Issue(type=c1.type, value=c1.value, valuetype = "string");  
    ```  
   
-   Este exemplo é sintaticamente e semanticamente correto. No entanto, usando "boolean" como um valor de cadeia de caracteres é associado a causar confusão, e ele deve ser evitado. Como mencionado anteriormente, usando os terminais de linguagem como valores de declarações devem ser evitados sempre que possível.  
+   Este exemplo é sintaticamente e semanticamente correto. No entanto, o uso de "booliano" como um valor de cadeia de caracteres é limitado para causar confusão e deve ser evitado. Como mencionado anteriormente, o uso de terminais de idioma como valores de declarações deve ser evitado sempre que possível.  
   
 ## <a name="BKMK_LT"></a>Terminais de idioma  
-A tabela a seguir lista o conjunto completo de cadeias de caracteres terminal e os terminais de idiomas associados que são usados na linguagem de regras de transformação de declarações. Essas definições usem cadeias de caracteres UTF-16 diferencia maiusculas de minúsculas.  
+A tabela a seguir lista o conjunto completo de cadeias de caracteres de terminal e os terminais de idioma associados que são usados no idioma das regras de transformação de declarações. Essas definições usam cadeias de caracteres UTF-16 que não diferenciam maiúsculas de minúsculas.  
   
-|String|Terminal|  
+|String|Componentes|  
 |----------|------------|  
-|"=>"|IMPLICA|  
+|"= >"|DIZ|  
 |";"|PONTO E VÍRGULA|  
-|":"|DOIS-PONTOS|  
-|","|COMMA|  
-|"."|PONTO|  
+|":"|PONTOS|  
+|","|PONTOS|  
+|"."|FINAL|  
 |"["|O_SQ_BRACKET|  
 |"]"|C_SQ_BRACKET|  
 |"("|O_BRACKET|  
@@ -313,22 +313,22 @@ A tabela a seguir lista o conjunto completo de cadeias de caracteres terminal e 
 |"!="|NEQ|  
 |"=~"|REGEXP_MATCH|  
 |"!~"|REGEXP_NOT_MATCH|  
-|"="|ATRIBUIR|  
-|"&&"|AND|  
-|"problema"|PROBLEMA|  
-|"tipo"|TYPE|  
-|"valor"|VALOR|  
-|"valuetype"|VALUE_TYPE|  
-|"declaração"|DECLARAÇÃO|  
-|"[_A-Za-z][_A-Za-z0-9]*"|IDENTIFICADOR|  
-|"\\"[^\\"\n]*\\""|CADEIA DE CARACTERES|  
-|"uint64"|UINT64_TYPE|  
-|"int64"|INT64_TYPE|  
-|"string"|STRING_TYPE|  
-|"boolean"|BOOLEAN_TYPE|  
+|"="|CANCELE|  
+|"& &"|AND|  
+|lo|PROBLEMA|  
+|Escreva|TYPE|  
+|valor|VALOR|  
+|ValueType|VALUE_TYPE|  
+|enção|ENÇÃO|  
+|"[_A-Za-z] [_A-Za-z0-9] *"|ID|  
+|"\\" [^ \\ "\n] * \\" "|STRINGS|  
+|UInt64|UINT64_TYPE|  
+|Int64|INT64_TYPE|  
+|Strings|STRING_TYPE|  
+|Boolean|BOOLEAN_TYPE|  
   
-## <a name="language-syntax"></a>Sintaxe de linguagem  
-A seguinte linguagem de regras de transformação de declarações é especificada no formulário ABNF. Essa definição usa os terminais que são especificados na tabela anterior, além de produções ABNF definidas aqui. As regras devem ser codificadas em UTF-16, e as comparações de cadeia de caracteres devem ser tratadas como diferencia maiusculas de minúsculas.  
+## <a name="language-syntax"></a>Sintaxe da linguagem  
+O idioma das regras de transformação de declarações a seguir é especificado no formulário ABNF. Essa definição usa os terminais especificados na tabela anterior, além das produções ABNF definidas aqui. As regras devem ser codificadas em UTF-16 e as comparações de cadeia de caracteres devem ser tratadas como não diferenciam maiúsculas de minúsculas.  
   
 ```  
 Rule_set        = ;/*Empty*/  
