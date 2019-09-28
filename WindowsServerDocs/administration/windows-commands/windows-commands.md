@@ -8,50 +8,32 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.date: 06/26/2019
-ms.prod: windows-server-threshold
-ms.openlocfilehash: d0cf58ea8d37efccf80ce262b64e604218bd8d0b
-ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
+ms.prod: windows-server
+ms.openlocfilehash: 5cb26bcff99d9cf3a1ee8b3a937ad6098a913c3d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67407654"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362057"
 ---
 # <a name="windows-commands"></a>Comandos do Windows
 
-Todas as versões com suporte do Windows (cliente e servidor) têm um conjunto de comandos do console Win32 internas.
+Todas as versões com suporte do Windows (servidor e cliente) têm um conjunto de comandos do console do Win32 internos.
 
 Este conjunto de documentação descreve os comandos do Windows que você pode usar para automatizar tarefas usando scripts ou ferramentas de script.
 
-Para obter informações sobre um comando específico, no menu de A-Z da seguinte, clique na letra que o comando inicia com e, em seguida, clique no nome do comando.
+Para localizar informações sobre um comando específico, no menu a-Z a seguir, clique na letra com a qual o comando começa e, em seguida, clique no nome do comando.
 
-[UM](#a) |
+[A](#a) |
 [B](#b) | 
 [C](#c) | 
-[1!D](#d) | 
-[E](#e)  | 
- [F](#f) | 
-[G](#g) | 
-[H](#h) | 
-[EU](#i)  |
- [J](#j) | 
-[K](#k) | 
-[L](#l) | 
-[M](#m) | 
-[N](#n)  | 
- [S](#o) | 
-[P](#p) | 
-[Q](#q) | 
-[R](#r)  | 
- [S](#s) | 
-[T](#t) | 
-[U](#u) | 
-[V](#v)  | 
- [W](#w) | 
-[X](#x) | Y | Z
+[D](#d) | 
+[E](#e) | 
+[F](#f)1[G](#g)3[H](#h)5[I](#i)7[J](#j)9[K](#k)1[L ](#l)3[M](#m)5[N](#n)7[O](#o)9[P](#p)1[Q](#q)3[R](#r)5[S](#s)7[T](#t)9[U](#u)1[V](#v)3 [W](#w)5[X](#x) | Y | Z
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-As informações contidas neste tópico se aplica a:
+As informações contidas neste tópico aplicam-se a:
 
 -   Windows Server 2019
 -   Windows Server (canal semestral)
@@ -63,56 +45,38 @@ As informações contidas neste tópico se aplica a:
 -   Windows 10
 -   Windows 8.1
 
-### <a name="command-shell-overview"></a>Visão geral do shell de comando
+### <a name="command-shell-overview"></a>Visão geral do Shell de comando
 
-O shell de comando era o shell primeiro embutido no Windows para automatizar tarefas de rotina, como gerenciamento de conta de usuário ou backups noturnos, com arquivos em lotes (. bat). Com o Windows Script Host, você pode executar scripts mais sofisticados no shell de comando. Para obter mais informações, consulte [cscript](cscript.md) ou [wscript](wscript.md). Você pode executar operações com mais eficiência por meio de scripts que você pode, por meio da interface do usuário. Scripts de aceitam todos os comandos que estão disponíveis na linha de comando.
+O Shell de comando foi o primeiro Shell interno do Windows para automatizar tarefas rotineiras, como o gerenciamento de contas de usuário ou backups noturnos, com arquivos de lote (. bat). Com o Windows Script Host, você poderia executar scripts mais sofisticados no Shell de comando. Para obter mais informações, consulte [cscript](cscript.md) ou [WScript](wscript.md). Você pode executar operações com mais eficiência usando scripts do que é possível usando a interface do usuário. Os scripts aceitam todos os comandos que estão disponíveis na linha de comando.
 
-Windows tem dois shells de comando: O shell de comando e [PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6). Cada shell é um programa de software que fornece comunicação direta entre você e o sistema operacional ou aplicativo, fornecendo um ambiente para automatizar operações de TI.
+O Windows tem dois shells de comando: O Shell de comando e o [PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6). Cada shell é um programa de software que fornece comunicação direta entre você e o sistema operacional ou aplicativo, fornecendo um ambiente para automatizar operações de ti.
 
-PowerShell foi projetado para estender os recursos do shell de comando para executar comandos do PowerShell chamados cmdlets. Os cmdlets são semelhantes aos comandos do Windows, mas fornecem uma linguagem de script mais extensível. Você pode executar comandos do Windows e cmdlets do PowerShell no Powershell, mas o shell de comando somente pode executar comandos do Windows e não os cmdlets do PowerShell.
+O PowerShell foi projetado para estender os recursos do Shell de comando para executar comandos do PowerShell chamados cmdlets. Os cmdlets são semelhantes aos comandos do Windows, mas fornecem uma linguagem de script mais extensível. Você pode executar comandos do Windows e cmdlets do PowerShell no PowerShell, mas o Shell de comando só pode executar comandos do Windows e não cmdlets do PowerShell.
 
-Para mais robusta e atualizada Windows automação, é recomendável usar o PowerShell, em vez de automação de comandos do Windows ou o Windows Script Host para o Windows. 
+Para a automação do Windows mais robusta e atualizada, recomendamos o uso do PowerShell em vez de comandos do Windows ou do Windows Script Host para automação do Windows. 
 > [!NOTE]
->Você também pode baixar e instalar [PowerShell Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6), a versão do código-fonte aberto do PowerShell. 
+>Você também pode baixar e instalar o [PowerShell Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6), a versão de código aberto do PowerShell. 
 
 > [!CAUTION]
-> A edição incorreta do Registro pode causar danos graves ao sistema. Antes de fazer as seguintes alterações no registro, você deve fazer backup dos dados importantes no computador.
+> A edição incorreta do Registro pode causar danos graves ao sistema. Antes de fazer as alterações a seguir no registro, você deve fazer backup de todos os dados importantes no computador.
 
 > [!NOTE]
-> Para ativar ou desativar a conclusão de nome de arquivo e diretório a no shell de comando em uma sessão de logon do usuário ou computador, execute **regedit.exe** e defina o seguinte **valor reg_DWOrd**:
+> Para habilitar ou desabilitar a conclusão de nome de arquivo e diretório no Shell de comando em um computador ou sessão de logon de usuário, execute **regedit. exe** e defina o seguinte **valor de reg_DWOrd**:
 > 
-> Precedência Processor\completionChar\reg_DWOrd
+> HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\completionChar\reg_DWOrd
 > 
-> Para definir a **reg_DWOrd** valor, use o valor hexadecimal de um caractere de controle para uma função específica (por exemplo, **0 9** é o guia e **0 08** é Backspace). Configurações especificadas pelo usuário têm precedência sobre configurações de computador e opções de linha de comando têm precedência sobre as configurações do registro.
+> Para definir o valor **reg_DWOrd** , use o valor hexadecimal de um caractere de controle para uma função específica (por exemplo, **0 9** é Tab e **0 08** é Backspace). As configurações especificadas pelo usuário têm precedência sobre as configurações do computador, e as opções de linha de comando têm precedência sobre as configurações do registro.
 
 ## <a name="command-line-reference-a-z"></a>Referência de linha de comando A-Z
 
-Para obter informações sobre um comando específico do Windows, no menu de A-Z da seguinte, clique na letra que o comando inicia com e, em seguida, clique no nome do comando.
+Para encontrar informações sobre um comando específico do Windows, no menu a-Z a seguir, clique na letra com a qual o comando começa e, em seguida, clique no nome do comando.
 
-[UM](#a) |
+[A](#a) |
 [B](#b) | 
 [C](#c) | 
-[1!D](#d) | 
-[E](#e)  | 
- [F](#f) | 
-[G](#g) | 
-[H](#h) | 
-[EU](#i)  |
- [J](#j) | 
-[K](#k) | 
-[L](#l) | 
-[M](#m) | 
-[N](#n)  | 
- [S](#o) | 
-[P](#p) | 
-[Q](#q) | 
-[R](#r)  | 
- [S](#s) | 
-[T](#t) | 
-[U](#u) | 
-[V](#v)  | 
- [W](#w) | 
-[X](#x) | Y | Z)
+[D](#d) | 
+[E](#e) | 
+[F](#f)1[G](#g)3[H](#h)5[I](#i)7[J](#j)9[K](#k)1[L ](#l)3[M](#m)5[N](#n)7[O](#o)9[P](#p)1[Q](#q)3[R](#r)5[S](#s)7[T](#t)9[U](#u)1[V](#v)3 [W](#w)5[X](#x) | Y | Z
 
 ### <a name="a"></a>A
 -   [append](append.md)
@@ -155,7 +119,7 @@ Para obter informações sobre um comando específico do Windows, no menu de A-Z
   -   [bitsadmin getnotifyflags](bitsadmin-getnotifyflags.md)
   -   [bitsadmin getnotifyinterface](bitsadmin-getnotifyinterface.md)
   -   [bitsadmin getowner](bitsadmin-getowner.md)
-  -   [prioridade de get Bitsadmin](bitsadmin-getpriority.md)
+  -   [Bitsadmin obter prioridade](bitsadmin-getpriority.md)
   -   [bitsadmin getproxybypasslist](bitsadmin-getproxybypasslist.md)
   -   [bitsadmin getproxylist](bitsadmin-getproxylist.md)
   -   [bitsadmin getproxyusage](bitsadmin-getproxyusage.md)
@@ -188,7 +152,7 @@ Para obter informações sobre um comando específico do Windows, no menu de A-Z
   -   [bitsadmin setreplyfilename](bitsadmin-setreplyfilename.md)
   -   [bitsadmin suspend](bitsadmin-suspend.md)
   -   [bitsadmin takeownership](bitsadmin-takeownership.md)
-  -   [Bitsadmin transferência](bitsadmin-transfer.md)
+  -   [Transferência Bitsadmin](bitsadmin-transfer.md)
   -   [bitsadmin util](bitsadmin-util.md)
   -   [bitsadmin wrap](bitsadmin-wrap.md)
 - [bootcfg](bootcfg.md)
@@ -298,7 +262,7 @@ Para obter informações sobre um comando específico do Windows, no menu de A-Z
   -   [fsutil usn](fsutil-usn.md)
   -   [fsutil volume](fsutil-volume.md)
   -   [fsutil wim](fsutil-wim.md)
-- [ftp](ftp.md)
+- [FTP](ftp.md)
 - [ftype](ftype.md)
 - [fveupdate](fveupdate.md)
 
@@ -316,7 +280,7 @@ Para obter informações sobre um comando específico do Windows, no menu de A-Z
 -   [helpctr](helpctr.md)
 -   [hostname](hostname.md)
 
-### <a name="i"></a>I
+### <a name="i"></a>ENCONTREI
 -   [icacls](icacls.md)
 -   [if](if.md)
 -   [inuse](inuse.md)
@@ -330,28 +294,28 @@ Para obter informações sobre um comando específico do Windows, no menu de A-Z
 ### <a name="k"></a>K
 - [klist](klist.md)
 - [ksetup](ksetup.md)
-  -   [ksetup:setrealm](ksetup-setrealm.md)
-  -   [ksetup:mapuser](ksetup-mapuser.md)
-  -   [ksetup:addkdc](ksetup-addkdc.md)
-  -   [ksetup:delkdc](ksetup-delkdc.md)
-  -   [ksetup:addkpasswd](ksetup-addkpasswd.md)
-  -   [ksetup:delkpasswd](ksetup-delkpasswd.md)
-  -   [ksetup:server](ksetup-server.md)
-  -   [ksetup:setcomputerpassword](ksetup-setcomputerpassword.md)
-  -   [ksetup:removerealm](ksetup-removerealm.md)
-  -   [ksetup:domain](ksetup-domain.md)
-  -   [ksetup:changepassword](ksetup-changepassword.md)
-  -   [ksetup:listrealmflags](ksetup-listrealmflags.md)
-  -   [ksetup:setrealmflags](ksetup-setrealmflags.md)
-  -   [ksetup:addrealmflags](ksetup-addrealmflags.md)
-  -   [ksetup:delrealmflags](ksetup-delrealmflags.md)
-  -   [ksetup:dumpstate](ksetup-dumpstate.md)
-  -   [ksetup:addhosttorealmmap](ksetup-addhosttorealmmap.md)
-  -   [ksetup:delhosttorealmmap](ksetup-delhosttorealmmap.md)
-  -   [ksetup:setenctypeattr](ksetup-setenctypeattr.md)
-  -   [ksetup:getenctypeattr](ksetup-getenctypeattr.md)
-  -   [ksetup:addenctypeattr](ksetup-addenctypeattr.md)
-  -   [ksetup:delenctypeattr](ksetup-delenctypeattr.md) 
+  -   [ksetup: setreale](ksetup-setrealm.md)
+  -   [ksetup: mapuser](ksetup-mapuser.md)
+  -   [ksetup: addkdc](ksetup-addkdc.md)
+  -   [ksetup: delkdc](ksetup-delkdc.md)
+  -   [ksetup: addkpasswd](ksetup-addkpasswd.md)
+  -   [ksetup: delkpasswd](ksetup-delkpasswd.md)
+  -   [ksetup: servidor](ksetup-server.md)
+  -   [ksetup: setcomputerpassword](ksetup-setcomputerpassword.md)
+  -   [ksetup: removerealm](ksetup-removerealm.md)
+  -   [ksetup: domínio](ksetup-domain.md)
+  -   [ksetup: ChangePassword](ksetup-changepassword.md)
+  -   [ksetup: listrealmflags](ksetup-listrealmflags.md)
+  -   [ksetup: setrealmflags](ksetup-setrealmflags.md)
+  -   [ksetup: addrealmflags](ksetup-addrealmflags.md)
+  -   [ksetup: delrealmflags](ksetup-delrealmflags.md)
+  -   [ksetup: dumpstate](ksetup-dumpstate.md)
+  -   [ksetup: addhosttorealmmap](ksetup-addhosttorealmmap.md)
+  -   [ksetup: delhosttorealmmap](ksetup-delhosttorealmmap.md)
+  -   [ksetup: setenctypeattr](ksetup-setenctypeattr.md)
+  -   [ksetup: getenctypeattr](ksetup-getenctypeattr.md)
+  -   [ksetup: addenctypeattr](ksetup-addenctypeattr.md)
+  -   [ksetup: delenctypeattr](ksetup-delenctypeattr.md) 
 - [ktmutil](ktmutil.md)
 - [ktpass](ktpass.md)
 
@@ -361,10 +325,10 @@ Para obter informações sobre um comando específico do Windows, no menu de A-Z
 - [logman](logman.md)
   -   [logman create](logman-create.md)
   -   [logman query](logman-query.md)
-  -   [Logman start & 124; parar](logman-start-stop.md)
+  -   [logman iniciar & 124; deixar](logman-start-stop.md)
   -   [logman delete](logman-delete.md)
   -   [logman update](logman-update.md)
-  -   [logman import &124; export](logman-import-export.md)
+  -   [importação de logman & 124; Export](logman-import-export.md)
 - [logoff](logoff.md)
 - [lpq](lpq.md)
 - [lpr](lpr.md)
@@ -373,23 +337,23 @@ Para obter informações sobre um comando específico do Windows, no menu de A-Z
 - [macfile](macfile.md)
 - [makecab](makecab.md)
 - [manage-bde](manage-bde.md)
-  -   [manage-bde: status](manage-bde-status.md)
-  -   [Gerenciar-bde: no](manage-bde-on.md)
-  -   [manage-bde: off](manage-bde-off.md)
-  -   [Gerenciar-bde: pause](manage-bde-pause.md)
-  -   [Gerenciar-bde: retomar](manage-bde-resume.md)
-  -   [Gerenciar-bde: bloqueio](manage-bde-lock.md)
-  -   [Gerenciar-bde: desbloquear](manage-bde-unlock.md)
-  -   [Gerenciar-bde: desbloqueio automático](manage-bde-autounlock.md)
-  -   [Gerenciar-bde: protetores](manage-bde-protectors.md)
-  -   [manage-bde: tpm](manage-bde-tpm.md)
-  -   [manage-bde: setidentifier](manage-bde-setidentifier.md)
+  -   [Manage-bde: status](manage-bde-status.md)
+  -   [Manage-bde: on](manage-bde-on.md)
+  -   [Manage-bde: off](manage-bde-off.md)
+  -   [Manage-bde: pausar](manage-bde-pause.md)
+  -   [Manage-bde: retomar](manage-bde-resume.md)
+  -   [Manage-bde: Lock](manage-bde-lock.md)
+  -   [Manage-bde: desbloquear](manage-bde-unlock.md)
+  -   [Manage-bde: desbloqueio automático](manage-bde-autounlock.md)
+  -   [Manage-bde: protetores](manage-bde-protectors.md)
+  -   [Manage-bde: TPM](manage-bde-tpm.md)
+  -   [Manage-bde: setidentifier](manage-bde-setidentifier.md)
   -   [manage-bde: ForceRecovery](manage-bde-forcerecovery.md)
-  -   [Gerenciar-bde: changepassword](manage-bde-changepassword.md)
-  -   [Gerenciar-bde: changepin](manage-bde-changepin.md)
-  -   [manage-bde: changekey](manage-bde-changekey.md)
+  -   [Manage-bde: ChangePassword](manage-bde-changepassword.md)
+  -   [Manage-bde: changepin](manage-bde-changepin.md)
+  -   [Manage-bde: ChangeKey](manage-bde-changekey.md)
   -   [manage-bde: KeyPackage](manage-bde-keypackage.md)
-  -   [Gerenciar-bde: atualizar](manage-bde-upgrade.md)
+  -   [Manage-bde: atualizar](manage-bde-upgrade.md)
   -   [manage-bde: WipeFreeSpace](manage-bde-wipefreespace.md)
 - [mapadmin](mapadmin.md)
 - [Md](Md.md)
@@ -421,8 +385,8 @@ Para obter informações sobre um comando específico do Windows, no menu de A-Z
 - [nfsstat](nfsstat.md)
 - [nlbmgr](nlbmgr.md)
 - [nslookup](nslookup.md)
-  -   [comando de saída de nslookup](nslookup-exit-command.md)
-  -   [comando de dedo nslookup](nslookup-finger-command.md)
+  -   [comando de saída do nslookup](nslookup-exit-command.md)
+  -   [comando Finger nslookup](nslookup-finger-command.md)
   -   [nslookup help](nslookup-help.md)
   -   [nslookup ls](nslookup-ls.md)
   -   [nslookup lserver](nslookup-lserver.md)
@@ -491,17 +455,17 @@ Para obter informações sobre um comando específico do Windows, no menu de A-Z
 - [rdpsign](rdpsign.md)
 - [recover](recover.md)
 - [reg](reg.md)
-  -   [Adicionar reg](reg-add.md)
-  -   [reg compare](reg-compare.md)
-  -   [cópia de reg](reg-copy.md)
-  -   [Reg delete](reg-delete.md)
-  -   [reg export](reg-export.md)
+  -   [Adicionar Reg](reg-add.md)
+  -   [Reg Compare](reg-compare.md)
+  -   [cópia reg](reg-copy.md)
+  -   [REG DELETE](reg-delete.md)
+  -   [exportar reg](reg-export.md)
   -   [importação de reg](reg-import.md)
-  -   [Carga de reg](reg-load.md)
-  -   [consulta de reg](reg-query.md)
-  -   [restauração de reg](reg-restore.md)
-  -   [reg save](reg-save.md)
-  -   [Reg unload](reg-unload.md)
+  -   [carga reg](reg-load.md)
+  -   [consulta reg](reg-query.md)
+  -   [Reg Restore](reg-restore.md)
+  -   [Reg salvar](reg-save.md)
+  -   [Reg Unload](reg-unload.md)
 - [regini](regini.md)
 - [regsvr32](regsvr32.md)
 - [relog](relog.md)
@@ -525,19 +489,19 @@ Para obter informações sobre um comando específico do Windows, no menu de A-Z
 ### <a name="s"></a>S
 - [schtasks](schtasks.md)
 - [scwcmd](Scwcmd.md)
-  -   [scwcmd: analyze](scwcmd-analyze.md)
-  -   [scwcmd: configure](scwcmd-configure.md)
-  -   [scwcmd: register](scwcmd-register.md) 
-  -   [scwcmd: rollback](scwcmd-rollback.md) 
-  -   [scwcmd: transform](scwcmd-transform.md) 
-  -   [scwcmd: view](scwcmd-view.md) 
+  -   [scwcmd: analisar](scwcmd-analyze.md)
+  -   [scwcmd: configurar](scwcmd-configure.md)
+  -   [scwcmd: Register](scwcmd-register.md) 
+  -   [scwcmd: Rollback](scwcmd-rollback.md) 
+  -   [scwcmd: Transform](scwcmd-transform.md) 
+  -   [scwcmd: exibir](scwcmd-view.md) 
 - [secedit](secedit.md)
-  -   [secedit:analyze](secedit-analyze.md)
-  -   [secedit:configure](secedit-configure.md)
-  -   [secedit:export](secedit-export.md)
-  -   [secedit:generaterollback](secedit-generaterollback.md)
-  -   [secedit:import](secedit-import.md)
-  -   [secedit:validate](secedit-validate.md)
+  -   [secedit: analisar](secedit-analyze.md)
+  -   [secedit: configurar](secedit-configure.md)
+  -   [secedit: exportar](secedit-export.md)
+  -   [secedit: generaterollback](secedit-generaterollback.md)
+  -   [secedit: importar](secedit-import.md)
+  -   [secedit: validar](secedit-validate.md)
 - [serverceipoptin](serverceipoptin.md)
 - [Servermanagercmd](Servermanagercmd.md)
 - [serverweroptin](serverweroptin.md)
@@ -581,7 +545,7 @@ Para obter informações sobre um comando específico do Windows, no menu de A-Z
 -   [typeperf](typeperf.md)
 -   [tzutil](tzutil.md)
 
-### <a name="u"></a>U
+### <a name="u"></a>T
 -   [unlodctr](unlodctr_1.md)
 
 ### <a name="v"></a>V
@@ -594,21 +558,21 @@ Para obter informações sobre um comando específico do Windows, no menu de A-Z
 ### <a name="w"></a>W
 - [waitfor](waitfor.md)
 - [wbadmin](wbadmin.md)
-  -   [Wbadmin enable backup](wbadmin-enable-backup.md)
-  -   [Desabilitar o WBADMIN backup](wbadmin-disable-backup.md)
-  -   [WBADMIN Iniciar backup](wbadmin-start-backup.md)
-  -   [Interrupção do trabalho de WBADMIN](wbadmin-stop-job.md)
-  -   [versões do Wbadmin get](wbadmin-get-versions.md)
-  -   [Wbadmin get itens](wbadmin-get-items.md)
-  -   [WBADMIN iniciar recuperação](wbadmin-start-recovery.md)
-  -   [obter o status da WBADMIN](wbadmin-get-status.md)
-  -   [Wbadmin get discos](wbadmin-get-disks.md)
+  -   [Wbadmin habilitar backup](wbadmin-enable-backup.md)
+  -   [Wbadmin Disable backup](wbadmin-disable-backup.md)
+  -   [Wbadmin iniciar backup](wbadmin-start-backup.md)
+  -   [Wbadmin parar trabalho](wbadmin-stop-job.md)
+  -   [Wbadmin obter versões](wbadmin-get-versions.md)
+  -   [Wbadmin obter itens](wbadmin-get-items.md)
+  -   [Wbadmin iniciar recuperação](wbadmin-start-recovery.md)
+  -   [Wbadmin obter status](wbadmin-get-status.md)
+  -   [Wbadmin obter discos](wbadmin-get-disks.md)
   -   [Wbadmin start systemstaterecovery](wbadmin-start-systemstaterecovery.md)
   -   [Wbadmin start systemstatebackup](wbadmin-start-systemstatebackup.md)
-  -   [Wbadmin delete systemstatebackup](wbadmin-delete-systemstatebackup.md)
+  -   [Wbadmin Delete systemstatebackup](wbadmin-delete-systemstatebackup.md)
   -   [Wbadmin start sysrecovery](wbadmin-start-sysrecovery.md)
-  -   [Catálogo de restauração de WBADMIN](wbadmin-restore-catalog.md)
-  -   [Catálogo de exclusão de WBADMIN](wbadmin-delete-catalog.md)
+  -   [Wbadmin restore catalog](wbadmin-restore-catalog.md)
+  -   [Wbadmin excluir catálogo](wbadmin-delete-catalog.md)
 - [wdsutil](wdsutil.md)
 - [wecutil](wecutil.md)
 - [wevtutil](wevtutil.md)
@@ -618,7 +582,7 @@ Para obter informações sobre um comando específico do Windows, no menu de A-Z
 - [winnt32](winnt32.md)
 - [winpop](winpop.md)
 - [winrs](winrs.md)
-- [wlbs](wlbs_1.md)
+- [WLBS](wlbs_1.md)
 - [wmic](wmic.md)
 - [wscript](wscript.md)
 

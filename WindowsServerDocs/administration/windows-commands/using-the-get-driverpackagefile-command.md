@@ -1,8 +1,8 @@
 ---
-title: Usando o comando get-DriverPackageFile
-description: 'Tópico de comandos do Windows para * * *- '
+title: Usando o comando Get-DriverPackageFile
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 264bdb6d51622e6323be00b44014b86cd9662e61
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 21bbe17e56177da5cd2c1bf83c712d256cc794c8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440506"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363150"
 ---
-# <a name="using-the-get-driverpackagefile-command"></a>Usando o comando get-DriverPackageFile
+# <a name="using-the-get-driverpackagefile-command"></a>Usando o comando Get-DriverPackageFile
 
 
 
@@ -36,11 +36,11 @@ WDSUTIL /Get-DriverPackageFile /InfFile:<Inf File path> [/Architecture:{x86 | ia
 
 |         Parâmetro         |                              Descrição                               |
 |---------------------------|------------------------------------------------------------------------|
-| / InfFile:\<caminho do arquivo Inf > | Especifica o nome de arquivo e caminho completo do arquivo. inf de pacote do driver. |
-|    [/Architecture:{x86    |                                  ia64                                  |
-|     [/Show: {Drivers      |                                 Arquivos                                  |
+| /InfFile: caminho de arquivo de \<Inf > | Especifica o caminho completo e o nome do arquivo do pacote de driver. inf. |
+|    [/Architecture: {x86    |                                  Win64                                  |
+|     [/Show: {drivers      |                                 Arquivos                                  |
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 Para exibir informações sobre um arquivo de driver, digite:
 ```

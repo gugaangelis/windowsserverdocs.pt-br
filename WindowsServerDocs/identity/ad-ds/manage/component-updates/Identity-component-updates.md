@@ -7,14 +7,14 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1d975fa32f19facfdee7a31e58293006fc5859ff
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e542997295f8c0db9b660036c995daf0100b74d1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834477"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71368884"
 ---
 # <a name="identity-component-updates"></a>Atualizações de componentes de identidade
 
@@ -25,13 +25,13 @@ ms.locfileid: "59834477"
 Esta lição explica as atualizações de componentes de identidade no Windows Server 2012 R2.  
   
 ### <a name="what-you-will-learn"></a>O que você aprenderá  
-Depois de concluir esta lição, você será capaz de:  
+Depois de concluir esta lição, você poderá:  
   
--   Descrevem as alterações a seguir:  
+-   Descreva as seguintes alterações:  
   
     -   [Exclusividade de SPN e UPN](../../../ad-ds/manage/component-updates/SPN-and-UPN-uniqueness.md)  
   
-    -   [Winlogon Automatic Restart Sign-On &#40;ARSO&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)  
+    -   [ARSO logon automático de inicialização do &#40;Winlogon&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)  
   
     -   [Atestado de chave de TPM](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md)  
   
@@ -41,7 +41,7 @@ Depois de concluir esta lição, você será capaz de:
   
     -   [Proteção e gerenciamento de credenciais](https://technet.microsoft.com/library/dn408190.aspx)  
   
-**Autor**: Engenheiro de escalonamento de suporte sênior Justin Turner com o grupo do Windows  
+**Autor**: Justin Turner, engenheiro de escalonamento de suporte sênior com o grupo do Windows  
   
 > [!NOTE]  
 > Este documento foi criado por um engenheiro de atendimento ao cliente da Microsoft e é destinado a administradores e arquitetos de sistemas experientes que procuram explicações técnicas mais profundas para recursos e soluções no Windows Server 2012 R2 do que aquelas geralmente oferecidas em tópicos do TechNet. No entanto, ele não passou pelas mesmas etapas de edição que eles, por isso a linguagem pode parecer que menos refinada do que a geralmente encontrada no TechNet.  

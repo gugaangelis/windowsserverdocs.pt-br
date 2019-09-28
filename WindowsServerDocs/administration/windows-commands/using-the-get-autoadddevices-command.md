@@ -1,8 +1,8 @@
 ---
-title: Usando o comando get-AutoaddDevices
-description: 'Tópico de comandos do Windows para * * *- '
+title: Usando o comando Get-AutoaddDevices
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 337c8e76923fe243982ba9c10d18f2e5a5e7d9ff
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fa30a8ebd73164dc3d8ab267c3deb0739aa4b700
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885737"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363253"
 ---
-# <a name="using-the-get-autoadddevices-command"></a>Usando o comando get-AutoaddDevices
+# <a name="using-the-get-autoadddevices-command"></a>Usando o comando Get-AutoaddDevices
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Exibe todos os computadores que estão no banco de dados adição automática em um servidor de serviços de implantação do Windows.
+Exibe todos os computadores que estão no banco de dados de adição automática em um servidor dos serviços de implantação do Windows.
 ## <a name="syntax"></a>Sintaxe
 ```
 wdsutil [Options] /Get-AutoaddDevices [/Server:<Server name>] /Devicetype:{PendingDevices | RejectedDevices | ApprovedDevices}
@@ -33,8 +33,8 @@ wdsutil [Options] /Get-AutoaddDevices [/Server:<Server name>] /Devicetype:{Pendi
 |Parâmetro|Descrição|
 |-------|--------|
 |[/Server:<Server name>]|Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.|
-|/ Devicetype: {PendingDevices &#124; RejectedDevices &#124; ApprovedDevices}|Especifica o tipo de computador a retornar.<br /><br />-   **PendingDevices** retorna todos os computadores no banco de dados que têm um status pendente.<br />-   **RejectedDevices** retorna todos os computadores no banco de dados que têm um status de rejeitada.<br />-   **ApprovedDevices** retorna todos os computadores no banco de dados que têm um status de aprovação.|
-## <a name="BKMK_examples"></a>Exemplos
+|/DeviceType: {PendingDevices &#124; RejectedDevices &#124; ApprovedDevices}|Especifica o tipo de computador a ser retornado.<br /><br />-   **PendingDevices** retorna todos os computadores no banco de dados que têm um status pendente.<br />-   **RejectedDevices** retorna todos os computadores no banco de dados que têm o status rejeitado.<br />-   **ApprovedDevices** retorna todos os computadores no banco de dados que têm o status aprovado.|
+## <a name="BKMK_examples"></a>Disso
 Para ver todos os computadores aprovados, digite:
 ```
 wdsutil /Get-AutoaddDevices /Devicetype:ApprovedDevices
@@ -45,6 +45,6 @@ wdsutil /verbose /Get-AutoaddDevices /Devicetype:RejectedDevices /Server:MyWDSSe
 ```
 #### <a name="additional-references"></a>Referências adicionais
 [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[usando o comando delete AutoaddDevices](using-the-delete-autoadddevices-command.md)
-[usando o comando aprovar AutoaddDevices](using-the-approve-autoadddevices-command.md) 
- [ Usando o comando AutoaddDevices de rejeição](using-the-reject-autoadddevices-command.md)
+[usando o comando delete-AutoaddDevices](using-the-delete-autoadddevices-command.md)
+[usando o comando Approve-AutoaddDevices](using-the-approve-autoadddevices-command.md)
+[usando o comando Reject-AutoaddDevices](using-the-reject-autoadddevices-command.md)

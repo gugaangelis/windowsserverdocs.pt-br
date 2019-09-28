@@ -1,8 +1,8 @@
 ---
-title: Catálogo de exclusão de WBADMIN
-description: 'Tópico de comandos do Windows para * * *- '
+title: Wbadmin excluir catálogo
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2d9f60cf79fcd856fa972d8f43f195c5823e5d81
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 58b8bc6043437755675af28c084257ba0d8b176d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841407"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362530"
 ---
-# <a name="wbadmin-delete-catalog"></a>Catálogo de exclusão de WBADMIN
+# <a name="wbadmin-delete-catalog"></a>Wbadmin excluir catálogo
 
 
 
-Exclui o catálogo de backup é armazenado no computador local. Use esse comando quando o catálogo de backup foi corrompido e não é possível restaurá-lo usando **wbadmin restauração catálogo**.
+Exclui o catálogo de backup que está armazenado no computador local. Use este comando quando o catálogo de backup tiver sido corrompido e você não puder restaurá-lo usando **Wbadmin restore catalog**.
 
-Para excluir um catálogo de backup com este subcomando, você deve ser um membro do **operadores de Backup** grupo ou o **administradores** grupo, ou você deve ter sido recebido as permissões apropriadas. Além disso, você deve executar **wbadmin** em um prompt de comando elevado. (Para abrir um atalho de prompt de comando com privilégios elevados **Prompt de comando**e, em seguida, clique em **executar como administrador**.)
+Para excluir um catálogo de backup com este subcomando, você deve ser um membro do grupo **operadores de backup** ou do grupo **Administradores** ou ter recebido as permissões apropriadas. Além disso, você deve executar o **Wbadmin** em um prompt de comandos com privilégios elevados. (Para abrir um prompt de comando com privilégios elevados, clique com o botão direito do mouse em **prompt de comando**e clique em **Executar como administrador**.)
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -43,10 +43,10 @@ wbadmin delete catalog
 
 ## <a name="remarks"></a>Comentários
 
-Se você excluir o catálogo de backup para um computador, você não poderá acessar os backups criados do computador usando o snap-in Backup do Windows Server. Nesse caso, se você puder acessar outro local de backup, use **wbadmin restauração catálogo** para restaurar o catálogo de backup nesse local. Você deve criar um novo backup depois que o catálogo de backup é excluído.
+Se você excluir o catálogo de backup de um computador, não poderá acessar os backups criados desse computador usando o snap-in Backup do Windows Server. Nesse caso, se você puder acessar outro local de backup, use **Wbadmin restore catalog** para restaurar o catálogo de backup desse local. Você deve criar um novo backup depois que o catálogo de backup for excluído.
 
 #### <a name="additional-references"></a>Referências adicionais
 
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   [Remove-WBCatalog](https://technet.microsoft.com/library/jj902445.aspx)

@@ -1,8 +1,8 @@
 ---
-title: Usando o comando get-AllMulticastTransmissions
-description: 'Tópico de comandos do Windows para * * *- '
+title: Usando o comando Get-AllMulticastTransmissions
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b05f8802a288d80960cf79356675cb9adce9c260
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 644684ffb356ef07120bc391e3d3da2daf768eaf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440529"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363336"
 ---
-# <a name="using-the-get-allmulticasttransmissions-command"></a>Usando o comando get-AllMulticastTransmissions
+# <a name="using-the-get-allmulticasttransmissions-command"></a>Usando o comando Get-AllMulticastTransmissions
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Exibe informações sobre todas as transmissões multicast em um servidor.
 ## <a name="syntax"></a>Sintaxe
-for Windows Server 2008:
+para o Windows Server 2008:
 ```
 wdsutil /Get-AllMulticastTransmissions [/Server:<Server name>] [/Show:Clients] [/ExcludedeletePending]
 ```
@@ -39,20 +39,20 @@ wdsutil /Get-AllMulticastTransmissions [/Server:<Server name>] [/Show:{Boot | In
 |        Parâmetro        |                                                                                                                                                                                                                                                                   Explicação                                                                                                                                                                                                                                                                    |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [/Server:<Server name>] |                                                                                                                                                                                 Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.                                                                                                                                                                                  |
-|         [/Show]         | **Windows Server 2008**<br /><br />/Show:clients - Exibe informações sobre computadores cliente que estão conectados às transmissões multicast.<br /><br />**Windows Server 2008 R2**<br /><br />Mostrar: {inicialização &#124; instalar &#124; todas as}-o tipo de imagem para retornar.                                **Inicialização** retorna somente as transmissões de imagem de inicialização.                                  **Instalar** retorna instala somente as transmissões de imagem. **Todos os** retorna os dois tipos de imagem. |
+|         /Show         | **Windows Server 2008**<br /><br />/Show: clients – exibe informações sobre os computadores cliente que estão conectados às transmissões multicast.<br /><br />**Windows Server 2008 R2**<br /><br />Mostrar: {boot &#124; install &#124; All}-o tipo de imagem a ser retornado.                                A **inicialização** retorna apenas transmissões de imagem de inicialização.                                  **Install** retorna apenas as transmissões de imagem de instalação. **Todos** retorna ambos os tipos de imagem. |
 |                         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|    /details:clients     |                                                                                                                                                                                              Suporte apenas para Windows Server 2008 R2. Se estiver presente, os clientes que estão conectados a transmissão serão exibidos.                                                                                                                                                                                               |
-| [/ExcludedeletePending] |                                                                                                                                                                                                                                              Exclui qualquer transmissões desativadas na lista.                                                                                                                                                                                                                                               |
+|    /Details: clientes     |                                                                                                                                                                                              Com suporte apenas para o Windows Server 2008 R2. Se houver, os clientes que estão conectados à transmissão serão exibidos.                                                                                                                                                                                               |
+| [/ExcludedeletePending] |                                                                                                                                                                                                                                              Exclui todas as transmissões desativadas da lista.                                                                                                                                                                                                                                               |
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 Para exibir informações sobre todas as transmissões, digite:
 - Windows Server 2008: `wdsutil /Get-AllMulticastTransmissions`
-- Windows Server 2008 R2: `wdsutil /Get-AllMulticastTransmissions /Show:All` Para exibir informações sobre todas as transmissões, exceto as transmissões de desativado, digite:
+- Windows Server 2008 R2: `wdsutil /Get-AllMulticastTransmissions /Show:All` para exibir informações sobre todas as transmissões, exceto as transmissões desativadas, digite:
 - Windows Server 2008: `wdsutil /Get-AllMulticastTransmissions /Server:MyWDSServer /Show:Clients /ExcludedeletePending`
 - Windows Server 2008 R2: `wdsutil /Get-AllMulticastTransmissions /Server:MyWDSServer /Show:All /details:Clients /ExcludedeletePending`
   #### <a name="additional-references"></a>Referências adicionais
   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
   [usando o comando get-MulticastTransmission](using-the-get-multicasttransmission-command.md)
-  [usando o comando /New-MulticastTransmission](using-the-new-multicasttransmission-command.md) 
-   [Usando o comando remove-MulticastTransmission](using-the-remove-multicasttransmission-command.md)
-  [subcomando: início MulticastTransmission](subcommand-start-multicasttransmission.md)
+  [usando o comando New-MulticastTransmission](using-the-new-multicasttransmission-command.md)
+  [usando o comando Remove-MulticastTransmission](using-the-remove-multicasttransmission-command.md)
+  [ Subcomando: Start-MulticastTransmission](subcommand-start-multicasttransmission.md)

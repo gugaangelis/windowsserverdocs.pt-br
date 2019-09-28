@@ -1,8 +1,8 @@
 ---
 title: whoami
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6844ba001c2ebd7407b77f97204069a48a1b595b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9731ba3be3983eb53ade88fceaee863800229084
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840147"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362136"
 ---
 # <a name="whoami"></a>whoami
 
 
 
-Exibe informações de usuário, grupo e privilégios do usuário que está conectado no momento ao sistema local. Se usado sem parâmetros, **whoami** exibe o nome de usuário e domínio atual.
+Exibe informações de usuário, grupo e privilégios para o usuário que está conectado no momento ao sistema local. Se usado sem parâmetros, **whoami** exibirá o domínio atual e o nome de usuário.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -40,24 +40,24 @@ whoami /all [/fo <Format>] [/nh]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/upn|Exibe o nome de usuário no formato de nome principal (UPN) do usuário.|
-|/fqdn|Exibe o nome de usuário no formato de nome (FQDN) de domínio totalmente qualificado.|
+|/upn|Exibe o nome de usuário no formato UPN (nome principal do usuário).|
+|/fqdn|Exibe o nome de usuário no formato FQDN (nome de domínio totalmente qualificado).|
 |/logonid|Exibe a ID de logon do usuário atual.|
-|/user|Exibe o nome de usuário e domínio atual e o identificador de segurança (SID).|
+|/|Exibe o domínio atual e o nome de usuário e o SID (identificador de segurança).|
 |/groups|Exibe os grupos de usuários aos quais o usuário atual pertence.|
 |/priv|Exibe os privilégios de segurança do usuário atual.|
-|/FO \<formato >|Especifica o formato de saída. Os valores válidos incluem:</br>**tabela** exibe a saída em uma tabela. Este é o valor padrão.</br>**lista** exibe a saída em uma lista.</br>**CSV** exibe a saída no formato de valores separados por vírgulas (CSV).|
-|/all|Exibe todas as informações no token de acesso atual, incluindo o nome de usuário atual, identificadores de segurança (SID), privilégios e grupos aos quais o usuário atual pertence.|
-|/nh|Especifica que o cabeçalho de coluna não deve ser exibido na saída. Isso é válido apenas para formatos CSV e de tabela.|
+|/Fo \<Format >|Especifica o formato de saída. Os valores válidos incluem:</br>**tabela** Exibe a saída em uma tabela. Este é o valor padrão.</br>**lista** de Exibe a saída em uma lista.</br>**CSV** Exibe a saída no formato de valores separados por vírgulas (CSV).|
+|/All|Exibe todas as informações no token de acesso atual, incluindo o nome de usuário atual, identificadores de segurança (SID), privilégios e grupos aos quais o usuário atual pertence.|
+|/NH|Especifica que o cabeçalho da coluna não deve ser exibido na saída. Isso é válido somente para formatos de tabela e CSV.|
 |/?|Exibe a ajuda no prompt de comando.|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para exibir o nome de usuário e domínio da pessoa que está conectado no momento a este computador, digite:
+Para exibir o domínio e o nome de usuário da pessoa que está atualmente conectada a este computador, digite:
 ```
 whoami
 ```
-Saída semelhante à seguinte será exibida:
+Uma saída semelhante à seguinte é exibida:
 ```
 DOMAIN1\administrator
 ```
@@ -68,4 +68,4 @@ whoami /all
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

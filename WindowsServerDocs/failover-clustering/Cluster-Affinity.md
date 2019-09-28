@@ -1,32 +1,32 @@
 ---
 title: Afinidade de cluster
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
 ms.date: 03/07/2019
-description: Este artigo descreve os níveis de afinidade e antiAffinity de cluster de failover
-ms.openlocfilehash: 67929e6d3399633ebfec0b908463131973aecaf7
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+description: Este artigo descreve os níveis de afinidade e antiafinidade de cluster de failover
+ms.openlocfilehash: 9a269d2b14e953daee849008a473c750dfbfe84b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66453033"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361460"
 ---
 # <a name="cluster-affinity"></a>Afinidade de cluster
 
 > Aplica-se a: Windows Server 2019, Windows Server 2016
 
-Um cluster de failover pode conter várias funções que podem mover entre nós e executar.  Há vezes quando determinadas funções (ou seja, máquinas virtuais, grupos de recursos, etc.) não devem executar no mesmo nó.  Isso pode ser devido ao consumo de recursos, o uso de memória, etc.  Por exemplo, há duas máquinas virtuais que estão com uso intensivo de CPU e de memória e se as duas máquinas virtuais estão em execução no mesmo nó, uma ou ambas as máquinas virtuais podem apresentar problemas de impacto de desempenho.  Este artigo explicará cluster antiaffinity níveis e como você pode usá-los.
+Um cluster de failover pode conter várias funções que podem se mover entre nós e executar.  Há ocasiões em que determinadas funções (ou seja, máquinas virtuais, grupos de recursos, etc.) não devem ser executadas no mesmo nó.  Isso pode ser devido ao consumo de recursos, uso de memória, etc.  Por exemplo, há duas máquinas virtuais com uso intensivo de memória e CPU e, se as duas máquinas virtuais estiverem em execução no mesmo nó, uma ou ambas as máquinas virtuais poderão ter problemas de impacto no desempenho.  Este artigo explicará os níveis de antiafinidade de cluster e como você pode usá-los.
 
-## <a name="what-is-affinity-and-antiaffinity"></a>O que é a afinidade de e AntiAffinity?
+## <a name="what-is-affinity-and-antiaffinity"></a>O que é afinidade e antiafinidade?
 
-A afinidade é uma regra que você configuraria que estabelece uma relação entre duas ou mais funções (i, e, as máquinas virtuais, grupos de recursos, etc) para mantê-los juntos.  AntiAffinity é o mesmo, mas é usado para tentar e manter as funções especificadas distantes um do outro.  Clusters de failover usam AntiAffinity para suas funções.  Mais especificamente, o [AntiAffinityClassNames](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/groups-antiaffinityclassnames) parâmetro definido em funções para que eles não são executados no mesmo nó.  
+Affinity é uma regra que você configuraria que estabelece uma relação entre duas ou mais funções (i, e, máquinas virtuais, grupos de recursos, etc) para mantê-las juntas.  A antiafinidade é a mesma, mas é usada para tentar manter as funções especificadas separadas umas das outras.  Os clusters de failover usam a antiafinidade para suas funções.  Mais especificamente, o parâmetro [AntiAffinityClassNames](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/groups-antiaffinityclassnames) definido nas funções para que eles não sejam executados no mesmo nó.  
 
 ## <a name="antiaffinityclassnames"></a>AntiAffinityClassnames
 
-Ao examinar as propriedades de um grupo, há o parâmetro AntiAffinityClassNames e ele está em branco por padrão.  Nos exemplos a seguir, Grupo1 e grupo2 devem ser separados sejam executados no mesmo nó.  Para exibir a propriedade, o comando do PowerShell e o resultado seria:
+Ao examinar as propriedades de um grupo, há o parâmetro AntiAffinityClassNames e ele fica em branco como padrão.  Nos exemplos abaixo, GRUPO1 e group2 devem ser separados da execução no mesmo nó.  Para exibir a propriedade, o comando e o resultado do PowerShell seriam:
 
     PS> Get-ClusterGroup Group1 | fl AntiAffinityClassNames
     AntiAffinityClassNames : {}
@@ -34,7 +34,7 @@ Ao examinar as propriedades de um grupo, há o parâmetro AntiAffinityClassNames
     PS> Get-ClusterGroup Group2 | fl AntiAffinityClassNames
     AntiAffinityClassNames : {}
 
-Como AntiAffinityClassNames não são definidos por padrão, esses podem funções execução juntos ou separados.  A meta é mantê-los para ser separados.  O valor de AntiAffinityClassNames pode ser que você quiser que eles sejam, apenas precisam ser iguais.  Digamos que Group1 e grupo2 são controladores de domínio executados em máquinas virtuais e eles poderiam ser mais bem atendidos em execução em nós diferentes.  Como esses são controladores de domínio, eu usarei o controlador de domínio para o nome da classe.  Para definir o valor, o comando do PowerShell e os resultados seria:
+Como AntiAffinityClassNames não são definidos como padrão, essas funções podem ser executadas juntas ou separadas.  O objetivo é mantê-los separados.  O valor de AntiAffinityClassNames pode ser o que você deseja que sejam, eles só precisam ser iguais.  Digamos que GRUPO1 e group2 sejam controladores de domínio em execução em máquinas virtuais e eles seriam mais bem atendidos em execução em nós diferentes.  Como esses são controladores de domínio, usarei o DC para o nome da classe.  Para definir o valor, o comando do PowerShell e os resultados seriam:
 
     PS> $AntiAffinity = New-Object System.Collections.Specialized.StringCollection
     PS> $AntiAffinity.Add("DC")
@@ -47,31 +47,31 @@ Como AntiAffinityClassNames não são definidos por padrão, esses podem funçõ
     PS> Get-ClusterGroup "Group2" | fl AntiAffinityClassNames
     AntiAffinityClassNames : {DC}
 
-Agora que eles são definidos, o clustering de failover tentará mantê-los separados.  
+Agora que elas estão definidas, o clustering de failover tentará mantê-las separadas.  
 
-O parâmetro de AntiAffinityClassName é um bloco "soft".  Ou seja, ele tentará para mantê-los separados, mas se não for possível, ele ainda permitirá que sejam executados no mesmo nó.  Por exemplo, os grupos estão em execução em um cluster de failover com dois nós.  Se precisar de um nó descer para manutenção, ele significa que ambos os grupos devem estar em execução no mesmo nó.  Nesse caso, seria okey ter isso.  Talvez não seja mais ideal, mas as duas máquinas virtial serão ainda em execução dentro de intervalos de um desempenho aceitável.
+O parâmetro definir antiaffinityclassname é um bloco "soft".  Ou seja, ele tentará mantê-los separados, mas se não puder, ele ainda permitirá que eles sejam executados no mesmo nó.  Por exemplo, os grupos estão sendo executados em um cluster de failover de dois nós.  Se um nó precisar ficar inativo para manutenção, significa que ambos os grupos seriam ativos e em execução no mesmo nó.  Nesse caso, seria bom ter isso.  Talvez não seja o mais ideal, mas as duas máquinas virtial ainda serão executadas dentro de intervalos de desempenho aceitáveis.
 
 ## <a name="i-need-more"></a>Preciso de mais
 
-Conforme mencionado, AntiAffinityClassNames é um bloqueio suave.  Mas e se um bloco de disco rígido é necessária?  As máquinas virtuais não podem ser executadas nele mesmo nó; Caso contrário, o impacto no desempenho ocorrerá e fazer com que alguns serviços, possivelmente, vá para baixo.
+Como mencionado, AntiAffinityClassNames é um bloco suave.  Mas e se um bloco de hardware for necessário?  As máquinas virtuais não podem ser executadas no mesmo nó; caso contrário, o impacto no desempenho ocorrerá e fará com que alguns serviços fiquem inativos.
 
-Para esses casos, há uma propriedade de cluster adicional de ClusterEnforcedAntiAffinity.  Esse nível antiaffinity impedirá a todos os custos qualquer um dos valores AntiAffinityClassNames mesmos em execução no mesmo nó.
+Para esses casos, há uma propriedade de cluster adicional de ClusterEnforcedAntiAffinity.  Esse nível de antiafinidade impedirá que qualquer um dos mesmos valores de AntiAffinityClassNames seja executado no mesmo nó.
 
 Para exibir a propriedade e o valor, o comando do PowerShell (e o resultado) seria:
 
     PS> Get-Cluster | fl ClusterEnforcedAntiAffinity
     ClusterEnforcedAntiAffinity : 0
 
-O valor de "0" significa que ele é desabilitado e não devem ser aplicadas.  O valor de "1" permite que ele e é o bloco de disco rígido.  Para habilitar este bloco de disco rígido, o comando (e o resultado) são:
+O valor de "0" significa que ele está desabilitado e não deve ser imposto.  O valor de "1" permite e é o bloco físico.  Para habilitar esse bloco físico, o comando (e o resultado) é:
 
     PS> (Get-Cluster).ClusterEnforcedAntiAffinity = 1
     ClusterEnforcedAntiAffinity : 1
 
-Quando as duas opções forem definidas, o grupo será impedido de entrar online em conjunto.  Se eles estiverem no mesmo nó, isso é o que você veria no Gerenciador de Cluster de Failover.
+Quando ambos estiverem definidos, o grupo será impedido de ficar online juntos.  Se eles estiverem no mesmo nó, isso será o que você veria em Gerenciador de Cluster de Failover.
 
 ![Afinidade de cluster](media/Cluster-Affinity/Cluster-Affinity-1.png)
 
-Uma lista os grupos do PowerShell, você veria isso:
+Em uma listagem do PowerShell dos grupos, você verá isto:
 
     PS> Get-ClusterGroup
 
@@ -82,11 +82,11 @@ Uma lista os grupos do PowerShell, você veria isso:
 
 ## <a name="additional-comments"></a>Comentários adicionais
 
-- Verifique se que você estiver usando a configuração apropriada AntiAffinity dependendo das necessidades.
-- Tenha em mente que em um cenário de dois nós e ClusterEnforcedAntiAffinity, se um nó estiver inativo, ambos os grupos não será executado.  
+- Verifique se você está usando a configuração de antiafinidade apropriada dependendo das necessidades.
+- Tenha em mente que, em um cenário de dois nós e ClusterEnforcedAntiAffinity, se um nó estiver inativo, os dois grupos não serão executados.  
 
-- O uso de proprietários preferenciais em grupos pode ser combinado com AntiAffinity em um cluster de três ou mais nós.
-- As configurações de AntiAffinityClassNames e ClusterEnforcedAntiAffinity ocorrerá somente após uma reciclagem dos recursos. I.E. Você pode defini-las, mas se ambos os grupos estiverem online no mesmo nó quando definido, eles continuarão permanecer online.
+- O uso de proprietários preferenciais em grupos pode ser combinado com antiafinidade em um cluster de três ou mais nós.
+- As configurações de AntiAffinityClassNames e ClusterEnforcedAntiAffinity só ocorrerão após uma reciclagem dos recursos. I.E. Você pode defini-los, mas se ambos os grupos estiverem online no mesmo nó quando definidos, ambos continuarão a permanecer online.
 
 
 

@@ -1,8 +1,8 @@
 ---
-title: Usando o comando Novo Namespace
-description: 'Tópico de comandos do Windows para * * *- '
+title: Usando o comando New-namespace
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 50d51101afe95c99b7034fc50b3d30b799ee02ce
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1df6634bc7598701db050f3d240e41dbb6f06019
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871147"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363010"
 ---
-# <a name="using-the-new-namespace-command"></a>Usando o comando Novo Namespace
+# <a name="using-the-new-namespace-command"></a>Usando o comando New-namespace
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-cria e configura um novo namespace. Você deve usar essa opção quando você tem apenas o serviço de função de servidor de transporte instalado. Se você tiver instalado o serviço de função de servidor de implantação e o serviço de função de servidor de transporte que (que é o padrão), use [usando o comando /New-MulticastTransmission](using-the-new-multicasttransmission-command.md). Observe que você deve registrar o provedor de conteúdo antes de usar essa opção.
+Cria e configura um novo namespace. Você deve usar essa opção quando tiver apenas o serviço de função de servidor de transporte instalado. Se você tiver o serviço de função servidor de implantação e o serviço de função de servidor de transporte instalados (que é o padrão), use [o comando New-MulticastTransmission](using-the-new-multicasttransmission-command.md). Observe que você deve registrar o provedor de conteúdo antes de usar essa opção.
 ## <a name="syntax"></a>Sintaxe
 ```
 wdsutil [Options] /New-Namespace [/Server:<Server name>]
@@ -40,25 +40,25 @@ wdsutil [Options] /New-Namespace [/Server:<Server name>]
 ## <a name="parameters"></a>Parâmetros
 |Parâmetro|Descrição|
 |-------|--------|
-|[/Server:<Server name>]|Especifica o nome do servidor. Isso pode ser o nome NetBIOS ou o nome de domínio totalmente qualificado (FQDN). Se nenhum nome de servidor for especificado, o servidor local será usado.|
-|/FriendlyName:<Friendly name>|Especifica o nome amigável do namespace.|
+|[/Server:<Server name>]|Especifica o nome do servidor. Esse pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.|
+|/FriendlyName: <Friendly name>|Especifica o nome amigável do namespace.|
 |[/Description:<Description>]|Define a descrição do namespace.|
-|/Namespace:<Namespace name>|Especifica o nome do namespace. Observe que isso não é o nome amigável, e ele deve ser exclusivo.<br /><br />-   **Serviço de função de servidor de implantação**: A sintaxe para essa opção é /Namespace:WDS:<Image group>/<Image name>/<Index>. Por exemplo:  **WDS:ImageGroup1/install.wim/1**<br />-   **Serviço de função de servidor de transporte**: Esse valor deve corresponder ao nome fornecido quando o namespace foi criado no servidor.|
-|/ContentProvider:<Name>]|Especifica o nome do provedor de conteúdo que fornecerá o conteúdo para o namespace.|
-|[/ConfigString:<Configuration string>]|Especifica a cadeia de caracteres de configuração para o provedor de conteúdo.|
-|/Namespacetype: {AutoCast &#124; ScheduledCast}|Especifica as configurações para a transmissão. Você especifica as configurações usando as seguintes opções:<br /><br />-[/ hora: <time>]-define a hora em que a transmissão deve começar usando o seguinte formato: AAAA/MM/DD:hh:mm. Essa opção só se aplica a transmissões multicast agendadas.<br />-[/ Clientes: <Number of clients>]-define o número mínimo de clientes para aguardar antes de inicia a transmissão. Essa opção só se aplica a transmissões multicast agendadas.|
-## <a name="BKMK_examples"></a>Exemplos
-Para criar um namespace de multicast automático, digite:
+|/Namespace: <Namespace name>|Especifica o nome do namespace. Observe que esse não é o nome amigável e deve ser exclusivo.<br /><br />**serviço de função do servidor de implantação**-   : A sintaxe dessa opção é/namespace: WDS: <Image group> @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4. Por exemplo: **WDS: ImageGroup1/install. wim/1**<br />**serviço de função do servidor de transporte**-   : Esse valor deve corresponder ao nome fornecido quando o namespace foi criado no servidor.|
+|/ContentProvider: <Name>]|Especifica o nome do provedor de conteúdo que fornecerá conteúdo para o namespace.|
+|[/ConfigString: <Configuration string>]|Especifica a cadeia de caracteres de configuração para o provedor de conteúdo.|
+|/NamespaceType: {AutoCast &#124; ScheduledCast}|Especifica as configurações para a transmissão. Você especifica as configurações usando as seguintes opções:<br /><br />-[/time: <time>] – define a hora em que a transmissão deve começar usando o seguinte formato: AAAA/MM/DD: hh: mm. Esta opção se aplica somente a transmissões de conversão agendada.<br />-[/Clients: <Number of clients>] – define o número mínimo de clientes a aguardar antes de iniciar a transmissão. Esta opção se aplica somente a transmissões de conversão agendada.|
+## <a name="BKMK_examples"></a>Disso
+Para criar um namespace de conversão automática, digite:
 ```
 wdsutil /New-Namespace /FriendlyName:"Custom AutoCast Namespace" /Namespace:"Custom Auto 1" /ContentProvider:MyContentProvider /Namespacetype:AutoCast
 ```
-Para criar um namespace de multicast programado, digite:
+Para criar um namespace de elenco agendado, digite:
 ```
 wdsutil /New-Namespace /Server:MyWDSServer /FriendlyName:"Custom Scheduled Namespace" /Namespace:"Custom Auto 1" /ContentProvider:MyContentProvider 
 /Namespacetype:ScheduledCast /time:"2006/11/20:17:00" /Clients:20
 ```
 #### <a name="additional-references"></a>Referências adicionais
 [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[usando o comando get-AllNamespaces](using-the-get-allnamespaces-command.md)
-[usando o comando remove-Namespace](using-the-remove-namespace-command.md) 
- [ Subcomando: start-Namespace](subcommand-start-namespace.md)
+[usando o comando Get-mynamespaces](using-the-get-allnamespaces-command.md)
+[usando o comando Remove-namespace](using-the-remove-namespace-command.md)
+[subcomando: Start-namespace](subcommand-start-namespace.md)

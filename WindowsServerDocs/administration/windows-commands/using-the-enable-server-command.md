@@ -1,8 +1,8 @@
 ---
-title: Usando o comando enable-servidor
-description: 'Tópico de comandos do Windows para * * *- '
+title: Usando o comando Enable-Server
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fdf03a778a6c646aa79c2f844212b1728c5c73eb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0b90621ec14c6cf451d7a05eace79f2e0679b2f4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852717"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363447"
 ---
-# <a name="using-the-enable-server-command"></a>Usando o comando enable-servidor
+# <a name="using-the-enable-server-command"></a>Usando o comando Enable-Server
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Permite que todos os serviços para os serviços de implantação do Windows.
+Habilita todos os serviços para serviços de implantação do Windows.
 ## <a name="syntax"></a>Sintaxe
 ```
 wdsutil [Options] /Enable-Server [/Server:<Server name>]
@@ -33,18 +33,16 @@ wdsutil [Options] /Enable-Server [/Server:<Server name>]
 |Parâmetro|Descrição|
 |-------|--------|
 |[/Server:<Server name>]|Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.|
-## <a name="BKMK_examples"></a>Exemplos
-Para habilitar os serviços no servidor, execute um destes procedimentos:
+## <a name="BKMK_examples"></a>Disso
+Para habilitar os serviços no servidor, execute um dos seguintes procedimentos:
 ```
 wdsutil /Enable-Server
 wdsutil /verbose /Enable-Server /Server:MyWDSServer
 ```
 #### <a name="additional-references"></a>Referências adicionais
 [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[usando o comando de servidor disable](using-the-disable-server-command.md)
-[usando o comando get-Server](using-the-get-server-command.md)
-[usando o Comando do servidor de inicialização](using-the-initialize-server-command.md)
-[subcomando: set-Server](subcommand-set-server.md)
-[subcomando: Iniciar servidor](subcommand-start-server.md) 
- [ Subcomando: stop-Server](subcommand-stop-server.md)
-[o opção de servidor uninitialize](the-uninitialize-server-option.md)
+[usando o comando disable-Server](using-the-disable-server-command.md)
+[usando o comando Get-Server](using-the-get-server-command.md)
+[usando o comando Initialize-Server](using-the-initialize-server-command.md)
+[subcomando: Set-Server](subcommand-set-server.md)
+[ Subcomando: Start-Server](subcommand-start-server.md)1[subcomando: Stop-Server](subcommand-stop-server.md)3[a opção Uninitialize-Server](the-uninitialize-server-option.md)

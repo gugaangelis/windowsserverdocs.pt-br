@@ -1,8 +1,8 @@
 ---
-title: Usando o comando get-AllServers
-description: 'Tópico de comandos do Windows para * * *- '
+title: Usando o comando Get-myservers
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dbccb834f9058f2c3cca097cdf998455f2a6892e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8dd7f9917a54a80b3c570b07fe1a87bd3bcbe4d6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440490"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363263"
 ---
-# <a name="using-the-get-allservers-command"></a>Usando o comando get-AllServers
+# <a name="using-the-get-allservers-command"></a>Usando o comando Get-myservers
 
 
 
-Recupera informações sobre todos os servidores de serviços de implantação do Windows.
+Recupera informações sobre todos os servidores dos serviços de implantação do Windows.
 
 > [!NOTE]
-> Esse comando pode demorar um longo período de tempo para ser concluída se houver muitos servidores de serviços de implantação do Windows em seu ambiente ou se a conexão de rede os servidores de vinculação é lenta.
+> Esse comando pode levar um tempo estendido para ser concluído se houver muitos servidores de serviços de implantação do Windows em seu ambiente ou se a conexão de rede vinculando os servidores estiver lenta.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -39,11 +39,11 @@ WDSUTIL [Options] /Get-AllServers /Show:{Config | Images | All} [/Detailed] [/Fo
 
 |   Parâmetro   |                                                                                                                 Descrição                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| /Show:{Config |                                                                                                                    Imagens                                                                                                                    |
-|  [/Detailed]  | Quando usado em conjunto com o **/Show:Images** ou **/Show:All**, retorna todos os metadados de cada imagem de imagem. Se o **/detalhadas** opção não for especificada, o comportamento padrão é retornar o nome da imagem, descrição e nome de arquivo. |
-| [/Forest:{Yes |                                                                                                                     No}]                                                                                                                     |
+| /Show: {config |                                                                                                                    Imagens                                                                                                                    |
+|  [/Detailed]  | Quando usado em conjunto com **/show: images** ou **/show: ALL**, retorna todos os metadados de imagem de cada imagem. Se a opção **/detailed** não for especificada, o comportamento padrão será retornar o nome da imagem, a descrição e o nome do arquivo. |
+| [/Forest: {Sim |                                                                                                                     Não}]                                                                                                                     |
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 Para exibir informações sobre todos os servidores, digite:
 ```
