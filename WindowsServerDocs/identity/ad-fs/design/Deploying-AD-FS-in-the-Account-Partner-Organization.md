@@ -7,24 +7,24 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 93f61bc7fd147b2e0220178bcd163b6ca56279cf
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 63c080904482814f9f62451e8e7cfa4862d19927
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191572"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359246"
 ---
 # <a name="deploying-ad-fs-in-the-account-partner-organization"></a>Implantando o AD FS na organização do parceiro de conta
 
-Um parceiro de conta nos serviços de Federação do Active Directory \(do AD FS\) representa a organização na relação de confiança de federação que armazena fisicamente as contas de usuário em um repositório de atributos com suporte. Para obter mais informações sobre qual atributo armazenamentos com suporte, consulte [função The dos repositórios de atributos](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md).  
+Um parceiro de conta no Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1 representa a organização na relação de confiança da Federação que armazena fisicamente as contas de usuário em um repositório de atributos com suporte. Para obter mais informações sobre quais repositórios de atributos têm suporte, consulte [a função de repositórios de atributos](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md).  
   
-O servidor de federação na organização do parceiro de conta autentica os usuários locais e cria tokens de segurança que são usados pelo parceiro de recurso na tomada de decisões de autorização. Terceiras partes confiáveis, como sites da Web e serviços da Web, em seguida, são capazes de facilmente se registram com o servidor de Federação e consomem tokens emitidos para autenticação e controle de acesso.  
+O servidor de Federação na organização do parceiro de conta autentica usuários locais e cria tokens de segurança que são usados pelo parceiro de recurso para tomar decisões de autorização. Partes confiáveis, como sites e Web Services, são capazes de se registrar facilmente no servidor de Federação e consumir tokens emitidos para autenticação e controle de acesso.  
   
-Em cenários em que você precisa fornecer aos usuários acesso a vários aplicativos federados ou serviços — quando cada aplicativo ou serviço é hospedado por uma organização diferente — você pode configurar o servidor de Federação do parceiro de conta para que você possa implantar várias partes confiáveis.  
+Em cenários em que você precisa fornecer aos usuários acesso a vários aplicativos ou serviços federados — quando cada aplicativo ou serviço é hospedado por uma organização diferente — você pode configurar o servidor de Federação de parceiro de conta para que possa implantar várias partes confiáveis.  
   
-Para obter mais informações sobre como instalar e configurar uma organização do parceiro de conta, consulte [lista de verificação: Configurando a organização do parceiro de conta](../../ad-fs/deployment/Checklist--Configuring-the-Account-Partner-Organization.md).  
+Para obter mais informações sobre como configurar e configurar uma organização de parceiro de conta, consulte [Checklist: Configurando a organização do parceiro de conta @ no__t-0.  
   
 ## <a name="in-this-section"></a>Nesta seção  
   
@@ -32,7 +32,7 @@ Para obter mais informações sobre como instalar e configurar uma organização
   
 -   [Analisar a função do proxy do servidor de federação no parceiro de conta](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Account-Partner.md)  
   
--   [Preparar os computadores cliente no parceiro de conta](Prepare-Client-Computers-in-the-Account-Partner.md)  
+-   [Preparar computadores cliente no parceiro de conta](Prepare-Client-Computers-in-the-Account-Partner.md)  
   
 ## <a name="see-also"></a>Consulte também
 [Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

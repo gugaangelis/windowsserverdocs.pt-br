@@ -1,7 +1,7 @@
 ---
 title: Suporte expresso a ISVs para entrega de atualizações
 description: Tópico do Windows Server Update Service (WSUS) – como ISVs (fornecedores independentes de software) podem configurar a entrega de atualização expressa usando o WSUS
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-wsus
@@ -11,12 +11,12 @@ author: sakitong
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f5893d47219e9263ed7f35bee472848a47c6164
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: a4880a1a66d9c722cfda9e194c4eff38c5058674
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868741"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361716"
 ---
 # <a name="express-update-delivery-isv-support"></a>Suporte expresso a ISVs para entrega de atualizações
 
@@ -95,7 +95,7 @@ O cache de arquivos do ISV deve ser preenchido com arquivos associados às atual
 
 1. Use as [APIs do WSUS](https://msdn.microsoft.com/library/windows/desktop/microsoft.updateservices.administration.updatefile(v=vs.85).aspx) para acessar o caminho do arquivo e o nome do arquivo da atualização para o serviço Mu.
 
-    Os metadados de cada atualização no servidor do WSUS contêm o caminho do arquivo e o nome do arquivo da atualização em Microsoft Update da seguinte maneira (Microsoft Update nome do host em negrito, seguido **<http://download.windowsupdate.com>** por caminho e nome do arquivo):/c/msdownload/update/software/updt/2016/09/ Windows 10.0-kb3195781-x64_0c06079bccc35cba35a48bd2b1ec46f818bd2e74. msu
+    Os metadados de cada atualização no servidor do WSUS contêm o caminho do arquivo e o nome do arquivo da atualização em Microsoft Update da seguinte maneira (Microsoft Update nome do host em negrito, seguido por caminho e nome do arquivo): **<http://download.windowsupdate.com>** /c/msdownload/update/software/updt/2016/09/ Windows 10.0-kb3195781-x64_0c06079bccc35cba35a48bd2b1ec46f818bd2e74. msu
 
 2. Baixe arquivos de Microsoft Update e armazene-os no cache de arquivos do ISV usando um destes dois métodos: 
 

@@ -6,40 +6,40 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: da91a3e8c34c86f7fd03ca875b3800fdb6001750
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: b1c602d0cdfa562469419de223f5691ec2ff4527
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192123"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359556"
 ---
 # <a name="import-a-server-authentication-certificate-to-the-default-web-site"></a>Importar um Certificado de Autenticação de Servidor para o site padrão
 
-Depois de obter um servidor de certificado de autenticação de uma autoridade de certificação \(autoridade de certificação\), você deve instalar manualmente esse certificado no Site da Web padrão para cada servidor de Federação ou proxy de servidor de Federação em um farm de servidores.  
+Depois de obter um certificado de autenticação de servidor de uma autoridade de certificação \(CA @ no__t-1, você deve instalar manualmente esse certificado no site da Web padrão para cada servidor de Federação ou proxy de servidor de Federação em um farm de servidores.  
   
 Para servidores Web, instale manualmente o certificado de autenticação de servidor no site ou no diretório virtual apropriado em que reside seu aplicativo federado.  
   
 Se estiver configurando um farm, assegure-se de realizar esse procedimento de forma idêntica — usando exatamente as mesmas configurações — em cada um dos servidores em seu farm.  
   
 > [!NOTE]  
-> O snap de gerenciamento do AD FS\-refere-se aos certificados de autenticação de servidor para servidores de federação como certificados de comunicação de serviço.  
+> O snap do AD FS Management @ no__t-0in refere-se aos certificados de autenticação de servidor para servidores de Federação como certificados de comunicação de serviço.  
   
-A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e associações de grupos em [domínio grupos padrão Local e](https://go.microsoft.com/fwlink/?LinkId=83477).   
+A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
 ### <a name="to-import-a-server-authentication-certificate-to-the-default-web-site"></a>Para importar um certificado de autenticação de servidor no Site Padrão  
   
-1.  Sobre o **iniciar** tela, digite**serviços de informações da Internet \(IIS\) Manager**, e, em seguida, pressione ENTER.  
+1.  Na tela **Iniciar** , digite**serviços de informações da Internet \(IIS @ No__t-3 Manager**e pressione Enter.  
   
 2.  Na árvore de console, clique em **ComputerName**.  
   
-3.  No painel central, clique duas vezes\-clique em **certificados de servidor**.  
+3.  No painel central, clique duas vezes em @ no__t-0click **certificados de servidor**.  
   
 4.  No painel **Ações**, clique em **Importar**.  
   
-5.  No **Importar certificado** caixa de diálogo, clique o **...** .  
+5.  Na caixa de diálogo **importar certificado** , clique em **..** . .  
   
 6.  Procure o local do arquivo de certificado pfx, destaque-o e clique em **Abrir**.  
   

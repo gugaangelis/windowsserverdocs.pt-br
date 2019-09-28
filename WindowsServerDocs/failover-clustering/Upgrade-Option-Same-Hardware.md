@@ -1,6 +1,6 @@
 ---
 title: Atualizando clusters de failover usando o mesmo hardware
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 02/28/2019
 description: Este artigo descreve como atualizar um cluster de failover de 2 nós usando o mesmo hardware
 ms.localizationpriority: medium
-ms.openlocfilehash: aa9a31b1faa48a4eaf2a17bc8ecda690b4cf1f12
-ms.sourcegitcommit: ccec91c1d32a978159f9b8bb5e39ead5805c26c4
+ms.openlocfilehash: 5fe93f1d43e0c3a1bc4269b585cb9d021d3461aa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71143790"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361402"
 ---
 # <a name="upgrading-failover-clusters-on-the-same-hardware"></a>Atualizando clusters de failover no mesmo hardware
 

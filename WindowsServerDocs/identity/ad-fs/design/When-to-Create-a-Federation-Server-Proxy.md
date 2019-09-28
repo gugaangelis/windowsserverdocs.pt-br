@@ -7,33 +7,33 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b41c2194940c85e39e5a3724f747dd12c2544259
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: f3325efe7acf8b0b0469489e8d9a42614a5af54a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190640"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358853"
 ---
 # <a name="when-to-create-a-federation-server-proxy"></a>Quando criar um proxy do Servidor de Federação
 
-Criar um proxy do servidor de federação na sua organização adiciona camadas extras de segurança para seus serviços de Federação do Active Directory \(do AD FS\) implantação. Considere a implantação de um proxy do servidor de federação na rede de perímetro da sua organização quando você deseja:  
+A criação de um proxy de servidor de Federação em sua organização adiciona camadas de segurança adicionais à sua implantação do Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1. Considere implantar um proxy de servidor de Federação na rede de perímetro da sua organização quando desejar:  
   
--   Impedir que computadores cliente externos acessem diretamente os servidores de Federação. Ao implantar um proxy do servidor de federação na rede de perímetro, você efetivamente isolar seus servidores de federação para que eles podem ser acessados somente por computadores cliente que estão conectados a rede corporativa por meio de proxies de servidor de federação, que atuam em nome os computadores cliente externo. Os proxies de servidor de federação não têm acesso às chaves privadas usadas para gerar tokens. Para obter mais informações, consulte [Where to Place a Federation Server Proxy](Where-to-Place-a-Federation-Server-Proxy.md).  
+-   Impedir que computadores cliente externos acessem diretamente seus servidores de Federação. Ao implantar um proxy de servidor de Federação em sua rede de perímetro, você isola efetivamente os servidores de Federação para que eles possam ser acessados somente por computadores cliente que estão conectados à rede corporativa por meio de proxies de servidor de Federação, que atuam em nome dos computadores cliente externos. Os proxies de servidor de federação não têm acesso às chaves privadas usadas para gerar tokens. Para obter mais informações, consulte [Where to Place a Federation Server Proxy](Where-to-Place-a-Federation-Server-Proxy.md).  
   
--   Fornecem uma maneira conveniente de diferenciar o sinal\-na experiência para usuários que são provenientes da Internet em oposição aos usuários originados em sua rede corporativa usando a autenticação integrada do Windows. Um proxy do servidor de Federação coleta credenciais ou detalhes de realm inicial de computadores cliente da Internet usando a descoberta de provedor de logon, logoff e identidade \(homerealmdiscovery\) páginas que são armazenadas na federação proxy do servidor.  
+-   Forneça uma maneira conveniente de diferenciar a experiência de assinatura @ no__t-0in para usuários que estão vindo da Internet, em oposição aos usuários que vêm da sua rede corporativa usando a autenticação integrada do Windows. Um proxy de servidor de Federação coleta credenciais ou detalhes de realm inicial de computadores cliente da Internet usando a descoberta de provedor de logon, logoff e identidade @no__t -0homerealmdiscovery. aspx @ no__t-1 que são armazenadas no proxy do servidor de Federação.  
   
-    Por outro lado, os computadores cliente que são provenientes de encontram da rede corporativa uma experiência diferente, com base na configuração do servidor de Federação. O servidor de Federação da rede corporativa é geralmente configurado para autenticação integrada do Windows, que fornece um sinal contínuo\-na experiência dos usuários na rede corporativa.  
+    Por outro lado, os computadores cliente que vêm da rede corporativa encontram uma experiência diferente, com base na configuração do servidor de Federação. O servidor de Federação de rede corporativa geralmente é configurado para autenticação integrada do Windows, que fornece uma experiência de assinatura @ no__t-0in para usuários na rede corporativa.  
   
-A função desempenhada por um proxy do servidor de federação na sua organização depende se você colocar o proxy do servidor de federação na organização do parceiro de conta ou na organização do parceiro de recurso. Por exemplo, quando um proxy do servidor de Federação é colocado na rede de perímetro do parceiro de conta, sua função é coletar as informações de credenciais do usuário de clientes do navegador. Quando um proxy do servidor de Federação é colocado na rede de perímetro do parceiro de recurso, ele retransmite solicitações para um servidor de Federação do recurso de token de segurança e gera tokens de segurança organizacionais em resposta aos tokens de segurança que são fornecidos pelo seu parceiros de conta.  
+A função que um proxy de servidor de federação desempenha na sua organização depende se você coloca o proxy do servidor de Federação na organização do parceiro de conta ou na organização do parceiro de recurso. Por exemplo, quando um proxy de servidor de Federação é colocado na rede de perímetro do parceiro de conta, sua função é coletar as informações de credenciais de usuário de clientes de navegador. Quando um proxy de servidor de Federação é colocado na rede de perímetro do parceiro de recurso, ele retransmite as solicitações de token de segurança para um servidor de Federação de recurso e produz tokens de segurança organizacionais em resposta aos tokens de segurança que são fornecidos por seu parceiros de conta.  
   
 Para obter mais informações, consulte [revisar a função de Proxy do servidor de federação no parceiro de conta](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Account-Partner.md) e [revisar a função de Proxy do servidor de federação no parceiro de recurso](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Resource-Partner.md)  
   
 ## <a name="how-to-create-a-federation-server-proxy"></a>Como criar um proxy do servidor de federação  
-Você pode criar um proxy de servidor de Federação usando o Assistente de configuração do AD FS Federation Server Proxy ou o comando Fsconfig.exe\-ferramenta de linha. Para obter instruções sobre como fazer isso, consulte [configurar um computador para a função de Proxy do servidor de Federação](../../ad-fs/deployment/Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md).  
+Você pode criar um proxy de servidor de Federação usando o assistente de configuração de proxy do servidor de Federação AD FS ou a ferramenta fsconfig. exe do comando @ no__t-0line. Para obter instruções sobre como fazer isso, consulte [configurar um computador para a função de Proxy do servidor de Federação](../../ad-fs/deployment/Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md).  
   
-Para obter informações gerais sobre como configurar todos os pré-requisitos necessários para implantar um proxy do servidor de federação, consulte [lista de verificação: Como configurar um Proxy do servidor de Federação](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server-Proxy.md).  
+Para obter informações gerais sobre como configurar todos os pré-requisitos necessários para implantar um proxy de servidor de Federação, consulte [Checklist: Configurando um proxy de servidor de Federação @ no__t-0.  
   
 ## <a name="see-also"></a>Consulte também
 [Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
