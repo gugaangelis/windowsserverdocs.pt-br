@@ -2,18 +2,18 @@
 title: Defina o método de ordenação dos destinos nas referências
 description: Este artigo descreve como definir o método de ordenação para alvos em referências.
 ms.date: 6/5/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 52568944a98bed7960b37335b2e3cbbde61479ca
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bb42a98666941c5dfa50a8dfbf45635ad25dc767
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447207"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386136"
 ---
 # <a name="set-the-ordering-method-for-targets-in-referrals"></a>Defina o método de ordenação dos destinos nas referências
 
@@ -40,7 +40,7 @@ Use o procedimento a seguir para definir o método de ordenação na raiz do nam
 >    -   **EnableInsiteReferrals** especifica o método de ordenação **Excluir destinos fora do site do cliente**
 >    -   Omitir o parâmetro especifica o **ordem aleatória** ordenação de método de referência. 
 
-O módulo do PowerShell do Windows DFSN foi introduzido no Windows Server 2012.
+O módulo DFSN do Windows PowerShell foi introduzido no Windows Server 2012.
    
 ## <a name="to-set-the-ordering-method-for-targets-in-folder-referrals"></a>Para definir o método de ordenação para alvos nas referências de pasta
 
@@ -67,7 +67,7 @@ Os três métodos de ordenação são:
 
 Nesse método, os destinos são ordenados da seguinte maneira:
 
-1.  Os destinos no mesmo site do Active Directory Directory Services (AD DS) que o cliente são listados em ordem aleatória na parte superior da referência.
+1.  Os destinos no mesmo site de AD DS (serviços de diretório Active Directory) como o cliente são listados em ordem aleatória na parte superior da referência.
 2.  Os destinos fora do site do cliente são listados em ordem aleatória.
 
 Se não houver servidores de destino mesmo site disponíveis, o computador cliente é chamado em um servidor de destino aleatório, independentemente de quanto a conexão custa ou distante como o destino.

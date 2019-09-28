@@ -1,8 +1,8 @@
 ---
-title: ksetup:removerealm
-description: 'Tópico de comandos do Windows para * * *- '
+title: 'ksetup: removerealm'
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 579b0772e4642389b90aa370dad80a3eebea9d34
-ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.openlocfilehash: 11858d8a24d4f125c83b3e4092ac48f336a9ef0b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65564716"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374950"
 ---
-# <a name="ksetupremoverealm"></a>ksetup:removerealm
+# <a name="ksetupremoverealm"></a>ksetup: removerealm
 
 
 
-Exclui todas as informações para o realm especificado do registro. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+Exclui todas as informações do realm especificado do registro. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,25 +36,25 @@ ksetup /removerealm <RealmName>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<RealmName>|O nome do território é declarado como um nome DNS de letras maiusculas, como CORP. CONTOSO.COM e ele é listado como o realm padrão quando **ksetup** é executado.|
+|\<RealmName >|O nome do realm é declarado como um nome DNS em maiúsculas, como CORP. CONTOSO.COM, e ele é listado como o realm padrão quando **ksetup** é executado.|
 
 ## <a name="remarks"></a>Comentários
 
-O nome do território é armazenado em dois locais no registro: **HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001** e **\CurrentControlSet\Control\Lsa\Kerberos**.
+O nome do realm é armazenado em dois locais no registro: **HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001** e **\CurrentControlSet\Control\Lsa\Kerberos**.
 
-Não é possível remover o nome de realm padrão do controlador de domínio, porque isso redefinirá a suas informações de DNS e removê-la pode inutilizar o controlador de domínio.
+Não é possível remover o nome de realm padrão do controlador de domínio porque isso redefinirá suas informações de DNS e removê-lo poderá tornar o controlador de domínio inutilizável.
 
-## <a name="BKMK_Examples"></a>Exemplos
+## <a name="BKMK_Examples"></a>Disso
 
-Por engano, defina o nome de realm errando ".COM" no computador local para CORP. CONTOSO. CON
+Definido incorretamente o nome do Realm digitando ". COM" com erro de ortografia no computador local para CORP. Funcionam. TELEFONEMA
 ```
 ksetup /setrealm CORP.CONTOSO.CON
 ```
-Remova esse nome de realm incorretos do computador local:
+Remova esse nome de realm errado do computador local:
 ```
 ksetup /removerealm CORP.CONTOSO.CON
 ```
-Verifique se a remoção, executando **ksetup** e examine a saída.
+Verifique a remoção executando **ksetup** e examine a saída.
 
 #### <a name="additional-references"></a>Referências adicionais
 

@@ -1,8 +1,8 @@
 ---
 title: assoc
-description: Tópico de comandos do Windows para **assoc** -exibe ou modifica associações de extensão de nome de arquivo.
+description: O tópico de comandos do Windows para **assoc** -exibe ou modifica associações de extensão de nome de arquivo.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d893167081b66c81366b59613c52182a4ddba370
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e4a6fd700cbe66897a24f01f66387e76e07b568b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816637"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382671"
 ---
 # <a name="assoc"></a>assoc
 
 
 
-Exibe ou modifica associações de extensão de nome de arquivo. Se usado sem parâmetros, **assoc** exibe uma lista de todas as atuais nome extensão associações de arquivo.
+Exibe ou modifica associações de extensão de nome de arquivo. Se usado sem parâmetros, **assoc** exibe uma lista de todas as associações de extensão de nome de arquivo atuais.
 
 > [!NOTE]
-> Este comando só tem suporte no CMD. EXE e não está disponível no PowerShell.
+> Só há suporte para este comando no CMD. EXE e não está disponível no PowerShell.
 >
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
@@ -42,17 +42,17 @@ assoc [<.ext>[=[<FileType>]]]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|<.ext>|Especifica a extensão de nome de arquivo.|
-|\<FileType>|Especifica o tipo de arquivo a ser associado com a extensão de nome de arquivo especificado.|
+|> <. ext|Especifica a extensão de nome de arquivo.|
+|\<FileType >|Especifica o tipo de arquivo a ser associado à extensão de nome de arquivo especificada.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
--   Para remover a associação de tipo de arquivo para uma extensão de nome de arquivo, adicione um espaço em branco após o sinal de igual, pressionando a barra de espaços.
--   Para exibir os tipos de arquivo atuais que têm cadeias de caracteres de comando aberto definidas, use o **ftype** comando.
--   Para redirecionar a saída de **assoc** em um arquivo de texto, use o **>** operador de redirecionamento.
+-   Para remover a associação de tipo de arquivo para uma extensão de nome de arquivo, adicione um espaço em branco após o sinal de igual pressionando a barra de espaços.
+-   Para exibir os tipos de arquivo atuais que têm cadeias de comando abertas definidas, use o comando **ftype** .
+-   Para redirecionar a saída de **assoc** para um arquivo de texto, use o operador de redirecionamento **>** .
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 Para exibir a associação de tipo de arquivo atual para a extensão de nome de arquivo. txt, digite:
 ```
@@ -66,15 +66,15 @@ assoc .bak=
 > [!NOTE]
 > Certifique-se de adicionar um espaço após o sinal de igual.
 
-Para exibir a saída de **assoc** uma tela por vez, tipo:
+Para exibir a saída de **assoc** uma tela por vez, digite:
 ```
 assoc | more
 ```
-Para enviar a saída de **assoc** para assoc.txt o arquivo, digite:
+Para enviar a saída de **assoc** para o arquivo Assoc. txt, digite:
 ```
 assoc>assoc.txt
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

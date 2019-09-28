@@ -1,8 +1,8 @@
 ---
 title: Salvar e compartilhar arquivos em uma unidade flash USB
-description: Saiba como salvar filese em uma unidade flash no MultiPoint Services
+description: Saiba como salvar filese em uma unidade flash USB nos serviços do MultiPoint
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,15 +13,15 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: bb9db8936f8098024f76fc09490de7ffef594760
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ddbee49ae80e65f29dcdb3c3c4ad43c17a451ccf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885467"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389408"
 ---
 # <a name="save-and-share-files-on-a-usb-flash-drive"></a>Salvar e compartilhar arquivos em uma unidade flash USB
-Além de poder compartilhar conteúdo usando pastas públicas no Windows Explorer, você também pode compartilhar conteúdo usando um dispositivo de armazenamento USB, como uma unidade flash USB ou dispositivo de armazenamento em massa. Quando você anexa um dispositivo de armazenamento USB diretamente ao computador host ou a um hub USB que não é um hub de estação, esse dispositivo de armazenamento será exibido como um dispositivo de armazenamento removível para todos os usuários, *usuários padrão* e *usuários administrativos* em todo o sistema MultiPoint Services.  
+Além de poder compartilhar conteúdo usando pastas públicas no Windows Explorer, você também pode compartilhar conteúdo usando um dispositivo de armazenamento USB, como uma unidade flash USB ou um dispositivo de armazenamento em massa. Quando você anexa um dispositivo de armazenamento USB diretamente ao computador host ou a um hub USB que não é um hub de estação, esse dispositivo de armazenamento será exibido como um dispositivo de armazenamento removível para todos os usuários, *usuários padrão* e *usuários administrativos* em todo o sistema MultiPoint Services.  
   
 Você também pode usar um dispositivo de armazenamento removível para salvar e armazenar documentos particulares em uma pasta particular no Windows Explorer, como a pasta **Meus documentos** na biblioteca **Documentos**.  
   
@@ -43,6 +43,6 @@ Você também pode usar um dispositivo de armazenamento removível para salvar e
 Conecte o dispositivo de armazenamento removível em uma porta USB aberta em seu hub de estação.  
   
 ## <a name="see-also"></a>Consulte também  
-[Manter arquivos particulares](Keep-Files-Private.md)  
-[Compartilhamento de arquivos](Share-Files.md)  
+[Manter arquivos privados](Keep-Files-Private.md)  
+[Compartilhar arquivos](Share-Files.md)  
 [Gerenciar arquivos do usuário](Manage-User-Files.md)

@@ -1,8 +1,8 @@
 ---
-title: Gerenciar-bde changepassword
-description: 'Tópico de comandos do Windows para * * *- '
+title: ChangePassword de Manage-bde
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6d08a275ef2408b4b2bee40486067ed5a427433c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2dee55aba2f5439b2902072a8e6fe2da2707ce29
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839977"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374093"
 ---
-# <a name="manage-bde-changepassword"></a>Gerenciar-bde: changepassword
+# <a name="manage-bde-changepassword"></a>Manage-bde: ChangePassword
 
 
 
-Modifica a senha para uma unidade de dados. O usuário é solicitado para uma nova senha. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+Modifica a senha de uma unidade de dados. O usuário é solicitado a fornecer uma nova senha. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,20 +36,20 @@ manage-bde -changepassword [<Drive>] [-computername <Name>] [{-?|/?}] [{-help|-h
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Drive>|Representa uma letra de unidade seguida de dois-pontos.|
-|-computername|Especifica que gerenciar bde.exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **- cn** como uma versão abreviada desse comando.|
-|\<Nome >|Representa o nome do computador no qual modificar a proteção do BitLocker. Os valores aceitos incluem o nome do computador NetBIOS e endereço IP do computador.|
-|-? ou /?|Exibe uma ajuda breve no prompt de comando.|
-|-help ou -h|Exibe uma ajuda detalhada no prompt de comando.|
+|\<Drive >|Representa uma letra de unidade seguida de dois-pontos.|
+|-ComputerName|Especifica que o Manage-bde. exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando.|
+|\<Nome >|Representa o nome do computador no qual a proteção do BitLocker será modificada. Os valores aceitos incluem o nome NetBIOS do computador e o endereço IP do computador.|
+|-? ou/?|Exibe a ajuda resumida no prompt de comando.|
+|-Help ou-h|Exibe a ajuda completa no prompt de comando.|
 
-## <a name="BKMK_Examples"></a>Exemplos
+## <a name="BKMK_Examples"></a>Disso
 
-O exemplo a seguir ilustra o uso de **- changepassword** comando para alterar a senha usada para desbloquear o BitLocker na unidade de dados D.
+O exemplo a seguir ilustra o uso do comando **-ChangePassword** para alterar a senha usada para desbloquear o BitLocker na unidade de dados D.
 ```
 manage-bde –changepassword D:
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
--   [Gerenciar-bde](manage-bde.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Manage-bde](manage-bde.md)

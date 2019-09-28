@@ -1,8 +1,8 @@
 ---
 title: set
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 21661b30c5779907e8cac417439a0935a2126ad8
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 12dce38bf8ad050c65a7a8c0fca4a71267cca93f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441275"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384097"
 ---
 # <a name="set"></a>set
 
 
 
-Exibe, define ou remove o CMD. Variáveis de ambiente do EXE. Se usado sem parâmetros, **definir** exibe as configurações atuais de variáveis de ambiente.
+Exibe, define ou remove CMD. Variáveis de ambiente EXE. Se usado sem parâmetros, **set** exibe as configurações de variável de ambiente atuais.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -40,72 +40,72 @@ set /a <Variable>=<Expression>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Variable>|Especifica a variável de ambiente para definir ou modificar.|
-|\<cadeia de caracteres >|Especifica a cadeia de caracteres a ser associado com a variável de ambiente especificado.|
-|/p|Define o valor de *variável* para uma linha de entrada inserida pelo usuário.|
-|\<PromptString >|Opcional. Especifica uma mensagem para solicitar a entrada do usuário. Esse parâmetro é usado com o **/p** opção de linha de comando.|
-|/a|Conjuntos *cadeia de caracteres* como uma expressão numérica que é avaliada.|
-|\<Expression>|Especifica uma expressão numérica. Consulte os comentários para os operadores válidos que podem ser usados em *expressão*.|
+|\<Variable >|Especifica a variável de ambiente a ser definida ou modificada.|
+|\<String >|Especifica a cadeia de caracteres a ser associada à variável de ambiente especificada.|
+|/p|Define o valor da *variável* para uma linha de entrada inserida pelo usuário.|
+|\<PromptString >|Opcional. Especifica uma mensagem para solicitar a entrada do usuário. Esse parâmetro é usado com a opção de linha de comando **/p** .|
+|SRDF|Define a *cadeia de caracteres* para uma expressão numérica que é avaliada.|
+|\<Expression >|Especifica uma expressão numérica. Consulte comentários para operadores válidos que podem ser usados na *expressão*.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
-- Usando o **definir** com extensões de comando habilitadas
+- Usando **set** com extensões de comando habilitadas
 
-  Quando as extensões de comando estão habilitadas (padrão) e você executar **definir** com um valor, ele exibe todas as variáveis que começam com esse valor.
+  Quando as extensões de comando são habilitadas (o padrão) e você executa **definir** com um valor, ele exibe todas as variáveis que começam com esse valor.
 - Usando caracteres especiais
 
-  Os caracteres **<** , **>** , **|** , **&** , **^** são caracteres de shell de comando especial, e que devem ser precedidas pelo caractere de escape ( **^** ) ou entre aspas quando usado em *decadeiadecaracteres* (por exemplo, **"Sequência contendo & símbolo"** ). Se você usar aspas para delimitar uma cadeia de caracteres que contém um dos caracteres especiais, as aspas são definidas como parte do valor de variável de ambiente.
+  Os caracteres **<** , **>** , **|** , **&** , **^** são caracteres especiais do Shell de comando e devem ser precedidos pelo caractere de escape (**1**) ou colocados entre aspas Quando usado na *cadeia de caracteres* (por exemplo, **"StringContaining & símbolo"** ). Se você usar aspas para colocar uma cadeia de caracteres que contenha um dos personagens especiais, as aspas serão definidas como parte do valor da variável de ambiente.
 - Usando variáveis de ambiente
 
-  Use variáveis de ambiente para controlar o comportamento de alguns programas e arquivos em lotes e controlar o Windows de forma e o subsistema do MS-DOS é exibido e funciona. O **definir** comando geralmente é usado no arquivo Autoexec. NT para definir variáveis de ambiente.
-- Exibindo as configurações do ambiente atual
+  Use variáveis de ambiente para controlar o comportamento de alguns arquivos e programas em lotes e para controlar a maneira como o Windows e o subsistema MS-DOS são exibidos e funcionam. O comando **set** é geralmente usado no arquivo autoexec. NT para definir variáveis de ambiente.
+- Exibindo as configurações de ambiente atuais
 
-  Quando você digita o **definir** comando isoladamente, as configurações do ambiente atual são exibidas. Geralmente, essas configurações incluem as variáveis de ambiente COMSPEC e PATH, que são usadas para ajudar a localizar programas no disco. Duas outras variáveis de ambiente usadas pelo Windows são PROMPT e DIRCMD.
+  Quando você digita apenas o comando **set** , as configurações de ambiente atuais são exibidas. Essas configurações geralmente incluem as variáveis de ambiente COMSPEC e PATH, que são usadas para ajudar a localizar programas no disco. Duas outras variáveis de ambiente usadas pelo Windows são PROMPT e DIRCMD.
 - Usando parâmetros
 
-  Quando você especifica valores para *variável* e *cadeia de caracteres*, especificada *variável* valor é adicionado ao ambiente e *cadeia de caracteres* é associado a essa variável. Se a variável já existir no ambiente, o novo valor de cadeia de caracteres substitui o antigo valor de cadeia de caracteres.
+  Quando você especifica valores para *variável* e *cadeia de caracteres*, o valor de *variável* especificado é adicionado ao ambiente e a *cadeia de caracteres* é associada a essa variável. Se a variável já existir no ambiente, o novo valor da cadeia de caracteres substituirá o valor antigo da cadeia de caracteres.
 
-  Se você especificar somente uma variável e um sinal de igual (sem *cadeia de caracteres*) para o **definir** comando, o *cadeia de caracteres* valor associado com a variável estiver desmarcada (como se a variável não existe).
+  Se você especificar apenas uma variável e um sinal de igual (sem *cadeia de caracteres*) para o comando **set** , o valor da cadeia de *caracteres* associado à variável será limpo (como se a variável não existir).
 - Usando **/a**
 
   A tabela a seguir lista os operadores com suporte para **/a** em ordem decrescente de precedência.  
 
-  |        Operador         | Operação executada  |
+  |        Operator         | Operação executada  |
   |-------------------------|----------------------|
   |           ( )           |       Agrupamento       |
   |          ! ~ -          |        Unários         |
-  |         \* / %          |      aritmética      |
-  |           + -           |      aritmética      |
-  |          << >>          |    Deslocamento lógico     |
-  |            &            |     AND bit a bit      |
-  |            ^            | Bit a bit OR exclusivo |
+  |         \*/%          |      Operações      |
+  |           + -           |      Operações      |
+  |          < < > >          |    Deslocamento lógico     |
+  |            &            |     E      |
+  |            ^            | Or exclusivo de or |
   |                         |                      |
-  | = \*= /= %= += -= &= ^= |      = <<= >>=       |
-  |            ,            | Separador de expressões |
+  | =  @ no__t-1 =/=% = + =-= & = ^ = |      = < < = > > =       |
+  |            ,            | Separador de expressão |
 
-  Se você usar lógica ( **&&** ou **||** ) ou um módulo ( **%** ) operadores, coloque a cadeia de caracteres de expressão entre aspas. Qualquer cadeia de caracteres não numéricos na expressão é consideradas nomes de variáveis de ambiente e seus valores são convertidos em números antes que eles são processados. Se você especificar um nome de variável de ambiente que não está definido no ambiente atual, um valor de zero é alocado, que permite que você execute aritmética com valores de variáveis de ambiente sem usar o % para recuperar um valor.
+  Se você usar operadores lógicos ( **&&** ou **||** ) ou de módulo ( **%** ), coloque a cadeia de caracteres de expressão entre aspas. Todas as cadeias de caracteres não numéricas na expressão são consideradas nomes de variáveis de ambiente e seus valores são convertidos em números antes de serem processados. Se você especificar um nome de variável de ambiente que não esteja definido no ambiente atual, um valor de zero será alocado, o que permitirá que você execute aritmética com valores de variáveis de ambiente sem usar% para recuperar um valor.
 
-  Se você executar **set /a** da linha de comando fora de um script de comando, ele exibe o valor final da expressão.
+  Se você executar **set/a** na linha de comando fora de um script de comando, ele exibirá o valor final da expressão.
 
-  Valores numéricos são números decimais, a menos que prefixado por 0 × para números hexadecimais ou 0 para números octais. Portanto, 0 × 12 é o mesmo como 18, que é o mesmo que 022.
-- Suporte a expansão de variáveis de ambiente atrasada
+  Os valores numéricos são números decimais, a menos que sejam prefixados por 0 × para números hexadecimais ou 0 para números octais. Portanto, 0 × 12 é o mesmo que 18, que é o mesmo que 022.
+- Suporte à expansão de variável de ambiente atrasada
 
-  Suporte à expansão de variáveis de ambiente atrasada está desabilitada por padrão, mas você pode habilitar ou desabilitá-lo usando **cmd /v**.
-- Trabalhando com as extensões de comando
+  O suporte à expansão de variável de ambiente atrasada está desabilitado por padrão, mas você pode habilitá-lo ou desabilitá-lo usando **cmd/v**.
+- Trabalhando com extensões de comando
 
-  Quando as extensões de comando estão habilitadas (padrão) e você executar **definir** sozinho, ele exibe todas as variáveis de ambiente atual. Se você executar **definir** com um valor, ele exibe as variáveis que correspondem ao valor.
-- Usando o **definir** em arquivos em lotes
+  Quando as extensões de comando são habilitadas (o padrão) e você executa somente **definido** , ele exibe todas as variáveis de ambiente atuais. Se você executar **set** com um valor, ele exibirá as variáveis que correspondem a esse valor.
+- Usando **set** em arquivos em lotes
 
-  Ao criar arquivos em lotes, você pode usar **definir** para criar variáveis e, em seguida, usá-los da mesma forma que você usaria as variáveis numeradas **%0** por meio do **%9**. Você também pode usar as variáveis **%0** por meio **%9** como entrada para o **definir**.
-- Chamar um **definir** variável de um arquivo em lotes
+  Ao criar arquivos em lotes, você pode usar **set** para criar variáveis e, em seguida, usá-las da mesma maneira que usaria as variáveis numeradas **% 0** a **% 9**. Você também pode usar as variáveis **% 0** a **% 9** como entrada para o **conjunto**.
+- Chamando uma variável **set** de um arquivo em lotes
 
-  Quando você chama um valor de variável de um arquivo em lotes, coloque o valor entre sinais de porcentagem ( **%** ). Por exemplo, se seu programa de lote cria uma variável de ambiente denominada BAUD, você pode usar a cadeia de caracteres associada a BAUD como um parâmetro de substituição digitando **% baud %** no prompt de comando.
-- Usando o **definir** no Console de recuperação
+  Ao chamar um valor de variável de um arquivo em lotes, coloque o valor com sinais de porcentagem ( **%** ). Por exemplo, se o programa do lote criar uma variável de ambiente chamada BAUD, você poderá usar a cadeia de caracteres associada à BAUD como um parâmetro substituível digitando **% baud%** no prompt de comando.
+- Usando **set** no console de recuperação
 
-  O **definir** comando com parâmetros diferentes, está disponível no Console de recuperação.
+  O comando **set** , com parâmetros diferentes, está disponível no console de recuperação.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 Para definir uma variável de ambiente chamada TEST ^ 1, digite:
 ```
@@ -113,29 +113,29 @@ set testVar=test^^1
 ```
 
 > [!NOTE]
-> O **definir** comando atribui tudo o que segue o sinal de igual (=) para o valor da variável. Se você digitar:
+> O comando **set** atribui tudo o que segue o sinal de igual (=) para o valor da variável. Se você digitar:
 > ```
 > set testVar="test^1"
 > ```
-> Você obterá o seguinte resultado:
+> Você Obtém o seguinte resultado:
 > ```
 > testVar="test^1"
 > ```
-> Para definir uma variável de ambiente denominada teste & 1, digite:
+> Para definir uma variável de ambiente chamada TEST & 1, digite:
 > ```
 > set testVar=test^&1
 > ```
-> Para definir uma variável de ambiente denominada INCLUDE para que a cadeia de caracteres C:\Inc (o diretório \Inc na unidade C) é associada a ele, digite:
+> Para definir uma variável de ambiente denominada INCLUDE para que a cadeia de caracteres C:\Inc (o diretório \Inc na unidade C) esteja associada a ela, digite:
 > ```
 > set include=c:\inc
 > ```
-> Você pode usar a cadeia de caracteres C:\Inc em arquivos em lotes colocando o nome INCLUDE entre sinais de porcentagem ( **%** ). Por exemplo, você pode incluir o seguinte comando em um arquivo em lotes para que você possa exibir o conteúdo do diretório que está associado com a variável de ambiente INCLUDE:
+> Em seguida, você pode usar a cadeia de caracteres C:\Inc em arquivos em lotes ao colocar o nome incluir com sinais de porcentagem ( **%** ). Por exemplo, você pode incluir o seguinte comando em um arquivo em lotes para que você possa exibir o conteúdo do diretório que está associado à variável de ambiente INCLUDE:
 > ```
 > dir %include%
 > ```
-> Quando esse comando é processado, a cadeia de caracteres C:\Inc substitui **% include %** .
+> Quando esse comando é processado, a cadeia de caracteres C:\Inc substitui **% include%** .
 
-Você também pode usar **definir** em um arquivo em lotes que adiciona um novo diretório para a variável de ambiente PATH. Por exemplo:
+Você também pode usar **set** em um programa em lotes que adiciona um novo diretório à variável de ambiente Path. Por exemplo:
 ```
 @echo off
 rem ADDPATH.BAT adds a new directory
@@ -149,7 +149,7 @@ set p
 ```
 
 > [!NOTE]
-> Este comando requer que as extensões de comando, que são habilitadas por padrão.
+> Esse comando requer extensões de comando, que são habilitadas por padrão.
 
 #### <a name="additional-references"></a>Referências adicionais
 

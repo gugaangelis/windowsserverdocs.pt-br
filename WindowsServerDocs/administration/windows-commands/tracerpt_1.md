@@ -2,7 +2,7 @@
 title: tracerpt
 description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 25014d23c797f37dcc488b5fea20c73907eb6f4c
-ms.sourcegitcommit: feec5cbe983c8c5800ccd4fc214914084fcceaba
+ms.openlocfilehash: 1c8e85acc59383d0a027c8d5ec51e68942a76b85
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70975299"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385680"
 ---
 # <a name="tracerpt"></a>tracerpt
 
@@ -57,7 +57,7 @@ tracerpt <[-l] <value [value [...]]>|-rt <session_name [session_name [...]]>> [o
 |           -relatório [nome do arquivo]           |                                  Gerar um arquivo de relatório de saída de texto. Filename se não especificado for Workload. xml.                                   |
 |                  -LR                   |                        Especifique "menos restritivo". Isso usa os melhores esforços para eventos que não correspondem ao esquema de eventos.                         |
 |           -exportar [nome do arquivo]           |                                  Gerar um arquivo de exportação de esquema de evento. Filename se não especificado for Schema. Man.                                   |
-|       [-l] \<valor [valor [...]] >        |                                                   Especifique o arquivo de log de rastreamento de eventos a ser processado.                                                    |
+|       [-l] \<value [valor [...]] >        |                                                   Especifique o arquivo de log de rastreamento de eventos a ser processado.                                                    |
 | -RT \<session_name [session_name [...]] > |                                                Especificar fontes de dados da sessão de rastreamento de eventos em tempo real.                                                |
 
 ## <a name="BKMK_EXAMPLES"></a>Disso

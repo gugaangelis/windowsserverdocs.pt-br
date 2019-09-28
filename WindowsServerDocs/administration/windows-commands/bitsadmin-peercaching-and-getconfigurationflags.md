@@ -1,8 +1,8 @@
 ---
-title: getconfigurationflags e cache de par bitsadmin
-description: Tópico de comandos do Windows para **cache de par bitsadmin e getconfigurationflags** - obtém os sinalizadores de configuração que determinam se o computador serve o conteúdo para pontos e pode baixar conteúdo de pares.
+title: Bitsadmin de cache e getconfigurationflags
+description: O tópico de comandos do Windows para **Bitsadmin de cache e getconfigurationflags** -Obtém os sinalizadores de configuração que determinam se o computador fornece conteúdo a pares e pode baixar conteúdo de pares.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6afa39993cf90b2d71b6b681680c3b4e1fd9b56b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 94c7eb1a115fe9152b149b8cf65765b179080cc3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826347"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381094"
 ---
-# <a name="bitsadmin-peercaching-and-getconfigurationflags"></a>getconfigurationflags e cache de par bitsadmin
+# <a name="bitsadmin-peercaching-and-getconfigurationflags"></a>Bitsadmin de cache e getconfigurationflags
 
 
 
-Obtém os sinalizadores de configuração que determinam se o computador serve um conteúdo para pontos e pode baixar conteúdo de pares.
+Obtém os sinalizadores de configuração que determinam se o computador fornece conteúdo a pares e pode baixar conteúdo de pares.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,15 +36,15 @@ bitsadmin /PeerCaching /GetConfigurationFlags <Job>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir obtém os sinalizadores de configuração do trabalho nomeado *myJob*.
+O exemplo a seguir obtém os sinalizadores de configuração para o trabalho chamado *myJob*.
 ```
 C:\> Bitsadmin /PeerCaching /GetConfigurationFlags myJob
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

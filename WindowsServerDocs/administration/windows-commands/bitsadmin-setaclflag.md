@@ -1,8 +1,8 @@
 ---
 title: bitsadmin setaclflag
-description: Tópico de comandos do Windows para **setaclflag bitsadmin** -define o controle de acesso de sinalizadores de propagação de lista.
+description: O tópico de comandos do Windows para **Bitsadmin setaclflag** -define os sinalizadores de propagações da lista de controle de acesso.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 89d825a4bc4512022fed98a3188537d3977fa3c3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fbdb12c29af7b4db8b25846d43ee1c93b2454ff2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867397"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380760"
 ---
 # <a name="bitsadmin-setaclflag"></a>bitsadmin setaclflag
 
-Define o controle de acesso de sinalizadores de propagação de ACL (lista) para o trabalho. Os sinalizadores indicam que você deseja manter o proprietário e as informações de ACL com o arquivo que está sendo baixado. Por exemplo, para manter o proprietário e o grupo com o arquivo, defina **sinalizadores** para `OG`.
+Define os sinalizadores de propagações da ACL (lista de controle de acesso) para o trabalho. Os sinalizadores indicam que você deseja manter as informações de proprietário e ACL com o arquivo que está sendo baixado. Por exemplo, para manter o proprietário e o grupo com o arquivo, defina **sinalizadores** to `OG`.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,20 +34,20 @@ bitsadmin /SetAclFlags <Job> <Flags>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
-|Sinalizadores|Especifique um ou mais dos seguintes valores de sinalizador:</br>-/O: Copie informações do proprietário com o arquivo.</br>-   G: Copie informações de grupo com o arquivo.</br>-UNIDADE D: Copie informações da DACL com o arquivo.</br>-S: cópia SACL informações com o arquivo.|
+|Job|O nome de exibição ou o GUID do trabalho|
+|Sinalizadores|Especifique um ou mais dos seguintes valores de sinalizador:</br>MINÚSCULA Copie as informações do proprietário com o arquivo.</br>M Copie as informações do grupo com o arquivo.</br>3D Copie informações de DACL com o arquivo.</br>-S: copiar informações de SACL com o arquivo.|
 
 ## <a name="remarks"></a>Comentários
 
-A opção SetAclFlags é usada para manter informações de lista de controle de acesso e de proprietário quando um trabalho é Baixando dados de um compartilhamento do Windows (SMB).
+A opção SetAclFlags é usada para manter informações de proprietário e de lista de controle de acesso quando um trabalho está baixando dados de um compartilhamento do Windows (SMB).
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir define o controle de acesso de sinalizadores de propagação de lista do trabalho nomeado *myDownloadJob* para manter as informações do proprietário e o grupo com os arquivos baixados.
+O exemplo a seguir define os sinalizadores de propagação da lista de controle de acesso para o trabalho chamado *myDownloadJob* para manter as informações de proprietário e grupo com os arquivos baixados.
 ```
 C:\>bitsadmin /setaclflags myDownloadJob OG
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

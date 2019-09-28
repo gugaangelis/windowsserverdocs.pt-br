@@ -1,8 +1,8 @@
 ---
 title: title
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d1d1ea70849c3beb4503edfdaa5116384c14a2fd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 42094e0f1231fee5ac9ef0ec9184ba685c8846b1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848497"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385788"
 ---
 # <a name="title"></a>title
 
 
 
-Cria um título para a janela de Prompt de comando.
+Cria um título para a janela de prompt de comando.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -38,17 +38,17 @@ title [<String>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<cadeia de caracteres >|Especifica o título da janela do Prompt de comando.|
+|\<String >|Especifica o título da janela do prompt de comando.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
--   Para criar o título da janela para programas em lotes, inclua o **título** comando no início de um arquivo em lotes.
--   Depois que um título de janela é definido, você poderá redefini-lo somente usando o **título** comando.
+-   Para criar o título da janela para programas do lote, inclua o comando **title** no início de um programa do lote.
+-   Depois que um título de janela é definido, você pode redefini-lo somente usando o comando **title** .
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-No script de exemplo a seguir, o título da janela do Prompt de comando é alterado para "Arquivos de atualização" enquanto o arquivo em lotes executa o **cópia** comando. Depois que o comando é executado, o texto `Files Updated` é exibido, e o título da janela do Prompt de comando é alterado para "Prompt de comando".
+No script de exemplo a seguir, o título da janela de prompt de comando é alterado para "Atualizando arquivos" enquanto o arquivo em lotes executa o comando de **cópia** . Depois que o comando é executado, o texto `Files Updated` é exibido e o título da janela do prompt de comando é alterado de volta para "prompt de comando".
 ```
 @echo off
 title Updating Files
@@ -59,4 +59,4 @@ title Command Prompt
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

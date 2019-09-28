@@ -7,90 +7,90 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3a78334f64d9e51515757b01f2d788bf87f67a35
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: 79dfc7fbf9e2dcc753829cc53d914f374010f925
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501614"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408335"
 ---
 # <a name="plan-device-based-conditional-access-on-premises"></a>Planejar acesso condicional com base em dispositivo no local
 
 
-Este documento descreve as políticas de acesso condicional com base em dispositivos em um cenário híbrido em que os diretórios locais são conectados ao Azure AD usando o Azure AD Connect.     
+Este documento descreve as políticas de acesso condicional com base em dispositivos em um cenário híbrido em que os diretórios locais são conectados ao Azure AD usando Azure AD Connect.     
 
-## <a name="ad-fs-and-hybrid-conditional-access"></a>Acesso condicional do AD FS e híbrida  
+## <a name="ad-fs-and-hybrid-conditional-access"></a>AD FS e acesso condicional híbrido  
 
-O AD FS fornece o componente local diante das políticas de acesso condicional em um cenário híbrido.  Ao registrar dispositivos com o Azure AD para acesso condicional aos recursos de nuvem, o dispositivo do Azure AD Connect write-back recurso disponibiliza as informações de registro de dispositivo no local para as políticas do AD FS consumir e impor.  Dessa forma, você tem uma abordagem consistente para políticas de controle de acesso para ambos os locais e recursos de nuvem.  
+AD FS fornece o componente local das políticas de acesso condicional em um cenário híbrido.  Quando você registra dispositivos com o Azure AD para acesso condicional a recursos de nuvem, a Azure AD Connect capacidade de write-back do dispositivo disponibiliza as informações de registro do dispositivo localmente para que AD FS políticas consumam e imponham.  Dessa forma, você tem uma abordagem consistente para acessar políticas de controle para recursos locais e na nuvem.  
 
 ![Acesso condicional](media/Plan-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
 
 ### <a name="types-of-registered-devices"></a>Tipos de dispositivos registrados  
-Há três tipos de dispositivos registrados, que são representados como objetos de dispositivo no AD do Azure e pode ser usado para acesso condicional com o AD FS no local também.  
+Há três tipos de dispositivos registrados, todos os quais são representados como objetos de dispositivo no Azure AD e podem ser usados para acesso condicional com AD FS local também.  
 
-| |Adicionar trabalho ou de estudante  |Ingressar no Azure AD  |Ingresso no domínio 10 Windows    
+| |Adicionar conta corporativa ou de estudante  |Ingressar no Azure AD  |Ingresso no domínio do Windows 10    
 | --- | --- |--- | --- |
-|Descrição    |  Os usuários adicionar seu trabalho ou de estudante para seus dispositivos BYOD interativamente.  **Observação:** Adicionar conta corporativa ou escolar é o substituto do ingresso no local no Windows 8/8.1       | Os usuários ingressar seus dispositivos de trabalho do Windows 10 ao Azure AD.|Dispositivos de ingressados no domínio do Windows 10 registrados automaticamente no Azure AD.|           
-|Como os usuários fazem logon no dispositivo     |  Nenhum logon para o Windows como a conta corporativa ou de estudante.  Faça logon usando uma conta da Microsoft.       |   Faça logon no Windows como a conta (ou de estudante) que registrou o dispositivo.      |     Faça logon usando a conta do AD.|      
-|Como os dispositivos são gerenciados    |      Políticas de MDM (com o registro no Intune adicional)   | Políticas de MDM (com o registro no Intune adicional)        |   Diretiva de grupo, System Center Configuration Manager (SCCM) |
-|Tipo de relação de confiança do AD do Azure|Ingressados no local|Ingressado no Azure AD|Ingressado no domínio  |     
-|Local de configurações de W10    | Configurações > contas > sua conta > Adicionar uma conta corporativa ou de estudante        | Configurações > sistema > sobre > ingressar no Azure AD       |   Configurações > sistema > sobre > ingressar em um domínio |       
-|Também está disponível para dispositivos iOS e Android?   |    Sim     |       Não  |   Não   |   
+|Descrição    |  Os usuários adicionam sua conta corporativa ou de estudante ao seu dispositivo BYOD interativamente.  **Observação:** Adicionar conta corporativa ou de estudante é a substituição para Workplace Join no Windows 8/8.1       | Os usuários ingressam no dispositivo de trabalho do Windows 10 no Azure AD.|Os dispositivos ingressados no domínio do Windows 10 se registram automaticamente no Azure AD.|           
+|Como os usuários fazem logon no dispositivo     |  Não há logon no Windows como a conta corporativa ou de estudante.  Faça logon usando um conta Microsoft.       |   Faça logon no Windows como a conta (corporativa ou de estudante) que registrou o dispositivo.      |     Faça logon usando a conta do AD.|      
+|Como os dispositivos são gerenciados    |      Políticas de MDM (com registro adicional do Intune)   | Políticas de MDM (com registro adicional do Intune)        |   Política de Grupo, System Center Configuration Manager (SCCM) |
+|Tipo de confiança do Azure AD|Ingressado no local de trabalho|Ingressado no Azure AD|Ingressado no domínio  |     
+|Local das configurações do W10    | Configurações > contas > sua conta > Adicionar uma conta corporativa ou de estudante        | Configurações > > do sistema sobre > ingressar no Azure AD       |   Configurações > > do sistema sobre > ingressar em um domínio |       
+|Também disponível para dispositivos iOS e Android?   |    Sim     |       Não  |   Não   |   
 
   
 
 Para obter mais informações sobre as diferentes maneiras de registrar dispositivos, consulte também:  
-* [Usando dispositivos Windows 10 no local de trabalho](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices/)  
-* [Como configurar dispositivos Windows 10 para trabalho](https://jairocadena.com/2016/01/18/setting-up-windows-10-devices-for-work-domain-join-azure-ad-join-and-add-work-or-school-account/)  
-[Junte-se do Windows 10 Mobile ao Azure Active Directory](https://technet.microsoft.com/itpro/windows/manage/join-windows-10-mobile-to-azure-active-directory)  
+* [Usando dispositivos Windows 10 em seu local de trabalho](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices/)  
+* [Configurando dispositivos Windows 10 para trabalho](https://jairocadena.com/2016/01/18/setting-up-windows-10-devices-for-work-domain-join-azure-ad-join-and-add-work-or-school-account/)  
+[Junte-se ao Windows 10 Mobile para Azure Active Directory](https://technet.microsoft.com/itpro/windows/manage/join-windows-10-mobile-to-azure-active-directory)  
 
-### <a name="how-windows-10-user-and-device-sign-on-is-different-from-previous-versions"></a>Como usuário do Windows 10 e o dispositivo de logon é diferente das versões anteriores  
-Para Windows 10 e o AD FS 2016, há alguns novos aspectos de autenticação e registro de dispositivo, você deve saber sobre (especialmente se você estiver familiarizado com o registro de dispositivo e "ingresso no local" em versões anteriores).  
+### <a name="how-windows-10-user-and-device-sign-on-is-different-from-previous-versions"></a>Como o usuário e o dispositivo Windows 10 entram em diferentes das versões anteriores  
+Para o Windows 10 e o AD FS 2016, há alguns novos aspectos do registro e da autenticação do dispositivo que você deve saber (especialmente se você estiver muito familiarizado com o registro de dispositivos e "ingresso no local de trabalho" em versões anteriores).  
 
-Primeiro, no Windows 10 e o AD FS no Windows Server 2016, autenticação e registro de dispositivo não for mais baseia-se exclusivamente em um X509 certificado de usuário.  Há um protocolo de nova e mais robusto que fornece melhor segurança e uma experiência do usuário.  As principais diferenças são que, para o ingresso no domínio do Windows 10 e o ingresso no Azure AD, há um X509 certificado de computador e uma nova credencial chamado um PRT.  Você pode ler tudo sobre ela [aqui](https://jairocadena.com/2016/01/18/how-domain-join-is-different-in-windows-10-with-azure-ad/) e [aqui](https://jairocadena.com/2016/02/01/azure-ad-join-what-happens-behind-the-scenes/).  
+Primeiro, no Windows 10 e no AD FS no Windows Server 2016, o registro e a autenticação do dispositivo não são mais baseados apenas em um certificado de usuário X509.  Há um protocolo novo e mais robusto que fornece melhor segurança e uma experiência de usuário mais direta.  As principais diferenças são que, para ingresso no domínio do Windows 10 e ingresso no Azure AD, há um certificado de computador X509 e uma nova credencial chamada de PRT.  Você pode ler tudo sobre ele [aqui](https://jairocadena.com/2016/01/18/how-domain-join-is-different-in-windows-10-with-azure-ad/) e [aqui](https://jairocadena.com/2016/02/01/azure-ad-join-what-happens-behind-the-scenes/).  
 
-Em segundo lugar, o Windows 10 e o AD FS 2016 suporte à autenticação de usuário usando o Microsoft Passport for Work, que você pode ler sobre [aqui](https://jairocadena.com/2016/03/09/azure-ad-and-microsoft-passport-for-work-in-windows-10/) e [aqui](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport-deployment/).  
+Em segundo lugar, o Windows 10 e o AD FS 2016 dão suporte à autenticação de usuário usando Microsoft Passport for Work, que você pode ler [aqui](https://jairocadena.com/2016/03/09/azure-ad-and-microsoft-passport-for-work-in-windows-10/) e [aqui](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport-deployment/).  
 
-AD FS 2016 fornece contínua do dispositivo e usuário SSO, com base em credenciais PRT e Passport.  Usando as etapas neste documento, você pode habilitar esses recursos e vê-los a funcionar.  
+O AD FS 2016 fornece um SSO de usuário e dispositivo contínuo com base nas credenciais de PRT e do Passport.  Usando as etapas deste documento, você pode habilitar esses recursos e vê-los funcionando.  
 
 ### <a name="device-access-control-policies"></a>Políticas de controle de acesso do dispositivo  
-Dispositivos podem ser usados nas regras de controle de acesso do AD FS simples, como:  
+Os dispositivos podem ser usados em regras simples de controle de acesso de AD FS, como:  
 
-- permitir o acesso somente de um dispositivo registrado   
-- exigir multi-factor authentication, quando um dispositivo não está registrado  
+- permitir acesso somente de um dispositivo registrado   
+- exigir autenticação multifator quando um dispositivo não estiver registrado  
 
-Essas regras, em seguida, podem ser combinadas com outros fatores, como o local de acesso de rede e multi-factor authentication, criando políticas de acesso condicional avançado, como:  
+Essas regras podem então ser combinadas com outros fatores, como o local de acesso à rede e a autenticação multifator, criando políticas de acesso condicional avançadas, como:  
 
 
-- exigir multi-factor authentication para acessar de fora da rede corporativa, exceto para membros de um determinado grupo ou grupos de dispositivos não registrados  
+- exigir autenticação multifator para dispositivos não registrados que acessam de fora da rede corporativa, exceto para membros de um grupo ou grupos específicos  
 
-Com o AD FS 2016, essas políticas podem ser configuradas especificamente para exigir um nível de confiança de determinado dispositivo também: ambos **autenticado**, **gerenciados**, ou **compatível com**.  
+Com o AD FS 2016, essas políticas podem ser configuradas especificamente para exigir um nível de confiança de dispositivo específico também: **autenticado**, **gerenciado**ou em **conformidade**.  
 
-Para obter mais informações sobre como configurar o AD FS políticas de controle de acesso, consulte [políticas de controle de acesso no AD FS](../../ad-fs/operations/Access-Control-Policies-in-AD-FS.md).  
+Para obter mais informações sobre como configurar políticas de controle de acesso AD FS, consulte [políticas de controle de acesso em AD FS](../../ad-fs/operations/Access-Control-Policies-in-AD-FS.md).  
 
 #### <a name="authenticated-devices"></a>Dispositivos autenticados  
-Dispositivos autenticados são dispositivos registrados que não estão registrados no MDM (Intune e 3ª parte MDMs para Windows 10, o Intune somente para iOS e Android).   
+Dispositivos autenticados são dispositivos registrados que não estão registrados no MDM (Intune e MDMs de terceiros para Windows 10, Intune somente para iOS e Android).   
 
-Dispositivos autenticados terão a **isManaged** com valor de declaração do AD FS **falso**. (Enquanto que os dispositivos que não estão registrados não terá essa declaração.)  Dispositivos autenticados (e todos os dispositivos registrados) terá o isKnown AD FS de declaração com o valor **verdadeira**.  
+Os dispositivos autenticados terão a declaração de AD FS **IsManaged** com o valor **false**. (Enquanto os dispositivos que não estão registrados não terão essa declaração.)  Dispositivos autenticados (e todos os dispositivos registrados) terão a declaração Issei AD FS com o valor **true**.  
 
 #### <a name="managed-devices"></a>Dispositivos gerenciados:   
 
-Dispositivos gerenciados são dispositivos registrados que estão registrados no MDM.  
+Os dispositivos gerenciados são dispositivos registrados no MDM.  
 
-Dispositivos gerenciados terão o isManaged AD FS de declaração com o valor **verdadeira**.  
+Os dispositivos gerenciados terão a declaração de AD FS isgerencied com o valor **true**.  
 
-#### <a name="devices-compliant-with-mdm-or-group-policies"></a>Dispositivos em conformidade (com o MDM ou diretivas de grupo)  
-Dispositivos compatíveis sejam dispositivos registrados que não estão apenas registrados com o MDM, mas em conformidade com as políticas MDM. (As informações de conformidade é originada com o MDM e são gravadas para o Azure AD.)  
+#### <a name="devices-compliant-with-mdm-or-group-policies"></a>Dispositivos em conformidade (com políticas de MDM ou de grupo)  
+Os dispositivos em conformidade são dispositivos registrados que não só são registrados com o MDM, mas estão em conformidade com as políticas de MDM. (As informações de conformidade originam-se no MDM e são gravadas no Azure AD.)  
 
-Dispositivos em conformidade e terão a **isCompliant** com valor de declaração do AD FS **verdadeiro**.    
+Os dispositivos em conformidade terão a Declaração **IsCompliant** AD FS com o valor **true**.    
 
-Para obter uma lista completa de dispositivos do AD FS 2016 e declarações de acesso condicional, consulte [referência](#reference).  
+Para obter uma lista completa de dispositivos AD FS 2016 e declarações de acesso condicional, consulte [referência](#reference).  
 
 
 ## <a name="reference"></a>Referência  
-#### <a name="complete-list-of-new-ad-fs-2016-and-device-claims"></a>Lista completa de novas declarações do AD FS 2016 e dispositivo  
+#### <a name="complete-list-of-new-ad-fs-2016-and-device-claims"></a>Lista completa de novos AD FS 2016 e declarações de dispositivo  
 
 * https://schemas.microsoft.com/ws/2014/01/identity/claims/anchorclaimtype  
 * http://schemas.xmlsoap.org/ws/2005/05/identity/claims/implicitupn  

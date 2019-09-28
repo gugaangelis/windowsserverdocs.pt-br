@@ -1,8 +1,8 @@
 ---
 title: criar
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8cccf47a38fc61cdb225a44c08ba7d68d21b4fc3
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 25c3b87ef4d7d929185481c79156c754466b788b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433965"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378842"
 ---
 # <a name="create"></a>criar
 
 
 
-Cria uma partição em um disco, um volume em um ou mais discos ou um disco rígido virtual (VHD).
+Cria uma partição em um disco, um volume em um ou mais discos ou um VHD (disco rígido virtual).
 
 ## <a name="syntax"></a>Sintaxe
 

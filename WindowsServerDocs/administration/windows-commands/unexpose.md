@@ -1,8 +1,8 @@
 ---
-title: Cancele a exposição
-description: 'Tópico de comandos do Windows para * * *- '
+title: Cancele
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe9cb5dfd8ae6c71fdc72ddc1e8421229f98f5d0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4e10126739ef82b060e271e9b804a77658b5ec82
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837467"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392269"
 ---
-# <a name="unexpose"></a>Cancele a exposição
+# <a name="unexpose"></a>Cancele
 
 
 
-Unexposes uma cópia de sombra foi exposta por meio de **expor** comando. A cópia de sombra exposto pode ser especificada por sua ID de sombra, letra da unidade, compartilhamento ou ponto de montagem.
+Não expõe uma cópia de sombra que foi exposta usando o comando **Expo** . A cópia de sombra exposta pode ser especificada por sua ID de sombra, letra de unidade, compartilhamento ou ponto de montagem.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -38,22 +38,22 @@ unexpose {<ShadowID> | <Drive:> | <Share> | <MountPoint>}
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<ShadowID>|Unexposes a cópia de sombra especificada pela ID de sombra fornecido.|
-|\<Drive:>|Unexposes a cópia de sombra associada com a letra da unidade especificada (por exemplo, a unidade P).|
-|\<Compartilhamento >|Unexposes a cópia de sombra associada com o compartilhamento especificado (por exemplo, \\ \\ *MachineName*\).|
-|\<MountPoint>|Unexposes a cópia de sombra associada com o ponto de montagem especificado (por exemplo, C:\shadowcopy\).|
+|\<ShadowID >|Revela a cópia de sombra especificada pela ID de sombra fornecida.|
+|\<Drive: >|Não expõe a cópia de sombra associada à letra da unidade especificada (por exemplo, a unidade P).|
+|\<Share >|Não expõe a cópia de sombra associada ao compartilhamento especificado (por exemplo, \\ @ no__t-1*MachineName*\).|
+|\<MountPoint >|Não expõe a cópia de sombra associada ao ponto de montagem especificado (por exemplo, C:\shadowcopy @ no__t-0.|
 
 ## <a name="remarks"></a>Comentários
 
--   Você pode usar um alias existente ou uma variável de ambiente no lugar de *ShadowID*. Use **adicionar** sem parâmetros para ver os aliases existentes.
+-   Você pode usar um alias existente ou uma variável de ambiente no lugar de *shadowid*. Use **Adicionar** sem parâmetros para ver os aliases existentes.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para não expor a cópia de sombra associada à unidade P, digite:
+Para revelar a cópia de sombra associada à unidade P, digite:
 ```
 unexpose P:
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

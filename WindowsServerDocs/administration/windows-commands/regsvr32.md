@@ -1,8 +1,8 @@
 ---
 title: regsvr32
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87d9291755ddb4484e85248cb01ad78b01a25965
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 444af0ccf7c9bbe21c013f32b396997b7cb2e00f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889987"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371635"
 ---
 # <a name="regsvr32"></a>regsvr32
 
 
 
-Registra os arquivos. dll como componentes de comando no registro.
+Registra arquivos. dll como componentes de comando no registro.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -39,19 +39,19 @@ regsvr32 [/u] [/s] [/n] [/i[:cmdline]] <DllName>
 |Parâmetro|Descrição|
 |---------|-----------|
 |/u|Cancela o registro do servidor.|
-|/s|Execuções **Regsvr32** sem exibir mensagens.|
-|/n|Execuções **Regsvr32** sem chamar **DllRegisterServer**. (Requer o **/i** parâmetro.)|
-|/i:\<cmdline>|Passa uma cadeia de caracteres de linha de comando opcional (*cmdline*) para **DllInstall**. Se você usar esse parâmetro junto com o **/u** parâmetro, ele chama **DllUninstall**.|
-|\<DllName>|O nome do arquivo. dll que será registrado.|
+|/s|Executa **regsvr32** sem exibir mensagens.|
+|opção|Executa **regsvr32** sem chamar **DllRegisterServer**. (Requer o parâmetro **/i** ).|
+|/i: \<cmdline >|Passa uma cadeia de caracteres de linha de comando opcional (*cmdline*) para **DllInstall**. Se você usar esse parâmetro em conjunto com o parâmetro **/u** , ele chamará **DllUninstall**.|
+|\<DllName >|O nome do arquivo. dll que será registrado.|
 |/?|Exibe a ajuda no prompt de comando.|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para registrar o arquivo. dll para o esquema do Active Directory, digite:
+Para registrar o. dll para o esquema de Active Directory, digite:
 ```
 regsvr32 schmmgmt.dll
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

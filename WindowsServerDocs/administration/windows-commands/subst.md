@@ -1,8 +1,8 @@
 ---
 title: subst
-description: Saiba como associar um caminho com uma letra de unidade.
+description: Saiba como associar um caminho a uma letra da unidade.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 858195de89ca8661cf47c25b6cf9b519cc4efbf8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f3010d1e58fbd360b8311512e6664873b020c12b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858067"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383746"
 ---
 # <a name="subst"></a>subst
 
 
 
-Associa um caminho com uma letra de unidade. Se usado sem parâmetros, **subst** exibe os nomes das unidades virtuais em vigor.
+Associa um caminho a uma letra da unidade. Se usado sem parâmetros, **subst** exibirá os nomes das unidades virtuais em vigor.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -39,14 +39,14 @@ subst <Drive1>: /d
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Drive1>:|Especifica a unidade virtual à qual você deseja atribuir um caminho.|
-|[\<Drive2>:]\<Path>|Especifica a unidade física e o caminho que você deseja atribuir a uma unidade virtual.|
-|/d|Exclui uma unidade já substituída (virtual).|
+|> de @no__t 0Drive1:|Especifica a unidade virtual à qual você deseja atribuir um caminho.|
+|[\<Drive2 >:] \<Path >|Especifica a unidade física e o caminho que você deseja atribuir a uma unidade virtual.|
+|/d|Exclui uma unidade substituída (virtual).|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
--   Os comandos a seguir não funcionam e não deve ser usados em unidades que são especificadas na **subst** comando:
+-   Os comandos a seguir não funcionam e não devem ser usados em unidades especificadas no comando **subst** :
 
     **chkdsk**
 
@@ -59,21 +59,21 @@ subst <Drive1>: /d
     **label**
 
     **recover**
--   O *unidade1* parâmetro deve estar dentro do intervalo especificado pelo **lastdrive** comando. Caso contrário, **subst** exibe a seguinte mensagem de erro:
+-   O parâmetro *unidade1* deve estar dentro do intervalo especificado pelo comando **LastDrive** . Caso contrário, **subst** exibirá a seguinte mensagem de erro:
 
     `Invalid parameter - drive1:`
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 Para criar uma unidade virtual Z para o caminho B:\User\Betty\Forms, digite:
 ```
 subst z: b:\user\betty\forms 
 ```
-Em vez de digitar o caminho completo, você pode acessar este diretório digitando a letra da unidade virtual seguida por dois-pontos, da seguinte maneira:
+Em vez de digitar o caminho completo, você pode acessar esse diretório digitando a letra da unidade virtual seguida por dois-pontos, da seguinte maneira:
 ```
 z: 
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

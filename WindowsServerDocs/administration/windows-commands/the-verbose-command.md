@@ -1,8 +1,8 @@
 ---
-title: O comando verbose
-description: 'Tópico de comandos do Windows para * * *- '
+title: O comando Verbose
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a655ccdbd95b2f3523babecaa713ccdf99f9ec7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7c7ecc2bb3578b578060694c95833fd32674db10
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827237"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369906"
 ---
-# <a name="the-verbose-command"></a>O comando verbose
+# <a name="the-verbose-command"></a>O comando Verbose
 
 
 
-Exibe a saída detalhada para um comando especificado. Você pode usar **/verbose** com outros comandos WDSUTIL que você executa. Observe que você deve especificar **/verbose** e **/Progress** diretamente após **WDSUTIL**.
+Exibe a saída detalhada para um comando especificado. Você pode usar **/Verbose** com quaisquer outros comandos do WDSUTIL que você executar. Observe que você deve especificar **/Verbose** e **/Progress** diretamente após **WDSUTIL**.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,7 +34,7 @@ WDSUTIL /verbose <commands>
 
 ## <a name="examples"></a>Exemplos
 
-Para excluir computadores aprovados do banco de dados de adição automática e mostrar a saída detalhada, digite:
+Para excluir computadores aprovados da adição automática de banco de dados e mostrar saída detalhada, digite:
 ```
 WDSUTIL /Verbose /progress /Delete-AutoAddDevices /Server:MyWDSServer /DeviceType:ApprovedDevices
 ```

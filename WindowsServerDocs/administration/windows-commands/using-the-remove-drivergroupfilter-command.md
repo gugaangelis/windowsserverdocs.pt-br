@@ -1,8 +1,8 @@
 ---
-title: Usando o comando remove-DriverGroupFilter
-description: 'Tópico de comandos do Windows para * * *- '
+title: Usando o comando Remove-DriverGroupFilter
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a546ead7220273955368c582ac1e3f9b3f61c191
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 75b4a1446b5fb4db4132a39b6e5ba70cd1c4ab4b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883427"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362917"
 ---
-# <a name="using-the-remove-drivergroupfilter-command"></a>Usando o comando remove-DriverGroupFilter
+# <a name="using-the-remove-drivergroupfilter-command"></a>Usando o comando Remove-DriverGroupFilter
 
 
 
@@ -36,11 +36,11 @@ WDSUTIL /Remove-DriverGroupFilter /DriverGroup:<Group Name> [/Server:<Server nam
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/DriverGroup:\<Group Name>|Especifica o nome do grupo de drivers.|
-|[/Server:\<Server name>]|Especifica o nome do servidor. Isso pode ser o nome NetBIOS ou FQDN. Se não for especificado um nome de servidor, o servidor local será usado.|
-|[/FilterType:\<FilterType>]|Especifica o tipo de filtro a ser removido do grupo. \<FilterType > pode ser uma das seguintes opções:</br>**BiosVendor**</br>**BiosVersion**</br>**ChassisType**</br>**Fabricante**</br>**UUID**</br>**OsVersion**</br>**OsEdition**</br>**OsLanguage**|
+|/DriverGroup: nome de \<Group >|Especifica o nome do grupo de drivers.|
+|[/Server: \<Server nome >]|Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se um nome de servidor não for especificado, o servidor local será usado.|
+|[/FilterType: \<FilterType >]|Especifica o tipo do filtro a ser removido do grupo. \<FilterType > pode ser um dos seguintes:</br>**BiosVendor**</br>**Biosversion**</br>**ChassisType**</br>**Manufacturer**</br>**Personalizado**</br>**OsVersion**</br>**OsEdition**</br>**OsLanguage**|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 Para remover um filtro, digite um dos seguintes:
 ```
@@ -52,4 +52,4 @@ WDSUTIL /Remove-DriverGroupFilter /DriverGroup:PrinterDrivers /FilterType:Manufa
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

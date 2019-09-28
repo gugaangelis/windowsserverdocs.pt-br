@@ -1,16 +1,16 @@
 ---
 title: Comandos do DiskPart
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 7155dbf34f9986b3ebdd8b549b6a861cf7fcfe3a
-ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
+ms.openlocfilehash: 0826b773927f09cc846fb1cfdf4d5dfbf75d5cca
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560435"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377831"
 ---
 # <a name="diskpart-commands"></a>Comandos do DiskPart
 
@@ -18,7 +18,7 @@ Aplica-se a: Windows 10, Windows 8.1, Windows 8, Windows 7, Windows Server 2019,
 
 Os comandos do DiskPart ajudam você a gerenciar as unidades de seu PC (discos, partições, volumes ou discos rígidos virtuais). Antes de usar os comandos do DiskPart, primeiro você deve listar e, em seguida, selecionar um objeto para dar o foco. Quando um objeto tiver foco, todos os comandos do DiskPart que você digitar agirão nesse objeto.
 
-Você pode listar os objetos disponíveis e determinar o número ou a letra da unidade de um objeto usando os comandos **listar disco, listar volume, listar partição**e **listar VDISK** . Os comandos **listar disco, lista VDISK** e **listar volume** exibem todos os discos e volumes no computador. No entanto, o comando **listar partição** só exibe partições no disco que tem o foco. Quando você usa os comandos da **lista** , um asterisco\*() é exibido ao lado do objeto com foco.
+Você pode listar os objetos disponíveis e determinar o número ou a letra da unidade de um objeto usando os comandos **listar disco, listar volume, listar partição**e **listar VDISK** . Os comandos **listar disco, lista VDISK** e **listar volume** exibem todos os discos e volumes no computador. No entanto, o comando **listar partição** só exibe partições no disco que tem o foco. Quando você usa os comandos da **lista** , um asterisco (\*) é exibido ao lado do objeto com foco.
 
 Quando você seleciona um objeto, o foco permanece nesse objeto até que você selecione um objeto diferente. Por exemplo, se o foco estiver definido no disco 0 e você selecionar volume 8 no disco 2, o foco mudará do disco 0 para o disco 2, volume 8. Alguns comandos alteram o foco automaticamente. Por exemplo, quando você cria uma nova partição, o foco alterna automaticamente para a nova partição.
 
@@ -39,7 +39,7 @@ Você pode executar os seguintes comandos no interpretador de comandos do DiskPa
       
   - [Adicionar](add.md)  
       
-  - [Atribuir](assign.md)  
+  - [Cancele](assign.md)  
       
   - [Anexar vdisk](attach-vdisk.md)  
       
@@ -71,13 +71,13 @@ Você pode executar os seguintes comandos no interpretador de comandos do DiskPa
       
   - [Sistemas](filesystems.md)  
       
-  - [Formatar](format.md)  
+  - [Ao](format.md)  
       
   - [GPT](gpt.md)  
       
   - [Ajuda](help.md)  
       
-  - [Importarar](import.md)  
+  - [Importar](import.md)  
       
   - [Inativo](inactive.md)  
       
@@ -93,7 +93,7 @@ Você pode executar os seguintes comandos no interpretador de comandos do DiskPa
       
   - [Trab](rem.md)  
       
-  - [Removerr](remove.md)  
+  - [Remover](remove.md)  
       
   - [Corrige](repair.md)  
       

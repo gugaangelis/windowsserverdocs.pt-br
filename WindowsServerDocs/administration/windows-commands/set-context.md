@@ -1,8 +1,8 @@
 ---
-title: Definir o contexto
-description: 'Tópico de comandos do Windows para * * *- '
+title: Definir contexto
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6f24e795f2d7c92d462cf822e70e4830b53827e5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 16f71d831f374f495abf2239cb8e694eee69efdf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845847"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370981"
 ---
-# <a name="set-contex"></a>Contexto de conjunto
+# <a name="set-contex"></a>Definir contex
 
 
 
-Define o contexto para a criação de cópias de sombra. Se usado sem parâmetros, **definir o contexto de** exibe a Ajuda no prompt de comando.
+Define o contexto para a criação da cópia de sombra. Se usado sem parâmetros, **Definir contexto** exibirá a ajuda no prompt de comando.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -38,22 +38,22 @@ set context {clientaccessible | persistent [nowriters] | volatile [nowriters]}
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|ClientAccessible|Especifica que a cópia de sombra é utilizável por versões cliente do Windows.|
-|persistent|Especifica que a cópia de sombra persiste entre a saída do programa, redefinir ou reinicialização.|
-|volátil|Exclui a cópia de sombra em sair ou redefinir.|
+|clientaccessible|Especifica que a cópia de sombra é utilizável por versões cliente do Windows.|
+|persistente|Especifica que a cópia de sombra persiste entre a saída do programa, a redefinição ou a reinicialização.|
+|volátil|Exclui a cópia de sombra na saída ou na redefinição.|
 |NoWriters|Especifica que todos os gravadores são excluídos.|
 
 ## <a name="remarks"></a>Comentários
 
--   O *clientaccessible* contexto é persistente por padrão.
+-   O contexto *ClientAccessible* é persistente por padrão.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para evitar cópias de sombra sejam excluídas quando você sai do DiskShadow, digite:
+Para impedir que as cópias de sombra sejam excluídas quando você sair do DiskShadow, digite:
 ```
 set context persistent
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

@@ -1,8 +1,8 @@
 ---
 title: Gerenciar tarefas do sistema usando o MultiPoint Manager
-description: Visão geral das tarefas de gerenciamento no Gerenciador do MultiPoint
+description: Visão geral das tarefas de gerenciamento no MultiPoint Manager
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,15 +13,15 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 52400b5ed74e4dcc9350e74ac8bc31182fdbbccc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 185f4c88286138af61f92f3f349efd8f584ed73c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845107"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405055"
 ---
 # <a name="manage-system-tasks-using-multipoint-manager"></a>Gerenciar tarefas do sistema usando o MultiPoint Manager
-No Gerenciador do MultiPoint, você pode usar o **Home** guia para executar tarefas do MultiPoint Services e verificar o estado do sistema. Tarefas que você pode executar na guia **Início** incluem:  
+No MultiPoint Manager, você pode usar a guia **página inicial** para executar tarefas de serviços do MultiPoint e verificar o estado do sistema. Tarefas que você pode executar na guia **Início** incluem:  
   
 -   Editar as configurações que você selecionou quando instalou o MultiPoint Services, conforme descrito no tópico [Editar configurações do servidor](Edit-Server-Settings.md).  
   
@@ -38,7 +38,7 @@ No Gerenciador do MultiPoint, você pode usar o **Home** guia para executar tare
 ## <a name="see-also"></a>Consulte também  
 [Editar configurações do servidor](Edit-Server-Settings.md)  
 [Reiniciar ou desligar](Restart-or-Shut-Down.md)  
-[Alternar entre modos](Switch-Between-Modes.md)  
+[Alternar entre os modos](Switch-Between-Modes.md)  
 [Habilitar ou desabilitar a proteção de disco](Enable-or-Disable-Disk-Protection.md)  
 [Remapear todas as estações](Remap-All-Stations.md)  
 [Adicionar ou remover computadores](Add-or-Remove-Computers.md)

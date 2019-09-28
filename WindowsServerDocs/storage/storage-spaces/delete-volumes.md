@@ -1,39 +1,39 @@
 ---
-title: Excluindo volumes em espaços de armazenamento diretos
-description: Como excluir volumes em espaços de armazenamento diretos usando o Windows Admin Center.
-ms.prod: windows-server-threshold
+title: Excluindo volumes no Espaços de Armazenamento Diretos
+description: Como excluir volumes em Espaços de Armazenamento Diretos usando o centro de administração do Windows.
+ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: iangpgh
 ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 05/07/2019
-ms.openlocfilehash: f0227b4623118a01cecb58a91db209482451db70
-ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
+ms.openlocfilehash: a144479c196f42939aee6eb26227ed2e2b22d87a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65619282"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402860"
 ---
-# <a name="deleting-volumes-in-storage-spaces-direct"></a>Excluindo volumes em espaços de armazenamento diretos
+# <a name="deleting-volumes-in-storage-spaces-direct"></a>Excluindo volumes no Espaços de Armazenamento Diretos
 > Aplica-se a: Windows Server 2019, Windows Server 2016
 
-Este tópico fornece instruções para excluir os volumes em um [espaços de armazenamento diretos](storage-spaces-direct-overview.md) cluster usando o Windows Admin Center.
+Este tópico fornece instruções para excluir volumes em um cluster [espaços de armazenamento diretos](storage-spaces-direct-overview.md) usando o centro de administração do Windows.
 
 Assista a um vídeo rápido sobre como excluir um volume.
 
 > [!VIDEO https://www.youtube-nocookie.com/embed/DbjF8r2F6Jo]
 
-Para excluir um volume no Windows Admin Center:
+Para excluir um volume no centro de administração do Windows:
 
-1. No do Windows Admin Center, conectar a um cluster de espaços de armazenamento diretos e, em seguida, selecione **Volumes** da **ferramentas** painel.
-2. Na página de Volumes, selecione a **inventário** guia e, em seguida, selecione o volume que você deseja excluir.
+1. No centro de administração do Windows, conecte-se a um cluster Espaços de Armazenamento Diretos e, em seguida, selecione **volumes** no painel **ferramentas** .
+2. Na página volumes, selecione a guia **inventário** e, em seguida, selecione o volume que você deseja excluir.
 4. Na parte superior da página de detalhes de volumes, selecione **excluir**.
-5. Na caixa de diálogo confirmações, marque a caixa de seleção para confirmar que você deseja excluir o volume e selecione **excluir**.
+5. No diálogo confirmações, marque a caixa de seleção para confirmar que deseja excluir o volume e selecione **excluir**.
 
 ## <a name="see-also"></a>Consulte também
 
-- [Espaços de armazenamento diretos no Windows Server 2016](storage-spaces-direct-overview.md)
-- [Planejando volumes em espaços de armazenamento diretos](plan-volumes.md)
-- [Criação de volumes em espaços de armazenamento diretos](create-volumes.md)
-- [Extensão dos volumes em espaços de armazenamento diretos](resize-volumes.md)
+- [Espaços de Armazenamento Diretos no Windows Server 2016](storage-spaces-direct-overview.md)
+- [Planejando volumes no Espaços de Armazenamento Diretos](plan-volumes.md)
+- [Criando volumes no Espaços de Armazenamento Diretos](create-volumes.md)
+- [Estendendo volumes no Espaços de Armazenamento Diretos](resize-volumes.md)

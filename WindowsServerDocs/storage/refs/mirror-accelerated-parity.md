@@ -1,6 +1,6 @@
 ---
 title: Paridade acelerada por espelho
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: gawatu
 ms.manager: masriniv
 ms.technology: storage-file-systems
@@ -8,12 +8,12 @@ ms.topic: article
 author: gawatu
 ms.date: 10/17/2018
 ms.assetid: ''
-ms.openlocfilehash: ec1f04b20b0b743085bacd95ad95a52c15207f40
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0325a37e38845ea9482a6ed260e2bb3b493cc79a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872004"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394002"
 ---
 # <a name="mirror-accelerated-parity"></a>Paridade acelerada por espelho
 
@@ -114,7 +114,7 @@ O ReFS começa a girar dados depois do espelho atingir um limite especificado de
 -   Valores menores permitem que o ReFS transfira proativamente dados e receba da melhor forma os E/S de entrada. Isso é aplicável a cargas de trabalho pesados para processamento, como armazenamento de arquivamento. Valores menores, no entanto, podem degradar o desempenho para cargas de trabalho de finalidade geral. Girar desnecessariamente dados fora o nível de espelho carregará uma penalidade de desempenho. 
 
 O ReFS apresenta um parâmetro ajustável para ajustar esse limite, que é configurável usando uma chave do registro. Essa chave do registro deve ser configurada em **cada nó em uma implantação direta de espaços de armazenamento**, e uma reinicialização é necessária para que todas as alterações entrem em vigor. 
--   **Chaves** HKEY_LOCAL_MACHINE\System\CurrentControlSet\Policies
+-   **Chave:** HKEY_LOCAL_MACHINE\System\CurrentControlSet\Policies
 -   **Valor (DWORD):** DataDestageSsdFillRatioThreshold
 -   **ValueType** Percentual
 

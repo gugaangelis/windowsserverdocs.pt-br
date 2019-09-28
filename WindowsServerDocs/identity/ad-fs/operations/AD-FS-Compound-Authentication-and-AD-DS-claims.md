@@ -6,14 +6,14 @@ ms.author: billmath
 manager: femila
 ms.date: 09/07/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b67177c8bf0ce9869aa51c3012d57f3208ac02f5
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 78db6f8b6961cecea55b8d371e9abf952cafdab3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866292"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358670"
 ---
 # <a name="compound-authentication-and-ad-ds-claims-in-ad-fs"></a>Compostos de autenticação e declarações do AD DS no AD FS
 O Windows Server 2012 aprimora a autenticação Kerberos introduzindo a autenticação composta.  A autenticação composta permite que uma solicitação de TGS (serviço de concessão de tíquete) Kerberos inclua duas identidades: 

@@ -7,40 +7,40 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b781d6fe99864b13d6e7f8ab65f3a14d205c2aa6
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 624d2e26bc0277129e44eee3fdce7c7396b735a0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190796"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407909"
 ---
 # <a name="service-communications-certificates"></a>Certificados de comunicações de serviço
 
-Um servidor de Federação requer o uso de certificados de comunicação de serviço para cenários em que a segurança de mensagem do WCF é usada.  
+Um servidor de Federação requer o uso de certificados de comunicação de serviço para cenários nos quais a segurança de mensagem do WCF é usada.  
   
 ## <a name="service-communication-certificate-requirements"></a>Requisitos de certificado de comunicação de serviço  
-Certificados de comunicação de serviço devem atender aos requisitos a seguir para trabalhar com o AD FS:  
+Os certificados de comunicação do serviço devem atender aos seguintes requisitos para trabalhar com AD FS:  
   
--   O certificado de comunicação de serviço deve incluir o uso de chave de autenticação aprimorada do servidor \(EKU\) extensão.  
+-   O certificado de comunicação do serviço deve incluir a extensão uso avançado de chave de autenticação do servidor \(EKU @ no__t-1.  
   
--   As listas de certificados revogados \(CRLs\) devem estar acessíveis para todos os certificados na cadeia do certificado de comunicação de serviço para o certificado de autoridade de certificação raiz. A CA raiz também deve ser confiável por qualquer proxies de servidor de Federação e servidores Web que confiam neste servidor de Federação.  
+-   As listas de revogação de certificado \(CRLs @ no__t-1 devem estar acessíveis para todos os certificados na cadeia do certificado de comunicação de serviço para o certificado de autoridade de certificação raiz. A CA raiz também deve ser confiável por qualquer proxy de servidor de Federação e servidores Web que confiam nesse servidor de Federação.  
   
--   O nome da entidade que é usado no certificado de comunicação de serviço deve corresponder ao nome do serviço de Federação nas propriedades do serviço de Federação.  
+-   O nome da entidade que é usado no certificado de comunicação do serviço deve corresponder ao nome do Serviço de Federação nas propriedades do Serviço de Federação.  
   
-## <a name="deployment-considerations-for-service-communication-certificates"></a>Considerações de implantação de certificados de comunicação de serviço  
-Configure certificados de comunicação de serviço para que todos os servidores de federação usam o mesmo certificado. Se você estiver implantando a Federated Web único\-sinal\-nos \(SSO\) design, é recomendável que seu certificado de comunicação do serviço sejam emitidos por uma autoridade de certificação pública. Você pode solicitar e instalar esses certificados por meio do Gerenciador do IIS snap\-no.  
+## <a name="deployment-considerations-for-service-communication-certificates"></a>Considerações de implantação para certificados de comunicação de serviço  
+Configure certificados de comunicação de serviço para que todos os servidores de Federação usem o mesmo certificado. Se você estiver implantando a Web federada single @ no__t-0Sign @ no__t-1On \(SSO @ no__t-3 design, recomendamos que o certificado de comunicação do serviço seja emitido por uma AC pública. Você pode solicitar e instalar esses certificados usando o snap @ no__t-0in do Gerenciador do IIS.  
   
-Você pode usar o autoatendimento\-assinado, certificados de comunicação com êxito nos servidores de Federação em um ambiente de laboratório de teste de serviço. No entanto, para um ambiente de produção, recomendamos que você obtenha certificados de comunicação de serviço de uma CA pública. Estes são os motivos por que você não deve usar self\-assinado, certificados de comunicação para uma implantação em tempo real de serviço:  
+Você pode usar Self @ no__t-0signed, certificados de comunicação de serviço com êxito em servidores de Federação em um ambiente de laboratório de teste. No entanto, para um ambiente de produção, recomendamos que você obtenha certificados de comunicação de serviço de uma CA pública. A seguir, os motivos pelos quais você não deve usar o Self @ no__t-0signed, certificados de comunicação de serviço para uma implantação ao vivo:  
   
--   Um self\-assinado, certificado SSL deve ser adicionado ao repositório raiz confiável em cada um dos servidores de federação na organização do parceiro de recurso. Enquanto isso sozinho não permitir que um invasor comprometer um servidor de federação de recurso, confiando self\-certificados autoassinados aumentar a superfície de ataque de um computador, e pode levar a vulnerabilidades de segurança se o certificado de signatário não é confiável.  
+-   R Self @ no__t-0signed, o certificado SSL deve ser adicionado ao armazenamento de raiz confiável em cada um dos servidores de Federação na organização do parceiro de recurso. Embora isso sozinho não permita que um invasor comprometa um servidor de Federação de recursos, confiar nos certificados autono__t-0signed aumenta a superfície de ataque de um computador e pode levar a vulnerabilidades de segurança se o signatário do certificado não estiver confiável.  
   
--   Ele cria uma experiência de usuário ruim. Os clientes receberão prompts de alerta de segurança quando eles tentam acessar recursos federados que exibem a seguinte mensagem: "O certificado de segurança foi emitido por uma empresa que você escolheu não confiar". Esse comportamento é esperado, pois o self\-certificado autoassinado não é confiável.  
+-   Ele cria uma experiência de usuário inadequada. Os clientes receberão prompts de alerta de segurança quando tentarem acessar recursos federados que exibem a seguinte mensagem: "O certificado de segurança foi emitido por uma empresa que você não escolheu confiar". Esse é o comportamento esperado, pois o certificado @ no__t-0signed não é confiável.  
   
     > [!NOTE]  
-    > Se necessário, você pode contornar essa condição, usando a diretiva de grupo para empurrar manualmente o self\-assinou o certificado ao repositório raiz confiável em cada computador cliente que tenta acessar um site do AD FS.  
+    > Se necessário, você pode contornar essa condição usando Política de Grupo para enviar manualmente o certificado autono__t-0signed para o repositório de raiz confiável em cada computador cliente que tentará acessar um site de AD FS.  
   
--   As CAs fornecem certificado adicional\-com base em recursos, como arquivamento da chave privado, renovação e revogação, que não são fornecidos pelo próprio\-certificados autoassinados.  
+-   O CAs fornece recursos adicionais de certificado @ no__t-0based, como o arquivo de chave privada, a renovação e a revogação, que não são fornecidos pelos certificados Self @ no__t-1signed.  
   
 

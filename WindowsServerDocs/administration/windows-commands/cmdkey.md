@@ -1,8 +1,8 @@
 ---
 title: cmdkey
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c06a04fa6473bc30c3b354f049a55775d2308a0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: dc2b12cb53eef930d05c1e291de5574a8ba94306
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434316"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379313"
 ---
 # <a name="cmdkey"></a>cmdkey
 
@@ -34,36 +34,36 @@ cmdkey [{/add:<TargetName>|/generic:<TargetName>}] {/smartcard|/user:<UserName> 
 
 |             Parâmetros             |                                                                                    Descrição                                                                                     |
 |------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|         /add:<TargetName>          | Adiciona um nome de usuário e senha à lista.<br /><br />Requer que o parâmetro de <TargetName> que identifica o nome do computador ou domínio que será associada a essa entrada. |
-|       /generic:<TargetName>        |   Adiciona credenciais genéricas à lista.<br /><br />Requer que o parâmetro de <TargetName> que identifica o nome do computador ou domínio que será associada a essa entrada.    |
-|             /smartcard             |                                                                    Recupera as credenciais de um cartão inteligente.                                                                     |
-|          /user:<UserName>          |                                 Especifica o usuário ou o nome da conta de armazenamento com essa entrada. Se *nome de usuário* não é fornecida, ela será solicitada.                                  |
-|          /pass:<Password>          |                                       Especifica a senha para armazenar com essa entrada. Se *senha* não é fornecida, ela será solicitada.                                        |
-| /delete{:<TargetName> &#124; /ras} |  Exclui um nome de usuário e senha da lista. Se *TargetName* for especificado, que a entrada será excluída. Se /ras for especificado, a entrada de acesso remoto armazenados será excluída.   |
-|         /list:<TargetName>         |                  Exibe a lista de nomes de usuário armazenado e as credenciais. Se *TargetName* não é nomes de usuário especificado, tudo armazenados e as credenciais serão listadas.                   |
+|         /Add: <TargetName>          | Adiciona um nome de usuário e senha à lista.<br /><br />Requer o parâmetro de <TargetName> que identifica o computador ou o nome de domínio ao qual essa entrada será associada. |
+|       /genérico: <TargetName>        |   Adiciona credenciais genéricas à lista.<br /><br />Requer o parâmetro de <TargetName> que identifica o computador ou o nome de domínio ao qual essa entrada será associada.    |
+|             /smartcard             |                                                                    Recupera a credencial de um cartão inteligente.                                                                     |
+|          /User: <UserName>          |                                 Especifica o nome do usuário ou da conta a ser armazenada com essa entrada. Se o *nome de usuário* não for fornecido, ele será solicitado.                                  |
+|          /Pass: <Password>          |                                       Especifica a senha a ser armazenada com essa entrada. Se a *senha* não for fornecida, ela será solicitada.                                        |
+| /Delete{: <TargetName> &#124; /RAS} |  exclui um nome de usuário e uma senha da lista. Se *TargetName* for especificado, essa entrada será excluída. Se/RAS for especificado, a entrada de acesso remoto armazenada será excluída.   |
+|         /List: <TargetName>         |                  Exibe a lista de nomes de usuário e credenciais armazenados. Se *TargetName* não for especificado, todos os nomes de usuário e credenciais armazenados serão listados.                   |
 |                 /?                 |                                                                        Exibe a ajuda no prompt de comando.                                                                        |
 
 ## <a name="remarks"></a>Comentários
-- Se mais de um cartão inteligente for encontrado no sistema quando a opção de linha de comando /smartcard é usada, **cmdkey** exibirá informações sobre todos os cartões inteligentes disponíveis e, em seguida, solicitar que o usuário especifique qual deles usar.
-- As senhas não serão exibidas depois que eles são armazenados.
-  ## <a name="BKMK_examples"></a>Exemplos
-  Para exibir uma lista de todos os nomes de usuário e credenciais armazenadas, digite:
+- se mais de um cartão inteligente for encontrado no sistema quando a opção de linha de comando/SmartCard for usada, **cmdkey** exibirá informações sobre todos os cartões inteligentes disponíveis e, em seguida, solicitará que o usuário especifique qual deles usar.
+- As senhas não serão exibidas depois que elas forem armazenadas.
+  ## <a name="BKMK_examples"></a>Disso
+  Para exibir uma lista de todos os nomes de usuário e credenciais que estão armazenados, digite:
   ```
   cmdkey /list
   ```
-  Para adicionar um nome de usuário e a senha do usuário Mikedan a acesse o computador Server01 com a senha Kleo, digite:
+  Para adicionar um nome de usuário e uma senha para o usuário Mikedan acessar o computador Server01 com a senha Kleo, digite:
   ```
   cmdkey /add:server01 /user:mikedan /pass:Kleo
   ```
-  Para adicionar um nome de usuário e senha do usuário Mikedan acesse o computador Server01 e solicitará a senha sempre que é acessado Server01, digite:
+  Para adicionar um nome de usuário e uma senha para o usuário Mikedan acessar o computador Server01 e solicitar a senha sempre que Server01 for acessado, digite:
   ```
   cmdkey /add:server01 /user:mikedan
   ```
-  Para excluir a credencial que armazenou o acesso remoto, digite:
+  Para excluir a credencial que o acesso remoto armazenou, digite:
   ```
   cmdkey /delete /ras
   ```
-  Para excluir a credencial que é armazenada para o Server01, digite:
+  Para excluir a credencial armazenada para Server01, digite:
   ```
   cmdkey /delete:Server01
   ```

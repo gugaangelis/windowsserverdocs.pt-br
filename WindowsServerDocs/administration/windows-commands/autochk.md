@@ -1,8 +1,8 @@
 ---
 title: autochk
-description: Tópico de comandos do Windows para **autochk** - é executado quando o computador é iniciado e antes do Windows Server iniciando verificar a integridade lógica de um sistema de arquivos.
+description: O tópico de comandos do Windows para **autochk** -é executado quando o computador é iniciado e antes do Windows Server começar a verificar a integridade lógica de um sistema de arquivos.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,30 +13,30 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e6c26d42410e5466950ede4f9aa059e315030588
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 76e54d14879cefd4661a1ca7f1c3b8ee7ec58de2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435031"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382353"
 ---
 # <a name="autochk"></a>autochk
 
 
 
-Executa quando o computador é iniciado e antes do Windows Server® 2008 R2 iniciando verificar a integridade lógica de um sistema de arquivos.
+É executado quando o computador é iniciado e antes do Windows Server® 2008 R2 começando a verificar a integridade lógica de um sistema de arquivos.
 
-**Autochk.exe** é uma versão do **Chkdsk** que é executado somente em discos NTFS e apenas antes do início do Windows Server 2008 R2. **Autochk** não podem ser executados diretamente na linha de comando. Em vez disso, **Autochk** é executado nas seguintes situações:
--   Se você tentar executar **Chkdsk** no volume de inicialização
--   Se **Chkdsk** não é possível obter uso exclusivo do volume
--   Se o volume é marcado como sujo
+O **autochk. exe** é uma versão do **chkdsk** que é executada somente em discos NTFS e somente antes do início do Windows Server 2008 R2. O **autochk** não pode ser executado diretamente da linha de comando. Em vez disso, o **autochk** é executado nas seguintes situações:
+-   Se você tentar executar **chkdsk** no volume de inicialização
+-   Se **chkdsk** não puder obter uso exclusivo do volume
+-   Se o volume for sinalizado como sujo
 
 ## <a name="remarks"></a>Comentários
 
 > -   [!WARNING]
->     O **Autochk** ferramenta de linha de comando não pode ser executada diretamente na linha de comando. Em vez disso, use o **Chkntfs** ferramenta de linha de comando para configurar o modo como você deseja **Autochk** para executar na inicialização.
-> -   Você pode usar **Chkntfs** com o **/x** parâmetro para evitar **Autochk** seja executado em um volume específico ou vários volumes.
-> -   Use o **Chkntfs.exe** ferramenta de linha de comando com o **/t** parâmetro para alterar o atraso Autochk de 0 segundos para até 3 dias (259.200 segundos). No entanto, um longo atraso significa que o computador não é iniciado até que tenha decorrido o tempo ou até que você pressione uma tecla para cancelar **Autochk**.
+>     A ferramenta de linha de comando **autochk** não pode ser executada diretamente da linha de comando. Em vez disso, use a ferramenta de linha de comando **chkntfs** para configurar a maneira que você deseja que o **autochk** seja executado na inicialização.
+> -   Você pode usar o **chkntfs** com o parâmetro **/x** para impedir que o **autochk** seja executado em um volume específico ou em vários volumes.
+> -   Use a ferramenta de linha de comando **chkntfs. exe** com o parâmetro **/t** para alterar o atraso de Autochk de 0 segundo para até 3 dias (259.200 segundos). No entanto, um longo atraso significa que o computador não inicia até que o tempo decorra ou até que você pressione uma tecla para cancelar o **autochk**.
 
 #### <a name="additional-references"></a>Referências adicionais
 
@@ -44,6 +44,6 @@ Executa quando o computador é iniciado e antes do Windows Server® 2008 R2 inic
 
 [Chkdsk](chkdsk.md)
 
-[Chkntfs](chkntfs.md)
+[CHKNTFS](chkntfs.md)
 
-[Discos e sistemas de arquivos de solução de problemas](https://go.microsoft.com/fwlink/?LinkId=4527)
+[Solução de problemas de discos e sistemas de arquivos](https://go.microsoft.com/fwlink/?LinkId=4527)

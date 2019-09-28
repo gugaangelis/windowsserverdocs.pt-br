@@ -7,22 +7,22 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f03b6ca417f491d6638241c8ad4daadd25c76c77
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 733bb56351c134446c9406b825619f3c26d6ff76
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885497"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402594"
 ---
 # <a name="enabling-advanced-features-for-ad-ds"></a>Habilitar recursos avançados para AD DS
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Os serviços de domínio do Active Directory (AD DS) torna possível para você introduzir recursos avançados no seu ambiente, elevando os níveis funcionais de domínio ou floresta. Para usar recursos avançados do AD DS, você deve identificar os sistemas operacionais que são executados em controladores de domínio no seu ambiente.   
+O Active Directory Domain Services (AD DS) possibilita que você introduza recursos avançados em seu ambiente aumentando os níveis funcionais de domínio ou floresta. Para usar recursos de AD DS avançados, você deve identificar os sistemas operacionais que estão em execução nos controladores de domínio em seu ambiente.   
   
-Você deve também determinar o melhor nível funcional para sua organização com base em sua infraestrutura existente e, em seguida, aumentar o nível funcional do domínio ou floresta conforme apropriado. Quando todos os controladores de domínio no domínio ou floresta estiver executando uma versão apropriada do Windows, você pode aumentar o nível funcional. Embora a elevar o nível funcional torna possível para habilitar novos recursos, ela também limita as versões dos sistemas operacionais Windows que podem ser executados em controladores de domínio em seu ambiente.  
+Você também deve determinar o melhor nível funcional para sua organização com base em sua infraestrutura existente e, em seguida, aumentar o nível funcional de domínio ou floresta conforme apropriado. Você pode aumentar o nível funcional quando todos os controladores de domínio no domínio ou floresta estiverem executando uma versão apropriada do Windows. Embora a geração do nível funcional permita que você habilite novos recursos, ela também limita as versões dos sistemas operacionais Windows que você pode executar em controladores de domínio em seu ambiente.  
         
   
 

@@ -1,8 +1,8 @@
 ---
 title: start
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ab7388633681120442544adf4ee0e337d8599854
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 1fb0875c972f8259b47f48ef84ed486fc678d8b0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441219"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370892"
 ---
 # <a name="start"></a>start
 
 
 
-Inicia uma janela de Prompt de comando separada para executar um programa ou comando especificado.
+Inicia uma janela de prompt de comando separada para executar um programa ou comando especificado.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -38,38 +38,38 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|"\<Title >"|Especifica o título a ser exibido na barra de título da janela de Prompt de comando.|
-|/d \<Path>|Especifica o diretório de inicialização.|
-|/i|Passa o ambiente de inicialização Cmd.exe para a nova janela de Prompt de comando. Se **/i** não for especificado, o ambiente atual é usado.|
-|/min  \| /máx|Especifica para minimizar ( **/min**) ou maximizar ( **/máx**) a nova janela de Prompt de comando.|
-|/separate \| / compartilhado|Inicia programas de 16 bits em um espaço de memória separados ( **/separate**) ou o espaço de memória compartilhado ( **/ compartilhado**). Essas opções não têm suporte em plataformas de 64 bits.|
-|/ baixa \| /normal \| alta \| /realtime \| /abovenormal \| /belownormal|Inicia um aplicativo na classe de prioridade especificada. Valores de classe de prioridade válidos são **/baixa**, **/normal**, **alta**, **/realtime**, **/abovenormal**, e **/belownormal**.|
-|/affinity \<HexAffinity >|Aplica-se a máscara de afinidade de processador especificado (expressada como um número hexadecimal) para o novo aplicativo.|
-|/wait|Inicia um aplicativo e aguarda até que ele termine.|
-|/b|Inicia um aplicativo sem abrir uma nova janela de Prompt de comando. Tratamento de CTRL + C é ignorado, a menos que o aplicativo permite o processamento de CTRL + C. Use CTRL + BREAK para interromper o aplicativo.|
-|/ b \<comando > \| \<programa >|Especifica o comando ou um programa para iniciar.|
-|\<Parâmetros >|Especifica os parâmetros a serem passados para o programa ou comando.|
+|"\<Title >"|Especifica o título a ser exibido na barra de título da janela do prompt de comando.|
+|/d \<Path >|Especifica o diretório de inicialização.|
+|/i|Passa o ambiente de inicialização cmd. exe para a nova janela de prompt de comando. Se **/i** não for especificado, o ambiente atual será usado.|
+|/min \|/Max|Especifica para minimizar ( **/min**) ou maximizar ( **/Max**) a nova janela do prompt de comando.|
+|/Separate \|/Shared|Inicia programas de 16 bits em um espaço de memória separado ( **/separate**) ou espaço de memória compartilhada ( **/Shared**). Essas opções não têm suporte em plataformas de 64 bits.|
+|/Low \|/normal \|/High \|/Realtime \|/AboveNormal \|/BelowNormal|Inicia um aplicativo na classe de prioridade especificada. Os valores de classe de prioridade válidos são **/Low**, **/normal**, **/High**, **/Realtime**, **/AboveNormal**e **/BelowNormal**.|
+|/Affinity \<HexAffinity >|Aplica a máscara de afinidade de processador especificada (expressa como um número hexadecimal) ao novo aplicativo.|
+|/Wait|Inicia um aplicativo e aguarda sua finalização.|
+|/b.|Inicia um aplicativo sem abrir uma nova janela de prompt de comando. A manipulação CTRL + C é ignorada, a menos que o aplicativo permita o processamento de CTRL + C. Use CTRL + BREAK para interromper o aplicativo.|
+|/b \<Command > \| \<Program >|Especifica o comando ou programa a ser iniciado.|
+|\<Parameters >|Especifica os parâmetros a serem passados para o comando ou programa.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
-- Você pode executar arquivos não executáveis através de sua associação de arquivo, digitando o nome do arquivo como um comando.
-- Quando você executar um comando que contém a cadeia de caracteres "CMD" como o primeiro token sem um qualificador de extensão ou caminho, "CMD" é substituído pelo valor da variável COMSPEC. Isso impede que os usuários pegar **cmd** do diretório atual.
-- Quando você executa um aplicativo de GUI (interface) de 32 bits gráfica do usuário, **cmd** não espera até que o aplicativo sair antes de retornar ao prompt de comando. Esse comportamento não ocorre se você executar o aplicativo a partir de um script de comando.
-- Quando você executa um comando que usa o primeiro símbolo não contém uma extensão, Cmd.exe usa o valor da variável de ambiente PATHEXT para determinar quais extensões procurar e em qual ordem. O valor padrão da variável PATHEXT é:  
+- Você pode executar arquivos não executáveis por meio de sua associação de arquivo digitando o nome do arquivo como um comando.
+- Quando você executa um comando que contém a cadeia de caracteres "CMD" como o primeiro token sem um qualificador de extensão ou caminho, "CMD" é substituído pelo valor da variável COMSPEC. Isso impede que os usuários escolham **cmd** do diretório atual.
+- Quando você executa um aplicativo de GUI (interface gráfica do usuário) de 32 bits, o **cmd** não aguarda o encerramento do aplicativo antes de retornar ao prompt de comando. Esse comportamento não ocorrerá se você executar o aplicativo a partir de um script de comando.
+- Quando você executa um comando que usa um primeiro token que não contém uma extensão, o cmd. exe usa o valor da variável de ambiente PATHEXT para determinar quais extensões procurar e em qual ordem. O valor padrão para a variável PATHEXT é:  
   ```
   .COM;.EXE;.BAT;.CMD 
   ```  
-  Observe que a sintaxe é o mesmo que a variável de caminho, com ponto e vírgula, separando cada extensão.
-- Ao procurar um arquivo executável, se não houver nenhuma correspondência em qualquer extensão, **iniciar** verifica se o nome corresponde a um nome de diretório. Se isso acontecer, **iniciar** abre Explorer.exe nesse caminho.
+  Observe que a sintaxe é a mesma que a variável PATH, com ponto-e-vírgula separando cada extensão.
+- Quando ele pesquisa um arquivo executável, se não houver nenhuma correspondência em nenhuma extensão, **Iniciar** verificará se o nome corresponde a um nome de diretório. Se tiver, **Iniciar** abrirá Explorer. exe nesse caminho.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para iniciar o programa Myapp no prompt de comando e manter o uso da janela de Prompt de comando atual, digite:
+Para iniciar o programa MyApp no prompt de comando e manter o uso da janela do prompt de comando atual, digite:
 ```
 start myapp 
 ```
-Para exibir o **iniciar** tópico da Ajuda de linha de comando em um separado maximizado a janela de Prompt de comando, digite:
+Para exibir o tópico da ajuda da linha de comando **inicial** em uma janela separada do prompt de comando maximizada, digite:
 ```
 start /max start /?
 ```

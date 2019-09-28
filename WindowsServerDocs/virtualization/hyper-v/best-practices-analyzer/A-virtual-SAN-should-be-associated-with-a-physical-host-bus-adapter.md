@@ -1,7 +1,7 @@
 ---
-title: Uma rede SAN virtual deve ser associada um adaptador de barramento do host físico
-description: Versão online do texto para essa regra do analisador de práticas recomendadas.
-ms.prod: windows-server-threshold
+title: Uma SAN virtual deve ser associada a um adaptador de barramento de host físico
+description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,41 +10,41 @@ ms.topic: article
 ms.assetid: 14bca69b-e779-4e90-b5c1-1b015625572f
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 3b9ca1e2da1cf9f4410f465fe95c6cc9c0b07ffc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9e86f8d9b9a4a87fd6457954c3a4723857faac3b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819077"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366694"
 ---
-# <a name="a-virtual-san-should-be-associated-with-a-physical-host-bus-adapter"></a>Uma rede SAN virtual deve ser associada um adaptador de barramento do host físico
+# <a name="a-virtual-san-should-be-associated-with-a-physical-host-bus-adapter"></a>Uma SAN virtual deve ser associada a um adaptador de barramento de host físico
 
 >Aplica-se a: Windows Server 2016
 
-Para obter mais informações sobre as práticas recomendadas e varreduras, consulte [Run Best Practices Analyzer Scans e Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
+Para obter mais informações sobre práticas recomendadas e verificações, consulte [executar verificações de analisador de práticas recomendadas e gerenciar resultados de verificação](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
 |Propriedade|Detalhes|  
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
-|**Recurso do produto**|Hyper-V|  
-|**Severidade**|Aviso|  
-|**categoria**|Configuração|  
+|**Produto/recurso**|Hyper-V|  
+|**Severity**|Aviso|  
+|**Categorias**|Configuração|  
   
   
-Nas seções a seguir, itálico indica o texto de interface do usuário que aparece na ferramenta Analisador de práticas recomendadas para esse problema.  
+Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
 ## <a name="issue"></a>**Problema**  
-*Uma rede virtual de armazenamento (SAN) tiver sido configurada sem uma associação a um adaptador de barramento do host (HBA).*  
+*Uma SAN (rede de área de armazenamento) virtual foi configurada sem uma associação a um adaptador de barramento de host (HBA).*  
   
-## <a name="impact"></a>**Impacto**  
-*Uma máquina virtual não iniciará quando ela é configurada com um adaptador de Fibre Channel virtual conectado a uma SAN virtual configurado incorretamente. Isso afeta a SANs virtuais a seguir:*  
+## <a name="impact"></a>**Causa**  
+a máquina virtual *A não será iniciada quando estiver configurada com um adaptador de Fibre Channel virtual conectado a uma SAN virtual configurada incorretamente. Isso afeta as seguintes SANs virtuais:*  
   
   
-\<lista de SANs virtuais >  
+\<list de SANs virtuais >  
   
   
 ## <a name="resolution"></a>**Resolução**  
-*Reconfigure a rede SAN virtual conectando-a um adaptador de barramento do host.*  
+*Reconfigure a rede SAN virtual conectando-a a um adaptador de barramento de host.*  
   
   
   

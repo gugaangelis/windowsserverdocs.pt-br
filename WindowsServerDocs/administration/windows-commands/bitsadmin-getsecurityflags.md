@@ -1,8 +1,8 @@
 ---
-title: Bitsadmin getsecurityflags
-description: Tópico de comandos do Windows para **getsecurityflags bitsadmin** - reporta os sinalizadores de segurança HTTP para redirecionamento de URL e verificações realizadas no certificado do servidor durante a transferência.
+title: bitsadmin getsecurityflags
+description: O tópico de comandos do Windows para **Bitsadmin getsecurityflags** -relata os sinalizadores de segurança http para o redirecionamento de URL e as verificações executadas no certificado do servidor durante a transferência.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e1db167b12d47afccb8842da617f1e9fe72acff
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: fb53664a6366b411ae1eb9b0fe7c93392d60b542
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434966"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381464"
 ---
-# <a name="bitsadmin-getsecurityflags"></a>Bitsadmin getsecurityflags
+# <a name="bitsadmin-getsecurityflags"></a>bitsadmin getsecurityflags
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Sinalizadores de segurança de relatórios HTTP para redirecionamento de URL e verificações executadas no certificado do servidor durante a transferência.
+Relata os sinalizadores de segurança HTTP para o redirecionamento de URL e as verificações executadas no certificado do servidor durante a transferência.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,10 +36,10 @@ bitsadmin /GetSecurityFlags <Job>
 
 |Parâmetro|Descrição|
 |-------|--------|
-|Job|Nome de exibição ou o GUID do trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
 
-## <a name="BKMK_examples"></a>Exemplos
-O exemplo a seguir recupera os sinalizadores de securitly de um trabalho denominado *myJob*.
+## <a name="BKMK_examples"></a>Disso
+O exemplo a seguir recupera os sinalizadores securitly de um trabalho chamado *myJob*.
 
 ```
 C:\>bitsadmin /GetSecurityFlags myJob 

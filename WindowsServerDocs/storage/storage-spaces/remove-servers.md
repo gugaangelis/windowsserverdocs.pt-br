@@ -1,7 +1,7 @@
 ---
 title: Removendo servidores em Espaços de Armazenamento Diretos
 ms.assetid: 9d8499a7-1307-473d-9f00-8a051164fad2
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: cosdar
 ms.manager: eldenc
 ms.technology: storage-spaces
@@ -10,12 +10,12 @@ author: cosmosdarwin
 description: Como remover servidores de um cluster de Espaços de Armazenamento Diretos no Windows Server.
 ms.date: 2/5/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fcb67b3c5fbcff0ca2a48ee9a1d2e109af3e9a8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ce8caef2b51279c97cc012045750b7a73d97a4ba
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890777"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402806"
 ---
 # <a name="removing-servers-in-storage-spaces-direct"></a>Removendo servidores em Espaços de Armazenamento Diretos
 
@@ -58,7 +58,7 @@ Para um redimensionamento permanente (remover um servidor *e* suas unidades), o 
 
 #### <a name="enough-capacity"></a>Capacidade suficiente
 
-Primeiro, você deve ter a capacidade de armazenamento suficiente nos servidores restantes para acomodar todos os seus volumes.
+Primeiro, você deve ter capacidade de armazenamento suficiente nos servidores restantes para acomodar todos os volumes.
 
 Por exemplo, se tiver quatro servidores, cada um com 10 unidades de 1 TB, você terá 40 TB de capacidade total de armazenamento físico. Depois de remover um servidor e todas as suas unidades, você terá 30 TB de capacidade restantes. Se as superfícies dos volumes for de mais de 30 TB no total, eles não caberão nos servidores restantes, e assim o cmdlet vai retornar um erro e não moverá nenhum dado.
 
@@ -81,4 +81,4 @@ Esta tabela mostra o número mínimo de domínios de falha necessários para cad
 
 ## <a name="see-also"></a>Consulte também
 
-- [Visão geral direta de espaços de armazenamento](storage-spaces-direct-overview.md)
+- [Visão geral de Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md)

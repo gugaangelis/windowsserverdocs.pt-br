@@ -2,18 +2,18 @@
 title: Definir prioridade alvo para sobrepor ordem de referência
 description: Este artigo descreve como definir a prioridade de destino para substituir a ordenação de referência
 ms.date: 6/5/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 59db08d5ef46b696f550a5fa0738c5c1f9375fda
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f0a6496802d2be16e84ef62c41fea6f0ae9f6438
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826357"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386125"
 ---
 # <a name="set-target-priority-to-override-referral-ordering"></a>Definir a prioridade de destino para sobrepor a ordem de referência
 
@@ -57,5 +57,5 @@ Para definir a prioridade no destino de uma pasta, use o seguinte procedimento:
 
 ## <a name="see-also"></a>Consulte também
 
--   [Ajuste os Namespaces do DFS](tuning-dfs-namespaces.md)
--   [Delegar permissões de gerenciamento para Namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)
+-   [Ajustar namespaces do DFS](tuning-dfs-namespaces.md)
+-   [Delegar permissões de gerenciamento para namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)

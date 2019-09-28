@@ -7,14 +7,14 @@ ms.author: billmath
 manager: daveba
 ms.date: 04/23/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2a5de194f5870652920ec6a3d451d18840ba7b2a
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: 6294c7b6ead0a9fa338f8b2cc8134b750f7e3e8f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980343"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385553"
 ---
 # <a name="whats-new-in-active-directory-federation-services"></a>Novidades nos Serviços de Federação do Active Directory (AD FS)
 
@@ -52,7 +52,7 @@ Os seguintes recursos de autenticação/política estão em AD FS 2019:
 Os seguintes aprimoramentos de SSO de entrada foram feitos no AD FS 2019:
 
 - [UX paginado com tema centralizado](../operations/AD-FS-paginated-sign-in.md) – o ADFS agora foi movido para um fluxo de UX paginado que permite ao ADFS validar e fornecer uma experiência de entrada mais suave. O ADFS agora usa uma interface do usuário centralizada (em vez do lado direito da tela). Você pode exigir que as imagens mais recentes do logotipo e do plano de fundo se alinhem com essa experiência. Isso também espelha a funcionalidade oferecida no Azure AD.
-- **Correção de bug: Estado de SSO persistente para dispositivos Win10 ao fazer a** autenticação de PRT isso resolve um problema em que o estado de MFA não foi persistido ao usar a autenticação de PRT para dispositivos Windows 10. O resultado do problema era que os usuários finais seriam solicitados a receber a credencial de 2ª fator (MFA) com frequência. A correção também torna a experiência consistente quando a autenticação do dispositivo é executada com êxito via TLS do cliente e por meio do mecanismo de PRT. 
+- correção de @no__t 0Bug: Estado de SSO persistente para dispositivos Win10 ao fazer a autenticação de PRT @ no__t-0 isso resolve um problema em que o estado de MFA não foi persistido ao usar a autenticação de PRT para dispositivos Windows 10. O resultado do problema era que os usuários finais seriam solicitados a receber a credencial de 2ª fator (MFA) com frequência. A correção também torna a experiência consistente quando a autenticação do dispositivo é executada com êxito via TLS do cliente e por meio do mecanismo de PRT. 
 
 
 ### <a name="suppport-for-building-modern-line-of-business-apps"></a>Suporte para criar aplicativos de linha de negócios modernos
@@ -62,7 +62,7 @@ O seguinte suporte para a criação de aplicativos LOB modernos foi adicionado a
  - A **remoção do parâmetro ' Resource '** -AD FS agora removeu o requisito para especificar um parâmetro de recurso que está em linha com especificações OAuth atuais. Agora, os clientes podem fornecer o identificador de confiança de terceira parte confiável como o parâmetro de escopo, além das permissões solicitadas. 
  - **Cabeçalhos CORS em respostas AD FS** -os clientes agora podem criar aplicativos de página única que permitem que bibliotecas do lado do cliente validem a assinatura do id_token consultando as chaves de assinatura do documento de descoberta do OIDC em AD FS. 
  - **Suporte a PKCE** – o AD FS adiciona suporte a PKCE para fornecer um fluxo de código de autenticação seguro dentro do OAuth. Isso adiciona uma camada adicional de segurança a esse fluxo para evitar seqüestrar o código e reproduzi-lo a partir de um cliente diferente. 
- - **Correção de bug: Enviar x5t e reclamação** infantil-essa é uma pequena correção de bug. AD FS agora, além disso, envia a declaração ' Kid ' para indicar a dica de ID de chave para verificar a assinatura. Anteriormente AD FS enviada apenas como declaração ' x5t '.
+ - correção de @no__t 0Bug: Envie x5t e a declaração Kid @ no__t-0-essa é uma correção de bug secundária. AD FS agora, além disso, envia a declaração ' Kid ' para indicar a dica de ID de chave para verificar a assinatura. Anteriormente AD FS enviada apenas como declaração ' x5t '.
 
 ### <a name="supportability-improvements"></a>Aprimoramentos de suporte
 Os aprimoramentos de suporte a seguir não fazem parte do AD FS 2019:
@@ -76,14 +76,14 @@ As atualizações de implantação a seguir agora estão incluídas no AD FS 201
 
 ### <a name="saml-updates"></a>Atualizações SAML
 A seguinte atualização SAML está em AD FS 2019:
-- **Correção de bug: Corrigir bugs na Federação** agregada – houve inúmeras correções de bugs em relação ao suporte de Federação agregado (por exemplo, incomuns). As correções estão relacionadas ao seguinte: 
+- correção de @no__t 0Bug: Corrigir bugs na Federação agregada @ no__t-0-houve inúmeras correções de bugs em relação ao suporte agregado à Federação (por exemplo, incomuns). As correções estão relacionadas ao seguinte: 
   - Dimensionamento aprimorado para grandes n º de entidades no documento de metadados de Federação agregado. Anteriormente, isso falharia com o erro "ADMIN0017". 
   - Consulta usando o parâmetro ' ScopeGroupID ' por meio do cmdlet Get-AdfsRelyingPartyTrustsGroup PSH. 
   - Manipulando condições de erro em relação a EntityId duplicada
 
 
 ### <a name="azure-ad-style-resource-specification-in-scope-parameter"></a>Especificação de recurso de estilo do Azure AD no parâmetro de escopo 
-Anteriormente, AD FS exigia que o recurso e o escopo desejados estejam em um parâmetro separado em qualquer solicitação de autenticação. Por exemplo, uma solicitação OAuth típica teria a seguinte aparência: 7 **https:&#47;&#47;FS.contoso.com/ADFS/oauth2/Authorize?</br> response_type = Code & client_id = claimsxrayclient & recurso = urn: Microsoft:</br>ADFS: claimsxray & Scope = OAuth & redirect_uri = https:&#47;&#47;adfshelp.Microsoft.com/</br> claimsxray/ TokenResponse & prompt = logon**
+Anteriormente, AD FS exigia que o recurso e o escopo desejados estejam em um parâmetro separado em qualquer solicitação de autenticação. Por exemplo, uma solicitação OAuth típica teria a seguinte aparência: 7 **https:&#47;&#47;FS.contoso.com/ADFS/oauth2/Authorize? </br>response_type = Code & client_id = claimsxrayclient & Resource = urn: Microsoft: </br>adfs: claimsxray & Scope = OAuth & redirect_uri = https:&#47; &#47; adfshelp.microsoft.com/</br> ClaimsXray/TokenResponse & prompt = logon**
  
 Com AD FS no servidor 2019, agora você pode passar o valor do recurso inserido no parâmetro de escopo. Isso é consistente com a maneira como uma pode fazer a autenticação no Azure AD também. 
 
@@ -106,7 +106,7 @@ B. O ponto de extremidade de autorização responde normalmente, mas registra "t
 
 C. Em seguida, o cliente envia o código de autorização na solicitação de token de acesso como de costume, mas inclui o segredo "code_verifier" gerado em (A). 
 
-3D. O AD FS transforma "code_verifier" e compara-o com "t (code_verifier)" de (B).  O acesso será negado se eles não forem iguais. 
+D. O AD FS transforma "code_verifier" e compara-o com "t (code_verifier)" de (B).  O acesso será negado se eles não forem iguais. 
 
 #### <a name="faq"></a>Perguntas Frequentes 
 **PERGUNTAS.** Posso passar o valor do recurso como parte do valor do escopo como como as solicitações são feitas no Azure AD? 
@@ -209,12 +209,12 @@ A seção a seguir descreve os cenários operacionais aprimorados que são intro
 No AD FS do Windows Server 2012 R2, havia vários eventos de auditoria gerados para uma única solicitação e as informações relevantes sobre uma atividade de emissão de log ou de entrada estão ausentes (em algumas versões do AD FS) ou espalhadas por vários eventos de auditoria. Por padrão, os eventos de auditoria AD FS são desativados devido à sua natureza detalhada.  
 Com o lançamento do AD FS 2016, a auditoria tornou-se mais simplificada e menos detalhada.  
 
-Para obter mais informações, consulte Aprimoramentos de [auditoria para AD FS no Windows Server 2016.](../../ad-fs/technical-reference/auditing-enhancements-to-ad-fs-in-windows-server.md)  
+Para obter mais informações, consulte [aprimoramentos de auditoria para AD FS no Windows Server 2016.](../../ad-fs/technical-reference/auditing-enhancements-to-ad-fs-in-windows-server.md)  
 
 ### <a name="improved-interoperability-with-saml-20-for-participation-in-confederations"></a>Melhor interoperabilidade com SAML 2,0 para participação no confederations  
 O AD FS 2016 contém suporte a protocolo SAML adicional, incluindo suporte para importar relações de confiança com base em metadados que contêm várias entidades. Isso permite que você configure o AD FS para participar de confederations, como Federação incomum e outras implementações em conformidade com o padrão eGov 2,0.  
 
-Para obter mais informações, consulte interoperabilidade [aprimorada com SAML 2,0.](../../ad-fs/operations/Improved-interoperability-with-SAML-2.0.md)  
+Para obter mais informações, consulte [interoperabilidade aprimorada com SAML 2,0.](../../ad-fs/operations/Improved-interoperability-with-SAML-2.0.md)  
 
 ### <a name="simplified-password-management-for-federated-o365-users"></a>Gerenciamento simplificado de senhas para usuários federados do O365  
 Você pode configurar Serviços de Federação do Active Directory (AD FS) (AD FS) para enviar declarações de expiração de senha para os aplicativos de confiança de terceira parte confiável que são protegidos pelo AD FS. A forma como essas declarações são usadas depende do aplicativo. Por exemplo, com o Office 365 como sua terceira parte confiável, as atualizações foram implementadas para o Exchange e o Outlook para notificar os usuários federados sobre suas senhas em breve.  

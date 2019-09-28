@@ -1,8 +1,8 @@
 ---
 title: rem
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 85c8a69bf21a386cd36e45bbca6dacd35aef2509
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2da0b6e42858582c1485659f3bf8f59e8e2ed97e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846997"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384569"
 ---
 # <a name="rem"></a>rem
 
 
 
-Comentários de registros (Observações) em um arquivo em lotes ou no CONFIG. SYS. Se nenhum comentário for especificado, **rem** adiciona espaçamento vertical.
+Registra comentários (comentários) em um arquivo em lotes ou em uma configuração. Sistema. Se nenhum comentário for especificado, **REM** adicionará espaçamento vertical.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -38,18 +38,18 @@ rem [<Comment>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Comentário >|Especifica uma cadeia de caracteres a ser incluído como um comentário.|
+|\<Comment >|Especifica uma cadeia de caracteres a ser incluída como um comentário.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
--   O **rem** comando exibe os comentários na tela. Você deve usar o **eco** comando em lote ou no CONFIG. Sys para exibir comentários na tela.
--   Você não pode usar um caractere de redirecionamento (**<** ou **>**) ou pipe (**|**) em um comentário do arquivo em lotes.
--   Embora você possa usar **rem** sem um comentário para adicionar espaçamento vertical para um arquivo em lotes, você também pode usar linhas em branco. Linhas em branco são ignoradas quando um programa em lote é processado.
+-   O comando **REM** não exibe comentários na tela. Você deve usar o comando **Echo on** em seu lote ou configuração. SYS para exibir comentários na tela.
+-   Você não pode usar um caractere de redirecionamento ( **<** ou **>** ) ou o pipe ( **|** ) em um comentário de arquivo em lotes.
+-   Embora seja possível usar **REM** sem um comentário para adicionar espaçamento vertical a um arquivo em lotes, você também pode usar linhas em branco. As linhas em branco são ignoradas quando um programa em lotes é processado.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir mostra um arquivo em lotes que utiliza comentários para comentários em espaçamento vertical:
+O exemplo a seguir mostra um arquivo em lotes que usa comentários para comentários e espaçamento vertical:
 ```
 @echo off
 rem  This batch program formats and checks new disks.
@@ -59,7 +59,7 @@ rem echo Insert new disk in Drive B.
 pause 
 format b: /v chkdsk b: 
 ```
-Para incluir uma explicação antes do **prompt** comando no arquivo CONFIG. SYS arquivo, adicione as seguintes linhas ao arquivo CONFIG. SYS:
+Para incluir um comentário explicativo antes do comando **prompt** em sua configuração. SYS, adicione as seguintes linhas a CONFIG. SISTEMA
 ```
 rem Set prompt to indicate current directory
 prompt $p$g
@@ -67,4 +67,4 @@ prompt $p$g
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

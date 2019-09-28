@@ -1,8 +1,8 @@
 ---
-title: Usando o comando de cópia DriverGroup
-description: 'Tópico de comandos do Windows para * * *- '
+title: Usando o comando copy-driver
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 68d9c6f4ca78991bb4c286042a6172211161dd1e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c08ce616c9b0e2bf79c7f13f922e27d7f7f7ca62
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842077"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363587"
 ---
-# <a name="using-the-copy-drivergroup-command"></a>Usando o comando de cópia DriverGroup
+# <a name="using-the-copy-drivergroup-command"></a>Usando o comando copy-driver
 
 
 
-Duplica a um grupo de driver existente no servidor, incluindo os filtros, pacotes de driver e status de habilitado/desabilitado.
+Duplica um grupo de drivers existente no servidor, incluindo os filtros, os pacotes de driver e o status habilitado/desabilitado.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,11 +36,11 @@ WDSUTIL /Copy-DriverGroup [/Server:<Server name>] /DriverGroup:<Source Group Nam
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|[/Server:\<Server name>]|Especifica o nome do servidor. Isso pode ser o nome NetBIOS ou FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado.|
-|/ DriverGroup:\<nome do grupo de origem >|Especifica o nome do grupo de drivers de fonte.|
-|/ GroupName:\<novo nome do grupo >|Especifica o nome do novo grupo de driver.|
+|[/Server: \<Server nome >]|Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado.|
+|/DriverGroup: nome do grupo de \<Source >|Especifica o nome do grupo de drivers de origem.|
+|/GroupName: nome do grupo de \<New >|Especifica o nome do novo grupo de drivers.|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 Para copiar um grupo de drivers, digite um dos seguintes:
 ```
@@ -52,4 +52,4 @@ WDSUTIL /Copy-DriverGroup /DriverGroup:PrinterDrivers /GroupName:ColorPrinterDri
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

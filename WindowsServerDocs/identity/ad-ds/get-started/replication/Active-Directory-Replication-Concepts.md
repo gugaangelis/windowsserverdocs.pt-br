@@ -7,118 +7,118 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 087dee7c914b81d97c6cf3a2ea985d809cb57fe6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d426b9923b569c8475862c1426a9dd310dc0b798
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812347"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390553"
 ---
 # <a name="active-directory-replication-concepts"></a>Conceitos de replicação do Active Directory
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Antes de projetar a topologia de site, familiarize-se com alguns conceitos de replicação do Active Directory.  
+Antes de criar a topologia do site, familiarize-se com alguns conceitos de replicação Active Directory.  
   
--   [Objeto de Conexão](#BKMK_1)  
+-   [Objeto de conexão](#BKMK_1)  
   
 -   [KCC](#BKMK_2)  
   
 -   [Funcionalidade de failover](#BKMK_3)  
   
--   [Subrede](#BKMK_4)  
+-   [Redes](#BKMK_4)  
   
--   [Site](#BKMK_5)  
+-   [Locais](#BKMK_5)  
   
--   [Link de site](#BKMK_6)  
+-   [Link do site](#BKMK_6)  
   
 -   [Ponte de link de site](#BKMK_7)  
   
--   [Transitividade da relação de link de site](#BKMK_8)  
+-   [Transitividade de link de site](#BKMK_8)  
   
 -   [Servidor de catálogo global](#BKMK_9)  
   
 -   [Cache de associação de grupo universal](#BKMK_10)  
   
-## <a name="BKMK_1"></a>Objeto de Conexão  
-Um objeto de conexão é um objeto do Active Directory que representa uma conexão de replicação de um controlador de domínio de origem para um controlador de domínio de destino. Um controlador de domínio é um membro de um único site e é representado no site por um objeto de servidor nos serviços de domínio Active Directory (AD DS). Cada objeto de servidor tem um filho do objeto Configurações NTDS que representa o controlador de domínio de replicação no site.  
+## <a name="BKMK_1"></a>Objeto de conexão  
+Um objeto de conexão é um objeto Active Directory que representa uma conexão de replicação de um controlador de domínio de origem para um controlador de domínio de destino. Um controlador de domínio é um membro de um único site e é representado no site por um objeto de servidor no Active Directory Domain Services (AD DS). Cada objeto de servidor tem um objeto de configurações NTDS filho que representa o controlador de domínio de replicação no site.  
   
-O objeto de conexão é um filho do objeto Configurações NTDS no servidor de destino. Para a replicação ocorrer entre os dois controladores de domínio, o objeto de servidor de um deve ter um objeto de conexão que representa a replicação de entrada da outra. Todas as conexões de replicação para um controlador de domínio são armazenadas como objetos de conexão no objeto de configurações NTDS. O objeto de conexão identifica o servidor de origem de replicação, contém um agendamento de replicação e especifica um transporte de replicação.  
+O objeto de conexão é um filho do objeto de configurações NTDS no servidor de destino. Para que a replicação ocorra entre dois controladores de domínio, o objeto de servidor de um deve ter um objeto de conexão que representa a replicação de entrada do outro. Todas as conexões de replicação para um controlador de domínio são armazenadas como objetos de conexão no objeto de configurações NTDS. O objeto de conexão identifica o servidor de origem de replicação, contém um agendamento de replicação e especifica um transporte de replicação.  
   
-O Knowledge Consistency Checker (KCC) cria os objetos de conexão automaticamente, mas também podem ser criados manualmente. Objetos de Conexão criados pelo KCC aparecem em Sites do Active Directory e o snap-in Serviços como **<automatically generated>** e são considerados adequados sob condições normais de operação. Objetos de Conexão criados por um administrador são criados manualmente os objetos de conexão. Um objeto de conexão criados manualmente é identificado pelo nome atribuído pelo administrador quando ela foi criada. Quando você modifica uma **<automatically generated>** conexão do objeto, você pode convertê-la em um objeto de conexão administrativamente modificado e o objeto é exibido na forma de um GUID. O KCC não fazer alterações em objetos de conexão manual ou modificados.  
+O Knowledge Consistency Checker (KCC) cria objetos de conexão automaticamente, mas eles também podem ser criados manualmente. Os objetos de conexão criados pelo KCC aparecem no snap-in Active Directory sites e serviços como **<automatically generated>** e são considerados adequados em condições normais de operação. Os objetos de conexão criados por um administrador são objetos de conexão criados manualmente. Um objeto de conexão criado manualmente é identificado pelo nome atribuído pelo administrador quando ele foi criado. Quando você modifica um objeto de conexão **<automatically generated>** , você o converte em um objeto de conexão modificado administrativamente e o objeto é exibido na forma de um GUID. O KCC não faz alterações em objetos de conexão manuais ou modificados.  
   
 ## <a name="BKMK_2"></a>KCC  
-O KCC é um processo interno que é executado em todos os controladores de domínio e gera a topologia de replicação para a floresta do Active Directory. O KCC cria topologias de replicação separadas, dependendo se a replicação está ocorrendo em um site (intrasites) ou entre sites (entre sites). O KCC também ajusta dinamicamente a topologia para acomodar a adição de novos controladores de domínio, a remoção de controladores de domínio existente, o movimento dos controladores de domínio para e de sites, alterando os custos e agendamentos e os controladores de domínio que são temporariamente indisponível ou em um estado de erro.  
+O KCC é um processo interno que é executado em todos os controladores de domínio e gera a topologia de replicação para a floresta de Active Directory. O KCC cria topologias de replicação separadas dependendo se a replicação está ocorrendo dentro de um site (intra-site) ou entre sites (entre sites). O KCC também ajusta dinamicamente a topologia para acomodar a adição de novos controladores de domínio, a remoção de controladores de domínio existentes, a movimentação de controladores de domínio de e para sites, a alteração de custos e agendas e controladores de domínio que estão temporariamente indisponível ou em um estado de erro.  
   
-Dentro de um site, as conexões entre os controladores de domínio gravável sempre são organizadas em um anel bidirecional, com conexões de atalho adicional para reduzir a latência em grandes sites. Por outro lado, a topologia entre sites é uma disposição em camadas de abrangência árvores, que significa que uma conexão entre sites existe entre dois sites para cada partição de diretório e geralmente não contém conexões de atalho. Para obter mais informações sobre a abrangência de árvores e topologia de replicação do Active Directory, consulte Active Directory replicação topologia referência técnica ([https://go.microsoft.com/fwlink/?LinkID=93578](https://go.microsoft.com/fwlink/?LinkID=93578)).  
+Em um site, as conexões entre controladores de domínio graváveis são sempre organizadas em um anel bidirecional, com conexões de atalho adicionais para reduzir a latência em sites grandes. Por outro lado, a topologia entre sites é uma disposição em camadas de árvores de abrangência, o que significa que existe uma conexão entre sites entre dois sites para cada partição de diretório e geralmente não contém conexões de atalho. Para obter mais informações sobre árvores de abrangência e topologia de replicação de Active Directory, consulte Active Directory referência técnica da topologia de replicação ([https://go.microsoft.com/fwlink/?LinkID=93578](https://go.microsoft.com/fwlink/?LinkID=93578)).  
   
-Em cada controlador de domínio, o KCC cria rotas de replicação com a criação de objetos de conexão de entrada unidirecional que definem as conexões de outros controladores de domínio. Para controladores de domínio no mesmo site, o KCC cria objetos de conexão automaticamente sem intervenção administrativa. Quando você tiver mais de um site, você configura links de site entre sites e um único KCC em cada site cria automaticamente as conexões entre os sites também.  
+Em cada controlador de domínio, o KCC cria rotas de replicação criando objetos de conexão de entrada unidirecionais que definem conexões de outros controladores de domínio. Para controladores de domínio no mesmo site, o KCC cria objetos de conexão automaticamente sem intervenção administrativa. Quando você tem mais de um site, configura links de site entre sites, e um único KCC em cada site cria automaticamente conexões entre sites também.  
   
-### <a name="kcc-improvements-for-windows-server-2008-rodcs"></a>Melhorias do KCC para RODCs do Windows Server 2008  
+### <a name="kcc-improvements-for-windows-server-2008-rodcs"></a>Aprimoramentos do KCC para RODCs do Windows Server 2008  
 
-Há uma série de aprimoramentos de KCC para acomodar o controlador de domínio recentemente disponível de somente leitura (RODC) no Windows Server 2008. Um cenário típico de implantação para o RODC é o escritório da filial. A topologia de replicação do Active Directory mais comumente implantada nesse cenário se baseia em um projeto de hub e spoke, onde os controladores de domínio de filial em vários sites replicam com um pequeno número de servidores bridgehead em um site de hub.  
+Há várias melhorias do KCC para acomodar o RODC (controlador de domínio somente leitura) recentemente disponível no Windows Server 2008. Um cenário de implantação típico para o RODC é a filial. A topologia de replicação Active Directory mais comumente implantada nesse cenário é baseada em um design de Hub e spoke, em que os controladores de domínio de ramificação em vários sites replicam com um pequeno número de servidores bridgehead em um site de Hub.  
   
-Um dos benefícios da implantação RODC nesse cenário é que a replicação unidirecional. Servidores bridgehead não são necessários para replicar do RODC, que reduz a administração e o uso de rede.  
+Um dos benefícios da implantação do RODC nesse cenário é a replicação unidirecional. Os servidores bridgehead não precisam ser replicados do RODC, o que reduz a administração e o uso da rede.  
   
-No entanto, um desafio administrativo realçado pela topologia hub-spoke em versões anteriores do sistema operacional Windows Server é que, depois de adicionar um novo controlador de domínio de ponte no hub, não há nenhum mecanismo automático para redistribuir o conexões de replicação entre os controladores de domínio de filial e os controladores de domínio de hub para tirar proveito do novo controlador de domínio de hub.  
+No entanto, um desafio administrativo realçado pela topologia hub-spoke em versões anteriores do sistema operacional Windows Server é que, depois de adicionar um novo controlador de domínio bridgehead no Hub, não há um mecanismo automático para redistribuir o conexões de replicação entre os controladores de domínio da ramificação e os controladores de domínio do hub para aproveitar o novo controlador de domínio do Hub.  
   
-Para controladores de domínio do Windows Server 2003, você pode redistribuir a carga de trabalho, usando uma ferramenta como Adlb.exe do guia de implantação do Windows Server 2003 Branch Office ([https://go.microsoft.com/fwlink/?LinkID=28523](https://go.microsoft.com/fwlink/?LinkID=28523)).  
+Para controladores de domínio do Windows Server 2003, você pode reequilibrar a carga de trabalho usando uma ferramenta como o Adlb. exe do guia de implantação da filial do Windows Server 2003 ([https://go.microsoft.com/fwlink/?LinkID=28523](https://go.microsoft.com/fwlink/?LinkID=28523)).  
   
-Windows Server 2008 nos RODCs, o funcionamento normal do KCC fornece alguns rebalanceamento, que elimina a necessidade de usar uma ferramenta adicional, como Adlb.exe. A nova funcionalidade é habilitada por padrão. Você pode desabilitá-lo adicionando a seguinte chave do registro definida no RODC:  
+Para RODCs do Windows Server 2008, o funcionamento normal do KCC fornece algum rebalanceamento, o que elimina a necessidade de usar uma ferramenta adicional, como o Adlb. exe. A nova funcionalidade é habilitada por padrão. Você pode desabilitá-lo adicionando o seguinte conjunto de chaves do registro no RODC:  
   
 **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NTDS\Parameters**  
   
-**"BH aleatório o balanceamento de carga permitido"**  
-**1 = habilitada (padrão), 0 = desabilitado**  
+**"Balanceamento de carga de BH aleatório permitido"**  
+**1 = habilitado (padrão), 0 = desabilitado**  
   
-Para obter mais informações sobre como esses aprimoramentos do KCC funcionam, consulte Planejando e implantando os serviços de domínio do Active Directory para filiais ([https://go.microsoft.com/fwlink/?LinkId=107114](https://go.microsoft.com/fwlink/?LinkId=107114)).  
+Para obter mais informações sobre como esses aprimoramentos do KCC funcionam, consulte Planejando e implantando Active Directory Domain Services para filiais ([https://go.microsoft.com/fwlink/?LinkId=107114](https://go.microsoft.com/fwlink/?LinkId=107114)).  
   
 ## <a name="BKMK_3"></a>Funcionalidade de failover  
-Sites garantem que a replicação seja roteada em torno de falhas de rede e controladores de domínio offline. O KCC é executado em intervalos especificados para ajustar a topologia de replicação para as alterações que ocorrem no AD DS, como quando novos controladores de domínio são adicionados e novos sites são criados. O KCC examina o status de replicação das conexões existentes para determinar se todas as conexões não estão funcionando. Se uma conexão não está funcionando devido a um controlador de domínio com falha, o KCC compila automaticamente conexões temporárias para outros parceiros de replicação (se disponível) para garantir que a replicação ocorra. Se todos os controladores de domínio em um site não estiverem disponíveis, o KCC cria automaticamente as conexões de replicação entre controladores de domínio de outro site.  
+Os sites asseguram que a replicação seja roteada em relação a falhas de rede e controladores de domínio offline. O KCC é executado em intervalos especificados para ajustar a topologia de replicação para alterações que ocorrem em AD DS, como quando novos controladores de domínio são adicionados e novos sites são criados. O KCC revisa o status de replicação das conexões existentes para determinar se as conexões não estão funcionando. Se uma conexão não estiver funcionando devido a um controlador de domínio com falha, o KCC criará automaticamente conexões temporárias com outros parceiros de replicação (se disponíveis) para garantir que a replicação ocorra. Se todos os controladores de domínio em um site estiverem indisponíveis, o KCC criará automaticamente conexões de replicação entre os controladores de domínio de outro site.  
   
-## <a name="BKMK_4"></a>Subrede  
-Uma sub-rede é um segmento de uma rede TCP/IP para o qual um conjunto de endereços IP lógicos são atribuídos. Subredes agrupar computadores de forma que identifica sua proximidade física na rede. Objetos da sub-rede no AD DS identificam os endereços de rede que são usados para mapear os computadores para sites.  
+## <a name="BKMK_4"></a>Redes  
+Uma sub-rede é um segmento de uma rede TCP/IP à qual um conjunto de endereços IP lógicos é atribuído. Sub-redes agrupam computadores de uma maneira que identifica sua proximidade física na rede. Os objetos de sub-rede no AD DS identificam os endereços de rede que são usados para mapear computadores para sites.  
   
-## <a name="BKMK_5"></a>Site  
-Os sites são objetos do Active Directory que representam uma ou mais sub-redes TCP/IP com conexões de rede altamente confiável e rápida. Informações do site permite que os administradores configurem o acesso ao Active Directory e a replicação para otimizar o uso da rede física. Objetos do site estão associados um conjunto de sub-redes, e cada controlador de domínio em uma floresta está associado um site do Active Directory de acordo com seu endereço IP. Sites podem hospedar controladores de domínio de mais de um domínio e um domínio pode ser representado em mais de um site.  
+## <a name="BKMK_5"></a>Locais  
+Os sites são Active Directory objetos que representam uma ou mais sub-redes TCP/IP com conexões de rede altamente confiáveis e rápidas. As informações do site permitem que os administradores configurem Active Directory acesso e replicação para otimizar o uso da rede física. Os objetos do site são associados a um conjunto de sub-redes, e cada controlador de domínio em uma floresta é associado a um site Active Directory de acordo com seu endereço IP. Os sites podem hospedar controladores de domínio de mais de um domínio, e um domínio pode ser representado em mais de um site.  
   
-## <a name="BKMK_6"></a>Link de site  
-Links de site são objetos do Active Directory que representam caminhos lógicos que o KCC usa para estabelecer uma conexão para replicação do Active Directory. Um objeto de link de site representa um conjunto de sites que podem se comunicar a um custo uniforme por meio de um transporte entre sites especificado.  
+## <a name="BKMK_6"></a>Link do site  
+Links de site são Active Directory objetos que representam caminhos lógicos que o KCC usa para estabelecer uma conexão para Active Directory replicação. Um objeto de link de site representa um conjunto de sites que podem se comunicar com custo uniforme por meio de um transporte entre sites especificado.  
   
-Todos os sites contidos no link de site são considerados estar conectados por meio do mesmo tipo de rede. Sites devem ser vinculados manualmente para outros sites usando links de site para que os controladores de domínio em um site podem replicar alterações de diretório de controladores de domínio em outro site. Como os links de site não correspondem ao caminho real feito pelos pacotes de rede na rede física durante a replicação, você não precisará criar links de site redundantes para melhorar a eficiência de replicação do Active Directory.  
+Todos os sites contidos no link do site são considerados conectados por meio do mesmo tipo de rede. Os sites devem ser vinculados manualmente a outros sites usando links de site para que os controladores de domínio em um site possam replicar alterações de diretório de controladores de domínio em outro site. Como os links de site não correspondem ao caminho real usado pelos pacotes de rede na rede física durante a replicação, você não precisa criar links de site redundantes para melhorar a eficiência de replicação Active Directory.  
   
-Quando dois sites estão conectadas por um link de site, o sistema de replicação cria automaticamente as conexões entre controladores de domínio específicos em cada site que são chamados de servidores bridgehead. No Windows Server 2008, todos os controladores de domínio em um site que hospedam a mesma partição de diretório são candidatos à que está sendo selecionada como servidores bridgehead. As conexões de replicação criadas pelo KCC aleatoriamente são distribuídas entre todos os servidores bridgehead de candidato em um site para compartilhar a carga de trabalho de replicação. Por padrão, a seleção aleatório processo ocorre apenas uma vez, quando os objetos de conexão pela primeira vez são adicionados ao site.  
+Quando dois sites estão conectados por um link de site, o sistema de replicação cria automaticamente conexões entre controladores de domínio específicos em cada site que são chamados de servidores bridgehead. No Windows Server 2008, todos os controladores de domínio em um site que hospedam a mesma partição de diretório são candidatos para serem selecionados como servidores bridgehead. As conexões de replicação criadas pelo KCC são distribuídas aleatoriamente entre todos os servidores bridgehead candidatos em um site para compartilhar a carga de trabalho de replicação. Por padrão, o processo de seleção aleatório ocorre apenas uma vez, quando os objetos de conexão são adicionados primeiro ao site.  
   
 ## <a name="BKMK_7"></a>Ponte de link de site  
-Uma ponte de link de site é um objeto do Active Directory que representa um conjunto de links de site, de sites podem se comunicar por meio de um transporte comum. Pontes de link de site permitem que os controladores de domínio que não estão diretamente conectados por meio de um link de comunicação para replicar entre si. Normalmente, uma ponte de link de site corresponde a um roteador (ou um conjunto de roteadores) em uma rede IP.  
+Uma ponte de link de site é um objeto Active Directory que representa um conjunto de links de site, todos aqueles cujos sites podem se comunicar usando um transporte comum. As pontes de link de site habilitam controladores de domínio que não estão conectados diretamente por meio de um link de comunicação para replicação entre si. Normalmente, uma ponte de link de site corresponde a um roteador (ou um conjunto de roteadores) em uma rede IP.  
   
-Por padrão, o KCC pode formar uma rota transitiva através de links de todos os sites que têm alguns sites em comum. Se esse comportamento estiver desabilitado, cada link de site representa sua própria rede distinta e isolada. Conjuntos de links de site que pode ser tratado como uma única rota são expressos por meio de uma ponte de link de site. Cada ponte representa um ambiente isolado de comunicação para o tráfego de rede.  
+Por padrão, o KCC pode formar uma rota transitiva por meio de qualquer e todos os links de site que têm alguns sites em comum. Se esse comportamento for desabilitado, cada link de site representa sua própria rede distinta e isolada. Conjuntos de links de site que podem ser tratados como uma única rota são expressos por meio de uma ponte de link de site. Cada ponte representa um ambiente de comunicação isolado para o tráfego de rede.  
   
-Pontes de link de site são um mecanismo para representar logicamente transitiva conectividade física entre sites. Uma ponte de link de site permite que o KCC usar qualquer combinação dos links de site incluídos para determinar a rota menos dispendiosa para interconectar partições de diretório mantidas nesses sites. A ponte de link de site não oferece conectividade real com os controladores de domínio. Se a ponte de link de site for removida, a replicação nos links de site combinado continuará até que o KCC remove os links.  
+As pontes de link de site são um mecanismo para representar logicamente a conectividade física transitiva entre sites. Uma ponte de link de site permite que o KCC use qualquer combinação dos links de site incluídos para determinar a rota menos dispendiosa para as partições de diretório de interconexão mantidas nesses sites. A ponte de link de site não fornece conectividade real com os controladores de domínio. Se a ponte de link de site for removida, a replicação nos links de site combinados continuará até que o KCC remova os links.  
   
-Pontes de link de site serão necessárias apenas se um site contém um controlador de domínio que hospeda uma partição de diretório que também não está hospedada em um controlador de domínio em um site adjacente, mas um controlador de domínio que hospeda a partição de diretório está localizado em um ou mais sites no a floresta. Sites adjacentes são definidos como quaisquer dois ou mais sites incluídos em um único link de site.  
+As pontes de link de site só serão necessárias se um site contiver um controlador de domínio que hospede uma partição de diretório que não esteja também hospedada em um controlador de domínio em um site adjacente, mas um controlador de domínio que hospeda essa partição de diretório esteja localizado em um ou mais sites no a floresta. Os sites adjacentes são definidos como dois ou mais sites incluídos em um único link de site.  
   
-Uma ponte de link de site cria uma conexão lógica entre dois links de site, fornecendo um caminho transitivo entre dois sites desconectados, usando um site provisório. Para fins de gerador de topologia entre sites (ISTG), a ponte implica conectividade física usando o site provisório. A ponte não implica que um controlador de domínio no site provisório fornecerá o caminho de replicação. No entanto, isso poderia ser o caso se o site provisório continha um controlador de domínio hospedado na partição de diretório a serem replicados, nesse caso, uma ponte de link de site não é necessária.  
+Uma ponte de link de site cria uma conexão lógica entre dois links de site, fornecendo um caminho transitivo entre dois sites desconectados usando um site provisório. Para os fins do ISTG (gerador de topologia entre sites), a ponte implica conectividade física usando o site provisório. A ponte não significa que um controlador de domínio no site provisório fornecerá o caminho de replicação. No entanto, esse seria o caso se o site provisório contivesse um controlador de domínio que hospedasse a partição de diretório a ser replicada, caso em que uma ponte de link de site não é necessária.  
   
-O custo de cada link de site é adicionado, criando um custo somado para o caminho resultante. A ponte de link de site seria usada se o site provisório não contém um controlador de domínio que hospeda a partição de diretório e um link de custo mais baixo, não existe. Se o site provisório continha um controlador de domínio que hospeda a partição de diretório, dois sites desconectados seriam configurar conexões de replicação para o controlador de domínio provisório e não usar a ponte.  
+O custo de cada link de site é adicionado, criando um custo somado para o caminho resultante. A ponte de link de site seria usada se o site provisório não contiver um controlador de domínio que hospeda a partição de diretório e um link de custo mais baixo não existir. Se o site provisório contiver um controlador de domínio que hospeda a partição de diretório, dois sites desconectados configurariam as conexões de replicação com o controlador de domínio provisório e não usarão a ponte.  
   
-## <a name="BKMK_8"></a>Transitividade da relação de link de site  
-Por padrão todos os links de site são transitivas, ou "ponte". Quando os links de site são ligados com pontes e as agendas se sobrepõem, o KCC cria conexões de replicação que parceiros de replicação de controlador de domínio entre sites, em que os sites não estão diretamente conectados por links de site, mas estão conectados transitivamente por meio de determinar um conjunto de sites comuns. Isso significa que você pode conectar qualquer site para qualquer outro site por meio de uma combinação de links de site.  
+## <a name="BKMK_8"></a>Transitividade de link de site  
+Por padrão, todos os links de site são transitivos ou "com ponte". Quando os links de site são ponte e as agendas se sobrepõem, o KCC cria conexões de replicação que determinam parceiros de replicação de controlador de domínio entre sites, em que os sites não são diretamente conectados por links de site, mas são conectados transitivamente por meio de um conjunto de sites comuns. Isso significa que você pode conectar qualquer site a qualquer outro site por meio de uma combinação de links de site.  
   
-Em geral, para uma rede totalmente roteada, não é necessário criar pontes de links de qualquer site, a menos que você deseja controlar o fluxo de alterações de replicação. Se sua rede não está totalmente roteada, pontes de link de site devem ser criados para evitar tentativas de replicação impossível. Todos os links de site para um transporte específico implicitamente pertencem a uma ponte de link de site único para esse transporte. A ponte de links de site padrão ocorre automaticamente, e nenhum objeto do Active Directory representa que a ponte. O **ponte para todos os links de site** configuração, encontrada nas propriedades de contêineres de transporte entre sites IP tanto o SMTP Simple Mail Transfer Protocol (), que implementa a ponte de link de site automática.  
+Em geral, para uma rede totalmente roteada, você não precisa criar nenhuma ponte de link de site, a menos que queira controlar o fluxo de alterações de replicação. Se sua rede não for totalmente roteada, as pontes de link de site deverão ser criadas para evitar tentativas de replicação impossíveis. Todos os links de site para um transporte específico pertencem implicitamente a uma única ponte de link de site para esse transporte. A ponte padrão para links de site ocorre automaticamente e nenhum objeto de Active Directory representa essa ponte. A configuração **ponte para todos os links de site** , encontrada nas propriedades dos contêineres de transporte de IP e SMTP entre sites, implementa a ponte de link de site automática.  
   
 > [!NOTE]  
-> A replicação SMTP não terão suporte em versões futuras do AD DS; Portanto, não é recomendável criar objetos de links de site no contêiner de SMTP.  
+> A replicação SMTP não terá suporte em versões futuras do AD DS; Portanto, a criação de objetos de links de site no contêiner SMTP não é recomendada.  
   
 ## <a name="BKMK_9"></a>Servidor de catálogo global  
-Um servidor de catálogo global é um controlador de domínio que armazena informações sobre todos os objetos na floresta, para que aplicativos possam pesquisar AD DS sem se referir a controladores de domínio específicos que armazenam os dados solicitados. Como todos os controladores de domínio, servidor de catálogo global armazena réplicas graváveis, completas das partições de diretório de configuração e de esquema e uma réplica completa e gravável da partição de diretório do domínio para o domínio que está hospedando. Além disso, o servidor de catálogo global armazena uma réplica parcial, somente leitura de todos os outros domínios na floresta. Réplicas de domínio parcial, somente leitura contém todos os objetos no domínio, mas apenas um subconjunto dos atributos (aqueles atributos que são mais comumente usados para pesquisar o objeto).  
+Um servidor de catálogo global é um controlador de domínio que armazena informações sobre todos os objetos na floresta, para que os aplicativos possam Pesquisar AD DS sem se referir a controladores de domínio específicos que armazenam os dados solicitados. Assim como todos os controladores de domínio, um servidor de catálogo global armazena réplicas completas e graváveis das partições de diretório de esquema e configuração e uma réplica completa e gravável da partição de diretório de domínio para o domínio que está hospedando. Além disso, um servidor de catálogo global armazena uma réplica parcial somente leitura de todos os outros domínios na floresta. As réplicas de domínio somente leitura parciais contêm todos os objetos no domínio, mas apenas um subconjunto dos atributos (os atributos que são mais comumente usados para pesquisar o objeto).  
   
 ## <a name="BKMK_10"></a>Cache de associação de grupo universal  
-Cache de associação de grupo universal permite que o controlador de domínio em cache informações de associação de grupo universal para os usuários. Você pode habilitar os controladores de domínio que executam o Windows Server 2008 para associações ao grupo universal de cache usando o snap-in Serviços e Sites do Active Directory.  
+O cache de associação de grupo universal permite que o controlador de domínio armazene em cache informações de associação de grupo universal para usuários. Você pode habilitar os controladores de domínio que executam o Windows Server 2008 para armazenar em cache associações de grupo universal usando o snap-in Active Directory sites e serviços.  
   
-Habilitação do cache de associação de grupo universal elimina a necessidade de um servidor de catálogo global em todos os sites em um domínio, o que minimiza o uso de largura de banda de rede como um controlador de domínio não precisa replicar todos os objetos localizados na floresta. Isso também reduz o tempo de logon porque os controladores de domínio de autenticação não é sempre necessário acessar um catálogo global para obter informações sobre associação de grupo universal. Para obter mais informações sobre quando usar o cache de associação de grupo universal, consulte [planejamento de posicionamento de servidores de Catálogo Global](../../../ad-ds/plan/Planning-Global-Catalog-Server-Placement.md).  
+Habilitar o cache de associação de grupo universal elimina a necessidade de um servidor de catálogo global em cada site em um domínio, o que minimiza o uso da largura de banda da rede, pois um controlador de domínio não precisa replicar todos os objetos localizados na floresta. Ele também reduz os tempos de logon porque os controladores de domínio de autenticação nem sempre precisam acessar um catálogo global para obter informações de associação de grupo universal. Para obter mais informações sobre quando usar o cache de associação de grupo universal, consulte [planejando o posicionamento do servidor de catálogo global](../../../ad-ds/plan/Planning-Global-Catalog-Server-Placement.md).  
   
 
 

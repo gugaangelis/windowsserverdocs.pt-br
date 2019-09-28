@@ -1,8 +1,8 @@
 ---
-title: cache par do Bitsadmin
-description: Tópico de comandos do Windows para **cache de par bitsadmin** - listagem das opções de cache par.
+title: Bitsadmin de cache
+description: Tópico de comandos do Windows para **Bitsadmin de cache** – lista de opções de serviço em cache.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6235a985e50be695d6059f25e60a16fd0f468755
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0dd1fcbb41d6c56bcf3d961cbf95e86cee834bab
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853367"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380993"
 ---
-# <a name="bitsadmin-peercaching"></a>cache par do Bitsadmin
+# <a name="bitsadmin-peercaching"></a>Bitsadmin de cache
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -33,8 +33,8 @@ bitsadmin /PeerCaching /GetConfigurationFlags
 ## <a name="parameters"></a>Parâmetros
 |Parâmetro|Descrição|
 |-------|--------|
-|[Ajuda e o cache par do bitsadmin](bitsadmin-peercaching-and-help.md)|Exibe o uso de linha de comando para as opções de /PeerCaching.|
-|[setconfigurationflags e cache de par bitsadmin](bitsadmin-peercaching-and-setconfigurationflags.md)|Define os sinalizadores de configuração que determinam se o computador pode fornecer conteúdo para pontos e pode baixar conteúdo de pares.|
-|[getconfigurationflags e cache de par bitsadmin](bitsadmin-peercaching-and-getconfigurationflags.md)|Obtém os sinalizadores de configuração que determinam se o computador serve um conteúdo para pontos e pode baixar conteúdo de pares.|
+|[bitsadmin peercaching e help](bitsadmin-peercaching-and-help.md)|Exibe o uso da linha de comando para os comutadores/PeerCaching.|
+|[bitsadmin peercaching e setconfigurationflags](bitsadmin-peercaching-and-setconfigurationflags.md)|Define os sinalizadores de configuração que determinam se o computador pode fornecer conteúdo a pares e pode baixar conteúdo de pares.|
+|[bitsadmin peercaching e getconfigurationflags](bitsadmin-peercaching-and-getconfigurationflags.md)|Obtém os sinalizadores de configuração que determinam se o computador fornece conteúdo a pares e pode baixar conteúdo de pares.|
 ## <a name="additional-references"></a>Referências adicionais
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

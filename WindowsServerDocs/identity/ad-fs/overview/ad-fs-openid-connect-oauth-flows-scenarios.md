@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: d7ed8f7976116ab245fa730a5a050e7ec46cebea
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: e1e0235e50945fadd09fe9dd5ffeaf6d7119e482
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869494"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385596"
 ---
 # <a name="ad-fs-openid-connectoauth-flows-and-application-scenarios"></a>AD FS os fluxos do OpenID Connect/OAuth e cenários de aplicativos
 Aplica-se ao AD FS 2016 e posterior
@@ -22,9 +22,9 @@ Aplica-se ao AD FS 2016 e posterior
 
 |Cenário|Explicação do cenário usando exemplos|Fluxo/concessão do OAuth 2,0|Tipo de cliente|
 |-----|-----|-----|-----|
-|Aplicativo de página única</br> | &bull;[Exemplo usando a Adal](../development/Single-Page-Application-with-AD-FS.md)|[Localiza](#implicit-grant-flow)|Público| 
+|Aplicativo de página única</br> | &bull;[Exemplo usando a Adal](../development/Single-Page-Application-with-AD-FS.md)|[Localiza](#implicit-grant-flow)|Public| 
 |Aplicativo Web que assina usuários</br> | &bull;[Exemplo usando OWIN](../development/enabling-openid-connect-with-ad-fs.md)|[Código de autorização](#authorization-code-grant-flow)|Público, confidencial|  
-|API Web de chamadas de aplicativo nativo</br>|&bull;[Exemplo usando MSAL](../development/msal/adfs-msal-native-app-web-api.md)</br>&bull;[Exemplo usando a Adal](../development/native-client-with-ad-fs.md)|[Código de autorização](#authorization-code-grant-flow)|Público|   
+|API Web de chamadas de aplicativo nativo</br>|&bull;[Exemplo usando MSAL](../development/msal/adfs-msal-native-app-web-api.md)</br>&bull;[Exemplo usando a Adal](../development/native-client-with-ad-fs.md)|[Código de autorização](#authorization-code-grant-flow)|Public|   
 |API Web de chamadas de aplicativo Web</br>|&bull;[Exemplo usando MSAL](../development/msal/adfs-msal-web-app-web-api.md)</br>&bull;[Exemplo usando a Adal](../development/enabling-oauth-confidential-clients-with-ad-fs.md)|[Código de autorização](#authorization-code-grant-flow)|Confidential| 
 |A API Web chama outra API da Web em nome de (OBO) o usuário</br>|&bull;[Exemplo usando MSAL](../development/msal/adfs-msal-web-api-web-api.md)</br>&bull;[Exemplo usando a Adal](../development/ad-fs-on-behalf-of-authentication-in-windows-server.md)|[On-behalf-of](#on-behalf-of-flow)|O aplicativo Web atua como confidencial| 
 |API Web de chamadas de aplicativo de daemon||[Credenciais do cliente](#client-credentials-grant-flow)|Confidential| 
@@ -63,16 +63,16 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |Parâmetro|Obrigatório/Opcional|Descrição| 
 |-----|-----|-----|
 |client_id|necessárias|A ID do aplicativo (cliente) que o AD FS atribuído ao seu aplicativo.| 
-|response_type|necessárias|Deve incluir `id_token` para entrar no OpenID Connect. Ele também pode incluir o response_type `token`. O uso de token aqui permitirá que seu aplicativo receba um token de acesso imediatamente do ponto de extremidade de autorização sem precisar fazer uma segunda solicitação para o ponto de extremidade do token.| 
+|response_type|necessárias|Deve incluir `id_token` para entrar no OpenID Connect. Ele também pode incluir o response_type @ no__t-0. O uso de token aqui permitirá que seu aplicativo receba um token de acesso imediatamente do ponto de extremidade de autorização sem precisar fazer uma segunda solicitação para o ponto de extremidade do token.| 
 |redirect_uri|necessárias|O redirect_uri do seu aplicativo, em que as respostas de autenticação podem ser enviadas e recebidas pelo seu aplicativo. Ele deve corresponder exatamente a um dos redirect_uris que você configurou em AD FS.| 
 |momentos|necessárias|Um valor incluído na solicitação, gerado pelo aplicativo, que será incluído no id_token resultante como uma declaração. O aplicativo pode, então, verificar esse valor para atenuar os ataques de reprodução de token. O valor normalmente é uma cadeia de caracteres aleatória e exclusiva que pode ser usada para identificar a origem da solicitação. Necessário somente quando um id_token é solicitado.|
-|scope|optional|Uma lista de escopos separados por espaços. Para o OpenID Connect, ele deve incluir o `openid`escopo.|
-|resource|optional|A URL da sua API Web.</br>Observação – Se estiver usando a biblioteca de cliente do MSAL, o parâmetro de recurso não será enviado. Em vez disso, a URL do recurso é enviada como parte do parâmetro de escopo:`scope = [resource url]//[scope values e.g., openid]`</br>Se o recurso não for passado aqui ou no escopo, o ADFS usará um recurso padrão urn: Microsoft: UserInfo. as políticas de recurso UserInfo, como MFA, política de emissão ou autorização, não podem ser personalizadas.| 
-|response_mode|optional| Especifica o método que deve ser usado para enviar o token resultante de volta ao seu aplicativo. Assume o padrão de `fragment`.| 
-|state|optional|Um valor incluído na solicitação que também será retornado na resposta do token. Pode ser uma cadeia de caracteres de qualquer conteúdo que você desejar. Um valor exclusivo gerado aleatoriamente geralmente é usado para impedir ataques de solicitação entre sites forjado. O estado também é usado para codificar informações sobre o estado do usuário no aplicativo antes que a solicitação de autenticação ocorra, como a página ou a exibição em que eles estavam.| 
-|prompt|optional|Indica o tipo de interação do usuário que é necessário. Os únicos valores válidos no momento são logon e nenhum.</br>- `prompt=login` forçará o usuário a inserir suas credenciais nessa solicitação, negando o logon único. </br>- `prompt=none` é o oposto: ele garantirá que o usuário não seja apresentado a nenhum prompt interativo. Se a solicitação não puder ser concluída silenciosamente por meio de logon único, AD FS retornará um erro interaction_required.| 
-|login_hint|optional|Pode ser usado para preencher previamente o campo nome de usuário/endereço de email da página de entrada do usuário, se você souber seu nome de usuário antes do tempo. Com frequência, os aplicativos usarão esse parâmetro durante a reautenticação, já tendo extraído o nome de usuário de uma entrada `upn`anterior usando `id_token`a declaração de.| 
-|domain_hint|optional|Se for incluído, ele ignorará o processo de descoberta baseado em domínio que o usuário passa na página de entrada, levando a uma experiência de usuário um pouco mais simplificada.| 
+|scope|opcionais|Uma lista de escopos separados por espaços. Para o OpenID Connect, ele deve incluir o `openid`escopo.|
+|resource|opcionais|A URL da sua API Web.</br>Observação – Se estiver usando a biblioteca de cliente do MSAL, o parâmetro de recurso não será enviado. Em vez disso, a URL do recurso é enviada como parte do parâmetro de escopo:`scope = [resource url]//[scope values e.g., openid]`</br>Se o recurso não for passado aqui ou no escopo, o ADFS usará um recurso padrão urn: Microsoft: UserInfo. as políticas de recurso UserInfo, como MFA, política de emissão ou autorização, não podem ser personalizadas.| 
+|response_mode|opcionais| Especifica o método que deve ser usado para enviar o token resultante de volta ao seu aplicativo. Assume o padrão de `fragment`.| 
+|state|opcionais|Um valor incluído na solicitação que também será retornado na resposta do token. Pode ser uma cadeia de caracteres de qualquer conteúdo que você desejar. Um valor exclusivo gerado aleatoriamente geralmente é usado para impedir ataques de solicitação entre sites forjado. O estado também é usado para codificar informações sobre o estado do usuário no aplicativo antes que a solicitação de autenticação ocorra, como a página ou a exibição em que eles estavam.| 
+|prompt|opcionais|Indica o tipo de interação do usuário que é necessário. Os únicos valores válidos no momento são logon e nenhum.</br>- `prompt=login` forçará o usuário a inserir suas credenciais nessa solicitação, negando o logon único. </br>- `prompt=none` é o oposto: ele garantirá que o usuário não seja apresentado a nenhum prompt interativo. Se a solicitação não puder ser concluída silenciosamente por meio de logon único, AD FS retornará um erro interaction_required.| 
+|login_hint|opcionais|Pode ser usado para preencher previamente o campo nome de usuário/endereço de email da página de entrada do usuário, se você souber seu nome de usuário antes do tempo. Com frequência, os aplicativos usarão esse parâmetro durante a reautenticação, já tendo extraído o nome de usuário de uma entrada `upn`anterior usando `id_token`a declaração de.| 
+|domain_hint|opcionais|Se for incluído, ele ignorará o processo de descoberta baseado em domínio que o usuário passa na página de entrada, levando a uma experiência de usuário um pouco mais simplificada.| 
 
 Neste ponto, o usuário será solicitado a inserir suas credenciais e concluir a autenticação. Depois que o usuário for autenticado, o ponto de extremidade de autorização de AD FS retornará uma resposta ao seu aplicativo no redirect_uri indicado, usando o método especificado no parâmetro response_mode.  
  
@@ -95,11 +95,11 @@ access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZEstZnl0aEV...
 
 |Parâmetro|Descrição| 
 |-----|-----|
-|access_token|Incluído se o response_type `token`incluir.|
-|token_type|Incluído se o response_type `token`incluir. Sempre será portador.| 
-|expires_in| Incluído se o response_type `token`incluir. Indica o número de segundos que o token é válido, para fins de cache.| 
+|access_token|Incluído se response_type incluir @ no__t-0.|
+|token_type|Incluído se response_type incluir @ no__t-0. Sempre será portador.| 
+|expires_in| Incluído se response_type incluir @ no__t-0. Indica o número de segundos que o token é válido, para fins de cache.| 
 |scope| Indica os escopos para os quais o access_token será válido.|  
-|id_token|Incluído se o response_type `id_token`incluir. Um JWT (token Web JSON) assinado. O aplicativo pode decodificar os segmentos desse token para solicitar informações sobre o usuário que se conectou. O aplicativo pode armazenar em cache os valores e exibi-los, mas não deve depender deles para qualquer autorização ou limites de segurança.| 
+|id_token|Incluído se response_type incluir @ no__t-0. Um JWT (token Web JSON) assinado. O aplicativo pode decodificar os segmentos desse token para solicitar informações sobre o usuário que se conectou. O aplicativo pode armazenar em cache os valores e exibi-los, mas não deve depender deles para qualquer autorização ou limites de segurança.| 
 |state|Se um parâmetro de estado for incluído na solicitação, o mesmo valor deverá aparecer na resposta. O aplicativo deve verificar se os valores de estado na solicitação e na resposta são idênticos.|
 
 ### <a name="refresh-tokens"></a>Tokens de atualização 
@@ -137,15 +137,15 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |client_id|necessárias|A ID do aplicativo (cliente) que o AD FS atribuído ao seu aplicativo.|  
 |response_type|necessárias| Deve incluir código para o fluxo do código de autorização.| 
 |redirect_uri|necessárias|O `redirect_uri` do seu aplicativo, onde as respostas de autenticação podem ser enviadas e recebidas pelo seu aplicativo. Ele deve corresponder exatamente a um dos redirect_uris que você registrou no AD FS para o cliente.|  
-|resource|optional|A URL da sua API Web.</br>Observação – Se estiver usando a biblioteca de cliente do MSAL, o parâmetro de recurso não será enviado. Em vez disso, a URL do recurso é enviada como parte do parâmetro de escopo:`scope = [resource url]//[scope values e.g., openid]`</br>Se o recurso não for passado aqui ou no escopo, o ADFS usará um recurso padrão urn: Microsoft: UserInfo. as políticas de recurso UserInfo, como MFA, política de emissão ou autorização, não podem ser personalizadas.| 
-|scope|optional|Uma lista de escopos separados por espaços.|
-|response_mode|optional|Especifica o método que deve ser usado para enviar o token resultante de volta ao seu aplicativo. Pode ser um dos seguintes: </br>-consulta </br>-fragmento </br>- form_post</br>`query` fornece o código como um parâmetro de cadeia de caracteres de consulta em seu URI de redirecionamento. Se você estiver solicitando o código, poderá usar consulta, fragmento ou form_post.  `form_post` executaumapostagemquecontémocódigoparaoURI de redirecionamento.|
-|state|optional|Um valor incluído na solicitação que também será retornado na resposta do token. Pode ser uma cadeia de caracteres de qualquer conteúdo que você desejar. Um valor exclusivo gerado aleatoriamente geralmente é usado para impedir ataques de solicitação entre sites forjado. O valor também pode codificar informações sobre o estado do usuário no aplicativo antes que a solicitação de autenticação ocorra, como a página ou a exibição em que eles estavam.|
-|prompt|optional|Indica o tipo de interação do usuário que é necessário. Os únicos valores válidos no momento são logon e nenhum.</br>- `prompt=login` forçará o usuário a inserir suas credenciais nessa solicitação, negando o logon único. </br>- `prompt=none` é o oposto: ele garantirá que o usuário não seja apresentado a nenhum prompt interativo. Se a solicitação não puder ser concluída silenciosamente por meio de logon único, AD FS retornará um erro interaction_required.|
-|login_hint|optional|Pode ser usado para preencher previamente o campo nome de usuário/endereço de email da página de entrada do usuário, se você souber seu nome de usuário antes do tempo. Com frequência, os aplicativos usarão esse parâmetro durante a reautenticação, já tendo extraído o nome de usuário de uma entrada `upn`anterior usando `id_token`a declaração de.|
-|domain_hint|optional|Se for incluído, ele ignorará o processo de descoberta baseado em domínio que o usuário passa na página de entrada, levando a uma experiência de usuário um pouco mais simplificada.|
-|code_challenge_method|optional|O método usado para codificar o code_verifier para o parâmetro code_challenge. Pode ser um dos seguintes valores: </br>-Plain </br>- S256 </br>Se for excluído, o code_challenge será considerado em texto `code_challenge`não criptografado se estiver incluído. AD FS dá suporte a Plain e S256. Para obter mais informações, consulte a [RFC PKCE](https://tools.ietf.org/html/rfc7636).|
-|code_challenge|optional| Usado para proteger as concessões de código de autorização por meio da chave de prova de troca de código (PKCE) de um cliente nativo. Necessário se `code_challenge_method` estiver incluído. Para obter mais informações, consulte a [RFC do PKCE](https://tools.ietf.org/html/rfc7636)|
+|resource|opcionais|A URL da sua API Web.</br>Observação – Se estiver usando a biblioteca de cliente do MSAL, o parâmetro de recurso não será enviado. Em vez disso, a URL do recurso é enviada como parte do parâmetro de escopo:`scope = [resource url]//[scope values e.g., openid]`</br>Se o recurso não for passado aqui ou no escopo, o ADFS usará um recurso padrão urn: Microsoft: UserInfo. as políticas de recurso UserInfo, como MFA, política de emissão ou autorização, não podem ser personalizadas.| 
+|scope|opcionais|Uma lista de escopos separados por espaços.|
+|response_mode|opcionais|Especifica o método que deve ser usado para enviar o token resultante de volta ao seu aplicativo. Pode ser um dos seguintes: </br>-consulta </br>-fragmento </br>- form_post</br>`query` fornece o código como um parâmetro de cadeia de caracteres de consulta em seu URI de redirecionamento. Se você estiver solicitando o código, poderá usar Query, Fragment ou form_post.  `form_post` @ no__t-1executes uma POSTAgem contendo o código para o URI de redirecionamento.|
+|state|opcionais|Um valor incluído na solicitação que também será retornado na resposta do token. Pode ser uma cadeia de caracteres de qualquer conteúdo que você desejar. Um valor exclusivo gerado aleatoriamente geralmente é usado para impedir ataques de solicitação entre sites forjado. O valor também pode codificar informações sobre o estado do usuário no aplicativo antes que a solicitação de autenticação ocorra, como a página ou a exibição em que eles estavam.|
+|prompt|opcionais|Indica o tipo de interação do usuário que é necessário. Os únicos valores válidos no momento são logon e nenhum.</br>- `prompt=login` forçará o usuário a inserir suas credenciais nessa solicitação, negando o logon único. </br>- `prompt=none` é o oposto: ele garantirá que o usuário não seja apresentado a nenhum prompt interativo. Se a solicitação não puder ser concluída silenciosamente por meio de logon único, AD FS retornará um erro interaction_required.|
+|login_hint|opcionais|Pode ser usado para preencher previamente o campo nome de usuário/endereço de email da página de entrada do usuário, se você souber seu nome de usuário antes do tempo. Com frequência, os aplicativos usarão esse parâmetro durante a reautenticação, já tendo extraído o nome de usuário de uma entrada `upn`anterior usando `id_token`a declaração de.|
+|domain_hint|opcionais|Se for incluído, ele ignorará o processo de descoberta baseado em domínio que o usuário passa na página de entrada, levando a uma experiência de usuário um pouco mais simplificada.|
+|code_challenge_method|opcionais|O método usado para codificar o code_verifier para o parâmetro code_challenge. Pode ser um dos seguintes valores: </br>-Plain </br>- S256 </br>Se for excluído, o code_challenge será considerado em texto sem formatação se @ no__t-0 @ no__t-1is for incluído. AD FS dá suporte a Plain e S256. Para obter mais informações, consulte a [RFC PKCE](https://tools.ietf.org/html/rfc7636).|
+|code_challenge|opcionais| Usado para proteger as concessões de código de autorização por meio da chave de prova de troca de código (PKCE) de um cliente nativo. Necessário se `code_challenge_method` estiver incluído. Para obter mais informações, consulte a [RFC do PKCE](https://tools.ietf.org/html/rfc7636)|
 
 Neste ponto, o usuário será solicitado a inserir suas credenciais e concluir a autenticação. Depois que o usuário for autenticado, o AD FS retornará uma resposta ao seu aplicativo no indicado `redirect_uri`, usando o método especificado `response_mode` no parâmetro.  
  
@@ -190,7 +190,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |code|necessárias|O `authorization_code` que você adquiriu no primeiro segmento do fluxo.| 
 |redirect_uri|necessárias|O mesmo `redirect_uri` valor que foi usado para adquirir o `authorization_code`.| 
 |client_secret|necessário para aplicativos Web|O segredo do aplicativo que você criou durante o registro do aplicativo no AD FS. Você não deve usar o segredo do aplicativo em um aplicativo nativo porque o client_secrets não pode ser armazenado de forma confiável em dispositivos. Ele é necessário para aplicativos Web e APIs Web, que têm a capacidade de armazenar o client_secret com segurança no lado do servidor. O segredo do cliente deve ser codificado por URL antes de ser enviado. Esses aplicativos também podem usar uma autenticação baseada em chave assinando um JWT e adicionando isso como parâmetro client_assertion.| 
-|code_verifier|optional|O mesmo `code_verifier` que foi usado para obter o authorization_code. Obrigatório se PKCE foi usado na solicitação de concessão de código de autorização. Para obter mais informações, consulte a [RFC PKCE](https://tools.ietf.org/html/rfc7636).</br>Observação – aplica-se ao AD FS 2019 e posterior| 
+|code_verifier|opcionais|O mesmo `code_verifier` que foi usado para obter o authorization_code. Obrigatório se PKCE foi usado na solicitação de concessão de código de autorização. Para obter mais informações, consulte a [RFC PKCE](https://tools.ietf.org/html/rfc7636).</br>Observação – aplica-se ao AD FS 2019 e posterior| 
 
 ### <a name="successful-response"></a>Resposta bem-sucedida 
  
@@ -227,7 +227,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZn
 
 ### <a name="refresh-the-access-token"></a>Atualizar o token de acesso 
  
-Access_tokens são de curta duração e você deve atualizá-los depois que eles expirarem para continuar acessando os recursos. Você pode fazer isso enviando outra solicitação post para o ponto de `/token` extremidade, desta vez fornecendo o refresh_token em vez do código. Os tokens de atualização são válidos para todas as permissões para as quais o cliente já recebeu o token de acesso. 
+Access_tokens são de curta duração e você deve atualizá-los depois que eles expirarem para continuar acessando os recursos. Você pode fazer isso enviando outra solicitação POST para o @ no__t-0 @ no__t-1endpoint, desta vez fornecendo o refresh_token em vez do código. Os tokens de atualização são válidos para todas as permissões para as quais o cliente já recebeu o token de acesso. 
  
 Os tokens de atualização não têm tempos de vida especificados. Normalmente, os tempos de vida de tokens de atualização são relativamente longos. No entanto, em alguns casos, os tokens de atualização expiram, são revogados ou não têm privilégios suficientes para a ação desejada. Seu aplicativo precisa esperar e tratar os erros retornados pelo ponto de extremidade de emissão de token corretamente.  
  
@@ -251,8 +251,8 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |-----|-----|-----|
 |client_id|necessárias|A ID do aplicativo (cliente) que o AD FS atribuído ao seu aplicativo.| 
 |grant_type|necessárias|Deve ser `refresh_token` para esse trecho do fluxo do código de autorização.| 
-|resource|optional|A URL da sua API Web.</br>Observação – Se estiver usando a biblioteca de cliente do MSAL, o parâmetro de recurso não será enviado. Em vez disso, a URL do recurso é enviada como parte do parâmetro de escopo:`scope = [resource url]//[scope values e.g., openid]`</br>Se o recurso não for passado aqui ou no escopo, o ADFS usará um recurso padrão urn: Microsoft: UserInfo. as políticas de recurso UserInfo, como MFA, política de emissão ou autorização, não podem ser personalizadas.|
-|scope|optional|Uma lista de escopos separados por espaços.| 
+|resource|opcionais|A URL da sua API Web.</br>Observação – Se estiver usando a biblioteca de cliente do MSAL, o parâmetro de recurso não será enviado. Em vez disso, a URL do recurso é enviada como parte do parâmetro de escopo:`scope = [resource url]//[scope values e.g., openid]`</br>Se o recurso não for passado aqui ou no escopo, o ADFS usará um recurso padrão urn: Microsoft: UserInfo. as políticas de recurso UserInfo, como MFA, política de emissão ou autorização, não podem ser personalizadas.|
+|scope|opcionais|Uma lista de escopos separados por espaços.| 
 |refresh_token|necessárias|O refresh_token que você adquiriu no segundo segmento do fluxo.| 
 |client_secret|necessário para aplicativos Web| O segredo do aplicativo que você criou no portal de registro de aplicativo para seu aplicativo. Ele não deve ser usado em um aplicativo nativo, pois o client_secrets não pode ser armazenado de forma confiável em dispositivos. Ele é necessário para aplicativos Web e APIs Web, que têm a capacidade de armazenar o client_secret com segurança no lado do servidor. Esses aplicativos também podem usar uma autenticação baseada em chave assinando um JWT e adicionando isso como parâmetro client_assertion.|
 
@@ -315,7 +315,7 @@ Ao usar um segredo compartilhado, uma solicitação de token de acesso de servi�
 |assertion|necessárias|O valor do token usado na solicitação.|  
 |requested_token_use|necessárias|Especifica como a solicitação deve ser processada. No fluxo OBO, o valor deve ser definido como on_behalf_of| 
 |resource|necessárias|A ID de recurso fornecida ao registrar a primeira API Web como o aplicativo de servidor (aplicativo de camada intermediária). A ID do recurso deve ser a URL do segundo aplicativo de camada intermediária da API Web chamará em nome do cliente.|
-|scope|optional|Uma lista de escopos separados por espaço para a solicitação de token.| 
+|scope|opcionais|Uma lista de escopos separados por espaço para a solicitação de token.| 
 
 #### <a name="example"></a>Exemplo 
  
@@ -351,7 +351,7 @@ Uma solicitação de token de acesso de serviço a serviço com um certificado c
 |assertion|necessárias|O valor do token usado na solicitação.| 
 |requested_token_use|necessárias|Especifica como a solicitação deve ser processada. No fluxo OBO, o valor deve ser definido como on_behalf_of| 
 |resource|necessárias|A ID de recurso fornecida ao registrar a primeira API Web como o aplicativo de servidor (aplicativo de camada intermediária). A ID do recurso deve ser a URL do segundo aplicativo de camada intermediária da API Web chamará em nome do cliente.|
-|scope|optional|Uma lista de escopos separados por espaço para a solicitação de token.|
+|scope|opcionais|Uma lista de escopos separados por espaço para a solicitação de token.|
 
 
 Observe que os parâmetros são quase iguais aos do caso da solicitação por segredo compartilhado, exceto pelo fato de que o parâmetro client_secret é substituído por dois parâmetros: client_assertion_type e client_assertion. 
@@ -449,7 +449,7 @@ client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 |Parâmetro|Obrigatório/Opcional|Descrição|
 |-----|-----|-----| 
 |client_id|necessárias|A ID do aplicativo (cliente) que o AD FS atribuído ao seu aplicativo.| 
-|scope|optional|Uma lista separada por espaços de escopos aos quais você deseja que o usuário concorde.| 
+|scope|opcionais|Uma lista separada por espaços de escopos aos quais você deseja que o usuário concorde.| 
 |client_secret|necessárias|O segredo do cliente que você gerou para seu aplicativo no portal de registro de aplicativo. O segredo do cliente deve ser codificado por URL antes de ser enviado.| 
 |grant_type|necessárias|Deve ser definido como `client_credentials`.|
 
@@ -474,8 +474,8 @@ Content-Type: application/x-www-form-urlencoded
 |client_assertion_type|necessárias|O valor deve ser definido como urn: IETF: params: OAuth: cliente-Assertion-Type: JWT-portador.| 
 |client_assertion|necessárias|Uma asserção (um token Web JSON) que você precisa para criar e assinar com o certificado que você registrou como credenciais para seu aplicativo.|  
 |grant_type|necessárias|Deve ser definido como `client_credentials`.|
-|client_id|optional|A ID do aplicativo (cliente) que o AD FS atribuído ao seu aplicativo. Isso faz parte do client_assertion, portanto, não é necessário transmiti-lo aqui.| 
-|scope|optional|Uma lista separada por espaços de escopos aos quais você deseja que o usuário concorde.| 
+|client_id|opcionais|A ID do aplicativo (cliente) que o AD FS atribuído ao seu aplicativo. Isso faz parte do client_assertion, portanto, não é necessário transmiti-lo aqui.| 
+|scope|opcionais|Uma lista separada por espaços de escopos aos quais você deseja que o usuário concorde.| 
 
 ### <a name="use-a-token"></a>Usar um token 
  
@@ -521,7 +521,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |grant_type|necessárias|Deve ser definido como senha.| 
 |username|necessárias|O endereço de email do usuário.| 
 |password|necessárias|A senha do usuário.| 
-|scope|optional|Uma lista de escopos separados por espaços.|
+|scope|opcionais|Uma lista de escopos separados por espaços.|
 
 ### <a name="successful-authentication-response"></a>Resposta de autenticação bem-sucedida 
 O exemplo a seguir mostra uma resposta de token bem-sucedida: 
@@ -578,7 +578,7 @@ scope=openid
 |Parâmetro|Condição|Descrição|
 |-----|-----|-----| 
 |client_id|necessárias|A ID do aplicativo (cliente) que o AD FS atribuído ao seu aplicativo.| 
-|scope|optional|Uma lista de escopos separados por espaços.|
+|scope|opcionais|Uma lista de escopos separados por espaços.|
 
 ### <a name="device-authorization-response"></a>Resposta de autorização do dispositivo 
 Uma resposta bem-sucedida será um objeto JSON que contém as informações necessárias para permitir que o usuário entre. 

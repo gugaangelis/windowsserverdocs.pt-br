@@ -1,8 +1,8 @@
 ---
 title: bitsadmin cancel
-description: Tópico de comandos do Windows para **bitsadmin Cancelar** - remove o trabalho da fila de transferência e exclui todos os arquivos temporários associados ao trabalho.
+description: Tópico de comandos do Windows para **Bitsadmin cancelar** – remove o trabalho da fila de transferência e exclui todos os arquivos temporários associados ao trabalho.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a4d1e2d6e4fd66cb525316f236d070fcd72d73f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 77e46d787359af43a37faba5d844bfec09730454
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814067"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381796"
 ---
 # <a name="bitsadmin-cancel"></a>bitsadmin cancel
 
@@ -34,15 +34,15 @@ bitsadmin /cancel <Job>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir remove a *myDownloadJob* trabalho da fila de transferência.
+O exemplo a seguir remove o trabalho *myDownloadJob* da fila de transferência.
 ```
 C:\>bitsadmin /cancel myDownloadJob
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

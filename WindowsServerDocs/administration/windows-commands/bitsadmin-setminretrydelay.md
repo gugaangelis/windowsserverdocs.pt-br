@@ -1,8 +1,8 @@
 ---
 title: bitsadmin setminretrydelay
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 640492cf690a934e3e3b8d0ecf8ca7a0d6a7dc2f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 379dfa8bfdc48969f268fd1c9544d3bee8bbe646
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813077"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380506"
 ---
 # <a name="bitsadmin-setminretrydelay"></a>bitsadmin setminretrydelay
 
-Define o comprimento mínimo de tempo, em segundos, que BITS espera depois de encontrar um erro transitório antes de tentar transferir o arquivo.
+Define o período mínimo de tempo, em segundos, que o BITS aguarda depois de encontrar um erro transitório antes de tentar transferir o arquivo.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,16 +34,16 @@ bitsadmin /SetMinRetryDelay <Job> <RetryDelay>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
 |RetryDelay|Um número representado em segundos.|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir define o atraso de repetição mínima do trabalho nomeado *myDownloadJob* para 35 segundos.
+O exemplo a seguir define o atraso mínimo de repetição para o trabalho chamado *myDownloadJob* a 35 segundos.
 ```
 C:\>bitsadmin /SetMinRetryDelay myDownloadJob 35
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

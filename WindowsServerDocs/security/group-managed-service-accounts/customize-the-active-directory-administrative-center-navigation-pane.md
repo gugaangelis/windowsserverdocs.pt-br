@@ -1,6 +1,6 @@
 ---
-title: Personalizar o painel de navegação do Centro Administrativo do Active Directory
-ms.prod: windows-server-threshold
+title: Personalizar o painel de navegação Centro Administrativo do Active Directory
+ms.prod: windows-server
 description: Segurança do Windows Server
 ms.custom: na
 ms.reviewer: na
@@ -11,33 +11,33 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: a4cab0246226cf22a1b7212b832a902783952407
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 63038014207acd3846cb8db20c7836718615df51
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446499"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403754"
 ---
-# <a name="customize-the-active-directory-administrative-center-navigation-pane"></a>Personalizar o painel de navegação do Centro Administrativo do Active Directory
+# <a name="customize-the-active-directory-administrative-center-navigation-pane"></a>Personalizar o painel de navegação Centro Administrativo do Active Directory
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-  Você pode procurar por meio do painel de navegação da Central Administrativa do Active Directory usando o modo de exibição de árvore, que é semelhante à árvore de console em computadores e usuários do Active Directory, ou por meio da exibição de lista.
+  Você pode navegar pelo painel de navegação Centro Administrativo do Active Directory usando o modo de exibição de árvore, que é semelhante à árvore de console Active Directory usuários e computadores, ou usando o modo de exibição de lista.
 
- Se você usar o modo de exibição de árvore ou a exibição de lista, você pode personalizar seu painel de navegação da Central Administrativa do Active Directory a qualquer momento adicionando vários contêineres do domínio local ou de qualquer domínio externo \(ou seja, um domínio diferente do domínio local que tem uma relação de confiança estabelecida com o domínio local\) ao painel de navegação como nós separados. Personalizando o painel de navegação da Central Administrativa do Active Directory pode fornecer acesso mais rápido aos objetos do Active Directory. Para obter mais informações, consulte [gerenciar diferentes domínios no Centro Administrativo do Active Directory](manage-different-domains-in-active-directory-administrative-center.md).
+ Se você usar a exibição de árvore ou a exibição de lista, poderá personalizar seu Centro Administrativo do Active Directory painel de navegação a qualquer momento adicionando vários contêineres do domínio local ou de qualquer domínio externo \(that for, um domínio diferente do domínio local que tem uma relação de confiança estabelecida com o domínio local @ no__t-1 para o painel de navegação como nós separados. Personalizar o painel de navegação Centro Administrativo do Active Directory pode fornecer acesso mais rápido a objetos Active Directory. Para obter mais informações, consulte [gerenciar domínios diferentes no centro administrativo do Active Directory](manage-different-domains-in-active-directory-administrative-center.md).
 
  Além disso, para personalizar ainda mais o painel de navegação, é possível renomear ou remover esses nós adicionados manualmente, criar duplicatas desses nós ou movê-los para cima ou para baixo no painel.
 
 > [!NOTE]
 >  Não é possível personalizar o nó de domínio local padrão.
 
-### <a name="to-customize-the-active-directory-administrative-center-navigation-pane"></a>Para personalizar o painel de navegação da Central Administrativa do Active Directory
+### <a name="to-customize-the-active-directory-administrative-center-navigation-pane"></a>Para personalizar o painel de navegação Centro Administrativo do Active Directory
 
-1. No painel de navegação da Central Administrativa do Active Directory, com o botão direito\-clique no nó que você deseja modificar. É possível modificar a posição ou o nome do nó ou criar uma duplicata do mesmo.
+1. No painel de navegação Centro Administrativo do Active Directory, clique com o botão direito @ no__t-0click no nó que você deseja modificar. É possível modificar a posição ou o nome do nó ou criar uma duplicata do mesmo.
 
 2. Clique em um dos seguintes comandos:
 
-   -   **Renomear**
+   -   **Nome**
 
    -   **Criar nó duplicado**
 
@@ -47,7 +47,7 @@ ms.locfileid: "66446499"
 
    -   **Mover para baixo**
 
-   Ao usar o modo de exibição de lista, você pode tirar proveito dos mais usados recentemente \(MRU\) lista. A lista MRU é exibida automaticamente sob um nó de navegação quando você visita pelo menos um contêiner neste nó de navegação. Você também pode exibir a lista MRU atual expandindo a barra estrutural na parte superior da janela Central Administrativa do Active Directory. A lista MRU sempre contém os três últimos contêineres que você visitou em um determinado nó de navegação. Toda vez que você selecionar um contêiner específico, ele será adicionado ao topo da lista MRU e o último contêiner da lista será removido.
+   Usando o modo de exibição de lista, você pode aproveitar a lista de @no__t 0MRU @ no__t-1 usada mais recentemente. A lista MRU aparece automaticamente em um nó de navegação quando você visita pelo menos um contêiner neste nó de navegação. Você também pode exibir a lista MRU atual expandindo a barra de navegação estrutural na parte superior da janela de Centro Administrativo do Active Directory. A lista MRU sempre contém os três últimos contêineres que você visitou em um nó de navegação específico. Toda vez que você selecionar um contêiner específico, ele será adicionado ao topo da lista MRU e o último contêiner da lista será removido.
 
   
 

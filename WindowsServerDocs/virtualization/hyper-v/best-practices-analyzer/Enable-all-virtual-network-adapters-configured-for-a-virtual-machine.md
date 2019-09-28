@@ -1,7 +1,7 @@
 ---
 title: Habilitar todos os adaptadores de rede virtual configurados para uma máquina virtual
-description: Versão online do texto para essa regra do analisador de práticas recomendadas.
-ms.prod: windows-server-threshold
+description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,12 +10,12 @@ ms.topic: article
 ms.assetid: fcd350b7-4240-4359-aadd-93e7ac4d314e
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: fbb1ef5283f6ccf8dfa355a09a86040be80f53e9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bdca25be4af41d0f6ddfafe885f8c2b1301b71fb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844227"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393651"
 ---
 # <a name="enable-all-virtual-network-adapters-configured-for-a-virtual-machine"></a>Habilitar todos os adaptadores de rede virtual configurados para uma máquina virtual
 
@@ -26,25 +26,25 @@ Para obter mais informações sobre práticas recomendadas e varreduras, consult
 |Propriedade|Detalhes|  
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
-|**Recurso do produto**|Hyper-V|  
-|**Severidade**|Aviso|  
-|**categoria**|Configuração|  
+|**Produto/recurso**|Hyper-V|  
+|**Severity**|Aviso|  
+|**Categorias**|Configuração|  
   
-Nas seções a seguir, itálico indica o texto de interface do usuário que aparece na ferramenta Analisador de práticas recomendadas para esse problema.  
+Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
 ## <a name="issue"></a>Problema  
   
-*Um ou mais adaptadores de rede podem ser desabilitados em uma máquina virtual.*  
+*Um ou mais adaptadores de rede podem estar desabilitados em uma máquina virtual.*  
   
 ## <a name="impact"></a>Impacto  
   
-*As seguintes máquinas virtuais pode não ter conectividade de rede:*  
+*As seguintes máquinas virtuais podem não ter conectividade de rede:*  
   
-\<lista de nomes de máquina virtual >  
+\<list de nomes de máquina virtual >  
   
 ## <a name="resolution"></a>Resolução  
   
-*Use o Gerenciador de dispositivos no sistema operacional convidado para habilitar todos os adaptadores de rede virtual. Se o adaptador não for necessário, use o Gerenciador do Hyper-V para removê-lo da máquina virtual.*  
+*Use Device Manager no sistema operacional convidado para habilitar todos os adaptadores de rede virtual. Se o adaptador não for necessário, use o Gerenciador do Hyper-V para removê-lo da máquina virtual.*  
   
 
 

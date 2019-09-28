@@ -1,40 +1,40 @@
 ---
 ms.assetid: 10d6723e-c857-43da-9d2d-acb5641d3da8
-title: Ingressar um computador em um domínio
+title: Adicionar um computador a um domínio
 description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 02df9659ee3a1121c0cee3f7c5fa21b91c36b87c
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 9f6d657397cb07d081a229135e3e6c97c7191164
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192046"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408348"
 ---
-# <a name="join-a-computer-to-a-domain"></a>Ingressar um computador em um domínio
+# <a name="join-a-computer-to-a-domain"></a>Adicionar um computador a um domínio
 
-Para serviços de Federação do Active Directory \(do AD FS\) funcionar, cada computador que funciona como um servidor de federação deve ser associado a um domínio. proxies de servidor de federação podem ser unidos a um domínio, mas isso não é um requisito.  
+Para Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1 para funcionar, cada computador que funciona como um servidor de Federação deve ser Unido a um domínio. os proxies do servidor de Federação podem ser associados a um domínio, mas isso não é um requisito.  
   
-Você não precisa adicionar um servidor Web a um domínio, se o servidor Web estiver hospedando declarações\-somente aplicativos com reconhecimento.  
+Você não precisa ingressar um servidor Web em um domínio se o servidor Web estiver hospedando declarações @ no__t-0aware somente aplicativos.  
   
-A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e associações de grupos em [domínio grupos padrão Local e](https://go.microsoft.com/fwlink/?LinkId=83477).   
+A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
-### <a name="to-join-a-computer-to-a-domain"></a>Para ingressar um computador a um domínio  
+### <a name="to-join-a-computer-to-a-domain"></a>Para ingressar um computador em um domínio  
   
-1.  Sobre o **inicie** tela, digite **painel de controle**, e, em seguida, pressione ENTER.  
+1.  Na tela **Iniciar** , digite **painel de controle**e pressione Enter.  
   
-2.  Navegue até **sistema e segurança**e, em seguida, clique em **sistema**.  
+2.  Navegue até **sistema e segurança**e clique em **sistema**.  
   
 3.  Em **configurações de grupo de trabalho, o domínio e o nome do computador**, clique em **alterar configurações**.  
   
 4.  Na aba **Nome do Computador** , clique em **Alterar**.  
   
-5.  Sob **membro**, clique em **domínio**, digite o nome do domínio que você deseja que este computador ingressar e, em seguida, clique em **Okey**.  
+5.  Em **membro de**, clique em **domínio**, digite o nome do domínio que você deseja que este computador ingresse e clique em **OK**.  
   
 6.  Clique em **OK** e reinicie o computador.  
   

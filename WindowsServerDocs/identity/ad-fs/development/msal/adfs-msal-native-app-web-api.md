@@ -6,14 +6,14 @@ ms.author: billmath
 manager: daveba
 ms.date: 08/09/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 588d717b8f03987b86af7dc0576d537ebd88c4ba
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ff76a6dffd66296a02cffcbd79bc6dfadc91c14a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867622"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407798"
 ---
 # <a name="scenario-native-app-calling-web-api"></a>Cenário: Aplicativo nativo chamando API Web 
 >Aplica-se a: AD FS 2019 e posterior 

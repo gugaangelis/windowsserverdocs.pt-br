@@ -1,8 +1,8 @@
 ---
-title: bde gerenciar tpm
-description: 'Tópico de comandos do Windows para * * *- '
+title: gerenciar o TPM do bde
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bc3cfa583866335d214282be08366854dec77d0f
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 577f5f2ecb85ac8c0c28fef2ca343635796454d2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280003"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373832"
 ---
-# <a name="manage-bde-tpm"></a>Gerenciar-bde: tpm
+# <a name="manage-bde-tpm"></a>Manage-bde: TPM
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 > 
 > [!IMPORTANT]
-> Não há suporte para esse comando para uso em computadores que executam o Windows 8, Windows Server 2012 ou sistemas operacionais posteriores. Para esses computadores, você pode usar o [os cmdlets de gerenciamento do TPM para o Windows PowerShell](https://docs.microsoft.com/powershell/module/trustedplatformmodule/).
-> Se você estiver usando este comando no computador executando o Windows 7 ou Windows Server 2008, você ainda pode configurar Trusted Platform Module (TPM do computador) usando este comando. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+> Esse comando não tem suporte para uso em computadores que executam o Windows 8, o Windows Server 2012 ou sistemas operacionais posteriores. Para esses computadores, você pode usar os [cmdlets de gerenciamento do TPM para o Windows PowerShell](https://docs.microsoft.com/powershell/module/trustedplatformmodule/).
+> Se você estiver usando esse comando no computador que executa o Windows 7 ou o Windows Server 2008, você ainda poderá configurar o Trusted Platform Module do computador (TPM) usando esse comando. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
 > ## <a name="syntax"></a>Sintaxe
 > ```
 > manage-bde -tpm [-turnon] [-takeownership <OwnerPassword>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
@@ -35,20 +35,20 @@ ms.locfileid: "67280003"
 > 
 > |    Parâmetro    |                                                                              Descrição                                                                               |
 > |-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-> |     -turnon     |              Habilita e ativa o TPM, permitindo que a senha de proprietário do TPM seja definido. Você também pode usar **-t** como uma versão abreviada desse comando.              |
-> | -takeownership  |                      Assume a propriedade do TPM, definindo uma senha de proprietário. Você também pode usar **-o** como uma versão abreviada desse comando.                       |
+> |     -ativação     |              Habilita e ativa o TPM, permitindo que a senha de proprietário do TPM seja definida. Você também pode usar **-t** como uma versão abreviada desse comando.              |
+> | -TakeOwnership  |                      Apropria-se do TPM definindo uma senha de proprietário. Você também pode usar **-o** como uma versão abreviada deste comando.                       |
 > | <OwnerPassword> |                                                      Representa a senha do proprietário que você especificar para o TPM.                                                       |
-> |  -computername  | Especifica que bde.exe gerenciar será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **- cn** como uma versão abreviada desse comando. |
-> |     <Name>      |    Representa o nome do computador no qual modificar a proteção do BitLocker. Os valores aceitos incluem o nome do computador NetBIOS e endereço IP do computador.     |
-> |    -? ou /?     |                                                               Exibe uma breve ajuda no prompt de comando.                                                               |
-> |   -help ou -h   |                                                             Exibe concluir ajuda no prompt de comando.                                                              |
+> |  -ComputerName  | Especifica que o Manage-bde. exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando. |
+> |     <Name>      |    Representa o nome do computador no qual a proteção do BitLocker será modificada. Os valores aceitos incluem o nome NetBIOS do computador e o endereço IP do computador.     |
+> |    -? ou/?     |                                                               Exibe a ajuda resumida no prompt de comando.                                                               |
+> |   -Help ou-h   |                                                             Exibe a ajuda completa no prompt de comando.                                                              |
 > 
-> ## <a name="BKMK_Examples"></a>Exemplos
-> O exemplo a seguir ilustra o uso de **- tpm** comando para ativar o TPM.
+> ## <a name="BKMK_Examples"></a>Disso
+> O exemplo a seguir ilustra o uso do comando **-TPM** para ativar o TPM.
 > ```
 > manage-bde  tpm -turnon
 > ```
-> O exemplo a seguir ilustra o uso de **tpm** comando para assumir a propriedade do TPM e definir a senha de proprietário 0wnerP@ss.
+> O exemplo a seguir ilustra o uso do comando **TPM** para apropriar-se do TPM e definir a senha do proprietário como 0wnerP@ss.
 > ```
 > manage-bde  tpm  takeownership 0wnerP@ss
 > ```

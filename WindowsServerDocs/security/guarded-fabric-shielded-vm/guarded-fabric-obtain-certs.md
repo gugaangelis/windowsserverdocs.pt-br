@@ -1,64 +1,64 @@
 ---
 title: Obter certificados para HGS
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: f4b4d1a8-bf6d-4881-9150-ddeca8b48038
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 2dc232eb7aeb8b0807a8e9989ae3dc893f925f66
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: b3e6aadbcbf2f2b826ca97d4ebb58c3736528b59
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447359"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386524"
 ---
 # <a name="obtain-certificates-for-hgs"></a>Obter certificados para HGS
 
 >Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016
 
-Quando você implanta o HGS, você precisará fornecer certificados de assinatura e criptografia são usados para proteger as informações confidenciais necessárias para iniciar o backup de uma VM blindada.
-Esses certificados nunca deixe HGS e são usadas somente para chaves VM blindado de descriptografar quando o host no qual eles estão em execução provou está íntegro.
-Locatários (os proprietários da VM) usam o público metade dos certificados para autorizar seu datacenter para executar suas VMs blindadas.
-Esta seção aborda as etapas necessárias para obter certificados de assinatura e criptografia compatíveis para HGS.
+Ao implantar o HGS, você será solicitado a fornecer certificados de assinatura e criptografia que são usados para proteger as informações confidenciais necessárias para iniciar uma VM blindada.
+Esses certificados nunca deixam HGS e são usados apenas para descriptografar chaves de VM blindadas quando o host no qual estão sendo executados tem comprovado que está íntegro.
+Os locatários (proprietários de VM) usam a metade pública dos certificados para autorizar seu datacenter a executar suas VMs blindadas.
+Esta seção aborda as etapas necessárias para obter certificados de criptografia e assinatura compatíveis para o HGS.
 
-## <a name="request-certificates-from-your-certificate-authority"></a>Solicitar certificados da autoridade de certificação
+## <a name="request-certificates-from-your-certificate-authority"></a>Solicitar certificados de sua autoridade de certificação
 
-Embora não seja necessário, é altamente recomendável que você obtenha seus certificados de autoridade de certificação confiável.
-Isso ajuda os proprietários das VM verificar que eles são autorizando o HGS servidor correto (ou seja, datacenter ou provedor de serviço) para executar suas VMs blindadas.
-Em um cenário empresarial, você pode optar por usar sua própria autoridade de certificação corporativa para emitir esses certificados.
-Provedores de serviços e hosters devem considerar o uso uma autoridade de certificação pública, bem conhecida, em vez disso.
+Embora não seja necessário, é altamente recomendável que você obtenha os certificados de uma autoridade de certificação confiável.
+Isso ajuda os proprietários da VM a verificar se eles estão autorizando o servidor HGS correto (ou seja, o provedor de serviços ou Datacenter) para executar suas VMs blindadas.
+Em um cenário empresarial, você pode optar por usar sua própria AC corporativa para emitir esses certificados.
+Hosters e provedores de serviço devem considerar o uso de uma autoridade de certificação pública e conhecida em vez disso.
 
-Certificados de assinatura e a criptografia devem ser emitidos com as seguintes propriedades certificiate (a menos que marcado como "recomendada"):
+Os certificados de assinatura e de criptografia devem ser emitidos com as seguintes propriedades de Certificiate (a menos que marcado como "recomendado"):
 
 Propriedade do modelo de certificado | Valor obrigatório 
 ------------------------------|----------------
-Provedor de criptografia               | Qualquer provedor de armazenamento de chaves (KSP). Provedores de serviços de criptografia herdados (CSPs) são **não** com suporte.
+Provedor de criptografia               | Qualquer provedor de armazenamento de chaves (KSP). **Não** há suporte para CSPs (provedores de serviços de criptografia) herdados.
 Algoritmo de chave                 | RSA
 Tamanho mínimo da chave              | 2048 bits
 Algoritmo de assinatura           | Recomendado: SHA256
-Uso de chave                     | Assinatura digital *e* codificação de dados
+Uso de chave                     | Assinatura digital *e codificação de* dados
 Uso avançado de chave            | Autenticação do servidor
-Política de renovação de chave            | Renove com a mesma chave. Renovando certificados HGS com chaves diferentes impedirá que as VMs blindadas sendo inicializado.
-Nome da entidade                  | Recomendado: da sua empresa nome ou endereço web. Essas informações serão mostradas para os proprietários da VM no Assistente de arquivo de dados de blindagem.
+Política de renovação de chave            | Renove com a mesma chave. A renovação de certificados HGS com chaves diferentes impedirá a inicialização de VMs blindadas.
+Nome da entidade                  | Recomendado: o nome ou endereço da Web da sua empresa. Essas informações serão mostradas aos proprietários da VM no assistente de arquivo de dados de blindagem.
 
-Esses requisitos se aplicam se você estiver usando certificados apoiados por hardware ou software.
-Por motivos de segurança, é recomendável que você crie suas chaves HGS em um módulo HSM (Hardware Security) para impedir que as chaves privadas que está sendo copiado para o sistema.
-Siga as orientações do seu fornecedor HSM para solicitar certificados com os atributos acima e não se esqueça de instalar e autorizar o KSP HSM em cada nó HGS.
+Esses requisitos se aplicam se você estiver usando certificados com suporte de hardware ou software.
+Por motivos de segurança, é recomendável que você crie suas chaves HGS em um módulo de segurança de hardware (HSM) para impedir que as chaves privadas sejam copiadas do sistema.
+Siga as orientações do fornecedor do HSM para solicitar certificados com os atributos acima e certifique-se de instalar e autorizar o KSP do HSM em cada nó do HGS.
 
-Cada nó HGS exigirão acesso à mesma assinatura e certificados de criptografia.
-Se você estiver usando certificados com apoio de software, você pode exportar seus certificados para um arquivo PFX com uma senha e permitir que o HGS gerenciar os certificados para você.
-Você também pode optar por instalar os certificados no repositório de certificados do computador local em cada nó HGS e forneça a impressão digital para HGS.
-Ambas as opções são explicadas as [inicializar o Cluster de HGS](guarded-fabric-initialize-hgs.md) tópico.
+Cada nó HGS exigirá acesso aos mesmos certificados de autenticação e criptografia.
+Se você estiver usando certificados com suporte de software, poderá exportar seus certificados para um arquivo PFX com uma senha e permitir que o HGS gerencie os certificados para você.
+Você também pode optar por instalar os certificados no repositório de certificados do computador local em cada nó HGS e fornecer a impressão digital para o HGS.
+Ambas as opções são explicadas no tópico [inicializar o cluster HgS](guarded-fabric-initialize-hgs.md) .
 
-## <a name="create-self-signed-certificates-for-test-scenarios"></a>Criar certificados auto-assinados para cenários de teste
+## <a name="create-self-signed-certificates-for-test-scenarios"></a>Criar certificados autoassinados para cenários de teste
 
-Se você estiver criando um ambiente de laboratório HGS e não tiver ou quiser usar uma autoridade de certificação, você pode criar certificados autoassinados.
-Você receberá um aviso ao importar as informações do certificado no Assistente de arquivo de dados de blindagem, mas toda a funcionalidade permanece o mesmo.
+Se você estiver criando um ambiente de laboratório HGS e não tiver ou desejar usar uma autoridade de certificação, poderá criar certificados autoassinados.
+Você receberá um aviso ao importar as informações de certificado no assistente de arquivo de dados de blindagem, mas todas as funcionalidades permanecerão as mesmas.
 
-Para criar certificados autoassinados e exportá-los para um arquivo PFX, execute os seguintes comandos do PowerShell:
+Para criar certificados autoassinados e exportá-los para um arquivo PFX, execute os seguintes comandos no PowerShell:
 
 ```powershell
 $certificatePassword = Read-Host -AsSecureString -Prompt "Enter a password for the PFX file"
@@ -74,18 +74,18 @@ Remove-Item $encCert.PSPath
 
 ## <a name="request-an-ssl-certificate"></a>Solicitar um certificado SSL
 
-Todas as chaves e informações confidenciais são transmitidos entre hosts Hyper-V e HGS é criptografado no nível da mensagem – ou seja, as informações são criptografadas com chaves conhecidas para HGS ou Hyper-V, impedindo que alguém espionando seu tráfego de rede e roube chaves em suas VMs.
-No entanto, se você tiver reqiurements de conformidade ou simplesmente prefere criptografar todas as comunicações entre o Hyper-V e o HGS, você pode configurar o HGS com um certificado SSL que criptografará todos os dados no nível do transporte.
+Todas as chaves e informações confidenciais transmitidas entre hosts Hyper-V e HGS são criptografadas no nível de mensagem, ou seja, as informações são criptografadas com chaves conhecidas para HGS ou Hyper-V, impedindo que alguém farejasse seu tráfego de rede e roubar chaves para suas VMs.
+No entanto, se você tiver reqiurements de conformidade ou simplesmente preferir criptografar todas as comunicações entre o Hyper-V e o HGS, poderá configurar o HGS com um certificado SSL que criptografará todos os dados no nível de transporte.
 
-Os hosts Hyper-V e nós HGS precisará confiar no certificado SSL que você fornecer, portanto, é recomendável que você solicitar o certificado SSL da autoridade de certificação empresarial. Ao solicitar o certificado, certifique-se de especificar o seguinte:
+Os hosts Hyper-V e os nós HGS precisarão confiar no certificado SSL fornecido, portanto, é recomendável que você solicite o certificado SSL de sua autoridade de certificação corporativa. Ao solicitar o certificado, certifique-se de especificar o seguinte:
 
-Propriedade do certificado SSL | Valor obrigatório
+Propriedade de certificado SSL | Valor obrigatório
 -------------------------|---------------
-Nome da entidade             | Nome do cluster do HGS (nome de rede distribuída). Essa será a concatenação do nome do seu serviço HGS fornecida para `Initialize-HgsServer` e seu nome de domínio do HGS.
-Nome alternativo da entidade | Se você usando um nome DNS diferente para acessar o cluster HGS (por exemplo, se ele estiver atrás de um balanceador de carga), certifique-se de incluir os nomes DNS no campo de SAN de sua solicitação de certificado.
+Nome da entidade             | Nome do cluster HGS (nome de rede distribuída). Essa será a concatenação do nome do serviço HGS fornecido para `Initialize-HgsServer` e seu nome de domínio HGS.
+Nome alternativo da entidade | Se você estiver usando um nome DNS diferente para acessar seu cluster HGS (por exemplo, se estiver atrás de um balanceador de carga), certifique-se de incluir esses nomes DNS no campo SAN de sua solicitação de certificado.
 
-As opções para especificar esse certificado ao inicializar o servidor HGS são abordadas [configurar o primeiro nó HGS](guarded-fabric-initialize-hgs.md).
-Você também pode adicionar ou alterar o certificado SSL em um momento posterior usando o [HgsServer conjunto](https://docs.microsoft.com/powershell/module/hgsserver/set-hgsserver?view=win10-ps) cmdlet.
+As opções para especificar esse certificado ao inicializar o servidor HGS são cobertas em [Configurar o primeiro nó HgS](guarded-fabric-initialize-hgs.md).
+Você também pode adicionar ou alterar o certificado SSL em um momento posterior usando o cmdlet [set-HgsServer](https://docs.microsoft.com/powershell/module/hgsserver/set-hgsserver?view=win10-ps) .
 
 ## <a name="next-step"></a>Próximas etapas
 

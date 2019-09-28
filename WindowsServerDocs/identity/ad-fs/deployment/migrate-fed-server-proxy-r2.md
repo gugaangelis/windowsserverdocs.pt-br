@@ -1,44 +1,44 @@
 ---
-title: Migrar o servidor de proxy do AD FS 2.0 federation
-description: Fornece informações sobre como migrar um servidor de proxy do AD FS para Windows Server 2012 R2.
+title: Migrar o servidor proxy de Federação AD FS 2,0
+description: Fornece informações sobre como migrar um servidor proxy AD FS para o Windows Server 2012 R2.
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 07/10/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a2eb6c670e704564bed49486b8950dab96da8a80
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 57367cadd3c7ce3d031c6eb3a53c333422543dae
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444575"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359375"
 ---
-# <a name="migrate-the-active-directory-federation-services-proxy-server-to-windows-server-2012-r2"></a>Migrar o servidor de Proxy de serviços de Federação do Active Directory para o Windows Server 2012 R2
+# <a name="migrate-the-active-directory-federation-services-proxy-server-to-windows-server-2012-r2"></a>Migrar o servidor proxy Serviços de Federação do Active Directory (AD FS) para o Windows Server 2012 R2
 
-No Active Directory Federation Services (AD FS) no Windows Server 2012 R2, a função de um proxy do servidor de Federação é tratada por um novo serviço de função acesso remoto chamado Proxy de aplicativo Web. No Windows Server 2012 R2, para habilitar o AD FS para acessibilidade de fora da rede corporativa, você pode implantar um ou mais Proxies de aplicativo Web. No entanto, você não pode migrar um proxy do servidor de Federação em execução no Windows Server 2008 R2 ou Windows Server 2012 para um Proxy de aplicativo Web em execução no Windows Server 2012 R2.  
+No Serviços de Federação do Active Directory (AD FS) (AD FS) no Windows Server 2012 R2, a função de um proxy de servidor de Federação é tratada por um novo serviço de função de acesso remoto chamado proxy de aplicativo Web. No Windows Server 2012 R2, para habilitar sua AD FS para acessibilidade de fora da rede corporativa, você pode implantar um ou mais proxies de aplicativo Web. No entanto, você não pode migrar um proxy de servidor de Federação em execução no Windows Server 2008 R2 ou no Windows Server 2012 para um proxy de aplicativo Web em execução no Windows Server 2012 R2.  
   
 > [!IMPORTANT]
->  Não há suporte para a migração de um proxy do servidor de Federação em execução no Windows Server 2008, Windows Server 2008 R2 ou Windows Server 2012 para um Proxy de aplicativo Web em execução no Windows Server 2012 R2.  
+>  Não há suporte para a migração de um proxy de servidor de Federação em execução no Windows Server 2008, no Windows Server 2008 R2 ou no Windows Server 2012 para um proxy de aplicativo Web em execução no Windows Server 2012 R2.  
   
-Se você quiser configurar o AD FS em um farm migrado do Windows Server 2012 R2 para acesso à extranet, você deve executar uma implantação nova de um ou mais computadores de Proxy de aplicativo Web como parte da infraestrutura do AD FS.  
+Se desejar configurar AD FS em um farm migrado do Windows Server 2012 R2 para acesso à extranet, você deverá executar uma implantação nova de um ou mais computadores de proxy de aplicativo Web como parte de sua infraestrutura de AD FS.  
   
 Para planejar a implantação do Proxy de Aplicativo Web, é possível analisar as informações nos tópicos a seguir:  
   
-- [Planejar a infraestrutura de Proxy de aplicativo Web](https://technet.microsoft.com/library/dn383648.aspx)  
+- [Planejar a infraestrutura do proxy de aplicativo Web](https://technet.microsoft.com/library/dn383648.aspx)  
   
-- [Planejar o servidor de Proxy de aplicativo Web](https://technet.microsoft.com/library/dn383647.aspx)  
+- [Planejar o servidor proxy de aplicativo Web](https://technet.microsoft.com/library/dn383647.aspx)  
   
   Para implantar o Proxy de Aplicativo Web, você pode seguir os procedimentos dos tópicos a seguir:  
   
-- [Configurar a infraestrutura de Proxy de aplicativo Web](https://technet.microsoft.com/library/dn383644.aspx)  
+- [Configurar a infraestrutura de proxy de aplicativo Web](https://technet.microsoft.com/library/dn383644.aspx)  
   
-- [Instalar e configurar o servidor de Proxy de aplicativo Web](https://technet.microsoft.com/library/dn383662.aspx)  
+- [Instalar e configurar o servidor proxy de aplicativo Web](https://technet.microsoft.com/library/dn383662.aspx)  
   
 ## <a name="next-steps"></a>Próximas etapas
- [Migrar Serviços de função de serviços de Federação do Active Directory para o Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
- [Preparando para migrar o servidor de Federação do AD FS](prepare-migrate-ad-fs-server-r2.md)   
- [Migrando o servidor de Federação do AD FS](migrate-ad-fs-fed-server-r2.md)    
- [Verificando a migração do AD FS para o Windows Server 2012 R2](verify-ad-fs-migration.md)
+ [Migrar Serviços de Federação do Active Directory (AD FS) serviços de função para o Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
+ [Preparando para migrar o servidor de Federação AD FS](prepare-migrate-ad-fs-server-r2.md)   
+ [Migrando o servidor de Federação de AD FS](migrate-ad-fs-fed-server-r2.md)    
+ [Verificando a migração de AD FS para o Windows Server 2012 R2](verify-ad-fs-migration.md)
 

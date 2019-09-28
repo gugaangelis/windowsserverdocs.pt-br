@@ -7,14 +7,14 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 9c8efee98cc8128443d9c835ccc5cb6b7695a094
-ms.sourcegitcommit: a9625758fbfb066494fe62e0da5f9570ccb738a3
+ms.openlocfilehash: 64b479663dfc930ec9a6d2055b4c9ad5755b30fc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68952466"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389973"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>Erro de replicação 1753 Não há mais pontos de extremidade disponíveis do mapeador de ponto de extremidade
 
@@ -96,7 +96,7 @@ O comando **replicate Now** no Active Directory sites e serviços retorna "não 
 Clicar com o botão direito do mouse no objeto de conexão de um controlador de domínio de origem e escolher **replicar agora** falha com "não há mais pontos de extremidade disponíveis no mapeador de Endpoint".
 A mensagem de erro na tela é mostrada abaixo:
 
-Texto do título do diálogo: Texto da mensagem de diálogo replicate Now: O erro a seguir ocorreu durante a tentativa de sincronizar o \<contexto de nomenclatura% nome da partição de diretório \<% > do controlador de domínio \<DC de origem > ao controlador de domínio DC de destino >:
+Texto do título do diálogo: Texto da mensagem de diálogo replicate Now: O erro a seguir ocorreu durante a tentativa de sincronizar o contexto de nomenclatura \<% nome da partição de diretório% > do controlador de domínio \<Source DC > para o controlador de domínio \<Destination DC >:
 
 Não há mais pontos de extremidade disponíveis no mapeador de pontos de extremidades.
 A operação não continuará
@@ -150,7 +150,7 @@ Verifique se o serviço que está registrando seu serviço com o mapeador de pon
 
 Verificar se o cliente RPC (DC de destino) está conectado ao servidor RPC pretendido (DC de origem)
 
-Todos os DCs em uma floresta Active Directory comum registram um registro CNAME do controlador de domínio no _ msdcs. \<domínio raiz da floresta > zona DNS, independentemente de qual domínio reside na floresta. O registro CNAME do DC é derivado do atributo objectGUID do objeto de configurações NTDS para cada controlador de domínio.
+Todos os DCs em uma floresta Active Directory comum registram um registro CNAME do controlador de domínio no _ msdcs. o domínio raiz \<forest > zona DNS, independentemente de qual domínio eles residem na floresta. O registro CNAME do DC é derivado do atributo objectGUID do objeto de configurações NTDS para cada controlador de domínio.
 
 Ao executar operações baseadas em replicação, um DC de destino consulta o DNS para o registro CNAME de DCs de origem. O registro CNAME contém o nome do computador totalmente qualificado do DC de origem que é usado para derivar o endereço IP de DCs de origem por meio da pesquisa de cache do cliente DNS, pesquisa de arquivo do host/LMHost, registro A/AAAA do host no DNS ou WINS.
 
@@ -196,7 +196,7 @@ Se os testes acima ou um rastreamento de rede não mostrar uma consulta de nome 
 * Verifique se o aplicativo de servidor (Active Directory et al) foi registrado com o mapeador de ponto de extremidade no servidor RPC (DC de origem)
 * Active Directory usa uma combinação de portas bem conhecidas e registradas dinamicamente. Esta tabela lista portas e protocolos bem conhecidos usados por Active Directory controladores de domínio.
 
-| Aplicativo do servidor RPC | Port | TCP | UDP |
+| Aplicativo do servidor RPC | Porta | TCP | UDP |
 | --- | --- | --- | --- |
 | Servidor DNS | 53 | X | X |
 | Kerberos | 88 | X | X |
@@ -299,7 +299,7 @@ Resumo Este exemplo falhou porque um mapeamento de host para IP inválido (no ar
 
 ## <a name="related-topics"></a>Tópicos relacionados
 
-* [Solução de problemas Active Directory operações que falham com o erro 1753: Não há mais pontos de extremidade disponíveis no mapeador de pontos de extremidades.](https://support.microsoft.com/kb/2089874)
+* [Troubleshooting Active Directory operações que falham com o erro 1753: Não há mais pontos de extremidade disponíveis no mapeador de pontos de extremidades. ](https://support.microsoft.com/kb/2089874)
 * [Artigo 839880 da base de problemas ao solucionar erros do mapeador de ponto de extremidade RPC usando as ferramentas de suporte do Windows Server 2003 do CD do produto](https://support.microsoft.com/kb/839880)
 * [Artigo 832017 do KB visão geral do serviço e requisitos de porta de rede para o sistema Windows Server](https://support.microsoft.com/kb/832017/)
 * [Artigo 224196 da base de conhecimento restringindo o tráfego de replicação Active Directory e o tráfego RPC de cliente para uma porta específica](https://support.microsoft.com/kb/224196/)

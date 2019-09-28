@@ -1,8 +1,8 @@
 ---
-title: WBADMIN iniciar recuperação
-description: 'Tópico de comandos do Windows para * * *- '
+title: Wbadmin iniciar recuperação
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9f24c9dfeb0ce87474e58d3bd2bce8b68e31cb63
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: edb287573dc76619502faf58018f48c464140629
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823277"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362351"
 ---
-# <a name="wbadmin-start-recovery"></a>WBADMIN iniciar recuperação
+# <a name="wbadmin-start-recovery"></a>Wbadmin iniciar recuperação
 
 
 
 Executa uma operação de recuperação com base nos parâmetros que você especificar.
 
-Para executar uma recuperação com este subcomando, você deve ser um membro dos **operadores de Backup** grupo ou o **administradores** grupo, ou você deve ter sido recebido as permissões apropriadas. Além disso, você deve executar **wbadmin** em um prompt de comando elevado. (Para abrir um prompt de comando com privilégios elevados, clique em **inicie**, clique com botão direito **Prompt de comando**e, em seguida, clique em **executar como administrador**.)
+Para executar uma recuperação com este subcomando, você deve ser membro do grupo **operadores de backup** ou do grupo **Administradores** ou ter recebido as permissões apropriadas. Além disso, você deve executar o **Wbadmin** em um prompt de comandos com privilégios elevados. (Para abrir um prompt de comando com privilégios elevados, clique em **Iniciar**, clique com o botão direito do mouse em **prompt de comando**e clique em **Executar como administrador**.)
 
 Para obter exemplos de como usar esse subcomando, consulte [exemplos](#BKMK_Examples).
 
@@ -52,56 +52,56 @@ wbadmin start recovery
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|-versão|Especifica o identificador da versão do backup para recuperar no MM/DD/AAAA-formato hh: mm. Se você não souber o identificador de versão, digite **wbadmin obter versões**.|
-|-items|Especifica uma lista delimitada por vírgulas de volumes, aplicativos, arquivos ou pastas para recuperar.</br>-Se **- itemtype** é **Volume**, você pode especificar apenas um único volume — fornecendo a letra de unidade do volume, o ponto de montagem de volume ou o nome de volume baseada em GUID.</br>-Se **- itemtype** é **aplicativo**, você pode especificar apenas um único aplicativo. Para ser recuperado, o aplicativo deve ter registrado com o Backup do Windows Server. Você também pode usar o valor **ADIFM** para recuperar uma instalação do Active Directory. Consulte os comentários para obter mais informações.</br>-Se **- itemtype** é **arquivo**, você pode especificar arquivos ou pastas, mas eles devem fazer parte do mesmo volume e eles devem estar sob a mesma pasta pai.|
-|-itemtype|Especifica o tipo de itens que serão recuperados. Deve ser **Volume**, **App**, ou **arquivo**.|
-|-backupTarget|Especifica o local de armazenamento que contém o backup que você deseja recuperar. Esse parâmetro é útil quando o local é diferente de onde os backups desse computador geralmente são armazenados.|
-|-machine|Especifica o nome do computador que você deseja recuperar o backup. Esse parâmetro é útil quando vários computadores tiverem sido copiados para o mesmo local. Ele deve ser usado quando o **- backupTarget** parâmetro for especificado.|
-|-recoveryTarget|Especifica o local para restaurar para. Esse parâmetro é útil se esse local é diferente do local que foi feito backup anteriormente. Ele também pode ser usado para restaurações de volumes, arquivos ou aplicativos. Se você estiver restaurando um volume, você pode especificar a letra de unidade do volume do volume alternativo. Se você estiver restaurando um arquivo ou aplicativo, você pode especificar um local de recuperação alternativo.|
-|-recursivo|Válido somente quando a recuperação de arquivos. Recupera os arquivos nas pastas e todos os arquivos subordinados para as pastas especificadas. Por padrão, somente os arquivos que residem diretamente nas pastas especificadas são recuperados.|
-|-overwrite|Válido somente quando a recuperação de arquivos. Especifica a ação a ser tomada quando um arquivo que está sendo recuperado já existir no mesmo local.</br>-   **Ignorar** faz com que o Backup do Windows Server ignorar o arquivo existente e continuar com a recuperação do próximo arquivo.</br>-   **CreateCopy** faz com que o Backup do Windows Server criar uma cópia do arquivo existente para que o arquivo existente não será modificado.</br>-   **Substituir** faz com que o Backup do Windows Server para substituir o arquivo existente com o arquivo do backup.|
-|-notRestoreAcl|Válido somente quando a recuperação de arquivos. Especifica as listas de controle de acesso (ACLs) segurança dos arquivos sendo recuperados a partir do backup para restauração não. Por padrão, as ACLs de segurança são restauradas (o valor padrão é **verdadeira)**. Se esse parâmetro for usado, as ACLs para os arquivos restaurados serão herdadas do local para o qual os arquivos estão sendo restaurados.|
-|-skipBadClusterCheck|Válido somente quando a recuperação de volumes. Ignora a verificação de discos que você está fazendo a recuperação para obter informações de cluster incorreta. Se você estiver recuperando para um servidor alternativo ou hardware, é recomendável que você não use esse parâmetro. Você pode executar manualmente o comando **/chkdsk b** nesses discos a qualquer momento para verificá-los para clusters inválidos e, em seguida, atualize as informações do sistema de arquivos adequadamente.</br>Importante: Até que você execute **chkdsk** conforme descrito, os clusters inválidos relatados em seu sistema recuperado podem não ser precisos.|
-|-noRollForward|Válido somente quando a recuperação de aplicativos. Permite recuperação point-in-time anterior de um aplicativo se a versão mais recente de backups é selecionada. Para outras versões do aplicativo que não são a recuperação point-in-time anterior, mais recente é feita como o padrão.|
+|-versão|Especifica o identificador de versão do backup a ser recuperado no formato MM/DD/AAAA-HH: MM. Se você não souber o identificador de versão, digite **Wbadmin obter versões**.|
+|-itens|Especifica uma lista delimitada por vírgulas de volumes, aplicativos, arquivos ou pastas a serem recuperados.</br>-Se **-ItemType** for **volume**, você poderá especificar apenas um único volume — fornecendo a letra da unidade do volume, o ponto de montagem do volume ou o nome do volume baseado em GUID.</br>-Se **-ItemType** for um **aplicativo**, você poderá especificar apenas um único aplicativo. Para ser recuperado, o aplicativo deve ter sido registrado com Backup do Windows Server. Você também pode usar o valor **ADIFM** para recuperar uma instalação do Active Directory. Consulte comentários em para obter mais informações.</br>-Se **-ItemType** for um **arquivo**, você pode especificar arquivos ou pastas, mas eles devem fazer parte do mesmo volume e devem estar na mesma pasta pai.|
+|-ItemType|Especifica o tipo de itens a serem recuperados. Deve ser **volume**, **aplicativo**ou **arquivo**.|
+|-backupTarget|Especifica o local de armazenamento que contém o backup que você deseja recuperar. Esse parâmetro é útil quando o local é diferente de onde os backups deste computador geralmente são armazenados.|
+|-computador|Especifica o nome do computador para o qual você deseja recuperar o backup. Esse parâmetro é útil quando é feito o backup de vários computadores no mesmo local. Ele deve ser usado quando o parâmetro **-backupTarget** é especificado.|
+|-recoveryTarget|Especifica o local para o qual restaurar. Esse parâmetro será útil se esse local for diferente do local em que o backup foi feito anteriormente. Ele também pode ser usado para restaurações de volumes, arquivos ou aplicativos. Se você estiver restaurando um volume, poderá especificar a letra da unidade de volume do volume alternativo. Se você estiver restaurando um arquivo ou aplicativo, poderá especificar um local de recuperação alternativo.|
+|-recursivo|Válido somente ao recuperar arquivos. Recupera os arquivos nas pastas e todos os arquivos subordinados às pastas especificadas. Por padrão, somente os arquivos que residem diretamente nas pastas especificadas são recuperados.|
+|-substituir|Válido somente ao recuperar arquivos. Especifica a ação a ser tomada quando um arquivo que está sendo recuperado já existir no mesmo local.</br>-   **Skip** faz backup do Windows Server ignorar o arquivo existente e continuar a recuperação do próximo arquivo.</br>-   **CreateCopy** faz backup do Windows Server criar uma cópia do arquivo existente para que o arquivo existente não seja modificado.</br>a**substituição** -    faz backup do Windows Server substituir o arquivo existente pelo arquivo do backup.|
+|-notRestoreAcl|Válido somente ao recuperar arquivos. Especifica para não restaurar as listas de controle de acesso (ACLs) de segurança dos arquivos que estão sendo recuperados do backup. Por padrão, as ACLs de segurança são restauradas (o valor padrão é **true)** . Se esse parâmetro for usado, as ACLs para os arquivos restaurados serão herdadas do local para o qual os arquivos estão sendo restaurados.|
+|-skipBadClusterCheck|Válido somente ao recuperar volumes. Ignora a verificação dos discos que você está recuperando para informações de cluster inválidos. Se você estiver recuperando para um servidor ou hardware alternativo, recomendamos que você não use esse parâmetro. Você pode executar manualmente o comando **chkdsk/b** nesses discos a qualquer momento para verificá-los em busca de clusters inválidos e, em seguida, atualizar as informações do sistema de arquivos de acordo.</br>Importante: Até que você execute **chkdsk** conforme descrito, os clusters inválidos relatados em seu sistema recuperado podem não ser precisos.|
+|-noRollForward|Válido somente ao recuperar aplicativos. Permite a recuperação pontual anterior de um aplicativo se a versão mais recente dos backups estiver selecionada. Para outras versões do aplicativo que não são as mais recentes, a recuperação pontual anterior é feita como o padrão.|
 |-quiet|Executa o subcomando sem prompts para o usuário.|
 
 ## <a name="remarks"></a>Comentários
 
--   Para exibir uma lista de itens que estão disponíveis para recuperação de uma versão de backup específica, use **wbadmin obter itens**. Se um volume não tem uma letra de unidade ou ponto de montagem no momento do backup, este subcomando retornaria um nome de volume baseada em GUID deve ser usado para recuperar o volume.
--   Quando o **- itemtype** é **App**, você pode usar um valor de **ADIFM** para **-item** para executar uma instalação da operação de mídia para recuperar todos os o dados relacionados necessários para os serviços de domínio do Active Directory. **ADIFM** cria uma cópia do banco de dados do Active Directory, do registro e do estado SYSVOL e, em seguida, salva essas informações no local especificado por **- recoveryTarget**. Use esse parâmetro somente quando **recoveryTarget -** for especificado.
+-   Para exibir uma lista de itens que estão disponíveis para recuperação de uma versão de backup específica, use **Wbadmin Get Items**. Se um volume não tiver um ponto de montagem ou uma letra da unidade no momento do backup, esse subcomando retornará um nome de volume baseado em GUID que deveria ser usado para recuperar o volume.
+-   Quando o **-ItemType** é um **aplicativo**, você pode usar um valor de **ADIFM** para **-Item** para executar uma operação de instalação de mídia para recuperar todos os dados relacionados necessários para Active Directory Domain Services. O **ADIFM** cria uma cópia do banco de dados do Active Directory, do registro e do estado do SYSVOL e, em seguida, salva essas informações no local especificado por **-recoveryTarget**. Use este parâmetro somente quando **-recoveryTarget** for especificado.
 
 >     [!NOTE]
 >     Before using **wbadmin** to perform an install from media operation, you should consider using the **ntdsutil** command because **ntdsutil** only copies the minimum amount of data needed, and it uses a more secure data transport method.
 
-## <a name="BKMK_Examples"></a>Exemplos
+## <a name="BKMK_Examples"></a>Disso
 
-Para executar uma recuperação do backup 31 de março de 2013, feitos às 9h00, de d: de volume, digite:
+Para executar uma recuperação do backup de 31 de março de 2013, obtido às 9:00 A.M., do volume d:, digite:
 ```
 wbadmin start recovery -version:03/31/2013-09:00 -itemType:Volume -items:d:
 ```
-Para executar uma recuperação de unidade d do backup 31 de março de 2013, feitos às 9h00, do registro, digite:
+Para executar uma recuperação na unidade d do backup de 31 de março de 2013, obtido às 9:00 A.M., do registro, digite:
 ```
 wbadmin start recovery -version:03/31/2013-09:00 -itemType:App -items:Registry -recoverytarget:d:\
 ```
-Para executar uma recuperação do backup 31 de março de de 2013, feitos às 9h00, d:\folder e pastas subordinadas a d:\folder, digite:
+Para executar uma recuperação do backup de 31 de março de 2013, obtido às 9:00 A.M., do d:\folder e das pastas subordinadas a d:\folder, digite:
 ```
 wbadmin start recovery -version:03/31/2013-09:00 -itemType:File -items:d:\folder -recursive
 ```
-Para executar uma recuperação do backup de 31 de março de 2013, feitos às 9h00, do volume \\ \\? \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\, tipo:
+Para executar uma recuperação do backup a partir de 31 de março de 2013, obtido às 9:00 A.M., do volume \\ @ no__t-1? \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963} \, tipo:
 ```
 wbadmin start recovery -version:03/31/2013-09:00 -itemType:Volume 
 -items:\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
 ```
-Para executar uma recuperação do backup de 30 de abril de 2013, feitos às 9h00, da pasta compartilhada \\ \\servername\share de server01, digite:
+Para executar uma recuperação do backup de 30 de abril de 2013, obtido às 9:00 A.M., da pasta compartilhada \\ @ no__t-1servername\share de Server01, digite:
 ```
 wbadmin start recovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
--   [Start-WBFileRecovery](https://technet.microsoft.com/library/jj902457.aspx) cmdlet
--   [Iniciar WBHyperVRecovery](https://technet.microsoft.com/library/jj902463.aspx) cmdlet
--   [Start-WBSystemStateRecovery](https://technet.microsoft.com/library/jj902449.aspx) cmdlet
--   [Iniciar WBVolumeRecovery](https://technet.microsoft.com/library/jj902470.aspx) cmdlet
+-   Cmdlet [Start-WBFileRecovery](https://technet.microsoft.com/library/jj902457.aspx)
+-   Cmdlet [Start-WBHyperVRecovery](https://technet.microsoft.com/library/jj902463.aspx)
+-   Cmdlet [Start-WBSystemStateRecovery](https://technet.microsoft.com/library/jj902449.aspx)
+-   Cmdlet [Start-WBVolumeRecovery](https://technet.microsoft.com/library/jj902470.aspx)

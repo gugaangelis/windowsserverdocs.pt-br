@@ -1,36 +1,36 @@
 ---
 ms.assetid: ea015cbc-dea9-4c72-a9d8-d6c826d07608
-title: Apêndice H - protegendo grupos e contas de Administrador Local
+title: Apêndice H-protegendo contas e grupos de administrador local
 description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 71eea3f623968172076708dbea34d5bbf4a07684
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7e0cff62851250009d8af6ec7d87ec8191dcaec0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858687"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408635"
 ---
-# <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>Apêndice h: Protegendo grupos e contas de Administrador Local
+# <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>Apêndice H: Protegendo contas e grupos de administrador local
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 
-## <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>Apêndice h: Protegendo grupos e contas de Administrador Local  
-Em todas as versões do Windows atualmente em suporte base, a conta de administrador local está desabilitada por padrão, o que torna a conta inutilizável para pass-the-hash e outros ataques de roubo de credenciais. No entanto, em ambientes que contêm sistemas operacionais herdados ou contas de administrador locais foram habilitadas, essas contas podem ser usadas como descrito anteriormente para propagar o comprometimento entre servidores membro e estações de trabalho. Cada conta de administrador local e o grupo devem ser protegidos conforme descrito nas instruções passo a passo que seguem.  
+## <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>Apêndice H: Protegendo contas e grupos de administrador local  
+Em todas as versões do Windows atualmente no suporte base, a conta de administrador local é desabilitada por padrão, o que torna a conta inutilizável para os ataques Pass-the-hash e outros roubos de credenciais. No entanto, em ambientes que contêm sistemas operacionais herdados ou em que as contas de administrador local foram habilitadas, essas contas podem ser usadas conforme descrito anteriormente para propagar o comprometimento entre servidores membros e estações de trabalho. Cada conta de administrador local e grupo deve ser protegido conforme descrito nas instruções passo a passo a seguir.  
 
-Para obter informações detalhadas sobre as considerações em proteger grupos de administrador interno (BA), consulte [Implementando modelos administrativos com menos privilégios](../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md).  
+Para obter informações detalhadas sobre as considerações sobre como proteger grupos de administradores internos (BA), consulte [implementando modelos administrativos de privilégios mínimos](../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md).  
 
-#### <a name="controls-for-local-administrator-accounts"></a>Controles para contas de Administrador Local  
-Para a conta de administrador local em cada domínio na floresta, você deve configurar as seguintes configurações:  
+#### <a name="controls-for-local-administrator-accounts"></a>Controles para contas de administrador local  
+Para a conta de administrador local em cada domínio em sua floresta, você deve definir as seguintes configurações:  
 
--   Configurar GPOs para restringir o uso da conta do administrador do domínio em sistemas ingressados em domínio  
-    -   Em um ou mais GPOs que você crie e vincule ao servidor de estação de trabalho e membro UOs em cada domínio, adicione a conta de administrador para os seguintes direitos de usuário no **Policies\ de configurações do computador \ Diretivas \ Configurações de segurança Atribuições de direitos do usuário**:  
+-   Configurar GPOs para restringir o uso da conta de administrador do domínio em sistemas ingressados no domínio  
+    -   Em um ou mais GPOs que você cria e vincula a estações de trabalho e a UOs de servidor membro em cada domínio, adicione a conta de administrador aos seguintes direitos de usuário no computador \ \ \ \ \ \ todos os **direitos Atribuições**:  
 
         -   Negar o acesso a este computador a partir da rede  
 
@@ -40,227 +40,227 @@ Para a conta de administrador local em cada domínio na floresta, você deve con
 
         -   Negar o logon por meio dos Serviços de Área de Trabalho Remota  
 
-#### <a name="step-by-step-instructions-to-secure-local-administrators-groups"></a>Instruções passo a passo para proteger grupos de administradores locais  
+#### <a name="step-by-step-instructions-to-secure-local-administrators-groups"></a>Instruções passo a passo para proteger grupos locais de administradores  
 
-###### <a name="configuring-gpos-to-restrict-administrator-account-on-domain-joined-systems"></a>Configurando GPOs para restringir a conta de administrador em sistemas ingressados em domínio  
+###### <a name="configuring-gpos-to-restrict-administrator-account-on-domain-joined-systems"></a>Configurando GPOs para restringir a conta de administrador em sistemas ingressados no domínio  
 
-1.  Na **Gerenciador de servidores**, clique em **ferramentas**e clique em **Group Policy Management**.  
+1.  Em **Gerenciador do servidor**, clique em **ferramentas**e clique em **Gerenciamento de política de grupo**.  
 
-2.  Na árvore de console, expanda <Forest>\Domains\\<Domain>e então **objetos de diretiva de grupo** (onde <Forest> é o nome da floresta e <Domain> é o nome do domínio em que você deseja Defina a política de grupo).  
+2.  Na árvore de console, expanda <Forest> \ Domains @ no__t-1 @ no__t-2 e, em seguida, **política de grupo objetos** (em que <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja definir o política de grupo).  
 
-3.  Na árvore de console, clique com botão direito **Group Policy Objects**e clique em **New**.  
+3.  Na árvore de console, clique com o botão direito do mouse em **política de grupo objetos**e clique em **novo**.  
 
-    ![grupos e contas de administrador local seguro](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_101.png)  
+    ![proteger contas e grupos do administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_101.png)  
 
-4.  No **novo GPO** caixa de diálogo, digite **<GPO Name>** e clique em **Okey** (onde <GPO Name> é o nome desse GPO).  
+4.  Na caixa de diálogo **novo GPO** , digite **<GPO Name>** e clique em **OK** (em que <GPO Name> é o nome desse GPO).  
 
-    ![grupos e contas de administrador local seguro](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_102.png)  
+    ![proteger contas e grupos do administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_102.png)  
 
-5.  No painel de detalhes, clique com botão direito **<GPO Name>** e clique em **editar**.  
+5.  No painel de detalhes, clique com o botão direito do mouse em **<GPO Name>** e clique em **Editar**.  
 
-6.  Navegue até **computador \ Diretivas \ Configurações de segurança \ diretivas**e clique em **atribuição de direitos de usuário**.  
+6.  Navegue até **computador \ \ Diretivas**\ \ políticas e clique em **atribuição de direitos de usuário**.  
 
-    ![grupos e contas de administrador local seguro](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_103.png)  
+    ![proteger contas e grupos do administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_103.png)  
 
-7.  Configure os direitos de usuário para impedir que a conta de administrador local acesse servidores membros e estações de trabalho na rede, fazendo o seguinte:  
+7.  Configure os direitos de usuário para impedir que a conta de administrador local acesse servidores membros e estações de trabalho na rede fazendo o seguinte:  
 
-    1.  Clique duas vezes em **negar acesso a este computador pela rede** e selecione **definir estas configurações de política**.  
+    1.  Clique duas vezes em **negar acesso a este computador da rede** e selecione **definir estas configurações de política**.  
 
-    2.  Clique em **adicionar usuário ou grupo**, digite o nome de usuário da conta de administrador local e clique em **Okey**. Esse nome de usuário será **administrador**, o padrão quando o Windows está instalado.  
+    2.  Clique em **Adicionar usuário ou grupo**, digite o nome de usuário da conta de administrador local e clique em **OK**. Esse nome de usuário será **administrador**, o padrão quando o Windows for instalado.  
 
-        ![grupos e contas de administrador local seguro](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_104.png)  
+        ![proteger contas e grupos do administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_104.png)  
 
     3.  Clique em OK.  
 
         > [!IMPORTANT]  
-        > Quando você adiciona a conta de administrador para essas configurações, você especifique se você estiver configurando uma conta de administrador local ou uma conta de administrador de domínio como você rotular as contas. Por exemplo, para adicionar a conta de administrador do domínio TAILSPINTOYS esses negar direitos, você deveria navegar até a conta de administrador para o domínio TAILSPINTOYS, que será exibido como TAILSPINTOYS\Administrator. Se você digitar **administrador** nessas configurações de direitos de usuário no Editor de objeto de diretiva de grupo, você restringirá a conta de administrador local em cada computador ao qual o GPO é aplicado, conforme descrito anteriormente.  
+        > Ao adicionar a conta de administrador a essas configurações, você especifica se está configurando uma conta de administrador local ou uma conta de administrador de domínio por meio da identificação das contas. Por exemplo, para adicionar a conta de administrador do domínio TAILSPINTOYS a esses direitos de negação, você navegará para a conta de administrador do domínio TAILSPINTOYS, que apareceria como TAILSPINTOYS\Administrator. Se você digitar **administrador** nessas configurações de direitos de usuário na editor de objeto de política de grupo, restringirá a conta de administrador local em cada computador ao qual o GPO é aplicado, conforme descrito anteriormente.  
 
-8.  Configure os direitos de usuário para impedir que a conta de administrador local de fazer logon como um trabalho em lotes, fazendo o seguinte:  
+8.  Configure os direitos de usuário para impedir que a conta de administrador local faça logon como um trabalho em lotes fazendo o seguinte:  
 
     1.  Clique duas vezes em **Negar logon como um trabalho em lotes** e selecione **definir estas configurações de política**.  
 
-    2.  Clique em **adicionar usuário ou grupo**, digite o nome de usuário da conta de administrador local e clique em **Okey**. Esse nome de usuário será **administrador**, o padrão quando o Windows está instalado.  
+    2.  Clique em **Adicionar usuário ou grupo**, digite o nome de usuário da conta de administrador local e clique em **OK**. Esse nome de usuário será **administrador**, o padrão quando o Windows for instalado.  
 
-        ![grupos e contas de administrador local seguro](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_105.png)  
+        ![proteger contas e grupos do administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_105.png)  
 
     3.  Clique em **OK**.  
 
         > [!IMPORTANT]  
-        > Quando você adiciona a conta de administrador para essas configurações, você especifique se você estiver configurando conta de administrador local ou conta de administrador de domínio como você rotular as contas. Por exemplo, para adicionar a conta de administrador do domínio TAILSPINTOYS esses negar direitos, você deveria navegar até a conta de administrador para o domínio TAILSPINTOYS, que será exibido como TAILSPINTOYS\Administrator. Se você digitar **administrador** nessas configurações de direitos de usuário no Editor de objeto de diretiva de grupo, você restringirá a conta de administrador local em cada computador ao qual o GPO é aplicado, conforme descrito anteriormente.  
+        > Ao adicionar a conta de administrador a essas configurações, você especifica se está configurando a conta de administrador local ou a conta de administrador de domínio por meio da identificação das contas. Por exemplo, para adicionar a conta de administrador do domínio TAILSPINTOYS a esses direitos de negação, você navegará para a conta de administrador do domínio TAILSPINTOYS, que apareceria como TAILSPINTOYS\Administrator. Se você digitar **administrador** nessas configurações de direitos de usuário na editor de objeto de política de grupo, restringirá a conta de administrador local em cada computador ao qual o GPO é aplicado, conforme descrito anteriormente.  
 
-9. Configure os direitos de usuário para impedir que a conta de administrador local de fazer logon como um serviço da seguinte maneira:  
+9. Configure os direitos de usuário para impedir que a conta de administrador local faça logon como um serviço fazendo o seguinte:  
 
     1.  Clique duas vezes em **Negar logon como um serviço** e selecione **definir estas configurações de política**.  
 
-    2.  Clique em **adicionar usuário ou grupo**, digite o nome de usuário da conta de administrador local e clique em **Okey**. Esse nome de usuário será **administrador**, o padrão quando o Windows está instalado.  
+    2.  Clique em **Adicionar usuário ou grupo**, digite o nome de usuário da conta de administrador local e clique em **OK**. Esse nome de usuário será **administrador**, o padrão quando o Windows for instalado.  
 
-        ![grupos e contas de administrador local seguro](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_106.png)  
-
-    3.  Clique em **OK**.  
-
-        > [!IMPORTANT]  
-        > Quando você adiciona a conta de administrador para essas configurações, você especifique se você estiver configurando conta de administrador local ou conta de administrador de domínio como você rotular as contas. Por exemplo, para adicionar a conta de administrador do domínio TAILSPINTOYS esses negar direitos, você deveria navegar até a conta de administrador para o domínio TAILSPINTOYS, que será exibido como TAILSPINTOYS\Administrator. Se você digitar **administrador** nessas configurações de direitos de usuário no Editor de objeto de diretiva de grupo, você restringirá a conta de administrador local em cada computador ao qual o GPO é aplicado, conforme descrito anteriormente.  
-
-10. Configure os direitos de usuário para impedir que a conta de administrador local acesse servidores membro e estações de trabalho por meio dos serviços de área de trabalho remota, fazendo o seguinte:  
-
-    1.  Clique duas vezes em **Negar logon pelos serviços de área de trabalho remota** e selecione **definir estas configurações de política**.  
-
-    2.  Clique em **adicionar usuário ou grupo**, digite o nome de usuário da conta de administrador local e clique em **Okey**. Esse nome de usuário será **administrador**, o padrão quando o Windows está instalado.  
-
-        ![grupos e contas de administrador local seguro](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_107.png)  
+        ![proteger contas e grupos do administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_106.png)  
 
     3.  Clique em **OK**.  
 
         > [!IMPORTANT]  
-        > Quando você adiciona a conta de administrador para essas configurações, você especifique se você estiver configurando conta de administrador local ou conta de administrador de domínio como você rotular as contas. Por exemplo, para adicionar a conta de administrador do domínio TAILSPINTOYS esses negar direitos, você deveria navegar até a conta de administrador para o domínio TAILSPINTOYS, que será exibido como TAILSPINTOYS\Administrator. Se você digitar **administrador** nessas configurações de direitos de usuário no Editor de objeto de diretiva de grupo, você restringirá a conta de administrador local em cada computador ao qual o GPO é aplicado, conforme descrito anteriormente.  
+        > Ao adicionar a conta de administrador a essas configurações, você especifica se está configurando a conta de administrador local ou a conta de administrador de domínio por meio da identificação das contas. Por exemplo, para adicionar a conta de administrador do domínio TAILSPINTOYS a esses direitos de negação, você navegará para a conta de administrador do domínio TAILSPINTOYS, que apareceria como TAILSPINTOYS\Administrator. Se você digitar **administrador** nessas configurações de direitos de usuário na editor de objeto de política de grupo, restringirá a conta de administrador local em cada computador ao qual o GPO é aplicado, conforme descrito anteriormente.  
 
-11. Para sair **Editor de gerenciamento de diretiva de grupo**, clique em **arquivo**e clique em **sair**.  
+10. Configure os direitos de usuário para impedir que a conta de administrador local acesse servidores membros e estações de trabalho via Serviços de Área de Trabalho Remota fazendo o seguinte:  
 
-12. Na **gerenciamento de política de grupo**, vincule o GPO para o servidor membro e a estação de trabalho UOs, fazendo o seguinte:  
+    1.  Clique duas vezes em **Negar logon por meio de serviços de área de trabalho remota** e selecione **definir estas configurações de política**.  
 
-    1.  Navegue até a <Forest>\Domains\\ <Domain> (onde <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja definir a política de grupo).  
+    2.  Clique em **Adicionar usuário ou grupo**, digite o nome de usuário da conta de administrador local e clique em **OK**. Esse nome de usuário será **administrador**, o padrão quando o Windows for instalado.  
 
-    2.  A unidade Organizacional que o GPO será aplicado a e clique com o botão direito **vincular um GPO existente**.  
+        ![proteger contas e grupos do administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_107.png)  
 
-        ![grupos e contas de administrador local seguro](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_108.png)  
+    3.  Clique em **OK**.  
 
-    3.  Selecione o GPO que você criou e clique em **Okey**.  
+        > [!IMPORTANT]  
+        > Ao adicionar a conta de administrador a essas configurações, você especifica se está configurando a conta de administrador local ou a conta de administrador de domínio por meio da identificação das contas. Por exemplo, para adicionar a conta de administrador do domínio TAILSPINTOYS a esses direitos de negação, você navegará para a conta de administrador do domínio TAILSPINTOYS, que apareceria como TAILSPINTOYS\Administrator. Se você digitar **administrador** nessas configurações de direitos de usuário na editor de objeto de política de grupo, restringirá a conta de administrador local em cada computador ao qual o GPO é aplicado, conforme descrito anteriormente.  
 
-        ![grupos e contas de administrador local seguro](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_109.png)  
+11. Para sair **Editor de gerenciamento de política de grupo**, clique em **arquivo**e em **sair**.  
 
-    4.  Crie links para todas as outras UOs que contêm as estações de trabalho.  
+12. No **Gerenciamento de política de grupo**, VINCULE o GPO ao servidor membro e às UOs de estação de trabalho fazendo o seguinte:  
+
+    1.  Navegue até o <Forest> \ Domains @ no__t-1 @ no__t-2 (em que <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja definir o Política de Grupo).  
+
+    2.  Clique com o botão direito do mouse na UO à qual o GPO será aplicado e clique em **vincular um GPO existente**.  
+
+        ![proteger contas e grupos do administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_108.png)  
+
+    3.  Selecione o GPO que você criou e clique em **OK**.  
+
+        ![proteger contas e grupos do administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_109.png)  
+
+    4.  Crie links para todas as outras UOs que contêm estações de trabalho.  
 
     5.  Crie links para todas as outras UOs que contêm servidores membro.  
 
 #### <a name="verification-steps"></a>Etapas de verificação  
 
-##### <a name="verify-deny-access-to-this-computer-from-the-network-gpo-settings"></a>Verifique as configurações de GPO "Negar acesso a este computador pela rede"  
+##### <a name="verify-deny-access-to-this-computer-from-the-network-gpo-settings"></a>Verificar as configurações de GPO "negar acesso a este computador pela rede"  
 
-Em qualquer servidor membro ou estação de trabalho que não é afetada pelas alterações de GPO (como um servidor de salto), tente acessar um servidor membro ou estação de trabalho na rede que é afetada pelas alterações de GPO. Para verificar as configurações de GPO, tente mapear a unidade do sistema usando o **NET USE** comando.  
+De qualquer servidor membro ou estação de trabalho que não seja afetada pelas alterações de GPO (como um servidor de salto), tente acessar um servidor membro ou estação de trabalho na rede que é afetada pelas alterações de GPO. Para verificar as configurações do GPO, tente mapear a unidade do sistema usando o comando **net use** .  
 
-1.  Fazer logon localmente para qualquer servidor membro ou estação de trabalho que não é afetada pelas alterações de GPO.  
+1.  Faça logon localmente em qualquer servidor membro ou estação de trabalho que não seja afetada pelas alterações do GPO.  
 
-2.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando o **botões** barra for exibida, clique em **pesquisa**.  
+2.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando a **barra** de botões for exibida, clique em **Pesquisar**.  
 
-3.  No **pesquisa** , digite **prompt de comando**, clique com botão direito **Prompt de comando**e, em seguida, clique em **executar como administrador** para abrir o alto prompt de comando.  
+3.  Na caixa de **pesquisa** , digite **prompt de comando**, clique com o botão direito do mouse em prompt de **comando**e clique em **Executar como administrador** para abrir um prompt de comando com privilégios elevados.  
 
-4.  Quando solicitado a aprovar a elevação, clique em **Sim**.  
+4.  Quando for solicitado a aprovar a elevação, clique em **Sim**.  
 
-    ![grupos e contas de administrador local seguro](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_110.png)  
+    ![proteger contas e grupos do administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_110.png)  
 
-5.  No **Prompt de comando** , digite **net use \\ \\ <Server Name>\c$ /user:<Server Name>\administrator.**, onde <Server Name> é o nome do membro servidor ou estação de trabalho que você está tentando acessar pela rede.  
+5.  Na janela do **prompt de comando** , digite **net use \\ @ no__t-3 @ no__t-4\c $/User: <Server Name> \ Administrator**, em que <Server Name> é o nome do servidor membro ou da estação de trabalho que você está tentando acessar pela rede.  
 
     > [!NOTE]  
-    > As credenciais de administrador locais devem ser do mesmo sistema que você está tentando acessar pela rede.  
+    > As credenciais de administrador local devem ser do mesmo sistema que você está tentando acessar pela rede.  
 
-6.  Captura de tela a seguir mostra a mensagem de erro deve aparecer.  
+6.  A captura de tela a seguir mostra a mensagem de erro que deve aparecer.  
 
-    ![grupos e contas de administrador local seguro](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_111.png)  
+    ![proteger contas e grupos do administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_111.png)  
 
-##### <a name="verify-deny-log-on-as-a-batch-job-gpo-settings"></a>Verifique as configurações de GPO "Negar logon como um trabalho em lotes"  
-De qualquer servidor membro ou estação de trabalho afetados pelas alterações de GPO, faça logon localmente.  
+##### <a name="verify-deny-log-on-as-a-batch-job-gpo-settings"></a>Verificar as configurações de GPO "Negar logon como um trabalho em lotes"  
+De qualquer servidor membro ou estação de trabalho afetada pelas alterações do GPO, faça logon localmente.  
 
 ###### <a name="create-a-batch-file"></a>Criar um arquivo em lotes  
 
-1.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando o **botões** barra for exibida, clique em **pesquisa**.  
+1.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando a **barra** de botões for exibida, clique em **Pesquisar**.  
 
-2.  No **pesquisa** , digite **bloco de notas**e clique em **o bloco de notas**.  
+2.  Na caixa de **pesquisa** , digite **bloco de notas**e clique em **bloco de notas**.  
 
-3.  Na **bloco de notas**, digite **dir c:**.  
+3.  No **bloco de notas**, digite **dir c:** .  
 
-4.  Clique em **arquivo**e clique em **Salvar como**.  
+4.  Clique em **arquivo**e em **salvar como**.  
 
-5.  No **nome do arquivo** , digite  **<Filename>. bat** (onde <Filename> é o nome do novo arquivo em lotes).  
+5.  Na caixa **nome do arquivo** , digite **@no__t -2. bat** (em que <Filename> é o nome do novo arquivo em lotes).  
 
 ###### <a name="schedule-a-task"></a>Agendar uma tarefa  
 
-1.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando o **botões** barra for exibida, clique em **pesquisa**.  
+1.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando a **barra** de botões for exibida, clique em **Pesquisar**.  
 
-2.  No **pesquisa** caixa, digite Agendador de tarefas e clique em **Agendador de tarefas**.  
+2.  Na caixa de **pesquisa** , digite Agendador de tarefas e clique em **Agendador de tarefas**.  
 
     > [!NOTE]  
-    > Em computadores que executam Windows 8, além de **pesquisa** , digite **agendar tarefas**e clique em **agendar tarefas**.  
+    > Em computadores que executam o Windows 8, na caixa de **pesquisa** , digite **agendar tarefas**e clique em **agendar tarefas**.  
 
 3.  Clique em **ação**e clique em **criar tarefa**.  
 
-4.  No **criar tarefa** caixa de diálogo, digite **<Task Name>** (onde <Task Name> é o nome da nova tarefa).  
+4.  Na caixa de diálogo **criar tarefa** , digite **<Task Name>** (em que <Task Name> é o nome da nova tarefa).  
 
-5.  Clique o **ações** guia e, em seguida, clique em **New**.  
+5.  Clique na guia **ações** e clique em **novo**.  
 
-6.  No **ação** , clique em **iniciar um programa**.  
+6.  No campo **ação** , clique em **Iniciar um programa**.  
 
-7.  No **programa/script** , clique em **procurar**, localize e selecione o arquivo de lote criado na **criar um arquivo em lotes** seção e, em seguida, clique em **abrir**.  
+7.  No campo **programa/script** , clique em **procurar**, localize e selecione o arquivo em lotes criado na seção **criar um arquivo em lotes** e clique em **abrir**.  
 
 8.  Clique em **OK**.  
 
 9. Clique na guia **Geral**.  
 
-10. No **opções de segurança** , clique em **Alterar usuário ou grupo**.  
+10. No campo **Opções de segurança** , clique em **Alterar usuário ou grupo**.  
 
-11. Digite o nome da conta de administrador do sistema local, clique em **verificar nomes**e clique em **Okey**.  
+11. Digite o nome da conta de administrador local do sistema, clique em **verificar nomes**e clique em **OK**.  
 
-12. Selecione **Executar estando o usuário conectado ou não** e **não armazenam senha**. A tarefa só terá acesso aos recursos do computador local.  
+12. Selecione **executar se o usuário estiver conectado ou não** e não **armazenar a senha**. A tarefa só terá acesso aos recursos do computador local.  
 
 13. Clique em **OK**.  
 
-14. Deve aparecer uma caixa de diálogo, a conta de usuário solicitando credenciais para executar a tarefa.  
+14. Uma caixa de diálogo deve ser exibida, solicitando credenciais de conta de usuário para executar a tarefa.  
 
-15. Depois de inserir as credenciais, clique em **Okey**.  
+15. Depois de inserir as credenciais, clique em **OK**.  
 
-16. Deve aparecer uma caixa de diálogo semelhante à seguinte.  
+16. Uma caixa de diálogo semelhante à seguinte deve aparecer.  
 
-    ![grupos e contas de administrador local seguro](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_112.png)  
+    ![proteger contas e grupos do administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_112.png)  
 
-###### <a name="verify-deny-log-on-as-a-service-gpo-settings"></a>Verifique as configurações de GPO "Negar logon como um serviço"  
+###### <a name="verify-deny-log-on-as-a-service-gpo-settings"></a>Verificar as configurações de GPO "Negar logon como um serviço"  
 
-1.  De qualquer servidor membro ou estação de trabalho afetados pelas alterações de GPO, faça logon localmente.  
+1.  De qualquer servidor membro ou estação de trabalho afetada pelas alterações do GPO, faça logon localmente.  
 
-2.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando o **botões** barra for exibida, clique em **pesquisa**.  
+2.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando a **barra** de botões for exibida, clique em **Pesquisar**.  
 
-3.  No **pesquisa** , digite **services**e clique em **serviços**.  
+3.  Na caixa de **pesquisa** , digite **Serviços**e clique em **Serviços**.  
 
-4.  Localize e clique duas vezes em **Spooler de impressão**.  
-
-5.  Clique na guia **Fazer Logon**.  
-
-6.  Na **fazer logon como** , clique em **esta conta**.  
-
-7.  Clique em **navegue**, digite a conta de administrador do sistema local, clique em **verificar nomes**e clique em **Okey**.  
-
-8.  No **senha** e **Confirmar senha** campos, digite a senha da conta selecionada e clique em **Okey**.  
-
-9. Clique em **Okey** mais três vezes.  
-
-10. Clique com botão direito **Spooler de impressão** e clique em **reiniciar**.  
-
-11. Quando o serviço for reiniciado, deve aparecer uma caixa de diálogo semelhante à seguinte.  
-
-    ![grupos e contas de administrador local seguro](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_113.png)  
-
-###### <a name="revert-changes-to-the-printer-spooler-service"></a>Reverter alterações para o serviço de Spooler da impressora  
-
-1.  De qualquer servidor membro ou estação de trabalho afetados pelas alterações de GPO, faça logon localmente.  
-
-2.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando o **botões** barra for exibida, clique em **pesquisa**.  
-
-3.  No **pesquisa** , digite **services**e clique em **serviços**.  
-
-4.  Localize e clique duas vezes em **Spooler de impressão**.  
+4.  Localize e clique duas vezes em **spooler de impressão**.  
 
 5.  Clique na guia **Fazer Logon**.  
 
-6.  No **fazer logon como**: campo, selecione **Local Systemaccount**e clique em **Okey**.  
+6.  Em **fazer logon como** campo, clique **nessa conta**.  
 
-###### <a name="verify-deny-log-on-through-remote-desktop-services-gpo-settings"></a>Verifique as configurações de GPO "Negar logon pelos serviços de área de trabalho remota"  
+7.  Clique em **procurar**, digite a conta de administrador local do sistema, clique em **verificar nomes**e clique em **OK**.  
 
-1.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando o **botões** barra for exibida, clique em **pesquisa**.  
+8.  Nos campos **senha** e **Confirmar senha** , digite a senha da conta selecionada e clique em **OK**.  
 
-2.  No **pesquisa** , digite **conexão de área de trabalho remota**e clique em **Conexão de área de trabalho remota**.  
+9. Clique em **OK** mais três vezes.  
 
-3.  No **computador** , digite o nome do computador que você deseja se conectar a e, em seguida, clique em **Connect**. (Você também pode digitar o endereço IP em vez do nome do computador).  
+10. Clique com o botão direito do mouse em **spooler de impressão** e clique em **reiniciar**.  
 
-4.  Quando solicitado, forneça as credenciais para o local do sistema **administrador** conta.  
+11. Quando o serviço for reiniciado, uma caixa de diálogo semelhante à seguinte deverá ser exibida.  
 
-5.  Deve aparecer uma caixa de diálogo semelhante à seguinte.  
+    ![proteger contas e grupos do administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_113.png)  
 
-    ![grupos e contas de administrador local seguro](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_114.png)  
+###### <a name="revert-changes-to-the-printer-spooler-service"></a>Reverter alterações para o serviço spooler de impressora  
+
+1.  De qualquer servidor membro ou estação de trabalho afetada pelas alterações do GPO, faça logon localmente.  
+
+2.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando a **barra** de botões for exibida, clique em **Pesquisar**.  
+
+3.  Na caixa de **pesquisa** , digite **Serviços**e clique em **Serviços**.  
+
+4.  Localize e clique duas vezes em **spooler de impressão**.  
+
+5.  Clique na guia **Fazer Logon**.  
+
+6.  No campo **fazer logon como**:, selecione **local SystemAccount**e clique em **OK**.  
+
+###### <a name="verify-deny-log-on-through-remote-desktop-services-gpo-settings"></a>Verifique as configurações de GPO "Negar logon por meio do Serviços de Área de Trabalho Remota"  
+
+1.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando a **barra** de botões for exibida, clique em **Pesquisar**.  
+
+2.  Na caixa de **pesquisa** , digite **conexão de área de trabalho remota**e clique em **conexão de área de trabalho remota**.  
+
+3.  No campo **computador** , digite o nome do computador ao qual você deseja se conectar e clique em **conectar**. (Você também pode digitar o endereço IP em vez do nome do computador.)  
+
+4.  Quando solicitado, forneça credenciais para a conta de **administrador** local do sistema.  
+
+5.  Uma caixa de diálogo semelhante à seguinte deve aparecer.  
+
+    ![proteger contas e grupos do administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_114.png)  

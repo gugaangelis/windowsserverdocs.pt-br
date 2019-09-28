@@ -1,35 +1,35 @@
 ---
-title: Solucionando problemas do AD FS - detecção de Loop
+title: Solução de problemas AD FS detecção de loop
 description: Este documento descreve como solucionar problemas de detecção de loop
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 02/21/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: cc8eeb11e44da3b8f26b1ab94143c189bca9ed38
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2f8842dc53756cc4f65b6d6794a8c4952e111c00
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830907"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385336"
 ---
-# <a name="ad-fs-troubleshooting---loop-detection"></a>Solucionando problemas do AD FS - detecção de Loop 
+# <a name="ad-fs-troubleshooting---loop-detection"></a>Solução de problemas AD FS detecção de loop 
  
-Um loop no AD FS ocorre quando uma terceira parte confiável redireciona de volta para o AD FS e rejeita um token de segurança válido continuamente.
+O loop em AD FS ocorre quando uma terceira parte confiável rejeita continuamente um token de segurança válido e redireciona de volta para AD FS.
 
 ## <a name="loop-detection-cookie"></a>Cookie de detecção de loop
-Para evitar que isso aconteça, o AD FS tiver implementado o que é chamado um cookie de detecção de loop. Por padrão, o AD FS grava um cookie aos clientes passivo do web denominados **MSISLoopDetectionCookie**. Esse cookie contém um valor de carimbo de hora e um número de tokens emitidos de valor.  Isso permite que o AD FS para controlar a frequência com que e como muitas vezes, um cliente visitou o serviço de Federação em um período específico.
+Para evitar que isso aconteça, AD FS implementou o que é chamado de cookie de detecção de loop. Por padrão, AD FS grava um cookie para clientes Web passivos chamados **MSISLoopDetectionCookie**. Esse cookie contém um valor de carimbo de data/hora e um número de tokens emitidos.  Isso permite que AD FS controle a frequência e quantas vezes um cliente visitou o Serviço de Federação dentro de um período de tempo específico.
 
-Se um cliente passivo visitar o serviço de federação para um token de cinco (5) vezes dentro de 20 segundos, AD FS gera o seguinte erro:
+Se um cliente passivo visitar a Serviço de Federação por um token cinco (5) vezes em 20 segundos, AD FS lançará o seguinte erro:
 
-**MSIS7042: A mesma sessão do navegador cliente fez '{0}'solicitações no último'{1}' segundos. Entre em contato com seu administrador para obter detalhes.**
+**MSIS7042: A mesma sessão do navegador do cliente fez solicitações ' {0} ' nos últimos ' {1} ' segundos. Contate o administrador para obter detalhes.**
 
-Inserindo em loops infinitos geralmente é causado por um aplicativo que não esteja consumindo com êxito o token emitido pelo AD FS de terceira parte se comportando e o aplicativo está enviando o cliente passivo para o AD FS, repetidamente, para um novo token.  O AD FS será emitir o cliente passivo um novo token de cada vez, desde que eles não excedem 5 solicitações em até 20 segundos. 
+A entrada em loops infinitos geralmente é causada por um aplicativo de terceira parte confiável de comportamento inadequado que não consome com êxito o token emitido por AD FS, e o aplicativo está enviando o cliente passivo de volta para AD FS, repetidamente, para um novo token.  AD FS irá emitir o cliente passivo um novo token a cada vez, desde que ele não exceda 5 solicitações dentro de 20 segundos. 
 
 ## <a name="adjusting-the-loop-detection-cookie"></a>Ajustando o cookie de detecção de loop
-Você pode usar o PowerShell para alterar o número de tokens emitidos de valor e o valor de timespan.
+Você pode usar o PowerShell para alterar o número de tokens emitidos e o valor de TimeSpan.
 
 ```powershell
 Set-AdfsProperties -LoopDetectionMaximumTokensIssuedInterval 5  -LoopDetectionTimeIntervalInSeconds 20
@@ -38,14 +38,14 @@ O valor mínimo para **LoopDetectionMaximumTokensIssuedInterval** é 1.
 
 O valor mínimo para **LoopDetectionTimeIntervalInSeconds** é 5.
 
-Você também pode desabilitar a detecção de loops, quando você estiver realizando o teste de desempenho.
+Você também pode desabilitar a detecção de loop quando estiver fazendo testes de desempenho.
 
 ```powershell
 Set-AdfsProperties -EnableLoopDetection $false
 ```
 
 >[!IMPORTANT]
->É recomendável não desabilitar permanentemente a detecção de loops, pois isso impede que os usuários de entrar em loop infinito de estados.
+>Não é recomendável desabilitar permanentemente a detecção de loops, pois isso impede que os usuários entrem em Estados de loop infinito.
 
 
 ## <a name="next-steps"></a>Próximas etapas

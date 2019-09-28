@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getnotifyflags
-description: Tópico de comandos do Windows para **getnotifyflags bitsadmin** -recupera os sinalizadores de notificação para o trabalho especificado.
+description: O tópico de comandos do Windows para **Bitsadmin getnotifyflags** -recupera os sinalizadores de notificação para o trabalho especificado.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 690e94805c5e61d96603e4ade102fb3a4bda409e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 56ee3a30050b6cc934b35bab24e9508911ea250e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889277"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381482"
 ---
 # <a name="bitsadmin-getnotifyflags"></a>bitsadmin getnotifyflags
 
@@ -36,21 +36,21 @@ bitsadmin /GetNotifyFlags <Job>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
 
 ## <a name="remarks"></a>Comentários
 
 O trabalho pode conter um ou mais dos seguintes sinalizadores de notificação.
 
-|---|---| | 0x001 | Gerar um evento quando o trabalho de todos os arquivos foram transferidos. | | 0x002 | Gerar um evento quando ocorre um erro. | | 0x004 | Desabilitar as notificações. | | 0x008 | Gerar um evento quando o trabalho é modificado ou o progresso de transferência é feito. |
+|-----|-----| | 0x001 | Gerar um evento quando todos os arquivos no trabalho forem transferidos. | | 0x002 | Gerar um evento quando ocorrer um erro. | | 0x004 | Desabilitar notificações. | | 0x008 | Gerar um evento quando o trabalho for modificado ou o progresso da transferência for feito. |
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir recupera os sinalizadores de notificação do trabalho nomeado *myDownloadJob*.
+O exemplo a seguir recupera os sinalizadores de notificação para o trabalho chamado *myDownloadJob*.
 ```
 C:\>bitsadmin /GetNotifyFlags myDownloadJob
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

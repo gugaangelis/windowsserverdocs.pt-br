@@ -1,29 +1,29 @@
 ---
 title: Controlar a visibilidade da sua ferramenta em uma solução
-description: Controlar a visibilidade da sua ferramenta em uma solução Windows Admin Center SDK (projeto Paulo)
+description: Controlar a visibilidade da sua ferramenta em uma solução SDK do centro de administração do Windows (projeto Honolulu)
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 3cce07ba5b3d2cc89f1363bbb2af5acd048c0466
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.prod: windows-server
+ms.openlocfilehash: 440ba3d11da671beedc2c2fb90caa3e176f83877
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445945"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385325"
 ---
 # <a name="control-your-tools-visibility-in-a-solution"></a>Controlar a visibilidade da sua ferramenta em uma solução #
 
->Aplica-se a: Windows Admin Center, Windows Admin Center Preview
+>Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
 
-Pode haver ocasiões quando você deseja excluir (ou ocultar) sua extensão ou a ferramenta da lista de ferramentas disponíveis. Por exemplo, se sua ferramenta se destina apenas Windows Server 2016 (versões mais antigas não), não convém um usuário que se conecta a um servidor Windows Server 2012 R2 para ver sua ferramenta em todos os. (Imagine a experiência do usuário – eles clicar nela, aguarde até que a ferramenta para carregar, apenas para receber uma mensagem de que seus recursos não estão disponíveis para sua conexão.) Você pode definir quando exibir (ou ocultar) seu recurso no arquivo manifest. JSON da ferramenta.
+Pode haver ocasiões em que você deseja excluir (ou ocultar) sua extensão ou ferramenta da lista de ferramentas disponíveis. Por exemplo, se sua ferramenta se destina apenas ao Windows Server 2016 (não versões mais antigas), talvez você não queira que um usuário se conecte a um servidor Windows Server 2012 R2 para ver sua ferramenta. (Imagine a experiência do usuário-eles clicam nele, aguardam a ferramenta ser carregada, apenas para obter uma mensagem informando que seus recursos não estão disponíveis para sua conexão.) Você pode definir quando mostrar (ou ocultar) o recurso no arquivo manifest. JSON da ferramenta.
 
 ## <a name="options-for-deciding-when-to-show-a-tool"></a>Opções para decidir quando mostrar uma ferramenta ##
 
-Há três opções diferentes, que você pode usar para determinar se sua ferramenta deve ser exibidos e estarão disponíveis para um servidor específico ou a conexão do cluster.
+Há três opções diferentes que você pode usar para determinar se sua ferramenta deve ser exibida e estar disponível para um servidor ou conexão de cluster específico.
 
 * localhost
 * inventário (uma matriz de propriedades)
@@ -31,7 +31,7 @@ Há três opções diferentes, que você pode usar para determinar se sua ferram
 
 ### <a name="localhost"></a>LocalHost ###
 
-A propriedade de localHost do objeto condições contém um valor booliano que pode ser avaliado para inferir se o nó está se conectando é localHost (o computador mesmo que Windows Admin Center está instalado) ou não. Ao passar um valor para a propriedade, indicam quando (a condição) para exibir a ferramenta. Por exemplo, se você quiser apenas a ferramenta a ser exibido se o usuário na verdade está se conectando ao host local, configurá-lo assim:
+A propriedade localHost do objeto Conditions contém um valor booliano que pode ser avaliado para inferir se o nó de conexão é localHost (o mesmo computador em que o centro de administração do Windows está instalado) ou não. Ao passar um valor para a propriedade, você indica quando (a condição) exibir a ferramenta. Por exemplo, se você quiser que a ferramenta seja exibida apenas se o usuário estiver na verdade conectando-se ao host local, configure-o da seguinte maneira:
 
 ``` json
 "conditions": [
@@ -40,7 +40,7 @@ A propriedade de localHost do objeto condições contém um valor booliano que p
 }]
 ```
 
-Como alternativa, se você quiser apenas sua ferramenta a ser exibida quando o nó está se conectando *não é* localhost:
+Como alternativa, se você quiser que sua ferramenta seja exibida apenas quando o nó de conexão *não for* localhost:
 
 ``` json
 "conditions": [
@@ -49,7 +49,7 @@ Como alternativa, se você quiser apenas sua ferramenta a ser exibida quando o n
 }]
 ```
 
-Eis aqui as definições de configuração como a aparência para mostrar apenas uma ferramenta quando o nó está se conectando não é localhost:
+Veja como as definições de configuração parecem mostrar apenas uma ferramenta quando o nó de conexão não é localhost:
 
 ``` json
 "entryPoints": [
@@ -81,21 +81,21 @@ Eis aqui as definições de configuração como a aparência para mostrar apenas
 
 ### <a name="inventory-properties"></a>Propriedades de inventário ###
 
-O SDK inclui um conjunto estruturado previamente de propriedades de inventário que você pode usar para criar condições para determinar quando a ferramenta deve estar disponível ou não. Há nove propriedades diferentes na matriz 'inventário':
+O SDK inclui um conjunto de propriedades de inventário previamente organizado que você pode usar para criar condições para determinar quando sua ferramenta deve estar disponível ou não. Há nove propriedades diferentes na matriz "Inventory":
 
-| Nome da propriedade | Tipo de valor esperado |
+| Nome da Propriedade | Tipo de valor esperado |
 | ------------- | ------------------- |
 | computerManufacturer | cadeia de caracteres |
-| operatingSystemSKU | number |
-| operatingSystemVersion | version_string (eg: "10.1.*") |
-| productType | number |
+| operatingSystemSKU | número |
+| operatingSystemVersion | version_string (por exemplo: "10,1. *") |
+| productType | número |
 | clusterFqdn | cadeia de caracteres |
 | isHyperVRoleInstalled | boolean |
 | isHyperVPowershellInstalled | boolean |
 | isManagementToolsAvailable | boolean |
 | isWmfInstalled | boolean |
 
-Cada objeto na matriz de inventário deve estar de acordo com a seguinte estrutura json:
+Cada objeto na matriz de inventário deve estar de acordo com a seguinte estrutura JSON:
 
 ``` json
 "<property name>": {
@@ -107,39 +107,39 @@ Cada objeto na matriz de inventário deve estar de acordo com a seguinte estrutu
 
 #### <a name="operator-values"></a>Valores de operador ####
 
-| Operador | Descrição |
+| Operator | Descrição |
 | -------- | ----------- |
 | gt | Maior que |
-| ge | Maior que ou igual a |
+| GE | Maior ou igual a |
 | lt | Menor que |
-| le | Menor ou igual a |
-| eq | Igual a |
-| ne | Não é igual a |
-| está | Verificando se um valor é true |
-| not | Verificando se um valor é false |
-| Contém | existe um item em uma cadeia de caracteres |
-| notContains | item não existe em uma cadeia de caracteres |
+| quivo | Menor ou igual a |
+| EQ | Igual a |
+| m | Diferente de |
+| está | verificando se um valor é true |
+| not | verificando se um valor é false |
+| terá | o item existe em uma cadeia de caracteres |
+| notContains | o item não existe em uma cadeia de caracteres |
 
 #### <a name="data-types"></a>Tipos de dados ####
 
-Opções disponíveis para a propriedade 'type':
+Opções disponíveis para a propriedade ' type ':
 
-| Tipo | Descrição |
+| type | Descrição |
 | ---- | ----------- |
-| version | um número de versão (por exemplo: 10.1.*) |
-| number | um valor numérico |
+| version | um número de versão (por exemplo: 10,1. *) |
+| número | Um valor numérico |
 | cadeia de caracteres | um valor de cadeia de caracteres |
-| boolean | VERDADEIRO ou falso |
+| boolean | verdadeiro ou falso |
 
 #### <a name="value-types"></a>Tipos de valor ####
 
-A propriedade 'value' aceita esses tipos:
+A propriedade ' value ' aceita estes tipos:
 
 * cadeia de caracteres
-* number
+* número
 * boolean
 
-Um conjunto de condições de inventário corretamente formado tem esta aparência:
+Um conjunto de condições de inventário formada corretamente tem esta aparência:
 
 ``` json
 "entryPoints": [
@@ -193,15 +193,15 @@ Por fim, você pode executar um script do PowerShell personalizado para identifi
         @{Name='Prop2'; Value = 12345678; Type='number'; };
 }
 ```
-A propriedade de estado é o valor importante que controlará a decisão para mostrar ou ocultar sua extensão na lista de ferramentas.  Os valores permitidos são:
+A propriedade State é o valor importante que controlará a decisão de mostrar ou ocultar sua extensão na lista de ferramentas.  Os valores permitidos são:
 
 | Valor | Descrição |
 | ---- | ----------- |
 | Disponível | A extensão deve ser exibida na lista de ferramentas. |
-| NotSupported | A extensão não deve ser exibida na lista de ferramentas. |
-| NotConfigured | Este é um valor de espaço reservado para futuros trabalhos que solicitará ao usuário para a configuração adicional antes que a ferramenta está disponível.  Atualmente, esse valor resultará na ferramenta que está sendo exibida e é o equivalente funcional para 'Disponível'. |
+| Sem suporte | A extensão não deve ser exibida na lista de ferramentas. |
+| NotConfigured | Esse é um valor de espaço reservado para o trabalho futuro que solicitará ao usuário uma configuração adicional antes que a ferramenta seja disponibilizada.  Atualmente, esse valor resultará na exibição da ferramenta e será o equivalente funcional a ' disponível '. |
 
-Por exemplo, se quisermos que uma ferramenta para carregar apenas se o servidor remoto tiver o BitLocker instalado, o script fica assim:
+Por exemplo, se quisermos que uma ferramenta seja carregada somente se o servidor remoto tiver o BitLocker instalado, o script terá esta aparência:
 
 ``` ps
 $response = @{
@@ -225,7 +225,7 @@ if($isGood) {
 $response
 ```
 
-Uma configuração de ponto de entrada usando a opção de script tem esta aparência:
+Uma configuração de ponto de entrada usando a opção script tem esta aparência:
 
 ``` json
 "entryPoints": [
@@ -268,11 +268,11 @@ Uma configuração de ponto de entrada usando a opção de script tem esta apar�
 }
 ```
 
-## <a name="supporting-multiple-requirement-sets"></a>Suporte a vários conjuntos de requisito ##
+## <a name="supporting-multiple-requirement-sets"></a>Oferecendo suporte a vários conjuntos de requisitos ##
 
 Você pode usar mais de um conjunto de requisitos para determinar quando exibir sua ferramenta definindo vários blocos de "requisitos".
 
-Por exemplo, para exibir sua ferramenta se "cenário A" ou "cenário B" é true, definir dois blocos de requisitos; Se uma for verdadeira (ou seja, todas as condições dentro de um bloco de requisitos forem atendidas), a ferramenta é exibida.
+Por exemplo, para exibir sua ferramenta se "cenário A" ou "cenário B" for verdadeiro, defina dois blocos de requisitos; Se for verdadeiro (ou seja, todas as condições em um bloco de requisitos forem atendidas), a ferramenta será exibida.
 
 ``` json
 "entryPoints": [
@@ -305,13 +305,13 @@ Por exemplo, para exibir sua ferramenta se "cenário A" ou "cenário B" é true,
 
 ```
 
-## <a name="supporting-condition-ranges"></a>Suporte a intervalos de condição ##
+## <a name="supporting-condition-ranges"></a>Intervalos de condição de suporte ##
 
-Você também pode definir uma variedade de condições definindo vários blocos de "condições" com a mesma propriedade, mas com diferentes operadores.
+Você também pode definir um intervalo de condições definindo vários blocos "Conditions" com a mesma propriedade, mas com operadores diferentes.
 
-Quando a mesma propriedade é definida com operadores diferentes, a ferramenta é exibida como o valor está entre as duas condições.
+Quando a mesma propriedade é definida com operadores diferentes, a ferramenta é exibida contanto que o valor esteja entre as duas condições.
 
-Por exemplo, essa ferramenta é exibida como o sistema operacional é uma versão entre 6.3.0 e 10.0.0:
+Por exemplo, essa ferramenta é exibida contanto que o sistema operacional seja uma versão entre 6.3.0 e 10.0.0:
 
 ``` json
 "entryPoints": [

@@ -1,8 +1,8 @@
 ---
 title: nslookup set class
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7953f450c17afdee849515f8d8945631a30f4b98
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 312b409490603fcb0ded63a78f3a2936f5216de1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436844"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372982"
 ---
 # <a name="nslookup-set-class"></a>nslookup set class
 
 
 
-Altera a classe da consulta. A classe especifica o grupo de protocolo das informações.
+Altera a classe de consulta. A classe especifica o grupo de protocolo das informações.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,8 +36,8 @@ set class=<Class>
 
 | Parâmetro |                                                                                                                                    Descrição                                                                                                                                    |
 |-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| \<Class>  | A classe padrão é in. O exemplo a seguir lista os valores válidos para esse comando.</br>-IN: Especifica a classe de Internet.</br>-CAOS: Especifica a classe de Chaos.</br>-HESIOD: Especifica a classe MIT Athena Hesiod.</br>-QUALQUER: Especifica qualquer um dos caracteres curinga listados anteriormente. |
-|   {Ajuda   |                                                                                                                                        ?}                                                                                                                                         |
+| \<> De classe  | A classe padrão está em. O a seguir lista os valores válidos para esse comando.</br>NO Especifica a classe da Internet.</br>CHAOS Especifica a classe de caos.</br>- HESIOD: Especifica a classe Hesiod do MIT Athena.</br>OUTRO Especifica qualquer um dos curingas listados anteriormente. |
+|   {ajuda   |                                                                                                                                        ?}                                                                                                                                         |
 
 #### <a name="additional-references"></a>Referências adicionais
 

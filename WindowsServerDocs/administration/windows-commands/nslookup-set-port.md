@@ -1,8 +1,8 @@
 ---
 title: nslookup set port
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 47eb780631da766f49c0ca2cac8ef90007a95c7e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 5e1d7565499b87d861b727be54442a86527a85a7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436715"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372923"
 ---
 # <a name="nslookup-set-port"></a>nslookup set port
 
 
 
-Altera a porta de servidor de nomes de sistema de nome de domínio (DNS) TCP/UDP padrão para o valor especificado.
+Altera a porta do servidor de nome DNS (sistema de nomes de domínio) TCP/UDP padrão para o valor especificado.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,8 +36,8 @@ set port=<Port>
 
 | Parâmetro |                                          Descrição                                          |
 |-----------|-----------------------------------------------------------------------------------------------|
-|  \<Porta >  | Especifica o novo valor para a porta do servidor de nome DNS de TCP/UDP. A porta padrão é 53. |
-|   {Ajuda   |                                              ?}                                               |
+|  \<Port >  | Especifica o novo valor para a porta do servidor de nome DNS TCP/UDP padrão. A porta padrão é 53. |
+|   {ajuda   |                                              ?}                                               |
 
 #### <a name="additional-references"></a>Referências adicionais
 

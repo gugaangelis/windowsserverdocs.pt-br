@@ -1,39 +1,39 @@
 ---
 title: Considerações de criação de módulo do PowerShell
 description: Considerações de criação de módulo do PowerShell
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: JasonSh
 author: lzybkr
 ms.date: 10/16/2017
-ms.openlocfilehash: 37dd860019b91daf70947dba93d20274048487a0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8945339e7a7950d3cd722ab2af629b45e7f6dd5d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818717"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370362"
 ---
 # <a name="powershell-module-authoring-considerations"></a>Considerações de criação de módulo do PowerShell
 
-Este documento inclui algumas diretrizes relacionadas a como um módulo é criado para um melhor desempenho.
+Este documento inclui algumas diretrizes relacionadas à forma como um módulo é criado para melhor desempenho.
 
 ## <a name="module-manifest-authoring"></a>Criação de manifesto de módulo
 
-Um manifesto de módulo que não use as diretrizes a seguir pode ter um impacto significativo no desempenho geral do PowerShell, mesmo se o módulo não é usado em uma sessão.
+Um manifesto de módulo que não usa as diretrizes a seguir pode ter um impacto perceptível no desempenho geral do PowerShell, mesmo se o módulo não for usado em uma sessão.
 
-Descoberta automática de comando analisa cada módulo para determinar quais comandos o módulo exporta, e essa análise pode ser cara.
-Os resultados da análise do módulo são armazenados em cache por usuário, mas o cache não está disponível na primeira execução, o que é um cenário típico com contêineres.
-Durante a análise do módulo, se os comandos exportados podem ser determinados completamente do manifesto de análise mais caro do módulo pode ser evitado.
+A descoberta automática de comando analisa cada módulo para determinar quais comandos são exportados pelo módulo e essa análise pode ser cara.
+Os resultados da análise de módulo são armazenados em cache por usuário, mas o cache não está disponível na primeira execução, que é um cenário típico com contêineres.
+Durante a análise do módulo, se os comandos exportados puderem ser totalmente determinados do manifesto, uma análise mais cara do módulo poderá ser evitada.
 
 ### <a name="guidelines"></a>Diretrizes
 
-* No manifesto do módulo, não use caracteres curinga na `AliasesToExport`, `CmdletsToExport`, e `FunctionsToExport` entradas.
+* No manifesto do módulo, não use caracteres curinga nas entradas `AliasesToExport`, `CmdletsToExport` e `FunctionsToExport`.
 
-* Se o módulo não exporta os comandos de um determinado tipo, especificar isso explicitamente no manifesto especificando `@()`.
-A ausência de um ou `$null` entrada é equivalente a especificar o caractere curinga `*`.
+* Se o módulo não exportar comandos de um tipo específico, especifique-o explicitamente no manifesto especificando `@()`.
+Uma entrada ausente ou `$null` é equivalente a especificar o curinga `*`.
 
-O exemplo a seguir deve ser evitado sempre que possível:
+O seguinte deve ser evitado sempre que possível:
 
 ```PowerShell
 @{
@@ -55,19 +55,19 @@ Em vez disso, use:
 }
 ```
 
-## <a name="avoid-cdxml"></a>Avoid CDXML
+## <a name="avoid-cdxml"></a>Evitar CDXML
 
 Ao decidir como implementar seu módulo, há três opções principais:
 
-* Binário (geralmente C#)
+* Binary (normalmente C#)
 * Script (PowerShell)
-* CDXML (um arquivo XML de encapsulamento CIM)
+* CDXML (um arquivo XML com encapsulamento CIM)
 
-Se a velocidade de carregamento do seu módulo for importante, CDXML é de aproximadamente uma ordem de magnitude mais lenta do que um módulo binário.
+Se a velocidade de carregar seu módulo for importante, o CDXML é aproximadamente uma ordem de magnitude mais lenta do que um módulo binário.
 
-Um módulo binário carrega mais rapidamente porque ele é compilado antes do tempo e pode usar o NGen para JIT compilar uma vez por computador.
+Um módulo binário carrega o mais rápido porque ele é compilado antecipadamente e pode usar NGen para compilação JIT uma vez por computador.
 
-Um módulo de script normalmente carrega um pouco mais lentamente do que um módulo binário porque o PowerShell deve analisar o script antes de compilar e executá-lo.
+Um módulo de script normalmente carrega um pouco mais lentamente do que um módulo binário, pois o PowerShell deve analisar o script antes de compilá-lo e executá-lo.
 
-Um módulo CDXML é normalmente muito mais lento do que um módulo de script, porque ele deve primeiro analisar um arquivo XML que, em seguida, gera uma grande quantidade de script do PowerShell que é posteriormente analisado e compilado.
+Um módulo CDXML normalmente é muito mais lento do que um módulo de script, pois ele deve primeiro analisar um arquivo XML que, em seguida, gera um pouco de script do PowerShell que é então analisado e compilado.
 

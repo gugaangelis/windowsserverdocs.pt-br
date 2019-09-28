@@ -1,19 +1,19 @@
 ---
 title: Escolhendo um adaptador de rede
 description: Este tópico faz parte do guia de ajuste de desempenho do subsistema de rede para o Windows Server 2016.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: a6615411-83d9-495f-8a6a-1ebc8b12f164
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 19318bfa9807d209bd9a195b668c1787bd3aff25
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: cf93e6f91f4a1c21050c7ad1cb4de43258be1a65
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871921"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71401861"
 ---
 # <a name="choosing-a-network-adapter"></a>Escolhendo um adaptador de rede
 

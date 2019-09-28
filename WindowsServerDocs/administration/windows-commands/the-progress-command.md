@@ -1,8 +1,8 @@
 ---
-title: O comando de progresso
-description: 'Tópico de comandos do Windows para * * *- '
+title: O comando Progress
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5fff31c91b4d267011f2d738b4fc3acb3f0f2377
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 841d9103354e3162489492ba7dd97e726b37d37d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832697"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370182"
 ---
-# <a name="the-progress-command"></a>O comando de progresso
+# <a name="the-progress-command"></a>O comando Progress
 
 
 
-Exibe o progresso enquanto um comando está sendo executado. Você pode usar **/Progress** com outros comandos WDSUTIL que você executa. Observe que você deve especificar **/verbose** e **/Progress** diretamente após **WDSUTIL**.
+Exibe o progresso enquanto um comando está sendo executado. Você pode usar o **/Progress** com outros comandos do WDSUTIL que você executar. Observe que você deve especificar **/Verbose** e **/Progress** diretamente após **WDSUTIL**.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,7 +34,7 @@ WDSUTIL /progress <commands>
 
 ## <a name="examples"></a>Exemplos
 
-Para inicializar o servidor e exibir o andamento, digite:
+Para inicializar o servidor e exibir o progresso, digite:
 ```
 WDSUTIL /Verbose /Progress /Initialize-Server /Server:MyWDSServer /RemInst:"C:\RemoteInstall"
 ```

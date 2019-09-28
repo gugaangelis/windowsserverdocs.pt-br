@@ -2,7 +2,7 @@
 title: Gerenciar segurança de camada de transporte (TLS)
 description: Segurança do Windows Server
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-tls-ssl
@@ -12,12 +12,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic-msft
 ms.date: 05/16/2018
-ms.openlocfilehash: f691775d5ab24de8b23df048c13ec3d7c572833f
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: a4ac1ea5b0648dbb80f103c146ad3df23fc04ab7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870290"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402342"
 ---
 # <a name="manage-transport-layer-security-tls"></a>Gerenciar segurança de camada de transporte (TLS)
 
@@ -124,7 +124,7 @@ O processo de distribuição de uma curva é:
 1.  No Windows 10 e no Windows Server 2016, use o **certutil. exe** para adicionar uma nova curva nomeada registrada ao Windows.
 2.  No mesmo computador, abra o Console de Gerenciamento de Política de Grupo (GPMC), crie um novo objeto de Política de Grupo e edite-o.
 3.  Navegar para **configuração do computador | Preferências | Configurações do Windows | Registro**.  Clique com o botão direito do mouse em **registro**. Passe o mouse sobre **novo** e selecione **item de coleta**. Renomeie o item de coleta para corresponder ao nome da curva. Você criará um item de coleção de registro para cada chave do registro em *HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Cryptography\ECCParameters*.
-4.  Configure a coleção de registro de preferência de política de grupo recém-criada adicionando um novo **item de registro** para cada valor de registro listado em *\[HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Cryptography\ECCParameters curvename ]* .
+4.  Configure a coleção de registro de preferência de Política de Grupo recém-criada adicionando um novo **item de registro** para cada valor de registro listado em *HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Cryptography\ECCParameters @ no__t-2curveName]* .
 5.  Implante o objeto de Política de Grupo que contém Política de Grupo item de coleção do registro em computadores com Windows 10 e Windows Server 2016 que devem receber as novas curvas nomeadas.
 
     ![Distribuir curvas de GPP](../media/Transport-Layer-Security-protocol/gpp-distribute-curves.png)

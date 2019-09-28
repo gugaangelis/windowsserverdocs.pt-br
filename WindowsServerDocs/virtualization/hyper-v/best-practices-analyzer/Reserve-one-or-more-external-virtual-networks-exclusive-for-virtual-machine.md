@@ -1,7 +1,7 @@
 ---
-title: Reservar um ou mais redes virtuais externas para uso exclusivo por máquinas virtuais
-description: Fornece instruções para resolver o problema relatado por essa regra do analisador de práticas recomendadas.
-ms.prod: windows-server-threshold
+title: Reservar uma ou mais redes virtuais externas para uso exclusivo por máquinas virtuais
+description: Fornece instruções para resolver o problema relatado por essa regra de Analisador de Práticas Recomendadas.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,14 +10,14 @@ ms.topic: article
 ms.assetid: f7732258-93f1-44e8-835b-5ad2d1c45cd9
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: c8c90a74352bae0b348608db0fc05107e4d09010
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a72f3d616bb0c520e49c27f90686196463f25953
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884737"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364782"
 ---
-# <a name="reserve-one-or-more-external-virtual-networks-for-exclusive-use-by-virtual-machines"></a>Reservar um ou mais redes virtuais externas para uso exclusivo por máquinas virtuais
+# <a name="reserve-one-or-more-external-virtual-networks-for-exclusive-use-by-virtual-machines"></a>Reservar uma ou mais redes virtuais externas para uso exclusivo por máquinas virtuais
 
 >Aplica-se a: Windows Server 2016
 
@@ -26,33 +26,33 @@ Para obter mais informações sobre práticas recomendadas e varreduras, consult
 |Propriedade|Detalhes|  
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
-|**Recurso do produto**|Hyper-V|  
-|**Severidade**|Erro|  
-|**categoria**|Configuração|  
+|**Produto/recurso**|Hyper-V|  
+|**Severity**|Erro|  
+|**Categorias**|Configuração|  
   
-Nas seções a seguir, itálico indica o texto de interface do usuário que aparece na ferramenta Analisador de práticas recomendadas para esse problema.  
+Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
 ## <a name="issue"></a>Problema  
   
-*Todas as redes virtuais externas são configuradas para uso pelo sistema operacional de gerenciamento e as máquinas virtuais.*  
+*Todas as redes virtuais externas são configuradas para uso tanto pelo sistema operacional de gerenciamento quanto por máquinas virtuais.*  
   
 ## <a name="impact"></a>Impacto  
   
-*Desempenho de rede pode estar danificado no sistema operacional de gerenciamento.*  
+*O desempenho da rede pode ser degradado no sistema operacional de gerenciamento.*  
   
 ## <a name="resolution"></a>Resolução  
   
-*Use o Gerenciador de comutador Virtual para interromper o compartilhamento de uma rede virtual externa com o sistema operacional de gerenciamento.*  
+*Use o Gerenciador de comutador virtual para interromper o compartilhamento de uma rede virtual externa com o sistema operacional de gerenciamento.*  
   
-#### <a name="to-stop-sharing-the-external-virtual-network-with-the-management-operating-system"></a>Para interromper o compartilhamento de rede virtual externa com o sistema operacional de gerenciamento  
+#### <a name="to-stop-sharing-the-external-virtual-network-with-the-management-operating-system"></a>Para interromper o compartilhamento da rede virtual externa com o sistema operacional de gerenciamento  
   
 1.  Abra o Gerenciador Hyper-V. Clique em **Iniciar**, vá em **Ferramentas Administrativas** e clique em **Gerenciador do Hyper-V**.  
   
 2.  No menu **Ações**, clique em **Gerenciador do Comutador Virtual**.  
   
-3.  Sob **comutadores virtuais**, clique no nome do comutador virtual externo.  
+3.  Em **comutadores virtuais**, clique no nome do comutador virtual externo.  
   
-4.  No **tipo de Conexão** área abaixo do nome do adaptador de rede física, desmarque as **permitem que o sistema operacional de gerenciamento compartilhe esse adaptador de rede** caixa de seleção.  
+4.  Na área **tipo de conexão** , sob o nome do adaptador de rede física, desmarque a caixa de seleção **permitir que o sistema operacional de gerenciamento Compartilhe este adaptador de rede** .  
   
 5.  Clique em **OK**.  
   

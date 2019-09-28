@@ -1,6 +1,6 @@
 ---
 title: Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web - Etapa 2, Trabalho de pós-configuração do AD FS
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-work-folders
 ms.topic: article
 manager: klaasl
@@ -8,31 +8,31 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 06/06/2019
 ms.assetid: 0a48852e-48cc-4047-ae58-99f11c273942
-ms.openlocfilehash: 5497651f57a0276daced614687e89f8047af9116
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 6364c3f8dc35fbafa518a106780ae6b767d4d40c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812680"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365784"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-2-ad-fs-post-configuration-work"></a>Implante pastas de trabalho com o AD FS e Proxy de aplicativo Web: Etapa 2, o trabalho de pós-configuração do AD FS
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-2-ad-fs-post-configuration-work"></a>Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: Etapa 2, AD FS trabalho de pós-configuração
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico descreve a segunda etapa da implantação das Pastas de Trabalho com o AD FS (Serviços de Federação do Active Directory) e o Proxy de aplicativo Web. Você encontrará as outras etapas desse processo nestes tópicos:  
   
--   [Implante pastas de trabalho com o AD FS e Proxy de aplicativo Web: Visão geral](deploy-work-folders-adfs-overview.md)  
+-   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Sobre](deploy-work-folders-adfs-overview.md)  
   
--   [Implante pastas de trabalho com o AD FS e Proxy de aplicativo Web: Etapa 1, configure o AD FS](deploy-work-folders-adfs-step1.md)  
+-   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 1, configurar AD FS @ no__t-0  
   
--   [Implante pastas de trabalho com o AD FS e Proxy de aplicativo Web: Etapa 3, configurar as pastas de trabalho](deploy-work-folders-adfs-step3.md)  
+-   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 3, configurar pastas de trabalho @ no__t-0  
   
--   [Implante pastas de trabalho com o AD FS e Proxy de aplicativo Web: Etapa 4, configurar o Proxy de aplicativo Web](deploy-work-folders-adfs-step4.md)  
+-   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 4, configurar o proxy de aplicativo Web @ no__t-0  
   
--   [Implante pastas de trabalho com o AD FS e Proxy de aplicativo Web: Etapa 5, configurar os clientes](deploy-work-folders-adfs-step5.md)  
+-   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 5, configurar clientes @ no__t-0  
   
 > [!NOTE]
-> As instruções apresentadas nesta seção são para um ambiente de 2019 do Windows Server ou Windows Server 2016. Se você estiver usando o Windows Server 2012 R2, siga as [instruções do Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
+> As instruções abordadas nesta seção são para um ambiente do Windows Server 2019 ou do Windows Server 2016. Se você estiver usando o Windows Server 2012 R2, siga as [instruções do Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
 
 Na etapa 1, você instalou e configurou o AD FS. Agora, você precisa executar as seguintes etapas de pós-configuração do AD FS.  
   
@@ -104,7 +104,7 @@ Para configurar o objeto de confiança de terceira parte confiável:
   
 7.  Na página **Configurar URL**, clique em **Avançar**.  
   
-8. Sobre o **configurar identificadores** página, adicione o seguinte identificador: `https://windows-server-work-folders/V1`. Esse identificador é um valor embutido em código usado pelas Pastas de Trabalho e enviado pelo serviço Pastas de Trabalho quando ele está se comunicando com o AD FS. Clique em **Avançar**.  
+8. Na página **Configurar identificadores** , adicione o seguinte identificador: `https://windows-server-work-folders/V1`. Esse identificador é um valor embutido em código usado pelas Pastas de Trabalho e enviado pelo serviço Pastas de Trabalho quando ele está se comunicando com o AD FS. Clique em **Avançar**.  
   
 9. Na página Escolher Política de Controle de Acesso, selecione **Permitir Todos** e clique em **Avançar**.  
   
@@ -124,15 +124,15 @@ Para configurar o objeto de confiança de terceira parte confiável:
   
 17. Na tabela de mapeamento, insira estes valores:  
   
-    -   Entidade de segurança-nome de usuário: UPN  
+    -   Nome da entidade de usuário: UPN  
   
     -   Nome de exibição: Nome  
   
-    -   Sobrenome: Sobrenome  
+    -   Sobrenome Sobrenome  
   
-    -   Primeiro nome: Nome fornecido  
+    -   Nome-fornecido: Nome fornecido  
   
-18. Clique em **concluir**. Você verá a regra WorkFolders listada na guia Regras de Transformação de Emissão e clicará em **OK**.  
+18. Clique em **Finalizar**. Você verá a regra WorkFolders listada na guia Regras de Transformação de Emissão e clicará em **OK**.  
   
 ### <a name="set-relying-part-trust-options"></a>Definir opções de objeto de confiança de terceira parte confiável
 
@@ -242,15 +242,15 @@ Você deve dar permissão à conta de serviço do AD FS para acessar a chave pri
   
 13. Na janela **Permissões**, atribua pelo menos permissões de leitura à conta e clique em **OK**.  
   
-Se você não tiver a opção para gerenciar chaves privadas, talvez você precise executar o comando a seguir: `certutil -repairstore my *`  
+Se você não tiver a opção de gerenciar chaves privadas, talvez seja necessário executar o seguinte comando: `certutil -repairstore my *`  
   
 ## <a name="verify-that-ad-fs-is-operational"></a>Verificar se AD FS está operacional
 
-Para verificar se o AD FS está funcionando, abra uma janela do navegador e vá para `https://blueadfs.contoso.com/federationmetadata/2007-06/federationmetadata.xml`, alterar a URL para corresponder ao seu ambiente.
+Para verificar se AD FS está operacional, abra uma janela do navegador e vá para `https://blueadfs.contoso.com/federationmetadata/2007-06/federationmetadata.xml`, alterando a URL para corresponder ao seu ambiente.
   
 A janela do navegador exibirá os metadados do servidor de federação sem formatação. Se você conseguir ver os dados sem erros ou avisos de SSL, o servidor de federação está operacional.  
   
-Próxima etapa: [Implante pastas de trabalho com o AD FS e Proxy de aplicativo Web: Etapa 3, configurar as pastas de trabalho](deploy-work-folders-adfs-step3.md)  
+Próxima etapa: Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 3, configurar pastas de trabalho @ no__t-0  
   
 ## <a name="see-also"></a>Consulte também  
-[Visão geral de pastas de trabalho](Work-Folders-Overview.md)
+[Visão geral das pastas de trabalho](Work-Folders-Overview.md)

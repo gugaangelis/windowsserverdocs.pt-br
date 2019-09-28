@@ -1,8 +1,8 @@
 ---
 title: Gerenciar áreas de trabalho do usuário usando o MultiPoint Dashboard
-description: Fornece uma visão geral do MultiPoint Dashboard
+description: Fornece uma visão geral do painel do MultiPoint
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,17 +13,17 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 049910029f0ed2623ae34131d3755964d3499d0e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b250d820e7086054d18d62eebe8ce9d3686f8d5d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837337"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405094"
 ---
 # <a name="manage-user-desktops-using-multipoint-dashboard"></a>Gerenciar áreas de trabalho do usuário usando o MultiPoint Dashboard
-Em um sistema MultiPoint Services, uma área de trabalho é a interface do usuário do software apresentada no monitor para cada *estação* de usuário. O MultiPoint Dashboard é uma ferramenta que ajuda você a gerenciar essas áreas de trabalho.   
+Em um sistema MultiPoint Services, uma área de trabalho é a interface do usuário do software apresentada no monitor para cada *estação* de usuário. O painel do MultiPoint é uma ferramenta que ajuda você a gerenciar essas áreas de trabalho.   
   
-No MultiPoint Dashboard, sobre o **Home** guia, você pode fazer o seguinte:  
+No painel do MultiPoint, na guia **início** , você pode fazer o seguinte:  
   
 - Exibir áreas de trabalho  
 Você pode exibir as imagens em miniatura de cada área de trabalho ativa. Para obter informações sobre a exibição de miniaturas, consulte o tópico [View Options for Session Thumbnails](View-Options-for-Session-Thumbnails-in-MultiPoint-Dashboard.md) (Exibir as opções para miniaturas de sessão).  
@@ -38,9 +38,9 @@ Você pode projetar sua estação em outra estação ou estações. Você també
 - Iniciar ou fechar aplicativos em uma estação  
 Você pode iniciar ou fechar aplicativos em uma estação. Para obter informações sobre como iniciar ou fechar aplicativos, consulte o tópico [Iniciar ou fechar aplicativos em uma estação](Launch-or-Close-Applications-on-a-Station.md).  
 - Usar IM  
-Você pode conversar com os usuários selecionados. A mensagem de chat é visível apenas para o usuário do Dashboard e o usuário da sessão selecionada. Ver [usar IM](Use-IM.md) para obter mais informações.  
+Você pode conversar com os usuários selecionados. A mensagem de chat é visível apenas para o usuário do Dashboard e o usuário da sessão selecionada. Consulte [usar mensagens instantâneas](Use-IM.md) para obter mais informações.  
 - Alterar o tamanho das imagens em miniatura  
-Você pode alterar o tamanho das miniaturas exibidas no MultiPoint Dashboard. Para obter informações sobre como alterar o tamanho da miniatura, consulte [View Options for Session Thumbnails](View-Options-for-Session-Thumbnails-in-MultiPoint-Dashboard.md) (Exibir as opções para miniaturas de sessão).
+Você pode alterar o tamanho das miniaturas exibidas no painel do MultiPoint. Para obter informações sobre como alterar o tamanho da miniatura, consulte [View Options for Session Thumbnails](View-Options-for-Session-Thumbnails-in-MultiPoint-Dashboard.md) (Exibir as opções para miniaturas de sessão).
 - Mostrar todas as estações  
 Você pode exibir todas as estações conectadas ao sistema, incluindo estações que não estão ativas. Para obter informações sobre a exibição de todas as estações, consulte o tópico [Mostrar todas as estações](Show-All-Stations.md).  
 - Pesquisar e classificar as miniaturas  

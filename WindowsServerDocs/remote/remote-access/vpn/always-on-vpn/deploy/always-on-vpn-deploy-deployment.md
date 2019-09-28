@@ -1,7 +1,7 @@
 ---
 title: Implantar VPN Always On
-description: Este tópico fornece instruções detalhadas para a implantação de VPN Always On no Windows Server 2016.
-ms.prod: windows-server-threshold
+description: Este tópico fornece instruções detalhadas para a implantação de Always On VPN no Windows Server 2016.
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ad748de2-d175-47bf-b05f-707dc48692cf
@@ -9,76 +9,76 @@ ms.localizationpriority: medium
 ms.date: 11/05/2018
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 6849d8547885b10fb32a133f09a82b6f133a535e
-ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
+ms.openlocfilehash: 054a41df281ff9720d381fd4854f34f56ed0307b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66749658"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388193"
 ---
 # <a name="deploy-always-on-vpn"></a>Implantar VPN Always On
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
-- [**Anterior:** Saiba mais sobre a VPN Always On recursos avançados](always-on-vpn-adv-options.md)
-- [**Avançar:** Etapa 1. Comece a planejar a implantação de VPN Always On](always-on-vpn-deploy-planning.md)
+- [**Anterior** Saiba mais sobre os recursos avançados de VPN Always On @ no__t-0
+- [**Última** Etapa 1. Começar a planejar a implantação de VPN Always On](always-on-vpn-deploy-planning.md)
 
-Nesta seção, você aprenderá sobre o fluxo de trabalho para implantar conexões VPN Always On para computadores cliente de Windows 10 de domínio remotos. Se você quiser **configurar o acesso condicional** para ajustar como usuários da VPN acessam seus recursos, consulte [acesso condicional para conectividade VPN usando o Azure AD](../../ad-ca-vpn-connectivity-windows10.md). Para saber mais sobre o acesso condicional para conectividade VPN usando o Azure AD, consulte [acesso condicional no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal). 
+Nesta seção, você aprenderá sobre o fluxo de trabalho para implantar Always On conexões VPN para computadores cliente remotos ingressados no domínio do Windows 10. Se você quiser **Configurar o acesso condicional** para ajustar como os usuários VPN acessam seus recursos, consulte [acesso condicional para conectividade VPN usando o Azure ad](../../ad-ca-vpn-connectivity-windows10.md). Para saber mais sobre o acesso condicional para conectividade VPN usando o Azure AD, consulte [acesso condicional no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal). 
 
-O diagrama a seguir ilustra o processo de fluxo de trabalho para os diferentes cenários durante a implantação de VPN Always On:
+O diagrama a seguir ilustra o processo de fluxo de trabalho para os diferentes cenários ao implantar Always On VPN:
 
-![Fluxograma de fluxo de trabalho de implantação de VPN Always On](../../../../media/Always-On-Vpn/always-on-vpn-deployment-workflow-sm.png)
+![Fluxograma do fluxo de trabalho de implantação de VPN Always On](../../../../media/Always-On-Vpn/always-on-vpn-deployment-workflow-sm.png)
 
 >[!IMPORTANT]
->Para essa implantação, não é um requisito de que seus servidores de infraestrutura, como computadores que executam o Active Directory Domain Services, serviços de certificados do Active Directory e servidor de políticas de rede estão executando o Windows Server 2016. Você pode usar versões anteriores do Windows Server, como o Windows Server 2012 R2, para os servidores de infraestrutura e para o servidor que está executando o acesso remoto.
+>Para essa implantação, não é um requisito de que seus servidores de infraestrutura, como computadores que executam Active Directory Domain Services, Active Directory serviços de certificados e servidor de diretivas de rede, estejam executando o Windows Server 2016. Você pode usar versões anteriores do Windows Server, como o Windows Server 2012 R2, para os servidores de infraestrutura e para o servidor que está executando o acesso remoto.
 
 ## <a name="step-1-plan-the-always-on-vpn-deploymentalways-on-vpn-deploy-planningmd"></a>[Etapa 1. Planejar a implantação da VPN Always On](always-on-vpn-deploy-planning.md)
 
-Nesta etapa, você começar a planejar e preparar a implantação de VPN Always On. Antes de instalar a função de servidor de acesso remoto no computador que você estiver planejando usar como um servidor VPN. Após o planejamento adequado, você pode implantar a VPN Always On e, opcionalmente, configure o acesso condicional para conectividade VPN usando o Azure AD.
+Nesta etapa, você começa a planejar e preparar sua implantação de VPN Always On. Antes de instalar a função de servidor de acesso remoto no computador que você está planejando usar como um servidor VPN. Após o planejamento adequado, você pode implantar Always On VPN e, opcionalmente, configurar o acesso condicional para conectividade VPN usando o Azure AD.
 
 ## <a name="step-2-configure-the-always-on-vpn-server-infrastructurevpn-deploy-server-infrastructuremd"></a>[Etapa 2. Configurar a infraestrutura de servidor da VPN Always On](vpn-deploy-server-infrastructure.md)
 
-Nesta etapa, você pode instala e configurar os componentes do lado do servidor necessários para oferecer suporte a VPN. Os componentes do lado do servidor incluem a configuração de PKI para distribuir os certificados usados pelos usuários, o servidor VPN e o servidor NPS.  Você também pode configurar o RRAS para dar suporte a conexões IKEv2 e o servidor NPS para executar a autorização para as conexões VPN.
+Nesta etapa, você instala e configura os componentes do lado do servidor necessários para dar suporte à VPN. Os componentes do lado do servidor incluem a configuração de PKI para distribuir os certificados usados pelos usuários, o servidor VPN e o servidor NPS.  Você também configura o RRAS para dar suporte a conexões IKEv2 e ao servidor NPS para executar a autorização para as conexões VPN.
 
-Para configurar a infraestrutura de servidor, você deve executar as seguintes tarefas:
+Para configurar a infraestrutura do servidor, você deve executar as seguintes tarefas:
 
-- **Em um servidor configurado com o Active Directory Domain Services:** Habilitar o registro automático de certificados na diretiva de grupo para computadores e usuários, crie o grupo de usuários de VPN, o grupo de servidores VPN e o grupo de servidores NPS e adicionar membros a cada grupo.
-- **Em um servidor de certificados do Active Directory da autoridade de certificação:** Crie os modelos de certificado de autenticação de usuário, autenticação do servidor VPN e autenticação do servidor NPS.
-- **Em clientes do Windows 10 ingressados no domínio:** Registrar e validar certificados do usuário.
+- **Em um servidor configurado com Active Directory Domain Services:** Habilite o registro automático de certificado no Política de Grupo para computadores e usuários, crie o grupo de usuários VPN, o grupo servidores VPN e o grupo servidores NPS e adicione membros a cada grupo.
+- **Em um Active Directory AC do servidor de certificado:** Crie os modelos autenticação de usuário, autenticação de servidor VPN e certificado de autenticação de servidor NPS.
+- **Em clientes do Windows 10 ingressados no domínio:** Registrar e validar certificados de usuário.
 
 ## <a name="step-3-configure-the-remote-access-server-for-always-on-vpnvpn-deploy-rasmd"></a>[Etapa 3. Configurar o servidor de acesso remoto da VPN Always On](vpn-deploy-ras.md)
 
-Nesta etapa, você deve configurar VPN de acesso remoto para permitir conexões de VPN IKEv2, negar conexões de outros protocolos VPN e atribuir um pool de endereços IP estáticos para a emissão de endereços IP para se conectar a clientes autorizados de VPN.
+Nesta etapa, você configura a VPN de acesso remoto para permitir conexões VPN IKEv2, negar conexões de outros protocolos VPN e atribuir um pool de endereços IP estáticos para a emissão de endereços IP para conectar clientes VPN autorizados.
 
-Para configurar o acesso remoto, você deve executar as seguintes tarefas:
+Para configurar o RAS, você deve executar as seguintes tarefas:
 
 - Registrar e validar o certificado do servidor VPN
-- Instalar e configurar o acesso remoto VPN
+- Instalar e configurar a VPN de acesso remoto
 
 ## <a name="step-4-install-and-configure-the-nps-servervpn-deploy-npsmd"></a>[Etapa 4. Instalar e configurar o servidor NPS](vpn-deploy-nps.md)
 
-Nesta etapa, instale o servidor de diretivas de rede (NPS) usando o Windows PowerShell ou o Server Manager adicionar funções e Assistente de recursos. Você também pode configurar o NPS para lidar com todos os autenticação, autorização e obrigações de estatísticas de solicitação de conexão que ele recebe do servidor VPN.
+Nesta etapa, você instala o NPS (servidor de políticas de rede) usando o Windows PowerShell ou o assistente Gerenciador do Servidor adicionar funções e recursos. Você também configura o NPS para lidar com todas as tarefas de autenticação, autorização e contabilidade para a solicitação de conexão que ele recebe do servidor VPN.
 
 Para configurar o NPS, você deve executar as seguintes tarefas:
 
 - Registrar o servidor NPS no Active Directory
-- Configurar RADIUS estatísticas para o servidor NPS
-- Adicione o servidor VPN como um cliente RADIUS no NPS
+- Configurar a contabilização RADIUS para seu servidor NPS
+- Adicionar o servidor VPN como um cliente RADIUS no NPS
 - Configurar a política de rede no NPS
 - Registrar automaticamente o certificado do servidor NPS
 
-## <a name="step-5-configure-dns-and-firewall-settings-for-always-on-vpnvpn-deploy-dns-firewallmd"></a>[Etapa 5. Configurar o DNS e configurações de Firewall para sempre na VPN](vpn-deploy-dns-firewall.md)
+## <a name="step-5-configure-dns-and-firewall-settings-for-always-on-vpnvpn-deploy-dns-firewallmd"></a>[Etapa 5. Definir configurações de DNS e firewall para Always On VPN @ no__t-0
 
-Nesta etapa, você configura o DNS e o Firewall configurações. Quando se conectar a clientes remotos VPN, eles usam os mesmos servidores DNS que usam seus clientes internos, que lhes permite resolver os nomes da mesma maneira que o restante das suas estações de trabalho internos. 
+Nesta etapa, você define as configurações de DNS e firewall. Quando os clientes VPN remotos se conectam, eles usam os mesmos servidores DNS que seus clientes internos usam, o que permite que eles resolvam nomes da mesma maneira que o restante das estações de trabalho internas. 
 
 ## <a name="step-6-configure-windows-10-client-always-on-vpn-connectionsvpn-deploy-client-vpn-connectionsmd"></a>[Etapa 6. Configurar as conexões da VPN Always On do cliente Windows 10](vpn-deploy-client-vpn-connections.md)
 
-Nesta etapa, você deve configurar os computadores de cliente do Windows 10 para se comunicar com que a infraestrutura com uma conexão VPN. Você pode usar várias tecnologias para configurar clientes de VPN do Windows 10, incluindo o Windows PowerShell, o System Center Configuration Manager e o Intune. Todos os três exigem um perfil VPN XML para definir as configurações de VPN apropriadas.
+Nesta etapa, você configura os computadores cliente do Windows 10 para se comunicar com essa infraestrutura com uma conexão VPN. Você pode usar várias tecnologias para configurar clientes de VPN do Windows 10, incluindo o Windows PowerShell, o System Center Configuration Manager e o Intune. Todos os três exigem um perfil de VPN XML para definir as configurações de VPN apropriadas.
 
-## <a name="step-7-optional-configure-conditional-access-for-vpn-connectivityad-ca-vpn-connectivity-windows10md"></a>[Etapa 7. (Opcional) Configurar o acesso condicional para conectividade VPN](../../ad-ca-vpn-connectivity-windows10.md)
+## <a name="step-7-optional-configure-conditional-access-for-vpn-connectivityad-ca-vpn-connectivity-windows10md"></a>[Etapa 7. Adicional Configurar o acesso condicional para conectividade VPN @ no__t-0
 
-Nesta etapa opcional, você pode ajustar como autorizado VPN aos usuários acessam seus recursos. Com acesso condicional do Azure AD para conectividade VPN, você pode ajudar a proteger as conexões VPN. Acesso condicional é um mecanismo de avaliação com base em política que permite que você crie regras de acesso para qualquer AD do Azure conectada aplicativo. Para obter mais informações, consulte [acesso condicional do Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal).
+Nesta etapa opcional, você pode ajustar como os usuários de VPN autorizados acessam seus recursos. Com o acesso condicional do Azure AD para conectividade VPN, você pode ajudar a proteger as conexões VPN. O acesso condicional é um mecanismo de avaliação baseado em políticas que permite criar regras de acesso para qualquer aplicativo conectado do Azure AD. Para obter mais informações, consulte [acesso condicional do Azure Active Directory (AD do Azure)](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal).
 
 ## <a name="next-step"></a>Próximas etapas
 
-[Etapa 1. Planejar a implantação de VPN Always On](always-on-vpn-deploy-planning.md): Antes de instalar a função de servidor de acesso remoto no computador que você estiver planejando usar como um servidor VPN. Após o planejamento adequado, você pode implantar a VPN Always On e, opcionalmente, configure o acesso condicional para conectividade VPN usando o Azure AD.  
+[Etapa 1. Planeje a implantação de VPN Always On @ no__t-0: Antes de instalar a função de servidor de acesso remoto no computador que você está planejando usar como um servidor VPN. Após o planejamento adequado, você pode implantar Always On VPN e, opcionalmente, configurar o acesso condicional para conectividade VPN usando o Azure AD.  

@@ -7,34 +7,34 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 74fc677c8855e1f66913102f321a1e6f46b2a698
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d3540e5d8ca40e464e1f9c58d0ba56283c6ea5f7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826517"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402438"
 ---
 # <a name="appendices"></a>Apêndices
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Apêndices estão incluídos neste documento para aumentar as informações contidas no corpo do documento. A lista de apêndices e uma breve descrição de cada um em incluído a tabela a seguir.  
+Os apêndices estão incluídos neste documento para aumentar as informações contidas no corpo do documento. A lista de apêndices e uma breve descrição de cada um em incluía a tabela a seguir.  
   
 
 |**Apêndice**|**Descrição**|  
 | --- | --- | 
-|[Apêndice b: Contas privilegiadas e grupos no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-B--Privileged-Accounts-and-Groups-in-Active-Directory.md)|Fornece informações de plano de fundo que ajudam a identificar os usuários e grupos, que você deve se concentrar em proteger porque eles podem ser aproveitados por invasores de comprometer e até mesmo destruir a instalação do Active Directory.|  
-|[Apêndice C: Contas protegidas e grupos no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)|Contém informações sobre grupos protegidos no Active Directory. Ele também contém informações de personalização limitada (remoção) de grupos que são considerados grupos protegidos e são afetados por AdminSDHolder e SDProp.|  
-|[Apêndice d: Protegendo contas de administrador internas no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)|Contém diretrizes para ajudar a proteger a conta de administrador em cada domínio na floresta.|  
-|[Apêndice e: Protegendo grupos de administrador corporativo no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory.md)|Contém diretrizes para ajudar a proteger o grupo de administradores corporativos na floresta.|  
-|[Apêndice f: Protegendo grupos de administradores de domínio do Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory.md)|Contém diretrizes para ajudar a proteger o grupo Admins. do domínio em cada domínio na floresta.|  
-|[Apêndice g: Protegendo grupos de administradores no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-G--Securing-Administrators-Groups-in-Active-Directory.md)|Contém diretrizes para ajudar a proteger o grupo de administradores interno em cada domínio na floresta.|  
-|[Apêndice h: Protegendo grupos e contas de Administrador Local](../../../ad-ds/plan/security-best-practices/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups.md)|Contém diretrizes para ajudar a proteger contas de administrador locais e grupos de administradores nos servidores de domínio e estações de trabalho.|  
-|[Apêndice i: Criando o gerenciamento de contas para contas protegidas e grupos no Active Directory](../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md)|Fornece informações para criar as contas que têm privilégios limitados e podem ser controladas de forma rigorosa, mas podem ser usadas para preencher grupos privilegiados no Active Directory quando a elevação temporária é necessária.|   
-|[Apêndice l: Eventos a serem monitorados](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md)|Lista de eventos para os quais você deve monitorar em seu ambiente.|  
-|[Apêndice m: Links de documentos e leitura recomendada](../../../ad-ds/manage/Appendix-M--Document-Links-and-Recommended-Reading.md)|Contém uma lista de leitura recomendada. Também contém uma lista de links para documentos externos e suas URLs para que os leitores de cópias impressas deste documento possam acessar essas informações.|  
+|[Apêndice B: Contas privilegiadas e grupos no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-B--Privileged-Accounts-and-Groups-in-Active-Directory.md)|Fornece informações básicas que ajudam a identificar os usuários e grupos nos quais você deve se concentrar na proteção, pois eles podem ser aproveitados por invasores para comprometer e até mesmo destruir sua instalação de Active Directory.|  
+|[Apêndice C: Contas protegidas e grupos no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)|Contém informações sobre grupos protegidos no Active Directory. Ele também contém informações para personalização limitada (remoção) de grupos que são considerados grupos protegidos e são afetados por AdminSDHolder e SDProp.|  
+|[Apêndice D: Como proteger contas de administrador interno no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)|Contém diretrizes para ajudar a proteger a conta de administrador em cada domínio na floresta.|  
+|[Apêndice E: Como proteger grupos de administrador corporativo no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory.md)|Contém diretrizes para ajudar a proteger o grupo de administradores de empresa na floresta.|  
+|[Apêndice F: Como proteger grupos de administrador de domínio no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory.md)|Contém diretrizes para ajudar a proteger o grupo Admins. do domínio em cada domínio na floresta.|  
+|[Apêndice G: Como proteger grupos de administradores no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-G--Securing-Administrators-Groups-in-Active-Directory.md)|Contém diretrizes para ajudar a proteger o grupo de administradores internos em cada domínio na floresta.|  
+|[Apêndice H: Como proteger contas e grupos de administrador local](../../../ad-ds/plan/security-best-practices/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups.md)|Contém diretrizes para ajudar a proteger contas de administrador local e grupos de administradores em estações de trabalho e servidores ingressados no domínio.|  
+|[Apêndice I: Como criar o gerenciamento de contas para contas e grupos protegidos no Active Directory](../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md)|Fornece informações para criar contas que têm privilégios limitados e que podem ser rigorosamente controladas, mas podem ser usadas para popular grupos com privilégios em Active Directory quando a elevação temporária é necessária.|   
+|[Apêndice L: Eventos a serem monitorados](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md)|Lista os eventos que você deve monitorar em seu ambiente.|  
+|[Apêndice M: Links de documentos e leitura recomendada](../../../ad-ds/manage/Appendix-M--Document-Links-and-Recommended-Reading.md)|Contém uma lista de leituras recomendadas. Também contém uma lista de links para documentos externos e suas URLs para que os leitores de cópias de hardware deste documento possam acessar essas informações.|  
   
 
 

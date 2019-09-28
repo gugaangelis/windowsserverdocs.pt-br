@@ -1,9 +1,9 @@
 ---
-title: ETAPA 11 configurar uma implantação multissite
-description: 'Este tópico é parte do guia de laboratório de teste: demonstrar uma implantação de multissite de DirectAccess para Windows Server 2016'
+title: ETAPA 11 configurar a implantação multissite
+description: Este tópico faz parte do guia de laboratório de teste – demonstre uma implantação multissite do DirectAccess para o Windows Server 2016
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,92 +12,92 @@ ms.topic: article
 ms.assetid: 8cbdeb1d-5f7c-4360-bcc1-ab40d3cd8040
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c95fb641c0d0fa3161caadfa2eb769e12b47672d
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 3a80697665eeb67c2dda0d4d25201c7d02ed0c7e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283231"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404811"
 ---
-# <a name="step-11-configure-the-multisite-deployment"></a>ETAPA 11 configurar uma implantação multissite
+# <a name="step-11-configure-the-multisite-deployment"></a>ETAPA 11 configurar a implantação multissite
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Para configurar uma implantação multissite, fazer alterações para o Assistente de configuração de acesso remoto atual em EDGE1, habilitar o recurso de vários sites e, em seguida, adicione EDGE1 2 como um segundo ponto de entrada.  
+Para configurar uma implantação multissite, faça alterações no assistente de configuração de acesso remoto atual no EDGE1, habilite o recurso multissite e, em seguida, adicione 2-EDGE1 como um segundo ponto de entrada.  
   
-- Configurar o acesso remoto em EDGE1  
+- Configurar o acesso remoto no EDGE1  
   
-- Habilitar a configuração multissite em EDGE1  
+- Habilitar a configuração multissite no EDGE1  
   
-- Adicionar EDGE1 2 como um segundo ponto de entrada  
+- Adicionar 2-EDGE1 como um segundo ponto de entrada  
   
-## <a name="configDA"></a>Configurar o acesso remoto em EDGE1  
+## <a name="configDA"></a>Configurar o acesso remoto no EDGE1  
   
-1.  Sobre o **inicie** tela, digite**RAMgmtUI.exe**, e pressione ENTER. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
+1.  Na tela **Iniciar** , digite**RAMgmtUI. exe**e pressione Enter. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
   
 2.  No Console de gerenciamento de acesso remoto, clique em **Configuração**.  
   
-3.  No painel central do console, nos **etapa 2 servidor de acesso remoto** área, clique em **editar**.  
+3.  No painel central do console do, na área **etapa 2 servidor de acesso remoto** , clique em **Editar**.  
   
-4.  Clique em **configuração de prefixo**. Sobre o **configuração de prefixo** página, na **prefixos IPv6 da rede interna**, insira **2001:db8:1:: / 64; 2001:db8:2:: 64**. Na **prefixo IPv6 atribuído a computadores cliente DirectAccess**, insira **2001:db8:1:1000:: 64**, clique em **próxima**e, em seguida, clique em **concluir** .  
+4.  Clique em **configuração de prefixo**. Na página **configuração de prefixo** , em **prefixos IPv6 de rede interna**, digite **2001: DB8:1::/64; 2001: DB8:2::/64**. Em **prefixo IPv6 atribuído a computadores cliente DirectAccess**, **digite 2001: DB8:1: 1000::/64**, clique em **Avançar**e, em seguida, clique em **concluir**.  
   
-5.  No painel central do console, nos **etapa 3: servidores de infraestrutura** área, clique em **editar**.  
+5.  No painel central do console do, na área **servidores de infraestrutura da etapa 3** , clique em **Editar**.  
   
-6.  Clique em **lista de pesquisa de sufixos DNS**. No **lista de pesquisa de sufixos DNS** página, certifique-se de que o **clientes de configurar o DirectAccess com a lista de pesquisa de sufixos DNS client** caixa de seleção é marcada e que o **corp.contoso.com** e **corp2.corp.contoso.com** sufixos de domínio aparecem no **sufixos de domínio para usar** , clique em **próximo**e, em seguida, clique em Concluir.  
+6.  Clique em **lista de pesquisa de sufixo DNS**. Na página **lista de pesquisa de sufixo DNS** , verifique se a caixa de seleção **configurar clientes DirectAccess com o sufixo de cliente DNS** está marcada e se os sufixos de domínio **Corp.contoso.com** e **corp2.Corp.contoso.com** aparece na lista **sufixos de domínio a serem usados** , clique em **Avançar**e em concluir.  
   
-7.  No painel central do console, clique em **concluir**.  
+7.  No painel central do console do, clique em **concluir**.  
   
-8.  Sobre o **análise de acesso remoto** caixa de diálogo, examine as configurações e, em seguida, clique em **aplicar**. Na caixa de diálogo **Aplicando Configurações do Assistente de Configuração de Acesso Remoto** , clique em **Fechar**.  
+8.  Na caixa de diálogo **revisão de acesso remoto** , examine as definições de configuração e clique em **aplicar**. Na caixa de diálogo **Aplicando Configurações do Assistente de Configuração de Acesso Remoto** , clique em **Fechar**.  
   
-9. No **tarefas** painel, clique em **atualizar servidores de gerenciamento**e clique em **fechar** quando terminar.  
+9. No painel **tarefas** , clique em **Atualizar servidores de gerenciamento**e clique em **Fechar** quando terminar.  
   
-## <a name="EnabledMultisite"></a>Habilitar a configuração multissite em EDGE1  
+## <a name="EnabledMultisite"></a>Habilitar a configuração multissite no EDGE1  
   
-1.  No Console de gerenciamento de acesso remoto, nos **tarefas** painel, clique em **habilitar multissite**.  
+1.  No console de gerenciamento de acesso remoto, no painel **tarefas** , clique em **habilitar multissite**.  
   
-2.  No assistente habilitar implantação multissite, sobre o **antes de começar** , clique em **próxima**.  
+2.  No Assistente para habilitar implantação multissite, na página **antes de começar** , clique em **Avançar**.  
   
-3.  Sobre o **nome de implantação** página, na **nome da implantação multissite**, tipo **Contoso**, no **primeiro ponto de entrada nome**, tipo **Site Edge1**e, em seguida, clique em **próxima**.  
+3.  Na página **nome da implantação** , em **nome da implantação multissite**, digite **contoso**, no **primeiro nome do ponto de entrada**, digite **Edge1-site**e clique em **Avançar**.  
   
-4.  Sobre o **seleção de ponto de entrada** , clique em **atribuir pontos de entrada automaticamente, e permitir que os clientes selecionar manualmente**e, em seguida, clique em **próxima**.  
+4.  Na página **seleção de ponto de entrada** , clique em **atribuir pontos de entrada automaticamente e permita que os clientes selecionem manualmente**e clique em **Avançar**.  
   
-5.  Sobre o **balanceamento de carga Global** , clique em **não, não use balanceamento de carga global**e, em seguida, clique em **próxima**.  
+5.  Na página **balanceamento de carga global** , clique em **não, não use balanceamento de carga global**e clique em **Avançar**.  
   
-6.  Sobre o **suporte ao cliente** , clique em **permitem que o cliente computadores que executam o Windows 7 para acessar esse ponto de entrada**e clique em **adicionar**.  
+6.  Na página **suporte ao cliente** , clique em **permitir que computadores cliente que executam o Windows 7 acessem esse ponto de entrada**e clique em **Adicionar**.  
   
-7.  Sobre o **selecionar grupos** na caixa **digite os nomes de objeto para selecionar**, tipo **Win7_Clients_Site1**, clique em **Okey**e, em seguida, clique em **Próxima**.  
+7.  Na caixa de diálogo **Selecionar grupos** , em **digite os nomes de objeto a serem selecionados**, digite **Win7_Clients_Site1**, clique em **OK**e, em seguida, clique em **Avançar**.  
   
-8.  Sobre o **configurações de GPO do cliente** , clique em **próxima**.  
+8.  Na página **configurações de GPO do cliente** , clique em **Avançar**.  
   
-9. Sobre o **resumo** , clique em **confirmar**.  
+9. Na página **Resumo** , clique em **confirmar**.  
   
-10. Sobre o **habilitando a implantação de multissite** caixa de diálogo, clique em **fechar** e, em seguida, no assistente habilitar implantação multissite, clique em **fechar**.  
+10. Na caixa de diálogo **habilitando a implantação** multissite, clique em **fechar** e, em seguida, no assistente habilitar implantação multissite, clique em **Fechar**.  
   
-## <a name="AddEP"></a>Adicionar EDGE1 2 como um segundo ponto de entrada  
+## <a name="AddEP"></a>Adicionar 2-EDGE1 como um segundo ponto de entrada  
   
-1.  No Console de gerenciamento de acesso remoto, nos **tarefas** painel, clique em **adicionar um ponto de entrada**.  
+1.  No console de gerenciamento de acesso remoto, no painel **tarefas** , clique em **Adicionar um ponto de entrada**.  
   
-2.  Em Adicionar um ponto de entrada no assistente, no **detalhes do ponto de entrada** página, na **servidor de acesso remoto**, tipo **2 edge1.corp2.corp.contoso.com**, no **entrada nome do ponto**, digite **Edge1-2-Site**e, em seguida, clique em **próximo**.  
+2.  No assistente Adicionar um ponto de entrada, na página **detalhes do ponto de entrada** , em **servidor de acesso remoto**, digite **2-EDGE1.corp2.Corp.contoso.com**, em nome do **ponto de entrada**, digite **2-EDGE1-site**e clique em **Avançar**.  
   
-3.  Sobre o **topologia de rede** , clique em **borda**e, em seguida, clique em **próxima**.  
+3.  Na página **topologia de rede** , clique em **borda**e em **Avançar**.  
   
-4.  Sobre o **nome de rede ou o endereço IP** página, na **digite o nome público ou endereço IP usado por clientes para se conectar ao servidor de acesso remoto**, tipo **2 edge1.contoso.com**, e em seguida, clique em **próxima**.  
+4.  Na página **nome da rede ou endereço IP** , em **digite o nome público ou o endereço IP usado pelos clientes para se conectar ao servidor de acesso remoto**, digite **2-EDGE1.contoso.com**e clique em **Avançar**.  
   
-5.  Sobre o **adaptadores de rede** página, certifique-se de que o **adaptador externo** é **Internet**, o **adaptador interno** é **2 -Corpnet**, o certificado está **CN = 2 edge1.contoso.com**e, em seguida, clique em **próximo**.  
+5.  Na página **adaptadores de rede** , verifique se o **adaptador externo** é **Internet**, se **o adaptador interno** é **2-corpnet**, se o certificado é **CN = 2-EDGE1.contoso.com**e clique em **Avançar**.  
   
-6.  No **configuração de prefixo** página, na **prefixo IPv6 atribuído a computadores cliente DirectAccess**, tipo **2001:db8:2:2000:: 64**e, em seguida, clique em **Avançar** .  
+6.  Na página **configuração do prefixo** , em **prefixo IPv6 atribuído aos computadores cliente do DirectAccess**, digite **2001: DB8:2: 2000::/64**e clique em **Avançar**.  
   
-7.  Sobre o **suporte ao cliente** , clique em **permitem que o cliente computadores que executam o Windows 7 para acessar esse ponto de entrada**e clique em **adicionar**.  
+7.  Na página **suporte ao cliente** , clique em **permitir que computadores cliente que executam o Windows 7 acessem esse ponto de entrada**e clique em **Adicionar**.  
   
-8.  Sobre o **selecionar grupos** na caixa **digite os nomes de objeto para selecionar**, tipo **Win7_Clients_Site2**, clique em **Okey**e, em seguida, clique em **Próxima**.  
+8.  Na caixa de diálogo **Selecionar grupos** , em **digite os nomes de objeto a serem selecionados**, digite **Win7_Clients_Site2**, clique em **OK**e, em seguida, clique em **Avançar**.  
   
-9. Sobre o **configurações de GPO do cliente** , clique em **próxima**.  
+9. Na página **configurações de GPO do cliente** , clique em **Avançar**.  
   
-10. Sobre o **configurações de GPO do servidor** , clique em **próxima**.  
+10. Na página **configurações do GPO do servidor** , clique em **Avançar**.  
   
-11. Sobre o **resumo** página, clique em **confirmar**.  
+11. Na página **Resumo** , clique em **confirmar**.  
   
-12. Sobre o **adicionando ponto de entrada** caixa de diálogo, clique em **fechar** e, em seguida, na caixa Adicionar um Assistente de ponto de entrada, clique em **fechar**.  
+12. Na caixa de diálogo **Adicionar ponto de entrada** , clique em **fechar** e, em seguida, no assistente Adicionar um ponto de entrada, clique em **Fechar**.  
   
 
 

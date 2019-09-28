@@ -1,7 +1,7 @@
 ---
-title: Use pelo menos versão do protocolo SMB 3.0 para compartilhamentos de arquivos que armazenam arquivos de máquinas virtuais.
-description: Versão online do texto para essa regra do analisador de práticas recomendadas.
-ms.prod: windows-server-threshold
+title: Use pelo menos o protocolo SMB versão 3,0 para compartilhamentos de arquivos que armazenam arquivos para máquinas virtuais.
+description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,38 +10,38 @@ ms.topic: article
 ms.assetid: 4bb832b8-f1aa-4c1f-a0f2-324dd53553ea
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 28e0f3769fd4fc993710d0a0b800dfad7c9ab157
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: af23c3c860a47d0dd9096bc3f5ff466aca7836b6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834337"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393315"
 ---
-# <a name="use-at-least-smb-protocol-version-30-for-file-shares-that-store-files-for-virtual-machines"></a>Use pelo menos versão do protocolo SMB 3.0 para compartilhamentos de arquivos que armazenam arquivos de máquinas virtuais.
+# <a name="use-at-least-smb-protocol-version-30-for-file-shares-that-store-files-for-virtual-machines"></a>Use pelo menos o protocolo SMB versão 3,0 para compartilhamentos de arquivos que armazenam arquivos para máquinas virtuais.
 
 >Aplica-se a: Windows Server 2016
 
-Para obter mais informações sobre as práticas recomendadas e varreduras, consulte [Run Best Practices Analyzer Scans e Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
+Para obter mais informações sobre práticas recomendadas e verificações, consulte [executar verificações de analisador de práticas recomendadas e gerenciar resultados de verificação](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
 |Propriedade|Detalhes|  
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
-|**Recurso do produto**|Hyper-V|  
-|**Severidade**|Erro|  
-|**categoria**|Configuração|  
+|**Produto/recurso**|Hyper-V|  
+|**Severity**|Erro|  
+|**Categorias**|Configuração|  
   
-Nas seções a seguir, itálico indica o texto de interface do usuário que aparece na ferramenta Analisador de práticas recomendadas para esse problema.  
+Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
 ## <a name="issue"></a>**Problema**  
-*Arquivos de máquina virtual ou disco rígido virtual são armazenados em um compartilhamento de arquivos que não oferece suporte a pelo menos versão do protocolo SMB 3.0.*  
+*Os arquivos de máquina virtual ou os arquivos de disco rígido virtual são armazenados em um compartilhamento de arquivos que não dá suporte ao protocolo SMB versão 3,0.*  
   
-## <a name="impact"></a>**Impacto**  
-*Microsoft não oferece suporte a essa configuração. Isso afeta as seguintes máquinas virtuais:*  
+## <a name="impact"></a>**Causa**  
+*Microsoft não dá suporte a essa configuração. Isso afeta as seguintes máquinas virtuais:*  
   
-\<lista de máquinas virtuais >  
+\<list de máquinas virtuais >  
   
 ## <a name="resolution"></a>**Resolução**  
-*Mova os arquivos para um compartilhamento de arquivo usa pelo menos versão do protocolo SMB 3.0.*  
+*Mova os arquivos para um compartilhamento de arquivos que usa pelo menos o protocolo SMB versão 3,0.*  
   
 
 

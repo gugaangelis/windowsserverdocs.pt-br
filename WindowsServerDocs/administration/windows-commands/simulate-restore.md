@@ -1,8 +1,8 @@
 ---
-title: Simular a restauração
-description: 'Tópico de comandos do Windows para * * *- '
+title: Simular restauração
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 09b626939c13d4e38a983435b45d8c47ee2b93a4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d6652fea4e74c706fcc03b8a547fab771a7c0191
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817247"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370878"
 ---
-# <a name="simulate-restore"></a>Simular a restauração
+# <a name="simulate-restore"></a>Simular restauração
 
 
 
-Testa o envolvimento do gravador em sessões de restauração no computador sem emitir **PreRestore** ou **PostRestore** eventos para gravadores.
+Testa o envolvimento do gravador em sessões de restauração no computador sem emitir eventos **Prerestore** ou **createrestore** para gravadores.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,9 +34,9 @@ simulate restore
 
 ## <a name="remarks"></a>Comentários
 
--   **Simular a restauração** é usado para testar se a restauração com gravadores pode ser bem-sucedida ou não.
--   Antes de usar **simular restauração**, você deve carregar um arquivo de metadados do DiskShadow usando o **carregar metadados** comando. Isso carrega os gravadores selecionados e os componentes para a restauração.
+-   O **Simulate Restore** é usado para testar se a restauração com gravadores pode ou não ser bem-sucedida.
+-   Antes de usar a **simulação de restauração**, você deve carregar um arquivo de metadados do DiskShadow usando o comando **carregar metadados** . Isso carrega os gravadores e componentes selecionados para a restauração.
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

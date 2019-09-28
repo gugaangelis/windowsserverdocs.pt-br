@@ -2,18 +2,18 @@
 title: Crie uma cota de aplicação automática
 description: Este artigo descreve como criar cotas de aplicação automática com base em um modelo de cota
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e2837df448434252470d783a6c06f0690ba09021
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 68967ff920f25c05affc206ed45bad9275e781b6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847917"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394241"
 ---
 # <a name="create-an-auto-apply-quota"></a>Crie uma cota de aplicação automática
 
@@ -42,5 +42,5 @@ Por exemplo, você pode definir uma cota de aplicação automática de subpastas
 
 ## <a name="see-also"></a>Consulte também
 
--   [Gerenciamento de cotas](quota-management.md)
--   [Editar automática aplicar propriedades de cota](edit-auto-apply-quota-properties.md)
+-   [Gerenciamento de cota](quota-management.md)
+-   [Editar propriedades de cota de aplicação automática](edit-auto-apply-quota-properties.md)

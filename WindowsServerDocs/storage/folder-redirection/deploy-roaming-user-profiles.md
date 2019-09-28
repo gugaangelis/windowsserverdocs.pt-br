@@ -1,19 +1,19 @@
 ---
 title: Implantando perfis de usuário de roaming
 TOCTitle: Deploying Roaming User Profiles
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.date: 06/07/2019
 ms.author: jgerend
-ms.openlocfilehash: 3442ad46590add695fb3fed607c6f728e2bc5ee1
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b7a89ce8d72cf4f060e83b3653b3b2d93eed5cfd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867284"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402039"
 ---
 # <a name="deploying-roaming-user-profiles"></a>Implantando perfis de usuário de roaming
 
@@ -238,7 +238,7 @@ Para especificar um layout de início, faça o seguinte:
 | Nome do valor   | **SpecialRoamingOverrideAllowed** |
 | Tipo de valor   | **REG_DWORD**               |
 | os dados de Valor   | **1** (ou **0** para desabilitar) |
-| Base         | **Decimal**                 |
+| Base         | **Vírgula**                 |
 
 5. Adicional Habilite otimizações de logon primeiras para tornar a entrada mais rápida para os usuários. Para fazer isso, consulte [aplicar políticas para melhorar o tempo de entrada](https://docs.microsoft.com/windows/client-management/mandatory-user-profile#apply-policies-to-improve-sign-in-time).
 6. Adicional Diminua ainda mais os tempos de entrada removendo aplicativos desnecessários da imagem base do Windows 10 que você usa para implantar computadores cliente. O Windows Server 2019 e o Windows Server 2016 não têm nenhum aplicativo previamente provisionado, portanto, você pode ignorar esta etapa em imagens do servidor.
@@ -287,7 +287,7 @@ Veja como testar perfis de usuário móvel:
 
 ## <a name="appendix-a-checklist-for-deploying-roaming-user-profiles"></a>Apêndice A: Lista de verificação para a implantação de Perfis de Usuário Móvel
 
-| Status                     | Action                                                |
+| Status                     | Ação                                                |
 | ---                        | ------                                                |
 | ☐<br>☐<br>☐<br>☐<br>☐   | 1. Preparar domínio<br>-Ingressar computadores no domínio<br>-Habilitar o uso de versões de perfil separadas<br>-Criar contas de usuário<br>-(Opcional) implantar redirecionamento de pasta |
 | ☐<br><br><br>             | 2. Criar grupo de segurança para Perfis de Usuário Móvel<br>-Nome do Grupo:<br>Os |

@@ -1,8 +1,8 @@
 ---
 title: Gerenciar áreas de trabalho virtuais
-description: Saiba como gerenciar áreas de trabalho virtuais (VDI) no MultiPoint Services
+description: Saiba como gerenciar as áreas de trabalho virtuais (VDI) nos serviços do MultiPoint
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,21 +13,21 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 7afc6d2a65cd5cd3b116db5d65fd97e4cc770690
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 45bb3e98779bc27913c7e675a9c9db7e575d9d72
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861437"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389594"
 ---
 # <a name="manage-virtual-desktops"></a>Gerenciar áreas de trabalho virtuais
-VDI de computador único permite que você configure cada *local* estação do MultiPoint Services para se conectar a um sistema de operacional de convidado do Windows 10 Enterprise em execução em uma máquina virtual do Hyper-V (VM) no mesmo computador do MultiPoint Services como o estação. Essas estações de área de trabalho virtual podem ser personalizadas com o aplicativo que não pode ser instalado em uma versão de servidor Windows.  
+O VDI de computador único permite configurar cada estação *local* dos serviços do MultiPoint para se conectar a um sistema operacional convidado do Windows 10 Enterprise em execução em uma VM (máquina virtual) do Hyper-V no mesmo computador de serviços do MultiPoint que a estação. Essas estações de área de trabalho virtual podem ser personalizadas com o aplicativo que não pode ser instalado em uma versão de servidor Windows.  
   
 ## <a name="enable-the-virtual-desktop-feature"></a>Habilitar o recurso de área de trabalho virtual  
   
 1.  Abra o MultiPoint Manager e clique na guia **Áreas de Trabalho Virtuais**.  
   
-2.  Em **VDI Tasks (Tarefas da VDI)**, clique em **criar área de trabalho virtual** e procure o .iso ou VHD do Windows 10 Enterprise.  
+2.  Em **VDI Tasks (Tarefas da VDI)** , clique em **criar área de trabalho virtual** e procure o .iso ou VHD do Windows 10 Enterprise.  
   
 O sistema é reiniciado, o que pode levar vários minutos.  
   
@@ -35,7 +35,7 @@ O sistema é reiniciado, o que pode levar vários minutos.
   
 1.  Abra o MultiPoint Manager e clique na guia **Áreas de Trabalho Virtuais**.  
   
-2.  Em **VDI Tasks (Tarefas da VDI)**, clique em **Create virtual desktop (Criar área de trabalho virtual)** e procure o .iso ou VHD do Windows 10 Enterprise.  
+2.  Em **VDI Tasks (Tarefas da VDI)** , clique em **Create virtual desktop (Criar área de trabalho virtual)** e procure o .iso ou VHD do Windows 10 Enterprise.  
   
     Se estiver usando o DVD, o programa localizará automaticamente o arquivo .wim do Windows 10 Enterprise. Caso contrário, clique em **Procurar** e, em seguida, navegue até o .iso ou VHD do Windows 10 Enterprise.  
   
@@ -58,15 +58,15 @@ No caso em que você criou um modelo de área de trabalho virtual em outro Multi
 
 1.  Abra o MultiPoint Manager e clique na guia **Áreas de Trabalho Virtuais**.  
   
-2.  Nas tarefas de VDI, clique em **Import Virtual desktop template (Importar modelo de área de trabalho virtual)**.  
+2.  Nas tarefas de VDI, clique em **Import Virtual desktop template (Importar modelo de área de trabalho virtual)** .  
   
 3.  Localize o modelo e defina o caminho e o prefixo para o modelo importado.  
   
 ## <a name="customize-the-virtual-desktop-template"></a>Personalizar o modelo de área de trabalho virtual  
-Depois que você criou o modelo de área de trabalho virtual, você pode personalizá-lo com aplicativos, atualizações de software e definir configurações do sistema.   
+Depois de criar o modelo de área de trabalho virtual, você pode personalizá-lo com aplicativos, atualizações de software e definir configurações do sistema.   
 
 1. Abra o MultiPoint Manager e clique na guia **Áreas de Trabalho Virtuais**.  
-2. Escolha o modelo de área de trabalho virtual e clique em **Customize virtual desktop template (Personalizar o modelo de área de trabalho virtual)**.  
+2. Escolha o modelo de área de trabalho virtual e clique em **Customize virtual desktop template (Personalizar o modelo de área de trabalho virtual)** .  
 O modelo é aberto em uma janela separada e são fornecidas instruções adicionais que realçam as etapas mais importantes para personalizar o modelo virtual. Examine essas instruções cuidadosamente.  
   
 ## <a name="create-virtual-desktop-stations"></a>Criar estações de área de trabalho virtual  
@@ -76,18 +76,18 @@ O modelo é aberto em uma janela separada e são fornecidas instruções adicion
     > [!NOTE]  
     > Se o sistema MultiPoint Services não estiver em execução no modo de estação, reinicie-o antes de concluir este procedimento.  
   
-2.  Selecione o modelo de área de trabalho virtual na esquerda\-painel. Ele é chamado <prefix –t >.  
+2.  Selecione o modelo de área de trabalho virtual no painel da esquerda @ no__t-0hand. Ele é chamado <prefix –t >.  
   
 3.  Nas tarefas do modelo, clique em **Create virtual desktop stations (Criar estações de área de trabalho virtual)** e clique em **OK**.  
   
     O processo de criação da estação de área de trabalho virtual leva vários minutos.  
   
     > [!NOTE]  
-    > Se qualquer uma das estações locais atualmente conectado a uma sessão\-virtual baseada em área de trabalho, você deverá fazer logoff dessas estações para que eles possam se conectar a uma das estações da área de trabalho virtual recém-criada.  
+    > Se qualquer uma das estações locais estiver atualmente conectada a uma sessão @ no__t-0based área de trabalho virtual, você deverá fazer logoff dessas estações para que elas se conectem a uma das estações de área de trabalho virtuais recém-criadas.  
   
 ### <a name="validate-the-newly-created-customized-virtual-station-desktops"></a>Validar as áreas de trabalho da estação virtual personalizada recém-criadas  
   
-Você pode validar suas áreas de trabalho da estação virtual personalizadas efetuando logon uma ou mais das estações da área de trabalho virtual usando uma conta de administrador local ou uma conta de domínio e, em seguida, verifique se que a nova VM\-trabalham com áreas de trabalho virtuais corretamente.  
+Você pode validar suas áreas de trabalho de estação virtual personalizadas fazendo logon em uma ou mais das estações de área de trabalho virtual usando uma conta de administrador local ou uma conta de domínio e, em seguida, verificar se as novas áreas de trabalho virtuais VM @ no__t-0based estão funcionando corretamente.  
   
 ## <a name="disable-virtual-desktops"></a>Desabilitar áreas de trabalho virtuais  
   
@@ -95,4 +95,4 @@ Ao desabilitar as áreas de trabalho virtuais o recurso Hyper-V será desativado
 
 1. Abra o MultiPoint Manager no modo de estação e clique na guia **Áreas de Trabalho Virtuais**.  
   
-2. Nas tarefas de VDI, clique em **Disable virtual desktops (Desabilitar áreas de trabalho virtuais)**. 
+2. Nas tarefas de VDI, clique em **Disable virtual desktops (Desabilitar áreas de trabalho virtuais)** . 

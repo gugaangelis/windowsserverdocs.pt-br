@@ -2,18 +2,18 @@
 title: Editar propriedades de modelo de triagem de arquivo
 description: Este artigo descreve como editar propriedades de modelo de triagem de arquivo
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 31ca46707a32d23a5dd9606c57bcaec5d6e53a80
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9e84545be86bdb8fcba09d0ff49ac98b44cd7bdf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846887"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403125"
 ---
 # <a name="edit-file-screen-template-properties"></a>Editar propriedades de modelo de triagem de arquivo
 
@@ -28,7 +28,7 @@ Quando você faz alterações a um modelo de triagem de arquivo, você tem a op�
 
 1.  Em **Modelos de triagem de arquivo**, selecione o modelo que você deseja modificar.
 
-2.  O modelo de triagem de arquivo com o botão direito e clique em **editar propriedades do modelo** (ou o **ações** painel, em **modelos de tela de arquivo selecionado**, selecione  **Editar propriedades de modelo**.) Isso abre o **propriedades do modelo de triagem de arquivo** caixa de diálogo.
+2.  Clique com o botão direito do mouse no modelo de tela de arquivo e clique em **Editar propriedades do modelo** (ou no painel **ações** , em **modelos de tela de arquivo selecionados**, selecione **Editar propriedades do modelo**.) Isso abre a caixa de diálogo **Propriedades do modelo de tela de arquivo** .
 
 3.  Se você quiser copiar as propriedades de outro modelo como base para seu modelo, selecione um modelo na lista suspensa **Copiar propriedades do modelo de cota**. Em seguida, clique em **Copiar**.
 
@@ -46,7 +46,7 @@ Quando você faz alterações a um modelo de triagem de arquivo, você tem a op�
 
 ## <a name="see-also"></a>Consulte também
 
--   [Gerenciamento de triagem de arquivo](file-screening-management.md)
--   [Criar um modelo de tela de arquivo](create-file-screen-template.md)
+-   [Gerenciamento de triagem de arquivos](file-screening-management.md)
+-   [Criar um modelo de triagem de arquivo](create-file-screen-template.md)
 
 

@@ -7,14 +7,14 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d5760820613c3b791b577a600cae543621eee257
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c8a5863865d465d55f1d5865fdcbdeeb942ce194
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845587"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71409089"
 ---
 # <a name="introduction-to-active-directory-replication-and-topology-management-using-windows-powershell-level-100"></a>Introdução à replicação do Active Directory e ao gerenciamento de topologia usando o Windows PowerShell (nível 100)
 
@@ -26,11 +26,11 @@ O Windows PowerShell para Active Directory inclui a capacidade de gerenciar repl
 > Os cmdlets de replicação e topologia do Windows PowerShell para Active Directory estão disponíveis nos seguintes ambientes:
 > 
 > -    Controlador de domínio do Windows Server 2012
-> -    Windows Server 2012 com as ferramentas de administração de servidor remoto para AD DS e AD LDS instalada.
-> -   Windows&reg; 8 com as ferramentas de administração de servidor remoto para AD DS e AD LDS instalado.
+> -    O Windows Server 2012 com o Ferramentas de Administração de Servidor Remoto para AD DS e AD LDS instalado.
+> -   Windows @ no__t-0 8 com o Ferramentas de Administração de Servidor Remoto para AD DS e AD LDS instalados.
 
 ## <a name="installing-the-active-directory-module-for-windows-powershell"></a>Instalando o módulo do Active Directory para Windows PowerShell
-O módulo Active Directory para Windows PowerShell é instalado por padrão quando a função de servidor AD DS é instalada em um servidor que executa o Windows Server 2012. Nenhuma etapa adicional é necessária além de adicionar a função de servidor. Você também pode instalar o módulo do Active Directory em um servidor que executa o Windows Server 2012 instalando as ferramentas de administração de servidor remoto, e você pode instalar o módulo do Active Directory em um computador executando o Windows 8 Baixando e instalando o [ Ferramentas administrativas do servidor remoto (RSAT)](https://www.microsoft.com/download/details.aspx?id=28972). Consulte as [Instruções](https://www.microsoft.com/download/details.aspx?id=28972)para ver as etapas de instalação.
+O módulo Active Directory para Windows PowerShell é instalado por padrão quando a função de servidor AD DS é instalada em um servidor que executa o Windows Server 2012. Nenhuma etapa adicional é necessária além de adicionar a função de servidor. Você também pode instalar o módulo Active Directory em um servidor que executa o Windows Server 2012 instalando o Ferramentas de Administração de Servidor Remoto, e você pode instalar o módulo Active Directory em um computador que executa o Windows 8 baixando e instalando o [ Ferramentas administrativas de servidor remoto (RSAT)](https://www.microsoft.com/download/details.aspx?id=28972). Consulte as [Instruções](https://www.microsoft.com/download/details.aspx?id=28972)para ver as etapas de instalação.
 
 ## <a name="scenarios-for-testing-windows-powershell-for-active-directory-replication-and-topology-management-cmdlets"></a>Cenários para testar os cmdlets de gerenciamento de replicação e topologia do Windows PowerShell para Active Directory.
 Os seguintes cenários são concebidos para administradores com os novos cmdlets de gerenciamento:
@@ -65,7 +65,7 @@ Para concluir os passos nos procedimentos, você deve ser um membro do grupo de 
     > 
     > Exemplo: digite `Get-ADRep` e pressione Tab várias vezes para saltar entre os comandos correspondentes até acessar `Get-ADReplicationSite`. O recurso de preenchimento automático também funciona para nomes de parâmetro, como `Filter`.
 
-    Para formatar a saída do `Get-ADReplicationSite` de comando como uma tabela e limitar a exibição para campos específicos, você pode direcionar a saída para o `Format-Table` comando (ou "`ft`" para abreviar):
+    Para formatar a saída do comando `Get-ADReplicationSite` como uma tabela e limitar a exibição a campos específicos, você pode canalizar a saída para o comando `Format-Table` (ou "`ft`" para curto):
 
     `Get-ADReplicationSite -Filter * | ft Name`
 
@@ -142,7 +142,7 @@ Para concluir os passos nos procedimentos, você deve ser um membro do grupo de 
 
     `Get-ADReplicationUpToDatenessVectorTable DC1`
 
-    Isso mostra uma lista dos USNs mais altos vistos por **DC1** para cada controlador de domínio da floresta. O valor **Server** refere-se ao servidor que mantém a tabela, neste caso **DC1**. O valor **Partner** refere-se ao parceiro de replicação (direto ou indireto) no qual foram feitas alterações. O valor UsnFilter é o USN mais alto visto por **DC1** a partir de Partner. Se um novo controlador de domínio é adicionado à floresta, ele não será exibido no **DC1**tabela até **DC1** receba uma alteração originada desse novo domínio.
+    Isso mostra uma lista dos USNs mais altos vistos por **DC1** para cada controlador de domínio da floresta. O valor **Server** refere-se ao servidor que mantém a tabela, neste caso **DC1**. O valor **Partner** refere-se ao parceiro de replicação (direto ou indireto) no qual foram feitas alterações. O valor UsnFilter é o USN mais alto visto por **DC1** a partir de Partner. Se um novo controlador de domínio for adicionado à floresta, ele não será exibido na tabela do **DC1**até que **DC1** receba uma alteração originada do novo domínio.
 
 #### <a name="to-view-the-up-to-dateness-vector-table-for-all-domain-controllers-in-a-domain"></a>Para visualizar a tabela de vetores de para todos os controladores de domínio em um domínio
 
@@ -155,6 +155,6 @@ Para concluir os passos nos procedimentos, você deve ser um membro do grupo de 
     A triagem permite comparar facilmente o último USN visto por cada controlador de domínio para determinado parceiro de replicação. Esta é uma forma rápida de verificar se está ocorrendo replicação em seu ambiente. Se a replicação estiver funcionando corretamente, os valores do UsnFilter relatados para determinado parceiro de replicação devem ser bastante semelhantes em todos os controladores de domínio.
 
 ## <a name="see-also"></a>Consulte também
-[Avançada de replicação do Active Directory e gerenciamento de topologia usando o Windows PowerShell &#40;nível 200&#41;](Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md)
+[Replicação avançada de Active Directory e gerenciamento de topologia usando &#40;o Windows PowerShell nível 200&#41;](Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md)
 
 

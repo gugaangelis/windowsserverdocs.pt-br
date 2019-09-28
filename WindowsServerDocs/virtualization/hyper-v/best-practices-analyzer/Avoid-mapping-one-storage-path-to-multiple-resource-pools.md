@@ -1,7 +1,7 @@
 ---
-title: Evite o mapeamento de um caminho de armazenamento para vários pools de recursos
-description: Versão online do texto para essa regra do analisador de práticas recomendadas.
-ms.prod: windows-server-threshold
+title: Evite mapear um caminho de armazenamento para vários pools de recursos
+description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,38 +10,38 @@ ms.topic: article
 ms.assetid: 24992453-762b-4892-9a50-55d237b9b7f2
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 7c012836309f722e55c28b2ddbe3d54de641b4af
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e89c0382d20d586d8c0b50396ddbd56d6fdadf0b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823957"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365259"
 ---
-# <a name="avoid-mapping-one-storage-path-to-multiple-resource-pools"></a>Evite o mapeamento de um caminho de armazenamento para vários pools de recursos
+# <a name="avoid-mapping-one-storage-path-to-multiple-resource-pools"></a>Evite mapear um caminho de armazenamento para vários pools de recursos
 
 >Aplica-se a: Windows Server 2016
 
-Para obter mais informações sobre as práticas recomendadas e varreduras, consulte [Run Best Practices Analyzer Scans e Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
+Para obter mais informações sobre práticas recomendadas e verificações, consulte [executar verificações de analisador de práticas recomendadas e gerenciar resultados de verificação](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
 |Propriedade|Detalhes|  
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
-|**Recurso do produto**|Hyper-V|  
-|**Severidade**|Aviso|  
-|**categoria**|Operações|  
+|**Produto/recurso**|Hyper-V|  
+|**Severity**|Aviso|  
+|**Categorias**|Operações|  
   
-Nas seções a seguir, itálico indica o texto de interface do usuário que aparece na ferramenta Analisador de práticas recomendadas para esse problema.
+Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.
   
 ## <a name="issue"></a>**Problema**  
 *Um caminho de arquivo de armazenamento é mapeado para vários pools de recursos.*  
   
-## <a name="impact"></a>**Impacto**  
-*Para o tipo de pool de armazenamento especificada, os seguintes pools de pai e filho compartilham o mesmo caminho de armazenamento:*  
+## <a name="impact"></a>**Causa**  
+*Para o tipo de pool de armazenamento especificado, os seguintes pools pai e filho compartilham o mesmo caminho de armazenamento:*  
   
-\<lista de pools de >  
+\<list de pools >  
   
 ## <a name="resolution"></a>**Resolução**  
-*Use o Windows PowerShell para reconfigurar os pools de recursos de armazenamento, de modo que vários pools não usam o mesmo caminho de armazenamento.*  
+*Use o Windows PowerShell para reconfigurar os pools de recursos de armazenamento para que vários pools não usem o mesmo caminho de armazenamento.*  
   
 
 

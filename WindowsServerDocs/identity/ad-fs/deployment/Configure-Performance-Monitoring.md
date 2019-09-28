@@ -6,15 +6,15 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 82added5018d83aeb9fe7d8033204a0d19bd047a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 37dd52b8771eda695069dd996fbd920e31f80ef1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868103"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359812"
 ---
 # <a name="configure-performance-monitoring"></a>Configurar monitoramento de desempenho
   
@@ -41,7 +41,7 @@ O AD FS inclui seus próprios contadores de desempenho dedicados para ajudá-lo 
   
 7. Quando for solicitado a adicionar chaves do registro para monitorar, clique em **Avançar**.  
   
-8. Quando for solicitado a especificar o local para salvar os dados de desempenho, você poderá aceitar \(o local padrão **% systemdrive%\\PerfLogs\\admin\\** _< coletor de\_dados defina\_>_ e clique em **Avançar**.  
+8. Quando for solicitado a especificar o local para salvar os dados de desempenho, você poderá aceitar o local padrão \( **% systemdrive% \\PerfLogs @ no__t-3Admin @ no__t-4** _< data @ no__t-6collector @ no__t-7set >_ e clique em **Em seguida**.  
   
 9. Quando for solicitado a criar o conjunto de coletores de dados, selecione **salvar e fechar**e clique em **concluir**.  
   

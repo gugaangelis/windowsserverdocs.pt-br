@@ -7,23 +7,23 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 57eafcc884a827d98c249e2da0c0af6888abc5b9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e619d5f5e9cc317f9ba1548d5ed3a32e7bd12c2c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823637"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402542"
 ---
 # <a name="planning-forest-root-domain-controller-placement"></a>Planejando posicionamento do controlador de domínio raiz da floresta
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Controladores de domínio de raiz de floresta são necessárias para criar caminhos de relação de confiança para os clientes que precisam acessar recursos em domínios que não seja o seu próprio. Coloque os controladores de domínio de raiz de floresta em locais de hub e nos locais que hospedam os data centers. Se os usuários em um determinado local precisam acessar recursos de outros domínios no mesmo local e a disponibilidade de rede entre o datacenter e o local do usuário não é confiável, você pode adicionar um controlador de domínio de raiz da floresta no local ou criar um relação de confiança de atalho entre os dois domínios. Ele é mais econômico para criar uma relação de confiança de atalho entre os domínios, a menos que você tenha outras razões para colocar um controlador de domínio de raiz de floresta em que local.  
+Controladores de domínio raiz de floresta são necessários para criar caminhos de confiança para clientes que precisam acessar recursos em domínios diferentes do seu. Coloque os controladores de domínio raiz da floresta em locais de Hub e em locais que hospedam datacenters. Se os usuários em um determinado local precisarem acessar recursos de outros domínios no mesmo local e a disponibilidade de rede entre o datacenter e o local do usuário não for confiável, você poderá adicionar um controlador de domínio raiz da floresta no local ou criar um confiança de atalho entre os dois domínios. É mais econômico criar uma relação de confiança de atalho entre os domínios, a menos que você tenha outros motivos para posicionar um controlador de domínio raiz de floresta nesse local.  
   
-Ajuda para otimizar as solicitações de autenticação de usuários localizados em qualquer domínio de confianças de atalho. Para obter mais informações sobre confianças de atalho entre domínios, consulte o artigo [Noções básicas sobre quando criar um atalho de relação de confiança](https://go.microsoft.com/fwlink/?LinkId=107061).  
+As relações de confiança de atalho ajudam a otimizar as solicitações de autenticação feitas de usuários localizados em qualquer domínio. Para obter mais informações sobre as relações de confiança de atalho entre domínios, consulte o artigo [noções básicas sobre quando criar uma relação de confiança de atalho](https://go.microsoft.com/fwlink/?LinkId=107061).  
   
-Para uma planilha ajudar a documentar o posicionamento de controlador de domínio de raiz de floresta, consulte [trabalho auxílios para Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558), baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip e abra o "posicionamento de controlador de domínio (DSSTOPO_4.doc).  
+Para obter uma planilha para ajudá-lo a documentar o posicionamento do controlador de domínio raiz da floresta, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558), baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip e abra "Domain Posicionamento do controlador "(DSSTOPO_4. doc).  
   
-Você precisará consultar essas informações quando você cria o domínio raiz da floresta. Para obter mais informações sobre a implantação do domínio raiz da floresta, consulte [implantação de um domínio raiz de floresta do Windows Server 2008](https://technet.microsoft.com/library/cc731174.aspx).  
+Você precisará consultar essas informações ao criar o domínio raiz da floresta. Para obter mais informações sobre como implantar o domínio raiz da floresta, consulte [implantando um domínio raiz da floresta do Windows Server 2008](https://technet.microsoft.com/library/cc731174.aspx).  

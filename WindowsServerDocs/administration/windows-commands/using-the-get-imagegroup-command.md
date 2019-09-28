@@ -1,8 +1,8 @@
 ---
-title: Usando o comando get-ImageGroup
-description: 'Tópico de comandos do Windows para * * *- '
+title: Usando o comando Get-Imageus
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9dcb76155dc1044730673ed46a53cad57441a246
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d6531a3b69840a0a4910b2effdd3e349b76edf2c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862597"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363121"
 ---
-# <a name="using-the-get-imagegroup-command"></a>Usando o comando get-ImageGroup
+# <a name="using-the-get-imagegroup-command"></a>Usando o comando Get-Imageus
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -32,10 +32,10 @@ wdsutil [Options] /Get-ImageGroumediaGroup:<Image group name> [/Server:<Server n
 ## <a name="parameters"></a>Parâmetros
 |Parâmetro|Descrição|
 |-------|--------|
-mediaGroup:<Image group name>|Especifica o nome do grupo de imagens.|
+The Media: <Image group name>|Especifica o nome do grupo de imagens.|
 |[/Server:<Server name>]|Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.|
-|[/ detalhadas]|Retorna os metadados de imagem para cada imagem. Se esse parâmetro não for usado, o comportamento padrão é retornar somente o nome da imagem, descrição e nome de arquivo.|
-## <a name="BKMK_examples"></a>Exemplos
+|[/detailed]|Retorna os metadados da imagem para cada imagem. Se esse parâmetro não for usado, o comportamento padrão será retornar apenas o nome da imagem, a descrição e o nome do arquivo.|
+## <a name="BKMK_examples"></a>Disso
 Para exibir informações sobre um grupo de imagens, digite:
 ```
 wdsutil /Get-ImageGroumediaGroup:ImageGroup1
@@ -46,7 +46,7 @@ wdsutil /verbose /Get-ImageGroumediaGroup:ImageGroup1 /Server:MyWDSServer /detai
 ```
 #### <a name="additional-references"></a>Referências adicionais
 [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[usando o comando add-ImageGroup](using-the-add-imagegroup-command.md)
-[usando o comando get-AllImageGroups](using-the-get-allimagegroups-command.md) 
- [ Usando o comando remove-ImageGroup](using-the-remove-imagegroup-command.md)
-[subcomando: set-ImageGroup](subcommand-set-imagegroup.md)
+[usando o comando Add-imageus](using-the-add-imagegroup-command.md)
+[usando o comando Get-AllImageGroups](using-the-get-allimagegroups-command.md)
+[usando o comando Remove-myimageo](using-the-remove-imagegroup-command.md)
+[Subcommand: Set-Image](subcommand-set-imagegroup.md)

@@ -1,8 +1,8 @@
 ---
 title: Considerações de privacidade e segurança
-description: Fornece informações de privacidade e segurança sobre o MultiPoint Services
+description: Fornece informações de privacidade e segurança sobre os serviços do MultiPoint
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,18 +13,18 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 6580d0974e0e27a6ecd2706890801fbeb9c45d27
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5dffc99342cba3b4c5d43585745dedfd002a7c89
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848527"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389496"
 ---
 # <a name="privacy-and-security-considerations"></a>Considerações de privacidade e segurança
 Como seu sistema MultiPoint Services é intencionalmente um ambiente de computação compartilhado, você deve considerar as seguintes questões de privacidade e computação segura.  
   
 ## <a name="privacy-in-a-multipoint-services-system"></a>Privacidade em um sistema MultiPoint Services  
-Os recursos do MultiPoint Services para compartilhar ou manter particulares os documentos do usuário podem ser novos para você, outros *usuários administrativos*, *usuários do MultiPoint Dashboard* ou *usuários padrão* em seu sistema MultiPoint Services. No Gerenciador do MultiPoint, você pode ver a atividade de tela em todas as áreas de trabalho do usuário padrão ativo. Os usuários padrão são notificados quando fazem logon no sistema MultiPoint Services e devem aceitar esse monitoramento para continuar. Para obter mais informações sobre como compartilhar conteúdo ou mantê-lo particular, consulte [Gerenciar arquivos do usuário](Manage-User-Files.md).  
+Os recursos do MultiPoint Services para compartilhar ou manter particulares os documentos do usuário podem ser novos para você, outros *usuários administrativos*, *usuários do MultiPoint Dashboard* ou *usuários padrão* em seu sistema MultiPoint Services. No MultiPoint Manager, você pode ver a atividade de tela em todos os desktops de usuário padrão ativos. Os usuários padrão são notificados quando fazem logon no sistema MultiPoint Services e devem aceitar esse monitoramento para continuar. Para obter mais informações sobre como compartilhar conteúdo ou mantê-lo particular, consulte [Gerenciar arquivos do usuário](Manage-User-Files.md).  
   
 ## <a name="security-in-a-multipoint-services-system"></a>Segurança em um sistema MultiPoint Services  
 Como um usuário administrativo de seu sistema MultiPoint Services, familiarize-se com as funcionalidades de segurança e computação segura no Windows. Eles incluem atualização automática e suporte do Windows para firewalls, proteção contra vírus e proteção contra spyware e outros malwares.   
@@ -33,4 +33,4 @@ Recursos de computação compartilhados, como um sistema MultiPoint Services, po
   
 ## <a name="see-also"></a>Consulte também  
 [Gerenciar arquivos do usuário](Manage-User-Files.md)  
-[Gerenciando seu sistema MultiPoint Services](Managing-Your-MultiPoint-Services-System.md)
+[Como gerenciar o sistema MultiPoint Services](Managing-Your-MultiPoint-Services-System.md)

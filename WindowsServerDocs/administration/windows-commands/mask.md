@@ -1,8 +1,8 @@
 ---
-title: Máscara
-description: 'Tópico de comandos do Windows para * * *- '
+title: Mascara
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 353e6080d1f6c548bc907b58655f31d0bce6de8b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2f0dc83d7d9f7204f56e95c62b7cfad991f539ef
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858017"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373713"
 ---
-# <a name="mask"></a>Máscara
+# <a name="mask"></a>Mascara
 
 
 
-Remove as cópias de sombra de hardware que foram importadas usando o **importação** comando.
+Remove cópias de sombra de hardware que foram importadas usando o comando de **importação** .
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -38,19 +38,19 @@ mask <ShadowSetID>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|ShadowSetID|Remove de sombra cópias que pertencem ao conjunto de cópias de sombra ID especificado.|
+|ShadowSetID|Remove cópias de sombra que pertencem à ID do conjunto de cópias de sombra especificado.|
 
 ## <a name="remarks"></a>Comentários
 
--   Você pode usar um alias existente ou uma variável de ambiente no lugar de *ShadowSetID*. Use **adicionar** sem parâmetros para ver os aliases existentes.
+-   Você pode usar um alias existente ou uma variável de ambiente no lugar de *ShadowSetID*. Use **Adicionar** sem parâmetros para ver os aliases existentes.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para remover o % de cópia sombra importados Import_1, digite:
+Para remover a cópia de sombra importada% Import_1%, digite:
 ```
 mask %Import_1%
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

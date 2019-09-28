@@ -1,8 +1,8 @@
 ---
 title: dfsdiag
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ab5c86ce7ed4760aef4941de55e8dcf8efe48c8f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 61a6ab9a90e4d0220cfe27d2d21120be19b9ff1f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819137"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378314"
 ---
 # <a name="dfsdiag"></a>dfsdiag
 
 
 
-O `Dfsdiag` comando fornece informações de diagnóstico para Namespaces do DFS.
+O comando `Dfsdiag` fornece informações de diagnóstico para namespaces do DFS.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -38,12 +38,12 @@ dfsdiag [ /TestDCs [/Domain:<Domain name>]| /TestSites </Machine:<server name>| 
 |Parâmetro|Descrição|
 |---------|-----------|
 |[Dfsdiag TestDCs](dfsdiag-testdcs.md)|Verifica a configuração do controlador de domínio.|
-|[Dfsdiag TestSites](dfsdiag-testsites.md)|Verificações de associações do site.|
-|[dfsdiag TestDFSConfig](dfsdiag-testdfsconfig.md)|Verifica a configuração de Namespace DFS.|
-|[dfsdiag TestDFSIntegrity](dfsdiag-testdfsintegrity.md)|Verifica a integridade do Namespace do DFS.|
+|[Dfsdiag TestSites](dfsdiag-testsites.md)|Verifica as associações do site.|
+|[Dfsdiag TestDFSConfig](dfsdiag-testdfsconfig.md)|Verifica a configuração do namespace do DFS.|
+|[Dfsdiag TestDFSIntegrity](dfsdiag-testdfsintegrity.md)|Verifica a integridade do namespace do DFS.|
 |[Dfsdiag TestReferral](dfsdiag-testreferral.md)|Verifica as respostas de referência.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 #### <a name="additional-references"></a>Referências adicionais
 
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

@@ -1,9 +1,9 @@
 ---
-title: Etapa 3 Instale e Configure EDGE2
-description: Este tópico faz parte do guia de laboratório de teste - demonstração do DirectAccess em um Cluster com Windows NLB para o Windows Server 2016
+title: ETAPA 3 instalar e configurar o EDGE2
+description: Este tópico faz parte do guia de laboratório de teste – demonstre o DirectAccess em um cluster com o NLB do Windows para Windows Server 2016
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,90 +12,90 @@ ms.topic: article
 ms.assetid: f04eb11e-ed5f-42a1-a77b-57a248ba2d10
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 708a2a71f798b842e38510a2c5ea8ed10ae7656e
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 3dad1db575bd9b9b4a70a24da44d1d030273f021
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283366"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404864"
 ---
-# <a name="step-3-install-and-configure-edge2"></a>Etapa 3 Instale e Configure EDGE2
+# <a name="step-3-install-and-configure-edge2"></a>ETAPA 3 instalar e configurar o EDGE2
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-EDGE2 é o segundo membro de um cluster de acesso remoto. EDGE2 está instalado e configurado antes de habilitar a configuração do cluster.
+EDGE2 é o segundo membro de um cluster de acesso remoto. O EDGE2 está instalado e configurado antes de habilitar a configuração do cluster.
 
-Execute as seguintes etapas para configurar EDGE2:
+Execute as seguintes etapas para configurar o EDGE2:
 
-## <a name="installOS"></a>Instalar o sistema operacional em EDGE2  
+## <a name="installOS"></a>Instalar o sistema operacional no EDGE2  
   
 1.  No EDGE2, inicie a instalação do Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012.  
   
-2.  Siga as instruções para concluir a instalação, especificando o Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012 (instalação completa) e uma senha forte para a conta de administrador local. Faça logon usando a conta local de administrador.  
+2.  Siga as instruções para concluir a instalação, especificando o Windows Server 2016, o Windows Server 2012 R2 ou o Windows Server 2012 (instalação completa) e uma senha forte para a conta de administrador local. Faça logon usando a conta local de administrador.  
   
-3.  Conectar-se EDGE2 a uma rede que tenha acesso à Internet e execute o Windows Update para instalar as atualizações mais recentes para o Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012 e, em seguida, desconecte da Internet.  
+3.  Conecte o EDGE2 a uma rede que tenha acesso à Internet e execute Windows Update para instalar as atualizações mais recentes do Windows Server 2016, do Windows Server 2012 R2 ou do Windows Server 2012 e desconecte-se da Internet.  
   
-4.  Conecte-se um adaptador de rede para a sub-rede da rede corporativa ou o comutador virtual que representa a sub-rede corpnet e o outro para a sub-rede da Internet ou de um comutador virtual que representa a sub-rede da Internet.  
+4.  Conecte um adaptador de rede à sub-rede corpnet ou ao comutador virtual que representa a sub-rede corpnet e o outro à sub-rede da Internet ou ao comutador virtual que representa a sub-rede da Internet.  
   
-## <a name="TCP"></a>Configurar propriedades de TCP/IP  
+## <a name="TCP"></a>Configurar as propriedades de TCP/IP  
   
-1.  No console do Gerenciador do servidor, clique em **servidor Local**e, em seguida, o **propriedades** área, ao lado **Conexão de Ethernet com fio**, clique no link.  
+1.  No console do Gerenciador do Servidor, clique em **servidor local**e, na área **Propriedades** , ao lado de **conexão Ethernet com fio**, clique no link.  
   
-2.  No **conexões de rede** janela, a conexão de rede que está conectado ao comutador virtual ou sub-rede da rede corporativa com o botão direito e, em seguida, clique em **Renomear**.  
+2.  Na janela **conexões de rede** , clique com o botão direito do mouse na conexão de rede que está conectada à sub-rede corpnet ou ao comutador virtual e clique em **renomear**.  
   
-3.  Tipo de **Corpnet**, e pressione ENTER.  
+3.  Digite **corpnet**e pressione Enter.  
   
-4.  Clique com botão direito **Corpnet**e, em seguida, clique em **propriedades**.  
+4.  Clique com o botão direito do mouse em **corpnet**e clique em **Propriedades**.  
   
 5.  Clique em **Protocolo TCP/IP Versão 4 (TCP/IPv4)** e clique em **Propriedades**.  
   
-6.  Clique em **Usar o seguinte endereço IP**. Na **endereço IP**, digite **10.0.0.8**. Em **Máscara de sub-rede**, digite **255.255.255.0**.  
+6.  Clique em **Usar o seguinte endereço IP**. Em **endereço IP**, digite **10.0.0.8**. Em **Máscara de sub-rede**, digite **255.255.255.0**.  
   
 7.  Clique em **Usar os seguintes endereços de servidor DNS**. Em **Servidor DNS preferencial**, digite **10.0.0.1**.  
   
 8.  Clique em **Avançado** e clique na guia **DNS**.  
   
-9. Na **sufixo DNS para essa conexão**, digite **corp.contoso.com**, clique em **Okey** duas vezes.  
+9. Em **sufixo DNS para essa conexão**, digite **Corp.contoso.com**, clique em **OK** duas vezes.  
   
 10. Clique em **Protocolo IP Versão 6 (TCP/IPv6)** e em **Propriedades**.  
   
-11. Clique em **usar o seguinte endereço IPv6**. Na **endereço IPv6**, digite **2001:db8:1::8**. Na **comprimento do prefixo de sub-rede**, digite **64**.  
+11. Clique em **usar o seguinte endereço IPv6**. Em **endereço IPv6**, digite **2001: DB8:1:: 8**. Em **comprimento do prefixo da sub-rede**, digite **64**.  
   
-12. Clique em **Usar os seguintes endereços de servidor DNS**. Na **servidor DNS preferencial**, digite **2001:db8:1::1**.  
+12. Clique em **Usar os seguintes endereços de servidor DNS**. Em **servidor DNS preferencial**, digite **2001: DB8:1:: 1**.  
   
 13. Clique em **Avançado** e clique na guia **DNS**.  
   
-14. Na **sufixo DNS para essa conexão**, digite **corp.contoso.com**, clique em **Okey** duas vezes e, em seguida, clique em **fechar**.  
+14. Em **sufixo DNS para esta conexão**, digite **Corp.contoso.com**, clique em **OK** duas vezes e, em seguida, clique em **fechar**.  
   
-15. No **conexões de rede** janela, a conexão de rede que está conectado à sub-rede da Internet com o botão direito e, em seguida, clique em **Renomear**.  
+15. Na janela **conexões de rede** , clique com o botão direito do mouse na conexão de rede que está conectada à sub-rede da Internet e clique em **renomear**.  
   
-16. Tipo de **Internet**, e pressione ENTER.  
+16. Digite **Internet**e pressione Enter.  
   
 17. Clique com o botão direito do mouse em **Internet** e, em seguida, clique em **Propriedades**.  
   
 18. Clique em **Protocolo TCP/IP Versão 4 (TCP/IPv4)** e clique em **Propriedades**.  
   
-19. Clique em **Usar o seguinte endereço IP**. Na **endereço IP**, insira **131.107.0.8**. Na **máscara de sub-rede**, insira **255.255.255.0**.  
+19. Clique em **Usar o seguinte endereço IP**. Em **endereço IP**, digite **131.107.0.8**. Em **máscara de sub-rede**, digite **255.255.255.0**.  
   
-20. Clique o **DNS** guia  
+20. Clique na guia **DNS**  
   
-21. Na **sufixo DNS para essa conexão**, digite **ISP.exemplo.com**e, em seguida, clique em **Okey** duas vezes e, em seguida, clique em **fechar**.  
+21. Em **sufixo DNS para essa conexão**, digite **ISP.example.com**e clique em **OK** duas vezes e, em seguida, clique em **fechar**.  
   
 22. Feche a janela **Conexões de Rede** .  
   
-23. Para verificar a comunicação de rede entre EDGE2 e DC1, clique em **inicie**, digite **cmd**, e pressione ENTER.  
+23. Para verificar a comunicação de rede entre EDGE2 e DC1, clique em **Iniciar**, digite **cmd**e pressione Enter.  
   
-24. Na janela do Prompt de comando, digite **ping dc1.corp.contoso.com** e pressione ENTER. Verifique se há quatro respostas de 10.0.0.1 ou 2001:db8:1::1 de endereço IPv6  
+24. Na janela do prompt de comando, digite **ping DC1.Corp.contoso.com** e pressione Enter. Verifique se há quatro respostas de 10.0.0.1 ou o endereço IPv6 2001: DB8:1:: 1  
   
 25. Feche a janela do Prompt de Comando.  
   
-## <a name="rename"></a>Renomear EDGE2 e associá-lo ao domínio  
+## <a name="rename"></a>Renomeie EDGE2 e ingresse-o no domínio  
   
-1.  No console do Gerenciador do servidor, no **servidor Local**, no **Properties** área, ao lado **nome do computador**, clique no link.  
+1.  No console do Gerenciador do Servidor, no **servidor local**, na área **Propriedades** , ao lado de **nome do computador**, clique no link.  
   
 2.  Na caixa de diálogo **Propriedades do Sistema**, na guia **Nome do Computador**, clique em **Alterar**.  
   
-3.  Sobre o **alterações de nome/domínio do computador** na caixa de **nome do computador** , digite **EDGE2**. No **membro** área, clique em **domínio**e na caixa de texto, insira **corp.contoso.com**e, em seguida, clique em **Okey**.  
+3.  Na caixa de diálogo **alterações no nome do computador/domínio** , na caixa **nome do computador** , digite **EDGE2**. Na área **membro de** , clique em **domínio**e, na caixa de texto, digite **Corp.contoso.com**e clique em **OK**.  
   
 4.  Quando seu nome de usuário e sua senha forem solicitados, digite **User1** e a senha e clique em **OK**.  
   
@@ -107,41 +107,41 @@ Execute as seguintes etapas para configurar EDGE2:
   
 8.  Quando for solicitado a reiniciar o computador, clique em **Reiniciar Agora**.  
   
-9. Depois de reiniciar, faça logon como CORP\User1.  
+9. Após a reinicialização, faça logon como CORP\User1.  
   
 ## <a name="IPHTTPSCert"></a>Instalar o certificado IP-HTTPS  
   
-1.  Sobre o **inicie** tela, digite**mmc.exe**, e pressione ENTER. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
+1.  Na tela **Iniciar** , digite**MMC. exe**e pressione Enter. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
   
 2.  No console do MMC, no menu **Arquivo**, clique em **Adicionar/Remover Snap-in**.  
   
-3.  Sobre o **adicionar ou Remover Snap-ins** caixa de diálogo, clique em **certificados**, clique em **adicionar**, clique em **conta de computador**, clique em  **Próxima**, clique em **término**e, em seguida, clique em **Okey**.  
+3.  Na caixa de diálogo **Adicionar ou remover snap-ins** , clique em **certificados**, em **Adicionar**, em **conta de computador**, em **Avançar**, em **concluir**e em **OK**.  
   
-4.  No painel esquerdo do console, navegue até **certificados (computador Local) \Personal\Certificates**. Clique com botão direito do **certificados** nó, aponte para **todas as tarefas**e, em seguida, clique em **Solicitar novo certificado**.  
+4.  No painel esquerdo do console, navegue até **certificados (computador local) \Personal\Certificates**. Clique com o botão direito do mouse no nó **certificados** , aponte para **todas as tarefas**e clique em **solicitar novo certificado**.  
   
-5.  No Assistente de registro de certificado, clique em **próxima** duas vezes.  
+5.  No assistente de registro de certificado, clique em **Avançar** duas vezes.  
   
-6.  Sobre o **solicitar certificados** página, selecione o **servidor Web** caixa de seleção e, em seguida, clique em **obter mais informações são necessárias para se registrar neste certificado**.  
+6.  Na página **solicitar certificados** , marque a caixa de seleção **servidor Web** e clique em **mais informações são necessárias para se registrar nesse certificado**.  
   
-7.  No **propriedades do certificado** caixa de diálogo a **assunto** guia o **nome da entidade** área, no **tipo** , clique em **Nome comum**.  
+7.  Na caixa de diálogo **Propriedades do certificado** , na guia **assunto** , na área **nome da entidade** , na lista **tipo** , clique em **nome comum**.  
   
-8.  Na **valor**, digite **edge1.contoso.com**e, em seguida, clique em **adicionar**.  
+8.  Em **valor**, digite **EDGE1.contoso.com**e clique em **Adicionar**.  
   
-9. No **nome alternativo** área, no **tipo** , clique em **DNS**.  
+9. Na área **nome alternativo** , na lista **tipo** , clique em **DNS**.  
   
-10. Na **valor**, digite **edge1.contoso.com**e, em seguida, clique em **adicionar**.  
+10. Em **valor**, digite **EDGE1.contoso.com**e clique em **Adicionar**.  
   
-11. Sobre o **gerais** guia **nome amigável**, tipo **certificado IP-HTTPS**.  
+11. Na guia **geral** , em **nome amigável**, digite **certificado IP-HTTPS**.  
   
 12. Clique em **OK**, **Registrar** e em **Concluir**.  
   
-13. No painel de detalhes do snap-in de certificados, verifique se que um novo certificado com o nome edge1.contoso.com foi registrado com finalidades de autenticação de servidor.  
+13. No painel de detalhes do snap-in de certificados, verifique se um novo certificado com o nome edge1.contoso.com foi registrado com finalidades pretendidas de autenticação de servidor.  
   
-14. Feche a janela de console. Se você for solicitado a salvar as configurações, clique em **não**.  
+14. Feche a janela do console. Se for solicitado que você salve as configurações, clique em **não**.  
   
-## <a name="InstallDA"></a>Instalar a função de acesso remoto em EDGE2  
+## <a name="InstallDA"></a>Instalar a função de acesso remoto no EDGE2  
   
-1.  No console do Gerenciador do servidor, nos **Dashboard**, clique em **adicionar funções e recursos**.  
+1.  No console do Gerenciador do Servidor, no **painel**, clique em **adicionar funções e recursos**.  
   
 2.  Clique em **Avançar** três vezes para exibir a tela de seleção de função de servidor.  
   

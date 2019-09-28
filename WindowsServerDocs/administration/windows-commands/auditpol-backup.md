@@ -1,8 +1,8 @@
 ---
-title: backup Auditpol
-description: Tópico de comandos do Windows para **auditpol backup** -faz backup do sistema de auditoria configurações de política de configurações de política de auditoria por usuário para todos os usuários e todas as opções de auditoria para um arquivo de texto de valores separados por vírgulas (CSV).
+title: backup de Auditpol
+description: Tópico de comandos do Windows para **backup do Auditpol** – faz backup das configurações da política de auditoria do sistema, configurações de política de auditoria por usuário para todos os usuários e todas as opções de auditoria para um arquivo de texto de valores separados por vírgulas (CSV).
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7de5e6dc6d205b7e6749d38ac822e31a78788c6e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 96b98a05740d3ce1bfe14eda4c5d97ba6c09ff32
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435215"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382455"
 ---
-# <a name="auditpol-backup"></a>backup Auditpol
+# <a name="auditpol-backup"></a>backup de Auditpol
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Faz backup do sistema de auditoria configurações de política de configurações de política de auditoria por usuário para todos os usuários e todas as opções de auditoria para um arquivo de texto de valores separados por vírgulas (CSV).
+Faz backup das configurações da política de auditoria do sistema, das configurações de política de auditoria por usuário para todos os usuários e de todas as opções de auditoria para um arquivo de texto de valores separados por vírgulas (CSV).
 
 ## <a name="syntax"></a>Sintaxe
 ```
@@ -34,13 +34,13 @@ auditpol /backup /file:<filename>
 
 | Parâmetro |                                 Descrição                                 |
 |-----------|-----------------------------------------------------------------------------|
-|   /file   | Especifica o nome do arquivo para o qual a política de auditoria será feita backup. |
+|   /File   | Especifica o nome do arquivo para o qual será feito o backup da diretiva de auditoria. |
 |    /?     |                    Exibe a ajuda no prompt de comando.                     |
 
 ## <a name="remarks"></a>Comentários
-para operações de backup para a política por usuário e a diretiva do sistema, você deve escrever ou conjunto de permissões de controle total nesse objeto no descritor de segurança. Você também pode executar operações de backup que possui o **gerenciar o log de auditoria e segurança** direito de usuário (SeSecurityPrivilege). No entanto, esse direito permite acesso adicional que não é necessário para executar a operação de lista.
-## <a name="BKMK_examples"></a>Exemplos
-Para fazer backup de auditoria por usuário configurações de política para todos os usuários, sistema e auditoria configurações de política de auditoria de todas as opções em um arquivo de texto formatado em CSV chamado auditpolicy.csv, tipo:
+para operações de backup para a política por usuário e a política do sistema, você deve ter a permissão gravar ou controle total nesse objeto definido no descritor de segurança. Você também pode executar operações de backup por meio do direito de usuário **gerenciar auditoria e log de segurança** (SeSecurityPrivilege). No entanto, esse direito permite o acesso adicional que não é necessário para executar a operação de lista.
+## <a name="BKMK_examples"></a>Disso
+Para fazer backup de configurações de política de auditoria por usuário para todos os usuários, configurações de política de auditoria do sistema e todas as opções de auditoria em um arquivo de texto formatado para CSV chamado Auditpolicy. csv, digite:
 ```
 auditpol /backup /file:C:\auditpolicy.csv 
 ```
@@ -48,4 +48,4 @@ auditpol /backup /file:C:\auditpolicy.csv
 > Se nenhuma unidade for especificada, o diretório atual será usado.
 > #### <a name="additional-references"></a>Referências adicionais
 > [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-> [auditpol restauração](auditpol-restore.md)
+> [restauração de Auditpol](auditpol-restore.md)

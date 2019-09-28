@@ -1,7 +1,7 @@
 ---
 title: Práticas recomendadas para executar o FreeBSD no Hyper-V
 description: Fornece recomendações para executar o FreeBSD em máquinas virtuais
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,12 +11,12 @@ ms.assetid: 0c66f1c8-2606-43a3-b4cc-166acaaf2d2a
 author: shirgall
 ms.author: kathydav
 ms.date: 01/09/2017
-ms.openlocfilehash: 598087411b35dde2e4a1cb606fae6a4602fe588e
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 1d284b38e1bdb642aa40ecbb8e82caa7712f7aad
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544683"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365635"
 ---
 # <a name="best-practices-for-running-freebsd-on-hyper-v"></a>Práticas recomendadas para executar o FreeBSD no Hyper-V
 
@@ -28,13 +28,13 @@ Este tópico contém uma lista de recomendações para executar o FreeBSD como u
 
 O CARP (protocolo de redundância de endereço comum) permite que vários hosts compartilhem o mesmo endereço IP e VHID (ID de host virtual) para ajudar a fornecer alta disponibilidade para um ou mais serviços. Se um ou mais hosts falharem, os outros hosts assumirão de modo transparente para que os usuários não percebam uma falha de serviço. Para usar o CARP no FreeBSD 10,2, siga as instruções no [manual do FreeBSD](https://www.freebsd.org/doc/en/books/handbook/carp.html) e faça o seguinte no Gerenciador do Hyper-V.
 
-* Verifique se a máquina virtual tem um adaptador de rede e se ele foi atribuído a um comutador virtual. Selecione a máquina virtual e selecione**configurações**de **ações** > .
+* Verifique se a máquina virtual tem um adaptador de rede e se ele foi atribuído a um comutador virtual. Selecione a máquina virtual e selecione **ações** > **configurações**.
 
 ![Captura de tela de configurações de máquina virtual com adaptador de rede selecionado](media/Hyper-V_Settings_NetworkAdapter.png)
 
 * Habilite a falsificação de endereço MAC. Para fazer isso,
 
-   1. Selecione a máquina virtual e selecione**configurações**de **ações** > .
+   1. Selecione a máquina virtual e selecione **ações** > **configurações**.
 
    2. Expanda **adaptador de rede** e selecione **recursos avançados**.
 

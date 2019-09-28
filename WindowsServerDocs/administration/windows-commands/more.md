@@ -2,7 +2,7 @@
 title: more
 description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/26/2019
-ms.openlocfilehash: 291d98492f3f2b200ff0567c28a97927ca8c75be
-ms.sourcegitcommit: e55e27143dad1d3fb956cfdac4c23ef4186af321
+ms.openlocfilehash: d505f99511d8702f11ac0c70edba3d62c8cf7996
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68603235"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373912"
 ---
 # <a name="more"></a>more
 
@@ -40,21 +40,21 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 
 |           Parâmetro            |                               Descrição                               |
 |--------------------------------|-------------------------------------------------------------------------|
-|           \<> De comando           |      Especifica um comando para o qual você deseja exibir a saída.      |
+|           \<Command >           |      Especifica um comando para o qual você deseja exibir a saída.      |
 |               /c               |               Limpa a tela antes de exibir uma página.               |
 |               /p               |                      Expande os caracteres de feed de formulário.                      |
 |               /s               |          Exibe várias linhas em branco como uma única linha em branco.          |
-|             /t\<N >             |         Exibe as guias como o número de espaços especificado por *N*.         |
-|             +\<N >              |     Exibe o primeiro arquivo que começa na linha especificada por *N*.     |
-| [\<Unidade >:] [\<caminho >]\<nome do arquivo > |          Especifica o local e o nome de um arquivo a ser exibido.          |
-|            \<Arquivos >            | Especifica uma lista de arquivos a serem exibidos. Separe os nomes de arquivos com um espaço. |
+|             /t @ no__t-0N >             |         Exibe as guias como o número de espaços especificado por *N*.         |
+|             + @ NO__T-1N >              |     Exibe o primeiro arquivo que começa na linha especificada por *N*.     |
+| [\<Drive >:] [\<Path >] \<FileName > |          Especifica o local e o nome de um arquivo a ser exibido.          |
+|            \<Files >            | Especifica uma lista de arquivos a serem exibidos. Separe os nomes de arquivos com um espaço. |
 |               /?               |                  Exibe a ajuda no prompt de comando.                   |
 
 ## <a name="remarks"></a>Comentários
 
 -   Os seguintes subcomandos são aceitos no prompt **mais** (`-- More --`). 
 
-    | Chave | Action |
+    | Chave | Ação |
     | --- | ------ |
     | PRESSIONA | Exibe a próxima página. |
     | ENTER | Exibe a próxima linha. |
@@ -65,7 +65,7 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
     | s \<N > |S KIPS as próximas *N* linhas. |
     | ? | Mostra os comandos que estão disponíveis no prompt **mais** .| 
     
--   Ao usar o caractere de redirecionamento **<** (), você deve especificar um nome de arquivo como a origem. Ao usar o pipe ( **\|** ), você pode usar comandos como **dir**, **Sort**e **Type**.
+-   Ao usar o caractere de redirecionamento ( **<** ), você deve especificar um nome de arquivo como a origem. Ao usar o pipe ( **\|** ), você pode usar comandos como **dir**, **Sort**e **Type**.
 -   O comando **more** , com parâmetros diferentes, está disponível no console de recuperação.
 
 ## <a name="BKMK_examples"></a>Disso
@@ -99,7 +99,7 @@ Os exemplos a seguir podem ser usados no prompt **mais** (`-- More --`).
 - Para exibir o próximo arquivo listado na linha de comando, digite **f** no prompt **mais** .
 - Para mostrar os comandos disponíveis, digite **?** no prompt **mais** .
 - Para encerrar **mais**, digite **q** no prompt **mais** .
-- Para exibir o número de linha atual, **=** digite no prompt **mais** . O número da linha atual é adicionado ao prompt **mais** da seguinte maneira:  
+- Para exibir o número da linha atual, digite **=** no prompt **mais** . O número da linha atual é adicionado ao prompt **mais** da seguinte maneira:  
   ```
   -- More [Line: 24] --
   ```  

@@ -1,148 +1,148 @@
 ---
 ms.assetid: ''
-title: Configurando os sistemas de alta precisão
-description: Sincronização de hora no Windows 10 e Windows Server 2016 foi consideravelmente aprimorada.  Em condições de operação razoáveis, os sistemas podem ser configurados para manter a 1 ms (milissegundos) melhor (em relação ao UTC) ou precisão.
+title: Configurando sistemas para alta precisão
+description: A sincronização de tempo no Windows 10 e no Windows Server 2016 foi substancialmente aprimorada.  Em condições operacionais razoáveis, os sistemas podem ser configurados para manter a precisão de 1 ms (milissegundo) ou melhor (em relação ao UTC).
 author: shortpatti
 ms.author: dacuo
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 9bfa4e7d4f8777f8fef299cf3991238e31564ace
-ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
+ms.openlocfilehash: b7cd256fdbbdbe7432e5b5d5b16254314132560f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67469602"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405201"
 ---
-# <a name="configuring-systems-for-high-accuracy"></a>Configurando os sistemas de alta precisão
+# <a name="configuring-systems-for-high-accuracy"></a>Configurando sistemas para alta precisão
 >Aplica-se a: Windows Server 2016 e Windows 10 versão 1607 ou posterior
 
-Sincronização de hora no Windows 10 e Windows Server 2016 foi consideravelmente aprimorada.  Em condições de operação razoáveis, os sistemas podem ser configurados para manter a 1 ms (milissegundos) melhor (em relação ao UTC) ou precisão.
+A sincronização de tempo no Windows 10 e no Windows Server 2016 foi substancialmente aprimorada.  Em condições operacionais razoáveis, os sistemas podem ser configurados para manter a precisão de 1 ms (milissegundo) ou melhor (em relação ao UTC).
 
-As diretrizes a seguir ajudará você a configurar seus sistemas para alcançar alta precisão.  Este artigo discute os seguintes requisitos:
+As diretrizes a seguir ajudarão você a configurar seus sistemas para obter alta precisão.  Este artigo aborda os seguintes requisitos:
 
 - Sistemas operacionais com suporte
 - Configuração do sistema 
 
 > [!WARNING]
-> **Metas de precisão em sistemas operacionais anteriores**<br>
->Windows Server 2012 R2 e abaixo podem não atender os mesmos objetivos de alta precisão. Não há suporte para esses sistemas operacionais de alta precisão.
+> **Metas de exatidão dos sistemas operacionais anteriores**<br>
+>O Windows Server 2012 R2 e inferior não podem atender aos mesmos objetivos de alta precisão. Esses sistemas operacionais não têm suporte para alta precisão.
 >
->Nessas versões, o serviço de tempo do Windows atendido os seguintes requisitos:
+>Nessas versões, o serviço de tempo do Windows satisfez os seguintes requisitos:
 >
-> - Fornecida a precisão de tempo necessário para atender aos requisitos de autenticação Kerberos versão 5.
-> - Fornecido tempo preciso livremente para clientes do Windows e servidores associados a uma floresta do Active Directory comuns.
+> - Forneceu a precisão de tempo necessária para atender aos requisitos de autenticação do Kerberos versão 5.
+> - Fornecido um tempo menos preciso para clientes e servidores Windows que ingressaram em uma floresta Active Directory comum.
 >
->Tolerâncias maior no 2012 R2 e anterior estão fora de especificação de design do serviço de tempo do Windows.
+>Tolerâncias maiores no 2012 R2 e abaixo estão fora da especificação de design do serviço de tempo do Windows.
 
-## <a name="windows-10-and-windows-server-2016-default-configuration"></a>Windows 10 e a configuração padrão do Windows Server 2016
+## <a name="windows-10-and-windows-server-2016-default-configuration"></a>Configuração padrão do Windows 10 e do Windows Server 2016
 
-Enquanto damos suporte a precisão de até 1 ms no Windows 10 ou Windows Server 2016, a maioria dos clientes não exigem tempo altamente preciso.
+Embora ofereçamos suporte à precisão de até 1 ms no Windows 10 ou no Windows Server 2016, a maioria dos clientes não exige tempo altamente preciso.
 
-Como tal, o **configuração padrão** destinados a satisfazer os mesmos requisitos que em sistemas operacionais anteriores que devem:
+Dessa forma, a **configuração padrão** destina-se a atender aos mesmos requisitos dos sistemas operacionais anteriores que são:
 
-- Forneça a precisão de tempo necessário para atender aos requisitos de autenticação Kerberos versão 5.
-- Fornece tempo preciso livremente para clientes do Windows e servidores associados a uma floresta do Active Directory comuns.
+- Forneça a precisão de tempo necessária para atender aos requisitos de autenticação do Kerberos versão 5.
+- Forneça tempo muito preciso para clientes e servidores Windows ingressados em uma floresta Active Directory comum.
 
-## <a name="how-to-configure-systems-for-high-accuracy"></a>Como configurar sistemas de alta precisão
+## <a name="how-to-configure-systems-for-high-accuracy"></a>Como configurar sistemas para alta precisão
 
 >[!IMPORTANT]
->**Nota sobre a capacidade de suporte de sistemas altamente precisos**<br>
-> A distribuição de ponta a ponta de tempo preciso da fonte de horário autoritativo para o dispositivo final envolve a precisão de tempo.  Tudo o que adiciona assymetry em medidas ao longo desse caminho negativamente influenciarão precisão afetará a precisão que pode ser obtida em seus dispositivos.
+>**Observação sobre a compatibilidade de sistemas altamente precisos**<br>
+> A precisão do tempo envolve a distribuição de ponta a ponta de tempo preciso da fonte de tempo autoritativa para o dispositivo final.  Qualquer coisa que adiciona assymetry em medidas ao longo desse caminho influenciará negativamente a precisão afetará a precisão obtida em seus dispositivos.
 >
->Por esse motivo, documentamos a [limite de suporte para configurar o serviço de tempo do Windows para ambientes de alta precisão](support-boundary.md) as necessidades do ambiente que também devem ser atendidas para alcançar metas de alta precisão de estrutura de tópicos.
+>Por esse motivo, documentamos o [limite de suporte para configurar o serviço de tempo do Windows para ambientes de alta precisão](support-boundary.md) , descrevendo os requisitos ambientais que também devem ser satisfeitos para alcançar metas de alta precisão.
 
 ### <a name="operating-system-requirements"></a>Requisitos do Sistema Operacional
 
-Configurações de alta precisão exigem o Windows 10 ou Windows Server 2016.  Todos os dispositivos do Windows na topologia de tempo devem atender a esse requisito, incluindo servidores de tempo do Windows stratum maior e em virtualizado cenários, os Hosts do Hyper-V que executam as máquinas virtuais de detecção de hora. Todos esses dispositivos devem ser pelo menos o Windows 10 ou Windows Server 2016.
+As configurações de alta precisão exigem o Windows 10 ou o Windows Server 2016.  Todos os dispositivos Windows na topologia de tempo devem atender a esse requisito, incluindo servidores de tempo Windows de estrato mais altos e em cenários virtualizados, os hosts Hyper-V que executam as máquinas virtuais sensíveis ao tempo. Todos esses dispositivos devem ser pelo menos Windows 10 ou Windows Server 2016.
 
-Na ilustração abaixo, as máquinas virtuais que exigem alta precisão estão executando o Windows 10 ou Windows Server 2016.  Da mesma forma, o Host Hyper-V no qual residem as máquinas virtuais e o servidor upstream de tempo do Windows também deve executar o Windows Server 2016.
+Na ilustração mostrada abaixo, as máquinas virtuais que exigem alta precisão estão executando o Windows 10 ou o Windows Server 2016.  Da mesma forma, o host Hyper-V no qual as máquinas virtuais residem e o servidor de horário do Windows upstream também deve executar o Windows Server 2016.
 
-![Topologia de tempo - 1607](../media/Windows-Time-Service/Configuring-Systems-for-High-Accuracy/Topology2016.png)
+![Topologia de tempo-1607](../media/Windows-Time-Service/Configuring-Systems-for-High-Accuracy/Topology2016.png)
 
 
 >[!TIP] 
 >**Determinando a versão do Windows**<br>
-> Você pode executar o comando `winver` em um prompt de comando para verificar se o sistema operacional a versão é 1607 (ou superior) e Build do sistema operacional é 14393 (ou superior) conforme mostrado abaixo:
+> Você pode executar o comando `winver` em um prompt de comando para verificar se a versão do sistema operacional é 1607 (ou superior) e se a compilação do sistema operacional é 14393 (ou superior), conforme mostrado abaixo:
 >
-> ![Winver - 2016 1607](../media/Windows-Time-Service/Configuring-Systems-for-High-Accuracy/winver2016.png)
+> ![Winver-2016 1607](../media/Windows-Time-Service/Configuring-Systems-for-High-Accuracy/winver2016.png)
 
 ### <a name="system-configuration"></a>Configuração do sistema
 
-Alcançar as metas de alta precisão requer a configuração do sistema.  Há várias maneiras para executar essa configuração, incluindo diretamente no registro ou por meio da diretiva de grupo.  Para obter mais informações para cada uma dessas configurações podem ser encontradas na referência técnica do serviço de tempo Windows – [ferramentas de serviço de tempo do Windows](Windows-Time-Service-Tools-and-Settings.md#windows-time-service-tools).
+Atingir destinos de alta precisão requer configuração do sistema.  Há várias maneiras de executar essa configuração, incluindo diretamente no registro ou por meio da diretiva de grupo.  Mais informações sobre cada uma dessas configurações podem ser encontradas na referência técnica do serviço de tempo do Windows – [ferramentas de serviço de tempo do Windows](Windows-Time-Service-Tools-and-Settings.md#windows-time-service-tools).
 
 #### <a name="windows-time-service-startup-type"></a>Tipo de inicialização do serviço de tempo do Windows
 
-O serviço de tempo do Windows (W32Time) deve ser executado continuamente.  Para fazer isso, configure o tipo de inicialização do serviço de tempo do Windows para iniciar 'Automático'.
+O serviço de tempo do Windows (W32Time) deve ser executado continuamente.  Para fazer isso, configure o tipo de inicialização do serviço de tempo do Windows para ' automático ' Iniciar.
 
 ![Configuração Automática](../media/Windows-Time-Service/Configuring-Systems-for-High-Accuracy/AutomaticService.PNG)
 
 #### <a name="cumulative-one-way-network-latency"></a>Latência de rede unidirecional cumulativa
 
-Incerteza de medição e o "ruído" surgir como aumentos de latência de rede.  Como tal, é imperativo que uma latência de rede seja dentro de um limite razoável.  Os requisitos específicos dependem de sua precisão de destino e são descritos na [limite de suporte para configurar o serviço de tempo do Windows para ambientes de alta precisão](support-boundary.md) artigo.
+A incerteza de medida e o "ruído" aumenta à medida que a latência de rede cresce.  Como tal, é imperativo que uma latência de rede esteja dentro de um limite razoável.  Os requisitos específicos dependem da precisão de destino e são descritos no artigo [limite de suporte para configurar o serviço de tempo do Windows para ambientes de alta precisão](support-boundary.md) .
 
-Para calcular a latência de rede unidirecional cumulativa, adicione os atrasos unidirecionais individuais entre pares de nós de cliente-servidor NTP na topologia do tempo, começando com o destino e terminando com a camada de alta precisão 1 fonte de tempo.
+Para calcular a latência de rede unidirecional cumulativa, adicione os atrasos individuais unidirecionais entre pares de nós cliente-servidor NTP na topologia de tempo, começando com o destino e terminando com a fonte de tempo de estrato de alta precisão.
 
-Por exemplo:  Considere uma hierarquia de tempo de sincronização com uma fonte altamente precisa, dois servidores NTP intermediários A e B e o computador de destino, nessa ordem. Para obter a latência de rede cumulativa entre a origem e destino, medir a média de ida e volta NTP individual (RTTs) o tempo entre:
+Por exemplo: Considere uma hierarquia de sincronização de tempo com uma fonte altamente precisa, dois servidores NTP intermediários A e B e o computador de destino nessa ordem. Para obter a latência de rede cumulativa entre o destino e a origem, meça a média de tempos de ida e volta de NTP individuais (RTTs) entre:
 
-- O servidor de destino e a hora em B
-- O servidor de horário B e um servidor de horário
-- Um servidor de horário e o código-fonte
+- O destino e o servidor de horário B
+- Hora servidor B e servidor de horário A
+- Hora a e a origem
 
-Essa medida pode ser obtida usando a ferramenta de w32tm.exe da caixa de entrada.  Para fazer isso:
+Essa medida pode ser obtida usando a ferramenta inbox. exe da caixa de entrada.  Para fazer isso:
 
-1. Executar o cálculo do servidor de destino e a hora em B.
+1. Execute o cálculo do destino e do servidor de horário B.
     
     `w32tm /stripchart /computer:TimeServerB /rdtsc /samples:450 > c:\temp\Target_TsB.csv`
 
-2. Executar o cálculo do tempo o servidor b contra (apontado) servidor de horário um.
+2. Realize o cálculo do servidor de horário b em relação ao servidor de horário a (apontado) a.
     
     `w32tm /stripchart /computer:TimeServerA /rdtsc /samples:450 > c:\temp\Target_TsA.csv`
 
-3. Executar o cálculo do servidor de horário uma em relação à fonte.
+3. Faça o cálculo do servidor de horário a em relação à origem.
  
-4. Em seguida, adicione que o RoundTripDelay médio medido na etapa anterior e divida por 2 para obter o atraso de rede cumulativa entre origem e destino.
+4. Em seguida, adicione o RoundTripDelay médio medido na etapa anterior e divida por 2 para obter o atraso de rede cumulativo entre o destino e a origem.
 
 #### <a name="registry-settings"></a>Configurações do Registro
 
 # <a name="minpollintervaltabminpollinterval"></a>[MinPollInterval](#tab/MinPollInterval)
-Configura o menor intervalo em segundos de log2 permitido para a consulta do sistema.
+Configura o menor intervalo em log2 segundos permitido para sondagem do sistema.
 
 |  |  | 
 |---------|---------|
-|Local de chave     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config        |
+|Local da chave     | HKLM: \ SYSTEM\CurrentControlSet\Services\W32Time\Config        |
 |Configuração    | 6        |
-|Resultado | Agora, o intervalo de sondagem mínimo é 64 segundos. |
+|Resultado | O intervalo de sondagem mínimo agora é de 64 segundos. |
 
-O comando a seguir indica o tempo do Windows para acompanhar as configurações atualizadas:
+O comando a seguir sinaliza o tempo do Windows para selecionar as configurações atualizadas:
 
 `w32tm /config /update`
 
 
 # <a name="maxpollintervaltabmaxpollinterval"></a>[MaxPollInterval](#tab/MaxPollInterval)
-Configura o maior intervalo em segundos de log2 permitido para a consulta do sistema.
+Configura o maior intervalo em log2 segundos permitido para sondagem do sistema.
 
 |  |  |  
 |---------|---------|
-|Local de chave     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config        |
+|Local da chave     | HKLM: \ SYSTEM\CurrentControlSet\Services\W32Time\Config        |
 |Configuração    | 6        |
-|Resultado | Agora, o intervalo de sondagem máximo é 64 segundos.  |
+|Resultado | O intervalo de sondagem máximo agora é de 64 segundos.  |
 
-O comando a seguir indica o tempo do Windows para acompanhar as configurações atualizadas:
+O comando a seguir sinaliza o tempo do Windows para selecionar as configurações atualizadas:
 
 `w32tm /config /update`
 
 # <a name="updateintervaltabupdateinterval"></a>[UpdateInterval](#tab/UpdateInterval)
-O número de tiques do relógio entre os ajustes de correção de fase.
+O número de tiques de relógio entre os ajustes de correção de fase.
 
 |  |  |  
 |---------|---------|
-|Local de chave     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config       |
+|Local da chave     | HKLM: \ SYSTEM\CurrentControlSet\Services\W32Time\Config       |
 |Configuração    | 100        |
-|Resultado | O número de tiques do relógio entre os ajustes de correção de fase agora é tiques de 100. |
+|Resultado | O número de tiques de relógio entre ajustes de correção de fase agora é de 100 tiques. |
 
-O comando a seguir indica o tempo do Windows para acompanhar as configurações atualizadas:
+O comando a seguir sinaliza o tempo do Windows para selecionar as configurações atualizadas:
 
 `w32tm /config /update`
 
@@ -151,11 +151,11 @@ Configura o intervalo de sondagem em segundos quando o sinalizador SpecialInterv
 
 |  |  |  
 |---------|---------|
-|Local de chave     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient        |
+|Local da chave     | HKLM: \ SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient        |
 |Configuração    | 64        |
-|Resultado | Agora, o intervalo de sondagem é 64 segundos. |
+|Resultado | O intervalo de sondagem agora é de 64 segundos. |
 
-O comando a seguir reinicia a hora do Windows para acompanhar as configurações atualizadas:
+O comando a seguir reinicia o tempo do Windows para selecionar as configurações atualizadas:
 
 `net stop w32time && net start w32time`
 
@@ -163,7 +163,7 @@ O comando a seguir reinicia a hora do Windows para acompanhar as configurações
 
 |  |  |  
 |---------|---------|
-|Local de chave     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config      |
+|Local da chave     | HKLM: \ SYSTEM\CurrentControlSet\Services\W32Time\Config      |
 |Configuração    | 2        |
 
 

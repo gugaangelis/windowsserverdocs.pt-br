@@ -2,18 +2,18 @@
 title: Agende um conjunto de relatórios
 description: Este artigo descreve como gerar um conjunto de relatórios em uma programação regular
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 681939409b9b8b952179992a2a86415e737ee675
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: b718ceed7a378649c51e1ca64bffaaddf051c292
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447703"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394064"
 ---
 # <a name="schedule-a-set-of-reports"></a>Agende um conjunto de relatórios
 
