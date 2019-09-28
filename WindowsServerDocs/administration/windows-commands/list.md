@@ -1,8 +1,8 @@
 ---
 title: lista
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aacc93e1c7a16a7327ddbd17515f19cf41a5b458
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 91b42925fc822b10157bb488167d06fe82cfe1e3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825537"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374703"
 ---
 # <a name="list"></a>lista
 
 
 
-Lista os gravadores, cópias de sombra ou provedores de cópia de sombra registrados atualmente estão no sistema. Se usado sem parâmetros, **lista** exibe a Ajuda no prompt de comando.
+lista gravadores, cópias de sombra ou provedores de cópia de sombra atualmente registrados que estão no sistema. Se usado sem parâmetros, **list** exibirá a ajuda no prompt de comando.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -40,11 +40,11 @@ list providers
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|gravadores|Lista de gravadores. Ver [List writers](list-writers.md) para sintaxe e parâmetros.|
-|Sombras|Lista as cópias de sombra não persistente existente e persistente. Ver [lista sombras](list-shadows.md) para sintaxe e parâmetros.|
-|provedores|Listas registrado no momento, os provedores de cópia de sombra. Ver [Listar provedores](list-providers.md) para sintaxe e parâmetros.|
+|usadas|Lista gravadores. Consulte [listar gravadores](list-writers.md) para sintaxe e parâmetros.|
+|Sombrea|Lista cópias de sombra persistentes e existentes não persistentes. Consulte [listar sombras](list-shadows.md) para sintaxe e parâmetros.|
+|Fornecedor|Lista os provedores de cópia de sombra atualmente registrados. Consulte [listar provedores](list-providers.md) para sintaxe e parâmetros.|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 Para listar todas as cópias de sombra, digite:
 ```
@@ -53,4 +53,4 @@ list shadows all
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

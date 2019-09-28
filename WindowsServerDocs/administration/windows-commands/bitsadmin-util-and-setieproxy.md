@@ -1,8 +1,8 @@
 ---
-title: SETIEPROXY e bitsadmin util
-description: Tópico de comandos do Windows para **util bitsadmin e setieproxy** -definir configurações de proxy a ser usado ao transferir arquivos usando uma conta de serviço.
+title: Bitsadmin util e setieproxy
+description: Tópico de comandos do Windows para **Bitsadmin util e setieproxy** -defina as configurações de proxy a serem usadas ao transferir arquivos usando uma conta de serviço.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 81bb333e2bb776bc75789b52ab41d7ef64016f51
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: 9d485c0e9cb135febdb1bf99cec4de08d7c9321b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266462"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380217"
 ---
-# <a name="bitsadmin-util-and-setieproxy"></a>SETIEPROXY e bitsadmin util
+# <a name="bitsadmin-util-and-setieproxy"></a>Bitsadmin util e setieproxy
 
-Defina configurações de proxy para usar ao transferir arquivos usando uma conta de serviço.
+Defina as configurações de proxy a serem usadas ao transferir arquivos usando uma conta de serviço.
 
-**BITSAdmin 1.5 e anterior**: Sem suporte.
+**BITSAdmin 1,5 e anterior**: Não compatível.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,16 +36,16 @@ bitsadmin /Util /SetIEProxy <Account> <Usage>[/Conn <ConnectionName>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Conta|Especifica o tipo de conta de serviço cujas configurações de proxy que você deseja definir. Os valores possíveis são:</br>-   LOCALSYSTEM</br>-NETWORKSERVICE</br>-LOCALSERVICE|
-|Uso|Especifica a forma de detecção de proxy para usar. Os valores possíveis são:</br>-NO_PROXY — não use um servidor proxy.</br>– Detecção automática — detectar automaticamente as configurações de proxy.</br>-MANUAL_PROXY — Use uma lista explícita de proxy e a lista de bypass. Especifique a lista de proxy e ignorar a lista imediatamente após a marca de uso. Por exemplo, MANUAL_PROXY proxy1, proxy2 NULL.</br>    -A lista de proxy é uma lista delimitada por vírgulas de servidores proxy para usar.</br>    -O bypass é uma lista delimitada por espaço de nomes de host ou endereços IP ou ambos, para o qual as transferências de não devem ser roteada por meio de um proxy. Isso pode ser \<local > para referir-se a todos os servidores na mesma LAN. Valores NULL ou "" pode ser usado para obter uma lista de bypass de proxy vazio.</br>-AUTOSCRIPT — Mesmo que a detecção automática, exceto que ele também executa um script. Especifique a URL de script, imediatamente após a marca de uso. Por exemplo, AUTOSCRIPT http://server/proxy.js.</br>-REDEFINIÇÃO — Mesmo que NO_PROXY, exceto que ele remove as URLs de proxy manual (se especificado) e as URLs descobertos usando a detecção automática.|
-|ConnectionName|Opcional – usado com o **/conn** parâmetro para especificar a conexão de modem para usar. Se você não especificar o **/conn** parâmetro, o BITS usa a conexão de rede local. Especifique o nome de conexão de modem imediatamente após o **/conn** parâmetro.|
+|Conta|Especifica o tipo de conta de serviço cujas configurações de proxy você deseja definir. Os valores possíveis são:</br>-LOCALSYSTEM</br>-NETWORKSERVICE</br>-LOCALSERVICE|
+|Uso|Especifica a forma de detecção de proxy a ser usada. Os valores possíveis são:</br>-NO_PROXY — não use um servidor proxy.</br>-AUTODETECT – detecta automaticamente as configurações de proxy.</br>-MANUAL_PROXY – use uma lista de proxy explícita e a lista de bypass. Especifique a lista de proxies e a lista de bypass imediatamente após a marca de uso. Por exemplo, MANUAL_PROXY Proxy1, proxy2 NULL.</br>    -A lista de proxy é uma lista delimitada por vírgula de servidores proxy a serem usados.</br>    -A lista de bypass é uma lista delimitada por espaço de nomes de host ou endereços IP, ou ambos, para os quais as transferências não devem ser roteadas por meio de um proxy. Isso pode ser \<local > para fazer referência a todos os servidores na mesma LAN. Valores de NULL ou "" podem ser usados para uma lista de bypass de proxy vazia.</br>-AutoScript – o mesmo que detecção automática, exceto que também executa um script. Especifique a URL do script imediatamente após a marca de uso. Por exemplo, AutoScript http://server/proxy.js.</br>-RESET — o mesmo que NO_PROXY, exceto pelo fato de remover as URLs de proxy manuais (se especificado) e URLs descobertas usando a detecção automática.|
+|ConnectionName|Opcional — usado com o parâmetro **/Conn** para especificar a conexão de modem a ser usada. Se você não especificar o parâmetro **/Conn** , o bits usará a conexão LAN. Especifique o nome da conexão do modem imediatamente após o parâmetro **/Conn** .|
 
 ## <a name="remarks"></a>Comentários
 
-Cada chamada sucessiva usando essa opção substitui o uso especificado anteriormente, mas não os parâmetros do uso definido anteriormente. Por exemplo, se você especificar NO_PROXY, detecção automática e MANUAL_PROXY em chamadas separadas, o BITS usa o último uso fornecido, mas impede que os parâmetros de uso definido anteriormente.
+Cada chamada sucessiva usando essa opção substitui o uso especificado anteriormente, mas não os parâmetros do uso definido anteriormente. Por exemplo, se você especificar NO_PROXY, AUTODETECT e MANUAL_PROXY em chamadas separadas, o BITS usará o último uso fornecido, mas manterá os parâmetros do uso definido anteriormente.
 
 > [!IMPORTANT]
-> Você deve executar esse comando em um prompt de comando elevado para que ela seja concluída com êxito.
+> Você deve executar esse comando em um prompt de comando elevado para que ele seja concluído com êxito.
 
 ## <a name="examples"></a>Exemplos
 

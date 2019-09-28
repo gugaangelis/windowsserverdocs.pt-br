@@ -1,8 +1,8 @@
 ---
-title: ksetup:domain
-description: 'Tópico de comandos do Windows para * * *- '
+title: 'ksetup: domínio'
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f53e807891b434709b1a8faed7aae8e8d444f6e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0a4d9f09def32c7518046c25887f4154020c5d7e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857447"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375121"
 ---
-# <a name="ksetupdomain"></a>ksetup:domain
+# <a name="ksetupdomain"></a>ksetup: domínio
 
 
 
-Define o nome de domínio para todas as operações de Kerberos. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+Define o nome de domínio para todas as operações Kerberos. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,21 +36,21 @@ ksetup /domain <DomainName>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<DomainName>|Nome do domínio ao qual você deseja estabelecer uma conexão. Use o nome de domínio totalmente qualificado ou um formulário simples do nome, como contoso.com ou contoso.|
+|\<DomainName >|Nome do domínio ao qual você deseja estabelecer uma conexão. Use o nome de domínio totalmente qualificado ou uma forma simples do nome, como contoso.com ou contoso.|
 
 ## <a name="remarks"></a>Comentários
 
-Nenhum.
+nenhuma.
 
-## <a name="BKMK_Examples"></a>Exemplos
+## <a name="BKMK_Examples"></a>Disso
 
-Estabelece uma conexão a um domínio válido, como o Microsoft usando o subcomando /mapuser:
+Estabeleça uma conexão com um domínio válido, como a Microsoft usando o subcomando/mapuser:
 ```
 ksetup /mapuser principal@realm domain-user /domain domain-name
 ```
-Quando a conexão for bem-sucedida, você receberá um novo TGT ou um TGT existente será atualizado.
+Quando a conexão for bem-sucedida, você receberá uma nova TGT ou um TGT existente será atualizado.
 
 #### <a name="additional-references"></a>Referências adicionais
 
 -   [Ksetup](ksetup.md)
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

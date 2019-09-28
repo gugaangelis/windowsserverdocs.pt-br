@@ -1,7 +1,7 @@
 ---
 title: Replicação de armazenamento de servidor para servidor
 description: Como configurar e usar a réplica de armazenamento para replicação de servidor para servidor no Windows Server, incluindo o centro de administração do Windows e o PowerShell.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
 ms.technology: storage-replica
@@ -9,12 +9,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 61881b52-ee6a-4c8e-85d3-702ab8a2bd8c
-ms.openlocfilehash: fccdb8547ff27083ce943892842c2e2d05e5ace8
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: a21000e857d702846703deb4f55380e1a998f6d2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865291"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402959"
 ---
 # <a name="server-to-server-storage-replication-with-storage-replica"></a>Replicação de armazenamento de servidor para servidor com réplica de armazenamento
 
@@ -438,7 +438,7 @@ O processo é, em um alto nível:
 1. [Adicione um grupo de segurança de rede](https://docs.microsoft.com/azure/virtual-network/virtual-networks-create-nsg-arm-pportal). Ao criá-lo, selecione a ID da assinatura associada ao ExpressRoute que você criou e selecione o grupo de recursos que você acabou de criar também.
 <br><br>Adicione as regras de segurança de entrada e saída necessárias ao grupo de segurança de rede. Por exemplo, talvez você queira permitir Área de Trabalho Remota acesso à VM.
 1. [Crie uma VM do Azure](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal) com as seguintes configurações (mostradas na Figura 5):
-    - **Endereço IP público**: Nenhum
+    - **Endereço IP público**: Nenhuma
     - **Rede virtual**: Selecione a rede virtual que você fez a observação do grupo de recursos adicionado com o ExpressRoute.
     - **Grupo de segurança de rede (firewall)** : Selecione o grupo de segurança de rede que você criou anteriormente.
     ![Crie uma máquina virtual mostrando as configurações](media/Server-to-Server-Storage-Replication/azure-vm-express-route.png)

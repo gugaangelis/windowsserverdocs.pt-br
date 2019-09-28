@@ -2,7 +2,7 @@
 title: certutil
 description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3bc1e544c0e0684678bc168f286b52e5573f3ac2
-ms.sourcegitcommit: 286e3181ebd2cb9d7dc7fe651858a4e0d61d153f
+ms.openlocfilehash: 45c9946cc53fe3a901c3f6ee53f082a5b3d086c0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68300681"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379654"
 ---
 # <a name="certutil"></a>certutil
 
@@ -152,7 +152,7 @@ A tabela a seguir descreve a notação usada para indicar a sintaxe da linha de 
 |  \<Texto dentro de colchetes angulares >  | Espaço reservado para o qual você deve fornecer um valor |
 |  [Texto dentro de colchetes]  |                Itens opcionais                 |
 |      {Texto dentro de chaves}       |       Conjunto de itens necessários; Escolha um       |
-|         Barra vertical (          |                       )                       |
+|         Barra vertical (          |                       ) simples                       |
 |          Reticências (…)           |          Itens que podem ser repetidos           |
 
 Retornar ao [menu](#menu)
@@ -250,7 +250,7 @@ Retornar ao [menu](#menu)
 
 ## <a name="-setextension"></a>-setextension
 
-CertUtil [opções]-setextension RequestIdid sinalizadores {Long | Data | Cadeia de caracteres | \@INFILE}
+CertUtil [opções]-setextension RequestIdid sinalizadores {Long | Data | Cadeia de caracteres | \@InFile}
 
 Definir a extensão para a solicitação pendente
 
@@ -1208,7 +1208,7 @@ Retornar ao [menu](#menu)
 
 CertUtil [opções]-SCRoots atualização [+] [InputRootFile] [Readername]
 
-CertUtil [opções]-SCRoots salvar \@OutputRootFile [readername]
+CertUtil [opções]-SCRoots salvar \@OutputRootFile [Readername]
 
 CertUtil [opções]-exibição de SCRoots [InputRootFile | Readername]
 
@@ -1308,7 +1308,7 @@ Retornar ao [menu](#menu)
 
 ## <a name="-sign"></a>-assinar
 
-CertUtil [opções]-assinar FileList | SerialNumber | Corfilelist da CRL [StartDate + DD: hh] [+ SerialNumberlist |-SerialNumberlist |-ObjectIdlist | \@Extensãofile]
+CertUtil [opções]-assinar FileList | SerialNumber | Corfilelist da CRL [StartDate + DD: hh] [+ SerialNumberlist |-SerialNumberlist |-ObjectIdlist | \@ExtensionFile]
 
 CertUtil [opções]-assinar FileList | SerialNumber | Lista de arquivos da CRL [#HashAlgorithm] [+ AlternateSignatureAlgorithm |-AlternateSignatureAlgorithm]
 
@@ -1461,7 +1461,7 @@ Retornar ao [menu](#menu)
 
 ## <a name="-getreg"></a>-getreg
 
-CertUtil [opções]-getreg [{Ca | restaurar | política | sair | modelo | registrar | cadeia | PolicyServers}\[ProgID\]] [RegistryValueName]
+CertUtil [opções]-getreg [{Ca | restaurar | política | sair | modelo | registrar | cadeia | PolicyServers} \[ProgId @ no__t-1] [RegistryValueName]
 
 Exibir valor do registro
 
@@ -1499,7 +1499,7 @@ Retornar ao [menu](#menu)
 
 ## <a name="-setreg"></a>-setreg
 
-CertUtil [opções]-setreg [{Ca | restaurar | política | sair | modelo | registrar | cadeia | PolicyServers}\[ProgID\]] RegistryValueName valor
+CertUtil [opções]-setreg [{Ca | restaurar | política | sair | modelo | registrar | cadeia | PolicyServers} \[ProgId @ no__t-1] valor RegistryValueName
 
 Definir valor do registro
 
@@ -1537,7 +1537,7 @@ Retornar ao [menu](#menu)
 
 ## <a name="-delreg"></a>-delreg
 
-CertUtil [opções]-delreg [{Ca | restaurar | política | sair | modelo | registrar | cadeia | PolicyServers}\[ProgID\]] [RegistryValueName]
+CertUtil [opções]-delreg [{Ca | restaurar | política | sair | modelo | registrar | cadeia | PolicyServers} \[ProgId @ no__t-1] [RegistryValueName]
 
 Excluir valor do registro
 

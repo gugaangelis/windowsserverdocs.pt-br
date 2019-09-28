@@ -1,8 +1,8 @@
 ---
 title: endlocal
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e516b2bf9e8a45ada910dfbd93e3ed5e7d86c14
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 16d2b7b445a2220a10f88f21029948ed10ee96e4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862137"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377567"
 ---
 # <a name="endlocal"></a>endlocal
 
 
 
-Termina a localização das alterações de ambiente em um arquivo em lotes e restaura as variáveis de ambiente para seus valores antes do correspondente **setlocal** comando foi executado.
+Encerra a localização de alterações de ambiente em um arquivo em lotes e restaura as variáveis de ambiente para seus valores antes da execução do comando **setlocal** correspondente.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -42,16 +42,16 @@ endlocal
 
 ## <a name="remarks"></a>Comentários
 
--   O **endlocal** comando não tem nenhum efeito fora de um arquivo de script ou lote.
--   Não há implícito **endlocal** comando ao final de um arquivo em lotes.
--   Se as extensões de comando estiverem habilitadas (extensões de comando são habilitadas por padrão), o **endlocal** comando restaura o estado das extensões de comando (ou seja, habilitado ou desabilitado) ao que era antes correspondente  **setlocal** comando foi executado.
+-   O comando **ENDLOCAL** não tem nenhum efeito fora de um script ou arquivo em lotes.
+-   Há um comando **ENDLOCAL** implícito no final de um arquivo em lotes.
+-   Se as extensões de comando estiverem habilitadas (as extensões de comando são habilitadas por padrão), o comando **ENDLOCAL** restaura o estado das extensões de comando (isto é, habilitado ou desabilitado) para o que era antes de o comando **setlocal** correspondente ser executado.
 
 > [!NOTE]
-> Para obter mais informações sobre como habilitar e desabilitar as extensões de comando, consulte [Cmd](cmd.md).
+> Para obter mais informações sobre como habilitar e desabilitar extensões de comando, consulte [cmd](cmd.md).
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Você pode localizar as variáveis de ambiente em um arquivo em lotes. Por exemplo, o programa a seguir inicia o programa de lote superapl na rede, direciona a saída para um arquivo e exibe o arquivo no bloco de notas:
+Você pode localizar variáveis de ambiente em um arquivo em lotes. Por exemplo, o programa a seguir inicia o programa superapp batch na rede, direciona a saída para um arquivo e exibe o arquivo no bloco de notas:
 ```
 @echo off
 setlocal
@@ -63,4 +63,4 @@ start notepad c:\superapp.out
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

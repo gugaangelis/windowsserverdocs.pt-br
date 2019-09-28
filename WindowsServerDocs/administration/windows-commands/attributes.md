@@ -1,8 +1,8 @@
 ---
 title: atributos
-description: Tópico de comandos do Windows para **atributos** -exibe, define ou limpa os atributos de um disco ou volume.
+description: Tópico de comandos do Windows para **atributos** – exibe, define ou limpa os atributos de um disco ou volume.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b60599180808354fd27c2faa58655734ef79d777
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d0cdfbc5bcc60596c7e42d2668d4c2b8a9b4450b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883717"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382592"
 ---
 # <a name="attributes"></a>atributos
 
@@ -38,9 +38,9 @@ Attributes volume
 |Parâmetro|Descrição|
 |---------|-----------|
 |[Disco de atributos](attributes-disk.md)|Exibe, define ou limpa os atributos de um disco.|
-|[volume de atributos](attributes-volume.md)|Exibe, define ou limpa os atributos de um volume.|
+|[Volume de atributos](attributes-volume.md)|Exibe, define ou limpa os atributos de um volume.|
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 

@@ -1,9 +1,9 @@
 ---
-title: ETAPA 10 instalar e configurar EDGE1 2
-description: 'Este tópico é parte do guia de laboratório de teste: demonstrar uma implantação de multissite de DirectAccess para Windows Server 2016'
+title: ETAPA 10 instalar e configurar o 2-EDGE1
+description: Este tópico faz parte do guia de laboratório de teste – demonstre uma implantação multissite do DirectAccess para o Windows Server 2016
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,117 +12,117 @@ ms.topic: article
 ms.assetid: d98d6f7a-a2e6-45b1-9c63-08e2986a5c03
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 9810d7294a2651d4811bc5969eaf6a118db8ed56
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 7044a0d219decceb7669e92e884c78bcd9e3a61c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283264"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388394"
 ---
-# <a name="step-10-install-and-configure-2-edge1"></a>ETAPA 10 instalar e configurar EDGE1 2
+# <a name="step-10-install-and-configure-2-edge1"></a>ETAPA 10 instalar e configurar o 2-EDGE1
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Configuração 2 EDGE1 consiste no seguinte:  
+a configuração 2-EDGE1 consiste no seguinte:  
   
-- Instale o sistema operacional em EDGE1 2. Instale o Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012 em EDGE1 2.  
+- Instale o sistema operacional em 2-EDGE1. Instale o Windows Server 2016, o Windows Server 2012 R2 ou o Windows Server 2012 em 2-EDGE1.  
   
-- Configurar as propriedades de TCP/IP. Configure 2 EDGE1 com endereços estáticos em ambas as interfaces de rede.  
+- Configurar as propriedades de TCP/IP. Configure 2-EDGE1 com endereços estáticos em ambas as interfaces de rede.  
   
-- Configure o roteamento entre sub-redes. Para habilitar a comunicação entre as sub-redes da rede corporativa e da rede corporativa de 2, você deve configurar o roteamento.  
+- Configure o roteamento entre sub-redes. Para habilitar a comunicação entre as sub-redes corpnet e 2-corpnet, você deve configurar o roteamento.  
   
-- Ingresse no domínio de CORP2 EDGE1 2. Ingresse no domínio de corp2.corp.contoso.com EDGE1 2.  
+- Junte-se a 2-EDGE1 ao domínio CORP2. Junte-se a 2-EDGE1 ao domínio corp2.corp.contoso.com.  
   
-- Obter certificados em EDGE1 2. Certificados são necessários para a conexão IPsec entre os clientes DirectAccess e o servidor de acesso remoto e para autenticar o ouvinte do IP-HTTPS, quando os clientes se conectam via HTTPS.  
+- Obtenha certificados em 2-EDGE1. Os certificados são necessários para a conexão IPsec entre os clientes DirectAccess e o servidor de acesso remoto e para autenticar o ouvinte IP-HTTPS quando os clientes se conectam via HTTPS.  
   
-- Fornece acesso ao CORP\User1. O usuário CORP\User1 é o administrador de acesso remoto. Para habilitar esse usuário fazer alterações EDGE1 2 do EDGE1, você deve conceder acesso ao usuário.  
+- Fornecer acesso ao CORP\User1. O usuário CORP\User1 é o administrador de acesso remoto. Para permitir que esse usuário faça alterações em 2-EDGE1 do EDGE1, você deve conceder acesso ao usuário.  
   
-- Instale a função de acesso remoto em EDGE1 2. Para habilitar uma implantação multissite, você deve instalar a função acesso remoto em EDGE1 2.  
+- Instale a função de acesso remoto em 2-EDGE1. Para habilitar uma implantação multissite, você deve instalar a função de acesso remoto em 2-EDGE1.  
   
 2-EDGE1 deve ter dois adaptadores de rede instalados.  
   
-## <a name="installOS"></a>Instalar o sistema operacional em EDGE1 2  
+## <a name="installOS"></a>Instalar o sistema operacional em 2-EDGE1  
   
 1.  Inicie a instalação do Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012.  
   
-2.  Siga as instruções para concluir a instalação, especificando o Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012 (instalação completa) e uma senha forte para a conta de administrador local. Faça logon usando a conta local de administrador.  
+2.  Siga as instruções para concluir a instalação, especificando o Windows Server 2016, o Windows Server 2012 R2 ou o Windows Server 2012 (instalação completa) e uma senha forte para a conta de administrador local. Faça logon usando a conta local de administrador.  
   
-3.  Conectar-se EDGE1 de 2 a uma rede que tenha acesso à Internet e execute o Windows Update para instalar as atualizações mais recentes para o Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012 e, em seguida, desconecte da Internet.  
+3.  Conecte-se a 2-EDGE1 a uma rede que tenha acesso à Internet e execute Windows Update para instalar as atualizações mais recentes do Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012 e desconecte-se da Internet.  
   
-4.  Conecte-se um adaptador de rede à sub-rede Corpnet 2 e o outro à Internet simulada.  
+4.  Conecte um adaptador de rede à sub-rede 2-corpnet e a outra à Internet simulada.  
   
-## <a name="tcpip"></a>Configurar propriedades de TCP/IP  
+## <a name="tcpip"></a>Configurar as propriedades de TCP/IP  
   
-1.  No console do Gerenciador do servidor, clique em **servidor Local**e, em seguida, o **propriedades** área, ao lado **Conexão de Ethernet com fio**, clique no link.  
+1.  No console do Gerenciador do Servidor, clique em **servidor local**e, na área **Propriedades** , ao lado de **conexão Ethernet com fio**, clique no link.  
   
-2.  No **conexões de rede**, a conexão de rede que está conectado à sub-rede Corpnet 2 com o botão direito, clique em **Renomear**, digite **2 Corpnet**, e pressione ENTER.  
+2.  Em **conexões de rede**, clique com o botão direito do mouse na conexão de rede que está conectada à sub-rede de 2 corpnet, clique em **renomear**, digite **2-corpnet**e pressione Enter.  
   
-3.  Clique com botão direito **2 Corpnet**e, em seguida, clique em **propriedades**.  
+3.  Clique com o botão direito do mouse em **2-corpnet**e clique em **Propriedades**.  
   
 4.  Clique em **Protocolo TCP/IP Versão 4 (TCP/IPv4)** e clique em **Propriedades**.  
   
-5.  Clique em **Usar o seguinte endereço IP**. Na **endereço IP**, digite **10.2.0.20**, na **máscara de sub-rede**, tipo **255.255.255.0**.  
+5.  Clique em **Usar o seguinte endereço IP**. Em **endereço IP**, digite **10.2.0.20**, em **máscara de sub-rede**, digite **255.255.255.0**.  
   
-6.  Clique em **Usar os seguintes endereços de servidor DNS**. Na **servidor DNS preferencial**, digite **10.2.0.1**e, na **servidor DNS alternativo**, digite **10.0.0.1**.  
+6.  Clique em **Usar os seguintes endereços de servidor DNS**. Em **servidor DNS preferencial**, digite **10.2.0.1**e, em **servidor DNS alternativo**, digite **10.0.0.1**.  
   
 7.  Clique em **Avançado** e clique na guia **DNS**.  
   
-8.  Na **sufixo DNS para essa conexão**, digite **corp2.corp.contoso.com**e, em seguida, clique em **Okey** duas vezes.  
+8.  Em **sufixo DNS para essa conexão**, digite **corp2.Corp.contoso.com**e clique em **OK** duas vezes.  
   
 9. Clique em **Protocolo IP Versão 6 (TCP/IPv6)** e em **Propriedades**.  
   
-10. Clique em **usar o seguinte endereço IPv6**. Na **endereço IPv6**, digite **2001:db8:2::20**, na **comprimento do prefixo de sub-rede**, tipo **64**. Clique em **usar os seguintes endereços de servidor DNS**e, na **servidor DNS preferencial**, digite **2001:db8:2::1**, no **servidor DNS alternativo**, tipo de **2001:db8:1::1**.  
+10. Clique em **usar o seguinte endereço IPv6**. Em **endereço IPv6**, digite **2001: DB8:2:: 20**, no **comprimento do prefixo da sub-rede**, digite **64**. Clique em **usar os seguintes endereços de servidor DNS**e, em **servidor DNS preferencial**, digite **2001: DB8:2:: 1**, em **servidor DNS alternativo**, digite **2001: DB8:1:: 1**.  
   
 11. Clique em **Avançado** e clique na guia **DNS**.  
   
-12. Na **sufixo DNS para essa conexão**, digite **corp2.corp.contoso.com**e, em seguida, clique em **Okey** duas vezes.  
+12. Em **sufixo DNS para essa conexão**, digite **corp2.Corp.contoso.com**e clique em **OK** duas vezes.  
   
-13. Sobre o **propriedades da rede corporativa de 2** caixa de diálogo, clique em **fechar**.  
+13. Na caixa de diálogo **Propriedades de 2-corpnet** , clique em **fechar**.  
   
-14. No **conexões de rede** janela, a conexão de rede que está conectado à sub-rede da Internet com o botão direito, clique em **Renomear**, digite **Internet**, e, em seguida, pressione ENTER .  
+14. Na janela **conexões de rede** , clique com o botão direito do mouse na conexão de rede que está conectada à sub-rede da Internet, clique em **renomear**, digite **Internet**e pressione Enter.  
   
 15. Clique com o botão direito do mouse em **Internet** e, em seguida, clique em **Propriedades**.  
   
 16. Clique em **Protocolo TCP/IP Versão 4 (TCP/IPv4)** e clique em **Propriedades**.  
   
-17. Clique em **Usar o seguinte endereço IP**. Na **endereço IP**, digite **131.107.0.20**. Em **Máscara de sub-rede**, digite **255.255.255.0**.  
+17. Clique em **Usar o seguinte endereço IP**. Em **endereço IP**, digite **131.107.0.20**. Em **Máscara de sub-rede**, digite **255.255.255.0**.  
   
-18. Clique em **Avançado**. Na guia **Configurações IP**, em na área **Endereços IP**, clique em **Adicionar**. Sobre o **endereço TCP/IP** na caixa **endereço IP** tipo **131.107.0.21**, no **máscara de sub-rede** tipo **255.255.255.0** e, em seguida, clique em **Add**.  
+18. Clique em **Avançado**. Na guia **Configurações IP**, em na área **Endereços IP**, clique em **Adicionar**. Na caixa de diálogo **endereço TCP/IP** , em tipo de **endereço IP** **131.107.0.21**, **em máscara de sub-rede** , digite **255.255.255.0**e clique em **Adicionar**.  
   
 19. Clique na guia **DNS**.  
   
-20. Na **sufixo DNS para essa conexão**, digite **ISP.exemplo.com**, clique em **Okey** duas vezes e, em seguida, clique em **fechar**.  
+20. Em **sufixo DNS para esta conexão**, digite **ISP.example.com**, clique em **OK** duas vezes e, em seguida, clique em **fechar**.  
   
 21. Feche a janela **Conexões de Rede** .  
   
 ## <a name="routing"></a>Configurar o roteamento entre sub-redes  
   
-1.  Sobre o **inicie** tela, digite**cmd.exe**, e pressione ENTER.  
+1.  Na tela **Iniciar** , digite**cmd. exe**e pressione Enter.  
   
-2.  Na janela do Prompt de comando, digite os comandos a seguir. Depois de inserir cada comando, pressione ENTER.  
+2.  Na janela do prompt de comando, digite os comandos a seguir. Depois de inserir cada comando, pressione ENTER.  
   
     ```  
     netsh interface IPv4 add route 10.0.0.0/24 2-Corpnet 10.2.0.254  
     netsh interface IPv6 add route 2001:db8:1::/64 2-Corpnet 2001:db8:2::fe  
     ```  
   
-3.  Para verificar a comunicação de rede entre 2 EDGE1 e DC1, digite **ping dc1.corp.contoso.com**.  
+3.  Para verificar a comunicação de rede entre 2-EDGE1 e DC1, digite **ping DC1.Corp.contoso.com**.  
   
-4.  Verifique se há quatro respostas do endereço IPv4, 10.0.0.1, ou do endereço IPv6, 2001:db8:1::1.  
+4.  Verifique se há quatro respostas do endereço IPv4, 10.0.0.1 ou do endereço IPv6, 2001: DB8:1:: 1.  
   
 5.  Feche a janela do Prompt de Comando.  
   
-## <a name="Join"></a>Ingressar no domínio de CORP2 EDGE1 2  
+## <a name="Join"></a>Junção 2-EDGE1 ao domínio CORP2  
   
-1.  No console do Gerenciador do servidor, no **servidor Local**, no **Properties** área, ao lado **nome do computador**, clique no link.  
+1.  No console do Gerenciador do Servidor, no **servidor local**, na área **Propriedades** , ao lado de **nome do computador**, clique no link.  
   
 2.  Na caixa de diálogo **Propriedades do Sistema**, na guia **Nome do Computador**, clique em **Alterar**.  
   
-3.  Sobre o **alterações de nome/domínio do computador** na caixa **nome do computador**, tipo **2 EDGE1**. No **membro**, clique em **domínio**, digite **corp2.corp.contoso.com**e, em seguida, clique em **Okey**.  
+3.  Na caixa de diálogo **alterações no nome do computador/domínio** , em **nome do computador**, digite **2-EDGE1**. Em **membro de**, clique em **domínio**, digite **corp2.Corp.contoso.com**e clique em **OK**.  
   
-4.  Se você for solicitado um nome de usuário e senha, digite **Administrator** e a senha e clique **Okey**.  
+4.  Se for solicitado um nome de usuário e uma senha, digite **administrador** e sua senha e clique em **OK**.  
   
-5.  Quando você vir uma caixa de diálogo boas-vindas ao domínio corp2.corp.contoso.com, clique em **Okey**.  
+5.  Quando você vir uma caixa de diálogo de boas-vindas ao domínio corp2.corp.contoso.com, clique em **OK**.  
   
 6.  Quando você for solicitado a reiniciar o computador, clique em **OK**.  
   
@@ -130,61 +130,61 @@ Configuração 2 EDGE1 consiste no seguinte:
   
 8.  Quando for solicitado a reiniciar o computador, clique em **Reiniciar Agora**.  
   
-9. Depois que o computador for reiniciado, clique em **trocar de usuário**e, em seguida, clique em **outro usuário** e faça logon no domínio CORP2 com a conta de administrador.  
+9. Depois que o computador for reiniciado, clique em **Alternar usuário**e, em seguida, clique em **outro usuário** e faça logon no domínio CORP2 com a conta de administrador.  
   
-## <a name="certs"></a>Obter certificados em EDGE1 2  
+## <a name="certs"></a>Obter certificados em 2-EDGE1  
   
-1.  Sobre o **inicie** tela, digite**mmc.exe**, e pressione ENTER.  
+1.  Na tela **Iniciar** , digite**MMC. exe**e pressione Enter.  
   
 2.  No console do MMC, no menu **Arquivo**, clique em **Adicionar/Remover Snap-in**.  
   
 3.  Na caixa de diálogo **Adicionar ou Remover Snap-ins**, clique em **Certificados**, **Adicionar**, **Conta do computador**, **Avançar**, **Computador local**, **Concluir** e, por fim, em **OK**.  
   
-4.  Na árvore de console do snap-in de certificados, abra **certificados (computador Local) \Personal**.  
+4.  Na árvore de console do snap-in certificados, abra **certificados (computador local) \Personal**.  
   
-5.  Clique com botão direito **pessoais**, aponte para **todas as tarefas**e, em seguida, clique em **Solicitar novo certificado**.  
+5.  Clique com o botão direito do mouse em **pessoal**, aponte para **todas as tarefas**e clique em **solicitar novo certificado**.  
   
 6.  Clique em **Avançar** duas vezes.  
   
-7.  Sobre o **solicitar certificados** página, selecione o **autenticação cliente-servidor** e o **servidor Web** caixas de seleção e, em seguida, clique em **há mais informações necessário para se registrar neste certificado**.  
+7.  Na página **solicitar certificados** , marque as caixas de seleção **autenticação de cliente** e **servidor Web** e, em seguida, clique em **mais informações são necessárias para se registrar nesse certificado**.  
   
-8.  No **propriedades do certificado** caixa de diálogo o **assunto** guia, o **nome da entidade** área, na **tipo**, selecione  **Nome comum**.  
+8.  Na caixa de diálogo **Propriedades do certificado** , na guia **assunto** , na área **nome da entidade** , em **tipo**, selecione **nome comum**.  
   
-9. Na **valor**, digite **2 edge1.contoso.com**e, em seguida, clique em **adicionar**.  
+9. Em **valor**, digite **2-EDGE1.contoso.com**e clique em **Adicionar**.  
   
 10. Na área **Nome alternativo**, em **Tipo**, selecione **DNS**.  
   
-11. Na **valor**, insira **2 edge1.contoso.com**e, em seguida, clique em **adicionar**.  
+11. Em **valor**, insira **2-EDGE1.contoso.com**e clique em **Adicionar**.  
   
-12. Sobre o **gerais** guia **nome amigável**, tipo **certificado IP-HTTPS**.  
+12. Na guia **geral** , em **nome amigável**, digite **certificado IP-HTTPS**.  
   
 13. Clique em **OK**, **Registrar** e em **Concluir**.  
   
-14. No painel de detalhes do snap-in de certificados, verifique se um novo certificado com o nome 2-edge1.contoso.com foi registrado com finalidades de autenticação de servidor, e um novo certificado com o nome 2-edge1.corp2.corp.contoso.com foi registrado com Finalidades de autenticação de cliente e servidor de autenticação.  
+14. No painel de detalhes do snap-in certificados, verifique se um novo certificado com o nome 2-edge1.contoso.com foi registrado com finalidades pretendidas de autenticação de servidor e se um novo certificado com o nome 2-edge1.corp2.corp.contoso.com foi registrado com Propósitos pretendidos de autenticação de cliente e autenticação de servidor.  
   
-15. Feche a janela de console. Se você for solicitado a salvar as configurações, clique em **não**.  
+15. Feche a janela do console. Se for solicitado que você salve as configurações, clique em **não**.  
   
-## <a name="Access"></a>Fornecer acesso a CORP\User1  
+## <a name="Access"></a>Fornecer acesso ao CORP\User1  
   
-1.  Sobre o **inicie** tela, digite**compmgmt. msc**, e, em seguida, pressione ENTER.  
+1.  Na tela **Iniciar** , digite**compmgmt. msc**e pressione Enter.  
   
 2.  No painel esquerdo, clique em **usuários e grupos locais**.  
   
-3.  Clique duas vezes em **grupos**e, em seguida, clique duas vezes em **administradores**.  
+3.  Clique duas vezes em **grupos**e clique duas vezes em **Administradores**.  
   
-4.  Sobre o **propriedades de administradores** caixa de diálogo, clique em **adicionar**e, na **selecionar usuários, computadores, contas de serviço ou grupos** caixa de diálogo, clique em  **Locais**.  
+4.  Na caixa de diálogo **Propriedades de administradores** , clique em **Adicionar**e, na caixa de diálogo **Selecionar usuários, computadores, contas de serviço ou grupos** , clique em **locais**.  
   
-5.  Sobre o **locais** na caixa a **local** de árvore, clique em **corp.contoso.com**e, em seguida, clique em **Okey**.  
+5.  Na caixa de diálogo **locais** , na árvore **local** , clique em **Corp.contoso.com**e em **OK**.  
   
-6.  No **digite os nomes de objeto para selecionar** tipo **User1**e, em seguida, clique em **Okey**.  
+6.  Em **Inserir os nomes de objeto a serem selecionados** , digite **Usuário1**e clique em **OK**.  
   
-7.  Sobre o **propriedades de administradores** caixa de diálogo, clique em **Okey**.  
+7.  Na caixa de diálogo **Propriedades de administradores** , clique em **OK**.  
   
-8.  Feche a janela de gerenciamento do computador.  
+8.  Feche a janela Gerenciamento do computador.  
   
-## <a name="InstallDA"></a>Instalar a função de acesso remoto em EDGE1 2  
+## <a name="InstallDA"></a>Instalar a função de acesso remoto em 2-EDGE1  
   
-1.  No console do Gerenciador do servidor, nos **Dashboard**, clique em **adicionar funções e recursos**.  
+1.  No console do Gerenciador do Servidor, no **painel**, clique em **adicionar funções e recursos**.  
   
 2.  Clique em **Avançar** três vezes para exibir a tela de seleção de função de servidor.  
   

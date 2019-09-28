@@ -1,8 +1,8 @@
 ---
 title: dfsdiag TestDFSConfig
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,30 +13,30 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 922b78b87f3bb66765b87348a3bf136e14c9e837
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8008e02d588edaa6fe7700a331c43f9680d89431
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436135"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378424"
 ---
 # <a name="dfsdiag-testdfsconfig"></a>dfsdiag TestDFSConfig
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Verifica a configuração de um sistema de arquivos distribuído \(DFS\) namespace executando as seguintes ações:  
+Verifica a configuração de um namespace Sistema de Arquivos Distribuído \(DFS @ no__t-1 executando as seguintes ações:  
   
--   verifica se o serviço Namespace DFS está em execução e que o tipo de inicialização está definido como automático em todos os servidores de namespace.  
+-   verifica se o serviço de namespace do DFS está em execução e se seu tipo de inicialização está definido como automático em todos os servidores de namespace.  
   
--   verifica se a configuração de registro do DFS é consistente entre servidores de namespace.  
+-   verifica se a configuração do registro DFS é consistente entre os servidores de namespace.  
   
--   Valida as seguintes dependências nos servidores de namespace em cluster que executam o Windows Server 2008 ou posterior:  
+-   Valida as seguintes dependências em servidores de namespace clusterizados que executam o Windows Server 2008 ou posterior:  
   
-    -   Dependência de recurso de raiz de Namespace no recurso de nome de rede.  
+    -   Dependência de recurso raiz de namespace no recurso de nome de rede.  
   
     -   Dependência de recurso de nome de rede no recurso de endereço IP.  
   
-    -   Dependência de recurso de raiz de Namespace no recurso de disco físico.  
+    -   Dependência de recurso raiz de namespace no recurso de disco físico.  
   
   
   
@@ -50,9 +50,9 @@ dfsdiag /TestDFSConfig /DFSRoot:<namespace>
   
 |       Parâmetro       |               Descrição               |
 |-----------------------|-----------------------------------------|
-| \/DFSRoot:<namespace> | O namespace \(raiz DFS\) para diagnosticar. |
+| \/DFSRoot: <namespace> | O namespace \(DFS raiz @ no__t-1 para diagnosticar. |
   
-## <a name="BKMK_Examples"></a>Exemplos  
+## <a name="BKMK_Examples"></a>Disso  
 Para TBD, digite:  
   
 ```  

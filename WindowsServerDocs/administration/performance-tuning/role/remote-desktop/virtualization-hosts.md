@@ -1,18 +1,18 @@
 ---
 title: Ajuste de desempenho Área de Trabalho Remota hosts de virtualização
 description: Ajuste de desempenho para hosts de virtualização Área de Trabalho Remota
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 24e3243d4e9791c8941729d396e0a96cd8b11a7d
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 6aad1560fa9f9429af94426487d9a33369137ded
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866434"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370034"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>Ajuste de desempenho Área de Trabalho Remota hosts de virtualização
 
@@ -129,7 +129,7 @@ Os seguintes contadores de desempenho estão disponíveis no servidor do RemoteF
 
 -   **VRAM MB disponíveis por valor** de GPU de memória de vídeo dedicada que não está sendo usada
 
--   **VRAM % Reservada por** percentual de GPU de memória de vídeo dedicada que foi reservada para o RemoteFX
+-   **VRAM % Reservada por GPU @ no__t-0% da memória de vídeo dedicada que foi reservada para o RemoteFX
 
 **Software do RemoteFX**
 

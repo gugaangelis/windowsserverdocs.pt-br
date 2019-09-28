@@ -1,8 +1,8 @@
 ---
 title: Evntcmd
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e2a4a7f9e6bdf6f200b86e028617cae924571455
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: b4496df6df1a40b383505627d58389c098493f59
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66439457"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377443"
 ---
 # <a name="evntcmd"></a>Evntcmd
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Configura a conversão de eventos em desvios, destinos de interceptação ou ambos com base nas informações em um arquivo de configuração.   
+Configura a conversão de eventos em interceptações, destinos de interceptação ou ambos com base nas informações de um arquivo de configuração.   
 ## <a name="syntax"></a>Sintaxe  
 ```  
 evntcmd [/s <computerName>] [/v <verbosityLevel>] [/n] <FileName>  
@@ -33,61 +33,61 @@ evntcmd [/s <computerName>] [/v <verbosityLevel>] [/n] <FileName>
 
 |      Parâmetro      |                                                                                                                                                            Descrição                                                                                                                                                             |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  /s <computerName>  |                                                         Especifica o nome, o computador no qual você deseja configurar a conversão de eventos em desvios, destinos de interceptação ou ambos. Se você não especificar um computador, a configuração ocorre no computador local.                                                          |
-| /v <verbosityLevel> | Especifica quais tipos de status de mensagens são exibidos como interceptações e destinos de interceptações são configurados. Esse parâmetro deve ser um inteiro entre 0 e 10. Se você especificar 10, todos os tipos de mensagens são exibidos, incluindo o rastreamento de mensagens e avisos sobre se a configuração de interceptação foi bem-sucedido. Se você especificar 0, nenhuma mensagem será exibida. |
-|         /n          |                                                                                                           Especifica que o serviço SNMP não deve ser reiniciado se este computador receber alterações de configuração de interceptação.                                                                                                            |
-|     <FileName>      |                                                                                     Especifica o nome, o arquivo de configuração que contém informações sobre a conversão de eventos em desvios e destinos de interceptação que você deseja configurar.                                                                                     |
+|  /s <computerName>  |                                                         Especifica, por nome, o computador no qual você deseja configurar a tradução de eventos para interceptações, destinos de interceptação ou ambos. Se você não especificar um computador, a configuração ocorrerá no computador local.                                                          |
+| /v <verbosityLevel> | Especifica quais tipos de mensagens de status aparecem como interceptações e destinos de interceptação são configurados. Esse parâmetro deve ser um inteiro entre 0 e 10. Se você especificar 10, todos os tipos de mensagens serão exibidos, incluindo mensagens de rastreamento e avisos sobre se a configuração de interceptação foi bem-sucedida. Se você especificar 0, nenhuma mensagem será exibida. |
+|         opção          |                                                                                                           Especifica que o serviço SNMP não deve ser reiniciado se este computador receber alterações de configuração de interceptação.                                                                                                            |
+|     <FileName>      |                                                                                     Especifica, por nome, o arquivo de configuração que contém informações sobre a tradução de eventos para interceptações e destinos de interceptação que você deseja configurar.                                                                                     |
 |         /?          |                                                                                                                                                Exibe a ajuda no prompt de comando.                                                                                                                                                |
 
 ## <a name="remarks"></a>Comentários  
-- Se você quiser configurar interceptações, mas não os destinos das, você pode criar um arquivo de configuração válido usando o evento para o conversor de desvio, que é um utilitário gráfico. Se você tiver o serviço SNMP instalado, você pode iniciar o conversor de interceptação de evento em digitando **evntwin** em um prompt de comando. Depois de definir os desvios desejados, clique em Exportar para criar um arquivo adequado para uso com **evntcmd**. Você pode usar o evento para o conversor de desvio para criar facilmente um arquivo de configuração e, em seguida, use o arquivo de configuração com **evntcmd** no prompt de comando para configurar rapidamente os desvios em vários computadores.  
-- A sintaxe para a configuração de uma interceptação é da seguinte maneira:  
-  **#pragma add**<em><EventLogFile> <EventSource> <EventID> [<Count> [<Period>]]</em>  
+- Se você quiser configurar interceptações, mas não os destinos de interceptação, poderá criar um arquivo de configuração válido usando o conversor de evento para interceptação, que é um utilitário gráfico. Se você tiver o serviço SNMP instalado, poderá iniciar o conversor de evento para interceptação digitando **evntwin** em um prompt de comando. Depois de definir as interceptações desejadas, clique em exportar para criar um arquivo adequado para uso com o **evntcmd**. Você pode usar o conversor de evento para interceptação para criar facilmente um arquivo de configuração e, em seguida, usar o arquivo de configuração com **evntcmd** no prompt de comando para configurar rapidamente os desvios em vários computadores.  
+- A sintaxe para configurar uma interceptação é a seguinte:  
+  **#pragma adicionar**<em> @ no__t-2 <EventSource> <EventID> [<Count> [<Period>]] </em>  
   -   O texto **#pragma** deve aparecer no início de cada entrada no arquivo.  
-  -   O parâmetro **adicionar** Especifica que você deseja adicionar um evento para configuração de desvio.  
-  -   Os parâmetros *Arquivo_de_log_de_eventos*, *EventSource*, e *EventID* são necessários. O parâmetro *Arquivo_de_log_de_eventos* Especifica o arquivo no qual o evento é registrado. O parâmetro *EventSource* Especifica o aplicativo que gera o evento. O *EventID* parâmetro especifica o número exclusivo que identifica cada evento. Para saber quais valores correspondem a determinados eventos, iniciar eventos para o conversor de desvio, digitando **evntwin** em um prompt de comando. Clique em **personalizado**e, em seguida, clique em **editar**. Sob **origens do evento**, procure nas pastas até localizar o evento que você deseja configurar, clique nele e, em seguida, clique em **adicionar**. Informações sobre a origem do evento, o arquivo de log de eventos e a ID do evento aparecem sob **de origem, faça logon**, e **interceptar a ID específica**, respectivamente.  
-  -   O *contagem* parâmetro é opcional e especifica quantas vezes o evento deve ocorrer antes do envio uma mensagem de interceptação. Se você não usar o *contagem* parâmetro, a mensagem de interceptação será enviada depois que o evento ocorre uma vez.  
-  -   O *período* parâmetro é opcional, mas requer que você usar o *contagem* parâmetro. O *período* parâmetro especifica um período de tempo (em segundos) durante o qual o evento deve ocorrer o número de vezes especificado com o parâmetro de contagem antes de uma mensagem de interceptação é enviada. Se você não usar o *período* parâmetro, uma mensagem de interceptação é enviada depois que o evento ocorre o número de vezes especificado com o *contagem* parâmetro, não importa quanto tempo decorrido entre ocorrências.  
-- A sintaxe para remover uma interceptação é da seguinte maneira:  
-  **#pragma delete**<em><EventLogFile> <EventSource> <EventID></em>  
+  -   O parâmetro **Add** especifica que você deseja adicionar um evento à configuração de interceptação.  
+  -   Os parâmetros *eventlogfile*, *EventSource*e *EventID* são obrigatórios. O parâmetro *eventlogfile* especifica o arquivo no qual o evento é registrado. O parâmetro *EventSource* especifica o aplicativo que gera o evento. O parâmetro *EventID* especifica o número exclusivo que identifica cada evento. Para descobrir quais valores correspondem a eventos específicos, inicie o evento para o conversor de interceptação digitando **evntwin** em um prompt de comando. Clique em **personalizado**e em **Editar**. Em **origens do evento**, procure as pastas até localizar o evento que deseja configurar, clique nele e, em seguida, clique em **Adicionar**. As informações sobre a origem do evento, o arquivo de log de eventos e a ID do evento aparecem em **origem, log**e **ID específica da interceptação**, respectivamente.  
+  -   O parâmetro *Count* é opcional e especifica quantas vezes o evento deve ocorrer antes que uma mensagem de interceptação seja enviada. Se você não usar o parâmetro *Count* , a mensagem de interceptação será enviada depois que o evento ocorrer uma vez.  
+  -   O parâmetro *period* é opcional, mas exige que você use o parâmetro *Count* . O parâmetro *period* especifica um período de tempo (em segundos) durante o qual o evento deve ocorrer o número de vezes especificado com o parâmetro Count antes que uma mensagem de interceptação seja enviada. Se você não usar o parâmetro *period* , uma mensagem de interceptação será enviada depois que o evento ocorrer o número de vezes especificado com o parâmetro *Count* , independentemente da quantidade de tempo decorrido entre ocorrências.  
+- A sintaxe para remover uma interceptação é a seguinte:  
+  **#pragma excluir**<em> @ no__t-2 <EventSource> <EventID> @ no__t-5  
   -   O texto **#pragma** deve aparecer no início de cada entrada no arquivo.  
-  -   O parâmetro *excluir* Especifica que você deseja remover um evento para configuração de desvio.  
-  -   Os parâmetros *Arquivo_de_log_de_eventos*, *EventSource*, e *EventID* são necessários. O parâmetro *Arquivo_de_log_de_eventos* Especifica o log no qual o evento é registrado. O parâmetro *EventSource* Especifica o aplicativo que gera o evento. O *EventID* parâmetro especifica o número exclusivo que identifica cada evento.  
-- A sintaxe para configurar um destino de interceptação é da seguinte maneira:  
-  **#pragma add_TRAP_DEST**<em><CommunityName> <HostID></em>  
+  -   A *exclusão* do parâmetro especifica que você deseja remover um evento para a configuração de interceptação.  
+  -   Os parâmetros *eventlogfile*, *EventSource*e *EventID* são obrigatórios. O parâmetro *eventlogfile* especifica o log no qual o evento é registrado. O parâmetro *EventSource* especifica o aplicativo que gera o evento. O parâmetro *EventID* especifica o número exclusivo que identifica cada evento.  
+- A sintaxe para configurar um destino de interceptação é a seguinte:  
+  **#pragma add_TRAP_DEST**<em> @ no__t-2 <HostID> @ no__t-4  
   -   O texto **#pragma** deve aparecer no início de cada entrada no arquivo.  
-  -   O parâmetro **add_TRAP_DEST** Especifica que você deseja que as mensagens de interceptação a serem enviados para um host específico em uma comunidade.  
-  -   O parâmetro *Nome_da_comunidade* Especifica o nome, a comunidade no qual interceptação as mensagens são enviadas.  
-  -   O parâmetro *HostID* Especifica, por nome ou endereço IP, o host ao qual você deseja que as mensagens de interceptação a serem enviados.  
-- A sintaxe para remover um destino de interceptação é da seguinte maneira:  
-  **#pragma delete_TRAP_DEST**<em><CommunityName> <HostID></em>  
+  -   O parâmetro **add_TRAP_DEST** especifica que você deseja que as mensagens de interceptação sejam enviadas para um host especificado em uma comunidade.  
+  -   O parâmetro *communityname* especifica, por nome, a Comunidade na qual as mensagens de interceptação são enviadas.  
+  -   O parâmetro *hostid* especifica, por nome ou endereço IP, o host para o qual você deseja que as mensagens de interceptação sejam enviadas.  
+- A sintaxe para remover um destino de interceptação é a seguinte:  
+  **#pragma delete_TRAP_DEST**<em> @ no__t-2 <HostID> @ no__t-4  
   - O texto **#pragma** deve aparecer no início de cada entrada no arquivo.  
-  - O parâmetro *delete_TRAP_DEST* Especifica que você não deseja que as mensagens de interceptação a serem enviados para um host específico em uma comunidade.  
-  - O parâmetro *Nome_da_comunidade* Especifica o nome, a comunidade no qual interceptação as mensagens são enviadas.  
-  - O parâmetro *HostID* Especifica, por nome ou endereço IP, o host ao qual você deseja não mensagens de interceptação a serem enviados.  
-    ## <a name="BKMK_Examples"></a>Exemplos  
-    Os exemplos a seguir ilustram as entradas no arquivo de configuração para o **evntcmd** comando. Eles não são projetados para ser digitados no prompt de comando.  
-    Para enviar uma mensagem de desvio se o serviço de Log de eventos for reiniciado, digite:  
+  - O parâmetro *delete_TRAP_DEST* especifica que você não deseja que as mensagens de interceptação sejam enviadas para um host especificado em uma comunidade.  
+  - O parâmetro *communityname* especifica, por nome, a Comunidade na qual as mensagens de interceptação são enviadas.  
+  - O parâmetro *hostid* especifica, por nome ou endereço IP, o host para o qual você não deseja que as mensagens de interceptação sejam enviadas.  
+    ## <a name="BKMK_Examples"></a>Disso  
+    Os exemplos a seguir ilustram as entradas no arquivo de configuração para o comando **evntcmd** . Eles não são projetados para serem digitados em um prompt de comando.  
+    Para enviar uma mensagem de interceptação se o serviço log de eventos for reiniciado, digite:  
     ```  
     #pragma add System "Eventlog" 2147489653  
     ```  
-    Para enviar uma mensagem de desvio se o serviço de Log de eventos seja reiniciado duas vezes em três minutos, digite:  
+    Para enviar uma mensagem de interceptação se o serviço log de eventos for reiniciado duas vezes em três minutos, digite:  
     ```  
     #pragma add System "Eventlog" 2147489653 2 180  
     ```  
-    Para interromper o envio de uma mensagem de interceptação sempre que o serviço de Log de eventos for reiniciado, digite:  
+    Para interromper o envio de uma mensagem de interceptação sempre que o serviço de log de eventos for reiniciado, digite:  
     ```  
     #pragma delete System "Eventlog" 2147489653  
     ```  
-    Para enviar mensagens de desvio dentro da comunidade chamada Public para o host com o endereço IP 192.168.100.100, digite:  
+    Para enviar mensagens de interceptação na Comunidade denominada public para o host com o endereço IP 192.168.100.100, digite:  
     ```  
     #pragma add_TRAP_DEST public 192.168.100.100  
     ```  
-    Para enviar mensagens de desvio dentro da comunidade chamada Private para o host chamado Host1, digite:  
+    Para enviar mensagens de interceptação na Comunidade denominada particular para o host chamado Host1, digite:  
     ```  
     #pragma add_TRAP_DEST private Host1  
     ```  
-    Para interromper o envio de mensagens de desvio dentro da comunidade chamada Private no mesmo computador em que você está configurando destinos de interceptação, digite:  
+    Para interromper o envio de mensagens de interceptação na comunidade chamada particular para o mesmo computador em que você está configurando destinos de interceptação, digite:  
     ```  
     #pragma delete_TRAP_DEST private localhost  
     ```  

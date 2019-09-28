@@ -2,7 +2,7 @@
 title: arp
 description: Tópico de comandos do Windows para **ARP** – exibe e modifica entradas no cache ARP (protocolo de resolução de endereço) usado para armazenar endereços IP e seus endereços físicos resolvidos.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8354df3f52790840e0cb0c5c9834da2722d27d43
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.openlocfilehash: 1e6d34ceaa56ed40a1083b710e0db01b106f49e2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68914690"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382657"
 ---
 # <a name="arp"></a>arp
 
@@ -33,10 +33,10 @@ arp [/a [<Inetaddr>] [/n <ifaceaddr>]] [/g [<Inetaddr>] [-n <ifaceaddr>]] [/d <I
 
 |                Parâmetro                |                                                                                                                                                                                                                                                               Descrição                                                                                                                                                                                                                                                               |
 |-----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /a [<Inetaddr>] [/n <ifaceaddr>]     | Exibe as tabelas de cache ARP atuais para todas as interfaces. O parâmetro/n diferencia maiúsculas de minúsculas.<br /><br />Para exibir a entrada de cache ARP para um endereço IP específico, use **ARP/a** com o parâmetro *Inetaddr* , em que *Inetaddr* é um endereço IP. Se *Inetaddr* não for especificado, a primeira interface aplicável será usada.<br /><br />Para exibir a tabela de cache ARP para uma interface específica, use o parâmetro **/n** _ em conjunto com o parâmetro **/a** , em que *ifaceaddr* é o endereço IP atribuído à interface. |
+|    /a [<Inetaddr>] [/n <ifaceaddr>]     | Exibe as tabelas de cache ARP atuais para todas as interfaces. O parâmetro/n diferencia maiúsculas de minúsculas.<br /><br />Para exibir a entrada de cache ARP para um endereço IP específico, use **ARP/a** com o parâmetro *Inetaddr* , em que *Inetaddr* é um endereço IP. Se *Inetaddr* não for especificado, a primeira interface aplicável será usada.<br /><br />Para exibir a tabela de cache ARP para uma interface específica, use o parâmetro **/n**_ifaceaddr_ em conjunto com o parâmetro **/a** , em que *ifaceaddr* é o endereço IP atribuído à interface. |
 |    /g [<Inetaddr>] [/n <ifaceaddr>]     |                                                                                                                                                                                                                                                          Idêntico a **/a**.                                                                                                                                                                                                                                                           |
-|      [/d <Inetaddr> [<ifaceaddr>]       |                                                                                           exclui uma entrada com um endereço IP específico, em que *Inetaddr* é o endereço IP.<br /><br />Para excluir uma entrada em uma tabela para uma interface específica, use o parâmetro *ifaceaddr* , em que *ifaceaddr* é o endereço IP atribuído à interface.<br /><br />Para excluir todas as entradas, use o caractere\*curinga asterisco () no lugar de *Inetaddr*.                                                                                           |
-| /s <Inetaddr> [<Etheraddr> ]<ifaceaddr> |                                                                                                                     Adiciona uma entrada estática ao cache ARP que resolve o endereço IP *Inetaddr* para o endereço físico *Etheraddr*.<br /><br />Para adicionar uma entrada de cache ARP estática à tabela para uma interface específica, use o parâmetro *ifaceaddr* , em que *ifaceaddr* é um endereço IP atribuído à interface.                                                                                                                     |
+|      [/d <Inetaddr> [<ifaceaddr>]       |                                                                                           exclui uma entrada com um endereço IP específico, em que *Inetaddr* é o endereço IP.<br /><br />Para excluir uma entrada em uma tabela para uma interface específica, use o parâmetro *ifaceaddr* , em que *ifaceaddr* é o endereço IP atribuído à interface.<br /><br />Para excluir todas as entradas, use o caractere curinga asterisco (\*) no lugar de *Inetaddr*.                                                                                           |
+| /s <Inetaddr> <Etheraddr> [<ifaceaddr>] |                                                                                                                     Adiciona uma entrada estática ao cache ARP que resolve o endereço IP *Inetaddr* para o endereço físico *Etheraddr*.<br /><br />Para adicionar uma entrada de cache ARP estática à tabela para uma interface específica, use o parâmetro *ifaceaddr* , em que *ifaceaddr* é um endereço IP atribuído à interface.                                                                                                                     |
 |                   /?                    |                                                                                                                                                                                                                                                  Exibe a ajuda no prompt de comando.                                                                                                                                                                                                                                                   |
 
 ## <a name="remarks"></a>Comentários
@@ -56,5 +56,5 @@ arp [/a [<Inetaddr>] [/n <ifaceaddr>]] [/g [<Inetaddr>] [-n <ifaceaddr>]] [/d <I
   ```
   arp /s 10.0.0.80 00-AA-00-4F-2A-9C 
   ```
-  ## <a name="additional-references"></a>referências adicionais
+  ## <a name="additional-references"></a>Referências adicionais
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

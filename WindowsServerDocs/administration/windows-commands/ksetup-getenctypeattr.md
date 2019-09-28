@@ -1,8 +1,8 @@
 ---
-title: ksetup:getenctypeattr
-description: 'Tópico de comandos do Windows para * * *- '
+title: 'ksetup: getenctypeattr'
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 302f94616f98eb350332b08ad37a58305a0a0be1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1ff55cfd204f76b42c5f1342b3cf206ee4c14f14
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841987"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374989"
 ---
-# <a name="ksetupgetenctypeattr"></a>ksetup:getenctypeattr
+# <a name="ksetupgetenctypeattr"></a>ksetup: getenctypeattr
 
 
 
@@ -36,19 +36,19 @@ ksetup /getenctypeattr <DomainName>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<DomainName>|Nome do domínio ao qual você deseja estabelecer uma conexão. Use o nome de domínio totalmente qualificado ou um formulário simples do nome, como corp.contoso.com ou contoso.|
+|\<DomainName >|Nome do domínio ao qual você deseja estabelecer uma conexão. Use o nome de domínio totalmente qualificado ou uma forma simples do nome, como corp.contoso.com ou contoso.|
 
 ## <a name="remarks"></a>Comentários
 
-Para exibir o tipo de criptografia para o tíquete de concessão de tíquete do Kerberos (TGT) e a chave de sessão, execute as **klist** de comando e exibir a saída.
+Para exibir o tipo de criptografia para o tíquete de concessão de tíquete (TGT) e a chave de sessão do Kerberos, execute o comando **klist** e exiba a saída.
 
-Se o comando for bem-sucedido ou falha, uma mensagem de status é exibida após a conclusão com êxito ou falha.
+Se o comando for bem-sucedido ou falhar, uma mensagem de status será exibida após a conclusão bem-sucedida ou com falha.
 
-Para definir o domínio que você deseja conectar e usar, execute as **ksetup /domain \<DomainName >** comando.
+Para definir o domínio ao qual você deseja se conectar e usar, execute o comando **ksetup/domain \<DomainName >** .
 
-## <a name="BKMK_Examples"></a>Exemplos
+## <a name="BKMK_Examples"></a>Disso
 
-Verifique se o atributo de tipo de criptografia para o domínio:
+Verifique o atributo de tipo de criptografia para o domínio:
 ```
 ksetup /getenctypeattr mit.contoso.com
 ```
@@ -60,4 +60,4 @@ ksetup /getenctypeattr mit.contoso.com
 -   [Ksetup:addenctypeattr](ksetup-addenctypeattr.md)
 -   [Ksetup:setenctypeattr](ksetup-setenctypeattr.md)
 -   [Ksetup:delenctypeattr](ksetup-delenctypeattr.md)
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

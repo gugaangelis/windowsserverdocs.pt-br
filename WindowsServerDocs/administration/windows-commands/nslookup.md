@@ -2,7 +2,7 @@
 title: nslookup
 description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 84e3e9ee920f458ca775dd7b76d892f10ba2f992
-ms.sourcegitcommit: ee8e0b217be6f6b2532ee7265fb4be00c106e124
+ms.openlocfilehash: 6b47592be57d5999ac26465097490da266bd0aea
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70878110"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372696"
 ---
 # <a name="nslookup"></a>nslookup
 
@@ -106,7 +106,7 @@ nslookup /view <FileName>
   |`No response from server`|Nenhum servidor de nome DNS está sendo executado no computador servidor.|
   |`No records`|O servidor de nomes DNS não tem registros de recursos do tipo de consulta atual para o computador, embora o nome do computador seja válido. O tipo de consulta é especificado com o comando **set QueryType** .|
   |`Nonexistent domain`|O computador ou o nome de domínio DNS não existe.|
-  |`Connection refused`<br /><br />- ou -<br /><br />`Network is unreachable`|Não foi possível estabelecer a conexão com o servidor de nomes DNS ou com o servidor Finger. Esse erro geralmente ocorre com solicitações **ls** e **Finger** .|
+  |`Connection refused`<br /><br />-ou-<br /><br />`Network is unreachable`|Não foi possível estabelecer a conexão com o servidor de nomes DNS ou com o servidor Finger. Esse erro geralmente ocorre com solicitações **ls** e **Finger** .|
   |`Server failure`|O servidor de nomes DNS encontrou uma inconsistência interna em seu banco de dados e não pôde retornar uma resposta válida.|
   |`Refused`|O servidor de nomes DNS recusou-se a atender à solicitação.|
   |`format error`|O servidor de nomes DNS descobriu que o pacote de solicitação não estava no formato adequado. Isso pode indicar um erro no **nslookup**.|

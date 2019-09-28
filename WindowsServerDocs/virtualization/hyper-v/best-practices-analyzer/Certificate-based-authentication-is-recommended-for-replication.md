@@ -1,7 +1,7 @@
 ---
-title: Autenticação baseada em certificado é recomendada para replicação
-description: Versão online do texto para essa regra do analisador de práticas recomendadas.
-ms.prod: windows-server-threshold
+title: A autenticação baseada em certificado é recomendada para replicação
+description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,38 +10,38 @@ ms.topic: article
 ms.assetid: d931cc57-414f-4bdf-9ebd-08fd5e22b19d
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 5bd131b48b009b43b6379f72f370b4179dea5a03
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0eac99fddd8bbc6dc585931cd25f2a440be16c76
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873057"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365183"
 ---
-# <a name="certificate-based-authentication-is-recommended-for-replication"></a>Autenticação baseada em certificado é recomendada para replicação
+# <a name="certificate-based-authentication-is-recommended-for-replication"></a>A autenticação baseada em certificado é recomendada para replicação
 
 >Aplica-se a: Windows Server 2016
 
-Para obter mais informações sobre as práticas recomendadas e varreduras, consulte [Run Best Practices Analyzer Scans e Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
+Para obter mais informações sobre práticas recomendadas e verificações, consulte [executar verificações de analisador de práticas recomendadas e gerenciar resultados de verificação](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
 |Propriedade|Detalhes|  
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
-|**Recurso do produto**|Hyper-V|  
-|**Severidade**|Aviso|  
-|**categoria**|Configuração|  
+|**Produto/recurso**|Hyper-V|  
+|**Severity**|Aviso|  
+|**Categorias**|Configuração|  
   
-Nas seções a seguir, itálico indica o texto de interface do usuário que aparece na ferramenta Analisador de práticas recomendadas para esse problema.  
+Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
 ## <a name="issue"></a>**Problema**  
-*Um ou mais máquinas virtuais selecionadas para replicação são configuradas para a autenticação Kerberos.*  
+*Uma ou mais máquinas virtuais selecionadas para replicação estão configuradas para autenticação Kerberos.*  
   
-## <a name="impact"></a>**Impacto**  
-*O tráfego de rede de replicação do servidor primário para o servidor de replicação não criptografado. Isso afeta as seguintes máquinas virtuais:*  
+## <a name="impact"></a>**Causa**  
+o tráfego de rede de replicação @no__t 0The do servidor primário para o servidor de replicação não é criptografado. Isso afeta as seguintes máquinas virtuais: *  
   
-\<lista de máquinas virtuais >  
+\<list de máquinas virtuais >  
   
 ## <a name="resolution"></a>**Resolução**  
-*Se outro método está sendo usado para executar a criptografia, você pode ignorar isso. Caso contrário, modifique as configurações de máquina virtual para escolher a autenticação baseada em certificado.*  
+*If outro método está sendo usado para executar a criptografia, você pode ignorá-lo. Caso contrário, modifique as configurações da máquina virtual para escolher autenticação baseada em certificado.*  
   
 
 

@@ -1,8 +1,8 @@
 ---
-title: bdehdcfg target
-description: Tópico de comandos do Windows para o destino de bdehdcfg - prepara uma partição para uso como uma unidade de sistema pela recuperação do BitLocker e Windows.
+title: destino BdeHdCfg
+description: Tópico de comandos do Windows para BdeHdCfg Target – prepara uma partição para uso como uma unidade do sistema pelo BitLocker e pela recuperação do Windows.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8d180974f480b4c40532dab529ad49dcc33540d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2fb0a1daa257ef2c9f1cd77b88e5ef14f84a0dfa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881527"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382183"
 ---
-# <a name="bdehdcfg-target"></a>bdehdcfg: target
+# <a name="bdehdcfg-target"></a>BdeHdCfg: destino
 
 
 
-Prepara uma partição para uso como uma unidade de sistema do BitLocker e a recuperação do Windows. Por padrão, essa partição é criada sem uma letra de unidade. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+Prepara uma partição para uso como uma unidade do sistema pelo BitLocker e pela recuperação do Windows. Por padrão, essa partição é criada sem uma letra de unidade. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -38,17 +38,17 @@ bdehdcfg -target {default|unallocated|<DriveLetter> shrink|<DriveLetter> merge}
 |---------|-----------|
 |padrão|Indica que a ferramenta da linha de comando seguirá o mesmo processo que o assistente de instalação do BitLocker.|
 |unallocated|Cria a partição do sistema fora do espaço não alocado disponível no disco.|
-|\<Letra da unidade > reduzir|Reduz a unidade especificada pela quantidade necessária para criar uma partição do sistema ativa. Para usar esse comando, a unidade especificada deve ter pelo menos 5% de espaço livre.|
-|\<Letra da unidade > direta|Usa a unidade especificada como partição do sistema ativa. A unidade do sistema operacional não pode ser um destino para mesclagem.|
+|redução de @no__t 0DriveLetter >|Reduz a unidade especificada pela quantidade necessária para criar uma partição do sistema ativa. Para usar esse comando, a unidade especificada deve ter pelo menos 5% de espaço livre.|
+|mesclagem de @no__t 0DriveLetter >|Usa a unidade especificada como partição do sistema ativa. A unidade do sistema operacional não pode ser um destino para mesclagem.|
 
-## <a name="BKMK_Examples"></a>Exemplos
+## <a name="BKMK_Examples"></a>Disso
 
-O exemplo a seguir ilustra o uso de **destino** comando para designar uma unidade existente (P) como a unidade do sistema.
+O exemplo a seguir descreve o uso do comando **target** para designar uma unidade existente (P) como a unidade do sistema.
 ```
 bdehdcfg -target P: merge
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
--   [Bdehdcfg](bdehdcfg.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   [BdeHdCfg](bdehdcfg.md)

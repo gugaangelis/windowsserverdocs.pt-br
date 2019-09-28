@@ -1,42 +1,42 @@
 ---
 title: Estendendo volumes em Espaços de Armazenamento Diretos
-description: Como redimensionar os volumes em espaços de armazenamento diretos usando o PowerShell e Windows Admin Center.
-ms.prod: windows-server-threshold
+description: Como redimensionar volumes em Espaços de Armazenamento Diretos usando o centro de administração do Windows e o PowerShell.
+ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
 ms.technology: storage-spaces
 ms.date: 05/07/2019
-ms.openlocfilehash: 3be6a4cda20f4d7d7d881ad8a272dc38fd787bba
-ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
+ms.openlocfilehash: 20482fe1728b12d4fe56dcfa397352fbb4b4f981
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65613232"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366087"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>Estendendo volumes em Espaços de Armazenamento Diretos
 > Aplica-se a: Windows Server 2019, Windows Server 2016
 
-Este tópico fornece instruções para o redimensionamento de volumes em um [espaços de armazenamento diretos](storage-spaces-direct-overview.md) cluster usando o Windows Admin Center.
+Este tópico fornece instruções para redimensionar volumes em um cluster [espaços de armazenamento diretos](storage-spaces-direct-overview.md) usando o centro de administração do Windows.
 
 Assista a um vídeo rápido sobre como redimensionar um volume.
 
 > [!VIDEO https://www.youtube-nocookie.com/embed/hqyBzipBoTI]
 
-## <a name="extending-volumes-using-windows-admin-center"></a>Extensão de volumes usando o Windows Admin Center
+## <a name="extending-volumes-using-windows-admin-center"></a>Estendendo volumes usando o centro de administração do Windows
 
-1. No do Windows Admin Center, conectar a um cluster de espaços de armazenamento diretos e, em seguida, selecione **Volumes** da **ferramentas** painel.
-2. Na página de Volumes, selecione a **inventário** guia e, em seguida, selecione o volume que você deseja redimensionar.
+1. No centro de administração do Windows, conecte-se a um cluster Espaços de Armazenamento Diretos e, em seguida, selecione **volumes** no painel **ferramentas** .
+2. Na página volumes, selecione a guia **inventário** e, em seguida, selecione o volume que você deseja redimensionar.
 
-    Na página de detalhes do volume, a capacidade de armazenamento para o volume é indicada. Você também pode abrir a página de detalhes de volumes diretamente do painel. No painel, no painel de alertas, selecione o alerta, que avisa se um volume está com pouco capacidade de armazenamento, e, em seguida, selecione **ir para o Volume**.
+    Na página detalhes do volume, a capacidade de armazenamento para o volume é indicada. Você também pode abrir a página de detalhes de volumes diretamente do painel. No painel de alertas, selecione o alerta, que notifica se um volume está ficando com pouca capacidade de armazenamento e, em seguida, selecione **ir para volume**.
 
 4. Na parte superior da página de detalhes de volumes, selecione **redimensionar**.
 5. Insira um novo tamanho maior e, em seguida, selecione **redimensionar**.
 
-    Na página de detalhes de volumes, a capacidade de armazenamento maior para o volume é indicada e o alerta no painel está desmarcado.
+    Na página de detalhes volumes, a capacidade de armazenamento maior para o volume é indicada e o alerta no painel é limpo.
 
-## <a name="extending-volumes-using-powershell"></a>Extensão de volumes usando o PowerShell
+## <a name="extending-volumes-using-powershell"></a>Estendendo volumes usando o PowerShell
 
 ### <a name="capacity-in-the-storage-pool"></a>Capacidade no pool de armazenamento
 
@@ -141,7 +141,7 @@ Quando você redimensiona a **Partição**, o **Volume** e o **Volume Compartilh
 
 ## <a name="see-also"></a>Consulte também
 
-- [Espaços de armazenamento diretos no Windows Server 2016](storage-spaces-direct-overview.md)
-- [Planejando volumes em espaços de armazenamento diretos](plan-volumes.md)
-- [Criação de volumes em espaços de armazenamento diretos](create-volumes.md)
-- [Excluindo volumes em espaços de armazenamento diretos](delete-volumes.md)
+- [Espaços de Armazenamento Diretos no Windows Server 2016](storage-spaces-direct-overview.md)
+- [Planejando volumes no Espaços de Armazenamento Diretos](plan-volumes.md)
+- [Criando volumes no Espaços de Armazenamento Diretos](create-volumes.md)
+- [Excluindo volumes no Espaços de Armazenamento Diretos](delete-volumes.md)

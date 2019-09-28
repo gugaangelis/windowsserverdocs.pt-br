@@ -1,8 +1,8 @@
 ---
-title: Excluir sombras
-description: 'Tópico de comandos do Windows para * * *- '
+title: excluir sombras
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1a0945477bc4fce907b5ec4a697c7a2ec2f59557
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: c965af8b045c5ab3a110542d148b255f382a95c3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436112"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378631"
 ---
-# <a name="delete-shadows"></a>Excluir sombras
+# <a name="delete-shadows"></a>excluir sombras
 
 
 
-Exclusões de cópias de sombra.
+exclui cópias de sombra.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -37,10 +37,10 @@ delete shadows [all | volume <Volume> | oldest <Volume> | set <SetID> | id <Shad
 |     Parâmetro     |                                                                             Descrição                                                                              |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |        all        |                                                                      Exclui todas as cópias de sombra.                                                                      |
-| volume \<Volume>  |                                                            Exclui todas as cópias de sombra do volume especificado.                                                            |
-| mais antigo \<Volume >  |                                                         Exclui a cópia de sombra mais antiga do volume fornecido.                                                          |
-|   definir \<SetID >    | Exclui as cópias de sombra no conjunto de cópia de sombra da ID especificada. Você pode especificar um alias usando o **%** se o alias que existe no ambiente atual de símbolo. |
-|  ID \<ShadowID >   |              Exclui uma cópia de sombra da ID especificada. Você pode especificar um alias usando o **%** se o alias que existe no ambiente atual de símbolo.               |
+| volume \<Volume >  |                                                            Exclui todas as cópias de sombra do volume especificado.                                                            |
+| > de @no__t 0Volume mais antigas  |                                                         Exclui a cópia de sombra mais antiga do volume especificado.                                                          |
+|   definir \<SetID >    | Exclui as cópias de sombra no conjunto de cópias de sombra da ID fornecida. Você pode especificar um alias usando o símbolo **%** se o alias existir no ambiente atual. |
+|  ID \<ShadowID >   |              Exclui uma cópia de sombra da ID fornecida. Você pode especificar um alias usando o símbolo **%** se o alias existir no ambiente atual.               |
 | exposto {\<Drive > |                                                                            <MountPoint>}                                                                             |
 
 #### <a name="additional-references"></a>Referências adicionais

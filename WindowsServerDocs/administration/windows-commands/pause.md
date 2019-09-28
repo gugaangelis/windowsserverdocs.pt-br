@@ -1,8 +1,8 @@
 ---
 title: pause
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e5805fcc14d6874d95ba90537d72b560229ba99b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6501859eacf30dd6c1e64f34eee29ff81bd78ec9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436312"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372373"
 ---
 # <a name="pause"></a>pause
 
 
 
-Suspende o processamento de um arquivo em lotes e exibe o prompt a seguir:
+Suspende o processamento de um programa em lotes e exibe o seguinte prompt:
 ```
 Press any key to continue . . .
 ```
@@ -44,20 +44,20 @@ pause
 
 ## <a name="remarks"></a>Comentários
 
-- Quando você executa o **pausar** de comando, a seguinte mensagem aparecerá:  
+- Quando você executa o comando **Pause** , a seguinte mensagem é exibida:  
   ```
   Press any key to continue . . .
   ```  
-- Se você pressionar CTRL + C para interromper um programa em lote, a seguinte mensagem será exibida:  
+- Se você pressionar CTRL + C para interromper um programa em lotes, a seguinte mensagem será exibida:  
   ```
   Terminate batch job (Y/N)?
   ```  
-  Se você pressionar S (para Sim) em resposta a essa mensagem, o programa de lote será encerrado e o controle retorna para o sistema operacional.
-- Você pode inserir o **pausar** comando antes de uma seção do arquivo em lotes que você não deseja processar. Quando **pausar** suspende o processamento de lotes, você pode pressionar CTRL + C e, em seguida, pressione Y para interromper o programa.
+  Se você pressionar s (para Sim) em resposta a essa mensagem, o programa do lote terminará e controlará o retorno ao sistema operacional.
+- Você pode inserir o comando **Pause** antes de uma seção do arquivo em lotes que você talvez não queira processar. Quando a **pausa** suspende o processamento do programa em lotes, você pode pressionar CTRL + C e, em seguida, pressionar Y para interromper o programa em lotes.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para criar um arquivo em lotes que solicita que o usuário altere os discos em uma das unidades, digite:
+Para criar um programa em lotes que solicita que o usuário altere os discos em uma das unidades, digite:
 ```
 @echo off 
 :Begin 
@@ -66,7 +66,7 @@ echo Put a new disk into drive A
 pause 
 goto begin
 ```
-Neste exemplo, todos os arquivos no disco na unidade A são copiados para o diretório atual. Depois que a mensagem solicita que você coloque um novo disco na unidade A, o **pausar** comando suspende o processamento de modo que você pode alterar os discos e, em seguida, pressione qualquer tecla para continuar o processamento. Esse arquivo em lotes é executado em um loop infinito — o **goto começar** comando envia o interpretador de comandos para o início do arquivo em lotes. Para interromper esse arquivo em lotes, pressione CTRL + C e, em seguida, pressione Y.
+Neste exemplo, todos os arquivos no disco na unidade A são copiados para o diretório atual. Depois que a mensagem solicita que você coloque um novo disco na unidade A, o comando **Pause** suspende o processamento para que você possa alterar os discos e, em seguida, pressionar qualquer tecla para retomar o processamento. Esse programa em lotes é executado em um loop interminável — o comando **goto Begin** envia o interpretador de comandos para o rótulo inicial do arquivo em lotes. Para interromper este programa em lotes, pressione CTRL + C e, em seguida, pressione Y.
 
 #### <a name="additional-references"></a>Referências adicionais
 

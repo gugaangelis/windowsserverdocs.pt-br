@@ -2,18 +2,18 @@
 title: Criar uma regra de classificação automática
 description: Este artigo descreve como criar uma regra de classificação para uma propriedade.
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c472949228184c6202681d257412c046bbc90d37
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8907c15106f4615ce26ba830e11e5f887a3f22aa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812297"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402041"
 ---
 # <a name="create-an-automatic-classification-rule"></a>Criar uma regra de classificação automática
 
@@ -42,9 +42,9 @@ O procedimento a seguir orienta você pelo processo de criação de uma regra de
 
 5.  Opcionalmente, clique no botão **Avançado** para selecionar mais opções. Na guia **Tipo de avaliação**, a caixa de seleção para **Reavaliar arquivos** é desmarcada por padrão. As opções que podem ser selecionadas aqui são as seguintes:
 
-    -   **Reavaliar arquivos** não verificado: Uma regra é aplicada a um arquivo se e somente se, a propriedade especificada pela regra não tiver sido definida como qualquer valor no arquivo.
+    -   **Reavaliar arquivos** desmarcados: Uma regra será aplicada a um arquivo se, e somente se, a propriedade especificada pela regra não tiver sido definida como qualquer valor no arquivo.
     -   **Reavaliar arquivos** verificados e a opção **Substituir o valor existente** selecionada: a regra será aplicada aos arquivos sempre que o processo de classificação automática é executado. Por exemplo, se um arquivo tem uma propriedade booliana que é definida como **Sim**, uma regra usando o classificador de pasta para definir todos os arquivos **não** com essa opção conjunto deixará a propriedade definida como **No**.
-    -   **Reavaliar arquivos** verificado e o **agregar os valores** opção selecionada: A regra será aplicada aos arquivos sempre que o processo de classificação automática é executado. No entanto, quando a regra decidir para qual valor para definir o arquivo de propriedade, ela agregará esse valor com aquela já no arquivo. Por exemplo, se um arquivo tem uma propriedade booliana que é definida como **Sim**, uma regra usando o classificador de pasta para definir todos os arquivos **não** com essa opção conjunto deixará a propriedade definida como **Sim**.
+    -   **Reavalie os arquivos** marcados e a opção **agregar os valores** selecionada: A regra será aplicada aos arquivos toda vez que o processo de classificação automática for executado. No entanto, quando a regra decidir para qual valor para definir o arquivo de propriedade, ela agregará esse valor com aquela já no arquivo. Por exemplo, se um arquivo tem uma propriedade booliana que é definida como **Sim**, uma regra usando o classificador de pasta para definir todos os arquivos **não** com essa opção conjunto deixará a propriedade definida como **Sim**.
 
     Na guia **parâmetros adicionais de classificação**, você pode especificar parâmetros adicionais que são reconhecidos pelo método de classificação selecionado digitando o nome e o valor e clicando no botão **Inserir**.
 

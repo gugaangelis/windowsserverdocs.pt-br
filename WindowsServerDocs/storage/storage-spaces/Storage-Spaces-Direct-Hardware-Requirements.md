@@ -1,6 +1,6 @@
 ---
 title: Requisitos de hardware dos Espaços de Armazenamento Diretos
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 description: Requisitos mínimos de hardware para testes de Espaços de Armazenamento Diretos.
 ms.author: eldenc
 ms.manager: eldenc
@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 08/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f3f8bff39550108b0417b9513bee4a248dca432
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 63a7152ec6abb318a096ac321ae7ccfaaef4d199
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546375"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402932"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>Requisitos de hardware dos Espaços de Armazenamento Diretos
 
@@ -25,7 +25,7 @@ Este tópico descreve os requisitos mínimos de hardware para Espaços de Armaze
 Para produção, a Microsoft recomenda a compra de uma solução de hardware/software validada de nossos parceiros, que incluem ferramentas e procedimentos de implantação. Essas soluções são projetadas, montadas e validadas em relação à nossa arquitetura de referência para garantir a compatibilidade e a confiabilidade, para que você comece a trabalhar rapidamente. Para soluções do Windows Server 2019, visite o [site de soluções Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci). Para soluções do Windows Server 2016, saiba mais em [definição de software do Windows Server](https://microsoft.com/wssd).
 
    > [!TIP]
-   > Quer avaliar Espaços de Armazenamento Diretos mas não tem hardware? Use as máquinas virtuais Hyper-V ou Azure, conforme descrito em [usando espaços de armazenamento diretos em clusters de máquinas virtuais](storage-spaces-direct-in-vm.md)convidadas.
+   > Quer avaliar Espaços de Armazenamento Diretos mas não tem hardware? Use as máquinas virtuais Hyper-V ou Azure, conforme descrito em [usando espaços de armazenamento diretos em clusters de máquinas virtuais convidadas](storage-spaces-direct-in-vm.md).
 
 ## <a name="base-requirements"></a>Requisitos básicos
 
@@ -33,7 +33,7 @@ Os sistemas, componentes, dispositivos e drivers devem ser **certificados pelo W
 
 ![captura de tela do catálogo do Windows Server mostrando o AQs do SDDC](media/hardware-requirements/sddc-aqs.png)
 
-O cluster totalmente configurado (servidores, rede e armazenamento) deve passar todos os [testes de validação de cluster](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx) por assistente no Gerenciador de cluster de failover ou com `Test-Cluster` o [cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps) no PowerShell.
+O cluster totalmente configurado (servidores, rede e armazenamento) deve passar todos os [testes de validação de cluster](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx) por assistente no Gerenciador de cluster de failover ou com o [cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps) `Test-Cluster` no PowerShell.
 
 Além disso, os seguintes requisitos se aplicam:
 
@@ -52,7 +52,7 @@ Além disso, os seguintes requisitos se aplicam:
 - Memória para Windows Server, VMs e outros aplicativos ou cargas de trabalho; acrescido
 - 4 GB de RAM por terabyte (TB) de capacidade de unidade de cache em cada servidor, para metadados de Espaços de Armazenamento Diretos
 
-## <a name="boot"></a>Inicialização
+## <a name="boot"></a>inicialização
 
 - Qualquer dispositivo de inicialização com suporte do Windows Server, que [agora inclui SATADOM](https://cloudblogs.microsoft.com/windowsserver/2017/08/30/announcing-support-for-satadom-boot-drives-in-windows-server-2016/)
 - O espelho RAID 1 **não** é necessário, mas tem suporte para inicialização
@@ -125,7 +125,7 @@ As unidades podem ser internas ao servidor ou em um compartimento externo que es
 | NVMe + SSD + HDD      | 2 NVMes + 4 outras       |
 
    >[!NOTE]
-   > Esta tabela fornece o mínimo para implantações de hardware. Se você estiver implantando com máquinas virtuais e armazenamento virtualizado, como no Microsoft Azure, consulte [usando espaços de armazenamento diretos em clusters de máquinas virtuais](storage-spaces-direct-in-vm.md)convidadas.
+   > Esta tabela fornece o mínimo para implantações de hardware. Se você estiver implantando com máquinas virtuais e armazenamento virtualizado, como no Microsoft Azure, consulte [usando espaços de armazenamento diretos em clusters de máquinas virtuais convidadas](storage-spaces-direct-in-vm.md).
 
 ### <a name="maximum-capacity"></a>Capacidade máxima
 

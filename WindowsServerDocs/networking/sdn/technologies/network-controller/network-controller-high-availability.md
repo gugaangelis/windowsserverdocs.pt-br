@@ -1,88 +1,88 @@
 ---
 title: Alta disponibilidade do controlador de rede
-description: Você pode usar este tópico para saber mais sobre alta disponibilidade do controlador de rede para o Software Defined Networking (SDN) no Windows Server 2016.
+description: Você pode usar este tópico para saber mais sobre a alta disponibilidade do controlador de rede para SDN (rede definida pelo software) no Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 334b090d-bec4-4e67-8307-13831dbdd1d8
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: dbd3ae9f4c1f1fc3035fae9ace880046312df2f0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 11f392e99803f0e0ddd0f8b62c9dbca5827a831c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813347"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405934"
 ---
 # <a name="network-controller-high-availability"></a>Alta disponibilidade do controlador de rede
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Você pode usar este tópico para saber mais sobre rede alta disponibilidade e escalabilidade configuração do controlador de rede definida pelo Software \(SDN\).
+Você pode usar este tópico para saber mais sobre a configuração de alta disponibilidade e escalabilidade do controlador de rede para rede definida pelo software \(SDN @ no__t-1.
 
-Quando você implantar SDN em seu datacenter, você pode usar controlador de rede para implantar, monitorar e gerenciar vários elementos de rede, incluindo os Gateways de RAS, balanceadores de carga de Software, as políticas de rede virtuais para comunicação de locatário, centralmente, Firewall do Datacenter as políticas de qualidade de serviço \(QoS\) políticas SDN, políticas de rede híbrida e muito mais.
+Ao implantar o SDN em seu datacenter, você pode usar o controlador de rede para implantar, monitorar e gerenciar centralmente vários elementos de rede, incluindo gateways RAS, balanceadores de carga de software, políticas de rede virtual para comunicação de locatário, firewall de datacenter políticas, qualidade de serviço \(QoS @ no__t-1 para políticas de SDN, políticas de rede híbrida e muito mais.
 
-Como o controlador de rede é a base do gerenciamento de SDN, é essencial para implantações de controlador de rede fornecer alta disponibilidade e a capacidade de você a facilmente o dimensionamento para cima ou para baixo de nós de controlador de rede com suas necessidades de datacenter.
+Como o controlador de rede é a base do gerenciamento de SDN, é essencial que as implantações de controlador de rede forneçam alta disponibilidade e a capacidade de você dimensionar ou reduzir facilmente os nós do controlador de rede com suas necessidades de datacenter.
 
-Embora você possa implantar o controlador de rede como um cluster único computador, para failover e alta disponibilidade você deve implantar o controlador de rede em um cluster de máquina vários com um mínimo de três máquinas.
-
->[!NOTE]
->Você pode implantar o controlador de rede nos computadores servidor ou em máquinas virtuais \(VMs\) que estiver executando o Windows Server 2016 Datacenter edition. Se você implantar o controlador de rede em máquinas virtuais, as VMs devem estar executando em hosts do Hyper-V que estejam executando o Datacenter edition. Controlador de rede não está disponível no Windows Server 2016 Standard edition.
-
-## <a name="network-controller-as-a-service-fabric-application"></a>Controlador de rede como um aplicativo do Service Fabric
-
-Para alcançar alta disponibilidade e escalabilidade, o controlador de rede depende do Service Fabric. O Service Fabric fornece uma plataforma de sistemas distribuídos para compilar escalonáveis, confiáveis e facilmente gerenciados de aplicativos.
-
-Como uma plataforma, o Service Fabric fornece funcionalidade que é necessária para a criação de um sistema distribuído escalonável. Ele fornece hospedagem de serviços em várias instâncias do sistema operacional, sincronização de informações de estado entre instâncias, eleger um líder, detecção de falhas, balanceamento de carga e muito mais.
+Embora seja possível implantar o controlador de rede como um cluster de computador único, para alta disponibilidade e failover, você deve implantar o controlador de rede em um cluster de vários computadores com um mínimo de três computadores.
 
 >[!NOTE]
->Para obter informações sobre o Service Fabric no Azure, consulte [visão geral do Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview).
+>Você pode implantar o controlador de rede em computadores de servidor ou em máquinas virtuais \(VMs @ no__t-1 que estejam executando o Windows Server 2016 Datacenter Edition. Se você implantar o controlador de rede em VMs, as VMs deverão estar em execução em hosts Hyper-V que também estejam executando o Datacenter Edition. O controlador de rede não está disponível no Windows Server 2016 Standard Edition.
 
-Quando você implanta um controlador de rede em vários computadores, o controlador de rede é executado como um único aplicativo do Service Fabric em um cluster do Service Fabric. É possível formar um cluster do Service Fabric conectando-se um conjunto de instâncias do sistema operacional.
+## <a name="network-controller-as-a-service-fabric-application"></a>Controlador de rede como um aplicativo Service Fabric
 
-O aplicativo do controlador de rede é composto de vários serviços com monitoração de estado do Service Fabric. Cada serviço é responsável por uma função de rede, como gerenciamento de rede física, gerenciamento de rede virtual, gerenciamento de firewall ou gerenciamento de gateway. 
+Para obter alta disponibilidade e escalabilidade, o controlador de rede conta com Service Fabric. O Service Fabric fornece uma plataforma de sistemas distribuídos para criar aplicativos escalonáveis, confiáveis e facilmente gerenciados.
 
-Cada serviço do Service Fabric tem uma réplica primária e duas réplicas secundárias. A réplica de serviço primário processa as solicitações, embora as duas réplicas de serviço secundário fornecem alta disponibilidade em circunstâncias em que a réplica primária está desabilitado ou indisponível por algum motivo.
+Como plataforma, a Service Fabric fornece funcionalidade necessária para a criação de um sistema distribuído escalonável. Ele fornece Hospedagem de serviço em várias instâncias de sistema operacional, sincronizando informações de estado entre instâncias, optando por um líder, detecção de falhas, balanceamento de carga e muito mais.
 
-A ilustração a seguir ilustra um cluster de malha de serviço do controlador de rede com cinco máquinas. Quatro serviços são distribuídos por cinco computadores: Balanceamento de carga do serviço, serviço de Gateway, Software de firewall \(SLB\) serviço e a rede virtual \(Vnet\) service.  Cada um dos quatro serviços inclui uma réplica de serviço primário e duas réplicas de serviço secundário.
+>[!NOTE]
+>Para obter informações sobre Service Fabric no Azure, consulte [visão geral da Service Fabric do Azure](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview).
 
-![Cluster da malha de serviço do controlador de rede](../../../media/Network-Controller-HA/Network-Controller-HA.jpg)
+Quando você implanta o controlador de rede em vários computadores, o controlador de rede é executado como um único aplicativo de Service Fabric em um Cluster Service Fabric. Você pode formar um Cluster Service Fabric conectando um conjunto de instâncias do sistema operacional.
+
+O aplicativo do controlador de rede é composto por vários serviços de Service Fabric com estado. Cada serviço é responsável por uma função de rede, como gerenciamento de rede física, gerenciamento de rede virtual, gerenciamento de firewall ou gerenciamento de gateway. 
+
+Cada serviço de Service Fabric tem uma réplica primária e duas réplicas secundárias. A réplica de serviço primário processa solicitações, enquanto as duas réplicas de serviço secundárias fornecem alta disponibilidade em circunstâncias em que a réplica primária está desabilitada ou indisponível por algum motivo.
+
+A ilustração a seguir descreve um cluster de Service Fabric de controlador de rede com cinco computadores. Quatro serviços são distribuídos entre os cinco computadores: Serviço de firewall, serviço de gateway, balanceamento de carga de software \(SLB @ no__t-1 e rede virtual @no__t-serviço 2Vnet @ no__t-3.  Cada um dos quatro serviços inclui uma réplica de serviço primário e duas réplicas de serviço secundárias.
+
+![Cluster de Service Fabric do controlador de rede](../../../media/Network-Controller-HA/Network-Controller-HA.jpg)
 
 ## <a name="advantages-of-using-service-fabric"></a>Vantagens de usar o Service Fabric
 
-A seguir estão as principais vantagens de usar o Service Fabric para clusters de controlador de rede.
+A seguir estão as principais vantagens para usar Service Fabric para clusters de controlador de rede.
 
 ### <a name="high-availability-and-scalability"></a>Alta disponibilidade e escalabilidade
 
-Porque o controlador de rede é o núcleo de uma rede de datacenter, ele deve ser resiliente a falhas tanto ser escalonável para permitir alterações agile em redes de datacenter ao longo do tempo. Os recursos a seguir fornecem essas capacidades: 
+Como o controlador de rede é o núcleo de uma rede de datacenter, ele deve ser resiliente a falhas e ser escalonável o suficiente para permitir alterações ágeis em redes de data center ao longo do tempo. Os recursos a seguir fornecem essas capacidades: 
 
-- **Failover rápido**. O Service Fabric fornece failover extremamente rápido. Várias réplicas de serviço secundário ativo estão sempre disponíveis. Se uma instância do sistema operacional ficar indisponível devido uma falha de hardware, uma das réplicas secundárias é promovida imediatamente à réplica primária. 
-- **Agilidade de escala**. Você pode rapidamente e facilmente dimensionar esses serviços confiáveis de algumas instâncias até milhares de instâncias e, em seguida, volte para algumas instâncias, dependendo das suas necessidades de recursos. 
+- **Failover rápido**. Service Fabric fornece um failover extremamente rápido. Várias réplicas de serviço de Hot-Secondary estão sempre disponíveis. Se uma instância do sistema operacional ficar indisponível devido a uma falha de hardware, uma das réplicas secundárias será imediatamente promovida para a réplica primária. 
+- **Agilidade da escala**. Você pode dimensionar facilmente e rapidamente esses Reliable Services de algumas instâncias até milhares de instâncias e, em seguida, fazer backup em algumas instâncias, dependendo de suas necessidades de recursos. 
 
 ### <a name="persistent-storage"></a>Armazenamento persistente
 
-O aplicativo do controlador de rede tem grandes requisitos de armazenamento para sua configuração e o estado. O aplicativo também deve ser utilizável entre interrupções planejadas e não planejadas. Para essa finalidade, o Service Fabric fornece uma chave-valor Store \(KVS\) que é um repositório replicado, transacional e persistente.
+O aplicativo do controlador de rede tem grandes requisitos de armazenamento para sua configuração e estado. O aplicativo também deve ser utilizável entre interrupções planejadas e não planejadas. Para essa finalidade, Service Fabric fornece um repositório de chave-valor \(KVS @ no__t-1 que é um repositório replicado, transacional e persistente.
 
 ### <a name="modularity"></a>Modularidade
 
-Controlador de rede foi projetado com uma arquitetura modular, com cada um dos serviços de rede, como o serviço de firewall e o serviço de redes virtuais criadas\-em como os serviços individuais. 
+O controlador de rede é projetado com uma arquitetura modular, com cada um dos serviços de rede, como o serviço de redes virtuais e o serviço de firewall, criado o @ no__t-0in como serviços individuais. 
 
 Essa arquitetura de aplicativo oferece os seguintes benefícios.
 
-1. Controlador de rede modularidade permite desenvolvimento independente de cada um dos serviços com suporte, como as necessidades evoluem. Por exemplo, o serviço de balanceamento de carga de Software pode ser atualizado sem afetar qualquer um dos outros serviços ou a operação normal do controlador de rede.
-2. Modularidade do controlador de rede permite a adição de novos serviços, à medida que a rede evolui. Novos serviços podem ser adicionados ao controlador de rede sem afetar os serviços existentes.
+1. A modularidade do controlador de rede permite o desenvolvimento independente de cada um dos serviços com suporte, conforme as necessidades evoluem. Por exemplo, o serviço de balanceamento de carga de software pode ser atualizado sem afetar nenhum dos outros serviços ou a operação normal do controlador de rede.
+2. A modularidade do controlador de rede permite a adição de novos serviços, à medida que a rede evolui. Novos serviços podem ser adicionados ao controlador de rede sem afetar os serviços existentes.
 
 >[!NOTE]
 >No Windows Server 2016, não há suporte para a adição de serviços de terceiros ao controlador de rede.
 
-A modularidade do Service Fabric usa esquemas de modelo de serviço para maximizar a facilidade de desenvolvimento, implantação e manutenção de um aplicativo.
+A modularidade de Service Fabric usa esquemas de modelo de serviço para maximizar a facilidade de desenvolvimento, implantação e manutenção de um aplicativo.
 
 ## <a name="network-controller-deployment-options"></a>Opções de implantação do controlador de rede
 
-Para implantar o controlador de rede usando o System Center Virtual Machine Manager \(VMM\), consulte [configurar um controlador de rede SDN na malha do VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller).
+Para implantar o controlador de rede usando System Center Virtual Machine Manager \(VMM @ no__t-1, consulte [configurar um controlador de rede Sdn na malha do VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller).
 
-Para implantar o controlador de rede usando scripts, consulte [implantar um Software definido infraestrutura usando Scripts de rede](../../deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md).
+Para implantar o controlador de rede usando scripts, consulte [implantar uma infraestrutura de rede definida pelo software usando scripts](../../deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md).
 
 Para implantar o controlador de rede usando o Windows PowerShell, consulte [implantar o controlador de rede usando o Windows PowerShell](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)
 

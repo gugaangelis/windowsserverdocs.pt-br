@@ -1,8 +1,8 @@
 ---
-title: o acréscimo de FTP
-description: 'O acréscimo de tópico de comandos do Windows para o ftp '
+title: acréscimo de FTP
+description: 'Tópico de comandos do Windows para o FTP Append '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9580d725120bb32a9b915d37cdbc173bfb17b859
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 52d16b878ff5fb165fd851b227dcc361c9da3a80
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438848"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376637"
 ---
-# <a name="ftp-append"></a>FTP: append
+# <a name="ftp-append"></a>FTP: acrescentar
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-acrescenta um arquivo local em um arquivo no computador remoto usando a configuração atual do tipo arquivo.   
+anexa um arquivo local a um arquivo no computador remoto usando a configuração de tipo de arquivo atual.   
 ## <a name="syntax"></a>Sintaxe  
 ```  
 append <LocalFile> [remoteFile]  
@@ -33,17 +33,17 @@ append <LocalFile> [remoteFile]
 
 |  Parâmetro   |                               Descrição                                |
 |--------------|--------------------------------------------------------------------------|
-| <LocalFile>  |                     Especifica o arquivo local para adicionar.                     |
-| [remoteFile] | Especifica o arquivo no computador remoto para o qual <LocalFile> é adicionado. |
+| <LocalFile>  |                     Especifica o arquivo local a ser adicionado.                     |
+| [remotofile] | Especifica o arquivo no computador remoto ao qual <LocalFile> é adicionado. |
 
 ## <a name="remarks"></a>Comentários  
-Se *Arquivo_remoto* for omitido, o *LocalFile* nome é usado no lugar do nome de arquivo remoto.  
-## <a name="BKMK_Examples"></a>Exemplos  
-Acrescente file1.txt para file2.txt no computador remoto.  
+Se *remotefile* for omitido, o nome de *LocalFile* será usado no lugar do nome do arquivo remoto.  
+## <a name="BKMK_Examples"></a>Disso  
+Acrescente file1. txt a file2. txt no computador remoto.  
 ```  
 append file1.txt file2.txt  
 ```  
-acrescente a file1.txt local em um arquivo chamado file1.txt no computador remoto.  
+Acrescente o arquivo1. txt local a um arquivo chamado arquivo1. txt no computador remoto.  
 ```  
 append file1.txt  
 ```  

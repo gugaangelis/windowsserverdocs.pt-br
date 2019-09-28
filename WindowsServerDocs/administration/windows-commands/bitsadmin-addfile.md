@@ -1,8 +1,8 @@
 ---
 title: bitsadmin addfile
-description: Tópico de comandos do Windows para **bitsadmin addfile** -adiciona um arquivo para o trabalho especificado.
+description: O tópico de comandos do Windows para **Bitsadmin AddFile** – adiciona um arquivo ao trabalho especificado.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c3027bdc4f3f8f3e3ca50400b2c5dbf33bf2bc5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8dfddda92e506dbfca2a47394a310edf16fe78aa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861747"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382037"
 ---
 # <a name="bitsadmin-addfile"></a>bitsadmin addfile
 
-Adiciona um arquivo para o trabalho especificado.
+Adiciona um arquivo ao trabalho especificado.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,17 +34,17 @@ bitsadmin /AddFile <Job> <RemoteURL> <LocalName>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
 |RemoteURL|A URL do arquivo no servidor.|
 |LocalName|O nome do arquivo no computador local. *LocalName* deve conter um caminho absoluto para o arquivo.|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Adicione um arquivo para o trabalho. Repita esta chamada para cada arquivo que você deseja adicionar. Se usam vários trabalhos *myDownloadJob* como seu nome, você deve substituir *myDownloadJob* com o GUID do trabalho para identificar exclusivamente o trabalho.
+Adicione um arquivo ao trabalho. Repita essa chamada para cada arquivo que você deseja adicionar. Se vários trabalhos usarem *myDownloadJob* como seu nome, você deverá substituir *myDownloadJob* pelo GUID do trabalho para identificar exclusivamente o trabalho.
 ```
 C:\>bitsadmin /addfile myDownloadJob http://downloadsrv/10mb.zip c:\10mb.zip
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

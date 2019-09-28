@@ -1,8 +1,8 @@
 ---
-title: sombras de lista
-description: 'Tópico de comandos do Windows para * * *- '
+title: listar sombras
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 50e4c4b8c7ea97ec65cecb6b8e904abd8c6d98eb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2640c04aef34cd6433efe529ac08c0294ba1c3b9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848767"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374761"
 ---
-# <a name="list-shadows"></a>sombras de lista
+# <a name="list-shadows"></a>listar sombras
 
 
 
-Lista as cópias de sombra não persistentes persistente e existentes que estão no sistema.
+Lista cópias de sombra persistentes e existentes não persistentes que estão no sistema.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -37,9 +37,9 @@ list shadows {all | set <SetID> | id <ShadowID>}
 |Parâmetro|Descrição|
 |---------|-----------|
 |all|Lista todas as cópias de sombra.|
-|definir \<SetID >|Listas de sombra cópias que pertencem ao conjunto de cópias de sombra ID especificado.|
-|ID \<ShadowID >|Lista as cópias de sombra com a ID da cópia de sombra especificada.|
+|definir \<SetID >|Lista as cópias de sombra que pertencem à ID do conjunto de cópias de sombra especificado.|
+|ID \<ShadowID >|Lista qualquer cópia de sombra com a ID de cópia de sombra especificada.|
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: Colocando um servidor de Espaços de Armazenamento Diretos offline para manutenção
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: eldenc
 ms.manager: eldenc
 ms.technology: storage-spaces
@@ -10,12 +10,12 @@ ms.date: 10/08/2018
 Keywords: Espaços de Armazenamento Diretos, S2D, manutenção
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: 96ae0ad0d1def12ab68466f0a9ae60d0afcc2c17
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 20439a06c255a73f20a297f765e6ed11abfde6f2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871217"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402829"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>Colocando um servidor de Espaços de Armazenamento Diretos offline para manutenção
 
@@ -97,7 +97,7 @@ MyVolume2    Mirror                Incomplete        Warning      True          
 MyVolume3    Mirror                Incomplete        Warning      True           1 TB
 ```
 
-Incompleto ou um Status operacional degradado é normal quando nós estão desligando ou iniciar/parar o cluster em um nó de serviço e não devem causar preocupação. Todos os volumes permanecem online e acessíveis.
+O status operacional incompleto ou degradado é normal quando os nós estão sendo encerrados ou começam/parando o serviço de cluster em um nó e não devem causar preocupação. Todos os volumes permanecem online e acessíveis.
 
 ## <a name="resuming-the-server"></a>Retomar o servidor
 
@@ -121,7 +121,7 @@ Para fazer isso no Gerenciador de Cluster de Failover, acesse **Nós**, clique c
 
 ## <a name="waiting-for-storage-to-resync"></a>Aguardar armazenamento para ressincronizar
 
-Quando o servidor é retomada, todas as gravações que ocorreram enquanto ele estava indisponível necessário ressincronizar. Isso acontece automaticamente. Usando o controle de alterações inteligente, não é necessário que *todos* os dados sejam digitalizados ou sincronizados, mas apenas as alterações. Esse processo é reprimido para atenuar o impacto das cargas de trabalho de produção. Dependendo de quanto tempo o servidor permaneceu pausado e quantos dados novos foram gravados, esse processo pode levar vários minutos para ser concluído.
+Quando o servidor é retomado, todas as novas gravações que ocorreram enquanto não estavam disponíveis precisam ser ressincronizadas. Isso acontece automaticamente. Usando o controle de alterações inteligente, não é necessário que *todos* os dados sejam digitalizados ou sincronizados, mas apenas as alterações. Esse processo é reprimido para atenuar o impacto das cargas de trabalho de produção. Dependendo de quanto tempo o servidor permaneceu pausado e quantos dados novos foram gravados, esse processo pode levar vários minutos para ser concluído.
 
 Você deve esperar a ressincronização ser concluída antes de executar quaisquer outros servidores no cluster offline.
 
@@ -167,24 +167,24 @@ MyVolume3    Mirror                OK                Healthy      True          
 
 Agora é seguro pausar e reiniciar outros servidores no cluster.
 
-## <a name="how-to-update-storage-spaces-direct-nodes-offline"></a>Como atualizar nós de espaços de armazenamento diretos offline
-Use as seguintes etapas para o caminho do seu sistema de espaços de armazenamento diretos rapidamente. Ela envolve uma janela de manutenção de agendamento e colocar o sistema para baixo para aplicação de patch. Se houver uma atualização de segurança crítica que você precisa aplicadas rapidamente ou talvez você precise garantir a aplicação de patch é concluída em sua janela de manutenção, esse método pode ser para você. Esse processo traz o cluster de espaços de armazenamento diretos, patches-lo e coloca tudo novamente. A desvantagem é o tempo de inatividade para os recursos hospedados.
+## <a name="how-to-update-storage-spaces-direct-nodes-offline"></a>Como atualizar nós Espaços de Armazenamento Diretos offline
+Use as etapas a seguir para demarcar o sistema Espaços de Armazenamento Diretos rapidamente. Ele envolve o agendamento de uma janela de manutenção e o desligamento do sistema para aplicação de patches. Se houver uma atualização de segurança crítica que você precisa aplicar rapidamente ou talvez precise garantir que a aplicação de patch seja concluída na janela de manutenção, esse método pode ser para você. Esse processo abre o Espaços de Armazenamento Diretos cluster, o corrige e o coloca tudo novamente. A compensação é o tempo de inatividade para os recursos hospedados.
 
 1. Planeje sua janela de manutenção.
-2. Colocar os discos virtuais offline.
-3. Pare o cluster para colocar o pool de armazenamento offline. Execute o **Stop-Cluster** cmdlet ou use o Gerenciador de Cluster de Failover para interromper o cluster.
-4. Defina o serviço de cluster para **desabilitado** em Services. msc em cada nó. Isso impede que o serviço de cluster iniciando-se ao que está sendo corrigido.
-5. Aplique a atualização cumulativa do Windows Server e qualquer necessária as atualizações de pilha de manutenção para todos os nós. (Você pode atualizar todos os nós ao mesmo tempo, sem necessidade de aguardar uma vez que o cluster está inativo).  
-6. Reinicie os nós e garantir que tudo esteja certo.
-7. Defina o serviço de cluster de volta para **automáticas** em cada nó.
-8. Inicie o cluster. Execute o **Start-Cluster** cmdlet ou use o Gerenciador de Cluster de Failover. 
+2. Coloque os discos virtuais offline.
+3. Interrompa o cluster para colocar o pool de armazenamento offline. Execute o cmdlet **Stop-cluster** ou use Gerenciador de cluster de failover para interromper o cluster.
+4. Defina o serviço de cluster como **desabilitado** em Services. msc em cada nó. Isso impede que o serviço de cluster seja inicializado durante o patch.
+5. Aplique a atualização cumulativa do Windows Server e todas as atualizações necessárias da pilha de manutenção a todos os nós. (Você pode atualizar todos os nós ao mesmo tempo, não há necessidade de esperar, pois o cluster está inoperante).  
+6. Reinicie os nós e verifique se tudo está correto.
+7. Defina o serviço de cluster novamente como **automático** em cada nó.
+8. Inicie o cluster. Execute o cmdlet **Start-cluster** ou use Gerenciador de cluster de failover. 
 
-   Dê alguns minutos.  Verifique se que o pool de armazenamento está íntegro.
-9. Coloca os discos virtuais online novamente.
-10. Monitorar o status dos discos virtuais executando o **Get-Volume** e **Get-VirtualDisk** cmdlets.
+   Aguarde alguns minutos.  Verifique se o pool de armazenamento está íntegro.
+9. Coloque os discos virtuais novamente online.
+10. Monitore o status dos discos virtuais executando os cmdlets **Get-volume** e **Get-VirtualDisk** .
 
 
 ## <a name="see-also"></a>Consulte também
 
-- [Visão geral direta de espaços de armazenamento](storage-spaces-direct-overview.md)
-- [Atualização com suporte (CAU) do cluster](https://technet.microsoft.com/library/hh831694.aspx)
+- [Visão geral de Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md)
+- [CAU (atualização com suporte a cluster)](https://technet.microsoft.com/library/hh831694.aspx)

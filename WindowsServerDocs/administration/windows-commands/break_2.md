@@ -1,8 +1,8 @@
 ---
 title: break
-description: Tópico de comandos do Windows para **break_2** - desassocia um volume de cópia de sombra do VSS e o torna acessível como um volume normal.
+description: O tópico de comandos do Windows para **break_2** – Desassocia um volume de cópia de sombra do VSS e o torna acessível como um volume regular.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 49516539ae603e2c93b3fc395c77786be790d663
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a5789e3442152c705b3197bf1ce5e63dc782a15c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886327"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379781"
 ---
 # <a name="break"></a>break
 
 
 
-Desassocia um volume de cópia de sombra do VSS e o torna acessível como um volume normal. O volume pode ser acessado usando uma letra da unidade (se atribuído) ou o nome do volume. Se usado sem parâmetros, **quebra** exibe a Ajuda no prompt de comando.
+Desassocia um volume de cópia de sombra do VSS e o torna acessível como um volume regular. O volume pode então ser acessado usando uma letra da unidade (se atribuída) ou o nome do volume. Se usado sem parâmetros, **Break** exibe a ajuda no prompt de comando.
 
 > [!NOTE]
 > Esse comando é relevante apenas para cópias de sombra de hardware após a importação.
@@ -41,24 +41,24 @@ break [writable] <SetID>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|[gravável]|Permite leitura/gravação acesso no volume.|
-|\<SetID>|Especifica a ID do conjunto de cópia de sombra.|
+|escrita|Habilita o acesso de leitura/gravação no volume.|
+|\<SetID >|Especifica a ID do conjunto de cópias de sombra.|
 
 ## <a name="remarks"></a>Comentários
 
--   Os volumes expostos, como eles se originam, as cópias de sombra são somente leitura por padrão.
--   O alias da ID da cópia sombra, que é armazenado como uma variável de ambiente pela **carregar metadados** de comando, pode ser usado na *SetID* parâmetro.
+-   Os volumes expostos, como as cópias de sombra de origem, são somente leitura por padrão.
+-   O alias da ID da cópia de sombra, que é armazenado como uma variável de ambiente pelo comando **carregar metadados** , pode ser usado no parâmetro *SetID* .
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para fazer uma sombra copiar com o nome do alias Alias1 acessível como um volume gravável no sistema operacional, digite:
+Para fazer uma cópia de sombra com o nome do alias Alias1 acessível como um volume gravável no sistema operacional, digite:
 ```
 break writable %Alias1%
 ```
 
 > [!NOTE]
-> Acesso ao volume é feito diretamente para o provedor de hardware sem registro do volume tendo sido uma cópia de sombra.
+> O acesso ao volume é feito diretamente para o provedor de hardware sem registro do volume que tem sido uma cópia de sombra.
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

@@ -1,8 +1,8 @@
 ---
-title: obter o status da WBADMIN
-description: 'Tópico de comandos do Windows para * * *- '
+title: Wbadmin obter status
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 35fd640aa56bca7c5f5d6f3901fe095d0b8a73cc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0270a29e557ec135301753dd66c1f5f2404a8acc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863407"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362393"
 ---
-# <a name="wbadmin-get-status"></a>obter o status da WBADMIN
+# <a name="wbadmin-get-status"></a>Wbadmin obter status
 
 
 
-Relata o status da operação de backup ou recuperação em execução no momento.
+Relata o status da operação de backup ou recuperação que está em execução no momento.
 
-Para usar este subcomando, você deve ser um membro do **operadores de Backup** grupo ou o **administradores** grupo, ou você deve ter sido recebido as permissões apropriadas. Além disso, você deve executar **wbadmin** em um prompt de comando elevado. (Para abrir um atalho de prompt de comando com privilégios elevados **Prompt de comando**e, em seguida, clique em **executar como administrador**.)
+Para usar esse subcomando, você deve ser membro do grupo **operadores de backup** ou do grupo **Administradores** , ou você deve ter recebido as permissões apropriadas. Além disso, você deve executar o **Wbadmin** em um prompt de comandos com privilégios elevados. (Para abrir um prompt de comando com privilégios elevados, clique com o botão direito do mouse em **prompt de comando**e clique em **Executar como administrador**.)
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,15 +36,15 @@ wbadmin get status
 
 ## <a name="parameters"></a>Parâmetros
 
-Esse subcomando não tem parâmetros.
+Este subcomando não tem parâmetros.
 
 ## <a name="remarks"></a>Comentários
 
--   Esse subcomando não será interrompida até que o backup atual ou a operação de recuperação for concluída, o subcomando continue em execução, mesmo se você fechar a janela de comando.
--   Se você quiser interromper o backup atual ou a operação de recuperação, use o **wbadmin parar trabalho** subcomando.
+-   Esse subcomando não será interrompido até que a operação de backup ou recuperação atual seja concluída — o subcomando continuará a ser executado mesmo se você fechar a janela de comando.
+-   Se você quiser interromper a operação de backup ou recuperação atual, use o subcomando **Wbadmin Stop Job** .
 
 #### <a name="additional-references"></a>Referências adicionais
 
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
--   [Get-WBJob](https://technet.microsoft.com/library/jj902426.aspx) cmdlet
+-   Cmdlet [Get-WBJob](https://technet.microsoft.com/library/jj902426.aspx)

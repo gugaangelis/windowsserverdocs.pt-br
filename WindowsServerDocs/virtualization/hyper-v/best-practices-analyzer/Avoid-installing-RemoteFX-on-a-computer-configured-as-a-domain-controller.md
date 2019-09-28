@@ -1,7 +1,7 @@
 ---
-title: Evite instalar RemoteFX em um computador que está configurado como um controlador de domínio do Active Directory
-description: Versão online do texto para essa regra do analisador de práticas recomendadas.
-ms.prod: windows-server-threshold
+title: Evite instalar o RemoteFX em um computador configurado como um controlador de domínio Active Directory
+description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,36 +10,36 @@ ms.topic: article
 ms.assetid: da58694e-91f6-45d8-a599-18966db165f4
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 9e1c642e3f36b5fe25f34bb417a83b8510adcc02
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 67fd8e2568691b7e9be4b46e30b64bf44558d6d0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832557"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366474"
 ---
-# <a name="avoid-installing-remotefx-on-a-computer-that-is-configured-as-an-active-directory-domain-controller"></a>Evite instalar RemoteFX em um computador que está configurado como um controlador de domínio do Active Directory
+# <a name="avoid-installing-remotefx-on-a-computer-that-is-configured-as-an-active-directory-domain-controller"></a>Evite instalar o RemoteFX em um computador configurado como um controlador de domínio Active Directory
 
 >Aplica-se a: Windows Server 2016
 
-Para obter mais informações sobre as práticas recomendadas e varreduras, consulte [Run Best Practices Analyzer Scans e Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
+Para obter mais informações sobre práticas recomendadas e verificações, consulte [executar verificações de analisador de práticas recomendadas e gerenciar resultados de verificação](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
 |Propriedade|Detalhes|  
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
-|**Recurso do produto**|Hyper-V|  
-|**Severidade**|Erro|  
-|**categoria**|Configuração|  
+|**Produto/recurso**|Hyper-V|  
+|**Severity**|Erro|  
+|**Categorias**|Configuração|  
   
-Nas seções a seguir, itálico indica o texto de interface do usuário que aparece na ferramenta Analisador de práticas recomendadas para esse problema.  
+Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
 ## <a name="issue"></a>**Problema**  
-*RemoteFX é instalado em um controlador de domínio.*  
+*O RemoteFX é instalado em um controlador de domínio.*  
   
-## <a name="impact"></a>**Impacto**  
-*Os computadores virtuais configurados para o RemoteFX não podem ser usados nesses computadores.*  
+## <a name="impact"></a>**Causa**  
+*Os computadores virtuais configurados para RemoteFX não podem ser usados nesses computadores.*  
   
 ## <a name="resolution"></a>**Resolução**  
-*Decida se deseja que este servidor a ser configurado com o RemoteFX do Hyper-V ou como um controlador de domínio do Active Directory e, em seguida, reconfigurar o servidor conforme necessário.*  
+*Decida se deseja que esse servidor seja configurado com o RemoteFX para Hyper-V ou como um controlador de Domínio do Active Directory e reconfigure o servidor conforme necessário.*  
   
 
 

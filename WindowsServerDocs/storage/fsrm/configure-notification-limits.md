@@ -2,18 +2,18 @@
 title: Configurar limites de notificação
 description: Este artigo descreve como adicionar os limites de tempo para vários tipos de notificação
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: dba5b3b3c8b651935ec3c69695583d04087b7f2d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4a33b7f125479da1e7b701f5427a0f15903caf66
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826307"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71401950"
 ---
 # <a name="configure-notification-limits"></a>Configurar limites de notificação
 
@@ -43,5 +43,5 @@ Um limite de 60 minutos padrão é definido para cada tipo de notificação, mas
 
 ## <a name="see-also"></a>Consulte também
 
--   [Opções do Gerenciador de recursos de servidor de arquivos de configuração](setting-file-server-resource-manager-options.md)
+-   [Definir opções do Gerenciador de Recursos de Servidor de Arquivos](setting-file-server-resource-manager-options.md)
 -   [Ferramentas de linha de comando](command-line-tools.md)

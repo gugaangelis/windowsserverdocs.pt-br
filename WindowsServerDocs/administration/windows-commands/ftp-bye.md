@@ -1,8 +1,8 @@
 ---
-title: bye de FTP
-description: Tópico de comandos do Windows para até logo de ftp
+title: até o FTP
+description: Tópico de comandos do Windows para o FTP
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 202db0d819d070a0c9ebc281fc86dac3408fb691
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 592796ca91a847b16ff8daab7ab1252f252105b7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830977"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376515"
 ---
-# <a name="ftp-bye"></a>FTP: bye
+# <a name="ftp-bye"></a>FTP: até aqui
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Encerra a sessão ftp com o computador remoto e sai.   
+Encerra a sessão de FTP com o computador remoto e sai.   
 ## <a name="syntax"></a>Sintaxe  
 ```  
 bye  
@@ -32,12 +32,12 @@ bye
 ### <a name="parameters"></a>Parâmetros  
 nenhuma  
 ## <a name="remarks"></a>Comentários  
-**Bye** e **encerrar** ambos encerrar a sessão ftp com o computador remoto e fecha.  
-## <a name="BKMK_Examples"></a>Exemplos  
-Encerre a sessão ftp com o computador remoto e sair.  
+Até o fim e **encerre** as duas sessões de FTP com o computador **remoto e elas** são encerradas.  
+## <a name="BKMK_Examples"></a>Disso  
+Encerre a sessão de FTP com o computador remoto e saia.  
 ```  
 bye  
 ```  
 ## <a name="additional-references"></a>Referências adicionais  
--   [ftp: quit](ftp-quit.md)  
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+-   [FTP: sair](ftp-quit.md)  
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  

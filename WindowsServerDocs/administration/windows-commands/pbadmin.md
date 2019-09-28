@@ -1,8 +1,8 @@
 ---
 title: pbadmin
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,17 +13,17 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d9cd45eac240e499e79504d73c8fad83be254636
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 99d642d6ba9f498c58ad909cf0f226354b522fbc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827307"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372352"
 ---
 # <a name="pbadmin"></a>pbadmin
 
 
 
-Pbadmin foi preterido e não tem garantia de suporte em versões futuras do Windows.
+O pbadmin foi preterido e não há garantia de que haja suporte em versões futuras do Windows.
 
-Essa ferramenta está incluída no Windows Server 2003. Para obter mais informações, consulte [Pbadmin](https://technet.microsoft.com/library/cc755767(v=ws.10).aspx).
+Essa ferramenta está incluída no Windows Server 2003. Para obter mais informações, consulte [pbadmin](https://technet.microsoft.com/library/cc755767(v=ws.10).aspx).

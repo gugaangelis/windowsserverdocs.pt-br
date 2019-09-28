@@ -1,8 +1,8 @@
 ---
 title: certreq_old
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,15 +13,15 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4a9c35b2528a047e69c493be71f2cee219b5e661
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bb6757398e69e31d427949346d1b288958ab8247
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882927"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379701"
 ---
-# <a name="certreqold"></a>certreq_old
+# <a name="certreq_old"></a>certreq_old
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este artigo será permanentemente removido no futuro próximo. O tópico de substituição é [certreq_1](certreq_1.md)  
+Este artigo será removido permanentemente em um futuro próximo. O tópico de substituição é [certreq_1](certreq_1.md)  

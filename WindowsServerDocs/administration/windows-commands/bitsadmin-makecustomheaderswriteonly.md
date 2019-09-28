@@ -1,8 +1,8 @@
 ---
-title: Bitsadmin makecustomheaderswriteonly
-description: Tópico de comandos do Windows para **makecustomheaderswriteonly bitsadmin** -fazer cabeçalhos um trabalho HTTP personalizados somente gravação (não pode ser desfeita).
+title: bitsadmin makecustomheaderswriteonly
+description: Tópico de comandos do Windows para **Bitsadmin makecustomheaderswriteonly** – tornar os cabeçalhos HTTP personalizados de um trabalho somente gravação (não pode ser desfeito).
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -12,16 +12,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 18d170098a5e913522b5daa42a22c66b67c2206b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 64bf048ddc76ad1d751509e95d09403db1de7883
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861887"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381033"
 ---
-# <a name="bitsadmin-makecustomheaderswriteonly"></a>Bitsadmin makecustomheaderswriteonly
+# <a name="bitsadmin-makecustomheaderswriteonly"></a>bitsadmin makecustomheaderswriteonly
 
-Fazer cabeçalhos um trabalho HTTP personalizados somente gravação (não pode ser desfeita).
+Fazer com que os cabeçalhos HTTP personalizados de um trabalho somente gravação (não podem ser desfeitos).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -33,8 +33,8 @@ bitsadmin /MakeCustomHeadersWriteOnly <Job>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

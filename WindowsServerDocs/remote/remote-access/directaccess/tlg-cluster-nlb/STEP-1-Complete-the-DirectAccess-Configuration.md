@@ -1,9 +1,9 @@
 ---
-title: Etapa 1 concluir a configuração do DirectAccess
-description: Este tópico faz parte do guia de laboratório de teste - demonstração do DirectAccess em um Cluster com Windows NLB para o Windows Server 2016
+title: ETAPA 1 concluir a configuração do DirectAccess
+description: Este tópico faz parte do guia de laboratório de teste – demonstre o DirectAccess em um cluster com o NLB do Windows para Windows Server 2016
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,18 +12,18 @@ ms.topic: article
 ms.assetid: e1e15544-b575-4f39-af0b-771bfae8b0b7
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 0d341fd8608a12639bcb0c855d10c91b830e6365
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: cb009d5872d2045124601f1459e829a4d15f3058
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283397"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404885"
 ---
-# <a name="step-1-complete-the-directaccess-configuration"></a>Etapa 1 concluir a configuração do DirectAccess
+# <a name="step-1-complete-the-directaccess-configuration"></a>ETAPA 1 concluir a configuração do DirectAccess
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-A primeira etapa é concluir todas as etapas a [guia do laboratório de teste: Demonstrar a configuração de servidor único do DirectAccess com misto de IPv4 e IPv6](https://go.microsoft.com/fwlink/p/?LinkId=237004). Se você já tiver concluído as etapas neste laboratório de teste orienta e salvo uma imagem de disco ou de instantâneo do laboratório do teste, você pode restaurar o instantâneo ou a imagem e começam com a próxima etapa.  
+A primeira etapa é concluir todas as etapas no guia de laboratório do [Test: Demonstre a configuração do servidor único do DirectAccess com IPv4 misto e IPv6 @ no__t-0. Se você já tiver concluído as etapas nos guias de laboratório de teste e salvo um instantâneo ou uma imagem de disco do laboratório de teste, poderá restaurar o instantâneo ou a imagem e começar com a próxima etapa.  
   
 
 

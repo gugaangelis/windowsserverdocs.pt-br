@@ -1,9 +1,9 @@
 ---
-title: Etapa 2 de instalar e configurar o roteador 1
-description: 'Este tópico é parte do guia de laboratório de teste: demonstrar uma implantação de multissite de DirectAccess para Windows Server 2016'
+title: ETAPA 2 instalar e configurar o ROUTER1
+description: Este tópico faz parte do guia de laboratório de teste – demonstre uma implantação multissite do DirectAccess para o Windows Server 2016
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,82 +12,82 @@ ms.topic: article
 ms.assetid: dc20b1a0-540d-4531-a176-50b87c071600
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7d215ca234d63e7e393fbbce4d65e0803f023487
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 0c6bff2acc15b7ff90731e0113ae0d5a429c635c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283210"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404794"
 ---
-# <a name="step-2-install-and-configure-router1"></a>Etapa 2 de instalar e configurar o roteador 1
+# <a name="step-2-install-and-configure-router1"></a>ETAPA 2 instalar e configurar o ROUTER1
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Neste guia de laboratório de teste multissite, o computador de roteador fornece uma ponte entre as sub-redes da rede corporativa e da rede corporativa de 2 de IPv4 e IPv6 e atua como um roteador para tráfego de Teredo e IP-HTTPS.  
+Neste guia de laboratório de teste multissite, o computador roteador fornece uma ponte IPv4 e IPv6 entre as sub-redes corpnet e 2-corpnet e atua como um roteador para o tráfego IP-HTTPS e Teredo.  
   
-- Instalar o sistema operacional no roteador 1 
+- Instalar o sistema operacional no ROUTER1 
   
-- Configurar propriedades de TCP/IP e renomear o computador  
+- Configurar as propriedades de TCP/IP e renomear o computador  
   
-- Desativar o firewall
+- Desligar o firewall
   
-- Configurar o roteamento e encaminhamento
+- Configurar roteamento e encaminhamento
   
-## <a name="install-the-operating-system-on-router1"></a>Instalar o sistema operacional no roteador 1  
-Primeiro, instale o Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012.  
+## <a name="install-the-operating-system-on-router1"></a>Instalar o sistema operacional no ROUTER1  
+Primeiro, instale o Windows Server 2016, o Windows Server 2012 R2 ou o Windows Server 2012.  
   
-### <a name="to-install-the-operating-system-on-router1"></a>Para instalar o sistema operacional no roteador 1  
+### <a name="to-install-the-operating-system-on-router1"></a>Para instalar o sistema operacional no ROUTER1  
   
 1.  Inicie a instalação do Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012 (instalação completa).  
   
 2.  Siga as instruções para concluir a instalação, especificando uma senha forte para a conta local de administrador. Faça logon usando a conta local de administrador.  
   
-3.  Conecte o roteador 1 a uma rede que tenha acesso à Internet e execute o Windows Update para instalar as atualizações mais recentes para o Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012 e, em seguida, desconecte da Internet.  
+3.  Conecte o ROUTER1 a uma rede que tenha acesso à Internet e execute Windows Update para instalar as atualizações mais recentes do Windows Server 2016, do Windows Server 2012 R2 ou do Windows Server 2012 e desconecte-se da Internet.  
   
-4.  Conecte o roteador 1 para as sub-redes da rede corporativa e da rede corporativa de 2.  
+4.  Conecte o ROUTER1 às sub-redes corpnet e 2-corpnet.  
   
-## <a name="configure-tcpip-properties-and-rename-the-computer"></a>Configurar propriedades de TCP/IP e renomear o computador  
-Definir configurações de TCP/IP no roteador e renomear o computador para o roteador 1.  
+## <a name="configure-tcpip-properties-and-rename-the-computer"></a>Configurar as propriedades de TCP/IP e renomear o computador  
+Defina as configurações de TCP/IP no roteador e renomeie o computador para ROUTER1.  
   
-### <a name="to-configure-tcpip-properties-and-rename-the-computer"></a>Para configurar propriedades de TCP/IP e renomear o computador  
+### <a name="to-configure-tcpip-properties-and-rename-the-computer"></a>Para configurar as propriedades de TCP/IP e renomear o computador  
   
-1.  No console do Gerenciador do servidor, clique em **servidor Local**e, em seguida, o **propriedades** área, ao lado **Conexão de Ethernet com fio**, clique no link.  
+1.  No console do Gerenciador do Servidor, clique em **servidor local**e, na área **Propriedades** , ao lado de **conexão Ethernet com fio**, clique no link.  
   
-2.  No **conexões de rede** janela, o adaptador de rede que está conectado à rede corporativa com o botão direito, clique em **Renomear**, digite **Corpnet**, e pressione ENTER.  
+2.  Na janela **conexões de rede** , clique com o botão direito do mouse no adaptador de rede que está conectado ao corpnet, clique em **renomear**, digite **corpnet**e pressione Enter.  
   
-3.  Clique com botão direito **Corpnet**e, em seguida, clique em **propriedades**.  
+3.  Clique com o botão direito do mouse em **corpnet**e clique em **Propriedades**.  
   
 4.  Clique em **Protocolo TCP/IP Versão 4 (TCP/IPv4)** e clique em **Propriedades**.  
   
-5.  Clique em **Usar o seguinte endereço IP**. Na **endereço IP**, digite **10.0.0.254**. Na **máscara de sub-rede**, digite **255.255.255.0**e, em seguida, clique em **Okey**.  
+5.  Clique em **Usar o seguinte endereço IP**. Em **endereço IP**, digite **10.0.0.254**. Em **máscara de sub-rede**, digite **255.255.255.0**e clique em **OK**.  
   
 6.  Clique em **Protocolo IP Versão 6 (TCP/IPv6)** e em **Propriedades**.  
   
-7.  Clique em **usar o seguinte endereço IPv6**. Na **endereço IPv6**, digite **2001:db8:1::fe**. Na **comprimento do prefixo de sub-rede**, digite **64**e, em seguida, clique em **Okey**.  
+7.  Clique em **usar o seguinte endereço IPv6**. Em **endereço IPv6**, digite **2001: DB8:1:: Fe**. Em **comprimento do prefixo da sub-rede**, digite **64**e clique em **OK**.  
   
-8.  Sobre o **propriedades da rede corporativa** caixa de diálogo, clicar **fechar**.  
+8.  Na caixa de diálogo **Propriedades do corpnet** , clique em **fechar**.  
   
-9. No **conexões de rede** janela, o adaptador de rede que está conectado à Corpnet 2 com o botão direito, clique em **Renomear**, digite **Corpnet 2**, e pressione ENTER.  
+9. Na janela **conexões de rede** , clique com o botão direito do mouse no adaptador de rede que está conectado a 2-corpnet, clique em **renomear**, digite **2-corpnet**e pressione Enter.  
   
-10. Clique com botão direito **2 Corpnet**e, em seguida, clique em **propriedades**.  
+10. Clique com o botão direito do mouse em **2-corpnet**e clique em **Propriedades**.  
   
 11. Clique em **Protocolo TCP/IP Versão 4 (TCP/IPv4)** e clique em **Propriedades**.  
   
-12. Clique em **Usar o seguinte endereço IP**. Na **endereço IP**, digite **10.2.0.254**. Na **máscara de sub-rede**, digite **255.255.255.0**e, em seguida, clique em **Okey**.  
+12. Clique em **Usar o seguinte endereço IP**. Em **endereço IP**, digite **10.2.0.254**. Em **máscara de sub-rede**, digite **255.255.255.0**e clique em **OK**.  
   
 13. Clique em **Protocolo IP Versão 6 (TCP/IPv6)** e em **Propriedades**.  
   
-14. Clique em **usar o seguinte endereço IPv6**. Na **endereço IPv6**, digite **2001:db8:2::fe**. Na **comprimento do prefixo de sub-rede**, digite **64**e, em seguida, clique em **Okey**.  
+14. Clique em **usar o seguinte endereço IPv6**. Em **endereço IPv6**, digite **2001: DB8:2:: Fe**. Em **comprimento do prefixo da sub-rede**, digite **64**e clique em **OK**.  
   
-15. Sobre o **propriedades da rede corporativa de 2** caixa de diálogo, clicar **fechar**.  
+15. Na caixa de diálogo **Propriedades de 2-corpnet,** clique em **fechar**.  
   
 16. Feche a janela **Conexões de Rede** .  
   
-17. No console do Gerenciador do servidor, no **servidor Local**, no **Properties** área, ao lado **nome do computador**, clique no link.  
+17. No console do Gerenciador do Servidor, no **servidor local**, na área **Propriedades** , ao lado de **nome do computador**, clique no link.  
   
 18. Na caixa de diálogo **Propriedades do Sistema**, na guia **Nome do Computador**, clique em **Alterar**.  
   
-19. Sobre o **alterações de nome/domínio do computador** na caixa **nome do computador**, tipo **roteador 1**e, em seguida, clique em **Okey**.  
+19. Na caixa de diálogo **alterações no nome do computador/domínio** , em **nome do computador**, digite **ROUTER1**e clique em **OK**.  
   
 20. Quando você for solicitado a reiniciar o computador, clique em **OK**.  
   
@@ -97,31 +97,31 @@ Definir configurações de TCP/IP no roteador e renomear o computador para o rot
   
 23. Depois que o computador for reiniciado, faça logon com a conta de administrador local.  
   
-## <a name="turn-off-the-firewall"></a>Desativar o firewall  
-Este computador está configurado apenas para fornecer o roteamento entre as sub-redes da rede corporativa e da rede corporativa de 2; Portanto, o firewall deve ser desativado.  
+## <a name="turn-off-the-firewall"></a>Desligar o firewall  
+Este computador está configurado apenas para fornecer roteamento entre as sub-redes corpnet e 2-corpnet; Portanto, o firewall deve ser desativado.  
   
 ### <a name="to-turn-off-the-firewall"></a>Para desativar o firewall  
   
-1.  Sobre o **inicie** tela, digite**WF. msc**, e pressione ENTER.  
+1.  Na tela **Iniciar** , digite**WF. msc**e pressione Enter.  
   
-2.  No Firewall do Windows com segurança avançada, nos **ações** painel, clique em **propriedades**.  
+2.  No firewall do Windows com segurança avançada, no painel **ações** , clique em **Propriedades**.  
   
-3.  No **Firewall do Windows com segurança avançada** caixa de diálogo a **perfil de domínio** guia **estado do Firewall**, clique em **Off**.  
+3.  Na caixa de diálogo **Firewall do Windows com segurança avançada** , na **guia perfil de domínio** , em estado do **Firewall**, clique em **desativado**.  
   
-4.  Sobre o **Firewall do Windows com segurança avançada** caixa de diálogo a **perfil privado** guia de **estado do Firewall**, clique em **Off**.  
+4.  Na caixa de diálogo **Firewall do Windows com segurança avançada** , na **guia perfil particular** , em **estado do firewall**, clique em **desativado**.  
   
-5.  Sobre o **Firewall do Windows com segurança avançada** caixa de diálogo o **perfil público** guia de **estado do Firewall**, clique em **Off**e, em seguida, Clique em **Okey**.  
+5.  Na caixa de diálogo **Firewall do Windows com segurança avançada** , na **guia perfil público** , em **estado do firewall**, clique em **desativado**e em **OK**.  
   
 6.  Feche o Firewall do Windows com segurança avançada.  
   
-## <a name="configure-routing-and-forwarding"></a>Configurar o roteamento e encaminhamento  
-Para fornecer roteamento e serviços entre as sub-redes da rede corporativa e da rede corporativa de 2 de encaminhamento, você deve habilitar o encaminhamento de interfaces de rede e configurar rotas estáticas entre as sub-redes.  
+## <a name="configure-routing-and-forwarding"></a>Configurar roteamento e encaminhamento  
+Para fornecer serviços de roteamento e encaminhamento entre as sub-redes corpnet e 2-corpnet, você deve habilitar o encaminhamento nas interfaces de rede e configurar rotas estáticas entre as sub-redes.  
   
 ### <a name="to-configure-static-routes"></a>Para configurar rotas estáticas  
   
-1.  Sobre o **inicie** tela, digite**cmd.exe**, e pressione ENTER.  
+1.  Na tela **Iniciar** , digite**cmd. exe**e pressione Enter.  
   
-2.  Habilite o encaminhamento em interfaces IPv4 e IPv6 de ambos os adaptadores de rede usando os comandos a seguir. Depois de inserir cada comando, pressione ENTER.  
+2.  Habilite o encaminhamento nas interfaces IPv4 e IPv6 de ambos os adaptadores de rede usando os comandos a seguir. Depois de inserir cada comando, pressione ENTER.  
   
     ```  
     netsh interface IPv4 set interface Corpnet forwarding=enabled  
@@ -130,14 +130,14 @@ Para fornecer roteamento e serviços entre as sub-redes da rede corporativa e da
     netsh interface IPv6 set interface 2-Corpnet forwarding=enabled  
     ```  
   
-3.  Habilite o roteamento de IP-HTTPS entre as sub-redes da rede corporativa e da rede corporativa de 2.  
+3.  Habilite o roteamento IP-HTTPS entre as sub-redes corpnet e 2-corpnet.  
   
     ```  
     netsh interface IPv6 add route 2001:db8:1:1000::/59 Corpnet 2001:db8:1::2  
     netsh interface IPv6 add route 2001:db8:2:2000::/59 2-Corpnet 2001:db8:2::20  
     ```  
   
-4.  Habilite o Teredo roteamento entre as sub-redes da rede corporativa e da rede corporativa de 2.  
+4.  Habilite o roteamento Teredo entre as sub-redes corpnet e 2-corpnet.  
   
     ```  
     netsh interface IPv6 add route 2001:0:836b:2::/64 Corpnet 2001:db8:1::2  

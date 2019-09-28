@@ -1,8 +1,8 @@
 ---
 title: cprofile
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8a581a01b95456c56c6cbf177dfd6049c3514f1d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: efc296d43ff6cbe0c409f244160a9c14786d3be0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434205"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378986"
 ---
 # <a name="cprofile"></a>cprofile
 
 
 
-Cprofile - Cprofile foi preterido e não tem garantia de suporte em versões futuras do Windows.
+O cprofile-cprofile foi preterido e não há garantia de que haja suporte em versões futuras do Windows.
 
-Cprofile.exe: Perfil limpo. Essa ferramenta está incluída em todos os sistemas de operacionais do Windows Server 2003, exceto o Windows Server 2003, Web edition. Para obter mais informações, consulte [configurações e ferramentas de serviços de Terminal](https://technet.microsoft.com/library/cc776289(v=ws.10).aspx).
+Cprofile. exe: Limpar perfil. Essa ferramenta está incluída em todos os sistemas operacionais Windows Server 2003, exceto no Windows Server 2003, Web Edition. Para obter mais informações [, consulte ferramentas e configurações dos serviços de terminal](https://technet.microsoft.com/library/cc776289(v=ws.10).aspx).
 
 # #
 

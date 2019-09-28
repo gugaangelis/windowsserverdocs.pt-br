@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getnotifycmdline
-description: Tópico de comandos do Windows para **getnotifycmdline bitsadmin** -recupera a linha de comando que é executado quando o trabalho for concluído, transferência de dados.
+description: Tópico de comandos do Windows para **Bitsadmin getnotifycmdline** – recupera o comando de linha de comando que é executado quando o trabalho termina de transferência de dados.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ca7b2e67c0b5672733a25465fba89d1bd69d07a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b91d2c71ad4bedaac65e23041ca78a70ade99977
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817287"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381493"
 ---
 # <a name="bitsadmin-getnotifycmdline"></a>bitsadmin getnotifycmdline
 
-Recupera a linha de comando para ser executado quando o trabalho for concluído, transferência de dados.
+Recupera o comando de linha de comando a ser executado quando o trabalho terminar de transferir dados.
 
-**BITS 1.2 e anteriores**: Sem suporte.
+**BITS 1,2 e anteriores**: Não compatível.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,15 +36,15 @@ bitsadmin /GetNotifyCmdLine <Job>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir recupera a linha de comando usada pelo serviço quando o trabalho chamado *myDownloadJob* é concluída.
+O exemplo a seguir recupera o comando de linha de comando usado pelo serviço quando o trabalho chamado *myDownloadJob* é concluído.
 ```
 C:\>bitsadmin /GetNotifyCmdLine myDownloadJob
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

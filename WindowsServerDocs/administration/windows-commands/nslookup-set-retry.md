@@ -1,8 +1,8 @@
 ---
 title: nslookup set retry
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 876d8332e778aa0b3049354a21fbe01adb883729
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 306bcc4f5e7ac98767c3c2e274100cf917874a8e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436655"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372862"
 ---
 # <a name="nslookup-set-retry"></a>nslookup set retry
 
@@ -33,11 +33,11 @@ set retry=<Number>
 
 |    Parâmetro    |                                      Descrição                                       |
 |-----------------|----------------------------------------------------------------------------------------|
-|    <Number>     | Especifica o novo valor para o número de repetições. O número de repetições padrão é 4. |
-| {Ajuda &#124; ?} |                 Exibe um resumo breve dos **nslookup** subcomandos.                  |
+|    <Number>     | Especifica o novo valor para o número de repetições. O número padrão de repetições é 4. |
+| {ajuda &#124; ?} |                 Exibe um breve resumo dos subcomandos **nslookup** .                  |
 
 ## <a name="remarks"></a>Comentários
-- Quando uma resposta a uma solicitação não for recebida dentro de um determinado período de tempo, o período de tempo limite é duplicado e a solicitação é enviada novamente. O valor de repetição controla quantas vezes uma solicitação é enviada novamente antes de desistir. Você pode alterar o período de tempo limite com o **definir tempo limite** subcomando.
+- Quando uma resposta a uma solicitação não é recebida dentro de um determinado período de tempo, o período de tempo limite é duplicado e a solicitação é reenviada. O valor de repetição controla quantas vezes uma solicitação é enviada novamente antes de desistir. Você pode alterar o período de tempo limite com o subcomando **set timeout** .
   ## <a name="additional-references"></a>Referências adicionais
   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-  [nslookup definir tempo limite](nslookup-set-timeout.md)
+  [nslookup set timeout](nslookup-set-timeout.md)

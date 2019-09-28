@@ -1,8 +1,8 @@
 ---
 title: nslookup set search
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d95ebe30ce45430787bebbfe63766a571a436bbf
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d9da08a296d61789dbafeccde5d46c8a220d874c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436594"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372782"
 ---
 # <a name="nslookup-set-search"></a>nslookup set search
 
 
 
-Acrescenta os nomes de domínio do sistema de nome de domínio (DNS) na lista de pesquisa de domínio DNS para a solicitação até que uma resposta seja recebida. Isso se aplica quando o conjunto e a pesquisa contêm pelo menos um ponto de solicitação, mas não terminam com um ponto à direita.
+Acrescenta os nomes de domínio DNS (sistema de nomes de domínio) na lista de pesquisa de domínio DNS à solicitação até que uma resposta seja recebida. Isso se aplica quando o conjunto e a solicitação de pesquisa contêm pelo menos um ponto, mas não terminam com um ponto à direita.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,9 +36,9 @@ set [no]search
 
 |  Parâmetro   |                                                                          Descrição                                                                          |
 |--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **nosearch** |                            Interrompe a acrescentar os nomes de domínio do sistema de nome de domínio (DNS) na lista de pesquisa de domínio DNS para a solicitação.                            |
-|  **search**  | Acrescenta os nomes de domínio do sistema de nome de domínio (DNS) na lista de pesquisa de domínio DNS para a solicitação até que uma resposta seja recebida. A sintaxe padrão é **pesquisa**. |
-|    {Ajuda     |                                                                              ?}                                                                               |
+| **Nosearch** |                            Interrompe a anexação dos nomes de domínio DNS (sistema de nomes de domínio) na lista de pesquisa de domínio DNS à solicitação.                            |
+|  **procurando**  | Acrescenta os nomes de domínio DNS (sistema de nomes de domínio) na lista de pesquisa de domínio DNS à solicitação até que uma resposta seja recebida. A sintaxe padrão é **Search**. |
+|    {ajuda     |                                                                              ?}                                                                               |
 
 #### <a name="additional-references"></a>Referências adicionais
 

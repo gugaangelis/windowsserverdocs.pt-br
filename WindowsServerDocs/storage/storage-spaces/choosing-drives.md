@@ -1,7 +1,7 @@
 ---
 ms.assetid: 1368bc83-9121-477a-af09-4ae73ac16789
 title: Escolher unidades para Espaços de Armazenamento Diretos
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: cosdar
 ms.manager: eldenc
 ms.technology: storage-spaces
@@ -9,12 +9,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: eb19e7ecf89f02200d3393dc1a4a9e5cd85cf598
-ms.sourcegitcommit: 1bc3c229e9688ac741838005ec4b88e8f9533e8a
+ms.openlocfilehash: b02d26e8a2f2cd699d8e1eda95cf72fe71396a21
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68314991"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402899"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>Escolher unidades para Espaços de Armazenamento Diretos
 

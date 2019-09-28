@@ -1,8 +1,8 @@
 ---
-title: Ajuda e colegas Bitsadmin
-description: Tópico de comandos do Windows para **bitsadmin pares e ajudar** -exibe o uso de linha de comando para o **pares** comutadores.
+title: Bitsadmin colegas e ajuda
+description: Tópico de comandos do Windows para **Bitsadmin Peers e Help** -exibe o uso da linha de comando para os comutadores de **pares** .
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 90231e6bbc467b0798548e098491aae2de9616ca
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0a61c16c9fb390409697b11586ac05384b56f07e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856307"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380937"
 ---
-# <a name="bitsadmin-peers-and-help"></a>Ajuda e colegas Bitsadmin
+# <a name="bitsadmin-peers-and-help"></a>Bitsadmin colegas e ajuda
 
 
 
-Exibe o uso de linha de comando para o **pares** comutadores.
+Exibe o uso de linha de comando para os comutadores de **pares** .
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -32,13 +32,13 @@ Exibe o uso de linha de comando para o **pares** comutadores.
 Bitsadmin /Peers /Help 
 ```
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O comando a seguir exibe a Ajuda de linha de comando para o **pares** comutadores.
+O comando a seguir exibe a ajuda de linha de comando para os comutadores de **pares** .
 ```
 Bitsadmin /Peers /Help
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

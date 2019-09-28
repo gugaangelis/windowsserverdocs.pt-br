@@ -5,13 +5,13 @@ author: MicrosoftGuyJFlo
 ms.author: joflore
 ms.date: 04/19/2018
 ms.topic: article
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 287d7ef0b8645d8e808b8b8d9f195d05ffed1cc0
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: 19e8eef008d3818c413808ab1f085a7cc247ec36
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868330"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369501"
 ---
 # <a name="virtualizing-domain-controllers-using-hyper-v"></a>Virtualizando controladores de domínio usando o Hyper-V
 
@@ -104,7 +104,7 @@ Os testes do LDAP foram realizados em um controlador de domínio físico com ADT
 <thead>
 <tr class="header">
 <th>Medida</th>
-<th>Teste</th>
+<th>Testar</th>
 <th>Físico</th>
 <th>Virtual</th>
 <th>Delta</th>

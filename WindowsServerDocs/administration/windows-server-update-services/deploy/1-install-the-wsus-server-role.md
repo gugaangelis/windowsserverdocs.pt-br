@@ -1,7 +1,7 @@
 ---
-title: 'Etapa 1: instalar a função de servidor do WSUS'
-description: Tópico do Windows Server Update Service (WSUS) – descreve como instalar a função de servidor usando o Gerenciador do servidor
-ms.prod: windows-server-threshold
+title: Etapa 1-instalar a função de servidor do WSUS
+description: Tópico Windows Server Update Service (WSUS) – descreve como instalar a função de servidor usando Gerenciador do Servidor
+ms.prod: windows-server
 ms.reviewer: na
 ms.technology: manage-wsus
 ms.topic: article
@@ -10,12 +10,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4027f7656c17b2ba46fdf44e3af4de42bb056a6f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 22554a9669c30cc827c509824f187fbaaedb1272
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813997"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361705"
 ---
 # <a name="step-1-install-the-wsus-server-role"></a>Etapa 1: Instalar a função de servidor do WSUS
 
@@ -30,17 +30,17 @@ A próxima etapa na implantação do servidor do WSUS é instalar a função de 
 
 1.  Faça logon no servidor em que pretende instalar a função de servidor do WSUS usando uma conta que seja membro do grupo Administradores Locais.
 
-2.  Na **Gerenciador de servidores**, clique em **gerenciar**e, em seguida, clique em **adicionar funções e recursos**.
+2.  Em **Gerenciador do servidor**, clique em **gerenciar**e em **adicionar funções e recursos**.
 
 3.  Na página **Antes de começar** , clique em **Avançar**.
 
-4.  No **Selecionar tipo de instalação** , confirme que **instalação baseada em função ou recurso** está selecionado e clique em **próxima**.
+4.  Na página **Selecionar tipo de instalação** , confirme se a opção de instalação baseada em **função ou recurso** está selecionada e clique em **Avançar**.
 
-5.  Sobre o **Selecionar servidor de destino** , escolha onde o servidor está localizado (de um pool de servidores ou de um disco rígido virtual). Depois de selecionar a localização, escolha o servidor em que deseja instalar a função de servidor do WSUS e clique em **Avançar**.
+5.  Na página **selecionar servidor de destino** , escolha onde o servidor está localizado (de um pool de servidores ou de um disco rígido virtual). Depois de selecionar a localização, escolha o servidor em que deseja instalar a função de servidor do WSUS e clique em **Avançar**.
 
-6.  Sobre o **selecionar funções de servidor** página, selecione **Windows Server Update Services**.  **Adicionar recursos necessários para o Windows Server Update Services** se abre. Clique em **Adicionar Recursos** e depois em **Avançar**.
+6.  Na página **selecionar funções de servidor** , selecione **Windows Server Update Services**.  **Adicionar recursos necessários para o Windows Server Update Services** se abre. Clique em **Adicionar Recursos** e depois em **Avançar**.
 
-7.  Sobre o **selecionar recursos**página. Mantenha as seleções padrão e, em seguida, clique em **próxima**.
+7.  Na página **selecionar recursos**. Mantenha as seleções padrão e clique em **Avançar**.
 
     > [!IMPORTANT]
     > O WSUS só exige a configuração da função de Servidor Web padrão. Se você for solicitado a adicionar configuração de função de Servidor Web ao configurar o WSUS, aceite tranquilamente os valores padrão e continue a configuração do WSUS.
@@ -54,7 +54,7 @@ A próxima etapa na implantação do servidor do WSUS é instalar a função de 
 
 10. Na página **Seleção de local do conteúdo**, digite um local válido para armazenar as atualizações. Por exemplo, você pode criar uma pasta chamada WSUS_database na raiz da unidade K especificamente para essa finalidade e digitar **k:\WSUS_database** como o local válido.
 
-11. Clique em **Avançar**. A página **Função de Servidor Web (IIS)** se abre. Analise as informações e clique em **Avançar**. Na **selecione os serviços de função para instalar o servidor Web (IIS)**, mantenha os padrões e, em seguida, clique em **próxima**.
+11. Clique em **Avançar**. A página **Função de Servidor Web (IIS)** se abre. Analise as informações e clique em **Avançar**. Em **selecionar os serviços de função a serem instalados para o servidor Web (IIS)** , mantenha os padrões e clique em **Avançar**.
 
 12. Na página **Confirmar seleções de instalação**, examine as opções selecionadas e clique em **Instalar**. O Assistente de instalação do WSUS é executado. Essa operação pode levar vários minutos para ser concluída.
 
@@ -63,5 +63,5 @@ A próxima etapa na implantação do servidor do WSUS é instalar a função de 
 14. No **Gerenciador do Servidor**, verifique se uma notificação aparece informando que é necessário reiniciar. Esse comportamento pode variar de acordo com a função de servidor instalada. Se for necessário reiniciar, não se esqueça de reiniciar o servidor para concluir a instalação.
 
 > [!IMPORTANT]
-> Neste ponto o processo de instalação for concluída, mas para o WSUS fique funcional você precisa prosseguir para [etapa 2: Configurar o WSUS](2-configure-wsus.md).
+> Neste ponto, o processo de instalação é concluído, no entanto, para que o WSUS seja funcional, você precisa prosseguir para o [Step 2: Configure o WSUS @ no__t-0.
 

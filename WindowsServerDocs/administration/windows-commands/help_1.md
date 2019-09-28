@@ -1,8 +1,8 @@
 ---
 title: ajuda
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 078c779e7813d2aa7499e515d9729edf92452237
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: c3d76a71ec287e5c874ae3e4dec34016c5c80336
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438206"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375583"
 ---
 # <a name="help"></a>ajuda
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Exibe uma lista de comandos disponíveis ou a ajuda detalhada sobre um comando especificado.  
+Exibe uma lista de comandos disponíveis ou informações de ajuda detalhadas sobre um comando especificado.  
   
   
   
@@ -42,16 +42,16 @@ help [<command>]
   
 ## <a name="remarks"></a>Comentários  
   
--   Se nenhum comando for especificado, **ajudar** exibirá todos os comandos possíveis.  
+-   Se nenhum comando for especificado, **a ajuda** exibirá todos os comandos possíveis.  
   
-## <a name="BKMK_examples"></a>Exemplos  
+## <a name="BKMK_examples"></a>Disso  
 Para exibir uma lista de todos os comandos disponíveis no DiskPart, digite:  
   
 ```  
 help  
 ```  
   
-Para exibir informações de ajuda detalhada sobre como usar o **criar a partição primária** comando DiskPart, digite:  
+Para exibir informações de ajuda detalhadas sobre como usar o comando **criar partição primário** no DiskPart, digite:  
   
 ```  
 help create partition primary  

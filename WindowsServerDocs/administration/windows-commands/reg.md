@@ -1,8 +1,8 @@
 ---
 title: reg
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,39 +13,39 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4ca4f354462c1e34b1ccd6357913e3b72d569b8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 196c32775fe17afc29d75969ec2ba98465768cce
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838027"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371715"
 ---
 # <a name="reg"></a>reg
 
 
 
-Executa operações em valores e informações de subchaves do registro nas entradas do registro. O **reg** comandos incluem:
+Executa operações em valores e informações da subchave do registro em entradas do registro. Os comandos **reg** incluem:
 
-[Adicionar reg](reg-add.md)
+[Reg add](reg-add.md)
 
-[comparação de reg](reg-compare.md)
+[Reg compare](reg-compare.md)
 
-[cópia de reg](reg-copy.md)
+[Reg copy](reg-copy.md)
 
 [Reg delete](reg-delete.md)
 
-[reg export](reg-export.md)
+[Reg export](reg-export.md)
 
-[importação de reg](reg-import.md)
+[Reg import](reg-import.md)
 
-[Carga de reg](reg-load.md)
+[Reg load](reg-load.md)
 
-[consulta de reg](reg-query.md)
+[Reg query](reg-query.md)
 
-[restauração de reg](reg-restore.md)
+[Reg restore](reg-restore.md)
 
-[reg salvar](reg-save.md)
+[Reg save](reg-save.md)
 
 [Reg unload](reg-unload.md)
 
-Algumas operações permitem exibir ou configurar as entradas do registro em computadores locais ou remotos, enquanto outros permitem que você configure os computadores locais apenas. Usando o **reg** para configurar o registro do remoto computadores limita os parâmetros que você pode usar em algumas operações. Verifique a sintaxe e parâmetros de cada operação para verificar se pode ser usados em computadores remotos
+Algumas operações permitem que você exiba ou configure entradas de registro em computadores locais ou remotos, enquanto outros permitem que você configure apenas computadores locais. Usar **reg** para configurar o registro de computadores remotos limita os parâmetros que você pode usar em algumas operações. Verifique a sintaxe e os parâmetros de cada operação para verificar se eles podem ser usados em computadores remotos

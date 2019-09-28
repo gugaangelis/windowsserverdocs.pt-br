@@ -1,8 +1,8 @@
 ---
-title: ftp mdir
-description: 'Tópico de comandos do Windows para * * *- '
+title: mdir FTP
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c4ec445c3e367a46dc40d10a37c0b3b8e53a10e3
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 08aa5bb216a3d0155c100c761e476bb963e59311
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438335"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375853"
 ---
-# <a name="ftp-mdir"></a>ftp: mdir
+# <a name="ftp-mdir"></a>FTP: mdir
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -33,21 +33,21 @@ mdir <remoteFile>[ ] <LocalFile>
 
 |  Parâmetro   |                               Descrição                                |
 |--------------|--------------------------------------------------------------------------|
-| <remoteFile> |   Especifica o diretório ou arquivo para o qual você deseja ver uma listagem.   |
+| <remoteFile> |   Especifica o diretório ou o arquivo para o qual você deseja ver uma listagem.   |
 | <LocalFile>  | Especifica um arquivo local para armazenar a listagem. Este parâmetro é necessário. |
 
 ## <a name="remarks"></a>Comentários  
 - Você pode usar **mdir** para especificar vários arquivos.  
-- Especificando *Arquivo_remoto*  
+- Especificando *remotefile*  
   Digite um hífen ( **-** ) para usar o diretório de trabalho atual no computador remoto.  
 - Especificando um *LocalFile*  
   Digite um hífen ( **-** ) para exibir a listagem na tela.  
-  ## <a name="BKMK_Examples"></a>Exemplos  
-  Exibir uma lista de diretório **dir1** e **dir2** na tela  
+  ## <a name="BKMK_Examples"></a>Disso  
+  Exibir uma listagem de diretório de **dir1** e **dir2** na tela  
   ```  
   mdir dir1 dir2 -  
   ```  
-  Salve a listagem de diretório combinado dos **dir1** e **dir2** em um arquivo local chamado **Lista_pastas**  
+  Salve a listagem de diretório combinada de **dir1** e **dir2** em um arquivo local chamado **DirList. txt**  
   ```  
   mdir dir1 dir2 dirlist.txt  
   ```  

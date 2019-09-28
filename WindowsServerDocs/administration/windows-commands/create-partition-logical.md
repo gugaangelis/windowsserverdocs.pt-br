@@ -1,8 +1,8 @@
 ---
-title: Criar partição lógica
-description: 'Tópico de comandos do Windows para * * *- '
+title: criar partição lógica
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d3af60aed6c8305e410c6ebfba3cf2e006034ad7
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 4f18048272eda710f7cb53a631ddeda81784a56b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434155"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378895"
 ---
-# <a name="create-partition-logical"></a>Criar partição lógica
+# <a name="create-partition-logical"></a>criar partição lógica
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-cria uma partição lógica em uma partição estendida existente. Você só pode usar esse comando no registro mestre de inicialização \(MBR\) discos.  
+Cria uma partição lógica em uma partição estendida existente. Você só pode usar esse comando no registro mestre de inicialização \(MBR @ no__t-1 discos.  
   
   
   
@@ -38,21 +38,21 @@ create partition logical [size=<n>] [offset=<n>] [align=<n>] [noerr]
   
 |  Parâmetro  |                                                                                                                                                                                                                       Descrição                                                                                                                                                                                                                        |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  size\=<n>  |                                                                                                              Especifica o tamanho da partição lógica em megabytes \(MB\), que deve ser menor do que a partição estendida. Se nenhum tamanho for especificado, a partição continuará até que haja espaço livre não mais na partição estendida.                                                                                                               |
-| offset\=<n> | Especifica o deslocamento, em quilobytes \(KB\), no qual a partição é criada. O deslocamento Arredonda para cima para preencher completamente todo o cilindro é usado. Se o deslocamento não for especificado, a partição é colocada na primeira extensão de disco que seja grande o suficiente para contê-la. A partição é pelo menos o mesmo tamanho em bytes, como o número especificado por **tamanho\=<n>** . Se você especificar um tamanho para a partição lógica, ele deve ser menor do que a partição estendida. |
-| align\=<n>  |                                                                                     Alinha-se todas as extensões de volume ou partição até o limite de alinhamento mais próximo. Normalmente usado com o número de unidade lógica do RAID de hardware \(LUN\) matrizes para melhorar o desempenho.  <n> é o número de kilobytes \(KB\) desde o início do disco para o limite de alinhamento mais próximo.                                                                                      |
-|    noerr    |                                                                                                                           Somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro.                                                                                                                           |
+|  tamanho @ no__t-0 @ no__t-1  |                                                                                                              Especifica o tamanho da partição lógica em megabytes \(MB @ no__t-1, que deve ser menor do que a partição estendida. Se nenhum tamanho for fornecido, a partição continuará até que não haja mais espaço livre na partição estendida.                                                                                                               |
+| deslocamento @ no__t-0 @ no__t-1 | Especifica o deslocamento em kilobytes \(KB @ no__t-1, no qual a partição é criada. O deslocamento é arredondado para preencher completamente qualquer tamanho de cilindro usado. Se nenhum deslocamento for fornecido, a partição será colocada na primeira extensão de disco grande o suficiente para contê-la. A partição é pelo menos tão longa em bytes quanto o número especificado pelo **tamanho @ no__t-1 @ no__t-2**. Se você especificar um tamanho para a partição lógica, ela deverá ser menor do que a partição estendida. |
+| alinhar @ no__t-0 @ no__t-1  |                                                                                     Alinha todas as extensões de volume ou partição ao limite de alinhamento mais próximo. Normalmente usado com o número de unidade lógica RAID de hardware \(LUN @ no__t-1 matrizes para melhorar o desempenho.  <n> é o número de kilobytes \( KB @ no__t-2 desde o início do disco até o limite de alinhamento mais próximo.                                                                                      |
+|    NOERR    |                                                                                                                           Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.                                                                                                                           |
   
 ## <a name="remarks"></a>Comentários  
   
--   Se o **tamanho** e **deslocamento** parâmetros não forem especificados, a partição lógica é criada na maior extensão de disco disponível na partição estendida.  
+-   Se os parâmetros de **tamanho** e **deslocamento** não forem especificados, a partição lógica será criada na maior extensão de disco disponível na partição estendida.  
   
 -   Depois que a partição tiver sido criada, o foco mudará automaticamente para a nova partição lógica.  
   
--   Um disco MBR básico deve ser selecionado para essa operação seja bem-sucedida. Use o **Selecionar disco** comando para selecionar um disco e mudar o foco a ele.  
+-   Um disco MBR básico deve ser selecionado para que essa operação tenha sucesso. Use o comando **selecionar disco** para selecionar um disco e deslocar o foco para ele.  
   
-## <a name="BKMK_examples"></a>Exemplos  
-Para criar uma partição lógica de 1000 megabytes em tamanho, em uma partição estendida do disco selecionado, digite:  
+## <a name="BKMK_examples"></a>Disso  
+Para criar uma partição lógica de 1000 megabytes de tamanho, na partição estendida do disco selecionado, digite:  
   
 ```  
 create partition logical size=1000  

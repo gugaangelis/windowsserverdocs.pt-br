@@ -1,8 +1,8 @@
 ---
 title: bitsadmin geterrorcount
-description: Tópico de comandos do Windows para **geterrorcount bitsadmin** -recupera uma contagem do número de vezes que o trabalho especificado gerado um erro transitório.
+description: Tópico de comandos do Windows para **Bitsadmin GetErrorCount** – recupera uma contagem do número de vezes que o trabalho especificado gerou um erro transitório.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 91045372931efec0e3189132a275eeacab584de4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2e5aa64c0e080e946e84c0bf804527bb00cad70a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818367"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381624"
 ---
 # <a name="bitsadmin-geterrorcount"></a>bitsadmin geterrorcount
 
 
 
-Recupera uma contagem do número de vezes que o trabalho especificado gerado um erro transitório.
+Recupera uma contagem do número de vezes que o trabalho especificado gerou um erro transitório.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,15 +36,15 @@ bitsadmin /GetErrorCount <Job>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir recupera informações de contagem de erro do trabalho nomeado *myDownloadJob*.
+O exemplo a seguir recupera informações de contagem de erros para o trabalho chamado *myDownloadJob*.
 ```
 C:\>bitsadmin /GetErrorCount myDownloadJob
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

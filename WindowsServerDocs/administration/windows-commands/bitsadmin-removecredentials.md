@@ -1,8 +1,8 @@
 ---
 title: bitsadmin removecredentials
-description: Tópico de comandos do Windows para **removecredentials bitsadmin** -remove as credenciais de um trabalho.
+description: Tópico de comandos do Windows para **Bitsadmin removecredentials** – remove as credenciais de um trabalho.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cbd65442ff0d74ec1179a49df5d4a94785f3dd25
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 34a5bae9304a9db9f47f437276270ca06b1ebeee
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822287"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380818"
 ---
 # <a name="bitsadmin-removecredentials"></a>bitsadmin removecredentials
 
 Remove as credenciais de um trabalho.
 
-**BITS 1.2 e anteriores**: Sem suporte.
+**BITS 1,2 e anteriores**: Não compatível.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,17 +36,17 @@ bitsadmin /RemoveCredentials <Job> <Target> <Scheme>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
 |Destino|SERVIDOR ou PROXY|
-|Esquema|Uma das seguintes opções:</br>-BÁSICO — o esquema de autenticação no qual o nome de usuário e senha são enviados em texto não criptografado para o servidor ou proxy.</br>-DIGEST — um esquema de autenticação de desafio / resposta que usa uma cadeia de caracteres de dados do servidor especificado para o desafio.</br>-NTLM — um esquema de autenticação de desafio / resposta que usa as credenciais do usuário para autenticação em um ambiente de rede do Windows.</br>-NEGOTIATE — também conhecido como o protocolo simples e protegido negociação (Snego) é um esquema de autenticação de desafio / resposta que negocia com o servidor ou proxy para determinar o esquema a ser usado para autenticação. Os exemplos são o protocolo Kerberos e NTLM.</br>-O PASSPORT — um serviço de autenticação centralizado fornecido pela Microsoft que oferece um único logon para sites de membros.|
+|esquema|Uma das seguintes opções:</br>-BÁSICO – esquema de autenticação no qual o nome de usuário e a senha são enviados em texto não criptografado para o servidor ou proxy.</br>-DIGEST — um esquema de autenticação de desafio/resposta que usa uma cadeia de caracteres de dados especificada pelo servidor para o desafio.</br>-NTLM — um esquema de autenticação de desafio/resposta que usa as credenciais do usuário para autenticação em um ambiente de rede do Windows.</br>-NEGOTIAte — também conhecido como Snego (protocolo de negociação simples e protegido) é um esquema de autenticação de desafio/resposta que negocia com o servidor ou proxy para determinar qual esquema usar para autenticação. Os exemplos são o protocolo Kerberos e NTLM.</br>-PASSPORT — um serviço de autenticação centralizado fornecido pela Microsoft que oferece um logon único para sites membros.|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir remove as credenciais do trabalho nomeado *myDownloadJob*.
+O exemplo a seguir remove as credenciais do trabalho chamado *myDownloadJob*.
 ```
 C:\>bitsadmin /RemoveCredentials myDownloadJob SERVER BASIC
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

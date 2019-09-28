@@ -7,14 +7,14 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c8d34d7b35f3cd5209fd6096f69b16162229bc3a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 82b0035075c981d123ab3b90d56768940f65558e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863077"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391114"
 ---
 # <a name="install-a-windows-server-2012-active-directory-read-only-domain-controller-rodc-level-200"></a>Instalar um RODC (controlador de domínio somente leitura) do Active Directory do Windows Server 2012 (nível 200)
 
@@ -33,12 +33,12 @@ O diagrama a seguir ilustra o processo de preparo do Controlador de Domínio Som
   
 ![Instalar o RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/adds_stagedcreation.png)  
   
-## <a name="BKMK_StagePS"></a>Preparar o RODC Windows PowerShell  
+## <a name="BKMK_StagePS"></a>Estágio RODC do Windows PowerShell  
   
 |||  
 |-|-|  
 |**Cmdlet ADDSDeployment**|Argumentos (os argumentos em **Negrito** são necessários. Os argumentos em*Itálico* podem ser especificados usando o Windows PowerShell ou o Assistente de Configuração do AD DS.)|  
-|Add-addsreadonlydomaincontrolleraccount|-SkipPreChecks<br /><br />***-DomainControllerAccountName***<br /><br />***-DomainName***<br /><br />***-SiteName***<br /><br />*-AllowPasswordReplicationAccountName*<br /><br />***-Credential***<br /><br />*-DelegatedAdministratorAccountName*<br /><br />*-DenyPasswordReplicationAccountName*<br /><br />*-NoGlobalCatalog*<br /><br />*-InstallDNS*<br /><br />-ReplicationSourceDC|  
+|Add-addsreadonlydomaincontrolleraccount|-SkipPreChecks<br /><br />***-DomainControllerAccountName***<br /><br />***-Nome_do_domínio***<br /><br />***-SiteName***<br /><br />*-AllowPasswordReplicationAccountName*<br /><br />***-Credential***<br /><br />*-DelegatedAdministratorAccountName*<br /><br />*-DenyPasswordReplicationAccountName*<br /><br />*-NoGlobalCatalog*<br /><br />*-InstallDNS*<br /><br />-ReplicationSourceDC|  
   
 > [!NOTE]  
 > O argumento **-credential** só será necessário se você já não estiver registrado como membro do grupo Admins. do Domínio.  
@@ -48,28 +48,28 @@ O diagrama abaixo ilustra o processo de configuração dos Serviços de Domínio
   
 ![Instalar o RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/adds_stageddeploy_beta1.png)  
   
-## <a name="BKMK_AttachPS"></a>Attach RODC Windows PowerShell  
+## <a name="BKMK_AttachPS"></a>Anexar RODC do Windows PowerShell  
   
 |||  
 |-|-|  
 |**Cmdlet ADDSDeployment**|Argumentos (os argumentos em **Negrito** são necessários. Os argumentos em*Itálico* podem ser especificados usando o Windows PowerShell ou o Assistente de Configuração do AD DS.)|  
-|Install-AddsDomaincontroller|-SkipPreChecks<br /><br />***-DomainName***<br /><br />*-SafeModeAdministratorPassword*<br /><br />*-ApplicationPartitionsToReplicate*<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />-CriticalReplicationOnly<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />*-InstallationMediaPath*<br /><br />*-LogPath*<br /><br />-Norebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />*-SystemKey*<br /><br />*-SYSVOLPath*<br /><br />***-UseExistingAccount***|  
+|Install-AddsDomaincontroller|-SkipPreChecks<br /><br />***-Nome_do_domínio***<br /><br />*-SafeModeAdministratorPassword*<br /><br />*-ApplicationPartitionsToReplicate*<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />-CriticalReplicationOnly<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />*-InstallationMediaPath*<br /><br />*-LogPath*<br /><br />-Norebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />*-SystemKey*<br /><br />*-SYSVOLPath*<br /><br />***-UseExistingAccount***|  
   
 > [!NOTE]  
 > O argumento **-credential** só será necessário se você já não estiver registrado como membro do grupo Admins. do Domínio.  
   
-## <a name="staging"></a>Preparando  
+## <a name="staging"></a>Preparo  
 ![Instalar o RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_PreCreateRODC.png)  
   
 Você executa a operação de preparo de uma conta de computador do controlador de domínio somente leitura abrindo o Centro Administrativo do Active Directory (**Dsac.exe**). Clique no nome do domínio no painel de navegação. Clique duas vezes em **Controladores de Domínio** na lista de gerenciamento. Clique em **Pré-criar uma conta do controlador de domínio somente leitura** no painel de tarefas.  
   
-Para obter mais informações sobre o Centro Administrativo do Active Directory, consulte [avançada AD DS gerenciamento usando Active Directory Administrative Center &#40;nível 200&#41; ](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md) e examine [do Active Directory Centro administrativo: Introdução ao](https://technet.microsoft.com/library/dd560651(WS.10).aspx).  
+Para obter mais informações sobre o centro administrativo do Active Directory, consulte [Gerenciamento de AD DS avançado &#40;usando o&#41; nível de centro administrativo do Active Directory 200](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md) e examine o centro administrativo do diretório [Active: Introdução @ no__t-0.  
   
 Se você tiver experiência na criação de controladores de domínio somente leitura, descobrirá que o assistente de instalação tem a mesma interface gráfica, como visto ao usar os snap-ins mais antigos de Usuários e Computadores do Active Directory do Windows Server 2008 e usa o mesmo código, que inclui exportação da configuração no formato de arquivo autônomo usado pelo antigo dcpromo.  
   
 O Windows Server 2012 introduz um novo cmdlet ADDSDeployment para preparar as contas de computador do RODC, mas o assistente não usa o cmdlet para seu funcionamento. As seções a seguir exibem o cmdlet e os argumentos equivalentes, a fim de tornar as informações associadas a cada um mais fáceis de entender.  
   
-O **pré-criar uma conta do controlador de domínio somente leitura** link painel do centro administrativo de tarefas é equivalente ao cmdlet ADDSDeployment do Windows PowerShell:  
+O link **pré-criar uma conta do controlador de domínio somente leitura** no painel de tarefas do centro administrativo do Active Directory é equivalente ao cmdlet ADDSDeployment do Windows PowerShell:  
   
 ```  
 Add-addsreadonlydomaincontrolleraccount  
@@ -134,7 +134,7 @@ A opção **RODC (Controlador de domínio somente leitura)** é pré-selecionada
 ```  
   
 > [!NOTE]  
-> Por padrão, o **– NoGlobalCatalog** valor é $false, que significa que o controlador de domínio será um servidor de catálogo global se o argumento não for especificado.  
+> Por padrão, o valor **-NoGlobalCatalog** é $false, o que significa que o controlador de domínio será um servidor de catálogo global se o argumento não for especificado.  
   
 ### <a name="specify-the-password-replication-policy"></a>Especificar a política de replicação de senha  
 ![Instalar o RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage1PRP.png)  
@@ -163,7 +163,7 @@ Os argumentos equivalentes de ADDSDeployment do Windows PowerShell são:
 ### <a name="delegation-of-rodc-installation-and-administration"></a>Delegação de instalação e administração do RODC  
 ![Instalar o RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage1DelegateAdmin.png)  
   
-O diálogo **Delegação de Instalação e Administração do RODC** permite configurar um usuário ou grupo que contém os usuários com permissão para anexar o servidor à conta de computador do RODC. Clique em **Definir** para procurar o domínio para um usuário ou grupo. O usuário ou grupo especificado neste diálogo ganha permissões administrativas locais para o RODC. O usuário especificado ou membros do grupo especificado podem executar operações no RODC com privilégios equivalentes ao grupo Administradores do computador. Eles *não* são membros dos grupos Admins. do Domínio ou Administradores internos de domínio.  
+O diálogo **Delegação de Instalação e Administração do RODC** permite configurar um usuário ou grupo que contém os usuários com permissão para anexar o servidor à conta de computador do RODC. Clique em **Definir** para procurar o domínio para um usuário ou grupo. O usuário ou grupo especificado neste diálogo ganha permissões administrativas locais para o RODC. O usuário especificado ou os membros do grupo especificado podem executar operações no RODC com privilégios equivalentes ao grupo de administradores do computador. Eles *não* são membros dos grupos Admins. do Domínio ou Administradores internos de domínio.  
   
 Use esta opção para delegar a administração da filial, sem conceder a associação de administrador de filial ao grupo Admins. do Domínio. A delegação de administração do RODC não é necessária.  
   
@@ -229,10 +229,10 @@ Install-AddsDomainController
 ### <a name="domain-controller-options"></a>Opções de controlador de domínio  
 ![Instalar o RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage2DCOptions.png)  
   
-A página **Opções do Controlador de Domínio** mostra as opções para o novo controlador de domínio. Quando esta página é carregada, o Assistente de Configuração de Serviços de Domínio Active Directory envia uma consulta LDAP para um controlador de domínio existente para verificar se há contas desocupadas. Se a consulta encontra um controlador de domínio desocupada conta de computador que compartilha o mesmo nome que o computador atual, o assistente exibe uma mensagem informativa na parte superior da página que se lê "**uma conta RODC pré-criada que corresponde ao nome do destino do servidor existe no diretório. Escolha se deseja usar essa conta RODC existente ou reinstalar este controlador de domínio**. " O assistente usa a opção **Usar conta de RODC existente** como configuração padrão.  
+A página **Opções do Controlador de Domínio** mostra as opções para o novo controlador de domínio. Quando esta página é carregada, o Assistente de Configuração de Serviços de Domínio Active Directory envia uma consulta LDAP para um controlador de domínio existente para verificar se há contas desocupadas. Se a consulta encontrar uma conta de computador do controlador de domínio desocupada que compartilha o mesmo nome que o computador atual, o assistente exibirá uma mensagem informativa na parte superior da página que lê "conta RODC do @no__t 0A criada previamente que corresponde ao nome do o servidor de destino existe no diretório. Escolha se deseja usar essa conta do RODC existente ou reinstalar este controlador de domínio @ no__t-0. " O assistente usa a opção **Usar conta de RODC existente** como configuração padrão.  
   
 > [!IMPORTANT]  
-> Você pode usar a opção **Reinstalar este controlador de domínio** quando um controlador de domínio tiver sofrido um problema físico e não puder voltar à funcionalidade. Isso economiza tempo ao configurar o controlador de domínio de substituição, deixando a conta de computador do controlador de domínio e os metadados do objeto no Active Directory. Instale o novo computador com o *mesmo nome*, e promova-o como controlador de domínio no domínio. O **reinstalar este controlador de domínio** opção não estará disponível se você tiver removido metadados do objeto de controlador de domínio do Active Directory (Limpeza de metadados).  
+> Você pode usar a opção **Reinstalar este controlador de domínio** quando um controlador de domínio tiver sofrido um problema físico e não puder voltar à funcionalidade. Isso economiza tempo ao configurar o controlador de domínio de substituição, deixando a conta de computador do controlador de domínio e os metadados do objeto no Active Directory. Instale o novo computador com o *mesmo nome*, e promova-o como controlador de domínio no domínio. A opção **reinstalar este controlador de domínio** não estará disponível se você tiver removido os metadados do objeto do controlador de domínio de Active Directory (limpeza de metadados).  
   
 Não é possível configurar opções do controlador de domínio quando você está anexando um servidor a uma conta de computador do RODC. Você pode configurar as opções do controlador de domínio ao criar a conta de computador do RODC pré-configurada.  
   
@@ -297,7 +297,12 @@ $pw | ConvertFrom-SecureString | Set-Content $file
   
 A página **Opções Adicionais** fornece opções de configuração para nomear um controlador de domínio como origem de replicação, ou você pode usar qualquer controlador de domínio como origem de replicação.  
   
-Também é possível optar pela instalação do controlador de domínio usando uma mídia de backup e escolhendo a opção Instalar da mídia (IFM). A caixa de seleção **Instalar da mídia** fornece uma opção de navegação quando selecionada e você deve clicar em **Verificar** para garantir que o caminho fornecido é uma mídia válida. A mídia usada pela opção IFM deve ser criada com o Backup do Windows Server ou com o Ntdsutil.exe somente em outro computador Windows Server 2012 existente; não é possível usar o Windows Server 2008 R2 ou um sistema operacional anterior para criar mídia para um controlador de domínio do Windows Server 2012. Para mais informações sobre alterações na IFM, consulte [Instalação do Ntdsutil.exe de alterações de mídia](../../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM). Se a mídia for protegida por SYSKEY, o Gerenciador do Servidor solicitará a senha da imagem durante a verificação.  
+Também é possível optar pela instalação do controlador de domínio usando uma mídia de backup e escolhendo a opção Instalar da mídia (IFM). A caixa de seleção **Instalar da mídia** fornece uma opção de navegação quando selecionada e você deve clicar em **Verificar** para garantir que o caminho fornecido é uma mídia válida.
+
+As diretrizes para a fonte IFM: • mídia usada pela opção IFM são criadas com Backup do Windows Server ou Ntdsutil. exe de outro controlador de domínio do Windows Server existente somente com a mesma versão do sistema operacional. Por exemplo, você não pode usar um sistema operacional Windows Server 2008 R2 ou anterior para criar mídia para um controlador de domínio do Windows Server 2012.
+• Os dados de origem IFM devem ser de um controlador de domínio gravável. Embora uma fonte do RODC funcione tecnicamente para criar um novo RODC, há avisos de replicação falsos positivos que o RODC de origem IFM não está replicando.
+
+Para mais informações sobre alterações na IFM, consulte [Instalação do Ntdsutil.exe de alterações de mídia](../../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM). Se a mídia for protegida por SYSKEY, o Gerenciador do Servidor solicitará a senha da imagem durante a verificação. 
   
 ![Instalar o RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_StagedIFM.png)  
   
@@ -323,7 +328,7 @@ A página **Rotas** permite substituir os locais de pasta padrão do banco de da
 ### <a name="review-options-and-view-script"></a>Examinar opções e exibir script  
 ![Instalar o RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage2ReviewOptions.png)  
   
-A página **Opções de revisão** permite que você valide suas configurações e se assegure de que elas cumprem os requisitos, antes de iniciar a instalação. Esta não é a última oportunidade de interromper a instalação usando o Gerenciador do Servidor. Essa página simplesmente permite que você examine e confirme suas configurações antes de continuar. A página **Opções de revisão** do Gerenciador do Servidor também oferece um botão **Exibir Script** para criar um arquivo de texto Unicode contendo a configuração atual de ADDSDeployment como um script simples do Windows PowerShell. Isso permite que você use a interface gráfica do Gerenciador do Servidor como um estúdio de implantação do Windows PowerShell. Use o Assistente de Configuração dos Serviços de Domínio do Active Directory para configurar opções, exportar a configuração e então cancelar o assistente. Esse processo cria um exemplo válido e sintaticamente correto para modificações adicionais ou uso direto. Por exemplo:   
+A página **Opções de revisão** permite que você valide suas configurações e se assegure de que elas cumprem os requisitos, antes de iniciar a instalação. Esta não é a última oportunidade de interromper a instalação usando o Gerenciador do Servidor. Essa página simplesmente permite que você examine e confirme suas configurações antes de continuar. A página **Opções de revisão** do Gerenciador do Servidor também oferece um botão **Exibir Script** para criar um arquivo de texto Unicode contendo a configuração atual de ADDSDeployment como um script simples do Windows PowerShell. Isso permite que você use a interface gráfica do Gerenciador do Servidor como um estúdio de implantação do Windows PowerShell. Use o Assistente de Configuração dos Serviços de Domínio do Active Directory para configurar opções, exportar a configuração e então cancelar o assistente. Esse processo cria um exemplo válido e sintaticamente correto para modificações adicionais ou uso direto. Por exemplo:  
   
 ```  
 #  
@@ -416,7 +421,7 @@ O diagrama a seguir ilustra o processo de configuração dos Serviços de Domín
 |||  
 |-|-|  
 |**Cmdlet ADDSDeployment**|Argumentos (os argumentos em **Negrito** são necessários. Os argumentos em*Itálico* podem ser especificados usando o Windows PowerShell ou o Assistente de Configuração do AD DS.)|  
-|Install-AddsDomainController|-SkipPreChecks<br /><br />***-DomainName***<br /><br />*-SafeModeAdministratorPassword*<br /><br />***-SiteName***<br /><br />*-ApplicationPartitionsToReplicate*<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />*-CriticalReplicationOnly*<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />-DNSOnNetwork<br /><br />*-InstallationMediaPath*<br /><br />*-InstallDNS*<br /><br />*-LogPath*<br /><br />-MoveInfrastructureOperationMasterRoleIfNecessary<br /><br />*-NoGlobalCatalog*<br /><br />-Norebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />-SkipAutoConfigureDNS<br /><br />*-SystemKey*<br /><br />*-SYSVOLPath*<br /><br />*-AllowPasswordReplicationAccountName*<br /><br />*-DelegatedAdministratorAccountName*<br /><br />*-DenyPasswordReplicationAccountName*<br /><br />***-ReadOnlyReplica***|  
+|Install-AddsDomainController|-SkipPreChecks<br /><br />***-Nome_do_domínio***<br /><br />*-SafeModeAdministratorPassword*<br /><br />***-SiteName***<br /><br />*-ApplicationPartitionsToReplicate*<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />*-CriticalReplicationOnly*<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />-DNSOnNetwork<br /><br />*-InstallationMediaPath*<br /><br />*-InstallDNS*<br /><br />*-LogPath*<br /><br />-MoveInfrastructureOperationMasterRoleIfNecessary<br /><br />*-NoGlobalCatalog*<br /><br />-Norebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />-SkipAutoConfigureDNS<br /><br />*-SystemKey*<br /><br />*-SYSVOLPath*<br /><br />*-AllowPasswordReplicationAccountName*<br /><br />*-DelegatedAdministratorAccountName*<br /><br />*-DenyPasswordReplicationAccountName*<br /><br />***-ReadOnlyReplica***|  
   
 > [!NOTE]  
 > O argumento **-credential** só será necessário se você já não estiver registrado como membro do grupo Admins. do Domínio.  
@@ -490,7 +495,7 @@ Você também pode fornecer uma cadeia de caracteres segura como uma variável d
 -safemodeadministratorpassword (convertto-securestring "Password1" -asplaintext -force)  
 ```  
   
-Finalmente, você pode armazenar a senha ofuscada em um arquivo e depois reutilizá-la mais tarde, sem a senha com texto não criptografado aparecendo. Por exemplo:   
+Finalmente, você pode armazenar a senha ofuscada em um arquivo e depois reutilizá-la mais tarde, sem a senha com texto não criptografado aparecendo. Por exemplo:  
   
 ```  
 $file = "c:\pw.txt"  
@@ -515,7 +520,7 @@ A página **Opções de RODC** possibilita que você modifique as configuraçõe
   
 -   Contas que não têm permissão para replicar senhas para o RODC  
   
-As contas de administrador delegadas obtêm permissões administrativas locais para o RODC. Esses usuários podem operar com privilégios equivalentes ao grupo de administradores do computador local.  Eles não são membros de Admins. do domínio ou os grupos de administradores internos de domínio. Essa opção é útil para a administração de filiais de delegação, mas sem emitir permissões administrativas de domínio. Não é preciso configurar a delegação de administração.  
+As contas de administrador delegadas obtêm permissões administrativas locais para o RODC. Esses usuários podem operar com privilégios equivalentes ao grupo Administradores do computador local.  Eles não são membros dos grupos admins. do domínio ou administradores internos do domínio. Essa opção é útil para a administração de filiais de delegação, mas sem emitir permissões administrativas de domínio. Não é preciso configurar a delegação de administração.  
   
 O argumento equivalente de ADDSDeployment do Windows PowerShell é:  
   
@@ -549,7 +554,12 @@ Os argumentos equivalentes de ADDSDeployment do Windows PowerShell são:
   
 A página **Opções Adicionais** fornece opções de configuração para nomear um controlador de domínio como origem de replicação, ou você pode usar qualquer controlador de domínio como origem de replicação.  
   
-Também é possível optar pela instalação do controlador de domínio usando uma mídia de backup e escolhendo a opção Instalar da mídia (IFM). A caixa de seleção **Instalar da mídia** fornece uma opção de navegação quando selecionada e você deve clicar em **Verificar** para garantir que o caminho fornecido é uma mídia válida. A mídia usada pela opção IFM deve ser criada com o Backup do Windows Server ou com o Ntdsutil.exe somente em outro computador Windows Server 2012 existente; não é possível usar o Windows Server 2008 R2 ou um sistema operacional anterior para criar mídia para um controlador de domínio do Windows Server 2012.  Os Apêndices fornecem mais informações sobre alterações na IFM. Se a mídia for protegida por SYSKEY, o Gerenciador do Servidor solicitará a senha da imagem durante a verificação.  
+Também é possível optar pela instalação do controlador de domínio usando uma mídia de backup e escolhendo a opção Instalar da mídia (IFM). A caixa de seleção **Instalar da mídia** fornece uma opção de navegação quando selecionada e você deve clicar em **Verificar** para garantir que o caminho fornecido é uma mídia válida.
+
+As diretrizes para a fonte IFM: • mídia usada pela opção IFM são criadas com Backup do Windows Server ou Ntdsutil. exe de outro controlador de domínio do Windows Server existente somente com a mesma versão do sistema operacional. Por exemplo, você não pode usar um sistema operacional Windows Server 2008 R2 ou anterior para criar mídia para um controlador de domínio do Windows Server 2012.
+• Os dados de origem IFM devem ser de um controlador de domínio gravável. Embora uma fonte do RODC funcione tecnicamente para criar um novo RODC, há avisos de replicação falsos positivos que o RODC de origem IFM não está replicando.
+
+Para mais informações sobre alterações na IFM, consulte [Instalação do Ntdsutil.exe de alterações de mídia](../../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM). Se a mídia for protegida por SYSKEY, o Gerenciador do Servidor solicitará a senha da imagem durante a verificação.
   
 ![Instalar o RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_PSIFM.png)  
   
@@ -597,7 +607,7 @@ O argumento do cmdlet ADDSDeployment em Opções Adicionais é:
   
 A página **Opções de revisão** permite que você valide suas configurações e se assegure de que elas cumprem os requisitos, antes de iniciar a instalação. Esta não é a última oportunidade de interromper a instalação usando o Gerenciador do Servidor. Essa página simplesmente permite que você examine e confirme suas configurações antes de continuar.  
   
-A página **Opções de revisão** do Gerenciador do Servidor também oferece um botão **Exibir Script** para criar um arquivo de texto Unicode contendo a configuração atual de ADDSDeployment como um script simples do Windows PowerShell. Isso permite que você use a interface gráfica do Gerenciador do Servidor como um estúdio de implantação do Windows PowerShell. Use o Assistente de Configuração dos Serviços de Domínio do Active Directory para configurar opções, exportar a configuração e então cancelar o assistente. Esse processo cria um exemplo válido e sintaticamente correto para modificações adicionais ou uso direto. Por exemplo:   
+A página **Opções de revisão** do Gerenciador do Servidor também oferece um botão **Exibir Script** para criar um arquivo de texto Unicode contendo a configuração atual de ADDSDeployment como um script simples do Windows PowerShell. Isso permite que você use a interface gráfica do Gerenciador do Servidor como um estúdio de implantação do Windows PowerShell. Use o Assistente de Configuração dos Serviços de Domínio do Active Directory para configurar opções, exportar a configuração e então cancelar o assistente. Esse processo cria um exemplo válido e sintaticamente correto para modificações adicionais ou uso direto. Por exemplo:  
   
 ```  
 #  

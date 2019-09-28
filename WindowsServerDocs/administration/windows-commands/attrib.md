@@ -1,8 +1,8 @@
 ---
 title: attrib
-description: Tópico de comandos do Windows para **attrib** -exibe, define ou Remove atributos atribuídos a arquivos ou diretórios.
+description: O tópico de comandos do Windows para **attrib** -exibe, define ou remove atributos atribuídos a arquivos ou diretórios.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f640af2c7957e43dd3f31dfa732bfc887112651
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 702bad9e48456898d38ba9094910b1419e724a76
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841087"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382610"
 ---
 # <a name="attrib"></a>attrib
 
 
 
-Exibe, define ou remove os atributos atribuídos a arquivos ou diretórios. Se usado sem parâmetros, **attrib** exibe os atributos de todos os arquivos no diretório atual.
+Exibe, define ou remove atributos atribuídos a arquivos ou diretórios. Se usado sem parâmetros, **attrib** exibe atributos de todos os arquivos no diretório atual.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -38,38 +38,38 @@ attrib [{+|-}r] [{+|-}a] [{+|-}s] [{+|-}h] [{+|-}i] [<Drive>:][<Path>][<FileName
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|{+\|-}r|Conjuntos (**+**) ou limpa (**-**) o atributo de arquivo somente leitura.|
-|{+\|-}a|Conjuntos (**+**) ou limpa (**-**) o atributo de arquivo.|
-|{+\|-}s|Conjuntos (**+**) ou limpa (**-**) o atributo de arquivo do sistema.|
-|{+\|-}h|Conjuntos (**+**) ou limpa (**-**) o atributo de arquivo oculto.|
-|{+\|-}i|Conjuntos (**+**) ou limpa (**-**) o atributo de arquivo não conteúdo indexado.|
-|[\<Drive>:][<Path>][<FileName>]|Especifica o local e o nome do diretório, arquivo ou grupo de arquivos para o qual você deseja exibir ou alterar os atributos. Você pode usar o **?** e **&#42;** caracteres curinga no *FileName* parâmetro para exibir ou alterar os atributos de um grupo de arquivos.|
-|/s|Aplica-se **attrib** e quaisquer opções de linha de comando para arquivos correspondentes no diretório atual e todos os seus subdiretórios.|
-|/d|Aplica-se **attrib** e quaisquer opções de linha de comando para diretórios.|
-|/l|Aplica-se **attrib** e quaisquer opções de linha de comando para o Link simbólico, em vez do destino do Link simbólico.|
+|{+ \|-} r|Define ( **+** ) ou limpa ( **-** ) o atributo de arquivo somente leitura.|
+|{+ \|-} a|Define ( **+** ) ou limpa ( **-** ) o atributo arquivo morto.|
+|{+ \|-} s|Define ( **+** ) ou limpa ( **-** ) o atributo de arquivo do sistema.|
+|{+ \|-} h|Define ( **+** ) ou limpa ( **-** ) o atributo de arquivo oculto.|
+|{+ \|-} i|Define ( **+** ) ou limpa ( **-** ) o atributo de arquivo não indexado sem conteúdo.|
+|[\<Drive >:] [<Path>] [<FileName>]|Especifica o local e o nome do diretório, arquivo ou grupo de arquivos para os quais você deseja exibir ou alterar atributos. Você pode usar o **?** e **&#42;** caracteres curinga no parâmetro *filename* para exibir ou alterar os atributos de um grupo de arquivos.|
+|/s|Aplica **atributos** e opções de linha de comando a arquivos correspondentes no diretório atual e em todos os seus subdiretórios.|
+|/d|Aplica **Atrib** e qualquer opção de linha de comando a diretórios.|
+|/l|Aplica **Atrib** e quaisquer opções de linha de comando ao link simbólico, em vez do destino do link simbólico.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
--   Você pode usar caracteres curinga (**?** e **&#42;**) com o *FileName* parâmetro para exibir ou alterar os atributos de um grupo de arquivos.
--   Se um arquivo tiver o sistema (**s**) ou oculto (**h**) conjunto de atributos, você deve limpar o atributo antes de alterar todos os outros atributos para esse arquivo.
--   O atributo Archive (**um**) marca os arquivos que foram alterados desde a última vez em que foi feito o backup. Observe que o **xcopy** usa atributos de arquivo de comando.
+-   Você pode usar caracteres curinga ( **?** e **&#42;** ) com o parâmetro *filename* para exibir ou alterar os atributos de um grupo de arquivos.
+-   Se um arquivo tiver o (s) sistema (**es**) ou conjunto de atributos oculto (**h**), você deverá limpar o atributo antes de poder alterar qualquer outro atributo para esse arquivo.
+-   O atributo de arquivo (**a**) marca os arquivos que foram alterados desde a última vez em que foi feito o backup. Observe que o comando **xcopy** usa atributos de arquivo morto.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para exibir os atributos de um arquivo denominado INFOS86 está localizado no diretório atual, digite:
+Para exibir os atributos de um arquivo chamado News86 que está localizado no diretório atual, digite:
 ```
 attrib news86 
 ```
-Para atribuir o atributo somente leitura para o arquivo denominado report. txt, digite:
+Para atribuir o atributo somente leitura ao arquivo chamado Report. txt, digite:
 ```
 attrib +r report.txt 
 ```
-Para remover o atributo somente leitura de arquivos na pasta pública e seus subdiretórios em um disco na unidade B, digite:
+Para remover o atributo somente leitura dos arquivos no diretório público e de seus subdiretórios em um disco na unidade B, digite:
 ```
 attrib -r b:\public\*.* /s 
 ```
-Para definir o atributo de arquivo morto para todos os arquivos da unidade A e, em seguida, desmarque o atributo de arquivo para arquivos com a extensão. bak, digite:
+Para definir o atributo arquivo morto para todos os arquivos na unidade A e, em seguida, limpe o atributo arquivo morto para arquivos com a extensão. bak, digite:
 ```
 attrib +a a:*.* & attrib -a a:*.bak 
 ```

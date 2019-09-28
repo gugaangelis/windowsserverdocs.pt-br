@@ -7,26 +7,26 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e6f115cab76cdbb3cf810042a42cc30e84edd904
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2efc2156706e20d4749560b188e6ee1b442152f2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858427"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402465"
 ---
 # <a name="understanding-active-directory-site-topology"></a>Noções básicas sobre a topologia de site do Active Directory
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-A topologia de site afeta significativamente o desempenho da rede e a capacidade dos seus usuários acessem recursos da rede. Antes de começar a projetar a topologia de site, se familiarizar com as funções de sites no Windows Server 2008, as topologias de rede diferente que as organizações geralmente usam, a função de proprietário da topologia do site e algumas replicação do Active Directory conceitos.  
+A topologia do site afeta significativamente o desempenho da sua rede e a capacidade de seus usuários acessarem os recursos da rede. Antes de começar a projetar sua topologia de site, familiarize-se com as funções para sites no Windows Server 2008, as diferentes topologias de rede que as organizações normalmente usam, a função do proprietário da topologia do site e alguns Active Directory replicação principais.  
   
 ## <a name="in-this-section"></a>Nesta seção  
   
--   [Funções de site](../../ad-ds/plan/Site-Functions.md)  
+-   [Funções do site](../../ad-ds/plan/Site-Functions.md)  
   
--   [Função de proprietário de topologia de site](../../ad-ds/plan/Site-Topology-Owner-Role.md)  
+-   [Função de proprietário da topologia do site](../../ad-ds/plan/Site-Topology-Owner-Role.md)  
   
 -   [Conceitos de replicação do Active Directory](../../ad-ds/get-started/replication/Active-Directory-Replication-Concepts.md)  
   

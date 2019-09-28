@@ -2,7 +2,7 @@
 title: diskraid
 description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f2dfda058a7ca266adedbacf8860137c5d1782c7
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: f72e91f856da3b24e7450381b293f4b365d914f3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867074"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377803"
 ---
 # <a name="diskraid"></a>diskraid
 
@@ -561,7 +561,7 @@ Para especificar o tamanho usando outras unidades, use um dos seguintes sufixos 
 
 **unidades =**
 
-Especifica o \<> drive_number para as unidades a serem usadas ao criar um LUN. Se o parâmetro **size =** não for especificado, o LUN criado será o maior tamanho possível permitido por todas as unidades especificadas. Os provedores usam as unidades na ordem especificada quando possível.
+Especifica o > de @no__t 0drive_number para as unidades a serem usadas ao criar um LUN. Se o parâmetro **size =** não for especificado, o LUN criado será o maior tamanho possível permitido por todas as unidades especificadas. Os provedores usam as unidades na ordem especificada quando possível.
 
 **NOERR**
 
@@ -944,7 +944,7 @@ replace drive=<drive_number>
 
 **unidade =**
 
-Especifica o \<> drive_number para a unidade a ser substituída.
+Especifica o > de @no__t 0drive_number para a unidade a ser substituída.
 
 #### <a name="remarks"></a>Comentários
 
@@ -982,59 +982,59 @@ Select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 #### <a name="parameters"></a>Parâmetros
 
-**object**
+**objeto**
 
 Especifica o tipo de objeto a ser selecionado. O \<tipo de > de objeto pode ser **Provider**, **Subsystem**, **Controller**, **drive**ou **LUN**.
 
-**hbaport** [\<n >]
+**hbaport** [\<N >]
 
 Define o foco para a porta HBA local especificada. Se nenhuma porta HBA for especificada, o comando exibirá a porta HBA selecionada no momento (se houver). A especificação de um índice de porta HBA inválido resulta em nenhuma porta HBA em foco. A seleção de uma porta HBA anula a seleção de todos os adaptadores iniciadores e portais iniciadores selecionados.
 
-**IADAPTER** [\<n >]
+**IADAPTER** [\<N >]
 
 Define o foco para o adaptador do iniciador iSCSI local especificado. Se nenhum adaptador do iniciador for especificado, o comando exibirá o adaptador do iniciador selecionado no momento (se houver). A especificação de um índice de adaptador iniciador inválido resulta em nenhum adaptador de iniciador em foco. A seleção de um adaptador de iniciador anula a seleção de portas HBA selecionadas e portais do iniciador.
 
-**IPORTAL** [\<n >]
+**IPORTAL** [\<N >]
 
 Define o foco para o portal do iniciador iSCSI local especificado no adaptador do iniciador iSCSI selecionado. Se nenhum portal do iniciador for especificado, o comando exibirá o portal do iniciador selecionado no momento (se houver). A especificação de um índice inválido do portal do iniciador resulta em nenhum portal do iniciador selecionado.
 
-**provedor** de [\<n >]
+**provedor** [\<N >]
 
 Define o foco para o provedor especificado. Se nenhum provedor for especificado, o comando exibirá o provedor selecionado no momento (se houver). A especificação de um índice de provedor inválido resulta em nenhum provedor em foco.
 
-**subsistema** [\<n >]
+**subsistema** [\<N >]
 
 Define o foco para o subsistema especificado. Se nenhum subsistema for especificado, o comando exibirá o subsistema com foco (se houver). A especificação de um índice de subsistema inválido resulta em nenhum subsistema em foco. A seleção de um subsistema seleciona implicitamente seu provedor associado.
 
-**controlador** do [\<n >]
+**controlador** [\<N >]
 
 Define o foco para o controlador especificado no subsistema selecionado no momento. Se nenhum controlador for especificado, o comando exibirá o controlador selecionado no momento (se houver). A especificação de um índice de controlador inválido resulta em nenhum controlador em foco. A seleção de um controlador anula a seleção de quaisquer portas de controlador, unidades, LUNs, portais de destino, destinos e grupos do portal de destino selecionados.
 
-**porta** do [\<n >]
+**porta** [\<N >]
 
 Define o foco para a porta do controlador especificado no controlador selecionado no momento. Se nenhuma porta for especificada, o comando exibirá a porta selecionada no momento (se houver). A especificação de um índice de porta inválido resulta em nenhuma porta selecionada.
 
-**unidade** [\<n >]
+**unidade** [\<N >]
 
 Define o foco para a unidade especificada ou o eixo físico no subsistema selecionado no momento. Se nenhuma unidade for especificada, o comando exibirá a unidade selecionada no momento (se houver). A especificação de um índice de unidade inválido resulta em nenhuma unidade em foco. A seleção de uma unidade anula a seleção de todos os controladores, portas do controlador, LUNs, portais de destino, destinos e grupos do portal de destino selecionados.
 
-**LUN** [\<n >]
+**LUN** [\<N >]
 
 Define o foco para o LUN especificado no subsistema selecionado no momento. Se nenhum LUN for especificado, o comando exibirá o LUN selecionado no momento (se houver). A especificação de um índice LUN inválido resulta em nenhum LUN selecionado. A seleção de um LUN anula a seleção de todos os controladores, portas do controlador, unidades, portais de destino, destinos e grupos do portal de destino selecionados.
 
-**tportal** [\<n >]
+**tportal** [\<N >]
 
 Define o foco para o portal de destino iSCSI especificado no subsistema selecionado no momento. Se nenhum portal de destino for especificado, o comando exibirá o portal de destino selecionado no momento (se houver). A especificação de um índice do portal de destino inválido resulta em nenhum portal de destino selecionado. A seleção de um portal de destino desmarca quaisquer controladores, portas do controlador, unidades, LUNs, destinos e grupos do portal de destino.
 
-**destino** [\<n >]
+**target** [\<N >]
 
 Define o foco para o destino iSCSI especificado no subsistema selecionado no momento. Se nenhum destino for especificado, o comando exibirá o destino selecionado no momento (se houver). A especificação de um índice de destino inválido resulta em nenhum destino selecionado. A seleção de um destino desmarca quaisquer controladores, portas do controlador, unidades, LUNs, portais de destino e grupos do portal de destino.
 
-**TPGROUP** [\<n >]
+**TPGROUP** [\<N >]
 
 Define o foco para o grupo do portal de destino iSCSI especificado no destino iSCSI selecionado no momento. Se nenhum grupo do portal de destino for especificado, o comando exibirá o grupo do portal de destino selecionado no momento (se houver). A especificação de um índice de grupo do portal de destino inválido resulta em nenhum grupo de portal de destino em foco.
 
-[\<n >]
+[\<N >]
 
 Especifica o \<número do objeto > a ser selecionado. Se o <object number> especificado não for válido, todas as seleções existentes para objetos do tipo especificado serão limpas. Se não <object number> for especificado, o objeto atual será exibido.
 

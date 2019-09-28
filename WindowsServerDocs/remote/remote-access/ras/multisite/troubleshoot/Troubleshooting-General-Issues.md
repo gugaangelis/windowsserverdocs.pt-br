@@ -1,9 +1,9 @@
 ---
 title: Solução de problemas gerais
-description: Este tópico faz parte do guia de implantar vários servidores de acesso remoto em uma implantação multissite no Windows Server 2016.
+description: Este tópico faz parte do guia implantar vários servidores de acesso remoto em uma implantação multissite no Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,38 +12,38 @@ ms.topic: article
 ms.assetid: 354ae5e3-bae1-44f9-afd7-7eaba70f2346
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 87614ac3b83eaacefb4ac5f9fddef238ed500953
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: a2b8d7decad482ca8756aa4d82baa35abf16f5fe
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282550"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404451"
 ---
 # <a name="troubleshooting-general-issues"></a>Solução de problemas gerais
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Este tópico contém informações sobre solução de problemas gerais relacionados ao acesso remoto.  
+Este tópico contém informações de solução de problemas gerais relacionadas ao acesso remoto.  
   
-## <a name="gpo-retrieval-error"></a>Erro na recuperação de GPO  
-**Erro recebido**. Não não possível recuperar as configurações de GPO do servidor DirectAccess. Se que você tem permissões de edição para o GPO.  
+## <a name="gpo-retrieval-error"></a>Erro de recuperação de GPO  
+**Erro recebido**. As configurações de GPO do servidor DirectAccess não podem ser recuperadas. Verifique se você tem permissões de edição para o GPO.  
   
 O console de gerenciamento de acesso remoto não está respondendo depois de receber esse erro.  
   
 **Causa**  
   
-O DirectAccess não pode acessar o GPO de um dos pontos de entrada na implantação e assim a configuração falhará ao carregar.  
+O DirectAccess não pode acessar o GPO de um dos pontos de entrada na implantação e, como resultado, a configuração não é carregada.  
   
 **Solução**  
   
-Certifique-se de que cada ponto de entrada na implantação tem um GPO correspondente em seu controlador de domínio e verifique se que o usuário conectado tem permissões leitura e gravação para todos os GPOs configurados na implantação do acesso remoto.  
+Certifique-se de que cada ponto de entrada na implantação tenha um GPO correspondente em seu controlador de domínio e verifique se o usuário conectado tem permissões de leitura e gravação para todos os GPOs configurados na implantação de acesso remoto.  
   
-Como alternativa, use os cmdlets de configuração em vez de usar o console de gerenciamento de acesso remoto. Por exemplo, usando `Get-RemoteAccess` e `Get-DAEntryPoint`.  
+Como alternativa, use os cmdlets de configuração em vez de usar o console de gerenciamento de acesso remoto; por exemplo, usando `Get-RemoteAccess` e `Get-DAEntryPoint`.  
   
 > [!NOTE]  
 > Esse cenário não ocorre quando o GPO do servidor do ponto de entrada atual não está disponível.  
   
-Você pode usar o `Get-DAEntryPointDC` cmdlet para listar todos os controladores de domínio que armazenam os GPOs de servidor e `Get-DAMultiSite` em conjunto com `Get-RemoteAccess` para recuperar uma lista completa dos GPOs de servidor na implantação. Por exemplo:  
+Você pode usar o cmdlet `Get-DAEntryPointDC` para listar todos os controladores de domínio que armazenam GPOs do servidor e `Get-DAMultiSite` em conjunto com o `Get-RemoteAccess` para recuperar uma lista completa dos GPOs do servidor na implantação. Por exemplo:  
   
 ```  
 $ServerGpos = Get-DAEntryPointDC | ForEach-Object {   
@@ -54,43 +54,43 @@ $ServerGpos = Get-DAEntryPointDC | ForEach-Object {
 $ServerGpos | ForEach-Object { $GpoName = $_['GpoName'] ; $DC = $_['DC'] ; Write-Host "Server GPO '$GpoName' on DC '$DC'" }  
 ```  
   
-## <a name="windows-7-to-windows-8-or-10-client-upgrade"></a>Windows 7 para o Windows 8 ou 10 atualização de cliente  
-**Sintoma**. Depois que um cliente do Windows 7 é atualizado para Windows 10 ou Windows 8 em uma implantação multissite, a conexão do DirectAccess não estiver visível na lista de redes.  
+## <a name="windows-7-to-windows-8-or-10-client-upgrade"></a>Atualização de cliente do Windows 7 para o Windows 8 ou 10  
+**Sintoma**. Depois que um cliente do Windows 7 é atualizado para o Windows 10 ou o Windows 8 em uma implantação multissite, a conexão do DirectAccess não fica visível na lista redes.  
   
 **Causa**  
   
-Windows 7 GPOs em uma implantação multissite não contêm a configuração do Assistente de conectividade de rede do Windows 8.  
+Os GPOs do Windows 7 em uma implantação multissite não contêm a configuração do assistente de conectividade de rede do Windows 8.  
   
- Os clientes do Windows 7 devem usar o Assistente de conectividade do DirectAccess para monitorar seu status de conectividade do DirectAccess que requer uma configuração manual separada no GPOs de cliente do Windows 7. Quando os clientes do Windows 7 são atualizados para Windows 10 ou Windows 8, o Assistente de conectividade de rede não funcionará se o GPO do cliente Windows 7 ainda está aplicado.  
+ Os clientes do Windows 7 devem usar o assistente de conectividade do DirectAccess para monitorar o status de conectividade do DirectAccess, que requer uma configuração manual separada nos GPOs do cliente do Windows 7. Quando os clientes do Windows 7 forem atualizados para o Windows 10 ou o Windows 8, o assistente de conectividade de rede não funcionará se o GPO do cliente do Windows 7 ainda estiver aplicado.  
   
 **Solução**  
   
-Se o Assistente de conectividade do DirectAccess configurações nos GPOs Windows 7, você poderá resolver esse problema antes de atualizar computadores cliente, modificando os GPOs de 7 do Windows usando os seguintes cmdlets do PowerShell:  
+Se as configurações do assistente de conectividade do DirectAccess estiverem definidas nos GPOs do Windows 7, você poderá resolver esse problema antes de atualizar os computadores cliente, modificando os GPOs do Windows 7 usando os seguintes cmdlets do PowerShell:  
   
 ```  
 Set-GPRegistryValue -Name <Windows7GpoName> -Domain <DomainName> -Key "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\NetworkConnectivityAssistant" -ValueName "TemporaryValue" -Type Dword -Value 1  
 Remove-GPRegistryValue -Name <Windows7GpoName> -Domain <DomainName> -Key "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\NetworkConnectivityAssistant"  
 ```  
   
-Se um cliente já foi atualizado ou não está configurado o DCA, mova o computador cliente para o grupo de segurança do Windows 10 ou Windows 8.  
+Se um cliente já tiver sido atualizado ou o DCA não estiver configurado, mova o computador cliente para o grupo de segurança Windows 10 ou Windows 8.  
   
 ## <a name="general-cmdlet-errors"></a>Erros gerais de cmdlet  
   
 -   **Problema 1**  
   
-    **Erro recebido**. O controlador de domínio < controlador_de_domínio > não pode ser alcançado para < nome_do_servidor ou nome_do_ponto_de_entrada >.  
+    **Erro recebido**. Não é possível acessar o controlador de domínio < domain_controller > para < server_name ou entry_point_name >.  
   
     **Causa**  
   
-    Para manter a consistência da configuração em uma implantação multissite, é importante assegurar que cada GPO seja gerenciado por um único controlador de domínio. Quando o controlador de domínio que gerencia o GPO do servidor de um ponto de entrada não estiver disponível, as definições de configuração de acesso remoto não podem ser lidas ou modificadas.  
+    Para manter a consistência da configuração em uma implantação multissite, é importante assegurar que cada GPO seja gerenciado por um único controlador de domínio. Quando o controlador de domínio que gerencia o GPO do servidor de um ponto de entrada não está disponível, as definições de configuração de acesso remoto não podem ser lidas ou modificadas.  
   
     **Solução**  
   
-    Siga o procedimento "para alterar o controlador de domínio que gerencia GPOs de servidor" descrito [2.4. Configurar GPOs](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs).  
+    Siga o procedimento "para alterar o controlador de domínio que gerencia GPOs de servidor", descrito em ,4. Configure GPOs @ no__t-0.  
   
 -   **Problema 2**  
   
-    **Erro recebido**. O controlador de domínio primário no domínio < nome_do_domínio > não pode ser alcançado.  
+    **Erro recebido**. O controlador de domínio primário no domínio < nome_do_domínio > não pode ser acessado.  
   
     **Causa**  
   
@@ -98,7 +98,7 @@ Se um cliente já foi atualizado ou não está configurado o DCA, mova o computa
   
     **Solução**  
   
-    Siga o procedimento para transferir a função de emulador do PDC", descrito na [2.4. Configurar GPOs](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs).  
+    Siga o procedimento "para transferir a função de emulador de PDC", descrito em ,4. Configure GPOs @ no__t-0.  
   
 
 

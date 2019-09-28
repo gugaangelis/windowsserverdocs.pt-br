@@ -2,18 +2,18 @@
 title: Criar uma triagem de arquivo
 description: Este artigo descreve como criar uma triagem de arquivo
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c1f261eb926eca3ead58b87aeb00a5060b9d957c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e049162e7aff449774928d6a1d25cc1116f9aee9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59815917"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403161"
 ---
 # <a name="create-a-file-screen"></a>Criar uma triagem de arquivo
 
@@ -39,7 +39,7 @@ Ao criar uma nova triagem de arquivo, você pode optar por salvar um modelo de t
 
 7.  Em **Grupos de arquivos**, selecione cada grupo de arquivos que você deseja incluir em sua triagem de arquivo. (Para marcar a caixa de seleção do grupo de arquivos, clique duas vezes no rótulo do grupo de arquivos.)
 
-    Se você quiser exibir os tipos de arquivo que um grupo de arquivos inclui e exclui, clique no rótulo do grupo de arquivo e, em seguida, clique em **editar**. Para criar um novo grupo de arquivos, clique em **criar**.
+    Se você quiser exibir os tipos de arquivo que um grupo de arquivos inclui e exclui, clique no rótulo do grupo de arquivos e clique em **Editar**. Para criar um novo grupo de arquivos, clique em **criar**.
 
 8.  Além disso, você pode configurar **Gerenciador de recursos do servidor de arquivos** para gerar uma ou mais notificações definindo opções nas guias **Email**, **Log de eventos**, **Comando** e **Relatório**. Para obter mais informações sobre opções de notificação de triagem de arquivo, consulte [Criar um modelo de triagem de arquivo](create-file-screen-template.md).
 
@@ -56,9 +56,9 @@ Ao criar uma nova triagem de arquivo, você pode optar por salvar um modelo de t
 
 ## <a name="see-also"></a>Consulte também
 
--   [Gerenciamento de triagem de arquivo](file-screening-management.md)
+-   [Gerenciamento de triagem de arquivos](file-screening-management.md)
 -   [Definir grupos de arquivos para triagem](define-file-groups-for-screening.md)
--   [Criar um modelo de tela de arquivo](create-file-screen-template.md)
--   [Editar propriedades do modelo de triagem de arquivo](edit-file-screen-template-properties.md)
+-   [Criar um modelo de triagem de arquivo](create-file-screen-template.md)
+-   [Editar propriedades de modelo de triagem de arquivo](edit-file-screen-template-properties.md)
 
 

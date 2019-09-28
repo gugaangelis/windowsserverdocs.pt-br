@@ -1,8 +1,8 @@
 ---
-title: Chamada
+title: chamada
 description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: e4331870f31309646974f5839d5aa70e534351e5
-ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
+ms.openlocfilehash: 0e5f9f2b0102c12ee0925bb434fdeddde85e34cd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590428"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379724"
 ---
-# <a name="call"></a>Chamada
+# <a name="call"></a>chamada
 
 
 
@@ -41,17 +41,17 @@ call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 
 |           Parâmetro           |                                                                         Descrição                                                                          |
 |-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [\<Unidade >:] [\<caminho >]<FileName> | Especifica o local e o nome do programa em lotes que você deseja chamar. O parâmetro *filename* é necessário e deve ter uma extensão. bat ou. cmd. |
-|      \<> Batchparameters       |                                            Especifica qualquer informação de linha de comando exigida pelo programa em lotes.                                             |
-|           :\<Rótulo >           |                                            Especifica o rótulo para o qual você deseja que um controle de programa do lote salte.                                             |
-|         \<Argumentos >          |                     Especifica as informações de linha de comando a serem passadas para a nova instância do programa em lotes, começando em *: rótulo.*                     |
+| [\<Drive >:] [\<Path >] <FileName> | Especifica o local e o nome do programa em lotes que você deseja chamar. O parâmetro *filename* é necessário e deve ter uma extensão. bat ou. cmd. |
+|      \<BatchParameters >       |                                            Especifica qualquer informação de linha de comando exigida pelo programa em lotes.                                             |
+|           : \<Label >           |                                            Especifica o rótulo para o qual você deseja que um controle de programa do lote salte.                                             |
+|         \<Arguments >          |                     Especifica as informações de linha de comando a serem passadas para a nova instância do programa em lotes, começando em *: rótulo.*                     |
 |              /?               |                                                             Exibe a ajuda no prompt de comando.                                                             |
 
 ## <a name="batch-parameters"></a>Parâmetros de lote
 
 As referências de argumento de script de lote ( **% 0**, **% 1**,...) estão listadas nas tabelas a seguir.
 
-**%\*** em um script em lotes refere-se a todos os argumentos (por exemplo, **% 1**, **% 2**, **% 3**...)
+**% @ no__t-2** em um script em lotes refere-se a todos os argumentos (por exemplo, **% 1**, **% 2**, **% 3**...)
 
 Você pode usar as seguintes sintaxes opcionais como substituições para parâmetros de lote ( **% n**):
 
@@ -78,7 +78,7 @@ A tabela a seguir mostra como você pode combinar modificadores com os parâmetr
 |% ~ DP $ caminho: 1|Pesquisa os diretórios listados na variável de ambiente PATH para **% 1**e, em seguida, expande para a letra da unidade e o caminho do primeiro diretório encontrado.|
 |% ~ ftza1|Expande **% 1** para exibir uma saída semelhante ao comando **dir** .|
 
-Nos exemplos acima, **% 1** e o caminho podem ser substituídos por outros valores válidos. A <strong>%~</strong> sintaxe é encerrada por um número de argumento válido. Os <strong>%~</strong> modificadores não podem ser usados **% \\ \*** com.
+Nos exemplos acima, **% 1** e o caminho podem ser substituídos por outros valores válidos. A sintaxe <strong>%~</strong> é encerrada por um número de argumento válido. Os modificadores <strong>%~</strong> não podem ser usados com **% @ no__t-4 @ no__t-5**.
 
 ## <a name="remarks"></a>Comentários
 
@@ -90,7 +90,7 @@ Nos exemplos acima, **% 1** e o caminho podem ser substituídos por outros valor
     Ao usar **Call** com o parâmetro *Label* , você cria um novo contexto de arquivo em lotes e passa o controle para a instrução após o rótulo especificado. Na primeira vez que o final do arquivo em lotes é encontrado (ou seja, após saltar para o rótulo), o controle retorna à instrução após a instrução **Call** . Na segunda vez que o final do arquivo em lotes for encontrado, o script em lotes será encerrado.
 -   Usando pipes e símbolos de redirecionamento
 
-    Não use Pipes ( **|** ) e símbolos de redirecionamento **<** ( **>** ou) com **Call**.
+    Não use Pipes ( **|** ) e símbolos de redirecionamento ( **<** ou **>** ) com **chamada**.
 -   Fazendo uma chamada recursiva
 
     Você pode criar um programa em lotes que chama a si mesmo. No entanto, você deve fornecer uma condição de saída. Caso contrário, os programas de lote pai e filho podem fazer loops informativos.

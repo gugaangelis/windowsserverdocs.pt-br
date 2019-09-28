@@ -2,18 +2,18 @@
 title: Habilitar ou desabilitar referências e Failback de cliente
 description: Este artigo descreve como habilitar ou desabilitar referências e failback de cliente.
 ms.date: 6/5/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 20ac61f86ede938efd574fc6a048775437a51211
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e7dd11b530c61e2536db425d3e85e0fbe458d349
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835017"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386225"
 ---
 # <a name="enable-or-disable-referrals-and-client-failback"></a>Habilitar ou desabilitar referências e Failback de cliente
 
@@ -39,11 +39,11 @@ Ao desabilitar uma referência de servidor de namespace ou destino de pasta, voc
 
 
 > [!TIP]
-> Para habilitar ou desabilitar referências usando o Windows PowerShell, use o [DfsnRootTarget conjunto – estado](https://technet.microsoft.com/library/jj884266.aspx) ou [DfsnServerConfiguration conjunto](https://technet.microsoft.com/library/jj884277.aspx) cmdlets, que foram introduzidos no Windows Server 2012.
+> Para habilitar ou desabilitar referências usando o Windows PowerShell, use os cmdlets [set-DfsnRootTarget – State](https://technet.microsoft.com/library/jj884266.aspx) ou [set-DfsnServerConfiguration](https://technet.microsoft.com/library/jj884277.aspx) , que foram introduzidos no Windows Server 2012.
 
 ## <a name="enable-client-failback"></a>Habilitar failback de cliente
 
-Se um destino ficar indisponível, você poderá configurar clientes para fazer failback para o destino depois que ele for restaurado. Para o failback funcione, os computadores cliente devem cumprir os requisitos listados no tópico a seguir: [Examine os requisitos do cliente de Namespaces DFS](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx).
+Se um destino ficar indisponível, você poderá configurar clientes para fazer failback para o destino depois que ele for restaurado. Para que o failback funcione, os computadores cliente devem atender aos requisitos listados no tópico a seguir: [Examine os requisitos do cliente de namespaces do DFS](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx).
 
 
 > [!NOTE]
@@ -70,6 +70,6 @@ Pastas com destinos herdam as configurações de failback de cliente da raiz do 
 
 ## <a name="see-also"></a>Consulte também 
 
--   [Ajuste os Namespaces do DFS](tuning-dfs-namespaces.md)
--   [Examine os requisitos do cliente de Namespaces DFS](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx)
--   [Delegar permissões de gerenciamento para Namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)
+-   [Ajustar namespaces do DFS](tuning-dfs-namespaces.md)
+-   [Examinar os requisitos do cliente de namespaces do DFS](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx)
+-   [Delegar permissões de gerenciamento para namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)

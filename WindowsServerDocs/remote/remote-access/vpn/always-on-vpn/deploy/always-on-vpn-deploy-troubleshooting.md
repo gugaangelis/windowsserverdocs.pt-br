@@ -1,7 +1,7 @@
 ---
 title: Solucionar problemas de VPN Always On
 description: Este tópico fornece instruções para verificar e solucionar problemas de implantação de VPN Always On no Windows Server 2016.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 4d08164e-3cc8-44e5-a319-9671e1ac294a
@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 ms.date: 06/11/2018
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 60873c8bbf71ad5afa58bd9e19b1a3fd650bc65f
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 649fbc16e3dfef2ed1061d0ba6a5c22a8712b186
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871352"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404373"
 ---
 # <a name="troubleshoot-always-on-vpn"></a>Solucionar problemas de VPN Always On 
 
@@ -118,7 +118,7 @@ Procure eventos da origem RasClient. Todas as mensagens de erro retornam o códi
 
 ## <a name="nps-logs"></a>Logs do NPS
 
-O NPS cria e armazena os logs de contabilidade do NPS. Por padrão, eles são armazenados em arquivos de log\\\\ %\\SystemRoot% system32 em um arquivo chamado em*xxxx*. txt, em que *xxxx* é a data em que o arquivo foi criado.
+O NPS cria e armazena os logs de contabilidade do NPS. Por padrão, eles são armazenados em% SYSTEMROOT% \\System32 @ no__t-1Logfiles @ no__t-2 em um arquivo chamado em*xxxx*. txt, em que *xxxx* é a data em que o arquivo foi criado.
 
 Por padrão, esses logs estão em formato de valores separados por vírgula, mas não incluem uma linha de cabeçalho. A linha do cabeçalho é:
 

@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getmodificationtime
-description: Tópico de comandos do Windows para **getmodificationtime bitsadmin** -recupera a última hora em que o trabalho foi modificado ou dados foi transferidos com êxito.
+description: O tópico de comandos do Windows para **Bitsadmin getmodificatime** -recupera a última vez que o trabalho foi modificado ou os dados foram transferidos com êxito.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4257f0ae4868b2f18221ab99268384f778c4bbbe
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 48b4d252ce6161b288726190f41f08c64efdbcf2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837017"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381530"
 ---
 # <a name="bitsadmin-getmodificationtime"></a>bitsadmin getmodificationtime
 
 
 
-Recupera a última vez em que o trabalho foi modificado ou dados foi transferidos com êxito.
+Recupera a última vez que o trabalho foi modificado ou os dados foram transferidos com êxito.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,15 +36,15 @@ bitsadmin /GetModificationTime <Job>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir recupera a hora da última modificação do trabalho nomeado *myDownloadJob*.
+O exemplo a seguir recupera a hora da última modificação para o trabalho chamado *myDownloadJob*.
 ```
 C:\>bitsadmin /GetModificationTime myDownloadJob
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

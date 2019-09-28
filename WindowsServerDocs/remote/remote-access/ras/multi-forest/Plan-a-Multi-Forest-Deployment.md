@@ -1,9 +1,9 @@
 ---
 title: Planejar uma implantação de várias florestas
-description: Este tópico faz parte do guia de implantação de acesso remoto em um ambiente de várias florestas no Windows Server 2016.
+description: Este tópico faz parte do guia implantar o acesso remoto em um ambiente de várias florestas no Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,16 +12,16 @@ ms.topic: article
 ms.assetid: 8acc260f-d6d1-4d32-9e3a-1fd0b2a71586
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a2f14fdb2fd3ab6f0a89c8d8c1a8853041dcba94
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 2a0f04a3ff7797d18f7647416dc99319860c7030
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281007"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404513"
 ---
 # <a name="plan-a-multi-forest-deployment"></a>Planejar uma implantação de várias florestas
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico descreve as etapas de planejamento necessárias à configuração do Acesso Remoto em uma implantação de várias florestas.  
   
@@ -42,15 +42,15 @@ Além disso, o administrador do Acesso Remoto precisa ser um administrador local
 Você precisa configurar pelo menos um grupo de segurança na nova floresta para computadores cliente do DirectAccess na nova floresta. A razão é que um único grupo de segurança não pode incluir contas de várias florestas.  
   
 > [!NOTE]  
-> -   O DirectAccess requer pelo menos um Windows 10&reg; ou Windows&reg; 8 grupo de segurança para cada floresta. No entanto, é recomendável ter um Windows 10 ou o grupo de segurança de cliente do Windows 8 para cada domínio que contenha clientes Windows 10 ou Windows 8.  
-> -   Quando a funcionalidade multissite está habilitada, o DirectAccess requer pelo menos 7 do Windows&reg; grupo de segurança do cliente por floresta para cada ponto de entrada do DirectAccess no qual Windows 7 há suporte para computadores cliente. No entanto, é recomendável ter um grupo de segurança de cliente Windows 7 separado para cada ponto de entrada para cada domínio que contém os clientes do Windows 7.  
+> -   O DirectAccess requer pelo menos um grupo de segurança do cliente Windows 10 @ no__t-0 ou Windows @ no__t-1 8 para cada floresta. No entanto, é recomendável ter um grupo de segurança de cliente do Windows 10 ou do Windows 8 para cada domínio que contenha clientes Windows 10 ou Windows 8.  
+> -   Quando o multissite está habilitado, o DirectAccess requer pelo menos um grupo de segurança do cliente do Windows 7 @ no__t-0 por floresta para cada ponto de entrada do DirectAccess no qual os computadores cliente do Windows 7 têm suporte. No entanto, é recomendável ter um grupo de segurança de cliente do Windows 7 separado para cada ponto de entrada para cada domínio que contenha clientes do Windows 7.  
 >   
 > Para que o DirectAccess seja aplicado a computadores cliente em domínios adicionais, é preciso criar GPOs de cliente nesses domínios. A adição de grupos de segurança dispara a geração de novos GPOs de cliente para os novos domínios. Portanto, se você adicionar um novo grupo de segurança de um novo domínio à lista de grupos de segurança de cliente do DirectAccess, um GPO de cliente será criado automaticamente no novo domínio e os computadores cliente do novo domínio receberão as configurações do DirectAccess através do GPO de cliente.  
 >   
 > Observe que, se você adicionar um cliente de um novo domínio a um grupo de segurança existente que já está configurado como um grupo de segurança de cliente do DirectAccess, o GPO de cliente não será criado automaticamente pelo DirectAccess no novo domínio. O cliente no novo domínio não receberá as configurações do DirectAccess e não poderá se conectar usando o DirectAccess.  
   
 ## <a name="plan-certification-authorities"></a>Planejar autoridades de certificação  
-Se a implantação do DirectAccess estiver configurada para usar a autenticação OTP (senha de uso único), cada floresta conterá os mesmos modelos de certificado de autenticação, mas com valores de Oid diferentes. Como resultado, as florestas não podem ser configuradas como uma unidade de configuração única. Para resolver esse problema e configurar a OTP em um ambiente de várias florestas, consulte a seção "Configurar a OTP em uma implantação de várias floresta" no tópico [configurar uma implantação de várias florestas](Configure-a-Multi-Forest-Deployment.md).  
+Se a implantação do DirectAccess estiver configurada para usar a autenticação OTP (senha de uso único), cada floresta conterá os mesmos modelos de certificado de autenticação, mas com valores de Oid diferentes. Como resultado, as florestas não podem ser configuradas como uma unidade de configuração única. Para resolver esse problema e configurar a OTP em um ambiente de várias florestas, consulte a seção "configurar a OTP em uma implantação de várias florestas" no tópico [Configurar uma implantação de várias florestas](Configure-a-Multi-Forest-Deployment.md).  
   
 Quando é usada a autenticação de certificado de computador IPsec, todos os computadores cliente e servidor precisam ter um certificado de computador emitido pela mesma autoridade de certificação raiz ou intermediária, seja qual for a floresta a que pertencem.  
   

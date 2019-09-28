@@ -2,18 +2,18 @@
 title: Criar uma cota
 description: Este artigo descreve como criar uma cota baseada em um modelo
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f3c677f5ebf7dda44f4b99a64d0fbf8d2c72b92e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6b199d8cc520021fcbbe32397997cc483f9c68cb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883187"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403132"
 ---
 # <a name="create-a-quota"></a>Criar uma cota
 
@@ -51,8 +51,8 @@ Quando você cria uma cota, você pode escolher um caminho de cota, que é um vo
 
 ## <a name="see-also"></a>Consulte também
 
--   [Gerenciamento de cotas](quota-management.md)
--   [Crie uma cota de aplicação](create-auto-apply-quota.md)
+-   [Gerenciamento de cota](quota-management.md)
+-   [Criar uma cota de aplicação automática](create-auto-apply-quota.md)
 -   [Criar um modelo de cota](create-quota-template.md)
 
 

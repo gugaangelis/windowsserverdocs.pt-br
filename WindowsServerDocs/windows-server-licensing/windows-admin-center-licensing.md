@@ -1,28 +1,28 @@
 ---
-title: Conteúdos sobre licenciamento do Windows Server e o Windows Admin Center
-description: Saiba mais sobre o do Windows Admin Center contratos de licenciamento.
+title: Conteúdo de licenciamento para o Windows Server e o centro de administração do Windows
+description: Saiba mais sobre os contratos de licenciamento do centro de administração do Windows.
 ms.topic: reference
 author: eross-msft
 ms.author: lizross
 ms.date: 06/11/2019
-ms.prod: windows-server-threshold
-ms.openlocfilehash: aee759de2f242afc661ccf230d1234031a764b69
-ms.sourcegitcommit: 9109f35563471ec0f7165bf3d1e1b448fe6e1924
+ms.prod: windows-server
+ms.openlocfilehash: ad9e0bfb77464e99118ebded5745abf6e23e687f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67346523"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392521"
 ---
-# <a name="windows-admin-center---license-terms"></a>Windows Admin Center - termos de licença
+# <a name="windows-admin-center---license-terms"></a>Centro de administração do Windows-termos de licença
 
-Leia nossos termos de licença do Windows Admin Center.
+Examine os termos de licença do centro de administração do Windows.
 
-- [Termos de licença de Software da Microsoft - pré-lançamento de extensões para o Microsoft Windows Admin Center](https://docs.microsoft.com/legal/windows-server/windows-admin-center/windows-pre-release-extension-eula)
+- [Termos de licença para software Microsoft – extensões de pré-lançamento para o centro de administração do Microsoft Windows](https://docs.microsoft.com/legal/windows-server/windows-admin-center/windows-pre-release-extension-eula)
 
 - [Termos de licença para extensões](https://docs.microsoft.com/legal/windows-server/windows-admin-center/license-terms-for-extensions)
 
-- [Visualização de termos - Windows Admin Center - de licença de Software da Microsoft](https://docs.microsoft.com/legal/windows-server/windows-admin-center/wac-prerelease-eula)
+- [Termos de licença para software Microsoft-centro de administração do Windows-versão prévia](https://docs.microsoft.com/legal/windows-server/windows-admin-center/wac-prerelease-eula)
 
-- [Windows Admin Center para o sistema operacional Microsoft Windows Server e Microsoft Windows (versão 10)](https://docs.microsoft.com/legal/windows-server/windows-admin-center/wac-product-ga-eula)
+- [Centro de administração do Windows para Microsoft Windows Server e sistema operacional Microsoft Windows (versão 10)](https://docs.microsoft.com/legal/windows-server/windows-admin-center/wac-product-ga-eula)
 
-- [Termos de licença do Windows relacionados a servidor](https://docs.microsoft.com/legal/windows-server/windows-server-licensing)
+- [Termos de licença relacionados ao Windows Server](https://docs.microsoft.com/legal/windows-server/windows-server-licensing)

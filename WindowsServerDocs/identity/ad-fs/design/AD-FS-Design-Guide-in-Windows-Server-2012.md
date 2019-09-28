@@ -7,34 +7,34 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3f2a6df6a9c9a5cbdfa9c64bc6521e92f4982a15
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: d9d7ec6f4ff575d3aac30b7127e591b78f5ef49b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191727"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359211"
 ---
-# <a name="ad-fs-design-guide-in-windows-server"></a>Guia de Design do AD FS no Windows Server 
+# <a name="ad-fs-design-guide-in-windows-server"></a>Guia de design de AD FS no Windows Server 
 
 
   
 > [!NOTE]  
-> Para obter informações sobre como implantar o AD FS no Windows Server 2012 R2, consulte [guia de implantação do Windows Server 2012 R2 AD FS](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md).  
+> Para obter informações sobre como implantar AD FS no Windows Server 2012 R2, consulte o [Guia de implantação do Windows server 2012 r2 AD FS](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md).  
   
-Você pode usar os serviços de Federação do Active Directory® \(do AD FS\) com o Windows Server® 2012 o sistema operacional em uma federação dos serviços de função de provedor para sem interrupções, autenticar usuários para qualquer Web\-com base em serviços ou aplicativos que residem em uma organização de parceiro de recurso, sem a necessidade dos administradores criar ou manter relações de confiança externas ou relações de confiança de floresta entre as redes de ambas as organizações e sem a necessidade dos usuários façam logon uma segunda vez. O processo de autenticação a uma rede e acessar recursos em outra rede — sem a sobrecarga de ações de logon repetidas por usuários — é conhecido como logon único\-na \(SSO\).  
+Você pode usar Active Directory® serviços de Federação \(AD FS @ no__t-1 com o sistema operacional Windows Server® 2012 em uma função de provedor de serviços de Federação para autenticar diretamente os usuários em qualquer serviço Web @ no__t-2based ou aplicativos que residem em um organização de parceiros de recursos, sem a necessidade de os administradores criarem ou manterem relações de confiança externas ou florestas entre as redes de ambas as organizações e sem a necessidade de fazer logon pela segunda vez. O processo de autenticação em uma rede, enquanto acessa recursos em outra rede, sem a carga de ações de logon repetidas pelos usuários, é conhecido como logon único @ no__t-0on \(SSO @ no__t-2.  
   
 ## <a name="about-this-guide"></a>Sobre este guia  
-Este guia fornece recomendações para ajudá-lo a planejar uma nova implantação do AD FS, com base nos requisitos da sua organização \(também referido neste guia como metas de implantação\) e no design específico que você deseja criar. Este guia destina-se ao uso por um especialista em infraestrutura ou arquiteto de sistema. Ele destaca seus principais pontos de decisão ao planejar sua implantação do AD FS. Antes de ler este guia, você deve ter uma boa compreensão do funcionamento do AD FS em um nível funcional. Você também deve ter uma boa compreensão dos requisitos organizacionais que serão refletidos no seu design do AD FS.  
+Este guia fornece recomendações para ajudá-lo a planejar uma nova implantação do AD FS, com base nos requisitos de sua organização \(also mencionados neste guia, como metas de implantação @ no__t-1 e o design específico que você deseja criar. Este guia destina-se ao uso por um especialista em infraestrutura ou arquiteto de sistema. Ele realça os principais pontos de decisão conforme você planeja sua implantação de AD FS. Antes de ler este guia, você deve ter uma boa compreensão de como AD FS funciona em um nível funcional. Você também deve ter uma boa compreensão dos requisitos organizacionais que serão refletidos em seu design de AD FS.  
   
-Este guia descreve um conjunto de metas de implantação que se baseiam em três designs do AD FS primários e ajudá-lo a decidir os designs mais adequados para seu ambiente. Você pode usar essas metas de implantação para um dos seguintes designs do AD FS abrangentes ou um design personalizado que atenda às necessidades do seu ambiente:  
+Este guia descreve um conjunto de metas de implantação baseadas em três designs de AD FS principais e ajuda você a decidir o design mais apropriado para seu ambiente. Você pode usar essas metas de implantação para formar um dos seguintes designs de AD FS abrangentes ou um design personalizado que atenda às necessidades do seu ambiente:  
   
--   SSO da Web para oferecer suporte aos negócios federado\-para\-negócios \(B2B\) cenários e dá suporte à colaboração entre unidades empresariais com florestas independentes  
+-   SSO da Web federado para dar suporte aos cenários Business @ no__t-0to @ no__t-1business \(B2B @ no__t-3 e para dar suporte à colaboração entre unidades de negócios com florestas independentes  
   
--   Web SSO para dar suporte ao acesso de cliente para aplicativos nos negócios\-à\-consumidor \(B2C\) cenários  
+-   SSO da Web para dar suporte ao acesso do cliente aos aplicativos nos cenários Business @ no__t-0to @ no__t-1consumer \(B2C @ no__t-3  
   
-Para cada design, você encontrará diretrizes para coletar os dados requeridos sobre seu ambiente. Em seguida, você pode usar essas diretrizes para planejar e projetar sua implantação do AD FS. Depois de ler este guia e terminar de coletar, documentar e mapear as necessidades da sua organização, você terá as informações necessárias para começar a implantar o AD FS usando as diretrizes a [Windows Server 2012 do AD FS Deployment Guide](../../ad-fs/deployment/Windows-Server-2012-AD-FS-Deployment-Guide.md).  
+Para cada design, você encontrará diretrizes para coletar os dados requeridos sobre seu ambiente. Você pode usar essas diretrizes para planejar e projetar sua implantação de AD FS. Depois de ler este guia e concluir a coleta, documentação e mapeamento dos requisitos da sua organização, você terá as informações necessárias para iniciar a implantação de AD FS usando as diretrizes no [Guia de implantação do Windows Server 2012 AD FS](../../ad-fs/deployment/Windows-Server-2012-AD-FS-Deployment-Guide.md).  
   
 ## <a name="in-this-guide"></a>Neste guia  
   

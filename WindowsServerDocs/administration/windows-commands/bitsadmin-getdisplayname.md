@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getdisplayname
-description: Tópico de comandos do Windows para **bitsadmin getdisplayname** -recupera o nome de exibição do trabalho especificado.
+description: O tópico de comandos do Windows para **Bitsadmin GetDisplayName** – recupera o nome de exibição do trabalho especificado.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c1ef16f54b7b825e4293a3870d8181985b83843b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 229bd245f9e810fc6aeb856bbfba253b9ab8a9f0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857597"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381632"
 ---
 # <a name="bitsadmin-getdisplayname"></a>bitsadmin getdisplayname
 
@@ -36,14 +36,14 @@ bitsadmin /GetDisplayName <Job>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir recupera o nome de exibição do trabalho nomeado *myDownloadJob*.
+O exemplo a seguir recupera o nome de exibição para o trabalho chamado *myDownloadJob*.
 ```
 C:\>bitsadmin /GetDisplayName myDownloadJob
 ```
 Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

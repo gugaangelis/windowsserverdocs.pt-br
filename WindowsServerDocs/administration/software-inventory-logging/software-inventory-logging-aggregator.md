@@ -2,7 +2,7 @@
 title: Agregador de Log de Inventário de Software
 description: Descreve como instalar e gerenciar o agregador de log de inventário de software
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: manage-software-inventory-logging
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0edecb86c7d5afa7d267c75ec858ded9af36e4c0
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 81dbfb89d2e72af57c070db8473fd3b0e521906c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866314"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382942"
 ---
 # <a name="software-inventory-logging-aggregator"></a>Agregador de Log de Inventário de Software
 

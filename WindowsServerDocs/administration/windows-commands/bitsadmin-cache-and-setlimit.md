@@ -1,8 +1,8 @@
 ---
-title: setlimit e cache bitsadmin
-description: Tópico de comandos do Windows para **bitsadmin cache e setlimit** -define o limite de tamanho do cache.
+title: Bitsadmin cache e setlimit
+description: O tópico de comandos do Windows para **Bitsadmin cache e setlimit** -define o limite de tamanho do cache.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7d0b72c5ec6c779fa4ce3fa038352836cd9456ac
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 88a10ce8599202e237daa6822cf62806d3c21429
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852587"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381940"
 ---
-# <a name="bitsadmin-cache-and-setlimit"></a>setlimit e cache bitsadmin
+# <a name="bitsadmin-cache-and-setlimit"></a>Bitsadmin cache e setlimit
 
 
 
@@ -36,15 +36,15 @@ bitsadmin /Cache /SetLimit Percent
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Porcentagem|O limite de cache definido como uma porcentagem do espaço total do disco rígido...|
+|Percent|O limite de cache definido como uma porcentagem do espaço total no disco rígido.|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir limita o tamanho do cache como 50%.
+O exemplo a seguir limita o tamanho do cache para 50%.
 ```
 C:\>bitsadmin /Cache /SetLimit 50 
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

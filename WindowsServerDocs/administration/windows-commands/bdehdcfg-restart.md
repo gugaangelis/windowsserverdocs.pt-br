@@ -1,8 +1,8 @@
 ---
-title: bdehdcfg restart
-description: Tópico de comandos do Windows para a reinicialização de bdehdcfg - informa ao bdehdcfg que o computador deve ser reiniciado após a conclusão da preparação de unidade.
+title: reinicialização BdeHdCfg
+description: Tópico de comandos do Windows para BdeHdCfg Restart – informa BdeHdCfg de que o computador deve ser reiniciado depois que a preparação da unidade for concluída.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f361db8fdf33bd414556575de75241f7dbd9327
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e6c4e48b051f567c98ea679feaa22f995982a899
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879457"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382213"
 ---
-# <a name="bdehdcfg-restart"></a>bdehdcfg: restart
+# <a name="bdehdcfg-restart"></a>BdeHdCfg: reiniciar
 
 
 
-Informa a ferramenta de linha de comando Bdehdcfg que o computador deve ser reiniciado após a conclusão da preparação de unidade. Para obter um exemplo de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+Informa a ferramenta de linha de comando BdeHdCfg de que o computador deve ser reiniciado depois que a preparação da unidade for concluída. Para obter um exemplo de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,20 +34,20 @@ bdehdcfg -target {default|unallocated|<DriveLetter> shrink|<DriveLetter> merge} 
 
 ### <a name="parameters"></a>Parâmetros
 
-Esse comando não usa nenhum parâmetro adicional.
+Este comando não usa parâmetros adicionais.
 
 ## <a name="remarks"></a>Comentários
 
-Se outros usuários estiverem conectados ao computador e o **silencioso** comando não for especificado, será exibido um prompt para confirmar que o computador deve ser reiniciado.
+Se outros usuários estiverem conectados ao computador e o comando **silencioso** não for especificado, um prompt será exibido para confirmar que o computador deve ser reiniciado.
 
-## <a name="BKMK_Examples"></a>Exemplos
+## <a name="BKMK_Examples"></a>Disso
 
-O exemplo a seguir ilustra o uso de **reiniciar** comando.
+O exemplo a seguir ilustra o uso do comando **Restart** .
 ```
 bdehdcfg -target default -restart
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
--   [Bdehdcfg](bdehdcfg.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   [BdeHdCfg](bdehdcfg.md)

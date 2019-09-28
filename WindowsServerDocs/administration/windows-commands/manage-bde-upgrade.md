@@ -1,8 +1,8 @@
 ---
-title: atualização do bde gerenciar
-description: 'Tópico de comandos do Windows para * * *- '
+title: atualização do Manage-bde
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc28dfc98a66a60172c812d12a16d03c078b79e1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d426af59f5acc958768b316f363bf78ea249b3a7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822277"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373854"
 ---
-# <a name="manage-bde-upgrade"></a>Gerenciar-bde: atualizar
+# <a name="manage-bde-upgrade"></a>Manage-bde: atualizar
 
 
 
@@ -36,21 +36,21 @@ manage-bde -upgrade [<Drive>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Drive>|Representa uma letra de unidade seguida de dois-pontos.|
-|-computername|Especifica que gerenciar bde.exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **- cn** como uma versão abreviada desse comando.|
-|\<Nome >|Representa o nome do computador no qual modificar a proteção do BitLocker. Os valores aceitos incluem o nome do computador NetBIOS e endereço IP do computador.|
-|-? ou /?|Exibe uma ajuda breve no prompt de comando.|
-|-help ou -h|Exibe uma ajuda detalhada no prompt de comando.|
+|\<Drive >|Representa uma letra de unidade seguida de dois-pontos.|
+|-ComputerName|Especifica que o Manage-bde. exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando.|
+|\<Nome >|Representa o nome do computador no qual a proteção do BitLocker será modificada. Os valores aceitos incluem o nome NetBIOS do computador e o endereço IP do computador.|
+|-? ou/?|Exibe a ajuda resumida no prompt de comando.|
+|-Help ou-h|Exibe a ajuda completa no prompt de comando.|
 
-## <a name="BKMK_Examples"></a>Exemplos
+## <a name="BKMK_Examples"></a>Disso
 
-O exemplo a seguir ilustra o uso de **-atualizar** comando para atualizar a criptografia BitLocker na unidade C.
+O exemplo a seguir ilustra o uso do comando **-upgrade** para atualizar a criptografia BitLocker na unidade C.
 ```
 manage-bde –upgrade C:
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
--   [Gerenciar-bde](manage-bde.md)
--   [Atualizando um computador protegido por BitLocker do Windows Vista para o Windows 7](https://technet.microsoft.com/library/ee424325(v=ws.10).aspx)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Manage-bde](manage-bde.md)
+-   [Atualizando um computador protegido pelo BitLocker do Windows Vista para o Windows 7](https://technet.microsoft.com/library/ee424325(v=ws.10).aspx)

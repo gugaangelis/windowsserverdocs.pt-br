@@ -1,18 +1,18 @@
 ---
 title: Configuração do Hyper-V
 description: Considerações de configuração do Hyper-V para ajuste de desempenho
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c608d3762c45a0b1478bcb3303159feef963291
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: f21115265ca7d2788fc0be078860048602d82c0f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866614"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370163"
 ---
 # <a name="hyper-v-configuration"></a>Configuração do Hyper-V
 
@@ -24,7 +24,7 @@ As considerações de hardware para servidores que executam o Hyper-V geralmente
 
     O Hyper-V no Windows Server 2016 apresenta os processadores lógicos como um ou mais processadores virtuais para cada máquina virtual ativa. Agora, o Hyper-V requer processadores que dão suporte a tecnologias de conversão de endereços de segundo nível (SLAT), como EPT (tabelas de páginas estendidas) ou NPT (tabelas de páginas aninhadas).
 
--   **Cache**
+-   **Armazenar**
 
     O Hyper-V pode se beneficiar de caches de processador maiores, especialmente para cargas que têm um grande conjunto de trabalho na memória e em configurações de máquina virtual nas quais a taxa de processadores virtuais para processadores lógicos é alta.
 
@@ -76,11 +76,11 @@ O Hyper-V publica contadores de desempenho para ajudar a caracterizar o comporta
 
 Você deve sempre medir o uso da CPU do sistema físico usando os contadores de desempenho do processador lógico do hipervisor do Hyper-V. Os contadores de utilização da CPU que o Gerenciador de tarefas e o monitor de desempenho relatam nas partições raiz e filho não refletem o uso real da CPU física. Use os seguintes contadores de desempenho para monitorar o desempenho:
 
-- **Processador lógico do hipervisor do Hyper-\*V\\()% tempo total de execução** do tempo total não ocioso dos processadores lógicos
+- **Processador lógico do hipervisor Hyper-V (\*) \\% tempo de execução total** O tempo total não ocioso dos processadores lógicos
 
-- **Processador lógico do hipervisor Hyper-V\*(\\)% tempo de execução de convidado** o tempo gasto na execução de ciclos em um convidado ou dentro do host
+- **Processador lógico do hipervisor Hyper-V (\*) \\% tempo de execução do convidado** O tempo gasto na execução de ciclos em um convidado ou dentro do host
 
-- **Processador lógico do hipervisor Hyper-V\*(\\)% tempo de execução do hipervisor** o tempo gasto em execução dentro do hipervisor
+- **Processador lógico do hipervisor Hyper-V (\*) \\% tempo de execução do hipervisor** O tempo gasto na execução dentro do hipervisor
 
 - **Processador virtual da raiz do hipervisor do Hyper\*-\\V ()\\** * mede o uso da CPU da partição raiz
 

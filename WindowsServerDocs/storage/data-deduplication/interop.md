@@ -2,27 +2,27 @@
 ms.assetid: 60fca6b2-f1c0-451f-858f-2f6ab350d220
 title: Interoperabilidade de Eliminação de Duplicação de Dados
 ms.technology: storage-deduplication
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/16/2016
-ms.openlocfilehash: b82e02b7896c3795ae7470ca03bb8d19a8d5e403
-ms.sourcegitcommit: fe621b72d45d0259bac1d5b9031deed3dcbed29d
+ms.openlocfilehash: fb3c9842f1d698151bffebbe5f77618c8b19b366
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66455427"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403192"
 ---
 # <a name="data-deduplication-interoperability"></a>Interoperabilidade de Eliminação de Duplicação de Dados
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server de 2019
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2019
 
-## <a name="supported"></a>Com suporte
+## <a name="supported"></a>Suportado
 
 ### <a name="refs"></a>ReFS
-Eliminação de duplicação de dados dá suporte a partir do Windows Server 2019. 
+A eliminação de duplicação de dados tem suporte a partir do Windows Server 2019. 
 
 ### <a name="failover-clustering"></a>Clustering de failover
 
@@ -71,7 +71,7 @@ O Backup do Windows Server pode fazer backup de um volume otimizado "como está"
     wbadmin start recovery –version:02/16/2012-06:22 -itemtype:Volume  -items:E: -recoveryTarget:E:
     ```
 
-    **-OU-**  
+    **--OU--**  
 
     Restaure uma pasta específica (nesse caso, a pasta E:\Docs):
     ```PowerShell
@@ -80,7 +80,7 @@ O Backup do Windows Server pode fazer backup de um volume otimizado "como está"
 
 ## <a name="unsupported"></a>Sem Suporte
 
-### <a name="windows-10-client-os"></a>Windows 10 (sistema operacional do cliente)
+### <a name="windows-10-client-os"></a>Windows 10 (So cliente)
 Não há suporte para a eliminação da duplicação de dados no Windows 10. Há várias postagens de blog populares na Comunidade do Windows que descrevem como remover os binários do Windows Server 2016 e instalar no Windows 10, mas esse cenário não foi validado como parte do desenvolvimento de eliminação de duplicação de dados. [Vote nesse item para o Windows 10 no Windows Server Storage UserVoice](https://windowsserver.uservoice.com/forums/295056-storage/suggestions/9011008-add-deduplication-support-to-client-os).
 
 ### <a name="windows-search"></a>Windows Search

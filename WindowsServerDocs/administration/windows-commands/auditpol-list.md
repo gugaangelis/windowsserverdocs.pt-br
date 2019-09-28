@@ -1,8 +1,8 @@
 ---
 title: lista de Auditpol
-description: Tópico de comandos do Windows para **auditpol lista** – categorias de política e/ou subcategorias de auditoria de listas ou lista de usuários para os quais a política de auditoria por usuário é definido.
+description: Os comandos do Windows tópico para **lista** de buscas – lista categorias de política de auditoria e/ou subcategorias ou lista os usuários para os quais uma política de auditoria por usuário é definida.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08f524ef0aacd731f709ce7a2e17b3d831da1e5b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 27a89ae18838989b4f2df27d777c1c35249b8991
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858577"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382456"
 ---
 # <a name="auditpol-list"></a>lista de Auditpol
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-listas de lista de usuários para os quais uma política de auditoria por usuário é definida e/ou subcategorias ou categorias de política de auditoria.
+lista categorias de política de auditoria e/ou subcategorias ou lista os usuários para os quais uma política de auditoria por usuário é definida.
 
 ## <a name="syntax"></a>Sintaxe
 ```
@@ -35,20 +35,20 @@ auditpol /list
 ## <a name="parameters"></a>Parâmetros
 |Parâmetro|Descrição|
 |-------|--------|
-|/user|Recupera todos os usuários para os quais a política de auditoria por usuário foi definida. Se usado com o parâmetro /v, o identificador de segurança (SID) do usuário também é exibido.|
-|/category|Exibe os nomes das categorias compreendidos pelo sistema. Se usado com o parâmetro /v, a categoria globalmente exclusivo (GUID) também é exibida.|
-|/subcategory|Exibe os nomes das subcategorias e sua GUID associada.|
-|/v|Exibe o GUID com a categoria ou subcategoria, ou quando usado com /user, o SID de cada usuário.|
+|/|Recupera todos os usuários para os quais a política de auditoria por usuário foi definida. Se usado com o parâmetro/v, o SID (identificador de segurança) do usuário também será exibido.|
+|/Category|Exibe os nomes das categorias compreendidas pelo sistema. Se for usado com o parâmetro/v, o GUID (identificador global exclusivo) da categoria também será exibido.|
+|/subcategory|Exibe os nomes das subcategorias e do GUID associado.|
+|/v|Exibe o GUID com a categoria ou subcategoria, ou quando usado com/user, exibe o SID de cada usuário.|
 |/r|Exibe a saída como um relatório no formato de valores separados por vírgulas (CSV).|
 |/?|Exibe a ajuda no prompt de comando.|
 ## <a name="remarks"></a>Comentários
-todas as operações de lista para a política por usuário, você deve ter permissão de leitura naquele objeto definido no descritor de segurança. Você também pode executar operações de lista que possui o **gerenciar o log de auditoria e segurança** direito de usuário (SeSecurityPrivilege). No entanto, esse direito permite acesso adicional que não é necessário para executar a operação de lista.
-## <a name="BKMK_examples"></a>Exemplos
-Para listar todos os usuários que têm uma política de auditoria definido, digite:
+para todas as operações de lista para a política por usuário, você deve ter permissão de leitura nesse objeto definido no descritor de segurança. Você também pode executar operações de lista por meio do direito de usuário **gerenciar auditoria e log de segurança** (SeSecurityPrivilege). No entanto, esse direito permite o acesso adicional que não é necessário para executar a operação de lista.
+## <a name="BKMK_examples"></a>Disso
+Para listar todos os usuários que têm uma política de auditoria definida, digite:
 ```
 auditpol /list /user
 ```
-Para listar todos os usuários que têm uma política de auditoria definido e seu SID associado, digite:
+Para listar todos os usuários que têm uma política de auditoria definida e seu SID associado, digite:
 ```
 auditpol /list /user /v
 ```
@@ -56,9 +56,9 @@ Para listar todas as categorias e subcategorias no formato de relatório, digite
 ```
 auditpol /list /subcategory:* /r
 ```
-Para listar as subcategorias das categorias detalhadas de rastreamento e o acesso ao DS, digite:
+Para listar as subcategorias das categorias controle detalhado e acesso DS, digite:
 ```
 auditpol /list /subcategory:"detailed Tracking","DS Access"
 ```
 #### <a name="additional-references"></a>Referências adicionais
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

@@ -1,7 +1,7 @@
 ---
 title: Implantar autenticação de passagem de impressão de nuvem híbrida do Windows Server
 description: Como configurar a impressão em nuvem híbrida da Microsoft com autenticação de passagem
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: Windows Server 2016
@@ -12,12 +12,12 @@ author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: 8d4d842b917a52f2c6852cf5c3ed261c0be2cc1c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: e9d461e2e9442e9473a6d2c9b13d9ede17361348
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866860"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370402"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print-with-passthrough-authentication"></a>Implantar a impressão em nuvem híbrida do Windows Server com autenticação de passagem
 
@@ -79,11 +79,11 @@ Este guia descreve cinco (5) etapas de instalação:
       - `find-module -Name "PublishCloudPrinter"`para confirmar que o computador pode alcançar o Galeria do PowerShell (PSGallery)
       - `install-module -Name "PublishCloudPrinter"`
 
-     > OBSERVAÇÃO: Você pode ver uma mensagem informando que ' PSGallery ' é um repositório não confiável.  Digite ' y ' para continuar com a instalação.
+     > OBSERVAÇÃO:  Você pode ver uma mensagem informando que ' PSGallery ' é um repositório não confiável.  Digite ' y ' para continuar com a instalação.
 
 2. Instalar a solução de impressão de nuvem híbrida
     - No mesmo prompt de comando do PowerShell com privilégios elevados, altere o diretório para`C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0`
-    - Executar <br>
+    - Run <br>
         `CloudPrintDeploy.ps1 -AzureTenant <Domain name used by Azure AD Connect> -AzureTenantGuid <Azure AD Directory ID>`
 3. Configurar os 2 pontos de extremidade do IIS para dar suporte ao SSL
    -   O certificado SSL pode ser um certificado autoassinado ou um emitido por alguma AC (autoridade de certificação) confiável
@@ -95,7 +95,7 @@ Este guia descreve cinco (5) etapas de instalação:
    - Execute o comando a seguir para instalar os pacotes<br>
    `Install-Package system.data.sqlite [-requiredversion x.x.x.x] -providername nuget`
 
-   > OBSERVAÇÃO: É recomendável baixar e instalar a versão mais recente, deixando a opção "-requiredversion".
+   > OBSERVAÇÃO:  É recomendável baixar e instalar a versão mais recente, deixando a opção "-requiredversion".
 
 5. Copie as DLLs do SQLite para a pasta \<bin\> do MopriaCloudService webapp (**C\\:\\\\Inetpub\\wwwroot MopriaCloudService bin**): <br>
    - Os binários do SQLite devem estar\\em "\\arquivos\\de\\programas" pacotes NuGet do PackageManagement "
@@ -234,7 +234,7 @@ Este guia descreve cinco (5) etapas de instalação:
       - `find-module -Name "PublishCloudPrinter"`para confirmar que o computador pode alcançar o Galeria do PowerShell (PSGallery)
       - `install-module -Name "PublishCloudPrinter"`
 
-        >   OBSERVAÇÃO: Você pode ver uma mensagem informando que ' PSGallery ' é um repositório não confiável.  Digite ' y ' para continuar com a instalação.
+        >   OBSERVAÇÃO:  Você pode ver uma mensagem informando que ' PSGallery ' é um repositório não confiável.  Digite ' y ' para continuar com a instalação.
 
       - Publish-CloudPrinter
         - Printer = o nome da impressora compartilhada que foi definido
@@ -244,7 +244,7 @@ Este guia descreve cinco (5) etapas de instalação:
         - SDDL = cadeia de caracteres SDDL que representa permissões para a impressora. Isso pode ser obtido modificando a guia Segurança de propriedades da impressora apropriadamente e, em seguida, executando o seguinte comando em um prompt de comando:`(Get-Printer PrinterName -full).PermissionSDDL`
             P. "G:DUD: (A; OICI; FA;;; WD) "
 
-          > OBSERVAÇÃO: Será necessário adicionar **`O:BA`** como prefixo ao resultado do comando de prompt de comando acima antes de definir o valor como a configuração de SDDL.  Exemplo: SDDL =`O:BAG:DUD:(A;OICI;FA;;;WD)`
+          > OBSERVAÇÃO:  Será necessário adicionar **`O:BA`** como prefixo ao resultado do comando de prompt de comando acima antes de definir o valor como a configuração de SDDL.  Exemplo: SDDL =`O:BAG:DUD:(A;OICI;FA;;;WD)`
 
         - DiscoveryEndpoint = https://&lt;Services-Machine-Endpoint&gt;/MCS
         - PrintServerEndpoint = https://&lt;Services-Machine-Endpoint&gt;/ECP
@@ -252,9 +252,9 @@ Este guia descreve cinco (5) etapas de instalação:
         - AzureTenantGuid = ID de diretório do seu locatário do Azure AD
         - DiscoveryResourceId = [opcional] ID do aplicativo do serviço de nuvem de descoberta de Mopria com proxy
 
-        > OBSERVAÇÃO: Você também pode inserir todos os valores de parâmetro necessários na linha de comando.<br>
+        > OBSERVAÇÃO:  Você também pode inserir todos os valores de parâmetro necessários na linha de comando.<br>
         **Publish-CloudPrinter** Sintaxe de comando do PowerShell: <br>
-        Publish-CloudPrinter-Printer \<String\> -\> \<\> fabricante \<cadeiade caracteres \<-modelo cadeia de caracteres-OrgLocation cadeia de caracteres-SDDL\> \< String-DiscoveryEndpoint\<String-PrintServerEndpoint\> String-\> AzureClientId String-\<AzureTenantGuid \<\> \> \<String[\> - DiscoveryResourceId\<String]\> <br>
+        Publish-CloudPrinter-impressora \<string @ no__t-1-fabricante \<string @ no__t-3-Model \<string @ no__t-5-OrgLocation \<string @ no__t-7-SDDL \<string @ no__t-9-DiscoveryEndpoint \>0string @ no__t-11- PrintServerEndpoint 2string @ no__t-13-AzureClientId 4string @ no__t-15-AzureTenantGuid 6string @ no__t-17 [-DiscoveryResourceId 8string @ no__t-19] <br>
         Comando de exemplo:`publish-cloudprinter -Printer EcpPrintTest -Manufacturer Microsoft -Model FilePrinterEcp -OrgLocation '{"attrs": [{"category":"country", "vs":"USA", "depth":0}, {"category":"organization", "vs":"MyCompany", "depth":1}, {"category":"site", "vs":"MyCity, State", "depth":2}, {"category":"building", "vs":"Building 1", "depth":3}, {"category":"floor\_number", "vn":1, "depth":4}, {"category":"room\_name", "vs":"1111", "depth":5}]}' -Sddl "O:BAG:DUD:(A;OICI;FA;;;WD)" -DiscoveryEndpoint https://<services-machine-endpoint>/mcs -PrintServerEndpoint https://<services-machine-endpoint>/ecp -AzureClientId <Native Web App ID> -AzureTenantGuid <Azure AD Directory ID> -DiscoveryResourceId <Proxied Mopria Discovery Cloud Service App ID>`
 
 

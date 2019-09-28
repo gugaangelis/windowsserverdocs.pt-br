@@ -1,8 +1,8 @@
 ---
 title: online
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8063ac09b1d8d9bf4dd4e6665c1725fcb77ae89
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 489cef1ad4dc5fec5f477f95a6f2fad391b3bf02
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828107"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372486"
 ---
 # <a name="online"></a>online
 
 
 
-Leva um volume ou disco offline para o estado online.
+Coloca um disco ou volume offline para o estado online.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -37,8 +37,8 @@ Offline volume
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|[Disco offline](offline-disk.md)|Usa o disco offline com foco para o estado online.|
-|[Volume offline](offline-volume.md)|Coloca o volume offline com o foco para o estado online.|
+|[Disco offline](offline-disk.md)|Coloca o disco offline com foco no estado online.|
+|[Volume offline](offline-volume.md)|Coloca o volume offline com foco no estado online.|
 
 #### <a name="additional-references"></a>Referências adicionais
 

@@ -6,14 +6,14 @@ ms.author: billmath
 manager: daveba
 ms.date: 08/09/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6a0a1da3dd5c92dff885478c1669bbda5ae07fe5
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0e680e07ce1ee27a73791e310a71b85ad76d6318
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867477"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358765"
 ---
 # <a name="ad-fs-openid-connectoauth-concepts"></a>AD FS conceitos do OpenID Connect/OAuth
 Aplica-se ao AD FS 2016 e posterior
@@ -23,7 +23,7 @@ Aplica-se ao AD FS 2016 e posterior
 |Ator| Descrição|
 |-----|-----|
 |Usuário final|Essa é a entidade de segurança (usuários, aplicativos, serviços e grupos) que precisa acessar o recurso.|  
-|Cliente|Este é seu aplicativo Web, identificado por sua ID de cliente. O cliente é geralmente a parte com a qual o usuário final interage e solicita tokens do servidor de autorização.
+|Remota|Este é seu aplicativo Web, identificado por sua ID de cliente. O cliente é geralmente a parte com a qual o usuário final interage e solicita tokens do servidor de autorização.
 |Servidor de autorização/provedor de identidade (IdP)| Este é o servidor de AD FS. Ele é responsável por verificar a identidade das entidades de segurança existentes no diretório de uma organização. Ele emite tokens de segurança (token de acesso de portador, token de ID, token de atualização) após a autenticação bem-sucedida dessas entidades de segurança.
 |Servidor de recursos/provedor de recursos/terceira parte confiável| É aí que residem o recurso ou os dados. Ele confia no servidor de autorização para autenticar e autorizar o cliente com segurança e usa tokens de acesso de portador para garantir que o acesso a um recurso possa ser concedido.
 
@@ -55,7 +55,7 @@ A autenticação moderna usa os seguintes tipos de token:
  
 Ao registrar um recurso no AD FS, os escopos podem ser configurados para permitir que AD FS executem ações específicas. Além de configurar o escopo, o valor do escopo também deve ser enviado na solicitação de AD FS para executar a ação. Por exemplo, o administrador precisa configurar o escopo como OpenID durante o registro de recursos e o aplicativo (cliente) precisa enviar o Scope = OpenID na solicitação de autenticação para AD FS para emitir o token de ID. Detalhes sobre os escopos disponíveis em AD FS são fornecidos abaixo 
  
-- Aza-se estiver usando  [extensões de protocolo OAuth 2,0 para clientes do Broker](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)e se o parâmetro de escopo contiver o escopo "aza", o servidor emitirá um novo token de atualização primário e o definirá no campo refresh_token da resposta, bem como definirá o o campo refresh_token_expires_in para o tempo de vida do novo token de atualização primário se um for imposto. 
+- Aza-se estiver usando [extensões de protocolo OAuth 2,0 para clientes do Broker](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) and se o parâmetro de escopo contiver o escopo "aza", o servidor emitirá um novo token de atualização primário e o definirá no campo refresh_token da resposta, bem como Configurando o refresh_ o campo token_expires_in para o tempo de vida do novo token de atualização primário se um for imposto. 
 - OpenID – permite que o aplicativo solicite o uso do protocolo de autorização OpenID Connect. 
 - logon_cert-o escopo logon_cert permite que um aplicativo solicite certificados de logon, que podem ser usados para fazer logon interativamente usuários autenticados. O servidor de AD FS omite o parâmetro access_token da resposta e, em vez disso, fornece uma cadeia de certificados CMS codificada em base64 ou uma resposta de PKI completa de CMC. Mais detalhes estão disponíveis [aqui](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e).
 - user_impersonation-o escopo de user_impersonation é necessário para solicitar com êxito um token de acesso em nome de AD FS. Para obter detalhes sobre como usar esse escopo, consulte [criar um aplicativo de várias camadas usando obo (em nome de) usando OAuth com AD FS 2016](ad-fs-on-behalf-of-authentication-in-windows-server.md). 

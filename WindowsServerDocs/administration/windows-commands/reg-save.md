@@ -1,8 +1,8 @@
 ---
-title: reg salvar
-description: 'Tópico de comandos do Windows para * * *- '
+title: Reg salvar
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2a46dfe081421ed727bd7ffeeab364e6c23dd801
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6ae07cd3c90c51e7bd494bc6c35919680cde912a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841077"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371698"
 ---
-# <a name="reg-save"></a>reg salvar
+# <a name="reg-save"></a>Reg salvar
 
 
 
-Salva uma cópia de subchaves especificadas, as entradas e valores do registro em um arquivo especificado.
+Salva uma cópia de subchaves, entradas e valores especificados do registro em um arquivo especificado.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -38,28 +38,28 @@ reg save <KeyName> <FileName> [/y]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<KeyName>|Especifica o caminho completo da subchave. Para especificar computadores remotos, inclua o nome do computador (no formato \\ \\ComputerName\) como parte do *KeyName*. A omissão \\ \\ComputerName\ faz com que a operação padrão no computador local. O *KeyName* deve incluir uma chave de raiz válido. As chaves de raiz válido para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves válidas são: HKLM e HKU.|
-|\<FileName>|Especifica o nome e caminho do arquivo que é criado. Se nenhum caminho for especificado, o caminho atual será usado.|
-|/y|Substitui um arquivo existente com o nome *FileName* sem solicitar confirmação.|
-|/?|Exibe a Ajuda para **reg salvar** no prompt de comando.|
+|\<KeyName >|Especifica o caminho completo da subchave. Para especificar computadores remotos, inclua o nome do computador (no formato \\ @ no__t-1ComputerName @ no__t-2 como parte do *KeyName*. Omitir \\ @ no__t-1ComputerName \ faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves de raiz válidas serão: HKLM e HKU.|
+|\<Nome de arquivo >|Especifica o nome e o caminho do arquivo que é criado. Se nenhum caminho for especificado, o caminho atual será usado.|
+|/y|Substitui um arquivo existente pelo *nome nome do arquivo sem solicitar* confirmação.|
+|/?|Exibe a ajuda para o **reg Save** no prompt de comando.|
 
-## <a name="remarks-optional-section"></a>Comentários \<seção opcional >
+## <a name="remarks-optional-section"></a>Comentários da seção \<Optional >
 
--   A tabela a seguir lista os valores retornados para o **reg salvar** operação.
+-   A tabela a seguir lista os valores de retorno para a operação **reg Save** .
 
 |Valor|Descrição|
 |-----|-----------|
 |0|Êxito|
 |1|Falha|
--   Antes de editar as entradas de registro, salve a subchave pai com o **reg salvar** operação. Se houver falha na edição, restaure a subchave com o **restauração reg** operação.
+-   Antes de editar as entradas do registro, salve a subchave pai com a operação **reg Save** . Se a edição falhar, restaure a subchave original com a operação **reg Restore** .
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para salvar o hive MyApp para a pasta atual como um arquivo chamado AppBkUp, digite:
+Para salvar o hive MyApp na pasta atual como um arquivo chamado AppBkUp. HIV, digite:
 ```
 REG SAVE HKLM\Software\MyCo\MyApp AppBkUp.hiv
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

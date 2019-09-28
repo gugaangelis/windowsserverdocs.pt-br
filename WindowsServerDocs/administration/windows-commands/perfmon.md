@@ -1,8 +1,8 @@
 ---
 title: perfmon
-description: 'Tópico de comandos do Windows para o perfmon '
+description: 'Tópico de comandos do Windows para Perfmon '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/25/2018
-ms.openlocfilehash: 000ed11a0eaae36d158ae7a9f044871d4b18aacc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 52503952f2212f7de00d8e7677925b0123f0bbef
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814577"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372331"
 ---
 # <a name="perfmon"></a>perfmon
 
-Inicie o Monitor de desempenho e confiabilidade do Windows em um modo específico autônomos.
+Inicie o monitor de desempenho e confiabilidade do Windows em um modo autônomo específico.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,10 +34,10 @@ perfmon </res|report|rel|sys>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/res|Inicie modo de exibição de recursos.|
-|/report|Inicie o conjunto de Coletores de sistema de diagnóstico de dados e exibir um relatório dos resultados.|
-|/rel|Inicie o Monitor de confiabilidade.|
-|/sys|Inicie o Monitor de desempenho.|
+|/res|Iniciar Modo de Exibição de Recursos.|
+|/Report|Inicie o conjunto de coletores de dados de diagnóstico do sistema e exiba um relatório dos resultados.|
+|/rel|Inicie o monitor de confiabilidade.|
+|/sys|Inicie o monitor de desempenho.|
 
 #### <a name="additional-references"></a>Referências adicionais
 

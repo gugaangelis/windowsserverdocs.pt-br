@@ -1,8 +1,8 @@
 ---
-title: 'Secedit: validar'
-description: 'Tópico de comandos do Windows para * * *- '
+title: 'secedit: validar'
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cca64f6b2904ed11f6b45e316c8e4da0093c373e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ece0a0324b77eb4226b679bc29f7bd599f15a120
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877907"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371097"
 ---
-# <a name="seceditvalidate"></a>Secedit: validar
+# <a name="seceditvalidate"></a>secedit: validar
 
 
 
@@ -37,21 +37,21 @@ Secedit /validate <configuration file name>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Nome do arquivo de configuração|Obrigatório.</br>Especifica o nome de arquivo e caminho para o modelo de segurança que será validado.|
+|Nome do arquivo de configuração|Obrigatório.</br>Especifica o caminho e o nome do arquivo para o modelo de segurança que será validado.|
 
 ## <a name="remarks"></a>Comentários
 
-Validar modelos de segurança pode ajudá-lo a se uma está corrompida ou foi definida inadequadamente.
+A validação de modelos de segurança pode ajudá-lo se um estiver corrompido ou definido incorretamente.
 
-Um modelo de segurança inválidas não será aplicado.
+Um modelo de segurança inválido não será aplicado.
 
-Não será possível atualizar o arquivo de log.
+O arquivo de log não será atualizado.
 
-No Windows Server 2008, `Secedit /refreshpolicy` foi substituído por `gpupdate`. Para obter informações sobre como atualizar as configurações de segurança, consulte [Gpupdate](gpupdate.md).
+No Windows Server 2008, `Secedit /refreshpolicy` foi substituído por. `gpupdate` Para obter informações sobre como atualizar as configurações de segurança, consulte [gpupdate](gpupdate.md).
 
-## <a name="BKMK_Examples"></a>Exemplos
+## <a name="BKMK_Examples"></a>Disso
 
-Depois de uma reversão for executada em um modelo de segurança, você deseja verificar se o arquivo inf de reversão, secRBKcontoso.inf, é válido.
+Depois que uma reversão é executada em um modelo de segurança, você deseja verificar se o arquivo inf de reversão, secRBKcontoso. inf, é válido.
 ```
 Secedit /validate secRBKcontoso.inf
 ```
@@ -59,5 +59,5 @@ Secedit /validate secRBKcontoso.inf
 #### <a name="additional-references"></a>Referências adicionais
 
 -   [Secedit:generaterollback](secedit-generaterollback.md)
--   [Secedit](secedit.md)
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Utilitário](secedit.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

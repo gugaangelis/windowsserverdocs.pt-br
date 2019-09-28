@@ -1,8 +1,8 @@
 ---
 title: rem
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d78bbfe4434170078beb1fd3b3526b017a03e0be
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 56534f75baf514d1c1760edfd41f6f94ab4ae1ab
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857017"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371603"
 ---
 # <a name="rem"></a>rem
 
@@ -32,9 +32,9 @@ Fornece uma maneira de adicionar comentários a um script.
 rem
 ```
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Neste script de exemplo, **rem** é usado para fornecer um comentário sobre o que faz o script:
+Neste script de exemplo, **REM** é usado para fornecer um comentário sobre o que o script faz:
 ```
 rem The commands in this script set up 3 drives.
 rem The first drive is a primary partition and is
@@ -52,5 +52,5 @@ assign f:
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 

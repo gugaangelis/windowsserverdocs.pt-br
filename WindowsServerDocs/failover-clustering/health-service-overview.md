@@ -1,6 +1,6 @@
 ---
-title: Serviço de integridade no Windows Server
-ms.prod: windows-server-threshold
+title: Serviço de Integridade no Windows Server
+ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
@@ -8,34 +8,34 @@ ms.topic: article
 ms.assetid: 5bc71e71-920e-454f-8195-afebd2a23725
 author: cosmosdarwin
 ms.date: 02/09/2018
-ms.openlocfilehash: 5afb64dcf0c59697ed55d7cf51ef1bc36e7e0e36
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: df455dfb0d2936192a3c2d7825e2d6d031cfe892
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863807"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361071"
 ---
-# <a name="health-service-in-windows-server"></a>Serviço de integridade no Windows Server
+# <a name="health-service-in-windows-server"></a>Serviço de Integridade no Windows Server
 
-> Aplica-se ao Windows Server 2016
+> Aplica-se a: Windows Server 2019, Windows Server 2016
 
-O serviço de integridade é um novo recurso no Windows Server 2016, o que melhora o monitoramento de rotina e experiência operacional para clusters que executam espaços de armazenamento diretos.
+O Serviço de Integridade é um novo recurso do Windows Server 2016 que melhora o monitoramento diário e a experiência operacional para clusters que executam o Espaços de Armazenamento Diretos.
 
 ## <a name="prerequisites"></a>Pré-requisitos  
 
-O Serviço de Integridade é habilitado por padrão com Espaços de Armazenamento Direto. Nenhuma ação adicional é necessária para configurá-lo ou iniciá-lo. Para saber mais sobre espaços de armazenamento diretos, consulte [espaços de armazenamento diretos no Windows Server 2016](../storage/storage-spaces/storage-spaces-direct-overview.md).  
+O Serviço de Integridade é habilitado por padrão com Espaços de Armazenamento Direto. Nenhuma ação adicional é necessária para configurá-lo ou iniciá-lo. Para saber mais sobre Espaços de Armazenamento Diretos, consulte [espaços de armazenamento diretos no Windows Server 2016](../storage/storage-spaces/storage-spaces-direct-overview.md).  
 
 ## <a name="reports"></a>Relatórios
 
-Ver [relatórios de integridade do serviço](health-service-reports.md).
+Consulte [serviço de integridade relatórios](health-service-reports.md).
 
 ## <a name="faults"></a>Falhas
 
-Ver [falhas de serviço de integridade](health-service-faults.md).
+Consulte [serviço de integridade falhas](health-service-faults.md).
 
 ## <a name="actions"></a>Ações
 
-Ver [ações de serviço de integridade](health-service-actions.md).
+Consulte [serviço de integridade ações](health-service-actions.md).
 
 ## <a name="automation"></a>Automação  
 
@@ -76,11 +76,11 @@ Se possível, o Serviço de Integridade começará a piscar a luz indicadora no 
 
 #### <a name="physical-replacement"></a>Substituição física  
 
-Você deve substituir o disco físico obsoleto quando possível. Geralmente, isso consiste em intercambiar - ou seja, desligar o compartimento de armazenamento ou o nó não é necessária. Veja Falha para obter informações úteis sobre locais e peças.  
+Você deve substituir o disco físico obsoleto quando possível. Geralmente, isso consiste em uma troca a quente, ou seja, desligar o nó ou o compartimento de armazenamento não é necessário. Veja Falha para obter informações úteis sobre locais e peças.  
 
 #### <a name="verification"></a>Verificação
 
-Quando o disco de substituição é inserido, ele será verificado contra o documento de componentes com suporte (consulte a próxima seção).
+Quando o disco de substituição for inserido, ele será verificado em relação ao documento de componentes com suporte (consulte a próxima seção).
 
 #### <a name="pooling"></a>Pool  
 
@@ -88,22 +88,22 @@ Se permitido, o disco de substituição é substituído automaticamente no pool 
 
 ## <a name="supported-components-document"></a>Documento de componentes com suporte  
 
-O serviço de integridade fornece um mecanismo de imposição para restringir os componentes usados por espaços de armazenamento diretos para aqueles em um documento de componentes com suporte fornecido pelo administrador ou fornecedor da solução. Isso pode ser usado para impedir o uso incorreto de hardware sem suporte por você ou outros usuários, o que pode ajudar na conformidade de contrato de suporte ou garantia. Essa funcionalidade é atualmente limitada para dispositivos de disco físico, incluindo SSDs, HDDs, e unidades de NVMe. O documento de componentes com suporte pode restringir o modelo, fabricante (opcional) e versão de firmware (opcional).
+O Serviço de Integridade fornece um mecanismo de imposição para restringir os componentes usados por Espaços de Armazenamento Diretos àqueles em um documento de componentes com suporte fornecido pelo administrador ou pelo fornecedor da solução. Isso pode ser usado para impedir o uso incorreto de hardware sem suporte por você ou outros usuários, o que pode ajudar na conformidade de contrato de suporte ou garantia. Essa funcionalidade está atualmente limitada a dispositivos de disco físico, incluindo SSDs, HDDs e unidades de NVMe. O documento de componentes com suporte pode restringir o modelo, o fabricante (opcional) e a versão do firmware (opcional).
 
 ### <a name="usage"></a>Uso  
 
-O documento de componentes com suporte usa uma sintaxe inspirada em XML. É recomendável usar seu editor de texto favorito, como a versão gratuita [Visual Studio Code](http://code.visualstudio.com/) ou bloco de notas, para criar um documento XML que você pode salvar e reutilizar.
+O documento de componentes com suporte usa uma sintaxe inspirada em XML. É recomendável usar seu editor de texto favorito, como o [Visual Studio Code](http://code.visualstudio.com/) gratuito ou o bloco de notas, para criar um documento XML que você pode salvar e reutilizar.
 
-#### <a name="sections"></a>Seções
+#### <a name="sections"></a>As
 
 O documento tem duas seções independentes: `Disks` e `Cache`.
 
-Se o `Disks` seção for fornecido, somente as unidades listadas (como `Disk`) têm permissão para ingressar em pools. Todas as unidades não listadas serão impedidas de ingressar em pools, o que efetivamente impede seu uso em produção. Se esta seção é deixada em branco, qualquer unidade poderá ingressar em pools.
+Se a seção `Disks` for fornecida, somente as unidades listadas (como `Disk`) terão permissão para unir os pools. Todas as unidades não listadas são impedidas de unir pools, o que efetivamente impede seu uso na produção. Se esta seção for deixada vazia, qualquer unidade terá permissão para ingressar em pools.
 
-Se o `Cache` seção for fornecido, somente as unidades listadas (como `CacheDisk`) são usados para armazenar em cache. Se esta seção é deixada em branco, espaços de armazenamento diretos tenta [estimativa com base no tipo de mídia e tipo de barramento](../storage/storage-spaces/understand-the-cache.md#cache-drives-are-selected-automatically). Unidades listadas aqui também devem ser listadas no `Disks`.
+Se a seção `Cache` for fornecida, somente as unidades listadas (como `CacheDisk`) serão usadas para cache. Se esta seção for deixada vazia, Espaços de Armazenamento Diretos tentará [adivinhar com base no tipo de mídia e no tipo de barramento](../storage/storage-spaces/understand-the-cache.md#cache-drives-are-selected-automatically). As unidades listadas aqui também devem ser listadas em `Disks`.
 
 >[!IMPORTANT]
-> O documento de componentes com suporte não se aplica retroativamente a unidades já no pool e em uso.  
+> O documento de componentes com suporte não se aplica retroativamente às unidades já agrupadas e em uso.  
 
 #### <a name="example"></a>Exemplo
 
@@ -141,16 +141,16 @@ Se o `Cache` seção for fornecido, somente as unidades listadas (como `CacheDis
 
 ```
 
-Para listar várias unidades, basta adicionar mais `<Disk>` ou `<CacheDisk>` marcas.
+Para listar várias unidades, basta adicionar mais marcas `<Disk>` ou `<CacheDisk>`.
 
-Para injetar esse XML durante a implantação de espaços de armazenamento diretos, use o `-XML` parâmetro:
+Para injetar esse XML ao implantar Espaços de Armazenamento Diretos, use o parâmetro `-XML`:
 
 ```PowerShell
 $MyXML = Get-Content <Filepath> | Out-String  
 Enable-ClusterS2D -XML $MyXML
 ```
 
-Para definir ou modificar o documento de componentes com suporte quando espaços de armazenamento diretos tiver sido implantado:
+Para definir ou modificar o documento de componentes com suporte depois que Espaços de Armazenamento Diretos tiver sido implantado:
 
 ```PowerShell
 $MyXML = Get-Content <Filepath> | Out-String  
@@ -168,12 +168,12 @@ Get-PhysicalDisk | Select Model, Manufacturer, FirmwareVersion
 
 ## <a name="settings"></a>Configurações
 
-Ver [configurações do serviço de integridade](health-service-settings.md).
+Consulte [configurações de serviço de integridade](health-service-settings.md).
 
 ## <a name="see-also"></a>Consulte também
 
-- [Relatórios de integridade do serviço](health-service-reports.md)
-- [Falhas de serviço de integridade](health-service-faults.md)
-- [Ações de serviço de integridade](health-service-actions.md)
-- [Configurações de serviço de integridade](health-service-settings.md)
-- [Espaços de armazenamento diretos no Windows Server 2016](../storage/storage-spaces/storage-spaces-direct-overview.md)
+- [Relatórios de Serviço de Integridade](health-service-reports.md)
+- [Falhas de Serviço de Integridade](health-service-faults.md)
+- [Ações de Serviço de Integridade](health-service-actions.md)
+- [Configurações de Serviço de Integridade](health-service-settings.md)
+- [Espaços de Armazenamento Diretos no Windows Server 2016](../storage/storage-spaces/storage-spaces-direct-overview.md)

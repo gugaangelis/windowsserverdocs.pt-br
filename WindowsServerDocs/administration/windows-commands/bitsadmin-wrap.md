@@ -1,8 +1,8 @@
 ---
 title: bitsadmin wrap
-description: Tópico de comandos do Windows para **wrap bitsadmin** -encapsula qualquer linha de texto de saída estender além da borda mais à direita da janela de comando para a próxima linha.
+description: O tópico de comandos do Windows para **Bitsadmin Wrap** -quebra qualquer linha de texto de saída que se estende além da borda mais à direita da janela de comando para a próxima linha.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4834a8a17c72394b6ee8f051ec76919af9880124
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5609fb6f38716795a545e0c7fe3939f893a8c8d5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881667"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380681"
 ---
 # <a name="bitsadmin-wrap"></a>bitsadmin wrap
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Encapsula o resultado para caber em uma janela de comando.
+Delimita a saída para caber em uma janela de comando.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,15 +36,15 @@ bitsadmin /Wrap Job
 
 |Parâmetro|Descrição|
 |-------|--------|
-|Job|Nome de exibição ou o GUID do trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
 
 ## <a name="remarks"></a>Comentários
 
-Especifique antes de outras opções. Por padrão, todos os comutadores, exceto o [bitsadmin monitor](bitsadmin-monitor.md) alternar, encapsule a saída.
+Especifique antes de outras opções. Por padrão, todas as opções, exceto a opção de [Monitor Bitsadmin](bitsadmin-monitor.md) , encapsulam a saída.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir recupera informações do trabalho nomeado *myDownloadJob* e encapsula a saída.
+O exemplo a seguir recupera informações para o trabalho chamado *myDownloadJob* e encapsula a saída.
 
 ```
 C:\>bitsadmin /Wrap /Info myDownloadJob /verbose
@@ -52,4 +52,4 @@ C:\>bitsadmin /Wrap /Info myDownloadJob /verbose
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

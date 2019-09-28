@@ -1,8 +1,8 @@
 ---
 title: bitsadmin setreplyfilename
-description: Tópico de comandos do Windows para **setreplyfilename bitsadmin** -especifique o caminho do arquivo que contém a resposta do servidor.
+description: Tópico de comandos do Windows para **Bitsadmin setreplyfilename** -especifique o caminho do arquivo que contém a resposta do servidor.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b86d4137f661e9953d6d397b2fbc890393bbd8a0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a490b5bc565549d096b6f43f42758f77570fcb26
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852867"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380417"
 ---
 # <a name="bitsadmin-setreplyfilename"></a>bitsadmin setreplyfilename
 
 Especifique o caminho do arquivo que contém a resposta do servidor.
 
-**BITS 1.2 e anteriores**: Sem suporte.
+**BITS 1,2 e anteriores**: Não compatível.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,20 +36,20 @@ bitsadmin /SetReplyFileName <Job> <Path>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
-|Caminho|Local onde colocar a resposta do servidor|
+|Job|O nome de exibição ou o GUID do trabalho|
+|Path|Local onde o servidor deve ser respondido|
 
 ## <a name="remarks"></a>Comentários
 
 Válido somente para trabalhos de resposta de upload.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir define o caminho de pesquisaPor do nome do arquivo de resposta de trabalho nomeado *myDownloadJob*.
+O exemplo a seguir define o nome de arquivo de resposta pathfor o trabalho chamado *myDownloadJob*.
 ```
 C:\>bitsadmin /SetReplyFileName myDownloadJob c:\reply
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

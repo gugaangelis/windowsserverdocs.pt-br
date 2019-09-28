@@ -1,8 +1,8 @@
 ---
-title: Detalhar vdisk
-description: 'Tópico de comandos do Windows para * * *- '
+title: detalhes do VDISK
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e3401eaeb9afb452b6e7e36abdcba69f00e59ce
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1e507c496aa053d6345a383b2867976fc1550e09
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886317"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378562"
 ---
-# <a name="detail-vdisk"></a>Detalhar vdisk
+# <a name="detail-vdisk"></a>detalhes do VDISK
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Exibe as propriedades do disco rígido virtual selecionado \(VHD\).  
+Exibe as propriedades do disco rígido virtual selecionado \(VHD @ no__t-1.  
   
 ## <a name="syntax"></a>Sintaxe  
   
@@ -34,9 +34,9 @@ detail vdisk
   
 ## <a name="remarks"></a>Comentários  
   
--   Um VHD deve ser selecionado para essa operação seja bem-sucedida. Use o **selecionar o vdisk** comando para selecionar um vdisk e mudar o foco a ele.  
+-   Um VHD deve ser selecionado para que essa operação tenha sucesso. Use o comando **Select VDISK** para selecionar um VDISK e deslocar o foco para ele.  
   
-## <a name="BKMK_examples"></a>Exemplos  
+## <a name="BKMK_examples"></a>Disso  
 Para ver detalhes sobre o VHD selecionado, digite:  
   
 ```  
@@ -45,21 +45,21 @@ detail vdisk
   
 #### <a name="additional-references"></a>Referências adicionais  
   
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
--   [attach vdisk](attach-vdisk.md)  
+-   [anexar vdisk](attach-vdisk.md)  
   
--   [Compactar vdisk](compact-vdisk.md)  
+-   [Compact vdisk](compact-vdisk.md)  
   
   
   
 -   [Desanexar vdisk](detach-vdisk.md)  
   
--   [Expandir vdisk](expand-vdisk.md)  
+-   [expandir vdisk](expand-vdisk.md)  
   
 -   [Mesclar vdisk](merge-vdisk.md)  
   
--   [Selecionar o vdisk](select-vdisk.md)  
+-   [selecionar vdisk](select-vdisk.md)  
   
 -   [list_1](list_1.md)  
   

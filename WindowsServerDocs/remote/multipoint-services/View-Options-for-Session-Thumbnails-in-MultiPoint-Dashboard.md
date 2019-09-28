@@ -2,7 +2,7 @@
 title: Ver opções para miniaturas de sessão no MultiPoint Dashboard
 description: Saiba como personalizar suas opções de exibição para serviços do MultiPoint
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: a11f2f2bbafe4d21e1cd5d56d66a97e08cf35b11
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9b6fa08a6f3215140a528dab0fb55bac23c60ccc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871473"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394803"
 ---
 # <a name="view-options-for-session-thumbnails-in-multipoint-dashboard"></a>Ver opções para miniaturas de sessão no MultiPoint Dashboard
 Uma maneira fácil de monitorar as atividades de usuário em computadores individuais é exibir imagens em miniatura de cada área de trabalho ativa no seu sistema MultiPoint Services. Por padrão, as imagens de áreas de trabalho são exibidas no painel do MultiPoint na guia **início** .  

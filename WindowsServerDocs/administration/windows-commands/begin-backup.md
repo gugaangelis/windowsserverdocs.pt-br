@@ -1,8 +1,8 @@
 ---
-title: Início do backup
-description: Tópico de comandos do Windows para **Iniciar backup** -inicia uma sessão de backup completo.
+title: Iniciar backup
+description: O tópico comandos do Windows para **Iniciar backup** -inicia uma sessão de backup completo.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ad732bb47c15a41e03a73d17199c3201a346175
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2675914b9b2886b9e818af55fcfb7a75e1616fc9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824947"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382170"
 ---
-# <a name="begin-backup"></a>Início do backup
+# <a name="begin-backup"></a>Iniciar backup
 
 
 
-Inicia uma sessão de backup completo.
+inicia uma sessão de backup completo.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,8 +34,8 @@ begin backup
 
 ## <a name="remarks"></a>Comentários
 
--   Esse comando substitui a configuração de backup de cópia do padrão.
+-   Esse comando substitui a configuração de backup de cópia padrão.
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

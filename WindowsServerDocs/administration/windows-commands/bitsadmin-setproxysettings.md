@@ -1,8 +1,8 @@
 ---
 title: bitsadmin setproxysettings
-description: Tópico de comandos do Windows para **setproxysettings bitsadmin** -define as configurações de proxy para o trabalho especificado.
+description: O tópico de comandos do Windows para **Bitsadmin setproxysettings** – define as configurações de proxy para o trabalho especificado.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3503aab55f5650cb9283ce8a9f1a17359bfd48b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 38987c88bcfc93ea9251583b7914f982cf79e057
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825587"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380473"
 ---
 # <a name="bitsadmin-setproxysettings"></a>bitsadmin setproxysettings
 
@@ -36,20 +36,20 @@ bitsadmin /SetProxySettings <Job> <Usage> [List] [Bypass]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
-|Uso|Um dos seguintes valores:</br>-PRECONFIG — use os padrões do Internet Explorer do proprietário.</br>-NO_PROXY — não use um servidor proxy.</br>– Substituir — use uma lista explícita de proxy e a lista de bypass. Um proxy e a lista de bypass de proxy devem seguir.</br>– Detecção automática — detectar automaticamente as configurações de proxy.|
-|List|Usado quando o *uso* parâmetro for definido como substituição — contém uma lista delimitada por vírgulas de servidores proxy para usar.|
-|Bypass|Usado quando o *uso* parâmetro for definido como substituição — contém uma lista delimitada por espaço de nomes de host ou endereços IP ou ambos, para o qual as transferências de não devem ser roteada por meio de um proxy. Isso pode ser  **\<local >** para se referir a todos os servidores na mesma LAN. Valores NULL ou "" pode ser usado para obter uma lista de bypass de proxy vazio.|
+|Job|O nome de exibição ou o GUID do trabalho|
+|Uso|Um dos seguintes valores:</br>-Preconfig – use os padrões do Internet Explorer do proprietário.</br>-NO_PROXY — não use um servidor proxy.</br>-OVERRIDE — use uma lista de proxy explícita e a lista de bypass. É necessário seguir uma lista de proxies de proxy e proxy.</br>-AUTODETECT – detectar automaticamente as configurações de proxy.|
+|List|Usado quando o parâmetro *Usage* é definido como override — contém uma lista delimitada por vírgulas de servidores proxy a serem usados.|
+|Pular|Usado quando o parâmetro *Usage* é definido como override — contém uma lista delimitada por espaço de nomes de host ou endereços IP, ou ambos, para os quais as transferências não devem ser roteadas por meio de um proxy. Isso pode ser **\<local >** para fazer referência a todos os servidores na mesma LAN. Valores de NULL ou "" podem ser usados para uma lista de bypass de proxy vazia.|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir define as configurações de proxy do trabalho nomeado *myDownloadJob*.
+O exemplo a seguir define as configurações de proxy para o trabalho chamado *myDownloadJob*.
 
 ```
 C:\>bitsadmin /SetProxySettings myDownloadJob PRECONFIG
 ```
 
-Aqui estão alguns exemplos.
+Aqui estão alguns outros exemplos.
 
 ```
 bitsadmin /setproxysettings myDownloadJob NO_PROXY
@@ -59,4 +59,4 @@ bitsadmin /setproxysettings myDownloadJob OVERRIDE proxy1,proxy2,proxy3 NULL
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

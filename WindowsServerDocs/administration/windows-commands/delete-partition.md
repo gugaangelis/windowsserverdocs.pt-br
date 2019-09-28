@@ -1,8 +1,8 @@
 ---
 title: Excluir partição
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3b47338b74cf71a4754b7320d6b3842f342d324d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 46a214f26e7c21f6ae08eb16d95fd898bd949b0f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436143"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378657"
 ---
 # <a name="delete-partition"></a>Excluir partição
 
@@ -36,17 +36,17 @@ delete partition [noerr] [override]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Substituir|Permite que o DiskPart excluir qualquer partição, independentemente do tipo. Normalmente, o DiskPart só permite que você exclua as partições de dados conhecidos.|
-|noerr|Somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro.|
+|substituição|Permite que o DiskPart exclua qualquer partição, independentemente do tipo. Normalmente, o DiskPart só permite que você exclua partições de dados conhecidas.|
+|NOERR|Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.|
 
 ## <a name="remarks"></a>Comentários
 
 > [!CAUTION]
-> Exclusão de uma partição em um disco dinâmico pode excluir todos os volumes dinâmicos no disco, portanto, destruir todos os dados e deixando o disco em um estado corrompido. Para excluir um volume dinâmico, sempre use a **Excluir volume** comando em vez disso. As partições podem ser excluídas de discos dinâmicos, mas não devem ser criadas. Por exemplo, é possível excluir uma partição de tabela de partição GUID (GPT) não reconhecido em um disco GPT dinâmico. A exclusão dessa partição não faz com que o espaço livre resultante se torne disponível. Este comando destina-se a permitir que você ao espaço de reclame em um disco dinâmico offline corrompido em uma situação de emergência em que o **limpa** comando DiskPart não pode ser usado.
-> -   Você não pode excluir a partição do sistema, partição de inicialização ou qualquer partição que contém os Active Directory falha ou arquivo de despejo informações de paginação.
-> -   Uma partição deve ser selecionada para essa operação seja bem-sucedida. Use o **Selecionar partição** comando para selecionar uma partição e mudar o foco a ele.
+> A exclusão de uma partição em um disco dinâmico pode excluir todos os volumes dinâmicos no disco, destruindo os dados e deixando o disco em um estado corrompido. Para excluir um volume dinâmico, sempre use o comando **delete volume** . As partições podem ser excluídas de discos dinâmicos, mas não devem ser criadas. Por exemplo, é possível excluir uma partição GPT (tabela de partição GUID) não reconhecida em um disco GPT dinâmico. Excluir tal partição não faz com que o espaço livre resultante fique disponível. Este comando destina-se a permitir a recuperação de espaço em um disco dinâmico offline corrompido em uma situação de emergência em que o comando **Clean** no DiskPart não pode ser usado.
+> -   Não é possível excluir a partição do sistema, a partição de inicialização ou qualquer partição que contenha o arquivo de paginação ativo ou informações de despejo de memória.
+> -   Uma partição deve ser selecionada para que essa operação seja realizada com sucesso. Use o comando **selecionar partição** para selecionar uma partição e deslocar o foco para ela.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 Para excluir a partição com foco, digite:
 ```

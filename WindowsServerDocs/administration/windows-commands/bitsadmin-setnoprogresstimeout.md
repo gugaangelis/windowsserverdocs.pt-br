@@ -1,8 +1,8 @@
 ---
 title: bitsadmin setnoprogresstimeout
-description: Tópico de comandos do Windows para **setnoprogresstimeout bitsadmin** -define o período de tempo, em segundos, que o serviço tenta transferir o arquivo depois que ocorre um erro transitório.
+description: O tópico de comandos do Windows para **Bitsadmin setnoprogresstimeout** -define o período de tempo, em segundos, que o serviço tenta transferir o arquivo depois que um erro transitório ocorre.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 45dd8a7ddfae877984a98db66c742e0af4d18f0d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 761d0d76a2c70af9d4ad68aa564c1a9816691d0d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873767"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380502"
 ---
 # <a name="bitsadmin-setnoprogresstimeout"></a>bitsadmin setnoprogresstimeout
 
-Define o período de tempo, em segundos, que BITS tenta transferir o arquivo após o primeiro erro transitório ocorre.
+Define o período de tempo, em segundos, que o BITS tenta transferir o arquivo depois que o primeiro erro transitório ocorre.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,22 +34,22 @@ bitsadmin /SetNoProgressTimeout <Job> <TimeOutvalue>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
-|TimeOutvalue|Um número representado em segundos.|
+|Job|O nome de exibição ou o GUID do trabalho|
+|Tempo limite|Um número representado em segundos.|
 
 ## <a name="remarks"></a>Comentários
 
--   Nenhum intervalo de tempo limite de progresso começa quando o trabalho encontra um erro transitório.
--   O intervalo de tempo limite para ou redefine quando um byte de dados é transferido com êxito.
--   Se nenhum intervalo de tempo limite de progresso exceder os *ValorDoTempoLimite*, em seguida, o trabalho será colocado em um estado de erro fatal.
+-   O intervalo sem tempo limite de progresso começa quando o trabalho encontra um erro transitório.
+-   O intervalo de tempo limite é interrompido ou redefinido quando um byte de dados é transferido com êxito.
+-   Se nenhum intervalo de tempo limite de progresso exceder o *TimeOutValue*, o trabalho será colocado em um estado de erro fatal.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir não define a nenhum valor de tempo limite de andamento do trabalho nomeado *myDownloadJob* para 20 segundos
+O exemplo a seguir define o valor de tempo limite sem progresso para o trabalho chamado *myDownloadJob* para 20 segundos
 ```
 C:\>bitsadmin /SetNoProgressTimeout myDownloadJob 20
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

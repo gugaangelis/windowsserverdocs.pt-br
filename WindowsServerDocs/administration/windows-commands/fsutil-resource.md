@@ -1,7 +1,7 @@
 ---
 ms.assetid: b198d8ca-a5b7-430f-8911-5cbb9f50484c
 title: Recurso fsutil
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: ea97f7f71d1b484c7ac63c7c429f291fba607bba
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 10f2847fd05658a481a10dfb5a1920a998559962
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867073"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376822"
 ---
 # <a name="fsutil-resource"></a>Recurso fsutil
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7, Windows 2008, Windows Vista

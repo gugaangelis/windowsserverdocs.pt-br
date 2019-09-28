@@ -1,8 +1,8 @@
 ---
 title: finger
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 526363db3ecff4a9138c9cf13cbf330196e14ced
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8e16120eb19ff2f194fe2c8bdeb3af80ca459ebe
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66439257"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377157"
 ---
 # <a name="finger"></a>finger
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Exibe informações sobre um usuário ou usuários em um computador remoto especificado (geralmente um computador executando UNIX) que está executando o serviço ou daemon finger. O computador remoto especifica o formato e a saída da exibição de informações do usuário. Usado sem parâmetros, **dedo** exibe a Ajuda. 
+Exibe informações sobre um usuário ou usuários em um computador remoto especificado (normalmente um computador executando UNIX) que está executando o daemon ou serviço Finger. O computador remoto especifica o formato e a saída da exibição de informações do usuário. Usado sem parâmetros, **Finger** exibe a ajuda. 
 ## <a name="syntax"></a>Sintaxe
 ```
 finger [-l] [<User>] [@<Host>] [...]
@@ -33,18 +33,18 @@ finger [-l] [<User>] [@<Host>] [...]
 
 | Parâmetro |                                                                            Descrição                                                                            |
 |-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    -l     |                                                          Exibe informações de usuário no formato de lista longa.                                                           |
-|  <User>   | Especifica o usuário sobre o qual você deseja informações. Se você omitir a *usuário* parâmetro, **dedo** exibe informações sobre todos os usuários no computador especificado. |
-|  @<Host>  |        Especifica o computador remoto que executa o serviço de dedo em que você estiver procurando por informações do usuário. Você pode especificar um nome de computador ou endereço IP.        |
+|    -l     |                                                          Exibe informações do usuário em formato de lista longa.                                                           |
+|  <User>   | Especifica o usuário sobre o qual você deseja obter informações. Se você omitir o parâmetro de *usuário* , **Finger** exibirá informações sobre todos os usuários no computador especificado. |
+|  @<Host>  |        Especifica o computador remoto que executa o serviço Finger em que você está procurando informações do usuário. Você pode especificar um nome de computador ou endereço IP.        |
 |    /?     |                                                               Exibe a ajuda no prompt de comando.                                                                |
 
 ## <a name="remarks"></a>Comentários
-Vários User@Host parâmetros podem ser especificados.
-Você deve prefixar **dedo** parâmetros com um hífen (-) em vez de uma barra (/).
-Esse comando está disponível somente se o protocolo de Internet Protocol (TCP/IP) é instalado como um componente nas propriedades de um adaptador de rede em conexões de rede.
-O Windows Server 2003 não fornece um serviço de dedo.
-## <a name="BKMK_Examples"></a>Exemplos
-Para exibir informações de user1 no computador users.microsoft.com, digite:
+Vários parâmetros User@Host podem ser especificados.
+Você deve prefixar parâmetros de **dedo** com um hífen (-) em vez de uma barra (/).
+Esse comando estará disponível somente se o protocolo TCP/IP estiver instalado como um componente nas propriedades de um adaptador de rede em conexões de rede.
+O Windows Server 2003 não fornece um serviço Finger.
+## <a name="BKMK_Examples"></a>Disso
+Para exibir informações para user1 no computador users.microsoft.com, digite:
 ```
 finger user1@users.microsoft.com
 ```

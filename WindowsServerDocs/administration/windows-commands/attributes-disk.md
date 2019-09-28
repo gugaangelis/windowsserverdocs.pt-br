@@ -1,8 +1,8 @@
 ---
-title: Disco de atributos
-description: Tópico de comandos do Windows para **disco atributos** -exibe, define ou limpa os atributos de um disco.
+title: disco de atributos
+description: Tópico de comandos do Windows para **atributos disco** – exibe, define ou limpa os atributos de um disco.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7cacc2fb6b47d095f5e452ca470c89f228949594
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 415125208b13d82adeed736107f59fda9489a953
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890347"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382574"
 ---
-# <a name="attributes-disk"></a>Disco de atributos
+# <a name="attributes-disk"></a>disco de atributos
 
 
 
@@ -41,15 +41,15 @@ attributes disk [{set | clear}] [readonly] [noerr]
 |---------|-----------|
 |set|Define o atributo especificado do disco com foco.|
 |clear|Limpa o atributo especificado do disco com foco.|
-|somente leitura|Especifica que o disco é somente leitura.|
-|noerr|Somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro.|
+|readonly|Especifica que o disco é somente leitura.|
+|NOERR|Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.|
 
 ## <a name="remarks"></a>Comentários
 
--   Quando **disco atributos** é usado para exibir os atributos atuais de um disco, o atributo de disco de inicialização denota o disco que é usado para iniciar o computador. Para um espelho dinâmico, ele será exibido para o disco que contém o plex de inicialização do volume de inicialização.
--   Um disco deve ser selecionado para o **disco atributos** comando tenha êxito. Use o **Selecionar disco** comando para selecionar um disco e mudar o foco a ele.
+-   Quando o **disco de atributos** é usado para exibir os atributos atuais de um disco, o atributo de disco de inicialização denota o disco que é usado para iniciar o computador. Para um espelho dinâmico, ele é exibido para o disco que contém o Plex de inicialização do volume de inicialização.
+-   Um disco deve ser selecionado para que o comando **atributos de disco** tenha sucesso. Use o comando **selecionar disco** para selecionar um disco e deslocar o foco para ele.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 Para exibir os atributos do disco selecionado, digite:
 ```
@@ -62,5 +62,5 @@ attributes disk set readonly
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 

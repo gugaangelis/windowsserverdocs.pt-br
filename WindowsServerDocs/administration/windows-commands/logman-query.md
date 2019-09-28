@@ -1,8 +1,8 @@
 ---
 title: logman query
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e00e1ca7e6e090fd618af5b0ca2307bb573ab8c
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6acf6cf5240dd59357f4c788577190699a354744
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437726"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374420"
 ---
 # <a name="logman-query"></a>logman query
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-coletor de dados de consulta ou o coletor de dados definir propriedades.  
+consultar as propriedades do coletor de dados ou do conjunto de coletores de dados.  
 
 ## <a name="syntax"></a>Sintaxe  
 ```  
@@ -34,22 +34,22 @@ logman query [providers|"Data Collector Set name"] [options]
 
 |     Parâmetro      |                                 Descrição                                  |
 |--------------------|------------------------------------------------------------------------------|
-|         /?         |                       Exibe contextual a Ajuda.                       |
+|         /?         |                       Exibe a ajuda contextual.                       |
 | -s <computer name> |            Execute o comando no computador remoto especificado.             |
-|  -config <value>   |           Especifica o arquivo de configurações que contém opções de comando.            |
+|  -config <value>   |           Especifica o arquivo de configurações que contém as opções de comando.            |
 |    [-n] <name>     |                          Nome do objeto de destino.                          |
-|        -ets        | Envie comandos para sessões de rastreamento de eventos diretamente sem salvar ou agendamento. |
+|        -ETS        | Envie comandos para sessões de rastreamento de eventos diretamente sem salvar ou agendar. |
 
-## <a name="BKMK_examples"></a>Exemplos  
-O comando a seguir lista todos os conjuntos de Coletores de dados configurado no sistema de destino.  
+## <a name="BKMK_examples"></a>Disso  
+O comando a seguir lista todos os conjuntos de coletores de dados configurados no sistema de destino.  
 ```  
 logman query  
 ```  
-O comando a seguir lista os coletores de dados contidos no conjunto de Coletores de dados chamado perf_log.  
+O comando a seguir lista os coletores de dados contidos no conjunto de coletores de dados chamado perf_log.  
 ```  
 logman query "perf_log"  
 ```  
-O comando a seguir lista todos os provedores disponíveis de Coletores de dados no sistema de destino.  
+O comando a seguir lista todos os provedores disponíveis de coletores de dados no sistema de destino.  
 ```  
 logman query providers  
 ```  

@@ -7,23 +7,23 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9d36bb79dd1b71bc435ba9a9af9977e886d58d61
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 141501f240da7ccd1eaa1ebd44c6f2bca561cf18
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190226"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358503"
 ---
 # <a name="ad-fs-user-sign-in-customization"></a>Personalização de entrada de usuário do AD FS
 
 
-O AD FS fornece várias opções para os administradores de personalizar de acordo com a experiência do usuário final para atender às suas corporativa precisa.  A seguinte página servirá como um local central para personalização.  Você pode usar a tabela a seguir para localizar rapidamente sua opção de personalização.
+O AD FS fornece várias opções para que os administradores personalizem e adaptem a experiência do usuário final para atender às necessidades corporativas deles.  A página a seguir funcionará como um local central para personalização.  Você pode usar a tabela abaixo para localizar rapidamente sua opção de personalização.
 
 
 
-![Personalização do AD FS](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png) 
+![AD FS personalização](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png) 
     
   
 
@@ -35,23 +35,23 @@ O AD FS fornece várias opções para os administradores de personalizar de acor
 
 Tópico|Descrição|
 -----|-----|
-[Personalização do AD FS no Windows Server 2016](AD-FS-Customization-in-Windows-Server-2016.md)|Novas opções de personalização disponíveis para o AD FS no Windows Server 2016|
-[Alterar o nome da empresa](Change-the-company-name-on-the-AD-FS-sign-in-page.md)|Etapas para exibir seu nome de empresas na página de entrada|
-[Alterar o logotipo da empresa](Change-the-company-logo-on-the-AD-FS-sign-in-page.md)|Etapas para alterar o logotipo que aparece na entrada na página|
+[AD FS personalização no Windows Server 2016](AD-FS-Customization-in-Windows-Server-2016.md)|Novas opções de personalização disponíveis para AD FS no Windows Server 2016|
+[Alterar o nome da empresa](Change-the-company-name-on-the-AD-FS-sign-in-page.md)|Etapas para exibir o nome de suas empresas na página de entrada|
+[Alterar o logotipo da empresa](Change-the-company-logo-on-the-AD-FS-sign-in-page.md)|Etapas para alterar o logotipo que aparece na página de entrada|
 [Alterar a ilustração](Change-the-illustration-on-the-AD-FS-sign-in-page.md)|Etapas para alterar a ilustração que aparece na página de entrada|
-[Adicionar descrição de entrada](Add-sign-in-page-description.md)|Etapas para adicionar uma descrição para a página de entrada|
-[Adicionar link de suporte técnico](Add-Help-Desk-Link.md)|Etapas para adicionar um link de suporte técnico|
-[Adicionar o link da página inicial](Add-Home-Link.md)|Etapas para adicionar um link da página inicial|
+[Adicionar Descrição de entrada](Add-sign-in-page-description.md)|Etapas para adicionar uma descrição à página de entrada|
+[Adicionar link do suporte técnico](Add-Help-Desk-Link.md)|Etapas para adicionar um link de suporte técnico|
+[Adicionar link inicial](Add-Home-Link.md)|Etapas para adicionar um link inicial|
 [Adicionar link de privacidade](Add-Privacy-Link.md)|Etapas para adicionar um link de privacidade|
-[Temas da web personalizado](Custom-Web-Themes-in-AD-FS.md)|Informações sobre como usar temas da web personalizado
-[Mensagens de erro personalizadas](Custom-error-messages-for-AD-FS-sign-in-page.md)|Etapas para personalizar as mensagens de erro
-[Descoberta de Realm inicial](Home-Realm-Discovery-Customization.md)|Etapas para personalizar a descoberta de Realm inicial|
-[Atualizar senha personalização](Update-password-customization.md)|Etapas para ativar e personalizar a página de atualização de senha|
-[A autenticação multifator e personalização de provedores de autenticação externa](Multi-factor-authentication-and-external-auth-providers-customization.md)|Informações sobre como usar o MFA e provedores de autenticação externa|
-[Personalização para localização](Customization-for-Localization.md)|Obter informações sobre considerações de localização
+[Temas da Web personalizados](Custom-Web-Themes-in-AD-FS.md)|Informações sobre como usar temas da Web personalizados
+[Mensagens de erro personalizadas](Custom-error-messages-for-AD-FS-sign-in-page.md)|Etapas para personalizar mensagens de erro
+[Descoberta de realm inicial](Home-Realm-Discovery-Customization.md)|Etapas para personalizar a descoberta de realm inicial|
+[Atualizar personalização de senha](Update-password-customization.md)|Etapas para habilitar e personalizar a página de atualização de senha|
+[Personalização de autenticação multifator e provedores de autenticação externa](Multi-factor-authentication-and-external-auth-providers-customization.md)|Informações sobre como usar MFA e provedores de autenticação externa|
+[Personalização para localização](Customization-for-Localization.md)|Informações sobre considerações de localização
 [Removendo os direitos autorais da Microsoft](Remove-the-Microsoft-copyright.md)|Etapas sobre como remover os direitos autorais da Microsoft
-[Personalizando os nomes de exibição e descrições para métodos de autenticação](Customize-the-display-names-and-descriptions-for-authentication-methods.md)|Etapas de personalização de exibem os nomes e descrições para os métodos de autenticação
-[Personalização avançada](Advanced-Customization-of-AD-FS-Sign-in-Pages.md)|Opções de personalização avançada usando o arquivo onload.js.
+[Personalizando os nomes de exibição e descrições para métodos de autenticação](Customize-the-display-names-and-descriptions-for-authentication-methods.md)|Etapas sobre como personalizar nomes de exibição e descrições para métodos de autenticação
+[Personalização avançada](Advanced-Customization-of-AD-FS-Sign-in-Pages.md)|Opções de personalização avançadas usando o arquivo OnLoad. js.
 
 
 

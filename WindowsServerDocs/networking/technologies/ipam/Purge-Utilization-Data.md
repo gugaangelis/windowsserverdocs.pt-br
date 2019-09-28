@@ -1,9 +1,9 @@
 ---
 title: Limpar dados de utilização
-description: Este tópico faz parte do guia de gerenciamento do gerenciamento de endereço IP (IPAM) no Windows Server 2016.
+description: Este tópico faz parte do guia de gerenciamento do IPAM (gerenciamento de endereços IP) no Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ipam
@@ -12,25 +12,25 @@ ms.topic: article
 ms.assetid: 45cada9e-69b9-43df-b6f5-6d3942435809
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ab2bd3ad1ef8965400e09fa74c6eb89ffc5ebcef
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 9e1db31e4d2d714c358f2a67c2165aef91b314ba
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283838"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405603"
 ---
 # <a name="purge-utilization-data"></a>Limpar dados de utilização
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Você pode usar este tópico para saber como excluir dados de utilização do banco de dados IPAM.  
+Você pode usar este tópico para saber como excluir dados de utilização do banco de dado do IPAM.  
 
-Você deve ser um membro da **os administradores do IPAM**, o computador local **administradores** grupo, ou equivalente, para executar este procedimento.
+Você deve ser membro de **Administradores do IPAM**, do grupo **Administradores** do computador local ou equivalente, para executar esse procedimento.
 
-## <a name="to-purge-the-ipam-database"></a>Limpar o banco de dados do IPAM  
-1. Abra o Gerenciador do servidor e, em seguida, navegue até a interface do cliente IPAM.
-2. Navegue até um dos seguintes locais: **Blocos de endereço IP**, **inventário de endereço IP**, ou **grupos de intervalos de endereço IP**.  
-3. Clique em **tarefas**e, em seguida, clique em **limpar dados de utilização**. O **limpar dados de utilização** caixa de diálogo é aberta.
-4. Na **limpar a utilização de todos os dados em ou antes**, clique em **selecionar uma data**.
-5. Escolha a data para o qual você deseja excluir todos os registros de banco de dados em e antes da data.
+## <a name="to-purge-the-ipam-database"></a>Para limpar o banco de dados IPAM  
+1. Abra Gerenciador do Servidor e, em seguida, navegue até a interface do cliente IPAM.
+2. Navegue até um dos seguintes locais: **Blocos de endereço IP**, **inventário de endereço IP**ou **grupos de intervalos de endereços IP**.  
+3. Clique em **tarefas**e, em seguida, clique em **limpar dados de utilização**. A caixa de diálogo **limpar dados de utilização** é aberta.
+4. Em **limpar todos os dados de utilização em ou antes**, clique em **selecionar uma data**.
+5. Escolha a data para a qual você deseja excluir todos os registros de banco de dados e antes dessa data.
 6. Clique em **OK**. IPAM exclui todos os registros que você especificou.

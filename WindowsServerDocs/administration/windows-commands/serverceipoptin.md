@@ -1,8 +1,8 @@
 ---
 title: serverceipoptin
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fca2497af308faf298e1df03d8b07c68bf9e8b98
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f400a8f66f15e5a138cf355ad54d276cfa7f3ce3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840557"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371013"
 ---
 # <a name="serverceipoptin"></a>serverceipoptin
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Permite que você participe do programa de Aperfeiçoamento da experiência do usuário (CEIP).
+Permite que você participe do Programa de Aperfeiçoamento da Experiência do Usuário (CEIP).
 ## <a name="syntax"></a>Sintaxe
 ```
 serverceipoptin [/query] [/enable] [/disable]
@@ -33,10 +33,10 @@ serverceipoptin [/query] [/enable] [/disable]
 |Parâmetro|Descrição|
 |-------|--------|
 |/Query|verifica a configuração atual.|
-|/enable|Habilita a participação.|
-|/disable|Desabilita a participação.|
+|/Enable|Habilita a participação.|
+|/Disable|Desabilita a participação.|
 |/?|Exibe a ajuda no prompt de comando.|
-## <a name="BKMK_Examples"></a>Exemplos
+## <a name="BKMK_Examples"></a>Disso
 Para verificar as configurações atuais, digite:
 ```
 serverceipoptin /query
@@ -50,5 +50,5 @@ Para desabilitar a participação, digite:
 serverceipoptin /disable
 ```
 ## <a name="additional-references"></a>Referências adicionais
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 

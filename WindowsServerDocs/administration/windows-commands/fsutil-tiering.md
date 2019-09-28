@@ -1,7 +1,7 @@
 ---
 ms.assetid: e5f55f3e-8d2a-4526-8d67-36a539126c22
-title: Disposição em camadas do fsutil
-ms.prod: windows-server-threshold
+title: Fsutil tiering
+ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
@@ -9,17 +9,17 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: dcb69e4e9c71a723bfd735eb7915472f1232a92b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6863940d69e30f4984897a7e03369a834da21d1d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859247"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376785"
 ---
-# <a name="fsutil-tiering"></a>Disposição em camadas do fsutil
+# <a name="fsutil-tiering"></a>Fsutil tiering
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10
 
-Permite o gerenciamento de funções de camada de armazenamento, como configuração e desabilitando sinalizadores e listagem das camadas.
+Habilita o gerenciamento de funções de camada de armazenamento, como a configuração e a desabilitação de sinalizadores e a listagem de camadas.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -35,13 +35,13 @@ fsutil tiering [tierlist] <volume>
 
 |Parâmetro|Descrição|
 |-------------|---------------|
-|clearflags|Desabilita os sinalizadores de comportamento de disposição em camadas de um volume.|
-|\<volume>|Especifica o volume.|
-|/TrNH|Para volumes com o armazenamento hierárquico, faz com que calor coleta seja desabilitada.<br /><br>Aplica-se em NTFS e ReFS apenas.|
-|queryflags|Consulta os sinalizadores de comportamento de disposição em camadas de um volume.|
-|regionlist|Lista as regiões em camadas de um volume e suas camadas de armazenamento respectivos.|
-|setflags|Permite que os sinalizadores de comportamento de disposição em camadas de um volume.|
-|tierlist|Lista o tieres de armazenamento associado a um volume.|
+|clearflags|Desabilita os sinalizadores de comportamento de camadas de um volume.|
+|\<volume >|Especifica o volume.|
+|/TrNH|Para volumes com armazenamento em camadas, o faz com que a coleta de calor seja desabilitada.<br /><br>Aplica-se somente a NTFS e ReFS.|
+|queryflags|Consulta os sinalizadores de comportamento de camadas de um volume.|
+|regiãolist|Lista as regiões em camadas de um volume e suas respectivas camadas de armazenamento.|
+|SetFlags|Habilita os sinalizadores de comportamento de camadas de um volume.|
+|camadalist|Lista as camadas de armazenamento associadas a um volume.|
 
 
 ### <a name="examples"></a>Exemplos
@@ -64,13 +64,13 @@ Para limpar os sinalizadores no volume C, digite:
 fsutil tiering clearflags C: /TrNH
 ```
 
-Para listar as regiões do volume C e suas camadas de armazenamento respectivos, digite:
+Para listar as regiões do volume C e suas respectivas camadas de armazenamento, digite:
 
 ```
 fsutil tiering regionlist C:
 ```
 
-Para listar as camadas de volume C, digite:
+Para listar as camadas do volume C, digite:
 
 ```
 fsutil tiering tierlist C:
@@ -79,7 +79,7 @@ fsutil tiering tierlist C:
 
 
 ### <a name="additional-references"></a>Referências adicionais
-[Chave de sintaxe de linha de comando](Command-Line-Syntax-Key.md)
+[Chave da sintaxe de linha de comando](Command-Line-Syntax-Key.md)
 
 [Fsutil](Fsutil.md)
 

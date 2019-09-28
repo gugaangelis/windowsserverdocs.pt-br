@@ -2,7 +2,7 @@
 title: Add Servers to Server Manager
 description: Gerenciador do Servidor
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-server-manager
@@ -14,12 +14,12 @@ ms.author: coreyp
 manager: dongill
 ms.localizationpriority: medium
 ms.date: 02/01/2018
-ms.openlocfilehash: a47ecbc0c7359438ed60ed34c94adf0096b14967
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: ad30a8f1c4c1e0aa317512eb68fffbd76413175b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435454"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383261"
 ---
 # <a name="add-servers-to-server-manager"></a>Add Servers to Server Manager
 
@@ -38,11 +38,11 @@ Este tópico descreve como adicionar servidores ao pool de servidores do Gerenci
 
 Este tópico contém as seguintes seções.
 
--   [Adicionar servidores para gerenciar](#BKMK_add)
+-   [Adicionar servidores a serem gerenciados](#BKMK_add)
 
--   [Forneça as credenciais com o comando gerenciar como](#BKMK_creds)
+-   [Fornecer credenciais com o comando gerenciar como](#BKMK_creds)
 
-## <a name="BKMK_creds"></a>Forneça as credenciais com o comando gerenciar como
+## <a name="BKMK_creds"></a>Fornecer credenciais com o comando gerenciar como
 Como adicionar servidores remotos ao Gerenciador do servidor, alguns dos servidores que você adicionar podem exigir credenciais da conta de usuário diferente para acessar ou gerenciá-los. Para especificar as credenciais para um servidor gerenciado que serão diferentes daquele que você pode usar para fazer logon no computador no qual você está executando o Gerenciador de servidores, use o comando **Gerenciar como** depois de adicionar um servidor ao Gerenciador de servidores, que pode ser acessada clicando com o entrada para um servidor gerenciado em blocos de **servidores** da home page de uma função ou grupo. Ao clicar em **Gerenciar Como** a caixa de diálogo **Segurança do Windows** é exibida, na qual você pode fornecer um nome de usuário que tenha direitos de acesso no servidor gerenciado, em um dos formatos a seguir.
 
 -   *Nome de usuário*
@@ -64,7 +64,7 @@ Depois de adicionar servidores para gerenciar seguindo os procedimentos neste t�
 > [!NOTE]
 > Funções e recursos que não têm suporte para o comando **Gerenciar como** incluem serviços de área de trabalho remota (RDS) e o endereço IP de servidor de gerenciamento (IPAM). Se você não pode gerenciar o servidor remoto do RDS ou IPAM usando as mesmas credenciais que você está usando no computador no qual você está executando o Gerenciador de servidores, adicionando a conta que você normalmente usa para gerenciar esses servidores remotos ao grupo Administradores no computador de teste que está executando o Gerenciador de servidores. Em seguida, faça logon no computador que está executando o Gerenciador de servidores com a conta usada para gerenciar o servidor remoto que está executando o rdS ou IPAM.
 
-## <a name="BKMK_add"></a>Adicionar servidores para gerenciar
+## <a name="BKMK_add"></a>Adicionar servidores a serem gerenciados
 Você pode adicionar servidores ao Gerenciador do servidor para gerenciar usando qualquer um dos três métodos na caixa de diálogo **Adicionar servidores** .
 
 -   **Active Directory Domain Services**  adicionar servidores para gerenciar que o active directory localiza no mesmo domínio do computador local.

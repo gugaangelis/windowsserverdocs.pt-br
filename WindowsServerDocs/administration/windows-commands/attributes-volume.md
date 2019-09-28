@@ -1,8 +1,8 @@
 ---
 title: volume de atributos
-description: Tópico de comandos do Windows para **atributos de volume** -exibe, define ou limpa os atributos de um volume.
+description: Tópico de comandos do Windows para **atributos volume** – exibe, define ou limpa os atributos de um volume.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 37af55ee2a041fbcf8068e0def72147732d3a687
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 225a10307123763d1a024fcc08fbae536fd0b5df
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846577"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382577"
 ---
 # <a name="attributes-volume"></a>volume de atributos
 
@@ -38,43 +38,43 @@ attributes volume [{set | clear}] [{hidden | readonly | nodefaultdriveletter | s
   
 |Parâmetro|Descrição|  
 |-------|--------|  
-|set|Define o atributo especificado do volume com o foco.|  
-|clear|Limpa o atributo especificado do volume com o foco.|  
-|somente leitura|Especifica que o volume é ler\-apenas.|  
-|Oculto|Especifica que o volume está oculta.|  
-|NODEFAULTDRIVELETTER|Especifica que o volume não recebe uma letra de unidade por padrão.|  
-|cópia de sombra|Especifica que o volume é um volume de cópia de sombra.|  
-|noerr|Somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro.|  
+|set|Define o atributo especificado do volume com foco.|  
+|clear|Limpa o atributo especificado do volume com foco.|  
+|readonly|Especifica que o volume é Read @ no__t-0only.|  
+|oculto|Especifica que o volume está oculto.|  
+|nodefaultdriveletter|Especifica que o volume não recebe uma letra de unidade por padrão.|  
+|shadowcopy|Especifica que o volume é um volume de cópia de sombra.|  
+|NOERR|Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.|  
   
 ## <a name="remarks"></a>Comentários  
   
--   No registro mestre de inicialização básica \(MBR\) discos, o **oculto**, **readonly**, e **nodefaultdriveletter** parâmetros se aplicam a todos os volumes no o disco.  
+-   No registro de inicialização mestre básico \(MBR @ no__t-1 discos, os parâmetros **Hidden**, **ReadOnly**e **nodefaultdriveletter** se aplicam a todos os volumes no disco.  
   
--   Na tabela de partição GUID básica \(gpt\) discos e em dinâmico discos MBR e gpt, o **oculto**, **readonly**, e **nodefaultdriveletter** parâmetros se aplicam apenas ao volume selecionado.  
+-   Na tabela de partição GUID básica \(gpt @ no__t-1 discos e em discos MBR e GPT dinâmicos, os parâmetros **Hidden**, **ReadOnly**e **nodefaultdriveletter** se aplicam somente ao volume selecionado.  
   
--   Um volume deve ser selecionado para o **atributos de volume** comando tenha êxito. Use o **selecionar volume** comando para selecionar um volume e mudar o foco a ele.  
+-   Um volume deve ser selecionado para que o comando de **volume de atributos** seja bem-sucedidos. Use o comando **selecionar volume** para selecionar um volume e deslocar o foco para ele.  
   
-## <a name="BKMK_examples"></a>Exemplos  
+## <a name="BKMK_examples"></a>Disso  
 Para exibir os atributos atuais no volume selecionado, digite:  
   
 ```  
 attributes volume  
 ```  
   
-Para definir o volume selecionado como oculto e leitura\-apenas, digite:  
+Para definir o volume selecionado como oculto e ler @ no__t-0only, digite:  
   
 ```  
 attributes volume set hidden readonly  
 ```  
   
-Para remover as ocultas e leitura\-apenas os atributos no volume selecionado, digite:  
+Para remover os atributos Hidden e Read @ no__t-0only no volume selecionado, digite:  
   
 ```  
 attributes volume clear hidden readonly  
 ```  
   
 #### <a name="additional-references"></a>Referências adicionais  
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 
   

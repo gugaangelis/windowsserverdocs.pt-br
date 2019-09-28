@@ -1,18 +1,18 @@
 ---
 title: Funções, serviços de função e recursos incluídos no Windows Server-Server Core
 description: Quais funções e recursos estão incluídos na opção de instalação do Server Core do Windows Server?
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 02/23/2018
-ms.openlocfilehash: 2f6aed56083bd606ae2ec06b72152ef4a0461420
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 7b5d5d5ad38b1b03e409c26485860f43799f1322
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476504"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383334"
 ---
 # <a name="roles-role-services-and-features-included-in-windows-server---server-core"></a>Funções, serviços de função e recursos incluídos no Windows Server-Server Core
 
@@ -87,7 +87,7 @@ A opção de instalação Server Core inclui os seguintes serviços de função.
 |                                       | Documento padrão                                               | Web-padrão-doc         | N                     |
 |                                       | Pesquisa no diretório                                             | Web-dir-navegando        | N                     |
 |                                       | Erros de HTTP                                                    | Web-http-erros         | N                     |
-|                                       | Conteúdo Estático                                                 | Web-estático-conteúdo      | N                     |
+|                                       | Conteúdo estático                                                 | Web-estático-conteúdo      | N                     |
 |                                       | Redirecionamento de HTTP                                               | Web-http-Redirect       | N                     |
 |                                       | Publicação de WebDAV                                              | Publicação na Web-DAV      | N                     |
 |                                       | Integridade e diagnóstico                                         | Web-integridade              | N                     |

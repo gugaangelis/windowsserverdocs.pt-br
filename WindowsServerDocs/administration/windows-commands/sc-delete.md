@@ -1,8 +1,8 @@
 ---
-title: Exclusão de SC
-description: 'Tópico de comandos do Windows para * * *- '
+title: Excluir SC
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 68af5f118b2cc9d7941abddccd2a1bc7fde4c6d0
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: ad64d0f7c772b8d29a191b5f3e690d74c8765717
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222931"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371279"
 ---
-# <a name="sc-delete"></a>Exclusão de SC
+# <a name="sc-delete"></a>Excluir SC
 
 
 
-Exclui uma subchave de serviço do registro. Se o serviço está em execução ou se outro processo tem um identificador aberto para o serviço, o serviço está marcado para exclusão.
+Exclui uma subchave de serviço do registro. Se o serviço estiver em execução ou se outro processo tiver um identificador aberto para o serviço, o serviço será marcado para exclusão.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#examples).
 
@@ -38,13 +38,13 @@ sc [<ServerName>] delete [<ServiceName>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<ServerName>|Especifica o nome do servidor remoto no qual o serviço está localizado. O nome deve usar o formato de convenção de nomenclatura Universal (UNC) (por exemplo, \\ \\myserver). Para executar SC.exe localmente, omita este parâmetro.|
-|\<ServiceName>|Especifica o nome do serviço retornado pelo **getkeyname** operação.|
+|\<ServerName >|Especifica o nome do servidor remoto no qual o serviço está localizado. O nome deve usar o formato UNC (Convenção de nomenclatura universal) (por exemplo, \\ @ no__t-1myserver). Para executar o SC. exe localmente, omita esse parâmetro.|
+|\<ServiceName >|Especifica o nome do serviço retornado pela operação **GetKeyName** .|
 |?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
-Use **adicionar ou remover programas** nos **painel de controle** excluir DHCP, DNS ou qualquer outro serviço interno do sistema operacional. Observe que **adicionar ou remover programas** não removerá apenas a subchave do registro para o serviço, mas ele também desinstale o serviço e exclua todos os atalhos para ele.
+Use **Adicionar ou remover programas** no **painel de controle** para excluir DHCP, DNS ou qualquer outro serviço interno do sistema operacional. Observe que **Adicionar ou remover programas** não apenas removerá a subchave do registro para o serviço, mas também desinstalará o serviço e excluirá todos os atalhos para ele.
 
 ## <a name="examples"></a>Exemplos
 

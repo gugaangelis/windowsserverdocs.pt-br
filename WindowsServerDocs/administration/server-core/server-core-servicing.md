@@ -1,18 +1,18 @@
 ---
 title: Núcleo do servidor de aplicação de patch
 description: Saiba como atualizar uma instalação Server Core do Windows Server
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: b649a3cc16bc1a527c5df0b4a0d543da22a882d2
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: eacb80d89e7bcc95d6b5c12269d7587dc7d6870c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476481"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383323"
 ---
 # <a name="patch-a-server-core-installation"></a>Corrigir uma instalação do Server Core
 
@@ -58,7 +58,7 @@ Use as etapas a seguir para corrigir o servidor automaticamente com Windows Upda
    Net start wuauserv 
    ```
 
-Se o servidor for membro de um domínio, você também pode configurar o Windows Update usando a Política de Grupo. Para obter mais informações, consulte https://go.microsoft.com/fwlink/?LinkId=192470. No entanto, quando você usa esse método, somente a opção 4 ("baixar automaticamente e agendar a instalação") é relevante para instalações do Server Core devido à falta de uma interface gráfica. Para obter mais controle sobre quais atualizações são instaladas e quando, você pode usar um script que fornece uma linha de comando equivalente da maioria da interface gráfica do Windows Update. Para obter informações sobre o script, https://go.microsoft.com/fwlink/?LinkId=192471 consulte.
+Se o servidor for membro de um domínio, você também pode configurar o Windows Update usando a Política de Grupo. Para obter mais informações, consulte https://go.microsoft.com/fwlink/?LinkId=192470. No entanto, quando você usa esse método, somente a opção 4 ("baixar automaticamente e agendar a instalação") é relevante para instalações do Server Core devido à falta de uma interface gráfica. Para obter mais controle sobre quais atualizações são instaladas e quando, você pode usar um script que fornece uma linha de comando equivalente da maioria da interface gráfica do Windows Update. Para obter informações sobre o script, consulte https://go.microsoft.com/fwlink/?LinkId=192471.
 
 Para forçar o Windows Update a detectar imediatamente e instalar todas as atualizações disponíveis, execute o seguinte comando:
 

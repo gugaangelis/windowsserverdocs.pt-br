@@ -1,8 +1,8 @@
 ---
-title: cd de FTP
-description: Tópico de comandos do Windows para o cd de ftp
+title: CD do FTP
+description: Tópico de comandos do Windows para CD de FTP
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ef14c647534c92a97abdcc9ee8df50c64a72e5f
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 891b144b20ebbef6c7e8058771d8249f4bace1cc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438793"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376487"
 ---
-# <a name="ftp-cd"></a>ftp: cd
+# <a name="ftp-cd"></a>FTP: CD
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Altera o diretório de trabalho no computador remoto.   
+altera o diretório de trabalho no computador remoto.   
 ## <a name="syntax"></a>Sintaxe  
 ```  
 cd <remotedirectory>  
@@ -33,14 +33,14 @@ cd <remotedirectory>
 
 |     Parâmetro     |                                 Descrição                                 |
 |-------------------|-----------------------------------------------------------------------------|
-| <remotedirectory> | Especifica o diretório no computador remoto ao qual você deseja alterar. |
+| <remotedirectory> | Especifica o diretório no computador remoto para o qual você deseja alterar. |
 
-## <a name="BKMK_Examples"></a>Exemplos  
-Altere o diretório no computador remoto para **Docs**.  
+## <a name="BKMK_Examples"></a>Disso  
+Altere o diretório no computador remoto para **docs**.  
 ```  
 cd Docs  
 ```  
-Altere o diretório no computador remoto para **vídeos podem**.  
+Altere o diretório no computador remoto para **vídeos de maio**.  
 ```  
 cd  May Videos  
 ```  

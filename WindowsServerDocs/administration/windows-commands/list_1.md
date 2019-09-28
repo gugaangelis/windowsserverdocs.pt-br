@@ -1,8 +1,8 @@
 ---
 title: lista
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ef9262a04f469f54e43cf3a83efe30fac7ad8580
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a9ac8b19ecae30c339138f61a13c21147d4bcf1b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854667"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374650"
 ---
 # <a name="list"></a>lista
 
 
 
-Exibe uma lista de discos, partições em um disco, volumes em um disco ou de discos rígidos virtuais (VHDs).
+Exibe uma lista de discos, de partições em um disco, de volumes em um disco ou de VHDs (discos rígidos virtuais).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,18 +36,18 @@ list { disk | partition | volume | vdisk }
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|disco|Exibe uma lista de discos e informações sobre eles, como tamanho, a quantidade de espaço livre disponível, se o disco é básico ou dinâmico e se o disco usa o registro mestre de inicialização (MBR) ou o estilo de partição GUID partição GPT (tabela).|
+|disco|Exibe uma lista de discos e informações sobre eles, como seu tamanho, a quantidade de espaço livre disponível, se o disco é um disco básico ou dinâmico e se o disco usa o MBR (registro mestre de inicialização) ou o estilo de partição GPT (tabela de partição GUID).|
 |partição|Exibe as partições listadas na tabela de partição do disco atual.|
 |volume|Exibe uma lista dos volumes básicos e dinâmicos em todos os discos.|
-|vdisk|Exibe uma lista dos VHDs que estão anexados e/ou selecionados. Esse comando lista os VHDs desanexados se forem selecionados no momento; No entanto, o tipo de disco é definido como desconhecido até que o VHD está anexado. O VHD marcado com um asterisco (*) tem o foco.</br>Observação: Esse comando só está disponível para Windows 7 e Windows Server 2008 R2.|
+|vdisk|Exibe uma lista dos VHDs que estão anexados e/ou selecionados. Este comando lista os VHDs desanexados se eles estiverem selecionados no momento; no entanto, o tipo de disco é definido como desconhecido até que o VHD seja anexado. O VHD marcado com um asterisco (*) tem foco.</br>Observação: Este comando só está disponível para o Windows 7 e o Windows Server 2008 R2.|
 
 ## <a name="remarks"></a>Comentários
 
--   Ao listar as partições em um disco dinâmico, as partições podem não corresponder aos volumes dinâmicos no disco. Essa discrepância ocorre porque os discos dinâmicos contêm entradas na tabela de partição para o volume do sistema ou volume de inicialização (se presente no disco). Eles também contêm uma partição que ocupa o restante do disco para reservar o espaço para uso por volumes dinâmicos.
--   O objeto marcado com um asterisco (*) tem o foco.
--   Ao listar os discos, se um disco estiver ausente, seu número de disco é prefixado com M. Por exemplo, o primeiro disco ausente é numerado M0.
+-   Ao Listar partições em um disco dinâmico, as partições podem não corresponder aos volumes dinâmicos no disco. Essa discrepância ocorre porque os discos dinâmicos contêm entradas na tabela de partição do volume do sistema ou do volume de inicialização (se estiver presente no disco). Eles também contêm uma partição que ocupa o restante do disco para reservar o espaço para uso por volumes dinâmicos.
+-   O objeto marcado com um asterisco (*) tem foco.
+-   Ao listar discos, se um disco estiver ausente, seu número de disco será prefixado com M. Por exemplo, o primeiro disco ausente é numerado M0.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 ```
 list disk
@@ -58,5 +58,5 @@ list vdisk
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 

@@ -1,8 +1,8 @@
 ---
-title: EXEC
-description: 'Tópico de comandos do Windows para * * *- '
+title: exec
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ecdfd05b8abefb35946b783daaa3220a6713a38d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 514503e4920e16ba6778185af32f925541805223
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882917"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377426"
 ---
-# <a name="exec"></a>EXEC
+# <a name="exec"></a>exec
 
 
 
-Executa um arquivo no computador local. O arquivo pode ser um **cmd** script.
+executa um arquivo no computador local. O arquivo pode ser um script **cmd** .
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,13 +36,13 @@ exec <ScriptFile.cmd>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<ScriptFile.cmd>|Especifica o arquivo de script para executar.|
+|@no__t -0ScriptFile. cmd >|Especifica o arquivo de script a ser executado.|
 
 ## <a name="remarks"></a>Comentários
 
--   Esse comando é usado para duplicar ou restaurar os dados como parte de um backup ou a sequência de restauração.
--   Se o script falhar, um erro será retornado e fecha o DiskShadow.
+-   Esse comando é usado para duplicar ou restaurar dados como parte de uma sequência de backup ou restauração.
+-   Se o script falhar, um erro será retornado e o DiskShadow sairá.
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

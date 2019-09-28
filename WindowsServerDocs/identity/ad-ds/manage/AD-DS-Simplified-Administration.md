@@ -7,22 +7,22 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 863e5352253d53941e64b52d1ca58d565a3aa8b1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4f12b1e88414a17c8fb82a707bd4399505df4c6c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890587"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369453"
 ---
 # <a name="ad-ds-simplified-administration"></a>Administração simplificada do AD DS
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este tópico explica os recursos e benefícios de implantação de controlador de domínio do Windows Server 2012 e administração e as diferenças entre a implantação de DC de sistema operacional anterior e a nova implementação do Windows Server 2012.  
+Este tópico explica os recursos e os benefícios da implantação e da administração do controlador de domínio do Windows Server 2012 e as diferenças entre a implantação do DC do sistema operacional anterior e a nova implementação do Windows Server 2012.  
   
-Windows Server 2012 introduziu a próxima geração de administração simplificada de domínio dos serviços de Active Directory e foi o mais radical previsão de domínio desde o Windows 2000 Server. Administração simplificada do AD DS traz lições aprendidas de 12 anos de Active Directory e faz uma experiência de administrativa mais intuitiva com maior suporte, mais flexível para arquitetos e administradores. Isso significa criar novas versões de tecnologias existentes, bem como estender as funcionalidades dos componentes liberados no Windows Server 2008 R2.  
+O Windows Server 2012 introduziu a próxima geração de Active Directory Domain Services a administração simplificada e foi o reprovisionamento de domínio mais radical desde o Windows 2000 Server. AD DS administração simplificada aproveita as lições aprendidas de doze anos de Active Directory e torna uma experiência administrativa mais fácil de oferecer suporte, mais flexível e intuitiva para arquitetos e administradores. Isso significa criar novas versões de tecnologias existentes, bem como estender as funcionalidades dos componentes liberados no Windows Server 2008 R2.  
   
 A Administração Simplificada do AD DS é uma reformulação da imagem de implantação do domínio.  
   
@@ -33,16 +33,16 @@ A Administração Simplificada do AD DS é uma reformulação da imagem de impla
 - O módulo do Active Directory para o Windows PowerShell agora inclui cmdlets para gerenciamento de topologia de replicação, Controle de acesso dinâmico e outras operações.  
 - O nível funcional da floresta do Windows Server 2012 não implementa novos recursos e o nível funcional de domínio é necessário somente para um subconjunto de novos recursos Kerberos, aliviando os administradores das necessidades frequentes por um ambiente de controlador de domínio mais homogêneo.  
 - Suporte integral adicionado aos controladores de domínio virtualizados, para incluir implantação automatizada e proteção de reversão  
-   - Para obter mais informações sobre controladores de domínio virtualizados, consulte [Introdução aos serviços de domínio do Active Directory &#40;AD DS&#41; virtualização &#40;nível 100&#41;](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md).
+   - Para obter mais informações sobre controladores de domínio virtualizados, consulte [introdução &#40;ao&#41; nível &#40;de virtualização de Active Directory Domain Services AD DS 100&#41;](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md).
 
 Além disso, há ainda muitas melhorias de manutenção e administrativas:  
 
 - O Centro Administrativo do Active Directory inclui uma lixeira gráfica do Active Directory, o gerenciamento de política de senha refinada e o visualizador de histórico do Windows PowerShell
 - O novo Gerenciador de Servidor possui interfaces específicas do AD DS no monitoramento de desempenho, análises de melhores recomendadas, serviços críticos e os logs de evento  
-- Contas de serviço gerenciado do grupo dão suporte a vários computadores usando os mesmos princípios de segurança  
+- Contas de serviço gerenciado de grupo dão suporte a vários computadores usando as mesmas entidades de segurança  
 - Melhorias na emissão do identificador relativo (RID) e monitoramento para melhor capacidade de gerenciamento em domínios maduros do Active Directory  
 
-Lucros do outros novos recursos incluídos no Windows Server 2012, como o AD DS:  
+AD DS lucros de outros novos recursos incluídos no Windows Server 2012, como:  
 
 - Agrupamento NIC e Ponte de Datacenter  
 - Segurança DNS e disponibilidade de zona integrada AD mais rápida após a inicialização  
@@ -64,7 +64,7 @@ Para mais informações sobre Adprep e a preparação da floresta de sistema ope
   
 O Gerenciador do Servidor atua como um hub para tarefas de gerenciamento do servidor. Sua aparência em estilo de painel atualiza periodicamente as exibições de funções instaladas e grupos de servidores remotos. O Gerenciador do Servidor fornece gerenciamento centralizado de servidores locais e remotos, sem a necessidade de acesso de console.  
   
-Serviços de domínio do Active Directory é uma das funções do hub; executando o Gerenciador do servidor em um controlador de domínio ou as ferramentas de administração de servidor remoto em um Windows 8, você pode ver emissões recentes e importantes nos controladores de domínio na floresta.  
+Active Directory Domain Services é uma dessas funções de Hub; ao executar Gerenciador do Servidor em um controlador de domínio ou no Ferramentas de Administração de Servidor Remoto em um Windows 8, você verá problemas recentes importantes em controladores de domínio em sua floresta.  
   
 Essas exibições incluem:  
   
@@ -114,7 +114,7 @@ Para obter mais informações sobre a topologia e replicação do site AD DS, co
 
 O Windows 2000 Active Directory introduziu o Mestre RID, que emite pools de identificadores relativos para os controladores de domínio, a fim de criar identificadores de segurança (SIDs) de entidades confiáveis, como usuários, grupos e computadores.  Por padrão, esse espaço RID global é limitado a um total de 2<sup>30</sup> (ou 1.073.741.823) SIDs criados em um domínio. Os SIDs não podem retornar para o pool ou serem reemitidos. Com o tempo, um domínio grande pode começar a ficar escasso nos RIDs, ou os acidentes podem levar ao esgotamento de RID desnecessário e a uma eventual exaustão.  
   
-O Windows Server 2012 atende a um grande número de problemas de emissão RID e gerenciamento não cobertos por clientes e pelo suporte ao cliente da Microsoft, na medida em que o AD DS amadurece, e isso desde a criação dos primeiros domínios do Active Directory, em 1999. Como por exemplo:  
+O Windows Server 2012 atende a um grande número de problemas de emissão RID e gerenciamento não cobertos por clientes e pelo suporte ao cliente da Microsoft, na medida em que o AD DS amadurece, e isso desde a criação dos primeiros domínios do Active Directory, em 1999. Elas incluem:  
 
 - Avisos de consumo RID periódicos são gravados no log de eventos  
 - Os eventos são registrados quando um administrador invalida um pool RID  
@@ -153,7 +153,7 @@ Esse serviço deve estar presente e em execução para promover, rebaixar ou clo
 O Adprep não requer mais a execução no mestre de esquema. Ele pode ser executado remotamente em um computador que executa o Windows Server 2008 x64 ou mais recente.  
   
 > [!NOTE]  
-> O Adprep usa LDAP para importar arquivos Schxx.ldf e não se reconecta automaticamente se a conexão ao mestre de esquema for perdida durante a importação. Como parte do processo de importação, o mestre de esquema é definido em um modo específico e a reconexão automática está desabilitada porque se LDAP se reconectar após a conexão for perdida, a conexão restabelecida não seria no modo especifico. Nesse caso, o esquema não seria atualizado corretamente.  
+> O Adprep usa LDAP para importar arquivos Schxx.ldf e não se reconecta automaticamente se a conexão ao mestre de esquema for perdida durante a importação. Como parte do processo de importação, o mestre de esquema é definido em um modo específico e a reconexão automática é desabilitada porque se o LDAP se reconectar após a perda da conexão, a conexão restabelecida não estaria no modo específico. Nesse caso, o esquema não seria atualizado corretamente.  
   
 A verificação de pré-requisitos assegura que certas condições sejam verdadeiras. Essas condições são necessárias para uma instalação bem-sucedida do AD DS. Se algumas condições necessárias não forem verdadeiras, elas poderão ser resolvidas antes que a instalação continue. Ela também detecta se uma floresta ou um domínio ainda não está preparado, de forma que o código de implantação Adprep seja executado automaticamente.  
 
@@ -173,7 +173,7 @@ O código de preparação AD, antes situado no ADprep.exe, é refatorado no adpr
 > [!IMPORTANT]  
 > Não há ferramenta Adprep32.exe de 32 bits para o Windows Server 2012. Você deve ter pelo menos um computador com Windows Server 2008 x64, Windows Server 2008 R2 ou Windows Server 2012 executando como controlador de domínio, servidor membro ou em um grupo de trabalho para preparar a floresta e o domínio. O Adprep.exe não executa em Windows Server 2003 x64.  
   
-## <a name="BKMK_PrereuisiteChecking"></a>Verificação de pré-requisito
+## <a name="BKMK_PrereuisiteChecking"></a>Verificação de pré-requisitos
 
 O sistema de verificação de pré-requisitos compilado no código gerenciado do ADDSDeployment do Windows PowerShell funciona em diferentes modos, de acordo com a operação. As tabelas abaixo descrevem cada teste, quando ele é usado e contêm uma explicação de como e o que ele valida. Essas tabelas podem ser úteis se houver problemas em que a validação falha e o erro não é suficiente para a solução de problemas.  
   
@@ -205,9 +205,9 @@ Normalmente, não há necessidade de executar esses cmdlets; eles já são execu
 |CheckRODCPrep<br /><br />GroupMembership|LDAP,<br /><br />RPC via SMB (LSARPC)|Validar se o usuário é um membro do grupo Administradores de Empresa e se possui privilégio para Gerenciar auditoria e Logs de eventos de segurança (SesScurityPrivilege) nos controladores de domínio existentes|  
 |VerifyInitSync<br /><br />AfterReboot|LDAP|Validar se o Mestre do esquema replicou pelo menos uma vez antes de reiniciar definindo um valor fictício no atributo becomeSchemaMaster do rootDSE|  
 |VerifySFUHotFix<br /><br />Aplicado|LDAP|Validar se o esquema de floresta existente não contém problema conhecido com a extensão SFU2 para o atributo UID com OID 1.2.840.113556.1.4.7000.187.102<br /><br />([https://support.microsoft.com/kb/821732](https://support.microsoft.com/kb/821732))|  
-|VerifyExchange<br /><br />SchemaFixed|LDAP, WMI, DCOM, RPC|Validar a floresta existente esquema não ainda contêm extensões do Exchange 2000 do problema ms-Exch-Assistant-Name, ms-Exch-LabeledURI e ms-Exch-House-Identifier ([https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649))|  
+|VerifyExchange<br /><br />SchemaFixed|LDAP, WMI, DCOM, RPC|Validar que o esquema de floresta existente ainda não contém as extensões do Exchange 2000 de problemas ms-Exch-Assistant-Name, ms-Exch-LabeledURI e ms-Exch-House-Identifier ([https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649))|  
 |VerifyWin2KSchema<br /><br />Consistência|LDAP|Validar se o esquema de floresta existente tem atributos núcleos e classes consistentes (não modificados incorretamente por terceiros).|  
 |DCPromo|DRSR via RPC,<br /><br />LDAP,<br /><br />DNS<br /><br />RPC via SMB (SAMR)|Validar a sintaxe de linha de comando passada para o código de promoção e testar a promoção. Validar se a floresta ou o domínio já existe ou não para criar um novo.|  
 |VerifyOutbound<br /><br />ReplicationEnabled|LDAP, DRSR via SMB, RPC via SMB (LSARPC)|Validar que o controlador de domínio existente especificado como o parceiro de replicação tem a replicação de saída habilitada, verificando o atributo das opções do objeto de Configurações do NTDS para NTDSDSA_OPT_DISABLE_OUTBOUND_REPL (0x00000004)|  
 |VerifyMachineAdmin<br /><br />Senha|DRSR via RPC,<br /><br />LDAP,<br /><br />DNS<br /><br />RPC via SMB (SAMR)|Validar se a senha de modo seguro definida para DSRM atende aos requisitos de complexidade do domínio.|  
-|VerifySafeModePassword|*N/A*|Validar se a senha do Administrador local definida atende aos requisitos de complexidade da política de segurança do computador.|  
+|VerifySafeModePassword|*N/D*|Validar se a senha do Administrador local definida atende aos requisitos de complexidade da política de segurança do computador.|  

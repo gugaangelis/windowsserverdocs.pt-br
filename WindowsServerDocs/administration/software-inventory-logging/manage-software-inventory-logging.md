@@ -2,7 +2,7 @@
 title: Gerenciar o Log de Inventário de Software
 description: Descreve como gerenciar o log de inventário de software
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: manage-software-inventory-logging
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 686bb61426e49f00597c423bcf4f52d949a358ab
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: bd8a26d158f53121074881ac8ff204287f9a19ad
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866380"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382966"
 ---
 # <a name="manage-software-inventory-logging"></a>Gerenciar o Log de Inventário de Software
 
@@ -221,7 +221,7 @@ O Log de Inventário de Software armazenará temporariamente coletas de dados de
 > Se for necessária uma instalação de reparo ou atualização do sistema operacional por algum motivo, os arquivos de log armazenados localmente serão perdidos.  Se esses dados forem essenciais para operações, é recomendável fazer backup antes da instalação do novo sistema operacional. Após o reparo ou atualização, simplesmente restaure no mesmo local.  
   
 > [!NOTE]  
-> Se, por qualquer motivo, o gerenciamento da duração da retenção dos dados registrados localmente pelo Sil se tornar importante, isso poderá ser configurado alterando o\\valor do registro aqui: \HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. O padrão é ' 30 ' por 30 dias.  
+> Se por algum motivo o gerenciamento da duração da retenção dos dados registrados localmente pelo SIL se tornar importante, isso poderá ser configurado alterando o valor do registro aqui: \HKEY_LOCAL_MACHINE @ no__t-0SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. O padrão é ' 30 ' por 30 dias.  
   
 ## <a name="BKMK_Step6"></a>Lendo dados registrados e publicados pelo log de inventário de software  
 Dados registrados por SIL, mas armazenados localmente (se o encaminhamento para o URI de destino falhar) ou dados que são encaminhados com êxito para o servidor de agregação de destino, são armazenados em um arquivo binário (para os dados de cada dia). Para exibir esses dados no PowerShell, use o cmdlet [Import-BinaryMiLog](https://technet.microsoft.com/library/dn262592.aspx) .  
@@ -244,15 +244,15 @@ Todos os dados armazenados localmente em um Windows Server (ocorre apenas se o r
 ## <a name="BKMK_Step10"></a>Habilitando e Configurando o log de inventário de software em um disco rígido virtual montado  
 O Log de Inventário de Software também dá suporte à configuração e habilitação em máquinas virtuais offline. Os usos práticos para isso se destinam a cobrir a configuração de "imagem ouro" para ampla implantação em data centers, bem como a configuração de imagens do usuário final de um local para uma implantação em nuvem.  
   
-Para dar suporte a esses usos, o Log de Inventário de Software tem entradas de Registro associadas a cada opção configurável.  Esses valores de registro podem ser encontrados em\\\HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging.  
+Para dar suporte a esses usos, o Log de Inventário de Software tem entradas de Registro associadas a cada opção configurável.  Esses valores de registro podem ser encontrados em \HKEY_LOCAL_MACHINE @ no__t-0SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging.  
   
 |||||  
 |-|-|-|-|  
-|**Função**|**Nome do valor**|**Dados**|**Cmdlet correspondente (disponível somente no sistema operacional em execução)**|  
+|**Funcionamento**|**Nome do valor**|**Dado**|**Cmdlet correspondente (disponível somente no sistema operacional em execução)**|  
 |Iniciar/parar o recurso|CollectionState|1 ou 0|[Start-SilLogging](https://technet.microsoft.com/library/dn283391.aspx), [Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)|  
 |Especifica o ponto de agregação de destino na rede|TargetUri|cadeia de caracteres|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TargetURI|  
 |Especifica a impressão digital do certificado ou Hash do certificado usado para a autenticação SSL para o servidor Web de destino|CertificateThumbprint|cadeia de caracteres|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -CertificateThumbprint|  
-|Especifica a data e hora em que o recurso deve iniciar (se o valor definido for no futuro de acordo com a hora do sistema local)|CollectionTime|Padrão:  2000-01-01T03:00:00|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay|  
+|Especifica a data e hora em que o recurso deve iniciar (se o valor definido for no futuro de acordo com a hora do sistema local)|CollectionTime|Default:  2000-01-01T03:00:00|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay|  
   
 Para modificar esses valores em um VHD offline (sistema operacional da VM não em execução), um VHD primeiro deve ser montado e, em seguida, os comandos a seguir podem ser usados para fazer alterações:  
   

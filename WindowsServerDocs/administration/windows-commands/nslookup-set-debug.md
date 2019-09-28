@@ -1,8 +1,8 @@
 ---
 title: nslookup set debug
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: af0d028e3886e6743f402c2c9aa934d6046abf9b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 63423481e685daac821ae75864f20783f96c56c5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436747"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372946"
 ---
 # <a name="nslookup-set-debug"></a>nslookup set debug
 
@@ -36,13 +36,13 @@ set [no]debug
 
 |  Parâmetro  |                         Descrição                          |
 |-------------|--------------------------------------------------------------|
-| **NODEBUG** | Desativa o modo de depuração. A sintaxe padrão é **nodebug**. |
-|  **debug**  |                   Ativa o modo de depuração.                   |
-|  \*\*{Ajuda  |                            ?}\*\*                            |
+| **NODEBUG** | Desativa o modo de depuração. A sintaxe padrão é **NODEBUG**. |
+|  **verificação**  |                   Ativa o modo de depuração.                   |
+|  \* @ no__t-1 {ajuda  |                            ?} \* @ no__t-1                            |
 
 ## <a name="remarks"></a>Comentários
 
--   Com o modo de depuração ativada, é impresso obter mais informações sobre o pacote enviado para o servidor e a resposta resultante.
+-   Com o modo de depuração ativado, mais informações são impressas sobre o pacote enviado ao servidor e a resposta resultante.
 
 #### <a name="additional-references"></a>Referências adicionais
 

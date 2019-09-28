@@ -2,7 +2,7 @@
 title: append
 description: 'Tópico de comandos do Windows para '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe641e1336c163b5e98421a5fc32f8dbe64023b0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: fdc4243bee8055888b023a56921cef757dda6b7e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435326"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382753"
 ---
 # <a name="append"></a>append
 
 
 
-Permite que os programas abrir arquivos de dados nos diretórios especificados como se estivessem no diretório atual. Se usado sem parâmetros, **acrescentar** exibe a lista de pastas acrescentadas.
+Permite que os programas abram arquivos de dados em diretórios especificados como se estivessem no diretório atual. Se usado sem parâmetros, **Append** exibe a lista de diretórios acrescentados.
 
 > [!NOTE]
-> Esse comando não tem suportado no Windows 10.
+> Este comando não tem suporte no Windows 10.
 >
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
@@ -43,22 +43,22 @@ append ;
 
 |     Parâmetro     |                                                                                 Descrição                                                                                 |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [\<Drive>:]<Path> |                                                                 Especifica uma unidade e diretório para acrescentar.                                                                  |
-|       /x:on       |                                                  Aplica-se pastas acrescentadas a pesquisas de arquivo e inicialização de aplicativos.                                                  |
-|      /x:off       |                                     Aplica-se pastas acrescentadas apenas às solicitações para abrir arquivos.</br>**/x: off** é a configuração padrão.                                     |
-|     /path:on      |                               Aplica-se pastas acrescentadas às solicitações de arquivo que já especificam um caminho. **/path: em** é a configuração padrão.                               |
-|     /path:off     |                                                                    Desativa o efeito de **/path: em**.                                                                    |
-|        /e         | Armazena uma cópia da lista de pastas acrescentadas em uma variável de ambiente denominada APPEND. **/e** pode ser usado apenas na primeira vez em que você usar **acrescente** depois de iniciar seu sistema. |
-|         ;         |                                                                     Limpa a lista de pastas acrescentadas.                                                                     |
+| [\<Drive >:] <Path> |                                                                 Especifica uma unidade e um diretório a serem acrescentados.                                                                  |
+|       /x: ativado       |                                                  Aplica diretórios anexados a pesquisas de arquivo e inicialização de aplicativos.                                                  |
+|      /x: off       |                                     Aplica diretórios anexados somente a solicitações para abrir arquivos.</br>**/x: off** é a configuração padrão.                                     |
+|     /Path: on      |                               Aplica diretórios anexados a solicitações de arquivo que já especificam um caminho. **/Path: on** é a configuração padrão.                               |
+|     /Path: off     |                                                                    Desativa o efeito de **/Path: on**.                                                                    |
+|        /e         | Armazena uma cópia da lista de diretórios acrescentados em uma variável de ambiente chamada APPEND. **/e** pode ser usado somente na primeira vez que você usar **Append** depois de iniciar o sistema. |
+|         ;         |                                                                     Limpa a lista de diretórios acrescentados.                                                                     |
 |        /?         |                                                                    Exibe a ajuda no prompt de comando.                                                                     |
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para limpar a lista de pastas acrescentadas, digite:
+Para limpar a lista de diretórios acrescentados, digite:
 ```
 append ;
 ```
-Para armazenar uma cópia do diretório acrescentada a uma variável de ambiente denominada APPEND, digite:
+Para armazenar uma cópia do diretório anexado em uma variável de ambiente chamada APPEND, digite:
 ```
 append /e
 ```

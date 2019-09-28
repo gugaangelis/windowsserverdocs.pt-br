@@ -1,7 +1,7 @@
 ---
-title: Windows 8 deve ser configurado com pelo menos a quantidade mínima de memória
-description: Fornece instruções para resolver o problema relatado por essa regra do analisador de práticas recomendadas.
-ms.prod: windows-server-threshold
+title: O Windows 8 deve ser configurado com pelo menos a quantidade mínima de memória
+description: Fornece instruções para resolver o problema relatado por essa regra de Analisador de Práticas Recomendadas.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,56 +10,56 @@ ms.topic: article
 ms.assetid: 519d1091-fa4d-44d7-83ca-83f6aa71fb7d
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: b109dc747410dfc2868b00a1a0b95620ed314a56
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 830dc05556f78734341fc86c377e5f34805b44dd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864437"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393213"
 ---
-# <a name="windows-8-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows 8 deve ser configurado com pelo menos a quantidade mínima de memória
+# <a name="windows-8-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>O Windows 8 deve ser configurado com pelo menos a quantidade mínima de memória
 
 >Aplica-se a: Windows Server 2016
 
-Para obter mais informações sobre as práticas recomendadas e varreduras, consulte [Run Best Practices Analyzer Scans e Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
+Para obter mais informações sobre práticas recomendadas e verificações, consulte [executar verificações de analisador de práticas recomendadas e gerenciar resultados de verificação](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
 |Propriedade|Detalhes|  
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
-|**Recurso do produto**|Hyper-V|  
-|**Severidade**|Erro|  
-|**categoria**|Configuração|  
+|**Produto/recurso**|Hyper-V|  
+|**Severity**|Erro|  
+|**Categorias**|Configuração|  
   
-As seções a seguir fornecem detalhes sobre o problema específico. Itálico indica o texto de interface do usuário que aparece na ferramenta Analisador de práticas recomendadas para o problema específico.  
+As seções a seguir fornecem detalhes sobre o problema específico. Os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para o problema específico.  
   
 ## <a name="issue"></a>**Problema**  
-*Uma máquina virtual executando o Windows 8 é configurada com o menor do que a quantidade mínima de RAM, que é de 512 MB.*  
+*Uma máquina virtual que executa o Windows 8 é configurada com menos que a quantidade mínima de RAM, que é de 512 MB.*  
   
-## <a name="impact"></a>**Impacto**  
-*O sistema operacional nas seguintes máquinas virtuais pode não ser executado ou pode ser executado de modo não confiável:*  
+## <a name="impact"></a>**Causa**  
+*O sistema operacional convidado nas seguintes máquinas virtuais pode não ser executado ou pode ser executado de forma não confiável:*  
 ```  
 <list of virtual machines>  
 ```  
 ## <a name="resolution"></a>**Resolução**  
-*Use o Gerenciador do Hyper-V para aumentar a memória alocada para essa máquina virtual para pelo menos 512 MB.*  
+*Use o Gerenciador do Hyper-V para aumentar a memória alocada para esta máquina virtual para pelo menos 512 MB.*  
   
-#### <a name="increase-the-memory-using-hyper-v-manager"></a>Aumente a memória usando o Gerenciador do Hyper-V  
+#### <a name="increase-the-memory-using-hyper-v-manager"></a>Aumentar a memória usando o Gerenciador do Hyper-V  
   
 1.  Abra o Gerenciador Hyper-V. Clique em **Iniciar**, vá em **Ferramentas Administrativas** e clique em **Gerenciador do Hyper-V**.  
   
-2.  No painel de resultados, sob **máquinas virtuais**, selecione a máquina virtual que você deseja configurar. O estado da máquina virtual deve estar listado como **desativar**. Se não for, a máquina virtual com o botão direito e, em seguida, clique em **desligar**.  
+2.  No painel de resultados, em **máquinas virtuais**, selecione a máquina virtual que você deseja configurar. O estado da máquina virtual deve ser listado como **desativado**. Se não estiver, clique com o botão direito do mouse na máquina virtual e clique em **desligar**.  
   
 3.  No painel **Ação**, abaixo do nome da máquina virtual, clique em **Configurações**.  
   
 4.  No painel de navegação, clique em **memória**.  
   
-5.  Sobre o **memória** , defina o **RAM de inicialização** pelo menos 512 MB e depois clique em **Okey**.  
+5.  Na página **memória** , defina a **RAM de inicialização** para pelo menos 512 MB e clique em **OK**.  
   
-### <a name="increase-the-memory-using-windows-powershell"></a>Aumente a memória usando o Windows PowerShell  
+### <a name="increase-the-memory-using-windows-powershell"></a>Aumentar a memória usando o Windows PowerShell  
   
-1.  Abra o Windows PowerShell. (Na área de trabalho, clique em **inicie** e comece a digitar **Windows PowerShell**.)  
+1.  Abra o Windows PowerShell. (Na área de trabalho, clique em **Iniciar** e comece a digitar **Windows PowerShell**.)  
   
-2.  Clique com botão direito **Windows PowerShell** e clique em **executar como administrador**.  
+2.  Clique com o botão direito do mouse em **Windows PowerShell** e clique em **Executar como administrador**.  
   
 3.  Execute este comando depois de substituir \<MyVM > pelo nome da sua máquina virtual:  
   

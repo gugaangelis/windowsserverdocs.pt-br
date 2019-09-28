@@ -2,7 +2,7 @@
 title: criar alerta de logman
 description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 37a13ab5623a295f96bde2f734bcb17e1eca2be9
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: 9420c486d4c6161c2c5724384f0d916448164a2a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "66437838"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374582"
 ---
 # <a name="logman-create-alert"></a>criar alerta de logman
 
@@ -35,10 +35,10 @@ logman create alert <[-n] <name>> [options]
 |                 Parâmetro                  |                                                                               Descrição                                                                               |
 |--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                     /?                     |                                                                    Exibe a ajuda contextual.                                                                     |
-|             -s<computer name>             |                                                          Execute o comando no computador remoto especificado.                                                          |
+|             -s <computer name>             |                                                          Execute o comando no computador remoto especificado.                                                          |
 |              -config <value>               |                                                         Especifica o arquivo de configurações que contém as opções de comando.                                                         |
-|                [-n]<name>                 |                                                                       Nome do objeto de destino.                                                                        |
-|          -[-] u < usuário [senha] >           | Especifica o usuário a ser executado como. Inserir um \* para a senha produz um prompt para a senha. A senha não é exibida quando você a digita no prompt de senha. |
+|                [-n] <name>                 |                                                                       Nome do objeto de destino.                                                                        |
+|          -[-] u < usuário [senha] >           | Especifica o usuário a ser executado como. Inserir um \* para a senha produz uma solicitação para a senha. A senha não é exibida quando você a digita no prompt de senha. |
 | -m < [início] [parar] [[Iniciar] [parar] [...]] > |                                                Altere para início ou parada manual em vez de uma hora de início ou de término agendada.                                                 |
 |             -RF < [[hh:] mm:] SS >             |                                                        Execute o coletor de dados para o período de tempo especificado.                                                         |
 |     -b < M/d/AAAA h:mm: SS [AM&#124;PM] >      |                                                              Comece a coletar dados no horário especificado.                                                               |
@@ -49,16 +49,16 @@ logman create alert <[-n] <name>> [options]
 |                   -[-] um                    |                                                                     anexar a um arquivo de log existente.                                                                     |
 |                   -[-] Omo                   |                                                                     Substituir um arquivo de log existente.                                                                     |
 |        -[-] v < nnnnnn&#124;mmddhhmm >        |                                                   Anexe informações de controle de versão do arquivo ao final do nome do arquivo de log.                                                   |
-|               -[-] RC<task>                |                                                         Execute o comando especificado cada vez que o log for fechado.                                                          |
+|               -[-] RC <task>                |                                                         Execute o comando especificado cada vez que o log for fechado.                                                          |
 |              -[-] máx. <value>               |                                                 Tamanho máximo do arquivo de log em MB ou número máximo de registros para logs SQL.                                                  |
 |           -[-] CNF < [[hh:] mm:] SS >           |     Quando o tempo for especificado, crie um novo arquivo quando o tempo especificado tiver decorrido. Quando a hora não for especificada, crie um novo arquivo quando o tamanho máximo for excedido.     |
 |                     -y                     |                                                             Responda sim a todas as perguntas sem avisar.                                                              |
-|               -CF<filename>               |                       Especifica o arquivo que lista os contadores de desempenho a serem coletados. O arquivo deve conter um nome de contador de desempenho por linha.                        |
+|               -CF <filename>               |                       Especifica o arquivo que lista os contadores de desempenho a serem coletados. O arquivo deve conter um nome de contador de desempenho por linha.                        |
 |                   -[-] El                   |                                                                Habilita ou desabilita o relatório do log de eventos.                                                                 |
 |     -ésimo < limite [limite [...]] >      |                                                        Especifique os contadores e seus valores limites para um alerta.                                                        |
-|              -[-]rdcs<name>               |                                                     Especifica o conjunto de coletores de dados a ser iniciado quando um alerta é disparado.                                                      |
-|               -[-] TN<task>                |                                                             Especifica a tarefa a ser executada quando um alerta é disparado.                                                              |
-|            -[-] Tino<argument>             |                                               Especifica os argumentos da tarefa a serem usados com a tarefa especificada usando-TN.                                                |
+|              -[-] rdcs <name>               |                                                     Especifica o conjunto de coletores de dados a ser iniciado quando um alerta é disparado.                                                      |
+|               -[-] TN <task>                |                                                             Especifica a tarefa a ser executada quando um alerta é disparado.                                                              |
+|            -[-] Tino <argument>             |                                               Especifica os argumentos da tarefa a serem usados com a tarefa especificada usando-TN.                                                |
 
 ## <a name="remarks"></a>Comentários  
 Onde [-] está listado, um extra-nega a opção.  
@@ -69,5 +69,5 @@ logman create alert new_alert -th "\Processor(_Total)\% Processor time>50"
 ```  
 > [!NOTE]
 > O valor de limite definido é baseado no valor coletado pelo contador, portanto, neste exemplo, o valor de 50 equivale a 50% de tempo do processador.  
-> #### <a name="additional-references"></a>referências adicionais  
+> #### <a name="additional-references"></a>Referências adicionais  
 > [logman](logman.md)  

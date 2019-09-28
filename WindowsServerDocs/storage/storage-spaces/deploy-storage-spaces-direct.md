@@ -1,6 +1,6 @@
 ---
 title: Implantar espaços de armazenamento diretos
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: eldenc
 ms.author: stevenek
 ms.technology: storage-spaces
@@ -10,12 +10,12 @@ author: stevenek
 ms.date: 06/07/2019
 description: Instruções detalhadas para implantar o armazenamento definido pelo software com o Espaços de Armazenamento Diretos no Windows Server como uma infraestrutura hiperconvergente ou uma infraestrutura convergida (também conhecida como desagregada).
 ms.localizationpriority: medium
-ms.openlocfilehash: 69cd27cba09bd9d23a461978416217a20b2979ec
-ms.sourcegitcommit: b68ff64ecd87959cd2acde4a47506a01035b542a
+ms.openlocfilehash: 0ab96f737f7700e202c9d0382c06859c4ea84118
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68830909"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402817"
 ---
 # <a name="deploy-storage-spaces-direct"></a>Implantar espaços de armazenamento diretos
 
@@ -84,19 +84,19 @@ Entre na sessão do PS e use o nome do servidor ou o endereço IP do nó ao qual
 >   
 > `Set-Item WSMAN:\Localhost\Client\TrustedHosts -Value Server01 -Force`
 >  
-> Observação: a lista de hosts confiáveis dá suporte a `Server*`curingas, como.
+> Observação: a lista de hosts confiáveis dá suporte a curingas, como `Server*`.
 >
-> Para exibir sua lista de hosts confiáveis `Get-Item WSMAN:\Localhost\Client\TrustedHosts`, digite.  
+> Para exibir sua lista de hosts confiáveis, digite `Get-Item WSMAN:\Localhost\Client\TrustedHosts`.  
 >   
-> Para esvaziar a lista `Clear-Item WSMAN:\Localhost\Client\TrustedHost`, digite.  
+> Para esvaziar a lista, digite `Clear-Item WSMAN:\Localhost\Client\TrustedHost`.  
 
 ### <a name="step-13-join-the-domain-and-add-domain-accounts"></a>Etapa 1,3: Ingressar no domínio e adicionar contas de domínio
 
-Até agora, você configurou os servidores individuais com a conta de administrador `<ComputerName>\Administrator`local,.
+Até agora, você configurou os servidores individuais com a conta de administrador local, `<ComputerName>\Administrator`.
 
 Para gerenciar Espaços de Armazenamento Diretos, você precisará unir os servidores a um domínio e usar uma conta de domínio Active Directory Domain Services que esteja no grupo Administradores em cada servidor.
 
-No sistema de gerenciamento, abra um console do PowerShell com privilégios de administrador. Use `Enter-PSSession` o para se conectar a cada servidor e execute o seguinte cmdlet, substituindo seu próprio nome de computador, nome de domínio e credenciais de domínio:
+No sistema de gerenciamento, abra um console do PowerShell com privilégios de administrador. Use `Enter-PSSession` para se conectar a cada servidor e executar o cmdlet a seguir, substituindo seu próprio nome de computador, nome de domínio e credenciais de domínio:
 
 ```PowerShell  
 Add-Computer -NewName "Server01" -DomainName "contoso.com" -Credential "CONTOSO\User" -Restart -Force  
@@ -204,7 +204,7 @@ Count Name                          PSComputerName
 
 ### <a name="step-32-validate-the-cluster"></a>Etapa 3,2: Validar o cluster
 
-Nesta etapa, você executará a ferramenta de validação de cluster para garantir que os nós de servidor estejam configurados corretamente para criar um cluster usando Espaços de Armazenamento Diretos. Quando a validação de`Test-Cluster`cluster () é executada antes da criação do cluster, ela executa os testes que verificam se a configuração é adequada para funcionar com êxito como um cluster de failover. O exemplo diretamente abaixo usa o `-Include` parâmetro e, em seguida, as categorias específicas de testes são especificadas. Isso garante que os testes dos Espaços de Armazenamento Diretos específicos sejam incluídos na validação.
+Nesta etapa, você executará a ferramenta de validação de cluster para garantir que os nós de servidor estejam configurados corretamente para criar um cluster usando Espaços de Armazenamento Diretos. Quando a validação de cluster (`Test-Cluster`) é executada antes da criação do cluster, ela executa os testes que verificam se a configuração parece adequada para funcionar com êxito como um cluster de failover. O exemplo diretamente abaixo usa o parâmetro `-Include` e, em seguida, as categorias específicas de testes são especificadas. Isso garante que os testes dos Espaços de Armazenamento Diretos específicos sejam incluídos na validação.
 
 Use o seguinte comando do PowerShell para validar um conjunto de servidores para uso como um cluster de Espaços de Armazenamento Diretos.
 
@@ -238,7 +238,7 @@ Para obter mais informações, consulte os seguintes tópicos:
 
 ### <a name="step-35-enable-storage-spaces-direct"></a>Etapa 3,5: Habilitar os Espaços de Armazenamento Diretos
 
-Depois de criar o cluster, use `Enable-ClusterStorageSpacesDirect` o cmdlet do PowerShell, que colocará o sistema de armazenamento no modo de espaços de armazenamento diretos e faça o seguinte automaticamente:
+Depois de criar o cluster, use o cmdlet `Enable-ClusterStorageSpacesDirect` do PowerShell, que colocará o sistema de armazenamento no modo de Espaços de Armazenamento Diretos e faça o seguinte automaticamente:
 
 -   **Criar um pool:** Cria um único pool grande que tem um nome como "S2D em CLUSTER1".
 
@@ -258,17 +258,17 @@ Após a conclusão desse comando, o que pode demorar alguns minutos, o sistema e
 
 ### <a name="step-36-create-volumes"></a>Etapa 3,6: Criar volumes
 
-É recomendável usar `New-Volume` o cmdlet, pois ele fornece a experiência mais rápida e direta. Este cmdlet único cria automaticamente o disco virtual, partições, formata-o, cria o volume com o nome correspondente e o adiciona a volumes de cluster compartilhados – tudo em uma etapa simples.
+É recomendável usar o cmdlet `New-Volume`, pois ele fornece a experiência mais rápida e direta. Este cmdlet único cria automaticamente o disco virtual, partições, formata-o, cria o volume com o nome correspondente e o adiciona a volumes de cluster compartilhados – tudo em uma etapa simples.
 
 Para obter mais informações, consulte [Criando volumes em Espaços de Armazenamento Diretos](create-volumes.md).
 
 ### <a name="step-37-optionally-enable-the-csv-cache"></a>Etapa 3,7: Opcionalmente, habilitar o cache CSV
 
-Opcionalmente, você pode habilitar o cache do volume compartilhado do cluster (CSV) para usar a memória do sistema (RAM) como um cache de gravação no nível de bloco de operações de leitura que ainda não estão em cache pelo Gerenciador de cache do Windows. Isso pode melhorar o desempenho de aplicativos como o Hyper-V. O cache CSV pode impulsionar o desempenho de solicitações de leitura e também é útil para cenários de servidor de arquivos de escalabilidade horizontal.
+Opcionalmente, você pode habilitar o cache do volume compartilhado do cluster (CSV) para usar a memória do sistema (RAM) como um cache de gravação no nível de bloco de operações de leitura que ainda não estão em cache pelo Gerenciador de cache do Windows. Isso pode melhorar o desempenho de aplicativos como o Hyper-V. O cache CSV pode impulsionar o desempenho de solicitações de leitura e também é útil para cenários de Servidor de Arquivos de Escalabilidade Horizontal.
 
 Habilitar o cache CSV reduz a quantidade de memória disponível para executar VMs em um cluster hiperconvergente, portanto, você terá que balancear o desempenho do armazenamento com a memória disponível para VHDs.
 
-Para definir o tamanho do cache CSV, abra uma sessão do PowerShell no sistema de gerenciamento com uma conta que tenha permissões de administrador no cluster de armazenamento e, em seguida, use esse script `$ClusterName` , `$CSVCacheSize` alterando as variáveis e conforme apropriado (isso o exemplo define um cache CSV de 2 GB por servidor):
+Para definir o tamanho do cache CSV, abra uma sessão do PowerShell no sistema de gerenciamento com uma conta que tenha permissões de administrador no cluster de armazenamento e, em seguida, use esse script, alterando as variáveis `$ClusterName` e `$CSVCacheSize` conforme apropriado (Este exemplo define um 2 GB de cache CSV por servidor):
 
 ```PowerShell
 $ClusterName = "StorageSpacesDirect1"
@@ -287,43 +287,43 @@ Para obter mais informações, consulte [usando o cache de leitura em memória C
 
 Se você estiver implantando um cluster hiperconvergente, a última etapa será provisionar máquinas virtuais no cluster Espaços de Armazenamento Diretos.
 
-Os arquivos da máquina virtual devem ser armazenados no namespace CSV dos sistemas (exemplo: c:\\ClusterStorage\\Volume1), assim como as VMs clusterizadas em clusters de failover.
+Os arquivos da máquina virtual devem ser armazenados no namespace CSV dos sistemas (exemplo: c: \\ClusterStorage @ no__t-1Volume1), assim como VMs clusterizadas em clusters de failover.
 
 Você pode usar ferramentas na caixa ou outras ferramentas para gerenciar o armazenamento e as máquinas virtuais, como System Center Virtual Machine Manager.
 
-## <a name="step-4-deploy-scale-out-file-server-for-converged-solutions"></a>Etapa 4: Implantar o servidor de arquivos de escalabilidade horizontal para soluções convergentes
+## <a name="step-4-deploy-scale-out-file-server-for-converged-solutions"></a>Etapa 4: Implantar Servidor de Arquivos de Escalabilidade Horizontal para soluções convergentes
 
-Se você estiver implantando uma solução convergida, a próxima etapa será criar uma instância de servidor de arquivos de escalabilidade horizontal e configurar alguns compartilhamentos de arquivos. Se você estiver implantando um cluster hiperconvergente-você terminou e não precisa desta seção.
+Se você estiver implantando uma solução convergida, a próxima etapa será criar uma instância de Servidor de Arquivos de Escalabilidade Horizontal e configurar alguns compartilhamentos de arquivos. Se você estiver implantando um cluster hiperconvergente-você terminou e não precisa desta seção.
 
-### <a name="step-41-create-the-scale-out-file-server-role"></a>Etapa 4,1: Criar a função de servidor de arquivos de escalabilidade horizontal
+### <a name="step-41-create-the-scale-out-file-server-role"></a>Etapa 4,1: Criar a função de Servidor de Arquivos de Escalabilidade Horizontal
 
-A próxima etapa na configuração dos serviços de cluster para o servidor de arquivos é criar a função de servidor de arquivos clusterizado, que é quando você cria a instância do servidor de arquivos de escalabilidade horizontal na qual os compartilhamentos de arquivos disponíveis continuamente estão hospedados.
+A próxima etapa na configuração dos serviços de cluster para o servidor de arquivos é criar a função de servidor de arquivos clusterizado, que é quando você cria a instância de Servidor de Arquivos de Escalabilidade Horizontal na qual os compartilhamentos de arquivos disponíveis continuamente estão hospedados.
 
-#### <a name="to-create-a-scale-out-file-server-role-by-using-server-manager"></a>Para criar uma função de servidor de arquivos de escalabilidade horizontal usando Gerenciador do Servidor
+#### <a name="to-create-a-scale-out-file-server-role-by-using-server-manager"></a>Para criar uma função de Servidor de Arquivos de Escalabilidade Horizontal usando Gerenciador do Servidor
 
 1. Em Gerenciador de Cluster de Failover, selecione o cluster, vá para **funções**e clique em **Configurar função...** .<br>O assistente de alta disponibilidade é exibido.
 2. Na página **selecionar função** , clique em **servidor de arquivos**.
-3. Na página **tipo de servidor de arquivos** , clique em **servidor de arquivos de escalabilidade horizontal para dados de aplicativos**.
+3. Na página **tipo de servidor de arquivos** , clique em **servidor de arquivos de escalabilidade horizontal para dados de aplicativo**.
 4. Na página **ponto de acesso para cliente** , digite um nome para o servidor de arquivos de escalabilidade horizontal.
 5. Verifique se a função foi configurada com êxito acessando **funções** e confirmando se a coluna **status** mostra a **execução** ao lado da função de servidor de arquivos clusterizado que você criou, como mostra a Figura 1.
 
-   ![Captura de tela de Gerenciador de cluster de failover mostrando o servidor de arquivos de escalabilidade horizontal](media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "Gerenciador de cluster de failover mostrando o servidor de arquivos de escalabilidade horizontal")
+   ![Captura de tela de Gerenciador de cluster de failover mostrando o Servidor de Arquivos de Escalabilidade Horizontal](media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "Gerenciador de Cluster de Failover mostrando o servidor de arquivos de escalabilidade horizontal")
 
-    **Figura 1** Gerenciador de Cluster de Failover mostrando o servidor de arquivos de escalabilidade horizontal com o status em execução
+    **Figura 1** Gerenciador de Cluster de Failover mostrando o Servidor de Arquivos de Escalabilidade Horizontal com o status em execução
 
 > [!NOTE]
 >  Depois de criar a função clusterizada, pode haver alguns atrasos de propagação de rede que podem impedi-lo de criar compartilhamentos de arquivos nele por alguns minutos ou possivelmente mais.  
   
-#### <a name="to-create-a-scale-out-file-server-role-by-using-windows-powershell"></a>Para criar uma função de servidor de arquivos de escalabilidade horizontal usando o Windows PowerShell
+#### <a name="to-create-a-scale-out-file-server-role-by-using-windows-powershell"></a>Para criar uma função de Servidor de Arquivos de Escalabilidade Horizontal usando o Windows PowerShell
 
- Em uma sessão do Windows PowerShell que está conectada ao cluster de servidor de arquivos, insira os seguintes comandos para criar a função de servidor de arquivos de escalabilidade horizontal, alterar *FSCLUSTER* para corresponder ao nome do cluster e *SOFS* para corresponder ao nome que você deseja dar ao Função de servidor de arquivos de escalabilidade horizontal:
+ Em uma sessão do Windows PowerShell que está conectada ao cluster de servidor de arquivos, insira os seguintes comandos para criar a função de Servidor de Arquivos de Escalabilidade Horizontal, alterar *FSCLUSTER* para corresponder ao nome do cluster e *SOFS* para corresponder ao nome que você deseja dar ao Servidor de Arquivos de Escalabilidade Horizontal função:
 
 ```PowerShell
 Add-ClusterScaleOutFileServerRole -Name SOFS -Cluster FSCLUSTER
 ```
 
 > [!NOTE]
->  Depois de criar a função clusterizada, pode haver alguns atrasos de propagação de rede que podem impedi-lo de criar compartilhamentos de arquivos nele por alguns minutos ou possivelmente mais. Se a função SOFS falhar imediatamente e não iniciar, talvez seja porque o objeto de computador do cluster não tem permissão para criar uma conta de computador para a função SOFS. Para obter ajuda com isso, consulte esta postagem no blog: [A função de servidor de arquivos de escalabilidade horizontal falha ao iniciar com as IDs de evento 1205, 1069 e 1194](http://www.aidanfinn.com/?p=14142).
+>  Depois de criar a função clusterizada, pode haver alguns atrasos de propagação de rede que podem impedi-lo de criar compartilhamentos de arquivos nele por alguns minutos ou possivelmente mais. Se a função SOFS falhar imediatamente e não iniciar, talvez seja porque o objeto de computador do cluster não tem permissão para criar uma conta de computador para a função SOFS. Para obter ajuda com isso, consulte esta postagem no blog: [Servidor de arquivos de escalabilidade horizontal função não é iniciada com as IDs de evento 1205, 1069 e 1194](http://www.aidanfinn.com/?p=14142).
 
 ### <a name="step-42-create-file-shares"></a>Etapa 4,2: Criar compartilhamentos de arquivos
 

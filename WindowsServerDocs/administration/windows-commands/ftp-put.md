@@ -1,8 +1,8 @@
 ---
-title: Coloque de FTP
-description: 'Tópico de comandos do Windows para * * *- '
+title: Put FTP
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d602c685b7eac5d18c88bc0f6709b189cc61a77
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 15c1734322d3642ebc85891b71c6ad68100d514d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438458"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376075"
 ---
-# <a name="ftp-put"></a>FTP: put
+# <a name="ftp-put"></a>FTP: Put
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -33,22 +33,22 @@ put <LocalFile> [<remoteFile>]
 
 |   Parâmetro    |                    Descrição                    |
 |----------------|---------------------------------------------------|
-|  <LocalFile>   |         Especifica o arquivo local para copiar.         |
+|  <LocalFile>   |         Especifica o arquivo local a ser copiado.         |
 | [<remoteFile>] | Especifica o nome a ser usado no computador remoto. |
 
 ## <a name="remarks"></a>Comentários  
-- O **colocar** comando é idêntico de **enviar** comando.  
-- Se *Arquivo_remoto* não for especificado, o arquivo é fornecido o *LocalFile* nome.  
-  ## <a name="BKMK_Examples"></a>Exemplos  
-  Copie o arquivo local **Test. txt** e nomeie-o **test1.txt** no computador remoto.  
+- O comando **Put** é idêntico ao comando **Send** .  
+- Se *remotefile* não for especificado, o arquivo receberá o nome de *LocalFile* .  
+  ## <a name="BKMK_Examples"></a>Disso  
+  Copie o arquivo local **Test. txt** e nomeie-o **Test1. txt** no computador remoto.  
   ```  
   put test.txt test1.txt  
   ```  
-  Copie o arquivo local **program.exe** ao computador remoto.  
+  Copie o arquivo local **Program. exe** para o computador remoto.  
   ```  
   put program.exe  
   ```  
   ## <a name="additional-references"></a>Referências adicionais  
-- [ftp: ascii](ftp-ascii.md)  
-- [ftp: binary](ftp-binary.md)  
+- [FTP: ASCII](ftp-ascii.md)  
+- [FTP: binário](ftp-binary.md)  
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  

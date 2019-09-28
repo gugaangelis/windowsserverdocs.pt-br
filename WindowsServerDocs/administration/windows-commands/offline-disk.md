@@ -1,8 +1,8 @@
 ---
-title: Disco offline
-description: 'Tópico de comandos do Windows para * * *- '
+title: disco offline
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 617371583a3f0cb3d0cb739845208e4216573d9c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f28d473cdb557d6adb3aaf235bebdfbc4e78b24a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834617"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372604"
 ---
-# <a name="offline-disk"></a>Disco offline
+# <a name="offline-disk"></a>disco offline
 
 
 
-Usa o disco online com o foco para o estado offline.
+Coloca o disco online com foco no estado offline.
 
 > [!IMPORTANT]
-> Esse comando DiskPart não está disponível em nenhuma edição do Windows Vista.
+> Esse comando do DiskPart não está disponível em nenhuma edição do Windows Vista.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -39,22 +39,22 @@ offline disk [noerr]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|noerr|Somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro.|
+|NOERR|Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.|
 
 ## <a name="remarks"></a>Comentários
 
--   Esse comando funciona em discos que estão no modo online de SAN. Ele altera o modo de SAN para offline.
--   Se um disco dinâmico em um grupo de discos é colocado offline, o status do disco seja **ausente** e o grupo mostra um disco que esteja offline. O disco ausente é movido para o grupo inválido. Se o disco dinâmico é o último no grupo, o status do disco será alterado para **offline**, e o grupo vazio será removido.
--   Um disco deve ser selecionado para o **disco offline** comando tenha êxito. Use o **Selecionar disco** comando para selecionar um disco e mudar o foco a ele.
+-   Esse comando opera em discos que estão no modo SAN online. Ele altera seu modo SAN para offline.
+-   Se um disco dinâmico em um grupo de discos for colocado offline, o status do disco será alterado para **ausente** e o grupo mostrará um disco que está offline. O disco ausente é movido para o grupo inválido. Se o disco dinâmico for o último disco do grupo, o status do disco será alterado para **offline**e o grupo vazio será removido.
+-   Um disco deve ser selecionado para que o comando de **disco offline** seja executado com sucesso. Use o comando **selecionar disco** para selecionar um disco e deslocar o foco para ele.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para colocar o disco com foco off-line, digite:
+Para colocar o disco com foco offline, digite:
 ```
 offline disk
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 

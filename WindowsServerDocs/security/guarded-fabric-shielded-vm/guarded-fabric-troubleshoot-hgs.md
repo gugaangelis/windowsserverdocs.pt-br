@@ -1,61 +1,61 @@
 ---
-title: Solução de problemas de serviço guardião de Host
+title: Solucionando problemas do serviço guardião de host
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 424b8090-0692-49a6-9dc4-3c0e77d74b80
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 05888ce57b5b922fc330d9deab430d329fede69b
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: be817a2c06b13af254b80090b9a7488209d4df0a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222528"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403522"
 ---
-# <a name="troubleshooting-the-host-guardian-service"></a>Solução de problemas de serviço guardião de Host
+# <a name="troubleshooting-the-host-guardian-service"></a>Solucionando problemas do serviço guardião de host
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+> Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Este tópico descreve as soluções de problemas comuns encontrados durante a implantação ou operação de um servidor do serviço de guardião de Host (HGS) em uma malha protegida.
-Se você não tiver certeza da natureza do problema, primeiro tente executar o [protegidos do diagnóstico do fabric](guarded-fabric-troubleshoot-diagnostics.md) nos servidores HGS e hosts do Hyper-V para reduzir o potencial faz com que.
+Este tópico descreve as resoluções para problemas comuns encontrados ao implantar ou operar um servidor HGS (serviço guardião de host) em uma malha protegida.
+Se você não tiver certeza da natureza do seu problema, primeiro tente executar o [diagnóstico de malha protegida](guarded-fabric-troubleshoot-diagnostics.md) em seus servidores HgS e hosts do Hyper-V para restringir as possíveis causas.
 
 ## <a name="certificates"></a>Certificados
 
-HGS requer vários certificados para operar, incluindo a criptografia configurado pelo administrador e a assinatura de certificado, bem como um certificado de Atestado gerenciado pelo HGS em si.
-Se esses certificados estão configurados incorretamente, HGS será impossível atender a solicitações de hosts do Hyper-V que queiram atestar ou desbloquear os protetores de chave para as VMs blindadas.
+O HGS requer vários certificados para operar, incluindo a criptografia configurada pelo administrador e o certificado de autenticação, bem como um certificado de atestado gerenciado pelo HGS em si.
+Se esses certificados estiverem configurados incorretamente, o HGS não poderá atender solicitações de hosts Hyper-V que desejam atestar ou desbloquear protetores de chave para VMs blindadas.
 As seções a seguir abordam problemas comuns relacionados aos certificados configurados no HGS.
 
 ### <a name="certificate-permissions"></a>Permissões de certificado
 
-HGS deve ser capaz de acessar as chaves públicas e privadas de criptografia e certificados adicionados ao HGS pela impressão digital do certificado de assinatura.
-Especificamente, o grupo gerenciado conta de serviço (gMSA) que executa o serviço HGS precisa ter acesso às chaves.
-Para localizar a gMSA usada pelo HGS, execute o seguinte comando em um prompt elevado do PowerShell em seu servidor HGS:
+O HGS deve ser capaz de acessar as chaves pública e privada da criptografia e dos certificados de assinatura adicionados ao HGS pela impressão digital do certificado.
+Especificamente, a conta de serviço gerenciado de grupo (gMSA) que executa o serviço HGS precisa de acesso às chaves.
+Para localizar o gMSA usado pelo HGS, execute o seguinte comando em um prompt do PowerShell com privilégios elevados em seu servidor HGS:
 
 ```powershell
 (Get-IISAppPool -Name KeyProtection).ProcessModel.UserName
 ```
 
-Como você pode conceder acesso à conta gMSA para usar a chave privada depende de onde a chave é armazenada: no computador como um arquivo de certificado local, em um módulo de segurança de hardware (HSM) ou usando um provedor de armazenamento de chaves personalizado de terceiros.
+A forma como você concede o acesso à conta gMSA para usar a chave privada depende de onde a chave é armazenada: no computador como um arquivo de certificado local, em um HSM (módulo de segurança de hardware) ou usando um provedor de armazenamento de chaves de terceiros personalizado.
 
 #### <a name="grant-access-to-software-backed-private-keys"></a>Conceder acesso a chaves privadas com suporte de software
 
-Se você estiver usando um certificado autoassinado ou um certificado emitido por uma autoridade de certificação que está **não** armazenados em um módulo de segurança de hardware ou o provedor de armazenamento de chaves personalizado, você pode alterar as permissões de chave privadas, executando o seguintes etapas:
+Se você estiver usando um certificado autoassinado ou um certificado emitido por uma autoridade de certificação que **não** esteja armazenada em um módulo de segurança de hardware ou provedor de armazenamento de chaves personalizado, você poderá alterar as permissões de chave privada executando as seguintes etapas:
 
-1. Gerenciador de certificados local aberto (certlm)
-2. Expandir **pessoal > certificados** e localize o certificado de assinatura ou criptografia que você deseja atualizar.
-3. Clique com botão direito no certificado e selecione **todas as tarefas > Gerenciar chaves privadas**.
-4. Clique em **adicionar** para conceder acesso de usuário nova, a chave privada do escolhê.
-5. No seletor de objetos, insira o nome da conta gMSA para HGS encontrado anteriormente e, em seguida, clique em **Okey**.
-6. Verifique se tem a gMSA **leitura** acesso ao certificado.
-7. Clique em **Okey** para fechar a janela de permissão.
+1. Abrir o Gerenciador de certificados local (certlm. msc)
+2. Expanda **certificados de > pessoais** e localize o certificado de autenticação ou criptografia que você deseja atualizar.
+3. Clique com o botão direito do mouse no certificado e selecione **todas as tarefas > gerenciar chaves privadas**.
+4. Clique em **Adicionar** para conceder a um novo usuário acesso à chave privada do Certiciate.
+5. No seletor de objetos, insira o nome da conta gMSA para HGS encontrado anteriormente e clique em **OK**.
+6. Verifique se o gMSA tem acesso de **leitura** ao certificado.
+7. Clique em **OK** para fechar a janela de permissão.
 
-Se você estiver executando o HGS no Server Core ou estiver gerenciando o servidor remotamente, você não poderá gerenciar chaves privadas, usando o Gerenciador de certificados local.
-Em vez disso, você precisará baixar o [módulo do PowerShell de ferramentas de malha protegida](https://www.powershellgallery.com/packages/GuardedFabricTools) que permitirá que você gerencie as permissões no PowerShell.
+Se você estiver executando o HGS no Server Core ou estiver gerenciando o servidor remotamente, não poderá gerenciar chaves privadas usando o Gerenciador de certificados local.
+Em vez disso, você precisará baixar o [módulo do PowerShell das ferramentas de malha protegida](https://www.powershellgallery.com/packages/GuardedFabricTools) que permitirá que você gerencie as permissões no PowerShell.
 
-1. Abra um console do PowerShell com privilégios elevados no computador Server Core ou usar a comunicação remota do PowerShell com uma conta que tenha permissões de administrador local no HGS.
-2. Execute os seguintes comandos para instalar o módulo do PowerShell de ferramentas de malha protegida e conceder acesso à conta gMSA para a chave privada.
+1. Abra um console do PowerShell com privilégios elevados no computador Server Core ou use a comunicação remota do PowerShell com uma conta que tenha permissões de administrador local no HGS.
+2. Execute os comandos a seguir para instalar o módulo do PowerShell de ferramentas de malha protegida e conceder o acesso à conta gMSA à chave privada.
 
 ```powershell
 $certificateThumbprint = '<ENTER CERTIFICATE THUMBPRINT HERE>'
@@ -76,37 +76,37 @@ $gMSA = (Get-IISAppPool -Name KeyProtection).ProcessModel.UserName
 $cert.Acl = $cert.Acl | Add-AccessRule $gMSA Read Allow
 ```
 
-#### <a name="grant-access-to-hsm-or-custom-provider-backed-private-keys"></a>Conceder acesso ao HSM ou chaves privadas com suporte de provedor personalizadas
+#### <a name="grant-access-to-hsm-or-custom-provider-backed-private-keys"></a>Conceder acesso ao HSM ou a chaves privadas com suporte do provedor personalizado
 
-Se as chaves privadas do certificado são apoiadas por um módulo de segurança de hardware (HSM) ou um provedor personalizado de armazenamento de chaves (KSP), o modelo de permissão dependerá seu fornecedor de software específico.
-Para obter melhores resultados, consulte a documentação do fornecedor ou site de suporte para obter informações sobre a chave privada como as permissões são tratadas para seu dispositivo/software específico.
+Se as chaves privadas do seu certificado forem apoiadas por um HSM (módulo de segurança de hardware) ou um KSP (provedor de armazenamento de chaves) personalizado, o modelo de permissão dependerá de seu fornecedor de software específico.
+Para obter os melhores resultados, consulte a documentação do fornecedor ou o site de suporte para obter informações sobre como as permissões de chave privada são tratadas para seu dispositivo/software específico.
 
-Alguns módulos de segurança de hardware não dão suporte para a concessão de acesso de contas de usuário específico a uma chave privada; em vez disso, eles permitem que o acesso à conta de computador para todas as chaves em um conjunto específico de chave.
-Para esses dispositivos, ela normalmente é suficiente para conceder o acesso ao computador para suas chaves e HGS serão capaz de aproveitar essa conexão.
+Alguns módulos de segurança de hardware não dão suporte à concessão de contas de usuário específicas acesso a uma chave privada; em vez disso, eles permitem que a conta de computador tenha acesso a todas as chaves em um conjunto de chaves específico.
+Para esses dispositivos, geralmente é suficiente para fornecer ao computador acesso às suas chaves e o HGS poderá aproveitar essa conexão.
 
 **Dicas para HSMs**
 
-Abaixo estão as opções de configuração sugerido para ajudarão você a usar chaves protegidas por HSM com o HGS com base na Microsoft e experiências de seus parceiros.
-Essas dicas são fornecidas para sua conveniência e não têm garantia de estar correto no momento da leitura, nem são endossadas pelos fabricantes do HSM.
-Para obter informações precisas que pertencem ao dispositivo específico, se você tiver mais dúvidas, entre em contato com o fabricante do HSM.
+Veja abaixo as opções de configuração sugeridas para ajudá-lo a usar com êxito as chaves com suporte do HSM com o HGS com base nas experiências da Microsoft e de seus parceiros.
+Essas dicas são fornecidas para sua conveniência e não têm garantia de estarem corretas no momento da leitura, nem são endossadas pelos fabricantes HSM.
+Entre em contato com seu fabricante HSM para obter informações precisas sobre o dispositivo específico se você tiver mais dúvidas.
 
-Série/marca do HSM      | Sugestão
+Marca/série HSM      | Sugestão
 ----------------------|-------------
-Gemalto SafeNet       | Verifique se que a propriedade de uso de chave no arquivo de solicitação de certificado é definida para 0xa0, permitindo que o certificado a ser usado para assinatura e criptografia. Além disso, você deve conceder à conta de gMSA *ler* acesso à chave privada usando a ferramenta de Gerenciador de certificados local (consulte as etapas acima).
-nCipher nShield        | Certifique-se de que cada nó HGS tem acesso ao mundo de segurança que contém as chaves de criptografia e assinatura. Você não precisa configurar permissões específicas de gMSA.
-Utimaco CryptoServers | Verifique se que a propriedade de uso de chave no arquivo de solicitação de certificado é definida para 0x13, permitindo que o certificado a ser usado para criptografia, descriptografia e assinatura.
+Gemalto SafeNet       | Verifique se a propriedade uso de chave no arquivo de solicitação de certificado está definida como 0xa0, permitindo que o certificado seja usado para assinatura e criptografia. Além disso, você deve conceder à conta gMSA acesso de *leitura* à chave privada usando a ferramenta Gerenciador de certificados local (veja as etapas acima).
+nCipher nShield        | Verifique se cada nó HGS tem acesso ao mundo de segurança que contém as chaves de assinatura e criptografia. Você não precisa configurar permissões específicas do gMSA.
+Utimaco CryptoServers | Verifique se a propriedade uso de chave no arquivo de solicitação de certificado está definida como 0x13, permitindo que o certificado seja usado para criptografia, descriptografia e assinatura.
 
 ### <a name="certificate-requests"></a>Solicitações de certificado
 
-Se você estiver usando uma autoridade de certificação para emitir os certificados em um ambiente de infraestrutura de chave pública (PKI), você precisará garantir que a solicitação de certificado inclui os requisitos mínimos para o uso HGS dessas chaves.
+Se você estiver usando uma autoridade de certificação para emitir seus certificados em um ambiente de infraestrutura de chave pública (PKI), você precisará garantir que a solicitação de certificado incluirá os requisitos mínimos para o uso das chaves do HGS.
 
-**Certificados de assinatura**
+**Certificados de autenticação**
 
 Propriedade CSR | Valor obrigatório
 -------------|---------------
 Algoritmo    | RSA
 Tamanho da chave     | Pelo menos 2048 bits
-Uso de chave    | Assinatura/logon/DigitalSignature
+Uso de chave    | Assinatura/sinal/DigitalSignature
 
 **Certificados de criptografia**
 
@@ -114,68 +114,68 @@ Propriedade CSR | Valor obrigatório
 -------------|---------------
 Algoritmo    | RSA
 Tamanho da chave     | Pelo menos 2048 bits
-Uso de chave    | Encryption/Encrypt/DataEncipherment
+Uso de chave    | Criptografia/criptografar/DataEncipherment
 
-**Modelos de serviços de certificados do Active Directory**
+**Modelos de serviços de certificados Active Directory**
 
-Se você estiver usando modelos de certificado de serviços de certificados do Active Directory (ADCS) para criar os certificados, é recomendável que você usam um modelo com as seguintes configurações:
+Se você estiver Active Directory usando modelos de certificado do ADCS (serviços de certificados) para criar os certificados, é recomendável usar um modelo com as seguintes configurações:
 
-Propriedade de modelo de AD CS | Valor obrigatório
+Propriedade de modelo ADCS | Valor obrigatório
 -----------------------|---------------
-Categoria de provedor      | Provedor de Armazenamento de Chaves
+Categoria do provedor      | Provedor de Armazenamento de Chaves
 Nome do algoritmo         | RSA
 Tamanho mínimo da chave       | 2048
 Finalidade                | Assinatura e criptografia
-Extensão do uso da chave    | Codificação de dados de assinatura, codificação de chave digital ("permitir a criptografia de dados do usuário")
+Extensão de uso de chave    | Assinatura digital, codificação de chave, codificação de dados ("permitir criptografia de dados do usuário")
 
 
 ### <a name="time-drift"></a>Descompasso de tempo
 
-Se a hora do seu servidor descompasso significativamente com a de outros nós HGS ou hosts do Hyper-V em sua malha protegida, você poderá encontrar problemas com a validade do certificado de signatário Atestado.
-O certificado do signatário de Atestado é criado e renovado em segundo plano em HGS e é usado para assinar certificados de integridade emitidos para hosts protegidos pelo serviço de Atestado.
+Se o tempo do servidor tiver se dessincronizado significativamente do de outros nós HGS ou hosts do Hyper-V em sua malha protegida, você poderá encontrar problemas com a validade do certificado do signatário do atestado.
+O certificado de signatário de atestado é criado e renovado em segundo plano no HGS e é usado para assinar certificados de integridade emitidos para hosts protegidos pelo serviço de atestado.
 
-Para atualizar o certificado do signatário Atestado, execute o seguinte comando em um prompt elevado do PowerShell.
+Para atualizar o certificado de signatário de atestado, execute o seguinte comando em um prompt do PowerShell com privilégios elevados.
 
 ```powershell
 Start-ScheduledTask -TaskPath \Microsoft\Windows\HGSServer -TaskName 
 AttestationSignerCertRenewalTask
 ```
 
-Como alternativa, você pode executar manualmente a tarefa agendada, abrindo **Agendador de tarefas** (taskschd), navegando para **biblioteca do Agendador de tarefas > Microsoft > Windows > HGSServer** e executando o tarefa denominada **AttestationSignerCertRenewalTask**.
+Como alternativa, você pode executar manualmente a tarefa agendada abrindo **Agendador de tarefas** (Taskschd. msc), navegando para **Agendador de tarefas biblioteca > Microsoft > Windows > HGSServer** e executando a tarefa chamada  **AttestationSignerCertRenewalTask**.
 
-## <a name="switching-attestation-modes"></a>Alternar os modos de Atestado
+## <a name="switching-attestation-modes"></a>Alternando modos de atestado
 
-Se você alternar HGS do modo TPM para o modo do Active Directory ou vice-versa usando o [HgsServer conjunto](https://technet.microsoft.com/library/mt652180.aspx) cmdlet, ele pode levar até 10 minutos para cada nó no cluster para aplicar o novo modo de Atestado HGS.
-Esse comportamento é normal.
-É recomendável que você não remover todas as políticas de permitir que os hosts do modo de Atestado anterior até que você tiver verificado que todos os hosts são Atestado com êxito usando o novo modo de Atestado.
+Se você alternar HGS do modo TPM para Active Directory modo ou vice-versa usando o cmdlet [set-HgsServer](https://technet.microsoft.com/library/mt652180.aspx) , pode levar até 10 minutos para cada nó em seu cluster HgS iniciar a imposição do novo modo de atestado.
+Isso é um comportamento normal.
+É recomendável que você não remova nenhuma política que permita hosts do modo de atestado anterior até ter verificado que todos os hosts estão atestados com êxito usando o novo modo de atestado.
 
-**Problema conhecido ao mudar do TPM para o modo do AD**
+**Problema conhecido ao alternar do TPM para o modo do AD**
 
-Se você inicializados seu cluster HGS no modo TPM e mais tarde alternar para modo do Active Directory, há um problema conhecido que impedirá que outros nós no cluster HGS de alternar para o novo modo de Atestado.
-Para garantir que todos os servidores HGS estiver impondo o modo de Atestado correto, execute `Set-HgsServer -TrustActiveDirectory` **em cada nó** do seu cluster do HGS.
-Esse problema não se aplica se você estiver alternando do modo TPM para o modo de AD *e* o cluster foi originalmente configurado no modo de AD.
+Se você inicializados seu cluster HGS no modo TPM e, em seguida, muda para o modo Active Directory, há um problema conhecido que impedirá que outros nós em seu cluster HGS alternem para o novo modo de atestado.
+Para garantir que todos os servidores HGS estejam impondo o modo de atestado correto, execute `Set-HgsServer -TrustActiveDirectory` **em cada nó** do cluster HgS.
+Esse problema não se aplicará se você estiver alternando do modo TPM para o modo AD *e* o cluster tiver sido originalmente configurado no modo ad.
 
-Você pode verificar o modo de Atestado do seu servidor HGS executando [Get-HgsServer](https://technet.microsoft.com/library/mt652162.aspx).
+Você pode verificar o modo de atestado do seu servidor HGS executando [Get-HgsServer](https://technet.microsoft.com/library/mt652162.aspx).
 
 ## <a name="memory-dump-encryption-policies"></a>Políticas de criptografia de despejo de memória
 
-Se você está tentando configurar políticas de criptografia de despejo de memória e não vir o padrão HGS despejar políticas (Hgs\_NoDumps, Hgs\_DumpEncryption e Hgs\_DumpEncryptionKey) ou o (de cmdlet de política de despejo Add-HgsAttestationDumpPolicy), é provável que você não tem a atualização cumulativa mais recente instalada.
-Para corrigir isso, [atualizar seu servidor HGS](guarded-fabric-manage-hgs.md#patching-hgs) para a atualização cumulativa mais recente Windows e [ativar as novas políticas de Atestado](guarded-fabric-manage-hgs.md#updates-requiring-policy-activation).
-Verifique se que você atualizar seus hosts do Hyper-V para a mesma atualização cumulativa antes de ativar as novas políticas de Atestado, como hosts que não têm os novos recursos de criptografia de despejo instalados provavelmente falhará Atestado depois que a política HGS está ativada.
+Se você estiver tentando configurar as políticas de criptografia de despejo de memória e não vir as políticas de despejo do HGS padrão (HgS @ no__t-0NoDumps, HgS @ no__t-1DumpEncryption e HgS @ no__t-2DumpEncryptionKey) ou o cmdlet de política de despejo (Add-HgsAttestationDumpPolicy), ele será é provável que você não tenha a atualização cumulativa mais recente instalada.
+Para corrigir isso, [atualize seu servidor HgS](guarded-fabric-manage-hgs.md#patching-hgs) para o Windows Update cumulativo mais recente e [ative as novas políticas de atestado](guarded-fabric-manage-hgs.md#updates-requiring-policy-activation).
+Certifique-se de atualizar seus hosts Hyper-V para a mesma atualização cumulativa antes de ativar as novas políticas de atestado, já que os hosts que não têm os novos recursos de criptografia de despejo instalados provavelmente falharão com atestado quando a política HGS for ativada.
 
 ## <a name="endorsement-key-certificate-error-messages"></a>Mensagens de erro de certificado de chave de endosso
 
-Ao registrar um host usando o [HgsAttestationTpmHost adicionar](https://docs.microsoft.com/powershell/module/hgsattestation/add-hgsattestationtpmhost) cmdlet, dois identificadores TPM são extraídos do arquivo de identificador de plataforma fornecido: o certificado de chave de endosso (EKcert) e a chave de endosso público (EKpub).
-O EKcert identifica o fabricante do TPM, fornecer garantias de que o TPM é autêntico e fabricados pela cadeia de fornecimento normal.
-O EKpub identifica exclusivamente esse TPM específico e é uma das medidas de que HGS usa para conceder a um host de VMs blindadas de acesso para executar.
+Ao registrar um host usando o cmdlet [Add-HgsAttestationTpmHost](https://docs.microsoft.com/powershell/module/hgsattestation/add-hgsattestationtpmhost) , dois identificadores de TPM são extraídos do arquivo de identificador de plataforma fornecido: o EKcert (certificado de chave de endosso) e a EKpub (chave de endosso pública).
+O EKcert identifica o fabricante do TPM, fornecendo garantias de que o TPM é autêntico e fabricado por meio da cadeia de suprimentos normal.
+O EKpub identifica exclusivamente esse TPM específico e é uma das medidas que o HGS usa para conceder a um host acesso para executar VMs blindadas.
 
-Você receberá um erro ao registrar um host do TPM, se qualquer uma das duas condições forem verdadeira:
-1. O arquivo de identificador de plataforma **não** contêm um certificado de chave de endosso
-2. O arquivo de identificador de plataforma contém um certificado de chave de endosso, mas esse certificado é **não confiável** em seu sistema
+Você receberá um erro ao registrar um host TPM se uma das duas condições for verdadeira:
+1. O arquivo de identificador de plataforma **não** contém um certificado de chave de endosso
+2. O arquivo de identificador de plataforma contém um certificado de chave de endosso, mas esse certificado **não é confiável** no seu sistema
 
-Determinados fabricantes TPM não incluem EKcerts seus TPMs.
-Se você suspeitar que esse é o caso com o TPM, confirme com seu OEM seu TPMs não devem ter um EKcert e usar o `-Force` sinalizador para registrar manualmente o host com o HGS.
-Se o TPM deve ter um EKcert, mas nenhum foi encontrado no arquivo de identificador de plataforma, verifique se você estiver usando um console do PowerShell de administrador (elevado) quando em execução [Get-PlatformIdentifier](https://docs.microsoft.com/powershell/module/platformidentifier/get-platformidentifier) no host.
+Determinados fabricantes de TPM não incluem EKcerts em seu TPMs.
+Se você suspeitar de que esse é o caso do seu TPM, confirme com seu OEM que seu TPMs não deve ter um EKcert e use o sinalizador `-Force` para registrar manualmente o host com HGS.
+Se o TPM tiver um EKcert, mas um não foi encontrado no arquivo de identificador de plataforma, verifique se você está usando um console do PowerShell de administrador (elevado) ao executar [Get-PlatformIdentifier](https://docs.microsoft.com/powershell/module/platformidentifier/get-platformidentifier) no host.
 
-Se você recebeu o erro que seu EKcert é não confiável, certifique-se de que você tenha [instalou o pacote de certificados de raiz confiável do TPM](guarded-fabric-install-trusted-tpm-root-certificates.md) em cada servidor do HGS e que o certificado raiz para o fornecedor do TPM está presente no local da máquina  **TrustedTPM\_RootCA** armazenar. Todos os certificados intermediários aplicáveis também precisam ser instalados na **TrustedTPM\_IntermediateCA** armazenar no computador local.
-Depois de instalar os certificados intermediários e raiz, você deve ser capaz de executar `Add-HgsAttestationTpmHost` com êxito.
+Se você recebeu o erro de que seu EKcert não é confiável, verifique se você [instalou o pacote de certificados raiz do TPM confiável](guarded-fabric-install-trusted-tpm-root-certificates.md) em cada servidor HgS e se o certificado raiz para o fornecedor do TPM está presente no **TrustedTPM @ no__ do computador local. armazenamento t-2RootCA** . Todos os certificados intermediários aplicáveis também precisam ser instalados no armazenamento **TrustedTPM @ no__t-1IntermediateCA** no computador local.
+Depois de instalar os certificados raiz e intermediário, você poderá executar o `Add-HgsAttestationTpmHost` com êxito.

@@ -1,8 +1,8 @@
 ---
 title: select volume
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 98f42324dbd4c6b3add3333cf4687d1613b1f700
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: cc981131c8de2dc4534e390645ef45c39a7b02ab
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441420"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371056"
 ---
 # <a name="select-volume"></a>select volume
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Seleciona o volume especificado e desloca o foco para ele. Este comando também pode ser usado para exibir o volume que atualmente tem o foco no disco selecionado.  
+seleciona o volume especificado e desloca o foco para ele. Esse comando também pode ser usado para exibir o volume que atualmente tem o foco no disco selecionado.  
   
   
   
@@ -38,20 +38,20 @@ select volume={<n>|<d>}
   
 | Parâmetro |                                                                               Descrição                                                                                |
 |-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    <n>    | O número do volume para receber o foco. Você pode exibir os números para todos os volumes no disco selecionado no momento usando o **listar volume** comando DiskPart. |
-|    <d>    |                                                 A unidade montagem ou letra ponto de caminho do volume para receber o foco.                                                 |
+|    <n>    | O número do volume para receber o foco. Você pode exibir os números de todos os volumes no disco selecionados no momento usando o comando **list volume** no DiskPart. |
+|    <d>    |                                                 A letra da unidade ou o caminho do ponto de montagem do volume para receber o foco.                                                 |
   
 ## <a name="remarks"></a>Comentários  
   
--   Se nenhum volume for especificado, esse comando exibe o volume que atualmente tem o foco no disco selecionado.  
+-   Se nenhum volume for especificado, este comando exibirá o volume que atualmente tem o foco no disco selecionado.  
   
--   Em um disco básico, seleção de um volume também fornece o foco para a partição correspondente.  
+-   Em um disco básico, a seleção de um volume também fornece o foco para a partição correspondente.  
   
 -   Se um volume for selecionado com uma partição correspondente, a partição será selecionada automaticamente.  
   
--   Se uma partição é selecionada com um volume correspondente, o volume será selecionado automaticamente.  
+-   Se uma partição for selecionada com um volume correspondente, o volume será selecionado automaticamente.  
   
-## <a name="BKMK_examples"></a>Exemplos  
+## <a name="BKMK_examples"></a>Disso  
 Para deslocar o foco para o volume 2, digite:  
   
 ```  

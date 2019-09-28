@@ -1,8 +1,8 @@
 ---
-title: ftp mdelete_1
-description: 'Tópico de comandos do Windows para * * *- '
+title: mdelete_1 FTP
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7b342f9d728e91085d5edf2f8e1ece00b48bec8d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6ffbb06cff9e177316ea60e281c25d7640a7f981
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438321"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375917"
 ---
-# <a name="ftp-mdelete1"></a>ftp: mdelete_1
+# <a name="ftp-mdelete_1"></a>FTP: mdelete_1
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Exclui os arquivos no computador remoto.   
+exclui arquivos no computador remoto.   
 ## <a name="syntax"></a>Sintaxe  
 ```  
 mdelete <remoteFile>[ ]  
@@ -35,8 +35,8 @@ mdelete <remoteFile>[ ]
 |--------------|--------------------------------------|
 | <remoteFile> | Especifica o arquivo remoto a ser excluído. |
 
-## <a name="BKMK_Examples"></a>Exemplos  
-Excluir arquivos remotos **a.exe** e **b.exe**.  
+## <a name="BKMK_Examples"></a>Disso  
+exclua arquivos remotos **a. exe** e **b. exe**.  
 ```  
 mdelete a.exe b.exe  
 ```  

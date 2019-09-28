@@ -1,9 +1,9 @@
 ---
 title: Criar contas de usuário local
-description: Saiba mais Processing thte três tipos de contas de usuário do MultiPoint Services
+description: Saiba mais sobr thte três tipos de contas de usuário nos serviços do MultiPoint
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,32 +13,32 @@ ms.assetid: 33321932-4266-4961-9924-2cb4620bfcb4
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: e2e5a6c79e6dcd603d19ca868df1d11fce2bf746
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 874d9cbdb56c59693cb5843a898b9ebd6893d674
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823667"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405105"
 ---
 # <a name="create-local-user-accounts"></a>Criar contas de usuário local
-Três níveis de contas de usuário locais podem ser criados usando o MultiPoint Manager: Contas de usuário padrão; Usuários do multiPoint Dashboard, que têm direitos administrativos; e as contas de usuário administrativo completas.  
+Três níveis de contas de usuário local podem ser criados no usando o Gerenciador do MultiPoint: Contas de usuário padrão; Usuários do painel do MultiPoint, que têm direitos administrativos limitados; e contas de usuário administrativo completas.  
   
-Use o procedimento a seguir para criar uma conta de usuário local em um servidor do MultiPoint. Se seu ambiente incluir vários servidores MultiPoint e você deseja que o usuário seja capaz de fazer logon em qualquer estação em qualquer servidor, você precisa criar uma conta de usuário local em cada um dos seus servidores. Se a configuração tem algumas limitações. Em um ambiente de domínio, você também pode permitir que os usuários usem suas contas de domínio. Para obter uma visão geral das suas opções, consulte [plano de contas de usuário para o seu ambiente Windows MultiPoint Services](Plan-user-accounts-for-your-MultiPoint-services-environment.md).  
+Use o procedimento a seguir para criar uma conta de usuário local em um servidor MultiPoint. Se o seu ambiente incluir vários MultiPoint Servers e você quiser que o usuário seja capaz de fazer logon em qualquer estação em qualquer servidor, você precisará criar uma conta de usuário local em cada um dos servidores. Essa instalação tem algumas limitações. Em um ambiente de domínio, você também pode permitir que os usuários usem suas contas de domínio. Para obter uma visão geral das suas opções, consulte [planejar contas de usuário para o ambiente do Windows MultiPoint Services](Plan-user-accounts-for-your-MultiPoint-services-environment.md).  
    
-1.  Faça logon no servidor como administrador e abra o MultiPoint Manager.  
+1.  Faça logon no servidor como administrador e abra o Gerenciador do MultiPoint.  
   
-2.  Clique o **os usuários** guia e, em seguida, clique em **adicionar conta de usuário**.  
+2.  Clique na guia **usuários** e, em seguida, clique em **adicionar conta de usuário**.  
   
-    Abre o Assistente para adicionar conta de usuário.  
+    O assistente para adicionar conta de usuário é aberto.  
   
-3.  Insira um nome de conta e senha para a nova conta de usuário e, em seguida, clique em **próxima**.  
+3.  Insira um nome de conta e uma senha para a nova conta de usuário e clique em **Avançar**.  
   
 4.  Selecione o tipo de conta de usuário que você deseja criar:  
   
-    -   **Usuário padrão** - faça logon uma estação e executar tarefas de usuário, mas não tem acesso ao MultiPoint Manager ou o servidor do MultiPoint Dashboard e não é possível desligar o sistema.  
+    -   **Usuário padrão** – pode fazer logon em uma estação e executar tarefas do usuário, mas não tem acesso ao MultiPoint Manager ou ao painel do MultiPoint Server e não pode desligar o sistema.  
   
-    -   **Usuário do multiPoint Dashboard** -tem direitos administrativos limitados. Um usuário do Dashboard pode abrir o painel e executar tarefas como registro em log os usuários do sistema ou desligar o computador do MultiPoint Server, mas o usuário não tem acesso ao Gerenciador do MultiPoint.  
+    -   **Usuário do painel do MultiPoint** -tem direitos administrativos limitados. Um usuário do painel pode abrir o painel e executar tarefas como fazer o logoff de usuários do sistema ou desligar o computador do MultiPoint Server, mas o usuário não tem acesso ao Gerenciador do MultiPoint.  
   
-    -   **Usuário administrativo** tem direitos administrativos completos no MultiPoint Server. Por exemplo, um usuário administrativo pode executar o Gerenciador do MultiPoint, adicionar e excluir usuários, modificar configurações do sistema e atualizar drivers.  
+    -   **Usuário administrativo** Tem direitos administrativos completos no MultiPoint Server. Por exemplo, um usuário administrativo pode executar o MultiPoint Manager, adicionar e excluir usuários, modificar configurações do sistema e atualizar drivers.  
   
-5.  Clique em **próxima**e, em seguida, clique em **concluir** para criar a conta de usuário.
+5.  Clique em **Avançar**e em **concluir** para criar a conta de usuário.

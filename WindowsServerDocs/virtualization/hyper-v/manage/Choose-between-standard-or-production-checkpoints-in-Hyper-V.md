@@ -1,7 +1,7 @@
 ---
 title: Escolha entre pontos de verificação padrão ou de produção no Hyper-V
 description: Fornece instruções para configurar uma máquina virtual para usar pontos de verificação padrão ou de produção
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,40 +11,40 @@ ms.assetid: 92bb573b-03b7-470e-b72e-e35edf52b349
 author: KBDAzure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: cf1144886ec5ae723b7747bb7dd72f235944d06c
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 29c7b8be5b1e9d392cead304ab35c3d5dd5ee86a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67141346"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364212"
 ---
 # <a name="choose-between-standard-or-production-checkpoints-in-hyper-v"></a>Escolha entre pontos de verificação padrão ou de produção no Hyper-V
 
 >Aplica-se a: Windows 10, Windows Server 2016, Microsoft Hyper-V Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019
 
   
-Começando com o Windows Server 2016 e Windows 10, você pode escolher entre pontos de verificação padrão e de produção para cada máquina virtual. Pontos de verificação de produção são o padrão para novas máquinas virtuais.
+A partir do Windows Server 2016 e do Windows 10, você pode escolher entre pontos de verificação padrão e de produção para cada máquina virtual. Os pontos de verificação de produção são o padrão para novas máquinas virtuais.
   
-- Pontos de verificação de produção são imagens "pontuais" de uma máquina virtual, que podem ser restauradas posteriormente de forma que tem suporte completo para todas as cargas de trabalho de produção. Isso é obtido usando a tecnologia de backup no convidado para criar o ponto de verificação, em vez de usar a tecnologia de estado salvo.  
+- Os pontos de verificação de produção são imagens "pontuais" de uma máquina virtual, que podem ser restauradas posteriormente de uma forma que tenha suporte completo para todas as cargas de trabalho de produção. Isso é obtido usando a tecnologia de backup no convidado para criar o ponto de verificação, em vez de usar a tecnologia de estado salvo.  
   
-- Pontos de verificação padrão capturam a configuração de estado, dados e hardware de uma máquina virtual em execução e se destinam para uso em cenários de desenvolvimento e teste. Pontos de verificação padrão podem ser útil se você precisar recriar um estado específico ou uma condição de uma máquina virtual em execução para que você pode solucionar um problema.  
+- Os pontos de verificação padrão capturam o estado, os dados e a configuração de hardware de uma máquina virtual em execução e devem ser usados em cenários de desenvolvimento e teste. Pontos de verificação padrão podem ser úteis se você precisar recriar um Estado ou condição específica de uma máquina virtual em execução para que você possa solucionar um problema.  
  
-  ## <a name="change-checkpoints-to-production-or-standard-checkpoints"></a>Alterar os pontos de verificação de produção ou pontos de verificação padrão  
+  ## <a name="change-checkpoints-to-production-or-standard-checkpoints"></a>Alterar pontos de verificação para os pontos de verificação padrão ou de produção  
   
-1.  Na **Gerenciador do Hyper-V**, clique com botão direito na máquina virtual e clique em **configurações**.  
+1.  No **Gerenciador do Hyper-V**, clique com o botão direito do mouse na máquina virtual e clique em **configurações**.  
   
-2.  Sob o **Management** seção, selecione **pontos de verificação**.  
+2.  Na seção **Gerenciamento** , selecione **pontos de verificação**.  
   
 3.  Selecione pontos de verificação de produção ou padrão.  
   
-    Se você escolher pontos de verificação de produção, você também pode especificar se o host deve obter um ponto de verificação padrão se um ponto de verificação de produção não pode ser usado. Se você desmarcar essa caixa de seleção e um ponto de verificação de produção não pode ser usado, nenhum ponto de verificação é executado.  
+    Se você escolher pontos de verificação de produção, também poderá especificar se o host deve usar um ponto de verificação padrão se um ponto de verificação de produção não puder ser obtido. Se você desmarcar essa caixa de seleção e um ponto de verificação de produção não puder ser obtido, nenhum ponto de verificação será obtido.  
   
-4.  Se você deseja armazenar os arquivos de configuração do ponto de verificação em um local diferente, alterá-la na **local do arquivo de ponto de verificação** seção.  
+4.  Se você quiser armazenar os arquivos de configuração de ponto de verificação em um local diferente, altere-os na seção **local do arquivo de ponto de verificação** .  
   
-5.  Clique em **aplicar** para salvar suas alterações. Se você tiver terminado, clique em **Okey** para fechar a caixa de diálogo.  
+5.  Clique em **aplicar** para salvar as alterações. Se terminar, clique em **OK** para fechar a caixa de diálogo.  
   
 > [!NOTE]
-> Somente **pontos de verificação de produção** têm suporte nos convidados que executam a função de serviços de domínio do Active Directory (controlador de domínio) ou a função do Active Directory Lightweight Directory Services.
+> Somente **pontos de verificação de produção** têm suporte em convidados que executam Active Directory Domain Services função (controlador de domínio) ou Active Directory Lightweight Directory Services função.
 
 ## <a name="see-also"></a>Consulte também  
   

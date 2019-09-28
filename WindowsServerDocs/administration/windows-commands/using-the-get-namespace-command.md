@@ -1,8 +1,8 @@
 ---
-title: Usando o comando get-Namespace
-description: 'Tópico de comandos do Windows para * * *- '
+title: Usando o comando Get-namespace
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c30f9ef375bdf368f81f5a69961746851a2aac8
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 607fb758db64cfc938a08b070b520fe2950aa482
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440436"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363084"
 ---
-# <a name="using-the-get-namespace-command"></a>Usando o comando get-Namespace
+# <a name="using-the-get-namespace-command"></a>Usando o comando Get-namespace
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -38,11 +38,11 @@ wdsutil /Get-Namespace /Namespace:<Namespace name> [/Server:<Server name>] [/det
 
 |               Parâmetro               |                                                                                                                                                                                         Descrição                                                                                                                                                                                          |
 |---------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      /Namespace:<Namespace name>      | Especifica o nome do namespace. Observe que isso não é o nome amigável, e ele deve ser exclusivo.<br /><br />-Implantação servidor: A sintaxe de nome de namespace é /Namspace:WDS:<ImageGroup>/<ImageName>/<Index>. Por exemplo:  **WDS:ImageGroup1/install.wim/1**<br />-Servidor de transporte: Esse valor deve corresponder ao nome fornecido para o namespace quando ele foi criado no servidor. |
-|        [/Server:<Server name>]        |                                                                                                             Especifica o nome do servidor. Isso pode ser o nome NetBIOS ou o nome de domínio totalmente qualificado (FQDN). Se nenhum nome de servidor for especificado, o servidor local será usado.                                                                                                              |
-| [/ Mostrar: os clientes] ou [/ detalhes: clientes] |                                                                                                                                                  Exibe informações sobre computadores cliente que estão conectados ao namespace especificado.                                                                                                                                                  |
+|      /Namespace: <Namespace name>      | Especifica o nome do namespace. Observe que esse não é o nome amigável e deve ser exclusivo.<br /><br />-Servidor de implantação: A sintaxe para o nome do namespace é/namspace: WDS: <ImageGroup> @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4. Por exemplo: **WDS: ImageGroup1/install. wim/1**<br />-Servidor de transporte: Esse valor deve corresponder ao nome fornecido para o namespace quando ele foi criado no servidor. |
+|        [/Server:<Server name>]        |                                                                                                             Especifica o nome do servidor. Esse pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.                                                                                                              |
+| [/Show: clients] ou [/details: clients] |                                                                                                                                                  Exibe informações sobre os computadores cliente que estão conectados ao namespace especificado.                                                                                                                                                  |
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 Para exibir informações sobre um namespace, digite:
 ```
 wdsutil /Get-Namespace /Namespace:"Custom Auto 1"
@@ -52,7 +52,7 @@ Para exibir informações sobre um namespace e os clientes que estão conectados
 - Windows Server 2008 R2: `wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:"Custom Auto 1" /details:Clients`
   #### <a name="additional-references"></a>Referências adicionais
   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-  [usando o comando get-AllNamespaces](using-the-get-allnamespaces-command.md)
-  [usando o comando Novo Namespace](using-the-new-namespace-command.md)
-  [Using o comando remove-Namespace](using-the-remove-namespace-command.md)
-  [subcomando: Namespace de início](subcommand-start-namespace.md)
+  [usando o comando Get-mynamespaces](using-the-get-allnamespaces-command.md)
+  [usando o comando New-namespace](using-the-new-namespace-command.md)
+  [usando o comando Remove-namespace](using-the-remove-namespace-command.md)
+  [subcomando: Start-namespace](subcommand-start-namespace.md)

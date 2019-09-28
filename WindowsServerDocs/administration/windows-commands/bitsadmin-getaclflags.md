@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getaclflags
-description: Tópico de comandos do Windows para **getaclflags bitsadmin** -recupera os sinalizadores de propagação de lista de controle de acesso.
+description: O tópico de comandos do Windows para **Bitsadmin getaclflags** -recupera os sinalizadores de propagações da lista de controle de acesso.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 185445a97168344f910abc0e644718296de2c712
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ad98cd742161ae06be5cba7acde7b810eaf199d6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861447"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381792"
 ---
 # <a name="bitsadmin-getaclflags"></a>bitsadmin getaclflags
 
-Recupera os sinalizadores de propagação de ACL (lista) de controle de acesso.
+Recupera os sinalizadores de propagações da ACL (lista de controle de acesso).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,23 +34,23 @@ bitsadmin /GetAclFlags <Job>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
 
 ## <a name="remarks"></a>Comentários
 
 Exibe um ou mais dos seguintes valores de sinalizador:
--   O: Copie informações do proprietário com o arquivo.
--   G: Copie informações de grupo com o arquivo.
--   D: Copie informações da DACL com o arquivo.
--   S: Copie informações da SACL com o arquivo.
+-   MINÚSCULA Copie as informações do proprietário com o arquivo.
+-   M Copie as informações do grupo com o arquivo.
+-   D: Copie informações de DACL com o arquivo.
+-   & Copie as informações da SACL com o arquivo.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir recupera os sinalizadores de propagação de lista de controle do acesso do trabalho nomeado *myDownloadJob*.
+O exemplo a seguir recupera os sinalizadores de propagação da lista de controle de acesso para o trabalho chamado *myDownloadJob*.
 ```
 C:\>bitsadmin /getaclflags myDownloadJob
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

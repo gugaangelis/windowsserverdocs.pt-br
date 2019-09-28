@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 07/02/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: fc924f5e5bdd7dabecac4fdd6805ad261a0fc634
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 77655ab414f83f2c74873b12719f9718c6fb59e5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866170"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358516"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>Ferramenta de restauração rápida do AD FS
 
@@ -88,7 +88,7 @@ Conjuntos de parâmetros
 
 - **ServiceAccountCredential&lt;PSCredential&gt;** -especifica a conta de serviço que está sendo usada para o serviço AD FS em execução no momento. Esse parâmetro só será necessário se o usuário quiser fazer backup do DKM e não for um administrador de domínio ou não tiver acesso ao conteúdo do contêiner. 
 
-- **BackupComment&lt;String []&gt;** – uma cadeia de caracteres informativa sobre o backup que será exibida durante a restauração, semelhante ao conceito de nomenclatura do ponto de verificação do Hyper-V. O padrão é uma cadeia de caracteres vazia
+- **BackupComment &lt;string [] &gt;** -uma cadeia de caracteres informativa sobre o backup que será exibido durante a restauração, semelhante ao conceito de nomenclatura do ponto de verificação do Hyper-V. O padrão é uma cadeia de caracteres vazia
 
  
 ## <a name="backup-examples"></a>Exemplos de backup

@@ -1,21 +1,21 @@
 ---
 ms.assetid: 898d72f1-01e7-4b87-8eb3-a8e0e2e6e6da
 title: Adicionando servidores ou unidades a Espaços de Armazenamento Diretos
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: cosdar
 ms.manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 11/06/2017
-description: Como adicionar servidores ou unidades a um cluster de espaços de armazenamento diretos
+description: Como adicionar servidores ou unidades a um cluster Espaços de Armazenamento Diretos
 ms.localizationpriority: medium
-ms.openlocfilehash: ae639b920788911dbc16952d7b61aab85b0a391b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3d5949b8fce7253371ee7ecea5118596f713f037
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833447"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393775"
 ---
 # <a name="adding-servers-or-drives-to-storage-spaces-direct"></a>Adicionando servidores ou unidades a Espaços de Armazenamento Diretos
 
@@ -23,11 +23,11 @@ ms.locfileid: "59833447"
 
 Este tópico descreve como adicionar servidores ou unidades a Espaços de Armazenamento Diretos.
 
-## <a name="adding-servers"></a> Adição de servidores
+## <a name="adding-servers"></a>Adicionando servidores
 
 A adição de servidores, geralmente chamada de expansão horizontal, adiciona capacidade de armazenamento e pode melhorar o desempenho e a eficiência do armazenamento. Se sua implantação for hiperconvergente, adicionar servidores também fornecerá mais recursos de computação para sua carga de trabalho.
 
-![Animação de adição de um servidor a um cluster de quatro nós](media/add-nodes/Scaling-Out.gif)
+![Animação da adição de um servidor a um cluster de quatro nós](media/add-nodes/Scaling-Out.gif)
 
 As implantações típicas são simples de serem escaladas horizontalmente adicionando servidores: Existem apenas duas etapas:
 
@@ -53,7 +53,7 @@ Add-ClusterNode -Name NewNode
 
 ### <a name="from-2-to-3-servers-unlocking-three-way-mirroring"></a>De 2 a 3 servidores: desbloqueando o espelhamento de três vias
 
-![Adicionar um terceiro servidor a um cluster de dois nós](media/add-nodes/Scaling-2-to-3.png)
+![adicionando um terceiro servidor a um cluster de dois nós](media/add-nodes/Scaling-2-to-3.png)
 
 Com dois servidores, você só pode criar volumes espelhados bidirecionais (em comparação ao RAID-1 distribuído). Com três servidores, você pode criar volumes espelhados em três vias para melhor tolerância a falhas. É recomendável usar o espelhamento de três vias, sempre que possível.
 
@@ -91,7 +91,7 @@ New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName 
 
 ### <a name="from-3-to-4-servers-unlocking-dual-parity"></a>De 3 a 4 servidores: desbloqueando a paridade dupla
 
-![Adicionar um quarto servidor a um cluster de três nós](media/add-nodes/Scaling-3-to-4.png)
+![adicionando um quarto servidor a um cluster de três nós](media/add-nodes/Scaling-3-to-4.png)
 
 Com quatro servidores, você pode usar a paridade dupla, também conhecida comumente como codificação de eliminação (compare com o RAID-6 distribuído). Isso fornece a mesmo tolerância a falhas como espelhamento de três vias, mas com melhor eficiência de armazenamento. Para saber mais, consulte [Tolerância a falhas e eficiência de armazenamento](storage-spaces-fault-tolerance.md).
 
@@ -156,7 +156,7 @@ Se sua implantação usar a tolerância a falhas em chassi ou rack, você dever�
    New-ClusterFaultDomain -Type Node -Name <NewNode> 
    ```
 
-2. Mova esse domínio de falha temporário para o chassi ou rack no qual o servidor está localizado de fato, conforme especificado por *\<ParentName>*:
+2. Mova esse domínio de falha temporário para o chassi ou rack no qual o servidor está localizado de fato, conforme especificado por *\<ParentName>* :
 
    ```PowerShell
    Set-ClusterFaultDomain -Name <NewNode> -Parent <ParentName> 
@@ -166,14 +166,14 @@ Se sua implantação usar a tolerância a falhas em chassi ou rack, você dever�
 
 3. Adicione o servidor ao cluster conforme descrito em [Adicionando servidores](#adding-servers). Quando o novo servidor ingressa no cluster, ele é automaticamente associado (usando seu nome) ao domínio de falha do espaço reservado.
 
-## <a name="adding-drives"></a> Adicionando unidades
+## <a name="adding-drives"></a>Adicionando unidades
 
 A adição de unidades, também conhecida como expansão vertical, adiciona capacidade de armazenamento e pode melhorar o desempenho. Se você tiver slots disponíveis, você poderá adicionar unidades a cada servidor para expandir a capacidade de armazenamento sem adicionar servidores. Você pode adicionar unidades de cache ou de capacidade independentemente a qualquer momento.
 
    >[!IMPORTANT]
    > É altamente recomendável que todos os servidores tenham configurações de armazenamento idênticas.
 
-![Animação mostrando a adição de unidades para um sistema](media/add-nodes/Scale-Up.gif)
+![Animação mostrando a adição de unidades a um sistema](media/add-nodes/Scale-Up.gif)
 
 Para escalar verticalmente, conecte as unidades e verifique se o Windows as detecta. Elas devem aparecer na saída do cmdlet **Get-PhysicalDisk** no PowerShell com a propriedade **CanPool** definida como **True**. Se elas forem mostradas como **CanPool = False**, você poderá ver o motivo verificando a propriedade **CannotPoolReason**.
 
@@ -188,19 +188,19 @@ Se as unidades não aparecerem, verifique manualmente se há alterações de har
    >[!NOTE]
    > O pooling automático depende de você ter apenas um pool. Se você ignorou a configuração padrão para criar vários pools, você precisará adicionar sozinho novas unidades ao seu pool preferencial usando **Add-PhysicalDisk**.
 
-## <a name="optimizing-drive-usage-after-adding-drives-or-servers"></a>Otimizando o uso da unidade depois de adicionar servidores ou unidades
+## <a name="optimizing-drive-usage-after-adding-drives-or-servers"></a>Otimizando o uso da unidade depois de adicionar unidades ou servidores
 
-Ao longo do tempo, como unidades são adicionadas ou removidas, a distribuição de dados entre as unidades no pool pode se tornar irregular. Em alguns casos, isso pode resultar em certas ficarem cheios enquanto outros discos no pool têm muito menos consumo de unidades.
+Ao longo do tempo, à medida que as unidades são adicionadas ou removidas, a distribuição de dados entre as unidades no pool pode se tornar desigual. Em alguns casos, isso pode resultar em algumas unidades ficando cheias enquanto outras unidades no pool têm um consumo muito menor.
 
-Para manter a alocação de unidade mesmo entre o pool, espaços de armazenamento diretos automaticamente otimiza o uso da unidade depois de adicionar unidades ou servidores ao pool (esse é um processo manual para sistemas de espaços de armazenamento que usam os compartimentos de SAS compartilhado). Otimização começa a 15 minutos depois de adicionar uma nova unidade ao pool. Otimização de pool é executado como uma operação de plano de fundo de baixa prioridade, portanto, pode levar horas ou dias para ser concluída, especialmente se você estiver usando discos rígidos.
+Para ajudar a manter a alocação de unidade mesmo em todo o pool, Espaços de Armazenamento Diretos otimiza automaticamente o uso da unidade depois de adicionar unidades ou servidores ao pool (esse é um processo manual para sistemas de espaços de armazenamento que usam compartimentos SAS compartilhados). A otimização inicia 15 minutos depois que você adiciona uma nova unidade ao pool. A otimização de pool é executada como uma operação em segundo plano de baixa prioridade, de modo que pode levar horas ou dias para ser concluída, especialmente se você estiver usando discos rígidos grandes.
 
-A otimização usa dois trabalhos - uma chamada *otimizar* e um chamado *reequilibrar* - e você pode monitorar seu progresso com o seguinte comando:
+A otimização usa dois trabalhos – um chamado *Optimize* e outro chamado *rebalance* -e você pode monitorar seu progresso com o seguinte comando:
 
 ```powershell
 Get-StorageJob
 ```
 
-Você pode otimizar manualmente um pool de armazenamento com o [Optimize-StoragePool](https://docs.microsoft.com/powershell/module/storage/optimize-storagepool?view=win10-ps) cmdlet. Veja um exemplo:
+Você pode otimizar manualmente um pool de armazenamento com o cmdlet [Optimize-StoragePool](https://docs.microsoft.com/powershell/module/storage/optimize-storagepool?view=win10-ps) . Veja um exemplo:
 
 ```powershell
 Get-StoragePool <PoolName> | Optimize-StoragePool
