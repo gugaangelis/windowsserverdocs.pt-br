@@ -1,8 +1,8 @@
 ---
-title: Dfsdiag TestReferral
-description: 'Tópico de comandos do Windows para * * *- '
+title: dfsdiag TestReferral
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,28 +13,28 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cd1b87befa8a9cfda5ea27a4ce5a5105ea1a1009
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: af22520d2c89f9d9f9d91ea6f43a33f3ff9c57f1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848017"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378362"
 ---
-# <a name="dfsdiag-testreferral"></a>Dfsdiag TestReferral
+# <a name="dfsdiag-testreferral"></a>dfsdiag TestReferral
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Verifica o sistema de arquivos distribuído \(DFS\) referências, executando os seguintes testes:  
+Verifica Sistema de Arquivos Distribuído referências a \(DFS @ no__t-1 executando os seguintes testes:  
   
--   Quando você usa o parâmetro DFSpath sem argumentos, esse comando valida que a lista de referência inclui todos os domínios confiáveis.  
+-   Quando você usa o parâmetro DFSpath sem argumentos, esse comando valida que a lista de referências inclui todos os domínios confiáveis.  
   
--   Quando você especifica um domínio, o comando executa uma verificação de integridade dos controladores de domínio \(dfsdiag \/testdcs\) e testa o associações de site e o cache de domínio do host local.  
+-   Quando você especifica um domínio, o comando executa uma verificação de integridade dos controladores de domínio \(dfsdiag \/testdcs @ no__t-2 e testa as associações de site e o cache de domínio do host local.  
   
--   Quando você especifica um domínio e \\SYSvol ou \\NETLOGON, além de realizar a mesma integridade verifica conforme quando você especifica um domínio, o comando verifica se o tempo de vida \(TTL\) de indicações de SYSvol ou NETLOGON corresponde ao valor padrão de 900 segundos.  
+-   Quando você especifica um domínio e \\SYSvol ou \\NETLOGON, além de executar as mesmas verificações de integridade quando especifica um domínio, o comando verifica se a vida útil \(TTL @ no__t-3 de referências de SYSvol ou NETLOGON corresponde ao valor padrão de 900 segundos.  
   
--   Quando você especifica uma raiz do namespace, além de realizar a mesma integridade verifica conforme quando você especifica um domínio, o comando executa uma verificação de configuração de DFS \(dfsdiag \/TestDFSConfig\) e uma verificação de integridade do namespace \(dfsdiag \/TestDFSIntegrity\).  
+-   Quando você especifica uma raiz de namespace, além de executar as mesmas verificações de integridade quando especifica um domínio, o comando executa uma verificação de configuração de DFS \(dfsdiag \/TestDFSConfig @ no__t-2 e uma verificação de integridade de namespace \(dfsdiag @no__ t-4TestDFSIntegrity @ no__t-5.  
   
--   Quando você especifica uma pasta DFS \(link\), além de realizar as mesma verificações de integridade como quando você especifica uma raiz do namespace, o comando valida a configuração do site para destinos de pasta \(dfsdiag \/ testsites\) e valida a associação de site do host local.  
+-   Quando você especifica uma pasta DFS \(link @ no__t-1, além de executar as mesmas verificações de integridade quando especifica uma raiz de namespace, o comando valida a configuração de site para destinos de pasta \(dfsdiag \/testsites @ no__t-4 e valida a associação do site do host local.  
   
   
   
@@ -48,10 +48,10 @@ dfsdiag /TestReferral /DFSpath:<DFS path for getting referrals> [/Full]
   
 |Parâmetro|Descrição|  
 |-------|--------|  
-|\/DFSpath:<path for getting referrals>|Esse caminho DFS pode ser um dos seguintes:<br /><br />-   \(em branco\): Domínios confiáveis de testes.<br />-   \\\\Domínio: Indicações de controlador de domínio.<br />-   \\\\Domain\\SYSvol: Referências de SYSvol.<br />-   \\\\Domain\\NETLOGON: Referências de NETLOGON.<br />-   \\\\<Domain or server>\\<Namespace Root>: Indicações de raiz do Namespace.<br />-   \\\\<Domain or server>\\<Namespace root>\\<DFS folder>: Pasta DFS \(link\) referências.|  
-|\/completo|Aplicada apenas para as referências da raiz e de domínio. verifica a consistência das informações de associação de site entre o registro e os serviços de domínio do Active Directory \(AD DS\).|  
+|\/DFSpath: <path for getting referrals>|Esse caminho de DFS pode ser um dos seguintes:<br /><br />-    @ no__t-1blank @ no__t-2: Testa domínios confiáveis.<br />-    @ no__t-1 @ no__t-2Domain: Referências do controlador de domínio.<br />-    @ no__t-1 @ no__t-2Domain @ no__t-3SYSvol: Referências de SYSvol.<br />-    @ no__t-1 @ no__t-2Domain @ no__t-3NETLOGON: Referências de NETLOGON.<br />-    @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5: Referências de raiz de namespace.<br />-    @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7: Pasta DFS \(link @ no__t-1 indicações.|  
+|\/Full|Aplicado somente a referências de domínio e raiz. verifica a consistência das informações de associação do site entre o registro e os serviços de domínio Active Directory \(AD DS @ no__t-1.|  
   
-## <a name="BKMK_Examples"></a>Exemplos  
+## <a name="BKMK_Examples"></a>Disso  
 Para TBD, digite:  
   
 ```  
@@ -66,6 +66,6 @@ dfsdiag /TestReferral /DFSpath:
   
 ## <a name="additional-references"></a>Referências adicionais  
   
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 

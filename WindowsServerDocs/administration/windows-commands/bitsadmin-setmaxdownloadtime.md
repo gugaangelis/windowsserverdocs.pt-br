@@ -1,8 +1,8 @@
 ---
-title: Bitsadmin setmaxdownloadtime
-description: Tópico de comandos do Windows para **setmaxdownloadtime bitsadmin** -define o tempo limite de download em segundos.
+title: bitsadmin setmaxdownloadtime
+description: O tópico de comandos do Windows para **Bitsadmin setmaxdownloadtime** -define o tempo limite de download em segundos.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f13b44429bec2718af1a648f273fead18d4e9e08
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 985453de5bd2f4a06b5635ae5b0a9794d30175b0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830987"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380563"
 ---
-# <a name="bitsadmin-setmaxdownloadtime"></a>Bitsadmin setmaxdownloadtime
+# <a name="bitsadmin-setmaxdownloadtime"></a>bitsadmin setmaxdownloadtime
 
 
 
@@ -36,20 +36,20 @@ bitsadmin /SetMaxDownloadTime <Job> <Timeout>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
 |Limite de tempo|O tempo limite em segundos|
 
 ## <a name="remarks"></a>Comentários
 
 -   N/D
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir define o tempo limite do trabalho nomeado *myDownloadJob* como 10 segundos.
+O exemplo a seguir define o tempo limite para o trabalho chamado *myDownloadJob* como 10 segundos.
 ```
 C:\>bitsadmin /SetMaxDownloadTime myDownloadJob 10
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

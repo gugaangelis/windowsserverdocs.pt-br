@@ -1,8 +1,8 @@
 ---
-title: hash_1 de FTP
-description: 'Tópico de comandos do Windows para * * *- '
+title: hash_1 FTP
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87c4466ba1bf89f9eb548d7d7ed134246c810811
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 495306902bf68b451158d89794b47c273ae8a7e7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438695"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376353"
 ---
-# <a name="ftp-hash1"></a>FTP: hash_1
+# <a name="ftp-hash_1"></a>FTP: hash_1
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Alternâncias de sinal numérico (#) para cada bloco de dados que é transferido de impressão.   
+Alterna a impressão de sinal numérico (#) para cada bloco de dados transferido.   
 ## <a name="syntax"></a>Sintaxe  
 ```  
 hash  
@@ -32,10 +32,10 @@ hash
 ### <a name="parameters"></a>Parâmetros  
 nenhuma  
 ## <a name="remarks"></a>Comentários  
-- O tamanho de um bloco de dados é 2048 bytes.  
-- Por padrão, **hash** está desativado.  
-  ## <a name="BKMK_Examples"></a>Exemplos  
-  Ativar/desativar o sinal numérico (#), a impressão para cada bloco de dados que é transferido.  
+- O tamanho de um bloco de dados é de 2048 bytes.  
+- Por padrão, o **hash** é desativado.  
+  ## <a name="BKMK_Examples"></a>Disso  
+  Alterne a impressão de sinal numérico (#) para cada bloco de dados transferido.  
   ```  
   hash  
   ```  

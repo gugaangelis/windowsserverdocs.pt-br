@@ -1,19 +1,19 @@
 ---
 title: Implantar o sistema de arquivos de rede
 description: Descreve como implantar o sistema de arquivos de rede.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 761394f3190f02eedfea27a7d873c4c36535f23b
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 22c8725c227719ee143baa8f4abd3a5cc5dcf883
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865119"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393972"
 ---
 # <a name="deploy-network-file-system"></a>Implantar o sistema de arquivos de rede
 

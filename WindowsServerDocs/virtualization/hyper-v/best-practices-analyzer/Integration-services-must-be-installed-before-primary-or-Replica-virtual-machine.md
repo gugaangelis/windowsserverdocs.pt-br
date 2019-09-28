@@ -1,7 +1,7 @@
 ---
-title: Serviços de integração devem ser instalados antes do primário ou máquinas virtuais de réplica pode usar um endereço IP alternativo após um failover
-description: Versão online do texto para essa regra do analisador de práticas recomendadas, com links para obter mais informações.
-ms.prod: windows-server-threshold
+title: O Integration Services deve ser instalado antes que as máquinas virtuais primárias ou de réplica possam usar um endereço IP alternativo após um failover
+description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas, com links para mais informações.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,39 +10,39 @@ ms.topic: article
 ms.assetid: a7fdd185-d6c8-4f58-9b58-2df5827bb056
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 1ff8dbfd71655aee86ba7d0feac87ec2267a2171
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 58e744c182fb2013e55e91f58140c6ba14181f9f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865507"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393592"
 ---
-# <a name="integration-services-must-be-installed-before-primary-or-replica-virtual-machines-can-use-an-alternate-ip-address-after-a-failover"></a>Serviços de integração devem ser instalados antes do primário ou máquinas virtuais de réplica pode usar um endereço IP alternativo após um failover
+# <a name="integration-services-must-be-installed-before-primary-or-replica-virtual-machines-can-use-an-alternate-ip-address-after-a-failover"></a>O Integration Services deve ser instalado antes que as máquinas virtuais primárias ou de réplica possam usar um endereço IP alternativo após um failover
 
 >Aplica-se a: Windows Server 2016
 
-Para obter mais informações sobre as práticas recomendadas e varreduras, consulte [Run Best Practices Analyzer Scans e Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
+Para obter mais informações sobre práticas recomendadas e verificações, consulte [executar verificações de analisador de práticas recomendadas e gerenciar resultados de verificação](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
 |Propriedade|Detalhes|  
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
-|**Recurso do produto**|Hyper-V|  
-|**Severidade**|Erro|  
-|**categoria**|Configuração|  
+|**Produto/recurso**|Hyper-V|  
+|**Severity**|Erro|  
+|**Categorias**|Configuração|  
   
-Nas seções a seguir, itálico indica o texto de interface do usuário que aparece na ferramenta Analisador de práticas recomendadas para esse problema.  
+Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
 ## <a name="issue"></a>Problema  
-*As máquinas virtuais que participam da replicação pode ser configurado para usar um endereço IP específico no caso de failover, mas somente se os serviços de integração estão instalados no sistema operacional convidado da máquina virtual.*  
+*As máquinas virtuais que participam da replicação podem ser configuradas para usar um endereço IP específico em caso de failover, mas somente se o Integration Services estiver instalado no sistema operacional convidado da máquina virtual.*  
   
 ## <a name="impact"></a>Impacto  
-*No caso de um failover (planejado, não planejado ou de teste), a máquina virtual de réplica virão online usando o mesmo endereço IP da máquina virtual primária. Essa configuração poderá causar problemas de conectividade. Isso afeta as seguintes máquinas virtuais:*  
+*In o evento de um failover (planejado, não planejado ou de teste), a máquina virtual de réplica será colocado online usando o mesmo endereço IP que a máquina virtual primária. Essa configuração pode causar problemas de conectividade. Isso afeta as seguintes máquinas virtuais:*  
   
-\<lista de máquinas virtuais >  
+\<list de máquinas virtuais >  
   
 ## <a name="resolution"></a>Resolução  
-*Use a Conexão de máquina Virtual para instalar o integration services na máquina virtual.*  
+*Use a conexão de máquina virtual para instalar o Integration Services na máquina virtual.*  
   
-A partir do Windows Server 2016, os serviços de integração para máquinas de virtuais do Windows são entregues por meio do Windows Update. Certifique-se de que essas máquinas virtuais são configuradas para receber atualizações do Windows para obter a versão mais recente do integration services. O kernel do Linux agora inclui serviços de integração do Linux (LIS) e é atualizado para novas versões, mas distribuições do Linux com base nos kernels mais antigos não podem ter as mais recentes aprimoramentos ou correções. Para obter detalhes, consulte [máquinas virtuais de suporte para Linux e FreeBSD para Hyper-V no Windows](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md).
+A partir do Windows Server 2016, o Integration Services para máquinas virtuais do Windows é entregue por meio de Windows Update. Verifique se essas máquinas virtuais estão configuradas para receber atualizações do Windows para obter a versão mais recente do Integration Services. O kernel do Linux agora inclui o LIS (Linux Integration Services) e é atualizado para novas versões, mas as distribuições do Linux baseadas em kernels mais antigos podem não ter os aprimoramentos ou correções mais recentes. Para obter detalhes, consulte [máquinas virtuais Linux e FreeBSD com suporte para o Hyper-V no Windows](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md).
 
 

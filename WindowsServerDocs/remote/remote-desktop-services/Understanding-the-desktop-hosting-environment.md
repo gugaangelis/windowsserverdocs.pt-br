@@ -2,7 +2,7 @@
 title: Noções básicas sobre o ambiente de hospedagem de área de trabalho
 description: Visão geral de uma implantação de RDS usando a IaaS do Azure.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 1bdf4e3e25facfa8cc49459ada8d9b1b6309a724
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 1bd672c52c892430339bb6c17c6324bf4d6d79a1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63744035"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387814"
 ---
 # <a name="understanding-the-desktop-hosting-environment"></a>Noções básicas sobre o ambiente de hospedagem de área de trabalho
 
@@ -26,7 +26,7 @@ ms.locfileid: "63744035"
 As informações a seguir descrevem os componentes do serviço de hospedagem de área de trabalho.  
   
 ## <a name="tenant-environment"></a>Ambiente de locatário  
-O serviço de hospedagem de área de trabalho do provedor é implementado como um conjunto de ambientes de locatários isolados. O ambiente de cada locatário consiste em um contêiner de armazenamento, um conjunto de máquinas virtuais e uma combinação de serviços do Azure, todos se comunicando sobre uma rede virtual isolada. Cada máquina virtual contém um ou mais dos componentes que compõem o ambiente de área de trabalho hospedada do locatário. As subseções a seguir descrevem os componentes que compõem o ambiente de área de trabalho hospedada de cada locatário.
+O serviço de hospedagem de área de trabalho do provedor é implementado como um conjunto de ambientes de locatários isolados. O ambiente de cada locatário consiste em um contêiner de armazenamento, um conjunto de máquinas virtuais e uma combinação de serviços do Azure, tudo se comunicando sobre uma rede virtual isolada. Cada máquina virtual contém um ou mais dos componentes que compõem o ambiente de área de trabalho hospedada do locatário. As subseções a seguir descrevem os componentes que compõem o ambiente de área de trabalho hospedada de cada locatário.
 
 ## <a name="remote-desktop-services"></a>Serviços da Área de Trabalho Remota
 Em um ambiente de hospedagem de área de trabalho, as seguintes funções de Serviços de Área de Trabalho Remota são instaladas entre diversas máquinas virtuais:

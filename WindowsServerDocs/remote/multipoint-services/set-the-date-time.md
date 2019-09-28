@@ -1,9 +1,9 @@
 ---
 title: Definir data, hora e fuso horário
-description: Saiba como definir a data, hora e fuso horário no MultiPoint Services
+description: Saiba como definir a data, a hora e o fuso horário nos serviços do MultiPoint
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,22 +13,22 @@ ms.assetid: 22a87c5f-3bfc-4da1-9905-24f768ede959
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 9d60a62d38149e1ceed1c05e013c41f7bdb819be
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ab8b65cc9890a66c602f1e4b4eb102ac068ba8d3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877667"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394606"
 ---
 # <a name="set-the-date-time-and-time-zone"></a>Definir data, hora e fuso horário
-Depois de concluir a instalação de drivers de dispositivo, defina a data, hora e fuso horário no servidor do MultiPoint.  
+Depois de concluir a instalação dos drivers de dispositivo, defina a data, a hora e o fuso horário no servidor MultiPoint.  
   
-1.  Dos **inicie** tela do MultiPoint server, abra **painel de controle**.  
+1.  Na tela **inicial** do MultiPoint Server, abra o **painel de controle**.  
   
-2.  Sob **relógio, idioma e região**, clique em **definir a data e hora**.  
+2.  Em **relógio, idioma e região**, clique em **definir a data e a hora**.  
   
-3.  Sobre o **data e hora** , verifique se a data e hora. Se elas não estiverem corretas, clique em **alterar data e hora**, atualize a data e hora e, em seguida, clique em **Okey**.  
+3.  Na guia **data e hora** , verifique a data e a hora. Se eles não estiverem corretos, clique em **alterar Data e hora**, atualize a data e hora e clique em **OK**.  
   
-4.  Sob **fuso horário**, verifique se o fuso horário. Se não estiver correto, clique em **alterar fuso horário**, selecione o fuso horário correto e, em seguida, clique em **Okey**.  
+4.  Em **fuso horário**, verifique o fuso horário. Se não estiver correto, clique em **alterar fuso horário**, selecione o fuso horário correto e clique em **OK**.  
   
-5.  Clique em **Okey** novamente para salvar suas configurações e fechar a caixa de diálogo.
+5.  Clique em **OK** novamente para salvar as configurações e fechar a caixa de diálogo.

@@ -1,7 +1,7 @@
 ---
 title: Mais de um adaptador de rede deve estar disponível
-description: Versão online do texto para essa regra do analisador de práticas recomendadas.
-ms.prod: windows-server-threshold
+description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,12 +10,12 @@ ms.topic: article
 ms.assetid: 59940e56-e06a-490f-90ea-cf30d9f80b09
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 678c0161e97b8dd022bbf0037d9add5de0281f77
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6b043900c6fde4522e5805a1f0c1a635de335e31
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884597"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364800"
 ---
 # <a name="more-than-one-network-adapter-should-be-available"></a>Mais de um adaptador de rede deve estar disponível
 
@@ -26,25 +26,25 @@ Para obter mais informações sobre práticas recomendadas e varreduras, consult
 |Propriedade|Detalhes|  
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
-|**Recurso do produto**|Hyper-V|  
-|**Severidade**|Erro|  
-|**categoria**|Configuração|  
+|**Produto/recurso**|Hyper-V|  
+|**Severity**|Erro|  
+|**Categorias**|Configuração|  
 
-Nas seções a seguir, itálico indica o texto de interface do usuário que aparece na ferramenta Analisador de práticas recomendadas para esse problema.
+Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.
 
 ## <a name="issue"></a>Problema  
   
-*Este servidor está configurado com um adaptador de rede, que deve ser compartilhado por sistema operacional de gerenciamento e todas as máquinas virtuais que exigem acesso a uma rede física.*  
+*Esse servidor é configurado com um adaptador de rede, que deve ser compartilhado pelo sistema operacional de gerenciamento e por todas as máquinas virtuais que exigem acesso a uma rede física.*  
   
 ## <a name="impact"></a>Impacto  
   
-*Desempenho de rede pode estar danificado no sistema operacional de gerenciamento.*  
+*O desempenho da rede pode ser degradado no sistema operacional de gerenciamento.*  
   
 ## <a name="resolution"></a>Resolução  
   
-*Adicione mais adaptadores de rede a este computador. Para reservar um adaptador de rede para uso exclusivo por sistema operacional de gerenciamento, não configurá-lo para uso com uma rede virtual externa.*  
+*Add mais adaptadores de rede para este computador. Para reservar um adaptador de rede para uso exclusivo pelo sistema operacional de gerenciamento, não o configure para uso com uma rede virtual externa.*  
   
-Para obter informações sobre como adicionar um adaptador de rede no computador, consulte a documentação para o computador ou o adaptador de rede. Em seguida, para reservá-lo exclusivamente para o sistema operacional de gerenciamento, não a conecte a um comutador virtual.   
+Para obter informações sobre como adicionar um adaptador de rede ao computador, consulte a documentação do computador ou adaptador de rede. Em seguida, para reservar exclusivamente para o sistema operacional de gerenciamento, não conecte-o a um comutador virtual.   
   
 
 

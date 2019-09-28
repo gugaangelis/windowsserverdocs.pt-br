@@ -3,7 +3,7 @@ title: Limitar Acesso via Web
 description: Saiba como limitar o acesso do usuário à Internet nos serviços do MultiPoint
 ms.custom: na
 ms.date: 07/08/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.assetid: 044f2fd5-5b87-42bb-ba0d-c06516ac48c8
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 9f3524261e8e93439ff48a3e6666fa7680a76a29
-ms.sourcegitcommit: ccec91c1d32a978159f9b8bb5e39ead5805c26c4
+ms.openlocfilehash: 8e12eebd55aa066979bbcbe4d2f3e613b5876a01
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71143743"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395326"
 ---
 # <a name="limit-web-access"></a>Limitar Acesso via Web
 Além de monitorar as atividades do usuário em áreas de trabalho individuais, você, como um usuário administrativo, pode limitar o acesso do usuário a sites especificados indicando sites e sites permitidos aos quais você deseja bloquear o acesso do usuário.  

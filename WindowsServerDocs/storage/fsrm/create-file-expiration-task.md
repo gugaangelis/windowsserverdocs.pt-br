@@ -2,18 +2,18 @@
 title: Criar uma tarefa de expiração de arquivos
 description: Este artigo descreve o processo de criação de uma tarefa de gerenciamento de arquivo para arquivos prestes a vencer
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b816dbe759d94980b2cc27284fd2e0ec7787d0b0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 0901c17203252414a37ccc5205a0946b8bef0d41
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446007"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394233"
 ---
 # <a name="create-a-file-expiration-task"></a>Criar uma tarefa de expiração de arquivos
 
@@ -61,7 +61,7 @@ O nome do novo diretório é baseado no nome da tarefa de gerenciamento de arqui
 
      - Para enviar email para a pessoa cujos arquivos estão prestes a expirar, selecione a caixa de seleção **Envie um email para o usuário cujos arquivos estão prestes a expirar**.
 
-     - Para configurar a mensagem, edite o padrão assunto linha e corpo da mensagem que são fornecidas. O texto entre colchetes insere informações variáveis sobre o evento de cota que causou a notificação. Por exemplo, o **\[proprietário do arquivo de origem\]** variável insere o nome do usuário cujo arquivo está prestes a expirar. Para inserir variáveis adicionais no texto, clique em **Inserir variável**.
+     - Para configurar a mensagem, edite o padrão assunto linha e corpo da mensagem que são fornecidas. O texto entre colchetes insere informações variáveis sobre o evento de cota que causou a notificação. Por exemplo, a variável do **proprietário do arquivo \[Source @ no__t-2** insere o nome do usuário cujo arquivo está prestes a expirar. Para inserir variáveis adicionais no texto, clique em **Inserir variável**.
 
      - Para anexar uma lista dos arquivos que estão prestes a expirar, clique em **Anexar ao email uma lista dos arquivos no qual ação será executada** e digite ou selecione um valor para **Número máximo de arquivos na lista**.
 

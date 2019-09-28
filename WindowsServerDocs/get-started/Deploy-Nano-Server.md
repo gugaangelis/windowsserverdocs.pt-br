@@ -1,7 +1,7 @@
 ---
 title: Implantar o Nano Server
 description: Explica a criação e a implantação de imagens, pacotes, drivers, domínios, funções e recursos personalizados
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: DonGill
 ms.technology: server-nano
@@ -12,19 +12,19 @@ ms.assetid: 9f109c91-7c2e-4065-856c-ce9e2e9ce558
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: e61844cfb04f95723fe9d08b9bd2e8b481714eea
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 34cb9a50fad7ea64cd8af5b893f5fbd5217a95e1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66442237"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391854"
 ---
 # <a name="deploy-nano-server"></a>Implantar o Nano Server
 
 >Aplica-se a: Windows Server 2016
 
 > [!IMPORTANT]
-> A partir do Windows Server, versão 1709, o Nano Server estará disponível somente como uma [imagem de sistema operacional base do contêiner](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Confira [Mudanças no Nano Server](nano-in-semi-annual-channel.md) para saber o que isso significa. 
+> A partir do Windows Server, versão 1709, o Nano Server estará disponível somente como uma [imagem do sistema operacional de base de contêiner](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Confira [Mudanças no Nano Server](nano-in-semi-annual-channel.md) para saber o que isso significa. 
 
 Este tópico aborda as informações necessárias para implantar imagens do Nano Server mais personalizadas para suas necessidades em comparação aos exemplos simples no Tópico de início rápido do Nano Server. Você encontrará informações sobre como criar uma imagem personalizada do Nano Server com os recursos que você deseja, como instalar imagens do Nano Server de VHD ou WIM, como editar arquivos, como trabalhar com domínios, lidar com pacotes usando vários métodos e trabalhar com funções de servidor.
 
@@ -639,7 +639,7 @@ A delegação restrita funciona exatamente como nas versões anteriores. confira
 
 **CredSSP**  
 
-Primeiro, confira a seção "Usar a comunicação remota do Windows PowerShell" deste tópico para habilitar e testar CredSSP. Em seguida, no computador de gerenciamento, você pode usar o Gerenciador do Hyper-V e selecionar a opção "conectar-se como outro usuário". O Gerenciador do Hyper-V usará CredSSP. Você deve fazer isso mesmo se estiver usando sua conta atual.  
+Primeiro, confira a seção "Usar a comunicação remota do Windows PowerShell" deste tópico para ativar e testar CredSSP. Em seguida, no computador de gerenciamento, você pode usar o Gerenciador do Hyper-V e selecionar a opção "conectar-se como outro usuário". O Gerenciador do Hyper-V usará CredSSP. Você deve fazer isso mesmo se estiver usando sua conta atual.  
 
 Os cmdlets do Windows PowerShell para Hyper-V podem usar parâmetros CimSession ou Credential, que funcionam com o CredSSP.  
 

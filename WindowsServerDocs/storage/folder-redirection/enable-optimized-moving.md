@@ -1,19 +1,19 @@
 ---
 title: Habilitar movimentações otimizadas de pastas redirecionadas
 description: Como executar uma movimentação otimizada de pastas redirecionadas para um novo compartilhamento de arquivos.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: edf6596f7daaa2f496b8b4da36e98ee72b05dfcd
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 6c54fee98247b1ce0aa3ef3a2502cf18f314e763
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867261"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394370"
 ---
 # <a name="enable-optimized-moves-of-redirected-folders"></a>Habilitar movimentações otimizadas de pastas redirecionadas
 

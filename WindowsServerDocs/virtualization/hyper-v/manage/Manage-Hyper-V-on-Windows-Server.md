@@ -1,7 +1,7 @@
 ---
 title: Gerenciar o Hyper-V no Windows Server
 description: Fornece links para artigos sobre como gerenciar o Hyper-V
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: dongill
 ms.technology: compute-hyper-v
 ms.topic: article
@@ -9,12 +9,12 @@ ms.assetid: 5c06b632-dd19-46ca-9f51-130c321963d8
 author: jasongerend
 ms.author: jgerend
 ms.date: 01/08/2018
-ms.openlocfilehash: e8a9d4a894990c793c3725f93a51f04c93be41e3
-ms.sourcegitcommit: d12d9e6afd71d23e8a24682ad80d2cf3bc486588
+ms.openlocfilehash: 1d63eacfd827503c52cb16f94983182c001e88c5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71226020"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364093"
 ---
 # <a name="manage-hyper-v-on-windows-server"></a>Gerenciar o Hyper-V no Windows Server
 
@@ -34,5 +34,5 @@ Use os recursos desta seção para ajudá-lo a gerenciar o Hyper-V no Windows Se
 - [Gerenciar serviços de integração](Manage-Hyper-V-integration-services.md)
 - [Gerenciar VMs do Windows com o PowerShell Direct](Manage-Windows-virtual-machines-with-powershell-direct.md)
 - [Configurar a réplica do Hyper-V](Set-up-Hyper-V-Replica.md) 
-- [Habilitar o hardware de monitoramento de desempenho Intel](Performance-Monitoring-Hardware.md)
+- [Habilitar o hardware de monitoramento de desempenho da Intel](Performance-Monitoring-Hardware.md)
 - [Mover VMs com a migração dinâmica](Live-migration-overview.md)

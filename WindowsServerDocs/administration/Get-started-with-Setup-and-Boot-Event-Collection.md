@@ -1,7 +1,7 @@
 ---
 title: Introdução à Coleta de Eventos de Instalação e Inicialização
 description: Configuração de coletores e metas de coleta de eventos de instalação e inicialização
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: DonGill
 ms.technology: server-sbec
@@ -12,12 +12,12 @@ ms.topic: get-started-article
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247b3f8
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: e94659c62db574dc8779c8246d471ab401414ddb
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d1d24cdf481f19b37093f76cf8741702e1b4de60
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435800"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370515"
 ---
 # <a name="get-started-with-setup-and-boot-event-collection"></a>Introdução à Coleta de Eventos de Instalação e Inicialização
 
@@ -86,16 +86,16 @@ Em cada computador de destino, você primeiro habilita o transporte KDNET/EVENT-
   
 3.  No computador do coletor, execute um destes comandos:  
   
-    -   Em um prompt do Windows PowerShell: `Set-Item -Force WSMan:\localhost\Client\TrustedHosts "<target1>,<target2>,..."`, seguido por `Set-Item -Force WSMan:\localhost\Client\AllowUnencrypted true` onde \<target1 >, etc. são os nomes ou endereços IP dos computadores de destino.  
+    -   Em um prompt do Windows PowerShell: `Set-Item -Force WSMan:\localhost\Client\TrustedHosts "<target1>,<target2>,..."`, seguido por `Set-Item -Force WSMan:\localhost\Client\AllowUnencrypted true`, em que \<target1 >, etc. são os nomes ou endereços IP dos computadores de destino.  
   
-    -   Ou em um prompt de comando: **winrm define winrm/config/client @{TrustedHosts = "\<target1 >,\<target2 >,..."; AllowUnencrypted = "true"}**  
+    -   Ou em um prompt de comando: **WinRM Set WinRM/config/Client @ {TrustedHosts = "\<target1 >, \<target2 >,..."; AllowUnencrypted = "true"}**  
   
         > [!IMPORTANT]  
         > Isto define uma comunicação não criptografada, portanto, não faça fora de um ambiente de laboratório.  
   
 4.  Teste a conexão remota indo para o computador do coletor e executando um destes comandos do Windows PowerShell:  
   
-    Se o computador de destino estiver no mesmo domínio que o computador do coletor, execute `New-PSSession -Computer <target> | Remove-PSSession`  
+    Se o computador de destino estiver no mesmo domínio que o computador coletor, execute `New-PSSession -Computer <target> | Remove-PSSession`  
   
     Se o computador de destino não estiver no mesmo domínio, execute `New-PSSession -Computer  <target>  -Credential Administrator | Remove-PSSession`, que solicitará as credenciais.  
   
@@ -105,7 +105,7 @@ Em cada computador de destino, você primeiro habilita o transporte KDNET/EVENT-
   
     `Enable-SbecBcd -ComputerName <target_name> -CollectorIP <ip> -CollectorPort <port> -Key <a.b.c.d>`  
   
-    Aqui < target_name > é o nome do computador de destino, \<ip > é o endereço IP do computador do coletor. \<porta > é o número da porta em que o coletor será executado. A <a.b.c.d> é uma chave de criptografia necessária para a comunicação, que consiste em quatro cadeias de caracteres alfanuméricos separadas por pontos. Essa mesma chave é usada no computador coletor. Se você não inserir uma chave, o sistema gera uma chave aleatória; você precisará disso para o computador coletor, portanto, anote-a.  
+    Aqui < target_name > é o nome do computador de destino, \<ip > é o endereço IP do computador do coletor. \<port > é o número da porta em que o coletor será executado. A <a.b.c.d> é uma chave de criptografia necessária para a comunicação, que consiste em quatro cadeias de caracteres alfanuméricos separadas por pontos. Essa mesma chave é usada no computador coletor. Se você não inserir uma chave, o sistema gera uma chave aleatória; você precisará disso para o computador coletor, portanto, anote-a.  
   
 6.  Se você já tiver um computador coletor configurado, atualize o arquivo de configuração no computador coletor com as informações para o novo computador de destino. Consulte a seção "Configurar o computador coletor" para obter mais detalhes.  
   
@@ -113,15 +113,15 @@ Em cada computador de destino, você primeiro habilita o transporte KDNET/EVENT-
   
 1.  Inicie um prompt de comando elevado e, em seguida, execute estes comandos:  
   
-    **Sim do bcdedit /event**  
+    **bcdedit/Event Sim**  
   
-    **bcdedit /eventsettings net hostip:1.2.3.4 porta: 50000 key:a.b.c.d**  
+    **bcdedit/eventsettings net HostIP: 1.2.3.4 Port: 50000 Key: a. b. c. d**  
   
     Aqui, "1.2.3.4" é um exemplo; substitua pelo endereço IP do computador coletor. Substitua "50000" pelo número da porta em que o coletor será executado e "a.b.c.d" pela chave de criptografia necessária para a comunicação. Essa mesma chave é usada no computador coletor. Se você não inserir uma chave, o sistema gera uma chave aleatória; você precisará disso para o computador coletor, portanto, anote-a.  
   
 2.  Se você já tiver um computador coletor configurado, atualize o arquivo de configuração no computador coletor com as informações para o novo computador de destino. Consulte a seção "Configurar o computador coletor" para obter mais detalhes.  
   
-**Agora que o transporte de evento em si é habilitado, você deve habilitar o sistema para realmente enviar eventos ETW por meio desse transporte.**  
+**Agora que o próprio transporte de evento está habilitado, você deve habilitar o sistema para realmente enviar eventos ETW por meio desse transporte.**  
   
 ##### <a name="to-enable-sending-of-etw-events-through-the-transport-remotely"></a>Para habilitar o envio de eventos ETW por meio do transporte remotamente  
   
@@ -150,7 +150,7 @@ Se o computador de destino tiver mais de um adaptador de rede, o driver KDNET es
   
 1.  No computador de destino, abra o Gerenciador de dispositivos, expanda **Adaptadores de rede**, encontre o adaptador de rede que você deseja usar e clique nele com o botão direito do mouse.  
   
-2.  No menu que é aberta, clique em **propriedades**e, em seguida, clique no **detalhes** guia. Expanda o menu na **propriedade** campo, role para encontrar **informações de localização** (a lista é provavelmente não em ordem alfabética) e, em seguida, clique nele. O valor será uma cadeia de caracteres do formulário **barramento PCI X, Y do dispositivo, a função Z**. Anote x.y. z; Estes são os parâmetros de barramento que você precisa para o comando a seguir.  
+2.  No menu que é aberto, clique em **Propriedades**e, em seguida, clique na guia **detalhes** . Expanda o menu no campo de **Propriedade** , role para localizar **informações de local** (a lista provavelmente não está em ordem alfabética) e, em seguida, clique nela. O valor será uma cadeia de caracteres da forma de **barramento PCI X, dispositivo Y, função Z**. Anote X. Y. Z; Esses são os parâmetros de barramento necessários para o comando a seguir.  
   
 3.  Execute um destes comandos:  
   
@@ -165,9 +165,9 @@ Para verificar as configurações no computador de destino, abra um prompt de co
   
 -   Debugtype = NET  
   
--   Hostip = \<o endereço IP do coletor de >  
+-   HostIP = endereço \<IP da > do coletor  
   
--   Porta = \<especificado para o coletor de usar do número da porta >  
+-   Port = número \<port especificado para o coletor usar >  
   
 -   DHCP = Sim  
   
@@ -198,7 +198,7 @@ Quando você habilita o serviço, três arquivos de configuração XML são cria
   
 **Escolhendo um limite de tamanho de arquivo**  
   
-Uma das decisões que você precisa tomar é definir um limite de tamanho de arquivo. O limite de tamanho de arquivo recomendado depende do volume esperado de eventos e espaço em disco disponível. Arquivos menores são mais convenientes da perspectiva de limpeza dos dados antigos. No entanto, cada arquivo carrega com ele, a sobrecarga de um cabeçalho de 64KB e leitura de muitos arquivos para obter o histórico combinado pode ser inconveniente. O limite de tamanho mínimo do arquivo absoluto é 256 KB. Um limite de tamanho de arquivo prático razoável deve ser superior a 1 MB e 10 MB provavelmente é um bom valor típico. Um limite superior seria razoável se você espera muitos eventos.  
+Uma das decisões que você precisa tomar é definir um limite de tamanho de arquivo. O limite de tamanho de arquivo recomendado depende do volume esperado de eventos e espaço em disco disponível. Arquivos menores são mais convenientes da perspectiva de limpeza dos dados antigos. No entanto, cada arquivo contém a sobrecarga de um cabeçalho de 64 KB e a leitura de muitos arquivos para obter o histórico combinado pode ser inconveniente. O limite de tamanho mínimo de arquivo absoluto é 256 KB. Um limite de tamanho de arquivo prático razoável deve ser superior a 1 MB e 10 MB provavelmente é um bom valor típico. Um limite superior seria razoável se você espera muitos eventos.  
   
 Há vários detalhes para lembrar-se em relação ao arquivo de configuração:  
   
@@ -251,17 +251,17 @@ Há vários detalhes para lembrar-se em relação ao arquivo de configuração:
     ```  
   
     > [!NOTE]  
-    > O nó raiz é \<coletor >. Seus atributos especificam a versão da sintaxe do arquivo de configuração e o nome do arquivo de log de status.  
+    > O nó raiz é \<collector >. Seus atributos especificam a versão da sintaxe do arquivo de configuração e o nome do arquivo de log de status.  
     >   
-    > O \<comum > elemento agrupa vários destinos, especificando os elementos de configuração comuns para eles, muito, como um grupo de usuários pode ser usado para especificar as permissões comuns para vários usuários.  
+    > O elemento \<common > agrupa vários destinos especificando os elementos de configuração comuns para eles, muito parecido com um grupo de usuários pode ser usado para especificar as permissões comuns para vários usuários.  
     >   
-    > O \<collectorport > elemento define o número da porta UDP em que o coletor de escuta para dados de entrada. Essa é a mesma porta especificada na etapa de configuração de destino para Bcdedit. O coletor oferece suporte a apenas uma porta e todos os destinos devem se conectar a mesma porta.  
+    > O elemento \<collectorport > define o número da porta UDP em que o coletor escutará os dados de entrada. Essa é a mesma porta especificada na etapa de configuração de destino para Bcdedit. O coletor oferece suporte a apenas uma porta e todos os destinos devem se conectar a mesma porta.  
     >   
-    > O \<encaminhador > elemento Especifica como os eventos ETW recebidos de computadores de destino serão encaminhados. Há apenas um tipo de encaminhador, que os grava nos arquivos ETL. Os parâmetros especificam o padrão de nome de arquivo, o limite de tamanho de cada arquivo no anel e o tamanho do anel para cada computador. A configuração "toxml" especifica que os eventos ETW serão gravados no formato binário como foram recebidos, sem a conversão para XML. Consulte a seção "Conversão de evento XML" para obter informações sobre como decidir se deve conferir os eventos para XML ou não. O padrão de nome de arquivo contém essas substituições: {computer} para o nome do computador e {#3} para o índice do arquivo no anel.  
+    > O elemento \<forwarder > especifica como os eventos ETW recebidos dos computadores de destino serão encaminhados. Há apenas um tipo de encaminhador, que os grava nos arquivos ETL. Os parâmetros especificam o padrão de nome de arquivo, o limite de tamanho de cada arquivo no anel e o tamanho do anel para cada computador. A configuração "toxml" especifica que os eventos ETW serão gravados no formato binário como foram recebidos, sem a conversão para XML. Consulte a seção "Conversão de evento XML" para obter informações sobre como decidir se deve conferir os eventos para XML ou não. O padrão de nome de arquivo contém essas substituições: {computer} para o nome do computador e {#3} para o índice do arquivo no anel.  
     >   
-    > Nesse arquivo de exemplo, dois computadores de destino são definidas com o \<destino > elemento. Cada definição especifica o endereço IP com \<ipv4 >, mas você também pode usar o endereço MAC (por exemplo, < valor mac = "11:22:33:44:55:66"\/> ou < mac value="11-22-33-44-55-66"\/>) ou o GUID do SMBIOS (para o exemplo, < valor de guid = "{269076F9-4B77-46E1-B03B-CA5003775B88}"\/>) para identificar o computador de destino. Observe também a chave de criptografia (a mesma especificada ou gerada com Bcdedit no computador de destino) e o nome do computador.  
+    > Neste arquivo de exemplo, dois computadores de destino são definidos com o elemento \<target >. Cada definição especifica o endereço IP com \<ipv4 >, mas você também pode usar o endereço MAC (por exemplo, < valor Mac = "11:22:33:44:55:66" \/ > ou < valor Mac = "11-22-33-44-55-66" \/ >) ou SMBIOS GUID (por exemplo, < GUID valor = "{269076F9-4B77-46E1-B03B-CA5003775B88}" \/ >) para identificar o computador de destino. Observe também a chave de criptografia (a mesma especificada ou gerada com Bcdedit no computador de destino) e o nome do computador.  
   
-4.  Insira os detalhes de cada computador de destino como um separado \<destino > elemento no arquivo de configuração e, em seguida, salve Newconfig.xml e fechar o bloco de notas.  
+4.  Insira os detalhes de cada computador de destino como um elemento separado \<target > no arquivo de configuração e, em seguida, salve newconfig. xml e feche o bloco de notas.  
   
 5.  Aplique a nova configuração com `$result = (Get-Content .\newconfig.xml | Set-SbecActiveConfig); $result`. A saída deve ser retornada com o campo Sucesso como "true". Se você receber outro resultado, consulte a seção de Solução de problemas deste tópico.  
   
@@ -292,7 +292,7 @@ A interface mínima oferecida pelo Nano Server às vezes pode dificultar o diagn
   
     3.  Atualize o registro de VHD do Nano Serve para habilitar Agentes de log automático. Para fazer isso, execute `Enable-SbecAutoLogger -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd`. Isto adiciona uma lista básica do ambiente mais típico e eventos de inicialização; você pode pesquisar outros em [Controlar sessões de rastreamento de eventos](https://msdn.microsoft.com/library/windows/desktop/aa363694(v=vs.85).aspx).  
   
-4.  Atualize configurações de BCD na imagem do Nano Server para habilitar o sinalizador de Eventos e defina o computador coletor para certifique-se de que eventos de diagnósticos são enviados para o servidor correto. Observe que o endereço IPv4 do computador coletor, a porta TCP e a chave de criptografia configurada no arquivo Active.XML do coletor (descrito em outro lugar neste tópico). Use este comando no console do Windows PowerShell com permissões elevadas: `Enable-SbecBcd -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd -CollectorIp 192.168.100.1 -CollectorPort 50000 -Key a.b.c.d`  
+4.  Atualize configurações de BCD na imagem do Nano Server para habilitar o sinalizador de Eventos e defina o computador coletor para certifique-se de que eventos de diagnósticos são enviados para o servidor correto. Observe que o endereço IPv4 do computador coletor, a porta TCP e a chave de criptografia configurada no arquivo Active.XML do coletor (descrito em outro lugar neste tópico). Use este comando em um console do Windows PowerShell com permissões elevadas: `Enable-SbecBcd -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd -CollectorIp 192.168.100.1 -CollectorPort 50000 -Key a.b.c.d`  
   
 5.  Atualize o computador coletor para receber eventos enviados pelo computador do Nano Server adicionando o intervalo de endereços IPv4, o endereço IPv4 específico ou o endereço MAC do Nano Server no arquivo Active.XML no computador do coletor (consulte a seção "Configurar o computador coletor"deste tópico).  
   
@@ -312,11 +312,11 @@ O log para o serviço coletor propriamente dito (que é distinto dos dados de co
 ||Erro|Descrição do erro|Sintoma|Problema em potencial|  
 |-|---------|---------------------|-----------|---------------------|  
 |Dism.exe|87|A opção de nome do recurso não é reconhecida nesse contexto||-Isso pode acontecer ao escrever incorretamente o nome do recurso. Verifique se a ortografia está correta e tente novamente.<br />-Confirme se este recurso está disponível na versão do sistema operacional que você está usando. No Windows PowerShell, execute **dism /online /get-features &#124; ?{$_ -match "boot"}** . Se nenhuma correspondência for retornada, você provavelmente está executando uma versão que não oferece suporte a esse recurso.|  
-|Dism.exe|0x800f080c|Recurso \<nome > é desconhecido.||Mesmo que acima|  
+|Dism.exe|0x800f080c|O recurso \<name > é desconhecido.||Mesmo que acima|  
   
 ### <a name="troubleshooting-the-collector"></a>Solução de problemas do coletor  
   
-**Registro em log:**  
+**Logout**  
 O Coletor registra em log seus próprios eventos como provedor ETW Microsoft-Windows-BootEvent-Collector. É o primeiro lugar que você deve procurar por problemas do coletor de solução de problemas. Você pode encontrá-los no Visualizador de Eventos em Logs de aplicativos e serviços > Microsoft > Windows > BootEvent-Collector > Administrador ou você pode lê-los em uma janela de comando com qualquer um desses comandos:  
   
 Em um prompt de comando comum: **wevtutil qe Microsoft-Windows-BootEvent-Collector/Admin**  
@@ -325,15 +325,15 @@ Em um prompt do Windows PowerShell: `Get-WinEvent -LogName Microsoft-Windows-Boo
   
 Você pode ajustar o nível de detalhe nos logs de "erro", por meio de "aviso", "informações" (padrão), "detalhada" e "depuração". Níveis mais detalhados de "informações" são úteis para diagnosticar problemas de conexão com os computadores de destino, mas eles podem gerar uma grande quantidade de dados, portanto, use-os com cuidado.  
   
-Definir o log mínimo nível no \<coletor > elemento do arquivo de configuração. Por exemplo: < coletor configVersionMajor = "1" minlog\="detalhado" >.  
+Você define o nível de log mínimo no elemento \<collector > do arquivo de configuração. Por exemplo: < Collector configVersionMajor = "1" minlog @ no__t-0 "Verbose" >.  
   
 O nível de detalhe faz um registro para cada pacote recebido à medida que é processado. O nível de depuração adiciona mais detalhes de processamento e esvazia o conteúdo de todos os pacotes ETW recebidos.  
   
-No nível de depuração, talvez seja útil gravar o log em um arquivo em vez de tentar exibi-lo no sistema de registro em log comum. Para fazer isso, adicione um elemento adicional no \<coletor > elemento do arquivo de configuração:  
+No nível de depuração, talvez seja útil gravar o log em um arquivo em vez de tentar exibi-lo no sistema de registro em log comum. Para fazer isso, adicione um elemento adicional no elemento \<collector > do arquivo de configuração:  
   
-<collector configVersionMajor="1" minlog="debug" log\="c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt">  
+< Collector configVersionMajor = "1" minlog = "debug" log @ no__t-0 "c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt" >  
       
- **Uma abordagem sugerida para o coletor de solução de problemas:**  
+ **Uma abordagem sugerida para solucionar problemas do coletor:**  
    
 1. Primeiro, verifique se o coletor recebeu a conexão do destino (ele criará o arquivo somente quando o destino começa a enviar as mensagens) com   
    ```  
@@ -341,11 +341,11 @@ No nível de depuração, talvez seja útil gravar o log em um arquivo em vez de
    ```  
    Se retorna que há uma conexão a partir deste destino, o problema pode ser nas configurações do agente de log automático. Se retorna nada, o problema é com a conexão KDNET. Para diagnosticar problemas de conexão KDNET, tente verificar a conexão de ambas as extremidades (ou seja, de um coletor e do destino).  
   
-2. Para ver um diagnóstico estendido do coletor, adicione esta opção para o \<coletor > elemento do arquivo de configuração:  
-   \<collector ... minlog="verbose">  
+2. Para ver o diagnóstico estendido do coletor, adicione-o ao elemento \<collector > do arquivo de configuração:  
+   \<collector... minlog = "Verbose" >  
    Isso permitirá mensagens sobre cada pacote recebido.  
-3. Verifique se todos os pacotes são recebidos. Opcionalmente, você talvez queira gravar o log no modo detalhado diretamente em um arquivo e não por ETW. Para fazer isso, adicione esta opção para o \<coletor > elemento do arquivo de configuração:  
-   \<collector ... minlog="verbose" log="c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt">  
+3. Verifique se todos os pacotes são recebidos. Opcionalmente, você talvez queira gravar o log no modo detalhado diretamente em um arquivo e não por ETW. Para fazer isso, adicione isso ao elemento \<collector > do arquivo de configuração:  
+   \<collector... minlog = "log" detalhado = "c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt" >  
       
 4. Verifique os logs de evento para todas as mensagens sobre os pacotes recebidos. Verifique se todos os pacotes são recebidos. Se os pacotes são recebidos, mas de forma incorreta, verifique as mensagens de eventos para obter detalhes.  
 5. Do lado do destino, o KDNET grava algumas informações de diagnósticos no registro. Examinar   
@@ -358,7 +358,7 @@ No nível de depuração, talvez seja útil gravar o log em um arquivo em vez de
 8. Confirme se o coletor está na mesma rede de destino. Caso contrário, verifique se o roteamento está configurado corretamente, especificamente a configuração do gateway padrão para o DHCP.  
   
   
-**Status de Conexão**  
+**Status da conexão**  
   
 Você pode verificar a lista atual de conexões estabelecidas e informações sobre onde os dados estão sendo encaminhados com `Get-SbecForwarding`.  
   
@@ -382,5 +382,5 @@ Como alternativa, se você não quiser salvar o resultado em uma variável, é p
 |-|---------|---------------------|-----------|---------------------|  
 |Computador de destino||O destino não está se conectando ao coletor||-O computador de destino não reiniciou depois que foi configurado. Reinicie o computador de destino.<br />-O computador de destino tem configurações incorretas de BCD. Verifique as configurações na seção "Validar configurações do computador de destino". Corrija conforme necessário e reinicie o computador de destino.<br />-O driver KDNET/EVENT-NET não foi capaz de se conectar a um adaptador de rede ou conectou-se ao adaptador de rede errado. No Windows PowerShell, execute `gwmi Win32_NetworkAdapter` e verifique a saída para um com o ServiceName **kdnic**. Se o adaptador de rede errado estiver marcado, execute novamente as etapas descritas em "Para especificar um adaptador de rede". Se o adaptador de rede não aparecer, é possível que o driver não ofereça suporte para qualquer um dos seus adaptadores de rede.<br>**Consulte também** "Uma abordagem sugerida para o coletor de solução de problemas" acima, especificamente as Etapas 5 a 8.|  
 |Coletor||Não vejo mais eventos após migrar a VM na qual o coletor está hospedado.||Verifique se o endereço IP do computador do coletor não foi alterado. Caso afirmativo, consulte "Habilitar o envio de eventos ETW por meio de transporte remoto".|  
-|Coletor||Os arquivos ETL não são criados.|`Get-SbecForwarding` mostra que o destino tiver se conectado, sem erros, mas não são criados os arquivos ETL.|O computador de destino provavelmente não enviou quaisquer dados ainda; os arquivos ETL são criados apenas quando os dados são recebidos.|  
+|Coletor||Os arquivos ETL não são criados.|`Get-SbecForwarding` mostra que o destino se conectou, sem erros, mas os arquivos ETL não são criados.|O computador de destino provavelmente não enviou quaisquer dados ainda; os arquivos ETL são criados apenas quando os dados são recebidos.|  
 |Coletor||Um evento não está aparecendo no arquivo de ETL.|O computador de destino enviou a um evento, mas quando o arquivo ETL é lido com o Visualizador de Eventos do Analisador de Mensagem, o evento não está presente.|-O evento ainda pode estar no buffer. Os eventos não são gravados no arquivo ETL até que um buffer completo de 64 KB seja coletado ou um tempo limite de aproximadamente 10 a 15 segundos sem nenhum novo evento ocorrer. Espere até que o tempo limite expire ou limpe os buffers com `Save-SbecInstance`.<br />-O manifesto de evento não está disponível no computador coletor ou o computador onde o Visualizador de Eventos ou o Analisador de Mensagem é executado.  Nesse caso, o Coletor talvez não consiga processam o evento (verifique o log do Coletor) ou o visualizador talvez não consiga mostrá-lo.  É uma prática recomendada ter todos os manifestos instalados no computador do coletor e instalar atualizações no computador coletor antes de instalá-los nos computadores de destino.|

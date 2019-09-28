@@ -2,7 +2,7 @@
 title: Configurações de segurança do Windows 10 com suporte para os Serviços de Área de Trabalho Remota VDI
 description: Fornece informações sobre configurações compatíveis com Windows 10 VDI com RDS no Windows Server 2016.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 8f164f5d-a498-4f91-a12f-3e01d554f810
 author: lizap
 manager: dongill
-ms.openlocfilehash: ff890150dcea30c425267dcaae9b1bdbc6d78b8c
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 08941c49469dcf9b9e3e42c7ab799186380bab35
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743391"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387032"
 ---
 # <a name="supported-windows-10-security-configurations-for-remote-desktop-services-vdi"></a>Configurações de segurança do Windows 10 com suporte para os Serviços de Área de Trabalho Remota VDI
 

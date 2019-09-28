@@ -1,8 +1,8 @@
 ---
 title: bitsadmin reset
-description: Tópico de comandos do Windows para **bitsadmin redefinir** -cancela todos os trabalhos na fila de transferência que o usuário atual possui.
+description: O tópico de comandos do Windows para **Bitsadmin Reset** – cancela todos os trabalhos na fila de transferência que o usuário atual possui.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b7c29aac55393cd87145583814b3ffa8f0a2c3b3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: adc6b07a7b5d1414c733fe6a3ac05eba7cb3029e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874247"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380815"
 ---
 # <a name="bitsadmin-reset"></a>bitsadmin reset
 
 Cancela todos os trabalhos na fila de transferência que o usuário atual possui.
 
-**BITSAdmin 1.5 e anterior**: Se você tiver privilégios de administrador **redefina** cancela todos os trabalhos na fila. Não há suporte para a opção /AllUsers.
+**BITSAdmin 1,5 e anterior**: Se você tiver privilégios de administrador, **redefina** cancels todos os trabalhos na fila. Não há suporte para a opção/AllUsers.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,16 +36,16 @@ bitsadmin /Reset [/AllUsers]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|AllUsers|Opcional — cancela todos os trabalhos na fila.|
+|AllUsers|Opcional – cancela todos os trabalhos na fila.|
 
 ## <a name="remarks"></a>Comentários
 
-Você deve ter privilégios de administrador para usar o **AllUsers** parâmetro.
+Você deve ter privilégios de administrador para usar o parâmetro **AllUsers** .
 
 > [!NOTE]
-> Os administradores não é possível redefinir os trabalhos criados pelo sistema Local. Use o Agendador de tarefas para agendar esse comando como uma tarefa usando as credenciais do sistema Local.
+> Os administradores não podem redefinir trabalhos criados pelo sistema local. Use o Agendador de tarefas para agendar esse comando como uma tarefa usando as credenciais do sistema local.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 O exemplo a seguir cancela todos os trabalhos na fila de transferência para o usuário atual.
 ```
@@ -54,4 +54,4 @@ C:\>bitsadmin /Reset
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

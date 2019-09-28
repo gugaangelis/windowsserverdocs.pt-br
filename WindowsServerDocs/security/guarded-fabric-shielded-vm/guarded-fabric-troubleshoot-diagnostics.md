@@ -1,83 +1,83 @@
 ---
 title: Solução de problemas usando a ferramenta de diagnóstico de malha protegida
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 07691d5b-046c-45ea-8570-a0a85c3f2d22
 manager: dongill
 author: huu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 0fb257f693cc27c0bc6dd18fc89e8dc6328ee638
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: deeaa7eab01dd5da6d997dd6ec039a3319e5c2b7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447345"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386456"
 ---
 # <a name="troubleshooting-using-the-guarded-fabric-diagnostic-tool"></a>Solução de problemas usando a ferramenta de diagnóstico de malha protegida
 
 >Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016
 
-Este tópico descreve o uso da ferramenta Diagnóstico de malha protegida para identificar e corrigir falhas comuns na implantação, configuração e operação em andamento da infraestrutura de malha protegida. Isso inclui o serviço de guardião de Host (HGS), todos os hosts protegidos e os serviços de suporte, como DNS e Active Directory. A ferramenta de diagnóstico pode ser usada para executar um primeiro passo na separação de uma malha protegida de falha, fornecendo aos administradores com um ponto de partida para resolver a interrupções e identificando ativos configurados incorretamente. A ferramenta não é uma substituição para uma melhor compreensão de som de operar uma malha protegida e só serve para verificar rapidamente os problemas mais comuns encontrados durante as operações diárias.
+Este tópico descreve o uso da ferramenta de diagnóstico de malha protegida para identificar e corrigir falhas comuns na implantação, configuração e operação contínua da infraestrutura de malha protegida. Isso inclui o serviço de guardião de host (HGS), todos os hosts protegidos e serviços de suporte, como DNS e Active Directory. A ferramenta de diagnóstico pode ser usada para executar uma primeira passagem na triagem de uma malha protegida com falha, fornecendo aos administradores um ponto de partida para resolver interrupções e identificar ativos configurados incorretamente. A ferramenta não é uma substituição por um sólido entendimento da operação de uma malha protegida e serve apenas para verificar rapidamente os problemas mais comuns encontrados durante as operações cotidianas.
 
-Documentação dos cmdlets usados neste tópico pode ser encontrada no [TechNet](https://technet.microsoft.com/library/mt718834.aspx).
+A documentação dos cmdlets usados neste tópico pode ser encontrada no [TechNet](https://technet.microsoft.com/library/mt718834.aspx).
 
 [!INCLUDE [Guarded fabric diagnostics tool](../../../includes/guarded-fabric-diagnostics-tool.md)] 
 
 # <a name="quick-start"></a>Início Rápido
 
-Você pode diagnosticar um host protegido ou um nó HGS a seguinte chamada de uma sessão do Windows PowerShell com privilégios de administrador local:
+Você pode diagnosticar um host protegido ou um nó HGS chamando o seguinte de uma sessão do Windows PowerShell com privilégios de administrador local:
 ```PowerShell
 Get-HgsTrace -RunDiagnostics -Detailed
 ```
-Isso detectará automaticamente a função do host atual e diagnosticar problemas relevantes que podem ser detectados automaticamente.  Todos os resultados gerados durante esse processo são exibidos devido à presença do `-Detailed` alternar.
+Isso detectará automaticamente a função do host atual e diagnosticará quaisquer problemas relevantes que possam ser detectados automaticamente.  Todos os resultados gerados durante esse processo são exibidos devido à presença da opção `-Detailed`.
 
-O restante deste tópico fornecem uma explicação detalhada sobre o uso avançado do `Get-HgsTrace` para fazer coisas como diagnosticar diversos hosts ao mesmo tempo e detectar erros de configuração de nó cruzado complexos.
+O restante deste tópico fornecerá uma explicação detalhada sobre o uso avançado de `Get-HgsTrace` para fazer coisas como diagnosticar vários hosts de uma vez e detectar uma configuração complexa de nó cruzado.
 
 ## <a name="diagnostics-overview"></a>Visão geral do diagnóstico
-Malha protegida de diagnóstico está disponível em qualquer host de máquina virtual blindada relacionados a ferramentas e recursos instalados, incluindo hosts que executam o Server Core.  No momento, o diagnóstico é incluído com os seguintes recursos/pacotes:
+O diagnóstico de malha protegida está disponível em qualquer host com ferramentas e recursos relacionados à máquina virtual blindada instalados, incluindo hosts que executam o Server Core.  Atualmente, os diagnósticos estão incluídos nos seguintes recursos/pacotes:
 
 1. Função de serviço guardião de host
 2. Suporte do Hyper-V ao Guardião de Host
 3. Ferramentas de Blindagem de VM para Gerenciamento de Malha
 4. Ferramentas de Administração de Servidor Remoto (RSAT)
 
-Isso significa que esteja disponíveis em todos os hosts protegidos, nós HGS, determinados servidores de gerenciamento de malha e as estações de trabalho do Windows 10 com ferramentas de diagnóstico [RSAT](https://www.microsoft.com/download/details.aspx?id=45520) instalado.  Diagnóstico pode ser chamado de qualquer uma das máquinas acima com a intenção de diagnosticar qualquer host protegido ou o nó HGS em uma malha protegida; usar destinos de rastreamento remoto, o diagnóstico pode localizar e conectar-se aos hosts que não seja o computador que executa o diagnóstico.
+Isso significa que as ferramentas de diagnóstico estarão disponíveis em todos os hosts protegidos, nós HGS, determinados servidores de gerenciamento de malha e todas as estações de trabalho do Windows 10 com o [rsat](https://www.microsoft.com/download/details.aspx?id=45520) instalado.  O diagnóstico pode ser invocado de qualquer um dos computadores acima com a intenção de diagnosticar qualquer host protegido ou nó HGS em uma malha protegida; usando destinos de rastreamento remotos, o diagnóstico pode localizar e se conectar a hosts diferentes do computador que executa o diagnóstico.
 
-Cada host direcionado pelo diagnóstico é conhecido como "target de rastreamento".  Destinos de rastreamento são identificados por seus nomes de host e funções.  As funções descrevem a função que executa a um destino de rastreamento fornecida em uma malha protegida.  No momento, o rastreamento tem como alvo o suporte `HostGuardianService` e `GuardedHost` funções.  Observe que é possível que um host ocupar várias funções ao mesmo tempo, e isso também é suportado pelo diagnóstico, no entanto, isso não deve ser feito em ambientes de produção.  Os hosts Hyper-V e HGS devem ser mantidos separados e distintos em todos os momentos.
+Cada host direcionado pelo diagnóstico é chamado de "destino de rastreamento".  Os destinos de rastreamento são identificados por seus nomes de host e funções.  As funções descrevem a função que um destino de rastreamento específico executa em uma malha protegida.  Atualmente, os destinos de rastreamento dão suporte às funções `HostGuardianService` e `GuardedHost`.  Observe que é possível que um host ocupe várias funções de uma vez e também tenha suporte do diagnóstico, no entanto, isso não deve ser feito em ambientes de produção.  Os hosts do HGS e do Hyper-V devem ser mantidos separados e distintos em todos os momentos.
 
-Os administradores podem começar as tarefas de diagnóstico, executando `Get-HgsTrace`.  Esse comando executa duas funções distintas com base nos switches fornecidos em tempo de execução: diagnóstico e coleta de rastreamento.  Esses dois combinados formam a totalidade da ferramenta de diagnóstico de malha protegida.  Embora não explicitamente necessárias, o diagnóstico mais úteis exige rastreamentos que só podem ser coletados com credenciais de administrador no destino do rastreamento.  Se os privilégios insuficientes são mantidos pelo usuário que está executando a coleta de rastreamento, os rastreamentos que exigem elevação falharão enquanto todos os outros serão passados.  Isso permite que o diagnóstico parcial no caso de um operador com privilégios insuficientes está realizando triagem. 
+Os administradores podem iniciar qualquer tarefa de diagnóstico executando `Get-HgsTrace`.  Esse comando executa duas funções distintas com base nas opções fornecidas em tempo de execução: coleta de rastreamento e diagnóstico.  Essas duas combinadas compõem todo o que é a ferramenta de diagnóstico de malha protegida.  Embora não seja explicitamente necessário, os diagnósticos mais úteis exigem rastreamentos que só podem ser coletados com credenciais de administrador no destino de rastreamento.  Se privilégios insuficientes forem mantidos pelo usuário executando a coleta de rastreamento, os rastreamentos que exigem elevação falharão enquanto todos os outros passarão.  Isso permite o diagnóstico parcial no evento que um operador sob privilégios está executando a triagem. 
 
 ### <a name="trace-collection"></a>Coleta de rastreamento
-Por padrão, `Get-HgsTrace` coletará apenas os rastreamentos e salvá-los em uma pasta temporária.  Rastreamentos de assumem a forma de uma pasta nomeada com o host de destino, preenchido com arquivos especialmente formatados que descrevem como o host está configurado.  Os rastreamentos também contêm metadados que descrevem como o diagnóstico foram chamado para coletar os rastreamentos.  Esses dados são usados pelo diagnóstico para reidratar informações sobre o host ao executar Diagnóstico manual.
+Por padrão, `Get-HgsTrace` só coletará rastreamentos e os salvará em uma pasta temporária.  Os rastreamentos assumem a forma de uma pasta, nomeada após o host de destino, preenchido com arquivos especialmente formatados que descrevem como o host é configurado.  Os rastreamentos também contêm metadados que descrevem como os diagnósticos foram invocados para coletar os rastreamentos.  Esses dados são usados pelo diagnóstico para reidratar informações sobre o host ao executar o diagnóstico manual.
 
-Se necessário, os rastreamentos podem ser examinados manualmente.  Todos os formatos são legíveis (XML) ou podem ser inspecionados prontamente usando as ferramentas padrão (por exemplo, X509 certificados e as extensões de Shell do Windows Crypto).  Observe entretanto que rastreamentos não são projetados para Diagnóstico manual e é sempre mais eficiente processar os rastreamentos com os recursos de diagnóstico do `Get-HgsTrace`.
+Se necessário, os rastreamentos podem ser revisados manualmente.  Todos os formatos são legíveis ao homem (XML) ou podem ser prontamente inspecionados usando ferramentas padrão (por exemplo, certificados X509 e extensões do Windows crypto Shell).  No entanto, observe que os rastreamentos não são projetados para diagnóstico manual e é sempre mais eficaz processar os rastreamentos com os recursos de diagnóstico do `Get-HgsTrace`.
 
-Os resultados da execução de coleta de rastreamento não façam qualquer indicação quanto a integridade de um determinado host.  Eles simplesmente indicam que os rastreamentos foram coletados com êxito.  É necessário usar os recursos de diagnóstico do `Get-HgsTrace` para determinar se os rastreamentos indicam um ambiente com falhas.
+Os resultados da execução da coleta de rastreamento não fazem nenhuma indicação quanto à integridade de um determinado host.  Eles simplesmente indicam que os rastreamentos foram coletados com êxito.  É necessário usar os recursos de diagnóstico do `Get-HgsTrace` para determinar se os rastreamentos indicam um ambiente com falha.
 
-Usando o `-Diagnostic` parâmetro, você pode restringir a coleta de rastreamento para apenas esses rastreamentos necessário para operar o diagnóstico especificado.  Isso reduz a quantidade de dados coletados, bem como as permissões necessárias para invocar o diagnóstico.
+Usando o parâmetro `-Diagnostic`, você pode restringir a coleta de rastreamento somente aos rastreamentos necessários para operar o diagnóstico especificado.  Isso reduz a quantidade de dados coletados, bem como as permissões necessárias para invocar o diagnóstico.
 
-### <a name="diagnosis"></a>Diagnóstico
-Rastreamentos coletados podem ser diagnosticados ao fornecido `Get-HgsTrace` o local dos rastreamentos por meio de `-Path` parâmetro e especificando o `-RunDiagnostics` alternar.  Além disso, `Get-HgsTrace` pode executar o diagnóstico e coleção em uma única passagem, fornecendo o `-RunDiagnostics` switch e uma lista de destinos de rastreamento.  Se nenhum destino de rastreamento forem fornecido, o computador atual é usado como um destino de implícito, com sua função inferida inspecionando os módulos instalados do Windows PowerShell.
+### <a name="diagnosis"></a>Correto
+Os rastreamentos coletados podem ser diagnosticados desde `Get-HgsTrace` o local dos rastreamentos por meio do parâmetro `-Path` e a especificação da opção `-RunDiagnostics`.  Além disso, `Get-HgsTrace` pode executar a coleta e o diagnóstico em uma única passagem fornecendo a opção `-RunDiagnostics` e uma lista de destinos de rastreamento.  Se não forem fornecidos destinos de rastreamento, o computador atual será usado como um destino implícito, com sua função inferida inspecionando os módulos instalados do Windows PowerShell.
 
-Diagnóstico fornecerá resultados em um formato hierárquico mostrando quais destinos de rastreamento, conjuntos de diagnóstico e diagnóstico individual é responsável por uma falha específica.  Falhas incluem atualizações e recomendações de resolução se uma decisão pode ser feita sobre que ação deve ser realizada em Avançar.  Por padrão, passando e irrelevantes resultados estão ocultos.  Para ver tudo testado o diagnóstico, especifique o `-Detailed` alternar.  Isso fará com que todos os resultados sejam exibidos independentemente de seu status.
+O diagnóstico fornecerá resultados em um formato hierárquico que mostra quais destinos de rastreamento, conjuntos de diagnóstico e diagnósticos individuais são responsáveis por uma falha específica.  As falhas incluem recomendações de resolução e correção se uma determinação puder ser feita em qual ação deve ser executada em seguida.  Por padrão, os resultados de passagem e irrelevantes ficam ocultos.  Para ver tudo testado pelo diagnóstico, especifique a opção `-Detailed`.  Isso fará com que todos os resultados sejam exibidos independentemente do seu status.
 
-É possível restringir o conjunto de diagnósticos que são executados usando o `-Diagnostic` parâmetro.  Isso permite que você especifique quais classes de diagnóstico devem ser executados em relação aos destinos de rastreamento e suprimindo todas as outras pessoas.  Exemplos de classes de diagnóstico disponíveis incluem rede, práticas recomendadas e cliente hardware.  Consulte a [documentação do cmdlet](https://technet.microsoft.com/library/mt718831.aspx) para encontrar uma lista atualizada de diagnóstico disponível.
+É possível restringir o conjunto de diagnósticos que são executados usando o parâmetro `-Diagnostic`.  Isso permite especificar quais classes de diagnóstico devem ser executadas em relação aos destinos de rastreamento e suprimir todas as outras.  Exemplos de classes de diagnóstico disponíveis incluem rede, práticas recomendadas e hardware de cliente.  Consulte a [documentação do cmdlet](https://technet.microsoft.com/library/mt718831.aspx) para encontrar uma lista atualizada de diagnósticos disponíveis.
 
 > [!WARNING]
-> Diagnóstico não é uma substituição para um monitoramento strong e o pipeline de resposta a incidentes.  Há um pacote do System Center Operations Manager para monitorar as malhas protegidas, bem como vários canais de log de eventos que podem ser monitorados para detectar problemas rapidamente.  O diagnóstico, em seguida, pode ser usado para essas falhas de triagem rápida e estabelecer um curso de ação.
+> O diagnóstico não é uma substituição para um pipeline forte de monitoramento e resposta a incidentes.  Há um pacote System Center Operations Manager disponível para monitorar malhas protegidas, bem como vários canais de log de eventos que podem ser monitorados para detectar problemas antecipadamente.  O diagnóstico pode ser usado para fazer uma triagem rápida dessas falhas e estabelecer um curso de ação.
 
 ## <a name="targeting-diagnostics"></a>Direcionamento de diagnóstico
 
-`Get-HgsTrace` opera em relação aos destinos de rastreamento.  Um destino de rastreamento é um objeto que corresponde a um nó HGS ou um host protegido dentro de uma malha protegida.  Ele pode ser pensado como uma extensão para um `PSSession` que inclui informações necessárias somente para diagnóstico, como a função do host na malha.  Destinos podem ser gerados implicitamente (por exemplo, local ou manual de diagnóstico) ou explicitamente com o `New-HgsTraceTarget` comando.
+`Get-HgsTrace` funciona contra destinos de rastreamento.  Um destino de rastreamento é um objeto que corresponde a um nó HGS ou a um host protegido dentro de uma malha protegida.  Pode ser pensado como uma extensão para um `PSSession`, que inclui informações necessárias apenas por diagnósticos, como a função do host na malha.  Os destinos podem ser gerados implicitamente (por exemplo, diagnóstico local ou manual) ou explicitamente com o comando `New-HgsTraceTarget`.
 
 ### <a name="local-diagnosis"></a>Diagnóstico local
 
-Por padrão, `Get-HgsTrace` têm como destino o host local (ou seja, em que o cmdlet está sendo invocado).  Isso é conhecido como o destino local implícito.  O destino local implícito é usado somente quando nenhum destino é fornecido na `-Target` parâmetro e nenhum rastreamento já existente é encontrado no `-Path`.
+Por padrão, `Get-HgsTrace` se destinará ao localhost (ou seja, onde o cmdlet está sendo invocado).  Isso é chamado de destino local implícito.  O destino local implícito só é usado quando nenhum destino é fornecido no parâmetro `-Target` e nenhum rastreamento pré-existente é encontrado no `-Path`.
 
-O destino local implícito usa a inferência de tipos de função para determinar qual função o host atual desempenha na malha protegida.  Isso se baseia em módulos do PowerShell do Windows instalados que correspondem grosseiramente a quais recursos foram instalados no sistema.  A presença do `HgsServer` módulo fará com que o destino do rastreamento assumir o papel `HostGuardianService` e a presença da `HgsClient` módulo fará com que o destino do rastreamento colocar a função `GuardedHost`.  É possível que um determinado host ter ambos os módulos presentes nesse caso, ele será tratado como um `HostGuardianService` e um `GuardedHost`.
+O destino local implícito usa a inferência de função para determinar qual função o host atual desempenha na malha protegida.  Isso se baseia nos módulos do Windows PowerShell instalados que correspondem aproximadamente aos recursos que foram instalados no sistema.  A presença do módulo `HgsServer` fará com que o destino de rastreamento assuma a função `HostGuardianService` e a presença do módulo `HgsClient` fará com que o destino de rastreamento assuma a função `GuardedHost`.  É possível que um determinado host tenha ambos os módulos presentes nesse caso, ele será tratado como um `HostGuardianService` e um `GuardedHost`.
 
-Portanto, a invocação de padrão de diagnóstico para coletar rastreamentos localmente:
+Portanto, a invocação padrão de diagnóstico para coletar rastreamentos localmente:
 ```PowerShell
 Get-HgsTrace
 ```
@@ -86,51 +86,51 @@ Get-HgsTrace
 New-HgsTraceTarget -Local | Get-HgsTrace
 ```
 > [!TIP]
-> `Get-HgsTrace` pode aceitar destinos por meio do pipeline ou diretamente por meio de `-Target` parâmetro.  Operacionalmente, há nenhuma diferença entre os dois.
+> `Get-HgsTrace` pode aceitar destinos por meio do pipeline ou diretamente por meio do parâmetro `-Target`.  Não há nenhuma diferença entre as duas operações.
 
-### <a name="remote-diagnosis-using-trace-targets"></a>Destinos de rastreamento usando o diagnóstico remoto
+### <a name="remote-diagnosis-using-trace-targets"></a>Diagnóstico remoto usando destinos de rastreamento
 
-É possível diagnosticar remotamente um host por meio da geração de destinos de rastreamento com informações de conexão remota.  Tudo o que é necessário é o nome do host e um conjunto de credenciais capazes de se conectar usando a comunicação remota do Windows PowerShell.
+É possível diagnosticar remotamente um host gerando destinos de rastreamento com informações de conexão remota.  Tudo o que é necessário é o nome do host e um conjunto de credenciais capazes de se conectar usando a comunicação remota do Windows PowerShell.
 ```PowerShell
 $server = New-HgsTraceTarget -HostName "hgs-01.secure.contoso.com" -Role HostGuardianService -Credential (Enter-Credential)
 Get-HgsTrace -RunDiagnostics -Target $server
 ```
-Este exemplo irá gerar um prompt para coletar as credenciais de usuário remoto e, em seguida, o diagnóstico será executado usando o host remoto no `hgs-01.secure.contoso.com` para concluir a coleta de rastreamento.  Os rastreamentos resultantes são baixados o localhost e, em seguida, diagnosticados.  Os resultados do diagnóstico são apresentados igual ao realizar [diagnóstico local](#local-diagnosis).  Da mesma forma, não é necessário especificar uma função, como pode ser deduzido com base no Windows PowerShell módulos instalados no sistema remoto.
+Este exemplo irá gerar um prompt para coletar as credenciais de usuário remoto e, em seguida, o diagnóstico será executado usando o host remoto em `hgs-01.secure.contoso.com` para concluir a coleta de rastreamento.  Os rastreamentos resultantes são baixados para o localhost e, em seguida, diagnosticados.  Os resultados do diagnóstico são apresentados da mesma forma que ao executar o [diagnóstico local](#local-diagnosis).  Da mesma forma, não é necessário especificar uma função, pois ela pode ser inferida com base nos módulos do Windows PowerShell instalados no sistema remoto.
 
-Diagnóstico remoto utiliza a comunicação remota do Windows PowerShell para todos os acessos ao host remoto.  Portanto, é um pré-requisito que o destino do rastreamento têm a comunicação remota do Windows PowerShell habilitada (consulte [PSRemoting habilitar](https://technet.microsoft.com/library/hh849694.aspx)) e se o localhost está corretamente configurado para iniciar conexões com o destino.
+O diagnóstico remoto utiliza a comunicação remota do Windows PowerShell para todos os acessos ao host remoto.  Portanto, é um pré-requisito que o destino de rastreamento tem a comunicação remota do Windows PowerShell habilitada (consulte [habilitar PSRemoting](https://technet.microsoft.com/library/hh849694.aspx)) e que o localhost está configurado corretamente para iniciar conexões com o destino.
 
 > [!NOTE]
-> Na maioria dos casos, somente é necessário que o localhost fazer parte da mesma floresta do Active Directory e que um nome de host DNS válida seja usada.  Se seu ambiente utiliza um modelo mais complicado de Federação ou para usar endereços IP diretos para conectividade, você talvez precise executar uma configuração adicional, como configurar o WinRM [hosts confiáveis](https://technet.microsoft.com/library/ff700227.aspx).
+> Na maioria dos casos, só é necessário que o localhost seja uma parte da mesma floresta Active Directory e que um nome de host DNS válido seja usado.  Se seu ambiente utiliza um modelo de Federação mais complicado ou se você deseja usar endereços IP diretos para conectividade, talvez seja necessário executar configurações adicionais, como definir os [hosts confiáveis](https://technet.microsoft.com/library/ff700227.aspx)do WinRM.
 
-Você pode verificar o destino de rastreamento é instanciado e configurado para aceitar conexões usando corretamente a `Test-HgsTraceTarget` cmdlet:
+Você pode verificar se um destino de rastreamento está corretamente instanciado e configurado para aceitar conexões usando o cmdlet `Test-HgsTraceTarget`:
 ```PowerShell
 $server = New-HgsTraceTarget -HostName "hgs-01.secure.contoso.com" -Role HostGuardianService -Credential (Enter-Credential)
 $server | Test-HgsTraceTarget
 ```
-Esse comando retornará `$True` somente se `Get-HgsTrace` seria capaz de estabelecer uma sessão de diagnóstico remota com o destino do rastreamento.  Em caso de falha, esse cmdlet retornará informações de status relevantes para solução de problemas de conexão de comunicação remota do Windows PowerShell.
+Esse comando retornará `$True` se e somente se `Get-HgsTrace` puder estabelecer uma sessão de diagnóstico remoto com o destino de rastreamento.  Após a falha, esse cmdlet retornará informações de status relevantes para a solução de problemas da conexão remota do Windows PowerShell.
 
 #### <a name="implicit-credentials"></a>Credenciais implícitas
 
-Ao executar o diagnóstico remoto de um usuário com privilégios suficientes para conectar-se remotamente para o destino do rastreamento, não é necessário fornecer credenciais para `New-HgsTraceTarget`.  O `Get-HgsTrace` cmdlet irá reutilizar automaticamente as credenciais do usuário que invocou o cmdlet, ao abrir uma conexão.
+Ao executar o diagnóstico remoto de um usuário com privilégios suficientes para se conectar remotamente ao destino de rastreamento, não é necessário fornecer credenciais para `New-HgsTraceTarget`.  O cmdlet `Get-HgsTrace` reutilizará automaticamente as credenciais do usuário que invocou o cmdlet ao abrir uma conexão.
 
 > [!WARNING]
-> Algumas restrições se aplicam à reutilização de credenciais, especialmente ao executar o que é conhecido como um "segundo salto."  Isso ocorre quando a tentativa de reutilizar as credenciais de dentro de uma sessão remota para outro computador.  É necessário [configurar o CredSSP](https://technet.microsoft.com/library/hh849872.aspx) dar suporte a esse cenário, mas isso está fora do escopo de gerenciamento de malha protegida e solução de problemas.
+> Algumas restrições se aplicam à reutilização de credenciais, especialmente ao executar o que é conhecido como "segundo salto".  Isso ocorre quando se tenta reutilizar credenciais de dentro de uma sessão remota para outra máquina.  É necessário configurar o [CredSSP](https://technet.microsoft.com/library/hh849872.aspx) para dar suporte a esse cenário, mas isso está fora do escopo do gerenciamento de malha protegida e solução de problemas.
 
-#### <a name="using-windows-powershell-just-enough-administration-jea-and-diagnostics"></a>Usando o Windows PowerShell Just Enough (JEA) administração e diagnóstico
+#### <a name="using-windows-powershell-just-enough-administration-jea-and-diagnostics"></a>Usando o Windows PowerShell apenas JEA (administração suficiente) e diagnósticos
 
-Diagnóstico remoto oferece suporte ao uso de pontos de extremidade JEA restrito o Windows PowerShell. Por padrão, os destinos de rastreamento remoto se conectarão usando o padrão `microsoft.powershell` ponto de extremidade.  Se o destino do rastreamento tem o `HostGuardianService` função, ele também tenta usar o `microsoft.windows.hgs` ponto de extremidade que é configurado quando HGS está instalado.
+O diagnóstico remoto dá suporte ao uso de pontos de extremidade do Windows PowerShell JEA. Por padrão, os destinos de rastreamento remotos se conectarão usando o ponto de extremidade `microsoft.powershell` padrão.  Se o destino de rastreamento tiver a função `HostGuardianService`, ele também tentará usar o ponto de extremidade `microsoft.windows.hgs` que está configurado quando o HGS é instalado.
 
-Se você quiser usar um ponto de extremidade personalizado, você deve especificar o nome da configuração de sessão ao construir o destino de rastreamento usando o `-PSSessionConfigurationName` parâmetro, como abaixo:
+Se você quiser usar um ponto de extremidade personalizado, deverá especificar o nome da configuração da sessão ao construir o destino de rastreamento usando o parâmetro `-PSSessionConfigurationName`, como abaixo:
 
 ```PowerShell
 New-HgsTraceTarget -HostName "hgs-01.secure.contoso.com" -Role HostGuardianService -Credential (Enter-Credential) -PSSessionConfigurationName "microsoft.windows.hgs"
 ```
 
-#### <a name="diagnosing-multiple-hosts"></a>Diagnóstico de vários Hosts
+#### <a name="diagnosing-multiple-hosts"></a>Diagnosticando vários hosts
 
-Você pode passar vários destinos de rastreamento para `Get-HgsTrace` ao mesmo tempo.  Isso inclui uma combinação de destinos locais e remotos.  Cada destino será rastreado por sua vez e, em seguida, os rastreamentos de cada destino serão ser diagnosticados simultaneamente.  A ferramenta de diagnóstico pode usar o conhecimento de aumento da sua implantação para identificar complexas configurações incorretas de nó cruzado não seriam detectáveis.  Usando esse recurso requer apenas o fornecimento de rastreamentos de vários hosts simultaneamente (no caso de Diagnóstico manual) ou direcionamento de vários hosts ao chamar `Get-HgsTrace` (no caso de diagnóstico remoto).
+Você pode passar vários destinos de rastreamento para `Get-HgsTrace` ao mesmo tempo.  Isso inclui uma combinação de destinos locais e remotos.  Cada destino será rastreado por vez e, em seguida, os rastreamentos de cada destino serão diagnosticados simultaneamente.  A ferramenta de diagnóstico pode usar o maior conhecimento de sua implantação para identificar incorretas configurações complexas entre nós que, de outra forma, não poderiam ser detectáveis.  O uso desse recurso requer apenas fornecer rastreamentos de vários hosts simultaneamente (no caso de diagnóstico manual) ou direcionar vários hosts ao chamar `Get-HgsTrace` (no caso de diagnóstico remoto).
 
-Aqui está um exemplo de como usar o diagnóstico remoto para uma malha é composta de dois nós HGS de triagem e dois hosts protegidos, onde um dos hosts protegidos está sendo usado para iniciar `Get-HgsTrace`.
+Aqui está um exemplo de como usar o diagnóstico remoto para fazer uma triagem de uma malha composta por dois nós HGS e dois hosts protegidos, em que um dos hosts protegidos está sendo usado para iniciar o `Get-HgsTrace`.
 
 ```PowerShell
 $hgs01 = New-HgsTraceTarget -HostName "hgs-01.secure.contoso.com" -Credential (Enter-Credential)
@@ -141,29 +141,29 @@ Get-HgsTrace -Target $hgs01,$hgs02,$gh01,$gh02 -RunDiagnostics
 ```
 
 > [!NOTE]
-> Você não precisa diagnosticar seu toda a malha protegida durante o diagnóstico de vários nós.  Em muitos casos, é suficiente para incluir todos os nós que podem estar envolvidos em uma determinada condição de falha.  Isso geralmente é um subconjunto dos hosts protegidos e um número de nós do cluster HGS.
+> Você não precisa diagnosticar toda a malha protegida ao diagnosticar vários nós.  Em muitos casos, é suficiente incluir todos os nós que possam estar envolvidos em uma determinada condição de falha.  Isso geralmente é um subconjunto dos hosts protegidos e alguns nós do cluster HGS.
 
 ## <a name="manual-diagnosis-using-saved-traces"></a>Diagnóstico manual usando rastreamentos salvos
 
-Às vezes, você talvez queira executar novamente o diagnóstico sem coletar rastreamentos novamente, ou talvez você não tenha as credenciais necessárias para diagnosticar todos os hosts em sua malha de simultaneamente remotamente.  Diagnóstico manual é um mecanismo pelo qual você ainda poderá realizar uma triagem de malha todo usando `Get-HgsTrace`, mas sem usar a coleta de rastreamento remoto.
+Às vezes, talvez você queira executar novamente o diagnóstico sem coletar rastreamentos novamente ou pode não ter as credenciais necessárias para diagnosticar remotamente todos os hosts em sua malha simultaneamente.  O diagnóstico manual é um mecanismo pelo qual você ainda pode executar uma triagem de malha inteira usando `Get-HgsTrace`, mas sem usar a coleta de rastreamento remoto.
 
-Antes de executar o Diagnóstico manual, você precisará garantir que os administradores de cada host na malha do será priorizada estiver pronto e disposto a executar comandos em seu nome.  Saída de rastreamento de diagnóstico não expõe todas as informações que geralmente são visualizadas como confidencial, no entanto, cabe ao usuário determinar se é seguro para expor essas informações para outras pessoas.
+Antes de executar o diagnóstico manual, você precisará garantir que os administradores de cada host na malha que serão desatualizadas estejam prontos e pretendam executar comandos em seu nome.  A saída do rastreamento de diagnóstico não expõe nenhuma informação que geralmente é exibida como confidencial, no entanto, ela é responsável pelo usuário de determinar se é seguro expor essas informações para outras pessoas.
 
 > [!NOTE]
-> Os rastreamentos não são anônimas e revelam a configuração de rede, configurações de PKI e outra configuração que, às vezes, é considerada informações particulares.  Portanto, os rastreamentos só devem ser transmitido para entidades confiáveis dentro de uma organização e nunca postadas publicamente.
+> Os rastreamentos não são anônimos e revelam a configuração de rede, as configurações de PKI e outras configurações que, às vezes, são consideradas informações privadas.  Portanto, os rastreamentos só devem ser transmitidos a entidades confiáveis dentro de uma organização e nunca postados publicamente.
 
-Etapas para executar um diagnóstico manual são da seguinte maneira:
+As etapas para executar um diagnóstico manual são as seguintes:
 
-1. Solicitação que executam cada administrador de host `Get-HgsTrace` especificando um conhecido `-Path` e a lista de diagnóstico que você pretende executar em relação os rastreamentos resultantes.  Por exemplo:
+1. Solicite a execução de cada administrador de host `Get-HgsTrace`, especificando um `-Path` conhecido e a lista de diagnósticos que você pretende executar nos rastreamentos resultantes.  Por exemplo:
 
    ```PowerShell
    Get-HgsTrace -Path C:\Traces -Diagnostic Networking,BestPractices
    ```
-2. Solicite que cada administrador de host a pasta resultante de rastreamentos de pacote e enviá-lo para você.  Esse processo pode ser acionado por email, por meio de compartilhamentos de arquivos ou qualquer outro mecanismo com base nas políticas de operação e procedimentos estabelecidos pela sua organização.
+2. Solicite que cada administrador do host Empacote a pasta de rastreamentos resultante e envie-a para você.  Esse processo pode ser controlado por email, por meio de compartilhamentos de arquivos ou qualquer outro mecanismo baseado nas políticas operacionais e nos procedimentos estabelecidos pela sua organização.
 
-3. Mescle todos os rastreamentos recebidos em uma única pasta, com nenhum outro conteúdo ou pastas.
+3. Mesclar todos os rastreamentos recebidos em uma única pasta, sem nenhum outro conteúdo ou pasta.
 
-    * Por exemplo, suponha que você teve seu envio administradores você rastreia coletados de quatro máquinas chamadas HGS-01, 02 de HGS, RR1N2608-12 e 13 RR1N2608.  Cada administrador teria enviado é uma pasta com o mesmo nome.  Você deve montar uma estrutura de diretórios que aparece da seguinte maneira:
+    * Por exemplo, suponha que você tenha seus administradores que enviem rastreamentos coletados de quatro computadores chamados HGS-01, HGS-02, RR1N2608-12 e RR1N2608-13.  Cada administrador lhe enviou uma pasta com o mesmo nome.  Você montaria uma estrutura de diretório que aparece da seguinte maneira:
 
       ```
       FabricTraces
@@ -179,21 +179,21 @@ Etapas para executar um diagnóstico manual são da seguinte maneira:
          |- [..]
       ```
 
-4. Execute diagnósticos, fornecendo o caminho para a pasta de rastreamento montado sobre o `-Path` parâmetro e especificando o `-RunDiagnostics` alternar, bem como esse para os quais você solicitado seus administradores para coletar rastreamentos de diagnóstico.  Diagnóstico assumirá que ele não é possível acessar os hosts encontrados dentro do caminho e, portanto, tentar usar apenas os rastreamentos previamente coletados.  Se os rastreamentos estiverem faltando ou danificado, diagnóstico falhará somente os testes afetados e prosseguir normalmente.  Por exemplo:
+4. Execute o diagnóstico, fornecendo o caminho para a pasta de rastreamento montada no parâmetro `-Path` e especificando a opção `-RunDiagnostics`, bem como o diagnóstico para o qual você pediu aos administradores para coletar rastreamentos.  O diagnóstico pressupõe que ele não pode acessar os hosts encontrados dentro do caminho e, portanto, tentará usar apenas os rastreamentos previamente coletados.  Se algum rastreamento estiver ausente ou danificado, o diagnóstico falhará apenas nos testes afetados e continuará normalmente.  Por exemplo:
 
    ```PowerShell
    Get-HgsTrace -RunDiagnostics -Diagnostic Networking,BestPractices -Path ".\FabricTraces"
    ```
 
-### <a name="mixing-saved-traces-with-additional-targets"></a>Misturar salvo rastreamentos com destinos adicionais
+### <a name="mixing-saved-traces-with-additional-targets"></a>Misturar rastreamentos salvos com destinos adicionais
 
-Em alguns casos, você pode ter um conjunto de rastreamentos coletados previamente que você deseja aumentar com rastreamentos de host adicionais.  É possível misturar rastreamentos previamente coletados com destinos adicionais que serão rastreados e diagnosticados em uma única chamada de diagnóstico.
+Em alguns casos, você pode ter um conjunto de rastreamentos previamente coletados que você deseja aumentar com rastreamentos de host adicionais.  É possível misturar rastreamentos previamente coletados com destinos adicionais que serão rastreados e diagnosticados em uma única chamada de diagnóstico.
 
-Seguindo as instruções para coletar e montar uma pasta de rastreamento especificada acima, chamar `Get-HgsTrace` com destinos de rastreamento adicionais não encontrados na pasta de rastreamento previamente coletados:
+Seguindo as instruções para coletar e montar uma pasta de rastreamento especificada acima, chame `Get-HgsTrace` com destinos de rastreamento adicionais não encontrados na pasta de rastreamento previamente coletada:
 
 ```PowerShell
 $hgs03 = New-HgsTraceTarget -HostName "hgs-03.secure.contoso.com" -Credential (Enter-Credential)
 Get-HgsTrace -RunDiagnostics -Target $hgs03 -Path .\FabricTraces
 ``` 
 
-O cmdlet de diagnóstico identificará todos os hosts previamente coletados e um host adicional que ainda precisa ser rastreado e executará o rastreamento necessário.  A soma de todos os rastreamentos coletados recentemente e previamente coletados, em seguida, serão ser diagnosticada.  A pasta de rastreamento resultante conterá os rastreamentos novos e antigos.
+O cmdlet de diagnóstico identificará todos os hosts previamente coletados e um host adicional que ainda precisa ser rastreado e executará o rastreamento necessário.  A soma de todos os rastreamentos previamente coletados e coletados recentemente será diagnosticada.  A pasta de rastreamento resultante conterá os rastreamentos novo e antigo.

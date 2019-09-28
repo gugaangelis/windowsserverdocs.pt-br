@@ -1,8 +1,8 @@
 ---
-title: versão e bitsadmin util
-description: Tópico de comandos do Windows para **util bitsadmin e versão** -exibe a versão do serviço do BITS.
+title: utilitário e versão do Bitsadmin
+description: Tópico de comandos do Windows para o **Bitsadmin util e Version** – exibe a versão do serviço bits.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2e768ec5ae43fc17c480b9deede698cca01c6291
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 495ef17bbf6f39f20f6729b64de4b4bec0f9a3c2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882867"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380202"
 ---
-# <a name="bitsadmin-util-and-version"></a>versão e bitsadmin util
+# <a name="bitsadmin-util-and-version"></a>utilitário e versão do Bitsadmin
 
-Exibe a versão do serviço de BITS (por exemplo, 2.0).
+Exibe a versão do serviço BITS (por exemplo, 2,0).
 
-**BITSAdmin 1.5 e anterior**: Sem suporte.
+**BITSAdmin 1,5 e anterior**: Não compatível.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,18 +34,18 @@ bitsadmin /Util /Version [/Verbose]
 
 ## <a name="remarks"></a>Comentários
 
-O **Verbose** switch executará o seguinte:
--   Exibe a versão do arquivo para cada DLL relacionada de BITS
--   Verifica que o serviço BITS pode ser iniciado
--   Exibe os valores de diretiva de grupo do BITS (apenas no Windows Vista)
+O comutador **detalhado** executa o seguinte:
+-   Exibe a versão do arquivo para cada DLL relacionada ao BITS
+-   Verifica se o serviço BITS pode ser iniciado
+-   Exibe valores Política de Grupo BITS (somente Windows Vista)
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir a versão do serviço do BITS.
+O exemplo a seguir a versão do serviço BITS.
 ```
 C:\>bitsadmin /Util /Version
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

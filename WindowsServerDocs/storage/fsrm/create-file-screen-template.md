@@ -2,18 +2,18 @@
 title: Criar um modelo de triagem de arquivo
 description: Este artigo descreve como criar um modelo de triagem de arquivo
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b06597bce0b88ed5a2e98ad45d0cbc355d1b13fc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 63824f016180ce5a92d9a16b9ee0d26a46e5db72
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858347"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394212"
 ---
 # <a name="create-a-file-screen-template"></a>Criar um modelo de triagem de arquivo
 
@@ -46,7 +46,7 @@ Ao criar triagens de arquivo exclusivamente a partir de modelos, você pode gere
 
     Em **Grupos de arquivos**, selecione cada grupo de arquivos que você deseja incluir. (Para marcar a caixa de seleção do grupo de arquivos, clique duas vezes no rótulo do grupo de arquivos.)
 
-    Se você quiser exibir os tipos de arquivo que um grupo de arquivos inclui e exclui, clique no rótulo do grupo de arquivo e, em seguida, clique em **editar**. Para criar um novo grupo de arquivos, clique em **criar**.
+    Se você quiser exibir os tipos de arquivo que um grupo de arquivos inclui e exclui, clique no rótulo do grupo de arquivos e clique em **Editar**. Para criar um novo grupo de arquivos, clique em **criar**.
 
     Além disso, você pode configurar Gerenciador de recursos do servidor de arquivos para gerar uma ou mais notificações definindo opções a seguir nas guias **Mensagem de Email**, **Log de eventos**, **Comando** e **Relatório**.
 
@@ -56,7 +56,7 @@ Ao criar triagens de arquivo exclusivamente a partir de modelos, você pode gere
 
     -   Para notificar os administradores quando um usuário ou aplicativo tenta salvar um arquivo não autorizado, selecione o **Enviar email para os seguintes administradores** caixa de seleção e, em seguida, digite os nomes das contas administrativas que receberão as notificações. Use o formato *account*@*domain* e use ponto e vírgula para separar várias contas.
     -   Para enviar email para o usuário que tentou salvar o arquivo, selecione a caixa de seleção **Enviar um email para o usuário que tentou salvar um arquivo não autorizado**.
-    -   Para configurar a mensagem, edite o padrão assunto linha e corpo da mensagem que são fornecidas. O texto entre colchetes insere informações variáveis sobre o evento de triagem de arquivo que causou a notificação. Por exemplo, o \[ **proprietário da fonte de e/s** \] variável insere o nome do usuário que tentou salvar um arquivo não autorizado. Para inserir variáveis adicionais no texto, clique em **Inserir variável**.
+    -   Para configurar a mensagem, edite o padrão assunto linha e corpo da mensagem que são fornecidas. O texto entre colchetes insere informações variáveis sobre o evento de triagem de arquivo que causou a notificação. Por exemplo, a variável de**proprietário de e/s de origem**\[ \] insere o nome do usuário que tentou salvar um arquivo não autorizado. Para inserir variáveis adicionais no texto, clique em **Inserir variável**.
     -   Para configurar cabeçalhos adicionais (inclusive de, Cc, Cco e para resposta), clique em **Cabeçalhos de email adicionais**.
 
 8.  Para registrar um erro ao log de eventos quando um usuário tenta salvar um arquivo não autorizado:
@@ -77,7 +77,7 @@ Ao criar triagens de arquivo exclusivamente a partir de modelos, você pode gere
 
 ## <a name="see-also"></a>Consulte também
 
--   [Gerenciamento de triagem de arquivo](file-screening-management.md)
--   [Opções do Gerenciador de recursos de servidor de arquivos de configuração](setting-file-server-resource-manager-options.md)
--   [Editar propriedades do modelo de triagem de arquivo](edit-file-screen-template-properties.md)
+-   [Gerenciamento de triagem de arquivos](file-screening-management.md)
+-   [Definir opções do Gerenciador de Recursos de Servidor de Arquivos](setting-file-server-resource-manager-options.md)
+-   [Editar propriedades de modelo de triagem de arquivo](edit-file-screen-template-properties.md)
 

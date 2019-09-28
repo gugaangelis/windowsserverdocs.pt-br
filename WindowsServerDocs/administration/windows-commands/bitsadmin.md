@@ -1,8 +1,8 @@
 ---
 title: bitsadmin
-description: Tópico de comandos do Windows para **bitsadmin** -bitsadmin é uma ferramenta de linha de comando que você pode usar para criar, baixar, ou trabalhos de carregamento e monitorar seu andamento.
+description: O tópico de comandos do Windows para **Bitsadmin** -Bitsadmin é uma ferramenta de linha de comando que você pode usar para criar, baixar ou carregar trabalhos e monitorar seu progresso.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,111 +13,111 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: da0f05ec716cffb7d7532ebac50a091729a6bb18
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b53293b28a83ecced34d248741996c958531d517
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821067"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380100"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
 > **Aplica-se a**: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows 10
 
-Bitsadmin é uma ferramenta de linha de comando que você pode usar para criar o download ou trabalhos de carregamento e monitorar seu andamento. A ferramenta bitsadmin usa comutadores para identificar o trabalho a ser executado.  Você pode chamar `bitsadmin /?` ou `bitsadmin /HELP` para obter uma lista de opções.
+Bitsadmin é uma ferramenta de linha de comando que você pode usar para criar tarefas de download ou de upload e monitorar seu progresso. A ferramenta Bitsadmin usa opções para identificar o trabalho a ser executado.  Você pode chamar `bitsadmin /?` ou `bitsadmin /HELP` para obter uma lista de opções.
 
-A maioria dos comutadores exige uma \<trabalho\> parâmetro que você definir como o nome de exibição ou GUID do trabalho. Observe que o nome de exibição do trabalho pode não ser exclusivo. O **/Create** e **/lista** comutadores retornam o GUID de um trabalho.
+A maioria das opções exige um parâmetro \<Job @ no__t-1 que você define para o nome de exibição do trabalho ou GUID. Observe que o nome de exibição de um trabalho pode não ser exclusivo. As opções **/Create** e **/list** retornam o GUID de um trabalho.
 
-Por padrão, você pode acessar informações sobre seus próprios trabalhos. Para acessar informações de trabalhos de outro usuário, você deve ter privilégios de administrador. Se o trabalho foi criado em um estado com privilégios elevados, em seguida, você deve executar bitsadmin em uma janela elevada; Caso contrário, você terá acesso somente leitura para o trabalho.
+Por padrão, você pode acessar informações sobre seus próprios trabalhos. Para acessar informações para os trabalhos de outro usuário, você deve ter privilégios de administrador. Se o trabalho tiver sido criado em um estado elevado, você deverá executar o Bitsadmin em uma janela com privilégios elevados; caso contrário, você terá acesso somente leitura ao trabalho.
 
-Muitas das opções correspondem aos métodos na [interfaces BITS](/windows/desktop/bits/bits-interfaces). Para obter detalhes adicionais que podem ser relevantes usando um comutador, consulte o método correspondente.
+Muitas das opções correspondem aos métodos nas [interfaces bits](/windows/desktop/bits/bits-interfaces). Para obter detalhes adicionais que podem ser relevantes para o uso de uma opção, consulte o método correspondente.
 
-Use as seguintes opções para criar um trabalho, definir e recuperar as propriedades de um trabalho e monitorar o status de um trabalho. Para obter exemplos que mostram como usar algumas dessas opções para executar tarefas, consulte [bitsadmin exemplos](bitsadmin-examples.md).
+Use as seguintes opções para criar um trabalho, definir e recuperar as propriedades de um trabalho e monitorar o status de um trabalho. Para obter exemplos que mostram como usar algumas dessas opções para executar tarefas, consulte [exemplos de Bitsadmin](bitsadmin-examples.md).
 
 ## <a name="switches"></a>Comutadores
 
-[Bitsadmin addfile](bitsadmin-addfile.md)  
-[Bitsadmin addfileset](bitsadmin-addfileset.md)  
-[Bitsadmin addfilewithranges](bitsadmin-addfilewithranges.md)  
-[cache Bitsadmin](bitsadmin-cache.md)  
-[Cancelar Bitsadmin](bitsadmin-cancel.md)  
-[Bitsadmin concluída](bitsadmin-complete.md)  
-[Criar Bitsadmin](bitsadmin-create.md)  
-[Bitsadmin getaclflags](bitsadmin-getaclflags.md)  
-[Bitsadmin getbytestotal](bitsadmin-getbytestotal.md)  
-[Bitsadmin getbytestransferred](bitsadmin-getbytestransferred.md)  
-[Bitsadmin getclientcertificate](bitsadmin-getclientcertificate.md)  
-[Bitsadmin getcompletiontime](bitsadmin-getcompletiontime.md)  
-[getcreationtime Bitsadmin](bitsadmin-getcreationtime.md)  
-[Bitsadmin getcustomheaders](bitsadmin-getcustomheaders.md)  
-[Bitsadmin getdescription](bitsadmin-getdescription.md)  
-[Bitsadmin getdisplayname](bitsadmin-getdisplayname.md)  
-[Bitsadmin geterror](bitsadmin-geterror.md)  
-[Bitsadmin geterrorcount](bitsadmin-geterrorcount.md)  
-[Bitsadmin getfilestotal](bitsadmin-getfilestotal.md)  
-[Bitsadmin getfilestransferred](bitsadmin-getfilestransferred.md)  
-[Bitsadmin gethelpertokenflags](bitsadmin-gethelpertokenflags.md)  
-[Bitsadmin gethelpertokensid](bitsadmin-gethelpertokensid.md)  
+[bitsadmin addfile](bitsadmin-addfile.md)  
+[bitsadmin addfileset](bitsadmin-addfileset.md)  
+[bitsadmin addfilewithranges](bitsadmin-addfilewithranges.md)  
+[bitsadmin cache](bitsadmin-cache.md)  
+[bitsadmin cancel](bitsadmin-cancel.md)  
+[bitsadmin complete](bitsadmin-complete.md)  
+[bitsadmin create](bitsadmin-create.md)  
+[bitsadmin getaclflags](bitsadmin-getaclflags.md)  
+[bitsadmin getbytestotal](bitsadmin-getbytestotal.md)  
+[bitsadmin getbytestransferred](bitsadmin-getbytestransferred.md)  
+[bitsadmin getclientcertificate](bitsadmin-getclientcertificate.md)  
+[bitsadmin getcompletiontime](bitsadmin-getcompletiontime.md)  
+[bitsadmin getcreationtime](bitsadmin-getcreationtime.md)  
+[bitsadmin getcustomheaders](bitsadmin-getcustomheaders.md)  
+[bitsadmin getdescription](bitsadmin-getdescription.md)  
+[bitsadmin getdisplayname](bitsadmin-getdisplayname.md)  
+[bitsadmin geterror](bitsadmin-geterror.md)  
+[bitsadmin geterrorcount](bitsadmin-geterrorcount.md)  
+[bitsadmin getfilestotal](bitsadmin-getfilestotal.md)  
+[bitsadmin getfilestransferred](bitsadmin-getfilestransferred.md)  
+[bitsadmin gethelpertokenflags](bitsadmin-gethelpertokenflags.md)  
+[bitsadmin gethelpertokensid](bitsadmin-gethelpertokensid.md)  
 [Bitsadmin gethttpmethod](bitsadmin-gethttpmethod.md)
-[getmaxdownloadtime bitsadmin](bitsadmin-getmaxdownloadtime.md)  
-[Bitsadmin getminretrydelay](bitsadmin-getminretrydelay.md)  
-[Bitsadmin getmodificationtime](bitsadmin-getmodificationtime.md)  
-[Bitsadmin getnoprogresstimeout](bitsadmin-getnoprogresstimeout.md)  
-[Bitsadmin getnotifycmdline](bitsadmin-getnotifycmdline.md)  
-[Bitsadmin getnotifyflags](bitsadmin-getnotifyflags.md)  
-[Bitsadmin getnotifyinterface](bitsadmin-getnotifyinterface.md)  
-[Bitsadmin getowner](bitsadmin-getowner.md)  
-[Bitsadmin getpeercachingflags](bitsadmin-getpeercachingflags.md)  
-[Bitsadmin getpriority](bitsadmin-getpriority.md)  
-[Bitsadmin getproxybypasslist](bitsadmin-getproxybypasslist.md)  
-[Bitsadmin getproxylist](bitsadmin-getproxylist.md)  
-[Bitsadmin getproxyusage](bitsadmin-getproxyusage.md)  
-[Bitsadmin getreplydata](bitsadmin-getreplydata.md)  
-[Bitsadmin getreplyfilename](bitsadmin-getreplyfilename.md)  
-[Bitsadmin getreplyprogress](bitsadmin-getreplyprogress.md)  
-[Bitsadmin getsecurityflags](bitsadmin-getsecurityflags.md)  
-[Bitsadmin getstate](bitsadmin-getstate.md)  
-[Bitsadmin gettemporaryname](bitsadmin-gettemporaryname.md)  
-[Bitsadmin gettype](bitsadmin-gettype.md)  
-[Bitsadmin getvalidationstate](bitsadmin-getvalidationstate.md)  
-[Ajuda de Bitsadmin](bitsadmin-help.md)  
-[informações de Bitsadmin](bitsadmin-info.md)  
-[lista de Bitsadmin](bitsadmin-list.md)  
-[Bitsadmin listfiles](bitsadmin-listfiles.md)  
-[Bitsadmin makecustomheaderswriteonly](bitsadmin-makecustomheaderswriteonly.md)
-[bitsadmin monitor](bitsadmin-monitor.md)  
-[Bitsadmin nowrap](bitsadmin-nowrap.md)  
-[cache par do Bitsadmin](bitsadmin-peercaching.md)  
-[Bitsadmin pares](bitsadmin-peers.md)  
-[Bitsadmin rawreturn](bitsadmin-rawreturn.md)  
-[Bitsadmin removeclientcertificate](bitsadmin-removeclientcertificate.md)  
-[Bitsadmin removecredentials](bitsadmin-removecredentials.md)  
-[Bitsadmin replaceremoteprefix](bitsadmin-replaceremoteprefix.md)  
-[redefinição Bitsadmin](bitsadmin-reset.md)  
-[retomar Bitsadmin](bitsadmin-resume.md)  
-[Bitsadmin setaclflag](bitsadmin-setaclflag.md)  
-[Bitsadmin setclientcertificatebyid](bitsadmin-setclientcertificatebyid.md)  
-[Bitsadmin setclientcertificatebyname](bitsadmin-setclientcertificatebyname.md)  
-[Bitsadmin setcredentials](bitsadmin-setcredentials.md)  
-[Bitsadmin setcustomheaders](bitsadmin-setcustomheaders.md)  
-[Bitsadmin setdescription](bitsadmin-setdescription.md)  
-[Bitsadmin setdisplayname](bitsadmin-setdisplayname.md)  
-[Bitsadmin sethelpertoken](bitsadmin-sethelpertoken.md)  
-[Bitsadmin sethelpertokenflags](bitsadmin-sethelpertokenflags.md)  
+[Bitsadmin getmaxdownloadtime](bitsadmin-getmaxdownloadtime.md)  
+[bitsadmin getminretrydelay](bitsadmin-getminretrydelay.md)  
+[bitsadmin getmodificationtime](bitsadmin-getmodificationtime.md)  
+[bitsadmin getnoprogresstimeout](bitsadmin-getnoprogresstimeout.md)  
+[bitsadmin getnotifycmdline](bitsadmin-getnotifycmdline.md)  
+[bitsadmin getnotifyflags](bitsadmin-getnotifyflags.md)  
+[bitsadmin getnotifyinterface](bitsadmin-getnotifyinterface.md)  
+[bitsadmin getowner](bitsadmin-getowner.md)  
+[bitsadmin getpeercachingflags](bitsadmin-getpeercachingflags.md)  
+[bitsadmin getpriority](bitsadmin-getpriority.md)  
+[bitsadmin getproxybypasslist](bitsadmin-getproxybypasslist.md)  
+[bitsadmin getproxylist](bitsadmin-getproxylist.md)  
+[bitsadmin getproxyusage](bitsadmin-getproxyusage.md)  
+[bitsadmin getreplydata](bitsadmin-getreplydata.md)  
+[bitsadmin getreplyfilename](bitsadmin-getreplyfilename.md)  
+[bitsadmin getreplyprogress](bitsadmin-getreplyprogress.md)  
+[bitsadmin getsecurityflags](bitsadmin-getsecurityflags.md)  
+[bitsadmin getstate](bitsadmin-getstate.md)  
+[bitsadmin gettemporaryname](bitsadmin-gettemporaryname.md)  
+[bitsadmin gettype](bitsadmin-gettype.md)  
+[bitsadmin getvalidationstate](bitsadmin-getvalidationstate.md)  
+[bitsadmin help](bitsadmin-help.md)  
+[bitsadmin info](bitsadmin-info.md)  
+[bitsadmin list](bitsadmin-list.md)  
+[bitsadmin listfiles](bitsadmin-listfiles.md)  
+monitor [Bitsadmin makecustomheaderswriteonly](bitsadmin-makecustomheaderswriteonly.md)
+[Bitsadmin](bitsadmin-monitor.md)  
+[bitsadmin nowrap](bitsadmin-nowrap.md)  
+[bitsadmin peercaching](bitsadmin-peercaching.md)  
+[bitsadmin peers](bitsadmin-peers.md)  
+[bitsadmin rawreturn](bitsadmin-rawreturn.md)  
+[bitsadmin removeclientcertificate](bitsadmin-removeclientcertificate.md)  
+[bitsadmin removecredentials](bitsadmin-removecredentials.md)  
+[bitsadmin replaceremoteprefix](bitsadmin-replaceremoteprefix.md)  
+[bitsadmin reset](bitsadmin-reset.md)  
+[bitsadmin resume](bitsadmin-resume.md)  
+[bitsadmin setaclflag](bitsadmin-setaclflag.md)  
+[bitsadmin setclientcertificatebyid](bitsadmin-setclientcertificatebyid.md)  
+[bitsadmin setclientcertificatebyname](bitsadmin-setclientcertificatebyname.md)  
+[bitsadmin setcredentials](bitsadmin-setcredentials.md)  
+[bitsadmin setcustomheaders](bitsadmin-setcustomheaders.md)  
+[bitsadmin setdescription](bitsadmin-setdescription.md)  
+[bitsadmin setdisplayname](bitsadmin-setdisplayname.md)  
+[bitsadmin sethelpertoken](bitsadmin-sethelpertoken.md)  
+[bitsadmin sethelpertokenflags](bitsadmin-sethelpertokenflags.md)  
 [Bitsadmin sethttpmethod](bitsadmin-sethttpmethod.md)
-[setmaxdownloadtime bitsadmin](bitsadmin-setmaxdownloadtime.md)  
-[Bitsadmin setminretrydelay](bitsadmin-setminretrydelay.md)  
-[Bitsadmin setnoprogresstimeout](bitsadmin-setnoprogresstimeout.md)  
-[Bitsadmin setnotifycmdline](bitsadmin-setnotifycmdline.md)  
-[Bitsadmin setnotifyflags](bitsadmin-setnotifyflags.md)  
+[Bitsadmin setmaxdownloadtime](bitsadmin-setmaxdownloadtime.md)  
+[bitsadmin setminretrydelay](bitsadmin-setminretrydelay.md)  
+[bitsadmin setnoprogresstimeout](bitsadmin-setnoprogresstimeout.md)  
+[bitsadmin setnotifycmdline](bitsadmin-setnotifycmdline.md)  
+[bitsadmin setnotifyflags](bitsadmin-setnotifyflags.md)  
 [bitsadmin setpeercachingflags](bitsadmin-setpeercachingflags.md)  
-[Bitsadmin setpriority](bitsadmin-setpriority.md)  
-[Bitsadmin setproxysettings](bitsadmin-setproxysettings.md)  
-[Bitsadmin setreplyfilename](bitsadmin-setreplyfilename.md)  
-[Bitsadmin setsecurityflags](bitsadmin-setsecurityflags.md)  
-[Bitsadmin setvalidationstate](bitsadmin-setvalidationstate.md)  
-[Suspender Bitsadmin](bitsadmin-suspend.md)  
-[Bitsadmin takeownership](bitsadmin-takeownership.md)  
-[transferência de Bitsadmin](bitsadmin-transfer.md)  
-[util Bitsadmin](bitsadmin-util.md)  
-[encapsulamento Bitsadmin](bitsadmin-wrap.md)  
+[bitsadmin setpriority](bitsadmin-setpriority.md)  
+[bitsadmin setproxysettings](bitsadmin-setproxysettings.md)  
+[bitsadmin setreplyfilename](bitsadmin-setreplyfilename.md)  
+[bitsadmin setsecurityflags](bitsadmin-setsecurityflags.md)  
+[bitsadmin setvalidationstate](bitsadmin-setvalidationstate.md)  
+[bitsadmin suspend](bitsadmin-suspend.md)  
+[bitsadmin takeownership](bitsadmin-takeownership.md)  
+[bitsadmin transfer](bitsadmin-transfer.md)  
+[bitsadmin util](bitsadmin-util.md)  
+[bitsadmin wrap](bitsadmin-wrap.md)  

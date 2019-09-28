@@ -1,8 +1,8 @@
 ---
 title: exemplos de Bitsadmin
-description: Os exemplos a seguir mostram como usar a ferramenta bitsadmin para executar as tarefas mais comuns.
+description: Os exemplos a seguir mostram como usar a ferramenta Bitsadmin para executar as tarefas mais comuns.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,60 +13,60 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/31/2018
-ms.openlocfilehash: a98e1a876c972b0f146ff37aff0a77399b684e99
-ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
+ms.openlocfilehash: c675f08752b3464f7ab1eddd4e9fddf3b16db5f4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66308557"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381772"
 ---
 # <a name="bitsadmin-examples"></a>exemplos de Bitsadmin
 
-Os exemplos a seguir mostram como usar o `bitsadmin` ferramenta para executar as tarefas mais comuns.
+Os exemplos a seguir mostram como usar a ferramenta `bitsadmin` para executar as tarefas mais comuns.
 
-## <a name="transfer-a-file"></a>Transfira um arquivo
+## <a name="transfer-a-file"></a>Transferir um arquivo
 
-O **/transferência** switch é um atalho para executar as tarefas listadas abaixo. Essa opção cria o trabalho, adiciona os arquivos para o trabalho, ativa o trabalho na fila de transferência e conclui o trabalho. BITSAdmin continua Mostrar informações sobre o andamento na janela do MS-DOS, até que a transferência for concluída ou ocorre um erro.
+A opção **/Transfer** é um atalho para executar as tarefas listadas abaixo. Essa opção cria o trabalho, adiciona os arquivos ao trabalho, ativa o trabalho na fila de transferência e conclui o trabalho. BITSAdmin continua a mostrar informações de progresso na janela do MS-DOS até que a transferência seja concluída ou um erro ocorra.
 
-**Bitsadmin /transfer myDownloadJob /download /priority normal `https://downloadsrv/10mb.zip c:\\10mb.zip`**
+**Bitsadmin/Transfer myDownloadJob/download/Priority normal `https://downloadsrv/10mb.zip c:\\10mb.zip`**
 
 ## <a name="create-a-download-job"></a>Criar um trabalho de download
 
-Use o **/ criar** switch para criar um trabalho de download nomeado myDownloadJob.
+Use a opção **/Create** para criar um trabalho de download chamado myDownloadJob.
 
-**Bitsadmin / criar myDownloadJob**
+**Bitsadmin/Create myDownloadJob**
 
-BITSAdmin retorna um GUID que identifica exclusivamente o trabalho. Use o nome GUID ou o trabalho nas chamadas subsequentes. O texto a seguir é um exemplo de saída.
+BITSAdmin retorna um GUID que identifica exclusivamente o trabalho. Use o GUID ou o nome do trabalho em chamadas subsequentes. O texto a seguir é uma saída de exemplo.
 
 ``` syntax
 Created job {C775D194-090F-431F-B5FB-8334D00D1CB6}.
 ```
 
-Em seguida, use o **/AddFile.** switch para adicionar um ou mais arquivos para o trabalho de download.
+Em seguida, use a opção **/AddFile** para adicionar um ou mais arquivos ao trabalho de download.
 
 ## <a name="add-files-to-the-download-job"></a>Adicionar arquivos ao trabalho de download
 
-Use o **/AddFile.** switch para adicionar um arquivo para o trabalho. Repita esta chamada para cada arquivo que você deseja adicionar. Se vários trabalhos usam myDownloadJob como seu nome, você deve substituir myDownloadJob com o GUID do trabalho para identificar exclusivamente o trabalho.
+Use a opção **/AddFile** para adicionar um arquivo ao trabalho. Repita essa chamada para cada arquivo que você deseja adicionar. Se vários trabalhos usarem myDownloadJob como seu nome, você deverá substituir myDownloadJob pelo GUID do trabalho para identificar exclusivamente o trabalho.
 
-**Bitsadmin /addfile myDownloadJob https://downloadsrv/10mb.zip c:\\10mb.zip**
+**Bitsadmin/AddFile myDownloadJob https://downloadsrv/10mb.zip c: @no__t -210MB. zip**
 
-Para ativar o trabalho na fila de transferência, use o **/retomar** alternar.
+Para ativar o trabalho na fila de transferência, use a opção **/resume** .
 
 ## <a name="activate-the-download-job"></a>Ativar o trabalho de download
 
-Quando você cria um novo trabalho, o BITS suspende o trabalho. Para ativar o trabalho na fila de transferência, use o **/retomar** alternar. Se vários trabalhos usam myDownloadJob como seu nome, você deve substituir myDownloadJob com o GUID do trabalho para identificar exclusivamente o trabalho.
+Quando você cria um novo trabalho, o BITS suspende o trabalho. Para ativar o trabalho na fila de transferência, use a opção **/resume** . Se vários trabalhos usarem myDownloadJob como seu nome, você deverá substituir myDownloadJob pelo GUID do trabalho para identificar exclusivamente o trabalho.
 
-**Bitsadmin /resume myDownloadJob**
+**Bitsadmin/resume myDownloadJob**
 
-Para determinar o andamento do trabalho, use o **/List**, **/info**, ou **/monitor** alternar.
+Para determinar o progresso do trabalho, use a opção **/list**, **/info**ou **/Monitor** .
 
-## <a name="determine-the-progress-of-the-download-job"></a>Determinar o andamento do trabalho de download
+## <a name="determine-the-progress-of-the-download-job"></a>Determinar o progresso do trabalho de download
 
-Use o **/info** switch para determinar o progresso de um trabalho. Se vários trabalhos usam myDownloadJob como seu nome, você deve substituir myDownloadJob com o GUID do trabalho para identificar exclusivamente o trabalho.
+Use a opção **/info** para determinar o progresso de um trabalho. Se vários trabalhos usarem myDownloadJob como seu nome, você deverá substituir myDownloadJob pelo GUID do trabalho para identificar exclusivamente o trabalho.
 
-**Bitsadmin /info myDownloadJob /verbose**
+**Bitsadmin/info myDownloadJob/Verbose**
 
-O **/info** switch retorna o estado do trabalho e o número de arquivos e bytes transferidos. Quando o estado é transferido, o BITS foi transferida com êxito todos os arquivos no trabalho. O **/verbose** argumento fornece detalhes completos do trabalho. O texto a seguir é um exemplo de saída.
+A opção **/info** retorna o estado do trabalho e o número de arquivos e bytes transferidos. Quando o estado é transferido, o BITS transferiu com êxito todos os arquivos no trabalho. O argumento **/Verbose** fornece detalhes completos do trabalho. O texto a seguir é uma saída de exemplo.
 
 ``` syntax
 GUID: {482FCAF0-74BF-469B-8929-5CCD028C9499} DISPLAY: myDownloadJob
@@ -87,21 +87,21 @@ JOB FILES:
 NOTIFICATION COMMAND LINE: none
 ```
 
-Para receber informações de todos os trabalhos na fila de transferência, use o **/List** ou **/monitor** alternar.
+Para receber informações de todos os trabalhos na fila de transferência, use a opção **/list** ou **/Monitor** .
 
 ## <a name="completing-the-download-job"></a>Concluindo o trabalho de download
 
-Quando o estado do trabalho é transferido, o BITS foi transferida com êxito todos os arquivos no trabalho. No entanto, os arquivos não estão disponíveis até que você use o **/ completo** alternar. Se vários trabalhos usam myDownloadJob como seu nome, você deve substituir myDownloadJob com o GUID do trabalho para identificar exclusivamente o trabalho.
+Quando o estado do trabalho for transferido, o BITS transferiu com êxito todos os arquivos no trabalho. No entanto, os arquivos não estarão disponíveis até que você use a opção **/Complete** Se vários trabalhos usarem myDownloadJob como seu nome, você deverá substituir myDownloadJob pelo GUID do trabalho para identificar exclusivamente o trabalho.
 
-**Bitsadmin / concluir myDownloadJob**
+**bitsadmin /complete myDownloadJob**
 
 ## <a name="monitoring-jobs-in-the-transfer-queue"></a>Monitoramento de trabalhos na fila de transferência
 
-Use o **/lista**, **/monitor**, ou **/info** switch para monitorar trabalhos na fila de transferência. O **/lista** switch fornece informações para todos os trabalhos na fila.
+Use a opção **/list**, **/Monitor**ou **/info** para monitorar trabalhos na fila de transferência. A opção **/list** fornece informações para todos os trabalhos na fila.
 
-**/list Bitsadmin**
+**Bitsadmin/List**
 
-O **/lista** switch retorna o estado do trabalho e o número de bytes transferidos para todos os trabalhos na fila de transferência e de arquivos. O texto a seguir é um exemplo de saída.
+A opção **/list** retorna o estado do trabalho e o número de arquivos e bytes transferidos para todos os trabalhos na fila de transferência. O texto a seguir é uma saída de exemplo.
 
 ``` syntax
 {6AF46E48-41D3-453F-B7AF-A694BBC823F7} job1 SUSPENDED 0 / 0 0 / 0
@@ -110,11 +110,11 @@ O **/lista** switch retorna o estado do trabalho e o número de bytes transferid
 Listed 2 job(s).
 ```
 
-Use o **/monitor** switch para monitorar todos os trabalhos na fila. O **/monitor** switch atualiza os dados a cada 5 segundos. Para interromper a atualização, pressione CTRL + C.
+Use a opção **/Monitor** para monitorar todos os trabalhos na fila. A opção **/Monitor** atualiza os dados a cada 5 segundos. Para interromper a atualização, digite CTRL + C.
 
-**Bitsadmin /monitor**
+**Bitsadmin/monitor**
 
-O **/monitor** switch retorna o estado do trabalho e o número de bytes transferidos para todos os trabalhos na fila de transferência e de arquivos. O texto a seguir é um exemplo de saída.
+A opção **/Monitor** retorna o estado do trabalho e o número de arquivos e bytes transferidos para todos os trabalhos na fila de transferência. O texto a seguir é uma saída de exemplo.
 
 ``` syntax
 MONITORING BACKGROUND COPY MANAGER(5 second refresh)
@@ -123,13 +123,13 @@ MONITORING BACKGROUND COPY MANAGER(5 second refresh)
 {0B138008-304B-4264-B021-FD04455588FF} job3 TRANSFERRED 1 / 1 100379370 / 100379370
 ```
 
-## <a name="deleting-jobs-from-the-transfer-queue"></a>Excluir trabalhos da fila de transferência
+## <a name="deleting-jobs-from-the-transfer-queue"></a>Excluindo trabalhos da fila de transferência
 
-Use o **/redefinir** switch para remover todos os trabalhos de fila de transferência.
+Use a opção **/Reset reiniciar** para remover todos os trabalhos da fila de transferência.
 
-**/reset Bitsadmin**
+**Bitsadmin/Reset reiniciar**
 
-O texto a seguir é um exemplo de saída.
+O texto a seguir é uma saída de exemplo.
 
 ``` syntax
 {DC61A20C-44AB-4768-B175-8000D02545B9} canceled.

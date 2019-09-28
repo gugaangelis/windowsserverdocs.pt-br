@@ -1,31 +1,31 @@
 ---
-title: Recuperação de floresta do AD - invalidar o Pool RID
+title: Recuperação de floresta do AD-invalidando o pool RID
 description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.assetid: 2f5f84df-bd85-4ca4-bdd3-835bd1d45c11
 ms.technology: identity-adds
-ms.openlocfilehash: 46115991e48da301a8a739009bac27415ebe73df
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c3c477e21a455e5e5777da00b064ca7a02672571
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842507"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390415"
 ---
-# <a name="ad-forest-recovery---invalidating-the-current-rid-pool"></a>Recuperação de floresta do AD - invalidar o pool RID atual  
+# <a name="ad-forest-recovery---invalidating-the-current-rid-pool"></a>Recuperação de floresta do AD-invalidando o pool RID atual  
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 e 2012 R2, Windows Server 2008 e 2008 R2
 
-Use o procedimento a seguir para nós do Windows PowerShell para invalidar o pool RID atual em um controlador de domínio. Windows PowerShell é habilitada por padrão no Windows Server 2012 e Windows Server 2008 R2, mas não o Windows Server 2008 onde ele deve ser instalado por meio **adicionar recursos**. Ele pode ser [baixados](https://www.microsoft.com/download/details.aspx?id=20020) para ser executado no Windows Server 2003.  
+Use o procedimento a seguir para o Windows PowerShell para invalidar o pool RID atual em um controlador de domínio. O Windows PowerShell é habilitado por padrão no Windows Server 2012 e no Windows Server 2008 R2, mas não no Windows Server 2008, onde ele deve ser instalado usando **Adicionar recursos**. Ele pode ser [baixado](https://www.microsoft.com/download/details.aspx?id=20020) para ser executado no Windows Server 2003.  
 
-Para verificar se o comando foi concluído com êxito, verifique a ID de evento 16654 (origem é Directory-Services-SAM) no log do sistema no Visualizador de eventos do Windows Server 2012. Versões anteriores do Windows não registra esse evento.  
+Para verificar se o comando foi concluído com êxito, verifique a ID do evento 16654 (a origem é Directory-Services-SAM) no log do sistema em Visualizador de Eventos no Windows Server 2012. As versões anteriores do Windows não registram esse evento.  
   
 > [!NOTE]
-> Depois que você invalidar o pool RID, você receberá um erro quando você tenta primeiro criar a entidade de segurança (usuário, computador ou grupo). A tentativa de criar um objeto dispara uma solicitação para um novo pool RID. Repetição da operação é bem-sucedida pois o novo pool RID será alocado.  
+> Depois de invalidar o pool RID, você receberá um erro quando tentar criar a entidade de segurança (usuário, computador ou grupo). A tentativa de criar um objeto dispara uma solicitação para um novo pool de RIDs. A repetição da operação é realizada com sucesso porque o novo pool de RIDs será alocado.  
   
 ## <a name="to-invalidate-the-current-rid-pool"></a>Para invalidar o pool RID atual  
   
@@ -42,5 +42,5 @@ Para verificar se o comando foi concluído com êxito, verifique a ID de evento 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Guia de recuperação da floresta do AD](AD-Forest-Recovery-Guide.md)
-- [Recuperação de floresta do AD - procedimentos](AD-Forest-Recovery-Procedures.md)
+- [Guia de recuperação de floresta do AD](AD-Forest-Recovery-Guide.md)
+- [Recuperação de floresta do AD – Procedimentos](AD-Forest-Recovery-Procedures.md)

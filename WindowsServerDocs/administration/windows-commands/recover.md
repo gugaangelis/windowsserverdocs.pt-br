@@ -1,8 +1,8 @@
 ---
 title: recover
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6b9b5544394bfc69a2dc9f7be26ed8355a3f690
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 415efe2d1e60ca70d68059b5702108440da735f3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441964"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371775"
 ---
 # <a name="recover"></a>recover
 
 
 
-Recupera informações legíveis de um disco com defeito ou danificado.
+Recupera informações legíveis de um disco defeituoso ou defeituoso.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -38,19 +38,19 @@ recover [<Drive>:][<Path>]<FileName>
 
 |           Parâmetro           |                                          Descrição                                          |
 |-------------------------------|-----------------------------------------------------------------------------------------------|
-| [\<Drive>:][<Path>]<FileName> | Especifica o local e o nome do arquivo que você deseja recuperar. *Nome do arquivo* é necessária. |
+| [\<Drive >:] [<Path>] <FileName> | Especifica o local e o nome do arquivo que você deseja recuperar. O *nome do arquivo* é obrigatório. |
 |              /?               |                             Exibe a ajuda no prompt de comando.                              |
 
 ## <a name="remarks"></a>Comentários
 
--   O **recuperar** comando lê um arquivo, setor por setor e recupera os dados dos setores de BOM. Dados em setores inválidos serão perdidos.
--   Setores inválidos relatado pelo **chkdsk** foram marcados como "ruins" quando o disco tiver sido preparado para operação. Eles oferecem nenhum perigo, e **recuperar** não afeta a eles.
--   Como todos os dados em setores inválidos são perdidos quando você recupera um arquivo, você deve recuperar apenas um arquivo por vez.
--   Você não pode usar caracteres curinga ( **&#42;** e **?** ) com o **recuperar** comando. Você deve especificar um arquivo (e o local do arquivo se ele não estiver no diretório atual).
+-   O comando de **recuperação** lê um arquivo, setor por setor e recupera dados de setores bons. Os dados em setores inválidos são perdidos.
+-   Os setores inválidos relatados por **chkdsk** foram marcados como "ruins" quando o disco estava preparado para operação. Eles não apresentam nenhum perigo e a **recuperação** não os afeta.
+-   Como todos os dados em setores inválidos são perdidos quando você recupera um arquivo, você deve recuperar apenas um arquivo de cada vez.
+-   Você não pode usar caracteres curinga **&#42;** (e **?** ) com o comando de **recuperação** . Você deve especificar um arquivo (e o local do arquivo se ele não estiver no diretório atual).
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para recuperar o arquivo história. txt no diretório \Fiction na unidade D, digite:
+Para recuperar o arquivo Story. txt no diretório \Fiction na unidade D, digite:
 ```
 recover d:\fiction\story.txt 
 ```
