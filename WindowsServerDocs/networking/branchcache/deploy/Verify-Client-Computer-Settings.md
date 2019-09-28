@@ -1,56 +1,56 @@
 ---
-title: Verifique as configurações do computador cliente
-description: Este tópico faz parte do BranchCache implantação guia para o Windows Server 2016, que demonstra como implantar o BranchCache nos modos de cache hospedado e distribuído para otimizar o uso de largura de banda WAN em filiais
+title: Verificar as configurações do computador cliente
+description: Este tópico faz parte do guia de implantação do BranchCache para o Windows Server 2016, que demonstra como implantar o BranchCache em modos de cache distribuídos e hospedados para otimizar o uso de largura de banda WAN em filiais
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 31ea58b0-d407-4f62-8ec6-6a1b19174042
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: d628886186474d3f05d7961ca3d3b45b8bf12e73
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6d0adbf0db2d7888ca12ca49f50fc37baa8cbc16
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834047"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356512"
 ---
-# <a name="verify-client-computer-settings"></a>Verifique as configurações do computador cliente
+# <a name="verify-client-computer-settings"></a>Verificar as configurações do computador cliente
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Você pode usar este procedimento para verificar se o computador cliente está configurado corretamente para BranchCache.  
   
 > [!NOTE]  
-> Esse procedimento inclui as etapas para atualizar manualmente a política de grupo e para reiniciar o serviço BranchCache. Você não precisará realizar essas ações se você reinicializar o computador, conforme elas ocorrem automaticamente nessa circunstância.  
+> Este procedimento inclui etapas para atualizar manualmente Política de Grupo e para reiniciar o serviço do BranchCache. Não será necessário executar essas ações se você reinicializar o computador, pois eles ocorrerão automaticamente nessa circunstância.  
   
-Você deve ser um membro da **administradores**, ou equivalente a executar este procedimento.  
+Você deve ser membro de **Administradores**ou equivalente para executar este procedimento.  
   
-### <a name="to-verify-branchcache-client-computer-settings"></a>Para verificar as configurações do computador cliente BranchCache  
+### <a name="to-verify-branchcache-client-computer-settings"></a>Para verificar as configurações do computador cliente do BranchCache  
   
-1.  Para atualizar a política de grupo no computador cliente cuja configuração do BranchCache que você deseja verificar, execute o Windows PowerShell como administrador, digite o seguinte comando e pressione ENTER.  
+1.  Para atualizar Política de Grupo no computador cliente cuja configuração do BranchCache você deseja verificar, execute o Windows PowerShell como administrador, digite o comando a seguir e pressione ENTER.  
   
     `gpupdate /force`  
   
-2.  Para computadores cliente que são configurados no modo de cache hospedado e são configurados descobrir automaticamente os servidores de cache hospedado pelo ponto de conexão de serviço, execute os seguintes comandos para parar e reiniciar o serviço BranchCache.  
+2.  Para computadores cliente configurados no modo de cache hospedado e são configurados para descobrir automaticamente servidores de cache hospedados pelo ponto de conexão de serviço, execute os seguintes comandos para parar e reiniciar o serviço do BranchCache.  
   
     `net stop peerdistsvc`  
   
     `net start peerdistsvc`  
   
-3.  Inspecione o modo operacional atual do BranchCache, executando o comando a seguir.  
+3.  Inspecione o modo operacional do BranchCache atual executando o comando a seguir.  
   
     `Get-BCStatus`  
   
-4.  No Windows PowerShell, examine a saída do **Get-BCStatus** comando.  
+4.  No Windows PowerShell, examine a saída do comando **Get-BCStatus** .  
   
-    O valor para **BranchCacheIsEnabled** deve ser **verdadeiro**.  
+    O valor de **BranchCacheIsEnabled** deve ser **true**.  
   
-    Na **ClientSettings**, o valor para **CurrentClientMode** deve ser **DistributedClient** ou **HostedCacheClient**, dependendo do modo que você configurou usando este guia.  
+    Em **ClientSettings**, o valor de **CurrentClientMode** deve ser **DistributedClient** ou **HostedCacheClient**, dependendo do modo que você configurou usando este guia.  
   
-    Na **ClientSettings**, se você configurou o modo de cache hospedado e fornecido os nomes dos seus servidores de cache hospedado durante a configuração ou se o cliente tem automaticamente localizado hospedado usando pontos de conexão de serviço, de servidores de cache  **HostedCacheServerList** deve ter um valor que é o mesmo que o nome ou nomes de seus servidores de cache hospedado. Por exemplo, se seu servidor de cache hospedado é chamado HCS1 e seu domínio for corp.contoso.com, o valor para **HostedCacheServerList** é **HCS1.corp.contoso.com**.  
+    No **ClientSettings**, se você configurou o modo de cache hospedado e forneceu os nomes dos seus servidores de cache hospedados durante a configuração, ou se o cliente localizou automaticamente os servidores de cache hospedados usando pontos de conexão de serviço,  **HostedCacheServerList** deve ter um valor igual ao nome ou aos nomes dos seus servidores de cache hospedados. Por exemplo, se o servidor de cache hospedado for denominado HCS1 e seu domínio for corp.contoso.com, o valor de **HostedCacheServerList** será **HCS1.Corp.contoso.com**.  
   
-5.  Se qualquer um do BranchCache configurações listadas acima não tem os valores corretos, use as etapas neste guia para verificar as configurações de diretiva de grupo ou diretiva de computador Local, bem como as exceções de firewall que você configurou, e certifique-se de que elas estão corretas. Além disso, reinicie o computador ou siga as etapas neste procedimento para atualizar a política de grupo e reinicie o serviço de BranchCache.  
+5.  Se qualquer uma das configurações do BranchCache listadas acima não tiver os valores corretos, use as etapas neste guia para verificar as configurações de diretiva de computador local ou Política de Grupo, bem como as exceções de firewall, que você configurou e verifique se elas estão corretas. Além disso, reinicie o computador ou siga as etapas neste procedimento para atualizar Política de Grupo e reiniciar o serviço do BranchCache.  
   
 
 
