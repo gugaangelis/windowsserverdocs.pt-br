@@ -1,19 +1,19 @@
 ---
 title: Recursos removidos ou com substituição planejada começando no Windows Server, versão 1903
 description: Veja a seguir uma lista de recursos e funcionalidades do Windows Server, versão 1903, que foram removidos do produto nessa versão ou estão sendo considerados para remoção em potencial nas versões futuras. Essa lista é direcionada para profissionais de TI que estão atualizando sistemas operacionais em um ambiente comercial.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
 ms.date: 08/22/2019
 author: jasongerend
 ms.author: jgerend
 manager: daveba
-ms.openlocfilehash: 4471d6f9d98d58f7444151a7b8be33d2d81423e1
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b31cde8216b3ceb230c9c197924b40e8cc8fc3f8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868656"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361180"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1903"></a>Recursos removidos ou com substituição planejada começando no Windows Server, versão 1903
 

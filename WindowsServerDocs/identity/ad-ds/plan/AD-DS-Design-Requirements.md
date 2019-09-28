@@ -7,43 +7,43 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 79c694112f39adf5d37cd28f6bd7a770dedf3976
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cb9d4c04bc3fc7bb534e75b80f0947bd225b7b85
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857517"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71368960"
 ---
 # <a name="ad-ds-design-requirements"></a>Requisitos de design do AD DS
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
   
-## <a name="designing-the-active-directory-logical-structure"></a>Criando a estrutura lógica do Active Directory  
-Antes de implantar o Windows Server 2008 Active Directory serviços de domínio (AD DS), você deve planejar e projetar a estrutura lógica do AD DS para o seu ambiente. A estrutura lógica do AD DS determina como os objetos de diretório são organizados e fornece um método eficaz para gerenciar suas contas de rede e recursos compartilhados. Ao projetar a estrutura lógica do AD DS, você define uma parte significativa da infra-estrutura de rede da sua organização.  
+## <a name="designing-the-active-directory-logical-structure"></a>Projetando a estrutura lógica Active Directory  
+Antes de implantar o Windows Server 2008 Active Directory Domain Services (AD DS), você deve planejar e projetar a estrutura lógica de AD DS para seu ambiente. A estrutura lógica AD DS determina como os objetos de diretório são organizados e fornece um método eficaz para gerenciar suas contas de rede e recursos compartilhados. Ao projetar sua estrutura de AD DS lógica, você define uma parte significativa da infraestrutura de rede da sua organização.  
   
-Para criar a estrutura lógica do AD DS, determinar o número de florestas necessárias para sua organização e, em seguida, criar designs para domínios, infraestrutura de sistema de nome de domínio (DNS) e unidades organizacionais (OUs). A ilustração a seguir mostra o processo para criar a estrutura lógica.  
+Para criar a estrutura lógica de AD DS, determine o número de florestas que sua organização requer e, em seguida, crie designs para domínios, infraestrutura de DNS (sistema de nomes de domínio) e UOs (unidades organizacionais). A ilustração a seguir mostra o processo de criação da estrutura lógica.  
   
-![Requisitos de design do AD DS](media/AD-DS-Design-Requirements/d5cebae6-a752-4063-a98f-473799c251bd.gif)  
+![Requisitos de design de AD DS](media/AD-DS-Design-Requirements/d5cebae6-a752-4063-a98f-473799c251bd.gif)  
   
-Para obter mais informações, consulte [Projetando a lógica estrutura para o Windows Server 2008 AD DS](Designing-the-Logical-Structure.md).  
+Para obter mais informações, consulte [projetando a estrutura lógica para o Windows Server 2008 AD DS](Designing-the-Logical-Structure.md).  
   
-## <a name="designing-the-site-topology"></a>Criando a topologia de site  
-Depois de criar a estrutura lógica para sua infraestrutura do AD DS, você deve projetar a topologia de site para sua rede. A topologia de site é uma representação lógica de sua rede física. Ele contém informações sobre o local dos sites do AD DS, os controladores de domínio do AD DS em cada site e os links de site e pontes de link de site que dão suporte à replicação do AD DS entre sites. A ilustração a seguir mostra o processo de design da topologia de site.  
+## <a name="designing-the-site-topology"></a>Criando a topologia do site  
+Depois de criar a estrutura lógica para sua infraestrutura de AD DS, você deve criar a topologia de site para sua rede. A topologia do site é uma representação lógica da sua rede física. Ele contém informações sobre o local de AD DS sites, os controladores de domínio AD DS em cada site e os links de site e as pontes de link de site que dão suporte à replicação AD DS entre sites. A ilustração a seguir mostra o processo de design da topologia do site.  
   
-![Requisitos de design do AD DS](media/AD-DS-Design-Requirements/d34d43c0-437f-47cb-9b64-09c0f9ce6479.gif)  
+![Requisitos de design de AD DS](media/AD-DS-Design-Requirements/d34d43c0-437f-47cb-9b64-09c0f9ce6479.gif)  
   
-Para obter mais informações, consulte [projetar o Site de topologia para o Windows Server 2008 AD DS](Designing-the-Site-Topology.md).  
+Para obter mais informações, consulte [projetando a topologia do site para o Windows Server 2008 AD DS](Designing-the-Site-Topology.md).  
   
 ## <a name="planning-domain-controller-capacity"></a>Planejando a capacidade do controlador de domínio  
-Para garantir um desempenho eficiente de AD DS, você deve determinar o número apropriado de controladores de domínio para cada site e verificar se eles atendem aos requisitos de hardware do Windows Server 2008. Cuidadoso planejamento de capacidade para os controladores de domínio garante que não sejam subestimados requisitos de hardware, que podem causar tempo de resposta ruim domínio controlador desempenho e aplicativo. A ilustração a seguir mostra o processo de planejamento de capacidade do controlador de domínio.  
+Para garantir um desempenho AD DS eficiente, você deve determinar o número apropriado de controladores de domínio para cada site e verificar se eles atendem aos requisitos de hardware do Windows Server 2008. O planejamento de capacidade cuidadoso para seus controladores de domínio garante que você não subestime os requisitos de hardware, o que pode causar um mau desempenho do controlador de domínio e o tempo de resposta do aplicativo. A ilustração a seguir mostra o processo de planejamento de capacidade do controlador de domínio.  
   
-![Requisitos de design do AD DS](media/AD-DS-Design-Requirements/fff6ef22-5c7b-4478-ad76-42b296dcf769.gif)  
+![Requisitos de design de AD DS](media/AD-DS-Design-Requirements/fff6ef22-5c7b-4478-ad76-42b296dcf769.gif)  
   
-## <a name="enabling-windows-server-2008-advanced-ad-ds-features"></a>Habilitar o Windows Server 2008 avançado de recursos do AD DS  
-Você pode usar o AD DS do Windows Server 2008 para introduzir recursos avançados no seu ambiente, gerando o nível funcional do domínio ou floresta. Você pode aumentar o nível funcional para o Windows Server 2008 quando todos os controladores de domínio no domínio ou floresta executam o Windows Server 2008.  
+## <a name="enabling-windows-server-2008-advanced-ad-ds-features"></a>Habilitando recursos do Windows Server 2008 Advanced AD DS  
+Você pode usar o Windows Server 2008 AD DS para apresentar recursos avançados em seu ambiente aumentando o nível funcional de domínio ou floresta. Você pode aumentar o nível funcional para o Windows Server 2008 quando todos os controladores de domínio no domínio ou floresta estiverem executando o Windows Server 2008.  
   
 Para obter mais informações, consulte [habilitando recursos avançados para AD DS](../../ad-ds/plan/Enabling-Advanced-Features-for-AD-DS.md).  
   

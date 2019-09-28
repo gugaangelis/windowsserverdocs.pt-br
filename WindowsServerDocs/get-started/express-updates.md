@@ -1,18 +1,18 @@
 ---
 title: Atualizações expressas para o Windows Server 2016 ativadas novamente para a atualização de novembro de 2018
 description: Fornece informações sobre as Atualizações expressas no Windows Server 2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
-ms.openlocfilehash: 1644a61c87953e465895e23c3c8454bae7f3a056
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: e97be57a344a36be7d14d11e23b7af7049d2118a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66443378"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391526"
 ---
 # <a name="express-updates-for-windows-server-2016-re-enabled-for-november-2018-update"></a>Atualizações expressas para o Windows Server 2016 ativadas novamente para a atualização de novembro de 2018
 
