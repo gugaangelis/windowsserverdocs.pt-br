@@ -1,8 +1,8 @@
 ---
-title: Gravador
-description: 'Tópico de comandos do Windows para * * *- '
+title: escritor
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8aee4ecca85c7d5f46ee79f3ad928b746c02e7bb
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6c00f6067cd5f6cf741cddbd6d62c5bcbb1f37a9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66439980"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361863"
 ---
-# <a name="writer"></a>Gravador
+# <a name="writer"></a>escritor
 
 
 
-Verifica se um gravador ou o componente está incluído ou exclui um componente ou o gravador do procedimento de backup ou restauração. Se usado sem parâmetros, **gravador** exibe a Ajuda no prompt de comando.
+verifica se um gravador ou componente está incluído ou exclui um gravador ou componente do procedimento de backup ou restauração. Se usado sem parâmetros, o **Writer** exibirá a ajuda no prompt de comando.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -37,17 +37,17 @@ writer exclude [<Writer> | <Component>]
 
 | Parâmetro  |                                                                                      Descrição                                                                                      |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   verify   | Verifica se o gravador especificado ou o componente está incluído no procedimento de backup ou restauração. O procedimento de backup ou restauração falhará se o gravador ou o componente não está incluído. |
-|  exclude   |                                                   Exclui o gravador especificado ou o componente do procedimento de backup ou restauração.                                                    |
-| [\<Writer> |                                                                                     <Component>]                                                                                      |
+|   verify   | Verifica se o gravador ou o componente especificado está incluído no procedimento de backup ou restauração. O procedimento de backup ou restauração falhará se o gravador ou o componente não estiver incluído. |
+|  exclude   |                                                   Exclui o gravador ou componente especificado do procedimento de backup ou restauração.                                                    |
+| [\<Writer > |                                                                                     <Component>]                                                                                      |
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para verificar se um gravador, especificando seu GUID (por exemplo, 4dc3bdd4-ab48-4d07-adb0-3bee2926fd7f), digite:
+Para verificar um gravador especificando seu GUID (para este exemplo, 4dc3bdd4-AB48-4d07-adb0-3bee2926fd7f), digite:
 ```
 writer verify {4dc3bdd4-ab48-4d07-adb0-3bee2926fd7f}
 ```
-Para excluir um gravador com o nome "Gravador do sistema", digite:
+Para excluir um gravador com o nome "gravador do sistema", digite:
 ```
 writer exclude "System Writer"
 ```

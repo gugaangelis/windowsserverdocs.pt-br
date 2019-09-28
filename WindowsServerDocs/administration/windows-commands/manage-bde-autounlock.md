@@ -1,8 +1,8 @@
 ---
-title: desbloqueio automático do bde gerenciar
-description: 'Tópico de comandos do Windows para * * *- '
+title: gerenciar o desbloqueio automático do bde
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c17f9781dd4ff924358de490162c6388312ce03
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e6927c964a3f35c70fc3b9467cc2d16bbd973b17
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832267"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374144"
 ---
-# <a name="manage-bde-autounlock"></a>Gerenciar-bde: desbloqueio automático
+# <a name="manage-bde-autounlock"></a>Manage-bde: desbloqueio automático
 
 
 
@@ -37,23 +37,23 @@ manage-bde -autounlock [{-enable|-disable|-clearallkeys}] <Drive> [-computername
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|-Habilitar|Habilita o desbloqueio automático para uma unidade de dados.|
-|-desabilitar|Desabilita o desbloqueio automático para uma unidade de dados.|
-|-clearallkeys|Remove chaves externas tudo armazenadas na unidade do sistema operacional.|
-|\<Drive>|Representa uma letra de unidade seguida de dois-pontos.|
-|-computername|Especifica que gerenciar bde.exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **- cn** como uma versão abreviada desse comando.|
-|\<Nome >|Representa o nome do computador no qual modificar a proteção do BitLocker. Os valores aceitos incluem o nome do computador NetBIOS e endereço IP do computador.|
-|-? ou /?|Exibe uma ajuda breve no prompt de comando.|
-|-help ou -h|Exibe uma ajuda detalhada no prompt de comando.|
+|-habilitar|Habilita o desbloqueio automático para uma unidade de dados.|
+|-desabilitar|Desabilita o desbloqueio automático de uma unidade de dados.|
+|-clearallkeys|Remove todas as chaves externas armazenadas na unidade do sistema operacional.|
+|\<Drive >|Representa uma letra de unidade seguida de dois-pontos.|
+|-ComputerName|Especifica que o Manage-bde. exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando.|
+|\<Nome >|Representa o nome do computador no qual a proteção do BitLocker será modificada. Os valores aceitos incluem o nome NetBIOS do computador e o endereço IP do computador.|
+|-? ou/?|Exibe a ajuda resumida no prompt de comando.|
+|-Help ou-h|Exibe a ajuda completa no prompt de comando.|
 
-## <a name="BKMK_Examples"></a>Exemplos
+## <a name="BKMK_Examples"></a>Disso
 
-O exemplo a seguir ilustra o uso de **- desbloqueio automático** comando para habilitar o desbloqueio automático da unidade de dados E.
+O exemplo a seguir ilustra o uso do comando **-autounlock** para habilitar o desbloqueio automático da unidade de dados E.
 ```
 manage-bde –autounlock -enable E:
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
--   [Gerenciar-bde](manage-bde.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Manage-bde](manage-bde.md)

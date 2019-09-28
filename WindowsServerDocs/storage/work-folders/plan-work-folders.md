@@ -1,7 +1,7 @@
 ---
 ms.assetid: a7c39656-81ee-4c2b-80ef-4d017dd11b07
 title: Planejando uma implantação de Pastas de Trabalho
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-work-folders
 ms.topic: article
 author: JasonGerend
@@ -9,12 +9,12 @@ manager: dongill
 ms.author: jgerend
 ms.date: 4/5/2017
 description: Como planejar uma implantação de Pastas de Trabalho, incluindo os requisitos de sistema e como preparar o ambiente de rede.
-ms.openlocfilehash: 06d56df7ce9ddb8c9822f62de383ccad0394b4f3
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: e62cd61350299461d725c5d84209230ce1cc41a3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447839"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365736"
 ---
 # <a name="planning-a-work-folders-deployment"></a>Planejando uma implantação de Pastas de Trabalho
 
@@ -34,7 +34,7 @@ Este tópico explica o processo de projeto de uma implementação de Pastas de T
   
   As seções a seguir ajudarão você no projeto de implementação de Pastas de Trabalho. A implantação de Pastas de Trabalho será abordada no próximo tópico, [Implantando Pastas de Trabalho](deploy-work-folders.md).  
   
-##  <a name="BKMK_SOFT"></a> Requisitos de software  
+##  <a name="BKMK_SOFT"></a>Requisitos de software  
 
 As Pastas de Trabalho têm os seguintes requisitos de software para os servidores de arquivos e sua infraestrutura de rede:  
   
@@ -116,7 +116,7 @@ As Pastas de Trabalho têm os seguintes requisitos de software para computadores
 ### <a name="file-servers"></a>Servidores de Arquivos  
  Os servidores de arquivos que executam o Windows Server 2012 R2 ou Windows Server 2016 hospedam o serviço de função de Pastas de Trabalho e os compartilhamentos de sincronização que armazenam dados de Pastas de Trabalho de usuários. Os servidores de arquivos também podem hospedar dados armazenados por outras tecnologias que operam na rede interna (como compartilhamentos de arquivo) e podem ser clusterizados para fornecer tolerância a falhas para dados de usuário.  
   
-###  <a name="GroupPolicy"></a> Política de grupo  
+###  <a name="GroupPolicy"></a>Política de Grupo  
  Se você tiver os computadores Windows 7 no seu ambiente, recomendamos o seguinte:  
   
 - Usar a Política de Grupo para controlar políticas de senha para todos os computadores ingressados no domínio que usam Pastas de Trabalho.  
@@ -128,7 +128,7 @@ As Pastas de Trabalho têm os seguintes requisitos de software para computadores
   Você também pode usar a Política de Grupo para forçar a configuração de Pastas de Trabalho por usuário ou por computador, embora isso possa fazer com que as Pastas de Trabalho sincronizem em cada PC uma entrada de usuário (ao usar a configuração de política por usuário) e possa impedir que os usuários especifiquem um local alternativo para Pastas de Trabalho no PC (como um cartão microSD para conservar espaço na unidade principal). Sugerimos avaliar com atenção as necessidades do usuário antes de forçar a configuração automática.  
   
 ### <a name="windows-intune"></a>Windows Intune  
- O Windows Intune também oferece uma camada de segurança e capacidade de gerenciamento para dispositivos não ingressados no domínio que de outra forma não estariam presentes. Você pode usar o Windows Intune para configurar e gerenciar dispositivos pessoais dos usuários, como tablets, que se conectam a Pastas de Trabalho pela Internet. Windows Intune pode fornecer dispositivos com a URL do servidor de sincronização para usar – caso contrário, os usuários devem inserir seu endereço de email de trabalho para consultar as configurações (se você publicar uma URL de pastas de trabalho pública na forma de https://workfolders. <em>Contoso.com</em>), ou insira a URL do servidor de sincronização diretamente.  
+ O Windows Intune também oferece uma camada de segurança e capacidade de gerenciamento para dispositivos não ingressados no domínio que de outra forma não estariam presentes. Você pode usar o Windows Intune para configurar e gerenciar dispositivos pessoais dos usuários, como tablets, que se conectam a Pastas de Trabalho pela Internet. O Windows Intune pode fornecer dispositivos com a URL do servidor de sincronização a ser usada – caso contrário, os usuários deverão inserir seu endereço de email de trabalho para pesquisar as configurações (se você publicar uma URL de pastas de trabalho pública na forma de https://workfolders. <em>contoso.com</em>) ou insira a URL do servidor de sincronização diretamente.  
   
  Sem uma implantação do Windows Intune, os usuários devem configurar dispositivos externos manualmente, o que pode resultar no aumento da demanda na equipe de suporte técnico de um cliente.  
   
@@ -158,7 +158,7 @@ Pastas de Trabalho usando proxy de aplicativo Web, proxy de aplicativo Azure AD 
   Para obter informações sobre dimensionamento e desempenho do servidor de Pastas de Trabalho, consulte [Considerações de desempenho para implantações de Pastas de Trabalho](http://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx).  
   
 > [!NOTE]
->  Ao usar vários servidores de sincronização, recomendamos configurar a descoberta automática de servidor para usuários. Esse processo conta com a configuração de um atributo em cada conta de usuário no AD DS. O atributo é denominado **msDS-SyncServerURL** e se torna disponível em contas de usuário depois que um controlador de domínio do Windows Server 2012 R2 é adicionado ao domínio ou as atualizações de esquema do Active Directory são aplicadas. Esse atributo deve ser definido para cada usuário, a fim de garantir que os usuários se conectem ao servidor de sincronização apropriado. Ao usar a descoberta automática do servidor, as organizações podem publicar pastas de trabalho por trás de uma URL "amigável", como *https://workfolders.contoso.com* , independentemente do número de servidores de sincronização em operação.  
+>  Ao usar vários servidores de sincronização, recomendamos configurar a descoberta automática de servidor para usuários. Esse processo conta com a configuração de um atributo em cada conta de usuário no AD DS. O atributo é denominado **msDS-SyncServerURL** e se torna disponível em contas de usuário depois que um controlador de domínio do Windows Server 2012 R2 é adicionado ao domínio ou as atualizações de esquema do Active Directory são aplicadas. Esse atributo deve ser definido para cada usuário, a fim de garantir que os usuários se conectem ao servidor de sincronização apropriado. Usando a descoberta automática de servidor, as organizações podem publicar pastas de trabalho por trás de uma URL "amigável", como *https://workfolders.contoso.com* , independentemente do número de servidores de sincronização em operação.  
   
 ### <a name="number-of-sync-shares"></a>Número de compartilhamentos de sincronização  
  Servidores de sincronização individuais podem manter vários compartilhamentos de sincronização. Isso pode ser útil pelos seguintes motivos:  
@@ -255,5 +255,5 @@ O conjunto de perguntas do projeto a seguir foi criado para auxiliar clientes no
   
 |Tipo de conteúdo|Referências|  
 |------------------|----------------|  
-|**Avaliação do produto**|-   [Pastas de trabalho](work-folders-overview.md)<br />-   [Pastas de trabalho para o Windows 7](http://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx) (postagem de blog)|  
-|**Implantação**|-   [Projetando uma implementação de pastas de trabalho](plan-work-folders.md)<br />-   [Implantando pastas de trabalho](deploy-work-folders.md)<br />-   [Implantando pastas de trabalho com o AD FS e Proxy de aplicativo Web (WAP)](deploy-work-folders-adfs-overview.md)<br />- [Implantando pastas de trabalho com o Proxy de aplicativo do Azure AD](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)<br />-   [Considerações sobre desempenho para implantações de pastas de trabalho](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />-   [Pastas de trabalho para o Windows 7 (download de 64 bits)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [Pastas de trabalho para o Windows 7 (download de 32 bits)](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [Implantação de laboratório de teste de pastas de trabalho](http://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx) (postagem de blog)|
+|**Avaliação do produto**|-   [Pastas de trabalho](work-folders-overview.md)<br />-   [pastas de trabalho para o Windows 7](http://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx) (postagem de blog)|  
+|**Implantação**|-   [Criando uma implementação de pastas de trabalho](plan-work-folders.md)<br />-   [Implantando Pastas de trabalho](deploy-work-folders.md)<br />-   [Implantando Pastas de trabalho com o AD FS e o proxy de aplicativo Web (WAP)](deploy-work-folders-adfs-overview.md)<br />- [Implantando Pastas de trabalho com o Azure proxy de aplicativo do AD](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)<br />[considerações de desempenho -    para implantações de pastas de trabalho](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />-   [pastas de trabalho para o Windows 7 (download de 64 bits)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [pastas de trabalho para o Windows 7 (download de 32 bits)](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [Implantação do laboratório de teste de pastas de trabalho](http://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx) (postagem de blog)|

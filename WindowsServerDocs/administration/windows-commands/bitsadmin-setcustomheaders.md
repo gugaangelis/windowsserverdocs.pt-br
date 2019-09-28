@@ -1,8 +1,8 @@
 ---
-title: Bitsadmin setcustomheaders
-description: Tópico de comandos do Windows para **setcustomheaders bitsadmin** -adicionar um cabeçalho HTTP personalizado a uma solicitação GET.
+title: bitsadmin setcustomheaders
+description: Tópico de comandos do Windows para **Bitsadmin setcustomheaders** – adicione um cabeçalho HTTP personalizado a uma solicitação get.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6d90ac2d23b852ae0c2114e7cd5a9c9e6382ce8c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 45e3a5178df69b84618966ca0fcd9cc1e6d0e449
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853847"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380645"
 ---
-# <a name="bitsadmin-setcustomheaders"></a>Bitsadmin setcustomheaders
+# <a name="bitsadmin-setcustomheaders"></a>bitsadmin setcustomheaders
 
 
 
@@ -36,20 +36,20 @@ bitsadmin /SetCustomHeaders <Job> <Header1> <Header2> <. . .>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
-|Oriel1 Oriel2. . .|Os cabeçalhos personalizados para o trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
+|Header1 Header2 . . .|Os cabeçalhos personalizados para o trabalho|
 
 ## <a name="remarks"></a>Comentários
 
 -   Essa opção é usada para adicionar um cabeçalho HTTP personalizado a uma solicitação GET enviada a um servidor HTTP.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir adiciona um cabeçalho HTTP personalizado do trabalho nomeado *myDownloadJob*.
+O exemplo a seguir adiciona um cabeçalho HTTP personalizado para o trabalho chamado *myDownloadJob*.
 ```
 C:\>bitsadmin / SetCustomHeaders myDownloadJob "Accept-encoding:deflate/gzip"
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

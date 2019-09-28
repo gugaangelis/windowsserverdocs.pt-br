@@ -1,61 +1,61 @@
 ---
 ms.assetid: e727a33d-133b-43c9-b6a4-7c00f9cb6000
-title: Revisando os modelos de domínio
+title: Examinando os modelos de domínio
 description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 23c1eb66eeecab8df63cbd7910a9398bc4e3c705
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 00683b09aff5b3a3b097f7f8b423c51080b86d02
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870917"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408685"
 ---
-# <a name="reviewing-the-domain-models"></a>Revisando os modelos de domínio
+# <a name="reviewing-the-domain-models"></a>Examinando os modelos de domínio
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Os seguintes fatores afetam o modelo de design de domínio que você selecione:  
+Os fatores a seguir afetam o modelo de design de domínio que você selecionar:  
   
-- Quantidade da capacidade disponível em sua rede que você está disposto a ser alocada para os serviços de domínio do Active Directory (AD DS). O objetivo é selecionar um modelo que fornece replicação eficiente de informações com impacto mínimo de largura de banda de rede disponível.  
+- Quantidade de capacidade disponível em sua rede que você está disposto a alocar para Active Directory Domain Services (AD DS). O objetivo é selecionar um modelo que forneça replicação eficiente de informações com impacto mínimo sobre a largura de banda de rede disponível.  
 
-- Número de usuários em sua organização. Se sua organização inclui um grande número de usuários, implantar mais de um domínio permite que você particione seus dados e dá a você mais controle sobre a quantidade de tráfego de replicação que passará por meio de uma conexão de rede fornecido. Isso torna possível para que você possa controlar onde os dados são replicados e reduzir a carga criada pelo tráfego de replicação em links lentos em sua rede.  
+- Número de usuários em sua organização. Se sua organização incluir um grande número de usuários, a implantação de mais de um domínio permitirá que você particione seus dados e oferecerá mais controle sobre a quantidade de tráfego de replicação que passará por uma determinada conexão de rede. Isso possibilita que você controle onde os dados são replicados e reduza a carga criada pelo tráfego de replicação em links lentos em sua rede.  
 
-O design de domínio mais simples é um único domínio. Em um design de domínio único, todas as informações são replicadas para todos os controladores de domínio. No entanto, se necessário, você pode implantar domínios regionais adicionais. Isso pode ocorrer se as partes da infraestrutura de rede são conectadas por links lentos, e o proprietário da floresta quer ter certeza de que o tráfego de replicação não exceda a capacidade que foi alocada para o AD DS.  
+O design de domínio mais simples é um domínio único. Em um único design de domínio, todas as informações são replicadas para todos os controladores de domínio. Se necessário, no entanto, você pode implantar domínios regionais adicionais. Isso pode ocorrer se partes da infraestrutura de rede estiverem conectadas por links lentos e o proprietário da floresta quiser ter certeza de que o tráfego de replicação não excede a capacidade que foi alocada para AD DS.  
 
-É melhor minimizar o número de domínios que você implantar em sua floresta. Isso reduz a complexidade geral da implantação e, consequentemente, reduz o custo total de propriedade. A tabela a seguir lista os custos administrativos associados com a adição de domínios regionais.  
+É melhor minimizar o número de domínios que você implanta em sua floresta. Isso reduz a complexidade geral da implantação e, como resultado, reduz o custo total de propriedade. A tabela a seguir lista os custos administrativos associados à adição de domínios regionais.  
 
-|Custo|Implicações|  
+|Custo|Envolvidas|  
 |--------|----------------|  
-|Gerenciamento de vários grupos de administrador de serviço|Cada domínio tem seus próprios grupos de administradores de serviço que precisam ser gerenciados de forma independente. A associação desses grupos de administrador de serviço deve ser cuidadosamente controlada.|  
-|Manter a consistência entre as configurações de diretiva de grupo que são comuns a vários domínios|Configurações de diretiva de grupo que precisam ser aplicadas em toda a floresta devem ser aplicadas separadamente para cada domínio individual na floresta.|  
-|Manter a consistência entre o controle de acesso e as configurações que são comuns a vários domínios de auditoria|Controle de acesso e as configurações que precisam ser aplicadas em toda a floresta de auditoria devem ser aplicadas separadamente para cada domínio individual na floresta.|  
-|Aumento da probabilidade de objetos movendo entre domínios|Quanto maior o número de domínios, quanto maior a probabilidade de que os usuários precisarão se mover de um domínio para outro. Essa mudança pode afetar os usuários finais.|  
+|Gerenciamento de vários grupos de administradores de serviços|Cada domínio tem seus próprios grupos de administradores de serviços que precisam ser gerenciados de forma independente. A associação desses grupos de administradores de serviços deve ser cuidadosamente controlada.|  
+|Manter a consistência entre Política de Grupo configurações comuns a vários domínios|Política de Grupo configurações que precisam ser aplicadas em toda a floresta devem ser aplicadas separadamente a cada domínio individual na floresta.|  
+|Manter a consistência entre controle de acesso e configurações de auditoria comuns a vários domínios|As configurações de controle de acesso e auditoria que precisam ser aplicadas na floresta devem ser aplicadas separadamente a cada domínio individual na floresta.|  
+|Maior probabilidade de movimentação de objetos entre domínios|Quanto maior o número de domínios, maior será a probabilidade de que os usuários precisem passar de um domínio para outro. Essa mudança pode afetar potencialmente os usuários finais.|  
 
 > [!NOTE]  
-> Diretivas de bloqueio de conta e senha refinada do Windows Server também podem afetar o modelo de design de domínio que você selecionar. Antes desta versão do Windows Server 2008, você pode aplicar apenas uma conta e senha diretiva de bloqueio, que é especificada no domínio de diretiva de domínio padrão, a todos os usuários no domínio. Como resultado, se você quisesse senha diferente e configurações de bloqueio de conta para diferentes conjuntos de usuários, você precisava criar um filtro de senha ou implantar vários domínios. Agora você pode usar políticas de senha refinada para especificar várias diretivas de senha e aplicar diretivas de bloqueio de conta e restrições de senha diferente para diferentes conjuntos de usuários em um único domínio. Para obter mais informações sobre as diretivas de bloqueio de conta e senha refinada, consulte o artigo [guia passo a passo para configuração de política de bloqueio de conta e de senha refinada](https://go.microsoft.com/fwlink/?LinkID=91477).  
+> As políticas de bloqueio de conta e senha refinadas do Windows Server também podem afetar o modelo de design de domínio selecionado. Antes desta versão do Windows Server 2008, você pode aplicar apenas uma política de bloqueio de conta e senha, que é especificada na política de domínio padrão de domínio, para todos os usuários no domínio. Como resultado, se você quisesse configurações de bloqueio de senha e conta diferentes para diferentes conjuntos de usuários, era necessário criar um filtro de senha ou implantar vários domínios. Agora você pode usar políticas de senha refinadas para especificar várias políticas de senha e aplicar restrições de senha e políticas de bloqueio de conta diferentes a diferentes conjuntos de usuários em um único domínio. Para obter mais informações sobre políticas refinadas de bloqueio de senha e de conta, consulte o artigo [guia passo a passo para configuração de política de bloqueio de conta e senha](https://go.microsoft.com/fwlink/?LinkID=91477)refinada.  
 
 ## <a name="single-domain-model"></a>Modelo de domínio único
 
-Um único modelo de domínio é o mais fácil de administrar e menos dispendioso para manter. Ele consiste em uma floresta que contém um único domínio. Esse domínio é o domínio raiz da floresta e contém todas as contas de usuário e grupo na floresta.  
+Um único modelo de domínio é o mais fácil de administrar e o menos caro a ser mantido. Ele consiste em uma floresta que contém um único domínio. Esse é o domínio raiz da floresta e contém todas as contas de usuário e grupo na floresta.  
 
-Um modelo de floresta de domínio único reduz a complexidade administrativa, fornecendo as seguintes vantagens:  
+Um modelo de floresta de domínio único reduz a complexidade administrativa fornecendo as seguintes vantagens:  
 
 - Qualquer controlador de domínio pode autenticar qualquer usuário na floresta.  
 
-- Todos os controladores de domínio podem ser catálogos globais, portanto, você não precisará planejar o posicionamento do servidor de catálogo global.  
+- Todos os controladores de domínio podem ser catálogos globais, portanto, você não precisa planejar o posicionamento do servidor de catálogo global.  
   
-Em uma floresta de domínio único, todos os dados do diretório é replicada para todos os locais geográficos que hospedam controladores de domínio. Embora esse modelo é o mais fácil de gerenciar, ele também cria o tráfego de replicação mais dos modelos de domínio de dois. Particionando o diretório em vários domínios limita a replicação de objetos, mas resulta em mais sobrecarga administrativa de regiões geográficas específicas.  
+Em uma floresta de domínio único, todos os dados de diretório são replicados para todos os locais geográficos que hospedam controladores de domínio. Embora esse modelo seja o mais fácil de gerenciar, ele também cria a maior parte do tráfego de replicação dos dois modelos de domínio. O particionamento do diretório em vários domínios limita a replicação de objetos a regiões geográficas específicas, mas resulta em mais sobrecarga administrativa.  
   
 ## <a name="regional-domain-model"></a>Modelo de domínio regional
 
-Todos os dados de objeto dentro de um domínio é replicada para todos os controladores de domínio nesse domínio. Por esse motivo, se sua floresta inclui um grande número de usuários que são distribuídos em diferentes locais geográficos conectados por uma rede de longa distância (WAN), você talvez precise implantar domínios regionais para reduzir o tráfego de replicação em links WAN. Domínios regionais geograficamente com base podem ser organizados de acordo com a conectividade de rede WAN.  
+Todos os dados de objeto em um domínio são replicados para todos os controladores de domínio nesse domínio. Por esse motivo, se sua floresta incluir um grande número de usuários que são distribuídos em diferentes locais geográficos conectados por uma WAN (rede de longa distância), talvez seja necessário implantar domínios regionais para reduzir o tráfego de replicação nos links WAN. Os domínios regionais baseados geograficamente podem ser organizados de acordo com a conectividade WAN da rede.  
   
-O modelo de domínio regional permite que você mantenha um ambiente estável ao longo do tempo. As regiões usadas para definir domínios em seu modelo em elementos estáveis, como limites continental de base. Domínios com base em outros fatores, como grupos da organização, podem ser alterados com frequência e podem exigir que você reestruturar seu ambiente.  
+O modelo de domínio regional permite que você mantenha um ambiente estável ao longo do tempo. Baseie as regiões usadas para definir domínios em seu modelo em elementos estáveis, como limites continental. Domínios com base em outros fatores, como grupos dentro da organização, podem ser alterados com frequência e podem exigir que você reestruture seu ambiente.  
   
-O modelo de domínio regional consiste em um domínio raiz da floresta e um ou mais domínios regionais. Criando um projeto de modelo de domínio regional envolve identificar qual domínio é o domínio raiz da floresta e determinar o número de domínios adicionais que são necessários para atender às suas necessidades de replicação. Se sua organização inclui os grupos que exigem isolamento de dados ou isolamento de serviço de outros grupos da organização, crie uma floresta separada para esses grupos. Domínios não fornecem isolamento de dados ou isolamento de serviço.  
+O modelo de domínio regional consiste em um domínio raiz da floresta e em um ou mais domínios regionais. Criar um design de modelo de domínio regional envolve identificar qual domínio é o domínio raiz da floresta e determinar o número de domínios adicionais necessários para atender aos seus requisitos de replicação. Se sua organização incluir grupos que exigem isolamento de dados ou isolamento de serviço de outros grupos na organização, crie uma floresta separada para esses grupos. Os domínios não fornecem isolamento de dados ou isolamento de serviço.  

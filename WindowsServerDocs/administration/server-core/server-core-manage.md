@@ -1,18 +1,18 @@
 ---
 title: Gerenciar o Server Core
 description: Saiba como gerenciar uma instalação Server Core do Windows Server
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 07/23/2019
-ms.openlocfilehash: bbb04e761dbb1dd48d95e15d11c91608f4d6c240
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: bd96dbfc93f3999d8fb3ddf7ec94cc11025bba30
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476544"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383401"
 ---
 # <a name="manage-a-server-core-server"></a>Gerenciar um servidor Server Core
  
@@ -30,7 +30,7 @@ Você também pode adicionar hardware e gerenciar drivers localmente, desde que 
 
 Há algumas limitações e dicas importantes para ter em mente quando você trabalha com o Server Core:
 
-- Se você fechar todas as janelas de prompt de comando e quiser abrir uma nova janela de prompt de comando, poderá fazer isso no Gerenciador de tarefas. Pressione **Ctrl\+ALT\+Delete**, clique em **iniciar Gerenciador de tarefas**, clique em **mais detalhes > Arquivo > executar**e digite **cmd. exe**. (Digite **PowerShell. exe** para abrir uma janela de comando do PowerShell.) Como alternativa, você pode sair e entrar novamente.
+- Se você fechar todas as janelas de prompt de comando e quiser abrir uma nova janela de prompt de comando, poderá fazer isso no Gerenciador de tarefas. Pressione **Ctrl @ no__t-1ALT @ no__t-2DELETE**, clique em **iniciar Gerenciador de tarefas**, clique em **mais detalhes > Arquivo > executar**e digite **cmd. exe**. (Digite **PowerShell. exe** para abrir uma janela de comando do PowerShell.) Como alternativa, você pode sair e entrar novamente.
 - Nenhum comando ou ferramenta que tente iniciar o Windows Explorer vai funcionar. Por exemplo, executar **Iniciar.** de um prompt de comando não funcionará.
 - Não há suporte para renderização HTML ou ajuda HTML no Server Core.
 - O Server Core dá suporte a Windows Installer no modo silencioso para que você possa instalar ferramentas e utilitários de Windows Installer arquivos. Ao instalar Windows Installer pacotes no Server Core, use a opção **/QB** para exibir a interface do usuário básica.
@@ -87,7 +87,7 @@ Para permitir que apenas snap-ins específicos do MMC se conectem, execute o seg
 Enable-NetFirewallRule -DisplayGroup "<rulegroup>"
 ```
 
-Em  que o Ruler é um dos seguintes, dependendo de qual snap-in você deseja conectar:
+Em que o *Ruler* é um dos seguintes, dependendo de qual snap-in você deseja conectar:
 
 | Snap-in do MMC                            | Grupo de regras                                            |
 | ---------------------------------------- | ------------------------------------------------------- |

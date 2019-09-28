@@ -1,8 +1,8 @@
 ---
-title: ksetup:setcomputerpassword
-description: 'Tópico de comandos do Windows para * * *- '
+title: 'ksetup: setcomputerpassword'
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0679bb9ee429e05c7679411c5493bd21b530ef8e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d1d3742476385eb770c9cb5c798c1f6ab27c74f8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831537"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374937"
 ---
-# <a name="ksetupsetcomputerpassword"></a>ksetup:setcomputerpassword
+# <a name="ksetupsetcomputerpassword"></a>ksetup: setcomputerpassword
 
 
 
@@ -36,19 +36,19 @@ ksetup /setcomputerpassword <Password>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Senha >|Usa a senha fornecida para definir a conta de computador no computador local.</br>A senha só pode ser definida usando uma conta com privilégios administrativos. A senha pode ser de 1 a 156 alfanuméricos ou caracteres especiais.|
+|\<Password >|Usa a senha fornecida para definir a conta de computador no computador local.</br>A senha só pode ser definida usando uma conta com privilégios administrativos. A senha pode ter de 1 a 156 caracteres alfanuméricos ou especiais.|
 
 ## <a name="remarks"></a>Comentários
 
-Esse comando afeta apenas a conta de computador.
+Esse comando afeta apenas a conta do computador.
 
-Você deve reiniciar o computador para que a alteração de senha entrar em vigor.
+Você deve reiniciar o computador para que a alteração da senha entre em vigor.
 
-A senha da conta de computador não é exibida no registro ou como saída o **ksetup** comando.
+A senha da conta de computador não é exibida no registro nem como saída do comando **ksetup** .
 
-## <a name="BKMK_Examples"></a>Exemplos
+## <a name="BKMK_Examples"></a>Disso
 
-Altere a senha da conta de computador no computador local de IPops897 para IPop$ 897!.
+Altere a senha da conta de computador no computador local de IPops897 para IPop $897!.
 ```
 ksetup /setcomputerpassword IPop$897!
 ```
@@ -56,4 +56,4 @@ ksetup /setcomputerpassword IPop$897!
 #### <a name="additional-references"></a>Referências adicionais
 
 -   [Ksetup](ksetup.md)
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

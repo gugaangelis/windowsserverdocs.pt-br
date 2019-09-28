@@ -1,8 +1,8 @@
 ---
 title: exit
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e599f84389b23e527e3718a620d5fdfefe24edb
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 105bf572c1ebeb37ea59ff8bc5c04121d2442341
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66439466"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377354"
 ---
 # <a name="exit"></a>exit
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-sai do programa Cmd.exe (o interpretador de comando) ou o script em lotes atual.  
+Sai do programa cmd. exe (o interpretador de comando) ou o script em lote atual.  
 Para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_examples).  
 ## <a name="syntax"></a>Sintaxe  
 ```  
@@ -34,12 +34,12 @@ exit [/b] [<exitCode>]
 
 | Parâmetro  |                                                                                         Descrição                                                                                          |
 |------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     /b     |                                      sai do script em lotes atual em vez de fechar Cmd.exe. Se executado fora de um script em lotes, será fechado Cmd.exe.                                      |
-| <exitCode> | Especifica um número. Se **/b** for especificado, a variável de ambiente ERRORLEVEL é definida para esse número. Se você estiver saindo **Cmd.exe**, o código de saída do processo é definido para esse número. |
+|     /b.     |                                      Sai do script do lote atual em vez de sair do cmd. exe. Se executado de fora de um script em lotes, o fechará cmd. exe.                                      |
+| <exitCode> | Especifica um número numérico. Se **/b** for especificado, a variável de ambiente ERRORLEVEL será definida para esse número. Se você estiver encerrando **cmd. exe**, o código de saída do processo será definido como esse número. |
 |     /?     |                                                                             Exibe a ajuda no prompt de comando.                                                                             |
 
-## <a name="BKMK_examples"></a>Exemplos  
-Para fechar o interpretador de comandos, Cmd.exe, digite:  
+## <a name="BKMK_examples"></a>Disso  
+Para fechar o interpretador de comandos, cmd. exe, digite:  
 ```  
 exit  
 ```  

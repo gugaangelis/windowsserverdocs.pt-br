@@ -7,19 +7,19 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3617335a179ab419982ab57343999ad4fcaf522a
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: cd559e38c38e96d1417257fe7d6ff8ccfa180c6b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190156"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358424"
 ---
 # <a name="add-privacy-link"></a>Adicione link de privacidade 
 
 
-Para adicionar o link de privacidade que é exibido no sinal de\-na página, use o seguinte cmdlet do Windows PowerShell e a sintaxe.  
+Para adicionar o link de privacidade exibido na página assinar @ no__t-0in, use o cmdlet e a sintaxe do Windows PowerShell a seguir.  
 
 ![Adicionar link de privacidade](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png) 
   
@@ -28,7 +28,7 @@ Para adicionar o link de privacidade que é exibido no sinal de\-na página, use
  
   
 > [!IMPORTANT]  
-> O parâmetro `linkText` nesse cmdlet não é necessário, a menos que você use outro valor diferente do padrão, que é *Privacidade*. A vantagem de usar o padrão é que as páginas são localizadas para todas as localidades de cliente. Após o sinal\-na página é personalizado, a personalização terá prioridade; portanto, você deve personalizar para todos os idiomas que você deseja dar suporte. Todo conteúdo personalizado possui um parâmetro de localidade. Quando você configura o conteúdo localizado, você deve configurá-lo com um país\-menos localidade primeiro, por exemplo, "en", antes de configurar o país e região\-localidade específica, como "en\-us".  
+> O parâmetro `linkText` nesse cmdlet não é necessário, a menos que você use outro valor diferente do padrão, que é *Privacidade*. A vantagem de usar o padrão é que as páginas são localizadas para todas as localidades de cliente. Depois que a página Sign @ no__t-0in for personalizada, a personalização terá precedência; Portanto, você deve personalizar o para todos os idiomas aos quais deseja dar suporte. Todo conteúdo personalizado possui um parâmetro de localidade. Ao configurar conteúdo localizado, você deve configurá-lo com uma localidade @ no__t-0less primeiro, por exemplo, "en", antes de configurar o país e a região @ no__t-1specific localidade, como "en @ no__t-2US".  
 
 ## <a name="additional-references"></a>Referências adicionais 
-[AD FS Sign-personalização de usuário](AD-FS-user-sign-in-customization.md)  
+[AD FS a personalização de entrada do usuário](AD-FS-user-sign-in-customization.md)  

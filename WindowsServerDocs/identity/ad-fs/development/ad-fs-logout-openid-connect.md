@@ -6,23 +6,23 @@ ms.author: billmath
 manager: femila
 ms.date: 11/17/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3af10ec139edbc72e75bf80f544ac5b4f1cf9222
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5f0127e60243ca81f7e25282adc79e01c54b4b32
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825767"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407854"
 ---
 #  <a name="single-log-out-for-openid-connect-with-ad-fs"></a>Logoff único para OpenID Connect com o AD FS
 
 ## <a name="overview"></a>Visão geral
-Aproveitando o suporte Oauth inicial no AD FS no Windows Server 2012 R2, o AD FS 2016 introduziu o suporte para logon OpenId Connect. Com o [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801), AD FS 2016 agora dá suporte ao logoff único para cenários de OpenId Connect. Este artigo fornece uma visão geral de logoff único para o cenário de OpenId Connect e fornece orientação sobre como usá-lo para seus aplicativos de OpenId Connect no AD FS.
+Com base no suporte de OAuth inicial no AD FS no Windows Server 2012 R2, AD FS 2016 introduziu o suporte para logon do OpenId Connect. Com o [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801), o AD FS 2016 agora dá suporte ao logoff único para cenários do OpenID Connect. Este artigo fornece uma visão geral do cenário de logoff único para OpenId Connect e fornece orientação sobre como usá-lo para seus aplicativos OpenId Connect no AD FS.
 
 
 ## <a name="discovery-doc"></a>Documento de descoberta
-OpenID Connect usa um documento JSON chamado "documento de descoberta" para fornecer detalhes sobre a configuração.  Isso inclui os URIs da autenticação, token, userinfo e pontos de extremidade público.  O exemplo a seguir é um exemplo de como o documento de descoberta.
+O OpenID Connect usa um documento JSON chamado "documento de descoberta" para fornecer detalhes sobre a configuração.  Isso inclui URIs de autenticação, token, UserInfo e pontos de extremidade públicos.  Veja a seguir um exemplo do documento de descoberta.
 
 ```
 {
@@ -57,28 +57,28 @@ OpenID Connect usa um documento JSON chamado "documento de descoberta" para forn
 
 
 
-Os seguintes valores adicionais estarão disponíveis no documento de descoberta para indicar o suporte para o front-Logout de canal:
+Os seguintes valores adicionais estarão disponíveis no documento de descoberta para indicar suporte para o logout do canal frontal:
 
-- frontchannel_logout_supported: value will be 'true'
-- frontchannel_logout_session_supported: value will be 'true'.
-- end_session_endpoint: esse é o URI que o cliente pode usar para iniciar o logout no servidor de logout do OAuth.
+- frontchannel_logout_supported: o valor será ' true '
+- frontchannel_logout_session_supported: o valor será ' true '.
+- end_session_endpoint: esse é o URI de logout do OAuth que o cliente pode usar para iniciar o logout no servidor.
 
 
-## <a name="ad-fs-server-configuration"></a>Configuração de servidor do AD FS
-A propriedade do AD FS EnableOAuthLogout será habilitada por padrão.  Esta propriedade instrui o servidor do AD FS para navegar para a URL (LogoutURI) com o SID para iniciar o logout no cliente. Se você não tiver [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801) instalado, você pode usar o seguinte comando do PowerShell:
+## <a name="ad-fs-server-configuration"></a>Configuração do AD FS Server
+A propriedade AD FS EnableOAuthLogout será habilitada por padrão.  Essa propriedade informa ao servidor de AD FS para procurar a URL (LogoutURI) com o SID para iniciar o logout no cliente. Se você não tiver o [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801) instalado, poderá usar o seguinte comando do PowerShell:
 
 ```PowerShell
 Set-ADFSProperties -EnableOAuthLogout $true
 ```
 
 >[!NOTE]
-> `EnableOAuthLogout` parâmetro será marcado como obsoleto depois de instalar [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801). `EnableOAUthLogout` sempre será true e não terá impacto sobre a funcionalidade de logoff.
+> o parâmetro `EnableOAuthLogout` será marcado como obsoleto após a instalação de [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801). `EnableOAUthLogout` será sempre verdadeiro e não terá impacto sobre a funcionalidade de logout.
 
 >[!NOTE]
->há suporte para a frontchannel_logout **só** após a instalação do [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801)
+>**só** há suporte para frontchannel_logout após instalação VCRedist de [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801)
 
 ## <a name="client-configuration"></a>Configuração do cliente
-Cliente precisa implementar uma url que 'fizer logoff' conectado no usuário. Administrador pode configurar o LogoutUri na configuração do cliente usando os seguintes cmdlets do PowerShell. 
+O cliente precisa implementar uma URL que ' faz logoff ' do usuário conectado. O administrador pode configurar o LogoutUri na configuração do cliente usando os seguintes cmdlets do PowerShell. 
 
 
 - `(Add | Set)-AdfsNativeApplication`
@@ -89,25 +89,25 @@ Cliente precisa implementar uma url que 'fizer logoff' conectado no usuário. Ad
 Set-AdfsClient -LogoutUri <url>
 ```
 
-O `LogoutUri` é a url usada pelos AF FS "logoff" o usuário. Para implementar o `LogoutUri`, o cliente precisa para assegurar que ele limpa o estado de autenticação do usuário no aplicativo, por exemplo, removendo a autenticação de tokens que ele tem. O AD FS será navegue para a URL, com o SID como o parâmetro de consulta, a terceira a sinalização / aplicativo faça logoff do usuário. 
+O `LogoutUri` é a URL usada pelo AF FS para "fazer logoff" do usuário. Para implementar o `LogoutUri`, o cliente precisa garantir que ele limpe o estado de autenticação do usuário no aplicativo, por exemplo, descartando os tokens de autenticação que ele tem. AD FS navegará até essa URL, com o SID como o parâmetro de consulta, sinalizando a terceira parte confiável/aplicativo para fazer logoff do usuário. 
 
 ![](media/ad-fs-logout-openid-connect/adfs_single_logout2.png)
 
 
-1.  **O token OAuth com ID de sessão**: AD FS inclui a id de sessão no token OAuth no momento da emissão de token do id_token. Isso será usado posteriormente pelo AD FS para identificar os cookies SSO relevantes sejam limpos para o usuário.
-2.  **Usuário inicia o logout no App1**: O usuário pode iniciar um logoff de qualquer aplicativo conectado. Nesse cenário de exemplo, um usuário inicia um logoff do App1.
-3.  **Aplicativo envia a solicitação de logoff para o AD FS**: Depois que o usuário inicia o logout, o aplicativo envia uma solicitação GET para end_session_endpoint do AD FS. O aplicativo pode incluir opcionalmente id_token_hint como um parâmetro para esta solicitação. Se id_token_hint estiver presente, o AD FS será usá-lo em conjunto com a ID de sessão para calcular out quais URI o cliente deverá ser redirecionado após logoff (post_logout_redirect_uri).  O post_logout_redirect_uri deve ser um uri válido registrado com o AD FS usando o parâmetro RedirectUris.
-4.  **AD FS envia saído para os clientes registrados em**: O AD FS usa o valor do identificador de sessão para localizar os clientes relevantes que o usuário está conectado ao. Os clientes identificados são enviados a solicitação no LogoutUri registrado com o AD FS para iniciar um logoff no lado do cliente.
+1.  **Token OAuth com ID de sessão**: AD FS inclui a ID de sessão no token OAuth no momento da emissão de token id_token. Isso será usado posteriormente por AD FS para identificar os cookies de SSO relevantes a serem limpos para o usuário.
+2.  O **usuário inicia o logout no App1**: O usuário pode iniciar um logoff de qualquer um dos aplicativos conectados. Neste cenário de exemplo, um usuário inicia um logout do App1.
+3.  O **aplicativo envia a solicitação de logout para AD FS**: Depois que o usuário inicia o logout, o aplicativo envia uma solicitação GET para end_session_endpoint de AD FS. O aplicativo pode, opcionalmente, incluir id_token_hint como um parâmetro para essa solicitação. Se id_token_hint estiver presente, AD FS o usará em conjunto com a ID de sessão para descobrir a qual URI o cliente deve ser redirecionado após logout (post_logout_redirect_uri).  O post_logout_redirect_uri deve ser um URI válido registrado com AD FS usando o parâmetro RedirectUris.
+4.  **AD FS envia a saída para clientes conectados**: AD FS usa o valor do identificador de sessão para localizar os clientes relevantes aos quais o usuário está conectado. Os clientes identificados são solicitações enviadas no LogoutUri registrado com AD FS para iniciar um logoff no lado do cliente.
 
 ## <a name="faqs"></a>Perguntas frequentes
-**P:** Não vejo os parâmetros frontchannel_logout_supported e frontchannel_logout_session_supported no documento de descoberta.</br>
-**R:** Certifique-se de que você tenha [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801) instalado em todos os servidores do AD FS. Consulte o logoff único no Server 2016 com [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801).
+**PERGUNTAS** Não vejo os parâmetros frontchannel_logout_supported e frontchannel_logout_session_supported no documento de descoberta.</br>
+**R:** Verifique se você tem o [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801) instalado em todos os servidores de AD FS. Consulte o log único no servidor 2016 com [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801).
 
-**P:** Configurei o logoff único conforme indicado, mas usuário permanece conectado em outros clientes.</br>
-**R:** Certifique-se de que `LogoutUri` está definido para todos os clientes onde o usuário está conectado. Além disso, o AD FS faz uma tentativa de melhor caso para enviar a solicitação de saída em registrado `LogoutUri`. Cliente deve implementar a lógica para manipular a solicitação e tomar medidas para desconectar o usuário do aplicativo.</br>
+**PERGUNTAS** Configurei o logoff único como direcionado, mas o usuário permanece conectado em outros clientes.</br>
+**R:** Verifique se `LogoutUri` está definido para todos os clientes em que o usuário está conectado. Além disso, AD FS faz uma tentativa mais recomendável de enviar a solicitação de saída no @no__t registrado-0. O cliente deve implementar a lógica para lidar com a solicitação e tomar medidas para desconectar o usuário do aplicativo.</br>
 
-**P:** Se depois de logoff, um dos clientes voltar para o AD FS com um token de atualização válido, o AD FS emitirá um token de acesso?</br>
-**R:** Sim. É responsabilidade do aplicativo cliente para descartar autenticados todos os artefatos depois que uma solicitação de saída foi recebida no registrado `LogoutUri`.
+**PERGUNTAS** Se, após o logout, um dos clientes voltar para AD FS com um token de atualização válido, AD FS emitirá um token de acesso?</br>
+**R:** Sim. É responsabilidade do aplicativo cliente descartar todos os artefatos autenticados depois que uma solicitação de saída foi recebida no @no__t registrado-0.
 
 
 ## <a name="next-steps"></a>Próximas etapas

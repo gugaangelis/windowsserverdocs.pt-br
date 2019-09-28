@@ -1,6 +1,6 @@
 ---
 title: Falha de tolerância e eficiência de armazenamento em Espaços de Armazenamento Diretos
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: cosmosdarwin
 ms.manager: eldenc
 ms.technology: storage-spaces
@@ -10,12 +10,12 @@ ms.date: 10/11/2017
 ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
 description: Uma discussão sobre opções de resiliência em Espaços de Armazenamento Diretos incluindo espelhamento e paridade.
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e6a29e82a85ec9570cda827060dfe1cdf192c53
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d2220584c0021352110b27c3107d1113eb17ef59
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849567"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393812"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>Falha de tolerância e eficiência de armazenamento em Espaços de Armazenamento Diretos
 
@@ -171,7 +171,7 @@ Esta tabela mostra a eficiência de armazenamento de paridade dual e códigos de
 |    15                 |    RS 6+2           |    75.0%        |
 |    16                 |    LRC (12, 2, 1)   |    80,0%        |
 
-## <a name="examples"></a>Exemplos
+## <a name="examples"></a>Disso
 
 A menos que você tenha apenas dois servidores, recomendamos usar espelhamento triplo e/ou paridade dupla, porque eles oferecem uma tolerância a falhas melhor. Mais especificamente, eles garantem que todos os dados continuem seguros e acessíveis continuamente, mesmo quando dois domínios com falha – com Espaços de Armazenamento Diretos, isso significa dois servidores – são afetados por falhas simultâneas.
 
@@ -184,13 +184,13 @@ Estes seis exemplos mostram o que o espelhamento triplo e/ou a paridade dupla **
 
 ![fault-tolerance-examples-1-and-2](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-12.png)
 
-- **3.**    Um servidor e uma unidade perdida
-- **4.**    Duas unidades perdidas em servidores diferentes
+- **Beta.**    Um servidor e uma unidade perdidos
+- **quatro.**    Duas unidades perdidas em servidores diferentes
 
 ![fault-tolerance-examples-3-and-4](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-34.png)
 
-- **5.**    Mais de duas unidades perdidas, desde que no máximo dois servidores são afetados
-- **6.**    Dois servidores perdidos
+- **05.**    Mais de duas unidades foram perdidas, desde que no máximo dois servidores sejam afetados
+- **152.**    Dois servidores perdidos
 
 ![fault-tolerance-examples-5-and-6](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-56.png)
 
@@ -201,7 +201,7 @@ Estes seis exemplos mostram o que o espelhamento triplo e/ou a paridade dupla **
 Durante a vida útil, Espaços de Armazenamento podem tolerar qualquer número de falhas, uma vez que restauram a resiliência completa depois de cada uma, dando tempo suficiente. No entanto, no máximo, dois domínios de falha podem ser afetados com segurança por falhas em um dado momento. Estes são, portanto, exemplos do que o espelhamento triplo e/ou a paridade dupla **não pode** tolerar.
 
 - **7.** Unidades perdidas em três ou mais servidores ao mesmo tempo
-- **8.** Três ou mais servidores ao mesmo tempo perdido
+- **8.** Três ou mais servidores perdidos ao mesmo tempo
 
 ![fault-tolerance-examples-7-and-8](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-78.png)
 
@@ -213,10 +213,10 @@ Consulte [Criando volumes em Espaços de Armazenamento Diretos](create-volumes.m
 
 Cada link abaixo está embutido em algum lugar no corpo deste tópico.
 
-- [Espaços de armazenamento diretos no Windows Server 2016](storage-spaces-direct-overview.md)
+- [Espaços de Armazenamento Diretos no Windows Server 2016](storage-spaces-direct-overview.md)
 - [Reconhecimento de domínio de falha no Windows Server 2016](../../failover-clustering/fault-domains.md)
-- [Codificação de eliminação no Azure pela Microsoft Research](https://www.microsoft.com/en-us/research/publication/erasure-coding-in-windows-azure-storage/)
-- [Códigos de reconstrução local e Volumes de paridade acelerando](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
-- [Volumes em que a API de gerenciamento de armazenamento](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
+- [Codificação de apagamento no Azure pela Microsoft Research](https://www.microsoft.com/en-us/research/publication/erasure-coding-in-windows-azure-storage/)
+- [Códigos de reconstrução locais e acelerando os volumes de paridade](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
+- [Volumes na API de gerenciamento de armazenamento](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
 - [Demonstração de eficiência de armazenamento no Microsoft Ignite 2016](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
-- [Calculadora de capacidade visualização para o armazenamento de espaços diretos](http://aka.ms/s2dcalc)
+- [VISUALIZAÇÃO da calculadora de capacidade para Espaços de Armazenamento Diretos](http://aka.ms/s2dcalc)

@@ -1,8 +1,8 @@
 ---
-title: cache de Bitsadmin clara
-description: Tópico de comandos do Windows para **bitsadmin cache clara** -limpa o cache local.
+title: limpeza do cache Bitsadmin
+description: O tópico de comandos do Windows para o **cache Bitsadmin limpa** -limpa o cache local.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ebf99efad228899129e696fe9cf56ef03a80bee4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c91079c439c505a0e73e48cc5fbcb26679b150b6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868477"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381933"
 ---
-# <a name="bitsadmin-cache-and-clear"></a>cache bitsadmin e limpe
+# <a name="bitsadmin-cache-and-clear"></a>Bitsadmin cache e Clear
 
 
 
@@ -32,7 +32,7 @@ Limpa o cache local.
 bitsadmin /Cache /Clear 
 ```
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 O exemplo a seguir limpa o cache local.
 ```
@@ -41,4 +41,4 @@ C:\>bitsadmin /Cache /Clear
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

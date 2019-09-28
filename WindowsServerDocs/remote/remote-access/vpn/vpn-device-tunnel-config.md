@@ -1,7 +1,7 @@
 ---
-title: Configurar o túnel de dispositivo VPN no Windows 10
+title: Configurar o túnel do dispositivo VPN no Windows 10
 description: Saiba como criar um túnel de dispositivo VPN no Windows 10.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.date: 11/05/2018
 ms.technology: networking-ras
 ms.topic: article
@@ -9,32 +9,32 @@ ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: 989216f90e78689b464240cff957bab1d9c1229b
-ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
+ms.openlocfilehash: a216c490c92461e07fd5093783ec2c3049e8accb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66749565"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388030"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>Configurar túneis de dispositivo VPN no Windows 10
 
 >Aplica-se a: Windows 10 versão 1709
 
-VPN Always On fornece a capacidade de criar um perfil VPN dedicado para o computador ou dispositivo. Conexões de VPN Always On incluem dois tipos de túneis: 
+Always On VPN oferece a capacidade de criar um perfil VPN dedicado para o dispositivo ou computador. Always On conexões VPN incluem dois tipos de túneis: 
 
-- _Túnel de dispositivo_ conecta-se a servidores VPN especificados antes dos usuários fizerem logon no dispositivo. Cenários de conectividade de pré-logon e fins de gerenciamento de dispositivo usam túnel do dispositivo.
+- O _túnel de dispositivo_ se conecta a servidores VPN especificados antes que os usuários façam logon no dispositivo. Os cenários de conectividade de pré-logon e o gerenciamento de dispositivos usam o túnel de dispositivo.
 
-- _Túnel do usuário_ conecta-se somente depois de um usuário faz logon no dispositivo. Túnel do usuário permite que os usuários acessem recursos da organização por meio de servidores VPN.
+- O _túnel do usuário_ se conecta somente depois que um usuário faz logon no dispositivo. O túnel do usuário permite que os usuários acessem recursos da organização por meio de servidores VPN.
 
-Diferentemente _túnel do usuário_, que se conecta somente depois de um usuário faz logon no dispositivo ou computador, _túnel do dispositivo_ permite que a VPN estabelecer a conectividade antes do usuário fizer logon. Ambos _túnel do dispositivo_ e _túnel do usuário_ operar de forma independente com seus perfis VPN, podem ser conectados ao mesmo tempo e pode usar diferentes métodos de autenticação e outras definições de configuração de VPN conforme apropriado. Túnel de usuário dá suporte a SSTP e IKEv2 e túnel do dispositivo dá suporte a IKEv2 somente com não há suporte para o fallback SSTP.
+Ao contrário do _encapsulamento do usuário_, que se conecta somente depois que um usuário faz logon no dispositivo ou computador, o _túnel de dispositivo_ permite que a VPN estabeleça conectividade antes que o usuário faça logon. O túnel de _dispositivo_ e o _túnel de usuário_ operam de forma independente com seus perfis de VPN, podem ser conectados ao mesmo tempo e podem usar diferentes métodos de autenticação e outras definições de configuração de VPN, conforme apropriado. O túnel do usuário dá suporte a SSTP e IKEv2, e o túnel de dispositivo dá suporte a IKEv2 somente sem suporte para fallback de SSTP.
 
-Há suporte para o túnel do usuário em ingressado no domínio, ingressado fora do domínio (grupo de trabalho) ou dispositivos ingressados ao AD do Azure para permitir o enterprise e cenários de BYOD. Ele está disponível em todas as edições do Windows e os recursos da plataforma estão disponíveis para terceiros por meio do suporte a plug-in VPN de UWP.
+O túnel do usuário tem suporte em dispositivos ingressados no domínio, não ingressados no domínio (grupo de trabalho) ou no Azure AD – para permitir cenários empresariais e BYOD. Ele está disponível em todas as edições do Windows, e os recursos de plataforma estão disponíveis para terceiros por meio do suporte de plug-in de VPN UWP.
 
-Túnel do dispositivo só pode ser configurada em dispositivos ingressados no domínio executando o Windows 10 Enterprise ou educação versão 1709 ou posterior. Não há nenhum suporte para controle de terceiros do túnel do dispositivo.
+O túnel de dispositivo só pode ser configurado em dispositivos ingressados no domínio que executam o Windows 10 Enterprise ou o Education versão 1709 ou posterior. Não há suporte para controle de terceiros do túnel do dispositivo.
 
 
-## <a name="device-tunnel-requirements-and-features"></a>Recursos e requisitos de túnel do dispositivo
-Você deve habilitar a autenticação de certificado de computador para conexões VPN e definir uma autoridade de certificação raiz para autenticar conexões VPN de entrada. 
+## <a name="device-tunnel-requirements-and-features"></a>Recursos e requisitos de túnel de dispositivo
+Você deve habilitar a autenticação de certificado do computador para conexões VPN e definir uma autoridade de certificação raiz para autenticar conexões VPN de entrada. 
 
 ```PowerShell
 $VPNRootCertAuthority = “Common Name of trusted root certification authority”
@@ -42,18 +42,18 @@ $RootCACert = (Get-ChildItem -Path cert:LocalMachine\root | Where-Object {$_.Sub
 Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateNameToAccept $RootCACert -PassThru
 ```
 
-![Requisitos e recursos de túnel do dispositivo](../../media/device-tunnel-feature-and-requirements.png)
+![Recursos e requisitos de túnel de dispositivo](../../media/device-tunnel-feature-and-requirements.png)
 
 ## <a name="vpn-device-tunnel-configuration"></a>Configuração de túnel do dispositivo VPN
 
-O perfil de exemplo XML abaixo fornece boas diretrizes para cenários em que o cliente só iniciada puxa são necessários por meio do túnel do dispositivo.  Filtros de tráfego serão utilizados para restringir o túnel de dispositivo para apenas o tráfego de gerenciamento.  Essa configuração funciona bem para atualizar o Windows, política de grupo típicas (GP) e cenários de atualização do System Center Configuration Manager (SCCM), bem como conectividade VPN para o primeiro logon sem credenciais armazenadas em cache ou cenários de redefinição de senha. 
+O XML do perfil de exemplo abaixo fornece uma boa orientação para cenários em que somente os pull iniciados pelo cliente são necessários no túnel do dispositivo.  Os filtros de tráfego são utilizados para restringir o túnel de dispositivo somente ao tráfego de gerenciamento.  Essa configuração funciona bem para cenários de atualização Windows Update, típica Política de Grupo (GP) e System Center Configuration Manager (SCCM), bem como conectividade VPN para o primeiro logon sem credenciais em cache ou cenários de redefinição de senha. 
 
-Para casos de envio por push iniciadas pelo servidor, como o Windows Remote Management (WinRM), GPUpdate remoto e cenários de atualização do SCCM remotos – permitir tráfego de entrada no túnel de dispositivo, portanto, não podem ser usados filtros de tráfego.  Se no perfil do dispositivo de túnel ativar filtros de tráfego, o dispositivo de túnel nega o tráfego de entrada.  Essa limitação será removida em versões futuras.
+Para casos de push iniciados pelo servidor, como Gerenciamento Remoto do Windows (WinRM), GPUpdate remotos e cenários remotos de atualização do SCCM – você deve permitir o tráfego de entrada no túnel do dispositivo, portanto, os filtros de tráfego não podem ser usados.  Se no perfil de túnel de dispositivo você ativar os filtros de tráfego, o túnel de dispositivo negará o tráfego de entrada.  Essa limitação será removida em versões futuras.
 
 
-### <a name="sample-vpn-profilexml"></a>Exemplo profileXML VPN
+### <a name="sample-vpn-profilexml"></a>Exemplo de profileXML de VPN
 
-A seguir está o exemplo VPN profileXML.
+A seguir está o exemplo de profileXML de VPN.
 
 ``` xml
 <VPNProfile>  
@@ -89,7 +89,7 @@ A seguir está o exemplo VPN profileXML.
 </VPNProfile>
 ```
 
-Dependendo das necessidades de cada cenário de implantação em particular, é outro recurso VPN que pode ser configurado com o túnel de dispositivo [detecção de rede confiável](https://social.technet.microsoft.com/wiki/contents/articles/38546.new-features-for-vpn-in-windows-10-and-windows-server-2016.aspx#Trusted_Network_Detection).
+Dependendo das necessidades de cada cenário de implantação específico, outro recurso de VPN que pode ser configurado com o túnel de dispositivo é [detecção de rede confiável](https://social.technet.microsoft.com/wiki/contents/articles/38546.new-features-for-vpn-in-windows-10-and-windows-server-2016.aspx#Trusted_Network_Detection).
 
 ```
  <!-- inside/outside detection -->
@@ -98,21 +98,21 @@ Dependendo das necessidades de cada cenário de implantação em particular, é 
 
 ## <a name="deployment-and-testing"></a>Implantação e teste
 
-Você pode configurar túneis de dispositivo usando um script do Windows PowerShell e usando a ponte de Windows Management Instrumentation (WMI). O túnel de dispositivo de VPN Always On deve ser configurado no contexto do **sistema LOCAL** conta. Para fazer isso, será necessário usar [PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec), um da [PsTools](https://docs.microsoft.com/sysinternals/downloads/pstools) incluídos no [Sysinternals](https://docs.microsoft.com/sysinternals/) conjunto de utilitários.
+Você pode configurar os túneis de dispositivo usando um script do Windows PowerShell e usando a ponte Instrumentação de Gerenciamento do Windows (WMI). O túnel de dispositivo VPN Always On deve ser configurado no contexto da conta do **sistema local** . Para fazer isso, será necessário usar o [PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec), um dos [PsTools](https://docs.microsoft.com/sysinternals/downloads/pstools) incluídos no pacote de utilitários do [Sysinternals](https://docs.microsoft.com/sysinternals/) .
 
-Para obter diretrizes sobre como implantar um por dispositivo `(.\Device)` versus um por usuário `(.\User)` de perfil, consulte [usando o PowerShell scripts com o provedor WMI do Bridge](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider).
+Para obter diretrizes sobre como implantar um perfil por dispositivo `(.\Device)` versus um por usuário `(.\User)`, consulte [usando o script do PowerShell com o provedor de ponte WMI](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider).
 
-Execute o seguinte comando do Windows PowerShell para verificar que você implantou um perfil de dispositivo com êxito:
+Execute o seguinte comando do Windows PowerShell para verificar se você implantou com êxito um perfil de dispositivo:
 
   ```powershell
   Get-VpnConnection -AllUserConnection
   ```
 
-A saída exibe uma lista de dispositivo\-amplos perfis VPN que são implantados no dispositivo.
+A saída exibe uma lista dos perfis de VPN do dispositivo @ no__t-0wide que são implantados no dispositivo.
 
-### <a name="example-windows-powershell-script"></a>Exemplo Script do Windows PowerShell
+### <a name="example-windows-powershell-script"></a>Exemplo de script do Windows PowerShell
 
-Você pode usar o seguinte script do Windows PowerShell para auxiliar na criação de seu próprio script para a criação de perfil.
+Você pode usar o script do Windows PowerShell a seguir para auxiliar na criação de seu próprio script para a criação de perfil.
 
 ```PowerShell
 Param(
@@ -167,24 +167,24 @@ Write-Host "$Message"
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-A seguir estão os recursos adicionais para ajudá-lo com sua implantação de VPN.
+Veja a seguir os recursos adicionais para ajudá-lo em sua implantação de VPN.
 
 ### <a name="vpn-client-configuration-resources"></a>Recursos de configuração de cliente VPN
 
 A seguir estão os recursos de configuração de cliente VPN.
 
 - [Como criar perfis VPN no System Center Configuration Manager](https://docs.microsoft.com/sccm/protect/deploy-use/create-vpn-profiles)
-- [Configurar o cliente do Windows 10 sempre em conexões VPN](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
-- [Opções de perfil VPN](https://docs.microsoft.com/windows/access-protection/vpn/vpn-profile-options)
+- [Configurar conexões VPN Always On cliente do Windows 10](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
+- [Opções de perfil de VPN](https://docs.microsoft.com/windows/access-protection/vpn/vpn-profile-options)
 
-### <a name="remote-access-server-gateway-resources"></a>Recursos de Gateway de servidor de acesso remotos
+### <a name="remote-access-server-gateway-resources"></a>Recursos de gateway do servidor de acesso remoto
 
-Estes são os recursos de Gateway de servidor de acesso remoto (RAS).
+A seguir estão os recursos de gateway de RAS (servidor de acesso remoto).
 
 - [Configurar o RRAS com um certificado de autenticação de computador](https://technet.microsoft.com/library/dd458982.aspx)
-- [Solucionando problemas de conexões de VPN IKEv2](https://technet.microsoft.com/library/dd941612.aspx)
-- [Configurar o acesso remoto baseada em IKEv2](https://technet.microsoft.com/library/ff687731.aspx)
+- [Solucionando problemas de conexões VPN IKEv2](https://technet.microsoft.com/library/dd941612.aspx)
+- [Configurar o acesso remoto baseado em IKEv2](https://technet.microsoft.com/library/ff687731.aspx)
 
 >[!IMPORTANT]
->Ao usar o túnel do dispositivo com um gateway de RAS da Microsoft, você precisará configurar o servidor RRAS para dar suporte à autenticação de certificado de computador IKEv2, permitindo que o **permitir autenticação de certificado de computador para IKEv2** método de autenticação, conforme descrito [aqui](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee922682%28v=ws.10%29). Quando essa configuração estiver habilitada, é altamente recomendável que o **Set-VpnAuthProtocol** cmdlet do PowerShell, juntamente com o **RootCertificateNameToAccept** parâmetro opcional, é usado para garantir que As conexões IKEv2 de RRAS são permitidas somente para certificados de cliente VPN que se encadeiam com uma definido explicitamente interna/privada autoridade de certificação raiz. Como alternativa, o **autoridades de certificação raiz confiáveis** repositório no servidor RRAS deve ser corrigido para garantir que ele não contenha autoridades de certificação pública, conforme discutido [aqui](https://blogs.technet.microsoft.com/rrasblog/2009/06/10/what-type-of-certificate-to-install-on-the-vpn-server/). Métodos semelhantes podem também precisam ser considerados para outros gateways de VPN.
+>Ao usar o túnel de dispositivo com um gateway de RAS da Microsoft, você precisará configurar o servidor RRAS para dar suporte à autenticação de certificado de computador IKEv2 habilitando o método **Permitir autenticação de certificado de computador para autenticação IKEv2** , conforme descrito [aqui](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee922682%28v=ws.10%29). Quando essa configuração é habilitada, é altamente recomendável que o cmdlet **set-VpnAuthProtocol** do PowerShell, juntamente com o parâmetro opcional **RootCertificateNameToAccept** , seja usado para garantir que as conexões RRAS IKEv2 sejam permitidas apenas para Certificados de cliente VPN que se encadeam a uma autoridade de certificação raiz interna/privada definida explicitamente. Como alternativa, o armazenamento de **autoridades de certificação raiz confiáveis** no servidor RRAS deve ser alterado para garantir que ele não contenha autoridades de certificação públicas, conforme discutido [aqui](https://blogs.technet.microsoft.com/rrasblog/2009/06/10/what-type-of-certificate-to-install-on-the-vpn-server/). Métodos semelhantes também podem precisar ser considerados para outros gateways de VPN.
 

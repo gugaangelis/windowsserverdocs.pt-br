@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getnoprogresstimeout
-description: Tópico de comandos do Windows para **getnoprogresstimeout bitsadmin** -recupera o período de tempo, em segundos, que o serviço tenta transferir o arquivo depois que ocorre um erro transitório.
+description: Tópico de comandos do Windows para **Bitsadmin getnoprogresstimeout** – recupera o período de tempo, em segundos, que o serviço tenta transferir o arquivo depois que um erro transitório ocorre.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9563b68b8012a49471b56e3b8f2fbd60d1c69756
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7dcc0e445f4cae25c27f5ff70c73f4f2f23975aa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850797"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381497"
 ---
 # <a name="bitsadmin-getnoprogresstimeout"></a>bitsadmin getnoprogresstimeout
 
 
 
-Recupera o período de tempo, em segundos, que o serviço tenta transferir o arquivo depois que ocorre um erro transitório.
+Recupera o período de tempo, em segundos, que o serviço tenta transferir o arquivo após ocorrer um erro transitório.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,15 +36,15 @@ bitsadmin /GetNoProgressTimeout <Job>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir recupera o valor de tempo limite de progresso do trabalho nomeado *myDownloadJob*.
+O exemplo a seguir recupera o valor de tempo limite de progresso para o trabalho chamado *myDownloadJob*.
 ```
 C:\>bitsadmin /GetNoProgressTimeout myDownloadJob
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

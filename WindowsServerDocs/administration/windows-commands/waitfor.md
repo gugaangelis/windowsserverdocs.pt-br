@@ -1,8 +1,8 @@
 ---
 title: waitfor
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 21ced4a9ef0dd7dac5f6c4fc6f171d99fa516c07
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: aecea0ad19ee42e61396eb8b8ccd579b9ce2057b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440315"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362602"
 ---
 # <a name="waitfor"></a>waitfor
 
 
 
-Envia ou espera por um sinal em um sistema. **WAITFOR** é usado para sincronizar os computadores em uma rede.
+Envia ou aguarda um sinal em um sistema. **WAITFOR** é usado para sincronizar computadores em uma rede.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -39,37 +39,37 @@ waitfor [/t <Timeout>] <SignalName>
 
 |       Parâmetro       |                                                                                         Descrição                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /s \<Computer>     | Especifica o nome ou endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
-| /u [\<Domain>\]<User> |                              Executa o script usando as credenciais da conta de usuário especificada. Por padrão, **waitfor** usa credenciais do usuário atual.                               |
-|   /p [\<Password>]    |                                                    Especifica a senha da conta de usuário que é especificada na **/u** parâmetro.                                                     |
+|    /s \<Computer >     | Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
+| /u [\<Domain > \] @ no__t-2 |                              Executa o script usando as credenciais da conta de usuário especificada. Por padrão, **WAITFOR** usa as credenciais do usuário atual.                               |
+|   /p [\<Password >]    |                                                    Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .                                                     |
 |          /si          |                                                                        Envia o sinal especificado pela rede.                                                                        |
-|     /t \<Timeout>     |                                              Especifica o número de segundos de espera por um sinal. Por padrão, **waitfor** aguardará indefinidamente.                                               |
-|     \<SignalName>     |                                                Especifica o sinal de que **waitfor** aguarda ou envia. *SignalName* não diferencia maiusculas de minúsculas.                                                 |
+|     /t \<Timeout >     |                                              Especifica o número de segundos a aguardar por um sinal. Por padrão, **WAITFOR** espera indefinidamente.                                               |
+|     \<SignalName >     |                                                Especifica o sinal que **WAITFOR** espera ou envia. *Signalname* não diferencia maiúsculas de minúsculas.                                                 |
 |          /?           |                                                                             Exibe a ajuda no prompt de comando.                                                                             |
 
 ## <a name="remarks"></a>Comentários
 
--   Nomes de sinal não podem exceder 225 caracteres. Caracteres válidos incluem a-z, A-Z, 0-9 e o ASCII estendido de conjunto de caracteres (de 128 a 255).
--   Se você não usar **/s**, o sinal é transmitido para todos os sistemas em um domínio. Se você usar **/s**, o sinal será enviado somente ao sistema especificado.
--   Você pode executar várias instâncias do **waitfor** em um único computador, mas cada instância do **waitfor** deve esperar um sinal diferente. Apenas uma instância do **waitfor** pode esperar que um determinado sinal em um determinado computador.
--   Você pode ativar um sinal manualmente usando o **/si** opção de linha de comando.
--   **WAITFOR** é executado somente no XP do Windows e servidores que executam um sistema operacional Windows Server 2003, mas ele pode enviar sinais para qualquer computador executando o sistema operacional Windows.
--   Computadores só poderão receber sinais se eles estiverem no mesmo domínio que o computador de envio do sinal.
--   Você pode usar **waitfor** quando testar builds de software. Por exemplo, o computador de compilação pode enviar um sinal para vários computadores que executam **waitfor** depois que a compilação foi concluída com êxito. Após o recebimento do sinal, o arquivo em lotes que inclui **waitfor** pode instruir os computadores para iniciar imediatamente a instalação de software ou execução de testes no build compilado.
+-   Os nomes de sinal não podem exceder 225 caracteres. Os caracteres válidos incluem a-z, A-Z, 0-9 e o conjunto de caracteres estendidos ASCII (128-255).
+-   Se você não usar **/s**, o sinal será transmitido para todos os sistemas em um domínio. Se você usar **/s**, o sinal será enviado somente para o sistema especificado.
+-   Você pode executar várias instâncias de **WAITFOR** em um único computador, mas cada instância de **WAITFOR** deve aguardar um sinal diferente. Somente uma instância de **WAITFOR** pode aguardar um determinado sinal em um determinado computador.
+-   Você pode ativar um sinal manualmente usando a opção de linha de comando **/si** .
+-   **WAITFOR** só é executado no Windows XP e em servidores que executam um sistema operacional windows Server 2003, mas pode enviar sinais para qualquer computador que esteja executando um sistema operacional Windows.
+-   Os computadores só poderão receber sinais se estiverem no mesmo domínio que o computador que está enviando o sinal.
+-   Você pode usar **WAITFOR** quando testar as compilações de software. Por exemplo, o computador de compilação pode enviar um sinal para vários computadores executando **WAITFOR** após a conclusão bem-sucedida da compilação. No recebimento do sinal, o arquivo em lotes que inclui o **WAITFOR** pode instruir os computadores a iniciarem imediatamente a instalação do software ou a execução de testes na compilação compilada.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para esperar até que o sinal "espresso\build007" é recebido, digite:
+Para aguardar até que o sinal "espresso\build007" seja recebido, digite:
 ```
 waitfor espresso\build007
 ```
-Por padrão, **waitfor** aguarda indefinidamente por um sinal.
+Por padrão, **WAITFOR** espera indefinidamente por um sinal.
 
-Para esperar o sinal de "espresso\compile007" ser recebida antes do tempo limite de 10 segundos, digite:
+Para aguardar 10 segundos para o sinal "espresso\compile007" ser recebido antes do tempo limite, digite:
 ```
 waitfor /t 10 espresso\build007
 ```
-Para ativar manualmente o valor "espresso\build007", digite:
+Para ativar manualmente o sinal "espresso\build007", digite:
 ```
 waitfor /si espresso\build007
 ```

@@ -1,7 +1,7 @@
 ---
 title: Planejar a implantação de dispositivos usando a atribuição de dispositivo discreta
 description: Saiba mais sobre como o DDA funciona no Windows Server
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 ms.technology: hyper-v
 ms.tgt_pltfrm: na
@@ -9,12 +9,12 @@ ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.date: 02/06/2018
-ms.openlocfilehash: 7df7dbd1e7252f5bab451ed9272f9cbede63d223
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 7084f4951ebe1d1203f4c9e45bc5f73cc6487a84
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476493"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364187"
 ---
 # <a name="plan-for-deploying-devices-using-discrete-device-assignment"></a>Planejar a implantação de dispositivos usando a atribuição de dispositivo discreta
 >Aplica-se a: Microsoft Hyper-V Server 2016, Windows Server 2016, Microsoft Hyper-V Server 2019, Windows Server 2019
@@ -23,7 +23,7 @@ A atribuição de dispositivo discreta permite que o hardware PCIe físico seja 
 
 Para a versão inicial da atribuição de dispositivo discreta, nos concentramos em duas classes de dispositivo para serem formalmente suportadas pela Microsoft: Adaptadores gráficos e dispositivos de armazenamento NVMe.  Outros dispositivos provavelmente funcionarão e os fornecedores de hardware poderão oferecer instruções de suporte para esses dispositivos.  Para esses outros dispositivos, entre em contato com os fornecedores de hardware para obter suporte.
 
-Se você estiver pronto para experimentar uma atribuição de dispositivo discreta, poderá pular para a [implantação de dispositivos gráficos usando a atribuição de dispositivo discreta](../deploy/Deploying-graphics-devices-using-dda.md) ou implantando [dispositivos de armazenamento usando a atribuição de dispositivo discreta](../deploy/Deploying-storage-devices-using-dda.md) para começar!
+Se você estiver pronto para experimentar uma atribuição de dispositivo discreta, poderá pular para a [implantação de dispositivos gráficos usando a atribuição de dispositivo discreta](../deploy/Deploying-graphics-devices-using-dda.md) ou [implantando dispositivos de armazenamento usando a atribuição de dispositivo discreta](../deploy/Deploying-storage-devices-using-dda.md) para começar!
 
 ## <a name="supported-virtual-machines-and-guest-operating-systems"></a>Máquinas virtuais com suporte e sistemas operacionais convidados
 Há suporte para a atribuição de dispositivo discreto para VMs de geração 1 ou 2.  Além disso, os convidados com suporte incluem Windows 10, Windows Server 2019, Windows Server 2016, Windows Server 2012r2 com [KB 3133690](https://support.microsoft.com/kb/3133690) aplicado e várias distribuições do [sistema operacional Linux.](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)
@@ -36,7 +36,7 @@ Esses recursos geralmente não são expostos diretamente no BIOS do servidor e, 
 Para ajudar a garantir o hardware que o hardware é capaz de atribuir uma atribuição de dispositivo discreta, nossos engenheiros criaram um [script de perfil de computador](#machine-profile-script) que você pode executar em um host habilitado para Hyper-V para testar se o servidor está configurado corretamente e quais dispositivos são capazes de Atribuição de dispositivo discreta.
 
 ## <a name="device-requirements"></a>Requisitos do dispositivo
-Nem todo dispositivo PCIe pode ser usado com atribuição de dispositivo discreta.  Por exemplo, dispositivos mais antigos que utilizam interrupções de PCI herdadas (INTx) não têm suporte. As postagens de [blog](https://blogs.technet.microsoft.com/virtualization/2015/11/20/discrete-device-assignment-machines-and-devices/) de Jake Oshin entram em mais detalhes – no entanto, para o consumidor, a execução do [script de perfil do computador](#machine-profile-script) exibirá quais dispositivos são capazes de serem usados para atribuição de dispositivo discreta.
+Nem todo dispositivo PCIe pode ser usado com atribuição de dispositivo discreta.  Por exemplo, dispositivos mais antigos que utilizam interrupções de PCI herdadas (INTx) não têm suporte. As [Postagens de blog](https://blogs.technet.microsoft.com/virtualization/2015/11/20/discrete-device-assignment-machines-and-devices/) de Jake Oshin entram em mais detalhes – no entanto, para o consumidor, a execução do [script de perfil do computador](#machine-profile-script) exibirá quais dispositivos são capazes de serem usados para atribuição de dispositivo discreta.
 
 Os fabricantes de dispositivos podem entrar em contato com o representante da Microsoft para obter mais detalhes.
 
@@ -57,7 +57,7 @@ A atribuição de dispositivo discreta passa o dispositivo inteiro para a VM.  I
 
 Se o administrador quiser usar um dispositivo com um locatário não confiável, fornecemos fabricantes de dispositivos com a capacidade de criar um driver de mitigação de dispositivo que pode ser instalado no host.  Entre em contato com o fabricante do dispositivo para obter detalhes sobre se eles fornecem um driver de mitigação de dispositivo.
 
-Se desejar ignorar as verificações de segurança de um dispositivo que não tem um driver de mitigação de dispositivo, você precisará passar o `-Force` parâmetro para o `Dismount-VMHostAssignableDevice` cmdlet.  Entenda que, ao fazer isso, você alterou o perfil de segurança desse sistema e isso é recomendado apenas durante o protótipo ou ambientes confiáveis.
+Se você quiser ignorar as verificações de segurança de um dispositivo que não tem um driver de mitigação de dispositivo, será necessário passar o parâmetro `-Force` para o cmdlet `Dismount-VMHostAssignableDevice`.  Entenda que, ao fazer isso, você alterou o perfil de segurança desse sistema e isso é recomendado apenas durante o protótipo ou ambientes confiáveis.
 
 ## <a name="pcie-location-path"></a>Caminho do local do PCIe
 O caminho do local do PCIe é necessário para desmontar e montar o dispositivo do host.  Um caminho de local de exemplo é semelhante ao `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`seguinte:.   O [script de perfil do computador](#machine-profile-script) também retornará o caminho do local do dispositivo PCIe.

@@ -1,22 +1,22 @@
 ---
 title: Personalizar o título "Recursos de trabalho" do RDS usando o PowerShell no Windows Server
 description: Fornece a descrição de como alterar o nome do workspace no Windows Server.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 10/26/2017
 ms.topic: article
 author: Heidilohr
-ms.openlocfilehash: 43837826a6cddc2c3c4c7c1af874334718a3a067
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: ea7e1505f705c87e58145e7a306ed355ab3acf7f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743338"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387055"
 ---
 # <a name="customize-the-rds-title-work-resources-using-powershell-on-windows-server"></a>Personalizar o título "Recursos de trabalho" do RDS usando o PowerShell no Windows Server
 
-Ao usar o Windows Server para acessar RemoteApps ou áreas de trabalho pelo WebAccess da Área de Trabalho Remota ou o novo aplicativo de Área de Trabalho Remota, você talvez tenha observado que o espaço de trabalho se chama "Recursos de Trabalho" por padrão.  Você pode alterar facilmente o título usando cmdlets do PowerShell.
+Ao usar o Windows Server para acessar RemoteApps ou áreas de trabalho pelo WebAccess da Área de Trabalho Remota ou o novo aplicativo de Área de Trabalho Remota, você talvez tenha observado que o workspace se chama &quot;Recursos de Trabalho&quot; por padrão.  Você pode alterar facilmente o título usando cmdlets do PowerShell.
 
 Para alterar o título, abra uma nova janela do PowerShell no servidor do agente de conexão e importe o módulo RemoteDesktop com o comando a seguir.
 

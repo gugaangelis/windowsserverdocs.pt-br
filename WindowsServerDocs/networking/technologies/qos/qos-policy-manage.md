@@ -1,19 +1,19 @@
 ---
 title: Gerenciar política de QoS
 description: Este tópico fornece instruções sobre como criar e gerenciar a política de QoS (qualidade de serviço) no Windows Server 2016.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 04fdfa54-6600-43d4-8945-35f75e15275a
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3cff51b3cf76d3224832bf99ff966bf473d6ff6c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ac717555d1ab751600527e294d32f10d1f05bfa5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871852"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395884"
 ---
 # <a name="manage-qos-policy"></a>Gerenciar política de QoS
 
@@ -280,7 +280,7 @@ Por padrão, os computadores que executam o Windows Server 2016, Windows 10, Win
 
 ##### <a name="wireless-multimedia-and-dscp-values"></a>Valores de multimídia e de DSCP sem fio
 
-A [Wi-Fi Alliance](https://go.microsoft.com/fwlink/?LinkId=160769) estabeleceu uma \(certificação para WMM\) de multimídia sem fio que define quatro \(categorias\) de acesso WMM_AC para priorizar o tráfego de rede transmitido em um Wi\-Rede sem fio Fi. As categorias de acesso \(incluem para a prioridade\)mais alta para a mais baixa: voz, vídeo, melhor esforço e plano de fundo; respectivamente abreviados como vo, vi, ser e BK. A especificação WMM define quais valores de DSCP correspondem a cada uma das quatro categorias de acesso:
+A [Wi-Fi Alliance](https://go.microsoft.com/fwlink/?LinkId=160769) estabeleceu uma certificação para multimídia sem fio \(WMM @ no__t-2 que define quatro categorias de acesso \(WMM_AC @ no__t-4 para priorizar o tráfego de rede transmitido em uma rede sem fio Wi @ No__t-5Fi. As categorias de acesso \(incluem para a prioridade\)mais alta para a mais baixa: voz, vídeo, melhor esforço e plano de fundo; respectivamente abreviados como vo, vi, ser e BK. A especificação WMM define quais valores de DSCP correspondem a cada uma das quatro categorias de acesso:
   
 |Valor de DSCP|Categoria de acesso do WMM|
 |----------|-------------------|
@@ -312,7 +312,7 @@ Quando várias políticas de QoS correspondem ao tráfego específico, a políti
 
 Como alternativa, várias políticas de QoS podem se aplicar ao mesmo tráfego especificando condições não sobrepostas. Entre as condições de aplicativos e a rede quintuple, a política que especifica o aplicativo é considerada mais específica e é aplicada. 
 
-Por exemplo, policy_A especifica apenas um nome de aplicativo (App. exe) e policy_B especifica o endereço IP de destino 192.168.1.0/24. Quando essas políticas de QoS \(entram em conflito, o app. exe envia o tráfego para um endereço IP dentro\)do intervalo de 192.168.4.0/24, policy_A é aplicado.
+Por exemplo, policy_A especifica apenas um nome de aplicativo (App. exe) e policy_B especifica o endereço IP de destino 192.168.1.0/24. Quando essas políticas de QoS entram em conflito @no__t -0app. exe envia o tráfego para um endereço IP dentro do intervalo de 192.168.4.0/24 @ no__t-1, policy_A é aplicado.
 
  **Mais especificidades têm precedência na rede quintuple**
 

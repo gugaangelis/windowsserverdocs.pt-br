@@ -1,8 +1,8 @@
 ---
 title: nslookup set root
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 38cd5a2e9878a8e43393befc5cbd4fc47c65ec53
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 08cf41ec9b6ac30699013112216a538dcf625fd5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436607"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372840"
 ---
 # <a name="nslookup-set-root"></a>nslookup set root
 
@@ -33,11 +33,11 @@ set root=<RootServer>
 
 |    Parâmetro    |                                   Descrição                                    |
 |-----------------|----------------------------------------------------------------------------------|
-|  <RootServer>   | Especifica o novo nome para o servidor raiz. O valor padrão é ddn.mil. |
-| {Ajuda &#124; ?} |              Exibe um resumo breve dos **nslookup** subcomandos.               |
+|  <RootServer>   | Especifica o novo nome para o servidor raiz. O valor padrão é ns.nic.ddn.mil. |
+| {ajuda &#124; ?} |              Exibe um breve resumo dos subcomandos **nslookup** .               |
 
 ## <a name="remarks"></a>Comentários
-- O **raiz do conjunto** subcomando afeta a **raiz** subcomando.
+- O subcomando **set root** afeta o subcomando **raiz** .
   ## <a name="additional-references"></a>Referências adicionais
   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-  [nslookup raiz](nslookup-root.md)
+  [raiz do nslookup](nslookup-root.md)

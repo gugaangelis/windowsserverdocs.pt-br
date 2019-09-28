@@ -7,48 +7,48 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 03792d7ae5fec3c209cf1abfaa7af3fdfdb75f08
-ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
+ms.openlocfilehash: 73e68d03e4f2f76dbaf4a497da551640476d0438
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67792268"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407821"
 ---
 # <a name="where-to-place-a-federation-server-proxy"></a>Onde colocar um proxy do servidor de federação
 
-Você pode colocar os serviços de Federação do Active Directory \(do AD FS\)proxies do servidor de Federação em uma rede de perímetro para fornecer uma camada de proteção contra usuários mal-intencionados que podem vir da Internet. Proxies do servidor de federação são ideais para o ambiente de rede de perímetro, porque eles não têm acesso às chaves particulares usadas para criar tokens. No entanto, proxies de servidor de federação podem encaminhar eficientemente as solicitações de entrada para servidores de federação que estão autorizados a produzir esses tokens.  
+Você pode posicionar Serviços de Federação do Active Directory (AD FS) proxies de servidor \(AD FS @ no__t-1federation em uma rede de perímetro para fornecer uma camada de proteção contra usuários mal-intencionados que podem ser provenientes da Internet. Proxies do servidor de federação são ideais para o ambiente de rede de perímetro, porque eles não têm acesso às chaves particulares usadas para criar tokens. No entanto, os proxies do servidor de Federação podem rotear de forma eficiente as solicitações de entrada para os servidores de Federação autorizados a produzir esses tokens.  
   
-Não é necessário para colocar um proxy do servidor de Federação dentro da rede corporativa para o parceiro de conta ou parceiro de recurso, porque os computadores cliente que estão conectados à rede corporativa podem se comunicar diretamente com o servidor de Federação. Nesse cenário, o servidor de Federação também fornece funcionalidade de proxy do servidor de federação para computadores cliente que são provenientes da rede corporativa.  
+Não é necessário posicionar um proxy de servidor de Federação dentro da rede corporativa para o parceiro de conta ou o parceiro de recurso, pois os computadores cliente conectados à rede corporativa podem se comunicar diretamente com o servidor de Federação. Nesse cenário, o servidor de Federação também fornece a funcionalidade de proxy do servidor de Federação para computadores cliente provenientes da rede corporativa.  
   
-Como é típico com redes de perímetro, uma intranet\-voltados para o firewall é estabelecido entre a rede de perímetro e a rede corporativa e um Internet\-voltados para o firewall geralmente é estabelecido entre a rede de perímetro e o Na Internet. Nesse cenário, o proxy do servidor de Federação fica entre ambos esses firewalls na rede de perímetro.  
+Como é comum com redes de perímetro, um firewall de intranet @ no__t-0facing é estabelecido entre a rede de perímetro e a rede corporativa, e um firewall de Internet @ no__t-1facing é geralmente estabelecido entre a rede de perímetro e a Internet. Nesse cenário, o proxy do servidor de Federação fica entre ambos os firewalls na rede de perímetro.  
   
 ## <a name="configuring-your-firewall-servers-for-a-federation-server-proxy"></a>Configurando os servidores de firewall para um proxy do servidor de federação  
-Para o federation server proxy processo de redirecionamento seja bem-sucedida, todos os servidores de firewall devem ser configurados para permitir o protocolo \(HTTPS\) tráfego. O uso de HTTPS é necessário porque os servidores de firewall devem publicar o proxy do servidor de federação, usando a porta 443, para que o proxy do servidor de federação na rede de perímetro possa acessar o servidor de federação na rede corporativa.  
+Para que o processo de redirecionamento de proxy do servidor de Federação seja bem-sucedido, todos os servidores de firewall devem ser configurados para permitir o tráfego \(HTTPS @ no__t-1 do protocolo de transferência de hipertexto seguro. O uso de HTTPS é necessário porque os servidores de firewall devem publicar o proxy do servidor de Federação, usando a porta 443, para que o proxy do servidor de Federação na rede de perímetro possa acessar o servidor de Federação na rede corporativa.  
   
 > [!NOTE]  
 > Todas as comunicações e para computadores cliente também ocorre por HTTPS.  
   
-Além disso, a Internet\-voltados para o servidor de firewall, como um computador executando o Microsoft Internet Security and Acceleration \(ISA\) servidor, usa um processo conhecido como publicação de servidor para distribuir o cliente da Internet solicitações para o perímetro apropriado e servidores de rede corporativa, como proxies de servidor de Federação ou servidores de Federação.  
+Além disso, o servidor de firewall do Internet @ no__t-0facing, como um computador executando o Microsoft Internet Security and Acceleration \(ISA @ no__t-2 Server, usa um processo conhecido como publicação de servidor para distribuir solicitações de clientes da Internet para o servidores de rede corporativa e de perímetro, como proxies de servidor de Federação ou servidores de Federação.  
   
-Regras de publicação de servidor determinam como funciona a publicação de servidor – essencialmente, filtrando todas as solicitações de entrada e saída pelo computador do ISA Server. Regras de publicação de servidor mapeiam solicitações de cliente recebidas para os servidores apropriados atrás do computador do ISA Server. Para obter informações sobre como configurar o ISA Server para publicar um servidor, consulte [criar uma regra de publicação de Web seguro](https://go.microsoft.com/fwlink/?LinkId=75182).  
+Regras de publicação de servidor determinam como funciona a publicação de servidor – essencialmente, filtrando todas as solicitações de entrada e saída pelo computador do ISA Server. Regras de publicação de servidor mapeiam solicitações de cliente recebidas para os servidores apropriados atrás do computador do ISA Server. Para obter informações sobre como configurar o ISA Server para publicar um servidor, consulte [criar uma regra de publicação segura na Web](https://go.microsoft.com/fwlink/?LinkId=75182).  
   
-No mundo federado do AD FS, essas solicitações do cliente geralmente são feitas para uma URL específica, por exemplo, uma URL de identificador do servidor de federação, como http:\//fs.fabrikam.com. Como essas solicitações do cliente são fornecidos da Internet, a Internet\-voltados para o servidor de firewall devem ser configurado para publicar a URL de identificador do servidor de federação para cada proxy do servidor de federação que é implantado na rede de perímetro.  
+No mundo federado de AD FS, essas solicitações de cliente geralmente são feitas em uma URL específica, por exemplo, uma URL de identificador de servidor de Federação, como http: \//FS. fabrikam. com. Como essas solicitações de cliente vêm da Internet, o servidor de firewall do Internet @ no__t-0facing deve ser configurado para publicar a URL do identificador do servidor de Federação para cada proxy de servidor de Federação implantado na rede de perímetro.  
   
 ### <a name="configuring-isa-server-to-allow-ssl"></a>Configurando o ISA Server para permitir SSL  
-Para facilitar a comunicação segura do AD FS, você deve configurar o ISA Server para permitir o Secure Sockets Layer \(SSL\) as comunicações entre o seguinte:  
+Para facilitar as comunicações AD FS seguras, você deve configurar o ISA Server para permitir protocolo SSL comunicações \(SSL @ no__t-1 entre os seguintes:  
   
--   **Servidores de Federação e proxies de servidor de Federação.** Um canal SSL é necessário para todas as comunicações entre servidores de Federação e proxies de servidor de Federação. Portanto, você deve configurar o ISA Server para permitir uma conexão SSL entre a rede corporativa e a rede de perímetro.  
+-   **Servidores de Federação e proxies de servidor de Federação.** Um canal SSL é necessário para todas as comunicações entre os servidores de Federação e os proxies do servidor de Federação. Portanto, você deve configurar o ISA Server para permitir uma conexão SSL entre a rede corporativa e a rede de perímetro.  
   
--   **Computadores cliente, servidores de Federação e proxies de servidor de Federação.** Para que possa ocorrer a comunicação entre computadores cliente e servidores de Federação ou entre computadores cliente e proxies de servidor de federação, você pode colocar um computador executando o ISA Server na frente do servidor de Federação ou proxy do servidor de Federação.  
+-   **Computadores cliente, servidores de Federação e proxies de servidor de Federação.** Para que as comunicações possam ocorrer entre computadores cliente e servidores de Federação ou entre computadores cliente e proxies de servidor de Federação, você pode posicionar um computador executando o ISA Server na frente do servidor de Federação ou proxy de servidor de Federação.  
   
-    Se sua organização executar autenticação de cliente SSL no servidor de Federação ou proxy do servidor de federação, quando você coloca um computador executando o ISA Server na frente do servidor de Federação ou proxy do servidor de federação, o servidor deve ser configurado para passagem\-por meio da conexão SSL porque a conexão SSL deve terminar no servidor de Federação ou proxy do servidor de Federação.  
+    Se sua organização executa a autenticação de cliente SSL no servidor de Federação ou proxy de servidor de Federação, quando você coloca um computador executando o ISA Server na frente do servidor de Federação ou proxy de servidor de Federação, o servidor deve ser configurado para Pass @ no__ t-0through da conexão SSL porque a conexão SSL deve terminar no servidor de Federação ou no proxy do servidor de Federação.  
   
-    Se sua organização executar autenticação de cliente SSL no servidor de Federação ou proxy do servidor de federação, uma opção adicional é encerrar a conexão SSL no computador que executa o ISA Server e, em seguida, o re\-estabelecer uma conexão SSL para o servidor de Federação ou proxy do servidor de Federação.  
+    Se a sua organização não executar a autenticação de cliente SSL no servidor de Federação ou proxy de servidor de Federação, uma opção adicional será encerrar a conexão SSL no computador que executa o ISA Server e, em seguida, @ no__t-0establish uma conexão SSL com o servidor de Federação ou proxy do servidor de Federação.  
   
 > [!NOTE]  
-> O servidor de Federação ou proxy do servidor de Federação requer que a conexão seja protegidas por SSL para proteger o conteúdo do token de segurança.  
+> O servidor de Federação ou proxy de servidor de Federação requer que a conexão seja protegida por SSL para proteger o conteúdo do token de segurança.  
   
 ## <a name="see-also"></a>Consulte também
 [Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
