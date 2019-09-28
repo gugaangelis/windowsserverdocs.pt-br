@@ -1,7 +1,7 @@
 ---
 title: Etapa 2 – configurar o WSUS
 description: Tópico do Windows Server Update Service (WSUS) – configurar o WSUS é a etapa dois em um processo de quatro etapas para implantar o WSUS
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.technology: manage-wsus
 ms.topic: article
@@ -10,12 +10,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 660cb0412abdf1ecb1afcba53a4aeb79ac407e56
-ms.sourcegitcommit: a9625758fbfb066494fe62e0da5f9570ccb738a3
+ms.openlocfilehash: d1a78d2006a45bb2af8f87a91d7bb888964ddbcb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68952457"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361666"
 ---
 # <a name="step-2-configure-wsus"></a>Etapa 2: Configurar o WSUS
 
@@ -25,11 +25,11 @@ Depois de instalar a função de servidor do WSUS no servidor, você precisará 
 
 |Tarefa|Descrição|
 |----|--------|
-|[2,1. Configurar conexões de rede](#21-configure-network-connections)|Configure a rede de cluster usando o Assistente de Configuração de Rede.|
-|[2,2. Configurar o WSUS usando o assistente de configuração do WSUS](#22-configure-wsus-by-using-the-wsus-configuration-wizard)|Use o assistente de configuração do WSUS para executar a configuração básica do WSUS.|
-|[2,3. Configurar grupos de computadores do WSUS](#23-configure-wsus-computer-groups)|Crie grupos de computadores no console de administração do WSUS para gerenciar atualizações na sua organização.|
-|[2,4. Configurar atualizações do cliente](#24-configure-client-updates)|Especifique como e quando as atualizações automáticas são aplicadas aos computadores cliente.|
-|[2,5. Proteger o WSUS com o protocolo protocolo SSL](#25-secure-wsus-with-the-secure-sockets-layer-protocol)|Configure o protocolo SSL para ajudar a proteger o WSUS (Windows Server Update Services).|
+|,1. Configurar conexões de rede @ no__t-0|Configure a rede de cluster usando o Assistente de Configuração de Rede.|
+|,2. Configurar o WSUS usando o assistente de configuração do WSUS @ no__t-0|Use o assistente de configuração do WSUS para executar a configuração básica do WSUS.|
+|,3. Configurar grupos de computadores do WSUS @ no__t-0|Crie grupos de computadores no console de administração do WSUS para gerenciar atualizações na sua organização.|
+|,4. Configurar atualizações do cliente @ no__t-0|Especifique como e quando as atualizações automáticas são aplicadas aos computadores cliente.|
+|,5. Proteger o WSUS com o protocolo protocolo SSL @ no__t-0|Configure o protocolo SSL para ajudar a proteger o WSUS (Windows Server Update Services).|
 
 ## <a name="21-configure-network-connections"></a>2.1. Configurar as conexões de rede
 Para começar o processo de configuração, verifique se sabe as respostas às seguintes perguntas:
@@ -56,33 +56,33 @@ Quando você tiver as respostas a essas perguntas, poderá começar a configurar
 ### <a name="211-connection-from-the-wsus-server-to-the-internet"></a>2.1.1. Conexão do servidor do WSUS com a Internet
 Se houver um firewall corporativo entre o WSUS e a Internet, convém configurar o firewall para garantir que o WSUS possa obter atualizações. Para obter atualizações do Microsoft Update, o servidor do WSUS usa a porta 443 para o protocolo HTTPS. Embora a maioria dos firewalls corporativos permita esse tipo de tráfego, há algumas empresas que restringem o acesso à Internet dos servidores devido às políticas de segurança da empresa. Se sua empresa restringe o acesso, você precisa obter autorização para permitir o acesso à Internet do WSUS à seguinte lista de URLs:
 
-- http\://windowsupdate.Microsoft.com
+- http @ no__t-0//windowsupdate. Microsoft. com
 
-- http\://.windowsupdate.Microsoft.com\*
+- http @ no__t-0 @ no__t-1\*.windowsupdate.microsoft.com
 
-- https\://.windowsupdate.Microsoft.com\*
+- https @ no__t-0 @ no__t-1\*.windowsupdate.microsoft.com
 
-- http\://.Update.Microsoft.com\*
+- http @ no__t-0 @ no__t-1\*.update.microsoft.com
 
-- https\://.Update.Microsoft.com\*
+- https @ no__t-0 @ no__t-1\*.update.microsoft.com
 
-- http\://.windowsupdate.com\*
+- http @ no__t-0 @ no__t-1\*.windowsupdate.com
 
-- http\://download.windowsupdate.com
+- http @ no__t-0//download. windowsupdate. com
 
-- https\://download.Microsoft.com
+- https @ no__t-0//download. Microsoft. com
 
-- http\://.download.windowsupdate.com\*
+- http @ no__t-0 @ no__t-1\*.download.windowsupdate.com
 
-- http\://wustat.Windows.com
+- http @ no__t-0//wustat. Windows. com
 
-- http\://NtServicePack.Microsoft.com
+- http @ no__t-0//NtServicePack. Microsoft. com
 
-- http\://go.Microsoft.com
+- http @ no__t-0//go. Microsoft. com
 
-- http\://DL.Delivery.mp.Microsoft.com
+- http @ no__t-0//DL. Delivery. mp. Microsoft. com
 
-- https\://DL.Delivery.mp.Microsoft.com
+- https @ no__t-0//DL. Delivery. mp. Microsoft. com
 
 > [!IMPORTANT]
 > Para um cenário no qual o WSUS não consegue obter atualizações devido a configurações de firewall, consulte o [artigo 885819](https://support.microsoft.com/kb/885819) na base de dados de conhecimento Microsoft.
@@ -264,7 +264,7 @@ Use os procedimentos a seguir para configurar as Atualizações Automáticas par
 
 -   [Etapa 4: Definir as configurações da Política de Grupo para atualizações automáticas](4-configure-group-policy-settings-for-automatic-updates.md)
 
--   [2,3. Configurar grupos](#23-configure-wsus-computer-groups) de computadores neste tópico
+-   ,3. Configurar grupos de computadores @ no__t-0 neste tópico
 
 ### <a name="configure-automatic-updates-in-group-policy"></a>Configurar Atualizações Automáticas na Política de Grupo
 
@@ -301,7 +301,7 @@ Vincule esse GPO do WSUS a um contêiner do Active Directory apropriado para seu
 
 8.  No painel de detalhes do **Windows Update** , clique duas vezes em **Especificar o local do serviço de atualização na intranet da Microsoft**.
 
-9. Clique em **Habilitado** e, em seguida, no servidor nas caixas de texto **Definir o serviço intranet de atualização para detectar atualizações** e **Definir o servidor de estatísticas da intranet** Por exemplo, digite *http://servername* as duas caixas (em que ServerName é o nome do servidor do WSUS).
+9. Clique em **Habilitado** e, em seguida, no servidor nas caixas de texto **Definir o serviço intranet de atualização para detectar atualizações** e **Definir o servidor de estatísticas da intranet** Por exemplo, digite *http://servername* em ambas as caixas (em que *ServerName* é o nome do servidor do WSUS).
 
     > [!WARNING]
     > Ao digitar o endereço da intranet do servidor do WSUS, verifique se especificou qual porta será usada. Por padrão, o WSUS usará a porta 8530 para HTTP, e 8531 para HTTPS. Por exemplo, se você estiver usando HTTP, deverá digitar **http://servername:8530** .
@@ -389,13 +389,13 @@ O WSUS requer duas portas para o SSL: uma porta que usa HTTPS para enviar metada
 
 2.  Vá para **Iniciar**, digite **cmd**, clique com o botão direito do mouse em **prompt de comando**e clique em **Executar como administrador**.
 
-3.  Navegue até a pasta _% ProgramFiles%_ **\\update\\ Services\\Tools** .
+3.  Navegue até a pasta _% ProgramFiles%_ **\\Update Services @ no__t-3Tools @ no__t-4** .
 
 4.  Na janela do prompt de comando, digite o seguinte comando:
 
     **Wsusutil configuressl**_certificateName_
 
-    em que:
+    onde:
 
     *certificateName* é o nome DNS do servidor do WSUS.
 

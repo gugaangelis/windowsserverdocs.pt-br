@@ -1,35 +1,35 @@
 ---
 title: Realizar hash prévio e pré-carregar conteúdo no servidor de cache hospedado (opcional)
-description: Este guia fornece instruções sobre como implantar o BranchCache no modo de cache hospedado em computadores que executam o Windows Server 2016 e Windows 10
+description: Este guia fornece instruções sobre como implantar o BranchCache no modo de cache hospedado em computadores que executam o Windows Server 2016 e o Windows 10
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: 7e79c66a-8555-4d8e-8691-d6c37377aab4
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b60a1f24b8988d6e394df0faf678467021e0c882
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fe206576278b09e4a360c7bb27f5ff076af97be7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839387"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356250"
 ---
-# <a name="prehash-and-preload-content-on-the-hosted-cache-server-optional"></a>Pré-hash e pré-carregar conteúdo no servidor de Cache hospedado \(opcional\)
+# <a name="prehash-and-preload-content-on-the-hosted-cache-server-optional"></a>Pré-hash e pré-carregamento de conteúdo no servidor de cache hospedado \(Optional @ no__t-1
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Você pode usar os procedimentos nesta seção para pré-hash do conteúdo em seus servidores de conteúdo, adicione o conteúdo para pacotes de dados e, em seguida, pré-carregar o conteúdo em seus servidores de cache hospedado. 
+Você pode usar os procedimentos nesta seção para fazer o autohash de conteúdo em seus servidores de conteúdo, adicionar o conteúdo a pacotes de dados e, em seguida, pré-carregar o conteúdo em seus servidores de cache hospedados. 
 
-Esses procedimentos são opcionais porque você não é necessários para prehash e pré-carregamento de conteúdo em seus servidores de cache hospedado. 
+Esses procedimentos são opcionais porque não é necessário prefazer o hash e pré-carregar o conteúdo em seus servidores de cache hospedados. 
 
-Se você não pré-carregar conteúdo, dados são adicionados ao cache hospedado automaticamente como clientes baixá-lo sobre a conexão de WAN.
+Se você não pré-carregar o conteúdo, os dados são adicionados automaticamente ao cache hospedado, pois os clientes o baixam pela conexão WAN.
 
 >[!IMPORTANT]
->Embora esses procedimentos são coletivamente opcionais, se você decidir prehash e pré-carregamento de conteúdo em seus servidores de cache hospedado, é necessário executar os dois procedimentos.
+>Embora esses procedimentos sejam coletivamente opcionais, se você decidir prehash e pré-carregar conteúdo em seus servidores de cache hospedados, a execução de ambos os procedimentos será necessária.
 
-- [Criar pacotes de dados do servidor de conteúdo para a Web e o conteúdo do arquivo &#40;opcional&#41;](8-Bc-Data-Packages.md)
+- [Criar pacotes de dados do servidor de conteúdo para conteúdo &#40;da Web e de arquivo opcional&#41;](8-Bc-Data-Packages.md)
   
-- [Importar pacotes de dados no servidor de Cache hospedado &#40;opcional&#41;](9-Bc-Import-Data.md)
+- [Importar pacotes de dados no servidor &#40;de cache hospedado opcional&#41;](9-Bc-Import-Data.md)
 
-Para continuar com este guia, consulte [criar de pacotes de dados de servidor de conteúdo para a Web e o conteúdo do arquivo &#40;opcional&#41;](8-Bc-Data-Packages.md).
+Para continuar com este guia, consulte [criar pacotes de dados do servidor de conteúdo para conteúdo &#40;da&#41;Web e de arquivo opcional](8-Bc-Data-Packages.md).

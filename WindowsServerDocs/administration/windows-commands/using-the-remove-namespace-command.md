@@ -1,8 +1,8 @@
 ---
-title: Usando o comando remove-Namespace
-description: 'Tópico de comandos do Windows para * * *- '
+title: Usando o comando Remove-namespace
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 115c0a90a60e18ee4b89758200773d1dfec2163f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b4c087442c43fd885fe4554cb29f9b2788420e05
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842037"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362795"
 ---
-# <a name="using-the-remove-namespace-command"></a>Usando o comando remove-Namespace
+# <a name="using-the-remove-namespace-command"></a>Usando o comando Remove-namespace
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Remove um espaço para nome personalizado.
+Remove um namespace personalizado.
 ## <a name="syntax"></a>Sintaxe
 ```
 wdsutil /remove-Namespace /Namespace:<Namespace name> [/Server:<Server name>] [/force]
@@ -32,11 +32,11 @@ wdsutil /remove-Namespace /Namespace:<Namespace name> [/Server:<Server name>] [/
 ## <a name="parameters"></a>Parâmetros
 |Parâmetro|Descrição|
 |-------|--------|
-|/Namespace:<Namespace name>|Especifica o nome do namespace. Isso não é o nome amigável, e ele deve ser exclusivo.<br /><br />-   **Serviço de função de servidor de implantação**: A sintaxe de nome de namespace é /Namespace:WDS:<ImageGroup>/<ImageName>/<Index>. Por exemplo: **WDS:ImageGroup1/install.wim/1**<br />-   **Serviço de função de servidor de transporte**: Esse valor deve corresponder ao nome fornecido para o namespace quando ele foi criado no servidor.|
-|[/Server:<Server name>]|Especifica o nome do servidor. Isso pode ser o nome NetBIOS ou o nome de domínio totalmente qualificado (FQDN). Se nenhum nome de servidor for especificado, o servidor local será usado.|
-|[/force]|Remove o namespace imediatamente e encerra todos os clientes. Observe que, a menos que você especifique **/Force**, os clientes existentes podem concluir a transferência, mas novos clientes não são capazes de ingressar.|
-## <a name="BKMK_examples"></a>Exemplos
-Para interromper um namespace (clientes atuais podem concluir a transferência, mas novos clientes não são capazes de ingressar), digite:
+|/Namespace: <Namespace name>|Especifica o nome do namespace. Esse não é o nome amigável e deve ser exclusivo.<br /><br />**serviço de função do servidor de implantação**-   : A sintaxe para o nome do namespace é/namespace: WDS: <ImageGroup> @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4. Por exemplo: **WDS: ImageGroup1/install. wim/1**<br />**serviço de função do servidor de transporte**-   : Esse valor deve corresponder ao nome fornecido para o namespace quando ele foi criado no servidor.|
+|[/Server:<Server name>]|Especifica o nome do servidor. Esse pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.|
+|/Force|Remove o namespace imediatamente e encerra todos os clientes. Observe que, a menos que você especifique **/Force**, os clientes existentes poderão concluir a transferência, mas novos clientes não poderão ingressar.|
+## <a name="BKMK_examples"></a>Disso
+Para interromper um namespace (os clientes atuais podem concluir a transferência, mas novos clientes não podem ingressar), digite:
 ```
 wdsutil /remove-Namespace /Namespace:"Custom Auto 1"
 ```
@@ -46,6 +46,6 @@ wdsutil /remove-Namespace /Server:MyWDSServer /Namespace:"Custom Auto 1" /force
 ```
 #### <a name="additional-references"></a>Referências adicionais
 [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[usando o comando get-AllNamespaces](using-the-get-allnamespaces-command.md)
-[usando o comando Novo Namespace](using-the-new-namespace-command.md) 
- [ Subcomando: start-Namespace](subcommand-start-namespace.md)
+[usando o comando Get-mynamespaces](using-the-get-allnamespaces-command.md)
+[usando o comando New-namespace](using-the-new-namespace-command.md)
+[subcomando: Start-namespace](subcommand-start-namespace.md)

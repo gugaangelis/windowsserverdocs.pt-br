@@ -1,6 +1,6 @@
 ---
-title: Ações de serviço de integridade
-ms.prod: windows-server-threshold
+title: Ações de Serviço de Integridade
+ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
@@ -8,18 +8,18 @@ ms.topic: article
 ms.assetid: ''
 author: cosmosdarwin
 ms.date: 08/14/2017
-ms.openlocfilehash: efdf8f04e68fcbdc7051e78d6725cb919e740ffa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 519f0321f36fb7afc86962950aeab729d7a38adb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843017"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361103"
 ---
-# <a name="health-service-actions"></a>Ações de serviço de integridade
+# <a name="health-service-actions"></a>Ações de Serviço de Integridade
 
-> Aplica-se ao Windows Server 2016
+> Aplica-se a: Windows Server 2019, Windows Server 2016
 
-O serviço de integridade é um novo recurso no Windows Server 2016, o que melhora o monitoramento de rotina e experiência operacional para clusters que executam espaços de armazenamento diretos.
+O Serviço de Integridade é um novo recurso do Windows Server 2016 que melhora o monitoramento diário e a experiência operacional para clusters que executam o Espaços de Armazenamento Diretos.
 
 ## <a name="actions"></a>Ações  
 
@@ -35,7 +35,7 @@ Get-StorageHealthAction
 
 ### <a name="coverage"></a>Cobertura  
 
-No Windows Server 2016, o **Get-StorageHealthAction** cmdlet pode retornar qualquer uma das seguintes informações:  
+No Windows Server 2016, o cmdlet **Get-StorageHealthAction** pode retornar qualquer uma das seguintes informações:  
 
 -   Desativação com falha, perda de conectividade ou o disco físico não responde  
 
@@ -47,5 +47,5 @@ No Windows Server 2016, o **Get-StorageHealthAction** cmdlet pode retornar qualq
 
 ## <a name="see-also"></a>Consulte também
 
-- [Serviço de integridade no Windows Server 2016](health-service-overview.md)
+- [Serviço de Integridade no Windows Server 2016](health-service-overview.md)
 - [Documentação do desenvolvedor, código de exemplo e referência de API no MSDN](https://msdn.microsoft.com/windowshealthservice)

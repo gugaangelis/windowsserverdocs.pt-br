@@ -7,50 +7,50 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 91a0122198639bf75e9e43e9da9edf68dd0453d9
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: fcfc7d640d3688bf0e23557af9bd56082418ef37
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190683"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358944"
 ---
 # <a name="when-to-create-a-federation-server-farm"></a>Quando criar um farm de servidor de federação
 
-Considere a criação de um farm de servidores de federação nos serviços de Federação do Active Directory \(do AD FS\) quando você tiver uma implantação maior do AD FS e você deseja fornecer tolerância a falhas, carregar\-balanceamento ou escalabilidade para seu Serviço de Federação da organização. O ato de criar dois ou mais servidores de federação na mesma rede, configurando cada um deles para usar o mesmo serviço de Federação e adicionando o token da chave pública de cada servidor\-certificados de assinatura para o snap de gerenciamento do AD FS\-em cria um farm de servidores de Federação.  
+Considere criar um farm de servidores de Federação em Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1 quando você tiver uma implantação de AD FS maior e desejar fornecer tolerância a falhas, carregar @ no__t-2balancing ou escalabilidade para a Federação da sua organização Serviço. O ato de criar dois ou mais servidores de Federação na mesma rede, configurar cada um deles para usar o mesmo Serviço de Federação e adicionar a chave pública dos certificados do token @ no__t-0signing do servidor ao snap do AD FS Management @ no__t-1in cria um farm de servidores de Federação.  
   
-Você pode criar um farm de servidores de Federação ou instalar servidores de Federação adicionais a um farm existente, usando o Assistente de configuração do servidor de Federação do AD FS. Para obter mais informações, consulte [When to Create a Federation Server](When-to-Create-a-Federation-Server.md).  
+Você pode criar um farm de servidores de Federação ou instalar servidores de Federação adicionais em um farm existente usando o assistente de configuração do servidor de Federação AD FS. Para obter mais informações, consulte [When to Create a Federation Server](When-to-Create-a-Federation-Server.md).  
   
 > [!NOTE]  
-> Quando você escolhe a opção de criar uma **novo farm de servidores de Federação** usando o Assistente de configuração do servidor de Federação do AD FS, o assistente tentará criar um objeto de contêiner \(para compartilhamento de certificados\) no Active Directory. Portanto, é importante que você primeiro faça logon no computador em que está configurando a função do servidor de federação com uma conta que tenha permissões suficientes no Active Directory para criar o objeto de contêiner.  
+> Quando você escolhe a opção para criar um **novo farm de servidores de Federação** usando o assistente de configuração do servidor de Federação AD FS, o assistente tentará criar um objeto de contêiner \(Para compartilhando certificados @ no__t-2 em Active Directory. Portanto, é importante que você primeiro faça logon no computador em que está configurando a função do servidor de federação com uma conta que tenha permissões suficientes no Active Directory para criar o objeto de contêiner.  
   
-Antes de servidores de federação podem ser agrupados como um farm, eles devem primeiro ser clusterizados para que o nome de domínio de solicitações que chegam em uma única totalmente qualificado \(FQDN\) são roteadas para vários servidores de federação no farm de servidores. Você pode criar o cluster de servidor Implantando o balanceamento de carga de rede \(NLB\) dentro da rede corporativa. Este guia pressupõe que NLB foi configurado adequadamente para cluster cada um dos servidores de federação no farm.  
+Antes que os servidores de Federação possam ser agrupados como um farm, eles devem primeiro ser clusterizados para que as solicitações que chegam a um único nome de domínio totalmente qualificado \(FQDN @ no__t-1 sejam roteadas para os vários servidores de Federação no farm de servidores. Você pode criar o cluster de servidores implantando o balanceamento de carga de rede \(NLB @ no__t-1 dentro da rede corporativa. Este guia pressupõe que o NLB foi configurado adequadamente para clusterizar cada um dos servidores de Federação no farm.  
   
-Para obter mais informações sobre como configurar um FQDN de cluster usando a tecnologia Microsoft NLB, consulte [especificando os parâmetros de Cluster](https://go.microsoft.com/fwlink/?LinkID=74651).  
+Para obter mais informações sobre como configurar um FQDN de cluster usando a tecnologia Microsoft NLB, consulte [especificando os parâmetros de cluster](https://go.microsoft.com/fwlink/?LinkID=74651).  
   
 ## <a name="best-practices-for-deploying-a-federation-server-farm"></a>Práticas recomendadas para implantação de um farm de servidores de federação  
 Recomendamos as seguintes práticas recomendadas para implantar um servidor de Federação em um ambiente de produção:  
   
--   Se você estiver implantando vários servidores de Federação ao mesmo tempo ou se você souber que você adicionar mais servidores ao farm ao longo do tempo, considere criar uma imagem de servidor de um servidor de Federação existente no farm e, em seguida, instalando a partir dessa imagem quando você precisar cr servidores de Federação adicionais iar rapidamente.  
+-   Se você estiver implantando vários servidores de Federação ao mesmo tempo ou se souber que adicionará mais servidores ao farm ao longo do tempo, considere criar uma imagem de servidor de um servidor de Federação existente no farm e, em seguida, instalar a partir dessa imagem quando precisar de CR Iar servidores de Federação adicionais rapidamente.  
   
     > [!NOTE]  
-    > Se você decidir usar o método de imagem do servidor para a implantação de servidores de Federação adicionais, você não precisa concluir as tarefas no [lista de verificação: Setting Up a Federation Server](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md) toda vez que você deseja adicionar um novo servidor ao farm.  
+    > Se você decidir usar o método de imagem do servidor para implantar servidores de Federação adicionais, não será necessário concluir as tarefas em [Checklist: Configurar um servidor de Federação @ no__t-0 sempre que você quiser adicionar um novo servidor ao farm.  
   
--   Use o NLB ou alguma outra forma de clustering para alocar um único endereço IP para diversos computadores de servidor de Federação.  
+-   Use o NLB ou alguma outra forma de clustering para alocar um único endereço IP para muitos computadores do servidor de Federação.  
   
--   Reservar um endereço IP estático para cada servidor de federação no farm e, dependendo do seu sistema de nome de domínio \(DNS\) inserir uma exclusão para cada IP endereço no Dynamic Host Configuration Protocol, de configuração \(DHCP\). A tecnologia NLB da Microsoft requer que a cada servidor que participa do cluster NLB seja atribuído um endereço IP estático.  
+-   Reserve um endereço IP estático para cada servidor de Federação no farm e, dependendo de sua configuração do sistema de nome de domínio \(DNS @ no__t-1, insira uma exclusão para cada endereço IP no protocolo de configuração de host dinâmico \(DHCP @ no__t-3. A tecnologia NLB da Microsoft requer que a cada servidor que participa do cluster NLB seja atribuído um endereço IP estático.  
   
 -   Se o banco de dados de configuração do AD FS for armazenado em um banco de dados SQL, evite editar o banco de dados SQL de vários servidores de Federação ao mesmo tempo.  
   
 ## <a name="configuring-federation-servers-for-a-farm"></a>Configurando servidores de federação para um farm  
-A tabela a seguir descreve as tarefas que devem ser concluídas para que cada servidor de Federação pode participar de um ambiente de farm.  
+A tabela a seguir descreve as tarefas que devem ser concluídas para que cada servidor de federação possa participar de um ambiente de farm.  
   
 |Tarefa|Descrição|  
 |--------|---------------|  
-|Se você estiver usando o SQL Server para armazenar o banco de dados de configuração do AD FS|Um farm de servidores de Federação consiste em dois ou mais servidores de federação que compartilham o mesmo banco de dados de configuração do AD FS e o token\-certificados de assinatura. O banco de dados de configuração pode ser armazenado em um banco de dados interno do Windows ou em um banco de dados do SQL Server. Se você planeja armazenar o banco de dados de configuração em um banco de dados SQL, certifique-se de que o banco de dados de configuração está acessível para que ele possa ser acessado por todos os novos servidores de federação que participam do farm. **Observação:** Para cenários de farm, é importante que o banco de dados estar localizado em um computador que não participe como um servidor de federação no farm. O NLB da Microsoft não permite que nenhum dos computadores que participam de um farm se comuniquem entre si. **Observação:** Certifique-se de que a identidade do AppPool de FS AD nos serviços de informações da Internet \(IIS\) \) em cada federação server que participa do farm tenha acesso de leitura no banco de dados de configuração.|  
-|Obter e compartilhar certificados|Você pode obter o certificado de autenticação de um único servidor de uma autoridade de certificação pública \(autoridade de certificação\)— por exemplo, VeriSign. Em seguida, você pode configurar o certificado para que todos os servidores de Federação compartilham a mesma parte de chave privada do certificado. Para obter mais informações sobre como compartilhar o mesmo certificado, consulte [lista de verificação: Configurando um servidor de Federação](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md). **Observação:** O snap de gerenciamento do AD FS\-refere-se aos certificados de autenticação de servidor para servidores de federação como certificados de comunicação de serviço.<br /><br />Para obter mais informações, consulte [Certificate Requirements for Federation Servers](Certificate-Requirements-for-Federation-Servers.md).|  
-|Apontar para a mesma instância do SQL Server|Se o banco de dados de configuração do AD FS for armazenado em um banco de dados SQL, o novo servidor de federação deve apontar para a mesma instância do SQL Server que é usada por outros servidores de federação no farm para que o novo servidor pode participar do farm.|  
+|Se você estiver usando o SQL Server para armazenar o banco de dados de configuração do AD FS|Um farm de servidores de Federação consiste em dois ou mais servidores de Federação que compartilham os mesmos AD FS banco de dados de configuração e token @ no__t-0signing certificados. O banco de dados de configuração pode ser armazenado em um banco de dados interno do Windows ou em um banco de dados do SQL Server. Se você planeja armazenar o banco de dados de configuração em um banco de dados SQL, verifique se o banco de dados de configuração está acessível para que ele possa ser acessado por todos os novos servidores de Federação que participam do farm. **Observação:** Para cenários de farm, é importante que o banco de dados de configuração esteja localizado em um computador que não participe também de um servidor de Federação nesse farm. O NLB da Microsoft não permite que nenhum dos computadores que participam de um farm se comuniquem entre si. **Observação:** Verifique se a identidade do AD FS AppPool no Serviços de Informações da Internet \(IIS @ no__t-1 @ no__t-2 em cada servidor de Federação que participa do farm tem acesso de leitura ao banco de dados de configuração.|  
+|Obter e compartilhar certificados|Você pode obter um único certificado de autenticação de servidor de uma autoridade de certificação pública \(CA @ no__t-1 – por exemplo, VeriSign. Em seguida, você pode configurar o certificado para que todos os servidores de Federação compartilhem a mesma parte de chave privada do certificado. Para obter mais informações sobre como compartilhar o mesmo certificado, consulte [Checklist: Configurando um servidor de Federação @ no__t-0. **Observação:** O snap do AD FS Management @ no__t-0in refere-se aos certificados de autenticação de servidor para servidores de Federação como certificados de comunicação de serviço.<br /><br />Para obter mais informações, consulte [Certificate Requirements for Federation Servers](Certificate-Requirements-for-Federation-Servers.md).|  
+|Apontar para a mesma instância do SQL Server|Se o banco de dados de configuração do AD FS for armazenado em um banco de dados SQL, o novo servidor de Federação deverá apontar para a mesma instância de SQL Server que é usada por outros servidores de Federação no farm para que o novo servidor possa participar do farm.|  
   
 ## <a name="see-also"></a>Consulte também
 [Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -1,8 +1,8 @@
 ---
-title: Usando o comando remove-MulticastTransmission
-description: 'Tópico de comandos do Windows para * * *- '
+title: Usando o comando Remove-MulticastTransmission
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc3ba385644ef9da9b5d592142091ff087cd7545
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 279554124b046f645b3c83e1490657aa8782104a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839677"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362824"
 ---
-# <a name="using-the-remove-multicasttransmission-command"></a>Usando o comando remove-MulticastTransmission
+# <a name="using-the-remove-multicasttransmission-command"></a>Usando o comando Remove-MulticastTransmission
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Desabilita a transmissão multicast para uma imagem. A menos que você especifique **/Force**, os clientes existentes serão concluir a transferência de imagem, mas novos clientes serão permitidos para ingressar.
+Desabilita a transmissão multicast para uma imagem. A menos que você especifique **/Force**, os clientes existentes concluirão a transferência de imagem, mas novos clientes não terão permissão para ingressar.
 ## <a name="syntax"></a>Sintaxe
 **Windows Server 2008**
 ```
@@ -38,7 +38,7 @@ wdsutil [Options] /remove-MulticastTransmissiomedia:<Image name>
 \x20    /Architecture:{x86 | ia64 | x64}
 \x20    [/Filename:<File name>]
 ```
-Para instalar imagens:
+para imagens de instalação:
 ```
 wdsutil [Options] /remove-MulticastTransmissiomedia:<Image name>
         [/Server:<Server name>]
@@ -49,15 +49,15 @@ wdsutil [Options] /remove-MulticastTransmissiomedia:<Image name>
 ## <a name="parameters"></a>Parâmetros
 |Parâmetro|Descrição|
 |-------|--------|
-mídia:<Image name>|Especifica o nome da imagem.|
-|[/Server:<Server name>]|Especifica o nome do servidor. Isso pode ser o nome NetBIOS ou o nome de domínio totalmente qualificado (FQDN). Se nenhum nome de servidor for especificado, o servidor local será usado.|
-mediatype:{Install&#124;Boot}|Especifica o tipo de imagem. Observe que essa opção deve ser definida como **instalar** para Windows Server 2008.|
-|/ Arquitetura: {x86 &#124; ia64 &#124; x64}|Especifica a arquitetura da imagem de inicialização que está associada com a transmissão para iniciar. Como é possível ter o mesmo nome de imagem para imagens de inicialização em arquiteturas diferentes, você deve especificar a arquitetura para garantir que a transmissão correta é usada.|
-|\mediaGroup:<Image group name>]|Especifica o grupo de imagens que contém a imagem. Se nenhum nome de grupo de imagem for especificado e o grupo de apenas uma imagem existe no servidor, esse grupo é usado. Se houver mais de um grupo de imagens no servidor, você deve usar essa opção para especificar o nome do grupo de imagem.|
-|[/Filename:<File name>]|Especifica o nome do arquivo. Se a imagem de origem não pode ser identificada exclusivamente pelo nome, você deve usar essa opção para especificar o nome do arquivo.|
-|[/force]|Remove a transmissão e encerra todos os clientes. A menos que você especifique um valor para o **/Force** opção existente os clientes pode concluir a transferência de imagem, mas novos clientes não são capazes de ingressar.|
-## <a name="BKMK_examples"></a>Exemplos
-Para interromper um namespace (clientes atuais serão concluída a transmissão, mas novos clientes não poderão ingressar), digite:
+mídia: <Image name>|Especifica o nome da imagem.|
+|[/Server:<Server name>]|Especifica o nome do servidor. Esse pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.|
+MediaType: {instalar&#124;inicialização}|Especifica o tipo de imagem. Observe que essa opção deve ser definida como **instalar** para o Windows Server 2008.|
+|/Architecture: {x86 &#124; IA64 &#124; x64}|Especifica a arquitetura da imagem de inicialização associada à transmissão a ser iniciada. Como é possível ter o mesmo nome de imagem para imagens de inicialização em diferentes arquiteturas, você deve especificar a arquitetura para garantir que a transmissão correta seja usada.|
+|\mediaGroup: <Image group name>]|Especifica o grupo de imagens que contém a imagem. Se nenhum nome de grupo de imagens for especificado e houver apenas um grupo de imagens no servidor, esse grupo de imagens será usado. Se houver mais de um grupo de imagens no servidor, você deverá usar essa opção para especificar o nome do grupo de imagens.|
+|[/Filename:<File name>]|Especifica o nome do arquivo. Se a imagem de origem não puder ser identificada exclusivamente pelo nome, você deverá usar essa opção para especificar o nome do arquivo.|
+|/Force|Remove a transmissão e encerra todos os clientes. A menos que você especifique um valor para a opção **/Force** , os clientes existentes podem concluir a transferência de imagem, mas novos clientes não podem ingressar.|
+## <a name="BKMK_examples"></a>Disso
+Para interromper um namespace (os clientes atuais concluirão a transmissão, mas novos clientes não poderão ingressar), digite:
 ```
 wdsutil /remove-MulticastTransmissiomedia:"Vista with Office"
 /Imagetype:Install
@@ -75,6 +75,6 @@ wdsutil /remove-MulticastTransmission /Server:MyWDSServer
 #### <a name="additional-references"></a>Referências adicionais
 [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
 [usando o comando get-AllMulticastTransmissions](using-the-get-allmulticasttransmissions-command.md)
-[usando o comando get-MulticastTransmission](using-the-get-multicasttransmission-command.md) 
- [Usando o comando /New-MulticastTransmission](using-the-new-multicasttransmission-command.md)
-[subcomando: início MulticastTransmission](subcommand-start-multicasttransmission.md)
+[usando o comando Get-MulticastTransmission](using-the-get-multicasttransmission-command.md)
+[usando o comando New-MulticastTransmission](using-the-new-multicasttransmission-command.md)
+[ Subcomando: Start-MulticastTransmission](subcommand-start-multicasttransmission.md)

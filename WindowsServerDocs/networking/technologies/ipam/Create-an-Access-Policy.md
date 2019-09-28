@@ -1,9 +1,9 @@
 ---
 title: Criar uma política de acesso
-description: Este tópico faz parte do guia de gerenciamento do gerenciamento de endereço IP (IPAM) no Windows Server 2016.
+description: Este tópico faz parte do guia de gerenciamento do IPAM (gerenciamento de endereços IP) no Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ipam
@@ -12,55 +12,55 @@ ms.topic: article
 ms.assetid: 854bd064-2f86-4678-a940-a04b3e48ae10
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3e72d47dc3c32db7465f7c47b16dcdc777636fd9
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: da5cc366a08f9a3f5b69952a2dff1f717fb1647b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282221"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355362"
 ---
 # <a name="create-an-access-policy"></a>Criar uma política de acesso
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Você pode usar este tópico para criar uma política de acesso no console de cliente IPAM.  
+Você pode usar este tópico para criar uma política de acesso no console do cliente IPAM.  
   
 A associação em **Administradores**, ou equivalente, é o requisito mínimo para executar este procedimento.  
   
 > [!NOTE]  
-> Você pode criar uma política de acesso para um usuário específico ou para um grupo de usuários no Active Directory. Quando você cria uma política de acesso, você deve selecionar uma função interna do IPAM ou uma função personalizada que você criou. Para obter mais informações sobre funções personalizadas, consulte [criar uma função de usuário para o controle de acesso](../../technologies/ipam/Create-a-User-Role-for-Access-Control.md).  
+> Você pode criar uma política de acesso para um usuário específico ou para um grupo de usuários no Active Directory. Ao criar uma política de acesso, você deve selecionar uma função interna do IPAM ou uma função personalizada que você criou. Para obter mais informações sobre as funções personalizadas, consulte [criar uma função de usuário para o controle de acesso](../../technologies/ipam/Create-a-User-Role-for-Access-Control.md).  
   
 ### <a name="to-create-an-access-policy"></a>Para criar uma política de acesso  
   
-1.  No Gerenciador do servidor, clique em **IPAM**. Console de cliente IPAM é exibida.  
+1.  Em Gerenciador do Servidor, clique em **IPAM**. O console do cliente IPAM é exibido.  
   
-2.  No painel de navegação, clique em **controle de acesso**. No painel de navegação inferior, clique com botão direito **políticas de acesso**e, em seguida, clique em **adicionar política de acesso**.  
+2.  No painel de navegação, clique em **controle de acesso**. No painel de navegação inferior, clique com o botão direito do mouse em **políticas de acesso**e clique em **Adicionar política de acesso**.  
   
     ![Adicionar política de acesso](../../media/Create-an-Access-Policy/ipam_CreateAP_01.jpg)  
   
-3.  O **adicionar política de acesso** caixa de diálogo é aberta. Na **as configurações de usuário**, clique em **Add**.  
+3.  A caixa de diálogo **Adicionar política de acesso** é aberta. Em **configurações do usuário**, clique em **Adicionar**.  
   
     ![Adicionar política de acesso](../../media/Create-an-Access-Policy/ipam_CreateAP_02.jpg)  
   
-4.  O **Selecionar usuário ou grupo** caixa de diálogo é aberta. Clique em **locais**.  
+4.  A caixa de diálogo **Selecionar usuário ou grupo** é aberta. Clique em **locais**.  
   
     ![Locais de usuário ou grupo](../../media/Create-an-Access-Policy/ipam_CreateAP_03.jpg)  
   
-5.  O **locais** caixa de diálogo é aberta. Navegue até o local que contém a conta de usuário, selecione o local e, em seguida, clique em **Okey**. O **locais** caixa de diálogo é fechada.  
+5.  A caixa de diálogo **locais** é aberta. Navegue até o local que contém a conta de usuário, selecione o local e clique em **OK**. A caixa de diálogo **locais** é fechada.  
   
     ![Selecionar local](../../media/Create-an-Access-Policy/ipam_CreateAP_04.jpg)  
   
-6.  No **Selecionar usuário ou grupo** na caixa **insira o nome do objeto para selecionar**, digite o nome da conta de usuário para o qual você deseja criar uma política de acesso. Clique em **OK**.  
+6.  Na caixa de diálogo **Selecionar usuário ou grupo** , em **digite o nome do objeto a ser selecionado**, digite o nome da conta de usuário para a qual você deseja criar uma política de acesso. Clique em **OK**.  
   
-7.  Na **adicionar política de acesso**, na **configurações do usuário**, **alias do usuário** agora contém a conta de usuário aos quais a política se aplica. Na **as configurações de acesso**, clique em **New**.  
+7.  Em **Adicionar política de acesso**, em **configurações de usuário**, o alias de **usuário** agora contém a conta de usuário à qual a política se aplica. Em **configurações de acesso**, clique em **novo**.  
   
     ![Nova configuração de acesso](../../media/Create-an-Access-Policy/ipam_CreateAP_05.jpg)  
   
-8.  Na **adicionar política de acesso**, **configurações de acesso** muda para **nova configuração**.  
+8.  Em **Adicionar política de acesso**, **configurações de acesso** altera para **nova configuração**.  
   
-    ![Nome da caixa de diálogo Alterar a nova configuração](../../media/Create-an-Access-Policy/ipam_CreateAP_06.jpg)  
+    ![Nome da caixa de diálogo Alterar para nova configuração](../../media/Create-an-Access-Policy/ipam_CreateAP_06.jpg)  
   
-9. Clique em **Selecionar função** para expandir a lista de funções. Selecione uma das funções internas ou, se você tiver criado as novas funções, selecione uma das funções que você criou. Por exemplo, se você tiver criado a função IPAMSrv para aplicar ao usuário, clique em **IPAMSrv**.  
+9. Clique em **selecionar função** para expandir a lista de funções. Selecione uma das funções internas ou, se você tiver criado novas funções, selecione uma das funções que você criou. Por exemplo, se você criou a função IPAMSrv para aplicar ao usuário, clique em **IPAMSrv**.  
   
     ![Selecionar função](../../media/Create-an-Access-Policy/ipam_CreateAP_07.jpg)  
   
@@ -68,11 +68,11 @@ A associação em **Administradores**, ou equivalente, é o requisito mínimo pa
   
     ![Adicionar nova configuração](../../media/Create-an-Access-Policy/ipam_CreateAP_08.jpg)  
   
-11. A função é adicionada à política de acesso. Para criar políticas de acesso adicionais, clique em **aplicar**e, em seguida, repita essas etapas para cada política que você deseja criar. Se você não deseja criar diretivas adicionais, clique em **Okey**.  
+11. A função é adicionada à política de acesso. Para criar políticas de acesso adicionais, clique em **aplicar**e repita essas etapas para cada política que você deseja criar. Se você não quiser criar políticas adicionais, clique em **OK**.  
   
-    ![Clique em Aplicar ou Okey](../../media/Create-an-Access-Policy/ipam_CreateAP_09.jpg)  
+    ![Clique em aplicar ou em OK](../../media/Create-an-Access-Policy/ipam_CreateAP_09.jpg)  
   
-12. No painel de exibição do console de cliente IPAM, verifique se que a nova política de acesso é criada.  
+12. No painel de exibição do console do cliente IPAM, verifique se a nova política de acesso foi criada.  
   
     ![Exibir a nova política de acesso](../../media/Create-an-Access-Policy/ipam_CreateAP_09a.jpg)  
   

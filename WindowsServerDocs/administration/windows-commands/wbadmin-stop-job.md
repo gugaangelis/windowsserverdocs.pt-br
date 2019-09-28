@@ -1,8 +1,8 @@
 ---
-title: Interrupção do trabalho de WBADMIN
-description: 'Tópico de comandos do Windows para * * *- '
+title: Wbadmin parar trabalho
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7a9e71fe2e4883c52c2418e21fc8764fd14e6c81
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 671ab48722970af214a040d8ca7fea807a525698
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889717"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362210"
 ---
-# <a name="wbadmin-stop-job"></a>Interrupção do trabalho de WBADMIN
+# <a name="wbadmin-stop-job"></a>Wbadmin parar trabalho
 
 
 
-Cancela a operação de backup ou recuperação em execução no momento. Operações canceladas não podem ser reiniciadas, você deve executar novamente uma operação de backup ou recuperação cancelada desde o início.
+Cancela a operação de backup ou recuperação que está em execução no momento. As operações canceladas não podem ser reiniciadas — você deve executar novamente uma operação de backup ou recuperação cancelada desde o início.
 
-Para interromper uma operação de backup ou recuperação com este subcomando, você deve ser um membro do **operadores de Backup** grupo ou o **administradores** grupo, ou você deve ter sido recebido a autoridade apropriada. Além disso, você deve executar **wbadmin** em um prompt de comando elevado. (Para abrir um atalho de prompt de comando com privilégios elevados **Prompt de comando** e, em seguida, clique em **executar como administrador**.)
+Para interromper uma operação de backup ou recuperação com este subcomando, você deve ser membro do grupo **operadores de backup** ou do grupo **Administradores** ou ter recebido a autoridade apropriada. Além disso, você deve executar o **Wbadmin** em um prompt de comandos com privilégios elevados. (Para abrir um prompt de comando com privilégios elevados, clique com o botão direito do mouse em **prompt de comando** e clique em **Executar como administrador**.)
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -43,5 +43,5 @@ wbadmin stop job
 
 #### <a name="additional-references"></a>Referências adicionais
 
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

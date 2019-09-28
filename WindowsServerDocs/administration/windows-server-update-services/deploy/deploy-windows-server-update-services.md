@@ -1,7 +1,7 @@
 ---
 title: Implantar o Windows Server Update Services
-description: Tópico do Windows Server Update Service (WSUS) - uma visão geral do processo de implantação com links para as quatro etapas para fazer isso
-ms.prod: windows-server-threshold
+description: Tópico Windows Server Update Service (WSUS)-uma visão geral do processo de implantação com links para as quatro etapas para realizá-lo
+ms.prod: windows-server
 ms.reviewer: na
 ms.technology: manage-wsus
 ms.topic: get-started-article
@@ -10,12 +10,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 51972ad352f6530c8ee2aa84aec57b62784da728
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e3e6bcd5f90d1a7df2a35dda45b4bf8951940815
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873177"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361683"
 ---
 # <a name="deploy-windows-server-update-services"></a>Implantar o Windows Server Update Services
 
@@ -23,11 +23,11 @@ ms.locfileid: "59873177"
 
 O WSUS (Windows Server Update Services) permite que os administradores de Tecnologia da Informação implantem as atualizações mais recentes dos produtos da Microsoft. WSUS é uma função de servidor do Windows Server que pode ser instalada para gerenciar e distribuir atualizações. Um servidor do WSUS pode ser a fonte de atualização de outros servidores do WSUS na organização. O servidor WSUS que atua como fonte de atualização é chamado de servidor upstream.  
 
-Em uma implementação do WSUS, pelo menos um servidor do WSUS na rede precisa se conectar ao Microsoft Update para obter as informações de atualizações disponíveis. Você pode determinar, com base na configuração e segurança de rede, quantos outros servidores se conectam diretamente ao Microsoft Update.  
+Em uma implementação do WSUS, pelo menos um servidor do WSUS na rede precisa se conectar ao Microsoft Update para obter as informações de atualizações disponíveis. Você pode determinar, com base em segurança e configuração de rede, quantos outros servidores se conectam diretamente a Microsoft Update.  
 
-Este guia fornece informações conceituais para planejar e implantar o Windows Server Update Services.  
+Este guia fornece informações conceituais para o planejamento e a implantação do serviço de atualização do Windows Server.  
 
--   [Planejar a implantação do WSUS](../plan/plan-your-wsus-deployment.md)  
+-   [Planejar sua implantação do WSUS](../plan/plan-your-wsus-deployment.md)  
 
 -   [Etapa 1: Instalar a função de servidor do WSUS](1-install-the-wsus-server-role.md)  
 
@@ -35,4 +35,4 @@ Este guia fornece informações conceituais para planejar e implantar o Windows 
 
 -   [Etapa 3: Aprovar e implantar atualizações no WSUS](3-approve-and-deploy-updates-in-wsus.md)  
 
--   [Etapa 4: Definir configurações de política de grupo para atualizações automáticas](4-configure-group-policy-settings-for-automatic-updates.md)  
+-   [Etapa 4: Definir as configurações da Política de Grupo para atualizações automáticas](4-configure-group-policy-settings-for-automatic-updates.md)  
