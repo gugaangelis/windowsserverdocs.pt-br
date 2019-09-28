@@ -2,7 +2,7 @@
 ms.assetid: 0b3587b2-219f-43d8-88b4-1254eaa8b910
 title: Proxy de aplicativo Web no Windows Server
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.service: ''
 ms.suite: na
@@ -10,50 +10,50 @@ ms.technology: web-app-proxy
 ms.tgt_pltfrm: na
 ms.topic: article
 author: kgremban
-ms.openlocfilehash: 760b0fa11d8d0b77c2a44a8696d199bc378da947
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bfa57a18ee74e1e54f6e7c1ed85d4bfbccb8937b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446795"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404251"
 ---
 # <a name="web-application-proxy-in-windows-server"></a>Proxy de aplicativo Web no Windows Server
 
->Aplica-se a: Windows Server&reg; 2016
+>Aplica-se a: Windows Server @ no__t-0 2016
 
-**Este conteúdo é relevante para a versão local do Proxy de aplicativo Web. Para habilitar o acesso seguro a aplicativos locais pela nuvem, consulte o [conteúdo de Proxy de aplicativo do Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/).**  
+o conteúdo de @no__t 0This é relevante para a versão local do proxy de aplicativo Web. Para habilitar o acesso seguro a aplicativos locais na nuvem, consulte o conteúdo de [proxy de aplicativo do AD do Azure](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/). **  
   
-O conteúdo desta seção descreve as novidades e mudanças do Proxy de aplicativo de Web para o Windows Server 2016. Os novos recursos e alterações listados aqui são os mais probabilidade de ter um impacto maior enquanto você trabalha com a versão prévia.  
+O conteúdo desta seção descreve as novidades e alterações no proxy de aplicativo Web para o Windows Server 2016. Os novos recursos e as alterações listados aqui são os mais prováveis de ter o maior impacto à medida que você trabalha com a versão prévia.  
   
-## <a name="web-application-proxy-new-features"></a>Novos recursos do Web Application Proxy  
+## <a name="web-application-proxy-new-features"></a>Novos recursos do proxy de aplicativo Web  
   
-- Pré-autenticação para publicação de aplicativo HTTP básico  
+- Pré-autenticação para publicação de aplicativo básica HTTP  
   
-  HTTP básico é o protocolo de autorização usado por muitos protocolos, incluindo o ActiveSync, para conectar clientes avançados, incluindo smartphones, com sua caixa de correio do Exchange. Proxy de aplicativo Web tradicionalmente interage com o AD FS usando redirecionamentos que não há suporte para clientes do ActiveSync. Essa nova versão do Proxy de aplicativo Web fornece suporte para publicar um aplicativo usando HTTP básica, permitindo que o aplicativo HTTP receber uma não-declarações terceira parte confiável para o aplicativo para o serviço de Federação.  
+  O HTTP básico é o protocolo de autorização usado por muitos protocolos, incluindo o ActiveSync, para conectar clientes avançados, incluindo smartphones, com sua caixa de correio do Exchange. O proxy de aplicativo Web tradicionalmente interage com AD FS usando redirecionamentos que não tem suporte em clientes do ActiveSync. Essa nova versão do proxy de aplicativo Web fornece suporte para publicar um aplicativo usando HTTP básico habilitando o aplicativo HTTP a receber uma relação de confiança de terceira parte confiável sem declarações para o aplicativo para a Serviço de Federação.  
   
-  Para obter mais informações sobre a publicação de HTTP básica, consulte [publicar aplicativos usando pré-autenticação do AD FS](../web-application-proxy/../web-application-proxy/Publishing-Applications-using-AD-FS-Preauthentication.md)  
+  Para obter mais informações sobre a publicação básica HTTP, consulte [Publicando aplicativos usando AD FS pré-autenticação](../web-application-proxy/../web-application-proxy/Publishing-Applications-using-AD-FS-Preauthentication.md)  
   
-- Publicação de domínio de curinga de aplicativos  
+- Publicação do domínio curinga de aplicativos  
   
-  Para dar suporte a cenários como o SharePoint 2013, a URL externa para o aplicativo agora pode incluir um caractere curinga para que você possa publicar vários aplicativos a partir de um domínio específico, por exemplo, https://*.sp-apps.contoso.com. Isso simplificará a publicação de aplicativos do SharePoint.  
+  Para dar suporte a cenários como o SharePoint 2013, a URL externa para o aplicativo agora pode incluir um curinga para permitir que você publique vários aplicativos de dentro de um domínio específico, por exemplo, https://*. SP-apps. contoso. com. Isso simplificará a publicação de aplicativos do SharePoint.  
   
-- HTTP para redirecionamento a HTTPS  
+- Redirecionamento de HTTP para HTTPS  
   
-  Para certificar-se de que os usuários podem acessar seu aplicativo, mesmo se eles não digitar a URL HTTPS, Proxy de aplicativo Web agora dá suporte a HTTP para redirecionamento a HTTPS.  
+  Para garantir que os usuários possam acessar seu aplicativo, mesmo que eles não digitem HTTPS na URL, o proxy de aplicativo Web agora dá suporte ao redirecionamento de HTTP para HTTPS.  
   
 - Publicação HTTP  
   
   Agora é possível publicar aplicativos HTTP usando a pré-autenticação de passagem  
   
-- Publicação de aplicativos de Gateway de área de trabalho remota  
+- Publicação de aplicativos de gateway de Área de Trabalho Remota  
   
-  Para obter mais informações sobre RDG no Proxy de aplicativo Web, consulte [publicando aplicativos com o SharePoint, Exchange e RDG](../web-application-proxy/Publishing-Applications-with-SharePoint,-Exchange-and-RDG.md)  
+  Para obter mais informações sobre o RDG no proxy de aplicativo Web, consulte [Publicando aplicativos com o SharePoint, Exchange e RDG](../web-application-proxy/Publishing-Applications-with-SharePoint,-Exchange-and-RDG.md)  
   
-- Novo log de depuração para a melhor solução de problemas e log do serviço aprimorado de trilha de auditoria completa e tratamento de erros aprimorado  
+- Novo log de depuração para melhorar a solução de problemas e o log de serviço aprimorado para a trilha de auditoria completa e tratamento de erro aprimorado  
   
-  Para obter mais informações sobre como solucionar problemas, consulte [solução de problemas de Proxy de aplicativo Web](https://technet.microsoft.com/library/dn770156.aspx)  
+  Para obter mais informações sobre solução de problemas, consulte [Solucionando problemas de proxy de aplicativo Web](https://technet.microsoft.com/library/dn770156.aspx)  
   
-- Aprimoramentos de interface do usuário do Console do administrador  
+- Aprimoramentos da interface do usuário Console do Administrador  
   
 - Propagação de endereço IP do cliente para aplicativos de back-end  
   

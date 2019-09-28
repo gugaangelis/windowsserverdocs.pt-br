@@ -1,39 +1,39 @@
 ---
-title: Adicionar informações de host para atestado de Admin confiável
+title: Adicionar informações do host para o atestado confiável do administrador
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 87089ebc-b953-4aa3-96b5-966cf91acb02
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 7949711dbb0f89f5404b491d60938985bfa98c22
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 946f91d05063475ae45fb334c67f8d5081d3984d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849457"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403719"
 ---
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-# <a name="authorize-hyper-v-hosts-using-admin-trusted-attestation"></a>Autorizar os hosts do Hyper-V usando o atestado de Admin confiável
+# <a name="authorize-hyper-v-hosts-using-admin-trusted-attestation"></a>Autorizar hosts Hyper-V usando o atestado de administrador confiável
 
 >[!IMPORTANT]
->Atestado de Admin confiável (modo AD) é substituído, começando com o Windows Server 2019. Para ambientes em que o atestado de TPM não for possível, configure [atestado de chaves de host](guarded-fabric-initialize-hgs-key-mode.md). Atestado de chaves do host fornece garantia semelhante para o modo do AD e é mais simples de configurar. 
+>O atestado confiável de administrador (modo de anúncio) é preterido a partir do Windows Server 2019. Para ambientes em que o atestado do TPM não é possível, configure o [atestado de chave do host](guarded-fabric-initialize-hgs-key-mode.md). O atestado de chave de host fornece garantia semelhante ao modo AD e é mais simples de configurar. 
 
 
-Para autorizar um host protegido no modo do AD: 
+Para autorizar um host protegido no modo AD: 
 
-1. No domínio do fabric, adicione os hosts do Hyper-V para um grupo de segurança.
-2. No domínio HGS, registre o SID do grupo de segurança com o HGS. 
+1. No domínio de malha, adicione os hosts Hyper-V a um grupo de segurança.
+2. No domínio HGS, registre o SID do grupo de segurança com HGS. 
 
-## <a name="add-the-hyper-v-host-to-a-security-group-and-reboot-the-host"></a>Adicione o host do Hyper-V para um grupo de segurança e a reinicialização do host
+## <a name="add-the-hyper-v-host-to-a-security-group-and-reboot-the-host"></a>Adicionar o host Hyper-V a um grupo de segurança e reinicializar o host
 
-1. Criar uma **GLOBAL** segurança de grupo no domínio de malha e adicionar hosts Hyper-V que serão executados de VMs blindadas. 
-   Reinicie os hosts para atualizar sua participação no grupo.
+1. Crie um grupo de segurança **global** no domínio de malha e adicione hosts Hyper-V que executarão VMs blindadas. 
+   Reinicie os hosts para atualizar sua associação de grupo.
 
-2. Use Get-ADGroup para obter o identificador de segurança (SID) do grupo de segurança e fornecê-la para o administrador HGS. 
+2. Use Get-ADGroup para obter o SID (identificador de segurança) do grupo de segurança e fornecê-lo ao administrador do HGS. 
 
    ```powershell
    Get-ADGroup "Guarded Hosts"
@@ -41,12 +41,12 @@ Para autorizar um host protegido no modo do AD:
 
    ![Comando Get-AdGroup com saída](../media/Guarded-Fabric-Shielded-VM/guarded-host-get-adgroup.png)
 
-## <a name="register-the-sid-of-the-security-group-with-hgs"></a>Registrar o SID do grupo de segurança com o HGS  
+## <a name="register-the-sid-of-the-security-group-with-hgs"></a>Registrar o SID do grupo de segurança com HGS  
 
-1. Obter o SID do grupo de segurança para hosts protegidos do administrador de malha e execute o seguinte comando para registrar o grupo de segurança com o HGS. 
-   Execute novamente o comando se necessário para grupos adicionais. 
+1. Obtenha o SID do grupo de segurança para hosts protegidos do administrador da malha e execute o comando a seguir para registrar o grupo de segurança com o HGS. 
+   Execute novamente o comando, se necessário, para grupos adicionais. 
    Forneça um nome amigável para o grupo. 
-   Ele não precisa corresponder ao nome do grupo de segurança do Active Directory. 
+   Ele não precisa corresponder ao nome do grupo de segurança Active Directory. 
 
    ```powershell
    Add-HgsAttestationHostGroup -Name "<GuardedHostGroup>" -Identifier "<SID>"

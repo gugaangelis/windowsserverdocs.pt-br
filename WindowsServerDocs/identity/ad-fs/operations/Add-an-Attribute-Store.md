@@ -7,42 +7,42 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8d3027c419e85d1aec4b3b0308926a86bb37620d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 0f5c9d3b0f856ab72a16930ddb5c50686d747ecc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445095"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358392"
 ---
 # <a name="add-an-attribute-store"></a>Adicionar um repositório de atributos
 
 
-Contas de usuário e contas de computador que requerem acesso a um recurso que é protegido pelos serviços de Federação do Active Directory \(do AD FS\) são armazenados em um repositório de atributos, como o Active Directory Domain Services \(AD DS \). O mecanismo de emissão de declarações usa repositórios de atributos para coletar dados que é necessários emitir declarações. Dados de repositórios de atributos são então projetados como declarações.  
+Contas de usuário e contas de computador que exigem acesso a um recurso protegido por Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1 são armazenadas em um repositório de atributos, como Active Directory Domain Services \(AD DS @ no__t-3. O mecanismo de emissão de declarações usa repositórios de atributos para coletar dados necessários para emitir declarações. Os dados dos repositórios de atributos são então projetados como declarações.  
   
-Você pode usar o procedimento a seguir para adicionar um repositório de atributos para o serviço de Federação.  
+Você pode usar o procedimento a seguir para adicionar um repositório de atributos ao Serviço de Federação.  
   
-A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e associações de grupos em [domínio grupos padrão Local e](https://go.microsoft.com/fwlink/?LinkId=83477).   
+A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
 #### <a name="to-add-an-attribute-store"></a>Para adicionar um repositório de atributos  
   
-1.  Abra **gerenciamento do AD FS**.  
+1.  Abra o **Gerenciamento de AD FS**.  
   
-2.  Sob **ações** clique em **adicionar um repositório de atributos**.  
+2.  Em **ações** , clique em **Adicionar um repositório de atributos**.  
 
 ![Adicionar repositório de atributos](media/Add-an-Attribute-Store/addstore1.PNG)
   
-3. No **adicionar um repositório de atributos** caixa de diálogo caixa, configure as seguintes propriedades para o repositório de atributos que você deseja adicionar:  
+3. Na caixa de diálogo **Adicionar um repositório de atributos** , configure as seguintes propriedades para o repositório de atributos que você deseja adicionar:  
   
-   -   Na **nome de exibição**, digite o nome que você deseja usar para identificar o repositório de atributos.  
+   -   Em **nome de exibição**, digite o nome que você deseja usar para identificar o repositório de atributos.  
   
-   -   Na **tipo de repositório de atributo**, selecione um tipo de repositório de atributos com suporte, ou **do Active Directory**, **LDAP**, ou **SQL**.  
+   -   Em **tipo de repositório de atributo**, selecione um tipo de repositório de atributo com suporte, **Active Directory**, **LDAP**ou **SQL**.  
   
-   -   Na **cadeia de caracteres de Conexão**, se você tiver selecionado a um Lightweight Directory Access Protocol \(LDAP\) repositório ou uma linguagem de consulta estruturada \(SQL\) armazenar, insira a cadeia de caracteres que é usado para estabelecer uma conexão para o repositório de atributos. Para repositórios de atributos do Active Directory, nenhuma cadeia de conexão é necessária; Portanto, este campo será desabilitado.  
+   -   Em **cadeia de conexão**, se você tiver selecionado um protocolo de acesso de diretório leve \(LDAP @ no__t-2 ou um repositório linguagem SQL \(SQL @ no__t-4, insira a cadeia de caracteres que você usou para estabelecer uma conexão com o atributo armazenadas. Para Active Directory repositórios de atributo, nenhuma cadeia de conexão é necessária; Portanto, esse campo é desabilitado.  
   
        > [!NOTE]  
-       > O AD FS cria automaticamente um repositório de atributos do Active Directory, por padrão.  
+       > O AD FS cria automaticamente um repositório de atributos de Active Directory, por padrão.  
  
 ![Adicionar repositório de atributos](media/Add-an-Attribute-Store/addstore2.PNG) 
 
@@ -52,4 +52,4 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
 
 [Operações do AD FS](../../ad-fs/AD-FS-2016-Operations.md)
   
-[A função dos repositórios de atributos](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md)  
+[A função de repositórios de atributos](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md)  

@@ -1,8 +1,8 @@
 ---
-title: Bitsadmin gettemporaryname
-description: Tópico de comandos do Windows para **gettemporaryname bitsadmin** -relata o nome de arquivo temporário de determinado arquivo dentro do trabalho.
+title: Bitsadmin gettemporárioname
+description: O tópico de comandos do Windows para **Bitsadmin gettemporárioname** -relata o nome de arquivo temporário do arquivo fornecido dentro do trabalho.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 762a2a5943202b38e94a245b74745e6631e0792d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7b665fae4c0bfdd5ea04b929be49f9590430b358
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876707"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381304"
 ---
-# <a name="bitsadmin-gettemporaryname"></a>Bitsadmin gettemporaryname
+# <a name="bitsadmin-gettemporaryname"></a>Bitsadmin gettemporárioname
 
 
 
-Relata o nome de arquivo temporário de determinado arquivo dentro do trabalho.
+Informa o nome de arquivo temporário do arquivo fornecido dentro do trabalho.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,16 +36,16 @@ bitsadmin /GetTemporaryName <Job> <file index>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
-|Índice de arquivo|Começa em 0|
+|Job|O nome de exibição ou o GUID do trabalho|
+|Índice de arquivo|Começa com 0|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir relata o nome de arquivo temporário do arquivo 2 do trabalho nomeado *myJob*.
+O exemplo a seguir relata o nome de arquivo temporário de File 2 para o trabalho chamado *myJob*.
 ```
 C:\>bitsadmin /GetTemporaryName myJob 1 
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

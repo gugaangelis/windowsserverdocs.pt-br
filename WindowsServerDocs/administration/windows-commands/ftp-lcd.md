@@ -1,8 +1,8 @@
 ---
-title: lcd de FTP
-description: 'Tópico de comandos do Windows para * * *- '
+title: LCD de FTP
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eac028c8aa675e680dedefcfe9f0b8da18ce7179
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 47058cc62e4e87d1fcd951ec3b4a7885eeef2ae2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826887"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376313"
 ---
-# <a name="ftp-lcd"></a>ftp: lcd
+# <a name="ftp-lcd"></a>FTP: LCD
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Altera o diretório de trabalho no computador local. Por padrão, o diretório de trabalho é o diretório no qual **ftp** foi iniciado.   
+altera o diretório de trabalho no computador local. Por padrão, o diretório de trabalho é o diretório no qual o **FTP** foi iniciado.   
 ## <a name="syntax"></a>Sintaxe  
 ```  
 lcd [<directory>]  
@@ -32,11 +32,11 @@ lcd [<directory>]
 ### <a name="parameters"></a>Parâmetros  
 |Parâmetro|Descrição|  
 |-------|--------|  
-|[<directory>]|Especifica o diretório no computador local para o qual alterar. Se *directory* não for especificado, o diretório de trabalho atual é alterado para o diretório padrão.|  
-## <a name="BKMK_Examples"></a>Exemplos  
-Altere o diretório de trabalho no computador local para **C:\dir1**  
+|[<directory>]|Especifica o diretório no computador local para o qual alterar. Se o *diretório* não for especificado, o diretório de trabalho atual será alterado para o diretório padrão.|  
+## <a name="BKMK_Examples"></a>Disso  
+Altere o diretório de trabalho no computador local para **C:\Dir1**  
 ```  
 lcd C:\dir1  
 ```  
 ## <a name="additional-references"></a>Referências adicionais  
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  

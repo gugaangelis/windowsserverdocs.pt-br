@@ -2,7 +2,7 @@
 title: Gerenciar uma coleção de sessão de área de trabalho pessoal no RDS
 description: Saiba como adicionar um RDSH e programas RemoteApp na implantação do RDS.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 286c7ba4bd4428669d135c35c825033d22b8f40e
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 6bf0ad3a2cd35c9794fd13631ed29df94725685c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743518"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387412"
 ---
 ## <a name="manage-your-personal-desktop-session-collections"></a>Gerenciar coleções de sessão de área de trabalho pessoal
 
@@ -87,4 +87,4 @@ O cmdlet **Export-RDPersonalPersonalDesktopAssignment** exporta as associações
 -Path \<string\>
 
 
-Todos os novos cmdlets oferecem suporte aos parâmetros comuns: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer e -OutVariable. Para obter mais informações, consulte [about_CommonParameters](https://go.microsoft.com/fwlink/p/?LinkID=113216).
+Todos os novos cmdlets dão suporte aos parâmetros comuns: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer e -OutVariable. Para obter mais informações, consulte [about_CommonParameters](https://go.microsoft.com/fwlink/p/?LinkID=113216).

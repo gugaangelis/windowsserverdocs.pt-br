@@ -1,8 +1,8 @@
 ---
 title: choice
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 78d2816bff754ef04558cf37eaada7c7fafba823
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e710b3813525647053365ebf4c764181fc38b3f6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841547"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379364"
 ---
 # <a name="choice"></a>choice
 
 
 
-Solicita que o usuário selecionar um item em uma lista de opções de único caractere em um arquivo em lotes e, em seguida, retorna o índice da opção selecionada. Se usado sem parâmetros, **choice** exibe as opções padrão **Y** e **N**.
+Solicita que o usuário selecione um item de uma lista de opções de caractere único em um programa em lotes e, em seguida, retorne o índice da opção selecionada. Se usado sem parâmetros, **Choice** exibirá as opções padrão **Y** e **N**.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -38,48 +38,48 @@ choice [/c [<Choice1><Choice2><…>]] [/n] [/cs] [/t <Timeout> /d <Choice>] [/m 
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/c \<Choice1 ><Choice2><... >|Especifica a lista de opções a serem criados. As opções válidas incluem a – z, A-Z, 0-9 e caracteres ASCII estendidos (254 128). A lista padrão é "YN", que é exibido como `[Y,N]?`.|
-|/n|Oculta a lista de opções, embora as opções ainda estão habilitadas e o texto da mensagem (se especificado pelo **/m**) ainda é exibido.|
-|/cs|Especifica que as escolhas são diferencia maiusculas de minúsculas. Por padrão, as opções não diferenciam maiusculas de minúsculas.|
-|/t \<Timeout>|Especifica o número de segundos para pausar antes de usar a opção padrão especificada por **/d**. Os valores aceitáveis são de **0** à **9999**. Se **/t** é definido como **0**, **escolha** não fará uma pausa antes de retornar a opção padrão.|
-|/d \<Choice>|Especifica a opção padrão para usar após aguardar o número de segundos especificado por **/t**. A opção padrão deve ser na lista de opções especificadas em **/c**.|
-|/m <"Text">|Especifica uma mensagem a ser exibida antes da lista de opções. Se **/m** não for especificado, somente a opção é exibido.|
+|/c \<Choice1 > <Choice2> <... >|Especifica a lista de opções a serem criadas. As opções válidas incluem a-z, A-Z, 0-9 e caracteres ASCII estendidos (128-254). A lista padrão é "YN", que é exibida como `[Y,N]?`.|
+|opção|Oculta a lista de opções, embora as opções ainda estejam habilitadas e o texto da mensagem (se especificado por **/m**) ainda seja exibido.|
+|/cs|Especifica que as opções diferenciam maiúsculas de minúsculas. Por padrão, as opções não diferenciam maiúsculas de minúsculas.|
+|/t \<Timeout >|Especifica o número de segundos para pausar antes de usar a opção padrão especificada por **/d**. Os valores aceitáveis são de **0** a **9999**. Se **/t** for definido como **0**, a **opção** não será pausada antes de retornar a escolha padrão.|
+|/d \<Choice >|Especifica a escolha padrão a ser usada depois de aguardar o número de segundos especificado por **/t**. A opção padrão deve estar na lista de opções especificadas por **/c**.|
+|/m < "texto" >|Especifica uma mensagem a ser exibida antes da lista de opções. Se **/m** não for especificado, somente o prompt de opção será exibido.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
--   A variável de ambiente ERRORLEVEL é definida para o índice da chave que o usuário seleciona na lista de opções. A primeira opção na lista retorna um valor de 1, a segunda um valor de 2 e assim por diante. Se o usuário pressiona uma tecla que não é uma opção válida, **opção** emitirá um aviso sonoro. Se **opção** detecta uma condição de erro, ele retorna um valor ERRORLEVEL de 255. Se o usuário pressiona CTRL + BREAK ou CTRL + C **opção** retorna um valor ERRORLEVEL igual a 0.
+-   A variável de ambiente ERRORLEVEL é definida como o índice da chave que o usuário seleciona na lista de opções. A primeira opção na lista retorna um valor de 1, o segundo valor de 2 e assim por diante. Se o usuário pressionar uma tecla que não seja uma opção válida, **Choice** emitirá um aviso sonoro. Se **Choice** detectar uma condição de erro, retornará um valor ERRORLEVEL de 255. Se o usuário pressionar CTRL + BREAK ou CTRL + C, **Choice** retornará um valor ERRORLEVEL de 0.
 
 > [!NOTE]
-> Quando você usa os valores ERRORLEVEL em um arquivo em lotes, liste-as em ordem decrescente.
+> Quando você usa valores ERRORLEVEL em um programa em lotes, listá-los em ordem decrescente.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para apresentar as opções de Y, N e C, digite a seguinte linha em um arquivo em lotes:
+Para apresentar as opções Y, N e C, digite a seguinte linha em um arquivo em lotes:
 ```
 choice /c ync
 ```
-O seguinte aviso é exibido quando o arquivo em lotes é executado o **opção** comando:
+O prompt a seguir é exibido quando o arquivo em lotes executa o comando **Choice** :
 ```
 [Y,N,C]?
 ```
-Para ocultar as opções de Y, N e C, mas exibe o texto "Sim, não, ou continuar", digite a seguinte linha em um arquivo em lotes:
+Para ocultar as opções Y, N e C, mas exibir o texto "Sim, não ou continuar", digite a seguinte linha em um arquivo em lotes:
 ```
 choice /c ync /n /m "Yes, No, or Continue?"
 ```
-O seguinte aviso é exibido quando o arquivo em lotes é executado o **opção** comando:
+O prompt a seguir é exibido quando o arquivo em lotes executa o comando **Choice** :
 ```
 Yes, No, or Continue?
 ```
 
 > [!NOTE]
-> Se você usar o **/n** parâmetro, mas não use **/m**, o usuário não é solicitado quando **escolha** está aguardando entrada.
+> Se você usar o parâmetro **/n** , mas não usar **/m**, o usuário não receberá uma solicitação quando a **opção** estiver aguardando a entrada.
 
 Para mostrar o texto e as opções usadas nos exemplos anteriores, digite a seguinte linha em um arquivo em lotes:
 ```
 choice /c ync /m "Yes, No, or Continue"
 ```
-O seguinte aviso é exibido quando o arquivo em lotes é executado o **opção** comando:
+O prompt a seguir é exibido quando o arquivo em lotes executa o comando **Choice** :
 ```
 Yes, No, or Continue [Y,N,C]?
 ```
@@ -87,14 +87,14 @@ Para definir um limite de tempo de cinco segundos e especificar **N** como o val
 ```
 choice /c ync /t 5 /d n
 ```
-O seguinte aviso é exibido quando o arquivo em lotes é executado o **opção** comando:
+O prompt a seguir é exibido quando o arquivo em lotes executa o comando **Choice** :
 ```
 [Y,N,C]?
 ```
 
 > [!NOTE]
-> Neste exemplo, se o usuário não pressionar uma tecla dentro de cinco segundos, **choice** seleciona **N** por padrão e retorna um valor de erro de 2. Caso contrário, **opção** retorna o valor correspondente para a escolha do usuário.
+> Neste exemplo, se o usuário não pressionar uma tecla em cinco segundos, **Choice** selecionará **N** por padrão e retornará um valor de erro 2. Caso contrário, **Choice** retornará o valor correspondente à opção do usuário.
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

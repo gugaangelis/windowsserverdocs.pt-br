@@ -1,8 +1,8 @@
 ---
 title: bitsadmin setdescription
-description: Tópico de comandos do Windows para **setdescription bitsadmin** -define a descrição do trabalho especificado.
+description: O tópico de comandos do Windows para **Bitsadmin SetDescription** – define a descrição do trabalho especificado.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e3323c20eebc8ba633ccfd478daa0753e506f46
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d140ee9d575828a1a4d536073e468c9b4e56799f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830747"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380931"
 ---
 # <a name="bitsadmin-setdescription"></a>bitsadmin setdescription
 
@@ -36,16 +36,16 @@ bitsadmin /SetDescription <Job> <Description>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
 |Descrição|Texto usado para descrever o trabalho.|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir recupera a descrição do trabalho nomeado *myDownloadJob*.
+O exemplo a seguir recupera a descrição para o trabalho chamado *myDownloadJob*.
 ```
 C:\>bitsadmin /SetDescription myDownloadJob "Music Downloads"
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

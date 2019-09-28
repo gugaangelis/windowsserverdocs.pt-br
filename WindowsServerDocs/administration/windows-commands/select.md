@@ -1,8 +1,8 @@
 ---
 title: selecionar
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4c3723dd414adca68c22011ef3f6be02eb6531d5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7dc3bc8775f971968f096ba4344348e77c112cfa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889897"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384113"
 ---
 # <a name="select"></a>selecionar
 
 
 
-Desloca o foco para um disco, partição, volume ou disco rígido virtual (VHD).
+Desloca o foco para um disco, partição, volume ou VHD (disco rígido virtual).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -39,17 +39,17 @@ select vdisk
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|[Selecione o disco](select-disk.md)|Desloca o foco para um disco.|
-|[Selecione a partição](select-partition.md)|Desloca o foco para uma partição.|
-|[Selecione o volume](select-volume.md)|Desloca o foco para um volume.|
-|[Selecionar o vdisk](select-vdisk.md)|Desloca o foco para um VHD.|
+|[Selecionar disco](select-disk.md)|Desloca o foco para um disco.|
+|[Selecionar partição](select-partition.md)|Desloca o foco para uma partição.|
+|[Selecionar volume](select-volume.md)|Desloca o foco para um volume.|
+|[Selecionar vdisk](select-vdisk.md)|Desloca o foco para um VHD.|
 
 ## <a name="remarks"></a>Comentários
 
 -   Se um volume for selecionado com uma partição correspondente, a partição será selecionada automaticamente.
--   Se uma partição é selecionada com um volume correspondente, o volume será selecionado automaticamente.
+-   Se uma partição for selecionada com um volume correspondente, o volume será selecionado automaticamente.
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 

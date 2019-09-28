@@ -1,49 +1,49 @@
 ---
 title: Criar arquivos de conjunto de VHD do Hyper-V
-description: Etapas para criar um arquivo VHDset em 2016 Hyper-v
+description: Etapas para criar um arquivo VHDset no Hyper-v 2016
 author: jiwool
 ms.author: jiwool
 manager: senthilr
 ms.date: 01/26/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: compute-hyper-v
 ms.assetid: 444e1496-9e5a-41cf-bfbc-306e2ed8e00a
 audience: IT Pros
 ms.reviewer: kathydav
-ms.openlocfilehash: a5a6f79d362b9058ca29d979457a1dcdfc0c9f82
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: f5c9b932cabfea8df55ba8622165bbb04b4a4113
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445695"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392725"
 ---
 # <a name="create-hyper-v-vhd-set-files"></a>Criar arquivos de conjunto de VHD do Hyper-V
-Arquivos VHD definido são um novo modelo de disco Virtual compartilhado para clusters de convidado no Windows Server 2016. Arquivos VHD definido dão suporte ao redimensionamento online de discos virtuais compartilhados, dão suporte a réplica do Hyper-V e podem ser incluídos em pontos de verificação consistente com o aplicativo. 
+Os arquivos do conjunto VHD são um novo modelo de disco virtual compartilhado para clusters convidados no Windows Server 2016. Os arquivos de conjunto de VHD dão suporte ao redimensionamento online de discos virtuais compartilhados, dão suporte à réplica do Hyper-V e podem ser incluídos em pontos de verificação consistentes com o aplicativo. 
 
-Arquivos VHD definida usam um novo tipo de arquivo VHD. VHDS. Arquivos VHD definido armazenam informações de ponto de verificação sobre o disco virtual de grupo usado em clusters de convidado, na forma de metadados.
+Os arquivos do conjunto VHD usam um novo tipo de arquivo VHD,. VHDS. Os arquivos do conjunto VHD armazenam informações de ponto de verificação sobre o disco virtual do grupo usado em clusters convidados, na forma de metadados.
 
-Hyper-V trata todos os aspectos do gerenciamento de cadeias de ponto de verificação e mesclar o VHD compartilhado definido. Software de gerenciamento pode executar operações de disco como um redimensionamento online em arquivos VHD definido da mesma forma que para o. Arquivos VHDX. Isso significa que o software de gerenciamento não precisa saber sobre o formato de arquivo VHD definido.
+O Hyper-V trata de todos os aspectos do gerenciamento das cadeias de pontos de verificação e da mesclagem do conjunto de VHD compartilhado. O software de gerenciamento pode executar operações de disco como redimensionamento online em arquivos de conjunto VHD da mesma maneira que no. Arquivos VHDX. Isso significa que o software de gerenciamento não precisa saber sobre o formato de arquivo do conjunto VHD.
 
-## <a name="create-a-vhd-set-file-from-hyper-v-manager"></a>Crie um arquivo de VHD definido usando o Gerenciador do Hyper-V
+## <a name="create-a-vhd-set-file-from-hyper-v-manager"></a>Criar um arquivo de conjunto VHD do Gerenciador do Hyper-V
 
 1.  Abra o Gerenciador Hyper-V. Clique em **Iniciar**, vá em **Ferramentas Administrativas** e clique em **Gerenciador do Hyper-V**.
 2.  No painel Ação, clique em **Novo** e em **Disco Rígido**.
-3.  Sobre o **Escolher formato de disco** página, selecione **VHD definir** como o formato do disco rígido virtual.
-4.  Prossiga com as páginas do Assistente para personalizar o disco rígido virtual. Você pode clicar em **Próximo** para ir para as outras páginas do assistente ou pode clicar no nome de uma página no painel do lado esquerdo para ir diretamente para essa página.
+3.  Na página **escolher formato de disco** , selecione **VHD definido** como o formato do disco rígido virtual.
+4.  Continue nas páginas do assistente para personalizar o disco rígido virtual. Você pode clicar em **Próximo** para ir para as outras páginas do assistente ou pode clicar no nome de uma página no painel do lado esquerdo para ir diretamente para essa página.
 5.  Após terminar de configurar o disco rígido virtual, clique em **Concluir**.
 
-## <a name="create-a-vhd-set-file-from-windows-powershell"></a>Crie um arquivo de conjunto de VHD do Windows PowerShell
+## <a name="create-a-vhd-set-file-from-windows-powershell"></a>Criar um arquivo de conjunto de VHD do Windows PowerShell
 
-Use o [New-VHD](https://technet.microsoft.com/library/hh848503.aspx) cmdlet com o tipo de arquivo. VHDS no caminho do arquivo. Este exemplo cria um arquivo VHD definido chamado base.vhds é de 10 Gigabytes de tamanho.
+Use o cmdlet [New-VHD](https://technet.microsoft.com/library/hh848503.aspx) , com o tipo de arquivo. VHDS no caminho do arquivo. Este exemplo cria um arquivo de conjunto VHD chamado base. VHDs com 10 gigabytes de tamanho.
 
 ``` PowerShell
 PS c:\>New-VHD -Path c:\base.vhds -SizeBytes 10GB
 ```
 
-## <a name="migrate-a-shared-vhdx-file-to-a-vhd-set-file"></a>Migrar de um arquivo VHDX compartilhado para um arquivo VHD definido
+## <a name="migrate-a-shared-vhdx-file-to-a-vhd-set-file"></a>Migrar um arquivo VHDX compartilhado para um arquivo de conjunto VHD
 
-Migrando um VHDX compartilhado existente para um VHDS requer colocar a VM offline. Isso é o processo recomendado usando o Windows PowerShell:
+Migrar um VHDX compartilhado existente para um VHDS requer colocar a VM offline. Este é o processo recomendado usando o Windows PowerShell:
 
 1. Remova o VHDX da VM. Por exemplo, execute: 
    ``` PowerShell

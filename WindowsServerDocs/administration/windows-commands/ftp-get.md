@@ -1,8 +1,8 @@
 ---
-title: get de FTP
-description: Obter tópico de comandos do Windows para o ftp
+title: Get de FTP
+description: Tópico de comandos do Windows para FTP Get
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 28961ccf0ae04b52586728f9c68a9b2ca3e69b1d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 4cc74b56fa849a25ed2f4e4a37d339b1da87c24f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438773"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376394"
 ---
-# <a name="ftp-get"></a>ftp: get
+# <a name="ftp-get"></a>FTP: obter
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Copia um arquivo remoto no computador local usando o tipo de transferência de arquivo atual.   
+Copia um arquivo remoto para o computador local usando o tipo de transferência de arquivo atual.   
 ## <a name="syntax"></a>Sintaxe  
 ```  
 get <remoteFile> [<LocalFile>]  
@@ -34,20 +34,20 @@ get <remoteFile> [<LocalFile>]
 |   Parâmetro   |                                                              Descrição                                                               |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------|
 | <remoteFile>  |                                                   Especifica o arquivo remoto a ser copiado.                                                   |
-| [<LocalFile>] | Especifica o nome do arquivo a ser usado no computador local. Se *LocalFile* não for especificado, o arquivo é fornecido o *Arquivo_remoto* nome. |
+| [<LocalFile>] | Especifica o nome do arquivo a ser usado no computador local. Se *LocalFile* não for especificado, o arquivo receberá o nome *remotefile* . |
 
 ## <a name="remarks"></a>Comentários  
-O **Obtenha** comando é idêntico de **recv** comando.  
-## <a name="BKMK_Examples"></a>Exemplos  
-cópia **Test. txt** no computador local usando o tipo de transferência de arquivo atual.  
+O comando **Get** é idêntico ao comando **recv** .  
+## <a name="BKMK_Examples"></a>Disso  
+Copie **Test. txt** para o computador local usando o tipo de transferência de arquivo atual.  
 ```  
 get test.txt  
 ```  
-cópia **Test. txt** no computador local como **test1.txt** tipo de transferência usando o arquivo atual.  
+Copie **Test. txt** para o computador local como **Test1. txt** usando o tipo de transferência de arquivo atual.  
 ```  
 Get test.txt test1.txt  
 ```  
 ## <a name="additional-references"></a>Referências adicionais  
--   [ftp: ascii](ftp-ascii.md)  
--   [ftp: binary](ftp-binary.md)  
+-   [FTP: ASCII](ftp-ascii.md)  
+-   [FTP: binário](ftp-binary.md)  
 -   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  

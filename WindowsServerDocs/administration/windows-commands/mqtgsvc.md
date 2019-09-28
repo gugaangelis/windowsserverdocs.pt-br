@@ -1,8 +1,8 @@
 ---
 title: mqtgsvc
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c420c9d00ab71993fc35d0046fc905049e57b58f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c10a260470c6a97e521b04f5bef2844c1f3893a9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817177"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373482"
 ---
 # <a name="mqtgsvc"></a>mqtgsvc
 
 
 
-Monitora uma fila de mensagens de entrada e executa uma ação, na forma de um arquivo executável ou um componente COM, quando as regras de um gatilho são avaliadas como true. Para obter exemplos de como o serviço de disparadores do enfileiramento de mensagens pode ser usado, consulte [Message Queuing Triggers](https://go.microsoft.com/fwlink/?LinkId=248725)no MSDN.
+Monitora uma fila de mensagens de entrada e executa uma ação, na forma de um arquivo executável ou componente COM, quando as regras de um gatilho são avaliadas como true. Para obter exemplos de como o serviço de gatilhos do enfileiramento de mensagens pode ser usado, consulte [gatilhos do enfileiramento de mensagens](https://go.microsoft.com/fwlink/?LinkId=248725)no MSDN
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -38,4 +38,4 @@ Nenhuma
 
 #### <a name="additional-references"></a>Referências adicionais
 
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

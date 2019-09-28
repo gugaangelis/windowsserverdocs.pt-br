@@ -3,7 +3,7 @@ title: Criar áreas de trabalho virtuais do Windows 10 Enterprise para estaçõe
 description: Saiba como criar desktops do Windows Server 2016 para estação
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.assetid: 63f08b5b-c735-41f4-b6c8-411eff85a4ab
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: e68412808e037b788d5b25c1c2c7b14253e40ea6
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: cd08caef8228a4d20c6d5f4a40fe5bd90aacbe40
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871734"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395542"
 ---
 # <a name="create-windows-10-enterprise-virtual-desktops-for-stations"></a>Criar áreas de trabalho virtuais do Windows 10 Enterprise para estações
 Essa configuração opcional nos serviços do MultiPoint destina-se principalmente a situações em que um aplicativo essencial requer sua própria instância de um sistema operacional cliente para cada usuário. Os exemplos incluem aplicativos que não podem ser instalados no Windows Server e aplicativos que não executarão várias instâncias no mesmo computador host.  

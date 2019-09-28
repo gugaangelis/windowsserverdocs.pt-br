@@ -1,19 +1,19 @@
 ---
-title: Configurar a malha de DNS para hosts protegidos (TPM)
+title: Configurar o DNS de malha para hosts protegidos (TPM)
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 074b6d09-f16e-49bf-b88a-377139d35067
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 1ed7d362e9df253c1e8325a54b14190d689e38ee
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: fb75bc182b0b40a57d7ebec0005b6557d08a8103
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66443715"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386732"
 ---
 >Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016
 
@@ -26,5 +26,5 @@ ms.locfileid: "66443715"
 
 ## <a name="see-also"></a>Consulte também
 
-- [Etapas de configuração para hosts do Hyper-V que se tornarão hosts protegidos](guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)
-- [Tarefas de implantação para malhas de protegidos e VMs blindadas](guarded-fabric-deploying-hgs-overview.md#deployment-tasks-for-guarded-fabrics-and-shielded-vms)
+- [Etapas de configuração para hosts Hyper-V que se tornarão hosts protegidos](guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)
+- [Tarefas de implantação para malhas protegidas e VMs blindadas](guarded-fabric-deploying-hgs-overview.md#deployment-tasks-for-guarded-fabrics-and-shielded-vms)

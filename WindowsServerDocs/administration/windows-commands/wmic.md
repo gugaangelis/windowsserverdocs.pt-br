@@ -1,8 +1,8 @@
 ---
 title: wmic
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6c68866fbe0c8f5b16dae77e2121331f06cdc726
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e9840bc20ddf6193241fe36055698e2bd3222496
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885837"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361881"
 ---
 # <a name="wmic"></a>wmic
 
@@ -36,30 +36,30 @@ command </parameter>
 
 ## <a name="sub-commands"></a>Subcomandos
 
-Os subcomandos a seguir estão disponíveis em todos os momentos:
+Os seguintes subcomandos estão disponíveis o tempo todo:
 
 |Subcomando|Descrição|
 |-----------|-----------|
-|class|Sai do modo de alias padrão do WMIC para acessar classes diretamente no esquema do WMI.|
+|class|Sai do modo de alias padrão do WMIC para acessar classes diretamente no esquema WMI.|
 |path|Sai do modo de alias padrão do WMIC para acessar instâncias diretamente no esquema do WMI.|
-|context|Exibe os valores atuais de todas as opções globais.|
-|[sair \| sair]|Fecha o WMIC shell de comando.|
+|Noticioso|Exibe os valores atuais de todas as opções globais.|
+|[sair \| sair]|Sai do Shell de comando do WMIC.|
 
 ## <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|</parameter>|\<Uma descrição concisa, começa com um verbo. >|
-|</param2>|\<Outra descrição concisa, começa com um verbo. >|
+|</parameter>|Descrição de @no__t 0Concise, começa com um verbo. >|
+|</param2>|Descrição concisa de @no__t 0Another, começa com um verbo. >|
 
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 Para exibir os valores atuais de todas as opções globais, digite:
 ```
 wmic context
 ```
-Saída semelhante à seguinte exibida:
+Saída semelhante às seguintes exibições:
 ```
 NAMESPACE    : root\cimv2
 ROLE         : root\cli
@@ -78,11 +78,11 @@ APPEND       : STDOUT
 USER         : N/A
 AGGREGATE    : ON
 ```
-Para alterar o idioma a ID usada pela linha de comando para inglês (localidade ID 409), digite:
+Para alterar a ID de idioma usada pela linha de comando para inglês (ID de localidade 409), digite:
 ```
 wmic /locale:ms_409
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

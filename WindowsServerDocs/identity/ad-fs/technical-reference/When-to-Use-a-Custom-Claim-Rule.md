@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 1a3f3e711d8e8443eb80109245eef42c668353d9
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 61c129ab8472d7e85602fa0a0244c4a925050d93
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869293"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407300"
 ---
 # <a name="when-to-use-a-custom-claim-rule"></a>Quando usar uma regra de declaração personalizada
 Você escreve uma regra de declaração personalizada no \(serviços de Federação do Active Directory (AD FS)\) AD FS usando o idioma da regra de declaração, que é a estrutura que o mecanismo de emissão de declarações usa para gerar, transformar, passar e filtrar programaticamente declarações. Usando uma regra personalizada, você pode criar regras com lógica mais complexa do que um modelo de regra padrão. Considere o uso de uma regra personalizada quando quiser:  

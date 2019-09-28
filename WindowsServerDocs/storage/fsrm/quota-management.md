@@ -2,18 +2,18 @@
 title: Gerenciamento de cota
 description: Este artigo descreve como criar e gerenciar cotas
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6effaf7c2d197c08b4930e09c3ada96462b17d6f
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: 5a655e28020d08bb1c10fa862c007f914a8cf566
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476187"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403077"
 ---
 # <a name="quota-management"></a>Gerenciamento de cota
 
@@ -27,8 +27,8 @@ No nó **Gerenciamento de cota** do snap-in do Console de Gerenciamento Microsof
 
 Por exemplo, você pode:
 
--   Colocar um limite de 200 megabytes (MB) em pastas de servidor pessoais dos usuários, com uma notificação por email enviada para você e o usuário quando 180 MB de armazenamento foi excedido.
--   Defina uma cota flexível de 500 MB na pasta compartilhada de um grupo. Quando esse limite de armazenamento for atingido, todos os usuários no grupo sejam notificados por email que a cota de armazenamento foi temporariamente estendida para 520 MB para que eles podem excluir arquivos desnecessários e cumprir a política de cota de 500 MB predefinido.
+-   Coloque um limite de 200 megabytes (MB) nas pastas de servidor pessoais dos usuários, com uma notificação por email enviada a você e o usuário quando 180 MB de armazenamento for excedido.
+-   Defina uma cota flexível de 500 MB na pasta compartilhada de um grupo. Quando esse limite de armazenamento é atingido, todos os usuários no grupo são notificados por email de que a cota de armazenamento foi temporariamente estendida para 520 MB para que eles possam excluir arquivos desnecessários e estar em conformidade com a política de cota predefinida de 500 MB.
 -   Receber uma notificação quando uma pasta temporária atingir 2 gigabytes (GB) de uso, mas não limitar a cota da pasta porque é necessário para um serviço em execução em seu servidor.
 
 Esta seção inclui os seguintes tópicos:

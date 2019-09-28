@@ -2,7 +2,7 @@
 title: Data centers do RDS com redundância geográfica no Azure
 description: Saiba como criar uma implantação do RDS que usa vários data centers para fornecer alta disponibilidade em locais geográficos.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ author: haley-rowland
 ms.author: elizapo
 ms.date: 06/14/2017
 manager: dongill
-ms.openlocfilehash: 39a0d00e64ecab93fe1826726b14969e5e034738
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 55b96c112dd7f7294ff674ee4675501af4287da4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871043"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403957"
 ---
 # <a name="create-a-geo-redundant-multi-data-center-rds-deployment-for-disaster-recovery"></a>Criar uma implantação do RDS em vários data centers com redundância geográfica para recuperação de desastres
 

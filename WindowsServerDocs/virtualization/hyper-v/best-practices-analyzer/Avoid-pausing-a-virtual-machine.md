@@ -1,7 +1,7 @@
 ---
-title: Evitar ter que pausar uma máquina virtual
-description: Versão online do texto para essa regra do analisador de práticas recomendadas.
-ms.prod: windows-server-threshold
+title: Evitar pausar uma máquina virtual
+description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,27 +10,27 @@ ms.topic: article
 ms.assetid: 930f927c-e414-4a36-9786-028941e886e4
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 4492ac385a289d075ebcd48b1c7c1c78c1af2f8c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 406b24edd4a7e87e32058006590ac7cd37206568
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814347"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366454"
 ---
-# <a name="avoid-pausing-a-virtual-machine"></a>Evitar ter que pausar uma máquina virtual
+# <a name="avoid-pausing-a-virtual-machine"></a>Evitar pausar uma máquina virtual
 
 >Aplica-se a: Windows Server 2016
 
-Para obter mais informações sobre as práticas recomendadas e varreduras, consulte [Run Best Practices Analyzer Scans e Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177).
+Para obter mais informações sobre práticas recomendadas e verificações, consulte [executar verificações de analisador de práticas recomendadas e gerenciar resultados de verificação](https://go.microsoft.com/fwlink/p/?LinkID=223177).
   
 |Propriedade|Detalhes|  
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
-|**Recurso do produto**|Hyper-V|  
-|**Severidade**|Aviso|  
-|**categoria**|Configuração|  
+|**Produto/recurso**|Hyper-V|  
+|**Severity**|Aviso|  
+|**Categorias**|Configuração|  
 
-Nas seções a seguir, itálico indica o texto de interface do usuário que aparece na ferramenta Analisador de práticas recomendadas para esse problema.
+Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.
 
 ## <a name="issue"></a>Problema  
   
@@ -38,24 +38,24 @@ Nas seções a seguir, itálico indica o texto de interface do usuário que apar
   
 ## <a name="impact"></a>Impacto  
   
-*Dependendo da quantidade de memória disponível, você pode não ser capaz de executar máquinas virtuais adicionais.*  
+*Dependendo da quantidade de memória disponível, talvez você não consiga executar máquinas virtuais adicionais.*  
   
-Máquinas de virtuais em pausa não liberar a memória alocada, o que significa que a memória não está disponível para iniciar outras máquinas virtuais.  
+As máquinas virtuais em pausa não liberam sua memória alocada, o que significa que a memória não está disponível para iniciar outras máquinas virtuais.  
   
 ## <a name="resolution"></a>Resolução  
   
-*Se isso é intencional, nenhuma ação adicional é necessária. Caso contrário, considere retomando essas máquinas virtuais ou desligá-los.*  
+*If isso é intencional, nenhuma ação adicional é necessária. Caso contrário, considere retomar essas máquinas virtuais ou desligá-las.*  
   
-#### <a name="use-hyper-v-manager-to-resume-the-virtual-machine"></a>Use o Gerenciador do Hyper-V para retomar a máquina virtual  
+#### <a name="use-hyper-v-manager-to-resume-the-virtual-machine"></a>Usar o Gerenciador do Hyper-V para retomar a máquina virtual  
   
-1.  Abra o Gerenciador Hyper-V. (Da **ferramentas** menu do Gerenciador do servidor, clique em **Gerenciador do Hyper-V**.)  
+1.  Abra o Gerenciador Hyper-V. (No menu **ferramentas** do Gerenciador do servidor, clique em **Gerenciador do Hyper-V**.)  
   
-2.  Dos **máquinas virtuais** listar, localizar as máquinas virtuais com um estado de **pausado**.  
+2.  Na lista **máquinas virtuais** , localize as máquinas virtuais com um estado de em **pausa**.  
   
     > [!IMPORTANT]  
-    > Um estado de **pausado-crítico** ocorre quando há muito pouco espaço livre restante no armazenamento físico para a máquina virtual. Antes de tentar retomar uma máquina virtual nesse estado, libere espaço disponível no armazenamento físico.  
+    > Um estado de **pausa-crítico** ocorre quando há muito pouco espaço livre restante no armazenamento físico para essa máquina virtual. Antes de tentar retomar uma máquina virtual nesse estado, libere espaço disponível no armazenamento físico.  
   
-3.  Cada nome de máquina virtual com o botão direito e, em seguida, clique em **retomar**. Isso retorna a máquina virtual ao estado de execução. Depois disso, se você quiser desligar a máquina virtual, clique com botão direito-lo novamente e escolha **desligar**.  
+3.  Clique com o botão direito do mouse em cada nome de máquina virtual e clique em **continuar**. Isso retorna a máquina virtual para um estado de execução. Depois disso, se você quiser desligar a máquina virtual, clique com o botão direito do mouse nela novamente e escolha **desligar**.  
   
 #### <a name="use-windows-powershell-to-resume-the-virtual-machine"></a>Usar o Windows PowerShell para retomar a máquina virtual  
   

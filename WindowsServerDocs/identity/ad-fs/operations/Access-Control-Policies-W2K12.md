@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 06/05/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 43a42c211557a41400fada17baaab6a0d5ab822a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 517582661374c388d44362538da6933a916b0039
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866098"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407750"
 ---
 # <a name="access-control-policies-in-windows-server-2012-r2-and-windows-server-2012-ad-fs"></a>Políticas de controle de acesso no Windows Server 2012 R2 e no Windows Server 2012 AD FS
 
@@ -259,7 +259,7 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
 
   Portanto, um exemplo para corresponder apenas a dois endereços (como 192.168.1.1 ou 10.0.0.1) seria: \b192\\. 168\\0,1\\0,1 \ b&#124;\b10\\0\\\\. 1 \ b  
 
-  Isso oferece a técnica pela qual você pode inserir qualquer número de endereços. Onde um intervalo de endereços precisa ser permitido, por exemplo, 192.168.1.1 – 192.168.1.25, a correspondência deve ser feita caractere por caractere: \b192\\. 168\\0,1\\. ( [1-9] &#124;1 [0-9]&#124;2 [0-5]) \b  
+  Isso oferece a técnica pela qual você pode inserir qualquer número de endereços. Onde um intervalo de endereços precisa ser permitido, por exemplo, 192.168.1.1 – 192.168.1.25, a correspondência deve ser feita caractere por caractere: \b192 @ no__t-0.168 @ no__t-1.1 @ no__t-2. ([1-9]&#124;1 [0-9]&#124;2 [0-5]) \b  
 
   Observe o seguinte:  
 
@@ -279,9 +279,9 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
 
 - Observe que os parênteses devem ser posicionados corretamente, para que você não comece a corresponder a outras partes de endereços IP.  
 
-- Com o bloco 192 correspondente, podemos gravar uma expressão semelhante para o 10 bloco: \b10\\\\0\\0. ( [1-9] &#124;1 [0-4]) \b  
+- Com o bloco 192 correspondente, podemos gravar uma expressão semelhante para o 10 bloco: \b10 @ no__t-0,0 @ no__t-1,0 @ no__t-2. ([1-9]&#124;1 [0-4]) \b  
 
-- E colocando-os juntos, a expressão a seguir deve corresponder a todos os endereços de "192.168.1.1 ~ 25" e "10.0.0.1 ~ 14\\":\\\b192\\. 168. ( [1-9] &#124;1 [0-9]&#124;2 [0-5]) \b&#124;\b10\\0\\\\a 0. ( [1-9] &#124;1 [0-4]) \b  
+- E colocando-os juntos, a expressão a seguir deve corresponder a todos os endereços de "192.168.1.1 ~ 25" e "10.0.0.1 ~ 14": \b192 @ no__t-0.168 @ no__t-1.1 @ no__t-2. ([1-9]&#124;1 [0-9]&#124;2 [0-5]) \b&#124;\b10 @ no__t-6.0 @ no__t-7.0 @ no__t-8. ([1-9]&#124;1 [0-4]) \b  
 
 ### <a name="testing-the-expression"></a>Testando a expressão  
  As expressões Regex podem se tornar muito complicadas, portanto, é altamente recomendável usar uma ferramenta de verificação Regex. Se você fizer uma pesquisa na Internet por "Construtor de expressões de Regex online", encontrará vários bons utilitários online que permitirão experimentar suas expressões em relação aos dados de exemplo.  

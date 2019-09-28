@@ -7,75 +7,75 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 067461b90ed5ce03d9470a450917dcbb93cf653a
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: b0a84940018a0e71aaa1b47c7af3aba5966fe0ae
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191314"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408053"
 ---
 # <a name="federation-server-farm-using-wid"></a>Farm de servidores de federação usando WID
 
-A topologia padrão para os serviços de Federação do Active Directory \(do AD FS\) é um farm de servidores de Federação usando o banco de dados interno do Windows \(WID\). Nessa topologia, o AD FS usa o WID como o repositório para o banco de dados de configuração do AD FS para todos os servidores de federação que ingressaram nesse farm. O farm replica e mantém os dados do Serviço de Federação no banco de dados de configuração em cada servidor no farm. AD FS no Windows Server 2012 R2 permite às organizações com 100 ou menos objetos de confiança para configurar os farms de servidores de Federação usando WID com até 30 servidores.  
+A topologia padrão para Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1 é um farm de servidores de Federação, usando o banco de dados interno do Windows \(WID @ no__t-3. Nessa topologia, AD FS usa WID como o repositório para o banco de dados de configuração de AD FS para todos os servidores de Federação que ingressaram nesse farm. O farm replica e mantém os dados do Serviço de Federação no banco de dados de configuração em cada servidor no farm. AD FS no Windows Server 2012 R2 permite que organizações com 100 ou menos confianças de terceira parte confiável configurem farms de servidores de Federação usando o WID com até 30 servidores.  
   
-O ato de criar o primeiro servidor de federação em um farm também cria um novo Serviço de Federação. Quando você usa o WID para o banco de dados de configuração do AD FS, o primeiro servidor de federação que você cria no farm é conhecido como o *servidor de Federação primário*. Isso significa que esse computador é configurado com uma leitura\/gravar cópia de banco de dados de configuração do AD FS.  
+O ato de criar o primeiro servidor de federação em um farm também cria um novo Serviço de Federação. Quando você usa o WID para o banco de dados de configuração do AD FS, o primeiro servidor de Federação que você cria no farm é chamado de *servidor de Federação primário*. Isso significa que esse computador está configurado com uma cópia\/de leitura/gravação do banco de dados de configuração do AD FS.  
   
-Todos os outros servidores de federação que você configurar para este farm são denominados *servidores de Federação secundários* porque eles devem replicar todas as alterações são feitas no servidor de Federação primário para a leitura\-apenas cópias do banco de dados de configuração do AD FS que eles armazenam localmente.  
+Todos os outros servidores de Federação configurados para esse farm são chamados de *servidores de Federação secundários* , pois eles devem replicar quaisquer alterações feitas no servidor de Federação primário para\-as cópias somente leitura do AD FS banco de dados de configuração que eles armazenam localmente.  
   
 > [!IMPORTANT]  
-> Recomendamos o uso de pelo menos dois servidores de Federação em uma carga\-configuração equilibrada.  
+> Recomendamos o uso de pelo menos dois servidores de Federação em uma\-configuração de balanceamento de carga.  
   
 ## <a name="deployment-considerations"></a>Considerações sobre a implantação  
-Esta seção descreve várias considerações sobre o público-alvo, benefícios e limitações que estão associadas essa topologia de implantação.  
+Esta seção descreve as várias considerações sobre o público-alvo, os benefícios e as limitações associados a essa topologia de implantação.  
   
 ### <a name="who-should-use-this-topology"></a>Quem deve usar essa topologia?  
   
--   As organizações com 100 ou menos relações de confiança configuradas que precisa fornecer a seus usuários internos \(conectado computadores que estão fisicamente conectados à rede corporativa\) com o logon único\-na \(SSO\) acesso a aplicativos federados ou serviços  
+-   Organizações com 100 ou menos relações de confiança configuradas que precisam fornecer seus \(usuários internos conectados a computadores que estão conectados fisicamente à rede\) corporativa com logon\-único \(Acesso\) SSO a aplicativos ou serviços federados  
   
--   Organizações que desejam fornecer a seus usuários internos com acesso SSO para o Microsoft Office 365 ou Microsoft Online Services  
+-   Organizações que desejam fornecer aos usuários internos acesso de SSO ao Microsoft Online Services ou Microsoft Office 365  
   
 -   Organizações menores que exigem serviços redundantes e escalonáveis  
   
 > [!NOTE]  
-> As organizações com bancos de dados maiores devem considerar o uso de [Federation Server Farm usando o SQL Server](Federation-Server-Farm-Using-SQL-Server.md) topologia de implantação. As organizações com usuários que fazem logon de fora da rede devem considerar usando o [Federation Server Farm usando o WID e Proxies](Federation-Server-Farm-Using-WID-and-Proxies.md) topologia ou o [Federation Server Farm usando o SQL Server](Federation-Server-Farm-Using-SQL-Server.md) topologia.  
+> Organizações com bancos de dados maiores devem considerar o uso do [farm de servidores de Federação usando SQL Server](Federation-Server-Farm-Using-SQL-Server.md) topologia de implantação. As organizações com usuários que fazem logon de fora da rede devem considerar o uso do [farm de servidores de Federação usando a topologia wid e proxies](Federation-Server-Farm-Using-WID-and-Proxies.md) ou o farm de servidores de [Federação usando](Federation-Server-Farm-Using-SQL-Server.md) a topologia SQL Server.  
   
 ### <a name="what-are-the-benefits-of-using-this-topology"></a>Quais são os benefícios de usar essa topologia?  
   
--   Fornece acesso SSO para usuários internos  
+-   Fornece acesso de SSO a usuários internos  
   
--   Redundância de dados e o serviço de Federação \(cada servidor de Federação replica alterações em outros servidores de federação no mesmo farm\)  
+-   Redundância de dados e serviço de Federação \(cada servidor de Federação Replica as alterações para outros servidores de Federação no mesmo farm\)  
   
--   WID está incluído no Windows; Portanto, não há necessidade de comprar o SQL Server  
+-   O WID está incluído no Windows; Portanto, não é necessário comprar SQL Server  
   
 ### <a name="what-are-the-limitations-of-using-this-topology"></a>Quais são as limitações do uso dessa topologia?  
   
--   Um farm de WID tem um limite de 30 servidores de federação, se você tiver 100 ou menos objetos de confiança.  
+-   Um farm WID tem um limite de 30 servidores de Federação se você tiver 100 ou menos confianças de terceira parte confiável.  
   
--   Um farm de WID não oferece suporte a resolução de artefato ou de detecção de reprodução de token \(faz parte do Security Assertion Markup Language \(SAML\) protocolo\).  
+-   Um farm wid não dá suporte à detecção de reprodução de token ou \(parte da resolução de \(artefatos\)do protocolo SAML\) Security Assertion Markup Language.  
   
-A tabela a seguir fornece um resumo para o uso de um farm de WID.  Usá-lo a planejar sua implementação.  
+A tabela a seguir fornece um resumo para usar um farm WID.  Use-o para planejar sua implementação.  
   
-|| 1 \- 100 relações de confiança RP | Relações de confiança RP mais de 100 |
+|| 1 \- a 100 de confianças RP | Mais de 100 RP relações de confiança |
 | --- | --- | --- |
-|1 \- 30 AD FS nós|Suportada de WID|Não tem suporte usando o WID - SQL é necessário 
-|Mais de 30 AD FS nós|Não tem suporte usando o WID - SQL é necessário|Não tem suporte usando o WID - SQL é necessário  
+|1 \- 30 nós AD FS|WID com suporte|Sem suporte usando WID-SQL necessário 
+|Mais de 30 nós AD FS|Sem suporte usando WID-SQL necessário|Sem suporte usando WID-SQL necessário  
   
-## <a name="server-placement-and-network-layout-recommendations"></a>Recomendações de layout de posicionamento e a rede de servidor  
-Quando você estiver pronto para começar a implantar essa topologia em sua rede, você deve planejar a colocação de todos os servidores de Federação em sua rede corporativa por trás de um balanceamento de carga de rede \(NLB\) host que pode ser configurada para um cluster NLB com cluster dedicado Domain Name System \(DNS\) endereço IP do nome e o cluster.  
-  
-> [!NOTE]  
-> Esse nome DNS de cluster deve corresponder ao nome do serviço de federação, por exemplo, fs.fabrikam.com.  
-  
-O host NLB pode usar as configurações que são definidas nesse cluster NLB para alocar solicitações de cliente para os servidores de Federação individuais. A ilustração a seguir mostra como a empresa fictícia da Fabrikam, Inc., define a primeira fase da sua implantação usar uma duas\-farm de servidores de Federação do computador \(fs1 e fs2\) com WID e o posicionamento de um servidor DNS e um único host NLB que está conectado à rede corporativa.  
-  
-![farm de servidores usando o WID](media/FarmWID.gif)  
+## <a name="server-placement-and-network-layout-recommendations"></a>Recomendações de layout de rede e posicionamento do servidor  
+Quando estiver pronto para começar a implantar essa topologia em sua rede, você deve planejar colocar todos os servidores de Federação em sua rede corporativa atrás de um host NLB \(\) de balanceamento de carga de rede que possa ser configurado para um cluster NLB com um nome DNS \(\) do sistema de nome de domínio do cluster dedicado e um endereço IP do cluster.  
   
 > [!NOTE]  
-> Se houver uma falha neste host NLB único, os usuários não poderão acessar a aplicativos federados ou serviços. Adicione mais hosts NLB se seus requisitos comerciais não permitirem a existência de um único ponto de falha.  
+> Esse nome DNS do cluster deve corresponder ao nome do Serviço de Federação, por exemplo, fs.fabrikam.com.  
   
-Para obter mais informações sobre como configurar seu ambiente de rede para uso com servidores de federação, consulte a seção de requisitos de resolução de nome em [requisitos do AD FS](AD-FS-Requirements.md).  
+O host NLB pode usar as configurações definidas nesse cluster NLB para alocar solicitações de cliente para os servidores de Federação individuais. A ilustração a seguir mostra como a empresa fictícia Fabrikam, Inc., configura a primeira fase de sua implantação usando um farm\- \(de servidores de Federação de dois computadores\) FS1 e FS2 com wid e o posicionamento de um servidor DNS e um único host NLB com conexão com a rede corporativa.  
+  
+![farm de servidores usando WID](media/FarmWID.gif)  
+  
+> [!NOTE]  
+> Se houver uma falha neste host NLB único, os usuários não poderão acessar aplicativos ou serviços federados. Adicione mais hosts NLB se seus requisitos comerciais não permitirem a existência de um único ponto de falha.  
+  
+Para obter mais informações sobre como configurar seu ambiente de rede para uso com servidores de Federação, consulte a seção requisitos de resolução de nomes em [requisitos de AD FS](AD-FS-Requirements.md).  
   
 ## <a name="see-also"></a>Consulte também  
 [Planejar a topologia de implantação do AD FS](Plan-Your-AD-FS-Deployment-Topology.md)  

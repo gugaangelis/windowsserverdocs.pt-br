@@ -2,18 +2,18 @@
 title: Estender um volume básico
 description: Este artigo descreve como adicionar espaço a unidades primárias e lógicas para estender um volume básico
 ms.date: 06/07/2019
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 4cad773746ae64a2244178be83e4d59c7c44b6a7
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: a98bd3553c3223716d70ed4329bd7e265e697b73
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66812442"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402093"
 ---
 # <a name="extend-a-basic-volume"></a>Estender um volume básico
 
@@ -46,7 +46,7 @@ Para unidades lógicas e volumes de sistema ou de inicialização, é possível 
 | Valor | Descrição |
 | --- | --- |
 | **list volume** | Exibe uma lista dos volumes básicos e dinâmicos em todos os discos. |
-| **select volume** | Seleciona o volume especificado, onde <em>volumenumber</em> é o número do volume e concede foco a ele. Se nenhum volume for especificado, o comando **select** lista o volume atual com foco. Você pode especificar o volume por número, letra da unidade ou caminho do ponto de montagem. Em um disco básico, a seleção de um volume também oferece o foco de partição correspondente. |
+| **select volume** | Seleciona o volume especificado, onde <em>volumenumber</em> é o número do volume e concede foco a ele. Se nenhum volume for especificado, o comando **select** lista o volume atual com foco. É possível especificar o volume por número, letra da unidade ou caminho do ponto de montagem. Em um disco básico, a seleção de um volume também oferece o foco de partição correspondente. |
 | **extend** | <ul><li>Estende o volume com foco para o próximo espaço não alocado contíguo. Para volumes básicos, o espaço não alocado deve estar no mesmo disco e deve seguir (ter um deslocamento de setor maior do que) a partição com foco. Um volume dinâmico simples ou estendido pode ser estendido para qualquer espaço vazio em qualquer disco dinâmico. Ao usar esse comando, é possível estender um volume existente no espaço recém-criado.</li ><li>Se a partição foi previamente formatada com o sistema de arquivos NTFS, o sistema de arquivos é estendido automaticamente para ocupar a partição maior. Não há perda de dados. Se a partição foi previamente formatada com qualquer formato de sistema de arquivos diferente de NTFS, ocorre falha de comando sem alteração na partição.</li></ul> |
 | **size=** <em>size</em> | A quantidade de espaço, em MB (megabytes), para adicionar à partição atual. Se você não especificar um tamanho, o disco é estendido para ocupar o espaço não alocado contíguo. |
 

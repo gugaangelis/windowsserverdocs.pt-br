@@ -1,44 +1,44 @@
 ---
-title: Redes definidas do SLB Gateway ajuste de desempenho no Software
-description: Diretrizes de rede SDN de ajuste de desempenho do Gateway de SLB
-ms.prod: windows-server-threshold
+title: Ajuste de desempenho do gateway SLB em redes definidas pelo software
+description: Diretrizes de ajuste de desempenho do gateway SLB em redes SDN
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: grcusanz; AnPaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: fede7d404ddbb4f465eff435cc340db1907ce9d2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9a0d239da2ca321333ec757db22bbaf9a9b8ba30
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829927"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383462"
 ---
-# <a name="slb-gateway-performance-tuning-in-software-defined-networks"></a>Redes definidas do SLB Gateway ajuste de desempenho no Software
+# <a name="slb-gateway-performance-tuning-in-software-defined-networks"></a>Ajuste de desempenho do gateway SLB em redes definidas pelo software
 
-O balanceamento de carga de software é fornecido por uma combinação de um Gerenciador de Balanceador de carga em VMs do controlador de rede, o comutador Virtual do Hyper-V e um conjunto de VMs Multixplexor de Balanceador de carga (Mux).
+O balanceamento de carga de software é fornecido por uma combinação de um Gerenciador de balanceador de carga nas VMs do controlador de rede, do comutador virtual do Hyper-V e de um conjunto de VMs de Load Balancer Multixplexor (MUX).
 
-Nenhum ajuste de desempenho adicional é necessário para configurar o controlador de rede ou o host do Hyper-V para além do que de balanceamento de carga é descrito na [rede definida pelo Software](index.md) seção, a menos que você estiver usando o SR-IOV para o Muxes conforme descrito abaixo.
+Nenhum ajuste de desempenho adicional é necessário para configurar o controlador de rede ou o host Hyper-V para balanceamento de carga além do que está descrito na seção [rede definida pelo software](index.md) , a menos que você esteja usando Sr-IOV para o Muxes conforme descrito abaixo.
 
-## <a name="slb-mux-vm-configuration"></a>Configuração de VM Mux SLB
+## <a name="slb-mux-vm-configuration"></a>Configuração de VM MUX SLB
 
-Máquinas virtuais SLB Mux são implantadas em uma configuração ativo-ativo.  Isso significa que cada VM Mux implantada e adicionado ao controlador de rede possa processar solicitações de entrada.  Assim, a taxa de transferência agregada total de todas as conexões só é limitada pelo número de VMs Mux do que você implantou.  
+As máquinas virtuais SLB MUX são implantadas em uma configuração ativo-ativo.  Isso significa que todas as VMs MUX implantadas e adicionadas ao controlador de rede podem processar solicitações de entrada.  Assim, a taxa de transferência total agregada de todas as conexões é limitada apenas pelo número de VMs MUX implantadas.  
 
-Uma conexão individual para um IP Virtual (VIP) sempre será enviado para o mesmo Mux, supondo que o número de muxes permanece constante e, consequentemente, sua taxa de transferência será limitada à taxa de transferência de uma única VM Mux.  Muxes processar apenas o tráfego de entrada que é destinado a um VIP.  Pacotes de resposta vá diretamente da VM que está enviando a resposta para o comutador físico que encaminha para o cliente.
+Uma conexão individual com um VIP (IP virtual) sempre será enviada para o mesmo MUX, supondo que o número de Muxes permaneça constante e, como resultado, sua taxa de transferência será limitada à taxa de transferência de uma única VM Mux.  Muxes processa apenas o tráfego de entrada destinado a um VIP.  Os pacotes de resposta vão diretamente da VM que está enviando a resposta para o comutador físico que o encaminha para o cliente.
 
-Em alguns casos quando a origem da solicitação se originar de um host SDN é adicionado ao mesmo controlador de rede que gerencia o VIP, otimização adicional do caminho para a solicitação de entrada também é executada que permite que a maioria dos pacotes viajem diretamente a partir de cliente para o servidor, ignorando a VM Mux inteiramente.  Nenhuma configuração adicional é necessária para essa otimização entrar em vigor.
+Em alguns casos, quando a origem da solicitação é originada de um host SDN que é adicionado ao mesmo controlador de rede que gerencia o VIP, a otimização adicional do caminho de entrada para a solicitação também é executada, o que permite que a maioria dos pacotes percorra diretamente do cliente para o servidor, ignorando totalmente a VM Mux.  Nenhuma configuração adicional é necessária para que essa otimização ocorra.
 
-Cada VM SLB Mux devem ser dimensionado de acordo com as diretrizes fornecidas na seção de requisitos de função de máquina virtual da infraestrutura do SDN do [planejar uma infraestrutura de rede definida pelo Software](../../../../networking/sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md) tópico.
+Cada VM MUX SLB deve ser dimensionada de acordo com as diretrizes fornecidas na seção requisitos de função de máquina virtual de infraestrutura SDN do tópico [planejar uma infraestrutura de rede definida pelo software](../../../../networking/sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md) .
 
-## <a name="single-root-io-virtualization-sr-iov"></a>Virtualização de e/s de raiz única (SR-IOV)
+## <a name="single-root-io-virtualization-sr-iov"></a>SR-IOV (virtualização de e/s de raiz única)
 
-Ao usar Ethernet de 40 Gbit, a capacidade para o comutador virtual para os pacotes de processo para a VM Mux torna-se o fator limitante para taxa de transferência de VM Mux.  Por isso é recomendável que a SR-IOV esteja ativado no adaptador de rede de VM de SLB VM para garantir que o comutador virtual não é o gargalo.
+Ao usar o 40 Gbit Ethernet, a capacidade para o comutador virtual processar pacotes para a VM MUX torna-se o fator de limitação para a taxa de transferência da VM Mux.  Por isso, é recomendável que o SR-IOV seja habilitado no adaptador de rede VM da VM SLB para garantir que o comutador virtual não seja o afunilamento.
 
-Para habilitar a SR-IOV, você deve habilitá-lo no comutador virtual ao comutador virtual é criado.  Neste exemplo, estamos criando um comutador virtual com SR-IOV e o switch embedded teaming (SET):
+Para habilitar o SR-IOV, você deve habilitá-lo no comutador virtual quando o comutador virtual for criado.  Neste exemplo, estamos criando um comutador virtual com o switch Embedded Integration (SET) e SR-IOV:
 ``` syntax
     new-vmswitch -Name SDNSwitch -EnableEmbeddedTeaming $true -NetAdapterName @("NIC1", "NIC2") -EnableIOV $true
 ```
-Em seguida, ele deve ser habilitado nos adaptadores de rede virtual da VM SLB Mux que processam o tráfego de dados.  Neste exemplo, SR-IOV está sendo habilitada em todos os adaptadores:
+Em seguida, ele deve ser habilitado no (s) adaptador (es) de rede virtual da VM SLB MUX que processa o tráfego de dados.  Neste exemplo, o SR-IOV está sendo habilitado em todos os adaptadores:
 ``` syntax
     get-vmnetworkadapter -VMName SLBMUX1 | set-vmnetworkadapter -IovWeight 50
 ```

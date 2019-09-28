@@ -1,8 +1,8 @@
 ---
 title: eventcreate
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 80d575364adbeba9d9ea4da75a0a866bcc02acea
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cf53d8d269d0994ddf57eb350982effed5e0e702
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818707"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377525"
 ---
 # <a name="eventcreate"></a>eventcreate
 
@@ -36,23 +36,23 @@ eventcreate [/s <Computer> [/u <Domain\User> [/p <Password>]] {[/l {APPLICATION|
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/s \<Computer>|Especifica o nome ou endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local.|
-|/u \<domínio \ usuário >|Executa o comando com as permissões de conta de usuário especificada por \<usuário > ou < domínio \ usuário >. O padrão é que as permissões do usuário no computador que está emitindo o comando de logon atual.|
-|/p \<Password>|Especifica a senha da conta de usuário que é especificada na **/u** parâmetro.|
-|/l {aplicativo\|sistema}|Especifica o nome do log de eventos onde o evento será criado. Os nomes de log válido são o aplicativo e do sistema.|
-|/so \<SrcName>|Especifica a origem a ser usado para o evento. Uma fonte válida pode ser qualquer cadeia de caracteres e deve representar o aplicativo ou componente que está gerando o evento.|
-|/t {erro\|aviso\|informações\|</br>SUCCESSAUDIT\|FAILUREAUDIT}|Especifica o tipo de evento a ser criado. Os tipos válidos são ERROR, WARNING, informações, SUCCESSAUDIT e FAILUREAUDIT.|
-|/id \<EventID>|Especifica a ID de evento para o evento. Uma ID válida é qualquer número de 1 a 1000.|
-|/d \<descrição >|Especifica a descrição a ser usado para o evento recém-criado.|
+|/s \<Computer >|Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local.|
+|/u \<Domain \ > de usuário|Executa o comando com as permissões de conta do usuário especificado por \<User > ou < domínio \ usuário >. O padrão é as permissões do usuário conectado no momento no computador que emite o comando.|
+|/p \<senha >|Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .|
+|/l {aplicativo @ no__t-0SYSTEM}|Especifica o nome do log de eventos em que o evento será criado. Os nomes de log válidos são aplicativo e sistema.|
+|/so \<SrcName >|Especifica a origem a ser usada para o evento. Uma origem válida pode ser qualquer cadeia de caracteres e deve representar o aplicativo ou componente que está gerando o evento.|
+|/t {ERROR @ no__t-0WARNING @ no__t-1INFORMATION @ no__t-2</br>SUCCESSAUDIT @ NO__T-0FAILUREAUDIT}|Especifica o tipo de evento a ser criado. Os tipos válidos são erro, aviso, informações, SUCCESSAUDIT e FAILUREAUDIT.|
+|/ID \<EventID >|Especifica a ID do evento para o evento. Uma ID válida é qualquer número de 1 a 1000.|
+|/d \<Description >|Especifica a descrição a ser usada para o evento recém-criado.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
 -   Eventos personalizados não podem ser gravados no log de segurança.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Os exemplos a seguir mostram como você pode usar o comando eventcreate:
+Os exemplos a seguir mostram como você pode usar o comando EventCreate:
 ```
 eventcreate /t error /id 100 /l application /d "Create event in application log"
 eventcreate /t information /id 1000 /so winmgmt /d "Create event in WinMgmt source"
@@ -65,4 +65,4 @@ eventcreate /s server /u user /id 100 /t warning /so winmgmt /d "Remote machine 
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

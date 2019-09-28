@@ -1,7 +1,7 @@
 ---
 title: Habilitar todos os serviços de integração em máquinas virtuais
-description: Versão online do texto para essa regra do analisador de práticas recomendadas.
-ms.prod: windows-server-threshold
+description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,12 +10,12 @@ ms.topic: article
 ms.assetid: 16e202ad-3795-40c9-8176-7ca319e56d26
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 307e2d407a0defa14a6b57bda95a2f3ab018406d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1984c3d1d6261756bf83f899985b457681537046
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829427"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364892"
 ---
 # <a name="enable-all-integration-services-in-virtual-machines"></a>Habilitar todos os serviços de integração em máquinas virtuais
 
@@ -26,43 +26,43 @@ Para obter mais informações sobre práticas recomendadas e varreduras, consult
 |Propriedade|Detalhes|  
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
-|**Recurso do produto**|Hyper-V|  
-|**Severidade**|Aviso|  
-|**categoria**|Configuração|  
+|**Produto/recurso**|Hyper-V|  
+|**Severity**|Aviso|  
+|**Categorias**|Configuração|  
   
-Nas seções a seguir, itálico indica o texto de interface do usuário que aparece na ferramenta Analisador de práticas recomendadas para esse problema.  
+Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
 ## <a name="issue"></a>Problema  
   
-*Um ou mais serviços de integração são desabilitados ou não funcionando em uma máquina virtual.*  
+*Um ou mais serviços de integração estão desabilitados ou não estão funcionando em uma máquina virtual.*  
   
 ## <a name="impact"></a>Impacto  
   
-*O recurso de integração ou serviço pode não funcionar corretamente para as seguintes máquinas virtuais:*  
+*O serviço ou o recurso de integração pode não funcionar corretamente para as seguintes máquinas virtuais:*  
   
-\<lista de nomes de máquina virtual >  
+\<list de nomes de máquina virtual >  
   
 ## <a name="resolution"></a>Resolução  
   
-*Use a ferramenta Serviços de snap-in ou sc config de linha de comando para verificar se o serviço está configurado para iniciar automaticamente e não será interrompido.*  
+*Use o snap-in de serviços ou a ferramenta de linha de comando sc config para verificar se o serviço está configurado para iniciar automaticamente e não está parado.*  
   
 #### <a name="to-configure-how-a-service-is-started-using-the-services-snap-in"></a>Para configurar como um serviço é iniciado usando o snap-in de serviços  
   
-1.  Use serviços de área de trabalho remota ou Conexão de máquina Virtual para conectar-se para a máquina virtual e o log em para o sistema operacional convidado.  
+1.  Use Serviços de Área de Trabalho Remota ou conexão de máquina virtual para se conectar à máquina virtual e fazer logon no sistema operacional convidado.  
   
-2.  Abrir Serviços. (Clique em **inicie**, clique no **Iniciar pesquisa** , digite **Services. msc**, e pressione ENTER.)  
+2.  Abrir Serviços. (Clique em **Iniciar**, clique na caixa **Iniciar pesquisa** , digite **Services. msc**e pressione Enter.)  
   
 3.  No painel de detalhes, clique com o botão direito no serviço que deseja configurar e clique em **Propriedades**.  
   
-4.  Sobre o **gerais** guia de **inicialização** digite, clique em **automático**.  
+4.  Na guia **geral** , em tipo de **inicialização** , clique em **automático**.  
   
-#### <a name="to-configure-how-a-service-is-started-using-sc-config"></a>Para configurar como um serviço é iniciado usando SC Config  
+#### <a name="to-configure-how-a-service-is-started-using-sc-config"></a>Para configurar como um serviço é iniciado usando SC config  
   
-1.  Abra o Windows PowerShell. (Na área de trabalho, clique em **inicie** e comece a digitar **Windows PowerShell**.)  
+1.  Abra o Windows PowerShell. (Na área de trabalho, clique em **Iniciar** e comece a digitar **Windows PowerShell**.)  
   
-2.  Clique com botão direito **Windows PowerShell** e clique em **executar como administrador**.  
+2.  Clique com o botão direito do mouse em **Windows PowerShell** e clique em **Executar como administrador**.  
   
-3.  Substitua < service-name > pelo nome do serviço, em seguida, digite:  
+3.  Substitua < Service-Name > pelo nome do serviço e, em seguida, digite:  
   
     ```  
     sc config <service-name> start=auto  

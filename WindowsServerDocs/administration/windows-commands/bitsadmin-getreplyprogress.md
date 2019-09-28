@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getreplyprogress
-description: Tópico de comandos do Windows para **getreplyprogress bitsadmin** -recupera o tamanho e o progresso da resposta do servidor.
+description: Tópico de comandos do Windows para **Bitsadmin getreplyprogress** – recupera o tamanho e o progresso da resposta do servidor.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aafecfb5873392ef86e6f7cceb139091b15e3b99
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c791fe98271b497e5ecf48338ab3bbb0cc50de98
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852927"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381245"
 ---
 # <a name="bitsadmin-getreplyprogress"></a>bitsadmin getreplyprogress
 
 Recupera o tamanho e o progresso da resposta do servidor.
 
-**BITS 1.2 e anteriores**: Sem suporte.
+**BITS 1,2 e anteriores**: Não compatível.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,19 +36,19 @@ bitsadmin /GetReplyProgress <Job>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
 
 ## <a name="remarks"></a>Comentários
 
 Válido somente para trabalhos de resposta de upload.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir recupera o progresso de resposta do trabalho nomeado *myDownloadJob*.
+O exemplo a seguir recupera o progresso da resposta para o trabalho chamado *myDownloadJob*.
 ```
 C:\>bitsadmin /GetReplyProgress myDownloadJob
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

@@ -1,8 +1,8 @@
 ---
-title: Reter
-description: 'Tópico de comandos do Windows para * * *- '
+title: manteve
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4b437e9f0c8d671e4378311d450aa0ac7639219f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3b076e12c833645833f53a06476e62bbf44f2690
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852167"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384495"
 ---
-# <a name="retain"></a>Reter
+# <a name="retain"></a>manteve
 
 
 
-Prepara um volume dinâmico simple existente a ser usado como uma inicialização ou o volume do sistema.
+Prepara um volume simples dinâmico existente para ser usado como um volume do sistema ou de inicialização.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,8 +34,8 @@ retain
 
 ## <a name="remarks"></a>Comentários
 
--   Em um disco dinâmico do MBR (registro) de mestre de inicialização, esse comando cria uma entrada de partição no registro mestre de inicialização.
--   Em um disco partição GUID (GPT) da tabela dinâmico, este comando cria uma entrada de partição na tabela de partição GUID.
+-   Em um disco dinâmico MBR (registro mestre de inicialização), esse comando cria uma entrada de partição no registro mestre de inicialização.
+-   Em um disco dinâmico GPT (tabela de partição GUID), esse comando cria uma entrada de partição na tabela de partição GUID.
 
 #### <a name="additional-references"></a>Referências adicionais
 

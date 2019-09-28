@@ -1,20 +1,20 @@
 ---
 ms.assetid: 3a840b63-78b7-4e62-af7b-497026bfdb93
-title: Guia passo a passo – gerencie riscos com controle de acesso condicional
+title: Guia de instruções-gerenciar riscos com o controle de acesso condicional
 description: ''
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7e6e1c97ccc903ca3aff558354941e6a84d3fb79
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: aefcd597a580de526a758c6d026c6c91d02d10c8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444737"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407464"
 ---
 # <a name="walkthrough-guide-manage-risk-with-conditional-access-control"></a>Guia Passo a passo: Gerenciar riscos com Controle de Acesso Condicional
 
@@ -22,22 +22,22 @@ ms.locfileid: "66444737"
 
 
 ## <a name="about-this-guide"></a>Sobre este guia
-Este passo a passo fornece instruções sobre como gerenciar risco com um dos fatores (dados do usuário) disponíveis através do mecanismo de controle de acesso condicional no Active Directory Federation Services (AD FS) no Windows Server 2012 R2. Para obter mais informações sobre mecanismos de autorização e controle de acesso condicional no AD FS no Windows Server 2012 R2, consulte [gerenciar riscos com controle de acesso condicional](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md).
+Este tutorial fornece instruções para gerenciar o risco com um dos fatores (dados do usuário) disponíveis por meio do mecanismo de controle de acesso condicional no Serviços de Federação do Active Directory (AD FS) (AD FS) no Windows Server 2012 R2. Para obter mais informações sobre o controle de acesso condicional e os mecanismos de autorização no AD FS no Windows Server 2012 R2, consulte [gerenciar riscos com o controle de acesso condicional](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md).
 
 Este passo a passo consiste nas seguintes seções:
 
--   [Etapa 1: Configurando o ambiente de laboratório](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
+-   [Etapa 1: Configurando o ambiente de laboratório @ no__t-0
 
--   [Etapa 2: Verifique se o mecanismo de controle de acesso do AD FS padrão](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_2)
+-   [Etapa 2: Verifique o mecanismo de controle de acesso AD FS padrão @ no__t-0
 
--   [Etapa 3: Configurar política de controle de acesso condicional com base nos dados de usuário](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_3)
+-   [Etapa 3: Configurar a política de controle de acesso condicional com base nos dados do usuário @ no__t-0
 
--   [Etapa 4: Verifique se o mecanismo de controle de acesso condicional](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_4)
+-   [Etapa 4: Verificar o mecanismo de controle de acesso condicional @ no__t-0
 
 ## <a name="BKMK_1"></a>Etapa 1: Configuração do ambiente de laboratório
 Para concluir este passo a passo, é necessário um ambiente que consiste nos seguintes componentes:
 
--   Um domínio do Active Directory com um usuário de teste e contas de grupo, em execução no Windows Server 2008, Windows Server 2008 R2 ou Windows Server 2012 com seu esquema atualizado para o Windows Server 2012 R2 ou um domínio do Active Directory em execução no Windows Server 2012 R2
+-   Um domínio Active Directory com um usuário de teste e contas de grupo, em execução no Windows Server 2008, no Windows Server 2008 R2 ou no Windows Server 2012 com seu esquema atualizado para o Windows Server 2012 R2 ou um domínio de Active Directory em execução no Windows Server 2012 R2
 
 -   Um servidor de Federação em execução no Windows Server 2012 R2
 
@@ -50,23 +50,23 @@ Para concluir este passo a passo, é necessário um ambiente que consiste nos se
 
 Nesse ambiente, o servidor de federação emite as declarações que são necessárias para que os usuários possam acessar o aplicativo de exemplo. O servidor Web hospeda um aplicativo de exemplo que confiará nos usuários que apresentarem as declarações que o servidor de federação emitir.
 
-Para obter instruções sobre como configurar esse ambiente, consulte [configurar o ambiente de laboratório para o AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
+Para obter instruções sobre como configurar esse ambiente, consulte [Configurar o ambiente de laboratório para AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
 
 ## <a name="BKMK_2"></a>Etapa 2: verificar o mecanismo de controle de acesso do AD FS padrão
-Nesta etapa, você verificará o mecanismo de controle de acesso do AD FS padrão, no qual o usuário é redirecionado para a página de entrada do AD FS, fornece credenciais válidas e recebe o acesso ao aplicativo. Você pode usar o **Robert Hatley** conta do AD e o **claimapp** que você configurou no aplicativo de exemplo [configurar o ambiente de laboratório para o AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
+Nesta etapa, você verificará o mecanismo de controle de acesso do AD FS padrão, no qual o usuário é redirecionado para a página de entrada do AD FS, fornece credenciais válidas e recebe o acesso ao aplicativo. Você pode usar a conta do AD de **Robert Hatley** e o aplicativo de exemplo **ClaimApp** que você configurou em [Configurar o ambiente de laboratório para AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
 
-#### <a name="to-verify-the-default-ad-fs-access-control-mechanism"></a>Para verificar o padrão de mecanismo de controle de acesso do AD FS
+#### <a name="to-verify-the-default-ad-fs-access-control-mechanism"></a>Para verificar o mecanismo de controle de acesso de AD FS padrão
 
 1.  No computador cliente, abra uma janela do navegador e navegue até o aplicativo de exemplo: **https://webserv1.contoso.com/claimapp** .
 
     Essa ação automaticamente redireciona a solicitação ao servidor de federação, e você será solicitado a entrar com um nome de usuário e uma senha.
 
-2.  Digite as credenciais do **Robert Hatley** que você criou na conta do AD [configurar o ambiente de laboratório para o AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
+2.  Digite as credenciais da conta de **Robert Hatley** do AD que você criou em [Configurar o ambiente de laboratório para AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
 
     Você receberá acesso ao aplicativo.
 
 ## <a name="BKMK_3"></a>Etapa 3: configurar política de controle de acesso condicional com base nos dados do usuário
-Nesta etapa, você configurará uma política de controle de acesso com base nos dados de associação de grupo do usuário. Em outras palavras, você configurará uma **Regra de Autorização de Emissão** no servidor de federação para um objeto de confiança de terceira parte confiável que representa o aplicativo de exemplo – **claimapp**. Pela lógica dessa regra, **Robert Hatley** usuário do AD receberá emissões de declarações que são necessárias para acessar este aplicativo porque ele pertence a um **Finanças** grupo. Você adicionou o **Robert Hatley** da conta para o **Finanças** grupo [configurar o ambiente de laboratório para o AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
+Nesta etapa, você configurará uma política de controle de acesso com base nos dados de associação de grupo do usuário. Em outras palavras, você configurará uma **Regra de Autorização de Emissão** no servidor de federação para um objeto de confiança de terceira parte confiável que representa o aplicativo de exemplo – **claimapp**. Pela lógica dessa regra, o usuário de **Robert Hatley** ad receberá declarações que são necessárias para acessar esse aplicativo porque ele pertence a um grupo de **Finanças** . Você adicionou a conta **Robert Hatley** ao grupo **Finanças** em [Configurar o ambiente de laboratório para AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
 
 É possível concluir essa tarefa usando o Console de gerenciamento do AD FS ou o Windows PowerShell.
 
@@ -120,17 +120,17 @@ Nesta etapa, você verificará a política de controle de acesso condicional con
 
     Essa ação automaticamente redireciona a solicitação ao servidor de federação, e você será solicitado a entrar com um nome de usuário e uma senha.
 
-2.  Digite as credenciais do **Robert Hatley** que você criou na conta do AD [configurar o ambiente de laboratório para o AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
+2.  Digite as credenciais da conta de **Robert Hatley** do AD que você criou em [Configurar o ambiente de laboratório para AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
 
     Você receberá acesso ao aplicativo.
 
-3.  Digite as credenciais de outro usuário do AD que NÃO pertence ao grupo **Finanças**. (Para obter mais informações sobre como criar contas de usuário no AD, consulte [ https://technet.microsoft.com/library/cc7833232.aspx ](https://technet.microsoft.com/library/cc783323%28v=ws.10%29.aspx).
+3.  Digite as credenciais de outro usuário do AD que NÃO pertence ao grupo **Finanças**. (Para obter mais informações sobre como criar contas de usuário no AD, consulte [https://technet.microsoft.com/library/cc7833232.aspx](https://technet.microsoft.com/library/cc783323%28v=ws.10%29.aspx).
 
-    Neste ponto, por causa da política de controle de acesso que você configurou na etapa anterior, uma mensagem de "acesso negado" é exibida para o usuário do AD que não pertence à **Finanças** grupo. O texto da mensagem padrão é **você não está autorizado a acessar este site. Clique aqui para sair e entrar novamente ou contate o administrador para permissões.** No entanto, esse texto é totalmente personalizável. Para obter mais informações sobre como personalizar a experiência de entrada, consulte [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx).
+    Neste ponto, devido à política de controle de acesso que você configurou na etapa anterior, uma mensagem de ' acesso negado ' é exibida para esse usuário do AD que não pertence ao grupo de **Finanças** . O texto da mensagem padrão é **You não está autorizado a acessar este site. Clique aqui para sair e entrar novamente ou contate o administrador para obter permissões.** No entanto, esse texto é totalmente personalizável. Para obter mais informações sobre como personalizar a experiência de entrada, consulte [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx).
 
 ## <a name="see-also"></a>Consulte também
-[Gerencie riscos com controle de acesso condicional](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
-[configurar o ambiente de laboratório para o AD FS no Windows Server 2012 R2](../deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+[Gerenciar o risco com o controle de acesso condicional](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
+[Configurar o ambiente de laboratório para AD FS no Windows Server 2012 R2](../deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 
 
 

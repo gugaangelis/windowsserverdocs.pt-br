@@ -1,7 +1,7 @@
 ---
 title: Introdução
 description: Informações detalhadas sobre o Windows Server 2019 e preparação para implantar, atualizar ou migrar.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: jasgroce
 ms.technology: get-started
 layout: LandingPage
@@ -9,12 +9,12 @@ ms.topic: landing-page
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e75f4262ea3e1d20b399b3fa1214f0ede33e1e0
-ms.sourcegitcommit: b17ccf7f81e58e8f4dd844be8acf784debbb20ae
+ms.openlocfilehash: acc18e9b960473098f59d8980b4b85e63f209b82
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69023905"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360803"
 ---
 # <a name="get-started-with-windows-server-2019"></a>Introdução ao Windows Server 2019
 

@@ -1,8 +1,8 @@
 ---
 title: Atualizar o gerenciamento com o Windows Server Update Services
-description: Tópico do Windows Server Update Service (WSUS) - uma visão geral do gerenciamento de atualizações com links para os tópicos relacionados
+description: Tópico Windows Server Update Service (WSUS)-uma visão geral de Gerenciamento de Atualizações com links para os tópicos relacionados
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-wsus
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5675d74411407930022281f92717237115f7cecd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e80f6763d7b1aa11603cbd2bb8756a426d685092
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814857"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361504"
 ---
 # <a name="update-management-with-windows-server-update-services"></a>Atualizar o gerenciamento com o Windows Server Update Services
 
@@ -29,18 +29,18 @@ Você deve verificar a página inicial do console administrativo do WSUS regular
 ## <a name="in-this-guide"></a>Neste guia  
 Neste guia, você encontrará informações sobre:  
   
--   [Configuração de sincronizações de atualização](setting-up-update-synchronizations.md)  
+-   [Configurar sincronizações de atualização](setting-up-update-synchronizations.md)  
   
--   [Gerenciamento de computadores cliente do WSUS e grupos de computadores do WSUS](managing-wsus-client-computers-and-wsus-computer-groups.md)  
+-   [Gerenciar os computadores cliente do WSUS e os grupos de computadores do WSUS](managing-wsus-client-computers-and-wsus-computer-groups.md)  
   
--   [Exibindo e Gerenciando atualizações](viewing-and-managing-updates.md)  
+-   [Exibir e gerenciar atualizações](viewing-and-managing-updates.md)  
   
--   [WSUS e o Site do catálogo](wsus-and-the-catalog-site.md)  
+-   [WSUS e o site do catálogo](wsus-and-the-catalog-site.md)  
   
 -   [Operações de atualizações](updates-operations.md)  
   
--   [A Assistente de limpeza do servidor](the-server-cleanup-wizard.md)  
+-   [O Assistente para limpeza de servidor](the-server-cleanup-wizard.md)  
   
--   [Modo de réplica do WSUS em execução](running-wsus-replica-mode.md)  
+-   [Executar o modo de réplica do WSUS](running-wsus-replica-mode.md)  
   
 -   [Mensagens do WSUS e dicas de solução de problemas](wsus-messages-and-troubleshooting-tips.md)  

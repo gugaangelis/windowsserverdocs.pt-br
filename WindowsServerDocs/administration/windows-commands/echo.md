@@ -1,8 +1,8 @@
 ---
 title: echo
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bfe6c936ee5606e286aab076bea08db04b8b6500
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 343d6327d262401b4be14e472a135062456890f1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811170"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377635"
 ---
 # <a name="echo"></a>echo
 
 
 
-Exibe mensagens ou ativa ou desativa o recurso de eco de comando. Se usado sem parâmetros, **echo** exibe a configuração atual.
+Exibe mensagens ou ativa ou desativa o recurso de eco de comando. Se usado sem parâmetros, **Echo** exibe a configuração de eco atual.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#examples).
 
@@ -39,27 +39,27 @@ echo [on | off]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|[em \| off]|Ativa ou desativa o recurso de eco de comando. Comando ecoar é ativado por padrão.|
-|\<mensagem >|Especifica o texto a ser exibido na tela.|
+|[on \| off]|Ativa ou desativa o recurso de eco de comando. O eco de comando está ativado por padrão.|
+|\<Message >|Especifica o texto a ser exibido na tela.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
--   O **echo** *mensagem* comando é particularmente útil quando **eco** está desativado. Para exibir uma mensagem de várias linhas sem exibir qualquer comando, você pode incluir vários **echo** *mensagem* comandos depois do **echo off** no seu arquivo em lotes.
--   Quando **echo** estiver desativada, o prompt de comando não aparece na janela do Prompt de comando. Para exibir o prompt de comando, digite **eco.**
--   Se usado em um arquivo de lote **eco** e **echo off** não afetam a configuração no prompt de comando.
--   Para evitar repetir um determinado comando em um arquivo em lotes, insira um sinal de arroba (@) na frente do comando. Para evitar repetir todos os comandos em um arquivo em lotes, inclua o **echo off** comando no início do arquivo.
--   Para exibir um pipe ( **|** ) ou o caractere de redirecionamento ( **<** ou **>** ) quando você estiver usando **eco**, use um acento circunflexo (^) imediatamente antes do caractere de pipe ou redirecionamento (por exemplo, **^|** , **^>** , ou **^<** ). Para exibir um acento circunflexo, digite acentos dois circunflexos em sucessão ( **^^** ).
+-   O comando **Echo** *Message* é particularmente útil quando o **eco** é desativado. Para exibir uma mensagem com várias linhas sem exibir nenhum comando, você pode incluir vários comandos de *mensagem* de eco após o comando **echo off** no seu programa em lotes.
+-   Quando o **eco** é desativado, o prompt de comando não aparece na janela do prompt de comando. Para exibir o prompt de comando, digite **Echo on.**
+-   Se usado em um arquivo em lotes, **Echo on** e **echo off** não afetam a configuração no prompt de comando.
+-   Para impedir o eco de um comando específico em um arquivo em lotes, insira um sinal de arroba (@) na frente do comando. Para evitar o eco de todos os comandos em um arquivo em lotes, inclua o comando **echo off** no início do arquivo.
+-   Para exibir um pipe ( **|** ) ou um caractere de redirecionamento ( **<** ou **>** ) quando você estiver usando o **eco**, use um cursor (^) imediatamente antes do pipe ou caractere de redirecionamento (por exemplo, **^|** , **0** ou **2**). Para exibir um cursor, digite dois Cursors em sucessão ( **^^** ).
 
 ## <a name="examples"></a>Exemplos
 
-Para exibir o atual **echo** configurando, digite:
+Para exibir a configuração de **eco** atual, digite:
 
 ```
 echo
 ```
 
-Para repetir uma linha em branco na tela, digite:
+Para ecoar uma linha em branco na tela, digite:
 
 ```
 echo.
@@ -68,28 +68,28 @@ echo.
 > [!NOTE]
 > Não inclua um espaço antes do período. Caso contrário, o período será exibido em vez de uma linha em branco.
 
-Para evitar repetir comandos no prompt de comando, digite:
+Para evitar comandos de eco no prompt de comando, digite:
 
 ```
 echo off 
 ```
 
 > [!NOTE]
-> Quando **echo** estiver desativada, o prompt de comando não aparece na janela do Prompt de comando. Para exibir novamente o prompt de comando, digite **echo em**.
+> Quando o **eco** é desativado, o prompt de comando não aparece na janela do prompt de comando. Para exibir o prompt de comando novamente, digite **Echo on**.
 
-Para impedir que todos os comandos em um arquivo em lote (incluindo o **echo off** comando) sejam exibidas na tela, na primeira linha do tipo de arquivo em lotes:
+Para impedir que todos os comandos em um arquivo em lotes (incluindo o comando **echo off** ) sejam exibidos na tela, na primeira linha do tipo de arquivo em lotes:
 
 ```
 @echo off
 ```
 
-Você pode usar o **echo** comando como parte de uma **se** instrução. Por exemplo, para pesquisar o diretório atual para qualquer arquivo com a extensão de nome de arquivo. rpt e para ecoar uma mensagem se esse arquivo está localizado, digite:
+Você pode usar o comando **Echo** como parte de uma instrução **If** . Por exemplo, para pesquisar o diretório atual em busca de qualquer arquivo com a extensão de nome de arquivo. RPT e ecoar uma mensagem se tal arquivo for encontrado, digite:
 
 ```
 if exist *.rpt echo The report has arrived.
 ```
 
-O seguinte arquivo em lotes pesquisará o diretório atual para arquivos com a extensão de nome de arquivo. txt e exibe uma mensagem indicando que os resultados da pesquisa:
+O arquivo em lotes a seguir pesquisa o diretório atual em busca de arquivos com a extensão de nome de arquivo. txt e exibe uma mensagem indicando os resultados da pesquisa:
 
 ```
 @echo off
@@ -102,13 +102,13 @@ echo This directory contains no text files.
    )
 ```
 
-Se nenhum arquivo. txt é encontrado quando o arquivo em lotes é executado, a seguinte mensagem será exibida:
+Se não forem encontrados arquivos. txt quando o arquivo em lotes for executado, a seguinte mensagem será exibida:
 
 ```
 This directory contains no text files.
 ```
 
-Se os arquivos. txt são encontrados quando o arquivo em lotes é executado a saída a seguir exibe (neste exemplo, suponha que os arquivos File1.txt, File2.txt e File3.txt existe):
+Se arquivos. txt forem encontrados quando o arquivo em lotes for executado, a saída a seguir será exibida (para este exemplo, suponha que os arquivos arquivo1. txt, arquivo2. txt e arquivo3. txt existam):
 
 ```
 This directory contains the following text files:

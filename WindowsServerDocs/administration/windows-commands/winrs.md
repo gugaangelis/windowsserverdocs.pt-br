@@ -1,8 +1,8 @@
 ---
 title: winrs
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f9c612a7c6f5d0935223b3c193c52fe970c970d7
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d6ee44cb530614485f0dbd58a9ec13a4788370fe
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440050"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361944"
 ---
 # <a name="winrs"></a>winrs
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Gerenciamento remoto do Windows permite que você gerenciar e executar programas remotamente.   
+O gerenciamento remoto do Windows permite que você gerencie e execute programas remotamente.   
 ## <a name="syntax"></a>Sintaxe  
 ```  
 winrs [/<parameter>[:<value>]] <command>  
@@ -33,26 +33,26 @@ winrs [/<parameter>[:<value>]] <command>
 
 |           Parâmetro            |                                                                                                                                                                                    Descrição                                                                                                                                                                                     |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      /remote:\<endpoint>       |                                                                                          Especifica o ponto de extremidade de destino usando um nome NetBIOS ou a conexão padrão:<br /><br />-   <url>: [\<transport>://]\<target>[:\<port>]<br /><br />Se não for especificado, **/r:localhost** é usado.                                                                                          |
-|          /unencrypted          | Especifica que as mensagens para o shell remoto não serão criptografadas. Isso é útil para solução de problemas ou quando o tráfego de rede já está criptografado com **ipsec**, ou quando a segurança física é imposta.<br /><br />Por padrão, as mensagens são criptografadas usando chaves de Kerberos ou NTLM.<br /><br />Essa opção de linha de comando é ignorada quando o transporte HTTPS é selecionada. |
-|     /username:\<username>      |                                                                                Especifica o nome de usuário na linha de comando.<br /><br />Se não for especificado, a ferramenta usará a autenticação Negotiate ou o prompt para o nome.<br /><br />Se **/username** for especificado, **/password** também deve ser especificado.                                                                                 |
-|     /password:\<password>      |                                                                           Especifica a senha na linha de comando.<br /><br />Se **/password** não for especificado, mas **/username** é, a ferramenta solicitará a senha.<br /><br />Se **/password** for especificado, **/username** também deve ser especificado.                                                                            |
-|      /timeout:\<seconds>       |                                                                                                                                                                             Essa opção é preterida.                                                                                                                                                                             |
-|       /directory:\<path>       |                                                                                            Especifica o diretório inicial para o shell remoto.<br /><br />Se não for especificado, o shell remoto começará no diretório base do usuário, definido pela variável de ambiente **% USERPROFILE %** .                                                                                             |
-| /Environment:\<cadeia de caracteres > =<value> |                                                                          Especifica uma variável de ambiente único a ser definido quando inicia do shell, o que permite alterar o ambiente padrão do shell.<br /><br />Várias ocorrências dessa opção devem ser usadas para especificar diversas variáveis de ambiente.                                                                          |
-|            /noecho             |                                                                                                    Especifica que o eco deve ser desabilitado. Isso pode ser necessário para garantir respostas do usuário aos prompts remotos não são exibidas localmente.<br /><br />Por padrão o eco for "on".                                                                                                    |
-|           /noprofile           |                                              Especifica que o perfil do usuário não deve ser carregado.<br /><br />Por padrão, o servidor tentará carregar o perfil do usuário.<br /><br />Se o usuário remoto não é um administrador local no sistema de destino e, em seguida, essa opção será necessária (o padrão resultará em erro).                                               |
-|         /allowdelegate         |                                                                                                                  Especifica que as credenciais do usuário podem ser usadas para acessar um compartilhamento remoto, por exemplo, encontrado em um computador diferente que o ponto de extremidade de destino.                                                                                                                   |
-|          /compression          |                                                                           Ative a compactação.  Instalações antigas em máquinas remotas não podem dar suporte a compactação para que ele está desativado por padrão.<br /><br />Configuração padrão é off, uma vez que as instalações antigas em máquinas remotas podem não dar suporte a compactação.                                                                           |
-|            /usessl             |                                                                                                               Use uma conexão SSL ao usar um ponto de extremidade remoto.  Especificar isso, em vez de transporte **https:** usará o padrão **WinRM** porta padrão.                                                                                                                |
+|      /Remote: \<endpoint >       |                                                                                          Especifica o ponto de extremidade de destino usando um nome NetBIOS ou a conexão padrão:<br /><br />-    @ no__t-1: [\<transport >://] \<target > [: \<port >]<br /><br />Se não for especificado, **/r: localhost** será usado.                                                                                          |
+|          /unencrypted          | Especifica que as mensagens para o shell remoto não serão criptografadas. Isso é útil para solucionar problemas ou quando o tráfego de rede já está criptografado usando **IPSec**ou quando a segurança física é imposta.<br /><br />Por padrão, as mensagens são criptografadas usando chaves Kerberos ou NTLM.<br /><br />Essa opção de linha de comando é ignorada quando o transporte HTTPS é selecionado. |
+|     /username: \<username >      |                                                                                Especifica o nome de usuário na linha de comando.<br /><br />Se não for especificado, a ferramenta usará a autenticação Negotiate ou solicitará o nome.<br /><br />Se **/username** for especificado, **/password** também deverá ser especificado.                                                                                 |
+|     /Password: \<password >      |                                                                           Especifica a senha na linha de comando.<br /><br />Se **/password** não for especificado, mas **/username** for, a ferramenta solicitará a senha.<br /><br />Se **/password** for especificado, **/username** também deverá ser especificado.                                                                            |
+|      /timeout: \<seconds >       |                                                                                                                                                                             Esta opção foi preterida.                                                                                                                                                                             |
+|       /diretório: \<path >       |                                                                                            Especifica o diretório inicial para o shell remoto.<br /><br />Se não for especificado, o shell remoto será iniciado no diretório base do usuário definido pela variável de ambiente **% USERPROFILE%** .                                                                                             |
+| /Environment: \<string > =<value> |                                                                          Especifica uma única variável de ambiente a ser definida quando o Shell é iniciado, o que permite a alteração do ambiente padrão para o Shell.<br /><br />Várias ocorrências dessa opção devem ser usadas para especificar várias variáveis de ambiente.                                                                          |
+|            /noecho             |                                                                                                    Especifica que o eco deve ser desabilitado. Isso pode ser necessário para garantir que as respostas do usuário para prompts remotos não sejam exibidas localmente.<br /><br />Por padrão, o eco é "ativado".                                                                                                    |
+|           /noprofile           |                                              Especifica que o perfil do usuário não deve ser carregado.<br /><br />Por padrão, o servidor tentará carregar o perfil do usuário.<br /><br />Se o usuário remoto não for um administrador local no sistema de destino, essa opção será necessária (o padrão resultará em erro).                                               |
+|         /allowdelegate         |                                                                                                                  Especifica que as credenciais do usuário podem ser usadas para acessar um compartilhamento remoto, por exemplo, encontradas em um computador diferente do ponto de extremidade de destino.                                                                                                                   |
+|          /Compression          |                                                                           Ative a compactação.  As instalações mais antigas em máquinas remotas podem não dar suporte à compactação, portanto, estão desativadas por padrão.<br /><br />A configuração padrão é off, já que as instalações mais antigas em máquinas remotas podem não dar suporte à compactação.                                                                           |
+|            /usessl             |                                                                                                               Use uma conexão SSL ao usar um ponto de extremidade remoto.  Especificando isso em vez do HTTPS de transporte **:** usará a porta padrão **WinRM** default.                                                                                                                |
 |               /?               |                                                                                                                                                                        Exibe a ajuda no prompt de comando.                                                                                                                                                                        |
 
 ## <a name="remarks"></a>Comentários  
--   Todas as opções de linha de comando aceitam curtas ou longas. Por exemplo, ambos **/r** e **/remota** são válidos.  
--   Para encerrar a **/remota** de comando, o usuário pode digitar **Ctrl-C** ou **Ctrl-break**, que será enviado para o shell remoto. A segunda **Ctrl-C** vai forçar o encerramento da **winrs.exe**.  
--   Para gerenciar o Active Directory shells remotos ou winrs configuração, use a ferramenta de WinRM.  O URI é o alias para gerenciar os shells do Active Directory **shell/cmd**.  É o URI de alias para a configuração winrs **winrm/config/winrs**.  
+-   Todas as opções de linha de comando aceitam forma abreviada ou longa. Por exemplo, **/r** e **/Remote** são válidos.  
+-   Para encerrar o comando **/Remote** , o usuário pode digitar **Ctrl-C** ou **Ctrl-Break**, que será enviado para o shell remoto. O segundo **Ctrl-C** forçará o encerramento de **winrs. exe**.  
+-   Para gerenciar os shells remotos ativos ou a configuração do WinRS, use a ferramenta WinRM.  O alias de URI para gerenciar shells ativos é **shell/cmd**.  O alias do URI para a configuração do WinRS é **WinRM/config/WinRS**.  
 
-## <a name="BKMK_Examples"></a>Exemplos  
+## <a name="BKMK_Examples"></a>Disso  
 ```  
 winrs /r:https://contoso.com command  
 ```  

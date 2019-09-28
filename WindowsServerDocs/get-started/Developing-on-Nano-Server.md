@@ -1,7 +1,7 @@
 ---
 title: Desenvolver para o Nano Server
 description: Comunicação remota do PowerShell e sessões CIM
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: DonGill
 ms.technology: server-nano
@@ -12,19 +12,19 @@ ms.assetid: 57079470-a1c1-4fdc-af15-1950d3381860
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d793dde9c41bc99b55eeb0da3a5ee4b025f08d6
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 6cf21d9db4221fd6bd76cfd5c362bb9f168d1ce9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66443643"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360323"
 ---
 # <a name="developing-for-nano-server"></a>Desenvolver para o Nano Server
 
 >Aplica-se a: Windows Server 2016
 
 > [!IMPORTANT]
-> A partir do Windows Server, versão 1709, o Nano Server estará disponível somente como uma [imagem do sistema operacional de contêiner base](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Confira [Mudanças no Nano Server](nano-in-semi-annual-channel.md) para saber o que isso significa. 
+> A partir do Windows Server, versão 1709, o Nano Server estará disponível somente como uma [imagem do sistema operacional de base de contêiner](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Confira [Mudanças no Nano Server](nano-in-semi-annual-channel.md) para saber o que isso significa. 
 
 Estes tópicos explicam as diferenças importantes no PowerShell no Nano Server e fornecem orientações para desenvolver seus próprios cmdlets do PowerShell para uso com o Nano Server.
 

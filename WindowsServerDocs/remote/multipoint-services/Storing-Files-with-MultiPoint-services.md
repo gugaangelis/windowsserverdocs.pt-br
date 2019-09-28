@@ -1,9 +1,9 @@
 ---
 title: Armazenar arquivos com MultiPoint Services
-description: Saiba mais sobre o armazenamento de arquivos no MultiPoint Services
+description: Saiba mais sobre o armazenamento de arquivos nos serviços do MultiPoint
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,23 +13,23 @@ ms.assetid: c9eb0461-3846-4ddc-97ff-de10f03f30cf
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: b432ca793b156997761f9fadab7340c394e3b553
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bf31f5c582cffb5b38cff8cb15fcfdb4b3f76386
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817337"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389302"
 ---
 # <a name="storing-files-with-multipoint-services"></a>Armazenar arquivos com MultiPoint Services
-MultiPoint Services dá suporte a armazenando arquivos do usuário das seguintes maneiras:  
+Os serviços do MultiPoint oferecem suporte ao armazenamento de arquivos do usuário das seguintes maneiras:  
   
--   **Na partição do sistema operacional da unidade de disco rígido.** Por padrão, o MultiPoint Services armazena arquivos de usuário na unidade de disco rígido com o sistema operacional.  
+-   **Na partição do sistema operacional da unidade de disco rígido.** Por padrão, os serviços do MultiPoint armazenam arquivos de usuário na unidade de disco rígido com o sistema operacional.  
   
--   **Em uma partição separada da unidade de disco rígido.** Quando o sistema MultiPoint Services é configurado pela primeira vez, você pode *partição* o disco rígido. Ou seja, você pode configurar uma seção da unidade para que ele funcione como se fosse uma unidade separada. Isso torna mais fácil restaurar ou atualizar o sistema operacional sem afetar os arquivos do usuário. Para obter mais informações, consulte [criar uma partição ou a unidade lógica](https://go.microsoft.com/fwlink/?LinkId=182618) na biblioteca técnica do Windows Server.  
+-   **Em uma partição separada da unidade de disco rígido.** Quando o sistema de serviços do MultiPoint estiver configurado pela primeira vez, você poderá *particionar* a unidade de disco rígido. Ou seja, você pode configurar uma seção da unidade para que ela funcione como se fosse uma unidade separada. Isso torna mais fácil restaurar ou atualizar o sistema operacional sem afetar os arquivos do usuário. Para obter mais informações, consulte [criar uma partição ou unidade lógica](https://go.microsoft.com/fwlink/?LinkId=182618) na biblioteca técnica do Windows Server.  
   
--   **Em uma adicional interna ou externa unidade de disco rígido.** Você pode anexar mais unidades de disco de rígido de internas ou externas ao MultiPoint Services para salvar e fazer backup dos dados.  
+-   **Em uma unidade de disco rígido interna ou externa adicional.** Você pode anexar mais unidades internas ou externas de disco rígido aos serviços do MultiPoint para salvar e fazer backup de dados.  
   
--   **Em uma pasta de rede compartilhada.** Para disponibilizar arquivos de usuário de qualquer estação, você pode criar uma pasta compartilhada na rede. Isso exige a outro computador ou servidor, além do computador executando o MultiPoint Services. Isso é o método recomendado para armazenar arquivos, se houver um servidor de arquivos.  
+-   **Em uma pasta de rede compartilhada.** Para disponibilizar arquivos do usuário de qualquer estação, você pode criar uma pasta compartilhada na rede. Isso requer outro computador ou servidor além do computador que executa os serviços do MultiPoint. Esse é o método recomendado para armazenar arquivos se houver um servidor de arquivos disponível.  
   
-    Para pequenos sistemas de computadores de 2 a 3 executando o MultiPoint Services sem um servidor disponível, um dos computadores do MultiPoint Services pode agir como servidor de arquivos para todos os computadores do MultiPoint Services. Em seguida, você criaria contas de usuário para todos os usuários MultiPoint Services que está atuando como servidor de arquivos.  
+    Para sistemas pequenos de 2-3 computadores que executam serviços do MultiPoint sem nenhum servidor de arquivos disponível, um dos computadores dos serviços do MultiPoint pode atuar como o servidor de arquivos para todos os computadores dos serviços do MultiPoint. Em seguida, você criaria contas de usuário para todos os usuários nos serviços do MultiPoint que estão agindo como o servidor de arquivos.  
   

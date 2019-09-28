@@ -1,6 +1,6 @@
 ---
 title: Replicação de cluster estendido usando Armazenamento Compartilhado
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: eldenc
 ms.author: nedpyle
 ms.technology: storage-replica
@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 6c5b9431-ede3-4438-8cf5-a0091a8633b0
-ms.openlocfilehash: 3acfcfd13ee3f78bac59a96b6021e5489f4e39ac
-ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
+ms.openlocfilehash: 654b4aea135c360f5fc5f59fdf85627fe8dd4cc2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70000748"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402971"
 ---
 # <a name="stretch-cluster-replication-using-shared-storage"></a>Replicação de cluster estendido usando Armazenamento Compartilhado
 
@@ -36,7 +36,7 @@ Este passo a passo usa o seguinte ambiente como exemplo:
 
 ![Diagrama mostrando dois nós em Redmond sendo replicados com dois nós do mesmo cluster no site Bellevue](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_StretchClusterExample.png)  
 
-**FIGURA 1:  Replicação de armazenamento em um cluster de ampliação**  
+**FIGURE 1:  Replicação de armazenamento em um cluster de ampliação @ no__t-0  
 
 ## <a name="prerequisites"></a>Pré-requisitos  
 -   Floresta dos Active Directory Domain Services (não precisa ser executada no Windows Server 2016).  
@@ -220,7 +220,7 @@ Agora você criará um cluster de failover normal. Após a configuração, a val
 
 14. **(Opcional)** Configure redes de cluster e o Active Directory para o failover do site DNS mais rápido. Você pode usar redes definidas pelo software do Hyper-V, VLANs estendidas, dispositivos de abstração de rede, TTL de DNS reduzida e outras técnicas comuns.
 
-    Para obter mais informações, consulte a sessão do Microsoft Ignite: Ampliando clusters de [failover e usando a réplica de armazenamento no Windows Server vNext](http://channel9.msdn.com/Events/Ignite/2015/BRK3487) e a postagem de blog [habilitar notificações de alteração entre sites – como e por quê?](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx) .  
+    Para obter mais informações, consulte a sessão do Microsoft Ignite: Ampliando [clusters de failover e usando a réplica de armazenamento no Windows Server vNext](http://channel9.msdn.com/Events/Ignite/2015/BRK3487) e a postagem de blog [habilitar notificações de alteração entre sites – como e por quê?](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx) .  
 
 15. **(Opcional)** Configure a resiliência de VM para que os convidados não pausem por muitos períodos durante falhas do nó. Em vez disso, eles realizam failover para o novo armazenamento de origem de replicação em 10 segundos.  
 
@@ -287,7 +287,7 @@ Agora você criará um cluster de failover normal. Após a configuração, a val
 
 9. **(Opcional)** Configure redes de cluster e o Active Directory para o failover do site DNS mais rápido. Você pode usar redes definidas pelo software do Hyper-V, VLANs estendidas, dispositivos de abstração de rede, TTL de DNS reduzida e outras técnicas comuns.  
 
-   Para obter mais informações, consulte a sessão do Microsoft Ignite: Ampliando clusters de [failover e usando a réplica de armazenamento no Windows Server vNext](http://channel9.msdn.com/Events/Ignite/2015/BRK3487) e habilite as [notificações de alteração entre sites – como e por quê](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx).  
+   Para obter mais informações, consulte a sessão do Microsoft Ignite: Ampliando [clusters de failover e usando a réplica de armazenamento no Windows Server vNext](http://channel9.msdn.com/Events/Ignite/2015/BRK3487) e [habilite as notificações de alteração entre sites – como e por quê](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx).  
 
 10. **(Opcional)** Configure a resiliência de VM para que os convidados não pausem por muitos períodos durante falhas do nó. Em vez disso, eles realizam failover para o novo armazenamento de origem de replicação em 10 segundos.  
 

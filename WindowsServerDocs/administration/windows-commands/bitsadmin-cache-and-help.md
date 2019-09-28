@@ -1,8 +1,8 @@
 ---
-title: Ajuda e cache bitsadmin
-description: Tópico de comandos do Windows para **bitsadmin ajuda e cache** -exibe o uso de linha de comando para o **Cache** comutadores.
+title: cache Bitsadmin e ajuda
+description: Tópico de comandos do Windows para **cache Bitsadmin e ajuda** – exibe o uso de linha de comando para as opções de **cache** .
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7af78c21f4d96886d1050a95dc16594159bc2c0b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 453464ebcc305bdc2fbbc73f2e46f7392bba1033
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869057"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381982"
 ---
-# <a name="bitsadmin-cache-and-help"></a>Ajuda e cache bitsadmin
+# <a name="bitsadmin-cache-and-help"></a>cache Bitsadmin e ajuda
 
 
 
-Exibe o uso de linha de comando para o **Cache** comutadores.
+Exibe o uso da linha de comando para as opções de **cache** .
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -32,13 +32,13 @@ Exibe o uso de linha de comando para o **Cache** comutadores.
 Bitsadmin /Cache /Help 
 ```
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O comando a seguir exibe a Ajuda de linha de comando para o **Cache** comutadores.
+O comando a seguir exibe a ajuda de linha de comando para as opções de **cache** .
 ```
 Bitsadmin /Cache /Help
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

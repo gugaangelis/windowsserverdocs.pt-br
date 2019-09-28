@@ -2,7 +2,7 @@
 title: typeperf
 description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cfcbac82b88c0c8d8bcc706ebfd807f96e359de7
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: 087b201c51d5aec8e6f61c7469c59307d3ed8b4d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "66440782"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392299"
 ---
 # <a name="typeperf"></a>typeperf
 
@@ -41,30 +41,30 @@ typeperf -qx [object] [options]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<contador [contador [...]] >|Especifica os contadores de desempenho a serem monitorados.|
+|\<counter [Counter [...]] >|Especifica os contadores de desempenho a serem monitorados.|
 
 > [!NOTE]
-> o contador > é o nome completo de um contador de desempenho no  *\\ \\formato Computer\Object (instância) \Counter* ,  **\<**  **\\ \\como Server1\Processor (0)\%Hora do usuário**.
+> **\<counter >** é o nome completo de um contador de desempenho no formato de *\Counter do \\ @ no__t-4Computer\Object (instância)* , como **\\ @ no__t-7Server1\Processor (0) \% tempo de usuário**.
 
 ## <a name="options"></a>Opções
 
 |                   Opção                   |                                                         Descrição                                                          |
 |--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 |                     -?                     |                                               Exibe a ajuda contextual.                                               |
-| -f \<CSV&verbar;TSV&verbar;SQL&verbar;> |                                    Especifica o formato do arquivo de saída. O padrão é CSV.                                     |
-|              -nome \<de arquivo do CF >               |              Especifica um arquivo que contém uma lista de contadores de desempenho a serem monitorados, com um contador por linha.               |
+| -f \<CSV @ no__t-1TSV @ no__t-2BIN @ no__t-3SQL > |                                    Especifica o formato do arquivo de saída. O padrão é CSV.                                     |
+|              -CF \<filename >               |              Especifica um arquivo que contém uma lista de contadores de desempenho a serem monitorados, com um contador por linha.               |
 |             -si < [[hh:] mm:] SS >             |                                  Especifica o intervalo de amostragem. O padrão é um segundo.                                   |
-|               -o \<nome de arquivo >               |     Especifica o caminho para o arquivo de saída ou o banco de dados SQL. O padrão é STDOUT (gravado na janela de comando).      |
-|                -q [objeto]                 | Exibe uma lista de contadores instalados (sem instâncias). Para listar os contadores de um objeto, inclua o nome do objeto. \*\*\*EXEMPLO |
+|               -o \<filename >               |     Especifica o caminho para o arquivo de saída ou o banco de dados SQL. O padrão é STDOUT (gravado na janela de comando).      |
+|                -q [objeto]                 | Exibe uma lista de contadores instalados (sem instâncias). Para listar os contadores de um objeto, inclua o nome do objeto. \* @ NO__T-1 @ NO__T-2EXAMPLE |
 |                -QX [objeto]                |        Exibe uma lista de contadores instalados com instâncias. Para listar os contadores de um objeto, inclua o nome do objeto.        |
-|               -SC \<amostras >               |             Especifica o número de amostras a serem coletadas. O padrão é coletar dados até que CTRL + C seja pressionado.              |
+|               -SC \<samples >               |             Especifica o número de amostras a serem coletadas. O padrão é coletar dados até que CTRL + C seja pressionado.              |
 |            -config \<nome de arquivo >             |                                    Especifica um arquivo de configurações contendo opções de comando.                                     |
-|            -s \<nome_do_computador >             |                   Especifica um computador remoto para monitorar se nenhum computador for especificado no caminho do contador.                    |
+|            -s \<computer_name >             |                   Especifica um computador remoto para monitorar se nenhum computador for especificado no caminho do contador.                    |
 |                     -y                     |                                        Responda sim a todas as perguntas sem avisar.                                        |
 
 ## <a name="BKMK_EXAMPLES"></a>Disso
 
-- O exemplo a seguir grava os valores para o tempo do processador do **\\ \\\%** contador de desempenho do computador local (_ total) para a janela de comando em um intervalo de exemplo padrão de 1 segundo até que CTRL + C seja pressionado .  
+- O exemplo a seguir grava os valores para o contador de desempenho do computador local **\\ @ no__t-2Processor (_ total) \% tempo do processador** para a janela de comando em um intervalo de amostragem padrão de 1 segundo até que CTRL + C seja pressionado.  
   ```
   typeperf "\Processor(_Total)\% Processor Time"
   ```  

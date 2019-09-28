@@ -1,8 +1,8 @@
 ---
-title: Bitsadmin setvalidationstate
-description: Tópico de comandos do Windows para **setvalidationstate bitsadmin** -define o estado de validação de conteúdo do arquivo fornecido dentro do trabalho.
+title: Bitsadmin setvalidable
+description: O tópico de comandos do Windows para **Bitsadmin setvalidable** – define o estado de validação de conteúdo do arquivo fornecido dentro do trabalho.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a832e8f3d21681f67a4486df33c387e5a8456718
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 37d7fa3a8a91abf1e7b6ac5a51b6cebd78984a91
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434877"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380404"
 ---
-# <a name="bitsadmin-setvalidationstate"></a>Bitsadmin setvalidationstate
+# <a name="bitsadmin-setvalidationstate"></a>Bitsadmin setvalidable
 
 
 
-Define o estado de validação de conteúdo do arquivo determinado dentro do trabalho.
+Define o estado de validação de conteúdo do arquivo fornecido dentro do trabalho.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,13 +36,13 @@ bitsadmin /SetValidationState <Job> <file index> <true|false>
 
 | Parâmetro  |          Descrição           |
 |------------|--------------------------------|
-|    Job     | Nome de exibição ou o GUID do trabalho |
-| Índice de arquivo |         Começa em 0          |
+|    Job     | O nome de exibição ou o GUID do trabalho |
+| Índice de arquivo |         Começa com 0          |
 |    True    |             False              |
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir define o estado de validação de conteúdo do arquivo 2 como TRUE para o trabalho de *myJob*.
+O exemplo a seguir define o estado de validação de conteúdo do arquivo 2 como TRUE para o trabalho chamado *myJob*.
 ```
 C:\>bitsadmin /SetValidationState myJob 2 TRUE 
 ```

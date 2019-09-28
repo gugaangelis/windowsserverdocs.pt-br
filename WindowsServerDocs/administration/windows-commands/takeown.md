@@ -2,7 +2,7 @@
 title: takeown
 description: Saiba como obter acesso a um arquivo, tornando-se o proprietário do arquivo.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4b5a4874edf9fa4406d4643e686fed2b725699dd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 08804db36357c3d1d1efa7243b338bd85d5c48e2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854357"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383763"
 ---
 # <a name="takeown"></a>takeown
 
@@ -36,29 +36,29 @@ takeown [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <File n
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/s \<Computer>|Especifica o nome ou endereço IP de um computador remoto (não use barras invertidas). O valor padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificadas no comando.|
-|/u [\<Domain>\]<User name>|Executa o script com as permissões da conta de usuário especificada. O valor padrão é permissões do sistema.|
-|/p [\<Password>]|Especifica a senha da conta de usuário que é especificada na **/u** parâmetro.|
-|/f \<nome do arquivo >|Especifica o nome de arquivo ou o nome do diretório padrão. Você pode usar o caractere curinga * ao especificar o padrão. Você também pode usar a sintaxe *ShareName*\*nome de arquivo *.|
-|/a|Fornece a propriedade para o grupo de administradores, em vez do usuário atual.|
-|/r|Executa uma operação recursiva em todos os arquivos no diretório especificado e subdiretórios.|
-|/d {Y \| N}|Suprime o prompt de confirmação é exibido quando o usuário atual não tem a permissão "Listar pasta" em um diretório especificado e, em vez disso, usa o valor padrão especificado. Os valores válidos para o **/d** opção são da seguinte maneira:</br>-   Y: Apropriar-se do diretório.</br>-   N: Ignore o diretório.</br>Observe que você deve usar essa opção em conjunto com o **/r** opção.|
+|/s \<Computer >|Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O valor padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando.|
+|/u [\<Domain > \] @ no__t-2|Executa o script com as permissões da conta de usuário especificada. O valor padrão é permissões do sistema.|
+|/p [\<Password >]|Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .|
+|/f nome de \<File >|Especifica o nome do arquivo ou padrão de nome de diretório. Você pode usar o caractere curinga * ao especificar o padrão. Você também pode usar a sintaxe *sharename*\*FileName *.|
+|SRDF|Concede a propriedade ao grupo de administradores em vez do usuário atual.|
+|/r|Executa uma operação recursiva em todos os arquivos no diretório e nos subdiretórios especificados.|
+|/d {Y \| N}|Suprime o prompt de confirmação exibido quando o usuário atual não tem a permissão "Listar pasta" em um diretório especificado e, em vez disso, usa o valor padrão especificado. Os valores válidos para a opção **/d** são os seguintes:</br>IAR Apropriar-se do diretório.</br>P Ignore o diretório.</br>Observe que você deve usar essa opção em conjunto com a opção **/r** .|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
--   Normalmente, esse comando é usado em arquivos em lotes.
--   Se o **/a** parâmetro não for especificado, a propriedade do arquivo é fornecida para o usuário que está conectado no momento no computador.
--   Padrões mistos usando (**?** e **&#42;**) não são suportados pelo **takeown** comando.
--   Depois de excluir o bloqueio com **takeown**, talvez você precise usar o Windows Explorer ou o **cacls** comando a fim de obter permissões completas para os arquivos e diretórios antes de excluí-los. Para obter mais informações sobre **cacls**, consulte "Referências adicionais" no final deste tópico.
+-   Esse comando é normalmente usado em arquivos em lotes.
+-   Se o parâmetro **/a** não for especificado, a propriedade do arquivo será dada ao usuário que está conectado ao computador no momento.
+-   Padrões mistos usando ( **?** e **&#42;** ) não são suportados pelo comando **takeown** .
+-   Depois de excluir o bloqueio com **takeown**, talvez seja necessário usar o Windows Explorer ou o comando **cacls** para conceder permissões completas aos arquivos e diretórios antes de poder excluí-los. Para obter mais informações sobre **cacls**, consulte "referências adicionais" no final deste tópico.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para apropriar-se de um arquivo denominado Lostfile, digite:
+Para apropriar-se de um arquivo chamado renomeado, digite:
 ```
 takeown /f lostfile
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

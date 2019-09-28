@@ -7,14 +7,14 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b43b88699d9392156be5f9846e98c5c74490c8fc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 35b6d7277a1498f5b3bda5a3e45eb5337b1b81ca
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881957"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390493"
 ---
 # <a name="active-directory-domain-services-virtualization"></a>Virtualização dos serviços de domínio do Active Directory
 
@@ -22,11 +22,11 @@ ms.locfileid: "59881957"
 
 Este tópico lista os recursos disponíveis para usar controladores de domínio virtualizado.  
   
--   [Introdução aos serviços de domínio do Active Directory &#40;AD DS&#41; virtualização &#40;nível 100&#41;](../../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)  
+-   [Introdução à Active Directory Domain Services &#40;nível&#41; de &#40;virtualização de AD DS 100&#41;](../../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)  
   
--   [Referência técnica do controlador de domínio de virtualizado &#40;nível 300&#41;](../../../ad-ds/deploy/virtual-dc/Virtualized-Domain-Controller-Technical-Reference--Level-300-.md)  
+-   [Nível de referência &#40;técnica do controlador de domínio virtualizado 300&#41;](../../../ad-ds/deploy/virtual-dc/Virtualized-Domain-Controller-Technical-Reference--Level-300-.md)  
   
--   [Diretrizes de teste para fornecedores de aplicativos de clonagem do controlador de domínio virtualizado](../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Cloning-Test-Guidance-for-Application-Vendors.md)  
+-   [Diretrizes do teste de clonagem do controlador de domínio virtualizado para fornecedores de aplicativos](../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Cloning-Test-Guidance-for-Application-Vendors.md)  
   
 -   [Suporte para usar a réplica do Hyper-V para controladores de domínio virtualizados](../../../ad-ds/get-started/virtual-dc/Support-for-using-Hyper-V-Replica-for-virtualized-domain-controllers.md)  
   

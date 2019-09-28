@@ -7,26 +7,26 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 69443c2fc1af855c7df002e0ac91d43986eff6da
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7b010dcb7a150f4ebcfcc941aa9e5c016795e717
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832107"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402492"
 ---
 # <a name="site-topology-owner-role"></a>Função de proprietário da topologia do site
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-O administrador que gerencia a topologia de site é conhecido como o proprietário da topologia de site. O proprietário da topologia de site compreende as condições da rede entre sites e tem autoridade para alterar as configurações nos serviços de domínio Active Directory (AD DS) para implementar alterações na topologia de site. Alterações na topologia de site afetam as alterações na topologia de replicação. Responsabilidades do proprietário da topologia do site incluem:  
+O administrador que gerencia a topologia do site é conhecido como o proprietário da topologia do site. O proprietário da topologia de site compreende as condições da rede entre os sites e tem autoridade para alterar as configurações em Active Directory Domain Services (AD DS) para implementar alterações na topologia do site. As alterações na topologia do site afetam as alterações na topologia de replicação. As responsabilidades do proprietário da topologia de site incluem:  
   
--   Controlando alterações na topologia de site, se a conectividade de rede for alterado.  
+-   Controle de alterações na topologia do site se a conectividade de rede mudar.  
   
--   Obter e manter informações sobre conexões de rede e roteadores do grupo de rede. O proprietário da topologia de site deve manter uma lista de endereços de sub-rede, máscaras de sub-rede e o local para o qual cada pertence. O proprietário da topologia de site também deve entender os problemas sobre capacidade e a velocidade da rede que afetam a topologia de site para definir com eficiência os custos de links de site.  
+-   Obtenção e manutenção de informações sobre conexões de rede e roteadores do grupo de rede. O proprietário da topologia do site deve manter uma lista de endereços de sub-rede, máscaras de sub-rede e o local ao qual cada um pertence. O proprietário da topologia do site também deve entender quaisquer problemas sobre a velocidade da rede e a capacidade que afetam a topologia do site para definir efetivamente os custos para links de site.  
   
--   Movendo objetos de servidor do Active Directory que representam os controladores de domínio entre sites se o endereço IP de um controlador de domínio será alterado para uma sub-rede diferente em um site diferente, ou se a sub-rede em si é atribuída a um site diferente. Em ambos os casos, o proprietário da topologia de site deverá mover manualmente o objeto de servidor do controlador de domínio do Active Directory para o novo site.  
+-   Mover Active Directory objetos de servidor que representam controladores de domínio entre sites se o endereço IP de um controlador de domínio for alterado para uma sub-rede diferente em um site diferente, ou se a própria sub-rede for atribuída a um site diferente. Em ambos os casos, o proprietário da topologia do site deve mover manualmente o objeto do Active Directory Server do controlador de domínio para o novo site.  
   
 
 

@@ -1,8 +1,8 @@
 ---
 title: Cmd
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 581e9a3bad8323c79839a4487b7da045e9cfec21
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 032fbea2039faa09753ac0c2b51e4b62004d36ac
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811242"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379339"
 ---
 # <a name="cmd"></a>Cmd
 
-Inicia uma nova instância do interpretador de comandos, Cmd.exe. Se usado sem parâmetros, **cmd** exibe as informações de versão e copyright do sistema operacional.
+Inicia uma nova instância do interpretador de comando, cmd. exe. Se usado sem parâmetros, o **cmd** exibirá a versão e as informações de direitos autorais do sistema operacional.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,24 +34,24 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/c|Executa o comando especificado pelo *cadeia de caracteres* e, em seguida, para.|
-|/k|Executa o comando especificado pelo *cadeia de caracteres* e continua.|
-|/s|Modifica o tratamento de *cadeia de caracteres* após **/c** ou **/k**.|
+|/c|Executa o comando especificado pela *cadeia de caracteres* e, em seguida, para.|
+|/k|Executa o comando especificado por *cadeia de caracteres* e continua.|
+|/s|Modifica o tratamento da *cadeia de caracteres* após **/c** ou **/k**.|
 |/q|Desativa o eco.|
-|/d|Desabilita a execução de comandos de execução automática.|
-|/a|Formata a saída do comando interno para um pipe ou um arquivo como ANSI American National Standards Institute ().|
-|/u|Formata a saída do comando interno para um pipe ou um arquivo como Unicode.|
-|/t:{\<B\>\<F\>\|\<F\>}|Define o plano de fundo (*B*) e de primeiro plano (*F*) cores.|
-|/e:on|Permite que as extensões de comando.|
-|/e:off|Desabilita extensões de comandos.|
-|/f:on|Permite a conclusão de nome de arquivo e pasta.|
-|/f:off|Desabilita a conclusão de nome de arquivo e pasta.|
-|/v:on|Habilita atrasada expansão de variáveis de ambiente.|
-|/v:off|Desabilita atrasada expansão de variáveis de ambiente.|
-|\<cadeia de caracteres >|Especifica o comando que você quer realizar.|
+|/d|Desabilita a execução de comandos de AutoRun.|
+|SRDF|Formata a saída de comando interno para um pipe ou um arquivo como American National Standards Institute (ANSI).|
+|/u|Formata a saída de comando interno para um pipe ou um arquivo como Unicode.|
+|/t: {\<B @ no__t-1 @ no__t-2F @ no__t-3 @ no__t-4 @ no__t-5F @ no__t-6}|Define as cores de plano de fundo (*B*) e de primeiro plano (*F*).|
+|/e: on|Habilita extensões de comando.|
+|/e: desativado|Desabilita extensões de comandos.|
+|/f: ativado|Habilita a conclusão do nome de arquivo e diretório.|
+|/f: desativado|Desabilita a conclusão do nome de arquivo e diretório.|
+|/v: ativado|Habilita a expansão de variável de ambiente atrasada.|
+|/v: desativado|Desabilita a expansão da variável de ambiente atrasada.|
+|\<String >|Especifica o comando que você deseja executar.|
 |/?|Exibe a ajuda no prompt de comando.|
 
-A tabela a seguir lista os dígitos hexadecimais válidos que podem ser usados como valores para \<B\> e \<F\>
+A tabela a seguir lista os dígitos hexadecimais válidos que você pode usar como valores para \<B @ no__t-1 e \<F @ no__t-3
 
 |Valor|Cor|
 |-----|-----|
@@ -65,18 +65,18 @@ A tabela a seguir lista os dígitos hexadecimais válidos que podem ser usados c
 |7|Branco|
 |8|Cinza|
 |9|Azul-claro|
-|$nbsp;|Verde claro|
-|b|Azul-piscina claro|
+|$nbsp;|Verde-claro|
+|B|Azul-claro|
 |c|Vermelho-claro|
 |d.|Roxo-claro|
-|e|Amarelo-claro|
+|Oriental|Amarelo-claro|
 |f|Branco brilhante|
 
 ## <a name="remarks"></a>Comentários
 
 -   Usando vários comandos
 
-    Para usar vários comandos para \<cadeia de caracteres >, separe-os pelo separador de comando **&&** e coloque-os entre aspas. Por exemplo:
+    Para usar vários comandos para \<String >, separe-os pelo separador de comando **&&** e coloque-os entre aspas. Por exemplo:
 
     ```
     "<Command>&&<Command>&&<Command>"
@@ -84,36 +84,36 @@ A tabela a seguir lista os dígitos hexadecimais válidos que podem ser usados c
  
 -   Aspas de processamento
 
-    Se você especificar **/c** ou **/k**, **cmd** processa o restante do *cadeia de caracteres,* e as aspas só serão preservadas se todas as das seguintes opções condições forem atendidas:  
-    -   Você não usar **/s**.
-    -   Use exatamente um conjunto de aspas.
-    -   Você não usar caracteres especiais dentro das aspas (por exemplo: & () de < > @ ^ |).
-    -   Você usar um ou mais caracteres de espaço em branco dentro das aspas.
-    -   O *cadeia de caracteres* dentro das aspas é o nome de um arquivo executável.
+    Se você especificar **/c** ou **/k**, **cmd** processará o restante da *cadeia de caracteres* e as aspas serão preservadas somente se todas as condições a seguir forem atendidas:  
+    -   Você não usa **/s**.
+    -   Você usa exatamente um conjunto de aspas.
+    -   Você não usa nenhum caractere especial dentro das aspas (por exemplo: & < > () @ ^ |).
+    -   Você usa um ou mais caracteres de espaço em branco dentro das aspas.
+    -   A *cadeia de caracteres* entre aspas é o nome de um arquivo executável.
 
-    Se as condições anteriores não forem atendidas, *cadeia de caracteres* é processado, examinando o primeiro caractere para verificar se ele é uma aspa de abertura. Se o primeiro caractere for uma aspa de abertura, ela é removida, juntamente com a marca de aspas de fechamento. Qualquer texto após as aspas de fechamento é preservado.
+    Se as condições anteriores não forem atendidas, a *cadeia de caracteres* será processada examinando o primeiro caractere para verificar se é uma aspa de abertura. Se o primeiro caractere for uma aspa de abertura, ele será retirado junto com as aspas de fechamento. Qualquer texto após as aspas de fechamento é preservado.
 -   Executando subchaves do registro
 
-    Se você não especificar **/d** na *cadeia de caracteres*, Cmd.exe procura as seguintes subchaves do registro:
+    Se você não especificar **/d** na *cadeia de caracteres*, o cmd. exe procurará as seguintes subchaves do registro:
 
     **HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\AutoRun\REG_SZ**
 
     **HKEY_CURRENT_USER\Software\Microsoft\Command Processor\AutoRun\REG_EXPAND_SZ**
 
-    Se uma ou ambas as subchaves do registro estiverem presentes, eles serão executados antes de todas as outras variáveis.
+    Se uma ou ambas as subchaves do registro estiverem presentes, elas serão executadas antes de todas as outras variáveis.
 
 > [!CAUTION]
 > A edição incorreta do Registro pode causar danos graves ao sistema. Antes de alterar o Registro, faça backup de todos os dados importantes do computador.
 
--   Habilitando e desabilitando as extensões de comando
+-   Habilitando e desabilitando extensões de comando
 
-    As extensões de comando são habilitadas por padrão no Windows XP. Você pode desabilitá-los para um processo específico usando **/e: off**. Você pode habilitar ou desabilitar as extensões para todos os **cmd** opções de linha de comando em um computador ou sessão de usuário definindo o seguinte **REG_DWORD** valores:
+    As extensões de comando são habilitadas por padrão no Windows XP. Você pode desabilitá-los para um processo específico usando **/e: off**. Você pode habilitar ou desabilitar extensões para todas as opções de linha de comando **cmd** em uma sessão de computador ou usuário definindo os seguintes valores **REG_DWORD** :
 
-    **Precedência Processor\EnableExtensions\REG_DWORD**
+    **HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\EnableExtensions\REG_DWORD**
 
     **HKEY_CURRENT_USER\Software\Microsoft\Command Processor\EnableExtensions\REG_DWORD**
 
-    Defina a **REG_DWORD** valor para um **0 × 1** (habilitado) ou **0 × 0** (desabilitada) no registro usando Regedit.exe. Configurações especificadas pelo usuário têm precedência sobre configurações de computador e opções de linha de comando têm precedência sobre as configurações do registro.
+    Defina o valor **REG_DWORD** como **0 × 1** (habilitado) ou **0 × 0** (desabilitado) no registro usando Regedit. exe. As configurações especificadas pelo usuário têm precedência sobre as configurações do computador, e as opções de linha de comando têm precedência sobre as configurações do registro.
 
 > [!CAUTION]
 > A edição incorreta do Registro pode causar danos graves ao sistema. Antes de alterar o Registro, faça backup de todos os dados importantes do computador.
@@ -138,12 +138,12 @@ A tabela a seguir lista os dígitos hexadecimais válidos que podem ser usados c
     -  **shift**
     -  **start** (also includes changes to external command processes)
 
--   Habilitando a expansão de variáveis de ambiente atrasada
+-   Habilitando expansão de variável de ambiente atrasada
 
-    Se você habilitar a expansão de variáveis de ambiente atrasada, você pode usar o caractere de ponto de exclamação para substituir o valor de uma variável de ambiente em tempo de execução.
--   Habilitando a conclusão de nome de arquivo e pasta
+    Se você habilitar a expansão de variável de ambiente atrasada, poderá usar o caractere de ponto de exclamação para substituir o valor de uma variável de ambiente em tempo de execução.
+-   Habilitando a conclusão do nome de arquivo e diretório
 
-    Conclusão de nome de arquivo e pasta não está habilitado por padrão. Você pode habilitar ou desabilitar a conclusão de nome de arquivo para um determinado processo do **cmd** comando **/f:** {**na**|**off**}. Você pode habilitar ou desabilitar a conclusão de nome de arquivo e pasta para todos os processos do **cmd** comando em um computador ou para uma sessão de logon do usuário definindo o seguinte **REG_DWORD** valores:
+    A conclusão do nome de arquivo e diretório não está habilitada por padrão. Você pode habilitar ou desabilitar a conclusão do nome de arquivo para um processo específico do comando **cmd** com **/f:** {**on**|**off**}. Você pode habilitar ou desabilitar a conclusão de nome de arquivo e diretório para todos os processos do comando **cmd** em um computador ou para uma sessão de logon de usuário definindo os seguintes valores **REG_DWORD** :
 
     **HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\CompletionChar\REG_DWORD**
 
@@ -153,22 +153,22 @@ A tabela a seguir lista os dígitos hexadecimais válidos que podem ser usados c
 
     **HKEY_CURRENT_USER\Software\Microsoft\Command Processor\PathCompletionChar\REG_DWORD**
 
-    Para definir a **REG_DWORD** valor, execute Regedit.exe e use o valor hexadecimal de um caractere de controle para uma função específica (por exemplo, **0 × 9** é o guia e **0 × 08** é BACKSPACE). Configurações especificadas pelo usuário têm precedência sobre configurações de computador e opções de linha de comando têm precedência sobre as configurações do registro.
+    Para definir o valor **REG_DWORD** , execute regedit. exe e use o valor hexadecimal de um caractere de controle para uma função específica (por exemplo, **0 × 9** é Tab e **0 × 08** é Backspace). As configurações especificadas pelo usuário têm precedência sobre as configurações do computador, e as opções de linha de comando têm precedência sobre as configurações do registro.
 
 > [!CAUTION]
 > A edição incorreta do Registro pode causar danos graves ao sistema. Antes de alterar o Registro, faça backup de todos os dados importantes do computador.
 
-Se você habilitar a conclusão de nome de arquivo e pasta, usando **/f: em**, use CTRL + D para a conclusão de nome de diretório e CTRL + F para a conclusão de nome de arquivo. Para desabilitar um caractere de conclusão específico no registro, use o valor de espaço em branco [**0 × 20**] porque ele não é um caractere de controle válido.
+Se você habilitar a conclusão de nome de arquivo e diretório usando **/f: on**, use Ctrl + D para a conclusão de nome de diretório e Ctrl + f para a conclusão do nome de arquivo. Para desabilitar um caractere de conclusão específico no registro, use o valor para espaço em branco [**0 × 20**] porque ele não é um caractere de controle válido.
 
-Quando você pressiona CTRL + D ou CTRL + F **cmd** processa a conclusão de nome de arquivo e pasta. Essas funções de combinação de teclas acrescentam um caractere curinga *cadeia de caracteres* (se um não estiver presente), crie uma lista de caminhos que corresponder e, em seguida, exibir o primeiro caminho correspondente. Se nenhum dos caminhos corresponderem, a função de conclusão de nome de arquivo e diretório emite um aviso sonoro e não altera a exibição. Para percorrer a lista de caminhos correspondentes, pressione CTRL + D ou CTRL + F repetidamente. Para percorrer a lista de versões anteriores, pressione a tecla SHIFT e CTRL + D ou CTRL + F simultaneamente. Para descartar a lista salva de caminhos correspondentes e gerar uma nova lista, edite *cadeia de caracteres* e pressione CTRL + D ou CTRL + F. Se você alternar entre CTRL + D e CTRL + F, a lista salva de caminhos correspondentes será descartada e uma nova lista é gerada. A única diferença entre as combinações de teclas CTRL + D e CTRL + F é que CTRL + D corresponde apenas a nomes de diretório e CTRL + F corresponde aos nomes de arquivo e diretório. Se você usar a conclusão de nome de arquivo e pasta em qualquer um dos comandos internas do diretório (ou seja, **CD**, **MD**, ou **área de trabalho remota**), conclusão de pasta será assumido.
+Quando você pressiona CTRL + D ou CTRL + F, o **cmd** processa a conclusão do nome do arquivo e do diretório. Essas funções de combinação de teclas anexam um caractere curinga à *cadeia de caracteres* (se não houver uma), criam uma lista de caminhos que correspondem e, em seguida, exibem o primeiro caminho correspondente. Se nenhum dos caminhos corresponder, a função de conclusão de nome de arquivo e diretório emitirá um alarme sonoro e não alterará a exibição. Para percorrer a lista de caminhos correspondentes, pressione CTRL + D ou CTRL + F repetidamente. Para percorrer a lista com versões anteriores, pressione a tecla SHIFT e CTRL + D ou CTRL + F simultaneamente. Para descartar a lista salva de caminhos correspondentes e gerar uma nova lista, edite a *cadeia de caracteres* e pressione CTRL + D ou CTRL + F. Se você alternar entre CTRL + D e CTRL + F, a lista salva de caminhos correspondentes será descartada e uma nova lista será gerada. A única diferença entre as combinações de teclas CTRL + D e CTRL + F é que CTRL + D só corresponde a nomes de diretório e CTRL + F corresponde a nomes de arquivos e diretórios. Se você usar a conclusão de nome de arquivo e diretório em qualquer um dos comandos de diretório internos (ou seja, **CD**, **MD**ou **RD**), a conclusão do diretório será assumida.
 
-Conclusão de nome de arquivo e pasta processa corretamente os nomes de arquivo que contêm espaços em branco ou caracteres especiais, se você colocar o caminho correspondente entre aspas.
+A conclusão de nome de arquivo e diretório processa corretamente os nomes de arquivo que contêm espaços em branco ou caracteres especiais, se você colocar o caminho de correspondência entre aspas.
 
-Os seguintes caracteres especiais precisam vir entre aspas: & < > [] {} ^ =;! '+', ~ [espaço em branco].
+Os seguintes caracteres especiais exigem aspas: & < > [] {} ^ =;! ' + ' ~ [espaço em branco].
 
-Se as informações que você fornece contiverem espaços, use aspas ao redor do texto (por exemplo, "nome do computador").
+Se as informações fornecidas contiverem espaços, use aspas ao contrário do texto (por exemplo, "nome do computador").
 
-Se você processar a conclusão de nome de arquivo e pasta de dentro *cadeia de caracteres*, qualquer parte do *caminho* à direita do cursor será descartada (no ponto no *cadeia de caracteres* onde o conclusão foi processada).
+Se você processar a conclusão do nome do arquivo e do diretório de dentro da *cadeia de caracteres*, qualquer parte do *caminho* à direita do cursor será descartada (no ponto na *cadeia de caracteres* em que a conclusão foi processada).
 
 #### <a name="additional-references"></a>Referências adicionais
 

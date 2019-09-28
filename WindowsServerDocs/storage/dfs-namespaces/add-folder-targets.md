@@ -1,19 +1,19 @@
 ---
 title: Adicionar pasta de destino
 description: Este tópico descreve como adicionar destinos de pasta (caminhos UNC)
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: jgerend
 ms.manager: brianlic
 ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms-date: 06/05/2017
-ms.openlocfilehash: 8cc61189076669d5c24244294b2f0eee2b783517
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b0685ea795d53b36fad92d54f817f67de57e3a82
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830997"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403191"
 ---
 # <a name="add-folder-targets"></a>Adicionar destinos de pasta
 
@@ -41,6 +41,6 @@ Para adicionar uma pasta usando gerenciamento DFS, use o procedimento a seguir:
 
 ## <a name="see-also"></a>Consulte também
 
--   [Implantando os Namespaces do DFS](deploying-dfs-namespaces.md)
--   [Delegar permissões de gerenciamento para Namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)
--   [Replicar destinos de pasta usando a replicação do DFS](replicate-folder-targets-using-dfs-replication.md)
+-   [Implantar namespaces do DFS](deploying-dfs-namespaces.md)
+-   [Delegar permissões de gerenciamento para namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)
+-   [Replicar destinos de pasta usando Replicação do DFS](replicate-folder-targets-using-dfs-replication.md)

@@ -2,7 +2,7 @@
 title: Expandir sua implantação do RDS adicionando um farm de Host da Sessão RD
 description: Adicione um segundo Host da Sessão RD ao seu ambiente de RDS.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 0e3852b4ea5f1080a3798c0806e5c87ca808c3be
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: da0dbd4332cd05d580c2b1f4dc5eb0734b36b13e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66446525"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403888"
 ---
 # <a name="scale-out-your-remote-desktop-services-deployment-by-adding-an-rd-session-host-farm"></a>Expandir sua implantação de Serviços de Área de Trabalho Remota adicionando um farm de Host da Sessão RD
 
@@ -32,7 +32,7 @@ Use as etapas a seguir para adicionar outro Host da Sessão RD à sua implantaç
 2. Habilite o gerenciamento remoto no novo servidor ou máquina virtual:
    1. No Gerenciador do Servidor, clique em **Servidor Local > Configuração atual do gerenciamento remoto (desabilitado)** . 
    2. Selecione **Habilitar o gerenciamento remoto para este servidor** e, em seguida, clique em **OK**. 
-   3. Opcional: você pode configurar temporariamente o Windows Update para não baixar e instalar as atualizações automaticamente. Isso ajuda a impedir alterações e reinicializações do sistema enquanto você implanta o servidor de RDSH. No Gerenciador do Servidor, clique em **Servidor Local > Configuração atual do Windows Update**. Clique em **Opções avançadas > Adiar atualizações**. 
+   3. Opcional: É possível configurar temporariamente o Windows Update para não baixar e instalar as atualizações automaticamente. Isso ajuda a impedir alterações e reinicializações do sistema enquanto você implanta o servidor RDSH. No Gerenciador do Servidor, clique em **Servidor Local > Configuração atual do Windows Update**. Clique em **Opções avançadas > Adiar atualizações**. 
 3. Adicione o servidor ou VM ao domínio:
    1. No Gerenciador do Servidor, clique em **Servidor Local > Configuração atual do grupo de trabalho**. 
    2. Clique em **Alterar > Domínio** e, em seguida, insira o nome de domínio (por exemplo, Contoso.com). 
@@ -46,7 +46,7 @@ Use as etapas a seguir para adicionar outro Host da Sessão RD à sua implantaç
        1. No portal do Azure, clique em **Procurar > Grupos de recursos**, clique no grupo de recursos para a implantação e, em seguida, clique na máquina virtual do RDMS (por exemplo, Contoso-Cb1).  
        2. Clique em **Configurações > Interfaces de rede** e, em seguida, clique no adaptador de rede correspondente.   
        3. Clique em **Configurações > Endereço IP**.
-       4. Para **Endereço IP público**, selecione **Habilitado** e, em seguida, clique em **Endereço IP**.   
+       4. Em **Endereço IP público**, selecione **Habilitado** e clique em **Endereço IP**.   
        5. Se tiver um endereço IP público que deseja usar, selecione-o na lista. Caso contrário, clique em **Criar novo**, insira um nome e, em seguida, clique em **OK** e em **Salvar**.   
    2. Entre no RDMS.
    3. Adicione o novo servidor do RDSH ao Gerenciador do Servidor:   

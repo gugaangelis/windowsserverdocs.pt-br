@@ -1,7 +1,7 @@
 ---
-title: De máquinas virtuais SUSE com suporte no Hyper-V
-description: Lista os serviços de integração do Linux e os recursos incluídos em cada versão
-ms.prod: windows-server-threshold
+title: Máquinas virtuais SUSE com suporte no Hyper-V
+description: Lista os serviços e recursos de integração do Linux incluídos em cada versão
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,92 +11,92 @@ ms.assetid: 7ec0e14c-4498-4bd9-8fe6-b94260198efc
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: d7b6d3adb4841ea827c56309307549c911a439ea
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 45517c1d381ba55c819b09b53ae563092e161b1e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222816"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366731"
 ---
-# <a name="supported-suse-virtual-machines-on-hyper-v"></a>De máquinas virtuais SUSE com suporte no Hyper-V
+# <a name="supported-suse-virtual-machines-on-hyper-v"></a>Máquinas virtuais SUSE com suporte no Hyper-V
 
->Aplica-se a: Windows Server 2016, Hyper-V Server 2016, Windows Server 2012 R2, Hyper-V Server 2012 R2, Windows Server 2012, do Hyper-V Server 2012, Windows Server 2008 R2, Windows 10, Windows 8.1, Windows 8, Windows 7.1, Windows 7
+>Aplica-se a: Windows Server 2016, Hyper-V Server 2016, Windows Server 2012 R2, Hyper-V Server 2012 R2, Windows Server 2012, Hyper-V Server 2012, Windows Server 2008 R2, Windows 10, Windows 8.1, Windows 8, Windows 7,1, Windows 7
 
-O exemplo a seguir é um mapa de distribuição de recurso que indica os recursos em cada versão. Os problemas conhecidos e soluções alternativas para cada distribuição são listadas após a tabela.
+Veja a seguir um mapa de distribuição de recursos que indica os recursos em cada versão. Os problemas conhecidos e as soluções alternativas para cada distribuição são listados após a tabela.
 
-Os drivers de serviço do SUSE Linux Enterprise internos do Hyper-V são certificados pelo SUSE. Um exemplo de configuração pode ser exibido neste boletim: [Boletim informativo de certificação do SUSE Sim](https://www.suse.com/nbswebapp/yesBulletin.jsp?bulletinNumber=144176).
+Os drivers internos do SUSE Linux Enterprise Service para Hyper-V são certificados pelo SUSE. Uma configuração de exemplo pode ser exibida neste boletim: O [Boletim de certificação SuSE Yes](https://www.suse.com/nbswebapp/yesBulletin.jsp?bulletinNumber=144176).
 
 ## <a name="table-legend"></a>Legenda da tabela
 
-* **Criado** -LIS são incluídos como parte de sua distribuição Linux. O pacote de download do LIS fornecidas pela Microsoft não funciona para essa distribuição, portanto, não as instale. Os números de versão do módulo de kernel para a LIS interna (conforme mostrado pelas **lsmod**, por exemplo) são diferentes do número da versão do pacote de download do LIS fornecidas pela Microsoft. Uma incompatibilidade não indica a LIS interna está desatualizada.
+* A LIS **interna** é incluída como parte dessa distribuição do Linux. O pacote de download do LIS fornecido pela Microsoft não funciona para essa distribuição, portanto, não o instale. Os números de versão do módulo do kernel para a LIS interna (conforme mostrado por **lsmod**, por exemplo) são diferentes do número de versão no pacote de download do LIS fornecido pela Microsoft. Uma incompatibilidade não indica que a LIS interna está desatualizada.
 
 * &#10004;-Recurso disponível
 
 * (*em branco*)-recurso não disponível
 
-SLES12 + é de 64 bits apenas.
+SLES12 + é de apenas 64 bits.
 
 |**Recurso**|**Versão do sistema operacional Windows Server**|**SLES 15**|**SLES 12 SP3/SP4**|**SLES 12 SP2**|**SLES 12 SP1**|**SLES 11 SP4**|**SLES 11 SP3**|
 |-|-|-|-|-|-|-|-|
 |**Disponibilidade**||Internos|Internos|Internos|Internos|Internos|Internos|
 |**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Hora precisa do Windows Server 2016|2019, 2016|&#10004;|&#10004;|&#10004;||||
-|**[Sistema de rede](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||||
+|Tempo preciso do Windows Server 2016|2019, 2016|&#10004;|&#10004;|&#10004;||||
+|**[Rede](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||||
 |Quadros jumbo|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Marcação de VLAN e entroncamento|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Marcação e entroncamento de VLAN|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Migração ao vivo|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Injeção de endereço IP estático|2019, 2016, 2012 R2, 2012|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|
+|Injeção de IP estático|2019, 2016, 2012 R2, 2012|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|
 |vRSS|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|||
-|Descarregamento de soma de verificação e de segmentação TCP|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
+|Segmentação de TCP e descarregamentos de soma de verificação|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
 |SR-IOV|2019, 2016|&#10004;|&#10004;|&#10004;||||
-|**[Armazenamento](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||||||||
-|Redimensionamento VHDX|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|**[Repositório](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||||||||
+|Redimensionamento de VHDX|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Fibre Channel Virtual|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Backup de máquina virtual ao vivo|2019, 2016, 2012 R2|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|
-|Suporte de CORTE|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
-|SCSI WWN|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;||||
+|Suporte a corte|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
+|WWN DO SCSI|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;||||
 |**[Memória](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**||||||||
-|Suporte do Kernel PAE|2019, 2016, 2012 R2, 2012, 2008 R2|N/D|N/D|N/D|N/D|&#10004;|&#10004;|
-|Configuração de lacuna MMIO|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Memória dinâmica - quente|2019, 2016, 2012 R2, 2012|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observe a 4, 5, 6|&#10004;Observe a 4, 5, 6|
-|Memória dinâmica - inflação|2019, 2016, 2012 R2, 2012|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observe a 4, 5, 6|&#10004;Observe a 4, 5, 6|
-|Redimensionamento de memória de tempo de execução|2019, 2016|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 5, 6||||
-|**[Vídeo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**||||||||
+|Suporte ao kernel de PAE|2019, 2016, 2012 R2, 2012, 2008 R2|N/D|N/D|N/D|N/D|&#10004;|&#10004;|
+|Configuração da lacuna de MMIO|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Memória Dinâmica-adição a quente|2019, 2016, 2012 R2, 2012|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 4, 5, 6|&#10004;Observação 4, 5, 6|
+|Memória Dinâmica-balões|2019, 2016, 2012 R2, 2012|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 4, 5, 6|&#10004;Observação 4, 5, 6|
+|Redimensionamento de memória de Runtime|2019, 2016|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 5, 6||||
+|**[Monitor](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**||||||||
 |Dispositivo de vídeo específico do Hyper-V|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[Diversos](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**||||||||
+|**[Várias](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**||||||||
 |Par chave/valor|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;Observação 7|&#10004;Observação 7|
 |Interrupção não mascarável|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Cópia do arquivo do host para a convidada|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
+|Cópia de arquivo do host para o convidado|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
 |comando lsvmbus|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;||||
 |Soquetes do Hyper-V|2019, 2016|&#10004;|&#10004;|||||
-|Passagem/DDA de PCI|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|||
+|Passagem de PCI/DDA|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|||
 |**[Máquinas virtuais de geração 2](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**||||||||
-|Inicialização usando UEFI|2019, 2016, 2012 R2|&#10004;Observação 9|&#10004;Observação 9|&#10004;Observação 9|&#10004;Observação 9|&#10004;Observação 9||
+|Inicializar usando UEFI|2019, 2016, 2012 R2|&#10004;Nota 9|&#10004;Nota 9|&#10004;Nota 9|&#10004;Nota 9|&#10004;Nota 9||
 |Inicialização segura|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|||
 
-## <a name="BKMK_notes"></a>Notas
+## <a name="BKMK_notes"></a>Registra
 
-1. Injeção de IP estática pode não funcionar se **Gerenciador de rede** foi configurado para um determinado adaptador de rede específico do Hyper-V na máquina virtual. Para garantir o bom funcionamento do endereço IP estático injeção Certifique-se de que o Gerenciador de rede está desativado completamente ou foi desativado para um adaptador de rede específico por meio de seu **ifcfg ethX** arquivo.
+1. A injeção de IP estático poderá não funcionar se o **Gerenciador de rede** tiver sido configurado para um determinado adaptador de rede específico do Hyper-V na máquina virtual. Para garantir o funcionamento suave da injeção de IP estático, verifique se o Gerenciador de rede está desligado completamente ou se foi desligado para um adaptador de rede específico por meio de seu arquivo **ifcfg-ethX** .
 
-2. Se houver identificadores de arquivos abertos durante uma operação de backup de máquina virtual ao vivo e, em seguida, em alguns casos, os VHDs de backup talvez precise passar por uma verificação de consistência de sistema de arquivos (fsck) na restauração.
+2. Se houver identificadores de arquivos abertos durante uma operação de backup de máquina virtual ao vivo, em alguns casos de canto, os VHDs com backup poderão ter que passar por uma verificação de consistência do sistema de arquivos (fsck) na restauração.
 
-3. Operações de backup ao vivo poderá falhar, silenciosamente, se a máquina virtual tem um dispositivo iSCSI anexado ou armazenamento anexado direto (também conhecido como um disco de passagem).
+3. As operações de backup dinâmico podem falhar silenciosamente se a máquina virtual tiver um dispositivo iSCSI conectado ou um armazenamento de conexão direta (também conhecido como um disco de passagem).
 
-4. Operações de memória dinâmica podem falhar se o sistema operacional convidado é com muito pouco memória. A seguir estão algumas práticas recomendadas:
+4. As operações de memória dinâmica podem falhar se o sistema operacional convidado estiver sendo executado com pouca memória. Veja a seguir algumas práticas recomendadas:
 
-   * Memória de inicialização e um mínimo de memória devem ser igual ou maior que a quantidade de memória que recomenda o fornecedor de distribuição.
+   * A memória de inicialização e a memória mínima devem ser iguais ou maiores que a quantidade de memória que o fornecedor de distribuição recomenda.
 
-   * Aplicativos que tendem a consumir toda memória disponível em um sistema estão limitados a consumir até 80 por cento de RAM disponível.
+   * Os aplicativos que tendem a consumir toda a memória disponível em um sistema estão limitados a consumir até 80% da RAM disponível.
 
-5. Suporte de memória dinâmica só está disponível em máquinas virtuais de 64 bits.
+5. O suporte à memória dinâmica só está disponível em máquinas virtuais de 64 bits.
 
-6. Se você estiver usando a memória dinâmica em sistemas operacionais Windows Server 2016 ou Windows Server 2012, especifique **memória de inicialização**, **memória mínima**, e **memória máxima** parâmetros em múltiplos de 128 megabytes (MB). Falha ao fazer isso pode levar a falhas quente e talvez você não veja nenhuma memória aumentam em um sistema operacional convidado.
+6. Se você estiver usando Memória Dinâmica nos sistemas operacionais Windows Server 2016 ou Windows Server 2012, especifique a **memória de inicialização**, a **memória mínima**e os parâmetros de **memória máxima** em múltiplos de 128 megabytes (MB). Não fazer isso pode levar a falhas de adição automática e talvez você não veja nenhum aumento de memória em um sistema operacional convidado.
 
-7. No Windows Server 2016 ou Windows Server 2012 R2, a infraestrutura de par chave/valor pode não funcionar corretamente sem uma atualização de software do Linux. Entre em contato com seu fornecedor de distribuição para obter a atualização de software caso você veja problemas com esse recurso.
+7. No Windows Server 2016 ou no Windows Server 2012 R2, a infraestrutura de par chave/valor pode não funcionar corretamente sem uma atualização de software do Linux. Entre em contato com seu fornecedor de distribuição para obter a atualização de software caso você veja problemas com esse recurso.
 
-8. Backup VSS falhará se uma única partição estiver montada várias vezes.
+8. O backup do VSS falhará se uma única partição for montada várias vezes.
 
-9. No Windows Server 2012 R2, a geração 2 máquinas virtuais têm a inicialização segura habilitada por padrão e as máquinas virtuais de geração 2 Linux não será inicializado, a menos que a opção de inicialização segura está desabilitada. Você pode desabilitar a inicialização segura na seção **Firmware** das configurações da máquina virtual no Gerenciador do Hyper-V ou usando o Powershell:
+9. No Windows Server 2012 R2, as máquinas virtuais de geração 2 têm inicialização segura habilitada por padrão e as máquinas virtuais Linux de geração 2 não serão inicializadas, a menos que a opção de inicialização segura esteja desabilitada. Você pode desabilitar a inicialização segura na seção **Firmware** das configurações da máquina virtual no Gerenciador do Hyper-V ou usando o Powershell:
 
    ```Powershell
    Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off
@@ -107,16 +107,16 @@ SLES12 + é de 64 bits apenas.
 
 * [Set-VMFirmware](https://technet.microsoft.com/library/dn464287.aspx)
 
-* [Suporte para CentOS e Red Hat Enterprise Linux máquinas virtuais do Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
+* [Máquinas virtuais CentOS e Red Hat Enterprise Linux com suporte no Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 
 * [Máquinas virtuais do Debian com suporte no Hyper-V](Supported-Debian-virtual-machines-on-Hyper-V.md)
 
-* [Máquinas de virtuais do Oracle Linux com suporte no Hyper-V](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)
+* [Máquinas virtuais Oracle Linux com suporte no Hyper-V](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)
 
-* [Máquinas virtuais do Ubuntu com suporte no Hyper-V](Supported-Ubuntu-virtual-machines-on-Hyper-V.md)
+* [Máquinas virtuais Ubuntu com suporte no Hyper-V](Supported-Ubuntu-virtual-machines-on-Hyper-V.md)
 
-* [Máquinas de virtuais FreeBSD com suporte no Hyper-V](Supported-FreeBSD-virtual-machines-on-Hyper-V.md)
+* [Máquinas virtuais FreeBSD com suporte no Hyper-V](Supported-FreeBSD-virtual-machines-on-Hyper-V.md)
 
-* [Descrições de recursos para máquinas virtuais de Linux e FreeBSD no Hyper-V](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md)
+* [Descrições de recursos para máquinas virtuais Linux e FreeBSD no Hyper-V](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md)
 
 * [Práticas recomendadas para executar o Linux no Hyper-V](Best-Practices-for-running-Linux-on-Hyper-V.md)

@@ -1,7 +1,7 @@
 ---
 title: Máquinas virtuais Ubuntu com suporte no Hyper-V
 description: Lista os serviços e recursos de integração do Linux incluídos em cada versão
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,12 +11,12 @@ ms.assetid: 95ea5f7c-25c6-494b-8ffd-2a77f631ee94
 author: shirgall
 ms.author: shirgall
 ms.date: 06/13/2019
-ms.openlocfilehash: ad0f79767310595244d0d57876c20b9548a81a96
-ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
+ms.openlocfilehash: ed1c1a9f678dd7cb68b59d2df239ca278b7a3688
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69584811"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365482"
 ---
 # <a name="supported-ubuntu-virtual-machines-on-hyper-v"></a>Máquinas virtuais Ubuntu com suporte no Hyper-V
 
@@ -80,7 +80,7 @@ O mapa de distribuição de recursos a seguir indica os recursos em cada versão
 
 2. Ao usar dispositivos de Fiber Channel virtual, verifique se o número de unidade lógica 0 (LUN 0) foi populado. Se o LUN 0 não tiver sido populado, uma máquina virtual Linux poderá não conseguir montar dispositivos de Fiber Channel nativamente.
 
-3. Se houver identificadores de arquivos abertos durante uma operação de backup de máquina virtual em tempo real, em alguns casos de canto, os VHDs com backup poderão ter que passar por uma verificação`fsck`de consistência do sistema de arquivos () na restauração.
+3. Se houver identificadores de arquivos abertos durante uma operação de backup de máquina virtual em tempo real, em alguns casos de canto, os VHDs com backup poderão ter que passar por uma verificação de consistência do sistema de arquivos (`fsck`) na restauração.
 
 4. As operações de backup dinâmico podem falhar silenciosamente se a máquina virtual tiver um dispositivo iSCSI conectado ou um armazenamento de conexão direta (também conhecido como um disco de passagem).
 

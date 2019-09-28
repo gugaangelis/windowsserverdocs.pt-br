@@ -1,6 +1,6 @@
 ---
 title: Problemas conhecidos com a Réplica de Armazenamento
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
 ms.technology: storage-replica
@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 06/25/2019
 ms.assetid: ceddb0fa-e800-42b6-b4c6-c06eb1d4bc55
-ms.openlocfilehash: 681e07b85af603d11295bf1ca2a08f0eb7181725
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 32020dba2ccca04e8d0bdc29d47dc9fef1f05a01
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865245"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402923"
 ---
 # <a name="known-issues-with-storage-replica"></a>Problemas conhecidos com a Réplica de Armazenamento
 
@@ -364,7 +364,7 @@ Ao executar o snap-in de Gerenciamento de Disco (DISKMGMT.MSC), você percebe um
 
     "An Unexpected Error has Occurred"  
 
-Esse comportamento é padrão. Este não é um volume, mas uma partição. A Réplica de Armazenamento cria uma partição de 512 KB como um slot de banco de dados para operações de replicação (a ferramenta DiskMgmt.msc herdada arredonda para o MB mais próximo). Ter uma partição assim para cada volume replicado é normal e desejável. Quando não estiver mais em uso, você poderá excluir a partição de 512 KB; não é possível excluir aquelas em uso. A partição nunca aumentará ou diminuirá. Se você estiver recriando a replicação, recomendamos deixar a partição como Réplica de Armazenamento para solicitar as utilizadas.
+Esse comportamento é previsto no design. Este não é um volume, mas uma partição. A Réplica de Armazenamento cria uma partição de 512 KB como um slot de banco de dados para operações de replicação (a ferramenta DiskMgmt.msc herdada arredonda para o MB mais próximo). Ter uma partição assim para cada volume replicado é normal e desejável. Quando não estiver mais em uso, você poderá excluir a partição de 512 KB; não é possível excluir aquelas em uso. A partição nunca aumentará ou diminuirá. Se você estiver recriando a replicação, recomendamos deixar a partição como Réplica de Armazenamento para solicitar as utilizadas.
 
 Para ver detalhes, use a ferramenta DISKPART ou o cmdlet Get-Partition. Essas partições terão um tipo GPT de `558d43c5-a1ac-43c0-aac8-d1472b2923d1`.
 
@@ -411,7 +411,7 @@ Ao executar Test-SRTopology entre dois clusters e seus caminhos CSV, ele falha c
     + CategoryInfo          : ObjectNotFound: (:) [Test-SRTopology], FileNotFoundException
     + FullyQualifiedErrorId : TestSRTopologyFailure,Microsoft.FileServices.SR.Powershell.TestSRTopologyCommand 
 
-Isso é causado por um defeito de código conhecido no Windows Server 2016. Esse problema foi corrigido primeiro no Windows Server, versão 1709 e as ferramentas do RSAT associadas. Para uma resolução de nível inferior, entre em contato com Suporte da Microsoft e solicite uma atualização do backport. Não há solução alternativa.
+Isso é causado por um defeito de código conhecido no Windows Server 2016. Esse problema foi corrigido primeiro no Windows Server, versão 1709 e as ferramentas do RSAT associadas. Para uma resolução de nível inferior, entre em contato com Suporte da Microsoft e solicite uma atualização do backport. Não há nenhuma solução alternativa.
 
 ## <a name="error-specified-volume-could-not-be-found-when-running-test-srtopology-between-two-clusters"></a>Erro "o volume especificado não pôde ser encontrado" ao executar Test-SRTopology entre dois clusters
 

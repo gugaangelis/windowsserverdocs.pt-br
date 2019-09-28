@@ -1,8 +1,8 @@
 ---
-title: Implantar uma infraestrutura de rede definida de Software usando Scripts
-description: Este tópico aborda como implantar uma infraestrutura de rede Microsoft Software Defined (SDN) usando scripts no Windows Server 2016.
+title: Implantar uma infraestrutura de rede definida pelo software usando scripts
+description: Este tópico aborda como implantar uma infraestrutura de SDN (rede definida pelo software) da Microsoft usando scripts no Windows Server 2016.
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: virtual-network
 ms.technology: networking-sdn
 ms.topic: get-started-article
@@ -10,164 +10,164 @@ ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
 ms.author: pashort
 author: shortpatti
 ms.date: 08/23/2018
-ms.openlocfilehash: ce88659f6065ddd0957b95831a4e3065f09dc9e9
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 29013827d0cde0447c48afa7a42551760ab9e940
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446369"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356000"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>Implantar uma infraestrutura de rede definida pelo software usando scripts
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Neste tópico, você deve implantar uma infraestrutura de rede Microsoft Software Defined (SDN) usando scripts. A infraestrutura inclui um controlador de rede (HA) altamente disponível, uma alta disponibilidade do Software SLB balanceador de carga () / MUX, redes virtuais e associados a listas de controle de acesso (ACLs). Além disso, outro script implanta uma carga de trabalho de locatário para validar sua infraestrutura SDN.  
+Neste tópico, você implanta uma infraestrutura de SDN (rede definida pelo software) da Microsoft usando scripts. A infraestrutura inclui um controlador de rede altamente disponível (HA), um Load Balancer de software de alta disponibilidade (SLB)/MUX, redes virtuais e ACLs (listas de controle de acesso) associadas. Além disso, outro script implanta uma carga de trabalho de locatário para validar sua infraestrutura de SDN.  
 
-Se você quiser que suas cargas de trabalho de locatário para se comunicar fora de suas redes virtuais, você pode configurar regras de NAT do SLB, túneis de Gateway Site a Site ou encaminhamento de camada 3 para o roteamento entre as cargas de trabalho virtuais e físicas.  
+Se você quiser que suas cargas de trabalho de locatário se comuniquem fora de suas redes virtuais, você pode configurar regras de NAT de SLB, túneis de gateway de site a site ou encaminhamento de camada 3 para rotear entre cargas de trabalho físicas e virtuais.  
 
-Você também pode implantar uma infraestrutura SDN usando o Virtual Machine Manager (VMM). Para obter mais informações, consulte [configurar uma infraestrutura de rede definida pelo Software (SDN) na malha do VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-overview).  
+Você também pode implantar uma infraestrutura SDN usando o Virtual Machine Manager (VMM). Para obter mais informações, consulte [Configurar uma infraestrutura de Sdn (rede definida pelo software) na malha do VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-overview).  
 
 
 ## <a name="pre-deployment"></a>Pré-implantação  
 
 > [!IMPORTANT]  
-> Antes de começar a implantação, você deve planejar e configurar os hosts e infraestrutura de rede física. Para obter mais informações, consulte [Planejar a infraestrutura de rede definida por software](../../sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md).  
+> Antes de começar a implantação, você deve planejar e configurar seus hosts e a infraestrutura de rede física. Para obter mais informações, consulte [Planejar a infraestrutura de rede definida por software](../../sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md).  
 
-Todos os hosts do Hyper-V devem ter o Windows Server 2016 instalado.  
+Todos os hosts Hyper-V devem ter o Windows Server 2016 instalado.  
 
 ## <a name="deployment-steps"></a>Etapas de implantação  
-Comece Configurando o comutador virtual do Hyper-V (servidores físicos) e a atribuição de endereço IP do host do Hyper-V. Qualquer tipo de armazenamento que é compatível com o Hyper-V, local ou compartilhado pode ser usado.  
+Comece Configurando o comutador virtual do Hyper-v (servidores físicos) e a atribuição de endereço IP do host Hyper-V. Qualquer tipo de armazenamento compatível com o Hyper-V, compartilhado ou local pode ser usado.  
 
-### <a name="install-host-networking"></a>Instalar o sistema de rede do host  
+### <a name="install-host-networking"></a>Instalar rede do host  
 
-1. Instale os drivers de rede mais recentes disponíveis para o seu hardware NIC.  
-2. Instalar a função Hyper-V em todos os hosts (para obter mais informações, consulte [Introdução ao Hyper-V no Windows Server 2016](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/Get-started-with-Hyper-V-on-Windows).   
+1. Instale os drivers de rede mais recentes disponíveis para o hardware da NIC.  
+2. Instale a função Hyper-V em todos os hosts (para obter mais informações, consulte [introdução ao Hyper-v no Windows Server 2016](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/Get-started-with-Hyper-V-on-Windows).   
 
    ```PowerShell
    Install-WindowsFeature -Name Hyper-V -ComputerName <computer_name> -IncludeManagementTools -Restart
    ```  
 
-3. Crie o comutador virtual do Hyper-V.<p>Usar o mesmo nome de comutador para todos os hosts, por exemplo, **sdnSwitch**. Configure pelo menos um adaptador de rede ou, se usando o conjunto, configure pelo menos dois adaptadores de rede. Difusão de entrada máximo ocorre ao usar duas NICs.  
+3. Crie o comutador virtual do Hyper-V.<p>Use o mesmo nome de comutador para todos os hosts, por exemplo, **sdnSwitch**. Configure pelo menos um adaptador de rede ou, se estiver usando SET, configure pelo menos dois adaptadores de rede. A difusão de entrada máxima ocorre ao usar duas NICs.  
 
    ```PowerShell
    New-VMSwitch "<switch name>" -NetAdapterName "<NetAdapter1>" [, "<NetAdapter2>" -EnableEmbeddedTeaming $True] -AllowManagementOS $True
    ```  
    >[!TIP] 
-   >Se você tiver NICs separadas do gerenciamento, você pode ignorar as etapas 4 e 5.
+   >Você pode ignorar as etapas 4 e 5 se tiver NICs de gerenciamento separadas.
 
-3. Consulte o tópico de planejamento ([planejar uma infraestrutura de rede definida pelo Software](../../sdn/plan/../../sdn/plan/../../sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md)) e trabalhe com seu administrador de rede para obter a ID de VLAN da VLAN de gerenciamento. Anexe a vNIC de gerenciamento do comutador Virtual recém-criado para a VLAN de gerenciamento. Esta etapa pode ser omitida se seu ambiente de não usar marcas de VLAN.  
+3. Consulte o tópico de planejamento ([planejar uma infraestrutura de rede definida pelo software](../../sdn/plan/../../sdn/plan/../../sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md)) e trabalhe com o administrador da rede para obter a ID de VLAN da VLAN de gerenciamento. Anexe o vNIC de gerenciamento do comutador virtual criado recentemente à VLAN de gerenciamento. Esta etapa poderá ser omitida se o ambiente não usar marcas de VLAN.  
 
    ```PowerShell
    Set-VMNetworkAdapterIsolation -ManagementOS -IsolationMode Vlan -DefaultIsolationID <Management VLAN> -AllowUntaggedTraffic $True
    ```  
 
-4. Consulte o tópico de planejamento ([planejar uma infraestrutura de rede definida pelo Software](../../sdn/plan/../../sdn/plan/../../sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md)) e trabalhe com seu administrador de rede para usar o DHCP ou atribuições de IP estáticas para atribuir um endereço IP para a vNIC de gerenciamento de recém-criado vSwitch. O exemplo a seguir mostra como criar um endereço IP estático e atribuí-lo para a vNIC de gerenciamento do vSwitch:  
+4. Consulte o tópico de planejamento ([planejar uma infraestrutura de rede definida pelo software](../../sdn/plan/../../sdn/plan/../../sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md)) e trabalhe com o administrador da rede para usar as atribuições de IP estático ou DHCP para atribuir um endereço IP ao vNIC de gerenciamento do vSwitch recém-criado. O exemplo a seguir mostra como criar um endereço IP estático e atribuí-lo ao vNIC de gerenciamento do vSwitch:  
 
    ```PowerShell
    New-NetIPAddress -InterfaceAlias "vEthernet (<switch name>)" -IPAddress <IP> -DefaultGateway <Gateway IP> -AddressFamily IPv4 -PrefixLength <Length of Subnet Mask - for example: 24>
    ```  
 
-5. [Opcional] Implantar uma máquina virtual para hospedar os serviços de domínio do Active Directory ([instalar o Active Directory Domain Services (nível 100)](https://technet.microsoft.com/library/hh472162.aspx) e um servidor DNS.  
+5. Adicional Implante uma máquina virtual no host Active Directory Domain Services ([instale Active Directory Domain Services (nível 100)](https://technet.microsoft.com/library/hh472162.aspx) e um servidor DNS.  
 
-    a. Conecte-se a máquina virtual de servidor DNS/Active Directory para a VLAN de gerenciamento:
+    a. Conecte a máquina virtual do servidor Active Directory/DNS à VLAN de gerenciamento:
 
        ```PowerShell
        Set-VMNetworkAdapterIsolation -VMName "<VM Name>" -Access -VlanId <Management VLAN> -AllowUntaggedTraffic $True  
        ```   
 
-   b. Instale o DNS e Active Directory Domain Services.  
+   b. Instale o Active Directory Domain Services e o DNS.  
 
    >[!NOTE]
-   >O controlador de rede dá suporte a certificados Kerberos e X.509 para autenticação. Este guia usa ambos os mecanismos de autenticação para finalidades diferentes (embora apenas uma for necessária).  
+   >O controlador de rede dá suporte a certificados Kerberos e X. 509 para autenticação. Este guia usa os dois mecanismos de autenticação para finalidades diferentes (embora apenas um seja necessário).  
 
-6. Junte-se todos os hosts do Hyper-V para o domínio. Verifique se a entrada do servidor DNS para o adaptador de rede que tem um endereço IP atribuído para os pontos de gerenciamento de rede para um servidor DNS que pode resolver o nome de domínio. 
+6. Ingresse todos os hosts Hyper-V no domínio. Verifique se a entrada do servidor DNS para o adaptador de rede que tem um endereço IP atribuído à rede de gerenciamento aponta para um servidor DNS que pode resolver o nome de domínio. 
 
    ```PowerShell   
    Set-DnsClientServerAddress -InterfaceAlias "vEthernet (<switch name>)" -ServerAddresses <DNS Server IP>  
    ```
 
-   a. Clique com botão direito **inicie**, clique em **sistema**e, em seguida, clique em **alterar configurações**.  
+   a. Clique com o botão direito do mouse em **Iniciar**, clique em **sistema**e em **alterar configurações**.  
    b. Clique em **Alterar**.  
    c. Clique em **domínio** e especifique o nome de domínio.  
    d. Clique em **OK**.  
-   e. Digite os nome e senha de credenciais do usuário quando solicitado.  
+   e. Digite as credenciais de nome de usuário e senha quando solicitado.  
    f. Reinicie o servidor.  
 
 ### <a name="validation"></a>Validação  
-Use as etapas a seguir para validar que o host de rede está configurado corretamente.  
+Use as etapas a seguir para validar que a rede do host está configurada corretamente.  
 
-1. Certifique-se de que o comutador de VM foi criado com êxito:  
+1. Verifique se o comutador de VM foi criado com êxito:  
 
    ```PowerShell
    Get-VMSwitch "<switch name>"
    ```  
 
-2. Verifique se que a vNIC de gerenciamento no comutador de VM está conectada à VLAN de gerenciamento:  
+2. Verifique se o vNIC de gerenciamento no comutador de VM está conectado à VLAN de gerenciamento:  
 
    >[!NOTE]
-   >Relevante apenas se o tráfego de gerenciamento e locatário compartilham a mesma NIC.    
+   >Relevante somente se o gerenciamento e o tráfego do locatário compartilharem a mesma NIC.    
 
    ```PowerShell
    Get-VMNetworkAdapterIsolation -ManagementOS
    ```
 
-3. Valide todos os hosts do Hyper-V e recursos de gerenciamento externo, por exemplo, os servidores DNS.<p>Certifique-se de que eles são acessíveis por meio de ping usando seu endereço IP de gerenciamento e/ou nome de domínio totalmente qualificado (FQDN).   
+3. Valide todos os hosts Hyper-V e recursos de gerenciamento externo, por exemplo, servidores DNS.<p>Verifique se eles estão acessíveis por meio de ping usando seu endereço IP de gerenciamento e/ou FQDN (nome de domínio totalmente qualificado).   
 
    ``ping <Hyper-V Host IP>``  
    ``ping <Hyper-V Host FQDN>``  
 
-4. Execute o seguinte comando no host de implantação e especifique o FQDN de cada host Hyper-V para garantir que as credenciais do Kerberos usadas fornece acesso a todos os servidores.  
+4. Execute o comando a seguir no host de implantação e especifique o FQDN de cada host Hyper-V para garantir que as credenciais Kerberos usadas forneçam acesso a todos os servidores.  
 
    ``winrm id -r:<Hyper-V Host FQDN>``  
 
-### <a name="nano-installation-requirements-and-notes"></a>Observações e requisitos de instalação do Nano  
+### <a name="nano-installation-requirements-and-notes"></a>Observações e requisitos de instalação do nano  
 
-Se você usar o Nano como seus hosts do Hyper-V (servidores físicos) para a implantação, serão os seguintes requisitos adicionais:  
+Se você usar o nano como seus hosts do Hyper-V (servidores físicos) para a implantação, os requisitos adicionais a seguir serão:  
 
-1. Todos os nós do Nano precisam ter o pacote de DSC instalado com o pacote de idiomas:  
+1. Todos os nós do nano precisam ter o pacote DSC instalado com o pacote de idiomas:  
 
-   - Microsoft-NanoServer-DSC-Package.cab  
-   - Microsoft-NanoServer-DSC-Package_en-us.cab
+   - Microsoft-NanoServer-DSC-Package. cab  
+   - Microsoft-NanoServer-DSC-Package_en-us. cab
 
      ``dism /online /add-package /packagepath:<Path> /loglevel:4``  
 
-2. Os scripts de SDN Express devem ser executados a partir de um host não Nano (Server Core do Windows ou Windows Server com GUI). Não há suporte para fluxos de trabalho do PowerShell no Nano.  
+2. Os scripts do SDN Express devem ser executados de um host não nano (Windows Server Core ou Windows Server c/GUI). Não há suporte para fluxos de trabalho do PowerShell no nano.  
 
-3. Invocar a API NorthBound do controlador de rede usando o PowerShell ou os Wrappers de REST do NC (que dependem de Invoke-WebRequest e Invoke-RestMethod) deve ser feito de um host não Nano.  
+3. Invocar a API NorthBound do controlador de rede usando os wrappers do PowerShell ou do NC REST (que dependem de Invoke-WebRequest e Invoke-RestMethod) deve ser feito em um host não nano.  
 
 
-### <a name="run-sdn-express-scripts"></a>Executar scripts de SDN Express  
+### <a name="run-sdn-express-scripts"></a>Executar scripts do SDN Express  
 
-1. Vá para o [repositório Microsoft SDN GitHub](https://github.com/Microsoft/SDN.git) dos arquivos de instalação.
+1. Vá para o [repositório GitHub do Microsoft Sdn](https://github.com/Microsoft/SDN.git) para os arquivos de instalação.
 
-2. Baixe os arquivos de instalação do repositório para o computador designado de implantação. Clique em **clonar ou baixar** e, em seguida, clique em **baixar ZIP**.  
+2. Baixe os arquivos de instalação do repositório para o computador de implantação designado. Clique em **clonar ou baixar** e, em seguida, clique em **baixar zip**.  
 
    >[!NOTE]
-   >O computador designado de implantação deve estar executando o Windows Server 2016 ou posterior.
+   >O computador de implantação designado deve estar executando o Windows Server 2016 ou posterior.
 
-3. Expanda o arquivo zip e copie a **SDNExpress** pasta no computador de implantação `C:\` pasta.  
+3. Expanda o arquivo zip e copie a pasta **SDNExpress** para a pasta `C:\` do computador de implantação.  
 
-4. Compartilhamento de `C:\SDNExpress` pasta como "**SDNExpress**" com permissão para **todos** para **leitura/gravação**.  
+4. Compartilhe a pasta `C:\SDNExpress` como "**SDNExpress**" com permissão para **todos** para **leitura/gravação**.  
 
-5. Navegue até o `C:\SDNExpress` pasta.<p>Você verá as seguintes pastas:  
+5. Navegue até a `C:\SDNExpress` pasta.<p>Você verá as seguintes pastas:  
 
 
    | Nome da pasta |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
    |-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   |  AgentConf  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Mantém cópias atualizadas dos esquemas OVSDB usados pelo agente de Host de SDN em cada host do Windows Server 2016 Hyper-V à diretiva de rede do programa.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-   |    Certificados    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         Local temporário compartilhado para o arquivo de certificado do NC.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-   |   Imagens    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         Esvaziar, coloque sua imagem de vhdx do Windows Server 2016 aqui                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-   |    Ferramentas    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Utilitários para solução de problemas e depuração.  Copiado para os hosts e máquinas virtuais.  É recomendável que você coloque o Monitor de rede ou o Wireshark aqui para que ele esteja disponível, se necessário.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-   |   Scripts   | Scripts de implantação.<br /><br />-   **SDNExpress.ps1**<br />    Implanta e configura a malha, incluindo máquinas virtuais do controlador de rede, máquinas virtuais SLB Mux, pools de gateway e as máquinas de virtuais de gateway HNV correspondente para o pool (s).<br />-   **FabricConfig.psd1**<br />    Um modelo de arquivo de configuração para o script SDNExpress.  Você irá personalizar isso para o seu ambiente.<br />-   **SDNExpressTenant.ps1**<br />    Implanta uma carga de trabalho de locatário de exemplo em uma rede virtual com um VIP com balanceamento de carga.<br />    Também provisiona uma ou mais conexões de rede (a VPN S2S IPSec, GRE, L3) em gateways de borda de provedor do serviço que estão conectados à carga de trabalho do locatário criada anteriormente. Os gateways de IPSec e GRE estão disponíveis para conectividade sobre o endereço IP VIP correspondente e o gateway de encaminhamento L3 ao longo do pool de endereços correspondente.<br />    Esse script pode ser usado para excluir a configuração correspondente com uma opção de desfazer.<br />-   **TenantConfig.psd1**<br />    Um arquivo de configuração de modelo para a carga de trabalho de locatário e configuração de S2S do gateway.<br />-   **SDNExpressUndo.ps1**<br />    Limpa o ambiente de malha e ele será redefinido para um estado inicial.<br />-   **SDNExpressEnterpriseExample.ps1**<br />    Provisiona um ou mais ambientes de site de empresa com um Gateway de acesso remoto e (opcionalmente) uma máquina de virtual enterprise correspondente por site. Os gateways enterprise IPSec ou GRE conecta-se para o endereço IP VIP correspondente do gateway de provedor de serviço para estabelecer os túneis S2S. O Gateway de encaminhamento L3 conecta-se o endereço de IP de par correspondente. <br />            Esse script pode ser usado para excluir a configuração correspondente com uma opção de desfazer.<br />-   **EnterpriseConfig.psd1**<br />    Um arquivo de configuração de modelo para o gateway do site a site corporativo e a configuração de VM do cliente. |
+   |  AgentConf  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Contém cópias atualizadas dos esquemas OVSDB usados pelo agente de host SDN em cada host do Hyper-V do Windows Server 2016 para programar a política de rede.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+   |    Certificados    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         Local compartilhado temporário para o arquivo de certificado NC.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+   |   Imagens    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         Vazio, coloque a imagem do vhdx do Windows Server 2016 aqui                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+   |    Ferramentas    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Utilitários para solução de problemas e depuração.  Copiado para os hosts e máquinas virtuais.  Recomendamos que você coloque Monitor de Rede ou o Wireshark aqui para que ele esteja disponível, se necessário.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+   |   Scripts   | Scripts de implantação.<br /><br />-   **SDNExpress. ps1**<br />    Implanta e configura a malha, incluindo as máquinas virtuais do controlador de rede, máquinas virtuais SLB MUX, pools de gateway e as máquinas virtuais do gateway HNV correspondentes aos pools.<br />-   **FabricConfig. psd1**<br />    Um modelo de arquivo de configuração para o script SDNExpress.  Você personalizará isso para o seu ambiente.<br />-   **SDNExpressTenant. ps1**<br />    Implanta uma carga de trabalho de locatário de exemplo em uma rede virtual com um VIP com balanceamento de carga.<br />    O também provisiona uma ou mais conexões de rede (VPN S2S IPSec, GRE, L3) nos gateways de borda do provedor de serviços que estão conectados à carga de trabalho de locatário criada anteriormente. Os gateways IPSec e GRE estão disponíveis para conectividade sobre o endereço IP VIP correspondente e o gateway de encaminhamento L3 sobre o pool de endereços correspondente.<br />    Esse script também pode ser usado para excluir a configuração correspondente com uma opção de desfazer.<br />-   **TenantConfig. psd1**<br />    Um arquivo de configuração de modelo para carga de trabalho de locatário e configuração de gateway S2S.<br />-   **SDNExpressUndo. ps1**<br />    Limpa o ambiente de malha e o redefine para um estado inicial.<br />-   **SDNExpressEnterpriseExample. ps1**<br />    Provisiona um ou mais ambientes de site corporativo com um gateway de acesso remoto e (opcionalmente) uma máquina virtual corporativa correspondente por site. Os gateways corporativos IPSec ou GRE se conectam ao endereço IP VIP correspondente do gateway do provedor de serviços para estabelecer os túneis S2S. O gateway de encaminhamento L3 se conecta ao endereço IP do par correspondente. <br />            Esse script também pode ser usado para excluir a configuração correspondente com uma opção de desfazer.<br />-   **EnterpriseConfig. psd1**<br />    Um arquivo de configuração de modelo para a configuração de VM de cliente e gateway de site a site corporativo. |
    | TenantApps  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             Arquivos usados para implantar cargas de trabalho de locatário de exemplo.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
    ---
 
-6. Verifique se o arquivo VHDX do Windows Server 2016 está na **imagens** pasta.  
+6. Verifique se o arquivo VHDX do Windows Server 2016 está na pasta **imagens** .  
 
-7. Personalizar o arquivo SDNExpress\scripts\FabricConfig.psd1 alterando a **<< substituir >>** marcas com valores específicos de acordo com sua infra-estrutura de laboratório, incluindo nomes de host, nomes de domínio, nomes de usuário e senhas, e informações de rede para as redes listadas no tópico de planejamento de rede.  
+7. Personalize o arquivo SDNExpress\scripts\FabricConfig.psd1 alterando o **< < substituir >** marcas de > com valores específicos para se adequar à infraestrutura de laboratório, incluindo nomes de host, nomes de domínio, nomes de dados e senhas e informações de rede para o redes listadas no tópico Planejamento de rede.  
 
-8. Crie um registro Host A no DNS para o NetworkControllerRestIP e NetworkControllerRestName (FQDN).  
+8. Crie um registro de host A no DNS para o NetworkControllerRestName (FQDN) e NetworkControllerRestIP.  
 
 9. Execute o script como um usuário com credenciais de administrador de domínio:  
 
@@ -179,46 +179,46 @@ Se você usar o Nano como seus hosts do Hyper-V (servidores físicos) para a imp
 
 #### <a name="validation"></a>Validação  
 
-Supondo que o script SDN Express executou até a conclusão sem relatar erros, você pode executar a etapa a seguir para garantir que os recursos de malha tem sido implantados corretamente e estão disponíveis para implantação do locatário.  
+Supondo que o script SDN Express foi executado até a conclusão sem relatar erros, você pode executar a etapa a seguir para garantir que os recursos de malha tenham sido implantados corretamente e estejam disponíveis para implantação de locatário.  
 
-Use [ferramentas de diagnóstico](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack) para garantir que não há nenhum erro em quaisquer recursos de malha no controlador de rede.  
+Use [ferramentas de diagnóstico](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack) para garantir que não haja nenhum erro em nenhum recurso de malha no controlador de rede.  
 
    ``Debug-NetworkControllerConfigurationState -NetworkController <FQDN of Network Controller Rest Name>``  
 
 
 ### <a name="deploy-a-sample-tenant-workload-with-the-software-load-balancer"></a>Implantar uma carga de trabalho de locatário de exemplo com o balanceador de carga de software  
 
-Agora que os recursos de malha tem sido implantados, você pode validar seu SDN implantação ponta a ponta ao implantar uma carga de trabalho de locatário de exemplo. Essa carga de trabalho de locatário consiste em duas sub-redes virtuais (camada da web e camada de banco de dados) protegidas por meio de regras de lista de controle de acesso (ACL) usando o firewall distribuído de SDN. A sub-rede virtual da camada da web é acessível por meio do SLB/MUX usando um endereço IP Virtual (VIP). O script implanta duas máquinas virtuais da camada da web e a máquina de virtual de camada de um banco de dados e conecta-se para as sub-redes virtuais automaticamente.  
+Agora que os recursos de malha foram implantados, você pode validar sua implantação de SDN de ponta a ponta implantando uma carga de trabalho de locatário de exemplo. Essa carga de trabalho de locatário consiste em duas sub-redes virtuais (camada da Web e camada de banco de dados) protegidas por meio de regras de ACL (lista de controle de acesso) usando o firewall distribuído do SDN. A sub-rede virtual da camada da Web pode ser acessada por meio do SLB/MUX usando um endereço IP virtual (VIP). O script implanta automaticamente duas máquinas virtuais de camada da Web e uma máquina virtual de camada de banco de dados e as conecta às sub-redes virtuais.  
 
-1.  Personalizar o arquivo SDNExpress\scripts\TenantConfig.psd1 alterando a **<< substituir >>** marcas com valores específicos (por exemplo: Nome da imagem VHD, nome REST do controlador de rede, nome do vSwitch, etc. definido anteriormente no arquivo FabricConfig.psd1)  
+1.  Personalize o arquivo SDNExpress\scripts\TenantConfig.psd1 alterando o **< < substituir >** marcas de > com valores específicos (por exemplo: Nome da imagem do VHD, nome do REST do controlador de rede, nome do vSwitch, etc. conforme definido anteriormente no arquivo FabricConfig. psd1)  
 
 2.  Execute o script. Por exemplo:  
 
     ``SDNExpress\scripts\SDNExpressTenant.ps1 -ConfigurationDataFile TenantConfig.psd1 -Verbose``  
 
-3.  Para desfazer a configuração, execute o mesmo script com o **desfazer** parâmetro. Por exemplo:  
+3.  Para desfazer a configuração, execute o mesmo script com o parâmetro **Undo** . Por exemplo:  
 
     ``SDNExpress\scripts\SDNExpressTenant.ps1 -Undo -ConfigurationDataFile TenantConfig.psd1 -Verbose``  
 
 #### <a name="validation"></a>Validação  
 
-Para validar que a implantação do locatário foi bem-sucedida, faça o seguinte:
+Para validar se a implantação do locatário foi bem-sucedida, faça o seguinte:
 
-1. Faça logon na máquina virtual da camada do banco de dados e tente executar ping no endereço IP de uma das máquinas de virtuais de camada da web (certifique-se de que o Firewall do Windows estiver desativado nas máquinas virtuais da camada da web).  
+1. Faça logon na máquina virtual da camada de banco de dados e tente executar o ping no endereço IP de uma das máquinas virtuais da camada da Web (verifique se o Firewall do Windows está desativado em máquinas virtuais da camada da Web).  
 
-2. Verifique os recursos do locatário do controlador de rede para todos os erros. Execute o seguinte em qualquer host Hyper-V com conectividade de camada 3 para o controlador de rede:  
+2. Verifique se há erros nos recursos de locatário do controlador de rede. Execute o seguinte em qualquer host Hyper-V com conectividade de camada 3 para o controlador de rede:  
 
    ``Debug-NetworkControllerConfigurationState -NetworkController <FQDN of Network Controller REST Name>``
 
-3. Para verificar o balanceador de carga está sendo executado corretamente, execute o seguinte de qualquer host Hyper-V:
+3. Para verificar se o balanceador de carga está sendo executado corretamente, execute o seguinte em qualquer host Hyper-V:
 
    ``wget <VIP IP address>/unique.htm -disablekeepalive -usebasicparsing``
 
-   onde `<VIP IP address>` é o endereço IP VIP configurado no arquivo TenantConfig.psd1 da camada da web. 
+   em que `<VIP IP address>` é o endereço IP VIP da camada da Web que você configurou no arquivo TenantConfig. psd1. 
 
    >[!TIP]
-   >Pesquise o `VIPIP` variável TenantConfig.psd1.
+   >Procure a variável `VIPIP` em TenantConfig. psd1.
 
-   Execute este vezes vários para ver o balanceador de carga alternar entre as quedas disponíveis. Você também pode observar esse comportamento usando um navegador da web. Navegue para `<VIP IP address>/unique.htm`. Feche o navegador e abra uma nova instância e procure novamente. Você verá a página azul e a página verde alternativa, exceto quando o navegador armazena em cache a página antes que o cache expire.
+   Execute este vários vezes para ver a alternância do balanceador de carga entre os DIPs disponíveis. Você também pode observar esse comportamento usando um navegador da Web. Navegue para `<VIP IP address>/unique.htm`. Feche o brower e abra uma nova instância e navegue novamente. Você verá a página azul e a página verde alternativa, exceto quando o navegador armazenar a página em cache antes do tempo limite do cache.
 
 ---

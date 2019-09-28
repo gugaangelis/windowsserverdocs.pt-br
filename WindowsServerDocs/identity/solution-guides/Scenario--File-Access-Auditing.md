@@ -1,20 +1,20 @@
 ---
 ms.assetid: 7be1f2cb-02d5-4209-ba79-edf496a88f47
-title: Cenário de auditoria de acesso de arquivo
+title: Auditoria de acesso a arquivos de cenário
 description: ''
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 93d78bbefce38173198f991543fb3a06d145b373
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 37a3b17360112d958b59a7e9c3f64aed5e6f6a5b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867677"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406996"
 ---
 # <a name="scenario-file-access-auditing"></a>Cenário: Auditoria de acesso a arquivo
 
@@ -36,7 +36,7 @@ Além disso, o departamento de conformidade pode monitorar todas as alterações
   
 Uma das maiores considerações das auditorias de segurança é o custo de coleta, armazenamento e análise de eventos de auditoria. Se as políticas de auditoria forem muito amplas, o volume de eventos de auditoria coletado será maior, e isso aumentará os custos. Se as políticas de auditoria forem muito limitadas, você poderá perder eventos importantes.  
   
-Com o Windows Server 2012, você pode criar políticas de auditoria usando declarações e propriedades do recurso. Isso leva a políticas de auditoria mais elaboradas, direcionadas e fáceis de gerenciar. Isso possibilita cenários cuja execução era impossível ou muito difícil até agora. Estes são exemplos de políticas de auditoria que os administradores podem criar:  
+Com o Windows Server 2012, você pode criar políticas de auditoria usando declarações e propriedades de recursos. Isso leva a políticas de auditoria mais elaboradas, direcionadas e fáceis de gerenciar. Isso possibilita cenários cuja execução era impossível ou muito difícil até agora. Estes são exemplos de políticas de auditoria que os administradores podem criar:  
   
 -   Realizar auditoria de todos que não têm autorização de segurança elevada e tentam acessar um documento HBI. Por exemplo, Audit | Everyone | All-Access | Resource.BusinessImpact=HBI AND User.SecurityClearance!=High.  
   
@@ -44,13 +44,13 @@ Com o Windows Server 2012, você pode criar políticas de auditoria usando decla
   
 Essas políticas ajudam a regular o volume de eventos de auditoria e a limitá-los para apenas os dados ou usuários mais relevantes.  
   
-Depois que os administradores criam e aplicam as políticas de auditoria, a próxima questão que eles devem considerar é a coleta de informações significativas dos eventos de auditoria coletados. Os eventos de auditoria com base em expressões ajudam a reduzir o volume de auditorias. No entanto, os usuários precisam um modo para consultar esses eventos para obter informações significativas e fazer perguntas, como "quem está acessando meus dados HBI?" ou "Houve uma tentativa não autorizada de acessar dados confidenciais?"  
+Depois que os administradores criam e aplicam as políticas de auditoria, a próxima questão que eles devem considerar é a coleta de informações significativas dos eventos de auditoria coletados. Os eventos de auditoria com base em expressões ajudam a reduzir o volume de auditorias. No entanto, os usuários precisam de uma maneira de consultar esses eventos para obter informações significativas e fazer perguntas como "quem está acessando meus dados ICA?" ou "houve uma tentativa não autorizada de acessar dados confidenciais?"  
   
- Windows Server 2012 aprimora os eventos de acesso de dados existentes com declarações de usuário, computador e recurso. Esses eventos são gerados por servidor. Para fornecer uma exibição completa dos eventos em toda a organização, a Microsoft está trabalhando com parceiros para fornecer ferramentas de coleta e análise de eventos, como os Serviços de Coleta de Auditoria no System Center Operation Manager.  
+ O Windows Server 2012 aprimora os eventos de acesso a dados existentes com declarações de usuário, computador e recurso. Esses eventos são gerados por servidor. Para fornecer uma exibição completa dos eventos em toda a organização, a Microsoft está trabalhando com parceiros para fornecer ferramentas de coleta e análise de eventos, como os Serviços de Coleta de Auditoria no System Center Operation Manager.  
   
 A Figura 4 mostra uma visão geral de uma política de auditoria central.  
   
-![guias de soluções](media/Scenario--File-Access-Auditing/DynamicAccessControl_RevGuide_4.JPG)  
+![guias de solução](media/Scenario--File-Access-Auditing/DynamicAccessControl_RevGuide_4.JPG)  
   
 **Figura 4** Experiências de auditoria centrais  
   
@@ -67,17 +67,17 @@ A configuração e o consumo de auditorias de segurança normalmente envolvem as
 ## <a name="in-this-scenario"></a>Neste cenário  
 Os seguintes tópicos fornecem orientação adicional para este cenário:  
   
--   [Planejar para o arquivo de auditoria de acesso](Plan-for-File-Access-Auditing.md)  
+-   [Planejar a auditoria de acesso a arquivos](Plan-for-File-Access-Auditing.md)  
   
--   [Implantar a auditoria de segurança com as políticas de auditoria Central &#40;etapas de demonstração&#41;](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md)  
+-   [Implantar a auditoria de segurança com as etapas &#40;de demonstração das políticas de auditoria central&#41;](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md)  
   
 ## <a name="BKMK_NEW"></a>Funções e recursos incluídos neste cenário  
 A tabela a seguir lista as funções e os recursos que fazem parte deste cenário e descreve como dar suporte a ele.  
   
 |Função/recurso|Como este cenário tem suporte|  
 |-----------------|---------------------------------|  
-|Função dos Serviços de Domínio Active Directory|AD DS no Windows Server 2012 apresenta uma plataforma de autorização baseada em declarações que permite a criação de declarações de usuário e declarações de dispositivo, identidades compostas, (declarações de usuário + dispositivo), novo modelo de CAP (políticas) de acesso central e o uso de classificação de arquivos informações em decisões de autorização.|  
-|Função dos Serviços de Arquivo e Armazenamento|Servidores de arquivos no Windows Server 2012 fornecem uma interface do usuário em que os administradores podem exibir as permissões efetivas para usuários para um arquivo ou pasta e solucionar problemas de acesso e conceder acesso conforme necessário.|  
+|Função dos Serviços de Domínio Active Directory|AD DS no Windows Server 2012 apresenta uma plataforma de autorização baseada em declarações que permite criar declarações de usuário e declarações de dispositivo, identidade composta, (usuário mais declarações de dispositivo), novo modelo de CAP (políticas de acesso central) e o uso de classificação de arquivos informações em decisões de autorização.|  
+|Função dos Serviços de Arquivo e Armazenamento|Os servidores de arquivos no Windows Server 2012 fornecem uma interface do usuário em que os administradores podem exibir as permissões efetivas para os usuários de um arquivo ou pasta e solucionar problemas de acesso e conceder acesso conforme necessário.|  
   
 
 

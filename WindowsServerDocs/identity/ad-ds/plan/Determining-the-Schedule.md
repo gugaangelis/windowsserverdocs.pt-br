@@ -7,24 +7,24 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: dee63ce0fb687b2b722ce64614c54388fc544433
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 04576a88825205398f1b555d9f5063ac26e2a76e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838997"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408868"
 ---
 # <a name="determining-the-schedule"></a>Determinando o cronograma
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Você pode controlar a disponibilidade de link de site, definindo uma agenda para links de site. Quando a replicação entre dois sites que atravessa os vários links de site, a interseção dos agendamentos de replicação em todos os links relevantes determina o agendamento de conexão entre os dois sites.  
+Você pode controlar a disponibilidade do link de site definindo um agendamento para links de site. Quando a replicação entre dois sites atravessa vários links de site, a interseção das agendas de replicação em todos os links relevantes determina a agenda de conexão entre os dois sites.  
   
-Para planejar para configurar o agendamento do link de site, crie dois agendamentos sobrepostos entre links de site que contêm controladores de domínio que são replicados diretamente entre si. Use o agendamento padrão (100 por cento disponíveis) nesses links, a menos que você deseja bloquear o tráfego de replicação durante o horário de pico. Bloqueando a duplicação, dar prioridade a outro tráfego, mas também é aumentar a latência de replicação.  
+Para planejar a definição da agenda de links de site, crie duas agendas sobrepostas entre links de site que contêm controladores de domínio que se replicam diretamente entre si. Use o agendamento padrão (100-porcentagem disponível) nesses links, a menos que você queira bloquear o tráfego de replicação durante horários de pico. Ao bloquear a replicação, você dá prioridade a outro tráfego, mas também aumenta a latência de replicação.  
   
-Controladores de domínio armazenam a hora em tempo Universal Coordenado (UTC). Configurações de hora no agendamento do objeto de link de site estão em conformidade com a hora local do site e do computador em que a agenda está definida. Quando um controlador de domínio entra em contato com um computador que está em um site diferente e o fuso horário, o agendamento no controlador de domínio exibe a configuração de tempo acordo com a hora local para o site do computador.  
+Os controladores de domínio armazenam o tempo no UTC (tempo Universal Coordenado). As configurações de hora em agendas de objeto de link de site estão em conformidade com a hora local do site e o computador no qual a agenda está definida. Quando um controlador de domínio entra em contato com um computador que está em um site e fuso horário diferentes, o agendamento no controlador de domínio exibe a configuração de hora de acordo com a hora local do site do computador.  
   
 
 

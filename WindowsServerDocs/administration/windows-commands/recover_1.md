@@ -1,8 +1,8 @@
 ---
 title: recover
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 261bfd79d74323ad324246e21b84a5eb798ebcdf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a83bb7502145cc09116241ea255e31b5f9981791
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867177"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384740"
 ---
 # <a name="recover"></a>recover
 
 
 
-Atualiza o estado de todos os discos em um grupo de discos, tentar recuperar os discos em um grupo de disco inválidos e ressincroniza volumes espelhados e volumes RAID-5 que tem dados obsoletos.
+Atualiza o estado de todos os discos em um grupo de discos, tenta recuperar discos em um grupo de discos inválido e sincroniza novamente os volumes espelhados e os volumes RAID-5 que têm dados obsoletos.
 
 > [!IMPORTANT]
-> Esse comando DiskPart não está disponível em nenhuma edição do Windows Vista.
+> Esse comando do DiskPart não está disponível em nenhuma edição do Windows Vista.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -39,16 +39,16 @@ recover [noerr]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|noerr|Somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro.|
+|NOERR|Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.|
 
 ## <a name="remarks"></a>Comentários
 
--   Esse comando funciona em um grupo de discos.
--   Esse comando só se aplica a grupos de discos dinâmicos. Se esse comando é usado em um grupo com um disco básico, ele não retornará um erro, mas nenhuma ação será tomada.
--   Esse comando funciona em discos com falha ou com falha. Ela também funciona em volumes com falha, falhando, ou em estado de falha de redundância.
--   Um disco que é parte de um grupo de disco deve ser selecionado para este comando ter êxito. Use o **Selecionar disco** comando para selecionar um disco e mudar o foco a ele.
+-   Esse comando opera em um grupo de discos.
+-   Esse comando aplica-se somente a grupos de discos dinâmicos. Se esse comando for usado em um grupo com um disco básico, ele não retornará um erro, mas nenhuma ação será executada.
+-   Esse comando opera em discos que falharam ou falharam. Ele também opera em volumes que falharam, falham ou estão em estado de redundância com falha.
+-   Um disco que faz parte de um grupo de discos deve ser selecionado para que esse comando seja executado com sucesso. Use o comando **selecionar disco** para selecionar um disco e deslocar o foco para ele.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 Para recuperar o grupo de discos que contém o disco com foco, digite:
 ```
@@ -57,5 +57,5 @@ recover
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 

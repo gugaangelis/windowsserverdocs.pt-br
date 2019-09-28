@@ -1,8 +1,8 @@
 ---
 title: bitsadmin complete
-description: Tópico de comandos do Windows para **bitsadmin completa** -conclui o trabalho. Os arquivos baixados não estão disponíveis para você até que você use essa opção.
+description: O tópico de comandos do Windows para **Bitsadmin Complete** -conclui o trabalho. Os arquivos baixados não estarão disponíveis até você até que você use essa opção.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 561585da370f7e69aa3b83b3ddd7579bfc658a21
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d5a1dc5dbbf2d5b3207b5423f338e0caf4412599
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817317"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381822"
 ---
 # <a name="bitsadmin-complete"></a>bitsadmin complete
 
-Conclui o trabalho. Os arquivos baixados não estão disponíveis para você até que você use essa opção. Use essa opção depois que o trabalho passa para o estado transferido. Caso contrário, somente os arquivos que foram transferidos com êxito estão disponíveis.
+Conclui o trabalho. Os arquivos baixados não estarão disponíveis até você até que você use essa opção. Use essa opção depois que o trabalho for movido para o estado transferido. Caso contrário, somente os arquivos que foram transferidos com êxito estarão disponíveis.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,15 +34,15 @@ bitsadmin /complete <Job>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Quando o estado do trabalho é transferido, o BITS foi transferida com êxito todos os arquivos no trabalho. No entanto, os arquivos não estão disponíveis até que você use o **/ completo** alternar. Se usam vários trabalhos *myDownloadJob* como seu nome, você deve substituir *myDownloadJob* com o GUID do trabalho para identificar exclusivamente o trabalho.
+Quando o estado do trabalho for transferido, o BITS transferiu com êxito todos os arquivos no trabalho. No entanto, os arquivos não estarão disponíveis até que você use a opção **/Complete** Se vários trabalhos usarem *myDownloadJob* como seu nome, você deverá substituir *myDownloadJob* pelo GUID do trabalho para identificar exclusivamente o trabalho.
 ```
 C:\>bitsadmin /complete myDownloadJob
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

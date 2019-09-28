@@ -2,7 +2,7 @@
 title: Novidades do cliente para Microsoft Store
 description: Saiba mais sobre as recentes alterações no cliente da Área de Trabalho Remota para Microsoft Store
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ manager: daveba
 ms.author: helohr
 ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a4a6ae860dc8eabc4856ff3aa66268ed8d588de
-ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
+ms.openlocfilehash: e6d57f2feb5b21385cf247856be05f752ddee0cd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70987358"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404090"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Novidades do cliente para Microsoft Store
 

@@ -2,7 +2,7 @@
 title: Referência de comando de impressão
 description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8a9b0ab1e3e9ecb170eb4535cb7e4e643d791e5b
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 73850c35b6f228c49496a2bb4505fe8203cb52ba
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544538"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372174"
 ---
 # <a name="print-command-reference"></a>Referência de comando de impressão
 

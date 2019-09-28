@@ -1,8 +1,8 @@
 ---
 title: select disk
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2da74afda7c15145327b4d64f5c0e97e4f9b10cc
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6d9078242264b01ee4bc24dc590df24b1e53e548
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441439"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371080"
 ---
 # <a name="select-disk"></a>select disk
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Seleciona o disco especificado e desloca o foco para ele.  
+seleciona o disco especificado e desloca o foco para ele.  
   
   
   
@@ -35,25 +35,25 @@ select disk={ <n> | <disk path> | system | next }
 ```  
   
 > [!NOTE]  
-> O **<disk path>** , **sistema**, e **próximo** parâmetros só estão disponíveis no Windows 7 e Windows Server 2008 R2.  
+> Os parâmetros **<disk path>** , **System**e **Next** estão disponíveis somente no windows 7 e no Windows Server 2008 R2.  
   
 ## <a name="parameters"></a>Parâmetros  
   
 |  Parâmetro  |                                                                                                                                                                                                            Descrição                                                                                                                                                                                                            |
 |-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     <n>     | Especifica o número do disco para receber o foco. Você pode exibir os números para todos os discos no computador usando o **disco lista** comando DiskPart. **Observação:** Ao configurar sistemas com vários discos, não use **Selecionar disco\=0** para especificar o disco do sistema. O computador pode reatribuir a números de disco quando você reinicializa e computadores diferentes com a mesma configuração de disco podem ter números de disco diferente. |
-| <disk path> |                                                                                                                 Especifica o local do disco para receber o foco, por exemplo, **PCIROOT\(0\)\#PCI\(0F02\)\#atA\(C00T00L00\)** . Para exibir o caminho do local de um disco, selecione-o e, em seguida, digite **disco detalhes**.                                                                                                                  |
-|   sistema    |                                 Em computadores com BIOS, especifica que esse disco 0 recebe o foco. Em computadores EFI, o disco que contém a partição do sistema EFI \(ESP\) que é usado para a inicialização atual recebe o foco. Em computadores EFI, o comando falhará se houver não poderes Paranormais, se houver mais de um ESP ou o computador é inicializado a partir do Windows Preinstallation Environment \(Windows PE\).                                  |
-|    próximo     |                                                                                                                                     Quando um disco for selecionado, esse comando itera em todos os discos na lista de discos. Quando você executar esse comando, o próximo disco na lista receberá o foco.                                                                                                                                      |
+|     <n>     | Especifica o número do disco para receber o foco. Você pode exibir os números de todos os discos no computador usando o comando **listar disco** no DiskPart. **Observação:** Ao configurar sistemas com vários discos, não use **selecionar disco @ no__t-10** para especificar o disco do sistema. O computador pode reatribuir números de disco quando você reinicializa, e computadores diferentes com a mesma configuração de disco podem ter diferentes números de disco. |
+| <disk path> |                                                                                                                 Especifica o local do disco para receber o foco, por exemplo, **PCIROOT @ no__t-10 @ no__t-2 @ no__t-3PCI @ no__t-40F02 @ no__t-5 @ no__t-6atA @ no__t-7C00T00L00 @ no__t-8**. Para exibir o caminho do local de um disco, selecione-o e digite **disco de detalhes**.                                                                                                                  |
+|   sistema    |                                 Em computadores BIOS, especifica que o disco 0 recebe foco. Em computadores EFI, o disco que contém a partição do sistema EFI \(ESP @ no__t-1 que é usado para a inicialização atual recebe o foco. Em computadores EFI, o comando falhará se não houver nenhum ESP, se houver mais de um ESP ou se o computador for inicializado a partir de Ambiente de Pré-Instalação do Windows @no__t PE @ no__t-1.                                  |
+|    próximo     |                                                                                                                                     Depois que um disco é selecionado, esse comando faz a iteração em todos os discos na lista de discos. Quando você executar esse comando, o foco do próximo disco na lista será exibido.                                                                                                                                      |
   
-## <a name="BKMK_examples"></a>Exemplos  
+## <a name="BKMK_examples"></a>Disso  
 Para deslocar o foco para o disco 1, digite:  
   
 ```  
 select disk=1  
 ```  
   
-Para selecionar um disco usando seu caminho de local, digite:  
+Para selecionar um disco usando seu caminho de localização, digite:  
   
 ```  
 select disk=PCIROOT(0)#PCI(0100)#atA(C00T00L01)  

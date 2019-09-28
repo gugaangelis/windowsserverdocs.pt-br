@@ -2,18 +2,18 @@
 title: Gerenciamento de triagem de arquivos
 description: Este artigo descreve como criar triagens de arquivo, gerar notificações, definir modelos de triagem e criar exceções de triagem de arquivo
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 05fcaf402347d16bf8c28528d402664ae5f99165
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: ac5032630f960329675f896a303ef197d6a4dbb3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476061"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403111"
 ---
 # <a name="file-screening-management"></a>Gerenciamento de triagem de arquivos
 
@@ -33,7 +33,7 @@ Por exemplo, você pode:
 Esta seção inclui os seguintes tópicos:
 
 -   [Definir grupos de arquivos para triagem](define-file-groups-for-screening.md)
--   [Criar uma tela de arquivo](create-file-screen.md)
+-   [Criar uma triagem de arquivo](create-file-screen.md)
 -   [Criar uma exceção de triagem de arquivo](create-file-screen-exception.md)
 -   [Criar um modelo de triagem de arquivo](create-file-screen-template.md)
 -   [Editar propriedades de modelo de triagem de arquivo](edit-file-screen-template-properties.md)

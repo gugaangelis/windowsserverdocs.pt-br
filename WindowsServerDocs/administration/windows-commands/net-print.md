@@ -1,8 +1,8 @@
 ---
 title: Net print
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4018ec3779a9735916136fa54f532ad5767c960e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 241f9d74cb537924cf69c1e0bb5fd73a422c4b23
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437106"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373303"
 ---
 # <a name="net-print"></a>Net print
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Exibe informações sobre uma fila de impressora especificada ou um trabalho de impressão especificado ou controla um trabalho de impressão especificado.
-Para obter exemplos de como usar esse comando, consulte o [exemplos](#BKMK_examples) seção deste documento.
+Exibe informações sobre uma fila de impressora especificada ou um trabalho de impressão especificado, ou controla um trabalho de impressão especificado.
+para obter exemplos de como usar esse comando, consulte a seção de [exemplos](#BKMK_examples) deste documento.
 > [!NOTE]
-> Esse comando foi preterido no Windows 7 e Windows Server 2008 R2. No entanto, você pode executar muitas das mesmas tarefas usando cmdlets do Windows PowerShell, Windows Management Instrumentation (WMI) ou prnjobs. Para obter mais informações, consulte [prnjobs](prnjobs.md), [instrumentação de gerenciamento do Windows](https://go.microsoft.com/fwlink/?LinkID=29991) (https://go.microsoft.com/fwlink/?LinkID=29991), [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=128426) (https://go.microsoft.com/fwlink/?LinkID=128426)e o [Galeria do TechNet Script Center](https://go.microsoft.com/fwlink/?LinkId=164635) (https://go.microsoft.com/fwlink/?LinkId=164635).
+> Esse comando foi preterido no Windows 7 e no Windows Server 2008 R2. No entanto, você pode executar muitas das mesmas tarefas usando o prnjobs, Instrumentação de Gerenciamento do Windows (WMI) ou cmdlets do Windows PowerShell. Para obter mais informações, consulte [prnjobs](prnjobs.md), [Instrumentação de gerenciamento do Windows](https://go.microsoft.com/fwlink/?LinkID=29991) (https://go.microsoft.com/fwlink/?LinkID=29991), [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=128426) (https://go.microsoft.com/fwlink/?LinkID=128426) e a [galeria de script Center do TechNet](https://go.microsoft.com/fwlink/?LinkId=164635) (https://go.microsoft.com/fwlink/?LinkId=164635).
 > ## <a name="syntax"></a>Sintaxe
 > ```
 > Net print {\\<computerName>\<Sharename> | 
@@ -37,14 +37,14 @@ Para obter exemplos de como usar esse comando, consulte o [exemplos](#BKMK_examp
 > 
 > |               Parâmetros               |                                                                                                                                                                                                                     Descrição                                                                                                                                                                                                                      |
 > |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-> |    \\\\<computerName>\\<Sharename>     |                                                                                                                                                                            Especifica a fila de impressão e de computador sobre o qual você deseja exibir informações (por nome).                                                                                                                                                                             |
-> |           \\\\<computerName>           |                                                                                                                                 Especifica o computador que hospeda o trabalho de impressão que você deseja controlar (por nome). Se você não especificar um computador, o computador local será assumido. Requer a <JobNumber> parâmetro.                                                                                                                                  |
-> |              <JobNumber>               |                                             Especifica o número do trabalho de impressão que você deseja controlar. Esse número é atribuído pelo computador que hospeda a fila de impressão em que o trabalho de impressão é enviado. Depois que um computador atribui um número a um trabalho de impressão que o número não está atribuído a quaisquer outros trabalhos de impressão em qualquer fila hospedada pelo computador. Necessário ao usar o \\ \\ <computerName> parâmetro.                                             |
-> | [/hold &#124; /release &#124; /delete] | Especifica a ação a ser tomada com o trabalho de impressão.<br /><br />-A **/mantenha** parâmetro atrasa o trabalho, permitindo que outros trabalhos de impressão para contorná-lo até que ele seja liberado.<br />-A **/versão** parâmetro libera um trabalho de impressão foi adiado.<br />-A **/excluir** parâmetro remove um trabalho de impressão de uma fila de impressa.<br /><br />Se você especifica um número de trabalho, mas não especificar qualquer ação, informações sobre o trabalho de impressão serão exibidas. |
-> |                  ajuda                  |                                                                                                                                                                                                     Exibe a Ajuda para o **Net print** comando.                                                                                                                                                                                                     |
+> |    \\\\<computerName>\\<Sharename>     |                                                                                                                                                                            Especifica (por nome) o computador e a fila de impressão sobre os quais você deseja exibir informações.                                                                                                                                                                             |
+> |           \\\\<computerName>           |                                                                                                                                 Especifica (por nome) o computador que hospeda o trabalho de impressão que você deseja controlar. Se você não especificar um computador, o computador local será assumido. Requer o parâmetro <JobNumber>.                                                                                                                                  |
+> |              <JobNumber>               |                                             Especifica o número do trabalho de impressão que você deseja controlar. Esse número é atribuído pelo computador que hospeda a fila de impressão onde o trabalho de impressão é enviado. Depois que um computador atribui um número a um trabalho de impressão, esse número não é atribuído a outros trabalhos de impressão em nenhuma fila hospedada por esse computador. Necessário ao usar o parâmetro \\ @ no__t-1 @ no__t-2.                                             |
+> | [/Hold &#124; /Release &#124; /DELETE] | Especifica a ação a ser tomada com o trabalho de impressão.<br /><br />-O parâmetro **/Hold** atrasa o trabalho, permitindo que outros trabalhos de impressão o ignorem até que sejam liberados.<br />-O parâmetro **/Release** libera um trabalho de impressão que foi atrasado.<br />-O parâmetro **/delete** remove um trabalho de impressão de uma fila de impressão.<br /><br />Se você especificar um número de trabalho, mas não especificar nenhuma ação, as informações sobre o trabalho de impressão serão exibidas. |
+> |                  ajuda                  |                                                                                                                                                                                                     Exibe a ajuda para o comando **net Print** .                                                                                                                                                                                                     |
 > 
 > ## <a name="remarks"></a>Comentários
-> - **Net print** \\ \\ <computerName> exibe informações sobre trabalhos de impressão em uma fila de impressora compartilhada. Este é um exemplo de um relatório de todos os trabalhos de impressão em uma fila para uma impressora compartilhada chamada LASER:
+> - **Net print** \\ @ no__t-2 @ no__t-3 exibe informações sobre trabalhos de impressão em uma fila de impressora compartilhada. Veja a seguir um exemplo de um relatório para todos os trabalhos de impressão em uma fila para uma impressora compartilhada chamada LASER:
 >   ```
 >   printers at \\PRODUCTION
 >   Name              Job #      Size      Status
@@ -54,7 +54,7 @@ Para obter exemplos de como usar esse comando, consulte o [exemplos](#BKMK_examp
 >      USER2          85        12555      Waiting
 >      USER3          86        10222      Waiting
 >   ```
-> - Este é um exemplo de um relatório para um trabalho de impressão:
+> - Veja a seguir um exemplo de um relatório para um trabalho de impressão:
 >   ```
 >   Job #            35
 >   Status           Waiting
@@ -66,23 +66,23 @@ Para obter exemplos de como usar esse comando, consulte o [exemplos](#BKMK_examp
 >   Job parameters
 >   additional info
 >   ```
->   ## <a name="BKMK_examples"></a>Exemplos
->   Este exemplo mostra como listar o conteúdo da fila de impressão Dotmatrix no \\\Production computador:
+>   ## <a name="BKMK_examples"></a>Disso
+>   Este exemplo mostra como listar o conteúdo da fila de impressão Dotmatrix no computador \\ \ Production:
 >   ```
 >   Net print \\Production\Dotmatrix 
 >   ```
->   Este exemplo mostra como exibir informações sobre o trabalho de número 35 sobre o \\\Production computador:
+>   Este exemplo mostra como exibir informações sobre o número de trabalho 35 no computador \\ \ produção:
 >   ```
 >   Net print \\Production 35 
 >   ```
->   Este exemplo mostra como atrasar o trabalho de número 263 o \\\Production computador:
+>   Este exemplo mostra como atrasar o número do trabalho 263 no computador \\ \ Production:
 >   ```
 >   Net print \\Production 263 /hold 
 >   ```
->   Este exemplo mostra como liberar o trabalho de número 263 no \\\Production computador:
+>   Este exemplo mostra como liberar o número do trabalho 263 no computador \\ \ Production:
 >   ```
 >   Net print \\Production 263 /release 
 >   ```
 >   #### <a name="additional-references"></a>Referências adicionais
 >   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
->   [referência do comando Imprimir](print-command-reference.md)
+>   [referência de comando de impressão](print-command-reference.md)

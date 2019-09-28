@@ -1,9 +1,9 @@
 ---
 title: Novidades no IPAM
-description: Este tópico descreve a funcionalidade de gerenciamento de endereço IP (IPAM) nova ou alterada no Windows Server 2016.
+description: Este tópico descreve a funcionalidade de IPAM (gerenciamento de endereço IP) que é nova ou alterada no Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ipam
@@ -12,99 +12,99 @@ ms.topic: get-started-article
 ms.assetid: f2f2f1a5-ac2f-41b7-a495-98ad0e2a9b20
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 64de9327dedadbe421e4cceb71496de3609be398
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: fc19a58482df5dfbfb4ea324f317bbe1b27bf834
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283820"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405595"
 ---
 # <a name="whats-new-in-ipam"></a>Novidades no IPAM
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Este tópico descreve a funcionalidade de gerenciamento de endereço IP (IPAM) nova ou alterada no Windows Server 2016.  
+Este tópico descreve a funcionalidade de IPAM (gerenciamento de endereço IP) que é nova ou alterada no Windows Server 2016.  
   
-O IPAM fornece funcionalidades de administração e monitoramento altamente personalizáveis para o endereço IP e a infraestrutura DNS em uma rede Enterprise ou provedor de serviços de nuvem (CSP). Você pode monitorar, auditar e gerenciar servidores que executam o protocolo de configuração de Host dinâmico (DHCP) e o sistema de nome de domínio (DNS) usando o IPAM.  
+O IPAM fornece recursos de monitoramento e administração altamente personalizáveis para o endereço IP e a infraestrutura de DNS em uma rede corporativa ou de provedor de serviços de nuvem (CSP). Você pode monitorar, auditar e gerenciar servidores que executam o protocolo DHCP e o DNS (sistema de nomes de domínio) usando o IPAM.  
   
 ## <a name="BKMK_IPAM2012R2"></a>Atualizações no servidor IPAM  
-A seguir estão os recursos novos e aprimorados do IPAM no Windows Server 2016.  
+A seguir estão os recursos novos e aprimorados para o IPAM no Windows Server 2016.  
   
 |Recurso/funcionalidade|Novo ou melhorado|Descrição|  
 |--------------------------|-------------------|---------------|  
-|[Gerenciamento aprimorado de endereço IP](../../technologies/ipam/../../technologies/ipam/../../technologies/ipam/What-s-New-in-IPAM.md#EIP)|Melhorado|Funcionalidades do IPAM são aprimoradas para cenários como o tratamento de sub-redes /32 IPv4 e IPv6 /128 e Localizando livres sub-redes de endereço IP e intervalos em um bloco de endereço IP.|  
-|[Gerenciamento aprimorado de serviço DNS](../../technologies/ipam/../../technologies/ipam/../../technologies/ipam/What-s-New-in-IPAM.md#EDNS)|Novo|O IPAM dá suporte a registro de recurso DNS encaminhador condicional e gerenciamento de zona DNS para os servidores DNS integrado ao Active Directory e o backup em arquivo ingressado no domínio.|  
-|[Integrado DNS, DHCP e endereços IP gerenciamento (DDI)](../../technologies/ipam/../../technologies/ipam/../../technologies/ipam/What-s-New-in-IPAM.md#DDI)|Melhorado|Várias novas experiências e operações de gerenciamento do ciclo de vida integrada estão habilitadas, como visualizar todos os recursos DNS registros que pertencem a um IP endereço, automatizada de inventário de endereços IP com base em registros de recursos DNS e o gerenciamento de ciclo de vida do endereço IP para operações de DNS e DHCP.|  
-|[Suporte a várias florestas do Active Directory](#bkmk_ad)|Novo|Você pode usar o IPAM para gerenciar os servidores DNS e DHCP de várias florestas do Active Directory quando há uma relação de confiança bidirecional entre a floresta em que o IPAM é instalado e cada uma das florestas remotas.|  
-|[Limpar dados de utilização](#bkmk_purge)|Novo|Agora você pode reduzir o tamanho do banco de dados IPAM, limpando os dados de utilização de endereço IP com mais de uma data que você especificar.|  
-|[Suporte do Windows PowerShell para controle de acesso baseado em função](#bkmk_ps)|Novo|Você pode usar o Windows PowerShell para definir escopos de acesso nos objetos do IPAM.|  
+|[Gerenciamento de endereço IP aprimorado](../../technologies/ipam/../../technologies/ipam/../../technologies/ipam/What-s-New-in-IPAM.md#EIP)|Melhorado|Os recursos do IPAM são aprimorados para cenários como tratar sub-redes IPv4/32 e IPv6/128 e localizar sub-redes de endereço IP e intervalos livres em um bloco de endereço IP.|  
+|[Gerenciamento avançado de serviços de DNS](../../technologies/ipam/../../technologies/ipam/../../technologies/ipam/What-s-New-in-IPAM.md#EDNS)|Novo|O IPAM dá suporte ao registro de recurso DNS, encaminhador condicional e gerenciamento de zona DNS para servidores DNS integrados ao domínio Active Directory e com backup em arquivo.|  
+|[DNS integrado, DHCP e gerenciamento de endereço IP (DDI)](../../technologies/ipam/../../technologies/ipam/../../technologies/ipam/What-s-New-in-IPAM.md#DDI)|Melhorado|Várias experiências novas e operações de gerenciamento de ciclo de vida integradas são habilitadas, como visualização de todos os registros de recursos DNS que pertencem a um endereço IP, inventário automatizado de endereços IP com base em registros de recursos DNS e gerenciamento de ciclo de vida de endereço IP para operações de DNS e DHCP.|  
+|[Suporte a florestas múltiplas Active Directory](#bkmk_ad)|Novo|Você pode usar o IPAM para gerenciar os servidores DNS e DHCP de várias florestas do Active Directory quando há uma relação de confiança bidirecional entre a floresta em que o IPAM está instalado e cada uma das florestas remotas.|  
+|[Limpar dados de utilização](#bkmk_purge)|Novo|Agora você pode reduzir o tamanho do banco de dados do IPAM, limpando o endereço IP de utilização que é mais antigo que uma data especificada.|  
+|[Suporte do Windows PowerShell para controle de acesso baseado em função](#bkmk_ps)|Novo|Você pode usar o Windows PowerShell para definir escopos de acesso em objetos IPAM.|  
   
-### <a name="EIP"></a>Gerenciamento aprimorado de endereço IP  
-Os seguintes recursos melhoram os recursos de gerenciamento de endereço do IPAM.  
+### <a name="EIP"></a>Gerenciamento de endereço IP aprimorado  
+Os recursos a seguir melhoram os recursos de gerenciamento de endereço do IPAM.  
 >[!NOTE]
->Para a referência de comandos do PowerShell do Windows de IPAM, consulte [Cmdlets do servidor de gerenciamento de endereço IP (IPAM) no Windows PowerShell](https://docs.microsoft.com/powershell/module/ipamserver/).  
+>Para a referência de comando do IPAM do Windows PowerShell, consulte [cmdlets do servidor IPAM (gerenciamento de endereços IP) no Windows PowerShell](https://docs.microsoft.com/powershell/module/ipamserver/).  
   
-#### <a name="support-for-31-32-and-128-subnets"></a>Suporte para /31, /32 e /128 sub-redes  
-IPAM no Windows Server 2016 agora dá suporte a /31, /32 e /128 sub-redes. Por exemplo, uma sub-rede do endereço de dois (/ 31 IPv4) podem ser necessárias para uma conexão ponto a ponto entre comutadores. Além disso, algumas opções podem exigir endereços de loopback único (/ 32 para IPv4, / 128 para IPv6).  
+#### <a name="support-for-31-32-and-128-subnets"></a>Suporte para sub-redes/31,/32 e/128  
+O IPAM no Windows Server 2016 agora dá suporte às sub-redes/31,/32 e/128. Por exemplo, uma sub-rede de dois endereços (/31 IPv4) pode ser necessária para um link ponto a ponto entre comutadores. Além disso, algumas opções podem exigir endereços de loopback único (/32 para IPv4,/128 para IPv6).  
   
-#### <a name="find-free-subnets-with-find-ipamfreesubnet"></a>**Encontrar sub-redes gratuitas com IpamFreeSubnet Find**  
+#### <a name="find-free-subnets-with-find-ipamfreesubnet"></a>**Encontre sub-redes gratuitas com find-IpamFreeSubnet**  
   
-Esse comando retorna as sub-redes que estão disponíveis para alocação, dado um bloco IP, o comprimento do prefixo e o número de sub-redes solicitadas.   
+Esse comando retorna sub-redes que estão disponíveis para alocação, dado um bloco de IP, um comprimento de prefixo e um número de sub-redes solicitadas.   
   
-Se o número de sub-redes disponíveis é menor que o número de sub-redes solicitados, as sub-redes disponíveis serão retornadas com um aviso indicando que o número disponível é menor que o número solicitado.  
+Se o número de sub-redes disponíveis for menor que o número de sub-redes solicitadas, as sub-redes disponíveis serão retornadas com um aviso indicando que o número disponível é menor que o número solicitado.  
   
 >[!NOTE]
->Essa função não aloca as sub-redes na verdade, ele apenas relata sua disponibilidade. No entanto, a saída do cmdlet pode ser transferida para o **IpamSubnet adicionar** comando para criar a sub-rede.  
+>Essa função não aloca, na verdade, as sub-redes, ela apenas relata sua disponibilidade. No entanto, a saída do cmdlet pode ser canalizada para o comando **Add-IpamSubnet** para criar a sub-rede.  
   
 Para obter mais informações, consulte [Find-IpamFreeSubnet](https://docs.microsoft.com/powershell/module/ipamserver/Find-IpamFreeSubnet).  
   
-#### <a name="find-free-address-ranges-with-find-ipamfreerange"></a>**Localizar os intervalos de endereços livres com IpamFreeRange Find**  
+#### <a name="find-free-address-ranges-with-find-ipamfreerange"></a>**Localizar intervalos de endereços livres com find-IpamFreeRange**  
   
-Esse novo comando retorna disponíveis intervalos de endereços IP fornecido a uma sub-rede IP, o número de endereços que são necessários no intervalo e o número de intervalos solicitados.   
+Esse novo comando retorna intervalos de endereços IP disponíveis, dado uma sub-rede IP, o número de endereços necessários no intervalo e o número de intervalos solicitados.   
   
-O comando procura uma série contínua de endereços IP não alocados que corresponde ao número de endereços solicitados. O processo é repetido até que o número solicitado de intervalos é encontrado ou até que há não mais disponíveis de intervalos de endereços disponíveis.  
+O comando procura uma série contínua de endereços IP não alocados que correspondam ao número de endereços solicitados. O processo é repetido até que o número solicitado de intervalos seja encontrado ou até que não haja mais nenhum intervalo de endereços disponível disponível.  
   
 > [!NOTE]
-> Essa função não aloca, na verdade, os intervalos, ele apenas relata sua disponibilidade. No entanto, a saída do cmdlet pode ser transferida para o **Add-IpamRange** comando para criar o intervalo.  
+> Essa função não aloca, na verdade, os intervalos, apenas relata sua disponibilidade. No entanto, a saída do cmdlet pode ser canalizada para o comando **Add-IpamRange** para criar o intervalo.  
   
 Para obter mais informações, consulte [Find-IpamFreeRange](https://docs.microsoft.com/powershell/module/ipamserver/Find-IpamFreeRange).  
   
-### <a name="EDNS"></a>Gerenciamento aprimorado de serviço DNS  
-O IPAM no Windows Server 2016 agora dá suporte a descoberta de servidores DNS baseados em arquivo, ingressado no domínio em uma floresta do Active Directory em que o IPAM está em execução.  
+### <a name="EDNS"></a>Gerenciamento avançado de serviços de DNS  
+O IPAM no Windows Server 2016 agora dá suporte à descoberta de servidores DNS associados ao domínio e baseados em arquivo em uma floresta Active Directory na qual o IPAM está em execução.  
   
-Além disso, as funções DNS a seguir foram adicionadas:  
+Além disso, as seguintes funções DNS foram adicionadas:  
   
--   As zonas DNS e o recurso registra a coleção (diferentes daqueles que pertencem a DNSSEC) dos servidores DNS executando o Windows Server 2008 ou posterior.  
+-   As zonas DNS e a coleção de registros de recursos (além daquelas pertencentes ao DNSSEC) de servidores DNS que executam o Windows Server 2008 ou posterior.  
   
--   Configurar (criar, modificar e excluir) propriedades e operações em todos os tipos de registros de recursos (diferentes daqueles que pertencem a DNSSEC).  
+-   Configurar (criar, modificar e excluir) Propriedades e operações em todos os tipos de registros de recursos (diferentes daqueles pertencentes ao DNSSEC).  
   
--   Configurar (criar, modificar, excluir) propriedades e operações em todos os tipos de zonas DNS, incluindo a primária secundária e zonas de Stub).  
+-   Configure (crie, modifique, exclua) as propriedades e operações em todos os tipos de zonas DNS, incluindo zonas secundárias primárias e de stub).  
   
--   Disparado tarefas no secundário e zonas de stub, independentemente se eles são para frente ou zonas de pesquisa inversa. Por exemplo, as tarefas, como **transferir do mestre** ou **transferir uma cópia nova da zona do mestre**.  
+-   Tarefas disparadas em zonas secundárias e de stub, independentemente de serem zonas de pesquisa direta ou inversa. Por exemplo, tarefas como **transferir do mestre** ou **transferir uma nova cópia da zona do mestre**.  
   
--   Controle de acesso baseado em função para a configuração de DNS com suporte (registros de DNS e zonas DNS).  
+-   Controle de acesso baseado em função para a configuração de DNS com suporte (registros DNS e zonas DNS).  
   
--   Coleção de encaminhadores condicionais e de configuração (criar, excluir, editar).  
+-   Coleção e configuração de encaminhadores condicionais (criar, excluir, editar).  
   
-### <a name="DDI"></a>Integrado DNS, DHCP e endereços IP gerenciamento (DDI)  
-Quando você exibe um endereço IP no estoque de endereços IP, você tem a opção na exibição de detalhes para ver todos os registros de recurso DNS associados ao endereço IP.  
+### <a name="DDI"></a>DNS integrado, DHCP e gerenciamento de endereço IP (DDI)  
+Ao exibir um endereço IP no inventário de endereços IP, você tem a opção na exibição de detalhes para ver todos os registros de recursos de DNS associados ao endereço IP.  
   
-Como parte da coleção de registros de recursos DNS, o IPAM coleta os registros PTR para as zonas de pesquisa inversa de DNS. Para todas as zonas de pesquisa inversa que são mapeadas para qualquer intervalo de endereços IP, o IPAM cria os registros de endereço IP para todos os registros PTR que pertencem a essa região no intervalo de endereços IP mapeado correspondente. Se o endereço IP já existir, o registro PTR é simplesmente associado a esse endereço IP. Os endereços IP não serão criados automaticamente se a zona de pesquisa inversa não é mapeada para qualquer intervalo de endereços IP.  
+Como parte da coleta de registro de recurso DNS, o IPAM coleta os registros PTR para as zonas de pesquisa inversa de DNS. Para todas as zonas de pesquisa inversa que são mapeadas para qualquer intervalo de endereços IP, o IPAM cria os registros de endereço IP para todos os registros PTR pertencentes a essa zona no intervalo de endereços IP mapeado correspondente. Se o endereço IP já existir, o registro PTR será simplesmente associado a esse endereço IP. Os endereços IP não serão criados automaticamente se a zona de pesquisa inversa não estiver mapeada para nenhum intervalo de endereços IP.  
   
-Quando um registro PTR é criado em uma zona de pesquisa inversa por meio do IPAM, o inventário de endereço IP é atualizado da mesma forma, conforme descrito acima. Durante a coleta subsequente, uma vez que o endereço IP será já existe no sistema, o registro PTR será simplesmente mapeado com esse endereço IP.  
+Quando um registro PTR é criado em uma zona de pesquisa inversa por meio do IPAM, o inventário de endereço IP é atualizado da mesma maneira, conforme descrito acima. Durante a coleta subsequente, como o endereço IP já existirá no sistema, o registro PTR será simplesmente mapeado com esse endereço IP.  
   
-### <a name="bkmk_ad"></a>Suporte a várias florestas do Active Directory  
-No Windows Server 2012 R2, o IPAM foi capaz de descobrir e gerenciar servidores DNS e DHCP que pertencem à mesma floresta do Active Directory como o servidor IPAM. Agora você pode gerenciar servidores DNS e DHCP que pertencem a uma floresta diferente do AD, quando ele tem uma relação de confiança bidirecional com a floresta em que o servidor IPAM está instalado. Você pode ir para o **configurar a descoberta de servidor** caixa de diálogo caixa e adicionar domínios da outra confiável florestas que você deseja gerenciar. Após a descoberta de servidores, a experiência de gerenciamento é da mesma maneira que os servidores que pertencem à mesma floresta em que o IPAM é instalado.  
+### <a name="bkmk_ad"></a>Suporte a florestas múltiplas Active Directory  
+No Windows Server 2012 R2, o IPAM conseguiu descobrir e gerenciar servidores DNS e DHCP pertencentes à mesma floresta Active Directory que o servidor IPAM. Agora você pode gerenciar servidores DNS e DHCP que pertencem a uma floresta diferente do AD quando ele tem uma relação de confiança bidirecional com a floresta em que o servidor IPAM está instalado. Você pode ir para a caixa de diálogo **Configurar descoberta de servidor** e adicionar domínios de outras florestas confiáveis que você deseja gerenciar. Depois que os servidores são descobertos, a experiência de gerenciamento é a mesma para os servidores que pertencem à mesma floresta em que o IPAM está instalado.  
   
-Para obter mais informações, consulte [gerenciar recursos em várias florestas do Active Directory](../../technologies/ipam/Manage-Resources-in-Multiple-Active-Directory-Forests.md)  
+Para obter mais informações, consulte [gerenciar recursos em várias florestas de Active Directory](../../technologies/ipam/Manage-Resources-in-Multiple-Active-Directory-Forests.md)  
   
 ### <a name="bkmk_purge"></a>Limpar dados de utilização  
-Limpe os dados de utilização permite reduzir o tamanho de banco de dados do IPAM, excluindo dados de utilização de endereço IP antigos. Para executar a exclusão de dados, você pode especificar uma data e IPAM exclui todas as entradas de banco de dados mais antigos que ou igual à data que você fornecer.   
+Limpar dados de utilização permite que você reduza o tamanho do banco do dados IPAM excluindo dados antigos de utilização de endereço IP. Para executar a exclusão de dados, você especifica uma data e o IPAM exclui todas as entradas de banco de dado que são mais antigas ou iguais à data fornecida.   
   
 Para obter mais informações, consulte [limpar dados de utilização](../../technologies/ipam/Purge-Utilization-Data.md).  
   
 ### <a name="bkmk_ps"></a>Suporte do Windows PowerShell para controle de acesso baseado em função  
-Agora você pode usar o Windows PowerShell para configurar o controle de acesso baseado em função. Você pode usar comandos do Windows PowerShell para recuperar objetos DNS e DHCP no IPAM e altere seus escopos de acesso. Por isso, você pode escrever scripts do Windows PowerShell para atribuir escopos de acesso aos objetos a seguir.  
+Agora você pode usar o Windows PowerShell para configurar o controle de acesso baseado em função. Você pode usar comandos do Windows PowerShell para recuperar objetos DNS e DHCP no IPAM e alterar seus escopos de acesso. Por isso, você pode escrever scripts do Windows PowerShell para atribuir escopos de acesso aos objetos a seguir.  
   
 -   Espaço de endereço IP  
   
@@ -118,15 +118,15 @@ Agora você pode usar o Windows PowerShell para configurar o controle de acesso 
   
 -   Zonas do DNS  
   
--   Encaminhadores condicionais DNS  
+-   Encaminhadores condicionais de DNS  
   
--   Registros de recurso DNS  
+-   Registros de recursos de DNS  
   
 -   Servidores DHCP  
   
 -   Superescopos DHCP  
   
--   Escopos do DHCP  
+-   Escopos DHCP  
   
-Para obter mais informações, consulte [gerenciar função com base em controle de acesso com o Windows PowerShell](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Windows-PowerShell.md) e [Cmdlets do servidor de gerenciamento de endereço IP (IPAM) no Windows PowerShell](https://docs.microsoft.com/powershell/module/ipamserver/).  
+Para obter mais informações, consulte [gerenciar o controle de acesso baseado em função com](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Windows-PowerShell.md) os cmdlets do servidor do Windows PowerShell e do [IPAM (gerenciamento de endereço IP) no Windows PowerShell](https://docs.microsoft.com/powershell/module/ipamserver/).  
 

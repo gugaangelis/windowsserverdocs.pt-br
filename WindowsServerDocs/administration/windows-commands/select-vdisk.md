@@ -1,8 +1,8 @@
 ---
-title: Selecionar o vdisk
-description: 'Tópico de comandos do Windows para * * *- '
+title: selecionar vdisk
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a71a5c15c05a1e969d0720bc8e67e669d553f649
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1bfa6450d1704cde1e5ff2a50a8e3b61a30d0766
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852567"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384195"
 ---
-# <a name="select-vdisk"></a>Selecionar o vdisk
+# <a name="select-vdisk"></a>selecionar vdisk
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Seleciona o disco rígido virtual especificado \(VHD\) e desloca o foco para ele.  
+seleciona o disco rígido virtual especificado \(VHD @ no__t-1 e desloca o foco para ele.  
   
 > [!NOTE]  
-> Este comando só é aplicável ao Windows 7 e Windows Server 2008 R2.  
+> Esse comando só é aplicável ao Windows 7 e ao Windows Server 2008 R2.  
   
 ## <a name="syntax"></a>Sintaxe  
   
@@ -39,11 +39,11 @@ select vdisk file=<full path> [noerr]
   
 |Parâmetro|Descrição|  
 |-------|--------|  
-|file\=<full path>|Especifica o nome de arquivo e caminho completo de um arquivo VHD existente.|  
-|noerr|Usado somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro.|  
+|arquivo @ no__t-0 @ no__t-1|Especifica o caminho completo e o nome de arquivo de um arquivo VHD existente.|  
+|NOERR|Usado somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.|  
   
-## <a name="BKMK_examples"></a>Exemplos  
-Para deslocar o foco para o VHD chamado Test. vhd, digite:  
+## <a name="BKMK_examples"></a>Disso  
+Para deslocar o foco para o VHD chamado Test. VHD, digite:  
   
 ```  
 select vdisk file="c:\test\test.vhd"  
@@ -51,19 +51,19 @@ select vdisk file="c:\test\test.vhd"
   
 #### <a name="additional-references"></a>Referências adicionais  
   
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
--   [attach vdisk](attach-vdisk.md)  
+-   [anexar vdisk](attach-vdisk.md)  
   
--   [Compactar vdisk](compact-vdisk.md)  
+-   [Compact vdisk](compact-vdisk.md)  
   
   
   
 -   [Desanexar vdisk](detach-vdisk.md)  
   
--   [Detalhar vdisk](detail-vdisk.md)  
+-   [detalhes do VDISK](detail-vdisk.md)  
   
--   [Expandir vdisk](expand-vdisk.md)  
+-   [expandir vdisk](expand-vdisk.md)  
   
 -   [Mesclar vdisk](merge-vdisk.md)  
   

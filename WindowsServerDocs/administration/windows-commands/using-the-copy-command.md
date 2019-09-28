@@ -1,8 +1,8 @@
 ---
 title: Usando o comando de cópia
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2e6c5dd84463b227735e4da83165350b180b1d67
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9e0511e12fc01fbdc98840c7beae55b4ee5b9176
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874107"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363613"
 ---
 # <a name="using-the-copy-command"></a>Usando o comando de cópia
 
@@ -28,5 +28,5 @@ Copia uma imagem ou um grupo de drivers.
 ## <a name="subcommands"></a>Subcomandos
 |Subcomando|Descrição|
 |-------|--------|
-|[Usando a comando de copiar imagem](using-the-copy-image-command.md)|Imagens de cópias que estão dentro do mesmo grupo de imagem.|
-|[Usando o comando de cópia DriverGroup](using-the-copy-drivergroup-command.md)|Copia um grupo de driver existente no servidor.|
+|[Usando o comando copy-Image](using-the-copy-image-command.md)|Copia imagens que estão dentro do mesmo grupo de imagens.|
+|[Usando o comando copy-driver](using-the-copy-drivergroup-command.md)|Copia um grupo de drivers existente no servidor.|

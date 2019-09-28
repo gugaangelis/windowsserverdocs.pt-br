@@ -1,7 +1,7 @@
 ---
 ms.assetid: f2eefaaf-2817-4ac7-abac-d2b65fa971dc
 title: Transação fsutil
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: c225c99919a2558559b1ec7a47b61d716e199a73
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 286660baad699e21abe751a9cb956b1ac7613e80
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66439005"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376864"
 ---
 # <a name="fsutil-transaction"></a>Transação fsutil
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7, Windows 2008, Windows Vista
@@ -42,15 +42,15 @@ fsutil transaction [rollback] <GUID>
 |  FileInfo  |                                                                                                                              Exibe informações de transação para o arquivo especificado.                                                                                                                               |
 | <Filename> |                                                                                                                                         Especifica o caminho completo e nome de arquivo.                                                                                                                                          |
 |    lista    |                                                                                                                                 Exibe uma lista de transações em execução.                                                                                                                                  |
-|   consulta    | Exibe informações para a transação especificada.<br /><br />-Se **fsutil transação consultar arquivos** for especificado, as informações do arquivo serão exibidas somente para a transação especificada.<br />-Se **fsutil transação query** for especificado, todas as informações para a transação serão exibidas. |
+|   query    | Exibe informações para a transação especificada.<br /><br />-Se **fsutil transação consultar arquivos** for especificado, as informações do arquivo serão exibidas somente para a transação especificada.<br />-Se **fsutil transação query** for especificado, todas as informações para a transação serão exibidas. |
 |  reversão  |                                                                                                                                Reverte uma transação especificada para o início.                                                                                                                                 |
 
 ### <a name="remarks"></a>Comentários
 
 -   O NTFS Transacional foi introduzido no Windows Server 2008.
 
-### <a name="BKMK_examples"></a>Exemplos
-Para exibir informações de transação para o arquivo c:\test.txt., digite:
+### <a name="BKMK_examples"></a>Disso
+Para exibir informações de transação para o arquivo c:\test.txt, digite:
 
 ```
 fsutil transaction fileinfo c:\test.txt  

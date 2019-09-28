@@ -1,9 +1,9 @@
 ---
 title: Etapa 1 configurar a infraestrutura básica do DirectAccess
-description: Este tópico faz parte do guia de implantar um único servidor DirectAccess usando o Introdução ao Assistente para Windows Server 2016
+description: Este tópico faz parte do guia implantar um único servidor DirectAccess usando o assistente de Introdução para Windows Server 2016
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,18 +12,18 @@ ms.topic: article
 ms.assetid: ba4de2a4-f237-4b14-a8a7-0b06bfcd89ad
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2a8fb9565c5a84844104b202d749e74337101601
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 2cd84949dddf75730aca6302f1244f784b5933d0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281732"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388566"
 ---
 # <a name="step-1-configure-the-basic-directaccess-infrastructure"></a>Etapa 1 configurar a infraestrutura básica do DirectAccess
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Este tópico descreve como configurar a infraestrutura necessária a uma implantação básica do DirectAccess que utiliza um servidor individual do DirectAccess em um ambiente misto de IPv4 e IPv6. Antes de começar as etapas de implantação, certifique-se de que você tenha concluído as etapas de planejamento descritas em [planejar uma implantação básica do DirectAccess](../../../remote-access/directaccess/single-server-wizard/Plan-a-Basic-DirectAccess-Deployment.md).  
+Este tópico descreve como configurar a infraestrutura necessária a uma implantação básica do DirectAccess que utiliza um servidor individual do DirectAccess em um ambiente misto de IPv4 e IPv6. Antes de iniciar as etapas de implantação, verifique se você concluiu as etapas de planejamento descritas em [planejar uma implantação básica do DirectAccess](../../../remote-access/directaccess/single-server-wizard/Plan-a-Basic-DirectAccess-Deployment.md).  
   
 |Tarefa|Descrição|  
 |----|--------|  
@@ -84,9 +84,9 @@ Configure o roteamento na rede corporativa da seguinte forma:
 ## <a name="ConfigFirewalls"></a>Configurar firewalls  
 Ao usar firewalls adicionais na sua implantação, aplique as seguintes exceções de firewall voltado para a Internet do tráfego de Acesso Remoto quando o servidor de Acesso Remoto está na Internet IPv4:  
   
--   -IP de tráfego 6to4 protocolo 41 de entrada e saída.  
+-   tráfego 6to4-protocolo IP 41 de entrada e saída.  
   
--   IP-HTTPS-porta de destino 443 do protocolo TCP (Transmission Control) e a porta de origem TCP 443 de saída. Quando o servidor de Acesso Remoto tem um único adaptador de rede e o servidor de local de rede está no servidor de acesso remoto, a porta TCP 62000 também é necessária.  
+-   IP-HTTPS-protocolo TCP porta de destino 443 e saída da porta de origem TCP 443. Quando o servidor de Acesso Remoto tem um único adaptador de rede e o servidor de local de rede está no servidor de acesso remoto, a porta TCP 62000 também é necessária.  
   
     > [!NOTE]  
     > Essa isenção deve ser configurada no servidor de acesso remoto. Todas as outras isenções devem ser configuradas no firewall de borda.  
@@ -109,9 +109,9 @@ Ao usar firewalls adicionais, aplique as seguintes exceções do firewall de red
 ## <a name="ConfigDNS"></a>Configurar o servidor DNS  
 Você deve configurar manualmente uma entrada DNS para o site do servidor de local da rede interna da sua implantação.  
   
-### <a name="NLS_DNS"></a>Para criar o local de rede de servidor e NCSI investigação registros DNS  
+### <a name="NLS_DNS"></a>Para criar o servidor de local de rede e os registros DNS de investigação do NCSI  
   
-1.  No servidor DNS da rede interna, execute **Dnsmgmt. msc** e, em seguida, pressione ENTER.  
+1.  No servidor DNS da rede interna, execute **DNSMGMT. msc** e pressione Enter.  
   
 2.  No painel esquerdo do console **Gerenciador DNS**, expanda a zona de pesquisa direta para o seu domínio. Clique com o botão direito no domínio e clique em **Novo Host (A ou AAAA)** .  
   
@@ -121,7 +121,7 @@ Você deve configurar manualmente uma entrada DNS para o site do servidor de loc
   
 5.  Clique em **Concluído**.  
   
-![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
+0Windows-](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
 
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -132,11 +132,11 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 Você também deve configurar entradas DNS para o seguinte:  
   
--   **O servidor IP-HTTPS** clientes DirectAccess - devem ser capazes de resolver o nome DNS do servidor de acesso remoto da Internet.  
+-   **O servidor IP-HTTPS** -os clientes DirectAccess devem ser capazes de resolver o nome DNS do servidor de acesso remoto da Internet.  
   
--   **Verificação de revogação de CRL** - DirectAccess usa para a conexão IP-HTTPS entre os clientes DirectAccess e o servidor de acesso remoto e para a conexão baseada em HTTPS entre o cliente DirectAccess de verificação de revogação de certificado e o servidor de local de rede. Em ambos os casos, os clientes do DirectAccess devem poder resolver e acessar o local do ponto de distribuição da CRL.  
+-   **Verificação de revogação de CRL** – o DirectAccess usa a verificação de revogação de certificado para a conexão IP-HTTPS entre clientes DirectAccess e o servidor de acesso remoto e para a conexão baseada em https entre o cliente DirectAccess e a rede servidor de localização. Em ambos os casos, os clientes do DirectAccess devem poder resolver e acessar o local do ponto de distribuição da CRL.  
   
-## <a name="ConfigAD"></a>Configurar o Active Directory  
+## <a name="ConfigAD"></a>Configurar Active Directory  
 O servidor de Acesso Remoto e todos os computadores cliente do DirectAccess devem ser ingressados em um domínio do Active Directory. Os computadores cliente do DirectAccess devem ser membros de um dos seguintes tipos de domínio:  
   
 -   Domínios pertencentes à mesma floresta que o servidor de Acesso Remoto.  
@@ -165,7 +165,7 @@ O servidor de Acesso Remoto e todos os computadores cliente do DirectAccess deve
   
 #### <a name="to-join-client-computers-to-the-domain"></a>Para ingressar computadores cliente no domínio  
   
-1.  Run **explorer.exe**.  
+1.  Execute o **Explorer. exe**.  
   
 2.  Clique com o botão direito do mouse no ícone Computador e em **Propriedades**.  
   
@@ -183,7 +183,7 @@ O servidor de Acesso Remoto e todos os computadores cliente do DirectAccess deve
   
 9. Na caixa de diálogo **Propriedades do Sistema**, clique em Fechar. Clique em **Reiniciar Agora** quando solicitado.  
   
-![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
+0Windows-](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -195,27 +195,27 @@ Restart-Computer
 ```  
   
 ## <a name="ConfigGPOs"></a>Configurar GPOs  
-Para implantar o acesso remoto, você precisará de pelo menos de dois objetos de diretiva de grupo: um objeto de diretiva de grupo contém configurações para o servidor de acesso remoto e o outro contém configurações para computadores cliente do DirectAccess. Quando você configurar o acesso remoto, o assistente cria automaticamente o objeto de diretiva de grupo necessário. No entanto, se sua organização impor uma convenção de nomenclatura, ou você não tenha as permissões necessárias para criar ou editar objetos de diretiva de grupo, eles devem ser criados antes de configurar o acesso remoto.  
+Para implantar o acesso remoto, você precisa de um mínimo de dois objetos de diretiva de Grupo: um objeto de política de grupo contém configurações para o servidor de acesso remoto e uma delas contém configurações para computadores cliente do DirectAccess. Quando você configura o acesso remoto, o assistente cria automaticamente o objeto de diretiva de grupo necessário. No entanto, se sua organização aplicar uma Convenção de nomenclatura ou se você não tiver as permissões necessárias para criar ou editar objetos de política de grupo, elas deverão ser criadas antes de configurar o acesso remoto.  
   
-Para criar um objeto de diretiva de grupo, consulte [criar e editar um objeto de diretiva de grupo](https://technet.microsoft.com/library/cc754740.aspx).  
+Para criar um objeto de política de grupo, consulte [criar e editar um objeto de política de grupo](https://technet.microsoft.com/library/cc754740.aspx).  
   
 > [!IMPORTANT]  
-> O administrador pode vincular manualmente o objeto de diretiva de grupo do DirectAccess a uma unidade organizacional usando as seguintes etapas:  
+> O administrador pode vincular manualmente o objeto de política de grupo do DirectAccess a uma unidade organizacional usando estas etapas:  
 >   
 > 1.  Antes de configurar o DirectAccess, vincule os GPOs criados às respectivas Unidades Organizacionais.  
 > 2.  Configure o DirectAccess, especificando um grupo de segurança para computadores cliente.  
 > 3.  O administrador pode ou não ter permissões para vincular os Objetos de Política de Grupo ao domínio. De qualquer maneira, os Objetos de Política de Grupo serão configurados automaticamente. Se os GPOs já estiverem vinculados a uma OU, os links não serão removidos. E os GPOs não serão vinculados ao domínio. Para um GPO de servidor, a OU deverá conter o objeto de computador do servidor, ou o GPO será vinculado à raiz do domínio.  
-> 4.  Se a vinculação à OU não foi feita antes de executar o Assistente do DirectAccess, depois de concluir a configuração, o administrador poderá vincular os Objetos de Política de Grupo do DirectAccess às Unidades Organizacionais requeridas. O link para o domínio pode ser removido. As etapas para vincular um objeto de diretiva de grupo a uma unidade organizacional pode ser encontrado [aqui](https://technet.microsoft.com/library/cc732979.aspx)  
+> 4.  Se a vinculação à OU não foi feita antes de executar o Assistente do DirectAccess, depois de concluir a configuração, o administrador poderá vincular os Objetos de Política de Grupo do DirectAccess às Unidades Organizacionais requeridas. O link para o domínio pode ser removido. As etapas para vincular um objeto de política de grupo a uma unidade organizacional podem ser encontradas [aqui](https://technet.microsoft.com/library/cc732979.aspx)  
   
 > [!NOTE]  
-> Se um objeto de diretiva de grupo foi criado manualmente, é possível durante a configuração do DirectAccess que o objeto de diretiva de grupo não estará disponível. O objeto de diretiva de grupo pode não ter sido replicado no controlador de domínio mais próximo ao computador de gerenciamento. Neste caso, o administrador pode aguardar a replicação ser concluída, ou forçá-la.  
+> Se um objeto de política de grupo tiver sido criado manualmente, será possível durante a configuração do DirectAccess que o objeto de política de grupo não estará disponível. O objeto de política de grupo pode não ter sido replicado para o controlador de domínio mais próximo para o computador de gerenciamento. Neste caso, o administrador pode aguardar a replicação ser concluída, ou forçá-la.  
   
 ## <a name="ConfigSGs"></a>Configurar grupos de segurança  
-As configurações do DirectAccess contidas os objetos de diretiva de grupo de computador do cliente são aplicadas somente aos computadores que são membros dos grupos de segurança que você especificar ao configurar o acesso remoto.  
+As configurações do DirectAccess contidas nos objetos de política de grupo do computador cliente são aplicadas somente a computadores que são membros dos grupos de segurança que você especifica ao configurar o acesso remoto.  
   
 ### <a name="Sec_Group"></a>Para criar um grupo de segurança para clientes do DirectAccess  
   
-1.  Execute **DSA. msc**. No console **Usuários e Computadores do Active Directory**, no painel esquerdo, expanda o domínio que conterá o grupo de segurança, clique com o botão direito do mouse em **Usuários**, aponte para **Novo** e clique em **Grupo**.  
+1.  Execute o **DSA. msc**. No console **Usuários e Computadores do Active Directory**, no painel esquerdo, expanda o domínio que conterá o grupo de segurança, clique com o botão direito do mouse em **Usuários**, aponte para **Novo** e clique em **Grupo**.  
   
 2.  Na caixa de diálogo **Novo Objeto - Grupo**, em **Nome do grupo**, digite o nome do grupo de segurança.  
   
@@ -227,7 +227,7 @@ As configurações do DirectAccess contidas os objetos de diretiva de grupo de c
   
 6.  Na caixa de diálogo **Selecionar Usuários, Contatos, Computadores ou Contas de Serviço**, selecione os computadores cliente que você deseja habilitar para o DirectAccess e clique em **OK**.  
   
-![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**comandos equivalentes do Windows PowerShell**  
+0Windows-](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**comandos equivalentes do Windows PowerShell** do powershell do @no__t  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   

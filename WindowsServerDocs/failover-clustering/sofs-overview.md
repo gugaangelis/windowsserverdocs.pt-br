@@ -1,19 +1,19 @@
 ---
 title: Visão geral do servidor de arquivos de expansão para dados de aplicativos
 description: Visão geral do recurso de Servidor de Arquivos de Escalabilidade Horizontal para o Windows Server 201 R2 e o Windows Server 2012.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 80bf85caac6f84e0d6da0c6139e39f3823b3a961
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: da7c90bdb1c4a2fbdb2e518f34abe9cbfef2fc29
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868712"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392038"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>Visão geral do servidor de arquivos de expansão para dados de aplicativos
 
@@ -102,19 +102,19 @@ A tabela a seguir lista os recursos do SMB 3.0, os sistemas de arquivos comuns d
 <td>Sim</td>
 </tr>
 <tr class="even">
-<td>Sistema de arquivos</td>
+<td>Sistema de Arquivos</td>
 <td>NTFS</td>
 <td>Sim</td>
 <td>N/D</td>
 </tr>
 <tr class="odd">
-<td>Sistema de arquivos</td>
+<td>Sistema de Arquivos</td>
 <td><a href="https://docs.microsoft.com/windows-server/storage/refs/refs-overview">ReFS</a>(sistema de arquivos resiliente)</td>
 <td>Recomendado com Espaços de Armazenamento Diretos</td>
 <td>Recomendado com Espaços de Armazenamento Diretos</td>
 </tr>
 <tr class="even">
-<td>Sistema de arquivos</td>
+<td>Sistema de Arquivos</td>
 <td>Sistema de arquivos CSV (Volume Compartilhado Clusterizado)</td>
 <td>N/D</td>
 <td>Sim</td>

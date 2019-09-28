@@ -1,7 +1,7 @@
 ---
 title: a extensão do comutador virtual WFP deve ser habilitada se for exigida pelas extensões de terceiros
-description: Versão online do texto para essa regra do analisador de práticas recomendadas.
-ms.prod: windows-server-threshold
+description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,53 +10,53 @@ ms.topic: article
 ms.assetid: 8aa8a9a5-e3fa-4c9b-8331-ba5a3de22429
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 5afe706c246276597b32400109370ba3129e5a24
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 41ab2bac7c98608b051c74d2fbfb8359f493385c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850617"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364621"
 ---
 # <a name="the-wfp-virtual-switch-extension-should-be-enabled-if-it-is-required-by-third-party-extensions"></a>a extensão do comutador virtual WFP deve ser habilitada se for exigida pelas extensões de terceiros
 
 >Aplica-se a: Windows Server 2016
 
-Para obter mais informações sobre as práticas recomendadas e varreduras, consulte [Run Best Practices Analyzer Scans e Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
+Para obter mais informações sobre práticas recomendadas e verificações, consulte [executar verificações de analisador de práticas recomendadas e gerenciar resultados de verificação](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
 |Propriedade|Detalhes|  
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
-|**Recurso do produto**|Hyper-V|  
-|**Severidade**|Aviso|  
-|**categoria**|Configuração|  
+|**Produto/recurso**|Hyper-V|  
+|**Severity**|Aviso|  
+|**Categorias**|Configuração|  
   
-Nas seções a seguir, itálico indica o texto de interface do usuário que aparece na ferramenta Analisador de práticas recomendadas para esse problema.  
+Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
 ## <a name="issue"></a>**Problema**  
-*A extensão de comutador virtual do Windows WFP (plataforma) está desabilitada.*  
+*A extensão do comutador virtual da Windows Filtering Platform (WFP) está desabilitada.*  
   
-## <a name="impact"></a>**Impacto**  
-*Algumas extensões de comutador virtual de terceiros podem não funcionar corretamente os comutadores virtuais a seguir:*  
+## <a name="impact"></a>**Causa**  
+*Algumas extensões de comutador virtual de terceiros podem não funcionar corretamente nos seguintes comutadores virtuais:*  
   
-\<lista de máquinas virtuais >  
+\<list de máquinas virtuais >  
   
 ## <a name="resolution"></a>**Resolução**  
-*Use o cmdlet do Windows PowerShell, Enable-VMSwitchExtension, para habilitar a plataforma para filtros do Windows, se for exigida pelas extensões de terceiros.*  
+*Use o cmdlet do Windows PowerShell, Enable-VMSwitchExtension, para habilitar a plataforma de filtragem do Windows se ela for exigida por extensões de terceiros.*  
   
-### <a name="enable-the-windows-filtering-platform-using-windows-powershell"></a>Habilitar a plataforma para filtros do Windows usando o Windows PowerShell  
+### <a name="enable-the-windows-filtering-platform-using-windows-powershell"></a>Habilitar a plataforma de filtragem do Windows usando o Windows PowerShell  
   
-1.  Abra o Windows PowerShell. (Na área de trabalho, clique em **inicie** e comece a digitar **Windows PowerShell**.)  
+1.  Abra o Windows PowerShell. (Na área de trabalho, clique em **Iniciar** e comece a digitar **Windows PowerShell**.)  
   
-2.  Clique com botão direito **Windows PowerShell** e clique em **executar como administrador**.  
+2.  Clique com o botão direito do mouse em **Windows PowerShell** e clique em **Executar como administrador**.  
   
-3.  Execute este comando depois de substituir externo com o nome de seu comutador externo:  
+3.  Execute este comando depois de substituir external pelo nome do seu comutador externo:  
   
 ```  
 Enable-VMSwitchExtension -VMSwitchName External -Name "Microsoft Windows Filtering Platform"  
 ```  
   
 ## <a name="see-also"></a>Consulte também  
-[Enable-VMSwitchExtension](https://technet.microsoft.com/library/hh848541.aspx)  
+[Habilitar-VMSwitchExtension](https://technet.microsoft.com/library/hh848541.aspx)  
   
 
 

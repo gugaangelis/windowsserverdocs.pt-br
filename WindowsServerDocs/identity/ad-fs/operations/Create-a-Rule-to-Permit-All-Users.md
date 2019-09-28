@@ -7,54 +7,54 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: abb00e14dd0b3ce7b06efba816fbd7452e7bf0f1
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 1356218c5f9f47073f007286e8acfdf4c3608b73
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189408"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407625"
 ---
 # <a name="create-a-rule-to-permit-all-users"></a>Criar uma regra para permitir todos os usuários
 
-No Windows Server 2016, você pode usar um **política de controle de acesso** para criar uma regra que dará todos os usuários acesso a uma terceira parte confiável.  No Windows Server 2012 R2, usando o **permitir todos os usuários** modelo de regra nos serviços de Federação do Active Directory \(AD FS\), você pode criar uma regra de autorização que fornecerá todos os usuários acesso para a terceira parte confiável de terceiros. 
+No Windows Server 2016, você pode usar uma **política de controle de acesso** para criar uma regra que dará a todos os usuários acesso a uma terceira parte confiável.  No Windows Server 2012 R2, usando o modelo de regra **permitir todos os usuários** no serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-2, você pode criar uma regra de autorização que dará a todos os usuários acesso à terceira parte confiável. 
 
-Você pode usar regras de autorização adicionais para restringir o acesso. Usuários com permissão de acesso à terceira parte confiável do Serviço de Federação ainda podem ter o serviço negado pela terceira parte confiável.  
+Você pode usar regras de autorização adicionais para restringir ainda mais o acesso. Usuários com permissão de acesso à terceira parte confiável do Serviço de Federação ainda podem ter o serviço negado pela terceira parte confiável.  
   
-Você pode usar os procedimentos a seguir para criar uma regra de declaração com o snap de gerenciamento do AD FS\-no.  
+Você pode usar os procedimentos a seguir para criar uma regra de declaração com o snap do AD FS Management @ no__t-0in.  
   
-A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e associações de grupos em [domínio grupos padrão Local e](https://go.microsoft.com/fwlink/?LinkId=83477). 
+A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477). 
 
-## <a name="to-create-a-rule-to-permit-all-users-in-windows-server-2016"></a>Para criar uma regra para permitir que todos os usuários no Windows Server 2016
+## <a name="to-create-a-rule-to-permit-all-users-in-windows-server-2016"></a>Para criar uma regra para permitir todos os usuários no Windows Server 2016
 
-1.  No Gerenciador do servidor, clique em **ferramentas**e, em seguida, selecione **gerenciamento do AD FS**.  
+1.  Em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, selecione **Gerenciamento de AD FS**.  
   
-2.  Na árvore de console, sob **do AD FS**, clique em **terceira**. 
+2.  Na árvore de console, em **AD FS**, clique em **relações de confiança**de terceira parte confiável. 
 ![Criar regra](media/Create-a-Rule-to-Permit-All-Users/permitall1.PNG)
 
-3.  Clique com botão direito do **terceira parte confiável** que você deseja permitir o acesso a e selecione **Editar política de controle de acesso**.  
+3.  Clique com o botão direito do mouse na **relação de confiança** de terceira parte confiável à qual você deseja permitir acesso e selecione **Editar política de controle de acesso**.  
 ![Criar regra](media/Create-a-Rule-to-Permit-All-Users/permitall2.PNG)
 
-4. No acesso select de política de controle **permitir todos** e, em seguida, clique em **Apply** e **Okey**.
+4. Na política de controle de acesso, selecione **permitir todos** e, em seguida, clique em **aplicar** e em **OK**.
 ![Criar regra](media/Create-a-Rule-to-Permit-All-Users/permitall3.PNG)
   
-## <a name="to-create-a-rule-to-permit-all-users-in-windows-server-2012-r2"></a>Para criar uma regra para permitir que todos os usuários no Windows Server 2012 R2 
+## <a name="to-create-a-rule-to-permit-all-users-in-windows-server-2012-r2"></a>Para criar uma regra para permitir todos os usuários no Windows Server 2012 R2 
   
-1.  No Gerenciador do servidor, clique em **ferramentas**e, em seguida, selecione **gerenciamento do AD FS**.  
+1.  Em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, selecione **Gerenciamento de AD FS**.  
   
-2.  Na árvore de console, sob **do AD FS\\relações de confiança\\terceira**, clique em uma relação de confiança específica na lista de onde você deseja criar essa regra.  
+2.  Na árvore de console, em **AD FS\\relações\\de confiança confianças de terceira parte confiável**, clique em uma relação de confiança específica na lista em que você deseja criar essa regra.  
 
-3.  À direita\-clique a relação de confiança selecionada e, em seguida, clique em **editar regras de declaração**.  
+3.  Clique\-com o botão direito do mouse na relação de confiança selecionada e clique em **Editar regras de declaração**.  
 ![Criar regra](media/Create-a-Rule-to-Permit-All-Users/permitall4.PNG)  
 
-4.  No **editar regras de declaração** caixa de diálogo, clique o **regras de autorização de emissão** guia ou o **regras de autorização de delegação** guia \(com base no tipo de regra de autorização precisar\)e, em seguida, clique em **Adicionar regra** para iniciar o **Adicionar Assistente de regra de declaração de autorização**.  
+4.  Na caixa de diálogo **Editar regras de declaração** , clique na guia **regras de autorização de emissão** ou na guia \(regras de autorização de **delegação** com base no tipo de regra de autorização que você precisa\)e clique em **Adicionar regra** para iniciar o **Assistente para Adicionar regra de declaração de autorização**.  
 ![Criar regra](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)  
-5.  Sobre o **Selecionar modelo de regra** página, em **modelo de regra de declaração**, selecione **permitir todos os usuários** na lista e, em seguida, clique **Avançar**.  
+5.  Na página **selecionar modelo de regra** , em **modelo de regra de declaração**, selecione **permitir todos os usuários** na lista e clique em **Avançar**.  
 ![Criar regra](media/Create-a-Rule-to-Permit-All-Users/permitall6.PNG)    
-6.  Sobre o **configurar regra** , clique em **concluir**.  
+6.  Na página **Configurar regra** , clique em **concluir**.  
   
-7.  No **editar regras de declaração** caixa de diálogo, clique em **Okey** para salvar a regra.  
+7.  Na caixa de diálogo **Editar regras de declaração** , clique em **OK** para salvar a regra.  
 
 ## <a name="additional-references"></a>Referências adicionais 
 [Configurar regras de declaração](Configure-Claim-Rules.md)  

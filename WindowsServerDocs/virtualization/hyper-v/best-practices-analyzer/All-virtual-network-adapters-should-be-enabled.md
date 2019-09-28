@@ -1,7 +1,7 @@
 ---
 title: Todos os adaptadores de rede virtual devem ser habilitados
-description: Versão online do texto para essa regra do analisador de práticas recomendadas.
-ms.prod: windows-server-threshold
+description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,12 +10,12 @@ ms.topic: article
 ms.assetid: b17d647d-a34a-44de-ada6-01a2bf5eeb48
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 0a769c3203f6c6946f01cd91b66fbec38af83bbd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fce564fdb47d0677b36078f3d8446579bc06816c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837127"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366592"
 ---
 # <a name="all-virtual-network-adapters-should-be-enabled"></a>Todos os adaptadores de rede virtual devem ser habilitados
 
@@ -26,25 +26,25 @@ ms.locfileid: "59837127"
 |Propriedade|Detalhes|  
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
-|**Recurso do produto**|Hyper-V|  
-|**Severidade**|Aviso|  
-|**categoria**|Configuração|  
+|**Produto/recurso**|Hyper-V|  
+|**Severity**|Aviso|  
+|**Categorias**|Configuração|  
   
-Nas seções a seguir, itálico indica o texto de interface do usuário que aparece na ferramenta Analisador de práticas recomendadas para esse problema.  
+Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
 ## <a name="issue"></a>Problema  
   
-*Um ou mais adaptadores de rede virtual associados a um adaptador de rede física são desabilitados no sistema operacional de gerenciamento.*  
+*Um ou mais adaptadores de rede virtual associados a um adaptador de rede física estão desabilitados no sistema operacional de gerenciamento.*  
   
 ## <a name="impact"></a>Impacto  
   
-*A configuração deste servidor não é ideal.*  
+*A configuração deste servidor não é a ideal.*  
   
-Sistema operacional de gerenciamento não pode se conectar a uma rede física de (externa) usando um dos adaptadores de rede física neste computador porque ela está associada a um adaptador de rede virtual desabilitado.  
+O sistema operacional de gerenciamento não pode se conectar a uma rede física (externa) usando um dos adaptadores de rede física neste computador porque ele está associado a um adaptador de rede virtual desabilitado.  
   
 ## <a name="resolution"></a>Resolução  
   
-*Use configurações de Internet e rede para habilitar o adaptador de rede virtual. Ou, use o Gerenciador de comutador Virtual para reconfigurar o comutador virtual externo para que ele não é compartilhado com o sistema operacional de gerenciamento.*  
+*Use rede & configurações da Internet para habilitar o adaptador de rede virtual. Ou use o Gerenciador de comutador virtual para reconfigurar o comutador virtual externo para que ele não seja compartilhado com o sistema operacional de gerenciamento.*  
   
 
 

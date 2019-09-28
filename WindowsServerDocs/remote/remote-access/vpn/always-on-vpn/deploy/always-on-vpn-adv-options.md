@@ -2,7 +2,7 @@
 title: Recursos avançados de VPN Always On
 description: Além do cenário de implantação fornecido nessa implantação, você pode adicionar outros recursos avançados de VPN para melhorar a segurança e a disponibilidade de sua conexão VPN.
 ms.assetid: 51a1ee61-3ffe-4f65-b8de-ff21903e1e74
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.date: 07/24/19
@@ -10,12 +10,12 @@ ms.author: pashort, v-tea
 author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: e09a23b6f1c14c4c14b00fd19d84d0abb71d0163
-ms.sourcegitcommit: e40fce7b8b4bc0bef278e676435306f14078cf00
+ms.openlocfilehash: aee2f14d0d99fd453fa6fb1f3147a515ca57abb1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68787211"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366906"
 ---
 # <a name="advanced-features-of-always-on-vpn"></a>Recursos avançados do Always On VPN
 
@@ -26,7 +26,7 @@ ms.locfileid: "68787211"
 
 Além dos cenários de implantação que são fornecidos, você pode adicionar outros recursos avançados de VPN para melhorar a segurança e a disponibilidade de sua conexão VPN. Por exemplo, o servidor VPN pode usar esses recursos para ajudar a garantir que o cliente de conexão esteja íntegro antes de permitir uma conexão.
 
-## <a name="high-availability"></a>Alta disponibilidade
+## <a name="high-availability"></a>Alta Disponibilidade
 
 A seguir estão as opções adicionais para alta disponibilidade.
 

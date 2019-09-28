@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getproxybypasslist
-description: Tópico de comandos do Windows para **getproxybypasslist bitsadmin** -recupera a lista de bypass de proxy para o trabalho especificado.
+description: Tópico de comandos do Windows para **Bitsadmin getproxybypasslist** – recupera a lista de bypass de proxy para o trabalho especificado.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 020b8fc0019eb103a0e469258be8705b80dd45de
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 87cc131402707eac40329750e98218ec52083b94
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854107"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381421"
 ---
 # <a name="bitsadmin-getproxybypasslist"></a>bitsadmin getproxybypasslist
 
@@ -34,19 +34,19 @@ bitsadmin /GetProxyBypassList <Job>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Job|Nome de exibição ou o GUID do trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
 
 ## <a name="remarks"></a>Comentários
 
-A lista de bypass contém os nomes de host ou endereços IP ou ambos, que não devem ser roteadas através de um proxy. A lista pode conter "\<local >" para referir-se a todos os servidores na mesma LAN. A lista pode ser um ponto e vírgula ou delimitada por espaço.
+A lista de bypass contém os nomes de host ou endereços IP, ou ambos, que não devem ser roteados por meio de um proxy. A lista pode conter "\<local >" para se referir a todos os servidores na mesma LAN. A lista pode ser ponto e vírgula ou delimitado por espaço.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir recupera a lista de bypass de proxy do trabalho nomeado *myDownloadJob*.
+O exemplo a seguir recupera a lista de bypass de proxy para o trabalho chamado *myDownloadJob*.
 ```
 C:\>bitsadmin /GetProxyBypassList myDownloadJob
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

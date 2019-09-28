@@ -1,7 +1,7 @@
 ---
 title: Configurar conexões de VPN Always On em cliente do Windows 10
 description: Nesta etapa, você aprenderá sobre as opções e o esquema do ProfileXML e configurará os computadores cliente do Windows 10 para se comunicar com essa infraestrutura com uma conexão VPN.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.date: 05/29/2018
@@ -10,12 +10,12 @@ ms.localizationpriority: medium
 ms.author: pashort
 author: shortpatti
 ms.reviewer: deverette
-ms.openlocfilehash: c3ac8295d048c599a1cb6d1ed141cd63a7a73f47
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9621f9bdca0416965861112ba23c1c8dd731f67b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871341"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404291"
 ---
 # <a name="step-6-configure-windows-10-client-always-on-vpn-connections"></a>Etapa 6. Configurar conexões VPN Always On cliente do Windows 10
 
@@ -863,7 +863,7 @@ Para usar o Intune para implantar o acesso remoto do Windows 10 Always On perfis
 >[!NOTE]
 >O Intune agora usa grupos do Azure AD. Se Azure AD Connect tiver sincronizado o grupo de usuários VPN do local para o Azure AD e os usuários forem atribuídos ao grupo de usuários VPN, você estará pronto para continuar.
 
-Crie a política de configuração de dispositivo VPN para configurar os computadores cliente do Windows 10 para todos os usuários adicionados ao grupo. Como o modelo do Intune fornece parâmetros de VPN, copie \<apenas o \<EapHostConfig >/EapHostConfig > parte do arquivo VPN_ProfileXML.
+Crie a política de configuração de dispositivo VPN para configurar os computadores cliente do Windows 10 para todos os usuários adicionados ao grupo. Como o modelo do Intune fornece parâmetros de VPN, copie apenas a parte \<EapHostConfig > \</EapHostConfig > do arquivo VPN_ProfileXML.
 
 ### <a name="create-the-always-on-vpn-configuration-policy"></a>Criar a política de configuração de VPN Always On
 
@@ -934,7 +934,7 @@ Para testar a política de configuração, entre em um computador cliente com Wi
 
 Você concluiu a implantação de Always On VPN.  Para outros recursos que você pode configurar, consulte a tabela abaixo:
 
-|Se desejar...  |Em seguida, consulte...  |
+|Se você quiser...  |Em seguida, consulte...  |
 |---------|---------|
 |Configurar o acesso condicional para VPN    |[Etapa 7. Adicional Configurar o acesso condicional para conectividade VPN usando o](../../ad-ca-vpn-connectivity-windows10.md)Azure AD: Nesta etapa, você pode ajustar como os usuários de VPN autorizados acessam seus recursos usando o [acesso condicional do Azure Active Directory (AD do Azure)](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal). Com o acesso condicional do Azure AD para conectividade de VPN (rede virtual privada), você pode ajudar a proteger as conexões VPN. O Acesso Condicional é um mecanismo de avaliação com base em política que permite que você crie regras de acesso para qualquer aplicativo conectado ao Azure Active Directory (Azure AD).         |
 |Saiba mais sobre os recursos avançados de VPN  |[Recursos avançados de VPN](always-on-vpn-adv-options.md#advanced-vpn-features): Esta página fornece orientação sobre como habilitar filtros de tráfego VPN, como configurar conexões VPN automáticas usando gatilhos de aplicativo e como configurar o NPS para permitir somente conexões VPN de clientes que usam certificados emitidos pelo Azure AD.        |

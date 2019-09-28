@@ -1,7 +1,7 @@
 ---
-title: Uma equipe associada a um comutador virtual deve ter apenas uma interface exposta de equipe
-description: Versão online do texto para essa regra do analisador de práticas recomendadas.
-ms.prod: windows-server-threshold
+title: Uma equipe associada a um comutador virtual deve ter apenas uma interface de equipe exposta
+description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,38 +10,38 @@ ms.topic: article
 ms.assetid: 1074f086-1a2e-42e1-b58c-f55e657d5ce1
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 108bbec1439959bb7ab4475b59c7231653952ea8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6baa9e4ae900c9b671003872b4eb4589efb2f085
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838457"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365403"
 ---
-# <a name="a-team-bound-to-a-virtual-switch-should-only-have-one-exposed-team-interface"></a>Uma equipe associada a um comutador virtual deve ter apenas uma interface exposta de equipe
+# <a name="a-team-bound-to-a-virtual-switch-should-only-have-one-exposed-team-interface"></a>Uma equipe associada a um comutador virtual deve ter apenas uma interface de equipe exposta
 
 >Aplica-se a: Windows Server 2016
 
-Para obter mais informações sobre as práticas recomendadas e varreduras, consulte [Run Best Practices Analyzer Scans e Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
+Para obter mais informações sobre práticas recomendadas e verificações, consulte [executar verificações de analisador de práticas recomendadas e gerenciar resultados de verificação](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
 |Propriedade|Detalhes|
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
-|**Recurso do produto**|Hyper-V|  
-|**Severidade**|Aviso|  
-|**categoria**|Configuração|  
+|**Produto/recurso**|Hyper-V|  
+|**Severity**|Aviso|  
+|**Categorias**|Configuração|  
   
-Nas seções a seguir, itálico indica o texto de interface do usuário que aparece na ferramenta Analisador de práticas recomendadas para esse problema.  
+Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
 ## <a name="issue"></a>**Problema**  
 *Um ou mais comutadores virtuais estão associados a uma equipe que tem várias interfaces de equipe.*  
   
-## <a name="impact"></a>**Impacto**  
-*Os comutadores virtuais a seguir podem não ter acesso para VLANs e a largura de banda usada por outras interfaces de equipe:*  
+## <a name="impact"></a>**Causa**  
+*Os seguintes comutadores virtuais podem não ter acesso a VLANs e largura de banda usada por outras interfaces de equipe:*  
   
-\<lista de comutadores virtuais >  
+\<list de comutadores virtuais >  
   
 ## <a name="resolution"></a>**Resolução**  
-*Use o cmdlet do Windows PowerShell NetLbfoTeamNic remover para remover todas as interfaces da equipe da equipe que não seja a interface de equipe padrão.*  
+*Use o cmdlet do Windows PowerShell remove-NetLbfoTeamNic para remover todas as interfaces de equipe da equipe que não seja a interface de equipe padrão.*  
   
 
 

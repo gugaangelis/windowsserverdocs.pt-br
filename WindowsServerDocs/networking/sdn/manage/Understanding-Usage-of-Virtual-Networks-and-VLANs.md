@@ -1,9 +1,9 @@
 ---
 title: Entender o uso de redes virtuais e VLANs
-description: Neste tópico, você aprenderá sobre redes virtuais de virtualização de rede do Hyper-V e como eles diferem de redes locais virtuais (VLANs). Com a virtualização de rede do Hyper-V, você deve criar redes virtuais de sobreposição, também chamados de redes virtuais.
+description: Neste tópico, você aprende sobre as redes virtuais de virtualização de rede Hyper-V e como elas diferem das VLANs (redes locais virtuais). Com a virtualização de rede Hyper-V, você cria sobreposição de redes virtuais, também chamadas de redes virtuais.
 manager: dougkim
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -13,32 +13,32 @@ ms.assetid: 84ac2458-3fcf-4c4f-acfe-6105443dd83f
 ms.author: pashort
 author: shortpatti
 ms.date: 08/26/2018
-ms.openlocfilehash: d126e97a91e4c61ecff00cc2b5a527618b2d4d0f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 854adf0e7bb2a8715e3d447c04e2f09c3470a781
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875527"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355828"
 ---
 # <a name="understand-the-usage-of-virtual-networks-and-vlans"></a>Entender o uso de redes virtuais e VLANs
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Neste tópico, você aprenderá sobre redes virtuais de virtualização de rede do Hyper-V e como eles diferem de redes locais virtuais (VLANs). Com a virtualização de rede do Hyper-V, você deve criar redes virtuais de sobreposição, também chamados de redes virtuais.
+Neste tópico, você aprende sobre as redes virtuais de virtualização de rede Hyper-V e como elas diferem das VLANs (redes locais virtuais). Com a virtualização de rede Hyper-V, você cria sobreposição de redes virtuais, também chamadas de redes virtuais.
 
 
 
   
-Software Defined Networking (SDN) no Windows Server 2016 é com base em política para redes virtuais dentro de um comutador Virtual do Hyper-V de sobreposição de programação. Você pode criar redes virtuais de sobreposição, também chamados de redes virtuais, com a virtualização de rede do Hyper-V. 
+A SDN (rede definida pelo software) no Windows Server 2016 é baseada na política de programação para sobreposição de redes virtuais em um comutador virtual do Hyper-V. Você pode criar sobreposição de redes virtuais, também chamadas de redes virtuais, com virtualização de rede Hyper-V. 
   
-Quando você implanta a virtualização de rede do Hyper-V, redes de sobreposição são criados, encapsulando o quadro de Ethernet de camada 2 o locatário da máquina virtual original com um cabeçalho de sobreposição - ou túnel - (por exemplo, VXLAN ou NVGRE) e IP de camada 3 e Ethernet de camada 2 rede de cabeçalhos de base (ou físico). As redes virtuais de sobreposição são identificadas por um 24 bits Virtual rede identificador (VNI) para manter o isolamento do tráfego de locatário e para permitir endereços IP sobrepostos. O VNI é composto de uma sub-rede virtual VSID (ID), a ID do comutador lógico e a ID do túnel.  
+Quando você implanta a virtualização de rede Hyper-V, as redes de sobreposição são criadas encapsulando o quadro de Ethernet de camada 2 da máquina virtual de locatário original com um cabeçalho de sobreposição ou de túnel (por exemplo, VXLAN ou NVGRE) e IP de camada 3 e Ethernet de camada 2 cabeçalhos da rede underlay (ou física). As redes virtuais de sobreposição são identificadas por um VNI (identificador de rede virtual) de 24 bits para manter o isolamento do tráfego de locatário e para permitir endereços IP sobrepostos. O VNI é composto por uma VSID (ID de sub-rede virtual), ID de comutador lógico e ID de túnel.  
   
-Além disso, cada locatário é atribuído a um domínio de roteamento (semelhante ao roteamento virtual e o encaminhamento - VRF) para que vários prefixos de sub-rede virtual (cada um representado por um VNI) podem ser roteados diretamente entre si. Entre locatários (ou entre domínios de roteamento) não há suporte para roteamento sem passar por um gateway.   
+Além disso, cada locatário recebe um domínio de roteamento (semelhante ao roteamento virtual e ao encaminhamento-VRF) para que vários prefixos de sub-rede virtual (cada um representado por um VNI) possam ser roteados diretamente entre si. Não há suporte para o roteamento entre locatários (ou domínio de roteamento cruzado) sem passar por um gateway.   
   
-A rede física na qual o tráfego encapsulado de cada locatário é encapsulado é representada por uma rede lógica chamada de rede lógica do provedor. Esta rede lógica do provedor consiste em uma ou mais sub-redes, cada um representado por um prefixo de IP e, opcionalmente, uma VLAN 802.1q marca.  
+A rede física na qual o tráfego encapsulado de cada locatário é encapsulado é representada por uma rede lógica chamada rede lógica do provedor. Essa rede lógica do provedor consiste em uma ou mais sub-redes, cada uma representada por um prefixo de IP e, opcionalmente, uma marca de VLAN 802.1 q.  
   
-Você pode criar redes lógicas adicionais e sub-redes para fins de infraestrutura transportar o tráfego de gerenciamento, o tráfego de armazenamento, ao vivo o tráfego da migração, etc.  
+Você pode criar redes lógicas e sub-redes adicionais para fins de infraestrutura para transportar o tráfego de gerenciamento, o tráfego de armazenamento, o tráfego de migração ao vivo, etc.  
   
-Microsoft SDN não oferece suporte para o isolamento de redes de locatário usando VLANs. Isolamento de locatários é realizado exclusivamente por meio de redes virtuais de sobreposição de virtualização de rede do Hyper-V e encapsulamento. 
+O Microsoft SDN não oferece suporte ao isolamento de redes de locatário usando VLANs. O isolamento de locatário é realizado unicamente usando a sobreposição de redes virtuais e encapsulamento de virtualização de rede Hyper-V. 
 
 

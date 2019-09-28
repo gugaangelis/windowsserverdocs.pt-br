@@ -7,41 +7,41 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 0a330a9dae8ab8d3b9de5d1fff0e52060908f520
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 109f576bfdacf68a0eadc7dd84ddb9a4148e6dd9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59815807"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408673"
 ---
 # <a name="site-functions"></a>Funções do site
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
- Windows Server 2008 usa informações do site para muitos propósitos, incluindo replicação de roteamento, afinidade de cliente, replicação de SYSVOL (volume) do sistema, distribuídos arquivo sistema DFSN (Namespaces) e local do serviço.  
+ O Windows Server 2008 usa informações do site para muitas finalidades, incluindo replicação de roteamento, afinidade de cliente, replicação de volume do sistema (SYSVOL), namespaces de Sistema de Arquivos Distribuído (DFSN) e local do serviço.  
   
 ## <a name="routing-replication"></a>Replicação de roteamento  
-Os serviços de domínio do Active Directory (AD DS) usa um método de replicação multimestre e armazenar e encaminhar. Um controlador de domínio se comunica as alterações de diretório para um segundo controlador de domínio, que se comunica com um terceiro e assim por diante, até que todos os controladores de domínio recebeu a alteração. Para obter o melhor equilíbrio entre a redução da latência de replicação e reduzindo o tráfego, a topologia de site controla a replicação do Active Directory diferenciando a replicação ocorre dentro de um site e a replicação ocorre entre sites.  
+O Active Directory Domain Services (AD DS) usa um método de replicação de vários mestres, de armazenamento e encaminhamento. Um controlador de domínio comunica as alterações de diretório a um segundo controlador de domínio, que, em seguida, se comunica com um terceiro, e assim por diante, até que todos os controladores de domínio tenham recebido a alteração. Para obter o melhor equilíbrio entre reduzir a latência de replicação e reduzir o tráfego, os controles de topologia de site Active Directory a replicação, diferenciando entre a replicação que ocorre dentro de um site e a replicação que ocorre entre os sites.  
   
-Dentro dos sites, a replicação é otimizada para velocidade, replicação de gatilho de atualizações de dados e os dados são enviados sem a sobrecarga exigida pela compactação de dados. Por outro lado, a replicação entre sites é compactada para minimizar o custo de transmissão sobre links de rede de (longa distância WAN). Quando ocorrer a replicação entre sites, um único controlador de domínio por domínio em cada site coleta e armazena as alterações de diretório e comunica-se em um horário agendado para um controlador de domínio em outro site.  
+Em sites, a replicação é otimizada para velocidade, as atualizações de dados disparam a replicação e os dados são enviados sem a sobrecarga exigida pela compactação de dados. Por outro lado, a replicação entre sites é compactada para minimizar o custo de transmissão em links de WAN (rede de longa distância). Quando ocorre a replicação entre sites, um único controlador de domínio por domínio em cada site coleta e armazena as alterações de diretório e as comunica em um horário agendado para um controlador de domínio em outro site.  
   
 ## <a name="client-affinity"></a>Afinidade de cliente  
-Controladores de domínio usam as informações do site para informar os clientes do Active Directory sobre controladores de domínio presentes no site mais próximo do que o cliente. Por exemplo, considere um cliente no site de Seattle que não conhece a afiliação do seu site e entra em contato com um controlador de domínio do site de Atlanta. Com base no endereço IP do cliente, o controlador de domínio em Atlanta determina qual site o cliente é realmente da e envia as informações do site para o cliente. O controlador de domínio também informa o cliente se o controlador de domínio escolhido é o mais próximo a ele. O cliente armazena em cache as informações do site fornecidas pelo controlador de domínio em Atlanta, consultas para o registro de recurso específico do site de serviço (SRV) (sistema de nome de domínio (DNS) registro de recurso usado para localizar os controladores de domínio do AD DS) e, portanto, encontra um domínio controlador de dentro do mesmo site.  
+Os controladores de domínio usam informações do site para informar Active Directory clientes sobre controladores de domínio presentes no site mais próximo que o cliente. Por exemplo, considere um cliente no site de Seattle que não conhece sua afiliação de site e entre em contato com um controlador de domínio do site de Atlanta. Com base no endereço IP do cliente, o controlador de domínio em Atlanta determina em qual site o cliente está realmente e envia as informações do site de volta para o cliente. O controlador de domínio também informa ao cliente se o controlador de domínio escolhido é o mais próximo deles. O cliente armazena em cache as informações do site fornecidas pelo controlador de domínio em Atlanta, consulta o registro de recurso SRV (serviço específico do site) (um registro de recurso do sistema de nomes de domínio (DNS) usado para localizar controladores de domínio para AD DS) e, portanto, localiza um domínio controlador dentro do mesmo site.  
   
-Ao localizar um controlador de domínio no mesmo site, o cliente evita a comunicação por links WAN. Se nenhum controlador de domínio estejam localizados no site do cliente, um controlador de domínio que tenha as conexões de custo mais baixas em relação a outros sites conectados anuncia em si (registra um registro de recurso específico do site de serviço (SRV) no DNS) no site que não tenha um controlador de domínio. Os controladores de domínio que são publicados no DNS são aqueles do site mais próximo, conforme definido pela topologia de site. Esse processo garante que cada site tem um controlador de domínio preferencial para autenticação.  
+Ao localizar um controlador de domínio no mesmo site, o cliente evita as comunicações sobre links WAN. Se nenhum controlador de domínio estiver localizado no site do cliente, um controlador de domínio que tenha as conexões de custo mais baixo em relação a outros sites conectados se anunciará (registra um registro de recurso SRV (serviço específico do site) no DNS) no site que não tem um controlador de domínio. Os controladores de domínio que são publicados no DNS são aqueles do site mais próximo, conforme definido pela topologia do site. Esse processo garante que cada site tenha um controlador de domínio preferencial para autenticação.  
   
-Para obter mais informações sobre o processo de localização de um controlador de domínio, consulte a coleção do Active Directory ([https://go.microsoft.com/fwlink/?LinkID=88626](https://go.microsoft.com/fwlink/?LinkID=88626)).  
+Para obter mais informações sobre o processo de localização de um controlador de domínio, consulte coleta de Active Directory ([https://go.microsoft.com/fwlink/?LinkID=88626](https://go.microsoft.com/fwlink/?LinkID=88626)).  
   
 ## <a name="sysvol-replication"></a>Replicação do SYSVOL  
-SYSVOL é uma coleção de pastas no sistema de arquivos que existe em cada controlador de domínio em um domínio. As pastas SYSVOL fornecem um local do Active Directory padrão para arquivos que devem ser replicados em todo um domínio, inclusive objetos de diretiva de grupo (GPOs), scripts de inicialização e desligamento e scripts de logon e logoff.  Windows Server 2008 pode usar a replicação FRS (serviço) ou arquivo sistema DFSR (replicação distribuído) para replicar as alterações feitas nas pastas SYSVOL de um controlador de domínio para outros controladores de domínio. FRS e DFSR replicam essas alterações de acordo com o agendamento que você cria durante o design da topologia de site.  
+O SYSVOL é uma coleção de pastas no sistema de arquivos que existe em cada controlador de domínio em um domínio. As pastas SYSVOL fornecem um local de Active Directory padrão para arquivos que devem ser replicados em todo um domínio, incluindo objetos de Política de Grupo (GPOs), scripts de inicialização e desligamento e scripts de logon e logoff.  O Windows Server 2008 pode usar o FRS (serviço de replicação de arquivos) ou o DFSR (replicação de Sistema de Arquivos Distribuído) para replicar as alterações feitas nas pastas SYSVOL de um controlador de domínio para outros controladores de domínio. O FRS e o DFSR replicam essas alterações de acordo com o agendamento que você cria durante o design da topologia do site.  
   
 ## <a name="dfsn"></a>DFSN  
-DFSN usa informações do site para direcionar um cliente para o servidor que hospeda os dados solicitados dentro do site. Se DFSN não encontrar uma cópia dos dados dentro do mesmo site do cliente, DFSN usa as informações do site no AD DS para determinar qual servidor de arquivo que tenha DFSN de dados compartilhadas são mais próximas ao cliente.  
+O DFSN usa informações do site para direcionar um cliente ao servidor que está hospedando os dados solicitados no site. Se DFSN não encontrar uma cópia dos dados no mesmo site que o cliente, o DFSN usará as informações do site em AD DS para determinar qual servidor de arquivos que tem dados compartilhados de DFSN está mais próximo do cliente.  
   
 ## <a name="service-location"></a>Local do serviço  
-Publicando serviços como o arquivo e os serviços de impressão no AD DS, você pode permitir que os clientes do Active Directory localizar o serviço solicitado na mesma ou site mais próximo. Serviços de impressão usam o atributo de localização armazenado no AD DS para permitir que os usuários procurem impressoras pelo local sem saber seu local exato. Para obter mais informações sobre como projetar e implantar servidores de impressão, consulte Projetando e implantando servidores de impressão ([https://go.microsoft.com/fwlink/?LinkId=107041](https://go.microsoft.com/fwlink/?LinkId=107041)).  
+Ao publicar serviços como serviços de arquivo e impressão no AD DS, você permite que Active Directory clientes localizem o serviço solicitado dentro do mesmo site ou mais próximo. Os serviços de impressão usam o atributo local armazenado em AD DS para permitir que os usuários procurem impressoras por local sem saber seu local preciso. Para obter mais informações sobre como criar e implantar servidores de impressão, consulte Projetando e implantando servidores de impressão ([https://go.microsoft.com/fwlink/?LinkId=107041](https://go.microsoft.com/fwlink/?LinkId=107041)).  
   
 
 

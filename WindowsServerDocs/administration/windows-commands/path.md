@@ -2,7 +2,7 @@
 title: path
 description: Saiba como definir a variável de ambiente PATH.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a637abc91dd3342afb3a2723d1b3a835be149122
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 81e8441e7c67e42bdf929e703c8fe780a6f8aff8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436323"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372417"
 ---
 # <a name="path"></a>path
 
 
 
-Define o caminho de comando na variável de ambiente PATH (o conjunto de pastas usadas para pesquisar arquivos executáveis). Se usado sem parâmetros, **caminho** exibe o caminho de comando atual.
+Define o caminho de comando na variável de ambiente PATH (o conjunto de diretórios usado para pesquisar arquivos executáveis). Se usado sem parâmetros, **path** exibe o caminho do comando atual.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -39,22 +39,22 @@ path ;
 
 |     Parâmetro     |                                                                                                     Descrição                                                                                                      |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [\<Drive>:]<Path> |                                                                            Especifica a unidade e diretório para definir o caminho de comando.                                                                             |
-|         ;         | Separa os diretórios no caminho de comando. Se usado sem outros parâmetros, **;** limpa os caminhos de comando existente da variável de ambiente PATH e direciona Cmd.exe para pesquisar somente no diretório atual. |
-|      % PATH %       |                                                         Acrescenta o caminho de comando para o conjunto existente de diretórios listados na variável de ambiente PATH.                                                         |
+| [\<Drive >:] <Path> |                                                                            Especifica a unidade e o diretório a serem definidos no caminho de comando.                                                                             |
+|         ;         | Separa diretórios no caminho de comando. Se usado sem outros parâmetros, **;** limpa os caminhos de comando existentes da variável de ambiente Path e direciona o cmd. exe para pesquisar somente no diretório atual. |
+|      MULTI-PATH       |                                                         Anexa o caminho do comando ao conjunto existente de diretórios listados na variável de ambiente PATH.                                                         |
 |        /?         |                                                                                         Exibe a ajuda no prompt de comando.                                                                                         |
 
 ## <a name="remarks"></a>Comentários
 
--   Quando você inclui **% PATH %** na sintaxe, Cmd.exe substitui-lo com os valores de caminho de comando encontrados na variável de ambiente PATH, eliminando a necessidade de inserir manualmente esses valores no prompt de comando.
--   O diretório atual é pesquisado sempre antes dos diretórios especificados no caminho de comando.
--   Você pode ter arquivos em um diretório que compartilham o mesmo nome mas extensões diferentes. Por exemplo, você pode ter um arquivo conta.com que inicia um programa de contabilidade e outro arquivo de conta que conecta seu servidor para a rede do sistema de contas.
+-   Quando você inclui **% path%** na sintaxe, o cmd. exe o substitui pelos valores de caminho de comando encontrados na variável de ambiente Path, eliminando a necessidade de inserir esses valores manualmente no prompt de comando.
+-   O diretório atual sempre é pesquisado antes dos diretórios especificados no caminho do comando.
+-   Talvez você tenha arquivos em um diretório que compartilhem o mesmo nome de arquivo, mas que tenham extensões diferentes. Por exemplo, você pode ter um arquivo chamado Accnt.com que inicia um programa de contabilidade e outro arquivo chamado accnt. bat que conecta o servidor à rede de sistema de contabilidade.
 
-    O sistema operacional Windows procura por um arquivo usando as extensões de nome de arquivo padrão na seguinte ordem de precedência: .exe,. com,. bat, e. cmd. Para executar a conta quando conta.com existir no mesmo diretório, você deve incluir a extensão. bat no prompt de comando.
--   Se dois ou mais arquivos no caminho de comando têm o mesmo nome de arquivo e extensão, **caminho** primeiro pesquisa o arquivo especificado nome no diretório atual. Em seguida, ele pesquisa os diretórios no caminho de comando na ordem em que estão listados na variável de ambiente PATH.
--   Se você colocar o **caminho** de comando em seu arquivo Autoexec, o sistema operacional Windows automaticamente anexa o caminho de pesquisa de subsistema do MS-DOS especificado toda vez que você faça logon no seu computador. Cmd.exe não usa o arquivo Autoexec. Quando iniciado a partir de um atalho, Cmd.exe herda as variáveis de ambiente definidas em Meu computador/propriedades/avançado/ambiente.
+    O sistema operacional Windows procura um arquivo usando extensões de nome de arquivo padrão na seguinte ordem de precedência:. exe,. com,. bat e. cmd. Para executar accnt. bat quando o Accnt.com existe no mesmo diretório, você deve incluir a extensão. bat no prompt de comando.
+-   Se dois ou mais arquivos no caminho de comando tiverem o mesmo nome de arquivo e extensão, o **caminho** primeiro procurará o nome de arquivo especificado no diretório atual. Em seguida, ele pesquisa os diretórios no caminho do comando na ordem em que estão listados na variável de ambiente PATH.
+-   Se você posicionar o comando **path** no arquivo autoexec. NT, o sistema operacional Windows acrescentará automaticamente o caminho de pesquisa do subsistema MS-dos especificado sempre que você fizer logon no computador. O cmd. exe não usa o arquivo autoexec. NT. Quando iniciado a partir de um atalho, o cmd. exe herda as variáveis de ambiente definidas em Meu Computador/Propriedades/avançado/ambiente.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 Para pesquisar os caminhos C:\User\Taxes, B:\User\Invest e B:\Bin para comandos externos, digite:
 

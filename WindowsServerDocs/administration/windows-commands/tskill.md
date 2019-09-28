@@ -1,8 +1,8 @@
 ---
 title: tskill
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,22 +13,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b582334d7b79b2badbb86818be1093b6a5f55080
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 697363c91837ff675a14099fd212f4f0753b739b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440809"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392338"
 ---
 # <a name="tskill"></a>tskill
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Finaliza um processo em execução em uma sessão em um servidor de Host de sessão de área de trabalho remota (Host de sessão rd).
+Finaliza um processo em execução em uma sessão em um servidor Host da Sessão da Área de Trabalho Remota (host de Sessão RD).
 Para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_examples).
 
 > [!NOTE]
-> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir o que há de novo na versão mais recente, consulte [novidades novo nos serviços de área de trabalho remota no Windows Server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
+> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
 
 ## <a name="syntax"></a>Sintaxe
 ```
@@ -41,26 +41,26 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
 |-------|--------|
 |\<ProcessID >|Especifica a ID do processo que você deseja encerrar.|
 |\<ProcessName >|Especifica o nome do processo que você deseja encerrar. Esse parâmetro pode incluir caracteres curinga.|
-|/server:\<ServerName>|Especifica o servidor de terminal que contém o processo que você deseja encerrar. Se **/server** não for especificado, o servidor de Host de sessão de área de trabalho remota atual será usado.|
-|/id:\<SessionID>|Encerra o processo que está em execução na sessão especificada.|
-|/a|Encerra o processo que está em execução em todas as sessões.|
-|/v|Exibe informações sobre as ações que está sendo executada.|
+|/Server: \<ServerName >|Especifica o servidor de terminal que contém o processo que você deseja encerrar. Se **/Server** não for especificado, o servidor de host da Sessão RD atual será usado.|
+|/ID: \<SessionID >|Encerra o processo que está sendo executado na sessão especificada.|
+|SRDF|Encerra o processo que está sendo executado em todas as sessões.|
+|/v|Exibe informações sobre as ações que estão sendo executadas.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
-- Você pode usar **tskill** para encerrar apenas os processos que pertencem a você, a menos que você seja um administrador. Os administradores têm acesso completo a todos **tskill** funções e podem encerrar os processos em execução em outras sessões de usuário.
-- Quando terminam de todos os processos em execução em uma sessão, a sessão também termina.
-- Se você usar o *ProcessName* e o **/server:** <em>ServerName</em> parâmetros, você deve também especificar o **/id:**  <em>SessionID</em> ou o **/a** parâmetro.
+- Você pode usar **tskill** para finalizar somente os processos que pertencem a você, a menos que você seja um administrador. Os administradores têm acesso total a todas as funções **tskill** e podem finalizar processos que estão em execução em outras sessões de usuário.
+- Quando todos os processos que estão sendo executados em uma sessão terminam, a sessão também termina.
+- Se você usar os parâmetros *ProcessName* e **/Server:** <em>ServerName</em> , também deverá especificar o parâmetro **/ID:** <em>SessionID</em> ou **/a** .
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 - Para encerrar o processo 6543, digite:
   ```
   tskill 6543
   ```
-- Para encerrar o processo "explorer" em execução na sessão 5, digite:
+- Para finalizar o processo "Explorer" em execução na sessão 5, digite:
   ```
   tskill explorer /id:5
   ```
   #### <a name="additional-references"></a>Referências adicionais
   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-  [serviços de área de trabalho remota &#40;serviços de Terminal&#41; referência do comando](remote-desktop-services-terminal-services-command-reference.md)
+  [ &#40;serviços de área de trabalho remota&#41; referência de comando de serviços de terminal](remote-desktop-services-terminal-services-command-reference.md)

@@ -1,8 +1,8 @@
 ---
-title: Wbadmin get itens
-description: 'Tópico de comandos do Windows para * * *- '
+title: Wbadmin obter itens
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eeb7c29ff552f968b4785612f626a86baf154ad7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6c3cc532381321655bbd3d5549b3c9b1896b9280
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842877"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362407"
 ---
-# <a name="wbadmin-get-items"></a>Wbadmin get itens
+# <a name="wbadmin-get-items"></a>Wbadmin obter itens
 
 
 
 Lista os itens incluídos em um backup específico.
 
-Para usar este subcomando, você deve ser um membro do **operadores de Backup** grupo ou o **administradores** grupo, ou você deve ter sido recebido as permissões apropriadas. Além disso, você deve executar **wbadmin** em um prompt de comando elevado. (Para abrir um atalho de prompt de comando com privilégios elevados **Prompt de comando** e, em seguida, clique em **executar como administrador**.)
+Para usar esse subcomando, você deve ser membro do grupo **operadores de backup** ou do grupo **Administradores** , ou você deve ter recebido as permissões apropriadas. Além disso, você deve executar o **Wbadmin** em um prompt de comandos com privilégios elevados. (Para abrir um prompt de comando com privilégios elevados, clique com o botão direito do mouse em **prompt de comando** e clique em **Executar como administrador**.)
 
 Para obter exemplos de como usar esse subcomando, consulte [exemplos](#BKMK_examples).
 
@@ -43,23 +43,23 @@ wbadmin get items
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|-versão|Especifica a versão do backup em MM/DD/AAAA-formato hh: mm. Se você não souber as informações de versão, digite **wbadmin obter versões**.|
-|-backupTarget|Especifica o local de armazenamento que contém os backups para o qual você deseja que os detalhes. Use para listar os backups armazenados nesse local de destino. Locais de destino de backup podem ser uma unidade de disco conectada localmente ou em uma pasta compartilhada remota. Se **wbadmin obter itens**é executado no mesmo computador em que o backup foi criado, esse parâmetro não é necessário. No entanto, este parâmetro é necessário para obter informações sobre um backup criado em outro computador.|
-|-machine|Especifica o nome do computador que você deseja que os detalhes de backup para. Útil quando vários computadores tiverem sido copiados para o mesmo local. Deve ser usado quando **- backupTarget** for especificado.|
+|-versão|Especifica a versão do backup no formato MM/DD/AAAA-HH: MM. Se você não souber as informações de versão, digite **Wbadmin Get Versions**.|
+|-backupTarget|Especifica o local de armazenamento que contém os backups dos quais você deseja os detalhes. Use para listar backups armazenados nesse local de destino. Os locais de destino do backup podem ser uma unidade de disco conectada localmente ou uma pasta compartilhada remota. Se o **Wbadmin Get Items**for executado no mesmo computador em que o backup foi criado, esse parâmetro não será necessário. No entanto, esse parâmetro é necessário para obter informações sobre um backup criado a partir de outro computador.|
+|-computador|Especifica o nome do computador para o qual você deseja obter os detalhes do backup. Útil quando é feito o backup de vários computadores no mesmo local. Deve ser usado quando **-backupTarget** é especificado.|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para listar os itens do backup que foi executado em 31 de março de 2013 às 9h00, tipo:
+Para listar itens do backup que foi executado em 31 de março de 2013 às 9:00, digite:
 ```
 wbadmin get items -version:03/31/2013-09:00
 ```
-Para listar itens do backup de server01 que foi executado em 30 de abril de 2013 às 9h00 e armazenado no \\ \\servername\share, tipo:
+Para listar itens do backup de Server01 que foi executado em 30 de abril de 2013 às 9:00. e armazenados em \\ @ no__t-1servername\share, digite:
 ```
 wbadmin get items -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
--   [Get-WBBackupSet](https://technet.microsoft.com/library/jj902473.aspx) cmdlet
+-   Cmdlet [Get-WBBackupSet](https://technet.microsoft.com/library/jj902473.aspx)

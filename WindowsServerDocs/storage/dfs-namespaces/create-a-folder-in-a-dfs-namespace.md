@@ -2,18 +2,18 @@
 title: Criar uma pasta em um namespace DFS
 description: Este artigo descreve como criar uma pasta em um namespace DFS.
 ms.date: 6/5/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 47bb13aa404cdf4fef86b7250425a92cc208ba9d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7389b825afe5ccae3059f50ffdedac72ecd5ac9a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856847"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402244"
 ---
 # <a name="create-a-folder-in-a-dfs-namespace"></a>Criar uma pasta em um namespace DFS
 
@@ -40,7 +40,7 @@ Use o procedimento a seguir para criar uma pasta em um namespace usando o Gerenc
 
 ## <a name="see-also"></a>Consulte também
 
--   [Implantando os Namespaces do DFS](deploying-dfs-namespaces.md)
--   [Delegar permissões de gerenciamento para Namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)
+-   [Implantar namespaces do DFS](deploying-dfs-namespaces.md)
+-   [Delegar permissões de gerenciamento para namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)
 
 

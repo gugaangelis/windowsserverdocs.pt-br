@@ -1,8 +1,8 @@
 ---
 title: mklink
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1ea80b81b268b31f637c72a828fee8b6f0229a47
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 9d930cbf7acbfceab16f2fa619aaaac6e789c131
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280020"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373645"
 ---
 # <a name="mklink"></a>mklink
 Cria um link simbólico.
@@ -35,16 +35,16 @@ mklink [[/d] | [/h] | [/j]] <Link> <Target>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/d|Cria um link simbólico do diretório. Por padrão, **mklink** cria um link simbólico do arquivo.|
-|/h|Cria um link físico, em vez de um link simbólico.|
+|/d|Cria um link simbólico de diretório. Por padrão, o **MKLINK** cria um link simbólico de arquivo.|
+|/h|Cria um link físico em vez de um link simbólico.|
 |/j|Cria uma junção de diretório.|
-|\<Link>|Especifica o nome do link simbólico que está sendo criado.|
-|\<Destino >|Especifica o caminho (relativo ou absoluto) que o novo link simbólico refere-se a.|
+|\<Link >|Especifica o nome do link simbólico que está sendo criado.|
+|\<Target >|Especifica o caminho (relativo ou absoluto) ao qual o novo link simbólico se refere.|
 |/?|Exibe a ajuda no prompt de comando.|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir demonstra a criação e remoção de um link simbólico chamado MyFolder e MyFile.file do diretório raiz para o diretório \Users\User1\Documents e um example.file localizado dentro do diretório:
+O exemplo seguintes demonstra a criação e a remoção de um link simbólico chamado MyFolder e MyFile. File do diretório raiz para o diretório \Users\User1\Documents e um exemplo. File localizado no diretório:
 ```
 mklink /d \MyFolder \Users\User1\Documents
 mklink /h \MyFile.file \User1\Documents\example.file
@@ -52,6 +52,6 @@ rd \MyFolder
 del \MyFile.file
 ```
 ## <a name="additional-references"></a>Referências adicionais
--   [New-Item](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-item?view=powershell-6)
+-   [Novo item](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-item?view=powershell-6)
 -   [del](https://docs.microsoft.com/windows-server/administration/windows-commands/del)
 -   [rmdir](https://docs.microsoft.com/windows-server/administration/windows-commands/rd)

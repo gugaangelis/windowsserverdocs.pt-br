@@ -1,99 +1,99 @@
 ---
 ms.assetid: ''
 title: Limite de suporte para hora de alta precisão
-description: Este artigo descreve o limite de suporte para o serviço de tempo do Windows (W32Time) em ambientes que exigem tempo do sistema estável e altamente precisos.
+description: Este artigo descreve o limite de suporte para o serviço de tempo do Windows (W32Time) em ambientes que exigem a hora do sistema altamente precisa e estável.
 author: shortpatti
 ms.author: dacuo
 manager: dougkim
 ms.date: 10/17/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 991bf4502546771dae9f092c6d5732f96b1278ab
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 212b9c79bc2e43e966180b928c865a9053332c3f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866267"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405269"
 ---
 # <a name="support-boundary-for-high-accuracy-time"></a>Limite de suporte para hora de alta precisão
 
 >Aplica-se a: Windows Server 2016 e Windows 10 versão 1607 ou posterior
 
-Este artigo descreve os limites de suporte para o serviço de tempo do Windows (W32Time) em ambientes que exigem tempo do sistema estável e altamente precisos.
+Este artigo descreve os limites de suporte para o serviço de tempo do Windows (W32Time) em ambientes que exigem a hora do sistema altamente precisa e estável.
 
 ## <a name="high-accuracy-support-for-windows-81-and-2012-r2-or-prior"></a>Suporte de alta precisão para Windows 8.1 e 2012 R2 (ou anterior)
 
-Versões anteriores do Windows (antes do Windows 10 1607 ou Windows Server 2016 1607) não podem garantir tempo altamente preciso. O serviço de tempo do Windows nesses sistemas:
+Versões anteriores do Windows (antes do Windows 10 1607 ou do Windows Server 2016 1607) não podem garantir um tempo altamente preciso. O serviço de tempo do Windows nesses sistemas:
 
--   Fornecida a precisão de tempo necessário para atender aos requisitos de autenticação Kerberos versão 5
+-   Forneceu a precisão de tempo necessária para atender aos requisitos de autenticação do Kerberos versão 5
 
--   Fornecido tempo preciso livremente para servidores associados a uma floresta do Active Directory comuns e os clientes do Windows
+-   Fornecido um tempo menos preciso para clientes e servidores Windows ingressados em uma floresta Active Directory comum
 
-Requisitos de precisão mais rigorosas estavam fora de especificação de design do serviço de tempo do Windows nesses sistemas operacionais e não é suportado.
+Os requisitos de precisão mais rígidas estavam fora da especificação de design do serviço de tempo do Windows nesses sistemas operacionais e não há suporte para isso.
 
 ## <a name="windows-10-and-windows-server-2016"></a>Windows 10 e Windows Server 2016
 
-Precisão de tempo no Windows 10 e Windows Server 2016 foi consideravelmente aprimorado, mantendo de modo completo com versões anteriores NTP compatibilidade com versões mais antigas do Windows. Sob o direito de condições operacionais, sistemas que executam o Windows 10 ou Windows Server 2016 e versões mais recentes podem entregar 1 segundo, 50 de MS (milissegundos), ou 1 MS precisão.
+A precisão do tempo no Windows 10 e no Windows Server 2016 foi substancialmente aprimorada, ao mesmo tempo em que mantém a compatibilidade de NTP completa com versões mais antigas do Windows. Sob as condições de operação corretas, os sistemas que executam o Windows 10 ou o Windows Server 2016 e versões mais recentes podem fornecer uma precisão de 1 segundo, 50 ms (milissegundos) ou 1 ms.
 
 >[!IMPORTANT]
->**Fontes de altamente precisos de tempo**<br>
->A precisão de tempo resultante em sua topologia é altamente dependente usando uma raiz precisa, estável (camada 1) fonte de tempo. Há Windows com base e não Windows com base altamente precisos, Windows compatível, horário NTP fonte hardware vendidos por fornecedores de terceiros 3º. Entre em contato com seu fornecedor em que a precisão de seus produtos.
+>**Fontes de tempo altamente precisas**<br>
+>A precisão de tempo resultante em sua topologia é altamente dependente do uso de uma fonte de tempo de raiz estável (estrato 1) e precisa. O hardware de origem de tempo NTP com base em Windows e não Windows é altamente preciso e compatível com o Windows, vendido por fornecedores de terceiros. Entre em contato com seu fornecedor sobre a precisão de seus produtos.
 
 >[!IMPORTANT]
 >**Precisão de tempo**<br>
->A distribuição de ponta a ponta de horário com precisão de uma fonte de horário autoritativo altamente precisos para o dispositivo final envolve a precisão de tempo. Tudo o que introduz a assimetria rede influenciará negativamente precisão, dispositivos de rede física por exemplo ou alta carga de CPU no sistema de destino.
+>A precisão do tempo envolve a distribuição de ponta a ponta de tempo preciso de uma fonte de tempo de autorização altamente precisa para o dispositivo final. Qualquer coisa que introduz a rede assimetria influenciará negativamente a precisão, por exemplo, dispositivos de rede física ou alta carga de CPU no sistema de destino.
 
 ## <a name="high-accuracy-requirements"></a>Requisitos de alta precisão
 
-O restante deste documento descreve os requisitos ambientais que devem ser atendidos para dar suporte a destinos respectivos alta precisão.
+O restante deste documento descreve os requisitos ambientais que devem ser satisfeitos para dar suporte aos respectivos destinos de alta precisão.
 
 ### <a name="target-accuracy-1-second-1s"></a>Precisão de destino: 1 segundo (1s)
 
-Para alcançar 1s precisão para um destino específico de máquina em comparação com uma fonte de horário altamente precisos:
+Para obter a precisão de 1s para um computador de destino específico em comparação a uma fonte de tempo altamente precisa:
 
 -   O sistema de destino deve executar o Windows 10, Windows Server 2016.
 
--   O sistema de destino deve sincronizar a hora de uma hierarquia de servidores de tempo, de NTP principal em uma fonte de tempo NTP altamente precisa, compatível com Windows.
+-   O sistema de destino deve sincronizar o tempo de uma hierarquia de NTP de servidores de tempo, culminando em uma fonte de tempo NTP altamente precisa e compatível com o Windows.
 
--   Todos os sistemas operacionais de Windows na hierarquia de NTP mencionados acima devem ser configurados conforme documentado na [Configurando os sistemas de alta precisão](configuring-systems-for-high-accuracy.md) documentação.
+-   Todos os sistemas operacionais Windows na hierarquia de NTP mencionados acima devem ser configurados conforme documentado na documentação [Configurando sistemas para alta precisão](configuring-systems-for-high-accuracy.md) .
 
--   A latência de rede unidirecional cumulativa entre a origem e destino não deve exceder 100 ms. O atraso de rede cumulativa é medido, adicionando o indivíduo unidirecionais atrasos entre pares de nós de cliente-servidor NTP na hierarquia, começando com o destino e terminando na origem. Para obter mais informações, leia o documento de sincronização de hora de alta precisão.
+-   A latência de rede unidirecional cumulativa entre o destino e a origem não deve exceder 100 ms. O atraso de rede cumulativo é medido pela adição de atrasos unidirecionais individuais entre pares de nós cliente-servidor NTP na hierarquia, começando com o destino e terminando na origem. Para obter mais informações, consulte o documento de sincronização de tempo de alta precisão.
 
 ### <a name="target-accuracy-50-milliseconds"></a>Precisão de destino: 50 milissegundos
 
-Todos os requisitos descritos na seção **precisão de destino: 1 segundo** se aplicam, exceto onde os controles mais rígidos são descritos nesta seção.
+Todos os requisitos descritos na seção @no__t-precisão 0Target: 1 segundo @ no__t-0 se aplica, exceto quando controles mais estritos são descritos nesta seção.
 
-Os requisitos adicionais para alcançar a precisão de 50 ms para um sistema de destino específicos são:
+Os requisitos adicionais para obter a precisão do 50 ms para um sistema de destino específico são:
 
 -   O computador de destino deve ter melhor do que 5 ms de latência de rede entre sua fonte de tempo.
 
--   O sistema de destino deve ser nenhuma outra que stratum 5 em uma fonte de horário altamente precisos
+-   O sistema de destino não deve ser mais do que o estrato 5 a partir de uma fonte de tempo altamente precisa
 
     >[!Note]
-    >Execute "w32tm. exe /status /query" na linha de comando para ver a camada.
+    >Execute "w32tm/Query/status" na linha de comando para ver o estrato.
 
--   O sistema de destino deve estar dentro de 6 ou saltos de rede da fonte de tempo altamente precisos
+-   O sistema de destino deve estar dentro de 6 ou menos saltos de rede da fonte de tempo altamente precisa
 
--   Um dia médio da CPU em todos os stratums não deve exceder 90%
+-   A utilização média de CPU de um dia em todos os estratos não deve exceder 90%
 
--   Para sistemas virtualizados, um dia médio da CPU do host não deve exceder 90%
+-   Para sistemas virtualizados, a utilização média de um dia da CPU do host não deve exceder 90%
 
 ### <a name="target-accuracy-1-millisecond"></a>Precisão de destino: 1 milissegundo
 
-Todos os requisitos descritos nas seções **precisão de destino: 1 segundo** e **precisão de destino: 50 milissegundos** se aplicam, exceto onde os controles mais rígidos são descritos nesta seção.
+Todos os requisitos descritos nas seções @no__t-precisão 0Target: 1 segundo @ no__t-0 e precisão de @no__t 1Target: 50 milissegundos @ no__t-0 se aplicam, exceto quando controles mais estritos são descritos nesta seção.
 
-Os requisitos adicionais para alcançar a precisão de 1 ms para um sistema de destino específicos são:
+Os requisitos adicionais para atingir uma precisão de 1 ms para um sistema de destino específico são:
 
--   O computador de destino deve ter melhor do que 0,1 ms de latência de rede entre sua fonte de tempo
+-   O computador de destino deve ter mais de 0,1 ms de latência de rede entre sua fonte de tempo
 
--   O sistema de destino deve ser nenhuma outra que stratum 5 em uma fonte de horário altamente precisos
+-   O sistema de destino não deve ser mais do que o estrato 5 a partir de uma fonte de tempo altamente precisa
 
     >[!Note]
-    >Execute 'w32tm. exe /status /query' na linha de comando para ver o stratum
+    >Execute ' w32tm/Query/status ' na linha de comando para ver o estrato
 
--   O sistema de destino deve estar dentro de 4 ou menos saltos de rede da fonte de tempo altamente precisos
+-   O sistema de destino deve estar dentro de 4 ou menos saltos de rede da fonte de tempo altamente precisa
 
--   A utilização da CPU média de um dia em cada nível não deve exceder 80%
+-   A média de utilização de CPU de um dia em cada estrato não deve exceder 80%
 
--   Para sistemas virtualizados, um dia médio da CPU do host não deve exceder 80%
+-   Para sistemas virtualizados, a utilização média de um dia da CPU do host não deve exceder 80%

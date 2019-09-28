@@ -1,8 +1,8 @@
 ---
-title: Dfsdiag TestDCs
-description: 'Tópico de comandos do Windows para * * *- '
+title: dfsdiag TestDCs
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,22 +13,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 62956ae65d2311939ac0db6a4b86950f21dba407
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a193e68b6f015b1535a98e20b52deb2a4a14034c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836597"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378443"
 ---
-# <a name="dfsdiag-testdcs"></a>Dfsdiag TestDCs
+# <a name="dfsdiag-testdcs"></a>dfsdiag TestDCs
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Verifica a configuração de controladores de domínio executando os testes a seguir em cada controlador de domínio no domínio especificado:  
+Verifica a configuração de controladores de domínio executando os seguintes testes em cada controlador de domínio no domínio especificado:  
   
--   verifica se o sistema de arquivos distribuído \(DFS\) Namespace serviço está em execução e seu tipo de inicialização está definido como automático.  
+-   verifica se o serviço de namespace Sistema de Arquivos Distribuído \(DFS @ no__t-1 está em execução e se seu tipo de inicialização está definido como automático.  
   
--   Verifica se há o suporte do site\-custo estimado de referências para o SYSvol e NETLOGON.  
+-   Verifica o suporte de referências do site @ no__t-0costed para NETLOGON e SYSvol.  
   
 -   verifica a consistência da associação do site pelo nome do host e endereço IP.  
   
@@ -44,13 +44,13 @@ dfsdiag /TestDCs [/Domain:<Domain name>]
   
 |Parâmetro|Descrição|  
 |-------|--------|  
-|\/Domínio:<Domain name>|Domínio que você deseja verificar.|  
+|\/Domain: <Domain name>|Domínio que você deseja verificar.|  
   
 ## <a name="remarks"></a>Comentários  
-\/Domínio é um parâmetro opcional. O valor padrão é que o host local tenha ingressado no domínio local.  
+\/Domain é um parâmetro opcional. O valor padrão é o domínio local ao qual o host local está associado.  
   
-## <a name="BKMK_Examples"></a>Exemplos  
-Para verificar a configuração de controladores de domínio no domínio Contoso.com, digite:  
+## <a name="BKMK_Examples"></a>Disso  
+Para verificar a configuração dos controladores de domínio no domínio Contoso.com, digite:  
   
 ```  
 dfsdiag /TestDCs /Domain:Contoso.com  
@@ -58,7 +58,7 @@ dfsdiag /TestDCs /Domain:Contoso.com
   
 ## <a name="additional-references"></a>Referências adicionais  
   
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 -   [dfsdiag](dfsdiag.md)  
   

@@ -2,7 +2,7 @@
 title: certreq
 description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 19b4750b627a86a724b2a0f58ed7f9bde5ea1613
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 3098cb12379493a82c77412b2328f5312afb2c0c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867109"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379682"
 ---
 # <a name="certreq"></a>certreq
 
@@ -147,7 +147,7 @@ Esta seção é obrigatória para um arquivo INF que atua como um modelo para um
 |KeySpec|Determina se a chave pode ser usada para assinaturas, para o Exchange (criptografia) ou para ambos.|AT_NONE, AT_SIGNATURE, AT_KEYEXCHANGE|KeySpec = AT_KEYEXCHANGE|
 |Uso de|Define a que a chave de certificado deve ser usada.|CERT_DIGITAL_SIGNATURE_KEY_USAGE--80 (128)</br>Dica: Os valores mostrados são valores hexadecimais (decimais) para cada definição de bit. A sintaxe mais antiga também pode ser usada: um único valor hexadecimal com vários bits definidos, em vez da representação simbólica. Por exemplo, KeyUsage = 0XA0.</br>CERT_NON_REPUDIATION_KEY_USAGE--40 (64)</br>CERT_KEY_ENCIPHERMENT_KEY_USAGE--20 (32)</br>CERT_DATA_ENCIPHERMENT_KEY_USAGE--10 (16)</br>CERT_KEY_AGREEMENT_KEY_USAGE--8</br>CERT_KEY_CERT_SIGN_KEY_USAGE--4</br>CERT_OFFLINE_CRL_SIGN_KEY_USAGE--2</br>CERT_CRL_SIGN_KEY_USAGE--2</br>CERT_ENCIPHER_ONLY_KEY_USAGE--1</br>CERT_DECIPHER_ONLY_KEY_USAGE--8000 (32768)|KeyUsage = "CERT_DIGITAL_SIGNATURE_KEY_USAGE &#124; CERT_KEY_ENCIPHERMENT_KEY_USAGE"</br>Dica: Vários valores usam um separador de símbolo de pipe (&#124;). Certifique-se de usar aspas duplas ao usar vários valores para evitar problemas de análise de INF.|
 |Keyutilizaproperty|Recupera um valor que identifica a finalidade específica para a qual uma chave privada pode ser usada.|NCRYPT_ALLOW_DECRYPT_FLAG--1</br>NCRYPT_ALLOW_SIGNING_FLAG--2</br>NCRYPT_ALLOW_KEY_AGREEMENT_FLAG--4</br>NCRYPT_ALLOW_ALL_USAGES--FFFFFF (16777215)|KeyUsageProperty = "NCRYPT_ALLOW_DECRYPT_FLAG &#124; NCRYPT_ALLOW_SIGNING_FLAG"|
-|MachineKeyset|Essa chave é importante quando você precisa criar certificados que pertencem à máquina e não um usuário. O material da chave gerado é mantido no contexto de segurança da entidade de segurança (conta de usuário ou computador) que criou a solicitação. Quando um administrador cria uma solicitação de certificado em nome de um computador, o material da chave deve ser criado no contexto de segurança da máquina e não no contexto de segurança do administrador. Caso contrário, o computador não poderá acessar sua chave privada, pois ela estaria no contexto de segurança do administrador.|true, false|MachineKeyset = true</br>Dica: O padrão é falso.|
+|MachineKeyset|Essa chave é importante quando você precisa criar certificados que pertencem à máquina e não um usuário. O material da chave gerado é mantido no contexto de segurança da entidade de segurança (conta de usuário ou computador) que criou a solicitação. Quando um administrador cria uma solicitação de certificado em nome de um computador, o material da chave deve ser criado no contexto de segurança da máquina e não no contexto de segurança do administrador. Caso contrário, o computador não poderá acessar sua chave privada, pois ela estaria no contexto de segurança do administrador.|true, false|MachineKeyset = true</br>Dica: O padrão é False.|
 |NotBefore|Especifica uma data ou data e hora antes da qual a solicitação não pode ser emitida. Não é possível usar não antes de ValidityPeriod e ValidityPeriodUnits.|Data ou data e hora|Não antes de = "7/24/2012 10:31 AM"</br>Dica: Não before e não After são somente para RequestType = CERT. As tentativas de análise de data são sensíveis à localidade. O uso de nomes de meses causará a ambiguidade e deverá funcionar em todas as localidades.|
 |NotAfter|Especifica uma data ou data e hora após a qual a solicitação não pode ser emitida. Não é possível usar não após ValidityPeriod ou ValidityPeriodUnits.|Data ou data e hora|Não After = "9/23/2014 10:31 AM"</br>Dica: Não before e não After são somente para RequestType = CERT. As tentativas de análise de data são sensíveis à localidade. O uso de nomes de meses causará a ambiguidade e deverá funcionar em todas as localidades.|
 |PrivateKeyArchive|A configuração PrivateKeyArchive só funcionará se o RequestType correspondente estiver definido como "CMC" porque somente o formato de solicitação do CMS (mensagens de gerenciamento de certificado por meio da CMC) permite transferir com segurança a chave privada do solicitante para a autoridade de arquivamento de chave.|true, false|PrivateKeyArchive = true|

@@ -3,7 +3,7 @@ title: Tarefas para implantar serviços do MultiPoint
 description: Lista todas as tarefas envolvidas na implantação de serviços do MultiPoint, juntamente com links para instruções
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.assetid: e08c5784-5b3e-4028-86c1-96deaee41f09
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 9f0b69da06fb783ac7cccc2dc5bc7337dae59d66
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9d50cfc3ed48f77281af400e9e80fb8b4895bac5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871451"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394763"
 ---
 # <a name="task-lists-multipoint-services"></a>Listas de tarefas: MultiPoint Services
 Use as listas de tarefas neste tópico para ajudá-lo a fazer a implantação do seu sistema de serviços do MultiPoint e manter o controle das tarefas concluídas. Nem todas as tarefas se aplicam a todos os ambientes. Por exemplo, algumas tarefas serão executadas somente se você implantar um servidor MultiPoint em um domínio Active Directory. Outros, como a criação de estações de tela de divisão ou a implantação de áreas de trabalho virtuais para estações, são opcionais. Para procedimentos que explicam como executar essas tarefas, consulte [Implantando serviços do MultiPoint](deploying-multipoint-services.md).  

@@ -1,86 +1,86 @@
 ---
-title: Monitorar os servidores e configurar alertas com o Azure Monitor do Windows Admin Center
-description: Windows Admin Center (projeto Paulo) integra-se com o Azure Monitor
+title: Monitorar servidores e configurar alertas com o Azure Monitor do centro de administração do Windows
+description: O centro de administração do Windows (Project Honolulu) integra-se com o Azure Monitor
 ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.date: 03/24/2019
-ms.openlocfilehash: 8f7baba465071cc95ab7492037ff25c5cd58219e
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 28108a79bbdc654f6437a698c158a3f74d4423ba
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280432"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407012"
 ---
-# <a name="monitor-servers-and-configure-alerts-with-azure-monitor-from-windows-admin-center"></a>Monitorar os servidores e configurar alertas com o Azure Monitor do Windows Admin Center
+# <a name="monitor-servers-and-configure-alerts-with-azure-monitor-from-windows-admin-center"></a>Monitorar servidores e configurar alertas com o Azure Monitor do centro de administração do Windows
 
-[Saiba mais sobre a integração do Azure com Windows Admin Center.](../plan/azure-integration-options.md)
+[Saiba mais sobre a integração do Azure com o centro de administração do Windows.](../plan/azure-integration-options.md)
 
-[O Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) é uma solução que coleta, analisa e atua na telemetria de uma variedade de recursos, incluindo servidores Windows e VMs, tanto localmente quanto na nuvem. Embora o Azure Monitor extrai dados de VMs do Azure e outros recursos do Azure, este artigo se concentra em como o Azure Monitor funciona com servidores locais e VMs, especificamente com o Windows Admin Center. Se você estiver interessado em aprender como você pode usar o Azure Monitor para obter alertas por email sobre o cluster hiperconvergente, leia sobre [usando o Azure Monitor para enviar emails para falhas de serviço de integridade](https://docs.microsoft.com/windows-server/storage/storage-spaces/configure-azure-monitor).
+[Azure monitor](https://docs.microsoft.com/azure/azure-monitor/overview) é uma solução que coleta, analisa e atua na telemetria de uma variedade de recursos, incluindo servidores Windows e VMS, tanto localmente quanto na nuvem. Embora Azure Monitor receba dados de VMs do Azure e outros recursos do Azure, este artigo se concentra em como o Azure Monitor funciona com servidores e VMs locais, especificamente com o centro de administração do Windows. Se você estiver interessado em saber como usar Azure Monitor para receber alertas de email sobre o cluster hiperconvergente, leia sobre como [usar Azure monitor para enviar emails para serviço de integridade falhas](https://docs.microsoft.com/windows-server/storage/storage-spaces/configure-azure-monitor).
 
-## <a name="how-does-azure-monitor-work"></a>Como funciona o Azure Monitor?
-![img](../media/azure-monitor-diagram.png) gerados a partir de servidores do Windows no local de dados são coletados em um espaço de trabalho do Log Analytics no Azure Monitor. Dentro de um espaço de trabalho, você pode permitir que várias soluções de monitoramento — os conjuntos de lógica que fornecem informações para um cenário específico. Por exemplo, o gerenciamento de atualizações do Azure, a Central de segurança do Azure e Azure Monitor para as VMs são todas as soluções de monitoramento que podem ser habilitadas dentro de um espaço de trabalho. 
+## <a name="how-does-azure-monitor-work"></a>Como funciona Azure Monitor?
+Os dados ![img @ no__t-1 gerados de servidores locais do Windows são coletados em um espaço de trabalho Log Analytics no Azure Monitor. Em um espaço de trabalho, você pode habilitar várias soluções de monitoramento — conjuntos de lógica que fornecem informações para um cenário específico. Por exemplo, Gerenciamento de Atualizações do Azure, a central de segurança do Azure e Azure Monitor para VMs são soluções de monitoramento que podem ser habilitadas em um espaço de trabalho. 
 
-Quando você habilita uma solução de monitoramento em um espaço de trabalho do Log Analytics, todos os servidores subordinados a esse espaço de trabalho começará a coletar dados relevantes para essa solução, para que a solução possa gerar insights para todos os servidores no espaço de trabalho. 
+Quando você habilita uma solução de monitoramento em um espaço de trabalho Log Analytics, todos os servidores que se reportam a esse espaço de trabalho começarão a coletar dados relevantes para essa solução, para que a solução possa gerar insights para todos os servidores no espaço de trabalho. 
 
-Para coletar dados de telemetria em um servidor de local e enviá-los para o espaço de trabalho do Log Analytics, o Azure Monitor requer a instalação do Microsoft Monitoring Agent ou o MMA. Determinadas soluções de monitoramento também exigem um agente secundário. Por exemplo, Azure Monitor para VMs também depende de um agente do ServiceMap para funcionalidade adicional que fornece essa solução. 
+Para coletar dados de telemetria em um servidor local e enviá-los para o espaço de trabalho Log Analytics, Azure Monitor requer a instalação do Microsoft Monitoring Agent ou o MMA. Determinadas soluções de monitoramento também exigem um agente secundário. Por exemplo, Azure Monitor para VMs também depende de um agente ServiceMap para funcionalidade adicional que essa solução fornece. 
 
-Algumas soluções, como gerenciamento de atualizações do Azure, também dependerá da automação do Azure, que permite que você gerencie centralmente recursos nos ambientes de não Azure e do Azure. Por exemplo, o gerenciamento de atualizações do Azure usa a automação do Azure para agendar e orquestrar centralmente, instalação de atualizações em todos os computadores no seu ambiente, do portal do Azure.
+Algumas soluções, como o Azure Gerenciamento de Atualizações, também dependem da automação do Azure, que permite que você gerencie centralmente recursos em ambientes do Azure e não Azure. Por exemplo, o Azure Gerenciamento de Atualizações usa a automação do Azure para agendar e orquestrar a instalação de atualizações entre computadores em seu ambiente, de forma centralizada, do portal do Azure.
 
 
-## <a name="how-does-windows-admin-center-enable-you-to-use-azure-monitor"></a>Como Windows Admin Center permitem que você use o Azure Monitor?
+## <a name="how-does-windows-admin-center-enable-you-to-use-azure-monitor"></a>Como o centro de administração do Windows permite que você use Azure Monitor?
 
-WAC, você pode habilitar duas soluções de monitoramento:
+De dentro do WAC, você pode habilitar duas soluções de monitoramento:
 
 - [Gerenciamento de atualizações do Azure](azure-update-management.md) (na ferramenta de atualizações)
-- Monitor do Azure para VMs (em configurações do servidor), também conhecidas como máquinas virtuais insights
+- Azure Monitor para VMs (em configurações do servidor), a. k. um insights de máquinas virtuais
 
-Você pode começar usando o Azure Monitor de qualquer uma dessas ferramentas. Se você nunca usou o Azure Monitor antes, WAC provisionará automaticamente um espaço de trabalho do Log Analytics (e conta de automação do Azure, se necessário) e instale e configure o agente MMA (Microsoft Monitoring) no servidor de destino. Em seguida, ele instalará a solução correspondente no espaço de trabalho. 
+Você pode começar a usar o Azure Monitor de qualquer uma dessas ferramentas. Se você nunca usou Azure Monitor antes, o WAC provisionará automaticamente um espaço de trabalho Log Analytics (e uma conta de automação do Azure, se necessário), e instalará e configurará o Microsoft Monitoring Agent (MMA) no servidor de destino. Em seguida, ele instalará a solução correspondente no espaço de trabalho. 
 
-Por exemplo, se você primeiro vá para a ferramenta de atualizações para configurar o gerenciamento de atualização do Azure, será WAC:
+Por exemplo, se você primeiro acessar a ferramenta atualizações para configurar o Azure Gerenciamento de Atualizações, o WAC irá:
 
-1. Instale o MMA na máquina
-2. Criar o espaço de trabalho do Log Analytics e a conta de automação do Azure (uma vez que uma conta de automação do Azure é necessária neste caso)
-3. Instale a solução de gerenciamento de atualizações no espaço de trabalho recém-criada.
+1. Instalar o MMA no computador
+2. Criar o espaço de trabalho Log Analytics e a conta de automação do Azure (já que uma conta de automação do Azure é necessária neste caso)
+3. Instale a solução Gerenciamento de Atualizações no espaço de trabalho recém-criado.
 
-Se você quiser adicionar outra solução de monitoramento de dentro do WAC no mesmo servidor, WAC simplesmente instalará essa solução no espaço de trabalho existente ao qual esse servidor está conectado. Além disso, WAC instalará todos os outros agentes necessários.
+Se você quiser adicionar outra solução de monitoramento de dentro do WAC no mesmo servidor, o WAC simplesmente instalará essa solução no espaço de trabalho existente ao qual o servidor está conectado. O WAC também instalará outros agentes necessários.
 
-Se você se conectar a um servidor diferente, mas já configurou um espaço de trabalho do Log Analytics (seja por meio de WAC ou manualmente no Portal do Azure), também pode instalar o agente MMA no servidor e conectá-lo até um espaço de trabalho. Quando você se conecta a um servidor em um espaço de trabalho, ele começará automaticamente a coleta de dados e relatórios para soluções instaladas no espaço de trabalho.
+Se você se conectar a um servidor diferente, mas já tiver configurado um Log Analytics espaço de trabalho (por meio de WAC ou manualmente no portal do Azure), você também poderá instalar o agente do MMA no servidor e conectá-lo a um espaço de trabalho existente. Quando você conecta um servidor a um espaço de trabalho, ele inicia automaticamente a coleta de dados e a geração de relatórios para soluções instaladas nesse espaço de trabalho.
 
-## <a name="azure-monitor-for-virtual-machines-aka-virtual-machine-insights"></a>Monitorar o Azure para máquinas virtuais (também conhecido como Insights de máquina virtual)
+## <a name="azure-monitor-for-virtual-machines-aka-virtual-machine-insights"></a>Azure Monitor para máquinas virtuais (também conhecido como Insights de máquina virtual)
 >Aplica-se a: Windows Admin Center Preview
 
-Quando você define o Monitor do Azure para VMs no servidor de configurações, Windows Admin Center permite que o Azure Monitor para solução de VMs, também conhecido como insights de máquina Virtual. Essa solução permite que você monitore eventos e a integridade do servidor, criar alertas de email, obter uma exibição consolidada do desempenho do servidor em seu ambiente e visualizar os aplicativos, sistemas e serviços conectados a um determinado servidor.
+Quando você define Azure Monitor para VMs nas configurações do servidor, o centro de administração do Windows habilita a solução Azure Monitor para VMs, também conhecida como insights de máquina virtual. Essa solução permite monitorar a integridade e os eventos do servidor, criar alertas de email, obter uma exibição consolidada do desempenho do servidor em seu ambiente e Visualizar aplicativos, sistemas e serviços conectados a um determinado servidor.
 
 > [!NOTE]
-> Apesar do nome, insights VM funciona para servidores físicos, bem como as máquinas virtuais.
+> Apesar de seu nome, o VM insights funciona para servidores físicos, bem como para máquinas virtuais.
 
-Com o Azure Monitor livre 5 GB de bonificação de dados/mês/cliente, você pode facilmente experimentar isso para um servidor ou dois sem se preocupar de serem cobrados. Continue lendo para ver os benefícios adicionais de servidores de integração para o Azure Monitor, como obter uma exibição consolidada do desempenho de sistemas entre os servidores no seu ambiente.
+Com 5 GB gratuitos de dados/mês/concessão de cliente do Azure Monitor, você pode facilmente experimentar para um servidor ou dois sem se preocupar em ser cobrado. Continue lendo para ver os benefícios adicionais da integração de servidores no Azure Monitor, como obter uma visão consolidada do desempenho dos sistemas em todos os servidores em seu ambiente.
 
 ### <a name="set-up-your-server-for-use-with-azure-monitor"></a>**Configurar seu servidor para uso com o Azure Monitor**
 
-Na página Visão geral de uma conexão de servidor, clique no novo botão "Gerenciar alertas" ou vá para configurações do servidor > monitoramento e alertas. Nessa página, integrar seu servidor para o Azure Monitor, clicando em "configurar" e Concluindo o painel de configuração. Centro de administração se encarrega de provisionamento de espaço de trabalho do Log Analytics do Azure, instalar o agente necessário e garantir que a solução de insights VM está configurada. Uma vez concluído, o servidor enviará dados de contador de desempenho para o Azure Monitor, permitindo que você exibir e criar alertas de email com base nesse servidor, do portal do Azure.
+Na página Visão geral de uma conexão de servidor, clique no botão novo "Gerenciar alertas" ou vá para configurações do servidor > monitoramento e alertas. Nessa página, integre seu servidor ao Azure Monitor clicando em "configurar" e concluindo o painel de instalação. O centro de administração cuida do provisionamento do espaço de trabalho Log Analytics do Azure, instalando o agente necessário e garantindo que a solução de informações da VM esteja configurada. Depois de concluído, o servidor enviará dados do contador de desempenho para Azure Monitor, permitindo que você exiba e crie alertas de email com base nesse servidor, no portal do Azure.
 
 ### <a name="create-email-alerts"></a>**Criar alertas de email**
 
-Depois que você já anexou o seu servidor para o Azure Monitor, você pode usar os hiperlinks inteligentes dentro das configurações > página de monitoramento e alertas para navegar até o Portal do Azure. Centro de administração habilita automaticamente os contadores de desempenho a serem coletados, para que você possa facilmente [criar um novo alerta](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log) Personalizando uma das muitas consultas predefinidas ou escrever seu próprio.
+Depois de conectar o servidor ao Azure Monitor, você poderá usar os hiperlinks inteligentes dentro da página Configurações > monitoramento e alertas para navegar até o portal do Azure. O centro de administração permite que os contadores de desempenho sejam coletados automaticamente, para que você possa [criar facilmente um novo alerta](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log) Personalizando uma das muitas consultas predefinidas ou escrevendo as suas próprias.
 
-### <a name="get-a-consolidated-view-across-multiple-servers-"></a>\* * Obter uma exibição consolidada em vários servidores * *
+### <a name="get-a-consolidated-view-across-multiple-servers-"></a>\* * Obter uma exibição consolidada entre vários servidores * *
 
-Se você integrar vários servidores para um único espaço de trabalho do Log Analytics no Azure Monitor, você pode obter uma exibição consolidada de todos esses servidores do [solução de máquinas virtuais Insights](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-overview) dentro do Azure Monitor.  (Observe que somente as guias de desempenho e mapas de Insights de máquinas virtuais para o Azure Monitor funcione com servidores locais – as funções da guia de integridade apenas com VMs do Azure). Para exibir isso no portal do Azure, vá para o Azure Monitor > máquinas virtuais (no Insights) e navegue até as guias de "Desempenho" ou "Mapas".
+Se você integrar vários servidores a um único espaço de trabalho de Log Analytics no Azure Monitor, poderá obter uma exibição consolidada de todos esses servidores da [solução de informações de máquinas virtuais](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-overview) no Azure monitor.  (Observe que apenas as guias desempenho e mapas das informações de máquinas virtuais para Azure Monitor funcionarão com servidores locais – a guia de integridade funciona somente com as VMs do Azure.) Para exibir isso na portal do Azure, acesse Azure Monitor > máquinas virtuais (em insights) e navegue até as guias "desempenho" ou "mapas".
 
 ### <a name="visualize-apps-systems-and-services-connected-to-a-given-server"></a>**Visualizar aplicativos, sistemas e serviços conectados a um determinado servidor**
 
-Quando integra um servidor para a solução de insights VM no Azure Monitor do Centro de administração, ele também acende uma funcionalidade chamada [mapa do serviço](https://docs.microsoft.com/azure/azure-monitor/insights/service-map). Esse recurso automaticamente descobre os componentes do aplicativo e mapeia a comunicação entre serviços, para que você possa visualizar facilmente as conexões entre servidores com detalhes do portal do Azure. Você pode encontrá-lo indo até o portal do Azure > Azure Monitor > máquinas virtuais (no Insights) e navegando até a guia "Mapas".
+Quando o centro de administração integra um servidor na solução de informações da VM dentro do Azure Monitor, ele também acende um recurso chamado [mapa do serviço](https://docs.microsoft.com/azure/azure-monitor/insights/service-map). Esse recurso descobre automaticamente os componentes do aplicativo e mapeia a comunicação entre os serviços para que você possa visualizar facilmente as conexões entre os servidores com muitos detalhes do portal do Azure. Você pode encontrá-lo acessando o portal do Azure > Azure Monitor > máquinas virtuais (em insights) e navegando até a guia "mapas".
 
 > [!NOTE]
-> As visualizações para Insights de máquinas virtuais do Azure Monitor são oferecidas em regiões públicas 6 no momento.  Para obter as informações mais recentes, verifique as [do Azure Monitor para obter a documentação de VMs](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-onboard#log-analytics).  Você deve implantar o espaço de trabalho do Log Analytics em uma das regiões com suporte para obter os benefícios adicionais fornecidos pela solução de máquinas virtuais Insights descrita acima.
+> No momento, as visualizações para as informações de máquinas virtuais para Azure Monitor são oferecidas em 6 regiões públicas.  Para obter as informações mais recentes, consulte a [documentação do Azure monitor para VMs](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-onboard#log-analytics).  Você deve implantar o espaço de trabalho Log Analytics em uma das regiões com suporte para obter os benefícios adicionais fornecidos pela solução de informações de máquinas virtuais descrita acima.
 
 ## <a name="disabling-monitoring"></a>Desabilitando o monitoramento
 
-Para se desconectar completamente seu servidor do espaço de trabalho do Log Analytics, desinstale o agente MMA. Isso significa que este servidor não enviará dados para o espaço de trabalho, e todas as soluções instaladas no espaço de trabalho não poderão mais coletam e processam dados desse servidor. No entanto, isso não afeta o espaço de trabalho em si – todos os recursos de emissão de relatórios para esse espaço de trabalho continuará a fazê-lo. Para desinstalar o agente MMA em WAC, vá para aplicativos e recursos, encontre o Microsoft Monitoring Agent e clique em Desinstalar.
+Para desconectar completamente o servidor do espaço de trabalho Log Analytics, desinstale o agente MMA. Isso significa que esse servidor não enviará mais dados para o espaço de trabalho, e todas as soluções instaladas nesse espaço de trabalho não coletarão e processarão dados desse servidor. No entanto, isso não afeta o próprio espaço de trabalho – todos os recursos que se reportam a esse espaço de trabalho continuarão a fazer isso. Para desinstalar o agente do MMA em WAC, vá para aplicativos & recursos, localize o Microsoft Monitoring Agent e clique em desinstalar.
 
-Se você quiser desativar uma solução específica dentro de um espaço de trabalho, você precisará [remover a solução de monitoramento do portal do Azure](https://docs.microsoft.com/azure/azure-monitor/insights/solutions#remove-a-management-solution). Remover uma solução de monitoramento significa que os insights criados por essa solução não serão gerados para _qualquer_ dos servidores subordinados a esse espaço de trabalho. Por exemplo, se desinstalar o Azure Monitor para a solução de VMs, eu não verá mais insights sobre o desempenho de VM ou servidor de qualquer um dos computadores conectados ao meu espaço de trabalho.
+Se você quiser desativar uma solução específica em um espaço de trabalho, será necessário [remover a solução de monitoramento do portal do Azure](https://docs.microsoft.com/azure/azure-monitor/insights/solutions#remove-a-management-solution). A remoção de uma solução de monitoramento significa que as informações criadas pela solução não serão mais geradas para _qualquer_ um dos servidores que se reportam a esse espaço de trabalho. Por exemplo, se eu desinstalar a solução Azure Monitor para VMs, não verá mais informações sobre o desempenho da VM ou do servidor de qualquer uma das máquinas conectadas ao meu espaço de trabalho.

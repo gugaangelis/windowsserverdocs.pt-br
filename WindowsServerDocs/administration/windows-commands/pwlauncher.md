@@ -1,8 +1,8 @@
 ---
 title: pwlauncher
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8ec9748056b296bb0c74250b36c762fb86fa90ad
-ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.openlocfilehash: 4cf65643e0c5a4b28e06619a8156792b6e5456ea
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65564648"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371971"
 ---
 # <a name="pwlauncher"></a>pwlauncher
 
 
 
-Habilita ou desabilita o Windows para acessar opções de inicialização (pwlauncher). O **pwlauncher** ferramenta de linha de comando permite que você configure o computador para inicializar automaticamente em um espaço de trabalho do Windows To Go (supondo que um estiver presente), sem exigir que você insira seu firmware ou altere as opções de inicialização.
+Habilita ou desabilita as opções de inicialização do Windows to go (pwlauncher). A ferramenta de linha de comando **pwlauncher** permite configurar o computador para ser inicializado em um espaço de trabalho do Windows to go automaticamente (supondo que um esteja presente), sem exigir que você insira seu firmware ou altere suas opções de inicialização.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -38,17 +38,17 @@ Pwlauncher {/enable | /disable}
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/enable|Habilita opções de inicialização do Windows To Go para que o computador será automaticamente inicializado de um dispositivo USB, quando presente|
-|/disable|Desabilita as opções de inicialização do Windows To Go para que o computador não pode ser inicializado a partir de um dispositivo USB, a menos que configurado manualmente no firmware.|
+|/Enable|Habilita as opções de inicialização do Windows to go para que o computador seja inicializado automaticamente de um dispositivo USB quando estiver presente|
+|/Disable|Desabilita as opções de inicialização do Windows to go para que o computador não possa ser inicializado a partir de um dispositivo USB, a menos que seja configurado manualmente no firmware.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
-O maior obstáculo para um usuário que desejarem usar o Windows To Go é obter o seu computador para inicializar de USB. Tradicionalmente, isso é feito inserindo o firmware e experimentar diferentes opções de configuração até que o computador está configurado corretamente. Isso não é uma tarefa simple para a maioria dos usuários e é muito arriscado porque o firmware contém opções que podem inutilizar um sistema se usada incorretamente. Para ajudar a aliviar esse problema, o Windows 8and sistemas operacionais posteriores incluem um recurso chamado "Windows para acessar opções de inicialização" que permite que um usuário configurar seu computador para inicializar de USB de dentro do Windows-sem inserir nunca firmware, contanto que seus firmware dá suporte à inicialização a partir de USB. Primeiro permitindo que um sistema sempre inicializar de USB tem implicações que devem ser consideradas. Por exemplo, um dispositivo USB que inclui o malware poderia ser inicializado inadvertidamente para comprometer o sistema ou várias unidades USB podem ser conectadas para fazer com que um conflito de inicialização. Por esse motivo, a configuração padrão tem o Windows para opções de inicialização Go desabilitado por padrão. Além disso, são necessários privilégios de administrador para configurar o Windows para opções de inicialização Go. Se você habilitar as opções de inicialização do Windows To Go usando a ferramenta de linha de comando pwlauncher ou o **alteração Windows para acessar opções de inicialização** o computador tentará inicializar a partir de qualquer dispositivo USB que é inserido no computador antes que seja do aplicativo iniciado.
+O maior obstáculo para um usuário que deseja usar o Windows to go é colocar o computador em inicialização por meio do USB. Isso é tradicionalmente feito inserindo o firmware e experimentando opções de configuração diferentes até que o computador seja configurado corretamente. Essa não é uma tarefa simples para a maioria dos usuários e é extremamente arriscada, pois o firmware contém opções que podem tornar um sistema inutilizável se usado incorretamente. Para ajudar a aliviar esse problema, os sistemas operacionais Windows 8and posteriores incluem um recurso chamado "opções de inicialização do Windows to go" que permite que um usuário configure seu computador para inicializar de USB de dentro do Windows, sem precisar inserir o firmware, desde que seu o firmware dá suporte à inicialização do USB. A habilitação de um sistema para sempre inicializar do USB primeiro tem implicações que você deve considerar. Por exemplo, um dispositivo USB que inclui malware pode ser inicializado inadvertidamente para comprometer o sistema, ou várias unidades USB podem ser conectadas para causar um conflito de inicialização. Por esse motivo, a configuração padrão tem as opções de inicialização do Windows to go desabilitadas por padrão. Além disso, são necessários privilégios de administrador para configurar as opções de inicialização do Windows to go. Se você habilitar as opções de inicialização do Windows to go usando a ferramenta de linha de comando pwlauncher ou o aplicativo **alterar as opções de inicialização do Windows to go** , o computador tentará inicializar a partir de qualquer dispositivo USB inserido no computador antes de ser iniciado.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir mostra como você pode usar o **pwlauncher** comando para habilitar a inicialização a partir do USB:
+O exemplo a seguir mostra como você pode usar o comando **pwlauncher** para habilitar a inicialização do USB:
 ```
 Pwlauncher /enable
 ```

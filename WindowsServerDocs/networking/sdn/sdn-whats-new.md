@@ -2,19 +2,19 @@
 title: O que há de novo no SDN para Windows Server
 description: Este tópico fornece informações sobre novos recursos de rede definidos pelo software para o Windows Server 1709
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: efad919b-e9e7-4a0c-b373-e68a092f93b5
 ms.author: pashort
 author: shortpatti
 ms.date: 10/02/2018
-ms.openlocfilehash: 803ca27ca138281cbea1a93aca7e5a8b799bd862
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 09fcf8e3faf8d8b7f943255599dd3b273314db23
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870164"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405993"
 ---
 # <a name="whats-new-in-sdn-for-windows-server-2019"></a>Novidades na SDN para o Windows Server 2019
 
