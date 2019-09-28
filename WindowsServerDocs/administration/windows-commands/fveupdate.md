@@ -1,8 +1,8 @@
 ---
 title: fveupdate
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,15 +13,15 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: da7bb7eab60947cd7eb408e82a1f55c1aec47992
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3c5cc40dafb0305e1fdca2e1b91de749ac1cc70b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858747"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375804"
 ---
 # <a name="fveupdate"></a>fveupdate
 
 
 
-FveUpdate é uma ferramenta usada internamente que é executada pela instalação quando um computador é atualizado do Windows Vista ou Windows Server 2008 para o Windows 7 ou Windows Server 2008 R2. Ele atualiza os metadados associados com o BitLocker para a versão mais recente. Essa ferramenta não pode ser executada de forma independente.
+O FveUpdate é uma ferramenta usada internamente que é executada pela instalação quando um computador é atualizado do Windows Vista ou do Windows Server 2008 para o Windows 7 ou o Windows Server 2008 R2. Ele atualiza os metadados associados ao BitLocker para a versão mais recente. Essa ferramenta não pode ser executada de forma independente.

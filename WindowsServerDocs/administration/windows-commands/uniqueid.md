@@ -1,8 +1,8 @@
 ---
-title: ID exclusiva
-description: 'Tópico de comandos do Windows para * * *- '
+title: UniqueId
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d237f4d6d3562e3787efe28ca98f9dc553d74898
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 64f097766daa4c87ec84f42dd53f49792a160bb9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440757"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363912"
 ---
-# <a name="uniqueid"></a>ID exclusiva
+# <a name="uniqueid"></a>UniqueId
 
 
 
-Exibe ou define a GUID partição GPT (tabela) identificador mestre de inicialização MBR (registro) assinatura ou para o disco com foco.
+Exibe ou define o identificador GPT (tabela de partição GUID) ou a assinatura MBR (registro mestre de inicialização) para o disco com foco.
 
 > [!IMPORTANT]
-> Esse comando DiskPart não está disponível em nenhuma edição do Windows Vista.
+> Esse comando do DiskPart não está disponível em nenhuma edição do Windows Vista.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -39,25 +39,25 @@ uniqueid disk [id={<dword> | <GUID>}] [noerr]
 
 |  Parâmetro   |                                                                                             Descrição                                                                                              |
 |--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id={\<dword> |                                                                                               <GUID>}                                                                                                |
-|    noerr     | Somente para scripts. Quando um erro for encontrado, o DiskPart continua a processar comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro causar o DiskPart sair com um código de erro. |
+| ID = {\<dword > |                                                                                               <GUID>}                                                                                                |
+|    NOERR     | Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro. |
 
 ## <a name="remarks"></a>Comentários
 
 -   Esse comando funciona em discos básicos e dinâmicos.
--   Um disco deve ser selecionado para este comando ter êxito. Use o **Selecionar disco** comando para selecionar um disco e mudar o foco a ele.
+-   Um disco deve ser selecionado para que esse comando tenha sucesso. Use o comando **selecionar disco** para selecionar um disco e deslocar o foco para ele.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 Para exibir a assinatura do disco MBR com foco, digite:
 ```
 uniqueid disk
 ```
-Para definir a assinatura do disco MBR com foco 5f1b2c36, digite:
+Para definir a assinatura do disco MBR com foco para 5f1b2c36, digite:
 ```
 uniqueid disk id=5f1b2c36
 ```
-Para definir o identificador do disco GPT com foco baf784e7-6bbd-4cfb-aaac-e86c96e166ee, digite:
+Para definir o identificador do disco GPT com foco para baf784e7-6bbd-4cfb-AAAC-e86c96e166ee, digite:
 ```
 uniqueid disk id=baf784e7-6bbd-4cfb-aaac-e86c96e166ee
 ```

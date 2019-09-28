@@ -1,9 +1,9 @@
 ---
-title: Etapa 2 servidores de Cluster de plano
-description: Este tópico faz parte do guia de implantação de acesso remoto em um Cluster no Windows Server 2016.
+title: Etapa 2 planejar servidores de cluster
+description: Este tópico faz parte do guia implantar o acesso remoto em um cluster no Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,29 +12,29 @@ ms.topic: article
 ms.assetid: 673c5bfb-b590-4932-8e54-ca0a466d90cc
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 0dcb14a03f02f931d59743f1b1b8b24b84ba8351
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 17aadbb789052be7f33822ce49f3b797f2211d55
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282867"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71367382"
 ---
-# <a name="step-2-plan-cluster-servers"></a>Etapa 2 servidores de Cluster de plano
+# <a name="step-2-plan-cluster-servers"></a>Etapa 2 planejar servidores de cluster
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Depois de implantar um único servidor de acesso remoto, planeja adicionar mais servidores no cluster.  
+Depois de implantar um único servidor de acesso remoto, planeje adicionar servidores adicionais ao cluster.  
   
 |Tarefa|Descrição|  
 |----|--------|  
-|[2.1 Instalando funções e recursos](#BKMK_Install).|Para cada servidor que será adicionado ao cluster, planejar a instalação da função acesso remoto e o recurso NLB do Windows (se necessário), planeje a topologia, o endereçamento IP, roteamento e encaminhamento.|  
-|[2.2 configurações do servidor](#BKMK_Config)|Defina configurações para cada servidor que será adicionado ao cluster. Observe que você pode configurar um cluster com balanceamento de carga dos servidores usando máquinas virtuais. Para conectividade e roteamento funcione corretamente, você deve configurar as máquinas virtuais para usar a falsificação de endereço MAC.|  
+|[2,1 Instalando funções e recursos](#BKMK_Install).|Para cada servidor que será adicionado ao cluster, planeje a instalação da função de acesso remoto e o recurso NLB do Windows (se necessário), planeje a topologia, o endereçamento IP, o roteamento e o encaminhamento.|  
+|[2,2 definir configurações do servidor](#BKMK_Config)|Defina as configurações para cada servidor que será adicionado ao cluster. Observe que você pode configurar um cluster com balanceamento de carga de servidores usando máquinas virtuais. Para que o roteamento e a conectividade funcionem corretamente, você deve configurar as máquinas virtuais para usar a falsificação de endereço MAC.|  
   
-## <a name="BKMK_Install"></a>2.1 Instalando funções e recursos  
-Para cada servidor que você deseja ingressar no cluster, planeje instalar a função de acesso remoto. Além disso, planeje instalar o recurso de balanceamento de carga rede (NLB), se você quiser balancear o tráfego para o cluster usando NLB do Windows. Para obter mais informações, consulte [balanceamento de carga de rede](https://technet.microsoft.com/windows-server-docs/networking/technologies/network-load-balancing).  
+## <a name="BKMK_Install"></a>2,1 Instalando funções e recursos  
+Para cada servidor que você deseja ingressar no cluster, planeje a instalação da função de acesso remoto. Além disso, planeje instalar o recurso NLB (balanceamento de carga de rede) se desejar balancear a carga do tráfego para o cluster usando o NLB do Windows. Para obter mais informações, consulte [balanceamento de carga de rede](https://technet.microsoft.com/windows-server-docs/networking/technologies/network-load-balancing).  
   
-## <a name="BKMK_Config"></a>2.2 configurações do servidor  
-Para cada servidor que será adicionado ao cluster, planeje as configurações de domínio e de endereço IP. Observe o seguinte:  
+## <a name="BKMK_Config"></a>2,2 definir configurações do servidor  
+Para cada servidor que será adicionado ao cluster, planeje o endereço IP e as configurações de domínio. Observe o seguinte:  
   
 1.  Todos os servidores no cluster devem pertencer ao mesmo domínio.  
   
@@ -42,15 +42,15 @@ Para cada servidor que será adicionado ao cluster, planeje as configurações d
   
 3.  Cada servidor no cluster deve ter o mesmo número de adaptadores de rede em uso para a implantação do DirectAccess.  
   
-Quando você balancear o cluster usando NLB do Windows são aplicadas as seguintes configurações de NLB do Windows:  
+Ao balancear a carga do cluster usando o NLB do Windows, as seguintes configurações do NLB do Windows são aplicadas:  
   
-1.  Operação modo Unicast. Isso pode ser alterado para multicast usando o Gerenciador NLB. Essa configuração não pode ser modificada no console de gerenciamento de acesso remoto.  
+1.  Modo de operação-unicast. Isso pode ser alterado para multicast usando o Gerenciador NLB. Essa configuração não pode ser modificada no console de gerenciamento de acesso remoto.  
   
-2.  Carregar o peso, fator-definido como igual, em que todos os servidores de cluster têm carga igual.  
+2.  Fator de balanceamento de carga – definido como igual, em que todos os servidores de cluster têm carga igual.  
   
-3.  Filtragem de tráfego de modo será ser com balanceamento de carga em vários hosts.  
+3.  Modo de filtragem-o tráfego terá a carga balanceada entre vários hosts.  
   
-4.  Afinidade de afinidade para um único é definida.  
+4.  Affinity-a afinidade única é definida.  
   
-5.  Os protocolos  
+5.  Protocolos-ambos  
 

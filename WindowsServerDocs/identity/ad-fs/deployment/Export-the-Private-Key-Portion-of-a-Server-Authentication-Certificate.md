@@ -6,51 +6,51 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 1a7e59dd83ebc9a9eabd5bda1dc598d320f5028d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8e1bbeddc4bae1c420b6cc78b52d6b873320ae8f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66442506"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359584"
 ---
 # <a name="export-the-private-key-portion-of-a-server-authentication-certificate"></a>Exportar a parte da chave privada de um Certificado de Autenticação de Servidor
 
-Cada servidor de Federação em um Active Directory Federation Services \(do AD FS\) farm deve ter acesso à chave privada do certificado de autenticação do servidor. Se você estiver implementando um farm de servidores de Federação ou servidores Web, você deve ter um certificado de autenticação único. Esse certificado deve ser emitido por uma autoridade de certificação corporativa \(autoridade de certificação\), e deve ter uma chave privada exportável. A chave privada do certificado de autenticação de servidor deve ser exportável para que possa ser disponibilizada para todos os servidores no farm.  
+Cada servidor de Federação em um farm Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1 deve ter acesso à chave privada do certificado de autenticação do servidor. Se você estiver implementando um farm de servidores de servidor de Federação ou servidores Web, deverá ter um único certificado de autenticação. Esse certificado deve ser emitido por uma autoridade de certificação corporativa \(CA @ no__t-1 e deve ter uma chave privada exportável. A chave privada do certificado de autenticação de servidor deve ser exportável para que possa ser disponibilizada para todos os servidores no farm.  
   
-Este mesmo conceito é verdadeiro para farms de servidores do proxy de servidor de federação no sentido de que todos os proxies de servidor de Federação em um farm devem compartilhar a parte da chave privada do mesmo certificado de autenticação de servidor.  
+Esse mesmo conceito é verdadeiro para farms de proxy de servidor de Federação no sentido de que todos os proxies de servidor de Federação em um farm devem compartilhar a parte de chave privada do mesmo certificado de autenticação de servidor.  
   
 > [!NOTE]  
-> O snap de gerenciamento do AD FS\-refere-se aos certificados de autenticação de servidor para servidores de federação como certificados de comunicação de serviço.  
+> O snap do AD FS Management @ no__t-0in refere-se aos certificados de autenticação de servidor para servidores de Federação como certificados de comunicação de serviço.  
   
-Dependendo de qual função neste computador, use este procedimento no computador do servidor de Federação ou computador de proxy do servidor de Federação em que você instalou o certificado de autenticação de servidor com a chave privada. Ao terminar este procedimento, você poderá importar o certificado no Site Padrão de cada servidor no farm. Para obter mais informações, consulte [importar um certificado de autenticação de servidor para o Site padrão](Import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md).  
+Dependendo da função que este computador executará, use esse procedimento no computador do servidor de Federação ou no computador proxy do servidor de Federação em que você instalou o certificado de autenticação do servidor com a chave privada. Ao terminar este procedimento, você poderá importar o certificado no Site Padrão de cada servidor no farm. Para obter mais informações, consulte [importar um certificado de autenticação de servidor para o site da Web padrão](Import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md).  
   
-A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e associações de grupos em [domínio grupos padrão Local e](https://go.microsoft.com/fwlink/?LinkId=83477).   
+A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
 ### <a name="to-export-the-private-key-portion-of-a-server-authentication-certificate"></a>Para exportar a parte da chave privada de um certificado de autenticação de servidor  
   
-1. Sobre o **iniciar** tela, digite**serviços de informações da Internet \(IIS\) Manager**, e, em seguida, pressione ENTER.  
+1. Na tela **Iniciar** , digite**serviços de informações da Internet \(IIS @ No__t-3 Manager**e pressione Enter.  
   
 2. Na árvore de console, clique em **ComputerName**.  
   
-3. No painel central, clique duas vezes\-clique em **certificados de servidor**.  
+3. No painel central, clique duas vezes em @ no__t-0click **certificados de servidor**.  
   
-4. No painel central, com o botão direito\-clique no certificado que você deseja exportar e, em seguida, clique em **exportar**.  
+4. No painel central, clique com o botão direito @ no__t-0click o certificado que você deseja exportar e, em seguida, em **Exportar**.  
   
 5. Na caixa de diálogo **Exportar Certificado** , clique no botão **…** .  
   
-6. No **nome do arquivo**, digite **c:\\** <em>Nomedocertificado</em>e, em seguida, clique em **abra**.  
+6. Em **nome do arquivo**, digite **C: \\** <em>NameofCertificate</em>e clique em **abrir**.  
   
 7. Digite uma senha para o certificado, confirme e clique em **OK**.  
   
 8. Verifique se a exportação foi concluída com êxito e confirme se o arquivo desejado foi criado no local especificado.  
   
    > [!IMPORTANT]  
-   > Para que este certificado possa ser importado para o repositório de certificados local no novo servidor, você precisará transferir para mídia física e proteger sua segurança durante a transição para o novo servidor. É extremamente importante proteger a segurança da chave privada. Se essa chave for comprometida, a segurança de toda a implantação do AD FS \(incluindo recursos na sua organização e em organizações parceiras\) estiver comprometido.  
+   > Para que este certificado possa ser importado para o repositório de certificados local no novo servidor, você precisará transferir para mídia física e proteger sua segurança durante a transição para o novo servidor. É extremamente importante proteger a segurança da chave privada. Se essa chave for comprometida, a segurança de toda a implantação de AD FS @no__t recursos de 0including na sua organização e nas organizações do parceiro de recursos @ no__t-1 será comprometida.  
   
-9. Importe o certificado de autenticação de servidor exportado para o repositório de certificados do novo servidor antes de instalar o Serviço de Federação. Para obter informações sobre como importar o certificado, consulte Importar um certificado de servidor \( [http:\/\/go.microsoft.com\/fwlink\/? LinkId\=108283](https://go.microsoft.com/fwlink/?LinkId=108283)\).  
+9. Importe o certificado de autenticação de servidor exportado para o repositório de certificados do novo servidor antes de instalar o Serviço de Federação. Para obter informações sobre como importar o certificado, consulte importar um certificado do servidor \([http: @no__t -2\/go.microsoft.com @ no__t-4fwlink @ no__t-5? LinkId @ no__t-6108283](https://go.microsoft.com/fwlink/?LinkId=108283)\).  
   
 ## <a name="additional-references"></a>Referências adicionais  
 [Lista de verificação: Como configurar um servidor de federação](Checklist--Setting-Up-a-Federation-Server.md)  

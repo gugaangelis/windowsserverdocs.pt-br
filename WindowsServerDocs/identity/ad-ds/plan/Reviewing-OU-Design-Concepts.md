@@ -7,44 +7,44 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f05104466c1cedcfbc8d94060ffa8fbfd9d18033
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6dc2cbb7ddff8725876f8dd4ec2760e828fd4e4c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832167"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402520"
 ---
 # <a name="reviewing-ou-design-concepts"></a>Examinando conceitos de design da UO
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-A estrutura da unidade organizacional (UO) para um domínio inclui o seguinte:  
+A estrutura da UO (unidade organizacional) para um domínio inclui o seguinte:  
   
 -   Um diagrama da hierarquia de UO  
   
--   Uma lista de unidades organizacionais  
+-   Uma lista de UOs  
   
 -   Para cada UO:  
   
-    -   A finalidade para a unidade Organizacional  
+    -   A finalidade da UO  
   
-    -   Uma lista de usuários ou grupos que têm controle sobre a UO ou objetos na UO  
+    -   Uma lista de usuários ou grupos que têm controle sobre a UO ou os objetos na UO  
   
     -   O tipo de controle que os usuários e grupos têm sobre os objetos na UO  
   
-A hierarquia de UO não precisa refletir a hierarquia departamental da organização ou grupo. Unidades organizacionais são criadas para uma finalidade específica, como a delegação de administração, o aplicativo de diretiva de grupo, ou para limitar a visibilidade dos objetos.  
+A hierarquia de UO não precisa refletir a hierarquia departamental da organização ou do grupo. As UOs são criadas para uma finalidade específica, como a delegação de administração, a aplicação de Política de Grupo ou para limitar a visibilidade dos objetos.  
   
-Você pode projetar a estrutura de UO para delegar a administração a indivíduos ou grupos em sua organização que exigem a autonomia para gerenciar seus próprios recursos e dados. Unidades organizacionais representam limites administrativos e permitem controlar o escopo de autoridade de administradores de dados.  
+Você pode criar sua estrutura de UO para delegar administração a indivíduos ou grupos dentro de sua organização que exigem a autonomia para gerenciar seus próprios recursos e dados. As UOs representam limites administrativos e permitem que você controle o escopo da autoridade de administradores de dados.  
   
-Por exemplo, você pode criar uma UO chamada ResourceOU e usá-lo para armazenar todas as contas de computador que pertencem ao arquivo e gerenciados por um grupo de servidores de impressão. Em seguida, você pode configurar a segurança na UO de para que somente os administradores de dados do grupo têm acesso à UO. Isso impede que os administradores de dados em outros grupos viole o arquivo e as contas do servidor de impressão.  
+Por exemplo, você pode criar uma UO chamada ResourceOU e usá-la para armazenar todas as contas de computador que pertencem aos servidores de arquivos e de impressão gerenciados por um grupo. Em seguida, você pode configurar a segurança na UO para que somente os administradores de dados no grupo tenham acesso à UO. Isso impede que os administradores de dados em outros grupos violem as contas do servidor de arquivos e de impressão.  
   
-Você pode refinar ainda mais sua estrutura de UO, criando subárvores de UOs para fins específicos, como o aplicativo de diretiva de grupo ou para limitar a visibilidade dos objetos protegidos para que somente determinados usuários podem vê-los. Por exemplo, se você precisar aplicar diretiva de grupo para um grupo seleto de usuários ou recursos, você pode adicionar esses usuários ou os recursos a uma UO e, em seguida, aplicar a diretiva de grupo a essa UO. Você também pode usar a hierarquia de OU para habilitar a delegação de controle administrativo.  
+Você pode refinar ainda mais sua estrutura de UO criando subárvores de UOs para fins específicos, como o aplicativo de Política de Grupo ou para limitar a visibilidade de objetos protegidos para que apenas determinados usuários possam vê-los. Por exemplo, se você precisar aplicar Política de Grupo a um grupo selecionado de usuários ou recursos, poderá adicionar esses usuários ou recursos a uma UO e, em seguida, aplicar Política de Grupo a essa UO. Você também pode usar a hierarquia de UO para habilitar a delegação adicional do controle administrativo.  
   
-Embora não haja nenhum limite técnico para o número de níveis em sua estrutura de UO, para capacidade de gerenciamento é recomendável que você limite a sua estrutura de UO em uma profundidade de não mais do que 10 níveis. Não há nenhum limite técnico para o número de unidades organizacionais em cada nível. Observe que serviços de domínio Active Directory (AD DS)-aplicativos habilitados podem ter restrições sobre o número de caracteres usado no nome distinto (ou seja, o caminho Lightweight Directory Access Protocol (LDAP) completo para o objeto no diretório) ou no Profundidade da UO dentro da hierarquia.  
+Embora não haja nenhum limite técnico para o número de níveis em sua estrutura de UO, para capacidade de gerenciamento, recomendamos que você limite sua estrutura de UO a uma profundidade de no máximo 10 níveis. Não há nenhum limite técnico para o número de UOs em cada nível. Observe que os aplicativos habilitados para Active Directory Domain Services (AD DS) podem ter restrições sobre o número de caracteres usados no nome distinto (ou seja, o caminho completo do protocolo LDAP para o objeto no diretório) ou no Profundidade da UO dentro da hierarquia.  
   
-Não se destina a estrutura de UO no AD DS seja visível para os usuários finais. A estrutura de UO é uma ferramenta administrativa para os administradores de serviço e para administradores de dados, e é fácil alterar. Continue a analisar e atualizar o design de estrutura de UO para refletir as alterações em sua estrutura administrativa e para dar suporte à administração baseada em política.  
+A estrutura da UO no AD DS não se destina a ser visível para os usuários finais. A estrutura da UO é uma ferramenta administrativa para administradores de serviços e para administradores de dados e é fácil de alterar. Continue a examinar e atualizar seu design de estrutura de UO para refletir as alterações em sua estrutura administrativa e para dar suporte à administração baseada em políticas.  
   
 
 

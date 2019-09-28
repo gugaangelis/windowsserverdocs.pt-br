@@ -1,9 +1,9 @@
 ---
 title: Planejar uma implantação multissite
-description: Este tópico faz parte do guia de implantar vários servidores de acesso remoto em uma implantação multissite no Windows Server 2016.
+description: Este tópico faz parte do guia implantar vários servidores de acesso remoto em uma implantação multissite no Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,27 +12,27 @@ ms.topic: article
 ms.assetid: 8387eabe-7363-4367-b5b1-03c67baa2933
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ba813fc5da53e9635e9ef1363f1a559a29419312
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 95c575b255e7495f85e731bdb84ae441e35b1463
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282597"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404475"
 ---
 # <a name="plan-a-multisite-deployment"></a>Planejar uma implantação multissite
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
- Windows Server 2016, Windows Server 2012 combina o DirectAccess e o roteamento e acesso remoto (RRAS) VPN em uma única função de acesso remoto. Esta visão geral fornece uma introdução às etapas de planejamento necessárias para implantar o Windows Server 2016 ou o acesso remoto do Windows Server 2012 em uma configuração multissite.  
+ O Windows Server 2016, Windows Server 2012 combina DirectAccess e roteamento e VPN RRAS (serviço de acesso remoto) em uma única função de acesso remoto. Esta visão geral fornece uma introdução às etapas de planejamento necessárias para implantar o acesso remoto do Windows Server 2016 ou do Windows Server 2012 em uma configuração multissite.  
   
-1.  [Implantar um único servidor DirectAccess com configurações avançadas](https://technet.microsoft.com/library/hh831436(v=ws.11).aspx). Esta etapa inclui o planejamento da infraestrutura necessária para implantar um único servidor. Ele inclui o planejamento da rede e as configurações do servidor, requisitos de certificado, as configurações de DNS, implantação de servidor de local de rede, servidores de gerenciamento do DirectAccess, configurações do Active Directory e objetos de diretiva de grupo (GPOs).  
+1.  [Implante um único servidor DirectAccess com configurações avançadas](https://technet.microsoft.com/library/hh831436(v=ws.11).aspx). Esta etapa inclui o planejamento da infraestrutura necessária para implantar um único servidor. Ele inclui o planejamento de configurações de rede e servidor, requisitos de certificado, configurações de DNS, implantação de servidor de local de rede, servidores de gerenciamento do DirectAccess, configurações de Active Directory e objetos de Política de Grupo (GPOs).  
   
-2.  [Etapa 2 planejar a infraestrutura de multissite](Step-2-Plan-the-Multisite-Infrastructure.md). Essa etapa inclui o Active Directory e o GPO de planejamento e configuração de DNS.  
+2.  [Etapa 2 planejar a infraestrutura multissite](Step-2-Plan-the-Multisite-Infrastructure.md). Esta etapa inclui o planejamento de Active Directory e GPO e a configuração de DNS.  
   
-3.  [Etapa 3 planejar uma implantação multissite](Step-3-Plan-the-Multisite-Deployment.md). Esta etapa inclui o planejamento de configurações de certificado, configuração do servidor de local de rede, configurações de ponto de entrada do cliente, configurações de prefixo IPv6 e configurações de balanceamento de carga global opcionalmente.  
+3.  [Etapa 3 planejar a implantação multissite](Step-3-Plan-the-Multisite-Deployment.md). Esta etapa inclui o planejamento de configurações de certificado, configuração de servidor de local de rede, configurações de ponto de entrada de cliente, configurações de prefixo IPv6 e, opcionalmente, configurações de balanceamento de carga global.  
   
 > [!NOTE]  
-> Registre suas decisões de planejamento para implantação avançada de acesso remoto. Esse registro pode ser usado como um auxílio de trabalho para todos os envolvidos na conclusão das etapas de implantação.  
+> Registre suas decisões de planejamento para a implantação avançada de acesso remoto. Esse registro pode ser usado como um auxílio de trabalho para todos os envolvidos na conclusão das etapas de implantação.  
   
 Depois de concluir essas etapas de planejamento, consulte [Configurando uma implantação multissite](../configure/Configure-a-Multisite-Deployment.md).  
   

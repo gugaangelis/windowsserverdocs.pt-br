@@ -1,8 +1,8 @@
 ---
-title: informações e cache bitsadmin
-description: Tópico de comandos do Windows para **bitsadmin cache e informações** -Despeja uma entrada de cache específica.
+title: cache Bitsadmin e informações
+description: O tópico de comandos do Windows para **Bitsadmin cache e info** -despeja uma entrada de cache específica.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 61ff57b33e575921f2032d4e13a2d9b74accae60
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 11963ff5640ef30e597e5e802778aff121c0efb3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813317"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381973"
 ---
-# <a name="bitsadmin-cache-and-info"></a>informações e cache bitsadmin
+# <a name="bitsadmin-cache-and-info"></a>cache Bitsadmin e informações
 
 
 
@@ -36,15 +36,15 @@ bitsadmin /Cache /Info RecordID [/Verbose]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|RecordID|O GUID associado com a entrada de cache.|
+|RecordID|O GUID associado à entrada de cache.|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir descarta a entrada de cache com o RecordID da {6511FB02-E195-40A2-B595-E8E2F8F47702}.
+O exemplo a seguir despeja a entrada de cache com a recordId de {6511FB02-E195-40A2-B595-E8E2F8F47702}.
 ```
 C:\>bitsadmin /Cache /Info {6511FB02-E195-40A2-B595-E8E2F8F47702} 
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

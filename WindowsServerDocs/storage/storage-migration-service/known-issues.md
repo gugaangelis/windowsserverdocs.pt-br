@@ -6,14 +6,14 @@ ms.author: nedpyle
 manager: siroy
 ms.date: 07/09/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: d8437e0e33a370ab698d25f25b43fbbcbae97792
-ms.sourcegitcommit: 45415ba58907d650cfda45f4c57f6ddf1255dcbf
+ms.openlocfilehash: 391430b75670f207520a7d972b54ba293616d0e1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206915"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393911"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conhecidos do serviço de migração de armazenamento
 
@@ -133,7 +133,7 @@ Ao inventariar ou transferir arquivos da origem para os computadores de destino,
   Nome do Log:      Microsoft-Windows-StorageMigrationService-proxy/depurar origem:        Microsoft-Windows-StorageMigrationService-data do proxy:          ID do evento 2/26/2019 9:00:04 AM:      10000 categoria da tarefa: Nível de nenhum:         Palavras-chave de erro:      
   Usuário:          Computador do serviço de rede: srv1.contoso.com descrição:
 
-  02/26/2019-09:00:04.860 [erro] erro de transferência \\para SRV1. contoso. com\public\indy.png: (5) acesso negado.
+  02/26/2019-09:00:04.860 [erro] erro de transferência para \\srv1. contoso. com\public\indy.png: (5) acesso negado.
 Rastreamento de pilha: em Microsoft. StorageMigration. proxy. Service. Transfer. FileDirUtils. OpenFile (String fileName, DesiredAccess desiredAccess, ShareMode ShareMode, CreationDisposition creationDisposition, FlagsAndAttributes flagsAndAttributes) em Microsoft. StorageMigration. proxy. Service. Transfer. FileDirUtils. gettargetfile (caminho da cadeia de caracteres) em Microsoft. StorageMigration. proxy. Service. Transfer. FileDirUtils. gettargetfile (arquivo FileInfo) em Microsoft. StorageMigration. proxy. Service. Transfer. FileTransfer. InitializeSourceFileInfo () em Microsoft. StorageMigration. proxy. Service. Transfer. FileTransfer. Transfer () em Microsoft. StorageMigration. proxy. Service. Transfer. FileTransfer. TryTransfer () [d:\os\src\base\dms\proxy\transfer\transferproxy\FileTransfer.cs:: TryTransfer:: 55]
 
 

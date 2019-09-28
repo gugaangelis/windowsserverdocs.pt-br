@@ -1,8 +1,8 @@
 ---
-title: Logman start | parar
-description: 'Tópico de comandos do Windows para * * *- '
+title: inicialização de logman | deixar
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c6027c4c9a99e45bb1c2e95cdfd4a7687a5c43b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 395d325b31ee596e1394e7ed796a444f159d15fc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437685"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374412"
 ---
-# <a name="logman-start--stop"></a>Logman start | parar
+# <a name="logman-start--stop"></a>inicialização de logman | deixar
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Iniciar um coletor de dados e definir a hora de início para manual ou parar um coletor de dados definido e defina a hora de término como manual.  
+Inicie um coletor de dados e defina a hora de início como manual ou pare um conjunto de coletores de dados e defina a hora de término como manual.  
 
 ## <a name="syntax"></a>Sintaxe  
 ```  
@@ -35,15 +35,15 @@ logman stop <[-n] <name>> [options]
 
 |     Parâmetro      |                                 Descrição                                  |
 |--------------------|------------------------------------------------------------------------------|
-|         -?         |                       Exibe contextual a Ajuda.                       |
+|         -?         |                       Exibe a ajuda contextual.                       |
 | -s <computer name> |            Execute o comando no computador remoto especificado.             |
-|  -config <value>   |           Especifica o arquivo de configurações que contém opções de comando.            |
+|  -config <value>   |           Especifica o arquivo de configurações que contém as opções de comando.            |
 |    [-n] <name>     |                          Nome do objeto de destino.                          |
-|        -ets        | Envie comandos para sessões de rastreamento de eventos diretamente sem salvar ou agendamento. |
-|        -as         |               Execute a operação solicitada de forma assíncrona.                |
+|        -ETS        | Envie comandos para sessões de rastreamento de eventos diretamente sem salvar ou agendar. |
+|        -como         |               Execute a operação solicitada de forma assíncrona.                |
 
-## <a name="BKMK_examples"></a>Exemplos  
-O comando a seguir inicia o perf_log do coletor de dados no server_1 computador remoto.  
+## <a name="BKMK_examples"></a>Disso  
+O comando a seguir inicia o Data Collector perf_log no computador remoto server_1.  
 ```  
 logman start perf_log -s server_1  
 ```  

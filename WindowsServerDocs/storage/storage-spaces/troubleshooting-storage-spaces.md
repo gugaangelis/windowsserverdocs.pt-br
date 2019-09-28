@@ -2,19 +2,19 @@
 title: Solução de problemas Espaços de Armazenamento Diretos
 description: Saiba como solucionar problemas de implantação de Espaços de Armazenamento Diretos.
 keywords: Espaços de Armazenamento
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: ''
 ms.technology: storage-spaces
 ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 30fdda5ada01510027100efce1e95f310f69c6a1
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ace19b711445106956ae223f17afb6b4181d352d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865100"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365940"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>Solucionar problemas Espaços de Armazenamento Diretos
 
@@ -103,8 +103,8 @@ Veja a seguir um exemplo da saída do cmdlet **Get-VirtualDisk** .
 |-|-|-|-|-|-|-|
 |Disk4|         Mirror|                 OK|                  Íntegro|       True|            10 TB|  Nó-01. cont...|
 |Disk3|         Mirror|                 OK|                  Íntegro|       True|            10 TB|  Nó-01. cont...|
-|Disco 2|         Mirror|                 “Desanexado”|            Unknown|       True|            10 TB|  Nó-01. cont...|
-|DISK1|         Mirror|                 “Desanexado”|            Unknown|       True|            10 TB|  Nó-01. cont...| 
+|Disco 2|         Mirror|                 “Desanexado”|            Desconhecido|       True|            10 TB|  Nó-01. cont...|
+|DISK1|         Mirror|                 “Desanexado”|            Desconhecido|       True|            10 TB|  Nó-01. cont...| 
 
 
 Além disso, os seguintes eventos podem ser registrados nos nós:

@@ -1,8 +1,8 @@
 ---
-title: ftp prompt_1
-description: 'Tópico de comandos do Windows para * * *- '
+title: prompt_1 FTP
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65f7505dfcb3677fcaace9bd645cca7e7ba70b7d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 08c7f9c14f4168bb5d3aa874711669eede8d0d87
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438597"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376204"
 ---
-# <a name="ftp-prompt1"></a>ftp: prompt_1
+# <a name="ftp-prompt_1"></a>FTP: prompt_1
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Alterna entre **prompt** modo intermitente.   
+Alterna entre ativar e desativar o modo de **prompt** .   
 ## <a name="syntax"></a>Sintaxe  
 ```  
 prompt  
@@ -32,10 +32,10 @@ prompt
 ### <a name="parameters"></a>Parâmetros  
 nenhuma  
 ## <a name="remarks"></a>Comentários  
-- Por padrão, **prompt** está em.  
-- **FTP** solicita durante várias transferências de arquivo para que você possa recuperar ou armazenar arquivos de forma seletiva.  **Mget** e **mput** transferir todos os arquivos se **prompt** está desativado.  
-  ## <a name="BKMK_Examples"></a>Exemplos  
-  Ativar e desativar o modo de solicitação.  
+- Por padrão, **prompt** está ativado.  
+- prompts de **FTP** durante várias transferências de arquivos para permitir que você recupere ou armazene arquivos seletivamente.  **MGET** e **mput** transfere todos os arquivos se o **prompt** estiver desativado.  
+  ## <a name="BKMK_Examples"></a>Disso  
+  Ativar e desativar o modo de prompt.  
   ```  
   prompt  
   ```  

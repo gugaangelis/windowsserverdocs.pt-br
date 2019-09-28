@@ -1,19 +1,19 @@
 ---
 title: Cenários de política de QoS
 description: Este tópico fornece cenários de política de QoS (qualidade de serviço), que demonstram como usar Política de Grupo para priorizar o tráfego de rede de aplicativos e serviços específicos no Windows Server 2016.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: c4306f06-a117-4f65-b78b-9fd0d1133f95
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e0968157532c0b3bd926acbaff4291e27a71de31
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9ac5ab31db1b8c184fd179ecb3e6b87f7fffd2ba
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871866"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405234"
 ---
 # <a name="qos-policy-scenarios"></a>Cenários de política de QoS
 
@@ -79,10 +79,10 @@ A tabela a seguir resume as políticas de QoS para esse cenário.
   
 |Nome da política|Valor de DSCP|Taxa de limitação|Aplicado a unidades organizacionais|Descrição|  
 |-----------------|----------------|-------------------|-----------------------------------|-----------------|
-|[Nenhuma política]|0|Nenhum|[Sem implantação]|Tratamento de melhor esforço (padrão) para tráfego não classificado.|  
-|Dados de backup|1|Nenhum|Todos os clientes|Aplica um valor DSCP de baixa prioridade para esses dados em massa.|  
-|LOB do servidor|44|Nenhum|UO do computador para servidores ERP|Aplica DSCP de alta prioridade para o tráfego do servidor ERP|  
-|LOB do cliente|60|Nenhum|Grupo de usuários de finanças|Aplica DSCP de alta prioridade para o tráfego do cliente ERP|  
+|[Nenhuma política]|0|Nenhuma|[Sem implantação]|Tratamento de melhor esforço (padrão) para tráfego não classificado.|  
+|Dados de backup|1|Nenhuma|Todos os clientes|Aplica um valor DSCP de baixa prioridade para esses dados em massa.|  
+|LOB do servidor|44|Nenhuma|UO do computador para servidores ERP|Aplica DSCP de alta prioridade para o tráfego do servidor ERP|  
+|LOB do cliente|60|Nenhuma|Grupo de usuários de finanças|Aplica DSCP de alta prioridade para o tráfego do cliente ERP|  
 
 >[!NOTE]
 >Os valores de DSCP são representados em formato decimal.

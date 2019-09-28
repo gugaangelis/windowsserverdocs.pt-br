@@ -1,7 +1,7 @@
 ---
 title: Máquinas virtuais Debian com suporte no Hyper-V
 description: Lista os serviços e recursos de integração do Linux incluídos em cada versão
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,12 +11,12 @@ ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 35603d47439b0bc8702dbaba09dea9d449964026
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 71b1985da522ef9ee2d7745bd19d2548e0241a2f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544735"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366771"
 ---
 # <a name="supported-debian-virtual-machines-on-hyper-v"></a>Máquinas virtuais Debian com suporte no Hyper-V
 
@@ -79,7 +79,7 @@ O mapa de distribuição de recursos a seguir indica os recursos que estão pres
 
 3. O Windows Server 2012 R2, uma VM com 8 núcleos ou mais, terá todas as interrupções roteadas para um único vCPU.
 
-4. A partir do Debian 8,3, o pacote Debian instalado manualmente "HyperV-daemons" contém o par chave-valor, FCOPY e daemons VSS. No Debian 7. x e 8.0-8.2, o pacote HyperV-daemons deve vir de backports de [Debian](https://wiki.debian.org/Backports).
+4. A partir do Debian 8,3, o pacote Debian instalado manualmente "HyperV-daemons" contém o par chave-valor, FCOPY e daemons VSS. No Debian 7. x e 8.0-8.2, o pacote HyperV-daemons deve vir de [backports de Debian](https://wiki.debian.org/Backports).
 
 5. O backup de máquina virtual ao vivo não funcionará com sistemas de arquivos ext2. O layout padrão criado pelo instalador Debian inclui sistemas de arquivos de ext2, você deve personalizar o layout para não criar esse tipo de FileSystem.
 

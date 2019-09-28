@@ -1,19 +1,19 @@
 ---
 title: Sobre a criptografia de despejo
 description: Descreve como criptografar arquivos de despejo e solucionar problemas de criptografia.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: dongill
 ms.topic: article
 author: larsiwer
 ms.asset: b78ab493-e7c3-41f5-ab36-29397f086f32
 ms.author: kathydav
 ms.date: 11/03/2016
-ms.openlocfilehash: d46deee7fc9d911de2a6ee44ae097affe1d658a3
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: e1e374a75c11321820393bede83ca9ea225f5424
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872145"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392818"
 ---
 # <a name="about-dump-encryption"></a>Sobre a criptografia de despejo
 A criptografia de despejo pode ser usada para criptografar despejos de memória e despejos dinâmicos gerados para um sistema. Os despejos são criptografados usando uma chave de criptografia simétrica que é gerada para cada despejo. Em seguida, essa chave é criptografada usando a chave pública especificada pelo administrador confiável do host (protetor de chave de criptografia de despejo de memória). Isso garante que apenas alguém que tenha a chave privada correspondente possa descriptografar e, portanto, acessar o conteúdo do despejo. Esse recurso é utilizado em uma malha protegida.
@@ -23,7 +23,7 @@ Observação: Se você configurar a criptografia de despejo, também desabilite 
 ## <a name="manual-configuration"></a>Configuração manual
 Para ativar a criptografia de despejo usando o registro, configure os seguintes valores de registro em`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl`
 
-| Nome do valor | type | Valor |
+| Nome do valor | Tipo | Valor |
 | ---------- | ---- | ----- |
 | DumpEncryptionEnabled | DWORD | 1 para habilitar a criptografia de despejo, 0 para desabilitar a criptografia de despejo |
 | EncryptionCertificates\Certificate.1::P ublicKey | Binary | Chave pública (RSA, 2048 bits) que deve ser usada para criptografar despejos. Isso deve ser formatado como [BCRYPT_RSAKEY_BLOB](https://msdn.microsoft.com/library/windows/desktop/aa375531(v=vs.85).aspx). |

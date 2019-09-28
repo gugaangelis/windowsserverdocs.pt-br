@@ -1,9 +1,9 @@
 ---
-title: ETAPA 7 de testar a conectividade ao retornar para a rede corporativa
-description: Este tópico faz parte do guia de laboratório de teste - demonstração do DirectAccess em um Cluster com Windows NLB para o Windows Server 2016
+title: ETAPA 7 testar a conectividade ao retornar ao corpnet
+description: Este tópico faz parte do guia de laboratório de teste – demonstre o DirectAccess em um cluster com o NLB do Windows para Windows Server 2016
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,26 +12,26 @@ ms.topic: article
 ms.assetid: 5a7252d0-6db8-4a9d-98ee-75082ecd2929
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 477d11f0e6bf296c41fb7116a7aae43787df263c
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: fa89745d6efcae3591bba2aa5a694ee651bc9912
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283377"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404860"
 ---
-# <a name="step-7-test-connectivity-when-returning-to-the-corpnet"></a>ETAPA 7 de testar a conectividade ao retornar para a rede corporativa
+# <a name="step-7-test-connectivity-when-returning-to-the-corpnet"></a>ETAPA 7 testar a conectividade ao retornar ao corpnet
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Muitos dos seus usuários se moverá entre locais remotos e da rede corporativa, portanto, é importante que quando eles retornarem da rede corporativa que eles sejam capazes de acessar os recursos sem precisar fazer qualquer configuração é alterado. Acesso remoto torna isso possível, pois quando o cliente do DirectAccess retornará para a rede corporativa, ele é capaz de fazer uma conexão com o servidor de local de rede. Depois que a conexão HTTPS é estabelecida com êxito para o servidor de local de rede, o cliente do DirectAccess desabilita a configuração do cliente DirectAccess e usa uma conexão direta à rede corporativa.  
+Muitos de seus usuários se moverão entre locais remotos e o corpnet, portanto, é importante que, quando eles retornam ao corpnet, eles possam acessar recursos sem precisar fazer nenhuma alteração de configuração. O acesso remoto torna isso possível porque quando o cliente DirectAccess retorna para o corpnet, ele é capaz de estabelecer uma conexão com o servidor de local de rede. Depois que a conexão HTTPS for estabelecida com êxito ao servidor de local de rede, o cliente DirectAccess desabilitará a configuração do cliente DirectAccess e usará uma conexão direta com o corpnet.  
   
 ### <a name="test-connectivity-on-client1"></a>Testar a conectividade em CLIENT1  
   
-1. Encerre o CLIENT1 e, em seguida, desconecte o CLIENT1 do comutador virtual ou sub-rede da rede doméstica e conectá-lo ao comutador virtual ou sub-rede Corpnet. Ativar o CLIENT1 e faça logon como CORP\User1.  
+1. Desligue o CLIENT1 e desconecte o CLIENT1 da sub-rede HomeNet ou do comutador virtual e conecte-o à sub-rede corpnet ou ao comutador virtual. Ative o CLIENT1 e faça logon como CORP\User1.  
   
-2. Abra uma janela elevada do Windows PowerShell, digite **ipconfig/all**, e pressione ENTER. A saída irá indicar que o CLIENT1 possui um endereço IP local e que não há nenhum ativo 6to4, Teredo ou IP-HTTPS túnel.  
+2. Abra uma janela do Windows PowerShell com privilégios elevados, digite **ipconfig/all**e pressione Enter. A saída indicará que CLIENT1 tem um endereço IP local e que não há nenhum túnel 6to4, Teredo ou IP-HTTPS ativo.  
   
-3. Testar a conectividade com o compartilhamento de rede no APP2. Sobre o **inicie** tela, digite<strong>\\\APP2\Files</strong>, e pressione ENTER. Você poderá abrir o arquivo nessa pasta.  
+3. Teste a conectividade com o compartilhamento de rede em APP2. Na tela **Iniciar** , digite<strong>\\ \ APP2\FILES</strong>e pressione Enter. Você poderá abrir o arquivo nessa pasta.  
   
 
 

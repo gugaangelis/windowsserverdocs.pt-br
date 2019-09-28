@@ -2,7 +2,7 @@
 title: mountvol
 description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 07c57f7ab9c41d6155e4a8d38322176aabf3868f
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 5a3de8e5744c50acff3fdad0c7cf1dabf14fb144
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544599"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373582"
 ---
 # <a name="mountvol"></a>mountvol
 
@@ -44,7 +44,7 @@ mountvol <Drive>: /s
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|[\<Unidade >:]<Path>|Especifica o diretório NTFS existente no qual o ponto de montagem residirá.|
+|[\<Drive >:] <Path>|Especifica o diretório NTFS existente no qual o ponto de montagem residirá.|
 |\<VolumeName >|Especifica o nome do volume que é o destino do ponto de montagem. O nome do volume usa a seguinte sintaxe, em que *GUID* é um identificador globalmente exclusivo:</br>`\\\\?\Volume\{GUID}\`</br>Os colchetes {} são necessários.|
 |/d|Remove o ponto de montagem de volume da pasta especificada.|
 |/l|Lista o nome do volume montado para a pasta especificada.|
@@ -59,7 +59,7 @@ mountvol <Drive>: /s
 
 -   O **Mountvol** permite vincular volumes sem a necessidade de uma letra de unidade.
 -   Os volumes desmontados usando **/p** são listados na lista volumes como "não montado até que um ponto de montagem de volume seja criado". Se o volume tiver mais de um ponto de montagem, use **/d** para remover os pontos de montagem adicionais antes de usar **/p**. Você pode tornar o volume básico montável novamente atribuindo um ponto de montagem de volume.
--   Se você precisar expandir o espaço do volume sem reformatar ou substituir um disco rígido, poderá adicionar um caminho de montagem a outro volume. O benefício de usar um volume com vários caminhos de montagem é que você pode acessar todos os volumes locais usando uma única letra de unidade ( `C:`como). Você não precisa se lembrar de qual volume corresponde a qual letra de unidade — embora ainda possa montar volumes locais e atribuir a eles letras de unidade.
+-   Se você precisar expandir o espaço do volume sem reformatar ou substituir um disco rígido, poderá adicionar um caminho de montagem a outro volume. O benefício de usar um volume com vários caminhos de montagem é que você pode acessar todos os volumes locais usando uma única letra de unidade (como `C:`). Você não precisa se lembrar de qual volume corresponde a qual letra de unidade — embora ainda possa montar volumes locais e atribuir a eles letras de unidade.
 
 ## <a name="BKMK_examples"></a>Disso
 

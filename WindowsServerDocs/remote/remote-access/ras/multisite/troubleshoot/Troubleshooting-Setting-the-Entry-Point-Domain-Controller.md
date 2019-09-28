@@ -1,9 +1,9 @@
 ---
 title: Solução de problemas na configuração do controlador de domínio de ponto de entrada
-description: Este tópico faz parte do guia de implantar vários servidores de acesso remoto em uma implantação multissite no Windows Server 2016.
+description: Este tópico faz parte do guia implantar vários servidores de acesso remoto em uma implantação multissite no Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,30 +12,30 @@ ms.topic: article
 ms.assetid: b12dd0e8-1d80-4d4b-bb45-586f19d17ef0
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 5e7e09a6715df22882c8a88aedf95a5158dd2a0d
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 10a0f7952fc27d0185d4383da21f0614885ddac3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280911"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71367054"
 ---
 # <a name="troubleshooting-setting-the-entry-point-domain-controller"></a>Solução de problemas na configuração do controlador de domínio de ponto de entrada
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico contém informações sobre como solucionar problemas relacionados ao comando `Set-DAEntryPointDC`. Para confirmar que o erro recebido está relacionado à configuração do controlador de domínio de ponto de entrada, procure a ID de evento 10065 no Log de Eventos do Windows.  
   
-## <a name="SaveGPOSettings"></a>Salvando as configurações de GPO do servidor  
-**Erro recebido**. Ocorreu um erro ao salvar configurações de acesso remoto no GPO < nome_do_gpo >.  
+## <a name="SaveGPOSettings"></a>Salvando configurações de GPO do servidor  
+**Erro recebido**. Ocorreu um erro ao salvar as configurações de acesso remoto para o GPO < GPO_name >.  
   
-Para solucionar esse erro, consulte salvando as configurações de GPO do servidor.  
+Para solucionar esse erro, consulte Salvando configurações de GPO do servidor.  
   
 ## <a name="remote-access-is-not-configured"></a>O Acesso Remoto não está configurado  
-**Erro recebido**. Acesso remoto não está configurado em < nome_do_servidor >. Especifique o nome de um servidor que pertença a uma implantação multissite.  
+**Erro recebido**. O acesso remoto não está configurado em < server_name >. Especifique o nome de um servidor que pertença a uma implantação multissite.  
   
 Ou  
   
-Acesso remoto não está configurado no servidor < nome_do_servidor >. Especifique um computador com DirectAccess habilitado.  
+O acesso remoto não está configurado no servidor < server_name >. Especifique um computador com DirectAccess habilitado.  
   
 **Causa**  
   
@@ -63,7 +63,7 @@ Execute o comando especificando o parâmetro *ComputerName* com o nome do servid
 ## <a name="entry-point-and-domain-controller-not-provided-in-cmdlet"></a>Ponto de entrada e controlador de domínio não fornecidos em cmdlet  
 O cmdlet `Set-DaEntryPointDC` permite alterar o controlador de domínio que está associado a diversos pontos de entrada, por exemplo, quando um determinado controlador de domínio não está mais disponível. Você pode atualizar um ponto de entrada específico de modo a usar outro controlador de domínio, ou pode atualizar todos os pontos de entrada que utilizam um controlador de domínio específico de modo a usar um novo controlador. No primeiro caso, recomenda-se usar o parâmetro *EntryPointName* para especificar qual ponto de entrada deve ser atualizado. No segundo caso, recomenda-se usar o parâmetro *ExistingDC* para especificar qual controlador de domínio deve ser substituído. Só é possível especificar um desses parâmetros.  
   
-**Erro recebido**. Não há parâmetros necessários foram especificados. Forneça um nome de ponto de entrada ou o nome de um controlador de domínio existente.  
+**Erro recebido**. Nenhum parâmetro obrigatório foi especificado. Forneça um nome de ponto de entrada ou o nome de um controlador de domínio existente.  
   
 Ou  
   
@@ -92,7 +92,7 @@ Assegure-se de que o computador remoto possa ser acessado através do RPC e de q
   
 -   **Problema 1**  
   
-    **Erro recebido**. O controlador de domínio < controlador_de_domínio > não pode ser alcançado. Verifique a conectividade da rede e a disponibilidade do controlador de domínio.  
+    **Erro recebido**. Não é possível acessar o controlador de domínio < domain_controller >. Verifique a conectividade da rede e a disponibilidade do controlador de domínio.  
   
     **Causa**  
   
@@ -104,7 +104,7 @@ Assegure-se de que o computador remoto possa ser acessado através do RPC e de q
   
 -   **Problema 2**  
   
-    **Erro recebido**. O controlador de domínio < controlador_de_domínio > não pode ser contatado.  
+    **Erro recebido**. O controlador de domínio < domain_controller > não pode ser contatado.  
   
     **Causa**  
   
@@ -116,19 +116,19 @@ Assegure-se de que o computador remoto possa ser acessado através do RPC e de q
   
 -   **Problema 3**  
   
-    **Erro recebido**. O controlador de domínio < controlador_de_domínio > não pode ser alcançado para %2 2!s!.  
+    **Erro recebido**. Não é possível acessar o controlador de domínio < domain_controller > para% 2! s!.  
   
     **Causa**  
   
-    Para manter a consistência da configuração em uma implantação multissite, é importante assegurar que cada GPO seja gerenciado por um único controlador de domínio. Quando o controlador de domínio que gerencia o GPO do servidor de um ponto de entrada não estiver disponível, as definições de configuração de acesso remoto não podem ser lidas ou modificadas.  
+    Para manter a consistência da configuração em uma implantação multissite, é importante assegurar que cada GPO seja gerenciado por um único controlador de domínio. Quando o controlador de domínio que gerencia o GPO do servidor de um ponto de entrada não está disponível, as definições de configuração de acesso remoto não podem ser lidas ou modificadas.  
   
     **Solução**  
   
-    Siga o procedimento "para alterar o controlador de domínio que gerencia GPOs de servidor" descrito [2.4. Configurar GPOs](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs).  
+    Siga o procedimento "para alterar o controlador de domínio que gerencia GPOs de servidor", descrito em ,4. Configure GPOs @ no__t-0.  
   
 -   **Problema 4**  
   
-    **Erro recebido**. O controlador de domínio primário no domínio < nome_do_domínio > não pode ser alcançado.  
+    **Erro recebido**. O controlador de domínio primário no domínio < nome_do_domínio > não pode ser acessado.  
   
     **Causa**  
   
@@ -136,10 +136,10 @@ Assegure-se de que o computador remoto possa ser acessado através do RPC e de q
   
     **Solução**  
   
-    Siga o procedimento para transferir a função de emulador do PDC", descrito na [2.4. Configurar GPOs](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs).  
+    Siga o procedimento "para transferir a função de emulador de PDC", descrito em ,4. Configure GPOs @ no__t-0.  
   
 ## <a name="read-only-domain-controller"></a>Controlador de domínio somente leitura  
-**Erro recebido**. O controlador de domínio < controlador_de_domínio > é somente leitura. Especifique um controlador de domínio que não seja somente leitura.  
+**Erro recebido**. O controlador de domínio < domain_controller > é somente leitura. Especifique um controlador de domínio que não seja somente leitura.  
   
 **Causa**  
   
@@ -153,7 +153,7 @@ Quando o cmdlet `Set-DAEntryPointDC` é utilizado, o parâmetro *NewDC* é usado
   
 -   **Problema 1**  
   
-    **Erro recebido**. GPO < nome_do_gpo > em < controlador_de_domínio_anterior > controlador de domínio não pode ser recuperada do controlador de domínio < controlador_de_domínio_substituto >, porque eles não estão no mesmo domínio.  
+    **Erro recebido**. O GPO < GPO_name > no controlador de domínio < o > de previous_domain_controller não pode ser recuperado do controlador de domínio < replacement_domain_controller > porque eles não estão no mesmo domínio.  
   
     **Causa**  
   
@@ -165,7 +165,7 @@ Quando o cmdlet `Set-DAEntryPointDC` é utilizado, o parâmetro *NewDC* é usado
   
 -   **Problema 2**  
   
-    **Erro recebido**. GPO < nome_do_gpo > em < controlador_de_domínio_anterior > controlador de domínio não pode ser recuperada do controlador de domínio < controlador_de_domínio_substituto >. Aguarde até a conclusão da replicação do domínio e tente de novo.  
+    **Erro recebido**. O GPO < GPO_name > no controlador de domínio < o > de previous_domain_controller não pode ser recuperado do controlador de domínio < replacement_domain_controller >. Aguarde até a conclusão da replicação do domínio e tente de novo.  
   
     **Causa**  
   
@@ -177,7 +177,7 @@ Quando o cmdlet `Set-DAEntryPointDC` é utilizado, o parâmetro *NewDC* é usado
   
 -   **Problema 3**  
   
-    **Erro recebido**. Você não tem permissões para acessar o GPO < nome_do_gpo >.  
+    **Erro recebido**. Você não tem permissões para acessar o GPO < GPO_name >.  
   
     **Causa**  
   
@@ -188,7 +188,7 @@ Quando o cmdlet `Set-DAEntryPointDC` é utilizado, o parâmetro *NewDC* é usado
     O GPO existe no controlador de domínio, mas não pode ser lido. Certifique-se de ter as permissões necessárias e tente novamente.  
   
 ## <a name="entry-point-not-part-of-multisite-deployment"></a>Ponto de entrada não faz parte da implantação multissite  
-**Erro recebido**. Ponto de entrada < nome_do_ponto_de_entrada > não é parte de uma implantação multissite. Especifique um valor alternativo.  
+**Erro recebido**. O ponto de entrada < entry_point_name > não faz parte da implantação multissite. Especifique um valor alternativo.  
   
 **Causa**  
   
@@ -202,7 +202,7 @@ Certifique-se de que o nome do ponto de entrada esteja escrito corretamente e de
   
 -   **Problema 1**  
   
-    **Erro recebido**. Servidor < nome_do_servidor > no < nome_do_ponto_de_entrada > ponto de entrada não pode ser acessado.  
+    **Erro recebido**. O servidor < server_name > no ponto de entrada < entry_point_name > não pode ser acessado.  
   
     **Causa**  
   
@@ -214,7 +214,7 @@ Certifique-se de que o nome do ponto de entrada esteja escrito corretamente e de
   
 -   **Problema 2**  
   
-    **Erro recebido**. As configurações não podem ser salvo no registro no servidor < nome_do_servidor > no ponto de entrada < nome_do_ponto_de_entrada >.  
+    **Erro recebido**. As configurações não podem ser salvas no registro no servidor < server_name > no ponto de entrada < entry_point_name >.  
   
     **Causa**  
   
@@ -226,7 +226,7 @@ Certifique-se de que o nome do ponto de entrada esteja escrito corretamente e de
   
 -   **Problema 3**  
   
-    **Erro recebido**. As atualizações do GPO não podem ser aplicadas em < nome_do_servidor >. As alterações só terão efeito após a próxima atualização de política.  
+    **Erro recebido**. As atualizações de GPO não podem ser aplicadas em < server_name >. As alterações só terão efeito após a próxima atualização de política.  
   
     **Causa**  
   
@@ -237,7 +237,7 @@ Certifique-se de que o nome do ponto de entrada esteja escrito corretamente e de
     É possível ver os servidores que não foram atualizados usando o **Status da Configuração** no **PAINEL** do Console de Gerenciamento de Acesso Remoto. Isso não causa problemas funcionais; porém, você pode executar `gpupdate /force` nos servidores que não foram atualizados para que o status da configuração seja atualizado imediatamente.  
   
 ## <a name="problem-resolving-fqdn"></a>Problema ao resolver um FQDN  
-**Erro recebido**. Servidor < nome_do_servidor > no < nome_do_ponto_de_entrada > ponto de entrada não pode ser acessado.  
+**Erro recebido**. O servidor < server_name > no ponto de entrada < entry_point_name > não pode ser acessado.  
   
 **Causa**  
   
@@ -248,11 +248,11 @@ Enquanto obtia a lista de servidores do DirectAccess a serem modificados, o cmdl
 O ponto de entrada especificado na mensagem de erro está associado a um controlador de domínio. Assegure-se de que esse controlador esteja disponível para o ponto de entrada. Se o computador ao qual pertence a SID especificada tiver sido removido do domínio, ignore essa mensagem e remova o servidor da implantação multissite.  
   
 ## <a name="no-entry-points-to-update"></a>Não há pontos de entrada para atualizar  
-**Aviso recebido**. Configurações do controlador de domínio não foram modificadas. Se você achar que alterações são necessárias, verifique se os parâmetros do cmdlet estão configurados corretamente e se os GPOs foram replicados nos controladores de domínio necessários.  
+**Aviso recebido**. As configurações do controlador de domínio não foram modificadas. Se você achar que alterações são necessárias, verifique se os parâmetros do cmdlet estão configurados corretamente e se os GPOs foram replicados nos controladores de domínio necessários.  
   
 **Causa**  
   
-Ao chamar o cmdlet `Set-DaEntryPointDC` com o parâmetro *ExistingDC*, o DirectAccess verifica todos os pontos de entrada e atualiza aqueles que estão associados ao controlador de domínio especificado. No entanto, nenhum ponto de entrada usa especificado *ExistingDC*.  
+Ao chamar o cmdlet `Set-DaEntryPointDC` com o parâmetro *ExistingDC*, o DirectAccess verifica todos os pontos de entrada e atualiza aqueles que estão associados ao controlador de domínio especificado. No entanto, nenhum ponto de entrada usa o *ExistingDC*especificado.  
   
 **Solução**  
   

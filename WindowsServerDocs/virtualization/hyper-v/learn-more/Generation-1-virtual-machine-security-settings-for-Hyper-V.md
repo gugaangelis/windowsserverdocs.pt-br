@@ -1,7 +1,7 @@
 ---
-title: Configurações de segurança da máquina virtual do Hyper-V geração 1
+title: Configurações de segurança de máquina virtual de geração 1 para Hyper-V
 description: Descreve as configurações de segurança disponíveis no Gerenciador do Hyper-V para máquinas virtuais de geração 1
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,12 +11,12 @@ ms.assetid: f8f8c569-8b74-4c19-876e-1c7d00cce308
 author: larsiwer
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 73cc2e45367d448aa736644e4a3bc02d3670fc6c
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: ceb3c2628546815f9b0af35946e173f4276130d2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447915"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392793"
 ---
 # <a name="generation-1-virtual-machine-security-settings"></a>Configurações de segurança de máquina virtual de geração 1
 
@@ -28,22 +28,22 @@ Use as configurações de segurança de máquina virtual de geração 1 no Geren
 
 Você pode ajudar a proteger os dados e o estado da máquina virtual selecionando a opção de suporte de criptografia a seguir.
 
-- **Criptografar o tráfego de migração de estado e a máquina virtual** -criptografa o estado salvo da máquina virtual quando ela é gravada em disco e o tráfego da migração ao vivo.
+- **Criptografar o estado e o tráfego de migração da máquina virtual** – criptografa o estado salvo da máquina virtual quando ele é gravado no disco e no tráfego de migração ao vivo.
 
-Para habilitar essa opção, você deve adicionar uma unidade de armazenamento de chaves para a máquina virtual.
+Para habilitar essa opção, você deve adicionar uma unidade de armazenamento de chave para a máquina virtual.
 
 ## <a name="key-storage-drive-in-hyper-v-manager"></a>Unidade de armazenamento de chaves no Gerenciador do Hyper-V
 
-Uma unidade de armazenamento de chave fornece uma unidade pequena para a máquina virtual para uma chave do BitLocker a ser armazenado. Isso permite que a máquina virtual criptografar o disco do sistema operacional sem exigir um chip Trusted Platform Module (TPM) virtualizado. O conteúdo da unidade de armazenamento de chaves é criptografado usando um protetor de chave. O host do protetor de chave authories Hyper-V para executar a máquina virtual. O conteúdo da unidade de armazenamento de chaves e o protetor de chave é armazenado como parte do estado de tempo de execução da máquina virtual.
+Uma unidade de armazenamento de chaves fornece uma pequena unidade para a máquina virtual para que uma chave do BitLocker seja armazenada. Isso permite que a máquina virtual criptografe seu disco do sistema operacional sem exigir um chip de Trusted Platform Module virtualizado (TPM). O conteúdo da unidade de armazenamento de chave é criptografado usando um protetor de chave. O protetor de chave cria o host Hyper-V para executar a máquina virtual. O conteúdo da unidade de armazenamento de chave e o protetor de chave são armazenados como parte do estado de tempo de execução da máquina virtual.
 
-Para descriptografar o conteúdo da unidade de armazenamento de chaves e iniciar a máquina virtual, o host Hyper-V precisa estar:
+Para descriptografar o conteúdo da unidade de armazenamento de chaves e iniciar a máquina virtual, o host Hyper-V precisa ser:
 
-- Parte de uma malha protegida autorizada para essa máquina virtual, ou
-- Tem a chave privada de um dos guardiões da máquina virtual.
+- Parte de uma malha protegida autorizada para esta máquina virtual ou
+- Ter a chave privada de um dos Guardiões da máquina virtual.
 
-Para saber mais sobre malhas protegidas, consulte a seção de Introdução ao VMs Blindadas no [garantia e segurança](../../../security/Security-and-Assurance.md).
+Para saber mais sobre malhas protegidas, consulte a seção apresentando VMs blindadas em [segurança e garantia](../../../security/Security-and-Assurance.md).
 
-Você pode adicionar uma unidade de armazenamento de chaves em um slot vazio em um dos controladores IDE da máquina virtual. Para fazer isso, clique em **adicionar a unidade de armazenamento de chave** para adicionar uma unidade de armazenamento de chaves para o primeiro slot de controlador IDE gratuito dessa máquina virtual.
+Você pode adicionar uma unidade de armazenamento de chaves a um slot vazio em um dos controladores IDE da máquina virtual. Para fazer isso, clique em **Adicionar unidade de armazenamento de chaves** para adicionar uma unidade de armazenamento de chaves ao primeiro slot do controlador IDE gratuito desta máquina virtual.
 
 ## <a name="see-also"></a>Consulte também
 

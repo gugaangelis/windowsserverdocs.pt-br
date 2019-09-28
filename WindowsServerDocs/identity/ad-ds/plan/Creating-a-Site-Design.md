@@ -7,47 +7,47 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f6d896213708f8c3ec5de44a1f85fb4ebd86b8c0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5b017582dad68938377fde4055d9a37b0c0af29b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819067"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402739"
 ---
 # <a name="creating-a-site-design"></a>Criar um projeto de site
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Criando um projeto de site envolve Decidindo quais locais se tornarão sites, criação de objetos do site, criando os objetos da sub-rede e associando as sub-redes a sites.  
+Criar um design de site envolve decidir quais locais se tornarão sites, criando objetos de site, criando objetos de sub-rede e associando as sub-redes a sites.  
   
 ## <a name="deciding-which-locations-will-become-sites"></a>Decidindo quais locais se tornarão sites
 
-Decida quais locais para criar sites para da seguinte maneira:  
+Decida quais locais criar sites do da seguinte maneira:  
   
-- Crie sites para todos os locais em que você planeja colocar controladores de domínio. Consulte as informações documentadas na planilha "Posicionamento de controlador de domínio" (DSSTOPO_4.doc) para identificar locais que incluem controladores de domínio.  
-- Crie sites para esses locais que incluem servidores que executam aplicativos que exigem um site a ser criado. Determinados aplicativos, como o Distributed arquivo sistema DFSN (Namespaces), usam objetos de site para localizar os servidores mais próximos aos clientes.  
+- Crie sites para todos os locais em que você planeja posicionar controladores de domínio. Consulte as informações documentadas na planilha "posicionamento do controlador de domínio" (DSSTOPO_4. doc) para identificar os locais que incluem controladores de domínio.  
+- Crie sites para esses locais que incluem servidores que executam aplicativos que exigem um site a ser criado. Determinados aplicativos, como DFSN (namespaces do Sistema de Arquivos Distribuído), usam objetos do site para localizar os servidores mais próximos aos clientes.  
 
    > [!NOTE]  
-   > Se sua organização tiver várias redes em estreita proximidade com conexões rápidas e confiáveis, você pode incluir todas as sub-redes para essas redes em um único site do Active Directory. Por exemplo, se o retorno de ida e volta latência de rede entre dois servidores em diferentes sub-redes é de 10 ms ou menos, você pode incluir ambas as sub-redes no mesmo site do Active Directory. Se a latência de rede entre os dois locais for maior que 10 ms, você não deve incluir as sub-redes em um único site do Active Directory. Mesmo quando a latência é de 10 ms ou menos, você pode optar por implantar sites separados se você quiser segmentar o tráfego entre sites para aplicativos baseados no Active Directory.  
+   > Se sua organização tiver várias redes em proximidade com conexões rápidas e confiáveis, você poderá incluir todas as sub-redes para essas redes em um único site de Active Directory. Por exemplo, se a viagem de ida e volta da latência de rede entre dois servidores em sub-redes diferentes for de 10 ms ou menos, você poderá incluir ambas as sub-redes no mesmo site Active Directory. Se a latência de rede entre os dois locais for maior que 10 ms, você não deverá incluir as sub-redes em um único site de Active Directory. Mesmo quando a latência for de 10 ms ou menos, você poderá optar por implantar sites separados se desejar segmentar o tráfego entre sites para aplicativos baseados em Active Directory.  
 
-- Se um site não é necessário para um local, adicione a sub-rede do local para um site para o qual o local tem a velocidade de rede de (longa distância WAN) de longa distância máxima e largura de banda disponível.  
+- Se um site não for necessário para um local, adicione a sub-rede do local a um site para o qual o local tem a velocidade máxima da WAN (rede de longa distância) e a largura de banda disponível.  
   
-Locais de documento que se tornarão sites e os endereços de rede e máscaras de sub-rede dentro de cada local. Para uma planilha ajudar a documentar os sites, consulte [trabalho auxílios para Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558), Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip de baixar e abrir "associar sub-redes com Sites"(DSSTOPO_6.doc).  
+Locais de documentos que se tornarão sites e os endereços de rede e máscaras de sub-rede dentro de cada local. Para uma planilha para ajudá-lo a documentar sites, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558), baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip e abra "associando sub-redes com sites" (DSSTOPO_6. doc).  
   
-## <a name="creating-a-site-object-design"></a>Criar um design do objeto de site
+## <a name="creating-a-site-object-design"></a>Criando um design de objeto do site
 
-Para cada local em que você optou por criar sites, planeje criar objetos do site nos serviços de domínio Active Directory (AD DS). Locais de documento que se tornarão sites na planilha "Associar sub-redes com Sites".  
+Para cada local em que você decidiu criar sites, planeje criar objetos de site no Active Directory Domain Services (AD DS). Locais de documentos que se tornarão sites na planilha "associando sub-redes com sites".  
   
-Para obter mais informações sobre como criar objetos do site, consulte o artigo [criar um Site](https://go.microsoft.com/fwlink/?LinkId=107067).  
+Para obter mais informações sobre como criar objetos de site, consulte o artigo [criar um site](https://go.microsoft.com/fwlink/?LinkId=107067).  
   
-## <a name="creating-a-subnet-object-design"></a>Criar um design do objeto de sub-rede
+## <a name="creating-a-subnet-object-design"></a>Criando um design de objeto de sub-rede
 
-Para cada sub-rede IP e máscara de sub-rede associada a cada local, planeje criar objetos de sub-rede no AD DS que representa todos os endereços IP dentro do site.  
+Para cada sub-rede IP e máscara de sub-rede associada a cada local, planeje criar objetos de sub-rede no AD DS representando todos os endereços IP no site.  
   
-Ao criar um objeto de sub-rede do Active Directory, as informações sobre a sub-rede IP de rede e máscara de sub-rede são convertidas automaticamente no formato de notação de comprimento de prefixo de rede <IP address> / <prefix length>. Por exemplo, o rede IP versão 4 (IPv4) endereço 172.16.4.0 com uma máscara de sub-rede 255.255.252.0 é exibido como 172.16.4.0/22. Além dos endereços IPv4, Windows Server 2008 também dá suporte a IP versão 6 (IPv6) sub-rede prefixos, por exemplo, 3FFE:FFFF:0:C000::/ 64. Para obter mais informações sobre as sub-redes IP em cada local, consulte a planilha de "Locais e sub-redes" (DSSTOPO_2.doc) no [Coletando informações de rede](../../ad-ds/plan/Collecting-Network-Information.md) e [apêndice a: Locais e prefixos de sub-rede](Appendix-A--Locations-and-Subnet-Prefixes.md).  
+Ao criar um objeto de sub-rede Active Directory, as informações sobre sub-rede IP de rede e máscara de sub-rede são automaticamente convertidas no formato de notação de comprimento de prefixo de rede <IP address> @ no__t-1 @ no__t-2. Por exemplo, o endereço IP de rede versão 4 (IPv4) 172.16.4.0 com uma máscara de sub-rede 255.255.252.0 aparece como 172.16.4.0/22. Além dos endereços IPv4, o Windows Server 2008 também dá suporte a prefixos de sub-rede IP versão 6 (IPv6), por exemplo, 3FFE: FFFF: 0: C000::/64. Para obter mais informações sobre sub-redes IP em cada local, consulte a planilha "Locations and sub-redes" (DSSTOPO_2. doc) em [coletando informações de rede](../../ad-ds/plan/Collecting-Network-Information.md) e [Appendix a: Locais e prefixos de sub-rede @ no__t-0.  
   
-Associar cada objeto de sub-rede com um objeto de site referindo-se a planilha "Associar sub-redes com Sites" (DSSTOPO_6.doc) na seção "Decidindo quais locais serão se tornar Sites" para determinar qual sub-rede deve ser associada com a qual site. O objeto de sub-rede do Active Directory associado a cada local na planilha "Associar sub-redes com Sites" (DSSTOPO_6.doc) de documento.  
+Associe cada objeto de sub-rede a um objeto de site fazendo referência à planilha "associando sub-redes com sites" (DSSTOPO_6. doc) na seção "decidindo quais locais se tornarão sites" para determinar qual sub-rede deve ser associada a qual site. Documente o objeto de sub-rede Active Directory associado a cada local na planilha "associando sub-redes a sites" (DSSTOPO_6. doc).  
   
 Para obter mais informações sobre como criar objetos de sub-rede, consulte o artigo [criar uma sub-rede](https://go.microsoft.com/fwlink/?LinkId=107068).

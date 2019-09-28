@@ -1,8 +1,8 @@
 ---
-title: inativo
-description: 'Tópico de comandos do Windows para * * *- '
+title: Inativo
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c8ded732d984830c7892720f75938979f1abb67
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9ce91b6a024c165e3aa63148b9ad6dfcc4db7a7c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438158"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375367"
 ---
-# <a name="inactive"></a>inativo
+# <a name="inactive"></a>Inativo
 
 
 
-No mestre de inicialização básica discos MBR (registro), marca a partição do sistema ou a partição de inicialização com foco como inativa.
+Em discos básicos de MBR (registro mestre de inicialização), o marca a partição do sistema ou a partição de inicialização com foco como inativa.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -35,11 +35,11 @@ inactive
 ## <a name="remarks"></a>Comentários
 
 > [!CAUTION]
-> O computador talvez não seja iniciado sem uma partição ativa. Não marca uma partição de sistema ou de inicialização como inativa, a menos que você for um usuário experiente com uma compreensão completa da família de sistemas operacionais do Windows.</br>> Se você não conseguir iniciar o computador depois de marcar a partição de sistema ou de inicialização como inativa, insira o CD de instalação do Windows na unidade de CD-ROM, reinicie o computador e, em seguida, repare a partição usando o **fixmbr** e **fixboot** comandos no Console de recuperação.
-> -   Depois de marcar a partição do sistema ou a partição de inicialização como inativo, o computador é iniciado na próxima opção especificada no BIOS, como a unidade de CD-ROM ou um Pre-Boot eXecution Environment (PXE).
-> -   Uma partição ativa de sistema ou de inicialização deve ser selecionada para essa operação seja bem-sucedida. Use o **Selecionar partição** comando para selecionar a partição ativa e mudar o foco a ele.
+> Seu computador pode não iniciar sem uma partição ativa. Não marque uma partição de inicialização ou de sistema como inativa, a menos que você seja um usuário experiente com uma compreensão completa da família de sistemas operacionais Windows.</br>> Se não for possível iniciar o computador depois de marcar o sistema ou a partição de inicialização como inativa, insira o CD do Instalação do Windows na unidade de CD-ROM, reinicie o computador e repare a partição usando os comandos **FIXMBR** e **fixboot** no Console de recuperação.
+> -   Depois de marcar a partição do sistema ou a partição de inicialização como inativa, seu computador será iniciado da próxima opção especificada no BIOS, como a unidade de CD-ROM ou um PXE (Pre-Boot eXecution Environment).
+> -   Um sistema ativo ou uma partição de inicialização deve ser selecionada para que essa operação seja realizada com sucesso. Use o comando **selecionar partição** para selecionar a partição ativa e deslocar o foco para ela.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 ```
 inactive

@@ -2,7 +2,7 @@
 title: Referência técnica do provedor de suporte de segurança Schannel
 description: Segurança do Windows Server
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-tls-ssl
@@ -13,26 +13,25 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/08/2018
-ms.openlocfilehash: 9e38a3960bb3e00dd5ce55690fecab22e680c678
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1505deb3c9629def7d77e6663031b2e9facf4425
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826277"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403393"
 ---
 # <a name="schannel-security-support-provider-technical-reference"></a>Referência técnica do provedor de suporte de segurança Schannel
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10
 
-Essa referência para profissionais de TI contém informações sobre o protocolo de segurança de camada de transporte (TLS), o protocolo Secure Sockets Layer (SSL) e o protocolo DTLS Datagram Transport Layer Security (), conforme implementado pelo suporte de segurança Schannel SSP (provedor).
+Essa referência para profissionais de ti contém informações sobre o protocolo TLS, o protocolo protocolo SSL (SSL) e o protocolo DTLS (datatransport Layer Security), conforme implementado pelo suporte à segurança Schannel Provedor (SSP).
 
-Esses protocolos fornecem meios para proteger os dados que estão sendo enviados entre os aplicativos em uma rede não confiável, usando a autenticação baseada em certificados e chaves de criptografia simétrica.
+Esses protocolos fornecem um meio de proteger os dados que estão sendo enviados entre aplicativos em uma rede não confiável usando a autenticação baseada em certificado e as chaves de criptografia simétrica.
 
 - [Protocolo TLS](transport-layer-security-protocol.md)
-- [Protocolo Datagram Transport Layer Security](datagram-transport-layer-security-protocol.md)
+- [Protocolo DTLS](datagram-transport-layer-security-protocol.md)
 
 ## <a name="see-also"></a>Consulte também
-[Autenticação do Windows](../windows-authentication/windows-authentication-overview.md)
-[a autenticação Kerberos](../kerberos/kerberos-authentication-overview.md)
+Autenticação[Kerberos](../kerberos/kerberos-authentication-overview.md) @no__t de [autenticação do Windows](../windows-authentication/windows-authentication-overview.md)-1
 
 

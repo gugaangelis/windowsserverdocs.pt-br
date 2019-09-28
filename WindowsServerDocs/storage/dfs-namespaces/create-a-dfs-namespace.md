@@ -2,18 +2,18 @@
 title: Crie um namespace DFS
 description: Este artigo descreve como criar um namespace DFS.
 ms.date: 6/5/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 4256e124e75be72f94cbd35c182edfe38e92bc90
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f4d4b86dd1a105576ac4d1749213696b319ba528
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847497"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402206"
 ---
 # <a name="create-a-dfs-namespace"></a>Crie um namespace DFS
 
@@ -36,13 +36,13 @@ Alernatively, você pode usar o procedimento a seguir para criar um namespace de
     Para criar um namespace autônomo em um cluster de failover, especifique o nome de uma instância de servidor de arquivos em cluster no **servidor de Namespace** página do **novo Assistente de Namespace**.
 
 > [!IMPORTANT]
-> Não tente criar um namespace baseado em domínio usando o modo do Windows Server 2008, a menos que o nível funcional de floresta for Windows Server 2003 ou superior. Isso pode resultar em um namespace para o qual você não pode excluir pastas DFS, produzindo a seguinte mensagem de erro: "A pasta não pode ser excluída. Não foi possível completar essa função".
+> Não tente criar um namespace baseado em domínio usando o modo do Windows Server 2008, a menos que o nível funcional da floresta seja o Windows Server 2003 ou superior. Isso pode resultar em um namespace para o qual não é possível excluir pastas do DFS, produzindo a seguinte mensagem de erro: "A pasta não pode ser excluída. Não foi possível completar essa função".
 
 ## <a name="see-also"></a>Consulte também
 
--   [Implantando os Namespaces do DFS](deploying-dfs-namespaces.md)
--   [Escolha um tipo de Namespace](choose-a-namespace-type.md)
--   [Adicionar servidores de Namespace para um Namespace do DFS baseado em domínio](add-namespace-servers-to-a-domain-based-dfs-namespace.md)
+-   [Implantar namespaces do DFS](deploying-dfs-namespaces.md)
+-   [Escolher um tipo de namespace](choose-a-namespace-type.md)
+-   [Adicionar servidores de namespace a um namespace do DFS baseado em domínio](add-namespace-servers-to-a-domain-based-dfs-namespace.md)
 -   [Delegar permissões de gerenciamento para Namespaces DFS](delegate-management-permissions-for-dfs-namespaces.md)
 
 

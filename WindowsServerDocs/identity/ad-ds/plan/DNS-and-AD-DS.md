@@ -7,31 +7,31 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f6d75a78119d76a0f8380967292b1d0abc720597
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 82c96ac3f146510c5590aabea75a60ca0f5f90cc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813137"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402690"
 ---
 # <a name="dns-and-ad-ds"></a>DNS e AD DS
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Os serviços de domínio do Active Directory (AD DS) usa serviços de resolução de nome de sistema de nome de domínio (DNS) para permitir que os clientes localizem os controladores de domínio e dos controladores de domínio que hospedam o serviço de diretório para se comunicar entre si.  
+Active Directory Domain Services (AD DS) usa os serviços de resolução de nomes DNS (sistema de nomes de domínio) para possibilitar que os clientes localizem controladores de domínio e os controladores de domínio que hospedam o serviço de diretório para se comunicarem entre si.  
   
-AD DS permite fácil integração do namespace do Active Directory em um namespace DNS existente. Recursos, como as zonas DNS integradas ao Active Directory torna mais fácil para a implantação de DNS, eliminando a necessidade de configurar zonas secundárias e, em seguida, configurar transferências de zona.  
+AD DS permite uma fácil integração do namespace de Active Directory em um namespace DNS existente. Recursos como zonas DNS integradas ao Active Directory facilitam a implantação do DNS, eliminando a necessidade de configurar zonas secundárias e, em seguida, configurar transferências de zona.  
   
-Para obter informações sobre como o DNS oferece suporte ao AD DS, consulte a seção [suporte de DNS para a referência técnica do Active Directory](https://go.microsoft.com/fwlink/?LinkID=48147).  
+Para obter informações sobre como o DNS dá suporte a AD DS, consulte a seção [suporte a DNS para Active Directory referência técnica](https://go.microsoft.com/fwlink/?LinkID=48147).  
   
 > [!NOTE]  
-> Se você implementar um namespace separado no qual o nome de domínio do AD DS difere o sufixo DNS primário que os clientes usam, integração do AD DS com o DNS é mais complexa. Para obter mais informações, consulte [Disjoint Namespace](../../ad-ds/plan/../../ad-ds/plan/Disjoint-Namespace.md).  
+> Se você implementar um namespace não contíguo no qual o nome de domínio AD DS difere do sufixo DNS primário que os clientes usam, a integração AD DS com o DNS será mais complexa. Para obter mais informações, consulte [namespace não contíguo](../../ad-ds/plan/../../ad-ds/plan/Disjoint-Namespace.md).  
   
 ## <a name="in-this-section"></a>Nesta seção  
   
-- [Local do controlador de domínio](../../ad-ds/plan/Domain-Controller-Location.md)  
-- [Zonas de DNS integrado ao Active Directory](../../ad-ds/plan/Active-Directory-Integrated-DNS-Zones.md)  
+- [Localização do controlador de domínio](../../ad-ds/plan/Domain-Controller-Location.md)  
+- [Zonas DNS integradas ao Active Directory](../../ad-ds/plan/Active-Directory-Integrated-DNS-Zones.md)  
 - [Nomenclatura de computador](../../ad-ds/plan/Computer-Naming.md)  
 - [Namespace não contíguo](../../ad-ds/plan/../../ad-ds/plan/Disjoint-Namespace.md)  

@@ -1,8 +1,8 @@
 ---
 title: nslookup set srchlist
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 39b28e7d43df2427caae46d323cd30f03b6b484c
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: fb93a9f7cf969161536e88bec929b7e6ba0f0e5d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436577"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372774"
 ---
 # <a name="nslookup-set-srchlist"></a>nslookup set srchlist
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Altera a lista de pesquisa e de nome de domínio do sistema de nome de domínio (DNS) padrão.
+altera o nome de domínio padrão do DNS (sistema de nomes de domínio) e a lista de pesquisa.
 
 ## <a name="syntax"></a>Sintaxe
 ```
@@ -34,17 +34,17 @@ Set srchlist=<DomainName>[/...]
 
 |    Parâmetro    |                                                                                        Descrição                                                                                        |
 |-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  <DomainName>   | Especifica novos nomes para a lista de domínio e a pesquisa DNS padrão. O valor de nome de domínio padrão baseia-se no nome do host. Você pode especificar um máximo de seis nomes separados por barras (/). |
-| {Ajuda &#124; ?} |                                                                   Exibe um resumo breve dos **nslookup** subcomandos.                                                                   |
+|  <DomainName>   | Especifica novos nomes para o domínio DNS padrão e a lista de pesquisa. O valor do nome de domínio padrão é baseado no nome do host. Você pode especificar um máximo de seis nomes separados por barras (/). |
+| {ajuda &#124; ?} |                                                                   Exibe um breve resumo dos subcomandos **nslookup** .                                                                   |
 
 ## <a name="remarks"></a>Comentários
-- O **definir srchlist**comando substitui o domínio DNS padrão nome e a pesquisa de lista da **domínio conjunto** comando. Use o **definir tudo** comando para exibir a lista.
-  ## <a name="BKMK_examples"></a>Exemplos
-  O exemplo a seguir define o domínio DNS para mfg.widgets.com e a lista de pesquisa para os três nomes:
+- O comando **set srchlist**substitui o nome de domínio DNS padrão e a lista de pesquisa do comando **set Domain** . Use o comando **set All** para exibir a lista.
+  ## <a name="BKMK_examples"></a>Disso
+  O exemplo a seguir define o domínio DNS como mfg.widgets.com e a lista de pesquisa com os três nomes:
   ```
   set srchlist=mfg.widgets.com/mrp2.widgets.com/widgets.com
   ```
   ## <a name="additional-references"></a>Referências adicionais
   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-  [nslookup definir domínio](nslookup-set-domain.md)
-  [nslookup definir todos](nslookup-set-all.md)
+  [nslookup Set Domain](nslookup-set-domain.md)
+  [nslookup Set All](nslookup-set-all.md)

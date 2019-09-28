@@ -1,7 +1,7 @@
 ---
 ms.assetid: 87174225-a60f-4718-b4cc-9b172f205b72
 title: Histórico de alterações dos tópicos de armazenamento
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
@@ -9,12 +9,12 @@ manager: brianlic
 ms.author: jgerend
 ms.date: 08/19/2019
 description: Tópicos novos e atualizados na documentação de armazenamento local do Windows Server para profissionais de ti.
-ms.openlocfilehash: d5ab2d8ae4ca90e259f8bc996494439190bc5279
-ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
+ms.openlocfilehash: ce937dfb5c6c0b46c8085cbb202590567ea829d3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69584821"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393931"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Histórico de alterações dos tópicos de armazenamento no Windows Server
 

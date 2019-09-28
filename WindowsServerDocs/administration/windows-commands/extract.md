@@ -1,8 +1,8 @@
 ---
 title: extract
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9113c34b61b98fb738bc0aff03193ab73b1abbd7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 967f08e271019cc33970419179c9ddbf902b1882
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882307"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377264"
 ---
 # <a name="extract"></a>extract
 
@@ -36,17 +36,17 @@ EXTRACT [/Y] /C source destination
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|gabinete|Arquivo contém dois ou mais arquivos.|
-|filename|Nome do arquivo para extrair o gabinete. Curingas e vários nomes de arquivos (separados por espaços em branco) podem ser usados.|
-|Código-fonte|Arquivo compactado (um gabinete com apenas um arquivo).|
-|newname|Novo nome de arquivo para fornecer o arquivo extraído. Se não for fornecido, o nome original é usado.|
-|/A|Processe todos os gabinetes. Segue a cadeia de gabinete começando no primeiro gabinete mencionado.|
-|/C|Copie o arquivo de origem para destino (para copiar de discos DMF).|
-|/D|Exibir o diretório de gabinete (uso com o nome de arquivo para evitar a extração).|
-|/E|Extrair (use em vez de *.* para extrair todos os arquivos).|
-|/L dir|Local para colocar os arquivos extraídos (o padrão é o diretório atual).|
-|/Y|Não avisar antes de substituir um arquivo existente.|
+|gabinete|O arquivo contém dois ou mais arquivos.|
+|filename|Nome do arquivo a ser extraído do gabinete. Caracteres curinga e vários nomes de (separados por espaços em branco) podem ser usados.|
+|source|Arquivo compactado (um gabinete com apenas um arquivo).|
+|NewName|Novo filename para fornecer o arquivo extraído. Se não for fornecido, o nome original será usado.|
+|/A|Processar todos os gabinetes. Segue a cadeia de gabinetes começando no primeiro gabinete mencionado.|
+|/C|Copie o arquivo de origem para o destino (para copiar de discos de DMF).|
+|/D|Exibir diretório de gabinete (use com nome de arquivo para evitar extração).|
+|/E|Extração (uso em vez de *.* para extrair todos os arquivos).|
+|/L dir|Local para colocação de arquivos extraídos (o padrão é o diretório atual).|
+|/Y|Não solicitar antes de substituir um arquivo existente.|
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

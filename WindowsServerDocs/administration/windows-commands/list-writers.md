@@ -1,8 +1,8 @@
 ---
-title: gravadores de lista
-description: 'Tópico de comandos do Windows para * * *- '
+title: listar gravadores
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6fbab6644d46dbb352a5d5a51abefb293f3ffe6f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d00eebe4e562764e97794b3eb1b76ea96c2dc47c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866737"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374723"
 ---
-# <a name="list-writers"></a>gravadores de lista
+# <a name="list-writers"></a>listar gravadores
 
 
 
-Lista de gravadores que estão no sistema. Se usado sem parâmetros, **lista** exibe a saída para **listar metadados** por padrão.
+Lista gravadores que estão no sistema. Se usado sem parâmetros, **list** exibirá a saída para **listar metadados** por padrão.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -38,17 +38,17 @@ list writers [metadata | detailed | status]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|metadata|Lista a identidade e o status dos gravadores e exibe metadados, como detalhes do componente e arquivos excluídos. Esse é o parâmetro padrão.|
-|Detalhadas|Lista as mesmas informações que **metadados**, mas **detalhadas** inclui a lista de arquivo completo para todos os componentes.|
-|status|Lista apenas a identidade e o status dos gravadores registrados.|
+|Los|Lista a identidade e o status dos gravadores e exibe os metadados, como detalhes do componente e arquivos excluídos. Esse é o parâmetro padrão.|
+|Visão|Lista as mesmas informações que os **metadados**, mas **detalhado** inclui a lista completa de arquivos para todos os componentes.|
+|status|Lista somente a identidade e o status dos gravadores registrados.|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para listar somente a identidade e o status dos gravadores, digite:
+Para listar apenas a identidade e o status dos gravadores, digite:
 ```
 list writers status
 ```
-Saída semelhante à seguinte exibida:
+Saída semelhante às seguintes exibições:
 ```
 Listing writer status ...
 * WRITER "System Writer"
@@ -74,4 +74,4 @@ Listing writer status ...
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

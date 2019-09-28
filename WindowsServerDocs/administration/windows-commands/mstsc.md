@@ -1,8 +1,8 @@
 ---
 title: mstsc
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b6f89c1e3b0d36f14dbd55f9e6994c788305b30d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bf813c75c83154c76d4aeb53a259495d4ad1369e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437180"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373350"
 ---
 # <a name="mstsc"></a>mstsc
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Cria conexões com servidores de Host de sessão de área de trabalho remota (Host de sessão rd) ou outros computadores remotos, edita um arquivo de configuração de Conexão de área de trabalho remota (. rdp) existente e migra os arquivos de conexão herdados que foram criados com o Gerenciador de Conexão de cliente para novos arquivos de conexão. rdp.
+Cria conexões com servidores de Host da Sessão da Área de Trabalho Remota (host de Sessão RD) ou outros computadores remotos, edita um arquivo de configuração existente Conexão de Área de Trabalho Remota (. RDP) e migra os arquivos de conexão herdados que foram criados com o Gerenciador de conexões de cliente para novos arquivos de conexão. rdp.
 Para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_examples).
 > [!NOTE]
-> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir o que há de novo na versão mais recente, consulte [novidades novo nos serviços de área de trabalho remota no Windows Server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
+> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
 
 ## <a name="syntax"></a>Sintaxe
 ```
@@ -41,31 +41,31 @@ mstsc.exe /migrate
 |        Parâmetro        |                                                         Descrição                                                         |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 |    <Connection File>    |                                   Especifica o nome de um arquivo. rdp para a conexão.                                    |
-|   /v:<Server[:<Port>]   |                Especifica o computador remoto e, opcionalmente, o número da porta à qual você deseja se conectar.                 |
-|         /admin          |                                   Você se conecta a uma sessão para administrar o servidor.                                   |
-|           /f            |                                    Inicia a Conexão de área de trabalho remota no modo de tela inteira.                                    |
-|       /w:<Width>        |                                      Especifica a largura da janela de área de trabalho remota.                                      |
-|       /h:<Height>       |                                     Especifica a altura da janela de área de trabalho remota.                                      |
-|         / público         |                  Executa a área de trabalho remota no modo público. No modo público, não estão em cache as senhas e bitmaps.                  |
-|          /span          | Corresponde a largura da área de trabalho remota e a altura com o desktop virtual local, abrangendo em vários monitores, se necessário. |
+|   /v: servidor de < [: <Port>]   |                Especifica o computador remoto e, opcionalmente, o número da porta à qual você deseja se conectar.                 |
+|         /admin          |                                   Conecta você a uma sessão para administrar o servidor.                                   |
+|           /f            |                                    inicia Conexão de Área de Trabalho Remota no modo de tela inteira.                                    |
+|       /w: <Width>        |                                      Especifica a largura da janela de Área de Trabalho Remota.                                      |
+|       /h: <Height>       |                                     Especifica a altura da janela de Área de Trabalho Remota.                                      |
+|         /Public         |                  Executa Área de Trabalho Remota no modo público. No modo público, as senhas e os bitmaps não são armazenados em cache.                  |
+|          /span          | Faz a correspondência entre a largura e a altura de Área de Trabalho Remota com a área de trabalho virtual local, abrangendo vários monitores, se necessário. |
 | /Edit <Connection File> |                                         Abre o arquivo. rdp especificado para edição.                                          |
-|        / migrar         |       Migra os arquivos de conexão herdados que foram criados com o Gerenciador de Conexão de cliente para novos arquivos de conexão. rdp.       |
+|        /migrate         |       Migra os arquivos de conexão herdados que foram criados com o Gerenciador de conexões de cliente para novos arquivos de conexão. rdp.       |
 |           /?            |                                            Exibe a ajuda no prompt de comando.                                             |
 
 ## <a name="remarks"></a>Comentários
--   Default é armazenado para cada usuário como um arquivo oculto na pasta de documentos do usuário. Usuário que criou os arquivos. rdp são salvos por padrão na pasta de documentos do usuário, mas podem ser salvos em qualquer lugar.
--   Para abranger os monitores, os monitores devem ter a mesma resolução e devem estar alinhados horizontalmente (ou seja, lado a lado). Atualmente, não há nenhum suporte para vários monitores verticalmente no sistema cliente.
+-   Default. rdp é armazenado para cada usuário como um arquivo oculto na pasta documentos do usuário. Os arquivos. rdp criados pelo usuário são salvos por padrão na pasta documentos do usuário, mas podem ser salvos em qualquer lugar.
+-   Para abranger os monitores, os monitores devem usar a mesma resolução e devem estar alinhados horizontalmente (ou seja, lado a lado). Atualmente, não há suporte para abranger vários monitores verticalmente no sistema cliente.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 -   Para se conectar a uma sessão no modo de tela inteira, digite:
     ```
     mstsc /f
     ```
--   Para abrir um arquivo chamado filename para edição, digite:
+-   Para abrir um arquivo chamado filename. rdp para edição, digite:
     ```
     mstsc /edit filename.rdp
     ```
 
 #### <a name="additional-references"></a>Referências adicionais
 -   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
--   [Serviços de área de trabalho remota &#40;serviços de Terminal&#41; referência do comando](remote-desktop-services-terminal-services-command-reference.md)
+-   [Serviços de Área de Trabalho Remota &#40;referência de&#41; comando de serviços de terminal](remote-desktop-services-terminal-services-command-reference.md)

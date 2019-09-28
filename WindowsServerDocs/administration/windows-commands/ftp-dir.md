@@ -1,8 +1,8 @@
 ---
-title: dir de FTP
-description: Tópico de comandos do Windows para o diretório de ftp
+title: Dir. FTP
+description: Tópico de comandos do Windows para dir. FTP
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 78ac8ac5e9fc4894f55401bb234aa98de981adf7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c47971c52135d79ce62f935bfed981f6eefcecaa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835247"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376436"
 ---
-# <a name="ftp-dir"></a>ftp: dir
+# <a name="ftp-dir"></a>FTP: dir
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Exibe uma lista de arquivos do diretório e subdiretórios em um computador remoto.   
+Exibe uma lista de arquivos e subdiretórios do diretório em um computador remoto.   
 ## <a name="syntax"></a>Sintaxe  
 ```  
 dir [<remotedirectory>] [<LocalFile>]  
@@ -32,16 +32,16 @@ dir [<remotedirectory>] [<LocalFile>]
 ### <a name="parameters"></a>Parâmetros  
 |Parâmetro|Descrição|  
 |-------|--------|  
-|[<remotedirectory>]|Especifica o diretório para o qual você deseja ver uma listagem. Se nenhum diretório for especificado, o diretório de trabalho atual no computador remoto é usado.|  
-|[<LocalFile>]|Especifica um arquivo local no qual armazenar a listagem de diretórios. Se um arquivo local não for especificado, os resultados são exibidos na tela.|  
-## <a name="BKMK_Examples"></a>Exemplos  
-Exibir um listagem de diretórios **dir1** no computador remoto.  
+|[<remotedirectory>]|Especifica o diretório para o qual você deseja ver uma listagem. Se nenhum diretório for especificado, o diretório de trabalho atual no computador remoto será usado.|  
+|[<LocalFile>]|Especifica um arquivo local no qual armazenar a listagem de diretório. Se um arquivo local não for especificado, os resultados serão exibidos na tela.|  
+## <a name="BKMK_Examples"></a>Disso  
+Exiba uma listagem de diretório para **dir1** no computador remoto.  
 ```  
 dir dir1  
 ```  
-Salvar uma lista do diretório atual no computador remoto no arquivo local **Lista_pastas**.  
+Salve uma lista do diretório atual no computador remoto no arquivo local **DirList. txt**.  
 ```  
 dir . dirlist.txt  
 ```  
 ## <a name="additional-references"></a>Referências adicionais  
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)  
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  

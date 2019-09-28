@@ -2,18 +2,18 @@
 title: Criar uma tarefa de gerenciamento de arquivo personalizada
 description: Este artigo descreve como criar uma tarefa de gerenciamento de arquivo personalizado e tarefas personalizadas.
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: dd52a94657fb73d28b3bc1552a058b7f3ca954ff
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 894c4e3c0b9fa0fde7b749e6effce531c3f999bb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867257"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403174"
 ---
 # <a name="create-a-custom-file-management-task"></a>Criar uma tarefa de gerenciamento de arquivo personalizada
 
@@ -34,7 +34,7 @@ Expiração nem sempre é uma ação desejada para ser executada nos arquivos. A
 
     -   **Tipo**. Selecione **Personalizar** no menu suspenso.
     -   **Executável**. Digite ou procure por um comando para executar quando a tarefa de gerenciamento de arquivo processa os arquivos. Esse executável deve ser definido para ser gravável apenas pelos Administradores e Sistema. Se nenhum outro usuário tiver acesso ao executável, ele não rodará corretamente.
-    -   **Configurações de comandos**. Para configurar os argumentos passados para o executável quando um trabalho de gerenciamento de arquivo processa arquivos, edite a caixa de texto identificada como **Argumentos**. Para inserir variáveis adicionais no texto, coloque o cursor no local na caixa de texto onde você deseja inserir a variável, selecione a variável que deseja inserir e clique em **Inserir variável**. O texto entre colchetes insere informações variáveis que o executável pode receber. Por exemplo, o \[caminho do arquivo de origem\] variável insere o nome do arquivo que deve ser processado pelo executável. Opcionalmente, clique no botão **Diretório de trabalho** para especificar o local do executável personalizado.
+    -   **Configurações de comandos**. Para configurar os argumentos passados para o executável quando um trabalho de gerenciamento de arquivo processa arquivos, edite a caixa de texto identificada como **Argumentos**. Para inserir variáveis adicionais no texto, coloque o cursor no local na caixa de texto onde você deseja inserir a variável, selecione a variável que deseja inserir e clique em **Inserir variável**. O texto entre colchetes insere informações variáveis que o executável pode receber. Por exemplo, a variável de caminho de arquivo \[Source @ no__t-1 insere o nome do arquivo que deve ser processado pelo executável. Opcionalmente, clique no botão **Diretório de trabalho** para especificar o local do executável personalizado.
     -   **Comando de segurança**. Configure as configurações de segurança deste executável. Por padrão, o comando é executado como Serviço Local, que é a conta mais restritiva disponível.
 
 4.  Clique em **OK**.

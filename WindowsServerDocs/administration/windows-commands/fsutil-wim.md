@@ -1,7 +1,7 @@
 ---
 ms.assetid: 6c6ff819-f349-4aea-b0be-1f637f631736
-title: Wim fsutil
-ms.prod: windows-server-threshold
+title: Fsutil wim
+ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
@@ -9,17 +9,17 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: c9186721ce4d3a549964e420cbc16d4893a1859d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fc79b70e8dedb9ecad5e8c6e89f51ece3279faa4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826037"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376662"
 ---
-# <a name="fsutil-wim"></a>Wim fsutil
+# <a name="fsutil-wim"></a>Fsutil wim
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10
 
-Fornece funções para descobrir e gerenciar arquivos WIM de imagem do Windows com suporte.
+Fornece funções para descobrir e gerenciar arquivos com suporte de imagem do Windows (WIM).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,44 +34,44 @@ fsutil wim [removewim] <drive name> <data source>
 
 |Parâmetro|Descrição|
 |-------------|---------------|
-|enumfiles|Enumera os arquivos WIM com suporte.|
-|\<drive name>|Especifica o nome da unidade.|
-|\<fonte de dados >|Especifica a fonte de dados.|
+|enumfiles|Enumera arquivos de backup do WIM.|
+|nome do \<drive >|Especifica o nome da unidade.|
+|> de origem \<data|Especifica a fonte de dados.|
 |enumwims|Enumera os arquivos WIM de backup.|
-|queryfile|Consultas se o arquivo é feito por WIM e, em caso afirmativo, exibe detalhes sobre o arquivo WIM.|
-|\<filename>|Especifica o nome do arquivo.|
-|removewim|Remove um WIM de arquivos de backup.|
+|queryfile|Consulta se o arquivo tem o suporte do WIM e, em caso afirmativo, exibe detalhes sobre o arquivo WIM.|
+|\<filename >|Especifica o nome do arquivo.|
+|removewim|Remove um WIM do backup de arquivos.|
 
 
 
 
 ### <a name="examples"></a>Exemplos
 
-Para enumerar os arquivos para a unidade c: da fonte de dados 0, digite:
+Para enumerar os arquivos da unidade C: da fonte de dados 0, digite:
 
 ```
 fsutil wim enumfiles C: 0
 ```
 
-Para enumerar arquivos WIM de backup para a unidade c:, digite:
+Para enumerar arquivos WIM de backup para a unidade C:, digite:
 
 ```
 fsutil wim enumwims C:
 ```
 
-Para ver se um arquivo é feito por WIM, digite:
+Para ver se um arquivo tem o suporte do WIM, digite:
 
 ```
 fsutil wim C:\Windows\Notepad.exe
 ```
 
-Para remover o WIM de fazendo backup de arquivos para a fonte de dados 2 e o volume c:, digite:
+Para remover o WIM de arquivos de backup para o volume C: e a fonte de dados 2, digite:
 
 ```
 fsutil wim removewims C: 2
 ```
 
 ### <a name="additional-references"></a>Referências adicionais
-[Chave de sintaxe de linha de comando](Command-Line-Syntax-Key.md)
+[Chave da sintaxe de linha de comando](Command-Line-Syntax-Key.md)
 
 [Fsutil](Fsutil.md)

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 2bab6bf6-90e7-46a7-b917-14a7a8f55366
 title: Gerenciamento de integridade de memória de classe de armazenamento (NVDIMM-N) no Windows
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: jgerend
 ms.manager: dongill
 ms.technology: storage-spaces
@@ -9,12 +9,12 @@ ms.topic: article
 author: JasonGerend
 ms.date: 06/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ebec8618c79c43816680387ae5e495f125b3c54
-ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
+ms.openlocfilehash: 03d986832e14e0dd7b80324de3c9f14d0537dba5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67407558"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402904"
 ---
 # <a name="storage-class-memory-nvdimm-n-health-management-in-windows"></a>Gerenciamento de integridade de memória de classe de armazenamento (NVDIMM-N) no Windows
 
@@ -24,10 +24,10 @@ Este artigo fornece aos administradores de sistema e profissionais de TI informa
 
 Se você não estiver familiarizado com o suporte do Windows para dispositivos de memória de classe de armazenamento, esses vídeos curtos fornecerão uma visão geral:
 - [Usando memória não volátil (NVDIMM-N) como armazenamento em bloco no Windows Server 2016](https://channel9.msdn.com/Events/Build/2016/P466)
-- [Usando memória não volátil (NVDIMM-N) como armazenamento endereçável por Byte no Windows Server 2016](https://channel9.msdn.com/Events/Build/2016/P470)
+- [Usando memória não volátil (NVDIMM-N) como armazenamento endereçável de byte no Windows Server 2016](https://channel9.msdn.com/Events/Build/2016/P470)
 - [Acelerando o desempenho do SQL Server 2016 com memória persistente no Windows Server 2016](https://channel9.msdn.com/Shows/Data-Exposed/SQL-Server-2016-and-Windows-Server-2016-SCM--FAST)
 
-Consulte também [compreender e implantar memória persistente em espaços de armazenamento diretos](deploy-pmem.md).
+Consulte também [entender e implantar a memória persistente no espaços de armazenamento diretos](deploy-pmem.md).
 
 Dispositivos de memória de classe de armazenamento NVDIMM-N compatíveis com JEDEC têm suporte no Windows com drivers nativos do Windows Server 2016 e do Windows 10 (versão 1607). Embora esses dispositivos se comportem como outros discos (HDDs e SSDs), há algumas diferenças.
 

@@ -1,7 +1,7 @@
 ---
 title: Implantar dispositivos gráficos usando a atribuição de dispositivo discreta
 description: Saiba como usar o DDA para implantar dispositivos gráficos no Windows Server
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 ms.technology: hyper-v
 ms.tgt_pltfrm: na
@@ -9,12 +9,12 @@ ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 67a01889-fa36-4bc6-841d-363d76df6a66
-ms.openlocfilehash: 94ba561f35ea257a897f51cb3522196f7988eb71
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 3b37abaf5a2341aff66ff0064ecc4f52faf47f06
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872103"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393000"
 ---
 # <a name="deploy-graphics-devices-using-discrete-device-assignment"></a>Implantar dispositivos gráficos usando a atribuição de dispositivo discreta
 
@@ -86,7 +86,7 @@ A etapa final é informar ao Hyper-V que uma VM deve ter acesso ao dispositivo. 
 Add-VMAssignableDevice -LocationPath $locationPath -VMName VMName
 ```
 
-## <a name="whats-next"></a>Novidades
+## <a name="whats-next"></a>O que vem a seguir
 Depois que um dispositivo é montado com êxito em uma VM, agora você pode iniciar essa VM e interagir com o dispositivo como faria normalmente se estivesse executando em um sistema bare-metal.  Isso significa que agora você pode instalar os drivers do fornecedor de hardware na VM e os aplicativos poderão ver o hardware presente.  Você pode verificar isso abrindo o Gerenciador de dispositivos na VM convidada e vendo que o hardware agora aparece.
 
 ## <a name="removing-a-device-and-returning-it-to-the-host"></a>Removendo um dispositivo e retornando-o para o host

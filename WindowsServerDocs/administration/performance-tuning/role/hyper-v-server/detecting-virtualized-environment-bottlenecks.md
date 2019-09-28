@@ -1,18 +1,18 @@
 ---
 title: Detectando afunilamentos em um ambiente virtualizado
 description: Como detectar e resolver possíveis afunilamentos de desempenho do Hyper-v
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: a0d6d263b344cde412ee4dd3caa80305742d56e7
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 53ec6159d177284773f17a05a37dd89184ef3c12
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866601"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370117"
 ---
 # <a name="detecting-bottlenecks-in-a-virtualized-environment"></a>Detectando afunilamentos em um ambiente virtualizado
 
@@ -28,15 +28,15 @@ Aqui estão alguns cenários comuns que poderiam causar afunilamentos de process
 
 Você pode usar os seguintes contadores de desempenho do host:
 
--   Utilização do processador lógico \\-processador lógico do hipervisor Hyper-\*V\\()% tempo de execução total
+-   Utilização do processador lógico-\\Hyper-V processador lógico do hipervisor (\*) \\% tempo de execução total
 
--   Utilização do processador virtual \\-processador virtual do hipervisor Hyper-\*V\\()% tempo de execução total
+-   Utilização do processador virtual-@no__t-processador virtual do hipervisor 0Hyper-V (\*) \\% tempo de execução total
 
--   Utilização do processador virtual raiz \\-processador virtual raiz do hipervisor Hyper-\*V\\()% tempo de execução total
+-   Utilização do processador virtual raiz-\\Hyper-V processador virtual raiz do hipervisor (\*) \\% tempo de execução total
 
-Se o contador do **processador lógico do hipervisor do\_Hyper-\\V (total)% total de tempo de execução** estiver acima de 90%, o host estará sobrecarregado. Você deve adicionar mais capacidade de processamento ou mover algumas máquinas virtuais para um host diferente.
+Se o contador do **processador lógico do hipervisor do Hyper-V (\_Total) \\% total de tempo de execução** for maior que 90%, o host estará sobrecarregado. Você deve adicionar mais capacidade de processamento ou mover algumas máquinas virtuais para um host diferente.
 
-Se o contador **virtual do hipervisor do Hyper-V (nome da VM:\\VP x)% tempo de execução total** for superior a 90% para todos os processadores virtuais, você deverá fazer o seguinte:
+Se o **processador virtual do hipervisor Hyper-V (nome da VM: VP x) \\% total** do contador de tempo de execução for de mais de 90% para todos os processadores virtuais, você deverá fazer o seguinte:
 
 -   Verifique se o host não está sobrecarregado
 
@@ -44,7 +44,7 @@ Se o contador **virtual do hipervisor do Hyper-V (nome da VM:\\VP x)% tempo de e
 
 -   Atribuir mais processadores virtuais à máquina virtual
 
-Se o **processador virtual do hipervisor Hyper-V (nome da VM:\\VP x)% total** do contador de tempo de execução for de mais de 90% para alguns, mas não todos, dos processadores virtuais, você deverá fazer o seguinte:
+Se o **processador virtual do hipervisor Hyper-V (nome da VM: VP x) \\% total** do contador de tempo de execução for de mais de 90% para alguns, mas não para todos, dos processadores virtuais, você deverá fazer o seguinte:
 
 -   Se sua carga de trabalho receber uso intensivo de rede, você deverá considerar o uso de vRSS.
 
@@ -52,7 +52,7 @@ Se o **processador virtual do hipervisor Hyper-V (nome da VM:\\VP x)% total** do
 
 -   Se sua carga de trabalho for de uso intensivo de armazenamento, você deverá habilitar o NUMA virtual e adicionar mais discos virtuais.
 
-Se o contador de **tempo de execução do processador virtual do hipervisor do Hyper\\-V (VP raiz x)% total de Runtime** for superior a 90% para alguns, mas não todos, processadores virtuais e o **processador (x\\)\\% tempo de interrupção e processador (x)% tempo de DPC** contador aproximadamente adiciona o valor para o contador de **tempo de execução total do processador virtual raiz\\(VP de raiz x)%** , você deve garantir a habilitação da VMQ nos adaptadores de rede.
+Se o **processador virtual da raiz do hipervisor do Hyper-V (VP raiz x) \\% total** do contador de tempo de execução for de mais de 90% para alguns, mas não para todos, processadores virtuais e o contador **processador (x) \\% de tempo de interrupção e processador (x) \\% tempo de DPC** aproximadamente adiciona o valor para o contador de **processador virtual raiz (VP de raiz x) \\% total de tempo de execução** , certifique-se de habilitar a VMQ nos adaptadores de rede.
 
 ## <a name="memory-bottlenecks"></a>Afunilamentos de memória
 

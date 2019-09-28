@@ -1,8 +1,8 @@
 ---
-title: Bitsadmin getpeercachingflags
-description: Tópico de comandos do Windows para **getpeercachingflags bitsadmin** -recupera sinalizadores que determinam se os arquivos de trabalho podem ser armazenados em cache e atendidos para pares, e se o BITS podem baixar o conteúdo para o trabalho de pares.
+title: bitsadmin getpeercachingflags
+description: O tópico de comandos do Windows para **Bitsadmin getpeercachingflags** -recupera sinalizadores que determinam se os arquivos do trabalho podem ser armazenados em cache e servidos para os pares e se o bits pode baixar conteúdo para o trabalho de pares.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 28f248bab3e3cc3f5c7dd4f5f878f0b6d776029b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6b86214b5289a59e8db2ecff065ab3b8cd17007e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434918"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381440"
 ---
-# <a name="bitsadmin-getpeercachingflags"></a>Bitsadmin getpeercachingflags
+# <a name="bitsadmin-getpeercachingflags"></a>bitsadmin getpeercachingflags
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Recupera os sinalizadores que determinam se os arquivos de trabalho podem ser armazenados em cache e atendidos para pares, e se o BITS podem baixar o conteúdo para o trabalho de pares.
+Recupera sinalizadores que determinam se os arquivos do trabalho podem ser armazenados em cache e servidos para os pares e se o BITS pode baixar conteúdo para o trabalho de pares.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,10 +36,10 @@ bitsadmin /GetPeerCachingFlags <Job>
 
 |Parâmetro|Descrição|
 |-------|--------|
-|Job|Nome de exibição ou o GUID do trabalho|
+|Job|O nome de exibição ou o GUID do trabalho|
 
-## <a name="BKMK_examples"></a>Exemplos
-O exemplo a seguir recupera os sinalizadores do trabalho nomeado *myJob*.
+## <a name="BKMK_examples"></a>Disso
+O exemplo a seguir recupera os sinalizadores para o trabalho chamado *myJob*.
 
 ```
 C:\>bitsadmin /GetPeerCachingFlags myJob

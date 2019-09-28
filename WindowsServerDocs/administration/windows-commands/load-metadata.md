@@ -1,8 +1,8 @@
 ---
 title: Carregar metadados
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b52b5040fc8c834b04cad83ca4b0cfab103fdc43
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 025f75743d61889c4b987e9a2a575d1c599f04c1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871327"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374624"
 ---
 # <a name="load-metadata"></a>Carregar metadados
 
 
 
-Carrega um arquivo. cab de metadados antes de importar uma cópia de sombra transportáveis ou carrega os metadados do gravador no caso de uma restauração. Se usado sem parâmetros, **carregar metadados** exibe a Ajuda no prompt de comando.
+Carrega um arquivo Metadata. cab antes de importar uma cópia de sombra transportável ou carrega os metadados do gravador no caso de uma restauração. Se usado sem parâmetros, **carregar metadados** exibe a ajuda no prompt de comando.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -38,21 +38,21 @@ load metadata [<Drive>:][<Path>]<MetaData.cab>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|[\<Drive>:][<Path>]|Especifica o local do arquivo de metadados.|
-|MetaData.cab|Especifica o arquivo. cab de metadados para carregar.|
+|[\<Drive >:] [<Path>]|Especifica o local do arquivo de metadados.|
+|MetaData. cab|Especifica o arquivo Metadata. cab a ser carregado.|
 
 ## <a name="remarks"></a>Comentários
 
--   Você pode usar o **importação** comando para importar uma cópia de sombra transportáveis baseado nos metadados especificado por **carregar metadados**.
--   Esse comando é necessária antes do **Iniciar restauração** comando para carregar os gravadores selecionados e os componentes para a restauração.
+-   Você pode usar o comando de **importação** para importar uma cópia de sombra transportável com base nos metadados especificados pelos **metadados de carga**.
+-   Esse comando é necessário antes do comando **Iniciar restauração** para carregar os gravadores e componentes selecionados para a restauração.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para carregar um arquivo de metadados chamado metafile.cab do local padrão, digite:
+Para carregar um arquivo de metadados chamado Metafile. cab do local padrão, digite:
 ```
 load metadata metafile.cab
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

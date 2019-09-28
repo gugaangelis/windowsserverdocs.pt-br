@@ -1,8 +1,8 @@
 ---
-title: ls_1 de FTP
-description: 'Tópico de comandos do Windows para * * *- '
+title: ls_1 FTP
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6abf8466f90ac29846f2e1ee7d305e7e4280231e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d183f6a014273b78befd14c8d3208508948ffc54
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438637"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376254"
 ---
-# <a name="ftp-ls1"></a>ftp: ls_1
+# <a name="ftp-ls_1"></a>FTP: ls_1
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 > 
@@ -36,15 +36,15 @@ ls [<remotedirectory>] [<LocalFile>]
 
 |      Parâmetro      |                                                                       Descrição                                                                        |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [<remotedirectory>] | Especifica o diretório para o qual você deseja ver uma listagem. Se nenhum diretório for especificado, o diretório de trabalho atual no computador remoto é usado. |
-|    [<LocalFile>]    |               Especifica um arquivo local no qual armazenar a listagem. Se um arquivo local não for especificado, os resultados são exibidos na tela.               |
+| [<remotedirectory>] | Especifica o diretório para o qual você deseja ver uma listagem. Se nenhum diretório for especificado, o diretório de trabalho atual no computador remoto será usado. |
+|    [<LocalFile>]    |               Especifica um arquivo local no qual armazenar a listagem. Se um arquivo local não for especificado, os resultados serão exibidos na tela.               |
 
-## <a name="BKMK_Examples"></a>Exemplos  
-Exiba uma lista abreviada de arquivos e subdiretórios do computador remoto.  
+## <a name="BKMK_Examples"></a>Disso  
+Exibe uma lista abreviada de arquivos e subdiretórios do computador remoto.  
 ```  
 ls  
 ```  
-Obter uma listagem de diretório abreviada de **dir1** no computador remoto e salve-o em um arquivo local chamado **Lista_pastas**  
+Obtenha uma listagem de diretório abreviada de **dir1** no computador remoto e salve-o em um arquivo local chamado **DirList. txt**  
 ```  
 ls dir1 dirlist.txt   
 ```  

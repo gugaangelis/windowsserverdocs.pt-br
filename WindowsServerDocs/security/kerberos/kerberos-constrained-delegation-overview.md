@@ -2,7 +2,7 @@
 title: Kerberos Constrained Delegation Overview
 description: Segurança do Windows Server
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-kerberos
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 02677c8d9db4129ebbd7edd79027e0a6348372b5
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: e6e62effcb875c0e3a1cdd6c886f3d74923e1b94
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544612"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403417"
 ---
 # <a name="kerberos-constrained-delegation-overview"></a>Kerberos Constrained Delegation Overview
 
@@ -36,7 +36,7 @@ No Windows Server 2012 R2 e no Windows Server 2012, a capacidade de configurar a
 
 Para obter informações detalhadas sobre delegação restrita, conforme apresentada no Windows Server 2003, consulte [Transição de protocolo e delegação restrita de Kerberos](https://technet.microsoft.com/library/cc739587(v=ws.10)).
 
-A implementação do Windows Server 2012 R2 e do Windows Server 2012 do protocolo Kerberos inclui extensões específicas para delegação restrita.  O S4U2Proxy (Service for User to Proxy) permite que um serviço use seu respectivo tíquete de serviço Kerberos para que um usuário obtenha um tíquete de serviço do KDC (Centro de Distribuição de Chaves) para um serviço back-end. Essas extensões permitem que a delegação restrita seja configurada na conta do serviço de back-end, que pode estar em outro domínio. Para obter mais informações sobre essas extensões, [consulte \[MS-\]SFU: Extensões do protocolo Kerberos: Serviço para especificação](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx) de protocolo de delegação restrita e de usuário na biblioteca MSDN.
+A implementação do Windows Server 2012 R2 e do Windows Server 2012 do protocolo Kerberos inclui extensões específicas para delegação restrita.  O S4U2Proxy (Service for User to Proxy) permite que um serviço use seu respectivo tíquete de serviço Kerberos para que um usuário obtenha um tíquete de serviço do KDC (Centro de Distribuição de Chaves) para um serviço back-end. Essas extensões permitem que a delegação restrita seja configurada na conta do serviço de back-end, que pode estar em outro domínio. Para obter mais informações sobre essas extensões, consulte [ @ no__t-1 MS-SFU @ no__t-2: Extensões do protocolo Kerberos: Serviço para especificação de protocolo de delegação restrita e de usuário @ no__t-0 na biblioteca MSDN.
 
 **Aplicativos práticos**
 
@@ -58,7 +58,7 @@ Isso também muda a decisão de se um servidor deve confiar na origem de uma ide
 
 Uma alteração no protocolo subjacente permite a delegação restrita entre domínios. A implementação do Windows Server 2012 R2 e do Windows Server 2012 do protocolo Kerberos inclui extensões para serviço para o protocolo S4U2Proxy (user to proxy). Trata-se de um conjunto de extensões para o protocolo Kerberos que permite que um serviço use seu respectivo tíquete de serviço Kerberos para que um usuário obtenha um tíquete de serviço do KDC (Centro de Distribuição de Chaves) para um serviço back-end.
 
-Para obter informações de implementação sobre essas extensões [, consulte \[MS\]-SFU: Extensões do protocolo Kerberos: Serviço para especificação](https://msdn.microsoft.com/library/cc246071(PROT.10).aspx) de protocolo de delegação restrita e de usuário no msdn.
+Para obter informações de implementação sobre essas extensões, consulte [ @ no__t-1 MS-SFU @ no__t-2: Extensões do protocolo Kerberos: Serviço para especificação de protocolo de delegação restrita e de usuário @ no__t-0 no MSDN.
 
 Para obter mais informações sobre a sequência de mensagens básica para delegação de Kerberos com um tíquete de concessão de tíquete (TGT) encaminhado em comparação com as extensões de serviço para usuário (S4U), consulte a seção [visão geral do protocolo 1.3.3](https://msdn.microsoft.com/library/cc246080(v=prot.10).aspx) no [MS-SFU]: Extensões do protocolo Kerberos: Serviço para usuário e especificação do protocolo de delegação restrita.
 

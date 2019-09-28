@@ -1,8 +1,8 @@
 ---
 title: verify
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e5e99237c2bac93625dedec0254c274e4f8dbc9f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 840fd3609ed3aded1c9cfebd4e395ddcc6d5588b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827247"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363104"
 ---
 # <a name="verify"></a>verify
 
 
 
-Informa **cmd** se é necessário verificar se seus arquivos são gravados corretamente em um disco. Se usado sem parâmetros, **verificar** exibe a configuração atual.
+Informa ao **cmd** se é para verificar se os arquivos estão gravados corretamente em um disco. Se usado sem parâmetros, **Verify** exibirá a configuração atual.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -38,20 +38,20 @@ verify [on | off]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|[em \| off]|Opções de **verificar** configuração ativada ou desativada.|
+|[on \| off]|Ativa ou desativa a configuração de **verificação** .|
 |/?|Exibe a ajuda no prompt de comando.|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para exibir o atual **verificar** configurando, digite:
+Para exibir a configuração de **verificação** atual, digite:
 ```
 verify
 ```
-Para ativar o **verificar** configurando em, digite:
+Para ativar a configuração de **verificação** , digite:
 ```
 Verify on
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

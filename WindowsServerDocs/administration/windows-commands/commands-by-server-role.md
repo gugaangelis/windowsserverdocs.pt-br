@@ -1,8 +1,8 @@
 ---
 title: Comandos por função de servidor
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a855926b9648a7c0f1a0db3e59ca802f8654ab0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5201e7291ce93c6bc45180aa8b9df2e36409c8f8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873747"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379247"
 ---
 # <a name="commands-by-server-role"></a>Comandos por função de servidor
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Uma função de servidor descreve a principal função do servidor. Os administradores podem optar por dedicar um servidor inteiro a uma função ou instalar várias funções de servidor e funções de sub-rotina em um único computador. Cada função pode incluir outras ferramentas de linha de comando, instaladas como parte da função. Os tópicos a seguir fornecem uma lista de comandos associados a cada função de servidor.
+Uma função de servidor descreve a função principal do servidor. Os administradores podem optar por dedicar um servidor inteiro a uma função ou instalar várias funções de servidor e subfunções em um único computador. Cada função pode incluir ferramentas de linha de comando adicionais, instaladas como parte da função. Os tópicos a seguir fornecem uma lista de comandos associados a cada função de servidor.
 
--   [Referência do comando Imprimir](print-command-reference.md)
--   [Serviços para referência de comandos do sistema de arquivos de rede](services-for-network-file-system-command-reference.md)
--   [Serviços de área de trabalho remota &#40;serviços de Terminal&#41; referência do comando](remote-desktop-services-terminal-services-command-reference.md)
--   [Referência de comando de Backup do Windows Server](windows-server-backup-command-reference.md)
+-   [Referência aos comandos de impressão](print-command-reference.md)
+-   [Referência aos comandos dos Serviços para Network File System](services-for-network-file-system-command-reference.md)
+-   [Serviços de Área de Trabalho Remota &#40;referência de&#41; comando de serviços de terminal](remote-desktop-services-terminal-services-command-reference.md)
+-   [Referência aos comandos do Backup do Windows Server](windows-server-backup-command-reference.md)

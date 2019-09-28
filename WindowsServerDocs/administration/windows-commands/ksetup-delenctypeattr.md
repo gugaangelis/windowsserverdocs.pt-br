@@ -1,8 +1,8 @@
 ---
-title: ksetup:delenctypeattr
-description: 'Tópico de comandos do Windows para * * *- '
+title: 'ksetup: delenctypeattr'
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c2cc96e8156cafd3846422596abe62513e275b3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e3810d83c06b9ea08766451e13390b02b1867c83
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838127"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375163"
 ---
-# <a name="ksetupdelenctypeattr"></a>ksetup:delenctypeattr
+# <a name="ksetupdelenctypeattr"></a>ksetup: delenctypeattr
 
 
 
@@ -36,31 +36,31 @@ ksetup /delenctypeattr <DomainName>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<DomainName>|Nome do domínio ao qual você deseja estabelecer uma conexão. Use o nome de domínio totalmente qualificado ou um formulário simples do nome, como corp.contoso.com ou contoso.|
+|\<DomainName >|Nome do domínio ao qual você deseja estabelecer uma conexão. Use o nome de domínio totalmente qualificado ou uma forma simples do nome, como corp.contoso.com ou contoso.|
 
 ## <a name="remarks"></a>Comentários
 
-Para exibir o tipo de criptografia para o tíquete de concessão de tíquete do Kerberos (TGT) e a chave de sessão, execute as **klist** de comando e exibir a saída.
+Para exibir o tipo de criptografia para o tíquete de concessão de tíquete (TGT) e a chave de sessão do Kerberos, execute o comando **klist** e exiba a saída.
 
-Uma mensagem de status é exibida após a conclusão com êxito ou falha.
+Uma mensagem de status é exibida após A conclusão bem-sucedida ou falha.
 
-Para definir o domínio que você deseja conectar e usar, execute as **ksetup /domain \<DomainName >** comando.
+Para definir o domínio ao qual você deseja se conectar e usar, execute o comando **ksetup/domain \<DomainName >** .
 
-## <a name="BKMK_Examples"></a>Exemplos
+## <a name="BKMK_Examples"></a>Disso
 
-Determine os tipos de criptografia atuais que são definidos neste computador:
+Determine os tipos de criptografia atuais que estão definidos neste computador:
 ```
 klist
 ```
-Defina o domínio para mit.contoso.com:
+Defina o domínio como mit.contoso.com:
 ```
 ksetup /domain mit.contoso.com
 ```
-Verifique se o que é o atributo de tipo de criptografia para o domínio:
+Verifique qual é o atributo de tipo de criptografia para o domínio:
 ```
 ksetup /getenctypeattr mit.contoso.com
 ```
-Remova o atributo de tipo do conjunto de criptografia para o domínio mit.contoso.com:
+Remova o atributo definir tipo de criptografia para o mit.contoso.com de domínio:
 ```
 ksetup /delenctypeattr mit.contoso.com
 ```
@@ -72,4 +72,4 @@ ksetup /delenctypeattr mit.contoso.com
 -   [Ksetup:addenctypeattr](ksetup-addenctypeattr.md)
 -   [Ksetup:setenctypeattr](ksetup-setenctypeattr.md)
 -   [Ksetup:delenctypeattr](ksetup-delenctypeattr.md)
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

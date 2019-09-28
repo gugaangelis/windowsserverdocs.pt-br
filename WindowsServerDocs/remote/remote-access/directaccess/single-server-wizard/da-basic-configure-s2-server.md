@@ -1,9 +1,9 @@
 ---
-title: Etapa 2 configurar o servidor de DirectAccess básico
-description: Este tópico faz parte do guia de implantar um único servidor DirectAccess usando o Introdução ao Assistente para Windows Server 2016
+title: Etapa 2 configurar o servidor DirectAccess básico
+description: Este tópico faz parte do guia implantar um único servidor DirectAccess usando o assistente de Introdução para Windows Server 2016
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,18 +12,18 @@ ms.topic: article
 ms.assetid: 82bf5fed-93b3-4fa6-8e71-522146eccdb1
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 5bd248e36c316b11ea5e272707b75624d73dc49a
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: a21e5799824c968b29c719585ca16b6b45a9ef37
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283423"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404917"
 ---
-# <a name="step-2-configure-the-basic-directaccess-server"></a>Etapa 2 configurar o servidor de DirectAccess básico
+# <a name="step-2-configure-the-basic-directaccess-server"></a>Etapa 2 configurar o servidor DirectAccess básico
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Este tópico descreve como definir as configurações de cliente e servidor necessárias para uma implantação básica do DirectAccess. Antes de começar as etapas de implantação, certifique-se de que você tenha concluído as etapas de planejamento descritas em [planejar uma implantação básica do DirectAccess](Plan-a-Basic-DirectAccess-Deployment.md).  
+Este tópico descreve como definir as configurações de cliente e servidor necessárias para uma implantação básica do DirectAccess. Antes de iniciar as etapas de implantação, verifique se você concluiu as etapas de planejamento descritas em [planejar uma implantação básica do DirectAccess](Plan-a-Basic-DirectAccess-Deployment.md).  
   
 |Tarefa|Descrição|  
 |----|--------|  
@@ -39,7 +39,7 @@ Para implantar o Acesso Remoto, você deverá instalar a função Acesso Remoto 
   
 #### <a name="to-install-the-remote-access-role"></a>Para instalar a função Acesso Remoto.  
   
-1.  No servidor de acesso remoto, no console do Gerenciador do servidor, nos **Dashboard**, clique em **adicionar funções e recursos**.  
+1.  No servidor de acesso remoto, no console do Gerenciador do Servidor, no **painel**, clique em **adicionar funções e recursos**.  
   
 2.  Clique em **Avançar** três vezes para exibir a tela de seleção de função de servidor.  
   
@@ -47,19 +47,19 @@ Para implantar o Acesso Remoto, você deverá instalar a função Acesso Remoto 
   
 4.  Na caixa de diálogo **Selecionar recursos**, clique em **Avançar**.  
   
-5.  Clique em **próxima**e, em seguida, no **selecionar serviços de função** caixa de diálogo, clique o **DirectAccess e VPN (RAS)** caixa de seleção.  
+5.  Clique em **Avançar**e, na caixa de diálogo **selecionar serviços de função** , clique em **DirectAccess e VPN (RAS)** .  
   
-6.  Clique em **adicionar recursos**, clique em **próxima**e, em seguida, clique em **instalar**.  
+6.  Clique em **Adicionar recursos**, clique em **Avançar**e em **instalar**.  
   
 7.  Na caixa de diálogo **Progresso da instalação**, verifique se a instalação foi bem-sucedida e clique em **Fechar**.  
   
-![Windows PowerShell](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
+0Windows-](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
   
-O seguinte cmdlet do Windows PowerShell ou os cmdlets instalar a função acesso remoto: 
+Os seguintes cmdlets ou cmdlets do Windows PowerShell instalam a função de acesso remoto: 
 
 1. Abra o PowerShell como administrador.
 
-2. Instale o recurso de acesso remoto:
+2. Instalar o recurso de acesso remoto:
 
    ```  
    Install-WindowsFeature RemoteAccess   
@@ -71,7 +71,7 @@ O seguinte cmdlet do Windows PowerShell ou os cmdlets instalar a função acesso
    Restart-Computer
    ```
    
-4. Instale o PowerShell de acesso remoto:
+4. Instalar o PowerShell de acesso remoto:
 
    ```
    Install-WindowsFeature RSAT-RemoteAccess-PowerShell
@@ -86,7 +86,7 @@ O seguinte cmdlet do Windows PowerShell ou os cmdlets instalar a função acesso
   
 1.  No Gerenciador do Servidor, clique em **Ferramentas** e clique em **Gerenciamento de Acesso Remoto**.  
   
-2.  No console do gerenciamento de acesso remoto, selecione o serviço de função para configurar no painel de navegação à esquerda e, em seguida, clique em **execute o Assistente para introdução**.  
+2.  No console de gerenciamento de acesso remoto, selecione o serviço de função a ser configurado no painel de navegação esquerdo e clique em **executar o assistente de introdução**.  
   
 3.  Clique em **Implantar somente DirectAccess**.  
   
@@ -95,9 +95,9 @@ O seguinte cmdlet do Windows PowerShell ou os cmdlets instalar a função acesso
     > [!NOTE]  
     > Por padrão, o Assistente do Guia de Introdução implanta o DirectAccess em todos os laptops e notebooks no domínio por meio da aplicação de um filtro WMI ao GOP de configurações do cliente.  
   
-5.  Clique em **concluir**.  
+5.  Clique em **Finalizar**.  
   
-6.  Como não há nenhuma KPI usada nessa implantação de testes, se não forem encontrados certificados, o assistente provisionará certificados autoassinados automaticamente para IP-HTTPS e o Servidor de Local de Rede e habilitará o proxy Kerberos automaticamente. O assistente também habilitará NAT64 e DNS64 para conversão de protocolos no ambiente somente IPv4. Depois que o assistente concluir com sucesso aplicando a configuração, clique em **fechar**.  
+6.  Como não há nenhuma KPI usada nessa implantação de testes, se não forem encontrados certificados, o assistente provisionará certificados autoassinados automaticamente para IP-HTTPS e o Servidor de Local de Rede e habilitará o proxy Kerberos automaticamente. O assistente também habilitará NAT64 e DNS64 para conversão de protocolos no ambiente somente IPv4. Depois que o assistente for concluído com êxito aplicando a configuração, clique em **fechar**.  
   
 7.  Na árvore do console de Gerenciamento de Acesso remoto, selecione **Status das Operações**. Aguarde até que o status de todos os monitores seja exibido como "Processando". No painel Tatera, em Monitoramento, clique em **Atualizar** constantemente para atualizar a exibição.  
   
@@ -125,7 +125,7 @@ O seguinte cmdlet do Windows PowerShell ou os cmdlets instalar a função acesso
   
 ## <a name="next-step"></a>Próximas etapas  
   
--   [Etapa 3 verificar as implantações do DirectAccess básico](da-basic-configure-s3-verify.md)  
+-   [Etapa 3 verificar as implantações básicas do DirectAccess](da-basic-configure-s3-verify.md)  
   
 
 

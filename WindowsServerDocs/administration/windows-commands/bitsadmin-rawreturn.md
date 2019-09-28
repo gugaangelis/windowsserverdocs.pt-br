@@ -1,8 +1,8 @@
 ---
 title: bitsadmin rawreturn
-description: Tópico de comandos do Windows para **rawreturn bitsadmin** -retorna dados adequado para análise.
+description: O tópico de comandos do Windows para **Bitsadmin rawreturn** -retorna dados adequados para análise.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e12c8e621021d35ac618b4592515fe38c36be0e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 86d769de460538acda696194348980de5752d6d8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434896"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380881"
 ---
 # <a name="bitsadmin-rawreturn"></a>bitsadmin rawreturn
 
-Retorna dados adequado para análise.
+Retorna os dados adequados para análise.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -32,13 +32,13 @@ bitsadmin /RawReturn
 
 ## <a name="remarks"></a>Comentários
 
-Caracteres de nova linha de faixas e a formatação da saída.
+Remove os caracteres de nova linha e a formatação da saída.
 
-Em geral, use este comando em conjunto com o **Create** e **obter\\** * comutadores para receber apenas o valor. Você deve especificar essa opção antes de outras opções.
+Normalmente, você usa esse comando em conjunto com as opções **criar** e **obter @ no__t-2*** para receber apenas o valor. Você deve especificar essa opção antes de outras opções.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O exemplo a seguir recupera os dados brutos para o estado do trabalho nomeado *myDownloadJob*.
+O exemplo a seguir recupera os dados brutos para o estado do trabalho chamado *myDownloadJob*.
 ```
 C:\>bitsadmin /RawReturn /GetState myDownloadJob
 ```

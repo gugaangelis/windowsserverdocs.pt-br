@@ -1,8 +1,8 @@
 ---
 title: goto
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f1ad0190519d58bd879ae391f378d800760c204f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1caf3da3e8b873150af5be7ed8316cfcb526db83
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857527"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375686"
 ---
 # <a name="goto"></a>goto
 
 
 
-Direciona cmd.exe para uma linha identificada em um arquivo em lotes. Dentro de um arquivo em lotes, **goto** direciona o processamento de comandos para uma linha que é identificado por um rótulo. Quando o rótulo for encontrado, o processamento continuará começando com os comandos que começam na próxima linha.
+Direciona o cmd. exe para uma linha rotulada em um programa em lotes. Em um programa em lotes, **goto** direciona o processamento de comandos para uma linha identificada por um rótulo. Quando o rótulo é encontrado, o processamento continua começando com os comandos que começam na próxima linha.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -38,33 +38,33 @@ goto <Label>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Label>|Especifica uma cadeia de caracteres de texto que é usada como um rótulo no arquivo em lotes.|
+|\<Label >|Especifica uma cadeia de texto que é usada como um rótulo no programa em lotes.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
--   Trabalhando com as extensões de comando
+-   Trabalhando com extensões de comando
 
-    Se as extensões de comando são habilitadas (padrão), e você usar o **goto** com um rótulo de destino **: EOF**, transferir o controle para o final do arquivo de script em lotes atual e o arquivo de script em lotes de saída sem definir um rótulo. Quando você usa **goto** com o **: EOF** rótulo, você deve inserir dois-pontos antes do rótulo. Por exemplo:  
+    Se as extensões de comando estiverem habilitadas (o padrão) e você usar o comando **goto** com um rótulo de destino de **: EOF**, você transfere o controle para o final do arquivo de script do lote atual e sai do arquivo de script do lote sem definir um rótulo. Ao usar **goto** com o rótulo **: EOF** , você deve inserir dois-pontos antes do rótulo. Por exemplo:  
     ```
     goto:EOF
     ```  
--   Usando válida *rótulo* valores
+-   Usando valores de *rótulo* válidos
 
-    Você pode usar espaços na *rótulo* parâmetro, mas você não pode incluir outros separadores (por exemplo, ponto e vírgula ou sinais de igual).
--   Correspondência *rótulo* com o rótulo no arquivo em lotes
+    Você pode usar espaços no parâmetro de *rótulo* , mas não pode incluir outros separadores (por exemplo, pontos-e-vírgulas ou sinais de igualdade).
+-   *Rótulo* correspondente com o rótulo no programa em lotes
 
-    O *rótulo* valor que você especificar deve corresponder a um rótulo no arquivo em lotes. O rótulo em lotes deve começar com dois-pontos (:). Se uma linha começa com dois-pontos, ele será tratado como um rótulo e todos os comandos nessa linha são ignorados. Se seu arquivo em lotes não contém o rótulo que você especificar na *rótulo*, esse programa para e exibe a seguinte mensagem:  
+    O valor de *rótulo* especificado deve corresponder a um rótulo no programa em lotes. O rótulo dentro do programa do lote deve começar com dois-pontos (:). Se uma linha começar com dois-pontos, ela será tratada como um rótulo e todos os comandos nessa linha serão ignorados. Se o programa do lote não contiver o rótulo que você especificar no *rótulo*, o programa do lote será interrompido e exibirá a seguinte mensagem:  
     ```
     Label not found
     ```  
--   Usando o **goto** para operações condicionais
+-   Usando **goto** para operações condicionais
 
-    Você pode usar **goto** com outros comandos para executar operações condicionais. Para obter mais informações sobre como usar **goto** para operações condicionais, consulte o [se](if.md) referência do comando.
+    Você pode usar **goto** com outros comandos para executar operações condicionais. Para obter mais informações sobre como usar **goto** para operações condicionais, consulte a referência de comando [If](if.md) .
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-O programa de lote a seguir formata um disco na unidade A como disco do sistema. Se a operação for bem-sucedida, o **goto** comando direciona o processamento para o **: final** rótulo:
+O programa em lotes a seguir formata um disco na unidade A como um disco do sistema. Se a operação for bem-sucedida, o comando **goto** direcionará o processamento para o rótulo **: End** :
 ```
 echo off
 format a: /s
@@ -76,8 +76,8 @@ echo End of batch program.
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
 [Cmd](cmd.md)
 
-[If](if.md)
+[Que](if.md)

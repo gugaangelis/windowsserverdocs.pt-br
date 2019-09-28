@@ -1,8 +1,8 @@
 ---
-title: mls_1 de FTP
-description: 'Tópico de comandos do Windows para * * *- '
+title: mls_1 FTP
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7a379ead9c56af096e121048a8c0f596f6879bb0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: a84a0f8f3121ea19876744e9ef04bebf5f9fcb08
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438545"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376262"
 ---
-# <a name="ftp-mls1"></a>ftp: mls_1
+# <a name="ftp-mls_1"></a>FTP: mls_1
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -37,16 +37,16 @@ mls <remoteFile>[ ] <LocalFile>
 | <LocalFile>  |  Especifica um arquivo local no qual armazenar a listagem.  |
 
 ## <a name="remarks"></a>Comentários  
-- Especificando *Arquivos_remotos*  
+- Especificando *remoteFiles*  
   Digite um hífen ( **-** ) para usar o diretório de trabalho atual no computador remoto.  
-- Especificando *LocalFile*  
+- Especificando o *LocalFile*  
   Digite um hífen ( **-** ) para exibir a listagem na tela.  
-  ## <a name="BKMK_Examples"></a>Exemplos  
-  Exibir uma lista abreviada de arquivos e subdiretórios **dir1** e **dir2**.  
+  ## <a name="BKMK_Examples"></a>Disso  
+  Exiba uma lista abreviada de arquivos e subdiretórios para **dir1** e **dir2**.  
   ```  
   mls dir1 dir2 -  
   ```  
-  Salvar uma lista abreviada de arquivos e subdiretórios **dir1** e **dir2** no arquivo local **Lista_pastas**  
+  Salve uma lista abreviada de arquivos e subdiretórios para **dir1** e **dir2** no arquivo local **DirList. txt**  
   ```  
   mls dir1 dir2 dirlist.txt   
   ```  
